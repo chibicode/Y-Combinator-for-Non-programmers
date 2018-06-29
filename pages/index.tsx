@@ -1,5 +1,6 @@
 import { injectGlobal } from 'emotion'
-import { Container, Heading, Provider } from 'rebass/emotion'
+import { Container, Provider } from 'rebass/emotion'
+import FunctionCall from '../components/FunctionCall'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -12,10 +13,12 @@ injectGlobal`
   }
 `
 
-export default () => (
+const Index: React.SFC<{}> = () => (
   <Provider>
     <Container pt={4}>
-      <Heading>Hello World!</Heading>
+      <FunctionCall />
     </Container>
   </Provider>
 )
+
+export default Index

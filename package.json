@@ -5,11 +5,13 @@
     "emotion": "^9.2.4",
     "emotion-server": "^9.2.4",
     "emotion-theming": "^9.2.4",
+    "lodash": "^4.17.10",
     "next": "6.1.0-canary.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.4",
     "rebass": "^2.0.0",
+    "twemoji": "^11.0.0",
     "typescript": "^2.9.2"
   },
   "scripts": {
@@ -18,8 +20,10 @@
     "start": "next start"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.110",
     "@types/next": "^6.0.3",
     "@types/react": "^16.4.5",
+    "@types/react-dom": "^16.0.6",
     "babel-plugin-emotion": "^9.2.4",
     "prettier": "^1.13.7",
     "prettier-tslint": "^0.4.0",
