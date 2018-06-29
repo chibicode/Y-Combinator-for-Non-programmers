@@ -4,9 +4,11 @@
     "@zeit/next-typescript": "^1.1.0",
     "emotion": "^9.2.4",
     "emotion-server": "^9.2.4",
+    "emotion-theming": "^9.2.4",
     "next": "6.1.0-canary.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-emotion": "^9.2.4",
     "rebass": "^2.0.0",
     "typescript": "^2.9.2"
   },
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@types/next": "^6.0.3",
     "@types/react": "^16.4.5",
+    "babel-plugin-emotion": "^9.2.4",
     "prettier": "^1.13.7",
     "prettier-tslint": "^0.4.0",
     "tslint": "^5.10.0",

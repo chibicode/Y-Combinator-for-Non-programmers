@@ -1,4 +1,5 @@
 import { injectGlobal } from 'emotion'
+import { Heading, Provider } from 'rebass/emotion'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -11,4 +12,10 @@ injectGlobal`
   }
 `
 
-export default () => <div>Hello World!</div>
+export default () => (
+  <div>
+    <Provider>
+      <Heading>Hello World!</Heading>
+    </Provider>
+  </div>
+)

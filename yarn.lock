@@ -634,6 +634,12 @@
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.6.3.tgz#0e7a5604626fc6c6d4ac4061a2f5ac80d50262a4"
 
+"@emotion/is-prop-valid@^0.6.1":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.6.2.tgz#a76a16b174ff03f8e3a27faf6259bacd21a02adc"
+  dependencies:
+    "@emotion/memoize" "^0.6.2"
+
 "@emotion/memoize@^0.6.1", "@emotion/memoize@^0.6.2":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.6.2.tgz#138e00b332d519b4e307bded6159e5ba48aba3ae"
@@ -1390,6 +1396,12 @@ create-emotion-server@^9.2.4:
     multipipe "^1.0.2"
     through "^2.3.8"
 
+create-emotion-styled@^9.2.3:
+  version "9.2.3"
+  resolved "https://registry.yarnpkg.com/create-emotion-styled/-/create-emotion-styled-9.2.3.tgz#17fb13b3ae4c165ea6e5a11356ab8b9ca1dad9c5"
+  dependencies:
+    "@emotion/is-prop-valid" "^0.6.1"
+
 create-emotion@^9.2.4:
   version "9.2.4"
   resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-9.2.4.tgz#0a4379f6bf0708c54fe26bfcd6b6bd3592e8cf23"
@@ -1636,6 +1648,12 @@ emotion-server@^9.2.4:
   resolved "https://registry.yarnpkg.com/emotion-server/-/emotion-server-9.2.4.tgz#193c47ab054e69b4cf2e2dc959d4b146cd901871"
   dependencies:
     create-emotion-server "^9.2.4"
+
+emotion-theming@^9.2.4:
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-9.2.4.tgz#975837861ef2028704a014a60c64ebfabd432755"
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
 
 emotion@^9.2.4:
   version "9.2.4"
@@ -2235,6 +2253,10 @@ hmac-drbg@^1.0.0:
 hoist-non-react-statics@2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
+
+hoist-non-react-statics@^2.3.1:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
 hosted-git-info@^2.1.4:
   version "2.6.1"
@@ -3516,6 +3538,13 @@ react-dom@^16.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-emotion@^9.2.4:
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.2.4.tgz#98e00f70ce2ca4ee13923460123e763e492c013a"
+  dependencies:
+    babel-plugin-emotion "^9.2.4"
+    create-emotion-styled "^9.2.3"
 
 react-lifecycles-compat@3.0.4:
   version "3.0.4"
