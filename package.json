@@ -2,9 +2,12 @@
   "private": true,
   "dependencies": {
     "@zeit/next-typescript": "^1.1.0",
+    "emotion": "^9.2.4",
+    "emotion-server": "^9.2.4",
     "next": "6.1.0-canary.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "rebass": "^2.0.0",
     "typescript": "^2.9.2"
   },
   "scripts": {
