@@ -5,11 +5,7 @@ import Emoji from '../components/Emoji'
 import InlineBox from '../components/InlineBox'
 
 const FunctionCall: React.SFC<{}> = () => (
-  <InlineBox
-    className={css({
-      border: '1px solid blue'
-    })}
-  >
+  <InlineBox border={2} borderColor="darkYellow">
     <Flex>
       <Flex alignItems="center" bg="blue">
         <Box>

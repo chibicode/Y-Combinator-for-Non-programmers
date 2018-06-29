@@ -4107,7 +4107,7 @@ styled-jsx@2.2.6:
     stylis "3.4.10"
     stylis-rule-sheet "0.0.8"
 
-"styled-system@>=1.1 || >=2.0", styled-system@>=2.0.2, styled-system@^2.3.1:
+"styled-system@>=1.1 || >=2.0", styled-system@>=2.0.2, styled-system@^2.3.1, styled-system@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-2.3.2.tgz#b5dbc7d197b41dd06b80b16e17b52503363a5aac"
   dependencies:
@@ -4145,7 +4145,7 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-system-components@^2.2.1:
+system-components@^2.2.1, system-components@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/system-components/-/system-components-2.2.2.tgz#dbc005a8bfa64562e8aac9fa4c4f10fea9e54f6e"
   dependencies:
