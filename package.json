@@ -1,13 +1,24 @@
 {
   "private": true,
   "dependencies": {
+    "@zeit/next-typescript": "^1.1.0",
     "next": "6.1.0-canary.0",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "typescript": "^2.9.2"
   },
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
     "start": "next start"
+  },
+  "devDependencies": {
+    "@types/next": "^6.0.3",
+    "@types/react": "^16.4.5",
+    "prettier": "^1.13.7",
+    "prettier-tslint": "^0.4.0",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-react": "^3.6.0"
   }
 }
