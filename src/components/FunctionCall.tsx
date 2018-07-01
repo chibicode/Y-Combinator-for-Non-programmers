@@ -1,30 +1,42 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css } from 'emotion'
 import React from 'react'
-import { Box, Flex } from 'rebass/emotion'
-import Emoji from '../components/Emoji'
-import InlineBox from '../components/InlineBox'
+import { Box } from 'rebass/emotion'
+import Flex from '../components/Flex'
+import InlineFlex from '../components/InlineFlex'
 
 const FunctionCall: React.SFC<{}> = () => (
-  <InlineBox border={2} borderColor="darkYellow">
-    <Flex>
-      <Flex alignItems="center" bg="blue">
-        <Box>
-          <Emoji>⭐️</Emoji>
-        </Box>
-      </Flex>
+  <InlineFlex
+    border={2}
+    borderColor="darkYellow"
+    borderRadius={5}
+    className={css`
+      overflow: hidden;
+    `}
+  >
+    <Flex
+      p={3}
+      alignItems="center"
+      color="darkYellow"
+      bg="lightYellow"
+      borderRight={2}
+      borderColor="darkYellow"
+    >
       <Box>
-        <div
-          className={css({
-            width: 200,
-            height: 200,
-            background: 'red'
-          })}
-        >
-          Test
-        </div>
+        <FontAwesomeIcon icon="star" />
       </Box>
     </Flex>
-  </InlineBox>
+    <Box>
+      <div
+        className={css({
+          width: 200,
+          height: 200
+        })}
+      >
+        Test
+      </div>
+    </Box>
+  </InlineFlex>
 )
 
 export default FunctionCall
