@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css } from 'emotion'
 import React from 'react'
-import { Box } from 'rebass/emotion'
 import Flex from '../components/Flex'
 import InlineFlex from '../components/InlineFlex'
 
@@ -15,27 +14,34 @@ const FunctionCall: React.SFC<{}> = () => (
     `}
   >
     <Flex
-      p={3}
+      p={2}
       alignItems="center"
       color="darkYellow"
       bg="lightYellow"
       borderRight={2}
       borderColor="darkYellow"
     >
-      <Box>
-        <FontAwesomeIcon icon="star" />
-      </Box>
+      <FontAwesomeIcon icon="star" />
     </Flex>
-    <Box>
-      <div
-        className={css({
-          width: 200,
-          height: 200
-        })}
+    <Flex flexDirection="column">
+      <Flex
+        p={3}
+        bg="lightYellow2"
+        justifyContent="center"
+        borderBottom={1}
+        borderColor="darkYellow"
       >
-        Test
-      </div>
-    </Box>
+        x
+      </Flex>
+      <Flex
+        p={3}
+        justifyContent="center"
+        borderTop={1}
+        borderColor="darkYellow"
+      >
+        f
+      </Flex>
+    </Flex>
   </InlineFlex>
 )
 

@@ -5,6 +5,7 @@ const Flex = sys(
   {
     is: RebassFlex
   },
+  'minWidth',
   'borders',
   'borderColor',
   'borderRadius'
