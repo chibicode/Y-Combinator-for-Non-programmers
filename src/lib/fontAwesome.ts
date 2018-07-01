@@ -1,4 +1,4 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowAltRight, faCheck } from '@fortawesome/pro-solid-svg-icons'
+import { faCheck, faLevelUp } from '@fortawesome/pro-solid-svg-icons'
 
-library.add(faCheck, faArrowAltRight)
+library.add(faCheck, faLevelUp)

@@ -35,47 +35,37 @@ const FunctionCall: React.SFC<{}> = () => (
           3
         </InlineFlex>
       </Flex>
-      <Flex
-        p={3}
-        justifyContent="center"
-        alignItems="center"
-        borderTop={1}
-        borderColor="darkYellow"
-      >
-        <InlineFlex
-          bg="lightYellow"
-          borderRadius={5}
-          className={css`
-            height: 2em;
-            line-height: 2em;
-            min-width: 2em;
-            justify-content: center;
-            align-items: center;
-          `}
-        >
-          x
-        </InlineFlex>
-        <InlineFlex color="darkYellow" p={2}>
-          <FontAwesomeIcon icon={['fas', 'arrow-alt-right']} />
-        </InlineFlex>
-        <InlineFlex
-          bg="lightYellow"
-          borderRadius={5}
-          className={css`
-            height: 2em;
-            line-height: 2em;
-            min-width: 2em;
-            justify-content: center;
-            align-items: center;
-          `}
-        >
-          x
-        </InlineFlex>
-        <InlineFlex p={2}>+ 5</InlineFlex>
+      <Flex p={3} flexDirection="column" borderTop={1} borderColor="darkYellow">
+        <Flex mb={2}>
+          <InlineFlex
+            bg="lightYellow"
+            borderRadius={5}
+            className={css`
+              height: 2em;
+              line-height: 2em;
+              min-width: 2em;
+              justify-content: center;
+              align-items: center;
+            `}
+          >
+            x
+          </InlineFlex>
+        </Flex>
+        <Flex ml={2} alignItems="center">
+          <InlineFlex color="darkYellow" p={2} mr={2}>
+            <FontAwesomeIcon
+              icon={['fas', 'level-up']}
+              transform={{ rotate: 90 }}
+            />
+          </InlineFlex>
+          <Flex bg="lightYellow" p={3} borderRadius={5}>
+            x + 5
+          </Flex>
+        </Flex>
       </Flex>
     </Flex>
     <Flex
-      p={2}
+      p={3}
       alignItems="center"
       color="darkYellow"
       bg="lightYellow"
