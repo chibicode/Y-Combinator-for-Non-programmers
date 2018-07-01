@@ -13,34 +13,77 @@ const FunctionCall: React.SFC<{}> = () => (
       overflow: hidden;
     `}
   >
+    <Flex flexDirection="column">
+      <Flex
+        p={3}
+        justifyContent="center"
+        borderBottom={1}
+        borderColor="darkYellow"
+      >
+        {/* Params have light background. Don't allow user input - that'd be better UX. Instead, just generate a new example */}
+        <InlineFlex
+          bg="lightYellow"
+          borderRadius={5}
+          className={css`
+            height: 2em;
+            line-height: 2em;
+            min-width: 2em;
+            justify-content: center;
+            align-items: center;
+          `}
+        >
+          3
+        </InlineFlex>
+      </Flex>
+      <Flex
+        p={3}
+        justifyContent="center"
+        alignItems="center"
+        borderTop={1}
+        borderColor="darkYellow"
+      >
+        <InlineFlex
+          bg="lightYellow"
+          borderRadius={5}
+          className={css`
+            height: 2em;
+            line-height: 2em;
+            min-width: 2em;
+            justify-content: center;
+            align-items: center;
+          `}
+        >
+          x
+        </InlineFlex>
+        <InlineFlex color="darkYellow" p={2}>
+          <FontAwesomeIcon icon={['fas', 'arrow-alt-right']} />
+        </InlineFlex>
+        <InlineFlex
+          bg="lightYellow"
+          borderRadius={5}
+          className={css`
+            height: 2em;
+            line-height: 2em;
+            min-width: 2em;
+            justify-content: center;
+            align-items: center;
+          `}
+        >
+          x
+        </InlineFlex>
+        <InlineFlex p={2}>+ 5</InlineFlex>
+      </Flex>
+    </Flex>
     <Flex
       p={2}
       alignItems="center"
       color="darkYellow"
       bg="lightYellow"
-      borderRight={2}
+      borderLeft={2}
       borderColor="darkYellow"
     >
-      <FontAwesomeIcon icon="star" />
-    </Flex>
-    <Flex flexDirection="column">
-      <Flex
-        p={3}
-        bg="lightYellow2"
-        justifyContent="center"
-        borderBottom={1}
-        borderColor="darkYellow"
-      >
-        x
-      </Flex>
-      <Flex
-        p={3}
-        justifyContent="center"
-        borderTop={1}
-        borderColor="darkYellow"
-      >
-        f
-      </Flex>
+      {/* Switch to "times" icon if it's inside some other function */}
+      <FontAwesomeIcon icon="check" />
     </Flex>
   </InlineFlex>
 )

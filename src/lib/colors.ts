@@ -1,9 +1,16 @@
-import { brown, yellow } from '@material-ui/core/colors'
+import { brown, grey, yellow } from '@material-ui/core/colors'
+import Color from 'color'
+
+const toGrey = colorString =>
+  Color(colorString)
+    .desaturate(0.8)
+    .lighten(0.05)
+    .string()
 
 const colors = {
-  lightYellow: yellow[100],
-  lightYellow2: yellow[50],
-  darkYellow: yellow[600],
+  black: grey[800],
+  lightYellow: toGrey(yellow[100]),
+  darkYellow: toGrey(yellow[600]),
   lightBrown: brown[100]
 }
 

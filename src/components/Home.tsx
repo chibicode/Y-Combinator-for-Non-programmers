@@ -1,11 +1,9 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faStar } from '@fortawesome/pro-solid-svg-icons'
 import { injectGlobal } from 'emotion'
 import React from 'react'
 import { Container } from 'rebass/emotion'
 import FunctionCall from '../components/FunctionCall'
 import ThemeProvider from '../components/ThemeProvider'
-library.add(faStar)
+import '../lib/fontAwesome'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -20,7 +18,7 @@ injectGlobal`
 
 const Home: React.SFC<{}> = () => (
   <ThemeProvider>
-    <Container pt={4}>
+    <Container pt={4} color="black">
       <FunctionCall />
     </Container>
   </ThemeProvider>
