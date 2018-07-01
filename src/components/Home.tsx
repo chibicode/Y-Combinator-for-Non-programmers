@@ -1,6 +1,7 @@
 import { injectGlobal } from 'emotion'
 import React from 'react'
 import { Container } from 'rebass/emotion'
+import Flex from '../components/Flex'
 import FunctionCall from '../components/FunctionCall'
 import ThemeProvider from '../components/ThemeProvider'
 import '../lib/fontAwesome'
@@ -19,7 +20,11 @@ injectGlobal`
 const Home: React.SFC<{}> = () => (
   <ThemeProvider>
     <Container pt={4} color="black">
-      <FunctionCall />
+      <Flex>
+        <Flex mr={2}>
+          <FunctionCall />
+        </Flex>
+      </Flex>
     </Container>
   </ThemeProvider>
 )
