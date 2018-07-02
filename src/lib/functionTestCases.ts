@@ -1,4 +1,4 @@
-const functionTestCases: CallExpression[] = [
+const functionTestCases: ExpressionTypes.CallExpression[] = [
   // (x => x + 1)(2)
   {
     type: 'call',
@@ -20,6 +20,35 @@ const functionTestCases: CallExpression[] = [
         right: {
           type: 'number',
           value: 1
+        }
+      }
+    }
+  },
+  // (x, y => x + y)(5, 6)
+  {
+    type: 'call',
+    args: [
+      {
+        type: 'number',
+        value: 5
+      },
+      {
+        type: 'number',
+        value: 6
+      }
+    ],
+    func: {
+      type: 'function',
+      args: ['x', 'y'],
+      body: {
+        type: 'sum',
+        left: {
+          type: 'variable',
+          name: 'x'
+        },
+        right: {
+          type: 'variable',
+          name: 'y'
         }
       }
     }

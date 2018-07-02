@@ -1,4 +1,6 @@
-export const expressionToString = (expression: Expression) => {
+export const expressionToString = (
+  expression: ExpressionTypes.AnyExpression
+) => {
   switch (expression.type) {
     case 'number': {
       return `${expression.value}`
