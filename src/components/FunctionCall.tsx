@@ -1,17 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css } from 'emotion'
 import React from 'react'
+import Expression from '../components/Expression'
 import Flex from '../components/Flex'
 import FunctionCallStyles from '../components/FunctionCallStyles'
 import InlineFlex from '../components/InlineFlex'
 import ShadedSquare from '../components/ShadedSquare'
+import { expressionToString } from '../lib/functionUtils'
 
 interface FunctionCallProps {
-  args: () => number[]
-  definition: () => React.ReactNode
+  expression: CallExpression
 }
 
-const FunctionCall: React.SFC<FunctionCallProps> = ({ args, definition }) => (
+const FunctionCall: React.SFC<FunctionCallProps> = ({ expression }) => (
   <FunctionCallStyles>
     <InlineFlex
       border={2}
@@ -28,11 +29,14 @@ const FunctionCall: React.SFC<FunctionCallProps> = ({ args, definition }) => (
           borderBottom={1}
           borderColor="darkYellow"
         >
-          {args().map((argument, index) => (
-            <InlineFlex px={1} key={`${argument}-${index}`}>
-              <ShadedSquare>{argument}</ShadedSquare>
-            </InlineFlex>
-          ))}
+          {expression.args &&
+            expression.args.map((arg, index) => (
+              <InlineFlex px={1} key={`${expressionToString(arg)}-${index}`}>
+                <ShadedSquare>
+                  <Expression expression={arg} />
+                </ShadedSquare>
+              </InlineFlex>
+            ))}
         </Flex>
         <Flex
           p={3}
@@ -40,7 +44,7 @@ const FunctionCall: React.SFC<FunctionCallProps> = ({ args, definition }) => (
           borderTop={1}
           borderColor="darkYellow"
         >
-          {definition()}
+          <Expression expression={expression.func} />
         </Flex>
         <Flex
           p={3}

@@ -11,7 +11,7 @@ interface VariableExpression {
 interface FunctionExpression {
   type: 'function'
   args?: string[]
-  body: Expression
+  body: AnyExpression
 }
 
 interface SumExpression {
@@ -25,13 +25,13 @@ interface IfExpression {
   compare: '<' | '<=' | '>=' | '>'
   left: CanReturnNumberExpression
   right: CanReturnNumberExpression
-  trueCase: Expression
-  falseCase: Expression
+  trueCase: AnyExpression
+  falseCase: AnyExpression
 }
 
 interface CallExpression {
   type: 'call'
-  args?: Expression[]
+  args?: AnyExpression[]
   func: CanReturnFunctionExpression
 }
 
@@ -48,4 +48,4 @@ type CanReturnFunctionExpression =
   | IfExpression
   | CallExpression
 
-type Expression = CanReturnNumberExpression | CanReturnFunctionExpression
+type AnyExpression = CanReturnNumberExpression | CanReturnFunctionExpression
