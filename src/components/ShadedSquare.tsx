@@ -13,6 +13,8 @@ const ShadedSquare: React.SFC<ShadedSquareProps> = ({
   <InlineFlex
     bg="lightYellow"
     borderRadius={5}
+    borderColor="darkYellow"
+    border={1}
     px={noPadding ? 0 : 3}
     py={noPadding ? 0 : 2}
     alignItems="center"

@@ -6,12 +6,17 @@ import FunctionCallStyles from '../components/FunctionCallStyles'
 import InlineFlex from '../components/InlineFlex'
 import ShadedSquare from '../components/ShadedSquare'
 
-const FunctionCall: React.SFC<{}> = () => (
+interface FunctionCallProps {
+  args: () => number[]
+  definition: () => React.ReactNode
+}
+
+const FunctionCall: React.SFC<FunctionCallProps> = ({ args, definition }) => (
   <FunctionCallStyles>
     <InlineFlex
       border={2}
       borderColor="darkYellow"
-      borderRadius={5}
+      borderRadius={2}
       className={css`
         overflow: hidden;
       `}
@@ -23,8 +28,11 @@ const FunctionCall: React.SFC<{}> = () => (
           borderBottom={1}
           borderColor="darkYellow"
         >
-          {/* Params have light background. Don't allow user input - that'd be better UX. Instead, just generate a new example */}
-          <ShadedSquare>3</ShadedSquare>
+          {args().map((argument, index) => (
+            <InlineFlex px={1} key={`${argument}-${index}`}>
+              <ShadedSquare>{argument}</ShadedSquare>
+            </InlineFlex>
+          ))}
         </Flex>
         <Flex
           p={3}
@@ -32,47 +40,7 @@ const FunctionCall: React.SFC<{}> = () => (
           borderTop={1}
           borderColor="darkYellow"
         >
-          <Flex mb={2}>
-            <ShadedSquare>x</ShadedSquare>
-          </Flex>
-          <Flex ml={2} alignItems="top">
-            <InlineFlex color="darkYellow" p={2} mr={2} mt={2}>
-              <FontAwesomeIcon
-                icon={['fas', 'level-up']}
-                transform={{ rotate: 90 }}
-              />
-            </InlineFlex>
-            <ShadedSquare noPadding>
-              <Flex flexDirection="column">
-                <Flex>
-                  <InlineFlex
-                    bg="lightYellow"
-                    borderRadius={5}
-                    className={css`
-                      height: 2em;
-                      line-height: 2em;
-                      min-width: 2em;
-                      justify-content: center;
-                      align-items: center;
-                    `}
-                  >
-                    n
-                  </InlineFlex>
-                </Flex>
-                <Flex ml={2} alignItems="top">
-                  <InlineFlex color="darkYellow" py={2} pr={2} pl={1} mx={2}>
-                    <FontAwesomeIcon
-                      icon={['fas', 'level-up']}
-                      transform={{ rotate: 90 }}
-                    />
-                  </InlineFlex>
-                  <Flex bg="lightYellow" py={1} pl={1} pr={3} borderRadius={5}>
-                    x + n
-                  </Flex>
-                </Flex>
-              </Flex>
-            </ShadedSquare>
-          </Flex>
+          {definition()}
         </Flex>
         <Flex
           p={3}
