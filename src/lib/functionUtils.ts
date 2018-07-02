@@ -32,3 +32,36 @@ export const expressionToString = (
     }
   }
 }
+
+export const isInnerMostCall = (expression: ExpressionTypes.CallExpression) =>
+  (expression.args || []).reduce((acc, current) => {
+    return !containsCall(current) && acc
+  }, true) && !containsCall(expression.func)
+
+export const containsCall = (expression: ExpressionTypes.AnyExpression) => {
+  switch (expression.type) {
+    case 'number': {
+      return false
+    }
+    case 'variable': {
+      return false
+    }
+    case 'function': {
+      return containsCall(expression.body)
+    }
+    case 'sum': {
+      return containsCall(expression.left) || containsCall(expression.right)
+    }
+    case 'if': {
+      return (
+        containsCall(expression.left) ||
+        containsCall(expression.right) ||
+        containsCall(expression.trueCase) ||
+        containsCall(expression.falseCase)
+      )
+    }
+    case 'call': {
+      return true
+    }
+  }
+}
