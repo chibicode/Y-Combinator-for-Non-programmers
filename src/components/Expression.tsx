@@ -61,6 +61,7 @@ const Expression: React.SFC<ExpressionProps> = ({
           return (
             <FunctionCallExpression
               expression={expression}
+              isOuterMost={isOuterMost}
               highlightVariables={highlightVariables}
             />
           )

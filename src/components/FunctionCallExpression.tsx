@@ -6,57 +6,74 @@ import ExpressionWrapper from '../components/ExpressionWrapper'
 import Flex from '../components/Flex'
 import FunctionCallStyles from '../components/FunctionCallStyles'
 import InlineFlex from '../components/InlineFlex'
-import { expressionToString } from '../lib/functionUtils'
+import { expressionToString, isInnerMostCall } from '../lib/functionUtils'
 
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression
+  isOuterMost?: boolean
   highlightVariables?: string[]
 }
 
 const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
   expression,
+  isOuterMost,
   highlightVariables
-}) => (
-  <FunctionCallStyles>
-    <InlineFlex
-      border={2}
-      borderColor="darkYellow"
-      borderRadius={2}
-      className={css`
-        overflow: hidden;
-      `}
-    >
-      <Flex flexDirection="column">
-        <Flex p={3} borderBottom={1} borderColor="darkYellow" bg="lightYellow">
-          <Flex flex={'auto 1'}>
-            {expression.args &&
-              expression.args.map((arg, index) => (
-                <InlineFlex px={1} key={`${expressionToString(arg)}-${index}`}>
-                  <ExpressionWrapper borderStyle="solid">
-                    <Expression expression={arg} noWrapper />
-                  </ExpressionWrapper>
-                </InlineFlex>
-              ))}
+}) => {
+  const isInnerMost = isInnerMostCall(expression)
+  return (
+    <FunctionCallStyles>
+      <InlineFlex
+        border={2}
+        borderColor="darkYellow"
+        borderRadius={2}
+        className={css`
+          overflow: hidden;
+        `}
+      >
+        <Flex flexDirection="column">
+          <Flex
+            p={3}
+            borderBottom={1}
+            borderColor="darkYellow"
+            bg={isInnerMost && 'lightYellow'}
+          >
+            <Flex flex={'auto 1'}>
+              {expression.args &&
+                expression.args.map((arg, index) => (
+                  <InlineFlex
+                    px={1}
+                    key={`${expressionToString(arg)}-${index}`}
+                  >
+                    <ExpressionWrapper
+                      borderStyle={isInnerMost ? 'solid' : 'dashed'}
+                    >
+                      <Expression expression={arg} noWrapper />
+                    </ExpressionWrapper>
+                  </InlineFlex>
+                ))}
+            </Flex>
+            {isInnerMost && (
+              <Flex color="darkYellow" alignItems="center" p={1}>
+                <FontAwesomeIcon icon="check" />
+              </Flex>
+            )}
           </Flex>
-          <Flex color="darkYellow" alignItems="center" p={1}>
-            <FontAwesomeIcon icon="check" />
+          <Flex
+            p={3}
+            flexDirection="column"
+            borderTop={1}
+            borderColor="darkYellow"
+          >
+            <Expression
+              expression={expression.func}
+              isOuterMost={isOuterMost}
+              highlightVariables={highlightVariables}
+            />
           </Flex>
         </Flex>
-        <Flex
-          p={3}
-          flexDirection="column"
-          borderTop={1}
-          borderColor="darkYellow"
-        >
-          <Expression
-            expression={expression.func}
-            isOuterMost
-            highlightVariables={highlightVariables}
-          />
-        </Flex>
-      </Flex>
-    </InlineFlex>
-  </FunctionCallStyles>
-)
+      </InlineFlex>
+    </FunctionCallStyles>
+  )
+}
 
 export default FunctionCallExpression

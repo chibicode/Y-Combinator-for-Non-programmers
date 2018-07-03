@@ -33,12 +33,7 @@ export const expressionToString = (
   }
 }
 
-export const isInnerMostCall = (expression: ExpressionTypes.CallExpression) =>
-  (expression.args || []).reduce((acc, current) => {
-    return !containsCall(current) && acc
-  }, true) && !containsCall(expression.func)
-
-export const containsCall = (expression: ExpressionTypes.AnyExpression) => {
+const containsCall = (expression: ExpressionTypes.AnyExpression) => {
   switch (expression.type) {
     case 'number': {
       return false
@@ -65,3 +60,8 @@ export const containsCall = (expression: ExpressionTypes.AnyExpression) => {
     }
   }
 }
+
+export const isInnerMostCall = (expression: ExpressionTypes.CallExpression) =>
+  (expression.args || []).reduce((acc, current) => {
+    return !containsCall(current) && acc
+  }, true) && !containsCall(expression.func)

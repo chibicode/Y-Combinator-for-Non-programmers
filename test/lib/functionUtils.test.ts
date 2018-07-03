@@ -1,4 +1,7 @@
-import { expressionToString } from '../../src/lib/functionUtils'
+import {
+  expressionToString,
+  isInnerMostCall
+} from '../../src/lib/functionUtils'
 
 describe('expressionToString', () => {
   test('number', () => {
@@ -97,5 +100,76 @@ describe('expressionToString', () => {
         }
       })
     ).toBe('(((x, y) => x)(1, 2))')
+  })
+})
+
+describe('isInnerMostCall', () => {
+  test('is inner most call', () => {
+    expect(
+      isInnerMostCall({
+        type: 'call',
+        args: [
+          {
+            type: 'number',
+            value: 1
+          },
+          {
+            type: 'number',
+            value: 2
+          }
+        ],
+        func: {
+          type: 'function',
+          args: ['x', 'y'],
+          body: {
+            type: 'variable',
+            name: 'x'
+          }
+        }
+      })
+    ).toBe(true)
+  })
+
+  test('contains some other call', () => {
+    expect(
+      isInnerMostCall({
+        type: 'call',
+        args: [
+          {
+            type: 'number',
+            value: 1
+          },
+          {
+            type: 'number',
+            value: 2
+          }
+        ],
+        func: {
+          type: 'function',
+          args: ['x', 'y'],
+          body: {
+            type: 'call',
+            args: [
+              {
+                type: 'number',
+                value: 1
+              },
+              {
+                type: 'number',
+                value: 2
+              }
+            ],
+            func: {
+              type: 'function',
+              args: ['x', 'y'],
+              body: {
+                type: 'variable',
+                name: 'x'
+              }
+            }
+          }
+        }
+      })
+    ).toBe(false)
   })
 })

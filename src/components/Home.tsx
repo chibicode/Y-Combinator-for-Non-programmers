@@ -24,7 +24,7 @@ const Home: React.SFC<{}> = () => (
       <Flex>
         {functionTestCases.map((expression, index) => (
           <Flex mr={3} key={index}>
-            <Expression expression={expression} />
+            <Expression expression={expression} isOuterMost />
           </Flex>
         ))}
       </Flex>

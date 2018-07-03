@@ -29,7 +29,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
         ))}
     </Flex>
     <Flex ml={2} alignItems="top">
-      <InlineFlex color="darkYellow" p={2} mr={2} mt={2}>
+      <InlineFlex color="darkYellow" p={2} m={2}>
         <FontAwesomeIcon
           icon={['fas', 'level-up']}
           transform={{ rotate: 90 }}
