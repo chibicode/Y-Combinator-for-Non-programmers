@@ -90,6 +90,90 @@ const functionTestCases: ExpressionTypes.CallExpression[] = [
         }
       }
     }
+  },
+  // (f => g => x => f(g(x)))(a => a + 1)(b => b + 2)(3)
+  {
+    type: 'call',
+    args: [
+      {
+        type: 'number',
+        value: 3
+      }
+    ],
+    func: {
+      type: 'call',
+      args: [
+        {
+          type: 'function',
+          args: ['b'],
+          body: {
+            type: 'sum',
+            left: {
+              type: 'variable',
+              name: 'b'
+            },
+            right: {
+              type: 'number',
+              value: 2
+            }
+          }
+        }
+      ],
+      func: {
+        type: 'call',
+        args: [
+          {
+            type: 'function',
+            args: ['a'],
+            body: {
+              type: 'sum',
+              left: {
+                type: 'variable',
+                name: 'a'
+              },
+              right: {
+                type: 'number',
+                value: 1
+              }
+            }
+          }
+        ],
+        func: {
+          type: 'function',
+          args: ['f'],
+          body: {
+            type: 'function',
+            args: ['g'],
+            body: {
+              type: 'function',
+              args: ['x'],
+              body: {
+                type: 'call',
+                args: [
+                  {
+                    type: 'call',
+                    args: [
+                      {
+                        type: 'variable',
+                        name: 'x'
+                      }
+                    ],
+                    func: {
+                      type: 'variable',
+                      name: 'g'
+                    }
+                  }
+                ],
+                func: {
+                  type: 'variable',
+                  name: 'f'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 ]
 

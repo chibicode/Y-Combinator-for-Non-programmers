@@ -52,7 +52,7 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
                   </InlineFlex>
                 ))}
             </Flex>
-            <Flex color="darkYellow" alignItems="center" p={1}>
+            <Flex color="darkYellow" alignItems="center" py={1} pr={1} pl={5}>
               <FontAwesomeIcon
                 icon={isInnerMost ? 'check' : ['far', 'exclamation-triangle']}
               />
@@ -60,9 +60,9 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
           </Flex>
           <Flex
             p={3}
-            flexDirection="column"
             borderTop={1}
             borderColor="darkYellow"
+            justifyContent="center"
           >
             <Expression
               expression={expression.func}
