@@ -1,6 +1,6 @@
 import {
   expressionToString,
-  isInnerMostCall
+  isInnerMostImmediatelyExecutableCall
 } from '../../src/lib/functionUtils'
 
 describe('expressionToString', () => {
@@ -106,7 +106,7 @@ describe('expressionToString', () => {
 describe('isInnerMostCall', () => {
   test('is inner most call', () => {
     expect(
-      isInnerMostCall({
+      isInnerMostImmediatelyExecutableCall({
         type: 'call',
         args: [
           {
@@ -132,7 +132,7 @@ describe('isInnerMostCall', () => {
 
   test('contains some other call', () => {
     expect(
-      isInnerMostCall({
+      isInnerMostImmediatelyExecutableCall({
         type: 'call',
         args: [
           {

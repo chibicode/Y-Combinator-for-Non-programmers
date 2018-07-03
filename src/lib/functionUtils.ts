@@ -33,7 +33,9 @@ export const expressionToString = (
   }
 }
 
-const containsCall = (expression: ExpressionTypes.AnyExpression) => {
+const containsImmediatelyExecutableCall = (
+  expression: ExpressionTypes.AnyExpression
+) => {
   switch (expression.type) {
     case 'number': {
       return false
@@ -42,26 +44,40 @@ const containsCall = (expression: ExpressionTypes.AnyExpression) => {
       return false
     }
     case 'function': {
-      return containsCall(expression.body)
+      return containsImmediatelyExecutableCall(expression.body)
     }
     case 'sum': {
-      return containsCall(expression.left) || containsCall(expression.right)
+      return (
+        containsImmediatelyExecutableCall(expression.left) ||
+        containsImmediatelyExecutableCall(expression.right)
+      )
     }
     case 'if': {
       return (
-        containsCall(expression.left) ||
-        containsCall(expression.right) ||
-        containsCall(expression.trueCase) ||
-        containsCall(expression.falseCase)
+        containsImmediatelyExecutableCall(expression.left) ||
+        containsImmediatelyExecutableCall(expression.right) ||
+        containsImmediatelyExecutableCall(expression.trueCase) ||
+        containsImmediatelyExecutableCall(expression.falseCase)
       )
     }
     case 'call': {
-      return true
+      switch (expression.func.type) {
+        case 'function': {
+          return true
+        }
+        default: {
+          return containsImmediatelyExecutableCall(expression.func)
+        }
+      }
     }
   }
 }
 
-export const isInnerMostCall = (expression: ExpressionTypes.CallExpression) =>
+export const isInnerMostImmediatelyExecutableCall = (
+  expression: ExpressionTypes.CallExpression
+) =>
   (expression.args || []).reduce((acc, current) => {
-    return !containsCall(current) && acc
-  }, true) && !containsCall(expression.func)
+    return !containsImmediatelyExecutableCall(current) && acc
+  }, true) &&
+  !containsImmediatelyExecutableCall(expression.func) &&
+  containsImmediatelyExecutableCall(expression)

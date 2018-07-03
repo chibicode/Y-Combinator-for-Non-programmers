@@ -6,7 +6,10 @@ import ExpressionWrapper from '../components/ExpressionWrapper'
 import Flex from '../components/Flex'
 import FunctionCallStyles from '../components/FunctionCallStyles'
 import InlineFlex from '../components/InlineFlex'
-import { expressionToString, isInnerMostCall } from '../lib/functionUtils'
+import {
+  expressionToString,
+  isInnerMostImmediatelyExecutableCall
+} from '../lib/functionUtils'
 
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression
@@ -19,7 +22,7 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
   isOuterMost,
   highlightVariables
 }) => {
-  const isInnerMost = isInnerMostCall(expression)
+  const isInnerMost = isInnerMostImmediatelyExecutableCall(expression)
   return (
     <FunctionCallStyles>
       <InlineFlex
