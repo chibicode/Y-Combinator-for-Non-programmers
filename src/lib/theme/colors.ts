@@ -10,7 +10,7 @@ const toGrey = colorString =>
 const colors = {
   black: grey[800],
   lightYellow: toGrey(yellow[100]),
-  darkYellow: toGrey(yellow[600]),
+  darkYellow: toGrey(yellow[400]),
   lightBrown: brown[100]
 }
 

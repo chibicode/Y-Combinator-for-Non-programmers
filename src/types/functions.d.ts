@@ -23,7 +23,7 @@ declare namespace ExpressionTypes {
 
   interface IfExpression {
     type: 'if'
-    compare: '<' | '<=' | '>=' | '>'
+    compare: '<' | '<=' | '>=' | '>' | '=='
     left: CanReturnNumberExpression
     right: CanReturnNumberExpression
     trueCase: AnyExpression
