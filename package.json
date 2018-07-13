@@ -14,7 +14,7 @@
     "emotion-theming": "^9.2.4",
     "grid-styled": "^4.2.0",
     "lodash": "^4.17.10",
-    "next": "6.1.0-canary.0",
+    "next": "6.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.4",
