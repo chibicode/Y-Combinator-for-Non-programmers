@@ -51,31 +51,6 @@ describe('expressionToString', () => {
     ).toBe('(x + 1)')
   })
 
-  test('if', () => {
-    expect(
-      expressionToString({
-        type: 'if',
-        compare: '<=',
-        left: {
-          type: 'variable',
-          name: 'x'
-        },
-        right: {
-          type: 'number',
-          value: 1
-        },
-        trueCase: {
-          type: 'number',
-          value: 2
-        },
-        falseCase: {
-          type: 'number',
-          value: 4
-        }
-      })
-    ).toBe('((x <= 1) ? 2 : 4)')
-  })
-
   test('call', () => {
     expect(
       expressionToString({

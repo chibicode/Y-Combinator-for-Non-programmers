@@ -21,15 +21,6 @@ declare namespace ExpressionTypes {
     right: CanReturnNumberExpression
   }
 
-  interface IfExpression {
-    type: 'if'
-    compare: '<' | '<=' | '>=' | '>' | '=='
-    left: CanReturnNumberExpression
-    right: CanReturnNumberExpression
-    trueCase: AnyExpression
-    falseCase: AnyExpression
-  }
-
   interface CallExpression {
     type: 'call'
     args?: AnyExpression[]
@@ -40,13 +31,11 @@ declare namespace ExpressionTypes {
     | NumberExpression
     | VariableExpression
     | SumExpression
-    | IfExpression
     | CallExpression
 
   type CanReturnFunctionExpression =
     | VariableExpression
     | FunctionExpression
-    | IfExpression
     | CallExpression
 
   type AnyExpression = CanReturnNumberExpression | CanReturnFunctionExpression

@@ -18,13 +18,6 @@ export const expressionToString = (
         expression.right
       )})`
     }
-    case 'if': {
-      return `((${expressionToString(expression.left)} ${
-        expression.compare
-      } ${expressionToString(expression.right)}) ? ${expressionToString(
-        expression.trueCase
-      )} : ${expressionToString(expression.falseCase)})`
-    }
     case 'call': {
       return `(${expressionToString(expression.func)}(${(expression.args || [])
         .map(arg => expressionToString(arg))
@@ -50,14 +43,6 @@ const containsImmediatelyExecutableCall = (
       return (
         containsImmediatelyExecutableCall(expression.left) ||
         containsImmediatelyExecutableCall(expression.right)
-      )
-    }
-    case 'if': {
-      return (
-        containsImmediatelyExecutableCall(expression.left) ||
-        containsImmediatelyExecutableCall(expression.right) ||
-        containsImmediatelyExecutableCall(expression.trueCase) ||
-        containsImmediatelyExecutableCall(expression.falseCase)
       )
     }
     case 'call': {
