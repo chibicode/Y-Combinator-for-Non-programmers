@@ -11,7 +11,7 @@ declare namespace ExpressionTypes {
 
   interface FunctionExpression {
     type: 'function'
-    args?: string[]
+    arg: string
     body: AnyExpression
   }
 
@@ -23,7 +23,7 @@ declare namespace ExpressionTypes {
 
   interface CallExpression {
     type: 'call'
-    args?: AnyExpression[]
+    arg: AnyExpression
     func: CanReturnFunctionExpression
   }
 

@@ -26,13 +26,13 @@ describe('expressionToString', () => {
     expect(
       expressionToString({
         type: 'function',
-        args: ['x', 'y'],
+        arg: 'x',
         body: {
           type: 'variable',
           name: 'x'
         }
       })
-    ).toBe('((x, y) => x)')
+    ).toBe('((x) => x)')
   })
 
   test('sum', () => {
@@ -55,26 +55,20 @@ describe('expressionToString', () => {
     expect(
       expressionToString({
         type: 'call',
-        args: [
-          {
-            type: 'number',
-            value: 1
-          },
-          {
-            type: 'number',
-            value: 2
-          }
-        ],
+        arg: {
+          type: 'number',
+          value: 1
+        },
         func: {
           type: 'function',
-          args: ['x', 'y'],
+          arg: 'x',
           body: {
             type: 'variable',
             name: 'x'
           }
         }
       })
-    ).toBe('(((x, y) => x)(1, 2))')
+    ).toBe('(((x) => x)(1))')
   })
 })
 
@@ -83,19 +77,13 @@ describe('isInnerMostCall', () => {
     expect(
       isInnerMostImmediatelyExecutableCall({
         type: 'call',
-        args: [
-          {
-            type: 'number',
-            value: 1
-          },
-          {
-            type: 'number',
-            value: 2
-          }
-        ],
+        arg: {
+          type: 'number',
+          value: 1
+        },
         func: {
           type: 'function',
-          args: ['x', 'y'],
+          arg: 'x',
           body: {
             type: 'variable',
             name: 'x'
@@ -109,34 +97,22 @@ describe('isInnerMostCall', () => {
     expect(
       isInnerMostImmediatelyExecutableCall({
         type: 'call',
-        args: [
-          {
-            type: 'number',
-            value: 1
-          },
-          {
-            type: 'number',
-            value: 2
-          }
-        ],
+        arg: {
+          type: 'number',
+          value: 1
+        },
         func: {
           type: 'function',
-          args: ['x', 'y'],
+          arg: 'x',
           body: {
             type: 'call',
-            args: [
-              {
-                type: 'number',
-                value: 1
-              },
-              {
-                type: 'number',
-                value: 2
-              }
-            ],
+            arg: {
+              type: 'number',
+              value: 1
+            },
             func: {
               type: 'function',
-              args: ['x', 'y'],
+              arg: 'x',
               body: {
                 type: 'variable',
                 name: 'x'

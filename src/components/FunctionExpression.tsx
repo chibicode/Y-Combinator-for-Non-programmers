@@ -9,24 +9,23 @@ interface FunctionExpressionProps {
   expression: ExpressionTypes.FunctionExpression
   isOuterMost?: boolean
   borderType?: 'functionArgs'
-  highlightVariables?: string[]
+  highlightVariable?: string
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
   expression,
   isOuterMost,
-  highlightVariables
+  highlightVariable
 }) => (
   <div>
     <Flex mb={2}>
-      {expression.args &&
-        expression.args.map((arg, index) => (
-          <InlineFlex px={1} key={`${arg}-${index}`}>
-            <ExpressionWrapper borderStyle={isOuterMost ? 'solid' : 'dashed'}>
-              {arg}
-            </ExpressionWrapper>
-          </InlineFlex>
-        ))}
+      {expression.arg && (
+        <InlineFlex px={1} key={`${expression.arg}`}>
+          <ExpressionWrapper borderStyle={isOuterMost ? 'solid' : 'dashed'}>
+            {expression.arg}
+          </ExpressionWrapper>
+        </InlineFlex>
+      )}
     </Flex>
     <Flex ml={2} alignItems="top">
       <InlineFlex color="darkYellow" p={2} m={2}>
@@ -37,7 +36,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       </InlineFlex>
       <Expression
         expression={expression.body}
-        highlightVariables={isOuterMost ? expression.args : highlightVariables}
+        highlightVariable={isOuterMost ? expression.arg : highlightVariable}
       />
     </Flex>
   </div>

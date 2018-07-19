@@ -14,13 +14,13 @@ import {
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression
   isOuterMost?: boolean
-  highlightVariables?: string[]
+  highlightVariable?: string
 }
 
 const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
   expression,
   isOuterMost,
-  highlightVariables
+  highlightVariable
 }) => {
   const isInnerMost = isInnerMostImmediatelyExecutableCall(expression)
   return (
@@ -41,19 +41,18 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
             bg={isInnerMost && 'lightYellow'}
           >
             <Flex flex={'auto 1'}>
-              {expression.args &&
-                expression.args.map((arg, index) => (
-                  <InlineFlex
-                    px={1}
-                    key={`${expressionToString(arg)}-${index}`}
+              {expression.arg && (
+                <InlineFlex
+                  px={1}
+                  key={`${expressionToString(expression.arg)}`}
+                >
+                  <ExpressionWrapper
+                    borderStyle={isInnerMost ? 'solid' : 'dashed'}
                   >
-                    <ExpressionWrapper
-                      borderStyle={isInnerMost ? 'solid' : 'dashed'}
-                    >
-                      <Expression expression={arg} noWrapper />
-                    </ExpressionWrapper>
-                  </InlineFlex>
-                ))}
+                    <Expression expression={expression.arg} noWrapper />
+                  </ExpressionWrapper>
+                </InlineFlex>
+              )}
             </Flex>
             <Flex color="darkYellow" alignItems="center" py={1} pr={1} pl={5}>
               <FontAwesomeIcon
@@ -70,7 +69,7 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
             <Expression
               expression={expression.func}
               isOuterMost={isOuterMost}
-              highlightVariables={highlightVariables}
+              highlightVariable={highlightVariable}
             />
           </Flex>
         </Flex>

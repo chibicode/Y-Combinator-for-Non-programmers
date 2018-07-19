@@ -1,6 +1,10 @@
 import React from 'react'
+import Expression from '../components/Expression'
+import InlineFlex from '../components/InlineFlex'
 
-const SumExpression: React.SFC<> = ({ expression }) => (
+const SumExpression: React.SFC<{
+  expression: ExpressionTypes.SumExpression
+}> = ({ expression }) => (
   <InlineFlex alignItems="center">
     <InlineFlex>
       <Expression expression={expression.left} />
@@ -11,3 +15,5 @@ const SumExpression: React.SFC<> = ({ expression }) => (
     </InlineFlex>
   </InlineFlex>
 )
+
+export default SumExpression

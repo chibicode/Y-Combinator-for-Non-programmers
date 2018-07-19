@@ -9,9 +9,7 @@ export const expressionToString = (
       return expression.name
     }
     case 'function': {
-      return `((${(expression.args || []).join(', ')}) => ${expressionToString(
-        expression.body
-      )})`
+      return `((${expression.arg}) => ${expressionToString(expression.body)})`
     }
     case 'sum': {
       return `(${expressionToString(expression.left)} + ${expressionToString(
@@ -19,9 +17,9 @@ export const expressionToString = (
       )})`
     }
     case 'call': {
-      return `(${expressionToString(expression.func)}(${(expression.args || [])
-        .map(arg => expressionToString(arg))
-        .join(', ')}))`
+      return `(${expressionToString(expression.func)}(${expressionToString(
+        expression.arg
+      )}))`
     }
   }
 }
@@ -61,8 +59,6 @@ const containsImmediatelyExecutableCall = (
 export const isInnerMostImmediatelyExecutableCall = (
   expression: ExpressionTypes.CallExpression
 ) =>
-  (expression.args || []).reduce((acc, current) => {
-    return !containsImmediatelyExecutableCall(current) && acc
-  }, true) &&
+  !containsImmediatelyExecutableCall(expression.arg) &&
   !containsImmediatelyExecutableCall(expression.func) &&
   containsImmediatelyExecutableCall(expression)

@@ -2,15 +2,13 @@ const functionTestCases: ExpressionTypes.CallExpression[] = [
   // (x => x + 1)(2)
   {
     type: 'call',
-    args: [
-      {
-        type: 'number',
-        value: 2
-      }
-    ],
+    arg: {
+      type: 'number',
+      value: 2
+    },
     func: {
       type: 'function',
-      args: ['x'],
+      arg: 'x',
       body: {
         type: 'sum',
         left: {
@@ -24,58 +22,25 @@ const functionTestCases: ExpressionTypes.CallExpression[] = [
       }
     }
   },
-  // (x, y => x + y)(5, 6)
-  {
-    type: 'call',
-    args: [
-      {
-        type: 'number',
-        value: 5
-      },
-      {
-        type: 'number',
-        value: 6
-      }
-    ],
-    func: {
-      type: 'function',
-      args: ['x', 'y'],
-      body: {
-        type: 'sum',
-        left: {
-          type: 'variable',
-          name: 'x'
-        },
-        right: {
-          type: 'variable',
-          name: 'y'
-        }
-      }
-    }
-  },
   // ((a => b => a + b)(3))(4)
   {
     type: 'call',
-    args: [
-      {
-        type: 'number',
-        value: 4
-      }
-    ],
+    arg: {
+      type: 'number',
+      value: 4
+    },
     func: {
       type: 'call',
-      args: [
-        {
-          type: 'number',
-          value: 3
-        }
-      ],
+      arg: {
+        type: 'number',
+        value: 3
+      },
       func: {
         type: 'function',
-        args: ['a'],
+        arg: 'a',
         body: {
           type: 'function',
-          args: ['b'],
+          arg: 'b',
           body: {
             type: 'sum',
             left: {
@@ -94,76 +59,66 @@ const functionTestCases: ExpressionTypes.CallExpression[] = [
   // (f => g => x => f(g(x)))(a => a + 1)(b => b + 2)(3)
   {
     type: 'call',
-    args: [
-      {
-        type: 'number',
-        value: 3
-      }
-    ],
+    arg: {
+      type: 'number',
+      value: 3
+    },
     func: {
       type: 'call',
-      args: [
-        {
+      arg: {
+        type: 'function',
+        arg: 'b',
+        body: {
+          type: 'sum',
+          left: {
+            type: 'variable',
+            name: 'b'
+          },
+          right: {
+            type: 'number',
+            value: 2
+          }
+        }
+      },
+      func: {
+        type: 'call',
+        arg: {
           type: 'function',
-          args: ['b'],
+          arg: 'a',
           body: {
             type: 'sum',
             left: {
               type: 'variable',
-              name: 'b'
+              name: 'a'
             },
             right: {
               type: 'number',
-              value: 2
+              value: 1
             }
           }
-        }
-      ],
-      func: {
-        type: 'call',
-        args: [
-          {
-            type: 'function',
-            args: ['a'],
-            body: {
-              type: 'sum',
-              left: {
-                type: 'variable',
-                name: 'a'
-              },
-              right: {
-                type: 'number',
-                value: 1
-              }
-            }
-          }
-        ],
+        },
         func: {
           type: 'function',
-          args: ['f'],
+          arg: 'f',
           body: {
             type: 'function',
-            args: ['g'],
+            arg: 'g',
             body: {
               type: 'function',
-              args: ['x'],
+              arg: 'x',
               body: {
                 type: 'call',
-                args: [
-                  {
-                    type: 'call',
-                    args: [
-                      {
-                        type: 'variable',
-                        name: 'x'
-                      }
-                    ],
-                    func: {
-                      type: 'variable',
-                      name: 'g'
-                    }
+                arg: {
+                  type: 'call',
+                  arg: {
+                    type: 'variable',
+                    name: 'x'
+                  },
+                  func: {
+                    type: 'variable',
+                    name: 'g'
                   }
-                ],
+                },
                 func: {
                   type: 'variable',
                   name: 'f'

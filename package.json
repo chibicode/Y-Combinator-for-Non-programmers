@@ -28,6 +28,7 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
+    "tsc-watch": "tsc -w --noEmit",
     "test": "jest"
   },
   "devDependencies": {

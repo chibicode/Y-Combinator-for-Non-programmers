@@ -17,8 +17,4 @@ describe('y', () => {
   test('sum', () => {
     expect(sum(10)).toBe(55)
   })
-
-  test('sum2', () => {
-    expect(sum2(10)).toBe(55)
-  })
 })
