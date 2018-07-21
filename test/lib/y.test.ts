@@ -1,9 +1,4 @@
-import {
-  makeAdderWrapped,
-  sum,
-  sum2,
-  tennentMul3WithBinding
-} from '../../src/lib/y'
+import { makeAdderWrapped, sum, tennentMul3WithBinding } from '../../src/lib/y'
 
 describe('y', () => {
   test('tennentMul3WithBinding', () => {

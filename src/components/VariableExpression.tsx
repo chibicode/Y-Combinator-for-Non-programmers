@@ -4,7 +4,7 @@ import ExpressionWrapper from '../components/ExpressionWrapper'
 interface VariableExpressionProps {
   expression: ExpressionTypes.VariableExpression
   noWrapper?: boolean
-  highlightVariable?: string
+  highlightVariable?: boolean
 }
 
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
@@ -15,9 +15,7 @@ const VariableExpression: React.SFC<VariableExpressionProps> = ({
   noWrapper ? (
     <Fragment>{expression.name}</Fragment>
   ) : (
-    <ExpressionWrapper
-      borderStyle={highlightVariable === expression.name ? 'solid' : 'dashed'}
-    >
+    <ExpressionWrapper hasBorder={highlightVariable}>
       {expression.name}
     </ExpressionWrapper>
   )

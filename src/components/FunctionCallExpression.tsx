@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css } from 'emotion'
 import React from 'react'
 import Expression from '../components/Expression'
@@ -36,29 +35,16 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
         <Flex flexDirection="column">
           <Flex
             p={3}
+            justifyContent="center"
             borderBottom={1}
             borderColor="darkYellow"
-            bg={isInnerMost && 'lightYellow'}
+            bg={isInnerMost ? 'darkYellow' : 'lightYellow'}
           >
-            <Flex flex={'auto 1'}>
-              {expression.arg && (
-                <InlineFlex
-                  px={1}
-                  key={`${expressionToString(expression.arg)}`}
-                >
-                  <ExpressionWrapper
-                    borderStyle={isInnerMost ? 'solid' : 'dashed'}
-                  >
-                    <Expression expression={expression.arg} noWrapper />
-                  </ExpressionWrapper>
-                </InlineFlex>
-              )}
-            </Flex>
-            <Flex color="darkYellow" alignItems="center" py={1} pr={1} pl={5}>
-              <FontAwesomeIcon
-                icon={isInnerMost ? 'check' : ['far', 'exclamation-triangle']}
-              />
-            </Flex>
+            {expression.arg && (
+              <ExpressionWrapper hasBorder>
+                <Expression expression={expression.arg} noWrapper />
+              </ExpressionWrapper>
+            )}
           </Flex>
           <Flex
             p={3}

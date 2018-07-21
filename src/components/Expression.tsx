@@ -9,14 +9,12 @@ interface ExpressionProps {
   expression: ExpressionTypes.AnyExpression
   noWrapper?: boolean
   isOuterMost?: boolean
-  highlightVariable?: string
 }
 
 const Expression: React.SFC<ExpressionProps> = ({
   expression,
   noWrapper,
-  isOuterMost,
-  highlightVariable
+  isOuterMost
 }) => (
   <Fragment>
     {(() => {
@@ -28,11 +26,7 @@ const Expression: React.SFC<ExpressionProps> = ({
         }
         case 'variable': {
           return (
-            <VariableExpression
-              noWrapper={noWrapper}
-              expression={expression}
-              highlightVariable={highlightVariable}
-            />
+            <VariableExpression noWrapper={noWrapper} expression={expression} />
           )
         }
         case 'sum': {
@@ -40,19 +34,13 @@ const Expression: React.SFC<ExpressionProps> = ({
           return (
             <InlineFlex alignItems="center">
               <InlineFlex>
-                <Expression
-                  expression={expression.left}
-                  highlightVariable={highlightVariable}
-                />
+                <Expression expression={expression.left} />
               </InlineFlex>
               <InlineFlex px={3} py={2}>
                 +
               </InlineFlex>
               <InlineFlex>
-                <Expression
-                  expression={expression.right}
-                  highlightVariable={highlightVariable}
-                />
+                <Expression expression={expression.right} />
               </InlineFlex>
             </InlineFlex>
           )
@@ -62,7 +50,6 @@ const Expression: React.SFC<ExpressionProps> = ({
             <FunctionCallExpression
               expression={expression}
               isOuterMost={isOuterMost}
-              highlightVariable={highlightVariable}
             />
           )
         }
@@ -71,7 +58,6 @@ const Expression: React.SFC<ExpressionProps> = ({
             <FunctionExpression
               expression={expression}
               isOuterMost={isOuterMost}
-              highlightVariable={highlightVariable}
             />
           )
         }

@@ -4,24 +4,25 @@ import InlineFlex from '../components/InlineFlex'
 
 interface ExpressionWrapperProps {
   children: React.ReactNode
-  borderStyle?: 'solid' | 'dashed'
-  removePaddingX?: boolean
+  hasBorder?: boolean
 }
 
 const ExpressionWrapper: React.SFC<ExpressionWrapperProps> = ({
-  children,
-  borderStyle,
-  removePaddingX
+  hasBorder,
+  children
 }) => (
   <InlineFlex
     bg="#fff"
-    className={css({
-      borderStyle
-    })}
+    className={
+      hasBorder &&
+      css({
+        borderStyle: 'solid'
+      })
+    }
     borderRadius={5}
     borderColor="darkYellow"
-    border={borderStyle ? 2 : 0}
-    px={removePaddingX ? 0 : 3}
+    border={hasBorder ? 2 : 0}
+    px={hasBorder ? 3 : 0}
     py={2}
     alignItems="center"
   >
