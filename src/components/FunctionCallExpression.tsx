@@ -15,18 +15,17 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
 }) => (
   <InlineFlex
     border={2}
-    borderColor="darkYellow"
     className={css`
-      overflow: hidden;
+      margin: -2px;
     `}
+    borderColor="darkYellow"
+    flexDirection="column"
   >
-    <Flex flexDirection="column">
-      <Flex justifyContent="center" borderBottom={1} borderColor="darkYellow">
-        <Expression expression={expression.arg} />
-      </Flex>
-      <Flex borderTop={1} borderColor="darkYellow" justifyContent="center">
-        <Expression expression={expression.func} />
-      </Flex>
+    <Flex justifyContent="center" borderBottom={1} borderColor="darkYellow">
+      <Expression expression={expression.arg} />
+    </Flex>
+    <Flex borderTop={1} borderColor="darkYellow" justifyContent="center">
+      <Expression expression={expression.func} />
     </Flex>
   </InlineFlex>
 )

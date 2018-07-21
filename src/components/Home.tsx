@@ -21,7 +21,7 @@ injectGlobal`
 const Home: React.SFC<{}> = () => (
   <ThemeProvider>
     <Container pt={4} color="black">
-      <Flex>
+      <Flex alignItems="flex-start">
         {functionTestCases.map((expression, index) => (
           <Flex mr={3} key={index}>
             <Expression expression={expression} />
