@@ -1,23 +1,17 @@
-import React, { Fragment } from 'react'
-import ExpressionWrapper from '../components/ExpressionWrapper'
+import React from 'react'
+import Flex from '../components/Flex'
+import Emoji from './Emoji'
 
 interface VariableExpressionProps {
   expression: ExpressionTypes.VariableExpression
-  noWrapper?: boolean
-  highlightVariable?: boolean
 }
 
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
-  expression,
-  highlightVariable,
-  noWrapper
-}) =>
-  noWrapper ? (
-    <Fragment>{expression.name}</Fragment>
-  ) : (
-    <ExpressionWrapper hasBorder={highlightVariable}>
-      {expression.name}
-    </ExpressionWrapper>
-  )
+  expression
+}) => (
+  <Flex p={3}>
+    <Emoji>{expression.name}</Emoji>
+  </Flex>
+)
 
 export default VariableExpression

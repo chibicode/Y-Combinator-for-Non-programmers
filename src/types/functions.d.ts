@@ -1,9 +1,4 @@
 declare namespace ExpressionTypes {
-  interface NumberExpression {
-    type: 'number'
-    value: number
-  }
-
   interface VariableExpression {
     type: 'variable'
     name: string
@@ -11,14 +6,8 @@ declare namespace ExpressionTypes {
 
   interface FunctionExpression {
     type: 'function'
-    arg: string
+    arg: VariableExpression
     body: AnyExpression
-  }
-
-  interface SumExpression {
-    type: 'sum'
-    left: CanReturnNumberExpression
-    right: CanReturnNumberExpression
   }
 
   interface CallExpression {
@@ -27,16 +16,5 @@ declare namespace ExpressionTypes {
     func: CanReturnFunctionExpression
   }
 
-  type CanReturnNumberExpression =
-    | NumberExpression
-    | VariableExpression
-    | SumExpression
-    | CallExpression
-
-  type CanReturnFunctionExpression =
-    | VariableExpression
-    | FunctionExpression
-    | CallExpression
-
-  type AnyExpression = CanReturnNumberExpression | CanReturnFunctionExpression
+  type AnyExpression = VariableExpression | FunctionExpression | CallExpression
 }
