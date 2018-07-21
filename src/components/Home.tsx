@@ -1,10 +1,10 @@
 import { injectGlobal } from 'emotion'
 import React from 'react'
 import { Container } from 'rebass/emotion'
+import BorderWrapper from '../components/BorderWrapper'
 import Expression from '../components/Expression'
 import Flex from '../components/Flex'
 import ThemeProvider from '../components/ThemeProvider'
-import '../lib/fontAwesome'
 import functionTestCases from '../lib/functionTestCases'
 
 // tslint:disable-next-line:no-unused-expression
@@ -24,7 +24,9 @@ const Home: React.SFC<{}> = () => (
       <Flex alignItems="flex-start">
         {functionTestCases.map((expression, index) => (
           <Flex mr={3} key={index}>
-            <Expression expression={expression} />
+            <BorderWrapper>
+              <Expression expression={expression} />
+            </BorderWrapper>
           </Flex>
         ))}
       </Flex>

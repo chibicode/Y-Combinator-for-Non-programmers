@@ -1,33 +1,25 @@
-import { css } from 'emotion'
 import React from 'react'
+import BorderWrapper from '../components/BorderWrapper'
 import Expression from '../components/Expression'
 import Flex from '../components/Flex'
-import InlineFlex from '../components/InlineFlex'
 
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression
-  isOuterMost?: boolean
-  highlightVariable?: string
 }
 
 const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
   expression
 }) => (
-  <InlineFlex
-    border={2}
-    className={css`
-      margin: -2px;
-    `}
-    borderColor="darkYellow"
-    flexDirection="column"
-  >
-    <Flex justifyContent="center" borderBottom={1} borderColor="darkYellow">
-      <Expression expression={expression.arg} />
+  <BorderWrapper>
+    <Flex flexDirection="column">
+      <Flex justifyContent="center" borderBottom={1} borderColor="darkYellow">
+        <Expression expression={expression.arg} />
+      </Flex>
+      <Flex borderTop={1} borderColor="darkYellow" justifyContent="center">
+        <Expression expression={expression.func} />
+      </Flex>
     </Flex>
-    <Flex borderTop={1} borderColor="darkYellow" justifyContent="center">
-      <Expression expression={expression.func} />
-    </Flex>
-  </InlineFlex>
+  </BorderWrapper>
 )
 
 export default FunctionCallExpression

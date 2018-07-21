@@ -10,16 +10,12 @@ interface ExpressionProps {
 const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
   <Fragment>
     {(() => {
-      switch (expression.type) {
-        case 'variable': {
-          return <VariableExpression expression={expression} />
-        }
-        case 'call': {
-          return <FunctionCallExpression expression={expression} />
-        }
-        case 'function': {
-          return <FunctionExpression expression={expression} />
-        }
+      if (typeof expression === 'string') {
+        return <VariableExpression expression={expression} />
+      } else if ('func' in expression) {
+        return <FunctionCallExpression expression={expression} />
+      } else if ('body' in expression) {
+        return <FunctionExpression expression={expression} />
       }
     })()}
   </Fragment>

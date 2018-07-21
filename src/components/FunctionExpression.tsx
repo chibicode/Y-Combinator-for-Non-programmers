@@ -4,8 +4,6 @@ import Flex from '../components/Flex'
 
 interface FunctionExpressionProps {
   expression: ExpressionTypes.FunctionExpression
-  isOuterMost?: boolean
-  borderType?: 'functionArgs'
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({

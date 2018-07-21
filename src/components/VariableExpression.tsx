@@ -3,14 +3,14 @@ import Flex from '../components/Flex'
 import Emoji from './Emoji'
 
 interface VariableExpressionProps {
-  expression: ExpressionTypes.VariableExpression
+  expression: string
 }
 
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
   expression
 }) => (
   <Flex p={3}>
-    <Emoji>{expression.name}</Emoji>
+    <Emoji>{expression}</Emoji>
   </Flex>
 )
 
