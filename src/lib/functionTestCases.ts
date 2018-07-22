@@ -1,11 +1,11 @@
 // (❤️ => ❤️)(💙)
-const basicExpression = {
-  arg: '💙',
-  func: {
+const basicExpression = [
+  {
     arg: '❤️',
     body: '❤️'
-  }
-}
+  },
+  '💙'
+]
 
 // (❤️ => 💙 => ❤️)
 const trueExpression = {
@@ -25,37 +25,53 @@ const falseExpression = {
   }
 }
 
+// (💚 => ❤️ => 💙 => 💚 💙 ❤️)
 const notExpression = {
   arg: '💚',
   body: {
     arg: '❤️',
     body: {
       arg: '💙',
-      body: {
-        arg: '❤️',
-        func: {
-          arg: '💙',
-          func: '💚'
-        }
-      }
+      body: ['💚', '💙', '❤️']
     }
   }
 }
 
-const notTrueExpression = {
-  arg: trueExpression,
-  func: notExpression
+const notTrueExpression = [notExpression, trueExpression]
+
+const notFalseExpression = [notExpression, falseExpression]
+
+const zeroExpression = {
+  arg: '❤️',
+  body: {
+    arg: '💙',
+    body: '💙'
+  }
 }
 
-const notFalseExpression = {
-  arg: falseExpression,
-  func: notExpression
+const oneExpression = {
+  arg: '❤️',
+  body: {
+    arg: '💙',
+    body: ['❤️', '💙']
+  }
+}
+
+const twoExpression = {
+  arg: '❤️',
+  body: {
+    arg: '💙',
+    body: ['❤️', ['❤️', '💙']]
+  }
 }
 
 const functionTestCases: ExpressionTypes.AnyExpression[] = [
   basicExpression,
   notTrueExpression,
-  notFalseExpression
+  notFalseExpression,
+  zeroExpression,
+  oneExpression,
+  twoExpression
 ]
 
 export default functionTestCases

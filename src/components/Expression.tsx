@@ -12,9 +12,9 @@ const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
     {(() => {
       if (typeof expression === 'string') {
         return <VariableExpression expression={expression} />
-      } else if ('func' in expression) {
+      } else if (Array.isArray(expression)) {
         return <FunctionCallExpression expression={expression} />
-      } else if ('body' in expression) {
+      } else {
         return <FunctionExpression expression={expression} />
       }
     })()}

@@ -1,4 +1,5 @@
-import React from 'react'
+import { css } from 'emotion'
+import React, { Fragment } from 'react'
 import BorderWrapper from '../components/BorderWrapper'
 import Expression from '../components/Expression'
 import Flex from '../components/Flex'
@@ -11,13 +12,30 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
   expression
 }) => (
   <BorderWrapper>
-    <Flex flexDirection="column">
-      <Flex justifyContent="center" borderBottom={1} borderColor="darkYellow">
-        <Expression expression={expression.arg} />
-      </Flex>
-      <Flex borderTop={1} borderColor="darkYellow" justifyContent="center">
-        <Expression expression={expression.func} />
-      </Flex>
+    <Flex
+      flexDirection="column"
+      className={css`
+        margin-bottom: -2px;
+      `}
+    >
+      {expression.map(e => (
+        <Fragment>
+          <Flex
+            justifyContent="center"
+            borderBottom={2}
+            borderColor="darkYellow"
+          >
+            ...
+          </Flex>
+          <Flex
+            justifyContent="center"
+            borderBottom={2}
+            borderColor="darkYellow"
+          >
+            <Expression expression={e} />
+          </Flex>
+        </Fragment>
+      ))}
     </Flex>
   </BorderWrapper>
 )

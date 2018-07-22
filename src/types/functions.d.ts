@@ -4,9 +4,8 @@ declare namespace ExpressionTypes {
     body: AnyExpression
   }
 
-  interface CallExpression {
-    arg: AnyExpression
-    func: AnyExpression
+  interface CallExpression extends Array<AnyExpression> {
+    [index: number]: FunctionExpression | string | CallExpression
   }
 
   type AnyExpression = string | FunctionExpression | CallExpression
