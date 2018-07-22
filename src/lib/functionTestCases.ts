@@ -1,3 +1,5 @@
+import { yellow500 } from 'material-ui/styles/colors'
+
 // (❤️ => ❤️)(💙)
 const basicExpression = [
   {
@@ -41,6 +43,7 @@ const notTrueExpression = [notExpression, trueExpression]
 
 const notFalseExpression = [notExpression, falseExpression]
 
+// (❤️ => 💙 => 💙)
 const zeroExpression = {
   arg: '❤️',
   body: {
@@ -49,6 +52,7 @@ const zeroExpression = {
   }
 }
 
+// (❤️ => 💙 => ❤️ 💙)
 const oneExpression = {
   arg: '❤️',
   body: {
@@ -57,6 +61,7 @@ const oneExpression = {
   }
 }
 
+// (❤️ => 💙 => ❤️ (❤️ 💙))
 const twoExpression = {
   arg: '❤️',
   body: {
@@ -65,13 +70,48 @@ const twoExpression = {
   }
 }
 
+// (❤️ => ❤️ ❤️)(❤️ => ❤️ ❤️)
+const infiniteLoopExpression = [
+  {
+    arg: '❤️',
+    body: ['❤️', '❤️']
+  },
+  {
+    arg: '❤️',
+    body: ['❤️', '❤️']
+  }
+]
+
+// ❤️ => (💚 => 💚 💚)(💚 => ❤️(💙 => 💚 💚 💙)))
+const yCombinator = {
+  arg: '❤️',
+  body: [
+    {
+      arg: '💚',
+      body: ['💚', '💚']
+    },
+    {
+      arg: '💚',
+      body: [
+        '❤️',
+        {
+          arg: '💙',
+          body: ['💚', '💚', '💙']
+        }
+      ]
+    }
+  ]
+}
+
 const functionTestCases: ExpressionTypes.AnyExpression[] = [
   basicExpression,
   notTrueExpression,
   notFalseExpression,
   zeroExpression,
   oneExpression,
-  twoExpression
+  twoExpression,
+  infiniteLoopExpression,
+  yCombinator
 ]
 
 export default functionTestCases

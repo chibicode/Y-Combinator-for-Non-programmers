@@ -12,6 +12,7 @@ const BorderWrapper: React.SFC<{ children: React.ReactNode }> = ({
     `}
     borderColor="darkYellow"
     flexDirection="column"
+    flex={1}
   >
     {children}
   </Flex>
