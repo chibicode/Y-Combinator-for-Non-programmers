@@ -15,30 +15,36 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
 }) => (
   <BorderWrapper>
     <Flex flexDirection="column">
-      <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
-        {repeat('↓', callNestLevel)}
-      </Flex>
+      {callNestLevel > 0 && (
+        <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
+          {repeat('↓', callNestLevel)}
+        </Flex>
+      )}
       {expression
         .slice(0)
         .reverse()
-        .map(e => (
+        .map((e, index) => (
           <Flex
             justifyContent="center"
-            borderBottom={2}
+            borderBottom={
+              index < expression.length - 1 || callNestLevel > 0 ? 2 : 0
+            }
             borderColor="darkYellow"
           >
             <Expression expression={e} callNestLevel={callNestLevel + 1} />
           </Flex>
         ))}
-      <Flex justifyContent="center" borderColor="darkYellow">
-        {repeat('↑', callNestLevel)}
-      </Flex>
+      {callNestLevel > 0 && (
+        <Flex justifyContent="center" borderColor="darkYellow">
+          {repeat('↑', callNestLevel)}
+        </Flex>
+      )}
     </Flex>
   </BorderWrapper>
 )
 
 FunctionCallExpression.defaultProps = {
-  callNestLevel: 1
+  callNestLevel: 0
 }
 
 export default FunctionCallExpression
