@@ -9,7 +9,7 @@ interface VariableExpressionProps {
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
   expression
 }) => (
-  <Flex px={5} py={6}>
+  <Flex p={4}>
     <Emoji>{expression}</Emoji>
   </Flex>
 )

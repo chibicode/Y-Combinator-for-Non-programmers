@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import BorderWrapper from '../components/BorderWrapper'
 import Expression from '../components/Expression'
 import Flex from '../components/Flex'
@@ -18,14 +18,25 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
       {expression
         .slice(0)
         .reverse()
-        .map(e => (
-          <Flex
-            justifyContent="center"
-            borderBottom={2}
-            borderColor="darkYellow"
-          >
-            <Expression expression={e} />
-          </Flex>
+        .map((e, index) => (
+          <Fragment>
+            <Flex
+              justifyContent="center"
+              borderBottom={2}
+              borderColor="darkYellow"
+            >
+              <Expression expression={e} />
+            </Flex>
+            {index !== expression.length - 1 && (
+              <Flex
+                justifyContent="center"
+                borderColor="darkYellow"
+                borderBottom={2}
+              >
+                ...
+              </Flex>
+            )}
+          </Fragment>
         ))}
       <Flex justifyContent="center" borderColor="darkYellow">
         ↑
