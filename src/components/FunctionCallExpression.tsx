@@ -3,7 +3,7 @@ import Expression from 'components/Expression'
 import Flex from 'components/Flex'
 import repeat from 'lodash/repeat'
 import React from 'react'
-import { ExpressionTypes } from 'types/functions'
+import ExpressionTypes from 'types/ExpressionTypes'
 
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression

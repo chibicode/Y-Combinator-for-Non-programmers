@@ -1,4 +1,4 @@
-import { ExpressionTypes } from 'types/functions'
+import ExpressionTypes from 'types/ExpressionTypes'
 
 // (❤️ => ❤️)(💙)
 const basicExpression = [
