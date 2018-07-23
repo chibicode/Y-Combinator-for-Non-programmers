@@ -1,5 +1,5 @@
 import { DecoratedExpression } from 'types/DecoratedExpressionTypes'
-import { AnyExpression, FunctionExpression } from 'types/ExpressionTypes'
+import { AnyExpression } from 'types/ExpressionTypes'
 
 const decorateExpression = (expression: AnyExpression): DecoratedExpression => {
   if (typeof expression === 'string') {
