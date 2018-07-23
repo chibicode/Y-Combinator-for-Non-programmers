@@ -2,7 +2,7 @@ import decorateExpression from 'src/lib/decorateExpression'
 
 describe('decorateExpression', () => {
   it('works with variable expressions', () => {
-    expect(decorateExpression('hello').toJS()).toEqual({
+    expect(decorateExpression('hello')).toEqual({
       value: 'hello',
       state: {},
     })
@@ -13,7 +13,7 @@ describe('decorateExpression', () => {
       decorateExpression({
         arg: 'x',
         body: 'y',
-      }).toJS(),
+      }),
     ).toEqual({
       value: {
         arg: {
@@ -37,7 +37,7 @@ describe('decorateExpression', () => {
           body: 'y',
         },
         'x',
-      ]).toJS(),
+      ]),
     ).toEqual({
       value: [
         {

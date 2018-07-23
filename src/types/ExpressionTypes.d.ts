@@ -1,5 +1,3 @@
-import Immutable from 'immutable'
-
 export interface FunctionExpression {
   arg: string
   body: AnyExpression

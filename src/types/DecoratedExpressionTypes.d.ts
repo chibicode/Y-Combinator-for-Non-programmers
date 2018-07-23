@@ -1,21 +1,12 @@
-import Immutable from 'immutable'
 import { FunctionExpression } from 'types/ExpressionTypes'
 
-export type State = Immutable.Map<string, string>
-
-export type FunctionRecordProps = {
-  arg: DecoratedExpression
-  body: DecoratedExpression
-}
-
-export type DecoratedExpressionRecordProps = {
+export type DecoratedExpression = {
   value:
-    | Immutable.Record<FunctionRecordProps>
+    | {
+        arg: DecoratedExpression
+        body: DecoratedExpression
+      }
     | string
-    | Immutable.List<DecoratedExpression>
-  state: State
+    | DecoratedExpression[]
+  state: {}
 }
-
-export type DecoratedExpression = Immutable.Record<
-  DecoratedExpressionRecordProps
->
