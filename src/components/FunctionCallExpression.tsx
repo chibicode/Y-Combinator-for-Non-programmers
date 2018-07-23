@@ -1,8 +1,8 @@
 import repeat from 'lodash/repeat'
 import React from 'react'
-import BorderWrapper from '../components/BorderWrapper'
-import Expression from '../components/Expression'
-import Flex from '../components/Flex'
+import BorderWrapper from 'components/BorderWrapper'
+import Expression from 'components/Expression'
+import Flex from 'components/Flex'
 
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression

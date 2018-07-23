@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import FunctionCallExpression from '../components/FunctionCallExpression'
-import FunctionExpression from '../components/FunctionExpression'
-import VariableExpression from '../components/VariableExpression'
+import FunctionCallExpression from 'components/FunctionCallExpression'
+import FunctionExpression from 'components/FunctionExpression'
+import VariableExpression from 'components/VariableExpression'
 
 interface ExpressionProps {
   expression: ExpressionTypes.AnyExpression

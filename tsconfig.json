@@ -14,6 +14,10 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "lib": ["dom", "es2016"]
+    "lib": ["dom", "es2016"],
+    "paths": {
+      "lib/*": ["src/lib/*"],
+      "components/*": ["src/components/*"]
+    }
   }
 }
