@@ -1,9 +1,9 @@
+import Flex from 'components/Flex'
 import { css } from 'emotion'
 import React from 'react'
-import Flex from 'components/Flex'
 
 const BorderWrapper: React.SFC<{ children: React.ReactNode }> = ({
-  children
+  children,
 }) => (
   <Flex
     border={2}

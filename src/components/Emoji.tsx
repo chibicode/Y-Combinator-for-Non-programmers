@@ -41,7 +41,7 @@ const Emoji: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
   <Twemoji
     options={{
       folder: 'svg',
-      ext: '.svg'
+      ext: '.svg',
     }}
   >
     {children}

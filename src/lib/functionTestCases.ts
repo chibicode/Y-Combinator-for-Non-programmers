@@ -1,10 +1,12 @@
+import { ExpressionTypes } from 'types/functions'
+
 // (❤️ => ❤️)(💙)
 const basicExpression = [
   {
     arg: '❤️',
-    body: '❤️'
+    body: '❤️',
   },
-  '💙'
+  '💙',
 ]
 
 // (❤️ => 💙 => ❤️)
@@ -12,8 +14,8 @@ const trueExpression = {
   arg: '❤️',
   body: {
     arg: '💙',
-    body: '❤️'
-  }
+    body: '❤️',
+  },
 }
 
 // (❤️ => 💙 => 💙)
@@ -21,8 +23,8 @@ const falseExpression = {
   arg: '❤️',
   body: {
     arg: '💙',
-    body: '💙'
-  }
+    body: '💙',
+  },
 }
 
 // (💚 => ❤️ => 💙 => 💚 💙 ❤️)
@@ -32,9 +34,9 @@ const notExpression = {
     arg: '❤️',
     body: {
       arg: '💙',
-      body: [['💚', '💙'], '❤️']
-    }
-  }
+      body: [['💚', '💙'], '❤️'],
+    },
+  },
 }
 
 const notTrueExpression = [notExpression, trueExpression]
@@ -46,8 +48,8 @@ const zeroExpression = {
   arg: '❤️',
   body: {
     arg: '💙',
-    body: '💙'
-  }
+    body: '💙',
+  },
 }
 
 // (❤️ => 💙 => ❤️ 💙)
@@ -55,8 +57,8 @@ const oneExpression = {
   arg: '❤️',
   body: {
     arg: '💙',
-    body: ['❤️', '💙']
-  }
+    body: ['❤️', '💙'],
+  },
 }
 
 // (❤️ => 💙 => ❤️ (❤️ 💙))
@@ -64,20 +66,20 @@ const twoExpression = {
   arg: '❤️',
   body: {
     arg: '💙',
-    body: ['❤️', ['❤️', '💙']]
-  }
+    body: ['❤️', ['❤️', '💙']],
+  },
 }
 
 // (❤️ => ❤️ ❤️)(❤️ => ❤️ ❤️)
 const infiniteLoopExpression = [
   {
     arg: '❤️',
-    body: ['❤️', '❤️']
+    body: ['❤️', '❤️'],
   },
   {
     arg: '❤️',
-    body: ['❤️', '❤️']
-  }
+    body: ['❤️', '❤️'],
+  },
 ]
 
 // ❤️ => (💚 => 💚 💚)(💚 => ❤️(💙 => 💚 💚 💙)))
@@ -86,7 +88,7 @@ const yCombinator = {
   body: [
     {
       arg: '💚',
-      body: ['💚', '💚']
+      body: ['💚', '💚'],
     },
     {
       arg: '💚',
@@ -94,11 +96,11 @@ const yCombinator = {
         '❤️',
         {
           arg: '💙',
-          body: [['💚', '💚'], '💙']
-        }
-      ]
-    }
-  ]
+          body: [['💚', '💚'], '💙'],
+        },
+      ],
+    },
+  ],
 }
 
 // ❤️ => 💙 => (❤️ 💙)
@@ -106,22 +108,22 @@ const recursiveFunction = {
   arg: '❤️',
   body: {
     arg: '💙',
-    body: ['❤️', '💙']
-  }
+    body: ['❤️', '💙'],
+  },
 }
 
 const infiniteLoop = [yCombinator, recursiveFunction]
 
 const functionTestCases: ExpressionTypes.AnyExpression[] = [
-  basicExpression
-  // notTrueExpression,
-  // notFalseExpression,
-  // zeroExpression,
-  // oneExpression,
-  // twoExpression,
-  // infiniteLoopExpression,
-  // yCombinator,
-  // infiniteLoop
+  basicExpression,
+  notTrueExpression,
+  notFalseExpression,
+  zeroExpression,
+  oneExpression,
+  twoExpression,
+  infiniteLoopExpression,
+  yCombinator,
+  infiniteLoop,
 ]
 
 export default functionTestCases

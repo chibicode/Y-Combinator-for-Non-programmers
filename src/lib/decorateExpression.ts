@@ -1,3 +1,4 @@
-const decorateExpression = expression => expression
+const decorateExpression = (expression: ExpressionTypes.AnyExpression) =>
+  expression
 
 export default decorateExpression

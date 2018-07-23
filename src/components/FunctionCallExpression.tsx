@@ -1,8 +1,9 @@
-import repeat from 'lodash/repeat'
-import React from 'react'
 import BorderWrapper from 'components/BorderWrapper'
 import Expression from 'components/Expression'
 import Flex from 'components/Flex'
+import repeat from 'lodash/repeat'
+import React from 'react'
+import { ExpressionTypes } from 'types/functions'
 
 interface FunctionCallProps {
   expression: ExpressionTypes.CallExpression
@@ -11,7 +12,7 @@ interface FunctionCallProps {
 
 const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
   expression,
-  callNestLevel
+  callNestLevel,
 }) => (
   <BorderWrapper>
     <Flex flexDirection="column">
@@ -44,7 +45,7 @@ const FunctionCallExpression: React.SFC<FunctionCallProps> = ({
 )
 
 FunctionCallExpression.defaultProps = {
-  callNestLevel: 0
+  callNestLevel: 0,
 }
 
 export default FunctionCallExpression

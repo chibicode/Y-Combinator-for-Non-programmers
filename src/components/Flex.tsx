@@ -3,12 +3,12 @@ import sys from 'system-components/emotion'
 
 const Flex = sys(
   {
-    is: RebassFlex
+    is: RebassFlex,
   },
   'minWidth',
   'borders',
   'borderColor',
-  'borderRadius'
+  'borderRadius',
 )
 
 export default Flex

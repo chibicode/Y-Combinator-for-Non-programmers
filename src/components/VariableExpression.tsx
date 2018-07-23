@@ -1,5 +1,5 @@
-import React from 'react'
 import Flex from 'components/Flex'
+import React from 'react'
 import Emoji from './Emoji'
 
 interface VariableExpressionProps {
@@ -7,7 +7,7 @@ interface VariableExpressionProps {
 }
 
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
-  expression
+  expression,
 }) => (
   <Flex p={4}>
     <Emoji>{expression}</Emoji>

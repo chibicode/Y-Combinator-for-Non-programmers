@@ -6,7 +6,8 @@ module.exports = withTypescript({
     // Further custom configuration here
     config.resolve.alias = {
       lib: path.resolve(__dirname, 'src/lib'),
-      components: path.resolve(__dirname, 'src/components')
+      components: path.resolve(__dirname, 'src/components'),
+      types: path.resolve(__dirname, 'src/types')
     }
     return config
   }

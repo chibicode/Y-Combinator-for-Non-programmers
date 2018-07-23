@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
 import FunctionCallExpression from 'components/FunctionCallExpression'
 import FunctionExpression from 'components/FunctionExpression'
 import VariableExpression from 'components/VariableExpression'
+import React, { Fragment } from 'react'
+import { ExpressionTypes } from 'types/functions'
 
 interface ExpressionProps {
   expression: ExpressionTypes.AnyExpression
@@ -10,7 +11,7 @@ interface ExpressionProps {
 
 const Expression: React.SFC<ExpressionProps> = ({
   expression,
-  callNestLevel
+  callNestLevel,
 }) => (
   <Fragment>
     {(() => {
