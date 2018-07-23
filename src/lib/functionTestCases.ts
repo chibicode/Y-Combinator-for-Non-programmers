@@ -1,5 +1,3 @@
-import { yellow500 } from 'material-ui/styles/colors'
-
 // (❤️ => ❤️)(💙)
 const basicExpression = [
   {
@@ -103,15 +101,27 @@ const yCombinator = {
   ]
 }
 
+// ❤️ => 💙 => (❤️ 💙)
+const recursiveFunction = {
+  arg: '❤️',
+  body: {
+    arg: '💙',
+    body: ['❤️', '💙']
+  }
+}
+
+const infiniteLoop = [yCombinator, recursiveFunction]
+
 const functionTestCases: ExpressionTypes.AnyExpression[] = [
-  basicExpression,
-  notTrueExpression,
-  notFalseExpression,
-  zeroExpression,
-  oneExpression,
-  twoExpression,
-  infiniteLoopExpression,
-  yCombinator
+  basicExpression
+  // notTrueExpression,
+  // notFalseExpression,
+  // zeroExpression,
+  // oneExpression,
+  // twoExpression,
+  // infiniteLoopExpression,
+  // yCombinator,
+  // infiniteLoop
 ]
 
 export default functionTestCases
