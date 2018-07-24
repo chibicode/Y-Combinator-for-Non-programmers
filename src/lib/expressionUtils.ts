@@ -78,3 +78,19 @@ export const findNextCallExpression = (expression: DecoratedExpression) => {
   }
   return null
 }
+
+export const decoratedExpressionToSimpleString = (
+  expression: DecoratedExpression
+) => {
+  if (expression.type === 'variable') {
+    return expression.value
+  } else if (expression.type === 'call') {
+    return `(${decoratedExpressionToSimpleString(
+      expression.value.func
+    )}(${decoratedExpressionToSimpleString(expression.value.arg)}))`
+  } else {
+    return `(${decoratedExpressionToSimpleString(
+      expression.value.arg
+    )} => ${decoratedExpressionToSimpleString(expression.value.body)})`
+  }
+}

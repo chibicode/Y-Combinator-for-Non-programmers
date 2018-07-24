@@ -1,4 +1,5 @@
 import {
+  decoratedExpressionToSimpleString,
   decorateExpression,
   findNextCallExpression,
   nestCallExpressions
@@ -19,8 +20,8 @@ describe('nestCallExpressions', () => {
 
 describe('decorateExpression', () => {
   it('works with variable expressions', () => {
-    expect(decorateExpression('hello')).toEqual({
-      value: 'hello',
+    expect(decorateExpression('x')).toEqual({
+      value: 'x',
       state: 'default',
       type: 'variable',
     })
@@ -89,10 +90,25 @@ describe('decorateExpression', () => {
   })
 })
 
-describe('findNextCallExpression', () => {
-  it('works withsimple case', () => {
+describe('ddecoratedExpressionToSimpleString', () => {
+  it('works with variable expressions', () => {
+    expect(decoratedExpressionToSimpleString(decorateExpression('x'))).toBe('x')
+  })
+
+  it('works with function expressions', () => {
     expect(
-      findNextCallExpression(
+      decoratedExpressionToSimpleString(
+        decorateExpression({
+          arg: 'x',
+          body: 'y',
+        })
+      )
+    ).toBe('(x => y)')
+  })
+
+  it('works with call expressions', () => {
+    expect(
+      decoratedExpressionToSimpleString(
         decorateExpression([
           {
             arg: 'x',
@@ -101,32 +117,54 @@ describe('findNextCallExpression', () => {
           'z',
         ])
       )
-    ).toEqual({
-      value: {
-        func: {
-          value: {
-            arg: {
-              value: 'x',
-              type: 'variable',
-              state: 'default',
+    ).toBe('((x => y)(z))')
+  })
+})
+
+describe('findNextCallExpression', () => {
+  it('works with simple case', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        findNextCallExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: 'y',
             },
-            body: {
-              value: 'y',
-              type: 'variable',
-              state: 'default',
+            'z',
+          ])
+        )
+      )
+    ).toBe('((x => y)(z))')
+  })
+
+  it('works with slightly more complex case', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        findNextCallExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: {
+                arg: 'y',
+                body: {
+                  arg: 'z',
+                  body: ['x', 'y', 'z'],
+                },
+              },
             },
-          },
-          state: 'default',
-          type: 'function',
-        },
-        arg: {
-          value: 'z',
-          state: 'default',
-          type: 'variable',
-        },
-      },
-      state: 'default',
-      type: 'call',
-    })
+            {
+              arg: 'a',
+              body: 'a',
+            },
+            {
+              arg: 'b',
+              body: 'b',
+            },
+            'c',
+          ])
+        )
+      )
+    ).toBe('((x => (y => (z => ((x(y))(z)))))((a => a)))')
   })
 })
