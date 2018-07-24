@@ -7,5 +7,5 @@ export default {
   colors,
   fonts,
   radii,
-  space
+  space,
 }

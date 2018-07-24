@@ -1,11 +1,11 @@
-import BorderWrapper from 'components/BorderWrapper'
-import Expression from 'components/Expression'
-import Flex from 'components/Flex'
-import ThemeProvider from 'components/ThemeProvider'
 import { injectGlobal } from 'emotion'
-import functionTestCases from 'lib/functionTestCases'
 import React from 'react'
 import { Container } from 'rebass/emotion'
+import BorderWrapper from 'src/components/BorderWrapper'
+import Expression from 'src/components/Expression'
+import Flex from 'src/components/Flex'
+import ThemeProvider from 'src/components/ThemeProvider'
+import functionTestCases from 'src/lib/functionTestCases'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`

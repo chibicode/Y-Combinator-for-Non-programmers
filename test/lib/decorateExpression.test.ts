@@ -1,10 +1,12 @@
+import DecoratedExpressionState from 'src/constants/DecoratedExpressionState'
 import decorateExpression from 'src/lib/decorateExpression'
 
 describe('decorateExpression', () => {
   it('works with variable expressions', () => {
     expect(decorateExpression('hello')).toEqual({
       value: 'hello',
-      state: {},
+      state: DecoratedExpressionState.DEFAULT,
+      type: 'variable',
     })
   })
 
@@ -18,14 +20,17 @@ describe('decorateExpression', () => {
       value: {
         arg: {
           value: 'x',
-          state: {},
+          state: DecoratedExpressionState.DEFAULT,
+          type: 'variable',
         },
         body: {
           value: 'y',
-          state: {},
+          state: DecoratedExpressionState.DEFAULT,
+          type: 'variable',
         },
       },
-      state: {},
+      state: DecoratedExpressionState.DEFAULT,
+      type: 'function',
     })
   })
 
@@ -44,18 +49,26 @@ describe('decorateExpression', () => {
           value: {
             arg: {
               value: 'x',
-              state: {},
+              type: 'variable',
+              state: DecoratedExpressionState.DEFAULT,
             },
             body: {
               value: 'y',
-              state: {},
+              type: 'variable',
+              state: DecoratedExpressionState.DEFAULT,
             },
           },
-          state: {},
+          state: DecoratedExpressionState.DEFAULT,
+          type: 'function',
         },
-        { value: 'x', state: {} },
+        {
+          value: 'x',
+          state: DecoratedExpressionState.DEFAULT,
+          type: 'variable',
+        },
       ],
-      state: {},
+      state: DecoratedExpressionState.DEFAULT,
+      type: 'call',
     })
   })
 })

@@ -1,5 +1,5 @@
-import Flex from 'components/Flex'
 import React from 'react'
+import Flex from 'src/components/Flex'
 import Emoji from './Emoji'
 
 interface VariableExpressionProps {

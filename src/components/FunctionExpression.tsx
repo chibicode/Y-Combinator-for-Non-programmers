@@ -1,7 +1,7 @@
-import Expression from 'components/Expression'
-import Flex from 'components/Flex'
 import React from 'react'
-import ExpressionTypes from 'types/ExpressionTypes'
+import Expression from 'src/components/Expression'
+import Flex from 'src/components/Flex'
+import ExpressionTypes from 'src/types/ExpressionTypes'
 
 interface FunctionExpressionProps {
   expression: ExpressionTypes.FunctionExpression

@@ -16,9 +16,7 @@
     "baseUrl": ".",
     "lib": ["dom", "es2016"],
     "paths": {
-      "lib/*": ["src/lib/*"],
-      "components/*": ["src/components/*"],
-      "types/*": ["src/types/*"]
+      "src/*": ["src/*"]
     }
   }
 }
