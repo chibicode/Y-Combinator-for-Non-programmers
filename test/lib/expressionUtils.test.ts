@@ -1,5 +1,6 @@
 import {
   decorateExpression,
+  findNextCallExpression,
   nestCallExpressions
 } from 'src/lib/expressionUtils'
 
@@ -56,11 +57,11 @@ describe('decorateExpression', () => {
           arg: 'x',
           body: 'y',
         },
-        'x',
+        'z',
       ])
     ).toEqual({
       value: {
-        arg: {
+        func: {
           value: {
             arg: {
               value: 'x',
@@ -76,8 +77,50 @@ describe('decorateExpression', () => {
           state: 'default',
           type: 'function',
         },
+        arg: {
+          value: 'z',
+          state: 'default',
+          type: 'variable',
+        },
+      },
+      state: 'default',
+      type: 'call',
+    })
+  })
+})
+
+describe('findNextCallExpression', () => {
+  it('works withsimple case', () => {
+    expect(
+      findNextCallExpression(
+        decorateExpression([
+          {
+            arg: 'x',
+            body: 'y',
+          },
+          'z',
+        ])
+      )
+    ).toEqual({
+      value: {
         func: {
-          value: 'x',
+          value: {
+            arg: {
+              value: 'x',
+              type: 'variable',
+              state: 'default',
+            },
+            body: {
+              value: 'y',
+              type: 'variable',
+              state: 'default',
+            },
+          },
+          state: 'default',
+          type: 'function',
+        },
+        arg: {
+          value: 'z',
           state: 'default',
           type: 'variable',
         },
