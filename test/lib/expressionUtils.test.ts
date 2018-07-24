@@ -90,7 +90,7 @@ describe('decorateExpression', () => {
   })
 })
 
-describe('ddecoratedExpressionToSimpleString', () => {
+describe('decoratedExpressionToSimpleString', () => {
   it('works with variable expressions', () => {
     expect(decoratedExpressionToSimpleString(decorateExpression('x'))).toBe('x')
   })
