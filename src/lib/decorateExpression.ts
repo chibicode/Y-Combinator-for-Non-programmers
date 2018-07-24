@@ -7,22 +7,22 @@ const decorateExpression = (expression: AnyExpression): DecoratedExpression => {
     return {
       value: expression,
       state: DecoratedExpressionState.DEFAULT,
-      type: 'variable'
+      type: 'variable',
     }
   } else if (Array.isArray(expression)) {
     return {
       value: expression.map(e => decorateExpression(e)),
       state: DecoratedExpressionState.DEFAULT,
-      type: 'call'
+      type: 'call',
     }
   } else {
     return {
       value: {
         arg: decorateExpression(expression.arg),
-        body: decorateExpression(expression.body)
+        body: decorateExpression(expression.body),
       },
       state: DecoratedExpressionState.DEFAULT,
-      type: 'function'
+      type: 'function',
     }
   }
 }
