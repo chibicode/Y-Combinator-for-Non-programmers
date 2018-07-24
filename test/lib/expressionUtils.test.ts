@@ -117,7 +117,7 @@ describe('decoratedExpressionToSimpleString', () => {
           'z',
         ])
       )
-    ).toBe('((x => y)(z))')
+    ).toBe('(x => y)(z)')
   })
 })
 
@@ -135,7 +135,7 @@ describe('findNextCallExpression', () => {
           ])
         )
       )
-    ).toBe('((x => y)(z))')
+    ).toBe('(x => y)(z)')
   })
 
   it('works with slightly more complex case', () => {
@@ -149,7 +149,7 @@ describe('findNextCallExpression', () => {
                 arg: 'y',
                 body: {
                   arg: 'z',
-                  body: ['x', 'y', 'z'],
+                  body: ['x', ['y', 'z']],
                 },
               },
             },
@@ -165,6 +165,6 @@ describe('findNextCallExpression', () => {
           ])
         )
       )
-    ).toBe('((x => (y => (z => ((x(y))(z)))))((a => a)))')
+    ).toBe('(x => (y => (z => x(y(z)))))((a => a))')
   })
 })

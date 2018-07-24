@@ -85,9 +85,9 @@ export const decoratedExpressionToSimpleString = (
   if (expression.type === 'variable') {
     return expression.value
   } else if (expression.type === 'call') {
-    return `(${decoratedExpressionToSimpleString(
+    return `${decoratedExpressionToSimpleString(
       expression.value.func
-    )}(${decoratedExpressionToSimpleString(expression.value.arg)}))`
+    )}(${decoratedExpressionToSimpleString(expression.value.arg)})`
   } else {
     return `(${decoratedExpressionToSimpleString(
       expression.value.arg
