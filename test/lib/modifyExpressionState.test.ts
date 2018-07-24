@@ -1,5 +1,4 @@
-import DecoratedExpressionState from 'src/constants/DecoratedExpressionState'
-import decorateExpression from 'src/lib/decorateExpression'
+import { decorateExpression } from 'src/lib/expressionUtils'
 import modifyExpressionState from 'src/lib/modifyExpressionState'
 
 describe('modifyExpressionState', () => {
@@ -12,7 +11,7 @@ describe('modifyExpressionState', () => {
       'x',
     ])
     expect(modifyExpressionState(originalExpression).state).toEqual(
-      DecoratedExpressionState.CALL_ACTIVATED
+      'callActivated'
     )
   })
 })

@@ -1,4 +1,3 @@
-import DecoratedExpressionState from 'src/constants/DecoratedExpressionState'
 import { DecoratedExpression } from 'src/types/DecoratedExpressionTypes'
 import { UndecoratedExpression } from 'src/types/UndecoratedExpressionTypes'
 
@@ -23,7 +22,7 @@ export const decorateExpression = (
   if (typeof expression === 'string') {
     return {
       value: expression,
-      state: DecoratedExpressionState.DEFAULT,
+      state: 'default',
       type: 'variable',
     }
   } else if (Array.isArray(expression)) {
@@ -35,7 +34,7 @@ export const decorateExpression = (
         arg: decorateExpression(expression[0]),
         func: decorateExpression(expression[1]),
       },
-      state: DecoratedExpressionState.DEFAULT,
+      state: 'default',
       type: 'call',
     }
   } else {
@@ -44,15 +43,16 @@ export const decorateExpression = (
         arg: decorateExpression(expression.arg),
         body: decorateExpression(expression.body),
       },
-      state: DecoratedExpressionState.DEFAULT,
+      state: 'default',
       type: 'function',
     }
   }
 }
 
-export const findNextCallExpression = (expression: DecoratedExpression) => {
-  if (expression.type === 'call') {
-    return 2
-  }
-  return null
-}
+// export const findNextCallExpression = (expression: DecoratedExpression) => {
+//   if (expression.type === 'call') {
+//     if (expression.value.arg.type !== 'call' &&
+//   )
+//   }
+//   return null
+// }
