@@ -1,5 +1,5 @@
 import { Provider } from 'rebass/emotion'
-import theme from '../lib/theme'
+import theme from 'src/lib/theme'
 
 const ThemeProvider: React.SFC<{ children: React.ReactNode }> = ({
   children,

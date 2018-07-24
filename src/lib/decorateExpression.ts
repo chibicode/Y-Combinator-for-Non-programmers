@@ -1,8 +1,10 @@
 import DecoratedExpressionState from 'src/constants/DecoratedExpressionState'
 import { DecoratedExpression } from 'src/types/DecoratedExpressionTypes'
-import { AnyExpression } from 'src/types/ExpressionTypes'
+import { UndecoratedExpression } from 'src/types/UndecoratedExpressionTypes'
 
-const decorateExpression = (expression: AnyExpression): DecoratedExpression => {
+const decorateExpression = (
+  expression: UndecoratedExpression
+): DecoratedExpression => {
   if (typeof expression === 'string') {
     return {
       value: expression,

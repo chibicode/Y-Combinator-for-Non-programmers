@@ -1,5 +1,21 @@
 import DecoratedExpressionState from 'src/constants/DecoratedExpressionState'
-import decorateExpression from 'src/lib/decorateExpression'
+import {
+  decorateExpression,
+  nestCallExpressions
+} from 'src/lib/expressionUtils'
+
+describe('nestCallExpressions', () => {
+  it('handles simple case', () => {
+    expect(nestCallExpressions(['a', 'b', 'c'])).toEqual([['a', 'b'], 'c'])
+  })
+
+  it('handles cases that have a different order', () => {
+    expect(nestCallExpressions(['a', ['b', ['c', 'd']], 'e'])).toEqual([
+      ['a', ['b', ['c', 'd']]],
+      'e',
+    ])
+  })
+})
 
 describe('decorateExpression', () => {
   it('works with variable expressions', () => {
@@ -15,7 +31,7 @@ describe('decorateExpression', () => {
       decorateExpression({
         arg: 'x',
         body: 'y',
-      }),
+      })
     ).toEqual({
       value: {
         arg: {
@@ -42,10 +58,10 @@ describe('decorateExpression', () => {
           body: 'y',
         },
         'x',
-      ]),
+      ])
     ).toEqual({
-      value: [
-        {
+      value: {
+        arg: {
           value: {
             arg: {
               value: 'x',
@@ -61,12 +77,12 @@ describe('decorateExpression', () => {
           state: DecoratedExpressionState.DEFAULT,
           type: 'function',
         },
-        {
+        func: {
           value: 'x',
           state: DecoratedExpressionState.DEFAULT,
           type: 'variable',
         },
-      ],
+      },
       state: DecoratedExpressionState.DEFAULT,
       type: 'call',
     })

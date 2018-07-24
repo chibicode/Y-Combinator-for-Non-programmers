@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from '../src/components/Home'
+import Home from 'src/components/Home'
 
 const Index: React.SFC<{}> = () => <Home />
 

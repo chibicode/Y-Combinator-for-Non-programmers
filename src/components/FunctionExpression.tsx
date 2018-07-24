@@ -1,10 +1,10 @@
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
-import ExpressionTypes from 'src/types/ExpressionTypes'
+import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
 
 interface FunctionExpressionProps {
-  expression: ExpressionTypes.FunctionExpression
+  expression: ExpressionTypes.UndecoratedFunctionExpression
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({

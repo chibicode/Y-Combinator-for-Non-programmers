@@ -1,4 +1,4 @@
-import ExpressionTypes from 'src/types/ExpressionTypes'
+import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
 
 // (❤️ => ❤️)(💙)
 const basicExpression = [
@@ -34,7 +34,7 @@ const notExpression = {
     arg: '❤️',
     body: {
       arg: '💙',
-      body: [['💚', '💙'], '❤️'],
+      body: ['💚', '💙', '❤️'],
     },
   },
 }
@@ -96,7 +96,7 @@ const yCombinator = {
         '❤️',
         {
           arg: '💙',
-          body: [['💚', '💚'], '💙'],
+          body: ['💚', '💚', '💙'],
         },
       ],
     },
@@ -114,7 +114,7 @@ const recursiveFunction = {
 
 const infiniteLoop = [yCombinator, recursiveFunction]
 
-const functionTestCases: ExpressionTypes.AnyExpression[] = [
+const functionTestCases: ExpressionTypes.UndecoratedExpression[] = [
   basicExpression,
   notTrueExpression,
   notFalseExpression,

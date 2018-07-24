@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import FunctionCallExpression from 'src/components/FunctionCallExpression'
 import FunctionExpression from 'src/components/FunctionExpression'
 import VariableExpression from 'src/components/VariableExpression'
-import ExpressionTypes from 'src/types/ExpressionTypes'
+import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
 
 interface ExpressionProps {
-  expression: ExpressionTypes.AnyExpression
+  expression: ExpressionTypes.UndecoratedExpression
   callNestLevel?: number
 }
 

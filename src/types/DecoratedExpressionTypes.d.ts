@@ -1,4 +1,4 @@
-import { FunctionExpression } from 'src/types/ExpressionTypes'
+import { UndecoratedFunctionExpression } from 'src/types/UndecoratedExpressionTypes'
 import DecoratedExpressionState from 'src/constants/DecoratedExpressionState'
 
 interface DecoratedBaseExpression {
@@ -12,7 +12,10 @@ export interface DecoratedVariableExpression extends DecoratedBaseExpression {
 
 export interface DecoratedCallExpression extends DecoratedBaseExpression {
   type: 'call'
-  value: DecoratedExpression[]
+  value: {
+    arg: DecoratedExpression
+    func: DecoratedExpression
+  }
 }
 
 export interface DecoratedFunctionExpression extends DecoratedBaseExpression {

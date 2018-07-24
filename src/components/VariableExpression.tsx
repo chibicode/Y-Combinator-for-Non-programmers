@@ -1,6 +1,6 @@
 import React from 'react'
+import Emoji from 'src/components/Emoji'
 import Flex from 'src/components/Flex'
-import Emoji from './Emoji'
 
 interface VariableExpressionProps {
   expression: string
