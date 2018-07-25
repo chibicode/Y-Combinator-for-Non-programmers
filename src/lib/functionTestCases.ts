@@ -1,40 +1,40 @@
 import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
 
-// (❤️ => ❤️)(💙)
+// (a => a)(b)
 const basicExpression = [
   {
-    arg: '❤️',
-    body: '❤️',
+    arg: 'a',
+    body: 'a',
   },
-  '💙',
+  'b',
 ]
 
-// (❤️ => 💙 => ❤️)
+// (a => b => a)
 const trueExpression = {
-  arg: '❤️',
+  arg: 'a',
   body: {
-    arg: '💙',
-    body: '❤️',
+    arg: 'b',
+    body: 'a',
   },
 }
 
-// (❤️ => 💙 => 💙)
+// (a => b => b)
 const falseExpression = {
-  arg: '❤️',
+  arg: 'a',
   body: {
-    arg: '💙',
-    body: '💙',
+    arg: 'b',
+    body: 'b',
   },
 }
 
-// (💚 => ❤️ => 💙 => 💚 💙 ❤️)
+// (c => a => b => c b a)
 const notExpression = {
-  arg: '💚',
+  arg: 'c',
   body: {
-    arg: '❤️',
+    arg: 'a',
     body: {
-      arg: '💙',
-      body: ['💚', '💙', '❤️'],
+      arg: 'b',
+      body: ['c', 'b', 'a'],
     },
   },
 }
@@ -43,72 +43,72 @@ const notTrueExpression = [notExpression, trueExpression]
 
 const notFalseExpression = [notExpression, falseExpression]
 
-// (❤️ => 💙 => 💙)
+// (a => b => b)
 const zeroExpression = {
-  arg: '❤️',
+  arg: 'a',
   body: {
-    arg: '💙',
-    body: '💙',
+    arg: 'b',
+    body: 'b',
   },
 }
 
-// (❤️ => 💙 => ❤️ 💙)
+// (a => b => a b)
 const oneExpression = {
-  arg: '❤️',
+  arg: 'a',
   body: {
-    arg: '💙',
-    body: ['❤️', '💙'],
+    arg: 'b',
+    body: ['a', 'b'],
   },
 }
 
-// (❤️ => 💙 => ❤️ (❤️ 💙))
+// (a => b => a (a b))
 const twoExpression = {
-  arg: '❤️',
+  arg: 'a',
   body: {
-    arg: '💙',
-    body: ['❤️', ['❤️', '💙']],
+    arg: 'b',
+    body: ['a', ['a', 'b']],
   },
 }
 
-// (❤️ => ❤️ ❤️)(❤️ => ❤️ ❤️)
+// (a => a a)(a => a a)
 const infiniteLoopExpression = [
   {
-    arg: '❤️',
-    body: ['❤️', '❤️'],
+    arg: 'a',
+    body: ['a', 'a'],
   },
   {
-    arg: '❤️',
-    body: ['❤️', '❤️'],
+    arg: 'a',
+    body: ['a', 'a'],
   },
 ]
 
-// ❤️ => (💚 => 💚 💚)(💚 => ❤️(💙 => 💚 💚 💙)))
+// a => (c => c c)(c => a(b => c c b)))
 const yCombinator = {
-  arg: '❤️',
+  arg: 'a',
   body: [
     {
-      arg: '💚',
-      body: ['💚', '💚'],
+      arg: 'c',
+      body: ['c', 'c'],
     },
     {
-      arg: '💚',
+      arg: 'c',
       body: [
-        '❤️',
+        'a',
         {
-          arg: '💙',
-          body: ['💚', '💚', '💙'],
+          arg: 'b',
+          body: ['c', 'c', 'b'],
         },
       ],
     },
   ],
 }
 
-// ❤️ => 💙 => (❤️ 💙)
+// a => b => (a b)
 const recursiveFunction = {
-  arg: '❤️',
+  arg: 'a',
   body: {
-    arg: '💙',
-    body: ['❤️', '💙'],
+    arg: 'b',
+    body: ['a', 'b'],
   },
 }
 

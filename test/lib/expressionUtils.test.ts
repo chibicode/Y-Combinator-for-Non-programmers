@@ -2,6 +2,7 @@ import {
   decoratedExpressionToSimpleString,
   decorateExpression,
   findNextCallExpression,
+  getAllVariableNames,
   nestCallExpressions
 } from 'src/lib/expressionUtils'
 
@@ -166,5 +167,35 @@ describe('findNextCallExpression', () => {
         )
       )
     ).toBe('(x => (y => (z => x(y(z)))))((a => a))')
+  })
+})
+
+describe('getAllVariableNames', () => {
+  it('works with simple case', () => {
+    expect(
+      getAllVariableNames(
+        decorateExpression([
+          {
+            arg: 'x',
+            body: {
+              arg: 'y',
+              body: {
+                arg: 'z',
+                body: ['x', ['y', 'z']],
+              },
+            },
+          },
+          {
+            arg: 'a',
+            body: 'a',
+          },
+          {
+            arg: 'b',
+            body: 'b',
+          },
+          'c',
+        ])
+      ).sort()
+    ).toEqual(['a', 'b', 'c', 'x', 'y', 'z'])
   })
 })

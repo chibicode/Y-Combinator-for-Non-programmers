@@ -1,3 +1,4 @@
+import uniq from 'lodash/uniq'
 import {
   DecoratedCallExecutableExpression,
   DecoratedCallExpression,
@@ -96,5 +97,25 @@ export const decoratedExpressionToSimpleString = (
     return `(${decoratedExpressionToSimpleString(
       expression.value.arg
     )} => ${decoratedExpressionToSimpleString(expression.value.body)})`
+  }
+}
+
+export const getAllVariableNames = (
+  expression: DecoratedExpression
+): string[] => {
+  if (expression.type === 'variable') {
+    return [expression.value]
+  } else if (expression.type === 'call') {
+    return uniq(
+      getAllVariableNames(expression.value.arg).concat(
+        getAllVariableNames(expression.value.func)
+      )
+    )
+  } else {
+    return uniq(
+      getAllVariableNames(expression.value.arg).concat(
+        getAllVariableNames(expression.value.body)
+      )
+    )
   }
 }
