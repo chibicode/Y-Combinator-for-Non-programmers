@@ -1,4 +1,5 @@
 import {
+  DecoratedCallExecutableExpression,
   DecoratedCallExpression,
   DecoratedExpression
 } from 'src/types/DecoratedExpressionTypes'
@@ -59,8 +60,11 @@ export const decorateExpression = (
  * calculus).
  *
  * @param {DecoratedExpression} expression
+ * @returns {DecoratedCallExecutableExpression|null}
  */
-export const findNextCallExpression = (expression: DecoratedExpression) => {
+export const findNextCallExpression = (
+  expression: DecoratedExpression
+): DecoratedCallExecutableExpression | null => {
   if (expression.type === 'call') {
     const stack: DecoratedCallExpression[] = []
     let current: DecoratedExpression = expression
@@ -71,7 +75,7 @@ export const findNextCallExpression = (expression: DecoratedExpression) => {
       }
       current = stack.pop()
       if (current.value.func.type === 'function') {
-        return current
+        return current as DecoratedCallExecutableExpression
       }
       current = current.value.func
     }
