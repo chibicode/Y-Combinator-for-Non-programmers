@@ -230,3 +230,7 @@ export const conflictingVariableNames = (
   )
   return intersection(argVariableNames, funcBodyVariableNamesExceptArg)
 }
+
+export const alphaConvert = (expression: DecoratedCallExecutableExpression) => {
+  return expression
+}

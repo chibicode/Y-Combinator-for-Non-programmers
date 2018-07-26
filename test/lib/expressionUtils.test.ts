@@ -1,4 +1,5 @@
 import {
+  alphaConvert,
   conflictingVariableNames,
   decoratedExpressionToSimpleString,
   decorateExpression,
@@ -341,5 +342,30 @@ describe('conflictingVariableNames', () => {
         )
       ).toEqual(['y'])
     })
+  })
+})
+
+describe('alphaConvert', () => {
+  it('returns conflicted elements', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        alphaConvert(
+          findNextCallExpression(
+            prioritizeExpression(
+              decorateExpression([
+                {
+                  arg: 'x',
+                  body: {
+                    arg: 'y',
+                    body: ['x', 'y'],
+                  },
+                },
+                'y',
+              ])
+            )
+          )
+        )
+      )
+    ).toEqual('(x => (z => x(z)))(y)')
   })
 })
