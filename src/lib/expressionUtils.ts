@@ -1,4 +1,6 @@
 import produce from 'immer'
+import difference from 'lodash/difference'
+import intersection from 'lodash/intersection'
 import uniq from 'lodash/uniq'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
 import {
@@ -216,4 +218,15 @@ export const prioritizeExpression = (
   return produce<DecoratedCallExpression>(expression, draftExpression => {
     mutablePrioritizeExpression(draftExpression)
   }) as DecoratedCallPrioritizedExpression
+}
+
+export const conflictingVariableNames = (
+  expression: DecoratedCallExecutableExpression
+) => {
+  const argVariableNames = getAllVariableNames(expression.value.arg)
+  const funcBodyVariableNamesExceptArg = difference(
+    getAllVariableNames(expression.value.func.value.body),
+    [expression.value.func.value.arg.value]
+  )
+  return intersection(argVariableNames, funcBodyVariableNamesExceptArg)
 }

@@ -50,7 +50,7 @@ export interface DecoratedFunctionExpression {
   type: 'function'
   state: 'default' | 'highlighted'
   value: {
-    arg: DecoratedExpression
+    arg: DecoratedVariableExpression
     body: DecoratedExpression
   }
 }

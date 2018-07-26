@@ -1,5 +1,6 @@
 import produce from 'immer'
 import {
+  conflictingVariableNames,
   findNextCallExpression,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
@@ -45,7 +46,12 @@ export default function transitionExpressionState(expression: any): any {
               return
             }
             case 'readyToAlphaConvert': {
-              nextCallExpression.state = 'readyToBetaReduce'
+              const conflicts = conflictingVariableNames(nextCallExpression)
+              if (conflicts.length > 0) {
+                return
+              } else {
+                nextCallExpression.state = 'readyToBetaReduce'
+              }
               return
             }
           }

@@ -1,4 +1,5 @@
 import {
+  conflictingVariableNames,
   decoratedExpressionToSimpleString,
   decorateExpression,
   findNextCallExpression,
@@ -292,5 +293,53 @@ describe('getAllVariableNames', () => {
         ])
       ).sort()
     ).toEqual(['a', 'b', 'c', 'x', 'y', 'z'])
+  })
+})
+
+describe('conflictingVariableNames', () => {
+  describe('no conflicts', () => {
+    it('returns empty', () => {
+      expect(
+        conflictingVariableNames(
+          findNextCallExpression(
+            prioritizeExpression(
+              decorateExpression([
+                {
+                  arg: 'x',
+                  body: {
+                    arg: 'y',
+                    body: ['x', 'y'],
+                  },
+                },
+                'x',
+              ])
+            )
+          )
+        )
+      ).toEqual([])
+    })
+  })
+
+  describe('conflicts exist', () => {
+    it('returns conflicted elements', () => {
+      expect(
+        conflictingVariableNames(
+          findNextCallExpression(
+            prioritizeExpression(
+              decorateExpression([
+                {
+                  arg: 'x',
+                  body: {
+                    arg: 'y',
+                    body: ['x', 'y'],
+                  },
+                },
+                'y',
+              ])
+            )
+          )
+        )
+      ).toEqual(['y'])
+    })
   })
 })
