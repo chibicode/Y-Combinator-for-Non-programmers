@@ -6,10 +6,10 @@ import {
 import { DecoratedCallExpression } from 'src/types/DecoratedExpressionTypes'
 
 const transitionExpressionState = (expression: DecoratedCallExpression) => {
-  return produce<DecoratedCallExpression>(expression, draftExpression => {
-    if (expression.state === 'default') {
-      prioritizeExpression(draftExpression)
-    } else {
+  if (!expression.priority) {
+    return prioritizeExpression(expression)
+  } else {
+    return produce<DecoratedCallExpression>(expression, draftExpression => {
       const nextCallExpression = findNextCallExpression(draftExpression)
       if (nextCallExpression) {
         switch (nextCallExpression.state) {
@@ -20,8 +20,8 @@ const transitionExpressionState = (expression: DecoratedCallExpression) => {
           }
         }
       }
-    }
-  })
+    })
+  }
 }
 
 export default transitionExpressionState

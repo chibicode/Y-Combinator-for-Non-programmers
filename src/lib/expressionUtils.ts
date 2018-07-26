@@ -1,7 +1,10 @@
+import produce from 'immer'
 import uniq from 'lodash/uniq'
+import { INITIAL_PRIORITY } from 'src/constants/expressions'
 import {
   DecoratedCallExecutableExpression,
   DecoratedCallExpression,
+  DecoratedCallPrioritizedExpression,
   DecoratedExpression
 } from 'src/types/DecoratedExpressionTypes'
 import { UndecoratedExpression } from 'src/types/UndecoratedExpressionTypes'
@@ -54,96 +57,33 @@ export const decorateExpression = (
   }
 }
 
-const INITIAL_PRIORITY = 1
-
-const prioritizeExpressionRecurserForOtherExpression = (
-  expression: DecoratedExpression
-): void => {
-  switch (expression.type) {
-    case 'variable': {
-      return
-    }
-    case 'call': {
-      prioritizeExpressionRecurserForCallExpression({
-        expression,
-        priority: INITIAL_PRIORITY,
-      })
-      return
-    }
-    case 'function': {
-      prioritizeExpressionRecurserForOtherExpression(expression.value.arg)
-      prioritizeExpressionRecurserForOtherExpression(expression.value.body)
-      return
-    }
-  }
-}
-
-const prioritizeExpressionRecurserForCallExpression = ({
-  expression,
-  priority,
-}: {
-  expression: DecoratedCallExpression
-  priority: number
-}): number => {
-  if (expression.value.arg.type === 'call') {
-    priority =
-      prioritizeExpressionRecurserForCallExpression({
-        expression: expression.value.arg,
-        priority,
-      }) + 1
-  } else {
-    prioritizeExpressionRecurserForOtherExpression(expression.value.arg)
-  }
-  if (expression.value.func.type === 'call') {
-    priority =
-      prioritizeExpressionRecurserForCallExpression({
-        expression: expression.value.func,
-        priority,
-      }) + 1
-  } else {
-    prioritizeExpressionRecurserForOtherExpression(expression.value.func)
-  }
-
-  expression.priority = priority
-  return priority
-}
-
-export const prioritizeExpression = (
-  expression: DecoratedCallExpression
-): void => {
-  prioritizeExpressionRecurserForCallExpression({
-    expression,
-    priority: INITIAL_PRIORITY,
-  })
-}
-
-/**
- * Finds the deepest call expression whose func is a function expression.
- * Implementation uses iterative inorder traversal of the tree,
- * prioritizing arguments first (because we use applicative order lambda
- * calculus).
- *
- * @param {DecoratedExpression} expression
- * @returns {DecoratedCallExecutableExpression|null}
- */
 export const findNextCallExpression = (
   expression: DecoratedExpression
 ): DecoratedCallExecutableExpression | null => {
   if (expression.type === 'call') {
-    const stack: DecoratedCallExpression[] = []
-    let current: DecoratedExpression = expression
-    while (current.type === 'call' || stack.length > 0) {
-      while (current.type === 'call') {
-        stack.push(current)
-        current = current.value.arg
-      }
+    const stack: DecoratedCallExpression[] = [expression]
+    let current: DecoratedCallExpression
+    while (stack.length > 0) {
       current = stack.pop()
-      if (current.value.func.type === 'function') {
-        return current as DecoratedCallExecutableExpression
+      if (current.priority === INITIAL_PRIORITY) {
+        if (
+          current.value.arg.type === 'call' ||
+          current.value.func.type !== 'function'
+        ) {
+          return null
+        } else {
+          return current as DecoratedCallExecutableExpression
+        }
       }
-      current = current.value.func
+      if (current.value.func.type === 'call') {
+        stack.push(current.value.func)
+      }
+      if (current.value.arg.type === 'call') {
+        stack.push(current.value.arg)
+      }
     }
   }
+
   return null
 }
 
@@ -189,4 +129,77 @@ export const getAllVariableNames = (
       )
     )
   }
+}
+
+const mutablePrioritizeExpressionRecurserForOtherExpression = (
+  expression: DecoratedExpression
+): void => {
+  switch (expression.type) {
+    case 'variable': {
+      return
+    }
+    case 'call': {
+      mutablePrioritizeExpressionRecurserForCallExpression({
+        expression,
+        priority: INITIAL_PRIORITY,
+      })
+      return
+    }
+    case 'function': {
+      mutablePrioritizeExpressionRecurserForOtherExpression(
+        expression.value.arg
+      )
+      mutablePrioritizeExpressionRecurserForOtherExpression(
+        expression.value.body
+      )
+      return
+    }
+  }
+}
+
+const mutablePrioritizeExpressionRecurserForCallExpression = ({
+  expression,
+  priority,
+}: {
+  expression: DecoratedCallExpression
+  priority: number
+}): number => {
+  if (expression.value.arg.type === 'call') {
+    priority =
+      mutablePrioritizeExpressionRecurserForCallExpression({
+        expression: expression.value.arg,
+        priority,
+      }) + 1
+  } else {
+    mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.arg)
+  }
+  if (expression.value.func.type === 'call') {
+    priority =
+      mutablePrioritizeExpressionRecurserForCallExpression({
+        expression: expression.value.func,
+        priority,
+      }) + 1
+  } else {
+    mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.func)
+  }
+
+  expression.priority = priority
+  return priority
+}
+
+const mutablePrioritizeExpression = (
+  expression: DecoratedCallExpression
+): void => {
+  mutablePrioritizeExpressionRecurserForCallExpression({
+    expression,
+    priority: INITIAL_PRIORITY,
+  })
+}
+
+export const prioritizeExpression = (
+  expression: DecoratedCallExpression
+): DecoratedCallPrioritizedExpression => {
+  return produce<DecoratedCallExpression>(expression, draftExpression => {
+    mutablePrioritizeExpression(draftExpression)
+  }) as DecoratedCallPrioritizedExpression
 }

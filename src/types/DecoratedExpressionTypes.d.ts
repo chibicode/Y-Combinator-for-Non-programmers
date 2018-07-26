@@ -18,8 +18,13 @@ export interface DecoratedCallExpression extends DecoratedBaseExpression {
   }
 }
 
+export interface DecoratedCallPrioritizedExpression
+  extends DecoratedCallExpression {
+  priority: number
+}
+
 export interface DecoratedCallExecutableExpression
-  extends DecoratedBaseExpression {
+  extends DecoratedCallExpression {
   type: 'call'
   priority: 1
   value: {
