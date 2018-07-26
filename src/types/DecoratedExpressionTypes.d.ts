@@ -1,21 +1,29 @@
 import { UndecoratedFunctionExpression } from 'src/types/UndecoratedExpressionTypes'
 
-interface DecoratedBaseExpression {
-  state: 'default' | 'callActivated' | 'highlighted' | 'done'
-}
-
-export interface DecoratedVariableExpression extends DecoratedBaseExpression {
+export interface DecoratedVariableExpression {
+  state: 'default' | 'highlighted'
   type: 'variable'
   value: string
 }
 
-export interface DecoratedCallExpression extends DecoratedBaseExpression {
+export interface DecoratedCallExpression {
+  state:
+    | 'default'
+    | 'readyToHighlight'
+    | 'highlighted'
+    | 'done'
+    | 'readyToAlphaConvert'
   type: 'call'
   priority?: number
   value: {
     arg: DecoratedExpression
     func: DecoratedExpression
   }
+}
+
+export interface DecoratedCallUnprioritizedExpression
+  extends DecoratedCallExpression {
+  priority: undefined
 }
 
 export interface DecoratedCallPrioritizedExpression
@@ -25,7 +33,6 @@ export interface DecoratedCallPrioritizedExpression
 
 export interface DecoratedCallExecutableExpression
   extends DecoratedCallExpression {
-  type: 'call'
   priority: 1
   value: {
     arg: DecoratedVariableExpression | DecoratedFunctionExpression
@@ -33,8 +40,14 @@ export interface DecoratedCallExecutableExpression
   }
 }
 
-export interface DecoratedFunctionExpression extends DecoratedBaseExpression {
+export interface DecoratedCallUnexecutableExpression
+  extends DecoratedCallExpression {
+  state: 'done'
+}
+
+export interface DecoratedFunctionExpression {
   type: 'function'
+  state: 'default' | 'highlighted'
   value: {
     arg: DecoratedExpression
     body: DecoratedExpression

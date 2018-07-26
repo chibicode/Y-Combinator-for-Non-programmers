@@ -5,6 +5,7 @@ import {
   DecoratedCallExecutableExpression,
   DecoratedCallExpression,
   DecoratedCallPrioritizedExpression,
+  DecoratedCallUnprioritizedExpression,
   DecoratedExpression,
   DecoratedFunctionExpression,
   DecoratedVariableExpression
@@ -35,7 +36,7 @@ export function decorateExpression(
 ): DecoratedVariableExpression
 export function decorateExpression(
   expression: UndecoratedCallExpression
-): DecoratedCallExpression
+): DecoratedCallUnprioritizedExpression
 export function decorateExpression(
   expression: UndecoratedFunctionExpression
 ): DecoratedFunctionExpression
