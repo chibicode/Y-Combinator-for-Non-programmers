@@ -13,6 +13,7 @@ export interface DecoratedCallExpression {
     | 'highlighted'
     | 'done'
     | 'readyToAlphaConvert'
+    | 'readyToBetaReduce'
   type: 'call'
   priority?: number
   value: {

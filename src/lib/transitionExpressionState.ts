@@ -45,7 +45,7 @@ export default function transitionExpressionState(expression: any): any {
               return
             }
             case 'readyToAlphaConvert': {
-              nextCallExpression.state = 'default'
+              nextCallExpression.state = 'readyToBetaReduce'
               return
             }
           }

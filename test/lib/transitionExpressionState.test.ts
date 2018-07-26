@@ -3,36 +3,46 @@ import {
   prioritizeExpression
 } from 'src/lib/expressionUtils'
 import transitionExpressionState from 'src/lib/transitionExpressionState'
-import { DecoratedCallExecutableExpression } from 'src/types/DecoratedExpressionTypes'
+import {
+  DecoratedCallExecutableExpression,
+  DecoratedCallPrioritizedExpression
+} from 'src/types/DecoratedExpressionTypes'
+
+const transitionExpressionStateWrapped = (
+  x: DecoratedCallPrioritizedExpression
+) => transitionExpressionState(x) as DecoratedCallExecutableExpression
+
+const repeatUntilState = (exp, state) => {
+  while (exp.state !== state) {
+    exp = transitionExpressionStateWrapped(exp)
+  }
+  return exp
+}
 
 describe('transitionExpressionState', () => {
   describe('if unprioritized', () => {
     it('prioritizes', () => {
-      const originalExpression = decorateExpression([
+      const originalExp = decorateExpression([
         {
           arg: 'x',
           body: 'y',
         },
         'x',
       ])
-      expect(
-        transitionExpressionState(originalExpression).priority
-      ).toBeDefined()
+      expect(transitionExpressionState(originalExp).priority).toBeDefined()
     })
   })
 
   describe('if no next call is found', () => {
     it('returns null', () => {
-      const originalExpression = prioritizeExpression(
-        decorateExpression(['y', 'x'])
-      )
-      expect(transitionExpressionState(originalExpression).state).toBe('done')
+      const originalExp = prioritizeExpression(decorateExpression(['y', 'x']))
+      expect(transitionExpressionState(originalExp).state).toBe('done')
     })
   })
 
   describe('if next call is found', () => {
     it('activates the call', () => {
-      const originalExpression = prioritizeExpression(
+      const originalExp = prioritizeExpression(
         decorateExpression([
           {
             arg: 'x',
@@ -41,30 +51,42 @@ describe('transitionExpressionState', () => {
           'x',
         ])
       )
-      let executableExpression = transitionExpressionState(
-        originalExpression
-      ) as DecoratedCallExecutableExpression
-      expect(executableExpression.state).toBe('readyToHighlight')
-      executableExpression = transitionExpressionState(
-        executableExpression
-      ) as DecoratedCallExecutableExpression
-      expect(executableExpression.value.func.value.arg.state).toBe(
-        'highlighted'
-      )
-      executableExpression = transitionExpressionState(
-        executableExpression
-      ) as DecoratedCallExecutableExpression
-      expect(executableExpression.value.arg.state).toBe('highlighted')
-      executableExpression = transitionExpressionState(
-        executableExpression
-      ) as DecoratedCallExecutableExpression
-      expect(executableExpression.value.func.value.body.state).toBe(
-        'highlighted'
-      )
-      executableExpression = transitionExpressionState(
-        executableExpression
-      ) as DecoratedCallExecutableExpression
-      expect(executableExpression.state).toBe('readyToAlphaConvert')
+
+      let exp = transitionExpressionStateWrapped(originalExp)
+      expect(exp.state).toBe('readyToHighlight')
+
+      exp = transitionExpressionStateWrapped(exp)
+      expect(exp.value.func.value.arg.state).toBe('highlighted')
+
+      exp = transitionExpressionStateWrapped(exp)
+      expect(exp.value.arg.state).toBe('highlighted')
+
+      exp = transitionExpressionStateWrapped(exp)
+      expect(exp.value.func.value.body.state).toBe('highlighted')
+
+      exp = transitionExpressionStateWrapped(exp)
+      expect(exp.state).toBe('readyToAlphaConvert')
+    })
+  })
+
+  describe('if ready to alpha convert', () => {
+    describe('if alpha convert is not necessary', () => {
+      it('is now ready to beta reduce', () => {
+        const originalExp = prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: 'y',
+            },
+            'x',
+          ])
+        )
+
+        let exp = transitionExpressionStateWrapped(originalExp)
+        exp = repeatUntilState(exp, 'readyToAlphaConvert')
+        exp = transitionExpressionStateWrapped(exp)
+        expect(exp.state).toBe('readyToBetaReduce')
+      })
     })
   })
 })
