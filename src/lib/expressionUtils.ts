@@ -5,9 +5,15 @@ import {
   DecoratedCallExecutableExpression,
   DecoratedCallExpression,
   DecoratedCallPrioritizedExpression,
-  DecoratedExpression
+  DecoratedExpression,
+  DecoratedFunctionExpression,
+  DecoratedVariableExpression
 } from 'src/types/DecoratedExpressionTypes'
-import { UndecoratedExpression } from 'src/types/UndecoratedExpressionTypes'
+import {
+  UndecoratedCallExpression,
+  UndecoratedExpression,
+  UndecoratedFunctionExpression
+} from 'src/types/UndecoratedExpressionTypes'
 
 export const nestCallExpressions = (expression: UndecoratedExpression) => {
   if (Array.isArray(expression)) {
@@ -24,9 +30,16 @@ export const nestCallExpressions = (expression: UndecoratedExpression) => {
   }
 }
 
-export const decorateExpression = (
-  expression: UndecoratedExpression
-): DecoratedExpression => {
+export function decorateExpression(
+  expression: string
+): DecoratedVariableExpression
+export function decorateExpression(
+  expression: UndecoratedCallExpression
+): DecoratedCallExpression
+export function decorateExpression(
+  expression: UndecoratedFunctionExpression
+): DecoratedFunctionExpression
+export function decorateExpression(expression): any {
   if (typeof expression === 'string') {
     return {
       value: expression,
@@ -67,12 +80,13 @@ export const findNextCallExpression = (
       current = stack.pop()
       if (current.priority === INITIAL_PRIORITY) {
         if (
-          current.value.arg.type === 'call' ||
-          current.value.func.type !== 'function'
+          (current.value.arg.type === 'variable' ||
+            current.value.arg.type === 'function') &&
+          current.value.func.type === 'function'
         ) {
-          return null
-        } else {
           return current as DecoratedCallExecutableExpression
+        } else {
+          return null
         }
       }
       if (current.value.func.type === 'call') {
@@ -89,25 +103,24 @@ export const findNextCallExpression = (
 
 export const decoratedExpressionToSimpleString = (
   expression: DecoratedExpression,
-  addPriority: boolean = false
+  { addPriority } = { addPriority: false }
 ) => {
   if (expression.type === 'variable') {
     return expression.value
   } else if (expression.type === 'call') {
-    return `${decoratedExpressionToSimpleString(
-      expression.value.func,
-      addPriority
-    )}(${
+    return `${decoratedExpressionToSimpleString(expression.value.func, {
+      addPriority,
+    })}(${
       addPriority && expression.priority ? expression.priority : ''
-    }${decoratedExpressionToSimpleString(expression.value.arg, addPriority)})`
+    }${decoratedExpressionToSimpleString(expression.value.arg, {
+      addPriority,
+    })})`
   } else {
-    return `(${decoratedExpressionToSimpleString(
-      expression.value.arg,
-      addPriority
-    )} => ${decoratedExpressionToSimpleString(
-      expression.value.body,
-      addPriority
-    )})`
+    return `(${decoratedExpressionToSimpleString(expression.value.arg, {
+      addPriority,
+    })} => ${decoratedExpressionToSimpleString(expression.value.body, {
+      addPriority,
+    })})`
   }
 }
 

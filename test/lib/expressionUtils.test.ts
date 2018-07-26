@@ -6,7 +6,6 @@ import {
   nestCallExpressions,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
-import { DecoratedCallExpression } from 'src/types/DecoratedExpressionTypes'
 
 describe('nestCallExpressions', () => {
   it('handles simple case', () => {
@@ -128,14 +127,16 @@ describe('prioritizeExpression', () => {
   it('works with simple case', () => {
     expect(
       decoratedExpressionToSimpleString(
-        prioritizeExpression(decorateExpression([
-          {
-            arg: 'x',
-            body: 'y',
-          },
-          'z',
-        ]) as DecoratedCallExpression),
-        true
+        prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: 'y',
+            },
+            'z',
+          ])
+        ),
+        { addPriority: true }
       )
     ).toEqual('(x => y)(1z)')
   })
@@ -143,85 +144,8 @@ describe('prioritizeExpression', () => {
   it('works with slightly more complex case', () => {
     expect(
       decoratedExpressionToSimpleString(
-        prioritizeExpression(decorateExpression([
-          {
-            arg: 'x',
-            body: {
-              arg: 'y',
-              body: {
-                arg: 'z',
-                body: ['x', ['y', 'z']],
-              },
-            },
-          },
-          {
-            arg: 'a',
-            body: 'a',
-          },
-          {
-            arg: 'b',
-            body: 'b',
-          },
-          'c',
-        ]) as DecoratedCallExpression),
-        true
-      )
-    ).toEqual('(x => (y => (z => x(2y(1z)))))(1(a => a))(2(b => b))(3c)')
-  })
-
-  it('prioritizes argument over function', () => {
-    expect(
-      decoratedExpressionToSimpleString(
-        prioritizeExpression(decorateExpression([
-          [
-            {
-              arg: 'a',
-              body: {
-                arg: 'b',
-                body: 'c',
-              },
-            },
-            'd',
-          ],
-          [
-            {
-              arg: 'e',
-              body: {
-                arg: 'f',
-                body: 'g',
-              },
-            },
-            'h',
-          ],
-        ]) as DecoratedCallExpression),
-        true
-      )
-    ).toEqual('(a => (b => c))(2d)(3(e => (f => g))(1h))')
-  })
-})
-
-describe('findNextCallExpression', () => {
-  it('works with simple case', () => {
-    expect(
-      decoratedExpressionToSimpleString(
-        findNextCallExpression(
-          prioritizeExpression(decorateExpression([
-            {
-              arg: 'x',
-              body: 'y',
-            },
-            'z',
-          ]) as DecoratedCallExpression)
-        )
-      )
-    ).toBe('(x => y)(z)')
-  })
-
-  it('works with slightly more complex case', () => {
-    expect(
-      decoratedExpressionToSimpleString(
-        findNextCallExpression(
-          prioritizeExpression(decorateExpression([
+        prioritizeExpression(
+          decorateExpression([
             {
               arg: 'x',
               body: {
@@ -241,7 +165,92 @@ describe('findNextCallExpression', () => {
               body: 'b',
             },
             'c',
-          ]) as DecoratedCallExpression)
+          ])
+        ),
+        { addPriority: true }
+      )
+    ).toEqual('(x => (y => (z => x(2y(1z)))))(1(a => a))(2(b => b))(3c)')
+  })
+
+  it('prioritizes argument over function', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        prioritizeExpression(
+          decorateExpression([
+            [
+              {
+                arg: 'a',
+                body: {
+                  arg: 'b',
+                  body: 'c',
+                },
+              },
+              'd',
+            ],
+            [
+              {
+                arg: 'e',
+                body: {
+                  arg: 'f',
+                  body: 'g',
+                },
+              },
+              'h',
+            ],
+          ])
+        ),
+        { addPriority: true }
+      )
+    ).toEqual('(a => (b => c))(2d)(3(e => (f => g))(1h))')
+  })
+})
+
+describe('findNextCallExpression', () => {
+  it('works with simple case', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        findNextCallExpression(
+          prioritizeExpression(
+            decorateExpression([
+              {
+                arg: 'x',
+                body: 'y',
+              },
+              'z',
+            ])
+          )
+        )
+      )
+    ).toBe('(x => y)(z)')
+  })
+
+  it('works with slightly more complex case', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        findNextCallExpression(
+          prioritizeExpression(
+            decorateExpression([
+              {
+                arg: 'x',
+                body: {
+                  arg: 'y',
+                  body: {
+                    arg: 'z',
+                    body: ['x', ['y', 'z']],
+                  },
+                },
+              },
+              {
+                arg: 'a',
+                body: 'a',
+              },
+              {
+                arg: 'b',
+                body: 'b',
+              },
+              'c',
+            ])
+          )
         )
       )
     ).toBe('(x => (y => (z => x(y(z)))))((a => a))')
@@ -250,10 +259,7 @@ describe('findNextCallExpression', () => {
   it('returns null if there is no more expression to call', () => {
     expect(
       findNextCallExpression(
-        prioritizeExpression(decorateExpression([
-          'x',
-          'y',
-        ]) as DecoratedCallExpression)
+        prioritizeExpression(decorateExpression(['x', 'y']))
       )
     ).toBeNull()
   })
