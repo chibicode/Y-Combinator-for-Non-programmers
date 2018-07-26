@@ -15,10 +15,10 @@ const transitionExpressionState = (expression: DecoratedCallExpression) => {
         switch (nextCallExpression.state) {
           case 'default': {
             nextCallExpression.state = 'callActivated'
-            nextCallExpression.value.arg.state = 'highlighted'
-            nextCallExpression.value.func.value.arg.state = 'highlighted'
           }
         }
+      } else {
+        draftExpression.state = 'done'
       }
     })
   }

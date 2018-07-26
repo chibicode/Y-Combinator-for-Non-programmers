@@ -1,7 +1,7 @@
 import { UndecoratedFunctionExpression } from 'src/types/UndecoratedExpressionTypes'
 
 interface DecoratedBaseExpression {
-  state: 'default' | 'callActivated' | 'highlighted'
+  state: 'default' | 'callActivated' | 'highlighted' | 'done'
 }
 
 export interface DecoratedVariableExpression extends DecoratedBaseExpression {
