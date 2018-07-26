@@ -54,6 +54,69 @@ export const decorateExpression = (
   }
 }
 
+const INITIAL_PRIORITY = 1
+
+const prioritizeExpressionRecurserForOtherExpression = (
+  expression: DecoratedExpression
+): void => {
+  switch (expression.type) {
+    case 'variable': {
+      return
+    }
+    case 'call': {
+      prioritizeExpressionRecurserForCallExpression({
+        expression,
+        priority: INITIAL_PRIORITY,
+      })
+      return
+    }
+    case 'function': {
+      prioritizeExpressionRecurserForOtherExpression(expression.value.arg)
+      prioritizeExpressionRecurserForOtherExpression(expression.value.body)
+      return
+    }
+  }
+}
+
+const prioritizeExpressionRecurserForCallExpression = ({
+  expression,
+  priority,
+}: {
+  expression: DecoratedCallExpression
+  priority: number
+}): number => {
+  if (expression.value.arg.type === 'call') {
+    priority =
+      prioritizeExpressionRecurserForCallExpression({
+        expression: expression.value.arg,
+        priority,
+      }) + 1
+  } else {
+    prioritizeExpressionRecurserForOtherExpression(expression.value.arg)
+  }
+  if (expression.value.func.type === 'call') {
+    priority =
+      prioritizeExpressionRecurserForCallExpression({
+        expression: expression.value.func,
+        priority,
+      }) + 1
+  } else {
+    prioritizeExpressionRecurserForOtherExpression(expression.value.func)
+  }
+
+  expression.priority = priority
+  return priority
+}
+
+export const prioritizeExpression = (
+  expression: DecoratedCallExpression
+): void => {
+  prioritizeExpressionRecurserForCallExpression({
+    expression,
+    priority: INITIAL_PRIORITY,
+  })
+}
+
 /**
  * Finds the deepest call expression whose func is a function expression.
  * Implementation uses iterative inorder traversal of the tree,
@@ -85,18 +148,26 @@ export const findNextCallExpression = (
 }
 
 export const decoratedExpressionToSimpleString = (
-  expression: DecoratedExpression
+  expression: DecoratedExpression,
+  addPriority: boolean = false
 ) => {
   if (expression.type === 'variable') {
     return expression.value
   } else if (expression.type === 'call') {
     return `${decoratedExpressionToSimpleString(
-      expression.value.func
-    )}(${decoratedExpressionToSimpleString(expression.value.arg)})`
+      expression.value.func,
+      addPriority
+    )}(${
+      addPriority && expression.priority ? expression.priority : ''
+    }${decoratedExpressionToSimpleString(expression.value.arg, addPriority)})`
   } else {
     return `(${decoratedExpressionToSimpleString(
-      expression.value.arg
-    )} => ${decoratedExpressionToSimpleString(expression.value.body)})`
+      expression.value.arg,
+      addPriority
+    )} => ${decoratedExpressionToSimpleString(
+      expression.value.body,
+      addPriority
+    )})`
   }
 }
 

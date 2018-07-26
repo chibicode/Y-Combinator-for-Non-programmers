@@ -11,6 +11,7 @@ export interface DecoratedVariableExpression extends DecoratedBaseExpression {
 
 export interface DecoratedCallExpression extends DecoratedBaseExpression {
   type: 'call'
+  priority?: number
   value: {
     arg: DecoratedExpression
     func: DecoratedExpression
@@ -20,8 +21,9 @@ export interface DecoratedCallExpression extends DecoratedBaseExpression {
 export interface DecoratedCallExecutableExpression
   extends DecoratedBaseExpression {
   type: 'call'
+  priority: 1
   value: {
-    arg: DecoratedExpression
+    arg: DecoratedVariableExpression | DecoratedFunctionExpression
     func: DecoratedFunctionExpression
   }
 }
