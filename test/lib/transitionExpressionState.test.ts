@@ -28,4 +28,23 @@ describe('transitionExpressionState', () => {
       expect(transitionExpressionState(originalExpression).state).toBe('done')
     })
   })
+
+  describe('if next call is found', () => {
+    describe('is in default state', () => {
+      it('activates the call', () => {
+        const originalExpression = prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: 'y',
+            },
+            'x',
+          ])
+        )
+        expect(transitionExpressionState(originalExpression).state).toBe(
+          'callActivated'
+        )
+      })
+    })
+  })
 })
