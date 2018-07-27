@@ -2,7 +2,7 @@ import {
   conflictingVariableNames,
   decoratedExpressionToSimpleString,
   decorateExpression,
-  findNextCallExpression,
+  findNextCallExpressionAndParent,
   getAllVariableNames,
   mutableAlphaConvert,
   nestCallExpressions,
@@ -207,11 +207,11 @@ describe('prioritizeExpression', () => {
   })
 })
 
-describe('findNextCallExpression', () => {
+describe('findNextCallExpressionAndParent', () => {
   it('works with simple case', () => {
     expect(
       decoratedExpressionToSimpleString(
-        findNextCallExpression(
+        findNextCallExpressionAndParent(
           prioritizeExpression(
             decorateExpression([
               {
@@ -221,7 +221,7 @@ describe('findNextCallExpression', () => {
               'z',
             ])
           )
-        )
+        ).expression
       )
     ).toBe('(x => y)(z)')
   })
@@ -229,7 +229,7 @@ describe('findNextCallExpression', () => {
   it('works with slightly more complex case', () => {
     expect(
       decoratedExpressionToSimpleString(
-        findNextCallExpression(
+        findNextCallExpressionAndParent(
           prioritizeExpression(
             decorateExpression([
               {
@@ -253,14 +253,60 @@ describe('findNextCallExpression', () => {
               'c',
             ])
           )
-        )
+        ).expression
       )
     ).toBe('(x => (y => (z => x(y(z)))))((a => a))')
   })
 
+  it('returns undefined parent if top most call', () => {
+    expect(
+      findNextCallExpressionAndParent(
+        prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: 'y',
+            },
+            'z',
+          ])
+        )
+      ).parent
+    ).toBeUndefined()
+  })
+
+  it('returns actual parent if not top most call', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        findNextCallExpressionAndParent(
+          prioritizeExpression(
+            decorateExpression([
+              [
+                {
+                  arg: 'a',
+                  body: {
+                    arg: 'b',
+                    body: 'c',
+                  },
+                },
+                'd',
+              ],
+              [
+                {
+                  arg: 'e',
+                  body: 'f',
+                },
+                'g',
+              ],
+            ])
+          )
+        ).parent
+      )
+    ).toBe('(a => (b => c))(d)((e => f)(g))')
+  })
+
   it('returns null if there is no more expression to call', () => {
     expect(
-      findNextCallExpression(
+      findNextCallExpressionAndParent(
         prioritizeExpression(decorateExpression(['x', 'y']))
       )
     ).toBeNull()
@@ -302,7 +348,7 @@ describe('conflictingVariableNames', () => {
     it('returns empty', () => {
       expect(
         conflictingVariableNames(
-          findNextCallExpression(
+          findNextCallExpressionAndParent(
             prioritizeExpression(
               decorateExpression([
                 {
@@ -315,7 +361,7 @@ describe('conflictingVariableNames', () => {
                 'x',
               ])
             )
-          )
+          ).expression
         )
       ).toEqual([])
     })
@@ -325,7 +371,7 @@ describe('conflictingVariableNames', () => {
     it('returns conflicted elements', () => {
       expect(
         conflictingVariableNames(
-          findNextCallExpression(
+          findNextCallExpressionAndParent(
             prioritizeExpression(
               decorateExpression([
                 {
@@ -338,7 +384,7 @@ describe('conflictingVariableNames', () => {
                 'y',
               ])
             )
-          )
+          ).expression
         )
       ).toEqual(['y'])
     })
@@ -347,7 +393,7 @@ describe('conflictingVariableNames', () => {
 
 describe('mutableAlphaConvert', () => {
   it('returns conflicted elements', () => {
-    const expression = findNextCallExpression(
+    const expression = findNextCallExpressionAndParent(
       prioritizeExpression(
         decorateExpression([
           {
@@ -366,7 +412,7 @@ describe('mutableAlphaConvert', () => {
           },
         ])
       )
-    )
+    ).expression
     mutableAlphaConvert(expression)
     expect(decoratedExpressionToSimpleString(expression)).toEqual(
       '(x => (a => (b => x(y(b)))))((y => z))'

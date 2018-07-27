@@ -1,7 +1,7 @@
 import produce from 'immer'
 import {
   conflictingVariableNames,
-  findNextCallExpression,
+  findNextCallExpressionAndParent,
   mutableAlphaConvert,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
@@ -25,8 +25,11 @@ export default function transitionExpressionState(expression: any): any {
     return produce<DecoratedCallPrioritizedExpression>(
       expression,
       draftExpression => {
-        const nextCallExpression = findNextCallExpression(draftExpression)
-        if (nextCallExpression) {
+        const nextCallExpressionAndParent = findNextCallExpressionAndParent(
+          draftExpression
+        )
+        if (nextCallExpressionAndParent) {
+          const { expression: nextCallExpression } = nextCallExpressionAndParent
           switch (nextCallExpression.state) {
             case 'default': {
               nextCallExpression.state = 'readyToHighlight'

@@ -75,30 +75,48 @@ export function decorateExpression(expression): any {
   }
 }
 
-export const findNextCallExpression = (
+export const findNextCallExpressionAndParent = (
   expression: DecoratedExpression
-): DecoratedCallExecutableExpression | null => {
+): {
+  expression: DecoratedCallExecutableExpression
+  parent?: DecoratedExpression
+} | null => {
   if (expression.type === 'call') {
-    const stack: DecoratedCallExpression[] = [expression]
+    const stack: Array<{
+      expression: DecoratedCallExpression
+      parent?: DecoratedExpression
+    }> = [{ expression }]
     let current: DecoratedCallExpression
+    let parent: DecoratedExpression
     while (stack.length > 0) {
-      current = stack.pop()
+      const topOfStack = stack.pop()
+      current = topOfStack.expression
+      parent = topOfStack.parent
       if (current.priority === INITIAL_PRIORITY) {
         if (
           (current.value.arg.type === 'variable' ||
             current.value.arg.type === 'function') &&
           current.value.func.type === 'function'
         ) {
-          return current as DecoratedCallExecutableExpression
+          return {
+            expression: current as DecoratedCallExecutableExpression,
+            parent,
+          }
         } else {
           return null
         }
       }
       if (current.value.func.type === 'call') {
-        stack.push(current.value.func)
+        stack.push({
+          expression: current.value.func,
+          parent: current,
+        })
       }
       if (current.value.arg.type === 'call') {
-        stack.push(current.value.arg)
+        stack.push({
+          expression: current.value.arg,
+          parent: current,
+        })
       }
     }
   }
