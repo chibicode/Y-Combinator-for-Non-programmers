@@ -1,7 +1,10 @@
 import produce from 'immer'
 import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
+import union from 'lodash/union'
 import uniq from 'lodash/uniq'
+import zipObject from 'lodash/zipObject'
+import Expression from 'src/components/Expression'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
 import {
   DecoratedCallExecutableExpression,
@@ -231,6 +234,95 @@ export const conflictingVariableNames = (
   return intersection(argVariableNames, funcBodyVariableNamesExceptArg)
 }
 
+const POSSIBLE_VARIABLE_NAMES = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+]
+
+const replaceVariableNamesRecurser = ({
+  expression,
+  mapping,
+}: {
+  expression: DecoratedExpression
+  mapping: {
+    key: string
+  }
+}): void => {
+  if (expression.type === 'variable') {
+    if (mapping[expression.value]) {
+      expression.value = mapping[expression.value]
+    }
+  } else if (expression.type === 'call') {
+    replaceVariableNamesRecurser({ expression: expression.value.arg, mapping })
+    replaceVariableNamesRecurser({ expression: expression.value.arg, mapping })
+  } else {
+    replaceVariableNamesRecurser({ expression: expression.value.arg, mapping })
+    replaceVariableNamesRecurser({ expression: expression.value.body, mapping })
+  }
+}
+
+const replaceVariableNames = ({
+  expression,
+  mapping,
+}: {
+  expression: DecoratedCallExecutableExpression
+  mapping: {
+    key: string
+  }
+}): DecoratedCallExecutableExpression => {
+  return produce<DecoratedCallExecutableExpression>(
+    expression,
+    draftExpression => {
+      replaceVariableNamesRecurser({
+        expression: draftExpression.value.func,
+        mapping,
+      })
+    }
+  )
+}
+
 export const alphaConvert = (expression: DecoratedCallExecutableExpression) => {
-  return expression
+  const sortedConflicts = conflictingVariableNames(expression).sort()
+  if (sortedConflicts.length === 0) {
+    return expression
+  }
+  const argVariableNames = getAllVariableNames(expression.value.arg)
+  const funcVariableNames = getAllVariableNames(expression.value.func)
+  const allUsedVariableNames = uniq(union(argVariableNames, funcVariableNames))
+  const usableVariableNames = difference(
+    POSSIBLE_VARIABLE_NAMES,
+    allUsedVariableNames
+  )
+  const usableVariableNamesSliced = usableVariableNames.slice(
+    0,
+    sortedConflicts.length
+  )
+  const mapping = zipObject(sortedConflicts, usableVariableNamesSliced) as {
+    key: string
+  }
+  return replaceVariableNames({ expression, mapping })
 }

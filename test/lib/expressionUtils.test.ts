@@ -357,15 +357,21 @@ describe('alphaConvert', () => {
                   arg: 'x',
                   body: {
                     arg: 'y',
-                    body: ['x', 'y'],
+                    body: {
+                      arg: 'z',
+                      body: ['x', ['y', 'z']],
+                    },
                   },
                 },
-                'y',
+                {
+                  arg: 'y',
+                  body: 'z',
+                },
               ])
             )
           )
         )
       )
-    ).toEqual('(x => (z => x(z)))(y)')
+    ).toEqual('(x => (a => (b => x(y(b)))))((y => z))')
   })
 })
