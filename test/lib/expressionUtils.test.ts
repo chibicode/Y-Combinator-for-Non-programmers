@@ -259,49 +259,48 @@ describe('findNextCallExpressionAndParent', () => {
   })
 
   it('returns undefined parent if top most call', () => {
-    expect(
-      findNextCallExpressionAndParent(
-        prioritizeExpression(
-          decorateExpression([
-            {
-              arg: 'x',
-              body: 'y',
-            },
-            'z',
-          ])
-        )
-      ).parent
-    ).toBeUndefined()
+    const result = findNextCallExpressionAndParent(
+      prioritizeExpression(
+        decorateExpression([
+          {
+            arg: 'x',
+            body: 'y',
+          },
+          'z',
+        ])
+      )
+    )
+    expect(result.parent).toBeUndefined()
   })
 
   it('returns actual parent if not top most call', () => {
-    expect(
-      decoratedExpressionToSimpleString(
-        findNextCallExpressionAndParent(
-          prioritizeExpression(
-            decorateExpression([
-              [
-                {
-                  arg: 'a',
-                  body: {
-                    arg: 'b',
-                    body: 'c',
-                  },
-                },
-                'd',
-              ],
-              [
-                {
-                  arg: 'e',
-                  body: 'f',
-                },
-                'g',
-              ],
-            ])
-          )
-        ).parent
+    const result = findNextCallExpressionAndParent(
+      prioritizeExpression(
+        decorateExpression([
+          [
+            {
+              arg: 'a',
+              body: {
+                arg: 'b',
+                body: 'c',
+              },
+            },
+            'd',
+          ],
+          [
+            {
+              arg: 'e',
+              body: 'f',
+            },
+            'g',
+          ],
+        ])
       )
-    ).toBe('(a => (b => c))(d)((e => f)(g))')
+    )
+    expect(decoratedExpressionToSimpleString(result.parent)).toBe(
+      '(a => (b => c))(d)((e => f)(g))'
+    )
+    expect(result.parentKey).toBe('arg')
   })
 
   it('returns null if there is no more expression to call', () => {

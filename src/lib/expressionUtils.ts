@@ -79,19 +79,23 @@ export const findNextCallExpressionAndParent = (
   expression: DecoratedExpression
 ): {
   expression: DecoratedCallExecutableExpression
+  parentKey?: string
   parent?: DecoratedExpression
 } | null => {
   if (expression.type === 'call') {
     const stack: Array<{
       expression: DecoratedCallExpression
       parent?: DecoratedExpression
+      parentKey?: string
     }> = [{ expression }]
     let current: DecoratedCallExpression
     let parent: DecoratedExpression
+    let parentKey: string
     while (stack.length > 0) {
       const topOfStack = stack.pop()
       current = topOfStack.expression
       parent = topOfStack.parent
+      parentKey = topOfStack.parentKey
       if (current.priority === INITIAL_PRIORITY) {
         if (
           (current.value.arg.type === 'variable' ||
@@ -100,6 +104,7 @@ export const findNextCallExpressionAndParent = (
         ) {
           return {
             expression: current as DecoratedCallExecutableExpression,
+            parentKey,
             parent,
           }
         } else {
@@ -109,12 +114,14 @@ export const findNextCallExpressionAndParent = (
       if (current.value.func.type === 'call') {
         stack.push({
           expression: current.value.func,
+          parentKey: 'func',
           parent: current,
         })
       }
       if (current.value.arg.type === 'call') {
         stack.push({
           expression: current.value.arg,
+          parentKey: 'arg',
           parent: current,
         })
       }
@@ -324,4 +331,10 @@ export const mutableAlphaConvert = (
     key: string
   }
   replaceVariableNamesRecurser({ expression: expression.value.func, mapping })
+}
+
+export const betaReduce = (
+  expression: DecoratedCallExecutableExpression
+): DecoratedExpression => {
+  return expression
 }
