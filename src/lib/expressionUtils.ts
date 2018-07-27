@@ -4,7 +4,6 @@ import intersection from 'lodash/intersection'
 import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
-import Expression from 'src/components/Expression'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
 import {
   DecoratedCallExecutableExpression,
@@ -285,30 +284,12 @@ const replaceVariableNamesRecurser = ({
   }
 }
 
-const replaceVariableNames = ({
-  expression,
-  mapping,
-}: {
+export const mutableAlphaConvert = (
   expression: DecoratedCallExecutableExpression
-  mapping: {
-    key: string
-  }
-}): DecoratedCallExecutableExpression => {
-  return produce<DecoratedCallExecutableExpression>(
-    expression,
-    draftExpression => {
-      replaceVariableNamesRecurser({
-        expression: draftExpression.value.func,
-        mapping,
-      })
-    }
-  )
-}
-
-export const alphaConvert = (expression: DecoratedCallExecutableExpression) => {
+) => {
   const sortedConflicts = conflictingVariableNames(expression).sort()
   if (sortedConflicts.length === 0) {
-    return expression
+    return
   }
   const argVariableNames = getAllVariableNames(expression.value.arg)
   const funcVariableNames = getAllVariableNames(expression.value.func)
@@ -324,5 +305,5 @@ export const alphaConvert = (expression: DecoratedCallExecutableExpression) => {
   const mapping = zipObject(sortedConflicts, usableVariableNamesSliced) as {
     key: string
   }
-  return replaceVariableNames({ expression, mapping })
+  replaceVariableNamesRecurser({ expression: expression.value.func, mapping })
 }

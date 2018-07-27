@@ -12,7 +12,8 @@ export interface DecoratedCallExpression {
     | 'readyToHighlight'
     | 'highlighted'
     | 'done'
-    | 'readyToAlphaConvert'
+    | 'checkForConflictingVariables'
+    | 'needsAlphaConvert'
     | 'readyToBetaReduce'
   type: 'call'
   priority?: number

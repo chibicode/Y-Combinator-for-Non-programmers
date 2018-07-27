@@ -1,4 +1,5 @@
 import {
+  decoratedExpressionToSimpleString,
   decorateExpression,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
@@ -65,11 +66,11 @@ describe('transitionExpressionState', () => {
       expect(exp.value.func.value.body.state).toBe('highlighted')
 
       exp = transitionExpressionStateWrapped(exp)
-      expect(exp.state).toBe('readyToAlphaConvert')
+      expect(exp.state).toBe('checkForConflictingVariables')
     })
   })
 
-  describe('if ready to alpha convert', () => {
+  describe('if ready to check variable conflicts', () => {
     describe('if alpha convert is not necessary', () => {
       it('is now ready to beta reduce', () => {
         const originalExp = prioritizeExpression(
@@ -83,10 +84,57 @@ describe('transitionExpressionState', () => {
         )
 
         let exp = transitionExpressionStateWrapped(originalExp)
-        exp = repeatUntilState(exp, 'readyToAlphaConvert')
+        exp = repeatUntilState(exp, 'checkForConflictingVariables')
         exp = transitionExpressionStateWrapped(exp)
         expect(exp.state).toBe('readyToBetaReduce')
       })
+    })
+
+    describe('if alpha convert is necessary', () => {
+      it('indicates that alpha convert is necessary', () => {
+        const originalExp = prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: {
+                arg: 'y',
+                body: ['x', 'y'],
+              },
+            },
+            'y',
+          ])
+        )
+
+        let exp = transitionExpressionStateWrapped(originalExp)
+        exp = repeatUntilState(exp, 'checkForConflictingVariables')
+        exp = transitionExpressionStateWrapped(exp)
+        expect(exp.state).toBe('needsAlphaConvert')
+      })
+    })
+  })
+
+  describe('if needs alpha convert', () => {
+    it('does alpha conversion', () => {
+      const originalExp = prioritizeExpression(
+        decorateExpression([
+          {
+            arg: 'x',
+            body: {
+              arg: 'y',
+              body: ['x', 'y'],
+            },
+          },
+          'y',
+        ])
+      )
+
+      let exp = transitionExpressionStateWrapped(originalExp)
+      exp = repeatUntilState(exp, 'needsAlphaConvert')
+      exp = transitionExpressionStateWrapped(exp)
+      expect(exp.state).toBe('readyToBetaReduce')
+      expect(decoratedExpressionToSimpleString(exp)).toBe(
+        '(x => (a => x(a)))(y)'
+      )
     })
   })
 })

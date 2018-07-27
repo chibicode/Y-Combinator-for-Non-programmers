@@ -1,10 +1,10 @@
 import {
-  alphaConvert,
   conflictingVariableNames,
   decoratedExpressionToSimpleString,
   decorateExpression,
   findNextCallExpression,
   getAllVariableNames,
+  mutableAlphaConvert,
   nestCallExpressions,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
@@ -345,33 +345,31 @@ describe('conflictingVariableNames', () => {
   })
 })
 
-describe('alphaConvert', () => {
+describe('mutableAlphaConvert', () => {
   it('returns conflicted elements', () => {
-    expect(
-      decoratedExpressionToSimpleString(
-        alphaConvert(
-          findNextCallExpression(
-            prioritizeExpression(
-              decorateExpression([
-                {
-                  arg: 'x',
-                  body: {
-                    arg: 'y',
-                    body: {
-                      arg: 'z',
-                      body: ['x', ['y', 'z']],
-                    },
-                  },
-                },
-                {
-                  arg: 'y',
-                  body: 'z',
-                },
-              ])
-            )
-          )
-        )
+    const expression = findNextCallExpression(
+      prioritizeExpression(
+        decorateExpression([
+          {
+            arg: 'x',
+            body: {
+              arg: 'y',
+              body: {
+                arg: 'z',
+                body: ['x', ['y', 'z']],
+              },
+            },
+          },
+          {
+            arg: 'y',
+            body: 'z',
+          },
+        ])
       )
-    ).toEqual('(x => (a => (b => x(y(b)))))((y => z))')
+    )
+    mutableAlphaConvert(expression)
+    expect(decoratedExpressionToSimpleString(expression)).toEqual(
+      '(x => (a => (b => x(y(b)))))((y => z))'
+    )
   })
 })

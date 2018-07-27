@@ -2,6 +2,7 @@ import produce from 'immer'
 import {
   conflictingVariableNames,
   findNextCallExpression,
+  mutableAlphaConvert,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
 import {
@@ -41,17 +42,22 @@ export default function transitionExpressionState(expression: any): any {
               ) {
                 nextCallExpression.value.func.value.body.state = 'highlighted'
               } else {
-                nextCallExpression.state = 'readyToAlphaConvert'
+                nextCallExpression.state = 'checkForConflictingVariables'
               }
               return
             }
-            case 'readyToAlphaConvert': {
+            case 'checkForConflictingVariables': {
               const conflicts = conflictingVariableNames(nextCallExpression)
               if (conflicts.length > 0) {
-                return
+                nextCallExpression.state = 'needsAlphaConvert'
               } else {
                 nextCallExpression.state = 'readyToBetaReduce'
               }
+              return
+            }
+            case 'needsAlphaConvert': {
+              mutableAlphaConvert(nextCallExpression)
+              nextCallExpression.state = 'readyToBetaReduce'
               return
             }
           }
