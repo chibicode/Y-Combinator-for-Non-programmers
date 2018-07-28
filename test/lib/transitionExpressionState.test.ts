@@ -8,6 +8,7 @@ import transitionExpressionState from 'src/lib/transitionExpressionState'
 import {
   DecoratedCallExecutableExpression,
   DecoratedCallPrioritizedExpression,
+  DecoratedExpression,
   DecoratedNeedsResetCallExpression,
   DecoratedNeedsResetExpression
 } from 'src/types/DecoratedExpressionTypes'
@@ -164,7 +165,7 @@ describe('transitionExpressionState', () => {
       })
     })
 
-    describe('top level beta reduction, complicated', () => {
+    describe('non-top level beta reduction, complicated', () => {
       it('does beta reduction', () => {
         const originalExp = prioritizeExpression(
           decorateExpression([
@@ -199,7 +200,41 @@ describe('transitionExpressionState', () => {
           '(y => (z => (a => a)(y(z))))((b => b))(c)'
         )
         expect(result.state).toBe('needsReset')
+        const afterReset = transitionExpressionState(result)
+        expect(afterReset.state).toBe('default')
+        expect(afterReset.priority).toBeUndefined()
       })
     })
+  })
+
+  describe('repeat until done', () => {
+    let exp = prioritizeExpression(
+      decorateExpression([
+        {
+          arg: 'x',
+          body: {
+            arg: 'y',
+            body: {
+              arg: 'z',
+              body: ['x', ['y', 'z']],
+            },
+          },
+        },
+        {
+          arg: 'a',
+          body: 'a',
+        },
+        {
+          arg: 'b',
+          body: 'b',
+        },
+        'c',
+      ])
+    ) as any
+
+    while (exp.state !== 'done' && exp.type === 'call') {
+      exp = transitionExpressionState(exp)
+    }
+    expect(decoratedExpressionToSimpleString(exp)).toBe('c')
   })
 })
