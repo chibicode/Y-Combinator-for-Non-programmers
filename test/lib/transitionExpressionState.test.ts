@@ -8,7 +8,6 @@ import transitionExpressionState from 'src/lib/transitionExpressionState'
 import {
   DecoratedCallExecutableExpression,
   DecoratedCallPrioritizedExpression,
-  DecoratedExpression,
   DecoratedNeedsResetCallExpression,
   DecoratedNeedsResetExpression
 } from 'src/types/DecoratedExpressionTypes'
@@ -208,33 +207,35 @@ describe('transitionExpressionState', () => {
   })
 
   describe('repeat until done', () => {
-    let exp = prioritizeExpression(
-      decorateExpression([
-        {
-          arg: 'x',
-          body: {
-            arg: 'y',
+    it('completes', () => {
+      let exp = prioritizeExpression(
+        decorateExpression([
+          {
+            arg: 'x',
             body: {
-              arg: 'z',
-              body: ['x', ['y', 'z']],
+              arg: 'y',
+              body: {
+                arg: 'z',
+                body: ['x', ['y', 'z']],
+              },
             },
           },
-        },
-        {
-          arg: 'a',
-          body: 'a',
-        },
-        {
-          arg: 'b',
-          body: 'b',
-        },
-        'c',
-      ])
-    ) as any
+          {
+            arg: 'a',
+            body: 'a',
+          },
+          {
+            arg: 'b',
+            body: 'b',
+          },
+          'c',
+        ])
+      ) as any
 
-    while (exp.state !== 'done' && exp.type === 'call') {
-      exp = transitionExpressionState(exp)
-    }
-    expect(decoratedExpressionToSimpleString(exp)).toBe('c')
+      while (exp.state !== 'done' && exp.type === 'call') {
+        exp = transitionExpressionState(exp)
+      }
+      expect(decoratedExpressionToSimpleString(exp)).toBe('c')
+    })
   })
 })

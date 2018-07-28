@@ -345,41 +345,40 @@ const betaReduceRecurser = ({
 }): DecoratedExpression => {
   if (expression.type === 'variable') {
     if (expression.value === from) {
-      return cloneDeep(to)
+      return to
     } else {
       return expression
     }
   } else if (expression.type === 'call') {
-    return produce<DecoratedCallExpression>(expression, draftExpression => {
-      draftExpression.value.arg = betaReduceRecurser({
-        expression: draftExpression.value.arg,
-        from,
-        to,
-      })
-      draftExpression.value.func = betaReduceRecurser({
-        expression: draftExpression.value.func,
-        from,
-        to,
-      })
+    expression.value.arg = betaReduceRecurser({
+      expression: expression.value.arg,
+      from,
+      to,
     })
+    expression.value.func = betaReduceRecurser({
+      expression: expression.value.func,
+      from,
+      to,
+    })
+    return expression
   } else {
-    return produce<DecoratedFunctionExpression>(expression, draftExpression => {
-      draftExpression.value.body = betaReduceRecurser({
-        expression: draftExpression.value.body,
-        from,
-        to,
-      })
+    expression.value.body = betaReduceRecurser({
+      expression: expression.value.body,
+      from,
+      to,
     })
+    return expression
   }
 }
 
 export const betaReduce = (
   expression: DecoratedCallExecutableExpression
 ): DecoratedExpression => {
+  const clonedExpression = cloneDeep(expression)
   return betaReduceRecurser({
-    expression: expression.value.func.value.body,
-    from: expression.value.func.value.arg.value,
-    to: expression.value.arg,
+    expression: clonedExpression.value.func.value.body,
+    from: clonedExpression.value.func.value.arg.value,
+    to: clonedExpression.value.arg,
   })
 }
 
