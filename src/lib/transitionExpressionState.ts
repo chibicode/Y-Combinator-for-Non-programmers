@@ -2,7 +2,6 @@ import produce from 'immer'
 import {
   betaReduce,
   conflictingVariableNames,
-  decoratedExpressionToSimpleString,
   findNextCallExpressionAndParent,
   mutableAlphaConvert,
   prioritizeExpression,
