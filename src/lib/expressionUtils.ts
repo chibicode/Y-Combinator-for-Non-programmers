@@ -306,9 +306,9 @@ const replaceVariableNamesRecurser = ({
     }
   } else if (expression.type === 'call') {
     replaceVariableNamesRecurser({ expression: expression.value.arg, mapping })
-    replaceVariableNamesRecurser({ expression: expression.value.arg, mapping })
+    replaceVariableNamesRecurser({ expression: expression.value.func, mapping })
   } else {
-    replaceVariableNamesRecurser({ expression: expression.value.arg, mapping })
+    // Do not recurse on function arguments - those are not what you're replacing
     replaceVariableNamesRecurser({ expression: expression.value.body, mapping })
   }
 }
