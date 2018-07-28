@@ -1,4 +1,5 @@
 import produce from 'immer'
+import cloneDeep from 'lodash/cloneDeep'
 import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
 import union from 'lodash/union'
@@ -333,8 +334,73 @@ export const mutableAlphaConvert = (
   replaceVariableNamesRecurser({ expression: expression.value.func, mapping })
 }
 
+const betaReduceRecurser = ({
+  expression,
+  from,
+  to,
+}: {
+  expression: DecoratedExpression
+  from: string
+  to: DecoratedVariableExpression | DecoratedFunctionExpression
+}): DecoratedExpression => {
+  if (expression.type === 'variable') {
+    if (expression.value === from) {
+      return cloneDeep(to)
+    } else {
+      return expression
+    }
+  } else if (expression.type === 'call') {
+    return produce<DecoratedCallExpression>(expression, draftExpression => {
+      draftExpression.value.arg = betaReduceRecurser({
+        expression: draftExpression.value.arg,
+        from,
+        to,
+      })
+      draftExpression.value.func = betaReduceRecurser({
+        expression: draftExpression.value.func,
+        from,
+        to,
+      })
+    })
+  } else {
+    return produce<DecoratedFunctionExpression>(expression, draftExpression => {
+      draftExpression.value.body = betaReduceRecurser({
+        expression: draftExpression.value.body,
+        from,
+        to,
+      })
+    })
+  }
+}
+
 export const betaReduce = (
   expression: DecoratedCallExecutableExpression
 ): DecoratedExpression => {
-  return expression
+  return betaReduceRecurser({
+    expression: expression.value.func.value.body,
+    from: expression.value.func.value.arg.value,
+    to: expression.value.arg,
+  })
+}
+
+export const resetExpression = (expression: DecoratedExpression) => {
+  return produce<DecoratedExpression>(expression, draftExpression => {
+    draftExpression.state = 'default'
+    if (draftExpression.type === 'function') {
+      if (draftExpression.value.arg) {
+        resetExpression(draftExpression.value.arg)
+      }
+      if (draftExpression.value.body) {
+        resetExpression(draftExpression.value.body)
+      }
+    } else if (draftExpression.type === 'call') {
+      delete draftExpression.priority
+      if (draftExpression.value.arg) {
+        resetExpression(draftExpression.value.arg)
+      }
+      if (draftExpression.value.func) {
+        resetExpression(draftExpression.value.func)
+      }
+    }
+  })
 }

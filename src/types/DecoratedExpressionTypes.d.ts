@@ -1,7 +1,7 @@
 import { UndecoratedFunctionExpression } from 'src/types/UndecoratedExpressionTypes'
 
 export interface DecoratedVariableExpression {
-  state: 'default' | 'highlighted'
+  state: 'default' | 'highlighted' | 'needsReset'
   type: 'variable'
   value: string
 }
@@ -15,6 +15,7 @@ export interface DecoratedCallExpression {
     | 'checkForConflictingVariables'
     | 'needsAlphaConvert'
     | 'readyToBetaReduce'
+    | 'needsReset'
   type: 'call'
   priority?: number
   value: {
@@ -49,12 +50,25 @@ export interface DecoratedCallUnexecutableExpression
 
 export interface DecoratedFunctionExpression {
   type: 'function'
-  state: 'default' | 'highlighted'
+  state: 'default' | 'highlighted' | 'needsReset'
   value: {
     arg: DecoratedVariableExpression
     body: DecoratedExpression
   }
 }
+
+type NeedsResetState = { state: 'needsReset' }
+type DecoratedNeedsResetFunctionExpression = DecoratedFunctionExpression &
+  NeedsResetState
+type DecoratedNeedsResetCallExpression = DecoratedCallExpression &
+  NeedsResetState
+type DecoratedNeedsResetVariableExpression = DecoratedVariableExpression &
+  NeedsResetState
+
+export type DecoratedNeedsResetExpression =
+  | DecoratedNeedsResetFunctionExpression
+  | DecoratedNeedsResetCallExpression
+  | DecoratedNeedsResetVariableExpression
 
 export type DecoratedExpression =
   | DecoratedVariableExpression

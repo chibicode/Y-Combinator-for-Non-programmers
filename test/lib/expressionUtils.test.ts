@@ -1,4 +1,5 @@
 import {
+  betaReduce,
   conflictingVariableNames,
   decoratedExpressionToSimpleString,
   decorateExpression,
@@ -416,5 +417,61 @@ describe('mutableAlphaConvert', () => {
     expect(decoratedExpressionToSimpleString(expression)).toEqual(
       '(x => (a => (b => x(y(b)))))((y => z))'
     )
+  })
+})
+
+describe('betaReduce', () => {
+  it('beta reduces simple expression', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        betaReduce(
+          findNextCallExpressionAndParent(
+            prioritizeExpression(
+              decorateExpression([
+                {
+                  arg: 'x',
+                  body: 'x',
+                },
+                'y',
+              ])
+            )
+          ).expression
+        )
+      )
+    ).toEqual('y')
+  })
+
+  it('beta reduces complex expression', () => {
+    expect(
+      decoratedExpressionToSimpleString(
+        betaReduce(
+          findNextCallExpressionAndParent(
+            prioritizeExpression(
+              decorateExpression([
+                {
+                  arg: 'x',
+                  body: {
+                    arg: 'y',
+                    body: {
+                      arg: 'z',
+                      body: ['x', ['y', 'z']],
+                    },
+                  },
+                },
+                {
+                  arg: 'a',
+                  body: 'a',
+                },
+                {
+                  arg: 'b',
+                  body: 'b',
+                },
+                'c',
+              ])
+            )
+          ).expression
+        )
+      )
+    ).toEqual('(x => (a => (b => x(y(b)))))((y => z))')
   })
 })

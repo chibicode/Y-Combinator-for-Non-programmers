@@ -2,26 +2,36 @@ import produce from 'immer'
 import {
   betaReduce,
   conflictingVariableNames,
+  decoratedExpressionToSimpleString,
   findNextCallExpressionAndParent,
   mutableAlphaConvert,
-  prioritizeExpression
+  prioritizeExpression,
+  resetExpression
 } from 'src/lib/expressionUtils'
 import {
   DecoratedCallExecutableExpression,
   DecoratedCallPrioritizedExpression,
   DecoratedCallUnexecutableExpression,
   DecoratedCallUnprioritizedExpression,
-  DecoratedExpression
+  DecoratedExpression,
+  DecoratedNeedsResetExpression
 } from 'src/types/DecoratedExpressionTypes'
 
 export default function transitionExpressionState(
-  expression: DecoratedCallUnprioritizedExpression
+  expression:
+    | DecoratedNeedsResetExpression
+    | DecoratedCallUnprioritizedExpression
 ): DecoratedCallPrioritizedExpression
 export default function transitionExpressionState(
   expression: DecoratedCallPrioritizedExpression
-): DecoratedCallExecutableExpression | DecoratedCallUnexecutableExpression
+):
+  | DecoratedCallExecutableExpression
+  | DecoratedCallUnexecutableExpression
+  | DecoratedNeedsResetExpression
 export default function transitionExpressionState(expression: any): any {
-  if (!expression.priority) {
+  if (expression.state === 'needsReset') {
+    return resetExpression(expression)
+  } else if (!expression.priority) {
     return prioritizeExpression(expression)
   } else {
     return produce<DecoratedExpression>(expression, draftExpression => {
@@ -70,9 +80,15 @@ export default function transitionExpressionState(expression: any): any {
           case 'readyToBetaReduce': {
             const betaReduced = betaReduce(nextCallExpression)
             if (parent) {
-              parent[parentKey] = betaReduced
+              parent.value[parentKey] = betaReduced
+              draftExpression.state = 'needsReset'
+              return
             } else {
-              return parent
+              // When returning a new value,
+              // you must not modify any of the original value.
+              // See: https://github.com/mweststrate/immer/tree/979d7a34dd0331b5ba44983bf55cc545ad9ea2f4#returning-data-from-producers
+              betaReduced.state = 'needsReset'
+              return betaReduced
             }
           }
         }

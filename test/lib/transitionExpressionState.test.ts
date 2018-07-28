@@ -1,12 +1,15 @@
 import {
   decoratedExpressionToSimpleString,
   decorateExpression,
+  findNextCallExpressionAndParent,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
 import transitionExpressionState from 'src/lib/transitionExpressionState'
 import {
   DecoratedCallExecutableExpression,
-  DecoratedCallPrioritizedExpression
+  DecoratedCallPrioritizedExpression,
+  DecoratedNeedsResetCallExpression,
+  DecoratedNeedsResetExpression
 } from 'src/types/DecoratedExpressionTypes'
 
 const transitionExpressionStateWrapped = (
@@ -14,7 +17,7 @@ const transitionExpressionStateWrapped = (
 ) => transitionExpressionState(x) as DecoratedCallExecutableExpression
 
 const repeatUntilState = (exp, state) => {
-  while (exp.state !== state) {
+  while (findNextCallExpressionAndParent(exp).expression.state !== state) {
     exp = transitionExpressionStateWrapped(exp)
   }
   return exp
@@ -135,6 +138,68 @@ describe('transitionExpressionState', () => {
       expect(decoratedExpressionToSimpleString(exp)).toBe(
         '(x => (a => x(a)))(y)'
       )
+    })
+  })
+
+  describe('if ready for beta reduction', () => {
+    describe('top level beta reduction, simple', () => {
+      it('does beta reduction', () => {
+        const originalExp = prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: 'x',
+            },
+            'y',
+          ])
+        )
+
+        let exp = transitionExpressionStateWrapped(originalExp)
+        exp = repeatUntilState(exp, 'readyToBetaReduce')
+        const result = transitionExpressionStateWrapped(
+          exp
+        ) as DecoratedNeedsResetExpression
+        expect(decoratedExpressionToSimpleString(result)).toBe('y')
+        expect(result.state).toBe('needsReset')
+      })
+    })
+
+    describe('top level beta reduction, complicated', () => {
+      it('does beta reduction', () => {
+        const originalExp = prioritizeExpression(
+          decorateExpression([
+            {
+              arg: 'x',
+              body: {
+                arg: 'y',
+                body: {
+                  arg: 'z',
+                  body: ['x', ['y', 'z']],
+                },
+              },
+            },
+            {
+              arg: 'a',
+              body: 'a',
+            },
+            {
+              arg: 'b',
+              body: 'b',
+            },
+            'c',
+          ])
+        )
+
+        let exp = transitionExpressionStateWrapped(originalExp)
+        exp = repeatUntilState(exp, 'readyToBetaReduce')
+        const result = transitionExpressionStateWrapped(
+          exp
+        ) as DecoratedNeedsResetCallExpression
+        expect(decoratedExpressionToSimpleString(result)).toBe(
+          '(y => (z => (a => a)(y(z))))((b => b))(c)'
+        )
+        expect(result.state).toBe('needsReset')
+      })
     })
   })
 })
