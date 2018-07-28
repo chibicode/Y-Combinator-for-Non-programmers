@@ -1,10 +1,10 @@
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
-import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
+import { DecoratedFunctionExpression } from 'src/types/DecoratedExpressionTypes'
 
 interface FunctionExpressionProps {
-  expression: ExpressionTypes.UndecoratedFunctionExpression
+  expression: DecoratedFunctionExpression
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
@@ -17,7 +17,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       borderRight={1}
       borderColor="darkYellow"
     >
-      <Expression expression={expression.arg} />
+      <Expression expression={expression.value.arg} />
     </Flex>
     <Flex
       alignItems="center"
@@ -26,7 +26,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       borderColor="darkYellow"
       flex={1}
     >
-      <Expression expression={expression.body} />
+      <Expression expression={expression.value.body} />
     </Flex>
   </Flex>
 )

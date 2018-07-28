@@ -45,6 +45,9 @@ export function decorateExpression(
 export function decorateExpression(
   expression: UndecoratedFunctionExpression
 ): DecoratedFunctionExpression
+export function decorateExpression(
+  expression: UndecoratedExpression
+): DecoratedExpression
 export function decorateExpression(expression): any {
   if (typeof expression === 'string') {
     return {

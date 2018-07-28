@@ -1,34 +1,21 @@
-import React, { Fragment } from 'react'
-import FunctionCallExpression from 'src/components/FunctionCallExpression'
+import React from 'react'
+import CallExpression from 'src/components/CallExpression'
 import FunctionExpression from 'src/components/FunctionExpression'
 import VariableExpression from 'src/components/VariableExpression'
-import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
+import { DecoratedExpression } from 'src/types/DecoratedExpressionTypes'
 
 interface ExpressionProps {
-  expression: ExpressionTypes.UndecoratedExpression
-  callNestLevel?: number
+  expression: DecoratedExpression
 }
 
-const Expression: React.SFC<ExpressionProps> = ({
-  expression,
-  callNestLevel,
-}) => (
-  <Fragment>
-    {(() => {
-      if (typeof expression === 'string') {
-        return <VariableExpression expression={expression} />
-      } else if (Array.isArray(expression)) {
-        return (
-          <FunctionCallExpression
-            expression={expression}
-            callNestLevel={callNestLevel}
-          />
-        )
-      } else {
-        return <FunctionExpression expression={expression} />
-      }
-    })()}
-  </Fragment>
-)
+const Expression: React.SFC<ExpressionProps> = ({ expression }) => {
+  if (expression.type === 'variable') {
+    return <VariableExpression expression={expression} />
+  } else if (expression.type === 'call') {
+    return <CallExpression expression={expression} />
+  } else {
+    return <FunctionExpression expression={expression} />
+  }
+}
 
 export default Expression

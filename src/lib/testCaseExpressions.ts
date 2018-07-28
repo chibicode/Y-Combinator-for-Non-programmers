@@ -1,4 +1,8 @@
-import ExpressionTypes from 'src/types/UndecoratedExpressionTypes'
+import {
+  decorateExpression,
+  prioritizeExpression
+} from 'src/lib/expressionUtils'
+import { DecoratedExpression } from 'src/types/DecoratedExpressionTypes'
 
 // (a => a)(b)
 const basicExpression = [
@@ -114,16 +118,23 @@ const recursiveFunction = {
 
 const infiniteLoop = [yCombinator, recursiveFunction]
 
-const functionTestCases: ExpressionTypes.UndecoratedExpression[] = [
-  basicExpression,
-  notTrueExpression,
-  notFalseExpression,
-  zeroExpression,
-  oneExpression,
-  twoExpression,
-  infiniteLoopExpression,
-  yCombinator,
+const functionTestCases: DecoratedExpression[] = [
+  // basicExpression,
+  // notTrueExpression,
+  // notFalseExpression,
+  // zeroExpression,
+  // oneExpression,
+  // twoExpression,
+  // infiniteLoopExpression,
+  // yCombinator,
   infiniteLoop,
-]
+].map(x => {
+  const decorated = decorateExpression(x)
+  if (decorated.type === 'call') {
+    return prioritizeExpression(decorated)
+  } else {
+    return decorated
+  }
+})
 
 export default functionTestCases
