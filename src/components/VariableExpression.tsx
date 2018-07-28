@@ -11,7 +11,7 @@ interface VariableExpressionProps {
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
   expression,
 }) => (
-  <Flex p={4}>
+  <Flex p={4} justifyContent="center" flex={1}>
     <Emoji>{letterEmojiMapping[expression.value]}</Emoji>
   </Flex>
 )

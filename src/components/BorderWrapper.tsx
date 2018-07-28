@@ -11,7 +11,7 @@ const BorderWrapper: React.SFC<{ children: React.ReactNode }> = ({
       margin: -2px;
     `}
     borderColor="darkYellow"
-    flexDirection="column"
+    alignItems="center"
     flex={1}
   >
     {children}

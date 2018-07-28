@@ -34,7 +34,9 @@ export default class ExpressionExecutor extends React.Component<
     const { expression } = this.state
     return (
       <div>
-        <Expression expression={expression} />
+        <div>
+          <Expression expression={expression} />
+        </div>
         <button onClick={this.stepExpression}>step</button>
       </div>
     )
