@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import repeat from 'lodash/repeat'
+import times from 'lodash/times'
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
@@ -10,18 +12,34 @@ interface CallProps {
 
 const CallExpression: React.SFC<CallProps> = ({ expression }) => (
   <Flex flexDirection="column" flex={1}>
-    <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
-      {expression.priority && repeat('↓', expression.priority)}
-    </Flex>
+    {expression.priority && (
+      <Flex
+        justifyContent="center"
+        borderBottom={2}
+        borderColor="darkYellow"
+        color="darkYellow"
+      >
+        {times(expression.priority, () => (
+          <FontAwesomeIcon icon="angle-down" />
+        ))}
+      </Flex>
+    )}
     <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
       <Expression expression={expression.value.arg} />
     </Flex>
     <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
       <Expression expression={expression.value.func} />
     </Flex>
-    <Flex justifyContent="center" borderColor="darkYellow" width={1}>
-      {expression.priority && repeat('↑', expression.priority)}
-    </Flex>
+    {expression.priority && (
+      <Flex
+        justifyContent="center"
+        borderColor="darkYellow"
+        width={1}
+        color="darkYellow"
+      >
+        {times(expression.priority, () => <FontAwesomeIcon icon="angle-up" />)}
+      </Flex>
+    )}
   </Flex>
 )
 

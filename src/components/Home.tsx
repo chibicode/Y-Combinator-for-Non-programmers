@@ -4,6 +4,7 @@ import { Container } from 'rebass/emotion'
 import ExpressionExecutor from 'src/components/ExpressionExecutor'
 import Flex from 'src/components/Flex'
 import ThemeProvider from 'src/components/ThemeProvider'
+import 'src/lib/fontAwesome'
 import testCaseExpressions from 'src/lib/testCaseExpressions'
 
 // tslint:disable-next-line:no-unused-expression
