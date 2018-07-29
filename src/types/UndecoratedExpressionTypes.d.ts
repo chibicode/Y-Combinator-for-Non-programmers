@@ -3,13 +3,9 @@ export interface UndecoratedFunctionExpression {
   body: UndecoratedExpression
 }
 
+// https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
 export interface UndecoratedCallExpression
-  extends Array<UndecoratedExpression> {
-  [index: number]:
-    | UndecoratedFunctionExpression
-    | string
-    | UndecoratedCallExpression
-}
+  extends Array<UndecoratedExpression> {}
 
 export type UndecoratedExpression =
   | string
