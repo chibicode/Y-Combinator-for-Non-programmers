@@ -8,32 +8,27 @@ import {
   resetExpression
 } from 'src/lib/expressionUtils'
 import {
-  DecoratedCallExecutableExpression,
-  DecoratedCallPrioritizedExpression,
-  DecoratedCallUnexecutableExpression,
-  DecoratedCallUnprioritizedExpression,
-  DecoratedExpression,
-  DecoratedNeedsResetExpression
-} from 'src/types/DecoratedExpressionTypes'
+  ExecutableCallExpression,
+  PrioritizedCallExpression,
+  UnexecutableCallExpression,
+  UnprioritizedCallExpression,
+  Expression,
+  NeedsResetExpression
+} from 'src/types/Expressions'
 
 export default function transitionExpressionState(
-  expression:
-    | DecoratedNeedsResetExpression
-    | DecoratedCallUnprioritizedExpression
-): DecoratedCallPrioritizedExpression
+  expression: NeedsResetExpression | UnprioritizedCallExpression
+): PrioritizedCallExpression
 export default function transitionExpressionState(
-  expression: DecoratedCallPrioritizedExpression
-):
-  | DecoratedCallExecutableExpression
-  | DecoratedCallUnexecutableExpression
-  | DecoratedNeedsResetExpression
+  expression: PrioritizedCallExpression
+): ExecutableCallExpression | UnexecutableCallExpression | NeedsResetExpression
 export default function transitionExpressionState(expression: any): any {
   if (expression.state === 'needsReset') {
     return resetExpression(expression)
   } else if (!expression.priority) {
     return prioritizeExpression(expression)
   } else {
-    return produce<DecoratedExpression>(expression, draftExpression => {
+    return produce<Expression>(expression, draftExpression => {
       const nextCallExpressionAndParent = findNextCallExpressionAndParent(
         draftExpression
       )

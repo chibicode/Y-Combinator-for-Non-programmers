@@ -7,14 +7,14 @@ import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
 import {
-  DecoratedCallExecutableExpression,
-  DecoratedCallExpression,
-  DecoratedCallPrioritizedExpression,
-  DecoratedCallUnprioritizedExpression,
-  DecoratedExpression,
-  DecoratedFunctionExpression,
-  DecoratedVariableExpression
-} from 'src/types/DecoratedExpressionTypes'
+  ExecutableCallExpression,
+  CallExpression,
+  PrioritizedCallExpression,
+  UnprioritizedCallExpression,
+  Expression,
+  FunctionExpression,
+  VariableExpression
+} from 'src/types/Expressions'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -39,16 +39,14 @@ const nestCallExpressions = (expression: ExpressionParams) => {
 
 export function decorateExpression(
   expression: VariableExpressionParams
-): DecoratedVariableExpression
+): VariableExpression
 export function decorateExpression(
   expression: CallExpressionParams
-): DecoratedCallUnprioritizedExpression
+): UnprioritizedCallExpression
 export function decorateExpression(
   expression: FunctionExpressionParams
-): DecoratedFunctionExpression
-export function decorateExpression(
-  expression: ExpressionParams
-): DecoratedExpression
+): FunctionExpression
+export function decorateExpression(expression: ExpressionParams): Expression
 export function decorateExpression(expression): any {
   if (typeof expression === 'string') {
     return {
@@ -81,20 +79,20 @@ export function decorateExpression(expression): any {
 }
 
 export const findNextCallExpressionAndParent = (
-  expression: DecoratedExpression
+  expression: Expression
 ): {
-  expression: DecoratedCallExecutableExpression
+  expression: ExecutableCallExpression
   parentKey?: string
-  parent?: DecoratedExpression
+  parent?: Expression
 } | null => {
   if (expression.type === 'call') {
     const stack: Array<{
-      expression: DecoratedCallExpression
-      parent?: DecoratedExpression
+      expression: CallExpression
+      parent?: Expression
       parentKey?: string
     }> = [{ expression }]
-    let current: DecoratedCallExpression
-    let parent: DecoratedExpression
+    let current: CallExpression
+    let parent: Expression
     let parentKey: string
     while (stack.length > 0) {
       const topOfStack = stack.pop()
@@ -108,7 +106,7 @@ export const findNextCallExpressionAndParent = (
           current.value.func.type === 'function'
         ) {
           return {
-            expression: current as DecoratedCallExecutableExpression,
+            expression: current as ExecutableCallExpression,
             parentKey,
             parent
           }
@@ -137,7 +135,7 @@ export const findNextCallExpressionAndParent = (
 }
 
 export const decoratedExpressionToSimpleString = (
-  expression: DecoratedExpression,
+  expression: Expression,
   { addPriority } = { addPriority: false }
 ) => {
   if (expression.type === 'variable') {
@@ -159,9 +157,7 @@ export const decoratedExpressionToSimpleString = (
   }
 }
 
-export const getAllVariableNames = (
-  expression: DecoratedExpression
-): string[] => {
+export const getAllVariableNames = (expression: Expression): string[] => {
   if (expression.type === 'variable') {
     return [expression.value]
   } else if (expression.type === 'call') {
@@ -180,7 +176,7 @@ export const getAllVariableNames = (
 }
 
 const mutablePrioritizeExpressionRecurserForOtherExpression = (
-  expression: DecoratedExpression
+  expression: Expression
 ): void => {
   switch (expression.type) {
     case 'variable': {
@@ -209,7 +205,7 @@ const mutablePrioritizeExpressionRecurserForCallExpression = ({
   expression,
   priority
 }: {
-  expression: DecoratedCallExpression
+  expression: CallExpression
   priority: number
 }): number => {
   if (expression.value.arg.type === 'call') {
@@ -235,9 +231,7 @@ const mutablePrioritizeExpressionRecurserForCallExpression = ({
   return priority
 }
 
-const mutablePrioritizeExpression = (
-  expression: DecoratedCallExpression
-): void => {
+const mutablePrioritizeExpression = (expression: CallExpression): void => {
   mutablePrioritizeExpressionRecurserForCallExpression({
     expression,
     priority: INITIAL_PRIORITY
@@ -245,15 +239,15 @@ const mutablePrioritizeExpression = (
 }
 
 export const prioritizeExpression = (
-  expression: DecoratedCallExpression
-): DecoratedCallPrioritizedExpression => {
-  return produce<DecoratedCallExpression>(expression, draftExpression => {
+  expression: CallExpression
+): PrioritizedCallExpression => {
+  return produce<CallExpression>(expression, draftExpression => {
     mutablePrioritizeExpression(draftExpression)
-  }) as DecoratedCallPrioritizedExpression
+  }) as PrioritizedCallExpression
 }
 
 export const conflictingVariableNames = (
-  expression: DecoratedCallExecutableExpression
+  expression: ExecutableCallExpression
 ) => {
   const argVariableNames = getAllVariableNames(expression.value.arg)
   const funcBodyVariableNamesExceptArg = difference(
@@ -296,7 +290,7 @@ const replaceVariableNamesRecurser = ({
   expression,
   mapping
 }: {
-  expression: DecoratedExpression
+  expression: Expression
   mapping: {
     key: string
   }
@@ -314,9 +308,7 @@ const replaceVariableNamesRecurser = ({
   }
 }
 
-export const mutableAlphaConvert = (
-  expression: DecoratedCallExecutableExpression
-) => {
+export const mutableAlphaConvert = (expression: ExecutableCallExpression) => {
   const sortedConflicts = conflictingVariableNames(expression).sort()
   if (sortedConflicts.length === 0) {
     return
@@ -343,10 +335,10 @@ const betaReduceRecurser = ({
   from,
   to
 }: {
-  expression: DecoratedExpression
+  expression: Expression
   from: string
-  to: DecoratedVariableExpression | DecoratedFunctionExpression
-}): DecoratedExpression => {
+  to: VariableExpression | FunctionExpression
+}): Expression => {
   if (expression.type === 'variable') {
     if (expression.value === from) {
       return to
@@ -376,8 +368,8 @@ const betaReduceRecurser = ({
 }
 
 export const betaReduce = (
-  expression: DecoratedCallExecutableExpression
-): DecoratedExpression => {
+  expression: ExecutableCallExpression
+): Expression => {
   const clonedExpression = cloneDeep(expression)
   return betaReduceRecurser({
     expression: clonedExpression.value.func.value.body,
@@ -386,8 +378,8 @@ export const betaReduce = (
   })
 }
 
-export const resetExpression = (expression: DecoratedExpression) => {
-  return produce<DecoratedExpression>(expression, draftExpression => {
+export const resetExpression = (expression: Expression) => {
+  return produce<Expression>(expression, draftExpression => {
     draftExpression.state = 'default'
     if (draftExpression.type === 'function') {
       if (draftExpression.value.arg) {

@@ -6,15 +6,14 @@ import {
 } from 'src/lib/expressionUtils'
 import transitionExpressionState from 'src/lib/transitionExpressionState'
 import {
-  DecoratedCallExecutableExpression,
-  DecoratedCallPrioritizedExpression,
+  ExecutableCallExpression,
+  PrioritizedCallExpression,
   DecoratedNeedsResetCallExpression,
-  DecoratedNeedsResetExpression
-} from 'src/types/DecoratedExpressionTypes'
+  NeedsResetExpression
+} from 'src/types/Expressions'
 
-const transitionExpressionStateWrapped = (
-  x: DecoratedCallPrioritizedExpression
-) => transitionExpressionState(x) as DecoratedCallExecutableExpression
+const transitionExpressionStateWrapped = (x: PrioritizedCallExpression) =>
+  transitionExpressionState(x) as ExecutableCallExpression
 
 const repeatUntilState = (exp, state) => {
   while (findNextCallExpressionAndParent(exp).expression.state !== state) {
@@ -29,9 +28,9 @@ describe('transitionExpressionState', () => {
       const originalExp = decorateExpression([
         {
           arg: 'x',
-          body: 'y',
+          body: 'y'
         },
-        'x',
+        'x'
       ])
       expect(transitionExpressionState(originalExp).priority).toBeDefined()
     })
@@ -50,9 +49,9 @@ describe('transitionExpressionState', () => {
         decorateExpression([
           {
             arg: 'x',
-            body: 'y',
+            body: 'y'
           },
-          'x',
+          'x'
         ])
       )
 
@@ -80,9 +79,9 @@ describe('transitionExpressionState', () => {
           decorateExpression([
             {
               arg: 'x',
-              body: 'y',
+              body: 'y'
             },
-            'x',
+            'x'
           ])
         )
 
@@ -101,10 +100,10 @@ describe('transitionExpressionState', () => {
               arg: 'x',
               body: {
                 arg: 'y',
-                body: ['x', 'y'],
-              },
+                body: ['x', 'y']
+              }
             },
-            'y',
+            'y'
           ])
         )
 
@@ -124,10 +123,10 @@ describe('transitionExpressionState', () => {
             arg: 'x',
             body: {
               arg: 'y',
-              body: ['x', 'y'],
-            },
+              body: ['x', 'y']
+            }
           },
-          'y',
+          'y'
         ])
       )
 
@@ -148,9 +147,9 @@ describe('transitionExpressionState', () => {
           decorateExpression([
             {
               arg: 'x',
-              body: 'x',
+              body: 'x'
             },
-            'y',
+            'y'
           ])
         )
 
@@ -158,7 +157,7 @@ describe('transitionExpressionState', () => {
         exp = repeatUntilState(exp, 'readyToBetaReduce')
         const result = transitionExpressionStateWrapped(
           exp
-        ) as DecoratedNeedsResetExpression
+        ) as NeedsResetExpression
         expect(decoratedExpressionToSimpleString(result)).toBe('y')
         expect(result.state).toBe('needsReset')
       })
@@ -174,19 +173,19 @@ describe('transitionExpressionState', () => {
                 arg: 'y',
                 body: {
                   arg: 'z',
-                  body: ['x', ['y', 'z']],
-                },
-              },
+                  body: ['x', ['y', 'z']]
+                }
+              }
             },
             {
               arg: 'a',
-              body: 'a',
+              body: 'a'
             },
             {
               arg: 'b',
-              body: 'b',
+              body: 'b'
             },
-            'c',
+            'c'
           ])
         )
 
@@ -216,19 +215,19 @@ describe('transitionExpressionState', () => {
               arg: 'y',
               body: {
                 arg: 'z',
-                body: ['x', ['y', 'z']],
-              },
-            },
+                body: ['x', ['y', 'z']]
+              }
+            }
           },
           {
             arg: 'a',
-            body: 'a',
+            body: 'a'
           },
           {
             arg: 'b',
-            body: 'b',
+            body: 'b'
           },
-          'c',
+          'c'
         ])
       ) as any
 

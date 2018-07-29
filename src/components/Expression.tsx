@@ -5,10 +5,10 @@ import CallExpression from 'src/components/CallExpression'
 import Flex from 'src/components/Flex'
 import FunctionExpression from 'src/components/FunctionExpression'
 import VariableExpression from 'src/components/VariableExpression'
-import { DecoratedExpression } from 'src/types/DecoratedExpressionTypes'
+import { Expression } from 'src/types/Expressions'
 
 interface ExpressionProps {
-  expression: DecoratedExpression
+  expression: Expression
 }
 
 const Expression: React.SFC<ExpressionProps> = ({ expression }) => (

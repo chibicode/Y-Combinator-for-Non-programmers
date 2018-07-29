@@ -2,15 +2,15 @@ import {
   decorateExpression,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
-import { DecoratedExpression } from 'src/types/DecoratedExpressionTypes'
+import { Expression } from 'src/types/Expressions'
 
 // (a => a)(b)
 const basicExpression = [
   {
     arg: 'a',
-    body: 'a',
+    body: 'a'
   },
-  'b',
+  'b'
 ]
 
 // (a => b => a)
@@ -18,8 +18,8 @@ const trueExpression = {
   arg: 'a',
   body: {
     arg: 'b',
-    body: 'a',
-  },
+    body: 'a'
+  }
 }
 
 // (a => b => b)
@@ -27,8 +27,8 @@ const falseExpression = {
   arg: 'a',
   body: {
     arg: 'b',
-    body: 'b',
-  },
+    body: 'b'
+  }
 }
 
 // (c => a => b => c b a)
@@ -38,9 +38,9 @@ const notExpression = {
     arg: 'a',
     body: {
       arg: 'b',
-      body: ['c', 'b', 'a'],
-    },
-  },
+      body: ['c', 'b', 'a']
+    }
+  }
 }
 
 const notTrueExpression = [notExpression, trueExpression]
@@ -52,8 +52,8 @@ const zeroExpression = {
   arg: 'a',
   body: {
     arg: 'b',
-    body: 'b',
-  },
+    body: 'b'
+  }
 }
 
 // (a => b => a b)
@@ -61,8 +61,8 @@ const oneExpression = {
   arg: 'a',
   body: {
     arg: 'b',
-    body: ['a', 'b'],
-  },
+    body: ['a', 'b']
+  }
 }
 
 // (a => b => a (a b))
@@ -70,20 +70,20 @@ const twoExpression = {
   arg: 'a',
   body: {
     arg: 'b',
-    body: ['a', ['a', 'b']],
-  },
+    body: ['a', ['a', 'b']]
+  }
 }
 
 // (a => a a)(a => a a)
 const infiniteLoopExpression = [
   {
     arg: 'a',
-    body: ['a', 'a'],
+    body: ['a', 'a']
   },
   {
     arg: 'a',
-    body: ['a', 'a'],
-  },
+    body: ['a', 'a']
+  }
 ]
 
 // a => (c => c c)(c => a(b => c c b)))
@@ -92,7 +92,7 @@ const yCombinator = {
   body: [
     {
       arg: 'c',
-      body: ['c', 'c'],
+      body: ['c', 'c']
     },
     {
       arg: 'c',
@@ -100,11 +100,11 @@ const yCombinator = {
         'a',
         {
           arg: 'b',
-          body: ['c', 'c', 'b'],
-        },
-      ],
-    },
-  ],
+          body: ['c', 'c', 'b']
+        }
+      ]
+    }
+  ]
 }
 
 // a => b => (a b)
@@ -112,13 +112,13 @@ const recursiveFunction = {
   arg: 'a',
   body: {
     arg: 'b',
-    body: ['a', 'b'],
-  },
+    body: ['a', 'b']
+  }
 }
 
 const infiniteLoop = [yCombinator, recursiveFunction]
 
-const functionTestCases: DecoratedExpression[] = [
+const functionTestCases: Expression[] = [
   // basicExpression,
   // notTrueExpression,
   // notFalseExpression,
@@ -127,7 +127,7 @@ const functionTestCases: DecoratedExpression[] = [
   // twoExpression,
   // infiniteLoopExpression,
   // yCombinator,
-  infiniteLoop,
+  infiniteLoop
 ].map(x => {
   const decorated = decorateExpression(x)
   if (decorated.type === 'call') {

@@ -1,14 +1,14 @@
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
-import { DecoratedFunctionExpression } from 'src/types/DecoratedExpressionTypes'
+import { FunctionExpression } from 'src/types/Expressions'
 
 interface FunctionExpressionProps {
-  expression: DecoratedFunctionExpression
+  expression: FunctionExpression
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
-  expression,
+  expression
 }) => (
   <Flex flexDirection="row" flex={1}>
     <Flex

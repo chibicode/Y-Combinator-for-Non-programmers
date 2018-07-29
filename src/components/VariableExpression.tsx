@@ -2,14 +2,14 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import Flex from 'src/components/Flex'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import { DecoratedVariableExpression } from 'src/types/DecoratedExpressionTypes'
+import { VariableExpression } from 'src/types/Expressions'
 
 interface VariableExpressionProps {
-  expression: DecoratedVariableExpression
+  expression: VariableExpression
 }
 
 const VariableExpression: React.SFC<VariableExpressionProps> = ({
-  expression,
+  expression
 }) => (
   <Flex p={4} justifyContent="center" flex={1}>
     <Emoji>{letterEmojiMapping[expression.value]}</Emoji>
