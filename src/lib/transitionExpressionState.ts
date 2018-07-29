@@ -9,12 +9,12 @@ import {
 } from 'src/lib/expressionUtils'
 import {
   ExecutableCallExpression,
+  Expression,
+  NeedsResetExpression,
   PrioritizedCallExpression,
   UnexecutableCallExpression,
-  UnprioritizedCallExpression,
-  Expression,
-  NeedsResetExpression
-} from 'src/types/Expressions'
+  UnprioritizedCallExpression
+} from 'src/types/ExpressionTypes'
 
 export default function transitionExpressionState(
   expression: NeedsResetExpression | UnprioritizedCallExpression

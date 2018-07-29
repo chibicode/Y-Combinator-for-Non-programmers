@@ -7,10 +7,10 @@ import {
 import transitionExpressionState from 'src/lib/transitionExpressionState'
 import {
   ExecutableCallExpression,
-  PrioritizedCallExpression,
-  DecoratedNeedsResetCallExpression,
-  NeedsResetExpression
-} from 'src/types/Expressions'
+  NeedsResetCallExpression,
+  NeedsResetExpression,
+  PrioritizedCallExpression
+} from 'src/types/ExpressionTypes'
 
 const transitionExpressionStateWrapped = (x: PrioritizedCallExpression) =>
   transitionExpressionState(x) as ExecutableCallExpression
@@ -193,7 +193,7 @@ describe('transitionExpressionState', () => {
         exp = repeatUntilState(exp, 'readyToBetaReduce')
         const result = transitionExpressionStateWrapped(
           exp
-        ) as DecoratedNeedsResetCallExpression
+        ) as NeedsResetCallExpression
         expect(decoratedExpressionToSimpleString(result)).toBe(
           '(y => (z => (a => a)(y(z))))((b => b))(c)'
         )

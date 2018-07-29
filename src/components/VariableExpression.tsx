@@ -2,10 +2,10 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import Flex from 'src/components/Flex'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import { VariableExpression } from 'src/types/Expressions'
+import ExpressionTypes from 'src/types/ExpressionTypes'
 
 interface VariableExpressionProps {
-  expression: VariableExpression
+  expression: ExpressionTypes.VariableExpression
 }
 
 const VariableExpression: React.SFC<VariableExpressionProps> = ({

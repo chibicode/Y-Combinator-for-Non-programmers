@@ -2,14 +2,14 @@ import React from 'react'
 import Expression from 'src/components/Expression'
 import { decoratedExpressionToSimpleString } from 'src/lib/expressionUtils'
 import transitionExpressionState from 'src/lib/transitionExpressionState'
-import { Expression } from 'src/types/Expressions'
+import ExpressionTypes from 'src/types/ExpressionTypes'
 
 interface ExpressionExecutorProps {
-  expression: Expression
+  expression: ExpressionTypes.Expression
 }
 
 interface ExpressionExecutorState {
-  expression: Expression
+  expression: ExpressionTypes.Expression
 }
 
 export default class ExpressionExecutor extends React.Component<

@@ -7,20 +7,20 @@ import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
 import {
-  ExecutableCallExpression,
-  CallExpression,
-  PrioritizedCallExpression,
-  UnprioritizedCallExpression,
-  Expression,
-  FunctionExpression,
-  VariableExpression
-} from 'src/types/Expressions'
-import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams
 } from 'src/types/ExpressionParams'
+import {
+  CallExpression,
+  ExecutableCallExpression,
+  Expression,
+  FunctionExpression,
+  PrioritizedCallExpression,
+  UnprioritizedCallExpression,
+  VariableExpression
+} from 'src/types/ExpressionTypes'
 
 const nestCallExpressions = (expression: ExpressionParams) => {
   if (Array.isArray(expression)) {

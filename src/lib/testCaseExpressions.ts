@@ -2,7 +2,7 @@ import {
   decorateExpression,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
-import { Expression } from 'src/types/Expressions'
+import { Expression } from 'src/types/ExpressionTypes'
 
 // (a => a)(b)
 const basicExpression = [

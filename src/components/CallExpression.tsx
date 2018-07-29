@@ -3,10 +3,10 @@ import times from 'lodash/times'
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
-import { CallExpression } from 'src/types/Expressions'
+import ExpressionTypes from 'src/types/ExpressionTypes'
 
 interface CallProps {
-  expression: CallExpression
+  expression: ExpressionTypes.CallExpression
 }
 
 const stateToArrowsBgColor = {
