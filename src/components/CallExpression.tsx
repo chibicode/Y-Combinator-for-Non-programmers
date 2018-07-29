@@ -9,6 +9,13 @@ interface CallProps {
   expression: DecoratedCallExpression
 }
 
+const stateToArrowsBgColor = {
+  readyToHighlight: 'lightBlue',
+  checkForConflictingVariables: 'lightRed',
+  needsAlphaConvert: 'lightGreen',
+  readyToBetaReduce: 'lightOrange'
+}
+
 const CallExpression: React.SFC<CallProps> = ({ expression }) => (
   <Flex flexDirection="column" flex={1}>
     {expression.priority && (
@@ -17,6 +24,7 @@ const CallExpression: React.SFC<CallProps> = ({ expression }) => (
         borderBottom={2}
         borderColor="lightGray"
         color="lightGray"
+        bg={stateToArrowsBgColor[expression.state]}
       >
         {times(expression.priority, () => (
           <FontAwesomeIcon icon="angle-down" />
@@ -35,6 +43,7 @@ const CallExpression: React.SFC<CallProps> = ({ expression }) => (
         borderColor="lightGray"
         width={1}
         color="lightGray"
+        bg={stateToArrowsBgColor[expression.state]}
       >
         {times(expression.priority, () => <FontAwesomeIcon icon="angle-up" />)}
       </Flex>

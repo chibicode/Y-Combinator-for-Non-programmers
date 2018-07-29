@@ -41,7 +41,7 @@ export default function transitionExpressionState(expression: any): any {
         const {
           expression: nextCallExpression,
           parent,
-          parentKey,
+          parentKey
         } = nextCallExpressionAndParent
         switch (nextCallExpression.state) {
           case 'default': {

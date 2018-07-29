@@ -18,7 +18,7 @@ const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
       height: 100%;
     `}
   >
-    <BorderWrapper>
+    <BorderWrapper state={expression.state}>
       {(() => {
         if (expression.type === 'variable') {
           return <VariableExpression expression={expression} />
