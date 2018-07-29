@@ -29,7 +29,7 @@ function nestCallExpressions(
   expression: CallExpressionParams
 ): CallExpressionParams
 function nestCallExpressions<T extends ExpressionParams>(expression: T): T
-function nestCallExpressions(expression) {
+function nestCallExpressions(expression: any) {
   if (isCallExpressionParams(expression)) {
     if (expression.length === 2) {
       return [
@@ -59,7 +59,7 @@ export function decorateExpression(
 export function decorateExpression(
   expressionParams: ExpressionParams
 ): Expression
-export function decorateExpression(expressionParams) {
+export function decorateExpression(expressionParams: any) {
   if (isVariableExpressionParams(expressionParams)) {
     return {
       value: expressionParams,
