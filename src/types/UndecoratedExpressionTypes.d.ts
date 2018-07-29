@@ -1,5 +1,7 @@
+export type UndecoratedVariableExpression = string
+
 export interface UndecoratedFunctionExpression {
-  arg: string
+  arg: UndecoratedVariableExpression
   body: UndecoratedExpression
 }
 
@@ -8,6 +10,6 @@ export interface UndecoratedCallExpression
   extends Array<UndecoratedExpression> {}
 
 export type UndecoratedExpression =
-  | string
+  | UndecoratedVariableExpression
   | UndecoratedFunctionExpression
   | UndecoratedCallExpression

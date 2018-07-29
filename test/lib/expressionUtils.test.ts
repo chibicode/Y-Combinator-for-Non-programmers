@@ -6,29 +6,15 @@ import {
   findNextCallExpressionAndParent,
   getAllVariableNames,
   mutableAlphaConvert,
-  nestCallExpressions,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
-
-describe('nestCallExpressions', () => {
-  it('handles simple case', () => {
-    expect(nestCallExpressions(['a', 'b', 'c'])).toEqual([['a', 'b'], 'c'])
-  })
-
-  it('handles cases that have a different order', () => {
-    expect(nestCallExpressions(['a', ['b', ['c', 'd']], 'e'])).toEqual([
-      ['a', ['b', ['c', 'd']]],
-      'e',
-    ])
-  })
-})
 
 describe('decorateExpression', () => {
   it('works with variable expressions', () => {
     expect(decorateExpression('x')).toEqual({
       value: 'x',
       state: 'default',
-      type: 'variable',
+      type: 'variable'
     })
   })
 
@@ -36,23 +22,23 @@ describe('decorateExpression', () => {
     expect(
       decorateExpression({
         arg: 'x',
-        body: 'y',
+        body: 'y'
       })
     ).toEqual({
       value: {
         arg: {
           value: 'x',
           state: 'default',
-          type: 'variable',
+          type: 'variable'
         },
         body: {
           value: 'y',
           state: 'default',
-          type: 'variable',
-        },
+          type: 'variable'
+        }
       },
       state: 'default',
-      type: 'function',
+      type: 'function'
     })
   })
 
@@ -61,9 +47,9 @@ describe('decorateExpression', () => {
       decorateExpression([
         {
           arg: 'x',
-          body: 'y',
+          body: 'y'
         },
-        'z',
+        'z'
       ])
     ).toEqual({
       value: {
@@ -72,25 +58,50 @@ describe('decorateExpression', () => {
             arg: {
               value: 'x',
               type: 'variable',
-              state: 'default',
+              state: 'default'
             },
             body: {
               value: 'y',
               type: 'variable',
-              state: 'default',
-            },
+              state: 'default'
+            }
           },
           state: 'default',
-          type: 'function',
+          type: 'function'
         },
         arg: {
           value: 'z',
           state: 'default',
-          type: 'variable',
-        },
+          type: 'variable'
+        }
       },
       state: 'default',
+      type: 'call'
+    })
+  })
+
+  it('correctly nests call expressions', () => {
+    expect(decorateExpression(['a', ['b', 'c'], 'd'])).toEqual({
+      state: 'default',
       type: 'call',
+      value: {
+        arg: { state: 'default', type: 'variable', value: 'd' },
+        func: {
+          state: 'default',
+          type: 'call',
+          value: {
+            arg: {
+              state: 'default',
+              type: 'call',
+              value: {
+                arg: { state: 'default', type: 'variable', value: 'c' },
+                func: { state: 'default', type: 'variable', value: 'b' }
+              }
+            },
+            func: { state: 'default', type: 'variable', value: 'a' }
+          }
+        }
+      }
     })
   })
 })
@@ -105,7 +116,7 @@ describe('decoratedExpressionToSimpleString', () => {
       decoratedExpressionToSimpleString(
         decorateExpression({
           arg: 'x',
-          body: 'y',
+          body: 'y'
         })
       )
     ).toBe('(x => y)')
@@ -117,9 +128,9 @@ describe('decoratedExpressionToSimpleString', () => {
         decorateExpression([
           {
             arg: 'x',
-            body: 'y',
+            body: 'y'
           },
-          'z',
+          'z'
         ])
       )
     ).toBe('(x => y)(z)')
@@ -134,9 +145,9 @@ describe('prioritizeExpression', () => {
           decorateExpression([
             {
               arg: 'x',
-              body: 'y',
+              body: 'y'
             },
-            'z',
+            'z'
           ])
         ),
         { addPriority: true }
@@ -155,19 +166,19 @@ describe('prioritizeExpression', () => {
                 arg: 'y',
                 body: {
                   arg: 'z',
-                  body: ['x', ['y', 'z']],
-                },
-              },
+                  body: ['x', ['y', 'z']]
+                }
+              }
             },
             {
               arg: 'a',
-              body: 'a',
+              body: 'a'
             },
             {
               arg: 'b',
-              body: 'b',
+              body: 'b'
             },
-            'c',
+            'c'
           ])
         ),
         { addPriority: true }
@@ -185,21 +196,21 @@ describe('prioritizeExpression', () => {
                 arg: 'a',
                 body: {
                   arg: 'b',
-                  body: 'c',
-                },
+                  body: 'c'
+                }
               },
-              'd',
+              'd'
             ],
             [
               {
                 arg: 'e',
                 body: {
                   arg: 'f',
-                  body: 'g',
-                },
+                  body: 'g'
+                }
               },
-              'h',
-            ],
+              'h'
+            ]
           ])
         ),
         { addPriority: true }
@@ -217,9 +228,9 @@ describe('findNextCallExpressionAndParent', () => {
             decorateExpression([
               {
                 arg: 'x',
-                body: 'y',
+                body: 'y'
               },
-              'z',
+              'z'
             ])
           )
         ).expression
@@ -239,19 +250,19 @@ describe('findNextCallExpressionAndParent', () => {
                   arg: 'y',
                   body: {
                     arg: 'z',
-                    body: ['x', ['y', 'z']],
-                  },
-                },
+                    body: ['x', ['y', 'z']]
+                  }
+                }
               },
               {
                 arg: 'a',
-                body: 'a',
+                body: 'a'
               },
               {
                 arg: 'b',
-                body: 'b',
+                body: 'b'
               },
-              'c',
+              'c'
             ])
           )
         ).expression
@@ -265,9 +276,9 @@ describe('findNextCallExpressionAndParent', () => {
         decorateExpression([
           {
             arg: 'x',
-            body: 'y',
+            body: 'y'
           },
-          'z',
+          'z'
         ])
       )
     )
@@ -283,18 +294,18 @@ describe('findNextCallExpressionAndParent', () => {
               arg: 'a',
               body: {
                 arg: 'b',
-                body: 'c',
-              },
+                body: 'c'
+              }
             },
-            'd',
+            'd'
           ],
           [
             {
               arg: 'e',
-              body: 'f',
+              body: 'f'
             },
-            'g',
-          ],
+            'g'
+          ]
         ])
       )
     )
@@ -324,19 +335,19 @@ describe('getAllVariableNames', () => {
               arg: 'y',
               body: {
                 arg: 'z',
-                body: ['x', ['y', 'z']],
-              },
-            },
+                body: ['x', ['y', 'z']]
+              }
+            }
           },
           {
             arg: 'a',
-            body: 'a',
+            body: 'a'
           },
           {
             arg: 'b',
-            body: 'b',
+            body: 'b'
           },
-          'c',
+          'c'
         ])
       ).sort()
     ).toEqual(['a', 'b', 'c', 'x', 'y', 'z'])
@@ -355,10 +366,10 @@ describe('conflictingVariableNames', () => {
                   arg: 'x',
                   body: {
                     arg: 'y',
-                    body: ['x', 'y'],
-                  },
+                    body: ['x', 'y']
+                  }
                 },
-                'x',
+                'x'
               ])
             )
           ).expression
@@ -378,10 +389,10 @@ describe('conflictingVariableNames', () => {
                   arg: 'x',
                   body: {
                     arg: 'y',
-                    body: ['x', 'y'],
-                  },
+                    body: ['x', 'y']
+                  }
                 },
-                'y',
+                'y'
               ])
             )
           ).expression
@@ -402,14 +413,14 @@ describe('mutableAlphaConvert', () => {
               arg: 'y',
               body: {
                 arg: 'z',
-                body: ['x', ['y', 'z']],
-              },
-            },
+                body: ['x', ['y', 'z']]
+              }
+            }
           },
           {
             arg: 'y',
-            body: 'z',
-          },
+            body: 'z'
+          }
         ])
       )
     ).expression
@@ -430,9 +441,9 @@ describe('betaReduce', () => {
               decorateExpression([
                 {
                   arg: 'x',
-                  body: 'x',
+                  body: 'x'
                 },
-                'y',
+                'y'
               ])
             )
           ).expression
@@ -454,19 +465,19 @@ describe('betaReduce', () => {
                     arg: 'y',
                     body: {
                       arg: 'z',
-                      body: ['x', ['y', 'z']],
-                    },
-                  },
+                      body: ['x', ['y', 'z']]
+                    }
+                  }
                 },
                 {
                   arg: 'a',
-                  body: 'a',
+                  body: 'a'
                 },
                 {
                   arg: 'b',
-                  body: 'b',
+                  body: 'b'
                 },
-                'c',
+                'c'
               ])
             )
           ).expression
