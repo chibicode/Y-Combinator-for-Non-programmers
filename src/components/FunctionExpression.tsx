@@ -15,7 +15,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       alignItems="center"
       justifyContent="center"
       borderRight={1}
-      borderColor="darkYellow"
+      borderColor="lightGray"
       height={1}
     >
       <Expression expression={expression.value.arg} />
@@ -24,7 +24,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       alignItems="center"
       justifyContent="center"
       borderLeft={1}
-      borderColor="darkYellow"
+      borderColor="lightGray"
       height={1}
       flex={1}
     >

@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import repeat from 'lodash/repeat'
 import times from 'lodash/times'
 import React from 'react'
 import Expression from 'src/components/Expression'
@@ -16,26 +15,26 @@ const CallExpression: React.SFC<CallProps> = ({ expression }) => (
       <Flex
         justifyContent="center"
         borderBottom={2}
-        borderColor="darkYellow"
-        color="darkYellow"
+        borderColor="lightGray"
+        color="lightGray"
       >
         {times(expression.priority, () => (
           <FontAwesomeIcon icon="angle-down" />
         ))}
       </Flex>
     )}
-    <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
+    <Flex justifyContent="center" borderBottom={2} borderColor="lightGray">
       <Expression expression={expression.value.arg} />
     </Flex>
-    <Flex justifyContent="center" borderBottom={2} borderColor="darkYellow">
+    <Flex justifyContent="center" borderBottom={2} borderColor="lightGray">
       <Expression expression={expression.value.func} />
     </Flex>
     {expression.priority && (
       <Flex
         justifyContent="center"
-        borderColor="darkYellow"
+        borderColor="lightGray"
         width={1}
-        color="darkYellow"
+        color="lightGray"
       >
         {times(expression.priority, () => <FontAwesomeIcon icon="angle-up" />)}
       </Flex>

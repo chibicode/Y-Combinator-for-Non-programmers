@@ -10,7 +10,7 @@ const BorderWrapper: React.SFC<{ children: React.ReactNode }> = ({
     className={css`
       margin: -2px;
     `}
-    borderColor="darkYellow"
+    borderColor="lightGray"
     alignItems="center"
     flex={1}
   >

@@ -11,7 +11,8 @@ const colors = {
   black: grey[800],
   lightYellow: toGrey(yellow[100]),
   darkYellow: toGrey(yellow[400]),
-  lightBrown: brown[100]
+  lightBrown: brown[100],
+  lightGray: grey[300],
 }
 
 export default colors
