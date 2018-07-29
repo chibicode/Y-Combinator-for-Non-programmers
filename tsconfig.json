@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "strict": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,

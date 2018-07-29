@@ -8,7 +8,7 @@ import {
   resetExpression
 } from 'src/lib/expressionUtils'
 import {
-  ExecutableCallExpression,
+  ImmediatelyExecutableCallExpression,
   Expression,
   NeedsResetExpression,
   PrioritizedCallExpression,
@@ -21,7 +21,10 @@ export default function transitionExpressionState(
 ): PrioritizedCallExpression
 export default function transitionExpressionState(
   expression: PrioritizedCallExpression
-): ExecutableCallExpression | UnexecutableCallExpression | NeedsResetExpression
+):
+  | ImmediatelyExecutableCallExpression
+  | UnexecutableCallExpression
+  | NeedsResetExpression
 export default function transitionExpressionState(expression: any): any {
   if (expression.state === 'needsReset') {
     return resetExpression(expression)

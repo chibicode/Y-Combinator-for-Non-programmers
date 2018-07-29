@@ -6,14 +6,14 @@ import {
 } from 'src/lib/expressionUtils'
 import transitionExpressionState from 'src/lib/transitionExpressionState'
 import {
-  ExecutableCallExpression,
+  ImmediatelyExecutableCallExpression,
   NeedsResetCallExpression,
   NeedsResetExpression,
   PrioritizedCallExpression
 } from 'src/types/ExpressionTypes'
 
 const transitionExpressionStateWrapped = (x: PrioritizedCallExpression) =>
-  transitionExpressionState(x) as ExecutableCallExpression
+  transitionExpressionState(x) as ImmediatelyExecutableCallExpression
 
 const repeatUntilState = (exp, state) => {
   while (findNextCallExpressionAndParent(exp).expression.state !== state) {

@@ -10,22 +10,32 @@ import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
+  isCallExpressionParams,
+  isFunctionExpressionParams,
+  isVariableExpressionParams,
   VariableExpressionParams
 } from 'src/types/ExpressionParams'
 import {
   CallExpression,
-  ExecutableCallExpression,
   Expression,
   FunctionExpression,
+  ImmediatelyExecutableCallExpression,
   PrioritizedCallExpression,
   UnprioritizedCallExpression,
   VariableExpression
 } from 'src/types/ExpressionTypes'
 
-const nestCallExpressions = (expression: ExpressionParams) => {
-  if (Array.isArray(expression)) {
+function nestCallExpressions(
+  expression: CallExpressionParams
+): CallExpressionParams
+function nestCallExpressions<T extends ExpressionParams>(expression: T): T
+function nestCallExpressions(expression) {
+  if (isCallExpressionParams(expression)) {
     if (expression.length === 2) {
-      return expression.map(e => nestCallExpressions(e))
+      return [
+        nestCallExpressions(expression[0]),
+        nestCallExpressions(expression[1])
+      ]
     } else {
       return [
         nestCallExpressions(expression.slice(0, expression.length - 1)),
@@ -38,39 +48,44 @@ const nestCallExpressions = (expression: ExpressionParams) => {
 }
 
 export function decorateExpression(
-  expression: VariableExpressionParams
+  expressionParams: VariableExpressionParams
 ): VariableExpression
 export function decorateExpression(
-  expression: CallExpressionParams
+  expressionParams: CallExpressionParams
 ): UnprioritizedCallExpression
 export function decorateExpression(
-  expression: FunctionExpressionParams
+  expressionParams: FunctionExpressionParams
 ): FunctionExpression
-export function decorateExpression(expression: ExpressionParams): Expression
-export function decorateExpression(expression): any {
-  if (typeof expression === 'string') {
+export function decorateExpression(
+  expressionParams: ExpressionParams
+): Expression
+export function decorateExpression(expressionParams) {
+  if (isVariableExpressionParams(expressionParams)) {
     return {
-      value: expression,
+      value: expressionParams,
       state: 'default',
       type: 'variable'
     }
-  } else if (Array.isArray(expression)) {
-    if (expression.length > 2) {
-      expression = nestCallExpressions(expression)
-    }
+  } else if (isCallExpressionParams(expressionParams)) {
+    let nestedCallExpressionParams: CallExpressionParams
+    nestedCallExpressionParams =
+      expressionParams.length > 2
+        ? nestCallExpressions(expressionParams)
+        : expressionParams
+
     return {
       value: {
-        arg: decorateExpression(expression[1]),
-        func: decorateExpression(expression[0])
+        arg: decorateExpression(nestedCallExpressionParams[1]),
+        func: decorateExpression(nestedCallExpressionParams[0])
       },
       state: 'default',
       type: 'call'
     }
-  } else {
+  } else if (isFunctionExpressionParams(expressionParams)) {
     return {
       value: {
-        arg: decorateExpression(expression.arg),
-        body: decorateExpression(expression.body)
+        arg: decorateExpression(expressionParams.arg),
+        body: decorateExpression(expressionParams.body)
       },
       state: 'default',
       type: 'function'
@@ -81,7 +96,7 @@ export function decorateExpression(expression): any {
 export const findNextCallExpressionAndParent = (
   expression: Expression
 ): {
-  expression: ExecutableCallExpression
+  expression: ImmediatelyExecutableCallExpression
   parentKey?: string
   parent?: Expression
 } | null => {
@@ -106,7 +121,7 @@ export const findNextCallExpressionAndParent = (
           current.value.func.type === 'function'
         ) {
           return {
-            expression: current as ExecutableCallExpression,
+            expression: current as ImmediatelyExecutableCallExpression,
             parentKey,
             parent
           }
@@ -247,7 +262,7 @@ export const prioritizeExpression = (
 }
 
 export const conflictingVariableNames = (
-  expression: ExecutableCallExpression
+  expression: ImmediatelyExecutableCallExpression
 ) => {
   const argVariableNames = getAllVariableNames(expression.value.arg)
   const funcBodyVariableNamesExceptArg = difference(
@@ -308,7 +323,9 @@ const replaceVariableNamesRecurser = ({
   }
 }
 
-export const mutableAlphaConvert = (expression: ExecutableCallExpression) => {
+export const mutableAlphaConvert = (
+  expression: ImmediatelyExecutableCallExpression
+) => {
   const sortedConflicts = conflictingVariableNames(expression).sort()
   if (sortedConflicts.length === 0) {
     return
@@ -368,7 +385,7 @@ const betaReduceRecurser = ({
 }
 
 export const betaReduce = (
-  expression: ExecutableCallExpression
+  expression: ImmediatelyExecutableCallExpression
 ): Expression => {
   const clonedExpression = cloneDeep(expression)
   return betaReduceRecurser({

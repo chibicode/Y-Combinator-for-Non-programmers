@@ -1,9 +1,13 @@
-import { FunctionExpressionParams } from 'src/types/ExpressionParams'
-
 export interface VariableExpression {
   state: 'default' | 'highlighted' | 'needsReset'
   type: 'variable'
   value: string
+}
+
+export function isVariableExpression(
+  expression: Expression
+): expression is VariableExpression {
+  return expression.type === 'variable'
 }
 
 export interface CallExpression {
@@ -24,24 +28,10 @@ export interface CallExpression {
   }
 }
 
-export interface UnprioritizedCallExpression extends CallExpression {
-  priority: undefined
-}
-
-export interface PrioritizedCallExpression extends CallExpression {
-  priority: number
-}
-
-export interface ExecutableCallExpression extends CallExpression {
-  priority: 1
-  value: {
-    arg: VariableExpression | FunctionExpression
-    func: FunctionExpression
-  }
-}
-
-export interface UnexecutableCallExpression extends CallExpression {
-  state: 'done'
+export function isCallExpression(
+  expression: Expression
+): expression is CallExpression {
+  return expression.type === 'call'
 }
 
 export interface FunctionExpression {
@@ -53,10 +43,38 @@ export interface FunctionExpression {
   }
 }
 
-type NeedsResetState = { state: 'needsReset' }
-type NeedsResetFunctionExpression = FunctionExpression & NeedsResetState
-type NeedsResetCallExpression = CallExpression & NeedsResetState
-type NeedsResetVariableExpression = VariableExpression & NeedsResetState
+export function isFunctionExpression(
+  expression: Expression
+): expression is FunctionExpression {
+  return expression.type === 'function'
+}
+
+export interface UnprioritizedCallExpression extends CallExpression {
+  priority: undefined
+}
+
+export interface PrioritizedCallExpression extends CallExpression {
+  priority: number
+}
+
+export interface ImmediatelyExecutableCallExpression extends CallExpression {
+  priority: 1
+  value: {
+    arg: VariableExpression | FunctionExpression
+    func: FunctionExpression
+  }
+}
+
+export interface UnexecutableCallExpression extends CallExpression {
+  state: 'done'
+}
+
+interface NeedsResetState {
+  state: 'needsReset'
+}
+export type NeedsResetFunctionExpression = FunctionExpression & NeedsResetState
+export type NeedsResetCallExpression = CallExpression & NeedsResetState
+export type NeedsResetVariableExpression = VariableExpression & NeedsResetState
 
 export type NeedsResetExpression =
   | NeedsResetFunctionExpression
