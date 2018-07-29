@@ -16,13 +16,13 @@ import {
   DecoratedVariableExpression
 } from 'src/types/DecoratedExpressionTypes'
 import {
-  UndecoratedCallExpression,
-  UndecoratedExpression,
-  UndecoratedFunctionExpression,
-  UndecoratedVariableExpression
-} from 'src/types/UndecoratedExpressionTypes'
+  CallExpressionParams,
+  ExpressionParams,
+  FunctionExpressionParams,
+  VariableExpressionParams
+} from 'src/types/ExpressionParams'
 
-const nestCallExpressions = (expression: UndecoratedExpression) => {
+const nestCallExpressions = (expression: ExpressionParams) => {
   if (Array.isArray(expression)) {
     if (expression.length === 2) {
       return expression.map(e => nestCallExpressions(e))
@@ -38,16 +38,16 @@ const nestCallExpressions = (expression: UndecoratedExpression) => {
 }
 
 export function decorateExpression(
-  expression: UndecoratedVariableExpression
+  expression: VariableExpressionParams
 ): DecoratedVariableExpression
 export function decorateExpression(
-  expression: UndecoratedCallExpression
+  expression: CallExpressionParams
 ): DecoratedCallUnprioritizedExpression
 export function decorateExpression(
-  expression: UndecoratedFunctionExpression
+  expression: FunctionExpressionParams
 ): DecoratedFunctionExpression
 export function decorateExpression(
-  expression: UndecoratedExpression
+  expression: ExpressionParams
 ): DecoratedExpression
 export function decorateExpression(expression): any {
   if (typeof expression === 'string') {

@@ -1,4 +1,4 @@
-import { UndecoratedFunctionExpression } from 'src/types/UndecoratedExpressionTypes'
+import { FunctionExpressionParams } from 'src/types/UndecoratedExpressionTypes'
 
 export interface DecoratedVariableExpression {
   state: 'default' | 'highlighted' | 'needsReset'
