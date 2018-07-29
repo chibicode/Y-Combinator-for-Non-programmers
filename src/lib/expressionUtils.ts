@@ -17,11 +17,14 @@ import {
 } from 'src/types/ExpressionParams'
 import {
   CallExpression,
+  DefaultStateCallExpression,
+  DefaultStateExpression,
+  DefaultStateFunctionExpression,
+  DefaultStateVariableExpression,
   Expression,
   FunctionExpression,
   ImmediatelyExecutableCallExpression,
   PrioritizedCallExpression,
-  UnprioritizedCallExpression,
   VariableExpression
 } from 'src/types/ExpressionTypes'
 
@@ -49,16 +52,16 @@ function nestCallExpressions(expression: any) {
 
 export function decorateExpression(
   expressionParams: VariableExpressionParams
-): VariableExpression
+): DefaultStateVariableExpression
 export function decorateExpression(
   expressionParams: CallExpressionParams
-): UnprioritizedCallExpression
+): DefaultStateCallExpression
 export function decorateExpression(
   expressionParams: FunctionExpressionParams
-): FunctionExpression
+): DefaultStateFunctionExpression
 export function decorateExpression(
   expressionParams: ExpressionParams
-): Expression
+): DefaultStateExpression
 export function decorateExpression(expressionParams: any) {
   if (isVariableExpressionParams(expressionParams)) {
     return {
@@ -73,6 +76,8 @@ export function decorateExpression(expressionParams: any) {
         ? nestCallExpressions(expressionParams)
         : expressionParams
 
+    // Need type casting here:
+    // See https://github.com/Microsoft/TypeScript/issues/26052
     return {
       value: {
         arg: decorateExpression(nestedCallExpressionParams[1]),
@@ -80,7 +85,7 @@ export function decorateExpression(expressionParams: any) {
       },
       state: 'default',
       type: 'call'
-    }
+    } as DefaultStateCallExpression
   } else if (isFunctionExpressionParams(expressionParams)) {
     return {
       value: {
@@ -89,7 +94,7 @@ export function decorateExpression(expressionParams: any) {
       },
       state: 'default',
       type: 'function'
-    }
+    } as DefaultStateFunctionExpression
   }
 }
 

@@ -21,7 +21,6 @@ export interface CallExpression {
     | 'readyToBetaReduce'
     | 'needsReset'
   type: 'call'
-  priority?: number
   value: {
     arg: Expression
     func: Expression
@@ -49,9 +48,19 @@ export function isFunctionExpression(
   return expression.type === 'function'
 }
 
-export interface UnprioritizedCallExpression extends CallExpression {
-  priority: undefined
+export type Expression =
+  | VariableExpression
+  | CallExpression
+  | FunctionExpression
+
+interface DefaultState {
+  state: 'default'
 }
+
+export type DefaultStateVariableExpression = VariableExpression & DefaultState
+export type DefaultStateFunctionExpression = FunctionExpression & DefaultState
+export type DefaultStateCallExpression = CallExpression & DefaultState
+export type DefaultStateExpression = Expression & DefaultState
 
 export interface PrioritizedCallExpression extends CallExpression {
   priority: number
@@ -80,8 +89,3 @@ export type NeedsResetExpression =
   | NeedsResetFunctionExpression
   | NeedsResetCallExpression
   | NeedsResetVariableExpression
-
-export type Expression =
-  | VariableExpression
-  | CallExpression
-  | FunctionExpression
