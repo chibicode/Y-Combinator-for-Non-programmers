@@ -66,6 +66,12 @@ export interface PrioritizedCallExpression extends CallExpression {
   priority: number
 }
 
+export function isPrioritizedCallExpression(
+  expression: CallExpression
+): expression is PrioritizedCallExpression {
+  return (expression as PrioritizedCallExpression).priority !== undefined
+}
+
 export interface ImmediatelyExecutableCallExpression extends CallExpression {
   priority: 1
   value: {
