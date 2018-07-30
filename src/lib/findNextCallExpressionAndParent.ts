@@ -14,6 +14,15 @@ import {
   PrioritizedFunctionExpression
 } from 'src/types/PrioritizedExpressionTypes'
 
+interface FindNextCallExpressionAndParentResult {
+  expression?: PrioritizedCallExpression
+  notFound?: true
+  noParent?: true
+  parentCallExpression?: PrioritizedCallExpression
+  parentFunctionExpression?: PrioritizedFunctionExpression
+  parentKey?: 'func' | 'arg'
+}
+
 interface PrioritizedCallExpressionWrapper {
   expression: PrioritizedCallExpression
 }
@@ -42,9 +51,13 @@ interface HasFunctionParent {
 }
 
 type HelperResult =
-  | ImmediatelyExecutableCallExpressionWrapper & HasCallParent
-  | ImmediatelyExecutableCallExpressionWrapper & NoParent
-  | NotFound
+  | FindNextCallExpressionAndParentResult &
+      ImmediatelyExecutableCallExpressionWrapper &
+      HasCallParent
+  | FindNextCallExpressionAndParentResult &
+      ImmediatelyExecutableCallExpressionWrapper &
+      NoParent
+  | FindNextCallExpressionAndParentResult & NotFound
 
 function foundExpressionAndNoParent(
   helperResult: HelperResult
@@ -100,7 +113,9 @@ export default function findNextCallExpressionAndParent(
   expression: PrioritizedFunctionExpression
 ):
   | HelperResult
-  | (ImmediatelyExecutableCallExpressionWrapper & HasFunctionParent)
+  | (FindNextCallExpressionAndParentResult &
+      ImmediatelyExecutableCallExpressionWrapper &
+      HasFunctionParent)
 export default function findNextCallExpressionAndParent(
   expression: PrioritizedExpression
 ) {

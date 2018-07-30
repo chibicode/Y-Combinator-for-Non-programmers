@@ -2,55 +2,53 @@ import buildExpressionContainer from 'src/lib/buildExpressionContainer'
 import expressionToSimpleString from 'src/lib/expressionToSimpleString'
 import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
+import { Expression } from 'src/types/ExpressionTypes'
+import { PrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
 
 describe('findNextCallExpressionAndParent', () => {
   it('works with simple case', () => {
     expect(
-      expressionToSimpleString(
-        findNextCallExpressionAndParent(
-          prioritizeExpressionContainer(
-            buildExpressionContainer([
-              {
-                arg: 'x',
-                body: 'y'
-              },
-              'z'
-            ])
-          ).expression
+      expressionToSimpleString(findNextCallExpressionAndParent(
+        prioritizeExpressionContainer(
+          buildExpressionContainer([
+            {
+              arg: 'x',
+              body: 'y'
+            },
+            'z'
+          ])
         ).expression
-      )
+      ).expression as Expression)
     ).toBe('(x => y)(z)')
   })
 
   it('works with slightly more complex case', () => {
     expect(
-      expressionToSimpleString(
-        findNextCallExpressionAndParent(
-          prioritizeExpressionContainer(
-            buildExpressionContainer([
-              {
-                arg: 'x',
+      expressionToSimpleString(findNextCallExpressionAndParent(
+        prioritizeExpressionContainer(
+          buildExpressionContainer([
+            {
+              arg: 'x',
+              body: {
+                arg: 'y',
                 body: {
-                  arg: 'y',
-                  body: {
-                    arg: 'z',
-                    body: ['x', ['y', 'z']]
-                  }
+                  arg: 'z',
+                  body: ['x', ['y', 'z']]
                 }
-              },
-              {
-                arg: 'a',
-                body: 'a'
-              },
-              {
-                arg: 'b',
-                body: 'b'
-              },
-              'c'
-            ])
-          ).expression
+              }
+            },
+            {
+              arg: 'a',
+              body: 'a'
+            },
+            {
+              arg: 'b',
+              body: 'b'
+            },
+            'c'
+          ])
         ).expression
-      )
+      ).expression as Expression)
     ).toBe('(x => (y => (z => x(y(z)))))((a => a))')
   })
 
@@ -66,7 +64,7 @@ describe('findNextCallExpressionAndParent', () => {
         ])
       ).expression
     )
-    expect(result.parent).toBeUndefined()
+    expect(result.noParent).toBe(true)
   })
 
   it('returns actual parent if not top most call', () => {
@@ -93,9 +91,11 @@ describe('findNextCallExpressionAndParent', () => {
         ])
       ).expression
     )
-    expect(expressionToSimpleString(result.parent)).toBe(
-      '(a => (b => c))(d)((e => f)(g))'
-    )
+    expect(
+      expressionToSimpleString(
+        result.parentCallExpression as PrioritizedCallExpression
+      )
+    ).toBe('(a => (b => c))(d)((e => f)(g))')
     expect(result.parentKey).toBe('arg')
   })
 
@@ -104,7 +104,7 @@ describe('findNextCallExpressionAndParent', () => {
       findNextCallExpressionAndParent(
         prioritizeExpressionContainer(buildExpressionContainer(['x', 'y']))
           .expression
-      )
-    ).toBeNull()
+      ).notFound
+    ).toBe(true)
   })
 })

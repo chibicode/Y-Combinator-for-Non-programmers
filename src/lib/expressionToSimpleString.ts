@@ -15,9 +15,10 @@ export default function expressionToSimpleString(
     const func = expressionToSimpleString(expression.func, {
       addPriority
     })
-    const priority = isPrioritizedCallExpression(expression)
-      ? `${expression.priority}`
-      : ''
+    const priority =
+      addPriority && isPrioritizedCallExpression(expression)
+        ? `${expression.priority}`
+        : ''
     const arg = expressionToSimpleString(expression.arg, {
       addPriority
     })
