@@ -59,7 +59,7 @@ function prioritizeExpression(
   expression: FunctionExpression
 ): PrioritizedFunctionExpression
 function prioritizeExpression(expression: Expression): PrioritizedExpression
-function prioritizeExpression(expression: any) {
+function prioritizeExpression(expression: Expression) {
   if (isVariableExpression(expression)) {
     return expression
   } else if (isCallExpression(expression)) {
@@ -69,7 +69,7 @@ function prioritizeExpression(expression: any) {
         expression
       })
     })
-  } else if (isFunctionExpression(expression)) {
+  } else {
     return {
       ...expression,
       value: {
@@ -78,7 +78,6 @@ function prioritizeExpression(expression: any) {
       }
     }
   }
-  throw new Error()
 }
 
 export default function prioritizeExpressionContainer(
