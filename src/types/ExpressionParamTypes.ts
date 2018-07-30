@@ -7,8 +7,8 @@ export function isVariableExpressionParams(
 }
 
 export interface FunctionExpressionParams {
-  arg: VariableExpressionParams
-  body: ExpressionParams
+  readonly arg: VariableExpressionParams
+  readonly body: ExpressionParams
 }
 
 export function isFunctionExpressionParams(
@@ -21,7 +21,7 @@ export function isFunctionExpressionParams(
 }
 
 // https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
-export interface CallExpressionParams extends Array<ExpressionParams> {}
+export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
 
 export function isCallExpressionParams(
   expressionParams: ExpressionParams

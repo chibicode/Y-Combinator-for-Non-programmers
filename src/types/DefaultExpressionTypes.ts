@@ -5,19 +5,19 @@ import {
 } from 'src/types/ExpressionTypes'
 
 export interface DefaultStateVariableExpression extends VariableExpression {
-  state: 'default'
+  readonly state: 'default'
 }
 
 export interface DefaultStateFunctionExpression extends FunctionExpression {
-  state: 'default'
-  arg: DefaultStateVariableExpression
-  body: DefaultStateExpression
+  readonly state: 'default'
+  readonly arg: DefaultStateVariableExpression
+  readonly body: DefaultStateExpression
 }
 
 export interface DefaultStateCallExpression extends CallExpression {
-  state: 'default'
-  arg: DefaultStateExpression
-  func: DefaultStateExpression
+  readonly state: 'default'
+  readonly arg: DefaultStateExpression
+  readonly func: DefaultStateExpression
 }
 
 export type DefaultStateExpression =

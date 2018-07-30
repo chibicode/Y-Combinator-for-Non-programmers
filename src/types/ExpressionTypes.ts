@@ -49,16 +49,6 @@ export type Expression =
   | CallExpression
   | FunctionExpression
 
-export interface ImmediatelyExecutableCallExpression extends CallExpression {
-  priority: 1
-  arg: VariableExpression | FunctionExpression
-  func: FunctionExpression
-}
-
-export interface UnexecutableCallExpression extends CallExpression {
-  state: 'done'
-}
-
 interface NeedsResetState {
   state: 'needsReset'
 }
