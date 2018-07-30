@@ -1,6 +1,6 @@
 import buildExpressionContainer from 'src/lib/buildExpressionContainer'
 
-describe('decorateExpression', () => {
+describe('buildExpressionContainer', () => {
   it('works with variable expressions', () => {
     expect(buildExpressionContainer('x')).toEqual({
       prioritized: false,
