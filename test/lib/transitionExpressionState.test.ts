@@ -1,6 +1,6 @@
 import {
   decoratedExpressionToSimpleString,
-  decorateExpression,
+  buildExpressionContainer,
   findNextCallExpressionAndParent,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
@@ -25,7 +25,7 @@ const repeatUntilState = (exp, state) => {
 describe('transitionExpressionState', () => {
   describe('if unprioritized', () => {
     it('prioritizes', () => {
-      const originalExp = decorateExpression([
+      const originalExp = buildExpressionContainer([
         {
           arg: 'x',
           body: 'y'
@@ -38,7 +38,9 @@ describe('transitionExpressionState', () => {
 
   describe('if no next call is found', () => {
     it('returns null', () => {
-      const originalExp = prioritizeExpression(decorateExpression(['y', 'x']))
+      const originalExp = prioritizeExpression(
+        buildExpressionContainer(['y', 'x'])
+      )
       expect(transitionExpressionState(originalExp).state).toBe('done')
     })
   })
@@ -46,7 +48,7 @@ describe('transitionExpressionState', () => {
   describe('if next call is found', () => {
     it('activates the call', () => {
       const originalExp = prioritizeExpression(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: 'y'
@@ -76,7 +78,7 @@ describe('transitionExpressionState', () => {
     describe('if alpha convert is not necessary', () => {
       it('is now ready to beta reduce', () => {
         const originalExp = prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             {
               arg: 'x',
               body: 'y'
@@ -95,7 +97,7 @@ describe('transitionExpressionState', () => {
     describe('if alpha convert is necessary', () => {
       it('indicates that alpha convert is necessary', () => {
         const originalExp = prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             {
               arg: 'x',
               body: {
@@ -118,7 +120,7 @@ describe('transitionExpressionState', () => {
   describe('if needs alpha convert', () => {
     it('does alpha conversion', () => {
       const originalExp = prioritizeExpression(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: {
@@ -144,7 +146,7 @@ describe('transitionExpressionState', () => {
     describe('top level beta reduction, simple', () => {
       it('does beta reduction', () => {
         const originalExp = prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             {
               arg: 'x',
               body: 'x'
@@ -166,7 +168,7 @@ describe('transitionExpressionState', () => {
     describe('non-top level beta reduction, complicated', () => {
       it('does beta reduction', () => {
         const originalExp = prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             {
               arg: 'x',
               body: {
@@ -208,7 +210,7 @@ describe('transitionExpressionState', () => {
   describe('repeat until done', () => {
     it('completes', () => {
       let exp = prioritizeExpression(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: {

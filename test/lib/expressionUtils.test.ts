@@ -2,7 +2,7 @@ import {
   betaReduce,
   conflictingVariableNames,
   decoratedExpressionToSimpleString,
-  decorateExpression,
+  buildExpressionContainer,
   findNextCallExpressionAndParent,
   getAllVariableNames,
   mutableAlphaConvert,
@@ -11,7 +11,7 @@ import {
 
 describe('decorateExpression', () => {
   it('works with variable expressions', () => {
-    expect(decorateExpression('x')).toEqual({
+    expect(buildExpressionContainer('x')).toEqual({
       value: 'x',
       state: 'default',
       type: 'variable'
@@ -20,7 +20,7 @@ describe('decorateExpression', () => {
 
   it('works with function expressions', () => {
     expect(
-      decorateExpression({
+      buildExpressionContainer({
         arg: 'x',
         body: 'y'
       })
@@ -44,7 +44,7 @@ describe('decorateExpression', () => {
 
   it('works with call expressions', () => {
     expect(
-      decorateExpression([
+      buildExpressionContainer([
         {
           arg: 'x',
           body: 'y'
@@ -81,7 +81,7 @@ describe('decorateExpression', () => {
   })
 
   it('correctly nests call expressions', () => {
-    expect(decorateExpression(['a', ['b', 'c'], 'd'])).toEqual({
+    expect(buildExpressionContainer(['a', ['b', 'c'], 'd'])).toEqual({
       state: 'default',
       type: 'call',
       value: {
@@ -108,13 +108,15 @@ describe('decorateExpression', () => {
 
 describe('decoratedExpressionToSimpleString', () => {
   it('works with variable expressions', () => {
-    expect(decoratedExpressionToSimpleString(decorateExpression('x'))).toBe('x')
+    expect(
+      decoratedExpressionToSimpleString(buildExpressionContainer('x'))
+    ).toBe('x')
   })
 
   it('works with function expressions', () => {
     expect(
       decoratedExpressionToSimpleString(
-        decorateExpression({
+        buildExpressionContainer({
           arg: 'x',
           body: 'y'
         })
@@ -125,7 +127,7 @@ describe('decoratedExpressionToSimpleString', () => {
   it('works with call expressions', () => {
     expect(
       decoratedExpressionToSimpleString(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: 'y'
@@ -142,7 +144,7 @@ describe('prioritizeExpression', () => {
     expect(
       decoratedExpressionToSimpleString(
         prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             {
               arg: 'x',
               body: 'y'
@@ -159,7 +161,7 @@ describe('prioritizeExpression', () => {
     expect(
       decoratedExpressionToSimpleString(
         prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             {
               arg: 'x',
               body: {
@@ -190,7 +192,7 @@ describe('prioritizeExpression', () => {
     expect(
       decoratedExpressionToSimpleString(
         prioritizeExpression(
-          decorateExpression([
+          buildExpressionContainer([
             [
               {
                 arg: 'a',
@@ -225,7 +227,7 @@ describe('findNextCallExpressionAndParent', () => {
       decoratedExpressionToSimpleString(
         findNextCallExpressionAndParent(
           prioritizeExpression(
-            decorateExpression([
+            buildExpressionContainer([
               {
                 arg: 'x',
                 body: 'y'
@@ -243,7 +245,7 @@ describe('findNextCallExpressionAndParent', () => {
       decoratedExpressionToSimpleString(
         findNextCallExpressionAndParent(
           prioritizeExpression(
-            decorateExpression([
+            buildExpressionContainer([
               {
                 arg: 'x',
                 body: {
@@ -273,7 +275,7 @@ describe('findNextCallExpressionAndParent', () => {
   it('returns undefined parent if top most call', () => {
     const result = findNextCallExpressionAndParent(
       prioritizeExpression(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: 'y'
@@ -288,7 +290,7 @@ describe('findNextCallExpressionAndParent', () => {
   it('returns actual parent if not top most call', () => {
     const result = findNextCallExpressionAndParent(
       prioritizeExpression(
-        decorateExpression([
+        buildExpressionContainer([
           [
             {
               arg: 'a',
@@ -318,7 +320,7 @@ describe('findNextCallExpressionAndParent', () => {
   it('returns null if there is no more expression to call', () => {
     expect(
       findNextCallExpressionAndParent(
-        prioritizeExpression(decorateExpression(['x', 'y']))
+        prioritizeExpression(buildExpressionContainer(['x', 'y']))
       )
     ).toBeNull()
   })
@@ -328,7 +330,7 @@ describe('getAllVariableNames', () => {
   it('works with simple case', () => {
     expect(
       getAllVariableNames(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: {
@@ -361,7 +363,7 @@ describe('conflictingVariableNames', () => {
         conflictingVariableNames(
           findNextCallExpressionAndParent(
             prioritizeExpression(
-              decorateExpression([
+              buildExpressionContainer([
                 {
                   arg: 'x',
                   body: {
@@ -384,7 +386,7 @@ describe('conflictingVariableNames', () => {
         conflictingVariableNames(
           findNextCallExpressionAndParent(
             prioritizeExpression(
-              decorateExpression([
+              buildExpressionContainer([
                 {
                   arg: 'x',
                   body: {
@@ -406,7 +408,7 @@ describe('mutableAlphaConvert', () => {
   it('returns conflicted elements', () => {
     const expression = findNextCallExpressionAndParent(
       prioritizeExpression(
-        decorateExpression([
+        buildExpressionContainer([
           {
             arg: 'x',
             body: {
@@ -438,7 +440,7 @@ describe('betaReduce', () => {
         betaReduce(
           findNextCallExpressionAndParent(
             prioritizeExpression(
-              decorateExpression([
+              buildExpressionContainer([
                 {
                   arg: 'x',
                   body: 'x'
@@ -458,7 +460,7 @@ describe('betaReduce', () => {
         betaReduce(
           findNextCallExpressionAndParent(
             prioritizeExpression(
-              decorateExpression([
+              buildExpressionContainer([
                 {
                   arg: 'x',
                   body: {

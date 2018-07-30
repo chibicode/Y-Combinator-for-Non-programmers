@@ -1,5 +1,5 @@
 import {
-  decorateExpression,
+  buildExpressionContainer,
   prioritizeExpression
 } from 'src/lib/expressionUtils'
 import { Expression } from 'src/types/ExpressionTypes'
@@ -129,7 +129,7 @@ const functionTestCases: Expression[] = [
   // yCombinator,
   infiniteLoop
 ].map(x => {
-  const decorated = decorateExpression(x)
+  const decorated = buildExpressionContainer(x)
   if (decorated.type === 'call') {
     return prioritizeExpression(decorated)
   } else {

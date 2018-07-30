@@ -6,6 +6,7 @@ import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
+import { UnprioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -17,10 +18,6 @@ import {
 } from 'src/types/ExpressionParams'
 import {
   CallExpression,
-  DefaultStateCallExpression,
-  DefaultStateExpression,
-  DefaultStateFunctionExpression,
-  DefaultStateVariableExpression,
   Expression,
   FunctionExpression,
   ImmediatelyExecutableCallExpression,
@@ -50,19 +47,17 @@ function nestCallExpressions(expression: any) {
   }
 }
 
-export function decorateExpression(
+function buildExpressionRecurser(
   expressionParams: VariableExpressionParams
-): DefaultStateVariableExpression
-export function decorateExpression(
+): VariableExpression
+function buildExpressionRecurser(
   expressionParams: CallExpressionParams
-): DefaultStateCallExpression
-export function decorateExpression(
+): CallExpression
+function buildExpressionRecurser(
   expressionParams: FunctionExpressionParams
-): DefaultStateFunctionExpression
-export function decorateExpression(
-  expressionParams: ExpressionParams
-): DefaultStateExpression
-export function decorateExpression(expressionParams: any) {
+): FunctionExpression
+function buildExpressionRecurser(expressionParams: ExpressionParams): Expression
+function buildExpressionRecurser(expressionParams: ExpressionParams) {
   if (isVariableExpressionParams(expressionParams)) {
     return {
       value: expressionParams,
@@ -76,25 +71,40 @@ export function decorateExpression(expressionParams: any) {
         ? nestCallExpressions(expressionParams)
         : expressionParams
 
-    // Need type casting here:
-    // See https://github.com/Microsoft/TypeScript/issues/26052
     return {
       value: {
-        arg: decorateExpression(nestedCallExpressionParams[1]),
-        func: decorateExpression(nestedCallExpressionParams[0])
+        arg: buildExpressionRecurser(nestedCallExpressionParams[1]),
+        func: buildExpressionRecurser(nestedCallExpressionParams[0])
       },
       state: 'default',
       type: 'call'
-    } as DefaultStateCallExpression
+    }
   } else if (isFunctionExpressionParams(expressionParams)) {
     return {
       value: {
-        arg: decorateExpression(expressionParams.arg),
-        body: decorateExpression(expressionParams.body)
+        arg: buildExpressionRecurser(expressionParams.arg),
+        body: buildExpressionRecurser(expressionParams.body)
       },
       state: 'default',
       type: 'function'
-    } as DefaultStateFunctionExpression
+    }
+  }
+}
+
+export function buildExpressionContainer(
+  expressionParams: VariableExpressionParams
+): UnprioritizedExpressionContainer<VariableExpression>
+export function buildExpressionContainer(
+  expressionParams: CallExpressionParams
+): UnprioritizedExpressionContainer<CallExpression>
+export function buildExpressionContainer(
+  expressionParams: FunctionExpressionParams
+): UnprioritizedExpressionContainer<FunctionExpression>
+export function buildExpressionContainer(expressionParams: ExpressionParams) {
+  return {
+    expression: buildExpressionRecurser(expressionParams),
+    prioritized: false,
+    needsReset: false
   }
 }
 
