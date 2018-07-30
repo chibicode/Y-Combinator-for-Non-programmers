@@ -1,7 +1,6 @@
 import {
   Expression,
   isCallExpression,
-  isFunctionExpression,
   isVariableExpression
 } from 'src/types/ExpressionTypes'
 import { isPrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
@@ -23,7 +22,7 @@ export default function expressionToSimpleString(
       addPriority
     })
     return `${func}(${priority}${arg})`
-  } else if (isFunctionExpression(expression)) {
+  } else {
     const arg = expressionToSimpleString(expression.value.arg, {
       addPriority
     })
@@ -31,7 +30,5 @@ export default function expressionToSimpleString(
       addPriority
     })
     return `(${arg} => ${body})`
-  } else {
-    throw new Error()
   }
 }
