@@ -12,21 +12,21 @@ export default function expressionToSimpleString(
   if (isVariableExpression(expression)) {
     return expression.value
   } else if (isCallExpression(expression)) {
-    const func = expressionToSimpleString(expression.value.func, {
+    const func = expressionToSimpleString(expression.func, {
       addPriority
     })
     const priority = isPrioritizedCallExpression(expression)
       ? `${expression.priority}`
       : ''
-    const arg = expressionToSimpleString(expression.value.arg, {
+    const arg = expressionToSimpleString(expression.arg, {
       addPriority
     })
     return `${func}(${priority}${arg})`
   } else {
-    const arg = expressionToSimpleString(expression.value.arg, {
+    const arg = expressionToSimpleString(expression.arg, {
       addPriority
     })
-    const body = expressionToSimpleString(expression.value.body, {
+    const body = expressionToSimpleString(expression.body, {
       addPriority
     })
     return `(${arg} => ${body})`

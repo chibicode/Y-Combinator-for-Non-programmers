@@ -1,4 +1,3 @@
-import produce from 'immer'
 import {
   PrioritizedExpressionContainer,
   UnprioritizedExpressionContainer
@@ -18,60 +17,44 @@ import {
   PrioritizedVariableExpression
 } from 'src/types/PrioritizedExpressionTypes'
 
-const mutablePrioritizeExpressionRecurserForOtherExpression = (
-  expression: Expression
-): void => {
-  switch (expression.type) {
-    case 'variable': {
-      return
-    }
-    case 'call': {
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        expression,
-        priority: 1
-      })
-      return
-    }
-    case 'function': {
-      mutablePrioritizeExpressionRecurserForOtherExpression(
-        expression.value.arg
-      )
-      mutablePrioritizeExpressionRecurserForOtherExpression(
-        expression.value.body
-      )
-      return
-    }
-  }
-}
-
-const mutablePrioritizeExpressionRecurserForCallExpression = ({
+const prioritizeCallExpression = ({
   expression,
   priority
 }: {
   expression: CallExpression
   priority: number
-}): number => {
-  if (expression.value.arg.type === 'call') {
-    priority =
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        expression: expression.value.arg,
-        priority
-      }) + 1
+}): PrioritizedCallExpression => {
+  let newArg: PrioritizedExpression
+  let newFunc: PrioritizedExpression
+
+  if (isCallExpression(expression.arg)) {
+    const argResult = prioritizeCallExpression({
+      expression: expression.arg,
+      priority
+    })
+    newArg = argResult
+    priority = argResult.priority + 1
   } else {
-    mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.arg)
-  }
-  if (expression.value.func.type === 'call') {
-    priority =
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        expression: expression.value.func,
-        priority
-      }) + 1
-  } else {
-    mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.func)
+    newArg = prioritizeExpression(expression.arg)
   }
 
-  ;(expression as PrioritizedCallExpression).priority = priority
-  return priority
+  if (isCallExpression(expression.func)) {
+    const funcResult = prioritizeCallExpression({
+      expression: expression.func,
+      priority
+    })
+    newFunc = funcResult
+    priority = funcResult.priority + 1
+  } else {
+    newFunc = prioritizeExpression(expression.func)
+  }
+
+  return {
+    ...expression,
+    func: newFunc,
+    arg: newArg,
+    priority
+  }
 }
 
 function prioritizeExpression(
@@ -88,16 +71,15 @@ function prioritizeExpression(expression: Expression) {
   if (isVariableExpression(expression)) {
     return expression
   } else if (isCallExpression(expression)) {
-    return produce<CallExpression>(expression, draftExpression => {
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        priority: 1,
-        expression: draftExpression
-      })
-    }) as PrioritizedCallExpression
+    return prioritizeCallExpression({
+      priority: 1,
+      expression
+    })
   } else {
-    return produce<FunctionExpression>(expression, draftExpression => {
-      mutablePrioritizeExpressionRecurserForOtherExpression(draftExpression)
-    }) as PrioritizedFunctionExpression
+    return {
+      ...expression,
+      body: prioritizeExpression(expression.body)
+    }
   }
 }
 

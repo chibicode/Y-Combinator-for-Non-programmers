@@ -10,18 +10,14 @@ export interface DefaultStateVariableExpression extends VariableExpression {
 
 export interface DefaultStateFunctionExpression extends FunctionExpression {
   state: 'default'
-  value: {
-    arg: DefaultStateVariableExpression
-    body: DefaultStateExpression
-  }
+  arg: DefaultStateVariableExpression
+  body: DefaultStateExpression
 }
 
 export interface DefaultStateCallExpression extends CallExpression {
   state: 'default'
-  value: {
-    arg: DefaultStateExpression
-    func: DefaultStateExpression
-  }
+  arg: DefaultStateExpression
+  func: DefaultStateExpression
 }
 
 export type DefaultStateExpression =

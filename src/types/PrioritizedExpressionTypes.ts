@@ -8,10 +8,8 @@ export type PrioritizedVariableExpression = VariableExpression
 
 export interface PrioritizedCallExpression extends CallExpression {
   priority: number
-  value: {
-    arg: PrioritizedExpression
-    func: PrioritizedExpression
-  }
+  arg: PrioritizedExpression
+  func: PrioritizedExpression
 }
 
 export function isPrioritizedCallExpression(
@@ -21,10 +19,8 @@ export function isPrioritizedCallExpression(
 }
 
 export interface PrioritizedFunctionExpression extends FunctionExpression {
-  value: {
-    arg: VariableExpression
-    body: PrioritizedExpression
-  }
+  arg: PrioritizedVariableExpression
+  body: PrioritizedExpression
 }
 
 export type PrioritizedExpression =

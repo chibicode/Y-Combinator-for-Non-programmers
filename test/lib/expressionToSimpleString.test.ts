@@ -1,12 +1,10 @@
 import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import expressionContainerToSimpleString from 'src/lib/expressionToSimpleString'
+import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
 
-describe('expressionContainerToSimpleString', () => {
+describe('expressionToSimpleString', () => {
   it('works with variable expressions', () => {
     expect(
-      expressionContainerToSimpleString(
-        buildExpressionContainer('x').expression
-      )
+      expressionContainerToSimpleString(buildExpressionContainer('x'))
     ).toBe('x')
   })
 
@@ -16,7 +14,7 @@ describe('expressionContainerToSimpleString', () => {
         buildExpressionContainer({
           arg: 'x',
           body: 'y'
-        }).expression
+        })
       )
     ).toBe('(x => y)')
   })
@@ -30,7 +28,7 @@ describe('expressionContainerToSimpleString', () => {
             body: 'y'
           },
           'z'
-        ]).expression
+        ])
       )
     ).toBe('(x => y)(z)')
   })

@@ -64,19 +64,15 @@ function buildExpressionRecurser(expressionParams: ExpressionParams) {
         : expressionParams
 
     return {
-      value: {
-        arg: buildExpressionRecurser(nestedCallExpressionParams[1]),
-        func: buildExpressionRecurser(nestedCallExpressionParams[0])
-      },
+      arg: buildExpressionRecurser(nestedCallExpressionParams[1]),
+      func: buildExpressionRecurser(nestedCallExpressionParams[0]),
       state: 'default',
       type: 'call'
     }
   } else if (isFunctionExpressionParams(expressionParams)) {
     return {
-      value: {
-        arg: buildExpressionRecurser(expressionParams.arg),
-        body: buildExpressionRecurser(expressionParams.body)
-      },
+      arg: buildExpressionRecurser(expressionParams.arg),
+      body: buildExpressionRecurser(expressionParams.body),
       state: 'default',
       type: 'function'
     }

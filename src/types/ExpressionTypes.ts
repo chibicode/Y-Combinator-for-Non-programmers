@@ -21,10 +21,8 @@ export interface CallExpression {
     | 'readyToBetaReduce'
     | 'needsReset'
   type: 'call'
-  value: {
-    arg: Expression
-    func: Expression
-  }
+  arg: Expression
+  func: Expression
 }
 
 export function isCallExpression(
@@ -36,10 +34,8 @@ export function isCallExpression(
 export interface FunctionExpression {
   type: 'function'
   state: 'default' | 'highlighted' | 'needsReset'
-  value: {
-    arg: VariableExpression
-    body: Expression
-  }
+  arg: VariableExpression
+  body: Expression
 }
 
 export function isFunctionExpression(
@@ -55,10 +51,8 @@ export type Expression =
 
 export interface ImmediatelyExecutableCallExpression extends CallExpression {
   priority: 1
-  value: {
-    arg: VariableExpression | FunctionExpression
-    func: FunctionExpression
-  }
+  arg: VariableExpression | FunctionExpression
+  func: FunctionExpression
 }
 
 export interface UnexecutableCallExpression extends CallExpression {
