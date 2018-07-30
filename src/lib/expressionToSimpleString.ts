@@ -32,6 +32,6 @@ export default function expressionToSimpleString(
     })
     return `(${arg} => ${body})`
   } else {
-    throw new Error('Invalid argument')
+    throw new Error()
   }
 }
