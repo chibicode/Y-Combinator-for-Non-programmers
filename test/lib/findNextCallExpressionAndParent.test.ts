@@ -3,7 +3,10 @@ import expressionToSimpleString from 'src/lib/expressionToSimpleString'
 import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
 import { Expression } from 'src/types/ExpressionTypes'
-import { PrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
+import {
+  PrioritizedCallExpression,
+  PrioritizedFunctionExpression
+} from 'src/types/PrioritizedExpressionTypes'
 
 describe('findNextCallExpressionAndParent', () => {
   it('works with simple case', () => {
@@ -106,5 +109,33 @@ describe('findNextCallExpressionAndParent', () => {
           .expression
       ).notFound
     ).toBe(true)
+  })
+
+  it('returns one with function parent if there is an executable call inside a function', () => {
+    const result = findNextCallExpressionAndParent(
+      prioritizeExpressionContainer(
+        buildExpressionContainer({
+          arg: 'a',
+          body: {
+            arg: 'b',
+            body: [
+              {
+                arg: 'c',
+                body: 'c'
+              },
+              'd'
+            ]
+          }
+        })
+      ).expression
+    )
+    expect(
+      expressionToSimpleString(result.expression as PrioritizedCallExpression)
+    ).toBe('(c => c)(d)')
+    expect(
+      expressionToSimpleString(
+        result.parentFunctionExpression as PrioritizedFunctionExpression
+      )
+    ).toBe('(b => (c => c)(d))')
   })
 })

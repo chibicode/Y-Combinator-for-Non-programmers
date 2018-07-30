@@ -17,13 +17,13 @@ import {
   PrioritizedVariableExpression
 } from 'src/types/PrioritizedExpressionTypes'
 
-const prioritizeCallExpression = ({
+function prioritizeCallExpression({
   expression,
   priority
 }: {
   expression: CallExpression
   priority: number
-}): PrioritizedCallExpression => {
+}): PrioritizedCallExpression {
   let newArg: PrioritizedExpression
   let newFunc: PrioritizedExpression
 

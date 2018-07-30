@@ -14,65 +14,61 @@ import {
   PrioritizedFunctionExpression
 } from 'src/types/PrioritizedExpressionTypes'
 
-interface FindNextCallExpressionAndParentResult {
-  expression?: PrioritizedCallExpression
-  notFound?: true
-  noParent?: true
-  parentCallExpression?: PrioritizedCallExpression
-  parentFunctionExpression?: PrioritizedFunctionExpression
-  parentKey?: 'func' | 'arg'
+interface Result {
+  readonly expression?: PrioritizedCallExpression
+  readonly notFound?: true
+  readonly noParent?: true
+  readonly parentCallExpression?: PrioritizedCallExpression
+  readonly parentFunctionExpression?: PrioritizedFunctionExpression
+  readonly parentKey?: 'func' | 'arg'
 }
 
-interface PrioritizedCallExpressionWrapper {
-  expression: PrioritizedCallExpression
+interface HasPrioritizedCallExpression {
+  readonly expression: PrioritizedCallExpression
 }
 
-interface ImmediatelyExecutableCallExpressionWrapper {
-  expression: ImmediatelyExecutableCallExpression
+interface HasImmediatelyExecutableCallExpression {
+  readonly expression: ImmediatelyExecutableCallExpression
 }
-
-const NOT_FOUND = { notFound: true as true }
 
 interface NotFound {
-  notFound: true
+  readonly notFound: true
 }
 
 interface NoParent {
-  noParent: true
+  readonly noParent: true
 }
 
 interface HasCallParent {
-  parentCallExpression: PrioritizedCallExpression
-  parentKey: 'func' | 'arg'
+  readonly parentCallExpression: PrioritizedCallExpression
+  readonly parentKey: 'func' | 'arg'
 }
 
 interface HasFunctionParent {
-  parentFunctionExpression: PrioritizedFunctionExpression
+  readonly parentFunctionExpression: PrioritizedFunctionExpression
 }
 
 type HelperResult =
-  | FindNextCallExpressionAndParentResult &
-      ImmediatelyExecutableCallExpressionWrapper &
-      HasCallParent
-  | FindNextCallExpressionAndParentResult &
-      ImmediatelyExecutableCallExpressionWrapper &
-      NoParent
-  | FindNextCallExpressionAndParentResult & NotFound
+  | Result & HasImmediatelyExecutableCallExpression & HasCallParent
+  | Result & HasImmediatelyExecutableCallExpression & NoParent
+  | Result & NotFound
+
+type HelperStackItem =
+  | HasPrioritizedCallExpression & NoParent
+  | HasPrioritizedCallExpression & HasCallParent
+
+const NOT_FOUND = { notFound: true as true }
 
 function foundExpressionAndNoParent(
   helperResult: HelperResult
-): helperResult is ImmediatelyExecutableCallExpressionWrapper & NoParent {
+): helperResult is HasImmediatelyExecutableCallExpression & NoParent {
   return (
     (helperResult as NoParent).noParent &&
-    !!(helperResult as ImmediatelyExecutableCallExpressionWrapper).expression
+    !!(helperResult as HasImmediatelyExecutableCallExpression).expression
   )
 }
 
-type HelperStackItem =
-  | PrioritizedCallExpressionWrapper & NoParent
-  | PrioritizedCallExpressionWrapper & HasCallParent
-
-const helper = (expression: PrioritizedCallExpression): HelperResult => {
+function helper(expression: PrioritizedCallExpression): HelperResult {
   const stack: HelperStackItem[] = [{ expression, noParent: true }]
   while (stack.length > 0) {
     const current = stack.pop() as HelperStackItem
@@ -113,9 +109,7 @@ export default function findNextCallExpressionAndParent(
   expression: PrioritizedFunctionExpression
 ):
   | HelperResult
-  | (FindNextCallExpressionAndParentResult &
-      ImmediatelyExecutableCallExpressionWrapper &
-      HasFunctionParent)
+  | (Result & HasImmediatelyExecutableCallExpression & HasFunctionParent)
 export default function findNextCallExpressionAndParent(
   expression: PrioritizedExpression
 ) {

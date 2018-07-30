@@ -1,7 +1,7 @@
 export interface VariableExpression {
-  state: 'default' | 'highlighted' | 'needsReset'
-  type: 'variable'
-  value: string
+  readonly state: 'default' | 'highlighted' | 'needsReset'
+  readonly type: 'variable'
+  readonly value: string
 }
 
 export function isVariableExpression(
@@ -11,7 +11,7 @@ export function isVariableExpression(
 }
 
 export interface CallExpression {
-  state:
+  readonly state:
     | 'default'
     | 'readyToHighlight'
     | 'highlighted'
@@ -20,9 +20,9 @@ export interface CallExpression {
     | 'needsAlphaConvert'
     | 'readyToBetaReduce'
     | 'needsReset'
-  type: 'call'
-  arg: Expression
-  func: Expression
+  readonly type: 'call'
+  readonly arg: Expression
+  readonly func: Expression
 }
 
 export function isCallExpression(
@@ -32,10 +32,10 @@ export function isCallExpression(
 }
 
 export interface FunctionExpression {
-  type: 'function'
-  state: 'default' | 'highlighted' | 'needsReset'
-  arg: VariableExpression
-  body: Expression
+  readonly type: 'function'
+  readonly state: 'default' | 'highlighted' | 'needsReset'
+  readonly arg: VariableExpression
+  readonly body: Expression
 }
 
 export function isFunctionExpression(
@@ -50,7 +50,7 @@ export type Expression =
   | FunctionExpression
 
 interface NeedsResetState {
-  state: 'needsReset'
+  readonly state: 'needsReset'
 }
 export type NeedsResetFunctionExpression = FunctionExpression & NeedsResetState
 export type NeedsResetCallExpression = CallExpression & NeedsResetState

@@ -7,7 +7,7 @@ import {
 } from 'src/types/PrioritizedExpressionTypes'
 
 export interface TopPriorityCallExpression extends PrioritizedCallExpression {
-  priority: 1
+  readonly priority: 1
 }
 
 export function isTopPriorityCallExpression(
@@ -18,8 +18,8 @@ export function isTopPriorityCallExpression(
 
 export interface ImmediatelyExecutableCallExpression
   extends TopPriorityCallExpression {
-  arg: PrioritizedVariableExpression | PrioritizedFunctionExpression
-  func: PrioritizedFunctionExpression
+  readonly arg: PrioritizedVariableExpression | PrioritizedFunctionExpression
+  readonly func: PrioritizedFunctionExpression
 }
 
 export function isImmediatelyExecutableCallExpression(
@@ -34,5 +34,5 @@ export function isImmediatelyExecutableCallExpression(
 }
 
 export interface UnexecutableCallExpression extends PrioritizedCallExpression {
-  state: 'done'
+  readonly state: 'done'
 }
