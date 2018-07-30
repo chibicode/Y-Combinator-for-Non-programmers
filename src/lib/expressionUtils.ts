@@ -5,7 +5,6 @@ import intersection from 'lodash/intersection'
 import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
-import { INITIAL_PRIORITY } from 'src/constants/expressions'
 
 import {
   CallExpression,
@@ -36,7 +35,7 @@ export const findNextCallExpressionAndParent = (
       current = topOfStack.expression
       parent = topOfStack.parent
       parentKey = topOfStack.parentKey
-      if (current.priority === INITIAL_PRIORITY) {
+      if (current.priority === 1) {
         if (
           (current.value.arg.type === 'variable' ||
             current.value.arg.type === 'function') &&
