@@ -2,9 +2,9 @@ import {
   Expression,
   isCallExpression,
   isFunctionExpression,
-  isPrioritizedCallExpression,
   isVariableExpression
 } from 'src/types/ExpressionTypes'
+import { isPrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
 
 export default function expressionToSimpleString(
   expression: Expression,
