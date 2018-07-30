@@ -1,0 +1,31 @@
+import {
+  CallExpression,
+  FunctionExpression,
+  VariableExpression
+} from 'src/types/ExpressionTypes'
+
+export interface PrioritizedCallExpression extends CallExpression {
+  priority: number
+  value: {
+    arg: PrioritizedExpression
+    func: PrioritizedExpression
+  }
+}
+
+export function isPrioritizedCallExpression(
+  expression: CallExpression
+): expression is PrioritizedCallExpression {
+  return (expression as PrioritizedCallExpression).priority !== undefined
+}
+
+export interface PrioritizedFunctionExpression extends FunctionExpression {
+  value: {
+    arg: VariableExpression
+    body: PrioritizedExpression
+  }
+}
+
+export type PrioritizedExpression =
+  | VariableExpression
+  | PrioritizedCallExpression
+  | PrioritizedFunctionExpression

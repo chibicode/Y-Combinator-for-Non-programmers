@@ -15,7 +15,7 @@ import {
   isFunctionExpressionParams,
   isVariableExpressionParams,
   VariableExpressionParams
-} from 'src/types/ExpressionParams'
+} from 'src/types/ExpressionParamTypes'
 import {
   CallExpression,
   Expression,

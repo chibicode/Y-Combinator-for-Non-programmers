@@ -1,4 +1,5 @@
 import { Expression } from 'src/types/ExpressionTypes'
+import { PrioritizedExpression } from 'src/types/PrioritizedExpressionTypes'
 
 export interface ExpressionContainer<E extends Expression> {
   expression: E
@@ -13,7 +14,7 @@ export type UnprioritizedExpressionContainer<
 }
 
 export type PrioritizedExpressionContainer<
-  E extends Expression
+  E extends PrioritizedExpression
 > = ExpressionContainer<E> & {
   prioritized: true
 }

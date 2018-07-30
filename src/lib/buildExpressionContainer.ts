@@ -1,3 +1,9 @@
+import {
+  DefaultStateCallExpression,
+  DefaultStateExpression,
+  DefaultStateFunctionExpression,
+  DefaultStateVariableExpression
+} from 'src/types/DefaultExpressionTypes'
 import { UnprioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,
@@ -7,13 +13,7 @@ import {
   isFunctionExpressionParams,
   isVariableExpressionParams,
   VariableExpressionParams
-} from 'src/types/ExpressionParams'
-import {
-  CallExpression,
-  Expression,
-  FunctionExpression,
-  VariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/ExpressionParamTypes'
 
 function nestCallExpressions(
   expression: CallExpressionParams
@@ -39,14 +39,16 @@ function nestCallExpressions(expression: any) {
 
 function buildExpressionRecurser(
   expressionParams: VariableExpressionParams
-): VariableExpression
+): DefaultStateVariableExpression
 function buildExpressionRecurser(
   expressionParams: CallExpressionParams
-): CallExpression
+): DefaultStateCallExpression
 function buildExpressionRecurser(
   expressionParams: FunctionExpressionParams
-): FunctionExpression
-function buildExpressionRecurser(expressionParams: ExpressionParams): Expression
+): DefaultStateFunctionExpression
+function buildExpressionRecurser(
+  expressionParams: ExpressionParams
+): DefaultStateExpression
 function buildExpressionRecurser(expressionParams: ExpressionParams) {
   if (isVariableExpressionParams(expressionParams)) {
     return {
@@ -83,13 +85,13 @@ function buildExpressionRecurser(expressionParams: ExpressionParams) {
 
 export default function buildExpressionContainer(
   expressionParams: VariableExpressionParams
-): UnprioritizedExpressionContainer<VariableExpression>
+): UnprioritizedExpressionContainer<DefaultStateVariableExpression>
 export default function buildExpressionContainer(
   expressionParams: CallExpressionParams
-): UnprioritizedExpressionContainer<CallExpression>
+): UnprioritizedExpressionContainer<DefaultStateCallExpression>
 export default function buildExpressionContainer(
   expressionParams: FunctionExpressionParams
-): UnprioritizedExpressionContainer<FunctionExpression>
+): UnprioritizedExpressionContainer<DefaultStateFunctionExpression>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
 ) {
