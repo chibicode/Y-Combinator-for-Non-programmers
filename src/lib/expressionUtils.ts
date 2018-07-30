@@ -81,29 +81,6 @@ export const findNextCallExpressionAndParent = (
   return null
 }
 
-export const decoratedExpressionToSimpleString = (
-  expression: Expression,
-  { addPriority } = { addPriority: false }
-) => {
-  if (expression.type === 'variable') {
-    return expression.value
-  } else if (expression.type === 'call') {
-    return `${decoratedExpressionToSimpleString(expression.value.func, {
-      addPriority
-    })}(${
-      addPriority && expression.priority ? expression.priority : ''
-    }${decoratedExpressionToSimpleString(expression.value.arg, {
-      addPriority
-    })})`
-  } else {
-    return `(${decoratedExpressionToSimpleString(expression.value.arg, {
-      addPriority
-    })} => ${decoratedExpressionToSimpleString(expression.value.body, {
-      addPriority
-    })})`
-  }
-}
-
 export const getAllVariableNames = (expression: Expression): string[] => {
   if (expression.type === 'variable') {
     return [expression.value]
