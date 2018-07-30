@@ -1,7 +1,6 @@
 import produce from 'immer'
 import cloneDeep from 'lodash/cloneDeep'
 import difference from 'lodash/difference'
-import intersection from 'lodash/intersection'
 import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
@@ -13,17 +12,6 @@ import {
   ImmediatelyExecutableCallExpression,
   VariableExpression
 } from 'src/types/ExpressionTypes'
-
-export const conflictingVariableNames = (
-  expression: ImmediatelyExecutableCallExpression
-) => {
-  const argVariableNames = getAllVariableNames(expression.value.arg)
-  const funcBodyVariableNamesExceptArg = difference(
-    getAllVariableNames(expression.value.func.value.body),
-    [expression.value.func.value.arg.value]
-  )
-  return intersection(argVariableNames, funcBodyVariableNamesExceptArg)
-}
 
 const POSSIBLE_VARIABLE_NAMES = [
   'a',
