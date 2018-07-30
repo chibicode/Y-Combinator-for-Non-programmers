@@ -4,6 +4,8 @@ import {
   VariableExpression
 } from 'src/types/ExpressionTypes'
 
+export type PrioritizedVariableExpression = VariableExpression
+
 export interface PrioritizedCallExpression extends CallExpression {
   priority: number
   value: {
@@ -26,6 +28,6 @@ export interface PrioritizedFunctionExpression extends FunctionExpression {
 }
 
 export type PrioritizedExpression =
-  | VariableExpression
+  | PrioritizedVariableExpression
   | PrioritizedCallExpression
   | PrioritizedFunctionExpression
