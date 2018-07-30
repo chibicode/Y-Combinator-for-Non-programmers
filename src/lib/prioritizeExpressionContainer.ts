@@ -8,7 +8,6 @@ import {
   Expression,
   FunctionExpression,
   isCallExpression,
-  isFunctionExpression,
   isVariableExpression,
   VariableExpression
 } from 'src/types/ExpressionTypes'
@@ -18,6 +17,32 @@ import {
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
 } from 'src/types/PrioritizedExpressionTypes'
+
+const mutablePrioritizeExpressionRecurserForOtherExpression = (
+  expression: Expression
+): void => {
+  switch (expression.type) {
+    case 'variable': {
+      return
+    }
+    case 'call': {
+      mutablePrioritizeExpressionRecurserForCallExpression({
+        expression,
+        priority: 1
+      })
+      return
+    }
+    case 'function': {
+      mutablePrioritizeExpressionRecurserForOtherExpression(
+        expression.value.arg
+      )
+      mutablePrioritizeExpressionRecurserForOtherExpression(
+        expression.value.body
+      )
+      return
+    }
+  }
+}
 
 const mutablePrioritizeExpressionRecurserForCallExpression = ({
   expression,
@@ -45,7 +70,7 @@ const mutablePrioritizeExpressionRecurserForCallExpression = ({
     mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.func)
   }
 
-  expression.priority = priority
+  ;(expression as PrioritizedCallExpression).priority = priority
   return priority
 }
 
@@ -66,17 +91,13 @@ function prioritizeExpression(expression: Expression) {
     return produce<CallExpression>(expression, draftExpression => {
       mutablePrioritizeExpressionRecurserForCallExpression({
         priority: 1,
-        expression
+        expression: draftExpression
       })
-    })
+    }) as PrioritizedCallExpression
   } else {
-    return {
-      ...expression,
-      value: {
-        arg: expression.value.arg,
-        body: prioritizeExpression(expression.value.body)
-      }
-    }
+    return produce<FunctionExpression>(expression, draftExpression => {
+      mutablePrioritizeExpressionRecurserForOtherExpression(draftExpression)
+    }) as PrioritizedFunctionExpression
   }
 }
 

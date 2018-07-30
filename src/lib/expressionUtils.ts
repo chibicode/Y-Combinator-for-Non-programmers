@@ -6,22 +6,12 @@ import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import { INITIAL_PRIORITY } from 'src/constants/expressions'
-import { UnprioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
-import {
-  CallExpressionParams,
-  ExpressionParams,
-  FunctionExpressionParams,
-  isCallExpressionParams,
-  isFunctionExpressionParams,
-  isVariableExpressionParams,
-  VariableExpressionParams
-} from 'src/types/ExpressionParamTypes'
+
 import {
   CallExpression,
   Expression,
   FunctionExpression,
   ImmediatelyExecutableCallExpression,
-  PrioritizedCallExpression,
   VariableExpression
 } from 'src/types/ExpressionTypes'
 
@@ -97,77 +87,6 @@ export const getAllVariableNames = (expression: Expression): string[] => {
       )
     )
   }
-}
-
-const mutablePrioritizeExpressionRecurserForOtherExpression = (
-  expression: Expression
-): void => {
-  switch (expression.type) {
-    case 'variable': {
-      return
-    }
-    case 'call': {
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        expression,
-        priority: INITIAL_PRIORITY
-      })
-      return
-    }
-    case 'function': {
-      mutablePrioritizeExpressionRecurserForOtherExpression(
-        expression.value.arg
-      )
-      mutablePrioritizeExpressionRecurserForOtherExpression(
-        expression.value.body
-      )
-      return
-    }
-  }
-}
-
-const mutablePrioritizeExpressionRecurserForCallExpression = ({
-  expression,
-  priority
-}: {
-  expression: CallExpression
-  priority: number
-}): number => {
-  if (expression.value.arg.type === 'call') {
-    priority =
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        expression: expression.value.arg,
-        priority
-      }) + 1
-  } else {
-    mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.arg)
-  }
-  if (expression.value.func.type === 'call') {
-    priority =
-      mutablePrioritizeExpressionRecurserForCallExpression({
-        expression: expression.value.func,
-        priority
-      }) + 1
-  } else {
-    mutablePrioritizeExpressionRecurserForOtherExpression(expression.value.func)
-  }
-
-  expression.priority = priority
-  return priority
-}
-
-const mutablePrioritizeExpression = (expression: CallExpression): void => {
-  mutablePrioritizeExpressionRecurserForCallExpression({
-    expression,
-    priority: INITIAL_PRIORITY
-  })
-}
-
-export const prioritizeExpression = (
-  expression: CallExpression
-): PrioritizedCallExpression => {
-  return produce<CallExpression>(expression, draftExpression => {
-    mutablePrioritizeExpression(draftExpression)
-  }) as PrioritizedCallExpression
 }
 
 export const conflictingVariableNames = (
