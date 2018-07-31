@@ -28,9 +28,9 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
   } else if (isPrioritizedExpressionContainer(e)) {
     return produce<PrioritizedExpressionContainer>(e, draftContainer => {
       const nextCallExpressionAndParent = findNextCallExpressionAndParent<
-        Extract<typeof draftContainer.expression, PrioritizedCallExpression>,
+        DraftObject<PrioritizedCallExpression>,
         DraftObject<ImmediatelyExecutableCallExpression>,
-        Extract<typeof draftContainer.expression, PrioritizedFunctionExpression>
+        DraftObject<PrioritizedFunctionExpression>
       >(draftContainer.expression)
       if (nextCallExpressionAndParent.notFound) {
         return {
