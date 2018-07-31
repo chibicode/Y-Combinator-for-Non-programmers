@@ -1,5 +1,8 @@
 import omit from 'lodash/omit'
-import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import {
+  ExpressionContainer,
+  UnprioritizedExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
 import {
   Expression,
   isCallExpression,
@@ -35,9 +38,9 @@ function resetExpression<E extends Expression>(expression: E): E {
 
 export default function resetExpressionContainer(
   expressionContainer: ExpressionContainer
-): ExpressionContainer {
+): UnprioritizedExpressionContainer {
   return {
-    ...expressionContainer,
+    prioritized: false,
     needsReset: false,
     expression: resetExpression(expressionContainer.expression)
   }

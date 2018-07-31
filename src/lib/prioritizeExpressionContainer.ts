@@ -94,7 +94,10 @@ export default function prioritizeExpressionContainer(
 ): PrioritizedExpressionContainer<PrioritizedFunctionExpression>
 export default function prioritizeExpressionContainer(
   expressionContainer: UnprioritizedExpressionContainer<Expression>
-): PrioritizedExpressionContainer<PrioritizedExpression> {
+): PrioritizedExpressionContainer<PrioritizedExpression>
+export default function prioritizeExpressionContainer(
+  expressionContainer: UnprioritizedExpressionContainer<Expression>
+) {
   return {
     prioritized: true,
     needsReset: expressionContainer.needsReset,
