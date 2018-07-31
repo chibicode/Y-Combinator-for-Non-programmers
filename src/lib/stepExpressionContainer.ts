@@ -32,7 +32,10 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
         DraftObject<ImmediatelyExecutableCallExpression>,
         DraftObject<PrioritizedFunctionExpression>
       >(draftContainer.expression)
-      if (nextCallExpressionAndParent.notFound) {
+      if (
+        'notFound' in nextCallExpressionAndParent &&
+        nextCallExpressionAndParent.notFound
+      ) {
         return {
           ...e,
           done: true

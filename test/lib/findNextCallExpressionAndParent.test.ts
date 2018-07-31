@@ -2,57 +2,58 @@ import buildExpressionContainer from 'src/lib/buildExpressionContainer'
 import expressionToSimpleString from 'src/lib/expressionToSimpleString'
 import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
-import { Expression } from 'src/types/ExpressionTypes'
-import {
-  PrioritizedCallExpression,
-  PrioritizedFunctionExpression
-} from 'src/types/PrioritizedExpressionTypes'
 
 describe('findNextCallExpressionAndParent', () => {
   it('works with simple case', () => {
-    expect(
-      expressionToSimpleString(findNextCallExpressionAndParent(
-        prioritizeExpressionContainer(
-          buildExpressionContainer([
-            {
-              arg: 'x',
-              body: 'y'
-            },
-            'z'
-          ])
-        ).expression
-      ).expression as Expression)
-    ).toBe('(x => y)(z)')
+    const result = findNextCallExpressionAndParent(
+      prioritizeExpressionContainer(
+        buildExpressionContainer([
+          {
+            arg: 'x',
+            body: 'y'
+          },
+          'z'
+        ])
+      ).expression
+    )
+    if (!('expression' in result)) {
+      throw new Error()
+    }
+    expect(expressionToSimpleString(result.expression)).toBe('(x => y)(z)')
   })
 
   it('works with slightly more complex case', () => {
-    expect(
-      expressionToSimpleString(findNextCallExpressionAndParent(
-        prioritizeExpressionContainer(
-          buildExpressionContainer([
-            {
-              arg: 'x',
+    const result = findNextCallExpressionAndParent(
+      prioritizeExpressionContainer(
+        buildExpressionContainer([
+          {
+            arg: 'x',
+            body: {
+              arg: 'y',
               body: {
-                arg: 'y',
-                body: {
-                  arg: 'z',
-                  body: ['x', ['y', 'z']]
-                }
+                arg: 'z',
+                body: ['x', ['y', 'z']]
               }
-            },
-            {
-              arg: 'a',
-              body: 'a'
-            },
-            {
-              arg: 'b',
-              body: 'b'
-            },
-            'c'
-          ])
-        ).expression
-      ).expression as Expression)
-    ).toBe('(x => (y => (z => x(y(z)))))((a => a))')
+            }
+          },
+          {
+            arg: 'a',
+            body: 'a'
+          },
+          {
+            arg: 'b',
+            body: 'b'
+          },
+          'c'
+        ])
+      ).expression
+    )
+    if (!('expression' in result)) {
+      throw new Error()
+    }
+    expect(expressionToSimpleString(result.expression)).toBe(
+      '(x => (y => (z => x(y(z)))))((a => a))'
+    )
   })
 
   it('returns undefined parent if top most call', () => {
@@ -67,6 +68,9 @@ describe('findNextCallExpressionAndParent', () => {
         ])
       ).expression
     )
+    if (!('noParent' in result)) {
+      throw new Error()
+    }
     expect(result.noParent).toBe(true)
   })
 
@@ -94,21 +98,24 @@ describe('findNextCallExpressionAndParent', () => {
         ])
       ).expression
     )
-    expect(
-      expressionToSimpleString(
-        result.parentCallExpression as PrioritizedCallExpression
-      )
-    ).toBe('(a => (b => c))(d)((e => f)(g))')
+    if (!('parentCallExpression' in result) || !('parentKey' in result)) {
+      throw new Error()
+    }
+    expect(expressionToSimpleString(result.parentCallExpression)).toBe(
+      '(a => (b => c))(d)((e => f)(g))'
+    )
     expect(result.parentKey).toBe('arg')
   })
 
   it('returns null if there is no more expression to call', () => {
-    expect(
-      findNextCallExpressionAndParent(
-        prioritizeExpressionContainer(buildExpressionContainer(['x', 'y']))
-          .expression
-      ).notFound
-    ).toBe(true)
+    const result = findNextCallExpressionAndParent(
+      prioritizeExpressionContainer(buildExpressionContainer(['x', 'y']))
+        .expression
+    )
+    if (!('notFound' in result)) {
+      throw new Error()
+    }
+    expect(result.notFound).toBe(true)
   })
 
   it('returns one with function parent if there is an executable call inside a function', () => {
@@ -129,13 +136,12 @@ describe('findNextCallExpressionAndParent', () => {
         })
       ).expression
     )
-    expect(
-      expressionToSimpleString(result.expression as PrioritizedCallExpression)
-    ).toBe('(c => c)(d)')
-    expect(
-      expressionToSimpleString(
-        result.parentFunctionExpression as PrioritizedFunctionExpression
-      )
-    ).toBe('(b => (c => c)(d))')
+    if (!('parentFunctionExpression' in result) || !('expression' in result)) {
+      throw new Error()
+    }
+    expect(expressionToSimpleString(result.expression)).toBe('(c => c)(d)')
+    expect(expressionToSimpleString(result.parentFunctionExpression)).toBe(
+      '(b => (c => c)(d))'
+    )
   })
 })
