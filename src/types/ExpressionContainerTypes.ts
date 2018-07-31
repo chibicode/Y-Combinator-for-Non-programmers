@@ -5,6 +5,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly prioritized: boolean
   readonly needsReset: boolean
+  readonly done: boolean
 }
 
 export type UnprioritizedExpressionContainer<
@@ -19,6 +20,12 @@ export type PrioritizedExpressionContainer<
   readonly prioritized: true
 }
 
+export function isPrioritizedExpressionContainer(
+  e: ExpressionContainer
+): e is PrioritizedExpressionContainer {
+  return e.prioritized
+}
+
 export type NeedsResetExpressionContainer<
   E extends Expression = Expression
 > = ExpressionContainer<E> & {
@@ -29,4 +36,10 @@ export function isNeedsResetExpressionContainer(
   e: ExpressionContainer
 ): e is NeedsResetExpressionContainer {
   return e.needsReset
+}
+
+export type DoneExpressionContainer<
+  E extends Expression = Expression
+> = ExpressionContainer<E> & {
+  readonly done: true
 }

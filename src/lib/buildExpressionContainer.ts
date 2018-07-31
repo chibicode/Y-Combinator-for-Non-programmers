@@ -94,6 +94,7 @@ export default function buildExpressionContainer(
   return {
     expression: buildExpressionRecurser(expressionParams),
     prioritized: false,
-    needsReset: false
+    needsReset: false,
+    done: false
   }
 }
