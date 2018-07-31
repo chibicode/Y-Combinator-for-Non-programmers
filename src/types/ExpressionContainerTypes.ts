@@ -18,3 +18,15 @@ export type PrioritizedExpressionContainer<
 > = ExpressionContainer<E> & {
   readonly prioritized: true
 }
+
+export type NeedsResetExpressionContainer<
+  E extends Expression = Expression
+> = ExpressionContainer<E> & {
+  readonly needsReset: true
+}
+
+export function isNeedsResetExpressionContainer(
+  e: ExpressionContainer
+): e is NeedsResetExpressionContainer {
+  return e.needsReset
+}

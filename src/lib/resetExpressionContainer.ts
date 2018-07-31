@@ -1,5 +1,5 @@
 import omit from 'lodash/omit'
-
+import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import {
   Expression,
   isCallExpression,
@@ -7,9 +7,7 @@ import {
   isVariableExpression
 } from 'src/types/ExpressionTypes'
 
-export default function resetExpression<E extends Expression>(
-  expression: E
-): E {
+function resetExpression<E extends Expression>(expression: E): E {
   if (isVariableExpression(expression)) {
     // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
     return Object.assign({}, expression, {
@@ -33,4 +31,14 @@ export default function resetExpression<E extends Expression>(
   }
   // See: https://github.com/Microsoft/TypeScript/issues/20235
   throw new Error()
+}
+
+export default function resetExpressionContainer(
+  expressionContainer: ExpressionContainer
+): ExpressionContainer {
+  return {
+    ...expressionContainer,
+    needsReset: false,
+    expression: resetExpression(expressionContainer.expression)
+  }
 }
