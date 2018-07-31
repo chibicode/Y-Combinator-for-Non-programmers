@@ -22,9 +22,9 @@ export interface ImmediatelyExecutableCallExpression
   readonly func: PrioritizedFunctionExpression
 }
 
-export function isImmediatelyExecutableCallExpression(
-  expression: TopPriorityCallExpression
-): expression is ImmediatelyExecutableCallExpression {
+export function isImmediatelyExecutableCallExpression<
+  E extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression
+>(expression: TopPriorityCallExpression): expression is E {
   return (
     expression.priority === 1 &&
     (isPrioritizedVariableExpression(expression.arg) ||

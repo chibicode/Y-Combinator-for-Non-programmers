@@ -11,24 +11,30 @@ import {
   isPrioritizedCallExpression,
   PrioritizedCallExpression,
   PrioritizedExpression,
-  PrioritizedFunctionExpression
+  PrioritizedFunctionExpression,
+  PrioritizedVariableExpression
 } from 'src/types/PrioritizedExpressionTypes'
 
-interface Result {
-  readonly expression?: PrioritizedCallExpression
-  readonly notFound?: true
-  readonly noParent?: true
-  readonly parentCallExpression?: PrioritizedCallExpression
-  readonly parentFunctionExpression?: PrioritizedFunctionExpression
-  readonly parentKey?: 'func' | 'arg'
+interface BaseResult<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression,
+  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+> {
+  readonly expression?: E
+  readonly notFound?: boolean
+  readonly noParent?: boolean
+  readonly parentCallExpression?: E
+  readonly parentFunctionExpression?: F
+  readonly parentKey?: any
 }
 
-interface HasPrioritizedCallExpression {
-  readonly expression: PrioritizedCallExpression
+interface HasPrioritizedCallExpression<E extends PrioritizedCallExpression> {
+  readonly expression: E
 }
 
-interface HasImmediatelyExecutableCallExpression {
-  readonly expression: ImmediatelyExecutableCallExpression
+interface HasImmediatelyExecutableCallExpression<
+  E extends ImmediatelyExecutableCallExpression
+> {
+  readonly expression: E
 }
 
 interface NotFound {
@@ -39,41 +45,50 @@ interface NoParent {
   readonly noParent: true
 }
 
-interface HasCallParent {
-  readonly parentCallExpression: PrioritizedCallExpression
+interface HasCallParent<E extends PrioritizedCallExpression> {
+  readonly parentCallExpression: E
   readonly parentKey: 'func' | 'arg'
 }
 
-interface HasFunctionParent {
-  readonly parentFunctionExpression: PrioritizedFunctionExpression
+interface HasFunctionParent<E extends PrioritizedFunctionExpression> {
+  readonly parentFunctionExpression: E
 }
 
-type HelperResult =
-  | Result & HasImmediatelyExecutableCallExpression & HasCallParent
-  | Result & HasImmediatelyExecutableCallExpression & NoParent
-  | Result & NotFound
+type HelperResult<
+  E extends PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression
+> =
+  | BaseResult<E> & HasImmediatelyExecutableCallExpression<I> & HasCallParent<E>
+  | BaseResult<E> & HasImmediatelyExecutableCallExpression<I> & NoParent
+  | BaseResult<E> & NotFound
 
-type HelperStackItem =
-  | HasPrioritizedCallExpression & NoParent
-  | HasPrioritizedCallExpression & HasCallParent
+type HelperStackItem<E extends PrioritizedCallExpression> =
+  | HasPrioritizedCallExpression<E> & NoParent
+  | HasPrioritizedCallExpression<E> & HasCallParent<E>
 
 const NOT_FOUND = { notFound: true as true }
 
-function foundExpressionAndNoParent(
-  helperResult: HelperResult
-): helperResult is HasImmediatelyExecutableCallExpression & NoParent {
+function foundExpressionAndNoParent<
+  E extends PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression
+>(
+  helperResult: HelperResult<E, I>
+): helperResult is HasImmediatelyExecutableCallExpression<I> & NoParent {
   return (
     (helperResult as NoParent).noParent &&
-    !!(helperResult as HasImmediatelyExecutableCallExpression).expression
+    !!(helperResult as HasImmediatelyExecutableCallExpression<I>).expression
   )
 }
 
-function helper(expression: PrioritizedCallExpression): HelperResult {
-  const stack: HelperStackItem[] = [{ expression, noParent: true }]
+function helper<
+  E extends PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression
+>(expression: E): HelperResult<E, I> {
+  const stack: Array<HelperStackItem<E>> = [{ expression, noParent: true }]
   while (stack.length > 0) {
-    const current = stack.pop() as HelperStackItem
+    const current = stack.pop() as HelperStackItem<E>
     if (isTopPriorityCallExpression(current.expression)) {
-      if (isImmediatelyExecutableCallExpression(current.expression)) {
+      if (isImmediatelyExecutableCallExpression<I>(current.expression)) {
         return {
           ...current,
           expression: current.expression
@@ -83,7 +98,7 @@ function helper(expression: PrioritizedCallExpression): HelperResult {
       }
     }
 
-    if (isPrioritizedCallExpression(current.expression.func)) {
+    if (isPrioritizedCallExpression<E>(current.expression.func)) {
       stack.push({
         expression: current.expression.func,
         parentKey: 'func',
@@ -91,7 +106,7 @@ function helper(expression: PrioritizedCallExpression): HelperResult {
       })
     }
 
-    if (isPrioritizedCallExpression(current.expression.arg)) {
+    if (isPrioritizedCallExpression<E>(current.expression.arg)) {
       stack.push({
         expression: current.expression.arg,
         parentKey: 'arg',
@@ -103,13 +118,35 @@ function helper(expression: PrioritizedCallExpression): HelperResult {
 }
 
 export default function findNextCallExpressionAndParent(
-  expression: PrioritizedCallExpression
-): HelperResult
-export default function findNextCallExpressionAndParent(
-  expression: PrioritizedFunctionExpression
+  expression: PrioritizedVariableExpression
+): BaseResult & NotFound
+export default function findNextCallExpressionAndParent<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression
+>(expression: E): HelperResult<E, I>
+export default function findNextCallExpressionAndParent<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
+  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+>(
+  expression: F
 ):
-  | HelperResult
-  | (Result & HasImmediatelyExecutableCallExpression & HasFunctionParent)
+  | HelperResult<E, I>
+  | (BaseResult<I> &
+      HasImmediatelyExecutableCallExpression<I> &
+      HasFunctionParent<F>)
+export default function findNextCallExpressionAndParent<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
+  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+>(
+  expression: PrioritizedExpression
+):
+  | HelperResult<E, I>
+  | (BaseResult<E> & NotFound)
+  | (BaseResult<I, F> &
+      HasImmediatelyExecutableCallExpression<I> &
+      HasFunctionParent<F>)
 export default function findNextCallExpressionAndParent(
   expression: PrioritizedExpression
 ) {

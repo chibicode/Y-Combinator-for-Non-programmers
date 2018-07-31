@@ -22,12 +22,12 @@ export interface PrioritizedCallExpression extends CallExpression {
   func: PrioritizedExpression
 }
 
-export function isPrioritizedCallExpression(
-  expression: PrioritizedExpression | CallExpression
-): expression is PrioritizedCallExpression {
+export function isPrioritizedCallExpression<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression
+>(expression: PrioritizedExpression | CallExpression): expression is E {
   if (isCallExpression(expression)) {
     return (
-      (expression as PrioritizedCallExpression).priority !== undefined &&
+      (expression as E).priority !== undefined &&
       isPrioritizedExpression(expression.arg) &&
       isPrioritizedExpression(expression.func)
     )
