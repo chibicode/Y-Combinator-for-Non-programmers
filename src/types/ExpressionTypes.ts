@@ -1,7 +1,9 @@
+import { VariableNames } from 'src/types/VariableNames'
+
 export interface VariableExpression {
   readonly state: 'default' | 'highlighted' | 'needsReset'
   readonly type: 'variable'
-  readonly value: string
+  readonly name: VariableNames
 }
 
 export function isVariableExpression(

@@ -52,7 +52,7 @@ function buildExpressionRecurser(
 function buildExpressionRecurser(expressionParams: ExpressionParams) {
   if (isVariableExpressionParams(expressionParams)) {
     return {
-      value: expressionParams,
+      name: expressionParams,
       state: 'default',
       type: 'variable'
     }

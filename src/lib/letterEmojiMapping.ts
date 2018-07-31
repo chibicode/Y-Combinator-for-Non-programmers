@@ -1,4 +1,6 @@
-const letterEmojiMapping = {
+import { VariableNames } from 'src/types/VariableNames'
+
+const letterEmojiMapping: Record<VariableNames, string> = {
   a: '❤️',
   b: '💙',
   c: '💚',
@@ -24,7 +26,7 @@ const letterEmojiMapping = {
   w: '🐨',
   x: '🐯',
   y: '👻',
-  z: '🦖',
+  z: '🦖'
 }
 
 export default letterEmojiMapping

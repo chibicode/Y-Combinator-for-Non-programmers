@@ -1,9 +1,14 @@
-export type VariableExpressionParams = string
+import { VariableNames, variableNamesArray } from 'src/types/VariableNames'
+
+export type VariableExpressionParams = VariableNames
 
 export function isVariableExpressionParams(
   expressionParams: ExpressionParams
 ): expressionParams is VariableExpressionParams {
-  return typeof expressionParams === 'string'
+  return (
+    typeof expressionParams === 'string' &&
+    variableNamesArray.indexOf(expressionParams) >= 0
+  )
 }
 
 export interface FunctionExpressionParams {

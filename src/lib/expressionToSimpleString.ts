@@ -10,7 +10,7 @@ export default function expressionToSimpleString(
   { addPriority } = { addPriority: false }
 ): string {
   if (isVariableExpression(expression)) {
-    return expression.value
+    return expression.name
   } else if (isCallExpression(expression)) {
     const func = expressionToSimpleString(expression.func, {
       addPriority

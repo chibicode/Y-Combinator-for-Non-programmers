@@ -9,7 +9,7 @@ export default function conflictingVariableNames(
   const argVariableNames = getAllVariableNames(expression.arg)
   const funcBodyVariableNamesExceptArg = difference(
     getAllVariableNames(expression.func.body),
-    [expression.func.arg.value]
+    [expression.func.arg.name]
   )
   return intersection(argVariableNames, funcBodyVariableNamesExceptArg)
 }
