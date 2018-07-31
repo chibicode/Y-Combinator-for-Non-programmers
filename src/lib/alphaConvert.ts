@@ -24,8 +24,7 @@ function helper<E extends Expression>({
 }): E {
   if (isVariableExpression(expression)) {
     if (mapping[expression.name]) {
-      // Cannot use spread type for now. See:
-      // https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
+      // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, expression, {
         name: mapping[expression.name]
       })
