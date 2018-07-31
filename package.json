@@ -23,7 +23,7 @@
     "styled-system": "^3.0.2",
     "system-components": "^3.0.0",
     "twemoji": "^11.0.0",
-    "typescript": "^2.9.2"
+    "typescript": "^3.0.1"
   },
   "scripts": {
     "dev": "next",
@@ -37,7 +37,7 @@
     "@types/jest": "^23.3.1",
     "@types/lodash": "^4.14.115",
     "@types/material-ui": "^0.21.5",
-    "@types/next": "^6.1.0",
+    "@types/next": "^6.1.1",
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
     "babel-plugin-emotion": "^9.2.6",
