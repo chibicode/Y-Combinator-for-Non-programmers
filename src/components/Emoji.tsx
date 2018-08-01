@@ -22,7 +22,7 @@ class Twemoji extends React.Component<TwemojiProps, {}> {
     parse(ReactDOM.findDOMNode(this), this.props.options)
   }
 
-  public componentDidUpdate(prevProps) {
+  public componentDidUpdate(prevProps: TwemojiProps) {
     if (!isEqual(this.props, prevProps)) {
       this.parse()
     }
@@ -41,7 +41,7 @@ const Emoji: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
   <Twemoji
     options={{
       folder: 'svg',
-      ext: '.svg',
+      ext: '.svg'
     }}
   >
     {children}

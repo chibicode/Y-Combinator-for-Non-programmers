@@ -1,22 +1,26 @@
 import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
+import { AllExpressionStates } from 'src/types/ExpressionTypes'
 
 interface BorderWrapperProps {
   children: React.ReactNode
   // TODO: Make state a type
   // Use lookup types https://stackoverflow.com/a/49286056/114157
-  state: string
+  state: AllExpressionStates
 }
 
-const stateToColor = {
-  highlighted: 'lightBlue'
+const stateToColor = (x: AllExpressionStates): string | undefined => {
+  switch (x) {
+    case 'highlighted':
+      return 'lightBlue'
+  }
 }
 
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({ children, state }) => (
   <Flex
     border={2}
-    bg={stateToColor[state] || 'transparent'}
+    bg={stateToColor(state) || 'transparent'}
     className={css`
       margin: -2px;
     `}

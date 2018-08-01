@@ -1,7 +1,9 @@
 import { VariableNames } from 'src/types/VariableNames'
 
+export type CommonStates = 'default' | 'highlighted'
+
 export interface VariableExpression {
-  readonly state: 'default' | 'highlighted'
+  readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
 }
@@ -12,15 +14,17 @@ export function isVariableExpression(
   return expression.type === 'variable'
 }
 
+export type CallExpressionStates =
+  | CommonStates
+  | 'readyToHighlight'
+  | 'checkForConflictingVariables'
+  | 'needsAlphaConvert'
+  | 'readyToBetaReduce'
+
+export type AllExpressionStates = CallExpressionStates
+
 export interface CallExpression {
-  readonly state:
-    | 'default'
-    | 'readyToHighlight'
-    | 'highlighted'
-    | 'done'
-    | 'checkForConflictingVariables'
-    | 'needsAlphaConvert'
-    | 'readyToBetaReduce'
+  readonly state: CallExpressionStates
   readonly type: 'call'
   readonly arg: Expression
   readonly func: Expression
@@ -34,7 +38,7 @@ export function isCallExpression(
 
 export interface FunctionExpression {
   readonly type: 'function'
-  readonly state: 'default' | 'highlighted'
+  readonly state: CommonStates
   readonly arg: VariableExpression
   readonly body: Expression
 }

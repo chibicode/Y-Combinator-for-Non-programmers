@@ -5,7 +5,7 @@ import ExpressionExecutor from 'src/components/ExpressionExecutor'
 import Flex from 'src/components/Flex'
 import ThemeProvider from 'src/components/ThemeProvider'
 import 'src/lib/fontAwesome'
-import testCaseExpressions from 'src/lib/testCaseExpressions'
+import testCaseExpressionContainers from 'src/lib/testCaseExpressionContainers'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -22,9 +22,9 @@ const Home: React.SFC<{}> = () => (
   <ThemeProvider>
     <Container pt={4} color="black">
       <Flex flexDirection="column" alignItems="flex-start">
-        {testCaseExpressions.map((expression, index) => (
+        {testCaseExpressionContainers.map((e, index) => (
           <Flex mb={3} key={index}>
-            <ExpressionExecutor expression={expression} />
+            <ExpressionExecutor expressionContainer={e} />
           </Flex>
         ))}
       </Flex>

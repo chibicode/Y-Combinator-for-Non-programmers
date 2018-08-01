@@ -5,10 +5,14 @@ import CallExpression from 'src/components/CallExpression'
 import Flex from 'src/components/Flex'
 import FunctionExpression from 'src/components/FunctionExpression'
 import VariableExpression from 'src/components/VariableExpression'
-import ExpressionTypes from 'src/types/ExpressionTypes'
+import {
+  isPrioritizedCallExpression,
+  isPrioritizedVariableExpression,
+  PrioritizedExpression
+} from 'src/types/PrioritizedExpressionTypes'
 
 interface ExpressionProps {
-  expression: ExpressionTypes.Expression
+  expression: PrioritizedExpression
 }
 
 const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
@@ -20,9 +24,9 @@ const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
   >
     <BorderWrapper state={expression.state}>
       {(() => {
-        if (expression.type === 'variable') {
+        if (isPrioritizedVariableExpression(expression)) {
           return <VariableExpression expression={expression} />
-        } else if (expression.type === 'call') {
+        } else if (isPrioritizedCallExpression(expression)) {
           return <CallExpression expression={expression} />
         } else {
           return <FunctionExpression expression={expression} />

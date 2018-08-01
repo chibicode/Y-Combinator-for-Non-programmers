@@ -1,8 +1,5 @@
-import {
-  buildExpressionContainer,
-  prioritizeExpression
-} from 'src/lib/expressionUtils'
-import { Expression } from 'src/types/ExpressionTypes'
+import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
+import { PrioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 // (a => a)(b)
 const basicExpression = [
@@ -118,7 +115,7 @@ const recursiveFunction = {
 
 const infiniteLoop = [yCombinator, recursiveFunction]
 
-const functionTestCases: Expression[] = [
+const functionTestCases: PrioritizedExpressionContainer[] = [
   // basicExpression,
   // notTrueExpression,
   // notFalseExpression,
@@ -128,13 +125,6 @@ const functionTestCases: Expression[] = [
   // infiniteLoopExpression,
   // yCombinator,
   infiniteLoop
-].map(x => {
-  const decorated = buildExpressionContainer(x)
-  if (decorated.type === 'call') {
-    return prioritizeExpression(decorated)
-  } else {
-    return decorated
-  }
-})
+].map(x => initializeExpressionContainer(x))
 
 export default functionTestCases

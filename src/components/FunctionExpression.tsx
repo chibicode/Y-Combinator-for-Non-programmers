@@ -1,10 +1,10 @@
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
-import ExpressionTypes from 'src/types/ExpressionTypes'
+import { FunctionExpression } from 'src/types/ExpressionTypes'
 
 interface FunctionExpressionProps {
-  expression: ExpressionTypes.FunctionExpression
+  expression: FunctionExpression
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
@@ -18,7 +18,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       borderColor="lightGray"
       height={1}
     >
-      <Expression expression={expression.value.arg} />
+      <Expression expression={expression.arg} />
     </Flex>
     <Flex
       alignItems="center"
@@ -28,7 +28,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       height={1}
       flex={1}
     >
-      <Expression expression={expression.value.body} />
+      <Expression expression={expression.body} />
     </Flex>
   </Flex>
 )

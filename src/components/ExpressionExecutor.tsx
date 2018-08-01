@@ -1,45 +1,50 @@
 import React from 'react'
 import Expression from 'src/components/Expression'
-import { decoratedExpressionToSimpleString } from 'src/lib/expressionUtils'
-import transitionExpressionState from 'src/lib/transitionExpressionState'
-import ExpressionTypes from 'src/types/ExpressionTypes'
+import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
+import stepExpressionContainer from 'src/lib/stepExpressionContainer'
+import {
+  DoneExpressionContainer,
+  PrioritizedExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
 
 interface ExpressionExecutorProps {
-  expression: ExpressionTypes.Expression
+  expressionContainer: PrioritizedExpressionContainer | DoneExpressionContainer
 }
 
-interface ExpressionExecutorState {
-  expression: ExpressionTypes.Expression
-}
+type ExpressionExecutorState = Pick<
+  ExpressionExecutorProps,
+  'expressionContainer'
+>
 
 export default class ExpressionExecutor extends React.Component<
   ExpressionExecutorProps,
   ExpressionExecutorState
 > {
-  constructor(props) {
+  constructor(props: ExpressionExecutorProps) {
     super(props)
     this.state = {
-      expression: props.expression
+      expressionContainer: props.expressionContainer
     }
   }
 
   public stepExpression = () => {
-    if (this.state.expression.type === 'call') {
+    if (!this.state.expressionContainer.done) {
+      const x = stepExpressionContainer(this.state.expressionContainer)
       this.setState({
-        expression: transitionExpressionState(this.state.expression)
+        expressionContainer: x
       })
     }
   }
 
   public render() {
-    const { expression } = this.state
+    const { expressionContainer } = this.state
     return (
       <div>
         <div style={{ maxWidth: 300 }}>
-          <Expression expression={expression} />
+          <Expression expressionContainer={expressionContainer.expression} />
         </div>
         <div>
-          <div>{decoratedExpressionToSimpleString(expression)}</div>
+          <div>{expressionContainerToSimpleString(expressionContainer)}</div>
           <button onClick={this.stepExpression}>step</button>
         </div>
       </div>
