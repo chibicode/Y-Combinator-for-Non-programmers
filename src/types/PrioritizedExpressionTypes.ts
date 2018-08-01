@@ -8,12 +8,21 @@ import {
   VariableExpression
 } from 'src/types/ExpressionTypes'
 
-export type PrioritizedVariableExpression = VariableExpression
+export interface PrioritizedVariableExpression extends VariableExpression {
+  argPriorityAgg: number[]
+  funcPriorityAgg: number[]
+}
 
 export function isPrioritizedVariableExpression(
   expression: PrioritizedExpression | VariableExpression
 ): expression is PrioritizedVariableExpression {
-  return isVariableExpression(expression)
+  return (
+    isVariableExpression(expression) &&
+    Array.isArray(
+      (expression as PrioritizedVariableExpression).argPriorityAgg
+    ) &&
+    Array.isArray((expression as PrioritizedVariableExpression).funcPriorityAgg)
+  )
 }
 
 export interface PrioritizedCallExpression extends CallExpression {
@@ -25,15 +34,12 @@ export interface PrioritizedCallExpression extends CallExpression {
 export function isPrioritizedCallExpression<
   E extends PrioritizedCallExpression = PrioritizedCallExpression
 >(expression: PrioritizedExpression | CallExpression): expression is E {
-  if (isCallExpression(expression)) {
-    return (
-      (expression as E).priority !== undefined &&
+  return (
+    isCallExpression(expression) &&
+    ((expression as E).priority !== undefined &&
       isPrioritizedExpression(expression.arg) &&
-      isPrioritizedExpression(expression.func)
-    )
-  } else {
-    return false
-  }
+      isPrioritizedExpression(expression.func))
+  )
 }
 
 export interface PrioritizedFunctionExpression extends FunctionExpression {

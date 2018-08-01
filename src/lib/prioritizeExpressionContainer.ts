@@ -69,7 +69,11 @@ function prioritizeExpression(
 function prioritizeExpression(expression: Expression): PrioritizedExpression
 function prioritizeExpression(expression: Expression) {
   if (isVariableExpression(expression)) {
-    return expression
+    return {
+      ...expression,
+      argPriorityAgg: new Array<number>(),
+      funcPriorityAgg: new Array<number>()
+    }
   } else if (isCallExpression(expression)) {
     return prioritizeCallExpression({
       priority: 1,
@@ -78,6 +82,7 @@ function prioritizeExpression(expression: Expression) {
   } else {
     return {
       ...expression,
+      arg: prioritizeExpression(expression.arg),
       body: prioritizeExpression(expression.body)
     }
   }

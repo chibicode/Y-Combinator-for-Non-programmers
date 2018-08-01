@@ -3,14 +3,38 @@ import {
   isCallExpression,
   isVariableExpression
 } from 'src/types/ExpressionTypes'
-import { isPrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
+import {
+  isPrioritizedCallExpression,
+  isPrioritizedVariableExpression,
+  PrioritizedVariableExpression
+} from 'src/types/PrioritizedExpressionTypes'
 
 export default function expressionToSimpleString(
   expression: Expression,
-  { addPriority } = { addPriority: false }
+  {
+    addPriority,
+    addPriorityAgg
+  }: {
+    addPriority?: boolean
+    addPriorityAgg?: boolean
+  } = { addPriority: false, addPriorityAgg: false }
 ): string {
   if (isVariableExpression(expression)) {
-    return expression.name
+    if (addPriorityAgg && isPrioritizedVariableExpression(expression)) {
+      const str: string[] = []
+      str.push('[')
+      str.push(
+        (expression as PrioritizedVariableExpression).funcPriorityAgg.join(',')
+      )
+      str.push(expression.name)
+      str.push(
+        (expression as PrioritizedVariableExpression).argPriorityAgg.join(',')
+      )
+      str.push(']')
+      return str.join('')
+    } else {
+      return expression.name
+    }
   } else if (isCallExpression(expression)) {
     const func = expressionToSimpleString(expression.func, {
       addPriority
