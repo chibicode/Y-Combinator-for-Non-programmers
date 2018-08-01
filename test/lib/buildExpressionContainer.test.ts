@@ -5,8 +5,9 @@ describe('buildExpressionContainer', () => {
     expect(buildExpressionContainer('x')).toEqual({
       prioritized: false,
       needsReset: false,
+      done: false,
       expression: {
-        value: 'x',
+        name: 'x',
         state: 'default',
         type: 'variable'
       }
@@ -22,14 +23,15 @@ describe('buildExpressionContainer', () => {
     ).toEqual({
       prioritized: false,
       needsReset: false,
+      done: false,
       expression: {
         arg: {
-          value: 'x',
+          name: 'x',
           state: 'default',
           type: 'variable'
         },
         body: {
-          value: 'y',
+          name: 'y',
           state: 'default',
           type: 'variable'
         },
@@ -51,15 +53,16 @@ describe('buildExpressionContainer', () => {
     ).toEqual({
       prioritized: false,
       needsReset: false,
+      done: false,
       expression: {
         func: {
           arg: {
-            value: 'x',
+            name: 'x',
             type: 'variable',
             state: 'default'
           },
           body: {
-            value: 'y',
+            name: 'y',
             type: 'variable',
             state: 'default'
           },
@@ -67,7 +70,7 @@ describe('buildExpressionContainer', () => {
           type: 'function'
         },
         arg: {
-          value: 'z',
+          name: 'z',
           state: 'default',
           type: 'variable'
         },
@@ -81,20 +84,21 @@ describe('buildExpressionContainer', () => {
     expect(buildExpressionContainer(['a', ['b', 'c'], 'd'])).toEqual({
       prioritized: false,
       needsReset: false,
+      done: false,
       expression: {
         state: 'default',
         type: 'call',
-        arg: { state: 'default', type: 'variable', value: 'd' },
+        arg: { state: 'default', type: 'variable', name: 'd' },
         func: {
           state: 'default',
           type: 'call',
           arg: {
             state: 'default',
             type: 'call',
-            arg: { state: 'default', type: 'variable', value: 'c' },
-            func: { state: 'default', type: 'variable', value: 'b' }
+            arg: { state: 'default', type: 'variable', name: 'c' },
+            func: { state: 'default', type: 'variable', name: 'b' }
           },
-          func: { state: 'default', type: 'variable', value: 'a' }
+          func: { state: 'default', type: 'variable', name: 'a' }
         }
       }
     })
