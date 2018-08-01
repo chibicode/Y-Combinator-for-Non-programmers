@@ -1,10 +1,10 @@
 import { css } from 'emotion'
 import React from 'react'
 import BorderWrapper from 'src/components/BorderWrapper'
-import CallExpression from 'src/components/CallExpression'
+import CallExpressionBox from 'src/components/CallExpressionBox'
 import Flex from 'src/components/Flex'
-import FunctionExpression from 'src/components/FunctionExpression'
-import VariableExpression from 'src/components/VariableExpression'
+import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
+import VariableExpressionBox from 'src/components/VariableExpressionBox'
 import {
   isPrioritizedCallExpression,
   isPrioritizedVariableExpression,
@@ -15,7 +15,7 @@ interface ExpressionProps {
   expression: PrioritizedExpression
 }
 
-const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
+const ExpressionBox: React.SFC<ExpressionProps> = ({ expression }) => (
   <Flex
     width={1}
     className={css`
@@ -25,15 +25,15 @@ const Expression: React.SFC<ExpressionProps> = ({ expression }) => (
     <BorderWrapper state={expression.state}>
       {(() => {
         if (isPrioritizedVariableExpression(expression)) {
-          return <VariableExpression expression={expression} />
+          return <VariableExpressionBox expression={expression} />
         } else if (isPrioritizedCallExpression(expression)) {
-          return <CallExpression expression={expression} />
+          return <CallExpressionBox expression={expression} />
         } else {
-          return <FunctionExpression expression={expression} />
+          return <FunctionExpressionBox expression={expression} />
         }
       })()}
     </BorderWrapper>
   </Flex>
 )
 
-export default Expression
+export default ExpressionBox

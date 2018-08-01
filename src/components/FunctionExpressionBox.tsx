@@ -1,5 +1,5 @@
 import React from 'react'
-import Expression from 'src/components/Expression'
+import ExpressionBox from 'src/components/ExpressionBox'
 import Flex from 'src/components/Flex'
 import { PrioritizedFunctionExpression } from 'src/types/PrioritizedExpressionTypes'
 
@@ -7,7 +7,7 @@ interface FunctionExpressionProps {
   expression: PrioritizedFunctionExpression
 }
 
-const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
+const FunctionExpressionBox: React.SFC<FunctionExpressionProps> = ({
   expression
 }) => (
   <Flex flexDirection="row" flex={1}>
@@ -18,7 +18,7 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       borderColor="lightGray"
       height={1}
     >
-      <Expression expression={expression.arg} />
+      <ExpressionBox expression={expression.arg} />
     </Flex>
     <Flex
       alignItems="center"
@@ -28,9 +28,9 @@ const FunctionExpression: React.SFC<FunctionExpressionProps> = ({
       height={1}
       flex={1}
     >
-      <Expression expression={expression.body} />
+      <ExpressionBox expression={expression.body} />
     </Flex>
   </Flex>
 )
 
-export default FunctionExpression
+export default FunctionExpressionBox

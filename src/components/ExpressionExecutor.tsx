@@ -1,5 +1,5 @@
 import React from 'react'
-import Expression from 'src/components/Expression'
+import ExpressionBox from 'src/components/ExpressionBox'
 import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {
@@ -43,7 +43,7 @@ export default class ExpressionExecutor extends React.Component<
     return (
       <div>
         <div style={{ maxWidth: 300 }}>
-          <Expression expression={expressionContainer.expression} />
+          <ExpressionBox expression={expressionContainer.expression} />
         </div>
         <div>
           <div>{expressionContainerToSimpleString(expressionContainer)}</div>

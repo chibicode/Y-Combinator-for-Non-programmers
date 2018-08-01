@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import times from 'lodash/times'
 import React from 'react'
-import Expression from 'src/components/Expression'
+import ExpressionBox from 'src/components/ExpressionBox'
 import Flex from 'src/components/Flex'
 import { CallExpressionStates } from 'src/types/ExpressionTypes'
 import { PrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
@@ -25,7 +25,7 @@ const stateToArrowsBgColor = (x: CallExpressionStates): string | undefined => {
   }
 }
 
-const CallExpression: React.SFC<CallProps> = ({ expression }) => (
+const CallExpressionBox: React.SFC<CallProps> = ({ expression }) => (
   <Flex flexDirection="column" flex={1}>
     {
       <Flex
@@ -41,10 +41,10 @@ const CallExpression: React.SFC<CallProps> = ({ expression }) => (
       </Flex>
     }
     <Flex justifyContent="center" borderBottom={2} borderColor="lightGray">
-      <Expression expression={expression.arg} />
+      <ExpressionBox expression={expression.arg} />
     </Flex>
     <Flex justifyContent="center" borderBottom={2} borderColor="lightGray">
-      <Expression expression={expression.func} />
+      <ExpressionBox expression={expression.func} />
     </Flex>
     {
       <Flex
@@ -62,4 +62,4 @@ const CallExpression: React.SFC<CallProps> = ({ expression }) => (
   </Flex>
 )
 
-export default CallExpression
+export default CallExpressionBox

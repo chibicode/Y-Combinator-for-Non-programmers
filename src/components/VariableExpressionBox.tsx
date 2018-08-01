@@ -8,7 +8,7 @@ interface VariableExpressionProps {
   expression: VariableExpression
 }
 
-const VariableExpression: React.SFC<VariableExpressionProps> = ({
+const VariableExpressionBox: React.SFC<VariableExpressionProps> = ({
   expression
 }) => (
   <Flex p={4} justifyContent="center" flex={1}>
@@ -16,4 +16,4 @@ const VariableExpression: React.SFC<VariableExpressionProps> = ({
   </Flex>
 )
 
-export default VariableExpression
+export default VariableExpressionBox
