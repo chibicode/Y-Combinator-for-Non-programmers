@@ -90,6 +90,9 @@ export default function buildExpressionContainer(
 ): UnprioritizedExpressionContainer<DefaultStateFunctionExpression>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
+): UnprioritizedExpressionContainer<DefaultStateExpression>
+export default function buildExpressionContainer(
+  expressionParams: ExpressionParams
 ) {
   return {
     expression: buildExpressionRecurser(expressionParams),

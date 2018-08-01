@@ -1,7 +1,7 @@
 import { VariableNames } from 'src/types/VariableNames'
 
 export interface VariableExpression {
-  readonly state: 'default' | 'highlighted' | 'needsReset'
+  readonly state: 'default' | 'highlighted'
   readonly type: 'variable'
   readonly name: VariableNames
 }
@@ -21,7 +21,6 @@ export interface CallExpression {
     | 'checkForConflictingVariables'
     | 'needsAlphaConvert'
     | 'readyToBetaReduce'
-    | 'needsReset'
   readonly type: 'call'
   readonly arg: Expression
   readonly func: Expression
@@ -35,7 +34,7 @@ export function isCallExpression(
 
 export interface FunctionExpression {
   readonly type: 'function'
-  readonly state: 'default' | 'highlighted' | 'needsReset'
+  readonly state: 'default' | 'highlighted'
   readonly arg: VariableExpression
   readonly body: Expression
 }

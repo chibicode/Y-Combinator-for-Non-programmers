@@ -20,9 +20,9 @@ export type PrioritizedExpressionContainer<
   readonly prioritized: true
 }
 
-export function isPrioritizedExpressionContainer(
-  e: ExpressionContainer
-): e is PrioritizedExpressionContainer {
+export function isPrioritizedExpressionContainer<
+  E extends PrioritizedExpression = PrioritizedExpression
+>(e: ExpressionContainer): e is PrioritizedExpressionContainer<E> {
   return e.prioritized
 }
 
@@ -32,9 +32,9 @@ export type NeedsResetExpressionContainer<
   readonly needsReset: true
 }
 
-export function isNeedsResetExpressionContainer(
-  e: ExpressionContainer
-): e is NeedsResetExpressionContainer {
+export function isNeedsResetExpressionContainer<
+  E extends Expression = Expression
+>(e: ExpressionContainer): e is NeedsResetExpressionContainer<E> {
   return e.needsReset
 }
 

@@ -76,7 +76,9 @@ function helper<
   E extends PrioritizedCallExpression,
   I extends ImmediatelyExecutableCallExpression
 >(expression: E): HelperResult<E, I> {
-  const stack: Array<HelperStackItem<E>> = [{ expression, noParent: true }]
+  const stack: Array<HelperStackItem<E>> = [
+    { expression, noParent: true, notFound: false }
+  ]
   while (stack.length > 0) {
     const current = stack.pop() as HelperStackItem<E>
     if (isTopPriorityCallExpression(current.expression)) {
@@ -94,7 +96,9 @@ function helper<
       stack.push({
         expression: current.expression.func,
         parentKey: 'func',
-        parentCallExpression: current.expression
+        parentCallExpression: current.expression,
+        notFound: false,
+        noParent: false
       })
     }
 
@@ -102,7 +106,9 @@ function helper<
       stack.push({
         expression: current.expression.arg,
         parentKey: 'arg',
-        parentCallExpression: current.expression
+        parentCallExpression: current.expression,
+        notFound: false,
+        noParent: false
       })
     }
   }
