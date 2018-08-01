@@ -1,3 +1,5 @@
+import expressionToSimpleString from 'src/lib/expressionToSimpleString'
+import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
 import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
@@ -21,24 +23,30 @@ const stepExpressionContainerWrapped = (
   return result
 }
 
-// const repeatUntilState = (exp, state) => {
-//   while (findNextCallExpressionAndParent(exp).expression.state !== state) {
-//     exp = transitionExpressionStateWrapped(exp)
-//   }
-//   return exp
-// }
+const repeatUntilState = (
+  e: PrioritizedExpressionContainer<ImmediatelyExecutableCallExpression>,
+  state: string
+) => {
+  while (true) {
+    const result = findNextCallExpressionAndParent(e.expression)
+    if ('expression' in result && result.expression.state === state) {
+      return e
+    }
+    e = stepExpressionContainerWrapped(e)
+  }
+}
 
 describe('stepExpressionContainer', () => {
   describe('if no next call is found', () => {
     it('is done', () => {
-      const originalExp = initializeExpressionContainer(['y', 'x'])
-      expect(stepExpressionContainer(originalExp).done).toBe(true)
+      const originalContainer = initializeExpressionContainer(['y', 'x'])
+      expect(stepExpressionContainer(originalContainer).done).toBe(true)
     })
   })
 
   describe('if next call is found', () => {
     it('activates the call', () => {
-      const originalExp = initializeExpressionContainer([
+      const originalContainer = initializeExpressionContainer([
         {
           arg: 'x',
           body: 'y'
@@ -46,7 +54,7 @@ describe('stepExpressionContainer', () => {
         'x'
       ])
 
-      let e = stepExpressionContainerWrapped(originalExp)
+      let e = stepExpressionContainerWrapped(originalContainer)
       expect(e.expression.state).toBe('readyToHighlight')
 
       e = stepExpressionContainerWrapped(e)
@@ -63,169 +71,153 @@ describe('stepExpressionContainer', () => {
     })
   })
 
-  // describe('if ready to check variable conflicts', () => {
-  //   describe('if alpha convert is not necessary', () => {
-  //     it('is now ready to beta reduce', () => {
-  //       const originalExp = prioritizeExpression(
-  //         buildExpressionContainer([
-  //           {
-  //             arg: 'x',
-  //             body: 'y'
-  //           },
-  //           'x'
-  //         ])
-  //       )
+  describe('if ready to check variable conflicts', () => {
+    describe('if alpha convert is not necessary', () => {
+      it('is now ready to beta reduce', () => {
+        const originalContainer = initializeExpressionContainer([
+          {
+            arg: 'x',
+            body: 'y'
+          },
+          'x'
+        ])
 
-  //       let exp = transitionExpressionStateWrapped(originalExp)
-  //       exp = repeatUntilState(exp, 'checkForConflictingVariables')
-  //       exp = transitionExpressionStateWrapped(exp)
-  //       expect(exp.state).toBe('readyToBetaReduce')
-  //     })
-  //   })
+        let e = stepExpressionContainerWrapped(originalContainer)
+        e = repeatUntilState(e, 'checkForConflictingVariables')
+        e = stepExpressionContainerWrapped(e)
+        expect(e.expression.state).toBe('readyToBetaReduce')
+      })
+    })
 
-  //   describe('if alpha convert is necessary', () => {
-  //     it('indicates that alpha convert is necessary', () => {
-  //       const originalExp = prioritizeExpression(
-  //         buildExpressionContainer([
-  //           {
-  //             arg: 'x',
-  //             body: {
-  //               arg: 'y',
-  //               body: ['x', 'y']
-  //             }
-  //           },
-  //           'y'
-  //         ])
-  //       )
+    describe('if alpha convert is necessary', () => {
+      it('indicates that alpha convert is necessary', () => {
+        const originalContainer = initializeExpressionContainer([
+          {
+            arg: 'x',
+            body: {
+              arg: 'y',
+              body: ['x', 'y']
+            }
+          },
+          'y'
+        ])
 
-  //       let exp = transitionExpressionStateWrapped(originalExp)
-  //       exp = repeatUntilState(exp, 'checkForConflictingVariables')
-  //       exp = transitionExpressionStateWrapped(exp)
-  //       expect(exp.state).toBe('needsAlphaConvert')
-  //     })
-  //   })
-  // })
+        let e = stepExpressionContainerWrapped(originalContainer)
+        e = repeatUntilState(e, 'checkForConflictingVariables')
+        e = stepExpressionContainerWrapped(e)
+        expect(e.expression.state).toBe('needsAlphaConvert')
+      })
+    })
+  })
 
-  // describe('if needs alpha convert', () => {
-  //   it('does alpha conversion', () => {
-  //     const originalExp = prioritizeExpression(
-  //       buildExpressionContainer([
-  //         {
-  //           arg: 'x',
-  //           body: {
-  //             arg: 'y',
-  //             body: ['x', 'y']
-  //           }
-  //         },
-  //         'y'
-  //       ])
-  //     )
+  describe('if needs alpha convert', () => {
+    it('does alpha conversion', () => {
+      const originalContainer = initializeExpressionContainer([
+        {
+          arg: 'x',
+          body: {
+            arg: 'y',
+            body: ['x', 'y']
+          }
+        },
+        'y'
+      ])
 
-  //     let exp = transitionExpressionStateWrapped(originalExp)
-  //     exp = repeatUntilState(exp, 'needsAlphaConvert')
-  //     exp = transitionExpressionStateWrapped(exp)
-  //     expect(exp.state).toBe('readyToBetaReduce')
-  //     expect(decoratedExpressionToSimpleString(exp)).toBe(
-  //       '(x => (a => x(a)))(y)'
-  //     )
-  //   })
-  // })
+      let e = stepExpressionContainerWrapped(originalContainer)
+      e = repeatUntilState(e, 'needsAlphaConvert')
+      e = stepExpressionContainerWrapped(e)
+      expect(e.expression.state).toBe('readyToBetaReduce')
+      expect(expressionToSimpleString(e.expression)).toBe(
+        '(x => (a => x(a)))(y)'
+      )
+    })
+  })
 
-  // describe('if ready for beta reduction', () => {
-  //   describe('top level beta reduction, simple', () => {
-  //     it('does beta reduction', () => {
-  //       const originalExp = prioritizeExpression(
-  //         buildExpressionContainer([
-  //           {
-  //             arg: 'x',
-  //             body: 'x'
-  //           },
-  //           'y'
-  //         ])
-  //       )
+  describe('if ready for beta reduction', () => {
+    describe('top level beta reduction, simple', () => {
+      it('does beta reduction', () => {
+        const originalContainer = initializeExpressionContainer([
+          {
+            arg: 'x',
+            body: 'x'
+          },
+          'y'
+        ])
 
-  //       let exp = transitionExpressionStateWrapped(originalExp)
-  //       exp = repeatUntilState(exp, 'readyToBetaReduce')
-  //       const result = transitionExpressionStateWrapped(
-  //         exp
-  //       ) as NeedsResetExpression
-  //       expect(decoratedExpressionToSimpleString(result)).toBe('y')
-  //       expect(result.state).toBe('needsReset')
-  //     })
-  //   })
+        let e = stepExpressionContainerWrapped(originalContainer)
+        e = repeatUntilState(e, 'readyToBetaReduce')
+        const result = stepExpressionContainerWrapped(e)
+        expect(expressionToSimpleString(result.expression)).toBe('y')
+        expect(result.needsReset).toBe(true)
+      })
+    })
 
-  //   describe('non-top level beta reduction, complicated', () => {
-  //     it('does beta reduction', () => {
-  //       const originalExp = prioritizeExpression(
-  //         buildExpressionContainer([
-  //           {
-  //             arg: 'x',
-  //             body: {
-  //               arg: 'y',
-  //               body: {
-  //                 arg: 'z',
-  //                 body: ['x', ['y', 'z']]
-  //               }
-  //             }
-  //           },
-  //           {
-  //             arg: 'a',
-  //             body: 'a'
-  //           },
-  //           {
-  //             arg: 'b',
-  //             body: 'b'
-  //           },
-  //           'c'
-  //         ])
-  //       )
+    describe('non-top level beta reduction, complicated', () => {
+      it('does beta reduction', () => {
+        const originalContainer = initializeExpressionContainer([
+          {
+            arg: 'x',
+            body: {
+              arg: 'y',
+              body: {
+                arg: 'z',
+                body: ['x', ['y', 'z']]
+              }
+            }
+          },
+          {
+            arg: 'a',
+            body: 'a'
+          },
+          {
+            arg: 'b',
+            body: 'b'
+          },
+          'c'
+        ])
 
-  //       let exp = transitionExpressionStateWrapped(originalExp)
-  //       exp = repeatUntilState(exp, 'readyToBetaReduce')
-  //       const result = transitionExpressionStateWrapped(
-  //         exp
-  //       ) as NeedsResetCallExpression
-  //       expect(decoratedExpressionToSimpleString(result)).toBe(
-  //         '(y => (z => (a => a)(y(z))))((b => b))(c)'
-  //       )
-  //       expect(result.state).toBe('needsReset')
-  //       const afterReset = stepExpressionContainer(result)
-  //       expect(afterReset.state).toBe('default')
-  //       expect(afterReset.priority).toBeUndefined()
-  //     })
-  //   })
-  // })
+        let e = stepExpressionContainerWrapped(originalContainer)
+        e = repeatUntilState(e, 'readyToBetaReduce')
+        const result = stepExpressionContainerWrapped(e)
+        expect(expressionToSimpleString(result.expression)).toBe(
+          '(y => (z => (a => a)(y(z))))((b => b))(c)'
+        )
+        expect(result.needsReset).toBe(true)
+        const afterReset = stepExpressionContainer(result)
+        expect(afterReset.expression.state).toBe('default')
+        expect(afterReset.needsReset).toBe(false)
+      })
+    })
+  })
 
-  // describe('repeat until done', () => {
-  //   it('completes', () => {
-  //     let exp = prioritizeExpression(
-  //       buildExpressionContainer([
-  //         {
-  //           arg: 'x',
-  //           body: {
-  //             arg: 'y',
-  //             body: {
-  //               arg: 'z',
-  //               body: ['x', ['y', 'z']]
-  //             }
-  //           }
-  //         },
-  //         {
-  //           arg: 'a',
-  //           body: 'a'
-  //         },
-  //         {
-  //           arg: 'b',
-  //           body: 'b'
-  //         },
-  //         'c'
-  //       ])
-  //     ) as any
+  describe('repeat until done', () => {
+    it('completes', () => {
+      let e = initializeExpressionContainer([
+        {
+          arg: 'x',
+          body: {
+            arg: 'y',
+            body: {
+              arg: 'z',
+              body: ['x', ['y', 'z']]
+            }
+          }
+        },
+        {
+          arg: 'a',
+          body: 'a'
+        },
+        {
+          arg: 'b',
+          body: 'b'
+        },
+        'c'
+      ]) as any
 
-  //     while (exp.state !== 'done' && exp.type === 'call') {
-  //       exp = stepExpressionContainer(exp)
-  //     }
-  //     expect(decoratedExpressionToSimpleString(exp)).toBe('c')
-  //   })
-  // })
+      while (e.state !== 'done' && e.type === 'call') {
+        e = stepExpressionContainer(e)
+      }
+      expect(expressionToSimpleString(e)).toBe('c')
+    })
+  })
 })
