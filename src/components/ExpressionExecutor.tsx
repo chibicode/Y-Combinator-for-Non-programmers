@@ -3,12 +3,14 @@ import Expression from 'src/components/Expression'
 import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {
-  DoneExpressionContainer,
+  PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
 
 interface ExpressionExecutorProps {
-  expressionContainer: PrioritizedExpressionContainer | DoneExpressionContainer
+  expressionContainer:
+    | PrioritizedExpressionContainer
+    | PrioritizedDoneExpressionContainer
 }
 
 type ExpressionExecutorState = Pick<
@@ -41,7 +43,7 @@ export default class ExpressionExecutor extends React.Component<
     return (
       <div>
         <div style={{ maxWidth: 300 }}>
-          <Expression expressionContainer={expressionContainer.expression} />
+          <Expression expression={expressionContainer.expression} />
         </div>
         <div>
           <div>{expressionContainerToSimpleString(expressionContainer)}</div>

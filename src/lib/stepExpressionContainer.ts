@@ -7,11 +7,11 @@ import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer
 import resetExpressionContainer from 'src/lib/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 import {
-  DoneExpressionContainer,
   ExpressionContainer,
   isNeedsResetExpressionContainer,
   isPrioritizedExpressionContainer,
   NeedsResetExpressionContainer,
+  PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
 import {
@@ -27,7 +27,7 @@ export default function stepExpressionContainer(
 ):
   | PrioritizedExpressionContainer<ImmediatelyExecutableCallExpression>
   | PrioritizedExpressionContainer
-  | DoneExpressionContainer
+  | PrioritizedDoneExpressionContainer
 export default function stepExpressionContainer(e: ExpressionContainer) {
   if (isNeedsResetExpressionContainer(e)) {
     return prioritizeExpressionContainer(resetExpressionContainer(e))

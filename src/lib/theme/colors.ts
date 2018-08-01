@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core/colors'
 import Color from 'color'
 
-const toGrey = colorString =>
+const toGrey = (colorString: string) =>
   Color(colorString)
     .desaturate(0.8)
     .lighten(0.05)

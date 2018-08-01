@@ -42,6 +42,7 @@ export default function resetExpressionContainer(
   return {
     prioritized: false,
     needsReset: false,
-    expression: resetExpression(expressionContainer.expression)
+    expression: resetExpression(expressionContainer.expression),
+    done: false
   }
 }

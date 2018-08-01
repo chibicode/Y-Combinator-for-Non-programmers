@@ -4,8 +4,8 @@ import initializeExpressionContainer from 'src/lib/initializeExpressionContainer
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 import {
-  DoneExpressionContainer,
   isPrioritizedExpressionContainer,
+  PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
 import { PrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
@@ -42,7 +42,7 @@ const repeatUntilDone = (
 ) => {
   let result:
     | PrioritizedExpressionContainer<PrioritizedCallExpression>
-    | DoneExpressionContainer = stepExpressionContainerWrapped(e)
+    | PrioritizedDoneExpressionContainer = stepExpressionContainerWrapped(e)
   while (!result.done) {
     result = stepExpressionContainerWrapped(result)
   }

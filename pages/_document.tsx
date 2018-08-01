@@ -2,7 +2,7 @@ import { extractCritical } from 'emotion-server'
 import Document, { Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-  public static getInitialProps({ renderPage }) {
+  public static getInitialProps({ renderPage }: { renderPage: any }) {
     const page = renderPage()
     const styles = extractCritical(page.html)
     return { ...page, ...styles }

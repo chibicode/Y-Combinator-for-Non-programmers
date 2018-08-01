@@ -38,8 +38,8 @@ export function isNeedsResetExpressionContainer<
   return e.needsReset
 }
 
-export type DoneExpressionContainer<
-  E extends Expression = Expression
-> = ExpressionContainer<E> & {
+export type PrioritizedDoneExpressionContainer<
+  E extends PrioritizedExpression = PrioritizedExpression
+> = PrioritizedExpressionContainer<E> & {
   readonly done: true
 }
