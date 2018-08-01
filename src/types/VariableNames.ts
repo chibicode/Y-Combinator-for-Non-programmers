@@ -19,12 +19,6 @@ export type VariableNames =
   | 'r'
   | 's'
   | 't'
-  | 'u'
-  | 'v'
-  | 'w'
-  | 'x'
-  | 'y'
-  | 'z'
 
 export const variableNamesArray: ReadonlyArray<VariableNames> = [
   'a',
@@ -46,11 +40,5 @@ export const variableNamesArray: ReadonlyArray<VariableNames> = [
   'q',
   'r',
   's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z'
+  't'
 ]
