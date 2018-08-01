@@ -1,10 +1,10 @@
 import React from 'react'
 import Expression from 'src/components/Expression'
 import Flex from 'src/components/Flex'
-import { FunctionExpression } from 'src/types/ExpressionTypes'
+import { PrioritizedFunctionExpression } from 'src/types/PrioritizedExpressionTypes'
 
 interface FunctionExpressionProps {
-  expression: FunctionExpression
+  expression: PrioritizedFunctionExpression
 }
 
 const FunctionExpression: React.SFC<FunctionExpressionProps> = ({

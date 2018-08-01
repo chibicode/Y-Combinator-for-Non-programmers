@@ -1,8 +1,12 @@
 import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
 import { PrioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import {
+  CallExpressionParams,
+  FunctionExpressionParams
+} from 'src/types/ExpressionParamTypes'
 
 // (a => a)(b)
-const basicExpression = [
+const basicExpression: CallExpressionParams = [
   {
     arg: 'a',
     body: 'a'
@@ -11,7 +15,7 @@ const basicExpression = [
 ]
 
 // (a => b => a)
-const trueExpression = {
+const trueExpression: FunctionExpressionParams = {
   arg: 'a',
   body: {
     arg: 'b',
@@ -20,7 +24,7 @@ const trueExpression = {
 }
 
 // (a => b => b)
-const falseExpression = {
+const falseExpression: FunctionExpressionParams = {
   arg: 'a',
   body: {
     arg: 'b',
@@ -29,7 +33,7 @@ const falseExpression = {
 }
 
 // (c => a => b => c b a)
-const notExpression = {
+const notExpression: FunctionExpressionParams = {
   arg: 'c',
   body: {
     arg: 'a',
@@ -40,12 +44,15 @@ const notExpression = {
   }
 }
 
-const notTrueExpression = [notExpression, trueExpression]
+const notTrueExpression: CallExpressionParams = [notExpression, trueExpression]
 
-const notFalseExpression = [notExpression, falseExpression]
+const notFalseExpression: CallExpressionParams = [
+  notExpression,
+  falseExpression
+]
 
 // (a => b => b)
-const zeroExpression = {
+const zeroExpression: FunctionExpressionParams = {
   arg: 'a',
   body: {
     arg: 'b',
@@ -54,7 +61,7 @@ const zeroExpression = {
 }
 
 // (a => b => a b)
-const oneExpression = {
+const oneExpression: FunctionExpressionParams = {
   arg: 'a',
   body: {
     arg: 'b',
@@ -63,7 +70,7 @@ const oneExpression = {
 }
 
 // (a => b => a (a b))
-const twoExpression = {
+const twoExpression: FunctionExpressionParams = {
   arg: 'a',
   body: {
     arg: 'b',
@@ -72,7 +79,7 @@ const twoExpression = {
 }
 
 // (a => a a)(a => a a)
-const infiniteLoopExpression = [
+const infiniteLoopExpression: CallExpressionParams = [
   {
     arg: 'a',
     body: ['a', 'a']
@@ -84,7 +91,7 @@ const infiniteLoopExpression = [
 ]
 
 // a => (c => c c)(c => a(b => c c b)))
-const yCombinator = {
+const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
     {
@@ -105,7 +112,7 @@ const yCombinator = {
 }
 
 // a => b => (a b)
-const recursiveFunction = {
+const recursiveFunction: FunctionExpressionParams = {
   arg: 'a',
   body: {
     arg: 'b',
@@ -113,18 +120,19 @@ const recursiveFunction = {
   }
 }
 
-const infiniteLoop = [yCombinator, recursiveFunction]
+const infiniteLoop: CallExpressionParams = [yCombinator, recursiveFunction]
 
-const functionTestCases: PrioritizedExpressionContainer[] = [
-  // basicExpression,
-  // notTrueExpression,
-  // notFalseExpression,
-  // zeroExpression,
-  // oneExpression,
-  // twoExpression,
-  // infiniteLoopExpression,
-  // yCombinator,
-  infiniteLoop
-].map(x => initializeExpressionContainer(x))
+export const inactiveTestCases: PrioritizedExpressionContainer[] = [
+  initializeExpressionContainer(basicExpression),
+  initializeExpressionContainer(notTrueExpression),
+  initializeExpressionContainer(notFalseExpression),
+  initializeExpressionContainer(zeroExpression),
+  initializeExpressionContainer(oneExpression),
+  initializeExpressionContainer(twoExpression),
+  initializeExpressionContainer(infiniteLoopExpression),
+  initializeExpressionContainer(yCombinator)
+]
 
-export default functionTestCases
+export const activeTestCases: PrioritizedExpressionContainer[] = [
+  initializeExpressionContainer(infiniteLoop)
+]

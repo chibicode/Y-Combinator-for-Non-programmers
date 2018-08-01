@@ -4,29 +4,31 @@ import getAllVariableNames from 'src/lib/getAllVariableNames'
 describe('getAllVariableNames', () => {
   it('works with simple case', () => {
     expect(
-      getAllVariableNames(
-        buildExpressionContainer([
-          {
-            arg: 'x',
-            body: {
-              arg: 'y',
+      [
+        ...getAllVariableNames(
+          buildExpressionContainer([
+            {
+              arg: 'x',
               body: {
-                arg: 'z',
-                body: ['x', ['y', 'z']]
+                arg: 'y',
+                body: {
+                  arg: 'z',
+                  body: ['x', ['y', 'z']]
+                }
               }
-            }
-          },
-          {
-            arg: 'a',
-            body: 'a'
-          },
-          {
-            arg: 'b',
-            body: 'b'
-          },
-          'c'
-        ]).expression
-      ).sort()
+            },
+            {
+              arg: 'a',
+              body: 'a'
+            },
+            {
+              arg: 'b',
+              body: 'b'
+            },
+            'c'
+          ]).expression
+        )
+      ].sort()
     ).toEqual(['a', 'b', 'c', 'x', 'y', 'z'])
   })
 })

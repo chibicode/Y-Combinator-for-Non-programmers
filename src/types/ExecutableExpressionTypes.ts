@@ -32,7 +32,3 @@ export function isImmediatelyExecutableCallExpression<
     isPrioritizedFunctionExpression(expression.func)
   )
 }
-
-export interface UnexecutableCallExpression extends PrioritizedCallExpression {
-  readonly state: 'done'
-}
