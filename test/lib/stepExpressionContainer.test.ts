@@ -4,6 +4,7 @@ import initializeExpressionContainer from 'src/lib/initializeExpressionContainer
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 import {
+  DoneExpressionContainer,
   isPrioritizedExpressionContainer,
   PrioritizedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
@@ -34,6 +35,18 @@ const repeatUntilState = (
     }
     e = stepExpressionContainerWrapped(e)
   }
+}
+
+const repeatUntilDone = (
+  e: PrioritizedExpressionContainer<PrioritizedCallExpression>
+) => {
+  let result:
+    | PrioritizedExpressionContainer<PrioritizedCallExpression>
+    | DoneExpressionContainer = stepExpressionContainerWrapped(e)
+  while (!result.done) {
+    result = stepExpressionContainerWrapped(result)
+  }
+  return result
 }
 
 describe('stepExpressionContainer', () => {
@@ -192,7 +205,7 @@ describe('stepExpressionContainer', () => {
 
   describe('repeat until done', () => {
     it('completes', () => {
-      let e = initializeExpressionContainer([
+      const originalContainer = initializeExpressionContainer([
         {
           arg: 'x',
           body: {
@@ -212,12 +225,10 @@ describe('stepExpressionContainer', () => {
           body: 'b'
         },
         'c'
-      ]) as any
+      ])
 
-      while (e.state !== 'done' && e.type === 'call') {
-        e = stepExpressionContainer(e)
-      }
-      expect(expressionToSimpleString(e)).toBe('c')
+      const e = repeatUntilDone(originalContainer)
+      expect(expressionToSimpleString(e.expression)).toBe('c')
     })
   })
 })

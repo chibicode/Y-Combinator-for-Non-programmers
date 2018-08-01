@@ -99,11 +99,13 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
               nextCallExpressionAndParent.parentCallExpression[
                 nextCallExpressionAndParent.parentKey
               ] = betaReduced
+              draftContainer.needsReset = true
             } else if (
               'parentFunctionExpression' in nextCallExpressionAndParent &&
               nextCallExpressionAndParent.parentFunctionExpression
             ) {
               nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
+              draftContainer.needsReset = true
             }
             break
           }
