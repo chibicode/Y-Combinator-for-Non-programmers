@@ -1,6 +1,7 @@
 import React from 'react'
 import ExpressionBox from 'src/components/ExpressionBox'
 import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
+import expressionToParams from 'src/lib/expressionToParams'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {
   PrioritizedDoneExpressionContainer,
@@ -29,6 +30,17 @@ export default class ExpressionExecutor extends React.Component<
     }
   }
 
+  public logParams = () => {
+    console.log(expressionToParams(this.state.expressionContainer.expression))
+    console.log(
+      JSON.stringify(
+        expressionToParams(this.state.expressionContainer.expression),
+        null,
+        2
+      )
+    )
+  }
+
   public stepExpression = () => {
     if (!this.state.expressionContainer.done) {
       const x = stepExpressionContainer(this.state.expressionContainer)
@@ -47,7 +59,8 @@ export default class ExpressionExecutor extends React.Component<
         </div>
         <div>
           <div>{expressionContainerToSimpleString(expressionContainer)}</div>
-          <button onClick={this.stepExpression}>step</button>
+          <button onClick={this.stepExpression}>step</button>{' '}
+          <button onClick={this.logParams}>log</button>
         </div>
       </div>
     )
