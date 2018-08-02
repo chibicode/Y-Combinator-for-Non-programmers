@@ -37,22 +37,26 @@ export default function expressionToSimpleString(
     }
   } else if (isCallExpression(expression)) {
     const func = expressionToSimpleString(expression.func, {
-      addPriority
+      addPriority,
+      addPriorityAgg
     })
     const priority =
       addPriority && isPrioritizedCallExpression(expression)
         ? `${expression.priority}`
         : ''
     const arg = expressionToSimpleString(expression.arg, {
-      addPriority
+      addPriority,
+      addPriorityAgg
     })
     return `${func}(${priority}${arg})`
   } else {
     const arg = expressionToSimpleString(expression.arg, {
-      addPriority
+      addPriority,
+      addPriorityAgg
     })
     const body = expressionToSimpleString(expression.body, {
-      addPriority
+      addPriority,
+      addPriorityAgg
     })
     return `(${arg} => ${body})`
   }
