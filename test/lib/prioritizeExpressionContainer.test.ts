@@ -82,4 +82,62 @@ describe('prioritizeExpressionContainer', () => {
       )
     ).toEqual('(a => (b => c))(2d)(3(e => (f => g))(1h))')
   })
+
+  describe('priority aggregation', () => {
+    it('aggregates priorities correctly (case 1)', () => {
+      expect(
+        expressionContainerToSimpleString(
+          prioritizeExpressionContainer(
+            buildExpressionContainer([[['a', 'b'], 'c'], 'd'])
+          ),
+          { addPriorityAgg: true }
+        )
+      ).toEqual('[1,2,3a]([b1])([c2])([d3])')
+    })
+
+    it('aggregates priorities correctly (case 2)', () => {
+      expect(
+        expressionContainerToSimpleString(
+          prioritizeExpressionContainer(
+            buildExpressionContainer([['a', 'b'], ['c', 'd']])
+          ),
+          { addPriorityAgg: true }
+        )
+      ).toEqual('[2,3a]([b2])([1c]([d1,3]))')
+    })
+
+    it('aggregates priorities correctly (case 3)', () => {
+      expect(
+        expressionContainerToSimpleString(
+          prioritizeExpressionContainer(
+            buildExpressionContainer([['a', ['b', 'c']], 'd'])
+          ),
+          { addPriorityAgg: true }
+        )
+      ).toEqual('[2,3a]([1b]([c1,2]))([d3])')
+    })
+
+    it('aggregates priorities correctly (has function)', () => {
+      expect(
+        expressionContainerToSimpleString(
+          prioritizeExpressionContainer(
+            buildExpressionContainer([
+              [
+                [
+                  {
+                    arg: 'x',
+                    body: ['a', 'b', 'c']
+                  },
+                  'b'
+                ],
+                'c'
+              ],
+              'd'
+            ])
+          ),
+          { addPriorityAgg: true }
+        )
+      ).toEqual('([1,2,3x] => [1,2a]([b1])([c2]))([b1])([c2])([d3])')
+    })
+  })
 })
