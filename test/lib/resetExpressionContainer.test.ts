@@ -37,7 +37,7 @@ describe('resetExpressionContainer', () => {
 
     expect(
       expressionToSimpleString(resultExpression, { addPriority: true })
-    ).toEqual('(x => (y => (z => x(y(z)))))((a => a))((b => b))(c)')
+    ).toBe('(x => (y => (z => x(y(z)))))((a => a))((b => b))(c)')
     expect(resultExpression.state).toBe('default')
   })
 })

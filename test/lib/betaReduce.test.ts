@@ -20,7 +20,7 @@ describe('betaReduce', () => {
     if ('notFound' in result && result.notFound) {
       throw new Error()
     }
-    expect(expressionToSimpleString(betaReduce(result.expression))).toEqual('y')
+    expect(expressionToSimpleString(betaReduce(result.expression))).toBe('y')
   })
 
   it('beta reduces complex expression', () => {

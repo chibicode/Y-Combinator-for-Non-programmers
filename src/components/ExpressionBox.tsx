@@ -24,6 +24,8 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
     `}
   >
     <BorderWrapper state={expression.state}>
+      {/* TODO: Only show first two (the second one behind
+      the first) and hide the rest under a click */}
       {isPrioritizedVariableExpression(expression) && (
         <div
           className={css`

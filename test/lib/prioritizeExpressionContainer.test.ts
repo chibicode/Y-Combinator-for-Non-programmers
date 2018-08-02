@@ -17,7 +17,7 @@ describe('prioritizeExpressionContainer', () => {
         ),
         { addPriority: true }
       )
-    ).toEqual('(x => y)(1z)')
+    ).toBe('(x => y)(1z)')
   })
 
   it('works with slightly more complex case', () => {
@@ -48,7 +48,7 @@ describe('prioritizeExpressionContainer', () => {
         ),
         { addPriority: true }
       )
-    ).toEqual('(x => (y => (z => x(2y(1z)))))(1(a => a))(2(b => b))(3c)')
+    ).toBe('(x => (y => (z => x(2y(1z)))))(1(a => a))(2(b => b))(3c)')
   })
 
   it('prioritizes argument over function', () => {
@@ -80,7 +80,7 @@ describe('prioritizeExpressionContainer', () => {
         ),
         { addPriority: true }
       )
-    ).toEqual('(a => (b => c))(2d)(3(e => (f => g))(1h))')
+    ).toBe('(a => (b => c))(2d)(3(e => (f => g))(1h))')
   })
 
   describe('priority aggregation', () => {
@@ -92,7 +92,7 @@ describe('prioritizeExpressionContainer', () => {
           ),
           { addPriorityAgg: true }
         )
-      ).toEqual('[1,2,3a]([b1])([c2])([d3])')
+      ).toBe('[1,2,3a]([b1])([c2])([d3])')
     })
 
     it('aggregates priorities correctly (case 2)', () => {
@@ -103,7 +103,7 @@ describe('prioritizeExpressionContainer', () => {
           ),
           { addPriorityAgg: true }
         )
-      ).toEqual('[2,3a]([b2])([1c]([d1,3]))')
+      ).toBe('[2,3a]([b2])([1c]([d1,3]))')
     })
 
     it('aggregates priorities correctly (case 3)', () => {
@@ -114,7 +114,7 @@ describe('prioritizeExpressionContainer', () => {
           ),
           { addPriorityAgg: true }
         )
-      ).toEqual('[2,3a]([1b]([c1,2]))([d3])')
+      ).toBe('[2,3a]([1b]([c1,2]))([d3])')
     })
 
     it('aggregates priorities correctly (has function)', () => {
@@ -137,7 +137,7 @@ describe('prioritizeExpressionContainer', () => {
           ),
           { addPriorityAgg: true }
         )
-      ).toEqual('([1,2,3x] => [1,2a]([b1])([c2]))([b1])([c2])([d3])')
+      ).toBe('([1,2,3x] => [1,2a]([b1])([c2]))([b1])([c2])([d3])')
     })
   })
 })
