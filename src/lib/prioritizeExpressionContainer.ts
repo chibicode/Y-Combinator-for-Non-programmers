@@ -104,13 +104,13 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
     return Object.assign({}, expression, {
       arg: populatePriorityAggs({
         expression: expression.arg,
-        argPriorityAgg: [...argPriorityAgg, expression.priority],
+        argPriorityAgg: [expression.priority, ...argPriorityAgg],
         funcPriorityAgg: new Array<number>()
       }),
       func: populatePriorityAggs({
         expression: expression.func,
         argPriorityAgg: new Array<number>(),
-        funcPriorityAgg: [...funcPriorityAgg, expression.priority]
+        funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
       })
     })
   } else if (isPrioritizedFunctionExpression(expression)) {
