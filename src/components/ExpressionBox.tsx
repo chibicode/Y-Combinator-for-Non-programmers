@@ -11,18 +11,30 @@ import {
   PrioritizedExpression
 } from 'src/types/PrioritizedExpressionTypes'
 
-interface ExpressionProps {
+interface ExpressionBoxProps {
   expression: PrioritizedExpression
 }
 
-const ExpressionBox: React.SFC<ExpressionProps> = ({ expression }) => (
+const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
   <Flex
     width={1}
     className={css`
       height: 100%;
+      position: relative;
     `}
   >
     <BorderWrapper state={expression.state}>
+      {isPrioritizedVariableExpression(expression) && (
+        <div
+          className={css`
+            position: absolute;
+            top: 0;
+            left: 0;
+          `}
+        >
+          {expression.argPriorityAgg.join(',')}
+        </div>
+      )}
       {(() => {
         if (isPrioritizedVariableExpression(expression)) {
           return <VariableExpressionBox expression={expression} />
@@ -32,6 +44,17 @@ const ExpressionBox: React.SFC<ExpressionProps> = ({ expression }) => (
           return <FunctionExpressionBox expression={expression} />
         }
       })()}
+      {isPrioritizedVariableExpression(expression) && (
+        <div
+          className={css`
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          `}
+        >
+          {expression.funcPriorityAgg.join(',')}
+        </div>
+      )}
     </BorderWrapper>
   </Flex>
 )

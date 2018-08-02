@@ -3,11 +3,11 @@ import ExpressionBox from 'src/components/ExpressionBox'
 import Flex from 'src/components/Flex'
 import { PrioritizedFunctionExpression } from 'src/types/PrioritizedExpressionTypes'
 
-interface FunctionExpressionProps {
+interface FunctionExpressionBoxProps {
   expression: PrioritizedFunctionExpression
 }
 
-const FunctionExpressionBox: React.SFC<FunctionExpressionProps> = ({
+const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
   expression
 }) => (
   <Flex flexDirection="row" flex={1}>
