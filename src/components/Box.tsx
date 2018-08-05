@@ -1,9 +1,9 @@
-import { Flex as RebassFlex } from 'rebass/emotion'
+import { Box as RebassBox } from 'rebass/emotion'
 import sys from 'system-components/emotion'
 
-const Flex = sys(
+const Box = sys(
   {
-    is: RebassFlex
+    is: RebassBox
   },
   'position',
   'minWidth',
@@ -15,4 +15,4 @@ const Flex = sys(
   'lineHeight'
 )
 
-export default Flex
+export default Box

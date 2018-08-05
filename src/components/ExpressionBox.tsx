@@ -2,6 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import BorderWrapper from 'src/components/BorderWrapper'
 import CallExpressionBox from 'src/components/CallExpressionBox'
+import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
 import Flex from 'src/components/Flex'
 import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/VariableExpressionBox'
@@ -34,7 +35,7 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
             left: 0;
           `}
         >
-          {expression.argPriorityAgg.join(',')}
+          <ExpressionPrioritiesLabel priorities={expression.argPriorityAgg} />
         </div>
       )}
       {(() => {
@@ -54,7 +55,7 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
             left: 0;
           `}
         >
-          {expression.funcPriorityAgg.join(',')}
+          <ExpressionPrioritiesLabel priorities={expression.funcPriorityAgg} />
         </div>
       )}
     </BorderWrapper>
