@@ -18,8 +18,8 @@ interface ExpressionBoxProps {
 
 const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
   <Flex
-    width={1}
     className={css`
+      width: 100%;
       height: 100%;
       position: relative;
     `}
@@ -28,15 +28,10 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
       {/* TODO: Only show first two (the second one behind
       the first) and hide the rest under a click */}
       {isPrioritizedVariableExpression(expression) && (
-        <div
-          className={css`
-            position: absolute;
-            top: 0;
-            left: 0;
-          `}
-        >
-          <ExpressionPrioritiesLabel priorities={expression.argPriorityAgg} />
-        </div>
+        <ExpressionPrioritiesLabel
+          priorities={expression.argPriorityAgg}
+          position="topleft"
+        />
       )}
       {(() => {
         if (isPrioritizedVariableExpression(expression)) {
@@ -48,15 +43,10 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
         }
       })()}
       {isPrioritizedVariableExpression(expression) && (
-        <div
-          className={css`
-            position: absolute;
-            bottom: 0;
-            left: 0;
-          `}
-        >
-          <ExpressionPrioritiesLabel priorities={expression.funcPriorityAgg} />
-        </div>
+        <ExpressionPrioritiesLabel
+          priorities={expression.funcPriorityAgg}
+          position="bottomleft"
+        />
       )}
     </BorderWrapper>
   </Flex>

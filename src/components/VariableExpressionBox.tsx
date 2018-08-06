@@ -1,8 +1,9 @@
 import { css } from 'emotion'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
-import Flex from 'src/components/Flex'
+import FlexCenter from 'src/components/FlexCenter'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
+import spaces from 'src/lib/theme/spaces'
 import { PrioritizedVariableExpression } from 'src/types/PrioritizedExpressionTypes'
 
 interface VariableExpressionBoxProps {
@@ -12,17 +13,14 @@ interface VariableExpressionBoxProps {
 const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
   expression
 }) => (
-  <Flex
-    px={3}
-    py={2}
-    justifyContent="center"
-    flex={1}
+  <FlexCenter
     className={css`
-      position: relative;
+      flex: 1;
+      padding: ${spaces(8)} ${spaces(12)};
     `}
   >
     <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
-  </Flex>
+  </FlexCenter>
 )
 
 export default VariableExpressionBox

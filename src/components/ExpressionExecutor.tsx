@@ -1,3 +1,4 @@
+import { css } from 'emotion'
 import React from 'react'
 import ExpressionBox from 'src/components/ExpressionBox'
 import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
@@ -54,7 +55,11 @@ export default class ExpressionExecutor extends React.Component<
     const { expressionContainer } = this.state
     return (
       <div>
-        <div style={{ maxWidth: 300 }}>
+        <div
+          className={css`
+            max-width: 300px;
+          `}
+        >
           <ExpressionBox expression={expressionContainer.expression} />
         </div>
         <div>

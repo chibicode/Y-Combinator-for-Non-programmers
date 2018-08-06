@@ -1,18 +1,7 @@
-import { Flex as RebassFlex } from 'rebass/emotion'
-import sys from 'system-components/emotion'
+import styled from 'react-emotion'
 
-const Flex = sys(
-  {
-    is: RebassFlex
-  },
-  'position',
-  'minWidth',
-  'borders',
-  'borderColor',
-  'borderRadius',
-  'fontWeight',
-  'height',
-  'lineHeight'
-)
+const Flex = styled.div`
+  display: flex;
+`
 
 export default Flex

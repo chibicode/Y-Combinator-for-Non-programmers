@@ -1,32 +1,18 @@
-import {
-  blue,
-  brown,
-  green,
-  grey,
-  orange,
-  purple,
-  red,
-  yellow
-} from '@material-ui/core/colors'
-import Color from 'color'
+import { blue, green, grey, red, yellow } from '@material-ui/core/colors'
 
-const toGrey = (colorString: string) =>
-  Color(colorString)
-    .desaturate(0.8)
-    .lighten(0.05)
-    .string()
-
-const colors = {
-  black: grey[800],
-  lightYellow: toGrey(yellow[100]),
-  darkYellow: toGrey(yellow[400]),
-  lightBrown: brown[100],
-  lightGray: grey[300],
-  lightRed: red[100],
-  lightGreen: green[100],
-  lightBlue: blue[100],
-  lightOrange: orange[100],
-  lightPurple: purple[100]
+export const allColors = {
+  gray800: grey[800],
+  gray400: grey[400],
+  gray300: grey[300],
+  gray200: grey[200],
+  gray100: grey[100],
+  red100: red[100],
+  green100: green[100],
+  blue100: blue[100],
+  transparent: 'transparent',
+  white: 'white'
 }
 
-export default colors
+const colorsFn = (x: keyof typeof allColors) => allColors[x]
+
+export default colorsFn

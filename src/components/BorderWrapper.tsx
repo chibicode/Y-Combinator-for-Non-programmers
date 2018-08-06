@@ -1,6 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
+import colors, { allColors } from 'src/lib/theme/colors'
 import { AllExpressionStates } from 'src/types/ExpressionTypes'
 
 interface BorderWrapperProps {
@@ -10,23 +11,24 @@ interface BorderWrapperProps {
   state: AllExpressionStates
 }
 
-const stateToColor = (x: AllExpressionStates): string | undefined => {
+const stateToColor = (
+  x: AllExpressionStates
+): keyof typeof allColors | undefined => {
   switch (x) {
     case 'highlighted':
-      return 'lightBlue'
+      return 'blue100'
   }
 }
 
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({ children, state }) => (
   <Flex
-    border={2}
-    bg={stateToColor(state) || 'transparent'}
     className={css`
       margin: -2px;
+      border: 2px solid ${colors('gray300')};
+      align-items: center;
+      background: ${colors(stateToColor(state) || 'white')};
+      flex: 1;
     `}
-    borderColor="lightGray"
-    alignItems="center"
-    flex={1}
   >
     {children}
   </Flex>

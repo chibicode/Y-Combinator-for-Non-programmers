@@ -1,11 +1,12 @@
-import { injectGlobal } from 'emotion'
+import { css, injectGlobal } from 'emotion'
 import React from 'react'
-import { Container } from 'rebass/emotion'
+import Container from 'src/components/Container'
 import ExpressionExecutor from 'src/components/ExpressionExecutor'
 import Flex from 'src/components/Flex'
-import ThemeProvider from 'src/components/ThemeProvider'
+import GlobalStyles from 'src/components/GlobalStyles'
 import 'src/lib/fontAwesome'
 import { activeTestCases } from 'src/lib/testCaseExpressionContainers'
+import spaces from 'src/lib/theme/spaces'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -19,17 +20,27 @@ injectGlobal`
 `
 
 const Home: React.SFC<{}> = () => (
-  <ThemeProvider>
-    <Container pt={4} color="black">
-      <Flex flexDirection="column" alignItems="flex-start">
+  <GlobalStyles>
+    <Container>
+      <Flex
+        className={css`
+          flex-direction: column;
+          align-items: flex-start;
+        `}
+      >
         {activeTestCases.map((e, index) => (
-          <Flex mb={3} key={index}>
+          <div
+            className={css`
+              margin-bottom: ${spaces(12)};
+            `}
+            key={index}
+          >
             <ExpressionExecutor expressionContainer={e} />
-          </Flex>
+          </div>
         ))}
       </Flex>
     </Container>
-  </ThemeProvider>
+  </GlobalStyles>
 )
 
 export default Home

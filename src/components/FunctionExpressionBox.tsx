@@ -1,6 +1,9 @@
+import { css } from 'emotion'
 import React from 'react'
 import ExpressionBox from 'src/components/ExpressionBox'
 import Flex from 'src/components/Flex'
+import FlexCenter from 'src/components/FlexCenter'
+import colors from 'src/lib/theme/colors'
 import { PrioritizedFunctionExpression } from 'src/types/PrioritizedExpressionTypes'
 
 interface FunctionExpressionBoxProps {
@@ -10,24 +13,26 @@ interface FunctionExpressionBoxProps {
 const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
   expression
 }) => (
-  <Flex flexDirection="row" flex={1}>
-    <Flex
-      alignItems="center"
-      justifyContent="center"
-      borderRight={1}
-      borderColor="lightGray"
+  <Flex
+    className={css`
+      flex: 1;
+    `}
+  >
+    <FlexCenter
+      className={css`
+        border-right: 1px solid ${colors('gray300')};
+      `}
     >
       <ExpressionBox expression={expression.arg} />
-    </Flex>
-    <Flex
-      alignItems="center"
-      justifyContent="center"
-      borderLeft={1}
-      borderColor="lightGray"
-      flex={1}
+    </FlexCenter>
+    <FlexCenter
+      className={css`
+        flex: 1;
+        border-left: 1px solid ${colors('gray300')};
+      `}
     >
       <ExpressionBox expression={expression.body} />
-    </Flex>
+    </FlexCenter>
   </Flex>
 )
 
