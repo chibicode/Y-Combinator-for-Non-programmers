@@ -3,7 +3,7 @@ import isEqual from 'lodash/isEqual'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'react-emotion'
-import { parse } from 'twemoji'
+import Twemoji from 'twemoji'
 
 const Span = styled('span')`
   > .emoji {
@@ -17,9 +17,9 @@ interface TwemojiProps {
   options: {}
 }
 
-class Twemoji extends React.Component<TwemojiProps, {}> {
+class TwemojiContainer extends React.Component<TwemojiProps, {}> {
   public parse() {
-    parse(ReactDOM.findDOMNode(this), this.props.options)
+    Twemoji.parse(ReactDOM.findDOMNode(this), this.props.options)
   }
 
   public componentDidUpdate(prevProps: TwemojiProps) {
@@ -38,14 +38,14 @@ class Twemoji extends React.Component<TwemojiProps, {}> {
 }
 
 const Emoji: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
-  <Twemoji
+  <TwemojiContainer
     options={{
       folder: 'svg',
       ext: '.svg'
     }}
   >
     {children}
-  </Twemoji>
+  </TwemojiContainer>
 )
 
 export default Emoji
