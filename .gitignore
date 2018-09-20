@@ -1,3 +1,6 @@
+out
+.envrc
+
 # Logs
 logs
 *.log
