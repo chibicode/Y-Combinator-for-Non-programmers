@@ -1,4 +1,4 @@
-import { blue, green, grey, red, yellow } from '@material-ui/core/colors'
+import { blue, green, grey, red } from '@material-ui/core/colors'
 
 export const allColors = {
   gray800: grey[800],
