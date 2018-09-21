@@ -1,6 +1,5 @@
 import React from 'react'
-import Home from 'src/components/Home'
 
-const Index: React.SFC<{}> = () => <Home />
+const Index: React.SFC<{}> = () => <div>Hello World</div>
 
 export default Index

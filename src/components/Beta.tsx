@@ -19,7 +19,7 @@ injectGlobal`
   }
 `
 
-const Home: React.SFC<{}> = () => (
+const Beta: React.SFC<{}> = () => (
   <GlobalStyles>
     <Container>
       <Flex
@@ -44,4 +44,4 @@ const Home: React.SFC<{}> = () => (
   </GlobalStyles>
 )
 
-export default Home
+export default Beta
