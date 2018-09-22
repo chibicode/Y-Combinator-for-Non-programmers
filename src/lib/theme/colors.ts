@@ -1,4 +1,4 @@
-import { blue, green, grey, red } from '@material-ui/core/colors'
+import { blue, green, grey, red, yellow } from '@material-ui/core/colors'
 
 export const allColors = {
   grey900: grey[900],
@@ -9,10 +9,13 @@ export const allColors = {
   grey200: grey[200],
   grey100: grey[100],
   red100: red[100],
+  red300: red[300], // Logo heart
+  red500: red[500],
   green100: green[100],
   blue100: blue[100],
   transparent: 'transparent',
-  white: 'white'
+  white: 'white',
+  yellow200: yellow[200]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]
