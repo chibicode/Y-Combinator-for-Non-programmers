@@ -8,7 +8,7 @@ const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
 }) => (
   <div
     className={css`
-      color: ${colors('gray800')};
+      color: ${colors('grey800')};
     `}
   >
     {children}

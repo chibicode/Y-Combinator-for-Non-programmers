@@ -20,7 +20,7 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
   >
     <FlexCenter
       className={css`
-        border-right: 1px solid ${colors('gray300')};
+        border-right: 1px solid ${colors('grey300')};
       `}
     >
       <ExpressionBox expression={expression.arg} />
@@ -28,7 +28,7 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
     <FlexCenter
       className={css`
         flex: 1;
-        border-left: 1px solid ${colors('gray300')};
+        border-left: 1px solid ${colors('grey300')};
       `}
     >
       <ExpressionBox expression={expression.body} />

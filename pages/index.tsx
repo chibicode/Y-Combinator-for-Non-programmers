@@ -3,6 +3,8 @@ import React from 'react'
 import Container from 'src/components/Container'
 import Page from 'src/components/Page'
 import {
+  colors,
+  columnWidths,
   fontSizes,
   fontWeights,
   letterSpacings,
@@ -16,19 +18,23 @@ const Index: React.SFC<{}> = () => (
     <Container>
       <div
         className={css`
-          padding: ${spaces(20)} 0;
+          color: ${colors('grey900')};
+          padding: ${spaces(32)} 0;
           line-height: ${lineHeights(1.25)};
           font-size: ${fontSizes(24)};
           font-weight: ${fontWeights(600)};
           letter-spacing: ${letterSpacings('title')};
+          margin: 0 auto;
           ${ns(css`
+            width: ${columnWidths(10)};
             font-size: ${fontSizes(40)};
-            padding: ${spaces(128)} 0;
+            padding: ${spaces(96)} 0;
           `)};
         `}
       >
         <h1
           className={css`
+            margin: 0;
             font-size: ${fontSizes(32)};
             font-weight: ${fontWeights(800)};
             ${ns(css`
@@ -53,7 +59,11 @@ const Index: React.SFC<{}> = () => (
           </span>
           .
         </p>
-        <p>
+        <p
+          className={css`
+            color: ${colors('grey500')};
+          `}
+        >
           More lessons coming soon. Leave your email below and we'll let you
           know!
         </p>
