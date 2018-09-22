@@ -13,6 +13,6 @@ export const allColors = {
   white: 'white'
 }
 
-const colorsFn = (x: keyof typeof allColors) => allColors[x]
+const colors = (x: keyof typeof allColors) => allColors[x]
 
-export default colorsFn
+export default colors

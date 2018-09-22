@@ -13,9 +13,10 @@ const allSpaces = {
   80: 80,
   96: 96,
   112: 112,
-  128: 128
+  128: 128,
+  160: 160
 }
 
-const spaceFn = (x: keyof typeof allSpaces) => `${allSpaces[x]}px`
+const spaces = (x: keyof typeof allSpaces) => `${allSpaces[x]}px`
 
-export default spaceFn
+export default spaces

@@ -13,6 +13,7 @@
     "emotion": "^9.2.10",
     "emotion-server": "^9.2.10",
     "emotion-theming": "^9.2.9",
+    "facepaint": "^1.2.1",
     "grid-styled": "^5.0.2",
     "immer": "^1.7.2",
     "lodash": "^4.17.11",
