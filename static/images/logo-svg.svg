@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900px" height="900px" viewBox="0 0 900 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>logo-svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logo-svg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M336.037961,0 L900,0 L611.396204,865.811388 C604.590502,886.228495 585.483559,900 563.962039,900 L0,900 L288.603796,34.1886117 C295.409498,13.7715047 314.516441,-2.44682703e-14 336.037961,-2.84217094e-14 Z M450,535.009815 L555.801345,595.623059 L530.849139,476.269478 L621.190173,394.376941 L499.967516,381.225615 L450,270 L400.032484,381.225615 L278.809827,394.376941 L369.150861,476.269478 L344.198655,595.623059 L450,535.009815 Z" id="Combined-Shape" fill="#212121" fill-rule="nonzero"></path>
+    </g>
+</svg>

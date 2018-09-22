@@ -19,6 +19,7 @@ const TextHighlight: React.SFC<{ children: React.ReactNode }> = ({
   <span
     className={css`
       background: ${colors(`yellow200`)};
+      color: ${colors('grey900')};
     `}
   >
     {children}
@@ -30,7 +31,7 @@ const Index: React.SFC<{}> = () => (
     <Container>
       <div
         className={css`
-          color: ${colors('grey900')};
+          color: ${colors('grey800')};
           padding: ${spaces(32)} 0;
           line-height: ${lineHeights(1.25)};
           font-size: ${fontSizes(24)};
@@ -47,6 +48,7 @@ const Index: React.SFC<{}> = () => (
         <h1
           className={css`
             margin: 0;
+            color: ${colors('grey900')};
             font-size: ${fontSizes(32)};
             font-weight: ${fontWeights(800)};
             ${ns(css`
@@ -54,23 +56,37 @@ const Index: React.SFC<{}> = () => (
             `)};
           `}
         >
-          Welcome to Hoshiai.
+          <img
+            src="/static/images/logo-svg.svg"
+            className={css`
+              width: 1.5em;
+              height: 1.5em;
+              vertical-align: middle;
+              transform: translateY(-0.1em);
+              margin-right: 0.2em;
+            `}
+          />
+          Hello!
         </h1>
         <p>
-          Our lessons teach <TextHighlight>non-programmers</TextHighlight> how
-          to think like Computer Scientists.
+          Welcome to <TextHighlight>Hoshiai</TextHighlight>. Our lessons teach{' '}
+          <TextHighlight>non-programmers</TextHighlight> how to think like
+          Computer Scientists.
         </p>
         <p>
-          There's <TextHighlight>no coding</TextHighlight> involved. Just{' '}
-          <TextHighlight>puzzles</TextHighlight>. And it's{' '}
+          There's <TextHighlight>no coding</TextHighlight> involved. And it's{' '}
           <TextHighlight>free</TextHighlight>.
         </p>
-        <p>
+        <p
+          className={css`
+            margin-bottom: 3em;
+          `}
+        >
           Try our first lesson:{' '}
           <span
             className={css`
               font-weight: ${fontWeights(800)};
-              color: ${colors('red500')};
+              color: ${colors('pink400')};
               text-decoration: underline;
             `}
           >
