@@ -33,41 +33,30 @@ const Index: React.SFC<{}> = () => (
           `)};
         `}
       >
-        <h1
-          className={css`
-            margin: 0;
-            font-size: ${fontSizes(32)};
-            ${ns(css`
-              font-size: ${fontSizes(48)};
-            `)};
-          `}
-        >
-          <img
-            src="/static/images/logo-svg-text.svg"
-            alt="Hoshiai"
-            className={css`
-              height: 2em;
-            `}
-          />
-        </h1>
-        <Content name="others/welcome" />
-        <p
+        <div
           className={css`
             margin-bottom: 3em;
           `}
         >
-          Try our first lesson:{' '}
-          <span
+          <h1
             className={css`
-              font-weight: ${fontWeights(800)};
-              color: ${colors('pink400')};
-              text-decoration: underline;
+              margin: 0;
+              font-size: ${fontSizes(32)};
+              ${ns(css`
+                font-size: ${fontSizes(48)};
+              `)};
             `}
           >
-            Y Combinator for Non-Programmers
-          </span>
-          .
-        </p>
+            <img
+              src="/static/images/logo-svg-text.svg"
+              alt="Hoshiai"
+              className={css`
+                height: 2em;
+              `}
+            />
+          </h1>
+          <Content name="others/Welcome" />
+        </div>
         <p
           className={css`
             color: ${colors('grey500')};

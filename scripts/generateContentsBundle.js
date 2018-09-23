@@ -4,11 +4,11 @@ const fs = require('fs')
 const prettier = require('prettier')
 
 const regenerate = path => {
-  glob('./src/contents/**/*.+(en|jp).mdx', (err, files) => {
+  glob('./src/contents/**/*.+(en|jp).tsx', (err, files) => {
     const uniqueNames = [
       ...new Set(
         files.map(x =>
-          x.replace('./src/contents/', '').replace(/\.(en|jp)\.mdx/, '')
+          x.replace('./src/contents/', '').replace(/\.(en|jp)\.tsx/, '')
         )
       )
     ]
@@ -27,10 +27,10 @@ const regenerate = path => {
       .map(
         name => `
           '${name}': {
-            // @ts-ignore - mdx import isn't typed correctly
-            en: dynamic(import('src/contents/${name}.en.mdx')),
-            // @ts-ignore - mdx import isn't typed correctly
-            jp: dynamic(import('src/contents/${name}.jp.mdx'))
+            // @ts-ignore - import isn't typed correctly
+            en: dynamic(import('src/contents/${name}.en')),
+            // @ts-ignore - import isn't typed correctly
+            jp: dynamic(import('src/contents/${name}.jp'))
           }
         `
       )
@@ -66,8 +66,8 @@ const regenerate = path => {
 }
 
 chokidar
-  .watch('./src/contents/*.mdx', { ignoreInitial: true })
+  .watch('./src/contents/*.tsx', { ignoreInitial: true })
   .on('add', path => regenerate(path))
-chokidar.watch('./src/contents/*.mdx').on('unlink', path => regenerate(path))
+chokidar.watch('./src/contents/*.tsx').on('unlink', path => regenerate(path))
 
 regenerate()
