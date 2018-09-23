@@ -3,6 +3,6 @@ const allLetterSpacings = {
 }
 
 const letterSpacings = (x: keyof typeof allLetterSpacings) =>
-  `${allLetterSpacings[x]}`
+  allLetterSpacings[x]
 
 export default letterSpacings

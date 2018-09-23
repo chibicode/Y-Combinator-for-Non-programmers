@@ -29,10 +29,11 @@
   "scripts": {
     "jp": "APP_LOCALE=jp next -p 3001",
     "en": "APP_LOCALE=en next -p 3000",
-    "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents\"",
+    "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents\" \"yarn tsc-watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
-    "build": "yarn contents && next build && next export",
-    "tsc-watch": "tsc -w --noEmit",
+    "build": "yarn tsc && yarn contents && next build && next export",
+    "tsc-watch": "tsc -w --noEmit --preserveWatchOutput",
+    "tsc": "tsc --noEmit",
     "test": "jest"
   },
   "devDependencies": {

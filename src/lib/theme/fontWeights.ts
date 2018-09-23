@@ -6,6 +6,6 @@ export const allFontWeights = {
   800: 800
 }
 
-const fontWeights = (x: keyof typeof allFontWeights) => `${allFontWeights[x]}`
+const fontWeights = (x: keyof typeof allFontWeights) => allFontWeights[x]
 
 export default fontWeights

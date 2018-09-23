@@ -2,18 +2,18 @@
 import dynamic from 'next/dynamic'
 
 export interface BundleTypes {
-  Welcome: {
+  'others/welcome': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
 }
 
 const bundles: BundleTypes = {
-  Welcome: {
+  'others/welcome': {
     // @ts-ignore - mdx import isn't typed correctly
-    en: dynamic(import('src/contents/Welcome.en.mdx')),
+    en: dynamic(import('src/contents/others/welcome.en.mdx')),
     // @ts-ignore - mdx import isn't typed correctly
-    jp: dynamic(import('src/contents/Welcome.jp.mdx'))
+    jp: dynamic(import('src/contents/others/welcome.jp.mdx'))
   }
 }
 

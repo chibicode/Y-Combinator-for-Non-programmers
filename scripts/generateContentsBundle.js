@@ -4,7 +4,7 @@ const fs = require('fs')
 const prettier = require('prettier')
 
 const regenerate = path => {
-  glob('./src/contents/**.+(en|jp).mdx', (err, files) => {
+  glob('./src/contents/**/*.+(en|jp).mdx', (err, files) => {
     const uniqueNames = [
       ...new Set(
         files.map(x =>
@@ -16,7 +16,7 @@ const regenerate = path => {
     const bundleInterfaceString = uniqueNames
       .map(
         name => `
-          ${name}: {
+          '${name}': {
             jp: React.ComponentType<any>
             en: React.ComponentType<any>
           }`
@@ -26,7 +26,7 @@ const regenerate = path => {
     const bundleObjectString = uniqueNames
       .map(
         name => `
-          ${name}: {
+          '${name}': {
             // @ts-ignore - mdx import isn't typed correctly
             en: dynamic(import('src/contents/${name}.en.mdx')),
             // @ts-ignore - mdx import isn't typed correctly
