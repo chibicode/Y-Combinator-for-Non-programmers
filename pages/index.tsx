@@ -1,6 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container from 'src/components/Container'
+import Content from 'src/components/Content'
 import Page from 'src/components/Page'
 import {
   colors,
@@ -12,19 +13,6 @@ import {
   ns,
   spaces
 } from 'src/lib/theme'
-
-const TextHighlight: React.SFC<{ children: React.ReactNode }> = ({
-  children
-}) => (
-  <span
-    className={css`
-      background: ${colors(`yellow200`)};
-      color: ${colors('grey900')};
-    `}
-  >
-    {children}
-  </span>
-)
 
 const Index: React.SFC<{}> = () => (
   <Page>
@@ -48,35 +36,21 @@ const Index: React.SFC<{}> = () => (
         <h1
           className={css`
             margin: 0;
-            color: ${colors('grey900')};
             font-size: ${fontSizes(32)};
-            font-weight: ${fontWeights(800)};
             ${ns(css`
               font-size: ${fontSizes(48)};
             `)};
           `}
         >
           <img
-            src="/static/images/logo-svg.svg"
+            src="/static/images/logo-svg-text.svg"
+            alt="Hoshiai"
             className={css`
-              width: 1.5em;
-              height: 1.5em;
-              vertical-align: middle;
-              transform: translateY(-0.1em);
-              margin-right: 0.2em;
+              height: 2em;
             `}
           />
-          Hello!
         </h1>
-        <p>
-          Welcome to <TextHighlight>Hoshiai</TextHighlight>. Our lessons teach{' '}
-          <TextHighlight>non-programmers</TextHighlight> how to think like
-          Computer Scientists.
-        </p>
-        <p>
-          There's <TextHighlight>no coding</TextHighlight> involved. And it's{' '}
-          <TextHighlight>free</TextHighlight>.
-        </p>
+        <Content name="welcome" />
         <p
           className={css`
             margin-bottom: 3em;
