@@ -2,18 +2,29 @@
 import dynamic from 'next/dynamic'
 
 export interface BundleTypes {
-  'others/Welcome': {
+  'home/ComingSoon': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
+  'home/Welcome': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
 }
 
 const bundles: BundleTypes = {
-  'others/Welcome': {
+  'home/ComingSoon': {
     // @ts-ignore - import isn't typed correctly
-    en: dynamic(import('src/contents/others/Welcome.en')),
+    en: dynamic(import('src/contents/home/ComingSoon.en')),
     // @ts-ignore - import isn't typed correctly
-    jp: dynamic(import('src/contents/others/Welcome.jp'))
+    jp: dynamic(import('src/contents/home/ComingSoon.jp'))
+  },
+  'home/Welcome': {
+    // @ts-ignore - import isn't typed correctly
+    en: dynamic(import('src/contents/home/Welcome.en')),
+    // @ts-ignore - import isn't typed correctly
+    jp: dynamic(import('src/contents/home/Welcome.jp'))
   }
 }
 

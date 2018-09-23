@@ -55,16 +55,9 @@ const Index: React.SFC<{}> = () => (
               `}
             />
           </h1>
-          <Content name="others/Welcome" />
+          <Content name="home/Welcome" />
         </div>
-        <p
-          className={css`
-            color: ${colors('grey500')};
-          `}
-        >
-          More lessons coming soon. Leave your email below and we'll let you
-          know!
-        </p>
+        <Content name="home/ComingSoon" />
       </div>
     </Container>
   </Page>
