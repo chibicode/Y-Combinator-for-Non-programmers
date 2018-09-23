@@ -31,7 +31,7 @@
     "en": "APP_LOCALE=en next -p 3000",
     "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents\"",
     "contents": "node ./scripts/generateContentsBundle.js",
-    "build": "next build && next export",
+    "build": "yarn contents && next build && next export",
     "tsc-watch": "tsc -w --noEmit",
     "test": "jest"
   },
@@ -44,7 +44,6 @@
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
     "babel-plugin-emotion": "^9.2.10",
-    "babel-plugin-transform-define": "^1.3.0",
     "chokidar": "^2.0.4",
     "concurrently": "^4.0.1",
     "glob": "^7.1.3",

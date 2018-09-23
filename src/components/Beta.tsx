@@ -28,7 +28,6 @@ const Beta: React.SFC<{}> = () => (
           </div>
         ))}
       </Flex>
-      {process.env.APP_LOCALE}
     </Container>
   </GlobalStyles>
 )

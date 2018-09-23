@@ -3,7 +3,7 @@ const withCSS = require('@zeit/next-css')
 const withMdx = require('@zeit/next-mdx')()
 const path = require('path')
 
-module.exports = withMdx(
+const config = withMdx(
   withCSS(
     withTypescript({
       webpack(config, options) {
@@ -16,3 +16,9 @@ module.exports = withMdx(
     })
   )
 )
+
+config.publicRuntimeConfig = {
+  locale: process.env.APP_LOCALE
+}
+
+module.exports = config
