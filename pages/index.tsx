@@ -19,7 +19,7 @@ const Index: React.SFC<{}> = () => (
     <Container>
       <div
         className={css`
-          color: ${colors('grey800')};
+          color: ${colors('indigo300')};
           padding: ${spaces(32)} 0;
           line-height: ${lineHeights(1.25)};
           font-size: ${fontSizes(24)};
@@ -48,7 +48,7 @@ const Index: React.SFC<{}> = () => (
             `}
           >
             <img
-              src="/static/images/logo-svg-text.svg"
+              src="/static/images/logo-svg-text-indigo.svg"
               alt="Hoshiai"
               className={css`
                 height: 2em;
@@ -57,7 +57,13 @@ const Index: React.SFC<{}> = () => (
           </h1>
           <Content name="home/Welcome" />
         </div>
-        <Content name="home/ComingSoon" />
+        <p
+          className={css`
+            color: ${colors('indigo200')};
+          `}
+        >
+          <Content name="home/ComingSoon" />
+        </p>
       </div>
     </Container>
   </Page>
