@@ -50,7 +50,7 @@ const Index: React.SFC<{}> = () => (
             `}
           />
         </h1>
-        <Content name="welcome" />
+        <Content name="Welcome" />
         <p
           className={css`
             margin-bottom: 3em;
