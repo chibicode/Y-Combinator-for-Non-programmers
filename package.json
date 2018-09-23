@@ -27,8 +27,9 @@
     "typescript": "^3.0.3"
   },
   "scripts": {
-    "jp": "APP_LOCALE=jp next",
-    "en": "APP_LOCALE=en next",
+    "jp": "APP_LOCALE=jp next -p 3001",
+    "en": "APP_LOCALE=en next -p 3000",
+    "dev": "concurrently \"yarn jp\" \"yarn en\"",
     "build": "next build && next export",
     "tsc-watch": "tsc -w --noEmit",
     "test": "jest"
@@ -43,6 +44,7 @@
     "@types/react-dom": "^16.0.7",
     "babel-plugin-emotion": "^9.2.10",
     "babel-plugin-transform-define": "^1.3.0",
+    "concurrently": "^4.0.1",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
     "prettier-tslint": "^0.4.0",
