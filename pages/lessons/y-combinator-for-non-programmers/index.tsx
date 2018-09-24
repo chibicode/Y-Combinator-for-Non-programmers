@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 import Container from 'src/components/Container'
+import Emoji from 'src/components/Emoji'
 import Page from 'src/components/Page'
 import t from 'src/lib/t'
 import {
@@ -59,7 +60,7 @@ const Index: React.SFC<{}> = () => (
             font-size: ${fontSizes(32)};
             font-weight: ${fontWeights(800)};
             letter-spacing: ${letterSpacings('title')};
-            margin: 0 auto;
+            margin: 0 auto ${spaces(24)};
             text-align: center;
             ${ns(css`
               width: ${columnWidths(10)};
@@ -69,6 +70,17 @@ const Index: React.SFC<{}> = () => (
         >
           {t('lesson1Title')}
         </h1>
+        <div
+          className={css`
+            text-align: center;
+            font-size: ${fontSizes(64)};
+            ${ns(css`
+              font-size: ${fontSizes(80)};
+            `)};
+          `}
+        >
+          <Emoji>🤔</Emoji> <Emoji>🤔</Emoji> <Emoji>🤔</Emoji>
+        </div>
       </div>
     </Container>
   </Page>

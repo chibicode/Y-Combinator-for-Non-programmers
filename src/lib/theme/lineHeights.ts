@@ -6,7 +6,7 @@ export const allLineHeights = {
   1.5: 1.5
 }
 
-const lineHeightJpMultiplier = 1.25
+const lineHeightJpMultiplier = 1.2
 const multiplyLineHeight = (lineHeight: number) =>
   locale === 'jp' ? lineHeightJpMultiplier * lineHeight : lineHeight
 
