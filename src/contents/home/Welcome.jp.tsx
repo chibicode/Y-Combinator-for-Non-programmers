@@ -1,6 +1,7 @@
 import HomeLink from 'src/components/HomeLink'
 import TextHighlight from 'src/components/TextHighlight'
 import { yc } from 'src/lib/pathHelpers'
+import t from 'src/lib/t'
 
 export default () => (
   <>
@@ -14,7 +15,8 @@ export default () => (
       です。
     </p>
     <p>
-      <HomeLink linkProps={{ href: yc() }}>リンク</HomeLink>
+      レッスン第一弾はこちら:{' '}
+      <HomeLink linkProps={{ href: yc() }}>{t('lesson1Title')}</HomeLink>
     </p>
   </>
 )
