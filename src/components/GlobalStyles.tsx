@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import 'modern-normalize'
 import React from 'react'
 import 'src/lib/nProgressStyles'
-import colors from 'src/lib/theme/colors'
+import { colors, lineHeights } from 'src/lib/theme'
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
   children
@@ -10,6 +10,7 @@ const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
   <div
     className={css`
       color: ${colors('grey800')};
+      line-height: ${lineHeights(1.5)};
     `}
   >
     {children}

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import Container from 'src/components/Container'
 import Page from 'src/components/Page'
+import t from 'src/lib/t'
 import {
   colors,
   columnWidths,
@@ -18,7 +19,7 @@ import {
 const Index: React.SFC<{}> = () => (
   <Page>
     <Head>
-      <title key="title">Y Combinator for Non-Programmers | Hoshiai</title>
+      <title key="title">{t('lesson1Title')} | Hoshiai</title>
     </Head>
     <Container>
       <div
@@ -66,7 +67,7 @@ const Index: React.SFC<{}> = () => (
             `)};
           `}
         >
-          Y Combinator for Non-Programmers
+          {t('lesson1Title')}
         </h1>
       </div>
     </Container>
