@@ -12,7 +12,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>Hoshiai</title>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>

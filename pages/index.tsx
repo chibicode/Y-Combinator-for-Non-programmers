@@ -1,4 +1,5 @@
 import { css } from 'emotion'
+import Head from 'next/head'
 import React from 'react'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'

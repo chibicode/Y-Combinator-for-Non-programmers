@@ -23,6 +23,10 @@ const HomeLink: React.SFC<HomeLink> = ({
         font-weight: ${fontWeights(800)};
         color: ${colors('pink400')};
         text-decoration: underline;
+
+        &:hover {
+          background: ${colors('yellow200')};
+        }
       `}
     >
       {children}
