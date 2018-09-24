@@ -1,5 +1,6 @@
 import { css } from 'emotion'
 import Head from 'next/head'
+import Link from 'next/link'
 import React from 'react'
 import Container from 'src/components/Container'
 import Page from 'src/components/Page'
@@ -20,11 +21,39 @@ const Index: React.SFC<{}> = () => (
       <title key="title">Y Combinator for Non-Programmers | Hoshiai</title>
     </Head>
     <Container>
-      <div>
+      <div
+        className={css`
+          padding: ${spaces(24)} 0;
+          ${ns(css`
+            padding: ${spaces(32)} 0;
+          `)};
+        `}
+      >
+        <div
+          className={css`
+            text-align: center;
+            font-size: ${fontSizes(16)};
+            ${ns(css`
+              font-size: ${fontSizes(20)};
+            `)};
+          `}
+        >
+          <Link>
+            <a href="/">
+              <img
+                src="/static/images/logo-svg-text-indigo.svg"
+                alt="Hoshiai"
+                className={css`
+                  height: 2em;
+                `}
+              />
+            </a>
+          </Link>
+        </div>
         <h1
           className={css`
             color: ${colors('grey900')};
-            padding: ${spaces(32)} 0;
+            padding-top: ${spaces(32)};
             line-height: ${lineHeights(1.25)};
             font-size: ${fontSizes(32)};
             font-weight: ${fontWeights(800)};
@@ -34,7 +63,6 @@ const Index: React.SFC<{}> = () => (
             ${ns(css`
               width: ${columnWidths(10)};
               font-size: ${fontSizes(48)};
-              padding: ${spaces(64)} 0;
             `)};
           `}
         >
