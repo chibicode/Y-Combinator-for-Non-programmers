@@ -1,15 +1,16 @@
 import { css } from 'emotion'
+import 'modern-normalize'
 import React from 'react'
-import colors from 'src/lib/theme/colors'
-import fonts from 'src/lib/theme/fonts'
+import 'src/lib/nProgressStyles'
+import { colors, lineHeights } from 'src/lib/theme'
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
   children
 }) => (
   <div
     className={css`
-      font-family: ${fonts('sans')};
-      color: ${colors('gray800')};
+      color: ${colors('grey800')};
+      line-height: ${lineHeights(1.5)};
     `}
   >
     {children}

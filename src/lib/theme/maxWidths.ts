@@ -1,7 +1,7 @@
-const maxWidths = {
+const allMaxWidths = {
   1024: 1024
 }
 
-const maxWidthsFn = (x: keyof typeof maxWidths) => `${maxWidths[x]}px`
+const maxWidths = (x: keyof typeof allMaxWidths) => `${allMaxWidths[x]}px`
 
-export default maxWidthsFn
+export default maxWidths

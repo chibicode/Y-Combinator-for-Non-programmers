@@ -26,7 +26,7 @@ const ExpressionPrioritiesLabelDefault: React.SFC<
     <Flex>
       <FlexCenter
         className={css`
-          color: ${colors('gray400')};
+          color: ${colors('grey400')};
           font-size: ${fontSizes(11)};
           font-weight: bold;
           width: ${priorities.length > 1 ? 2 : 1.25}em;
@@ -34,12 +34,12 @@ const ExpressionPrioritiesLabelDefault: React.SFC<
           line-height: 1;
           ${position === 'topleft'
             ? css`
-                border-right: 2px solid ${colors('gray200')};
-                border-bottom: 2px solid ${colors('gray200')};
+                border-right: 2px solid ${colors('grey200')};
+                border-bottom: 2px solid ${colors('grey200')};
               `
             : css`
-                border-top: 2px solid ${colors('gray200')};
-                border-right: 2px solid ${colors('gray200')};
+                border-top: 2px solid ${colors('grey200')};
+                border-right: 2px solid ${colors('grey200')};
               `};
         `}
       >

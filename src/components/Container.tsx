@@ -8,7 +8,7 @@ const Container: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
     className={css`
       max-width: ${maxWidths(1024)};
       margin: 0 auto;
-      padding: ${spaces(16)} ${spaces(16)};
+      padding: 0 ${spaces(16)};
     `}
   >
     {children}

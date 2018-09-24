@@ -2,6 +2,6 @@ const allZIndices = {
   expressionPriorityNumberWrapperInactive: 10
 }
 
-const zIndexFn = (x: keyof typeof allZIndices) => `${allZIndices[x]}`
+const zIndices = (x: keyof typeof allZIndices) => allZIndices[x]
 
-export default zIndexFn
+export default zIndices

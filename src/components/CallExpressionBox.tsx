@@ -21,14 +21,14 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
   >
     <FlexCenter
       className={css`
-        border-bottom: 1px solid ${colors('gray300')};
+        border-bottom: 1px solid ${colors('grey300')};
       `}
     >
       <ExpressionBox expression={expression.arg} />
     </FlexCenter>
     <FlexCenter
       className={css`
-        border-top: 1px solid ${colors('gray300')};
+        border-top: 1px solid ${colors('grey300')};
       `}
     >
       <ExpressionBox expression={expression.func} />

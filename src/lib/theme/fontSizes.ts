@@ -5,13 +5,15 @@ export const allFontSizes = {
   16: 16,
   20: 20,
   24: 24,
+  28: 28,
   32: 32,
+  40: 40,
   48: 48,
   64: 64,
   72: 72,
   96: 96
 }
 
-const fontSizesFn = (x: keyof typeof allFontSizes) => `${allFontSizes[x]}px`
+const fontSizes = (x: keyof typeof allFontSizes) => `${allFontSizes[x]}px`
 
-export default fontSizesFn
+export default fontSizes

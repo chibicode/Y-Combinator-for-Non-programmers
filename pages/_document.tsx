@@ -12,11 +12,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>Hoshiai</title>
-          <link
-            href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i"
-            rel="stylesheet"
-          />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>
