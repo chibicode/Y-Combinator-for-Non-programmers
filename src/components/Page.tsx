@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import Favicon from 'src/components/Favicon'
 import GlobalStyles from 'src/components/GlobalStyles'
 
 const Page: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
@@ -14,6 +15,7 @@ const Page: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
         {/* Must fit in https://moz.com/learn/seo/title-tag */}
         Hoshiai: Great Computer Science Ideas for Non-Programmers
       </title>
+      <Favicon />
     </Head>
     {children}
   </GlobalStyles>
