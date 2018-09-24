@@ -41,9 +41,9 @@ const Index: React.SFC<{}> = () => (
           <h1
             className={css`
               margin: 0;
-              font-size: ${fontSizes(32)};
+              font-size: ${fontSizes(28)};
               ${ns(css`
-                font-size: ${fontSizes(48)};
+                font-size: ${fontSizes(40)};
               `)};
             `}
           >
