@@ -1,5 +1,4 @@
 import { css } from 'emotion'
-import Head from 'next/head'
 import React from 'react'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
@@ -58,13 +57,13 @@ const Index: React.SFC<{}> = () => (
           </h1>
           <Content name="home/Welcome" />
         </div>
-        <p
+        <div
           className={css`
             color: ${colors('indigo200')};
           `}
         >
           <Content name="home/ComingSoon" />
-        </p>
+        </div>
       </div>
     </Container>
   </Page>

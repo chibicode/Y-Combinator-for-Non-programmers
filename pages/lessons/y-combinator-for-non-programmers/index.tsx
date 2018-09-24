@@ -38,8 +38,8 @@ const Index: React.SFC<{}> = () => (
             `)};
           `}
         >
-          <Link>
-            <a href="/">
+          <Link href="/">
+            <a>
               <img
                 src="/static/images/logo-svg-text-indigo.svg"
                 alt="Hoshiai"
