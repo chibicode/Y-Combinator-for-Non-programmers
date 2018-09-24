@@ -65,9 +65,13 @@ const regenerate = path => {
   })
 }
 
-chokidar
-  .watch('./src/contents/**/*.tsx', { ignoreInitial: true })
-  .on('add', path => regenerate(path))
-chokidar.watch('./src/contents/**/*.tsx').on('unlink', path => regenerate(path))
+if (process.argv[2] === 'watch') {
+  chokidar
+    .watch('./src/contents/**/*.tsx', { ignoreInitial: true })
+    .on('add', path => regenerate(path))
+  chokidar
+    .watch('./src/contents/**/*.tsx')
+    .on('unlink', path => regenerate(path))
+}
 
 regenerate()
