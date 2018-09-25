@@ -4,7 +4,7 @@ export default () => (
   <>
     <p>
       <strong>Question:</strong> Which of the following is/are the correct
-      description(s) of the term <strong>"Y Combinator"</strong>?
+      description(s) of the term <strong>“Y Combinator”</strong>?
     </p>
     <Ol>
       <OlLi>
