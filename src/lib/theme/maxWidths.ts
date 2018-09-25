@@ -1,5 +1,6 @@
 const allMaxWidths = {
-  sm: 768,
+  sm: (1024 / 12) * 9,
+  md: (1024 / 12) * 10,
   lg: 1024
 }
 

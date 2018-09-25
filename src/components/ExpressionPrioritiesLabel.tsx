@@ -27,7 +27,7 @@ const ExpressionPrioritiesLabelDefault: React.SFC<
       <FlexCenter
         className={css`
           color: ${colors('grey400')};
-          font-size: ${fontSizes(11)};
+          font-size: ${fontSizes(0.7)};
           font-weight: bold;
           width: ${priorities.length > 1 ? 2 : 1.25}em;
           height: 1.5em;

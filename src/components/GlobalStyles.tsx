@@ -1,8 +1,22 @@
-import { css } from 'emotion'
+import { css, injectGlobal } from 'emotion'
 import 'modern-normalize'
 import React from 'react'
 import 'src/lib/nProgressStyles'
 import { colors, lineHeights } from 'src/lib/theme'
+import { NOT_SMALL } from 'src/lib/theme/ns'
+
+// tslint:disable-next-line:no-unused-expression
+injectGlobal`
+  html {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: ${NOT_SMALL}) {
+    html {
+      font-size: 21px;
+    }
+  }
+`
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
   children
