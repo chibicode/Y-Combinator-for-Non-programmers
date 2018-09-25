@@ -66,7 +66,10 @@ const Index: React.SFC<{}> = () => (
           className={css`
             text-align: center;
             margin-bottom: ${spaces(1.5)};
-            font-size: ${fontSizes(4)};
+            font-size: ${fontSizes(3)};
+            ${ns(css`
+              font-size: ${fontSizes(4)};
+            `)};
           `}
         >
           <Emoji>🤔</Emoji> <Emoji>🤔</Emoji> <Emoji>🤔</Emoji>

@@ -9,12 +9,13 @@ export const Strong: React.SFC<
 export const Em: React.SFC<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
 > = ({ className, ...props }) => (
-  <Em
+  <em
     {...props}
     className={cx(
       className,
       css`
-        background: ${colors('yellow200')};
+        font-style: normal;
+        background: ${colors('pink50')};
       `
     )}
   />

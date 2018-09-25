@@ -13,7 +13,6 @@
     "emotion": "^9.2.10",
     "emotion-server": "^9.2.10",
     "emotion-theming": "^9.2.9",
-    "grid-styled": "^5.0.2",
     "immer": "^1.7.2",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
@@ -22,8 +21,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.10",
-    "twemoji": "^11.0.1",
-    "typescript": "^3.0.3"
+    "twemoji": "^11.0.1"
   },
   "scripts": {
     "jp": "APP_LOCALE=jp next -p 3001",
@@ -55,6 +53,7 @@
     "ts-jest": "^23.10.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.0.3"
   }
 }
