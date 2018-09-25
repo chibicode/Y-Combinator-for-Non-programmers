@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
-import Emoji from 'src/components/Emoji'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import Page from 'src/components/Page'
 import t from 'src/lib/t'
 import {
@@ -62,18 +62,7 @@ const Index: React.SFC<{}> = () => (
         >
           {t('lesson1Title')}
         </h1>
-        <div
-          className={css`
-            text-align: center;
-            margin-bottom: ${spaces(1.5)};
-            font-size: ${fontSizes(3)};
-            ${ns(css`
-              font-size: ${fontSizes(4)};
-            `)};
-          `}
-        >
-          <Emoji>🤔</Emoji> <Emoji>🤔</Emoji> <Emoji>🤔</Emoji>
-        </div>
+        <EmojiSeparator size="lg" emojis={['🤔', '🤔', '🤔']} />
       </div>
     </Container>
     <Container size="sm">

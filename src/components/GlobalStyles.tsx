@@ -16,6 +16,10 @@ injectGlobal`
       font-size: 21px;
     }
   }
+
+  a {
+    color: inherit;
+  }
 `
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({

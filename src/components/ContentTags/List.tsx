@@ -21,21 +21,15 @@ const commonListItemCss = css`
   }
 `
 
-export const Ul: React.SFC<
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLUListElement>,
-    HTMLUListElement
-  >
-> = ({ className, ...props }) => (
-  <ul {...props} className={cx(className, commonListCss)} />
-)
+export const Ul: React.SFC<JSX.IntrinsicElements['ul']> = ({
+  className,
+  ...props
+}) => <ul {...props} className={cx(className, commonListCss)} />
 
-export const Ol: React.SFC<
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLOListElement>,
-    HTMLOListElement
-  >
-> = ({ className, ...props }) => (
+export const Ol: React.SFC<JSX.IntrinsicElements['ol']> = ({
+  className,
+  ...props
+}) => (
   <ol
     {...props}
     className={cx(
@@ -48,9 +42,10 @@ export const Ol: React.SFC<
   />
 )
 
-export const UlLi: React.SFC<
-  React.DetailedHTMLProps<React.HTMLAttributes<HTMLLIElement>, HTMLLIElement>
-> = ({ className, ...props }) => (
+export const UlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
+  className,
+  ...props
+}) => (
   <li
     {...props}
     className={cx(
@@ -68,9 +63,10 @@ export const UlLi: React.SFC<
   />
 )
 
-export const OlLi: React.SFC<
-  React.DetailedHTMLProps<React.HTMLAttributes<HTMLLIElement>, HTMLLIElement>
-> = ({ className, ...props }) => (
+export const OlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
+  className,
+  ...props
+}) => (
   <li
     {...props}
     className={cx(

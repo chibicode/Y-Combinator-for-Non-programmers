@@ -2,9 +2,10 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import { colors } from 'src/lib/theme'
 
-export const Hr: React.SFC<
-  React.DetailedHTMLProps<React.HTMLAttributes<HTMLHRElement>, HTMLHRElement>
-> = ({ className, ...props }) => (
+export const Hr: React.SFC<JSX.IntrinsicElements['hr']> = ({
+  className,
+  ...props
+}) => (
   <hr
     {...props}
     className={cx(

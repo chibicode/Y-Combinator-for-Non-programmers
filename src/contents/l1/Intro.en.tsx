@@ -1,5 +1,7 @@
 import {
+  Blockquote,
   Em,
+  ExternalLink,
   Hr,
   Ol,
   OlLi,
@@ -8,6 +10,7 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export default () => (
   <>
@@ -43,7 +46,7 @@ export default () => (
         Combinator is a startup accelerator (choice 1). But{' '}
         <Em>
           did you know that Y Combinator (the startup accelerator) is actually
-          named after a very cool concept in Computer Science
+          named after a cool concept in Computer Science
         </Em>{' '}
         (choices 2 and 3)? If you didn’t know that, I think you’ll like this
         article.
@@ -63,10 +66,51 @@ export default () => (
       <UlLi>
         <Strong>If you’ve never heard of the term “Y Combinator”:</Strong>{' '}
         That’s great! <Em>I’m writing this article for someone like you.</Em> If
-        you’re interested in learning a very cool concept in Computer Science, I
-        think you’ll like this article. Don’t worry:{' '}
+        you’re interested in learning about a very cool concept in Computer
+        Science, I think you’ll like this article. Don’t worry:{' '}
         <Em>there won't be any coding involved</Em>.
       </UlLi>
     </Ul>
+    <EmojiSeparator emojis={['😉', '👍', '❤️']} />
+    <P>
+      <Strong>Before we begin, here’s some backstory:</Strong> In 2005, a group
+      of successful entrepreneurs started training (and investing in) young
+      startup founders. This startup “accelerator” became known as “Y
+      Combinator”.{' '}
+      <ExternalLink href="http://www.ycombinator.com/press/">
+        As of writing (Fall 2018)
+      </ExternalLink>
+      , Y Combinator has invested in roughly 2000 startups, and the total
+      valuation of all Y Combinator companies is roughly{' '}
+      <Em>$100 billion dollars</Em>. <Strong>Example:</Strong> Dropbox graduated
+      from Y Combinator{' '}
+      <ExternalLink href="https://www.ycombinator.com/apply/dropbox/">
+        in 2017
+      </ExternalLink>{' '}
+      and became a public company in 2018.
+    </P>
+    <P>
+      <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what
+      Paul Graham, one of the founders of Y Combinator, said in{' '}
+      <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
+        an interview
+      </ExternalLink>
+      :
+    </P>
+    <Blockquote>
+      <P>
+        <Strong>
+          <Em>[Y Combinator is] a programming trick.</Em>
+        </Strong>{' '}
+        ... I wanted to call it Y Combinator just because I thought the Y
+        Combinator was a really cool thing. So it would be the perfect name for{' '}
+        <Em>picking out the kind of people that we wanted</Em>. Hackers would
+        look at this and think, “That’s so cool. They’re named after the Y
+        Combinator. There must be something going on here.” And suits would look
+        at it and think, “Y Combinator, what’s that?” That was what we wanted.{' '}
+        <Em>We wanted hackers to notice us, and suits, we didn’t care</Em>.
+      </P>
+    </Blockquote>
+    <EmojiSeparator emojis={['😎', '🆚', '👔']} />
   </>
 )
