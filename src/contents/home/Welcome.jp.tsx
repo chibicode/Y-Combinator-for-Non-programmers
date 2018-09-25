@@ -13,11 +13,10 @@ export default () => (
       でも大歓迎。
     </p>
     <p>
-      レッスン第一弾はこちら:{' '}
-      <HomeLink linkProps={{ href: yc() }}>{t('lesson1Title')}</HomeLink>。
-      今なら
-      <TextHighlight>無料</TextHighlight>
-      です!
+      レッスン第一弾は「
+      <HomeLink linkProps={{ href: yc() }}>{t('lesson1Title')}</HomeLink>
+      」です。今なら
+      <TextHighlight>無料</TextHighlight>。
     </p>
   </>
 )

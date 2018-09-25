@@ -3,16 +3,26 @@ import React from 'react'
 import maxWidths from 'src/lib/theme/maxWidths'
 import spaces from 'src/lib/theme/spaces'
 
-const Container: React.SFC<{ children: React.ReactNode }> = ({ children }) => (
-  <div
+interface ContainerProps {
+  children: React.ReactNode
+  Component?: React.ComponentType | string
+  size: 'sm' | 'lg'
+}
+
+const Container: React.SFC<ContainerProps> = ({
+  children,
+  Component = 'div',
+  size
+}) => (
+  <Component
     className={css`
-      max-width: ${maxWidths(1024)};
+      max-width: ${maxWidths(size)};
       margin: 0 auto;
-      padding: 0 ${spaces(16)};
+      padding: 0 ${spaces(20)};
     `}
   >
     {children}
-  </div>
+  </Component>
 )
 
 export default Container

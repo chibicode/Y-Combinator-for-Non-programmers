@@ -5,7 +5,6 @@ import Content from 'src/components/Content'
 import Page from 'src/components/Page'
 import {
   colors,
-  columnWidths,
   fontSizes,
   fontWeights,
   letterSpacings,
@@ -16,19 +15,18 @@ import {
 
 const Index: React.SFC<{}> = () => (
   <Page>
-    <Container>
+    <Container size="sm">
       <div
         className={css`
           color: ${colors('indigo300')};
           padding: ${spaces(32)} 0;
-          line-height: ${lineHeights(1.25)};
-          font-size: ${fontSizes(24)};
+          line-height: ${lineHeights(1.3)};
+          font-size: ${fontSizes(20)};
           font-weight: ${fontWeights(600)};
           letter-spacing: ${letterSpacings('title')};
           margin: 0 auto;
           ${ns(css`
-            width: ${columnWidths(10)};
-            font-size: ${fontSizes(32)};
+            font-size: ${fontSizes(28)};
             padding: ${spaces(96)} 0;
           `)};
         `}

@@ -1,7 +1,7 @@
 import { css } from 'emotion'
 
 const ns = (cls: string) => css`
-  @media (min-width: 768px) {
+  @media screen and (min-width: 48em) {
     ${cls};
   }
 `

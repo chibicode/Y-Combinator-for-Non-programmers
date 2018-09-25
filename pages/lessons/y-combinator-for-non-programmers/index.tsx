@@ -8,7 +8,6 @@ import Page from 'src/components/Page'
 import t from 'src/lib/t'
 import {
   colors,
-  columnWidths,
   fontSizes,
   fontWeights,
   letterSpacings,
@@ -22,12 +21,12 @@ const Index: React.SFC<{}> = () => (
     <Head>
       <title key="title">{t('lesson1Title')} | Hoshiai</title>
     </Head>
-    <Container>
+    <Container size="lg">
       <div
         className={css`
-          padding: ${spaces(24)} 0;
+          padding-top: ${spaces(24)};
           ${ns(css`
-            padding: ${spaces(32)} 0;
+            padding-top: ${spaces(32)};
           `)};
         `}
       >
@@ -56,15 +55,15 @@ const Index: React.SFC<{}> = () => (
           className={css`
             color: ${colors('grey900')};
             padding-top: ${spaces(32)};
-            line-height: ${lineHeights(1.25)};
+            line-height: ${lineHeights(1.3)};
             font-size: ${fontSizes(32)};
             font-weight: ${fontWeights(800)};
             letter-spacing: ${letterSpacings('title')};
-            margin: 0 auto ${spaces(24)};
+            margin: 0 auto ${spaces(32)};
             text-align: center;
             ${ns(css`
-              width: ${columnWidths(10)};
               font-size: ${fontSizes(48)};
+              margin: 0 auto ${spaces(40)};
             `)};
           `}
         >
@@ -73,13 +72,34 @@ const Index: React.SFC<{}> = () => (
         <div
           className={css`
             text-align: center;
+            margin-bottom: ${spaces(24)};
             font-size: ${fontSizes(64)};
             ${ns(css`
+              margin-bottom: ${spaces(32)};
               font-size: ${fontSizes(80)};
             `)};
           `}
         >
           <Emoji>🤔</Emoji> <Emoji>🤔</Emoji> <Emoji>🤔</Emoji>
+        </div>
+      </div>
+    </Container>
+    <Container size="sm">
+      <div>
+        <div
+          className={css`
+            ${ns(css`
+              font-size: ${fontSizes(20)};
+              margin: 0 auto;
+            `)};
+          `}
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
+            pariatur fuga maxime, delectus culpa atque ea ratione deleniti,
+            laudantium id sit mollitia illo enim ducimus illum quos vitae,
+            consequatur neque.
+          </p>
         </div>
       </div>
     </Container>
