@@ -39,8 +39,8 @@ export default () => (
     </P>
     <Ul>
       <UlLi>
-        <Strong>If you’re in the tech industry:</Strong> You might have heard
-        that Y Combinator is a startup accelerator (choice 1). But{' '}
+        <Strong>If you’re in the tech industry:</Strong> You might know that Y
+        Combinator is a startup accelerator (choice 1). But{' '}
         <Em>
           did you know that Y Combinator (the startup accelerator) is actually
           named after a very cool concept in Computer Science
@@ -49,8 +49,9 @@ export default () => (
         article.
       </UlLi>
       <UlLi>
-        <Strong>If you’re a programmer:</Strong> You might have heard about Y
-        Combinator in a programming context. But{' '}
+        <Strong>If you’re a programmer:</Strong> You might know that Y
+        Combinator (in programming) is some kind of a functional programming
+        concept. But{' '}
         <Em>
           can you explain what Y Combinator (in programming) is to a
           non-programmer
@@ -61,8 +62,9 @@ export default () => (
       </UlLi>
       <UlLi>
         <Strong>If you’ve never heard of the term “Y Combinator”:</Strong>{' '}
-        That’s great! If you’re interested in learning a very cool concept in
-        Computer Science, I think you’ll like this article. Don’t worry:{' '}
+        That’s great! <Em>I’m writing this article for someone like you.</Em> If
+        you’re interested in learning a very cool concept in Computer Science, I
+        think you’ll like this article. Don’t worry:{' '}
         <Em>there won't be any coding involved</Em>.
       </UlLi>
     </Ul>
