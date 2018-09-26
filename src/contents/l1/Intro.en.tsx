@@ -10,7 +10,9 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
+import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <>
@@ -34,7 +36,7 @@ export default () => (
         Y Combinator is <Em>a fixed-point combinator</Em>.
       </OlLi>
     </Ol>
-    <Hr />
+    <EmojiSeparator emojis={['1️⃣', '2️⃣', '3️⃣']} Component={P} />
     <P>
       <Strong>
         Answer: <Em>1, 2, and 3 are all correct</Em>.
@@ -130,12 +132,15 @@ export default () => (
         Can non-programmers learn what Y Combinator (in programming) is?
       </Strong>{' '}
       The answer is <Em>Yes</Em>. I just made an interactive tutorial where
-      anyone can learn what Y Combinator (in programming) is.{' '}
-      <Em>There’s no coding involved</Em>; rather, you'll learn by{' '}
-      <Em>solving puzzles</Em>.
+      anyone can learn what Y Combinator is. <Em>There’s no coding involved</Em>
+      ; rather, you'll learn by <Em>solving puzzles</Em>.
     </P>
     <P>
-      <Strong>So:</Strong> If you're interested, please read on!
+      <Strong>So:</Strong> If you're interested in learning about Y Combinator,
+      please read on!
     </P>
+    <NextLessonButton>
+      Ok, Let's Go! <Emoji>👍</Emoji>
+    </NextLessonButton>
   </>
 )
