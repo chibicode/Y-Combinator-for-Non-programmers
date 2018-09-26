@@ -16,7 +16,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
   <FlexCenter
     className={css`
       flex: 1;
-      padding: ${spaces(8)} ${spaces(12)};
+      padding: ${spaces(0.5)} ${spaces(0.75)};
     `}
   >
     <Emoji>{letterEmojiMapping[expression.name]}</Emoji>

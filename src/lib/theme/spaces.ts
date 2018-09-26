@@ -1,22 +1,22 @@
 const allSpaces = {
   0: 0,
+  0.25: 0.25,
+  0.5: 0.5,
+  0.75: 0.75,
+  1: 1,
+  1.25: 1.25,
+  1.5: 1.5,
+  1.75: 1.75,
+  2: 2,
+  2.5: 2.5,
+  3: 3,
   4: 4,
-  8: 8,
-  12: 12,
-  16: 16,
-  20: 20,
-  24: 24,
-  32: 32,
-  40: 40,
-  48: 48,
-  64: 64,
-  80: 80,
-  96: 96,
-  112: 112,
-  128: 128,
-  160: 160
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8
 }
 
-const spaces = (x: keyof typeof allSpaces) => `${allSpaces[x]}px`
+const spaces = (x: keyof typeof allSpaces) => `${allSpaces[x]}rem`
 
 export default spaces

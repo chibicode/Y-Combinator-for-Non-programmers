@@ -6,34 +6,31 @@
     "@fortawesome/pro-regular-svg-icons": "^5.3.1",
     "@fortawesome/pro-solid-svg-icons": "^5.3.1",
     "@fortawesome/react-fontawesome": "^0.1.3",
-    "@material-ui/core": "^3.1.0",
+    "@material-ui/core": "^3.1.1",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "color": "^3.0.0",
     "emotion": "^9.2.10",
     "emotion-server": "^9.2.10",
     "emotion-theming": "^9.2.9",
-    "grid-styled": "^5.0.2",
     "immer": "^1.7.2",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
-    "next": "7.0.0",
+    "next": "7.0.1-canary.0",
     "nprogress": "^0.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.10",
-    "twemoji": "^11.0.1",
-    "typescript": "^3.0.3"
+    "twemoji": "^11.0.1"
   },
   "scripts": {
     "jp": "APP_LOCALE=jp next -p 3001",
     "en": "APP_LOCALE=en next -p 3000",
-    "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\" \"yarn tsc-watch\"",
+    "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
-    "build": "yarn tsc && yarn contents && next build && next export",
-    "tsc-watch": "tsc -w --noEmit --preserveWatchOutput",
-    "tsc": "tsc --noEmit",
+    "build": "tsc && yarn contents && next build && next export",
+    "type-check": "tsc -w",
     "test": "jest"
   },
   "devDependencies": {
@@ -41,7 +38,7 @@
     "@types/jest": "^23.3.2",
     "@types/lodash": "^4.14.116",
     "@types/material-ui": "^0.21.5",
-    "@types/next": "^6.1.7",
+    "@types/next": "^6.1.8",
     "@types/nprogress": "^0.0.29",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
@@ -55,6 +52,7 @@
     "ts-jest": "^23.10.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.0.3"
   }
 }

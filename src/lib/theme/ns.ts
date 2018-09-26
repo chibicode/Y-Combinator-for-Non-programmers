@@ -1,7 +1,9 @@
 import { css } from 'emotion'
 
+export const NOT_SMALL = '48em'
+
 const ns = (cls: string) => css`
-  @media (min-width: 768px) {
+  @media screen and (min-width: ${NOT_SMALL}) {
     ${cls};
   }
 `

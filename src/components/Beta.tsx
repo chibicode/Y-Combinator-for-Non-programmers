@@ -10,7 +10,7 @@ import spaces from 'src/lib/theme/spaces'
 
 const Beta: React.SFC<{}> = () => (
   <GlobalStyles>
-    <Container>
+    <Container size="lg">
       <Flex
         className={css`
           flex-direction: column;
@@ -20,7 +20,7 @@ const Beta: React.SFC<{}> = () => (
         {activeTestCases.map((e, index) => (
           <div
             className={css`
-              margin-bottom: ${spaces(12)};
+              margin-bottom: ${spaces(0.75)};
             `}
             key={index}
           >

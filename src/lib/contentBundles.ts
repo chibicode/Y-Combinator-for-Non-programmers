@@ -11,6 +11,11 @@ export interface BundleTypes {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
+
+  'l1/Intro': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
 }
 
 const bundles: BundleTypes = {
@@ -25,6 +30,12 @@ const bundles: BundleTypes = {
     en: dynamic(import('src/contents/home/Welcome.en')),
     // @ts-ignore - import isn't typed correctly
     jp: dynamic(import('src/contents/home/Welcome.jp'))
+  },
+  'l1/Intro': {
+    // @ts-ignore - import isn't typed correctly
+    en: dynamic(import('src/contents/l1/Intro.en')),
+    // @ts-ignore - import isn't typed correctly
+    jp: dynamic(import('src/contents/l1/Intro.jp'))
   }
 }
 

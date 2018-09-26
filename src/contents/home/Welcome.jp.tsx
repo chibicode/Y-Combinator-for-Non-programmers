@@ -6,17 +6,17 @@ import t from 'src/lib/t'
 export default () => (
   <>
     <p>
-      Hoshiaiは、
+      Hoshiaiは、 プログラミング的な思考法を
       <TextHighlight>コードを書かずに</TextHighlight>
-      コンピューターサイエンスの考え方を学ぶことができるサイトです。
+      学べるサイトです。
       <TextHighlight>プログラミング未経験</TextHighlight>
-      でも大歓迎。もちろん
-      <TextHighlight>無料</TextHighlight>
-      です。
+      でも大歓迎。
     </p>
     <p>
-      レッスン第一弾はこちら:{' '}
-      <HomeLink linkProps={{ href: yc() }}>{t('lesson1Title')}</HomeLink>
+      レッスン第一弾は「
+      <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>
+      」です。今なら
+      <TextHighlight>無料</TextHighlight>。
     </p>
   </>
 )
