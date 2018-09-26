@@ -90,8 +90,8 @@ export default () => (
       and became a public company in 2018.
     </P>
     <P>
-      <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what
-      Paul Graham, one of the founders of Y Combinator, said in{' '}
+      <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what{' '}
+      <Em>Paul Graham, one of the founders of Y Combinator</Em>, said in{' '}
       <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
         an interview
       </ExternalLink>
@@ -112,5 +112,14 @@ export default () => (
         <Em>We wanted hackers to notice us, and suits, we didn’t care</Em>.
       </P>
     </Blockquote>
+    <P>
+      <Strong>Summary:</Strong> They wanted to invest in{' '}
+      <Em>programmer-turned-entrepreneurs, rather than in businesspeople</Em>.
+      To attract programmers, they named it “Y Combinator”, after a cool
+      programming trick.
+    </P>
+    <P>
+      <Strong>But:</Strong>
+    </P>
   </>
 )
