@@ -28,7 +28,7 @@ const EmojiSeparator: React.SFC<EmojiSeparatorProps> = ({
   >
     {emojis.map((emoji, index) => (
       <>
-        <Emoji key={index}>{emoji}</Emoji>{' '}
+        <Emoji key={`${emoji}${index}`}>{emoji}</Emoji>{' '}
       </>
     ))}
   </Component>
