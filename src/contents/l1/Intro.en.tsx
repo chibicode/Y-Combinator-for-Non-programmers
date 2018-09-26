@@ -91,7 +91,7 @@ export default () => (
     </P>
     <P>
       <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what{' '}
-      <Em>Paul Graham, one of the founders of Y Combinator</Em>, said in{' '}
+      <Em>Paul Graham</Em>, one of the founders of Y Combinator, said in{' '}
       <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
         an interview
       </ExternalLink>
@@ -113,13 +113,29 @@ export default () => (
       </P>
     </Blockquote>
     <P>
-      <Strong>Summary:</Strong> They wanted to invest in{' '}
-      <Em>programmer-turned-entrepreneurs, rather than in businesspeople</Em>.
-      To attract programmers, they named it “Y Combinator”, after a cool
-      programming trick.
+      <Strong>Summary:</Strong> They wanted to invest in entrepreneurs who were
+      good programmers (hackers) and <Em>avoid non-programmers</Em>. To attract
+      programmers, they named it “Y Combinator”, after a cool programming trick.
     </P>
     <P>
-      <Strong>But:</Strong>
+      <Strong>But I don’t like this mindset.</Strong> I don’t like it when
+      programmers say, <Em>“Oh, non-programmers won’t understand this idea”</Em>{' '}
+      and refuse to explain it in a way non-programmers understand. I think this
+      kind of a mindset is harmful, especially as the software (especially AI)
+      is changing the world faster than ever.
+    </P>
+    <EmojiSeparator emojis={['🤖', '🤔', '🤖']} Component={P} />
+    <P>
+      <Strong>
+        Can non-programmers learn what Y Combinator (in programming) is?
+      </Strong>{' '}
+      The answer is <Em>Yes</Em>. I just made an interactive tutorial where
+      anyone can learn what Y Combinator (in programming) is.{' '}
+      <Em>There’s no coding involved</Em>; rather, you'll learn by{' '}
+      <Em>solving puzzles</Em>.
+    </P>
+    <P>
+      <Strong>So:</Strong> If you're interested, please read on!
     </P>
   </>
 )

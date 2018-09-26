@@ -16,7 +16,7 @@ export const Em: React.SFC<JSX.IntrinsicElements['em']> = ({
       className,
       css`
         font-style: normal;
-        background: ${colors('pink50')};
+        background: ${colors('yellow100')};
       `
     )}
   />
