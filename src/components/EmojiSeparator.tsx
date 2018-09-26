@@ -6,13 +6,15 @@ import { fontSizes, ns, spaces } from 'src/lib/theme'
 interface EmojiSeparatorProps {
   emojis: string[]
   size?: 'md' | 'lg'
+  Component?: React.ComponentType | string
 }
 
 const EmojiSeparator: React.SFC<EmojiSeparatorProps> = ({
   emojis,
-  size = 'md'
+  size = 'md',
+  Component = 'div'
 }) => (
-  <div
+  <Component
     className={css`
       text-align: center;
       margin: ${spaces(1.5)} 0;
@@ -27,7 +29,7 @@ const EmojiSeparator: React.SFC<EmojiSeparatorProps> = ({
         <Emoji key={index}>{emoji}</Emoji>{' '}
       </>
     ))}
-  </div>
+  </Component>
 )
 
 export default EmojiSeparator

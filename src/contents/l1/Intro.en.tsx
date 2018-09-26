@@ -98,6 +98,7 @@ export default () => (
       :
     </P>
     <Blockquote>
+      <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
       <P>
         <Strong>
           <Em>[Y Combinator is] a programming trick.</Em>
@@ -111,6 +112,5 @@ export default () => (
         <Em>We wanted hackers to notice us, and suits, we didn’t care</Em>.
       </P>
     </Blockquote>
-    <EmojiSeparator emojis={['😎', '🆚', '👔']} />
   </>
 )
