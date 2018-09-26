@@ -1,14 +1,16 @@
 import { css } from 'emotion'
 import Link from 'next/link'
 import React from 'react'
-import { colors, fontSizes, spaces } from 'src/lib/theme'
+import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 interface NextLessonButtonProps {
   Component?: React.ComponentType | string
+  href: string
 }
 
 const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
   children,
+  href,
   Component = 'div'
 }) => (
   <Component
@@ -17,12 +19,12 @@ const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
       margin: ${spaces(3)} 0;
     `}
   >
-    <Link href="/">
+    <Link href={href}>
       <a
         className={css`
           font-size: ${fontSizes(1.25)};
           padding: ${spaces(0.75)} ${spaces(1.25)};
-          border-radius: 9999px;
+          border-radius: ${radii(9999)};
           border: 2px solid ${colors('pink700')};
           background: ${colors('pink400')};
           color: #fff;

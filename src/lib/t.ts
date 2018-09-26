@@ -6,7 +6,7 @@ export const allTranslations = {
     en: 'Hoshiai: Great Computer Science Ideas for Non-Programmers',
     jp: 'Hoshiai: プログラミング的思考をコードを書かずに身につける'
   },
-  lesson1Title: {
+  ycTitle: {
     en: 'Y Combinator for Non-Programmers',
     jp: 'あなたの知らないYコンビネーター'
   }

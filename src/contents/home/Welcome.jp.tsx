@@ -14,7 +14,7 @@ export default () => (
     </p>
     <p>
       レッスン第一弾は「
-      <HomeLink linkProps={{ href: yc() }}>{t('lesson1Title')}</HomeLink>
+      <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>
       」です。今なら
       <TextHighlight>無料</TextHighlight>。
     </p>

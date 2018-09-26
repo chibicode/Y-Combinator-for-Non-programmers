@@ -20,7 +20,7 @@ import {
 const Index: React.SFC<{}> = () => (
   <Page>
     <Head>
-      <title key="title">{t('lesson1Title')} | Hoshiai</title>
+      <title key="title">{t('ycTitle')} | Hoshiai</title>
     </Head>
     <Container size="lg">
       <div
@@ -60,7 +60,7 @@ const Index: React.SFC<{}> = () => (
             `)};
           `}
         >
-          {t('lesson1Title')}
+          {t('ycTitle')}
         </h1>
         <EmojiSeparator size="lg" emojis={['🤔', '🤔', '🤔']} />
       </div>

@@ -1,8 +1,8 @@
+import { css } from 'emotion'
 import {
   Blockquote,
   Em,
   ExternalLink,
-  Hr,
   Ol,
   OlLi,
   P,
@@ -13,6 +13,8 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
+import SideNoteSection from 'src/components/SideNoteSection'
+import { yc } from 'src/lib/pathHelpers'
 
 export default () => (
   <>
@@ -137,9 +139,50 @@ export default () => (
     </P>
     <P>
       <Strong>So:</Strong> If you're interested in learning about Y Combinator,
-      please read on!
+      please click the button below.
     </P>
-    <NextLessonButton>
+    <NextLessonButton href={yc()}>
+      OK, Let's Go! <Emoji>👍</Emoji>
+    </NextLessonButton>
+    <SideNoteSection heading="Who’s writing this?">
+      <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
+      <P
+        className={css`
+          margin-top: 0;
+        `}
+      >
+        Good question! My name's <Strong>Shu</Strong>. As of writing (2018), I
+        work as a freelance engineer and a co-translator for “Factfulness” by
+        Hans Rosling, Ola Rosling, and Anna Rosling Rönnlund. It’s the book Bill
+        Gates{' '}
+        <ExternalLink href="https://twitter.com/billgates/status/981532669358911488">
+          called
+        </ExternalLink>{' '}
+        “one of the best books I’ve read in a long time,” and I’m co-translating
+        it into Japanese <Emoji>🇯🇵</Emoji>.
+      </P>
+      <P>
+        In 2017, I traveled the world, visiting{' '}
+        <ExternalLink href="https://chibicode.com/posts/tweets-from-my-world-trip/">
+          36 countries and 94 cities
+        </ExternalLink>
+        . In 2016, I was a technical lead at EdSurge, an education technology
+        startup in San Francisco Bay Area.
+      </P>
+      <P>
+        As of writing, I'm looking for a{' '}
+        <Strong>full-time job (San Francisco Bay Area or Remote)</Strong>.{' '}
+        <ExternalLink href="https://about.chibicode.com/">
+          Interested? Learn more about me here.
+        </ExternalLink>{' '}
+        I'll remove this text when I get a job.
+      </P>
+    </SideNoteSection>
+    <P>
+      <Strong>Alright.</Strong> Now that you know who I am… Are you ready to go
+      to the next page?
+    </P>
+    <NextLessonButton href={yc()}>
       OK, Let's Go! <Emoji>👍</Emoji>
     </NextLessonButton>
   </>
