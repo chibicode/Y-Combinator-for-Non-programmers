@@ -140,7 +140,7 @@ export default () => (
       please read on!
     </P>
     <NextLessonButton>
-      Ok, Let's Go! <Emoji>👍</Emoji>
+      OK, Let's Go! <Emoji>👍</Emoji>
     </NextLessonButton>
   </>
 )
