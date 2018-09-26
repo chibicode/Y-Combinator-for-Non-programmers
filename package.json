@@ -16,7 +16,7 @@
     "immer": "^1.7.2",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
-    "next": "7.0.0",
+    "next": "7.0.1-canary.0",
     "nprogress": "^0.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -29,9 +29,8 @@
     "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
-    "build": "yarn tsc && yarn contents && next build && next export",
-    "tsc-watch": "tsc -w --noEmit --preserveWatchOutput",
-    "tsc": "tsc --noEmit",
+    "build": "tsc && yarn contents && next build && next export",
+    "type-check": "tsc -w",
     "test": "jest"
   },
   "devDependencies": {

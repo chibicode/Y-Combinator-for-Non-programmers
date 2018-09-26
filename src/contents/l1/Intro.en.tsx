@@ -97,8 +97,8 @@ export default () => (
       </ExternalLink>
       :
     </P>
+    <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
     <Blockquote>
-      <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
       <P>
         <Strong>
           <Em>[Y Combinator is] a programming trick.</Em>
