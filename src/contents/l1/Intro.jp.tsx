@@ -164,7 +164,11 @@ export default () => (
         <ExternalLink href="https://jp.chibicode.com/">
           たまにブログを書いている
         </ExternalLink>
-        米国在住のエンジニアです。
+        米国在住のエンジニアです。旅行好きで、
+        <ExternalLink href="https://jp.chibicode.com/world-trip/">
+          2017年はゆるく世界一周していました
+        </ExternalLink>
+        。
       </P>
     </SideNoteSection>
     <P>
