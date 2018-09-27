@@ -143,10 +143,11 @@ export default () => (
       <Strong>But I don’t like this mindset.</Strong> Sure, the name works well
       to attract programmers, and the Y Combinator founders had good intentions.
       But generally speaking, I don’t like it when programmers say,{' '}
-      <Em>“Oh, non-programmers won’t understand this idea”</Em> and refuse to
-      explain it in a way non-programmers understand. Maybe I’m too harsh, but I
-      think this kind of a mindset is harmful, especially as the software
-      (especially AI) is changing the world faster than ever.
+      <Em>“Oh, non-programmers won’t understand this idea”</Em> and{' '}
+      <Em>refuse to explain things in a way non-programmers understand</Em>.
+      Maybe I’m too harsh, but I think this kind of a mindset is harmful,
+      especially as the software (especially AI) is changing the world faster
+      than ever.
     </P>
     <EmojiSeparator emojis={['🤖', '🌏', '🤖']} Component={P} />
     <P>
