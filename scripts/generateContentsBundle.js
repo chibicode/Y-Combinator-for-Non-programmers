@@ -28,9 +28,9 @@ const regenerate = path => {
         name => `
           '${name}': {
             // @ts-ignore - import isn't typed correctly
-            en: dynamic(import('src/contents/${name}.en')),
+            en: dynamic(() => import(/* webpackChunkName: '${name}.en' */ 'src/contents/${name}.en')),
             // @ts-ignore - import isn't typed correctly
-            jp: dynamic(import('src/contents/${name}.jp'))
+            jp: dynamic(() => import(/* webpackChunkName: '${name}.jp' */ 'src/contents/${name}.jp'))
           }
         `
       )
