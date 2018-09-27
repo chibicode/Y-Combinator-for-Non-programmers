@@ -9,14 +9,14 @@ export const Hr: React.SFC<JSX.IntrinsicElements['hr']> = ({
   <hr
     {...props}
     className={cx(
-      className,
       css`
         border-top: none;
         border-bottom: 1px solid ${colors('grey300')};
         margin-top: 2em;
         margin-bottom: 2em;
         width: 25%;
-      `
+      `,
+      className
     )}
   />
 )

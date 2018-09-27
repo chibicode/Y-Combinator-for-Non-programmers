@@ -58,7 +58,7 @@ export default () => (
       <UlLi>
         <Strong>If you’re a programmer:</Strong> You might know that Y
         Combinator (in programming) is some kind of a functional programming
-        concept. But{' '}
+        concept. Maybe you've implemented it. But{' '}
         <Em>
           can you explain what Y Combinator (in programming) is to a
           non-programmer
@@ -78,9 +78,12 @@ export default () => (
     <EmojiSeparator emojis={['😉', '👍', '❤️']} />
     <P>
       <Strong>Before we begin, here’s some backstory:</Strong> In 2005, a group
-      of successful entrepreneurs started training (and investing in) young
-      startup founders. This startup “accelerator” became known as “Y
-      Combinator”.{' '}
+      of successful entrepreneurs, who were programming experts, started
+      training and investing in young entrepreneurs who were also programmers.
+      This startup “accelerator” was called “Y Combinator”.{' '}
+    </P>
+    <P>
+      <Strong>Current Stats:</Strong>{' '}
       <ExternalLink href="http://www.ycombinator.com/press/">
         As of writing (Fall 2018)
       </ExternalLink>
@@ -109,10 +112,13 @@ export default () => (
         </Strong>{' '}
         ... I wanted to call it Y Combinator just because I thought the Y
         Combinator was a really cool thing. So it would be the perfect name for{' '}
-        <Em>picking out the kind of people that we wanted</Em>. Hackers would
-        look at this and think, “That’s so cool. They’re named after the Y
-        Combinator. There must be something going on here.” And suits would look
-        at it and think, “Y Combinator, what’s that?” That was what we wanted.{' '}
+        <Em>picking out the kind of people that we wanted</Em>.
+      </P>
+      <P>
+        Hackers would look at this and think, “That’s so cool. They’re named
+        after the Y Combinator. There must be something going on here.” And
+        suits would look at it and think, “Y Combinator, what’s that?” That was
+        what we wanted.{' '}
         <Em>We wanted hackers to notice us, and suits, we didn’t care</Em>.
       </P>
     </Blockquote>
@@ -122,11 +128,12 @@ export default () => (
       programmers, they named it “Y Combinator”, after a cool programming trick.
     </P>
     <P>
-      <Strong>But I don’t like this mindset.</Strong> I don’t like it when
-      programmers say, <Em>“Oh, non-programmers won’t understand this idea”</Em>{' '}
-      and refuse to explain it in a way non-programmers understand. I think this
-      kind of a mindset is harmful, especially as the software (especially AI)
-      is changing the world faster than ever.
+      <Strong>But I don’t like this mindset.</Strong> Sure, the name works well
+      to attract programmers. But I don’t like it when programmers say,{' '}
+      <Em>“Oh, non-programmers won’t understand this idea”</Em> and refuse to
+      explain it in a way non-programmers understand. I think this kind of a
+      mindset is harmful, especially as the software (especially AI) is changing
+      the world faster than ever.
     </P>
     <EmojiSeparator emojis={['🤖', '🤔', '🤖']} Component={P} />
     <P>
@@ -135,7 +142,7 @@ export default () => (
       </Strong>{' '}
       The answer is <Em>Yes</Em>. I just made an interactive tutorial where
       anyone can learn what Y Combinator is. <Em>There’s no coding involved</Em>
-      ; rather, you'll learn by <Em>solving puzzles</Em>.
+      ; rather, you'll learn by solving puzzles.
     </P>
     <P>
       <Strong>So:</Strong> If you're interested in learning about Y Combinator,
@@ -175,7 +182,7 @@ export default () => (
         <ExternalLink href="https://about.chibicode.com/">
           Interested? Learn more about me here.
         </ExternalLink>{' '}
-        I'll remove this text when I get a job.
+        (I'll remove this text when I get a job.)
       </P>
     </SideNoteSection>
     <P>

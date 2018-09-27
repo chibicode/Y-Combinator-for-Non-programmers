@@ -24,7 +24,7 @@ const commonListItemCss = css`
 export const Ul: React.SFC<JSX.IntrinsicElements['ul']> = ({
   className,
   ...props
-}) => <ul {...props} className={cx(className, commonListCss)} />
+}) => <ul {...props} className={cx(commonListCss, className)} />
 
 export const Ol: React.SFC<JSX.IntrinsicElements['ol']> = ({
   className,
@@ -33,11 +33,11 @@ export const Ol: React.SFC<JSX.IntrinsicElements['ol']> = ({
   <ol
     {...props}
     className={cx(
-      className,
       commonListCss,
       css`
         counter-reset: text;
-      `
+      `,
+      className
     )}
   />
 )
@@ -49,7 +49,6 @@ export const UlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
   <li
     {...props}
     className={cx(
-      className,
       commonListItemCss,
       css`
         &::before {
@@ -58,7 +57,8 @@ export const UlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
           content: '•';
           font-size: 0.8em;
         }
-      `
+      `,
+      className
     )}
   />
 )
@@ -70,7 +70,6 @@ export const OlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
   <li
     {...props}
     className={cx(
-      className,
       commonListItemCss,
       css`
         &::before {
@@ -78,7 +77,8 @@ export const OlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
           counter-increment: text;
           content: counter(text) '.';
         }
-      `
+      `,
+      className
     )}
   />
 )
