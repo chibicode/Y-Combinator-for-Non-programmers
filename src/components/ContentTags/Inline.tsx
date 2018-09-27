@@ -13,11 +13,11 @@ export const Em: React.SFC<JSX.IntrinsicElements['em']> = ({
   <em
     {...props}
     className={cx(
-      className,
       css`
         font-style: normal;
         background: ${colors('yellow100')};
-      `
+      `,
+      className
     )}
   />
 )

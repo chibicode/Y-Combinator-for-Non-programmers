@@ -1,5 +1,6 @@
 export const allRadii = {
   0.25: '0.25rem',
+  0.5: '0.5rem',
   9999: '9999px'
 }
 

@@ -1,5 +1,5 @@
 import { css } from 'emotion'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
 import { fontSizes, ns, spaces } from 'src/lib/theme'
 
@@ -27,9 +27,9 @@ const EmojiSeparator: React.SFC<EmojiSeparatorProps> = ({
     `}
   >
     {emojis.map((emoji, index) => (
-      <>
-        <Emoji key={index}>{emoji}</Emoji>{' '}
-      </>
+      <Fragment key={`${emoji}${index}`}>
+        <Emoji>{emoji}</Emoji>{' '}
+      </Fragment>
     ))}
   </Component>
 )
