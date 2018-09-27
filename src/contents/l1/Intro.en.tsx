@@ -16,6 +16,18 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { yc } from 'src/lib/pathHelpers'
 
+const CommonNextLessonButton = () => (
+  <NextLessonButton
+    href={yc()}
+    primaryText={
+      <>
+        OK, Let's Go! <Emoji>🙂</Emoji>
+      </>
+    }
+    secondaryText={<>Continue to Episode 1</>}
+  />
+)
+
 export default () => (
   <>
     <P>
@@ -129,13 +141,14 @@ export default () => (
     </P>
     <P>
       <Strong>But I don’t like this mindset.</Strong> Sure, the name works well
-      to attract programmers. But I don’t like it when programmers say,{' '}
+      to attract programmers, and the Y Combinator founders had good intentions.
+      But generally speaking, I don’t like it when programmers say,{' '}
       <Em>“Oh, non-programmers won’t understand this idea”</Em> and refuse to
-      explain it in a way non-programmers understand. I think this kind of a
-      mindset is harmful, especially as the software (especially AI) is changing
-      the world faster than ever.
+      explain it in a way non-programmers understand. Maybe I’m too harsh, but I
+      think this kind of a mindset is harmful, especially as the software
+      (especially AI) is changing the world faster than ever.
     </P>
-    <EmojiSeparator emojis={['🤖', '🤔', '🤖']} Component={P} />
+    <EmojiSeparator emojis={['🤖', '🌏', '🤖']} Component={P} />
     <P>
       <Strong>
         Can non-programmers learn what Y Combinator (in programming) is?
@@ -146,11 +159,9 @@ export default () => (
     </P>
     <P>
       <Strong>So:</Strong> If you're interested in learning about Y Combinator,
-      please click the button below.
+      please click the button below. Don’t worry, <Em>this article is free</Em>.
     </P>
-    <NextLessonButton href={yc()}>
-      OK, Let's Go! <Emoji>👍</Emoji>
-    </NextLessonButton>
+    <CommonNextLessonButton />
     <SideNoteSection heading="Who’s writing this?">
       <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
       <P
@@ -187,10 +198,8 @@ export default () => (
     </SideNoteSection>
     <P>
       <Strong>Alright.</Strong> Now that you know who I am… Are you ready to go
-      to the next page?
+      to the next page? Again, <Em>this article is free</Em>.
     </P>
-    <NextLessonButton href={yc()}>
-      OK, Let's Go! <Emoji>👍</Emoji>
-    </NextLessonButton>
+    <CommonNextLessonButton />
   </>
 )

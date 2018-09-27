@@ -1,3 +1,4 @@
+import { css } from 'emotion'
 import {
   Blockquote,
   Em,
@@ -9,7 +10,22 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
+import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
+import SideNoteSection from 'src/components/SideNoteSection'
+import { yc } from 'src/lib/pathHelpers'
+
+const CommonNextLessonButton = () => (
+  <NextLessonButton
+    href={yc()}
+    primaryText={
+      <>
+        次のページに進む <Emoji>🙂</Emoji>
+      </>
+    }
+  />
+)
 
 export default () => (
   <>
@@ -116,7 +132,45 @@ export default () => (
       <Strong>
         しかしこういう考え方は、わたしはあまり好きではありません。
       </Strong>
-      たしかに、プログラマー受けする名称なのは間違いないでしょう。しかし、
+      たしかに、プログラマー受けする名称なのは間違いないですし、Yコンビネーターの創業者たちに悪気はなかったでしょう。ただわたしは一般論として、「
+      <Em>コードが書けない人には、これは理解できっこない</Em>
+      」「だから、コードが書けない人にも分かるように説明する必要はない」という考え方は、いかがなものかと思います。ソフトウェア(特にAI)が社会を大きく変えて行く時代に、逆行しているように思えるのです。わたしの考えすぎかもしれませんが。
     </P>
+    <EmojiSeparator emojis={['🤖', '🌏', '🤖']} Component={P} />
+    <P>
+      <Strong>
+        では、コードが書けなくてもYコンビネーター(プログラミング用語)を理解できるのでしょうか？
+      </Strong>
+      <Em>もちろんです</Em>
+      。今回、手を動かしてYコンビネーターについて
+      <Em>パズル感覚</Em>
+      で学べるレッスンを作りました。コードを書く必要は一切ありません。
+    </P>
+    <P>
+      <Strong>というわけで:</Strong>{' '}
+      「面白そう、Yコンビネーターについて学んでみたい！」と思った方は、下のボタンをクリックして先に進んでみてください。最初から最後まで、
+      <Em>無料で閲覧できます</Em>。
+    </P>
+    <CommonNextLessonButton />
+    <SideNoteSection heading="あ、自己紹介が遅れました!">
+      <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
+      <P
+        className={css`
+          margin-top: 0;
+        `}
+      >
+        <Strong>上杉周作</Strong>
+        と申します。
+        <ExternalLink href="https://jp.chibicode.com/">
+          たまにブログを書いている
+        </ExternalLink>
+        米国在住のエンジニアです。
+      </P>
+    </SideNoteSection>
+    <P>
+      <Strong>自己紹介も終えたところで、</Strong>
+      ぜひ先に進んでみてください!
+    </P>
+    <CommonNextLessonButton />
   </>
 )
