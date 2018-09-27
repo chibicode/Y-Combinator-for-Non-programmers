@@ -27,10 +27,12 @@ const regenerate = path => {
       .map(
         name => `
           '${name}': {
-            // @ts-ignore - import isn't typed correctly
-            en: dynamic(() => import(/* webpackChunkName: '${name}.en' */ 'src/contents/${name}.en')),
-            // @ts-ignore - import isn't typed correctly
-            jp: dynamic(() => import(/* webpackChunkName: '${name}.jp' */ 'src/contents/${name}.jp'))
+            en: dynamic(
+              // @ts-ignore - import isn't typed correctly
+              () => import(/* webpackChunkName: '${name}.en' */ 'src/contents/${name}.en'), { loading: () => <DynamicLoading /> }),
+            jp: dynamic(
+              // @ts-ignore - import isn't typed correctly
+              () => import(/* webpackChunkName: '${name}.jp' */ 'src/contents/${name}.jp'), { loading: () => <DynamicLoading /> })
           }
         `
       )
@@ -39,6 +41,7 @@ const regenerate = path => {
     const fileContents = prettier.format(
       `// WARNING: Do not modify this file - it's generated automatically.
       import dynamic from 'next/dynamic'
+      import DynamicLoading from 'src/components/DynamicLoading'
 
       export interface BundleTypes {
         ${bundleInterfaceString}
@@ -52,7 +55,7 @@ const regenerate = path => {
       { semi: false, singleQuote: true, parser: 'typescript' }
     )
 
-    fs.writeFile('./src/lib/contentBundles.ts', fileContents, err => {
+    fs.writeFile('./src/lib/contentBundles.tsx', fileContents, err => {
       if (err) {
         throw err
       }
