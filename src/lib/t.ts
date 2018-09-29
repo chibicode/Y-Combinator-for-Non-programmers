@@ -11,7 +11,7 @@ export const allTranslations = {
     jp: 'あなたの知らないYコンビネーター'
   },
   ycEpisode1: {
-    en: 'Episode 1: You and Your Chef',
+    en: 'Episode 1: Your Personal Chef',
     jp: '第1章: ...'
   }
 }
