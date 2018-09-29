@@ -159,6 +159,12 @@ export default () => (
       ; rather, you'll learn by solving puzzles.
     </P>
     <P>
+      <Strong>
+        What does the tutorial look like? Can I do it from my smartphone?
+      </Strong>{' '}
+      The tutorial looks like this, and you can do it from your smartphone.
+    </P>
+    <P>
       <Strong>So:</Strong> If you're interested in learning about Y Combinator,
       please click the button below. Don’t worry, <Em>this article is free</Em>.
     </P>
