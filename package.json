@@ -29,7 +29,8 @@
     "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
-    "build": "tsc && yarn contents && next build && next export",
+    "build:en": "APP_LOCALE=en && tsc && yarn contents && next build && next export",
+    "build:jp": "APP_LOCALE=jp && tsc && yarn contents && next build && next export",
     "type-check": "tsc -w",
     "test": "jest"
   },
