@@ -1,5 +1,5 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import expressionToParams from 'src/lib/expressionToParams'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import expressionToParams from 'src/lib/yc/expressionToParams'
 import { CallExpressionParams } from 'src/types/ExpressionParamTypes'
 
 describe('expressionToParams', () => {

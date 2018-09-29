@@ -1,10 +1,10 @@
 import produce, { DraftObject } from 'immer'
-import alphaConvert from 'src/lib/alphaConvert'
-import betaReduce from 'src/lib/betaReduce'
-import conflictingVariableNames from 'src/lib/conflictingVariableNames'
-import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
-import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
-import resetExpressionContainer from 'src/lib/resetExpressionContainer'
+import alphaConvert from 'src/lib/yc/alphaConvert'
+import betaReduce from 'src/lib/yc/betaReduce'
+import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
+import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
+import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
+import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 import {
   ExpressionContainer,

@@ -1,8 +1,8 @@
-import betaReduce from 'src/lib/betaReduce'
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import expressionToSimpleString from 'src/lib/expressionToSimpleString'
-import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
-import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
+import betaReduce from 'src/lib/yc/betaReduce'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
+import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
+import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 
 describe('betaReduce', () => {
   it('beta reduces simple expression', () => {

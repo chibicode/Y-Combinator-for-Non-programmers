@@ -2,8 +2,8 @@ import difference from 'lodash/difference'
 import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
-import conflictingVariableNames from 'src/lib/conflictingVariableNames'
-import getAllVariableNames from 'src/lib/getAllVariableNames'
+import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
+import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 import {
   Expression,

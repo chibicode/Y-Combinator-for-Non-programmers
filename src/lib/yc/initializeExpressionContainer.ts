@@ -1,5 +1,5 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import { PrioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,

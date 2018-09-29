@@ -1,4 +1,4 @@
-import expressionToSimpleString from 'src/lib/expressionToSimpleString'
+import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 export default function expressionContainerToSimpleString(

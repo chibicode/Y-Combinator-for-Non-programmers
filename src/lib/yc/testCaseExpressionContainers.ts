@@ -1,4 +1,4 @@
-import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
+import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
 import { PrioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,

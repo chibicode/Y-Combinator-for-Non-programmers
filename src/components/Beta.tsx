@@ -5,7 +5,7 @@ import ExpressionExecutor from 'src/components/ExpressionExecutor'
 import Flex from 'src/components/Flex'
 import GlobalStyles from 'src/components/GlobalStyles'
 import 'src/lib/fontAwesome'
-import { activeTestCases } from 'src/lib/testCaseExpressionContainers'
+import { activeTestCases } from 'src/lib/yc/testCaseExpressionContainers'
 import spaces from 'src/lib/theme/spaces'
 
 const Beta: React.SFC<{}> = () => (

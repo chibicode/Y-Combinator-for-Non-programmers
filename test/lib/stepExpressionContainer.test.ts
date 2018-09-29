@@ -1,7 +1,7 @@
-import expressionToSimpleString from 'src/lib/expressionToSimpleString'
-import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
-import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
-import stepExpressionContainer from 'src/lib/stepExpressionContainer'
+import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
+import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
+import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
+import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 import {
   isPrioritizedExpressionContainer,

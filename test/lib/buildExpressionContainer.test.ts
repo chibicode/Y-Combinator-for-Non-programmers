@@ -1,4 +1,4 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
 
 describe('buildExpressionContainer', () => {
   it('works with variable expressions', () => {

@@ -1,6 +1,6 @@
 import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
-import getAllVariableNames from 'src/lib/getAllVariableNames'
+import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
 
 export default function conflictingVariableNames(

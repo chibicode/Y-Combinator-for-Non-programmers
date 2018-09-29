@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
-import letterEmojiMapping from 'src/lib/letterEmojiMapping'
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import spaces from 'src/lib/theme/spaces'
 import { PrioritizedVariableExpression } from 'src/types/PrioritizedExpressionTypes'
 
