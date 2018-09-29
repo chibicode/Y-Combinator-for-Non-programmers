@@ -1,6 +1,6 @@
 import { css } from 'emotion'
 import React from 'react'
-import ExpressionBox from 'src/components/ExpressionBox'
+import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
 import expressionToParams from 'src/lib/yc/expressionToParams'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'

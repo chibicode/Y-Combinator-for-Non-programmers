@@ -1,11 +1,11 @@
 import { css } from 'emotion'
 import React from 'react'
-import BorderWrapper from 'src/components/BorderWrapper'
-import CallExpressionBox from 'src/components/CallExpressionBox'
-import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
+import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLabel'
 import Flex from 'src/components/Flex'
-import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
-import VariableExpressionBox from 'src/components/VariableExpressionBox'
+import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
+import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
+import BorderWrapper from 'src/components/Yc/BorderWrapper'
+import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
 import {
   isPrioritizedCallExpression,
   isPrioritizedVariableExpression,
