@@ -8,6 +8,11 @@ export interface ContentProps {
 
 const Content: React.SFC<{ name: keyof BundleTypes }> = ({ name }) => {
   const Component = bundles[name][locale]
+  if (!Component) {
+    throw new Error(
+      `Component is ${Component}. name: ${name}, locale: ${locale}`
+    )
+  }
   return <Component />
 }
 
