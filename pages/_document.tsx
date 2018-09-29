@@ -12,13 +12,13 @@ export default class MyDocument extends Document<{
   }
 
   // https://github.com/zeit/next.js/issues/4883
-  // constructor(props: any) {
-  //   super(props)
-  //   const { __NEXT_DATA__, ids } = props
-  //   if (ids) {
-  //     __NEXT_DATA__.ids = this.props.ids
-  //   }
-  // }
+  constructor(props: any) {
+    super(props)
+    const { __NEXT_DATA__, ids } = props
+    if (ids) {
+      __NEXT_DATA__.ids = this.props.ids
+    }
+  }
 
   public render() {
     return (
