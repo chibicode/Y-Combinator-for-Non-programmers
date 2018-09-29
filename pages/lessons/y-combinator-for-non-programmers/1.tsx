@@ -6,7 +6,7 @@ const Episode1: React.SFC<{}> = () => (
   <EpisodePage
     lessonTitle={t('ycTitle')}
     episodeTitle={t('ycEpisode1')}
-    emojis={['🤔', '🤔', '🤔']}
+    emojis={['😋', '🍽', '👨‍🍳']}
     contentName="l1/1"
   />
 )

@@ -1,3 +1,8 @@
 import React from 'react'
+import { P } from 'src/components/ContentTags'
 
-export default () => <></>
+export default () => (
+  <>
+    <P>Hello</P>
+  </>
+)
