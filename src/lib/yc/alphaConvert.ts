@@ -4,14 +4,14 @@ import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
-import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
+import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   Expression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
-} from 'src/types/ExpressionTypes'
-import { VariableNames, variableNamesArray } from 'src/types/VariableNames'
+} from 'src/types/yc/ExpressionTypes'
+import { VariableNames, variableNamesArray } from 'src/types/yc/VariableNames'
 
 type ReplaceMapping = Partial<Record<VariableNames, VariableNames>>
 

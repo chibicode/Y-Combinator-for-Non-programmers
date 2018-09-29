@@ -5,7 +5,7 @@ import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
-import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
+import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   ExpressionContainer,
   isNeedsResetExpressionContainer,
@@ -13,11 +13,11 @@ import {
   NeedsResetExpressionContainer,
   PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+} from 'src/types/yc/ExpressionContainerTypes'
 import {
   PrioritizedCallExpression,
   PrioritizedFunctionExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 export default function stepExpressionContainer(
   e: NeedsResetExpressionContainer

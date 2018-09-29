@@ -3,8 +3,8 @@ import {
   Expression,
   isCallExpression,
   isVariableExpression
-} from 'src/types/ExpressionTypes'
-import { VariableNames } from 'src/types/VariableNames'
+} from 'src/types/yc/ExpressionTypes'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 export default function getAllVariableNames(
   expression: Expression

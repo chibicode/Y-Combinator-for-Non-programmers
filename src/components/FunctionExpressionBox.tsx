@@ -4,7 +4,7 @@ import ExpressionBox from 'src/components/ExpressionBox'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import colors from 'src/lib/theme/colors'
-import { PrioritizedFunctionExpression } from 'src/types/PrioritizedExpressionTypes'
+import { PrioritizedFunctionExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface FunctionExpressionBoxProps {
   expression: PrioritizedFunctionExpression

@@ -2,18 +2,18 @@ import {
   ImmediatelyExecutableCallExpression,
   isImmediatelyExecutableCallExpression,
   isTopPriorityCallExpression
-} from 'src/types/ExecutableExpressionTypes'
+} from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isCallExpression,
   isFunctionExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 import {
   isPrioritizedCallExpression,
   PrioritizedCallExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface HasPrioritizedCallExpression<E extends PrioritizedCallExpression> {
   readonly expression: E

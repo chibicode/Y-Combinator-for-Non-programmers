@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import colors, { allColors } from 'src/lib/theme/colors'
-import { AllExpressionStates } from 'src/types/ExpressionTypes'
+import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
   children: React.ReactNode

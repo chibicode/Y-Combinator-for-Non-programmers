@@ -4,7 +4,7 @@ import {
   PrioritizedCallExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 export interface TopPriorityCallExpression extends PrioritizedCallExpression {
   readonly priority: 1

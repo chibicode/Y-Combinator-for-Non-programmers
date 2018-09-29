@@ -1,4 +1,4 @@
-import { VariableNames } from 'src/types/VariableNames'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 export type CommonStates = 'default' | 'highlighted'
 

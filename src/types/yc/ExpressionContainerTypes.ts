@@ -1,5 +1,5 @@
-import { Expression } from 'src/types/ExpressionTypes'
-import { PrioritizedExpression } from 'src/types/PrioritizedExpressionTypes'
+import { Expression } from 'src/types/yc/ExpressionTypes'
+import { PrioritizedExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E

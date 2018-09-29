@@ -7,7 +7,7 @@ import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
   PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+} from 'src/types/yc/ExpressionContainerTypes'
 
 interface ExpressionExecutorProps {
   expressionContainer:

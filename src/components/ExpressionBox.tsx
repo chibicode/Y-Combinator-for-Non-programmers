@@ -10,7 +10,7 @@ import {
   isPrioritizedCallExpression,
   isPrioritizedVariableExpression,
   PrioritizedExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface ExpressionBoxProps {
   expression: PrioritizedExpression

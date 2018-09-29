@@ -2,7 +2,7 @@ import {
   CallExpression,
   FunctionExpression,
   VariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 export interface DefaultStateVariableExpression extends VariableExpression {
   readonly state: 'default'

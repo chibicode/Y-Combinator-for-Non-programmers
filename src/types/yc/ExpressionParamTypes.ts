@@ -1,4 +1,4 @@
-import { VariableNames, variableNamesArray } from 'src/types/VariableNames'
+import { VariableNames, variableNamesArray } from 'src/types/yc/VariableNames'
 
 export type VariableExpressionParams = VariableNames
 

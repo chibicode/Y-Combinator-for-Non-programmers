@@ -1,7 +1,7 @@
 import {
   PrioritizedExpressionContainer,
   UnprioritizedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+} from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpression,
   Expression,
@@ -9,7 +9,7 @@ import {
   isCallExpression,
   isVariableExpression,
   VariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 import {
   isPrioritizedCallExpression,
   isPrioritizedFunctionExpression,
@@ -18,7 +18,7 @@ import {
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 function prioritizeCallExpression({
   expression,
