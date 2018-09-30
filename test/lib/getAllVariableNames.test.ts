@@ -1,5 +1,5 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import getAllVariableNames from 'src/lib/getAllVariableNames'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 
 describe('getAllVariableNames', () => {
   it('works with simple case', () => {

@@ -2,12 +2,12 @@ import {
   Expression,
   isCallExpression,
   isVariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 import {
   isPrioritizedCallExpression,
   isPrioritizedVariableExpression,
   PrioritizedVariableExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 export default function expressionToSimpleString(
   expression: Expression,

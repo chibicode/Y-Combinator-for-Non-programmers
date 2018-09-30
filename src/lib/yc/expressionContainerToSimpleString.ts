@@ -1,5 +1,5 @@
-import expressionToSimpleString from 'src/lib/expressionToSimpleString'
-import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
+import { ExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 
 export default function expressionContainerToSimpleString(
   e: ExpressionContainer,

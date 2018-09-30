@@ -13,6 +13,11 @@ export interface BundleTypes {
     en: React.ComponentType<any>
   }
 
+  'l1/1': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
   'l1/Intro': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
@@ -45,6 +50,18 @@ const bundles: BundleTypes = {
       // @ts-ignore - import isn't typed correctly
       () =>
         import(/* webpackChunkName: 'home/Welcome.jp' */ 'src/contents/home/Welcome.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'l1/1': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'l1/1.en' */ 'src/contents/l1/1.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'l1/1.jp' */ 'src/contents/l1/1.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },

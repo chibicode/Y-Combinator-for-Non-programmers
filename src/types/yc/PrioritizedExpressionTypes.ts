@@ -6,7 +6,7 @@ import {
   isFunctionExpression,
   isVariableExpression,
   VariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 export interface PrioritizedVariableExpression extends VariableExpression {
   argPriorityAgg: number[]

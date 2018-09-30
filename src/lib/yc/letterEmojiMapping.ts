@@ -1,4 +1,4 @@
-import { VariableNames } from 'src/types/VariableNames'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 const letterEmojiMapping: Record<VariableNames, string> = {
   a: '👽',

@@ -3,7 +3,7 @@ import {
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams
-} from 'src/types/ExpressionParamTypes'
+} from 'src/types/yc/ExpressionParamTypes'
 import {
   CallExpression,
   Expression,
@@ -11,7 +11,7 @@ import {
   isCallExpression,
   isFunctionExpression,
   VariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 export default function expressionToParams(
   e: CallExpression

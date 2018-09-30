@@ -18,7 +18,7 @@ import { yc } from 'src/lib/pathHelpers'
 
 const CommonNextLessonButton = () => (
   <NextLessonButton
-    href={yc()}
+    href={yc(1)}
     primaryText={
       <>
         OK, Let's Go! <Emoji>🙂</Emoji>
@@ -159,6 +159,12 @@ export default () => (
       ; rather, you'll learn by solving puzzles.
     </P>
     <P>
+      <Strong>
+        What does the tutorial look like? Can I do it from my smartphone?
+      </Strong>{' '}
+      The tutorial looks like this, and you can do it from your smartphone.
+    </P>
+    <P>
       <Strong>So:</Strong> If you're interested in learning about Y Combinator,
       please click the button below. Don’t worry, <Em>this article is free</Em>.
     </P>
@@ -172,8 +178,7 @@ export default () => (
       >
         Good question! My name's <Strong>Shu</Strong>. As of writing (2018), I
         work as a freelance engineer and a co-translator for “Factfulness” by
-        Hans Rosling, Ola Rosling, and Anna Rosling Rönnlund. It’s the book Bill
-        Gates{' '}
+        Hans Rosling. It’s the book Bill Gates{' '}
         <ExternalLink href="https://twitter.com/billgates/status/981532669358911488">
           called
         </ExternalLink>{' '}

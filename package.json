@@ -16,7 +16,7 @@
     "immer": "^1.7.2",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
-    "next": "7.0.1-canary.2",
+    "next": "7.0.1",
     "nprogress": "^0.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -29,7 +29,8 @@
     "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
-    "build": "tsc && yarn contents && next build && next export",
+    "build:en": "tsc && yarn contents && APP_LOCALE=en next build && APP_LOCALE=en next export",
+    "build:jp": "tsc && yarn contents && APP_LOCALE=jp next build && APP_LOCALE=jp next export",
     "type-check": "tsc -w",
     "test": "jest"
   },
@@ -38,10 +39,10 @@
     "@types/jest": "^23.3.2",
     "@types/lodash": "^4.14.116",
     "@types/material-ui": "^0.21.5",
-    "@types/next": "^6.1.8",
+    "@types/next": "^7.0.0",
     "@types/nprogress": "^0.0.29",
     "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.7",
+    "@types/react-dom": "^16.0.8",
     "babel-plugin-emotion": "^9.2.10",
     "chokidar": "^2.0.4",
     "concurrently": "^4.0.1",
@@ -49,10 +50,10 @@
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
     "prettier-tslint": "^0.4.0",
-    "ts-jest": "^23.10.1",
+    "ts-jest": "^23.10.2",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.1.1"
   }
 }

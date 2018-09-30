@@ -2,13 +2,13 @@ import omit from 'lodash/omit'
 import {
   ExpressionContainer,
   UnprioritizedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+} from 'src/types/yc/ExpressionContainerTypes'
 import {
   Expression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 function resetExpression<E extends Expression>(expression: E): E {
   if (isVariableExpression(expression)) {

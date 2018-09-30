@@ -9,6 +9,10 @@ export const allTranslations = {
   ycTitle: {
     en: 'Y Combinator for Non-Programmers',
     jp: 'あなたの知らないYコンビネーター'
+  },
+  ycEpisode1: {
+    en: 'Episode 1: Your Personal Chef',
+    jp: '第1章: ...'
   }
 }
 

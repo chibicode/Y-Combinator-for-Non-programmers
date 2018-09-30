@@ -3,8 +3,8 @@ import {
   DefaultStateExpression,
   DefaultStateFunctionExpression,
   DefaultStateVariableExpression
-} from 'src/types/DefaultExpressionTypes'
-import { UnprioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+} from 'src/types/yc/DefaultExpressionTypes'
+import { UnprioritizedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -13,7 +13,7 @@ import {
   isFunctionExpressionParams,
   isVariableExpressionParams,
   VariableExpressionParams
-} from 'src/types/ExpressionParamTypes'
+} from 'src/types/yc/ExpressionParamTypes'
 
 function nestCallExpressions(
   expression: CallExpressionParams

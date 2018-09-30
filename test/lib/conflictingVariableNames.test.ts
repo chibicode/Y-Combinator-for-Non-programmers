@@ -1,7 +1,7 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import conflictingVariableNames from 'src/lib/conflictingVariableNames'
-import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
-import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
+import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
+import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 
 describe('conflictingVariableNames', () => {
   describe('no conflicts', () => {

@@ -1,5 +1,5 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
 
 describe('expressionToSimpleString', () => {
   it('works with variable expressions', () => {

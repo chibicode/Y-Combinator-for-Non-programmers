@@ -1,14 +1,14 @@
-import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
+import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isCallExpression,
   isVariableExpression
-} from 'src/types/ExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 import {
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/PrioritizedExpressionTypes'
-import { VariableNames } from 'src/types/VariableNames'
+} from 'src/types/yc/PrioritizedExpressionTypes'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 function helper({
   expression,

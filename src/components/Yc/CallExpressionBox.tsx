@@ -1,10 +1,10 @@
 import { css } from 'emotion'
 import React from 'react'
-import ExpressionBox from 'src/components/ExpressionBox'
+import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import colors from 'src/lib/theme/colors'
-import { PrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
+import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface CallExpressionBoxProps {
   expression: PrioritizedCallExpression

@@ -1,13 +1,13 @@
 import { css } from 'emotion'
 import React from 'react'
-import ExpressionBox from 'src/components/ExpressionBox'
-import expressionContainerToSimpleString from 'src/lib/expressionContainerToSimpleString'
-import expressionToParams from 'src/lib/expressionToParams'
-import stepExpressionContainer from 'src/lib/stepExpressionContainer'
+import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
+import expressionToParams from 'src/lib/yc/expressionToParams'
+import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
   PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+} from 'src/types/yc/ExpressionContainerTypes'
 
 interface ExpressionExecutorProps {
   expressionContainer:

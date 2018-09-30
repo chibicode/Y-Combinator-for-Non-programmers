@@ -1,17 +1,17 @@
-import buildExpressionContainer from 'src/lib/buildExpressionContainer'
-import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
-import { PrioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
+import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
+import { PrioritizedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams
-} from 'src/types/ExpressionParamTypes'
+} from 'src/types/yc/ExpressionParamTypes'
 import {
   PrioritizedCallExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 export default function initializeExpressionContainer(
   expressionParams: VariableExpressionParams

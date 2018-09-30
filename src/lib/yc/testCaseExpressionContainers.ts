@@ -1,9 +1,9 @@
-import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
-import { PrioritizedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
+import { PrioritizedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   FunctionExpressionParams
-} from 'src/types/ExpressionParamTypes'
+} from 'src/types/yc/ExpressionParamTypes'
 
 // (a => a)(b)
 const basicExpression: CallExpressionParams = [

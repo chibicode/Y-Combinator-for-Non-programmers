@@ -1,14 +1,14 @@
-import expressionToSimpleString from 'src/lib/expressionToSimpleString'
-import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
-import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
-import stepExpressionContainer from 'src/lib/stepExpressionContainer'
-import { ImmediatelyExecutableCallExpression } from 'src/types/ExecutableExpressionTypes'
+import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
+import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
+import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
+import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
+import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isPrioritizedExpressionContainer,
   PrioritizedDoneExpressionContainer,
   PrioritizedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
-import { PrioritizedCallExpression } from 'src/types/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionContainerTypes'
+import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 const stepExpressionContainerWrapped = (
   e: PrioritizedExpressionContainer<PrioritizedCallExpression>
