@@ -22,7 +22,7 @@ const SideNoteSection: React.SFC<SideNoteProps> = ({ children, heading }) => (
       <H3
         className={css`
           text-align: center;
-          margin-top: 0;
+          margin: 0;
         `}
       >
         {heading}

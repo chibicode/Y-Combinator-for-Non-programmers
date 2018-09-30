@@ -88,7 +88,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
                   color: ${colors('grey900')};
                   line-height: ${lineHeights(1.3)};
                   font-size: ${fontSizes(2)};
-                  margin: 0 auto ${spaces(2)};
+                  margin: 0 auto ${spaces(1.25)};
                 `
               )}
             >
@@ -103,7 +103,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
                 color: ${colors('grey900')};
                 padding-top: ${spaces(2)};
                 font-size: ${fontSizes(2)};
-                margin: 0 auto ${spaces(2)};
+                margin: 0 auto ${spaces(1.25)};
                 ${ns(css`
                   font-size: ${fontSizes(2.5)};
                 `)};

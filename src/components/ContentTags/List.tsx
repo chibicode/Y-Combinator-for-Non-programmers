@@ -9,8 +9,7 @@ const commonListCss = css`
 `
 
 const commonListItemCss = css`
-  margin-left: 1.5em;
-  margin-bottom: ${2 / 3}em;
+  margin: 0 0 ${2 / 3}em 1.5em;
 
   &::before {
     /* Style taken from medium.com */
