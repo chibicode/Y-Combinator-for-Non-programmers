@@ -19,7 +19,8 @@ const EmojiSeparator: React.SFC<EmojiSeparatorProps> = ({
   <Component
     className={css`
       text-align: center;
-      margin: ${spacing === 'sm' ? 0 : spaces(1.5)} 0;
+      margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(1.25)} 0
+        ${spacing === 'sm' ? 0 : spaces(1.75)};
       font-size: ${size === 'lg' ? fontSizes(3) : fontSizes(2)};
       ${ns(css`
         font-size: ${size === 'lg' ? fontSizes(4) : fontSizes(2.5)};

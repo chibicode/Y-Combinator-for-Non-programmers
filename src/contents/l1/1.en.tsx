@@ -1,5 +1,14 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  Ol,
+  OlLi,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { yc } from 'src/lib/pathHelpers'
@@ -65,7 +74,7 @@ export default () => (
     <P>
       <Strong>Step 4:</Strong> After you eat sushi <Emoji>🍣</Emoji>, your chef{' '}
       <Em>
-        replaces sushi with steak <Emoji>🥩</Emoji>
+        brings steak <Emoji>🥩</Emoji>
       </Em>
       . So your dishes are now:{' '}
       <Em>
@@ -104,20 +113,20 @@ export default () => (
       </Strong>{' '}
       Choose the correct one.
     </P>
-    <Ul size="lg">
-      <UlLi>
-        <Emoji size="lg">🍽</Emoji> 1 → <Emoji size="lg">🌮</Emoji>{' '}
-        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
-      </UlLi>
-      <UlLi>
-        <Emoji size="lg">🍽</Emoji> 2 → <Emoji size="lg">🥩</Emoji>{' '}
-        <Emoji size="lg">🌮</Emoji> <Emoji size="lg">🥗</Emoji>
-      </UlLi>
-      <UlLi>
-        <Emoji size="lg">🍽</Emoji> 3 → <Emoji size="lg">🥩</Emoji>{' '}
-        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
-      </UlLi>
-    </Ul>
+    <Ol size="lg">
+      <OlLi>
+        <Emoji size="lg">🌮</Emoji> <Emoji size="lg">🥪</Emoji>{' '}
+        <Emoji size="lg">🥗</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">🥩</Emoji> <Emoji size="lg">🌮</Emoji>{' '}
+        <Emoji size="lg">🥗</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">🥩</Emoji> <Emoji size="lg">🥪</Emoji>{' '}
+        <Emoji size="lg">🌮</Emoji>
+      </OlLi>
+    </Ol>
     <P>Go to the next episode to find out the answer!</P>
     <NextLessonButton
       href={yc(2)}
