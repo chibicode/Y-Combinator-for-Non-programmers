@@ -1,13 +1,11 @@
 import React from 'react'
-import EpisodePage from 'src/components/EpisodePage'
-import t from 'src/lib/t'
+import EpisodePageWrapper from 'src/components/EpisodePageWrapper'
 
 const Episode1: React.SFC<{}> = () => (
-  <EpisodePage
-    lessonTitle={t('ycTitle')}
-    episodeTitle={t('ycEpisode1')}
+  <EpisodePageWrapper
+    episodeNumber={1}
     emojis={['😋', '🍽', '👨‍🍳']}
-    contentName="l1/1"
+    lessonName="yc"
   />
 )
 

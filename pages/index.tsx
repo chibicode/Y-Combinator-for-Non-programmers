@@ -49,14 +49,14 @@ const Index: React.SFC<{}> = () => (
               `}
             />
           </h1>
-          <Content name="home/Welcome" />
+          <Content name="others/Welcome" />
         </div>
         <div
           className={css`
             color: ${colors('indigo200')};
           `}
         >
-          <Content name="home/ComingSoon" />
+          <Content name="others/ComingSoon" />
         </div>
       </div>
     </Container>

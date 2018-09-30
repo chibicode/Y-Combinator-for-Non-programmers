@@ -5,7 +5,9 @@ import React from 'react'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import Page from 'src/components/Page'
+import pathHelpers from 'src/lib/pathHelpers'
 import {
   colors,
   fontSizes,
@@ -16,9 +18,11 @@ import {
   spaces
 } from 'src/lib/theme'
 
-interface EpisodePageProps {
+export interface EpisodePageProps {
+  lessonName: keyof typeof pathHelpers
   lessonTitle: string
   episodeTitle?: string
+  episodeNumber?: number
   emojis: string[]
   contentName: ContentProps['name']
 }
@@ -32,7 +36,9 @@ const commonTitleClasses = css`
 
 const EpisodePage: React.SFC<EpisodePageProps> = ({
   lessonTitle,
+  lessonName,
   episodeTitle,
+  episodeNumber,
   emojis,
   contentName
 }) => (
@@ -118,9 +124,10 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
       </div>
     </Container>
     <Container size="sm">
-      <div>
-        <Content name={contentName} />
-      </div>
+      {episodeNumber && (
+        <EpisodePageInitialRenderWarning lessonName={lessonName} />
+      )}
+      <Content name={contentName} />
     </Container>
   </Page>
 )

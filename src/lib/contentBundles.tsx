@@ -3,79 +3,98 @@ import dynamic from 'next/dynamic'
 import DynamicLoading from 'src/components/DynamicLoading'
 
 export interface BundleTypes {
-  'home/ComingSoon': {
+  'others/ComingSoon': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
 
-  'home/Welcome': {
+  'others/NewUser': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
 
-  'l1/1': {
+  'others/Welcome': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
 
-  'l1/Intro': {
+  'yc/1': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
+  'yc/Intro': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
 }
 
 const bundles: BundleTypes = {
-  'home/ComingSoon': {
+  'others/ComingSoon': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
       () =>
-        import(/* webpackChunkName: 'home/ComingSoon.en' */ 'src/contents/home/ComingSoon.en'),
+        import(/* webpackChunkName: 'others/ComingSoon.en' */ 'src/contents/others/ComingSoon.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () =>
-        import(/* webpackChunkName: 'home/ComingSoon.jp' */ 'src/contents/home/ComingSoon.jp'),
+        import(/* webpackChunkName: 'others/ComingSoon.jp' */ 'src/contents/others/ComingSoon.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'home/Welcome': {
+  'others/NewUser': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
       () =>
-        import(/* webpackChunkName: 'home/Welcome.en' */ 'src/contents/home/Welcome.en'),
+        import(/* webpackChunkName: 'others/NewUser.en' */ 'src/contents/others/NewUser.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () =>
-        import(/* webpackChunkName: 'home/Welcome.jp' */ 'src/contents/home/Welcome.jp'),
+        import(/* webpackChunkName: 'others/NewUser.jp' */ 'src/contents/others/NewUser.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'l1/1': {
+  'others/Welcome': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'l1/1.en' */ 'src/contents/l1/1.en'),
+      () =>
+        import(/* webpackChunkName: 'others/Welcome.en' */ 'src/contents/others/Welcome.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'l1/1.jp' */ 'src/contents/l1/1.jp'),
+      () =>
+        import(/* webpackChunkName: 'others/Welcome.jp' */ 'src/contents/others/Welcome.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'l1/Intro': {
+  'yc/1': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/1.en' */ 'src/contents/yc/1.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/1.jp' */ 'src/contents/yc/1.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'yc/Intro': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
       () =>
-        import(/* webpackChunkName: 'l1/Intro.en' */ 'src/contents/l1/Intro.en'),
+        import(/* webpackChunkName: 'yc/Intro.en' */ 'src/contents/yc/Intro.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () =>
-        import(/* webpackChunkName: 'l1/Intro.jp' */ 'src/contents/l1/Intro.jp'),
+        import(/* webpackChunkName: 'yc/Intro.jp' */ 'src/contents/yc/Intro.jp'),
       { loading: () => <DynamicLoading /> }
     )
   }

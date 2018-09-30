@@ -1,13 +1,8 @@
 import React from 'react'
-import EpisodePage from 'src/components/EpisodePage'
-import t from 'src/lib/t'
+import EpisodePageWrapper from 'src/components/EpisodePageWrapper'
 
 const Index: React.SFC<{}> = () => (
-  <EpisodePage
-    lessonTitle={t('ycTitle')}
-    emojis={['🤔', '🤔', '🤔']}
-    contentName="l1/Intro"
-  />
+  <EpisodePageWrapper emojis={['🤔', '🤔', '🤔']} lessonName="yc" />
 )
 
 export default Index

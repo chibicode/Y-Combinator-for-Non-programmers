@@ -11,7 +11,7 @@ interface SideNoteProps {
 const SideNoteSection: React.SFC<SideNoteProps> = ({ children, heading }) => (
   <div
     className={css`
-      padding: ${spaces(0.75)} ${spaces(1)} ${spaces(0.5)};
+      padding: ${spaces(0.75)} ${spaces(1)};
       border: 1px solid ${colors('indigo300')};
       background: ${colors('indigo50')};
       margin: 1.5rem 0;
