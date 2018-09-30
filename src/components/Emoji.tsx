@@ -61,7 +61,6 @@ class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
         className={css`
           & > .emoji {
             height: ${size === 'lg' ? '2em' : '1em'};
-            width: ${size === 'lg' ? '2em' : '1em'};
             vertical-align: top;
             transform: translateY(${emojiTransformY({ size })}em);
           }
