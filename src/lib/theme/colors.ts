@@ -19,6 +19,7 @@ export const allColors = {
   grey500: grey[500],
   grey800: grey[800],
   grey900: grey[900],
+  indigo50: indigo[50],
   indigo200: indigo[200],
   indigo300: indigo[300],
   indigo400: indigo[400],

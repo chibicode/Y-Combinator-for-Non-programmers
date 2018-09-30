@@ -17,6 +17,18 @@ export const allTranslations = {
   ycEpisode2: {
     en: '?',
     jp: '?'
+  },
+  ycEpisode3: {
+    en: '!',
+    jp: '!'
+  },
+  introductionPage: {
+    en: 'Introduction',
+    jp: '序章'
+  },
+  episodeList: {
+    en: 'Episode List',
+    jp: '目次'
   }
 }
 
