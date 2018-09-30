@@ -18,7 +18,7 @@ import { yc } from 'src/lib/pathHelpers'
 
 const CommonNextLessonButton = () => (
   <NextLessonButton
-    href={yc()}
+    href={yc(1)}
     primaryText={
       <>
         OK, Let's Go! <Emoji>🙂</Emoji>
