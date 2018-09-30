@@ -1,5 +1,6 @@
 import { css, cx } from 'emotion'
 import React from 'react'
+import { spaces } from 'src/lib/theme'
 
 const commonListCss = css`
   padding: 0;
@@ -21,19 +22,46 @@ const commonListItemCss = css`
   }
 `
 
-export const Ul: React.SFC<JSX.IntrinsicElements['ul']> = ({
-  className,
-  ...props
-}) => <ul {...props} className={cx(commonListCss, className)} />
+// https://stackoverflow.com/a/52173021/114157
+type DefaultUlProps = JSX.IntrinsicElements['ul']
+interface UlProps extends DefaultUlProps {
+  size?: 'md' | 'lg'
+}
 
-export const Ol: React.SFC<JSX.IntrinsicElements['ol']> = ({
+export const Ul: React.SFC<UlProps> = ({
   className,
+  size = 'md',
   ...props
 }) => (
+  <ul
+    {...props}
+    className={cx(
+      commonListCss,
+      {
+        [css`
+          margin: ${spaces(1.75)} 0;
+        `]: size === 'lg'
+      },
+      className
+    )}
+  />
+)
+
+type DefaultOlProps = JSX.IntrinsicElements['ol']
+interface OlProps extends DefaultOlProps {
+  size?: 'md' | 'lg'
+}
+
+export const Ol: React.SFC<OlProps> = ({ className, size, ...props }) => (
   <ol
     {...props}
     className={cx(
       commonListCss,
+      {
+        [css`
+          margin: ${spaces(1.75)} 0;
+        `]: size === 'lg'
+      },
       css`
         counter-reset: text;
       `,
