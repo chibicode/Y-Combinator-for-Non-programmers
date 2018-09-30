@@ -4,7 +4,6 @@ import isEqual from 'lodash/isEqual'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'react-emotion'
-import locale from 'src/lib/locale'
 import Twemoji from 'twemoji'
 
 const Span = styled('span')`
@@ -20,23 +19,6 @@ interface TwemojiContainerProps {
 interface EmojiProps {
   children: React.ReactNode
   size?: 'md' | 'lg'
-}
-
-// NOTE: This also depends on line-height
-const emojiTransformY = ({ size }: { size: TwemojiContainerProps['size'] }) => {
-  if (size === 'lg') {
-    if (locale === 'en') {
-      return -0.25
-    } else {
-      return -0.05
-    }
-  } else {
-    if (locale === 'en') {
-      return 0.25
-    } else {
-      return 0.4
-    }
-  }
 }
 
 class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
@@ -59,10 +41,11 @@ class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
     return (
       <Span
         className={css`
+          display: inline-flex;
+          vertical-align: middle;
+          transform: translateY(-0.1em);
           & > .emoji {
             height: ${size === 'lg' ? '2em' : '1em'};
-            vertical-align: top;
-            transform: translateY(${emojiTransformY({ size })}em);
           }
         `}
       >

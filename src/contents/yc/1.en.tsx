@@ -130,12 +130,12 @@ export default () => (
     <P>Go to the next episode to find out the answer!</P>
     <NextLessonButton
       href={yc(2)}
-      primaryText={
+      primaryText={<>Check My Answer</>}
+      secondaryText={
         <>
-          Check My Answer <Emoji>👋</Emoji>
+          Continue to Episode 2 <Emoji>👋</Emoji>
         </>
       }
-      secondaryText={<>Continue to Episode 2</>}
     />
   </>
 )

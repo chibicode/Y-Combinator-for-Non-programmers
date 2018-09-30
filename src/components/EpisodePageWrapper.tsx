@@ -1,5 +1,6 @@
 import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
+import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTranslations } from 'src/lib/t'
 
@@ -19,9 +20,9 @@ const EpisodePageWrapper: React.SFC<EpisodePageWrapperProps> = ({
     lessonTitle={t(`${lessonName}Title` as keyof typeof allTranslations)}
     episodeTitle={
       episodeNumber
-        ? t(
+        ? `${episodeTitlePrefix(episodeNumber)}: ${t(
             `${lessonName}Episode${episodeNumber}` as keyof typeof allTranslations
-          )
+          )}`
         : undefined
     }
     episodeNumber={episodeNumber}

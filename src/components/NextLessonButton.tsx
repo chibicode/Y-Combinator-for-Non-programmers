@@ -1,7 +1,8 @@
 import { css } from 'emotion'
 import Link from 'next/link'
 import React from 'react'
-import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
+import locale from 'src/lib/locale'
+import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
 
 interface NextLessonButtonProps {
   Component?: React.ComponentType | string
@@ -26,12 +27,14 @@ const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
       <a
         className={css`
           display: inline-block;
-          padding: ${spaces(0.5)} ${spaces(1.5)} ${spaces(0.75)};
+          padding: ${locale === 'jp' ? spaces(0.25) : spaces(0.5)}
+            ${spaces(1.5)} ${locale === 'jp' ? spaces(0.5) : spaces(0.75)};
           border-radius: ${radii(0.5)};
           border: 2px solid ${colors('pink700')};
           background: ${colors('pink400')};
           color: #fff;
           text-decoration: none;
+          line-height: ${lineHeights(1.3)};
           &:focus {
             box-shadow: 0 0 0 1pt ${colors('pink700')};
             outline: none;

@@ -133,9 +133,10 @@ export default () => (
     <P>答えは次のページにあります！</P>
     <NextLessonButton
       href={yc(2)}
-      primaryText={
+      primaryText={<>次のページへ進む</>}
+      secondaryText={
         <>
-          次のページへ進む <Emoji>👋</Emoji>
+          第2章へ <Emoji>🙂</Emoji>
         </>
       }
     />
