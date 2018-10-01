@@ -1,4 +1,4 @@
-const allZIndices = {
+export const allZIndices = {
   expressionPriorityNumberWrapperInactive: 10
 }
 
