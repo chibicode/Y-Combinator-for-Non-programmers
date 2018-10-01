@@ -4,6 +4,7 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import colors from 'src/lib/theme/colors'
+import maxNestedFunctionDepth from 'src/lib/yc/maxNestedFunctionDepth'
 import { PrioritizedFunctionExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface FunctionExpressionBoxProps {
@@ -20,6 +21,8 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
   >
     <FlexCenter
       className={css`
+        flex-grow: 1;
+        flex-basis: 0;
         border-right: 1px solid ${colors('grey300')};
       `}
     >
@@ -27,7 +30,8 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
     </FlexCenter>
     <FlexCenter
       className={css`
-        flex: 1;
+        flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
+        flex-basis: 0;
         border-left: 1px solid ${colors('grey300')};
       `}
     >
