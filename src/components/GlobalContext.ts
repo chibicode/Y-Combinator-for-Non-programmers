@@ -1,7 +1,11 @@
 import React from 'react'
 
-export const globalContextDefault = {
+interface GlobalContextProps {
+  initialRender: boolean
+}
+
+export const globalContextDefault: GlobalContextProps = {
   initialRender: true
 }
 
-export default React.createContext(globalContextDefault)
+export default React.createContext<GlobalContextProps>(globalContextDefault)

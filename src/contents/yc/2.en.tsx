@@ -1,4 +1,5 @@
 import React from 'react'
+import Container from 'src/components/Container'
 import {
   Blockquote,
   Em,
@@ -10,8 +11,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import ContentExpressionExecutorWrapper from 'src/components/Yc/ContentExpressionExecutorWrapper'
-import ExpressionExecutor from 'src/components/Yc/ExpressionExecutor'
+import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import { episode2Expression1, infiniteLoop } from 'src/lib/yc/lessonExpressions'
 
 export default () => (
@@ -42,8 +42,9 @@ export default () => (
     </P>
     <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
     <P>
-      Bento boxes are <Em>traditional Japanese lunch boxes</Em> (as shown in the
-      above emojis). Here’s what{' '}
+      Bento boxes <Emoji>🍱</Emoji> are{' '}
+      <Em>traditional Japanese lunch boxes</Em> (as shown in the above emojis).
+      Here’s what{' '}
       <ExternalLink href="https://simple.wikipedia.org/wiki/Bento">
         Wikipedia (Simple English)
       </ExternalLink>{' '}
@@ -59,11 +60,25 @@ export default () => (
     </Blockquote>
     <P>
       In this tutorial, we’re going to play with an{' '}
-      <Em>interactive bento box</Em>. Here’s what it looks like:
+      <Em>
+        interactive bento box <Emoji>🍱</Emoji>
+      </Em>
+      . Here’s what it looks like. It kind of looks like a bento box, right?
     </P>
-    <ExpressionExecutor expressionContainer={infiniteLoop} />
-    <ContentExpressionExecutorWrapper>
-      <ExpressionExecutor expressionContainer={episode2Expression1} />
-    </ContentExpressionExecutorWrapper>
+    <Container size="xxs" horizontalPadding={0} verticalMargin={1.75}>
+      <ExpressionRunner
+        expressionContainer={episode2Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+      />
+    </Container>
+    <P>
+      <Strong>But what does each cell mean?</Strong> Well let me explain.{' '}
+      <Em>
+        The <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
+        is preparing.
+      </Em>
+    </P>
   </>
 )

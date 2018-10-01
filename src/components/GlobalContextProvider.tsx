@@ -1,6 +1,8 @@
 import { withRouter, WithRouterProps } from 'next/router'
 import React from 'react'
-import GlobalContext, { globalContextDefault } from 'src/lib/GlobalContext'
+import GlobalContext, {
+  globalContextDefault
+} from 'src/components/GlobalContext'
 
 interface GlobalContextProviderProps {
   children: React.ReactNode

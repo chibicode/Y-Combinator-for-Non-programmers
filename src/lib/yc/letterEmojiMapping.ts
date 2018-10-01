@@ -1,8 +1,8 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 const letterEmojiMapping: Record<VariableNames, string> = {
-  a: '👽',
-  b: '🐱',
+  a: '🍣',
+  b: '🥪',
   c: '🐔',
   d: '🐶',
   e: '🦊',

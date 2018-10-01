@@ -1,27 +1,31 @@
-import { css } from 'emotion'
+import { css, cx } from 'emotion'
 import React from 'react'
-import maxWidths from 'src/lib/theme/maxWidths'
-import spaces from 'src/lib/theme/spaces'
-
-type FirstArgument<T> = T extends (arg: infer U) => any ? U : any
+import maxWidths, { allMaxWidths } from 'src/lib/theme/maxWidths'
+import spaces, { allSpaces } from 'src/lib/theme/spaces'
 
 interface ContainerProps {
   children: React.ReactNode
   Component?: React.ComponentType | string
-  size: FirstArgument<typeof maxWidths>
+  size: keyof typeof allMaxWidths
+  verticalMargin?: keyof typeof allSpaces
+  horizontalPadding?: keyof typeof allSpaces
 }
 
 const Container: React.SFC<ContainerProps> = ({
   children,
   Component = 'div',
-  size
+  size,
+  verticalMargin = 0,
+  horizontalPadding = 1.25
 }) => (
   <Component
-    className={css`
-      max-width: ${maxWidths(size)};
-      margin: 0 auto;
-      padding: 0 ${spaces(1.25)};
-    `}
+    className={cx(
+      css`
+        max-width: ${maxWidths(size)};
+        margin: ${spaces(verticalMargin)} auto;
+        padding: 0 ${spaces(horizontalPadding)};
+      `
+    )}
   >
     {children}
   </Component>
