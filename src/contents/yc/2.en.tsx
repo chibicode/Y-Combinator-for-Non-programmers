@@ -10,8 +10,9 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import ContentExpressionExecutorWrapper from 'src/components/Yc/ContentExpressionExecutorWrapper'
 import ExpressionExecutor from 'src/components/Yc/ExpressionExecutor'
-import { infiniteLoop } from 'src/lib/yc/lessonExpressions'
+import { episode2Expression1, infiniteLoop } from 'src/lib/yc/lessonExpressions'
 
 export default () => (
   <>
@@ -61,5 +62,8 @@ export default () => (
       <Em>interactive bento box</Em>. Here’s what it looks like:
     </P>
     <ExpressionExecutor expressionContainer={infiniteLoop} />
+    <ContentExpressionExecutorWrapper>
+      <ExpressionExecutor expressionContainer={episode2Expression1} />
+    </ContentExpressionExecutorWrapper>
   </>
 )
