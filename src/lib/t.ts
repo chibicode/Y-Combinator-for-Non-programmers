@@ -15,7 +15,7 @@ export const allTranslations = {
     jp: 'お抱えのシェフ'
   },
   ycEpisode2: {
-    en: '?',
+    en: 'Bento Box',
     jp: '?'
   },
   ycEpisode3: {
