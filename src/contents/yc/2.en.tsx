@@ -10,6 +10,8 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import ExpressionExecutor from 'src/components/Yc/ExpressionExecutor'
+import { infiniteLoop } from 'src/lib/yc/lessonExpressions'
 
 export default () => (
   <>
@@ -39,7 +41,8 @@ export default () => (
     </P>
     <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
     <P>
-      If you don’t know what bento boxes are, here’s what{' '}
+      Bento boxes are <Em>traditional Japanese lunch boxes</Em> (as shown in the
+      above emojis). Here’s what{' '}
       <ExternalLink href="https://simple.wikipedia.org/wiki/Bento">
         Wikipedia (Simple English)
       </ExternalLink>{' '}
@@ -57,5 +60,6 @@ export default () => (
       In this tutorial, we’re going to play with an{' '}
       <Em>interactive bento box</Em>. Here’s what it looks like:
     </P>
+    <ExpressionExecutor expressionContainer={infiniteLoop} />
   </>
 )

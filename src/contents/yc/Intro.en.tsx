@@ -176,9 +176,12 @@ export default () => (
           margin-top: 0;
         `}
       >
-        Good question! My name's <Strong>Shu</Strong>. As of writing (2018), I
-        work as a freelance engineer and a co-translator for “Factfulness” by
-        Hans Rosling. It’s the book Bill Gates{' '}
+        Good question! My name's <Strong>Shu</Strong>. I was born in Japan and
+        live in San Francisco Bay Area, CA.
+      </P>
+      <P>
+        As of writing (2018), I work as a freelance engineer and a co-translator
+        for “Factfulness” by Hans Rosling. It’s the book Bill Gates{' '}
         <ExternalLink href="https://twitter.com/billgates/status/981532669358911488">
           called
         </ExternalLink>{' '}

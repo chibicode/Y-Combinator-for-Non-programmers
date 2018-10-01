@@ -57,7 +57,7 @@ export default class ExpressionExecutor extends React.Component<
       <div>
         <div
           className={css`
-            max-width: 300px;
+            max-width: 100%;
           `}
         >
           <ExpressionBox expression={expressionContainer.expression} />
