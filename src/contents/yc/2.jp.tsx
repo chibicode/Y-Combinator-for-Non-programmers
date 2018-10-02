@@ -1,5 +1,13 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  InternalLink,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
@@ -14,7 +22,10 @@ import {
 export default () => (
   <>
     <P>
-      <Strong>クイズの答え合わせをしましょう。</Strong>
+      <Strong>
+        <InternalLink href={yc(1)}>第1章で出したクイズ</InternalLink>
+        の答え合わせをしましょう。
+      </Strong>
       仮に、次のような状態だった場合…
     </P>
     <Ul size="lg">
