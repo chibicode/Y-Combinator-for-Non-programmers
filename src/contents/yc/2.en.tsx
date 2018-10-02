@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from 'src/components/Container'
 import {
   Blockquote,
   Em,
   ExternalLink,
+  H3,
   P,
   Strong,
   Ul,
@@ -11,8 +11,14 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import { episode2Expression1 } from 'src/lib/yc/lessonExpressions'
+import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import { yc } from 'src/lib/pathHelpers'
+import {
+  episode2Expression1,
+  episode2Expression2
+} from 'src/lib/yc/lessonExpressions'
 
 export default () => (
   <>
@@ -65,14 +71,14 @@ export default () => (
       </Em>
       . Here’s what it looks like. It kind of looks like a bento box, right?
     </P>
-    <Container size="xxs" horizontalPadding={0} verticalMargin={1.75}>
+    <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression1}
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
       />
-    </Container>
+    </ExpressionRunnerWrapper>
     <P>
       <Strong>But what does each cell mean?</Strong> Well let me explain.{' '}
       <Em>
@@ -80,7 +86,7 @@ export default () => (
         is preparing.
       </Em>
     </P>
-    <Container size="xxs" horizontalPadding={0} verticalMargin={1.75}>
+    <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression1}
         showPriorities={false}
@@ -88,6 +94,69 @@ export default () => (
         variableSize={'lg'}
         initialStep={2}
       />
-    </Container>
+    </ExpressionRunnerWrapper>
+    <P>
+      <Em>
+        Next, the <Strong>bottom left</Strong> cell represents what you’re
+        eating next <Emoji>😋</Emoji>.
+      </Em>
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initialStep={3}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Em>
+        Finally, the <Strong>bottom right</Strong> cell represents the current
+        set of dishes <Emoji>🍽</Emoji>.
+      </Em>
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initialStep={4}
+      />
+    </ExpressionRunnerWrapper>
+    <P>Let’s do a quiz to check if you understood this!</P>
+    <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+    <H3>Quiz</H3>
+    <P>What scenario does the this “bento box” represent?</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression2}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+      />
+    </ExpressionRunnerWrapper>
+    <Ul size="lg">
+      <UlLi>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">❓</Emoji>
+      </UlLi>
+      <UlLi>
+        <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">❓</Emoji>
+      </UlLi>
+      <UlLi>
+        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">❓</Emoji>
+      </UlLi>
+    </Ul>
+    <P>Go to the next episode to find out the answer!</P>
+    <NextLessonButton
+      href={yc(3)}
+      primaryText={<>Check My Answer</>}
+      secondaryText={
+        <>
+          Continue to Episode 3 <Emoji>👋</Emoji>
+        </>
+      }
+    />
   </>
 )

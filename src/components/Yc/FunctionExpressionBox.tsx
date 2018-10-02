@@ -47,7 +47,7 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
     >
       <ExpressionHighlighterContext.Provider
         value={{
-          state: convertAllExpressionStates(expression.arg.state),
+          state: convertAllExpressionStates(expression.body.state),
           highlightType: 'funcBody'
         }}
       >

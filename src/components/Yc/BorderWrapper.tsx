@@ -18,7 +18,7 @@ const stateToColor = (
     case 'justHighlighted':
       return 'yellow100'
     case 'highlighted':
-      return 'yellow100'
+      return 'yellow50'
   }
 }
 

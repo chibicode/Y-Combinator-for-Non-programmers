@@ -56,10 +56,10 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
           case 'readyToHighlight': {
             if (expression.arg.state === 'default') {
               expression.arg.state = 'justHighlighted'
-            } else if (expression.func.body.state === 'default') {
+            } else if (expression.func.arg.state === 'default') {
               expression.arg.state = 'highlighted'
               expression.func.arg.state = 'justHighlighted'
-            } else if (expression.func.arg.state === 'default') {
+            } else if (expression.func.body.state === 'default') {
               expression.func.arg.state = 'highlighted'
               expression.func.body.state = 'justHighlighted'
             } else {

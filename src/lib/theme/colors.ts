@@ -34,8 +34,10 @@ export const allColors = {
   red500: red[500],
   transparent: 'transparent',
   white: 'white',
+  yellow50: yellow[50],
   yellow100: yellow[100],
-  yellow200: yellow[200]
+  yellow200: yellow[200],
+  yellow700: yellow[700]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]
