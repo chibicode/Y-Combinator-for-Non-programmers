@@ -5,6 +5,7 @@ import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import { lineHeights } from 'src/lib/theme'
 import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
@@ -70,6 +71,7 @@ export default class ExpressionRunner extends React.Component<
         <div
           className={css`
             max-width: 100%;
+            line-height: ${lineHeights(1.3, { ignoreLocale: true })};
           `}
         >
           <ExpressionBox expression={expressionContainer.expression} />

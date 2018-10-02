@@ -9,7 +9,12 @@ const lineHeightJpMultiplier = 1.15
 const multiplyLineHeight = (lineHeight: number) =>
   locale === 'jp' ? lineHeightJpMultiplier * lineHeight : lineHeight
 
-const lineHeights = (x: keyof typeof allLineHeights) =>
-  multiplyLineHeight(allLineHeights[x])
+const lineHeights = (
+  x: keyof typeof allLineHeights,
+  options?: { ignoreLocale: boolean }
+) =>
+  options && options.ignoreLocale
+    ? allLineHeights[x]
+    : multiplyLineHeight(allLineHeights[x])
 
 export default lineHeights

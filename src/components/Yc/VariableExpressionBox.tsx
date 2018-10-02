@@ -18,7 +18,7 @@ interface VariableExpressionBoxProps {
 const paddingTop = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
     lg: spaces(0.75),
-    sm: spaces(0.5)
+    sm: spaces(0.25)
   }[size])
 
 const paddingBottom = (size: ExpressionRunnerContextProps['variableSize']) =>
@@ -58,7 +58,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                 className={css`
                   position: absolute;
                   right: -0.2em;
-                  bottom: 0.2em;
+                  bottom: 0;
                   z-index: ${zIndices('emojiBadge')};
                 `}
               >
