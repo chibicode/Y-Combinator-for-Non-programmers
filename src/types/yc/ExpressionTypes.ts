@@ -1,6 +1,6 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-export type CommonStates = 'default' | 'highlighted'
+export type CommonStates = 'default' | 'highlighted' | 'justHighlighted'
 
 export interface VariableExpression {
   readonly state: CommonStates

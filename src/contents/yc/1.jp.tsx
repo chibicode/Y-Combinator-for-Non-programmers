@@ -10,6 +10,7 @@ import {
   UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { yc } from 'src/lib/pathHelpers'
 
@@ -93,7 +94,9 @@ export default () => (
         <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
       </UlLi>
     </Ul>
-    <H3>ここで問題です。</H3>
+    <P>では、ここでクイズです。</P>
+    <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+    <H3>クイズ</H3>
     <P>
       仮に、次のような状態だったとします。(シェフは <Em>タコス 🌮</Em>{' '}
       を作っています)
@@ -133,9 +136,10 @@ export default () => (
     <P>答えは次のページにあります！</P>
     <NextLessonButton
       href={yc(2)}
-      primaryText={
+      primaryText={<>次のページへ進む</>}
+      secondaryText={
         <>
-          次のページへ進む <Emoji>👋</Emoji>
+          第2章へ <Emoji>🙂</Emoji>
         </>
       }
     />

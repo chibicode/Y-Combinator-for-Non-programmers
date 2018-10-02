@@ -1,10 +1,9 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
-import { css } from 'emotion'
+import { css, cx } from 'emotion'
 import isEqual from 'lodash/isEqual'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'react-emotion'
-import locale from 'src/lib/locale'
 import Twemoji from 'twemoji'
 
 const Span = styled('span')`
@@ -12,31 +11,16 @@ const Span = styled('span')`
   }
 `
 
-interface TwemojiContainerProps {
-  options: {}
-  size: 'md' | 'lg'
-}
-
 interface EmojiProps {
   children: React.ReactNode
   size?: 'md' | 'lg'
+  noVerticalTransform?: boolean
 }
 
-// NOTE: This also depends on line-height
-const emojiTransformY = ({ size }: { size: TwemojiContainerProps['size'] }) => {
-  if (size === 'lg') {
-    if (locale === 'en') {
-      return -0.25
-    } else {
-      return -0.05
-    }
-  } else {
-    if (locale === 'en') {
-      return 0.25
-    } else {
-      return 0.4
-    }
-  }
+interface TwemojiContainerProps {
+  options: {}
+  size: Required<EmojiProps>['size']
+  noVerticalTransform: Required<EmojiProps>['noVerticalTransform']
 }
 
 class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
@@ -55,17 +39,23 @@ class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
   }
 
   public render() {
-    const { size, children } = this.props
+    const { size, children, noVerticalTransform } = this.props
     return (
       <Span
-        className={css`
-          & > .emoji {
-            height: ${size === 'lg' ? '2em' : '1em'};
-            width: ${size === 'lg' ? '2em' : '1em'};
-            vertical-align: top;
-            transform: translateY(${emojiTransformY({ size })}em);
+        className={cx(
+          css`
+            display: inline-flex;
+            vertical-align: middle;
+            & > .emoji {
+              height: ${size === 'lg' ? '2em' : '1em'};
+            }
+          `,
+          {
+            [css`
+              transform: translateY(-0.1em);
+            `]: !noVerticalTransform
           }
-        `}
+        )}
       >
         {children}
       </Span>
@@ -73,9 +63,14 @@ class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
   }
 }
 
-const Emoji: React.SFC<EmojiProps> = ({ children, size = 'md' }) => (
+const Emoji: React.SFC<EmojiProps> = ({
+  children,
+  size = 'md',
+  noVerticalTransform = false
+}) => (
   <TwemojiContainer
     size={size}
+    noVerticalTransform={noVerticalTransform}
     options={{
       folder: 'svg',
       ext: '.svg'

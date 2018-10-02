@@ -15,8 +15,10 @@ const stateToColor = (
   x: AllExpressionStates
 ): keyof typeof allColors | undefined => {
   switch (x) {
+    case 'justHighlighted':
+      return 'yellow100'
     case 'highlighted':
-      return 'blue100'
+      return 'yellow50'
   }
 }
 
@@ -24,7 +26,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({ children, state }) => (
   <Flex
     className={css`
       margin: -2px;
-      border: 2px solid ${colors('grey300')};
+      border: 2px solid ${colors('indigo300')};
       align-items: center;
       background: ${colors(stateToColor(state) || 'white')};
       flex: 1;

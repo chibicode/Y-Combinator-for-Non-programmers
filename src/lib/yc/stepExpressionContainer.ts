@@ -54,13 +54,16 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
             break
           }
           case 'readyToHighlight': {
-            if (expression.func.arg.state === 'default') {
-              expression.func.arg.state = 'highlighted'
-            } else if (expression.arg.state === 'default') {
+            if (expression.arg.state === 'default') {
+              expression.arg.state = 'justHighlighted'
+            } else if (expression.func.arg.state === 'default') {
               expression.arg.state = 'highlighted'
+              expression.func.arg.state = 'justHighlighted'
             } else if (expression.func.body.state === 'default') {
-              expression.func.body.state = 'highlighted'
+              expression.func.arg.state = 'highlighted'
+              expression.func.body.state = 'justHighlighted'
             } else {
+              expression.func.body.state = 'highlighted'
               expression.state = 'checkForConflictingVariables'
             }
             break

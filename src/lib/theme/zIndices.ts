@@ -1,4 +1,5 @@
-const allZIndices = {
+export const allZIndices = {
+  emojiBadge: 10,
   expressionPriorityNumberWrapperInactive: 10
 }
 

@@ -1,4 +1,5 @@
-const allMaxWidths = {
+export const allMaxWidths = {
+  xxs: (1024 / 12) * 4,
   sm: (1024 / 12) * 9,
   md: (1024 / 12) * 10,
   lg: 1024

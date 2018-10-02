@@ -1,7 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container from 'src/components/Container'
-import ExpressionExecutor from 'src/components/Yc/ExpressionExecutor'
+import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import Flex from 'src/components/Flex'
 import GlobalStyles from 'src/components/GlobalStyles'
 import 'src/lib/fontAwesome'
@@ -24,7 +24,7 @@ const Beta: React.SFC<{}> = () => (
             `}
             key={index}
           >
-            <ExpressionExecutor expressionContainer={e} />
+            <ExpressionRunner expressionContainer={e} />
           </div>
         ))}
       </Flex>

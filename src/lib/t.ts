@@ -11,8 +11,24 @@ export const allTranslations = {
     jp: 'あなたの知らないYコンビネーター'
   },
   ycEpisode1: {
-    en: 'Episode 1: Your Personal Chef',
-    jp: '第1章: お抱えのシェフ'
+    en: 'Your Personal Chef',
+    jp: 'お抱えのシェフ'
+  },
+  ycEpisode2: {
+    en: 'Bento Box',
+    jp: 'これっくらいの、お弁当箱に…'
+  },
+  ycEpisode3: {
+    en: '?',
+    jp: '?'
+  },
+  introductionPage: {
+    en: 'Introduction',
+    jp: '序章'
+  },
+  episodeList: {
+    en: 'Episode List',
+    jp: '目次'
   }
 }
 

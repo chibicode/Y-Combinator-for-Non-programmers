@@ -1,4 +1,4 @@
-const allLetterSpacings = {
+export const allLetterSpacings = {
   title: '-.015em'
 }
 

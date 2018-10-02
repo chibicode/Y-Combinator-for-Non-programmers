@@ -19,10 +19,10 @@ export const allColors = {
   grey500: grey[500],
   grey800: grey[800],
   grey900: grey[900],
+  indigo50: indigo[50],
   indigo200: indigo[200],
   indigo300: indigo[300],
   indigo400: indigo[400],
-  indigo50: indigo[50],
   indigo500: indigo[500],
   jpSocialBackground: grey[300],
   pink50: pink[50],
@@ -34,8 +34,10 @@ export const allColors = {
   red500: red[500],
   transparent: 'transparent',
   white: 'white',
+  yellow50: yellow[50],
   yellow100: yellow[100],
-  yellow200: yellow[200]
+  yellow200: yellow[200],
+  yellow700: yellow[700]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]

@@ -1,12 +1,12 @@
 import React from 'react'
 import EpisodePageWrapper from 'src/components/EpisodePageWrapper'
 
-const Episode1: React.SFC<{}> = () => (
+const Episode2: React.SFC<{}> = () => (
   <EpisodePageWrapper
-    episodeNumber={1}
-    emojis={['😋', '🍽', '👨‍🍳']}
+    episodeNumber={2}
+    emojis={['🍱', '🍱', '🍱']}
     lessonName="yc"
   />
 )
 
-export default Episode1
+export default Episode2
