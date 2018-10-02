@@ -12,7 +12,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import { episode2Expression1, infiniteLoop } from 'src/lib/yc/lessonExpressions'
+import { episode2Expression1 } from 'src/lib/yc/lessonExpressions'
 
 export default () => (
   <>
@@ -80,5 +80,14 @@ export default () => (
         is preparing.
       </Em>
     </P>
+    <Container size="xxs" horizontalPadding={0} verticalMargin={1.75}>
+      <ExpressionRunner
+        expressionContainer={episode2Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initialStep={2}
+      />
+    </Container>
   </>
 )

@@ -19,6 +19,7 @@ interface ExpressionRunnerProps {
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
+  initialStep: number
 }
 
 type ExpressionRunnerState = Pick<ExpressionRunnerProps, 'expressionContainer'>
@@ -30,13 +31,20 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
-    variableSize: expressionRunnerContextDefault.variableSize
+    variableSize: expressionRunnerContextDefault.variableSize,
+    initialStep: 0
   }
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
+    let expressionContainer = props.expressionContainer
+    if (props.initialStep > 0) {
+      ;[...Array(props.initialStep)].forEach(_ => {
+        expressionContainer = stepExpressionContainer(expressionContainer)
+      })
+    }
     this.state = {
-      expressionContainer: props.expressionContainer
+      expressionContainer
     }
   }
 
