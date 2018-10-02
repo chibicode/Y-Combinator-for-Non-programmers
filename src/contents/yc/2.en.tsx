@@ -40,8 +40,8 @@ export default () => (
     </Ul>
     <P>
       <Strong>The answer is</Strong>: <Emoji size="lg">🥩</Emoji>{' '}
-      <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>. Hope you got it
-      right!
+      <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>. The salad is
+      replaced with tacos. Hope you got it right!
     </P>
     <P>
       Now, let’s move on to the next topic: <Strong>Bento Boxes</Strong>.
@@ -64,12 +64,14 @@ export default () => (
         vegetables as a side dish. ... People often take bento for a picnic.
       </P>
     </Blockquote>
+    <H3>Interactive Bento Box</H3>
     <P>
       In this tutorial, we’re going to play with an{' '}
       <Em>
         interactive bento box <Emoji>🍱</Emoji>
       </Em>
-      . Here’s what it looks like. It kind of looks like a bento box, right?
+      . Here’s what it looks like. Each cell has a food item. It kind of looks
+      like a bento box, right?
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -80,11 +82,14 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>But what does each cell mean?</Strong> Well let me explain.{' '}
+      <Strong>But what does each cell mean?</Strong> Let me explain.
+    </P>
+    <P>
       <Em>
         The <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
         is preparing.
-      </Em>
+      </Em>{' '}
+      In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -99,7 +104,8 @@ export default () => (
       <Em>
         Next, the <Strong>bottom left</Strong> cell represents what you’re
         eating next <Emoji>😋</Emoji>.
-      </Em>
+      </Em>{' '}
+      In this case, you’ll be eating sushi <Emoji>🍣</Emoji> next.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -112,9 +118,10 @@ export default () => (
     </ExpressionRunnerWrapper>
     <P>
       <Em>
-        Finally, the <Strong>bottom right</Strong> cell represents the current
-        set of dishes <Emoji>🍽</Emoji>.
-      </Em>
+        Finally, the <Strong>bottom right</Strong> cell represents all available
+        dishes <Emoji>🍽</Emoji>.
+      </Em>{' '}
+      In this case, the only dish available is sushi <Emoji>🍣</Emoji>.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -125,10 +132,27 @@ export default () => (
         initialStep={4}
       />
     </ExpressionRunnerWrapper>
+    <P>
+      <Strong>So:</Strong> the above “bento box <Emoji>🍱</Emoji>” represents
+      the following scenario.
+    </P>
+    <Ul size="lg">
+      <UlLi>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍣</Emoji>
+      </UlLi>
+      <UlLi>
+        <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍣</Emoji>
+      </UlLi>
+      <UlLi>
+        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥪</Emoji>
+      </UlLi>
+    </Ul>
     <P>Let’s do a quiz to check if you understood this!</P>
     <EmojiSeparator emojis={['❓', '🤔', '❓']} />
     <H3>Quiz</H3>
-    <P>What scenario does the this “bento box” represent?</P>
+    <P>
+      What scenario does the this “bento box <Emoji>🍱</Emoji>” represent?
+    </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}

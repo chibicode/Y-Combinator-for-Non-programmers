@@ -14,7 +14,7 @@ const NewUser: React.SFC<{
     </InternalLink>
     」という記事の途中です。 はじめての方は、
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      <Strong>序章から読み始めてみてください</Strong>
+      <Strong>こちらをクリックして序章から読み始めてみてください</Strong>
     </InternalLink>
     。
   </>

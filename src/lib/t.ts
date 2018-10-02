@@ -16,11 +16,11 @@ export const allTranslations = {
   },
   ycEpisode2: {
     en: 'Bento Box',
-    jp: '?'
+    jp: 'これっくらいの、お弁当箱に…'
   },
   ycEpisode3: {
-    en: '!',
-    jp: '!'
+    en: '?',
+    jp: '?'
   },
   introductionPage: {
     en: 'Introduction',
