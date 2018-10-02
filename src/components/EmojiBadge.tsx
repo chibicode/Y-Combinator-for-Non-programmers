@@ -22,7 +22,7 @@ const stateToColors = (x: EmojiBadgeProps['state']) =>
 const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: '👨‍🍳',
-    funcArg: '😍',
+    funcArg: '😋',
     funcBody: '🍽'
   }[x])
 

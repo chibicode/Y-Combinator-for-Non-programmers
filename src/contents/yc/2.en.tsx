@@ -4,6 +4,7 @@ import {
   Em,
   ExternalLink,
   H3,
+  InternalLink,
   P,
   Strong,
   Ul,
@@ -23,8 +24,8 @@ import {
 export default () => (
   <>
     <P>
-      <Strong>Quiz Review:</Strong> Let’s take a look at the quiz from the last
-      episode:
+      <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
+      <InternalLink href={yc(1)}>the quiz from the last episode</InternalLink>:
     </P>
     <Ul size="lg">
       <UlLi>
