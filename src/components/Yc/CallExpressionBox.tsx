@@ -1,8 +1,11 @@
 import { css } from 'emotion'
 import React from 'react'
-import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
+import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import ExpressionHighlighterContext, {
+  convertAllExpressionStates
+} from 'src/components/Yc/ExpressionHighlighterContext'
 import colors from 'src/lib/theme/colors'
 import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
@@ -24,7 +27,14 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
         border-bottom: 1px solid ${colors('grey300')};
       `}
     >
-      <ExpressionBox expression={expression.arg} />
+      <ExpressionHighlighterContext.Provider
+        value={{
+          state: convertAllExpressionStates(expression.arg.state),
+          highlightType: 'callArg'
+        }}
+      >
+        <ExpressionBox expression={expression.arg} />
+      </ExpressionHighlighterContext.Provider>
     </FlexCenter>
     <FlexCenter
       className={css`

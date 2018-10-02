@@ -7,7 +7,7 @@ import ExpressionHighlighterContext from 'src/components/Yc/ExpressionHighlighte
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-import { fontSizes, spaces } from 'src/lib/theme'
+import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { PrioritizedVariableExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
@@ -37,7 +37,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
   expression
 }) => (
   <ExpressionHighlighterContext.Consumer>
-    {({ state }) => (
+    {({ state, highlightType }) => (
       <ExpressionRunnerContext.Consumer>
         {({ variableSize }) => (
           <FlexCenter
@@ -57,13 +57,15 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
               <span
                 className={css`
                   position: absolute;
-                  top: 20px;
-                  left: 20px;
+                  right: -0.2em;
+                  bottom: 0.2em;
+                  z-index: ${zIndices('emojiBadge')};
                 `}
               >
-                {(state === 'highlighted' || state === 'justHighlighted') && (
-                  <EmojiBadge />
-                )}
+                {(state === 'highlighted' || state === 'justHighlighted') &&
+                  highlightType && (
+                    <EmojiBadge state={state} badgeType={highlightType} />
+                  )}
               </span>
             </span>
           </FlexCenter>

@@ -1,9 +1,6 @@
 import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
-import ExpressionHighlighterContext, {
-  ExpressionHighlighterContextProps
-} from 'src/components/Yc/ExpressionHighlighterContext'
 import colors, { allColors } from 'src/lib/theme/colors'
 import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
 
@@ -25,36 +22,18 @@ const stateToColor = (
   }
 }
 
-const contextState = (
-  x: AllExpressionStates
-): ExpressionHighlighterContextProps['state'] => {
-  switch (x) {
-    case 'justHighlighted':
-    case 'highlighted':
-      return x
-    default:
-      return 'default'
-  }
-}
-
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({ children, state }) => (
-  <ExpressionHighlighterContext.Provider
-    value={{
-      state: contextState(state)
-    }}
+  <Flex
+    className={css`
+      margin: -2px;
+      border: 2px solid ${colors('indigo300')};
+      align-items: center;
+      background: ${colors(stateToColor(state) || 'white')};
+      flex: 1;
+    `}
   >
-    <Flex
-      className={css`
-        margin: -2px;
-        border: 2px solid ${colors('indigo300')};
-        align-items: center;
-        background: ${colors(stateToColor(state) || 'white')};
-        flex: 1;
-      `}
-    >
-      {children}
-    </Flex>
-  </ExpressionHighlighterContext.Provider>
+    {children}
+  </Flex>
 )
 
 export default BorderWrapper
