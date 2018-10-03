@@ -31,10 +31,12 @@
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
     "build:en": "tsc && yarn contents && APP_LOCALE=en next build && APP_LOCALE=en next export",
     "build:jp": "tsc && yarn contents && APP_LOCALE=jp next build && APP_LOCALE=jp next export",
+    "twemoji": "svgr --icon -d src/components/Twemoji node_modules/twemoji/2/svg",
     "type-check": "tsc -w",
     "test": "jest"
   },
   "devDependencies": {
+    "@svgr/cli": "^3.0.0",
     "@types/color": "^3.0.0",
     "@types/jest": "^23.3.2",
     "@types/lodash": "^4.14.116",
