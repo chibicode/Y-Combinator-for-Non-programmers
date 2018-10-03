@@ -1,4 +1,5 @@
 import React from 'react'
+import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -124,7 +125,8 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>というわけで:</Strong> 上の「不思議な弁当箱 <Emoji>🍱</Emoji>
+      <Strong>というわけで:</Strong> 上の
+      <Content name="yc/BentoBox" />
       」は、以下の状況を表していることになります。
     </P>
     <Ul size="lg">
@@ -144,8 +146,9 @@ export default () => (
     <EmojiSeparator emojis={['❓', '🤔', '❓']} />
     <H3>クイズ</H3>
     <P>
-      下の「不思議な弁当箱 <Emoji>🍱</Emoji>
-      」は、どんな状況を表しているでしょう？
+      下の
+      <Content name="yc/BentoBox" />
+      は、どんな状況を表しているでしょう？
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner

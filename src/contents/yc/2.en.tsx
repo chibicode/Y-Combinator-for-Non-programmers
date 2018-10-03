@@ -1,4 +1,5 @@
 import React from 'react'
+import Content from 'src/components/Content'
 import {
   Blockquote,
   Em,
@@ -134,7 +135,7 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>So:</Strong> the above “bento box <Emoji>🍱</Emoji>” represents
+      <Strong>So:</Strong> the above <Content name="yc/BentoBox" /> represents
       the following scenario.
     </P>
     <Ul size="lg">
@@ -152,7 +153,7 @@ export default () => (
     <EmojiSeparator emojis={['❓', '🤔', '❓']} />
     <H3>Quiz</H3>
     <P>
-      What scenario does the this “bento box <Emoji>🍱</Emoji>” represent?
+      What scenario does the this <Content name="yc/BentoBox" /> represent?
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
