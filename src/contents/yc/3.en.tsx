@@ -53,7 +53,8 @@ export default () => (
     <H3>What will happen in the next step?</H3>
     <P>
       In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
-      brings steak <Emoji>🥩</Emoji>. So in the next step, it’ll become:
+      brings steak <Emoji>🥩</Emoji>. So in the next step, the dishes will look
+      like this:
     </P>
     <Ul size="lg">
       <UlLi>

@@ -15,11 +15,11 @@ export const allTranslations = {
     jp: 'お抱えのシェフ'
   },
   ycEpisode2: {
-    en: 'Bento Box',
+    en: 'Bento Boxes',
     jp: 'これっくらいの、お弁当箱に…'
   },
   ycEpisode3: {
-    en: '?',
+    en: 'The Next and Previous Buttons',
     jp: '?'
   },
   introductionPage: {
