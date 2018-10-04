@@ -26,15 +26,18 @@
   "scripts": {
     "jp": "APP_LOCALE=jp next -p 3001",
     "en": "APP_LOCALE=en next -p 3000",
-    "dev": "concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
+    "dev": "yarn prepare && concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
-    "build:en": "tsc && yarn contents && APP_LOCALE=en next build && APP_LOCALE=en next export",
-    "build:jp": "tsc && yarn contents && APP_LOCALE=jp next build && APP_LOCALE=jp next export",
+    "prepare": "tsc && yarn contents && yarn twemoji",
+    "build:en": "yarn prepare && APP_LOCALE=en next build && APP_LOCALE=en next export",
+    "build:jp": "yarn prepare && APP_LOCALE=jp next build && APP_LOCALE=jp next export",
+    "twemoji": "mkdir -p .twemoji && cp `node ./scripts/copyUsedEmojis.js` .twemoji && svgr --filename-case kebab  --no-dimensions -d src/components/Twemoji .twemoji",
     "type-check": "tsc -w",
     "test": "jest"
   },
   "devDependencies": {
+    "@svgr/cli": "^3.0.0",
     "@types/color": "^3.0.0",
     "@types/jest": "^23.3.2",
     "@types/lodash": "^4.14.116",

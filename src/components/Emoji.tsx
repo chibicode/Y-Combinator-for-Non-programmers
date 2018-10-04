@@ -1,66 +1,41 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
 import { css, cx } from 'emotion'
-import isEqual from 'lodash/isEqual'
+import dynamic from 'next/dynamic'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import styled from 'react-emotion'
-import Twemoji from 'twemoji'
+import twemoji from 'twemoji'
 
-const Span = styled('span')`
-  > .emoji {
+const EmojiLoader: React.SFC<{}> = () => <></>
+
+// Copied from Twemoji
+const UFE0Fg = /\uFE0F/g
+const U200D = String.fromCharCode(0x200d)
+function grabTheRightIcon(rawText: string) {
+  // if variant is present as \uFE0F
+  return twemoji.convert.toCodePoint(
+    rawText.indexOf(U200D) < 0 ? rawText.replace(UFE0Fg, '') : rawText
+  )
+}
+
+const EmojiSvg: React.SFC<{ name: string }> = ({ name }) => {
+  const Component = dynamic(
+    // @ts-ignore - import isn't typed correctly
+    () =>
+      import(`src/components/Twemoji/${grabTheRightIcon(name)}`).catch(() => {
+        console.error(`Missing '${name}',`)
+        return EmojiLoader
+      }),
+    { loading: () => <EmojiLoader /> }
+  )
+  if (!Component) {
+    throw new Error(`Component is ${Component}. name: ${name}`)
   }
-`
+  return <Component />
+}
 
 interface EmojiProps {
-  children: React.ReactNode
+  children: string
   size?: 'md' | 'lg'
   noVerticalTransform?: boolean
-}
-
-interface TwemojiContainerProps {
-  options: {}
-  size: Required<EmojiProps>['size']
-  noVerticalTransform: Required<EmojiProps>['noVerticalTransform']
-}
-
-class TwemojiContainer extends React.Component<TwemojiContainerProps, {}> {
-  public parse() {
-    Twemoji.parse(ReactDOM.findDOMNode(this), this.props.options)
-  }
-
-  public componentDidUpdate(prevProps: TwemojiContainerProps) {
-    if (!isEqual(this.props, prevProps)) {
-      this.parse()
-    }
-  }
-
-  public componentDidMount() {
-    this.parse()
-  }
-
-  public render() {
-    const { size, children, noVerticalTransform } = this.props
-    return (
-      <Span
-        className={cx(
-          css`
-            display: inline-flex;
-            vertical-align: middle;
-            & > .emoji {
-              height: ${size === 'lg' ? '2em' : '1em'};
-            }
-          `,
-          {
-            [css`
-              transform: translateY(-0.1em);
-            `]: !noVerticalTransform
-          }
-        )}
-      >
-        {children}
-      </Span>
-    )
-  }
 }
 
 const Emoji: React.SFC<EmojiProps> = ({
@@ -68,16 +43,22 @@ const Emoji: React.SFC<EmojiProps> = ({
   size = 'md',
   noVerticalTransform = false
 }) => (
-  <TwemojiContainer
-    size={size}
-    noVerticalTransform={noVerticalTransform}
-    options={{
-      folder: 'svg',
-      ext: '.svg'
-    }}
+  <span
+    className={cx(
+      css`
+        display: inline-flex;
+        vertical-align: middle;
+        height: ${size === 'lg' ? '2em' : '1em'};
+      `,
+      {
+        [css`
+          transform: translateY(-0.1em);
+        `]: !noVerticalTransform
+      }
+    )}
   >
-    {children}
-  </TwemojiContainer>
+    <EmojiSvg name={children} />
+  </span>
 )
 
 export default Emoji

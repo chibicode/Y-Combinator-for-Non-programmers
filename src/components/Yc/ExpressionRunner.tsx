@@ -38,14 +38,23 @@ export default class ExpressionRunner extends React.Component<
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
-    let expressionContainer = props.expressionContainer
-    if (props.initialStep > 0) {
-      ;[...Array(props.initialStep)].forEach(_ => {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      })
-    }
+    const expressionContainer = props.expressionContainer
+
     this.state = {
       expressionContainer
+    }
+  }
+
+  public componentDidMount() {
+    const { initialStep } = this.props
+    if (initialStep > 0) {
+      ;[...Array(initialStep)].forEach(_ => {
+        this.setState({
+          expressionContainer: stepExpressionContainer(
+            this.state.expressionContainer
+          )
+        })
+      })
     }
   }
 
