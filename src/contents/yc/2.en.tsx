@@ -45,6 +45,7 @@ export default () => (
       <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>. The salad is
       replaced with tacos. Hope you got it right!
     </P>
+    <H3>Interactive Bento Box</H3>
     <P>
       Now, let’s move on to the next topic: <Strong>Bento Boxes</Strong>.
     </P>
@@ -66,7 +67,6 @@ export default () => (
         vegetables as a side dish. ... People often take bento for a picnic.
       </P>
     </Blockquote>
-    <H3>Interactive Bento Box</H3>
     <P>
       In this tutorial, we’re going to play with an{' '}
       <Em>

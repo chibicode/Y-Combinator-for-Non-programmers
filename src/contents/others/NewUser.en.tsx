@@ -14,7 +14,7 @@ const NewUser: React.SFC<{
     </InternalLink>
     ”. If you’re new,{' '}
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      <Strong>you should start from the beginning</Strong>
+      <Strong>click here to start from the beginning</Strong>
     </InternalLink>
     .
   </>
