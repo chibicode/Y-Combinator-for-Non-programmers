@@ -20,6 +20,10 @@ injectGlobal`
   a {
     color: inherit;
   }
+
+  svg {
+    height: 100%;
+  }
 `
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
