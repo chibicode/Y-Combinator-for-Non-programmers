@@ -4,7 +4,7 @@ import EpisodePageWrapper from 'src/components/EpisodePageWrapper'
 const Episode3: React.SFC<{}> = () => (
   <EpisodePageWrapper
     episodeNumber={3}
-    emojis={['😋', '🍽', '👨‍🍳']}
+    emojis={['⏪', '🤔', '⏩']}
     lessonName="yc"
   />
 )
