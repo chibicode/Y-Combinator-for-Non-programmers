@@ -1,7 +1,7 @@
 import omit from 'lodash/omit'
 import {
-  ExpressionContainer,
-  UnprioritizedExpressionContainer
+  NeedsPrioritizeExpressionContainer,
+  NeedsResetExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
   Expression,
@@ -37,12 +37,10 @@ function resetExpression<E extends Expression>(expression: E): E {
 }
 
 export default function resetExpressionContainer(
-  expressionContainer: ExpressionContainer
-): UnprioritizedExpressionContainer {
+  expressionContainer: NeedsResetExpressionContainer
+): NeedsPrioritizeExpressionContainer {
   return {
-    prioritized: false,
-    needsReset: false,
-    expression: resetExpression(expressionContainer.expression),
-    done: false
+    containerState: 'needsPrioritize',
+    expression: resetExpression(expressionContainer.expression)
   }
 }

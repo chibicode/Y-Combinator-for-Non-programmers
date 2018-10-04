@@ -1,45 +1,69 @@
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { PrioritizedExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
+export type ExpressionContainerState =
+  | 'prioritized'
+  | 'needsPrioritize'
+  | 'needsReset'
+  | 'done'
+
+// TODO: Add previouslyChangedExpressionState
 export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
-  readonly prioritized: boolean
-  readonly needsReset: boolean
-  readonly done: boolean
-}
-
-export type UnprioritizedExpressionContainer<
-  E extends Expression = Expression
-> = ExpressionContainer<E> & {
-  readonly prioritized: false
+  readonly containerState: ExpressionContainerState
 }
 
 export type PrioritizedExpressionContainer<
   E extends PrioritizedExpression = PrioritizedExpression
 > = ExpressionContainer<E> & {
-  readonly prioritized: true
+  readonly containerState: 'prioritized'
 }
 
 export function isPrioritizedExpressionContainer<
   E extends PrioritizedExpression = PrioritizedExpression
 >(e: ExpressionContainer): e is PrioritizedExpressionContainer<E> {
-  return e.prioritized
+  return e.containerState === 'prioritized'
+}
+
+export type NeedsPrioritizeExpressionContainer<
+  E extends Expression = Expression
+> = ExpressionContainer<E> & {
+  readonly containerState: 'needsPrioritize'
+}
+
+export function isNeedsPrioritizeExpressionContainer<
+  E extends Expression = Expression
+>(e: ExpressionContainer): e is NeedsPrioritizeExpressionContainer<E> {
+  return e.containerState === 'needsPrioritize'
 }
 
 export type NeedsResetExpressionContainer<
-  E extends Expression = Expression
+  E extends PrioritizedExpression = PrioritizedExpression
 > = ExpressionContainer<E> & {
-  readonly needsReset: true
+  readonly containerState: 'needsReset'
 }
 
 export function isNeedsResetExpressionContainer<
-  E extends Expression = Expression
+  E extends PrioritizedExpression = PrioritizedExpression
 >(e: ExpressionContainer): e is NeedsResetExpressionContainer<E> {
-  return e.needsReset
+  return e.containerState === 'needsReset'
 }
 
-export type PrioritizedDoneExpressionContainer<
+export type DoneExpressionContainer<
   E extends PrioritizedExpression = PrioritizedExpression
-> = PrioritizedExpressionContainer<E> & {
-  readonly done: true
+> = ExpressionContainer<E> & {
+  readonly containerState: 'done'
 }
+
+export function isDoneExpressionContainer<
+  E extends PrioritizedExpression = PrioritizedExpression
+>(e: ExpressionContainer): e is DoneExpressionContainer<E> {
+  return e.containerState === 'done'
+}
+
+export type SteppedExpressionContainer<
+  E extends PrioritizedExpression = PrioritizedExpression
+> =
+  | NeedsResetExpressionContainer<E>
+  | DoneExpressionContainer<E>
+  | PrioritizedExpressionContainer<E>

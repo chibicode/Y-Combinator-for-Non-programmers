@@ -9,14 +9,12 @@ import { lineHeights } from 'src/lib/theme'
 import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
-  PrioritizedDoneExpressionContainer,
-  PrioritizedExpressionContainer
+  SteppedExpressionContainer,
+  isDoneExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 
 interface ExpressionRunnerProps {
-  expressionContainer:
-    | PrioritizedExpressionContainer
-    | PrioritizedDoneExpressionContainer
+  expressionContainer: SteppedExpressionContainer
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
@@ -47,22 +45,26 @@ export default class ExpressionRunner extends React.Component<
 
   public componentDidMount() {
     const { initialStep } = this.props
+    let tempExpressionContainer = this.state.expressionContainer
     if (initialStep > 0) {
       ;[...Array(initialStep)].forEach(_ => {
-        this.setState({
-          expressionContainer: stepExpressionContainer(
-            this.state.expressionContainer
+        if (!isDoneExpressionContainer(tempExpressionContainer)) {
+          tempExpressionContainer = stepExpressionContainer(
+            tempExpressionContainer
           )
-        })
+        }
+      })
+      this.setState({
+        expressionContainer: tempExpressionContainer
       })
     }
   }
 
   public stepExpression = () => {
-    if (!this.state.expressionContainer.done) {
-      const x = stepExpressionContainer(this.state.expressionContainer)
+    const { expressionContainer } = this.state
+    if (!isDoneExpressionContainer(expressionContainer)) {
       this.setState({
-        expressionContainer: x
+        expressionContainer: stepExpressionContainer(expressionContainer)
       })
     }
   }

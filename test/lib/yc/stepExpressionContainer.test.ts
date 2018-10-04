@@ -2,30 +2,21 @@ import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
-import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
+  DoneExpressionContainer,
+  ExpressionContainer,
+  isDoneExpressionContainer,
+  isNeedsResetExpressionContainer,
   isPrioritizedExpressionContainer,
-  PrioritizedDoneExpressionContainer,
-  PrioritizedExpressionContainer
+  NeedsResetExpressionContainer,
+  PrioritizedExpression,
+  PrioritizedExpressionContainer,
+  SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
-const stepExpressionContainerWrapped = (
-  e: PrioritizedExpressionContainer<PrioritizedCallExpression>
-): PrioritizedExpressionContainer<ImmediatelyExecutableCallExpression> => {
-  const result = stepExpressionContainer(e)
-  if (
-    !isPrioritizedExpressionContainer<ImmediatelyExecutableCallExpression>(
-      result
-    )
-  ) {
-    throw new Error()
-  }
-  return result
-}
-
 const repeatUntilState = (
-  e: PrioritizedExpressionContainer<ImmediatelyExecutableCallExpression>,
+  e: ExpressionContainer<PrioritizedCallExpression>,
   state: string
 ) => {
   while (true) {
@@ -33,18 +24,20 @@ const repeatUntilState = (
     if ('expression' in result && result.expression.state === state) {
       return e
     }
-    e = stepExpressionContainerWrapped(e)
+    e = stepExpressionContainer(e)
   }
 }
 
 const repeatUntilDone = (
-  e: PrioritizedExpressionContainer<PrioritizedCallExpression>
-) => {
-  let result:
+  e:
+    | NeedsResetExpressionContainer<PrioritizedCallExpression>
     | PrioritizedExpressionContainer<PrioritizedCallExpression>
-    | PrioritizedDoneExpressionContainer = stepExpressionContainerWrapped(e)
-  while (!result.done) {
-    result = stepExpressionContainerWrapped(result)
+) => {
+  let result: SteppedExpressionContainer<
+    PrioritizedExpression
+  > = stepExpressionContainer(e)
+  while (!isDoneExpressionContainer(result)) {
+    result = stepExpressionContainer(result)
   }
   return result
 }
@@ -53,7 +46,9 @@ describe('stepExpressionContainer', () => {
   describe('if no next call is found', () => {
     it('is done', () => {
       const originalContainer = initializeExpressionContainer(['y', 'x'])
-      expect(stepExpressionContainer(originalContainer).done).toBe(true)
+      expect(
+        isDoneExpressionContainer(stepExpressionContainer(originalContainer))
+      ).toBe(true)
     })
   })
 
@@ -67,19 +62,19 @@ describe('stepExpressionContainer', () => {
         'x'
       ])
 
-      let e = stepExpressionContainerWrapped(originalContainer)
+      let e = stepExpressionContainer(originalContainer)
       expect(e.expression.state).toBe('readyToHighlight')
 
-      e = stepExpressionContainerWrapped(e)
-      expect(e.expression.func.arg.state).toBe('highlighted')
+      e = stepExpressionContainer(e)
+      expect(e.expression.arg.state).toBe('justHighlighted')
 
-      e = stepExpressionContainerWrapped(e)
-      expect(e.expression.arg.state).toBe('highlighted')
+      e = stepExpressionContainer(e)
+      expect(e.expression.func.arg.state).toBe('justHighlighted')
 
-      e = stepExpressionContainerWrapped(e)
-      expect(e.expression.func.body.state).toBe('highlighted')
+      e = stepExpressionContainer(e)
+      expect(e.expression.func.body.state).toBe('justHighlighted')
 
-      e = stepExpressionContainerWrapped(e)
+      e = stepExpressionContainer(e)
       expect(e.expression.state).toBe('checkForConflictingVariables')
     })
   })
@@ -95,9 +90,9 @@ describe('stepExpressionContainer', () => {
           'x'
         ])
 
-        let e = stepExpressionContainerWrapped(originalContainer)
+        let e = stepExpressionContainer(originalContainer)
         e = repeatUntilState(e, 'checkForConflictingVariables')
-        e = stepExpressionContainerWrapped(e)
+        e = stepExpressionContainer(e)
         expect(e.expression.state).toBe('readyToBetaReduce')
       })
     })
@@ -115,9 +110,9 @@ describe('stepExpressionContainer', () => {
           'y'
         ])
 
-        let e = stepExpressionContainerWrapped(originalContainer)
+        let e = stepExpressionContainer(originalContainer)
         e = repeatUntilState(e, 'checkForConflictingVariables')
-        e = stepExpressionContainerWrapped(e)
+        e = stepExpressionContainer(e)
         expect(e.expression.state).toBe('needsAlphaConvert')
       })
     })
@@ -136,9 +131,9 @@ describe('stepExpressionContainer', () => {
         'y'
       ])
 
-      let e = stepExpressionContainerWrapped(originalContainer)
+      let e = stepExpressionContainer(originalContainer)
       e = repeatUntilState(e, 'needsAlphaConvert')
-      e = stepExpressionContainerWrapped(e)
+      e = stepExpressionContainer(e)
       expect(e.expression.state).toBe('readyToBetaReduce')
       expect(expressionToSimpleString(e.expression)).toBe(
         '(x => (a => x(a)))(y)'
@@ -157,11 +152,11 @@ describe('stepExpressionContainer', () => {
           'y'
         ])
 
-        let e = stepExpressionContainerWrapped(originalContainer)
+        let e = stepExpressionContainer(originalContainer)
         e = repeatUntilState(e, 'readyToBetaReduce')
-        const result = stepExpressionContainerWrapped(e)
+        const result = stepExpressionContainer(e)
         expect(expressionToSimpleString(result.expression)).toBe('y')
-        expect(result.needsReset).toBe(true)
+        expect(isNeedsResetExpressionContainer(result)).toBe(true)
       })
     })
 
@@ -189,16 +184,16 @@ describe('stepExpressionContainer', () => {
           'c'
         ])
 
-        let e = stepExpressionContainerWrapped(originalContainer)
+        let e = stepExpressionContainer(originalContainer)
         e = repeatUntilState(e, 'readyToBetaReduce')
-        const result = stepExpressionContainerWrapped(e)
+        const result = stepExpressionContainer(e)
         expect(expressionToSimpleString(result.expression)).toBe(
           '(y => (z => (a => a)(y(z))))((b => b))(c)'
         )
-        expect(result.needsReset).toBe(true)
+        expect(isNeedsResetExpressionContainer(result)).toBe(true)
         const afterReset = stepExpressionContainer(result)
         expect(afterReset.expression.state).toBe('default')
-        expect(afterReset.needsReset).toBe(false)
+        expect(isNeedsResetExpressionContainer(afterReset)).toBe(false)
       })
     })
   })

@@ -4,7 +4,7 @@ import {
   DefaultStateFunctionExpression,
   DefaultStateVariableExpression
 } from 'src/types/yc/DefaultExpressionTypes'
-import { UnprioritizedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import { NeedsPrioritizeExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -81,23 +81,21 @@ function buildExpressionRecurser(expressionParams: ExpressionParams) {
 
 export default function buildExpressionContainer(
   expressionParams: VariableExpressionParams
-): UnprioritizedExpressionContainer<DefaultStateVariableExpression>
+): NeedsPrioritizeExpressionContainer<DefaultStateVariableExpression>
 export default function buildExpressionContainer(
   expressionParams: CallExpressionParams
-): UnprioritizedExpressionContainer<DefaultStateCallExpression>
+): NeedsPrioritizeExpressionContainer<DefaultStateCallExpression>
 export default function buildExpressionContainer(
   expressionParams: FunctionExpressionParams
-): UnprioritizedExpressionContainer<DefaultStateFunctionExpression>
+): NeedsPrioritizeExpressionContainer<DefaultStateFunctionExpression>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
-): UnprioritizedExpressionContainer<DefaultStateExpression>
+): NeedsPrioritizeExpressionContainer<DefaultStateExpression>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
 ) {
   return {
     expression: buildExpressionRecurser(expressionParams),
-    prioritized: false,
-    needsReset: false,
-    done: false
+    containerState: 'needsPrioritize'
   }
 }

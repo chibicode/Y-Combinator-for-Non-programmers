@@ -7,32 +7,34 @@ import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContai
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
-  ExpressionContainer,
   isNeedsResetExpressionContainer,
-  isPrioritizedExpressionContainer,
   NeedsResetExpressionContainer,
-  PrioritizedDoneExpressionContainer,
-  PrioritizedExpressionContainer
+  PrioritizedExpressionContainer,
+  SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
   PrioritizedCallExpression,
   PrioritizedFunctionExpression
 } from 'src/types/yc/PrioritizedExpressionTypes'
 
+// NOTE: Use union of NeedsResetExpressionContainer | PrioritizedExpressionContainer
+// instead of overloading like:
+// NeedsResetExpressionContainer -> PrioritizedExpressionContainer
+// PrioritizedExpressionContainer -> ...
+// Why? If it uses overloading, then you can't pass a variable
+// that has the type NeedsResetExpressionContainer | PrioritizedExpressionContainer
+// because the return type will be uncertain (because of overloading, return type
+// will be different depending on NeedsResetExpressionContainer or PrioritizedExpressionContainer)
+// but TypeScript isn't smart enough to combine the potential return types.
+// To avoid this the caller can use type guards to "separate" the union type
+// before calling, but that adds unnecessary code to the caller.
 export default function stepExpressionContainer(
-  e: NeedsResetExpressionContainer
-): PrioritizedExpressionContainer
-export default function stepExpressionContainer(
-  e: PrioritizedExpressionContainer
-):
-  | PrioritizedExpressionContainer<ImmediatelyExecutableCallExpression>
-  | PrioritizedExpressionContainer
-  | PrioritizedDoneExpressionContainer
-export default function stepExpressionContainer(e: ExpressionContainer) {
+  e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
+): SteppedExpressionContainer {
   if (isNeedsResetExpressionContainer(e)) {
     return prioritizeExpressionContainer(resetExpressionContainer(e))
-  } else if (isPrioritizedExpressionContainer(e)) {
-    return produce<PrioritizedExpressionContainer>(e, draftContainer => {
+  } else {
+    return produce<SteppedExpressionContainer>(e, draftContainer => {
       const nextCallExpressionAndParent = findNextCallExpressionAndParent<
         DraftObject<PrioritizedCallExpression>,
         DraftObject<ImmediatelyExecutableCallExpression>,
@@ -44,7 +46,7 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
       ) {
         return {
           ...e,
-          done: true
+          containerState: 'done'
         }
       } else {
         const expression = nextCallExpressionAndParent.expression
@@ -93,7 +95,7 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
               return {
                 ...e,
                 expression: betaReduced,
-                needsReset: true
+                containerState: 'needsReset'
               }
             } else if (
               'parentCallExpression' in nextCallExpressionAndParent &&
@@ -102,20 +104,18 @@ export default function stepExpressionContainer(e: ExpressionContainer) {
               nextCallExpressionAndParent.parentCallExpression[
                 nextCallExpressionAndParent.parentKey
               ] = betaReduced
-              draftContainer.needsReset = true
+              draftContainer.containerState = 'needsReset'
             } else if (
               'parentFunctionExpression' in nextCallExpressionAndParent &&
               nextCallExpressionAndParent.parentFunctionExpression
             ) {
               nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
-              draftContainer.needsReset = true
+              draftContainer.containerState = 'needsReset'
             }
             break
           }
         }
       }
     })
-  } else {
-    throw new Error('Expression must be prioritized')
   }
 }
