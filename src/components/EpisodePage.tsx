@@ -158,7 +158,14 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
                 `
               )}
             >
-              {lessonTitle}
+              <InternalLink
+                href={pathHelpers[lessonName]()}
+                className={css`
+                  text-decoration: none;
+                `}
+              >
+                {lessonTitle}
+              </InternalLink>
             </h3>
             <h1
               className={cx(
