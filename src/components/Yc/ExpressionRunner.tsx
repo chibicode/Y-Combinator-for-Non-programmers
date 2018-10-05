@@ -121,7 +121,14 @@ export default class ExpressionRunner extends React.Component<
               expressionContainerManagerState.expressionContainer.expression
             }
           />
-          {showControls && <ExpressionRunnerControls onNextClick={this.stepForward} onPreviousClick={this.stepBackward} />}
+          {showControls && (
+            <ExpressionRunnerControls
+              onNextClick={this.stepForward}
+              onPreviousClick={this.stepBackward}
+              canStepForward={expressionContainerManagerState.canStepForward}
+              canStepBackward={expressionContainerManagerState.canStepBackward}
+            />
+          )}
         </div>
       </ExpressionRunnerContext.Provider>
     )
