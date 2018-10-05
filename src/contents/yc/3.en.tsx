@@ -2,7 +2,7 @@ import React from 'react'
 import Content from 'src/components/Content'
 import {
   // Blockquote,
-  // Em,
+  Em,
   // ExternalLink,
   H3,
   InternalLink,
@@ -50,6 +50,16 @@ export default () => (
         <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥩</Emoji>
       </UlLi>
     </Ul>
+    <P>Here’s the annotated version:</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression2}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initializeInstructions={{ type: 'stepForwardMultiple', count: 3 }}
+      />
+    </ExpressionRunnerWrapper>
     <H3>What will happen in the next step?</H3>
     <P>
       In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
@@ -62,7 +72,8 @@ export default () => (
       </UlLi>
     </Ul>
     <P>
-      In terms of the <Content name="yc/BentoBox" />, it will look like this:
+      In terms of the <Content name="yc/BentoBox" />, it will look like this.
+      (Highlighting in <Em>yellow</Em> just to emphasize the change)
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -76,5 +87,6 @@ export default () => (
         }}
       />
     </ExpressionRunnerWrapper>
+    <H3>The Next and Previous Buttons</H3>
   </>
 )
