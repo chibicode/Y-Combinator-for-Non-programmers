@@ -23,7 +23,7 @@ const Button = styled('button')`
   }
 
   &:focus:enabled {
-    box-shadow: 0 0 0 1pt ${colors('indigo500')};
+    box-shadow: 0 0 0 1pt ${colors('indigo300')};
     outline: none;
   }
   &:hover:enabled {
@@ -71,6 +71,9 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
       <div
         className={css`
           flex: 1;
+          margin-right: ${spaces(0.25)};
+          /* Same border as the button */
+          border: 2px solid transparent;
         `}
       />
     )}
