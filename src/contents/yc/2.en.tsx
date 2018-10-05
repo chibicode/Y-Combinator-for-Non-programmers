@@ -88,10 +88,10 @@ export default () => (
     </P>
     <P>
       <Em>
-        The <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
-        is preparing.
+        The <Strong>bottom right</Strong> cell represents all available dishes{' '}
+        <Emoji>🍽</Emoji>.
       </Em>{' '}
-      In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
+      In this case, the only available dish is sushi <Emoji>🍣</Emoji>.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -102,7 +102,7 @@ export default () => (
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
+            state: 'funcBodyJustHighlighted'
           }
         ]}
       />
@@ -129,11 +129,12 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
+      Finally,{' '}
       <Em>
-        Finally, the <Strong>bottom right</Strong> cell represents all available
-        dishes <Emoji>🍽</Emoji>.
+        the <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
+        is preparing.
       </Em>{' '}
-      In this case, the only dish available is sushi <Emoji>🍣</Emoji>.
+      In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -144,7 +145,7 @@ export default () => (
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcBodyJustHighlighted'
+            state: 'callArgJustHighlighted'
           }
         ]}
       />

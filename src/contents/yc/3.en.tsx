@@ -1,9 +1,7 @@
 import React from 'react'
 import Content from 'src/components/Content'
 import {
-  // Blockquote,
   Em,
-  // ExternalLink,
   H3,
   InternalLink,
   Ol,
@@ -15,14 +13,16 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
-  episode2Expression2
+  episode2Expression2,
+  episode3Expression1
 } from 'src/lib/yc/lessonExpressions'
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <>
@@ -126,7 +126,7 @@ export default () => (
         }}
       />
     </ExpressionRunnerWrapper>
-    <P>Try this one too!</P>
+    <P>Try this one from the last episode too!</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression1}
@@ -142,7 +142,39 @@ export default () => (
     </ExpressionRunnerWrapper>
     <P>Hope you get the idea!</P>
     <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
-    <H3>Too easy?</H3>
-    <P>We’ll do something harder on the next episode.</P>
+    <H3>Quiz</H3>
+    <P>Here’s a different one. What do you think will happen next?</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode3Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Em>Choose the one you think will be the next state.</Em> It’s okay if you
+      have no idea - I will explain on the next episode!
+    </P>
+    <Ol>
+      <OlLi>
+        <Emoji size="lg">{letterEmojiMapping.c}</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">{letterEmojiMapping.a}</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">{letterEmojiMapping.b}</Emoji>
+      </OlLi>
+    </Ol>
+    <NextLessonButton
+      href={yc(4)}
+      primaryText={<>Check My Answer</>}
+      secondaryText={
+        <>
+          Continue to Episode 4 <Emoji>🙂</Emoji>
+        </>
+      }
+    />
   </>
 )

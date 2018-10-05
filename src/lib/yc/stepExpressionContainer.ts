@@ -53,22 +53,22 @@ export default function stepExpressionContainer(
         const expression = nextCallExpressionAndParent.expression
         switch (expression.state) {
           case 'default': {
-            if (expression.arg.state === 'default') {
-              expression.arg.state = 'justHighlighted'
-              draftContainer.previouslyChangedExpressionState =
-                'callArgJustHighlighted'
-            } else if (expression.func.arg.state === 'default') {
-              expression.arg.state = 'highlighted'
-              expression.func.arg.state = 'justHighlighted'
-              draftContainer.previouslyChangedExpressionState =
-                'funcArgJustHighlighted'
-            } else if (expression.func.body.state === 'default') {
-              expression.func.arg.state = 'highlighted'
+            if (expression.func.body.state === 'default') {
               expression.func.body.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =
                 'funcBodyJustHighlighted'
-            } else {
+            } else if (expression.func.arg.state === 'default') {
               expression.func.body.state = 'highlighted'
+              expression.func.arg.state = 'justHighlighted'
+              draftContainer.previouslyChangedExpressionState =
+                'funcArgJustHighlighted'
+            } else if (expression.arg.state === 'default') {
+              expression.func.arg.state = 'highlighted'
+              expression.arg.state = 'justHighlighted'
+              draftContainer.previouslyChangedExpressionState =
+                'callArgJustHighlighted'
+            } else {
+              expression.arg.state = 'highlighted'
               const conflicts = conflictingVariableNames(expression)
               if (conflicts.length > 0) {
                 expression.state = 'needsAlphaConvert'
