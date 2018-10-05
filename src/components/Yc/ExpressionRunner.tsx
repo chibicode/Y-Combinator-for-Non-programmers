@@ -6,7 +6,9 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { lineHeights } from 'src/lib/theme'
-import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
+import ExpressionContainerManager, {
+  ExpressionContainerManagerOptions
+} from 'src/lib/yc/ExpressionContainerManager'
 import {
   ExpressionContainerState,
   PreviouslyChangedExpressionState,
@@ -33,6 +35,7 @@ interface ExpressionRunnerProps {
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions?: InitializeInstructions
+  expressionContainerManagerOptions?: ExpressionContainerManagerOptions
 }
 
 interface ExpressionRunnerState {
@@ -53,7 +56,8 @@ export default class ExpressionRunner extends React.Component<
   constructor(props: ExpressionRunnerProps) {
     super(props)
     this.expressionContainerManager = new ExpressionContainerManager(
-      props.expressionContainer
+      props.expressionContainer,
+      props.expressionContainerManagerOptions
     )
 
     this.state = {

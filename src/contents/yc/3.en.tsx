@@ -64,5 +64,17 @@ export default () => (
     <P>
       In terms of the <Content name="yc/BentoBox" />, it will look like this:
     </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression2}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initializeInstructions={{
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'justBetaReduced'
+        }}
+      />
+    </ExpressionRunnerWrapper>
   </>
 )

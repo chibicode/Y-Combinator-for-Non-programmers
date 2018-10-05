@@ -102,7 +102,8 @@ export default function stepExpressionContainer(
               return {
                 ...e,
                 expression: betaReduced,
-                containerState: 'needsReset'
+                containerState: 'needsReset',
+                previouslyChangedExpressionState: 'justBetaReduced'
               }
             } else if (
               'parentCallExpression' in nextCallExpressionAndParent &&
@@ -119,6 +120,7 @@ export default function stepExpressionContainer(
               nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
               draftContainer.containerState = 'needsReset'
             }
+            draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
             break
           }
         }

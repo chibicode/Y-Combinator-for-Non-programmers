@@ -34,7 +34,9 @@ export default class ExpressionContainerManager {
     state: PreviouslyChangedExpressionState
   ) {
     while (
-      this.currentExpressionContainer.previouslyChangedExpressionState !== state
+      this.currentExpressionContainer.previouslyChangedExpressionState !==
+        state &&
+      this.canStepForward
     ) {
       this.stepForward()
     }
@@ -47,7 +49,10 @@ export default class ExpressionContainerManager {
   }
 
   public stepForwardUntilContainerState(state: ExpressionContainerState) {
-    while (this.currentExpressionContainer.containerState !== state) {
+    while (
+      this.currentExpressionContainer.containerState !== state &&
+      this.canStepForward
+    ) {
       this.stepForward()
     }
   }
