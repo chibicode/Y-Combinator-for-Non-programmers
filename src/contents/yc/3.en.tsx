@@ -57,7 +57,10 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initializeInstructions={{ type: 'stepForwardMultiple', count: 3 }}
+        initializeInstructions={{
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcBodyJustHighlighted'
+        }}
       />
     </ExpressionRunnerWrapper>
     <H3>What will happen in the next step?</H3>
