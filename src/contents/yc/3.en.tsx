@@ -70,8 +70,8 @@ export default () => (
     <H3>What will happen in the next step?</H3>
     <P>
       In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
-      brings steak <Emoji>🥩</Emoji>. So in the next step, the dishes will look
-      like this:
+      brings steak <Emoji>🥩</Emoji>. So in the next step, the steak{' '}
+      <Emoji>🥩</Emoji> will be the only dish:
     </P>
     <Ul size="lg">
       <UlLi>
@@ -105,7 +105,8 @@ export default () => (
       <OlLi>
         <Em>
           Try pressing <Strong>Next</Strong> <Emoji>⏩</Emoji> several times
-          until you see <Strong>Done</Strong> <Emoji>✅</Emoji>.
+          until you see <Strong>Done</Strong> <Emoji>✅</Emoji>. The steak{' '}
+          <Emoji>🥩</Emoji> will be the only dish.
         </Em>
       </OlLi>
       <OlLi>
@@ -150,6 +151,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToBetaReduce'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
