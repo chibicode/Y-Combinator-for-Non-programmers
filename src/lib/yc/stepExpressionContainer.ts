@@ -53,20 +53,29 @@ export default function stepExpressionContainer(
         switch (expression.state) {
           case 'default': {
             expression.state = 'readyToHighlight'
+            draftContainer.previouslyChangedExpressionState = 'readyToHighlight'
             break
           }
           case 'readyToHighlight': {
             if (expression.arg.state === 'default') {
               expression.arg.state = 'justHighlighted'
+              draftContainer.previouslyChangedExpressionState =
+                'callArgJustHighlighted'
             } else if (expression.func.arg.state === 'default') {
               expression.arg.state = 'highlighted'
               expression.func.arg.state = 'justHighlighted'
+              draftContainer.previouslyChangedExpressionState =
+                'funcArgJustHighlighted'
             } else if (expression.func.body.state === 'default') {
               expression.func.arg.state = 'highlighted'
               expression.func.body.state = 'justHighlighted'
+              draftContainer.previouslyChangedExpressionState =
+                'funcBodyJustHighlighted'
             } else {
               expression.func.body.state = 'highlighted'
               expression.state = 'checkForConflictingVariables'
+              draftContainer.previouslyChangedExpressionState =
+                'checkForConflictingVariables'
             }
             break
           }
@@ -74,8 +83,12 @@ export default function stepExpressionContainer(
             const conflicts = conflictingVariableNames(expression)
             if (conflicts.length > 0) {
               expression.state = 'needsAlphaConvert'
+              draftContainer.previouslyChangedExpressionState =
+                'needsAlphaConvert'
             } else {
               expression.state = 'readyToBetaReduce'
+              draftContainer.previouslyChangedExpressionState =
+                'readyToBetaReduce'
             }
             break
           }
@@ -84,6 +97,8 @@ export default function stepExpressionContainer(
             expression.func = alphaConvertResult.func
             expression.arg = alphaConvertResult.arg
             expression.state = 'readyToBetaReduce'
+            draftContainer.previouslyChangedExpressionState =
+              'readyToBetaReduce'
             break
           }
           case 'readyToBetaReduce': {

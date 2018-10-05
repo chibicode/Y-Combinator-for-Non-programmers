@@ -1,4 +1,4 @@
-import { Expression } from 'src/types/yc/ExpressionTypes'
+import { CallExpressionStates, Expression } from 'src/types/yc/ExpressionTypes'
 import { PrioritizedExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 export type ExpressionContainerState =
@@ -7,10 +7,16 @@ export type ExpressionContainerState =
   | 'needsReset'
   | 'done'
 
-// TODO: Add previouslyChangedExpressionState
+export type PreviouslyChangedExpressionState =
+  | 'callArgJustHighlighted'
+  | 'funcArgJustHighlighted'
+  | 'funcBodyJustHighlighted'
+  | CallExpressionStates
+
 export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly containerState: ExpressionContainerState
+  readonly previouslyChangedExpressionState: PreviouslyChangedExpressionState
 }
 
 export type PrioritizedExpressionContainer<
