@@ -152,6 +152,7 @@ export default function prioritizeExpressionContainer(
 ) {
   return {
     containerState: 'prioritized',
+    previouslyChangedExpressionState: 'default',
     expression: populatePriorityAggs({
       expression: prioritizeExpression(expressionContainer.expression),
       argPriorityAgg: new Array<number>(),

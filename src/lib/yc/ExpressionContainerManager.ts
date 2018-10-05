@@ -8,6 +8,8 @@ import {
 
 export interface ExpressionContainerManagerOptions {
   skipReadyToBetaReduce?: boolean
+  skipDefault?: boolean
+  skipJustBetaReduced?: boolean
 }
 
 export default class ExpressionContainerManager {
@@ -64,6 +66,7 @@ export default class ExpressionContainerManager {
       let expressionContainer: SteppedExpressionContainer = this
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(expressionContainer)
+
       if (
         this.options.skipReadyToBetaReduce &&
         expressionContainer.previouslyChangedExpressionState ===
@@ -72,6 +75,22 @@ export default class ExpressionContainerManager {
       ) {
         expressionContainer = stepExpressionContainer(expressionContainer)
       }
+      if (
+        this.options.skipJustBetaReduced &&
+        expressionContainer.previouslyChangedExpressionState ===
+          'justBetaReduced' &&
+        !isDoneExpressionContainer(expressionContainer)
+      ) {
+        expressionContainer = stepExpressionContainer(expressionContainer)
+      }
+      if (
+        this.options.skipDefault &&
+        expressionContainer.previouslyChangedExpressionState === 'default' &&
+        !isDoneExpressionContainer(expressionContainer)
+      ) {
+        expressionContainer = stepExpressionContainer(expressionContainer)
+      }
+
       this.expressionContainers.push(expressionContainer)
       this.currentIndex += 1
     }

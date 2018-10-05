@@ -87,10 +87,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initializeInstructions={{
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
-        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -107,10 +109,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initializeInstructions={{
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcArgJustHighlighted'
-        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcArgJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -127,10 +131,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initializeInstructions={{
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcBodyJustHighlighted'
-        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcBodyJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>

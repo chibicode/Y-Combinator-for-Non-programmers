@@ -15,7 +15,7 @@ const stateToColors = (x: EmojiBadgeProps['state']) =>
       border-color: ${colors('indigo300')};
     `,
     justHighlighted: css`
-      border-color: ${colors('yellow700')};
+      border-color: ${colors('pink500')};
     `
   }[x])
 

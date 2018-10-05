@@ -68,6 +68,7 @@ export default function stepExpressionContainer(
               draftContainer.previouslyChangedExpressionState =
                 'funcBodyJustHighlighted'
             } else {
+              expression.func.body.state = 'highlighted'
               const conflicts = conflictingVariableNames(expression)
               if (conflicts.length > 0) {
                 expression.state = 'needsAlphaConvert'

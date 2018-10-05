@@ -6,19 +6,21 @@ import {
   // ExternalLink,
   H3,
   InternalLink,
+  Ol,
+  OlLi,
   P,
   Strong,
   Ul,
   UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 // import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import { yc } from 'src/lib/pathHelpers'
 import {
-  // episode2Expression1,
+  episode2Expression1,
   episode2Expression2
 } from 'src/lib/yc/lessonExpressions'
 
@@ -57,10 +59,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initializeInstructions={{
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcBodyJustHighlighted'
-        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToBetaReduce'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <H3>What will happen in the next step?</H3>
@@ -76,7 +80,6 @@ export default () => (
     </Ul>
     <P>
       In terms of the <Content name="yc/BentoBox" />, it will look like this.
-      (Highlighting in <Em>yellow</Em> just to emphasize the change)
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -84,21 +87,62 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initializeInstructions={{
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'justBetaReduced'
-        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'justBetaReduced'
+          },
+          {
+            type: 'stepForwardMultiple',
+            count: 1
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <H3>The Next and Previous Buttons</H3>
+    <P>To see this interactively, I’ve added the next and previous buttons.</P>
+    <Ol>
+      <OlLi>
+        <Em>
+          Try pressing <Strong>Next</Strong> <Emoji>⏩</Emoji> several times
+          until you see <Strong>Done</Strong> <Emoji>✅</Emoji>.
+        </Em>
+      </OlLi>
+      <OlLi>
+        Then try pressing <Emoji>⏪</Emoji> <Strong>Previous</Strong> a few
+        times.
+      </OlLi>
+    </Ol>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}
         showPriorities={false}
         showControls={true}
         variableSize={'lg'}
-        expressionContainerManagerOptions={{ skipReadyToBetaReduce: true }}
+        expressionContainerManagerOptions={{
+          skipReadyToBetaReduce: true,
+          skipJustBetaReduced: true,
+          skipDefault: true
+        }}
       />
     </ExpressionRunnerWrapper>
+    <P>Try this one too!</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression1}
+        showPriorities={false}
+        showControls={true}
+        variableSize={'lg'}
+        expressionContainerManagerOptions={{
+          skipReadyToBetaReduce: true,
+          skipJustBetaReduced: true,
+          skipDefault: true
+        }}
+      />
+    </ExpressionRunnerWrapper>
+    <P>Hope you get the idea!</P>
+    <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+    <H3>Too easy?</H3>
+    <P>We’ll do something harder on the next episode.</P>
   </>
 )

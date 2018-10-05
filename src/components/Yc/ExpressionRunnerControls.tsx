@@ -91,7 +91,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
         </>
       ) : (
         <>
-          <Emoji>✅</Emoji> {locale === 'jp' ? '終了' : 'Done'}
+          {locale === 'jp' ? '終了' : 'Done'} <Emoji>✅</Emoji>
         </>
       )}
     </Button>

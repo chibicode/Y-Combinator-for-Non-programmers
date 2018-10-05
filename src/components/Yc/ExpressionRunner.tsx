@@ -16,7 +16,7 @@ import {
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 
-type InitializeInstructions =
+type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
       state: ExpressionContainerState
@@ -35,7 +35,7 @@ interface ExpressionRunnerProps {
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions?: InitializeInstructions
+  initializeInstructions?: InitializeInstruction[]
   expressionContainerManagerOptions?: ExpressionContainerManagerOptions
 }
 
@@ -70,23 +70,25 @@ export default class ExpressionRunner extends React.Component<
   public componentDidMount() {
     const { initializeInstructions } = this.props
     if (initializeInstructions) {
-      if (initializeInstructions.type === 'stepForwardUntilContainerState') {
-        this.expressionContainerManager.stepForwardUntilContainerState(
-          initializeInstructions.state
-        )
-      } else if (
-        initializeInstructions.type ===
-        'stepForwardUntilPreviouslyChangedExpressionState'
-      ) {
-        this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
-          initializeInstructions.state
-        )
-      } else {
-        this.expressionContainerManager.stepForwardMultiple(
-          initializeInstructions.count
-        )
-      }
-      this.syncState()
+      initializeInstructions.forEach(initializeInstruction => {
+        if (initializeInstruction.type === 'stepForwardUntilContainerState') {
+          this.expressionContainerManager.stepForwardUntilContainerState(
+            initializeInstruction.state
+          )
+        } else if (
+          initializeInstruction.type ===
+          'stepForwardUntilPreviouslyChangedExpressionState'
+        ) {
+          this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
+            initializeInstruction.state
+          )
+        } else {
+          this.expressionContainerManager.stepForwardMultiple(
+            initializeInstruction.count
+          )
+        }
+        this.syncState()
+      })
     }
   }
 
