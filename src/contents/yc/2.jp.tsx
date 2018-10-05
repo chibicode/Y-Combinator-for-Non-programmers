@@ -73,13 +73,12 @@ export default () => (
       ひとつずつ解説していきましょう。
     </P>
     <P>
-      まず、
       <Em>
-        <Strong>上のマス</Strong>
-        は、あなたが何かを食べる間に、シェフ <Emoji>👨‍🍳</Emoji>{' '}
-        が作っている料理を表します。
+        まず、
+        <Strong>右下のマス</Strong>
+        は、選べる食事 <Emoji>🍽</Emoji> を表しています。
       </Em>
-      この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
+      この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -90,7 +89,7 @@ export default () => (
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
+            state: 'funcBodyJustHighlighted'
           }
         ]}
       />
@@ -118,12 +117,13 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
+      最後に、
       <Em>
-        最後に、
-        <Strong>右下のマス</Strong>
-        は、選べる食事 <Emoji>🍽</Emoji> を表しています。
+        <Strong>上のマス</Strong>
+        は、あなたが何かを食べる間に、シェフ <Emoji>👨‍🍳</Emoji>{' '}
+        が作っている料理を表します。
       </Em>
-      この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
+      この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -134,7 +134,7 @@ export default () => (
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcBodyJustHighlighted'
+            state: 'callArgJustHighlighted'
           }
         ]}
       />
