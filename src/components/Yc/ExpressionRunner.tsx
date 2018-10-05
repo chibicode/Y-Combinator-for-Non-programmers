@@ -5,25 +5,43 @@ import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import { lineHeights } from 'src/lib/theme'
-import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
-import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
+import ExpressionContainerManager, {
+  ExpressionContainerManagerOptions
+} from 'src/lib/yc/ExpressionContainerManager'
 import {
-  PrioritizedDoneExpressionContainer,
-  PrioritizedExpressionContainer
+  ExpressionContainerState,
+  PreviouslyChangedExpressionState,
+  SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 
+type InitializeInstruction =
+  | {
+      type: 'stepForwardUntilContainerState'
+      state: ExpressionContainerState
+    }
+  | {
+      type: 'stepForwardUntilPreviouslyChangedExpressionState'
+      state: PreviouslyChangedExpressionState
+    }
+  | {
+      type: 'stepForwardMultiple'
+      count: number
+    }
+
 interface ExpressionRunnerProps {
-  expressionContainer:
-    | PrioritizedExpressionContainer
-    | PrioritizedDoneExpressionContainer
+  expressionContainer: SteppedExpressionContainer
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initialStep: number
+  initializeInstructions?: InitializeInstruction[]
+  expressionContainerManagerOptions?: ExpressionContainerManagerOptions
 }
 
-type ExpressionRunnerState = Pick<ExpressionRunnerProps, 'expressionContainer'>
+interface ExpressionRunnerState {
+  expressionContainerManagerState: ExpressionContainerManager['currentState']
+}
 
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
@@ -32,44 +50,61 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
-    variableSize: expressionRunnerContextDefault.variableSize,
-    initialStep: 0
+    variableSize: expressionRunnerContextDefault.variableSize
   }
+  private expressionContainerManager: ExpressionContainerManager
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
-    const expressionContainer = props.expressionContainer
+    this.expressionContainerManager = new ExpressionContainerManager(
+      props.expressionContainer,
+      props.expressionContainerManagerOptions
+    )
 
     this.state = {
-      expressionContainer
+      expressionContainerManagerState: this.expressionContainerManager
+        .currentState
     }
   }
 
   public componentDidMount() {
-    const { initialStep } = this.props
-    if (initialStep > 0) {
-      ;[...Array(initialStep)].forEach(_ => {
-        this.setState({
-          expressionContainer: stepExpressionContainer(
-            this.state.expressionContainer
+    const { initializeInstructions } = this.props
+    if (initializeInstructions) {
+      initializeInstructions.forEach(initializeInstruction => {
+        if (initializeInstruction.type === 'stepForwardUntilContainerState') {
+          this.expressionContainerManager.stepForwardUntilContainerState(
+            initializeInstruction.state
           )
-        })
+        } else if (
+          initializeInstruction.type ===
+          'stepForwardUntilPreviouslyChangedExpressionState'
+        ) {
+          this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
+            initializeInstruction.state
+          )
+        } else {
+          this.expressionContainerManager.stepForwardMultiple(
+            initializeInstruction.count
+          )
+        }
+        this.syncState()
       })
     }
   }
 
-  public stepExpression = () => {
-    if (!this.state.expressionContainer.done) {
-      const x = stepExpressionContainer(this.state.expressionContainer)
-      this.setState({
-        expressionContainer: x
-      })
-    }
+  public stepForward = () => {
+    this.expressionContainerManager.stepForward()
+    this.syncState()
+  }
+
+  public stepBackward = () => {
+    this.expressionContainerManager.stepBackward()
+    this.syncState()
   }
 
   public render() {
     const { showControls, showPriorities, variableSize } = this.props
-    const { expressionContainer } = this.state
+    const { expressionContainerManagerState } = this.state
     return (
       <ExpressionRunnerContext.Provider
         value={{
@@ -83,17 +118,28 @@ export default class ExpressionRunner extends React.Component<
             line-height: ${lineHeights(1.3, { ignoreLocale: true })};
           `}
         >
-          <ExpressionBox expression={expressionContainer.expression} />
+          <ExpressionBox
+            expression={
+              expressionContainerManagerState.expressionContainer.expression
+            }
+          />
           {showControls && (
-            <>
-              <div>
-                {expressionContainerToSimpleString(expressionContainer)}
-              </div>
-              <button onClick={this.stepExpression}>step</button>{' '}
-            </>
+            <ExpressionRunnerControls
+              onNextClick={this.stepForward}
+              onPreviousClick={this.stepBackward}
+              canStepForward={expressionContainerManagerState.canStepForward}
+              canStepBackward={expressionContainerManagerState.canStepBackward}
+            />
           )}
         </div>
       </ExpressionRunnerContext.Provider>
     )
+  }
+
+  private syncState() {
+    this.setState({
+      expressionContainerManagerState: this.expressionContainerManager
+        .currentState
+    })
   }
 }

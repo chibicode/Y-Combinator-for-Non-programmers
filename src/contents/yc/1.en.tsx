@@ -136,7 +136,7 @@ export default () => (
       primaryText={<>Check My Answer</>}
       secondaryText={
         <>
-          Continue to Episode 2 <Emoji>👋</Emoji>
+          Continue to Episode 2 <Emoji>🙂</Emoji>
         </>
       }
     />

@@ -19,6 +19,8 @@ const stateToColor = (
       return 'yellow100'
     case 'highlighted':
       return 'yellow50'
+    case 'justBetaReduced':
+      return 'yellow100'
   }
 }
 

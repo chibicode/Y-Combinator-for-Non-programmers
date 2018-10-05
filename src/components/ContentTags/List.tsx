@@ -12,8 +12,9 @@ const commonListItemCss = css`
   margin: 0 0 ${2 / 3}em 1.5em;
 
   &::before {
-    /* Style taken from medium.com */
-    position: absolute;
+    /* Style taken from medium.com,
+    removed position: absolute because it was
+    not vertically aligning with emojis */
     display: inline-block;
     width: 3.5em;
     margin-left: -3.5em;

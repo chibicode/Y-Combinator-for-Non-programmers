@@ -2,6 +2,7 @@ import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
 import expressionToSimpleString from 'src/lib/yc/expressionToSimpleString'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
+import { NeedsResetExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 
 describe('resetExpressionContainer', () => {
   it('resets complex expression', () => {
@@ -31,9 +32,13 @@ describe('resetExpressionContainer', () => {
       { state: 'highlighted' }
     )
 
-    const resultExpression = resetExpressionContainer(
-      prioritizeExpressionContainer(e)
-    ).expression
+    const expressionContainer: NeedsResetExpressionContainer = {
+      ...prioritizeExpressionContainer(e),
+      containerState: 'needsReset'
+    }
+
+    const resultExpression = resetExpressionContainer(expressionContainer)
+      .expression
 
     expect(
       expressionToSimpleString(resultExpression, { addPriority: true })

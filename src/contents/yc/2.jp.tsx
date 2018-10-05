@@ -73,13 +73,12 @@ export default () => (
       ひとつずつ解説していきましょう。
     </P>
     <P>
-      まず、
       <Em>
-        <Strong>上のマス</Strong>
-        は、あなたが何かを食べる間に、シェフ <Emoji>👨‍🍳</Emoji>{' '}
-        が作っている料理を表します。
+        まず、
+        <Strong>右下のマス</Strong>
+        は、選べる食事 <Emoji>🍽</Emoji> を表しています。
       </Em>
-      この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
+      この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -87,7 +86,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={2}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcBodyJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -104,16 +108,22 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={3}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcArgJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
+      最後に、
       <Em>
-        最後に、
-        <Strong>右下のマス</Strong>
-        は、選べる食事 <Emoji>🍽</Emoji> を表しています。
+        <Strong>上のマス</Strong>
+        は、あなたが何かを食べる間に、シェフ <Emoji>👨‍🍳</Emoji>{' '}
+        が作っている料理を表します。
       </Em>
-      この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
+      この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -121,7 +131,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={4}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>

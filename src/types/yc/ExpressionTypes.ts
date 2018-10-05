@@ -1,6 +1,10 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-export type CommonStates = 'default' | 'highlighted' | 'justHighlighted'
+export type CommonStates =
+  | 'default'
+  | 'highlighted'
+  | 'justHighlighted'
+  | 'justBetaReduced'
 
 export interface VariableExpression {
   readonly state: CommonStates
@@ -16,8 +20,6 @@ export function isVariableExpression(
 
 export type CallExpressionStates =
   | CommonStates
-  | 'readyToHighlight'
-  | 'checkForConflictingVariables'
   | 'needsAlphaConvert'
   | 'readyToBetaReduce'
 

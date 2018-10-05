@@ -1,6 +1,6 @@
 import {
-  PrioritizedExpressionContainer,
-  UnprioritizedExpressionContainer
+  NeedsPrioritizeExpressionContainer,
+  PrioritizedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpression,
@@ -136,23 +136,23 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
 }
 
 export default function prioritizeExpressionContainer(
-  expressionContainer: UnprioritizedExpressionContainer<VariableExpression>
+  expressionContainer: NeedsPrioritizeExpressionContainer<VariableExpression>
 ): PrioritizedExpressionContainer<PrioritizedVariableExpression>
 export default function prioritizeExpressionContainer(
-  expressionContainer: UnprioritizedExpressionContainer<CallExpression>
+  expressionContainer: NeedsPrioritizeExpressionContainer<CallExpression>
 ): PrioritizedExpressionContainer<PrioritizedCallExpression>
 export default function prioritizeExpressionContainer(
-  expressionContainer: UnprioritizedExpressionContainer<FunctionExpression>
+  expressionContainer: NeedsPrioritizeExpressionContainer<FunctionExpression>
 ): PrioritizedExpressionContainer<PrioritizedFunctionExpression>
 export default function prioritizeExpressionContainer(
-  expressionContainer: UnprioritizedExpressionContainer<Expression>
+  expressionContainer: NeedsPrioritizeExpressionContainer<Expression>
 ): PrioritizedExpressionContainer<PrioritizedExpression>
 export default function prioritizeExpressionContainer(
-  expressionContainer: UnprioritizedExpressionContainer<Expression>
+  expressionContainer: NeedsPrioritizeExpressionContainer<Expression>
 ) {
   return {
-    prioritized: true,
-    needsReset: expressionContainer.needsReset,
+    containerState: 'prioritized',
+    previouslyChangedExpressionState: 'default',
     expression: populatePriorityAggs({
       expression: prioritizeExpression(expressionContainer.expression),
       argPriorityAgg: new Array<number>(),

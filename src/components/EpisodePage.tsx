@@ -100,9 +100,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
               href={pathHelpers[lessonName]('toc')}
               className={navigationLinkClasses}
             >
-              {locale === 'en'
-                ? `Episode List (${numEpisodes(lessonName)})`
-                : `目次 (全${numEpisodes(lessonName)}章)`}
+              {locale === 'en' ? 'View All Episodes' : '目次'}
             </InternalLink>{' '}
           </div>
           <div
@@ -158,7 +156,14 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
                 `
               )}
             >
-              {lessonTitle}
+              <InternalLink
+                href={pathHelpers[lessonName]()}
+                className={css`
+                  text-decoration: none;
+                `}
+              >
+                {lessonTitle}
+              </InternalLink>
             </h3>
             <h1
               className={cx(

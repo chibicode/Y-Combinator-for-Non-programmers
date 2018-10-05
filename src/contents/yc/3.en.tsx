@@ -1,10 +1,11 @@
 import React from 'react'
+import Content from 'src/components/Content'
 import {
-  Blockquote,
   Em,
-  ExternalLink,
   H3,
   InternalLink,
+  Ol,
+  OlLi,
   P,
   Strong,
   Ul,
@@ -18,8 +19,10 @@ import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
-  episode2Expression2
+  episode2Expression2,
+  episode3Expression1
 } from 'src/lib/yc/lessonExpressions'
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <>
@@ -35,133 +38,48 @@ export default () => (
         variableSize={'lg'}
       />
     </ExpressionRunnerWrapper>
-    <P>This bento box represents:</P>
+    <P>
+      <Strong>Answer:</Strong> the above bento box represents:
+    </P>
     <Ul size="lg">
       <UlLi>
-        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}
-        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥗</Emoji>
       </UlLi>
       <UlLi>
         <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🥗</Emoji>
       </UlLi>
       <UlLi>
-        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🌮</Emoji>
+        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥩</Emoji>
       </UlLi>
     </Ul>
-    <P>
-      <Strong>The answer is</Strong>: <Emoji size="lg">🥩</Emoji>{' '}
-      <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>. The salad is
-      replaced with tacos. Hope you got it right!
-    </P>
-    <P>
-      Now, let’s move on to the next topic: <Strong>Bento Boxes</Strong>.
-    </P>
-    <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
-    <P>
-      Bento boxes <Emoji>🍱</Emoji> are{' '}
-      <Em>traditional Japanese lunch boxes</Em> (as shown in the above emojis).
-      Here’s what{' '}
-      <ExternalLink href="https://simple.wikipedia.org/wiki/Bento">
-        Wikipedia (Simple English)
-      </ExternalLink>{' '}
-      says:
-    </P>
-    <Blockquote>
-      <P>
-        <Strong>Bento [box]</Strong> is a meal common in Japanese cuisine, made
-        to take away from home to be eaten somewhere else. A traditional bento
-        consists of rice, fish or meat, and one or more pickled or cooked
-        vegetables as a side dish. ... People often take bento for a picnic.
-      </P>
-    </Blockquote>
-    <H3>Interactive Bento Box</H3>
-    <P>
-      In this tutorial, we’re going to play with an{' '}
-      <Em>
-        interactive bento box <Emoji>🍱</Emoji>
-      </Em>
-      . Here’s what it looks like. Each cell has a food item. It kind of looks
-      like a bento box, right?
-    </P>
+    <P>Here’s the annotated version:</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
-        expressionContainer={episode2Expression1}
+        expressionContainer={episode2Expression2}
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToBetaReduce'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
+    <H3>What will happen in the next step?</H3>
     <P>
-      <Strong>But what does each cell mean?</Strong> Let me explain.
-    </P>
-    <P>
-      <Em>
-        The <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
-        is preparing.
-      </Em>{' '}
-      In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
-    </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initialStep={2}
-      />
-    </ExpressionRunnerWrapper>
-    <P>
-      <Em>
-        Next, the <Strong>bottom left</Strong> cell represents what you’re
-        eating next <Emoji>😋</Emoji>.
-      </Em>{' '}
-      In this case, you’ll be eating sushi <Emoji>🍣</Emoji> next.
-    </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initialStep={3}
-      />
-    </ExpressionRunnerWrapper>
-    <P>
-      <Em>
-        Finally, the <Strong>bottom right</Strong> cell represents all available
-        dishes <Emoji>🍽</Emoji>.
-      </Em>{' '}
-      In this case, the only dish available is sushi <Emoji>🍣</Emoji>.
-    </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initialStep={4}
-      />
-    </ExpressionRunnerWrapper>
-    <P>
-      <Strong>So:</Strong> the above “bento box <Emoji>🍱</Emoji>” represents
-      the following scenario.
+      In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
+      brings steak <Emoji>🥩</Emoji>. So in the next step, the steak{' '}
+      <Emoji>🥩</Emoji> will be the only dish:
     </P>
     <Ul size="lg">
       <UlLi>
-        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍣</Emoji>
-      </UlLi>
-      <UlLi>
-        <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍣</Emoji>
-      </UlLi>
-      <UlLi>
-        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥪</Emoji>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>
       </UlLi>
     </Ul>
-    <P>Let’s do a quiz to check if you understood this!</P>
-    <EmojiSeparator emojis={['❓', '🤔', '❓']} />
-    <H3>Quiz</H3>
     <P>
-      What scenario does the this “bento box <Emoji>🍱</Emoji>” represent?
+      In terms of the <Content name="yc/BentoBox" />, it will look like this.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -169,26 +87,99 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'justBetaReduced'
+          },
+          {
+            type: 'stepForwardMultiple',
+            count: 1
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
-    <Ul size="lg">
-      <UlLi>
-        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">❓</Emoji>
-      </UlLi>
-      <UlLi>
-        <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">❓</Emoji>
-      </UlLi>
-      <UlLi>
-        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">❓</Emoji>
-      </UlLi>
-    </Ul>
-    <P>Go to the next episode to find out the answer!</P>
+    <H3>The Next and Previous Buttons</H3>
+    <P>To see this interactively, I’ve added the next and previous buttons.</P>
+    <Ol>
+      <OlLi>
+        <Em>
+          Try pressing <Strong>Next</Strong> <Emoji>⏩</Emoji> several times
+          until you see <Strong>Done</Strong> <Emoji>✅</Emoji>. The steak{' '}
+          <Emoji>🥩</Emoji> will be the only dish.
+        </Em>
+      </OlLi>
+      <OlLi>
+        Then try pressing <Emoji>⏪</Emoji> <Strong>Previous</Strong> a few
+        times.
+      </OlLi>
+    </Ol>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression2}
+        showPriorities={false}
+        showControls={true}
+        variableSize={'lg'}
+        expressionContainerManagerOptions={{
+          skipReadyToBetaReduce: true,
+          skipJustBetaReduced: true,
+          skipDefault: true
+        }}
+      />
+    </ExpressionRunnerWrapper>
+    <P>Try this one from the last episode too!</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression1}
+        showPriorities={false}
+        showControls={true}
+        variableSize={'lg'}
+        expressionContainerManagerOptions={{
+          skipReadyToBetaReduce: true,
+          skipJustBetaReduced: true,
+          skipDefault: true
+        }}
+      />
+    </ExpressionRunnerWrapper>
+    <P>Hope you get the idea!</P>
+    <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+    <H3>Quiz</H3>
+    <P>Here’s a different one. What do you think will happen next?</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode3Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToBetaReduce'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Em>Choose the one you think will be the next state.</Em> It’s okay if you
+      have no idea - I will explain on the next episode!
+    </P>
+    <Ol>
+      <OlLi>
+        <Emoji size="lg">{letterEmojiMapping.c}</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">{letterEmojiMapping.a}</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">{letterEmojiMapping.b}</Emoji>
+      </OlLi>
+    </Ol>
     <NextLessonButton
-      href={yc(3)}
+      href={yc(4)}
       primaryText={<>Check My Answer</>}
       secondaryText={
         <>
-          Continue to Episode 3 <Emoji>👋</Emoji>
+          Continue to Episode 4 <Emoji>🙂</Emoji>
         </>
       }
     />

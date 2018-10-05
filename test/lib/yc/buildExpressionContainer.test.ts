@@ -3,9 +3,7 @@ import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
 describe('buildExpressionContainer', () => {
   it('works with variable expressions', () => {
     expect(buildExpressionContainer('x')).toEqual({
-      prioritized: false,
-      needsReset: false,
-      done: false,
+      containerState: 'needsPrioritize',
       expression: {
         name: 'x',
         state: 'default',
@@ -21,9 +19,7 @@ describe('buildExpressionContainer', () => {
         body: 'y'
       })
     ).toEqual({
-      prioritized: false,
-      needsReset: false,
-      done: false,
+      containerState: 'needsPrioritize',
       expression: {
         arg: {
           name: 'x',
@@ -51,9 +47,7 @@ describe('buildExpressionContainer', () => {
         'z'
       ])
     ).toEqual({
-      prioritized: false,
-      needsReset: false,
-      done: false,
+      containerState: 'needsPrioritize',
       expression: {
         func: {
           arg: {
@@ -82,9 +76,7 @@ describe('buildExpressionContainer', () => {
 
   it('correctly nests call expressions', () => {
     expect(buildExpressionContainer(['a', ['b', 'c'], 'd'])).toEqual({
-      prioritized: false,
-      needsReset: false,
-      done: false,
+      containerState: 'needsPrioritize',
       expression: {
         state: 'default',
         type: 'call',

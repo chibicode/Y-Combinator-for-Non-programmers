@@ -45,6 +45,7 @@ export default () => (
       <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>. The salad is
       replaced with tacos. Hope you got it right!
     </P>
+    <H3>Interactive Bento Box</H3>
     <P>
       Now, let’s move on to the next topic: <Strong>Bento Boxes</Strong>.
     </P>
@@ -66,7 +67,6 @@ export default () => (
         vegetables as a side dish. ... People often take bento for a picnic.
       </P>
     </Blockquote>
-    <H3>Interactive Bento Box</H3>
     <P>
       In this tutorial, we’re going to play with an{' '}
       <Em>
@@ -88,10 +88,10 @@ export default () => (
     </P>
     <P>
       <Em>
-        The <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
-        is preparing.
+        The <Strong>bottom right</Strong> cell represents all available dishes{' '}
+        <Emoji>🍽</Emoji>.
       </Em>{' '}
-      In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
+      In this case, the only available dish is sushi <Emoji>🍣</Emoji>.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -99,7 +99,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={2}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcBodyJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -115,15 +120,21 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={3}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcArgJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
+      Finally,{' '}
       <Em>
-        Finally, the <Strong>bottom right</Strong> cell represents all available
-        dishes <Emoji>🍽</Emoji>.
+        the <Strong>top</Strong> cell represents what the chef <Emoji>👨‍🍳</Emoji>{' '}
+        is preparing.
       </Em>{' '}
-      In this case, the only dish available is sushi <Emoji>🍣</Emoji>.
+      In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -131,7 +142,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={4}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -180,7 +196,7 @@ export default () => (
       primaryText={<>Check My Answer</>}
       secondaryText={
         <>
-          Continue to Episode 3 <Emoji>👋</Emoji>
+          Continue to Episode 3 <Emoji>🙂</Emoji>
         </>
       }
     />
