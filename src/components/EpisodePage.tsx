@@ -60,23 +60,23 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
       </title>
     </Head>
     <Container size={episodeNumber ? 'sm' : 'lg'}>
-      {episodeNumber && (
+      <div
+        className={css`
+          display: flex;
+          align-items: center;
+          padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
+          border-bottom: 1px solid ${colors('indigo50')};
+          margin: 0 ${spaces('-1.25')} ${spaces(0.5)} ${spaces('-1.25')};
+        `}
+      >
         <div
           className={css`
-            display: flex;
-            align-items: center;
-            padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
-            border-bottom: 1px solid ${colors('indigo50')};
-            margin: 0 ${spaces('-1.25')} ${spaces(0.5)} ${spaces('-1.25')};
+            width: 30%;
+            text-align: left;
           `}
         >
-          <div
-            className={css`
-              width: 30%;
-              text-align: left;
-            `}
-          >
-            {episodeNumber >= 1 && (
+          {episodeNumber &&
+            episodeNumber >= 1 && (
               <InternalLink
                 href={pathHelpers[lessonName](
                   episodeNumber === 1 ? undefined : episodeNumber - 1
@@ -89,37 +89,36 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
                   : episodeTitlePrefix(episodeNumber - 1)}
               </InternalLink>
             )}
-          </div>
-          <div
-            className={css`
-              width: 40%;
-              text-align: center;
-            `}
+        </div>
+        <div
+          className={css`
+            width: 40%;
+            text-align: center;
+          `}
+        >
+          <InternalLink
+            href={pathHelpers[lessonName]('toc')}
+            className={navigationLinkClasses}
           >
+            {locale === 'en' ? 'View All Episodes' : '目次'}
+          </InternalLink>{' '}
+        </div>
+        <div
+          className={css`
+            width: 30%;
+            text-align: right;
+          `}
+        >
+          {(episodeNumber || 0) < numEpisodes(lessonName) && (
             <InternalLink
-              href={pathHelpers[lessonName]('toc')}
+              href={pathHelpers[lessonName]((episodeNumber || 0) + 1)}
               className={navigationLinkClasses}
             >
-              {locale === 'en' ? 'View All Episodes' : '目次'}
-            </InternalLink>{' '}
-          </div>
-          <div
-            className={css`
-              width: 30%;
-              text-align: right;
-            `}
-          >
-            {episodeNumber < numEpisodes(lessonName) && (
-              <InternalLink
-                href={pathHelpers[lessonName](episodeNumber + 1)}
-                className={navigationLinkClasses}
-              >
-                {episodeTitlePrefix(episodeNumber + 1)} →
-              </InternalLink>
-            )}
-          </div>
+              {episodeTitlePrefix((episodeNumber || 0) + 1)} →
+            </InternalLink>
+          )}
         </div>
-      )}
+      </div>
       <div
         className={css`
           padding-top: ${spaces(1.5)};
