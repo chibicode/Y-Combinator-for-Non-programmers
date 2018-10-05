@@ -24,6 +24,9 @@ injectGlobal`
   svg {
     height: 100%;
   }
+
+  /* https://github.com/twbs/bootstrap/issues/18044#issuecomment-150826143 */
+  html, body { touch-action: manipulation; }
 `
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
