@@ -33,6 +33,11 @@ export interface BundleTypes {
     en: React.ComponentType<any>
   }
 
+  'yc/4': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
   'yc/BentoBox': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
@@ -120,6 +125,18 @@ const bundles: BundleTypes = {
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () => import(/* webpackChunkName: 'yc/3.jp' */ 'src/contents/yc/3.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'yc/4': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/4.en' */ 'src/contents/yc/4.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/4.jp' */ 'src/contents/yc/4.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },

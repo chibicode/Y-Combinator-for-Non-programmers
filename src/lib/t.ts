@@ -22,6 +22,10 @@ export const allTranslations = {
     en: 'The Next and Previous Buttons',
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
+  ycEpisode4: {
+    en: '...',
+    jp: '...'
+  },
   introductionPage: {
     en: 'Introduction',
     jp: '序章'
