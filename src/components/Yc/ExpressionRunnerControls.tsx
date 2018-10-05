@@ -8,7 +8,7 @@ import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 const Button = styled('button')`
   border-radius: ${radii(0.25)};
   border: 2px solid ${colors('indigo300')};
-  background: ${colors('indigo50')};
+  background: #fff;
   color: ${colors('indigo500')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
@@ -19,10 +19,10 @@ const Button = styled('button')`
     outline: none;
   }
   &:hover {
-    background: #fff;
+    background: ${colors('indigo50')};
   }
   &:active {
-    background: ${colors('indigo50')};
+    background: ${colors('indigo100')};
   }
 `
 
