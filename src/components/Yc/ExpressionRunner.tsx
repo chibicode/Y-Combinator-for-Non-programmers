@@ -5,6 +5,7 @@ import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import { lineHeights } from 'src/lib/theme'
 import ExpressionContainerManager, {
   ExpressionContainerManagerOptions
@@ -89,8 +90,18 @@ export default class ExpressionRunner extends React.Component<
     }
   }
 
+  public stepForward = () => {
+    this.expressionContainerManager.stepForward()
+    this.syncState()
+  }
+
+  public stepBackward = () => {
+    this.expressionContainerManager.stepBackward()
+    this.syncState()
+  }
+
   public render() {
-    const { showPriorities, variableSize } = this.props
+    const { showControls, showPriorities, variableSize } = this.props
     const { expressionContainerManagerState } = this.state
     return (
       <ExpressionRunnerContext.Provider
@@ -110,6 +121,7 @@ export default class ExpressionRunner extends React.Component<
               expressionContainerManagerState.expressionContainer.expression
             }
           />
+          {showControls && <ExpressionRunnerControls onNextClick={this.stepForward} onPreviousClick={this.stepBackward} />}
         </div>
       </ExpressionRunnerContext.Provider>
     )

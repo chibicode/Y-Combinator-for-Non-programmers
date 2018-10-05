@@ -91,5 +91,14 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <H3>The Next and Previous Buttons</H3>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode2Expression2}
+        showPriorities={false}
+        showControls={true}
+        variableSize={'lg'}
+        expressionContainerManagerOptions={{ skipReadyToBetaReduce: true }}
+      />
+    </ExpressionRunnerWrapper>
   </>
 )
