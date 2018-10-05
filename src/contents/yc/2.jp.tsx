@@ -87,7 +87,7 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={2}
+        initializeInstructions={{ type: 'stepForwardMultiple', count: 1 }}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -104,7 +104,7 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={3}
+        initializeInstructions={{ type: 'stepForwardMultiple', count: 2 }}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -121,7 +121,7 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
-        initialStep={4}
+        initializeInstructions={{ type: 'stepForwardMultiple', count: 3 }}
       />
     </ExpressionRunnerWrapper>
     <P>

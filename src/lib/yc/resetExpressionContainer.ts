@@ -41,6 +41,7 @@ export default function resetExpressionContainer(
 ): NeedsPrioritizeExpressionContainer {
   return {
     containerState: 'needsPrioritize',
-    expression: resetExpression(expressionContainer.expression)
+    expression: resetExpression(expressionContainer.expression),
+    previouslyChangedExpressionState: 'default'
   }
 }

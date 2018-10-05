@@ -14,6 +14,7 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
   PrioritizedCallExpression,
+  PrioritizedExpression,
   PrioritizedFunctionExpression
 } from 'src/types/yc/PrioritizedExpressionTypes'
 
@@ -52,11 +53,6 @@ export default function stepExpressionContainer(
         const expression = nextCallExpressionAndParent.expression
         switch (expression.state) {
           case 'default': {
-            expression.state = 'readyToHighlight'
-            draftContainer.previouslyChangedExpressionState = 'readyToHighlight'
-            break
-          }
-          case 'readyToHighlight': {
             if (expression.arg.state === 'default') {
               expression.arg.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =
@@ -72,23 +68,16 @@ export default function stepExpressionContainer(
               draftContainer.previouslyChangedExpressionState =
                 'funcBodyJustHighlighted'
             } else {
-              expression.func.body.state = 'highlighted'
-              expression.state = 'checkForConflictingVariables'
-              draftContainer.previouslyChangedExpressionState =
-                'checkForConflictingVariables'
-            }
-            break
-          }
-          case 'checkForConflictingVariables': {
-            const conflicts = conflictingVariableNames(expression)
-            if (conflicts.length > 0) {
-              expression.state = 'needsAlphaConvert'
-              draftContainer.previouslyChangedExpressionState =
-                'needsAlphaConvert'
-            } else {
-              expression.state = 'readyToBetaReduce'
-              draftContainer.previouslyChangedExpressionState =
-                'readyToBetaReduce'
+              const conflicts = conflictingVariableNames(expression)
+              if (conflicts.length > 0) {
+                expression.state = 'needsAlphaConvert'
+                draftContainer.previouslyChangedExpressionState =
+                  'needsAlphaConvert'
+              } else {
+                expression.state = 'readyToBetaReduce'
+                draftContainer.previouslyChangedExpressionState =
+                  'readyToBetaReduce'
+              }
             }
             break
           }
@@ -102,7 +91,10 @@ export default function stepExpressionContainer(
             break
           }
           case 'readyToBetaReduce': {
-            const betaReduced = betaReduce(expression)
+            const betaReduced: PrioritizedExpression = {
+              ...betaReduce(expression),
+              state: 'justBetaReduced'
+            }
             if (
               'noParent' in nextCallExpressionAndParent &&
               nextCallExpressionAndParent.noParent
