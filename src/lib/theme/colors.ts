@@ -39,7 +39,7 @@ export const allColors = {
   yellow50: yellow[50],
   yellow100: yellow[100],
   yellow200: yellow[200],
-  yellow700: yellow[700]
+  yellow800: yellow[800]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]

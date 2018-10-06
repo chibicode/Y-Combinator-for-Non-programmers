@@ -3,8 +3,6 @@ import {
   Em,
   H3,
   InternalLink,
-  // Ol,
-  // OlLi,
   P,
   Strong,
   Ul,
@@ -12,16 +10,15 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
-  // episode2Expression1,
-  // episode2Expression2,
   episode3Expression1,
-  episode4Expression1
+  episode4Expression1,
+  episode4Expression2
 } from 'src/lib/yc/lessonExpressions'
 
 export default () => (
@@ -88,6 +85,13 @@ export default () => (
         <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥪</Emoji>
       </UlLi>
     </Ul>
+    <P>
+      <Em>
+        <Strong>Important:</Strong> The salad <Emoji>🥗</Emoji> the chef{' '}
+        <Emoji>👨‍🍳</Emoji> prepared is wasted, and it <Strong>disappears</Strong>
+        .
+      </Em>
+    </P>
     <H3>Three cells on the bottom</H3>
     <P>
       Next, we’ll talk about the case when there are more than two cells on the
@@ -185,7 +189,9 @@ export default () => (
         ]}
       />
     </ExpressionRunnerWrapper>
-    <P>Here’s what happened:</P>
+    <P>
+      <Strong>Here’s what happened:</Strong>
+    </P>
     <Ul>
       <UlLi>
         <Emoji>🥪</Emoji> The Sandwich remained the same.
@@ -209,5 +215,43 @@ export default () => (
     <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
     <P>It’s getting complicated, right? You’re doing great so far!</P>
     <H3>Quiz: Four cells on the bottom</H3>
+    <P>
+      How about <Em>four cells on the bottom</Em>? What do you think will happen
+      on the next step?
+    </P>
+    <ExpressionRunnerWrapper size="xs">
+      <ExpressionRunner
+        expressionContainer={episode4Expression2}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Strong>Here’s the hint:</Strong>
+    </P>
+    <ExpressionRunnerWrapper size="xs">
+      <ExpressionRunner
+        expressionContainer={episode4Expression2}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <NextLessonButton
+      href={yc(5)}
+      primaryText={<>Check My Answer</>}
+      secondaryText={
+        <>
+          Continue to Episode 5 <Emoji>🙂</Emoji>
+        </>
+      }
+    />
   </>
 )

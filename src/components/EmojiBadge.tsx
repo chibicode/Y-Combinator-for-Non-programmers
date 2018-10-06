@@ -19,7 +19,7 @@ const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
       border-color: ${funcArgColor};
     `,
     funcBody: css`
-      border-color: ${colors('yellow700')};
+      border-color: ${colors('yellow800')};
     `
   }[x])
 

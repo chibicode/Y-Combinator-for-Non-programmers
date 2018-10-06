@@ -1,10 +1,11 @@
 import React from 'react'
-import Container from 'src/components/Container'
+import Container, { ContainerProps } from 'src/components/Container'
 
-const ExpressionRunnerWrapper: React.SFC<{ children: React.ReactNode }> = ({
-  children
-}) => (
-  <Container size="xxs" horizontalPadding={0} verticalMargin={1.75}>
+const ExpressionRunnerWrapper: React.SFC<{
+  children: React.ReactNode
+  size?: ContainerProps['size']
+}> = ({ children, size = 'xxs' }) => (
+  <Container size={size} horizontalPadding={0} verticalMargin={1.75}>
     {children}
   </Container>
 )

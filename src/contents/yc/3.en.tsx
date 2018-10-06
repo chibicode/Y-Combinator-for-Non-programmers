@@ -69,8 +69,11 @@ export default () => (
     <H3>What will happen in the next step?</H3>
     <P>
       In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
-      brings steak <Emoji>🥩</Emoji>. So in the next step, the steak{' '}
-      <Emoji>🥩</Emoji> will be the only dish:
+      brings steak <Emoji>🥩</Emoji>. So in the next step,{' '}
+      <Em>
+        the steak <Emoji>🥩</Emoji> will be the only dish
+      </Em>
+      :
     </P>
     <Ul size="lg">
       <UlLi>
@@ -96,6 +99,13 @@ export default () => (
         ]}
       />
     </ExpressionRunnerWrapper>
+    <P>
+      <Em>
+        <Strong>Very Important:</Strong> Notice that the cells for the food you
+        ate <Emoji>😋</Emoji> and food the chef prepared <Emoji>👨‍🍳</Emoji>{' '}
+        <Strong>disappeared</Strong>.
+      </Em>
+    </P>
     <H3>The Next and Previous Buttons</H3>
     <P>To see this interactively, I’ve added the next and previous buttons.</P>
     <Ol>

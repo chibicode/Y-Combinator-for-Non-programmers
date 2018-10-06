@@ -5,7 +5,7 @@ const letterEmojiMapping: Record<VariableNames, string> = {
   b: '🥪',
   c: '🥗',
   d: '🥩',
-  e: '🦊',
+  e: '🍔',
   f: '🐵',
   g: '🐼',
   h: '🐷',
