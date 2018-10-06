@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -16,6 +15,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
@@ -42,7 +42,7 @@ export default () => (
     </ExpressionRunnerWrapper>
     <P>
       <Strong>答え:</Strong> この
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       は、以下の状況を表しています。
     </P>
     <Ul size="lg">
@@ -85,7 +85,7 @@ export default () => (
     </Ul>
     <P>
       つまり、
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       は次のステップにこうなります。
     </P>
     <ExpressionRunnerWrapper>
@@ -113,14 +113,12 @@ export default () => (
     <Ol>
       <OlLi>
         <Em>
-          <Strong>次へ</Strong> <Emoji>⏩</Emoji>{' '}
-          ボタンを何度か押してみてください。いずれ
-          <Strong>終了</Strong> <Emoji>✅</Emoji> になり、料理がステーキ{' '}
-          <Emoji>🥩</Emoji> だけになるはずです。
+          {h('ycNext')} ボタンを何度か押してみてください。いずれ {h('ycDone')}{' '}
+          になり、料理がステーキ <Emoji>🥩</Emoji> だけになるはずです。
         </Em>
       </OlLi>
       <OlLi>
-        そしたら今度は、 <Emoji>⏪</Emoji> <Strong>前へ</Strong>
+        そしたら今度は、 {h('ycPrevious')}{' '}
         ボタンを何度か押してみてください。元に戻るはずです。
       </OlLi>
     </Ol>
@@ -158,7 +156,7 @@ export default () => (
     <H3>クイズ</H3>
     <P>
       それでは、今までにない例を紹介します。下の
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       を「次へ」と進めたら、最終的にどうなるでしょう？
     </P>
     <ExpressionRunnerWrapper>

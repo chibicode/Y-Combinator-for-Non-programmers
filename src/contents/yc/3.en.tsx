@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -16,6 +15,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
@@ -78,9 +78,7 @@ export default () => (
         <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>
       </UlLi>
     </Ul>
-    <P>
-      In terms of the <Content name="yc/BentoBox" />, it will look like this.
-    </P>
+    <P>In terms of the {h('ycBentoBox')}, it will look like this.</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}
@@ -104,15 +102,11 @@ export default () => (
     <Ol>
       <OlLi>
         <Em>
-          Try pressing <Strong>Next</Strong> <Emoji>⏩</Emoji> several times
-          until you see <Strong>Done</Strong> <Emoji>✅</Emoji>. The steak{' '}
-          <Emoji>🥩</Emoji> will be the only dish.
+          Try pressing {h('ycNext')} several times until you see {h('ycDone')}.
+          The steak <Emoji>🥩</Emoji> will be the only dish.
         </Em>
       </OlLi>
-      <OlLi>
-        Then try pressing <Emoji>⏪</Emoji> <Strong>Previous</Strong> a few
-        times.
-      </OlLi>
+      <OlLi>Then try pressing {h('ycPrevious')} a few times.</OlLi>
     </Ol>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -165,13 +159,13 @@ export default () => (
     </P>
     <Ol>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.c}</Emoji>
+        <Emoji size="lg">🍣</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.a}</Emoji>
+        <Emoji size="lg">🥪</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.b}</Emoji>
+        <Emoji size="lg">🥗</Emoji>
       </OlLi>
     </Ol>
     <NextLessonButton

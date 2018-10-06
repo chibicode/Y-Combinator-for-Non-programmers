@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -16,6 +15,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
@@ -78,9 +78,7 @@ export default () => (
         <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>
       </UlLi>
     </Ul>
-    <P>
-      In terms of the <Content name="yc/BentoBox" />, it will look like this.
-    </P>
+    <P>In terms of the {h('ycBentoBox')}, it will look like this.</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}

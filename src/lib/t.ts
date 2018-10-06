@@ -36,6 +36,6 @@ export const allTranslations = {
   }
 }
 
-const t = (x: keyof typeof allTranslations) => allTranslations[x][locale]
+const h = (x: keyof typeof allTranslations) => allTranslations[x][locale]
 
-export default t
+export default h

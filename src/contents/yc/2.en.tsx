@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Blockquote,
   Em,
@@ -16,6 +15,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
@@ -151,8 +151,8 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>So:</Strong> the above <Content name="yc/BentoBox" /> represents
-      the following scenario.
+      <Strong>So:</Strong> the above {h('ycBentoBox')} represents the following
+      scenario.
     </P>
     <Ul size="lg">
       <UlLi>
@@ -168,9 +168,7 @@ export default () => (
     <P>Let’s do a quiz to check if you understood this!</P>
     <EmojiSeparator emojis={['❓', '🤔', '❓']} />
     <H3>Quiz</H3>
-    <P>
-      What scenario does the this <Content name="yc/BentoBox" /> represent?
-    </P>
+    <P>What scenario does the this {h('ycBentoBox')} represent?</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}
