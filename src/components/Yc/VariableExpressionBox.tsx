@@ -63,9 +63,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                 `}
               >
                 {(state === 'highlighted' || state === 'justHighlighted') &&
-                  highlightType && (
-                    <EmojiBadge state={state} badgeType={highlightType} />
-                  )}
+                  highlightType && <EmojiBadge badgeType={highlightType} />}
               </span>
             </span>
           </FlexCenter>

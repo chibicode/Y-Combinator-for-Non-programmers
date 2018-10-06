@@ -27,6 +27,7 @@ export const allColors = {
   indigo500: indigo[500],
   jpSocialBackground: grey[300],
   pink50: pink[50],
+  pink300: pink[300],
   pink400: pink[400],
   pink500: pink[500],
   pink700: pink[700],
