@@ -22,6 +22,7 @@ export default class ExpressionContainerManager {
   }
   public expressionContainers: SteppedExpressionContainer[] = []
   public currentIndex = 0
+  public minimumIndex = 0
   public options: ExpressionContainerManagerOptions = {}
 
   constructor(
@@ -103,7 +104,7 @@ export default class ExpressionContainerManager {
   }
 
   private get canStepBackward() {
-    return this.currentIndex > 0
+    return this.currentIndex > (this.minimumIndex || 0)
   }
 
   private get canStepForward() {
