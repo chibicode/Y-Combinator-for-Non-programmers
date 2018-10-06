@@ -90,8 +90,7 @@ export default () => (
       <UlLi>
         <Em>
           What are the signs that say{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,{' '}
-          <InlinePrioritiesLabel>1+</InlinePrioritiesLabel>, and{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>?
         </Em>
       </UlLi>
