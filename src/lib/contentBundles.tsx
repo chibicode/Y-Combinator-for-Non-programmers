@@ -33,7 +33,7 @@ export interface BundleTypes {
     en: React.ComponentType<any>
   }
 
-  'yc/BentoBox': {
+  'yc/4': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
   }
@@ -123,17 +123,15 @@ const bundles: BundleTypes = {
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/BentoBox': {
+  'yc/4': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'yc/BentoBox.en' */ 'src/contents/yc/BentoBox.en'),
+      () => import(/* webpackChunkName: 'yc/4.en' */ 'src/contents/yc/4.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'yc/BentoBox.jp' */ 'src/contents/yc/BentoBox.jp'),
+      () => import(/* webpackChunkName: 'yc/4.jp' */ 'src/contents/yc/4.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },

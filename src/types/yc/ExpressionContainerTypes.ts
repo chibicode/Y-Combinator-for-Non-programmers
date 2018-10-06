@@ -1,5 +1,6 @@
 import { CallExpressionStates, Expression } from 'src/types/yc/ExpressionTypes'
 import { PrioritizedExpression } from 'src/types/yc/PrioritizedExpressionTypes'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 export type ExpressionContainerState =
   | 'prioritized'
@@ -17,6 +18,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly containerState: ExpressionContainerState
   readonly previouslyChangedExpressionState: PreviouslyChangedExpressionState
+  readonly conflictingVariableNames?: ReadonlyArray<VariableNames>
 }
 
 export type PrioritizedExpressionContainer<

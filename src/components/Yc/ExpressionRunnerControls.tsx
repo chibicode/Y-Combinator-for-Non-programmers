@@ -1,8 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import styled from 'react-emotion'
-import Emoji from 'src/components/Emoji'
-import locale from 'src/lib/locale'
+import h from 'src/lib/h'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 const Button = styled('button')`
@@ -10,7 +9,6 @@ const Button = styled('button')`
   border: 2px solid ${colors('indigo300')};
   background: #fff;
   color: ${colors('indigo500')};
-  font-weight: bold;
   font-size: ${fontSizes(0.85)};
   padding: ${spaces(0.5)} 0;
   &:enabled {
@@ -65,7 +63,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
           margin-right: ${spaces(0.25)};
         `}
       >
-        <Emoji>⏪</Emoji> {locale === 'jp' ? '前へ' : 'Previous'}
+        {h('ycPrevious')}
       </Button>
     ) : (
       <div
@@ -85,15 +83,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
         margin-left: ${spaces(0.25)};
       `}
     >
-      {canStepForward ? (
-        <>
-          {locale === 'jp' ? '次へ' : 'Next'} <Emoji>⏩</Emoji>
-        </>
-      ) : (
-        <>
-          {locale === 'jp' ? '終了' : 'Done'} <Emoji>✅</Emoji>
-        </>
-      )}
+      {canStepForward ? h('ycNext') : h('ycDone')}
     </Button>
   </div>
 )

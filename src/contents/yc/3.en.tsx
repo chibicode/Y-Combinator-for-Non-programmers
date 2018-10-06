@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -16,13 +15,13 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
   episode2Expression2,
   episode3Expression1
 } from 'src/lib/yc/lessonExpressions'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <>
@@ -70,17 +69,18 @@ export default () => (
     <H3>What will happen in the next step?</H3>
     <P>
       In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
-      brings steak <Emoji>🥩</Emoji>. So in the next step, the steak{' '}
-      <Emoji>🥩</Emoji> will be the only dish:
+      brings steak <Emoji>🥩</Emoji>. So in the next step,{' '}
+      <Em>
+        the steak <Emoji>🥩</Emoji> will be the only dish
+      </Em>
+      :
     </P>
     <Ul size="lg">
       <UlLi>
         <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>
       </UlLi>
     </Ul>
-    <P>
-      In terms of the <Content name="yc/BentoBox" />, it will look like this.
-    </P>
+    <P>In terms of the {h('ycBentoBox')}, it will look like this.</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}
@@ -99,26 +99,29 @@ export default () => (
         ]}
       />
     </ExpressionRunnerWrapper>
+    <P>
+      <Em>
+        <Strong>Very Important:</Strong> Notice that the cells for the food you
+        ate <Emoji>😋</Emoji> and food the chef prepared <Emoji>👨‍🍳</Emoji>{' '}
+        <Strong>disappeared</Strong>.
+      </Em>
+    </P>
     <H3>The Next and Previous Buttons</H3>
     <P>To see this interactively, I’ve added the next and previous buttons.</P>
     <Ol>
       <OlLi>
         <Em>
-          Try pressing <Strong>Next</Strong> <Emoji>⏩</Emoji> several times
-          until you see <Strong>Done</Strong> <Emoji>✅</Emoji>. The steak{' '}
-          <Emoji>🥩</Emoji> will be the only dish.
+          Try pressing {h('ycNext')} several times until you see {h('ycDone')}.
+          The steak <Emoji>🥩</Emoji> will be the only dish.
         </Em>
       </OlLi>
-      <OlLi>
-        Then try pressing <Emoji>⏪</Emoji> <Strong>Previous</Strong> a few
-        times.
-      </OlLi>
+      <OlLi>Then try pressing {h('ycPrevious')} a few times.</OlLi>
     </Ol>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode2Expression2}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
@@ -132,7 +135,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression1}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
@@ -165,13 +168,13 @@ export default () => (
     </P>
     <Ol>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.c}</Emoji>
+        <Emoji size="lg">🍣</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.a}</Emoji>
+        <Emoji size="lg">🥪</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.b}</Emoji>
+        <Emoji size="lg">🥗</Emoji>
       </OlLi>
     </Ol>
     <NextLessonButton

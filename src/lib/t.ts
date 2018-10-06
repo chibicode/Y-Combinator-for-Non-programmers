@@ -22,6 +22,10 @@ export const allTranslations = {
     en: 'The Next and Previous Buttons',
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
+  ycEpisode4: {
+    en: 'More than Two Cells on the Bottom',
+    jp: '...'
+  },
   introductionPage: {
     en: 'Introduction',
     jp: '序章'
@@ -32,6 +36,6 @@ export const allTranslations = {
   }
 }
 
-const t = (x: keyof typeof allTranslations) => allTranslations[x][locale]
+const h = (x: keyof typeof allTranslations) => allTranslations[x][locale]
 
-export default t
+export default h

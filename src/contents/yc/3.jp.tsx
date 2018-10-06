@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -16,13 +15,13 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
   episode2Expression2,
   episode3Expression1
 } from 'src/lib/yc/lessonExpressions'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <>
@@ -42,7 +41,7 @@ export default () => (
     </ExpressionRunnerWrapper>
     <P>
       <Strong>答え:</Strong> この
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       は、以下の状況を表しています。
     </P>
     <Ul size="lg">
@@ -75,8 +74,11 @@ export default () => (
     <P>
       上の状況だと、あなたがサラダ <Emoji>🥗</Emoji>{' '}
       を食べたあと、シェフはステーキ <Emoji>🥩</Emoji>{' '}
-      を持ってきます。ということは、次のステップでは、料理はステーキ{' '}
-      <Emoji>🥩</Emoji> だけになりますね。
+      を持ってきます。ということは、次のステップでは、
+      <Em>
+        料理はステーキ <Emoji>🥩</Emoji> だけ
+      </Em>
+      になりますね。
     </P>
     <Ul size="lg">
       <UlLi>
@@ -85,7 +87,7 @@ export default () => (
     </Ul>
     <P>
       つまり、
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       は次のステップにこうなります。
     </P>
     <ExpressionRunnerWrapper>
@@ -106,6 +108,14 @@ export default () => (
         ]}
       />
     </ExpressionRunnerWrapper>
+    <P>
+      <Em>
+        <Strong>重要なポイント:</Strong> あなたが食べた料理のマス{' '}
+        <Emoji>😋</Emoji> と、シェフが作った料理のマス <Emoji>👨‍🍳</Emoji> は、
+        <Strong>次のステップに移ると消える</Strong>
+        ことを覚えておいてください。
+      </Em>
+    </P>
     <H3>「次へ」ボタンと「前へ」ボタン</H3>
     <P>
       遷移をわかりやすくするために、「次へ」ボタンと「前へ」ボタンを設置してみました。
@@ -113,14 +123,12 @@ export default () => (
     <Ol>
       <OlLi>
         <Em>
-          <Strong>次へ</Strong> <Emoji>⏩</Emoji>{' '}
-          ボタンを何度か押してみてください。いずれ
-          <Strong>終了</Strong> <Emoji>✅</Emoji> になり、料理がステーキ{' '}
-          <Emoji>🥩</Emoji> だけになるはずです。
+          {h('ycNext')} ボタンを何度か押してみてください。いずれ {h('ycDone')}{' '}
+          になり、料理がステーキ <Emoji>🥩</Emoji> だけになるはずです。
         </Em>
       </OlLi>
       <OlLi>
-        そしたら今度は、 <Emoji>⏪</Emoji> <Strong>前へ</Strong>
+        そしたら今度は、 {h('ycPrevious')}{' '}
         ボタンを何度か押してみてください。元に戻るはずです。
       </OlLi>
     </Ol>
@@ -128,7 +136,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression2}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
@@ -144,7 +152,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression1}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
@@ -158,7 +166,7 @@ export default () => (
     <H3>クイズ</H3>
     <P>
       それでは、今までにない例を紹介します。下の
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       を「次へ」と進めたら、最終的にどうなるでしょう？
     </P>
     <ExpressionRunnerWrapper>
@@ -183,13 +191,13 @@ export default () => (
     </P>
     <Ol>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.c}</Emoji>
+        <Emoji size="lg">🍣</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.a}</Emoji>
+        <Emoji size="lg">🥪</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.b}</Emoji>
+        <Emoji size="lg">🥗</Emoji>
       </OlLi>
     </Ol>
     <NextLessonButton

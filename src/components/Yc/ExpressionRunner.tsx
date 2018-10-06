@@ -35,7 +35,8 @@ interface ExpressionRunnerProps {
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions?: InitializeInstruction[]
+  initializeInstructions?: ReadonlyArray<InitializeInstruction>
+  allowGoingBack: boolean
   expressionContainerManagerOptions?: ExpressionContainerManagerOptions
 }
 
@@ -50,7 +51,8 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
-    variableSize: expressionRunnerContextDefault.variableSize
+    variableSize: expressionRunnerContextDefault.variableSize,
+    allowGoingBack: false
   }
   private expressionContainerManager: ExpressionContainerManager
 
@@ -68,7 +70,7 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const { initializeInstructions } = this.props
+    const { initializeInstructions, allowGoingBack } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -87,8 +89,11 @@ export default class ExpressionRunner extends React.Component<
             initializeInstruction.count
           )
         }
-        this.syncState()
       })
+      if (!allowGoingBack) {
+        this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
+      }
+      this.syncState()
     }
   }
 

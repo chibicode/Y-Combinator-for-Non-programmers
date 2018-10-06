@@ -1,5 +1,4 @@
 import React from 'react'
-import Content from 'src/components/Content'
 import {
   Em,
   H3,
@@ -14,6 +13,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode2Expression1,
@@ -141,7 +141,7 @@ export default () => (
     </ExpressionRunnerWrapper>
     <P>
       <Strong>というわけで:</Strong> 上の
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       」は、以下の状況を表していることになります。
     </P>
     <Ul size="lg">
@@ -162,7 +162,7 @@ export default () => (
     <H3>クイズ</H3>
     <P>
       下の
-      <Content name="yc/BentoBox" />
+      {h('ycBentoBox')}
       は、どんな状況を表しているでしょう？
     </P>
     <ExpressionRunnerWrapper>

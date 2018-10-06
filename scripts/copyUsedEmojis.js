@@ -33,7 +33,10 @@ const allUsedEmojis = [
   '⏩',
   '⬜️',
   '✅',
-  '🤗'
+  '🤗',
+  '🤯',
+  '🔢',
+  '🍔'
 ]
 
 // Copied from Twemoji

@@ -32,7 +32,7 @@
     "prepare": "tsc && yarn contents && yarn twemoji",
     "build:en": "yarn prepare && APP_LOCALE=en next build && APP_LOCALE=en next export",
     "build:jp": "yarn prepare && APP_LOCALE=jp next build && APP_LOCALE=jp next export",
-    "twemoji": "mkdir -p .twemoji && cp `node ./scripts/copyUsedEmojis.js` .twemoji && svgr --filename-case kebab  --no-dimensions -d src/components/Twemoji .twemoji",
+    "twemoji": "mkdir -p .twemoji && rm src/components/Twemoji/* && rm .twemoji/* && cp `node ./scripts/copyUsedEmojis.js` .twemoji && svgr --filename-case kebab  --no-dimensions -d src/components/Twemoji .twemoji",
     "type-check": "tsc -w",
     "test": "jest"
   },

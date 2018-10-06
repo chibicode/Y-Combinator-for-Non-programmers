@@ -59,7 +59,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
         {episodeTitle && `: ${episodeTitle}`} | Hoshiai
       </title>
     </Head>
-    <Container size={episodeNumber ? 'sm' : 'lg'}>
+    <Container size="sm">
       <div
         className={css`
           display: flex;
@@ -119,6 +119,8 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
           )}
         </div>
       </div>
+    </Container>
+    <Container size={episodeNumber ? 'sm' : 'lg'}>
       <div
         className={css`
           padding-top: ${spaces(1.5)};

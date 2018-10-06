@@ -7,6 +7,8 @@ export interface ExpressionHighlighterContextProps {
   highlightType?: 'callArg' | 'funcArg' | 'funcBody'
 }
 
+export const highlightTypes = ['justHighlighted', 'highlighted']
+
 export const convertAllExpressionStates = (
   x: AllExpressionStates
 ): ExpressionHighlighterContextProps['state'] => {
