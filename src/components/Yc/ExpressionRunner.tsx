@@ -35,7 +35,7 @@ interface ExpressionRunnerProps {
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions?: InitializeInstruction[]
+  initializeInstructions?: ReadonlyArray<InitializeInstruction>
   expressionContainerManagerOptions?: ExpressionContainerManagerOptions
 }
 

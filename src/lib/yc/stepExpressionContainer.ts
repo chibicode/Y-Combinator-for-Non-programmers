@@ -72,6 +72,7 @@ export default function stepExpressionContainer(
               const conflicts = conflictingVariableNames(expression)
               if (conflicts.length > 0) {
                 expression.state = 'needsAlphaConvert'
+                draftContainer.conflictingVariableNames = conflicts
                 draftContainer.previouslyChangedExpressionState =
                   'needsAlphaConvert'
               } else {
@@ -87,6 +88,7 @@ export default function stepExpressionContainer(
             expression.func = alphaConvertResult.func
             expression.arg = alphaConvertResult.arg
             expression.state = 'readyToBetaReduce'
+            draftContainer.conflictingVariableNames = []
             draftContainer.previouslyChangedExpressionState =
               'readyToBetaReduce'
             break

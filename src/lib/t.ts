@@ -23,7 +23,7 @@ export const allTranslations = {
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
   ycEpisode4: {
-    en: '...',
+    en: 'More than Two Cells on the Bottom',
     jp: '...'
   },
   introductionPage: {

@@ -22,7 +22,6 @@ import {
   episode2Expression2,
   episode3Expression1
 } from 'src/lib/yc/lessonExpressions'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <>
@@ -181,13 +180,13 @@ export default () => (
     </P>
     <Ol>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.c}</Emoji>
+        <Emoji size="lg">🍣</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.a}</Emoji>
+        <Emoji size="lg">🥪</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">{letterEmojiMapping.b}</Emoji>
+        <Emoji size="lg">🥗</Emoji>
       </OlLi>
     </Ol>
     <NextLessonButton
