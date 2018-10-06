@@ -45,14 +45,18 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
         border-left: 1px solid ${colors('grey300')};
       `}
     >
-      <ExpressionHighlighterContext.Provider
-        value={{
-          state: convertAllExpressionStates(expression.body.state),
-          highlightType: 'funcBody'
-        }}
-      >
-        <ExpressionBox expression={expression.body} />
-      </ExpressionHighlighterContext.Provider>
+      <ExpressionHighlighterContext.Consumer>
+        {({ state, highlightType }) => (
+          <ExpressionHighlighterContext.Provider
+            value={{
+              state: state || convertAllExpressionStates(expression.body.state),
+              highlightType: highlightType || 'funcBody'
+            }}
+          >
+            <ExpressionBox expression={expression.body} />
+          </ExpressionHighlighterContext.Provider>
+        )}
+      </ExpressionHighlighterContext.Consumer>
     </FlexCenter>
   </Flex>
 )
