@@ -77,8 +77,8 @@ export default () => (
     </Ul>
     <P>
       <Em>So you don’t eat anything</Em>, and the salad <Emoji>🥗</Emoji> the
-      chef is preparing will not replace the sandwich <Emoji>🥪</Emoji>.
-      Therefore it becomes:
+      chef <Emoji>👨‍🍳</Emoji> is preparing will not replace the sandwich{' '}
+      <Emoji>🥪</Emoji>. Therefore just the sandwich <Emoji>🥪</Emoji> remains:
     </P>
     <Ul size="lg">
       <UlLi>
@@ -143,6 +143,7 @@ export default () => (
     </ExpressionRunnerWrapper>
     <P>
       And the <Strong>top cell</Strong> represents what the chef is preparing.
+      This is the same as before.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -162,8 +163,8 @@ export default () => (
       <Strong>Important:</Strong> In this case,{' '}
       <Em>
         the sandwich <Emoji>🥪</Emoji> doesn’t belong to any of the three
-        categories. So when you step forward, the sandwich <Emoji>🥪</Emoji>{' '}
-        will <Strong>not</Strong> change
+        categories. So when you step forward, the cell with the sandwich{' '}
+        <Emoji>🥪</Emoji> will <Strong>remain the same</Strong>.
       </Em>
       .
     </P>
@@ -206,14 +207,15 @@ export default () => (
       </UlLi>
       <UlLi>
         <Em>
-          As a result, the cells for <Emoji>😋</Emoji> and <Emoji>👨‍🍳</Emoji>{' '}
-          disappeared:
+          As a result, the bottom left cell (<Emoji>😋</Emoji> →{' '}
+          <Emoji>🍣</Emoji>) and the top cell (<Emoji>👨‍🍳</Emoji> →{' '}
+          <Emoji>🥗</Emoji>) <Strong>disappeared</Strong>
         </Em>
         .
       </UlLi>
     </Ul>
     <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-    <P>It’s getting complicated, right? You’re doing great so far!</P>
+    <P>It’s getting difficult quickly, right? But you’re doing great so far!</P>
     <H3>Quiz: Four cells on the bottom</H3>
     <P>
       How about <Em>four cells on the bottom</Em>? What do you think will happen
