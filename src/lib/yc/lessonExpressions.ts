@@ -50,6 +50,18 @@ export const episode4Expression2 = initializeExpressionContainer([
   'e'
 ])
 
+export const episode5Expression1 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'b'
+    }
+  },
+  'c',
+  'd'
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

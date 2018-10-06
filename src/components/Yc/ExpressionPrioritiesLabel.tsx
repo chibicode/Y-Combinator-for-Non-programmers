@@ -32,6 +32,7 @@ const ExpressionPrioritiesLabelDefault: React.SFC<
           width: ${priorities.length > 1 ? 2 : 1.25}em;
           height: 1.5em;
           line-height: 1;
+          background: #fff;
           ${position === 'topleft'
             ? css`
                 border-right: 2px solid ${colors('indigo300')};

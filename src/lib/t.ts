@@ -24,6 +24,10 @@ export const allTranslations = {
   },
   ycEpisode4: {
     en: 'More than Two Cells on the Bottom',
+    jp: '下段に3マス以上ある場合'
+  },
+  ycEpisode5: {
+    en: 'Priorities',
     jp: '...'
   },
   introductionPage: {

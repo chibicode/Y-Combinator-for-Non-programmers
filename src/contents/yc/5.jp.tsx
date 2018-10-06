@@ -24,12 +24,16 @@ import {
 export default () => (
   <>
     <P>
-      <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-      <InternalLink href={yc(3)}>the quiz from the last episode</InternalLink>:
+      <InternalLink href={yc(3)}>第3章で出したクイズ</InternalLink>
+      の答え合わせをしましょう。
     </P>
     <P>
-      I added the previous and next buttons. <Em>Try clicking {h('ycNext')}</Em>{' '}
-      to see the answer.
+      前回同様、ボタンを用意しました。
+      <Em>
+        {h('ycNext')}
+        をクリックすれば
+      </Em>
+      答えがわかります。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -51,52 +55,50 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      So the answer is:{' '}
+      つまり、答えは{' '}
       <Em>
         <Strong>
-          sandwich <Emoji>🥪</Emoji>
+          サンドイッチ <Emoji>🥪</Emoji>
         </Strong>
-      </Em>
-      . But why?
+      </Em>{' '}
+      です。でも、どうしてそうなるのでしょう？
     </P>
     <EmojiSeparator emojis={['🥪', '🤔', '🥪']} />
     <P>
-      This is because you want to eat sushi <Emoji>🍣</Emoji>, but it is not
-      available.
+      理由を説明しましょう。あなたはお寿司 <Emoji>🍣</Emoji>{' '}
+      を食べようとしましたが、残念ながら料理の中にはありませんでした。
     </P>
     <Ul size="lg">
       <UlLi>
-        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥪</Emoji>
+        <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥪</Emoji>
       </UlLi>
       <UlLi>
-        <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍣</Emoji>
+        <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍣</Emoji>
       </UlLi>
       <UlLi>
-        <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥗</Emoji>
+        <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥗</Emoji>
       </UlLi>
     </Ul>
     <P>
-      <Em>So you don’t eat anything</Em>, and the salad <Emoji>🥗</Emoji> the
-      chef <Emoji>👨‍🍳</Emoji> is preparing will not replace the sandwich{' '}
-      <Emoji>🥪</Emoji>. Therefore just the sandwich <Emoji>🥪</Emoji> remains:
+      <Em>というわけで、あなたは何も食べませんでした</Em>
+      。シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
+      と、サンドイッチ <Emoji>🥪</Emoji>{' '}
+      は入れ替わりません。というわけで、サンドイッチ <Emoji>🥪</Emoji>{' '}
+      はそのままになるのです。
     </P>
     <Ul size="lg">
       <UlLi>
-        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥪</Emoji>
+        <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥪</Emoji>
       </UlLi>
     </Ul>
     <P>
       <Em>
-        <Strong>Important:</Strong> The salad <Emoji>🥗</Emoji> the chef{' '}
-        <Emoji>👨‍🍳</Emoji> prepared is wasted, and it <Strong>disappears</Strong>
-        .
+        <Strong>ポイント:</Strong> シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ{' '}
+        <Emoji>🥗</Emoji> は<Strong>次のステップには持ち越されません</Strong>。
       </Em>
     </P>
-    <H3>Three cells on the bottom</H3>
-    <P>
-      Next, we’ll talk about the case when there are more than two cells on the
-      bottom. Check out this one:
-    </P>
+    <H3>下段が3マスの問題</H3>
+    <P>次は、下段に3マスもある問題を見ていきましょう。たとえばこちら:</P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
         expressionContainer={episode4Expression1}
@@ -106,8 +108,9 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      Here’s how to interpret this. The <Strong>bottom rightmost</Strong> cell
-      represents all available dishes <Emoji>🍽</Emoji>.
+      どう読み取ればいいか説明しましょう。まず、
+      <Strong>下段の一番右のマス</Strong>
+      は、選べる食事 <Emoji>🍽</Emoji> を表しています。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -124,8 +127,9 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      The <Strong>bottom leftmost</Strong> cell represents what you’re eating
-      next <Emoji>😋</Emoji>.
+      次に、
+      <Strong>下段の一番左のマス</Strong>
+      は、あなた <Emoji>😋</Emoji> が次に食べるものを表しています。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -142,8 +146,10 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      And the <Strong>top cell</Strong> represents what the chef is preparing.
-      This is the same as before.
+      最後に、
+      <Strong>上のマス</Strong>
+      は、シェフ <Emoji>👨‍🍳</Emoji>{' '}
+      が作っている料理を表します。これは以前と変わりませんね。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -160,16 +166,22 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>Important:</Strong> In this case,{' '}
+      <Strong>ポイント:</Strong> この場合、
       <Em>
-        the sandwich <Emoji>🥪</Emoji> doesn’t belong to any of the three
-        categories. So when you step forward, the cell with the sandwich{' '}
-        <Emoji>🥪</Emoji> will <Strong>remain the same</Strong>.
+        サンドイッチ <Emoji>🥪</Emoji>{' '}
+        は3種類のどれにも分類されません。だから、次のステップに進むと、サンドイッチ{' '}
+        <Emoji>🥪</Emoji> のマスは
+        <Strong>そのまま</Strong>
+        になります
       </Em>
-      .
+      。
     </P>
     <P>
-      <Em>Try clicking {h('ycNext')}</Em> to see what happens on the next step.
+      <Em>
+        {h('ycNext')}
+        をクリックして
+      </Em>
+      どうなるか確かめてみましょう。
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -191,35 +203,38 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>Here’s what happened:</Strong>
+      <Strong>箇条書きでまとめると、こうなります:</Strong>
     </P>
     <Ul>
       <UlLi>
-        <Emoji>🥪</Emoji> The sandwich remained the same.
+        <Emoji>🥪</Emoji> サンドイッチのマスはそのまま
       </UlLi>
       <UlLi>
-        <Emoji>😋</Emoji> You ate sushi <Emoji>🍣</Emoji>.
+        <Emoji>😋</Emoji> あなたが食べたのはお寿司 <Emoji>🍣</Emoji>.
       </UlLi>
       <UlLi>
-        <Emoji>🍽</Emoji> So the sushi <Emoji>🍣</Emoji> on the bottom right was
-        replaced by the salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji>{' '}
-        prepared.
+        <Emoji>🍽</Emoji> 下段の一番右にあったお寿司 <Emoji>🍣</Emoji> が、シェフ{' '}
+        <Emoji>👨‍🍳</Emoji> が料理していたサラダ <Emoji>🥗</Emoji> に変わった。
       </UlLi>
       <UlLi>
         <Em>
-          As a result, the bottom left cell (<Emoji>😋</Emoji> →{' '}
-          <Emoji>🍣</Emoji>) and the top cell (<Emoji>👨‍🍳</Emoji> →{' '}
-          <Emoji>🥗</Emoji>) <Strong>disappeared</Strong>
+          そして、下段の一番左のマス(
+          <Emoji>😋</Emoji> → <Emoji>🍣</Emoji>) と、上の段のマス(
+          <Emoji>👨‍🍳</Emoji> → <Emoji>🥗</Emoji>
+          )が
+          <Strong>消えた</Strong>
         </Em>
-        .
+        。
       </UlLi>
     </Ul>
     <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-    <P>It’s getting difficult quickly, right? But you’re doing great so far!</P>
-    <H3>Quiz: Four cells on the bottom</H3>
+    <P>急に難しくなってきたかと思いますが、この調子で進んでみてください！</P>
+    <H3>クイズ: 下段が4マスの問題</H3>
     <P>
-      How about <Em>four cells on the bottom</Em>? What do you think will happen
-      on the next step?
+      <Em>下段が4マスある場合</Em>
+      はどうでしょう？たとえば、下の
+      {h('ycBentoBox')}
+      は、次のステップでどうなると思いますか？
     </P>
     <ExpressionRunnerWrapper size="xs">
       <ExpressionRunner
@@ -230,7 +245,7 @@ export default () => (
       />
     </ExpressionRunnerWrapper>
     <P>
-      <Strong>Here’s the hint:</Strong>
+      <Strong>ヒントはこちらです:</Strong>
     </P>
     <ExpressionRunnerWrapper size="xs">
       <ExpressionRunner
@@ -248,10 +263,10 @@ export default () => (
     </ExpressionRunnerWrapper>
     <NextLessonButton
       href={yc(5)}
-      primaryText={<>Check My Answer</>}
+      primaryText={<>次のページへ進む</>}
       secondaryText={
         <>
-          Continue to Episode 5 <Emoji>🙂</Emoji>
+          第5章へ <Emoji>🙂</Emoji>
         </>
       }
     />

@@ -38,6 +38,11 @@ export interface BundleTypes {
     en: React.ComponentType<any>
   }
 
+  'yc/5': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
   'yc/Intro': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
@@ -132,6 +137,18 @@ const bundles: BundleTypes = {
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () => import(/* webpackChunkName: 'yc/4.jp' */ 'src/contents/yc/4.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'yc/5': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/5.en' */ 'src/contents/yc/5.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/5.jp' */ 'src/contents/yc/5.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
