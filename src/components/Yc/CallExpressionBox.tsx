@@ -4,8 +4,7 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionHighlighterContext, {
-  convertAllExpressionStates,
-  highlightTypes
+  convertAllExpressionStates
 } from 'src/components/Yc/ExpressionHighlighterContext'
 import colors from 'src/lib/theme/colors'
 import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
