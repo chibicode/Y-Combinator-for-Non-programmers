@@ -23,7 +23,6 @@ import {
   episode3Expression1,
   episode4Expression1
 } from 'src/lib/yc/lessonExpressions'
-// import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <>
@@ -110,7 +109,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode4Expression1}
         showPriorities={false}
-        showControls
+        showControls={false}
         variableSize={'lg'}
         initializeInstructions={[
           {
@@ -120,5 +119,95 @@ export default () => (
         ]}
       />
     </ExpressionRunnerWrapper>
+    <P>
+      The <Strong>bottom leftmost</Strong> cell represents what you’re eating
+      next <Emoji>😋</Emoji>.
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode4Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'funcArgJustHighlighted'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      And the <Strong>top cell</Strong> represents what the chef is preparing.
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode4Expression1}
+        showPriorities={false}
+        showControls={false}
+        variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Strong>Important:</Strong> In this case,{' '}
+      <Em>
+        the sandwich <Emoji>🥪</Emoji> doesn’t belong to any of the three
+        categories. So when you step forward, the sandwich <Emoji>🥪</Emoji>{' '}
+        will <Strong>not</Strong> change
+      </Em>
+      .
+    </P>
+    <P>
+      <Em>Try clicking {h('ycNext')}</Em> to see what happens on the next step.
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode4Expression1}
+        showPriorities={false}
+        showControls
+        variableSize={'lg'}
+        expressionContainerManagerOptions={{
+          skipReadyToBetaReduce: true,
+          skipJustBetaReduced: true,
+          skipDefault: true
+        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <P>Here’s what happened:</P>
+    <Ul>
+      <UlLi>
+        <Emoji>🥪</Emoji> The Sandwich remained the same.
+      </UlLi>
+      <UlLi>
+        <Emoji>😋</Emoji> You ate sushi <Emoji>🍣</Emoji>.
+      </UlLi>
+      <UlLi>
+        <Emoji>🍽</Emoji> So the sushi <Emoji>🍣</Emoji> on the bottom right was
+        replaced by the salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji>{' '}
+        prepared.
+      </UlLi>
+      <UlLi>
+        <Em>
+          As a result, the cells for <Emoji>😋</Emoji> and <Emoji>👨‍🍳</Emoji>{' '}
+          disappeared:
+        </Em>
+        .
+      </UlLi>
+    </Ul>
+    <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+    <P>It’s getting complicated, right? You’re doing great so far!</P>
+    <H3>Quiz: Four cells on the bottom</H3>
   </>
 )

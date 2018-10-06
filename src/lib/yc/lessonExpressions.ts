@@ -30,7 +30,7 @@ export const episode4Expression1 = initializeExpressionContainer([
     arg: 'a',
     body: {
       arg: 'b',
-      body: 'd'
+      body: 'a'
     }
   },
   'c'
