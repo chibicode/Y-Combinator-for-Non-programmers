@@ -2,70 +2,78 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import colors from 'src/lib/theme/colors'
-import fontSizes from 'src/lib/theme/fontSizes'
-import zIndices from 'src/lib/theme/zIndices'
+import { colors, fontSizes, zIndices } from 'src/lib/theme'
 
 interface ExpressionPrioritiesLabelProps {
   priorities: number[]
-  // TODO: When TS 3 lands remove ? and !
-  highlighted?: boolean
   position: 'topleft' | 'bottomleft'
 }
 
 interface ExpressionPrioritiesLabelState {
-  expanded: boolean
+  collapsed: boolean
 }
 
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
 
-const ExpressionPrioritiesLabelDefault: React.SFC<
+const ExpressionPrioritiesLabelBox: React.SFC<{
+  children: React.ReactNode
+  position: ExpressionPrioritiesLabelProps['position']
+  collapsed: boolean
+}> = ({ children, position, collapsed }) => (
+  <Flex>
+    <FlexCenter
+      className={css`
+        color: ${colors('indigo300')};
+        font-size: ${fontSizes(0.7)};
+        font-weight: bold;
+        width: ${collapsed ? 2 : 1.25}em;
+        height: 1.5em;
+        line-height: 1;
+        background: #fff;
+        ${position === 'topleft'
+          ? css`
+              border-right: 2px solid ${colors('indigo300')};
+              border-bottom: 2px solid ${colors('indigo300')};
+            `
+          : css`
+              border-top: 2px solid ${colors('indigo300')};
+              border-right: 2px solid ${colors('indigo300')};
+            `};
+      `}
+    >
+      {children}
+    </FlexCenter>
+  </Flex>
+)
+
+const ExpressionPrioritiesLabelExpanded: React.SFC<
   ExpressionPrioritiesLabelDefaultProps
-> = ({ priorities, position }) =>
-  priorities.length > 0 ? (
-    <Flex>
-      <FlexCenter
-        className={css`
-          color: ${colors('indigo300')};
-          font-size: ${fontSizes(0.7)};
-          font-weight: bold;
-          width: ${priorities.length > 1 ? 2 : 1.25}em;
-          height: 1.5em;
-          line-height: 1;
-          background: #fff;
-          ${position === 'topleft'
-            ? css`
-                border-right: 2px solid ${colors('indigo300')};
-                border-bottom: 2px solid ${colors('indigo300')};
-              `
-            : css`
-                border-top: 2px solid ${colors('indigo300')};
-                border-right: 2px solid ${colors('indigo300')};
-              `};
-        `}
+> = ({ priorities, position }) => (
+  <Flex>
+    {priorities.map(priority => (
+      <ExpressionPrioritiesLabelBox
+        position={position}
+        key={priority}
+        collapsed={false}
       >
-        {priorities[0]}
-        {priorities.length > 1 && '+'}
-      </FlexCenter>
-    </Flex>
-  ) : null
+        {priority}
+      </ExpressionPrioritiesLabelBox>
+    ))}
+  </Flex>
+)
 
 export default class ExpressionPrioritiesLabel extends React.Component<
   ExpressionPrioritiesLabelProps,
   ExpressionPrioritiesLabelState
 > {
-  public static defaultProps = {
-    highlighted: false
-  }
-
   public state = {
-    expanded: false
+    collapsed: false
   }
 
   public render() {
-    const { priorities, highlighted, position } = this.props
-    const { expanded } = this.state
-    if (expanded) {
+    const { priorities, position } = this.props
+    const { collapsed } = this.state
+    if (collapsed) {
       return ''
     } else {
       return (
@@ -85,10 +93,9 @@ export default class ExpressionPrioritiesLabel extends React.Component<
             z-index: ${zIndices('expressionPriorityNumberWrapperInactive')};
           `}
         >
-          <ExpressionPrioritiesLabelDefault
+          <ExpressionPrioritiesLabelExpanded
             priorities={priorities}
             position={position}
-            highlighted={highlighted!}
           />
         </div>
       )
