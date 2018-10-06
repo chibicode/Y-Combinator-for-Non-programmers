@@ -28,14 +28,28 @@ export default () => (
   <>
     <P>
       <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-      <InternalLink href={yc(2)}>the quiz from the last episode</InternalLink>:
+      <InternalLink href={yc(3)}>the quiz from the last episode</InternalLink>:
+    </P>
+    <P>
+      I added the previous and next buttons. <Em>Try clicking Next</Em>
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
-        expressionContainer={episode2Expression2}
+        expressionContainer={episode3Expression1}
         showPriorities={false}
-        showControls={false}
+        showControls
         variableSize={'lg'}
+        expressionContainerManagerOptions={{
+          skipReadyToBetaReduce: true,
+          skipJustBetaReduced: true,
+          skipDefault: true
+        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToBetaReduce'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -118,7 +132,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression2}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
@@ -132,7 +146,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression1}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,

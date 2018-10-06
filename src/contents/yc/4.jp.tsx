@@ -118,7 +118,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression2}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
@@ -132,7 +132,7 @@ export default () => (
       <ExpressionRunner
         expressionContainer={episode2Expression1}
         showPriorities={false}
-        showControls={true}
+        showControls
         variableSize={'lg'}
         expressionContainerManagerOptions={{
           skipReadyToBetaReduce: true,
