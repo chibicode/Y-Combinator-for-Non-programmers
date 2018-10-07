@@ -3,14 +3,13 @@ import {
   ExpressionContainerState,
   isDoneExpressionContainer,
   PreviouslyChangedExpressionState,
+  previouslyChangedExpressionStateOrdered,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 
-export interface ExpressionContainerManagerOptions {
-  skipReadyToBetaReduce?: boolean
-  skipDefault?: boolean
-  skipJustBetaReduced?: boolean
-}
+export type ExpressionContainerSkipOptions = Partial<
+  { [K in PreviouslyChangedExpressionState]: boolean }
+>
 
 export default class ExpressionContainerManager {
   public get currentState() {
@@ -23,14 +22,14 @@ export default class ExpressionContainerManager {
   public expressionContainers: SteppedExpressionContainer[] = []
   public currentIndex = 0
   public minimumIndex = 0
-  public options: ExpressionContainerManagerOptions = {}
+  public skipOptions: ExpressionContainerSkipOptions = {}
 
   constructor(
     expressionContainer: SteppedExpressionContainer,
-    options?: ExpressionContainerManagerOptions
+    options?: ExpressionContainerSkipOptions
   ) {
     this.expressionContainers.push(expressionContainer)
-    this.options = options || {}
+    this.skipOptions = options || {}
   }
 
   public stepForwardUntilPreviouslyChangedExpressionState(
@@ -68,29 +67,15 @@ export default class ExpressionContainerManager {
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(expressionContainer)
 
-      if (
-        this.options.skipReadyToBetaReduce &&
-        expressionContainer.previouslyChangedExpressionState ===
-          'readyToBetaReduce' &&
-        !isDoneExpressionContainer(expressionContainer)
-      ) {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      }
-      if (
-        this.options.skipJustBetaReduced &&
-        expressionContainer.previouslyChangedExpressionState ===
-          'justBetaReduced' &&
-        !isDoneExpressionContainer(expressionContainer)
-      ) {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      }
-      if (
-        this.options.skipDefault &&
-        expressionContainer.previouslyChangedExpressionState === 'default' &&
-        !isDoneExpressionContainer(expressionContainer)
-      ) {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      }
+      previouslyChangedExpressionStateOrdered.map(key => {
+        if (
+          this.skipOptions[key] &&
+          expressionContainer.previouslyChangedExpressionState === key &&
+          !isDoneExpressionContainer(expressionContainer)
+        ) {
+          expressionContainer = stepExpressionContainer(expressionContainer)
+        }
+      })
 
       this.expressionContainers.push(expressionContainer)
       this.currentIndex += 1

@@ -123,10 +123,11 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerOptions={{
-          skipReadyToBetaReduce: true,
-          skipJustBetaReduced: true,
-          skipDefault: true
+        expressionContainerManagerSkipOptions={{
+          readyToHighlight: true,
+          readyToBetaReduce: true,
+          justBetaReduced: true,
+          default: true
         }}
       />
     </ExpressionRunnerWrapper>
@@ -137,10 +138,11 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerOptions={{
-          skipReadyToBetaReduce: true,
-          skipJustBetaReduced: true,
-          skipDefault: true
+        expressionContainerManagerSkipOptions={{
+          readyToHighlight: true,
+          readyToBetaReduce: true,
+          justBetaReduced: true,
+          default: true
         }}
       />
     </ExpressionRunnerWrapper>

@@ -20,6 +20,7 @@ export function isVariableExpression(
 
 export type CallExpressionStates =
   | CommonStates
+  | 'readyToHighlight'
   | 'needsAlphaConvert'
   | 'readyToBetaReduce'
 

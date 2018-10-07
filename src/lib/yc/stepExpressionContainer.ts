@@ -53,6 +53,11 @@ export default function stepExpressionContainer(
         const expression = nextCallExpressionAndParent.expression
         switch (expression.state) {
           case 'default': {
+            expression.state = 'readyToHighlight'
+            draftContainer.previouslyChangedExpressionState = 'readyToHighlight'
+            break
+          }
+          case 'readyToHighlight': {
             if (expression.func.body.state === 'default') {
               expression.func.body.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =

@@ -8,6 +8,19 @@ export type ExpressionContainerState =
   | 'needsReset'
   | 'done'
 
+export const previouslyChangedExpressionStateOrdered: ReadonlyArray<
+  PreviouslyChangedExpressionState
+> = [
+  'readyToHighlight',
+  'funcBodyJustHighlighted',
+  'funcArgJustHighlighted',
+  'callArgJustHighlighted',
+  'needsAlphaConvert',
+  'readyToBetaReduce',
+  'justBetaReduced',
+  'default'
+]
+
 export type PreviouslyChangedExpressionState =
   | 'callArgJustHighlighted'
   | 'funcArgJustHighlighted'

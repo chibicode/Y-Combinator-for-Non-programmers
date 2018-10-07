@@ -8,7 +8,7 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import { lineHeights } from 'src/lib/theme'
 import ExpressionContainerManager, {
-  ExpressionContainerManagerOptions
+  ExpressionContainerSkipOptions
 } from 'src/lib/yc/ExpressionContainerManager'
 import {
   ExpressionContainerState,
@@ -37,7 +37,7 @@ interface ExpressionRunnerProps {
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions?: ReadonlyArray<InitializeInstruction>
   allowGoingBack: boolean
-  expressionContainerManagerOptions?: ExpressionContainerManagerOptions
+  expressionContainerManagerSkipOptions?: ExpressionContainerSkipOptions
 }
 
 interface ExpressionRunnerState {
@@ -60,7 +60,7 @@ export default class ExpressionRunner extends React.Component<
     super(props)
     this.expressionContainerManager = new ExpressionContainerManager(
       props.expressionContainer,
-      props.expressionContainerManagerOptions
+      props.expressionContainerManagerSkipOptions
     )
 
     this.state = {
