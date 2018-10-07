@@ -55,7 +55,7 @@ export const episode5Expression1 = initializeExpressionContainer([
     arg: 'a',
     body: {
       arg: 'b',
-      body: 'b'
+      body: 'a'
     }
   },
   'c',

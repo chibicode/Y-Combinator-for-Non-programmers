@@ -41,6 +41,7 @@ interface ExpressionRunnerProps {
   expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
   disableReadyToHighlightColoring: boolean
   maxStepsAllowed?: number
+  lastAllowedExpressionState?: PreviouslyChangedExpressionState
 }
 
 interface ExpressionRunnerState {
@@ -66,7 +67,8 @@ export default class ExpressionRunner extends React.Component<
     super(props)
     this.expressionContainerManager = new ExpressionContainerManager(
       props.expressionContainer,
-      props.expressionContainerManagerSkipOptions
+      props.expressionContainerManagerSkipOptions,
+      props.lastAllowedExpressionState
     )
 
     this.state = {

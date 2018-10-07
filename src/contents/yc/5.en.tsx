@@ -20,6 +20,7 @@ import {
   episode4Expression2,
   episode5Expression1
 } from 'src/lib/yc/lessonExpressions'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 
 export default () => (
   <>
@@ -108,14 +109,16 @@ export default () => (
     <Ul>
       <UlLi>
         <Em>
-          First, do the part bounded by{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
+          First, do the part that has{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the{' '}
+          <Strong>top left</Strong> and the <Strong>bottom left</Strong> corner.
         </Em>
       </UlLi>
       <UlLi>
         <Em>
-          Then, do the part bounded by{' '}
-          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>.
+          Then, do the part that has{' '}
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> on the{' '}
+          <Strong>top left</Strong> and the <Strong>bottom left</Strong> corner.
         </Em>
       </UlLi>
     </Ul>
@@ -123,14 +126,21 @@ export default () => (
     <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
     <H3>Example</H3>
     <P>
-      On the following example, everything is shaded in light blue initially.{' '}
+      On the following example, everything is shaded in light blue{' '}
+      <InlineBackground bg="indigo50" />. initially.{' '}
     </P>
     <P>
       <Em>
-        If you click on {h('ycNext')}, it will highlight (in white background)
-        the part bounded by <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-      </Em>
-      . The remaining part will be shaded (in light blue background).
+        If you click on {h('ycNext')}, the bottom two thirds will now have a
+        white background <InlineBackground bg="white" />.
+      </Em>{' '}
+      This is the part that has <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+      on the <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+      corner.
+    </P>
+    <P>
+      The remaining part will still be shaded in light blue{' '}
+      <InlineBackground bg="indigo50" />.
     </P>
     <ExpressionRunnerWrapper>
       <ExpressionRunner
@@ -138,6 +148,101 @@ export default () => (
         showPriorities
         variableSize={'lg'}
         maxStepsAllowed={1}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      Then proceed with{' '}
+      <Em>
+        the white background part <InlineBackground bg="white" />
+      </Em>{' '}
+      as before. Try clicking on {h('ycNext')}.
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode5Expression1}
+        showPriorities
+        variableSize={'lg'}
+        expressionContainerManagerSkipOptions={{
+          readyToBetaReduce: true,
+          justBetaReduced: true,
+          default: true
+        }}
+        lastAllowedExpressionState="callArgJustHighlighted"
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      Let’s see what happens when the white background part{' '}
+      <InlineBackground bg="white" /> is done (sushi <Emoji>🍣</Emoji> is
+      replaced by salad <Emoji>🥗</Emoji>.{' '}
+      <Em>Try clicking on {h('ycNext')}</Em>.
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode5Expression1}
+        showPriorities
+        variableSize={'lg'}
+        expressionContainerManagerSkipOptions={{
+          readyToBetaReduce: true,
+          justBetaReduced: true
+        }}
+        maxStepsAllowed={1}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          }
+        ]}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Strong>Here’s what happened:</Strong>
+    </P>
+    <Ul>
+      <UlLi>
+        <Em>
+          Everything is shaded in light blue <InlineBackground bg="indigo50" />{' '}
+          again.
+        </Em>
+      </UlLi>
+      <UlLi>
+        The{' '}
+        <Em>
+          steak <Emoji>🥩</Emoji>
+        </Em>{' '}
+        that was on the top comes down.
+      </UlLi>
+      <UlLi>
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before disappears,
+        and <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from before now
+        becomes <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
+      </UlLi>
+    </Ul>
+    <P>Let’s keep going until the end:</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode5Expression1}
+        showPriorities
+        variableSize={'lg'}
+        expressionContainerManagerSkipOptions={{
+          readyToBetaReduce: true,
+          justBetaReduced: true
+        }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'callArgJustHighlighted'
+          },
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'default'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
   </>

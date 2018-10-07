@@ -7,9 +7,9 @@ const InlinePrioritiesLabel: React.SFC<{ children: React.ReactNode }> = ({
 }) => (
   <span
     className={css`
-      display: inline-flex;
+      display: inline-block;
+      vertical-align: text-bottom;
       padding: 0 ${spaces(0.25)};
-      margin: 0 ${spaces(0.25)};
       color: ${colors('indigo300')};
       font-size: ${fontSizes(0.75)};
       font-weight: bold;
