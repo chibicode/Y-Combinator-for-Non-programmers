@@ -16,7 +16,8 @@ export default class ExpressionContainerManager {
     return {
       expressionContainer: this.currentExpressionContainer,
       canStepForward: this.canStepForward,
-      canStepBackward: this.canStepBackward
+      canStepBackward: this.canStepBackward,
+      isDone: this.isDone
     }
   }
   public expressionContainers: SteppedExpressionContainer[] = []
@@ -97,6 +98,10 @@ export default class ExpressionContainerManager {
       this.currentIndex < this.expressionContainers.length - 1 ||
       !isDoneExpressionContainer(this.currentExpressionContainer)
     )
+  }
+
+  private get isDone() {
+    return isDoneExpressionContainer(this.currentExpressionContainer)
   }
 
   private get currentExpressionContainer() {

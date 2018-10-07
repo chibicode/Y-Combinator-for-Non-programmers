@@ -38,7 +38,6 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true
@@ -104,6 +103,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -179,7 +184,6 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true
@@ -229,6 +233,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>

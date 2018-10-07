@@ -16,6 +16,7 @@ import {
 
 interface ExpressionBoxProps {
   expression: PrioritizedExpression
+  isDone?: boolean
 }
 
 const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (

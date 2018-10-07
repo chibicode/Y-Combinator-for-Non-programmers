@@ -35,6 +35,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -93,8 +99,8 @@ export default () => (
             state: 'justBetaReduced'
           },
           {
-            type: 'stepForwardMultiple',
-            count: 1
+            type: 'stepForwardUntilContainerState',
+            state: 'done'
           }
         ]}
       />
@@ -124,11 +130,16 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true
         }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>Try this one from the last episode too!</P>
@@ -139,11 +150,16 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true
         }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>Hope you get the idea!</P>

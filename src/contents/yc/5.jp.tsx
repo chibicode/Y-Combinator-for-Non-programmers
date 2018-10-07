@@ -42,7 +42,6 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true
@@ -191,7 +190,6 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true

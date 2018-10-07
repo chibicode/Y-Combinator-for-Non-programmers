@@ -6,6 +6,9 @@ import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionHighlighterContext, {
   convertAllExpressionStates
 } from 'src/components/Yc/ExpressionHighlighterContext'
+import ExpressionReadyToHighlightContext, {
+  convertCallexpressionStates
+} from 'src/components/Yc/ExpressionReadyToHighlightContext'
 import colors from 'src/lib/theme/colors'
 import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
@@ -16,38 +19,51 @@ interface CallExpressionBoxProps {
 const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
   expression
 }) => (
-  <Flex
-    className={css`
-      flex-direction: column;
-      flex: 1;
-    `}
-  >
-    <FlexCenter
-      className={css`
-        border-bottom: 1px solid ${colors('grey300')};
-      `}
-    >
-      <ExpressionHighlighterContext.Consumer>
-        {({ state, highlightType }) => (
-          <ExpressionHighlighterContext.Provider
-            value={{
-              state: state || convertAllExpressionStates(expression.arg.state),
-              highlightType: highlightType || 'callArg'
-            }}
+  <ExpressionReadyToHighlightContext.Consumer>
+    {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+      <ExpressionReadyToHighlightContext.Provider
+        value={{
+          readyToHighlight:
+            readyToHighlight || convertCallexpressionStates(expression.state),
+          disableReadyToHighlightColoring
+        }}
+      >
+        <Flex
+          className={css`
+            flex-direction: column;
+            flex: 1;
+          `}
+        >
+          <FlexCenter
+            className={css`
+              border-bottom: 1px solid ${colors('grey300')};
+            `}
           >
-            <ExpressionBox expression={expression.arg} />
-          </ExpressionHighlighterContext.Provider>
-        )}
-      </ExpressionHighlighterContext.Consumer>
-    </FlexCenter>
-    <FlexCenter
-      className={css`
-        border-top: 1px solid ${colors('grey300')};
-      `}
-    >
-      <ExpressionBox expression={expression.func} />
-    </FlexCenter>
-  </Flex>
+            <ExpressionHighlighterContext.Consumer>
+              {({ state, highlightType }) => (
+                <ExpressionHighlighterContext.Provider
+                  value={{
+                    state:
+                      state || convertAllExpressionStates(expression.arg.state),
+                    highlightType: highlightType || 'callArg'
+                  }}
+                >
+                  <ExpressionBox expression={expression.arg} />
+                </ExpressionHighlighterContext.Provider>
+              )}
+            </ExpressionHighlighterContext.Consumer>
+          </FlexCenter>
+          <FlexCenter
+            className={css`
+              border-top: 1px solid ${colors('grey300')};
+            `}
+          >
+            <ExpressionBox expression={expression.func} />
+          </FlexCenter>
+        </Flex>
+      </ExpressionReadyToHighlightContext.Provider>
+    )}
+  </ExpressionReadyToHighlightContext.Consumer>
 )
 
 export default CallExpressionBox

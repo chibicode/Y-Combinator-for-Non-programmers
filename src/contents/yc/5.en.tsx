@@ -38,11 +38,16 @@ export default () => (
         showControls
         variableSize={'lg'}
         expressionContainerManagerSkipOptions={{
-          readyToHighlight: true,
           readyToBetaReduce: true,
           justBetaReduced: true,
           default: true
         }}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -81,6 +86,7 @@ export default () => (
         showPriorities
         showControls={false}
         variableSize={'lg'}
+        disableReadyToHighlightColoring
       />
     </ExpressionRunnerWrapper>
     <P>You might be wondering:</P>

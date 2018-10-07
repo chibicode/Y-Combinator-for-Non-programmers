@@ -1,6 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
@@ -35,9 +36,10 @@ interface ExpressionRunnerProps {
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions?: ReadonlyArray<InitializeInstruction>
+  initializeInstructions: ReadonlyArray<InitializeInstruction>
   allowGoingBack: boolean
-  expressionContainerManagerSkipOptions?: ExpressionContainerSkipOptions
+  expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
+  disableReadyToHighlightColoring: boolean
 }
 
 interface ExpressionRunnerState {
@@ -52,7 +54,10 @@ export default class ExpressionRunner extends React.Component<
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
     variableSize: expressionRunnerContextDefault.variableSize,
-    allowGoingBack: false
+    allowGoingBack: false,
+    initializeInstructions: [],
+    disableReadyToHighlightColoring: false,
+    expressionContainerManagerSkipOptions: {}
   }
   private expressionContainerManager: ExpressionContainerManager
 
@@ -108,7 +113,12 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public render() {
-    const { showControls, showPriorities, variableSize } = this.props
+    const {
+      showControls,
+      showPriorities,
+      variableSize,
+      disableReadyToHighlightColoring
+    } = this.props
     const { expressionContainerManagerState } = this.state
     return (
       <ExpressionRunnerContext.Provider
@@ -123,11 +133,18 @@ export default class ExpressionRunner extends React.Component<
             line-height: ${lineHeights(1.3, { ignoreLocale: true })};
           `}
         >
-          <ExpressionBox
-            expression={
-              expressionContainerManagerState.expressionContainer.expression
-            }
-          />
+          <ExpressionReadyToHighlightContext.Provider
+            value={{
+              readyToHighlight: expressionContainerManagerState.isDone,
+              disableReadyToHighlightColoring
+            }}
+          >
+            <ExpressionBox
+              expression={
+                expressionContainerManagerState.expressionContainer.expression
+              }
+            />
+          </ExpressionReadyToHighlightContext.Provider>
           {showControls && (
             <ExpressionRunnerControls
               onNextClick={this.stepForward}
