@@ -3,6 +3,8 @@ import {
   Em,
   H3,
   InternalLink,
+  Ol,
+  OlLi,
   P,
   Strong,
   Ul,
@@ -10,17 +12,18 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
   episode4Expression2,
-  episode5Expression1
+  episode5Expression1,
+  episode5Expression2
 } from 'src/lib/yc/lessonExpressions'
-import InlineBackground from 'src/components/Yc/InlineBackground'
 
 export default () => (
   <>
@@ -227,5 +230,51 @@ export default () => (
         ]}
       />
     </ExpressionRunnerWrapper>
+    <P>
+      <Strong>That’s all!</Strong> Just for your reference, you can try it from{' '}
+      <Em>the beginning to the end</Em>:
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode5Expression1}
+        showPriorities
+        variableSize={'lg'}
+      />
+    </ExpressionRunnerWrapper>
+    <P>Let’s do a quiz to make sure you understood this!</P>
+    <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+    <H3>Quiz</H3>
+    <P>If you step through the following example until the end…</P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode5Expression2}
+        showPriorities
+        showControls={false}
+        variableSize={'lg'}
+      />
+    </ExpressionRunnerWrapper>
+    <P>
+      <Strong>Which one will be the last food item remaining?</Strong>
+    </P>
+    <Ol>
+      <OlLi>
+        <Emoji size="lg">🍣</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">🍔</Emoji>
+      </OlLi>
+      <OlLi>
+        <Emoji size="lg">🥩</Emoji>
+      </OlLi>
+    </Ol>
+    <NextLessonButton
+      href={yc(6)}
+      primaryText={<>Check My Answer</>}
+      secondaryText={
+        <>
+          Continue to Episode 6 <Emoji>🙂</Emoji>
+        </>
+      }
+    />
   </>
 )
