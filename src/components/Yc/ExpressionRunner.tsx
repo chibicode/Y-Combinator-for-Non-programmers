@@ -40,6 +40,7 @@ interface ExpressionRunnerProps {
   allowGoingBack: boolean
   expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
   disableReadyToHighlightColoring: boolean
+  maxStepsAllowed?: number
 }
 
 interface ExpressionRunnerState {
@@ -75,7 +76,11 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const { initializeInstructions, allowGoingBack } = this.props
+    const {
+      initializeInstructions,
+      allowGoingBack,
+      maxStepsAllowed
+    } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -98,6 +103,12 @@ export default class ExpressionRunner extends React.Component<
       if (!allowGoingBack) {
         this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
       }
+      this.syncState()
+    }
+
+    if (maxStepsAllowed) {
+      this.expressionContainerManager.maximumIndex =
+        this.expressionContainerManager.currentIndex + maxStepsAllowed
       this.syncState()
     }
   }
@@ -151,6 +162,7 @@ export default class ExpressionRunner extends React.Component<
               onPreviousClick={this.stepBackward}
               canStepForward={expressionContainerManagerState.canStepForward}
               canStepBackward={expressionContainerManagerState.canStepBackward}
+              isDone={expressionContainerManagerState.isDone}
             />
           )}
         </div>

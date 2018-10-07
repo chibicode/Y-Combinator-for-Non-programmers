@@ -102,5 +102,43 @@ export default () => (
         </Em>
       </UlLi>
     </Ul>
+    <P>
+      <Strong>Here’s the answer:</Strong>
+    </P>
+    <Ul>
+      <UlLi>
+        <Em>
+          First, do the part bounded by{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
+        </Em>
+      </UlLi>
+      <UlLi>
+        <Em>
+          Then, do the part bounded by{' '}
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>.
+        </Em>
+      </UlLi>
+    </Ul>
+    <P>This will make sense after we work on an example!</P>
+    <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
+    <H3>Example</H3>
+    <P>
+      On the following example, everything is shaded in light blue initially.{' '}
+    </P>
+    <P>
+      <Em>
+        If you click on {h('ycNext')}, it will highlight (in white background)
+        the part bounded by <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+      </Em>
+      . The remaining part will be shaded (in light blue background).
+    </P>
+    <ExpressionRunnerWrapper>
+      <ExpressionRunner
+        expressionContainer={episode5Expression1}
+        showPriorities
+        variableSize={'lg'}
+        maxStepsAllowed={1}
+      />
+    </ExpressionRunnerWrapper>
   </>
 )

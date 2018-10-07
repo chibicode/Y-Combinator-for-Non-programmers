@@ -12,7 +12,8 @@ interface BorderWrapperProps {
   state: AllExpressionStates
 }
 
-const readyToHighlightToColor = (x?: boolean) => (x ? 'white' : 'indigo50')
+export const readyToHighlightToColor = (x?: boolean) =>
+  x ? 'white' : 'indigo50'
 
 const stateToColor = (
   x: AllExpressionStates

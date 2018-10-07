@@ -2,6 +2,8 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
+import { readyToHighlightToColor } from 'src/components/Yc/BorderWrapper'
+import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
 
@@ -10,46 +12,60 @@ interface ExpressionPrioritiesLabelProps {
   position: 'topleft' | 'bottomleft'
 }
 
+interface ExpressionPrioritiesLabelBox {
+  children: React.ReactNode
+  position: ExpressionPrioritiesLabelProps['position']
+  collapsed: boolean
+}
+
 interface ExpressionPrioritiesLabelState {
   collapsed: boolean
 }
 
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
 
-const ExpressionPrioritiesLabelBox: React.SFC<{
-  children: React.ReactNode
-  position: ExpressionPrioritiesLabelProps['position']
-  collapsed: boolean
-}> = ({ children, position, collapsed }) => (
-  <ExpressionRunnerContext.Consumer>
-    {({ variableSize }) => (
-      <Flex>
-        <FlexCenter
-          className={css`
-            color: ${colors('indigo300')};
-            font-size: ${fontSizes(variableSize === 'lg' ? 0.75 : 0.7)};
-            font-weight: bold;
-            width: ${(collapsed ? 2 : 1.25) *
-              (variableSize === 'lg' ? 1.07 : 1)}em;
-            height: ${1.5 * (variableSize === 'lg' ? 1.07 : 1)}em;
-            line-height: 1;
-            background: #fff;
-            ${position === 'topleft'
-              ? css`
-                  border-right: 2px solid ${colors('indigo300')};
-                  border-bottom: 2px solid ${colors('indigo300')};
-                `
-              : css`
-                  border-top: 2px solid ${colors('indigo300')};
-                  border-right: 2px solid ${colors('indigo300')};
-                `};
-          `}
-        >
-          {children}
-        </FlexCenter>
-      </Flex>
+const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
+  children,
+  position,
+  collapsed
+}) => (
+  <ExpressionReadyToHighlightContext.Consumer>
+    {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+      <ExpressionRunnerContext.Consumer>
+        {({ variableSize }) => (
+          <Flex>
+            <FlexCenter
+              className={css`
+                color: ${colors('indigo300')};
+                font-size: ${fontSizes(variableSize === 'lg' ? 0.75 : 0.7)};
+                font-weight: bold;
+                width: ${(collapsed ? 2 : 1.25) *
+                  (variableSize === 'lg' ? 1.07 : 1)}em;
+                height: ${1.5 * (variableSize === 'lg' ? 1.07 : 1)}em;
+                line-height: 1;
+                background: ${colors(
+                  readyToHighlightToColor(
+                    disableReadyToHighlightColoring || readyToHighlight
+                  )
+                )};
+                ${position === 'topleft'
+                  ? css`
+                      border-right: 2px solid ${colors('indigo300')};
+                      border-bottom: 2px solid ${colors('indigo300')};
+                    `
+                  : css`
+                      border-top: 2px solid ${colors('indigo300')};
+                      border-right: 2px solid ${colors('indigo300')};
+                    `};
+              `}
+            >
+              {children}
+            </FlexCenter>
+          </Flex>
+        )}
+      </ExpressionRunnerContext.Consumer>
     )}
-  </ExpressionRunnerContext.Consumer>
+  </ExpressionReadyToHighlightContext.Consumer>
 )
 
 const ExpressionPrioritiesLabelExpanded: React.SFC<

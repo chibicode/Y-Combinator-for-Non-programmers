@@ -35,6 +35,7 @@ const Button = styled('button')`
 interface ExpressionRunnerControlsProps {
   canStepForward: boolean
   canStepBackward: boolean
+  isDone: boolean
   onNextClick: () => void
   onPreviousClick: () => void
 }
@@ -47,7 +48,8 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
   canStepForward,
   canStepBackward,
   onNextClick,
-  onPreviousClick
+  onPreviousClick,
+  isDone
 }) => (
   <div
     className={css`
@@ -75,16 +77,27 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
         `}
       />
     )}
-    <Button
-      onClick={canStepForward ? onNextClick : noOp}
-      disabled={!canStepForward}
-      className={css`
-        flex: 1;
-        margin-left: ${spaces(0.25)};
-      `}
-    >
-      {canStepForward ? h('ycNext') : h('ycDone')}
-    </Button>
+    {canStepForward || isDone ? (
+      <Button
+        onClick={canStepForward ? onNextClick : noOp}
+        disabled={!canStepForward}
+        className={css`
+          flex: 1;
+          margin-left: ${spaces(0.25)};
+        `}
+      >
+        {canStepForward ? h('ycNext') : h('ycDone')}
+      </Button>
+    ) : (
+      <div
+        className={css`
+          flex: 1;
+          margin-left: ${spaces(0.25)};
+          /* Same border as the button */
+          border: 2px solid transparent;
+        `}
+      />
+    )}
   </div>
 )
 

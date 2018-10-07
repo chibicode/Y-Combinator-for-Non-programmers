@@ -23,6 +23,7 @@ export default class ExpressionContainerManager {
   public expressionContainers: SteppedExpressionContainer[] = []
   public currentIndex = 0
   public minimumIndex = 0
+  public maximumIndex = 999
   public skipOptions: ExpressionContainerSkipOptions = {}
 
   constructor(
@@ -31,6 +32,11 @@ export default class ExpressionContainerManager {
   ) {
     this.expressionContainers.push(expressionContainer)
     this.skipOptions = options || {}
+  }
+  public stepBackward() {
+    if (this.canStepBackward) {
+      this.currentIndex -= 1
+    }
   }
 
   public stepForwardUntilPreviouslyChangedExpressionState(
@@ -45,12 +51,6 @@ export default class ExpressionContainerManager {
     }
   }
 
-  public stepBackward() {
-    if (this.canStepBackward) {
-      this.currentIndex -= 1
-    }
-  }
-
   public stepForwardUntilContainerState(state: ExpressionContainerState) {
     while (
       this.currentExpressionContainer.containerState !== state &&
@@ -61,9 +61,12 @@ export default class ExpressionContainerManager {
   }
 
   public stepForward() {
-    if (this.currentIndex < this.expressionContainers.length - 1) {
+    if (this.canRedo) {
       this.currentIndex += 1
-    } else if (!isDoneExpressionContainer(this.currentExpressionContainer)) {
+    } else if (
+      this.isUnderMaxIndex &&
+      !isDoneExpressionContainer(this.currentExpressionContainer)
+    ) {
       let expressionContainer: SteppedExpressionContainer = this
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(expressionContainer)
@@ -93,15 +96,20 @@ export default class ExpressionContainerManager {
     return this.currentIndex > (this.minimumIndex || 0)
   }
 
+  private get canRedo() {
+    return this.currentIndex < this.expressionContainers.length - 1
+  }
+
   private get canStepForward() {
-    return (
-      this.currentIndex < this.expressionContainers.length - 1 ||
-      !isDoneExpressionContainer(this.currentExpressionContainer)
-    )
+    return this.canRedo || (!this.isDone && this.isUnderMaxIndex)
   }
 
   private get isDone() {
     return isDoneExpressionContainer(this.currentExpressionContainer)
+  }
+
+  private get isUnderMaxIndex() {
+    return this.currentIndex < this.maximumIndex
   }
 
   private get currentExpressionContainer() {
