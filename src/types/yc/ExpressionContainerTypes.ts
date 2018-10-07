@@ -17,6 +17,7 @@ export const previouslyChangedExpressionStateOrdered: ReadonlyArray<
   'callArgJustHighlighted',
   'needsAlphaConvert',
   'readyToBetaReduce',
+  'alphaConvertDone',
   'justBetaReduced',
   'default'
 ]

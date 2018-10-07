@@ -129,11 +129,6 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerSkipOptions={{
-          readyToBetaReduce: true,
-          justBetaReduced: true,
-          default: true
-        }}
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -149,11 +144,6 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerSkipOptions={{
-          readyToBetaReduce: true,
-          justBetaReduced: true,
-          default: true
-        }}
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',

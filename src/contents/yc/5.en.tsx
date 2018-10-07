@@ -38,11 +38,6 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerSkipOptions={{
-          readyToBetaReduce: true,
-          justBetaReduced: true,
-          default: true
-        }}
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -162,11 +157,6 @@ export default () => (
         expressionContainer={episode5Expression1}
         showPriorities
         variableSize={'lg'}
-        expressionContainerManagerSkipOptions={{
-          readyToBetaReduce: true,
-          justBetaReduced: true,
-          default: true
-        }}
         lastAllowedExpressionState="callArgJustHighlighted"
         initializeInstructions={[
           {
@@ -187,10 +177,6 @@ export default () => (
         expressionContainer={episode5Expression1}
         showPriorities
         variableSize={'lg'}
-        expressionContainerManagerSkipOptions={{
-          readyToBetaReduce: true,
-          justBetaReduced: true
-        }}
         maxStepsAllowed={1}
         initializeInstructions={[
           {
@@ -229,10 +215,6 @@ export default () => (
         expressionContainer={episode5Expression1}
         showPriorities
         variableSize={'lg'}
-        expressionContainerManagerSkipOptions={{
-          readyToBetaReduce: true,
-          justBetaReduced: true
-        }}
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',

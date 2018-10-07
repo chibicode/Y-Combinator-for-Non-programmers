@@ -23,6 +23,7 @@ export type CallExpressionStates =
   | 'readyToHighlight'
   | 'needsAlphaConvert'
   | 'readyToBetaReduce'
+  | 'alphaConvertDone'
 
 export type AllExpressionStates = CallExpressionStates
 

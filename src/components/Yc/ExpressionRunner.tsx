@@ -59,7 +59,10 @@ export default class ExpressionRunner extends React.Component<
     allowGoingBack: false,
     initializeInstructions: [],
     disableReadyToHighlightColoring: false,
-    expressionContainerManagerSkipOptions: {}
+    expressionContainerManagerSkipOptions: {
+      readyToBetaReduce: true,
+      justBetaReduced: true
+    }
   }
   private expressionContainerManager: ExpressionContainerManager
 

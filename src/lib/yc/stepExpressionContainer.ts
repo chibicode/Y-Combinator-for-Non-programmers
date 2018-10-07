@@ -33,7 +33,23 @@ export default function stepExpressionContainer(
   e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
 ): SteppedExpressionContainer {
   if (isNeedsResetExpressionContainer(e)) {
-    return prioritizeExpressionContainer(resetExpressionContainer(e))
+    const newContainer = prioritizeExpressionContainer(
+      resetExpressionContainer(e)
+    )
+    const nextCallExpressionAndParent = findNextCallExpressionAndParent(
+      newContainer.expression
+    )
+    if (
+      'notFound' in nextCallExpressionAndParent &&
+      nextCallExpressionAndParent.notFound
+    ) {
+      return {
+        ...newContainer,
+        containerState: 'done'
+      }
+    } else {
+      return newContainer
+    }
   } else {
     return produce<SteppedExpressionContainer>(e, draftContainer => {
       const nextCallExpressionAndParent = findNextCallExpressionAndParent<
@@ -45,10 +61,7 @@ export default function stepExpressionContainer(
         'notFound' in nextCallExpressionAndParent &&
         nextCallExpressionAndParent.notFound
       ) {
-        return {
-          ...e,
-          containerState: 'done'
-        }
+        throw new Error()
       } else {
         const expression = nextCallExpressionAndParent.expression
         switch (expression.state) {
@@ -92,13 +105,13 @@ export default function stepExpressionContainer(
             const alphaConvertResult = alphaConvert(expression)
             expression.func = alphaConvertResult.func
             expression.arg = alphaConvertResult.arg
-            expression.state = 'readyToBetaReduce'
+            expression.state = 'alphaConvertDone'
             draftContainer.conflictingVariableNames = []
-            draftContainer.previouslyChangedExpressionState =
-              'readyToBetaReduce'
+            draftContainer.previouslyChangedExpressionState = 'alphaConvertDone'
             break
           }
-          case 'readyToBetaReduce': {
+          case 'readyToBetaReduce':
+          case 'alphaConvertDone': {
             const betaReduced: PrioritizedExpression = {
               ...betaReduce(expression),
               state: 'justBetaReduced'
