@@ -267,6 +267,9 @@ export default () => (
         <Emoji size="lg">🥩</Emoji>
       </OlLi>
     </Ol>
+    <P>
+      <Em>This is a hard question</Em>. So don’t worry if you have no idea.
+    </P>
     <NextLessonButton
       href={yc(6)}
       primaryText={<>Check My Answer</>}
