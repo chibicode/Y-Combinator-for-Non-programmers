@@ -29,14 +29,22 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
         border-right: 1px solid ${colors('grey300')};
       `}
     >
-      <ExpressionHighlighterContext.Provider
-        value={{
-          state: convertAllExpressionStates(expression.arg.state),
-          highlightType: 'funcArg'
-        }}
-      >
-        <ExpressionBox expression={expression.arg} />
-      </ExpressionHighlighterContext.Provider>
+      <ExpressionHighlighterContext.Consumer>
+        {({ state, highlightType }) => (
+          <ExpressionHighlighterContext.Provider
+            value={
+              highlightType === 'callArg'
+                ? { state, highlightType }
+                : {
+                    state: convertAllExpressionStates(expression.arg.state),
+                    highlightType: 'funcArg'
+                  }
+            }
+          >
+            <ExpressionBox expression={expression.arg} />
+          </ExpressionHighlighterContext.Provider>
+        )}
+      </ExpressionHighlighterContext.Consumer>
     </FlexCenter>
     <FlexCenter
       className={css`

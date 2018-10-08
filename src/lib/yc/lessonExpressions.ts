@@ -74,6 +74,46 @@ export const episode5Expression2 = initializeExpressionContainer([
   'a'
 ])
 
+const trueParams: FunctionExpressionParams = {
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: 'a'
+  }
+}
+
+// const falseParams: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: 'b'
+//   }
+// }
+
+// const andParams: FunctionExpressionParams = {
+//   arg: 'p',
+//   body: {
+//     arg: 'q',
+//     body: ['p', 'q', 'p']
+//   }
+// }
+
+const notParams: FunctionExpressionParams = {
+  arg: 'f',
+  body: {
+    arg: 'g',
+    body: {
+      arg: 'h',
+      body: ['f', 'g', 'h']
+    }
+  }
+}
+
+export const episode6Expression1 = initializeExpressionContainer([
+  notParams,
+  trueParams
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
