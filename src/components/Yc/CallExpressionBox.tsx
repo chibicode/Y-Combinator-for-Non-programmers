@@ -42,11 +42,20 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
             <ExpressionHighlighterContext.Consumer>
               {({ state, highlightType }) => (
                 <ExpressionHighlighterContext.Provider
-                  value={{
-                    state:
-                      state || convertAllExpressionStates(expression.arg.state),
-                    highlightType: highlightType || 'callArg'
-                  }}
+                  value={
+                    expression.arg.state === 'justHighlighted' ||
+                    expression.arg.state === 'highlighted'
+                      ? {
+                          state: expression.arg.state,
+                          highlightType: 'callArg'
+                        }
+                      : {
+                          state:
+                            state ||
+                            convertAllExpressionStates(expression.arg.state),
+                          highlightType: highlightType || 'callArg'
+                        }
+                  }
                 >
                   <ExpressionBox expression={expression.arg} />
                 </ExpressionHighlighterContext.Provider>

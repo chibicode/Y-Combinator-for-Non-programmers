@@ -56,10 +56,20 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
       <ExpressionHighlighterContext.Consumer>
         {({ state, highlightType }) => (
           <ExpressionHighlighterContext.Provider
-            value={{
-              state: state || convertAllExpressionStates(expression.body.state),
-              highlightType: highlightType || 'funcBody'
-            }}
+            value={
+              expression.body.state === 'justHighlighted' ||
+              expression.body.state === 'highlighted'
+                ? {
+                    state: expression.body.state,
+                    highlightType: 'funcBody'
+                  }
+                : {
+                    state:
+                      state ||
+                      convertAllExpressionStates(expression.body.state),
+                    highlightType: highlightType || 'funcBody'
+                  }
+            }
           >
             <ExpressionBox expression={expression.body} />
           </ExpressionHighlighterContext.Provider>
