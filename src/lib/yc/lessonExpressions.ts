@@ -99,12 +99,12 @@ const trueParams: FunctionExpressionParams = {
 // }
 
 const notParams: FunctionExpressionParams = {
-  arg: 'f',
+  arg: 'a',
   body: {
-    arg: 'g',
+    arg: 'b',
     body: {
-      arg: 'h',
-      body: ['f', 'g', 'h']
+      arg: 'c',
+      body: ['a', 'b', 'c']
     }
   }
 }

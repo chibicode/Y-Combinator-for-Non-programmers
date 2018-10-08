@@ -16,6 +16,7 @@ import {
   PreviouslyChangedExpressionState,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
+import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
 
 type InitializeInstruction =
   | {
@@ -155,11 +156,19 @@ export default class ExpressionRunner extends React.Component<
               disableReadyToHighlightColoring
             }}
           >
-            <ExpressionBox
-              expression={
-                expressionContainerManagerState.expressionContainer.expression
-              }
-            />
+            <AlphaConvertContext.Provider
+              value={{
+                conflictingVariableNames:
+                  expressionContainerManagerState.expressionContainer
+                    .conflictingVariableNames
+              }}
+            >
+              <ExpressionBox
+                expression={
+                  expressionContainerManagerState.expressionContainer.expression
+                }
+              />
+            </AlphaConvertContext.Provider>
           </ExpressionReadyToHighlightContext.Provider>
           {showControls && (
             <ExpressionRunnerControls

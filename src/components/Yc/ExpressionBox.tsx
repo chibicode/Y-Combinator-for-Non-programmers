@@ -31,7 +31,14 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
               position: relative;
             `}
           >
-            <BorderWrapper state={state || expression.state}>
+            <BorderWrapper
+              state={state || expression.state}
+              childVariableName={
+                isPrioritizedVariableExpression(expression)
+                  ? expression.name
+                  : undefined
+              }
+            >
               {showPriorities &&
                 isPrioritizedVariableExpression(expression) && (
                   <ExpressionPrioritiesLabel
