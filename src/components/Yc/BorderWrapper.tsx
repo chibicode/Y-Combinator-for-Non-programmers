@@ -4,20 +4,22 @@ import Flex from 'src/components/Flex'
 import AlphaConvertContext, {
   AlphaConvertContextProps
 } from 'src/components/Yc/AlphaConvertContext'
+import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionReadyToHighlightContext, {
   ExpressionReadyToHighlightContextProps
 } from 'src/components/Yc/ExpressionReadyToHighlightContext'
-import colors, { allColors } from 'src/lib/theme/colors'
-import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
-import { VariableNames } from 'src/types/yc/VariableNames'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import colors, { allColors } from 'src/lib/theme/colors'
+import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 interface BorderWrapperProps {
   children: React.ReactNode
   state: AllExpressionStates
   childVariableName?: VariableNames
+  childVariableHighlightType?: ExpressionHighlighterContextProps['highlightType']
 }
 
 export const readyToHighlightToColor = (x?: boolean) =>
@@ -40,7 +42,8 @@ const background = ({
   readyToHighlight,
   conflictingVariableNames,
   childVariableName,
-  variableSize
+  variableSize,
+  childVariableHighlightType
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -48,15 +51,20 @@ const background = ({
   conflictingVariableNames?: AlphaConvertContextProps['conflictingVariableNames']
   childVariableName?: BorderWrapperProps['childVariableName']
   variableSize: ExpressionRunnerContextProps['variableSize']
+  childVariableHighlightType?: BorderWrapperProps['childVariableHighlightType']
 }) => {
   if (
     conflictingVariableNames &&
     conflictingVariableNames.length &&
     childVariableName &&
-    conflictingVariableNames.includes(childVariableName)
+    conflictingVariableNames.includes(childVariableName) &&
+    (childVariableHighlightType === 'callArg' ||
+      childVariableHighlightType === 'funcBody')
   ) {
     return css`
-      background-image: url(/static/images/bubble.svg);
+      background-image: url(${childVariableHighlightType === 'callArg'
+        ? '/static/images/bubble.svg'
+        : '/static/images/stripe.svg'});
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
@@ -77,7 +85,8 @@ const background = ({
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   children,
   state,
-  childVariableName
+  childVariableName,
+  childVariableHighlightType
 }) => (
   <ExpressionRunnerContext.Consumer>
     {({ variableSize }) => (
@@ -99,7 +108,8 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                     readyToHighlight,
                     conflictingVariableNames,
                     childVariableName,
-                    variableSize
+                    variableSize,
+                    childVariableHighlightType
                   })
                 )}
               >

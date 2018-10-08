@@ -3,7 +3,9 @@ import React from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper from 'src/components/Yc/BorderWrapper'
 import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
-import ExpressionHighlighterContext from 'src/components/Yc/ExpressionHighlighterContext'
+import ExpressionHighlighterContext, {
+  ExpressionHighlighterContextProps
+} from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
@@ -19,11 +21,26 @@ interface ExpressionBoxProps {
   isDone?: boolean
 }
 
+const childVariableHighlightType = (
+  expression: PrioritizedExpression,
+  state: ExpressionHighlighterContextProps['state'],
+  highlightType?: ExpressionHighlighterContextProps['highlightType']
+) => {
+  if (isPrioritizedVariableExpression(expression)) {
+    if (
+      state === 'highlighted' ||
+      (state === 'justHighlighted' && highlightType)
+    ) {
+      return highlightType
+    }
+  }
+}
+
 const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
   <ExpressionRunnerContext.Consumer>
     {({ showPriorities }) => (
       <ExpressionHighlighterContext.Consumer>
-        {({ state }) => (
+        {({ state, highlightType }) => (
           <Flex
             className={css`
               width: 100%;
@@ -38,6 +55,11 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
                   ? expression.name
                   : undefined
               }
+              childVariableHighlightType={childVariableHighlightType(
+                expression,
+                state,
+                highlightType
+              )}
             >
               {showPriorities &&
                 isPrioritizedVariableExpression(expression) && (

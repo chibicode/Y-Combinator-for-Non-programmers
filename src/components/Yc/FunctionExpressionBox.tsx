@@ -35,11 +35,18 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
             value={
               highlightType === 'callArg'
                 ? { state, highlightType }
-                : {
-                    state:
-                      state || convertAllExpressionStates(expression.arg.state),
-                    highlightType: highlightType || 'funcArg'
-                  }
+                : expression.arg.state === 'justHighlighted' ||
+                  expression.arg.state === 'highlighted'
+                  ? {
+                      state: expression.arg.state,
+                      highlightType: 'funcArg'
+                    }
+                  : {
+                      state:
+                        state ||
+                        convertAllExpressionStates(expression.arg.state),
+                      highlightType: highlightType || 'funcArg'
+                    }
             }
           >
             <ExpressionBox expression={expression.arg} />

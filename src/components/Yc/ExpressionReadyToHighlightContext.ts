@@ -14,6 +14,7 @@ export const convertCallexpressionStates = (
     case 'needsAlphaConvert':
     case 'readyToBetaReduce':
     case 'justBetaReduced':
+    case 'alphaConvertDone':
       return true
     default:
       return false
