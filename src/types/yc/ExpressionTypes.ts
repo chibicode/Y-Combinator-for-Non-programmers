@@ -11,7 +11,6 @@ export type CommonStates =
   | 'justBetaReduced'
 
 export type BetaReducePreview =
-  | 'willBeRemoved'
   | PrioritizedVariableExpression
   | PrioritizedFunctionExpression
 

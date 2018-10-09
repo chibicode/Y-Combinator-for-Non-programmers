@@ -4,6 +4,9 @@ import Flex from 'src/components/Flex'
 import AlphaConvertContext, {
   AlphaConvertContextProps
 } from 'src/components/Yc/AlphaConvertContext'
+import ExpressionBetaReducePreviewContext, {
+  ExpressionBetaReducePreviewContextProps
+} from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionReadyToHighlightContext, {
   ExpressionReadyToHighlightContextProps
@@ -11,8 +14,12 @@ import ExpressionReadyToHighlightContext, {
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-import colors, { allColors } from 'src/lib/theme/colors'
-import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
+import { colors, zIndices } from 'src/lib/theme'
+import { allColors } from 'src/lib/theme/colors'
+import {
+  AllExpressionStates,
+  BetaReducePreview
+} from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 interface BorderWrapperProps {
@@ -21,6 +28,7 @@ interface BorderWrapperProps {
   childVariableName?: VariableNames
   childVariableHighlightType?: ExpressionHighlighterContextProps['highlightType']
   childVariableJustAlphaConverted?: boolean
+  childVariableBetaReducePreview?: BetaReducePreview
 }
 
 export const readyToHighlightToColor = (x?: boolean) =>
@@ -45,7 +53,9 @@ const background = ({
   childVariableName,
   variableSize,
   childVariableHighlightType,
-  childVariableJustAlphaConverted
+  childVariableJustAlphaConverted,
+  betaReducePreview,
+  childVariableBetaReducePreview
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -55,8 +65,34 @@ const background = ({
   variableSize: ExpressionRunnerContextProps['variableSize']
   childVariableHighlightType?: BorderWrapperProps['childVariableHighlightType']
   childVariableJustAlphaConverted?: BorderWrapperProps['childVariableJustAlphaConverted']
+  betaReducePreview?: ExpressionBetaReducePreviewContextProps['betaReducePreview']
+  childVariableBetaReducePreview?: BetaReducePreview
 }) => {
-  if (childVariableJustAlphaConverted) {
+  if (betaReducePreview) {
+    if (
+      (betaReducePreview === 'before' &&
+        (childVariableHighlightType === 'callArg' ||
+          childVariableHighlightType === 'funcArg')) ||
+      childVariableBetaReducePreview
+    ) {
+      return css`
+        background: ${colors('yellow50')};
+      `
+    } else if (
+      (betaReducePreview === 'after' &&
+        (childVariableHighlightType === 'callArg' ||
+          childVariableHighlightType === 'funcArg')) ||
+      childVariableBetaReducePreview
+    ) {
+      return css`
+        background: ${colors('yellow50')};
+      `
+    } else {
+      return css`
+        background: ${colors('indigo50')};
+      `
+    }
+  } else if (childVariableJustAlphaConverted) {
     return css`
       background-image: url('/static/images/star.svg');
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
@@ -91,47 +127,73 @@ const background = ({
   }
 }
 
+const Cross: React.SFC<{}> = () => (
+  <div
+    className={css`
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: ${zIndices('cross')};
+      background-image: url('/static/images/cross.svg');
+      background-size: 100% 100%;
+    `}
+  />
+)
+
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   children,
   state,
   childVariableName,
   childVariableHighlightType,
-  childVariableJustAlphaConverted
+  childVariableJustAlphaConverted,
+  childVariableBetaReducePreview
 }) => (
-  <ExpressionRunnerContext.Consumer>
-    {({ variableSize }) => (
-      <ExpressionReadyToHighlightContext.Consumer>
-        {({ readyToHighlight, disableReadyToHighlightColoring }) => (
-          <AlphaConvertContext.Consumer>
-            {({ conflictingVariableNames }) => (
-              <Flex
-                className={cx(
-                  css`
-                    margin: -2px;
-                    border: 2px solid ${colors('indigo300')};
-                    align-items: center;
-                    flex: 1;
-                  `,
-                  background({
-                    state,
-                    disableReadyToHighlightColoring,
-                    readyToHighlight,
-                    conflictingVariableNames,
-                    childVariableName,
-                    variableSize,
-                    childVariableHighlightType,
-                    childVariableJustAlphaConverted
-                  })
+  <ExpressionBetaReducePreviewContext.Consumer>
+    {({ betaReducePreview }) => (
+      <ExpressionRunnerContext.Consumer>
+        {({ variableSize }) => (
+          <ExpressionReadyToHighlightContext.Consumer>
+            {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+              <AlphaConvertContext.Consumer>
+                {({ conflictingVariableNames }) => (
+                  <Flex
+                    className={cx(
+                      css`
+                        margin: -2px;
+                        border: 2px solid ${colors('indigo300')};
+                        align-items: center;
+                        flex: 1;
+                        position: relative;
+                      `,
+                      background({
+                        state,
+                        betaReducePreview,
+                        disableReadyToHighlightColoring,
+                        readyToHighlight,
+                        conflictingVariableNames,
+                        childVariableName,
+                        variableSize,
+                        childVariableHighlightType,
+                        childVariableJustAlphaConverted,
+                        childVariableBetaReducePreview
+                      })
+                    )}
+                  >
+                    {betaReducePreview === 'after' &&
+                      (childVariableHighlightType === 'callArg' ||
+                        childVariableHighlightType === 'funcArg') && <Cross />}
+                    {children}
+                  </Flex>
                 )}
-              >
-                {children}
-              </Flex>
+              </AlphaConvertContext.Consumer>
             )}
-          </AlphaConvertContext.Consumer>
+          </ExpressionReadyToHighlightContext.Consumer>
         )}
-      </ExpressionReadyToHighlightContext.Consumer>
+      </ExpressionRunnerContext.Consumer>
     )}
-  </ExpressionRunnerContext.Consumer>
+  </ExpressionBetaReducePreviewContext.Consumer>
 )
 
 export default BorderWrapper

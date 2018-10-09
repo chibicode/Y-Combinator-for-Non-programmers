@@ -1,5 +1,9 @@
 import { css } from 'emotion'
 import React from 'react'
+import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
+import ExpressionBetaReducePreviewContext, {
+  ExpressionBetaReducePreviewContextProps
+} from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
 import ExpressionRunnerContext, {
@@ -16,7 +20,6 @@ import {
   PreviouslyChangedExpressionState,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
-import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
 
 type InitializeInstruction =
   | {
@@ -47,6 +50,18 @@ interface ExpressionRunnerProps {
 
 interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
+}
+
+const betaReducePreview = (
+  previouslyChangedExpressionState: PreviouslyChangedExpressionState
+): ExpressionBetaReducePreviewContextProps['betaReducePreview'] => {
+  if (previouslyChangedExpressionState === 'betaReducePreviewBefore') {
+    return 'before'
+  } else if (previouslyChangedExpressionState === 'betaReducePreviewAfter') {
+    return 'after'
+  } else {
+    return undefined
+  }
 }
 
 export default class ExpressionRunner extends React.Component<
@@ -163,11 +178,21 @@ export default class ExpressionRunner extends React.Component<
                     .conflictingVariableNames
               }}
             >
-              <ExpressionBox
-                expression={
-                  expressionContainerManagerState.expressionContainer.expression
-                }
-              />
+              <ExpressionBetaReducePreviewContext.Provider
+                value={{
+                  betaReducePreview: betaReducePreview(
+                    expressionContainerManagerState.expressionContainer
+                      .previouslyChangedExpressionState
+                  )
+                }}
+              >
+                <ExpressionBox
+                  expression={
+                    expressionContainerManagerState.expressionContainer
+                      .expression
+                  }
+                />
+              </ExpressionBetaReducePreviewContext.Provider>
             </AlphaConvertContext.Provider>
           </ExpressionReadyToHighlightContext.Provider>
           {showControls && (
