@@ -10,6 +10,7 @@ export interface VariableExpression {
   readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
+  readonly justAlphaConverted?: boolean
 }
 
 export function isVariableExpression(

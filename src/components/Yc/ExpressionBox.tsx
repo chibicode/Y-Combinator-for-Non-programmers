@@ -50,6 +50,10 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
           >
             <BorderWrapper
               state={state || expression.state}
+              childVariableJustAlphaConverted={
+                isPrioritizedVariableExpression(expression) &&
+                expression.justAlphaConverted
+              }
               childVariableName={
                 isPrioritizedVariableExpression(expression)
                   ? expression.name

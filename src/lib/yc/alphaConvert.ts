@@ -26,7 +26,8 @@ function helper<E extends Expression>({
     if (mapping[expression.name]) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, expression, {
-        name: mapping[expression.name]
+        name: mapping[expression.name],
+        justAlphaConverted: true
       })
     } else {
       return expression

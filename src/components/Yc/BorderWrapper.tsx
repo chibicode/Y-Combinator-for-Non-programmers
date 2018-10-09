@@ -20,6 +20,7 @@ interface BorderWrapperProps {
   state: AllExpressionStates
   childVariableName?: VariableNames
   childVariableHighlightType?: ExpressionHighlighterContextProps['highlightType']
+  childVariableJustAlphaConverted?: boolean
 }
 
 export const readyToHighlightToColor = (x?: boolean) =>
@@ -43,7 +44,8 @@ const background = ({
   conflictingVariableNames,
   childVariableName,
   variableSize,
-  childVariableHighlightType
+  childVariableHighlightType,
+  childVariableJustAlphaConverted
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -52,8 +54,16 @@ const background = ({
   childVariableName?: BorderWrapperProps['childVariableName']
   variableSize: ExpressionRunnerContextProps['variableSize']
   childVariableHighlightType?: BorderWrapperProps['childVariableHighlightType']
+  childVariableJustAlphaConverted?: BorderWrapperProps['childVariableJustAlphaConverted']
 }) => {
-  if (
+  if (childVariableJustAlphaConverted) {
+    return css`
+      background-image: url('/static/images/star.svg');
+      background-size: ${variableSize === 'lg' ? 2 : 1}rem
+        ${variableSize === 'lg' ? 2 : 1}rem;
+      background-position: center center;
+    `
+  } else if (
     conflictingVariableNames &&
     conflictingVariableNames.length &&
     childVariableName &&
@@ -68,7 +78,6 @@ const background = ({
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
-      background-color: ${colors('yellow50')};
     `
   } else {
     return css`
@@ -86,7 +95,8 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   children,
   state,
   childVariableName,
-  childVariableHighlightType
+  childVariableHighlightType,
+  childVariableJustAlphaConverted
 }) => (
   <ExpressionRunnerContext.Consumer>
     {({ variableSize }) => (
@@ -109,7 +119,8 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                     conflictingVariableNames,
                     childVariableName,
                     variableSize,
-                    childVariableHighlightType
+                    childVariableHighlightType,
+                    childVariableJustAlphaConverted
                   })
                 )}
               >
