@@ -24,7 +24,7 @@ function helper({
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, to, { wasJustBetaReduced: true })
     } else {
-      return expression
+      return Object.assign({}, expression, { wasJustBetaReduced: false })
     }
   } else if (isCallExpression(expression)) {
     return {
