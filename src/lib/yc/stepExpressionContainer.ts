@@ -180,7 +180,10 @@ export default function stepExpressionContainer(
               draftContainer.containerState = 'needsReset'
             }
             draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
-            delete draftContainer.backupExpression
+            if (draftContainer.backupExpression) {
+              draftContainer.expression = draftContainer.backupExpression
+              delete draftContainer.backupExpression
+            }
             break
           }
         }
