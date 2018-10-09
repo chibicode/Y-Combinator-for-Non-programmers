@@ -3,7 +3,6 @@ import React from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper from 'src/components/Yc/BorderWrapper'
 import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
-import ExpressionBetaReducePreviewContext from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionHighlighterContext, {
   ExpressionHighlighterContextProps
 } from 'src/components/Yc/ExpressionHighlighterContext'
@@ -38,95 +37,68 @@ const childVariableHighlightType = (
 }
 
 const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
-  <ExpressionBetaReducePreviewContext.Consumer>
-    {({ betaReducePreview }) => (
-      <ExpressionRunnerContext.Consumer>
-        {({ showPriorities }) => (
-          <ExpressionHighlighterContext.Consumer>
-            {({ state, highlightType }) => (
-              <Flex
-                className={css`
-                  width: 100%;
-                  height: 100%;
-                  position: relative;
-                `}
-              >
-                <BorderWrapper
-                  state={state || expression.state}
-                  childVariableJustAlphaConverted={
-                    isPrioritizedVariableExpression(expression) &&
-                    expression.justAlphaConverted
-                  }
-                  childVariableName={
-                    isPrioritizedVariableExpression(expression)
-                      ? expression.name
-                      : undefined
-                  }
-                  childVariableHighlightType={childVariableHighlightType(
-                    expression,
-                    state,
-                    highlightType
-                  )}
-                  childVariableBetaReducePreview={
-                    isPrioritizedVariableExpression(expression)
-                      ? expression.betaReducePreview
-                      : undefined
-                  }
-                >
-                  {showPriorities &&
-                    isPrioritizedVariableExpression(expression) && (
-                      <ExpressionPrioritiesLabel
-                        priorities={expression.argPriorityAgg}
-                        position="topleft"
-                      />
-                    )}
-                  {(() => {
-                    if (isPrioritizedVariableExpression(expression)) {
-                      if (
-                        betaReducePreview === 'after' &&
-                        expression.betaReducePreview
-                      ) {
-                        if (
-                          isPrioritizedVariableExpression(
-                            expression.betaReducePreview
-                          )
-                        ) {
-                          return (
-                            <VariableExpressionBox
-                              expression={expression.betaReducePreview}
-                            />
-                          )
-                        } else {
-                          return (
-                            <FunctionExpressionBox
-                              expression={expression.betaReducePreview}
-                            />
-                          )
-                        }
-                      } else {
-                        return <VariableExpressionBox expression={expression} />
-                      }
-                    } else if (isPrioritizedCallExpression(expression)) {
-                      return <CallExpressionBox expression={expression} />
-                    } else {
-                      return <FunctionExpressionBox expression={expression} />
-                    }
-                  })()}
-                  {showPriorities &&
-                    isPrioritizedVariableExpression(expression) && (
-                      <ExpressionPrioritiesLabel
-                        priorities={expression.funcPriorityAgg}
-                        position="bottomleft"
-                      />
-                    )}
-                </BorderWrapper>
-              </Flex>
-            )}
-          </ExpressionHighlighterContext.Consumer>
+  <ExpressionRunnerContext.Consumer>
+    {({ showPriorities }) => (
+      <ExpressionHighlighterContext.Consumer>
+        {({ state, highlightType }) => (
+          <Flex
+            className={css`
+              width: 100%;
+              height: 100%;
+              position: relative;
+            `}
+          >
+            <BorderWrapper
+              state={state || expression.state}
+              childVariableJustAlphaConverted={
+                isPrioritizedVariableExpression(expression) &&
+                expression.justAlphaConverted
+              }
+              childVariableName={
+                isPrioritizedVariableExpression(expression)
+                  ? expression.name
+                  : undefined
+              }
+              childVariableHighlightType={childVariableHighlightType(
+                expression,
+                state,
+                highlightType
+              )}
+              childVariableWillBeBetaReduced={
+                isPrioritizedVariableExpression(expression)
+                  ? expression.willBeBetaReduced
+                  : undefined
+              }
+            >
+              {showPriorities &&
+                isPrioritizedVariableExpression(expression) && (
+                  <ExpressionPrioritiesLabel
+                    priorities={expression.argPriorityAgg}
+                    position="topleft"
+                  />
+                )}
+              {(() => {
+                if (isPrioritizedVariableExpression(expression)) {
+                  return <VariableExpressionBox expression={expression} />
+                } else if (isPrioritizedCallExpression(expression)) {
+                  return <CallExpressionBox expression={expression} />
+                } else {
+                  return <FunctionExpressionBox expression={expression} />
+                }
+              })()}
+              {showPriorities &&
+                isPrioritizedVariableExpression(expression) && (
+                  <ExpressionPrioritiesLabel
+                    priorities={expression.funcPriorityAgg}
+                    position="bottomleft"
+                  />
+                )}
+            </BorderWrapper>
+          </Flex>
         )}
-      </ExpressionRunnerContext.Consumer>
+      </ExpressionHighlighterContext.Consumer>
     )}
-  </ExpressionBetaReducePreviewContext.Consumer>
+  </ExpressionRunnerContext.Consumer>
 )
 
 export default ExpressionBox

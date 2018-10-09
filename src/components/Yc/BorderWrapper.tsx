@@ -16,10 +16,7 @@ import ExpressionRunnerContext, {
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, zIndices } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
-import {
-  AllExpressionStates,
-  BetaReducePreview
-} from 'src/types/yc/ExpressionTypes'
+import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 interface BorderWrapperProps {
@@ -28,7 +25,7 @@ interface BorderWrapperProps {
   childVariableName?: VariableNames
   childVariableHighlightType?: ExpressionHighlighterContextProps['highlightType']
   childVariableJustAlphaConverted?: boolean
-  childVariableBetaReducePreview?: BetaReducePreview
+  childVariableWillBeBetaReduced?: boolean
 }
 
 export const readyToHighlightToColor = (x?: boolean) =>
@@ -55,7 +52,7 @@ const background = ({
   childVariableHighlightType,
   childVariableJustAlphaConverted,
   betaReducePreview,
-  childVariableBetaReducePreview
+  childVariableWillBeBetaReduced
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -66,14 +63,14 @@ const background = ({
   childVariableHighlightType?: BorderWrapperProps['childVariableHighlightType']
   childVariableJustAlphaConverted?: BorderWrapperProps['childVariableJustAlphaConverted']
   betaReducePreview?: ExpressionBetaReducePreviewContextProps['betaReducePreview']
-  childVariableBetaReducePreview?: BetaReducePreview
+  childVariableWillBeBetaReduced?: boolean
 }) => {
   if (betaReducePreview) {
     if (
       (betaReducePreview === 'before' &&
         (childVariableHighlightType === 'callArg' ||
           childVariableHighlightType === 'funcArg')) ||
-      childVariableBetaReducePreview
+      childVariableWillBeBetaReduced
     ) {
       // Use yellow 100 to differentiate just in case previously it was yellow 50
       return css`
@@ -83,7 +80,7 @@ const background = ({
       (betaReducePreview === 'after' &&
         (childVariableHighlightType === 'callArg' ||
           childVariableHighlightType === 'funcArg')) ||
-      childVariableBetaReducePreview
+      childVariableWillBeBetaReduced
     ) {
       return css`
         background: ${colors('yellow100')};
@@ -149,7 +146,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   childVariableName,
   childVariableHighlightType,
   childVariableJustAlphaConverted,
-  childVariableBetaReducePreview
+  childVariableWillBeBetaReduced
 }) => (
   <ExpressionBetaReducePreviewContext.Consumer>
     {({ betaReducePreview }) => (
@@ -178,7 +175,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                         variableSize,
                         childVariableHighlightType,
                         childVariableJustAlphaConverted,
-                        childVariableBetaReducePreview
+                        childVariableWillBeBetaReduced
                       })
                     )}
                   >

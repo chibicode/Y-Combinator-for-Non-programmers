@@ -1,7 +1,7 @@
 import produce, { DraftObject } from 'immer'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
-import betaReducePreview from 'src/lib/yc/betaReducePreview'
+import betaReducePreviewBefore from 'src/lib/yc/betaReducePreviewBefore'
 import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
@@ -114,11 +114,11 @@ export default function stepExpressionContainer(
           }
           case 'readyToBetaReduce':
           case 'alphaConvertDone': {
-            const betaReducePreviewResult = betaReducePreview(
+            const betaReducePreviewBeforeResult = betaReducePreviewBefore(
               clearJustAlphaConvertedAndBetaReducePreview(expression)
             )
-            expression.func = betaReducePreviewResult.func
-            expression.arg = betaReducePreviewResult.arg
+            expression.func = betaReducePreviewBeforeResult.func
+            expression.arg = betaReducePreviewBeforeResult.arg
             expression.state = 'betaReducePreviewBefore'
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewBefore'

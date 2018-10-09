@@ -11,7 +11,10 @@ function helper<E extends PrioritizedExpression>(expression: E): E {
   if (isPrioritizedVariableExpression(expression)) {
     if (expression.justAlphaConverted) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
-      return Object.assign({}, expression, { justAlphaConverted: false })
+      return Object.assign({}, expression, {
+        justAlphaConverted: false,
+        willBeBetaReduced: false
+      })
     } else {
       return expression
     }

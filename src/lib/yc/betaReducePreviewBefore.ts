@@ -1,5 +1,4 @@
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
-import {} from 'src/types/yc/ExpressionTypes'
 import {
   isPrioritizedCallExpression,
   isPrioritizedFunctionExpression,
@@ -22,7 +21,7 @@ function helper<E extends PrioritizedExpression>({
   if (isPrioritizedVariableExpression(expression)) {
     if (expression.name === from) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
-      return Object.assign({}, expression, { betaReducePreview: to })
+      return Object.assign({}, expression, { willBeBetaReduced: true })
     } else {
       return expression
     }
@@ -52,7 +51,7 @@ function helper<E extends PrioritizedExpression>({
   }
 }
 
-export default function betaReducePreview(
+export default function betaReducePreviewBefore(
   expression: ImmediatelyExecutableCallExpression
 ): ImmediatelyExecutableCallExpression {
   const newExpression = { ...expression }

@@ -1,7 +1,3 @@
-import {
-  PrioritizedFunctionExpression,
-  PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 export type CommonStates =
@@ -10,16 +6,12 @@ export type CommonStates =
   | 'justHighlighted'
   | 'justBetaReduced'
 
-export type BetaReducePreview =
-  | PrioritizedVariableExpression
-  | PrioritizedFunctionExpression
-
 export interface VariableExpression {
   readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
   readonly justAlphaConverted?: boolean
-  readonly betaReducePreview?: BetaReducePreview
+  readonly willBeBetaReduced?: boolean
 }
 
 export function isVariableExpression(
