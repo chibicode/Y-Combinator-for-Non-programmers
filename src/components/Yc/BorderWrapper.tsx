@@ -75,8 +75,9 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       childVariableBetaReducePreview
     ) {
+      // Use yellow 100 to differentiate just in case previously it was yellow 50
       return css`
-        background: ${colors('yellow50')};
+        background: ${colors('yellow100')};
       `
     } else if (
       (betaReducePreview === 'after' &&
@@ -85,7 +86,7 @@ const background = ({
       childVariableBetaReducePreview
     ) {
       return css`
-        background: ${colors('yellow50')};
+        background: ${colors('yellow100')};
       `
     } else {
       return css`
