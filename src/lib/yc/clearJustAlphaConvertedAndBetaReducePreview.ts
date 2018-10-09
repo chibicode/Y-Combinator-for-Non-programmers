@@ -17,7 +17,10 @@ function helper<E extends PrioritizedExpression>(expression: E): E {
         wasJustBetaReduced: false
       })
     } else {
-      return expression
+      return Object.assign({}, expression, {
+        willBeBetaReduced: false,
+        wasJustBetaReduced: false
+      })
     }
   } else if (isPrioritizedCallExpression(expression)) {
     return Object.assign({}, expression, {
