@@ -135,6 +135,16 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
   throw new Error()
 }
 
+export function populatePriorityAggsAndPrioritizeExpression(
+  expression: Expression
+) {
+  return populatePriorityAggs({
+    expression: prioritizeExpression(expression),
+    argPriorityAgg: new Array<number>(),
+    funcPriorityAgg: new Array<number>()
+  })
+}
+
 export default function prioritizeExpressionContainer(
   expressionContainer: NeedsPrioritizeExpressionContainer<VariableExpression>
 ): PrioritizedExpressionContainer<PrioritizedVariableExpression>

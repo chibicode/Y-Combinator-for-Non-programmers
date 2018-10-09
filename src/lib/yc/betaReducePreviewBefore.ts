@@ -1,34 +1,32 @@
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
-  isCallExpression,
-  isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
-import {
+  isPrioritizedCallExpression,
+  isPrioritizedFunctionExpression,
+  isPrioritizedVariableExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
 } from 'src/types/yc/PrioritizedExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-function helper({
+function helper<E extends PrioritizedExpression>({
   expression,
   from,
   to
 }: {
-  expression: PrioritizedExpression
+  expression: E
   from: VariableNames
   to: PrioritizedVariableExpression | PrioritizedFunctionExpression
-}): PrioritizedExpression {
-  if (isVariableExpression(expression)) {
+}): E {
+  if (isPrioritizedVariableExpression(expression)) {
     if (expression.name === from) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
-      return Object.assign({}, to, { wasJustBetaReduced: true })
+      return Object.assign({}, expression, { willBeBetaReduced: true })
     } else {
-      return Object.assign({}, expression, { wasJustBetaReduced: false })
+      return expression
     }
-  } else if (isCallExpression(expression)) {
-    return {
-      ...expression,
+  } else if (isPrioritizedCallExpression(expression)) {
+    return Object.assign({}, expression, {
       arg: helper({
         expression: expression.arg,
         from,
@@ -39,25 +37,28 @@ function helper({
         from,
         to
       })
-    }
-  } else {
-    return {
-      ...expression,
+    })
+  } else if (isPrioritizedFunctionExpression(expression)) {
+    return Object.assign({}, expression, {
       body: helper({
         expression: expression.body,
         from,
         to
       })
-    }
+    })
+  } else {
+    throw new Error()
   }
 }
 
-export default function betaReduce(
+export default function betaReducePreviewBefore(
   expression: ImmediatelyExecutableCallExpression
-): PrioritizedExpression {
-  return helper({
+): ImmediatelyExecutableCallExpression {
+  const newExpression = { ...expression }
+  newExpression.func.body = helper({
     expression: expression.func.body,
     from: expression.func.arg.name,
     to: expression.arg
   })
+  return newExpression
 }

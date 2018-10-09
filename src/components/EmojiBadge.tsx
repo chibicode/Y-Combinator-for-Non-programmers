@@ -5,7 +5,9 @@ import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionH
 import { colors } from 'src/lib/theme'
 
 interface EmojiBadgeProps {
-  badgeType: Required<ExpressionHighlighterContextProps>['highlightType']
+  badgeType:
+    | Required<ExpressionHighlighterContextProps>['highlightType']
+    | 'wasJustBetaReduced'
 }
 
 const funcArgColor = colors('pink300')
@@ -20,6 +22,9 @@ const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
     `,
     funcBody: css`
       border-color: ${colors('yellow800')};
+    `,
+    wasJustBetaReduced: css`
+      border-color: ${colors('indigo300')};
     `
   }[x])
 
@@ -40,6 +45,12 @@ const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) =>
       transform: translateY(${squareAdjustTop}em);
       border-width: 2px;
       border-style: solid;
+      background-color: #fff;
+    `,
+    wasJustBetaReduced: css`
+      position: relative;
+      bottom: 0.1em;
+      right: 0.05em;
     `,
     funcArg: css`
       width: ${hexWidth}em;
@@ -50,6 +61,7 @@ const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) =>
       border-right-width: 2px;
       border-right-style: solid;
       transform: translateY(${hexAdjustTop}em);
+      background-color: #fff;
 
       &:before,
       &:after {
@@ -79,6 +91,7 @@ const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) =>
       height: ${circleWidth}em;
       border-width: 2px;
       border-style: solid;
+      background-color: #fff;
     `
   }[x])
 
@@ -86,7 +99,8 @@ const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: '👨‍🍳',
     funcArg: '😋',
-    funcBody: '🍽'
+    funcBody: '🍽',
+    wasJustBetaReduced: '🆕'
   }[x])
 
 const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ badgeType }) => (
@@ -97,8 +111,7 @@ const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ badgeType }) => (
         align-items: center;
         justify-content: center;
         /* Font size varies depending on emoji size */
-        font-size: 0.45em;
-        background-color: #fff;
+        font-size: ${badgeType === 'wasJustBetaReduced' ? '0.55em' : '0.45em'};
       `,
       badgeTypeToColors(badgeType),
       badgeTypeToShapeAndSize(badgeType)

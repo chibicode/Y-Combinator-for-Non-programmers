@@ -1,6 +1,11 @@
 import { css } from 'emotion'
 import React from 'react'
+import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
+import ExpressionBetaReducePreviewContext, {
+  ExpressionBetaReducePreviewContextProps
+} from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
@@ -8,7 +13,7 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import { lineHeights } from 'src/lib/theme'
 import ExpressionContainerManager, {
-  ExpressionContainerManagerOptions
+  ExpressionContainerSkipOptions
 } from 'src/lib/yc/ExpressionContainerManager'
 import {
   ExpressionContainerState,
@@ -35,13 +40,28 @@ interface ExpressionRunnerProps {
   showPriorities: ExpressionRunnerContextProps['showPriorities']
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions?: ReadonlyArray<InitializeInstruction>
+  initializeInstructions: ReadonlyArray<InitializeInstruction>
   allowGoingBack: boolean
-  expressionContainerManagerOptions?: ExpressionContainerManagerOptions
+  expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
+  disableReadyToHighlightColoring: boolean
+  maxStepsAllowed?: number
+  lastAllowedExpressionState?: PreviouslyChangedExpressionState
 }
 
 interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
+}
+
+const betaReducePreview = (
+  previouslyChangedExpressionState: PreviouslyChangedExpressionState
+): ExpressionBetaReducePreviewContextProps['betaReducePreview'] => {
+  if (previouslyChangedExpressionState === 'betaReducePreviewBefore') {
+    return 'before'
+  } else if (previouslyChangedExpressionState === 'betaReducePreviewAfter') {
+    return 'after'
+  } else {
+    return undefined
+  }
 }
 
 export default class ExpressionRunner extends React.Component<
@@ -52,7 +72,13 @@ export default class ExpressionRunner extends React.Component<
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
     variableSize: expressionRunnerContextDefault.variableSize,
-    allowGoingBack: false
+    allowGoingBack: false,
+    initializeInstructions: [],
+    disableReadyToHighlightColoring: false,
+    expressionContainerManagerSkipOptions: {
+      readyToBetaReduce: true,
+      justBetaReduced: true
+    }
   }
   private expressionContainerManager: ExpressionContainerManager
 
@@ -60,7 +86,8 @@ export default class ExpressionRunner extends React.Component<
     super(props)
     this.expressionContainerManager = new ExpressionContainerManager(
       props.expressionContainer,
-      props.expressionContainerManagerOptions
+      props.expressionContainerManagerSkipOptions,
+      props.lastAllowedExpressionState
     )
 
     this.state = {
@@ -70,7 +97,11 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const { initializeInstructions, allowGoingBack } = this.props
+    const {
+      initializeInstructions,
+      allowGoingBack,
+      maxStepsAllowed
+    } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -95,6 +126,12 @@ export default class ExpressionRunner extends React.Component<
       }
       this.syncState()
     }
+
+    if (maxStepsAllowed) {
+      this.expressionContainerManager.maximumIndex =
+        this.expressionContainerManager.currentIndex + maxStepsAllowed
+      this.syncState()
+    }
   }
 
   public stepForward = () => {
@@ -108,7 +145,12 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public render() {
-    const { showControls, showPriorities, variableSize } = this.props
+    const {
+      showControls,
+      showPriorities,
+      variableSize,
+      disableReadyToHighlightColoring
+    } = this.props
     const { expressionContainerManagerState } = this.state
     return (
       <ExpressionRunnerContext.Provider
@@ -123,17 +165,43 @@ export default class ExpressionRunner extends React.Component<
             line-height: ${lineHeights(1.3, { ignoreLocale: true })};
           `}
         >
-          <ExpressionBox
-            expression={
-              expressionContainerManagerState.expressionContainer.expression
-            }
-          />
+          <ExpressionReadyToHighlightContext.Provider
+            value={{
+              readyToHighlight: expressionContainerManagerState.isDone,
+              disableReadyToHighlightColoring
+            }}
+          >
+            <AlphaConvertContext.Provider
+              value={{
+                conflictingVariableNames:
+                  expressionContainerManagerState.expressionContainer
+                    .conflictingVariableNames
+              }}
+            >
+              <ExpressionBetaReducePreviewContext.Provider
+                value={{
+                  betaReducePreview: betaReducePreview(
+                    expressionContainerManagerState.expressionContainer
+                      .previouslyChangedExpressionState
+                  )
+                }}
+              >
+                <ExpressionBox
+                  expression={
+                    expressionContainerManagerState.expressionContainer
+                      .expression
+                  }
+                />
+              </ExpressionBetaReducePreviewContext.Provider>
+            </AlphaConvertContext.Provider>
+          </ExpressionReadyToHighlightContext.Provider>
           {showControls && (
             <ExpressionRunnerControls
               onNextClick={this.stepForward}
               onPreviousClick={this.stepBackward}
               canStepForward={expressionContainerManagerState.canStepForward}
               canStepBackward={expressionContainerManagerState.canStepBackward}
+              isDone={expressionContainerManagerState.isDone}
             />
           )}
         </div>

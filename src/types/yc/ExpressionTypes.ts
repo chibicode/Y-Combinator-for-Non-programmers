@@ -10,6 +10,9 @@ export interface VariableExpression {
   readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
+  readonly justAlphaConverted?: boolean
+  readonly willBeBetaReduced?: boolean
+  readonly wasJustBetaReduced?: boolean
 }
 
 export function isVariableExpression(
@@ -20,8 +23,12 @@ export function isVariableExpression(
 
 export type CallExpressionStates =
   | CommonStates
+  | 'readyToHighlight'
   | 'needsAlphaConvert'
   | 'readyToBetaReduce'
+  | 'betaReducePreviewBefore'
+  | 'betaReducePreviewAfter'
+  | 'alphaConvertDone'
 
 export type AllExpressionStates = CallExpressionStates
 
@@ -43,6 +50,7 @@ export interface FunctionExpression {
   readonly state: CommonStates
   readonly arg: VariableExpression
   readonly body: Expression
+  readonly wasJustBetaReduced?: boolean
 }
 
 export function isFunctionExpression(

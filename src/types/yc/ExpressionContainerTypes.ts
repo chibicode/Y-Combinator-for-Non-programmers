@@ -8,6 +8,22 @@ export type ExpressionContainerState =
   | 'needsReset'
   | 'done'
 
+export const previouslyChangedExpressionStateOrdered: ReadonlyArray<
+  PreviouslyChangedExpressionState
+> = [
+  'readyToHighlight',
+  'funcBodyJustHighlighted',
+  'funcArgJustHighlighted',
+  'callArgJustHighlighted',
+  'needsAlphaConvert',
+  'readyToBetaReduce',
+  'alphaConvertDone',
+  'betaReducePreviewBefore',
+  'betaReducePreviewAfter',
+  'justBetaReduced',
+  'default'
+]
+
 export type PreviouslyChangedExpressionState =
   | 'callArgJustHighlighted'
   | 'funcArgJustHighlighted'
@@ -19,6 +35,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly containerState: ExpressionContainerState
   readonly previouslyChangedExpressionState: PreviouslyChangedExpressionState
   readonly conflictingVariableNames?: ReadonlyArray<VariableNames>
+  readonly backupExpression?: E
 }
 
 export type PrioritizedExpressionContainer<

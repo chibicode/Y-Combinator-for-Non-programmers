@@ -37,11 +37,6 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerOptions={{
-          skipReadyToBetaReduce: true,
-          skipJustBetaReduced: true,
-          skipDefault: true
-        }}
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -103,6 +98,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>
@@ -177,11 +178,6 @@ export default () => (
         showPriorities={false}
         showControls
         variableSize={'lg'}
-        expressionContainerManagerOptions={{
-          skipReadyToBetaReduce: true,
-          skipJustBetaReduced: true,
-          skipDefault: true
-        }}
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -195,7 +191,7 @@ export default () => (
     </P>
     <Ul>
       <UlLi>
-        <Emoji>🥪</Emoji> The Sandwich remained the same.
+        <Emoji>🥪</Emoji> The sandwich remained the same.
       </UlLi>
       <UlLi>
         <Emoji>😋</Emoji> You ate sushi <Emoji>🍣</Emoji>.
@@ -227,6 +223,12 @@ export default () => (
         showPriorities={false}
         showControls={false}
         variableSize={'lg'}
+        initializeInstructions={[
+          {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: 'readyToHighlight'
+          }
+        ]}
       />
     </ExpressionRunnerWrapper>
     <P>

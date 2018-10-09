@@ -1,10 +1,17 @@
 import produce, { DraftObject } from 'immer'
+import cloneDeep from 'lodash/cloneDeep'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
+import betaReducePreviewBefore from 'src/lib/yc/betaReducePreviewBefore'
+import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
-import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
-import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
+import prioritizeExpressionContainer, {
+  populatePriorityAggsAndPrioritizeExpression
+} from 'src/lib/yc/prioritizeExpressionContainer'
+import resetExpressionContainer, {
+  resetExpression
+} from 'src/lib/yc/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isNeedsResetExpressionContainer,
@@ -33,26 +40,44 @@ export default function stepExpressionContainer(
   e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
 ): SteppedExpressionContainer {
   if (isNeedsResetExpressionContainer(e)) {
-    return prioritizeExpressionContainer(resetExpressionContainer(e))
+    const newContainer = prioritizeExpressionContainer(
+      resetExpressionContainer(e)
+    )
+    const nextCallExpressionAndParent = findNextCallExpressionAndParent(
+      newContainer.expression
+    )
+    if (
+      'notFound' in nextCallExpressionAndParent &&
+      nextCallExpressionAndParent.notFound
+    ) {
+      return {
+        ...newContainer,
+        containerState: 'done'
+      }
+    } else {
+      return newContainer
+    }
   } else {
     return produce<SteppedExpressionContainer>(e, draftContainer => {
       const nextCallExpressionAndParent = findNextCallExpressionAndParent<
         DraftObject<PrioritizedCallExpression>,
         DraftObject<ImmediatelyExecutableCallExpression>,
         DraftObject<PrioritizedFunctionExpression>
-      >(draftContainer.expression)
+      >(draftContainer.backupExpression || draftContainer.expression)
       if (
         'notFound' in nextCallExpressionAndParent &&
         nextCallExpressionAndParent.notFound
       ) {
-        return {
-          ...e,
-          containerState: 'done'
-        }
+        throw new Error()
       } else {
         const expression = nextCallExpressionAndParent.expression
         switch (expression.state) {
           case 'default': {
+            expression.state = 'readyToHighlight'
+            draftContainer.previouslyChangedExpressionState = 'readyToHighlight'
+            break
+          }
+          case 'readyToHighlight': {
             if (expression.func.body.state === 'default') {
               expression.func.body.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =
@@ -87,15 +112,45 @@ export default function stepExpressionContainer(
             const alphaConvertResult = alphaConvert(expression)
             expression.func = alphaConvertResult.func
             expression.arg = alphaConvertResult.arg
-            expression.state = 'readyToBetaReduce'
+            expression.state = 'alphaConvertDone'
             draftContainer.conflictingVariableNames = []
-            draftContainer.previouslyChangedExpressionState =
-              'readyToBetaReduce'
+            draftContainer.previouslyChangedExpressionState = 'alphaConvertDone'
             break
           }
-          case 'readyToBetaReduce': {
+          case 'readyToBetaReduce':
+          case 'alphaConvertDone': {
+            const betaReducePreviewBeforeResult = betaReducePreviewBefore(
+              clearJustAlphaConvertedAndBetaReducePreview(expression)
+            )
+            expression.func = betaReducePreviewBeforeResult.func
+            expression.arg = betaReducePreviewBeforeResult.arg
+            expression.state = 'betaReducePreviewBefore'
+            draftContainer.previouslyChangedExpressionState =
+              'betaReducePreviewBefore'
+            break
+          }
+          case 'betaReducePreviewBefore': {
+            expression.state = 'betaReducePreviewAfter'
+            draftContainer.backupExpression = cloneDeep(
+              draftContainer.expression
+            )
+            const betaReducedFunctionBody: PrioritizedExpression = populatePriorityAggsAndPrioritizeExpression(
+              resetExpression(
+                betaReduce(
+                  clearJustAlphaConvertedAndBetaReducePreview(expression)
+                )
+              )
+            )
+            expression.func.body = betaReducedFunctionBody
+            draftContainer.previouslyChangedExpressionState =
+              'betaReducePreviewAfter'
+            break
+          }
+          case 'betaReducePreviewAfter': {
             const betaReduced: PrioritizedExpression = {
-              ...betaReduce(expression),
+              ...betaReduce(
+                clearJustAlphaConvertedAndBetaReducePreview(expression)
+              ),
               state: 'justBetaReduced'
             }
             if (
@@ -105,6 +160,7 @@ export default function stepExpressionContainer(
               return {
                 ...e,
                 expression: betaReduced,
+                backupExpression: undefined,
                 containerState: 'needsReset',
                 previouslyChangedExpressionState: 'justBetaReduced'
               }
@@ -124,6 +180,10 @@ export default function stepExpressionContainer(
               draftContainer.containerState = 'needsReset'
             }
             draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
+            if (draftContainer.backupExpression) {
+              draftContainer.expression = draftContainer.backupExpression
+              delete draftContainer.backupExpression
+            }
             break
           }
         }
