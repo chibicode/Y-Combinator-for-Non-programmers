@@ -131,7 +131,9 @@ export default function stepExpressionContainer(
           }
           case 'betaReducePreviewBefore': {
             expression.state = 'betaReducePreviewAfter'
-            draftContainer.backupExpression = cloneDeep(expression)
+            draftContainer.backupExpression = cloneDeep(
+              draftContainer.expression
+            )
             const betaReducedFunctionBody: PrioritizedExpression = populatePriorityAggsAndPrioritizeExpression(
               resetExpression(
                 betaReduce(
@@ -158,6 +160,7 @@ export default function stepExpressionContainer(
               return {
                 ...e,
                 expression: betaReduced,
+                backupExpression: undefined,
                 containerState: 'needsReset',
                 previouslyChangedExpressionState: 'justBetaReduced'
               }
@@ -177,6 +180,7 @@ export default function stepExpressionContainer(
               draftContainer.containerState = 'needsReset'
             }
             draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
+            delete draftContainer.backupExpression
             break
           }
         }
