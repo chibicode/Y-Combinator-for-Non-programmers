@@ -1,7 +1,8 @@
 import produce, { DraftObject } from 'immer'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
-import clearJustAlphaConverted from 'src/lib/yc/clearJustAlphaConverted'
+import betaReducePreview from 'src/lib/yc/betaReducePreview'
+import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
@@ -113,8 +114,27 @@ export default function stepExpressionContainer(
           }
           case 'readyToBetaReduce':
           case 'alphaConvertDone': {
+            const betaReducePreviewResult = betaReducePreview(
+              clearJustAlphaConvertedAndBetaReducePreview(expression)
+            )
+            expression.func = betaReducePreviewResult.func
+            expression.arg = betaReducePreviewResult.arg
+            expression.state = 'betaReducePreviewBefore'
+            draftContainer.previouslyChangedExpressionState =
+              'betaReducePreviewBefore'
+            break
+          }
+          case 'betaReducePreviewBefore': {
+            expression.state = 'betaReducePreviewAfter'
+            draftContainer.previouslyChangedExpressionState =
+              'betaReducePreviewAfter'
+            break
+          }
+          case 'betaReducePreviewAfter': {
             const betaReduced: PrioritizedExpression = {
-              ...betaReduce(clearJustAlphaConverted(expression)),
+              ...betaReduce(
+                clearJustAlphaConvertedAndBetaReducePreview(expression)
+              ),
               state: 'justBetaReduced'
             }
             if (

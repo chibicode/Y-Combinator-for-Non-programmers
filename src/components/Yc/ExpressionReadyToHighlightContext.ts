@@ -13,6 +13,8 @@ export const convertCallexpressionStates = (
     case 'readyToHighlight':
     case 'needsAlphaConvert':
     case 'readyToBetaReduce':
+    case 'betaReducePreviewBefore':
+    case 'betaReducePreviewAfter':
     case 'justBetaReduced':
     case 'alphaConvertDone':
       return true

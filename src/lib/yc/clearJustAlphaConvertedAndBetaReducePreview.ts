@@ -25,10 +25,12 @@ function helper<E extends PrioritizedExpression>(expression: E): E {
       arg: helper(expression.arg),
       body: helper(expression.body)
     })
+  } else {
+    throw new Error()
   }
 }
 
-export default function clearJustAlphaConverted(
+export default function clearJustAlphaConvertedAndBetaReducePreview(
   expression: ImmediatelyExecutableCallExpression
 ): ImmediatelyExecutableCallExpression {
   return helper(expression)
