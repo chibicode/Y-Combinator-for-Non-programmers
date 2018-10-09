@@ -75,9 +75,11 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       childVariableWillBeBetaReduced
     ) {
-      // Use yellow 100 to differentiate just in case previously it was yellow 50
       return css`
-        background: ${colors('yellow100')};
+        background-image: url('/static/images/star.svg');
+        background-size: ${variableSize === 'lg' ? 2 : 1}rem
+          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-position: center center;
       `
     } else if (
       (betaReducePreview === 'after' &&
@@ -86,7 +88,10 @@ const background = ({
       justBetaReduced
     ) {
       return css`
-        background: ${colors('yellow100')};
+        background-image: url('/static/images/star.svg');
+        background-size: ${variableSize === 'lg' ? 2 : 1}rem
+          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-position: center center;
       `
     } else {
       return css`
@@ -95,7 +100,7 @@ const background = ({
     }
   } else if (childVariableJustAlphaConverted) {
     return css`
-      background-image: url('/static/images/star.svg');
+      background-image: url('/static/images/bubble.svg');
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
@@ -110,7 +115,7 @@ const background = ({
   ) {
     return css`
       background-image: url(${childVariableHighlightType === 'callArg'
-        ? '/static/images/bubble.svg'
+        ? '/static/images/stripe-reverse.svg'
         : '/static/images/stripe.svg'});
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
