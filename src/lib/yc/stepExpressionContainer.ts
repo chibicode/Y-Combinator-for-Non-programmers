@@ -1,12 +1,17 @@
 import produce, { DraftObject } from 'immer'
+import cloneDeep from 'lodash/cloneDeep'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
 import betaReducePreviewBefore from 'src/lib/yc/betaReducePreviewBefore'
 import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
-import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
-import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
+import prioritizeExpressionContainer, {
+  populatePriorityAggsAndPrioritizeExpression
+} from 'src/lib/yc/prioritizeExpressionContainer'
+import resetExpressionContainer, {
+  resetExpression
+} from 'src/lib/yc/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isNeedsResetExpressionContainer,
@@ -58,7 +63,7 @@ export default function stepExpressionContainer(
         DraftObject<PrioritizedCallExpression>,
         DraftObject<ImmediatelyExecutableCallExpression>,
         DraftObject<PrioritizedFunctionExpression>
-      >(draftContainer.expression)
+      >(draftContainer.backupExpression || draftContainer.expression)
       if (
         'notFound' in nextCallExpressionAndParent &&
         nextCallExpressionAndParent.notFound
@@ -126,6 +131,15 @@ export default function stepExpressionContainer(
           }
           case 'betaReducePreviewBefore': {
             expression.state = 'betaReducePreviewAfter'
+            draftContainer.backupExpression = cloneDeep(expression)
+            const betaReducedFunctionBody: PrioritizedExpression = populatePriorityAggsAndPrioritizeExpression(
+              resetExpression(
+                betaReduce(
+                  clearJustAlphaConvertedAndBetaReducePreview(expression)
+                )
+              )
+            )
+            expression.func.body = betaReducedFunctionBody
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewAfter'
             break

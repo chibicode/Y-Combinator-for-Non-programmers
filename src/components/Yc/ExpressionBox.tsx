@@ -12,6 +12,7 @@ import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
 import {
   isPrioritizedCallExpression,
+  isPrioritizedFunctionExpression,
   isPrioritizedVariableExpression,
   PrioritizedExpression
 } from 'src/types/yc/PrioritizedExpressionTypes'
@@ -67,6 +68,12 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
               childVariableWillBeBetaReduced={
                 isPrioritizedVariableExpression(expression)
                   ? expression.willBeBetaReduced
+                  : undefined
+              }
+              childWasJustBetaReduced={
+                isPrioritizedVariableExpression(expression) ||
+                isPrioritizedFunctionExpression(expression)
+                  ? expression.wasJustBetaReduced
                   : undefined
               }
             >

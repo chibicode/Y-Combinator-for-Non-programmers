@@ -26,6 +26,7 @@ interface BorderWrapperProps {
   childVariableHighlightType?: ExpressionHighlighterContextProps['highlightType']
   childVariableJustAlphaConverted?: boolean
   childVariableWillBeBetaReduced?: boolean
+  childWasJustBetaReduced?: boolean
 }
 
 export const readyToHighlightToColor = (x?: boolean) =>
@@ -52,7 +53,8 @@ const background = ({
   childVariableHighlightType,
   childVariableJustAlphaConverted,
   betaReducePreview,
-  childVariableWillBeBetaReduced
+  childVariableWillBeBetaReduced,
+  justBetaReduced
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -64,6 +66,7 @@ const background = ({
   childVariableJustAlphaConverted?: BorderWrapperProps['childVariableJustAlphaConverted']
   betaReducePreview?: ExpressionBetaReducePreviewContextProps['betaReducePreview']
   childVariableWillBeBetaReduced?: boolean
+  justBetaReduced?: boolean
 }) => {
   if (betaReducePreview) {
     if (
@@ -80,7 +83,7 @@ const background = ({
       (betaReducePreview === 'after' &&
         (childVariableHighlightType === 'callArg' ||
           childVariableHighlightType === 'funcArg')) ||
-      childVariableWillBeBetaReduced
+      justBetaReduced
     ) {
       return css`
         background: ${colors('yellow100')};
@@ -146,50 +149,62 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   childVariableName,
   childVariableHighlightType,
   childVariableJustAlphaConverted,
-  childVariableWillBeBetaReduced
+  childVariableWillBeBetaReduced,
+  childWasJustBetaReduced
 }) => (
   <ExpressionBetaReducePreviewContext.Consumer>
-    {({ betaReducePreview }) => (
-      <ExpressionRunnerContext.Consumer>
-        {({ variableSize }) => (
-          <ExpressionReadyToHighlightContext.Consumer>
-            {({ readyToHighlight, disableReadyToHighlightColoring }) => (
-              <AlphaConvertContext.Consumer>
-                {({ conflictingVariableNames }) => (
-                  <Flex
-                    className={cx(
-                      css`
-                        margin: -2px;
-                        border: 2px solid ${colors('indigo300')};
-                        align-items: center;
-                        flex: 1;
-                        position: relative;
-                      `,
-                      background({
-                        state,
-                        betaReducePreview,
-                        disableReadyToHighlightColoring,
-                        readyToHighlight,
-                        conflictingVariableNames,
-                        childVariableName,
-                        variableSize,
-                        childVariableHighlightType,
-                        childVariableJustAlphaConverted,
-                        childVariableWillBeBetaReduced
-                      })
-                    )}
-                  >
-                    {betaReducePreview === 'after' &&
-                      (childVariableHighlightType === 'callArg' ||
-                        childVariableHighlightType === 'funcArg') && <Cross />}
-                    {children}
-                  </Flex>
-                )}
-              </AlphaConvertContext.Consumer>
-            )}
-          </ExpressionReadyToHighlightContext.Consumer>
-        )}
-      </ExpressionRunnerContext.Consumer>
+    {({ betaReducePreview, wasJustBetaReduced }) => (
+      <ExpressionBetaReducePreviewContext.Provider
+        value={{
+          betaReducePreview,
+          wasJustBetaReduced: wasJustBetaReduced || childWasJustBetaReduced
+        }}
+      >
+        <ExpressionRunnerContext.Consumer>
+          {({ variableSize }) => (
+            <ExpressionReadyToHighlightContext.Consumer>
+              {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+                <AlphaConvertContext.Consumer>
+                  {({ conflictingVariableNames }) => (
+                    <Flex
+                      className={cx(
+                        css`
+                          margin: -2px;
+                          border: 2px solid ${colors('indigo300')};
+                          align-items: center;
+                          flex: 1;
+                          position: relative;
+                        `,
+                        background({
+                          state,
+                          betaReducePreview,
+                          disableReadyToHighlightColoring,
+                          readyToHighlight,
+                          conflictingVariableNames,
+                          childVariableName,
+                          variableSize,
+                          childVariableHighlightType,
+                          childVariableJustAlphaConverted,
+                          childVariableWillBeBetaReduced,
+                          justBetaReduced:
+                            wasJustBetaReduced || childWasJustBetaReduced
+                        })
+                      )}
+                    >
+                      {betaReducePreview === 'after' &&
+                        (childVariableHighlightType === 'callArg' ||
+                          childVariableHighlightType === 'funcArg') && (
+                          <Cross />
+                        )}
+                      {children}
+                    </Flex>
+                  )}
+                </AlphaConvertContext.Consumer>
+              )}
+            </ExpressionReadyToHighlightContext.Consumer>
+          )}
+        </ExpressionRunnerContext.Consumer>
+      </ExpressionBetaReducePreviewContext.Provider>
     )}
   </ExpressionBetaReducePreviewContext.Consumer>
 )

@@ -35,7 +35,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly containerState: ExpressionContainerState
   readonly previouslyChangedExpressionState: PreviouslyChangedExpressionState
   readonly conflictingVariableNames?: ReadonlyArray<VariableNames>
-  readonly tempBetaReducedExpression?: E
+  readonly backupExpression?: E
 }
 
 export type PrioritizedExpressionContainer<

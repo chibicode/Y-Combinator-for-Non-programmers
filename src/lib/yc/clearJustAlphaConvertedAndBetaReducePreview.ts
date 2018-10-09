@@ -13,7 +13,8 @@ function helper<E extends PrioritizedExpression>(expression: E): E {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, expression, {
         justAlphaConverted: false,
-        willBeBetaReduced: false
+        willBeBetaReduced: false,
+        wasJustBetaReduced: false
       })
     } else {
       return expression
@@ -26,7 +27,8 @@ function helper<E extends PrioritizedExpression>(expression: E): E {
   } else if (isPrioritizedFunctionExpression(expression)) {
     return Object.assign({}, expression, {
       arg: helper(expression.arg),
-      body: helper(expression.body)
+      body: helper(expression.body),
+      wasJustBetaReduced: false
     })
   } else {
     throw new Error()

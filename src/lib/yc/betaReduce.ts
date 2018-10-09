@@ -21,7 +21,8 @@ function helper({
 }): PrioritizedExpression {
   if (isVariableExpression(expression)) {
     if (expression.name === from) {
-      return to
+      // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
+      return Object.assign({}, to, { wasJustBetaReduced: true })
     } else {
       return expression
     }

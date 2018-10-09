@@ -12,6 +12,7 @@ export interface VariableExpression {
   readonly name: VariableNames
   readonly justAlphaConverted?: boolean
   readonly willBeBetaReduced?: boolean
+  readonly wasJustBetaReduced?: boolean
 }
 
 export function isVariableExpression(
@@ -49,6 +50,7 @@ export interface FunctionExpression {
   readonly state: CommonStates
   readonly arg: VariableExpression
   readonly body: Expression
+  readonly wasJustBetaReduced?: boolean
 }
 
 export function isFunctionExpression(

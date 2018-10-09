@@ -2,7 +2,6 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import { readyToHighlightToColor } from 'src/components/Yc/BorderWrapper'
 import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
@@ -24,6 +23,9 @@ interface ExpressionPrioritiesLabelState {
 
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
 
+export const priorityLabelColorForReadyToHighlight = (x?: boolean) =>
+  x ? 'transparent' : 'indigo50'
+
 const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
   children,
   position,
@@ -44,7 +46,7 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
                 height: ${1.5 * (variableSize === 'lg' ? 1.07 : 1)}em;
                 line-height: 1;
                 background: ${colors(
-                  readyToHighlightToColor(
+                  priorityLabelColorForReadyToHighlight(
                     disableReadyToHighlightColoring || readyToHighlight
                   )
                 )};

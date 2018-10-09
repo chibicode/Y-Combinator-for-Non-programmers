@@ -10,7 +10,7 @@ import {
   isVariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-function resetExpression<E extends Expression>(expression: E): E {
+export function resetExpression<E extends Expression>(expression: E): E {
   if (isVariableExpression(expression)) {
     // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
     return Object.assign({}, expression, {
