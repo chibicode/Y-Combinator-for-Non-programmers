@@ -1,6 +1,9 @@
 import { extractCritical } from 'emotion-server'
 import Document, { Head, Main, NextScript } from 'next/document'
 
+// https://stackoverflow.com/a/8877902/114157
+const onTouchStart = () => undefined
+
 export default class MyDocument extends Document<{
   css: string
   ids: string[]
@@ -26,7 +29,7 @@ export default class MyDocument extends Document<{
         <Head>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
-        <body>
+        <body onTouchStart={onTouchStart}>
           <Main />
           <NextScript />
         </body>
