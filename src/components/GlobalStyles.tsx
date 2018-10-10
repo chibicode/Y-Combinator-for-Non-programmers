@@ -23,6 +23,7 @@ injectGlobal`
 
   svg {
     height: 100%;
+    width: auto;
   }
 
   /* https://github.com/twbs/bootstrap/issues/18044#issuecomment-150826143 */

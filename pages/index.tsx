@@ -12,6 +12,8 @@ import {
   ns,
   spaces
 } from 'src/lib/theme'
+// https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
+import Logo from '../src/images/logo-svg-text-indigo.svg'
 
 const Index: React.SFC<{}> = () => (
   <Page>
@@ -41,13 +43,14 @@ const Index: React.SFC<{}> = () => (
               font-size: ${fontSizes(1.75)};
             `}
           >
-            <img
-              src="/static/images/logo-svg-text-indigo.svg"
-              alt="Hoshiai"
+            <span
               className={css`
+                display: inline-block;
                 height: 2em;
               `}
-            />
+            >
+              <Logo />
+            </span>
           </h1>
           <Content name="others/Welcome" />
         </div>
