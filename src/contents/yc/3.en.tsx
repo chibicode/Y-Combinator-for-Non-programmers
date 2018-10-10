@@ -67,7 +67,7 @@ export default () => (
         initializeInstructions={[
           {
             type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToBetaReduce'
+            state: 'callArgJustHighlighted'
           }
         ]}
       />
