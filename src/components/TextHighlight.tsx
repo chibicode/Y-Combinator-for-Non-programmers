@@ -8,7 +8,7 @@ const TextHighlight: React.SFC<{ children: React.ReactNode }> = ({
   <span
     className={css`
       background: ${colors(`yellow200`)};
-      color: ${colors('indigo400')};
+      color: ${colors('indigo500')};
     `}
   >
     {children}

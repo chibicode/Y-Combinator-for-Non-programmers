@@ -1,8 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
-import { Em, Strong } from 'src/components/ContentTags'
-import h from 'src/lib/h'
-import { spaces } from 'src/lib/theme'
+import { Strong } from 'src/components/ContentTags'
+import { colors, fontSizes, spaces } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 
 interface ExpressionRunnerExplanationProps {
@@ -18,6 +17,8 @@ const ExpressionRunnerExplanation: React.SFC<
     className={css`
       text-align: center;
       margin: ${spaces(0.75)} -2px 0 -2px;
+      font-size: ${fontSizes(0.85)};
+      color: ${colors('indigo300')};
     `}
   >
     <Strong>Step {currentStep}:</Strong> Hello World
