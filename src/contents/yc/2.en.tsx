@@ -82,6 +82,7 @@ export default () => (
     <ExpressionRunner
       expressionContainer={episode2Expression1}
       showPriorities={false}
+      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -104,6 +105,7 @@ export default () => (
     <ExpressionRunner
       expressionContainer={episode2Expression1}
       showPriorities={false}
+      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -123,6 +125,7 @@ export default () => (
     <ExpressionRunner
       expressionContainer={episode2Expression1}
       showPriorities={false}
+      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -143,6 +146,7 @@ export default () => (
     <ExpressionRunner
       expressionContainer={episode2Expression1}
       showPriorities={false}
+      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -174,6 +178,7 @@ export default () => (
     <ExpressionRunner
       expressionContainer={episode2Expression2}
       showPriorities={false}
+      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
