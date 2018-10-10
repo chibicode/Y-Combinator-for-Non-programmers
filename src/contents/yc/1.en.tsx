@@ -118,16 +118,16 @@ export default () => (
     </P>
     <Ol size="lg">
       <OlLi>
-        <Emoji size="lg">🌮</Emoji> <Emoji size="lg">🥪</Emoji>{' '}
-        <Emoji size="lg">🥗</Emoji>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🌮</Emoji>{' '}
+        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">🥩</Emoji> <Emoji size="lg">🌮</Emoji>{' '}
-        <Emoji size="lg">🥗</Emoji>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}
+        <Emoji size="lg">🌮</Emoji> <Emoji size="lg">🥗</Emoji>
       </OlLi>
       <OlLi>
-        <Emoji size="lg">🥩</Emoji> <Emoji size="lg">🥪</Emoji>{' '}
-        <Emoji size="lg">🌮</Emoji>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}
+        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
       </OlLi>
     </Ol>
     <P>Go to the next episode to find out the answer!</P>
