@@ -11,6 +11,7 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
+import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
 import ExpressionContainerManager, {
   ExpressionContainerSkipOptions
@@ -46,6 +47,8 @@ interface ExpressionRunnerProps {
   disableReadyToHighlightColoring: boolean
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
+  indexOffset: number
+  showExplanations: boolean
 }
 
 interface ExpressionRunnerState {
@@ -71,6 +74,7 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
+    showExplanations: true,
     variableSize: expressionRunnerContextDefault.variableSize,
     allowGoingBack: false,
     initializeInstructions: [],
@@ -78,17 +82,25 @@ export default class ExpressionRunner extends React.Component<
     expressionContainerManagerSkipOptions: {
       readyToBetaReduce: true,
       justBetaReduced: true
-    }
+    },
+    indexOffset: 0
   }
   private expressionContainerManager: ExpressionContainerManager
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
-    this.expressionContainerManager = new ExpressionContainerManager(
-      props.expressionContainer,
-      props.expressionContainerManagerSkipOptions,
-      props.lastAllowedExpressionState
-    )
+    const {
+      expressionContainer,
+      expressionContainerManagerSkipOptions,
+      lastAllowedExpressionState,
+      indexOffset
+    } = props
+    this.expressionContainerManager = new ExpressionContainerManager({
+      expressionContainer,
+      skipOptions: expressionContainerManagerSkipOptions,
+      lastAllowedExpressionState,
+      indexOffset
+    })
 
     this.state = {
       expressionContainerManagerState: this.expressionContainerManager
@@ -124,6 +136,7 @@ export default class ExpressionRunner extends React.Component<
       if (!allowGoingBack) {
         this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
       }
+      this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
       this.syncState()
     }
 
@@ -165,6 +178,15 @@ export default class ExpressionRunner extends React.Component<
             line-height: ${lineHeights(1.3, { ignoreLocale: true })};
           `}
         >
+          {showControls && (
+            <ExpressionRunnerControls
+              onNextClick={this.stepForward}
+              onPreviousClick={this.stepBackward}
+              canStepForward={expressionContainerManagerState.canStepForward}
+              canStepBackward={expressionContainerManagerState.canStepBackward}
+              isDone={expressionContainerManagerState.isDone}
+            />
+          )}
           <ExpressionReadyToHighlightContext.Provider
             value={{
               readyToHighlight: expressionContainerManagerState.isDone,
@@ -196,12 +218,12 @@ export default class ExpressionRunner extends React.Component<
             </AlphaConvertContext.Provider>
           </ExpressionReadyToHighlightContext.Provider>
           {showControls && (
-            <ExpressionRunnerControls
-              onNextClick={this.stepForward}
-              onPreviousClick={this.stepBackward}
-              canStepForward={expressionContainerManagerState.canStepForward}
-              canStepBackward={expressionContainerManagerState.canStepBackward}
+            <ExpressionRunnerExplanation
+              expressionContaienr={
+                expressionContainerManagerState.expressionContainer
+              }
               isDone={expressionContainerManagerState.isDone}
+              currentStep={expressionContainerManagerState.currentStep}
             />
           )}
         </div>
