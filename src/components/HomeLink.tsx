@@ -24,7 +24,10 @@ const HomeLink: React.SFC<HomeLink> = ({
         color: ${colors('pink400')};
         text-decoration: underline;
 
-        &:hover,
+        &:hover {
+          background: ${colors('yellow200')};
+        }
+
         &:active {
           background: ${colors('yellow200')};
         }

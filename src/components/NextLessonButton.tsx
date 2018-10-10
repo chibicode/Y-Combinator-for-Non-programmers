@@ -36,11 +36,16 @@ const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
           text-decoration: none;
           line-height: ${lineHeights(1.3)};
           -webkit-user-select: none;
+
           &:focus {
-            box-shadow: 0 0 0 1pt ${colors('pink700')};
+            background: ${colors('pink500')};
             outline: none;
           }
-          &:hover,
+
+          &:hover {
+            background: ${colors('pink500')};
+          }
+
           &:active {
             background: ${colors('pink500')};
           }

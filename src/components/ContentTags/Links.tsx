@@ -4,7 +4,10 @@ import React from 'react'
 import { colors } from 'src/lib/theme'
 
 const commonLinkClass = css`
-  &:hover,
+  &:hover {
+    background-color: ${colors('pink50')};
+  }
+
   &:active {
     background-color: ${colors('pink50')};
   }
