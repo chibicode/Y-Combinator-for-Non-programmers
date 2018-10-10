@@ -219,7 +219,7 @@ export default class ExpressionRunner extends React.Component<
           </ExpressionReadyToHighlightContext.Provider>
           {showControls && (
             <ExpressionRunnerExplanation
-              expressionContaienr={
+              expressionContainer={
                 expressionContainerManagerState.expressionContainer
               }
               isDone={expressionContainerManagerState.isDone}
