@@ -35,6 +35,7 @@ const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
           color: #fff;
           text-decoration: none;
           line-height: ${lineHeights(1.3)};
+          -webkit-user-select: none;
           &:focus {
             box-shadow: 0 0 0 1pt ${colors('pink700')};
             outline: none;

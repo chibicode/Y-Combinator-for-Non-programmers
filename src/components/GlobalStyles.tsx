@@ -28,6 +28,11 @@ injectGlobal`
 
   /* https://github.com/twbs/bootstrap/issues/18044#issuecomment-150826143 */
   html, body { touch-action: manipulation; }
+
+  button {
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
 `
 
 const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({

@@ -21,7 +21,8 @@ const ExpressionRunnerExplanation: React.SFC<
       color: ${colors('indigo300')};
     `}
   >
-    <Strong>Step {currentStep}:</Strong> Hello World
+    <Strong>Step {currentStep}:</Strong>{' '}
+    {[...new Array(currentStep)].map(_ => 'Hello World Hello World ')}
   </div>
 )
 

@@ -86,6 +86,7 @@ export default class ExpressionRunner extends React.Component<
     indexOffset: 0
   }
   private expressionContainerManager: ExpressionContainerManager
+  private controlsRef = React.createRef<HTMLDivElement>()
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
@@ -147,20 +148,11 @@ export default class ExpressionRunner extends React.Component<
     }
   }
 
-  public stepForward = () => {
-    this.expressionContainerManager.stepForward()
-    this.syncState()
-  }
-
-  public stepBackward = () => {
-    this.expressionContainerManager.stepBackward()
-    this.syncState()
-  }
-
   public render() {
     const {
       showControls,
       showPriorities,
+      showExplanations,
       variableSize,
       disableReadyToHighlightColoring
     } = this.props
@@ -175,49 +167,45 @@ export default class ExpressionRunner extends React.Component<
         <div
           className={css`
             max-width: 100%;
-            line-height: ${lineHeights(1.3, { ignoreLocale: true })};
           `}
         >
-          {showControls && (
-            <ExpressionRunnerControls
-              onNextClick={this.stepForward}
-              onPreviousClick={this.stepBackward}
-              canStepForward={expressionContainerManagerState.canStepForward}
-              canStepBackward={expressionContainerManagerState.canStepBackward}
-              isDone={expressionContainerManagerState.isDone}
-            />
-          )}
-          <ExpressionReadyToHighlightContext.Provider
-            value={{
-              readyToHighlight: expressionContainerManagerState.isDone,
-              disableReadyToHighlightColoring
-            }}
+          <div
+            className={css`
+              line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+            `}
           >
-            <AlphaConvertContext.Provider
+            <ExpressionReadyToHighlightContext.Provider
               value={{
-                conflictingVariableNames:
-                  expressionContainerManagerState.expressionContainer
-                    .conflictingVariableNames
+                readyToHighlight: expressionContainerManagerState.isDone,
+                disableReadyToHighlightColoring
               }}
             >
-              <ExpressionBetaReducePreviewContext.Provider
+              <AlphaConvertContext.Provider
                 value={{
-                  betaReducePreview: betaReducePreview(
+                  conflictingVariableNames:
                     expressionContainerManagerState.expressionContainer
-                      .previouslyChangedExpressionState
-                  )
+                      .conflictingVariableNames
                 }}
               >
-                <ExpressionBox
-                  expression={
-                    expressionContainerManagerState.expressionContainer
-                      .expression
-                  }
-                />
-              </ExpressionBetaReducePreviewContext.Provider>
-            </AlphaConvertContext.Provider>
-          </ExpressionReadyToHighlightContext.Provider>
-          {showControls && (
+                <ExpressionBetaReducePreviewContext.Provider
+                  value={{
+                    betaReducePreview: betaReducePreview(
+                      expressionContainerManagerState.expressionContainer
+                        .previouslyChangedExpressionState
+                    )
+                  }}
+                >
+                  <ExpressionBox
+                    expression={
+                      expressionContainerManagerState.expressionContainer
+                        .expression
+                    }
+                  />
+                </ExpressionBetaReducePreviewContext.Provider>
+              </AlphaConvertContext.Provider>
+            </ExpressionReadyToHighlightContext.Provider>
+          </div>
+          {showExplanations && (
             <ExpressionRunnerExplanation
               expressionContainer={
                 expressionContainerManagerState.expressionContainer
@@ -226,15 +214,56 @@ export default class ExpressionRunner extends React.Component<
               currentStep={expressionContainerManagerState.currentStep}
             />
           )}
+          {showControls && (
+            <div ref={this.controlsRef}>
+              <ExpressionRunnerControls
+                onNextClick={this.stepForward}
+                onPreviousClick={this.stepBackward}
+                canStepForward={expressionContainerManagerState.canStepForward}
+                canStepBackward={
+                  expressionContainerManagerState.canStepBackward
+                }
+                isDone={expressionContainerManagerState.isDone}
+              />
+            </div>
+          )}
         </div>
       </ExpressionRunnerContext.Provider>
     )
   }
 
-  private syncState() {
-    this.setState({
-      expressionContainerManagerState: this.expressionContainerManager
-        .currentState
+  private stepForward = () => {
+    this.step('forward')
+  }
+
+  private stepBackward = () => {
+    this.step('backward')
+  }
+
+  private step(direction: 'forward' | 'backward') {
+    const previousOffsetTop = this.controlsRef.current!.offsetTop
+    if (direction === 'forward') {
+      this.expressionContainerManager.stepForward()
+    } else {
+      this.expressionContainerManager.stepBackward()
+    }
+    this.syncState(() => {
+      window.scroll(
+        0,
+        window.pageYOffset +
+          this.controlsRef.current!.offsetTop -
+          previousOffsetTop
+      )
     })
+  }
+
+  private syncState(callback?: () => void) {
+    this.setState(
+      {
+        expressionContainerManagerState: this.expressionContainerManager
+          .currentState
+      },
+      callback
+    )
   }
 }

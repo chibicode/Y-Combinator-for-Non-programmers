@@ -54,7 +54,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
   <div
     className={css`
       display: flex;
-      margin: 0 -2px ${spaces(0.75)} -2px;
+      margin: ${spaces(0.75)} -2px 0 -2px;
     `}
   >
     {canStepBackward ? (

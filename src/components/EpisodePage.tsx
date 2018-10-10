@@ -137,7 +137,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
             <a
               className={css`
                 display: inline-block;
-                height: ${spaces(1.75)};
+                height: ${fontSizes(1.75)};
               `}
             >
               <Logo />
