@@ -14,6 +14,11 @@ import ExpressionReadyToHighlightContext, {
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import bubbleSvg from 'src/images/bubble.url.svg'
+import crossSvg from 'src/images/cross.url.svg'
+import starSvg from 'src/images/star.url.svg'
+import stripeReverseSvg from 'src/images/stripe-reverse.url.svg'
+import stripeSvg from 'src/images/stripe.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
 import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
@@ -76,7 +81,7 @@ const background = ({
       childVariableWillBeBetaReduced
     ) {
       return css`
-        background-image: url('/static/images/star.svg');
+        background-image: url(${starSvg});
         background-size: ${variableSize === 'lg' ? 2 : 1}rem
           ${variableSize === 'lg' ? 2 : 1}rem;
         background-position: center center;
@@ -88,7 +93,7 @@ const background = ({
       justBetaReduced
     ) {
       return css`
-        background-image: url('/static/images/star.svg');
+        background-image: url(${starSvg});
         background-size: ${variableSize === 'lg' ? 2 : 1}rem
           ${variableSize === 'lg' ? 2 : 1}rem;
         background-position: center center;
@@ -100,7 +105,7 @@ const background = ({
     }
   } else if (childVariableJustAlphaConverted) {
     return css`
-      background-image: url('/static/images/bubble.svg');
+      background-image: url(${bubbleSvg});
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
@@ -115,8 +120,8 @@ const background = ({
   ) {
     return css`
       background-image: url(${childVariableHighlightType === 'callArg'
-        ? '/static/images/stripe-reverse.svg'
-        : '/static/images/stripe.svg'});
+        ? stripeReverseSvg
+        : stripeSvg});
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
@@ -142,7 +147,7 @@ const Cross: React.SFC<{}> = () => (
       right: 0;
       bottom: 0;
       z-index: ${zIndices('cross')};
-      background-image: url('/static/images/cross.svg');
+      background-image: url(${crossSvg});
       background-size: 100% 100%;
     `}
   />

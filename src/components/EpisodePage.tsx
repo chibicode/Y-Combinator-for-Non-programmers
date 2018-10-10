@@ -22,6 +22,8 @@ import {
   ns,
   spaces
 } from 'src/lib/theme'
+// https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
+import Logo from '../images/Hoshiai-Logo.svg'
 
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
@@ -132,14 +134,13 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
           `}
         >
           <Link href="/">
-            <a>
-              <img
-                src="/static/images/logo-svg-text-indigo.svg"
-                alt="Hoshiai"
-                className={css`
-                  height: ${spaces(1.75)};
-                `}
-              />
+            <a
+              className={css`
+                display: inline-block;
+                height: ${fontSizes(1.75)};
+              `}
+            >
+              <Logo />
             </a>
           </Link>
         </div>

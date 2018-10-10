@@ -41,10 +41,15 @@ export default () => (
       </UlLi>
     </Ul>
     <P>
-      <Strong>The answer is</Strong>: <Emoji size="lg">🥩</Emoji>{' '}
-      <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>. The salad is
-      replaced with tacos. Hope you got it right!
+      <Strong>Answer:</Strong> On the next step, it becomes:
     </P>
+    <Ul size="lg">
+      <UlLi>
+        <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}
+        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
+      </UlLi>
+    </Ul>
+    <P>The salad is replaced with tacos. Hope you got it right!</P>
     <H3>Interactive Bento Box</H3>
     <P>
       Now, let’s move on to the next topic: <Strong>Bento Boxes</Strong>.

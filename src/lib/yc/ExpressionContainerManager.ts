@@ -17,25 +17,36 @@ export default class ExpressionContainerManager {
       expressionContainer: this.currentExpressionContainer,
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
-      isDone: this.isDone
+      isDone: this.isDone,
+      currentStep: this.currentIndex - this.startIndex + this.indexOffset + 1
     }
   }
   public expressionContainers: SteppedExpressionContainer[] = []
   public currentIndex = 0
+  public startIndex = 0
   public minimumIndex = 0
+  public indexOffset = 0
   public maximumIndex = 999
   public skipOptions: ExpressionContainerSkipOptions = {}
   public lastAllowedExpressionState?: PreviouslyChangedExpressionState
 
-  constructor(
-    expressionContainer: SteppedExpressionContainer,
-    options?: ExpressionContainerSkipOptions,
+  constructor({
+    expressionContainer,
+    skipOptions,
+    lastAllowedExpressionState,
+    indexOffset
+  }: {
+    expressionContainer: SteppedExpressionContainer
+    skipOptions?: ExpressionContainerSkipOptions
     lastAllowedExpressionState?: PreviouslyChangedExpressionState
-  ) {
+    indexOffset?: number
+  }) {
     this.expressionContainers.push(expressionContainer)
-    this.skipOptions = options || {}
+    this.skipOptions = skipOptions || {}
     this.lastAllowedExpressionState = lastAllowedExpressionState
+    this.indexOffset = indexOffset || 0
   }
+
   public stepBackward() {
     if (this.canStepBackward) {
       this.currentIndex -= 1

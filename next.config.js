@@ -9,6 +9,13 @@ const config = withCSS(
       config.resolve.alias = {
         src: path.resolve(__dirname, 'src')
       }
+      config.module.rules.push({
+        test: /\.url.svg$/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {}
+        }
+      })
       return config
     }
   })

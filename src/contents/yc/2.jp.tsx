@@ -42,10 +42,15 @@ export default () => (
       </UlLi>
     </Ul>
     <P>
-      <Strong>次のステップにはこうなります</Strong>: <Emoji size="lg">🥩</Emoji>{' '}
-      <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>{' '}
-      タコスがサラダと入れ替わるわけです。みごと正解されましたか？
+      <Strong>答え:</Strong> 次のステップにはこうなります。
     </P>
+    <Ul size="lg">
+      <UlLi>
+        <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥩</Emoji>{' '}
+        <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
+      </UlLi>
+    </Ul>
+    <P>タコスがサラダと入れ替わります。正解できましたか？</P>
     <P>
       それでは次に、今回の話の肝となる「
       <Strong>不思議な弁当箱</Strong>
