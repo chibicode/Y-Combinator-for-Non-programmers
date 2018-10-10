@@ -13,7 +13,7 @@ import {
   spaces
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../src/images/logo-svg-text-indigo.svg'
+import Logo from '../src/images/Hoshiai-Logo.svg'
 
 const Index: React.SFC<{}> = () => (
   <Page>

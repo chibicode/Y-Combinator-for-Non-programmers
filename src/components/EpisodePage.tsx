@@ -23,7 +23,7 @@ import {
   spaces
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../images/logo-svg-text-indigo.svg'
+import Logo from '../images/Hoshiai-Logo.svg'
 
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
