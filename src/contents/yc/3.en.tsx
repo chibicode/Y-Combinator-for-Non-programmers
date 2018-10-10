@@ -32,6 +32,7 @@ export default () => (
       expressionContainer={episode2Expression2}
       showPriorities={false}
       showControls={false}
+      showExplanations={false}
       variableSize={'lg'}
       initializeInstructions={[
         {
