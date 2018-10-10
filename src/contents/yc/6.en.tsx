@@ -12,7 +12,7 @@ import {
 } from 'src/components/ContentTags'
 // import Emoji from 'src/components/Emoji'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
-// import NextLessonButton from 'src/components/NextLessonButton'
+// import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 // import InlineBackground from 'src/components/Yc/InlineBackground'
 // import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'

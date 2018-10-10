@@ -10,7 +10,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import NextLessonButton from 'src/components/NextLessonButton'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
@@ -233,14 +233,6 @@ export default () => (
         }
       ]}
     />
-    <NextLessonButton
-      href={yc(5)}
-      primaryText={<>Check My Answer</>}
-      secondaryText={
-        <>
-          Continue to Episode 5 <Emoji>🙂</Emoji>
-        </>
-      }
-    />
+    <YcNextLessonButton nextEpisodeNumber={5} />
   </>
 )

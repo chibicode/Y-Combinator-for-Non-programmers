@@ -10,23 +10,9 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import NextLessonButton from 'src/components/NextLessonButton'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { yc } from 'src/lib/pathHelpers'
-
-const CommonNextLessonButton = () => (
-  <NextLessonButton
-    href={yc(1)}
-    primaryText={<>次のページに進む</>}
-    secondaryText={
-      <>
-        第1章へ <Emoji>🙂</Emoji>
-      </>
-    }
-  />
-)
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 
 export default () => (
   <>
@@ -158,7 +144,7 @@ export default () => (
       「面白そう、Yコンビネーターについて学んでみたい！」と思った方は、下のボタンをクリックして先に進んでみてください。最初から最後まで、
       <Em>無料で閲覧できます</Em>。
     </P>
-    <CommonNextLessonButton />
+    <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
     <SideNoteSection heading="あ、自己紹介が遅れました!">
       <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
       <P
@@ -182,6 +168,6 @@ export default () => (
       <Strong>自己紹介も終えたところで、</Strong>
       ぜひ先に進んでみてください!
     </P>
-    <CommonNextLessonButton />
+    <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
   </>
 )

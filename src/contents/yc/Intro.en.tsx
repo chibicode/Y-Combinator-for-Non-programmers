@@ -12,21 +12,8 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import NextLessonButton from 'src/components/NextLessonButton'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { yc } from 'src/lib/pathHelpers'
-
-const CommonNextLessonButton = () => (
-  <NextLessonButton
-    href={yc(1)}
-    primaryText={<>OK, Let's Go!</>}
-    secondaryText={
-      <>
-        Continue to Episode 1 <Emoji>🙂</Emoji>
-      </>
-    }
-  />
-)
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 
 export default () => (
   <>
@@ -168,7 +155,7 @@ export default () => (
       <Strong>So:</Strong> If you're interested in learning about Y Combinator,
       please click the button below. Don’t worry, <Em>this article is free</Em>.
     </P>
-    <CommonNextLessonButton />
+    <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
     <SideNoteSection heading="Who’s writing this?">
       <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
       <P
@@ -209,6 +196,6 @@ export default () => (
       <Strong>Alright.</Strong> Now that you know who I am… Are you ready to go
       to the next page? Again, <Em>this article is free</Em>.
     </P>
-    <CommonNextLessonButton />
+    <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
   </>
 )

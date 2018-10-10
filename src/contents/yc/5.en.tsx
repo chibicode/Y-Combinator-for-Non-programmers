@@ -12,7 +12,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import NextLessonButton from 'src/components/NextLessonButton'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
@@ -254,14 +254,6 @@ export default () => (
     <P>
       <Em>This is a hard question</Em>. So don’t worry if you have no idea.
     </P>
-    <NextLessonButton
-      href={yc(6)}
-      primaryText={<>Check My Answer</>}
-      secondaryText={
-        <>
-          Continue to Episode 6 <Emoji>🙂</Emoji>
-        </>
-      }
-    />
+    <YcNextLessonButton nextEpisodeNumber={6} />
   </>
 )

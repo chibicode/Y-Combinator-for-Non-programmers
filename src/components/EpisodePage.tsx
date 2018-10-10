@@ -9,10 +9,9 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import Page from 'src/components/Page'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
-import locale from 'src/lib/locale'
+import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
 import pathHelpers from 'src/lib/pathHelpers'
-import t from 'src/lib/t'
 import {
   colors,
   fontSizes,
@@ -87,7 +86,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
               >
                 ←{' '}
                 {episodeNumber === 1
-                  ? t('introductionPage')
+                  ? h('introductionPageLink')
                   : episodeTitlePrefix(episodeNumber - 1)}
               </InternalLink>
             )}
@@ -102,7 +101,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
             href={pathHelpers[lessonName]('toc')}
             className={navigationLinkClasses}
           >
-            {locale === 'en' ? 'View All Episodes' : '目次'}
+            {h('indexPageLink')}
           </InternalLink>{' '}
         </div>
         <div
