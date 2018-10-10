@@ -7,6 +7,8 @@ import { NOT_SMALL } from 'src/lib/theme/ns'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
+  /* NOTE:
+     double-tap optimization was removed: https://github.com/twbs/bootstrap/commit/2e15b9488874d8c129e6bd4da0425ecbac359c03 */
   html {
     font-size: 18px;
   }
@@ -25,9 +27,6 @@ injectGlobal`
     height: 100%;
     width: auto;
   }
-
-  /* https://github.com/twbs/bootstrap/issues/18044#issuecomment-150826143 */
-  html, body { touch-action: manipulation; }
 
   button {
     -webkit-user-select: none;
