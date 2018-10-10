@@ -14,7 +14,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
@@ -80,20 +79,18 @@ export default () => (
       . Here’s what it looks like. Each cell has a food item. It kind of looks
       like a bento box, right?
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>But what does each cell mean?</Strong> Let me explain.
     </P>
@@ -104,20 +101,18 @@ export default () => (
       </Em>{' '}
       In this case, the only available dish is sushi <Emoji>🍣</Emoji>.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcBodyJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcBodyJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Em>
         Next, the <Strong>bottom left</Strong> cell represents what you’re
@@ -125,20 +120,18 @@ export default () => (
       </Em>{' '}
       In this case, you’ll be eating sushi <Emoji>🍣</Emoji> next.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       Finally,{' '}
       <Em>
@@ -147,20 +140,18 @@ export default () => (
       </Em>{' '}
       In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>So:</Strong> the above {h('ycBentoBox')} represents the following
       scenario.
@@ -180,20 +171,18 @@ export default () => (
     <EmojiSeparator emojis={['❓', '🤔', '❓']} />
     <H3>Quiz</H3>
     <P>What scenario does the this {h('ycBentoBox')} represent?</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <Ul size="lg">
       <UlLi>
         <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">❓</Emoji>

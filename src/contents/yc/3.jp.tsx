@@ -14,7 +14,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
@@ -31,20 +30,18 @@ export default () => (
         の答え合わせをしましょう。
       </Strong>
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>答え:</Strong> この
       {h('ycBentoBox')}
@@ -62,20 +59,18 @@ export default () => (
       </UlLi>
     </Ul>
     <P>つまり、こういうことです。</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToBetaReduce'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToBetaReduce'
+        }
+      ]}
+    />
     <H3>その次はどうなる？</H3>
     <P>
       上の状況だと、あなたがサラダ <Emoji>🥗</Emoji>{' '}
@@ -96,24 +91,22 @@ export default () => (
       {h('ycBentoBox')}
       は次のステップにこうなります。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'justBetaReduced'
-          },
-          {
-            type: 'stepForwardUntilContainerState',
-            state: 'done'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'justBetaReduced'
+        },
+        {
+          type: 'stepForwardUntilContainerState',
+          state: 'done'
+        }
+      ]}
+    />
     <P>
       <Em>
         <Strong>重要なポイント:</Strong> あなたが食べた料理のマス{' '}
@@ -138,37 +131,33 @@ export default () => (
         ボタンを何度か押してみてください。元に戻るはずです。
       </OlLi>
     </Ol>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       こちらは前回で登場したもうひとつの例です。同じようにボタンを試してみてください。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>コツがつかめてきたでしょうか？</P>
     <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
     <H3>クイズ</H3>
@@ -177,20 +166,18 @@ export default () => (
       {h('ycBentoBox')}
       を「次へ」と進めたら、最終的にどうなるでしょう？
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode3Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToBetaReduce'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode3Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToBetaReduce'
+        }
+      ]}
+    />
     <P>
       <Em>
         次のステップではどの料理が残るのか、正しいと思うものを選んでみてください

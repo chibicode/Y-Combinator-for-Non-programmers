@@ -12,7 +12,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
@@ -65,20 +64,18 @@ export default () => (
       </Em>
       」がたくさん出てきます。見た目はこんな感じです。それぞれのマスの中に食べ物が入っているので、弁当箱っぽく見えるでしょう？
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>しかし、それぞれのマスはどういう意味なのでしょうか？</Strong>
       ひとつずつ解説していきましょう。
@@ -91,20 +88,18 @@ export default () => (
       </Em>
       この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcBodyJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcBodyJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Em>
         次に、
@@ -113,20 +108,18 @@ export default () => (
       </Em>
       この場合、あなたが次に食べるのは寿司 <Emoji>🍣</Emoji> です。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       最後に、
       <Em>
@@ -136,20 +129,18 @@ export default () => (
       </Em>
       この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>というわけで:</Strong> 上の
       {h('ycBentoBox')}
@@ -176,20 +167,18 @@ export default () => (
       {h('ycBentoBox')}
       は、どんな状況を表しているでしょう？
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <Ul size="lg">
       <UlLi>
         <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">❓</Emoji>

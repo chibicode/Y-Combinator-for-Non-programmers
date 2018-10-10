@@ -12,7 +12,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
@@ -31,20 +30,18 @@ export default () => (
       I added the previous and next buttons. <Em>Try clicking {h('ycNext')}</Em>{' '}
       to see the answer.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode3Expression1}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode3Expression1}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       So the answer is:{' '}
       <Em>
@@ -92,74 +89,66 @@ export default () => (
       Next, we’ll talk about the case when there are more than two cells on the
       bottom. Check out this one:
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       Here’s how to interpret this. The <Strong>bottom rightmost</Strong> cell
       represents all available dishes <Emoji>🍽</Emoji>.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcBodyJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcBodyJustHighlighted'
+        }
+      ]}
+    />
     <P>
       The <Strong>bottom leftmost</Strong> cell represents what you’re eating
       next <Emoji>😋</Emoji>.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       And the <Strong>top cell</Strong> represents what the chef is preparing.
       This is the same as before.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>Important:</Strong> In this case,{' '}
       <Em>
@@ -172,20 +161,18 @@ export default () => (
     <P>
       <Em>Try clicking {h('ycNext')}</Em> to see what happens on the next step.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>Here’s what happened:</Strong>
     </P>
@@ -217,37 +204,35 @@ export default () => (
       How about <Em>four cells on the bottom</Em>? What do you think will happen
       on the next step?
     </P>
-    <ExpressionRunnerWrapper size="xs">
-      <ExpressionRunner
-        expressionContainer={episode4Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      containerSize="xs"
+      expressionContainer={episode4Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>Here’s the hint:</Strong>
     </P>
-    <ExpressionRunnerWrapper size="xs">
-      <ExpressionRunner
-        expressionContainer={episode4Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      containerSize="xs"
+      expressionContainer={episode4Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <NextLessonButton
       href={yc(5)}
       primaryText={<>Check My Answer</>}

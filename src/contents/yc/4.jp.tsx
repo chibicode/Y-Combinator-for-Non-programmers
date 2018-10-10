@@ -12,7 +12,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
@@ -35,20 +34,18 @@ export default () => (
       </Em>
       答えがわかります。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode3Expression1}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode3Expression1}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       つまり、答えは{' '}
       <Em>
@@ -94,78 +91,70 @@ export default () => (
     </P>
     <H3>下段が3マスの問題</H3>
     <P>次は、下段に3マスもある問題を見ていきましょう。たとえばこちら:</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       どう読み取ればいいか説明しましょう。まず、
       <Strong>下段の一番右のマス</Strong>
       は、選べる食事 <Emoji>🍽</Emoji> を表しています。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcBodyJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcBodyJustHighlighted'
+        }
+      ]}
+    />
     <P>
       次に、
       <Strong>下段の一番左のマス</Strong>
       は、あなた <Emoji>😋</Emoji> が次に食べるものを表しています。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'funcArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       最後に、
       <Strong>上のマス</Strong>
       は、シェフ <Emoji>👨‍🍳</Emoji>{' '}
       が作っている料理を表します。これは以前と変わりませんね。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>ポイント:</Strong> この場合、
       <Em>
@@ -184,20 +173,18 @@ export default () => (
       </Em>
       どうなるか確かめてみましょう。
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode4Expression1}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode4Expression1}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>箇条書きでまとめると、こうなります:</Strong>
     </P>
@@ -232,37 +219,35 @@ export default () => (
       {h('ycBentoBox')}
       は、次のステップでどうなると思いますか？
     </P>
-    <ExpressionRunnerWrapper size="xs">
-      <ExpressionRunner
-        expressionContainer={episode4Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      containerSize="xs"
+      expressionContainer={episode4Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>ヒントはこちらです:</Strong>
     </P>
-    <ExpressionRunnerWrapper size="xs">
-      <ExpressionRunner
-        expressionContainer={episode4Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      containerSize="xs"
+      expressionContainer={episode4Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <NextLessonButton
       href={yc(5)}
       primaryText={<>次のページへ進む</>}

@@ -14,7 +14,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 import {
@@ -29,20 +28,18 @@ export default () => (
       <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
       <InternalLink href={yc(2)}>the quiz from the last episode</InternalLink>:
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>Answer:</Strong> the above bento box represents:
     </P>
@@ -58,20 +55,18 @@ export default () => (
       </UlLi>
     </Ul>
     <P>Here’s the annotated version:</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <H3>What will happen in the next step?</H3>
     <P>
       In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
@@ -87,24 +82,22 @@ export default () => (
       </UlLi>
     </Ul>
     <P>In terms of the {h('ycBentoBox')}, it will look like this.</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'justBetaReduced'
-          },
-          {
-            type: 'stepForwardUntilContainerState',
-            state: 'done'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'justBetaReduced'
+        },
+        {
+          type: 'stepForwardUntilContainerState',
+          state: 'done'
+        }
+      ]}
+    />
     <P>
       <Em>
         <Strong>Very Important:</Strong> Notice that the cells for the food you
@@ -123,53 +116,47 @@ export default () => (
       </OlLi>
       <OlLi>Then try pressing {h('ycPrevious')} a few times.</OlLi>
     </Ol>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression2}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression2}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>Try this one from the last episode too!</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode2Expression1}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode2Expression1}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>Hope you get the idea!</P>
     <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
     <H3>Quiz</H3>
     <P>Here’s a different one. What do you think will happen next?</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode3Expression1}
-        showPriorities={false}
-        showControls={false}
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToBetaReduce'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode3Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToBetaReduce'
+        }
+      ]}
+    />
     <P>
       <Em>Choose the one you think will be the next state.</Em> It’s okay if you
       have no idea - I will explain on the next episode!

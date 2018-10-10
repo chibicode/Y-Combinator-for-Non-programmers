@@ -14,7 +14,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import h from 'src/lib/h'
@@ -35,20 +34,19 @@ export default () => (
       I added the previous and next buttons. <Em>Try clicking {h('ycNext')}</Em>{' '}
       several times to see the answer.
     </P>
-    <ExpressionRunnerWrapper size="xs">
-      <ExpressionRunner
-        expressionContainer={episode4Expression2}
-        showPriorities={false}
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      containerSize="xs"
+      expressionContainer={episode4Expression2}
+      showPriorities={false}
+      showControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       <Strong>Here’s what happened:</Strong>
     </P>
@@ -79,15 +77,13 @@ export default () => (
       <Em>there are more than 2 cells stacked on top of each other</Em>. Take a
       look at this one:
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression1}
-        showPriorities
-        showControls={false}
-        variableSize={'lg'}
-        disableReadyToHighlightColoring
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression1}
+      showPriorities
+      showControls={false}
+      variableSize={'lg'}
+      disableReadyToHighlightColoring
+    />
     <P>You might be wondering:</P>
     <Ul>
       <UlLi>
@@ -140,14 +136,12 @@ export default () => (
       The remaining part will still be shaded in light blue{' '}
       <InlineBackground bg="indigo50" />.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression1}
-        showPriorities
-        variableSize={'lg'}
-        maxStepsAllowed={1}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression1}
+      showPriorities
+      variableSize={'lg'}
+      maxStepsAllowed={1}
+    />
     <P>
       Then proceed with{' '}
       <Em>
@@ -155,40 +149,36 @@ export default () => (
       </Em>{' '}
       as before. Try clicking on {h('ycNext')}.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression1}
-        showPriorities
-        variableSize={'lg'}
-        lastAllowedExpressionState="callArgJustHighlighted"
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'readyToHighlight'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression1}
+      showPriorities
+      variableSize={'lg'}
+      lastAllowedExpressionState="callArgJustHighlighted"
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
     <P>
       Let’s see what happens when the white background part{' '}
       <InlineBackground bg="white" /> is done (sushi <Emoji>🍣</Emoji> is
       replaced by salad <Emoji>🥗</Emoji>.{' '}
       <Em>Try clicking on {h('ycNext')}</Em>.
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression1}
-        showPriorities
-        variableSize={'lg'}
-        maxStepsAllowed={1}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression1}
+      showPriorities
+      variableSize={'lg'}
+      maxStepsAllowed={1}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
     <P>
       <Strong>Here’s what happened:</Strong>
     </P>
@@ -213,46 +203,40 @@ export default () => (
       </UlLi>
     </Ul>
     <P>Let’s keep going until the end:</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression1}
-        showPriorities
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          },
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'default'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression1}
+      showPriorities
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'default'
+        }
+      ]}
+    />
     <P>
       <Strong>That’s all!</Strong> Just for your reference, you can try it from{' '}
       <Em>the beginning to the end</Em>:
     </P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression1}
-        showPriorities
-        variableSize={'lg'}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression1}
+      showPriorities
+      variableSize={'lg'}
+    />
     <P>Let’s do a quiz to make sure you understood this!</P>
     <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
     <H3>Quiz</H3>
     <P>If you step through the following example until the end…</P>
-    <ExpressionRunnerWrapper>
-      <ExpressionRunner
-        expressionContainer={episode5Expression2}
-        showPriorities
-        showControls={false}
-        variableSize={'lg'}
-      />
-    </ExpressionRunnerWrapper>
+    <ExpressionRunner
+      expressionContainer={episode5Expression2}
+      showPriorities
+      showControls={false}
+      variableSize={'lg'}
+    />
     <P>
       <Strong>Which one will be the last food item remaining?</Strong>
     </P>
