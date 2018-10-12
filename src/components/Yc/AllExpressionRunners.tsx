@@ -202,6 +202,26 @@ export const episode3 = [
       ]}
       hideStar
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode3Expression1}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      showExplanations={false}
+      hideStar
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'justBetaReduced'
+        },
+        {
+          type: 'stepForwardUntilContainerState',
+          state: 'done'
+        }
+      ]}
+    />
   )
 ]
 

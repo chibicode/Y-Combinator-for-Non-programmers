@@ -28,7 +28,7 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>
-        <Strong>Answer:</Strong> the above bento box represents:
+        <Strong>Answer:</Strong> the above {h('ycBentoBox')} represents:
       </P>
       <Ul size="lg">
         <UlLi>
@@ -95,23 +95,14 @@ export default () => {
       <P>Hope you get the idea!</P>
       <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
       <H3>Quiz</H3>
-      <P>Here’s a different one. What do you think will happen next?</P>
+      <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
       {episode3[i++]()}
       <P>
-        <Em>Choose the one you think will be the next state.</Em> It’s okay if
-        you have no idea - I will explain on the next episode!
+        <Strong>True or False:</Strong>{' '}
+        <Em>Will the above {h('ycBentoBox')} turn into this?</Em>
       </P>
-      <Ol>
-        <OlLi>
-          <Emoji size="lg">🍣</Emoji>
-        </OlLi>
-        <OlLi>
-          <Emoji size="lg">🥪</Emoji>
-        </OlLi>
-        <OlLi>
-          <Emoji size="lg">🥗</Emoji>
-        </OlLi>
-      </Ol>
+      {episode3[i++]()}
+      <P>It’s ok if you have no idea - I will explain on the next episode!</P>
       <YcNextLessonButton nextEpisodeNumber={4} />
     </>
   )
