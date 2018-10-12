@@ -51,6 +51,7 @@ interface ExpressionRunnerProps {
   indexOffset: number
   showExplanations: boolean
   containerSize: ContainerProps['size']
+  hideStar: boolean
 }
 
 interface ExpressionRunnerState {
@@ -69,6 +70,11 @@ const betaReducePreview = (
   }
 }
 
+const expressionContainerManagerSkipOptionsDefault: ExpressionContainerSkipOptions = {
+  readyToBetaReduce: true,
+  justBetaReduced: true
+}
+
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
   ExpressionRunnerState
@@ -81,12 +87,10 @@ export default class ExpressionRunner extends React.Component<
     allowGoingBack: false,
     initializeInstructions: [],
     disableReadyToHighlightColoring: false,
-    expressionContainerManagerSkipOptions: {
-      readyToBetaReduce: true,
-      justBetaReduced: true
-    },
+    expressionContainerManagerSkipOptions: {},
     indexOffset: 0,
-    containerSize: 'xxs'
+    containerSize: 'xxs',
+    hideStar: false
   }
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
@@ -101,7 +105,10 @@ export default class ExpressionRunner extends React.Component<
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
-      skipOptions: expressionContainerManagerSkipOptions,
+      skipOptions: {
+        ...expressionContainerManagerSkipOptionsDefault,
+        ...expressionContainerManagerSkipOptions
+      },
       lastAllowedExpressionState,
       indexOffset
     })
@@ -158,7 +165,8 @@ export default class ExpressionRunner extends React.Component<
       showExplanations,
       variableSize,
       disableReadyToHighlightColoring,
-      containerSize
+      containerSize,
+      hideStar
     } = this.props
     const { expressionContainerManagerState } = this.state
     return (
@@ -202,7 +210,8 @@ export default class ExpressionRunner extends React.Component<
                         betaReducePreview: betaReducePreview(
                           expressionContainerManagerState.expressionContainer
                             .previouslyChangedExpressionState
-                        )
+                        ),
+                        hideStar
                       }}
                     >
                       <ExpressionBox

@@ -103,11 +103,29 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       showPriorities={false}
       showControls={false}
+      showExplanations={false}
+      variableSize={'lg'}
+      hideStar
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      showExplanations={false}
+      hideStar
       variableSize={'lg'}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'betaReducePreviewAfter'
         }
       ]}
     />
@@ -118,6 +136,7 @@ export const episode3 = [
       showPriorities={false}
       showControls={false}
       variableSize={'lg'}
+      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -136,12 +155,17 @@ export const episode3 = [
       showPriorities={false}
       showControls
       variableSize={'lg'}
+      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'readyToHighlight'
         }
       ]}
+      hideStar
+      expressionContainerManagerSkipOptions={{
+        betaReducePreviewBefore: true
+      }}
     />
   ),
   () => (
@@ -150,12 +174,17 @@ export const episode3 = [
       showPriorities={false}
       showControls
       variableSize={'lg'}
+      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'readyToHighlight'
         }
       ]}
+      hideStar
+      expressionContainerManagerSkipOptions={{
+        betaReducePreviewBefore: true
+      }}
     />
   ),
   () => (
@@ -164,12 +193,14 @@ export const episode3 = [
       showPriorities={false}
       showControls={false}
       variableSize={'lg'}
+      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToBetaReduce'
+          state: 'callArgJustHighlighted'
         }
       ]}
+      hideStar
     />
   )
 ]

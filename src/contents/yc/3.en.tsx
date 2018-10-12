@@ -57,15 +57,25 @@ export default () => {
           <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
-      <P>In terms of the {h('ycBentoBox')}, it will look like this.</P>
-      {episode3[i++]()}
       <P>
-        <Em>
-          <Strong>Very Important:</Strong> Notice that the cells for the food
-          you ate <Emoji>😋</Emoji> and food the chef prepared <Emoji>👨‍🍳</Emoji>{' '}
-          <Strong>disappeared</Strong>.
-        </Em>
+        <Strong>What happens to the {h('ycBentoBox')}:</Strong>
       </P>
+      <Ul>
+        <UlLi>
+          The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
+          <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>.
+        </UlLi>
+        <UlLi>
+          The salad <Emoji>🥗</Emoji> on the bottom right{' '}
+          <Em>
+            will be replaced <Emoji>🆕</Emoji>
+          </Em>{' '}
+          by the steak <Emoji>🥩</Emoji>.
+        </UlLi>
+      </Ul>
+      {episode3[i++]()}
+      <P>Therefore, it’ll look like this:</P>
+      {episode3[i++]()}
       <H3>The Next and Previous Buttons</H3>
       <P>
         To see this interactively, I’ve added the next and previous buttons.

@@ -37,7 +37,7 @@ const Button: React.SFC<JSX.IntrinsicElements['button']> = ({
             background: ${colors('indigo50')};
           }
           &:focus {
-            background: ${colors('indigo50')};
+            box-shadow: inset 0 0 0 1px ${colors('indigo300')};
             outline: none;
           }
         }

@@ -59,7 +59,8 @@ const background = ({
   childVariableJustAlphaConverted,
   betaReducePreview,
   childVariableWillBeBetaReduced,
-  justBetaReduced
+  justBetaReduced,
+  hideStar
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -71,6 +72,7 @@ const background = ({
   childVariableJustAlphaConverted?: BorderWrapperProps['childVariableJustAlphaConverted']
   betaReducePreview?: ExpressionBetaReducePreviewContextProps['betaReducePreview']
   childVariableWillBeBetaReduced?: boolean
+  hideStar?: boolean
   justBetaReduced?: boolean
 }) => {
   if (betaReducePreview) {
@@ -80,24 +82,36 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       childVariableWillBeBetaReduced
     ) {
-      return css`
-        background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
-        background-position: center center;
-      `
+      if (hideStar) {
+        return css`
+          background-color: ${colors('yellow50')};
+        `
+      } else {
+        return css`
+          background-image: url(${starSvg});
+          background-size: ${variableSize === 'lg' ? 2 : 1}rem
+            ${variableSize === 'lg' ? 2 : 1}rem;
+          background-position: center center;
+        `
+      }
     } else if (
       (betaReducePreview === 'after' &&
         (childVariableHighlightType === 'callArg' ||
           childVariableHighlightType === 'funcArg')) ||
       justBetaReduced
     ) {
-      return css`
-        background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
-        background-position: center center;
-      `
+      if (hideStar) {
+        return css`
+          background-color: ${colors('yellow50')};
+        `
+      } else {
+        return css`
+          background-image: url(${starSvg});
+          background-size: ${variableSize === 'lg' ? 2 : 1}rem
+            ${variableSize === 'lg' ? 2 : 1}rem;
+          background-position: center center;
+        `
+      }
     } else {
       return css`
         background: ${colors('indigo50')};
@@ -163,9 +177,10 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   childWasJustBetaReduced
 }) => (
   <ExpressionBetaReducePreviewContext.Consumer>
-    {({ betaReducePreview, wasJustBetaReduced }) => (
+    {({ betaReducePreview, hideStar, wasJustBetaReduced }) => (
       <ExpressionBetaReducePreviewContext.Provider
         value={{
+          hideStar,
           betaReducePreview,
           wasJustBetaReduced: wasJustBetaReduced || childWasJustBetaReduced
         }}
@@ -196,6 +211,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                           childVariableHighlightType,
                           childVariableJustAlphaConverted,
                           childVariableWillBeBetaReduced,
+                          hideStar,
                           justBetaReduced:
                             wasJustBetaReduced || childWasJustBetaReduced
                         })
