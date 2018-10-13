@@ -55,23 +55,16 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Em>So you don’t eat anything</Em>, and the salad <Emoji>🥗</Emoji> the
-        chef <Emoji>👨‍🍳</Emoji> is preparing will not replace the sandwich{' '}
-        <Emoji>🥪</Emoji>. Therefore just the sandwich <Emoji>🥪</Emoji>{' '}
-        remains:
+        <Em>So you don’t eat anything</Em>. The salad <Emoji>🥗</Emoji> the chef{' '}
+        <Emoji>👨‍🍳</Emoji> is preparing will not replace the sandwich{' '}
+        <Emoji>🥪</Emoji>. Instead, the salad <Emoji>🥗</Emoji>{' '}
+        <Strong>disappears</Strong>.
       </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥪</Emoji>
-        </UlLi>
-      </Ul>
+      {episode4[i++]()}
       <P>
-        <Em>
-          <Strong>Important:</Strong> The salad <Emoji>🥗</Emoji> the chef{' '}
-          <Emoji>👨‍🍳</Emoji> prepared is wasted, and it{' '}
-          <Strong>disappears</Strong>.
-        </Em>
+        Therefore just the sandwich <Emoji>🥪</Emoji> remains at the end:
       </P>
+      {episode4[i++]()}
       <H3>Three cells on the bottom</H3>
       <P>
         Next, we’ll talk about the case when there are more than two cells on
@@ -79,13 +72,20 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        Here’s how to interpret this. The <Strong>bottom rightmost</Strong> cell
-        represents all available dishes <Emoji>🍽</Emoji>.
+        Here’s how to interpret this. First,{' '}
+        <Em>
+          <Strong>all cells on the bottom except the left-most one</Strong>{' '}
+          represent all available dishes <Emoji>🍽</Emoji>
+        </Em>
+        .
       </P>
       {episode4[i++]()}
       <P>
-        The <Strong>bottom leftmost</Strong> cell represents what you’re eating
-        next <Emoji>😋</Emoji>.
+        <Em>
+          The <Strong>bottom leftmost</Strong> cell represents what you’re
+          eating next <Emoji>😋</Emoji>
+        </Em>
+        .
       </P>
       {episode4[i++]()}
       <P>
@@ -93,15 +93,6 @@ export default () => {
         This is the same as before.
       </P>
       {episode4[i++]()}
-      <P>
-        <Strong>Important:</Strong> In this case,{' '}
-        <Em>
-          the sandwich <Emoji>🥪</Emoji> doesn’t belong to any of the three
-          categories. So when you step forward, the cell with the sandwich{' '}
-          <Emoji>🥪</Emoji> will <Strong>remain the same</Strong>.
-        </Em>
-        .
-      </P>
       <P>
         <Em>Try clicking {h('ycNext')}</Em> to see what happens on the next
         step.
@@ -112,23 +103,18 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          <Emoji>🥪</Emoji> The sandwich remained the same.
-        </UlLi>
-        <UlLi>
           <Emoji>😋</Emoji> You ate sushi <Emoji>🍣</Emoji>.
         </UlLi>
         <UlLi>
-          <Emoji>🍽</Emoji> So the sushi <Emoji>🍣</Emoji> on the bottom right
-          was replaced by the salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji>{' '}
-          prepared.
+          So the sushi <Emoji>🍣</Emoji> on the bottom right was replaced by the
+          salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji> prepared.
         </UlLi>
         <UlLi>
-          <Em>
-            As a result, the bottom left cell (<Emoji>😋</Emoji> →{' '}
-            <Emoji>🍣</Emoji>) and the top cell (<Emoji>👨‍🍳</Emoji> →{' '}
-            <Emoji>🥗</Emoji>) <Strong>disappeared</Strong>
-          </Em>
-          .
+          As a result, the bottom left sushi <Emoji>🍣</Emoji> and the top salad{' '}
+          <Emoji>🥗</Emoji> <Strong>disappeared</Strong>.
+        </UlLi>
+        <UlLi>
+          The sandwich <Emoji>🥪</Emoji> remained the same.
         </UlLi>
       </Ul>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
@@ -142,7 +128,9 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>Here’s the hint:</Strong>
+        <Strong>Here’s the hint.</Strong> The sushi <Emoji>🍣</Emoji> is what
+        you’re eating next, and everything else in the bottom is available
+        dishes <Emoji>🍽</Emoji>.
       </P>
       {episode4[i++]()}
       <YcNextLessonButton nextEpisodeNumber={5} />
