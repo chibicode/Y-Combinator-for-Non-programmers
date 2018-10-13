@@ -62,15 +62,15 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
-          <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>.
-        </UlLi>
-        <UlLi>
           The salad <Emoji>🥗</Emoji> on the bottom right{' '}
           <Em>
             will be replaced <Emoji>🆕</Emoji>
           </Em>{' '}
           by the steak <Emoji>🥩</Emoji>.
+        </UlLi>
+        <UlLi>
+          The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
+          <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>.
         </UlLi>
       </Ul>
       {episode3[i++]()}
@@ -78,31 +78,37 @@ export default () => {
       {episode3[i++]()}
       <H3>The Next and Previous Buttons</H3>
       <P>
-        To see this interactively, I’ve added the next and previous buttons.
+        To see this interactively, I’ve added the {h('ycNext')} and{' '}
+        {h('ycPrevious')} buttons.
       </P>
       <Ol>
         <OlLi>
+          In the {h('ycBentoBox')} below,{' '}
           <Em>
-            Try pressing {h('ycNext')} several times until you see {h('ycDone')}
-            . The steak <Emoji>🥩</Emoji> will be the only dish.
-          </Em>
+            try pressing {h('ycNext')} several times until you see {h('ycDone')}
+            .
+          </Em>{' '}
+          Eventually, the steak <Emoji>🥩</Emoji> will be the only dish.
         </OlLi>
-        <OlLi>Then try pressing {h('ycPrevious')} a few times.</OlLi>
+        <OlLi>
+          Then <Em>try pressing {h('ycPrevious')} a few times</Em>.
+        </OlLi>
       </Ol>
       {episode3[i++]()}
       <P>Try this one from the last episode too!</P>
       {episode3[i++]()}
-      <P>Hope you get the idea!</P>
+      <P>Hope you get the idea.</P>
       <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+      <P>Now, time for some quiz…</P>
       <H3>Quiz</H3>
       <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
       {episode3[i++]()}
       <P>
         <Strong>True or False:</Strong>{' '}
-        <Em>Will the above {h('ycBentoBox')} turn into this?</Em>
+        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
       </P>
       {episode3[i++]()}
-      <P>It’s ok if you have no idea - I will explain on the next episode!</P>
+      <P>It’s ok if you are not sure - I will explain on the next episode!</P>
       <YcNextLessonButton nextEpisodeNumber={4} />
     </>
   )

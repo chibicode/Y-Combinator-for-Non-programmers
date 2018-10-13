@@ -12,9 +12,9 @@ const NewUser: React.SFC<{
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
       {t(`${componentProps.lessonName}Title` as keyof typeof allTranslations)}
     </InternalLink>
-    」という記事の途中です。 はじめての方は、
+    」という記事の途中です。はじめから読むには、
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      <Strong>こちらをクリックして序章から読み始めてみてください</Strong>
+      <Strong>こちらをクリックしてください</Strong>
     </InternalLink>
     。
   </>

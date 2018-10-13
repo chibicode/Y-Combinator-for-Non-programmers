@@ -44,7 +44,7 @@ export default () => {
           <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
-      <P>つまり、こういうことです。</P>
+      <P>それぞれの料理に印をつけてみると、こうなります。</P>
       {episode3[i++]()}
       <H3>その次はどうなる？</H3>
       <P>
@@ -62,33 +62,48 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        つまり、
-        {h('ycBentoBox')}
-        は次のステップにこうなります。
+        <Strong>
+          すると、
+          {h('ycBentoBox')}
+          はどうなるか。
+        </Strong>
       </P>
+      <Ul>
+        <UlLi>
+          右下のサラダ <Emoji>🥗</Emoji> は、ステーキ <Emoji>🥩</Emoji> と
+          <Em>
+            入れ替わる。 <Emoji>🆕</Emoji>
+          </Em>
+        </UlLi>
+        <UlLi>
+          左下のサラダ <Emoji>🥗</Emoji> と、上のステーキ <Emoji>🥩</Emoji>{' '}
+          のマスは
+          <Em>消える</Em>。
+        </UlLi>
+      </Ul>
       {episode3[i++]()}
-      <P>
-        <Em>
-          <Strong>重要なポイント:</Strong> あなたが食べた料理のマス{' '}
-          <Emoji>😋</Emoji> と、シェフが作った料理のマス <Emoji>👨‍🍳</Emoji> は、
-          <Strong>次のステップに移ると消える</Strong>
-          ことを覚えておいてください。
-        </Em>
-      </P>
+      <P>つまり、次のようになります:</P>
+      {episode3[i++]()}
       <H3>「次へ」ボタンと「前へ」ボタン</H3>
       <P>
-        遷移をわかりやすくするために、「次へ」ボタンと「前へ」ボタンを設置してみました。
+        遷移をわかりやすくするために、「
+        {h('ycNext')}
+        」ボタンと「
+        {h('ycPrevious')}
+        」ボタンを設置してみました。
       </P>
       <Ol>
         <OlLi>
-          <Em>
-            {h('ycNext')} ボタンを何度か押してみてください。いずれ {h('ycDone')}{' '}
-            になり、料理がステーキ <Emoji>🥩</Emoji> だけになるはずです。
-          </Em>
+          {h('ycBentoBox')}
+          の下にある、
+          <Em>{h('ycNext')} ボタンを何度か押してみてください</Em>
+          。いずれ {h('ycDone')} になり、料理がステーキ <Emoji>🥩</Emoji>{' '}
+          だけになるはずです。
         </OlLi>
         <OlLi>
-          そしたら今度は、 {h('ycPrevious')}{' '}
-          ボタンを何度か押してみてください。元に戻るはずです。
+          そしたら今度は、{' '}
+          <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>
+          。元に戻るはずです。
         </OlLi>
       </Ol>
       {episode3[i++]()}
@@ -98,30 +113,24 @@ export default () => {
       {episode3[i++]()}
       <P>コツがつかめてきたでしょうか？</P>
       <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+      <P>では、クイズに挑戦してみましょう。</P>
       <H3>クイズ</H3>
       <P>
-        それでは、今までにない例を紹介します。下の
+        下の
         {h('ycBentoBox')}
-        を「次へ」と進めたら、最終的にどうなるでしょう？
+        を「次へ」とどんどん進めたとします。
       </P>
       {episode3[i++]()}
       <P>
+        <Strong>YesかNoで答えてみてください:</Strong>{' '}
         <Em>
-          次のステップではどの料理が残るのか、正しいと思うものを選んでみてください
+          最終的に
+          {h('ycBentoBox')}
+          は次のようになるでしょうか？
         </Em>
-        。見当がまったくつかなくても大丈夫です。次章で説明しますので！
       </P>
-      <Ol>
-        <OlLi>
-          <Emoji size="lg">🍣</Emoji>
-        </OlLi>
-        <OlLi>
-          <Emoji size="lg">🥪</Emoji>
-        </OlLi>
-        <OlLi>
-          <Emoji size="lg">🥗</Emoji>
-        </OlLi>
-      </Ol>
+      {episode3[i++]()}
+      <P>答えに自信がなくても大丈夫です。次章で説明しますので！</P>
       <YcNextLessonButton nextEpisodeNumber={4} />
     </>
   )

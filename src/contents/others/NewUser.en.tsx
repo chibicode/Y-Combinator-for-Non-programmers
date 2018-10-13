@@ -12,7 +12,7 @@ const NewUser: React.SFC<{
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
       {t(`${componentProps.lessonName}Title` as keyof typeof allTranslations)}
     </InternalLink>
-    ”. If you’re new,{' '}
+    ”. If you just got here,{' '}
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
       <Strong>click here to start from the beginning</Strong>
     </InternalLink>

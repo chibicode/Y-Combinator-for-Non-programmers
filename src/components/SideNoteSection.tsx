@@ -1,7 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import { H3 } from 'src/components/ContentTags'
-import { colors, radii, spaces } from 'src/lib/theme'
+import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 interface SideNoteProps {
   heading?: React.ReactNode
@@ -16,6 +16,7 @@ const SideNoteSection: React.SFC<SideNoteProps> = ({ children, heading }) => (
       background: ${colors('indigo50')};
       margin: 1.5rem 0;
       border-radius: ${radii(0.25)};
+      font-size: ${fontSizes(0.85)};
     `}
   >
     {heading && (
