@@ -49,7 +49,6 @@ interface ExpressionRunnerProps {
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
   indexOffset: number
-  showExplanations: boolean
   containerSize: ContainerProps['size']
 }
 
@@ -81,7 +80,6 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
-    showExplanations: true,
     variableSize: expressionRunnerContextDefault.variableSize,
     allowGoingBack: false,
     initializeInstructions: [],
@@ -160,7 +158,6 @@ export default class ExpressionRunner extends React.Component<
     const {
       showControls,
       showPriorities,
-      showExplanations,
       variableSize,
       disableReadyToHighlightColoring,
       containerSize
@@ -227,7 +224,7 @@ export default class ExpressionRunner extends React.Component<
             horizontalPadding={0}
             verticalMargin={0}
           >
-            {showExplanations && (
+            {showControls && (
               <ExpressionRunnerExplanation
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer

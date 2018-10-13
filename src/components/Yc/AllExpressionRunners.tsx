@@ -9,7 +9,6 @@ export const episode2 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -24,7 +23,6 @@ export const episode2 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -39,7 +37,6 @@ export const episode2 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -54,7 +51,6 @@ export const episode2 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -69,7 +65,6 @@ export const episode2 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression2}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -88,7 +83,6 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       showPriorities={false}
       showControls={false}
-      showExplanations={false}
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -103,7 +97,6 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       showPriorities={false}
       showControls={false}
-      showExplanations={false}
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -118,7 +111,6 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       showPriorities={false}
       showControls={false}
-      showExplanations={false}
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -133,7 +125,6 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       showPriorities={false}
       showControls={false}
-      showExplanations={false}
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -149,7 +140,6 @@ export const episode3 = [
       showPriorities={false}
       showControls={false}
       variableSize={'lg'}
-      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -168,7 +158,6 @@ export const episode3 = [
       showPriorities={false}
       showControls
       variableSize={'lg'}
-      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -183,7 +172,6 @@ export const episode3 = [
       showPriorities={false}
       showControls
       variableSize={'lg'}
-      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -198,7 +186,6 @@ export const episode3 = [
       showPriorities={false}
       showControls={false}
       variableSize={'lg'}
-      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -213,7 +200,6 @@ export const episode3 = [
       showPriorities={false}
       showControls={false}
       variableSize={'lg'}
-      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -233,7 +219,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode3Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls
       variableSize={'lg'}
       initializeInstructions={[
@@ -251,7 +236,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode3Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -268,7 +252,6 @@ export const episode4 = [
       showPriorities={false}
       showControls={false}
       variableSize={'lg'}
-      showExplanations={false}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -285,7 +268,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode4Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -300,7 +282,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode4Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -315,7 +296,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode4Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -330,7 +310,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode4Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -345,7 +324,6 @@ export const episode4 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode4Expression1}
       showPriorities={false}
-      showExplanations={false}
       showControls
       variableSize={'lg'}
       initializeInstructions={[
@@ -365,7 +343,6 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression2}
       showPriorities={false}
       showControls={false}
-      showExplanations={false}
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -380,7 +357,6 @@ export const episode4 = [
       containerSize="xs"
       expressionContainer={lessonExpressions.episode4Expression2}
       showPriorities={false}
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       initializeInstructions={[
@@ -399,7 +375,6 @@ export const episode5 = [
       containerSize="xs"
       expressionContainer={lessonExpressions.episode4Expression2}
       showPriorities={false}
-      showExplanations={false}
       showControls
       variableSize={'lg'}
       initializeInstructions={[
@@ -417,7 +392,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       disableReadyToHighlightColoring
@@ -427,7 +401,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
-      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       maxStepsAllowed={1}
@@ -437,7 +410,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
-      showExplanations={false}
       variableSize={'lg'}
       maxStepsAllowed={1}
     />
@@ -446,7 +418,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
-      showExplanations={false}
       variableSize={'lg'}
       lastAllowedExpressionState="callArgJustHighlighted"
       initializeInstructions={[
