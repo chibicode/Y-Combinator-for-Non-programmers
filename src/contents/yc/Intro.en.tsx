@@ -163,12 +163,19 @@ export default () => (
           margin-top: 0;
         `}
       >
-        Good question! My name's <Strong>Shu</Strong>. I was born in Japan and
-        live in San Francisco Bay Area, CA.
+        Good question!{' '}
+        <Em>
+          My name's <Strong>Shu</Strong>
+        </Em>
+        . I was born in Japan and live in San Francisco Bay Area, CA.
       </P>
       <P>
-        As of writing (2018), I work as a freelance engineer and a co-translator
-        for “Factfulness” by Hans Rosling. It’s the book Bill Gates{' '}
+        As of writing (2018),{' '}
+        <Em>
+          I work as a freelance engineer and a co-translator for “Factfulness”
+          by Hans Rosling
+        </Em>
+        . It’s the book Bill Gates{' '}
         <ExternalLink href="https://twitter.com/billgates/status/981532669358911488">
           called
         </ExternalLink>{' '}
@@ -176,16 +183,20 @@ export default () => (
         it into Japanese <Emoji>🇯🇵</Emoji>.
       </P>
       <P>
-        In 2017, I traveled the world, visiting{' '}
+        <Em>In 2017, I traveled the world</Em>, visiting{' '}
         <ExternalLink href="https://chibicode.com/posts/tweets-from-my-world-trip/">
           36 countries and 94 cities
         </ExternalLink>
-        . In 2016, I was a technical lead at EdSurge, an education technology
-        startup in San Francisco Bay Area.
+        . <Em>In 2016, I was a technical lead at EdSurge</Em>, an education
+        technology startup in San Francisco Bay Area.
       </P>
       <P>
-        As of writing, I'm looking for a{' '}
-        <Strong>full-time job (San Francisco Bay Area or Remote)</Strong>.{' '}
+        As of writing,{' '}
+        <Em>
+          I'm looking for a{' '}
+          <Strong>full-time job (San Francisco Bay Area or Remote)</Strong>
+        </Em>
+        .{' '}
         <ExternalLink href="https://about.chibicode.com/">
           Interested? Learn more about me here.
         </ExternalLink>{' '}

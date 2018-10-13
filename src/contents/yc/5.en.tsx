@@ -38,21 +38,15 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> The sandwich and salad remained
-          the same.
+          You wanted to eat sushi <Emoji>🍣</Emoji>, but it was not available.
         </UlLi>
         <UlLi>
-          <Emoji>😋</Emoji> You wanted to eat sushi <Emoji>🍣</Emoji>, but the
-          only available dish <Emoji>🍽</Emoji> was steak <Emoji>🥩</Emoji>.
+          The sushi <Emoji>🍣</Emoji> on the bottom left and the hamburger on
+          the top <Emoji>🍔</Emoji> <Strong>disappeared</Strong>.
         </UlLi>
         <UlLi>
-          <Em>
-            As a result, the bottom left cell (<Emoji>😋</Emoji> →{' '}
-            <Emoji>🍣</Emoji>) and the top cell (<Emoji>👨‍🍳</Emoji> →{' '}
-            <Emoji>🍔</Emoji>) <Strong>disappeared</Strong>, and nothing else
-            changed
-          </Em>
-          .
+          The sandwich <Emoji>🥪</Emoji>, salad <Emoji>🥗</Emoji>, and steak{' '}
+          <Emoji>🥩</Emoji> remained the same.
         </UlLi>
       </Ul>
       <EmojiSeparator emojis={['🥪', '🥗', '🥩']} />

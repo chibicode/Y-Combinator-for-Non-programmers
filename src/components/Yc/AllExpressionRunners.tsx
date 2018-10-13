@@ -399,6 +399,8 @@ export const episode5 = [
       containerSize="xs"
       expressionContainer={lessonExpressions.episode4Expression2}
       showPriorities={false}
+      showExplanations={false}
+      hideStar
       showControls
       variableSize={'lg'}
       initializeInstructions={[
@@ -407,6 +409,9 @@ export const episode5 = [
           state: 'readyToHighlight'
         }
       ]}
+      expressionContainerManagerSkipOptions={{
+        betaReducePreviewBefore: true
+      }}
     />
   ),
   () => (

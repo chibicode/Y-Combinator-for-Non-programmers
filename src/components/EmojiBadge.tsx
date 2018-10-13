@@ -10,7 +10,7 @@ interface EmojiBadgeProps {
     | 'wasJustBetaReduced'
 }
 
-const funcArgColor = colors('pink300')
+const funcArgColor = colors('pink400')
 
 const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
   ({
