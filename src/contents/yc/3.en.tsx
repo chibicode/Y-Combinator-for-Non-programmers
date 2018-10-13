@@ -64,25 +64,30 @@ export default () => {
       <P>
         The salad <Emoji>🥗</Emoji> on the bottom right <Strong>matches</Strong>{' '}
         with what you’re eating next <Emoji>😋</Emoji>. We indicate this{' '}
-        <Strong>match</Strong> by{' '}
+        <Strong>match</Strong> using the{' '}
         <Em>
-          highlighting the cell with the star background{' '}
-          <InlineBackground bgPattern="star" />.
+          star background <InlineBackground bgPattern="star" />.
         </Em>
       </P>
       {episode3[i++]()}
       <P>
-        Next, the salad <Emoji>🥗</Emoji> on the bottom right{' '}
+        After you eat the salad <Emoji>🥗</Emoji> on the bottom right, it{' '}
+        <Em>will be replaced</Em> by the steak <Emoji>🥩</Emoji>. We indicate
+        this using{' '}
         <Em>
-          will be replaced <Emoji>🆕</Emoji>
-        </Em>{' '}
-        by the steak <Emoji>🥩</Emoji>.
+          the <Emoji>🆕</Emoji> icon
+        </Em>
+        .
       </P>
       {episode3[i++]()}
       <P>
         The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
-        <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>{' '}
-        <InlineBackground bgPattern="cross" />.
+        <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>. We indicate this
+        using the{' '}
+        <Em>
+          “X” background <InlineBackground bgPattern="cross" />
+        </Em>
+        .
       </P>
       {episode3[i++]()}
       <P>

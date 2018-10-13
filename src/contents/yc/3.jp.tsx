@@ -13,6 +13,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode3 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
@@ -29,7 +30,11 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>
-        <Strong>答え:</Strong> この
+        <Strong>答え:</Strong> それぞれの料理に印をつけてみると、こうなります。
+      </P>
+      {episode3[i++]()}
+      <P>
+        つまり、
         {h('ycBentoBox')}
         は、以下の状況を表しています。
       </P>
@@ -44,13 +49,12 @@ export default () => {
           <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
-      <P>それぞれの料理に印をつけてみると、こうなります。</P>
-      {episode3[i++]()}
+
       <H3>その次はどうなる？</H3>
       <P>
         上の状況だと、あなたがサラダ <Emoji>🥗</Emoji>{' '}
         を食べたあと、シェフはステーキ <Emoji>🥩</Emoji>{' '}
-        を持ってきます。ということは、次のステップでは、
+        を持ってきます。ということは、最終的には
         <Em>
           料理はステーキ <Emoji>🥩</Emoji> だけ
         </Em>
@@ -68,21 +72,36 @@ export default () => {
           はどうなるか。
         </Strong>
       </P>
-      <Ul>
-        <UlLi>
-          右下のサラダ <Emoji>🥗</Emoji> は、ステーキ <Emoji>🥩</Emoji> と
-          <Em>
-            入れ替わる。 <Emoji>🆕</Emoji>
-          </Em>
-        </UlLi>
-        <UlLi>
-          左下のサラダ <Emoji>🥗</Emoji> と、上のステーキ <Emoji>🥩</Emoji>{' '}
-          のマスは
-          <Em>消える</Em>。
-        </UlLi>
-      </Ul>
+      <P>
+        右下のサラダ <Emoji>🥗</Emoji> は、あなたが食べたい料理{' '}
+        <Emoji>😋</Emoji> です。これを、
+        <Em>
+          星柄の背景 <InlineBackground bgPattern="star" />{' '}
+          でマスを塗りつぶすことで示します。
+        </Em>
+      </P>
       {episode3[i++]()}
-      <P>つまり、次のようになります:</P>
+      <P>
+        あなたがサラダ <Emoji>🥗</Emoji> を食べると、それがステーキ{' '}
+        <Emoji>🥩</Emoji> と<Em>入れ替わります</Em>
+        。これを{' '}
+        <Em>
+          <Emoji>🆕</Emoji> のアイコンで示します。
+        </Em>
+      </P>
+      {episode3[i++]()}
+      <P>
+        食べ終わると、左下のサラダと <Emoji>🥗</Emoji> 上段のステーキ{' '}
+        <Emoji>🥩</Emoji> は<Em>消えます</Em>
+        。これを、
+        <Em>
+          バツ印 <InlineBackground bgPattern="cross" /> で示します。
+        </Em>
+      </P>
+      {episode3[i++]()}
+      <P>
+        最終的に、残ったのはステーキ <Emoji>🥩</Emoji> だけになりました。
+      </P>
       {episode3[i++]()}
       <H3>「次へ」ボタンと「前へ」ボタン</H3>
       <P>
@@ -96,14 +115,16 @@ export default () => {
         <OlLi>
           {h('ycBentoBox')}
           の下にある、
-          <Em>{h('ycNext')} ボタンを何度か押してみてください</Em>
-          。いずれ {h('ycDone')} になり、料理がステーキ <Emoji>🥩</Emoji>{' '}
-          だけになるはずです。
+          <Em>
+            {h('ycNext')} ボタンを
+            {h('ycDone')}
+            になるまで押してみてください
+          </Em>
+          。
         </OlLi>
         <OlLi>
           そしたら今度は、{' '}
-          <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>
-          。元に戻るはずです。
+          <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>。
         </OlLi>
       </Ol>
       {episode3[i++]()}

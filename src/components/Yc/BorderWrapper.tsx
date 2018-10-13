@@ -98,7 +98,7 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       justBetaReduced
     ) {
-      if (justBetaReduced) {
+      if (justBetaReduced && betaReducePreview === 'after') {
         return css`
           background-image: url(${starSvg});
           background-size: ${variableSize === 'lg' ? 2 : 1}rem
