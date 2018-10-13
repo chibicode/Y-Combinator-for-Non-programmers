@@ -105,7 +105,21 @@ export const episode3 = [
       showControls={false}
       showExplanations={false}
       variableSize={'lg'}
-      hideStar
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      showExplanations={false}
+      variableSize={'lg'}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -120,7 +134,6 @@ export const episode3 = [
       showPriorities={false}
       showControls={false}
       showExplanations={false}
-      hideStar
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -162,10 +175,6 @@ export const episode3 = [
           state: 'readyToHighlight'
         }
       ]}
-      hideStar
-      expressionContainerManagerSkipOptions={{
-        betaReducePreviewBefore: true
-      }}
     />
   ),
   () => (
@@ -181,10 +190,6 @@ export const episode3 = [
           state: 'readyToHighlight'
         }
       ]}
-      hideStar
-      expressionContainerManagerSkipOptions={{
-        betaReducePreviewBefore: true
-      }}
     />
   ),
   () => (
@@ -200,7 +205,6 @@ export const episode3 = [
           state: 'callArgJustHighlighted'
         }
       ]}
-      hideStar
     />
   ),
   () => (
@@ -210,7 +214,6 @@ export const episode3 = [
       showControls={false}
       variableSize={'lg'}
       showExplanations={false}
-      hideStar
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -251,7 +254,6 @@ export const episode4 = [
       showExplanations={false}
       showControls={false}
       variableSize={'lg'}
-      hideStar
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -267,7 +269,6 @@ export const episode4 = [
       showControls={false}
       variableSize={'lg'}
       showExplanations={false}
-      hideStar
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -346,7 +347,6 @@ export const episode4 = [
       showPriorities={false}
       showExplanations={false}
       showControls
-      hideStar
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -400,7 +400,6 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode4Expression2}
       showPriorities={false}
       showExplanations={false}
-      hideStar
       showControls
       variableSize={'lg'}
       initializeInstructions={[
@@ -418,6 +417,7 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
+      showExplanations={false}
       showControls={false}
       variableSize={'lg'}
       disableReadyToHighlightColoring
@@ -427,6 +427,8 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
+      showExplanations={false}
+      showControls={false}
       variableSize={'lg'}
       maxStepsAllowed={1}
     />
@@ -435,6 +437,16 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
+      showExplanations={false}
+      variableSize={'lg'}
+      maxStepsAllowed={1}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode5Expression1}
+      showPriorities
+      showExplanations={false}
       variableSize={'lg'}
       lastAllowedExpressionState="callArgJustHighlighted"
       initializeInstructions={[

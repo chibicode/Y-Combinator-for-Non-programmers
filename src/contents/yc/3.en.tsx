@@ -13,6 +13,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode3 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
@@ -28,8 +29,10 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>
-        <Strong>Answer:</Strong> the above {h('ycBentoBox')} represents:
+        <Strong>Answer:</Strong> Here’s the annotated version:
       </P>
+      {episode3[i++]()}
+      <P>Therefore, the above {h('ycBentoBox')} represents:</P>
       <Ul size="lg">
         <UlLi>
           <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥗</Emoji>
@@ -41,9 +44,7 @@ export default () => {
           <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
-      <P>Here’s the annotated version:</P>
-      {episode3[i++]()}
-      <H3>What will happen in the next step?</H3>
+      <H3>What will happen next?</H3>
       <P>
         In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
         brings steak <Emoji>🥩</Emoji>. So in the next step,{' '}
@@ -62,7 +63,15 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          The salad <Emoji>🥗</Emoji> on the bottom right{' '}
+          The salad <Emoji>🥗</Emoji> on the bottom right matches with what
+          you’re eating next <Emoji>😋</Emoji>. So it’s highlighted with the
+          star background <InlineBackground bgPattern="star" />.
+        </UlLi>
+      </Ul>
+      {episode3[i++]()}
+      <Ul>
+        <UlLi>
+          Next, the salad <Emoji>🥗</Emoji> on the bottom right{' '}
           <Em>
             will be replaced <Emoji>🆕</Emoji>
           </Em>{' '}
@@ -70,11 +79,12 @@ export default () => {
         </UlLi>
         <UlLi>
           The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
-          <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>.
+          <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>{' '}
+          <InlineBackground bgPattern="cross" />.
         </UlLi>
       </Ul>
       {episode3[i++]()}
-      <P>Therefore, it’ll look like this:</P>
+      <P>In the end, it’ll look like this:</P>
       {episode3[i++]()}
       <H3>The Next and Previous Buttons</H3>
       <P>

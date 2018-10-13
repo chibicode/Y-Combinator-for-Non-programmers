@@ -58,7 +58,9 @@ export default () => {
         a look at this one:
       </P>
       {episode5[i++]()}
-      <P>You might be wondering:</P>
+      <P>
+        <Strong>You might be wondering:</Strong>
+      </P>
       <Ul>
         <UlLi>
           <Em>If there are 3 cells stacked vertically, what do we do?</Em>
@@ -97,33 +99,33 @@ export default () => {
       <H3>Example</H3>
       <P>
         On the following example, everything is shaded in light blue{' '}
-        <InlineBackground bg="indigo50" />. initially.{' '}
+        <InlineBackground bgColor="indigo50" /> initially.{' '}
       </P>
+      {episode5[i++]()}
       <P>
         <Em>
           If you click on {h('ycNext')}, the bottom two thirds will now have a
-          white background <InlineBackground bg="white" />.
+          white background <InlineBackground bgColor="white" />.
         </Em>{' '}
         This is the part that has{' '}
         <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the{' '}
         <Strong>top left</Strong> and the <Strong>bottom left</Strong> corner.
-      </P>
-      <P>
-        The remaining part will still be shaded in light blue{' '}
-        <InlineBackground bg="indigo50" />.
+        (The remaining part will still be shaded in light blue{' '}
+        <InlineBackground bgColor="indigo50" />
+        .)
       </P>
       {episode5[i++]()}
       <P>
         Then proceed with{' '}
         <Em>
-          the white background part <InlineBackground bg="white" />
+          the white background part <InlineBackground bgColor="white" />
         </Em>{' '}
-        as before. Try clicking on {h('ycNext')}.
+        as before. Try clicking on {h('ycNext')} several times.
       </P>
       {episode5[i++]()}
       <P>
         Let’s see what happens when the white background part{' '}
-        <InlineBackground bg="white" /> is done (sushi <Emoji>🍣</Emoji> is
+        <InlineBackground bgColor="white" /> is done (sushi <Emoji>🍣</Emoji> is
         replaced by salad <Emoji>🥗</Emoji>.{' '}
         <Em>Try clicking on {h('ycNext')}</Em>.
       </P>
@@ -135,7 +137,7 @@ export default () => {
         <UlLi>
           <Em>
             Everything is shaded in light blue{' '}
-            <InlineBackground bg="indigo50" /> again.
+            <InlineBackground bgColor="indigo50" /> again.
           </Em>
         </UlLi>
         <UlLi>

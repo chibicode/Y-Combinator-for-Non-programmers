@@ -59,8 +59,7 @@ const background = ({
   childVariableJustAlphaConverted,
   betaReducePreview,
   childVariableWillBeBetaReduced,
-  justBetaReduced,
-  hideStar
+  justBetaReduced
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
@@ -72,7 +71,6 @@ const background = ({
   childVariableJustAlphaConverted?: BorderWrapperProps['childVariableJustAlphaConverted']
   betaReducePreview?: ExpressionBetaReducePreviewContextProps['betaReducePreview']
   childVariableWillBeBetaReduced?: boolean
-  hideStar?: boolean
   justBetaReduced?: boolean
 }) => {
   if (betaReducePreview) {
@@ -82,16 +80,16 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       childVariableWillBeBetaReduced
     ) {
-      if (hideStar) {
-        return css`
-          background-color: ${colors('yellow50')};
-        `
-      } else {
+      if (childVariableWillBeBetaReduced) {
         return css`
           background-image: url(${starSvg});
           background-size: ${variableSize === 'lg' ? 2 : 1}rem
             ${variableSize === 'lg' ? 2 : 1}rem;
           background-position: center center;
+        `
+      } else {
+        return css`
+          background-color: ${colors('yellow50')};
         `
       }
     } else if (
@@ -100,16 +98,16 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       justBetaReduced
     ) {
-      if (hideStar) {
-        return css`
-          background-color: ${colors('yellow50')};
-        `
-      } else {
+      if (justBetaReduced) {
         return css`
           background-image: url(${starSvg});
           background-size: ${variableSize === 'lg' ? 2 : 1}rem
             ${variableSize === 'lg' ? 2 : 1}rem;
           background-position: center center;
+        `
+      } else {
+        return css`
+          background-color: ${colors('yellow50')};
         `
       }
     } else {
@@ -177,10 +175,9 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   childWasJustBetaReduced
 }) => (
   <ExpressionBetaReducePreviewContext.Consumer>
-    {({ betaReducePreview, hideStar, wasJustBetaReduced }) => (
+    {({ betaReducePreview, wasJustBetaReduced }) => (
       <ExpressionBetaReducePreviewContext.Provider
         value={{
-          hideStar,
           betaReducePreview,
           wasJustBetaReduced: wasJustBetaReduced || childWasJustBetaReduced
         }}
@@ -211,7 +208,6 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                           childVariableHighlightType,
                           childVariableJustAlphaConverted,
                           childVariableWillBeBetaReduced,
-                          hideStar,
                           justBetaReduced:
                             wasJustBetaReduced || childWasJustBetaReduced
                         })
