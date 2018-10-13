@@ -143,6 +143,20 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewCrossed'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      showPriorities={false}
+      showControls={false}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'justBetaReduced'
         },
         {
@@ -241,7 +255,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewAfter'
+          state: 'betaReducePreviewCrossed'
         }
       ]}
     />

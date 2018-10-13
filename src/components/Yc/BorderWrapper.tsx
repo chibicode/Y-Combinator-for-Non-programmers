@@ -93,7 +93,7 @@ const background = ({
         `
       }
     } else if (
-      (betaReducePreview === 'after' &&
+      ((betaReducePreview === 'after' || betaReducePreview === 'crossed') &&
         (childVariableHighlightType === 'callArg' ||
           childVariableHighlightType === 'funcArg')) ||
       justBetaReduced
@@ -213,7 +213,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                         })
                       )}
                     >
-                      {betaReducePreview === 'after' &&
+                      {betaReducePreview === 'crossed' &&
                         (childVariableHighlightType === 'callArg' ||
                           childVariableHighlightType === 'funcArg') && (
                           <Cross />

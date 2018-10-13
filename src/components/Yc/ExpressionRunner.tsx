@@ -63,6 +63,8 @@ const betaReducePreview = (
     return 'before'
   } else if (previouslyChangedExpressionState === 'betaReducePreviewAfter') {
     return 'after'
+  } else if (previouslyChangedExpressionState === 'betaReducePreviewCrossed') {
+    return 'crossed'
   } else {
     return undefined
   }

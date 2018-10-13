@@ -67,7 +67,8 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                   >
                     {(state === 'highlighted' || state === 'justHighlighted') &&
                       highlightType && <EmojiBadge badgeType={highlightType} />}
-                    {betaReducePreview === 'after' &&
+                    {(betaReducePreview === 'after' ||
+                      betaReducePreview === 'crossed') &&
                       wasJustBetaReduced && (
                         <EmojiBadge badgeType="wasJustBetaReduced" />
                       )}

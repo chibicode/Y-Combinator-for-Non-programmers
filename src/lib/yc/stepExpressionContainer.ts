@@ -147,6 +147,12 @@ export default function stepExpressionContainer(
             break
           }
           case 'betaReducePreviewAfter': {
+            expression.state = 'betaReducePreviewCrossed'
+            draftContainer.previouslyChangedExpressionState =
+              'betaReducePreviewCrossed'
+            break
+          }
+          case 'betaReducePreviewCrossed': {
             const betaReduced: PrioritizedExpression = {
               ...betaReduce(
                 clearJustAlphaConvertedAndBetaReducePreview(expression)

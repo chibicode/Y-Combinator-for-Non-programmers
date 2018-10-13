@@ -20,6 +20,7 @@ export const previouslyChangedExpressionStateOrdered: ReadonlyArray<
   'alphaConvertDone',
   'betaReducePreviewBefore',
   'betaReducePreviewAfter',
+  'betaReducePreviewCrossed',
   'justBetaReduced',
   'default'
 ]

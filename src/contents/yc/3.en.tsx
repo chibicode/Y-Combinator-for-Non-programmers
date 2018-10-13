@@ -47,7 +47,7 @@ export default () => {
       <H3>What will happen next?</H3>
       <P>
         In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
-        brings steak <Emoji>🥩</Emoji>. So in the next step,{' '}
+        brings steak <Emoji>🥩</Emoji>. So eventually,{' '}
         <Em>
           the steak <Emoji>🥩</Emoji> will be the only dish
         </Em>
@@ -61,30 +61,33 @@ export default () => {
       <P>
         <Strong>What happens to the {h('ycBentoBox')}:</Strong>
       </P>
-      <Ul>
-        <UlLi>
-          The salad <Emoji>🥗</Emoji> on the bottom right matches with what
-          you’re eating next <Emoji>😋</Emoji>. So it’s highlighted with the
-          star background <InlineBackground bgPattern="star" />.
-        </UlLi>
-      </Ul>
+      <P>
+        The salad <Emoji>🥗</Emoji> on the bottom right <Strong>matches</Strong>{' '}
+        with what you’re eating next <Emoji>😋</Emoji>. We indicate this{' '}
+        <Strong>match</Strong> by{' '}
+        <Em>
+          highlighting the cell with the star background{' '}
+          <InlineBackground bgPattern="star" />.
+        </Em>
+      </P>
       {episode3[i++]()}
-      <Ul>
-        <UlLi>
-          Next, the salad <Emoji>🥗</Emoji> on the bottom right{' '}
-          <Em>
-            will be replaced <Emoji>🆕</Emoji>
-          </Em>{' '}
-          by the steak <Emoji>🥩</Emoji>.
-        </UlLi>
-        <UlLi>
-          The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
-          <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>{' '}
-          <InlineBackground bgPattern="cross" />.
-        </UlLi>
-      </Ul>
+      <P>
+        Next, the salad <Emoji>🥗</Emoji> on the bottom right{' '}
+        <Em>
+          will be replaced <Emoji>🆕</Emoji>
+        </Em>{' '}
+        by the steak <Emoji>🥩</Emoji>.
+      </P>
       {episode3[i++]()}
-      <P>In the end, it’ll look like this:</P>
+      <P>
+        The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
+        <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>{' '}
+        <InlineBackground bgPattern="cross" />.
+      </P>
+      {episode3[i++]()}
+      <P>
+        In the end, only the steak <Emoji>🥩</Emoji> remains:
+      </P>
       {episode3[i++]()}
       <H3>The Next and Previous Buttons</H3>
       <P>
@@ -97,8 +100,7 @@ export default () => {
           <Em>
             try pressing {h('ycNext')} several times until you see {h('ycDone')}
             .
-          </Em>{' '}
-          Eventually, the steak <Emoji>🥩</Emoji> will be the only dish.
+          </Em>
         </OlLi>
         <OlLi>
           Then <Em>try pressing {h('ycPrevious')} a few times</Em>.

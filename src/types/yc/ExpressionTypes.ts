@@ -28,6 +28,7 @@ export type CallExpressionStates =
   | 'readyToBetaReduce'
   | 'betaReducePreviewBefore'
   | 'betaReducePreviewAfter'
+  | 'betaReducePreviewCrossed'
   | 'alphaConvertDone'
 
 export type AllExpressionStates = CallExpressionStates
