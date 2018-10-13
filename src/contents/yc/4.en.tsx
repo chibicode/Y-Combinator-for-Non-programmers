@@ -103,18 +103,17 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          <Emoji>😋</Emoji> You ate sushi <Emoji>🍣</Emoji>.
-        </UlLi>
-        <UlLi>
-          So the sushi <Emoji>🍣</Emoji> on the bottom right was replaced by the
-          salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji> prepared.
+          You ate the sushi <Emoji>🍣</Emoji> on the bottom right, which was
+          then <Strong>replaced</Strong> by the salad <Emoji>🥗</Emoji> the chef{' '}
+          <Emoji>👨‍🍳</Emoji> prepared.
         </UlLi>
         <UlLi>
           As a result, the bottom left sushi <Emoji>🍣</Emoji> and the top salad{' '}
           <Emoji>🥗</Emoji> <Strong>disappeared</Strong>.
         </UlLi>
         <UlLi>
-          The sandwich <Emoji>🥪</Emoji> remained the same.
+          The sandwich <Emoji>🥪</Emoji> (which you didn’t eat) remained the
+          same.
         </UlLi>
       </Ul>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
@@ -129,8 +128,8 @@ export default () => {
       {episode4[i++]()}
       <P>
         <Strong>Here’s the hint.</Strong> The sushi <Emoji>🍣</Emoji> is what
-        you’re eating next, and everything else in the bottom is available
-        dishes <Emoji>🍽</Emoji>.
+        you’re eating next because it’s the leftmost item on the bottom row.
+        Everything else in the bottom row is available dishes <Emoji>🍽</Emoji>.
       </P>
       {episode4[i++]()}
       <YcNextLessonButton nextEpisodeNumber={5} />
