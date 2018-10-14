@@ -47,7 +47,8 @@ interface ExpressionRunnerProps {
   disableReadyToHighlightColoring: boolean
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
-  indexOffset: number
+  substepOffset: number
+  stepOffset: number
   containerSize: ContainerProps['size']
 }
 
@@ -85,7 +86,8 @@ export default class ExpressionRunner extends React.Component<
     initializeInstructions: [],
     disableReadyToHighlightColoring: false,
     expressionContainerManagerSkipOptions: {},
-    indexOffset: 0,
+    stepOffset: 0,
+    substepOffset: 0,
     containerSize: 'xxs'
   }
   private expressionContainerManager: ExpressionContainerManager
@@ -96,7 +98,8 @@ export default class ExpressionRunner extends React.Component<
     const {
       expressionContainer,
       expressionContainerManagerSkipOptions,
-      indexOffset
+      stepOffset,
+      substepOffset,
       lastAllowedExpressionState
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
@@ -105,7 +108,8 @@ export default class ExpressionRunner extends React.Component<
         ...expressionContainerManagerSkipOptionsDefault,
         ...expressionContainerManagerSkipOptions
       },
-      indexOffset
+      stepOffset,
+      substepOffset,
       lastAllowedExpressionState
     })
 
