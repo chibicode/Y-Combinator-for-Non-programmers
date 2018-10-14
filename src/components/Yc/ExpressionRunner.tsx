@@ -43,7 +43,6 @@ interface ExpressionRunnerProps {
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
-  allowGoingBack: boolean
   expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
   disableReadyToHighlightColoring: boolean
   maxStepsAllowed?: number
@@ -83,7 +82,6 @@ export default class ExpressionRunner extends React.Component<
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
     variableSize: expressionRunnerContextDefault.variableSize,
-    allowGoingBack: false,
     initializeInstructions: [],
     disableReadyToHighlightColoring: false,
     expressionContainerManagerSkipOptions: {},
@@ -98,8 +96,8 @@ export default class ExpressionRunner extends React.Component<
     const {
       expressionContainer,
       expressionContainerManagerSkipOptions,
-      lastAllowedExpressionState,
       indexOffset
+      lastAllowedExpressionState
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
@@ -107,8 +105,8 @@ export default class ExpressionRunner extends React.Component<
         ...expressionContainerManagerSkipOptionsDefault,
         ...expressionContainerManagerSkipOptions
       },
-      lastAllowedExpressionState,
       indexOffset
+      lastAllowedExpressionState
     })
 
     this.state = {
@@ -118,11 +116,7 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const {
-      initializeInstructions,
-      allowGoingBack,
-      maxStepsAllowed
-    } = this.props
+    const { initializeInstructions, maxStepsAllowed } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -142,9 +136,7 @@ export default class ExpressionRunner extends React.Component<
           )
         }
       })
-      if (!allowGoingBack) {
-        this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
-      }
+      this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
       this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
       this.syncState()
     }
@@ -233,6 +225,7 @@ export default class ExpressionRunner extends React.Component<
                 }
                 isDone={expressionContainerManagerState.isDone}
                 currentStep={expressionContainerManagerState.currentStep}
+                currentSubstep={expressionContainerManagerState.currentSubstep}
               />
             )}
           </Container>

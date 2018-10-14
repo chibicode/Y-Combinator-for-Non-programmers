@@ -8,11 +8,12 @@ interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
   isDone: boolean
   currentStep: number
+  currentSubstep: number
 }
 
 const ExpressionRunnerExplanation: React.SFC<
   ExpressionRunnerExplanationProps
-> = ({ currentStep }) => (
+> = ({ currentStep, currentSubstep }) => (
   <div
     className={css`
       text-align: center;
@@ -21,7 +22,9 @@ const ExpressionRunnerExplanation: React.SFC<
       color: ${colors('indigo300')};
     `}
   >
-    <Strong>Step {currentStep}:</Strong>{' '}
+    <Strong>
+      Step {currentStep}.{currentSubstep}:
+    </Strong>{' '}
     {[...new Array(currentStep)].map(_ => 'Hello World Hello World ')}
   </div>
 )
