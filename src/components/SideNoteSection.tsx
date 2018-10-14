@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion'
+import { css } from 'emotion'
 import React from 'react'
 import { H3 } from 'src/components/ContentTags'
 import SectionContext from 'src/components/SectionContext'
