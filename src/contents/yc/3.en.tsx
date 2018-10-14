@@ -59,8 +59,9 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Strong>What happens to the {h('ycBentoBox')}:</Strong>
+        <Strong>Let’s see what happens to the {h('ycBentoBox')}:</Strong>
       </P>
+      {episode3[i++]()}
       <P>
         The salad <Emoji>🥗</Emoji> on the bottom right <Strong>matches</Strong>{' '}
         with what you’re eating next <Emoji>😋</Emoji>. We indicate this{' '}

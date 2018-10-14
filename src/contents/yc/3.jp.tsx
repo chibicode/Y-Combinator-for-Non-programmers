@@ -67,11 +67,12 @@ export default () => {
       </Ul>
       <P>
         <Strong>
-          すると、
+          では、
           {h('ycBentoBox')}
-          はどうなるか。
+          はどうなるか見てみましょう。
         </Strong>
       </P>
+      {episode3[i++]()}
       <P>
         右下のサラダ <Emoji>🥗</Emoji> は、あなたが食べたい料理{' '}
         <Emoji>😋</Emoji> です。これを、

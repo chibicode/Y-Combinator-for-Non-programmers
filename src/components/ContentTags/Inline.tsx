@@ -1,4 +1,3 @@
-import Color from 'color'
 import { css, cx } from 'emotion'
 import React from 'react'
 import SectionContext from 'src/components/SectionContext'
