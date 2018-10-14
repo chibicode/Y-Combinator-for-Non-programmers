@@ -1,7 +1,6 @@
 import { css } from 'emotion'
 import React from 'react'
 import { Strong } from 'src/components/ContentTags'
-import { Em } from 'src/components/ContentTags/Inline'
 import Emoji from 'src/components/Emoji'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
@@ -34,7 +33,12 @@ const stateToExplanation = (
             </>
           )
         } else {
-          return ''
+          return (
+            <>
+              スタート！
+              <Emoji>🍱</Emoji>
+            </>
+          )
         }
       } else {
         return ''
@@ -48,7 +52,11 @@ const stateToExplanation = (
           </>
         )
       } else {
-        return ''
+        return (
+          <>
+            <EmojiBadge badgeType="funcBody" inline /> はこちら
+          </>
+        )
       }
     }
     case 'funcArgJustHighlighted': {
@@ -59,7 +67,11 @@ const stateToExplanation = (
           </>
         )
       } else {
-        return ''
+        return (
+          <>
+            <EmojiBadge badgeType="funcArg" inline /> はこちら
+          </>
+        )
       }
     }
     case 'callArgJustHighlighted': {
@@ -70,7 +82,11 @@ const stateToExplanation = (
           </>
         )
       } else {
-        return ''
+        return (
+          <>
+            <EmojiBadge badgeType="callArg" inline /> はこちら
+          </>
+        )
       }
     }
     case 'betaReducePreviewBefore': {
@@ -81,7 +97,11 @@ const stateToExplanation = (
           </>
         )
       } else {
-        return ''
+        return (
+          <>
+            <InlineBackground bgPattern="star" /> を食べます
+          </>
+        )
       }
     }
     case 'betaReducePreviewAfter': {
@@ -92,7 +112,11 @@ const stateToExplanation = (
           </>
         )
       } else {
-        return ''
+        return (
+          <>
+            食べたら次の料理に <Emoji>🆕</Emoji>
+          </>
+        )
       }
     }
     case 'betaReducePreviewCrossed': {
@@ -104,7 +128,12 @@ const stateToExplanation = (
           </>
         )
       } else {
-        return ''
+        return (
+          <>
+            <EmojiBadge badgeType="callArg" inline /> と
+            <EmojiBadge badgeType="funcArg" inline /> が消えます
+          </>
+        )
       }
     }
     default: {
@@ -125,12 +154,22 @@ const ExpressionRunnerExplanation: React.SFC<
     `}
   >
     <Strong>
-      Step {currentStep}.{currentSubstep}:
+      {locale === 'en' ? 'Step ' : 'ステップ'}
+      {currentStep}
+      {locale === 'en' ? '.' : '–'}
+      {currentSubstep}:
     </Strong>{' '}
     {isDone ? (
-      <>
-        Done! <Emoji>✅</Emoji>
-      </>
+      locale === 'en' ? (
+        <>
+          Done! <Emoji>✅</Emoji>
+        </>
+      ) : (
+        <>
+          終了！
+          <Emoji>✅</Emoji>
+        </>
+      )
     ) : (
       stateToExplanation(
         expressionContainer.previouslyChangedExpressionState,
