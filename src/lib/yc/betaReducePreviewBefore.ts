@@ -47,8 +47,8 @@ function helper<E extends PrioritizedExpression>({
     })
     return {
       result: Object.assign({}, expression, {
-        arg: argHelperResult,
-        func: funcHelperResult
+        arg: argHelperResult.result,
+        func: funcHelperResult.result
       }),
       matchExists: argHelperResult.matchExists || funcHelperResult.matchExists
     }
