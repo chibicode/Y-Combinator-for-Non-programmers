@@ -170,6 +170,22 @@ export default class ExpressionRunner extends React.Component<
       >
         <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
           <Container
+            size={containerSize === 'xxs' ? 'xs' : 'sm'}
+            horizontalPadding={0}
+            verticalMargin={0}
+          >
+            {showControls && (
+              <ExpressionRunnerExplanation
+                expressionContainer={
+                  expressionContainerManagerState.expressionContainer
+                }
+                isDone={expressionContainerManagerState.isDone}
+                currentStep={expressionContainerManagerState.currentStep}
+                currentSubstep={expressionContainerManagerState.currentSubstep}
+              />
+            )}
+          </Container>
+          <Container
             size={containerSize}
             horizontalPadding={0}
             verticalMargin={0}
@@ -216,22 +232,6 @@ export default class ExpressionRunner extends React.Component<
                 </ExpressionReadyToHighlightContext.Provider>
               </div>
             </div>
-          </Container>
-          <Container
-            size={containerSize === 'xxs' ? 'xs' : 'sm'}
-            horizontalPadding={0}
-            verticalMargin={0}
-          >
-            {showControls && (
-              <ExpressionRunnerExplanation
-                expressionContainer={
-                  expressionContainerManagerState.expressionContainer
-                }
-                isDone={expressionContainerManagerState.isDone}
-                currentStep={expressionContainerManagerState.currentStep}
-                currentSubstep={expressionContainerManagerState.currentSubstep}
-              />
-            )}
           </Container>
           <Container
             size={containerSize}

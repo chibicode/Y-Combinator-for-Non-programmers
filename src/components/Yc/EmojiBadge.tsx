@@ -8,6 +8,7 @@ interface EmojiBadgeProps {
   badgeType:
     | Required<ExpressionHighlighterContextProps>['highlightType']
     | 'wasJustBetaReduced'
+  inline?: boolean
 }
 
 const funcArgColor = colors('pink400')
@@ -103,18 +104,38 @@ const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
     wasJustBetaReduced: '🆕'
   }[x])
 
-const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ badgeType }) => (
+const inlineVerticalOffset = (x: EmojiBadgeProps['badgeType']) =>
+  ({
+    callArg: 0.05,
+    funcArg: 0.2 + hexAdjustTop,
+    funcBody: 0.2,
+    wasJustBetaReduced: 0
+  }[x])
+
+const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ badgeType, inline }) => (
   <span
     className={cx(
       css`
-        display: flex;
         align-items: center;
         justify-content: center;
-        /* Font size varies depending on emoji size */
-        font-size: ${badgeType === 'wasJustBetaReduced' ? '0.55em' : '0.45em'};
       `,
       badgeTypeToColors(badgeType),
-      badgeTypeToShapeAndSize(badgeType)
+      badgeTypeToShapeAndSize(badgeType),
+      {
+        [css`
+          display: flex;
+          /* Font size varies depending on emoji size */
+          font-size: ${badgeType === 'wasJustBetaReduced'
+            ? '0.55em'
+            : '0.45em'};
+        `]: !inline,
+        [css`
+          display: inline-flex;
+          font-size: 1em;
+          vertical-align: text-bottom;
+          transform: translateY(${inlineVerticalOffset(badgeType)}em);
+        `]: inline
+      }
     )}
   >
     <span
