@@ -1,21 +1,9 @@
-import {
-  blue,
-  green,
-  grey,
-  indigo,
-  pink,
-  red,
-  yellow
-} from '@material-ui/core/colors'
+import { grey, indigo, pink, yellow } from '@material-ui/core/colors'
+import Color from 'color'
 
 export const allColors = {
-  blue100: blue[100],
   enSocialBackground: indigo[500],
-  green100: green[100],
-  grey100: grey[100],
-  grey200: grey[200],
   grey300: grey[300],
-  grey400: grey[400],
   grey500: grey[500],
   grey800: grey[800],
   grey900: grey[900],
@@ -26,15 +14,15 @@ export const allColors = {
   indigo500: indigo[500],
   jpSocialBackground: grey[300],
   pink50: pink[50],
-  pink300: pink[300],
   pink400: pink[400],
   pink500: pink[500],
   pink700: pink[700],
-  red100: red[100],
-  red300: red[300], // Logo heart
-  red500: red[500],
   transparent: 'transparent',
   white: 'white',
+  white66: Color('#fff')
+    .alpha(0.66)
+    .hsl()
+    .string(),
   yellow50: yellow[50],
   yellow100: yellow[100],
   yellow200: yellow[200],

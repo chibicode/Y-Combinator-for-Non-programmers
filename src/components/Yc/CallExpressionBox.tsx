@@ -20,12 +20,11 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
   expression
 }) => (
   <ExpressionReadyToHighlightContext.Consumer>
-    {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+    {({ readyToHighlight }) => (
       <ExpressionReadyToHighlightContext.Provider
         value={{
           readyToHighlight:
-            readyToHighlight || convertCallexpressionStates(expression.state),
-          disableReadyToHighlightColoring
+            readyToHighlight || convertCallexpressionStates(expression.state)
         }}
       >
         <Flex

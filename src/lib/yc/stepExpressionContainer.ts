@@ -119,12 +119,13 @@ export default function stepExpressionContainer(
           }
           case 'readyToBetaReduce':
           case 'alphaConvertDone': {
-            const betaReducePreviewBeforeResult = betaReducePreviewBefore(
+            const { result, matchExists } = betaReducePreviewBefore(
               clearJustAlphaConvertedAndBetaReducePreview(expression)
             )
-            expression.func = betaReducePreviewBeforeResult.func
-            expression.arg = betaReducePreviewBeforeResult.arg
+            expression.func = result.func
+            expression.arg = result.arg
             expression.state = 'betaReducePreviewBefore'
+            draftContainer.matchExists = matchExists
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewBefore'
             break
@@ -147,6 +148,12 @@ export default function stepExpressionContainer(
             break
           }
           case 'betaReducePreviewAfter': {
+            expression.state = 'betaReducePreviewCrossed'
+            draftContainer.previouslyChangedExpressionState =
+              'betaReducePreviewCrossed'
+            break
+          }
+          case 'betaReducePreviewCrossed': {
             const betaReduced: PrioritizedExpression = {
               ...betaReduce(
                 clearJustAlphaConvertedAndBetaReducePreview(expression)
@@ -162,7 +169,8 @@ export default function stepExpressionContainer(
                 expression: betaReduced,
                 backupExpression: undefined,
                 containerState: 'needsReset',
-                previouslyChangedExpressionState: 'justBetaReduced'
+                previouslyChangedExpressionState: 'justBetaReduced',
+                matchExists: undefined
               }
             } else if (
               'parentCallExpression' in nextCallExpressionAndParent &&
@@ -179,6 +187,7 @@ export default function stepExpressionContainer(
               nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
               draftContainer.containerState = 'needsReset'
             }
+            delete draftContainer.matchExists
             draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
             if (draftContainer.backupExpression) {
               draftContainer.expression = draftContainer.backupExpression

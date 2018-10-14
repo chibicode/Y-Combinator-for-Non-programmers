@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface ExpressionBetaReducePreviewContextProps {
-  betaReducePreview?: 'before' | 'after'
+  betaReducePreview?: 'before' | 'after' | 'crossed'
   wasJustBetaReduced?: boolean
 }
 

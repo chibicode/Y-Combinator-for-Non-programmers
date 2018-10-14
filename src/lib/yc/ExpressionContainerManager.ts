@@ -18,14 +18,36 @@ export default class ExpressionContainerManager {
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
       isDone: this.isDone,
-      currentStep: this.currentIndex - this.startIndex + this.indexOffset + 1
+      ...this.currentStepAndSubstep
     }
   }
+
+  public get currentStepAndSubstep() {
+    let currentStep = 1 + this.stepOffset
+    let currentSubstep =
+      this.currentIndex - this.startIndex + 1 + this.substepOffset
+
+    for (const iterationBoundary of this.iterationBoundaries) {
+      if (iterationBoundary <= this.currentIndex) {
+        currentStep += 1
+        currentSubstep = this.currentIndex - iterationBoundary + 1
+      } else {
+        break
+      }
+    }
+    return {
+      currentStep,
+      currentSubstep
+    }
+  }
+
   public expressionContainers: SteppedExpressionContainer[] = []
   public currentIndex = 0
   public startIndex = 0
+  public iterationBoundaries: number[] = []
   public minimumIndex = 0
-  public indexOffset = 0
+  public stepOffset = 0
+  public substepOffset = 0
   public maximumIndex = 999
   public skipOptions: ExpressionContainerSkipOptions = {}
   public lastAllowedExpressionState?: PreviouslyChangedExpressionState
@@ -33,23 +55,26 @@ export default class ExpressionContainerManager {
   constructor({
     expressionContainer,
     skipOptions,
-    lastAllowedExpressionState,
-    indexOffset
+    stepOffset,
+    substepOffset,
+    lastAllowedExpressionState
   }: {
     expressionContainer: SteppedExpressionContainer
     skipOptions?: ExpressionContainerSkipOptions
     lastAllowedExpressionState?: PreviouslyChangedExpressionState
-    indexOffset?: number
+    stepOffset?: number
+    substepOffset?: number
   }) {
     this.expressionContainers.push(expressionContainer)
     this.skipOptions = skipOptions || {}
     this.lastAllowedExpressionState = lastAllowedExpressionState
-    this.indexOffset = indexOffset || 0
+    this.stepOffset = stepOffset || 0
+    this.substepOffset = substepOffset || 0
   }
 
   public stepBackward() {
     if (this.canStepBackward) {
-      this.currentIndex -= 1
+      this.currentIndex--
     }
   }
 
@@ -76,7 +101,7 @@ export default class ExpressionContainerManager {
 
   public stepForward() {
     if (this.canRedo) {
-      this.currentIndex += 1
+      this.currentIndex++
     } else if (
       this.isUnderMaxIndex &&
       !isDoneExpressionContainer(this.currentExpressionContainer)
@@ -96,7 +121,11 @@ export default class ExpressionContainerManager {
       })
 
       this.expressionContainers.push(expressionContainer)
-      this.currentIndex += 1
+      this.currentIndex++
+
+      if (expressionContainer.previouslyChangedExpressionState === 'default') {
+        this.iterationBoundaries.push(this.currentIndex)
+      }
 
       if (
         this.lastAllowedExpressionState &&

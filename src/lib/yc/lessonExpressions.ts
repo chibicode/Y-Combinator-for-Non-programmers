@@ -134,6 +134,8 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
+export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
+
 // a => b => (a b)
 const recursiveFunction: FunctionExpressionParams = {
   arg: 'a',

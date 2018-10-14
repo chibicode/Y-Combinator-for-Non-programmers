@@ -1,5 +1,6 @@
 import { css } from 'emotion'
 import React from 'react'
+import Container, { ContainerProps } from 'src/components/Container'
 import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
 import ExpressionBetaReducePreviewContext, {
   ExpressionBetaReducePreviewContextProps
@@ -42,13 +43,12 @@ interface ExpressionRunnerProps {
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
-  allowGoingBack: boolean
   expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
-  disableReadyToHighlightColoring: boolean
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
-  indexOffset: number
-  showExplanations: boolean
+  substepOffset: number
+  stepOffset: number
+  containerSize: ContainerProps['size']
 }
 
 interface ExpressionRunnerState {
@@ -62,9 +62,16 @@ const betaReducePreview = (
     return 'before'
   } else if (previouslyChangedExpressionState === 'betaReducePreviewAfter') {
     return 'after'
+  } else if (previouslyChangedExpressionState === 'betaReducePreviewCrossed') {
+    return 'crossed'
   } else {
     return undefined
   }
+}
+
+const expressionContainerManagerSkipOptionsDefault: ExpressionContainerSkipOptions = {
+  readyToBetaReduce: true,
+  justBetaReduced: true
 }
 
 export default class ExpressionRunner extends React.Component<
@@ -74,16 +81,12 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     showPriorities: expressionRunnerContextDefault.showPriorities,
     showControls: true,
-    showExplanations: true,
     variableSize: expressionRunnerContextDefault.variableSize,
-    allowGoingBack: false,
     initializeInstructions: [],
-    disableReadyToHighlightColoring: false,
-    expressionContainerManagerSkipOptions: {
-      readyToBetaReduce: true,
-      justBetaReduced: true
-    },
-    indexOffset: 0
+    expressionContainerManagerSkipOptions: {},
+    stepOffset: 0,
+    substepOffset: 0,
+    containerSize: 'xxs'
   }
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
@@ -93,14 +96,19 @@ export default class ExpressionRunner extends React.Component<
     const {
       expressionContainer,
       expressionContainerManagerSkipOptions,
-      lastAllowedExpressionState,
-      indexOffset
+      stepOffset,
+      substepOffset,
+      lastAllowedExpressionState
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
-      skipOptions: expressionContainerManagerSkipOptions,
-      lastAllowedExpressionState,
-      indexOffset
+      skipOptions: {
+        ...expressionContainerManagerSkipOptionsDefault,
+        ...expressionContainerManagerSkipOptions
+      },
+      stepOffset,
+      substepOffset,
+      lastAllowedExpressionState
     })
 
     this.state = {
@@ -110,11 +118,7 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const {
-      initializeInstructions,
-      allowGoingBack,
-      maxStepsAllowed
-    } = this.props
+    const { initializeInstructions, maxStepsAllowed } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -134,9 +138,7 @@ export default class ExpressionRunner extends React.Component<
           )
         }
       })
-      if (!allowGoingBack) {
-        this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
-      }
+      this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
       this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
       this.syncState()
     }
@@ -152,9 +154,8 @@ export default class ExpressionRunner extends React.Component<
     const {
       showControls,
       showPriorities,
-      showExplanations,
       variableSize,
-      disableReadyToHighlightColoring
+      containerSize
     } = this.props
     const { expressionContainerManagerState } = this.state
     return (
@@ -164,70 +165,95 @@ export default class ExpressionRunner extends React.Component<
           variableSize
         }}
       >
-        <div
-          className={css`
-            max-width: 100%;
-          `}
-        >
-          <div
-            className={css`
-              line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-            `}
+        <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
+          <Container
+            size={containerSize === 'xxs' ? 'xs' : 'sm'}
+            horizontalPadding={0}
+            verticalMargin={0}
           >
-            <ExpressionReadyToHighlightContext.Provider
-              value={{
-                readyToHighlight: expressionContainerManagerState.isDone,
-                disableReadyToHighlightColoring
-              }}
-            >
-              <AlphaConvertContext.Provider
-                value={{
-                  conflictingVariableNames:
-                    expressionContainerManagerState.expressionContainer
-                      .conflictingVariableNames
-                }}
-              >
-                <ExpressionBetaReducePreviewContext.Provider
-                  value={{
-                    betaReducePreview: betaReducePreview(
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState
-                    )
-                  }}
-                >
-                  <ExpressionBox
-                    expression={
-                      expressionContainerManagerState.expressionContainer
-                        .expression
-                    }
-                  />
-                </ExpressionBetaReducePreviewContext.Provider>
-              </AlphaConvertContext.Provider>
-            </ExpressionReadyToHighlightContext.Provider>
-          </div>
-          {showExplanations && (
-            <ExpressionRunnerExplanation
-              expressionContainer={
-                expressionContainerManagerState.expressionContainer
-              }
-              isDone={expressionContainerManagerState.isDone}
-              currentStep={expressionContainerManagerState.currentStep}
-            />
-          )}
-          {showControls && (
-            <div ref={this.controlsRef}>
-              <ExpressionRunnerControls
-                onNextClick={this.stepForward}
-                onPreviousClick={this.stepBackward}
-                canStepForward={expressionContainerManagerState.canStepForward}
-                canStepBackward={
-                  expressionContainerManagerState.canStepBackward
+            {showControls && (
+              <ExpressionRunnerExplanation
+                expressionContainer={
+                  expressionContainerManagerState.expressionContainer
                 }
                 isDone={expressionContainerManagerState.isDone}
+                currentStep={expressionContainerManagerState.currentStep}
+                currentSubstep={expressionContainerManagerState.currentSubstep}
               />
+            )}
+          </Container>
+          <Container
+            size={containerSize}
+            horizontalPadding={0}
+            verticalMargin={0}
+          >
+            <div
+              className={css`
+                max-width: 100%;
+              `}
+            >
+              <div
+                className={css`
+                  line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+                `}
+              >
+                <ExpressionReadyToHighlightContext.Provider
+                  value={{
+                    readyToHighlight:
+                      expressionContainerManagerState.isDone ||
+                      expressionContainerManagerState.expressionContainer
+                        .previouslyChangedExpressionState === 'default'
+                  }}
+                >
+                  <AlphaConvertContext.Provider
+                    value={{
+                      conflictingVariableNames:
+                        expressionContainerManagerState.expressionContainer
+                          .conflictingVariableNames
+                    }}
+                  >
+                    <ExpressionBetaReducePreviewContext.Provider
+                      value={{
+                        betaReducePreview: betaReducePreview(
+                          expressionContainerManagerState.expressionContainer
+                            .previouslyChangedExpressionState
+                        )
+                      }}
+                    >
+                      <ExpressionBox
+                        expression={
+                          expressionContainerManagerState.expressionContainer
+                            .expression
+                        }
+                      />
+                    </ExpressionBetaReducePreviewContext.Provider>
+                  </AlphaConvertContext.Provider>
+                </ExpressionReadyToHighlightContext.Provider>
+              </div>
             </div>
-          )}
-        </div>
+          </Container>
+          <Container
+            size={containerSize}
+            horizontalPadding={0}
+            verticalMargin={0}
+          >
+            {showControls && (
+              <div ref={this.controlsRef}>
+                <ExpressionRunnerControls
+                  onNextClick={this.stepForward}
+                  onPreviousClick={this.stepBackward}
+                  canStepForward={
+                    expressionContainerManagerState.canStepForward
+                  }
+                  canStepBackward={
+                    expressionContainerManagerState.canStepBackward
+                  }
+                  isDone={expressionContainerManagerState.isDone}
+                />
+              </div>
+            )}
+          </Container>
+        </Container>
       </ExpressionRunnerContext.Provider>
     )
   }

@@ -38,6 +38,9 @@ export default class ButtonWithTouchActiveStates extends React.Component<
 
   private activate = () => {
     if (!this.props.disabled) {
+      // NOTE: Originally tried to call the callback here and do e.preventDefault()
+      // to prevent mouse click event from happening, so that callback fires
+      // on tap start instead of on tap end, but that was buggy so ended up removing.
       this.setState({ isActive: true })
     }
   }

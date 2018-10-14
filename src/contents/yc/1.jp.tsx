@@ -11,8 +11,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import NextLessonButton from 'src/components/NextLessonButton'
-import { yc } from 'src/lib/pathHelpers'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 
 export default () => (
   <>
@@ -134,14 +133,6 @@ export default () => (
       </OlLi>
     </Ol>
     <P>答えは次のページにあります！</P>
-    <NextLessonButton
-      href={yc(2)}
-      primaryText={<>次のページへ進む</>}
-      secondaryText={
-        <>
-          第2章へ <Emoji>🙂</Emoji>
-        </>
-      }
-    />
+    <YcNextLessonButton nextEpisodeNumber={2} />
   </>
 )

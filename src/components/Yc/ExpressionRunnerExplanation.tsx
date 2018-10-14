@@ -1,28 +1,206 @@
 import { css } from 'emotion'
 import React from 'react'
 import { Strong } from 'src/components/ContentTags'
-import { colors, fontSizes, spaces } from 'src/lib/theme'
-import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import Emoji from 'src/components/Emoji'
+import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import InlineBackground from 'src/components/Yc/InlineBackground'
+import locale from 'src/lib/locale'
+import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
+import {
+  PreviouslyChangedExpressionState,
+  SteppedExpressionContainer
+} from 'src/types/yc/ExpressionContainerTypes'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
   isDone: boolean
   currentStep: number
+  currentSubstep: number
+}
+
+const stateToExplanation = ({
+  state,
+  matchExists,
+  currentStep,
+  currentSubstep
+}: {
+  state: PreviouslyChangedExpressionState
+  matchExists?: boolean
+  currentStep: number
+  currentSubstep: number
+}) => {
+  if (currentStep === 1 && currentSubstep === 1) {
+    if (locale === 'en') {
+      return (
+        <>
+          Let’s begin! <Emoji>🍱</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          スタート！
+          <Emoji>🍱</Emoji>
+        </>
+      )
+    }
+  }
+  switch (state) {
+    case 'readyToHighlight': {
+      return ''
+    }
+    case 'funcBodyJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            Highlighting <EmojiBadge badgeType="funcBody" inline />
+          </>
+        )
+      } else {
+        return (
+          <>
+            <EmojiBadge badgeType="funcBody" inline /> はこちら
+          </>
+        )
+      }
+    }
+    case 'funcArgJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            Highlighting <EmojiBadge badgeType="funcArg" inline />
+          </>
+        )
+      } else {
+        return (
+          <>
+            <EmojiBadge badgeType="funcArg" inline /> はこちら
+          </>
+        )
+      }
+    }
+    case 'callArgJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            Highlighting <EmojiBadge badgeType="callArg" inline />
+          </>
+        )
+      } else {
+        return (
+          <>
+            <EmojiBadge badgeType="callArg" inline /> はこちら
+          </>
+        )
+      }
+    }
+    case 'betaReducePreviewBefore': {
+      if (locale === 'en') {
+        return matchExists ? (
+          <>
+            Highlighting matches <InlineBackground bgPattern="star" />
+          </>
+        ) : (
+          <>
+            No matches <Emoji>😭</Emoji>
+          </>
+        )
+      } else {
+        return matchExists ? (
+          <>
+            <InlineBackground bgPattern="star" /> を食べます
+          </>
+        ) : (
+          <>
+            食べられる料理がありません <Emoji>😭</Emoji>
+          </>
+        )
+      }
+    }
+    case 'betaReducePreviewAfter': {
+      if (locale === 'en') {
+        return matchExists ? (
+          <>
+            Matches replaced <Emoji>🆕</Emoji>
+          </>
+        ) : (
+          <>
+            Nothing to replace <Emoji>😭</Emoji>
+          </>
+        )
+      } else {
+        return matchExists ? (
+          <>
+            食べたら次の料理に <Emoji>🆕</Emoji>
+          </>
+        ) : (
+          <>
+            だから、何も食べません <Emoji>😭</Emoji>
+          </>
+        )
+      }
+    }
+    case 'betaReducePreviewCrossed': {
+      if (locale === 'en') {
+        return (
+          <>
+            Removing <EmojiBadge badgeType="callArg" inline /> and{' '}
+            <EmojiBadge badgeType="funcArg" inline />
+          </>
+        )
+      } else {
+        return (
+          <>
+            <EmojiBadge badgeType="callArg" inline /> と
+            <EmojiBadge badgeType="funcArg" inline /> が消えます
+          </>
+        )
+      }
+    }
+    default: {
+      return ''
+    }
+  }
 }
 
 const ExpressionRunnerExplanation: React.SFC<
   ExpressionRunnerExplanationProps
-> = ({ currentStep }) => (
+> = ({ expressionContainer, currentStep, currentSubstep, isDone }) => (
   <div
     className={css`
       text-align: center;
-      margin: ${spaces(0.75)} -2px 0 -2px;
+      margin: ${spaces('-0.25')} -2px ${spaces(0.5)} -2px;
       font-size: ${fontSizes(0.85)};
       color: ${colors('indigo300')};
+      /* Use bigger line height to compensate for badges */
+      line-height: ${lineHeights(2)};
     `}
   >
-    <Strong>Step {currentStep}:</Strong>{' '}
-    {[...new Array(currentStep)].map(_ => 'Hello World Hello World ')}
+    <Strong>
+      {locale === 'en' ? 'Step ' : 'ステップ'}
+      {currentStep}
+      {locale === 'en' ? '.' : '–'}
+      {currentSubstep}:
+    </Strong>{' '}
+    {isDone ? (
+      locale === 'en' ? (
+        <>
+          Done! <Emoji>✅</Emoji>
+        </>
+      ) : (
+        <>
+          終了！
+          <Emoji>✅</Emoji>
+        </>
+      )
+    ) : (
+      stateToExplanation({
+        state: expressionContainer.previouslyChangedExpressionState,
+        currentStep,
+        currentSubstep,
+        matchExists: expressionContainer.matchExists
+      })
+    )}
   </div>
 )
 

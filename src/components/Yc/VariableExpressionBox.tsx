@@ -1,8 +1,8 @@
 import { css } from 'emotion'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
-import EmojiBadge from 'src/components/EmojiBadge'
 import FlexCenter from 'src/components/FlexCenter'
+import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import ExpressionBetaReducePreviewContext from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionHighlighterContext from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionRunnerContext, {

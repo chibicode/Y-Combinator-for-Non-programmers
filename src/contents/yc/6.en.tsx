@@ -10,40 +10,25 @@ import {
   // Ul,
   // UlLi
 } from 'src/components/ContentTags'
+import { episode6 } from 'src/components/Yc/AllExpressionRunners'
 // import Emoji from 'src/components/Emoji'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
-// import NextLessonButton from 'src/components/NextLessonButton'
-import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import ExpressionRunnerWrapper from 'src/components/Yc/ExpressionRunnerWrapper'
+// import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 // import InlineBackground from 'src/components/Yc/InlineBackground'
 // import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 // import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
-import {
-  episode6Expression1
-  // episode5Expression1,
-  // episode5Expression2
-} from 'src/lib/yc/lessonExpressions'
 
-export default () => (
-  <>
-    <P>
-      <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-      <InternalLink href={yc(4)}>the quiz from the last episode</InternalLink>:
-    </P>
-    <ExpressionRunnerWrapper size="xs">
-      <ExpressionRunner
-        expressionContainer={episode6Expression1}
-        showPriorities
-        showControls
-        variableSize={'lg'}
-        initializeInstructions={[
-          {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: 'callArgJustHighlighted'
-          }
-        ]}
-      />
-    </ExpressionRunnerWrapper>
-  </>
-)
+export default () => {
+  let i = 0
+  return (
+    <>
+      <P>
+        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
+        <InternalLink href={yc(4)}>the quiz from the last episode</InternalLink>
+        :
+      </P>
+      {episode6[i++]()}
+    </>
+  )
+}

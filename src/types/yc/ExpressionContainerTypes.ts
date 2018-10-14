@@ -20,6 +20,7 @@ export const previouslyChangedExpressionStateOrdered: ReadonlyArray<
   'alphaConvertDone',
   'betaReducePreviewBefore',
   'betaReducePreviewAfter',
+  'betaReducePreviewCrossed',
   'justBetaReduced',
   'default'
 ]
@@ -36,6 +37,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly previouslyChangedExpressionState: PreviouslyChangedExpressionState
   readonly conflictingVariableNames?: ReadonlyArray<VariableNames>
   readonly backupExpression?: E
+  readonly matchExists?: boolean
 }
 
 export type PrioritizedExpressionContainer<

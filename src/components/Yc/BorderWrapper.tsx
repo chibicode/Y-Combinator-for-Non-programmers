@@ -50,7 +50,6 @@ const stateToColor = (
 
 const background = ({
   state,
-  disableReadyToHighlightColoring,
   readyToHighlight,
   conflictingVariableNames,
   childVariableName,
@@ -63,7 +62,6 @@ const background = ({
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
-  disableReadyToHighlightColoring?: ExpressionReadyToHighlightContextProps['disableReadyToHighlightColoring']
   conflictingVariableNames?: AlphaConvertContextProps['conflictingVariableNames']
   childVariableName?: BorderWrapperProps['childVariableName']
   variableSize: ExpressionRunnerContextProps['variableSize']
@@ -80,27 +78,43 @@ const background = ({
           childVariableHighlightType === 'funcArg')) ||
       childVariableWillBeBetaReduced
     ) {
-      return css`
-        background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
-        background-position: center center;
-      `
+      if (childVariableWillBeBetaReduced) {
+        return css`
+          background-image: url(${starSvg});
+          background-size: ${variableSize === 'lg' ? 2 : 1}rem
+            ${variableSize === 'lg' ? 2 : 1}rem;
+          background-position: center center;
+        `
+      } else {
+        return css`
+          background-color: ${colors('yellow100')};
+        `
+      }
     } else if (
-      (betaReducePreview === 'after' &&
+      ((betaReducePreview === 'after' || betaReducePreview === 'crossed') &&
         (childVariableHighlightType === 'callArg' ||
           childVariableHighlightType === 'funcArg')) ||
       justBetaReduced
     ) {
-      return css`
-        background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
-        background-position: center center;
-      `
+      if (justBetaReduced && betaReducePreview === 'after') {
+        return css`
+          background-image: url(${starSvg});
+          background-size: ${variableSize === 'lg' ? 2 : 1}rem
+            ${variableSize === 'lg' ? 2 : 1}rem;
+          background-position: center center;
+        `
+      } else if (justBetaReduced && betaReducePreview === 'crossed') {
+        return css`
+          background-color: ${colors('white')};
+        `
+      } else {
+        return css`
+          background-color: ${colors('yellow100')};
+        `
+      }
     } else {
       return css`
-        background: ${colors('indigo50')};
+        background: ${colors(readyToHighlightToColor(readyToHighlight))};
       `
     }
   } else if (childVariableJustAlphaConverted) {
@@ -129,10 +143,7 @@ const background = ({
   } else {
     return css`
       background: ${colors(
-        stateToColor(state) ||
-          readyToHighlightToColor(
-            disableReadyToHighlightColoring || readyToHighlight
-          )
+        stateToColor(state) || readyToHighlightToColor(readyToHighlight)
       )};
     `
   }
@@ -173,7 +184,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
         <ExpressionRunnerContext.Consumer>
           {({ variableSize }) => (
             <ExpressionReadyToHighlightContext.Consumer>
-              {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+              {({ readyToHighlight }) => (
                 <AlphaConvertContext.Consumer>
                   {({ conflictingVariableNames }) => (
                     <Flex
@@ -188,7 +199,6 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                         background({
                           state,
                           betaReducePreview,
-                          disableReadyToHighlightColoring,
                           readyToHighlight,
                           conflictingVariableNames,
                           childVariableName,
@@ -201,7 +211,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                         })
                       )}
                     >
-                      {betaReducePreview === 'after' &&
+                      {betaReducePreview === 'crossed' &&
                         (childVariableHighlightType === 'callArg' ||
                           childVariableHighlightType === 'funcArg') && (
                           <Cross />
