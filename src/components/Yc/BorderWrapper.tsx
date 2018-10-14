@@ -8,9 +8,9 @@ import ExpressionBetaReducePreviewContext, {
   ExpressionBetaReducePreviewContextProps
 } from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
-import ExpressionReadyToHighlightContext, {
-  ExpressionReadyToHighlightContextProps
-} from 'src/components/Yc/ExpressionReadyToHighlightContext'
+import ExpressionFocusContext, {
+  ExpressionFocusContextProps
+} from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
@@ -50,7 +50,7 @@ const stateToColor = (
 
 const background = ({
   state,
-  readyToHighlight,
+  focused,
   conflictingVariableNames,
   childVariableName,
   variableSize,
@@ -61,7 +61,7 @@ const background = ({
   justBetaReduced
 }: {
   state: BorderWrapperProps['state']
-  readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
+  focused?: ExpressionFocusContextProps['focused']
   conflictingVariableNames?: AlphaConvertContextProps['conflictingVariableNames']
   childVariableName?: BorderWrapperProps['childVariableName']
   variableSize: ExpressionRunnerContextProps['variableSize']
@@ -114,7 +114,7 @@ const background = ({
       }
     } else {
       return css`
-        background: ${colors(readyToHighlightToColor(readyToHighlight))};
+        background: ${colors(readyToHighlightToColor(focused))};
       `
     }
   } else if (childVariableJustAlphaConverted) {
@@ -143,7 +143,7 @@ const background = ({
   } else {
     return css`
       background: ${colors(
-        stateToColor(state) || readyToHighlightToColor(readyToHighlight)
+        stateToColor(state) || readyToHighlightToColor(focused)
       )};
     `
   }
@@ -183,8 +183,8 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
       >
         <ExpressionRunnerContext.Consumer>
           {({ variableSize }) => (
-            <ExpressionReadyToHighlightContext.Consumer>
-              {({ readyToHighlight }) => (
+            <ExpressionFocusContext.Consumer>
+              {({ focused }) => (
                 <AlphaConvertContext.Consumer>
                   {({ conflictingVariableNames }) => (
                     <Flex
@@ -199,7 +199,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                         background({
                           state,
                           betaReducePreview,
-                          readyToHighlight,
+                          focused,
                           conflictingVariableNames,
                           childVariableName,
                           variableSize,
@@ -221,7 +221,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                   )}
                 </AlphaConvertContext.Consumer>
               )}
-            </ExpressionReadyToHighlightContext.Consumer>
+            </ExpressionFocusContext.Consumer>
           )}
         </ExpressionRunnerContext.Consumer>
       </ExpressionBetaReducePreviewContext.Provider>

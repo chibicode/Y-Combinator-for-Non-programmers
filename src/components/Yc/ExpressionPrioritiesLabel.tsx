@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
+import ExpressionFocusContext from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
 
@@ -31,10 +31,10 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
   position,
   collapsed
 }) => (
-  <ExpressionReadyToHighlightContext.Consumer>
-    {({ readyToHighlight, isDoneOrDefault }) => {
+  <ExpressionFocusContext.Consumer>
+    {({ focused, isDoneOrDefault, readyToHighlight }) => {
       const emphasizeOne =
-        !isDoneOrDefault && readyToHighlight && priority === 1
+        !isDoneOrDefault && focused && priority === 1 && readyToHighlight
       return (
         <ExpressionRunnerContext.Consumer>
           {({ variableSize }) => (
@@ -51,7 +51,7 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
                   background: ${colors(
                     emphasizeOne
                       ? 'pink400'
-                      : priorityLabelColorForReadyToHighlight(readyToHighlight)
+                      : priorityLabelColorForReadyToHighlight(focused)
                   )};
                   ${position === 'topleft'
                     ? css`
@@ -71,7 +71,7 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
         </ExpressionRunnerContext.Consumer>
       )
     }}
-  </ExpressionReadyToHighlightContext.Consumer>
+  </ExpressionFocusContext.Consumer>
 )
 
 const ExpressionPrioritiesLabelExpanded: React.SFC<

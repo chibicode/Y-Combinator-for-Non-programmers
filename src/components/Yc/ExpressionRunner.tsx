@@ -6,7 +6,7 @@ import ExpressionBetaReducePreviewContext, {
   ExpressionBetaReducePreviewContextProps
 } from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
-import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
+import ExpressionFocusContext from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
@@ -197,16 +197,19 @@ export default class ExpressionRunner extends React.Component<
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                 `}
               >
-                <ExpressionReadyToHighlightContext.Provider
+                <ExpressionFocusContext.Provider
                   value={{
-                    readyToHighlight:
+                    focused:
                       expressionContainerManagerState.isDone ||
                       expressionContainerManagerState.expressionContainer
                         .previouslyChangedExpressionState === 'default',
                     isDoneOrDefault:
                       expressionContainerManagerState.isDone ||
                       expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default'
+                        .previouslyChangedExpressionState === 'default',
+                    readyToHighlight:
+                      expressionContainerManagerState.expressionContainer
+                        .previouslyChangedExpressionState === 'readyToHighlight'
                   }}
                 >
                   <AlphaConvertContext.Provider
@@ -232,7 +235,7 @@ export default class ExpressionRunner extends React.Component<
                       />
                     </ExpressionBetaReducePreviewContext.Provider>
                   </AlphaConvertContext.Provider>
-                </ExpressionReadyToHighlightContext.Provider>
+                </ExpressionFocusContext.Provider>
               </div>
             </div>
           </Container>

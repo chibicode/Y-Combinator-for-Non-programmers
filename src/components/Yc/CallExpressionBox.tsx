@@ -6,9 +6,9 @@ import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionHighlighterContext, {
   convertAllExpressionStates
 } from 'src/components/Yc/ExpressionHighlighterContext'
-import ExpressionReadyToHighlightContext, {
-  convertCallexpressionStates
-} from 'src/components/Yc/ExpressionReadyToHighlightContext'
+import ExpressionFocusContext, {
+  callExpressionStateToFocused
+} from 'src/components/Yc/ExpressionFocusContext'
 import colors from 'src/lib/theme/colors'
 import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
@@ -19,13 +19,13 @@ interface CallExpressionBoxProps {
 const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
   expression
 }) => (
-  <ExpressionReadyToHighlightContext.Consumer>
-    {({ readyToHighlight, isDoneOrDefault }) => (
-      <ExpressionReadyToHighlightContext.Provider
+  <ExpressionFocusContext.Consumer>
+    {({ focused, isDoneOrDefault, readyToHighlight }) => (
+      <ExpressionFocusContext.Provider
         value={{
           isDoneOrDefault,
-          readyToHighlight:
-            readyToHighlight || convertCallexpressionStates(expression.state)
+          readyToHighlight,
+          focused: focused || callExpressionStateToFocused(expression.state)
         }}
       >
         <Flex
@@ -66,9 +66,9 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
             <ExpressionBox expression={expression.func} />
           </FlexCenter>
         </Flex>
-      </ExpressionReadyToHighlightContext.Provider>
+      </ExpressionFocusContext.Provider>
     )}
-  </ExpressionReadyToHighlightContext.Consumer>
+  </ExpressionFocusContext.Consumer>
 )
 
 export default CallExpressionBox
