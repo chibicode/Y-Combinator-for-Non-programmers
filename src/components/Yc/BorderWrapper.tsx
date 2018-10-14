@@ -50,7 +50,6 @@ const stateToColor = (
 
 const background = ({
   state,
-  disableReadyToHighlightColoring,
   readyToHighlight,
   conflictingVariableNames,
   childVariableName,
@@ -63,7 +62,6 @@ const background = ({
 }: {
   state: BorderWrapperProps['state']
   readyToHighlight?: ExpressionReadyToHighlightContextProps['readyToHighlight']
-  disableReadyToHighlightColoring?: ExpressionReadyToHighlightContextProps['disableReadyToHighlightColoring']
   conflictingVariableNames?: AlphaConvertContextProps['conflictingVariableNames']
   childVariableName?: BorderWrapperProps['childVariableName']
   variableSize: ExpressionRunnerContextProps['variableSize']
@@ -116,11 +114,7 @@ const background = ({
       }
     } else {
       return css`
-        background: ${colors(
-          readyToHighlightToColor(
-            disableReadyToHighlightColoring || readyToHighlight
-          )
-        )};
+        background: ${colors(readyToHighlightToColor(readyToHighlight))};
       `
     }
   } else if (childVariableJustAlphaConverted) {
@@ -149,10 +143,7 @@ const background = ({
   } else {
     return css`
       background: ${colors(
-        stateToColor(state) ||
-          readyToHighlightToColor(
-            disableReadyToHighlightColoring || readyToHighlight
-          )
+        stateToColor(state) || readyToHighlightToColor(readyToHighlight)
       )};
     `
   }
@@ -193,7 +184,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
         <ExpressionRunnerContext.Consumer>
           {({ variableSize }) => (
             <ExpressionReadyToHighlightContext.Consumer>
-              {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+              {({ readyToHighlight }) => (
                 <AlphaConvertContext.Consumer>
                   {({ conflictingVariableNames }) => (
                     <Flex
@@ -208,7 +199,6 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
                         background({
                           state,
                           betaReducePreview,
-                          disableReadyToHighlightColoring,
                           readyToHighlight,
                           conflictingVariableNames,
                           childVariableName,

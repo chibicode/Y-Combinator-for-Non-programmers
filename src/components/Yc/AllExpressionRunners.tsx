@@ -424,7 +424,6 @@ export const episode5 = [
       showPriorities
       showControls={false}
       variableSize={'lg'}
-      disableReadyToHighlightColoring
     />
   ),
   () => (

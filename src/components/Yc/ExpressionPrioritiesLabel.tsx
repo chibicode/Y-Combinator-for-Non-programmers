@@ -32,7 +32,7 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
   collapsed
 }) => (
   <ExpressionReadyToHighlightContext.Consumer>
-    {({ readyToHighlight, disableReadyToHighlightColoring }) => (
+    {({ readyToHighlight }) => (
       <ExpressionRunnerContext.Consumer>
         {({ variableSize }) => (
           <Flex>
@@ -46,9 +46,7 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
                 height: ${1.3 * (variableSize === 'lg' ? 1.07 : 1)}em;
                 line-height: 1;
                 background: ${colors(
-                  priorityLabelColorForReadyToHighlight(
-                    disableReadyToHighlightColoring || readyToHighlight
-                  )
+                  priorityLabelColorForReadyToHighlight(readyToHighlight)
                 )};
                 ${position === 'topleft'
                   ? css`

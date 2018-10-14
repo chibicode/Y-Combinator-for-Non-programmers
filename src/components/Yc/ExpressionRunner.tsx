@@ -44,7 +44,6 @@ interface ExpressionRunnerProps {
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
-  disableReadyToHighlightColoring: boolean
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
   substepOffset: number
@@ -84,7 +83,6 @@ export default class ExpressionRunner extends React.Component<
     showControls: true,
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
-    disableReadyToHighlightColoring: false,
     expressionContainerManagerSkipOptions: {},
     stepOffset: 0,
     substepOffset: 0,
@@ -157,7 +155,6 @@ export default class ExpressionRunner extends React.Component<
       showControls,
       showPriorities,
       variableSize,
-      disableReadyToHighlightColoring,
       containerSize
     } = this.props
     const { expressionContainerManagerState } = this.state
@@ -205,8 +202,7 @@ export default class ExpressionRunner extends React.Component<
                     readyToHighlight:
                       expressionContainerManagerState.isDone ||
                       expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default',
-                    disableReadyToHighlightColoring
+                        .previouslyChangedExpressionState === 'default'
                   }}
                 >
                   <AlphaConvertContext.Provider
