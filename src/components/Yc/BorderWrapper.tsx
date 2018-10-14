@@ -89,7 +89,7 @@ const background = ({
         `
       } else {
         return css`
-          background-color: ${colors('yellow50')};
+          background-color: ${colors('yellow100')};
         `
       }
     } else if (
@@ -111,7 +111,7 @@ const background = ({
         `
       } else {
         return css`
-          background-color: ${colors('yellow50')};
+          background-color: ${colors('yellow100')};
         `
       }
     } else {

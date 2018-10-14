@@ -33,23 +33,6 @@ export default () => {
         <Em>Try clicking {h('ycNext')}</Em> several times to see the answer.
       </P>
       {episode5[i++]()}
-      <P>
-        <Strong>Here’s what happened:</Strong>
-      </P>
-      <Ul>
-        <UlLi>
-          You wanted to eat sushi <Emoji>🍣</Emoji>, but it was not available.
-        </UlLi>
-        <UlLi>
-          The sushi <Emoji>🍣</Emoji> on the bottom left and the hamburger on
-          the top <Emoji>🍔</Emoji> <Strong>disappeared</Strong>.
-        </UlLi>
-        <UlLi>
-          The sandwich <Emoji>🥪</Emoji>, salad <Emoji>🥗</Emoji>, and steak{' '}
-          <Emoji>🥩</Emoji> remained the same.
-        </UlLi>
-      </Ul>
-      <EmojiSeparator emojis={['🥪', '🥗', '🥩']} />
       <P>Hope this wasn’t too difficult!</P>
       <H3>Next Topic: More than 2 cells vertically</H3>
       <P>

@@ -103,37 +103,31 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>箇条書きでまとめると、こうなります:</Strong>
+        難しくなってきました。では、次は
+        <Em>下段が4マス</Em>
+        の問題をやってみましょう。
       </P>
-      <Ul>
-        <UlLi>
-          あなたは下段の一番右にあったお寿司 <Emoji>🍣</Emoji>{' '}
-          を食べた。結果、このマスがシェフ <Emoji>👨‍🍳</Emoji>{' '}
-          が料理していたサラダ <Emoji>🥗</Emoji> に<Strong>変わった</Strong>。
-        </UlLi>
-        <UlLi>
-          そして、下段の一番左にあったお寿司 <Emoji>🍣</Emoji>{' '}
-          のマスと、上段のマス <Emoji>🥗</Emoji> が<Strong>消えた</Strong>。
-        </UlLi>
-        <UlLi>
-          食べられなかったサンドイッチ <Emoji>🥪</Emoji> のマスはそのまま。
-        </UlLi>
-      </Ul>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <P>急に難しくなってきたかと思いますが、この調子で進んでみてください！</P>
       <H3>クイズ: 下段が4マスの問題</H3>
       <P>
-        <Em>下段が4マスある場合</Em>
-        はどうでしょう？たとえば、下の
+        たとえば、下の
         {h('ycBentoBox')}
         は、最終的にどうなると思いますか？
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>ヒント:</Strong> あなたが次に食べるのはお寿司 <Emoji>🍣</Emoji>{' '}
-        (下段の一番左だから)。下段の他のマスは選べる料理。
-        <Emoji>🍽</Emoji>
+        <Strong>ヒント:</Strong>
       </P>
+      <Ul>
+        <UlLi>
+          あなたが次に食べるのは、下段の一番左にあるお寿司。
+          <Emoji>🍣</Emoji>
+        </UlLi>
+        <UlLi>
+          下段の他のマスは選べる料理。
+          <Emoji>🍽</Emoji>
+        </UlLi>
+      </Ul>
       {episode4[i++]()}
       <YcNextLessonButton nextEpisodeNumber={5} />
     </>

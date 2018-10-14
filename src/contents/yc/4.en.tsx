@@ -94,43 +94,30 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Em>Try clicking {h('ycNext')}</Em> to see what happens on the next
-        step.
+        <Em>Try clicking {h('ycNext')}</Em> to see what happens next.
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>Here’s what happened:</Strong>
+        Still following along? Then how about How about{' '}
+        <Em>four cells on the bottom</Em>?
+      </P>
+      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+      <H3>Quiz: Four cells on the bottom</H3>
+      <P>What do you think will happen at the end?</P>
+      {episode4[i++]()}
+      <P>
+        <Strong>Hint:</Strong>
       </P>
       <Ul>
         <UlLi>
-          You ate the sushi <Emoji>🍣</Emoji> on the bottom right, which was
-          then <Strong>replaced</Strong> by the salad <Emoji>🥗</Emoji> the chef{' '}
-          <Emoji>👨‍🍳</Emoji> prepared.
+          The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s
+          the leftmost item on the bottom row.
         </UlLi>
         <UlLi>
-          As a result, the bottom left sushi <Emoji>🍣</Emoji> and the top salad{' '}
-          <Emoji>🥗</Emoji> <Strong>disappeared</Strong>.
-        </UlLi>
-        <UlLi>
-          The sandwich <Emoji>🥪</Emoji> (which you didn’t eat) remained the
-          same.
+          Everything else in the bottom row is available dishes <Emoji>🍽</Emoji>
+          .
         </UlLi>
       </Ul>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <P>
-        It’s getting difficult quickly, right? But you’re doing great so far!
-      </P>
-      <H3>Quiz: Four cells on the bottom</H3>
-      <P>
-        How about <Em>four cells on the bottom</Em>? What do you think will
-        happen on the next step?
-      </P>
-      {episode4[i++]()}
-      <P>
-        <Strong>Here’s the hint.</Strong> The sushi <Emoji>🍣</Emoji> is what
-        you’re eating next because it’s the leftmost item on the bottom row.
-        Everything else in the bottom row is available dishes <Emoji>🍽</Emoji>.
-      </P>
       {episode4[i++]()}
       <YcNextLessonButton nextEpisodeNumber={5} />
     </>
