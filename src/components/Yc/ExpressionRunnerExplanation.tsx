@@ -101,7 +101,9 @@ const stateToExplanation = ({
             Highlighting matches <InlineBackground bgPattern="star" />
           </>
         ) : (
-          <>No matches to highlight</>
+          <>
+            No matches <Emoji>😭</Emoji>
+          </>
         )
       } else {
         return matchExists ? (
@@ -109,7 +111,9 @@ const stateToExplanation = ({
             <InlineBackground bgPattern="star" /> を食べます
           </>
         ) : (
-          <>食べられる料理がありません</>
+          <>
+            食べられる料理がありません <Emoji>😭</Emoji>
+          </>
         )
       }
     }
@@ -117,10 +121,12 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            Replacing matches <Emoji>🆕</Emoji>
+            Matches replaced <Emoji>🆕</Emoji>
           </>
         ) : (
-          <>No matches to replace</>
+          <>
+            Nothing to replace <Emoji>😭</Emoji>
+          </>
         )
       } else {
         return matchExists ? (
@@ -128,7 +134,9 @@ const stateToExplanation = ({
             食べたら次の料理に <Emoji>🆕</Emoji>
           </>
         ) : (
-          <>だから、何も食べません</>
+          <>
+            だから、何も食べません <Emoji>😭</Emoji>
+          </>
         )
       }
     }

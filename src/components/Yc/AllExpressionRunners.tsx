@@ -368,9 +368,6 @@ export const episode4 = [
           state: 'callArgJustHighlighted'
         }
       ]}
-      expressionContainerManagerSkipOptions={{
-        betaReducePreviewBefore: true
-      }}
     />
   ),
   () => (
@@ -419,9 +416,6 @@ export const episode5 = [
           state: 'readyToHighlight'
         }
       ]}
-      expressionContainerManagerSkipOptions={{
-        betaReducePreviewBefore: true
-      }}
     />
   ),
   () => (

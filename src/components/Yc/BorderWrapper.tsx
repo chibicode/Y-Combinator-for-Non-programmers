@@ -105,6 +105,10 @@ const background = ({
             ${variableSize === 'lg' ? 2 : 1}rem;
           background-position: center center;
         `
+      } else if (justBetaReduced && betaReducePreview === 'crossed') {
+        return css`
+          background-color: ${colors('white')};
+        `
       } else {
         return css`
           background-color: ${colors('yellow50')};
@@ -112,7 +116,7 @@ const background = ({
       }
     } else {
       return css`
-        background: ${colors('indigo50')};
+        background: ${colors('white')};
       `
     }
   } else if (childVariableJustAlphaConverted) {
