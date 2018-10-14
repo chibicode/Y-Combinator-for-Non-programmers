@@ -202,7 +202,10 @@ export default class ExpressionRunner extends React.Component<
               >
                 <ExpressionReadyToHighlightContext.Provider
                   value={{
-                    readyToHighlight: expressionContainerManagerState.isDone,
+                    readyToHighlight:
+                      expressionContainerManagerState.isDone ||
+                      expressionContainerManagerState.expressionContainer
+                        .previouslyChangedExpressionState === 'default',
                     disableReadyToHighlightColoring
                   }}
                 >
