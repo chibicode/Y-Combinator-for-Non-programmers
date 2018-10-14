@@ -167,7 +167,7 @@ export default () => {
           Combinator is using these food emojis.
         </P>
       </SideNoteSection>
-      <SideNoteSection heading="Who’s writing this?" headingNoMarginBottom>
+      <SideNoteSection heading="Who wrote this?" headingNoMarginBottom>
         <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
         <P
           className={css`
