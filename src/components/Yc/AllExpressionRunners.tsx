@@ -2,6 +2,17 @@ import React from 'react'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
+export const introduction = [
+  () => (
+    <ExpressionRunner
+      containerSize={'xs'}
+      expressionContainer={lessonExpressions.yCombinatorContainer}
+      showControls={false}
+      variableSize={'lg'}
+    />
+  )
+]
+
 // NOTE: Use functions instead of just JSX.Element inside because
 // linter will complain that it's missing the key attribute
 export const episode2 = [

@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css, cx } from 'emotion'
 import React from 'react'
 import { H3 } from 'src/components/ContentTags'
 import SectionContext from 'src/components/SectionContext'
@@ -6,10 +6,15 @@ import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 interface SideNoteProps {
   heading?: React.ReactNode
+  headingNoMarginBottom?: boolean
   children: React.ReactNode
 }
 
-const SideNoteSection: React.SFC<SideNoteProps> = ({ children, heading }) => (
+const SideNoteSection: React.SFC<SideNoteProps> = ({
+  children,
+  heading,
+  headingNoMarginBottom
+}) => (
   <SectionContext.Provider value={{ currentSection: 'sideNote' }}>
     <div
       className={css`
@@ -25,7 +30,7 @@ const SideNoteSection: React.SFC<SideNoteProps> = ({ children, heading }) => (
         <H3
           className={css`
             text-align: center;
-            margin: 0;
+            margin: 0 0 ${headingNoMarginBottom ? 0 : spaces(1)};
           `}
         >
           {heading}
