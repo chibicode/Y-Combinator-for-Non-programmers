@@ -164,7 +164,11 @@ export default () => {
         {introduction[i++]()}
         <P>
           <Strong>This is not a joke.</Strong> I will teach you what Y
-          Combinator is using these food emojis.
+          Combinator is using these food emojis.{' '}
+          <Em>
+            As you go through the tutorial, you’ll understand exactly what these
+            food emojis mean.
+          </Em>
         </P>
       </SideNoteSection>
       <SideNoteSection heading="Who wrote this?" headingNoMarginBottom>

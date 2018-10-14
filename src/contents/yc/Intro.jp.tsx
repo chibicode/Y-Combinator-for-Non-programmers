@@ -155,17 +155,21 @@ export default () => {
         </P>
         {introduction[i++]()}
         <P>
-          このように絵文字を使って学んでいきます。
-          <Strong>期待しててください！</Strong>
+          <Strong>何これ？</Strong>
+          と思われるかもしれませんが、紛れもなくこれはYコンビネーターです。
+          <Em>
+            レッスンを進めていけば、それぞれの絵文字が何を意味するのか分かるようになります。
+          </Em>
         </P>
       </SideNoteSection>
-      <SideNoteSection heading="あ、自己紹介が遅れました!">
+      <SideNoteSection heading="このレッスンを作ったのは誰ですか？">
         <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
         <P
           className={css`
             margin-top: 0;
           `}
         >
+          申し遅れました。
           <Strong>上杉周作</Strong>
           と申します。
           <ExternalLink href="https://jp.chibicode.com/">
