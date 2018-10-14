@@ -107,7 +107,7 @@ const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
 const inlineVerticalOffset = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: 0.05,
-    funcArg: 0.2 + hexAdjustTop,
+    funcArg: 0.15 + hexAdjustTop,
     funcBody: 0.2,
     wasJustBetaReduced: 0
   }[x])

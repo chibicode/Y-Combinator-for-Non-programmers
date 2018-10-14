@@ -5,7 +5,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import locale from 'src/lib/locale'
-import { colors, fontSizes, spaces } from 'src/lib/theme'
+import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 import {
   PreviouslyChangedExpressionState,
   SteppedExpressionContainer
@@ -161,9 +161,11 @@ const ExpressionRunnerExplanation: React.SFC<
   <div
     className={css`
       text-align: center;
-      margin: 0 -2px ${spaces(0.75)} -2px;
+      margin: ${spaces('-0.25')} -2px ${spaces(0.5)} -2px;
       font-size: ${fontSizes(0.85)};
       color: ${colors('indigo300')};
+      /* Use bigger line height to compensate for badges */
+      line-height: ${lineHeights(2)};
     `}
   >
     <Strong>
