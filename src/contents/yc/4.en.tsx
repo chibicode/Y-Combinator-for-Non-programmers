@@ -111,11 +111,11 @@ export default () => {
       <Ul>
         <UlLi>
           The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s
-          the leftmost item on the bottom row.
+          <Em>the leftmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
-          Everything else in the bottom row is available dishes <Emoji>🍽</Emoji>
-          .
+          <Em>Everything else in the bottom row</Em> is available dishes{' '}
+          <Emoji>🍽</Emoji>.
         </UlLi>
       </Ul>
       {episode4[i++]()}
