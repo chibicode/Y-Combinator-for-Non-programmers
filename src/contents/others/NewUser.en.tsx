@@ -13,11 +13,11 @@ const NewUser: React.SFC<{
       {t(`${componentProps.lessonName}Title` as keyof typeof allTranslations)}
     </InternalLink>
     ”. If you just got here,{' '}
-    <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      <Em>
+    <Em>
+      <InternalLink href={pathHelpers[componentProps.lessonName]()}>
         <Strong>click here to start from the beginning</Strong>
-      </Em>
-    </InternalLink>
+      </InternalLink>
+    </Em>
     .
   </>
 )

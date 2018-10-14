@@ -13,11 +13,11 @@ const NewUser: React.SFC<{
       {t(`${componentProps.lessonName}Title` as keyof typeof allTranslations)}
     </InternalLink>
     」という記事の途中です。はじめから読むには、
-    <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      <Em>
+    <Em>
+      <InternalLink href={pathHelpers[componentProps.lessonName]()}>
         <Strong>こちらをクリックしてください</Strong>
-      </Em>
-    </InternalLink>
+      </InternalLink>
+    </Em>
     。
   </>
 )
