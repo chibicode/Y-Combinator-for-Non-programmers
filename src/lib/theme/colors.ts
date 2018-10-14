@@ -1,4 +1,5 @@
 import { grey, indigo, pink, yellow } from '@material-ui/core/colors'
+import Color from 'color'
 
 export const allColors = {
   enSocialBackground: indigo[500],
@@ -18,7 +19,12 @@ export const allColors = {
   pink700: pink[700],
   transparent: 'transparent',
   white: 'white',
+  white66: Color('#fff')
+    .alpha(0.66)
+    .hsl()
+    .string(),
   yellow50: yellow[50],
+  yellow100: yellow[100],
   yellow200: yellow[200],
   yellow800: yellow[800]
 }

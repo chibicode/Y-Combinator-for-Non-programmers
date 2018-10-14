@@ -42,7 +42,7 @@ const stateToColor = (
 ): keyof typeof allColors | undefined => {
   switch (x) {
     case 'justHighlighted':
-      return 'yellow200'
+      return 'yellow100'
     case 'highlighted':
       return 'yellow50'
   }

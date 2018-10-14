@@ -1,5 +1,5 @@
 import React from 'react'
-import { InternalLink, Strong } from 'src/components/ContentTags'
+import { Em, InternalLink, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTranslations } from 'src/lib/t'
@@ -14,7 +14,9 @@ const NewUser: React.SFC<{
     </InternalLink>
     」という記事の途中です。はじめから読むには、
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      <Strong>こちらをクリックしてください</Strong>
+      <Em>
+        <Strong>こちらをクリックしてください</Strong>
+      </Em>
     </InternalLink>
     。
   </>
