@@ -116,7 +116,11 @@ const background = ({
       }
     } else {
       return css`
-        background: ${colors('white')};
+        background: ${colors(
+          readyToHighlightToColor(
+            disableReadyToHighlightColoring || readyToHighlight
+          )
+        )};
       `
     }
   } else if (childVariableJustAlphaConverted) {
