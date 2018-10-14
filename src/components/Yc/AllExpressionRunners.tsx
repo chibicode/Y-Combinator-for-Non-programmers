@@ -255,9 +255,6 @@ export const episode4 = [
           state: 'callArgJustHighlighted'
         }
       ]}
-      expressionContainerManagerSkipOptions={{
-        betaReducePreviewBefore: true
-      }}
     />
   ),
   () => (

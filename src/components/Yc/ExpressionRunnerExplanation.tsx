@@ -18,31 +18,36 @@ interface ExpressionRunnerExplanationProps {
   currentSubstep: number
 }
 
-const stateToExplanation = (
-  state: PreviouslyChangedExpressionState,
-  currentStep: number,
+const stateToExplanation = ({
+  state,
+  matchExists,
+  currentStep,
+  currentSubstep
+}: {
+  state: PreviouslyChangedExpressionState
+  matchExists?: boolean
+  currentStep: number
   currentSubstep: number
-) => {
+}) => {
+  if (currentStep === 1 && currentSubstep === 1) {
+    if (locale === 'en') {
+      return (
+        <>
+          Let’s begin! <Emoji>🍱</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          スタート！
+          <Emoji>🍱</Emoji>
+        </>
+      )
+    }
+  }
   switch (state) {
     case 'readyToHighlight': {
-      if (currentStep === 1 && currentSubstep === 1) {
-        if (locale === 'en') {
-          return (
-            <>
-              Let’s begin! <Emoji>🍱</Emoji>
-            </>
-          )
-        } else {
-          return (
-            <>
-              スタート！
-              <Emoji>🍱</Emoji>
-            </>
-          )
-        }
-      } else {
-        return ''
-      }
+      return ''
     }
     case 'funcBodyJustHighlighted': {
       if (locale === 'en') {
@@ -91,31 +96,39 @@ const stateToExplanation = (
     }
     case 'betaReducePreviewBefore': {
       if (locale === 'en') {
-        return (
+        return matchExists ? (
           <>
             Highlighting matches <InlineBackground bgPattern="star" />
           </>
+        ) : (
+          <>No matches to highlight</>
         )
       } else {
-        return (
+        return matchExists ? (
           <>
             <InlineBackground bgPattern="star" /> を食べます
           </>
+        ) : (
+          <>食べられる料理がありません</>
         )
       }
     }
     case 'betaReducePreviewAfter': {
       if (locale === 'en') {
-        return (
+        return matchExists ? (
           <>
             Replacing matches <Emoji>🆕</Emoji>
           </>
+        ) : (
+          <>No matches to replace</>
         )
       } else {
-        return (
+        return matchExists ? (
           <>
             食べたら次の料理に <Emoji>🆕</Emoji>
           </>
+        ) : (
+          <>だから、何も食べません</>
         )
       }
     }
@@ -171,11 +184,12 @@ const ExpressionRunnerExplanation: React.SFC<
         </>
       )
     ) : (
-      stateToExplanation(
-        expressionContainer.previouslyChangedExpressionState,
+      stateToExplanation({
+        state: expressionContainer.previouslyChangedExpressionState,
         currentStep,
-        currentSubstep
-      )
+        currentSubstep,
+        matchExists: expressionContainer.matchExists
+      })
     )}
   </div>
 )
