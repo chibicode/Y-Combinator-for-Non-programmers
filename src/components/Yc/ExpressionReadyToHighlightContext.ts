@@ -3,6 +3,7 @@ import { CallExpressionStates } from 'src/types/yc/ExpressionTypes'
 
 export interface ExpressionReadyToHighlightContextProps {
   readyToHighlight?: boolean
+  isDoneOrDefault?: boolean
 }
 
 export const convertCallexpressionStates = (

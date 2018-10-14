@@ -430,15 +430,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
-      showControls={false}
-      variableSize={'lg'}
-      maxStepsAllowed={1}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      showPriorities
       variableSize={'lg'}
       maxStepsAllowed={1}
     />

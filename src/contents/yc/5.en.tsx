@@ -59,45 +59,50 @@ export default () => {
       <P>
         <Strong>Here’s the answer:</Strong>
       </P>
-      <Ul>
-        <UlLi>
+      <Ol>
+        <OlLi>
+          First,{' '}
           <Em>
-            First, do the part that has{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the{' '}
-            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
-            corner.
+            do the part that has{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s on the <Strong>top left</Strong> and the{' '}
+            <Strong>bottom left</Strong> corner.
           </Em>
-        </UlLi>
-        <UlLi>
+        </OlLi>
+        <OlLi>
           <Em>
-            Then, do the part that has{' '}
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> on the{' '}
-            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
-            corner.
-          </Em>
-        </UlLi>
-      </Ul>
+            Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s.
+          </Em>{' '}
+          So do these next.
+        </OlLi>
+      </Ol>
       <P>This will make sense after we work on an example!</P>
       <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
       <H3>Example</H3>
       <P>
-        On the following example, everything is shaded in light blue{' '}
-        <InlineBackground bgColor="indigo50" /> initially.{' '}
+        <Em>Try clicking on {h('ycNext')}</Em> on the following example.
       </P>
       {episode5[i++]()}
-      <P>
-        <Em>
-          If you click on {h('ycNext')}, the bottom two thirds will now have a
-          white background <InlineBackground bgColor="white" />.
-        </Em>{' '}
-        This is the part that has{' '}
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the{' '}
-        <Strong>top left</Strong> and the <Strong>bottom left</Strong> corner.
-        (The remaining part will still be shaded in light blue{' '}
-        <InlineBackground bgColor="indigo50" />
-        .)
-      </P>
-      {episode5[i++]()}
+      <Ul>
+        <UlLi>
+          The part that has{' '}
+          <Em>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> on the{' '}
+            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+            corner
+          </Em>{' '}
+          is in white. <InlineBackground bgColor="white" />
+        </UlLi>
+        <UlLi>
+          <Em>
+            The rest is shaded. <InlineBackground bgColor="indigo50" /> We’ll{' '}
+            <Strong>ignore</Strong> this part for now.
+          </Em>
+        </UlLi>
+      </Ul>
+      <H3>Continuing…</H3>
       <P>
         Then proceed with{' '}
         <Em>
@@ -106,6 +111,16 @@ export default () => {
         as before. Try clicking on {h('ycNext')} several times.
       </P>
       {episode5[i++]()}
+      <P>
+        Notice that
+        <Em>
+          If you click on {h('ycNext')}, the bottom two thirds will now have a
+          white background .
+        </Em>{' '}
+        (The remaining part will still be shaded in light blue{' '}
+        <InlineBackground bgColor="indigo50" />
+        .)
+      </P>
       <P>
         Let’s see what happens when the white background part{' '}
         <InlineBackground bgColor="white" /> is done (sushi <Emoji>🍣</Emoji> is
