@@ -47,6 +47,24 @@ const stateToExplanation = ({
     }
   }
   switch (state) {
+    case 'default': {
+      if (locale === 'en') {
+        return (
+          <>
+            Previous <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s disappeared.
+          </>
+        )
+      } else {
+        return (
+          <>
+            以前の
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            が消えました。
+          </>
+        )
+      }
+    }
     case 'readyToHighlight': {
       if (locale === 'en') {
         return (

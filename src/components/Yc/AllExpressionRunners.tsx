@@ -439,7 +439,8 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode5Expression1}
       showPriorities
       variableSize={'lg'}
-      lastAllowedExpressionState="callArgJustHighlighted"
+      substepOffset={1}
+      lastAllowedExpressionState="betaReducePreviewCrossed"
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -457,7 +458,7 @@ export const episode5 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'betaReducePreviewCrossed'
         }
       ]}
     />

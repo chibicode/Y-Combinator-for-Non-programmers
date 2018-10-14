@@ -108,23 +108,16 @@ export default () => {
         <Em>
           the white background part <InlineBackground bgColor="white" />
         </Em>{' '}
-        as before. Try clicking on {h('ycNext')} several times.
+        as before. Ignore the shaded part.{' '}
+        <InlineBackground bgColor="indigo50" />
+      </P>
+      <P>
+        <Em>Try clicking on {h('ycNext')} several times</Em>:
       </P>
       {episode5[i++]()}
       <P>
-        Notice that
-        <Em>
-          If you click on {h('ycNext')}, the bottom two thirds will now have a
-          white background .
-        </Em>{' '}
-        (The remaining part will still be shaded in light blue{' '}
-        <InlineBackground bgColor="indigo50" />
-        .)
-      </P>
-      <P>
-        Let’s see what happens when the white background part{' '}
-        <InlineBackground bgColor="white" /> is done (sushi <Emoji>🍣</Emoji> is
-        replaced by salad <Emoji>🥗</Emoji>.{' '}
+        Let’s see what happens when the crossed-out cells{' '}
+        <InlineBackground bgPattern="cross" /> are removed.{' '}
         <Em>Try clicking on {h('ycNext')}</Em>.
       </P>
       {episode5[i++]()}
@@ -134,8 +127,8 @@ export default () => {
       <Ul>
         <UlLi>
           <Em>
-            Everything is shaded in light blue{' '}
-            <InlineBackground bgColor="indigo50" /> again.
+            Everything is in white background again.{' '}
+            <InlineBackground bgColor="white" />
           </Em>
         </UlLi>
         <UlLi>
@@ -151,6 +144,7 @@ export default () => {
           before now becomes <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
         </UlLi>
       </Ul>
+      <H3>Continuing…</H3>
       <P>Let’s keep going until the end:</P>
       {episode5[i++]()}
       <P>
