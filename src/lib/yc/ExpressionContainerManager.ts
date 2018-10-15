@@ -3,13 +3,15 @@ import {
   ExpressionContainerState,
   isDoneExpressionContainer,
   PreviouslyChangedExpressionState,
-  previouslyChangedExpressionStateOrdered,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 
-export type ExpressionContainerSkipOptions = Partial<
+const skipOptions: Partial<
   { [K in PreviouslyChangedExpressionState]: boolean }
->
+> = {
+  readyToBetaReduce: true,
+  justBetaReduced: true
+}
 
 export default class ExpressionContainerManager {
   public get currentState() {
@@ -46,20 +48,16 @@ export default class ExpressionContainerManager {
   public iterationBoundaries: number[] = []
   public minimumIndex = 0
   public maximumIndex = 999
-  public skipOptions: ExpressionContainerSkipOptions = {}
   public lastAllowedExpressionState?: PreviouslyChangedExpressionState
 
   constructor({
     expressionContainer,
-    skipOptions,
     lastAllowedExpressionState
   }: {
     expressionContainer: SteppedExpressionContainer
-    skipOptions?: ExpressionContainerSkipOptions
     lastAllowedExpressionState?: PreviouslyChangedExpressionState
   }) {
     this.expressionContainers.push(expressionContainer)
-    this.skipOptions = skipOptions || {}
     this.lastAllowedExpressionState = lastAllowedExpressionState
   }
 
@@ -101,16 +99,12 @@ export default class ExpressionContainerManager {
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(expressionContainer)
 
-      previouslyChangedExpressionStateOrdered.map(key => {
-        if (
-          this.skipOptions[key] &&
-          expressionContainer.previouslyChangedExpressionState === key &&
-          !isDoneExpressionContainer(expressionContainer)
-        ) {
-          expressionContainer = stepExpressionContainer(expressionContainer)
-        }
-      })
-
+      if (
+        skipOptions[expressionContainer.previouslyChangedExpressionState] &&
+        !isDoneExpressionContainer(expressionContainer)
+      ) {
+        expressionContainer = stepExpressionContainer(expressionContainer)
+      }
       this.expressionContainers.push(expressionContainer)
       this.currentIndex++
 
@@ -126,12 +120,6 @@ export default class ExpressionContainerManager {
         this.maximumIndex = this.currentIndex
       }
     }
-  }
-
-  public stepForwardMultiple(count: number) {
-    ;[...Array(count)].forEach(_ => {
-      this.stepForward()
-    })
   }
 
   private get canStepBackward() {

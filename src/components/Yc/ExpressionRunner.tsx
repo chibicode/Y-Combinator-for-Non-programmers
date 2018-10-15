@@ -14,9 +14,7 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
-import ExpressionContainerManager, {
-  ExpressionContainerSkipOptions
-} from 'src/lib/yc/ExpressionContainerManager'
+import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import {
   ExpressionContainerState,
   PreviouslyChangedExpressionState,
@@ -34,10 +32,6 @@ type InitializeInstruction =
       state: PreviouslyChangedExpressionState
       resetIndex?: boolean
     }
-  | {
-      type: 'stepForwardMultiple'
-      count: number
-    }
 
 interface ExpressionRunnerProps {
   expressionContainer: SteppedExpressionContainer
@@ -45,7 +39,6 @@ interface ExpressionRunnerProps {
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
-  expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
   containerSize: ContainerProps['size']
@@ -70,11 +63,6 @@ const betaReducePreview = (
   }
 }
 
-const expressionContainerManagerSkipOptionsDefault: ExpressionContainerSkipOptions = {
-  readyToBetaReduce: true,
-  justBetaReduced: true
-}
-
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
   ExpressionRunnerState
@@ -84,7 +72,6 @@ export default class ExpressionRunner extends React.Component<
     showControls: true,
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
-    expressionContainerManagerSkipOptions: {},
     containerSize: 'xxs',
     resetIndex: false
   }
@@ -93,17 +80,9 @@ export default class ExpressionRunner extends React.Component<
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
-    const {
-      expressionContainer,
-      expressionContainerManagerSkipOptions,
-      lastAllowedExpressionState
-    } = props
+    const { expressionContainer, lastAllowedExpressionState } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
-      skipOptions: {
-        ...expressionContainerManagerSkipOptionsDefault,
-        ...expressionContainerManagerSkipOptions
-      },
       lastAllowedExpressionState
     })
 
@@ -127,10 +106,6 @@ export default class ExpressionRunner extends React.Component<
         ) {
           this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
             initializeInstruction.state
-          )
-        } else {
-          this.expressionContainerManager.stepForwardMultiple(
-            initializeInstruction.count
           )
         }
       })
