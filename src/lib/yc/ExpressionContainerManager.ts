@@ -23,9 +23,8 @@ export default class ExpressionContainerManager {
   }
 
   public get currentStepAndSubstep() {
-    let currentStep = 1 + this.stepOffset
-    let currentSubstep =
-      this.currentIndex - this.startIndex + 1 + this.substepOffset
+    let currentStep = 1
+    let currentSubstep = this.currentIndex - this.startIndex + 1
 
     for (const iterationBoundary of this.iterationBoundaries) {
       if (iterationBoundary <= this.currentIndex) {
@@ -46,8 +45,6 @@ export default class ExpressionContainerManager {
   public startIndex = 0
   public iterationBoundaries: number[] = []
   public minimumIndex = 0
-  public stepOffset = 0
-  public substepOffset = 0
   public maximumIndex = 999
   public skipOptions: ExpressionContainerSkipOptions = {}
   public lastAllowedExpressionState?: PreviouslyChangedExpressionState
@@ -55,21 +52,15 @@ export default class ExpressionContainerManager {
   constructor({
     expressionContainer,
     skipOptions,
-    stepOffset,
-    substepOffset,
     lastAllowedExpressionState
   }: {
     expressionContainer: SteppedExpressionContainer
     skipOptions?: ExpressionContainerSkipOptions
     lastAllowedExpressionState?: PreviouslyChangedExpressionState
-    stepOffset?: number
-    substepOffset?: number
   }) {
     this.expressionContainers.push(expressionContainer)
     this.skipOptions = skipOptions || {}
     this.lastAllowedExpressionState = lastAllowedExpressionState
-    this.stepOffset = stepOffset || 0
-    this.substepOffset = substepOffset || 0
   }
 
   public stepBackward() {

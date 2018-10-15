@@ -27,10 +27,12 @@ type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
       state: ExpressionContainerState
+      resetIndex?: boolean
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
       state: PreviouslyChangedExpressionState
+      resetIndex?: boolean
     }
   | {
       type: 'stepForwardMultiple'
@@ -46,9 +48,8 @@ interface ExpressionRunnerProps {
   expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
-  substepOffset: number
-  stepOffset: number
   containerSize: ContainerProps['size']
+  resetIndex: boolean
 }
 
 interface ExpressionRunnerState {
@@ -84,9 +85,8 @@ export default class ExpressionRunner extends React.Component<
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
     expressionContainerManagerSkipOptions: {},
-    stepOffset: 0,
-    substepOffset: 0,
-    containerSize: 'xxs'
+    containerSize: 'xxs',
+    resetIndex: false
   }
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
@@ -96,8 +96,6 @@ export default class ExpressionRunner extends React.Component<
     const {
       expressionContainer,
       expressionContainerManagerSkipOptions,
-      stepOffset,
-      substepOffset,
       lastAllowedExpressionState
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
@@ -106,8 +104,6 @@ export default class ExpressionRunner extends React.Component<
         ...expressionContainerManagerSkipOptionsDefault,
         ...expressionContainerManagerSkipOptions
       },
-      stepOffset,
-      substepOffset,
       lastAllowedExpressionState
     })
 
@@ -118,7 +114,7 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const { initializeInstructions, maxStepsAllowed } = this.props
+    const { initializeInstructions, maxStepsAllowed, resetIndex } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -138,8 +134,12 @@ export default class ExpressionRunner extends React.Component<
           )
         }
       })
+
+      if (resetIndex) {
+        this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
+      }
       this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
-      this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
+
       this.syncState()
     }
 
