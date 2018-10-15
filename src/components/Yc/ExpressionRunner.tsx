@@ -25,12 +25,13 @@ type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
       state: ExpressionContainerState
-      resetIndex?: boolean
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
       state: PreviouslyChangedExpressionState
-      resetIndex?: boolean
+    }
+  | {
+      type: 'nextIteration'
     }
 
 interface ExpressionRunnerProps {
@@ -42,7 +43,7 @@ interface ExpressionRunnerProps {
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
   containerSize: ContainerProps['size']
-  hideOuterMostPrioritiesExplanation: boolean
+  hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
 }
 
@@ -75,7 +76,7 @@ export default class ExpressionRunner extends React.Component<
     initializeInstructions: [],
     containerSize: 'xxs',
     resetIndex: false,
-    hideOuterMostPrioritiesExplanation: true
+    hideLeftMostPrioritiesExplanation: false
   }
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
@@ -109,6 +110,11 @@ export default class ExpressionRunner extends React.Component<
           this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
             initializeInstruction.state
           )
+        } else if (initializeInstruction.type === 'nextIteration') {
+          this.expressionContainerManager.stepForward()
+          this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
+            'default'
+          )
         }
       })
 
@@ -133,7 +139,7 @@ export default class ExpressionRunner extends React.Component<
       hidePriorities,
       variableSize,
       containerSize,
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
     } = this.props
     const { expressionContainerManagerState } = this.state
     return (
@@ -157,8 +163,8 @@ export default class ExpressionRunner extends React.Component<
                 isDone={expressionContainerManagerState.isDone}
                 currentStep={expressionContainerManagerState.currentStep}
                 currentSubstep={expressionContainerManagerState.currentSubstep}
-                hideOuterMostPrioritiesExplanation={
-                  hideOuterMostPrioritiesExplanation
+                hideLeftMostPrioritiesExplanation={
+                  hideLeftMostPrioritiesExplanation
                 }
               />
             )}

@@ -181,12 +181,7 @@ export const episode3 = [
       variableSize={'lg'}
       initializeInstructions={[
         {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'justBetaReduced'
-        },
-        {
-          type: 'stepForwardUntilContainerState',
-          state: 'done'
+          type: 'nextIteration'
         }
       ]}
     />
@@ -241,12 +236,7 @@ export const episode3 = [
       variableSize={'lg'}
       initializeInstructions={[
         {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'justBetaReduced'
-        },
-        {
-          type: 'stepForwardUntilContainerState',
-          state: 'done'
+          type: 'nextIteration'
         }
       ]}
     />
@@ -290,12 +280,7 @@ export const episode4 = [
       variableSize={'lg'}
       initializeInstructions={[
         {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'justBetaReduced'
-        },
-        {
-          type: 'stepForwardUntilContainerState',
-          state: 'done'
+          type: 'nextIteration'
         }
       ]}
     />
@@ -421,7 +406,7 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       hideControls
       variableSize={'lg'}
     />
@@ -429,7 +414,7 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       maxStepsAllowed={1}
     />
@@ -437,7 +422,7 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       lastAllowedExpressionState="betaReducePreviewCrossed"
       initializeInstructions={[
@@ -451,7 +436,7 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       maxStepsAllowed={1}
       initializeInstructions={[
@@ -465,7 +450,7 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -482,14 +467,14 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
     />
   ),
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression2}
-      hideOuterMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation
       hideControls
       variableSize={'lg'}
     />
@@ -499,7 +484,90 @@ export const episode5 = [
 export const episode6 = [
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode5Expression2}
+      hideLeftMostPrioritiesExplanation
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+      maxStepsAllowed={1}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+      lastAllowedExpressionState="betaReducePreviewBefore"
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'readyToHighlight'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+      lastAllowedExpressionState="default"
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'default'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression2}
+      containerSize={'xs'}
+      hideControls
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode6Expression3}
       containerSize={'xs'}
       variableSize={'lg'}
     />

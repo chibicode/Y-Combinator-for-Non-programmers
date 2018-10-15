@@ -31,7 +31,7 @@ export const allTranslations = {
     jp: '順序'
   },
   ycEpisode6: {
-    en: '?',
+    en: 'Leftmost First',
     jp: '?'
   }
 }
