@@ -3,6 +3,8 @@ import {
   Em,
   H3,
   InternalLink,
+  Ol,
+  OlLi,
   P,
   Strong,
   Ul,
@@ -11,6 +13,8 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode5 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
@@ -27,136 +31,179 @@ export default () => {
         前回同様、ボタンを用意しました。
         <Em>
           {h('ycNext')}
-          をクリックすれば
+          を押せば
         </Em>
         答えがわかります。
       </P>
       {episode5[i++]()}
+      <P>いかがでしょう。正解できましたか？</P>
+      <H3>続いては: 縦に3段以上ある場合</H3>
       <P>
-        つまり、答えは{' '}
+        次は、 <Em>縦に3段以上ある</Em>
+        {h('ycBentoBox')}
+        を見ていきましょう。
+      </P>
+      {episode5[i++]()}
+      <P>
+        <Strong>疑問点:</Strong>
+      </P>
+      <Ul>
+        <UlLi>
+          <Em>縦に3段あった場合、どうすればいいのか？</Em>
+        </UlLi>
+        <UlLi>
+          <Em>
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>や{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            と書いているのは何なのか？
+          </Em>
+        </UlLi>
+      </Ul>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+      <P>
+        <Strong>答えはこちら:</Strong>
+      </P>
+      <Ol>
+        <OlLi>
+          まず、{' '}
+          <Em>
+            <Strong>左上と左下</Strong>が
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            の部分
+          </Em>
+          を先にやる。
+        </OlLi>
+        <OlLi>
+          その後、
+          <Em>
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            だった部分が
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            になるので
+          </Em>
+          、それをやる。
+        </OlLi>
+      </Ol>
+      <P>実際にやってみると分かりやすいです！</P>
+      <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
+      <H3>例</H3>
+      <P>
+        下の例で
+        <Em>{h('ycNext')}</Em>
+        を押してみてください。
+      </P>
+      {episode5[i++]()}
+      <P>すると、</P>
+      <Ul>
+        <UlLi>
+          <Em>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が
+            <Strong>左上</Strong>か<Strong>左下</Strong>
+          </Em>
+          にあるマスは白いまま。
+          <InlineBackground bgColor="white" />
+        </UlLi>
+        <UlLi>
+          <Em>
+            その他のマスは塗りつぶされている。
+            <InlineBackground bgColor="indigo50" />
+          </Em>{' '}
+          こちらはいったん
+          <Strong>置いておきます</Strong>。
+        </UlLi>
+      </Ul>
+      <H3>その次は？</H3>
+      <P>
         <Em>
-          <Strong>
-            サンドイッチ <Emoji>🥪</Emoji>
-          </Strong>
+          白いマスの部分 <InlineBackground bgColor="white" />
         </Em>{' '}
-        です。でも、どうしてそうなるのでしょう？
-      </P>
-      <EmojiSeparator emojis={['🥪', '🤔', '🥪']} />
-      <P>
-        理由を説明しましょう。あなたはお寿司 <Emoji>🍣</Emoji>{' '}
-        を食べようとしましたが、残念ながら料理の中にはありませんでした。
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥪</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥗</Emoji>
-        </UlLi>
-      </Ul>
-      <P>
-        <Em>というわけで、あなたは何も食べませんでした</Em>
-        。シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
-        と、サンドイッチ <Emoji>🥪</Emoji>{' '}
-        は入れ替わりません。というわけで、サンドイッチ <Emoji>🥪</Emoji>{' '}
-        はそのままになるのです。
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥪</Emoji>
-        </UlLi>
-      </Ul>
-      <P>
-        <Em>
-          <Strong>ポイント:</Strong> シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ{' '}
-          <Emoji>🥗</Emoji> は<Strong>次のステップには持ち越されません</Strong>
-          。
-        </Em>
-      </P>
-      <H3>下段が3マスの問題</H3>
-      <P>次は、下段に3マスもある問題を見ていきましょう。たとえばこちら:</P>
-      {episode5[i++]()}
-      <P>
-        どう読み取ればいいか説明しましょう。まず、
-        <Strong>下段の一番右のマス</Strong>
-        は、選べる食事 <Emoji>🍽</Emoji> を表しています。
-      </P>
-      {episode5[i++]()}
-      <P>
-        次に、
-        <Strong>下段の一番左のマス</Strong>
-        は、あなた <Emoji>😋</Emoji> が次に食べるものを表しています。
-      </P>
-      {episode5[i++]()}
-      <P>
-        最後に、
-        <Strong>上のマス</Strong>
-        は、シェフ <Emoji>👨‍🍳</Emoji>{' '}
-        が作っている料理を表します。これは以前と変わりませんね。
-      </P>
-      {episode5[i++]()}
-      <P>
-        <Strong>ポイント:</Strong> この場合、
-        <Em>
-          サンドイッチ <Emoji>🥪</Emoji>{' '}
-          は3種類のどれにも分類されません。だから、次のステップに進むと、サンドイッチ{' '}
-          <Emoji>🥪</Emoji> のマスは
-          <Strong>そのまま</Strong>
-          になります
-        </Em>
-        。
+        を以前と同じようにやります。塗りつぶされた部分は無視します。
+        <InlineBackground bgColor="indigo50" />
       </P>
       <P>
         <Em>
           {h('ycNext')}
-          をクリックして
+          を何度か押してみてください
         </Em>
-        どうなるか確かめてみましょう。
+        :
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>箇条書きでまとめると、こうなります:</Strong>
+        バツ印のマス <InlineBackground bgPattern="cross" />{' '}
+        が消えた後はどうなるでしょう？
+        <Em>
+          {h('ycNext')}
+          を押してみてください。
+        </Em>
+      </P>
+      {episode5[i++]()}
+      <P>
+        <Strong>箇条書きで書くと:</Strong>
       </P>
       <Ul>
         <UlLi>
-          <Emoji>🥪</Emoji> サンドイッチのマスはそのまま
-        </UlLi>
-        <UlLi>
-          <Emoji>😋</Emoji> あなたが食べたのはお寿司 <Emoji>🍣</Emoji>.
-        </UlLi>
-        <UlLi>
-          <Emoji>🍽</Emoji> 下段の一番右にあったお寿司 <Emoji>🍣</Emoji>{' '}
-          が、シェフ <Emoji>👨‍🍳</Emoji> が料理していたサラダ <Emoji>🥗</Emoji>{' '}
-          に変わった。
+          <Em>
+            全部のマスがまた白背景に。 <InlineBackground bgColor="white" />
+          </Em>
         </UlLi>
         <UlLi>
           <Em>
-            そして、下段の一番左のマス(
-            <Emoji>😋</Emoji> → <Emoji>🍣</Emoji>) と、上の段のマス(
-            <Emoji>👨‍🍳</Emoji> → <Emoji>🥗</Emoji>
-            )が
-            <Strong>消えた</Strong>
+            ステーキ <Emoji>🥩</Emoji>
+          </Em>{' '}
+          のマスが降りてきた。
+        </UlLi>
+        <UlLi>
+          <Strong>最も重要なポイント:</Strong> 前回の{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消え、{' '}
+          <Em>
+            前回の <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が
+            <Strong>新しく</Strong>{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+            <Strong>になった</Strong>。
           </Em>
-          。
         </UlLi>
       </Ul>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <P>急に難しくなってきたかと思いますが、この調子で進んでみてください！</P>
-      <H3>クイズ: 下段が4マスの問題</H3>
+      <H3>その次は？</H3>
       <P>
-        <Em>下段が4マスある場合</Em>
-        はどうでしょう？たとえば、下の
+        最後まで見ていきましょう。
+        <Em>
+          {h('ycNext')}
+          を何度か押してみてください。
+        </Em>
+      </P>
+      {episode5[i++]()}
+      <P>
+        <Strong>以上です！</Strong> まとめにもう一度、
+        <Em>最初から最後まで見てみてください</Em>:
+      </P>
+      {episode5[i++]()}
+      <P>それでは、ここでクイズです。</P>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+      <H3>クイズ</H3>
+      <P>
+        次の
         {h('ycBentoBox')}
-        は、次のステップでどうなると思いますか？
+        を最後まで進めると…
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>ヒントはこちらです:</Strong>
+        <Strong>最後にひとつだけ残るのはどの料理でしょう？</Strong>
       </P>
-      {episode5[i++]()}
+      <Ol>
+        <OlLi>
+          <Emoji size="lg">🍣</Emoji>
+        </OlLi>
+        <OlLi>
+          <Emoji size="lg">🍔</Emoji>
+        </OlLi>
+        <OlLi>
+          <Emoji size="lg">🥩</Emoji>
+        </OlLi>
+      </Ol>
+      <P>
+        <Em>簡単な問題ではないので</Em>
+        、間違えても大丈夫です！
+      </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>
   )

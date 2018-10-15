@@ -26,7 +26,7 @@ export default () => {
       </P>
       <P>
         I added the previous and next buttons.{' '}
-        <Em>Try clicking {h('ycNext')}</Em> to see the answer.
+        <Em>Try pressing {h('ycNext')}</Em> to see the answer.
       </P>
       {episode4[i++]()}
       <P>
@@ -94,7 +94,7 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Em>Try clicking {h('ycNext')}</Em> to see what happens next.
+        <Em>Try pressing {h('ycNext')}</Em> to see what happens next.
       </P>
       {episode4[i++]()}
       <P>
@@ -111,11 +111,11 @@ export default () => {
       <Ul>
         <UlLi>
           The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s
-          the leftmost item on the bottom row.
+          <Em>the leftmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
-          Everything else in the bottom row is available dishes <Emoji>🍽</Emoji>
-          .
+          <Em>Everything else in the bottom row</Em> is available dishes{' '}
+          <Emoji>🍽</Emoji>.
         </UlLi>
       </Ul>
       {episode4[i++]()}

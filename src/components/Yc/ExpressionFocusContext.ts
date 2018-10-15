@@ -1,13 +1,15 @@
 import React from 'react'
 import { CallExpressionStates } from 'src/types/yc/ExpressionTypes'
 
-export interface ExpressionReadyToHighlightContextProps {
+export interface ExpressionFocusContextProps {
+  focused?: boolean
+  isDoneOrDefault?: boolean
   readyToHighlight?: boolean
 }
 
-export const convertCallexpressionStates = (
+export const callExpressionStateToFocused = (
   x: CallExpressionStates
-): ExpressionReadyToHighlightContextProps['readyToHighlight'] => {
+): ExpressionFocusContextProps['focused'] => {
   switch (x) {
     case 'readyToHighlight':
     case 'needsAlphaConvert':
@@ -23,8 +25,8 @@ export const convertCallexpressionStates = (
   }
 }
 
-export const expressionReadyToHighlightContextDefault: ExpressionReadyToHighlightContextProps = {}
+export const expressionFocusContextDefault: ExpressionFocusContextProps = {}
 
-export default React.createContext<ExpressionReadyToHighlightContextProps>(
-  expressionReadyToHighlightContextDefault
+export default React.createContext<ExpressionFocusContextProps>(
+  expressionFocusContextDefault
 )

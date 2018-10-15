@@ -28,7 +28,7 @@ export const allTranslations = {
   },
   ycEpisode5: {
     en: 'Priorities',
-    jp: '順番'
+    jp: '順序'
   },
   ycEpisode6: {
     en: '?',

@@ -30,15 +30,14 @@ export default () => {
       </P>
       <P>
         I added the previous and next buttons.{' '}
-        <Em>Try clicking {h('ycNext')}</Em> several times to see the answer.
+        <Em>Try pressing {h('ycNext')}</Em> several times to see the answer.
       </P>
       {episode5[i++]()}
       <P>Hope this wasn’t too difficult!</P>
       <H3>Next Topic: More than 2 cells vertically</H3>
       <P>
-        Next, we’ll talk about the case where{' '}
-        <Em>there are more than 2 cells stacked on top of each other</Em>. Take
-        a look at this one:
+        Next, we’ll talk about the {h('ycBentoBox')} where{' '}
+        <Em>there are more than 2 cells stacked on top of each other</Em>:
       </P>
       {episode5[i++]()}
       <P>
@@ -56,61 +55,71 @@ export default () => {
           </Em>
         </UlLi>
       </Ul>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <P>
         <Strong>Here’s the answer:</Strong>
       </P>
-      <Ul>
-        <UlLi>
+      <Ol>
+        <OlLi>
+          First,{' '}
           <Em>
-            First, do the part that has{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the{' '}
-            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
-            corner.
+            do the part that has{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s on the <Strong>top left</Strong> and the{' '}
+            <Strong>bottom left</Strong> corner.
           </Em>
-        </UlLi>
-        <UlLi>
+        </OlLi>
+        <OlLi>
           <Em>
-            Then, do the part that has{' '}
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> on the{' '}
-            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
-            corner.
-          </Em>
-        </UlLi>
-      </Ul>
+            Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s.
+          </Em>{' '}
+          So do these next.
+        </OlLi>
+      </Ol>
       <P>This will make sense after we work on an example!</P>
       <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
       <H3>Example</H3>
       <P>
-        On the following example, everything is shaded in light blue{' '}
-        <InlineBackground bgColor="indigo50" /> initially.{' '}
+        <Em>Try pressing {h('ycNext')}</Em> on the following example.
       </P>
       {episode5[i++]()}
-      <P>
-        <Em>
-          If you click on {h('ycNext')}, the bottom two thirds will now have a
-          white background <InlineBackground bgColor="white" />.
-        </Em>{' '}
-        This is the part that has{' '}
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the{' '}
-        <Strong>top left</Strong> and the <Strong>bottom left</Strong> corner.
-        (The remaining part will still be shaded in light blue{' '}
-        <InlineBackground bgColor="indigo50" />
-        .)
-      </P>
-      {episode5[i++]()}
+      <P>Notice that:</P>
+      <Ul>
+        <UlLi>
+          The part that has{' '}
+          <Em>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> on the{' '}
+            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+            corner
+          </Em>{' '}
+          is in white. <InlineBackground bgColor="white" />
+        </UlLi>
+        <UlLi>
+          <Em>
+            The rest is shaded. <InlineBackground bgColor="indigo50" />
+          </Em>{' '}
+          We’ll <Strong>ignore</Strong> this part for now.
+        </UlLi>
+      </Ul>
+      <H3>Continuing…</H3>
       <P>
         Then proceed with{' '}
         <Em>
           the white background part <InlineBackground bgColor="white" />
         </Em>{' '}
-        as before. Try clicking on {h('ycNext')} several times.
+        as before. Ignore the shaded part.{' '}
+        <InlineBackground bgColor="indigo50" />
+      </P>
+      <P>
+        <Em>Try pressing {h('ycNext')} several times</Em>:
       </P>
       {episode5[i++]()}
       <P>
-        Let’s see what happens when the white background part{' '}
-        <InlineBackground bgColor="white" /> is done (sushi <Emoji>🍣</Emoji> is
-        replaced by salad <Emoji>🥗</Emoji>.{' '}
-        <Em>Try clicking on {h('ycNext')}</Em>.
+        Let’s see what happens when the crossed-out cells{' '}
+        <InlineBackground bgPattern="cross" /> are removed.{' '}
+        <Em>Try pressing {h('ycNext')}</Em>.
       </P>
       {episode5[i++]()}
       <P>
@@ -119,8 +128,8 @@ export default () => {
       <Ul>
         <UlLi>
           <Em>
-            Everything is shaded in light blue{' '}
-            <InlineBackground bgColor="indigo50" /> again.
+            Everything is in white background again.{' '}
+            <InlineBackground bgColor="white" />
           </Em>
         </UlLi>
         <UlLi>
@@ -131,12 +140,21 @@ export default () => {
           that was on the top comes down.
         </UlLi>
         <UlLi>
+          <Strong>Most Importantly:</Strong>{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before
-          disappears, and <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from
-          before now becomes <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
+          disappears, and{' '}
+          <Em>
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from before{' '}
+            <Strong>now becomes</Strong>{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          </Em>
+          .
         </UlLi>
       </Ul>
-      <P>Let’s keep going until the end:</P>
+      <H3>Continuing…</H3>
+      <P>
+        Let’s keep going until the end. <Em>Try pressing {h('ycNext')}</Em>
+      </P>
       {episode5[i++]()}
       <P>
         <Strong>That’s all!</Strong> Just for your reference, you can try it
@@ -146,7 +164,7 @@ export default () => {
       <P>Let’s do a quiz to make sure you understood this!</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <H3>Quiz</H3>
-      <P>If you step through the following example until the end…</P>
+      <P>If you step through the following {h('ycBentoBox')} until the end…</P>
       {episode5[i++]()}
       <P>
         <Strong>Which one will be the last food item remaining?</Strong>

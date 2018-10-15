@@ -4,6 +4,7 @@ import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 import {
@@ -46,8 +47,38 @@ const stateToExplanation = ({
     }
   }
   switch (state) {
+    case 'default': {
+      if (locale === 'en') {
+        return (
+          <>
+            Previous <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s disappeared
+          </>
+        )
+      } else {
+        return (
+          <>
+            以前の <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消えました
+          </>
+        )
+      }
+    }
     case 'readyToHighlight': {
-      return ''
+      if (locale === 'en') {
+        return (
+          <>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+            ’s on top/bottom left
+          </>
+        )
+      } else {
+        return (
+          <>
+            左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+            のマスを白色に
+          </>
+        )
+      }
     }
     case 'funcBodyJustHighlighted': {
       if (locale === 'en') {

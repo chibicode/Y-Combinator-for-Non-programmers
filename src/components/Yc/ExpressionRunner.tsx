@@ -6,7 +6,7 @@ import ExpressionBetaReducePreviewContext, {
   ExpressionBetaReducePreviewContextProps
 } from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
-import ExpressionReadyToHighlightContext from 'src/components/Yc/ExpressionReadyToHighlightContext'
+import ExpressionFocusContext from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
@@ -14,9 +14,7 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
-import ExpressionContainerManager, {
-  ExpressionContainerSkipOptions
-} from 'src/lib/yc/ExpressionContainerManager'
+import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import {
   ExpressionContainerState,
   PreviouslyChangedExpressionState,
@@ -27,14 +25,12 @@ type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
       state: ExpressionContainerState
+      resetIndex?: boolean
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
       state: PreviouslyChangedExpressionState
-    }
-  | {
-      type: 'stepForwardMultiple'
-      count: number
+      resetIndex?: boolean
     }
 
 interface ExpressionRunnerProps {
@@ -43,12 +39,10 @@ interface ExpressionRunnerProps {
   showControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
-  expressionContainerManagerSkipOptions: ExpressionContainerSkipOptions
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
-  substepOffset: number
-  stepOffset: number
   containerSize: ContainerProps['size']
+  resetIndex: boolean
 }
 
 interface ExpressionRunnerState {
@@ -69,11 +63,6 @@ const betaReducePreview = (
   }
 }
 
-const expressionContainerManagerSkipOptionsDefault: ExpressionContainerSkipOptions = {
-  readyToBetaReduce: true,
-  justBetaReduced: true
-}
-
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
   ExpressionRunnerState
@@ -83,31 +72,17 @@ export default class ExpressionRunner extends React.Component<
     showControls: true,
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
-    expressionContainerManagerSkipOptions: {},
-    stepOffset: 0,
-    substepOffset: 0,
-    containerSize: 'xxs'
+    containerSize: 'xxs',
+    resetIndex: false
   }
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
-    const {
-      expressionContainer,
-      expressionContainerManagerSkipOptions,
-      stepOffset,
-      substepOffset,
-      lastAllowedExpressionState
-    } = props
+    const { expressionContainer, lastAllowedExpressionState } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
-      skipOptions: {
-        ...expressionContainerManagerSkipOptionsDefault,
-        ...expressionContainerManagerSkipOptions
-      },
-      stepOffset,
-      substepOffset,
       lastAllowedExpressionState
     })
 
@@ -118,7 +93,7 @@ export default class ExpressionRunner extends React.Component<
   }
 
   public componentDidMount() {
-    const { initializeInstructions, maxStepsAllowed } = this.props
+    const { initializeInstructions, maxStepsAllowed, resetIndex } = this.props
     if (initializeInstructions) {
       initializeInstructions.forEach(initializeInstruction => {
         if (initializeInstruction.type === 'stepForwardUntilContainerState') {
@@ -132,14 +107,14 @@ export default class ExpressionRunner extends React.Component<
           this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
             initializeInstruction.state
           )
-        } else {
-          this.expressionContainerManager.stepForwardMultiple(
-            initializeInstruction.count
-          )
         }
       })
+
+      if (resetIndex) {
+        this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
+      }
       this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
-      this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
+
       this.syncState()
     }
 
@@ -197,12 +172,19 @@ export default class ExpressionRunner extends React.Component<
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                 `}
               >
-                <ExpressionReadyToHighlightContext.Provider
+                <ExpressionFocusContext.Provider
                   value={{
-                    readyToHighlight:
+                    focused:
                       expressionContainerManagerState.isDone ||
                       expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default'
+                        .previouslyChangedExpressionState === 'default',
+                    isDoneOrDefault:
+                      expressionContainerManagerState.isDone ||
+                      expressionContainerManagerState.expressionContainer
+                        .previouslyChangedExpressionState === 'default',
+                    readyToHighlight:
+                      expressionContainerManagerState.expressionContainer
+                        .previouslyChangedExpressionState === 'readyToHighlight'
                   }}
                 >
                   <AlphaConvertContext.Provider
@@ -228,7 +210,7 @@ export default class ExpressionRunner extends React.Component<
                       />
                     </ExpressionBetaReducePreviewContext.Provider>
                   </AlphaConvertContext.Provider>
-                </ExpressionReadyToHighlightContext.Provider>
+                </ExpressionFocusContext.Provider>
               </div>
             </div>
           </Container>

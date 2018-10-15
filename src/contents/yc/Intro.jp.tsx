@@ -144,7 +144,7 @@ export default () => {
       </P>
       <P>
         <Strong>というわけで:</Strong>{' '}
-        「面白そう、Yコンビネーターについて学んでみたい！」と思った方は、下のボタンをクリックして先に進んでみてください。最初から最後まで、
+        「面白そう、Yコンビネーターについて学んでみたい！」と思った方は、下のボタンを押して先に進んでみてください。最初から最後まで、
         <Em>無料で閲覧できます</Em>。
       </P>
       <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
