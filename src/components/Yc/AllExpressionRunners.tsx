@@ -509,12 +509,6 @@ export const episode6 = [
       showControls
       containerSize={'xs'}
       variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
-        }
-      ]}
     />
   )
 ]

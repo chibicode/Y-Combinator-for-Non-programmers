@@ -74,13 +74,13 @@ export const episode5Expression2 = initializeExpressionContainer([
   'a'
 ])
 
-const trueParams: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: 'a'
-  }
-}
+// const trueParams: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: 'a'
+//   }
+// }
 
 // const falseParams: FunctionExpressionParams = {
 //   arg: 'a',
@@ -98,20 +98,30 @@ const trueParams: FunctionExpressionParams = {
 //   }
 // }
 
-const notParams: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: {
-      arg: 'c',
-      body: ['a', 'b', 'c']
-    }
-  }
-}
+// const notParams: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: {
+//       arg: 'c',
+//       body: ['a', 'b', 'c']
+//     }
+//   }
+// }
 
 export const episode6Expression1 = initializeExpressionContainer([
-  notParams,
-  trueParams
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: ['a', 'b']
+    }
+  },
+  {
+    arg: 'c',
+    body: 'c'
+  },
+  'd'
 ])
 
 const yCombinator: FunctionExpressionParams = {
