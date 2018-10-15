@@ -4,7 +4,6 @@ import {
   Em,
   ExternalLink,
   H3,
-  InternalLink,
   P,
   Strong,
   Ul,
@@ -15,17 +14,13 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 
 export default () => {
   let i = 0
   return (
     <>
-      <P>
-        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-        <InternalLink href={yc(1)}>the quiz from the last episode</InternalLink>
-        :
-      </P>
+      {h('ycQuizReview', 1)}
+      <P>If the current situation is like this:</P>
       <Ul size="lg">
         <UlLi>
           <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}

@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Em,
   H3,
-  InternalLink,
   Ol,
   OlLi,
   P,
@@ -16,18 +15,12 @@ import { episode3 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 
 export default () => {
   let i = 0
   return (
     <>
-      <P>
-        <Strong>
-          <InternalLink href={yc(2)}>第2章で出したクイズ</InternalLink>
-          の答え合わせをしましょう。
-        </Strong>
-      </P>
+      {h('ycQuizReview', 2)}
       {episode3[i++]()}
       <P>
         <Strong>答え:</Strong> それぞれの料理に印をつけてみると、こうなります。

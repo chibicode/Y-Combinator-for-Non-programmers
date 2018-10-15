@@ -32,7 +32,7 @@ export const allTranslations = {
   },
   ycEpisode6: {
     en: 'Leftmost First',
-    jp: '?'
+    jp: 'いちばん左から'
   }
 }
 

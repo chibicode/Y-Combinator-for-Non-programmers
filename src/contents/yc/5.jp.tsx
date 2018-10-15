@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Em,
   H3,
-  InternalLink,
   Ol,
   OlLi,
   P,
@@ -17,16 +16,12 @@ import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 
 export default () => {
   let i = 0
   return (
     <>
-      <P>
-        <InternalLink href={yc(3)}>第3章で出したクイズ</InternalLink>
-        の答え合わせをしましょう。
-      </P>
+      {h('ycQuizReview', 4)}
       <P>
         前回同様、ボタンを用意しました。
         <Em>

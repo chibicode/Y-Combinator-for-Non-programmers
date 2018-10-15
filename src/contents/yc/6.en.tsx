@@ -1,21 +1,19 @@
 import React from 'react'
-import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
+import { Em, H3, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode6 } from 'src/components/Yc/AllExpressionRunners'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 
 export default () => {
   let i = 0
   return (
     <>
+      {h('ycQuizReview', 5)}
       <P>
-        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-        <InternalLink href={yc(5)}>the quiz from the last episode</InternalLink>
-        . <Em>Try pressing {h('ycNext')} until the end</Em>:
+        <Em>Try pressing {h('ycNext')} until the end</Em>:
       </P>
       {episode6[i++]()}
       <P>
