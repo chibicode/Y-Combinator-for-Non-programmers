@@ -13,7 +13,10 @@ export default () => {
     <>
       {h('ycQuizReview', 5)}
       <P>
-        <Em>Try pressing {h('ycNext')} until the end</Em>:
+        <Em>
+          Try pressing {h('ycNext')} until you see {h('ycDone')}
+        </Em>
+        :
       </P>
       {episode6[i++]()}
       <P>
@@ -46,27 +49,30 @@ export default () => {
       </P>
       {episode6[i++]()}
       <P>
-        Let’s continue: <Em>Try pressing {h('ycNext')}</Em> until we get to step
-        1.6.
+        <Strong>Let’s continue:</Strong> <Em>Try pressing {h('ycNext')}</Em>{' '}
+        until we get to step 1.6.
       </P>
       {episode6[i++]()}
       <P>
-        Then <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
         Notice that, in steps <Strong>1.6</Strong> and <Strong>1.7</Strong>,{' '}
         <Em>
           the matched sushi <Emoji>🍣</Emoji> is replaced by the{' '}
           <Strong>two</Strong> salads <Emoji>🥗</Emoji>
         </Em>{' '}
-        the chef is preparing <Emoji>👨‍🍳</Emoji>.{' '}
+        the chef is preparing <Emoji>👨‍🍳</Emoji>. Then{' '}
+        <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
       </P>
       {episode6[i++]()}
       <P>
         Again, we have multiple <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        ’s. And we’ll again do the leftmost one first.{' '}
+        ’s. And we’ll again do <Strong>the leftmost one first</Strong>.{' '}
         <Em>Try pressing {h('ycNext')}</Em> until you see {h('ycDone')}.
       </P>
       {episode6[i++]()}
-      <P>You can try it from the begininng to end here:</P>
+      <P>
+        <Strong>That’s it!</Strong> By the way, you can try it from the
+        begininng to end here:
+      </P>
       {episode6[i++]()}
       <P>Ok, let’s do another quiz!</P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />

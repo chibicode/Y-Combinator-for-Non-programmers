@@ -12,79 +12,99 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 5)}
+      <P>
+        <Em>
+          {h('ycDone')} になるまで
+          {h('ycNext')} を押してみてください
+        </Em>
+        :
+      </P>
       {episode6[i++]()}
       <P>
-        So the answer was <Strong>sushi</Strong> <Emoji>🍣</Emoji>.
+        というわけで、答えは
+        <Strong>お寿司</Strong> <Emoji>🍣</Emoji> です。
       </P>
-      <H3>More Priorities</H3>
-      <P>Next, take a look at this {h('ycBentoBox')}:</P>
+      <H3>続いてはこちら</H3>
+      <P>
+        今度はこの
+        {h('ycBentoBox')}
+        を見てみましょう:
+      </P>
       {episode6[i++]()}
       <P>
         <Em>
-          Notice that there are multiple{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          ’s.
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が4つもありますよね。
         </Em>{' '}
-        Which one do we do first?
+        どれから先にやればいいのでしょうか？
       </P>
       <P>
-        <Strong>Answer:</Strong>{' '}
+        <Strong>答え:</Strong>{' '}
         <Em>
-          Do the <Strong>leftmost</Strong>{' '}
+          <Strong>いちばん左にある</Strong>{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          ’s first.
+          のペアからはじめます。
         </Em>
       </P>
-      <H3>Leftmost</H3>
+      <H3>いちばん左</H3>
       <P>
-        <Em>Try pressing {h('ycNext')}</Em>. It will highlight the leftmost{' '}
-        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-        ’s:
+        <Em>{h('ycNext')} を押してみてください</Em>
+        。一番左にあるふたつの{' '}
+        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+        の部分からはじめるということが分かります。
       </P>
       {episode6[i++]()}
       <P>
-        Let’s continue: <Em>Try pressing {h('ycNext')}</Em> until we get to step
-        1.6.
+        <Strong>今度は、</Strong>
+        ステップ1-6に進むまで <Em>{h('ycNext')} を押してみてください</Em>。
       </P>
       {episode6[i++]()}
       <P>
-        Then <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
-        Notice that, in steps <Strong>1.6</Strong> and <Strong>1.7</Strong>,{' '}
+        ステップ
+        <Strong>1-6</Strong>と<Strong>1-7</Strong>
+        のところで、
         <Em>
-          the matched sushi <Emoji>🍣</Emoji> is replaced by the{' '}
-          <Strong>two</Strong> salads <Emoji>🥗</Emoji>
-        </Em>{' '}
-        the chef is preparing <Emoji>👨‍🍳</Emoji>.{' '}
+          シェフ <Emoji>👨‍🍳</Emoji> が用意した
+          <Strong>ふたつ</Strong>
+          のサラダ <Emoji>🥗</Emoji> とお寿司 <Emoji>🍣</Emoji>{' '}
+          が入れ替わっている
+        </Em>
+        のに注目です。そのあとは、ステップ2-1に進むまで{' '}
+        <Em>{h('ycNext')} を押してみてください</Em>。
       </P>
       {episode6[i++]()}
       <P>
-        Again, we have multiple <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        ’s. And we’ll again do the leftmost one first.{' '}
-        <Em>Try pressing {h('ycNext')}</Em> until you see {h('ycDone')}.
+        またしても、 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+        が4つ登場します。ここでも、
+        <Strong>一番左のペア</Strong>
+        を先にやります。
+        {h('ycDone')} になるまで <Em>{h('ycNext')} を押してみてください</Em>。
       </P>
       {episode6[i++]()}
-      <P>You can try it from the begininng to end here:</P>
+      <P>
+        <Strong>以上です！</Strong>
+        最初から最後まで通して見てみましょう:
+      </P>
       {episode6[i++]()}
-      <P>Ok, let’s do another quiz!</P>
+      <P>それでは、ここでまたクイズです！</P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
-      <H3>A Very Hard Quiz</H3>
+      <H3>かなり難しいクイズ</H3>
       <P>
-        This one’s challenging. Suppose that currently the {h('ycBentoBox')}{' '}
-        looks like this:
+        今回のは難問です。下の
+        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
       </P>
       {episode6[i++]()}
       <P>
-        <Strong>True or False:</Strong>{' '}
-        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
+        <Strong>YesかNoで答えてみてください:</Strong>{' '}
+        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
       </P>
       {episode6[i++]()}
       <P>
-        <Strong>I know. This question is very hard.</Strong>
+        <Strong>なかなか難しいでしょう？</Strong>
       </P>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
       <P>
         <Em>
-          But at least try for a little bit before you click the button below!
+          しかし、下のボタンを押す前に、諦めないでチャレンジしてみてください！
         </Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={7} />

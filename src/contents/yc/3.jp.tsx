@@ -132,8 +132,7 @@ export default () => {
       <H3>クイズ</H3>
       <P>
         下の
-        {h('ycBentoBox')}
-        を「次へ」とどんどん進めたとします。
+        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
       </P>
       {episode3[i++]()}
       <P>
