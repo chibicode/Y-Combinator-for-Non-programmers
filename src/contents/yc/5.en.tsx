@@ -139,9 +139,15 @@ export default () => {
           that was on the top comes down.
         </UlLi>
         <UlLi>
+          <Strong>Most Importantly:</Strong>{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before
-          disappears, and <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from
-          before now becomes <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
+          disappears, and{' '}
+          <Em>
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from before{' '}
+            <Strong>now becomes</Strong>{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          </Em>
+          .
         </UlLi>
       </Ul>
       <H3>Continuing…</H3>
