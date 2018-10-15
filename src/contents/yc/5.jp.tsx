@@ -31,145 +31,163 @@ export default () => {
         前回同様、ボタンを用意しました。
         <Em>
           {h('ycNext')}
-          をクリックすれば
+          を押せば
         </Em>
         答えがわかります。
       </P>
       {episode5[i++]()}
       <P>いかがでしょう。正解できましたか？</P>
-      <H3>Next Topic: More than 2 cells vertically</H3>
+      <H3>続いては: 縦に3段以上ある場合</H3>
       <P>
-        Next, we’ll talk about the case where{' '}
-        <Em>there are more than 2 cells stacked on top of each other</Em>. Take
-        a look at this one:
+        次は、 <Em>縦に3段以上ある</Em>
+        {h('ycBentoBox')}
+        を見ていきましょう。
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>You might be wondering:</Strong>
+        <Strong>疑問点:</Strong>
       </P>
       <Ul>
         <UlLi>
-          <Em>If there are 3 cells stacked vertically, what do we do?</Em>
+          <Em>縦に3段あった場合、どうすればいいのか？</Em>
         </UlLi>
         <UlLi>
           <Em>
-            What are the signs that say{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>?
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>や{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            と書いているのは何なのか？
           </Em>
         </UlLi>
       </Ul>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <P>
-        <Strong>Here’s the answer:</Strong>
+        <Strong>答えはこちら:</Strong>
       </P>
       <Ol>
         <OlLi>
-          First,{' '}
+          まず、{' '}
           <Em>
-            do the part that has{' '}
+            <Strong>左上と左下</Strong>が
             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            ’s on the <Strong>top left</Strong> and the{' '}
-            <Strong>bottom left</Strong> corner.
+            の部分
           </Em>
+          を先にやる。
         </OlLi>
         <OlLi>
+          その後、
           <Em>
-            Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-            ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            ’s.
-          </Em>{' '}
-          So do these next.
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            だった部分が
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            になるので
+          </Em>
+          、それをやる。
         </OlLi>
       </Ol>
-      <P>This will make sense after we work on an example!</P>
+      <P>実際にやってみると分かりやすいです！</P>
       <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
-      <H3>Example</H3>
+      <H3>例</H3>
       <P>
-        <Em>Try clicking on {h('ycNext')}</Em> on the following example.
+        下の例で
+        <Em>{h('ycNext')}</Em>
+        を押してみてください。
       </P>
       {episode5[i++]()}
+      <P>すると、</P>
       <Ul>
         <UlLi>
-          The part that has{' '}
           <Em>
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> on the{' '}
-            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
-            corner
-          </Em>{' '}
-          is in white. <InlineBackground bgColor="white" />
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が
+            <Strong>左上</Strong>か<Strong>左下</Strong>
+          </Em>
+          にあるマスは白いまま。
+          <InlineBackground bgColor="white" />
         </UlLi>
         <UlLi>
           <Em>
-            The rest is shaded. <InlineBackground bgColor="indigo50" /> We’ll{' '}
-            <Strong>ignore</Strong> this part for now.
-          </Em>
+            その他のマスは塗りつぶされている。
+            <InlineBackground bgColor="indigo50" />
+          </Em>{' '}
+          こちらはいったん
+          <Strong>置いておきます</Strong>。
         </UlLi>
       </Ul>
-      <H3>Continuing…</H3>
+      <H3>その次は？</H3>
       <P>
-        Then proceed with{' '}
         <Em>
-          the white background part <InlineBackground bgColor="white" />
+          白いマスの部分 <InlineBackground bgColor="white" />
         </Em>{' '}
-        as before. Ignore the shaded part.{' '}
+        を以前と同じようにやります。塗りつぶされた部分は無視します。
         <InlineBackground bgColor="indigo50" />
       </P>
       <P>
-        <Em>Try clicking on {h('ycNext')} several times</Em>:
+        <Em>
+          {h('ycNext')}
+          を何度か押してみてください
+        </Em>
+        :
       </P>
       {episode5[i++]()}
       <P>
-        Let’s see what happens when the crossed-out cells{' '}
-        <InlineBackground bgPattern="cross" /> are removed.{' '}
-        <Em>Try clicking on {h('ycNext')}</Em>.
+        バツ印のマス <InlineBackground bgPattern="cross" />{' '}
+        が消えた後はどうなるでしょう？
+        <Em>
+          {h('ycNext')}
+          を押してみてください。
+        </Em>
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>Here’s what happened:</Strong>
+        <Strong>箇条書きで書くと:</Strong>
       </P>
       <Ul>
         <UlLi>
           <Em>
-            Everything is in white background again.{' '}
-            <InlineBackground bgColor="white" />
+            全部のマスがまた白背景に。 <InlineBackground bgColor="white" />
           </Em>
         </UlLi>
         <UlLi>
-          The{' '}
           <Em>
-            steak <Emoji>🥩</Emoji>
+            ステーキ <Emoji>🥩</Emoji>
           </Em>{' '}
-          that was on the top comes down.
+          のマスが降りてきた。
         </UlLi>
         <UlLi>
-          <Strong>Most Importantly:</Strong>{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before
-          disappears, and{' '}
+          <Strong>最も重要なポイント:</Strong> 前回の{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消え、{' '}
           <Em>
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from before{' '}
-            <Strong>now becomes</Strong>{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            前回の <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が
+            <Strong>新しく</Strong>{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+            <Strong>になった</Strong>。
           </Em>
-          .
         </UlLi>
       </Ul>
-      <H3>Continuing…</H3>
+      <H3>その次は？</H3>
       <P>
-        Let’s keep going until the end. <Em>Try clicking {h('ycNext')}</Em>
+        最後まで見ていきましょう。
+        <Em>
+          {h('ycNext')}
+          を何度か押してみてください。
+        </Em>
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>That’s all!</Strong> Just for your reference, you can try it
-        from <Em>the beginning to the end</Em>:
+        <Strong>以上です！</Strong> まとめにもう一度、
+        <Em>最初から最後まで見てみてください</Em>:
       </P>
       {episode5[i++]()}
-      <P>Let’s do a quiz to make sure you understood this!</P>
+      <P>それでは、ここでクイズです。</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
-      <H3>Quiz</H3>
-      <P>If you step through the following example until the end…</P>
+      <H3>クイズ</H3>
+      <P>
+        次の
+        {h('ycBentoBox')}
+        を最後まで進めると…
+      </P>
       {episode5[i++]()}
       <P>
-        <Strong>Which one will be the last food item remaining?</Strong>
+        <Strong>最後にひとつだけ残るのはどの料理でしょう？</Strong>
       </P>
       <Ol>
         <OlLi>
@@ -183,7 +201,8 @@ export default () => {
         </OlLi>
       </Ol>
       <P>
-        <Em>This is a hard question</Em>. So don’t worry if you have no idea.
+        <Em>簡単な問題ではないので</Em>
+        、間違えても大丈夫です！
       </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>

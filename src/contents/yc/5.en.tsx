@@ -30,15 +30,14 @@ export default () => {
       </P>
       <P>
         I added the previous and next buttons.{' '}
-        <Em>Try clicking {h('ycNext')}</Em> several times to see the answer.
+        <Em>Try pressing {h('ycNext')}</Em> several times to see the answer.
       </P>
       {episode5[i++]()}
       <P>Hope this wasn’t too difficult!</P>
       <H3>Next Topic: More than 2 cells vertically</H3>
       <P>
-        Next, we’ll talk about the case where{' '}
-        <Em>there are more than 2 cells stacked on top of each other</Em>. Take
-        a look at this one:
+        Next, we’ll talk about the {h('ycBentoBox')} where{' '}
+        <Em>there are more than 2 cells stacked on top of each other</Em>:
       </P>
       {episode5[i++]()}
       <P>
@@ -56,6 +55,7 @@ export default () => {
           </Em>
         </UlLi>
       </Ul>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <P>
         <Strong>Here’s the answer:</Strong>
       </P>
@@ -82,9 +82,10 @@ export default () => {
       <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
       <H3>Example</H3>
       <P>
-        <Em>Try clicking on {h('ycNext')}</Em> on the following example.
+        <Em>Try pressing {h('ycNext')}</Em> on the following example.
       </P>
       {episode5[i++]()}
+      <P>Notice that:</P>
       <Ul>
         <UlLi>
           The part that has{' '}
@@ -97,9 +98,9 @@ export default () => {
         </UlLi>
         <UlLi>
           <Em>
-            The rest is shaded. <InlineBackground bgColor="indigo50" /> We’ll{' '}
-            <Strong>ignore</Strong> this part for now.
-          </Em>
+            The rest is shaded. <InlineBackground bgColor="indigo50" />
+          </Em>{' '}
+          We’ll <Strong>ignore</Strong> this part for now.
         </UlLi>
       </Ul>
       <H3>Continuing…</H3>
@@ -112,13 +113,13 @@ export default () => {
         <InlineBackground bgColor="indigo50" />
       </P>
       <P>
-        <Em>Try clicking on {h('ycNext')} several times</Em>:
+        <Em>Try pressing {h('ycNext')} several times</Em>:
       </P>
       {episode5[i++]()}
       <P>
         Let’s see what happens when the crossed-out cells{' '}
         <InlineBackground bgPattern="cross" /> are removed.{' '}
-        <Em>Try clicking on {h('ycNext')}</Em>.
+        <Em>Try pressing {h('ycNext')}</Em>.
       </P>
       {episode5[i++]()}
       <P>
@@ -152,7 +153,7 @@ export default () => {
       </Ul>
       <H3>Continuing…</H3>
       <P>
-        Let’s keep going until the end. <Em>Try clicking {h('ycNext')}</Em>
+        Let’s keep going until the end. <Em>Try pressing {h('ycNext')}</Em>
       </P>
       {episode5[i++]()}
       <P>
@@ -163,7 +164,7 @@ export default () => {
       <P>Let’s do a quiz to make sure you understood this!</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <H3>Quiz</H3>
-      <P>If you step through the following example until the end…</P>
+      <P>If you step through the following {h('ycBentoBox')} until the end…</P>
       {episode5[i++]()}
       <P>
         <Strong>Which one will be the last food item remaining?</Strong>

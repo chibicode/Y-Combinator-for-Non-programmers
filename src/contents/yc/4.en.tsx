@@ -26,7 +26,7 @@ export default () => {
       </P>
       <P>
         I added the previous and next buttons.{' '}
-        <Em>Try clicking {h('ycNext')}</Em> to see the answer.
+        <Em>Try pressing {h('ycNext')}</Em> to see the answer.
       </P>
       {episode4[i++]()}
       <P>
@@ -94,7 +94,7 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Em>Try clicking {h('ycNext')}</Em> to see what happens next.
+        <Em>Try pressing {h('ycNext')}</Em> to see what happens next.
       </P>
       {episode4[i++]()}
       <P>

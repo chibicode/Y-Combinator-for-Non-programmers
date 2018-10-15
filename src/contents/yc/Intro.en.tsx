@@ -152,7 +152,7 @@ export default () => {
       </P>
       <P>
         <Strong>So:</Strong> If you're interested in learning about Y
-        Combinator, please click the button below. Don’t worry,{' '}
+        Combinator, please press the button below. Don’t worry,{' '}
         <Em>you can read everything for free</Em>. You can do it from{' '}
         <Em>your smartphone or your computer</Em>.
       </P>
