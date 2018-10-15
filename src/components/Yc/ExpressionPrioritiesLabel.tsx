@@ -32,9 +32,18 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
   collapsed
 }) => (
   <ExpressionFocusContext.Consumer>
-    {({ focused, isDoneOrDefault, readyToHighlight }) => {
+    {({
+      focused,
+      isDoneOrDefault,
+      previouslyChangedExpressionStateReadyToHighlight,
+      parentCallExpressionReadyToHighlight
+    }) => {
       const emphasizeOne =
-        !isDoneOrDefault && focused && priority === 1 && readyToHighlight
+        !isDoneOrDefault &&
+        focused &&
+        priority === 1 &&
+        previouslyChangedExpressionStateReadyToHighlight &&
+        parentCallExpressionReadyToHighlight
       return (
         <ExpressionRunnerContext.Consumer>
           {({ variableSize }) => (

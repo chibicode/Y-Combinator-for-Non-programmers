@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Em,
   H3,
-  InternalLink,
   Ol,
   OlLi,
   P,
@@ -17,17 +16,12 @@ import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 
 export default () => {
   let i = 0
   return (
     <>
-      <P>
-        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-        <InternalLink href={yc(4)}>the quiz from the last episode</InternalLink>
-        :
-      </P>
+      {h('ycQuizReview', 4)}
       <P>
         I added the previous and next buttons.{' '}
         <Em>Try pressing {h('ycNext')}</Em> several times to see the answer.
@@ -181,7 +175,8 @@ export default () => {
         </OlLi>
       </Ol>
       <P>
-        <Em>This is a hard question</Em>. So don’t worry if you have no idea.
+        <Em>This is hard to do in your head</Em>. So don’t worry if you aren’t
+        sure.
       </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>

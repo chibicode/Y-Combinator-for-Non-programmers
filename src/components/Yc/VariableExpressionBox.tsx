@@ -18,13 +18,13 @@ interface VariableExpressionBoxProps {
 
 const paddingTop = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
-    lg: spaces(0.75),
+    lg: spaces(0.5),
     sm: spaces(0.25)
   }[size])
 
 const paddingBottom = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
-    lg: spaces(1),
+    lg: spaces(0.75),
     sm: spaces(0.25)
   }[size])
 

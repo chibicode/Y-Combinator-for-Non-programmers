@@ -1,7 +1,8 @@
 import React from 'react'
-import { Strong } from 'src/components/ContentTags'
+import { InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
+import { yc } from 'src/lib/pathHelpers'
 
 interface LocaleJson {
   en: JSX.Element | string
@@ -84,6 +85,28 @@ export const allTranslations = {
         第{nextEpisodeNumber}
         章へ
       </>
+    )
+  }),
+  ycQuizReview: (previousEpisodeNumber: number) => ({
+    en: (
+      <P>
+        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
+        <InternalLink href={yc(previousEpisodeNumber)}>
+          the quiz from episode {previousEpisodeNumber}
+        </InternalLink>
+        .
+      </P>
+    ),
+    jp: (
+      <P>
+        <Strong>
+          <InternalLink href={yc(previousEpisodeNumber)}>
+            第{previousEpisodeNumber}
+            章で出したクイズ
+          </InternalLink>
+          の答え合わせをしましょう。
+        </Strong>
+      </P>
     )
   }),
   introductionPageLink: () => ({

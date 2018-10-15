@@ -1,28 +1,16 @@
 import React from 'react'
-import {
-  Em,
-  H3,
-  InternalLink,
-  P,
-  Strong,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode4 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 
 export default () => {
   let i = 0
   return (
     <>
-      <P>
-        <InternalLink href={yc(3)}>第3章で出したクイズ</InternalLink>
-        の答え合わせをしましょう。
-      </P>
+      {h('ycQuizReview', 3)}
       <P>
         前回同様、ボタンを用意しました。
         <Em>

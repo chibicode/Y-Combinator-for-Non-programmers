@@ -1,34 +1,113 @@
 import React from 'react'
-import {
-  // Em,
-  // H3,
-  InternalLink,
-  // Ol,
-  // OlLi,
-  P,
-  Strong
-  // Ul,
-  // UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import Emoji from 'src/components/Emoji'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode6 } from 'src/components/Yc/AllExpressionRunners'
-// import Emoji from 'src/components/Emoji'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
-// import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-// import InlineBackground from 'src/components/Yc/InlineBackground'
-// import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
-// import h from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import h from 'src/lib/h'
 
 export default () => {
   let i = 0
   return (
     <>
+      {h('ycQuizReview', 5)}
       <P>
-        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-        <InternalLink href={yc(4)}>the quiz from the last episode</InternalLink>
+        <Em>
+          {h('ycDone')} になるまで
+          {h('ycNext')} を押してみてください
+        </Em>
         :
       </P>
       {episode6[i++]()}
+      <P>
+        というわけで、答えは
+        <Strong>お寿司</Strong> <Emoji>🍣</Emoji> です。
+      </P>
+      <H3>続いてはこちら</H3>
+      <P>
+        今度はこの
+        {h('ycBentoBox')}
+        を見てみましょう:
+      </P>
+      {episode6[i++]()}
+      <P>
+        <Em>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が4つもありますよね。
+        </Em>{' '}
+        どれから先にやればいいのでしょうか？
+      </P>
+      <P>
+        <Strong>答え:</Strong>{' '}
+        <Em>
+          <Strong>いちばん左にある</Strong>{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめます。
+        </Em>
+      </P>
+      <H3>いちばん左</H3>
+      <P>
+        <Em>{h('ycNext')} を押してみてください</Em>
+        。一番左にあるふたつの{' '}
+        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+        の部分からはじめるということが分かります。
+      </P>
+      {episode6[i++]()}
+      <P>
+        <Strong>今度は、</Strong>
+        ステップ1-6に進むまで <Em>{h('ycNext')} を押してみてください</Em>。
+      </P>
+      {episode6[i++]()}
+      <P>
+        ステップ
+        <Strong>1-6</Strong>と<Strong>1-7</Strong>
+        のところで、
+        <Em>
+          シェフ <Emoji>👨‍🍳</Emoji> が用意した
+          <Strong>ふたつ</Strong>
+          のサラダ <Emoji>🥗</Emoji> とお寿司 <Emoji>🍣</Emoji>{' '}
+          が入れ替わっている
+        </Em>
+        のに注目です。そのあとは、ステップ2-1に進むまで{' '}
+        <Em>{h('ycNext')} を押してみてください</Em>。
+      </P>
+      {episode6[i++]()}
+      <P>
+        またしても、 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+        が4つ登場します。ここでも、
+        <Strong>一番左のペア</Strong>
+        を先にやります。
+        {h('ycDone')} になるまで <Em>{h('ycNext')} を押してみてください</Em>。
+      </P>
+      {episode6[i++]()}
+      <P>
+        <Strong>以上です！</Strong>
+        最初から最後まで通して見てみましょう:
+      </P>
+      {episode6[i++]()}
+      <P>それでは、ここでまたクイズです！</P>
+      <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
+      <H3>かなり難しいクイズ</H3>
+      <P>
+        今回のは難問です。下の
+        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
+      </P>
+      {episode6[i++]()}
+      <P>
+        <Strong>YesかNoで答えてみてください:</Strong>{' '}
+        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
+      </P>
+      {episode6[i++]()}
+      <P>
+        <Strong>なかなか難しいでしょう？</Strong>
+      </P>
+      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+      <P>
+        <Em>
+          しかし、下のボタンを押す前に、諦めないでチャレンジしてみてください！
+        </Em>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={7} />
     </>
   )
 }
