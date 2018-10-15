@@ -181,7 +181,8 @@ export default () => {
         </OlLi>
       </Ol>
       <P>
-        <Em>This is a hard question</Em>. So don’t worry if you have no idea.
+        <Em>This is hard to do in your head</Em>. So don’t worry if you aren’t
+        sure.
       </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>

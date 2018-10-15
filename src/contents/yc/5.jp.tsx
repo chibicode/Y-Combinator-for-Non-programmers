@@ -100,7 +100,7 @@ export default () => {
             <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が
             <Strong>左上</Strong>か<Strong>左下</Strong>
           </Em>
-          にあるマスは白いまま。
+          にある部分は白いまま。
           <InlineBackground bgColor="white" />
         </UlLi>
         <UlLi>
@@ -201,8 +201,8 @@ export default () => {
         </OlLi>
       </Ol>
       <P>
-        <Em>簡単な問題ではないので</Em>
-        、間違えても大丈夫です！
+        <Em>頭の中で解くのは難しい問題なので</Em>
+        、自信がなくても大丈夫です！
       </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>

@@ -1,12 +1,12 @@
 import React from 'react'
 
 export interface ExpressionRunnerContextProps {
-  showPriorities: boolean
+  hidePriorities: boolean
   variableSize: 'sm' | 'lg'
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
-  showPriorities: true,
+  hidePriorities: false,
   variableSize: 'sm'
 }
 

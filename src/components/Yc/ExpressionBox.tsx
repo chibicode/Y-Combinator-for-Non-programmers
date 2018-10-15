@@ -39,7 +39,7 @@ const childVariableHighlightType = (
 
 const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ showPriorities }) => (
+    {({ hidePriorities }) => (
       <ExpressionHighlighterContext.Consumer>
         {({ state, highlightType }) => (
           <Flex
@@ -77,7 +77,7 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
                   : undefined
               }
             >
-              {showPriorities &&
+              {!hidePriorities &&
                 isPrioritizedVariableExpression(expression) && (
                   <ExpressionPrioritiesLabel
                     priorities={expression.argPriorityAgg}
@@ -93,7 +93,7 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
                   return <FunctionExpressionBox expression={expression} />
                 }
               })()}
-              {showPriorities &&
+              {!hidePriorities &&
                 isPrioritizedVariableExpression(expression) && (
                   <ExpressionPrioritiesLabel
                     priorities={expression.funcPriorityAgg}

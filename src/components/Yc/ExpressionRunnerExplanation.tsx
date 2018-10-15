@@ -17,18 +17,21 @@ interface ExpressionRunnerExplanationProps {
   isDone: boolean
   currentStep: number
   currentSubstep: number
+  hideOuterMostPrioritiesExplanation: boolean
 }
 
 const stateToExplanation = ({
   state,
   matchExists,
   currentStep,
-  currentSubstep
+  currentSubstep,
+  hideOuterMostPrioritiesExplanation
 }: {
   state: PreviouslyChangedExpressionState
   matchExists?: boolean
   currentStep: number
   currentSubstep: number
+  hideOuterMostPrioritiesExplanation: boolean
 }) => {
   if (currentStep === 1 && currentSubstep === 1) {
     if (locale === 'en') {
@@ -67,6 +70,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
+            {!hideOuterMostPrioritiesExplanation && 'Outermost '}
             <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
             ’s on top/bottom left
           </>
@@ -75,7 +79,8 @@ const stateToExplanation = ({
         return (
           <>
             左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-            のマスを白色に
+            {!hideOuterMostPrioritiesExplanation && 'である一番外側'}
+            の部分を白色に
           </>
         )
       }
@@ -196,7 +201,13 @@ const stateToExplanation = ({
 
 const ExpressionRunnerExplanation: React.SFC<
   ExpressionRunnerExplanationProps
-> = ({ expressionContainer, currentStep, currentSubstep, isDone }) => (
+> = ({
+  expressionContainer,
+  currentStep,
+  currentSubstep,
+  isDone,
+  hideOuterMostPrioritiesExplanation
+}) => (
   <div
     className={css`
       text-align: center;
@@ -229,6 +240,7 @@ const ExpressionRunnerExplanation: React.SFC<
         state: expressionContainer.previouslyChangedExpressionState,
         currentStep,
         currentSubstep,
+        hideOuterMostPrioritiesExplanation,
         matchExists: expressionContainer.matchExists
       })
     )}

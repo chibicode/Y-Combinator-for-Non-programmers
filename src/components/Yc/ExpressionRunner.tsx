@@ -35,13 +35,14 @@ type InitializeInstruction =
 
 interface ExpressionRunnerProps {
   expressionContainer: SteppedExpressionContainer
-  showPriorities: ExpressionRunnerContextProps['showPriorities']
-  showControls: boolean
+  hidePriorities: ExpressionRunnerContextProps['hidePriorities']
+  hideControls: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
   lastAllowedExpressionState?: PreviouslyChangedExpressionState
   containerSize: ContainerProps['size']
+  hideOuterMostPrioritiesExplanation: boolean
   resetIndex: boolean
 }
 
@@ -68,12 +69,13 @@ export default class ExpressionRunner extends React.Component<
   ExpressionRunnerState
 > {
   public static defaultProps = {
-    showPriorities: expressionRunnerContextDefault.showPriorities,
-    showControls: true,
+    hidePriorities: expressionRunnerContextDefault.hidePriorities,
+    hideControls: false,
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
     containerSize: 'xxs',
-    resetIndex: false
+    resetIndex: false,
+    hideOuterMostPrioritiesExplanation: true
   }
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
@@ -127,16 +129,17 @@ export default class ExpressionRunner extends React.Component<
 
   public render() {
     const {
-      showControls,
-      showPriorities,
+      hideControls,
+      hidePriorities,
       variableSize,
-      containerSize
+      containerSize,
+      hideOuterMostPrioritiesExplanation
     } = this.props
     const { expressionContainerManagerState } = this.state
     return (
       <ExpressionRunnerContext.Provider
         value={{
-          showPriorities,
+          hidePriorities,
           variableSize
         }}
       >
@@ -146,7 +149,7 @@ export default class ExpressionRunner extends React.Component<
             horizontalPadding={0}
             verticalMargin={0}
           >
-            {showControls && (
+            {!hideControls && (
               <ExpressionRunnerExplanation
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
@@ -154,6 +157,9 @@ export default class ExpressionRunner extends React.Component<
                 isDone={expressionContainerManagerState.isDone}
                 currentStep={expressionContainerManagerState.currentStep}
                 currentSubstep={expressionContainerManagerState.currentSubstep}
+                hideOuterMostPrioritiesExplanation={
+                  hideOuterMostPrioritiesExplanation
+                }
               />
             )}
           </Container>
@@ -219,7 +225,7 @@ export default class ExpressionRunner extends React.Component<
             horizontalPadding={0}
             verticalMargin={0}
           >
-            {showControls && (
+            {!hideControls && (
               <div ref={this.controlsRef}>
                 <ExpressionRunnerControls
                   onNextClick={this.stepForward}
