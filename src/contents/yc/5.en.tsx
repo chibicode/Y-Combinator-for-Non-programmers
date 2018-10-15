@@ -145,7 +145,9 @@ export default () => {
         </UlLi>
       </Ul>
       <H3>Continuing…</H3>
-      <P>Let’s keep going until the end:</P>
+      <P>
+        Let’s keep going until the end. <Em>Try clicking {h('ycNext')}</Em>
+      </P>
       {episode5[i++]()}
       <P>
         <Strong>That’s all!</Strong> Just for your reference, you can try it

@@ -52,15 +52,13 @@ const stateToExplanation = ({
         return (
           <>
             Previous <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            ’s disappeared.
+            ’s disappeared
           </>
         )
       } else {
         return (
           <>
-            以前の
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            が消えました。
+            以前の <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消えました
           </>
         )
       }
@@ -70,15 +68,14 @@ const stateToExplanation = ({
         return (
           <>
             <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-            ’s on top/bottom left.
+            ’s on top/bottom left
           </>
         )
       } else {
         return (
           <>
-            左上と左下が
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-            のマスを白色に。
+            左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+            のマスを白色に
           </>
         )
       }

@@ -14,7 +14,7 @@ const InlinePrioritiesLabel: React.SFC<{
       color: ${colors(revert ? 'white' : 'indigo300')};
       font-size: ${fontSizes(0.75)};
       font-weight: bold;
-      line-height: ${lineHeights(1.3)};
+      line-height: ${lineHeights(1.3, { ignoreLocale: true })};
       border: 2px solid ${colors('indigo300')};
       background: ${colors(revert ? 'pink400' : 'white')};
     `}

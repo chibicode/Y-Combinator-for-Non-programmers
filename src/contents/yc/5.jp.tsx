@@ -3,6 +3,8 @@ import {
   Em,
   H3,
   InternalLink,
+  Ol,
+  OlLi,
   P,
   Strong,
   Ul,
@@ -11,6 +13,8 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode5 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
@@ -32,131 +36,149 @@ export default () => {
         答えがわかります。
       </P>
       {episode5[i++]()}
+      <P>いかがでしょう。正解できましたか？</P>
+      <H3>Next Topic: More than 2 cells vertically</H3>
       <P>
-        つまり、答えは{' '}
-        <Em>
-          <Strong>
-            サンドイッチ <Emoji>🥪</Emoji>
-          </Strong>
-        </Em>{' '}
-        です。でも、どうしてそうなるのでしょう？
-      </P>
-      <EmojiSeparator emojis={['🥪', '🤔', '🥪']} />
-      <P>
-        理由を説明しましょう。あなたはお寿司 <Emoji>🍣</Emoji>{' '}
-        を食べようとしましたが、残念ながら料理の中にはありませんでした。
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥪</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥗</Emoji>
-        </UlLi>
-      </Ul>
-      <P>
-        <Em>というわけで、あなたは何も食べませんでした</Em>
-        。シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
-        と、サンドイッチ <Emoji>🥪</Emoji>{' '}
-        は入れ替わりません。というわけで、サンドイッチ <Emoji>🥪</Emoji>{' '}
-        はそのままになるのです。
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥪</Emoji>
-        </UlLi>
-      </Ul>
-      <P>
-        <Em>
-          <Strong>ポイント:</Strong> シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ{' '}
-          <Emoji>🥗</Emoji> は<Strong>次のステップには持ち越されません</Strong>
-          。
-        </Em>
-      </P>
-      <H3>下段が3マスの問題</H3>
-      <P>次は、下段に3マスもある問題を見ていきましょう。たとえばこちら:</P>
-      {episode5[i++]()}
-      <P>
-        どう読み取ればいいか説明しましょう。まず、
-        <Strong>下段の一番右のマス</Strong>
-        は、選べる食事 <Emoji>🍽</Emoji> を表しています。
+        Next, we’ll talk about the case where{' '}
+        <Em>there are more than 2 cells stacked on top of each other</Em>. Take
+        a look at this one:
       </P>
       {episode5[i++]()}
       <P>
-        次に、
-        <Strong>下段の一番左のマス</Strong>
-        は、あなた <Emoji>😋</Emoji> が次に食べるものを表しています。
-      </P>
-      {episode5[i++]()}
-      <P>
-        最後に、
-        <Strong>上のマス</Strong>
-        は、シェフ <Emoji>👨‍🍳</Emoji>{' '}
-        が作っている料理を表します。これは以前と変わりませんね。
-      </P>
-      {episode5[i++]()}
-      <P>
-        <Strong>ポイント:</Strong> この場合、
-        <Em>
-          サンドイッチ <Emoji>🥪</Emoji>{' '}
-          は3種類のどれにも分類されません。だから、次のステップに進むと、サンドイッチ{' '}
-          <Emoji>🥪</Emoji> のマスは
-          <Strong>そのまま</Strong>
-          になります
-        </Em>
-        。
-      </P>
-      <P>
-        <Em>
-          {h('ycNext')}
-          をクリックして
-        </Em>
-        どうなるか確かめてみましょう。
-      </P>
-      {episode5[i++]()}
-      <P>
-        <Strong>箇条書きでまとめると、こうなります:</Strong>
+        <Strong>You might be wondering:</Strong>
       </P>
       <Ul>
         <UlLi>
-          <Emoji>🥪</Emoji> サンドイッチのマスはそのまま
-        </UlLi>
-        <UlLi>
-          <Emoji>😋</Emoji> あなたが食べたのはお寿司 <Emoji>🍣</Emoji>.
-        </UlLi>
-        <UlLi>
-          <Emoji>🍽</Emoji> 下段の一番右にあったお寿司 <Emoji>🍣</Emoji>{' '}
-          が、シェフ <Emoji>👨‍🍳</Emoji> が料理していたサラダ <Emoji>🥗</Emoji>{' '}
-          に変わった。
+          <Em>If there are 3 cells stacked vertically, what do we do?</Em>
         </UlLi>
         <UlLi>
           <Em>
-            そして、下段の一番左のマス(
-            <Emoji>😋</Emoji> → <Emoji>🍣</Emoji>) と、上の段のマス(
-            <Emoji>👨‍🍳</Emoji> → <Emoji>🥗</Emoji>
-            )が
-            <Strong>消えた</Strong>
+            What are the signs that say{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>?
           </Em>
-          。
         </UlLi>
       </Ul>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <P>急に難しくなってきたかと思いますが、この調子で進んでみてください！</P>
-      <H3>クイズ: 下段が4マスの問題</H3>
       <P>
-        <Em>下段が4マスある場合</Em>
-        はどうでしょう？たとえば、下の
-        {h('ycBentoBox')}
-        は、次のステップでどうなると思いますか？
+        <Strong>Here’s the answer:</Strong>
+      </P>
+      <Ol>
+        <OlLi>
+          First,{' '}
+          <Em>
+            do the part that has{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s on the <Strong>top left</Strong> and the{' '}
+            <Strong>bottom left</Strong> corner.
+          </Em>
+        </OlLi>
+        <OlLi>
+          <Em>
+            Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            ’s.
+          </Em>{' '}
+          So do these next.
+        </OlLi>
+      </Ol>
+      <P>This will make sense after we work on an example!</P>
+      <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
+      <H3>Example</H3>
+      <P>
+        <Em>Try clicking on {h('ycNext')}</Em> on the following example.
+      </P>
+      {episode5[i++]()}
+      <Ul>
+        <UlLi>
+          The part that has{' '}
+          <Em>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> on the{' '}
+            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+            corner
+          </Em>{' '}
+          is in white. <InlineBackground bgColor="white" />
+        </UlLi>
+        <UlLi>
+          <Em>
+            The rest is shaded. <InlineBackground bgColor="indigo50" /> We’ll{' '}
+            <Strong>ignore</Strong> this part for now.
+          </Em>
+        </UlLi>
+      </Ul>
+      <H3>Continuing…</H3>
+      <P>
+        Then proceed with{' '}
+        <Em>
+          the white background part <InlineBackground bgColor="white" />
+        </Em>{' '}
+        as before. Ignore the shaded part.{' '}
+        <InlineBackground bgColor="indigo50" />
+      </P>
+      <P>
+        <Em>Try clicking on {h('ycNext')} several times</Em>:
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>ヒントはこちらです:</Strong>
+        Let’s see what happens when the crossed-out cells{' '}
+        <InlineBackground bgPattern="cross" /> are removed.{' '}
+        <Em>Try clicking on {h('ycNext')}</Em>.
       </P>
       {episode5[i++]()}
+      <P>
+        <Strong>Here’s what happened:</Strong>
+      </P>
+      <Ul>
+        <UlLi>
+          <Em>
+            Everything is in white background again.{' '}
+            <InlineBackground bgColor="white" />
+          </Em>
+        </UlLi>
+        <UlLi>
+          The{' '}
+          <Em>
+            steak <Emoji>🥩</Emoji>
+          </Em>{' '}
+          that was on the top comes down.
+        </UlLi>
+        <UlLi>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before
+          disappears, and <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from
+          before now becomes <InlinePrioritiesLabel>1</InlinePrioritiesLabel>.
+        </UlLi>
+      </Ul>
+      <H3>Continuing…</H3>
+      <P>
+        Let’s keep going until the end. <Em>Try clicking {h('ycNext')}</Em>
+      </P>
+      {episode5[i++]()}
+      <P>
+        <Strong>That’s all!</Strong> Just for your reference, you can try it
+        from <Em>the beginning to the end</Em>:
+      </P>
+      {episode5[i++]()}
+      <P>Let’s do a quiz to make sure you understood this!</P>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+      <H3>Quiz</H3>
+      <P>If you step through the following example until the end…</P>
+      {episode5[i++]()}
+      <P>
+        <Strong>Which one will be the last food item remaining?</Strong>
+      </P>
+      <Ol>
+        <OlLi>
+          <Emoji size="lg">🍣</Emoji>
+        </OlLi>
+        <OlLi>
+          <Emoji size="lg">🍔</Emoji>
+        </OlLi>
+        <OlLi>
+          <Emoji size="lg">🥩</Emoji>
+        </OlLi>
+      </Ol>
+      <P>
+        <Em>This is a hard question</Em>. So don’t worry if you have no idea.
+      </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>
   )
