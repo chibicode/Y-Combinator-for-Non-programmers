@@ -182,7 +182,7 @@ export default class ExpressionRunner extends React.Component<
                       expressionContainerManagerState.isDone ||
                       expressionContainerManagerState.expressionContainer
                         .previouslyChangedExpressionState === 'default',
-                    readyToHighlight:
+                    previouslyChangedExpressionStateReadyToHighlight:
                       expressionContainerManagerState.expressionContainer
                         .previouslyChangedExpressionState === 'readyToHighlight'
                   }}

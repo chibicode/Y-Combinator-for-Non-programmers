@@ -4,7 +4,8 @@ import { CallExpressionStates } from 'src/types/yc/ExpressionTypes'
 export interface ExpressionFocusContextProps {
   focused?: boolean
   isDoneOrDefault?: boolean
-  readyToHighlight?: boolean
+  previouslyChangedExpressionStateReadyToHighlight?: boolean
+  parentCallExpressionReadyToHighlight?: boolean
 }
 
 export const callExpressionStateToFocused = (

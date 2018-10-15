@@ -3,12 +3,12 @@ import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
-import ExpressionHighlighterContext, {
-  convertAllExpressionStates
-} from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionFocusContext, {
   callExpressionStateToFocused
 } from 'src/components/Yc/ExpressionFocusContext'
+import ExpressionHighlighterContext, {
+  convertAllExpressionStates
+} from 'src/components/Yc/ExpressionHighlighterContext'
 import colors from 'src/lib/theme/colors'
 import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
@@ -20,12 +20,18 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
   expression
 }) => (
   <ExpressionFocusContext.Consumer>
-    {({ focused, isDoneOrDefault, readyToHighlight }) => (
+    {({
+      focused,
+      isDoneOrDefault,
+      previouslyChangedExpressionStateReadyToHighlight
+    }) => (
       <ExpressionFocusContext.Provider
         value={{
           isDoneOrDefault,
-          readyToHighlight,
-          focused: focused || callExpressionStateToFocused(expression.state)
+          previouslyChangedExpressionStateReadyToHighlight,
+          focused: focused || callExpressionStateToFocused(expression.state),
+          parentCallExpressionReadyToHighlight:
+            expression.state === 'readyToHighlight'
         }}
       >
         <Flex
