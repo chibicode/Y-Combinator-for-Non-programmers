@@ -628,5 +628,21 @@ export const episode7 = [
       containerSize={'xs'}
       variableSize={'lg'}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression8}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
   )
 ]

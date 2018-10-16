@@ -110,10 +110,24 @@ export default () => {
       </P>
       {episode7[i++]()}
       <P>
-        We’ll soon talk about what’s going on. But before that, I want you to
-        try the following quiz.
+        We’ll soon talk about what’s going on. <Em>But before that</Em>, let’s
+        check your understanding with the following quiz.
       </P>
       <H3>Quiz</H3>
+      <P>
+        We’ll be using a different set of dishes. Suppose that currently the{' '}
+        {h('ycBentoBox')} looks like this:
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>True or False:</Strong>{' '}
+        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>Good luck!</Strong> If you’ve actually read this episode, you
+        should be able to answer this question.
+      </P>
       <YcNextLessonButton nextEpisodeNumber={8} />
     </>
   )
