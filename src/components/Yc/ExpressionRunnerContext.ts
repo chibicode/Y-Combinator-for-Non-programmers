@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
-  variableSize: 'sm' | 'lg'
+  variableSize: 'sm' | 'md' | 'lg'
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {

@@ -33,9 +33,16 @@ const EmojiSvg: React.SFC<{ name: string }> = ({ name }) => {
 
 interface EmojiProps {
   children: string
-  size?: 'md' | 'lg'
+  size?: 'md' | 'lg' | 'mdlg'
   noVerticalTransform?: boolean
 }
+
+const sizeToHeight = (size: Required<EmojiProps>['size']) =>
+  ({
+    md: '1em',
+    mdlg: '1.5em',
+    lg: '2em'
+  }[size])
 
 const Emoji: React.SFC<EmojiProps> = ({
   children,
@@ -47,7 +54,7 @@ const Emoji: React.SFC<EmojiProps> = ({
       css`
         display: inline-flex;
         vertical-align: middle;
-        height: ${size === 'lg' ? '2em' : '1em'};
+        height: ${sizeToHeight(size)};
       `,
       {
         [css`

@@ -33,6 +33,10 @@ export const allTranslations = {
   ycEpisode6: {
     en: 'Leftmost First',
     jp: 'いちばん左から'
+  },
+  ycEpisode7: {
+    en: 'Magic',
+    jp: '?'
   }
 }
 

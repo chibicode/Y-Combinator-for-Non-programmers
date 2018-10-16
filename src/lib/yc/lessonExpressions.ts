@@ -74,13 +74,13 @@ export const episode5Expression2 = initializeExpressionContainer([
   'a'
 ])
 
-const trueParams: FunctionExpressionParams = {
-  arg: 'd',
-  body: {
-    arg: 'e',
-    body: 'd'
-  }
-}
+// const trueParams: FunctionExpressionParams = {
+//   arg: 'd',
+//   body: {
+//     arg: 'e',
+//     body: 'd'
+//   }
+// }
 
 // const falseParams: FunctionExpressionParams = {
 //   arg: 'a',
@@ -98,16 +98,16 @@ const trueParams: FunctionExpressionParams = {
 //   }
 // }
 
-const notParams: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: {
-      arg: 'c',
-      body: ['a', 'b', 'c']
-    }
-  }
-}
+// const notParams: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: {
+//       arg: 'c',
+//       body: ['a', 'b', 'c']
+//     }
+//   }
+// }
 
 export const episode6Expression1 = initializeExpressionContainer([
   {
@@ -125,15 +125,93 @@ export const episode6Expression1 = initializeExpressionContainer([
 ])
 
 export const episode6Expression2 = initializeExpressionContainer([
-  notParams,
-  trueParams
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['a', 'c', 'b']
+      }
+    }
+  },
+  {
+    arg: 'd',
+    body: {
+      arg: 'e',
+      body: 'd'
+    }
+  }
 ])
 
 export const episode6Expression3 = initializeExpressionContainer({
   arg: 'b',
   body: {
     arg: 'c',
+    body: 'b'
+  }
+})
+
+export const episode7Expression1 = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
     body: 'c'
+  }
+})
+
+export const episode7Expression2 = initializeExpressionContainer({
+  arg: 'd',
+  body: {
+    arg: 'e',
+    body: 'd'
+  }
+})
+
+export const episode7Expression3 = initializeExpressionContainer({
+  arg: 'd',
+  body: {
+    arg: 'e',
+    body: 'e'
+  }
+})
+
+export const episode7Expression4 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['a', 'c', 'b']
+      }
+    }
+  },
+  {
+    arg: 'd',
+    body: {
+      arg: 'e',
+      body: 'e'
+    }
+  }
+])
+
+export const episode7Expression5 = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: 'b'
+  }
+})
+
+export const episode7Expression6 = initializeExpressionContainer({
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: {
+      arg: 'c',
+      body: ['a', 'c', 'b']
+    }
   }
 })
 

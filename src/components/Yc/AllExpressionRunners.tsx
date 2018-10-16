@@ -573,3 +573,60 @@ export const episode6 = [
     />
   )
 ]
+
+export const episode7 = [
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression2}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression3}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression4}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression5}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression6}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  )
+]
