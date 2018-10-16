@@ -11,6 +11,7 @@ import { allColors } from 'src/lib/theme/colors'
 interface InlineBackgroundProps {
   bgColor?: keyof typeof allColors
   bgPattern?: 'star' | 'stripe' | 'stripeReverse' | 'cross' | 'bubble'
+  size?: 'md' | 'mdlg'
 }
 
 const bgPatternToSvg = (
@@ -38,13 +39,14 @@ const bgPatternToSvg = (
 
 const InlineBackground: React.SFC<InlineBackgroundProps> = ({
   bgColor,
-  bgPattern
+  bgPattern,
+  size = 'md'
 }) => (
   <span
     className={cx(
       css`
         display: inline-block;
-        padding: 0.5em;
+        padding: ${size === 'mdlg' ? '0.6em' : '0.5em'};
         border: 2px solid ${colors('indigo300')};
         vertical-align: text-bottom;
       `,
@@ -55,7 +57,11 @@ const InlineBackground: React.SFC<InlineBackgroundProps> = ({
       bgPattern &&
         css`
           background-image: url(${bgPatternToSvg(bgPattern)});
-          background-size: 1.5em 1.5em;
+          background-size: ${bgPattern === 'stripe' ||
+          bgPattern === 'stripeReverse' ||
+          bgPattern === 'bubble'
+            ? '0.8em 0.8em'
+            : '1.5em 1.5em'};
           background-position: center center;
         `
     )}

@@ -78,6 +78,10 @@ export const allTranslations = {
     en: 'Check My Answer',
     jp: '次のページへ進む'
   }),
+  ycNextButtonNextPagePrimaryText: () => ({
+    en: 'Go to Next Page',
+    jp: '次のページへ進む'
+  }),
   ycNextButtonSecondaryText: (nextEpisodeNumber: number) => ({
     en: <>Continue to Episode {nextEpisodeNumber}</>,
     jp: (

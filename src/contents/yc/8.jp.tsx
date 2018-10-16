@@ -99,7 +99,7 @@ export default () => {
         <Strong>不思議じゃないですか？</Strong>
         <Em>
           <Strong>下段</Strong> (下を参照)
-          が何かをしでかしているに違いありません。
+          が何か魔法のようなものをかけているのかもしれません。
         </Em>
       </P>
       {episode7[i++]()}

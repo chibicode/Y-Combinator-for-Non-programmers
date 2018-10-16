@@ -646,3 +646,122 @@ export const episode7 = [
     />
   )
 ]
+
+export const episode8 = [
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression8}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      lastAllowedExpressionState="callArgJustHighlighted"
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'needsAlphaConvert'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      maxStepsAllowed={1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'needsAlphaConvert'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'alphaConvertDone'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'alphaConvertDone'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression2}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression3}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression4}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  )
+]

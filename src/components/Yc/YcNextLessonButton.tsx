@@ -4,19 +4,20 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import h, { allTranslations } from 'src/lib/h'
 import { yc } from 'src/lib/pathHelpers'
 
-type PrimaryTextType = 'quiz' | 'start'
+type PrimaryTextType = 'quiz' | 'start' | 'nextPage'
 
 const primaryTextTypeToTranslationKey = (
   primaryTextType: PrimaryTextType
 ): keyof typeof allTranslations =>
   ({
     quiz: 'ycNextButtonCheckAnswerPrimaryText' as 'ycNextButtonCheckAnswerPrimaryText',
-    start: 'ycNextButtonStartPrimaryText' as 'ycNextButtonStartPrimaryText'
+    start: 'ycNextButtonStartPrimaryText' as 'ycNextButtonStartPrimaryText',
+    nextPage: 'ycNextButtonNextPagePrimaryText' as 'ycNextButtonNextPagePrimaryText'
   }[primaryTextType])
 
 const YcNextLessonButton: React.SFC<{
   nextEpisodeNumber: number
-  primaryTextType?: 'quiz' | 'start'
+  primaryTextType?: PrimaryTextType
 }> = ({ nextEpisodeNumber, primaryTextType = 'quiz' }) => (
   <NextLessonButton
     href={yc(nextEpisodeNumber)}

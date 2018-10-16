@@ -193,6 +193,31 @@ const stateToExplanation = ({
         )
       }
     }
+    case 'needsAlphaConvert': {
+      if (locale === 'en') {
+        return (
+          <>
+            <Emoji size="mdlg">💥</Emoji> <Strong>Conflict</Strong> (See rules
+            in episode 8)
+          </>
+        )
+      } else {
+        return <>?</>
+      }
+    }
+    case 'alphaConvertDone': {
+      if (locale === 'en') {
+        return (
+          <>
+            <Emoji>☑️</Emoji> <Strong>Resolved</Strong>: Change{' '}
+            <InlineBackground bgPattern="stripe" /> to a new dish{' '}
+            <InlineBackground bgPattern="bubble" />
+          </>
+        )
+      } else {
+        return <>?</>
+      }
+    }
     default: {
       return ''
     }

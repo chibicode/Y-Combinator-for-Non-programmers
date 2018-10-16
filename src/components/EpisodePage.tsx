@@ -57,7 +57,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
     <Head>
       <title key="title">
         {lessonTitle}
-        {episodeTitle && `: ${episodeTitle}`} | Hoshiai
+        {episodeTitle && `- ${episodeTitle}`} | Hoshiai
       </title>
     </Head>
     <Container size="sm">
