@@ -21,7 +21,7 @@ const InlineEmojiBox: React.SFC<InlineEmojiBoxProps> = ({ emojis }) => (
   >
     {emojis.map((emoji, i) => (
       <FlexCenter
-        key={`${emoji}{i}`}
+        key={`${emoji}${i}`}
         className={css`
           width: 1.5em;
           height: 1.5em;

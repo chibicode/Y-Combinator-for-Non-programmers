@@ -22,10 +22,7 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 4)}
-      <P>
-        I added the previous and next buttons.{' '}
-        <Em>Try pressing {h('ycNext')}</Em> several times to see the answer.
-      </P>
+      <P>{h('ycTryUntilDone')}:</P>
       {episode5[i++]()}
       <P>Hope this wasn’t too difficult!</P>
       <H3>Next Topic: More than 2 cells vertically</H3>

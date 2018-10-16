@@ -12,12 +12,7 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 5)}
-      <P>
-        <Em>
-          Try pressing {h('ycNext')} until you see {h('ycDone')}
-        </Em>
-        :
-      </P>
+      <P>{h('ycTryUntilDone')}:</P>
       {episode6[i++]()}
       <P>
         So the answer was <Strong>sushi</Strong> <Emoji>🍣</Emoji>.
@@ -66,7 +61,7 @@ export default () => {
       <P>
         Again, we have multiple <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
         ’s. And we’ll again do <Strong>the leftmost one first</Strong>.{' '}
-        <Em>Try pressing {h('ycNext')}</Em> until you see {h('ycDone')}.
+        {h('ycTryUntilDone')}.
       </P>
       {episode6[i++]()}
       <P>

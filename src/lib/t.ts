@@ -36,7 +36,7 @@ export const allTranslations = {
   },
   ycEpisode7: {
     en: 'Magic',
-    jp: '?'
+    jp: '魔法のようなもの'
   }
 }
 

@@ -22,14 +22,7 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 4)}
-      <P>
-        前回同様、ボタンを用意しました。
-        <Em>
-          {h('ycNext')}
-          を押せば
-        </Em>
-        答えがわかります。
-      </P>
+      <P>{h('ycTryUntilDone')}</P>
       {episode5[i++]()}
       <P>いかがでしょう。正解できましたか？</P>
       <H3>続いては: 縦に3段以上ある場合</H3>

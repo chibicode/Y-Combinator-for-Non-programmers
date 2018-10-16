@@ -13,11 +13,7 @@ export default () => {
       {h('ycQuizReview', 3)}
       <P>
         前回同様、ボタンを用意しました。
-        <Em>
-          {h('ycNext')}
-          を押せば
-        </Em>
-        答えがわかります。
+        {h('ycTryUntilDone')}:
       </P>
       {episode4[i++]()}
       <P>

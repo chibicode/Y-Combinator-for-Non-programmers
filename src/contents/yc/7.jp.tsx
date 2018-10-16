@@ -1,9 +1,9 @@
 import React from 'react'
-import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode6 } from 'src/components/Yc/AllExpressionRunners'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
+import { episode7 } from 'src/components/Yc/AllExpressionRunners'
+import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -11,92 +11,120 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 5)}
+      {h('ycQuizReview', 6)}
+      <P>{h('ycTryUntilDone')}:</P>
+      {episode7[i++]()}
       <P>
+        というわけで答えは
+        <Strong>No</Strong>。
         <Em>
-          Try pressing {h('ycNext')} until you see {h('ycDone')}
+          正解は
+          <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥪</Emoji>
+          ではなく、 <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥗</Emoji>
+          でした
         </Em>
         :
       </P>
-      {episode6[i++]()}
+      {episode7[i++]()}
       <P>
-        So the answer was <Strong>sushi</Strong> <Emoji>🍣</Emoji>.
-      </P>
-      <H3>More Priorities</H3>
-      <P>Next, take a look at this {h('ycBentoBox')}:</P>
-      {episode6[i++]()}
-      <P>
-        <Em>
-          Notice that there are multiple{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          ’s.
-        </Em>{' '}
-        Which one do we do first?
-      </P>
-      <P>
-        <Strong>Answer:</Strong>{' '}
-        <Em>
-          Do the <Strong>leftmost</Strong>{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          ’s first.
-        </Em>
-      </P>
-      <H3>Leftmost</H3>
-      <P>
-        <Em>Try pressing {h('ycNext')}</Em>. It will highlight the leftmost{' '}
-        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-        ’s:
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>Let’s continue:</Strong> <Em>Try pressing {h('ycNext')}</Em>{' '}
-        until we get to step 1.6.
-      </P>
-      {episode6[i++]()}
-      <P>
-        Notice that, in steps <Strong>1.6</Strong> and <Strong>1.7</Strong>,{' '}
-        <Em>
-          the matched sushi <Emoji>🍣</Emoji> is replaced by the{' '}
-          <Strong>two</Strong> salads <Emoji>🥗</Emoji>
-        </Em>{' '}
-        the chef is preparing <Emoji>👨‍🍳</Emoji>. Then{' '}
-        <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
-      </P>
-      {episode6[i++]()}
-      <P>
-        Again, we have multiple <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        ’s. And we’ll again do <Strong>the leftmost one first</Strong>.{' '}
-        <Em>Try pressing {h('ycNext')}</Em> until you see {h('ycDone')}.
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>That’s it!</Strong> By the way, you can try it from the
-        begininng to end here:
-      </P>
-      {episode6[i++]()}
-      <P>Ok, let’s do another quiz!</P>
-      <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
-      <H3>A Very Hard Quiz</H3>
-      <P>
-        This one’s challenging. Suppose that currently the {h('ycBentoBox')}{' '}
-        looks like this:
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>True or False:</Strong>{' '}
-        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>I know. This question is very hard.</Strong>
+        どうでしたか？難しい問題だったので、解けなくても気にしないでください！
       </P>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+      <H3>
+        <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🍔</Emoji> のかわりに、{' '}
+        <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🥩</Emoji> を使った場合
+      </H3>
       <P>
+        前の例だと、
+        <Strong>上段</Strong>
+        には次の3つが並んでいました。
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>では、</Strong>
         <Em>
-          But at least try for a little bit before you click the button below!
+          一番右のステーキ <Emoji>🥩</Emoji> をハンバーガー <Emoji>🍔</Emoji>{' '}
+          に変えた場合、答えはどう変わるのでしょう？
         </Em>
       </P>
-      <YcNextLessonButton nextEpisodeNumber={7} />
+      {episode7[i++]()}
+      <P>
+        試してみましょう。下の例では上段を <Emoji>🥩</Emoji> <Emoji>🍔</Emoji>{' '}
+        <Emoji>🍔</Emoji> に変えてみました。
+        {h('ycTryUntilDone')}:
+      </P>
+      {episode7[i++]()}
+      <P>つまり、答えはこうなります:</P>
+      {episode7[i++]()}
+      <P>うーん、待てよ…？</P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>何が起きたのか</H3>
+      <P>
+        <Strong>まとめると、こうなります:</Strong>
+      </P>
+      <Ul>
+        <UlLi>
+          上段が <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> のとき、答えは{' '}
+          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />
+        </UlLi>
+        <UlLi>
+          上段が <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} /> のとき、答えは{' '}
+          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥪']} />
+        </UlLi>
+      </Ul>
+      <P>ということは、もし:</P>
+      <Ul>
+        <UlLi>
+          <Emoji size="mdlg">🥩</Emoji> と <Emoji size="mdlg">🥪</Emoji> を{' '}
+          <Emoji size="mdlg">1️⃣</Emoji> で示し、
+        </UlLi>
+        <UlLi>
+          <Emoji size="mdlg">🍔</Emoji> と <Emoji size="mdlg">🥗</Emoji> を{' '}
+          <Emoji size="mdlg">2️⃣</Emoji> で示すと、
+        </UlLi>
+      </Ul>
+      <P>次のようになります:</P>
+      <Ul>
+        <UlLi>
+          上段が <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のとき、答えは{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
+        </UlLi>
+        <UlLi>
+          上段が <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> のとき、答えは{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+        </UlLi>
+      </Ul>
+      <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
+      <P>
+        <Strong>不思議じゃないですか？</Strong>
+        <Em>
+          <Strong>下段</Strong> (下を参照)
+          が何か魔法のようなものをかけているのかもしれません。
+        </Em>
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>下段の秘密</Strong>
+        についてはこれから説明します。
+        <Em>ですがその前に</Em>
+        、ここまで理解できているかをクイズでチェックしてみましょう。
+      </P>
+      <H3>クイズ</H3>
+      <P>
+        前回とは違う料理を使います。下の
+        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします:
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>YesかNoで答えてみてください:</Strong>{' '}
+        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
+      </P>
+      {episode7[i++]()}
+      <P>
+        ここまできちんと読んだ方なら、答えられるはずです。
+        <Strong>頑張ってください！</Strong>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={8} />
     </>
   )
 }

@@ -12,13 +12,7 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 5)}
-      <P>
-        <Em>
-          {h('ycDone')} になるまで
-          {h('ycNext')} を押してみてください
-        </Em>
-        :
-      </P>
+      <P>{h('ycTryUntilDone')}:</P>
       {episode6[i++]()}
       <P>
         というわけで、答えは
@@ -77,7 +71,7 @@ export default () => {
         が4つ登場します。ここでも、
         <Strong>一番左のペア</Strong>
         を先にやります。
-        {h('ycDone')} になるまで <Em>{h('ycNext')} を押してみてください</Em>。
+        {h('ycTryUntilDone')}。
       </P>
       {episode6[i++]()}
       <P>

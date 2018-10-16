@@ -96,11 +96,7 @@ export default () => {
       </P>
       <Ol>
         <OlLi>
-          In the {h('ycBentoBox')} below,{' '}
-          <Em>
-            try pressing {h('ycNext')} several times until you see {h('ycDone')}
-            .
-          </Em>
+          In the {h('ycBentoBox')} below, {h('ycTryUntilDone', false)}.
         </OlLi>
         <OlLi>
           Then <Em>try pressing {h('ycPrevious')} a few times</Em>.

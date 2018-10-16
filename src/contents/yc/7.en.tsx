@@ -12,12 +12,7 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 6)}
-      <P>
-        <Em>
-          Try pressing {h('ycNext')} until you see {h('ycDone')}
-        </Em>
-        :
-      </P>
+      <P>{h('ycTryUntilDone')}:</P>
       {episode7[i++]()}
       <P>
         So the answer was <Strong>False.</Strong>{' '}
@@ -53,11 +48,7 @@ export default () => {
       {episode7[i++]()}
       <P>
         Let’s check it out! Notice the top part is now <Emoji>🥩</Emoji>{' '}
-        <Emoji>🍔</Emoji> <Emoji>🍔</Emoji>.
-        <Em>
-          Try pressing {h('ycNext')} until you see {h('ycDone')}
-        </Em>
-        :
+        <Emoji>🍔</Emoji> <Emoji>🍔</Emoji>. {h('ycTryUntilDone')}:
       </P>
       {episode7[i++]()}
       <P>So the answer is:</P>
@@ -110,8 +101,9 @@ export default () => {
       </P>
       {episode7[i++]()}
       <P>
-        We’ll soon talk about what’s going on. <Em>But before that</Em>, let’s
-        check your understanding with the following quiz.
+        We’ll soon talk about the <Strong>secrets of the bottom row</Strong>.{' '}
+        <Em>But before that</Em>, let’s check your understanding with the
+        following quiz.
       </P>
       <H3>Quiz</H3>
       <P>
