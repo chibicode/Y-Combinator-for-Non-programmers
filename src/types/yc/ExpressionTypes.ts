@@ -24,7 +24,8 @@ export function isHighlightedState(
     justBetaReduced: true,
     boundJustHighlighted: true,
     boundHighlighted: true,
-    unboundJustHighlighted: true
+    unboundJustHighlighted: true,
+    unboundHighlighted: true
   }
   return !!t[state]
 }

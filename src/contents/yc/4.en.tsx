@@ -52,7 +52,7 @@ export default () => {
         Therefore just the sandwich <Emoji>🥪</Emoji> remains at the end:
       </P>
       {episode4[i++]()}
-      <H3>Three cells on the bottom</H3>
+      <H3>Wish List</H3>
       <P>
         Next, we’ll talk about the case when there are{' '}
         <Em>more than two cells</Em> on the bottom. Check out this one:
@@ -75,8 +75,29 @@ export default () => {
         .
       </P>
       {episode4[i++]()}
-      <P>Middle</P>
+      <P>
+        <Em>
+          <Strong>
+            New <Emoji>🆕</Emoji> :
+          </Strong>{' '}
+          Everything else on the bottom row is <Strong>your wish list.</Strong>
+        </Em>
+      </P>
       {episode4[i++]()}
+      <P>
+        <Strong>What wish list means:</Strong>{' '}
+        <Em>
+          You’re not eating them yet, but you’d like to eat them eventually.
+        </Em>
+      </P>
+      <P>
+        <Strong>In other words:</Strong>{' '}
+        <Em>
+          You can <Strong>ignore</Strong> food in the wishlist <Emoji>💭</Emoji>{' '}
+          until they become what you’re eating next <Emoji>😋</Emoji>.
+        </Em>
+      </P>
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
       <P>
         And the <Strong>top cell</Strong> represents what the chef is preparing.
         This is the same as before.
@@ -87,10 +108,13 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        Still following along? Then how about How about{' '}
-        <Em>four cells on the bottom</Em>?
+        Hope this made sense.{' '}
+        <Em>
+          Again, you can <Strong>ignore</Strong> food in the wishlist{' '}
+          <Emoji>💭</Emoji> until they become what you’re eating next{' '}
+          <Emoji>😋</Emoji>.
+        </Em>
       </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
       <H3>Quiz: Four cells on the bottom</H3>
       <P>What do you think will happen at the end?</P>
       {episode4[i++]()}
@@ -99,12 +123,18 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s
-          <Em> the leftmost item on the bottom row</Em>.
+          The steak <Emoji>🥩</Emoji> is the only available dish because it’s{' '}
+          <Em>the rightmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
-          <Em>Everything else in the bottom row</Em> is available dishes{' '}
-          <Emoji>🍽</Emoji>.
+          The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s{' '}
+          <Em>the leftmost item on the bottom row</Em>.
+        </UlLi>
+        <UlLi>
+          <Em>
+            <Strong>Everything else</Strong> on the bottom low is on wish list{' '}
+            <Emoji>💭</Emoji>.
+          </Em>
         </UlLi>
       </Ul>
       {episode4[i++]()}
