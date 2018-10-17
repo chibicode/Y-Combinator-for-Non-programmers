@@ -573,3 +573,195 @@ export const episode6 = [
     />
   )
 ]
+
+export const episode7 = [
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression1}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression2}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression3}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression4}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression5}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression6}
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      expressionContainer={lessonExpressions.episode7Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression8}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'lg'}
+    />
+  )
+]
+
+export const episode8 = [
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression8}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      lastAllowedExpressionState="callArgJustHighlighted"
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'callArgJustHighlighted'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'needsAlphaConvert'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      maxStepsAllowed={1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'needsAlphaConvert'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'alphaConvertDone'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'alphaConvertDone'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression2}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression3}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression4}
+      hideControls
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  )
+]

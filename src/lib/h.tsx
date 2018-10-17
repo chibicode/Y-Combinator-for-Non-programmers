@@ -1,5 +1,5 @@
 import React from 'react'
-import { InternalLink, P, Strong } from 'src/components/ContentTags'
+import { Em, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
 import { yc } from 'src/lib/pathHelpers'
@@ -78,6 +78,10 @@ export const allTranslations = {
     en: 'Check My Answer',
     jp: '次のページへ進む'
   }),
+  ycNextButtonNextPagePrimaryText: () => ({
+    en: 'Go to Next Page',
+    jp: '次のページへ進む'
+  }),
   ycNextButtonSecondaryText: (nextEpisodeNumber: number) => ({
     en: <>Continue to Episode {nextEpisodeNumber}</>,
     jp: (
@@ -107,6 +111,19 @@ export const allTranslations = {
           の答え合わせをしましょう。
         </Strong>
       </P>
+    )
+  }),
+  ycTryUntilDone: (capitalize = true) => ({
+    en: (
+      <Em>
+        {capitalize ? 'T' : 't'}
+        ry pressing {h('ycNext')} until you see {h('ycDone')}
+      </Em>
+    ),
+    jp: (
+      <Em>
+        {h('ycDone')} になるまで {h('ycNext')} を押してみてください
+      </Em>
     )
   }),
   introductionPageLink: () => ({

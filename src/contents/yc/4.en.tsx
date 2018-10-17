@@ -10,11 +10,8 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 3)}>
-      <P>
-        I added the previous and next buttons.{' '}
-        <Em>Try pressing {h('ycNext')}</Em> to see the answer.
-      </P>
+      {h('ycQuizReview', 3)}
+      <P>I added the previous and next buttons. {h('ycTryUntilDone')}:</P>
       {episode4[i++]()}
       <P>
         So the answer is:{' '}

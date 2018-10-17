@@ -17,19 +17,36 @@ import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
+const Rules = () => (
+  <Ol>
+    <OlLi>
+      まず、{' '}
+      <Em>
+        <Strong>左上と左下</Strong>が
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        の部分
+      </Em>
+      を先にやる。
+    </OlLi>
+    <OlLi>
+      その後、
+      <Em>
+        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        だった部分が
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        になるので
+      </Em>
+      、それをやる。
+    </OlLi>
+  </Ol>
+)
+
 export default () => {
   let i = 0
   return (
     <>
       {h('ycQuizReview', 4)}
-      <P>
-        前回同様、ボタンを用意しました。
-        <Em>
-          {h('ycNext')}
-          を押せば
-        </Em>
-        答えがわかります。
-      </P>
+      <P>{h('ycTryUntilDone')}</P>
       {episode5[i++]()}
       <P>いかがでしょう。正解できましたか？</P>
       <H3>続いては: 縦に3段以上ある場合</H3>
@@ -58,27 +75,7 @@ export default () => {
       <P>
         <Strong>答えはこちら:</Strong>
       </P>
-      <Ol>
-        <OlLi>
-          まず、{' '}
-          <Em>
-            <Strong>左上と左下</Strong>が
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            の部分
-          </Em>
-          を先にやる。
-        </OlLi>
-        <OlLi>
-          その後、
-          <Em>
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-            だった部分が
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            になるので
-          </Em>
-          、それをやる。
-        </OlLi>
-      </Ol>
+      <Rules />
       <P>実際にやってみると分かりやすいです！</P>
       <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
       <H3>例</H3>
@@ -142,13 +139,7 @@ export default () => {
           </Em>
         </UlLi>
         <UlLi>
-          <Em>
-            ステーキ <Emoji>🥩</Emoji>
-          </Em>{' '}
-          のマスが降りてきた。
-        </UlLi>
-        <UlLi>
-          <Strong>最も重要なポイント:</Strong> 前回の{' '}
+          <Strong>重要:</Strong> 前回の{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消え、{' '}
           <Em>
             前回の <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が
@@ -172,7 +163,10 @@ export default () => {
         <Em>最初から最後まで見てみてください</Em>:
       </P>
       {episode5[i++]()}
-      <P>それでは、ここでクイズです。</P>
+      <H3>まとめ</H3>
+      <P>というわけで、以下のポイントをおさえておいてください。</P>
+      <Rules />
+      <P>ちゃんと理解できたか、クイズで確かめてみましょう。</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <H3>クイズ</H3>
       <P>

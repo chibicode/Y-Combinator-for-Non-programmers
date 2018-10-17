@@ -48,6 +48,16 @@ export interface BundleTypes {
     en: React.ComponentType<any>
   }
 
+  'yc/7': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
+  'yc/8': {
+    jp: React.ComponentType<any>
+    en: React.ComponentType<any>
+  }
+
   'yc/Intro': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
@@ -166,6 +176,30 @@ const bundles: BundleTypes = {
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () => import(/* webpackChunkName: 'yc/6.jp' */ 'src/contents/yc/6.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'yc/7': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/7.en' */ 'src/contents/yc/7.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/7.jp' */ 'src/contents/yc/7.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'yc/8': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/8.en' */ 'src/contents/yc/8.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/8.jp' */ 'src/contents/yc/8.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },

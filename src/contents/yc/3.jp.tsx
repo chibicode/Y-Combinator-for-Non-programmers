@@ -106,16 +106,7 @@ export default () => {
         」ボタンを設置してみました。
       </P>
       <Ol>
-        <OlLi>
-          {h('ycBentoBox')}
-          の下にある、
-          <Em>
-            {h('ycNext')} ボタンを
-            {h('ycDone')}
-            になるまで押してみてください
-          </Em>
-          。
-        </OlLi>
+        <OlLi>{h('ycTryUntilDone')}。</OlLi>
         <OlLi>
           そしたら今度は、{' '}
           <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>。
