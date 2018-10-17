@@ -120,7 +120,10 @@ export default () => {
         <Emoji>😋</Emoji>.
       </P>
       <H3>Quiz: Four cells on the bottom</H3>
-      <P>What do you think will happen at the end?</P>
+      <P>
+        Check out the following {h('ycBentoBox')}.{' '}
+        <Em>What do you think will happen by the time it’s {h('ycDone')}?</Em>
+      </P>
       {episode4[i++]()}
       <P>
         <Strong>Hint:</Strong>
