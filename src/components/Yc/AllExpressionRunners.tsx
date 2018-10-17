@@ -308,7 +308,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcBodyJustHighlighted'
+          state: 'funcBodyBoundedJustHighlighted'
         }
       ]}
     />
@@ -323,6 +323,20 @@ export const episode4 = [
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'funcArgJustHighlighted'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode4Expression1}
+      hidePriorities
+      hideControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'funcBodyUnboundedJustHighlighted'
         }
       ]}
     />

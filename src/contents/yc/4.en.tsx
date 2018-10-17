@@ -54,15 +54,15 @@ export default () => {
       {episode4[i++]()}
       <H3>Three cells on the bottom</H3>
       <P>
-        Next, we’ll talk about the case when there are more than two cells on
-        the bottom. Check out this one:
+        Next, we’ll talk about the case when there are{' '}
+        <Em>more than two cells</Em> on the bottom. Check out this one:
       </P>
       {episode4[i++]()}
       <P>
         Here’s how to interpret this. First,{' '}
         <Em>
-          <Strong>all cells on the bottom except the left-most one</Strong>{' '}
-          represent all available dishes <Emoji>🍽</Emoji>
+          <Strong>the bottom right cell</Strong> is what’s available{' '}
+          <Emoji>🍽</Emoji>
         </Em>
         .
       </P>
@@ -74,6 +74,8 @@ export default () => {
         </Em>
         .
       </P>
+      {episode4[i++]()}
+      <P>Middle</P>
       {episode4[i++]()}
       <P>
         And the <Strong>top cell</Strong> represents what the chef is preparing.
