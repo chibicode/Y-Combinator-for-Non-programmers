@@ -3,6 +3,7 @@ import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode4 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -77,10 +78,8 @@ export default () => {
       {episode4[i++]()}
       <P>
         <Em>
-          <Strong>
-            New <Emoji>🆕</Emoji> :
-          </Strong>{' '}
-          Everything else on the bottom row is <Strong>your wish list.</Strong>
+          <Strong>New:</Strong> Everything else on the bottom row is{' '}
+          <Strong>your wish list.</Strong> <Emoji size="mdlg">💭</Emoji>
         </Em>
       </P>
       {episode4[i++]()}
@@ -93,8 +92,9 @@ export default () => {
       <P>
         <Strong>In other words:</Strong>{' '}
         <Em>
-          You can <Strong>ignore</Strong> food in the wishlist <Emoji>💭</Emoji>{' '}
-          until they become what you’re eating next <Emoji>😋</Emoji>.
+          You can <Strong>ignore</Strong> food in the wish list{' '}
+          <Emoji>💭</Emoji> until they become what you’re eating next{' '}
+          <Emoji>😋</Emoji>.
         </Em>
       </P>
       <EmojiSeparator emojis={['💭', '🤔', '💭']} />
@@ -108,12 +108,16 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        Hope this made sense.{' '}
-        <Em>
-          Again, you can <Strong>ignore</Strong> food in the wishlist{' '}
-          <Emoji>💭</Emoji> until they become what you’re eating next{' '}
-          <Emoji>😋</Emoji>.
-        </Em>
+        <Strong>Note:</Strong> the wish list <Emoji>💭</Emoji> gets{' '}
+        <Strong>gray background</Strong> <InlineBackground bgColor="grey200" />{' '}
+        when highlighting matches because they will <Strong>not</Strong> be
+        matched.
+      </P>
+      {episode4[i++]()}
+      <P>
+        <Strong>Again:</Strong> you can <Strong>ignore</Strong> food in the wish
+        list <Emoji>💭</Emoji> until they become what you’re eating next{' '}
+        <Emoji>😋</Emoji>.
       </P>
       <H3>Quiz: Four cells on the bottom</H3>
       <P>What do you think will happen at the end?</P>
@@ -138,6 +142,7 @@ export default () => {
         </UlLi>
       </Ul>
       {episode4[i++]()}
+      <P>Try to guess what will happen in the end!</P>
       <YcNextLessonButton nextEpisodeNumber={5} />
     </>
   )
