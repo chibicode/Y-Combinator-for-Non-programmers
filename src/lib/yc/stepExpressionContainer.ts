@@ -3,6 +3,11 @@ import cloneDeep from 'lodash/cloneDeep'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
 import betaReducePreviewBefore from 'src/lib/yc/betaReducePreviewBefore'
+import {
+  highlightBoundExpressions,
+  highlightUnboundExpressions,
+  isFunctionExpressionOrContainsFunctionExpression
+} from 'src/lib/yc/boundVariableUtils'
 import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
@@ -79,10 +84,50 @@ export default function stepExpressionContainer(
           }
           case 'readyToHighlight': {
             if (expression.func.body.state === 'default') {
-              expression.func.body.state = 'justHighlighted'
-              draftContainer.previouslyChangedExpressionState =
-                'funcBodyJustHighlighted'
+              if (
+                isFunctionExpressionOrContainsFunctionExpression(
+                  expression.func.body
+                )
+              ) {
+                if (
+                  draftContainer.previouslyChangedExpressionState !==
+                  'funcBodyBoundedJustHighlighted'
+                ) {
+                  highlightBoundExpressions(
+                    expression.func.body,
+                    'boundJustHighlighted'
+                  )
+                  draftContainer.previouslyChangedExpressionState =
+                    'funcBodyBoundedJustHighlighted'
+                } else {
+                  highlightBoundExpressions(
+                    expression.func.body,
+                    'boundHighlighted'
+                  )
+                  highlightUnboundExpressions(
+                    expression.func.body,
+                    'unboundJustHighlighted'
+                  )
+                  expression.func.body.state = 'boundHighlighted'
+                  draftContainer.previouslyChangedExpressionState =
+                    'funcBodyUnboundedJustHighlighted'
+                }
+              } else {
+                expression.func.body.state = 'justHighlighted'
+                draftContainer.previouslyChangedExpressionState =
+                  'funcBodyJustHighlighted'
+              }
             } else if (expression.func.arg.state === 'default') {
+              if (
+                isFunctionExpressionOrContainsFunctionExpression(
+                  expression.func.body
+                )
+              ) {
+                highlightUnboundExpressions(
+                  expression.func.body,
+                  'unboundHighlighted'
+                )
+              }
               expression.func.body.state = 'highlighted'
               expression.func.arg.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =

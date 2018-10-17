@@ -7,10 +7,10 @@ import AlphaConvertContext, {
 import ExpressionBetaReducePreviewContext, {
   ExpressionBetaReducePreviewContextProps
 } from 'src/components/Yc/ExpressionBetaReducePreviewContext'
-import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionFocusContext, {
   ExpressionFocusContextProps
 } from 'src/components/Yc/ExpressionFocusContext'
+import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
@@ -43,6 +43,14 @@ const stateToColor = (
   switch (x) {
     case 'justHighlighted':
       return 'yellow100'
+    case 'boundJustHighlighted':
+      return 'yellow100'
+    case 'unboundJustHighlighted':
+      return 'yellow100'
+    case 'boundHighlighted':
+      return 'yellow50'
+    case 'unboundHighlighted':
+      return 'yellow50'
     case 'highlighted':
       return 'yellow50'
   }
@@ -112,6 +120,13 @@ const background = ({
           background-color: ${colors('yellow100')};
         `
       }
+    } else if (
+      betaReducePreview === 'before' &&
+      childVariableHighlightType === 'funcBodyUnbound'
+    ) {
+      return css`
+        background: ${colors('grey200')};
+      `
     } else {
       return css`
         background: ${colors(readyToHighlightToColor(focused))};

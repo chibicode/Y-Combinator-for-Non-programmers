@@ -3,6 +3,7 @@ import Color from 'color'
 
 export const allColors = {
   enSocialBackground: indigo[500],
+  grey200: grey[200],
   grey300: grey[300],
   grey500: grey[500],
   grey800: grey[800],

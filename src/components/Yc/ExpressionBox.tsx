@@ -29,8 +29,10 @@ const childVariableHighlightType = (
 ) => {
   if (isPrioritizedVariableExpression(expression)) {
     if (
-      state === 'highlighted' ||
-      (state === 'justHighlighted' && highlightType)
+      state &&
+      state !== 'default' &&
+      state !== 'justBetaReduced' &&
+      highlightType
     ) {
       return highlightType
     }

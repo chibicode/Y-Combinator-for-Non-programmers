@@ -5,6 +5,10 @@ export type CommonStates =
   | 'highlighted'
   | 'justHighlighted'
   | 'justBetaReduced'
+  | 'boundJustHighlighted'
+  | 'boundHighlighted'
+  | 'unboundJustHighlighted'
+  | 'unboundHighlighted'
 
 export interface VariableExpression {
   readonly state: CommonStates

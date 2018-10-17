@@ -12,6 +12,8 @@ export type PreviouslyChangedExpressionState =
   | 'callArgJustHighlighted'
   | 'funcArgJustHighlighted'
   | 'funcBodyJustHighlighted'
+  | 'funcBodyBoundedJustHighlighted'
+  | 'funcBodyUnboundedJustHighlighted'
   | CallExpressionStates
 
 export interface ExpressionContainer<E extends Expression = Expression> {

@@ -68,7 +68,9 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                       z-index: ${zIndices('emojiBadge')};
                     `}
                   >
-                    {(state === 'highlighted' || state === 'justHighlighted') &&
+                    {state &&
+                      state !== 'justBetaReduced' &&
+                      state !== 'default' &&
                       highlightType && <EmojiBadge badgeType={highlightType} />}
                     {betaReducePreview === 'after' &&
                       wasJustBetaReduced && (

@@ -4,14 +4,77 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionHighlighterContext, {
-  convertAllExpressionStates
+  convertAllExpressionStates,
+  ExpressionHighlighterContextProps
 } from 'src/components/Yc/ExpressionHighlighterContext'
 import colors from 'src/lib/theme/colors'
 import maxNestedFunctionDepth from 'src/lib/yc/maxNestedFunctionDepth'
-import { PrioritizedFunctionExpression } from 'src/types/yc/PrioritizedExpressionTypes'
+import {
+  PrioritizedExpression,
+  PrioritizedFunctionExpression,
+  PrioritizedVariableExpression
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface FunctionExpressionBoxProps {
   expression: PrioritizedFunctionExpression
+}
+
+const argHighlighterContext = ({
+  arg,
+  currentContext
+}: {
+  arg: PrioritizedVariableExpression
+  currentContext: ExpressionHighlighterContextProps
+}): ExpressionHighlighterContextProps => {
+  if (currentContext.highlightType === 'callArg') {
+    return currentContext
+  } else if (
+    arg.state === 'unboundHighlighted' ||
+    arg.state === 'unboundJustHighlighted'
+  ) {
+    return {
+      state: arg.state,
+      highlightType: 'funcBodyUnbound'
+    }
+  } else if (arg.state === 'justHighlighted' || arg.state === 'highlighted') {
+    return {
+      state: arg.state,
+      highlightType: 'funcArg'
+    }
+  } else {
+    return {
+      state: currentContext.state || convertAllExpressionStates(arg.state),
+      highlightType: currentContext.highlightType || 'funcArg'
+    }
+  }
+}
+
+const bodyHighlighterContext = ({
+  body,
+  currentContext
+}: {
+  body: PrioritizedExpression
+  currentContext: ExpressionHighlighterContextProps
+}): ExpressionHighlighterContextProps => {
+  if (
+    body.state === 'boundHighlighted' ||
+    body.state === 'boundJustHighlighted'
+  ) {
+    return {
+      state: body.state,
+      highlightType: 'funcBodyBound'
+    }
+  } else if (body.state === 'justHighlighted' || body.state === 'highlighted') {
+    return {
+      state: body.state,
+      highlightType: 'funcBody'
+    }
+  } else {
+    return {
+      state: currentContext.state || convertAllExpressionStates(body.state),
+      highlightType: currentContext.highlightType || 'funcBody'
+    }
+  }
 }
 
 const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
@@ -32,22 +95,10 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
       <ExpressionHighlighterContext.Consumer>
         {({ state, highlightType }) => (
           <ExpressionHighlighterContext.Provider
-            value={
-              highlightType === 'callArg'
-                ? { state, highlightType }
-                : expression.arg.state === 'justHighlighted' ||
-                  expression.arg.state === 'highlighted'
-                  ? {
-                      state: expression.arg.state,
-                      highlightType: 'funcArg'
-                    }
-                  : {
-                      state:
-                        state ||
-                        convertAllExpressionStates(expression.arg.state),
-                      highlightType: highlightType || 'funcArg'
-                    }
-            }
+            value={argHighlighterContext({
+              arg: expression.arg,
+              currentContext: { state, highlightType }
+            })}
           >
             <ExpressionBox expression={expression.arg} />
           </ExpressionHighlighterContext.Provider>
@@ -64,20 +115,10 @@ const FunctionExpressionBox: React.SFC<FunctionExpressionBoxProps> = ({
       <ExpressionHighlighterContext.Consumer>
         {({ state, highlightType }) => (
           <ExpressionHighlighterContext.Provider
-            value={
-              expression.body.state === 'justHighlighted' ||
-              expression.body.state === 'highlighted'
-                ? {
-                    state: expression.body.state,
-                    highlightType: 'funcBody'
-                  }
-                : {
-                    state:
-                      state ||
-                      convertAllExpressionStates(expression.body.state),
-                    highlightType: highlightType || 'funcBody'
-                  }
-            }
+            value={bodyHighlighterContext({
+              body: expression.body,
+              currentContext: { state, highlightType }
+            })}
           >
             <ExpressionBox expression={expression.body} />
           </ExpressionHighlighterContext.Provider>
