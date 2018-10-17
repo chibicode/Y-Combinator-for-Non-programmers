@@ -13,6 +13,7 @@ export type HighlightedStates =
   | 'boundJustHighlighted'
   | 'boundHighlighted'
   | 'unboundJustHighlighted'
+  | 'unboundHighlighted'
 
 export function isHighlightedState(
   state: CommonStates
