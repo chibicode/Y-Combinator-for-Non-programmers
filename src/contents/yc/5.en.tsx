@@ -17,6 +17,27 @@ import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
+const Rules = () => (
+  <Ol>
+    <OlLi>
+      First,{' '}
+      <Em>
+        do the part that has <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s on the <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+        corner.
+      </Em>
+    </OlLi>
+    <OlLi>
+      <Em>
+        Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s.
+      </Em>{' '}
+      So do these next.
+    </OlLi>
+  </Ol>
+)
+
 export default () => {
   let i = 0
   return (
@@ -50,25 +71,7 @@ export default () => {
       <P>
         <Strong>Here’s the answer:</Strong>
       </P>
-      <Ol>
-        <OlLi>
-          First,{' '}
-          <Em>
-            do the part that has{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            ’s on the <Strong>top left</Strong> and the{' '}
-            <Strong>bottom left</Strong> corner.
-          </Em>
-        </OlLi>
-        <OlLi>
-          <Em>
-            Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-            ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            ’s.
-          </Em>{' '}
-          So do these next.
-        </OlLi>
-      </Ol>
+      <Rules />
       <P>This will make sense after we work on an example!</P>
       <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
       <H3>Example</H3>
@@ -124,14 +127,7 @@ export default () => {
           </Em>
         </UlLi>
         <UlLi>
-          The{' '}
-          <Em>
-            steak <Emoji>🥩</Emoji>
-          </Em>{' '}
-          that was on the top comes down.
-        </UlLi>
-        <UlLi>
-          <Strong>Most Importantly:</Strong>{' '}
+          <Strong>More Importantly:</Strong>{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before
           disappears, and{' '}
           <Em>
@@ -152,6 +148,9 @@ export default () => {
         from <Em>the beginning to the end</Em>:
       </P>
       {episode5[i++]()}
+      <H3>Review</H3>
+      <P>Again, all you need to remember here is:</P>
+      <Rules />
       <P>Let’s do a quiz to make sure you understood this!</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
       <H3>Quiz</H3>
