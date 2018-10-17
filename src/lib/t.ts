@@ -23,7 +23,7 @@ export const allTranslations = {
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
   ycEpisode4: {
-    en: 'More than Two Cells on the Bottom',
+    en: 'Wishlist',
     jp: '下段に3マス以上ある場合'
   },
   ycEpisode5: {

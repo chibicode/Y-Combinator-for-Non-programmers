@@ -42,10 +42,13 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Em>というわけで、あなたは何も食べれませんでした</Em>
-        。シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
-        と、サンドイッチ <Emoji>🥪</Emoji> は入れ替わりません。サラダ{' '}
-        <Emoji>🥗</Emoji> は<Strong>消えてなくなります</Strong>。
+        <Em>というわけで、あなたは何も食べれませんでした</Em>。
+      </P>
+      <P>
+        シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
+        と、サンドイッチ <Emoji>🥪</Emoji> は<Strong>入れ替わりません</Strong>
+        。サラダ <Emoji>🥗</Emoji> は<Strong>消えてなくなります</Strong>
+        。お寿司 <Emoji>🍣</Emoji> も消えます。
       </P>
       {episode4[i++]()}
       <P>

@@ -39,10 +39,13 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Em>So you don’t eat anything</Em>. The salad <Emoji>🥗</Emoji> the chef{' '}
-        <Emoji>👨‍🍳</Emoji> is preparing will not replace the sandwich{' '}
-        <Emoji>🥪</Emoji>. Instead, the salad <Emoji>🥗</Emoji>{' '}
-        <Strong>disappears</Strong>.
+        <Em>So you don’t eat anything</Em>.
+      </P>
+      <P>
+        The salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji> is preparing will{' '}
+        <Strong>not</Strong> replace the sandwich <Emoji>🥪</Emoji>. Instead,
+        the salad <Emoji>🥗</Emoji> <Strong>disappears</Strong>. The sushi{' '}
+        <Emoji>🍣</Emoji> also disappears.
       </P>
       {episode4[i++]()}
       <P>
@@ -95,7 +98,7 @@ export default () => {
       <Ul>
         <UlLi>
           The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s
-          <Em>the leftmost item on the bottom row</Em>.
+          <Em> the leftmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
           <Em>Everything else in the bottom row</Em> is available dishes{' '}
