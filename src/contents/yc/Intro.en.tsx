@@ -89,14 +89,12 @@ export default () => {
         <ExternalLink href="http://www.ycombinator.com/press/">
           As of writing (Fall 2018)
         </ExternalLink>
-        , Y Combinator has invested in roughly 2000 startups, and the total
-        valuation of all Y Combinator companies is roughly{' '}
-        <Em>$100 billion dollars</Em>. <Strong>Example:</Strong> Dropbox
-        graduated from Y Combinator{' '}
-        <ExternalLink href="https://www.ycombinator.com/apply/dropbox/">
-          in 2017
+        , Y Combinator has invested in roughly 2000 startups like AirBnB and
+        Dropbox, and the total valuation of{' '}
+        <ExternalLink href="http://www.ycombinator.com/topcompanies/">
+          top 100 companies
         </ExternalLink>{' '}
-        and became a public company in 2018.
+        is roughly <Em>$100 billion dollars</Em>
       </P>
       <P>
         <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what{' '}

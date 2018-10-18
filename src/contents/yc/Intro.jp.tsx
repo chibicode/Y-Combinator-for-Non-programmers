@@ -86,9 +86,13 @@ export default () => {
           </ExternalLink>
           )。
         </Strong>
-        Yコンビネーターが投資した企業は約2000社にのぼり、全企業の価値を合計すると
+        Yコンビネーターが投資した企業はAirBnBやDropboxなど約2000社にのぼります。
+        <ExternalLink href="http://www.ycombinator.com/topcompanies/">
+          上位100位
+        </ExternalLink>
+        の価値を合計すると
         <Em>10兆円</Em>
-        以上になります。最近上場した企業だと、Dropboxが有名です。DropboxはYコンビネーターから2007年に投資を受け、2018年に上場しました。
+        以上になります。
       </P>
       <P>
         <Strong>
