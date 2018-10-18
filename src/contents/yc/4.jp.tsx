@@ -56,7 +56,7 @@ export default () => {
         というわけで、残るのはサンドイッチ <Emoji>🥪</Emoji> だけになります。
       </P>
       {episode4[i++]()}
-      <H3>食べたいものリスト</H3>
+      <H3>いつか食べたいものリスト</H3>
       <P>
         次は、
         <Em>下段に3マスもある</Em>
@@ -82,7 +82,7 @@ export default () => {
       <P>
         そしてこの章で初登場するのが
         <Strong>
-          「食べたいものリスト <Emoji size="mdlg">💭</Emoji>」
+          「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>」
         </Strong>
         です。
         <Em>
@@ -94,12 +94,12 @@ export default () => {
       <P>
         ここだと、
         <Strong>サンドイッチ</Strong> <Emoji size="mdlg">🥪</Emoji>{' '}
-        が「食べたいものリスト <Emoji size="mdlg">💭</Emoji>
+        が「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>
         」に入っています。
       </P>
       <P>
         <Em>
-          「食べたいものリスト <Emoji>💭</Emoji>
+          「いつか食べたいものリスト <Emoji>💭</Emoji>
           」の中にある料理はいずれ 「
           <Strong>
             次に食べる料理 <Emoji>😋</Emoji>
@@ -122,7 +122,7 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>ポイント:</Strong> 「食べたいものリスト <Emoji>💭</Emoji>{' '}
+        <Strong>ポイント:</Strong> 「いつか食べたいものリスト <Emoji>💭</Emoji>{' '}
         の中の料理は、ここでは無視していいよ」ということを
         <Strong>灰色の背景</Strong> <InlineBackground bgColor="grey200" />{' '}
         で示しています。
@@ -131,7 +131,7 @@ export default () => {
       <P>
         <Strong>繰り返しますが、</Strong>
         <Em>
-          「食べたいものリスト <Emoji>💭</Emoji>
+          「いつか食べたいものリスト <Emoji>💭</Emoji>
           」の中にある料理はいずれ 「
           <Strong>
             次に食べる料理 <Emoji>😋</Emoji>
@@ -165,7 +165,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Em>下段の他のマス</Em>
-          は「食べたいものリスト」なので、無視してよい。
+          は「いつか食べたいものリスト」なので、無視してよい。
           <Emoji>💭</Emoji>
         </UlLi>
       </Ul>

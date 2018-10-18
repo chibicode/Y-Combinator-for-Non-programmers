@@ -144,6 +144,11 @@ export default () => {
       </P>
       {episode5[i++]()}
       <P>
+        <Strong>Note:</Strong> the sandwich was on the wish list{' '}
+        <Emoji>💭</Emoji> initially. But now, the sandwich became what you’re
+        eating next <Emoji>😋</Emoji>.
+      </P>
+      <P>
         <Strong>That’s all!</Strong> Just for your reference, you can try it
         from <Em>the beginning to the end</Em>:
       </P>
