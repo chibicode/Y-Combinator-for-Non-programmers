@@ -24,7 +24,7 @@ export const allTranslations = {
   },
   ycEpisode4: {
     en: 'Wishlist',
-    jp: '下段に3マス以上ある場合'
+    jp: '食べたいものリスト'
   },
   ycEpisode5: {
     en: 'Priorities',

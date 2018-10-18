@@ -78,13 +78,17 @@ export default () => {
       {episode4[i++]()}
       <P>
         <Em>
-          <Strong>New:</Strong> Everything else on the bottom row is{' '}
-          <Strong>your wish list.</Strong> <Emoji size="mdlg">💭</Emoji>
-        </Em>
+          <Strong>Now, this one’s new:</Strong> Everything else on the bottom
+          row is <Strong>your wish list.</Strong> <Emoji size="mdlg">💭</Emoji>
+        </Em>{' '}
+        In this case, the sandwich <Emoji size="mdlg">🥪</Emoji> is in the wish
+        list.
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>What wish list means:</Strong>{' '}
+        <Strong>
+          <Emoji size="mdlg">💭</Emoji> What wish list means:
+        </Strong>{' '}
         <Em>
           You’re not eating them yet, but you’d like to eat them eventually.
         </Em>
@@ -103,14 +107,12 @@ export default () => {
         This is the same as before.
       </P>
       {episode4[i++]()}
-      <P>
-        <Em>Try pressing {h('ycNext')}</Em> to see what happens next.
-      </P>
+      <P>{h('ycTryUntilDone')}:</P>
       {episode4[i++]()}
       <P>
         <Strong>Note:</Strong> the wish list <Emoji>💭</Emoji> gets{' '}
         <Strong>gray background</Strong> <InlineBackground bgColor="grey200" />{' '}
-        when highlighting matches because they will <Strong>not</Strong> be
+        when highlighting matches to show that they will <Strong>not</Strong> be
         matched.
       </P>
       {episode4[i++]()}
