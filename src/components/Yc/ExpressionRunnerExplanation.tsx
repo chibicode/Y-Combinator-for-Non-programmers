@@ -85,6 +85,36 @@ const stateToExplanation = ({
         )
       }
     }
+    case 'funcBodyBoundedJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            Highlighting <EmojiBadge badgeType="funcBodyBound" inline />
+          </>
+        )
+      } else {
+        return (
+          <>
+            <EmojiBadge badgeType="funcBodyBound" inline /> はこちら
+          </>
+        )
+      }
+    }
+    case 'funcBodyUnboundedJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            Highlighting <EmojiBadge badgeType="funcBodyUnbound" inline />
+          </>
+        )
+      } else {
+        return (
+          <>
+            <EmojiBadge badgeType="funcBodyUnbound" inline /> はこちら
+          </>
+        )
+      }
+    }
     case 'funcBodyJustHighlighted': {
       if (locale === 'en') {
         return (
@@ -138,7 +168,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            No matches <Emoji>😭</Emoji>
+            No matches in <EmojiBadge badgeType="funcBody" inline />
           </>
         )
       } else {
@@ -148,7 +178,8 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            食べられる料理がありません <Emoji>😭</Emoji>
+            食べられる料理が <EmojiBadge badgeType="funcBody" inline />{' '}
+            にありません
           </>
         )
       }
@@ -171,7 +202,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            だから、何も食べません <Emoji>😭</Emoji>
+            だから何も食べれません <Emoji>😭</Emoji>
           </>
         )
       }
