@@ -22,6 +22,8 @@ function helper<E extends Expression>(expression: E): E {
       arg: helper(expression.arg),
       func: helper(expression.func)
     })
+  } else {
+    throw new Error()
   }
 }
 
