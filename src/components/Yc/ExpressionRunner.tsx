@@ -203,7 +203,7 @@ export default class ExpressionRunner extends React.Component<
                     value={{
                       conflictingVariableNames:
                         expressionContainerManagerState.expressionContainer
-                          .conflictingVariableNames
+                          .conflictingVariableNames || []
                     }}
                   >
                     <ExpressionBetaReducePreviewContext.Provider

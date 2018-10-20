@@ -3,6 +3,7 @@ import Color from 'color'
 
 export const allColors = {
   enSocialBackground: indigo[500],
+  grey100: grey[100],
   grey300: grey[300],
   grey500: grey[500],
   grey800: grey[800],
@@ -23,7 +24,6 @@ export const allColors = {
     .alpha(0.66)
     .hsl()
     .string(),
-  yellow50: yellow[50],
   yellow100: yellow[100],
   yellow200: yellow[200],
   yellow800: yellow[800]

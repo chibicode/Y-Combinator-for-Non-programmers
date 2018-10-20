@@ -3,8 +3,8 @@ import EpisodePageWrapper from 'src/components/EpisodePageWrapper'
 
 export default () => (
   <EpisodePageWrapper
-    episodeNumber={4}
-    emojis={['💭', '🤔', '💭']}
+    episodeNumber={9}
+    emojis={['😡', '💥', '️😡']}
     lessonName="yc"
   />
 )

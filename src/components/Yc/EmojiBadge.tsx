@@ -12,6 +12,7 @@ interface EmojiBadgeProps {
 }
 
 const funcArgColor = colors('pink400')
+const funcBodyUnboundColor = colors('grey300')
 
 const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
   ({
@@ -20,6 +21,12 @@ const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
     `,
     funcArg: css`
       border-color: ${funcArgColor};
+    `,
+    funcBodyUnbound: css`
+      border-color: ${funcBodyUnboundColor};
+    `,
+    funcBodyBound: css`
+      border-color: ${colors('yellow800')};
     `,
     funcBody: css`
       border-color: ${colors('yellow800')};
@@ -38,8 +45,49 @@ const squareAdjustTop = -0.07
 const hexAdjustTop = -0.35
 const sqrt2Border = 2 * Math.sqrt(2)
 
-const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) =>
-  ({
+const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) => {
+  const funcArgCssOrfuncBoundCss = (color: string) => css`
+    width: ${hexWidth}em;
+    height: ${hexWidth * sqrt3Div3}em;
+    position: relative;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-right-style: solid;
+    transform: translateY(${hexAdjustTop}em);
+    background-color: #fff;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: ${hexWidth * sqrt2Div2}em;
+      height: ${hexWidth * sqrt2Div2}em;
+      transform: scaleY(${sqrt3Div3}) rotate(-45deg);
+      background-color: inherit;
+    }
+
+    &:before {
+      top: ${(hexWidth * sqrt2Div2) / -2}em;
+      border-top: ${sqrt2Border}px solid ${color};
+      border-right: ${sqrt2Border}px solid ${color};
+    }
+
+    &:after {
+      bottom: ${(hexWidth * sqrt2Div2) / -2}em;
+      border-bottom: ${sqrt2Border}px solid ${color};
+      border-left: ${sqrt2Border}px solid ${color};
+    }
+  `
+  const funcBodyCss = css`
+    border-radius: 100%;
+    width: ${circleWidth}em;
+    height: ${circleWidth}em;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #fff;
+  `
+  return {
     callArg: css`
       width: ${squareWidth}em;
       height: ${squareWidth}em;
@@ -53,54 +101,20 @@ const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) =>
       bottom: 0.1em;
       right: 0.05em;
     `,
-    funcArg: css`
-      width: ${hexWidth}em;
-      height: ${hexWidth * sqrt3Div3}em;
-      position: relative;
-      border-left-width: 2px;
-      border-left-style: solid;
-      border-right-width: 2px;
-      border-right-style: solid;
-      transform: translateY(${hexAdjustTop}em);
-      background-color: #fff;
-
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        width: ${hexWidth * sqrt2Div2}em;
-        height: ${hexWidth * sqrt2Div2}em;
-        transform: scaleY(${sqrt3Div3}) rotate(-45deg);
-        background-color: inherit;
-      }
-
-      &:before {
-        top: ${(hexWidth * sqrt2Div2) / -2}em;
-        border-top: ${sqrt2Border}px solid ${funcArgColor};
-        border-right: ${sqrt2Border}px solid ${funcArgColor};
-      }
-
-      &:after {
-        bottom: ${(hexWidth * sqrt2Div2) / -2}em;
-        border-bottom: ${sqrt2Border}px solid ${funcArgColor};
-        border-left: ${sqrt2Border}px solid ${funcArgColor};
-      }
-    `,
-    funcBody: css`
-      border-radius: 100%;
-      width: ${circleWidth}em;
-      height: ${circleWidth}em;
-      border-width: 2px;
-      border-style: solid;
-      background-color: #fff;
-    `
-  }[x])
+    funcArg: funcArgCssOrfuncBoundCss(funcArgColor),
+    funcBodyUnbound: funcArgCssOrfuncBoundCss(funcBodyUnboundColor),
+    funcBody: funcBodyCss,
+    funcBodyBound: funcBodyCss
+  }[x]
+}
 
 const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: '👨‍🍳',
     funcArg: '😋',
     funcBody: '🍽',
+    funcBodyBound: '🍽',
+    funcBodyUnbound: '💭',
     wasJustBetaReduced: '🆕'
   }[x])
 
@@ -108,6 +122,8 @@ const inlineVerticalOffset = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: 0.05,
     funcArg: 0.15 + hexAdjustTop,
+    funcBodyBound: 0.2,
+    funcBodyUnbound: 0.15 + hexAdjustTop,
     funcBody: 0.2,
     wasJustBetaReduced: 0
   }[x])

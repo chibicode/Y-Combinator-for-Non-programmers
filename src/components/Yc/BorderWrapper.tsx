@@ -7,13 +7,14 @@ import AlphaConvertContext, {
 import ExpressionBetaReducePreviewContext, {
   ExpressionBetaReducePreviewContextProps
 } from 'src/components/Yc/ExpressionBetaReducePreviewContext'
-import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionFocusContext, {
   ExpressionFocusContextProps
 } from 'src/components/Yc/ExpressionFocusContext'
+import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import bubbleGreySvg from 'src/images/bubble-grey.url.svg'
 import bubbleSvg from 'src/images/bubble.url.svg'
 import crossSvg from 'src/images/cross.url.svg'
 import starSvg from 'src/images/star.url.svg'
@@ -34,17 +35,38 @@ interface BorderWrapperProps {
   childWasJustBetaReduced?: boolean
 }
 
-export const readyToHighlightToColor = (x?: boolean) =>
-  x ? 'white' : 'indigo50'
+export const readyToHighlightToColor = ({
+  focused,
+  state
+}: {
+  focused?: boolean
+  state: AllExpressionStates
+}) => {
+  if (state === 'unboundHighlighted') {
+    return focused ? 'grey100' : 'indigo50'
+  } else {
+    return focused ? 'white' : 'indigo50'
+  }
+}
 
-const stateToColor = (
-  x: AllExpressionStates
-): keyof typeof allColors | undefined => {
-  switch (x) {
+const stateToColor = ({
+  state
+}: {
+  state: AllExpressionStates
+}): keyof typeof allColors | undefined => {
+  switch (state) {
     case 'justHighlighted':
       return 'yellow100'
+    case 'boundJustHighlighted':
+      return 'yellow100'
+    case 'unboundJustHighlighted':
+      return 'grey100'
+    case 'boundHighlighted':
+      return 'white'
+    case 'unboundHighlighted':
+      return 'grey100'
     case 'highlighted':
-      return 'yellow50'
+      return 'white'
   }
 }
 
@@ -85,9 +107,13 @@ const background = ({
             ${variableSize === 'lg' ? 2 : 1}rem;
           background-position: center center;
         `
-      } else {
+      } else if (childVariableHighlightType === 'funcArg') {
         return css`
           background-color: ${colors('yellow100')};
+        `
+      } else {
+        return css`
+          background-color: ${colors('white')};
         `
       }
     } else if (
@@ -107,19 +133,33 @@ const background = ({
         return css`
           background-color: ${colors('white')};
         `
-      } else {
+      } else if (
+        childVariableHighlightType === 'callArg' &&
+        betaReducePreview === 'after'
+      ) {
         return css`
           background-color: ${colors('yellow100')};
+        `
+      } else {
+        return css`
+          background-color: ${colors('white')};
         `
       }
     } else {
       return css`
-        background: ${colors(readyToHighlightToColor(focused))};
+        background: ${colors(
+          readyToHighlightToColor({
+            focused,
+            state
+          })
+        )};
       `
     }
   } else if (childVariableJustAlphaConverted) {
     return css`
-      background-image: url(${bubbleSvg});
+      background-image: url(${childVariableHighlightType === 'funcBodyUnbound'
+        ? bubbleGreySvg
+        : bubbleSvg});
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
@@ -130,7 +170,7 @@ const background = ({
     childVariableName &&
     conflictingVariableNames.includes(childVariableName) &&
     (childVariableHighlightType === 'callArg' ||
-      childVariableHighlightType === 'funcBody')
+      childVariableHighlightType === 'funcBodyUnbound')
   ) {
     return css`
       background-image: url(${childVariableHighlightType === 'callArg'
@@ -143,7 +183,13 @@ const background = ({
   } else {
     return css`
       background: ${colors(
-        stateToColor(state) || readyToHighlightToColor(focused)
+        stateToColor({
+          state
+        }) ||
+          readyToHighlightToColor({
+            focused,
+            state
+          })
       )};
     `
   }

@@ -3,6 +3,11 @@ import cloneDeep from 'lodash/cloneDeep'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
 import betaReducePreviewBefore from 'src/lib/yc/betaReducePreviewBefore'
+import {
+  highlightBoundExpressions,
+  highlightUnboundExpressions,
+  isFunctionExpressionOrContainsFunctionExpression
+} from 'src/lib/yc/boundVariableUtils'
 import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
@@ -79,15 +84,63 @@ export default function stepExpressionContainer(
           }
           case 'readyToHighlight': {
             if (expression.func.body.state === 'default') {
-              expression.func.body.state = 'justHighlighted'
-              draftContainer.previouslyChangedExpressionState =
-                'funcBodyJustHighlighted'
+              if (
+                isFunctionExpressionOrContainsFunctionExpression(
+                  expression.func.body
+                )
+              ) {
+                highlightBoundExpressions(
+                  expression.func.body,
+                  'boundJustHighlighted'
+                )
+                draftContainer.previouslyChangedExpressionState =
+                  'funcBodyBoundedJustHighlighted'
+                expression.func.body.state = 'partiallyHighlighted'
+              } else {
+                expression.func.body.state = 'justHighlighted'
+                draftContainer.previouslyChangedExpressionState =
+                  'funcBodyJustHighlighted'
+              }
             } else if (expression.func.arg.state === 'default') {
-              expression.func.body.state = 'highlighted'
+              if (
+                isFunctionExpressionOrContainsFunctionExpression(
+                  expression.func.body
+                )
+              ) {
+                highlightBoundExpressions(
+                  expression.func.body,
+                  'boundHighlighted'
+                )
+              } else {
+                expression.func.body.state = 'highlighted'
+              }
               expression.func.arg.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =
                 'funcArgJustHighlighted'
+            } else if (
+              isFunctionExpressionOrContainsFunctionExpression(
+                expression.func.body
+              ) &&
+              expression.func.arg.state === 'justHighlighted'
+            ) {
+              highlightUnboundExpressions(
+                expression.func.body,
+                'unboundJustHighlighted'
+              )
+              expression.func.arg.state = 'highlighted'
+              draftContainer.previouslyChangedExpressionState =
+                'funcBodyUnboundedJustHighlighted'
             } else if (expression.arg.state === 'default') {
+              if (
+                isFunctionExpressionOrContainsFunctionExpression(
+                  expression.func.body
+                )
+              ) {
+                highlightUnboundExpressions(
+                  expression.func.body,
+                  'unboundHighlighted'
+                )
+              }
               expression.func.arg.state = 'highlighted'
               expression.arg.state = 'justHighlighted'
               draftContainer.previouslyChangedExpressionState =
@@ -142,6 +195,10 @@ export default function stepExpressionContainer(
                 )
               )
             )
+            highlightUnboundExpressions(
+              betaReducedFunctionBody,
+              'unboundJustHighlighted'
+            )
             expression.func.body = betaReducedFunctionBody
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewAfter'
@@ -151,6 +208,7 @@ export default function stepExpressionContainer(
             expression.state = 'betaReducePreviewCrossed'
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewCrossed'
+            highlightUnboundExpressions(expression.func.body, 'default')
             break
           }
           case 'betaReducePreviewCrossed': {

@@ -79,8 +79,42 @@ const stateToExplanation = ({
         return (
           <>
             左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-            {!hideLeftMostPrioritiesExplanation && 'である一番外側'}
-            の部分を白色に
+            の部分
+            {!hideLeftMostPrioritiesExplanation && '(一番外側)'}
+            を白色に
+          </>
+        )
+      }
+    }
+    case 'funcBodyBoundedJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            <EmojiBadge badgeType="funcBodyBound" inline /> Rightmost on bottom
+            row
+          </>
+        )
+      } else {
+        return (
+          <>
+            下段の一番右は
+            <EmojiBadge badgeType="funcBodyBound" inline />
+          </>
+        )
+      }
+    }
+    case 'funcBodyUnboundedJustHighlighted': {
+      if (locale === 'en') {
+        return (
+          <>
+            <EmojiBadge badgeType="funcBodyUnbound" inline /> Wish list
+          </>
+        )
+      } else {
+        return (
+          <>
+            いつか食べたいものリスト{' '}
+            <EmojiBadge badgeType="funcBodyUnbound" inline />
           </>
         )
       }
@@ -89,13 +123,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="funcBody" inline />
+            <EmojiBadge badgeType="funcBody" inline /> Rightmost on bottom row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="funcBody" inline /> はこちら
+            下段の一番右は
+            <EmojiBadge badgeType="funcBody" inline />
           </>
         )
       }
@@ -104,13 +139,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="funcArg" inline />
+            <EmojiBadge badgeType="funcArg" inline /> Leftmost on bottom row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="funcArg" inline /> はこちら
+            下段の一番左は
+            <EmojiBadge badgeType="funcArg" inline />
           </>
         )
       }
@@ -119,13 +155,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="callArg" inline />
+            <EmojiBadge badgeType="callArg" inline /> Top row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="callArg" inline /> はこちら
+            上段は
+            <EmojiBadge badgeType="callArg" inline />
           </>
         )
       }
@@ -138,7 +175,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            No matches <Emoji>😭</Emoji>
+            No matches in <EmojiBadge badgeType="funcBody" inline />
           </>
         )
       } else {
@@ -148,7 +185,8 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            食べられる料理がありません <Emoji>😭</Emoji>
+            食べられる料理が <EmojiBadge badgeType="funcBody" inline />{' '}
+            にありません
           </>
         )
       }
@@ -171,7 +209,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            だから、何も食べません <Emoji>😭</Emoji>
+            だから何も食べれません <Emoji>😭</Emoji>
           </>
         )
       }

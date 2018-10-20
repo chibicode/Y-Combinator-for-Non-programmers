@@ -10,6 +10,7 @@ import ExpressionRunnerContext, {
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import { isHighlightedState } from 'src/types/yc/ExpressionTypes'
 import { PrioritizedVariableExpression } from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface VariableExpressionBoxProps {
@@ -68,8 +69,12 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                       z-index: ${zIndices('emojiBadge')};
                     `}
                   >
-                    {(state === 'highlighted' || state === 'justHighlighted') &&
-                      highlightType && <EmojiBadge badgeType={highlightType} />}
+                    {state &&
+                      highlightType &&
+                      isHighlightedState(state) &&
+                      !wasJustBetaReduced && (
+                        <EmojiBadge badgeType={highlightType} />
+                      )}
                     {betaReducePreview === 'after' &&
                       wasJustBetaReduced && (
                         <EmojiBadge badgeType="wasJustBetaReduced" />

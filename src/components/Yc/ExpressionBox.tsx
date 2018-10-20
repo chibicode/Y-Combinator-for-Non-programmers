@@ -10,6 +10,7 @@ import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLab
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
+import { isHighlightedState } from 'src/types/yc/ExpressionTypes'
 import {
   isPrioritizedCallExpression,
   isPrioritizedFunctionExpression,
@@ -28,10 +29,7 @@ const childVariableHighlightType = (
   highlightType?: ExpressionHighlighterContextProps['highlightType']
 ) => {
   if (isPrioritizedVariableExpression(expression)) {
-    if (
-      state === 'highlighted' ||
-      (state === 'justHighlighted' && highlightType)
-    ) {
+    if (state && isHighlightedState(state) && highlightType) {
       return highlightType
     }
   }

@@ -4,7 +4,12 @@ import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
 
 export interface ExpressionHighlighterContextProps {
   state?: CommonStates
-  highlightType?: 'callArg' | 'funcArg' | 'funcBody'
+  highlightType?:
+    | 'callArg'
+    | 'funcArg'
+    | 'funcBody'
+    | 'funcBodyBound'
+    | 'funcBodyUnbound'
 }
 
 export const highlightTypes = ['justHighlighted', 'highlighted']

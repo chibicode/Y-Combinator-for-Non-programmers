@@ -290,6 +290,49 @@ export const episode8Expression4 = initializeExpressionContainer({
   }
 })
 
+export const episode9Expression1 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'c'
+    }
+  },
+  'b'
+])
+
+export const episode9Expression2 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['a', 'c', 'b']
+      }
+    }
+  },
+  [
+    {
+      arg: 'a',
+      body: {
+        arg: 'b',
+        body: {
+          arg: 'c',
+          body: ['a', 'c', 'b']
+        }
+      }
+    },
+    {
+      arg: 'a',
+      body: {
+        arg: 'b',
+        body: 'b'
+      }
+    }
+  ]
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

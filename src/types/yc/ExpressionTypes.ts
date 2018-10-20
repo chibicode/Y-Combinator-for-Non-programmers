@@ -2,9 +2,33 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 
 export type CommonStates =
   | 'default'
+  | 'justBetaReduced'
+  | 'partiallyHighlighted'
+  | HighlightedStates
+
+export type HighlightedStates =
   | 'highlighted'
   | 'justHighlighted'
   | 'justBetaReduced'
+  | 'boundJustHighlighted'
+  | 'boundHighlighted'
+  | 'unboundJustHighlighted'
+  | 'unboundHighlighted'
+
+export function isHighlightedState(
+  state: CommonStates
+): state is HighlightedStates {
+  const t: Partial<Record<CommonStates, boolean>> = {
+    highlighted: true,
+    justHighlighted: true,
+    justBetaReduced: true,
+    boundJustHighlighted: true,
+    boundHighlighted: true,
+    unboundJustHighlighted: true,
+    unboundHighlighted: true
+  }
+  return !!t[state]
+}
 
 export interface VariableExpression {
   readonly state: CommonStates

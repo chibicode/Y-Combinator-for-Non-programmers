@@ -144,12 +144,19 @@ export default () => {
       </P>
       {episode5[i++]()}
       <P>
+        <Strong>Note:</Strong> the sandwich was on the wish list{' '}
+        <Emoji>💭</Emoji> initially. But now, the sandwich became what you’re
+        eating next <Emoji>😋</Emoji>.
+      </P>
+      <P>
         <Strong>That’s all!</Strong> Just for your reference, you can try it
         from <Em>the beginning to the end</Em>:
       </P>
       {episode5[i++]()}
       <H3>Review</H3>
-      <P>Again, all you need to remember here is:</P>
+      <P>
+        <Strong>What you need to know:</Strong>
+      </P>
       <Rules />
       <P>Let’s do a quiz to make sure you understood this!</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />

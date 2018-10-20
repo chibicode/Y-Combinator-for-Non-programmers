@@ -79,8 +79,17 @@ export default () => {
         最初から最後まで通して見てみましょう:
       </P>
       {episode6[i++]()}
-      <P>それでは、ここでまたクイズです！</P>
+      <H3>まとめ</H3>
+      <P>
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が複数あるときは、
+        <Em>
+          <Strong>いちばん左にある</Strong>{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめること。
+        </Em>
+      </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
+      <P>それでは、ここでまたクイズです！</P>
       <H3>かなり難しいクイズ</H3>
       <P>
         今回のは難問です。下の
@@ -93,12 +102,13 @@ export default () => {
       </P>
       {episode6[i++]()}
       <P>
-        <Strong>なかなか難しいでしょう？</Strong>
+        <Strong>頭の中でやるには、</Strong>
+        なかなか難しい問題ですよね。
       </P>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
       <P>
         <Em>
-          しかし、下のボタンを押す前に、諦めないでチャレンジしてみてください！
+          投げ出さずにチャレンジしてみてください！
         </Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={7} />

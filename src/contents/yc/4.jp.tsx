@@ -42,23 +42,30 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Em>というわけで、あなたは何も食べれませんでした</Em>
-        。シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
-        と、サンドイッチ <Emoji>🥪</Emoji> は入れ替わりません。サラダ{' '}
-        <Emoji>🥗</Emoji> は<Strong>消えてなくなります</Strong>。
+        <Em>というわけで、あなたは何も食べれませんでした</Em>。
+      </P>
+      <P>
+        シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
+        と、サンドイッチ <Emoji>🥪</Emoji> は<Strong>入れ替わりません</Strong>
+        。サラダ <Emoji>🥗</Emoji> は<Strong>消えてなくなります</Strong>
+        。お寿司 <Emoji>🍣</Emoji> も消えます。
       </P>
       {episode4[i++]()}
       <P>
         というわけで、残るのはサンドイッチ <Emoji>🥪</Emoji> だけになります。
       </P>
       {episode4[i++]()}
-      <H3>下段が3マスの問題</H3>
-      <P>次は、下段に3マスもある問題を見ていきましょう。たとえばこちら:</P>
+      <H3>いつか食べたいものリスト</H3>
+      <P>
+        次は、
+        <Em>下段に3マスもある</Em>
+        問題を見ていきましょう。たとえばこちら:
+      </P>
       {episode4[i++]()}
       <P>
         どう読み取ればいいか説明しましょう。まず
         <Em>
-          <Strong>下段は、一番左のマスを除き</Strong>
+          <Strong>下段の一番右のマスは</Strong>
           、選べる食事 <Emoji>🍽</Emoji> を表しています。
         </Em>
       </P>
@@ -72,6 +79,36 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
+        そしてこの章で初登場するのが
+        <Strong>
+          「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>」
+        </Strong>
+        です。
+        <Em>
+          <Strong>下段の一番左と一番右以外</Strong>
+          のマスは、「まだ食べないけど、いずれ食べる料理」を表しています。
+        </Em>
+      </P>
+      {episode4[i++]()}
+      <P>
+        ここだと、
+        <Strong>サンドイッチ</Strong> <Emoji size="mdlg">🥪</Emoji>{' '}
+        が「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>
+        」に入っています。
+      </P>
+      <P>
+        <Em>
+          「いつか食べたいものリスト <Emoji>💭</Emoji>
+          」の中にある料理はいずれ 「
+          <Strong>
+            次に食べる料理 <Emoji>😋</Emoji>
+          </Strong>
+          」 になります。それまでは、
+          <Strong>無視してかまいません</Strong>。
+        </Em>
+      </P>
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
+      <P>
         最後に、
         <Strong>上段のマス</Strong>
         は、シェフ <Emoji>👨‍🍳</Emoji>{' '}
@@ -79,30 +116,40 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        <Em>
-          {h('ycNext')}
-          を押して
-        </Em>
-        どうなるか確かめてみましょう。
+        では、
+        {h('ycTryUntilDone')}:
       </P>
       {episode4[i++]()}
+      <H3>まとめ</H3>
       <P>
-        難しくなってきました。では、次は
-        <Em>下段が4マス</Em>
-        の問題をやってみましょう。
+        <Em>
+          「いつか食べたいものリスト <Emoji>💭</Emoji>
+          」の中にある料理はいずれ 「
+          <Strong>
+            次に食べる料理 <Emoji>😋</Emoji>
+          </Strong>
+          」 になります。それまでは、
+          <Strong>無視してかまいません</Strong>。
+        </Em>
       </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
       <H3>クイズ: 下段が4マスの問題</H3>
       <P>
-        たとえば、下の
+        では、下の
         {h('ycBentoBox')}
-        は、最終的にどうなると思いますか？
+        を最後まで進めたらどうなると思いますか？
       </P>
       {episode4[i++]()}
       <P>
         <Strong>ヒント:</Strong>
       </P>
       <Ul>
+        <UlLi>
+          食べれる料理は
+          <Em>下段の一番右</Em>
+          にあるステーキのみ。
+          <Emoji>🥩</Emoji>
+        </UlLi>
         <UlLi>
           あなたが次に食べるのは、
           <Em>下段の一番左</Em>
@@ -111,11 +158,12 @@ export default () => {
         </UlLi>
         <UlLi>
           <Em>下段の他のマス</Em>
-          は選べる料理。
-          <Emoji>🍽</Emoji>
+          は「いつか食べたいものリスト」なので、無視してよい。
+          <Emoji>💭</Emoji>
         </UlLi>
       </Ul>
       {episode4[i++]()}
+      <P>どうなるか考えてみてから、下のボタンを押してみてください！</P>
       <YcNextLessonButton nextEpisodeNumber={5} />
     </>
   )

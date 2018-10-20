@@ -39,27 +39,30 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Em>So you don’t eat anything</Em>. The salad <Emoji>🥗</Emoji> the chef{' '}
-        <Emoji>👨‍🍳</Emoji> is preparing will not replace the sandwich{' '}
-        <Emoji>🥪</Emoji>. Instead, the salad <Emoji>🥗</Emoji>{' '}
-        <Strong>disappears</Strong>.
+        <Em>So you don’t eat anything</Em>.
+      </P>
+      <P>
+        The salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji> is preparing will{' '}
+        <Strong>not</Strong> replace the sandwich <Emoji>🥪</Emoji>. Instead,
+        the salad <Emoji>🥗</Emoji> <Strong>disappears</Strong>. The sushi{' '}
+        <Emoji>🍣</Emoji> also disappears.
       </P>
       {episode4[i++]()}
       <P>
         Therefore just the sandwich <Emoji>🥪</Emoji> remains at the end:
       </P>
       {episode4[i++]()}
-      <H3>Three cells on the bottom</H3>
+      <H3>Wish List</H3>
       <P>
-        Next, we’ll talk about the case when there are more than two cells on
-        the bottom. Check out this one:
+        Next, we’ll talk about the case when there are{' '}
+        <Em>more than two cells</Em> on the bottom. Check out this one:
       </P>
       {episode4[i++]()}
       <P>
         Here’s how to interpret this. First,{' '}
         <Em>
-          <Strong>all cells on the bottom except the left-most one</Strong>{' '}
-          represent all available dishes <Emoji>🍽</Emoji>
+          <Strong>the bottom right cell</Strong> is what’s available{' '}
+          <Emoji>🍽</Emoji>
         </Em>
         .
       </P>
@@ -73,36 +76,72 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
+        <Em>
+          <Strong>Now, this one’s new:</Strong> Everything else on the bottom
+          row is <Strong>your wish list.</Strong> <Emoji size="mdlg">💭</Emoji>
+        </Em>{' '}
+        In this case, the sandwich <Emoji size="mdlg">🥪</Emoji> is in the wish
+        list.
+      </P>
+      {episode4[i++]()}
+      <P>
+        <Strong>
+          <Emoji size="mdlg">💭</Emoji> What wish list means:
+        </Strong>{' '}
+        <Em>
+          You’re not eating them yet, but you’d like to eat them eventually.
+        </Em>
+      </P>
+      <P>
+        <Strong>In other words:</Strong>{' '}
+        <Em>
+          You can <Strong>ignore</Strong> food in the wish list{' '}
+          <Emoji>💭</Emoji> until they become what you’re eating next{' '}
+          <Emoji>😋</Emoji>.
+        </Em>
+      </P>
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
+      <P>
         And the <Strong>top cell</Strong> represents what the chef is preparing.
         This is the same as before.
       </P>
       {episode4[i++]()}
-      <P>
-        <Em>Try pressing {h('ycNext')}</Em> to see what happens next.
-      </P>
+      <P>{h('ycTryUntilDone')}:</P>
       {episode4[i++]()}
+      <H3>Review</H3>
       <P>
-        Still following along? Then how about How about{' '}
-        <Em>four cells on the bottom</Em>?
+        <Strong>What you need to know:</Strong> You can <Strong>ignore</Strong>{' '}
+        food in the wish list <Emoji>💭</Emoji> until they become what you’re
+        eating next <Emoji>😋</Emoji>.
       </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
       <H3>Quiz: Four cells on the bottom</H3>
-      <P>What do you think will happen at the end?</P>
+      <P>
+        Check out the following {h('ycBentoBox')}.{' '}
+        <Em>What do you think will happen by the time it’s {h('ycDone')}?</Em>
+      </P>
       {episode4[i++]()}
       <P>
         <Strong>Hint:</Strong>
       </P>
       <Ul>
         <UlLi>
-          The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s
+          The steak <Emoji>🥩</Emoji> is the only available dish because it’s{' '}
+          <Em>the rightmost item on the bottom row</Em>.
+        </UlLi>
+        <UlLi>
+          The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s{' '}
           <Em>the leftmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
-          <Em>Everything else in the bottom row</Em> is available dishes{' '}
-          <Emoji>🍽</Emoji>.
+          <Em>
+            <Strong>Everything else</Strong> on the bottom low is on wish list{' '}
+            <Emoji>💭</Emoji>.
+          </Em>
         </UlLi>
       </Ul>
       {episode4[i++]()}
+      <P>Try to guess what will happen in the end!</P>
       <YcNextLessonButton nextEpisodeNumber={5} />
     </>
   )
