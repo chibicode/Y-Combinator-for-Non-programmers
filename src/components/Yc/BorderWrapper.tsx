@@ -50,7 +50,7 @@ const stateToColor = (
     case 'boundHighlighted':
       return 'yellow50'
     case 'unboundHighlighted':
-      return 'yellow50'
+      return 'grey200'
     case 'highlighted':
       return 'yellow50'
   }
