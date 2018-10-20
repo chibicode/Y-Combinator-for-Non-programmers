@@ -1,14 +1,14 @@
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 
 import {
-  isPrioritizedCallExpression,
-  isPrioritizedFunctionExpression,
-  isPrioritizedVariableExpression,
-  PrioritizedExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+  Expression,
+  isCallExpression,
+  isFunctionExpression,
+  isVariableExpression
+} from 'src/types/yc/ExpressionTypes'
 
-function helper<E extends PrioritizedExpression>(expression: E): E {
-  if (isPrioritizedVariableExpression(expression)) {
+function helper<E extends Expression>(expression: E): E {
+  if (isVariableExpression(expression)) {
     if (expression.justAlphaConverted) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, expression, {
@@ -22,12 +22,12 @@ function helper<E extends PrioritizedExpression>(expression: E): E {
         wasJustBetaReduced: false
       })
     }
-  } else if (isPrioritizedCallExpression(expression)) {
+  } else if (isCallExpression(expression)) {
     return Object.assign({}, expression, {
       arg: helper(expression.arg),
       func: helper(expression.func)
     })
-  } else if (isPrioritizedFunctionExpression(expression)) {
+  } else if (isFunctionExpression(expression)) {
     return Object.assign({}, expression, {
       arg: helper(expression.arg),
       body: helper(expression.body),
