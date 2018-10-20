@@ -522,14 +522,14 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression1}
       hideControls
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
     />
   ),
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
       maxStepsAllowed={1}
     />
   ),
@@ -537,7 +537,7 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
       lastAllowedExpressionState="betaReducePreviewBefore"
       initializeInstructions={[
         {
@@ -551,7 +551,7 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
       lastAllowedExpressionState="default"
       initializeInstructions={[
         {
@@ -565,7 +565,7 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
       initializeInstructions={[
         {
           type: 'nextIteration'
@@ -581,7 +581,7 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
     />
   ),
   () => (
@@ -589,7 +589,7 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression2}
       containerSize={'xs'}
       hideControls
-      variableSize={'lg'}
+      variableSize={'md'}
     />
   ),
   () => (
@@ -597,7 +597,7 @@ export const episode6 = [
       hideControls
       expressionContainer={lessonExpressions.episode6Expression3}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
     />
   )
 ]
