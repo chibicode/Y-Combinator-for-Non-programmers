@@ -779,3 +779,20 @@ export const episode8 = [
     />
   )
 ]
+
+export const episode9 = [
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  )
+]

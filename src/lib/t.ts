@@ -41,6 +41,10 @@ export const allTranslations = {
   ycEpisode8: {
     en: 'Conflicts',
     jp: '衝突'
+  },
+  ycEpisode9: {
+    en: 'TBD',
+    jp: 'TBD'
   }
 }
 
