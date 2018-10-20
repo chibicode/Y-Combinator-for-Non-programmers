@@ -79,8 +79,9 @@ const stateToExplanation = ({
         return (
           <>
             左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-            {!hideLeftMostPrioritiesExplanation && 'である一番外側'}
-            の部分を白色に
+            の部分
+            {!hideLeftMostPrioritiesExplanation && '(一番外側)'}
+            を白色に
           </>
         )
       }
@@ -112,8 +113,8 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            <EmojiBadge badgeType="funcBodyUnbound" inline />{' '}
             いつか食べたいものリスト{' '}
+            <EmojiBadge badgeType="funcBodyUnbound" inline />
           </>
         )
       }
