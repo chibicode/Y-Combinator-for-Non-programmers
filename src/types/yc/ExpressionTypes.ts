@@ -34,6 +34,7 @@ export interface VariableExpression {
   readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
+  readonly bound?: boolean
   readonly justAlphaConverted?: boolean
   readonly willBeBetaReduced?: boolean
   readonly wasJustBetaReduced?: boolean
