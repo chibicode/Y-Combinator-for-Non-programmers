@@ -1,6 +1,7 @@
 import uniq from 'lodash/uniq'
 import {
   CallExpression,
+  Expression,
   FunctionExpression,
   isCallExpression,
   isFunctionExpression,

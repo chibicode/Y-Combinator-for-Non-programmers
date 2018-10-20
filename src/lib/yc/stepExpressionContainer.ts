@@ -195,6 +195,10 @@ export default function stepExpressionContainer(
                 )
               )
             )
+            highlightUnboundExpressions(
+              betaReducedFunctionBody,
+              'unboundJustHighlighted'
+            )
             expression.func.body = betaReducedFunctionBody
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewAfter'
@@ -204,6 +208,7 @@ export default function stepExpressionContainer(
             expression.state = 'betaReducePreviewCrossed'
             draftContainer.previouslyChangedExpressionState =
               'betaReducePreviewCrossed'
+            highlightUnboundExpressions(expression.func.body, 'default')
             break
           }
           case 'betaReducePreviewCrossed': {

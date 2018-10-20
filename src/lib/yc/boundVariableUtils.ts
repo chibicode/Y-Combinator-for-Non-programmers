@@ -31,7 +31,7 @@ export const highlightBoundExpressions = (
     | DraftObject<PrioritizedCallExpression>
     | DraftObject<PrioritizedFunctionExpression>
     | DraftObject<PrioritizedVariableExpression>,
-  to: 'boundJustHighlighted' | 'boundHighlighted'
+  to: 'boundJustHighlighted' | 'boundHighlighted' | 'default'
 ) => {
   if (isVariableExpression(x)) {
     x.state = to
@@ -48,7 +48,7 @@ export const highlightUnboundExpressions = (
     | DraftObject<PrioritizedCallExpression>
     | DraftObject<PrioritizedFunctionExpression>
     | DraftObject<PrioritizedVariableExpression>,
-  to: 'unboundJustHighlighted' | 'unboundHighlighted'
+  to: 'unboundJustHighlighted' | 'unboundHighlighted' | 'default'
 ) => {
   if (isFunctionExpression(x)) {
     x.arg.state = to
