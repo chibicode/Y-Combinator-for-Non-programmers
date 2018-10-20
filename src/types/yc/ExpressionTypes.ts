@@ -89,15 +89,3 @@ export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
-
-interface NeedsResetState {
-  readonly state: 'needsReset'
-}
-export type NeedsResetFunctionExpression = FunctionExpression & NeedsResetState
-export type NeedsResetCallExpression = CallExpression & NeedsResetState
-export type NeedsResetVariableExpression = VariableExpression & NeedsResetState
-
-export type NeedsResetExpression =
-  | NeedsResetFunctionExpression
-  | NeedsResetCallExpression
-  | NeedsResetVariableExpression
