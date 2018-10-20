@@ -7,13 +7,70 @@ import ExpressionFocusContext, {
   callExpressionStateToFocused
 } from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionHighlighterContext, {
-  convertAllExpressionStates
+  convertAllExpressionStates,
+  ExpressionHighlighterContextProps
 } from 'src/components/Yc/ExpressionHighlighterContext'
 import colors from 'src/lib/theme/colors'
-import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
+import {
+  PrioritizedCallExpression,
+  PrioritizedExpression
+} from 'src/types/yc/PrioritizedExpressionTypes'
 
 interface CallExpressionBoxProps {
   expression: PrioritizedCallExpression
+}
+
+const argHighlighterContext = ({
+  arg,
+  currentContext
+}: {
+  arg: PrioritizedExpression
+  currentContext: ExpressionHighlighterContextProps
+}): ExpressionHighlighterContextProps => {
+  if (currentContext.highlightType === 'callArg') {
+    return currentContext
+  } else if (
+    arg.state === 'boundHighlighted' ||
+    arg.state === 'boundJustHighlighted'
+  ) {
+    return {
+      state: arg.state,
+      highlightType: 'funcBodyBound'
+    }
+  } else if (arg.state === 'justHighlighted' || arg.state === 'highlighted') {
+    return {
+      state: arg.state,
+      highlightType: 'callArg'
+    }
+  } else {
+    return {
+      state: currentContext.state || convertAllExpressionStates(arg.state),
+      highlightType: currentContext.highlightType || 'callArg'
+    }
+  }
+}
+
+const funcHighlighterContext = ({
+  func,
+  currentContext
+}: {
+  func: PrioritizedExpression
+  currentContext: ExpressionHighlighterContextProps
+}): ExpressionHighlighterContextProps => {
+  if (
+    func.state === 'boundHighlighted' ||
+    func.state === 'boundJustHighlighted'
+  ) {
+    return {
+      state: func.state,
+      highlightType: 'funcBodyBound'
+    }
+  } else {
+    return {
+      state: currentContext.state,
+      highlightType: currentContext.highlightType
+    }
+  }
 }
 
 const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
@@ -44,20 +101,10 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
             <ExpressionHighlighterContext.Consumer>
               {({ state, highlightType }) => (
                 <ExpressionHighlighterContext.Provider
-                  value={
-                    expression.arg.state === 'justHighlighted' ||
-                    expression.arg.state === 'highlighted'
-                      ? {
-                          state: expression.arg.state,
-                          highlightType: 'callArg'
-                        }
-                      : {
-                          state:
-                            state ||
-                            convertAllExpressionStates(expression.arg.state),
-                          highlightType: highlightType || 'callArg'
-                        }
-                  }
+                  value={argHighlighterContext({
+                    arg: expression.arg,
+                    currentContext: { state, highlightType }
+                  })}
                 >
                   <ExpressionBox expression={expression.arg} />
                 </ExpressionHighlighterContext.Provider>
@@ -69,7 +116,18 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
               border-top: 1px solid ${colors('grey300')};
             `}
           >
-            <ExpressionBox expression={expression.func} />
+            <ExpressionHighlighterContext.Consumer>
+              {({ state, highlightType }) => (
+                <ExpressionHighlighterContext.Provider
+                  value={funcHighlighterContext({
+                    func: expression.func,
+                    currentContext: { state, highlightType }
+                  })}
+                >
+                  <ExpressionBox expression={expression.func} />
+                </ExpressionHighlighterContext.Provider>
+              )}
+            </ExpressionHighlighterContext.Consumer>
           </FlexCenter>
         </Flex>
       </ExpressionFocusContext.Provider>
