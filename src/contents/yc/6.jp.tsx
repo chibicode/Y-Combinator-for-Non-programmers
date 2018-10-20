@@ -108,7 +108,7 @@ export default () => {
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
       <P>
         <Em>
-          しかし、下のボタンを押す前に、諦めないでチャレンジしてみてください！
+          投げ出さずにチャレンジしてみてください！
         </Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={7} />
