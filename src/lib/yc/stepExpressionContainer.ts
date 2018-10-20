@@ -11,9 +11,8 @@ import {
 import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
-import prioritizeExpressionContainer, {
-  populatePriorityAggsAndPrioritizeExpression
-} from 'src/lib/yc/prioritizeExpressionContainer'
+import populatePriorityAggsAndPrioritizeExpression from 'src/lib/yc/populatePriorityAggsAndPrioritizeExpression'
+import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpression from 'src/lib/yc/resetExpression'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
