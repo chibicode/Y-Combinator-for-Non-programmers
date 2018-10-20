@@ -116,11 +116,13 @@ export default () => {
         matched.
       </P>
       {episode4[i++]()}
+      <H3>Review</H3>
       <P>
-        <Strong>Again:</Strong> you can <Strong>ignore</Strong> food in the wish
-        list <Emoji>💭</Emoji> until they become what you’re eating next{' '}
-        <Emoji>😋</Emoji>.
+        <Strong>What you need to know:</Strong> You can <Strong>ignore</Strong>{' '}
+        food in the wish list <Emoji>💭</Emoji> until they become what you’re
+        eating next <Emoji>😋</Emoji>.
       </P>
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
       <H3>Quiz: Four cells on the bottom</H3>
       <P>
         Check out the following {h('ycBentoBox')}.{' '}

@@ -128,8 +128,8 @@ export default () => {
         で示しています。
       </P>
       {episode4[i++]()}
+      <H3>まとめ</H3>
       <P>
-        <Strong>繰り返しますが、</Strong>
         <Em>
           「いつか食べたいものリスト <Emoji>💭</Emoji>
           」の中にある料理はいずれ 「
@@ -140,6 +140,7 @@ export default () => {
           <Strong>無視してかまいません</Strong>。
         </Em>
       </P>
+      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
       <H3>クイズ: 下段が4マスの問題</H3>
       <P>
         では、下の

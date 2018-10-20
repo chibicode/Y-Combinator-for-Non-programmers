@@ -154,7 +154,9 @@ export default () => {
       </P>
       {episode5[i++]()}
       <H3>Review</H3>
-      <P>Again, all you need to remember here is:</P>
+      <P>
+        <Strong>What you need to know:</Strong>
+      </P>
       <Rules />
       <P>Let’s do a quiz to make sure you understood this!</P>
       <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />

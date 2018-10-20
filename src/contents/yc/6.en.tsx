@@ -69,8 +69,19 @@ export default () => {
         begininng to end here:
       </P>
       {episode6[i++]()}
-      <P>Ok, let’s do another quiz!</P>
+      <H3>Review</H3>
+      <P>
+        <Strong>What you need to know:</Strong> If there are multiple{' '}
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s,
+        <Em>
+          do the <Strong>leftmost</Strong>{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          ’s first.
+        </Em>
+      </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
+      <P>Ok, let’s do another quiz!</P>
       <H3>A Very Hard Quiz</H3>
       <P>
         This one’s challenging. Suppose that currently the {h('ycBentoBox')}{' '}
@@ -83,7 +94,7 @@ export default () => {
       </P>
       {episode6[i++]()}
       <P>
-        <Strong>I know. This question is very hard.</Strong>
+        <Strong>Yes,</Strong> this question is very hard to do in your head.
       </P>
       <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
       <P>
