@@ -14,9 +14,8 @@ import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAn
 import prioritizeExpressionContainer, {
   populatePriorityAggsAndPrioritizeExpression
 } from 'src/lib/yc/prioritizeExpressionContainer'
-import resetExpressionContainer, {
-  resetExpression
-} from 'src/lib/yc/resetExpressionContainer'
+import resetExpression from 'src/lib/yc/resetExpression'
+import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isNeedsResetExpressionContainer,
