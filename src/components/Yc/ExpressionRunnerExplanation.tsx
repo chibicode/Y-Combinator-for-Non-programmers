@@ -89,13 +89,15 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="funcBodyBound" inline />
+            <EmojiBadge badgeType="funcBodyBound" inline /> Rightmost on bottom
+            row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="funcBodyBound" inline /> はこちら
+            下段の一番右は
+            <EmojiBadge badgeType="funcBodyBound" inline />
           </>
         )
       }
@@ -104,15 +106,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting wish list{' '}
-            <EmojiBadge badgeType="funcBodyUnbound" inline />
+            <EmojiBadge badgeType="funcBodyUnbound" inline /> Wish list
           </>
         )
       } else {
         return (
           <>
+            <EmojiBadge badgeType="funcBodyUnbound" inline />{' '}
             いつか食べたいものリスト{' '}
-            <EmojiBadge badgeType="funcBodyUnbound" inline /> はこちら
           </>
         )
       }
@@ -121,13 +122,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="funcBody" inline />
+            <EmojiBadge badgeType="funcBody" inline /> Rightmost on bottom row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="funcBody" inline /> はこちら
+            下段の一番右は
+            <EmojiBadge badgeType="funcBody" inline />
           </>
         )
       }
@@ -136,13 +138,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="funcArg" inline />
+            <EmojiBadge badgeType="funcArg" inline /> Leftmost on bottom row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="funcArg" inline /> はこちら
+            下段の一番左は
+            <EmojiBadge badgeType="funcArg" inline />
           </>
         )
       }
@@ -151,13 +154,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Highlighting <EmojiBadge badgeType="callArg" inline />
+            <EmojiBadge badgeType="callArg" inline /> Top row
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="callArg" inline /> はこちら
+            上段は
+            <EmojiBadge badgeType="callArg" inline />
           </>
         )
       }
