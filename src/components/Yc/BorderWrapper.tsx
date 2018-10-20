@@ -34,8 +34,19 @@ interface BorderWrapperProps {
   childWasJustBetaReduced?: boolean
 }
 
-export const readyToHighlightToColor = (x?: boolean) =>
-  x ? 'white' : 'indigo50'
+export const readyToHighlightToColor = ({
+  focused,
+  state
+}: {
+  focused?: boolean
+  state: AllExpressionStates
+}) => {
+  if (state === 'unboundHighlighted') {
+    return focused ? 'grey200' : 'indigo50'
+  } else {
+    return focused ? 'white' : 'indigo50'
+  }
+}
 
 const stateToColor = (
   x: AllExpressionStates
@@ -46,13 +57,13 @@ const stateToColor = (
     case 'boundJustHighlighted':
       return 'yellow100'
     case 'unboundJustHighlighted':
-      return 'yellow100'
+      return 'grey200'
     case 'boundHighlighted':
-      return 'yellow50'
+      return 'white'
     case 'unboundHighlighted':
       return 'grey200'
     case 'highlighted':
-      return 'yellow50'
+      return 'white'
   }
 }
 
@@ -93,9 +104,13 @@ const background = ({
             ${variableSize === 'lg' ? 2 : 1}rem;
           background-position: center center;
         `
-      } else {
+      } else if (childVariableHighlightType === 'funcArg') {
         return css`
           background-color: ${colors('yellow100')};
+        `
+      } else {
+        return css`
+          background-color: ${colors('white')};
         `
       }
     } else if (
@@ -115,21 +130,26 @@ const background = ({
         return css`
           background-color: ${colors('white')};
         `
-      } else {
+      } else if (
+        childVariableHighlightType === 'callArg' &&
+        betaReducePreview === 'after'
+      ) {
         return css`
           background-color: ${colors('yellow100')};
         `
+      } else {
+        return css`
+          background-color: ${colors('white')};
+        `
       }
-    } else if (
-      betaReducePreview === 'before' &&
-      childVariableHighlightType === 'funcBodyUnbound'
-    ) {
-      return css`
-        background: ${colors('grey200')};
-      `
     } else {
       return css`
-        background: ${colors(readyToHighlightToColor(focused))};
+        background: ${colors(
+          readyToHighlightToColor({
+            focused,
+            state
+          })
+        )};
       `
     }
   } else if (childVariableJustAlphaConverted) {
@@ -158,7 +178,7 @@ const background = ({
   } else {
     return css`
       background: ${colors(
-        stateToColor(state) || readyToHighlightToColor(focused)
+        stateToColor(state) || readyToHighlightToColor({ focused, state })
       )};
     `
   }

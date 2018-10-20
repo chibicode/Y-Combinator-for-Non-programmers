@@ -371,20 +371,6 @@ export const episode4 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode4Expression1}
-      hidePriorities
-      hideControls
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewBefore'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
       containerSize="xs"
       expressionContainer={lessonExpressions.episode4Expression2}
       hidePriorities

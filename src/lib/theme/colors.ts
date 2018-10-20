@@ -24,7 +24,6 @@ export const allColors = {
     .alpha(0.66)
     .hsl()
     .string(),
-  yellow50: yellow[50],
   yellow100: yellow[100],
   yellow200: yellow[200],
   yellow800: yellow[800]

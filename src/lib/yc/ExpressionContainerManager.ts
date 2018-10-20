@@ -105,6 +105,15 @@ export default class ExpressionContainerManager {
       ) {
         expressionContainer = stepExpressionContainer(expressionContainer)
       }
+
+      if (
+        !expressionContainer.matchExists &&
+        expressionContainer.previouslyChangedExpressionState ===
+          'betaReducePreviewAfter' &&
+        !isDoneExpressionContainer(expressionContainer)
+      ) {
+        expressionContainer = stepExpressionContainer(expressionContainer)
+      }
       this.expressionContainers.push(expressionContainer)
       this.currentIndex++
 

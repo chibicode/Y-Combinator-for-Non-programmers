@@ -121,13 +121,6 @@ export default () => {
         {h('ycTryUntilDone')}:
       </P>
       {episode4[i++]()}
-      <P>
-        <Strong>ポイント:</Strong> 「いつか食べたいものリスト <Emoji>💭</Emoji>{' '}
-        の中の料理は、ここでは無視していいよ」ということを
-        <Strong>灰色の背景</Strong> <InlineBackground bgColor="grey200" />{' '}
-        で示しています。
-      </P>
-      {episode4[i++]()}
       <H3>まとめ</H3>
       <P>
         <Em>

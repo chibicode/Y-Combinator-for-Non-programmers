@@ -109,13 +109,6 @@ export default () => {
       {episode4[i++]()}
       <P>{h('ycTryUntilDone')}:</P>
       {episode4[i++]()}
-      <P>
-        <Strong>Note:</Strong> the wish list <Emoji>💭</Emoji> gets{' '}
-        <Strong>gray background</Strong> <InlineBackground bgColor="grey200" />{' '}
-        when highlighting matches to show that they will <Strong>not</Strong> be
-        matched.
-      </P>
-      {episode4[i++]()}
       <H3>Review</H3>
       <P>
         <Strong>What you need to know:</Strong> You can <Strong>ignore</Strong>{' '}
