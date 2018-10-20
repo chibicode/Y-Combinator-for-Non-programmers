@@ -14,6 +14,7 @@ import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionH
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import bubbleGreySvg from 'src/images/bubble-grey.url.svg'
 import bubbleSvg from 'src/images/bubble.url.svg'
 import crossSvg from 'src/images/cross.url.svg'
 import starSvg from 'src/images/star.url.svg'
@@ -42,26 +43,28 @@ export const readyToHighlightToColor = ({
   state: AllExpressionStates
 }) => {
   if (state === 'unboundHighlighted') {
-    return focused ? 'grey200' : 'indigo50'
+    return focused ? 'grey100' : 'indigo50'
   } else {
     return focused ? 'white' : 'indigo50'
   }
 }
 
-const stateToColor = (
-  x: AllExpressionStates
-): keyof typeof allColors | undefined => {
-  switch (x) {
+const stateToColor = ({
+  state
+}: {
+  state: AllExpressionStates
+}): keyof typeof allColors | undefined => {
+  switch (state) {
     case 'justHighlighted':
       return 'yellow100'
     case 'boundJustHighlighted':
       return 'yellow100'
     case 'unboundJustHighlighted':
-      return 'grey200'
+      return 'grey100'
     case 'boundHighlighted':
       return 'white'
     case 'unboundHighlighted':
-      return 'grey200'
+      return 'grey100'
     case 'highlighted':
       return 'white'
   }
@@ -154,7 +157,9 @@ const background = ({
     }
   } else if (childVariableJustAlphaConverted) {
     return css`
-      background-image: url(${bubbleSvg});
+      background-image: url(${childVariableHighlightType === 'funcBodyUnbound'
+        ? bubbleGreySvg
+        : bubbleSvg});
       background-size: ${variableSize === 'lg' ? 2 : 1}rem
         ${variableSize === 'lg' ? 2 : 1}rem;
       background-position: center center;
@@ -165,7 +170,7 @@ const background = ({
     childVariableName &&
     conflictingVariableNames.includes(childVariableName) &&
     (childVariableHighlightType === 'callArg' ||
-      childVariableHighlightType === 'funcBody')
+      childVariableHighlightType === 'funcBodyUnbound')
   ) {
     return css`
       background-image: url(${childVariableHighlightType === 'callArg'
@@ -178,7 +183,13 @@ const background = ({
   } else {
     return css`
       background: ${colors(
-        stateToColor(state) || readyToHighlightToColor({ focused, state })
+        stateToColor({
+          state
+        }) ||
+          readyToHighlightToColor({
+            focused,
+            state
+          })
       )};
     `
   }
