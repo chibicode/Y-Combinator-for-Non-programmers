@@ -17,6 +17,7 @@ import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContai
 import resetExpression from 'src/lib/yc/resetExpression'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import {
+  DoneExpressionContainer,
   NeedsResetExpressionContainer,
   PrioritizedExpressionContainer,
   SteppedExpressionContainer
@@ -28,17 +29,15 @@ import {
   PrioritizedFunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
-// NOTE: Use union of NeedsResetExpressionContainer | PrioritizedExpressionContainer
-// instead of overloading like:
-// NeedsResetExpressionContainer -> PrioritizedExpressionContainer
-// PrioritizedExpressionContainer -> ...
-// Why? If it uses overloading, then you can't pass a variable
-// that has the type NeedsResetExpressionContainer | PrioritizedExpressionContainer
-// because the return type will be uncertain (because of overloading, return type
-// will be different depending on NeedsResetExpressionContainer or PrioritizedExpressionContainer)
-// but TypeScript isn't smart enough to combine the potential return types.
-// To avoid this the caller can use type guards to "separate" the union type
-// before calling, but that adds unnecessary code to the caller.
+export default function stepExpressionContainer(
+  e: NeedsResetExpressionContainer
+): DoneExpressionContainer | PrioritizedExpressionContainer
+export default function stepExpressionContainer(
+  e: PrioritizedExpressionContainer
+): NeedsResetExpressionContainer | PrioritizedExpressionContainer
+export default function stepExpressionContainer(
+  e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
+): SteppedExpressionContainer
 export default function stepExpressionContainer(
   e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
 ): SteppedExpressionContainer {
