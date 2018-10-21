@@ -61,188 +61,179 @@ const stepExpressionContainerNext = (
       DraftObject<ImmediatelyExecutableCallExpression>,
       DraftObject<PrioritizedFunctionExpression>
     >(draftContainer.backupExpression || draftContainer.expression)
-    if (
-      'notFound' in nextCallExpressionAndParent &&
-      nextCallExpressionAndParent.notFound
-    ) {
+    if (isNotFound(nextCallExpressionAndParent)) {
       throw new Error()
-    } else {
-      const expression = nextCallExpressionAndParent.expression
-      switch (expression.state) {
-        case 'default': {
-          expression.state = 'readyToHighlight'
-          draftContainer.previouslyChangedExpressionState = 'readyToHighlight'
-          break
-        }
-        case 'readyToHighlight': {
-          if (expression.func.body.state === 'default') {
-            if (
-              isFunctionExpressionOrContainsFunctionExpression(
-                expression.func.body
-              )
-            ) {
-              highlightBoundExpressions(
-                expression.func.body,
-                'boundJustHighlighted'
-              )
-              draftContainer.previouslyChangedExpressionState =
-                'funcBodyBoundedJustHighlighted'
-              expression.func.body.state = 'partiallyHighlighted'
-            } else {
-              expression.func.body.state = 'justHighlighted'
-              draftContainer.previouslyChangedExpressionState =
-                'funcBodyJustHighlighted'
-            }
-          } else if (expression.func.arg.state === 'default') {
-            if (
-              isFunctionExpressionOrContainsFunctionExpression(
-                expression.func.body
-              )
-            ) {
-              highlightBoundExpressions(
-                expression.func.body,
-                'boundHighlighted'
-              )
-            } else {
-              expression.func.body.state = 'highlighted'
-            }
-            expression.func.arg.state = 'justHighlighted'
-            draftContainer.previouslyChangedExpressionState =
-              'funcArgJustHighlighted'
-          } else if (
+    }
+    const expression = nextCallExpressionAndParent.expression
+    switch (expression.state) {
+      case 'default': {
+        expression.state = 'readyToHighlight'
+        draftContainer.previouslyChangedExpressionState = 'readyToHighlight'
+        break
+      }
+      case 'readyToHighlight': {
+        if (expression.func.body.state === 'default') {
+          if (
             isFunctionExpressionOrContainsFunctionExpression(
               expression.func.body
-            ) &&
-            expression.func.arg.state === 'justHighlighted'
+            )
+          ) {
+            highlightBoundExpressions(
+              expression.func.body,
+              'boundJustHighlighted'
+            )
+            draftContainer.previouslyChangedExpressionState =
+              'funcBodyBoundedJustHighlighted'
+            expression.func.body.state = 'partiallyHighlighted'
+          } else {
+            expression.func.body.state = 'justHighlighted'
+            draftContainer.previouslyChangedExpressionState =
+              'funcBodyJustHighlighted'
+          }
+        } else if (expression.func.arg.state === 'default') {
+          if (
+            isFunctionExpressionOrContainsFunctionExpression(
+              expression.func.body
+            )
+          ) {
+            highlightBoundExpressions(expression.func.body, 'boundHighlighted')
+          } else {
+            expression.func.body.state = 'highlighted'
+          }
+          expression.func.arg.state = 'justHighlighted'
+          draftContainer.previouslyChangedExpressionState =
+            'funcArgJustHighlighted'
+        } else if (
+          isFunctionExpressionOrContainsFunctionExpression(
+            expression.func.body
+          ) &&
+          expression.func.arg.state === 'justHighlighted'
+        ) {
+          highlightUnboundExpressions(
+            expression.func.body,
+            'unboundJustHighlighted'
+          )
+          expression.func.arg.state = 'highlighted'
+          draftContainer.previouslyChangedExpressionState =
+            'funcBodyUnboundedJustHighlighted'
+        } else if (expression.arg.state === 'default') {
+          if (
+            isFunctionExpressionOrContainsFunctionExpression(
+              expression.func.body
+            )
           ) {
             highlightUnboundExpressions(
               expression.func.body,
-              'unboundJustHighlighted'
+              'unboundHighlighted'
             )
-            expression.func.arg.state = 'highlighted'
+          }
+          expression.func.arg.state = 'highlighted'
+          expression.arg.state = 'justHighlighted'
+          draftContainer.previouslyChangedExpressionState =
+            'callArgJustHighlighted'
+        } else {
+          expression.arg.state = 'highlighted'
+          const conflicts = conflictingVariableNames(expression)
+          if (conflicts.length > 0) {
+            expression.state = 'needsAlphaConvert'
+            draftContainer.conflictingVariableNames = conflicts
             draftContainer.previouslyChangedExpressionState =
-              'funcBodyUnboundedJustHighlighted'
-          } else if (expression.arg.state === 'default') {
-            if (
-              isFunctionExpressionOrContainsFunctionExpression(
-                expression.func.body
-              )
-            ) {
-              highlightUnboundExpressions(
-                expression.func.body,
-                'unboundHighlighted'
-              )
-            }
-            expression.func.arg.state = 'highlighted'
-            expression.arg.state = 'justHighlighted'
-            draftContainer.previouslyChangedExpressionState =
-              'callArgJustHighlighted'
+              'needsAlphaConvert'
           } else {
-            expression.arg.state = 'highlighted'
-            const conflicts = conflictingVariableNames(expression)
-            if (conflicts.length > 0) {
-              expression.state = 'needsAlphaConvert'
-              draftContainer.conflictingVariableNames = conflicts
-              draftContainer.previouslyChangedExpressionState =
-                'needsAlphaConvert'
-            } else {
-              expression.state = 'readyToBetaReduce'
-              draftContainer.previouslyChangedExpressionState =
-                'readyToBetaReduce'
-            }
+            expression.state = 'readyToBetaReduce'
+            draftContainer.previouslyChangedExpressionState =
+              'readyToBetaReduce'
           }
-          break
         }
-        case 'needsAlphaConvert': {
-          const alphaConvertResult = alphaConvert(expression)
-          expression.func = alphaConvertResult.func
-          expression.arg = alphaConvertResult.arg
-          expression.state = 'alphaConvertDone'
-          draftContainer.conflictingVariableNames = []
-          draftContainer.previouslyChangedExpressionState = 'alphaConvertDone'
-          break
-        }
-        case 'readyToBetaReduce':
-        case 'alphaConvertDone': {
-          const { result, matchExists } = betaReducePreviewBefore(
+        break
+      }
+      case 'needsAlphaConvert': {
+        const alphaConvertResult = alphaConvert(expression)
+        expression.func = alphaConvertResult.func
+        expression.arg = alphaConvertResult.arg
+        expression.state = 'alphaConvertDone'
+        draftContainer.conflictingVariableNames = []
+        draftContainer.previouslyChangedExpressionState = 'alphaConvertDone'
+        break
+      }
+      case 'readyToBetaReduce':
+      case 'alphaConvertDone': {
+        const { result, matchExists } = betaReducePreviewBefore(
+          clearJustAlphaConvertedAndBetaReducePreview(expression)
+        )
+        expression.func = result.func
+        expression.arg = result.arg
+        expression.state = 'betaReducePreviewBefore'
+        draftContainer.matchExists = matchExists
+        draftContainer.previouslyChangedExpressionState =
+          'betaReducePreviewBefore'
+        break
+      }
+      case 'betaReducePreviewBefore': {
+        expression.state = 'betaReducePreviewAfter'
+        draftContainer.backupExpression = cloneDeep(draftContainer.expression)
+        const betaReducedFunctionBody: PrioritizedExpression = prioritizeExpression(
+          resetExpression(
+            betaReduce(clearJustAlphaConvertedAndBetaReducePreview(expression))
+          )
+        )
+        highlightUnboundExpressions(
+          betaReducedFunctionBody,
+          'unboundJustHighlighted'
+        )
+        expression.func.body = betaReducedFunctionBody
+        draftContainer.previouslyChangedExpressionState =
+          'betaReducePreviewAfter'
+        break
+      }
+      case 'betaReducePreviewAfter': {
+        expression.state = 'betaReducePreviewCrossed'
+        draftContainer.previouslyChangedExpressionState =
+          'betaReducePreviewCrossed'
+        highlightUnboundExpressions(expression.func.body, 'default')
+        break
+      }
+      case 'betaReducePreviewCrossed': {
+        const betaReduced: PrioritizedExpression = {
+          ...betaReduce(
             clearJustAlphaConvertedAndBetaReducePreview(expression)
-          )
-          expression.func = result.func
-          expression.arg = result.arg
-          expression.state = 'betaReducePreviewBefore'
-          draftContainer.matchExists = matchExists
-          draftContainer.previouslyChangedExpressionState =
-            'betaReducePreviewBefore'
-          break
+          ),
+          state: 'justBetaReduced'
         }
-        case 'betaReducePreviewBefore': {
-          expression.state = 'betaReducePreviewAfter'
-          draftContainer.backupExpression = cloneDeep(draftContainer.expression)
-          const betaReducedFunctionBody: PrioritizedExpression = prioritizeExpression(
-            resetExpression(
-              betaReduce(
-                clearJustAlphaConvertedAndBetaReducePreview(expression)
-              )
-            )
-          )
-          highlightUnboundExpressions(
-            betaReducedFunctionBody,
-            'unboundJustHighlighted'
-          )
-          expression.func.body = betaReducedFunctionBody
-          draftContainer.previouslyChangedExpressionState =
-            'betaReducePreviewAfter'
-          break
-        }
-        case 'betaReducePreviewAfter': {
-          expression.state = 'betaReducePreviewCrossed'
-          draftContainer.previouslyChangedExpressionState =
-            'betaReducePreviewCrossed'
-          highlightUnboundExpressions(expression.func.body, 'default')
-          break
-        }
-        case 'betaReducePreviewCrossed': {
-          const betaReduced: PrioritizedExpression = {
-            ...betaReduce(
-              clearJustAlphaConvertedAndBetaReducePreview(expression)
-            ),
-            state: 'justBetaReduced'
+        if (
+          'noParent' in nextCallExpressionAndParent &&
+          nextCallExpressionAndParent.noParent
+        ) {
+          return {
+            ...e,
+            expression: betaReduced,
+            backupExpression: undefined,
+            containerState: 'needsReset',
+            previouslyChangedExpressionState: 'justBetaReduced',
+            matchExists: undefined
           }
-          if (
-            'noParent' in nextCallExpressionAndParent &&
-            nextCallExpressionAndParent.noParent
-          ) {
-            return {
-              ...e,
-              expression: betaReduced,
-              backupExpression: undefined,
-              containerState: 'needsReset',
-              previouslyChangedExpressionState: 'justBetaReduced',
-              matchExists: undefined
-            }
-          } else if (
-            'parentCallExpression' in nextCallExpressionAndParent &&
-            nextCallExpressionAndParent.parentCallExpression
-          ) {
-            nextCallExpressionAndParent.parentCallExpression[
-              nextCallExpressionAndParent.parentKey
-            ] = betaReduced
-            draftContainer.containerState = 'needsReset'
-          } else if (
-            'parentFunctionExpression' in nextCallExpressionAndParent &&
-            nextCallExpressionAndParent.parentFunctionExpression
-          ) {
-            nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
-            draftContainer.containerState = 'needsReset'
-          }
-          delete draftContainer.matchExists
-          draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
-          if (draftContainer.backupExpression) {
-            draftContainer.expression = draftContainer.backupExpression
-            delete draftContainer.backupExpression
-          }
-          break
+        } else if (
+          'parentCallExpression' in nextCallExpressionAndParent &&
+          nextCallExpressionAndParent.parentCallExpression
+        ) {
+          nextCallExpressionAndParent.parentCallExpression[
+            nextCallExpressionAndParent.parentKey
+          ] = betaReduced
+          draftContainer.containerState = 'needsReset'
+        } else if (
+          'parentFunctionExpression' in nextCallExpressionAndParent &&
+          nextCallExpressionAndParent.parentFunctionExpression
+        ) {
+          nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
+          draftContainer.containerState = 'needsReset'
         }
+        delete draftContainer.matchExists
+        draftContainer.previouslyChangedExpressionState = 'justBetaReduced'
+        if (draftContainer.backupExpression) {
+          draftContainer.expression = draftContainer.backupExpression
+          delete draftContainer.backupExpression
+        }
+        break
       }
     }
   })
