@@ -9,6 +9,7 @@ import {
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   PrioritizedCallExpression,
+  PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
 } from 'src/types/yc/ExpressionTypes'
@@ -24,7 +25,7 @@ export default function initializeExpressionContainer(
 ): PrioritizedExpressionContainer<PrioritizedFunctionExpression>
 export default function initializeExpressionContainer(
   expressionParams: ExpressionParams
-) {
+): PrioritizedExpressionContainer<PrioritizedExpression> {
   return prioritizeExpressionContainer(
     buildExpressionContainer(expressionParams)
   )

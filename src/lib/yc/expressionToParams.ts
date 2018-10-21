@@ -25,7 +25,7 @@ export default function expressionToParams(
   e: FunctionExpression
 ): FunctionExpressionParams
 export default function expressionToParams(e: Expression): ExpressionParams
-export default function expressionToParams(e: Expression) {
+export default function expressionToParams(e: Expression): ExpressionParams {
   if (isCallExpression(e)) {
     const result: CallExpressionParams = [
       expressionToParams(e.func),
