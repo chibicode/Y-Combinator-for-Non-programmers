@@ -19,7 +19,9 @@ export interface VariableExpression {
   readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
+  // TODO: Make this mandatory when constructing
   readonly bound?: boolean
+  // These might be necessary to store values between transitions
   readonly justAlphaConverted?: boolean
   readonly willBeBetaReduced?: boolean
   readonly wasJustBetaReduced?: boolean
@@ -111,3 +113,82 @@ export interface ImmediatelyExecutableCallExpression
   readonly arg: PrioritizedVariableExpression | PrioritizedFunctionExpression
   readonly func: PrioritizedFunctionExpression
 }
+
+export type VariableUiStates =
+  | {
+      highlightType: 'inactive'
+    }
+  | {
+      highlightType: 'active'
+    } & (
+      | {
+          emphasizePriorityOne: true
+        }
+      | {
+          badgeType: 'funcBound' | 'funcArg' | 'callArg'
+        })
+  | {
+      highlightType: 'highlighted'
+    } & ({
+      badgeType: 'funcBound' | 'funcArg' | 'callArg'
+    })
+  | {
+      highlightType: 'unboundHighlighted'
+    } & {
+      badgeType: 'funcUnbound'
+    }
+  | {
+      // TODO: yellow plain background
+      highlightType: 'matchHighlighted'
+    } & {
+      badgeType: 'betaReduced'
+    }
+  | {
+      highlightType: 'beingRemoved'
+    } & {
+      badgeType: 'funcArg' | 'callArg'
+    }
+  | {
+      // TODO: pink plain background
+      highlightType: 'conflict'
+    } & {
+      badgeType: 'funcUnbound' | 'callArg'
+    }
+  | {
+      // TODO: yellow plain background
+      highlightType: 'conflictResolved'
+    } & {
+      badgeType: 'funcBound' | 'funcUnbound'
+    }
+
+export type VariableUiHighlights =
+  | 'inactive'
+  | 'active'
+  | 'highlighted'
+  | 'unboundedHighlighted'
+  | 'matchHighlighted'
+  | 'beingRemoved'
+  | 'conflict'
+  | 'boundedConflictResolved'
+  | 'unboundedConflictResolved'
+
+export type VariableUiBadges =
+  | 'none'
+  | 'funcBounded'
+  | 'funcArg'
+  | 'funcUnbounded'
+  | 'callArg'
+  | 'betaReduced'
+  | 'alphaConverted'
+
+export interface VariableUi {
+  highlightType: VariableUiHighlights
+  badgeType: VariableUiBadges
+}
+
+export type VariableStates =
+  | 'justAlphaConverted'
+  | 'willBeBetaReduced'
+  | 'wasJustBetaReduced'
+
+// TODO: RenderableVariableExpression - can be fed into React.
