@@ -19,8 +19,7 @@ export interface VariableExpression {
   readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
-  // TODO: Make this mandatory when constructing
-  readonly bound?: boolean
+  readonly bound: boolean
   // These might be necessary to store values between transitions
   readonly justAlphaConverted?: boolean
   readonly willBeBetaReduced?: boolean

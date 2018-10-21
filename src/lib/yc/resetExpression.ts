@@ -32,7 +32,8 @@ export default function resetExpression(
     return {
       type: 'variable',
       name: expression.name,
-      state: 'default'
+      state: 'default',
+      bound: expression.bound
     }
   } else if (isCallExpression(expression)) {
     return {
