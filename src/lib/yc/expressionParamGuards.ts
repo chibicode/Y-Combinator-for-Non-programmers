@@ -1,7 +1,11 @@
-import variableNamesArray from 'src/lib/yc/variableNamesArray'
-import { VariableNames } from 'src/types/yc/VariableNames'
+import {
+  CallExpressionParams,
+  ExpressionParams,
+  FunctionExpressionParams,
+  VariableExpressionParams
+} from 'src/types/yc/ExpressionParamTypes'
 
-export type VariableExpressionParams = VariableNames
+import variableNamesArray from './variableNamesArray'
 
 export function isVariableExpressionParams(
   expressionParams: ExpressionParams
@@ -10,11 +14,6 @@ export function isVariableExpressionParams(
     typeof expressionParams === 'string' &&
     variableNamesArray.indexOf(expressionParams) >= 0
   )
-}
-
-export interface FunctionExpressionParams {
-  readonly arg: VariableExpressionParams
-  readonly body: ExpressionParams
 }
 
 export function isFunctionExpressionParams(
@@ -26,16 +25,8 @@ export function isFunctionExpressionParams(
   )
 }
 
-// https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
-export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
-
 export function isCallExpressionParams(
   expressionParams: ExpressionParams
 ): expressionParams is CallExpressionParams {
   return Array.isArray(expressionParams)
 }
-
-export type ExpressionParams =
-  | VariableExpressionParams
-  | FunctionExpressionParams
-  | CallExpressionParams

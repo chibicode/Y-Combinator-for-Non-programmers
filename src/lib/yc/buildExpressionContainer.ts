@@ -1,11 +1,13 @@
+import {
+  isCallExpressionParams,
+  isFunctionExpressionParams,
+  isVariableExpressionParams
+} from 'src/lib/yc/expressionParamGuards'
 import { NeedsPrioritizeExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
-  isCallExpressionParams,
-  isFunctionExpressionParams,
-  isVariableExpressionParams,
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
