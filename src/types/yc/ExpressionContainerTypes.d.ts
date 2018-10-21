@@ -33,23 +33,10 @@ export type PrioritizedExpressionContainer<
 > = ExpressionContainer<E> & {
   readonly containerState: 'prioritized'
 }
-
-export function isPrioritizedExpressionContainer<
-  E extends PrioritizedExpression = PrioritizedExpression
->(e: ExpressionContainer): e is PrioritizedExpressionContainer<E> {
-  return e.containerState === 'prioritized'
-}
-
 export type NeedsPrioritizeExpressionContainer<
   E extends Expression = Expression
 > = ExpressionContainer<E> & {
   readonly containerState: 'needsPrioritize'
-}
-
-export function isNeedsPrioritizeExpressionContainer<
-  E extends Expression = Expression
->(e: ExpressionContainer): e is NeedsPrioritizeExpressionContainer<E> {
-  return e.containerState === 'needsPrioritize'
 }
 
 export type NeedsResetExpressionContainer<
@@ -58,22 +45,10 @@ export type NeedsResetExpressionContainer<
   readonly containerState: 'needsReset'
 }
 
-export function isNeedsResetExpressionContainer<
-  E extends PrioritizedExpression = PrioritizedExpression
->(e: ExpressionContainer): e is NeedsResetExpressionContainer<E> {
-  return e.containerState === 'needsReset'
-}
-
 export type DoneExpressionContainer<
   E extends PrioritizedExpression = PrioritizedExpression
 > = ExpressionContainer<E> & {
   readonly containerState: 'done'
-}
-
-export function isDoneExpressionContainer<
-  E extends PrioritizedExpression = PrioritizedExpression
->(e: ExpressionContainer): e is DoneExpressionContainer<E> {
-  return e.containerState === 'done'
 }
 
 export type SteppedExpressionContainer<

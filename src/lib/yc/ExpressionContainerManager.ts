@@ -1,7 +1,7 @@
+import { isDoneExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
   ExpressionContainerState,
-  isDoneExpressionContainer,
   PreviouslyChangedExpressionState,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
