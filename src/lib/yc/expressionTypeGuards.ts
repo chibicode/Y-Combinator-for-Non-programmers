@@ -1,5 +1,6 @@
 import {
   CallExpression,
+  CallExpressionStates,
   CommonStates,
   Expression,
   FunctionExpression,
@@ -109,4 +110,11 @@ export function isImmediatelyExecutableCallExpression<
       isPrioritizedFunctionExpression(expression.arg)) &&
     isPrioritizedFunctionExpression(expression.func)
   )
+}
+
+export function isCallExpressionWithState<
+  E extends CallExpression,
+  S extends CallExpressionStates
+>(expression: E, state: S): expression is E & { state: S } {
+  return expression.state === state
 }
