@@ -69,7 +69,9 @@ function prioritizeExpressionHelper(
 function prioritizeExpressionHelper(
   expression: Expression
 ): PrioritizedExpression
-function prioritizeExpressionHelper(expression: Expression) {
+function prioritizeExpressionHelper(
+  expression: Expression
+): PrioritizedExpression {
   if (isVariableExpression(expression)) {
     return {
       ...expression,
@@ -101,12 +103,12 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
 }): E {
   if (isPrioritizedCallExpression(expression)) {
     return Object.assign({}, expression, {
-      arg: populatePriorityAggs({
+      arg: populatePriorityAggs<typeof expression.arg>({
         expression: expression.arg,
         argPriorityAgg: [expression.priority, ...argPriorityAgg],
         funcPriorityAgg: new Array<number>()
       }),
-      func: populatePriorityAggs({
+      func: populatePriorityAggs<typeof expression.func>({
         expression: expression.func,
         argPriorityAgg: new Array<number>(),
         funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
@@ -114,12 +116,12 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
     })
   } else if (isPrioritizedFunctionExpression(expression)) {
     return Object.assign({}, expression, {
-      arg: populatePriorityAggs({
+      arg: populatePriorityAggs<typeof expression.arg>({
         expression: expression.arg,
         argPriorityAgg,
         funcPriorityAgg
       }),
-      body: populatePriorityAggs({
+      body: populatePriorityAggs<typeof expression.body>({
         expression: expression.body,
         argPriorityAgg: new Array<number>(),
         funcPriorityAgg: new Array<number>()
@@ -130,11 +132,26 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
       argPriorityAgg,
       funcPriorityAgg
     })
+  } else {
+    throw new Error()
   }
-  throw new Error()
 }
 
-export default function prioritizeExpression(expression: Expression) {
+export default function prioritizeExpression(
+  expression: VariableExpression
+): PrioritizedVariableExpression
+export default function prioritizeExpression(
+  expression: CallExpression
+): PrioritizedCallExpression
+export default function prioritizeExpression(
+  expression: FunctionExpression
+): PrioritizedFunctionExpression
+export default function prioritizeExpression(
+  expression: Expression
+): PrioritizedExpression
+export default function prioritizeExpression(
+  expression: Expression
+): PrioritizedExpression {
   return populatePriorityAggs({
     expression: prioritizeExpressionHelper(expression),
     argPriorityAgg: new Array<number>(),
