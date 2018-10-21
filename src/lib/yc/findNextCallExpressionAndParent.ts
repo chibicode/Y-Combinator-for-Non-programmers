@@ -1,8 +1,7 @@
 import {
-  isCallExpression,
-  isFunctionExpression,
   isImmediatelyExecutableCallExpression,
   isPrioritizedCallExpression,
+  isPrioritizedFunctionExpression,
   isTopPriorityCallExpression
 } from 'src/lib/yc/expressionTypeGuards'
 import {
@@ -139,24 +138,33 @@ export default function findNextCallExpressionAndParent<
   | HelperResult<E, I>
   | NotFound
   | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>)
-export default function findNextCallExpressionAndParent(
+export default function findNextCallExpressionAndParent<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
+  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+>(
   expression: PrioritizedExpression
-) {
-  if (isCallExpression(expression)) {
-    return helper(expression)
-  } else if (isFunctionExpression(expression)) {
+):
+  | HelperResult<E, I>
+  | NotFound
+  | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>) {
+  if (isPrioritizedCallExpression<E>(expression)) {
+    return helper<E, I>(expression)
+  } else if (isPrioritizedFunctionExpression<F>(expression)) {
     let currentExpression: PrioritizedExpression = expression
-    let previousExpression: PrioritizedFunctionExpression = expression
-    while (isFunctionExpression(currentExpression)) {
+    let previousExpression: F = expression
+    while (isPrioritizedFunctionExpression<F>(currentExpression)) {
       previousExpression = currentExpression
       currentExpression = currentExpression.body
     }
-    if (isCallExpression(currentExpression)) {
-      const helperResult = helper(currentExpression)
-      if (foundExpressionAndNoParent(helperResult)) {
+    if (isPrioritizedCallExpression<E>(currentExpression)) {
+      const helperResult = helper<E, I>(currentExpression)
+      if (foundExpressionAndNoParent<E, I>(helperResult)) {
         return {
           parentFunctionExpression: previousExpression,
-          expression: helperResult.expression
+          expression: helperResult.expression,
+          notFound: false,
+          noParent: false
         }
       } else {
         return helperResult

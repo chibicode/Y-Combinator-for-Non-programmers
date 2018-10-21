@@ -69,9 +69,9 @@ export function isPrioritizedCallExpression<
   )
 }
 
-export function isPrioritizedFunctionExpression(
-  expression: PrioritizedExpression | FunctionExpression
-): expression is PrioritizedFunctionExpression {
+export function isPrioritizedFunctionExpression<
+  E extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+>(expression: PrioritizedExpression | FunctionExpression): expression is E {
   if (isFunctionExpression(expression)) {
     return (
       isPrioritizedVariableExpression(expression.arg) &&
