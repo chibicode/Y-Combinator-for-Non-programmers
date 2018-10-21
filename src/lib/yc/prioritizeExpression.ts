@@ -17,7 +17,7 @@ import {
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-function prioritizeCallExpression({
+function prioritizeCallExpressionHelper({
   expression,
   priority
 }: {
@@ -28,7 +28,7 @@ function prioritizeCallExpression({
   let newFunc: PrioritizedExpression
 
   if (isCallExpression(expression.arg)) {
-    const argResult = prioritizeCallExpression({
+    const argResult = prioritizeCallExpressionHelper({
       expression: expression.arg,
       priority
     })
@@ -39,7 +39,7 @@ function prioritizeCallExpression({
   }
 
   if (isCallExpression(expression.func)) {
-    const funcResult = prioritizeCallExpression({
+    const funcResult = prioritizeCallExpressionHelper({
       expression: expression.func,
       priority
     })
@@ -77,7 +77,7 @@ function prioritizeExpressionHelper(expression: Expression) {
       funcPriorityAgg: new Array<number>()
     }
   } else if (isCallExpression(expression)) {
-    return prioritizeCallExpression({
+    return prioritizeCallExpressionHelper({
       priority: 1,
       expression
     })
