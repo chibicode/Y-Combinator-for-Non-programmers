@@ -20,8 +20,7 @@ import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import {
   DoneExpressionContainer,
   NeedsResetExpressionContainer,
-  PrioritizedExpressionContainer,
-  SteppedExpressionContainer
+  PrioritizedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionStates,
@@ -74,9 +73,9 @@ function stepToBetaReduceBefore(
 
 type DE = DraftObject<ImmediatelyExecutableCallExpression>
 
-const stepExpressionContainerNext = (
-  e: PrioritizedExpressionContainer | NeedsResetExpressionContainer
-): NeedsResetExpressionContainer | PrioritizedExpressionContainer => {
+export default function stepExpressionContainer(
+  e: PrioritizedExpressionContainer
+): DoneExpressionContainer | PrioritizedExpressionContainer {
   const recipe = (
     draftContainer: Draft<
       NeedsResetExpressionContainer | PrioritizedExpressionContainer
@@ -211,26 +210,13 @@ const stepExpressionContainerNext = (
     draftContainer.previouslyChangedExpressionState = expression.state
   }
 
-  return produce<
+  const result = produce<
     NeedsResetExpressionContainer | PrioritizedExpressionContainer
   >(e, recipe)
-}
 
-export default function stepExpressionContainer(
-  e: NeedsResetExpressionContainer
-): DoneExpressionContainer | PrioritizedExpressionContainer
-export default function stepExpressionContainer(
-  e: PrioritizedExpressionContainer
-): NeedsResetExpressionContainer | PrioritizedExpressionContainer
-export default function stepExpressionContainer(
-  e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
-): SteppedExpressionContainer
-export default function stepExpressionContainer(
-  e: NeedsResetExpressionContainer | PrioritizedExpressionContainer
-): SteppedExpressionContainer {
-  if (isNeedsResetExpressionContainer(e)) {
-    return stepExpressionContainerReset(e)
+  if (isNeedsResetExpressionContainer(result)) {
+    return stepExpressionContainerReset(result)
   } else {
-    return stepExpressionContainerNext(e)
+    return result
   }
 }
