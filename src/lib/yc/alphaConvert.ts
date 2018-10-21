@@ -9,11 +9,12 @@ import {
   isVariableExpression
 } from 'src/lib/yc/expressionTypeGuards'
 import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
+import variableNamesArray from 'src/lib/yc/variableNamesArray'
 import {
   Expression,
   ImmediatelyExecutableCallExpression
 } from 'src/types/yc/ExpressionTypes'
-import { VariableNames, variableNamesArray } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 type ReplaceMapping = Partial<Record<VariableNames, VariableNames>>
 
