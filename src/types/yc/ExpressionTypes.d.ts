@@ -79,25 +79,22 @@ export type PrioritizedExpression =
   | PrioritizedCallExpression
   | PrioritizedFunctionExpression
 
-interface DefaultState {
+export interface DefaultState {
   readonly state: 'default'
 }
 
-export interface DefaultStateVariableExpression extends VariableExpression {
-  readonly state: DefaultState['state']
-}
+export type DefaultStateVariableExpression = VariableExpression & DefaultState
+export type DefaultStateFunctionExpression = FunctionExpression &
+  DefaultState & {
+    readonly arg: DefaultStateVariableExpression
+    readonly body: DefaultStateExpression
+  }
 
-export interface DefaultStateFunctionExpression extends FunctionExpression {
-  readonly state: DefaultState['state']
-  readonly arg: DefaultStateVariableExpression
-  readonly body: DefaultStateExpression
-}
-
-export interface DefaultStateCallExpression extends CallExpression {
-  readonly state: DefaultState['state']
-  readonly arg: DefaultStateExpression
-  readonly func: DefaultStateExpression
-}
+export type DefaultStateCallExpression = CallExpression &
+  DefaultState & {
+    readonly arg: DefaultStateExpression
+    readonly func: DefaultStateExpression
+  }
 
 export type DefaultStateExpression =
   | DefaultStateVariableExpression
