@@ -127,6 +127,26 @@ export function isNotFound(
   return 'notFound' in result && result.notFound
 }
 
+export function hasCallParent<
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
+  E extends PrioritizedCallExpression = PrioritizedCallExpression
+>(
+  result: FindNextCallExpressionAndParentResult<E, I>
+): result is HasImmediatelyExecutableCallExpression<I> & HasCallParent<E> {
+  return 'parentCallExpression' in result && !!result.parentCallExpression
+}
+
+export function hasFunctionParent<
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
+  E extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+>(
+  result: FindNextCallExpressionAndParentResult<PrioritizedCallExpression, I, E>
+): result is HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<E> {
+  return (
+    'parentFunctionExpression' in result && !!result.parentFunctionExpression
+  )
+}
+
 export default function findNextCallExpressionAndParent(
   expression: PrioritizedVariableExpression
 ): NotFound

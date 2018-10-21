@@ -27,14 +27,17 @@ export interface VariableExpression {
 }
 
 export type CallExpressionStates =
-  | CommonStates
-  | 'readyToHighlight'
+  | 'inactive'
+  | 'active'
+  | 'showFuncBound'
+  | 'showFuncArg'
+  | 'showFuncUnbound'
+  | 'showCallArg'
   | 'needsAlphaConvert'
-  | 'readyToBetaReduce'
+  | 'alphaConvertDone'
   | 'betaReducePreviewBefore'
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewCrossed'
-  | 'alphaConvertDone'
 
 export type AllExpressionStates = CallExpressionStates
 
