@@ -32,20 +32,21 @@ export default function resetExpression(
     return {
       type: 'variable',
       name: expression.name,
-      state: 'default',
+      uiState: {
+        highlightType: 'inactive'
+      },
       bound: expression.bound
     }
   } else if (isCallExpression(expression)) {
     return {
       type: 'call',
-      state: 'default',
+      state: 'inactive',
       arg: resetExpression(expression.arg),
       func: resetExpression(expression.func)
     }
   } else {
     return {
       type: 'function',
-      state: 'default',
       arg: resetExpression(expression.arg),
       body: resetExpression(expression.body)
     }

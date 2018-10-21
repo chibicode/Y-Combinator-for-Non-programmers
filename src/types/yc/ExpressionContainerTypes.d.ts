@@ -11,18 +11,10 @@ export type ExpressionContainerState =
   | 'needsReset'
   | 'done'
 
-export type PreviouslyChangedExpressionState =
-  | 'callArgJustHighlighted'
-  | 'funcArgJustHighlighted'
-  | 'funcBodyJustHighlighted'
-  | 'funcBodyBoundedJustHighlighted'
-  | 'funcBodyUnboundedJustHighlighted'
-  | CallExpressionStates
-
 export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly containerState: ExpressionContainerState
-  readonly previouslyChangedExpressionState: PreviouslyChangedExpressionState
+  readonly previouslyChangedExpressionState: CallExpressionStates
   readonly conflictingVariableNames?: ReadonlyArray<VariableNames>
   readonly backupExpression?: E
   readonly matchExists?: boolean

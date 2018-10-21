@@ -1,29 +1,10 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-export type CommonStates =
-  | 'default'
-  | 'justBetaReduced'
-  | 'partiallyHighlighted'
-  | HighlightedStates
-
-export type HighlightedStates =
-  | 'highlighted'
-  | 'justHighlighted'
-  | 'justBetaReduced'
-  | 'boundJustHighlighted'
-  | 'boundHighlighted'
-  | 'unboundJustHighlighted'
-  | 'unboundHighlighted'
-
 export interface VariableExpression {
-  readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
   readonly bound: boolean
-  // These might be necessary to store values between transitions
-  readonly justAlphaConverted?: boolean
-  readonly willBeBetaReduced?: boolean
-  readonly wasJustBetaReduced?: boolean
+  readonly uiState: VariableUiStates
 }
 
 export type CallExpressionStates =
@@ -39,8 +20,6 @@ export type CallExpressionStates =
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewCrossed'
 
-export type AllExpressionStates = CallExpressionStates
-
 export interface CallExpression {
   readonly state: CallExpressionStates
   readonly type: 'call'
@@ -50,7 +29,6 @@ export interface CallExpression {
 
 export interface FunctionExpression {
   readonly type: 'function'
-  readonly state: CommonStates
   readonly arg: VariableExpression
   readonly body: Expression
 }
@@ -85,18 +63,20 @@ export interface DefaultState {
   readonly state: 'default'
 }
 
-export type DefaultStateVariableExpression = VariableExpression & DefaultState
-export type DefaultStateFunctionExpression = FunctionExpression &
-  DefaultState & {
-    readonly arg: DefaultStateVariableExpression
-    readonly body: DefaultStateExpression
-  }
+export type DefaultStateVariableExpression = VariableExpression & {
+  readonly uiState: VariableDefaultUiState
+}
 
-export type DefaultStateCallExpression = CallExpression &
-  DefaultState & {
-    readonly arg: DefaultStateExpression
-    readonly func: DefaultStateExpression
-  }
+export type DefaultStateFunctionExpression = FunctionExpression & {
+  readonly arg: DefaultStateVariableExpression
+  readonly body: DefaultStateExpression
+}
+
+export type DefaultStateCallExpression = CallExpression & {
+  readonly arg: DefaultStateExpression
+  readonly state: 'inactive'
+  readonly func: DefaultStateExpression
+}
 
 export type DefaultStateExpression =
   | DefaultStateVariableExpression
@@ -113,10 +93,12 @@ export interface ImmediatelyExecutableCallExpression
   readonly func: PrioritizedFunctionExpression
 }
 
+type VariableDefaultUiState = {
+  highlightType: 'inactive'
+}
+
 export type VariableUiStates =
-  | {
-      highlightType: 'inactive'
-    }
+  | VariableDefaultUiState
   | {
       highlightType: 'active'
     } & (
@@ -159,35 +141,3 @@ export type VariableUiStates =
     } & {
       badgeType: 'funcBound' | 'funcUnbound'
     }
-
-export type VariableUiHighlights =
-  | 'inactive'
-  | 'active'
-  | 'highlighted'
-  | 'unboundedHighlighted'
-  | 'matchHighlighted'
-  | 'beingRemoved'
-  | 'conflict'
-  | 'boundedConflictResolved'
-  | 'unboundedConflictResolved'
-
-export type VariableUiBadges =
-  | 'none'
-  | 'funcBounded'
-  | 'funcArg'
-  | 'funcUnbounded'
-  | 'callArg'
-  | 'betaReduced'
-  | 'alphaConverted'
-
-export interface VariableUi {
-  highlightType: VariableUiHighlights
-  badgeType: VariableUiBadges
-}
-
-export type VariableStates =
-  | 'justAlphaConverted'
-  | 'willBeBetaReduced'
-  | 'wasJustBetaReduced'
-
-// TODO: RenderableVariableExpression - can be fed into React.

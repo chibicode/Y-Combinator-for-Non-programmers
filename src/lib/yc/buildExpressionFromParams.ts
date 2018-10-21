@@ -43,7 +43,9 @@ const buildDefaultVariableExpression = (
   bound: boolean
 ): DefaultStateVariableExpression => ({
   name,
-  state: 'default',
+  uiState: {
+    highlightType: 'inactive'
+  },
   type: 'variable',
   bound
 })
@@ -64,12 +66,7 @@ export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): DefaultStateExpression {
   if (isVariableExpressionParams(expressionParams)) {
-    return {
-      name: expressionParams,
-      state: 'default',
-      type: 'variable',
-      bound: true
-    }
+    return buildDefaultVariableExpression(expressionParams, true)
   } else if (isCallExpressionParams(expressionParams)) {
     let nestedCallExpressionParams: CallExpressionParams
     nestedCallExpressionParams =
@@ -80,14 +77,13 @@ export default function buildExpressionFromParams(
     return {
       arg: buildExpressionFromParams(nestedCallExpressionParams[1]),
       func: buildExpressionFromParams(nestedCallExpressionParams[0]),
-      state: 'default',
+      state: 'inactive',
       type: 'call'
     }
   } else {
     return {
       arg: buildDefaultVariableExpression(expressionParams.arg, false),
       body: buildExpressionFromParams(expressionParams.body),
-      state: 'default',
       type: 'function'
     }
   }

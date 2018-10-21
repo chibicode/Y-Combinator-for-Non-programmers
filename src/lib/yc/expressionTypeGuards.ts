@@ -1,10 +1,8 @@
 import {
   CallExpression,
   CallExpressionStates,
-  CommonStates,
   Expression,
   FunctionExpression,
-  HighlightedStates,
   ImmediatelyExecutableCallExpression,
   PrioritizedCallExpression,
   PrioritizedExpression,
@@ -13,21 +11,6 @@ import {
   TopPriorityCallExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
-
-export function isHighlightedState(
-  state: CommonStates
-): state is HighlightedStates {
-  const t: Partial<Record<CommonStates, boolean>> = {
-    highlighted: true,
-    justHighlighted: true,
-    justBetaReduced: true,
-    boundJustHighlighted: true,
-    boundHighlighted: true,
-    unboundJustHighlighted: true,
-    unboundHighlighted: true
-  }
-  return !!t[state]
-}
 
 export function isVariableExpression(
   expression: Expression
