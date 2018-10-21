@@ -1,4 +1,4 @@
-import populatePriorityAggsAndPrioritizeExpression from 'src/lib/yc/populatePriorityAggsAndPrioritizeExpression'
+import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 import {
   NeedsPrioritizeExpressionContainer,
   PrioritizedExpressionContainer
@@ -33,8 +33,6 @@ export default function prioritizeExpressionContainer(
     containerState: 'prioritized',
     previouslyChangedExpressionState:
       expressionContainer.previouslyChangedExpressionState,
-    expression: populatePriorityAggsAndPrioritizeExpression(
-      expressionContainer.expression
-    )
+    expression: prioritizeExpression(expressionContainer.expression)
   }
 }

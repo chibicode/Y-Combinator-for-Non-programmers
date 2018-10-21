@@ -35,7 +35,7 @@ function prioritizeCallExpression({
     newArg = argResult
     priority = argResult.priority + 1
   } else {
-    newArg = prioritizeExpression(expression.arg)
+    newArg = prioritizeExpressionHelper(expression.arg)
   }
 
   if (isCallExpression(expression.func)) {
@@ -46,7 +46,7 @@ function prioritizeCallExpression({
     newFunc = funcResult
     priority = funcResult.priority + 1
   } else {
-    newFunc = prioritizeExpression(expression.func)
+    newFunc = prioritizeExpressionHelper(expression.func)
   }
 
   return {
@@ -57,17 +57,19 @@ function prioritizeCallExpression({
   }
 }
 
-function prioritizeExpression(
+function prioritizeExpressionHelper(
   expression: VariableExpression
 ): PrioritizedVariableExpression
-function prioritizeExpression(
+function prioritizeExpressionHelper(
   expression: CallExpression
 ): PrioritizedCallExpression
-function prioritizeExpression(
+function prioritizeExpressionHelper(
   expression: FunctionExpression
 ): PrioritizedFunctionExpression
-function prioritizeExpression(expression: Expression): PrioritizedExpression
-function prioritizeExpression(expression: Expression) {
+function prioritizeExpressionHelper(
+  expression: Expression
+): PrioritizedExpression
+function prioritizeExpressionHelper(expression: Expression) {
   if (isVariableExpression(expression)) {
     return {
       ...expression,
@@ -82,8 +84,8 @@ function prioritizeExpression(expression: Expression) {
   } else {
     return {
       ...expression,
-      arg: prioritizeExpression(expression.arg),
-      body: prioritizeExpression(expression.body)
+      arg: prioritizeExpressionHelper(expression.arg),
+      body: prioritizeExpressionHelper(expression.body)
     }
   }
 }
@@ -132,11 +134,9 @@ function populatePriorityAggs<E extends PrioritizedExpression>({
   throw new Error()
 }
 
-export default function populatePriorityAggsAndPrioritizeExpression(
-  expression: Expression
-) {
+export default function prioritizeExpression(expression: Expression) {
   return populatePriorityAggs({
-    expression: prioritizeExpression(expression),
+    expression: prioritizeExpressionHelper(expression),
     argPriorityAgg: new Array<number>(),
     funcPriorityAgg: new Array<number>()
   })

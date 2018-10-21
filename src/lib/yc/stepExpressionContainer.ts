@@ -12,7 +12,7 @@ import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlp
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isNeedsResetExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
-import populatePriorityAggsAndPrioritizeExpression from 'src/lib/yc/populatePriorityAggsAndPrioritizeExpression'
+import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpression from 'src/lib/yc/resetExpression'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
@@ -186,7 +186,7 @@ export default function stepExpressionContainer(
             draftContainer.backupExpression = cloneDeep(
               draftContainer.expression
             )
-            const betaReducedFunctionBody: PrioritizedExpression = populatePriorityAggsAndPrioritizeExpression(
+            const betaReducedFunctionBody: PrioritizedExpression = prioritizeExpression(
               resetExpression(
                 betaReduce(
                   clearJustAlphaConvertedAndBetaReducePreview(expression)
