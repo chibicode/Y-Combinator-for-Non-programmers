@@ -3,11 +3,11 @@ import {
   NeedsPrioritizeExpressionContainer,
   NeedsResetExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
-import { DefaultStateExpression } from 'src/types/yc/ExpressionTypes'
+import { InactiveExpression } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpressionContainer(
   expressionContainer: NeedsResetExpressionContainer
-): NeedsPrioritizeExpressionContainer<DefaultStateExpression> {
+): NeedsPrioritizeExpressionContainer<InactiveExpression> {
   return {
     containerState: 'needsPrioritize',
     expression: resetExpression(expressionContainer.expression),

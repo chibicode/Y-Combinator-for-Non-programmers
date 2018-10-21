@@ -9,10 +9,10 @@ import {
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
-  DefaultStateCallExpression,
-  DefaultStateExpression,
-  DefaultStateFunctionExpression,
-  DefaultStateVariableExpression
+  InactiveCallExpression,
+  InactiveExpression,
+  InactiveFunctionExpression,
+  InactiveVariableExpression
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -41,7 +41,7 @@ function nestCallExpressions(expression: any) {
 const buildDefaultVariableExpression = (
   name: VariableNames,
   bound: boolean
-): DefaultStateVariableExpression => ({
+): InactiveVariableExpression => ({
   name,
   uiState: {
     highlightType: 'inactive'
@@ -52,19 +52,19 @@ const buildDefaultVariableExpression = (
 
 export default function buildExpressionFromParams(
   expressionParams: VariableExpressionParams
-): DefaultStateVariableExpression
+): InactiveVariableExpression
 export default function buildExpressionFromParams(
   expressionParams: CallExpressionParams
-): DefaultStateCallExpression
+): InactiveCallExpression
 export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
-): DefaultStateFunctionExpression
+): InactiveFunctionExpression
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
-): DefaultStateExpression
+): InactiveExpression
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
-): DefaultStateExpression {
+): InactiveExpression {
   if (isVariableExpressionParams(expressionParams)) {
     return buildDefaultVariableExpression(expressionParams, true)
   } else if (isCallExpressionParams(expressionParams)) {

@@ -4,10 +4,10 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  DefaultStateCallExpression,
-  DefaultStateExpression,
-  DefaultStateFunctionExpression,
-  DefaultStateVariableExpression,
+  InactiveCallExpression,
+  InactiveExpression,
+  InactiveFunctionExpression,
+  InactiveVariableExpression,
   Expression,
   FunctionExpression,
   VariableExpression
@@ -15,19 +15,19 @@ import {
 
 export default function resetExpression(
   expression: VariableExpression
-): DefaultStateVariableExpression
+): InactiveVariableExpression
 export default function resetExpression(
   expression: FunctionExpression
-): DefaultStateFunctionExpression
+): InactiveFunctionExpression
 export default function resetExpression(
   expression: CallExpression
-): DefaultStateCallExpression
+): InactiveCallExpression
 export default function resetExpression(
   expression: Expression
-): DefaultStateExpression
+): InactiveExpression
 export default function resetExpression(
   expression: Expression
-): DefaultStateExpression {
+): InactiveExpression {
   if (isVariableExpression(expression)) {
     return {
       type: 'variable',
