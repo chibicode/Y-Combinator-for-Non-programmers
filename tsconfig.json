@@ -18,7 +18,8 @@
     "baseUrl": ".",
     "lib": ["dom", "es2017"],
     "paths": {
-      "src/*": ["src/*"]
+      "src/*": ["src/*"],
+      "test/*": ["test/*"]
     }
   }
 }

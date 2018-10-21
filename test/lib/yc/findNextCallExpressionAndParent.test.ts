@@ -1,7 +1,7 @@
 import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
-import expressionToSimpleString from 'test/helpers/expressionToSimpleString'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
+import expressionToSimpleString from 'test/helpers/expressionToSimpleString'
 
 describe('findNextCallExpressionAndParent', () => {
   it('works with simple case', () => {

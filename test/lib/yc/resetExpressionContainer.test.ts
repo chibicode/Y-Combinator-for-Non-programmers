@@ -1,8 +1,8 @@
 import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
-import expressionToSimpleString from 'test/helpers/expressionToSimpleString'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import { NeedsResetExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import expressionToSimpleString from 'test/helpers/expressionToSimpleString'
 
 describe('resetExpressionContainer', () => {
   it('resets complex expression', () => {

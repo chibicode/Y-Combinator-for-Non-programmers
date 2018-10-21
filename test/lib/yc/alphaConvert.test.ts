@@ -1,8 +1,8 @@
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
-import expressionToSimpleString from 'test/helpers/expressionToSimpleString'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
+import expressionToSimpleString from 'test/helpers/expressionToSimpleString'
 
 describe('alphaConvert', () => {
   describe('conflict does not exist', () => {

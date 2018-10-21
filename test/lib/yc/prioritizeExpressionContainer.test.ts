@@ -1,6 +1,6 @@
 import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
-import expressionContainerToSimpleString from 'test/helpers/expressionContainerToSimpleString'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
+import expressionContainerToSimpleString from 'test/helpers/expressionContainerToSimpleString'
 
 describe('prioritizeExpressionContainer', () => {
   it('works with simple case', () => {
