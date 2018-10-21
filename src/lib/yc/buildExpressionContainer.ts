@@ -57,7 +57,7 @@ function buildExpressionRecurser(expressionParams: ExpressionParams) {
       name: expressionParams,
       state: 'default',
       type: 'variable'
-    }
+    } as DefaultStateVariableExpression
   } else if (isCallExpressionParams(expressionParams)) {
     let nestedCallExpressionParams: CallExpressionParams
     nestedCallExpressionParams =
@@ -70,14 +70,14 @@ function buildExpressionRecurser(expressionParams: ExpressionParams) {
       func: buildExpressionRecurser(nestedCallExpressionParams[0]),
       state: 'default',
       type: 'call'
-    }
+    } as DefaultStateCallExpression
   } else if (isFunctionExpressionParams(expressionParams)) {
     return {
       arg: buildExpressionRecurser(expressionParams.arg),
       body: buildExpressionRecurser(expressionParams.body),
       state: 'default',
       type: 'function'
-    }
+    } as DefaultStateFunctionExpression
   }
 }
 
