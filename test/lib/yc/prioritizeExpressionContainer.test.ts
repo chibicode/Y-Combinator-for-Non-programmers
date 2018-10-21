@@ -1,5 +1,5 @@
 import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
-import expressionContainerToSimpleString from 'src/lib/yc/expressionContainerToSimpleString'
+import expressionContainerToSimpleString from 'test/helpers/expressionContainerToSimpleString'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 
 describe('prioritizeExpressionContainer', () => {
