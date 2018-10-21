@@ -112,6 +112,21 @@ function helper<
   return NOT_FOUND
 }
 
+type FindNextCallExpressionAndParentResult<
+  E extends PrioritizedCallExpression = PrioritizedCallExpression,
+  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
+  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
+> =
+  | HelperResult<E, I>
+  | NotFound
+  | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>)
+
+export function isNotFound(
+  result: FindNextCallExpressionAndParentResult
+): result is NotFound {
+  return 'notFound' in result && result.notFound
+}
+
 export default function findNextCallExpressionAndParent(
   expression: PrioritizedVariableExpression
 ): NotFound
@@ -134,20 +149,14 @@ export default function findNextCallExpressionAndParent<
   F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
 >(
   expression: PrioritizedExpression
-):
-  | HelperResult<E, I>
-  | NotFound
-  | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>)
+): FindNextCallExpressionAndParentResult<E, I, F>
 export default function findNextCallExpressionAndParent<
   E extends PrioritizedCallExpression = PrioritizedCallExpression,
   I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
   F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
 >(
   expression: PrioritizedExpression
-):
-  | HelperResult<E, I>
-  | NotFound
-  | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>) {
+): FindNextCallExpressionAndParentResult<E, I, F> {
   if (isPrioritizedCallExpression<E>(expression)) {
     return helper<E, I>(expression)
   } else if (isPrioritizedFunctionExpression<F>(expression)) {

@@ -11,7 +11,9 @@ import {
 import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlphaConvertedAndBetaReducePreview'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isNeedsResetExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
-import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
+import findNextCallExpressionAndParent, {
+  isNotFound
+} from 'src/lib/yc/findNextCallExpressionAndParent'
 import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpression from 'src/lib/yc/resetExpression'
@@ -38,10 +40,7 @@ const stepExpressionContainerReset = (
   const nextCallExpressionAndParent = findNextCallExpressionAndParent(
     newContainer.expression
   )
-  if (
-    'notFound' in nextCallExpressionAndParent &&
-    nextCallExpressionAndParent.notFound
-  ) {
+  if (isNotFound(nextCallExpressionAndParent)) {
     return {
       ...newContainer,
       containerState: 'done'
