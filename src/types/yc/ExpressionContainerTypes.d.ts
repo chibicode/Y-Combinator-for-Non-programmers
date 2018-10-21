@@ -33,6 +33,7 @@ export type PrioritizedExpressionContainer<
 > = ExpressionContainer<E> & {
   readonly containerState: 'prioritized'
 }
+
 export type NeedsPrioritizeExpressionContainer<
   E extends Expression = Expression
 > = ExpressionContainer<E> & {
