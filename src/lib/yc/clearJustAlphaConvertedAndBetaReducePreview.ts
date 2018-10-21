@@ -30,8 +30,7 @@ export default function clearJustAlphaConvertedAndBetaReducePreview<
   } else if (isFunctionExpression(expression)) {
     return Object.assign({}, expression, {
       arg: clearJustAlphaConvertedAndBetaReducePreview(expression.arg),
-      body: clearJustAlphaConvertedAndBetaReducePreview(expression.body),
-      wasJustBetaReduced: false
+      body: clearJustAlphaConvertedAndBetaReducePreview(expression.body)
     })
   } else {
     throw new Error()

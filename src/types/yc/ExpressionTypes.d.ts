@@ -49,7 +49,6 @@ export interface FunctionExpression {
   readonly state: CommonStates
   readonly arg: VariableExpression
   readonly body: Expression
-  readonly wasJustBetaReduced?: boolean
 }
 
 export type Expression =
