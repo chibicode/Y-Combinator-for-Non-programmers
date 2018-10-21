@@ -28,10 +28,11 @@ export default function prioritizeExpressionContainer(
 ): PrioritizedExpressionContainer<PrioritizedExpression>
 export default function prioritizeExpressionContainer(
   expressionContainer: NeedsPrioritizeExpressionContainer<Expression>
-) {
+): PrioritizedExpressionContainer<PrioritizedExpression> {
   return {
     containerState: 'prioritized',
-    previouslyChangedExpressionState: 'default',
+    previouslyChangedExpressionState:
+      expressionContainer.previouslyChangedExpressionState,
     expression: populatePriorityAggsAndPrioritizeExpression(
       expressionContainer.expression
     )
