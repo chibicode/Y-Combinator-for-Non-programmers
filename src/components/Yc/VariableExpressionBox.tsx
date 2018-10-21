@@ -9,9 +9,9 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
+import { isHighlightedState } from 'src/lib/yc/expressionTypeGuards'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
-import { isHighlightedState } from 'src/types/yc/ExpressionTypes'
-import { PrioritizedVariableExpression } from 'src/types/yc/PrioritizedExpressionTypes'
+import { PrioritizedVariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface VariableExpressionBoxProps {
   expression: PrioritizedVariableExpression

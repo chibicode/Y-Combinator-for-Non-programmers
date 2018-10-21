@@ -1,20 +1,21 @@
 import {
-  CallExpression,
-  Expression,
-  FunctionExpression,
   isCallExpression,
-  isVariableExpression,
-  VariableExpression
-} from 'src/types/yc/ExpressionTypes'
-import {
   isPrioritizedCallExpression,
   isPrioritizedFunctionExpression,
   isPrioritizedVariableExpression,
+  isVariableExpression
+} from 'src/lib/yc/expressionTypeGuards'
+
+import {
+  CallExpression,
+  Expression,
+  FunctionExpression,
   PrioritizedCallExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression,
-  PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+  PrioritizedVariableExpression,
+  VariableExpression
+} from 'src/types/yc/ExpressionTypes'
 
 function prioritizeCallExpression({
   expression,

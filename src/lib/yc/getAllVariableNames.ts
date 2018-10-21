@@ -1,9 +1,9 @@
 import uniq from 'lodash/uniq'
 import {
-  Expression,
   isCallExpression,
   isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/lib/yc/expressionTypeGuards'
+import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 function getAllVariableNamesWithDuplicates(

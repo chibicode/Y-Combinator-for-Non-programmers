@@ -1,11 +1,13 @@
 import uniq from 'lodash/uniq'
 import {
-  CallExpression,
-  Expression,
-  FunctionExpression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import {
+  CallExpression,
+  Expression,
+  FunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 

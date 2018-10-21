@@ -1,10 +1,12 @@
 import {
-  CallExpression,
-  Expression,
-  FunctionExpression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import {
+  CallExpression,
+  Expression,
+  FunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
 function helper<E extends Expression>(expression: E): E {

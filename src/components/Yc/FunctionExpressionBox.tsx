@@ -13,7 +13,7 @@ import {
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 interface FunctionExpressionBoxProps {
   expression: PrioritizedFunctionExpression

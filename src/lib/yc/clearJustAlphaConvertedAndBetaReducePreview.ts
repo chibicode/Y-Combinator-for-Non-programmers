@@ -1,9 +1,9 @@
 import {
-  Expression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/lib/yc/expressionTypeGuards'
+import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function clearJustAlphaConvertedAndBetaReducePreview<
   E extends Expression

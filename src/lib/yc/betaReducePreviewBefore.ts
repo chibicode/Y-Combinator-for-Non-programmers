@@ -1,12 +1,14 @@
-import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isPrioritizedCallExpression,
   isPrioritizedFunctionExpression,
-  isPrioritizedVariableExpression,
+  isPrioritizedVariableExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import {
+  ImmediatelyExecutableCallExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 function helper<E extends PrioritizedExpression>({

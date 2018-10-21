@@ -7,14 +7,12 @@ import {
   CallExpression,
   Expression,
   FunctionExpression,
-  VariableExpression
-} from 'src/types/yc/ExpressionTypes'
-import {
   PrioritizedCallExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression,
-  PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+  PrioritizedVariableExpression,
+  VariableExpression
+} from 'src/types/yc/ExpressionTypes'
 
 export default function prioritizeExpressionContainer(
   expressionContainer: NeedsPrioritizeExpressionContainer<VariableExpression>

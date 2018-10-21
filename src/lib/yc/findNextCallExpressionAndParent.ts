@@ -1,19 +1,17 @@
 import {
-  ImmediatelyExecutableCallExpression,
-  isImmediatelyExecutableCallExpression,
-  isTopPriorityCallExpression
-} from 'src/types/yc/ExecutableExpressionTypes'
-import {
   isCallExpression,
-  isFunctionExpression
-} from 'src/types/yc/ExpressionTypes'
-import {
+  isFunctionExpression,
+  isImmediatelyExecutableCallExpression,
   isPrioritizedCallExpression,
+  isTopPriorityCallExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import {
+  ImmediatelyExecutableCallExpression,
   PrioritizedCallExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 interface HasPrioritizedCallExpression<E extends PrioritizedCallExpression> {
   readonly expression: E

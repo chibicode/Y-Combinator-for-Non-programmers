@@ -1,5 +1,8 @@
-import { CallExpressionStates, Expression } from 'src/types/yc/ExpressionTypes'
-import { PrioritizedExpression } from 'src/types/yc/PrioritizedExpressionTypes'
+import {
+  CallExpressionStates,
+  Expression,
+  PrioritizedExpression
+} from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 export type ExpressionContainerState =

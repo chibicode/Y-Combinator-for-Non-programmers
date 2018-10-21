@@ -1,15 +1,15 @@
 import { DraftObject } from 'immer'
 import {
-  Expression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/lib/yc/expressionTypeGuards'
 import {
+  Expression,
   PrioritizedCallExpression,
   PrioritizedFunctionExpression,
   PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 export const isFunctionExpressionOrContainsFunctionExpression = (
   x: Expression

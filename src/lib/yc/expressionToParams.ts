@@ -1,4 +1,8 @@
 import {
+  isCallExpression,
+  isFunctionExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
@@ -8,8 +12,6 @@ import {
   CallExpression,
   Expression,
   FunctionExpression,
-  isCallExpression,
-  isFunctionExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 

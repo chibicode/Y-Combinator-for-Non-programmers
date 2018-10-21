@@ -1,8 +1,8 @@
 import {
-  Expression,
   isCallExpression,
   isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/lib/yc/expressionTypeGuards'
+import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function maxNestedFunctionDepth(expression: Expression): number {
   if (isVariableExpression(expression)) {

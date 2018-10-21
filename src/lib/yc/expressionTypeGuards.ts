@@ -1,16 +1,49 @@
 import {
   CallExpression,
+  CommonStates,
   Expression,
   FunctionExpression,
-  isCallExpression,
-  isFunctionExpression,
-  isVariableExpression,
+  HighlightedStates,
+  ImmediatelyExecutableCallExpression,
+  PrioritizedCallExpression,
+  PrioritizedExpression,
+  PrioritizedFunctionExpression,
+  PrioritizedVariableExpression,
+  TopPriorityCallExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-export interface PrioritizedVariableExpression extends VariableExpression {
-  argPriorityAgg: number[]
-  funcPriorityAgg: number[]
+export function isHighlightedState(
+  state: CommonStates
+): state is HighlightedStates {
+  const t: Partial<Record<CommonStates, boolean>> = {
+    highlighted: true,
+    justHighlighted: true,
+    justBetaReduced: true,
+    boundJustHighlighted: true,
+    boundHighlighted: true,
+    unboundJustHighlighted: true,
+    unboundHighlighted: true
+  }
+  return !!t[state]
+}
+
+export function isVariableExpression(
+  expression: Expression
+): expression is VariableExpression {
+  return expression.type === 'variable'
+}
+
+export function isCallExpression(
+  expression: Expression
+): expression is CallExpression {
+  return expression.type === 'call'
+}
+
+export function isFunctionExpression(
+  expression: Expression
+): expression is FunctionExpression {
+  return expression.type === 'function'
 }
 
 export function isPrioritizedVariableExpression(
@@ -25,12 +58,6 @@ export function isPrioritizedVariableExpression(
   )
 }
 
-export interface PrioritizedCallExpression extends CallExpression {
-  priority: number
-  arg: PrioritizedExpression
-  func: PrioritizedExpression
-}
-
 export function isPrioritizedCallExpression<
   E extends PrioritizedCallExpression = PrioritizedCallExpression
 >(expression: PrioritizedExpression | CallExpression): expression is E {
@@ -40,11 +67,6 @@ export function isPrioritizedCallExpression<
       isPrioritizedExpression(expression.arg) &&
       isPrioritizedExpression(expression.func))
   )
-}
-
-export interface PrioritizedFunctionExpression extends FunctionExpression {
-  arg: PrioritizedVariableExpression
-  body: PrioritizedExpression
 }
 
 export function isPrioritizedFunctionExpression(
@@ -60,11 +82,6 @@ export function isPrioritizedFunctionExpression(
   }
 }
 
-export type PrioritizedExpression =
-  | PrioritizedVariableExpression
-  | PrioritizedCallExpression
-  | PrioritizedFunctionExpression
-
 export function isPrioritizedExpression(
   expression: Expression
 ): expression is PrioritizedExpression {
@@ -75,4 +92,21 @@ export function isPrioritizedExpression(
   } else {
     return isPrioritizedFunctionExpression(expression)
   }
+}
+
+export function isTopPriorityCallExpression(
+  expression: PrioritizedCallExpression
+): expression is TopPriorityCallExpression {
+  return expression.priority === 1
+}
+
+export function isImmediatelyExecutableCallExpression<
+  E extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression
+>(expression: TopPriorityCallExpression): expression is E {
+  return (
+    expression.priority === 1 &&
+    (isPrioritizedVariableExpression(expression.arg) ||
+      isPrioritizedFunctionExpression(expression.arg)) &&
+    isPrioritizedFunctionExpression(expression.func)
+  )
 }

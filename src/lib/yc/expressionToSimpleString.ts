@@ -1,13 +1,13 @@
 import {
-  Expression,
   isCallExpression,
-  isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
-import {
   isPrioritizedCallExpression,
   isPrioritizedVariableExpression,
+  isVariableExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import {
+  Expression,
   PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 export default function expressionToSimpleString(
   expression: Expression,

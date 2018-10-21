@@ -10,13 +10,13 @@ import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLab
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
-import { isHighlightedState } from 'src/types/yc/ExpressionTypes'
 import {
+  isHighlightedState,
   isPrioritizedCallExpression,
   isPrioritizedFunctionExpression,
-  isPrioritizedVariableExpression,
-  PrioritizedExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+  isPrioritizedVariableExpression
+} from 'src/lib/yc/expressionTypeGuards'
+import { PrioritizedExpression } from 'src/types/yc/ExpressionTypes'
 
 interface ExpressionBoxProps {
   expression: PrioritizedExpression

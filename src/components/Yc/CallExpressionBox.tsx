@@ -14,7 +14,7 @@ import colors from 'src/lib/theme/colors'
 import {
   PrioritizedCallExpression,
   PrioritizedExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 interface CallExpressionBoxProps {
   expression: PrioritizedCallExpression

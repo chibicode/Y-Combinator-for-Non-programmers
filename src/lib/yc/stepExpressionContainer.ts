@@ -15,7 +15,6 @@ import populatePriorityAggsAndPrioritizeExpression from 'src/lib/yc/populatePrio
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpression from 'src/lib/yc/resetExpression'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
-import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExecutableExpressionTypes'
 import {
   isNeedsResetExpressionContainer,
   NeedsResetExpressionContainer,
@@ -23,10 +22,11 @@ import {
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
+  ImmediatelyExecutableCallExpression,
   PrioritizedCallExpression,
   PrioritizedExpression,
   PrioritizedFunctionExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+} from 'src/types/yc/ExpressionTypes'
 
 // NOTE: Use union of NeedsResetExpressionContainer | PrioritizedExpressionContainer
 // instead of overloading like:

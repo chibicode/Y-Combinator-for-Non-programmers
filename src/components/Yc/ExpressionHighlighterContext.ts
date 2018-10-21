@@ -1,6 +1,5 @@
 import React from 'react'
-import { CommonStates } from 'src/types/yc/ExpressionTypes'
-import { AllExpressionStates } from 'src/types/yc/ExpressionTypes'
+import { AllExpressionStates, CommonStates } from 'src/types/yc/ExpressionTypes'
 
 export interface ExpressionHighlighterContextProps {
   state?: CommonStates

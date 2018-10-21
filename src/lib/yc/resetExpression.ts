@@ -1,10 +1,10 @@
 import omit from 'lodash/omit'
 import {
-  Expression,
   isCallExpression,
   isFunctionExpression,
   isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/lib/yc/expressionTypeGuards'
+import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpression<E extends Expression>(
   expression: E

@@ -13,7 +13,7 @@
 //   PrioritizedExpressionContainer,
 //   SteppedExpressionContainer
 // } from 'src/types/yc/ExpressionContainerTypes'
-// import { PrioritizedCallExpression } from 'src/types/yc/PrioritizedExpressionTypes'
+// import { PrioritizedCallExpression } from 'src/types/yc/ExpressionTypes'
 
 // const repeatUntilState = (
 //   e: ExpressionContainer<PrioritizedCallExpression>,
