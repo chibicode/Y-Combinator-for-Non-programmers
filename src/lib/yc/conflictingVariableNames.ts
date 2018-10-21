@@ -1,6 +1,5 @@
 import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
-import getAllUnboundedVariableNames from 'src/lib/yc/getAllUnboundedVariableNames'
 import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 import { ImmediatelyExecutableCallExpression } from 'src/types/yc/ExpressionTypes'
 
@@ -9,7 +8,7 @@ export default function conflictingVariableNames(
 ) {
   const argVariableNames = getAllVariableNames(expression.arg)
   const funcBodyUnboundedVariableNamesExceptArg = difference(
-    getAllUnboundedVariableNames(expression.func.body),
+    getAllVariableNames(expression.func.body, { filter: 'unbound' }),
     [expression.func.arg.name]
   )
   return intersection(argVariableNames, funcBodyUnboundedVariableNamesExceptArg)
