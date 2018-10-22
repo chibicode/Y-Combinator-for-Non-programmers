@@ -8,24 +8,24 @@ import {
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
-  PrioritizedCallExpression,
-  PrioritizedExpression,
-  PrioritizedFunctionExpression,
-  PrioritizedVariableExpression
+  CallExpression,
+  Expression,
+  FunctionExpression,
+  VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function initializeExpressionContainer(
   expressionParams: VariableExpressionParams
-): PrioritizedExpressionContainer<PrioritizedVariableExpression>
+): PrioritizedExpressionContainer<VariableExpression>
 export default function initializeExpressionContainer(
   expressionParams: CallExpressionParams
-): PrioritizedExpressionContainer<PrioritizedCallExpression>
+): PrioritizedExpressionContainer<CallExpression>
 export default function initializeExpressionContainer(
   expressionParams: FunctionExpressionParams
-): PrioritizedExpressionContainer<PrioritizedFunctionExpression>
+): PrioritizedExpressionContainer<FunctionExpression>
 export default function initializeExpressionContainer(
   expressionParams: ExpressionParams
-): PrioritizedExpressionContainer<PrioritizedExpression> {
+): PrioritizedExpressionContainer<Expression> {
   return prioritizeExpressionContainer(
     buildExpressionContainer(expressionParams)
   )

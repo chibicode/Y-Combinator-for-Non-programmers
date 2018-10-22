@@ -5,18 +5,27 @@ export interface VariableExpression {
   readonly name: VariableNames
   readonly bound: boolean
   readonly uiState: VariableUiStates
+  readonly argPriorityAgg: number[]
+  readonly funcPriorityAgg: number[]
+}
+
+type WithUiState<S extends VariableUiStates> = VariableExpression & {
+  readonly uiState: S
 }
 
 interface VariableInactiveState {
   highlightType: 'inactive'
+  badgeType: 'none'
 }
 
 interface VariableActiveState {
   highlightType: 'active'
+  badgeType: 'none'
 }
 
 interface VariableEmphasizePriorityOneState {
   highlightType: 'activeEmphasizePriorityOne'
+  badgeType: 'none'
 }
 
 interface VariableHighlightFuncBoundState {
@@ -132,6 +141,7 @@ export interface CallExpression {
   readonly type: 'call'
   readonly arg: Expression
   readonly func: Expression
+  readonly priority: number
 }
 
 export interface FunctionExpression {
@@ -145,41 +155,6 @@ export type Expression =
   | CallExpression
   | FunctionExpression
 
-export interface PrioritizedVariableExpression extends VariableExpression {
-  argPriorityAgg: number[]
-  funcPriorityAgg: number[]
-}
-
-export interface PrioritizedCallExpression extends CallExpression {
-  priority: number
-  arg: PrioritizedExpression
-  func: PrioritizedExpression
-}
-
-export interface PrioritizedFunctionExpression extends FunctionExpression {
-  arg: PrioritizedVariableExpression
-  body: PrioritizedExpression
-}
-
-export type PrioritizedExpression =
-  | PrioritizedVariableExpression
-  | PrioritizedCallExpression
-  | PrioritizedFunctionExpression
-
-export interface TopPriorityCallExpression extends PrioritizedCallExpression {
-  readonly priority: 1
-}
-
-export interface ImmediatelyExecutableCallExpression
-  extends TopPriorityCallExpression {
-  readonly arg: PrioritizedVariableExpression | PrioritizedFunctionExpression
-  readonly func: PrioritizedFunctionExpression
-}
-
-type WithUiState<S extends VariableUiStates> = VariableExpression & {
-  readonly uiState: S
-}
-
 type FunctionExpressionWithArgBody<
   A extends VariableExpression,
   B extends Expression
@@ -188,53 +163,57 @@ type FunctionExpressionWithArgBody<
   readonly body: B
 }
 
-type WithState<
-  S extends CallExpressionStates,
-  E extends Expression
-> = CallExpression & {
+type NonExecutable<E extends Expression> = CallExpression & {
   readonly arg: E
-  readonly state: S
+  readonly state: 'inactive'
   readonly func: E
 }
 
-type CallExpressionWithState<
-  S extends CallExpressionStates
-> = S extends 'inactive'
-  ? InactiveCallExpression
-  : S extends 'active'
-    ? ActiveCallExpression
-    : S extends 'showFuncBound'
-      ? ShowFuncBoundCallExpression
-      : S extends 'showFuncArg'
-        ? ShowFuncArgCallExpression
-        : S extends 'showFuncUnbound'
-          ? ShowFuncUnboundCallExpression
-          : S extends 'showCallArg'
-            ? ShowCallArgCallExpression
-            : S extends 'needsAlphaConvert'
-              ? NeedsAlphaConvertCallExpression
-              : S extends 'alphaConvertDone'
-                ? AlphaConvertDoneCallExpression
-                : S extends 'betaReducePreviewBefore'
-                  ? BetaReducePreviewBeforeCallExpression
-                  : S extends 'betaReducePreviewAfter'
-                    ? BetaReducePreviewAfterCallExpression
-                    : S extends 'betaReducePreviewCrossed'
-                      ? BetaReducePreviewCrossedCallExpression
-                      : never
+type Executable<
+  S extends CallExpressionStates,
+  F extends FunctionExpression,
+  V extends VariableExpression
+> = CallExpression & {
+  readonly arg: V | F
+  readonly state: S
+  readonly func: F
+}
 
+// NOTE: Unfortunately these can't be mass-generated using
+// type aliases because they contain recursive types which require using interfaces.
+// I tried creating a type alias like this:
+// type Gen<V extends VariableExpression, CS extends CallExpressionState> = {
+//   function: ...
+//   nonExecutableCall: ...
+//   executableCall: ...
+//   child: V | Gen<V, CS>['function'] | Gen<V, CS>['nonExecutable]
+// }
+// but the recursive calls don't compile. We must use interfaces to get
+// recursive definitions to work, but interfaces can't be created using type aliases.
 export type InactiveVariableExpression = WithUiState<VariableInactiveState>
 export interface InactiveFunctionExpression
   extends FunctionExpressionWithArgBody<
       InactiveVariableExpression,
-      InactiveExpression
+      InactiveChildExpression
     > {}
-export interface InactiveCallExpression
-  extends WithState<'inactive', InactiveExpression> {}
-export type InactiveExpression =
+export interface NonExecutableInactiveCallExpression
+  extends NonExecutable<InactiveChildExpression> {}
+export interface ExecutableInactiveCallExpression
+  extends Executable<
+      'inactive',
+      InactiveFunctionExpression,
+      InactiveVariableExpression
+    > {}
+export type InactiveCallExpression =
+  | NonExecutableInactiveCallExpression
+  | ExecutableInactiveCallExpression
+export type InactiveChildExpression =
   | InactiveVariableExpression
   | InactiveFunctionExpression
-  | InactiveCallExpression
+  | NonExecutableInactiveCallExpression
+export type InactiveExpression =
+  | InactiveChildExpression
+  | ExecutableInactiveCallExpression
 
 export type ActiveVariableExpression = WithUiState<
   VariableEmphasizePriorityOneState
@@ -242,14 +221,20 @@ export type ActiveVariableExpression = WithUiState<
 export interface ActiveFunctionExpression
   extends FunctionExpressionWithArgBody<
       ActiveVariableExpression,
-      ActiveExpression
+      ActiveChildExpression
     > {}
-export interface ActiveCallExpression
-  extends WithState<'active', ActiveExpression> {}
-export type ActiveExpression =
+export interface ExecutableActiveCallExpression
+  extends Executable<
+      'active',
+      ActiveFunctionExpression,
+      ActiveVariableExpression
+    > {}
+export interface NonExecutableActiveCallExpression
+  extends NonExecutable<ActiveChildExpression> {}
+export type ActiveChildExpression =
   | ActiveVariableExpression
   | ActiveFunctionExpression
-  | ActiveCallExpression
+  | NonExecutableActiveCallExpression
 
 export type ShowFuncBoundVariableExpression =
   | WithUiState<VariableHighlightFuncBoundState>
@@ -257,14 +242,20 @@ export type ShowFuncBoundVariableExpression =
 export interface ShowFuncBoundFunctionExpression
   extends FunctionExpressionWithArgBody<
       ShowFuncBoundVariableExpression,
-      ShowFuncBoundExpression
+      ShowFuncBoundChildExpression
     > {}
-export interface ShowFuncBoundCallExpression
-  extends WithState<'showFuncBound', ShowFuncBoundExpression> {}
-export type ShowFuncBoundExpression =
+export interface ExecutableShowFuncBoundCallExpression
+  extends Executable<
+      'active',
+      ShowFuncBoundFunctionExpression,
+      ShowFuncBoundVariableExpression
+    > {}
+export interface NonExecutableShowFuncBoundCallExpression
+  extends NonExecutable<ShowFuncBoundChildExpression> {}
+export type ShowFuncBoundChildExpression =
   | ShowFuncBoundVariableExpression
   | ShowFuncBoundFunctionExpression
-  | ShowFuncBoundCallExpression
+  | NonExecutableShowFuncBoundCallExpression
 
 export type ShowFuncArgVariableExpression =
   | WithUiState<VariableActiveState>
@@ -273,14 +264,20 @@ export type ShowFuncArgVariableExpression =
 export interface ShowFuncArgFunctionExpression
   extends FunctionExpressionWithArgBody<
       ShowFuncArgVariableExpression,
-      ShowFuncArgExpression
+      ShowFuncArgChildExpression
     > {}
-export interface ShowFuncArgCallExpression
-  extends WithState<'showFuncArg', ShowFuncArgExpression> {}
-export type ShowFuncArgExpression =
+export interface ExecutableShowFuncArgCallExpression
+  extends Executable<
+      'active',
+      ShowFuncArgFunctionExpression,
+      ShowFuncArgVariableExpression
+    > {}
+export interface NonExecutableShowFuncArgCallExpression
+  extends NonExecutable<ShowFuncArgChildExpression> {}
+export type ShowFuncArgChildExpression =
   | ShowFuncArgVariableExpression
   | ShowFuncArgFunctionExpression
-  | ShowFuncArgCallExpression
+  | NonExecutableShowFuncArgCallExpression
 
 export type ShowFuncUnboundVariableExpression =
   | WithUiState<VariableActiveState>
@@ -290,14 +287,20 @@ export type ShowFuncUnboundVariableExpression =
 export interface ShowFuncUnboundFunctionExpression
   extends FunctionExpressionWithArgBody<
       ShowFuncUnboundVariableExpression,
-      ShowFuncUnboundExpression
+      ShowFuncUnboundChildExpression
     > {}
-export interface ShowFuncUnboundCallExpression
-  extends WithState<'showFuncUnbound', ShowFuncUnboundExpression> {}
-export type ShowFuncUnboundExpression =
+export interface ExecutableShowFuncUnboundCallExpression
+  extends Executable<
+      'active',
+      ShowFuncUnboundFunctionExpression,
+      ShowFuncUnboundVariableExpression
+    > {}
+export interface NonExecutableShowFuncUnboundCallExpression
+  extends NonExecutable<ShowFuncUnboundChildExpression> {}
+export type ShowFuncUnboundChildExpression =
   | ShowFuncUnboundVariableExpression
   | ShowFuncUnboundFunctionExpression
-  | ShowFuncUnboundCallExpression
+  | NonExecutableShowFuncUnboundCallExpression
 
 export type ShowCallArgVariableExpression =
   | WithUiState<VariableActiveFuncBoundState>
@@ -307,14 +310,20 @@ export type ShowCallArgVariableExpression =
 export interface ShowCallArgFunctionExpression
   extends FunctionExpressionWithArgBody<
       ShowCallArgVariableExpression,
-      ShowCallArgExpression
+      ShowCallArgChildExpression
     > {}
-export interface ShowCallArgCallExpression
-  extends WithState<'showCallArg', ShowCallArgExpression> {}
-export type ShowCallArgExpression =
+export interface ExecutableShowCallArgCallExpression
+  extends Executable<
+      'active',
+      ShowCallArgFunctionExpression,
+      ShowCallArgVariableExpression
+    > {}
+export interface NonExecutableShowCallArgCallExpression
+  extends NonExecutable<ShowCallArgChildExpression> {}
+export type ShowCallArgChildExpression =
   | ShowCallArgVariableExpression
   | ShowCallArgFunctionExpression
-  | ShowCallArgCallExpression
+  | NonExecutableShowCallArgCallExpression
 
 export type NeedsAlphaConvertVariableExpression =
   | WithUiState<VariableActiveFuncBoundState>
@@ -326,14 +335,20 @@ export type NeedsAlphaConvertVariableExpression =
 export interface NeedsAlphaConvertFunctionExpression
   extends FunctionExpressionWithArgBody<
       NeedsAlphaConvertVariableExpression,
-      NeedsAlphaConvertExpression
+      NeedsAlphaConvertChildExpression
     > {}
-export interface NeedsAlphaConvertCallExpression
-  extends WithState<'needsAlphaConvert', NeedsAlphaConvertExpression> {}
-export type NeedsAlphaConvertExpression =
+export interface ExecutableNeedsAlphaConvertCallExpression
+  extends Executable<
+      'active',
+      NeedsAlphaConvertFunctionExpression,
+      NeedsAlphaConvertVariableExpression
+    > {}
+export interface NonExecutableNeedsAlphaConvertCallExpression
+  extends NonExecutable<NeedsAlphaConvertChildExpression> {}
+export type NeedsAlphaConvertChildExpression =
   | NeedsAlphaConvertVariableExpression
   | NeedsAlphaConvertFunctionExpression
-  | NeedsAlphaConvertCallExpression
+  | NonExecutableNeedsAlphaConvertCallExpression
 
 export type AlphaConvertDoneVariableExpression =
   | WithUiState<VariableActiveFuncBoundState>
@@ -345,14 +360,20 @@ export type AlphaConvertDoneVariableExpression =
 export interface AlphaConvertDoneFunctionExpression
   extends FunctionExpressionWithArgBody<
       AlphaConvertDoneVariableExpression,
-      AlphaConvertDoneExpression
+      AlphaConvertDoneChildExpression
     > {}
-export interface AlphaConvertDoneCallExpression
-  extends WithState<'alphaConvertDone', AlphaConvertDoneExpression> {}
-export type AlphaConvertDoneExpression =
+export interface ExecutableAlphaConvertDoneCallExpression
+  extends Executable<
+      'active',
+      AlphaConvertDoneFunctionExpression,
+      AlphaConvertDoneVariableExpression
+    > {}
+export interface NonExecutableAlphaConvertDoneCallExpression
+  extends NonExecutable<AlphaConvertDoneChildExpression> {}
+export type AlphaConvertDoneChildExpression =
   | AlphaConvertDoneVariableExpression
   | AlphaConvertDoneFunctionExpression
-  | AlphaConvertDoneCallExpression
+  | NonExecutableAlphaConvertDoneCallExpression
 
 export type BetaReducePreviewBeforeVariableExpression =
   | WithUiState<VariableActiveFuncBoundState>
@@ -363,17 +384,20 @@ export type BetaReducePreviewBeforeVariableExpression =
 export interface BetaReducePreviewBeforeFunctionExpression
   extends FunctionExpressionWithArgBody<
       BetaReducePreviewBeforeVariableExpression,
-      BetaReducePreviewBeforeExpression
+      BetaReducePreviewBeforeChildExpression
     > {}
-export interface BetaReducePreviewBeforeCallExpression
-  extends WithState<
-      'betaReducePreviewBefore',
-      BetaReducePreviewBeforeExpression
+export interface ExecutableBetaReducePreviewBeforeCallExpression
+  extends Executable<
+      'active',
+      BetaReducePreviewBeforeFunctionExpression,
+      BetaReducePreviewBeforeVariableExpression
     > {}
-export type BetaReducePreviewBeforeExpression =
+export interface NonExecutableBetaReducePreviewBeforeCallExpression
+  extends NonExecutable<BetaReducePreviewBeforeChildExpression> {}
+export type BetaReducePreviewBeforeChildExpression =
   | BetaReducePreviewBeforeVariableExpression
   | BetaReducePreviewBeforeFunctionExpression
-  | BetaReducePreviewBeforeCallExpression
+  | NonExecutableBetaReducePreviewBeforeCallExpression
 
 export type BetaReducePreviewAfterVariableExpression =
   | WithUiState<VariableActiveFuncBoundState>
@@ -384,17 +408,20 @@ export type BetaReducePreviewAfterVariableExpression =
 export interface BetaReducePreviewAfterFunctionExpression
   extends FunctionExpressionWithArgBody<
       BetaReducePreviewAfterVariableExpression,
-      BetaReducePreviewAfterExpression
+      BetaReducePreviewAfterChildExpression
     > {}
-export interface BetaReducePreviewAfterCallExpression
-  extends WithState<
-      'betaReducePreviewAfter',
-      BetaReducePreviewAfterExpression
+export interface ExecutableBetaReducePreviewAfterCallExpression
+  extends Executable<
+      'active',
+      BetaReducePreviewAfterFunctionExpression,
+      BetaReducePreviewAfterVariableExpression
     > {}
-export type BetaReducePreviewAfterExpression =
+export interface NonExecutableBetaReducePreviewAfterCallExpression
+  extends NonExecutable<BetaReducePreviewAfterChildExpression> {}
+export type BetaReducePreviewAfterChildExpression =
   | BetaReducePreviewAfterVariableExpression
   | BetaReducePreviewAfterFunctionExpression
-  | BetaReducePreviewAfterCallExpression
+  | NonExecutableBetaReducePreviewAfterCallExpression
 
 export type BetaReducePreviewCrossedVariableExpression =
   | WithUiState<VariableActiveFuncBoundState>
@@ -405,14 +432,54 @@ export type BetaReducePreviewCrossedVariableExpression =
 export interface BetaReducePreviewCrossedFunctionExpression
   extends FunctionExpressionWithArgBody<
       BetaReducePreviewCrossedVariableExpression,
-      BetaReducePreviewCrossedExpression
+      BetaReducePreviewCrossedChildExpression
     > {}
-export interface BetaReducePreviewCrossedCallExpression
-  extends WithState<
-      'betaReducePreviewCrossed',
-      BetaReducePreviewCrossedExpression
+export interface ExecutableBetaReducePreviewCrossedCallExpression
+  extends Executable<
+      'active',
+      BetaReducePreviewCrossedFunctionExpression,
+      BetaReducePreviewCrossedVariableExpression
     > {}
-export type BetaReducePreviewCrossedExpression =
+export interface NonExecutableBetaReducePreviewCrossedCallExpression
+  extends NonExecutable<BetaReducePreviewCrossedChildExpression> {}
+export type BetaReducePreviewCrossedChildExpression =
   | BetaReducePreviewCrossedVariableExpression
   | BetaReducePreviewCrossedFunctionExpression
-  | BetaReducePreviewCrossedCallExpression
+  | NonExecutableBetaReducePreviewCrossedCallExpression
+
+export type ExecutableCallExpression =
+  | ExecutableInactiveCallExpression
+  | ExecutableActiveCallExpression
+  | ExecutableShowFuncBoundCallExpression
+  | ExecutableShowFuncArgCallExpression
+  | ExecutableShowFuncUnboundCallExpression
+  | ExecutableShowCallArgCallExpression
+  | ExecutableNeedsAlphaConvertCallExpression
+  | ExecutableAlphaConvertDoneCallExpression
+  | ExecutableBetaReducePreviewBeforeCallExpression
+  | ExecutableBetaReducePreviewAfterCallExpression
+  | ExecutableBetaReducePreviewCrossedCallExpression
+
+type ExecutableCallExpressionWithState<
+  S extends CallExpressionStates
+> = S extends 'inactive'
+  ? ExecutableInactiveCallExpression
+  : S extends 'active'
+    ? ExecutableActiveCallExpression
+    : S extends 'showFuncBound'
+      ? ExecutableShowFuncBoundCallExpression
+      : S extends 'showFuncArg'
+        ? ExecutableShowFuncArgCallExpression
+        : S extends 'showFuncUnbound'
+          ? ExecutableShowFuncUnboundCallExpression
+          : S extends 'showCallArg'
+            ? ExecutableShowCallArgCallExpression
+            : S extends 'needsAlphaConvert'
+              ? ExecutableNeedsAlphaConvertCallExpression
+              : S extends 'alphaConvertDone'
+                ? ExecutableAlphaConvertDoneCallExpression
+                : S extends 'betaReducePreviewBefore'
+                  ? ExecutableBetaReducePreviewBeforeCallExpression
+                  : S extends 'betaReducePreviewAfter'
+                    ? ExecutableBetaReducePreviewAfterCallExpression
+                    : ExecutableBetaReducePreviewCrossedCallExpression

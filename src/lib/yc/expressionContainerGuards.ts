@@ -1,4 +1,4 @@
-import { PrioritizedExpression } from 'src/types/yc/ExpressionTypes'
+import { Expression } from 'src/types/yc/ExpressionTypes'
 
 import {
   DoneExpressionContainer,
@@ -7,13 +7,13 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 
 export function isNeedsResetExpressionContainer<
-  E extends PrioritizedExpression = PrioritizedExpression
+  E extends Expression = Expression
 >(e: ExpressionContainer): e is NeedsResetExpressionContainer<E> {
   return e.containerState === 'needsReset'
 }
 
-export function isDoneExpressionContainer<
-  E extends PrioritizedExpression = PrioritizedExpression
->(e: ExpressionContainer): e is DoneExpressionContainer<E> {
+export function isDoneExpressionContainer<E extends Expression = Expression>(
+  e: ExpressionContainer
+): e is DoneExpressionContainer<E> {
   return e.containerState === 'done'
 }

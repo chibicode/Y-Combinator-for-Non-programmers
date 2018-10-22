@@ -33,16 +33,20 @@ export default function resetExpression(
       type: 'variable',
       name: expression.name,
       uiState: {
-        highlightType: 'inactive'
+        highlightType: 'inactive',
+        badgeType: 'none'
       },
-      bound: expression.bound
+      bound: expression.bound,
+      argPriorityAgg: [],
+      funcPriorityAgg: []
     }
   } else if (isCallExpression(expression)) {
     return {
       type: 'call',
       state: 'inactive',
       arg: resetExpression(expression.arg),
-      func: resetExpression(expression.func)
+      func: resetExpression(expression.func),
+      priority: 0
     }
   } else {
     return {
