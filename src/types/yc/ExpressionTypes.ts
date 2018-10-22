@@ -197,6 +197,32 @@ type WithState<
   readonly func: E
 }
 
+type CallExpressionWithState<
+  S extends CallExpressionStates
+> = S extends 'inactive'
+  ? InactiveCallExpression
+  : S extends 'active'
+    ? ActiveCallExpression
+    : S extends 'showFuncBound'
+      ? ShowFuncBoundCallExpression
+      : S extends 'showFuncArg'
+        ? ShowFuncArgCallExpression
+        : S extends 'showFuncUnbound'
+          ? ShowFuncUnboundCallExpression
+          : S extends 'showCallArg'
+            ? ShowCallArgCallExpression
+            : S extends 'needsAlphaConvert'
+              ? NeedsAlphaConvertCallExpression
+              : S extends 'alphaConvertDone'
+                ? AlphaConvertDoneCallExpression
+                : S extends 'betaReducePreviewBefore'
+                  ? BetaReducePreviewBeforeCallExpression
+                  : S extends 'betaReducePreviewAfter'
+                    ? BetaReducePreviewAfterCallExpression
+                    : S extends 'betaReducePreviewCrossed'
+                      ? BetaReducePreviewCrossedCallExpression
+                      : never
+
 export type InactiveVariableExpression = WithUiState<VariableInactiveState>
 export interface InactiveFunctionExpression
   extends FunctionExpressionWithArgBody<
