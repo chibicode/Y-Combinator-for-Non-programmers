@@ -17,15 +17,15 @@ export function isVariableExpression(
   return expression.type === 'variable'
 }
 
-export function isCallExpression(
+export function isCallExpression<E extends CallExpression = CallExpression>(
   expression: Expression
-): expression is CallExpression {
+): expression is E {
   return expression.type === 'call'
 }
 
-export function isFunctionExpression(
-  expression: Expression
-): expression is FunctionExpression {
+export function isFunctionExpression<
+  E extends FunctionExpression = FunctionExpression
+>(expression: Expression): expression is E {
   return expression.type === 'function'
 }
 
@@ -36,9 +36,9 @@ export function isCallExpressionWithState<
   return expression.state === state
 }
 
-export function isExecutableCallExpression(
+export function isExecutableCallExpression<E extends ExecutableCallExpression>(
   expression: CallExpression
-): expression is ExecutableCallExpression {
+): expression is E {
   return (
     (isFunctionExpression(expression.arg) ||
       isVariableExpression(expression.arg)) &&

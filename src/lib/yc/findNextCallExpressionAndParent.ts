@@ -10,29 +10,35 @@ import {
   FunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
-export interface FindResult {
-  readonly expression?: ExecutableCallExpression
-  readonly callParent?: CallExpression
-  readonly funcParent?: FunctionExpression
+export interface FindResult<
+  E extends ExecutableCallExpression,
+  C extends CallExpression,
+  F extends FunctionExpression
+> {
+  readonly expression?: E
+  readonly callParent?: C
+  readonly funcParent?: F
   readonly callParentKey?: 'func' | 'arg'
 }
 
-const NOT_FOUND: FindResult = {}
-
-interface HelperStackItem {
-  readonly expression: CallExpression
-  readonly callParent?: CallExpression
+interface HelperStackItem<C extends CallExpression> {
+  readonly expression: C
+  readonly callParent?: C
   readonly callParentKey?: 'func' | 'arg'
 }
 
-function helper(expression: CallExpression): FindResult {
-  const stack: HelperStackItem[] = [{ expression }]
+function helper<
+  E extends ExecutableCallExpression,
+  C extends CallExpression,
+  F extends FunctionExpression
+>(expression: C): FindResult<E, C, F> {
+  const stack: Array<HelperStackItem<C>> = [{ expression }]
   while (stack.length > 0) {
     const current = stack.pop()
     if (current && current.expression) {
       if (
         current.expression &&
-        isExecutableCallExpression(current.expression)
+        isExecutableCallExpression<E>(current.expression)
       ) {
         return {
           expression: current.expression,
@@ -41,7 +47,7 @@ function helper(expression: CallExpression): FindResult {
         }
       }
 
-      if (isCallExpression(current.expression.func)) {
+      if (isCallExpression<C>(current.expression.func)) {
         stack.push({
           expression: current.expression.func,
           callParentKey: 'func',
@@ -49,7 +55,7 @@ function helper(expression: CallExpression): FindResult {
         })
       }
 
-      if (isCallExpression(current.expression.arg)) {
+      if (isCallExpression<C>(current.expression.arg)) {
         stack.push({
           expression: current.expression.arg,
           callParentKey: 'arg',
@@ -58,35 +64,37 @@ function helper(expression: CallExpression): FindResult {
       }
     }
   }
-  return NOT_FOUND
+  return {}
 }
 
-export default function findNextCallExpressionAndParent(
-  expression: Expression
-): FindResult {
+export default function findNextCallExpressionAndParent<
+  E extends ExecutableCallExpression,
+  C extends CallExpression,
+  F extends FunctionExpression
+>(expression: Expression): FindResult<E, C, F> {
   if (isCallExpression(expression)) {
-    return helper(expression)
+    return helper<E, C, F>(expression)
   } else if (isFunctionExpression(expression)) {
     let currentExpression: Expression = expression
-    let previousExpression: Expression = expression
-    while (isFunctionExpression(currentExpression)) {
+    let previousExpression: F | null = null
+    while (isFunctionExpression<F>(currentExpression)) {
       previousExpression = currentExpression
       currentExpression = currentExpression.body
     }
-    if (isCallExpression(currentExpression)) {
-      const helperResult = helper(currentExpression)
+    if (isCallExpression<C>(currentExpression)) {
+      const helperResult = helper<E, C, F>(currentExpression)
       if (helperResult.callParent) {
         return helperResult
-      } else {
+      } else if (previousExpression) {
         return {
           funcParent: previousExpression,
           expression: helperResult.expression
         }
       }
     } else {
-      return NOT_FOUND
+      return {}
     }
   } else {
-    return NOT_FOUND
+    return {}
   }
 }

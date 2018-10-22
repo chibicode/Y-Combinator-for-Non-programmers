@@ -7,9 +7,7 @@ import clearJustAlphaConvertedAndBetaReducePreview from 'src/lib/yc/clearJustAlp
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isNeedsResetExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
 import { isCallExpressionWithState } from 'src/lib/yc/expressionTypeGuards'
-import findNextCallExpressionAndParent, {
-  FindResult
-} from 'src/lib/yc/findNextCallExpressionAndParent'
+import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
@@ -21,8 +19,10 @@ import {
   PrioritizedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
+  CallExpression,
   CallExpressionStates,
-  ExecutableCallExpression
+  ExecutableCallExpression,
+  FunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
 const stepExpressionContainerReset = (
@@ -68,18 +68,17 @@ function stepToBetaReduceBefore(
 
 type DE = DraftObject<ExecutableCallExpression>
 
-const recipe = ({
-  draftContainer,
-  nextCallExpressionAndParent
-}: {
+const recipe = (
   draftContainer: Draft<
     NeedsResetExpressionContainer | PrioritizedExpressionContainer
   >
-  nextCallExpressionAndParent: Draft<FindResult>
-}): {
-  draftContainer: NeedsResetExpressionContainer | PrioritizedExpressionContainer
-  nextCallExpressionAndParent: FindResult
-} | void => {
+): NeedsResetExpressionContainer | PrioritizedExpressionContainer | void => {
+  const nextCallExpressionAndParent = findNextCallExpressionAndParent<
+    DE,
+    DraftObject<CallExpression>,
+    DraftObject<FunctionExpression>
+  >(draftContainer.expression)
+
   const expression = nextCallExpressionAndParent.expression
   if (!expression) {
     throw new Error()
@@ -172,7 +171,7 @@ const recipe = ({
     const betaReduced: PrioritizedExpression = betaReduce(
       clearJustAlphaConvertedAndBetaReducePreview(expression)
     )
-    if (isNotFound(nextCallExpressionAndParent)) {
+    if (!nextCallExpressionAndParent.expression) {
       return {
         ...e,
         expression: betaReduced,
@@ -181,13 +180,13 @@ const recipe = ({
         previouslyChangedExpressionState: 'inactive',
         matchExists: undefined
       }
-    } else if (hasCallParent(nextCallExpressionAndParent)) {
-      nextCallExpressionAndParent.parentCallExpression[
-        nextCallExpressionAndParent.parentKey
+    } else if (nextCallExpressionAndParent.callParent) {
+      nextCallExpressionAndParent.callParent[
+        nextCallExpressionAndParent.callParentKey!
       ] = betaReduced
       draftContainer.containerState = 'needsReset'
-    } else if (hasFunctionParent(nextCallExpressionAndParent)) {
-      nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
+    } else if (nextCallExpressionAndParent.funcParent) {
+      nextCallExpressionAndParent.funcParent.body = betaReduced
       draftContainer.containerState = 'needsReset'
     }
     delete draftContainer.matchExists
@@ -204,20 +203,9 @@ const recipe = ({
 export default function stepExpressionContainer(
   e: PrioritizedExpressionContainer
 ): DoneExpressionContainer | PrioritizedExpressionContainer {
-  const result = produce<{
-    draftContainer:
-      | NeedsResetExpressionContainer
-      | PrioritizedExpressionContainer
-    nextCallExpressionAndParent: FindResult
-  }>(
-    {
-      draftContainer: e,
-      nextCallExpressionAndParent: findNextCallExpressionAndParent(
-        e.backupExpression || e.expression
-      )
-    },
-    recipe
-  ).draftContainer
+  const result = produce<
+    NeedsResetExpressionContainer | PrioritizedExpressionContainer
+  >(e, recipe)
 
   if (isNeedsResetExpressionContainer(result)) {
     return stepExpressionContainerReset(result)
