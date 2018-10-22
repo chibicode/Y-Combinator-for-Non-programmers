@@ -204,7 +204,7 @@ export interface InactiveFunctionExpression
       InactiveExpression
     > {}
 export interface InactiveCallExpression
-  extends WithState<'active', InactiveExpression> {}
+  extends WithState<'inactive', InactiveExpression> {}
 export type InactiveExpression =
   | InactiveVariableExpression
   | InactiveFunctionExpression

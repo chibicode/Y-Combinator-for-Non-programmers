@@ -4,12 +4,12 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
+  Expression,
+  FunctionExpression,
   InactiveCallExpression,
   InactiveExpression,
   InactiveFunctionExpression,
   InactiveVariableExpression,
-  Expression,
-  FunctionExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
