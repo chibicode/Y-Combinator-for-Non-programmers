@@ -8,9 +8,7 @@ import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isNeedsResetExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
 import { isCallExpressionWithState } from 'src/lib/yc/expressionTypeGuards'
 import findNextCallExpressionAndParent, {
-  hasCallParent,
-  hasFunctionParent,
-  isNotFound
+  FindResult
 } from 'src/lib/yc/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
@@ -24,10 +22,7 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionStates,
-  ImmediatelyExecutableCallExpression,
-  PrioritizedCallExpression,
-  PrioritizedExpression,
-  PrioritizedFunctionExpression
+  ExecutableCallExpression
 } from 'src/types/yc/ExpressionTypes'
 
 const stepExpressionContainerReset = (
@@ -39,13 +34,13 @@ const stepExpressionContainerReset = (
   const nextCallExpressionAndParent = findNextCallExpressionAndParent(
     newContainer.expression
   )
-  if (isNotFound(nextCallExpressionAndParent)) {
+  if (nextCallExpressionAndParent.expression) {
+    return newContainer
+  } else {
     return {
       ...newContainer,
       containerState: 'done'
     }
-  } else {
-    return newContainer
   }
 }
 
@@ -71,148 +66,158 @@ function stepToBetaReduceBefore(
   draftContainer.matchExists = matchExists
 }
 
-type DE = DraftObject<ImmediatelyExecutableCallExpression>
+type DE = DraftObject<ExecutableCallExpression>
+
+const recipe = ({
+  draftContainer,
+  nextCallExpressionAndParent
+}: {
+  draftContainer: Draft<
+    NeedsResetExpressionContainer | PrioritizedExpressionContainer
+  >
+  nextCallExpressionAndParent: Draft<FindResult>
+}): {
+  draftContainer: NeedsResetExpressionContainer | PrioritizedExpressionContainer
+  nextCallExpressionAndParent: FindResult
+} | void => {
+  const expression = nextCallExpressionAndParent.expression
+  if (!expression) {
+    throw new Error()
+  }
+
+  if (isCallExpressionWithState<DE, 'inactive'>(expression, 'inactive')) {
+    stepCallExpression<'inactive'>(expression, 'active')
+  } else if (isCallExpressionWithState<DE, 'active'>(expression, 'active')) {
+    stepCallExpression<'active'>(expression, 'showFuncBound')
+  } else if (
+    isCallExpressionWithState<DE, 'showFuncBound'>(expression, 'showFuncBound')
+  ) {
+    stepCallExpression<'showFuncBound'>(expression, 'showFuncArg')
+  } else if (
+    isCallExpressionWithState<DE, 'showFuncArg'>(expression, 'showFuncArg')
+  ) {
+    if (hasUnboundVariables(expression.func.body)) {
+      stepCallExpression<'showFuncArg'>(expression, 'showFuncUnbound')
+    } else {
+      stepCallExpression<'showFuncArg'>(expression, 'showCallArg')
+    }
+  } else if (
+    isCallExpressionWithState<DE, 'showFuncUnbound'>(
+      expression,
+      'showFuncUnbound'
+    )
+  ) {
+    stepCallExpression<'showFuncUnbound'>(expression, 'showCallArg')
+  } else if (
+    isCallExpressionWithState<DE, 'showCallArg'>(expression, 'showCallArg')
+  ) {
+    const conflicts = conflictingVariableNames(expression)
+    if (conflicts.length > 0) {
+      stepCallExpression<'showCallArg'>(expression, 'needsAlphaConvert')
+      draftContainer.conflictingVariableNames = conflicts
+    } else {
+      stepToBetaReduceBefore(expression, draftContainer)
+    }
+  } else if (
+    isCallExpressionWithState<DE, 'needsAlphaConvert'>(
+      expression,
+      'needsAlphaConvert'
+    )
+  ) {
+    const alphaConvertResult = alphaConvert(expression)
+    expression.func = alphaConvertResult.func
+    expression.arg = alphaConvertResult.arg
+    stepCallExpression<'needsAlphaConvert'>(expression, 'alphaConvertDone')
+    draftContainer.conflictingVariableNames = []
+  } else if (
+    isCallExpressionWithState<DE, 'alphaConvertDone'>(
+      expression,
+      'alphaConvertDone'
+    )
+  ) {
+    stepToBetaReduceBefore(expression, draftContainer)
+  } else if (
+    isCallExpressionWithState<DE, 'betaReducePreviewBefore'>(
+      expression,
+      'betaReducePreviewBefore'
+    )
+  ) {
+    stepCallExpression<'betaReducePreviewBefore'>(
+      expression,
+      'betaReducePreviewAfter'
+    )
+    draftContainer.backupExpression = cloneDeep(draftContainer.expression)
+    const betaReducedFunctionBody: PrioritizedExpression = prioritizeExpression(
+      resetExpression(
+        betaReduce(clearJustAlphaConvertedAndBetaReducePreview(expression))
+      )
+    )
+    expression.func.body = betaReducedFunctionBody
+  } else if (
+    isCallExpressionWithState<DE, 'betaReducePreviewAfter'>(
+      expression,
+      'betaReducePreviewAfter'
+    )
+  ) {
+    stepCallExpression<'betaReducePreviewAfter'>(
+      expression,
+      'betaReducePreviewCrossed'
+    )
+  } else if (
+    isCallExpressionWithState<DE, 'betaReducePreviewCrossed'>(
+      expression,
+      'betaReducePreviewCrossed'
+    )
+  ) {
+    const betaReduced: PrioritizedExpression = betaReduce(
+      clearJustAlphaConvertedAndBetaReducePreview(expression)
+    )
+    if (isNotFound(nextCallExpressionAndParent)) {
+      return {
+        ...e,
+        expression: betaReduced,
+        backupExpression: undefined,
+        containerState: 'needsReset',
+        previouslyChangedExpressionState: 'inactive',
+        matchExists: undefined
+      }
+    } else if (hasCallParent(nextCallExpressionAndParent)) {
+      nextCallExpressionAndParent.parentCallExpression[
+        nextCallExpressionAndParent.parentKey
+      ] = betaReduced
+      draftContainer.containerState = 'needsReset'
+    } else if (hasFunctionParent(nextCallExpressionAndParent)) {
+      nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
+      draftContainer.containerState = 'needsReset'
+    }
+    delete draftContainer.matchExists
+    if (draftContainer.backupExpression) {
+      draftContainer.expression = draftContainer.backupExpression
+      delete draftContainer.backupExpression
+    }
+    stepCallExpression<'betaReducePreviewCrossed'>(expression, 'inactive')
+  }
+
+  draftContainer.previouslyChangedExpressionState = expression.state
+}
 
 export default function stepExpressionContainer(
   e: PrioritizedExpressionContainer
 ): DoneExpressionContainer | PrioritizedExpressionContainer {
-  const recipe = (
-    draftContainer: Draft<
-      NeedsResetExpressionContainer | PrioritizedExpressionContainer
-    >
-  ): NeedsResetExpressionContainer | PrioritizedExpressionContainer | void => {
-    const nextCallExpressionAndParent = findNextCallExpressionAndParent<
-      DraftObject<PrioritizedCallExpression>,
-      DE,
-      DraftObject<PrioritizedFunctionExpression>
-    >(draftContainer.backupExpression || draftContainer.expression)
-    if (isNotFound(nextCallExpressionAndParent)) {
-      throw new Error()
-    }
-    const expression = nextCallExpressionAndParent.expression
-
-    if (isCallExpressionWithState<DE, 'inactive'>(expression, 'inactive')) {
-      stepCallExpression<'inactive'>(expression, 'active')
-    } else if (isCallExpressionWithState<DE, 'active'>(expression, 'active')) {
-      stepCallExpression<'active'>(expression, 'showFuncBound')
-    } else if (
-      isCallExpressionWithState<DE, 'showFuncBound'>(
-        expression,
-        'showFuncBound'
+  const result = produce<{
+    draftContainer:
+      | NeedsResetExpressionContainer
+      | PrioritizedExpressionContainer
+    nextCallExpressionAndParent: FindResult
+  }>(
+    {
+      draftContainer: e,
+      nextCallExpressionAndParent: findNextCallExpressionAndParent(
+        e.backupExpression || e.expression
       )
-    ) {
-      stepCallExpression<'showFuncBound'>(expression, 'showFuncArg')
-    } else if (
-      isCallExpressionWithState<DE, 'showFuncArg'>(expression, 'showFuncArg')
-    ) {
-      if (hasUnboundVariables(expression.func.body)) {
-        stepCallExpression<'showFuncArg'>(expression, 'showFuncUnbound')
-      } else {
-        stepCallExpression<'showFuncArg'>(expression, 'showCallArg')
-      }
-    } else if (
-      isCallExpressionWithState<DE, 'showFuncUnbound'>(
-        expression,
-        'showFuncUnbound'
-      )
-    ) {
-      stepCallExpression<'showFuncUnbound'>(expression, 'showCallArg')
-    } else if (
-      isCallExpressionWithState<DE, 'showCallArg'>(expression, 'showCallArg')
-    ) {
-      const conflicts = conflictingVariableNames(expression)
-      if (conflicts.length > 0) {
-        stepCallExpression<'showCallArg'>(expression, 'needsAlphaConvert')
-        draftContainer.conflictingVariableNames = conflicts
-      } else {
-        stepToBetaReduceBefore(expression, draftContainer)
-      }
-    } else if (
-      isCallExpressionWithState<DE, 'needsAlphaConvert'>(
-        expression,
-        'needsAlphaConvert'
-      )
-    ) {
-      const alphaConvertResult = alphaConvert(expression)
-      expression.func = alphaConvertResult.func
-      expression.arg = alphaConvertResult.arg
-      stepCallExpression<'needsAlphaConvert'>(expression, 'alphaConvertDone')
-      draftContainer.conflictingVariableNames = []
-    } else if (
-      isCallExpressionWithState<DE, 'alphaConvertDone'>(
-        expression,
-        'alphaConvertDone'
-      )
-    ) {
-      stepToBetaReduceBefore(expression, draftContainer)
-    } else if (
-      isCallExpressionWithState<DE, 'betaReducePreviewBefore'>(
-        expression,
-        'betaReducePreviewBefore'
-      )
-    ) {
-      stepCallExpression<'betaReducePreviewBefore'>(
-        expression,
-        'betaReducePreviewAfter'
-      )
-      draftContainer.backupExpression = cloneDeep(draftContainer.expression)
-      const betaReducedFunctionBody: PrioritizedExpression = prioritizeExpression(
-        resetExpression(
-          betaReduce(clearJustAlphaConvertedAndBetaReducePreview(expression))
-        )
-      )
-      expression.func.body = betaReducedFunctionBody
-    } else if (
-      isCallExpressionWithState<DE, 'betaReducePreviewAfter'>(
-        expression,
-        'betaReducePreviewAfter'
-      )
-    ) {
-      stepCallExpression<'betaReducePreviewAfter'>(
-        expression,
-        'betaReducePreviewCrossed'
-      )
-    } else if (
-      isCallExpressionWithState<DE, 'betaReducePreviewCrossed'>(
-        expression,
-        'betaReducePreviewCrossed'
-      )
-    ) {
-      const betaReduced: PrioritizedExpression = betaReduce(
-        clearJustAlphaConvertedAndBetaReducePreview(expression)
-      )
-      if (isNotFound(nextCallExpressionAndParent)) {
-        return {
-          ...e,
-          expression: betaReduced,
-          backupExpression: undefined,
-          containerState: 'needsReset',
-          previouslyChangedExpressionState: 'inactive',
-          matchExists: undefined
-        }
-      } else if (hasCallParent(nextCallExpressionAndParent)) {
-        nextCallExpressionAndParent.parentCallExpression[
-          nextCallExpressionAndParent.parentKey
-        ] = betaReduced
-        draftContainer.containerState = 'needsReset'
-      } else if (hasFunctionParent(nextCallExpressionAndParent)) {
-        nextCallExpressionAndParent.parentFunctionExpression.body = betaReduced
-        draftContainer.containerState = 'needsReset'
-      }
-      delete draftContainer.matchExists
-      if (draftContainer.backupExpression) {
-        draftContainer.expression = draftContainer.backupExpression
-        delete draftContainer.backupExpression
-      }
-      stepCallExpression<'betaReducePreviewCrossed'>(expression, 'inactive')
-    }
-
-    draftContainer.previouslyChangedExpressionState = expression.state
-  }
-
-  const result = produce<
-    NeedsResetExpressionContainer | PrioritizedExpressionContainer
-  >(e, recipe)
+    },
+    recipe
+  ).draftContainer
 
   if (isNeedsResetExpressionContainer(result)) {
     return stepExpressionContainerReset(result)

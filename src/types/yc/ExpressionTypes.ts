@@ -177,6 +177,7 @@ type Executable<
   readonly arg: V | F
   readonly state: S
   readonly func: F
+  readonly priority: 1
 }
 
 // NOTE: Unfortunately these can't be mass-generated using

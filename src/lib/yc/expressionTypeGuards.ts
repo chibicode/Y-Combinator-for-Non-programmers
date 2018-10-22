@@ -1,10 +1,15 @@
 import {
   CallExpression,
   CallExpressionStates,
+  ExecutableCallExpression,
+  ExecutableInactiveCallExpression,
   Expression,
   FunctionExpression,
+  InactiveCallExpression,
+  InactiveExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
+import { isFunction } from 'util'
 
 export function isVariableExpression(
   expression: Expression
@@ -29,4 +34,15 @@ export function isCallExpressionWithState<
   S extends CallExpressionStates
 >(expression: E, state: S): expression is E & { state: S } {
   return expression.state === state
+}
+
+export function isExecutableCallExpression(
+  expression: CallExpression
+): expression is ExecutableCallExpression {
+  return (
+    (isFunctionExpression(expression.arg) ||
+      isVariableExpression(expression.arg)) &&
+    isFunction(expression.func) &&
+    expression.priority === 1
+  )
 }
