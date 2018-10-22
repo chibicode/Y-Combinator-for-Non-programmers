@@ -44,13 +44,53 @@ interface VariableHighlightFuncUnboundState {
   badgeType: 'funcUnbound'
 }
 
-interface VariableActiveFuncUnboundState {
-  highlightType: 'active'
+interface VariableHighlightCallArgState {
+  highlightType: 'highlighted'
+  badgeType: 'callArg'
+}
+
+interface VariableActiveCallArgState {
+  highlightType: 'highlighted'
+  badgeType: 'callArg'
+}
+
+interface VariableConflictFuncUnboundState {
+  highlightType: 'conflict'
   badgeType: 'funcUnbound'
 }
 
-interface VariableHighlightCallArgState {
-  highlightType: 'highlighted'
+interface VariableConflictCallArgState {
+  highlightType: 'conflict'
+  badgeType: 'callArg'
+}
+
+interface VariableConflictResolvedFuncUnboundState {
+  highlightType: 'conflictResolved'
+  badgeType: 'funcUnbound'
+}
+
+interface VariableConflictResolvedFuncBoundState {
+  highlightType: 'conflictResolved'
+  badgeType: 'funcBound'
+}
+
+interface VariableMatchFuncBoundState {
+  highlightType: 'match'
+  badgeType: 'funcBound'
+}
+
+interface VariableBetaReducedState {
+  highlightType: 'match'
+  badgeType: 'betaReduced'
+}
+
+interface VariableRemovedFuncArgState {
+  highlightType: 'removed'
+  badgeType: 'funcArg'
+}
+
+interface VariableRemovedCallArgState {
+  highlightType: 'removed'
   badgeType: 'callArg'
 }
 
@@ -63,45 +103,16 @@ export type VariableUiStates =
   | VariableHighlightFuncArgState
   | VariableActiveFuncArgState
   | VariableHighlightFuncUnboundState
-  | VariableActiveFuncUnboundState
   | VariableHighlightCallArgState
-  | {
-      highlightType: 'active'
-      badgeType: 'funcBound' | 'funcArg' | 'callArg'
-    }
-  | {
-      highlightType: 'highlighted'
-    } & ({
-      badgeType: 'funcBound' | 'funcArg' | 'callArg'
-    })
-  | {
-      highlightType: 'unboundHighlighted'
-    } & {
-      badgeType: 'funcUnbound'
-    }
-  | {
-      // TODO: yellow plain background
-      highlightType: 'matchHighlighted'
-    } & {
-      badgeType: 'betaReduced'
-    }
-  | {
-      highlightType: 'beingRemoved'
-    } & {
-      badgeType: 'funcArg' | 'callArg'
-    }
-  | {
-      // TODO: pink plain background
-      highlightType: 'conflict'
-    } & {
-      badgeType: 'funcUnbound' | 'callArg'
-    }
-  | {
-      // TODO: yellow plain background
-      highlightType: 'conflictResolved'
-    } & {
-      badgeType: 'funcBound' | 'funcUnbound'
-    }
+  | VariableActiveCallArgState
+  | VariableConflictFuncUnboundState
+  | VariableConflictCallArgState
+  | VariableConflictResolvedFuncUnboundState
+  | VariableConflictResolvedFuncBoundState
+  | VariableMatchFuncBoundState
+  | VariableBetaReducedState
+  | VariableRemovedFuncArgState
+  | VariableRemovedCallArgState
 
 export type CallExpressionStates =
   | 'inactive'
@@ -186,6 +197,19 @@ type WithState<
   readonly func: E
 }
 
+export type InactiveVariableExpression = WithUiState<VariableInactiveState>
+export interface InactiveFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      InactiveVariableExpression,
+      InactiveExpression
+    > {}
+export interface InactiveCallExpression
+  extends WithState<'active', InactiveExpression> {}
+export type InactiveExpression =
+  | InactiveVariableExpression
+  | InactiveFunctionExpression
+  | InactiveCallExpression
+
 export type ActiveVariableExpression = WithUiState<
   VariableEmphasizePriorityOneState
 >
@@ -250,10 +274,9 @@ export type ShowFuncUnboundExpression =
   | ShowFuncUnboundCallExpression
 
 export type ShowCallArgVariableExpression =
-  | WithUiState<VariableActiveState>
   | WithUiState<VariableActiveFuncBoundState>
   | WithUiState<VariableActiveFuncArgState>
-  | WithUiState<VariableActiveFuncUnboundState>
+  | WithUiState<VariableHighlightFuncUnboundState>
   | WithUiState<VariableHighlightCallArgState>
 export interface ShowCallArgFunctionExpression
   extends FunctionExpressionWithArgBody<
@@ -266,3 +289,104 @@ export type ShowCallArgExpression =
   | ShowCallArgVariableExpression
   | ShowCallArgFunctionExpression
   | ShowCallArgCallExpression
+
+export type NeedsAlphaConvertVariableExpression =
+  | WithUiState<VariableActiveFuncBoundState>
+  | WithUiState<VariableActiveFuncArgState>
+  | WithUiState<VariableHighlightFuncUnboundState>
+  | WithUiState<VariableActiveCallArgState>
+  | WithUiState<VariableConflictFuncUnboundState>
+  | WithUiState<VariableConflictCallArgState>
+export interface NeedsAlphaConvertFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      NeedsAlphaConvertVariableExpression,
+      NeedsAlphaConvertExpression
+    > {}
+export interface NeedsAlphaConvertCallExpression
+  extends WithState<'needsAlphaConvert', NeedsAlphaConvertExpression> {}
+export type NeedsAlphaConvertExpression =
+  | NeedsAlphaConvertVariableExpression
+  | NeedsAlphaConvertFunctionExpression
+  | NeedsAlphaConvertCallExpression
+
+export type AlphaConvertDoneVariableExpression =
+  | WithUiState<VariableActiveFuncBoundState>
+  | WithUiState<VariableActiveFuncArgState>
+  | WithUiState<VariableHighlightFuncUnboundState>
+  | WithUiState<VariableActiveCallArgState>
+  | WithUiState<VariableConflictResolvedFuncUnboundState>
+  | WithUiState<VariableConflictResolvedFuncBoundState>
+export interface AlphaConvertDoneFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      AlphaConvertDoneVariableExpression,
+      AlphaConvertDoneExpression
+    > {}
+export interface AlphaConvertDoneCallExpression
+  extends WithState<'alphaConvertDone', AlphaConvertDoneExpression> {}
+export type AlphaConvertDoneExpression =
+  | AlphaConvertDoneVariableExpression
+  | AlphaConvertDoneFunctionExpression
+  | AlphaConvertDoneCallExpression
+
+export type BetaReducePreviewBeforeVariableExpression =
+  | WithUiState<VariableActiveFuncBoundState>
+  | WithUiState<VariableHighlightFuncArgState>
+  | WithUiState<VariableHighlightFuncUnboundState>
+  | WithUiState<VariableActiveCallArgState>
+  | WithUiState<VariableMatchFuncBoundState>
+export interface BetaReducePreviewBeforeFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      BetaReducePreviewBeforeVariableExpression,
+      BetaReducePreviewBeforeExpression
+    > {}
+export interface BetaReducePreviewBeforeCallExpression
+  extends WithState<
+      'betaReducePreviewBefore',
+      BetaReducePreviewBeforeExpression
+    > {}
+export type BetaReducePreviewBeforeExpression =
+  | BetaReducePreviewBeforeVariableExpression
+  | BetaReducePreviewBeforeFunctionExpression
+  | BetaReducePreviewBeforeCallExpression
+
+export type BetaReducePreviewAfterVariableExpression =
+  | WithUiState<VariableActiveFuncBoundState>
+  | WithUiState<VariableActiveFuncArgState>
+  | WithUiState<VariableHighlightFuncUnboundState>
+  | WithUiState<VariableHighlightCallArgState>
+  | WithUiState<VariableMatchFuncBoundState>
+export interface BetaReducePreviewAfterFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      BetaReducePreviewAfterVariableExpression,
+      BetaReducePreviewAfterExpression
+    > {}
+export interface BetaReducePreviewAfterCallExpression
+  extends WithState<
+      'betaReducePreviewAfter',
+      BetaReducePreviewAfterExpression
+    > {}
+export type BetaReducePreviewAfterExpression =
+  | BetaReducePreviewAfterVariableExpression
+  | BetaReducePreviewAfterFunctionExpression
+  | BetaReducePreviewAfterCallExpression
+
+export type BetaReducePreviewCrossedVariableExpression =
+  | WithUiState<VariableActiveFuncBoundState>
+  | WithUiState<VariableRemovedFuncArgState>
+  | WithUiState<VariableHighlightFuncUnboundState>
+  | WithUiState<VariableRemovedCallArgState>
+  | WithUiState<VariableActiveFuncBoundState>
+export interface BetaReducePreviewCrossedFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      BetaReducePreviewCrossedVariableExpression,
+      BetaReducePreviewCrossedExpression
+    > {}
+export interface BetaReducePreviewCrossedCallExpression
+  extends WithState<
+      'betaReducePreviewCrossed',
+      BetaReducePreviewCrossedExpression
+    > {}
+export type BetaReducePreviewCrossedExpression =
+  | BetaReducePreviewCrossedVariableExpression
+  | BetaReducePreviewCrossedFunctionExpression
+  | BetaReducePreviewCrossedCallExpression
