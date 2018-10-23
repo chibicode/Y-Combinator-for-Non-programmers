@@ -38,15 +38,16 @@ function nestCallExpressions(expression: any) {
   }
 }
 
-const buildDefaultVariableExpression = (
+const buildVariableExpression = (
   name: VariableNames,
   bound: boolean
 ): InactiveVariableExpression => ({
   name,
-  uiState: {
-    highlightType: 'inactive'
-  },
+  highlightType: 'inactive',
+  badgeType: 'none',
   type: 'variable',
+  argPriorityAgg: [],
+  funcPriorityAgg: [],
   bound
 })
 
@@ -66,7 +67,7 @@ export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): InactiveExpression {
   if (isVariableExpressionParams(expressionParams)) {
-    return buildDefaultVariableExpression(expressionParams, true)
+    return buildVariableExpression(expressionParams, true)
   } else if (isCallExpressionParams(expressionParams)) {
     let nestedCallExpressionParams: CallExpressionParams
     nestedCallExpressionParams =
@@ -78,11 +79,12 @@ export default function buildExpressionFromParams(
       arg: buildExpressionFromParams(nestedCallExpressionParams[1]),
       func: buildExpressionFromParams(nestedCallExpressionParams[0]),
       state: 'inactive',
-      type: 'call'
+      type: 'call',
+      priority: 0
     }
   } else {
     return {
-      arg: buildDefaultVariableExpression(expressionParams.arg, false),
+      arg: buildVariableExpression(expressionParams.arg, false),
       body: buildExpressionFromParams(expressionParams.body),
       type: 'function'
     }

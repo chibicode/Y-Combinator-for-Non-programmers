@@ -4,14 +4,13 @@ export interface VariableExpression {
   readonly type: 'variable'
   readonly name: VariableNames
   readonly bound: boolean
-  readonly uiState: VariableUiStates
+  readonly highlightType: VariableUiStates['highlightType']
+  readonly badgeType: VariableUiStates['badgeType']
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
 }
 
-type WithUiState<S extends VariableUiStates> = VariableExpression & {
-  readonly uiState: S
-}
+type WithUiState<S extends VariableUiStates> = VariableExpression & S
 
 interface VariableInactiveState {
   highlightType: 'inactive'

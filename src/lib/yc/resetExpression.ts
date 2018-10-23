@@ -32,10 +32,8 @@ export default function resetExpression(
     return {
       type: 'variable',
       name: expression.name,
-      uiState: {
-        highlightType: 'inactive',
-        badgeType: 'none'
-      },
+      highlightType: 'inactive',
+      badgeType: 'none',
       bound: expression.bound,
       argPriorityAgg: [],
       funcPriorityAgg: []
