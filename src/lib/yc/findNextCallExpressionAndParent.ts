@@ -27,12 +27,23 @@ interface HelperStackItem<C extends CallExpression> {
   readonly callParentKey?: 'func' | 'arg'
 }
 
+/**
+ * Run DFS on callExpression to find ExecutableCallExpression
+ * and its parent information (could be missing if root expression).
+ * DFS looks for functions first before arguments.
+ *
+ * @template E
+ * @template C
+ * @template F
+ * @param {C} callExpression
+ * @returns {FindResult<E, C, F>}
+ */
 function helper<
   E extends ExecutableCallExpression,
   C extends CallExpression,
   F extends FunctionExpression
->(expression: C): FindResult<E, C, F> {
-  const stack: Array<HelperStackItem<C>> = [{ expression }]
+>(callExpression: C): FindResult<E, C, F> {
+  const stack: Array<HelperStackItem<C>> = [{ expression: callExpression }]
   const notFound: FindResult<E, C, F> = {}
 
   while (stack.length > 0) {
