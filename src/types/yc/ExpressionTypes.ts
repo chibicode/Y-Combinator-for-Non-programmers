@@ -214,27 +214,15 @@ type Executable<
   readonly priority: 1
 }
 
-// NOTE: Unfortunately these can't be mass-generated using
-// type aliases because they contain recursive types which require using interfaces.
-// I tried creating a type alias like this:
-// type Gen<V extends Variable, CS extends CallState> = {
-//   function: ...
-//   nonExecutableCall: ...
-//   executableCall: ...
-//   child: V | Gen<V, CS>['function'] | Gen<V, CS>['nonExecutable]
-// }
-// but the recursive calls don't compile. We must use interfaces to get
-// recursive definitions to work, but interfaces can't be created using type aliases.
-export type InactiveVariable = WithUiState<VariableInactiveState>
 export interface InactiveFunction
-  extends FunctionWithArgBody<InactiveVariable, InactiveChild> {}
+  extends FunctionWithArgBody<VariableInactive, InactiveChild> {}
 export interface NonExecutableInactiveCall
   extends NonExecutable<InactiveChild> {}
 export interface ExecutableInactiveCall
-  extends Executable<'inactive', InactiveFunction, InactiveVariable> {}
+  extends Executable<'inactive', InactiveFunction, VariableInactive> {}
 export type InactiveCall = NonExecutableInactiveCall | ExecutableInactiveCall
 export type InactiveChild =
-  | InactiveVariable
+  | VariableInactive
   | InactiveFunction
   | NonExecutableInactiveCall
 export type Inactive = InactiveChild | ExecutableInactiveCall
@@ -242,23 +230,19 @@ export type Inactive = InactiveChild | ExecutableInactiveCall
 // NOTE: ExecutableActiveVariable will only appear
 // as an arg of ExecutableActiveCall or
 // as an arg of arg/func of ExecutableActiveCall's child function.
-export type ActiveVariable = WithUiState<VariableActiveState>
-export type ExecutableActiveVariable = WithUiState<
-  VariableEmphasizePriorityOneState
->
 export interface ActiveFunction
-  extends FunctionWithArgBody<ActiveVariable, ActiveChild> {}
+  extends FunctionWithArgBody<VariableActive, ActiveChild> {}
 export interface ExecutableActiveFunction
-  extends FunctionWithArgBody<ExecutableActiveVariable, ActiveChild> {}
+  extends FunctionWithArgBody<VariableEmphasizePriorityOne, ActiveChild> {}
 export interface ExecutableActiveCall
   extends Executable<
       'active',
       ExecutableActiveFunction,
-      ExecutableActiveVariable
+      VariableEmphasizePriorityOne
     > {}
 export interface NonExecutableActiveCall extends NonExecutable<ActiveChild> {}
 export type ActiveChild =
-  | ActiveVariable
+  | VariableActive
   | ActiveFunction
   | NonExecutableActiveCall
 
