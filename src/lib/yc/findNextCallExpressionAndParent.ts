@@ -33,6 +33,8 @@ function helper<
   F extends FunctionExpression
 >(expression: C): FindResult<E, C, F> {
   const stack: Array<HelperStackItem<C>> = [{ expression }]
+  const notFound: FindResult<E, C, F> = {}
+
   while (stack.length > 0) {
     const current = stack.pop()
     if (current && current.expression) {
@@ -64,7 +66,7 @@ function helper<
       }
     }
   }
-  return {}
+  return notFound
 }
 
 export default function findNextCallExpressionAndParent<
@@ -72,9 +74,10 @@ export default function findNextCallExpressionAndParent<
   C extends CallExpression,
   F extends FunctionExpression
 >(expression: Expression): FindResult<E, C, F> {
-  if (isCallExpression(expression)) {
+  const notFound: FindResult<E, C, F> = {}
+  if (isCallExpression<C>(expression)) {
     return helper<E, C, F>(expression)
-  } else if (isFunctionExpression(expression)) {
+  } else if (isFunctionExpression<F>(expression)) {
     let currentExpression: Expression = expression
     let previousExpression: F | null = null
     while (isFunctionExpression<F>(currentExpression)) {
@@ -91,10 +94,7 @@ export default function findNextCallExpressionAndParent<
           expression: helperResult.expression
         }
       }
-    } else {
-      return {}
     }
-  } else {
-    return {}
   }
+  return notFound
 }
