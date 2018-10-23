@@ -1,4 +1,4 @@
-import produce, { Draft, DraftObject } from 'immer'
+import produce, { DraftObject } from 'immer'
 import cloneDeep from 'lodash/cloneDeep'
 import alphaConvert from 'src/lib/yc/alphaConvert'
 import betaReduce from 'src/lib/yc/betaReduce'
@@ -69,7 +69,7 @@ function stepToBetaReduceBefore(
 type DE = DraftObject<ExecutableCallExpression>
 
 const recipe = (
-  draftContainer: Draft<
+  draftContainer: DraftObject<
     NeedsResetExpressionContainer | PrioritizedExpressionContainer
   >
 ): NeedsResetExpressionContainer | PrioritizedExpressionContainer | void => {
