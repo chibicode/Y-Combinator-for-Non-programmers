@@ -1,7 +1,4 @@
-import {
-  isCallExpression,
-  isFunctionExpression
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -26,13 +23,13 @@ export default function expressionToParams(
 ): FunctionExpressionParams
 export default function expressionToParams(e: Expression): ExpressionParams
 export default function expressionToParams(e: Expression): ExpressionParams {
-  if (isCallExpression(e)) {
+  if (isCall(e)) {
     const result: CallExpressionParams = [
       expressionToParams(e.func),
       expressionToParams(e.arg)
     ]
     return result
-  } else if (isFunctionExpression(e)) {
+  } else if (isFunction(e)) {
     return {
       arg: expressionToParams(e.arg),
       body: expressionToParams(e.body)

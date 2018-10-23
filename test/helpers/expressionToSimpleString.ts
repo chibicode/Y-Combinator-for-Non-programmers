@@ -1,8 +1,8 @@
 import {
-  isCallExpression,
+  isCall,
   isPrioritizedCallExpression,
   isPrioritizedVariableExpression,
-  isVariableExpression
+  isVariable
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   Expression,
@@ -19,7 +19,7 @@ export default function expressionToSimpleString(
     addPriorityAgg?: boolean
   } = { addPriority: false, addPriorityAgg: false }
 ): string {
-  if (isVariableExpression(expression)) {
+  if (isVariable(expression)) {
     if (addPriorityAgg && isPrioritizedVariableExpression(expression)) {
       const str: string[] = []
       str.push('[')
@@ -35,7 +35,7 @@ export default function expressionToSimpleString(
     } else {
       return expression.name
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     const func = expressionToSimpleString(expression.func, {
       addPriority,
       addPriorityAgg

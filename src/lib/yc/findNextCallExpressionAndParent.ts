@@ -1,7 +1,7 @@
 import {
-  isCallExpression,
-  isExecutableCallExpression,
-  isFunctionExpression
+  isCall,
+  isExecutableCall,
+  isFunction
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
@@ -49,10 +49,7 @@ function helper<
   while (stack.length > 0) {
     const current = stack.pop()
     if (current && current.expression) {
-      if (
-        current.expression &&
-        isExecutableCallExpression<E>(current.expression)
-      ) {
+      if (current.expression && isExecutableCall<E>(current.expression)) {
         return {
           expression: current.expression,
           callParent: current.callParent,
@@ -60,7 +57,7 @@ function helper<
         }
       }
 
-      if (isCallExpression<C>(current.expression.func)) {
+      if (isCall<C>(current.expression.func)) {
         stack.push({
           expression: current.expression.func,
           callParentKey: 'func',
@@ -68,7 +65,7 @@ function helper<
         })
       }
 
-      if (isCallExpression<C>(current.expression.arg)) {
+      if (isCall<C>(current.expression.arg)) {
         stack.push({
           expression: current.expression.arg,
           callParentKey: 'arg',
@@ -86,16 +83,16 @@ export default function findNextCallExpressionAndParent<
   F extends FunctionExpression
 >(expression: Expression): FindResult<E, C, F> {
   const notFound: FindResult<E, C, F> = {}
-  if (isCallExpression<C>(expression)) {
+  if (isCall<C>(expression)) {
     return helper<E, C, F>(expression)
-  } else if (isFunctionExpression<F>(expression)) {
+  } else if (isFunction<F>(expression)) {
     let currentExpression: Expression = expression
     let previousExpression: F | null = null
-    while (isFunctionExpression<F>(currentExpression)) {
+    while (isFunction<F>(currentExpression)) {
       previousExpression = currentExpression
       currentExpression = currentExpression.body
     }
-    if (isCallExpression<C>(currentExpression)) {
+    if (isCall<C>(currentExpression)) {
       const helperResult = helper<E, C, F>(currentExpression)
       if (helperResult.callParent) {
         return helperResult

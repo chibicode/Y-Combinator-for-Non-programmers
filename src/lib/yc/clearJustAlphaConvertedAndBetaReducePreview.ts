@@ -1,14 +1,10 @@
-import {
-  isCallExpression,
-  isFunctionExpression,
-  isVariableExpression
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function clearJustAlphaConvertedAndBetaReducePreview<
   E extends Expression
 >(expression: E): E {
-  if (isVariableExpression(expression)) {
+  if (isVariable(expression)) {
     if (expression.justAlphaConverted) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, expression, {
@@ -22,12 +18,12 @@ export default function clearJustAlphaConvertedAndBetaReducePreview<
         wasJustBetaReduced: false
       })
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     return Object.assign({}, expression, {
       arg: clearJustAlphaConvertedAndBetaReducePreview(expression.arg),
       func: clearJustAlphaConvertedAndBetaReducePreview(expression.func)
     })
-  } else if (isFunctionExpression(expression)) {
+  } else if (isFunction(expression)) {
     return Object.assign({}, expression, {
       arg: clearJustAlphaConvertedAndBetaReducePreview(expression.arg),
       body: clearJustAlphaConvertedAndBetaReducePreview(expression.body)

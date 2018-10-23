@@ -1,8 +1,5 @@
 import uniq from 'lodash/uniq'
-import {
-  isCallExpression,
-  isVariableExpression
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -14,7 +11,7 @@ function getAllVariableNamesWithDuplicates(
   expression: Expression,
   { filter }: GetAllVariableNamesOptions
 ): ReadonlyArray<VariableNames> {
-  if (isVariableExpression(expression)) {
+  if (isVariable(expression)) {
     if (
       (filter === 'bound' && expression.bound) ||
       (filter === 'unbound' && !expression.bound) ||
@@ -24,7 +21,7 @@ function getAllVariableNamesWithDuplicates(
     } else {
       return []
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     return getAllVariableNames(expression.arg).concat(
       getAllVariableNames(expression.func)
     )

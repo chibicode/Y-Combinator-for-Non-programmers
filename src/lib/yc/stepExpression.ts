@@ -1,47 +1,34 @@
 import {
-  ActiveChildExpression,
-  ActiveFunctionExpression,
-  ActiveVariableExpression,
-  ExecutableActiveCallExpression,
-  ExecutableActiveFunctionExpression,
-  ExecutableActiveVariableExpression,
-  ExecutableInactiveCallExpression,
-  InactiveCallExpression,
-  InactiveChildExpression,
-  InactiveFunctionExpression,
-  InactiveVariableExpression,
-  NonExecutableActiveCallExpression
+  ActiveChild,
+  ActiveFunction,
+  ActiveVariable,
+  ExecutableActiveCall,
+  ExecutableActiveFunction,
+  ExecutableActiveVariable,
+  ExecutableInactiveCall,
+  InactiveCall,
+  InactiveChild,
+  InactiveFunction,
+  InactiveVariable,
+  NonExecutableActiveCall
 } from 'src/types/yc/ExpressionTypes'
-import {
-  isFunctionExpression,
-  isVariableExpression
-} from './expressionTypeGuards'
+import { isFunction, isVariable } from './expressionTypeGuards'
 
-const inactiveToActiveHelper = (
-  e: InactiveCallExpression
-): ExecutableActiveCallExpression => {
+const inactiveToActiveHelper = (e: InactiveCall): ExecutableActiveCall => {
   return inactiveToActiveHelper(e)
 }
 
-function allInactiveToActiveVariable(
-  x: InactiveVariableExpression
-): ActiveVariableExpression
-function allInactiveToActiveVariable(
-  x: InactiveFunctionExpression
-): ActiveFunctionExpression
-function allInactiveToActiveVariable(
-  x: InactiveCallExpression
-): NonExecutableActiveCallExpression
-function allInactiveToActiveVariable(
-  x: InactiveChildExpression
-): ActiveChildExpression
-function allInactiveToActiveVariable(x: InactiveChildExpression) {
-  if (isVariableExpression(x)) {
+function allInactiveToActiveVariable(x: InactiveVariable): ActiveVariable
+function allInactiveToActiveVariable(x: InactiveFunction): ActiveFunction
+function allInactiveToActiveVariable(x: InactiveCall): NonExecutableActiveCall
+function allInactiveToActiveVariable(x: InactiveChild): ActiveChild
+function allInactiveToActiveVariable(x: InactiveChild) {
+  if (isVariable(x)) {
     return {
       ...x,
       highlightType: 'active'
     }
-  } else if (isFunctionExpression(x)) {
+  } else if (isFunction(x)) {
     return {
       ...x,
       arg: allInactiveToActiveVariable(x.arg),
@@ -57,29 +44,27 @@ function allInactiveToActiveVariable(x: InactiveChildExpression) {
 }
 
 const inactiveToExecutableActiveVariable = (
-  x: InactiveVariableExpression
-): ExecutableActiveVariableExpression => ({
+  x: InactiveVariable
+): ExecutableActiveVariable => ({
   ...x,
   highlightType: 'activeEmphasizePriorityOne'
 })
 
-const inactiveToExecutableActiveFunctionExpression = (
-  x: InactiveFunctionExpression
-): ExecutableActiveFunctionExpression => ({
+const inactiveToExecutableActiveFunction = (
+  x: InactiveFunction
+): ExecutableActiveFunction => ({
   ...x,
   arg: inactiveToExecutableActiveVariable(x.arg),
   body: allInactiveToActiveVariable(x.body)
 })
 
-const inactiveToActive = (
-  e: ExecutableInactiveCallExpression
-): ExecutableActiveCallExpression => {
+const inactiveToActive = (e: ExecutableInactiveCall): ExecutableActiveCall => {
   return {
     ...e,
     state: 'active',
-    arg: isFunctionExpression(e.arg)
-      ? inactiveToExecutableActiveFunctionExpression(e.arg)
+    arg: isFunction(e.arg)
+      ? inactiveToExecutableActiveFunction(e.arg)
       : inactiveToExecutableActiveVariable(e.arg),
-    func: inactiveToExecutableActiveFunctionExpression(e.func)
+    func: inactiveToExecutableActiveFunction(e.func)
   }
 }

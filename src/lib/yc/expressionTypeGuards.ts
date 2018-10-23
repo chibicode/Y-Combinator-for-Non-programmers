@@ -1,47 +1,34 @@
 import {
   CallExpression,
-  CallExpressionStates,
-  ExecutableCallExpression,
-  ExecutableInactiveCallExpression,
+  ExecutableCall,
   Expression,
   FunctionExpression,
-  InactiveCallExpression,
-  InactiveExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
-import { isFunction } from 'util'
 
-export function isVariableExpression(
+export function isVariable(
   expression: Expression
 ): expression is VariableExpression {
   return expression.type === 'variable'
 }
 
-export function isCallExpression<E extends CallExpression = CallExpression>(
+export function isCall<E extends CallExpression = CallExpression>(
   expression: Expression
 ): expression is E {
   return expression.type === 'call'
 }
 
-export function isFunctionExpression<
-  E extends FunctionExpression = FunctionExpression
->(expression: Expression): expression is E {
+export function isFunction<E extends FunctionExpression = FunctionExpression>(
+  expression: Expression
+): expression is E {
   return expression.type === 'function'
 }
 
-export function isCallExpressionWithState<
-  E extends CallExpression,
-  S extends CallExpressionStates
->(expression: E, state: S): expression is E & { state: S } {
-  return expression.state === state
-}
-
-export function isExecutableCallExpression<E extends ExecutableCallExpression>(
+export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
   return (
-    (isFunctionExpression(expression.arg) ||
-      isVariableExpression(expression.arg)) &&
+    (isFunction(expression.arg) || isVariable(expression.arg)) &&
     isFunction(expression.func) &&
     expression.priority === 1
   )

@@ -1,7 +1,4 @@
-import {
-  isCallExpression,
-  isVariableExpression
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   ImmediatelyExecutableCallExpression,
   PrioritizedExpression,
@@ -19,14 +16,14 @@ function helper({
   from: VariableNames
   to: PrioritizedVariableExpression | PrioritizedFunctionExpression
 }): PrioritizedExpression {
-  if (isVariableExpression(expression)) {
+  if (isVariable(expression)) {
     if (expression.name === from) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, to, { wasJustBetaReduced: true })
     } else {
       return Object.assign({}, expression, { wasJustBetaReduced: false })
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     return {
       ...expression,
       arg: helper({

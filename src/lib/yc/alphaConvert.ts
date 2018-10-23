@@ -3,11 +3,7 @@ import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
-import {
-  isCallExpression,
-  isFunctionExpression,
-  isVariableExpression
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 import variableNamesArray from 'src/lib/yc/variableNamesArray'
 import {
@@ -25,7 +21,7 @@ function helper<E extends Expression>({
   expression: E
   mapping: ReplaceMapping
 }): E {
-  if (isVariableExpression(expression)) {
+  if (isVariable(expression)) {
     if (mapping[expression.name]) {
       // See: https://github.com/Microsoft/TypeScript/pull/13288#issuecomment-367396818
       return Object.assign({}, expression, {
@@ -35,12 +31,12 @@ function helper<E extends Expression>({
     } else {
       return expression
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     return Object.assign({}, expression, {
       arg: helper({ expression: expression.arg, mapping }),
       func: helper({ expression: expression.func, mapping })
     })
-  } else if (isFunctionExpression(expression)) {
+  } else if (isFunction(expression)) {
     return Object.assign({}, expression, {
       arg: helper({ expression: expression.arg, mapping }),
       body: helper({ expression: expression.body, mapping })

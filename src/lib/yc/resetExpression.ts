@@ -1,7 +1,4 @@
-import {
-  isCallExpression,
-  isVariableExpression
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -28,7 +25,7 @@ export default function resetExpression(
 export default function resetExpression(
   expression: Expression
 ): InactiveExpression {
-  if (isVariableExpression(expression)) {
+  if (isVariable(expression)) {
     return {
       type: 'variable',
       name: expression.name,
@@ -38,7 +35,7 @@ export default function resetExpression(
       argPriorityAgg: [],
       funcPriorityAgg: []
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     return {
       type: 'call',
       state: 'inactive',
