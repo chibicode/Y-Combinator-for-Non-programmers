@@ -171,7 +171,10 @@ const recipe = (
     const betaReduced: PrioritizedExpression = betaReduce(
       clearJustAlphaConvertedAndBetaReducePreview(expression)
     )
-    if (!nextCallExpressionAndParent.expression) {
+    if (
+      !nextCallExpressionAndParent.callParent ||
+      !nextCallExpressionAndParent.funcParent
+    ) {
       return {
         ...e,
         expression: betaReduced,
