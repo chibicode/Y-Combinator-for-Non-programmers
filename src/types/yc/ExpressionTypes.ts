@@ -122,6 +122,41 @@ export type VariableUiStates =
   | VariableRemovedFuncArgState
   | VariableRemovedCallArgState
 
+export type VariableInactive = WithUiState<VariableInactiveState>
+export type VariableActive = WithUiState<VariableActiveState>
+export type VariableEmphasizePriorityOne = WithUiState<
+  VariableEmphasizePriorityOneState
+>
+export type VariableHighlightFuncBound = WithUiState<
+  VariableHighlightFuncBoundState
+>
+export type VariableActiveFuncBound = WithUiState<VariableActiveFuncBoundState>
+export type VariableHighlightFuncArg = WithUiState<
+  VariableHighlightFuncArgState
+>
+export type VariableActiveFuncArg = WithUiState<VariableActiveFuncArgState>
+export type VariableHighlightFuncUnbound = WithUiState<
+  VariableHighlightFuncUnboundState
+>
+export type VariableHighlightCallArg = WithUiState<
+  VariableHighlightCallArgState
+>
+export type VariableActiveCallArg = WithUiState<VariableActiveCallArgState>
+export type VariableConflictFuncUnbound = WithUiState<
+  VariableConflictFuncUnboundState
+>
+export type VariableConflictCallArg = WithUiState<VariableConflictCallArgState>
+export type VariableConflictResolvedFuncUnbound = WithUiState<
+  VariableConflictResolvedFuncUnboundState
+>
+export type VariableConflictResolvedFuncBound = WithUiState<
+  VariableConflictResolvedFuncBoundState
+>
+export type VariableMatchFuncBound = WithUiState<VariableMatchFuncBoundState>
+export type VariableBetaReduced = WithUiState<VariableBetaReducedState>
+export type VariableRemovedFuncArg = WithUiState<VariableRemovedFuncArgState>
+export type VariableRemovedCallArg = WithUiState<VariableRemovedCallArgState>
+
 export type CallExpressionStates =
   | 'inactive'
   | 'active'
