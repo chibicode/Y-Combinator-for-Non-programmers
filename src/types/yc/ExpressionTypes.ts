@@ -216,7 +216,11 @@ export type InactiveExpression =
   | InactiveChildExpression
   | ExecutableInactiveCallExpression
 
-export type ActiveVariableExpression = WithUiState<
+// NOTE: ExecutableActiveVariableExpression will only appear
+// as an arg of ExecutableActiveCallExpression or
+// as an arg of arg/func of ExecutableActiveCallExpression's child function.
+export type ActiveVariableExpression = WithUiState<VariableActiveState>
+export type ExecutableActiveVariableExpression = WithUiState<
   VariableEmphasizePriorityOneState
 >
 export interface ActiveFunctionExpression
@@ -224,11 +228,16 @@ export interface ActiveFunctionExpression
       ActiveVariableExpression,
       ActiveChildExpression
     > {}
+export interface ExecutableActiveFunctionExpression
+  extends FunctionExpressionWithArgBody<
+      ExecutableActiveVariableExpression,
+      ActiveChildExpression
+    > {}
 export interface ExecutableActiveCallExpression
   extends Executable<
       'active',
-      ActiveFunctionExpression,
-      ActiveVariableExpression
+      ExecutableActiveFunctionExpression,
+      ExecutableActiveVariableExpression
     > {}
 export interface NonExecutableActiveCallExpression
   extends NonExecutable<ActiveChildExpression> {}
