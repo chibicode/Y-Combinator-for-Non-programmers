@@ -214,6 +214,18 @@ type Executable<
   readonly priority: 1
 }
 
+type ExecutableWithArgFunc<
+  S extends CallExpressionStates,
+  AV extends VariableExpression,
+  AF extends FunctionExpression,
+  F extends FunctionExpression
+> = CallExpression & {
+  readonly arg: AV | AF
+  readonly state: S
+  readonly func: F
+  readonly priority: 1
+}
+
 export interface InactiveFunction
   extends FunctionWithArgBody<VariableInactive, InactiveChild> {}
 export interface NonExecutableInactiveCall
@@ -227,7 +239,7 @@ export type InactiveChild =
   | NonExecutableInactiveCall
 export type Inactive = InactiveChild | ExecutableInactiveCall
 
-// NOTE: ExecutableActiveVariable will only appear
+// ExecutableActiveVariable will only appear
 // as an arg of ExecutableActiveCall or
 // as an arg of arg/func of ExecutableActiveCall's child function.
 export interface ActiveFunction
@@ -246,19 +258,31 @@ export type ActiveChild =
   | ActiveFunction
   | NonExecutableActiveCall
 
-export type ShowFuncBoundVariable =
-  | WithUiState<VariableHighlightFuncBoundState>
-  | WithUiState<VariableActiveState>
-export interface ShowFuncBoundFunction
-  extends FunctionWithArgBody<ShowFuncBoundVariable, ShowFuncBoundChild> {}
+// On func side, variables (except args) are all VariableHighlightFuncBound
+// On arg side, variables are all VariableActive
 export interface ExecutableShowFuncBoundCall
-  extends Executable<'active', ShowFuncBoundFunction, ShowFuncBoundVariable> {}
-export interface NonExecutableShowFuncBoundCall
-  extends NonExecutable<ShowFuncBoundChild> {}
-export type ShowFuncBoundChild =
-  | ShowFuncBoundVariable
-  | ShowFuncBoundFunction
-  | NonExecutableShowFuncBoundCall
+  extends ExecutableWithArgFunc<
+      'active',
+      VariableActive,
+      ShowFuncBoundArgFunction,
+      ShowFuncBoundFuncFunction
+    > {}
+export interface ShowFuncBoundArgFunction
+  extends FunctionWithArgBody<VariableActive, ShowFuncBoundArgChild> {}
+export interface ShowFuncBoundFuncFunction
+  extends FunctionWithArgBody<VariableActive, ShowFuncBoundFuncChild> {}
+export type ShowFuncBoundArgChild =
+  | VariableActive
+  | ShowFuncBoundArgFunction
+  | NonExecutableShowFuncBoundArgCall
+export interface NonExecutableShowFuncBoundArgCall
+  extends NonExecutable<ShowFuncBoundArgChild> {}
+export type ShowFuncBoundFuncChild =
+  | VariableHighlightFuncBound
+  | ShowFuncBoundFuncFunction
+  | NonExecutableShowFuncBoundFuncCall
+export interface NonExecutableShowFuncBoundFuncCall
+  extends NonExecutable<ShowFuncBoundFuncChild> {}
 
 export type ShowFuncArgVariable =
   | WithUiState<VariableActiveState>
