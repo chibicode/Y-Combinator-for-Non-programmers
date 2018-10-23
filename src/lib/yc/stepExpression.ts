@@ -10,17 +10,16 @@ import {
   InactiveChild,
   InactiveFunction,
   InactiveVariable,
-  NonExecutableActiveCall
+  NonExecutableActiveCall,
+  NonExecutableInactiveCall
 } from 'src/types/yc/ExpressionTypes'
 import { isFunction, isVariable } from './expressionTypeGuards'
 
-const inactiveToActiveHelper = (e: InactiveCall): ExecutableActiveCall => {
-  return inactiveToActiveHelper(e)
-}
-
 function allInactiveToActiveVariable(x: InactiveVariable): ActiveVariable
 function allInactiveToActiveVariable(x: InactiveFunction): ActiveFunction
-function allInactiveToActiveVariable(x: InactiveCall): NonExecutableActiveCall
+function allInactiveToActiveVariable(
+  x: NonExecutableInactiveCall
+): NonExecutableActiveCall
 function allInactiveToActiveVariable(x: InactiveChild): ActiveChild
 function allInactiveToActiveVariable(x: InactiveChild) {
   if (isVariable(x)) {
@@ -62,7 +61,7 @@ const inactiveToActive = (e: ExecutableInactiveCall): ExecutableActiveCall => {
   return {
     ...e,
     state: 'active',
-    arg: isFunction(e.arg)
+    arg: isFunction<InactiveFunction>(e.arg)
       ? inactiveToExecutableActiveFunction(e.arg)
       : inactiveToExecutableActiveVariable(e.arg),
     func: inactiveToExecutableActiveFunction(e.func)
