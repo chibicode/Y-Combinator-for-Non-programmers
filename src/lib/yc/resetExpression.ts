@@ -3,33 +3,33 @@ import {
   CallExpression,
   Expression,
   FunctionExpression,
-  InactiveCallExpression,
-  InactiveExpression,
-  InactiveFunctionExpression,
-  InactiveVariableExpression,
+  DefaultCallExpression,
+  DefaultExpression,
+  DefaultFunctionExpression,
+  DefaultVariableExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpression(
   expression: VariableExpression
-): InactiveVariableExpression
+): DefaultVariableExpression
 export default function resetExpression(
   expression: FunctionExpression
-): InactiveFunctionExpression
+): DefaultFunctionExpression
 export default function resetExpression(
   expression: CallExpression
-): InactiveCallExpression
+): DefaultCallExpression
 export default function resetExpression(
   expression: Expression
-): InactiveExpression
+): DefaultExpression
 export default function resetExpression(
   expression: Expression
-): InactiveExpression {
+): DefaultExpression {
   if (isVariable(expression)) {
     return {
       type: 'variable',
       name: expression.name,
-      highlightType: 'inactive',
+      highlightType: 'default',
       badgeType: 'none',
       bound: expression.bound,
       argPriorityAgg: [],
@@ -38,7 +38,7 @@ export default function resetExpression(
   } else if (isCall(expression)) {
     return {
       type: 'call',
-      state: 'inactive',
+      state: 'default',
       arg: resetExpression(expression.arg),
       func: resetExpression(expression.func),
       priority: 0

@@ -12,8 +12,8 @@ export interface VariableExpression {
 
 type WithUiState<S extends VariableUiStates> = VariableExpression & S
 
-interface VariableInactiveState {
-  readonly highlightType: 'inactive'
+interface VariableDefaultState {
+  readonly highlightType: 'default'
   readonly badgeType: 'none'
 }
 
@@ -114,7 +114,7 @@ interface VariableRemovedCallArgState {
 }
 
 export type VariableUiStates =
-  | VariableInactiveState
+  | VariableDefaultState
   | VariableActiveState
   | VariableEmphasizePriorityOneState
   | VariableHighlightFuncBoundState
@@ -133,7 +133,7 @@ export type VariableUiStates =
   | VariableRemovedFuncArgState
   | VariableRemovedCallArgState
 
-export type InactiveVariable = WithUiState<VariableInactiveState>
+export type DefaultVariable = WithUiState<VariableDefaultState>
 export type ActiveVariable = WithUiState<VariableActiveState>
 export type EmphasizePriorityOneVariable = WithUiState<
   VariableEmphasizePriorityOneState
@@ -169,7 +169,7 @@ export type RemovedFuncArgVariable = WithUiState<VariableRemovedFuncArgState>
 export type RemovedCallArgVariable = WithUiState<VariableRemovedCallArgState>
 
 export type CallExpressionStates =
-  | 'inactive'
+  | 'default'
   | 'active'
   | 'showFuncBound'
   | 'showFuncArg'
@@ -210,7 +210,7 @@ type FunctionWithArgBody<
 
 type NonExecutable<E extends Expression> = CallExpression & {
   readonly arg: E
-  readonly state: 'inactive'
+  readonly state: 'default'
   readonly func: E
 }
 
@@ -237,18 +237,17 @@ type ExecutableWithArgFunc<
   readonly priority: 1
 }
 
-export interface InactiveFunction
-  extends FunctionWithArgBody<InactiveVariable, InactiveChild> {}
-export interface NonExecutableInactiveCall
-  extends NonExecutable<InactiveChild> {}
-export interface ExecutableInactiveCall
-  extends Executable<'inactive', InactiveFunction, InactiveVariable> {}
-export type InactiveCall = NonExecutableInactiveCall | ExecutableInactiveCall
-export type InactiveChild =
-  | InactiveVariable
-  | InactiveFunction
-  | NonExecutableInactiveCall
-export type Inactive = InactiveChild | ExecutableInactiveCall
+export interface DefaultFunction
+  extends FunctionWithArgBody<DefaultVariable, DefaultChild> {}
+export interface NonExecutableDefaultCall extends NonExecutable<DefaultChild> {}
+export interface ExecutableDefaultCall
+  extends Executable<'default', DefaultFunction, DefaultVariable> {}
+export type DefaultCall = NonExecutableDefaultCall | ExecutableDefaultCall
+export type DefaultChild =
+  | DefaultVariable
+  | DefaultFunction
+  | NonExecutableDefaultCall
+export type Default = DefaultChild | ExecutableDefaultCall
 
 // ExecutableActiveVariable will only appear
 // as an arg of ExecutableActiveCall or
@@ -469,7 +468,7 @@ export type BetaReducePreviewCrossedChild =
   | NonExecutableBetaReducePreviewCrossedCall
 
 export type ExecutableCall =
-  | ExecutableInactiveCall
+  | ExecutableDefaultCall
   | ExecutableActiveCall
   | ExecutableShowFuncBoundCall
   | ExecutableShowFuncArgCall
@@ -481,8 +480,8 @@ export type ExecutableCall =
   | ExecutableBetaReducePreviewAfterCall
   | ExecutableBetaReducePreviewCrossedCall
 
-type ExecutableCallWithState<S extends CallStates> = S extends 'inactive'
-  ? ExecutableInactiveCall
+type ExecutableCallWithState<S extends CallStates> = S extends 'default'
+  ? ExecutableDefaultCall
   : S extends 'active'
     ? ExecutableActiveCall
     : S extends 'showFuncBound'

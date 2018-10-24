@@ -127,7 +127,7 @@ export default class ExpressionPrioritiesLabel extends React.Component<
                     bottom: 0px;
                   `
             }
-            z-index: ${zIndices('expressionPriorityNumberWrapperInactive')};
+            z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
           `}
         >
           <ExpressionPrioritiesLabelExpanded

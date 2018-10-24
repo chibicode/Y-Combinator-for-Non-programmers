@@ -6,16 +6,16 @@ import {
   EmphasizePriorityOneVariable,
   ExecutableActiveCall,
   ExecutableActiveFunction,
-  ExecutableInactiveCall,
+  ExecutableDefaultCall,
   ExecutableShowFuncBoundCall,
   Expression,
   FunctionExpression,
   HighlightFuncBoundVariable,
-  InactiveChild,
-  InactiveFunction,
-  InactiveVariable,
+  DefaultChild,
+  DefaultFunction,
+  DefaultVariable,
   NonExecutableActiveCall,
-  NonExecutableInactiveCall,
+  NonExecutableDefaultCall,
   NonExecutableShowFuncBoundFuncCall,
   ShowFuncBoundArgFunction,
   ShowFuncBoundFuncChild,
@@ -25,32 +25,32 @@ import {
 } from 'src/types/yc/ExpressionTypes'
 import { isCall, isFunction, isVariable } from './expressionTypeGuards'
 
-function allInactiveToActive(x: InactiveVariable): ActiveVariable
-function allInactiveToActive(x: InactiveFunction): ActiveFunction
-function allInactiveToActive(
-  x: NonExecutableInactiveCall
+function allDefaultToActive(x: DefaultVariable): ActiveVariable
+function allDefaultToActive(x: DefaultFunction): ActiveFunction
+function allDefaultToActive(
+  x: NonExecutableDefaultCall
 ): NonExecutableActiveCall
-function allInactiveToActive(x: InactiveChild): ActiveChild
-function allInactiveToActive(x: InactiveChild): ActiveChild {
+function allDefaultToActive(x: DefaultChild): ActiveChild
+function allDefaultToActive(x: DefaultChild): ActiveChild {
   if (isVariable(x)) {
     return { ...x, highlightType: 'active' }
   } else if (isFunction(x)) {
     return {
       ...x,
-      arg: allInactiveToActive(x.arg),
-      body: allInactiveToActive(x.body)
+      arg: allDefaultToActive(x.arg),
+      body: allDefaultToActive(x.body)
     }
   } else {
     return {
       ...x,
-      arg: allInactiveToActive(x.arg),
-      func: allInactiveToActive(x.func)
+      arg: allDefaultToActive(x.arg),
+      func: allDefaultToActive(x.func)
     }
   }
 }
 
-function inactiveVariableToEmphasize(
-  x: InactiveVariable
+function defaultVariableToEmphasize(
+  x: DefaultVariable
 ): EmphasizePriorityOneVariable {
   return {
     ...x,
@@ -58,24 +58,24 @@ function inactiveVariableToEmphasize(
   }
 }
 
-const inactiveToExecutableActiveFunction = (
-  x: InactiveFunction
+const defaultToExecutableActiveFunction = (
+  x: DefaultFunction
 ): ExecutableActiveFunction => ({
   ...x,
-  arg: inactiveVariableToEmphasize(x.arg),
-  body: allInactiveToActive(x.body)
+  arg: defaultVariableToEmphasize(x.arg),
+  body: allDefaultToActive(x.body)
 })
 
-const inactiveCallToActive = (
-  e: ExecutableInactiveCall
+const defaultCallToActive = (
+  e: ExecutableDefaultCall
 ): ExecutableActiveCall => {
   return {
     ...e,
     state: 'active',
-    arg: isFunction<InactiveFunction>(e.arg)
-      ? inactiveToExecutableActiveFunction(e.arg)
-      : inactiveVariableToEmphasize(e.arg),
-    func: inactiveToExecutableActiveFunction(e.func)
+    arg: isFunction<DefaultFunction>(e.arg)
+      ? defaultToExecutableActiveFunction(e.arg)
+      : defaultVariableToEmphasize(e.arg),
+    func: defaultToExecutableActiveFunction(e.func)
   }
 }
 

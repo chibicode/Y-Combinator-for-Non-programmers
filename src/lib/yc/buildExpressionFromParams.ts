@@ -9,10 +9,10 @@ import {
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
-  InactiveCallExpression,
-  InactiveExpression,
-  InactiveFunctionExpression,
-  InactiveVariableExpression
+  DefaultCallExpression,
+  DefaultExpression,
+  DefaultFunctionExpression,
+  DefaultVariableExpression
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -41,9 +41,9 @@ function nestCallExpressions(expression: any) {
 const buildVariableExpression = (
   name: VariableNames,
   bound: boolean
-): InactiveVariableExpression => ({
+): DefaultVariableExpression => ({
   name,
-  highlightType: 'inactive',
+  highlightType: 'default',
   badgeType: 'none',
   type: 'variable',
   argPriorityAgg: [],
@@ -53,19 +53,19 @@ const buildVariableExpression = (
 
 export default function buildExpressionFromParams(
   expressionParams: VariableExpressionParams
-): InactiveVariableExpression
+): DefaultVariableExpression
 export default function buildExpressionFromParams(
   expressionParams: CallExpressionParams
-): InactiveCallExpression
+): DefaultCallExpression
 export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
-): InactiveFunctionExpression
+): DefaultFunctionExpression
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
-): InactiveExpression
+): DefaultExpression
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
-): InactiveExpression {
+): DefaultExpression {
   if (isVariableExpressionParams(expressionParams)) {
     return buildVariableExpression(expressionParams, true)
   } else if (isCallExpressionParams(expressionParams)) {
@@ -78,7 +78,7 @@ export default function buildExpressionFromParams(
     return {
       arg: buildExpressionFromParams(nestedCallExpressionParams[1]),
       func: buildExpressionFromParams(nestedCallExpressionParams[0]),
-      state: 'inactive',
+      state: 'default',
       type: 'call',
       priority: 0
     }

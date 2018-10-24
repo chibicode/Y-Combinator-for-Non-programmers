@@ -7,30 +7,30 @@ import {
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
-  InactiveCallExpression,
-  InactiveExpression,
-  InactiveFunctionExpression,
-  InactiveVariableExpression
+  DefaultCallExpression,
+  DefaultExpression,
+  DefaultFunctionExpression,
+  DefaultVariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function buildExpressionContainer(
   expressionParams: VariableExpressionParams
-): NeedsPrioritizeExpressionContainer<InactiveVariableExpression>
+): NeedsPrioritizeExpressionContainer<DefaultVariableExpression>
 export default function buildExpressionContainer(
   expressionParams: CallExpressionParams
-): NeedsPrioritizeExpressionContainer<InactiveCallExpression>
+): NeedsPrioritizeExpressionContainer<DefaultCallExpression>
 export default function buildExpressionContainer(
   expressionParams: FunctionExpressionParams
-): NeedsPrioritizeExpressionContainer<InactiveFunctionExpression>
+): NeedsPrioritizeExpressionContainer<DefaultFunctionExpression>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
-): NeedsPrioritizeExpressionContainer<InactiveExpression>
+): NeedsPrioritizeExpressionContainer<DefaultExpression>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
-): NeedsPrioritizeExpressionContainer<InactiveExpression> {
+): NeedsPrioritizeExpressionContainer<DefaultExpression> {
   return {
     expression: buildExpressionFromParams(expressionParams),
     containerState: 'needsPrioritize',
-    previouslyChangedExpressionState: 'inactive'
+    previouslyChangedExpressionState: 'default'
   }
 }

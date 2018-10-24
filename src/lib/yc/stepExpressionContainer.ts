@@ -84,8 +84,8 @@ const recipe = (
     throw new Error()
   }
 
-  if (isCallExpressionWithState<DE, 'inactive'>(expression, 'inactive')) {
-    stepCallExpression<'inactive'>(expression, 'active')
+  if (isCallExpressionWithState<DE, 'default'>(expression, 'default')) {
+    stepCallExpression<'default'>(expression, 'active')
   } else if (isCallExpressionWithState<DE, 'active'>(expression, 'active')) {
     stepCallExpression<'active'>(expression, 'showFuncBound')
   } else if (
@@ -180,7 +180,7 @@ const recipe = (
         expression: betaReduced,
         backupExpression: undefined,
         containerState: 'needsReset',
-        previouslyChangedExpressionState: 'inactive',
+        previouslyChangedExpressionState: 'default',
         matchExists: undefined
       }
     } else if (nextCallExpressionAndParent.callParent) {
@@ -197,7 +197,7 @@ const recipe = (
       draftContainer.expression = draftContainer.backupExpression
       delete draftContainer.backupExpression
     }
-    stepCallExpression<'betaReducePreviewCrossed'>(expression, 'inactive')
+    stepCallExpression<'betaReducePreviewCrossed'>(expression, 'default')
   }
 
   draftContainer.previouslyChangedExpressionState = expression.state

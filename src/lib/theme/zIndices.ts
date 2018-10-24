@@ -1,6 +1,6 @@
 export const allZIndices = {
   emojiBadge: 10,
-  expressionPriorityNumberWrapperInactive: 10,
+  expressionPriorityNumberWrapperDefault: 10,
   cross: 20
 }
 

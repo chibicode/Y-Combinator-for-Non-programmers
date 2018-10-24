@@ -122,7 +122,7 @@ const recursiveFunction: FunctionExpressionParams = {
 
 const infiniteLoop: CallExpressionParams = [yCombinator, recursiveFunction]
 
-export const inactiveTestCases: PrioritizedExpressionContainer[] = [
+export const defaultTestCases: PrioritizedExpressionContainer[] = [
   initializeExpressionContainer(basicExpression),
   initializeExpressionContainer(notTrueExpression),
   initializeExpressionContainer(notFalseExpression),
