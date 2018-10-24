@@ -11,12 +11,6 @@ export interface VariableExpression {
 }
 
 type WithUiState<S extends VariableUiStates> = VariableExpression & S
-export type Bound<V extends VariableExpression> = V & {
-  readonly bound: true
-}
-export type Unbound<V extends VariableExpression> = V & {
-  readonly bound: false
-}
 
 interface VariableInactiveState {
   readonly highlightType: 'inactive'
@@ -36,26 +30,31 @@ interface VariableEmphasizePriorityOneState {
 interface VariableHighlightFuncBoundState {
   readonly highlightType: 'highlighted'
   readonly badgeType: 'funcBound'
+  readonly bound: true
 }
 
 interface VariableActiveFuncBoundState {
   readonly highlightType: 'active'
   readonly badgeType: 'funcBound'
+  readonly bound: true
 }
 
 interface VariableHighlightFuncArgState {
   readonly highlightType: 'highlighted'
   readonly badgeType: 'funcArg'
+  readonly bound: false
 }
 
 interface VariableActiveFuncArgState {
   readonly highlightType: 'active'
   readonly badgeType: 'funcArg'
+  readonly bound: false
 }
 
 interface VariableHighlightFuncUnboundState {
   readonly highlightType: 'unboundHighlighted'
   readonly badgeType: 'funcUnbound'
+  readonly bound: false
 }
 
 interface VariableHighlightCallArgState {
@@ -71,6 +70,7 @@ interface VariableActiveCallArgState {
 interface VariableConflictFuncUnboundState {
   readonly highlightType: 'conflict'
   readonly badgeType: 'funcUnbound'
+  readonly bound: false
 }
 
 interface VariableConflictCallArgState {
@@ -81,26 +81,31 @@ interface VariableConflictCallArgState {
 interface VariableConflictResolvedFuncUnboundState {
   readonly highlightType: 'conflictResolved'
   readonly badgeType: 'funcUnbound'
+  readonly bound: false
 }
 
 interface VariableConflictResolvedFuncBoundState {
   readonly highlightType: 'conflictResolved'
   readonly badgeType: 'funcBound'
+  readonly bound: true
 }
 
 interface VariableMatchFuncBoundState {
   readonly highlightType: 'match'
   readonly badgeType: 'funcBound'
+  readonly bound: true
 }
 
 interface VariableBetaReducedState {
   readonly highlightType: 'match'
   readonly badgeType: 'betaReduced'
+  readonly bound: true
 }
 
 interface VariableRemovedFuncArgState {
   readonly highlightType: 'removed'
   readonly badgeType: 'funcArg'
+  readonly bound: false
 }
 
 interface VariableRemovedCallArgState {
@@ -233,11 +238,11 @@ type ExecutableWithArgFunc<
 }
 
 export interface InactiveFunction
-  extends FunctionWithArgBody<Unbound<InactiveVariable>, InactiveChild> {}
+  extends FunctionWithArgBody<InactiveVariable, InactiveChild> {}
 export interface NonExecutableInactiveCall
   extends NonExecutable<InactiveChild> {}
 export interface ExecutableInactiveCall
-  extends Executable<'inactive', InactiveFunction, Bound<InactiveVariable>> {}
+  extends Executable<'inactive', InactiveFunction, InactiveVariable> {}
 export type InactiveCall = NonExecutableInactiveCall | ExecutableInactiveCall
 export type InactiveChild =
   | InactiveVariable
@@ -249,17 +254,14 @@ export type Inactive = InactiveChild | ExecutableInactiveCall
 // as an arg of ExecutableActiveCall or
 // as an arg of arg/func of ExecutableActiveCall's child function.
 export interface ActiveFunction
-  extends FunctionWithArgBody<Unbound<ActiveVariable>, ActiveChild> {}
+  extends FunctionWithArgBody<ActiveVariable, ActiveChild> {}
 export interface ExecutableActiveFunction
-  extends FunctionWithArgBody<
-      Unbound<EmphasizePriorityOneVariable>,
-      ActiveChild
-    > {}
+  extends FunctionWithArgBody<EmphasizePriorityOneVariable, ActiveChild> {}
 export interface ExecutableActiveCall
   extends Executable<
       'active',
       ExecutableActiveFunction,
-      Bound<EmphasizePriorityOneVariable>
+      EmphasizePriorityOneVariable
     > {}
 export interface NonExecutableActiveCall extends NonExecutable<ActiveChild> {}
 export type ActiveChild =
@@ -287,7 +289,7 @@ export type ShowFuncBoundArgChild =
 export interface NonExecutableShowFuncBoundArgCall
   extends NonExecutable<ShowFuncBoundArgChild> {}
 export type ShowFuncBoundFuncChild =
-  | HighlightFuncBoundVariable & { bound: true }
+  | HighlightFuncBoundVariable
   | ShowFuncBoundFuncFunction
   | NonExecutableShowFuncBoundFuncCall
 export interface NonExecutableShowFuncBoundFuncCall

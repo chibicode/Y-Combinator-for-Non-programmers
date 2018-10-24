@@ -14,18 +14,6 @@ export function isVariable<V extends VariableExpression = VariableExpression>(
   return expression.type === 'variable'
 }
 
-export function isBound<V extends VariableExpression = VariableExpression>(
-  expression: V
-): expression is Bound<V> {
-  return expression.bound
-}
-
-export function isUnbound<V extends VariableExpression = VariableExpression>(
-  expression: V
-): expression is Unbound<V> {
-  return !expression.bound
-}
-
 export function isCall<E extends CallExpression = CallExpression>(
   expression: Expression
 ): expression is E {

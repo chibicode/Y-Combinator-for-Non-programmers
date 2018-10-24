@@ -1,34 +1,29 @@
 import {
   ActiveChild,
   ActiveFunction,
+  ActiveVariable,
+  CallExpression,
+  EmphasizePriorityOneVariable,
   ExecutableActiveCall,
   ExecutableActiveFunction,
   ExecutableInactiveCall,
+  ExecutableShowFuncBoundCall,
+  Expression,
+  FunctionExpression,
+  HighlightFuncBoundVariable,
   InactiveChild,
   InactiveFunction,
+  InactiveVariable,
   NonExecutableActiveCall,
   NonExecutableInactiveCall,
-  ExecutableShowFuncBoundCall,
   ShowFuncBoundArgFunction,
-  VariableExpression,
-  FunctionExpression,
-  CallExpression,
-  Expression,
-  VariableUiStates,
-  InactiveVariable,
-  ActiveVariable,
-  EmphasizePriorityOneVariable,
-  HighlightFuncBoundVariable,
   ShowFuncBoundFuncChild,
-  Bound,
-  Unbound
+  VariableExpression,
+  VariableUiStates
 } from 'src/types/yc/ExpressionTypes'
-import { isBound, isFunction, isVariable } from './expressionTypeGuards'
+import { isFunction, isVariable } from './expressionTypeGuards'
 
-function allInactiveToActive(x: Bound<InactiveVariable>): Bound<ActiveVariable>
-function allInactiveToActive(
-  x: Unbound<InactiveVariable>
-): Unbound<ActiveVariable>
+function allInactiveToActive(x: InactiveVariable): ActiveVariable
 function allInactiveToActive(x: InactiveFunction): ActiveFunction
 function allInactiveToActive(
   x: NonExecutableInactiveCall
@@ -36,11 +31,7 @@ function allInactiveToActive(
 function allInactiveToActive(x: InactiveChild): ActiveChild
 function allInactiveToActive(x: InactiveChild): ActiveChild {
   if (isVariable(x)) {
-    if (isBound(x)) {
-      return { ...x, highlightType: 'active', bound: true }
-    } else {
-      return { ...x, highlightType: 'active', bound: false }
-    }
+    return { ...x, highlightType: 'active' }
   } else if (isFunction(x)) {
     return {
       ...x,
@@ -57,26 +48,11 @@ function allInactiveToActive(x: InactiveChild): ActiveChild {
 }
 
 function inactiveVariableToEmphasize(
-  x: Bound<InactiveVariable>
-): Bound<EmphasizePriorityOneVariable>
-function inactiveVariableToEmphasize(
-  x: Unbound<InactiveVariable>
-): Unbound<EmphasizePriorityOneVariable>
-function inactiveVariableToEmphasize(
   x: InactiveVariable
 ): EmphasizePriorityOneVariable {
-  if (isBound(x)) {
-    return {
-      ...x,
-      highlightType: 'activeEmphasizePriorityOne',
-      bound: true
-    }
-  } else {
-    return {
-      ...x,
-      highlightType: 'activeEmphasizePriorityOne',
-      bound: false
-    }
+  return {
+    ...x,
+    highlightType: 'activeEmphasizePriorityOne'
   }
 }
 
