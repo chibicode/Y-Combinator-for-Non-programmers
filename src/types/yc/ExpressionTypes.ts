@@ -247,7 +247,7 @@ export type DefaultChild =
   | DefaultVariable
   | DefaultFunction
   | NonExecutableDefaultCall
-export type Default = DefaultChild | ExecutableDefaultCall
+export type DefaultExpression = DefaultChild | ExecutableDefaultCall
 
 // ExecutableActiveVariable will only appear
 // as an arg of ExecutableActiveCall or

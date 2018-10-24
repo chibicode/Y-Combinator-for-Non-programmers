@@ -1,24 +1,22 @@
 import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
+  DefaultCall,
+  DefaultExpression,
+  DefaultFunction,
+  DefaultVariable,
   Expression,
   FunctionExpression,
-  DefaultCallExpression,
-  DefaultExpression,
-  DefaultFunctionExpression,
-  DefaultVariableExpression,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpression(
   expression: VariableExpression
-): DefaultVariableExpression
+): DefaultVariable
 export default function resetExpression(
   expression: FunctionExpression
-): DefaultFunctionExpression
-export default function resetExpression(
-  expression: CallExpression
-): DefaultCallExpression
+): DefaultFunction
+export default function resetExpression(expression: CallExpression): DefaultCall
 export default function resetExpression(
   expression: Expression
 ): DefaultExpression
