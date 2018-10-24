@@ -11,6 +11,8 @@ export interface VariableExpression {
 }
 
 type WithUiState<S extends VariableUiStates> = VariableExpression & S
+export type Bound<V extends VariableExpression> = V & { bound: true }
+export type Unbound<V extends VariableExpression> = V & { bound: false }
 
 interface VariableInactiveState {
   highlightType: 'inactive'
@@ -122,40 +124,40 @@ export type VariableUiStates =
   | VariableRemovedFuncArgState
   | VariableRemovedCallArgState
 
-export type VariableInactive = WithUiState<VariableInactiveState>
-export type VariableActive = WithUiState<VariableActiveState>
-export type VariableEmphasizePriorityOne = WithUiState<
+export type InactiveVariable = WithUiState<VariableInactiveState>
+export type ActiveVariable = WithUiState<VariableActiveState>
+export type EmphasizePriorityOneVariable = WithUiState<
   VariableEmphasizePriorityOneState
 >
-export type VariableHighlightFuncBound = WithUiState<
+export type HighlightFuncBoundVariable = WithUiState<
   VariableHighlightFuncBoundState
 >
-export type VariableActiveFuncBound = WithUiState<VariableActiveFuncBoundState>
-export type VariableHighlightFuncArg = WithUiState<
+export type ActiveFuncBoundVariable = WithUiState<VariableActiveFuncBoundState>
+export type HighlightFuncArgVariable = WithUiState<
   VariableHighlightFuncArgState
 >
-export type VariableActiveFuncArg = WithUiState<VariableActiveFuncArgState>
-export type VariableHighlightFuncUnbound = WithUiState<
+export type ActiveFuncArgVariable = WithUiState<VariableActiveFuncArgState>
+export type HighlightFuncUnboundVariable = WithUiState<
   VariableHighlightFuncUnboundState
 >
-export type VariableHighlightCallArg = WithUiState<
+export type HighlightCallArgVariable = WithUiState<
   VariableHighlightCallArgState
 >
-export type VariableActiveCallArg = WithUiState<VariableActiveCallArgState>
-export type VariableConflictFuncUnbound = WithUiState<
+export type ActiveCallArgVariable = WithUiState<VariableActiveCallArgState>
+export type ConflictFuncUnboundVariable = WithUiState<
   VariableConflictFuncUnboundState
 >
-export type VariableConflictCallArg = WithUiState<VariableConflictCallArgState>
-export type VariableConflictResolvedFuncUnbound = WithUiState<
+export type ConflictCallArgVariable = WithUiState<VariableConflictCallArgState>
+export type ConflictResolvedFuncUnboundVariable = WithUiState<
   VariableConflictResolvedFuncUnboundState
 >
-export type VariableConflictResolvedFuncBound = WithUiState<
+export type ConflictResolvedFuncBoundVariable = WithUiState<
   VariableConflictResolvedFuncBoundState
 >
-export type VariableMatchFuncBound = WithUiState<VariableMatchFuncBoundState>
-export type VariableBetaReduced = WithUiState<VariableBetaReducedState>
-export type VariableRemovedFuncArg = WithUiState<VariableRemovedFuncArgState>
-export type VariableRemovedCallArg = WithUiState<VariableRemovedCallArgState>
+export type MatchFuncBoundVariable = WithUiState<VariableMatchFuncBoundState>
+export type BetaReducedVariable = WithUiState<VariableBetaReducedState>
+export type RemovedFuncArgVariable = WithUiState<VariableRemovedFuncArgState>
+export type RemovedCallArgVariable = WithUiState<VariableRemovedCallArgState>
 
 export type CallExpressionStates =
   | 'inactive'
@@ -227,14 +229,14 @@ type ExecutableWithArgFunc<
 }
 
 export interface InactiveFunction
-  extends FunctionWithArgBody<VariableInactive, InactiveChild> {}
+  extends FunctionWithArgBody<Unbound<InactiveVariable>, InactiveChild> {}
 export interface NonExecutableInactiveCall
   extends NonExecutable<InactiveChild> {}
 export interface ExecutableInactiveCall
-  extends Executable<'inactive', InactiveFunction, VariableInactive> {}
+  extends Executable<'inactive', InactiveFunction, Bound<InactiveVariable>> {}
 export type InactiveCall = NonExecutableInactiveCall | ExecutableInactiveCall
 export type InactiveChild =
-  | VariableInactive
+  | InactiveVariable
   | InactiveFunction
   | NonExecutableInactiveCall
 export type Inactive = InactiveChild | ExecutableInactiveCall
@@ -243,18 +245,21 @@ export type Inactive = InactiveChild | ExecutableInactiveCall
 // as an arg of ExecutableActiveCall or
 // as an arg of arg/func of ExecutableActiveCall's child function.
 export interface ActiveFunction
-  extends FunctionWithArgBody<VariableActive, ActiveChild> {}
+  extends FunctionWithArgBody<Unbound<ActiveVariable>, ActiveChild> {}
 export interface ExecutableActiveFunction
-  extends FunctionWithArgBody<VariableEmphasizePriorityOne, ActiveChild> {}
+  extends FunctionWithArgBody<
+      Unbound<EmphasizePriorityOneVariable>,
+      ActiveChild
+    > {}
 export interface ExecutableActiveCall
   extends Executable<
       'active',
       ExecutableActiveFunction,
-      VariableEmphasizePriorityOne
+      Bound<EmphasizePriorityOneVariable>
     > {}
 export interface NonExecutableActiveCall extends NonExecutable<ActiveChild> {}
 export type ActiveChild =
-  | VariableActive
+  | ActiveVariable
   | ActiveFunction
   | NonExecutableActiveCall
 
@@ -263,22 +268,22 @@ export type ActiveChild =
 export interface ExecutableShowFuncBoundCall
   extends ExecutableWithArgFunc<
       'active',
-      VariableActive,
+      ActiveVariable,
       ShowFuncBoundArgFunction,
       ShowFuncBoundFuncFunction
     > {}
 export interface ShowFuncBoundArgFunction
-  extends FunctionWithArgBody<VariableActive, ShowFuncBoundArgChild> {}
+  extends FunctionWithArgBody<ActiveVariable, ShowFuncBoundArgChild> {}
 export interface ShowFuncBoundFuncFunction
-  extends FunctionWithArgBody<VariableActive, ShowFuncBoundFuncChild> {}
+  extends FunctionWithArgBody<ActiveVariable, ShowFuncBoundFuncChild> {}
 export type ShowFuncBoundArgChild =
-  | VariableActive
+  | ActiveVariable
   | ShowFuncBoundArgFunction
   | NonExecutableShowFuncBoundArgCall
 export interface NonExecutableShowFuncBoundArgCall
   extends NonExecutable<ShowFuncBoundArgChild> {}
 export type ShowFuncBoundFuncChild =
-  | VariableHighlightFuncBound
+  | HighlightFuncBoundVariable & { bound: true }
   | ShowFuncBoundFuncFunction
   | NonExecutableShowFuncBoundFuncCall
 export interface NonExecutableShowFuncBoundFuncCall

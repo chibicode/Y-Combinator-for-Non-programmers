@@ -1,8 +1,10 @@
 import {
+  Bound,
   CallExpression,
   ExecutableCall,
   Expression,
   FunctionExpression,
+  Unbound,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
@@ -10,6 +12,18 @@ export function isVariable(
   expression: Expression
 ): expression is VariableExpression {
   return expression.type === 'variable'
+}
+
+export function isBound<V extends VariableExpression>(
+  expression: V
+): expression is Bound<V> {
+  return expression.bound
+}
+
+export function isUnbound<V extends VariableExpression>(
+  expression: V
+): expression is Unbound<V> {
+  return !expression.bound
 }
 
 export function isCall<E extends CallExpression = CallExpression>(
