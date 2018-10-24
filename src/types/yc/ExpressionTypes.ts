@@ -273,7 +273,7 @@ export type ActiveChild =
 // On arg side, variables are all VariableActive
 export interface ExecutableShowFuncBoundCall
   extends ExecutableWithArgFunc<
-      'active',
+      'showFuncBound',
       ActiveVariable,
       ShowFuncBoundArgFunction,
       ShowFuncBoundFuncFunction
