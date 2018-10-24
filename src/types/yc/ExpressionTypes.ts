@@ -11,97 +11,101 @@ export interface VariableExpression {
 }
 
 type WithUiState<S extends VariableUiStates> = VariableExpression & S
-export type Bound<V extends VariableExpression> = V & { bound: true }
-export type Unbound<V extends VariableExpression> = V & { bound: false }
+export type Bound<V extends VariableExpression> = V & {
+  readonly bound: true
+}
+export type Unbound<V extends VariableExpression> = V & {
+  readonly bound: false
+}
 
 interface VariableInactiveState {
-  highlightType: 'inactive'
-  badgeType: 'none'
+  readonly highlightType: 'inactive'
+  readonly badgeType: 'none'
 }
 
 interface VariableActiveState {
-  highlightType: 'active'
-  badgeType: 'none'
+  readonly highlightType: 'active'
+  readonly badgeType: 'none'
 }
 
 interface VariableEmphasizePriorityOneState {
-  highlightType: 'activeEmphasizePriorityOne'
-  badgeType: 'none'
+  readonly highlightType: 'activeEmphasizePriorityOne'
+  readonly badgeType: 'none'
 }
 
 interface VariableHighlightFuncBoundState {
-  highlightType: 'highlighted'
-  badgeType: 'funcBound'
+  readonly highlightType: 'highlighted'
+  readonly badgeType: 'funcBound'
 }
 
 interface VariableActiveFuncBoundState {
-  highlightType: 'active'
-  badgeType: 'funcBound'
+  readonly highlightType: 'active'
+  readonly badgeType: 'funcBound'
 }
 
 interface VariableHighlightFuncArgState {
-  highlightType: 'highlighted'
-  badgeType: 'funcArg'
+  readonly highlightType: 'highlighted'
+  readonly badgeType: 'funcArg'
 }
 
 interface VariableActiveFuncArgState {
-  highlightType: 'active'
-  badgeType: 'funcArg'
+  readonly highlightType: 'active'
+  readonly badgeType: 'funcArg'
 }
 
 interface VariableHighlightFuncUnboundState {
-  highlightType: 'unboundHighlighted'
-  badgeType: 'funcUnbound'
+  readonly highlightType: 'unboundHighlighted'
+  readonly badgeType: 'funcUnbound'
 }
 
 interface VariableHighlightCallArgState {
-  highlightType: 'highlighted'
-  badgeType: 'callArg'
+  readonly highlightType: 'highlighted'
+  readonly badgeType: 'callArg'
 }
 
 interface VariableActiveCallArgState {
-  highlightType: 'highlighted'
-  badgeType: 'callArg'
+  readonly highlightType: 'highlighted'
+  readonly badgeType: 'callArg'
 }
 
 interface VariableConflictFuncUnboundState {
-  highlightType: 'conflict'
-  badgeType: 'funcUnbound'
+  readonly highlightType: 'conflict'
+  readonly badgeType: 'funcUnbound'
 }
 
 interface VariableConflictCallArgState {
-  highlightType: 'conflict'
-  badgeType: 'callArg'
+  readonly highlightType: 'conflict'
+  readonly badgeType: 'callArg'
 }
 
 interface VariableConflictResolvedFuncUnboundState {
-  highlightType: 'conflictResolved'
-  badgeType: 'funcUnbound'
+  readonly highlightType: 'conflictResolved'
+  readonly badgeType: 'funcUnbound'
 }
 
 interface VariableConflictResolvedFuncBoundState {
-  highlightType: 'conflictResolved'
-  badgeType: 'funcBound'
+  readonly highlightType: 'conflictResolved'
+  readonly badgeType: 'funcBound'
 }
 
 interface VariableMatchFuncBoundState {
-  highlightType: 'match'
-  badgeType: 'funcBound'
+  readonly highlightType: 'match'
+  readonly badgeType: 'funcBound'
 }
 
 interface VariableBetaReducedState {
-  highlightType: 'match'
-  badgeType: 'betaReduced'
+  readonly highlightType: 'match'
+  readonly badgeType: 'betaReduced'
 }
 
 interface VariableRemovedFuncArgState {
-  highlightType: 'removed'
-  badgeType: 'funcArg'
+  readonly highlightType: 'removed'
+  readonly badgeType: 'funcArg'
 }
 
 interface VariableRemovedCallArgState {
-  highlightType: 'removed'
-  badgeType: 'callArg'
+  readonly highlightType: 'removed'
+  readonly badgeType: 'callArg'
 }
 
 export type VariableUiStates =

@@ -8,19 +8,19 @@ import {
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-export function isVariable(
+export function isVariable<V extends VariableExpression = VariableExpression>(
   expression: Expression
-): expression is VariableExpression {
+): expression is V {
   return expression.type === 'variable'
 }
 
-export function isBound<V extends VariableExpression>(
+export function isBound<V extends VariableExpression = VariableExpression>(
   expression: V
 ): expression is Bound<V> {
   return expression.bound
 }
 
-export function isUnbound<V extends VariableExpression>(
+export function isUnbound<V extends VariableExpression = VariableExpression>(
   expression: V
 ): expression is Unbound<V> {
   return !expression.bound
