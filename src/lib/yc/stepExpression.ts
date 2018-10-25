@@ -1,3 +1,4 @@
+import { isCall, isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   ActiveChild,
   ActiveFunction,
@@ -11,6 +12,7 @@ import {
   EmphasizePriorityOneVariable,
   ExecutableActiveCall,
   ExecutableActiveFunction,
+  ExecutableCall,
   ExecutableDefaultCall,
   ExecutableShowFuncBoundCall,
   Expression,
@@ -25,78 +27,37 @@ import {
   VariableExpression,
   VariableUiStates
 } from 'src/types/yc/ExpressionTypes'
-import { isCall, isFunction, isVariable } from './expressionTypeGuards'
 
-function toDefault(x: VariableExpression): DefaultVariable
-function toDefault(x: FunctionExpression): DefaultFunction
-function toDefault(x: CallExpression): DefaultCall
-function toDefault(x: Expression): DefaultExpression
-function toDefault(x: Expression): DefaultExpression {
+function toShowFuncBoundFunc(x: DefaultVariable): HighlightFuncBoundVariable
+function toShowFuncBoundFunc(x: DefaultFunction): ShowFuncBoundFuncFunction
+function toShowFuncBoundFunc(
+  x: NonExecutableDefaultCall
+): NonExecutableShowFuncBoundFuncCall
+function toShowFuncBoundFunc(x: DefaultChild): ShowFuncBoundFuncChild
+function toShowFuncBoundFunc(x: DefaultChild): ShowFuncBoundFuncChild {
   if (isVariable(x)) {
-    return { ...x, highlightType: 'default', badgeType: 'none' }
+    if (x.bound) {
+      return {
+        ...x,
+        bound: true,
+        highlightType: 'highlighted',
+        badgeType: 'funcBound'
+      }
+    } else {
+      throw new Error()
+    }
   } else if (isFunction(x)) {
     return {
       ...x,
-      arg: toDefault(x.arg),
-      body: toDefault(x.body)
+      arg: { ...x.arg, highlightType: 'active' },
+      body: toShowFuncBoundFunc(x.body)
     }
   } else {
     return {
       ...x,
-      state: 'default',
-      arg: toDefault(x.arg),
-      func: toDefault(x.func)
+      arg: toShowFuncBoundFunc(x.arg),
+      func: toShowFuncBoundFunc(x.func)
     }
-  }
-}
-
-function toActive(x: DefaultVariable): ActiveVariable
-function toActive(x: DefaultFunction): ActiveFunction
-function toActive(x: NonExecutableDefaultCall): NonExecutableActiveCall
-function toActive(x: DefaultChild): ActiveChild
-function toActive(x: DefaultChild): ActiveChild {
-  if (isVariable(x)) {
-    return { ...x, highlightType: 'active' }
-  } else if (isFunction(x)) {
-    return {
-      ...x,
-      arg: toActive(x.arg),
-      body: toActive(x.body)
-    }
-  } else {
-    return {
-      ...x,
-      arg: toActive(x.arg),
-      func: toActive(x.func)
-    }
-  }
-}
-
-const stepToActive = (e: ExecutableDefaultCall): ExecutableActiveCall => {
-  const defaultVariableToEmphasize = (
-    x: DefaultVariable
-  ): EmphasizePriorityOneVariable => {
-    return {
-      ...x,
-      highlightType: 'activeEmphasizePriorityOne'
-    }
-  }
-
-  const defaultToExecutableActiveFunction = (
-    x: DefaultFunction
-  ): ExecutableActiveFunction => ({
-    ...x,
-    arg: defaultVariableToEmphasize(x.arg),
-    body: toActive(x.body)
-  })
-
-  return {
-    ...e,
-    state: 'active',
-    arg: isFunction<DefaultFunction>(e.arg)
-      ? defaultToExecutableActiveFunction(e.arg)
-      : defaultVariableToEmphasize(e.arg),
-    func: defaultToExecutableActiveFunction(e.func)
   }
 }
 
