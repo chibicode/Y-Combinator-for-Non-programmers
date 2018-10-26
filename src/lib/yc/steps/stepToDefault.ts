@@ -1,27 +1,27 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  DefaultCall,
-  DefaultChild,
-  DefaultFunction,
-  DefaultVariable,
   ExecutableCall,
-  ExecutableDefaultCall,
+  ExecutableStepCall,
   Expression,
   FunctionExpression,
+  NonExecutableStepCall,
+  StepChild,
+  StepFunction,
+  StepVariable,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-function toDefault(x: VariableExpression): DefaultVariable
-function toDefault(x: FunctionExpression): DefaultFunction
-function toDefault(x: CallExpression): DefaultCall
+function toDefault(x: VariableExpression): StepVariable<'default'>
+function toDefault(x: FunctionExpression): StepFunction<'default'>
+function toDefault(x: CallExpression): NonExecutableStepCall<'default'>
 // This is necessary - otherwise if you pass in VariableExpression | FunctionExpression
 // it will think of it as Expression instead.
 function toDefault(
   x: VariableExpression | FunctionExpression
-): DefaultFunction | DefaultVariable
-function toDefault(x: Expression): DefaultChild
-function toDefault(x: Expression): DefaultChild {
+): StepVariable<'default'> | StepFunction<'default'>
+function toDefault(x: Expression): StepChild<'default'>
+function toDefault(x: Expression): StepChild<'default'> {
   if (isVariable(x)) {
     return { ...x, highlightType: 'default', badgeType: 'none' }
   } else if (isFunction(x)) {
@@ -40,7 +40,7 @@ function toDefault(x: Expression): DefaultChild {
   }
 }
 
-const stepToDefault = (e: ExecutableCall): ExecutableDefaultCall => ({
+const stepToDefault = (e: ExecutableCall): ExecutableStepCall<'default'> => ({
   ...e,
   state: 'default',
   arg: toDefault(e.arg),
