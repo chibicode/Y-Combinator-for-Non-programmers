@@ -52,7 +52,7 @@ interface VariableStates {
     readonly badgeType: 'callArg'
   }
   activeCallArg: {
-    readonly highlightType: 'highlighted'
+    readonly highlightType: 'active'
     readonly badgeType: 'callArg'
   }
   conflictFuncUnbound: {
