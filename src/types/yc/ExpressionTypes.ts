@@ -152,7 +152,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                         | 'activeFuncArg'
                         | 'highlightFuncUnbound'
                         | 'highlightCallArg'
-                        | 'matchFuncBound'
+                        | 'betaReduced'
                     : C extends 'betaReducePreviewCrossed'
                       ?
                           | 'activeFuncBound'

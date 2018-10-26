@@ -17,19 +17,16 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 export function toBetaReducePreviewBefore(
   e: VariableExpression,
   from: VariableNames,
-  to: Expression,
   funcSide: boolean
 ): { result: StepVariable<'betaReducePreviewBefore'>; matchExists: boolean }
 export function toBetaReducePreviewBefore(
   e: FunctionExpression,
   from: VariableNames,
-  to: Expression,
   funcSide: boolean
 ): { result: StepFunction<'betaReducePreviewBefore'>; matchExists: boolean }
 export function toBetaReducePreviewBefore(
   e: CallExpression,
   from: VariableNames,
-  to: Expression,
   funcSide: boolean
 ): {
   result: NonExecutableStepCall<'betaReducePreviewBefore'>
@@ -38,7 +35,6 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: VariableExpression | FunctionExpression,
   from: VariableNames,
-  to: Expression,
   funcSide: boolean
 ):
   | { result: StepVariable<'betaReducePreviewBefore'>; matchExists: boolean }
@@ -46,13 +42,11 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   from: VariableNames,
-  to: Expression,
   funcSide: boolean
 ): { result: StepChild<'betaReducePreviewBefore'>; matchExists: boolean }
 export function toBetaReducePreviewBefore(
   e: Expression,
   from: VariableNames,
-  to: Expression,
   funcSide: boolean
 ): { result: StepChild<'betaReducePreviewBefore'>; matchExists: boolean } {
   if (isVariable(e)) {
@@ -96,13 +90,8 @@ export function toBetaReducePreviewBefore(
       }
     }
   } else if (isFunction(e)) {
-    const argHelperResult = toBetaReducePreviewBefore(e.arg, from, to, funcSide)
-    const bodyHelperResult = toBetaReducePreviewBefore(
-      e.body,
-      from,
-      to,
-      funcSide
-    )
+    const argHelperResult = toBetaReducePreviewBefore(e.arg, from, funcSide)
+    const bodyHelperResult = toBetaReducePreviewBefore(e.body, from, funcSide)
 
     return {
       result: {
@@ -113,13 +102,8 @@ export function toBetaReducePreviewBefore(
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
     }
   } else {
-    const argHelperResult = toBetaReducePreviewBefore(e.arg, from, to, funcSide)
-    const funcHelperResult = toBetaReducePreviewBefore(
-      e.func,
-      from,
-      to,
-      funcSide
-    )
+    const argHelperResult = toBetaReducePreviewBefore(e.arg, from, funcSide)
+    const funcHelperResult = toBetaReducePreviewBefore(e.func, from, funcSide)
     return {
       result: {
         ...e,
@@ -147,9 +131,8 @@ const stepToBetaReducePreviewBefore = (
   matchExists: boolean
 } => {
   const from = e.func.arg.name
-  const to = e.arg
-  const argResult = toBetaReducePreviewBefore(e.arg, from, to, false)
-  const funcResult = toBetaReducePreviewBefore(e.func.body, from, to, true)
+  const argResult = toBetaReducePreviewBefore(e.arg, from, false)
+  const funcResult = toBetaReducePreviewBefore(e.func.body, from, true)
 
   return {
     result: {
