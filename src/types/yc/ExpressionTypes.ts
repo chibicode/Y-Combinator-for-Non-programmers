@@ -10,8 +10,9 @@ export interface VariableExpression {
   readonly funcPriorityAgg: number[]
 }
 
-type VariableWithState<S extends keyof VariableStates> = VariableExpression &
-  VariableStates[S]
+export type VariableWithState<
+  S extends keyof VariableStates
+> = VariableExpression & VariableStates[S]
 
 interface VariableStates {
   default: {

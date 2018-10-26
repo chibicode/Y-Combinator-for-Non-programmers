@@ -1,26 +1,28 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
-  ActiveChild,
-  ActiveFunction,
-  ActiveVariable,
-  DefaultChild,
-  DefaultFunction,
-  DefaultVariable,
-  EmphasizePriorityOneVariable,
-  ExecutableActiveCall,
-  ExecutableActiveFunction,
-  ExecutableDefaultCall,
-  NonExecutableActiveCall,
-  NonExecutableDefaultCall
+  CallExpression,
+  ExecutableCall,
+  ExecutableStepCall,
+  Expression,
+  FunctionExpression,
+  NonExecutableStepCall,
+  StepChild,
+  StepFunction,
+  StepVariable,
+  VariableExpression,
+  VariableWithState
 } from 'src/types/yc/ExpressionTypes'
 
-function toActive(x: DefaultVariable): ActiveVariable
-function toActive(x: DefaultFunction): ActiveFunction
-function toActive(x: NonExecutableDefaultCall): NonExecutableActiveCall
-function toActive(x: DefaultChild): ActiveChild
-function toActive(x: DefaultChild): ActiveChild {
+function toActive(x: VariableExpression): StepVariable<'active'>
+function toActive(x: FunctionExpression): StepFunction<'active'>
+function toActive(x: CallExpression): NonExecutableStepCall<'active'>
+function toActive(
+  x: VariableExpression | FunctionExpression
+): StepVariable<'active'> | StepFunction<'active'>
+function toActive(x: Expression): StepChild<'active'>
+function toActive(x: Expression): StepChild<'active'> {
   if (isVariable(x)) {
-    return { ...x, highlightType: 'active' }
+    return { ...x, highlightType: 'active', badgeType: 'none' }
   } else if (isFunction(x)) {
     return {
       ...x,
@@ -30,36 +32,38 @@ function toActive(x: DefaultChild): ActiveChild {
   } else {
     return {
       ...x,
+      state: 'default',
       arg: toActive(x.arg),
       func: toActive(x.func)
     }
   }
 }
 
-const defaultVariableToEmphasize = (
-  x: DefaultVariable
-): EmphasizePriorityOneVariable => {
+const variableToEmphasize = (
+  x: VariableExpression
+): VariableWithState<'emphasizePriority'> => {
   return {
     ...x,
+    badgeType: 'none',
     highlightType: 'activeEmphasizePriorityOne'
   }
 }
 
-const defaultToExecutableActiveFunction = (
-  x: DefaultFunction
-): ExecutableActiveFunction => ({
+const toExecutableActiveFunction = (
+  x: FunctionExpression
+): StepFunction<'active'> => ({
   ...x,
-  arg: defaultVariableToEmphasize(x.arg),
+  arg: variableToEmphasize(x.arg),
   body: toActive(x.body)
 })
 
-const stepToActive = (e: ExecutableDefaultCall): ExecutableActiveCall => ({
+const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({
   ...e,
   state: 'active',
-  arg: isFunction<DefaultFunction>(e.arg)
-    ? defaultToExecutableActiveFunction(e.arg)
-    : defaultVariableToEmphasize(e.arg),
-  func: defaultToExecutableActiveFunction(e.func)
+  arg: isFunction(e.arg)
+    ? toExecutableActiveFunction(e.arg)
+    : variableToEmphasize(e.arg),
+  func: toExecutableActiveFunction(e.func)
 })
 
 export default stepToActive
