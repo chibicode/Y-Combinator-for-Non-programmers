@@ -13,48 +13,48 @@ import {
   VariableWithState
 } from 'src/types/yc/ExpressionTypes'
 
-function toActive(x: VariableExpression): StepVariable<'active'>
-function toActive(x: FunctionExpression): StepFunction<'active'>
-function toActive(x: CallExpression): NonExecutableStepCall<'active'>
+function toActive(e: VariableExpression): StepVariable<'active'>
+function toActive(e: FunctionExpression): StepFunction<'active'>
+function toActive(e: CallExpression): NonExecutableStepCall<'active'>
 function toActive(
-  x: VariableExpression | FunctionExpression
+  e: VariableExpression | FunctionExpression
 ): StepVariable<'active'> | StepFunction<'active'>
-function toActive(x: Expression): StepChild<'active'>
-function toActive(x: Expression): StepChild<'active'> {
-  if (isVariable(x)) {
-    return { ...x, highlightType: 'active', badgeType: 'none' }
-  } else if (isFunction(x)) {
+function toActive(e: Expression): StepChild<'active'>
+function toActive(e: Expression): StepChild<'active'> {
+  if (isVariable(e)) {
+    return { ...e, highlightType: 'active', badgeType: 'none' }
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toActive(x.arg),
-      body: toActive(x.body)
+      ...e,
+      arg: toActive(e.arg),
+      body: toActive(e.body)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toActive(x.arg),
-      func: toActive(x.func)
+      arg: toActive(e.arg),
+      func: toActive(e.func)
     }
   }
 }
 
 const variableToEmphasize = (
-  x: VariableExpression
+  e: VariableExpression
 ): VariableWithState<'emphasizePriority'> => {
   return {
-    ...x,
+    ...e,
     badgeType: 'none',
     highlightType: 'activeEmphasizePriorityOne'
   }
 }
 
 const toExecutableActiveFunction = (
-  x: FunctionExpression
+  e: FunctionExpression
 ): StepFunction<'active'> => ({
-  ...x,
-  arg: variableToEmphasize(x.arg),
-  body: toActive(x.body)
+  ...e,
+  arg: variableToEmphasize(e.arg),
+  body: toActive(e.body)
 })
 
 const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({

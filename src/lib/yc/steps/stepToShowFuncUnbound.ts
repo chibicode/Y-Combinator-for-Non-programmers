@@ -14,61 +14,61 @@ import {
 } from 'src/types/yc/ExpressionTypes'
 
 export function toShowFuncUnbound(
-  x: VariableExpression,
+  e: VariableExpression,
   funcSide: boolean
 ): StepVariable<'showFuncUnbound'>
 export function toShowFuncUnbound(
-  x: FunctionExpression,
+  e: FunctionExpression,
   funcSide: boolean
 ): StepFunction<'showFuncUnbound'>
 export function toShowFuncUnbound(
-  x: CallExpression,
+  e: CallExpression,
   funcSide: boolean
 ): NonExecutableStepCall<'showFuncUnbound'>
 export function toShowFuncUnbound(
-  x: VariableExpression | FunctionExpression,
+  e: VariableExpression | FunctionExpression,
   funcSide: boolean
 ): StepVariable<'showFuncUnbound'> | StepFunction<'showFuncUnbound'>
 export function toShowFuncUnbound(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showFuncUnbound'>
 export function toShowFuncUnbound(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showFuncUnbound'> {
-  if (isVariable(x)) {
-    if (funcSide && x.bound) {
-      return { ...x, highlightType: 'active', badgeType: 'funcBound' }
-    } else if (funcSide && !x.bound) {
+  if (isVariable(e)) {
+    if (funcSide && e.bound) {
+      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
+    } else if (funcSide && !e.bound) {
       return {
-        ...x,
+        ...e,
         highlightType: 'unboundHighlighted',
         badgeType: 'funcUnbound'
       }
     } else {
-      return { ...x, highlightType: 'active', badgeType: 'none' }
+      return { ...e, highlightType: 'active', badgeType: 'none' }
     }
-  } else if (isFunction(x)) {
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toShowFuncUnbound(x.arg, funcSide),
-      body: toShowFuncUnbound(x.body, funcSide)
+      ...e,
+      arg: toShowFuncUnbound(e.arg, funcSide),
+      body: toShowFuncUnbound(e.body, funcSide)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toShowFuncUnbound(x.arg, funcSide),
-      func: toShowFuncUnbound(x.func, funcSide)
+      arg: toShowFuncUnbound(e.arg, funcSide),
+      func: toShowFuncUnbound(e.func, funcSide)
     }
   }
 }
 
 export const activeFuncArg = (
-  x: VariableExpression
+  e: VariableExpression
 ): VariableWithState<'activeFuncArg'> => ({
-  ...x,
+  ...e,
   highlightType: 'active',
   badgeType: 'funcArg'
 })

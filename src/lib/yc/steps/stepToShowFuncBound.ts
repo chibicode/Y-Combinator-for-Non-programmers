@@ -13,47 +13,47 @@ import {
 } from 'src/types/yc/ExpressionTypes'
 
 export function toShowFuncBound(
-  x: VariableExpression,
+  e: VariableExpression,
   funcSide: boolean
 ): StepVariable<'showFuncBound'>
 export function toShowFuncBound(
-  x: FunctionExpression,
+  e: FunctionExpression,
   funcSide: boolean
 ): StepFunction<'showFuncBound'>
 export function toShowFuncBound(
-  x: CallExpression,
+  e: CallExpression,
   funcSide: boolean
 ): NonExecutableStepCall<'showFuncBound'>
 export function toShowFuncBound(
-  x: VariableExpression | FunctionExpression,
+  e: VariableExpression | FunctionExpression,
   funcSide: boolean
 ): StepVariable<'showFuncBound'> | StepFunction<'showFuncBound'>
 export function toShowFuncBound(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showFuncBound'>
 export function toShowFuncBound(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showFuncBound'> {
-  if (isVariable(x)) {
-    if (funcSide && x.bound) {
-      return { ...x, highlightType: 'highlighted', badgeType: 'funcBound' }
+  if (isVariable(e)) {
+    if (funcSide && e.bound) {
+      return { ...e, highlightType: 'highlighted', badgeType: 'funcBound' }
     } else {
-      return { ...x, highlightType: 'active', badgeType: 'none' }
+      return { ...e, highlightType: 'active', badgeType: 'none' }
     }
-  } else if (isFunction(x)) {
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toShowFuncBound(x.arg, funcSide),
-      body: toShowFuncBound(x.body, funcSide)
+      ...e,
+      arg: toShowFuncBound(e.arg, funcSide),
+      body: toShowFuncBound(e.body, funcSide)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toShowFuncBound(x.arg, funcSide),
-      func: toShowFuncBound(x.func, funcSide)
+      arg: toShowFuncBound(e.arg, funcSide),
+      func: toShowFuncBound(e.func, funcSide)
     }
   }
 }

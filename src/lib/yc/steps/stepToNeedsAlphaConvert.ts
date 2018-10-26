@@ -85,16 +85,16 @@ export function toNeedsAlphaConvert(
 }
 
 const stepToNeedsAlphaConvert = (
-  e: ExecutableCall,
+  x: ExecutableCall,
   conflicts: VariableNames[]
 ): ExecutableStepCall<'needsAlphaConvert'> => ({
-  ...e,
+  ...x,
   state: 'needsAlphaConvert',
-  arg: toNeedsAlphaConvert(e.arg, conflicts, false),
+  arg: toNeedsAlphaConvert(x.arg, conflicts, false),
   func: {
-    ...e.func,
-    arg: activeFuncArg(e.func.arg),
-    body: toNeedsAlphaConvert(e.func.body, conflicts, true)
+    ...x.func,
+    arg: activeFuncArg(x.func.arg),
+    body: toNeedsAlphaConvert(x.func.body, conflicts, true)
   }
 })
 

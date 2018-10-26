@@ -14,53 +14,53 @@ import {
 } from 'src/types/yc/ExpressionTypes'
 
 export function toShowCallArg(
-  x: VariableExpression,
+  e: VariableExpression,
   funcSide: boolean
 ): StepVariable<'showCallArg'>
 export function toShowCallArg(
-  x: FunctionExpression,
+  e: FunctionExpression,
   funcSide: boolean
 ): StepFunction<'showCallArg'>
 export function toShowCallArg(
-  x: CallExpression,
+  e: CallExpression,
   funcSide: boolean
 ): NonExecutableStepCall<'showCallArg'>
 export function toShowCallArg(
-  x: VariableExpression | FunctionExpression,
+  e: VariableExpression | FunctionExpression,
   funcSide: boolean
 ): StepVariable<'showCallArg'> | StepFunction<'showCallArg'>
 export function toShowCallArg(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showCallArg'>
 export function toShowCallArg(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showCallArg'> {
-  if (isVariable(x)) {
-    if (funcSide && x.bound) {
-      return { ...x, highlightType: 'active', badgeType: 'funcBound' }
-    } else if (funcSide && !x.bound) {
+  if (isVariable(e)) {
+    if (funcSide && e.bound) {
+      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
+    } else if (funcSide && !e.bound) {
       return {
-        ...x,
+        ...e,
         highlightType: 'unboundHighlighted',
         badgeType: 'funcUnbound'
       }
     } else {
-      return { ...x, highlightType: 'highlighted', badgeType: 'callArg' }
+      return { ...e, highlightType: 'highlighted', badgeType: 'callArg' }
     }
-  } else if (isFunction(x)) {
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toShowCallArg(x.arg, funcSide),
-      body: toShowCallArg(x.body, funcSide)
+      ...e,
+      arg: toShowCallArg(e.arg, funcSide),
+      body: toShowCallArg(e.body, funcSide)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toShowCallArg(x.arg, funcSide),
-      func: toShowCallArg(x.func, funcSide)
+      arg: toShowCallArg(e.arg, funcSide),
+      func: toShowCallArg(e.func, funcSide)
     }
   }
 }

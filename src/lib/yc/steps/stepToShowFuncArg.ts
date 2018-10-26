@@ -14,55 +14,55 @@ import {
 } from 'src/types/yc/ExpressionTypes'
 
 export function toShowFuncArg(
-  x: VariableExpression,
+  e: VariableExpression,
   funcSide: boolean
 ): StepVariable<'showFuncArg'>
 export function toShowFuncArg(
-  x: FunctionExpression,
+  e: FunctionExpression,
   funcSide: boolean
 ): StepFunction<'showFuncArg'>
 export function toShowFuncArg(
-  x: CallExpression,
+  e: CallExpression,
   funcSide: boolean
 ): NonExecutableStepCall<'showFuncArg'>
 export function toShowFuncArg(
-  x: VariableExpression | FunctionExpression,
+  e: VariableExpression | FunctionExpression,
   funcSide: boolean
 ): StepVariable<'showFuncArg'> | StepFunction<'showFuncArg'>
 export function toShowFuncArg(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showFuncArg'>
 export function toShowFuncArg(
-  x: Expression,
+  e: Expression,
   funcSide: boolean
 ): StepChild<'showFuncArg'> {
-  if (isVariable(x)) {
-    if (funcSide && x.bound) {
-      return { ...x, highlightType: 'active', badgeType: 'funcBound' }
+  if (isVariable(e)) {
+    if (funcSide && e.bound) {
+      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
     } else {
-      return { ...x, highlightType: 'active', badgeType: 'none' }
+      return { ...e, highlightType: 'active', badgeType: 'none' }
     }
-  } else if (isFunction(x)) {
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toShowFuncArg(x.arg, funcSide),
-      body: toShowFuncArg(x.body, funcSide)
+      ...e,
+      arg: toShowFuncArg(e.arg, funcSide),
+      body: toShowFuncArg(e.body, funcSide)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toShowFuncArg(x.arg, funcSide),
-      func: toShowFuncArg(x.func, funcSide)
+      arg: toShowFuncArg(e.arg, funcSide),
+      func: toShowFuncArg(e.func, funcSide)
     }
   }
 }
 
 const highlightFuncArg = (
-  x: VariableExpression
+  e: VariableExpression
 ): VariableWithState<'highlightFuncArg'> => ({
-  ...x,
+  ...e,
   highlightType: 'highlighted',
   badgeType: 'funcArg'
 })

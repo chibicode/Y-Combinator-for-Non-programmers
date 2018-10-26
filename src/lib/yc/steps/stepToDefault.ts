@@ -12,30 +12,30 @@ import {
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-function toDefault(x: VariableExpression): StepVariable<'default'>
-function toDefault(x: FunctionExpression): StepFunction<'default'>
-function toDefault(x: CallExpression): NonExecutableStepCall<'default'>
+function toDefault(e: VariableExpression): StepVariable<'default'>
+function toDefault(e: FunctionExpression): StepFunction<'default'>
+function toDefault(e: CallExpression): NonExecutableStepCall<'default'>
 // This is necessary - otherwise if you pass in VariableExpression | FunctionExpression
 // it will think of it as Expression instead.
 function toDefault(
-  x: VariableExpression | FunctionExpression
+  e: VariableExpression | FunctionExpression
 ): StepVariable<'default'> | StepFunction<'default'>
-function toDefault(x: Expression): StepChild<'default'>
-function toDefault(x: Expression): StepChild<'default'> {
-  if (isVariable(x)) {
-    return { ...x, highlightType: 'default', badgeType: 'none' }
-  } else if (isFunction(x)) {
+function toDefault(e: Expression): StepChild<'default'>
+function toDefault(e: Expression): StepChild<'default'> {
+  if (isVariable(e)) {
+    return { ...e, highlightType: 'default', badgeType: 'none' }
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toDefault(x.arg),
-      body: toDefault(x.body)
+      ...e,
+      arg: toDefault(e.arg),
+      body: toDefault(e.body)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toDefault(x.arg),
-      func: toDefault(x.func)
+      arg: toDefault(e.arg),
+      func: toDefault(e.func)
     }
   }
 }
