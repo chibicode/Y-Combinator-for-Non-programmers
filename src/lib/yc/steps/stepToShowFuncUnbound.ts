@@ -65,7 +65,7 @@ export function toShowFuncUnbound(
   }
 }
 
-const activeFuncArg = (
+export const activeFuncArg = (
   x: VariableExpression
 ): VariableWithState<'activeFuncArg'> => ({
   ...x,
@@ -73,7 +73,7 @@ const activeFuncArg = (
   badgeType: 'funcArg'
 })
 
-const stepToShowFuncArg = (
+const stepToShowFuncUnbound = (
   e: ExecutableCall
 ): ExecutableStepCall<'showFuncUnbound'> => ({
   ...e,
@@ -86,4 +86,4 @@ const stepToShowFuncArg = (
   }
 })
 
-export default stepToShowFuncArg
+export default stepToShowFuncUnbound
