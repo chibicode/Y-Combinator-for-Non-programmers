@@ -4,11 +4,11 @@ import Flex from 'src/components/Flex'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-// import bubbleGreySvg from 'src/images/bubble-grey.url.svg'
+import bubbleGreySvg from 'src/images/bubble-grey.url.svg'
 import bubbleSvg from 'src/images/bubble.url.svg'
 import crossSvg from 'src/images/cross.url.svg'
 import starSvg from 'src/images/star.url.svg'
-// import stripeReverseSvg from 'src/images/stripe-reverse.url.svg'
+import stripeReverseSvg from 'src/images/stripe-reverse.url.svg'
 import stripeSvg from 'src/images/stripe.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -56,7 +56,7 @@ const background = (
         background-position: center center;
       `
     }
-    case 'conflict': {
+    case 'conflictFuncUnbound': {
       return css`
         background-image: url(${stripeSvg});
         background-size: ${variableSize === 'lg' ? 2 : 1}rem
@@ -64,7 +64,23 @@ const background = (
         background-position: center center;
       `
     }
-    case 'conflictResolved': {
+    case 'conflictCallArg': {
+      return css`
+        background-image: url(${stripeReverseSvg});
+        background-size: ${variableSize === 'lg' ? 2 : 1}rem
+          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-position: center center;
+      `
+    }
+    case 'conflictResolvedFuncUnbound': {
+      return css`
+        background-image: url(${bubbleGreySvg});
+        background-size: ${variableSize === 'lg' ? 2 : 1}rem
+          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-position: center center;
+      `
+    }
+    case 'conflictResolvedBound': {
       return css`
         background-image: url(${bubbleSvg});
         background-size: ${variableSize === 'lg' ? 2 : 1}rem

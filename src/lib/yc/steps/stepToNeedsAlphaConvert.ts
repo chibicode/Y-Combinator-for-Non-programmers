@@ -51,7 +51,7 @@ export function toNeedsAlphaConvert(
       if (conflicts.includes(x.name)) {
         return {
           ...x,
-          highlightType: 'conflict',
+          highlightType: 'conflictFuncUnbound',
           badgeType: 'funcUnbound'
         }
       } else {
@@ -63,7 +63,7 @@ export function toNeedsAlphaConvert(
       }
     } else {
       if (conflicts.includes(x.name)) {
-        return { ...x, highlightType: 'conflict', badgeType: 'callArg' }
+        return { ...x, highlightType: 'conflictCallArg', badgeType: 'callArg' }
       } else {
         return { ...x, highlightType: 'active', badgeType: 'callArg' }
       }

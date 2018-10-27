@@ -58,14 +58,14 @@ export function toAlphaConvertDone(
           return {
             ...e,
             name: mapping[e.name],
-            highlightType: 'conflictResolved',
+            highlightType: 'conflictResolvedBound',
             badgeType: 'funcBound'
           }
         } else {
           return {
             ...e,
             name: mapping[e.name],
-            highlightType: 'conflictResolved',
+            highlightType: 'conflictResolvedFuncUnbound',
             badgeType: 'funcUnbound'
           }
         }

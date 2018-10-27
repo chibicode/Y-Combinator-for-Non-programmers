@@ -56,19 +56,19 @@ interface VariableStates {
     readonly badgeType: 'callArg'
   }
   conflictFuncUnbound: {
-    readonly highlightType: 'conflict'
+    readonly highlightType: 'conflictFuncUnbound'
     readonly badgeType: 'funcUnbound'
   }
   conflictCallArg: {
-    readonly highlightType: 'conflict'
+    readonly highlightType: 'conflictCallArg'
     readonly badgeType: 'callArg'
   }
   conflictResolvedFuncUnbound: {
-    readonly highlightType: 'conflictResolved'
+    readonly highlightType: 'conflictResolvedFuncUnbound'
     readonly badgeType: 'funcUnbound'
   }
   conflictResolvedFuncBound: {
-    readonly highlightType: 'conflictResolved'
+    readonly highlightType: 'conflictResolvedBound'
     readonly badgeType: 'funcBound'
   }
   matchFuncBound: {

@@ -11,7 +11,6 @@ export {
 export {
   default as stepToBetaReducePreviewCrossed
 } from 'src/lib/yc/steps/stepToBetaReducePreviewCrossed'
-export { default as stepToDefault } from 'src/lib/yc/steps/stepToDefault'
 export {
   default as stepToNeedsAlphaConvert
 } from 'src/lib/yc/steps/stepToNeedsAlphaConvert'
