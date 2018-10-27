@@ -12,16 +12,16 @@ import {
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
-function toDefault(e: VariableExpression): StepVariable<'default'>
-function toDefault(e: FunctionExpression): StepFunction<'default'>
-function toDefault(e: CallExpression): NonExecutableStepCall<'default'>
+export function toDefault(e: VariableExpression): StepVariable<'default'>
+export function toDefault(e: FunctionExpression): StepFunction<'default'>
+export function toDefault(e: CallExpression): NonExecutableStepCall<'default'>
 // This is necessary - otherwise if you pass in VariableExpression | FunctionExpression
 // it will think of it as Expression instead.
-function toDefault(
+export function toDefault(
   e: VariableExpression | FunctionExpression
 ): StepVariable<'default'> | StepFunction<'default'>
-function toDefault(e: Expression): StepChild<'default'>
-function toDefault(e: Expression): StepChild<'default'> {
+export function toDefault(e: Expression): StepChild<'default'>
+export function toDefault(e: Expression): StepChild<'default'> {
   if (isVariable(e)) {
     return { ...e, highlightType: 'default', badgeType: 'none' }
   } else if (isFunction(e)) {
