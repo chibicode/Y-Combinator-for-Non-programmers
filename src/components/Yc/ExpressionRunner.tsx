@@ -1,12 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
-import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
-import ExpressionBetaReducePreviewContext, {
-  ExpressionBetaReducePreviewContextProps
-} from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
-import ExpressionFocusContext from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
@@ -17,9 +12,9 @@ import { lineHeights } from 'src/lib/theme'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import {
   ExpressionContainerState,
-  PreviouslyChangedExpressionState,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
+import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 type InitializeInstruction =
   | {
@@ -28,7 +23,7 @@ type InitializeInstruction =
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
-      state: PreviouslyChangedExpressionState
+      state: CallStates
     }
   | {
       type: 'nextIteration'
@@ -41,7 +36,7 @@ interface ExpressionRunnerProps {
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
-  lastAllowedExpressionState?: PreviouslyChangedExpressionState
+  lastAllowedExpressionState?: CallStates
   containerSize: ContainerProps['size']
   hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
@@ -49,20 +44,6 @@ interface ExpressionRunnerProps {
 
 interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
-}
-
-const betaReducePreview = (
-  previouslyChangedExpressionState: PreviouslyChangedExpressionState
-): ExpressionBetaReducePreviewContextProps['betaReducePreview'] => {
-  if (previouslyChangedExpressionState === 'betaReducePreviewBefore') {
-    return 'before'
-  } else if (previouslyChangedExpressionState === 'betaReducePreviewAfter') {
-    return 'after'
-  } else if (previouslyChangedExpressionState === 'betaReducePreviewCrossed') {
-    return 'crossed'
-  } else {
-    return undefined
-  }
 }
 
 export default class ExpressionRunner extends React.Component<
@@ -184,45 +165,12 @@ export default class ExpressionRunner extends React.Component<
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                 `}
               >
-                <ExpressionFocusContext.Provider
-                  value={{
-                    focused:
-                      expressionContainerManagerState.isDone ||
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default',
-                    isDoneOrDefault:
-                      expressionContainerManagerState.isDone ||
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default',
-                    previouslyChangedExpressionStateReadyToHighlight:
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'readyToHighlight'
-                  }}
-                >
-                  <AlphaConvertContext.Provider
-                    value={{
-                      conflictingVariableNames:
-                        expressionContainerManagerState.expressionContainer
-                          .conflictingVariableNames || []
-                    }}
-                  >
-                    <ExpressionBetaReducePreviewContext.Provider
-                      value={{
-                        betaReducePreview: betaReducePreview(
-                          expressionContainerManagerState.expressionContainer
-                            .previouslyChangedExpressionState
-                        )
-                      }}
-                    >
-                      <ExpressionBox
-                        expression={
-                          expressionContainerManagerState.expressionContainer
-                            .expression
-                        }
-                      />
-                    </ExpressionBetaReducePreviewContext.Provider>
-                  </AlphaConvertContext.Provider>
-                </ExpressionFocusContext.Provider>
+                <ExpressionBox
+                  expression={
+                    expressionContainerManagerState.expressionContainer
+                      .expression
+                  }
+                />
               </div>
             </div>
           </Container>

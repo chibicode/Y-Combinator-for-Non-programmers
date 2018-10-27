@@ -7,10 +7,8 @@ import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
-import {
-  PreviouslyChangedExpressionState,
-  SteppedExpressionContainer
-} from 'src/types/yc/ExpressionContainerTypes'
+import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -27,7 +25,7 @@ const stateToExplanation = ({
   currentSubstep,
   hideLeftMostPrioritiesExplanation
 }: {
-  state: PreviouslyChangedExpressionState
+  state: CallStates
   matchExists?: boolean
   currentStep: number
   currentSubstep: number
@@ -66,7 +64,7 @@ const stateToExplanation = ({
         )
       }
     }
-    case 'readyToHighlight': {
+    case 'active': {
       if (locale === 'en') {
         return (
           <>
@@ -86,56 +84,39 @@ const stateToExplanation = ({
         )
       }
     }
-    case 'funcBodyBoundedJustHighlighted': {
+    case 'showFuncBound': {
       if (locale === 'en') {
         return (
           <>
-            <EmojiBadge badgeType="funcBodyBound" inline /> Rightmost on bottom
-            row
+            <EmojiBadge badgeType="funcBound" inline /> Rightmost on bottom row
           </>
         )
       } else {
         return (
           <>
             下段の一番右は
-            <EmojiBadge badgeType="funcBodyBound" inline />
+            <EmojiBadge badgeType="funcBound" inline />
           </>
         )
       }
     }
-    case 'funcBodyUnboundedJustHighlighted': {
+    case 'showFuncUnbound': {
       if (locale === 'en') {
         return (
           <>
-            <EmojiBadge badgeType="funcBodyUnbound" inline /> Wish list
+            <EmojiBadge badgeType="funcUnbound" inline /> Wish list
           </>
         )
       } else {
         return (
           <>
             いつか食べたいものリスト{' '}
-            <EmojiBadge badgeType="funcBodyUnbound" inline />
+            <EmojiBadge badgeType="funcUnbound" inline />
           </>
         )
       }
     }
-    case 'funcBodyJustHighlighted': {
-      if (locale === 'en') {
-        return (
-          <>
-            <EmojiBadge badgeType="funcBody" inline /> Rightmost on bottom row
-          </>
-        )
-      } else {
-        return (
-          <>
-            下段の一番右は
-            <EmojiBadge badgeType="funcBody" inline />
-          </>
-        )
-      }
-    }
-    case 'funcArgJustHighlighted': {
+    case 'showFuncArg': {
       if (locale === 'en') {
         return (
           <>
@@ -151,7 +132,7 @@ const stateToExplanation = ({
         )
       }
     }
-    case 'callArgJustHighlighted': {
+    case 'showCallArg': {
       if (locale === 'en') {
         return (
           <>
@@ -175,7 +156,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            No matches in <EmojiBadge badgeType="funcBody" inline />
+            No matches in <EmojiBadge badgeType="funcBound" inline />
           </>
         )
       } else {
@@ -185,7 +166,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            食べられる料理が <EmojiBadge badgeType="funcBody" inline />{' '}
+            食べられる料理が <EmojiBadge badgeType="funcBound" inline />{' '}
             にありません
           </>
         )

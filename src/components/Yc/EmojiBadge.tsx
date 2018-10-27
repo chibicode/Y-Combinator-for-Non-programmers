@@ -1,20 +1,18 @@
 import { css, cx } from 'emotion'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
-import { ExpressionHighlighterContextProps } from 'src/components/Yc/ExpressionHighlighterContext'
 import { colors } from 'src/lib/theme'
+import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface EmojiBadgeProps {
-  badgeType:
-    | Required<ExpressionHighlighterContextProps>['highlightType']
-    | 'wasJustBetaReduced'
+  badgeType: Exclude<VariableExpression['badgeType'], 'none'>
   inline?: boolean
 }
 
 const funcArgColor = colors('pink400')
 const funcBodyUnboundColor = colors('grey300')
 
-const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
+const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']): string =>
   ({
     callArg: css`
       border-color: ${colors('indigo300')};
@@ -22,16 +20,13 @@ const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']) =>
     funcArg: css`
       border-color: ${funcArgColor};
     `,
-    funcBodyUnbound: css`
+    funcUnbound: css`
       border-color: ${funcBodyUnboundColor};
     `,
-    funcBodyBound: css`
+    funcBound: css`
       border-color: ${colors('yellow800')};
     `,
-    funcBody: css`
-      border-color: ${colors('yellow800')};
-    `,
-    wasJustBetaReduced: css`
+    betaReduced: css`
       border-color: ${colors('indigo300')};
     `
   }[x])
@@ -96,15 +91,14 @@ const badgeTypeToShapeAndSize = (x: EmojiBadgeProps['badgeType']) => {
       border-style: solid;
       background-color: #fff;
     `,
-    wasJustBetaReduced: css`
+    betaReduced: css`
       position: relative;
       bottom: 0.1em;
       right: 0.05em;
     `,
     funcArg: funcArgCssOrfuncBoundCss(funcArgColor),
-    funcBodyUnbound: funcArgCssOrfuncBoundCss(funcBodyUnboundColor),
-    funcBody: funcBodyCss,
-    funcBodyBound: funcBodyCss
+    funcUnbound: funcArgCssOrfuncBoundCss(funcBodyUnboundColor),
+    funcBound: funcBodyCss
   }[x]
 }
 
@@ -112,20 +106,18 @@ const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: '👨‍🍳',
     funcArg: '😋',
-    funcBody: '🍽',
-    funcBodyBound: '🍽',
-    funcBodyUnbound: '💭',
-    wasJustBetaReduced: '🆕'
+    funcBound: '🍽',
+    funcUnbound: '💭',
+    betaReduced: '🆕'
   }[x])
 
 const inlineVerticalOffset = (x: EmojiBadgeProps['badgeType']) =>
   ({
     callArg: 0.05,
     funcArg: 0.15 + hexAdjustTop,
-    funcBodyBound: 0.2,
-    funcBodyUnbound: 0.15 + hexAdjustTop,
-    funcBody: 0.2,
-    wasJustBetaReduced: 0
+    funcBound: 0.2,
+    funcUnbound: 0.15 + hexAdjustTop,
+    betaReduced: 0
   }[x])
 
 const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ badgeType, inline }) => (
@@ -141,9 +133,7 @@ const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ badgeType, inline }) => (
         [css`
           display: flex;
           /* Font size varies depending on emoji size */
-          font-size: ${badgeType === 'wasJustBetaReduced'
-            ? '0.55em'
-            : '0.45em'};
+          font-size: ${badgeType === 'betaReduced' ? '0.55em' : '0.45em'};
         `]: !inline,
         [css`
           display: inline-flex;
