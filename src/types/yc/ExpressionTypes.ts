@@ -154,12 +154,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                         | 'highlightCallArg'
                         | 'betaReduced'
                     : C extends 'betaReducePreviewCrossed'
-                      ?
-                          | 'activeFuncBound'
-                          | 'removedFuncArg'
-                          | 'highlightFuncUnbound'
-                          | 'removedCallArg'
-                          | 'activeFuncBound'
+                      ? 'active' | 'removedFuncArg' | 'removedCallArg'
                       : never
 
 export interface CallExpression {
