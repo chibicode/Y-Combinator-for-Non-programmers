@@ -2,16 +2,9 @@ import { isDoneExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
   ExpressionContainerState,
-  PreviouslyChangedExpressionState,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
-
-const skipOptions: Partial<
-  { [K in PreviouslyChangedExpressionState]: boolean }
-> = {
-  readyToBetaReduce: true,
-  justBetaReduced: true
-}
+import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 export default class ExpressionContainerManager {
   public get currentState() {
@@ -48,14 +41,14 @@ export default class ExpressionContainerManager {
   public iterationBoundaries: number[] = []
   public minimumIndex = 0
   public maximumIndex = 999
-  public lastAllowedExpressionState?: PreviouslyChangedExpressionState
+  public lastAllowedExpressionState?: CallStates
 
   constructor({
     expressionContainer,
     lastAllowedExpressionState
   }: {
     expressionContainer: SteppedExpressionContainer
-    lastAllowedExpressionState?: PreviouslyChangedExpressionState
+    lastAllowedExpressionState?: CallStates
   }) {
     this.expressionContainers.push(expressionContainer)
     this.lastAllowedExpressionState = lastAllowedExpressionState
@@ -67,9 +60,7 @@ export default class ExpressionContainerManager {
     }
   }
 
-  public stepForwardUntilPreviouslyChangedExpressionState(
-    state: PreviouslyChangedExpressionState
-  ) {
+  public stepForwardUntilPreviouslyChangedExpressionState(state: CallStates) {
     while (
       this.currentExpressionContainer.previouslyChangedExpressionState !==
         state &&
@@ -98,13 +89,6 @@ export default class ExpressionContainerManager {
       let expressionContainer: SteppedExpressionContainer = this
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(expressionContainer)
-
-      if (
-        skipOptions[expressionContainer.previouslyChangedExpressionState] &&
-        !isDoneExpressionContainer(expressionContainer)
-      ) {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      }
 
       if (
         !expressionContainer.matchExists &&

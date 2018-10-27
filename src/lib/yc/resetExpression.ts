@@ -1,28 +1,33 @@
 import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  DefaultCall,
-  DefaultExpression,
-  DefaultFunction,
-  DefaultVariable,
   Expression,
   FunctionExpression,
+  NonExecutableStepCall,
+  StepChild,
+  StepFunction,
+  StepVariable,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpression(
   expression: VariableExpression
-): DefaultVariable
+): StepVariable<'default'>
 export default function resetExpression(
   expression: FunctionExpression
-): DefaultFunction
-export default function resetExpression(expression: CallExpression): DefaultCall
+): StepFunction<'default'>
+export default function resetExpression(
+  expression: CallExpression
+): NonExecutableStepCall<'default'>
+export default function resetExpression(
+  expression: VariableExpression | FunctionExpression
+): StepVariable<'default'> | StepFunction<'default'>
 export default function resetExpression(
   expression: Expression
-): DefaultExpression
+): StepChild<'default'>
 export default function resetExpression(
   expression: Expression
-): DefaultExpression {
+): StepChild<'default'> {
   if (isVariable(expression)) {
     return {
       type: 'variable',

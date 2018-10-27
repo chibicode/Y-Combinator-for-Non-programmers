@@ -220,25 +220,3 @@ export type StepChild<C extends CallStates> =
 // https://stackoverflow.com/a/51691257/114157
 type Distribute<U> = U extends any ? ExecutableStepCall<U> : never
 export type ExecutableCall = Distribute<CallStates>
-
-// type ExecutableCallWithState<S extends CallStates> = S extends 'default'
-//   ? ExecutableDefaultCall
-//   : S extends 'active'
-//     ? ExecutableActiveCall
-//     : S extends 'showFuncBound'
-//       ? ExecutableShowFuncBoundCall
-//       : S extends 'showFuncArg'
-//         ? ExecutableShowFuncArgCall
-//         : S extends 'showFuncUnbound'
-//           ? ExecutableShowFuncUnboundCall
-//           : S extends 'showCallArg'
-//             ? ExecutableShowCallArgCall
-//             : S extends 'needsAlphaConvert'
-//               ? ExecutableNeedsAlphaConvertCall
-//               : S extends 'alphaConvertDone'
-//                 ? ExecutableAlphaConvertDoneCall
-//                 : S extends 'betaReducePreviewBefore'
-//                   ? ExecutableBetaReducePreviewBeforeCall
-//                   : S extends 'betaReducePreviewAfter'
-//                     ? ExecutableBetaReducePreviewAfterCall
-//                     : ExecutableBetaReducePreviewCrossedCall

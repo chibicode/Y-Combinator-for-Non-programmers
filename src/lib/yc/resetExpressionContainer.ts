@@ -3,11 +3,11 @@ import {
   NeedsPrioritizeExpressionContainer,
   NeedsResetExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
-import { DefaultExpression } from 'src/types/yc/ExpressionTypes'
+import { StepChild } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpressionContainer(
   expressionContainer: NeedsResetExpressionContainer
-): NeedsPrioritizeExpressionContainer<DefaultExpression> {
+): NeedsPrioritizeExpressionContainer<StepChild<'default'>> {
   return {
     containerState: 'needsPrioritize',
     expression: resetExpression(expressionContainer.expression),

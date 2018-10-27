@@ -5,13 +5,13 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCallExpression,
+  ExecutableCall,
   Expression,
   FunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export interface FindResult<
-  E extends ExecutableCallExpression,
+  E extends ExecutableCall,
   C extends CallExpression,
   F extends FunctionExpression
 > {
@@ -39,7 +39,7 @@ interface HelperStackItem<C extends CallExpression> {
  * @returns {FindResult<E, C, F>}
  */
 function helper<
-  E extends ExecutableCallExpression,
+  E extends ExecutableCall,
   C extends CallExpression,
   F extends FunctionExpression
 >(callExpression: C): FindResult<E, C, F> {
@@ -78,7 +78,7 @@ function helper<
 }
 
 export default function findNextCallExpressionAndParent<
-  E extends ExecutableCallExpression,
+  E extends ExecutableCall,
   C extends CallExpression,
   F extends FunctionExpression
 >(expression: Expression): FindResult<E, C, F> {
