@@ -201,17 +201,16 @@ type Executable<
   readonly priority: 1
 }
 
-export type StepVariable<C extends CallStates> = VariableWithState<CtoV<C>>
-export interface StepFunction<C extends CallStates>
+export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
+  CtoV<C>
+>
+export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
-export interface NonExecutableStepCall<C extends CallStates>
+export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
-export interface ExecutableStepCall<C extends CallStates>
+export interface ExecutableStepCall<C extends CallStates = 'default'>
   extends Executable<C, StepFunction<C>, StepVariable<C>> {}
-export type StepCall<C extends CallStates> =
-  | NonExecutableStepCall<C>
-  | ExecutableStepCall<C>
-export type StepChild<C extends CallStates> =
+export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
   | NonExecutableStepCall<C>

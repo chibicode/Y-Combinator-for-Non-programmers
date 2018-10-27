@@ -9,10 +9,10 @@ import {
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
-  DefaultCallExpression,
-  DefaultExpression,
-  DefaultFunctionExpression,
-  DefaultVariableExpression
+  NonExecutableStepCall,
+  StepChild,
+  StepFunction,
+  StepVariable
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -41,7 +41,7 @@ function nestCallExpressions(expression: any) {
 const buildVariableExpression = (
   name: VariableNames,
   bound: boolean
-): DefaultVariableExpression => ({
+): StepVariable => ({
   name,
   highlightType: 'default',
   badgeType: 'none',
@@ -53,19 +53,19 @@ const buildVariableExpression = (
 
 export default function buildExpressionFromParams(
   expressionParams: VariableExpressionParams
-): DefaultVariableExpression
+): StepVariable
 export default function buildExpressionFromParams(
   expressionParams: CallExpressionParams
-): DefaultCallExpression
+): NonExecutableStepCall
 export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
-): DefaultFunctionExpression
+): StepFunction
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
-): DefaultExpression
+): StepChild
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
-): DefaultExpression {
+): StepChild {
   if (isVariableExpressionParams(expressionParams)) {
     return buildVariableExpression(expressionParams, true)
   } else if (isCallExpressionParams(expressionParams)) {

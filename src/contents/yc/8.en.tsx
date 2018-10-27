@@ -98,7 +98,7 @@ export default () => {
         <OlLi>
           On{' '}
           <Em>
-            available dishes <EmojiBadge badgeType="funcBody" inline />
+            available dishes <EmojiBadge badgeType="funcBound" inline />
           </Em>{' '}
           , there is <Strong>at least one</Strong> sandwich{' '}
           <Emoji size="mdlg">🥪</Emoji> that’s{' '}
@@ -107,7 +107,7 @@ export default () => {
       </Ol>
       <P>
         The last rule might be confusing. On{' '}
-        <EmojiBadge badgeType="funcBody" inline /> there are two sandwiches{' '}
+        <EmojiBadge badgeType="funcBound" inline /> there are two sandwiches{' '}
         <Emoji>🥪</Emoji> <Emoji>🥪</Emoji>,{' '}
         <Em>but one is in the rightmost cell.</Em>
       </P>
@@ -132,7 +132,7 @@ export default () => {
       <P>
         <Strong>Before I explain the rule:</Strong> Let’s highlight all the
         sandwiches <Emoji size="mdlg">🥪</Emoji> (including the rightmost one in{' '}
-        <EmojiBadge badgeType="funcBody" inline />
+        <EmojiBadge badgeType="funcBound" inline />
         ):
       </P>
       {episode8[i++]()}
@@ -145,7 +145,7 @@ export default () => {
         </UlLi>
         <UlLi>
           Highlighting <Emoji size="mdlg">🥪</Emoji> in{' '}
-          <EmojiBadge badgeType="funcBody" inline /> using{' '}
+          <EmojiBadge badgeType="funcBound" inline /> using{' '}
           <InlineBackground bgPattern="stripe" size="mdlg" />
         </UlLi>
       </Ul>
