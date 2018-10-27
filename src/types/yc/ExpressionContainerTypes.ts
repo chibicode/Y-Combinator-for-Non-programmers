@@ -11,8 +11,6 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly containerState: ExpressionContainerState
   readonly previouslyChangedExpressionState: CallExpressionStates
-  readonly conflictingVariableNames?: ReadonlyArray<VariableNames>
-  readonly backupExpression?: E
   readonly matchExists?: boolean
 }
 
