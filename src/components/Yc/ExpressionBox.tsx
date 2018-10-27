@@ -10,7 +10,6 @@ import { Expression } from 'src/types/yc/ExpressionTypes'
 
 interface ExpressionBoxProps {
   expression: Expression
-  isDone?: boolean
 }
 
 const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (

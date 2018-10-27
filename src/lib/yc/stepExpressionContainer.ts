@@ -53,7 +53,8 @@ const stepExpressionContainerReset = (
 type DE = DraftObject<ExecutableCall>
 
 const step = (
-  e: DE
+  e: DE,
+  matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
@@ -124,9 +125,16 @@ const step = (
       }
     }
     case 'betaReducePreviewBefore': {
-      return {
-        nextExpression: stepToBetaReducePreviewAfter(e),
-        previouslyChangedExpressionState: 'betaReducePreviewAfter'
+      if (matchExists) {
+        return {
+          nextExpression: stepToBetaReducePreviewAfter(e),
+          previouslyChangedExpressionState: 'betaReducePreviewAfter'
+        }
+      } else {
+        return {
+          nextExpression: stepToBetaReducePreviewCrossed(e),
+          previouslyChangedExpressionState: 'betaReducePreviewCrossed'
+        }
       }
     }
     case 'betaReducePreviewAfter': {
@@ -169,7 +177,7 @@ const recipe = (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = step(expression)
+  } = step(expression, draftContainer.matchExists)
 
   if (!callParent || !callParentKey) {
     const newContainer = {

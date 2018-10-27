@@ -20,12 +20,13 @@ interface BorderWrapperProps {
 
 const background = (
   highlightType: VariableExpression['highlightType'] | 'none',
-  variableSize: ExpressionRunnerContextProps['variableSize']
+  variableSize: ExpressionRunnerContextProps['variableSize'],
+  isDone: boolean
 ): string | undefined => {
   switch (highlightType) {
     case 'default': {
       return css`
-        background: ${colors('indigo50')};
+        background: ${colors(isDone ? 'white' : 'indigo50')};
       `
     }
     case 'active': {
@@ -111,7 +112,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ variableSize }) => (
+    {({ variableSize, isDone }) => (
       <Flex
         className={cx(
           css`
@@ -121,7 +122,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             flex: 1;
             position: relative;
           `,
-          background(highlightType, variableSize)
+          background(highlightType, variableSize, isDone)
         )}
       >
         {highlightType === 'removed' && <Cross />}

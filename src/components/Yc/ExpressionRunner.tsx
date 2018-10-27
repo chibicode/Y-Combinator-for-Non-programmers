@@ -127,7 +127,8 @@ export default class ExpressionRunner extends React.Component<
       <ExpressionRunnerContext.Provider
         value={{
           hidePriorities,
-          variableSize
+          variableSize,
+          isDone: expressionContainerManagerState.isDone
         }}
       >
         <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>

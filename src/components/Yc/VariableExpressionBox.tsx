@@ -88,7 +88,6 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
             }
           />
         )}
-        }
       </>
     )}
   </ExpressionRunnerContext.Consumer>

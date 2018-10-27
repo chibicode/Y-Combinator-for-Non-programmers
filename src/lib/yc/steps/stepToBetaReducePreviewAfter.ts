@@ -88,7 +88,7 @@ export function toBetaReducePreviewAfter(
   if (isVariable(e)) {
     if (funcSide && e.bound) {
       if (e.name === from) {
-        return matchBetaReduced(e)
+        return matchBetaReduced(to)
       } else {
         return {
           ...e,

@@ -174,23 +174,15 @@ const stateToExplanation = ({
     }
     case 'betaReducePreviewAfter': {
       if (locale === 'en') {
-        return matchExists ? (
+        return (
           <>
             Matches replaced <Emoji>🆕</Emoji>
           </>
-        ) : (
-          <>
-            Nothing to replace <Emoji>😭</Emoji>
-          </>
         )
       } else {
-        return matchExists ? (
+        return (
           <>
             食べたら次の料理に <Emoji>🆕</Emoji>
-          </>
-        ) : (
-          <>
-            だから何も食べれません <Emoji>😭</Emoji>
           </>
         )
       }
