@@ -3,6 +3,7 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
@@ -39,34 +40,56 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
   expression
 }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ variableSize }) => (
-      <FlexCenter
-        className={css`
-          flex: 1;
-          font-size: ${fontSize(variableSize)};
-          padding: ${paddingTop(variableSize)} 0 ${paddingBottom(variableSize)};
-        `}
-      >
-        <span
+    {({ hidePriorities, variableSize }) => (
+      <>
+        {!hidePriorities && (
+          <ExpressionPrioritiesLabel
+            priorities={expression.argPriorityAgg}
+            position="topleft"
+            emphasizeOne={
+              expression.highlightType === 'activeEmphasizePriorityOne'
+            }
+          />
+        )}
+        <FlexCenter
           className={css`
-            position: relative;
+            flex: 1;
+            font-size: ${fontSize(variableSize)};
+            padding: ${paddingTop(variableSize)} 0
+              ${paddingBottom(variableSize)};
           `}
         >
-          <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
-          {expression.badgeType !== 'none' && (
-            <span
-              className={css`
-                position: absolute;
-                right: -0.2em;
-                bottom: 0;
-                z-index: ${zIndices('emojiBadge')};
-              `}
-            >
-              <EmojiBadge badgeType={expression.badgeType} />
-            </span>
-          )}
-        </span>
-      </FlexCenter>
+          <span
+            className={css`
+              position: relative;
+            `}
+          >
+            <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
+            {expression.badgeType !== 'none' && (
+              <span
+                className={css`
+                  position: absolute;
+                  right: -0.2em;
+                  bottom: 0;
+                  z-index: ${zIndices('emojiBadge')};
+                `}
+              >
+                <EmojiBadge badgeType={expression.badgeType} />
+              </span>
+            )}
+          </span>
+        </FlexCenter>
+        {!hidePriorities && (
+          <ExpressionPrioritiesLabel
+            priorities={expression.funcPriorityAgg}
+            position="bottomleft"
+            emphasizeOne={
+              expression.highlightType === 'activeEmphasizePriorityOne'
+            }
+          />
+        )}
+        }
+      </>
     )}
   </ExpressionRunnerContext.Consumer>
 )

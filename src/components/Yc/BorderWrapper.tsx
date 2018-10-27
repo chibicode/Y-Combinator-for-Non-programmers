@@ -219,60 +219,38 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   childVariableWillBeBetaReduced,
   childWasJustBetaReduced
 }) => (
-  <ExpressionBetaReducePreviewContext.Consumer>
-    {({ betaReducePreview, wasJustBetaReduced }) => (
-      <ExpressionBetaReducePreviewContext.Provider
-        value={{
-          betaReducePreview,
-          wasJustBetaReduced: wasJustBetaReduced || childWasJustBetaReduced
-        }}
+  <ExpressionRunnerContext.Consumer>
+    {({ variableSize }) => (
+      <Flex
+        className={cx(
+          css`
+            margin: -2px;
+            border: 2px solid ${colors('indigo300')};
+            align-items: center;
+            flex: 1;
+            position: relative;
+          `,
+          background({
+            state,
+            betaReducePreview,
+            focused,
+            conflictingVariableNames,
+            childVariableName,
+            variableSize,
+            childVariableHighlightType,
+            childVariableJustAlphaConverted,
+            childVariableWillBeBetaReduced,
+            justBetaReduced: wasJustBetaReduced || childWasJustBetaReduced
+          })
+        )}
       >
-        <ExpressionRunnerContext.Consumer>
-          {({ variableSize }) => (
-            <ExpressionFocusContext.Consumer>
-              {({ focused }) => (
-                <AlphaConvertContext.Consumer>
-                  {({ conflictingVariableNames }) => (
-                    <Flex
-                      className={cx(
-                        css`
-                          margin: -2px;
-                          border: 2px solid ${colors('indigo300')};
-                          align-items: center;
-                          flex: 1;
-                          position: relative;
-                        `,
-                        background({
-                          state,
-                          betaReducePreview,
-                          focused,
-                          conflictingVariableNames,
-                          childVariableName,
-                          variableSize,
-                          childVariableHighlightType,
-                          childVariableJustAlphaConverted,
-                          childVariableWillBeBetaReduced,
-                          justBetaReduced:
-                            wasJustBetaReduced || childWasJustBetaReduced
-                        })
-                      )}
-                    >
-                      {betaReducePreview === 'crossed' &&
-                        (childVariableHighlightType === 'callArg' ||
-                          childVariableHighlightType === 'funcArg') && (
-                          <Cross />
-                        )}
-                      {children}
-                    </Flex>
-                  )}
-                </AlphaConvertContext.Consumer>
-              )}
-            </ExpressionFocusContext.Consumer>
-          )}
-        </ExpressionRunnerContext.Consumer>
-      </ExpressionBetaReducePreviewContext.Provider>
+        {betaReducePreview === 'crossed' &&
+          (childVariableHighlightType === 'callArg' ||
+            childVariableHighlightType === 'funcArg') && <Cross />}
+        {children}
+      </Flex>
     )}
-  </ExpressionBetaReducePreviewContext.Consumer>
+  </ExpressionRunnerContext.Consumer>
 )
 
 export default BorderWrapper
