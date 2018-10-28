@@ -7,13 +7,11 @@ import t, { allTranslations } from 'src/lib/t'
 interface EpisodePageWrapperProps {
   episodeNumber?: number
   lessonName: keyof typeof pathHelpers
-  emojis: EpisodePageProps['emojis']
 }
 
 const EpisodePageWrapper: React.SFC<EpisodePageWrapperProps> = ({
   lessonName,
-  episodeNumber,
-  emojis
+  episodeNumber
 }) => (
   <EpisodePage
     lessonName={lessonName}
@@ -26,7 +24,6 @@ const EpisodePageWrapper: React.SFC<EpisodePageWrapperProps> = ({
         : undefined
     }
     episodeNumber={episodeNumber}
-    emojis={emojis}
     contentName={
       (episodeNumber
         ? `${lessonName}/${episodeNumber}`
