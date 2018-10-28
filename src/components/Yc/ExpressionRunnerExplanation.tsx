@@ -176,13 +176,15 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Matches replaced <Emoji>🆕</Emoji>
+            Matches replaced <Emoji>🆕</Emoji> with{' '}
+            <EmojiBadge badgeType="callArg" inline />
           </>
         )
       } else {
         return (
           <>
-            食べたら次の料理に <Emoji>🆕</Emoji>
+            <EmojiBadge badgeType="callArg" inline /> と入れ替わります{' '}
+            <Emoji>🆕</Emoji>
           </>
         )
       }
