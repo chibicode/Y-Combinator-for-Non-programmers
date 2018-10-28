@@ -31,6 +31,7 @@ export default function buildExpressionContainer(
   return {
     expression: buildExpressionFromParams(expressionParams),
     containerState: 'needsPrioritize',
-    previouslyChangedExpressionState: 'default'
+    previouslyChangedExpressionState: 'default',
+    findResult: {}
   }
 }

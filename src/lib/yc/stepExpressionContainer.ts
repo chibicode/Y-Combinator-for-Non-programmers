@@ -36,13 +36,13 @@ const stepExpressionContainerReset = (
   const nextCallExpressionAndParent = findNextCallExpressionAndParent(
     newContainer.expression
   )
-  if (nextCallExpressionAndParent.expression) {
-    return newContainer
-  } else {
+  if (nextCallExpressionAndParent.notFound) {
     return {
       ...newContainer,
       containerState: 'done'
     }
+  } else {
+    return newContainer
   }
 }
 
@@ -159,18 +159,25 @@ const recipe = (
   >
 ): ContainerWithState<'needsReset'> | ContainerWithState<'stepped'> | void => {
   const {
-    expression,
+    notFound,
     callParent,
     funcParent,
     callParentKey
-  } = findNextCallExpressionAndParent<
-    DE,
-    DraftObject<CallExpression>,
-    DraftObject<FunctionExpression>
-  >(draftContainer.expression)
-  if (!expression) {
+  } = draftContainer.findResult
+  if (notFound) {
     throw new Error()
   }
+  let expression: CallExpression
+  if (!callParent && !callParentKey && !funcParent) {
+    expression = draftContainer.expression
+  } else if (callParent && callParentKey) {
+    expression = callParent[callParentKey]
+  } else if (funcParent) {
+    expression = funcParent.body
+  } else {
+    throw new Error()
+  }
+
   const {
     nextExpression,
     matchExists,

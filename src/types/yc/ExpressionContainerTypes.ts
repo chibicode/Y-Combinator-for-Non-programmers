@@ -1,3 +1,4 @@
+import { FindResult } from 'src/lib/yc/findNextCallExpressionAndParent'
 import { CallStates, Expression } from 'src/types/yc/ExpressionTypes'
 
 export type ExpressionContainerStates =
@@ -12,6 +13,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly containerState: ExpressionContainerStates
   readonly previouslyChangedExpressionState: CallStates
   readonly matchExists?: boolean
+  readonly findResult: FindResult
 }
 
 export type ContainerWithState<
