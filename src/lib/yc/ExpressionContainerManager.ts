@@ -122,9 +122,9 @@ export default class ExpressionContainerManager {
 
   private get canStepForward() {
     return (
-      this.canRedo ||
-      (!isContainerWithState(this.currentExpressionContainer, 'done') &&
-        this.isUnderMaxIndex)
+      (this.canRedo ||
+        !isContainerWithState(this.currentExpressionContainer, 'done')) &&
+      this.isUnderMaxIndex
     )
   }
 

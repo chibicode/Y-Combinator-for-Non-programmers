@@ -43,33 +43,7 @@ export default () => {
         ’s:
       </P>
       {episode6[i++]()}
-      <P>
-        <Strong>Let’s continue:</Strong> <Em>Try pressing {h('ycNext')}</Em>{' '}
-        until we get to step 1.8.
-      </P>
-      {episode6[i++]()}
-      <P>
-        Notice that, in steps <Strong>1.8</Strong>,{' '}
-        <Em>
-          the matched sushi <Emoji>🍣</Emoji> is replaced by the{' '}
-          <Strong>two</Strong> salads <Emoji>🥗</Emoji>
-        </Em>{' '}
-        the chef is preparing <Emoji>👨‍🍳</Emoji>.
-      </P>
-      <P>
-        Then <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
-      </P>
-      {episode6[i++]()}
-      <P>
-        Again, we have multiple <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        ’s. And we’ll again do <Strong>the leftmost one first</Strong>.{' '}
-        {h('ycTryUntilDone')}.
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>That’s it!</Strong> By the way, you can try it from the
-        begininng to end here:
-      </P>
+      <P>Let’s continue until the end:</P>
       {episode6[i++]()}
       <H3>Review</H3>
       <P>
@@ -84,11 +58,8 @@ export default () => {
       </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
       <P>Ok, let’s do another quiz!</P>
-      <H3>A Very Hard Quiz</H3>
-      <P>
-        This one’s challenging. Suppose that currently the {h('ycBentoBox')}{' '}
-        looks like this:
-      </P>
+      <H3>Quiz</H3>
+      <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
       {episode6[i++]()}
       <P>
         <Strong>True or False:</Strong>{' '}
@@ -96,13 +67,8 @@ export default () => {
       </P>
       {episode6[i++]()}
       <P>
-        <Strong>Yes,</Strong> this question is very hard to do in your head.
-      </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <P>
-        <Em>
-          But at least try for a little bit before you click the button below!
-        </Em>
+        <Strong>This question is tricky.</Strong> But at least try for a little
+        bit before you click the button below!
       </P>
       <YcNextLessonButton nextEpisodeNumber={7} />
     </>
