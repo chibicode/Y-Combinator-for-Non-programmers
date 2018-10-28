@@ -1,6 +1,6 @@
 import buildExpressionContainer from 'src/lib/yc/buildExpressionContainer'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
-import { PrioritizedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -16,16 +16,16 @@ import {
 
 export default function initializeExpressionContainer(
   expressionParams: VariableExpressionParams
-): PrioritizedExpressionContainer<VariableExpression>
+): ContainerWithState<'prioritized', VariableExpression>
 export default function initializeExpressionContainer(
   expressionParams: CallExpressionParams
-): PrioritizedExpressionContainer<CallExpression>
+): ContainerWithState<'prioritized', CallExpression>
 export default function initializeExpressionContainer(
   expressionParams: FunctionExpressionParams
-): PrioritizedExpressionContainer<FunctionExpression>
+): ContainerWithState<'prioritized', FunctionExpression>
 export default function initializeExpressionContainer(
   expressionParams: ExpressionParams
-): PrioritizedExpressionContainer<Expression> {
+): ContainerWithState<'prioritized', Expression> {
   return prioritizeExpressionContainer(
     buildExpressionContainer(expressionParams)
   )

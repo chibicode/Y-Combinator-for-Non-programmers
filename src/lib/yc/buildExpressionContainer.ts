@@ -1,5 +1,5 @@
 import buildExpressionFromParams from 'src/lib/yc/buildExpressionFromParams'
-import { NeedsPrioritizeExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -15,19 +15,19 @@ import {
 
 export default function buildExpressionContainer(
   expressionParams: VariableExpressionParams
-): NeedsPrioritizeExpressionContainer<StepVariable>
+): ContainerWithState<'needsPrioritize', StepVariable>
 export default function buildExpressionContainer(
   expressionParams: CallExpressionParams
-): NeedsPrioritizeExpressionContainer<NonExecutableStepCall>
+): ContainerWithState<'needsPrioritize', NonExecutableStepCall>
 export default function buildExpressionContainer(
   expressionParams: FunctionExpressionParams
-): NeedsPrioritizeExpressionContainer<StepFunction>
+): ContainerWithState<'needsPrioritize', StepFunction>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
-): NeedsPrioritizeExpressionContainer<StepChild>
+): ContainerWithState<'needsPrioritize', StepChild>
 export default function buildExpressionContainer(
   expressionParams: ExpressionParams
-): NeedsPrioritizeExpressionContainer<StepChild> {
+): ContainerWithState<'needsPrioritize', StepChild> {
   return {
     expression: buildExpressionFromParams(expressionParams),
     containerState: 'needsPrioritize',

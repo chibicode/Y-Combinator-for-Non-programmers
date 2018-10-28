@@ -18,11 +18,7 @@ import {
   stepToShowFuncBound,
   stepToShowFuncUnbound
 } from 'src/lib/yc/steps'
-import {
-  DoneExpressionContainer,
-  NeedsResetExpressionContainer,
-  PrioritizedExpressionContainer
-} from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpression,
   CallStates,
@@ -32,8 +28,8 @@ import {
 } from 'src/types/yc/ExpressionTypes'
 
 const stepExpressionContainerReset = (
-  e: NeedsResetExpressionContainer
-): DoneExpressionContainer | PrioritizedExpressionContainer => {
+  e: ContainerWithState<'needsReset'>
+): ContainerWithState<'done'> | ContainerWithState<'prioritized'> => {
   const newContainer = prioritizeExpressionContainer(
     resetExpressionContainer(e)
   )
@@ -157,9 +153,11 @@ const step = (
 
 const recipe = (
   draftContainer: DraftObject<
-    NeedsResetExpressionContainer | PrioritizedExpressionContainer
+    | ContainerWithState<'prioritized'>
+    | ContainerWithState<'stepped'>
+    | ContainerWithState<'needsReset'>
   >
-): NeedsResetExpressionContainer | PrioritizedExpressionContainer | void => {
+): ContainerWithState<'needsReset'> | ContainerWithState<'stepped'> | void => {
   const {
     expression,
     callParent,
@@ -187,7 +185,7 @@ const recipe = (
     }
     return previouslyChangedExpressionState === 'default'
       ? { ...newContainer, containerState: 'needsReset' }
-      : { ...newContainer, containerState: 'prioritized' }
+      : { ...newContainer, containerState: 'stepped' }
   }
 
   if (callParent && callParentKey) {
@@ -198,6 +196,8 @@ const recipe = (
 
   if (previouslyChangedExpressionState === 'default') {
     draftContainer.containerState = 'needsReset'
+  } else {
+    draftContainer.containerState = 'stepped'
   }
 
   draftContainer.matchExists = matchExists
@@ -205,10 +205,15 @@ const recipe = (
 }
 
 export default function stepExpressionContainer(
-  e: PrioritizedExpressionContainer
-): DoneExpressionContainer | PrioritizedExpressionContainer {
+  e: ContainerWithState<'prioritized'> | ContainerWithState<'stepped'>
+):
+  | ContainerWithState<'done'>
+  | ContainerWithState<'stepped'>
+  | ContainerWithState<'prioritized'> {
   const result = produce<
-    NeedsResetExpressionContainer | PrioritizedExpressionContainer
+    | ContainerWithState<'needsReset'>
+    | ContainerWithState<'stepped'>
+    | ContainerWithState<'prioritized'>
   >(e, recipe)
 
   if (isNeedsResetExpressionContainer(result)) {

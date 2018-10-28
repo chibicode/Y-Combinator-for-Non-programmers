@@ -2,6 +2,7 @@ import { CallStates, Expression } from 'src/types/yc/ExpressionTypes'
 
 export type ExpressionContainerState =
   | 'prioritized'
+  | 'stepped'
   | 'needsPrioritize'
   | 'needsReset'
   | 'done'
@@ -13,30 +14,14 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly matchExists?: boolean
 }
 
-export type PrioritizedExpressionContainer<
+export type ContainerWithState<
+  S extends ExpressionContainerState,
   E extends Expression = Expression
 > = ExpressionContainer<E> & {
-  readonly containerState: 'prioritized'
-}
-
-export type NeedsPrioritizeExpressionContainer<
-  E extends Expression = Expression
-> = ExpressionContainer<E> & {
-  readonly containerState: 'needsPrioritize'
-}
-
-export type NeedsResetExpressionContainer<
-  E extends Expression = Expression
-> = ExpressionContainer<E> & {
-  readonly containerState: 'needsReset'
-}
-
-export type DoneExpressionContainer<
-  E extends Expression = Expression
-> = ExpressionContainer<E> & {
-  readonly containerState: 'done'
+  readonly containerState: S
 }
 
 export type SteppedExpressionContainer<E extends Expression = Expression> =
-  | DoneExpressionContainer<E>
-  | PrioritizedExpressionContainer<E>
+  | ContainerWithState<'done', E>
+  | ContainerWithState<'prioritized', E>
+  | ContainerWithState<'stepped', E>
