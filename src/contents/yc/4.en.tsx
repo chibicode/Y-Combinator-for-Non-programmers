@@ -135,7 +135,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Em>
-            <Strong>Everything else</Strong> on the bottom low is on wish list{' '}
+            <Strong>Everything else</Strong> on the bottom row is on wish list{' '}
             <Emoji>💭</Emoji>.
           </Em>
         </UlLi>
