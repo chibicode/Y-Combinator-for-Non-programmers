@@ -51,6 +51,7 @@ export default class ExpressionContainerManager {
   }) {
     this.expressionContainers.push(expressionContainer)
     this.lastAllowedExpressionState = lastAllowedExpressionState
+    this.precompute()
   }
 
   public stepBackward() {
@@ -81,7 +82,11 @@ export default class ExpressionContainerManager {
   public stepForward() {
     if (this.canRedo) {
       this.currentIndex++
-    } else if (
+    }
+  }
+
+  private precompute() {
+    while (
       this.isUnderMaxIndex &&
       !isContainerWithState(this.currentExpressionContainer, 'done')
     ) {
@@ -104,6 +109,7 @@ export default class ExpressionContainerManager {
         this.maximumIndex = this.currentIndex
       }
     }
+    this.currentIndex = 0
   }
 
   private get canStepBackward() {
