@@ -1,22 +1,22 @@
 {
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.1.1",
+    "@material-ui/core": "^3.3.2",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
-    "color": "^3.0.0",
-    "emotion": "^9.2.10",
-    "emotion-server": "^9.2.10",
+    "color": "^3.1.0",
+    "emotion": "^9.2.12",
+    "emotion-server": "^9.2.12",
     "emotion-theming": "^9.2.9",
-    "immer": "^1.7.2",
+    "immer": "^1.7.3",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
-    "next": "7.0.1",
+    "next": "7.0.2",
     "nprogress": "^0.2.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-emotion": "^9.2.10",
-    "twemoji": "^11.0.1"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-emotion": "^9.2.12",
+    "twemoji": "^11.2.0"
   },
   "scripts": {
     "jp": "APP_LOCALE=jp next -p 3001",
@@ -32,17 +32,17 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@svgr/cli": "^3.0.0",
+    "@svgr/cli": "^3.1.0",
     "@types/color": "^3.0.0",
-    "@types/jest": "^23.3.2",
-    "@types/lodash": "^4.14.116",
+    "@types/jest": "^23.3.8",
+    "@types/lodash": "^4.14.117",
     "@types/material-ui": "^0.21.5",
-    "@types/next": "^7.0.0",
+    "@types/next": "^7.0.3",
     "@types/nprogress": "^0.0.29",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.8",
-    "babel-plugin-emotion": "^9.2.10",
-    "babel-plugin-inline-react-svg": "^1.0.0",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "babel-plugin-emotion": "^9.2.11",
+    "babel-plugin-inline-react-svg": "^1.0.1",
     "chokidar": "^2.0.4",
     "concurrently": "^4.0.1",
     "glob": "^7.1.3",
@@ -50,10 +50,10 @@
     "prettier": "^1.14.3",
     "prettier-tslint": "^0.4.0",
     "svg-url-loader": "^2.3.2",
-    "ts-jest": "^23.10.2",
+    "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.3"
   }
 }
