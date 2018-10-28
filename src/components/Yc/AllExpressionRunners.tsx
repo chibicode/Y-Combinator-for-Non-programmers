@@ -524,7 +524,7 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
       variableSize={'md'}
-      lastAllowedExpressionState="betaReducePreviewBefore"
+      lastAllowedExpressionState="betaReducePreviewAfter"
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -542,7 +542,7 @@ export const episode6 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewBefore'
+          state: 'betaReducePreviewAfter'
         }
       ]}
     />

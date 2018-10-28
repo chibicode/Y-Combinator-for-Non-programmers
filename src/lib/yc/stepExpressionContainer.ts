@@ -169,7 +169,9 @@ const recipe = (
     DraftObject<FunctionExpression>
   >(draftContainer.expression)
   if (!expression) {
-    throw new Error()
+    // Special case - already done to begin with
+    draftContainer.containerState = 'needsReset'
+    return
   }
   const {
     nextExpression,

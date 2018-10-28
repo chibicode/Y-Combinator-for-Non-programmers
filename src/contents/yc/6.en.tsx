@@ -45,17 +45,19 @@ export default () => {
       {episode6[i++]()}
       <P>
         <Strong>Let’s continue:</Strong> <Em>Try pressing {h('ycNext')}</Em>{' '}
-        until we get to step 1.6.
+        until we get to step 1.8.
       </P>
       {episode6[i++]()}
       <P>
-        Notice that, in steps <Strong>1.6</Strong> and <Strong>1.7</Strong>,{' '}
+        Notice that, in steps <Strong>1.8</Strong>,{' '}
         <Em>
           the matched sushi <Emoji>🍣</Emoji> is replaced by the{' '}
           <Strong>two</Strong> salads <Emoji>🥗</Emoji>
         </Em>{' '}
-        the chef is preparing <Emoji>👨‍🍳</Emoji>. Then{' '}
-        <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
+        the chef is preparing <Emoji>👨‍🍳</Emoji>.
+      </P>
+      <P>
+        Then <Em>try pressing {h('ycNext')}</Em> until we get to step 2.1.
       </P>
       {episode6[i++]()}
       <P>

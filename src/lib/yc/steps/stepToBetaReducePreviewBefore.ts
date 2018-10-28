@@ -136,9 +136,9 @@ export function toBetaReducePreviewBefore(
 
 const highlightFuncArg = (
   e: VariableExpression
-): VariableWithState<'highlightFuncArg'> => ({
+): VariableWithState<'highlightFuncArgNoEmphBorder'> => ({
   ...e,
-  highlightType: 'highlighted',
+  highlightType: 'highlightedNoEmphBorder',
   badgeType: 'funcArg'
 })
 

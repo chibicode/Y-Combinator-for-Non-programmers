@@ -39,6 +39,10 @@ interface VariableStates {
     readonly highlightType: 'highlighted'
     readonly badgeType: 'funcArg'
   }
+  highlightFuncArgNoEmphBorder: {
+    readonly highlightType: 'highlightedNoEmphBorder'
+    readonly badgeType: 'funcArg'
+  }
   activeFuncArg: {
     readonly highlightType: 'active'
     readonly badgeType: 'funcArg'
@@ -142,7 +146,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                 : C extends 'betaReducePreviewBefore'
                   ?
                       | 'activeFuncBound'
-                      | 'highlightFuncArg'
+                      | 'highlightFuncArgNoEmphBorder'
                       | 'highlightFuncUnbound'
                       | 'activeCallArg'
                       | 'matchFuncBound'

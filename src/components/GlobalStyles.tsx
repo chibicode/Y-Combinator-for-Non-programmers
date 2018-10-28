@@ -15,7 +15,9 @@ injectGlobal`
 
   @media screen and (min-width: ${NOT_SMALL}) {
     html {
-      font-size: 21px;
+      /* NOTE: BorderWrapper background image size can be 1.5rem, so if this is not even
+         they won't be able to repeat correctly. */
+      font-size: 22px;
     }
   }
 
