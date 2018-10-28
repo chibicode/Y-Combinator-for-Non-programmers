@@ -78,7 +78,7 @@ const stateToExplanation = ({
           <>
             左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
             の部分
-            {!hideLeftMostPrioritiesExplanation && '(一番外側)'}
+            {!hideLeftMostPrioritiesExplanation && '(一番左)'}
             を白色に
           </>
         )
