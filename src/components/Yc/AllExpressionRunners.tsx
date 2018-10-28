@@ -561,9 +561,37 @@ export const episode7 = [
   () => (
     <ExpressionRunner
       hideControls
+      expressionContainer={lessonExpressions.episode6Expression3}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+      maxStepsAllowed={1}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
       expressionContainer={lessonExpressions.episode7Expression1}
       containerSize={'xs'}
-      variableSize={'lg'}
+      variableSize={'md'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showCallArg'
+        }
+      ]}
     />
   ),
   () => (

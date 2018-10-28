@@ -3,6 +3,8 @@ import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
+import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -15,28 +17,53 @@ export default () => {
       <P>{h('ycTryUntilDone')}:</P>
       {episode7[i++]()}
       <P>
-        So the answer was <Strong>False.</Strong>{' '}
+        So the answer was <Strong>True.</Strong> In the end it became:
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>The confusing part:</Strong> The following step might have been
+        confusing (<Em>press {h('ycNext')}</Em>
+        ):
+      </P>
+      {episode7[i++]()}
+      <P>
+        As you can see,{' '}
         <Em>
-          Instead of <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥪</Emoji>, the
-          correct answer was <Emoji>🥪</Emoji> <Emoji>🥗</Emoji>{' '}
-          <Emoji>🥗</Emoji>
+          everything labeled as <EmojiBadge badgeType="callArg" inline /> gets
+          “copy-pasted” into the matched box{' '}
+          <InlineBackground bgPattern="star" />.
         </Em>
-        :
       </P>
+      <P>
+        Now, let’s cover the last rule:{' '}
+        <Strong>
+          <Emoji>😝</Emoji> changing your mind.
+        </Strong>
+      </P>
+      <EmojiSeparator emojis={['😝', '😝', '😝']} />
+      <H3>Changing Your Mind</H3>
+      <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
       {episode7[i++]()}
       <P>
-        Did you get it right? Don’t worry even if you didn’t. This was a hard
-        question.
+        <Strong>Notice:</Strong> The{' '}
+        <Em>
+          sandwich <Emoji>🥪</Emoji>
+        </Em>{' '}
+        is labeled as <EmojiBadge badgeType="callArg" inline />,{' '}
+        <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
+        <EmojiBadge badgeType="funcBound" inline />.
       </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <H3>
-        What if we use <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🍔</Emoji>{' '}
-        instead of <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🥩</Emoji>?
-      </H3>
       <P>
-        On the previous example, the <Strong>top row</Strong> looked like this:
+        In a case like this, the <Emoji>😝</Emoji>{' '}
+        <Strong>“changing your mind” rule</Strong> applies. Here’s how it works:
       </P>
-      {episode7[i++]()}
+      <Ul>
+        <UlLi>
+          If some item is labeled as both{' '}
+          <EmojiBadge badgeType="callArg" inline /> and{' '}
+          <EmojiBadge badgeType="funcUnbound" inline />, then
+        </UlLi>
+      </Ul>
       <P>
         <Strong>Question:</Strong>{' '}
         <Em>
