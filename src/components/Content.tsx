@@ -8,9 +8,7 @@ export interface ContentProps {
 }
 
 const Content: React.SFC<ContentProps> = ({ name, componentProps }) => {
-  const Component: React.ComponentType<{ componentProps?: object }> = (bundles[
-    name
-  ] || {})[locale]
+  const Component = (bundles[name] || {})[locale]
   if (!Component) {
     throw new Error(
       `Component is ${Component}. name: ${name}, locale: ${locale}`

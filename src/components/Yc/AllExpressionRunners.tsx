@@ -508,14 +508,14 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression1}
       hideControls
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'lg'}
     />
   ),
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'lg'}
       maxStepsAllowed={1}
     />
   ),
@@ -523,8 +523,7 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       containerSize={'xs'}
-      variableSize={'md'}
-      lastAllowedExpressionState="betaReducePreviewAfter"
+      variableSize={'lg'}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -535,47 +534,10 @@ export const episode6 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode6Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-      lastAllowedExpressionState="default"
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewAfter'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode6Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-      initializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'default'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode6Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression2}
       containerSize={'xs'}
       hideControls
-      variableSize={'md'}
+      variableSize={'lg'}
     />
   ),
   () => (
@@ -583,7 +545,7 @@ export const episode6 = [
       hideControls
       expressionContainer={lessonExpressions.episode6Expression3}
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'lg'}
     />
   )
 ]

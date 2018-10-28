@@ -47,40 +47,7 @@ export default () => {
         の部分からはじめるということが分かります。
       </P>
       {episode6[i++]()}
-      <P>
-        <Strong>今度は、</Strong>
-        ステップ1-8に進むまで <Em>{h('ycNext')} を押してみてください</Em>。
-      </P>
-      {episode6[i++]()}
-      <P>
-        ステップ
-        <Strong>1-8</Strong>
-        のところで、
-        <Em>
-          シェフ <Emoji>👨‍🍳</Emoji> が用意した
-          <Strong>ふたつ</Strong>
-          のサラダ <Emoji>🥗</Emoji> とお寿司 <Emoji>🍣</Emoji>{' '}
-          が入れ替わっている
-        </Em>
-        のに注目です。
-      </P>
-      <P>
-        そのあとは、ステップ2-1に進むまで{' '}
-        <Em>{h('ycNext')} を押してみてください</Em>。
-      </P>
-      {episode6[i++]()}
-      <P>
-        またしても、 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-        が4つ登場します。ここでも、
-        <Strong>一番左のペア</Strong>
-        を先にやります。
-        {h('ycTryUntilDone')}。
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>以上です！</Strong>
-        最初から最後まで通して見てみましょう:
-      </P>
+      <P>このまま最後まで進めてしまいましょう:</P>
       {episode6[i++]()}
       <H3>まとめ</H3>
       <P>
@@ -93,9 +60,9 @@ export default () => {
       </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
       <P>それでは、ここでまたクイズです！</P>
-      <H3>かなり難しいクイズ</H3>
+      <H3>クイズ</H3>
       <P>
-        今回のは難問です。下の
+        下の
         {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
       </P>
       {episode6[i++]()}
@@ -105,12 +72,8 @@ export default () => {
       </P>
       {episode6[i++]()}
       <P>
-        <Strong>頭の中でやるには、</Strong>
-        なかなか難しい問題ですよね。
-      </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <P>
-        <Em>投げ出さずにチャレンジしてみてください！</Em>
+        <Strong>これはちょっと難しい問題ですが</Strong>
+        、諦めずにチャレンジしてみてください！
       </P>
       <YcNextLessonButton nextEpisodeNumber={7} />
     </>
