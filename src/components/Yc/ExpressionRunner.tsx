@@ -1,12 +1,7 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
-import AlphaConvertContext from 'src/components/Yc/AlphaConvertContext'
-import ExpressionBetaReducePreviewContext, {
-  ExpressionBetaReducePreviewContextProps
-} from 'src/components/Yc/ExpressionBetaReducePreviewContext'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
-import ExpressionFocusContext from 'src/components/Yc/ExpressionFocusContext'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
@@ -14,21 +9,22 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
+import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import {
-  ExpressionContainerState,
-  PreviouslyChangedExpressionState,
+  ExpressionContainerStates,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
+import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
-      state: ExpressionContainerState
+      state: ExpressionContainerStates
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
-      state: PreviouslyChangedExpressionState
+      state: CallStates
     }
   | {
       type: 'nextIteration'
@@ -41,7 +37,7 @@ interface ExpressionRunnerProps {
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
-  lastAllowedExpressionState?: PreviouslyChangedExpressionState
+  lastAllowedExpressionState?: CallStates
   containerSize: ContainerProps['size']
   hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
@@ -49,20 +45,6 @@ interface ExpressionRunnerProps {
 
 interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
-}
-
-const betaReducePreview = (
-  previouslyChangedExpressionState: PreviouslyChangedExpressionState
-): ExpressionBetaReducePreviewContextProps['betaReducePreview'] => {
-  if (previouslyChangedExpressionState === 'betaReducePreviewBefore') {
-    return 'before'
-  } else if (previouslyChangedExpressionState === 'betaReducePreviewAfter') {
-    return 'after'
-  } else if (previouslyChangedExpressionState === 'betaReducePreviewCrossed') {
-    return 'crossed'
-  } else {
-    return undefined
-  }
 }
 
 export default class ExpressionRunner extends React.Component<
@@ -146,7 +128,16 @@ export default class ExpressionRunner extends React.Component<
       <ExpressionRunnerContext.Provider
         value={{
           hidePriorities,
-          variableSize
+          variableSize,
+          isDoneOrReady:
+            isContainerWithState(
+              expressionContainerManagerState.expressionContainer,
+              'done'
+            ) ||
+            isContainerWithState(
+              expressionContainerManagerState.expressionContainer,
+              'ready'
+            )
         }}
       >
         <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
@@ -160,7 +151,10 @@ export default class ExpressionRunner extends React.Component<
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
-                isDone={expressionContainerManagerState.isDone}
+                isDone={isContainerWithState(
+                  expressionContainerManagerState.expressionContainer,
+                  'done'
+                )}
                 currentStep={expressionContainerManagerState.currentStep}
                 currentSubstep={expressionContainerManagerState.currentSubstep}
                 hideLeftMostPrioritiesExplanation={
@@ -184,45 +178,12 @@ export default class ExpressionRunner extends React.Component<
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                 `}
               >
-                <ExpressionFocusContext.Provider
-                  value={{
-                    focused:
-                      expressionContainerManagerState.isDone ||
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default',
-                    isDoneOrDefault:
-                      expressionContainerManagerState.isDone ||
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'default',
-                    previouslyChangedExpressionStateReadyToHighlight:
-                      expressionContainerManagerState.expressionContainer
-                        .previouslyChangedExpressionState === 'readyToHighlight'
-                  }}
-                >
-                  <AlphaConvertContext.Provider
-                    value={{
-                      conflictingVariableNames:
-                        expressionContainerManagerState.expressionContainer
-                          .conflictingVariableNames || []
-                    }}
-                  >
-                    <ExpressionBetaReducePreviewContext.Provider
-                      value={{
-                        betaReducePreview: betaReducePreview(
-                          expressionContainerManagerState.expressionContainer
-                            .previouslyChangedExpressionState
-                        )
-                      }}
-                    >
-                      <ExpressionBox
-                        expression={
-                          expressionContainerManagerState.expressionContainer
-                            .expression
-                        }
-                      />
-                    </ExpressionBetaReducePreviewContext.Provider>
-                  </AlphaConvertContext.Provider>
-                </ExpressionFocusContext.Provider>
+                <ExpressionBox
+                  expression={
+                    expressionContainerManagerState.expressionContainer
+                      .expression
+                  }
+                />
               </div>
             </div>
           </Container>
@@ -242,7 +203,10 @@ export default class ExpressionRunner extends React.Component<
                   canStepBackward={
                     expressionContainerManagerState.canStepBackward
                   }
-                  isDone={expressionContainerManagerState.isDone}
+                  isDone={isContainerWithState(
+                    expressionContainerManagerState.expressionContainer,
+                    'done'
+                  )}
                 />
               </div>
             )}

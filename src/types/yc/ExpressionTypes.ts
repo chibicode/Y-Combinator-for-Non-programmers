@@ -1,87 +1,174 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-export type CommonStates =
-  | 'default'
-  | 'justBetaReduced'
-  | 'partiallyHighlighted'
-  | HighlightedStates
-
-export type HighlightedStates =
-  | 'highlighted'
-  | 'justHighlighted'
-  | 'justBetaReduced'
-  | 'boundJustHighlighted'
-  | 'boundHighlighted'
-  | 'unboundJustHighlighted'
-  | 'unboundHighlighted'
-
-export function isHighlightedState(
-  state: CommonStates
-): state is HighlightedStates {
-  const t: Partial<Record<CommonStates, boolean>> = {
-    highlighted: true,
-    justHighlighted: true,
-    justBetaReduced: true,
-    boundJustHighlighted: true,
-    boundHighlighted: true,
-    unboundJustHighlighted: true,
-    unboundHighlighted: true
-  }
-  return !!t[state]
-}
-
 export interface VariableExpression {
-  readonly state: CommonStates
   readonly type: 'variable'
   readonly name: VariableNames
-  readonly justAlphaConverted?: boolean
-  readonly willBeBetaReduced?: boolean
-  readonly wasJustBetaReduced?: boolean
+  readonly bound: boolean
+  readonly highlightType: VariableStates[keyof VariableStates]['highlightType']
+  readonly badgeType: VariableStates[keyof VariableStates]['badgeType']
+  readonly argPriorityAgg: number[]
+  readonly funcPriorityAgg: number[]
 }
 
-export function isVariableExpression(
-  expression: Expression
-): expression is VariableExpression {
-  return expression.type === 'variable'
+export type VariableWithState<
+  S extends keyof VariableStates
+> = VariableExpression & VariableStates[S]
+
+interface VariableStates {
+  default: {
+    readonly highlightType: 'default'
+    readonly badgeType: 'none'
+  }
+  active: {
+    readonly highlightType: 'active'
+    readonly badgeType: 'none'
+  }
+  emphasizePriority: {
+    readonly highlightType: 'activeEmphasizePriorityOne'
+    readonly badgeType: 'none'
+  }
+  highlightFuncBound: {
+    readonly highlightType: 'highlighted'
+    readonly badgeType: 'funcBound'
+  }
+  activeFuncBound: {
+    readonly highlightType: 'active'
+    readonly badgeType: 'funcBound'
+  }
+  highlightFuncArg: {
+    readonly highlightType: 'highlighted'
+    readonly badgeType: 'funcArg'
+  }
+  activeFuncArg: {
+    readonly highlightType: 'active'
+    readonly badgeType: 'funcArg'
+  }
+  highlightFuncUnbound: {
+    readonly highlightType: 'unboundHighlighted'
+    readonly badgeType: 'funcUnbound'
+  }
+  highlightCallArg: {
+    readonly highlightType: 'highlighted'
+    readonly badgeType: 'callArg'
+  }
+  activeCallArg: {
+    readonly highlightType: 'active'
+    readonly badgeType: 'callArg'
+  }
+  conflictFuncUnbound: {
+    readonly highlightType: 'conflictFuncUnbound'
+    readonly badgeType: 'funcUnbound'
+  }
+  conflictCallArg: {
+    readonly highlightType: 'conflictCallArg'
+    readonly badgeType: 'callArg'
+  }
+  conflictResolvedFuncUnbound: {
+    readonly highlightType: 'conflictResolvedFuncUnbound'
+    readonly badgeType: 'funcUnbound'
+  }
+  conflictResolvedFuncBound: {
+    readonly highlightType: 'conflictResolvedBound'
+    readonly badgeType: 'funcBound'
+  }
+  matchFuncBound: {
+    readonly highlightType: 'match'
+    readonly badgeType: 'funcBound'
+  }
+  betaReduced: {
+    readonly highlightType: 'match'
+    readonly badgeType: 'betaReduced'
+  }
+  removedFuncArg: {
+    readonly highlightType: 'removed'
+    readonly badgeType: 'funcArg'
+  }
+  removedCallArg: {
+    readonly highlightType: 'removed'
+    readonly badgeType: 'callArg'
+  }
 }
 
-export type CallExpressionStates =
-  | CommonStates
-  | 'readyToHighlight'
+export type CallStates =
+  | 'default'
+  | 'active'
+  | 'showFuncBound'
+  | 'showFuncArg'
+  | 'showFuncUnbound'
+  | 'showCallArg'
   | 'needsAlphaConvert'
-  | 'readyToBetaReduce'
+  | 'alphaConvertDone'
   | 'betaReducePreviewBefore'
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewCrossed'
-  | 'alphaConvertDone'
 
-export type AllExpressionStates = CallExpressionStates
+// Call state to possible variable state
+export type CtoV<C extends CallStates> = C extends 'default'
+  ? 'default'
+  : C extends 'active'
+    ? 'active' | 'emphasizePriority'
+    : C extends 'showFuncBound'
+      ? 'active' | 'highlightFuncBound'
+      : C extends 'showFuncArg'
+        ? 'active' | 'activeFuncBound' | 'highlightFuncArg'
+        : C extends 'showFuncUnbound'
+          ?
+              | 'active'
+              | 'activeFuncBound'
+              | 'activeFuncArg'
+              | 'highlightFuncUnbound'
+          : C extends 'showCallArg'
+            ?
+                | 'activeFuncBound'
+                | 'activeFuncArg'
+                | 'highlightFuncUnbound'
+                | 'highlightCallArg'
+            : C extends 'needsAlphaConvert'
+              ?
+                  | 'activeFuncBound'
+                  | 'activeFuncArg'
+                  | 'highlightFuncUnbound'
+                  | 'activeCallArg'
+                  | 'conflictFuncUnbound'
+                  | 'conflictCallArg'
+              : C extends 'alphaConvertDone'
+                ?
+                    | 'activeFuncBound'
+                    | 'activeFuncArg'
+                    | 'highlightFuncUnbound'
+                    | 'activeCallArg'
+                    | 'conflictResolvedFuncUnbound'
+                    | 'conflictResolvedFuncBound'
+                : C extends 'betaReducePreviewBefore'
+                  ?
+                      | 'activeFuncBound'
+                      | 'highlightFuncArg'
+                      | 'highlightFuncUnbound'
+                      | 'activeCallArg'
+                      | 'matchFuncBound'
+                  : C extends 'betaReducePreviewAfter'
+                    ?
+                        | 'activeFuncBound'
+                        | 'activeFuncArg'
+                        | 'highlightFuncUnbound'
+                        | 'highlightCallArg'
+                        | 'betaReduced'
+                    : C extends 'betaReducePreviewCrossed'
+                      ? 'active' | 'removedFuncArg' | 'removedCallArg'
+                      : never
 
 export interface CallExpression {
-  readonly state: CallExpressionStates
+  readonly state: CallStates
   readonly type: 'call'
   readonly arg: Expression
   readonly func: Expression
-}
-
-export function isCallExpression(
-  expression: Expression
-): expression is CallExpression {
-  return expression.type === 'call'
+  readonly priority: number
 }
 
 export interface FunctionExpression {
   readonly type: 'function'
-  readonly state: CommonStates
   readonly arg: VariableExpression
   readonly body: Expression
-  readonly wasJustBetaReduced?: boolean
-}
-
-export function isFunctionExpression(
-  expression: Expression
-): expression is FunctionExpression {
-  return expression.type === 'function'
 }
 
 export type Expression =
@@ -89,14 +176,46 @@ export type Expression =
   | CallExpression
   | FunctionExpression
 
-interface NeedsResetState {
-  readonly state: 'needsReset'
+type FunctionWithArgBody<
+  A extends VariableExpression,
+  B extends Expression
+> = FunctionExpression & {
+  readonly arg: A
+  readonly body: B
 }
-export type NeedsResetFunctionExpression = FunctionExpression & NeedsResetState
-export type NeedsResetCallExpression = CallExpression & NeedsResetState
-export type NeedsResetVariableExpression = VariableExpression & NeedsResetState
 
-export type NeedsResetExpression =
-  | NeedsResetFunctionExpression
-  | NeedsResetCallExpression
-  | NeedsResetVariableExpression
+type NonExecutable<E extends Expression> = CallExpression & {
+  readonly arg: E
+  readonly state: 'default'
+  readonly func: E
+}
+
+type Executable<
+  S extends CallStates,
+  F extends FunctionExpression,
+  V extends VariableExpression
+> = CallExpression & {
+  readonly arg: V | F
+  readonly state: S
+  readonly func: F
+  readonly priority: 1
+}
+
+export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
+  CtoV<C>
+>
+export interface StepFunction<C extends CallStates = 'default'>
+  extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
+export interface NonExecutableStepCall<C extends CallStates = 'default'>
+  extends NonExecutable<StepChild<C>> {}
+export interface ExecutableStepCall<C extends CallStates = 'default'>
+  extends Executable<C, StepFunction<C>, StepVariable<C>> {}
+export type StepChild<C extends CallStates = 'default'> =
+  | StepVariable<C>
+  | StepFunction<C>
+  | NonExecutableStepCall<C>
+
+// Map from a union type to another union type
+// https://stackoverflow.com/a/51691257/114157
+type Distribute<U> = U extends any ? ExecutableStepCall<U> : never
+export type ExecutableCall = Distribute<CallStates>

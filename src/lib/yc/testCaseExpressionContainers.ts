@@ -1,5 +1,5 @@
 import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
-import { PrioritizedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   FunctionExpressionParams
@@ -122,7 +122,7 @@ const recursiveFunction: FunctionExpressionParams = {
 
 const infiniteLoop: CallExpressionParams = [yCombinator, recursiveFunction]
 
-export const inactiveTestCases: PrioritizedExpressionContainer[] = [
+export const defaultTestCases: Array<ContainerWithState<'ready'>> = [
   initializeExpressionContainer(basicExpression),
   initializeExpressionContainer(notTrueExpression),
   initializeExpressionContainer(notFalseExpression),
@@ -133,6 +133,6 @@ export const inactiveTestCases: PrioritizedExpressionContainer[] = [
   initializeExpressionContainer(yCombinator)
 ]
 
-export const activeTestCases: PrioritizedExpressionContainer[] = [
+export const activeTestCases: Array<ContainerWithState<'ready'>> = [
   initializeExpressionContainer(infiniteLoop)
 ]

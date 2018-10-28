@@ -1,13 +1,5 @@
-import {
-  Expression,
-  isCallExpression,
-  isVariableExpression
-} from 'src/types/yc/ExpressionTypes'
-import {
-  isPrioritizedCallExpression,
-  isPrioritizedVariableExpression,
-  PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
+import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function expressionToSimpleString(
   expression: Expression,
@@ -19,31 +11,24 @@ export default function expressionToSimpleString(
     addPriorityAgg?: boolean
   } = { addPriority: false, addPriorityAgg: false }
 ): string {
-  if (isVariableExpression(expression)) {
-    if (addPriorityAgg && isPrioritizedVariableExpression(expression)) {
+  if (isVariable(expression)) {
+    if (addPriorityAgg) {
       const str: string[] = []
       str.push('[')
-      str.push(
-        (expression as PrioritizedVariableExpression).funcPriorityAgg.join(',')
-      )
+      str.push(expression.funcPriorityAgg.join(','))
       str.push(expression.name)
-      str.push(
-        (expression as PrioritizedVariableExpression).argPriorityAgg.join(',')
-      )
+      str.push(expression.argPriorityAgg.join(','))
       str.push(']')
       return str.join('')
     } else {
       return expression.name
     }
-  } else if (isCallExpression(expression)) {
+  } else if (isCall(expression)) {
     const func = expressionToSimpleString(expression.func, {
       addPriority,
       addPriorityAgg
     })
-    const priority =
-      addPriority && isPrioritizedCallExpression(expression)
-        ? `${expression.priority}`
-        : ''
+    const priority = addPriority ? `${expression.priority}` : ''
     const arg = expressionToSimpleString(expression.arg, {
       addPriority,
       addPriorityAgg

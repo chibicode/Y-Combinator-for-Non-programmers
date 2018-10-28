@@ -25,7 +25,7 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -39,7 +39,7 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcBodyJustHighlighted'
+          state: 'showFuncBound'
         }
       ]}
     />
@@ -53,7 +53,7 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcArgJustHighlighted'
+          state: 'showFuncArg'
         }
       ]}
     />
@@ -67,7 +67,7 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -81,7 +81,7 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -98,7 +98,7 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -112,7 +112,7 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -126,7 +126,7 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -195,7 +195,7 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -209,7 +209,7 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -223,7 +223,7 @@ export const episode3 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -253,7 +253,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -294,7 +294,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -308,7 +308,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcBodyBoundedJustHighlighted'
+          state: 'showFuncBound'
         }
       ]}
     />
@@ -322,7 +322,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcArgJustHighlighted'
+          state: 'showFuncArg'
         }
       ]}
     />
@@ -336,7 +336,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'funcBodyUnboundedJustHighlighted'
+          state: 'showFuncUnbound'
         }
       ]}
     />
@@ -350,7 +350,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -364,7 +364,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -379,7 +379,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -394,7 +394,7 @@ export const episode4 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />
@@ -412,7 +412,7 @@ export const episode5 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -442,7 +442,7 @@ export const episode5 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -469,7 +469,7 @@ export const episode5 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         },
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -528,7 +528,7 @@ export const episode6 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'readyToHighlight'
+          state: 'active'
         }
       ]}
     />
@@ -682,7 +682,7 @@ export const episode8 = [
       expressionContainer={lessonExpressions.episode8Expression1}
       containerSize={'xs'}
       variableSize={'md'}
-      lastAllowedExpressionState="callArgJustHighlighted"
+      lastAllowedExpressionState="showCallArg"
     />
   ),
   () => (
@@ -694,7 +694,7 @@ export const episode8 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'callArgJustHighlighted'
+          state: 'showCallArg'
         }
       ]}
     />

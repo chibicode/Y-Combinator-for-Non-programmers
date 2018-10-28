@@ -1,172 +1,108 @@
 import {
-  ImmediatelyExecutableCallExpression,
-  isImmediatelyExecutableCallExpression,
-  isTopPriorityCallExpression
-} from 'src/types/yc/ExecutableExpressionTypes'
+  isCall,
+  isExecutableCall,
+  isFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import {
-  isCallExpression,
-  isFunctionExpression
+  CallExpression,
+  ExecutableCall,
+  Expression,
+  FunctionExpression
 } from 'src/types/yc/ExpressionTypes'
-import {
-  isPrioritizedCallExpression,
-  PrioritizedCallExpression,
-  PrioritizedExpression,
-  PrioritizedFunctionExpression,
-  PrioritizedVariableExpression
-} from 'src/types/yc/PrioritizedExpressionTypes'
 
-interface HasPrioritizedCallExpression<E extends PrioritizedCallExpression> {
-  readonly expression: E
-  readonly notFound: false
-}
-
-interface HasImmediatelyExecutableCallExpression<
-  E extends ImmediatelyExecutableCallExpression
+export interface FindResult<
+  E extends ExecutableCall,
+  C extends CallExpression,
+  F extends FunctionExpression
 > {
-  readonly expression: E
-  readonly notFound: false
+  readonly expression?: E
+  readonly callParent?: C
+  readonly funcParent?: F
+  readonly callParentKey?: 'func' | 'arg'
 }
 
-interface NotFound {
-  readonly notFound: true
+interface HelperStackItem<C extends CallExpression> {
+  readonly expression: C
+  readonly callParent?: C
+  readonly callParentKey?: 'func' | 'arg'
 }
 
-interface NoParent {
-  readonly noParent: true
-}
-
-interface HasCallParent<E extends PrioritizedCallExpression> {
-  readonly parentCallExpression: E
-  readonly parentKey: 'func' | 'arg'
-  readonly noParent: false
-}
-
-interface HasFunctionParent<E extends PrioritizedFunctionExpression> {
-  readonly parentFunctionExpression: E
-  readonly noParent: false
-}
-
-type HelperResult<
-  E extends PrioritizedCallExpression,
-  I extends ImmediatelyExecutableCallExpression
-> =
-  | HasImmediatelyExecutableCallExpression<I> & HasCallParent<E>
-  | HasImmediatelyExecutableCallExpression<I> & NoParent
-  | NotFound
-
-type HelperStackItem<E extends PrioritizedCallExpression> =
-  | HasPrioritizedCallExpression<E> & NoParent
-  | HasPrioritizedCallExpression<E> & HasCallParent<E>
-
-const NOT_FOUND = { notFound: true as true }
-
-function foundExpressionAndNoParent<
-  E extends PrioritizedCallExpression,
-  I extends ImmediatelyExecutableCallExpression
->(
-  helperResult: HelperResult<E, I>
-): helperResult is HasImmediatelyExecutableCallExpression<I> & NoParent {
-  return (
-    (helperResult as NoParent).noParent &&
-    !!(helperResult as HasImmediatelyExecutableCallExpression<I>).expression
-  )
-}
-
+/**
+ * Run DFS on callExpression to find ExecutableCallExpression
+ * and its parent information (could be missing if root expression).
+ * DFS looks for functions first before arguments.
+ *
+ * @template E
+ * @template C
+ * @template F
+ * @param {C} callExpression
+ * @returns {FindResult<E, C, F>}
+ */
 function helper<
-  E extends PrioritizedCallExpression,
-  I extends ImmediatelyExecutableCallExpression
->(expression: E): HelperResult<E, I> {
-  const stack: Array<HelperStackItem<E>> = [
-    { expression, noParent: true, notFound: false }
-  ]
+  E extends ExecutableCall,
+  C extends CallExpression,
+  F extends FunctionExpression
+>(callExpression: C): FindResult<E, C, F> {
+  const stack: Array<HelperStackItem<C>> = [{ expression: callExpression }]
+  const notFound: FindResult<E, C, F> = {}
+
   while (stack.length > 0) {
-    const current = stack.pop() as HelperStackItem<E>
-    if (isTopPriorityCallExpression(current.expression)) {
-      if (isImmediatelyExecutableCallExpression<I>(current.expression)) {
+    const current = stack.pop()
+    if (current && current.expression) {
+      if (current.expression && isExecutableCall<E>(current.expression)) {
         return {
-          ...current,
-          expression: current.expression
+          expression: current.expression,
+          callParent: current.callParent,
+          callParentKey: current.callParentKey
         }
-      } else {
-        return NOT_FOUND
+      }
+
+      if (isCall<C>(current.expression.func)) {
+        stack.push({
+          expression: current.expression.func,
+          callParentKey: 'func',
+          callParent: current.expression
+        })
+      }
+
+      if (isCall<C>(current.expression.arg)) {
+        stack.push({
+          expression: current.expression.arg,
+          callParentKey: 'arg',
+          callParent: current.expression
+        })
       }
     }
-
-    if (isPrioritizedCallExpression<E>(current.expression.func)) {
-      stack.push({
-        expression: current.expression.func,
-        parentKey: 'func',
-        parentCallExpression: current.expression,
-        notFound: false,
-        noParent: false
-      })
-    }
-
-    if (isPrioritizedCallExpression<E>(current.expression.arg)) {
-      stack.push({
-        expression: current.expression.arg,
-        parentKey: 'arg',
-        parentCallExpression: current.expression,
-        notFound: false,
-        noParent: false
-      })
-    }
   }
-  return NOT_FOUND
+  return notFound
 }
 
-export default function findNextCallExpressionAndParent(
-  expression: PrioritizedVariableExpression
-): NotFound
 export default function findNextCallExpressionAndParent<
-  E extends PrioritizedCallExpression = PrioritizedCallExpression,
-  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression
->(expression: E): HelperResult<E, I>
-export default function findNextCallExpressionAndParent<
-  E extends PrioritizedCallExpression = PrioritizedCallExpression,
-  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
-  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
->(
-  expression: F
-):
-  | HelperResult<E, I>
-  | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>)
-export default function findNextCallExpressionAndParent<
-  E extends PrioritizedCallExpression = PrioritizedCallExpression,
-  I extends ImmediatelyExecutableCallExpression = ImmediatelyExecutableCallExpression,
-  F extends PrioritizedFunctionExpression = PrioritizedFunctionExpression
->(
-  expression: PrioritizedExpression
-):
-  | HelperResult<E, I>
-  | NotFound
-  | (HasImmediatelyExecutableCallExpression<I> & HasFunctionParent<F>)
-export default function findNextCallExpressionAndParent(
-  expression: PrioritizedExpression
-) {
-  if (isCallExpression(expression)) {
-    return helper(expression)
-  } else if (isFunctionExpression(expression)) {
-    let currentExpression: PrioritizedExpression = expression
-    let previousExpression: PrioritizedFunctionExpression = expression
-    while (isFunctionExpression(currentExpression)) {
+  E extends ExecutableCall,
+  C extends CallExpression,
+  F extends FunctionExpression
+>(expression: Expression): FindResult<E, C, F> {
+  const notFound: FindResult<E, C, F> = {}
+  if (isCall<C>(expression)) {
+    return helper<E, C, F>(expression)
+  } else if (isFunction<F>(expression)) {
+    let currentExpression: Expression = expression
+    let previousExpression: F | null = null
+    while (isFunction<F>(currentExpression)) {
       previousExpression = currentExpression
       currentExpression = currentExpression.body
     }
-    if (isCallExpression(currentExpression)) {
-      const helperResult = helper(currentExpression)
-      if (foundExpressionAndNoParent(helperResult)) {
+    if (isCall<C>(currentExpression)) {
+      const helperResult = helper<E, C, F>(currentExpression)
+      if (helperResult.callParent) {
+        return helperResult
+      } else if (previousExpression) {
         return {
-          parentFunctionExpression: previousExpression,
+          funcParent: previousExpression,
           expression: helperResult.expression
         }
-      } else {
-        return helperResult
       }
-    } else {
-      return NOT_FOUND
     }
-  } else {
-    return NOT_FOUND
   }
+  return notFound
 }

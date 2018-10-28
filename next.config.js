@@ -5,9 +5,10 @@ const path = require('path')
 const config = withCSS(
   withTypescript({
     webpack(config, options) {
-      // Further custom configuration here
       config.resolve.alias = {
-        src: path.resolve(__dirname, 'src')
+        // Must also change tsconfig.json
+        src: path.resolve(__dirname, 'src'),
+        test: path.resolve(__dirname, 'test')
       }
       config.module.rules.push({
         test: /\.url.svg$/,

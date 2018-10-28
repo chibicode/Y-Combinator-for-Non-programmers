@@ -1,6 +1,7 @@
 const twemoji = require('twemoji')
+const uniq = require('lodash/uniq')
 
-const allUsedEmojis = [
+const allUsedEmojis = uniq([
   '🤔',
   '🙂',
   '😋',
@@ -54,8 +55,24 @@ const allUsedEmojis = [
   '😡',
   '☑️',
   '🎉',
-  '💭'
-]
+  '💭',
+  '🥦',
+  '🍟',
+  '🍖',
+  '🥟',
+  '🥐',
+  '🥞',
+  '🧀',
+  '🍇',
+  '🍎',
+  '🍒',
+  '🍋',
+  '🍌',
+  '🍍',
+  '🎂',
+  '🍪',
+  '🍦'
+])
 
 // Copied from Twemoji
 const UFE0Fg = /\uFE0F/g

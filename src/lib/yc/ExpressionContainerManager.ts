@@ -1,17 +1,10 @@
+import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
-  ExpressionContainerState,
-  isDoneExpressionContainer,
-  PreviouslyChangedExpressionState,
+  ExpressionContainerStates,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
-
-const skipOptions: Partial<
-  { [K in PreviouslyChangedExpressionState]: boolean }
-> = {
-  readyToBetaReduce: true,
-  justBetaReduced: true
-}
+import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 export default class ExpressionContainerManager {
   public get currentState() {
@@ -19,7 +12,6 @@ export default class ExpressionContainerManager {
       expressionContainer: this.currentExpressionContainer,
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
-      isDone: this.isDone,
       ...this.currentStepAndSubstep
     }
   }
@@ -48,14 +40,14 @@ export default class ExpressionContainerManager {
   public iterationBoundaries: number[] = []
   public minimumIndex = 0
   public maximumIndex = 999
-  public lastAllowedExpressionState?: PreviouslyChangedExpressionState
+  public lastAllowedExpressionState?: CallStates
 
   constructor({
     expressionContainer,
     lastAllowedExpressionState
   }: {
     expressionContainer: SteppedExpressionContainer
-    lastAllowedExpressionState?: PreviouslyChangedExpressionState
+    lastAllowedExpressionState?: CallStates
   }) {
     this.expressionContainers.push(expressionContainer)
     this.lastAllowedExpressionState = lastAllowedExpressionState
@@ -67,9 +59,7 @@ export default class ExpressionContainerManager {
     }
   }
 
-  public stepForwardUntilPreviouslyChangedExpressionState(
-    state: PreviouslyChangedExpressionState
-  ) {
+  public stepForwardUntilPreviouslyChangedExpressionState(state: CallStates) {
     while (
       this.currentExpressionContainer.previouslyChangedExpressionState !==
         state &&
@@ -79,7 +69,7 @@ export default class ExpressionContainerManager {
     }
   }
 
-  public stepForwardUntilContainerState(state: ExpressionContainerState) {
+  public stepForwardUntilContainerState(state: ExpressionContainerStates) {
     while (
       this.currentExpressionContainer.containerState !== state &&
       this.canStepForward
@@ -93,27 +83,12 @@ export default class ExpressionContainerManager {
       this.currentIndex++
     } else if (
       this.isUnderMaxIndex &&
-      !isDoneExpressionContainer(this.currentExpressionContainer)
+      !isContainerWithState(this.currentExpressionContainer, 'done')
     ) {
       let expressionContainer: SteppedExpressionContainer = this
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(expressionContainer)
 
-      if (
-        skipOptions[expressionContainer.previouslyChangedExpressionState] &&
-        !isDoneExpressionContainer(expressionContainer)
-      ) {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      }
-
-      if (
-        !expressionContainer.matchExists &&
-        expressionContainer.previouslyChangedExpressionState ===
-          'betaReducePreviewAfter' &&
-        !isDoneExpressionContainer(expressionContainer)
-      ) {
-        expressionContainer = stepExpressionContainer(expressionContainer)
-      }
       this.expressionContainers.push(expressionContainer)
       this.currentIndex++
 
@@ -140,11 +115,11 @@ export default class ExpressionContainerManager {
   }
 
   private get canStepForward() {
-    return this.canRedo || (!this.isDone && this.isUnderMaxIndex)
-  }
-
-  private get isDone() {
-    return isDoneExpressionContainer(this.currentExpressionContainer)
+    return (
+      this.canRedo ||
+      (!isContainerWithState(this.currentExpressionContainer, 'done') &&
+        this.isUnderMaxIndex)
+    )
   }
 
   private get isUnderMaxIndex() {
