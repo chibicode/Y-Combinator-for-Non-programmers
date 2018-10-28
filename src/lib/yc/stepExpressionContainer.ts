@@ -177,7 +177,7 @@ const recipe = (
     previouslyChangedExpressionState
   } = step(expression, draftContainer.matchExists)
 
-  if (!callParent || !callParentKey) {
+  if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
       expression: nextExpression,
       previouslyChangedExpressionState,
@@ -192,6 +192,8 @@ const recipe = (
     callParent[callParentKey] = nextExpression
   } else if (funcParent) {
     funcParent.body = nextExpression
+  } else {
+    throw new Error()
   }
 
   if (previouslyChangedExpressionState === 'default') {
