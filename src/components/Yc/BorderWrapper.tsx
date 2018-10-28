@@ -15,6 +15,7 @@ import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
   highlightType: VariableExpression['highlightType'] | 'none'
+  badgeType: VariableExpression['badgeType']
   children: React.ReactNode
 }
 
@@ -29,6 +30,7 @@ const background = (
         background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};
       `
     }
+    case 'removed':
     case 'active': {
       return css`
         background: ${colors('white')};
@@ -41,51 +43,56 @@ const background = (
     }
     case 'highlighted': {
       return css`
-        background ${colors('yellow100')}
+        background ${colors('yellow100')};
+      `
+    }
+    case 'highlightedNoEmphBorder': {
+      return css`
+        background ${colors('yellow100')};
       `
     }
     case 'unboundHighlighted': {
       return css`
-        background ${colors('grey100')}
+        background ${colors('grey200')};
       `
     }
     case 'match': {
       return css`
         background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
+          ${variableSize === 'lg' ? 2 : 1.5}rem;
         background-position: center center;
       `
     }
     case 'conflictFuncUnbound': {
       return css`
         background-image: url(${stripeSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
+          ${variableSize === 'lg' ? 2 : 1.5}rem;
         background-position: center center;
       `
     }
     case 'conflictCallArg': {
       return css`
         background-image: url(${stripeReverseSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
+          ${variableSize === 'lg' ? 2 : 1.5}rem;
         background-position: center center;
       `
     }
     case 'conflictResolvedFuncUnbound': {
       return css`
         background-image: url(${bubbleGreySvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
+          ${variableSize === 'lg' ? 2 : 1.5}rem;
         background-position: center center;
       `
     }
     case 'conflictResolvedBound': {
       return css`
         background-image: url(${bubbleSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1}rem
-          ${variableSize === 'lg' ? 2 : 1}rem;
+        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
+          ${variableSize === 'lg' ? 2 : 1.5}rem;
         background-position: center center;
       `
     }
@@ -109,6 +116,7 @@ const Cross: React.SFC<{}> = () => (
 
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   highlightType,
+  badgeType,
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
@@ -122,7 +130,15 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             flex: 1;
             position: relative;
           `,
-          background(highlightType, variableSize, isDoneOrReady)
+          background(highlightType, variableSize, isDoneOrReady),
+          {
+            [css`
+              border-right: 5px solid ${colors('pink400')};
+            `]: highlightType === 'highlighted' && badgeType === 'funcBound',
+            [css`
+              border-left: 5px solid ${colors('pink400')};
+            `]: highlightType === 'highlighted' && badgeType === 'funcArg'
+          }
         )}
       >
         {highlightType === 'removed' && <Cross />}

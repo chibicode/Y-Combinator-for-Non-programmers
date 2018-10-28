@@ -22,6 +22,7 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
   >
     <BorderWrapper
       highlightType={isVariable(expression) ? expression.highlightType : 'none'}
+      badgeType={isVariable(expression) ? expression.badgeType : 'none'}
     >
       {(() => {
         if (isVariable(expression)) {
