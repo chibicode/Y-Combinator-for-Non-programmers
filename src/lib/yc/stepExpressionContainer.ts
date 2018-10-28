@@ -1,6 +1,6 @@
 import produce, { DraftObject } from 'immer'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
-import { isNeedsResetExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
+import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
@@ -29,7 +29,7 @@ import {
 
 const stepExpressionContainerReset = (
   e: ContainerWithState<'needsReset'>
-): ContainerWithState<'done'> | ContainerWithState<'prioritized'> => {
+): ContainerWithState<'done'> | ContainerWithState<'ready'> => {
   const newContainer = prioritizeExpressionContainer(
     resetExpressionContainer(e)
   )
@@ -153,7 +153,7 @@ const step = (
 
 const recipe = (
   draftContainer: DraftObject<
-    | ContainerWithState<'prioritized'>
+    | ContainerWithState<'ready'>
     | ContainerWithState<'stepped'>
     | ContainerWithState<'needsReset'>
   >
@@ -207,18 +207,18 @@ const recipe = (
 }
 
 export default function stepExpressionContainer(
-  e: ContainerWithState<'prioritized'> | ContainerWithState<'stepped'>
+  e: ContainerWithState<'ready'> | ContainerWithState<'stepped'>
 ):
   | ContainerWithState<'done'>
   | ContainerWithState<'stepped'>
-  | ContainerWithState<'prioritized'> {
+  | ContainerWithState<'ready'> {
   const result = produce<
     | ContainerWithState<'needsReset'>
     | ContainerWithState<'stepped'>
-    | ContainerWithState<'prioritized'>
+    | ContainerWithState<'ready'>
   >(e, recipe)
 
-  if (isNeedsResetExpressionContainer(result)) {
+  if (isContainerWithState(result, 'needsReset')) {
     return stepExpressionContainerReset(result)
   } else {
     return result

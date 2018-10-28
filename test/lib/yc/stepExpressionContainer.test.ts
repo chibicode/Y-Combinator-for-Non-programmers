@@ -7,16 +7,16 @@
 //   ExpressionContainer,
 //   isDoneExpressionContainer,
 //   isNeedsResetExpressionContainer,
-//   isPrioritizedExpressionContainer,
+//   isReadyExpressionContainer,
 //   NeedsResetExpressionContainer,
-//   PrioritizedExpression,
-//   PrioritizedExpressionContainer,
+//   ReadyExpression,
+//   ReadyExpressionContainer,
 //   SteppedExpressionContainer
 // } from 'src/types/yc/ExpressionContainerTypes'
-// import { PrioritizedCallExpression } from 'src/types/yc/ExpressionTypes'
+// import { ReadyCallExpression } from 'src/types/yc/ExpressionTypes'
 
 // const repeatUntilState = (
-//   e: ExpressionContainer<PrioritizedCallExpression>,
+//   e: ExpressionContainer<ReadyCallExpression>,
 //   state: string
 // ) => {
 //   while (true) {
@@ -30,11 +30,11 @@
 
 // const repeatUntilDone = (
 //   e:
-//     | NeedsResetExpressionContainer<PrioritizedCallExpression>
-//     | PrioritizedExpressionContainer<PrioritizedCallExpression>
+//     | NeedsResetExpressionContainer<ReadyCallExpression>
+//     | ReadyExpressionContainer<ReadyCallExpression>
 // ) => {
 //   let result: SteppedExpressionContainer<
-//     PrioritizedExpression
+//     ReadyExpression
 //   > = stepExpressionContainer(e)
 //   while (!isDoneExpressionContainer(result)) {
 //     result = stepExpressionContainer(result)

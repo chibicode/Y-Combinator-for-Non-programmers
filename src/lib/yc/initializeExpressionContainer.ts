@@ -16,16 +16,16 @@ import {
 
 export default function initializeExpressionContainer(
   expressionParams: VariableExpressionParams
-): ContainerWithState<'prioritized', VariableExpression>
+): ContainerWithState<'ready', VariableExpression>
 export default function initializeExpressionContainer(
   expressionParams: CallExpressionParams
-): ContainerWithState<'prioritized', CallExpression>
+): ContainerWithState<'ready', CallExpression>
 export default function initializeExpressionContainer(
   expressionParams: FunctionExpressionParams
-): ContainerWithState<'prioritized', FunctionExpression>
+): ContainerWithState<'ready', FunctionExpression>
 export default function initializeExpressionContainer(
   expressionParams: ExpressionParams
-): ContainerWithState<'prioritized', Expression> {
+): ContainerWithState<'ready', Expression> {
   return prioritizeExpressionContainer(
     buildExpressionContainer(expressionParams)
   )

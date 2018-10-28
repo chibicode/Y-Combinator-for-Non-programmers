@@ -1,7 +1,7 @@
-import { isDoneExpressionContainer } from 'src/lib/yc/expressionContainerGuards'
+import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/yc/stepExpressionContainer'
 import {
-  ExpressionContainerState,
+  ExpressionContainerStates,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
@@ -12,7 +12,6 @@ export default class ExpressionContainerManager {
       expressionContainer: this.currentExpressionContainer,
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
-      isDone: this.isDone,
       ...this.currentStepAndSubstep
     }
   }
@@ -70,7 +69,7 @@ export default class ExpressionContainerManager {
     }
   }
 
-  public stepForwardUntilContainerState(state: ExpressionContainerState) {
+  public stepForwardUntilContainerState(state: ExpressionContainerStates) {
     while (
       this.currentExpressionContainer.containerState !== state &&
       this.canStepForward
@@ -84,7 +83,7 @@ export default class ExpressionContainerManager {
       this.currentIndex++
     } else if (
       this.isUnderMaxIndex &&
-      !isDoneExpressionContainer(this.currentExpressionContainer)
+      !isContainerWithState(this.currentExpressionContainer, 'done')
     ) {
       let expressionContainer: SteppedExpressionContainer = this
         .currentExpressionContainer
@@ -116,11 +115,11 @@ export default class ExpressionContainerManager {
   }
 
   private get canStepForward() {
-    return this.canRedo || (!this.isDone && this.isUnderMaxIndex)
-  }
-
-  private get isDone() {
-    return isDoneExpressionContainer(this.currentExpressionContainer)
+    return (
+      this.canRedo ||
+      (!isContainerWithState(this.currentExpressionContainer, 'done') &&
+        this.isUnderMaxIndex)
+    )
   }
 
   private get isUnderMaxIndex() {

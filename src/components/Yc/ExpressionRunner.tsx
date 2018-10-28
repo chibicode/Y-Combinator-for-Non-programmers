@@ -9,9 +9,10 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
+import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import {
-  ExpressionContainerState,
+  ExpressionContainerStates,
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
@@ -19,7 +20,7 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
-      state: ExpressionContainerState
+      state: ExpressionContainerStates
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
@@ -128,11 +129,15 @@ export default class ExpressionRunner extends React.Component<
         value={{
           hidePriorities,
           variableSize,
-          isDoneOrPrioritized:
-            expressionContainerManagerState.expressionContainer
-              .containerState === 'done' ||
-            expressionContainerManagerState.expressionContainer
-              .containerState === 'prioritized'
+          isDoneOrReady:
+            isContainerWithState(
+              expressionContainerManagerState.expressionContainer,
+              'done'
+            ) ||
+            isContainerWithState(
+              expressionContainerManagerState.expressionContainer,
+              'ready'
+            )
         }}
       >
         <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
@@ -146,7 +151,10 @@ export default class ExpressionRunner extends React.Component<
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
-                isDone={expressionContainerManagerState.isDone}
+                isDone={isContainerWithState(
+                  expressionContainerManagerState.expressionContainer,
+                  'done'
+                )}
                 currentStep={expressionContainerManagerState.currentStep}
                 currentSubstep={expressionContainerManagerState.currentSubstep}
                 hideLeftMostPrioritiesExplanation={
@@ -195,7 +203,10 @@ export default class ExpressionRunner extends React.Component<
                   canStepBackward={
                     expressionContainerManagerState.canStepBackward
                   }
-                  isDone={expressionContainerManagerState.isDone}
+                  isDone={isContainerWithState(
+                    expressionContainerManagerState.expressionContainer,
+                    'done'
+                  )}
                 />
               </div>
             )}

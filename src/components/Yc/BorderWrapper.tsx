@@ -21,12 +21,12 @@ interface BorderWrapperProps {
 const background = (
   highlightType: VariableExpression['highlightType'] | 'none',
   variableSize: ExpressionRunnerContextProps['variableSize'],
-  isDoneOrPrioritized: boolean
+  isDoneOrReady: boolean
 ): string | undefined => {
   switch (highlightType) {
     case 'default': {
       return css`
-        background: ${colors(isDoneOrPrioritized ? 'white' : 'indigo50')};
+        background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};
       `
     }
     case 'active': {
@@ -112,7 +112,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ variableSize, isDoneOrPrioritized }) => (
+    {({ variableSize, isDoneOrReady }) => (
       <Flex
         className={cx(
           css`
@@ -122,7 +122,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             flex: 1;
             position: relative;
           `,
-          background(highlightType, variableSize, isDoneOrPrioritized)
+          background(highlightType, variableSize, isDoneOrReady)
         )}
       >
         {highlightType === 'removed' && <Cross />}

@@ -3,13 +3,13 @@ import React from 'react'
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   variableSize: 'sm' | 'md' | 'lg'
-  isDoneOrPrioritized: boolean
+  isDoneOrReady: boolean
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   hidePriorities: false,
   variableSize: 'sm',
-  isDoneOrPrioritized: false
+  isDoneOrReady: false
 }
 
 export default React.createContext<ExpressionRunnerContextProps>(

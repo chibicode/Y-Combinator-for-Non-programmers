@@ -4,9 +4,9 @@ import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function prioritizeExpressionContainer<E extends Expression>(
   expressionContainer: ContainerWithState<'needsPrioritize', E>
-): ContainerWithState<'prioritized', E> {
+): ContainerWithState<'ready', E> {
   return {
-    containerState: 'prioritized',
+    containerState: 'ready',
     previouslyChangedExpressionState:
       expressionContainer.previouslyChangedExpressionState,
     expression: prioritizeExpression<E>(expressionContainer.expression)

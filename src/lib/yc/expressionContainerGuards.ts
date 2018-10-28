@@ -2,17 +2,13 @@ import { Expression } from 'src/types/yc/ExpressionTypes'
 
 import {
   ContainerWithState,
-  ExpressionContainer
+  ExpressionContainer,
+  ExpressionContainerStates
 } from 'src/types/yc/ExpressionContainerTypes'
 
-export function isNeedsResetExpressionContainer<
+export function isContainerWithState<
+  S extends ExpressionContainerStates,
   E extends Expression = Expression
->(e: ExpressionContainer): e is ContainerWithState<'needsReset', E> {
-  return e.containerState === 'needsReset'
-}
-
-export function isDoneExpressionContainer<E extends Expression = Expression>(
-  e: ExpressionContainer
-): e is ContainerWithState<'done', E> {
-  return e.containerState === 'done'
+>(e: ExpressionContainer, state: S): e is ContainerWithState<S, E> {
+  return e.containerState === state
 }
