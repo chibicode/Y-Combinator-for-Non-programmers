@@ -5,7 +5,6 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
-import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
