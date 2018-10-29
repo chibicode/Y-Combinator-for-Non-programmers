@@ -150,7 +150,10 @@ export const episode7Expression1 = initializeExpressionContainer([
     arg: 'a',
     body: {
       arg: 'b',
-      body: 'b'
+      body: {
+        arg: 'c',
+        body: 'b'
+      }
     }
   },
   'b'
@@ -361,10 +364,10 @@ export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
 // a => b => (a b)
 const recursiveFunction: FunctionExpressionParams = {
-  arg: 'a',
+  arg: 'd',
   body: {
-    arg: 'b',
-    body: ['a', 'b']
+    arg: 'e',
+    body: ['d', 'e']
   }
 }
 

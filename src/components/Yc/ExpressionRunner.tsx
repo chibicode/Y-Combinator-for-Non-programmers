@@ -34,6 +34,7 @@ interface ExpressionRunnerProps {
   expressionContainer: SteppedExpressionContainer
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideControls: boolean
+  hideExplanations: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
@@ -54,6 +55,7 @@ export default class ExpressionRunner extends React.Component<
   public static defaultProps = {
     hidePriorities: expressionRunnerContextDefault.hidePriorities,
     hideControls: false,
+    hideExplanations: false,
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
     containerSize: 'xxs',
@@ -118,6 +120,7 @@ export default class ExpressionRunner extends React.Component<
   public render() {
     const {
       hideControls,
+      hideExplanations,
       hidePriorities,
       variableSize,
       containerSize,
@@ -146,7 +149,7 @@ export default class ExpressionRunner extends React.Component<
             horizontalPadding={0}
             verticalMargin={0}
           >
-            {!hideControls && (
+            {!hideExplanations && (
               <ExpressionRunnerExplanation
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer

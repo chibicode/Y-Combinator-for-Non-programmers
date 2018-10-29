@@ -37,117 +37,90 @@ export default () => {
       <P>
         Now, let’s cover the last rule:{' '}
         <Strong>
-          <Emoji>😝</Emoji> changing your mind.
+          the devil. <Emoji>😈</Emoji>
         </Strong>
       </P>
-      <EmojiSeparator emojis={['😝', '😝', '😝']} />
-      <H3>Changing Your Mind</H3>
-      <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
-      {episode7[i++]()}
+      <EmojiSeparator emojis={['😈', '😈', '😈']} />
+      <H3>The Devil</H3>
       <P>
-        <Strong>Notice:</Strong> The{' '}
+        In the following {h('ycBentoBox')}, notice that{' '}
         <Em>
-          sandwich <Emoji>🥪</Emoji>
-        </Em>{' '}
-        is labeled as <EmojiBadge badgeType="callArg" inline />,{' '}
-        <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
-        <EmojiBadge badgeType="funcBound" inline />.
-      </P>
-      <P>
-        In a case like this, the <Emoji>😝</Emoji>{' '}
-        <Strong>“changing your mind” rule</Strong> applies. Here’s how it works:
-      </P>
-      <Ul>
-        <UlLi>
-          If some item is labeled as both{' '}
-          <EmojiBadge badgeType="callArg" inline /> and{' '}
-          <EmojiBadge badgeType="funcUnbound" inline />, then
-        </UlLi>
-      </Ul>
-      <P>
-        <Strong>Question:</Strong>{' '}
-        <Em>
-          What would the result be if change the last steak <Emoji>🥩</Emoji> to
-          a hamburger <Emoji>🍔</Emoji>
+          the{' '}
+          <Strong>
+            sandwich <Emoji size="mdlg">🥪</Emoji>
+          </Strong>{' '}
+          appears in <EmojiBadge badgeType="callArg" inline />,{' '}
+          <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
+          <EmojiBadge badgeType="funcBound" inline />
         </Em>
-        ?
+        .
       </P>
       {episode7[i++]()}
       <P>
-        Let’s check it out! Notice the top part is now <Emoji>🥩</Emoji>{' '}
-        <Emoji>🍔</Emoji> <Emoji>🍔</Emoji>. {h('ycTryUntilDone')}:
-      </P>
-      {episode7[i++]()}
-      <P>So the answer is:</P>
-      {episode7[i++]()}
-      <P>Hold on a minute…</P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>What’s going on?</H3>
-      <P>
-        <Strong>To summarize:</Strong>
-      </P>
-      <Ul>
-        <UlLi>
-          If the top row is <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> the
-          answer is <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />
-        </UlLi>
-        <UlLi>
-          If the top row is <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} /> the
-          answer is <InlineEmojiBoxes emojis={['🥪', '🥗', '🥪']} />
-        </UlLi>
-      </Ul>
-      <P>This is interesting. Suppose we use:</P>
-      <Ul>
-        <UlLi>
-          <Emoji size="mdlg">1️⃣</Emoji> to describe{' '}
-          <Emoji size="mdlg">🥩</Emoji> and <Emoji size="mdlg">🥪</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="mdlg">2️⃣</Emoji> to describe{' '}
-          <Emoji size="mdlg">🍔</Emoji> and <Emoji size="mdlg">🥗</Emoji>
-        </UlLi>
-      </Ul>
-      <P>Then it becomes:</P>
-      <Ul>
-        <UlLi>
-          If the top row is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> the
-          answer is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
-        </UlLi>
-        <UlLi>
-          If the top row is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> the
-          answer is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-        </UlLi>
-      </Ul>
-      <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
-      <P>
-        <Strong>This is very interesting.</Strong>{' '}
         <Em>
-          It seems like the <Strong>bottom row</Strong> (shown below) is doing
-          something magical:
+          Whenever there’s any item that appears in{' '}
+          <EmojiBadge badgeType="callArg" inline />,{' '}
+          <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
+          <EmojiBadge badgeType="funcBound" inline />, then{' '}
+          <Strong>
+            the devil <Emoji size="mdlg">😈</Emoji>
+          </Strong>{' '}
+          shows up:
         </Em>
       </P>
       {episode7[i++]()}
       <P>
-        We’ll soon talk about the <Strong>secrets of the bottom row</Strong>.{' '}
-        <Em>But before that</Em>, let’s check your understanding with the
-        following quiz.
+        The{' '}
+        <Strong>
+          devil <Emoji>😈</Emoji>
+        </Strong>{' '}
+        does the following:
       </P>
-      <H3>Quiz</H3>
-      <P>
-        We’ll be using a different set of dishes. Suppose that currently the{' '}
-        {h('ycBentoBox')} looks like this:
-      </P>
+      <Ul>
+        <UlLi>
+          <Em>
+            Changes all sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
+            <EmojiBadge badgeType="funcUnbound" inline /> and{' '}
+            <EmojiBadge badgeType="funcBound" inline /> to some random{' '}
+            <Strong>new dish</Strong>.
+          </Em>
+        </UlLi>
+        <UlLi>
+          The sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
+          <EmojiBadge badgeType="callArg" inline /> is unchanged.
+        </UlLi>
+      </Ul>
       {episode7[i++]()}
       <P>
-        <Strong>True or False:</Strong>{' '}
-        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
+        In this case, sandwiches <Emoji size="mdlg">🥪</Emoji> became steak{' '}
+        <Emoji size="mdlg">🥩</Emoji>.
       </P>
+      <P>You can then continue until {h('ycDone')} as usual:</P>
       {episode7[i++]()}
-      <P>
-        <Strong>Good luck!</Strong> If you’ve actually read this episode, you
-        should be able to answer this question.
-      </P>
-      <YcNextLessonButton nextEpisodeNumber={8} />
+      <P>That’s it!</P>
+      <EmojiSeparator emojis={['😈', '😈', '😈']} />
+      <H3>Good News</H3>
+      <P>I have some good news for you!</P>
+      <Ul>
+        <UlLi>
+          <Strong>
+            <Em>
+              You don’t need to memorize the devil <Emoji>😈</Emoji> rule.
+            </Em>
+          </Strong>{' '}
+          You just need to know that this rule exists, and recognize it when
+          used.
+        </UlLi>
+        <UlLi>
+          <Strong>This is the last {h('ycBentoBox')} rule we’ll cover.</Strong>{' '}
+          From the next episode we’ll cover the interesting ideas.
+        </UlLi>
+        <UlLi>
+          <Strong>No quiz on this episode.</Strong> Head straight to the next
+          episode!
+        </UlLi>
+      </Ul>
+      <YcNextLessonButton nextEpisodeNumber={8} primaryTextType="nextPage" />
     </>
   )
 }

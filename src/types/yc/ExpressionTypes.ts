@@ -67,6 +67,10 @@ interface VariableStates {
     readonly highlightType: 'conflictCallArg'
     readonly badgeType: 'callArg'
   }
+  conflictFuncBound: {
+    readonly highlightType: 'conflictFuncBound'
+    readonly badgeType: 'funcBound'
+  }
   conflictResolvedFuncUnbound: {
     readonly highlightType: 'conflictResolvedFuncUnbound'
     readonly badgeType: 'funcUnbound'
@@ -74,6 +78,10 @@ interface VariableStates {
   conflictResolvedFuncBound: {
     readonly highlightType: 'conflictResolvedBound'
     readonly badgeType: 'funcBound'
+  }
+  conflictResolvedCallArg: {
+    readonly highlightType: 'conflictResolvedCallArg'
+    readonly badgeType: 'callArg'
   }
   matchFuncBound: {
     readonly highlightType: 'match'
@@ -133,6 +141,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                   | 'activeFuncArg'
                   | 'highlightFuncUnbound'
                   | 'activeCallArg'
+                  | 'conflictFuncBound'
                   | 'conflictFuncUnbound'
                   | 'conflictCallArg'
               : C extends 'alphaConvertDone'
@@ -143,6 +152,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                     | 'activeCallArg'
                     | 'conflictResolvedFuncUnbound'
                     | 'conflictResolvedFuncBound'
+                    | 'conflictResolvedCallArg'
                 : C extends 'betaReducePreviewBefore'
                   ?
                       | 'activeFuncBound'

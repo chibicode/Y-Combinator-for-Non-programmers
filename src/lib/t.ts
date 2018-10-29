@@ -35,8 +35,8 @@ export const allTranslations = {
     jp: 'いちばん左から'
   },
   ycEpisode7: {
-    en: 'Changing Your Mind',
-    jp: '不思議な現象'
+    en: 'The Devil',
+    jp: '小悪魔'
   },
   ycEpisode8: {
     en: 'Conflicts',

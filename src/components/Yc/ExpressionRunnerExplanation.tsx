@@ -210,8 +210,10 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji size="mdlg">💥</Emoji> <Strong>Conflict</Strong> (See rules
-            in episode 8)
+            <Emoji>😈</Emoji> <Strong>Devil</Strong> appears (same item in{' '}
+            <EmojiBadge badgeType="callArg" inline />{' '}
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline />)
           </>
         )
       } else {
@@ -222,9 +224,9 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji>☑️</Emoji> <Strong>Resolved</Strong>: Change{' '}
-            <InlineBackground bgPattern="stripe" /> to a new dish{' '}
-            <InlineBackground bgPattern="bubble" />
+            <Emoji>😈</Emoji> <Strong>Devil</Strong> changes{' '}
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline />
           </>
         )
       } else {

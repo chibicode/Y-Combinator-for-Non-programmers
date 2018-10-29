@@ -202,11 +202,13 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
       </div>
     </Container>
     <Container size="sm">
-      {episodeNumber && (
+      {episodeNumber ? (
         <EmojiSeparator
           size="lg"
           emojis={episodeEmojis[lessonName][episodeNumber]}
         />
+      ) : (
+        <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
       )}
       {episodeNumber && (
         <EpisodePageInitialRenderWarning lessonName={lessonName} />
