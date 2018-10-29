@@ -28,6 +28,7 @@ const background = (
         background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};
       `
     }
+    case 'conflictResolvedCallArg':
     case 'removed':
     case 'active': {
       return css`
@@ -65,18 +66,10 @@ const background = (
     case 'conflictFuncUnbound':
     case 'conflictFuncBound':
     case 'conflictCallArg':
-    case 'conflictResolvedCallArg': {
-      return css`
-        background-image: url(${devilSvg});
-        background-size: ${variableSize === 'lg' ? 4 : 3}rem
-          ${variableSize === 'lg' ? 4 : 3}rem;
-        background-position: center center;
-      `
-    }
     case 'conflictResolvedFuncUnbound':
     case 'conflictResolvedBound': {
       return css`
-        background-image: url(${devilReverseSvg});
+        background-image: url(${devilSvg});
         background-size: ${variableSize === 'lg' ? 4 : 3}rem
           ${variableSize === 'lg' ? 4 : 3}rem;
         background-position: center center;
