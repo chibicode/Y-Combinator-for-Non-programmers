@@ -665,6 +665,13 @@ export const episode7 = [
         }
       ]}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode7Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 ]
 

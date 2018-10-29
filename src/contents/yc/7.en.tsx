@@ -98,6 +98,12 @@ export default () => {
       {episode7[i++]()}
       <P>That’s it!</P>
       <EmojiSeparator emojis={['😈', '😈', '😈']} />
+      <H3>Another Example</H3>
+      <P>
+        Here’s another example where the devil <Emoji>😈</Emoji> appears.{' '}
+        {h('ycTryUntilDone')}:
+      </P>
+      {episode7[i++]()}
       <H3>Good News</H3>
       <P>I have some good news for you!</P>
       <Ul>
