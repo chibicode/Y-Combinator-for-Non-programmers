@@ -5,7 +5,6 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import crossSvg from 'src/images/cross.url.svg'
-import devilReverseSvg from 'src/images/devil-reverse.url.svg'
 import devilSvg from 'src/images/devil.url.svg'
 import starSvg from 'src/images/star.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
@@ -43,6 +42,11 @@ const background = (
     case 'highlighted': {
       return css`
         background ${colors('yellow100')};
+      `
+    }
+    case 'highlightedNoEmphBorderNoMatch': {
+      return css`
+        background ${colors('pink50')};
       `
     }
     case 'highlightedNoEmphBorder': {
