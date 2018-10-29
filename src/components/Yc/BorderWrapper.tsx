@@ -5,6 +5,7 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import crossSvg from 'src/images/cross.url.svg'
+import devilYellowSvg from 'src/images/devil-yellow.url.svg'
 import devilSvg from 'src/images/devil.url.svg'
 import starSvg from 'src/images/star.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
@@ -27,7 +28,6 @@ const background = (
         background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};
       `
     }
-    case 'conflictResolvedCallArg':
     case 'removed':
     case 'active': {
       return css`
@@ -67,15 +67,23 @@ const background = (
         background-position: center center;
       `
     }
+    case 'conflictResolvedCallArg':
     case 'conflictFuncUnbound':
     case 'conflictFuncBound':
-    case 'conflictCallArg':
+    case 'conflictCallArg': {
+      return css`
+        background-image: url(${devilSvg});
+        background-size: ${variableSize === 'lg' ? 3 : 2.5}rem
+          ${variableSize === 'lg' ? 3 : 2.5}rem;
+        background-position: center center;
+      `
+    }
     case 'conflictResolvedFuncUnbound':
     case 'conflictResolvedBound': {
       return css`
-        background-image: url(${devilSvg});
-        background-size: ${variableSize === 'lg' ? 4 : 3}rem
-          ${variableSize === 'lg' ? 4 : 3}rem;
+        background-image: url(${devilYellowSvg});
+        background-size: ${variableSize === 'lg' ? 3 : 2.5}rem
+          ${variableSize === 'lg' ? 3 : 2.5}rem;
         background-position: center center;
       `
     }

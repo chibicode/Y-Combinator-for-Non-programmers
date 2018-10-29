@@ -62,7 +62,7 @@ export default () => {
           <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
           <EmojiBadge badgeType="funcBound" inline />, then{' '}
           <Strong>
-            the devil <Emoji size="mdlg">😈</Emoji>
+            the devil <Emoji>😈</Emoji>
           </Strong>{' '}
           shows up:
         </Em>
@@ -94,7 +94,7 @@ export default () => {
         In this case, sandwiches <Emoji size="mdlg">🥪</Emoji> became steak{' '}
         <Emoji size="mdlg">🥩</Emoji>.
       </P>
-      <P>You can then continue until {h('ycDone')} as usual:</P>
+      <P>From here, {h('ycTryUntilDone', false)} as usual:</P>
       {episode7[i++]()}
       <P>That’s it!</P>
       <EmojiSeparator emojis={['😈', '😈', '😈']} />
@@ -118,7 +118,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Strong>This is the last {h('ycBentoBox')} rule we’ll cover.</Strong>{' '}
-          From the next episode we’ll cover the interesting ideas.
+          From the next episode we’ll start solving interesting problems.
         </UlLi>
         <UlLi>
           <Strong>No quiz on this episode.</Strong> Head straight to the next
