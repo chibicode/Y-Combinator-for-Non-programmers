@@ -86,7 +86,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
                 ←{' '}
                 {episodeNumber === 1
                   ? h('introductionPageLink')
-                  : episodeTitlePrefix(episodeNumber - 1)}
+                  : episodeTitlePrefix(episodeNumber - 1, lessonName, true)}
               </InternalLink>
             )}
         </div>
@@ -114,7 +114,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
               href={pathHelpers[lessonName]((episodeNumber || 0) + 1)}
               className={navigationLinkClasses}
             >
-              {episodeTitlePrefix((episodeNumber || 0) + 1)} →
+              {episodeTitlePrefix((episodeNumber || 0) + 1, lessonName, true)} →
             </InternalLink>
           )}
         </div>

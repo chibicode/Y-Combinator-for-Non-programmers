@@ -135,7 +135,7 @@ export default () => {
         </Em>
       </P>
       {episode3[i++]()}
-      <P>答えに自信がなくても大丈夫です。次章で説明しますので！</P>
+      <P>答えに自信がなくても大丈夫です。次のページで説明しますので！</P>
       <YcNextLessonButton nextEpisodeNumber={4} />
     </>
   )

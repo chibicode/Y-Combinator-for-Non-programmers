@@ -232,8 +232,8 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji>😈</Emoji> <Strong>Devil</Strong> changes{' '}
-            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <Emoji customChildren={<DevilYellow />} /> <Strong>Devil</Strong>{' '}
+            changes <EmojiBadge badgeType="funcUnbound" inline />{' '}
             <EmojiBadge badgeType="funcBound" inline />
           </>
         )

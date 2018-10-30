@@ -91,8 +91,12 @@ export default () => {
       </Ul>
       {episode7[i++]()}
       <P>
-        In this case, sandwiches <Emoji size="mdlg">🥪</Emoji> became steak{' '}
-        <Emoji size="mdlg">🥩</Emoji>.
+        In this case,{' '}
+        <Strong>
+          the sandwiches <Emoji size="mdlg">🥪</Emoji> became steak{' '}
+          <Emoji size="mdlg">🥩</Emoji>
+        </Strong>
+        .
       </P>
       <P>From here, {h('ycTryUntilDone', false)} as usual:</P>
       {episode7[i++]()}
@@ -117,12 +121,11 @@ export default () => {
           used.
         </UlLi>
         <UlLi>
-          <Strong>This is the last {h('ycBentoBox')} rule we’ll cover.</Strong>{' '}
-          From the next episode we’ll start solving interesting problems.
+          <Strong>You’re done with the beginner levels!</Strong> We’ll move onto
+          the intermediate levels and start solving interesting problems.
         </UlLi>
         <UlLi>
-          <Strong>No quiz on this episode.</Strong> Head straight to the next
-          episode!
+          <Strong>There’s no quiz.</Strong> Head straight to the next page!
         </UlLi>
       </Ul>
       <YcNextLessonButton nextEpisodeNumber={8} primaryTextType="nextPage" />

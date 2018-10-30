@@ -1,6 +1,7 @@
 import React from 'react'
 import { Em, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
 import locale from 'src/lib/locale'
 import { yc } from 'src/lib/pathHelpers'
 
@@ -83,13 +84,8 @@ export const allTranslations = {
     jp: '次のページへ進む'
   }),
   ycNextButtonSecondaryText: (nextEpisodeNumber: number) => ({
-    en: <>Continue to Episode {nextEpisodeNumber}</>,
-    jp: (
-      <>
-        第{nextEpisodeNumber}
-        章へ
-      </>
-    )
+    en: <>Continue to {episodeTitlePrefix(nextEpisodeNumber, 'yc')}</>,
+    jp: <>{episodeTitlePrefix(nextEpisodeNumber, 'yc')}へ</>
   }),
   ycQuizReview: (previousEpisodeNumber: number) => ({
     en: (
@@ -105,8 +101,7 @@ export const allTranslations = {
       <P>
         <Strong>
           <InternalLink href={yc(previousEpisodeNumber)}>
-            第{previousEpisodeNumber}
-            章で出したクイズ
+            前のページで出したクイズ
           </InternalLink>
           の答え合わせをしましょう。
         </Strong>

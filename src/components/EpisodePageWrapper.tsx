@@ -18,7 +18,7 @@ const EpisodePageWrapper: React.SFC<EpisodePageWrapperProps> = ({
     lessonTitle={t(`${lessonName}Title` as keyof typeof allTranslations)}
     episodeTitle={
       episodeNumber
-        ? `${episodeTitlePrefix(episodeNumber)}: ${t(
+        ? `${episodeTitlePrefix(episodeNumber, lessonName)}: ${t(
             `${lessonName}Episode${episodeNumber}` as keyof typeof allTranslations
           )}`
         : undefined

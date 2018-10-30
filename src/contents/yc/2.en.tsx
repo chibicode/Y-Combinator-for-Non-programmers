@@ -134,7 +134,7 @@ export default () => {
           <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">❓</Emoji>
         </UlLi>
       </Ul>
-      <P>Go to the next episode to find out the answer!</P>
+      <P>Go to the next page to find out the answer!</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

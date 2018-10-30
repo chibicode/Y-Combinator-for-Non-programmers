@@ -9,11 +9,13 @@ interface NextLessonButtonProps {
   href: string
   primaryText: React.ReactNode
   secondaryText?: React.ReactNode
+  tertiaryText?: React.ReactNode
 }
 
 const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
   primaryText,
   secondaryText,
+  tertiaryText,
   href,
   Component = 'div'
 }) => (
@@ -72,6 +74,17 @@ const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
         )}
       </a>
     </Link>
+    {tertiaryText && (
+      <div
+        className={css`
+          font-size: ${fontSizes(0.85)};
+          margin-top: ${spaces(0.75)};
+          color: ${colors('grey500')};
+        `}
+      >
+        {tertiaryText}
+      </div>
+    )}
   </Component>
 )
 
