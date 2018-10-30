@@ -117,7 +117,7 @@ export default () => {
       </P>
       {episode7[i++]()}
       <P>
-        <Strong>Good luck!</Strong> If you’ve actually read this episode, you
+        <Strong>Good luck!</Strong> If you’ve actually read this page, you
         should be able to answer this question.
       </P>
       <YcNextLessonButton nextEpisodeNumber={8} />

@@ -43,7 +43,7 @@ export function toShowFuncUnbound(
     } else if (funcSide && !e.bound) {
       return {
         ...e,
-        highlightType: 'unboundHighlighted',
+        highlightType: 'highlighted',
         badgeType: 'funcUnbound'
       }
     } else {

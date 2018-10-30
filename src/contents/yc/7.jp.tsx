@@ -100,8 +100,12 @@ export default () => {
       </Ul>
       {episode7[i++]()}
       <P>
-        ここではサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
-        がステーキになりました <Emoji size="mdlg">🥩</Emoji> 。
+        ここでは
+        <Strong>
+          サンドイッチ <Emoji size="mdlg">🥪</Emoji> がステーキ{' '}
+          <Emoji size="mdlg">🥩</Emoji> に
+        </Strong>
+        なりました。
       </P>
       <P>
         あとはいつも通り、
@@ -124,12 +128,12 @@ export default () => {
             <Em>
               小悪魔ルール <Emoji>😈</Emoji> を暗記する必要はありません。
             </Em>
-          </Strong>{' '}
+          </Strong>
           「こういうルールもあるんだ」と思っていただければ大丈夫です。
         </UlLi>
         <UlLi>
-          <Strong>{h('ycBentoBox')} のルール説明はこれで最後です。</Strong>{' '}
-          次からは面白い問題を解いていきます。
+          <Strong>初級はこれで終了です！</Strong>
+          次の中級からは面白い問題を解いていきます。
         </UlLi>
         <UlLi>
           <Strong>今回はクイズはなしです。</Strong>

@@ -103,7 +103,7 @@ export default () => {
         </OlLi>
       </Ol>
       {episode3[i++]()}
-      <P>Try this one from the last episode too!</P>
+      <P>Try this one from the last page too!</P>
       {episode3[i++]()}
       <P>Hope you get the idea.</P>
       <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
@@ -116,7 +116,7 @@ export default () => {
         <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
       </P>
       {episode3[i++]()}
-      <P>It’s ok if you are not sure - I will explain on the next episode!</P>
+      <P>It’s ok if you are not sure - I will explain on the next page!</P>
       <YcNextLessonButton nextEpisodeNumber={4} />
     </>
   )

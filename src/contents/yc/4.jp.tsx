@@ -79,7 +79,7 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        そしてこの章で初登場するのが
+        そして今回、初登場するのが
         <Strong>
           「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>」
         </Strong>

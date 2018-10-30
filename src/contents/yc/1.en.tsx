@@ -129,7 +129,7 @@ export default () => (
         <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
       </OlLi>
     </Ol>
-    <P>Go to the next episode to find out the answer!</P>
+    <P>Go to the next page to find out the answer!</P>
     <YcNextLessonButton nextEpisodeNumber={2} />
   </>
 )

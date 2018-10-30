@@ -26,7 +26,9 @@ export const allColors = {
     .string(),
   yellow100: yellow[100],
   yellow200: yellow[200],
-  yellow800: yellow[800]
+  yellow600: yellow[600],
+  yellow800: yellow[800],
+  yellow900: yellow[900]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]
