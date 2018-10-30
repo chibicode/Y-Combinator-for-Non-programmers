@@ -112,9 +112,7 @@ const stepToAlphaConvertDone = (
   if (sortedConflicts.length === 0) {
     throw new Error('There must be a conflict if this function was called')
   }
-  const argVariableNames = getAllVariableNames(e.arg)
-  const funcVariableNames = getAllVariableNames(e.func)
-  const allUsedVariableNames = uniq(union(argVariableNames, funcVariableNames))
+  const allUsedVariableNames = uniq(getAllVariableNames(e))
   const usableVariableNames = difference(
     variableNamesArray,
     allUsedVariableNames
