@@ -5,10 +5,11 @@ export const numIntermediateLevels = 7
 
 export const remainingText = (nextEpisode: number) => {
   if (nextEpisode <= numBeginnerLevels) {
+    const num = numBeginnerLevels - nextEpisode + 1
     if (locale === 'jp') {
-      return `初級は残り${numBeginnerLevels - nextEpisode + 1}ページです！`
+      return `初級は残り${num}ページです！`
     } else {
-      return `${numBeginnerLevels - nextEpisode + 1} more beginner levels left!`
+      return `${num} more beginner level${num > 1 ? 's' : ''} left!`
     }
   } else if (nextEpisode === numBeginnerLevels + 1) {
     return undefined
