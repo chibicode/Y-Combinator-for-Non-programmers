@@ -13,7 +13,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
-import InlineBackground from 'src/components/Yc/InlineBackground'
+// import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -141,12 +141,12 @@ export default () => {
         <UlLi>
           Highlighting <Emoji size="mdlg">🥪</Emoji> in{' '}
           <EmojiBadge badgeType="callArg" inline /> using{' '}
-          <InlineBackground bgPattern="stripeReverse" size="mdlg" />
+          {/* <InlineBackground bgPattern="stripeReverse" size="mdlg" /> */}
         </UlLi>
         <UlLi>
           Highlighting <Emoji size="mdlg">🥪</Emoji> in{' '}
           <EmojiBadge badgeType="funcBound" inline /> using{' '}
-          <InlineBackground bgPattern="stripe" size="mdlg" />
+          {/* <InlineBackground bgPattern="stripe" size="mdlg" /> */}
         </UlLi>
       </Ul>
       <H3>
@@ -166,15 +166,15 @@ export default () => {
         <OlLi>
           <Em>
             <Strong>Replace</Strong> dishes highlighted in{' '}
-            <InlineBackground bgPattern="stripe" size="mdlg" /> with a new dish
+            {/* <InlineBackground bgPattern="stripe" size="mdlg" /> with a new dish */}
             that hasn’t appeared yet.{' '}
-            <InlineBackground bgPattern="bubble" size="mdlg" />
+            {/* <InlineBackground bgPattern="bubble" size="mdlg" /> */}
           </Em>
         </OlLi>
         <OlLi>
           <Em>
             <Strong>Don’t do anything</Strong> for dishes highlighted in{' '}
-            <InlineBackground bgPattern="stripeReverse" size="mdlg" />.
+            {/* <InlineBackground bgPattern="stripeReverse" size="mdlg" />. */}
           </Em>
         </OlLi>
       </Ol>
@@ -182,7 +182,7 @@ export default () => {
         <Strong>In this case:</Strong>{' '}
         <Em>
           sandwiches <Emoji size="mdlg">🥪</Emoji> highlighted in{' '}
-          <InlineBackground bgPattern="stripe" size="mdlg" /> were replaced with
+          {/* <InlineBackground bgPattern="stripe" size="mdlg" /> were replaced with */}
           a steak <Emoji size="mdlg">🥩</Emoji>
         </Em>
         .

@@ -39,7 +39,9 @@ export default class ExpressionContainerManager {
   public startIndex = 0
   public iterationBoundaries: number[] = []
   public minimumIndex = 0
-  public maximumIndex = 999
+  // TODO: Because of precomputing, if this is high the app will crash for Y Combinator.
+  // The YC example should specify maximumIndex.
+  public maximumIndex = 100
   public lastAllowedExpressionState?: CallStates
 
   constructor({

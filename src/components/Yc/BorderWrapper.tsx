@@ -4,12 +4,10 @@ import Flex from 'src/components/Flex'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-import bubbleGreySvg from 'src/images/bubble-grey.url.svg'
-import bubbleSvg from 'src/images/bubble.url.svg'
 import crossSvg from 'src/images/cross.url.svg'
+import devilYellowSvg from 'src/images/devil-yellow.url.svg'
+import devilSvg from 'src/images/devil.url.svg'
 import starSvg from 'src/images/star.url.svg'
-import stripeReverseSvg from 'src/images/stripe-reverse.url.svg'
-import stripeSvg from 'src/images/stripe.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
@@ -46,6 +44,11 @@ const background = (
         background ${colors('yellow100')};
       `
     }
+    case 'highlightedNoEmphBorderNoMatch': {
+      return css`
+        background ${colors('pink50')};
+      `
+    }
     case 'highlightedNoEmphBorder': {
       return css`
         background ${colors('yellow100')};
@@ -64,35 +67,23 @@ const background = (
         background-position: center center;
       `
     }
-    case 'conflictFuncUnbound': {
-      return css`
-        background-image: url(${stripeSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
-          ${variableSize === 'lg' ? 2 : 1.5}rem;
-        background-position: center center;
-      `
-    }
+    case 'conflictResolvedCallArg':
+    case 'conflictFuncUnbound':
+    case 'conflictFuncBound':
     case 'conflictCallArg': {
       return css`
-        background-image: url(${stripeReverseSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
-          ${variableSize === 'lg' ? 2 : 1.5}rem;
+        background-image: url(${devilSvg});
+        background-size: ${variableSize === 'lg' ? 3 : 2.5}rem
+          ${variableSize === 'lg' ? 3 : 2.5}rem;
         background-position: center center;
       `
     }
-    case 'conflictResolvedFuncUnbound': {
-      return css`
-        background-image: url(${bubbleGreySvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
-          ${variableSize === 'lg' ? 2 : 1.5}rem;
-        background-position: center center;
-      `
-    }
+    case 'conflictResolvedFuncUnbound':
     case 'conflictResolvedBound': {
       return css`
-        background-image: url(${bubbleSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
-          ${variableSize === 'lg' ? 2 : 1.5}rem;
+        background-image: url(${devilYellowSvg});
+        background-size: ${variableSize === 'lg' ? 3 : 2.5}rem
+          ${variableSize === 'lg' ? 3 : 2.5}rem;
         background-position: center center;
       `
     }

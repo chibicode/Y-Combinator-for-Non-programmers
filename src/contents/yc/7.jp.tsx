@@ -3,7 +3,8 @@ import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
-import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
+import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -15,116 +16,127 @@ export default () => {
       <P>{h('ycTryUntilDone')}:</P>
       {episode7[i++]()}
       <P>
-        というわけで答えは
-        <Strong>No</Strong>。
+        最終的には以下のようになったので、答えは
+        <Strong>Yes</Strong>
+        でした。
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Strong>ちょっと難しかった部分:</Strong>{' '}
+        下のステップはちょっと難しかったかもしれません。(
+        <Em>{h('ycNext')} を押してみてください</Em>
+        ):
+      </P>
+      {episode7[i++]()}
+      <P>
+        ご覧の通り、
         <Em>
-          正解は
-          <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥪</Emoji>
-          ではなく、 <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥗</Emoji>
-          でした
+          <EmojiBadge badgeType="callArg" inline />
+          がついている料理がすべて <InlineBackground bgPattern="star" />{' '}
+          の部分にコピペされた
         </Em>
-        :
+        のがわかります。
       </P>
-      {episode7[i++]()}
       <P>
-        どうでしたか？難しい問題だったので、解けなくても気にしないでください！
+        それでは、いよいよ次が最後の基本ルールです。
+        <Strong>
+          小悪魔 <Emoji>😈</Emoji>
+        </Strong>{' '}
+        のルールを紹介します。
       </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <H3>
-        <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🍔</Emoji> のかわりに、{' '}
-        <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🥩</Emoji> を使った場合
-      </H3>
+      <EmojiSeparator emojis={['😈', '😈', '😈']} />
+      <H3>小悪魔</H3>
       <P>
-        前の例だと、
-        <Strong>上段</Strong>
-        には次の3つが並んでいました。
-      </P>
-      {episode7[i++]()}
-      <P>
-        <Strong>では、</Strong>
+        次の
+        {h('ycBentoBox')}
+        をご覧ください。{' '}
         <Em>
-          一番右のステーキ <Emoji>🥩</Emoji> をハンバーガー <Emoji>🍔</Emoji>{' '}
-          に変えた場合、答えはどう変わるのでしょう？
+          <Strong>
+            サンドイッチ <Emoji size="mdlg">🥪</Emoji>
+          </Strong>{' '}
+          が、
+          <EmojiBadge badgeType="callArg" inline /> と{' '}
+          <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
+          <EmojiBadge badgeType="funcBound" inline />
+          にあることに注目です。
+        </Em>
+        .
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Em>
+          同じ料理が
+          <EmojiBadge badgeType="callArg" inline /> と{' '}
+          <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
+          <EmojiBadge badgeType="funcBound" inline />
+          にあると、
+          <Strong>
+            小悪魔 <Emoji>😈</Emoji>
+          </Strong>{' '}
+          が登場します。
         </Em>
       </P>
       {episode7[i++]()}
       <P>
-        試してみましょう。下の例では上段を <Emoji>🥩</Emoji> <Emoji>🍔</Emoji>{' '}
-        <Emoji>🍔</Emoji> に変えてみました。
+        <Strong>
+          小悪魔は <Emoji>😈</Emoji>
+        </Strong>{' '}
+        こんなイタズラをしちゃいます:
+      </P>
+      <Ul>
+        <UlLi>
+          <Em>
+            <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
+            <EmojiBadge badgeType="funcBound" inline /> にある全てのサンドイッチ{' '}
+            <Emoji size="mdlg">🥪</Emoji> をランダムに
+            <Strong>新しい</Strong>
+            料理に変えてしまう。
+          </Em>
+        </UlLi>
+        <UlLi>
+          <EmojiBadge badgeType="callArg" inline /> にあるサンドイッチ{' '}
+          <Emoji size="mdlg">🥪</Emoji> はそのまま。
+        </UlLi>
+      </Ul>
+      {episode7[i++]()}
+      <P>
+        ここではサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+        がステーキになりました <Emoji size="mdlg">🥩</Emoji> 。
+      </P>
+      <P>
+        あとはいつも通り、
         {h('ycTryUntilDone')}:
       </P>
       {episode7[i++]()}
-      <P>つまり、答えはこうなります:</P>
-      {episode7[i++]()}
-      <P>うーん、待てよ…？</P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>何が起きたのか</H3>
+      <P>以上です！</P>
+      <EmojiSeparator emojis={['😈', '😈', '😈']} />
+      <H3>もうひとつの例</H3>
       <P>
-        <Strong>まとめると、こうなります:</Strong>
+        小悪魔 <Emoji>😈</Emoji> が登場するもうひとつの例はこちら。
+        {h('ycTryUntilDone')}:
       </P>
+      {episode7[i++]()}
+      <H3>それではここで…</H3>
+      <P>良いお知らせがあります！</P>
       <Ul>
         <UlLi>
-          上段が <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />
+          <Strong>
+            <Em>
+              小悪魔ルール <Emoji>😈</Emoji> を暗記する必要はありません。
+            </Em>
+          </Strong>{' '}
+          「こういうルールもあるんだ」と思っていただければ大丈夫です。
         </UlLi>
         <UlLi>
-          上段が <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥪']} />
+          <Strong>{h('ycBentoBox')} のルール説明はこれで最後です。</Strong>{' '}
+          次からは面白い問題を解いていきます。
+        </UlLi>
+        <UlLi>
+          <Strong>今回はクイズはなしです。</Strong>
+          そのまま次のページに進んでください！
         </UlLi>
       </Ul>
-      <P>ということは、もし:</P>
-      <Ul>
-        <UlLi>
-          <Emoji size="mdlg">🥩</Emoji> と <Emoji size="mdlg">🥪</Emoji> を{' '}
-          <Emoji size="mdlg">1️⃣</Emoji> で示し、
-        </UlLi>
-        <UlLi>
-          <Emoji size="mdlg">🍔</Emoji> と <Emoji size="mdlg">🥗</Emoji> を{' '}
-          <Emoji size="mdlg">2️⃣</Emoji> で示すと、
-        </UlLi>
-      </Ul>
-      <P>次のようになります:</P>
-      <Ul>
-        <UlLi>
-          上段が <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
-        </UlLi>
-        <UlLi>
-          上段が <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-        </UlLi>
-      </Ul>
-      <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
-      <P>
-        <Strong>不思議じゃないですか？</Strong>
-        <Em>
-          <Strong>下段</Strong> (下を参照)
-          が何かをしでかしているに違いありません。
-        </Em>
-      </P>
-      {episode7[i++]()}
-      <P>
-        <Strong>下段の秘密</Strong>
-        についてはこれから説明します。
-        <Em>ですがその前に</Em>
-        、ここまで理解できているかをクイズでチェックしてみましょう。
-      </P>
-      <H3>クイズ</H3>
-      <P>
-        前回とは違う料理を使います。下の
-        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします:
-      </P>
-      {episode7[i++]()}
-      <P>
-        <Strong>YesかNoで答えてみてください:</Strong>{' '}
-        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
-      </P>
-      {episode7[i++]()}
-      <P>
-        ここまできちんと読んだ方なら、答えられるはずです。
-        <Strong>頑張ってください！</Strong>
-      </P>
-      <YcNextLessonButton nextEpisodeNumber={8} />
+      <YcNextLessonButton nextEpisodeNumber={8} primaryTextType="nextPage" />
     </>
   )
 }

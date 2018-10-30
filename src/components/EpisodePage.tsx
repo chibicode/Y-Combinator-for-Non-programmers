@@ -8,6 +8,7 @@ import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import Page from 'src/components/Page'
+import episodeEmojis from 'src/lib/episodeEmojis'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
 import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
@@ -29,7 +30,6 @@ export interface EpisodePageProps {
   lessonTitle: string
   episodeTitle?: string
   episodeNumber?: number
-  emojis: string[]
   contentName: ContentProps['name']
 }
 
@@ -50,7 +50,6 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
   lessonName,
   episodeTitle,
   episodeNumber,
-  emojis,
   contentName
 }) => (
   <Page>
@@ -203,7 +202,14 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
       </div>
     </Container>
     <Container size="sm">
-      <EmojiSeparator size="lg" emojis={emojis} />
+      {episodeNumber ? (
+        <EmojiSeparator
+          size="lg"
+          emojis={episodeEmojis[lessonName][episodeNumber]}
+        />
+      ) : (
+        <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
+      )}
       {episodeNumber && (
         <EpisodePageInitialRenderWarning lessonName={lessonName} />
       )}

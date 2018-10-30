@@ -8,7 +8,7 @@ interface InlineEmojiBoxProps {
   emojis: string[]
 }
 
-const InlineEmojiBox: React.SFC<InlineEmojiBoxProps> = ({ emojis }) => (
+const InlineEmojiBoxes: React.SFC<InlineEmojiBoxProps> = ({ emojis }) => (
   <span
     className={css`
       display: inline-flex;
@@ -39,4 +39,4 @@ const InlineEmojiBox: React.SFC<InlineEmojiBoxProps> = ({ emojis }) => (
   </span>
 )
 
-export default InlineEmojiBox
+export default InlineEmojiBoxes

@@ -2,6 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import DevilYellow from 'src/components/Yc/DevilYellow'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
@@ -210,25 +211,40 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji size="mdlg">💥</Emoji> <Strong>Conflict</Strong> (See rules
-            in episode 8)
+            <Emoji>😈</Emoji> <Strong>Devil</Strong> appears (same item in{' '}
+            <EmojiBadge badgeType="callArg" inline />{' '}
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline />)
           </>
         )
       } else {
-        return <>?</>
+        return (
+          <>
+            <Emoji>😈</Emoji> <Strong>小悪魔</Strong>
+            が登場 (<EmojiBadge badgeType="callArg" inline />{' '}
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline /> に同じ料理がある)
+          </>
+        )
       }
     }
     case 'alphaConvertDone': {
       if (locale === 'en') {
         return (
           <>
-            <Emoji>☑️</Emoji> <Strong>Resolved</Strong>: Change{' '}
-            <InlineBackground bgPattern="stripe" /> to a new dish{' '}
-            <InlineBackground bgPattern="bubble" />
+            <Emoji>😈</Emoji> <Strong>Devil</Strong> changes{' '}
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline />
           </>
         )
       } else {
-        return <>?</>
+        return (
+          <>
+            <Emoji customChildren={<DevilYellow />} /> <Strong>小悪魔</Strong>が
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline /> を新しい料理に
+          </>
+        )
       }
     }
     default: {

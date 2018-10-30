@@ -145,21 +145,52 @@ export const episode6Expression3 = initializeExpressionContainer({
   body: 'b'
 })
 
-export const episode7Expression1 = initializeExpressionContainer({
-  arg: 'b',
-  body: {
-    arg: 'c',
-    body: 'c'
-  }
-})
+export const episode7Expression1 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: 'b'
+      }
+    }
+  },
+  'b'
+])
 
-export const episode7Expression2 = initializeExpressionContainer({
-  arg: 'd',
-  body: {
-    arg: 'e',
-    body: 'd'
-  }
-})
+export const episode7Expression2 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: [
+        {
+          arg: 'c',
+          body: 'c'
+        },
+        'b'
+      ]
+    }
+  },
+  'b'
+])
+
+// export const episode7Expression1 = initializeExpressionContainer({
+//   arg: 'b',
+//   body: {
+//     arg: 'c',
+//     body: 'c'
+//   }
+// })
+
+// export const episode7Expression2 = initializeExpressionContainer({
+//   arg: 'd',
+//   body: {
+//     arg: 'e',
+//     body: 'd'
+//   }
+// })
 
 export const episode7Expression3 = initializeExpressionContainer({
   arg: 'd',
@@ -350,10 +381,10 @@ export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
 // a => b => (a b)
 const recursiveFunction: FunctionExpressionParams = {
-  arg: 'a',
+  arg: 'd',
   body: {
-    arg: 'b',
-    body: ['a', 'b']
+    arg: 'e',
+    body: ['d', 'e']
   }
 }
 

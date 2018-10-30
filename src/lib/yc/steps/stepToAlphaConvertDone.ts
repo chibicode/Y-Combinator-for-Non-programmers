@@ -83,7 +83,11 @@ export function toAlphaConvertDone(
         }
       }
     } else {
-      return { ...e, highlightType: 'active', badgeType: 'callArg' }
+      return {
+        ...e,
+        highlightType: 'conflictResolvedCallArg',
+        badgeType: 'callArg'
+      }
     }
   } else if (isFunction(e)) {
     return {

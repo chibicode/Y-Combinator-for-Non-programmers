@@ -46,7 +46,19 @@ export function toNeedsAlphaConvert(
 ): StepChild<'needsAlphaConvert'> {
   if (isVariable(x)) {
     if (funcSide && x.bound) {
-      return { ...x, highlightType: 'active', badgeType: 'funcBound' }
+      if (conflicts.includes(x.name)) {
+        return {
+          ...x,
+          highlightType: 'conflictFuncBound',
+          badgeType: 'funcBound'
+        }
+      } else {
+        return {
+          ...x,
+          highlightType: 'active',
+          badgeType: 'funcBound'
+        }
+      }
     } else if (funcSide && !x.bound) {
       if (conflicts.includes(x.name)) {
         return {
