@@ -126,7 +126,7 @@ export const allTranslations = {
     jp: '序章'
   }),
   indexPageLink: () => ({
-    en: 'View All Episodes',
+    en: 'View All Pages',
     jp: '目次'
   })
 }

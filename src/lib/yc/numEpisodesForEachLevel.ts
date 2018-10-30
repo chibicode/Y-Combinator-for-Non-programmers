@@ -9,7 +9,7 @@ export const remainingText = (nextEpisode: number) => {
     if (locale === 'jp') {
       return `初級は残り${num}ページです！`
     } else {
-      return `${num} more beginner level${num > 1 ? 's' : ''} left!`
+      return `${num} more Beginner Level${num > 1 ? 's' : ''} left!`
     }
   } else if (nextEpisode === numBeginnerLevels + 1) {
     return undefined
