@@ -44,7 +44,7 @@ const background = (
         background ${colors('yellow100')};
       `
     }
-    case 'highlightedNoEmphBorderNoMatch': {
+    case 'unmatch': {
       return css`
         background ${colors('pink50')};
       `
@@ -52,11 +52,6 @@ const background = (
     case 'highlightedNoEmphBorder': {
       return css`
         background ${colors('yellow100')};
-      `
-    }
-    case 'unboundHighlighted': {
-      return css`
-        background ${colors('grey200')};
       `
     }
     case 'match': {

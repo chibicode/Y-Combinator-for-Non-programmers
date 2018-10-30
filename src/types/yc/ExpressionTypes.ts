@@ -43,16 +43,16 @@ interface VariableStates {
     readonly highlightType: 'highlightedNoEmphBorder'
     readonly badgeType: 'funcArg'
   }
-  highlightFuncArgNoEmphBorderNoMatch: {
-    readonly highlightType: 'highlightedNoEmphBorderNoMatch'
-    readonly badgeType: 'funcArg'
-  }
   activeFuncArg: {
     readonly highlightType: 'active'
     readonly badgeType: 'funcArg'
   }
   highlightFuncUnbound: {
-    readonly highlightType: 'unboundHighlighted'
+    readonly highlightType: 'highlighted'
+    readonly badgeType: 'funcUnbound'
+  }
+  activeFuncUnbound: {
+    readonly highlightType: 'active'
     readonly badgeType: 'funcUnbound'
   }
   highlightCallArg: {
@@ -89,6 +89,10 @@ interface VariableStates {
   }
   matchFuncBound: {
     readonly highlightType: 'match'
+    readonly badgeType: 'funcBound'
+  }
+  unmatchFuncBound: {
+    readonly highlightType: 'unmatch'
     readonly badgeType: 'funcBound'
   }
   betaReduced: {
@@ -137,13 +141,13 @@ export type CtoV<C extends CallStates> = C extends 'default'
             ?
                 | 'activeFuncBound'
                 | 'activeFuncArg'
-                | 'highlightFuncUnbound'
+                | 'activeFuncUnbound'
                 | 'highlightCallArg'
             : C extends 'needsAlphaConvert'
               ?
                   | 'activeFuncBound'
                   | 'activeFuncArg'
-                  | 'highlightFuncUnbound'
+                  | 'activeFuncUnbound'
                   | 'activeCallArg'
                   | 'conflictFuncBound'
                   | 'conflictFuncUnbound'
@@ -152,24 +156,23 @@ export type CtoV<C extends CallStates> = C extends 'default'
                 ?
                     | 'activeFuncBound'
                     | 'activeFuncArg'
-                    | 'highlightFuncUnbound'
+                    | 'activeFuncUnbound'
                     | 'activeCallArg'
                     | 'conflictResolvedFuncUnbound'
                     | 'conflictResolvedFuncBound'
                     | 'conflictResolvedCallArg'
                 : C extends 'betaReducePreviewBefore'
                   ?
-                      | 'activeFuncBound'
                       | 'highlightFuncArgNoEmphBorder'
-                      | 'highlightFuncArgNoEmphBorderNoMatch'
-                      | 'highlightFuncUnbound'
+                      | 'activeFuncUnbound'
                       | 'activeCallArg'
                       | 'matchFuncBound'
+                      | 'unmatchFuncBound'
                   : C extends 'betaReducePreviewAfter'
                     ?
                         | 'activeFuncBound'
                         | 'activeFuncArg'
-                        | 'highlightFuncUnbound'
+                        | 'activeFuncUnbound'
                         | 'highlightCallArg'
                         | 'betaReduced'
                     : C extends 'betaReducePreviewCrossed'

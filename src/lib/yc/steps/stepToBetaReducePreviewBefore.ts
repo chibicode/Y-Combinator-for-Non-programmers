@@ -82,7 +82,7 @@ export function toBetaReducePreviewBefore(
         return {
           nextExpression: {
             ...e,
-            highlightType: 'active',
+            highlightType: 'unmatch',
             badgeType: 'funcBound'
           },
           matchExists: false
@@ -92,7 +92,7 @@ export function toBetaReducePreviewBefore(
       return {
         nextExpression: {
           ...e,
-          highlightType: 'unboundHighlighted',
+          highlightType: 'active',
           badgeType: 'funcUnbound'
         },
         matchExists: false
@@ -135,26 +135,12 @@ export function toBetaReducePreviewBefore(
 }
 
 const highlightFuncArg = (
-  e: VariableExpression,
-  matchExists: boolean
-):
-  | VariableWithState<'highlightFuncArgNoEmphBorderNoMatch'>
-  | VariableWithState<'highlightFuncArgNoEmphBorder'> => {
-  if (matchExists) {
-    return {
-      ...e,
-      highlightType: 'highlightedNoEmphBorder',
-      badgeType: 'funcArg'
-    }
-  } else {
-    return {
-      ...e,
-      highlightType: 'highlightedNoEmphBorderNoMatch',
-      badgeType: 'funcArg'
-    }
-  }
-}
-
+  e: VariableExpression
+): VariableWithState<'highlightFuncArgNoEmphBorder'> => ({
+  ...e,
+  highlightType: 'highlightedNoEmphBorder',
+  badgeType: 'funcArg'
+})
 const stepToBetaReducePreviewBefore = (
   e: ExecutableCall
 ): {
@@ -173,7 +159,7 @@ const stepToBetaReducePreviewBefore = (
       arg: argResult.nextExpression,
       func: {
         ...e.func,
-        arg: highlightFuncArg(e.func.arg, matchExists),
+        arg: highlightFuncArg(e.func.arg),
         body: funcResult.nextExpression
       }
     },

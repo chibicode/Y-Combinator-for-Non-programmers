@@ -72,7 +72,7 @@ export function toAlphaConvertDone(
       } else if (funcSide && !e.bound) {
         return {
           ...e,
-          highlightType: 'unboundHighlighted',
+          highlightType: 'active',
           badgeType: 'funcUnbound'
         }
       } else {

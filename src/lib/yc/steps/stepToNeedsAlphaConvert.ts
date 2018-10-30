@@ -69,7 +69,7 @@ export function toNeedsAlphaConvert(
       } else {
         return {
           ...x,
-          highlightType: 'unboundHighlighted',
+          highlightType: 'active',
           badgeType: 'funcUnbound'
         }
       }
