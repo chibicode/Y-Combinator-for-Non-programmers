@@ -38,7 +38,7 @@ export default () => {
           <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
-      <H3>What will happen next?</H3>
+      <H3>What Will Happen Next?</H3>
       <P>
         In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
         brings steak <Emoji>🥩</Emoji>. So eventually,{' '}
@@ -106,7 +106,7 @@ export default () => {
       <P>Try this one from the last page too!</P>
       {episode3[i++]()}
       <P>Hope you get the idea.</P>
-      <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
       <P>Now, time for some quiz…</P>
       <H3>Quiz</H3>
       <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>

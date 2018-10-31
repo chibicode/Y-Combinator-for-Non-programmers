@@ -17,6 +17,7 @@ interface ExpressionRunnerExplanationProps {
   currentStep: number
   currentSubstep: number
   hideLeftMostPrioritiesExplanation: boolean
+  isPlaying: boolean
 }
 
 const stateToExplanation = ({
@@ -260,7 +261,8 @@ const ExpressionRunnerExplanation: React.SFC<
   currentStep,
   currentSubstep,
   isDone,
-  hideLeftMostPrioritiesExplanation
+  hideLeftMostPrioritiesExplanation,
+  isPlaying
 }) => (
   <div
     className={css`
@@ -272,31 +274,45 @@ const ExpressionRunnerExplanation: React.SFC<
       line-height: ${lineHeights(2)};
     `}
   >
-    <Strong>
-      {locale === 'en' ? 'Step ' : 'ステップ'}
-      {currentStep}
-      {locale === 'en' ? '.' : '–'}
-      {currentSubstep}:
-    </Strong>{' '}
-    {isDone ? (
+    {isPlaying ? (
       locale === 'en' ? (
         <>
-          Done! <Emoji>✅</Emoji>
+          <Emoji>▶️</Emoji> <Strong>Playing…</Strong>
         </>
       ) : (
         <>
-          終了！
-          <Emoji>✅</Emoji>
+          <Emoji>⏩</Emoji> <Strong>早送り中…</Strong>
         </>
       )
     ) : (
-      stateToExplanation({
-        state: expressionContainer.previouslyChangedExpressionState,
-        currentStep,
-        currentSubstep,
-        hideLeftMostPrioritiesExplanation,
-        matchExists: expressionContainer.matchExists
-      })
+      <>
+        <Strong>
+          {locale === 'en' ? 'Step ' : 'ステップ'}
+          {currentStep}
+          {locale === 'en' ? '.' : '–'}
+          {currentSubstep}:
+        </Strong>{' '}
+        {isDone ? (
+          locale === 'en' ? (
+            <>
+              Done! <Emoji>✅</Emoji>
+            </>
+          ) : (
+            <>
+              終了！
+              <Emoji>✅</Emoji>
+            </>
+          )
+        ) : (
+          stateToExplanation({
+            state: expressionContainer.previouslyChangedExpressionState,
+            currentStep,
+            currentSubstep,
+            hideLeftMostPrioritiesExplanation,
+            matchExists: expressionContainer.matchExists
+          })
+        )}
+      </>
     )}
   </div>
 )

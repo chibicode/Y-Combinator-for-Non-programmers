@@ -115,7 +115,7 @@ export default () => {
         eating next <Emoji>😋</Emoji>.
       </P>
       <EmojiSeparator emojis={['💭', '🤔', '💭']} />
-      <H3>Quiz: Four cells on the bottom</H3>
+      <H3>Quiz: Four Cells on the Bottom</H3>
       <P>
         Check out the following {h('ycBentoBox')}.{' '}
         <Em>What do you think will happen by the time it’s {h('ycDone')}?</Em>

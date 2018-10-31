@@ -1,6 +1,6 @@
 import styled from 'react-emotion'
 
-const Flex = styled.div`
+const Flex = styled.span`
   display: flex;
 `
 

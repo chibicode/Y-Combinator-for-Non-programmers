@@ -62,6 +62,10 @@ export default class ExpressionContainerManager {
     }
   }
 
+  public reset() {
+    this.currentIndex = this.startIndex
+  }
+
   public stepForwardUntilPreviouslyChangedExpressionState(state: CallStates) {
     while (
       this.currentExpressionContainer.previouslyChangedExpressionState !==

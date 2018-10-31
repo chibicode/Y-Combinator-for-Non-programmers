@@ -118,7 +118,7 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>コツがつかめてきたでしょうか？</P>
-      <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
       <P>では、クイズに挑戦してみましょう。</P>
       <H3>クイズ</H3>
       <P>

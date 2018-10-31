@@ -68,7 +68,7 @@ export default () => {
       {episode6[i++]()}
       <P>
         <Strong>This question is tricky.</Strong> But at least try for a little
-        bit before you click the button below!
+        bit before you press the button below!
       </P>
       <YcNextLessonButton nextEpisodeNumber={7} />
     </>

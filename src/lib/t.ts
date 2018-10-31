@@ -39,8 +39,8 @@ export const allTranslations = {
     jp: '小悪魔'
   },
   ycEpisode8: {
-    en: 'Conflicts',
-    jp: '衝突'
+    en: 'The Two Patterns',
+    jp: 'ふたつのパターン'
   },
   ycEpisode9: {
     en: 'TBD',

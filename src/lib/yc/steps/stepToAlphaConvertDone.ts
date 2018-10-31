@@ -1,5 +1,4 @@
 import difference from 'lodash/difference'
-import union from 'lodash/union'
 import uniq from 'lodash/uniq'
 import zipObject from 'lodash/zipObject'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
