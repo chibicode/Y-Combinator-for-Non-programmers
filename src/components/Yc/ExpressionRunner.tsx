@@ -17,7 +17,7 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
-const autoplaySpeed = 250
+const autoplaySpeed = 300
 
 type InitializeInstruction =
   | {
@@ -189,6 +189,8 @@ export default class ExpressionRunner extends React.Component<
               <div
                 className={css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+                  opacity: ${isPlaying ? 0.5 : 1};
+                  ${isPlaying ? 'filter: grayscale(50%);' : ''};
                 `}
               >
                 <ExpressionBox
