@@ -17,6 +17,8 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
+const autoplaySpeed = 250
+
 type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
@@ -42,7 +44,7 @@ interface ExpressionRunnerProps {
   containerSize: ContainerProps['size']
   hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
-  showPlayButton?: boolean
+  hidePlayButton?: boolean
   hideForwardAndBackButtons?: boolean
 }
 
@@ -130,7 +132,7 @@ export default class ExpressionRunner extends React.Component<
       variableSize,
       containerSize,
       hideLeftMostPrioritiesExplanation,
-      showPlayButton,
+      hidePlayButton,
       hideForwardAndBackButtons
     } = this.props
     const { expressionContainerManagerState, isPlaying } = this.state
@@ -214,7 +216,7 @@ export default class ExpressionRunner extends React.Component<
                   canStepBackward={
                     expressionContainerManagerState.canStepBackward
                   }
-                  showPlayButton={!!showPlayButton}
+                  showPlayButton={!hidePlayButton}
                   isPlaying={isPlaying}
                   isDone={isContainerWithState(
                     expressionContainerManagerState.expressionContainer,
@@ -248,7 +250,7 @@ export default class ExpressionRunner extends React.Component<
       } else {
         this.pause()
       }
-    }, 333)
+    }, autoplaySpeed)
     this.setState({
       isPlaying: true
     })

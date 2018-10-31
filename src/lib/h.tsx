@@ -11,10 +11,10 @@ interface LocaleJson {
 }
 
 export const allTranslations = {
-  ycBentoBox: () => ({
+  ycBentoBox: (plural: boolean) => ({
     en: (
       <>
-        “bento box <Emoji>🍱</Emoji>”
+        {`“bento box${plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
       </>
     ),
     jp: (
