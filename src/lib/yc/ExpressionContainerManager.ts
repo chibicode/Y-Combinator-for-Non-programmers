@@ -12,6 +12,7 @@ export default class ExpressionContainerManager {
       expressionContainer: this.currentExpressionContainer,
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
+      numStepsRemaining: this.numStepsRemaining,
       ...this.currentStepAndSubstep
     }
   }
@@ -140,5 +141,9 @@ export default class ExpressionContainerManager {
 
   private get currentExpressionContainer() {
     return this.expressionContainers[this.currentIndex]
+  }
+
+  private get numStepsRemaining() {
+    return this.expressionContainers.length - this.currentIndex - 1
   }
 }

@@ -17,7 +17,8 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
-const autoplaySpeed = 300
+// Must be equal to 1 / N to make timer count seconds evenly
+const autoplaySpeed = 250
 
 type InitializeInstruction =
   | {
@@ -52,6 +53,10 @@ interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
   isPlaying: boolean
 }
+
+// Use floor() + 1 instead of ceil() to make sure it's nonzero
+const numSecondsRemaining = (numStepsRemaining: number) =>
+  Math.floor((numStepsRemaining * autoplaySpeed) / 1000) + 1
 
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
@@ -161,6 +166,9 @@ export default class ExpressionRunner extends React.Component<
             {!hideExplanations && (
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
+                numSecondsRemaining={numSecondsRemaining(
+                  expressionContainerManagerState.numStepsRemaining
+                )}
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
