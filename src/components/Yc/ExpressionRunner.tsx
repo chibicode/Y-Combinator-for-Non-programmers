@@ -245,7 +245,7 @@ export default class ExpressionRunner extends React.Component<
       } else {
         this.pause()
       }
-    }, 250)
+    }, 200)
     this.setState({
       isPlaying: true
     })

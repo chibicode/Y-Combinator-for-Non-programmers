@@ -118,6 +118,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
             css`
               flex: 1;
               margin-left: ${spaces(0.25)};
+              margin-right: ${spaces(0.25)};
             `,
             {
               [css`
