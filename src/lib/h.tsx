@@ -82,7 +82,7 @@ export const allTranslations = {
     jp: (
       <>
         <Strong>
-          リセット <Emoji>↩️</Emoji>
+          最初から <Emoji>↩️</Emoji>
         </Strong>
       </>
     )

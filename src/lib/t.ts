@@ -40,7 +40,7 @@ export const allTranslations = {
   },
   ycEpisode8: {
     en: 'The Two Patterns',
-    jp: '...'
+    jp: 'ふたつのパターン'
   },
   ycEpisode9: {
     en: 'TBD',

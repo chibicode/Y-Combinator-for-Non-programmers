@@ -11,19 +11,13 @@ export default () => {
   let i = 0
   return (
     <>
-      <H3>
-        The Play Button <Emoji>▶️</Emoji>
-      </H3>
+      <H3>The {h('ycPlay')} Button</H3>
       <P>
         Because we’re now at an intermediate level, we have a new functionality
-        for you:{' '}
-        <Strong>
-          the Play button <Emoji>▶️</Emoji>
-        </Strong>
-        .
+        for you: <Strong>the {h('ycPlay')} button</Strong>.
       </P>
       <P>
-        <Em>Try clicking on {h('ycPlay')} below.</Em>
+        <Em>Try pressing on {h('ycPlay')} below.</Em>
       </P>
       {episode8[i++]()}
       <P>It automatically fast-forwards the {h('ycBentoBox')} for you.</P>
@@ -64,7 +58,7 @@ export default () => {
       {episode8[i++]()}
       <P>
         <Strong>Question:</Strong>{' '}
-        <Em>What do you think will happen at the end?</Em>
+        <Em>What do you think will happen when it’s {h('ycDone')}?</Em>
       </P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Let’s Try!</H3>

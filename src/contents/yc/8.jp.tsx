@@ -11,97 +11,146 @@ export default () => {
   let i = 0
   return (
     <>
+      <H3>{h('ycPlay')} ボタン</H3>
       <P>
-        We’ll talk about the <Strong>two patterns.</Strong>
-      </P>
-      <H3>First Pattern</H3>
-      <P>Take a look at this {h('ycBentoBox')}:</P>
-      {episode8[i++]()}
-      <P>
-        Now, suppose we say <Emoji size="mdlg">🍣</Emoji> ={' '}
-        <Emoji size="mdlg">1️⃣</Emoji> and <Emoji size="mdlg">🥪</Emoji> ={' '}
-        <Emoji size="mdlg">2️⃣</Emoji>.
+        中級レベルでは新しく「
+        <Strong>{h('ycPlay')}</Strong>
+        」ボタンを使うことができます。
       </P>
       <P>
-        Then <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> has the pattern{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-      </P>
-      <H3>Second Pattern</H3>
-      <P>How about this one?</P>
-      {episode8[i++]()}
-      <P>
-        <Strong>Answer:</Strong> If we say <Emoji size="mdlg">🥗</Emoji> ={' '}
-        <Emoji size="mdlg">1️⃣</Emoji> and <Emoji size="mdlg">🥩</Emoji> ={' '}
-        <Emoji size="mdlg">2️⃣</Emoji>, then this one has the pattern{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
-      </P>
-      <H3>Question</H3>
-      <P>
-        Now, here’s the question. Let’s take the one with the pattern{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />:
+        <Em>下の 「{h('ycPlay')}」 を押してみてください。</Em>
       </P>
       {episode8[i++]()}
-      <P>And we’ll take this {h('ycBentoBox')}</P>
-      {episode8[i++]()}
-      <P>And we’ll combine them:</P>
+      <P>
+        {h('ycBentoBox')}
+        を自動で早送りしてくれる、便利な機能です！
+      </P>
+      <EmojiSeparator emojis={['⏩', '🤗', '⏩']} />
+      <P>
+        それでは本題に入りましょう。
+        <Strong>ふたつのパターン</Strong>
+        について説明します。
+      </P>
+      <H3>パターンその1</H3>
+      <P>
+        下の
+        {h('ycBentoBox')}
+        をご覧ください:
+      </P>
       {episode8[i++]()}
       <P>
-        <Strong>Question:</Strong>{' '}
-        <Em>What do you think will happen at the end?</Em>
+        仮に、
+        <Emoji size="mdlg">🍣</Emoji> を <Emoji size="mdlg">1️⃣</Emoji> とし、{' '}
+        <Emoji size="mdlg">🥪</Emoji> を <Emoji size="mdlg">2️⃣</Emoji>{' '}
+        で表したとします。
+      </P>
+      <P>
+        つまり、 <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
+        というパターンといえます。
+      </P>
+      <H3>パターンその2</H3>
+      <P>では、こちらはどんなパターンでしょうか？</P>
+      {episode8[i++]()}
+      <P>
+        <Strong>答え:</Strong> 仮に <Emoji size="mdlg">🥗</Emoji> を{' '}
+        <Emoji size="mdlg">1️⃣</Emoji> とし、 <Emoji size="mdlg">🥩</Emoji> を{' '}
+        <Emoji size="mdlg">2️⃣</Emoji> とした場合、パターンは{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> となります。
+      </P>
+      <H3>ここで質問です</H3>
+      <P>
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンの
+        {h('ycBentoBox')}
+        と、
+      </P>
+      {episode8[i++]()}
+      <P>
+        下の
+        {h('ycBentoBox')}
+        を組み合わせ、
+      </P>
+      {episode8[i++]()}
+      <P>
+        次のような
+        {h('ycBentoBox')}
+        を作ったとします。
+      </P>
+      {episode8[i++]()}
+      <P>
+        <Strong>問題:</Strong>{' '}
+        <Em>
+          これを
+          {h('ycDone')}
+          になるまで進めたらどうなるでしょう？
+        </Em>
       </P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>Let’s Try!</H3>
+      <H3>早速やってみましょう</H3>
       <P>
-        <Strong>Tip:</Strong> <Em>There’s now a {h('ycPlay')} button</Em> which
-        will automatically fast-forward until it’s {h('ycDone')}.
+        <Em>
+          新しい「
+          {h('ycPlay')}
+          」ボタン
+        </Em>
+        を使って、
+        {h('ycDone')}
+        になるまで進めてみてください。
       </P>
       {episode8[i++]()}
-      <P>So the end result was:</P>
+      <P>というわけで、結果はこうなりました:</P>
       {episode8[i++]()}
       <P>
-        <Strong>Now:</Strong> <Em>Which pattern is this?</Em>
+        <Em>これのパターンは何でしょう？</Em>
       </P>
       <P>
-        <Strong>Answer:</Strong> The pattern is{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+        <Strong>答え:</Strong> <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        のパターンです。
       </P>
-      <H3>To Summarize:</H3>
+      <H3>まとめると:</H3>
       <Ul>
         <UlLi>
-          We started with <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} />,
-          which had the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-          .
+          最初の <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
+          というパターンだった。
         </UlLi>
         <UlLi>
-          We ended up with <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} />,
-          which has the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
-          .
+          最終的に <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> 、つまり{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
         </UlLi>
         <UlLi>
           <Em>
-            So <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> became{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+            つまり、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> が{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> に変化した。
           </Em>
         </UlLi>
       </Ul>
-      <P>Hmm… This is interesting!</P>
+      <P>ふーむ、これは何かありそうですね。</P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>Quiz</H3>
+      <H3>ここでクイズです</H3>
       <P>
-        What if we start with <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        instead? In other words, if we combine this:
-      </P>
-      {episode8[i++]()}
-      <P>With this again:</P>
-      {episode8[i++]()}
-      <P>
-        <Strong>Question:</Strong> What will be the end result of this{' '}
-        {h('ycBentoBox')}?
+        それでは先ほどと反対に、{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        からはじめたらどうなるでしょう？つまり、下の
+        {h('ycBentoBox')}
+        と、
       </P>
       {episode8[i++]()}
       <P>
-        <Strong>Do you think it will become</Strong>{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />?
+        先ほどと同じく下の
+        {h('ycBentoBox')}
+        の弁当箱を合わせたら、
+      </P>
+      {episode8[i++]()}
+      <P>
+        下の
+        {h('ycBentoBox')}
+        は最終的にはどうなるでしょう？
+      </P>
+      {episode8[i++]()}
+      <P>
+        果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+        になるのでしょうか?
       </P>
       <YcNextLessonButton nextEpisodeNumber={9} />
     </>
