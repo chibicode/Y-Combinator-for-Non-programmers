@@ -678,6 +678,15 @@ export const episode7 = [
 export const episode8 = [
   () => (
     <ExpressionRunner
+      showPlayButton
+      hideForwardAndBackButtons
+      expressionContainer={lessonExpressions.episode5Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       hideControls
       hideExplanations
       expressionContainer={lessonExpressions.episode8Expression1}
@@ -726,7 +735,7 @@ export const episode8 = [
       expressionContainer={lessonExpressions.episode8Expression4}
       containerSize={'xs'}
       variableSize={'md'}
-      hasPlayButton
+      showPlayButton
     />
   ),
   () => (

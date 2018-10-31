@@ -54,7 +54,8 @@ interface ExpressionRunnerControlsProps {
   canStepBackward: boolean
   isDone: boolean
   isPlaying: boolean
-  hasPlayButton: boolean
+  showPlayButton: boolean
+  hideForwardAndBackButtons: boolean
   onNextClick: () => void
   onPreviousClick: () => void
   onAutoClick: () => void
@@ -71,11 +72,12 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
   canStepBackward,
   onNextClick,
   onPreviousClick,
-  hasPlayButton,
+  showPlayButton,
   isPlaying,
   onAutoClick,
   onPauseClick,
   onResetClick,
+  hideForwardAndBackButtons,
   isDone
 }) => (
   <div
@@ -84,7 +86,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
       margin: ${spaces(0.75)} -2px 0 -2px;
     `}
   >
-    {!isPlaying && canStepBackward ? (
+    {!hideForwardAndBackButtons && !isPlaying && canStepBackward ? (
       <Button
         onClick={onPreviousClick}
         className={css`
@@ -104,7 +106,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
         `}
       />
     )}
-    {hasPlayButton &&
+    {showPlayButton &&
       (canStepForward || isDone ? (
         <Button
           onClick={
@@ -133,7 +135,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
           {canStepForward
             ? isPlaying
               ? h('ycPause')
-              : h('ycAutoPlay')
+              : h('ycPlay')
             : h('ycReset')}
         </Button>
       ) : (
@@ -146,7 +148,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
           `}
         />
       ))}
-    {!isPlaying && (canStepForward || isDone) ? (
+    {!hideForwardAndBackButtons && !isPlaying && (canStepForward || isDone) ? (
       <Button
         onClick={canStepForward ? onNextClick : noOp}
         disabled={!canStepForward}

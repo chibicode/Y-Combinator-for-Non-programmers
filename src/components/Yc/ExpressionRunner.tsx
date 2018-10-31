@@ -42,7 +42,8 @@ interface ExpressionRunnerProps {
   containerSize: ContainerProps['size']
   hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
-  hasPlayButton?: boolean
+  showPlayButton?: boolean
+  hideForwardAndBackButtons?: boolean
 }
 
 interface ExpressionRunnerState {
@@ -129,7 +130,8 @@ export default class ExpressionRunner extends React.Component<
       variableSize,
       containerSize,
       hideLeftMostPrioritiesExplanation,
-      hasPlayButton
+      showPlayButton,
+      hideForwardAndBackButtons
     } = this.props
     const { expressionContainerManagerState, isPlaying } = this.state
     return (
@@ -212,7 +214,7 @@ export default class ExpressionRunner extends React.Component<
                   canStepBackward={
                     expressionContainerManagerState.canStepBackward
                   }
-                  hasPlayButton={!!hasPlayButton}
+                  showPlayButton={!!showPlayButton}
                   isPlaying={isPlaying}
                   isDone={isContainerWithState(
                     expressionContainerManagerState.expressionContainer,
@@ -221,6 +223,7 @@ export default class ExpressionRunner extends React.Component<
                   onAutoClick={this.autoplay}
                   onPauseClick={this.pause}
                   onResetClick={this.reset}
+                  hideForwardAndBackButtons={!!hideForwardAndBackButtons}
                 />
               </div>
             )}

@@ -39,7 +39,7 @@ export const allTranslations = {
       </>
     )
   }),
-  ycAutoPlay: () => ({
+  ycPlay: () => ({
     en: (
       <>
         <Strong>

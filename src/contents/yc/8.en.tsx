@@ -11,8 +11,25 @@ export default () => {
   let i = 0
   return (
     <>
+      <H3>
+        The Play Button <Emoji>▶️</Emoji>
+      </H3>
       <P>
-        We’ll talk about the <Strong>two patterns.</Strong>
+        Because we’re now at an intermediate level, we have a new functionality
+        for you:{' '}
+        <Strong>
+          the Play button <Emoji>▶️</Emoji>
+        </Strong>
+        .
+      </P>
+      <P>
+        <Em>Try clicking on {h('ycPlay')} below.</Em>
+      </P>
+      {episode8[i++]()}
+      <P>It automatically fast-forwards the {h('ycBentoBox')} for you.</P>
+      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
+      <P>
+        Next, we’ll talk about the <Strong>two patterns.</Strong>
       </P>
       <H3>First Pattern</H3>
       <P>Take a look at this {h('ycBentoBox')}:</P>
@@ -52,7 +69,7 @@ export default () => {
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Let’s Try!</H3>
       <P>
-        <Strong>Tip:</Strong> <Em>There’s now a {h('ycAutoPlay')} button</Em>{' '}
+        <Strong>Tip:</Strong> <Em>There’s now the {h('ycPlay')} button</Em>{' '}
         which will automatically fast-forward until it’s {h('ycDone')}.
       </P>
       {episode8[i++]()}

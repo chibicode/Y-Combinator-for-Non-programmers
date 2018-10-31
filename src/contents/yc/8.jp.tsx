@@ -52,8 +52,8 @@ export default () => {
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Let’s Try!</H3>
       <P>
-        <Strong>Tip:</Strong> <Em>There’s now a {h('ycAutoPlay')} button</Em>{' '}
-        which will automatically fast-forward until it’s {h('ycDone')}.
+        <Strong>Tip:</Strong> <Em>There’s now a {h('ycPlay')} button</Em> which
+        will automatically fast-forward until it’s {h('ycDone')}.
       </P>
       {episode8[i++]()}
       <P>So the end result was:</P>

@@ -38,7 +38,7 @@ export default () => {
           <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
-      <H3>What will happen next?</H3>
+      <H3>What Will Happen Next?</H3>
       <P>
         In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
         brings steak <Emoji>🥩</Emoji>. So eventually,{' '}
