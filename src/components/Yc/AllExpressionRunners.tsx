@@ -779,7 +779,8 @@ export const episode8 = [
 export const episode9 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.infiniteLoop}
+      showPlayButton
+      expressionContainer={lessonExpressions.episode8Expression6}
       containerSize={'xs'}
       variableSize={'md'}
     />

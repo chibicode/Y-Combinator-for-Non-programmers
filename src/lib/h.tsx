@@ -169,6 +169,15 @@ export const allTranslations = {
       </Em>
     )
   }),
+  ycPlayUntilDone: (capitalize = true) => ({
+    en: (
+      <Em>
+        {capitalize ? 'T' : 't'}
+        ry pressing {h('ycPlay')}
+      </Em>
+    ),
+    jp: <Em>{h('ycPlay')} を押してみてください</Em>
+  }),
   introductionPageLink: () => ({
     en: 'Introduction',
     jp: '序章'
