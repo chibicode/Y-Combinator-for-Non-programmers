@@ -14,7 +14,6 @@ const Button: React.SFC<JSX.IntrinsicElements['button']> = ({
     {...props}
     activeBackgroundColor={colors('indigo100')}
     className={cx(
-      className,
       css`
         border-radius: ${radii(0.25)};
         border: 2px solid ${colors('indigo300')};
@@ -44,7 +43,8 @@ const Button: React.SFC<JSX.IntrinsicElements['button']> = ({
         &:active:enabled {
           background: ${colors('indigo100')};
         }
-      `
+      `,
+      className
     )}
   />
 )
@@ -53,8 +53,13 @@ interface ExpressionRunnerControlsProps {
   canStepForward: boolean
   canStepBackward: boolean
   isDone: boolean
+  isPlaying: boolean
+  hasPlayButton: boolean
   onNextClick: () => void
   onPreviousClick: () => void
+  onAutoClick: () => void
+  onPauseClick: () => void
+  onResetClick: () => void
 }
 
 const noOp = () => {
@@ -66,6 +71,11 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
   canStepBackward,
   onNextClick,
   onPreviousClick,
+  hasPlayButton,
+  isPlaying,
+  onAutoClick,
+  onPauseClick,
+  onResetClick,
   isDone
 }) => (
   <div
@@ -94,6 +104,50 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
         `}
       />
     )}
+    {hasPlayButton &&
+      (canStepForward || isDone ? (
+        <Button
+          onClick={
+            canStepForward
+              ? isPlaying
+                ? onPauseClick
+                : onAutoClick
+              : onResetClick
+          }
+          className={cx(
+            css`
+              flex: 1;
+              margin-left: ${spaces(0.25)};
+            `,
+            {
+              [css`
+                background: ${colors('yellow100')};
+              `]: canStepForward && !isPlaying,
+              [css`
+                background: ${colors('indigo50')};
+              `]: canStepForward && isPlaying,
+              [css`
+                background: ${colors('pink50')};
+              `]: !canStepForward
+            }
+          )}
+        >
+          {canStepForward
+            ? isPlaying
+              ? h('ycPause')
+              : h('ycAutoPlay')
+            : h('ycReset')}
+        </Button>
+      ) : (
+        <div
+          className={css`
+            flex: 1;
+            margin-left: ${spaces(0.25)};
+            /* Same border as the button */
+            border: 2px solid transparent;
+          `}
+        />
+      ))}
     {canStepForward || isDone ? (
       <Button
         onClick={canStepForward ? onNextClick : noOp}

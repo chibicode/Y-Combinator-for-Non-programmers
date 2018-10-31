@@ -678,6 +678,68 @@ export const episode7 = [
 export const episode8 = [
   () => (
     <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode8Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode8Expression3}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode8Expression4}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression4}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hasPlayButton
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode8Expression5}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode7Expression7}
       containerSize={'xs'}
       variableSize={'md'}

@@ -42,10 +42,12 @@ interface ExpressionRunnerProps {
   containerSize: ContainerProps['size']
   hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
+  hasPlayButton?: boolean
 }
 
 interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
+  isPlaying: boolean
 }
 
 export default class ExpressionRunner extends React.Component<
@@ -62,6 +64,7 @@ export default class ExpressionRunner extends React.Component<
     resetIndex: false,
     hideLeftMostPrioritiesExplanation: false
   }
+  private interval: NodeJS.Timer | null = null
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
 
@@ -75,7 +78,8 @@ export default class ExpressionRunner extends React.Component<
 
     this.state = {
       expressionContainerManagerState: this.expressionContainerManager
-        .currentState
+        .currentState,
+      isPlaying: false
     }
   }
 
@@ -124,9 +128,10 @@ export default class ExpressionRunner extends React.Component<
       hidePriorities,
       variableSize,
       containerSize,
-      hideLeftMostPrioritiesExplanation
+      hideLeftMostPrioritiesExplanation,
+      hasPlayButton
     } = this.props
-    const { expressionContainerManagerState } = this.state
+    const { expressionContainerManagerState, isPlaying } = this.state
     return (
       <ExpressionRunnerContext.Provider
         value={{
@@ -151,6 +156,7 @@ export default class ExpressionRunner extends React.Component<
           >
             {!hideExplanations && (
               <ExpressionRunnerExplanation
+                isPlaying={isPlaying}
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
@@ -206,10 +212,15 @@ export default class ExpressionRunner extends React.Component<
                   canStepBackward={
                     expressionContainerManagerState.canStepBackward
                   }
+                  hasPlayButton={!!hasPlayButton}
+                  isPlaying={isPlaying}
                   isDone={isContainerWithState(
                     expressionContainerManagerState.expressionContainer,
                     'done'
                   )}
+                  onAutoClick={this.autoplay}
+                  onPauseClick={this.pause}
+                  onResetClick={this.reset}
                 />
               </div>
             )}
@@ -227,12 +238,46 @@ export default class ExpressionRunner extends React.Component<
     this.step('backward')
   }
 
-  private step(direction: 'forward' | 'backward') {
+  private autoplay = () => {
+    this.interval = setInterval(() => {
+      if (this.state.expressionContainerManagerState.canStepForward) {
+        this.step('forward')
+      } else {
+        this.pause()
+      }
+    }, 250)
+    this.setState({
+      isPlaying: true
+    })
+  }
+
+  private pause = () => {
+    if (this.interval) {
+      clearInterval(this.interval)
+    }
+    this.setState({
+      isPlaying: false
+    })
+  }
+
+  private reset = () => {
+    if (this.interval) {
+      clearInterval(this.interval)
+    }
+    this.setState({
+      isPlaying: false
+    })
+    this.step('reset')
+  }
+
+  private step(direction: 'forward' | 'backward' | 'reset') {
     const previousOffsetTop = this.controlsRef.current!.offsetTop
     if (direction === 'forward') {
       this.expressionContainerManager.stepForward()
-    } else {
+    } else if (direction === 'backward') {
       this.expressionContainerManager.stepBackward()
+    } else {
+      this.expressionContainerManager.reset()
     }
     this.syncState(() => {
       window.scroll(

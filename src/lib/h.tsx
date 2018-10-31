@@ -27,14 +27,62 @@ export const allTranslations = {
     en: (
       <>
         <Strong>
-          Next <Emoji>⏩</Emoji>
+          Next <Emoji>➡️</Emoji>
         </Strong>
       </>
     ),
     jp: (
       <>
         <Strong>
-          次へ <Emoji>⏩</Emoji>
+          次へ <Emoji>➡️</Emoji>
+        </Strong>
+      </>
+    )
+  }),
+  ycAutoPlay: () => ({
+    en: (
+      <>
+        <Strong>
+          Play <Emoji>▶️</Emoji>
+        </Strong>
+      </>
+    ),
+    jp: (
+      <>
+        <Strong>
+          早送り <Emoji>⏭</Emoji>
+        </Strong>
+      </>
+    )
+  }),
+  ycPause: () => ({
+    en: (
+      <>
+        <Strong>
+          Pause <Emoji>⏸</Emoji>
+        </Strong>
+      </>
+    ),
+    jp: (
+      <>
+        <Strong>
+          一時停止 <Emoji>⏸</Emoji>
+        </Strong>
+      </>
+    )
+  }),
+  ycReset: () => ({
+    en: (
+      <>
+        <Strong>
+          Reset <Emoji>↩️</Emoji>
+        </Strong>
+      </>
+    ),
+    jp: (
+      <>
+        <Strong>
+          リセット <Emoji>↩️</Emoji>
         </Strong>
       </>
     )
@@ -43,14 +91,14 @@ export const allTranslations = {
     en: (
       <>
         <Strong>
-          <Emoji>⏪</Emoji> Previous
+          <Emoji>⬅️</Emoji> Previous
         </Strong>
       </>
     ),
     jp: (
       <>
         <Strong>
-          <Emoji>⏪</Emoji> 前へ
+          <Emoji>⬅️</Emoji> 前へ
         </Strong>
       </>
     )

@@ -106,7 +106,7 @@ export default () => {
       <P>Try this one from the last page too!</P>
       {episode3[i++]()}
       <P>Hope you get the idea.</P>
-      <EmojiSeparator emojis={['⏪', '🤗', '⏩']} />
+      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
       <P>Now, time for some quiz…</P>
       <H3>Quiz</H3>
       <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>

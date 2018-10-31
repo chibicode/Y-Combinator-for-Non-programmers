@@ -22,14 +22,54 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 7)}
-      <P>{h('ycTryUntilDone')}:</P>
+      <P>
+        First, we’ll talk about the <Strong>two patterns.</Strong>
+      </P>
+      <H3>First Pattern</H3>
+      <P>Take a look at this {h('ycBentoBox')}:</P>
       {episode8[i++]()}
       <P>
-        So the answer was <Strong>True.</Strong>{' '}
+        Now, suppose we say <Emoji size="mdlg">🍣</Emoji> ={' '}
+        <Emoji size="mdlg">1️⃣</Emoji> and <Emoji size="mdlg">🥪</Emoji> ={' '}
+        <Emoji size="mdlg">2️⃣</Emoji>.
+      </P>
+      <P>
+        Then <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> has the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+      </P>
+      <H3>Second Pattern</H3>
+      <P>How about this one?</P>
+      {episode8[i++]()}
+      <P>
+        <Strong>Answer:</Strong> If we say <Emoji size="mdlg">🥗</Emoji> ={' '}
+        <Emoji size="mdlg">1️⃣</Emoji> and <Emoji size="mdlg">🥩</Emoji> ={' '}
+        <Emoji size="mdlg">2️⃣</Emoji>, then this one has the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+      </P>
+      <H3>Question</H3>
+      <P>
+        Now, here’s the question. Let’s take the one with the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />:
       </P>
       {episode8[i++]()}
-      <P>It was the same pattern as before:</P>
+      <P>And we’ll take this {h('ycBentoBox')}</P>
+      {episode8[i++]()}
+      <P>And we’ll combine them:</P>
+      {episode8[i++]()}
+      <P>
+        <Strong>Question:</Strong>{' '}
+        <Em>What do you think will happen at the end?</Em>
+      </P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Let’s Try!</H3>
+      <P>{h('ycTryUntilDone')}:</P>
+      {episode8[i++]()}
+      <P>So the end result was:</P>
+      {episode8[i++]()}
+      <P>
+        And <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> has the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+      </P>
       <Ul>
         <UlLi>
           If the top row is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> the
