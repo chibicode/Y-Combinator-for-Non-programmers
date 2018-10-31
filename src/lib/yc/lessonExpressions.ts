@@ -176,34 +176,6 @@ export const episode7Expression2 = initializeExpressionContainer([
   'b'
 ])
 
-export const episode7Expression7 = initializeExpressionContainer([
-  {
-    arg: 'f',
-    body: {
-      arg: 'g',
-      body: {
-        arg: 'h',
-        body: ['f', 'h', 'g']
-      }
-    }
-  },
-  {
-    arg: 'i',
-    body: {
-      arg: 'j',
-      body: 'j'
-    }
-  }
-])
-
-export const episode7Expression8 = initializeExpressionContainer({
-  arg: 'g',
-  body: {
-    arg: 'h',
-    body: 'g'
-  }
-})
-
 export const episode8Expression1 = initializeExpressionContainer({
   arg: 'a',
   body: {
@@ -259,52 +231,25 @@ export const episode8Expression5 = initializeExpressionContainer({
   }
 })
 
-// export const episode8Expression1 = initializeExpressionContainer([
-//   {
-//     arg: 'a',
-//     body: {
-//       arg: 'b',
-//       body: {
-//         arg: 'c',
-//         body: ['a', 'c', 'b']
-//       }
-//     }
-//   },
-//   {
-//     arg: 'a',
-//     body: {
-//       arg: 'b',
-//       body: 'b'
-//     }
-//   }
-// ])
-
-// export const episode8Expression2 = initializeExpressionContainer({
-//   arg: 'a',
-//   body: {
-//     arg: 'b',
-//     body: 'b'
-//   }
-// })
-
-// export const episode8Expression3 = initializeExpressionContainer({
-//   arg: 'd',
-//   body: {
-//     arg: 'c',
-//     body: 'd'
-//   }
-// })
-
-// export const episode8Expression4 = initializeExpressionContainer({
-//   arg: 'a',
-//   body: {
-//     arg: 'b',
-//     body: {
-//       arg: 'c',
-//       body: ['a', 'c', 'b']
-//     }
-//   }
-// })
+export const episode8Expression6 = initializeExpressionContainer([
+  {
+    arg: 'e',
+    body: {
+      arg: 'f',
+      body: {
+        arg: 'g',
+        body: ['e', 'g', 'f']
+      }
+    }
+  },
+  {
+    arg: 'c',
+    body: {
+      arg: 'd',
+      body: 'd'
+    }
+  }
+])
 
 export const episode9Expression1 = initializeExpressionContainer([
   {

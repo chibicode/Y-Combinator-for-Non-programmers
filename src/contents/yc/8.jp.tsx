@@ -2,7 +2,7 @@ import React from 'react'
 import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode7 } from 'src/components/Yc/AllExpressionRunners'
+import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -11,120 +11,99 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 6)}
-      <P>{h('ycTryUntilDone')}:</P>
-      {episode7[i++]()}
       <P>
-        というわけで答えは
-        <Strong>No</Strong>。
-        <Em>
-          正解は
-          <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥪</Emoji>
-          ではなく、 <Emoji>🥪</Emoji> <Emoji>🥗</Emoji> <Emoji>🥗</Emoji>
-          でした
-        </Em>
-        :
+        We’ll talk about the <Strong>two patterns.</Strong>
       </P>
-      {episode7[i++]()}
+      <H3>First Pattern</H3>
+      <P>Take a look at this {h('ycBentoBox')}:</P>
+      {episode8[i++]()}
       <P>
-        どうでしたか？難しい問題だったので、解けなくても気にしないでください！
+        Now, suppose we say <Emoji size="mdlg">🍣</Emoji> ={' '}
+        <Emoji size="mdlg">1️⃣</Emoji> and <Emoji size="mdlg">🥪</Emoji> ={' '}
+        <Emoji size="mdlg">2️⃣</Emoji>.
       </P>
-      <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
-      <H3>
-        <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🍔</Emoji> のかわりに、{' '}
-        <Emoji>🥩</Emoji> <Emoji>🍔</Emoji> <Emoji>🥩</Emoji> を使った場合
-      </H3>
       <P>
-        前の例だと、
-        <Strong>上段</Strong>
-        には次の3つが並んでいました。
+        Then <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> has the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
       </P>
-      {episode7[i++]()}
+      <H3>Second Pattern</H3>
+      <P>How about this one?</P>
+      {episode8[i++]()}
       <P>
-        <Strong>では、</Strong>
-        <Em>
-          一番右のステーキ <Emoji>🥩</Emoji> をハンバーガー <Emoji>🍔</Emoji>{' '}
-          に変えた場合、答えはどう変わるのでしょう？
-        </Em>
+        <Strong>Answer:</Strong> If we say <Emoji size="mdlg">🥗</Emoji> ={' '}
+        <Emoji size="mdlg">1️⃣</Emoji> and <Emoji size="mdlg">🥩</Emoji> ={' '}
+        <Emoji size="mdlg">2️⃣</Emoji>, then this one has the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
       </P>
-      {episode7[i++]()}
+      <H3>Question</H3>
       <P>
-        試してみましょう。下の例では上段を <Emoji>🥩</Emoji> <Emoji>🍔</Emoji>{' '}
-        <Emoji>🍔</Emoji> に変えてみました。
-        {h('ycTryUntilDone')}:
+        Now, here’s the question. Let’s take the one with the pattern{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />:
       </P>
-      {episode7[i++]()}
-      <P>つまり、答えはこうなります:</P>
-      {episode7[i++]()}
-      <P>うーん、待てよ…？</P>
+      {episode8[i++]()}
+      <P>And we’ll take this {h('ycBentoBox')}</P>
+      {episode8[i++]()}
+      <P>And we’ll combine them:</P>
+      {episode8[i++]()}
+      <P>
+        <Strong>Question:</Strong>{' '}
+        <Em>What do you think will happen at the end?</Em>
+      </P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>何が起きたのか</H3>
+      <H3>Let’s Try!</H3>
       <P>
-        <Strong>まとめると、こうなります:</Strong>
+        <Strong>Tip:</Strong> <Em>There’s now a {h('ycAutoPlay')} button</Em>{' '}
+        which will automatically fast-forward until it’s {h('ycDone')}.
       </P>
+      {episode8[i++]()}
+      <P>So the end result was:</P>
+      {episode8[i++]()}
+      <P>
+        <Strong>Now:</Strong> <Em>Which pattern is this?</Em>
+      </P>
+      <P>
+        <Strong>Answer:</Strong> The pattern is{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+      </P>
+      <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
-          上段が <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />
+          We started with <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} />,
+          which had the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          .
         </UlLi>
         <UlLi>
-          上段が <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥪']} />
+          We ended up with <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} />,
+          which has the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
+          .
+        </UlLi>
+        <UlLi>
+          <Em>
+            So <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> became{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+          </Em>
         </UlLi>
       </Ul>
-      <P>ということは、もし:</P>
-      <Ul>
-        <UlLi>
-          <Emoji size="mdlg">🥩</Emoji> と <Emoji size="mdlg">🥪</Emoji> を{' '}
-          <Emoji size="mdlg">1️⃣</Emoji> で示し、
-        </UlLi>
-        <UlLi>
-          <Emoji size="mdlg">🍔</Emoji> と <Emoji size="mdlg">🥗</Emoji> を{' '}
-          <Emoji size="mdlg">2️⃣</Emoji> で示すと、
-        </UlLi>
-      </Ul>
-      <P>次のようになります:</P>
-      <Ul>
-        <UlLi>
-          上段が <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
-        </UlLi>
-        <UlLi>
-          上段が <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> のとき、答えは{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-        </UlLi>
-      </Ul>
-      <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
+      <P>Hmm… This is interesting!</P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Quiz</H3>
       <P>
-        <Strong>不思議じゃないですか？</Strong>
-        <Em>
-          <Strong>下段</Strong> (下を参照)
-          が何か魔法のようなものをかけているのかもしれません。
-        </Em>
+        What if we start with <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        instead? In other words, if we combine this:
       </P>
-      {episode7[i++]()}
+      {episode8[i++]()}
+      <P>With this again:</P>
+      {episode8[i++]()}
       <P>
-        <Strong>下段の秘密</Strong>
-        についてはこれから説明します。
-        <Em>ですがその前に</Em>
-        、ここまで理解できているかをクイズでチェックしてみましょう。
+        <Strong>Question:</Strong> What will be the end result of this{' '}
+        {h('ycBentoBox')}?
       </P>
-      <H3>クイズ</H3>
+      {episode8[i++]()}
       <P>
-        前回とは違う料理を使います。下の
-        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします:
+        <Strong>Do you think it will become</Strong>{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />?
       </P>
-      {episode7[i++]()}
-      <P>
-        <Strong>YesかNoで答えてみてください:</Strong>{' '}
-        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
-      </P>
-      {episode7[i++]()}
-      <P>
-        ここまできちんと読んだ方なら、答えられるはずです。
-        <Strong>頑張ってください！</Strong>
-      </P>
-      <YcNextLessonButton nextEpisodeNumber={8} />
+      <YcNextLessonButton nextEpisodeNumber={9} />
     </>
   )
 }

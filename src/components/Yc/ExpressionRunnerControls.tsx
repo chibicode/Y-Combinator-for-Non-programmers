@@ -84,7 +84,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
       margin: ${spaces(0.75)} -2px 0 -2px;
     `}
   >
-    {canStepBackward ? (
+    {!isPlaying && canStepBackward ? (
       <Button
         onClick={onPreviousClick}
         className={css`
@@ -125,9 +125,6 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
                 background: ${colors('yellow100')};
               `]: canStepForward && !isPlaying,
               [css`
-                background: ${colors('indigo50')};
-              `]: canStepForward && isPlaying,
-              [css`
                 background: ${colors('pink50')};
               `]: !canStepForward
             }
@@ -149,7 +146,7 @@ const ExpressionRunnerControls: React.SFC<ExpressionRunnerControlsProps> = ({
           `}
         />
       ))}
-    {canStepForward || isDone ? (
+    {!isPlaying && (canStepForward || isDone) ? (
       <Button
         onClick={canStepForward ? onNextClick : noOp}
         disabled={!canStepForward}

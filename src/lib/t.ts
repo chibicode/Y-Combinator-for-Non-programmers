@@ -39,7 +39,7 @@ export const allTranslations = {
     jp: '小悪魔'
   },
   ycEpisode8: {
-    en: '...',
+    en: 'The Two Patterns',
     jp: '...'
   },
   ycEpisode9: {
