@@ -1,239 +1,298 @@
+import { css } from 'emotion'
 import React from 'react'
 import {
   Em,
   H3,
-  Ol,
-  OlLi,
   P,
   Strong,
+  Table,
+  Td,
+  Th,
   Ul,
   UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode8 } from 'src/components/Yc/AllExpressionRunners'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
-// import InlineBackground from 'src/components/Yc/InlineBackground'
+import { episode9 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import { colors } from 'src/lib/theme'
 
 export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 7)}
-      <P>{h('ycTryUntilDone')}:</P>
-      {episode8[i++]()}
+      {h('ycQuizReview', 8)}
+      <P>{h('ycPlayUntilDone')}:</P>
+      {episode9[i++]()}
       <P>
-        So the answer was <Strong>True.</Strong>{' '}
+        <Strong>まとめると:</Strong>
       </P>
-      {episode8[i++]()}
-      <P>It was the same pattern as before:</P>
       <Ul>
         <UlLi>
-          If the top row is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> the
-          answer is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          最初は <InlineEmojiBoxes emojis={['🥗', '🥩', '🥩']} /> 、すなわち{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+          のパターンからはじまった。
         </UlLi>
         <UlLi>
-          In this case, the top row was{' '}
-          <InlineEmojiBoxes emojis={['🍚', '🍝', '🍝']} /> and the answer was{' '}
-          <InlineEmojiBoxes emojis={['🍛', '🌭', '🍛']} />
+          最終的には <InlineEmojiBoxes emojis={['🍕', '🍛', '🍕']} /> 、すなわち{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンになった。
+        </UlLi>
+        <UlLi>
+          <Em>
+            つまり <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> が{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になった。
+          </Em>
         </UlLi>
       </Ul>
-      <P>Hope you got this right!</P>
-      <EmojiSeparator emojis={['✨', '🤗', '✨']} />
+      <P>Interesting!</P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>What this {h('ycBentoBox')} does</H3>
+      <P>So, it seems that the following {h('ycBentoBox')}:</P>
+      {episode9[i++]()}
+      <P>Has the following effects:</P>
+      <Ul>
+        <UlLi>
+          <Em>
+            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> (from the last
+            chapter).
+          </Em>
+        </UlLi>
+        <UlLi>
+          <Em>
+            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+          </Em>
+        </UlLi>
+      </Ul>
+      <P>Now, here’s the key question:</P>
       <H3>
-        Conflicts <Emoji>💥</Emoji>
+        Is there any other {h('ycBentoBox', true)} that also have interesting
+        effects?
       </H3>
       <P>
-        Next, we’ll talk about one of the last few rules remaining to discuss:{' '}
         <Strong>
-          <Em>
-            Conflicts <Emoji>💥</Emoji>
-          </Em>
-        </Strong>
-        .
-      </P>
-      <P>
-        On the following {h('ycBentoBox')},{' '}
-        <Em>keep pressing {h('ycNext')} until step 1.5.</Em>
-      </P>
-      {episode8[i++]()}
-      <P>
-        This is very similar to the {h('ycBentoBox')} we've seen on this
-        episode/last episode. The top row is different, but{' '}
-        <Strong>the bottom row is exactly the same.</Strong>
-      </P>
-      <P>
-        <Strong>
-          Now, take a look at{' '}
-          <Em>
-            sandwich <Emoji size="mdlg">🥪</Emoji>
-          </Em>
+          Answer: <Em>Yes.</Em> <Emoji>👍</Emoji>
         </Strong>{' '}
-        :
+        Consider this one:
       </P>
-      {episode8[i++]()}
+      {episode9[i++]()}
+      <H3>Scenario 1 of 4</H3>
       <P>
-        Sandwiches <Emoji size="mdlg">🥪</Emoji> here meet these 3 conditions:
+        First, we will put two <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+        ’s on top.
       </P>
-      <Ol>
-        <OlLi>
-          Sandwich <Emoji size="mdlg">🥪</Emoji> <Strong>is NOT</Strong> the
-          dish{' '}
-          <Em>
-            you’re eating next <EmojiBadge badgeType="funcArg" inline />
-          </Em>
-          .
-        </OlLi>
-        <OlLi>
-          Sandwich <Emoji size="mdlg">🥪</Emoji> <Strong>is</Strong> one of the
-          dishes the{' '}
-          <Em>
-            chef is preparing <EmojiBadge badgeType="callArg" inline />
-          </Em>
-          .
-        </OlLi>
-        <OlLi>
-          On{' '}
-          <Em>
-            available dishes <EmojiBadge badgeType="funcBound" inline />
-          </Em>{' '}
-          , there is <Strong>at least one</Strong> sandwich{' '}
-          <Emoji size="mdlg">🥪</Emoji> that’s{' '}
-          <Strong>NOT in the rightmost cell.</Strong>
-        </OlLi>
-      </Ol>
+      {episode9[i++]()}
+      <P>{h('ycPlayUntilDone')} and see what happens:</P>
+      {episode9[i++]()}
       <P>
-        The last rule might be confusing. On{' '}
-        <EmojiBadge badgeType="funcBound" inline /> there are two sandwiches{' '}
-        <Emoji>🥪</Emoji> <Emoji>🥪</Emoji>,{' '}
-        <Em>but one is in the rightmost cell.</Em>
+        <Strong>Result:</Strong> It ended up as{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+      </P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Scenario 2 of 4</H3>
+      <P>
+        What if we put <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
+        {h('ycPlayUntilDone')} and see what happens:
+      </P>
+      {episode9[i++]()}
+      <P>
+        <Strong>Result:</Strong> It ended up as{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> again.
+      </P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Scenario 3 of 4</H3>
+      <P>
+        What if we reverse and put{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> at the top?{' '}
+        {h('ycPlayUntilDone')} and see what happens:
+      </P>
+      {episode9[i++]()}
+      <P>
+        <Strong>Result:</Strong> It ended up as{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> again.
       </P>
       <P>
-        <Strong>Good News:</Strong>{' '}
+        So far, it seems like{' '}
         <Em>
-          You do <Strong>not</Strong> need to remember these rules.
-        </Em>{' '}
-        Just follow along!
+          it’ll always end up as{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+        </Em>
+        . But we have one more scenario to try.
       </P>
-      <EmojiSeparator emojis={['💥', '💥', '️💥']} />
-      <H3>Highlighting conflicts</H3>
+      <H3>Scenario 4 of 4</H3>
       <P>
-        When there’s a dish that above three conditions apply,{' '}
-        <Strong>
-          <Em>
-            it is called a conflict <Emoji>💥</Emoji>
-          </Em>
-        </Strong>{' '}
-        and there’s a special rule that applies.
+        Finally, what if we put <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        and <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
+        {h('ycPlayUntilDone')} and see what happens:
       </P>
+      {episode9[i++]()}
       <P>
-        <Strong>Before I explain the rule:</Strong> Let’s highlight all the
-        sandwiches <Emoji size="mdlg">🥪</Emoji> (including the rightmost one in{' '}
-        <EmojiBadge badgeType="funcBound" inline />
-        ):
+        <Strong>Wow!</Strong> <Emoji>😳</Emoji> This time, it ended up as{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
       </P>
-      {episode8[i++]()}
-      <P>As you can see, we are:</P>
+      <EmojiSeparator emojis={['😳', '😳', '😳']} />
+      <P>Interesting!</P>
+      <H3>What this {h('ycBentoBox')} does</H3>
+      <P>So, it seems that the following {h('ycBentoBox')}:</P>
+      {episode9[i++]()}
+      <P>Has the following effects:</P>
       <Ul>
         <UlLi>
-          Highlighting <Emoji size="mdlg">🥪</Emoji> in{' '}
-          <EmojiBadge badgeType="callArg" inline /> using{' '}
-          {/* <InlineBackground bgPattern="stripeReverse" size="mdlg" /> */}
+          <Em>
+            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+          </Em>
         </UlLi>
         <UlLi>
-          Highlighting <Emoji size="mdlg">🥪</Emoji> in{' '}
-          <EmojiBadge badgeType="funcBound" inline /> using{' '}
-          {/* <InlineBackground bgPattern="stripe" size="mdlg" /> */}
+          <Em>
+            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+          </Em>
         </UlLi>
-      </Ul>
-      <H3>
-        How to resolve a conflict <Emoji>☑️</Emoji>
-      </H3>
-      <P>
-        <Em>
-          Press {h('ycNext')} to see how the conflict <Emoji>💥</Emoji> gets
-          resolved.
-        </Em>
-      </P>
-      {episode8[i++]()}
-      <P>
-        <Strong>Here’s how to resolve a conflict:</Strong>
-      </P>
-      <Ol>
-        <OlLi>
-          <Em>
-            <Strong>Replace</Strong> dishes highlighted in{' '}
-            {/* <InlineBackground bgPattern="stripe" size="mdlg" /> with a new dish */}
-            that hasn’t appeared yet.{' '}
-            {/* <InlineBackground bgPattern="bubble" size="mdlg" /> */}
-          </Em>
-        </OlLi>
-        <OlLi>
-          <Em>
-            <Strong>Don’t do anything</Strong> for dishes highlighted in{' '}
-            {/* <InlineBackground bgPattern="stripeReverse" size="mdlg" />. */}
-          </Em>
-        </OlLi>
-      </Ol>
-      <P>
-        <Strong>In this case:</Strong>{' '}
-        <Em>
-          sandwiches <Emoji size="mdlg">🥪</Emoji> highlighted in{' '}
-          {/* <InlineBackground bgPattern="stripe" size="mdlg" /> were replaced with */}
-          a steak <Emoji size="mdlg">🥩</Emoji>
-        </Em>
-        .
-      </P>
-      {episode8[i++]()}
-      <P>
-        <Strong>Let’s continue.</Strong> {h('ycTryUntilDone')}:
-      </P>
-      {episode8[i++]()}
-      <H3>The same pattern</H3>
-      <P>
-        For the example we just did, <Strong>the top row</Strong> looked like
-        this in the beginning:
-      </P>
-      {episode8[i++]()}
-      <P>
-        And <Strong>the final result</Strong> was:
-      </P>
-      {episode8[i++]()}
-      <P>Once again, the pattern here is:</P>
-      <Ul>
         <UlLi>
-          If the top row is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> the
-          answer is <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          <Em>
+            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+          </Em>
+        </UlLi>
+        <UlLi>
+          <Em>
+            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+          </Em>
         </UlLi>
       </Ul>
+      <P>Hmm… this kind of looks familiar…</P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Quiz</H3>
       <P>
-        On the next episode, we’ll finally talk about the mysterious{' '}
-        <Strong>bottom row</Strong>.
-      </P>
-      {episode8[i++]()}
-      <H3>Again: No need to memorize</H3>
-      <P>
-        This episode might have been confusing, but again:{' '}
-        <Em>
-          You do <Strong>not</Strong> need to remember the conflict rules.
-        </Em>{' '}
+        <Strong>Does these examples remind you of something?</Strong> Maybe
+        something you’ve done in a <Em>high school math/logic class</Em>? (Or,
+        if you have done some coding, is there a concept similar to this?)
       </P>
       <P>
-        Just know that sometimes conflicts happen. We’ll show and resolve the
-        conflicts for you.
+        Try recalling if you’ve done something like this before going to the
+        next episode!
       </P>
-      <EmojiSeparator emojis={['☑️', '🤗', '☑️️️']} />
-      <H3>
-        No Quiz! <Emoji>🎉</Emoji>
-      </H3>
       <P>
-        Because this episode was long, there’s no quiz for this episode. Head
-        straight to the next episode!
+        <Strong>Hint:</Strong> Have you seen a table like this?{' '}
+        <Emoji>😉</Emoji> Can you see a similarity between this table and what
+        we did earlier?
       </P>
-      <YcNextLessonButton nextEpisodeNumber={8} primaryTextType="nextPage" />
+      <Table>
+        <thead>
+          <tr>
+            <Th>A</Th>
+            <Th>B</Th>
+            <Th>A OR B</Th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+          </tr>
+        </tbody>
+      </Table>
+
+      <YcNextLessonButton nextEpisodeNumber={9} />
     </>
   )
 }

@@ -111,8 +111,10 @@ export default () => {
       </P>
       {episode8[i++]()}
       <P>
-        <Strong>Do you think it will become</Strong>{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />?
+        <Em>
+          Do you think it will become{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />?
+        </Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={9} />
     </>

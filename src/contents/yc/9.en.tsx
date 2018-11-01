@@ -1,11 +1,23 @@
+import { css } from 'emotion'
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  P,
+  Strong,
+  Table,
+  Td,
+  Th,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode9 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import { colors } from 'src/lib/theme'
 
 export default () => {
   let i = 0
@@ -169,9 +181,113 @@ export default () => {
         if you have done some coding, is there a concept similar to this?)
       </P>
       <P>
-        Try recalling if you’ve done something like this before going to the
-        next episode!
+        <Strong>Hint:</Strong> Have you seen a table like this?{' '}
+        <Emoji>😉</Emoji> Can you see a similarity between this table and what
+        we did earlier?
       </P>
+      <Table>
+        <thead>
+          <tr>
+            <Th>A</Th>
+            <Th>B</Th>
+            <Th>A OR B</Th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              className={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+          </tr>
+        </tbody>
+      </Table>
       <YcNextLessonButton nextEpisodeNumber={9} />
     </>
   )

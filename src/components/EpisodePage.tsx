@@ -71,7 +71,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
       >
         <div
           className={css`
-            width: 30%;
+            width: 32%;
             text-align: left;
           `}
         >
@@ -92,20 +92,20 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
         </div>
         <div
           className={css`
-            width: 40%;
+            width: 36%;
             text-align: center;
           `}
         >
-          <InternalLink
+          {/* <InternalLink
             href={pathHelpers[lessonName]('toc')}
             className={navigationLinkClasses}
           >
             {h('indexPageLink')}
-          </InternalLink>{' '}
+          </InternalLink> */}
         </div>
         <div
           className={css`
-            width: 30%;
+            width: 32%;
             text-align: right;
           `}
         >
