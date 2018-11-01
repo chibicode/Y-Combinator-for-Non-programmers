@@ -18,6 +18,7 @@ interface ExpressionRunnerExplanationProps {
   currentSubstep: number
   hideLeftMostPrioritiesExplanation: boolean
   isPlaying: boolean
+  numSecondsRemaining: number
 }
 
 const stateToExplanation = ({
@@ -262,6 +263,7 @@ const ExpressionRunnerExplanation: React.SFC<
   currentSubstep,
   isDone,
   hideLeftMostPrioritiesExplanation,
+  numSecondsRemaining,
   isPlaying
 }) => (
   <div
@@ -277,11 +279,27 @@ const ExpressionRunnerExplanation: React.SFC<
     {isPlaying ? (
       locale === 'en' ? (
         <>
-          <Emoji>▶️</Emoji> <Strong>Playing…</Strong>
+          <Strong
+            className={css`
+              color: ${colors('pink400')};
+            `}
+          >
+            {numSecondsRemaining}
+          </Strong>{' '}
+          second
+          {numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>▶️</Emoji>
         </>
       ) : (
         <>
-          <Emoji>⏩</Emoji> <Strong>早送り中…</Strong>
+          <Emoji>⏩</Emoji> 残り{' '}
+          <Strong
+            className={css`
+              color: ${colors('pink400')};
+            `}
+          >
+            {numSecondsRemaining}
+          </Strong>{' '}
+          秒…
         </>
       )
     ) : (

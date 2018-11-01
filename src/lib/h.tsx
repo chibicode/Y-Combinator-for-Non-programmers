@@ -11,10 +11,10 @@ interface LocaleJson {
 }
 
 export const allTranslations = {
-  ycBentoBox: () => ({
+  ycBentoBox: (plural: boolean) => ({
     en: (
       <>
-        “bento box <Emoji>🍱</Emoji>”
+        {`“bento box${plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
       </>
     ),
     jp: (
@@ -168,6 +168,15 @@ export const allTranslations = {
         {h('ycDone')} になるまで {h('ycNext')} を押してみてください
       </Em>
     )
+  }),
+  ycPlayUntilDone: (capitalize = true) => ({
+    en: (
+      <Em>
+        {capitalize ? 'T' : 't'}
+        ry pressing {h('ycPlay')}
+      </Em>
+    ),
+    jp: <Em>{h('ycPlay')} を押してみてください</Em>
   }),
   introductionPageLink: () => ({
     en: 'Introduction',

@@ -17,6 +17,9 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
+// Must be equal to 1 / N to make timer count seconds evenly
+const autoplaySpeed = 250
+
 type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
@@ -42,7 +45,7 @@ interface ExpressionRunnerProps {
   containerSize: ContainerProps['size']
   hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
-  showPlayButton?: boolean
+  hidePlayButton?: boolean
   hideForwardAndBackButtons?: boolean
 }
 
@@ -50,6 +53,10 @@ interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
   isPlaying: boolean
 }
+
+// Use floor() + 1 instead of ceil() to make sure it's nonzero
+const numSecondsRemaining = (numStepsRemaining: number) =>
+  Math.floor((numStepsRemaining * autoplaySpeed) / 1000) + 1
 
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
@@ -130,7 +137,7 @@ export default class ExpressionRunner extends React.Component<
       variableSize,
       containerSize,
       hideLeftMostPrioritiesExplanation,
-      showPlayButton,
+      hidePlayButton,
       hideForwardAndBackButtons
     } = this.props
     const { expressionContainerManagerState, isPlaying } = this.state
@@ -159,6 +166,9 @@ export default class ExpressionRunner extends React.Component<
             {!hideExplanations && (
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
+                numSecondsRemaining={numSecondsRemaining(
+                  expressionContainerManagerState.numStepsRemaining
+                )}
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
@@ -187,6 +197,8 @@ export default class ExpressionRunner extends React.Component<
               <div
                 className={css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+                  opacity: ${isPlaying ? 0.5 : 1};
+                  ${isPlaying ? 'filter: grayscale(50%);' : ''};
                 `}
               >
                 <ExpressionBox
@@ -214,7 +226,7 @@ export default class ExpressionRunner extends React.Component<
                   canStepBackward={
                     expressionContainerManagerState.canStepBackward
                   }
-                  showPlayButton={!!showPlayButton}
+                  showPlayButton={!hidePlayButton}
                   isPlaying={isPlaying}
                   isDone={isContainerWithState(
                     expressionContainerManagerState.expressionContainer,
@@ -248,7 +260,7 @@ export default class ExpressionRunner extends React.Component<
       } else {
         this.pause()
       }
-    }, 333)
+    }, autoplaySpeed)
     this.setState({
       isPlaying: true
     })

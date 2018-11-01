@@ -121,7 +121,7 @@ export default () => {
         <UlLi>
           <Em>
             つまり、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> が{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> に変化した。
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
           </Em>
         </UlLi>
       </Ul>
@@ -149,8 +149,10 @@ export default () => {
       </P>
       {episode8[i++]()}
       <P>
-        果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-        になるのでしょうか?
+        <Em>
+          果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          になるのでしょうか?
+        </Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={9} />
     </>

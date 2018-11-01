@@ -13,7 +13,7 @@ const InlineEmojiBoxes: React.SFC<InlineEmojiBoxProps> = ({ emojis }) => (
     className={css`
       display: inline-flex;
       vertical-align: middle;
-      font-size: ${fontSizes(1.5)};
+      font-size: ${fontSizes(1.25)};
       line-height: ${lineHeights(1.3, { ignoreLocale: true })};
       margin: ${spaces(0.25)} ${spaces(0.25)};
       background: ${colors('white')};
