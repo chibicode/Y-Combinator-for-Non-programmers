@@ -137,7 +137,7 @@ export default () => {
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
       </P>
       <EmojiSeparator emojis={['😳', '😳', '😳']} />
-      <P>Interesting!</P>
+      <P>So this one’s a bit different from the other three scenarios!</P>
       <H3>What this {h('ycBentoBox')} does</H3>
       <P>So, it seems that the following {h('ycBentoBox')}:</P>
       {episode9[i++]()}
@@ -177,8 +177,11 @@ export default () => {
       <H3>Quiz</H3>
       <P>
         <Strong>Does these examples remind you of something?</Strong> Maybe
-        something you’ve done in a <Em>high school math/logic class</Em>? (Or,
-        if you have done some coding, is there a concept similar to this?)
+        something you’ve done in a <Em>high school math/logic class</Em>?
+      </P>
+      <P>
+        (Or, if you have done some coding, can you think of a concept similar to
+        this?)
       </P>
       <P>
         <Strong>Hint:</Strong> Have you seen a table like this?{' '}
@@ -288,7 +291,7 @@ export default () => {
           </tr>
         </tbody>
       </Table>
-      <YcNextLessonButton nextEpisodeNumber={9} />
+      <YcNextLessonButton nextEpisodeNumber={10} />
     </>
   )
 }

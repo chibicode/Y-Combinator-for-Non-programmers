@@ -14,6 +14,7 @@ export const Table: React.SFC<JSX.IntrinsicElements['table']> = ({
         border: 2px solid ${colors('indigo300')};
         margin: 0 0 ${spaces(1)};
         border-collapse: collapse;
+        table-layout: fixed;
       `,
       className
     )}
