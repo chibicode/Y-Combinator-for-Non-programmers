@@ -34,16 +34,14 @@ export default () => {
           investor for companies like Dropbox and AirBnB.
         </OlLi>
         <OlLi>
-          Y Combinator is <Em>a way to define recursive functions</Em>.
-        </OlLi>
-        <OlLi>
-          Y Combinator is <Em>a fixed-point combinator</Em>.
+          Y Combinator is <Em>a programming trick</Em> that allows one to
+          implement loops in a programming language that doesn’t support loops.
         </OlLi>
       </Ol>
-      <EmojiSeparator emojis={['1️⃣', '2️⃣', '3️⃣']} Component={P} />
+      <EmojiSeparator emojis={['1️⃣', '🤔', '2️⃣']} Component={P} />
       <P>
         <Strong>
-          Answer: <Em>1, 2, and 3 are all correct</Em>.
+          Answer: <Em>1 and 2 are both correct</Em>.
         </Strong>
       </P>
       <Ul>
@@ -52,10 +50,9 @@ export default () => {
           Combinator is a startup accelerator (choice 1). But{' '}
           <Em>
             did you know that Y Combinator (the startup accelerator) is actually
-            named after a cool concept in Computer Science
+            named after a cool concept in programming
           </Em>{' '}
-          (choices 2 and 3)? If you didn’t know that, I think you’ll like this
-          article.
+          (choice 2)? If you didn’t know that, I think you’ll like this article.
         </UlLi>
         <UlLi>
           <Strong>If you’re a programmer:</Strong> You might know that Y

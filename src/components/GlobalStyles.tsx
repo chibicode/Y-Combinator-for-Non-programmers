@@ -25,6 +25,10 @@ injectGlobal`
     color: inherit;
   }
 
+  strong {
+    font-weight: bold; /* Instead of bolder */
+  }
+
   svg {
     height: 100%;
     width: auto;
