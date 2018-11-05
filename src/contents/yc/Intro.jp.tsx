@@ -72,7 +72,7 @@ export default () => {
       <EmojiSeparator emojis={['😉', '👍', '❤️']} />
       <P>
         <Strong>はじめる前に、短い解説をさせてください。</Strong>
-        Yコンビネーターという起業家育成プログラムは2005年にはじまりました。成功したプログラマー出身の起業家たちが、プログラミングができる若手起業家に投資し、指導しはじめたのです。
+        アメリカでは2005年に、プログラマー出身の大物起業家たちが、プログラミングができる若手起業家に投資し、起業のノウハウを指導する短期講習プログラムをはじめました。この短期講習プログラムはYコンビネーターと名付けられました。
       </P>
       <P>
         <Strong>
@@ -82,7 +82,7 @@ export default () => {
           </ExternalLink>
           )。
         </Strong>
-        Yコンビネーターが投資した企業はAirBnBやDropboxなど約2000社にのぼります。
+        Yコンビネーターが支援した企業はAirBnBやDropboxなど約2000社にのぼります。
         <ExternalLink href="http://www.ycombinator.com/topcompanies/">
           上位100位
         </ExternalLink>
