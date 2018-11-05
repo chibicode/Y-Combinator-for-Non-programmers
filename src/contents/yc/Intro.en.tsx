@@ -56,8 +56,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Strong>If you’re a programmer:</Strong> You might know that Y
-          Combinator (in programming) is some kind of a functional programming
-          concept. Maybe you've implemented it. But{' '}
+          Combinator is a programming concept. Maybe you've implemented it. But{' '}
           <Em>
             can you explain what Y Combinator (in programming) is to a
             non-programmer
@@ -69,9 +68,10 @@ export default () => {
         <UlLi>
           <Strong>If you’ve never heard of the term “Y Combinator”:</Strong>{' '}
           That’s great! <Em>I’m writing this article for someone like you.</Em>{' '}
-          If you’re interested in learning about a very cool concept in Computer
-          Science, I think you’ll like this article. Don’t worry:{' '}
-          <Em>there won't be any coding involved</Em>.
+          If you’re interested in learning about one of the best programming
+          concepts
+          <Em>without actually learning to code</Em>, I think you’ll like this
+          article.
         </UlLi>
       </Ul>
       <EmojiSeparator emojis={['😉', '👍', '❤️']} />
