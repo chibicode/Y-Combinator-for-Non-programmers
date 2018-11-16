@@ -45,6 +45,10 @@ export const allTranslations = {
   ycEpisode9: {
     en: 'Patterns You’ve Seen Before',
     jp: 'どこかで見たような法則'
+  },
+  ycEpisode10: {
+    en: 'TBD',
+    jp: 'TBD'
   }
 }
 
