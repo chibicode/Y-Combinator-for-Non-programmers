@@ -91,7 +91,7 @@ export default () => {
         </UlLi>
       </Ul>
       <P>
-        <Em>Try pressing {h('ycNext')}:</Em>
+        <Em>Try pressing {h('ycNext')} to see how it works:</Em>
       </P>
       {episode7[i++]()}
       <P>

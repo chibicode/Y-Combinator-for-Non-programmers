@@ -38,14 +38,14 @@ export default () => {
         のがわかります。
       </P>
       <P>
-        それでは、いよいよ次が最後の基本ルールです。
+        では、いよいよ最後の基本ルール、
         <Strong>
-          小悪魔 <Emoji>😈</Emoji>
+          シャッフルタイム <Emoji>🔀</Emoji>
         </Strong>{' '}
-        のルールを紹介します。
+        を紹介します。
       </P>
-      <EmojiSeparator emojis={['😈', '😈', '😈']} />
-      <H3>小悪魔</H3>
+      <EmojiSeparator emojis={['🔀', '🔀', '🔀']} />
+      <H3>シャッフルタイム</H3>
       <P>
         次の
         {h('ycBentoBox')}
@@ -71,26 +71,26 @@ export default () => {
           <EmojiBadge badgeType="funcBound" inline />
           にあると、
           <Strong>
-            小悪魔 <Emoji>😈</Emoji>
+            シャッフルタイム <Emoji>🔀</Emoji>
           </Strong>{' '}
-          が登場します。
+          になります。
         </Em>
       </P>
       {episode7[i++]()}
       <P>
         <Strong>
-          小悪魔は <Emoji>😈</Emoji>
+          シャッフルタイム <Emoji>🔀</Emoji>
         </Strong>{' '}
-        こんなイタズラをしちゃいます:
+        では、次のようなことが起こります:
       </P>
       <Ul>
         <UlLi>
           <Em>
             <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
             <EmojiBadge badgeType="funcBound" inline /> にある全てのサンドイッチ{' '}
-            <Emoji size="mdlg">🥪</Emoji> をランダムに
+            <Emoji size="mdlg">🥪</Emoji> がまだ使われていない
             <Strong>新しい</Strong>
-            料理に変えてしまう。
+            料理になる。
           </Em>
         </UlLi>
         <UlLi>
@@ -98,25 +98,28 @@ export default () => {
           <Emoji size="mdlg">🥪</Emoji> はそのまま。
         </UlLi>
       </Ul>
+      <P>
+        <Em>{h('ycNext')} を押して、どうなるか見てみましょう:</Em>
+      </P>
       {episode7[i++]()}
       <P>
-        ここでは
+        というわけで、
         <Strong>
           サンドイッチ <Emoji size="mdlg">🥪</Emoji> がステーキ{' '}
           <Emoji size="mdlg">🥩</Emoji> に
         </Strong>
         なりました。
       </P>
+      <EmojiSeparator emojis={['🥪', '🔀', '🥩']} />
       <P>
         あとはいつも通り、
         {h('ycTryUntilDone')}:
       </P>
       {episode7[i++]()}
       <P>以上です！</P>
-      <EmojiSeparator emojis={['😈', '😈', '😈']} />
       <H3>もうひとつの例</H3>
       <P>
-        小悪魔 <Emoji>😈</Emoji> が登場するもうひとつの例はこちら。
+        シャッフルタイム <Emoji>🔀</Emoji> が起きるもうひとつの例はこちら。
         {h('ycTryUntilDone')}:
       </P>
       {episode7[i++]()}
@@ -126,7 +129,8 @@ export default () => {
         <UlLi>
           <Strong>
             <Em>
-              小悪魔ルール <Emoji>😈</Emoji> を暗記する必要はありません。
+              シャッフルタイム <Emoji>🔀</Emoji>{' '}
+              のルールを暗記する必要はありません。
             </Em>
           </Strong>
           「こういうルールもあるんだ」と思っていただければ大丈夫です。
