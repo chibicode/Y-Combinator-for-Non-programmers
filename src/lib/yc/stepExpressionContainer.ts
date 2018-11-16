@@ -46,10 +46,9 @@ const stepExpressionContainerReset = (
   }
 }
 
-type DE = DraftObject<ExecutableCall>
-
 const step = (
-  e: DE,
+  e: DraftObject<ExecutableCall>,
+  skipShowSteps: boolean,
   matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
@@ -64,9 +63,16 @@ const step = (
       }
     }
     case 'active': {
-      return {
-        nextExpression: stepToShowFuncBound(e),
-        previouslyChangedExpressionState: 'showFuncBound'
+      if (skipShowSteps) {
+        return {
+          nextExpression: stepToShowCallArg(e, false),
+          previouslyChangedExpressionState: 'showCallArg'
+        }
+      } else {
+        return {
+          nextExpression: stepToShowFuncBound(e),
+          previouslyChangedExpressionState: 'showFuncBound'
+        }
       }
     }
     case 'showFuncBound': {
@@ -83,14 +89,14 @@ const step = (
         }
       } else {
         return {
-          nextExpression: stepToShowCallArg(e),
+          nextExpression: stepToShowCallArg(e, true),
           previouslyChangedExpressionState: 'showCallArg'
         }
       }
     }
     case 'showFuncUnbound': {
       return {
-        nextExpression: stepToShowCallArg(e),
+        nextExpression: stepToShowCallArg(e, true),
         previouslyChangedExpressionState: 'showCallArg'
       }
     }
@@ -151,7 +157,7 @@ const step = (
   }
 }
 
-const recipe = (
+const recipe = (skipShowSteps: boolean) => (
   draftContainer: DraftObject<
     | ContainerWithState<'ready'>
     | ContainerWithState<'stepped'>
@@ -164,7 +170,7 @@ const recipe = (
     funcParent,
     callParentKey
   } = findNextCallExpressionAndParent<
-    DE,
+    DraftObject<ExecutableCall>,
     DraftObject<CallExpression>,
     DraftObject<FunctionExpression>
   >(draftContainer.expression)
@@ -177,7 +183,7 @@ const recipe = (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = step(expression, draftContainer.matchExists)
+  } = step(expression, skipShowSteps, draftContainer.matchExists)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
@@ -209,7 +215,8 @@ const recipe = (
 }
 
 export default function stepExpressionContainer(
-  e: ContainerWithState<'ready'> | ContainerWithState<'stepped'>
+  e: ContainerWithState<'ready'> | ContainerWithState<'stepped'>,
+  skipShowSteps = false
 ):
   | ContainerWithState<'done'>
   | ContainerWithState<'stepped'>
@@ -218,7 +225,7 @@ export default function stepExpressionContainer(
     | ContainerWithState<'needsReset'>
     | ContainerWithState<'stepped'>
     | ContainerWithState<'ready'>
-  >(e, recipe)
+  >(e, recipe(skipShowSteps))
 
   if (isContainerWithState(result, 'needsReset')) {
     return stepExpressionContainerReset(result)

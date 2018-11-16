@@ -39,19 +39,24 @@ const background = (
         background: ${colors('white')};
       `
     }
+    case 'semiTransparent': {
+      return css`
+        background: ${colors('white')};
+      `
+    }
     case 'highlighted': {
       return css`
-        background ${colors('yellow100')};
+        background: ${colors('yellow100')};
       `
     }
     case 'unmatch': {
       return css`
-        background ${colors('pink50')};
+        background: ${colors('pink50')};
       `
     }
     case 'highlightedNoEmphBorder': {
       return css`
-        background ${colors('yellow100')};
+        background: ${colors('yellow100')};
       `
     }
     case 'match': {

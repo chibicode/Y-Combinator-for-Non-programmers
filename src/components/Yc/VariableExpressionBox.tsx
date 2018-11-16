@@ -62,6 +62,9 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
           <span
             className={css`
               position: relative;
+              opacity: ${expression.highlightType === 'semiTransparent'
+                ? 0.5
+                : 1};
             `}
           >
             <Emoji>{letterEmojiMapping[expression.name]}</Emoji>

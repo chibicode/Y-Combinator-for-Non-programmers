@@ -92,7 +92,7 @@ export function toBetaReducePreviewBefore(
       return {
         nextExpression: {
           ...e,
-          highlightType: 'active',
+          highlightType: 'semiTransparent',
           badgeType: 'funcUnbound'
         },
         matchExists: false

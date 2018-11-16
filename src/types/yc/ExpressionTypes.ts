@@ -55,6 +55,10 @@ interface VariableStates {
     readonly highlightType: 'active'
     readonly badgeType: 'funcUnbound'
   }
+  semiTransparentFuncUnbound: {
+    readonly highlightType: 'semiTransparent'
+    readonly badgeType: 'funcUnbound'
+  }
   highlightCallArg: {
     readonly highlightType: 'highlighted'
     readonly badgeType: 'callArg'
@@ -143,6 +147,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                 | 'activeFuncArg'
                 | 'activeFuncUnbound'
                 | 'highlightCallArg'
+                | 'activeCallArg'
             : C extends 'needsAlphaConvert'
               ?
                   | 'activeFuncBound'
@@ -164,8 +169,8 @@ export type CtoV<C extends CallStates> = C extends 'default'
                 : C extends 'betaReducePreviewBefore'
                   ?
                       | 'highlightFuncArgNoEmphBorder'
-                      | 'activeFuncUnbound'
                       | 'activeCallArg'
+                      | 'semiTransparentFuncUnbound'
                       | 'matchFuncBound'
                       | 'unmatchFuncBound'
                   : C extends 'betaReducePreviewAfter'
