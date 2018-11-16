@@ -23,9 +23,9 @@ export default () => {
       {episode8[i++]()}
       <P>
         {h('ycBentoBox')}
-        を自動で早送りしてくれる、便利な機能です！
+        を自動で実行してくれる、便利な機能です！
       </P>
-      <EmojiSeparator emojis={['⏩', '🤗', '⏩']} />
+      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
       <P>
         それでは本題に入りましょう。
         <Strong>ふたつのパターン</Strong>

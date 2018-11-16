@@ -20,7 +20,7 @@ export default () => {
         <Em>Try pressing on {h('ycPlay')} below.</Em>
       </P>
       {episode8[i++]()}
-      <P>It automatically fast-forwards the {h('ycBentoBox')} for you.</P>
+      <P>It automatically advances the {h('ycBentoBox')} for you.</P>
       <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
       <P>
         Next, we’ll talk about the <Strong>two patterns.</Strong>
@@ -64,7 +64,8 @@ export default () => {
       <H3>Let’s Try!</H3>
       <P>
         <Strong>Tip:</Strong> <Em>There’s now the {h('ycPlay')} button</Em>{' '}
-        which will automatically fast-forward until it’s {h('ycDone')}.
+        which will automatically advance the {h('ycBentoBox')} until it’s{' '}
+        {h('ycDone')}.
       </P>
       {episode8[i++]()}
       <P>So the end result was:</P>

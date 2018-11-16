@@ -18,7 +18,8 @@ import {
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 // Must be equal to 1 / N to make timer count seconds evenly
-const autoplaySpeed = 250
+const autoplaySpeed = (isFastForwarding?: boolean) =>
+  isFastForwarding ? 250 : 700
 
 type InitializeInstruction =
   | {
@@ -47,17 +48,22 @@ interface ExpressionRunnerProps {
   resetIndex: boolean
   hidePlayButton?: boolean
   hideForwardAndBackButtons?: boolean
+  isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
 }
 
 interface ExpressionRunnerState {
   expressionContainerManagerState: ExpressionContainerManager['currentState']
+  isFastForwarding: boolean
   isPlaying: boolean
 }
 
 // Use floor() + 1 instead of ceil() to make sure it's nonzero
-const numSecondsRemaining = (numStepsRemaining: number) =>
-  Math.floor((numStepsRemaining * autoplaySpeed) / 1000) + 1
+const numSecondsRemaining = (
+  numStepsRemaining: number,
+  isFastForwarding?: boolean
+) =>
+  Math.floor((numStepsRemaining * autoplaySpeed(isFastForwarding)) / 1000) + 1
 
 export default class ExpressionRunner extends React.Component<
   ExpressionRunnerProps,
@@ -93,6 +99,7 @@ export default class ExpressionRunner extends React.Component<
     this.state = {
       expressionContainerManagerState: this.expressionContainerManager
         .currentState,
+      isFastForwarding: false,
       isPlaying: false
     }
   }
@@ -147,7 +154,11 @@ export default class ExpressionRunner extends React.Component<
       hideForwardAndBackButtons,
       showAllShowSteps
     } = this.props
-    const { expressionContainerManagerState, isPlaying } = this.state
+    const {
+      expressionContainerManagerState,
+      isFastForwarding,
+      isPlaying
+    } = this.state
     return (
       <ExpressionRunnerContext.Provider
         value={{
@@ -172,9 +183,10 @@ export default class ExpressionRunner extends React.Component<
           >
             {!hideExplanations && (
               <ExpressionRunnerExplanation
-                isPlaying={isPlaying}
+                isFastForwarding={isFastForwarding}
                 numSecondsRemaining={numSecondsRemaining(
-                  expressionContainerManagerState.numStepsRemaining
+                  expressionContainerManagerState.numStepsRemaining,
+                  isFastForwarding
                 )}
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
@@ -205,8 +217,8 @@ export default class ExpressionRunner extends React.Component<
               <div
                 className={css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isPlaying ? 0.5 : 1};
-                  ${isPlaying ? 'filter: grayscale(50%);' : ''};
+                  opacity: ${isFastForwarding ? 0.5 : 1};
+                  ${isFastForwarding ? 'filter: grayscale(50%);' : ''};
                 `}
               >
                 <ExpressionBox
@@ -262,15 +274,17 @@ export default class ExpressionRunner extends React.Component<
   }
 
   private autoplay = () => {
+    const { isFastForwardPlayButton } = this.props
     this.interval = setInterval(() => {
       if (this.state.expressionContainerManagerState.canStepForward) {
         this.step('forward')
       } else {
         this.pause()
       }
-    }, autoplaySpeed)
+    }, autoplaySpeed(isFastForwardPlayButton))
     this.setState({
-      isPlaying: true
+      isPlaying: true,
+      isFastForwarding: !!isFastForwardPlayButton
     })
   }
 
@@ -279,7 +293,8 @@ export default class ExpressionRunner extends React.Component<
       clearInterval(this.interval)
     }
     this.setState({
-      isPlaying: false
+      isPlaying: false,
+      isFastForwarding: false
     })
   }
 
@@ -288,7 +303,8 @@ export default class ExpressionRunner extends React.Component<
       clearInterval(this.interval)
     }
     this.setState({
-      isPlaying: false
+      isPlaying: false,
+      isFastForwarding: false
     })
     this.step('reset')
   }

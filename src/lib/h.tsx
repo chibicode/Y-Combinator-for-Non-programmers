@@ -50,7 +50,7 @@ export const allTranslations = {
     jp: (
       <>
         <Strong>
-          早送り <Emoji>⏩</Emoji>
+          実行 <Emoji>▶️</Emoji>
         </Strong>
       </>
     )
