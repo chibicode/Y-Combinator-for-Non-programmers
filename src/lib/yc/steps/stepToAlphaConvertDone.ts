@@ -82,10 +82,18 @@ export function toAlphaConvertDone(
         }
       }
     } else {
-      return {
-        ...e,
-        highlightType: 'conflictResolvedCallArg',
-        badgeType: 'callArg'
+      if (mapping[e.name]) {
+        return {
+          ...e,
+          highlightType: 'conflictResolvedCallArg',
+          badgeType: 'callArg'
+        }
+      } else {
+        return {
+          ...e,
+          highlightType: 'active',
+          badgeType: 'callArg'
+        }
       }
     }
   } else if (isFunction(e)) {
