@@ -37,6 +37,7 @@ export const episode2 = [
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
+      showAllShowSteps
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[
@@ -52,6 +53,7 @@ export const episode2 = [
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
+      showAllShowSteps
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[
@@ -67,6 +69,7 @@ export const episode2 = [
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
+      showAllShowSteps
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[
@@ -115,6 +118,23 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       hidePriorities
       hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showCallArg'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      showAllShowSteps
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[
@@ -131,21 +151,7 @@ export const episode3 = [
       hidePriorities
       hideControls
       hideExplanations
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showCallArg'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
-      hidePriorities
-      hideControls
-      hideExplanations
+      showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -161,6 +167,7 @@ export const episode3 = [
       hidePriorities
       hideControls
       hideExplanations
+      showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -204,6 +211,7 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression2}
       hidePlayButton
       hidePriorities
+      showAllShowSteps
       resetIndex
       variableSize={'lg'}
       initializeInstructions={[
@@ -219,6 +227,7 @@ export const episode3 = [
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hidePlayButton
+      showAllShowSteps
       resetIndex
       variableSize={'lg'}
       initializeInstructions={[
@@ -326,6 +335,7 @@ export const episode4 = [
       hidePriorities
       hideControls
       hideExplanations
+      showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -341,6 +351,7 @@ export const episode4 = [
       hidePriorities
       hideControls
       hideExplanations
+      showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -356,6 +367,7 @@ export const episode4 = [
       hidePriorities
       hideControls
       hideExplanations
+      showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -371,6 +383,7 @@ export const episode4 = [
       hidePriorities
       hideControls
       hideExplanations
+      showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -436,6 +449,7 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode4Expression2}
       hidePlayButton
       hidePriorities
+      showAllShowSteps
       resetIndex
       variableSize={'lg'}
       initializeInstructions={[
@@ -472,6 +486,7 @@ export const episode5 = [
       hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       lastAllowedExpressionState="betaReducePreviewCrossed"
+      showAllShowSteps
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -487,6 +502,7 @@ export const episode5 = [
       hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       maxStepsAllowed={1}
+      showAllShowSteps
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -501,6 +517,7 @@ export const episode5 = [
       hidePlayButton
       hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
+      showAllShowSteps
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -518,6 +535,7 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
       hideLeftMostPrioritiesExplanation
+      showAllShowSteps
       variableSize={'lg'}
     />
   ),
@@ -526,6 +544,7 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode5Expression2}
       hideLeftMostPrioritiesExplanation
       hideControls
+      showAllShowSteps
       hideExplanations
       variableSize={'lg'}
     />

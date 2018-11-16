@@ -3,6 +3,7 @@ import { Em, H3, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode6 } from 'src/components/Yc/AllExpressionRunners'
+import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -16,6 +17,13 @@ export default () => {
       {episode6[i++]()}
       <P>
         So the answer was <Strong>sushi</Strong> <Emoji>🍣</Emoji>.
+      </P>
+      <P>
+        <Strong>Notice:</Strong> To speed this up, we now show all{' '}
+        <EmojiBadge badgeType="funcBound" inline />{' '}
+        <EmojiBadge badgeType="funcUnbound" inline />{' '}
+        <EmojiBadge badgeType="funcArg" inline />{' '}
+        <EmojiBadge badgeType="callArg" inline /> at the same time.
       </P>
       <H3>More Priorities</H3>
       <P>Next, take a look at this {h('ycBentoBox')}:</P>

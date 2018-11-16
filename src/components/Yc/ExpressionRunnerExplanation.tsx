@@ -19,6 +19,7 @@ interface ExpressionRunnerExplanationProps {
   hideLeftMostPrioritiesExplanation: boolean
   isPlaying: boolean
   numSecondsRemaining: number
+  showAllShowSteps?: boolean
 }
 
 const stateToExplanation = ({
@@ -26,13 +27,15 @@ const stateToExplanation = ({
   matchExists,
   currentStep,
   currentSubstep,
-  hideLeftMostPrioritiesExplanation
+  hideLeftMostPrioritiesExplanation,
+  showAllShowSteps
 }: {
   state: CallStates
   matchExists?: boolean
   currentStep: number
   currentSubstep: number
   hideLeftMostPrioritiesExplanation: boolean
+  showAllShowSteps?: boolean
 }) => {
   if (currentStep === 1 && currentSubstep === 1) {
     if (locale === 'en') {
@@ -136,18 +139,40 @@ const stateToExplanation = ({
     }
     case 'showCallArg': {
       if (locale === 'en') {
-        return (
-          <>
-            <EmojiBadge badgeType="callArg" inline /> Top row
-          </>
-        )
+        if (showAllShowSteps) {
+          return (
+            <>
+              <EmojiBadge badgeType="callArg" inline /> Top row
+            </>
+          )
+        } else {
+          return (
+            <>
+              Showing <EmojiBadge badgeType="funcBound" inline />{' '}
+              <EmojiBadge badgeType="funcUnbound" inline />{' '}
+              <EmojiBadge badgeType="funcArg" inline />{' '}
+              <EmojiBadge badgeType="callArg" inline />
+            </>
+          )
+        }
       } else {
-        return (
-          <>
-            上段は
-            <EmojiBadge badgeType="callArg" inline />
-          </>
-        )
+        if (showAllShowSteps) {
+          return (
+            <>
+              上段は
+              <EmojiBadge badgeType="callArg" inline />
+            </>
+          )
+        } else {
+          return (
+            <>
+              <EmojiBadge badgeType="funcBound" inline />{' '}
+              <EmojiBadge badgeType="funcUnbound" inline />{' '}
+              <EmojiBadge badgeType="funcArg" inline />{' '}
+              <EmojiBadge badgeType="callArg" inline /> はこうなります
+            </>
+          )
+        }
       }
     }
     case 'betaReducePreviewBefore': {
@@ -263,7 +288,8 @@ const ExpressionRunnerExplanation: React.SFC<
   isDone,
   hideLeftMostPrioritiesExplanation,
   numSecondsRemaining,
-  isPlaying
+  isPlaying,
+  showAllShowSteps
 }) => (
   <div
     className={css`
@@ -326,7 +352,8 @@ const ExpressionRunnerExplanation: React.SFC<
             currentStep,
             currentSubstep,
             hideLeftMostPrioritiesExplanation,
-            matchExists: expressionContainer.matchExists
+            matchExists: expressionContainer.matchExists,
+            showAllShowSteps
           })
         )}
       </>

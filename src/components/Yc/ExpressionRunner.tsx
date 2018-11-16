@@ -47,6 +47,7 @@ interface ExpressionRunnerProps {
   resetIndex: boolean
   hidePlayButton?: boolean
   hideForwardAndBackButtons?: boolean
+  showAllShowSteps?: boolean
 }
 
 interface ExpressionRunnerState {
@@ -78,10 +79,15 @@ export default class ExpressionRunner extends React.Component<
 
   constructor(props: ExpressionRunnerProps) {
     super(props)
-    const { expressionContainer, lastAllowedExpressionState } = props
+    const {
+      expressionContainer,
+      lastAllowedExpressionState,
+      showAllShowSteps
+    } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
-      lastAllowedExpressionState
+      lastAllowedExpressionState,
+      showAllShowSteps
     })
 
     this.state = {
@@ -138,7 +144,8 @@ export default class ExpressionRunner extends React.Component<
       containerSize,
       hideLeftMostPrioritiesExplanation,
       hidePlayButton,
-      hideForwardAndBackButtons
+      hideForwardAndBackButtons,
+      showAllShowSteps
     } = this.props
     const { expressionContainerManagerState, isPlaying } = this.state
     return (
@@ -181,6 +188,7 @@ export default class ExpressionRunner extends React.Component<
                 hideLeftMostPrioritiesExplanation={
                   hideLeftMostPrioritiesExplanation
                 }
+                showAllShowSteps={showAllShowSteps}
               />
             )}
           </Container>

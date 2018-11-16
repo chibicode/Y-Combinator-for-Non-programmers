@@ -44,16 +44,20 @@ export default class ExpressionContainerManager {
   // The YC example should specify maximumIndex.
   public maximumIndex = 100
   public lastAllowedExpressionState?: CallStates
+  public showAllShowSteps?: boolean
 
   constructor({
     expressionContainer,
-    lastAllowedExpressionState
+    lastAllowedExpressionState,
+    showAllShowSteps
   }: {
     expressionContainer: SteppedExpressionContainer
     lastAllowedExpressionState?: CallStates
+    showAllShowSteps?: boolean
   }) {
     this.expressionContainers.push(expressionContainer)
     this.lastAllowedExpressionState = lastAllowedExpressionState
+    this.showAllShowSteps = showAllShowSteps
     this.precompute()
   }
 
@@ -99,7 +103,10 @@ export default class ExpressionContainerManager {
     ) {
       let expressionContainer: SteppedExpressionContainer = this
         .currentExpressionContainer
-      expressionContainer = stepExpressionContainer(expressionContainer)
+      expressionContainer = stepExpressionContainer(
+        expressionContainer,
+        this.showAllShowSteps
+      )
 
       this.expressionContainers.push(expressionContainer)
       this.currentIndex++
