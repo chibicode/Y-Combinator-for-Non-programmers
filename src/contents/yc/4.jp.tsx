@@ -81,7 +81,7 @@ export default () => {
       <P>
         そして今回、初登場するのが
         <Strong>
-          「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>」
+          「いつか食べたいものリスト <Emoji size="mdlg">😎</Emoji>」
         </Strong>
         です。
         <Em>
@@ -93,12 +93,12 @@ export default () => {
       <P>
         ここだと、
         <Strong>サンドイッチ</Strong> <Emoji size="mdlg">🥪</Emoji>{' '}
-        が「いつか食べたいものリスト <Emoji size="mdlg">💭</Emoji>
+        が「いつか食べたいものリスト <Emoji size="mdlg">😎</Emoji>
         」に入っています。
       </P>
       <P>
         <Em>
-          「いつか食べたいものリスト <Emoji>💭</Emoji>
+          「いつか食べたいものリスト <Emoji>😎</Emoji>
           」の中にある料理はいずれ 「
           <Strong>
             次に食べる料理 <Emoji>😋</Emoji>
@@ -107,7 +107,7 @@ export default () => {
           <Strong>無視してかまいません</Strong>。
         </Em>
       </P>
-      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
+      <EmojiSeparator emojis={['😎', '🤔', '😎']} />
       <P>
         最後に、
         <Strong>上段のマス</Strong>
@@ -123,7 +123,7 @@ export default () => {
       <H3>まとめ</H3>
       <P>
         <Em>
-          「いつか食べたいものリスト <Emoji>💭</Emoji>
+          「いつか食べたいものリスト <Emoji>😎</Emoji>
           」の中にある料理はいずれ 「
           <Strong>
             次に食べる料理 <Emoji>😋</Emoji>
@@ -132,7 +132,7 @@ export default () => {
           <Strong>無視してかまいません</Strong>。
         </Em>
       </P>
-      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
+      <EmojiSeparator emojis={['😎', '🤔', '😎']} />
       <H3>クイズ: 下段が4マスの問題</H3>
       <P>
         では、下の
@@ -148,18 +148,18 @@ export default () => {
           食べれる料理は
           <Em>下段の一番右</Em>
           にあるステーキのみ。
-          <Emoji>🥩</Emoji>
+          <Emoji size="mdlg">🥩</Emoji>
         </UlLi>
         <UlLi>
           あなたが次に食べるのは、
           <Em>下段の一番左</Em>
           にあるお寿司。
-          <Emoji>🍣</Emoji>
+          <Emoji size="mdlg">🍣</Emoji>
         </UlLi>
         <UlLi>
           <Em>下段の他のマス</Em>
           は「いつか食べたいものリスト」なので、無視してよい。
-          <Emoji>💭</Emoji>
+          <Emoji>😎</Emoji>
         </UlLi>
       </Ul>
       {episode4[i++]()}

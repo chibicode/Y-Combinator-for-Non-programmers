@@ -52,7 +52,7 @@ export default () => {
         Therefore just the sandwich <Emoji>🥪</Emoji> remains at the end:
       </P>
       {episode4[i++]()}
-      <H3>Wish List</H3>
+      <H3>“Eat Later” List</H3>
       <P>
         Next, we’ll talk about the case when there are{' '}
         <Em>more than two cells</Em> on the bottom. Check out this one:
@@ -78,29 +78,21 @@ export default () => {
       <P>
         <Em>
           <Strong>Now, this one’s new:</Strong> Everything else on the bottom
-          row is <Strong>your wish list.</Strong> <Emoji size="mdlg">💭</Emoji>
+          row is your <Strong>“eat later” list.</Strong> <Emoji>😎</Emoji>
         </Em>{' '}
-        In this case, the sandwich <Emoji size="mdlg">🥪</Emoji> is in the wish
-        list.
+        In this case, the sandwich <Emoji size="mdlg">🥪</Emoji> is in your “eat
+        later” list.
       </P>
       {episode4[i++]()}
       <P>
-        <Strong>
-          <Emoji size="mdlg">💭</Emoji> What wish list means:
-        </Strong>{' '}
+        <Strong>What it means:</Strong>{' '}
         <Em>
-          You’re not eating them yet, but you’d like to eat them eventually.
-        </Em>
-      </P>
-      <P>
-        <Strong>In other words:</Strong>{' '}
-        <Em>
-          You can <Strong>ignore</Strong> food in the wish list{' '}
-          <Emoji>💭</Emoji> until they become what you’re eating next{' '}
+          You can <Strong>ignore</Strong> food in the “eat later” list{' '}
+          <Emoji>😎</Emoji> until they become what you’re eating next{' '}
           <Emoji>😋</Emoji>.
         </Em>
       </P>
-      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
+      <EmojiSeparator emojis={['😎', '➡', '😋']} />
       <P>
         And the <Strong>top cell</Strong> represents what the chef is preparing.
         This is the same as before.
@@ -111,10 +103,10 @@ export default () => {
       <H3>Review</H3>
       <P>
         <Strong>What you need to know:</Strong> You can <Strong>ignore</Strong>{' '}
-        food in the wish list <Emoji>💭</Emoji> until they become what you’re
-        eating next <Emoji>😋</Emoji>.
+        food in the “eat later” list <Emoji>😎</Emoji> until they become what
+        you’re eating next <Emoji>😋</Emoji>.
       </P>
-      <EmojiSeparator emojis={['💭', '🤔', '💭']} />
+      <EmojiSeparator emojis={['😎', '➡', '😋']} />
       <H3>Quiz: Four Cells on the Bottom</H3>
       <P>
         Check out the following {h('ycBentoBox')}.{' '}
@@ -126,17 +118,17 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          The steak <Emoji>🥩</Emoji> is the only available dish because it’s{' '}
-          <Em>the rightmost item on the bottom row</Em>.
+          The steak <Emoji size="mdlg">🥩</Emoji> is the only available dish
+          because it’s <Em>the rightmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
-          The sushi <Emoji>🍣</Emoji> is what you’re eating next because it’s{' '}
-          <Em>the leftmost item on the bottom row</Em>.
+          The sushi <Emoji size="mdlg">🍣</Emoji> is what you’re eating next
+          because it’s <Em>the leftmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>
           <Em>
-            <Strong>Everything else</Strong> on the bottom row is on wish list{' '}
-            <Emoji>💭</Emoji>.
+            <Strong>Everything else</Strong> on the bottom row is on the “eat
+            later” list <Emoji>😎</Emoji>.
           </Em>
         </UlLi>
       </Ul>

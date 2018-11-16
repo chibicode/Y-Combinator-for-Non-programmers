@@ -23,8 +23,8 @@ export const allTranslations = {
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
   ycEpisode4: {
-    en: 'Wish List',
-    jp: 'いつか食べたいものリスト'
+    en: '“Eat Later” List',
+    jp: '次に食べるものリスト'
   },
   ycEpisode5: {
     en: 'Priorities',

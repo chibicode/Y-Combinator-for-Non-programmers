@@ -10,7 +10,7 @@ interface EmojiBadgeProps {
 }
 
 const funcArgColor = colors('pink400')
-const funcBodyUnboundColor = colors('grey300')
+const funcBodyUnboundColor = colors('grey500')
 
 const badgeTypeToColors = (x: EmojiBadgeProps['badgeType']): string =>
   ({
@@ -107,7 +107,7 @@ const badgeTypeToEmoji = (x: EmojiBadgeProps['badgeType']) =>
     callArg: '👨‍🍳',
     funcArg: '😋',
     funcBound: '🍽',
-    funcUnbound: '💭',
+    funcUnbound: '😎',
     betaReduced: '🆕'
   }[x])
 
