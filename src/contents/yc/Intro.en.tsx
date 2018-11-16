@@ -101,7 +101,7 @@ export default () => {
         </ExternalLink>
         :
       </P>
-      <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
+      <EmojiSeparator emojis={['🕶', '🆚', '👔']} Component={P} />
       <Blockquote>
         <P>
           <Strong>

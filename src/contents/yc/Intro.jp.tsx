@@ -96,7 +96,7 @@ export default () => {
         </Strong>
         Yコンビネーター創業者のひとり、ポール・グレアム氏はインタビューでこう語っていました。
       </P>
-      <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
+      <EmojiSeparator emojis={['🕶', '🆚', '👔']} Component={P} />
       <Blockquote>
         <P>
           <Strong>
