@@ -2,7 +2,6 @@ import { css } from 'emotion'
 import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-import DevilYellow from 'src/components/Yc/DevilYellow'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
@@ -237,7 +236,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji>😈</Emoji> <Strong>Devil</Strong> appears (same item in{' '}
+            <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong> (same item in{' '}
             <EmojiBadge badgeType="callArg" inline />{' '}
             <EmojiBadge badgeType="funcUnbound" inline />{' '}
             <EmojiBadge badgeType="funcBound" inline />)
@@ -246,8 +245,8 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            <Emoji>😈</Emoji> <Strong>小悪魔</Strong>
-            が登場 (<EmojiBadge badgeType="callArg" inline />{' '}
+            <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong> (
+            <EmojiBadge badgeType="callArg" inline />{' '}
             <EmojiBadge badgeType="funcUnbound" inline />{' '}
             <EmojiBadge badgeType="funcBound" inline /> に同じ料理がある)
           </>
@@ -258,17 +257,17 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji customChildren={<DevilYellow />} /> <Strong>Devil</Strong>{' '}
-            changes <EmojiBadge badgeType="funcUnbound" inline />{' '}
-            <EmojiBadge badgeType="funcBound" inline />
+            <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong>:{' '}
+            <EmojiBadge badgeType="funcUnbound" inline />{' '}
+            <EmojiBadge badgeType="funcBound" inline /> become new dish
           </>
         )
       } else {
         return (
           <>
-            <Emoji customChildren={<DevilYellow />} /> <Strong>小悪魔</Strong>が
+            <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong>:{' '}
             <EmojiBadge badgeType="funcUnbound" inline />{' '}
-            <EmojiBadge badgeType="funcBound" inline /> を新しい料理に
+            <EmojiBadge badgeType="funcBound" inline /> が新しい料理に
           </>
         )
       }

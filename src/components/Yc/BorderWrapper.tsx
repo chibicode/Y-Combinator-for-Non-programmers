@@ -5,8 +5,6 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import crossSvg from 'src/images/cross.url.svg'
-import devilYellowSvg from 'src/images/devil-yellow.url.svg'
-import devilSvg from 'src/images/devil.url.svg'
 import starSvg from 'src/images/star.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -41,7 +39,7 @@ const background = (
     }
     case 'semiTransparent': {
       return css`
-        background: ${colors('white')};
+        background: ${colors('grey200')};
       `
     }
     case 'highlighted': {
@@ -72,19 +70,13 @@ const background = (
     case 'conflictFuncBound':
     case 'conflictCallArg': {
       return css`
-        background-image: url(${devilSvg});
-        background-size: ${variableSize === 'lg' ? 3 : 2.5}rem
-          ${variableSize === 'lg' ? 3 : 2.5}rem;
-        background-position: center center;
+        background: ${colors('lightBlue50')};
       `
     }
     case 'conflictResolvedFuncUnbound':
     case 'conflictResolvedBound': {
       return css`
-        background-image: url(${devilYellowSvg});
-        background-size: ${variableSize === 'lg' ? 3 : 2.5}rem
-          ${variableSize === 'lg' ? 3 : 2.5}rem;
-        background-position: center center;
+        background: ${colors('lightGreen100')};
       `
     }
   }

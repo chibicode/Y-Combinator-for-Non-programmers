@@ -676,14 +676,15 @@ export const episode7 = [
   ),
   () => (
     <ExpressionRunner
-      hideControls
       expressionContainer={lessonExpressions.episode7Expression1}
       containerSize={'xs'}
       variableSize={'md'}
+      hidePlayButton
+      lastAllowedExpressionState="alphaConvertDone"
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'alphaConvertDone'
+          state: 'needsAlphaConvert'
         }
       ]}
     />

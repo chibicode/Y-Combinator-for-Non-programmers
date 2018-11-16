@@ -36,11 +36,11 @@ export default () => {
       <P>
         Now, let’s cover the last rule:{' '}
         <Strong>
-          the devil. <Emoji>😈</Emoji>
+          Shuffle Time. <Emoji>🔀</Emoji>
         </Strong>
       </P>
-      <EmojiSeparator emojis={['😈', '😈', '😈']} />
-      <H3>The Devil</H3>
+      <EmojiSeparator emojis={['🔀', '🔀', '🔀']} />
+      <H3>Shuffle Time</H3>
       <P>
         In the following {h('ycBentoBox')}, notice that{' '}
         <Em>
@@ -57,31 +57,32 @@ export default () => {
       {episode7[i++]()}
       <P>
         <Em>
-          Whenever there’s any item that appears in{' '}
+          Whenever there’s <Strong>the same item</Strong> that appears in{' '}
           <EmojiBadge badgeType="callArg" inline />,{' '}
           <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
-          <EmojiBadge badgeType="funcBound" inline />, then{' '}
+          <EmojiBadge badgeType="funcBound" inline />, it’s{' '}
           <Strong>
-            the devil <Emoji>😈</Emoji>
-          </Strong>{' '}
-          shows up:
+            Shuffle Time <Emoji>🔀</Emoji>
+          </Strong>
+          :
         </Em>
       </P>
       {episode7[i++]()}
       <P>
-        The{' '}
+        Here’s what happens in{' '}
         <Strong>
-          devil <Emoji>😈</Emoji>
-        </Strong>{' '}
-        does the following:
+          Shuffle Time <Emoji>🔀</Emoji>
+        </Strong>
+        :
       </P>
       <Ul>
         <UlLi>
           <Em>
-            Changes all sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
+            All sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
             <EmojiBadge badgeType="funcUnbound" inline /> and{' '}
-            <EmojiBadge badgeType="funcBound" inline /> to some random{' '}
-            <Strong>new dish</Strong>.
+            <EmojiBadge badgeType="funcBound" inline /> becomes a{' '}
+            <Strong>new dish</Strong> (that’s not yet in the {h('ycBentoBox')}
+            ).
           </Em>
         </UlLi>
         <UlLi>
@@ -89,6 +90,9 @@ export default () => {
           <EmojiBadge badgeType="callArg" inline /> is unchanged.
         </UlLi>
       </Ul>
+      <P>
+        <Em>Try pressing {h('ycNext')}:</Em>
+      </P>
       {episode7[i++]()}
       <P>
         In this case,{' '}
@@ -98,13 +102,13 @@ export default () => {
         </Strong>
         .
       </P>
+      <EmojiSeparator emojis={['🥪', '🔀', '🥩']} />
       <P>From here, {h('ycTryUntilDone', false)} as usual:</P>
       {episode7[i++]()}
       <P>That’s it!</P>
-      <EmojiSeparator emojis={['😈', '😈', '😈']} />
       <H3>Another Example</H3>
       <P>
-        Here’s another example where the devil <Emoji>😈</Emoji> appears.{' '}
+        Here’s another Shuffle Time <Emoji>🔀</Emoji> example.{' '}
         {h('ycTryUntilDone')}:
       </P>
       {episode7[i++]()}
@@ -114,7 +118,8 @@ export default () => {
         <UlLi>
           <Strong>
             <Em>
-              You don’t need to memorize the devil <Emoji>😈</Emoji> rule.
+              You don’t need to memorize the Shuffle Time <Emoji>🔀</Emoji>{' '}
+              rule.
             </Em>
           </Strong>{' '}
           You just need to know that this rule exists, and recognize it when

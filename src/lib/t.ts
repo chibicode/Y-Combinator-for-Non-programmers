@@ -35,8 +35,8 @@ export const allTranslations = {
     jp: 'いちばん左から'
   },
   ycEpisode7: {
-    en: 'The Devil',
-    jp: '小悪魔'
+    en: 'Shuffle Time',
+    jp: 'シャッフルタイム'
   },
   ycEpisode8: {
     en: 'The Two Patterns',
