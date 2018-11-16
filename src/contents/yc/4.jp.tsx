@@ -79,35 +79,40 @@ export default () => {
       </P>
       {episode4[i++]()}
       <P>
-        そして今回、初登場するのが
-        <Strong>
-          「あとで食べるものリスト <Emoji size="mdlg">😎</Emoji>」
-        </Strong>
-        です。
+        そして
+        <Strong>下段の一番左と一番右以外</Strong>
+        のマスは、
         <Em>
-          <Strong>下段の一番左と一番右以外</Strong>
-          のマスは、「まだ食べないけど、いずれ食べる料理」を表しています。
+          <Strong>
+            「あとで食べるものリスト <Emoji>😎</Emoji>」
+          </Strong>
         </Em>
+        です。
       </P>
       {episode4[i++]()}
       <P>
         ここだと、
         <Strong>サンドイッチ</Strong> <Emoji size="mdlg">🥪</Emoji>{' '}
-        が「あとで食べるものリスト <Emoji size="mdlg">😎</Emoji>
+        が「あとで食べるものリスト <Emoji>😎</Emoji>
         」に入っています。
       </P>
       <P>
         <Em>
           「あとで食べるものリスト <Emoji>😎</Emoji>
-          」の中にある料理はいずれ 「
-          <Strong>
-            次に食べる料理 <Emoji>😋</Emoji>
-          </Strong>
-          」 になります。それまでは、
+          」の中にある料理は、現段階では
           <Strong>無視してかまいません</Strong>。
         </Em>
       </P>
-      <EmojiSeparator emojis={['😎', '🤔', '😎']} />
+      <P>
+        <Strong>次の章</Strong>
+        で、「あとで食べるものリスト <Emoji>😎</Emoji>
+        」の料理が
+        <Em>
+          「次に食べるもの <Emoji>😋</Emoji>」 に変わる
+        </Em>
+        例を紹介しますので、それまで無視しちゃってください！
+      </P>
+      <EmojiSeparator emojis={['😎', '➡️', '😋']} />
       <P>
         最後に、
         <Strong>上段のマス</Strong>
@@ -120,19 +125,21 @@ export default () => {
         {h('ycTryUntilDone')}:
       </P>
       {episode4[i++]()}
-      <H3>まとめ</H3>
       <P>
+        <Strong>もう一度おさらい:</Strong>{' '}
         <Em>
           「あとで食べるものリスト <Emoji>😎</Emoji>
-          」の中にある料理はいずれ 「
-          <Strong>
-            次に食べる料理 <Emoji>😋</Emoji>
-          </Strong>
-          」 になります。それまでは、
+          」の中にある料理は、現段階では
           <Strong>無視してかまいません</Strong>。
         </Em>
       </P>
-      <EmojiSeparator emojis={['😎', '🤔', '😎']} />
+      <P>
+        <Strong>次の章</Strong>
+        で、「あとで食べるものリスト <Emoji>😎</Emoji>
+        」の料理が「次に食べるもの <Emoji>😋</Emoji>」 に<Strong>変わる</Strong>
+        例を紹介します。
+      </P>
+      <EmojiSeparator emojis={['😎', '➡', '😋']} />
       <H3>クイズ: 下段が4マスの問題</H3>
       <P>
         では、下の
@@ -158,8 +165,8 @@ export default () => {
         </UlLi>
         <UlLi>
           <Em>下段の他のマス</Em>
-          は「あとで食べるものリスト」なので、無視してよい。
-          <Emoji>😎</Emoji>
+          は「あとで食べるものリスト <Emoji>😎</Emoji>
+          」なので、無視してよい。
         </UlLi>
       </Ul>
       {episode4[i++]()}

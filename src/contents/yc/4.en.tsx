@@ -90,10 +90,13 @@ export default () => {
           You can <Strong>ignore</Strong> food in the “eat later” list{' '}
           <Emoji>😎</Emoji> for now.
         </Em>{' '}
-        In the <Strong>next episode</Strong>, we’ll talk about the case where
-        this will be relevant.
       </P>
-      <EmojiSeparator emojis={['😎', '😎', '😎']} />
+      <P>
+        In the <Strong>next episode</Strong>, we’ll talk about the case where
+        the “eat later” dishes <Emoji>😎</Emoji>{' '}
+        <Em>turn into what you’re eating next</Em> <Emoji>😋</Emoji>.
+      </P>
+      <EmojiSeparator emojis={['😎', '➡️', '😋']} />
       <P>
         And the <Strong>top cell</Strong> represents what the chef is preparing.
         This is the same as before.
@@ -107,10 +110,13 @@ export default () => {
           You can <Strong>ignore</Strong> food in the “eat later” list{' '}
           <Emoji>😎</Emoji> for now.
         </Em>{' '}
-        In the <Strong>next episode</Strong>, we’ll talk about the case where
-        this will be relevant.
       </P>
-      <EmojiSeparator emojis={['😎', '😎', '😎']} />
+      <P>
+        In the <Strong>next episode</Strong>, we’ll talk about the case where
+        the “eat later” dishes <Emoji>😎</Emoji>{' '}
+        <Em>turn into what you’re eating next</Em> <Emoji>😋</Emoji>.
+      </P>
+      <EmojiSeparator emojis={['😎', '➡️', '😋']} />
       <H3>Quiz: Four Cells on the Bottom</H3>
       <P>
         Check out the following {h('ycBentoBox')}.{' '}
@@ -132,7 +138,8 @@ export default () => {
         <UlLi>
           <Em>
             <Strong>Everything else</Strong> on the bottom row is on the “eat
-            later” list <Emoji>😎</Emoji>.
+            later” list <Emoji>😎</Emoji>, so{' '}
+            <Strong>you can ignore them</Strong>.
           </Em>
         </UlLi>
       </Ul>

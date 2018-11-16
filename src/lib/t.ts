@@ -24,7 +24,7 @@ export const allTranslations = {
   },
   ycEpisode4: {
     en: '“Eat Later” List',
-    jp: '次に食べるものリスト'
+    jp: 'あとで食べるものリスト'
   },
   ycEpisode5: {
     en: 'Priorities',
