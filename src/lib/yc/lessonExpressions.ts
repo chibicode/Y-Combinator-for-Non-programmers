@@ -203,18 +203,18 @@ const baseNot: FunctionExpressionParams = {
   }
 }
 
-export const episode8Expression1 = initializeExpressionContainer(baseTrue)
+export const oldEpisode8Expression1 = initializeExpressionContainer(baseTrue)
 
-export const episode8Expression2 = initializeExpressionContainer(baseFalse)
+export const oldEpisode8Expression2 = initializeExpressionContainer(baseFalse)
 
-export const episode8Expression3 = initializeExpressionContainer(baseNot)
+export const oldEpisode8Expression3 = initializeExpressionContainer(baseNot)
 
-export const episode8Expression4 = initializeExpressionContainer([
+export const oldEpisode8Expression4 = initializeExpressionContainer([
   baseNot,
   baseTrue
 ])
 
-export const episode8Expression5 = initializeExpressionContainer({
+export const oldEpisode8Expression5 = initializeExpressionContainer({
   arg: 'f',
   body: {
     arg: 'g',
@@ -222,7 +222,7 @@ export const episode8Expression5 = initializeExpressionContainer({
   }
 })
 
-export const episode8Expression6 = initializeExpressionContainer([
+export const oldEpisode8Expression6 = initializeExpressionContainer([
   baseNot,
   baseFalse
 ])
@@ -235,27 +235,27 @@ const baseOr: FunctionExpressionParams = {
   }
 }
 
-export const episode9Expression1 = initializeExpressionContainer(baseOr)
+export const oldEpisode9Expression1 = initializeExpressionContainer(baseOr)
 
-export const episode9Expression2 = initializeExpressionContainer([
+export const oldEpisode9Expression2 = initializeExpressionContainer([
   baseOr,
   baseTrue,
   baseTrue
 ])
 
-export const episode9Expression3 = initializeExpressionContainer([
+export const oldEpisode9Expression3 = initializeExpressionContainer([
   baseOr,
   baseFalse,
   baseTrue
 ])
 
-export const episode9Expression4 = initializeExpressionContainer([
+export const oldEpisode9Expression4 = initializeExpressionContainer([
   baseOr,
   baseTrue,
   baseFalse
 ])
 
-export const episode9Expression5 = initializeExpressionContainer([
+export const oldEpisode9Expression5 = initializeExpressionContainer([
   baseOr,
   baseFalse,
   baseFalse
@@ -280,6 +280,52 @@ const yCombinator: FunctionExpressionParams = {
     }
   ]
 }
+
+const baseZero: FunctionExpressionParams = {
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: 'b'
+  }
+}
+
+// const baseOne: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: ['a', 'b']
+//   }
+// }
+
+const baseSucc: FunctionExpressionParams = {
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: {
+      arg: 'c',
+      body: ['b', [['a', 'b'], 'c']]
+    }
+  }
+}
+
+// const basePlus: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: {
+//       arg: 'c',
+//       body: {
+//         arg: 'd',
+//         body: ['a', ['c', [['b', 'c'], 'd']]]
+//       }
+//     }
+//   }
+// }
+
+export const episode8Expression1 = initializeExpressionContainer([
+  baseSucc,
+  baseZero
+])
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
