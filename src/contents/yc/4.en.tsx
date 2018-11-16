@@ -88,11 +88,12 @@ export default () => {
         <Strong>What it means:</Strong>{' '}
         <Em>
           You can <Strong>ignore</Strong> food in the “eat later” list{' '}
-          <Emoji>😎</Emoji> until they become what you’re eating next{' '}
-          <Emoji>😋</Emoji>.
-        </Em>
+          <Emoji>😎</Emoji> for now.
+        </Em>{' '}
+        In the <Strong>next episode</Strong>, we’ll talk about the case where
+        this will be relevant.
       </P>
-      <EmojiSeparator emojis={['😎', '➡', '😋']} />
+      <EmojiSeparator emojis={['😎', '😎', '😎']} />
       <P>
         And the <Strong>top cell</Strong> represents what the chef is preparing.
         This is the same as before.
@@ -100,13 +101,16 @@ export default () => {
       {episode4[i++]()}
       <P>{h('ycTryUntilDone')}:</P>
       {episode4[i++]()}
-      <H3>Review</H3>
       <P>
-        <Strong>What you need to know:</Strong> You can <Strong>ignore</Strong>{' '}
-        food in the “eat later” list <Emoji>😎</Emoji> until they become what
-        you’re eating next <Emoji>😋</Emoji>.
+        <Strong>Again:</Strong>{' '}
+        <Em>
+          You can <Strong>ignore</Strong> food in the “eat later” list{' '}
+          <Emoji>😎</Emoji> for now.
+        </Em>{' '}
+        In the <Strong>next episode</Strong>, we’ll talk about the case where
+        this will be relevant.
       </P>
-      <EmojiSeparator emojis={['😎', '➡', '😋']} />
+      <EmojiSeparator emojis={['😎', '😎', '😎']} />
       <H3>Quiz: Four Cells on the Bottom</H3>
       <P>
         Check out the following {h('ycBentoBox')}.{' '}
