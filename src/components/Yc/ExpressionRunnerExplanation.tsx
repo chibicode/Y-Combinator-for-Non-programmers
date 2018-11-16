@@ -16,7 +16,7 @@ interface ExpressionRunnerExplanationProps {
   currentStep: number
   currentSubstep: number
   hideLeftMostPrioritiesExplanation: boolean
-  isFastForwarding: boolean
+  isPlaying: boolean
   numSecondsRemaining: number
   showAllShowSteps?: boolean
 }
@@ -287,7 +287,7 @@ const ExpressionRunnerExplanation: React.SFC<
   isDone,
   hideLeftMostPrioritiesExplanation,
   numSecondsRemaining,
-  isFastForwarding,
+  isPlaying,
   showAllShowSteps
 }) => (
   <div
@@ -300,7 +300,7 @@ const ExpressionRunnerExplanation: React.SFC<
       line-height: ${lineHeights(2)};
     `}
   >
-    {isFastForwarding ? (
+    {isPlaying ? (
       locale === 'en' ? (
         <>
           <Strong

@@ -889,6 +889,14 @@ export const episode9 = [
 export const episode10 = [
   () => (
     <ExpressionRunner
+      hideForwardAndBackButtons
+      expressionContainer={lessonExpressions.episode5Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode8Expression1}
       containerSize={'sm'}
       variableSize={'md'}

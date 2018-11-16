@@ -19,7 +19,7 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (isFastForwarding?: boolean) =>
-  isFastForwarding ? 250 : 700
+  isFastForwarding ? 250 : 500
 
 type InitializeInstruction =
   | {
@@ -183,7 +183,7 @@ export default class ExpressionRunner extends React.Component<
           >
             {!hideExplanations && (
               <ExpressionRunnerExplanation
-                isFastForwarding={isFastForwarding}
+                isPlaying={isPlaying}
                 numSecondsRemaining={numSecondsRemaining(
                   expressionContainerManagerState.numStepsRemaining,
                   isFastForwarding
