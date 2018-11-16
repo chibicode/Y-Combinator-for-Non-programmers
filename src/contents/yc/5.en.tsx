@@ -144,9 +144,9 @@ export default () => {
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>Note:</Strong> the sandwich was on the “eat later” list{' '}
-        <Emoji>😎</Emoji> initially. But now, the sandwich became what you’re
-        eating next <Emoji>😋</Emoji>.
+        <Strong>Note:</Strong> the sandwich <Emoji size="mdlg">🥪</Emoji> was on
+        the “eat later” list <Emoji>😎</Emoji> initially. But now, it became
+        what you’re eating next <Emoji>😋</Emoji>.
       </P>
       <EmojiSeparator emojis={['😎', '➡', '😋']} />
       <P>

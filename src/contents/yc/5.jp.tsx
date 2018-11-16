@@ -159,8 +159,8 @@ export default () => {
       </P>
       {episode5[i++]()}
       <P>
-        <Strong>ポイント:</Strong>{' '}
-        サンドイッチははじめ「いつか食べたいものリスト <Emoji>😎</Emoji>
+        <Strong>ポイント:</Strong> サンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+        は当初「あとで食べるものリスト <Emoji>😎</Emoji>
         」に入っていましたが、ここではサンドイッチが次に食べる料理{' '}
         <Emoji>😋</Emoji> になっています。
       </P>

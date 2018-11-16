@@ -107,14 +107,13 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <EmojiBadge badgeType="funcUnbound" inline /> Wish list
+            <EmojiBadge badgeType="funcUnbound" inline /> “Eat Later” list
           </>
         )
       } else {
         return (
           <>
-            いつか食べたいものリスト{' '}
-            <EmojiBadge badgeType="funcUnbound" inline />
+            あとで食べるものリスト <EmojiBadge badgeType="funcUnbound" inline />
           </>
         )
       }

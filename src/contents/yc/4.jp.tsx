@@ -55,7 +55,7 @@ export default () => {
         というわけで、残るのはサンドイッチ <Emoji>🥪</Emoji> だけになります。
       </P>
       {episode4[i++]()}
-      <H3>いつか食べたいものリスト</H3>
+      <H3>あとで食べるものリスト</H3>
       <P>
         次は、
         <Em>下段に3マスもある</Em>
@@ -81,7 +81,7 @@ export default () => {
       <P>
         そして今回、初登場するのが
         <Strong>
-          「いつか食べたいものリスト <Emoji size="mdlg">😎</Emoji>」
+          「あとで食べるものリスト <Emoji size="mdlg">😎</Emoji>」
         </Strong>
         です。
         <Em>
@@ -93,12 +93,12 @@ export default () => {
       <P>
         ここだと、
         <Strong>サンドイッチ</Strong> <Emoji size="mdlg">🥪</Emoji>{' '}
-        が「いつか食べたいものリスト <Emoji size="mdlg">😎</Emoji>
+        が「あとで食べるものリスト <Emoji size="mdlg">😎</Emoji>
         」に入っています。
       </P>
       <P>
         <Em>
-          「いつか食べたいものリスト <Emoji>😎</Emoji>
+          「あとで食べるものリスト <Emoji>😎</Emoji>
           」の中にある料理はいずれ 「
           <Strong>
             次に食べる料理 <Emoji>😋</Emoji>
@@ -123,7 +123,7 @@ export default () => {
       <H3>まとめ</H3>
       <P>
         <Em>
-          「いつか食べたいものリスト <Emoji>😎</Emoji>
+          「あとで食べるものリスト <Emoji>😎</Emoji>
           」の中にある料理はいずれ 「
           <Strong>
             次に食べる料理 <Emoji>😋</Emoji>
@@ -158,7 +158,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Em>下段の他のマス</Em>
-          は「いつか食べたいものリスト」なので、無視してよい。
+          は「あとで食べるものリスト」なので、無視してよい。
           <Emoji>😎</Emoji>
         </UlLi>
       </Ul>
