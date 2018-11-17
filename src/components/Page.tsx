@@ -10,16 +10,6 @@ class Page extends React.Component<{ children: React.ReactNode }> {
 
   public componentDidMount() {
     document.addEventListener(
-      'touchmove',
-      event => {
-        if ((event as any).scale !== 1) {
-          event.preventDefault()
-        }
-      },
-      { passive: false }
-    )
-
-    document.addEventListener(
       'touchend',
       event => {
         const now = new Date().getTime()
