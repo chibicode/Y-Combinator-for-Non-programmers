@@ -122,8 +122,7 @@ export default () => {
               rule.
             </Em>
           </Strong>{' '}
-          You just need to know that this rule exists, and recognize it when
-          used.
+          You just need to know that this rule exists.
         </UlLi>
         <UlLi>
           <Strong>You’re done with the beginner levels!</Strong> We’ll move onto
