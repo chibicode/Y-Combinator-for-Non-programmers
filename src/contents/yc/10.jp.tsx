@@ -13,7 +13,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode9 } from 'src/components/Yc/AllExpressionRunners'
+import { episode11 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -25,7 +25,7 @@ export default () => {
     <>
       {h('ycQuizReview', 8)}
       <P>{h('ycPlayUntilDone')}:</P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>To summarize:</Strong>
       </P>
@@ -51,7 +51,7 @@ export default () => {
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>What this {h('ycBentoBox')} does</H3>
       <P>So, it seems that the following {h('ycBentoBox')}:</P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>Has the following effects:</P>
       <Ul>
         <UlLi>
@@ -79,15 +79,15 @@ export default () => {
         </Strong>{' '}
         Consider this one:
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <H3>Scenario 1 of 4</H3>
       <P>
         First, we will put two <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
         ’s on top.
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>{h('ycPlayUntilDone')} and see what happens:</P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>Result:</Strong> It ended up as{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
@@ -99,7 +99,7 @@ export default () => {
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
         {h('ycPlayUntilDone')} and see what happens:
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>Result:</Strong> It ended up as{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> again.
@@ -112,7 +112,7 @@ export default () => {
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> at the top?{' '}
         {h('ycPlayUntilDone')} and see what happens:
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>Result:</Strong> It ended up as{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> again.
@@ -131,7 +131,7 @@ export default () => {
         and <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
         {h('ycPlayUntilDone')} and see what happens:
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>Wow!</Strong> <Emoji>😳</Emoji> This time, it ended up as{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
@@ -140,7 +140,7 @@ export default () => {
       <P>So this one’s a bit different from the other three scenarios!</P>
       <H3>What this {h('ycBentoBox')} does</H3>
       <P>So, it seems that the following {h('ycBentoBox')}:</P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>Has the following effects:</P>
       <Ul>
         <UlLi>

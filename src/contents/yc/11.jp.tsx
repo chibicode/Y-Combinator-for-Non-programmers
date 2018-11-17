@@ -13,7 +13,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode9 } from 'src/components/Yc/AllExpressionRunners'
+import { episode11 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -25,7 +25,7 @@ export default () => {
     <>
       {h('ycQuizReview', 8)}
       <P>{h('ycPlayUntilDone')}:</P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>まとめると:</Strong>
       </P>
@@ -58,7 +58,7 @@ export default () => {
         {h('ycBentoBox')}
         は、
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>次のような効果があるようです:</P>
       <Ul>
         <UlLi>
@@ -89,18 +89,18 @@ export default () => {
         {h('ycBentoBox')}
         がそうです:
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <H3>ケース1 (全部で4つ)</H3>
       <P>
         まず、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
         のパターンのものをふたつ、上にくっつけます。
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         これで、
         {h('ycPlayUntilDone')}。
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>答え:</Strong>
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になりました！
@@ -113,7 +113,7 @@ export default () => {
         をくっつけたらどうなるでしょう？これで
         {h('ycPlayUntilDone')}。
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>答え:</Strong> またしても{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になりましたね。
@@ -127,7 +127,7 @@ export default () => {
         をくっつけたらどうなるでしょう？これで
         {h('ycPlayUntilDone')}。
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>答え:</Strong> 今回も{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になりました。
@@ -146,7 +146,7 @@ export default () => {
         を上にくっつけてみます。これで
         {h('ycPlayUntilDone')}。
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>
         <Strong>おっと！</Strong> <Emoji>😳</Emoji> 今回は、{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になりました。
@@ -163,7 +163,7 @@ export default () => {
         {h('ycBentoBox')}
         には…
       </P>
-      {episode9[i++]()}
+      {episode11[i++]()}
       <P>…次のような効果があるようです:</P>
       <Ul>
         <UlLi>

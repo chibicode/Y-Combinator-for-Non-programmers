@@ -2,7 +2,7 @@ import React from 'react'
 import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode10 } from 'src/components/Yc/AllExpressionRunners'
+import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -18,7 +18,7 @@ export default () => {
       <P>
         <Em>Try pressing on {h('ycPlay')} below.</Em>
       </P>
-      {episode10[i++]()}
+      {episode8[i++]()}
       <P>It automatically advances the {h('ycBentoBox')} for you.</P>
       <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
       <P>
@@ -42,23 +42,23 @@ export default () => {
       <P>
         This one has the secret code <Strong>0</Strong>:
       </P>
-      {episode10[i++]()}
+      {episode8[i++]()}
       <P>
         This one has the secret code <Strong>1</Strong>:
       </P>
-      {episode10[i++]()}
+      {episode8[i++]()}
       <P>
         This one has the secret code <Strong>2</Strong>:
       </P>
-      {episode10[i++]()}
+      {episode8[i++]()}
       <P>
         This one has the secret code <Strong>3</Strong>:
       </P>
-      {episode10[i++]()}
+      {episode8[i++]()}
       <P>Did you figure out the pattern? Let’s do a quiz!</P>
       <H3>Quiz: Guess the Secret Code</H3>
       <P>What’s the secret code of the following {h('ycBentoBox')}?</P>
-      {episode10[i++]()}
+      {episode8[i++]()}
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>The Answer</H3>
       <P>
@@ -107,14 +107,14 @@ export default () => {
           </Em>
           .
         </P>
-        {episode10[i++]()}
+        {episode8[i++]()}
         <P>
           <Strong>We’ll combine it</Strong> with the following {h('ycBentoBox')}
           :
         </P>
-        {episode10[i++]()}
+        {episode8[i++]()}
         <P>So it becomes:</P>
-        {episode10[i++]()}
+        {episode8[i++]()}
         <P>
           <Strong>Question:</Strong> What do you think will happen when you step
           through this until it’s {h('ycDone')}?

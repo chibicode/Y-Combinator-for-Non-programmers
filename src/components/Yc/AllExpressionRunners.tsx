@@ -724,6 +724,99 @@ export const episode8 = [
   ),
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression3}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression4}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression5}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression6}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression8}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  )
+]
+
+export const episode9 = [
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression8}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  )
+]
+
+export const episode10 = [
+  () => (
+    <ExpressionRunner
+      hideForwardAndBackButtons
+      expressionContainer={lessonExpressions.episode5Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       hideControls
       hideExplanations
       expressionContainer={lessonExpressions.oldEpisode8Expression1}
@@ -812,7 +905,7 @@ export const episode8 = [
   )
 ]
 
-export const episode9 = [
+export const episode11 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.oldEpisode8Expression6}
@@ -878,89 +971,6 @@ export const episode9 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.oldEpisode9Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  )
-]
-
-export const episode10 = [
-  () => (
-    <ExpressionRunner
-      hideForwardAndBackButtons
-      expressionContainer={lessonExpressions.episode5Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression2}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression3}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression4}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression5}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression6}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression7}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression8}
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
