@@ -281,19 +281,19 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
-const baseZero: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: 'b'
-  }
-}
-
-// const baseOne: FunctionExpressionParams = {
+// const baseZero: FunctionExpressionParams = {
 //   arg: 'a',
 //   body: {
 //     arg: 'b',
-//     body: ['a', 'b']
+//     body: 'b'
+//   }
+// }
+
+// const baseThree: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: ['b', 'a', 'a', 'a']
 //   }
 // }
 
@@ -322,9 +322,61 @@ const baseSucc: FunctionExpressionParams = {
 //   }
 // }
 
-export const episode8Expression1 = initializeExpressionContainer([
+export const episode8Expression1 = initializeExpressionContainer({
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: 'b'
+  }
+})
+
+export const episode8Expression2 = initializeExpressionContainer({
+  arg: 'c',
+  body: {
+    arg: 'd',
+    body: ['c', 'd']
+  }
+})
+
+export const episode8Expression3 = initializeExpressionContainer({
+  arg: 'e',
+  body: {
+    arg: 'f',
+    body: ['e', ['e', 'f']]
+  }
+})
+
+export const episode8Expression4 = initializeExpressionContainer({
+  arg: 'g',
+  body: {
+    arg: 'h',
+    body: ['g', ['g', ['g', 'h']]]
+  }
+})
+
+export const episode8Expression5 = initializeExpressionContainer({
+  arg: 'i',
+  body: {
+    arg: 'j',
+    body: ['i', ['i', ['i', ['i', ['i', 'j']]]]]
+  }
+})
+
+const baseTwo: FunctionExpressionParams = {
+  arg: 'e',
+  body: {
+    arg: 'f',
+    body: ['e', ['e', 'f']]
+  }
+}
+
+export const episode8Expression6 = initializeExpressionContainer(baseTwo)
+
+export const episode8Expression7 = initializeExpressionContainer(baseSucc)
+
+export const episode8Expression8 = initializeExpressionContainer([
   baseSucc,
-  baseZero
+  baseTwo
 ])
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)

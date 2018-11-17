@@ -39,16 +39,20 @@ export const allTranslations = {
     jp: 'シャッフルタイム'
   },
   ycEpisode8: {
+    en: 'Secret Code',
+    jp: '暗号'
+  },
+  ycEpisode9: {
+    en: 'TBD',
+    jp: 'TBD'
+  },
+  ycEpisode10: {
     en: 'The Two Patterns',
     jp: 'ふたつのパターン'
   },
-  ycEpisode9: {
+  ycEpisode11: {
     en: 'Patterns You’ve Seen Before',
     jp: 'どこかで見たような法則'
-  },
-  ycEpisode10: {
-    en: 'TBD',
-    jp: 'TBD'
   }
 }
 
