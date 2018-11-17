@@ -370,6 +370,14 @@ const baseTwo: FunctionExpressionParams = {
   }
 }
 
+const baseFour: FunctionExpressionParams = {
+  arg: 'g',
+  body: {
+    arg: 'h',
+    body: ['g', ['g', ['g', ['g', 'h']]]]
+  }
+}
+
 export const episode8Expression6 = initializeExpressionContainer(baseTwo)
 
 export const episode8Expression7 = initializeExpressionContainer(baseSucc)
@@ -378,6 +386,29 @@ export const episode8Expression8 = initializeExpressionContainer([
   baseSucc,
   baseTwo
 ])
+
+export const episode9Expression1 = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: ['b', ['b', ['b', 'c']]]
+  }
+})
+
+export const episode9Expression2 = initializeExpressionContainer(baseFour)
+
+export const episode9Expression3 = initializeExpressionContainer([
+  baseSucc,
+  baseFour
+])
+
+export const episode9Expression4 = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: ['b', ['b', ['b', ['b', ['b', 'c']]]]]
+  }
+})
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 

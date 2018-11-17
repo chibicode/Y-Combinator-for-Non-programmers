@@ -43,8 +43,8 @@ export const allTranslations = {
     jp: '弁当箱の暗号'
   },
   ycEpisode9: {
-    en: 'TBD',
-    jp: 'TBD'
+    en: 'Plus One',
+    jp: '1を足す'
   },
   ycEpisode10: {
     en: 'The Two Patterns',

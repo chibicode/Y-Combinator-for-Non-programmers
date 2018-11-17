@@ -123,11 +123,9 @@ export default () => {
           through this until it’s {h('ycDone')}?
         </P>
         <P>
-          <Strong>Hint:</Strong>{' '}
-          <Em>
-            the secret code changes from <Strong>2</Strong> to something new
-          </Em>
-          . What do you think will be the new secret code?
+          <Strong>Hint:</Strong> the secret code on the top part was{' '}
+          <Strong>2</Strong>. <Em>This will change to something new</Em>. What
+          do you think will be the new secret code?
         </P>
         <YcNextLessonButton nextEpisodeNumber={9} />
       </Ul>

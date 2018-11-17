@@ -156,13 +156,10 @@ export default () => {
           になるまで進めたら、いったいどうなるでしょう？
         </P>
         <P>
-          <Strong>ヒント:</Strong>{' '}
-          <Em>
-            弁当箱の暗号が
-            <Strong>2</Strong>
-            ではなく、新しいものになります
-          </Em>
-          。その新しい暗号は何になるでしょう？
+          <Strong>ヒント:</Strong> 上の部分の弁当箱の暗号は
+          <Strong>2</Strong>
+          でした 。<Em>これが、新しい数字になります。</Em>
+          その新しい暗号は何になるでしょう？
         </P>
         <YcNextLessonButton nextEpisodeNumber={9} />
       </Ul>

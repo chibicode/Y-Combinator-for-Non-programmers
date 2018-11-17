@@ -803,6 +803,58 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression6}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression3}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression4}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
   )
 ]
 
