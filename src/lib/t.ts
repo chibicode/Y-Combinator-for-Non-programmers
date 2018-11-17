@@ -40,7 +40,7 @@ export const allTranslations = {
   },
   ycEpisode8: {
     en: 'Secret Code',
-    jp: '暗号'
+    jp: '弁当箱の暗号'
   },
   ycEpisode9: {
     en: 'TBD',

@@ -1,297 +1,160 @@
-import { css } from 'emotion'
 import React from 'react'
-import {
-  Em,
-  H3,
-  P,
-  Strong,
-  Table,
-  Td,
-  Th,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode11 } from 'src/components/Yc/AllExpressionRunners'
+import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { colors } from 'src/lib/theme'
 
 export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 8)}
-      <P>{h('ycPlayUntilDone')}:</P>
-      {episode11[i++]()}
+      <H3>{h('ycPlay')} ボタン</H3>
       <P>
-        <Strong>To summarize:</Strong>
-      </P>
-      <Ul>
-        <UlLi>
-          In the beginning the {h('ycBentoBox')} was{' '}
-          <InlineEmojiBoxes emojis={['🥗', '🥩', '🥩']} />, which had the
-          pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
-        </UlLi>
-        <UlLi>
-          In the end it became <InlineEmojiBoxes emojis={['🍕', '🍛', '🍕']} />,
-          which has the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-          .
-        </UlLi>
-        <UlLi>
-          <Em>
-            So <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> became{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-          </Em>
-        </UlLi>
-      </Ul>
-      <P>Interesting!</P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>What this {h('ycBentoBox')} does</H3>
-      <P>So, it seems that the following {h('ycBentoBox')}:</P>
-      {episode11[i++]()}
-      <P>Has the following effects:</P>
-      <Ul>
-        <UlLi>
-          <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> (from the last
-            chapter).
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-          </Em>
-        </UlLi>
-      </Ul>
-      <P>Now, here’s the key question:</P>
-      <H3>
-        Is there any other {h('ycBentoBox', true)} that also have interesting
-        effects?
-      </H3>
-      <P>
-        <Strong>
-          Answer: <Em>Yes.</Em> <Emoji>👍</Emoji>
-        </Strong>{' '}
-        Consider this one:
-      </P>
-      {episode11[i++]()}
-      <H3>Scenario 1 of 4</H3>
-      <P>
-        First, we will put two <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-        ’s on top.
-      </P>
-      {episode11[i++]()}
-      <P>{h('ycPlayUntilDone')} and see what happens:</P>
-      {episode11[i++]()}
-      <P>
-        <Strong>Result:</Strong> It ended up as{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-      </P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>Scenario 2 of 4</H3>
-      <P>
-        What if we put <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
-        {h('ycPlayUntilDone')} and see what happens:
-      </P>
-      {episode11[i++]()}
-      <P>
-        <Strong>Result:</Strong> It ended up as{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> again.
-      </P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>Scenario 3 of 4</H3>
-      <P>
-        What if we reverse and put{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> at the top?{' '}
-        {h('ycPlayUntilDone')} and see what happens:
-      </P>
-      {episode11[i++]()}
-      <P>
-        <Strong>Result:</Strong> It ended up as{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> again.
+        中級レベルでは新しく「
+        <Strong>{h('ycPlay')}</Strong>
+        」ボタンを使うことができます。
       </P>
       <P>
-        So far, it seems like{' '}
+        <Em>下の 「{h('ycPlay')}」 を押してみてください。</Em>
+      </P>
+      {episode8[i++]()}
+      <P>
+        {h('ycBentoBox')}
+        を自動で実行してくれる、便利な機能です！
+      </P>
+      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
+      <P>
+        それでは本題に入りましょう。
+        <Strong>ふたつのパターン</Strong>
+        について説明します。
+      </P>
+      <H3>パターンその1</H3>
+      <P>
+        下の
+        {h('ycBentoBox')}
+        をご覧ください:
+      </P>
+      {episode8[i++]()}
+      <P>
+        仮に、
+        <Emoji size="mdlg">🍣</Emoji> を <Emoji size="mdlg">1️⃣</Emoji> とし、{' '}
+        <Emoji size="mdlg">🥪</Emoji> を <Emoji size="mdlg">2️⃣</Emoji>{' '}
+        で表したとします。
+      </P>
+      <P>
+        つまり、 <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
+        というパターンといえます。
+      </P>
+      <H3>パターンその2</H3>
+      <P>では、こちらはどんなパターンでしょうか？</P>
+      {episode8[i++]()}
+      <P>
+        <Strong>答え:</Strong> 仮に <Emoji size="mdlg">🥗</Emoji> を{' '}
+        <Emoji size="mdlg">1️⃣</Emoji> とし、 <Emoji size="mdlg">🥩</Emoji> を{' '}
+        <Emoji size="mdlg">2️⃣</Emoji> とした場合、パターンは{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> となります。
+      </P>
+      <H3>ここで質問です</H3>
+      <P>
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンの
+        {h('ycBentoBox')}
+        と、
+      </P>
+      {episode8[i++]()}
+      <P>
+        下の
+        {h('ycBentoBox')}
+        を組み合わせ、
+      </P>
+      {episode8[i++]()}
+      <P>
+        次のような
+        {h('ycBentoBox')}
+        を作ったとします。
+      </P>
+      {episode8[i++]()}
+      <P>
+        <Strong>問題:</Strong>{' '}
         <Em>
-          it’ll always end up as{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          これを
+          {h('ycDone')}
+          になるまで進めたらどうなるでしょう？
         </Em>
-        . But we have one more scenario to try.
       </P>
-      <H3>Scenario 4 of 4</H3>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>早速やってみましょう</H3>
       <P>
-        Finally, what if we put <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        and <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
-        {h('ycPlayUntilDone')} and see what happens:
+        <Em>
+          新しい「
+          {h('ycPlay')}
+          」ボタン
+        </Em>
+        を使って、
+        {h('ycDone')}
+        になるまで進めてみてください。
       </P>
-      {episode11[i++]()}
+      {episode8[i++]()}
+      <P>というわけで、結果はこうなりました:</P>
+      {episode8[i++]()}
       <P>
-        <Strong>Wow!</Strong> <Emoji>😳</Emoji> This time, it ended up as{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+        <Em>これのパターンは何でしょう？</Em>
       </P>
-      <EmojiSeparator emojis={['😳', '😳', '😳']} />
-      <P>So this one’s a bit different from the other three scenarios!</P>
-      <H3>What this {h('ycBentoBox')} does</H3>
-      <P>So, it seems that the following {h('ycBentoBox')}:</P>
-      {episode11[i++]()}
-      <P>Has the following effects:</P>
+      <P>
+        <Strong>答え:</Strong> <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        のパターンです。
+      </P>
+      <H3>まとめると:</H3>
       <Ul>
         <UlLi>
-          <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-          </Em>
+          最初の <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
+          というパターンだった。
+        </UlLi>
+        <UlLi>
+          最終的に <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> 、つまり{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
         </UlLi>
         <UlLi>
           <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+            つまり、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> が{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
           </Em>
         </UlLi>
       </Ul>
-      <P>Hmm… this kind of looks familiar…</P>
+      <P>ふーむ、これは何かありそうですね。</P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>Quiz</H3>
+      <H3>ここでクイズです</H3>
       <P>
-        <Strong>Does these examples remind you of something?</Strong> Maybe
-        something you’ve done in a <Em>high school math/logic class</Em>?
+        それでは先ほどと反対に、{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        からはじめたらどうなるでしょう？つまり、下の
+        {h('ycBentoBox')}
+        と、
       </P>
+      {episode8[i++]()}
       <P>
-        (Or, if you have done some coding, can you think of a concept similar to
-        this?)
+        先ほどと同じく下の
+        {h('ycBentoBox')}
+        の弁当箱を合わせたら、
       </P>
+      {episode8[i++]()}
       <P>
-        <Strong>Hint:</Strong> Have you seen a table like this?{' '}
-        <Emoji>😉</Emoji> Can you see a similarity between this table and what
-        we did earlier?
+        下の
+        {h('ycBentoBox')}
+        は最終的にはどうなるでしょう？
       </P>
-      <Table>
-        <thead>
-          <tr>
-            <Th>A</Th>
-            <Th>B</Th>
-            <Th>A OR B</Th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-          </tr>
-        </tbody>
-      </Table>
-      <YcNextLessonButton nextEpisodeNumber={10} />
+      {episode8[i++]()}
+      <P>
+        <Em>
+          果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          になるのでしょうか?
+        </Em>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={9} />
     </>
   )
 }

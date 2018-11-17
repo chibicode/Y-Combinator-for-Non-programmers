@@ -26,8 +26,8 @@ export default () => {
       </P>
       <H3>Secret Code</H3>
       <P>
-        In this episode, I’ll show you some {h('ycBentoBox', true)}. Each one
-        has associated <Strong>secret code</Strong> which follows a{' '}
+        In this page, I’ll show you some {h('ycBentoBox', true)}. Each one
+        contains hidden <Strong>secret code</Strong> which follows a{' '}
         <Strong>pattern</Strong>.{' '}
       </P>
       <P>
@@ -67,6 +67,9 @@ export default () => {
           The secret code is <Strong>5</Strong>
         </Em>
         .
+      </P>
+      <P>
+        <Strong>The Pattern:</Strong>
       </P>
       <Ul>
         <UlLi>

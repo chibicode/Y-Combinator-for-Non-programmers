@@ -104,7 +104,7 @@ export default () => {
         </Em>
       </P>
       <P>
-        <Strong>次の章</Strong>
+        <Strong>次のページ</Strong>
         で、「あとで食べるものリスト <Emoji>😎</Emoji>
         」の料理が
         <Em>
@@ -134,7 +134,7 @@ export default () => {
         </Em>
       </P>
       <P>
-        <Strong>次の章</Strong>
+        <Strong>次のページ</Strong>
         で、「あとで食べるものリスト <Emoji>😎</Emoji>
         」の料理が「次に食べるもの <Emoji>😋</Emoji>」 に<Strong>変わる</Strong>
         例を紹介します。

@@ -3,7 +3,6 @@ import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode8 } from 'src/components/Yc/AllExpressionRunners'
-import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -28,133 +27,145 @@ export default () => {
       <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
       <P>
         それでは本題に入りましょう。
-        <Strong>ふたつのパターン</Strong>
+        <Strong>弁当箱の暗号</Strong>
         について説明します。
       </P>
-      <H3>パターンその1</H3>
+      <H3>弁当箱の暗号</H3>
       <P>
-        下の
+        このページにあるそれぞれの
         {h('ycBentoBox')}
-        をご覧ください:
-      </P>
-      {episode8[i++]()}
-      <P>
-        仮に、
-        <Emoji size="mdlg">🍣</Emoji> を <Emoji size="mdlg">1️⃣</Emoji> とし、{' '}
-        <Emoji size="mdlg">🥪</Emoji> を <Emoji size="mdlg">2️⃣</Emoji>{' '}
-        で表したとします。
+        には、
+        <Strong>あるパターンに基づいた暗号</Strong>
+        が隠されています。
       </P>
       <P>
-        つまり、 <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
-        というパターンといえます。
-      </P>
-      <H3>パターンその2</H3>
-      <P>では、こちらはどんなパターンでしょうか？</P>
-      {episode8[i++]()}
-      <P>
-        <Strong>答え:</Strong> 仮に <Emoji size="mdlg">🥗</Emoji> を{' '}
-        <Emoji size="mdlg">1️⃣</Emoji> とし、 <Emoji size="mdlg">🥩</Emoji> を{' '}
-        <Emoji size="mdlg">2️⃣</Emoji> とした場合、パターンは{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> となります。
-      </P>
-      <H3>ここで質問です</H3>
-      <P>
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンの
-        {h('ycBentoBox')}
-        と、
-      </P>
-      {episode8[i++]()}
-      <P>
-        下の
-        {h('ycBentoBox')}
-        を組み合わせ、
-      </P>
-      {episode8[i++]()}
-      <P>
-        次のような
-        {h('ycBentoBox')}
-        を作ったとします。
-      </P>
-      {episode8[i++]()}
-      <P>
-        <Strong>問題:</Strong>{' '}
         <Em>
-          これを
-          {h('ycDone')}
-          になるまで進めたらどうなるでしょう？
+          <Strong>あなたへの挑戦状:</Strong>{' '}
+          暗号がどんなパターンに基づいているか考えてみてください！
         </Em>
       </P>
+      <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
+      <H3>暗号の例</H3>
+      <P>
+        こちらに隠されている暗号は
+        <Strong>0</Strong>
+        です:
+      </P>
+      {episode8[i++]()}
+      <P>
+        こちらに隠されている暗号は
+        <Strong>1</Strong>
+        です:
+      </P>
+      {episode8[i++]()}
+      <P>
+        こちらに隠されている暗号は
+        <Strong>2</Strong>
+        です:
+      </P>
+      {episode8[i++]()}
+      <P>
+        こちらに隠されている暗号は
+        <Strong>3</Strong>
+        です:
+      </P>
+      {episode8[i++]()}
+      <P>パターンがわかりましたか？では、問題に挑戦してみましょう。</P>
+      <H3>クイズ: 暗号を解きあかせ</H3>
+      <P>
+        次の
+        {h('ycBentoBox')}
+        に隠されている暗号は何でしょう？
+      </P>
+      {episode8[i++]()}
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>早速やってみましょう</H3>
+      <H3>答え</H3>
       <P>
+        <Strong>答え:</Strong>{' '}
         <Em>
-          新しい「
-          {h('ycPlay')}
-          」ボタン
+          隠されている暗号は
+          <Strong>5</Strong>
+          です。
         </Em>
-        を使って、
-        {h('ycDone')}
-        になるまで進めてみてください。
-      </P>
-      {episode8[i++]()}
-      <P>というわけで、結果はこうなりました:</P>
-      {episode8[i++]()}
-      <P>
-        <Em>これのパターンは何でしょう？</Em>
       </P>
       <P>
-        <Strong>答え:</Strong> <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        のパターンです。
+        <Strong>パターンの説明:</Strong>
       </P>
-      <H3>まとめると:</H3>
       <Ul>
         <UlLi>
-          最初の <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
-          というパターンだった。
+          <Strong>A</Strong>と<Strong>B</Strong>
+          の2種類の料理がある (<Emoji size="mdlg">🍝</Emoji> と{' '}
+          <Emoji size="mdlg">🍚</Emoji>
+          )。
         </UlLi>
         <UlLi>
-          最終的に <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> 、つまり{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
+          <Strong>A</Strong>
+          は、
+          <Strong>真ん中</Strong>
+          のマスと
+          <Strong>右上</Strong>
+          のマスにある料理 (<Emoji size="mdlg">🍝</Emoji>。 ).
+        </UlLi>
+        <UlLi>
+          <Strong>B</Strong>
+          は、
+          <Strong>左</Strong>
+          のマスと
+          <Strong>右の残りのマス</Strong>
+          にある料理 (<Emoji size="mdlg">🍚</Emoji>
+          )。
         </UlLi>
         <UlLi>
           <Em>
-            つまり、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> が{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
+            右のマスにある
+            <Strong>B</Strong>
+            の料理の数が
+            <Strong>暗号の答え</Strong> (<Emoji size="mdlg">🍚</Emoji>{' '}
+            <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji>{' '}
+            <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji> ={' '}
+            <Strong>5</Strong>
+            )。
           </Em>
         </UlLi>
+        <P>
+          <Strong>簡単すぎましたか？</Strong>
+          では、もう少し問題を出しましょう。
+        </P>
+        <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
+        <H3>クイズ: 次はどうなる？</H3>
+        <P>
+          ここに、
+          <Em>
+            暗号が
+            <Strong>2</Strong>
+          </Em>
+          の{h('ycBentoBox')}
+          があります。
+        </P>
+        {episode8[i++]()}
+        <P>
+          これを次の
+          {h('ycBentoBox')}と<Strong>合体させます</Strong>:
+        </P>
+        {episode8[i++]()}
+        <P>合体させるとこうなります:</P>
+        {episode8[i++]()}
+        <P>
+          <Strong>問題:</Strong> では、上の弁当箱を
+          {h('ycDone')}
+          になるまで進めたら、いったいどうなるでしょう？
+        </P>
+        <P>
+          <Strong>ヒント:</Strong>{' '}
+          <Em>
+            弁当箱の暗号が
+            <Strong>2</Strong>
+            ではなく、新しいものになります
+          </Em>
+          。その新しい暗号は何になるでしょう？
+        </P>
+        <YcNextLessonButton nextEpisodeNumber={9} />
       </Ul>
-      <P>ふーむ、これは何かありそうですね。</P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>ここでクイズです</H3>
-      <P>
-        それでは先ほどと反対に、{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        からはじめたらどうなるでしょう？つまり、下の
-        {h('ycBentoBox')}
-        と、
-      </P>
-      {episode8[i++]()}
-      <P>
-        先ほどと同じく下の
-        {h('ycBentoBox')}
-        の弁当箱を合わせたら、
-      </P>
-      {episode8[i++]()}
-      <P>
-        下の
-        {h('ycBentoBox')}
-        は最終的にはどうなるでしょう？
-      </P>
-      {episode8[i++]()}
-      <P>
-        <Em>
-          果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-          になるのでしょうか?
-        </Em>
-      </P>
-      <YcNextLessonButton nextEpisodeNumber={9} />
     </>
   )
 }
