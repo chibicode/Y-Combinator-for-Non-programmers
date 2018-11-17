@@ -34,6 +34,12 @@ export default () => {
       {episode10[i++]()}
       <P>It automatically advances the {h('ycBentoBox')} for you.</P>
       <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
+      <H3>Secret Code</H3>
+      <P>This bento box's secret code is 0.</P>
+      <P>This bento box's secret code is 1.</P>
+      <P>This bento box's secret code is 3.</P>
+      <P>What's the secret code for this bento box?</P>
+      {episode10[i++]()}
     </>
   )
 }
