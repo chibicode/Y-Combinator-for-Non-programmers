@@ -1,5 +1,6 @@
 import React from 'react'
 import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode9 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -32,6 +33,7 @@ export default () => {
         of <Strong>adding 1 to the secret code</Strong>.
       </P>
       {episode9[i++]()}
+      <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
       <P>Let’s try with other {h('ycBentoBox', true)}</P>
       <H3>4 + 1 = 5</H3>
       <P>
@@ -54,6 +56,7 @@ export default () => {
         <Strong>adding 1 to the secret code</Strong>.
       </P>
       {episode9[i++]()}
+      <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
       <H3>Quiz</H3>
       <P>
         <Strong>How about this {h('ycBentoBox')}?</Strong>{' '}
@@ -79,8 +82,9 @@ export default () => {
       <P>Which becomes:</P>
       {episode9[i++]()}
       <P>
-        What do you think will happen when you step through this until it’s{' '}
-        {h('ycDone')}? <Em>What do you think will be the new secret code?</Em>
+        <Strong>Question:</Strong> What do you think will happen when you step
+        through this until it’s {h('ycDone')}?{' '}
+        <Em>What do you think will be the new secret code?</Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={10} />
     </>

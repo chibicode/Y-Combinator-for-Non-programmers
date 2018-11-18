@@ -53,6 +53,7 @@ export default () => {
         といえます。
       </P>
       {episode9[i++]()}
+      <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
       <P>他の弁当箱でも試してみましょう！</P>
       <H3>4 + 1 = 5</H3>
       <P>

@@ -1,5 +1,7 @@
 import React from 'react'
+import { plusOneCaption } from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
+import secretCodeCaption from 'src/components/Yc/secretCodeCaption'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
 export const introduction = [
@@ -769,11 +771,22 @@ export const episode8 = [
   ),
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression5}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+      caption={secretCodeCaption('🍚', 5)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode8Expression6}
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🍔', 2)}
     />
   ),
   () => (
@@ -811,6 +824,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🥪', 3)}
     />
   ),
   () => (
@@ -820,6 +834,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🍔', 2)}
     />
   ),
   () => (
@@ -829,6 +844,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={plusOneCaption}
     />
   ),
   () => (
@@ -838,6 +854,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🍛', 4)}
     />
   ),
   () => (
@@ -854,6 +871,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🥪', 5)}
     />
   ),
   () => (
@@ -863,6 +881,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={plusOneCaption}
     />
   ),
   () => (
@@ -881,6 +900,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🍔', 2)}
     />
   ),
   () => (
@@ -890,6 +910,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
+      caption={secretCodeCaption('🍚', 3)}
     />
   ),
   () => (

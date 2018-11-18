@@ -6,7 +6,7 @@ import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import locale from 'src/lib/locale'
-import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
+import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
@@ -290,16 +290,7 @@ const ExpressionRunnerExplanation: React.SFC<
   isPlaying,
   showAllShowSteps
 }) => (
-  <div
-    className={css`
-      text-align: center;
-      margin: ${spaces('-0.5')} -2px ${spaces(0.5)} -2px;
-      font-size: ${fontSizes(0.85)};
-      color: ${colors('indigo300')};
-      /* Use bigger line height to compensate for badges */
-      line-height: ${lineHeights(2)};
-    `}
-  >
+  <>
     {isPlaying ? (
       locale === 'en' ? (
         <>
@@ -357,7 +348,7 @@ const ExpressionRunnerExplanation: React.SFC<
         )}
       </>
     )}
-  </div>
+  </>
 )
 
 export default ExpressionRunnerExplanation

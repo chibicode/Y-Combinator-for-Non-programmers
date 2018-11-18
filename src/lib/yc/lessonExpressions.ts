@@ -424,8 +424,8 @@ export const episode9Expression6 = initializeExpressionContainer(baseThree)
 
 export const episode9Expression7 = initializeExpressionContainer([
   basePlus,
-  baseTwo,
-  baseThree
+  baseThree,
+  baseTwo
 ])
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)

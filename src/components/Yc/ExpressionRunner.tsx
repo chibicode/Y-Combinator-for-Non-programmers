@@ -1,13 +1,16 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
+import Emoji from 'src/components/Emoji'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import ExpressionRunnerCaptionWrapper from 'src/components/Yc/ExpressionRunnerCaptionWrapper'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
+import locale from 'src/lib/locale'
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
@@ -50,6 +53,10 @@ interface ExpressionRunnerProps {
   hideForwardAndBackButtons?: boolean
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
+  caption?: {
+    jp: React.ReactNode
+    en: React.ReactNode
+  }
 }
 
 interface ExpressionRunnerState {
@@ -152,7 +159,8 @@ export default class ExpressionRunner extends React.Component<
       hideLeftMostPrioritiesExplanation,
       hidePlayButton,
       hideForwardAndBackButtons,
-      showAllShowSteps
+      showAllShowSteps,
+      caption
     } = this.props
     const {
       expressionContainerManagerState,
@@ -182,26 +190,35 @@ export default class ExpressionRunner extends React.Component<
             verticalMargin={0}
           >
             {!hideExplanations && (
-              <ExpressionRunnerExplanation
-                isPlaying={isPlaying}
-                numSecondsRemaining={numSecondsRemaining(
-                  expressionContainerManagerState.numStepsRemaining,
-                  isFastForwarding
-                )}
-                expressionContainer={
-                  expressionContainerManagerState.expressionContainer
-                }
-                isDone={isContainerWithState(
-                  expressionContainerManagerState.expressionContainer,
-                  'done'
-                )}
-                currentStep={expressionContainerManagerState.currentStep}
-                currentSubstep={expressionContainerManagerState.currentSubstep}
-                hideLeftMostPrioritiesExplanation={
-                  hideLeftMostPrioritiesExplanation
-                }
-                showAllShowSteps={showAllShowSteps}
-              />
+              <ExpressionRunnerCaptionWrapper>
+                <ExpressionRunnerExplanation
+                  isPlaying={isPlaying}
+                  numSecondsRemaining={numSecondsRemaining(
+                    expressionContainerManagerState.numStepsRemaining,
+                    isFastForwarding
+                  )}
+                  expressionContainer={
+                    expressionContainerManagerState.expressionContainer
+                  }
+                  isDone={isContainerWithState(
+                    expressionContainerManagerState.expressionContainer,
+                    'done'
+                  )}
+                  currentStep={expressionContainerManagerState.currentStep}
+                  currentSubstep={
+                    expressionContainerManagerState.currentSubstep
+                  }
+                  hideLeftMostPrioritiesExplanation={
+                    hideLeftMostPrioritiesExplanation
+                  }
+                  showAllShowSteps={showAllShowSteps}
+                />
+              </ExpressionRunnerCaptionWrapper>
+            )}
+            {caption && (
+              <ExpressionRunnerCaptionWrapper pinkText>
+                <Emoji>⬇️</Emoji> {caption[locale]}
+              </ExpressionRunnerCaptionWrapper>
             )}
           </Container>
           <Container

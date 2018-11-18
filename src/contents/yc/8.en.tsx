@@ -97,6 +97,7 @@ export default () => {
             <Emoji size="mdlg">🍚</Emoji> = <Strong>5</Strong>)
           </Em>
         </UlLi>
+        {episode8[i++]()}
         <P>
           <Strong>Was it too easy?</Strong> Well ok, here’s something more
           challenging…
