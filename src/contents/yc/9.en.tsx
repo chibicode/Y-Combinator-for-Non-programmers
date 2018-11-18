@@ -1,22 +1,8 @@
 import React from 'react'
-import {
-  // Em,
-  // H3,
-  P
-  // Strong,
-  // Table,
-  // Td,
-  // Th,
-  // Ul,
-  // UlLi
-} from 'src/components/ContentTags'
-// import Emoji from 'src/components/Emoji'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
+import { Em, H3, P, Strong } from 'src/components/ContentTags'
 import { episode9 } from 'src/components/Yc/AllExpressionRunners'
-// import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
-// import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-// import { colors } from 'src/lib/theme'
 
 export default () => {
   let i = 0
@@ -25,6 +11,78 @@ export default () => {
       {h('ycQuizReview', 8)}
       <P>{h('ycPlayUntilDone')}:</P>
       {episode9[i++]()}
+      <P>So in the end, it became:</P>
+      {episode9[i++]()}
+      <P>
+        Its secret code is <Strong>3</Strong>.
+      </P>
+      <P>
+        Originally, the secret code was <Strong>2</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>
+        So{' '}
+        <Em>
+          the secret code
+          <Strong>increased by 1</Strong>.
+        </Em>
+      </P>
+      <P>
+        That means the following {h('ycBentoBox')} which we used has an effect
+        of <Strong>adding 1 to the secret code</Strong>.
+      </P>
+      {episode9[i++]()}
+      <P>Let’s try with other {h('ycBentoBox', true)}</P>
+      <H3>4 + 1 = 5</H3>
+      <P>
+        This one has the secret code <Strong>4</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>
+        Let’s combine this with the {h('ycBentoBox')} that has an effect of{' '}
+        <Strong>adding 1 to the secret code</Strong>. {h('ycPlayUntilDone')}。
+      </P>
+      {episode9[i++]()}
+      <P>
+        <Em>
+          As expected, the new secret code is <Strong>4 + 1 = 5</Strong>.
+        </Em>
+      </P>
+      {episode9[i++]()}
+      <P>
+        <Strong>Again:</Strong> this {h('ycBentoBox')} has an effect of{' '}
+        <Strong>adding 1 to the secret code</Strong>.
+      </P>
+      {episode9[i++]()}
+      <H3>Quiz</H3>
+      <P>
+        <Strong>How about this {h('ycBentoBox')}?</Strong>{' '}
+        <Em>What effect do you think this has?</Em>
+      </P>
+      {episode9[i++]()}
+      <P>
+        <Em>
+          <Strong>Hint:</Strong> It’s meant to be combined with{' '}
+          <Strong>two</Strong> {h('ycBentoBox', true)} with{' '}
+          <Strong>secret code</Strong>.
+        </Em>
+      </P>
+      <P>
+        For example, we’ll combine it with the {h('ycBentoBox')} with the secret
+        code <Strong>2</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>
+        And the {h('ycBentoBox')} with the secret code <Strong>3</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>Which becomes:</P>
+      {episode9[i++]()}
+      <P>
+        What do you think will happen when you step through this until it’s{' '}
+        {h('ycDone')}? <Em>What do you think will be the new secret code?</Em>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={10} />
     </>
   )
 }

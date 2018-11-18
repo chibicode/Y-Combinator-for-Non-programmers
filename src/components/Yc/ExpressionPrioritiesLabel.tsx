@@ -2,8 +2,11 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerContext, {
+  ExpressionRunnerContextProps
+} from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
+import { allFontSizes } from 'src/lib/theme/fontSizes'
 
 interface ExpressionPrioritiesLabelProps {
   emphasizeOne: boolean
@@ -24,6 +27,41 @@ interface ExpressionPrioritiesLabelState {
 
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
 
+const fontSize = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): keyof typeof allFontSizes => {
+  if (variableSize === 'lg') {
+    return 0.75
+  } else if (variableSize === 'md') {
+    return 0.7
+  } else {
+    return 0.6
+  }
+}
+
+const width = (
+  variableSize: ExpressionRunnerContextProps['variableSize'],
+  collapsed: boolean
+): number => {
+  const multiplier = {
+    lg: 1.07,
+    md: 1,
+    sm: 0.93
+  }[variableSize]
+  return (collapsed ? 2 : 1.2) * multiplier
+}
+
+const height = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): number => {
+  const multiplier = {
+    lg: 1.07,
+    md: 1,
+    sm: 1
+  }[variableSize]
+  return 1.3 * multiplier
+}
+
 const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
   emphasizeOne,
   priority,
@@ -38,11 +76,10 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
             color: ${colors(
               emphasizeOne && priority === 1 ? 'white' : 'indigo300'
             )};
-            font-size: ${fontSizes(variableSize === 'lg' ? 0.75 : 0.7)};
+            font-size: ${fontSizes(fontSize(variableSize))};
             font-weight: bold;
-            width: ${(collapsed ? 2 : 1.2) *
-              (variableSize === 'lg' ? 1.07 : 1)}em;
-            height: ${1.3 * (variableSize === 'lg' ? 1.07 : 1)}em;
+            width: ${width(variableSize, collapsed)}em;
+            height: ${height(variableSize)}em;
             line-height: 1;
             background: ${colors(
               emphasizeOne && priority === 1 ? 'pink400' : 'transparent'
@@ -58,7 +95,17 @@ const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
                 `};
           `}
         >
-          {priority}
+          <div
+            className={
+              position === 'bottomleft'
+                ? css`
+                    transform: translateY(-1px);
+                  `
+                : ''
+            }
+          >
+            {priority}
+          </div>
         </FlexCenter>
       </Flex>
     )}

@@ -19,7 +19,7 @@ const paddingTop = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
     lg: spaces(0.5),
     md: spaces(0.375),
-    sm: spaces(0.25)
+    sm: spaces(0.2)
   }[size])
 
 const paddingBottom = (size: ExpressionRunnerContextProps['variableSize']) =>

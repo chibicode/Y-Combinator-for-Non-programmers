@@ -855,6 +855,51 @@ export const episode9 = [
       hideControls
       hideExplanations
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression7}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression5}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression6}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression6}
+      containerSize={'xs'}
+      variableSize={'md'}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression7}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+    />
   )
 ]
 
