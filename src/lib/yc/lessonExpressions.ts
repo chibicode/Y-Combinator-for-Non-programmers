@@ -145,6 +145,16 @@ export const episode6Expression3 = initializeExpressionContainer({
   body: 'b'
 })
 
+export const episode6Expression4 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: 'd'
+  },
+  ['b', 'c']
+])
+
+export const episode6Expression5 = initializeExpressionContainer(['b', 'c'])
+
 export const episode7Expression1 = initializeExpressionContainer([
   {
     arg: 'a',

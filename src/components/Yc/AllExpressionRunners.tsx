@@ -588,6 +588,32 @@ export const episode6 = [
   ),
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression4}
+      containerSize={'xs'}
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression5}
+      containerSize={'xs'}
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression4}
+      containerSize={'xs'}
+      variableSize={'lg'}
+      hidePlayButton
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression2}
       containerSize={'xs'}
       hideControls
