@@ -32,7 +32,7 @@ const background = (
         background: ${colors('white')};
       `
     }
-    case 'activeEmphasizePriorityOne': {
+    case 'activeEmphasizePriority': {
       return css`
         background: ${colors('white')};
       `

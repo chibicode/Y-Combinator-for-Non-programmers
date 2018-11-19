@@ -24,7 +24,7 @@ interface VariableStates {
     readonly badgeType: 'none'
   }
   emphasizePriority: {
-    readonly highlightType: 'activeEmphasizePriorityOne'
+    readonly highlightType: 'activeEmphasizePriority'
     readonly badgeType: 'none'
   }
   highlightFuncBound: {

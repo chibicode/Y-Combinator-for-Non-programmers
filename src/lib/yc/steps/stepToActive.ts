@@ -45,7 +45,7 @@ const variableToEmphasize = (
   return {
     ...e,
     badgeType: 'none',
-    highlightType: 'activeEmphasizePriorityOne'
+    highlightType: 'activeEmphasizePriority'
   }
 }
 
@@ -57,6 +57,27 @@ const toExecutableActiveFunction = (
   body: toActive(e.body)
 })
 
+const emphasizeArgPriorityCallExpression = (
+  e: NonExecutableStepCall<'active'>
+): NonExecutableStepCall<'active'> => {
+  if (isVariable(e.arg)) {
+    return {
+      ...e,
+      arg: variableToEmphasize(e.arg)
+    }
+  } else if (isFunction(e.arg)) {
+    return {
+      ...e,
+      arg: toExecutableActiveFunction(e.arg)
+    }
+  } else {
+    return {
+      ...e,
+      arg: emphasizeArgPriorityCallExpression(e.arg)
+    }
+  }
+}
+
 const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({
   ...e,
   state: 'active',
@@ -64,7 +85,7 @@ const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)
       ? variableToEmphasize(e.arg)
-      : toActive(e.arg),
+      : emphasizeArgPriorityCallExpression(toActive(e.arg)),
   func: toExecutableActiveFunction(e.func)
 })
 

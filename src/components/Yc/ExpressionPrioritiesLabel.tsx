@@ -2,6 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
+import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
@@ -9,13 +10,13 @@ import { colors, fontSizes, zIndices } from 'src/lib/theme'
 import { allFontSizes } from 'src/lib/theme/fontSizes'
 
 interface ExpressionPrioritiesLabelProps {
-  emphasizeOne: boolean
+  emphasize: boolean
   priorities: number[]
   position: 'topleft' | 'bottomleft'
 }
 
 interface ExpressionPrioritiesLabelBox {
-  emphasizeOne: boolean
+  emphasize: boolean
   priority: number
   position: ExpressionPrioritiesLabelProps['position']
   collapsed: boolean
@@ -63,62 +64,70 @@ const height = (
 }
 
 const ExpressionPrioritiesLabelBox: React.SFC<ExpressionPrioritiesLabelBox> = ({
-  emphasizeOne,
+  emphasize,
   priority,
   position,
   collapsed
 }) => (
-  <ExpressionRunnerContext.Consumer>
-    {({ variableSize }) => (
-      <Flex>
-        <FlexCenter
-          className={css`
-            color: ${colors(
-              emphasizeOne && priority === 1 ? 'white' : 'indigo300'
-            )};
-            font-size: ${fontSizes(fontSize(variableSize))};
-            font-weight: bold;
-            width: ${width(variableSize, collapsed)}em;
-            height: ${height(variableSize)}em;
-            line-height: 1;
-            background: ${colors(
-              emphasizeOne && priority === 1 ? 'pink400' : 'transparent'
-            )};
-            ${position === 'topleft'
-              ? css`
-                  border-right: 2px solid ${colors('indigo300')};
-                  border-bottom: 2px solid ${colors('indigo300')};
-                `
-              : css`
-                  border-top: 2px solid ${colors('indigo300')};
-                  border-right: 2px solid ${colors('indigo300')};
-                `};
-          `}
-        >
-          <div
-            className={
-              position === 'bottomleft'
-                ? css`
-                    transform: translateY(-1px);
-                  `
-                : ''
-            }
-          >
-            {priority}
-          </div>
-        </FlexCenter>
-      </Flex>
+  <ExpressionPriorityContext.Consumer>
+    {({ activePriority }) => (
+      <ExpressionRunnerContext.Consumer>
+        {({ variableSize }) => (
+          <Flex>
+            <FlexCenter
+              className={css`
+                color: ${colors(
+                  emphasize && activePriority === priority
+                    ? 'white'
+                    : 'indigo300'
+                )};
+                font-size: ${fontSizes(fontSize(variableSize))};
+                font-weight: bold;
+                width: ${width(variableSize, collapsed)}em;
+                height: ${height(variableSize)}em;
+                line-height: 1;
+                background: ${colors(
+                  emphasize && activePriority === priority
+                    ? 'pink400'
+                    : 'transparent'
+                )};
+                ${position === 'topleft'
+                  ? css`
+                      border-right: 2px solid ${colors('indigo300')};
+                      border-bottom: 2px solid ${colors('indigo300')};
+                    `
+                  : css`
+                      border-top: 2px solid ${colors('indigo300')};
+                      border-right: 2px solid ${colors('indigo300')};
+                    `};
+              `}
+            >
+              <div
+                className={
+                  position === 'bottomleft'
+                    ? css`
+                        transform: translateY(-1px);
+                      `
+                    : ''
+                }
+              >
+                {priority}
+              </div>
+            </FlexCenter>
+          </Flex>
+        )}
+      </ExpressionRunnerContext.Consumer>
     )}
-  </ExpressionRunnerContext.Consumer>
+  </ExpressionPriorityContext.Consumer>
 )
 
 const ExpressionPrioritiesLabelExpanded: React.SFC<
   ExpressionPrioritiesLabelDefaultProps
-> = ({ priorities, position, emphasizeOne }) => (
+> = ({ priorities, position, emphasize }) => (
   <Flex>
     {priorities.map(priority => (
       <ExpressionPrioritiesLabelBox
-        emphasizeOne={emphasizeOne}
+        emphasize={emphasize}
         position={position}
         key={priority}
         collapsed={false}
@@ -137,7 +146,7 @@ export default class ExpressionPrioritiesLabel extends React.Component<
   }
 
   public render() {
-    const { priorities, position, emphasizeOne } = this.props
+    const { priorities, position, emphasize } = this.props
     const { collapsed } = this.state
     if (collapsed) {
       // TODO
@@ -162,7 +171,7 @@ export default class ExpressionPrioritiesLabel extends React.Component<
         >
           <ExpressionPrioritiesLabelExpanded
             priorities={priorities}
-            emphasizeOne={emphasizeOne}
+            emphasize={emphasize}
             position={position}
           />
         </div>
