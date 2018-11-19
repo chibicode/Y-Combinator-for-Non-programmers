@@ -27,8 +27,5 @@ export function isFunction<E extends FunctionExpression = FunctionExpression>(
 export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
-  return (
-    (isFunction(expression.arg) || isVariable(expression.arg)) &&
-    isFunction(expression.func)
-  )
+  return isFunction(expression.func)
 }

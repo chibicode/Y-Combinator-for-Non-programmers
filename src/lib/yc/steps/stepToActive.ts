@@ -62,7 +62,9 @@ const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({
   state: 'active',
   arg: isFunction(e.arg)
     ? toExecutableActiveFunction(e.arg)
-    : variableToEmphasize(e.arg),
+    : isVariable(e.arg)
+      ? variableToEmphasize(e.arg)
+      : toActive(e.arg),
   func: toExecutableActiveFunction(e.func)
 })
 

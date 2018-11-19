@@ -281,13 +281,13 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
-const baseOne: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: ['a', 'b']
-  }
-}
+// const baseOne: FunctionExpressionParams = {
+//   arg: 'a',
+//   body: {
+//     arg: 'b',
+//     body: ['a', 'b']
+//   }
+// }
 
 // const baseThree: FunctionExpressionParams = {
 //   arg: 'a',
@@ -424,7 +424,8 @@ export const episode9Expression6 = initializeExpressionContainer(baseThree)
 
 export const episode9Expression7 = initializeExpressionContainer([
   basePlus,
-  baseOne
+  baseTwo,
+  baseThree
 ])
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)

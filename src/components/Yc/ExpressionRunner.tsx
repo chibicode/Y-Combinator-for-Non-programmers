@@ -47,7 +47,6 @@ interface ExpressionRunnerProps {
   maxStepsAllowed?: number
   lastAllowedExpressionState?: CallStates
   containerSize: ContainerProps['size']
-  hideLeftMostPrioritiesExplanation: boolean
   resetIndex: boolean
   hidePlayButton?: boolean
   hideForwardAndBackButtons?: boolean
@@ -83,8 +82,7 @@ export default class ExpressionRunner extends React.Component<
     variableSize: expressionRunnerContextDefault.variableSize,
     initializeInstructions: [],
     containerSize: 'xxs',
-    resetIndex: false,
-    hideLeftMostPrioritiesExplanation: false
+    resetIndex: false
   }
   private interval: NodeJS.Timer | null = null
   private expressionContainerManager: ExpressionContainerManager
@@ -156,7 +154,6 @@ export default class ExpressionRunner extends React.Component<
       hidePriorities,
       variableSize,
       containerSize,
-      hideLeftMostPrioritiesExplanation,
       hidePlayButton,
       hideForwardAndBackButtons,
       showAllShowSteps,
@@ -208,9 +205,6 @@ export default class ExpressionRunner extends React.Component<
                   currentSubstep={
                     expressionContainerManagerState.currentSubstep
                   }
-                  hideLeftMostPrioritiesExplanation={
-                    hideLeftMostPrioritiesExplanation
-                  }
                   showAllShowSteps={showAllShowSteps}
                 />
               </ExpressionRunnerCaptionWrapper>
@@ -234,7 +228,7 @@ export default class ExpressionRunner extends React.Component<
               <div
                 className={css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.5 : 1};
+                  opacity: ${isFastForwarding ? 0.7 : 1};
                   ${isFastForwarding ? 'filter: grayscale(50%);' : ''};
                 `}
               >

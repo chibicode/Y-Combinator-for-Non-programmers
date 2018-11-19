@@ -21,12 +21,6 @@ export interface FindResult<
   readonly callParentKey?: 'func' | 'arg'
 }
 
-interface HelperStackItem<C extends CallExpression> {
-  readonly expression: C
-  readonly callParent?: C
-  readonly callParentKey?: 'func' | 'arg'
-}
-
 /**
  * Run DFS on callExpression to find ExecutableCallExpression
  * and its parent information (could be missing if root expression).
@@ -42,39 +36,47 @@ function helper<
   E extends ExecutableCall,
   C extends CallExpression,
   F extends FunctionExpression
->(callExpression: C): FindResult<E, C, F> {
-  const stack: Array<HelperStackItem<C>> = [{ expression: callExpression }]
-  const notFound: FindResult<E, C, F> = {}
-
-  while (stack.length > 0) {
-    const current = stack.pop()
-    if (current && current.expression) {
-      if (isExecutableCall<E>(current.expression)) {
-        return {
-          expression: current.expression,
-          callParent: current.callParent,
-          callParentKey: current.callParentKey
-        }
-      }
-
-      if (isCall<C>(current.expression.func)) {
-        stack.push({
-          expression: current.expression.func,
-          callParentKey: 'func',
-          callParent: current.expression
-        })
-      }
-
-      if (isCall<C>(current.expression.arg)) {
-        stack.push({
-          expression: current.expression.arg,
-          callParentKey: 'arg',
-          callParent: current.expression
-        })
-      }
+>({
+  expression,
+  callParent,
+  callParentKey
+}: {
+  expression: C
+  callParent?: C
+  callParentKey?: 'func' | 'arg'
+}): FindResult<E, C, F> {
+  if (isCall<C>(expression.func)) {
+    const result: FindResult<E, C, F> = helper({
+      expression: expression.func,
+      callParentKey: 'func',
+      callParent: expression
+    })
+    if (result.expression) {
+      return result
     }
   }
-  return notFound
+
+  if (isCall<C>(expression.arg)) {
+    const result: FindResult<E, C, F> = helper({
+      expression: expression.arg,
+      callParentKey: 'arg',
+      callParent: expression
+    })
+    if (result.expression) {
+      return result
+    }
+  }
+
+  if (isExecutableCall<E>(expression)) {
+    return {
+      expression,
+      callParent,
+      callParentKey
+    }
+  } else {
+    const notFound: FindResult<E, C, F> = {}
+    return notFound
+  }
 }
 
 export default function findNextCallExpressionAndParent<
@@ -84,7 +86,7 @@ export default function findNextCallExpressionAndParent<
 >(expression: Expression): FindResult<E, C, F> {
   const notFound: FindResult<E, C, F> = {}
   if (isCall<C>(expression)) {
-    return helper<E, C, F>(expression)
+    return helper<E, C, F>({ expression })
   } else if (isFunction<F>(expression)) {
     let currentExpression: Expression = expression
     let previousExpression: F | null = null
@@ -93,7 +95,7 @@ export default function findNextCallExpressionAndParent<
       currentExpression = currentExpression.body
     }
     if (isCall<C>(currentExpression)) {
-      const helperResult = helper<E, C, F>(currentExpression)
+      const helperResult = helper<E, C, F>({ expression: currentExpression })
       if (helperResult.callParent) {
         return helperResult
       } else if (previousExpression) {

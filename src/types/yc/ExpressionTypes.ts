@@ -220,12 +220,11 @@ type NonExecutable<E extends Expression> = CallExpression & {
 type Executable<
   S extends CallStates,
   F extends FunctionExpression,
-  V extends VariableExpression
+  E extends Expression
 > = CallExpression & {
-  readonly arg: V | F
+  readonly arg: E
   readonly state: S
   readonly func: F
-  readonly priority: 1
 }
 
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
@@ -236,7 +235,7 @@ export interface StepFunction<C extends CallStates = 'default'>
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
 export interface ExecutableStepCall<C extends CallStates = 'default'>
-  extends Executable<C, StepFunction<C>, StepVariable<C>> {}
+  extends Executable<C, StepFunction<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
