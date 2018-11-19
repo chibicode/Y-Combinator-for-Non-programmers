@@ -52,6 +52,21 @@ export default () => {
       </P>
       <EmojiSeparator emojis={['🍱', '➕', '🍱']} />
       <H3>What about multiplication?</H3>
+      <P>
+        In fact, we can also do{' '}
+        <Em>
+          <Strong>multiplication of 2 numbers</Strong>
+        </Em>{' '}
+        using {h('ycBentoBox', true)}!
+      </P>
+      <EmojiSeparator emojis={['🍱', '✖️', '🍱']} />
+      <P>
+        This is the {h('ycBentoBox')} that does <Strong>multiplication</Strong>.
+      </P>
+      {episode10[i++]()}
+      <P>
+        <Strong>Let’s try it!</Strong>
+      </P>
     </>
   )
 }

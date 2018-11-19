@@ -55,6 +55,21 @@ export const additionCaption = {
   )
 }
 
+export const multiplicationCaption = {
+  en: (
+    <Strong>
+      Multiplies two secret code <Emoji>🍱</Emoji> <Emoji>✖️</Emoji>{' '}
+      <Emoji>🍱</Emoji>
+    </Strong>
+  ),
+  jp: (
+    <Strong>
+      ふたつの暗号の数字を掛ける <Emoji>🍱</Emoji> <Emoji>✖️</Emoji>{' '}
+      <Emoji>🍱</Emoji>
+    </Strong>
+  )
+}
+
 export const combineSecretCodeCaption = (
   type: 'add' | 'multiply',
   emoji1: string,

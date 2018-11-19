@@ -332,6 +332,20 @@ const basePlus: FunctionExpressionParams = {
   }
 }
 
+const baseMult: FunctionExpressionParams = {
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: {
+      arg: 'c',
+      body: {
+        arg: 'd',
+        body: [['a', ['b', 'c']], 'd']
+      }
+    }
+  }
+}
+
 export const episode8Expression1 = initializeExpressionContainer({
   arg: 'a',
   body: {
@@ -445,6 +459,8 @@ export const episode10Expression1 = initializeExpressionContainer({
     body: ['c', ['c', ['c', ['c', ['c', 'd']]]]]
   }
 })
+
+export const episode10Expression2 = initializeExpressionContainer(baseMult)
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 

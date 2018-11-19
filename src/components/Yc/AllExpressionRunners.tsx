@@ -2,6 +2,7 @@ import React from 'react'
 import {
   additionCaption,
   combineSecretCodeCaption,
+  multiplicationCaption,
   plusOneCaption,
   secretCodeCaption
 } from 'src/components/Yc/effectCaptions'
@@ -1004,6 +1005,16 @@ export const episode10 = [
       hideControls
       hideExplanations
       caption={combineSecretCodeCaption('add', '🍔', 2, '🍚', 3)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode10Expression2}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={multiplicationCaption}
     />
   )
 ]
