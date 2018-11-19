@@ -22,12 +22,12 @@ function getAllVariableNamesWithDuplicates(
       return []
     }
   } else if (isCall(expression)) {
-    return getAllVariableNames(expression.arg).concat(
-      getAllVariableNames(expression.func)
+    return getAllVariableNames(expression.arg, { filter }).concat(
+      getAllVariableNames(expression.func, { filter })
     )
   } else {
-    return getAllVariableNames(expression.arg).concat(
-      getAllVariableNames(expression.body)
+    return getAllVariableNames(expression.arg, { filter }).concat(
+      getAllVariableNames(expression.body, { filter })
     )
   }
 }
