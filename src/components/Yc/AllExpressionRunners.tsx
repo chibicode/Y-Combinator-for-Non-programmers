@@ -1,7 +1,11 @@
 import React from 'react'
-import { plusOneCaption } from 'src/components/Yc/effectCaptions'
+import {
+  additionCaption,
+  combineSecretCodeCaption,
+  plusOneCaption,
+  secretCodeCaption
+} from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import secretCodeCaption from 'src/components/Yc/secretCodeCaption'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
 export const introduction = [
@@ -949,6 +953,57 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       isFastForwardPlayButton
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode10Expression1}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      isFastForwardPlayButton
+      caption={secretCodeCaption('🥗', 5)}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression6}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={secretCodeCaption('🍔', 2)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression6}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={secretCodeCaption('🍚', 3)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression5}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={additionCaption}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression7}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={combineSecretCodeCaption('add', '🍔', 2, '🍚', 3)}
     />
   )
 ]

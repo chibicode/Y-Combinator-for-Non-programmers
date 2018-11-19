@@ -228,8 +228,8 @@ export default class ExpressionRunner extends React.Component<
               <div
                 className={css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.7 : 1};
-                  ${isFastForwarding ? 'filter: grayscale(50%);' : ''};
+                  opacity: ${isFastForwarding ? 0.5 : 1};
+                  ${isFastForwarding ? 'filter: grayscale(100%);' : ''};
                 `}
               >
                 <ExpressionBox

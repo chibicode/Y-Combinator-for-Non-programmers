@@ -28,7 +28,7 @@ import Logo from '../images/Hoshiai-Logo.svg'
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
   lessonTitle: string
-  episodeTitle?: string
+  episodeTitle?: React.ReactNode
   episodeNumber?: number
   contentName: ContentProps['name']
 }
