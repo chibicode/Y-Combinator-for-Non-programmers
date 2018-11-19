@@ -65,8 +65,15 @@ export default () => {
       </P>
       {episode10[i++]()}
       <P>
-        <Strong>Let’s try it!</Strong>
+        <Strong>Let’s try it!</Strong> We’ll try{' '}
+        <Em>
+          <Strong>2</Strong> × <Strong>3</Strong>.
+        </Em>
       </P>
+      <P>
+        We’ll combine the {h('ycBentoBox')} with secret code <Strong>2</Strong>:
+      </P>
+      {episode10[i++]()}
     </>
   )
 }

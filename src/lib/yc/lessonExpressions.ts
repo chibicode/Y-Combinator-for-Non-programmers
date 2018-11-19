@@ -462,6 +462,12 @@ export const episode10Expression1 = initializeExpressionContainer({
 
 export const episode10Expression2 = initializeExpressionContainer(baseMult)
 
+export const episode10Expression3 = initializeExpressionContainer([
+  baseMult,
+  baseThree,
+  baseTwo
+])
+
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
 // a => b => (a b)

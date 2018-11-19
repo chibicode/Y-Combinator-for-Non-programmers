@@ -1016,6 +1016,14 @@ export const episode10 = [
       hideExplanations
       caption={multiplicationCaption}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode10Expression3}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      isFastForwardPlayButton
+    />
   )
 ]
 
