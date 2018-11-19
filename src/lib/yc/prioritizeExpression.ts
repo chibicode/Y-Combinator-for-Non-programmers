@@ -12,17 +12,6 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
   let newArg: Expression
   let newFunc: Expression
 
-  if (isCall(expression.arg)) {
-    const argResult = prioritizeCallExpressionHelper({
-      expression: expression.arg,
-      priority
-    })
-    newArg = argResult
-    priority = argResult.priority + 1
-  } else {
-    newArg = prioritizeExpressionHelper(expression.arg)
-  }
-
   if (isCall(expression.func)) {
     const funcResult = prioritizeCallExpressionHelper({
       expression: expression.func,
@@ -32,6 +21,17 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     priority = funcResult.priority + 1
   } else {
     newFunc = prioritizeExpressionHelper(expression.func)
+  }
+
+  if (isCall(expression.arg)) {
+    const argResult = prioritizeCallExpressionHelper({
+      expression: expression.arg,
+      priority
+    })
+    newArg = argResult
+    priority = argResult.priority + 1
+  } else {
+    newArg = prioritizeExpressionHelper(expression.arg)
   }
 
   return Object.assign({}, expression, {

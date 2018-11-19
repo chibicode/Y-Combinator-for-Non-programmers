@@ -3,6 +3,7 @@ import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
 import colors from 'src/lib/theme/colors'
 import { CallExpression } from 'src/types/yc/ExpressionTypes'
 
@@ -19,18 +20,30 @@ const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
       flex: 1;
     `}
   >
-    <FlexCenter
-      className={cx({
-        [css`
-          border-bottom: 5px solid ${colors('indigo300')};
-        `]: expression.state !== 'default'
-      })}
-    >
-      <ExpressionBox expression={expression.arg} />
-    </FlexCenter>
-    <FlexCenter>
-      <ExpressionBox expression={expression.func} />
-    </FlexCenter>
+    <ExpressionPriorityContext.Consumer>
+      {({ activePriority }) => (
+        <ExpressionPriorityContext.Provider
+          value={{
+            activePriority:
+              activePriority ||
+              (expression.state === 'active' ? expression.priority : undefined)
+          }}
+        >
+          <FlexCenter
+            className={cx({
+              [css`
+                border-bottom: 5px solid ${colors('indigo300')};
+              `]: expression.state !== 'default'
+            })}
+          >
+            <ExpressionBox expression={expression.arg} />
+          </FlexCenter>
+          <FlexCenter>
+            <ExpressionBox expression={expression.func} />
+          </FlexCenter>
+        </ExpressionPriorityContext.Provider>
+      )}
+    </ExpressionPriorityContext.Consumer>
   </Flex>
 )
 

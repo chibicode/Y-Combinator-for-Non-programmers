@@ -466,7 +466,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       hideControls
       hideExplanations
       variableSize={'lg'}
@@ -476,7 +475,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       maxStepsAllowed={1}
     />
@@ -485,7 +483,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       lastAllowedExpressionState="betaReducePreviewCrossed"
       showAllShowSteps
@@ -501,7 +498,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       maxStepsAllowed={1}
       showAllShowSteps
@@ -517,7 +513,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
       showAllShowSteps
       initializeInstructions={[
@@ -536,7 +531,6 @@ export const episode5 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       showAllShowSteps
       variableSize={'lg'}
     />
@@ -544,7 +538,6 @@ export const episode5 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression2}
-      hideLeftMostPrioritiesExplanation
       hideControls
       showAllShowSteps
       hideExplanations
@@ -558,7 +551,6 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode5Expression2}
       hidePlayButton
-      hideLeftMostPrioritiesExplanation
       variableSize={'lg'}
     />
   ),
@@ -592,6 +584,32 @@ export const episode6 = [
           state: 'active'
         }
       ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression4}
+      containerSize={'xs'}
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression5}
+      containerSize={'xs'}
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode6Expression4}
+      containerSize={'xs'}
+      variableSize={'lg'}
+      hidePlayButton
     />
   ),
   () => (
@@ -930,6 +948,7 @@ export const episode10 = [
       expressionContainer={lessonExpressions.episode9Expression7}
       containerSize={'xs'}
       variableSize={'sm'}
+      isFastForwardPlayButton
     />
   )
 ]

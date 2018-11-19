@@ -2,8 +2,8 @@ import React from 'react'
 import {
   // Em,
   // H3,
-  P
-  // Strong
+  P,
+  Strong
 } from 'src/components/ContentTags'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode10 } from 'src/components/Yc/AllExpressionRunners'
@@ -15,7 +15,11 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 8)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycPlayUntilDone')}.</P>
+      <P>
+        <Strong>Note:</Strong> The {h('ycPlay')} button runs faster now because
+        there are a lot of steps.
+      </P>
       {episode10[i++]()}
     </>
   )

@@ -27,12 +27,12 @@ export const allTranslations = {
     jp: 'あとで食べるものリスト'
   },
   ycEpisode5: {
-    en: 'Priorities',
-    jp: '順序'
+    en: 'Priorities, Part 1',
+    jp: '順序その1'
   },
   ycEpisode6: {
-    en: 'Leftmost First',
-    jp: 'いちばん左から'
+    en: 'Priorities, Part 2',
+    jp: '順序その2'
   },
   ycEpisode7: {
     en: 'Shuffle Time',

@@ -46,9 +46,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
           <ExpressionPrioritiesLabel
             priorities={expression.argPriorityAgg}
             position="topleft"
-            emphasizeOne={
-              expression.highlightType === 'activeEmphasizePriorityOne'
-            }
+            emphasize={expression.highlightType === 'activeEmphasizePriority'}
           />
         )}
         <FlexCenter
@@ -86,9 +84,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
           <ExpressionPrioritiesLabel
             priorities={expression.funcPriorityAgg}
             position="bottomleft"
-            emphasizeOne={
-              expression.highlightType === 'activeEmphasizePriorityOne'
-            }
+            emphasize={expression.highlightType === 'activeEmphasizePriority'}
           />
         )}
       </>

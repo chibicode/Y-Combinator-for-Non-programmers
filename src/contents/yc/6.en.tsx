@@ -65,6 +65,39 @@ export default () => {
         </Em>
       </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
+      <H3>When 1’s are not available</H3>
+      <P>
+        <Strong>
+          Sometimes it’s not possible to do{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          ’s.
+        </Strong>{' '}
+        Take a look at this one:
+      </P>
+      {episode6[i++]()}
+      <P>
+        Notice that the <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s are just this - <Em>we can’t take any steps!</Em> We’re stuck!
+      </P>
+      {episode6[i++]()}
+      <P>
+        Therefore, we need to <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        ’s instead of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s.
+      </P>
+      {episode6[i++]()}
+      <H3>Review</H3>
+      <P>
+        <Strong>What you need to know:</Strong>{' '}
+        <Em>
+          If it’s not possible to take steps on{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          ’s, do <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+          ’s
+        </Em>
+        , and so on.
+      </P>
+      <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
       <P>Ok, let’s do another quiz!</P>
       <H3>Quiz</H3>
       <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>

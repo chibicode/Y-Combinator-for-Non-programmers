@@ -4,7 +4,6 @@ import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiBadge from 'src/components/Yc/EmojiBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
@@ -15,7 +14,6 @@ interface ExpressionRunnerExplanationProps {
   isDone: boolean
   currentStep: number
   currentSubstep: number
-  hideLeftMostPrioritiesExplanation: boolean
   isPlaying: boolean
   numSecondsRemaining: number
   showAllShowSteps?: boolean
@@ -26,14 +24,12 @@ const stateToExplanation = ({
   matchExists,
   currentStep,
   currentSubstep,
-  hideLeftMostPrioritiesExplanation,
   showAllShowSteps
 }: {
   state: CallStates
   matchExists?: boolean
   currentStep: number
   currentSubstep: number
-  hideLeftMostPrioritiesExplanation: boolean
   showAllShowSteps?: boolean
 }) => {
   if (currentStep === 1 && currentSubstep === 1) {
@@ -55,38 +51,16 @@ const stateToExplanation = ({
   switch (state) {
     case 'default': {
       if (locale === 'en') {
-        return (
-          <>
-            Previous <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            ’s disappeared
-          </>
-        )
+        return <>Removed!</>
       } else {
-        return (
-          <>
-            以前の <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消えました
-          </>
-        )
+        return <>消えました！</>
       }
     }
     case 'active': {
       if (locale === 'en') {
-        return (
-          <>
-            {!hideLeftMostPrioritiesExplanation && 'Leftmost '}
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-            ’s on top/bottom left
-          </>
-        )
+        return <>We’ll focus on these…</>
       } else {
-        return (
-          <>
-            左上と左下が <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-            の部分
-            {!hideLeftMostPrioritiesExplanation && '(一番左)'}
-            を白色に
-          </>
-        )
+        return <>この部分をやっていきます</>
       }
     }
     case 'showFuncBound': {
@@ -285,7 +259,6 @@ const ExpressionRunnerExplanation: React.SFC<
   currentStep,
   currentSubstep,
   isDone,
-  hideLeftMostPrioritiesExplanation,
   numSecondsRemaining,
   isPlaying,
   showAllShowSteps
@@ -341,7 +314,6 @@ const ExpressionRunnerExplanation: React.SFC<
             state: expressionContainer.previouslyChangedExpressionState,
             currentStep,
             currentSubstep,
-            hideLeftMostPrioritiesExplanation,
             matchExists: expressionContainer.matchExists,
             showAllShowSteps
           })
