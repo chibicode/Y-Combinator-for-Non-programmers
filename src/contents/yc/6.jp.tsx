@@ -68,12 +68,12 @@ export default () => {
         </Em>
       </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
-      <H3>1のペアからはじめられないとき</H3>
+      <H3>1のペアからはじめられない場合</H3>
       <P>
         <Strong>
           たまに、
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめられないときがあります。
+          のペアからはじめられない場合があります。
         </Strong>
         こちらをご覧ください:
       </P>
