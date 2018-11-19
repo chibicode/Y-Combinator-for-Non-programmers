@@ -1,323 +1,160 @@
-import { css } from 'emotion'
 import React from 'react'
-import {
-  Em,
-  H3,
-  P,
-  Strong,
-  Table,
-  Td,
-  Th,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode11 } from 'src/components/Yc/AllExpressionRunners'
+import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-import { colors } from 'src/lib/theme'
 
 export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 8)}
-      <P>{h('ycPlayUntilDone')}:</P>
-      {episode11[i++]()}
+      <H3>{h('ycPlay')} ボタン</H3>
       <P>
-        <Strong>まとめると:</Strong>
+        中級レベルでは新しく「
+        <Strong>{h('ycPlay')}</Strong>
+        」ボタンを使うことができます。
       </P>
-      <Ul>
-        <UlLi>
-          最初は <InlineEmojiBoxes emojis={['🥗', '🥩', '🥩']} /> 、すなわち{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-          のパターンからはじまった。
-        </UlLi>
-        <UlLi>
-          最終的には <InlineEmojiBoxes emojis={['🍕', '🍛', '🍕']} /> 、すなわち{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンになった。
-        </UlLi>
-        <UlLi>
-          <Em>
-            つまり <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> が{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になった。
-          </Em>
-        </UlLi>
-      </Ul>
-      <P>うーん、ということは…!</P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>
-        この
+      <P>
+        <Em>下の 「{h('ycPlay')}」 を押してみてください。</Em>
+      </P>
+      {episode8[i++]()}
+      <P>
         {h('ycBentoBox')}
-        にはどんな効果があるのか
-      </H3>
+        を自動で実行してくれる、便利な機能です！
+      </P>
+      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
       <P>
-        ここまでをまとめると、下の
+        それでは本題に入りましょう。
+        <Strong>ふたつのパターン</Strong>
+        について説明します。
+      </P>
+      <H3>パターンその1</H3>
+      <P>
+        下の
         {h('ycBentoBox')}
-        は、
+        をご覧ください:
       </P>
-      {episode11[i++]()}
-      <P>次のような効果があるようです:</P>
-      <Ul>
-        <UlLi>
-          <Em>
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> を{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-            に変える。(前のページの例より)
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> を{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> に変える。
-          </Em>
-        </UlLi>
-      </Ul>
-      <P>ここで気になることがひとつ。</P>
-      <H3>
-        まだまだ他にも、面白い効果がある
-        {h('ycBentoBox', true)}
-        はあるのでしょうか？
-      </H3>
+      {episode8[i++]()}
       <P>
-        <Strong>
-          答え: <Em>あります。</Em> <Emoji>👍</Emoji>
-        </Strong>{' '}
-        こちらの
-        {h('ycBentoBox')}
-        がそうです:
+        仮に、
+        <Emoji size="mdlg">🍣</Emoji> を <Emoji size="mdlg">1️⃣</Emoji> とし、{' '}
+        <Emoji size="mdlg">🥪</Emoji> を <Emoji size="mdlg">2️⃣</Emoji>{' '}
+        で表したとします。
       </P>
-      {episode11[i++]()}
-      <H3>ケース1 (全部で4つ)</H3>
       <P>
-        まず、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
-        のパターンのものをふたつ、上にくっつけます。
-      </P>
-      {episode11[i++]()}
-      <P>
-        これで、
-        {h('ycPlayUntilDone')}。
-      </P>
-      {episode11[i++]()}
-      <P>
-        <Strong>答え:</Strong>
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になりました！
-      </P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>ケース2 (全部で4つ)</H3>
-      <P>
-        それでは、上に <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> と{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        をくっつけたらどうなるでしょう？これで
-        {h('ycPlayUntilDone')}。
-      </P>
-      {episode11[i++]()}
-      <P>
-        <Strong>答え:</Strong> またしても{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になりましたね。
-      </P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>ケース3 (全部で4つ)</H3>
-      <P>
-        それでは順番を変えて、上に{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> と{' '}
+        つまり、 <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
-        をくっつけたらどうなるでしょう？これで
-        {h('ycPlayUntilDone')}。
+        というパターンといえます。
       </P>
-      {episode11[i++]()}
+      <H3>パターンその2</H3>
+      <P>では、こちらはどんなパターンでしょうか？</P>
+      {episode8[i++]()}
       <P>
-        <Strong>答え:</Strong> 今回も{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> になりました。
+        <Strong>答え:</Strong> 仮に <Emoji size="mdlg">🥗</Emoji> を{' '}
+        <Emoji size="mdlg">1️⃣</Emoji> とし、 <Emoji size="mdlg">🥩</Emoji> を{' '}
+        <Emoji size="mdlg">2️⃣</Emoji> とした場合、パターンは{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> となります。
       </P>
+      <H3>ここで質問です</H3>
       <P>
-        ここまで見ると、
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンの
+        {h('ycBentoBox')}
+        と、
+      </P>
+      {episode8[i++]()}
+      <P>
+        下の
+        {h('ycBentoBox')}
+        を組み合わせ、
+      </P>
+      {episode8[i++]()}
+      <P>
+        次のような
+        {h('ycBentoBox')}
+        を作ったとします。
+      </P>
+      {episode8[i++]()}
+      <P>
+        <Strong>問題:</Strong>{' '}
         <Em>
-          毎回 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-        </Em>{' '}
-        になるように思えてきます。では、最後のケースではどうでしょうか。
+          これを
+          {h('ycDone')}
+          になるまで進めたらどうなるでしょう？
+        </Em>
       </P>
-      <H3>ケース4 (全部で4つ)</H3>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>早速やってみましょう</H3>
       <P>
-        最後は、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> と{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        を上にくっつけてみます。これで
-        {h('ycPlayUntilDone')}。
+        <Em>
+          新しい「
+          {h('ycPlay')}
+          」ボタン
+        </Em>
+        を使って、
+        {h('ycDone')}
+        になるまで進めてみてください。
       </P>
-      {episode11[i++]()}
+      {episode8[i++]()}
+      <P>というわけで、結果はこうなりました:</P>
+      {episode8[i++]()}
       <P>
-        <Strong>おっと！</Strong> <Emoji>😳</Emoji> 今回は、{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になりました。
+        <Em>これのパターンは何でしょう？</Em>
       </P>
-      <EmojiSeparator emojis={['😳', '😳', '😳']} />
-      <P>ほかの3つのケースとくらべて、これだけ違うのですね…</P>
-      <H3>
-        この
-        {h('ycBentoBox')}
-        にはどんな効果があるのか
-      </H3>
       <P>
-        というわけで、下の
-        {h('ycBentoBox')}
-        には…
+        <Strong>答え:</Strong> <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        のパターンです。
       </P>
-      {episode11[i++]()}
-      <P>…次のような効果があるようです:</P>
+      <H3>まとめると:</H3>
       <Ul>
         <UlLi>
-          <Em>
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> と{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> を{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> に変える。
-          </Em>
+          最初の <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
+          というパターンだった。
+        </UlLi>
+        <UlLi>
+          最終的に <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> 、つまり{' '}
+          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
         </UlLi>
         <UlLi>
           <Em>
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> と{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> を{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> に変える。
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> と{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> を{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> に変える。
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> と{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> を{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> に変える。
+            つまり、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> が{' '}
+            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
           </Em>
         </UlLi>
       </Ul>
-      <P>うーん、これ、どこかで聞いたようなことがある気がしませんか？</P>
+      <P>ふーむ、これは何かありそうですね。</P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>クイズ</H3>
+      <H3>ここでクイズです</H3>
       <P>
-        <Strong>
-          ここまでの例と、似たような現象をどこかで見たことがないでしょうか？
-        </Strong>
-        もしかしたら、
-        <Em>高校の数学</Em>
-        でやったことがあるかもしれません。
+        それでは先ほどと反対に、{' '}
+        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
+        からはじめたらどうなるでしょう？つまり、下の
+        {h('ycBentoBox')}
+        と、
       </P>
+      {episode8[i++]()}
       <P>
-        (もし、プログラミングの経験がおありでしたら、プログラミングの考え方で近いものが思い浮かぶかもしれません。)
+        先ほどと同じく下の
+        {h('ycBentoBox')}
+        の弁当箱を合わせたら、
       </P>
+      {episode8[i++]()}
       <P>
-        <Strong>ヒント:</Strong> 次のような表を見たことがありますか？{' '}
-        <Emoji>😉</Emoji> この表と先ほどの例との関連性に気付けるでしょうか？
+        下の
+        {h('ycBentoBox')}
+        は最終的にはどうなるでしょう？
       </P>
-      <Table>
-        <thead>
-          <tr>
-            <Th>A</Th>
-            <Th>B</Th>
-            <Th>AまたはB</Th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-          </tr>
-        </tbody>
-      </Table>
-
-      <YcNextLessonButton nextEpisodeNumber={10} />
+      {episode8[i++]()}
+      <P>
+        <Em>
+          果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
+          になるのでしょうか?
+        </Em>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={9} />
     </>
   )
 }

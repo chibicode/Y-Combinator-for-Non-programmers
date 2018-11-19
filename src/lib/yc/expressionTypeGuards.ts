@@ -29,7 +29,6 @@ export function isExecutableCall<E extends ExecutableCall>(
 ): expression is E {
   return (
     (isFunction(expression.arg) || isVariable(expression.arg)) &&
-    isFunction(expression.func) &&
-    expression.priority === 1
+    isFunction(expression.func)
   )
 }

@@ -47,10 +47,14 @@ export const allTranslations = {
     jp: '1を足す'
   },
   ycEpisode10: {
+    en: 'Addition and Multiplication',
+    jp: '足し算と掛け算'
+  },
+  ycEpisode11: {
     en: 'The Two Patterns',
     jp: 'ふたつのパターン'
   },
-  ycEpisode11: {
+  ycEpisode12: {
     en: 'Patterns You’ve Seen Before',
     jp: 'どこかで見たような法則'
   }

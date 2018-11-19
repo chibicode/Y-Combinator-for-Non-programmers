@@ -49,7 +49,7 @@ function helper<
   while (stack.length > 0) {
     const current = stack.pop()
     if (current && current.expression) {
-      if (current.expression && isExecutableCall<E>(current.expression)) {
+      if (isExecutableCall<E>(current.expression)) {
         return {
           expression: current.expression,
           callParent: current.callParent,

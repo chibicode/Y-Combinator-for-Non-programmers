@@ -1,9 +1,7 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
+import { Em, H3, P, Strong } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode8 } from 'src/components/Yc/AllExpressionRunners'
-import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
+import { episode9 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -11,150 +9,86 @@ export default () => {
   let i = 0
   return (
     <>
-      <H3>{h('ycPlay')} ボタン</H3>
+      {h('ycQuizReview', 8)}
+      <P>{h('ycPlayUntilDone')}:</P>
+      {episode9[i++]()}
+      <P>So in the end, it became:</P>
+      {episode9[i++]()}
       <P>
-        中級レベルでは新しく「
-        <Strong>{h('ycPlay')}</Strong>
-        」ボタンを使うことができます。
+        Its secret code is <Strong>3</Strong>.
       </P>
       <P>
-        <Em>下の 「{h('ycPlay')}」 を押してみてください。</Em>
+        Originally, the secret code was <Strong>2</Strong>:
       </P>
-      {episode8[i++]()}
+      {episode9[i++]()}
       <P>
-        {h('ycBentoBox')}
-        を自動で実行してくれる、便利な機能です！
-      </P>
-      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
-      <P>
-        それでは本題に入りましょう。
-        <Strong>ふたつのパターン</Strong>
-        について説明します。
-      </P>
-      <H3>パターンその1</H3>
-      <P>
-        下の
-        {h('ycBentoBox')}
-        をご覧ください:
-      </P>
-      {episode8[i++]()}
-      <P>
-        仮に、
-        <Emoji size="mdlg">🍣</Emoji> を <Emoji size="mdlg">1️⃣</Emoji> とし、{' '}
-        <Emoji size="mdlg">🥪</Emoji> を <Emoji size="mdlg">2️⃣</Emoji>{' '}
-        で表したとします。
-      </P>
-      <P>
-        つまり、 <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
-        というパターンといえます。
-      </P>
-      <H3>パターンその2</H3>
-      <P>では、こちらはどんなパターンでしょうか？</P>
-      {episode8[i++]()}
-      <P>
-        <Strong>答え:</Strong> 仮に <Emoji size="mdlg">🥗</Emoji> を{' '}
-        <Emoji size="mdlg">1️⃣</Emoji> とし、 <Emoji size="mdlg">🥩</Emoji> を{' '}
-        <Emoji size="mdlg">2️⃣</Emoji> とした場合、パターンは{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> となります。
-      </P>
-      <H3>ここで質問です</H3>
-      <P>
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> のパターンの
-        {h('ycBentoBox')}
-        と、
-      </P>
-      {episode8[i++]()}
-      <P>
-        下の
-        {h('ycBentoBox')}
-        を組み合わせ、
-      </P>
-      {episode8[i++]()}
-      <P>
-        次のような
-        {h('ycBentoBox')}
-        を作ったとします。
-      </P>
-      {episode8[i++]()}
-      <P>
-        <Strong>問題:</Strong>{' '}
+        So{' '}
         <Em>
-          これを
-          {h('ycDone')}
-          になるまで進めたらどうなるでしょう？
+          the secret code <Strong>increased by 1</Strong>.
         </Em>
       </P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>早速やってみましょう</H3>
+      <P>
+        That means the following {h('ycBentoBox')} which we used has an effect
+        of <Strong>adding 1 to the secret code</Strong>.
+      </P>
+      {episode9[i++]()}
+      <EmojiSeparator emojis={['🍱', '➕', '1️⃣']} />
+      <P>Let’s try with other {h('ycBentoBox', true)}</P>
+      <H3>4 + 1 = 5</H3>
+      <P>
+        This one has the secret code <Strong>4</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>
+        Let’s combine this with the {h('ycBentoBox')} that has an effect of{' '}
+        <Strong>adding 1 to the secret code</Strong>. {h('ycPlayUntilDone')}。
+      </P>
+      {episode9[i++]()}
       <P>
         <Em>
-          新しい「
-          {h('ycPlay')}
-          」ボタン
+          As expected, the new secret code is <Strong>4 + 1 = 5</Strong>.
         </Em>
-        を使って、
-        {h('ycDone')}
-        になるまで進めてみてください。
       </P>
-      {episode8[i++]()}
-      <P>というわけで、結果はこうなりました:</P>
-      {episode8[i++]()}
+      {episode9[i++]()}
       <P>
-        <Em>これのパターンは何でしょう？</Em>
+        <Strong>Again:</Strong> this {h('ycBentoBox')} has an effect of{' '}
+        <Strong>adding 1 to the secret code</Strong>.
       </P>
+      {episode9[i++]()}
+      <EmojiSeparator emojis={['🍱', '➕', '1️⃣']} />
+      <H3>Quiz</H3>
       <P>
-        <Strong>答え:</Strong> <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        のパターンです。
+        <Strong>How about this {h('ycBentoBox')}?</Strong>{' '}
+        <Em>What effect do you think this has?</Em>
       </P>
-      <H3>まとめると:</H3>
-      <Ul>
-        <UlLi>
-          最初の <InlineEmojiBoxes emojis={['🍣', '🥪', '🍣']} /> は{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
-          というパターンだった。
-        </UlLi>
-        <UlLi>
-          最終的に <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> 、つまり{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
-        </UlLi>
-        <UlLi>
-          <Em>
-            つまり、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> が{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になった。
-          </Em>
-        </UlLi>
-      </Ul>
-      <P>ふーむ、これは何かありそうですね。</P>
-      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>ここでクイズです</H3>
-      <P>
-        それでは先ほどと反対に、{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        からはじめたらどうなるでしょう？つまり、下の
-        {h('ycBentoBox')}
-        と、
-      </P>
-      {episode8[i++]()}
-      <P>
-        先ほどと同じく下の
-        {h('ycBentoBox')}
-        の弁当箱を合わせたら、
-      </P>
-      {episode8[i++]()}
-      <P>
-        下の
-        {h('ycBentoBox')}
-        は最終的にはどうなるでしょう？
-      </P>
-      {episode8[i++]()}
+      {episode9[i++]()}
       <P>
         <Em>
-          果たして今度は <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-          になるのでしょうか?
+          <Strong>Hint:</Strong> It’s meant to be combined with{' '}
+          <Strong>two</Strong> {h('ycBentoBox', true)} with{' '}
+          <Strong>secret code</Strong>.
         </Em>
       </P>
-      <YcNextLessonButton nextEpisodeNumber={9} />
+      <P>
+        For example, we’ll combine it with the {h('ycBentoBox')} with the secret
+        code <Strong>2</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>
+        And the {h('ycBentoBox')} with the secret code <Strong>3</Strong>:
+      </P>
+      {episode9[i++]()}
+      <P>Which becomes:</P>
+      {episode9[i++]()}
+      <P>
+        <Strong>Question:</Strong> What do you think will happen when you step
+        through this until it’s {h('ycDone')}?{' '}
+      </P>
+      <P>
+        The original secret code were 2 and 3.{' '}
+        <Em>What do you think will be the new secret code?</Em>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={10} />
     </>
   )
 }

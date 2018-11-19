@@ -927,6 +927,16 @@ export const episode9 = [
 export const episode10 = [
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression7}
+      containerSize={'xs'}
+      variableSize={'sm'}
+    />
+  )
+]
+
+export const episode11 = [
+  () => (
+    <ExpressionRunner
       hideForwardAndBackButtons
       expressionContainer={lessonExpressions.episode5Expression1}
       containerSize={'xs'}
@@ -1023,7 +1033,7 @@ export const episode10 = [
   )
 ]
 
-export const episode11 = [
+export const episode12 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.oldEpisode8Expression6}
