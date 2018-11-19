@@ -68,6 +68,42 @@ export default () => {
         </Em>
       </P>
       <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
+      <H3>1のペアからはじめられないとき</H3>
+      <P>
+        <Strong>
+          たまに、
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめられないときがあります。
+        </Strong>
+        こちらをご覧ください:
+      </P>
+      {episode6[i++]()}
+      <P>
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        のペアはこちらですが、
+        <Em>
+          これはマスがふたつしかないので、先に進むことができないやつです！
+        </Em>
+      </P>
+      {episode6[i++]()}
+      <P>
+        このように
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        のペア からはじめられない時は、
+        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        のペア からはじめる必要があります。
+      </P>
+      {episode6[i++]()}
+      <H3>まとめ</H3>
+      <P>
+        <Em>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめられない時は、
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+          のペアからはじめ、
+        </Em>
+        それが無理なら次の数字へ…と続ける。
+      </P>
       <P>それでは、ここでまたクイズです！</P>
       <H3>クイズ</H3>
       <P>
