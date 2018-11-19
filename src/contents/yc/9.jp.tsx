@@ -1,22 +1,9 @@
 import React from 'react'
-import {
-  Em,
-  H3,
-  P,
-  Strong
-  // Table,
-  // Td,
-  // Th,
-  // Ul,
-  // UlLi
-} from 'src/components/ContentTags'
-// import Emoji from 'src/components/Emoji'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
+import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode9 } from 'src/components/Yc/AllExpressionRunners'
-// import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
-// import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-// import { colors } from 'src/lib/theme'
 
 export default () => {
   let i = 0
@@ -53,7 +40,7 @@ export default () => {
         といえます。
       </P>
       {episode9[i++]()}
-      <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
+      <EmojiSeparator emojis={['🍱', '➕', '1️⃣']} />
       <P>他の弁当箱でも試してみましょう！</P>
       <H3>4 + 1 = 5</H3>
       <P>
@@ -77,6 +64,50 @@ export default () => {
         </Em>
       </P>
       {episode9[i++]()}
+      <P>
+        <Strong>というわけで:</Strong> この弁当箱に
+        <Strong>「暗号の数字に1を足す」</Strong>
+        効果があるのは確かなようです。
+      </P>
+      {episode9[i++]()}
+      <EmojiSeparator emojis={['🍱', '➕', '1️⃣']} />
+      <H3>クイズ</H3>
+      <P>
+        <Strong>では、ここで問題です。</Strong>
+        <Em>こちらの弁当箱にはどんな効果があるでしょう？</Em>
+      </P>
+      {episode9[i++]()}
+      <P>
+        <Em>
+          <Strong>ヒント:</Strong> この弁当箱は
+          <Strong>暗号があるふたつの</Strong>
+          弁当箱と組み合わせるようにできています。
+        </Em>
+      </P>
+      <P>
+        たとえば、こちらの暗号が
+        <Strong>2</Strong>
+        の弁当箱と、
+      </P>
+      {episode9[i++]()}
+      <P>
+        こちらの暗号が
+        <Strong>3</Strong>
+        の弁当箱と、
+      </P>
+      {episode9[i++]()}
+      <P>先ほどの弁当箱を合体させると、こうなります。</P>
+      {episode9[i++]()}
+      <P>
+        <Strong>問題:</Strong> これを
+        {h('ycDone')}
+        になるまで進めたらどうなるでしょう？
+      </P>
+      <P>
+        もともとの暗号は2と3でした。
+        <Em>新しい暗号は何になるでしょう？</Em>
+      </P>
+      <YcNextLessonButton nextEpisodeNumber={10} />
     </>
   )
 }
