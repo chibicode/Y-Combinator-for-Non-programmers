@@ -23,7 +23,7 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 8)}
+      {h('ycQuizReview', 11)}
       <P>{h('ycPlayUntilDone')}:</P>
       {episode12[i++]()}
       <P>
@@ -148,10 +148,10 @@ export default () => {
       </P>
       {episode12[i++]()}
       <P>
-        <Strong>おっと！</Strong> <Emoji>😳</Emoji> 今回は、{' '}
+        <Strong>おっと！</Strong> <Emoji>😲</Emoji> 今回は、{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> になりました。
       </P>
-      <EmojiSeparator emojis={['😳', '😳', '😳']} />
+      <EmojiSeparator emojis={['😲', '😲', '😲']} />
       <P>ほかの3つのケースとくらべて、これだけ違うのですね…</P>
       <H3>
         この

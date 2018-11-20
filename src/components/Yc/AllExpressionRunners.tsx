@@ -1019,10 +1019,71 @@ export const episode10 = [
   ),
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode8Expression6}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={secretCodeCaption('🍔', 2)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression6}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={secretCodeCaption('🍚', 3)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode10Expression3}
       containerSize={'xs'}
       variableSize={'sm'}
       isFastForwardPlayButton
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode10Expression4}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      isFastForwardPlayButton
+      caption={secretCodeCaption('🥗', 6)}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode10Expression3}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={combineSecretCodeCaption('multiply', '🍔', 2, '🍚', 3)}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode9Expression5}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={additionCaption}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode10Expression2}
+      containerSize={'xs'}
+      variableSize={'sm'}
+      hideControls
+      hideExplanations
+      caption={multiplicationCaption}
     />
   )
 ]

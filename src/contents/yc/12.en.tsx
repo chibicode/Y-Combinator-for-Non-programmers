@@ -23,7 +23,7 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 8)}
+      {h('ycQuizReview', 11)}
       <P>{h('ycPlayUntilDone')}:</P>
       {episode12[i++]()}
       <P>
@@ -133,10 +133,10 @@ export default () => {
       </P>
       {episode12[i++]()}
       <P>
-        <Strong>Wow!</Strong> <Emoji>😳</Emoji> This time, it ended up as{' '}
+        <Strong>Wow!</Strong> <Emoji>😲</Emoji> This time, it ended up as{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
       </P>
-      <EmojiSeparator emojis={['😳', '😳', '😳']} />
+      <EmojiSeparator emojis={['😲', '😲', '😲']} />
       <P>So this one’s a bit different from the other three scenarios!</P>
       <H3>What this {h('ycBentoBox')} does</H3>
       <P>So, it seems that the following {h('ycBentoBox')}:</P>

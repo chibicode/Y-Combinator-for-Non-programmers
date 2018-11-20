@@ -468,6 +468,14 @@ export const episode10Expression3 = initializeExpressionContainer([
   baseTwo
 ])
 
+export const episode10Expression4 = initializeExpressionContainer({
+  arg: 'c',
+  body: {
+    arg: 'd',
+    body: ['c', ['c', ['c', ['c', ['c', ['c', 'd']]]]]]
+  }
+})
+
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
 // a => b => (a b)
