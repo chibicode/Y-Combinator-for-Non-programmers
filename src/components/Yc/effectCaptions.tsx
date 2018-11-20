@@ -43,30 +43,31 @@ export const plusOneCaption = {
 
 export const additionCaption = {
   en: (
-    <Strong>
-      Adds two secret code <Emoji>🍱</Emoji> <Emoji>➕</Emoji> <Emoji>🍱</Emoji>
-    </Strong>
+    <>
+      Bento box for <Strong>addition</Strong> <Emoji>🍱</Emoji>{' '}
+      <Emoji>➕</Emoji> <Emoji>🍱</Emoji>
+    </>
   ),
   jp: (
-    <Strong>
-      ふたつの暗号の数字を合計する <Emoji>🍱</Emoji> <Emoji>➕</Emoji>{' '}
-      <Emoji>🍱</Emoji>
-    </Strong>
+    <>
+      <Strong>足し算</Strong>
+      ができる弁当箱 <Emoji>🍱</Emoji> <Emoji>➕</Emoji> <Emoji>🍱</Emoji>
+    </>
   )
 }
 
 export const multiplicationCaption = {
   en: (
-    <Strong>
-      Multiplies two secret code <Emoji>🍱</Emoji> <Emoji>✖️</Emoji>{' '}
-      <Emoji>🍱</Emoji>
-    </Strong>
+    <>
+      Bento box for <Strong>multiplication</Strong> <Emoji>🍱</Emoji>{' '}
+      <Emoji>✖️</Emoji> <Emoji>🍱</Emoji>
+    </>
   ),
   jp: (
-    <Strong>
-      ふたつの暗号の数字を掛ける <Emoji>🍱</Emoji> <Emoji>✖️</Emoji>{' '}
-      <Emoji>🍱</Emoji>
-    </Strong>
+    <>
+      <Strong>掛け算</Strong>
+      ができる弁当箱 <Emoji>🍱</Emoji> <Emoji>✖️</Emoji> <Emoji>🍱</Emoji>
+    </>
   )
 }
 

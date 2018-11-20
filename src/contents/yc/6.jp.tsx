@@ -58,7 +58,7 @@ export default () => {
       {episode6[i++]()}
       <P>このまま最後まで進めてしまいましょう:</P>
       {episode6[i++]()}
-      <H3>まとめ</H3>
+      <H3>ここまでのまとめ</H3>
       <P>
         <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が複数あるときは、
         <Em>
@@ -94,7 +94,7 @@ export default () => {
         のペア からはじめる必要があります。
       </P>
       {episode6[i++]()}
-      <H3>まとめ</H3>
+      <H3>ここまでのまとめ</H3>
       <P>
         <Em>
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>

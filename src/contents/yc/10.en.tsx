@@ -11,10 +11,10 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 9)}
-      <P>{h('ycPlayUntilDone')}.</P>
+      <P>{h('ycPlayUntilDone')}:</P>
       <P>
-        <Strong>Note:</Strong> The {h('ycPlay')} button runs faster here because
-        there are a lot of steps.
+        (<Strong>Note:</Strong> The {h('ycPlay')} button runs faster here
+        because there are a lot of steps.)
       </P>
       {episode10[i++]()}
       <P>
@@ -83,8 +83,8 @@ export default () => {
       </P>
       {episode10[i++]()}
       <P>
-        The result was <Strong>6</Strong>, which is equal to <Strong>2</Strong>{' '}
-        × <Strong>3</Strong>.
+        The result has the secret code <Strong>6</Strong>, which is equal to{' '}
+        <Strong>2</Strong> × <Strong>3</Strong>.
       </P>
       {episode10[i++]()}
       <P>
