@@ -213,30 +213,6 @@ const baseNot: FunctionExpressionParams = {
   }
 }
 
-export const oldEpisode8Expression1 = initializeExpressionContainer(baseTrue)
-
-export const oldEpisode8Expression2 = initializeExpressionContainer(baseFalse)
-
-export const oldEpisode8Expression3 = initializeExpressionContainer(baseNot)
-
-export const oldEpisode8Expression4 = initializeExpressionContainer([
-  baseNot,
-  baseTrue
-])
-
-export const oldEpisode8Expression5 = initializeExpressionContainer({
-  arg: 'b',
-  body: {
-    arg: 'c',
-    body: 'c'
-  }
-})
-
-export const oldEpisode8Expression6 = initializeExpressionContainer([
-  baseNot,
-  baseFalse
-])
-
 const baseOr: FunctionExpressionParams = {
   arg: 'e',
   body: {
@@ -499,6 +475,30 @@ export const episode11Expression4 = initializeExpressionContainer({
     body: 'k'
   }
 })
+
+export const episode11Expression5 = initializeExpressionContainer(baseTrue)
+
+export const episode11Expression6 = initializeExpressionContainer(baseFalse)
+
+export const episode11Expression7 = initializeExpressionContainer(baseNot)
+
+export const episode11Expression8 = initializeExpressionContainer([
+  baseNot,
+  baseTrue
+])
+
+export const episode11Expression9 = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: 'c'
+  }
+})
+
+export const episode11Expression10 = initializeExpressionContainer([
+  baseNot,
+  baseFalse
+])
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 

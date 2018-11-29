@@ -59,7 +59,7 @@ export default () => {
       {episode11[i++]()}
       <P>Did you figure out the pattern? Let’s do a quiz!</P>
       <H3>Quiz: Guess the Secret Boolean Code</H3>
-      <P>What’s the secret code of the following {h('ycBentoBox')}?</P>
+      <P>What’s the secret boolean code of the following {h('ycBentoBox')}?</P>
       {episode11[i++]()}
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>The Answer</H3>
@@ -161,7 +161,7 @@ export default () => {
       <P>
         <Em>Do you think it will become {h('ycYes')}?</Em>
       </P>
-      <YcNextLessonButton nextEpisodeNumber={9} />
+      <YcNextLessonButton nextEpisodeNumber={12} />
     </>
   )
 }
