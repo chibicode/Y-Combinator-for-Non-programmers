@@ -20,110 +20,101 @@ export default () => {
   let i = 0
   return (
     <>
-      <H3>
-        <Strong>True</Strong> and <Strong>False</Strong>
-      </H3>
       <P>
-        When we talk about logic, a statement can be <Strong>True</Strong> or{' '}
-        <Strong>False</Strong>. For example:
-      </P>
-      <Ul>
-        <UlLi>
-          The statement <Em>“1 + 1 = 2”</Em> is <Strong>True</Strong>.
-        </UlLi>
-        <UlLi>
-          The statement <Em>“1 + 1 = 3”</Em> is <Strong>False</Strong>.
-        </UlLi>
-      </Ul>
-      <H3>Notations</H3>
-      <P>
-        Now, we’ll use the following notation to describe <Strong>True</Strong>{' '}
-        and <Strong>False</Strong>:
-      </P>
-      <Ul>
-        <UlLi>
-          <Em>
-            <Emoji size="mdlg">🔵</Emoji> <Emoji size="mdlg">🔴</Emoji>{' '}
-            <Emoji size="mdlg">🔵</Emoji> means <Strong>True</Strong>.
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            <Emoji size="mdlg">🔵</Emoji> <Emoji size="mdlg">🔴</Emoji>{' '}
-            <Emoji size="mdlg">🔴</Emoji> means <Strong>False</Strong>.
-          </Em>
-        </UlLi>
-      </Ul>
-      <P>
-        <Strong>You don’t need to memorize this notation.</Strong> But here’s an
-        easy way to distinguish between the two.
-      </P>
-      <Ol>
-        <OlLi>
-          Look at the <Em>right-most circle</Em>.
-        </OlLi>
-        <OlLi>
-          <Strong>If it’s blue</Strong> <Emoji size="mdlg">🔵</Emoji> then it’s{' '}
-          <Strong>True</Strong>. So <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
-          <Emoji>🔵</Emoji> means <Strong>True</Strong>.
-        </OlLi>
-        <OlLi>
-          <Strong>If it’s red</Strong> <Emoji size="mdlg">🔴</Emoji> then it’s{' '}
-          <Strong>False</Strong>. So <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
-          <Emoji>🔴</Emoji> means <Strong>False</Strong>.
-        </OlLi>
-      </Ol>
-      <P>
-        Now, we’ll take a look at {h('ycBentoBox', true)} that represent True /
-        False.
-      </P>
-      <H3>A “True” Bento Box</H3>
-      <P>Take a look at this {h('ycBentoBox')}:</P>
-      {episode11[i++]()}
-      <P>
-        Notice that <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> has the
-        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔵']} />.
+        This time, we’ll talk about the new kind of <Strong>secret code</Strong>
+        , called <Strong>Secret Boolean Code</Strong>.{' '}
       </P>
       <P>
-        We earlier said that <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
-        <Emoji>🔵</Emoji> means <Strong>True</Strong>.
+        <Em>
+          <Strong>“Boolean”</Strong> means <Strong>Yes</Strong> or{' '}
+          <Strong>No</Strong>.
+        </Em>
+      </P>
+      <H3>Challenge</H3>
+      <P>
+        In this page, I’ll show you some {h('ycBentoBox', true)}. Each one
+        contains hidden <Strong>secret boolean code</Strong> which follows a{' '}
+        <Strong>pattern</Strong>.{' '}
       </P>
       <P>
-        So, this {h('ycBentoBox')} means <Strong>True</Strong>.
+        <Em>
+          <Strong>Challenge:</Strong> Like before, I want you to figure out what
+          the pattern is
+        </Em>
+        .
       </P>
-      {episode11[i++]()}
-      <H3>A “False” Bento Box</H3>
-      <P>How about this one?</P>
-      {episode11[i++]()}
+      <EmojiSeparator emojis={['🔵', '🧐', '️🔴']} />
+      <H3>Secret Boolean Code: Examples</H3>
       <P>
-        Notice that <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} /> has the
-        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />.
-      </P>
-      <P>
-        We earlier said that <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
-        <Emoji>🔴</Emoji> means <Strong>False</Strong>.
-      </P>
-      <P>
-        So, this {h('ycBentoBox')} means <Strong>False</Strong>.
+        This one has the secret boolean code <Strong>Yes</Strong>:
       </P>
       {episode11[i++]()}
       <P>
-        It’s ok if you’re confused. We’ll work on some examples over the next
-        few chapters, and things will become clear!
+        This one has the secret boolean code <Strong>No</Strong>:
       </P>
+      {episode11[i++]()}
+      <P>
+        This one has the secret boolean code <Strong>Yes</Strong>:
+      </P>
+      {episode11[i++]()}
+      <P>Did you figure out the pattern? Let’s do a quiz!</P>
+      <H3>Quiz: Guess the Secret Boolean Code</H3>
+      <P>What’s the secret code of the following {h('ycBentoBox')}?</P>
+      {episode11[i++]()}
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>The Answer</H3>
+      <P>
+        <Strong>Answer:</Strong>{' '}
+        <Em>
+          The secret boolean code is <Strong>No</Strong>
+        </Em>
+        .
+      </P>
+      <P>
+        <Strong>The Pattern:</Strong>
+      </P>
+      <Ul>
+        <UlLi>
+          <Em>
+            Ones with the boolean code <Strong>Yes</Strong> has this pattern:{' '}
+            <InlineEmojiBoxes emojis={['🔵', '🔴', '🔵']} />
+          </Em>
+        </UlLi>
+        <UlLi>
+          Example: <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> and{' '}
+          <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />.
+        </UlLi>
+        <UlLi>
+          <Em>
+            Ones with the boolean code <Strong>No</Strong> has this pattern:{' '}
+            <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />
+          </Em>
+        </UlLi>
+        <UlLi>
+          Example: <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> and{' '}
+          <InlineEmojiBoxes emojis={['🍝', '🥦', '🥦']} />.
+        </UlLi>
+      </Ul>
+      <P>
+        <Strong>Was it too easy?</Strong> Well ok, here’s something more
+        challenging…
+      </P>
+      <EmojiSeparator emojis={['🔵', '🧐', '️🔴']} />
       <H3>Question</H3>
       <P>
-        Now, we’ll take this {h('ycTrue')} {h('ycBentoBox')}:
+        Suppose we have the {h('ycBentoBox')} with the{' '}
+        <Em>secret boolean code {h('ycYes')}</Em>.
       </P>
       {episode11[i++]()}
-      <P>And we’ll take this {h('ycBentoBox')}:</P>
+      <P>
+        <Strong>We’ll combine it</Strong> with the following {h('ycBentoBox')}:
+      </P>
       {episode11[i++]()}
-      <P>And we’ll combine them:</P>
+      <P>So it becomes:</P>
       {episode11[i++]()}
       <P>
-        <Strong>Question:</Strong>{' '}
-        <Em>What do you think will happen when it’s {h('ycDone')}?</Em>
+        <Strong>Question:</Strong> What do you think will happen when you step
+        through this until it’s {h('ycDone')}?
       </P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Let’s Try!</H3>
@@ -133,22 +124,22 @@ export default () => {
       {episode11[i++]()}
       <P>
         Notice that <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} /> has the
-        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />. This means{' '}
-        <Strong>False</Strong>.
+        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />, so{' '}
+        <Em>the secret boolean code is {h('ycNo')}</Em>.
       </P>
       <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
           We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />,
-          which represents {h('ycTrue')}.
+          which has the secret boolean code {h('ycYes')}.
         </UlLi>
         <UlLi>
           We ended up with <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />,
-          which represents {h('ycFalse')}.
+          which has the secret boolean code {h('ycNo')}.
         </UlLi>
         <UlLi>
           <Em>
-            So {h('ycTrue')} became {h('ycFalse')}.
+            So {h('ycYes')} became {h('ycNo')}.
           </Em>
         </UlLi>
       </Ul>
@@ -156,8 +147,8 @@ export default () => {
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Quiz</H3>
       <P>
-        What if we start with {h('ycFalse')} instead? In other words, if we
-        combine this:
+        What if we start with {h('ycNo')} instead? In other words, if we combine
+        this:
       </P>
       {episode11[i++]()}
       <P>With this again:</P>
@@ -168,7 +159,7 @@ export default () => {
       </P>
       {episode11[i++]()}
       <P>
-        <Em>Do you think it will become {h('ycTrue')}?</Em>
+        <Em>Do you think it will become {h('ycYes')}?</Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={9} />
     </>

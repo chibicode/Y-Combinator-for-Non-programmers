@@ -106,5 +106,11 @@ export const combineSecretCodeCaption = (
   }
 }
 
-export const trueCaption = allTranslations.ycTrue()
-export const falseCaption = allTranslations.ycFalse()
+export const trueCaption = {
+  en: <>Secret Boolean Code: {allTranslations.ycYes().en}</>,
+  jp: <>二択暗号: {allTranslations.ycYes().jp}</>
+}
+export const falseCaption = {
+  en: <>Secret Boolean Code: {allTranslations.ycNo().en}</>,
+  jp: <>二択暗号: {allTranslations.ycNo().jp}</>
+}

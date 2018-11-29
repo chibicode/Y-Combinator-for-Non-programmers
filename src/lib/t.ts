@@ -51,8 +51,8 @@ export const allTranslations = {
     jp: '足し算と掛け算'
   },
   ycEpisode11: {
-    en: 'True and False',
-    jp: 'ふたつのパターン'
+    en: 'Secret Boolean Code',
+    jp: '弁当箱の二択暗号'
   },
   ycEpisode12: {
     en: 'Patterns You’ve Seen Before',
