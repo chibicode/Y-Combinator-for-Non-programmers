@@ -225,10 +225,10 @@ export const oldEpisode8Expression4 = initializeExpressionContainer([
 ])
 
 export const oldEpisode8Expression5 = initializeExpressionContainer({
-  arg: 'f',
+  arg: 'b',
   body: {
-    arg: 'g',
-    body: 'g'
+    arg: 'c',
+    body: 'c'
   }
 })
 

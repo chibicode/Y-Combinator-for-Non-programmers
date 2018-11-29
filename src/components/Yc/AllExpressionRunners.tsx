@@ -1159,6 +1159,7 @@ export const episode11 = [
     <ExpressionRunner
       hideControls
       hideExplanations
+      caption={falseCaption}
       expressionContainer={lessonExpressions.oldEpisode8Expression5}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1168,6 +1169,7 @@ export const episode11 = [
     <ExpressionRunner
       hideControls
       hideExplanations
+      caption={falseCaption}
       expressionContainer={lessonExpressions.oldEpisode8Expression2}
       containerSize={'xs'}
       variableSize={'md'}

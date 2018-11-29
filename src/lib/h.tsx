@@ -181,14 +181,14 @@ export const allTranslations = {
   ycTrue: () => ({
     en: (
       <Strong>
-        True <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>🔴</Emoji>
+        True <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔵</Emoji>
       </Strong>
     ),
     jp: (
       <>
         「
         <Strong>
-          正しい <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>🔴</Emoji>
+          正しい <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔵</Emoji>
         </Strong>
         」
       </>
@@ -197,14 +197,14 @@ export const allTranslations = {
   ycFalse: () => ({
     en: (
       <Strong>
-        False <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>⚫️</Emoji>
+        False <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔴</Emoji>
       </Strong>
     ),
     jp: (
       <>
         「
         <Strong>
-          正しくない <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>⚫️</Emoji>
+          正しくない <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔴</Emoji>
         </Strong>
         」
       </>

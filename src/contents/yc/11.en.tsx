@@ -1,5 +1,14 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  Ol,
+  OlLi,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode11 } from 'src/components/Yc/AllExpressionRunners'
@@ -26,38 +35,58 @@ export default () => {
           The statement <Em>“1 + 1 = 3”</Em> is <Strong>False</Strong>.
         </UlLi>
       </Ul>
+      <H3>Notations</H3>
       <P>
-        Now, we’ll use the following circles to describe <Strong>True</Strong>{' '}
+        Now, we’ll use the following notation to describe <Strong>True</Strong>{' '}
         and <Strong>False</Strong>:
       </P>
       <Ul>
         <UlLi>
           <Em>
-            <Emoji size="mdlg">🔴</Emoji> <Emoji size="mdlg">⚫️</Emoji>{' '}
-            <Emoji size="mdlg">🔴</Emoji> means <Strong>True</Strong>.
+            <Emoji size="mdlg">🔵</Emoji> <Emoji size="mdlg">🔴</Emoji>{' '}
+            <Emoji size="mdlg">🔵</Emoji> means <Strong>True</Strong>.
           </Em>
         </UlLi>
         <UlLi>
           <Em>
-            <Emoji size="mdlg">🔴</Emoji> <Emoji size="mdlg">⚫️</Emoji>{' '}
-            <Emoji size="mdlg">⚫️</Emoji> means <Strong>False</Strong>.
+            <Emoji size="mdlg">🔵</Emoji> <Emoji size="mdlg">🔴</Emoji>{' '}
+            <Emoji size="mdlg">🔴</Emoji> means <Strong>False</Strong>.
           </Em>
         </UlLi>
-        <P>
-          <Strong>Don’t worry:</Strong> You don’t need to memorize this. But
-          first, let me explain <Em>why we’re using these emojis</Em>.
-        </P>
       </Ul>
+      <P>
+        <Strong>You don’t need to memorize this notation.</Strong> But here’s an
+        easy way to distinguish between the two.
+      </P>
+      <Ol>
+        <OlLi>
+          Look at the <Em>right-most circle</Em>.
+        </OlLi>
+        <OlLi>
+          <Strong>If it’s blue</Strong> <Emoji size="mdlg">🔵</Emoji> then it’s{' '}
+          <Strong>True</Strong>. So <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
+          <Emoji>🔵</Emoji> means <Strong>True</Strong>.
+        </OlLi>
+        <OlLi>
+          <Strong>If it’s red</Strong> <Emoji size="mdlg">🔴</Emoji> then it’s{' '}
+          <Strong>False</Strong>. So <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
+          <Emoji>🔴</Emoji> means <Strong>False</Strong>.
+        </OlLi>
+      </Ol>
+      <P>
+        Now, we’ll take a look at {h('ycBentoBox', true)} that represent True /
+        False.
+      </P>
       <H3>A “True” Bento Box</H3>
       <P>Take a look at this {h('ycBentoBox')}:</P>
       {episode11[i++]()}
       <P>
         Notice that <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> has the
-        pattern <InlineEmojiBoxes emojis={['🔴', '⚫️', '🔴']} />.
+        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔵']} />.
       </P>
       <P>
-        We earlier said that <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji>{' '}
-        <Emoji>🔴</Emoji> means <Strong>True</Strong>.
+        We earlier said that <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
+        <Emoji>🔵</Emoji> means <Strong>True</Strong>.
       </P>
       <P>
         So, this {h('ycBentoBox')} means <Strong>True</Strong>.
@@ -68,16 +97,21 @@ export default () => {
       {episode11[i++]()}
       <P>
         Notice that <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} /> has the
-        pattern <InlineEmojiBoxes emojis={['🔴', '⚫️', '⚫️']} />.
+        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />.
       </P>
       <P>
-        We earlier said that <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji>{' '}
-        <Emoji>⚫️</Emoji> means <Strong>False</Strong>.
+        We earlier said that <Emoji>🔵</Emoji> <Emoji>🔴</Emoji>{' '}
+        <Emoji>🔴</Emoji> means <Strong>False</Strong>.
       </P>
       <P>
         So, this {h('ycBentoBox')} means <Strong>False</Strong>.
       </P>
       {episode11[i++]()}
+      <P>
+        It’s ok if you’re confused. We’ll work on some examples over the next
+        few chapters, and things will become clear!
+      </P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Question</H3>
       <P>
         Now, we’ll take this {h('ycTrue')} {h('ycBentoBox')}:
@@ -98,29 +132,23 @@ export default () => {
       <P>So the end result was:</P>
       {episode11[i++]()}
       <P>
-        Notice that <InlineEmojiBoxes emojis={['🥗', '🥩', '🥩']} /> has the
-        pattern <InlineEmojiBoxes emojis={['🔴', '⚫️', '⚫️']} />.
-      </P>
-      <P>
-        <Strong>Answer:</Strong> The pattern is{' '}
-        <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+        Notice that <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} /> has the
+        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />. This means{' '}
+        <Strong>False</Strong>.
       </P>
       <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
           We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />,
-          which had the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-          .
+          which represents {h('ycTrue')}.
         </UlLi>
         <UlLi>
-          We ended up with <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} />,
-          which has the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />
-          .
+          We ended up with <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />,
+          which represents {h('ycFalse')}.
         </UlLi>
         <UlLi>
           <Em>
-            So <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> became{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+            So {h('ycTrue')} became {h('ycFalse')}.
           </Em>
         </UlLi>
       </Ul>
@@ -128,8 +156,8 @@ export default () => {
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Quiz</H3>
       <P>
-        What if we start with <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
-        instead? In other words, if we combine this:
+        What if we start with {h('ycFalse')} instead? In other words, if we
+        combine this:
       </P>
       {episode11[i++]()}
       <P>With this again:</P>
@@ -140,10 +168,7 @@ export default () => {
       </P>
       {episode11[i++]()}
       <P>
-        <Em>
-          Do you think it will become{' '}
-          <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />?
-        </Em>
+        <Em>Do you think it will become {h('ycTrue')}?</Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={9} />
     </>
