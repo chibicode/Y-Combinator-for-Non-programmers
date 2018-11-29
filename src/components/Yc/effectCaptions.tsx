@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import { allTranslations } from 'src/lib/h'
 
 export const secretCodeCaption = (emoji: string, count: number) => ({
   en: (
@@ -30,13 +31,14 @@ export const secretCodeCaption = (emoji: string, count: number) => ({
 export const plusOneCaption = {
   en: (
     <Strong>
-      Increases secret code by 1 <Emoji>🍱</Emoji> <Emoji>➕</Emoji>{' '}
-      <Emoji>1️⃣</Emoji>
+      Increases secret code by 1 (<Emoji>🍱</Emoji> <Emoji>➕</Emoji>{' '}
+      <Emoji>1️⃣</Emoji>)
     </Strong>
   ),
   jp: (
     <Strong>
-      暗号の数字を1増やす <Emoji>🍱</Emoji> <Emoji>➕</Emoji> <Emoji>1️⃣</Emoji>
+      暗号の数字を1増やす (<Emoji>🍱</Emoji> <Emoji>➕</Emoji> <Emoji>1️⃣</Emoji>
+      )
     </Strong>
   )
 }
@@ -103,3 +105,6 @@ export const combineSecretCodeCaption = (
     jp: result
   }
 }
+
+export const trueCaption = allTranslations.ycTrue()
+export const falseCaption = allTranslations.ycFalse()

@@ -48,12 +48,6 @@ export default () => {
       <H3>暗号の例</H3>
       <P>
         こちらに隠されている暗号は
-        <Strong>0</Strong>
-        です:
-      </P>
-      {episode8[i++]()}
-      <P>
-        こちらに隠されている暗号は
         <Strong>1</Strong>
         です:
       </P>

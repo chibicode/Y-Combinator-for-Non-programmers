@@ -178,6 +178,38 @@ export const allTranslations = {
     ),
     jp: <Em>{h('ycPlay')} を押してみてください</Em>
   }),
+  ycTrue: () => ({
+    en: (
+      <Strong>
+        True <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>🔴</Emoji>
+      </Strong>
+    ),
+    jp: (
+      <>
+        「
+        <Strong>
+          正しい <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>🔴</Emoji>
+        </Strong>
+        」
+      </>
+    )
+  }),
+  ycFalse: () => ({
+    en: (
+      <Strong>
+        False <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>⚫️</Emoji>
+      </Strong>
+    ),
+    jp: (
+      <>
+        「
+        <Strong>
+          正しくない <Emoji>🔴</Emoji> <Emoji>⚫️</Emoji> <Emoji>⚫️</Emoji>
+        </Strong>
+        」
+      </>
+    )
+  }),
   introductionPageLink: () => ({
     en: 'Introduction',
     jp: '序章'

@@ -51,7 +51,7 @@ export const allTranslations = {
     jp: '足し算と掛け算'
   },
   ycEpisode11: {
-    en: 'The Two Patterns',
+    en: 'True and False',
     jp: 'ふたつのパターン'
   },
   ycEpisode12: {

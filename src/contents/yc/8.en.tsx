@@ -40,10 +40,6 @@ export default () => {
       <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
       <H3>Secret Code: Examples</H3>
       <P>
-        This one has the secret code <Strong>0</Strong>:
-      </P>
-      {episode8[i++]()}
-      <P>
         This one has the secret code <Strong>1</Strong>:
       </P>
       {episode8[i++]()}

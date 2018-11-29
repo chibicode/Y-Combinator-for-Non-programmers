@@ -187,28 +187,28 @@ export const episode7Expression2 = initializeExpressionContainer([
 ])
 
 const baseTrue: FunctionExpressionParams = {
-  arg: 'a',
+  arg: 'd',
   body: {
-    arg: 'b',
-    body: 'a'
-  }
-}
-
-const baseFalse: FunctionExpressionParams = {
-  arg: 'c',
-  body: {
-    arg: 'd',
+    arg: 'e',
     body: 'd'
   }
 }
 
-const baseNot: FunctionExpressionParams = {
-  arg: 'e',
+const baseFalse: FunctionExpressionParams = {
+  arg: 'd',
   body: {
-    arg: 'f',
+    arg: 'e',
+    body: 'e'
+  }
+}
+
+const baseNot: FunctionExpressionParams = {
+  arg: 'a',
+  body: {
+    arg: 'b',
     body: {
-      arg: 'g',
-      body: ['e', 'g', 'f']
+      arg: 'c',
+      body: ['a', 'c', 'b']
     }
   }
 }
@@ -345,14 +345,6 @@ const baseMult: FunctionExpressionParams = {
     }
   }
 }
-
-export const episode8Expression1 = initializeExpressionContainer({
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: 'b'
-  }
-})
 
 export const episode8Expression2 = initializeExpressionContainer({
   arg: 'c',

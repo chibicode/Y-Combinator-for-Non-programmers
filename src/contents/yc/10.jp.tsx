@@ -1,6 +1,5 @@
 import React from 'react'
 import { Em, H3, P, Strong } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode10 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'

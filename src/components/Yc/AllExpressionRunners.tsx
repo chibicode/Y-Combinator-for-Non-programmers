@@ -2,9 +2,11 @@ import React from 'react'
 import {
   additionCaption,
   combineSecretCodeCaption,
+  falseCaption,
   multiplicationCaption,
   plusOneCaption,
-  secretCodeCaption
+  secretCodeCaption,
+  trueCaption
 } from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
@@ -749,15 +751,6 @@ export const episode8 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      hideExplanations
-    />
-  ),
-  () => (
-    <ExpressionRunner
       expressionContainer={lessonExpressions.episode8Expression2}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1091,8 +1084,9 @@ export const episode10 = [
 export const episode11 = [
   () => (
     <ExpressionRunner
-      hideForwardAndBackButtons
-      expressionContainer={lessonExpressions.episode5Expression1}
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.oldEpisode8Expression1}
       containerSize={'xs'}
       variableSize={'md'}
     />
@@ -1101,6 +1095,7 @@ export const episode11 = [
     <ExpressionRunner
       hideControls
       hideExplanations
+      caption={trueCaption}
       expressionContainer={lessonExpressions.oldEpisode8Expression1}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1119,6 +1114,17 @@ export const episode11 = [
     <ExpressionRunner
       hideControls
       hideExplanations
+      caption={falseCaption}
+      expressionContainer={lessonExpressions.oldEpisode8Expression2}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      caption={trueCaption}
       expressionContainer={lessonExpressions.oldEpisode8Expression1}
       containerSize={'xs'}
       variableSize={'md'}
