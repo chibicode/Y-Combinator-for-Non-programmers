@@ -55,8 +55,8 @@ export const allTranslations = {
     jp: '弁当箱の二択暗号'
   },
   ycEpisode12: {
-    en: 'Patterns You’ve Seen Before',
-    jp: 'どこかで見たような法則'
+    en: 'Both True?',
+    jp: '両方とも「はい」？'
   }
 }
 
