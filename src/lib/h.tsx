@@ -185,11 +185,9 @@ export const allTranslations = {
       </Strong>
     ),
     jp: (
-      <>
-        <Strong>
-          はい <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔵</Emoji>
-        </Strong>
-      </>
+      <Strong>
+        「はい」 <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔵</Emoji>
+      </Strong>
     )
   }),
   ycNo: () => ({
@@ -199,11 +197,9 @@ export const allTranslations = {
       </Strong>
     ),
     jp: (
-      <>
-        <Strong>
-          いいえ <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔴</Emoji>
-        </Strong>
-      </>
+      <Strong>
+        「いいえ」 <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔴</Emoji>
+      </Strong>
     )
   }),
   introductionPageLink: () => ({

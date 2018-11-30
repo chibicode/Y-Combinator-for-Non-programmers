@@ -123,7 +123,7 @@ export default () => {
         </UlLi>
         <P>
           <Strong>簡単すぎましたか？</Strong>
-          では、もう少し問題を出しましょう。
+          では、もう少し難しい問題を出しましょう。
         </P>
         <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
         <H3>クイズ: 次はどうなる？</H3>

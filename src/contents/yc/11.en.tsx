@@ -1,15 +1,5 @@
 import React from 'react'
-import {
-  Em,
-  H3,
-  Ol,
-  OlLi,
-  P,
-  Strong,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode11 } from 'src/components/Yc/AllExpressionRunners'
 import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
