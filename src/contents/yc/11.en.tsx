@@ -61,7 +61,7 @@ export default () => {
         .
       </P>
       <P>
-        <Strong>The Pattern:</Strong>
+        <Strong>The “Yes” Pattern:</Strong>
       </P>
       <Ul>
         <UlLi>
@@ -74,6 +74,11 @@ export default () => {
           Example: <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> and{' '}
           <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />.
         </UlLi>
+      </Ul>
+      <P>
+        <Strong>The “No” Pattern:</Strong>
+      </P>
+      <Ul>
         <UlLi>
           <Em>
             Ones with the boolean code <Strong>No</Strong> has this pattern:{' '}
@@ -138,7 +143,7 @@ export default () => {
       <H3>Quiz</H3>
       <P>
         What if we start with {h('ycNo')} instead? In other words, if we combine
-        this:
+        this on with {h('ycNo')}:
       </P>
       {episode11[i++]()}
       <P>With this again:</P>

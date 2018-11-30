@@ -78,7 +78,7 @@ export default () => {
         </Em>
       </P>
       <P>
-        <Strong>パターンの説明:</Strong>
+        <Strong>「はい」になるパターン:</Strong>
       </P>
       <Ul>
         <UlLi>
@@ -93,6 +93,11 @@ export default () => {
           例: <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> と{' '}
           <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />
         </UlLi>
+      </Ul>
+      <P>
+        <Strong>「いいえ」になるパターン:</Strong>
+      </P>
+      <Ul>
         <UlLi>
           <Em>
             二択暗号が「
@@ -145,44 +150,57 @@ export default () => {
         <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} /> ですので、
         <Em>
           二択暗号は
-          {h('ycNo')}
-          でした。
+          {h('ycNo')} でした。
         </Em>
-        .
       </P>
-      <H3>To Summarize:</H3>
+      <H3>まとめると:</H3>
       <Ul>
         <UlLi>
-          We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />,
-          which has the secret boolean code {h('ycYes')}.
+          最初は
+          <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />
+          、すなわち二択暗号が
+          {h('ycYes')} だった。
         </UlLi>
         <UlLi>
-          We ended up with <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />,
-          which has the secret boolean code {h('ycNo')}.
+          最終的に
+          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />
+          になり、二択暗号が
+          {h('ycNo')} になった。
         </UlLi>
         <UlLi>
           <Em>
-            So {h('ycYes')} became {h('ycNo')}.
+            つまり、
+            {h('ycYes')} が{h('ycNo')} になった。
           </Em>
         </UlLi>
       </Ul>
-      <P>Hmm… This is interesting!</P>
+      <P>うーむ、なぜでしょう。興味深いですね！</P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
-      <H3>Quiz</H3>
+      <H3>クイズ</H3>
       <P>
-        What if we start with {h('ycNo')} instead? In other words, if we combine
-        this:
-      </P>
-      {episode11[i++]()}
-      <P>With this again:</P>
-      {episode11[i++]()}
-      <P>
-        <Strong>Question:</Strong> What will be the end result of this{' '}
-        {h('ycBentoBox')}?
+        ではここでクイズです。もしも先ほどと違い、
+        {h('ycNo')} からはじめたらどうなるでしょう？つまり、こちらの
+        {h('ycNo')} の{h('ycBentoBox')}
+        と、
       </P>
       {episode11[i++]()}
       <P>
-        <Em>Do you think it will become {h('ycYes')}?</Em>
+        先ほどの
+        {h('ycBentoBox')}
+        を合わせます。
+      </P>
+      {episode11[i++]()}
+      <P>
+        <Strong>問題:</Strong> この
+        {h('ycBentoBox')}
+        は最終的にどうなるでしょう？
+      </P>
+      {episode11[i++]()}
+      <P>
+        <Em>
+          先ほどと反対に、
+          {h('ycYes')} になると思いますか？
+        </Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={12} />
     </>
