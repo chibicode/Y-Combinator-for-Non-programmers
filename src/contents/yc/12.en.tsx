@@ -3,6 +3,8 @@ import React from 'react'
 import {
   Em,
   H3,
+  Ol,
+  OlLi,
   P,
   Strong,
   Table,
@@ -26,24 +28,21 @@ export default () => {
       {h('ycQuizReview', 11)}
       <P>{h('ycPlayUntilDone')}:</P>
       {episode12[i++]()}
-      <P>
-        <Strong>To summarize:</Strong>
-      </P>
+      <P>So the result was {h('ycYes')}:</P>
+      {episode12[i++]()}
+      <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
-          In the beginning the {h('ycBentoBox')} was{' '}
-          <InlineEmojiBoxes emojis={['🥗', '🥩', '🥩']} />, which had the
-          pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />.
+          We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} />,
+          which has the secret boolean code {h('ycNo')}.
         </UlLi>
         <UlLi>
-          In the end it became <InlineEmojiBoxes emojis={['🍕', '🍛', '🍕']} />,
-          which has the pattern <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />
-          .
+          We ended up with <InlineEmojiBoxes emojis={['🥪', '🥗', '🥪']} />,
+          which has the secret boolean code {h('ycYes')}.
         </UlLi>
         <UlLi>
           <Em>
-            So <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> became{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+            So {h('ycNo')} became {h('ycYes')}.
           </Em>
         </UlLi>
       </Ul>
@@ -53,21 +52,31 @@ export default () => {
       <P>So, it seems that the following {h('ycBentoBox')}:</P>
       {episode12[i++]()}
       <P>Has the following effects:</P>
-      <Ul>
-        <UlLi>
+      <Ol>
+        <OlLi>
           <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> (from the last
-            chapter).
+            Turns {h('ycYes')} into {h('ycNo')} (from the last page).
           </Em>
-        </UlLi>
-        <UlLi>
+        </OlLi>
+        <OlLi>
           <Em>
-            Turns <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> into{' '}
-            <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />.
+            Turns {h('ycNo')} into {h('ycYes')}.
           </Em>
-        </UlLi>
-      </Ul>
+        </OlLi>
+      </Ol>
+      <P>
+        <Strong>In other words:</Strong> this bento box means{' '}
+        <Strong>“NOT”</Strong>.
+      </P>
+      {episode12[i++]()}
+      <P>
+        <Strong>NOT</Strong> {h('ycYes')} is {h('ycNo')}.
+      </P>
+      {episode12[i++]()}
+      <P>
+        And <Strong>NOT</Strong> {h('ycNo')} is {h('ycYes')}.
+      </P>
+      {episode12[i++]()}
       <P>Now, here’s the key question:</P>
       <H3>
         Is there any other {h('ycBentoBox', true)} that also have interesting

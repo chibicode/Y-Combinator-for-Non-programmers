@@ -1,9 +1,11 @@
 import React from 'react'
 import {
   additionCaption,
+  combineNotCaption,
   combineSecretCodeCaption,
   multiplicationCaption,
   noCaption,
+  notCaption,
   plusOneCaption,
   secretCodeCaption,
   yesCaption
@@ -1203,9 +1205,49 @@ export const episode12 = [
   ),
   () => (
     <ExpressionRunner
+      hideControls
+      hideExplanations
+      caption={yesCaption}
+      expressionContainer={lessonExpressions.episode12Expression1}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      hideControls
+      hideExplanations
+      expressionContainer={lessonExpressions.episode11Expression10}
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode11Expression7}
       containerSize={'xs'}
       variableSize={'md'}
+      caption={notCaption}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode11Expression8}
+      containerSize={'xs'}
+      variableSize={'md'}
+      caption={combineNotCaption('yes')}
+      hideControls
+      hideExplanations
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode11Expression10}
+      containerSize={'xs'}
+      variableSize={'md'}
+      caption={combineNotCaption('no')}
       hideControls
       hideExplanations
     />

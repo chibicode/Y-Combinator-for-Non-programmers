@@ -55,8 +55,12 @@ export const allTranslations = {
     jp: '弁当箱の二択暗号'
   },
   ycEpisode12: {
-    en: 'Both True?',
+    en: 'Both Yes?',
     jp: '両方とも「はい」？'
+  },
+  ycEpisode13: {
+    en: 'If, Then, Else',
+    jp: '「はい」ならこうする、「いいえ」ならこうする'
   }
 }
 

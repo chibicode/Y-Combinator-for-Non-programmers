@@ -500,6 +500,14 @@ export const episode11Expression10 = initializeExpressionContainer([
   baseFalse
 ])
 
+export const episode12Expression1 = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: 'b'
+  }
+})
+
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
 // a => b => (a b)
