@@ -9,7 +9,7 @@ import {
 import Color from 'color'
 
 export const allColors = {
-  enSocialBackground: indigo[500],
+  socialBackground: indigo[500],
   grey200: grey[200],
   grey300: grey[300],
   grey500: grey[500],
@@ -22,7 +22,6 @@ export const allColors = {
   indigo200: indigo[200],
   indigo300: indigo[300],
   indigo500: indigo[500],
-  jpSocialBackground: grey[300],
   pink50: pink[50],
   pink400: pink[400],
   pink500: pink[500],

@@ -1,12 +1,9 @@
 import React from 'react'
-import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 
 // Favicon generated from https://realfavicongenerator.net
-const faviconPrefix = `/static/images/favicon/${locale}`
-const faviconBgColor = colors(
-  locale === 'jp' ? 'jpSocialBackground' : 'enSocialBackground'
-)
+const faviconPrefix = `/static/images/favicon`
+const faviconBgColor = colors('socialBackground')
 
 const Favicon: React.SFC<{}> = () => (
   <>
