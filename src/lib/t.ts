@@ -3,8 +3,8 @@ import locale from 'src/lib/locale'
 export const allTranslations = {
   title: {
     // Must fit in https://moz.com/learn/seo/title-tag
-    en: 'Hoshiai: Great Computer Science Ideas for Non-Programmers',
-    jp: 'Hoshiai: プログラミング的思考をコードを書かずに身につける'
+    en: 'CSmoji: Learn Computer Science with Emojis',
+    jp: 'CSmoji: 絵文字で学ぶコンピューターサイエンス'
   },
   ycTitle: {
     en: 'Y Combinator for Non-Programmers',

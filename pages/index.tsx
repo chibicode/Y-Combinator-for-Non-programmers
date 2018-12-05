@@ -13,7 +13,7 @@ import {
   spaces
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../src/images/Hoshiai-Logo.svg'
+import Logo from '../src/images/CSmoji-Logo.svg'
 
 const Index: React.SFC<{}> = () => (
   <Page>
@@ -46,7 +46,7 @@ const Index: React.SFC<{}> = () => (
             <span
               className={css`
                 display: inline-block;
-                height: 2em;
+                height: 2.5em;
               `}
             >
               <Logo />
