@@ -74,6 +74,7 @@ export function toBetaReducePreviewBefore(
           nextExpression: {
             ...e,
             highlightType: 'match',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           },
           matchExists: true
@@ -83,6 +84,7 @@ export function toBetaReducePreviewBefore(
           nextExpression: {
             ...e,
             highlightType: 'unmatch',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           },
           matchExists: false
@@ -93,6 +95,7 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'semiTransparent',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         },
         matchExists: false
@@ -102,6 +105,7 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'active',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         },
         matchExists: false
@@ -139,6 +143,7 @@ const highlightFuncArg = (
 ): VariableWithState<'highlightFuncArgNoEmphBorder'> => ({
   ...e,
   highlightType: 'highlightedNoEmphBorder',
+  topLeftBadgeType: 'none',
   bottomRightBadgeType: 'funcArg'
 })
 const stepToBetaReducePreviewBefore = (

@@ -5,14 +5,19 @@ import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface EmojiBadgeProps {
-  bottomRightBadgeType: Exclude<VariableExpression['bottomRightBadgeType'], 'none'>
+  bottomRightBadgeType: Exclude<
+    VariableExpression['bottomRightBadgeType'],
+    'none'
+  >
   inline?: boolean
 }
 
 const funcArgColor = colors('pink400')
 const funcBodyUnboundColor = colors('grey500')
 
-const bottomRightBadgeTypeToColors = (x: EmojiBadgeProps['bottomRightBadgeType']): string =>
+const bottomRightBadgeTypeToColors = (
+  x: EmojiBadgeProps['bottomRightBadgeType']
+): string =>
   ({
     callArg: css`
       border-color: ${colors('indigo300')};
@@ -40,7 +45,9 @@ const squareAdjustTop = -0.07
 const hexAdjustTop = -0.35
 const sqrt2Border = 2 * Math.sqrt(2)
 
-const bottomRightBadgeTypeToShapeAndSize = (x: EmojiBadgeProps['bottomRightBadgeType']) => {
+const bottomRightBadgeTypeToShapeAndSize = (
+  x: EmojiBadgeProps['bottomRightBadgeType']
+) => {
   const funcArgCssOrfuncBoundCss = (color: string) => css`
     width: ${hexWidth}em;
     height: ${hexWidth * sqrt3Div3}em;
@@ -102,7 +109,9 @@ const bottomRightBadgeTypeToShapeAndSize = (x: EmojiBadgeProps['bottomRightBadge
   }[x]
 }
 
-const bottomRightBadgeTypeToEmoji = (x: EmojiBadgeProps['bottomRightBadgeType']) =>
+const bottomRightBadgeTypeToEmoji = (
+  x: EmojiBadgeProps['bottomRightBadgeType']
+) =>
   ({
     callArg: '👨‍🍳',
     funcArg: '😋',
@@ -120,7 +129,10 @@ const inlineVerticalOffset = (x: EmojiBadgeProps['bottomRightBadgeType']) =>
     betaReduced: 0
   }[x])
 
-const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ bottomRightBadgeType, inline }) => (
+const EmojiBadge: React.SFC<EmojiBadgeProps> = ({
+  bottomRightBadgeType,
+  inline
+}) => (
   <span
     className={cx(
       css`
@@ -132,14 +144,15 @@ const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ bottomRightBadgeType, inline }
       {
         [css`
           display: flex;
-          /* Font size varies depending on emoji size */
-          font-size: ${bottomRightBadgeType === 'betaReduced' ? '0.55em' : '0.45em'};
+          font-size: '0.55em';
         `]: !inline,
         [css`
           display: inline-flex;
           font-size: 1em;
           vertical-align: text-bottom;
-          transform: translateY(${inlineVerticalOffset(bottomRightBadgeType)}em);
+          transform: translateY(
+            ${inlineVerticalOffset(bottomRightBadgeType)}em
+          );
         `]: inline
       }
     )}
@@ -153,7 +166,9 @@ const EmojiBadge: React.SFC<EmojiBadgeProps> = ({ bottomRightBadgeType, inline }
         `
       )}
     >
-      <Emoji noVerticalTransform>{bottomRightBadgeTypeToEmoji(bottomRightBadgeType)}</Emoji>
+      <Emoji noVerticalTransform>
+        {bottomRightBadgeTypeToEmoji(bottomRightBadgeType)}
+      </Emoji>
     </span>
   </span>
 )

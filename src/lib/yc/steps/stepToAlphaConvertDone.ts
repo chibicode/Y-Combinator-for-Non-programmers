@@ -58,6 +58,7 @@ export function toAlphaConvertDone(
             ...e,
             name: mapping[e.name],
             highlightType: 'conflictResolvedBound',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           }
         } else {
@@ -65,6 +66,7 @@ export function toAlphaConvertDone(
             ...e,
             name: mapping[e.name],
             highlightType: 'conflictResolvedFuncUnbound',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcUnbound'
           }
         }
@@ -72,12 +74,14 @@ export function toAlphaConvertDone(
         return {
           ...e,
           highlightType: 'active',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcBound'
         }
       }
@@ -86,12 +90,14 @@ export function toAlphaConvertDone(
         return {
           ...e,
           highlightType: 'conflictResolvedCallArg',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         }
       }

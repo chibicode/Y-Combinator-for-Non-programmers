@@ -44,12 +44,14 @@ function toCrossed(
       return {
         ...e,
         highlightType: 'removed',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'none'
       }
     }
@@ -74,6 +76,7 @@ const removeFuncArg = (
 ): VariableWithState<'removedFuncArg'> => ({
   ...e,
   highlightType: 'removed',
+  topLeftBadgeType: 'none',
   bottomRightBadgeType: 'funcArg'
 })
 

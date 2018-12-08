@@ -22,7 +22,12 @@ function toDefault(
 function toDefault(e: Expression): StepChild<'default'>
 function toDefault(e: Expression): StepChild<'default'> {
   if (isVariable(e)) {
-    return { ...e, highlightType: 'default', bottomRightBadgeType: 'none' }
+    return {
+      ...e,
+      highlightType: 'default',
+      topLeftBadgeType: 'none',
+      bottomRightBadgeType: 'none'
+    }
   } else if (isFunction(e)) {
     return {
       ...e,

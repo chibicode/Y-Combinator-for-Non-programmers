@@ -38,9 +38,19 @@ export function toShowFuncBound(
 ): StepChild<'showFuncBound'> {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      return { ...e, highlightType: 'highlighted', bottomRightBadgeType: 'funcBound' }
+      return {
+        ...e,
+        highlightType: 'highlighted',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'funcBound'
+      }
     } else {
-      return { ...e, highlightType: 'active', bottomRightBadgeType: 'none' }
+      return {
+        ...e,
+        highlightType: 'active',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'none'
+      }
     }
   } else if (isFunction(e)) {
     return {

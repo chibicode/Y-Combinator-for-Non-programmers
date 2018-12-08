@@ -22,7 +22,12 @@ function toActive(
 function toActive(e: Expression): StepChild<'active'>
 function toActive(e: Expression): StepChild<'active'> {
   if (isVariable(e)) {
-    return { ...e, highlightType: 'active', bottomRightBadgeType: 'none' }
+    return {
+      ...e,
+      highlightType: 'active',
+      topLeftBadgeType: 'none',
+      bottomRightBadgeType: 'none'
+    }
   } else if (isFunction(e)) {
     return {
       ...e,
@@ -44,6 +49,7 @@ const variableToEmphasize = (
 ): VariableWithState<'emphasizePriority'> => {
   return {
     ...e,
+    topLeftBadgeType: 'none',
     bottomRightBadgeType: 'none',
     highlightType: 'activeEmphasizePriority'
   }

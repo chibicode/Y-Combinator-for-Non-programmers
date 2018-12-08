@@ -5,6 +5,7 @@ export interface VariableExpression {
   readonly name: VariableNames
   readonly bound: boolean
   readonly highlightType: VariableStates[keyof VariableStates]['highlightType']
+  readonly topLeftBadgeType: VariableStates[keyof VariableStates]['topLeftBadgeType']
   readonly bottomRightBadgeType: VariableStates[keyof VariableStates]['bottomRightBadgeType']
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
@@ -17,98 +18,122 @@ export type VariableWithState<
 interface VariableStates {
   default: {
     readonly highlightType: 'default'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'none'
   }
   active: {
     readonly highlightType: 'active'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'none'
   }
   emphasizePriority: {
     readonly highlightType: 'activeEmphasizePriority'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'none'
   }
   highlightFuncBound: {
     readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   activeFuncBound: {
     readonly highlightType: 'active'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   highlightFuncArg: {
     readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcArg'
   }
   highlightFuncArgNoEmphBorder: {
     readonly highlightType: 'highlightedNoEmphBorder'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcArg'
   }
   activeFuncArg: {
     readonly highlightType: 'active'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcArg'
   }
   highlightFuncUnbound: {
     readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   activeFuncUnbound: {
     readonly highlightType: 'active'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   semiTransparentFuncUnbound: {
     readonly highlightType: 'semiTransparent'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   highlightCallArg: {
     readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
   activeCallArg: {
     readonly highlightType: 'active'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
   conflictFuncUnbound: {
     readonly highlightType: 'conflictFuncUnbound'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   conflictCallArg: {
     readonly highlightType: 'conflictCallArg'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
   conflictFuncBound: {
     readonly highlightType: 'conflictFuncBound'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   conflictResolvedFuncUnbound: {
     readonly highlightType: 'conflictResolvedFuncUnbound'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   conflictResolvedFuncBound: {
     readonly highlightType: 'conflictResolvedBound'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   conflictResolvedCallArg: {
     readonly highlightType: 'conflictResolvedCallArg'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
   matchFuncBound: {
     readonly highlightType: 'match'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   unmatchFuncBound: {
     readonly highlightType: 'unmatch'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   betaReduced: {
     readonly highlightType: 'match'
-    readonly bottomRightBadgeType: 'betaReduced'
+    readonly topLeftBadgeType: 'betaReduced'
+    readonly bottomRightBadgeType: 'none'
   }
   removedFuncArg: {
     readonly highlightType: 'removed'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcArg'
   }
   removedCallArg: {
     readonly highlightType: 'removed'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
 }

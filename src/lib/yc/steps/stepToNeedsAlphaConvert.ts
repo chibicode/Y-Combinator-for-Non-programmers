@@ -50,12 +50,14 @@ export function toNeedsAlphaConvert(
         return {
           ...x,
           highlightType: 'conflictFuncBound',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcBound'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcBound'
         }
       }
@@ -64,20 +66,32 @@ export function toNeedsAlphaConvert(
         return {
           ...x,
           highlightType: 'conflictFuncUnbound',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       }
     } else {
       if (conflicts.includes(x.name)) {
-        return { ...x, highlightType: 'conflictCallArg', bottomRightBadgeType: 'callArg' }
+        return {
+          ...x,
+          highlightType: 'conflictCallArg',
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
+        }
       } else {
-        return { ...x, highlightType: 'active', bottomRightBadgeType: 'callArg' }
+        return {
+          ...x,
+          highlightType: 'active',
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
+        }
       }
     }
   } else if (isFunction(x)) {
