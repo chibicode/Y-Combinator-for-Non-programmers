@@ -30,9 +30,6 @@ const bottomRightBadgeTypeToColors = (
     `,
     funcBound: css`
       border-color: ${colors('yellow800')};
-    `,
-    betaReduced: css`
-      border-color: ${colors('indigo300')};
     `
   }[x])
 
@@ -98,11 +95,6 @@ const bottomRightBadgeTypeToShapeAndSize = (
       border-style: solid;
       background-color: #fff;
     `,
-    betaReduced: css`
-      position: relative;
-      bottom: 0.1em;
-      right: 0.05em;
-    `,
     funcArg: funcArgCssOrfuncBoundCss(funcArgColor),
     funcUnbound: funcArgCssOrfuncBoundCss(funcBodyUnboundColor),
     funcBound: funcBodyCss
@@ -116,8 +108,7 @@ const bottomRightBadgeTypeToEmoji = (
     callArg: '👨‍🍳',
     funcArg: '😋',
     funcBound: '🍽',
-    funcUnbound: '😎',
-    betaReduced: '🆕'
+    funcUnbound: '😎'
   }[x])
 
 const inlineVerticalOffset = (x: EmojiBadgeProps['bottomRightBadgeType']) =>
@@ -125,8 +116,7 @@ const inlineVerticalOffset = (x: EmojiBadgeProps['bottomRightBadgeType']) =>
     callArg: 0.05,
     funcArg: 0.15 + hexAdjustTop,
     funcBound: 0.2,
-    funcUnbound: 0.15 + hexAdjustTop,
-    betaReduced: 0
+    funcUnbound: 0.15 + hexAdjustTop
   }[x])
 
 const EmojiBadge: React.SFC<EmojiBadgeProps> = ({
