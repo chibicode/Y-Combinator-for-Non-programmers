@@ -1,6 +1,6 @@
 import locale from 'src/lib/locale'
 
-export const numBeginnerLevels = 7
+export const numBeginnerLevels = 6
 export const numIntermediateLevels = 6
 
 export const remainingText = (nextEpisode: number) => {

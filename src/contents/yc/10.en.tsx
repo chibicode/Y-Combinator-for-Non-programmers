@@ -1,8 +1,8 @@
 import React from 'react'
-import { Em, H3, P, Strong } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode10 } from 'src/components/Yc/AllExpressionRunners'
+import { episode11 } from 'src/components/Yc/AllExpressionRunners'
+import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -10,120 +10,151 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 9)}
-      <P>{h('ycPlayUntilDone')}:</P>
       <P>
-        (<Strong>Note:</Strong> The {h('ycPlay')} button runs faster here
-        because there are a lot of steps.)
+        This time, we’ll talk about the new kind of <Strong>secret code</Strong>
+        , called <Strong>Secret Boolean Code</Strong>.{' '}
       </P>
-      {episode10[i++]()}
       <P>
-        So the result has the secret code <Strong>5</Strong>.
-      </P>
-      {episode10[i++]()}
-      <P>
-        Remember that we started with {h('ycBentoBox', true)} with secret code{' '}
-        <Strong>2</Strong> and <Strong>3</Strong>.
-      </P>
-      {episode10[i++]()}
-      {episode10[i++]()}
-      <P>
-        Since we ended up with <Strong>5</Strong>, which is equal to{' '}
-        <Strong>2 + 3</Strong>,{' '}
         <Em>
-          what we did was an <Strong>addition</Strong>
+          <Strong>“Boolean”</Strong> means <Strong>Yes</Strong> or{' '}
+          <Strong>No</Strong>.
         </Em>
-        . So this {h('ycBentoBox')} we used has an effect of{' '}
+      </P>
+      <H3>Challenge</H3>
+      <P>
+        In this page, I’ll show you some {h('ycBentoBox', true)}. Each one
+        contains hidden <Strong>secret boolean code</Strong> which follows a{' '}
+        <Strong>pattern</Strong>.{' '}
+      </P>
+      <P>
         <Em>
-          <Strong>adding two secret code</Strong>
+          <Strong>Challenge:</Strong> Like before, I want you to figure out what
+          the pattern is
         </Em>
         .
       </P>
-      {episode10[i++]()}
+      <EmojiSeparator emojis={['🔵', '🧐', '️🔴']} />
+      <H3>Secret Boolean Code: Examples</H3>
       <P>
-        In other words, this {h('ycBentoBox')} means <Strong>2 + 3</Strong>.
+        This one has the secret boolean code <Strong>Yes</Strong>:
       </P>
-      {episode10[i++]()}
-      <H3>Summary</H3>
+      {episode11[i++]()}
       <P>
+        This one has the secret boolean code <Strong>No</Strong>:
+      </P>
+      {episode11[i++]()}
+      <P>
+        This one has the secret boolean code <Strong>Yes</Strong>:
+      </P>
+      {episode11[i++]()}
+      <P>Did you figure out the pattern? Let’s do a quiz!</P>
+      <H3>Quiz: Guess the Secret Boolean Code</H3>
+      <P>What’s the secret boolean code of the following {h('ycBentoBox')}?</P>
+      {episode11[i++]()}
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>The Answer</H3>
+      <P>
+        <Strong>Answer:</Strong>{' '}
         <Em>
-          We can do <Strong>addition of 2 numbers</Strong> using{' '}
-          {h('ycBentoBox', true)}!
+          The secret boolean code is <Strong>No</Strong>
         </Em>
-      </P>
-      <EmojiSeparator emojis={['🍱', '➕', '🍱']} />
-      <H3>What about multiplication?</H3>
-      <P>
-        In fact, we can also do{' '}
-        <Em>
-          <Strong>multiplication of 2 numbers</Strong>
-        </Em>{' '}
-        using {h('ycBentoBox', true)}!
-      </P>
-      <EmojiSeparator emojis={['🍱', '✖️', '🍱']} />
-      <P>
-        This is the {h('ycBentoBox')} that does <Strong>multiplication</Strong>.
-      </P>
-      {episode10[i++]()}
-      <P>
-        <Strong>Let’s try it!</Strong> We’ll try to calculate{' '}
-        <Em>
-          <Strong>2</Strong> × <Strong>3</Strong>.
-        </Em>
+        .
       </P>
       <P>
-        We’ll combine the {h('ycBentoBox', true)} with secret code{' '}
-        <Strong>2</Strong> and <Strong>3</Strong>:
+        <Strong>The “Yes” Pattern:</Strong>
       </P>
-      {episode10[i++]()}
-      {episode10[i++]()}
+      <Ul>
+        <UlLi>
+          <Em>
+            Ones with the boolean code <Strong>Yes</Strong> has this pattern:{' '}
+            <InlineEmojiBoxes emojis={['🔵', '🔴', '🔵']} />
+          </Em>
+        </UlLi>
+        <UlLi>
+          Example: <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> and{' '}
+          <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />.
+        </UlLi>
+      </Ul>
       <P>
-        And the following {h('ycBentoBox')} should calculate <Strong>2</Strong>{' '}
-        × <Strong>3</Strong>. {h('ycPlayUntilDone')}.
+        <Strong>The “No” Pattern:</Strong>
       </P>
-      {episode10[i++]()}
+      <Ul>
+        <UlLi>
+          <Em>
+            Ones with the boolean code <Strong>No</Strong> has this pattern:{' '}
+            <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />
+          </Em>
+        </UlLi>
+        <UlLi>
+          Example: <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> and{' '}
+          <InlineEmojiBoxes emojis={['🍝', '🥦', '🥦']} />.
+        </UlLi>
+      </Ul>
       <P>
-        The result has the secret code <Strong>6</Strong>, which is equal to{' '}
-        <Strong>2</Strong> × <Strong>3</Strong>.
+        <Strong>Was it too easy?</Strong> Well ok, here’s something more
+        challenging…
       </P>
-      {episode10[i++]()}
+      <EmojiSeparator emojis={['🔵', '🧐', '️🔴']} />
+      <H3>Question</H3>
       <P>
-        We confirmed that this {h('ycBentoBox')} calculates <Strong>2</Strong> ×{' '}
-        <Strong>3</Strong>!
+        Suppose we have the {h('ycBentoBox')} with the{' '}
+        <Em>secret boolean code {h('ycYes')}</Em>.
       </P>
-      {episode10[i++]()}
-      <H3>Conclusion</H3>
+      {episode11[i++]()}
       <P>
-        <Em>
-          We learned that {h('ycBentoBox', true)} can do{' '}
-          <Strong>addition</Strong> and <Strong>multiplication</Strong>.
-        </Em>
+        <Strong>We’ll combine it</Strong> with the following {h('ycBentoBox')}:
       </P>
-      {episode10[i++]()}
-      {episode10[i++]()}
-      <EmojiSeparator emojis={['➕', '🍱', '✖️']} />
+      {episode11[i++]()}
+      <P>So it becomes:</P>
+      {episode11[i++]()}
       <P>
-        <Strong>Also:</Strong> I won’t go into details, but{' '}
-        {h('ycBentoBox', true)} can also do <Strong>subtraction</Strong> and{' '}
-        <Strong>division</Strong>.
+        <Strong>Question:</Strong> What do you think will happen when you step
+        through this until it’s {h('ycDone')}?
       </P>
-      <EmojiSeparator emojis={['➖', '🍱', '➗']} />
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Let’s Try!</H3>
+      <P>{h('ycPlayUntilDone')}:</P>
+      {episode11[i++]()}
+      <P>So the end result was:</P>
+      {episode11[i++]()}
       <P>
-        <Strong>In other words:</Strong>{' '}
-        <Em>
-          “Bento boxes” <Emoji>🍱</Emoji> can do math. It’s like a{' '}
-          <Strong>calculator</Strong>.
-        </Em>
+        Notice that <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} /> has the
+        pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />, so{' '}
+        <Em>the secret boolean code is {h('ycNo')}</Em>.
       </P>
-      <P>I don’t know if you agree, but I think this is really cool!</P>
-      <EmojiSeparator emojis={['🔢', '😲', '🔢']} />
-      <H3>Next Up: Logic</H3>
+      <H3>To Summarize:</H3>
+      <Ul>
+        <UlLi>
+          We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />,
+          which has the secret boolean code {h('ycYes')}.
+        </UlLi>
+        <UlLi>
+          We ended up with <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />,
+          which has the secret boolean code {h('ycNo')}.
+        </UlLi>
+        <UlLi>
+          <Em>
+            So {h('ycYes')} became {h('ycNo')}.
+          </Em>
+        </UlLi>
+      </Ul>
+      <P>Hmm… This is interesting!</P>
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>Quiz</H3>
       <P>
-        Can {h('ycBentoBox', true)} do more? <Strong>Yes it can!</Strong>
+        What if we start with {h('ycNo')} instead? In other words, if we combine
+        this on with {h('ycNo')}:
       </P>
+      {episode11[i++]()}
+      <P>With this again:</P>
+      {episode11[i++]()}
       <P>
-        In the next page, we’ll explore how {h('ycBentoBox', true)} can perform{' '}
-        <Strong>logical operations.</Strong>
+        <Strong>Question:</Strong> What will be the end result of this{' '}
+        {h('ycBentoBox')}?
+      </P>
+      {episode11[i++]()}
+      <P>
+        <Em>Do you think it will become {h('ycYes')}?</Em>
       </P>
       <YcNextLessonButton nextEpisodeNumber={11} />
     </>

@@ -1,8 +1,19 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  Ol,
+  OlLi,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import { episode3 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
+import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -10,116 +21,117 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 1)}
-      <P>仮に、次のような状態だった場合…</P>
+      {h('ycQuizReview', 2)}
+      {episode3[i++]()}
+      <P>
+        <Strong>答え:</Strong> それぞれの料理に印をつけてみると、こうなります。
+      </P>
+      {episode3[i++]()}
+      <P>
+        つまり、
+        {h('ycBentoBox')}
+        は、以下の状況を表しています。
+      </P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥩</Emoji>{' '}
-          <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥗</Emoji>
         </UlLi>
         <UlLi>
           <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🥗</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🌮</Emoji>
+          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
+
+      <H3>その次はどうなる？</H3>
       <P>
-        <Strong>答え:</Strong> 次のステップにはこうなります。
+        上の状況だと、あなたがサラダ <Emoji>🥗</Emoji>{' '}
+        を食べたあと、シェフはステーキ <Emoji>🥩</Emoji>{' '}
+        を持ってきます。ということは、最終的には
+        <Em>
+          料理はステーキ <Emoji>🥩</Emoji> だけ
+        </Em>
+        になりますね。
       </P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥩</Emoji>{' '}
-          <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
-        </UlLi>
-      </Ul>
-      <P>タコスがサラダと入れ替わります。正解できましたか？</P>
-      <H3>不思議な弁当箱</H3>
-      <P>
-        それでは次に、今回の話の肝となる「
-        <Strong>不思議な弁当箱</Strong>
-        」について解説していきます。
-      </P>
-      <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
-      <P>
-        今回の話には、「
-        <Em>
-          不思議な弁当箱 <Emoji>🍱</Emoji>
-        </Em>
-        」がたくさん出てきます。見た目はこんな感じです。それぞれのマスの中に食べ物が入っているので、弁当箱っぽく見えるでしょう？
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Strong>しかし、それぞれのマスはどういう意味なのでしょうか？</Strong>
-        ひとつずつ解説していきましょう。
-      </P>
-      <P>
-        <Em>
-          まず、
-          <Strong>右下のマス</Strong>
-          は、選べる食事 <Emoji>🍽</Emoji> を表しています。
-        </Em>
-        この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Em>
-          次に、
-          <Strong>左下のマス</Strong>
-          は、あなた <Emoji>😋</Emoji> が次に食べるものを表しています。
-        </Em>
-        この場合、あなたが次に食べるのは寿司 <Emoji>🍣</Emoji> です。
-      </P>
-      {episode2[i++]()}
-      <P>
-        最後に、
-        <Em>
-          <Strong>上のマス</Strong>
-          は、あなたが何かを食べる間に、シェフ <Emoji>👨‍🍳</Emoji>{' '}
-          が作っている料理を表します。
-        </Em>
-        この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Strong>というわけで:</Strong> 上の
-        {h('ycBentoBox')}
-        」は、以下の状況を表していることになります。
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥪</Emoji>
+          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥩</Emoji>
         </UlLi>
       </Ul>
       <P>
-        では、ちゃんと理解できたか確かめるために、クイズに挑戦してみましょう！
+        <Strong>
+          では、
+          {h('ycBentoBox')}
+          はどうなるか見てみましょう。
+        </Strong>
       </P>
-      <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+      {episode3[i++]()}
+      <P>
+        右下のサラダ <Emoji>🥗</Emoji> は、あなたが食べたい料理{' '}
+        <Emoji>😋</Emoji> です。これを{' '}
+        <TopLeftBadge inline topLeftBadgeType="match" /> で表します。
+      </P>
+      {episode3[i++]()}
+      <P>
+        あなたがサラダ <Emoji>🥗</Emoji> を食べると、それがステーキ{' '}
+        <Emoji>🥩</Emoji> と<Em>入れ替わります</Em>
+        。これを <TopLeftBadge inline topLeftBadgeType="betaReduced" />{' '}
+        で表します。
+      </P>
+      {episode3[i++]()}
+      <P>
+        食べ終わると、左下のサラダと <Emoji>🥗</Emoji> 上段のステーキ{' '}
+        <Emoji>🥩</Emoji> は<Em>消えます</Em>
+        。これを、
+        <Em>
+          バツ印 <InlineBackground bgPattern="cross" /> で示します。
+        </Em>
+      </P>
+      {episode3[i++]()}
+      <P>
+        最終的に、残ったのはステーキ <Emoji>🥩</Emoji> だけになりました。
+      </P>
+      {episode3[i++]()}
+      <H3>「次へ」ボタンと「前へ」ボタン</H3>
+      <P>
+        遷移をわかりやすくするために、「
+        {h('ycNext')}
+        」ボタンと「
+        {h('ycPrevious')}
+        」ボタンを設置してみました。
+      </P>
+      <Ol>
+        <OlLi>{h('ycTryUntilDone')}。</OlLi>
+        <OlLi>
+          そしたら今度は、{' '}
+          <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>。
+        </OlLi>
+      </Ol>
+      {episode3[i++]()}
+      <P>
+        こちらは前回で登場したもうひとつの例です。同じようにボタンを試してみてください。
+      </P>
+      {episode3[i++]()}
+      <P>コツがつかめてきたでしょうか？</P>
+      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
+      <P>では、クイズに挑戦してみましょう。</P>
       <H3>クイズ</H3>
       <P>
         下の
-        {h('ycBentoBox')}
-        は、どんな状況を表しているでしょう？
+        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
       </P>
-      {episode2[i++]()}
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">❓</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">❓</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">❓</Emoji>
-        </UlLi>
-      </Ul>
-      <P>答えは次のページにあります！</P>
+      {episode3[i++]()}
+      <P>
+        <Strong>YesかNoで答えてみてください:</Strong>{' '}
+        <Em>
+          最終的に
+          {h('ycBentoBox')}
+          は次のようになるでしょうか？
+        </Em>
+      </P>
+      {episode3[i++]()}
+      <P>答えに自信がなくても大丈夫です。次のページで説明しますので！</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

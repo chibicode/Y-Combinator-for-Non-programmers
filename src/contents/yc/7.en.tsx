@@ -2,9 +2,7 @@ import React from 'react'
 import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode7 } from 'src/components/Yc/AllExpressionRunners'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -12,129 +10,122 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 6)}
-      <P>{h('ycTryUntilDone')}:</P>
-      {episode7[i++]()}
+      <H3>The {h('ycPlay')} Button</H3>
       <P>
-        So the answer was <Strong>True.</Strong> In the end it became:
+        Because we’re now at an intermediate level, we have a new functionality
+        for you: <Strong>the {h('ycPlay')} button</Strong>.
       </P>
-      {episode7[i++]()}
       <P>
-        <Strong>The confusing part:</Strong> The following step might have been
-        confusing (<Em>press {h('ycNext')}</Em>
-        ):
+        <Em>Try pressing on {h('ycPlay')} below.</Em>
       </P>
-      {episode7[i++]()}
+      {episode8[i++]()}
+      <P>It automatically advances the {h('ycBentoBox')} for you.</P>
+      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
       <P>
-        As you can see,{' '}
+        Now, let’s talk about the <Strong>Secret Code</Strong>.
+      </P>
+      <H3>Secret Code</H3>
+      <P>
+        In this page, I’ll show you some {h('ycBentoBox', true)}. Each one
+        contains hidden <Strong>secret code</Strong> which follows a{' '}
+        <Strong>pattern</Strong>.{' '}
+      </P>
+      <P>
         <Em>
-          everything labeled as{' '}
-          <BottomRightBadge bottomRightBadgeType="callArg" inline /> gets
-          “copy-pasted” into the matched box{' '}
-          <TopLeftBadge inline topLeftBadgeType="match" />.
-        </Em>
-      </P>
-      <P>
-        Now, let’s cover the last rule:{' '}
-        <Strong>
-          Shuffle Time. <Emoji>🔀</Emoji>
-        </Strong>
-      </P>
-      <EmojiSeparator emojis={['🔀', '🔀', '🔀']} />
-      <H3>Shuffle Time</H3>
-      <P>
-        In the following {h('ycBentoBox')}, notice that{' '}
-        <Em>
-          the{' '}
-          <Strong>
-            sandwich <Emoji size="mdlg">🥪</Emoji>
-          </Strong>{' '}
-          appears in <BottomRightBadge bottomRightBadgeType="callArg" inline />,{' '}
-          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
-          <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+          <Strong>Challenge:</Strong> I want you to figure out what the pattern
+          is
         </Em>
         .
       </P>
-      {episode7[i++]()}
+      <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
+      <H3>Secret Code: Examples</H3>
       <P>
-        <Em>
-          Whenever there’s <Strong>the same item</Strong> that appears in{' '}
-          <BottomRightBadge bottomRightBadgeType="callArg" inline />,{' '}
-          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
-          <BottomRightBadge bottomRightBadgeType="funcBound" inline />, it’s{' '}
-          <Strong>
-            Shuffle Time <Emoji>🔀</Emoji>
-          </Strong>
-          :
-        </Em>
+        This one has the secret code <Strong>1</Strong>:
       </P>
-      {episode7[i++]()}
+      {episode8[i++]()}
       <P>
-        Here’s what happens in{' '}
-        <Strong>
-          Shuffle Time <Emoji>🔀</Emoji>
-        </Strong>
-        :
+        This one has the secret code <Strong>2</Strong>:
+      </P>
+      {episode8[i++]()}
+      <P>
+        This one has the secret code <Strong>3</Strong>:
+      </P>
+      {episode8[i++]()}
+      <P>Did you figure out the pattern? Let’s do a quiz!</P>
+      <H3>Quiz: Guess the Secret Code</H3>
+      <P>What’s the secret code of the following {h('ycBentoBox')}?</P>
+      {episode8[i++]()}
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>The Answer</H3>
+      <P>
+        <Strong>Answer:</Strong>{' '}
+        <Em>
+          The secret code is <Strong>5</Strong>
+        </Em>
+        .
+      </P>
+      <P>
+        <Strong>The Pattern:</Strong>
       </P>
       <Ul>
+        <UlLi>
+          There are 2 kinds of dishes <Strong>A</Strong> and <Strong>B</Strong>{' '}
+          (<Emoji size="mdlg">🍝</Emoji> and <Emoji size="mdlg">🍚</Emoji>
+          ).
+        </UlLi>
+        <UlLi>
+          <Strong>A:</Strong> Dishes in the <Strong>middle</Strong> cell and the{' '}
+          <Strong>top right</Strong> cell (<Emoji size="mdlg">🍝</Emoji>
+          ).
+        </UlLi>
+        <UlLi>
+          <Strong>B:</Strong> Dishes in the <Strong>left</Strong> cell and the{' '}
+          <Strong>remaining cells in the right</Strong>. (
+          <Emoji size="mdlg">🍚</Emoji>
+          ).
+        </UlLi>
         <UlLi>
           <Em>
-            All sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> and{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
-            a <Strong>new dish</Strong> (that’s not yet in the {h('ycBentoBox')}
-            ).
+            The number of <Strong>B</Strong>
+            ’s in the right-most cells is the <Strong>secret code</Strong> (
+            <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji>{' '}
+            <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji>{' '}
+            <Emoji size="mdlg">🍚</Emoji> = <Strong>5</Strong>)
           </Em>
         </UlLi>
-        <UlLi>
-          The sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
-          <BottomRightBadge bottomRightBadgeType="callArg" inline /> is
-          unchanged.
-        </UlLi>
+        {episode8[i++]()}
+        <P>
+          <Strong>Was it too easy?</Strong> Well ok, here’s something more
+          challenging…
+        </P>
+        <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
+        <H3>Quiz: What will happen next?</H3>
+        <P>
+          Suppose we have the {h('ycBentoBox')} with the{' '}
+          <Em>
+            secret code <Strong>2</Strong>
+          </Em>
+          .
+        </P>
+        {episode8[i++]()}
+        <P>
+          <Strong>We’ll combine it</Strong> with the following {h('ycBentoBox')}
+          :
+        </P>
+        {episode8[i++]()}
+        <P>So it becomes:</P>
+        {episode8[i++]()}
+        <P>
+          <Strong>Question:</Strong> What do you think will happen when you step
+          through this until it’s {h('ycDone')}?
+        </P>
+        <P>
+          <Strong>Hint:</Strong> the secret code on the top part was{' '}
+          <Strong>2</Strong>. <Em>This will change to something new</Em>. What
+          do you think will be the new secret code?
+        </P>
+        <YcNextLessonButton nextEpisodeNumber={8} />
       </Ul>
-      <P>
-        <Em>Try pressing {h('ycNext')} to see how it works:</Em>
-      </P>
-      {episode7[i++]()}
-      <P>
-        In this case,{' '}
-        <Strong>
-          the sandwiches <Emoji size="mdlg">🥪</Emoji> became steak{' '}
-          <Emoji size="mdlg">🥩</Emoji>
-        </Strong>
-        .
-      </P>
-      <EmojiSeparator emojis={['🥪', '🔀', '🥩']} />
-      <P>From here, {h('ycTryUntilDone', false)} as usual:</P>
-      {episode7[i++]()}
-      <P>That’s it!</P>
-      <H3>Another Example</H3>
-      <P>
-        Here’s another Shuffle Time <Emoji>🔀</Emoji> example.{' '}
-        {h('ycTryUntilDone')}:
-      </P>
-      {episode7[i++]()}
-      <H3>Good News</H3>
-      <P>I have some good news for you!</P>
-      <Ul>
-        <UlLi>
-          <Strong>
-            <Em>
-              You don’t need to memorize the Shuffle Time <Emoji>🔀</Emoji>{' '}
-              rule.
-            </Em>
-          </Strong>{' '}
-          You just need to know that this rule exists.
-        </UlLi>
-        <UlLi>
-          <Strong>You’re done with the beginner levels!</Strong> We’ll move onto
-          the intermediate levels and start solving interesting problems.
-        </UlLi>
-        <UlLi>
-          <Strong>There’s no quiz.</Strong> Head straight to the next page!
-        </UlLi>
-      </Ul>
-      <YcNextLessonButton nextEpisodeNumber={8} primaryTextType="nextPage" />
     </>
   )
 }
