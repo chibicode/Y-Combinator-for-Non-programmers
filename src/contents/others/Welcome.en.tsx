@@ -6,7 +6,8 @@ import { yc } from 'src/lib/pathHelpers'
 export default () => (
   <>
     <p>
-      Welcome! <Emoji>👋</Emoji> At CSmoji, you can learn Computer Science using{' '}
+      <TextHighlight>CSmoji</TextHighlight> is a free online course that teaches
+      you <TextHighlight>Computer Science</TextHighlight> using{' '}
       <TextHighlight>emojis</TextHighlight>. <Emoji>😉</Emoji>
     </p>
     <p>
@@ -14,7 +15,7 @@ export default () => (
       <HomeLink linkProps={{ href: yc() }}>
         Y Combinator for Non-Programmers
       </HomeLink>
-      . It's <TextHighlight>free</TextHighlight>. <Emoji>👍</Emoji>
+      .
     </p>
   </>
 )
