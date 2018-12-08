@@ -40,20 +40,24 @@ export default () => {
           picnic.
         </P>
       </Blockquote>
+      <H3>Interactive Bento Boxes</H3>
       <P>
-        In this tutorial, we’re going to play with an{' '}
+        In this tutorial, we’re going to play with{' '}
         <Em>
-          interactive bento box <Emoji>🍱</Emoji>
+          interactive bento boxes <Emoji>🍱</Emoji>
         </Em>
-        . Here’s what it looks like. Each cell has a food item.
+        . Here’s what it looks like:
       </P>
       {episode2[i++]()}
       <P>
-        <Strong>But what does each cell mean?</Strong> Let me explain.
+        Each cell has a food item. The top item is sandwich <Emoji>🥪</Emoji>{' '}
+        and the bottom two items are sushi <Emoji>🍣</Emoji>.
       </P>
+      <H3>Labels</H3>
+      <P>Each food item has a label.</P>
       <P>
         <Em>
-          The <Strong>bottom right</Strong> cell represents all available dishes{' '}
+          The <Strong>bottom right</Strong> item represents all available dishes{' '}
           <Emoji>🍽</Emoji>.
         </Em>{' '}
         In this case, the only available dish is sushi <Emoji>🍣</Emoji>.
