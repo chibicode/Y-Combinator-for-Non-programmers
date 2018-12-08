@@ -1,5 +1,6 @@
 import { css, cx } from 'emotion'
 import React from 'react'
+import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
@@ -36,12 +37,19 @@ const bottomRightBadgeTypeToColors = (
 const bottomRightBadgeTypeToText = (
   x: BottomRightBadgeProps['bottomRightBadgeType']
 ) =>
-  ({
-    callArg: 't',
-    funcArg: 'l',
-    funcBound: 'r',
-    funcUnbound: 'm'
-  }[x])
+  locale === 'jp'
+    ? {
+        callArg: '上',
+        funcArg: '左',
+        funcBound: '右',
+        funcUnbound: '中'
+      }[x]
+    : {
+        callArg: 't',
+        funcArg: 'l',
+        funcBound: 'r',
+        funcUnbound: 'm'
+      }[x]
 
 const BottomRightBadge: React.SFC<BottomRightBadgeProps> = ({
   bottomRightBadgeType,
