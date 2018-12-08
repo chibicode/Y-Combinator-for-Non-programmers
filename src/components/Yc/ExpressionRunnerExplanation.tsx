@@ -67,14 +67,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <EmojiBadge badgeType="funcBound" inline /> Rightmost on bottom row
+            <EmojiBadge bottomRightBadgeType="funcBound" inline /> Rightmost on bottom row
           </>
         )
       } else {
         return (
           <>
             下段の一番右は
-            <EmojiBadge badgeType="funcBound" inline />
+            <EmojiBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       }
@@ -83,13 +83,13 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <EmojiBadge badgeType="funcUnbound" inline /> “Eat Later” list
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> “Eat Later” list
           </>
         )
       } else {
         return (
           <>
-            あとで食べるものリスト <EmojiBadge badgeType="funcUnbound" inline />
+            あとで食べるものリスト <EmojiBadge bottomRightBadgeType="funcUnbound" inline />
           </>
         )
       }
@@ -98,14 +98,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <EmojiBadge badgeType="funcArg" inline /> Leftmost on bottom row
+            <EmojiBadge bottomRightBadgeType="funcArg" inline /> Leftmost on bottom row
           </>
         )
       } else {
         return (
           <>
             下段の一番左は
-            <EmojiBadge badgeType="funcArg" inline />
+            <EmojiBadge bottomRightBadgeType="funcArg" inline />
           </>
         )
       }
@@ -115,16 +115,16 @@ const stateToExplanation = ({
         if (showAllShowSteps) {
           return (
             <>
-              <EmojiBadge badgeType="callArg" inline /> Top row
+              <EmojiBadge bottomRightBadgeType="callArg" inline /> Top row
             </>
           )
         } else {
           return (
             <>
-              Showing <EmojiBadge badgeType="funcBound" inline />{' '}
-              <EmojiBadge badgeType="funcUnbound" inline />{' '}
-              <EmojiBadge badgeType="funcArg" inline />{' '}
-              <EmojiBadge badgeType="callArg" inline />
+              Showing <EmojiBadge bottomRightBadgeType="funcBound" inline />{' '}
+              <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+              <EmojiBadge bottomRightBadgeType="funcArg" inline />{' '}
+              <EmojiBadge bottomRightBadgeType="callArg" inline />
             </>
           )
         }
@@ -133,16 +133,16 @@ const stateToExplanation = ({
           return (
             <>
               上段は
-              <EmojiBadge badgeType="callArg" inline />
+              <EmojiBadge bottomRightBadgeType="callArg" inline />
             </>
           )
         } else {
           return (
             <>
-              <EmojiBadge badgeType="funcBound" inline />{' '}
-              <EmojiBadge badgeType="funcUnbound" inline />{' '}
-              <EmojiBadge badgeType="funcArg" inline />{' '}
-              <EmojiBadge badgeType="callArg" inline /> はこうなります
+              <EmojiBadge bottomRightBadgeType="funcBound" inline />{' '}
+              <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+              <EmojiBadge bottomRightBadgeType="funcArg" inline />{' '}
+              <EmojiBadge bottomRightBadgeType="callArg" inline /> はこうなります
             </>
           )
         }
@@ -156,7 +156,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            No matches in <EmojiBadge badgeType="funcBound" inline />
+            No matches in <EmojiBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       } else {
@@ -166,7 +166,7 @@ const stateToExplanation = ({
           </>
         ) : (
           <>
-            食べられる料理が <EmojiBadge badgeType="funcBound" inline />{' '}
+            食べられる料理が <EmojiBadge bottomRightBadgeType="funcBound" inline />{' '}
             にありません
           </>
         )
@@ -177,13 +177,13 @@ const stateToExplanation = ({
         return (
           <>
             Matches replaced <Emoji>🆕</Emoji> with{' '}
-            <EmojiBadge badgeType="callArg" inline />
+            <EmojiBadge bottomRightBadgeType="callArg" inline />
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="callArg" inline /> と入れ替わります{' '}
+            <EmojiBadge bottomRightBadgeType="callArg" inline /> と入れ替わります{' '}
             <Emoji>🆕</Emoji>
           </>
         )
@@ -193,15 +193,15 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Removing <EmojiBadge badgeType="callArg" inline /> and{' '}
-            <EmojiBadge badgeType="funcArg" inline />
+            Removing <EmojiBadge bottomRightBadgeType="callArg" inline /> and{' '}
+            <EmojiBadge bottomRightBadgeType="funcArg" inline />
           </>
         )
       } else {
         return (
           <>
-            <EmojiBadge badgeType="callArg" inline /> と
-            <EmojiBadge badgeType="funcArg" inline /> が消えます
+            <EmojiBadge bottomRightBadgeType="callArg" inline /> と
+            <EmojiBadge bottomRightBadgeType="funcArg" inline /> が消えます
           </>
         )
       }
@@ -211,18 +211,18 @@ const stateToExplanation = ({
         return (
           <>
             <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong> (same item in{' '}
-            <EmojiBadge badgeType="callArg" inline />{' '}
-            <EmojiBadge badgeType="funcUnbound" inline />{' '}
-            <EmojiBadge badgeType="funcBound" inline />)
+            <EmojiBadge bottomRightBadgeType="callArg" inline />{' '}
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+            <EmojiBadge bottomRightBadgeType="funcBound" inline />)
           </>
         )
       } else {
         return (
           <>
             <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong> (
-            <EmojiBadge badgeType="callArg" inline />{' '}
-            <EmojiBadge badgeType="funcUnbound" inline />{' '}
-            <EmojiBadge badgeType="funcBound" inline /> に同じ料理がある)
+            <EmojiBadge bottomRightBadgeType="callArg" inline />{' '}
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+            <EmojiBadge bottomRightBadgeType="funcBound" inline /> に同じ料理がある)
           </>
         )
       }
@@ -232,16 +232,16 @@ const stateToExplanation = ({
         return (
           <>
             <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong>:{' '}
-            <EmojiBadge badgeType="funcUnbound" inline />{' '}
-            <EmojiBadge badgeType="funcBound" inline /> become new dish
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+            <EmojiBadge bottomRightBadgeType="funcBound" inline /> become new dish
           </>
         )
       } else {
         return (
           <>
             <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong>:{' '}
-            <EmojiBadge badgeType="funcUnbound" inline />{' '}
-            <EmojiBadge badgeType="funcBound" inline /> が新しい料理に
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+            <EmojiBadge bottomRightBadgeType="funcBound" inline /> が新しい料理に
           </>
         )
       }

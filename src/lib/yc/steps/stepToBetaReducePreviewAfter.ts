@@ -29,7 +29,7 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
     return {
       ...e,
       highlightType: 'match',
-      badgeType: 'betaReduced'
+      bottomRightBadgeType: 'betaReduced'
     }
   } else if (isFunction(e)) {
     return {
@@ -93,20 +93,20 @@ export function toBetaReducePreviewAfter(
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'funcBound'
+          bottomRightBadgeType: 'funcBound'
         }
       }
     } else if (funcSide && !e.bound) {
       return {
         ...e,
         highlightType: 'active',
-        badgeType: 'funcUnbound'
+        bottomRightBadgeType: 'funcUnbound'
       }
     } else {
       return {
         ...e,
         highlightType: 'highlighted',
-        badgeType: 'callArg'
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {

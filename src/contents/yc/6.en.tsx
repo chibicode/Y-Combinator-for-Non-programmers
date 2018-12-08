@@ -20,10 +20,10 @@ export default () => {
       </P>
       <P>
         <Strong>Notice:</Strong> To speed this up, we now show all{' '}
-        <EmojiBadge badgeType="funcBound" inline />{' '}
-        <EmojiBadge badgeType="funcUnbound" inline />{' '}
-        <EmojiBadge badgeType="funcArg" inline />{' '}
-        <EmojiBadge badgeType="callArg" inline /> at the same time.
+        <EmojiBadge bottomRightBadgeType="funcBound" inline />{' '}
+        <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+        <EmojiBadge bottomRightBadgeType="funcArg" inline />{' '}
+        <EmojiBadge bottomRightBadgeType="callArg" inline /> at the same time.
       </P>
       <H3>More Priorities</H3>
       <P>Next, take a look at this {h('ycBentoBox')}:</P>

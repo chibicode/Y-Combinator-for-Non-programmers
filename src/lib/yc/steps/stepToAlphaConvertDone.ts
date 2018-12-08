@@ -58,27 +58,27 @@ export function toAlphaConvertDone(
             ...e,
             name: mapping[e.name],
             highlightType: 'conflictResolvedBound',
-            badgeType: 'funcBound'
+            bottomRightBadgeType: 'funcBound'
           }
         } else {
           return {
             ...e,
             name: mapping[e.name],
             highlightType: 'conflictResolvedFuncUnbound',
-            badgeType: 'funcUnbound'
+            bottomRightBadgeType: 'funcUnbound'
           }
         }
       } else if (funcSide && !e.bound) {
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'funcUnbound'
+          bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'funcBound'
+          bottomRightBadgeType: 'funcBound'
         }
       }
     } else {
@@ -86,13 +86,13 @@ export function toAlphaConvertDone(
         return {
           ...e,
           highlightType: 'conflictResolvedCallArg',
-          badgeType: 'callArg'
+          bottomRightBadgeType: 'callArg'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'callArg'
+          bottomRightBadgeType: 'callArg'
         }
       }
     }

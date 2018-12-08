@@ -31,7 +31,7 @@ export default () => {
       <P>
         ご覧の通り、
         <Em>
-          <EmojiBadge badgeType="callArg" inline />
+          <EmojiBadge bottomRightBadgeType="callArg" inline />
           がついている料理がすべて <InlineBackground bgPattern="star" />{' '}
           の部分にコピペされた
         </Em>
@@ -55,9 +55,9 @@ export default () => {
             サンドイッチ <Emoji size="mdlg">🥪</Emoji>
           </Strong>{' '}
           が、
-          <EmojiBadge badgeType="callArg" inline /> と{' '}
-          <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
-          <EmojiBadge badgeType="funcBound" inline />
+          <EmojiBadge bottomRightBadgeType="callArg" inline /> と{' '}
+          <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+          <EmojiBadge bottomRightBadgeType="funcBound" inline />
           にあることに注目です。
         </Em>
         .
@@ -66,9 +66,9 @@ export default () => {
       <P>
         <Em>
           同じ料理が
-          <EmojiBadge badgeType="callArg" inline /> と{' '}
-          <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
-          <EmojiBadge badgeType="funcBound" inline />
+          <EmojiBadge bottomRightBadgeType="callArg" inline /> と{' '}
+          <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+          <EmojiBadge bottomRightBadgeType="funcBound" inline />
           にあると、
           <Strong>
             シャッフルタイム <Emoji>🔀</Emoji>
@@ -86,15 +86,15 @@ export default () => {
       <Ul>
         <UlLi>
           <Em>
-            <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
-            <EmojiBadge badgeType="funcBound" inline /> にある全てのサンドイッチ{' '}
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+            <EmojiBadge bottomRightBadgeType="funcBound" inline /> にある全てのサンドイッチ{' '}
             <Emoji size="mdlg">🥪</Emoji> がまだ使われていない
             <Strong>新しい</Strong>
             料理になる。
           </Em>
         </UlLi>
         <UlLi>
-          <EmojiBadge badgeType="callArg" inline /> にあるサンドイッチ{' '}
+          <EmojiBadge bottomRightBadgeType="callArg" inline /> にあるサンドイッチ{' '}
           <Emoji size="mdlg">🥪</Emoji> はそのまま。
         </UlLi>
       </Ul>

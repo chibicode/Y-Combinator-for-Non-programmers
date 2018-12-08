@@ -33,7 +33,7 @@ export default function resetExpression(
       type: 'variable',
       name: expression.name,
       highlightType: 'default',
-      badgeType: 'none',
+      bottomRightBadgeType: 'none',
       bound: expression.bound,
       argPriorityAgg: [],
       funcPriorityAgg: []

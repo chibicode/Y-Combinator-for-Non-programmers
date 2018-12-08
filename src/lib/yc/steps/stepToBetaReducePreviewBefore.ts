@@ -74,7 +74,7 @@ export function toBetaReducePreviewBefore(
           nextExpression: {
             ...e,
             highlightType: 'match',
-            badgeType: 'funcBound'
+            bottomRightBadgeType: 'funcBound'
           },
           matchExists: true
         }
@@ -83,7 +83,7 @@ export function toBetaReducePreviewBefore(
           nextExpression: {
             ...e,
             highlightType: 'unmatch',
-            badgeType: 'funcBound'
+            bottomRightBadgeType: 'funcBound'
           },
           matchExists: false
         }
@@ -93,7 +93,7 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'semiTransparent',
-          badgeType: 'funcUnbound'
+          bottomRightBadgeType: 'funcUnbound'
         },
         matchExists: false
       }
@@ -102,7 +102,7 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'active',
-          badgeType: 'callArg'
+          bottomRightBadgeType: 'callArg'
         },
         matchExists: false
       }
@@ -139,7 +139,7 @@ const highlightFuncArg = (
 ): VariableWithState<'highlightFuncArgNoEmphBorder'> => ({
   ...e,
   highlightType: 'highlightedNoEmphBorder',
-  badgeType: 'funcArg'
+  bottomRightBadgeType: 'funcArg'
 })
 const stepToBetaReducePreviewBefore = (
   e: ExecutableCall

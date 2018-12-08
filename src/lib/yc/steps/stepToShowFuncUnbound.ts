@@ -39,15 +39,15 @@ export function toShowFuncUnbound(
 ): StepChild<'showFuncUnbound'> {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
+      return { ...e, highlightType: 'active', bottomRightBadgeType: 'funcBound' }
     } else if (funcSide && !e.bound) {
       return {
         ...e,
         highlightType: 'highlighted',
-        badgeType: 'funcUnbound'
+        bottomRightBadgeType: 'funcUnbound'
       }
     } else {
-      return { ...e, highlightType: 'active', badgeType: 'none' }
+      return { ...e, highlightType: 'active', bottomRightBadgeType: 'none' }
     }
   } else if (isFunction(e)) {
     return {
@@ -70,7 +70,7 @@ export const activeFuncArg = (
 ): VariableWithState<'activeFuncArg'> => ({
   ...e,
   highlightType: 'active',
-  badgeType: 'funcArg'
+  bottomRightBadgeType: 'funcArg'
 })
 
 const stepToShowFuncUnbound = (

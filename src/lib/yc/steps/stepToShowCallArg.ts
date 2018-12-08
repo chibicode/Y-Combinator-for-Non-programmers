@@ -45,24 +45,24 @@ export function toShowCallArg(
 ): StepChild<'showCallArg'> {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
+      return { ...e, highlightType: 'active', bottomRightBadgeType: 'funcBound' }
     } else if (funcSide && !e.bound) {
       return {
         ...e,
         highlightType: 'active',
-        badgeType: 'funcUnbound'
+        bottomRightBadgeType: 'funcUnbound'
       }
     } else if (highlightCallArg) {
       return {
         ...e,
         highlightType: 'highlighted',
-        badgeType: 'callArg'
+        bottomRightBadgeType: 'callArg'
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
-        badgeType: 'callArg'
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {

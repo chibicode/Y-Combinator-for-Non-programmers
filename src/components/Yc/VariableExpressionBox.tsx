@@ -66,7 +66,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
             `}
           >
             <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
-            {expression.badgeType !== 'none' && (
+            {expression.bottomRightBadgeType !== 'none' && (
               <span
                 className={css`
                   position: absolute;
@@ -75,7 +75,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                   z-index: ${zIndices('emojiBadge')};
                 `}
               >
-                <EmojiBadge badgeType={expression.badgeType} />
+                <EmojiBadge bottomRightBadgeType={expression.bottomRightBadgeType} />
               </span>
             )}
           </span>

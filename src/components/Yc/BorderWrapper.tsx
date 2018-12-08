@@ -11,7 +11,7 @@ import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
   highlightType: VariableExpression['highlightType'] | 'none'
-  badgeType: VariableExpression['badgeType']
+  bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
   children: React.ReactNode
 }
 
@@ -99,7 +99,7 @@ const Cross: React.SFC<{}> = () => (
 
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   highlightType,
-  badgeType,
+  bottomRightBadgeType,
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
@@ -117,10 +117,10 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
           {
             [css`
               border-right: 5px solid ${colors('pink400')};
-            `]: highlightType === 'highlighted' && badgeType === 'funcBound',
+            `]: highlightType === 'highlighted' && bottomRightBadgeType === 'funcBound',
             [css`
               border-left: 5px solid ${colors('pink400')};
-            `]: highlightType === 'highlighted' && badgeType === 'funcArg'
+            `]: highlightType === 'highlighted' && bottomRightBadgeType === 'funcArg'
           }
         )}
       >

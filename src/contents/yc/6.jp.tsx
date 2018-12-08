@@ -22,10 +22,10 @@ export default () => {
       <P>
         <Strong>お気づきかもしれませんが、</Strong>
         実行をスピーディーにするために、{' '}
-        <EmojiBadge badgeType="funcBound" inline />{' '}
-        <EmojiBadge badgeType="funcUnbound" inline />{' '}
-        <EmojiBadge badgeType="funcArg" inline />{' '}
-        <EmojiBadge badgeType="callArg" inline /> をすべて同時に表示しています。
+        <EmojiBadge bottomRightBadgeType="funcBound" inline />{' '}
+        <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+        <EmojiBadge bottomRightBadgeType="funcArg" inline />{' '}
+        <EmojiBadge bottomRightBadgeType="callArg" inline /> をすべて同時に表示しています。
       </P>
       <H3>続いてはこちら</H3>
       <P>

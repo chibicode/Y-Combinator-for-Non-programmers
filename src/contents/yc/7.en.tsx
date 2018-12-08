@@ -28,7 +28,7 @@ export default () => {
       <P>
         As you can see,{' '}
         <Em>
-          everything labeled as <EmojiBadge badgeType="callArg" inline /> gets
+          everything labeled as <EmojiBadge bottomRightBadgeType="callArg" inline /> gets
           “copy-pasted” into the matched box{' '}
           <InlineBackground bgPattern="star" />.
         </Em>
@@ -48,9 +48,9 @@ export default () => {
           <Strong>
             sandwich <Emoji size="mdlg">🥪</Emoji>
           </Strong>{' '}
-          appears in <EmojiBadge badgeType="callArg" inline />,{' '}
-          <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
-          <EmojiBadge badgeType="funcBound" inline />
+          appears in <EmojiBadge bottomRightBadgeType="callArg" inline />,{' '}
+          <EmojiBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
+          <EmojiBadge bottomRightBadgeType="funcBound" inline />
         </Em>
         .
       </P>
@@ -58,9 +58,9 @@ export default () => {
       <P>
         <Em>
           Whenever there’s <Strong>the same item</Strong> that appears in{' '}
-          <EmojiBadge badgeType="callArg" inline />,{' '}
-          <EmojiBadge badgeType="funcUnbound" inline />, and{' '}
-          <EmojiBadge badgeType="funcBound" inline />, it’s{' '}
+          <EmojiBadge bottomRightBadgeType="callArg" inline />,{' '}
+          <EmojiBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
+          <EmojiBadge bottomRightBadgeType="funcBound" inline />, it’s{' '}
           <Strong>
             Shuffle Time <Emoji>🔀</Emoji>
           </Strong>
@@ -79,15 +79,15 @@ export default () => {
         <UlLi>
           <Em>
             All sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
-            <EmojiBadge badgeType="funcUnbound" inline /> and{' '}
-            <EmojiBadge badgeType="funcBound" inline /> becomes a{' '}
+            <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> and{' '}
+            <EmojiBadge bottomRightBadgeType="funcBound" inline /> becomes a{' '}
             <Strong>new dish</Strong> (that’s not yet in the {h('ycBentoBox')}
             ).
           </Em>
         </UlLi>
         <UlLi>
           The sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
-          <EmojiBadge badgeType="callArg" inline /> is unchanged.
+          <EmojiBadge bottomRightBadgeType="callArg" inline /> is unchanged.
         </UlLi>
       </Ul>
       <P>
