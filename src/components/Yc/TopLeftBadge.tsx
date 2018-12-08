@@ -12,7 +12,9 @@ const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
   ({
     betaReduced: '🆕',
     match: '☑️',
-    unmatch: '❌'
+    unmatch: '❌',
+    conflict: '🔀',
+    conflictResolved: '🆕'
   }[x])
 
 const TopLeftBadge: React.SFC<TopLeftBadgeProps> = ({

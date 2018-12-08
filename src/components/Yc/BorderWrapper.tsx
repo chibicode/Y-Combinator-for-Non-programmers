@@ -44,20 +44,6 @@ const background = (
         background: ${colors('yellow100')};
       `
     }
-    case 'conflictResolvedCallArg':
-    case 'conflictFuncUnbound':
-    case 'conflictFuncBound':
-    case 'conflictCallArg': {
-      return css`
-        background: ${colors('lightBlue50')};
-      `
-    }
-    case 'conflictResolvedFuncUnbound':
-    case 'conflictResolvedBound': {
-      return css`
-        background: ${colors('lightGreen100')};
-      `
-    }
   }
 }
 

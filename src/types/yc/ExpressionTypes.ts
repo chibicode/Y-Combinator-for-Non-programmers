@@ -77,34 +77,24 @@ interface VariableStates {
     readonly bottomRightBadgeType: 'callArg'
   }
   conflictFuncUnbound: {
-    readonly highlightType: 'conflictFuncUnbound'
-    readonly topLeftBadgeType: 'none'
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'conflict'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
-  conflictCallArg: {
-    readonly highlightType: 'conflictCallArg'
-    readonly topLeftBadgeType: 'none'
-    readonly bottomRightBadgeType: 'callArg'
-  }
   conflictFuncBound: {
-    readonly highlightType: 'conflictFuncBound'
-    readonly topLeftBadgeType: 'none'
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'conflict'
     readonly bottomRightBadgeType: 'funcBound'
   }
   conflictResolvedFuncUnbound: {
-    readonly highlightType: 'conflictResolvedFuncUnbound'
-    readonly topLeftBadgeType: 'none'
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'conflictResolved'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   conflictResolvedFuncBound: {
-    readonly highlightType: 'conflictResolvedBound'
-    readonly topLeftBadgeType: 'none'
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'conflictResolved'
     readonly bottomRightBadgeType: 'funcBound'
-  }
-  conflictResolvedCallArg: {
-    readonly highlightType: 'conflictResolvedCallArg'
-    readonly topLeftBadgeType: 'none'
-    readonly bottomRightBadgeType: 'callArg'
   }
   matchFuncBound: {
     readonly highlightType: 'highlighted'
@@ -176,7 +166,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                   | 'activeCallArg'
                   | 'conflictFuncBound'
                   | 'conflictFuncUnbound'
-                  | 'conflictCallArg'
+                  | 'highlightCallArg'
               : C extends 'alphaConvertDone'
                 ?
                     | 'activeFuncBound'
@@ -185,7 +175,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                     | 'activeCallArg'
                     | 'conflictResolvedFuncUnbound'
                     | 'conflictResolvedFuncBound'
-                    | 'conflictResolvedCallArg'
+                    | 'highlightCallArg'
                 : C extends 'betaReducePreviewBefore'
                   ?
                       | 'highlightFuncArgNoEmphBorder'

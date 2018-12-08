@@ -238,8 +238,7 @@ const stateToExplanation = ({
             <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong> (
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            に同じ料理がある)
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が同じ)
           </>
         )
       }
@@ -250,8 +249,8 @@ const stateToExplanation = ({
           <>
             <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> become
-            new dish
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> become{' '}
+            <TopLeftBadge topLeftBadgeType="conflictResolved" inline />
           </>
         )
       } else {
@@ -259,8 +258,8 @@ const stateToExplanation = ({
           <>
             <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            が新しい料理に
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が{' '}
+            <TopLeftBadge topLeftBadgeType="conflictResolved" inline /> に
           </>
         )
       }

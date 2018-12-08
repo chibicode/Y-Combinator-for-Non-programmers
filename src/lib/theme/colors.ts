@@ -1,12 +1,4 @@
-import {
-  grey,
-  indigo,
-  lightBlue,
-  lightGreen,
-  orange,
-  pink,
-  yellow
-} from '@material-ui/core/colors'
+import { grey, indigo, orange, pink, yellow } from '@material-ui/core/colors'
 import Color from 'color'
 
 // https://material.io/design/color/the-color-system.html
@@ -18,8 +10,6 @@ export const allColors = {
   grey700: grey[700],
   grey800: grey[800],
   grey900: grey[900],
-  lightBlue50: lightBlue[50],
-  lightGreen100: lightGreen[100],
   indigo50: indigo[50],
   indigo100: indigo[100],
   indigo200: indigo[200],
