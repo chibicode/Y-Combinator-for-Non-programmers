@@ -1,5 +1,5 @@
 export const allZIndices = {
-  emojiBadge: 10,
+  bottomRightBadge: 10,
   expressionPriorityNumberWrapperDefault: 10,
   cross: 20
 }
