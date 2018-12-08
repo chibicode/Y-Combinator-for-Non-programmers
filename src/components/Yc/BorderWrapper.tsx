@@ -116,11 +116,15 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
           background(highlightType, variableSize, isDoneOrReady),
           {
             [css`
-              border-right: 5px solid ${colors('pink400')};
-            `]: highlightType === 'highlighted' && bottomRightBadgeType === 'funcBound',
+              border-right: 5px solid ${colors('yellow900')};
+            `]:
+              highlightType === 'highlighted' &&
+              bottomRightBadgeType === 'funcBound',
             [css`
               border-left: 5px solid ${colors('pink400')};
-            `]: highlightType === 'highlighted' && bottomRightBadgeType === 'funcArg'
+            `]:
+              highlightType === 'highlighted' &&
+              bottomRightBadgeType === 'funcArg'
           }
         )}
       >

@@ -70,8 +70,8 @@ const EmojiBadge: React.SFC<EmojiBadgeProps> = ({
         `]: !inline,
         [css`
           display: inline-flex;
-          font-size: 1em;
-          vertical-align: text-bottom;
+          font-size: 0.85em;
+          transform: translateY(-0.1em);
         `]: inline
       }
     )}
