@@ -4,7 +4,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import InlineBackground from 'src/components/Yc/InlineBackground'
+import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -31,7 +31,7 @@ export default () => {
           everything labeled as{' '}
           <BottomRightBadge bottomRightBadgeType="callArg" inline /> gets
           “copy-pasted” into the matched box{' '}
-          <InlineBackground bgPattern="star" />.
+          <TopLeftBadge inline topLeftBadgeType="match" />.
         </Em>
       </P>
       <P>

@@ -3,7 +3,6 @@ import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import InlineBackground from 'src/components/Yc/InlineBackground'
 import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
@@ -171,13 +170,14 @@ const stateToExplanation = ({
       } else {
         return matchExists ? (
           <>
-            <InlineBackground bgPattern="star" /> を食べます
+            <TopLeftBadge topLeftBadgeType="match" inline /> マッチしました{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            食べられる料理が{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            にありません
+            <TopLeftBadge topLeftBadgeType="unmatch" inline />{' '}
+            マッチしませんでした{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       }
@@ -195,8 +195,11 @@ const stateToExplanation = ({
       } else {
         return (
           <>
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            マッチしたのが{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            と入れ替わります <Emoji>🆕</Emoji>
+            と入れ替わります{' '}
+            <TopLeftBadge topLeftBadgeType="betaReduced" inline />
           </>
         )
       }
