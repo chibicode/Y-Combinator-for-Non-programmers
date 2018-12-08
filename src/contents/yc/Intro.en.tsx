@@ -3,6 +3,7 @@ import {
   Blockquote,
   Em,
   ExternalLink,
+  Hr,
   Ol,
   OlLi,
   P,
@@ -21,8 +22,13 @@ export default () => {
   return (
     <>
       <P>
-        <Strong>Question:</Strong> Which of the following is/are the correct
-        description(s) of the term{' '}
+        Welcome to <Strong>CSMoji</Strong>, a free online course that teaches
+        you <Em>Computer Science</Em> using <Em>emojis</Em>. <Emoji>😉</Emoji>
+      </P>
+      <Hr />
+      <P>
+        <Strong>First, let me ask you a question:</Strong> Which of the
+        following is/are the correct description(s) of the term{' '}
         <Strong>
           <Em>“Y Combinator”</Em>
         </Strong>
@@ -69,9 +75,8 @@ export default () => {
           <Strong>If you’ve never heard of the term “Y Combinator”:</Strong>{' '}
           That’s great! <Em>I’m writing this article for someone like you.</Em>{' '}
           If you’re interested in learning about one of the best programming
-          concepts
-          <Em>without actually learning to code</Em>, I think you’ll like this
-          article.
+          concepts <Em>without actually learning to code</Em>, I think you’ll
+          like this article.
         </UlLi>
       </Ul>
       <EmojiSeparator emojis={['😉', '👍', '❤️']} />
@@ -91,7 +96,7 @@ export default () => {
         <ExternalLink href="http://www.ycombinator.com/topcompanies/">
           top 100 companies
         </ExternalLink>{' '}
-        is roughly <Em>$100 billion dollars</Em>
+        is roughly $100 billion dollars.
       </P>
       <P>
         <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what{' '}
