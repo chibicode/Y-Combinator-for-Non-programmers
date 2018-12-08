@@ -313,12 +313,12 @@ const ExpressionRunnerExplanation: React.SFC<
         {isDone ? (
           locale === 'en' ? (
             <>
-              Done! <Emoji>✅</Emoji>
+              Done! <Emoji>👍</Emoji>
             </>
           ) : (
             <>
               終了！
-              <Emoji>✅</Emoji>
+              <Emoji>👍</Emoji>
             </>
           )
         ) : (

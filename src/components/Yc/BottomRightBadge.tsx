@@ -76,17 +76,7 @@ const BottomRightBadge: React.SFC<BottomRightBadgeProps> = ({
       }
     )}
   >
-    <span
-      className={cx(
-        css`
-          position: relative;
-          z-index: 2;
-          display: inline-flex;
-        `
-      )}
-    >
-      {bottomRightBadgeTypeToText(bottomRightBadgeType)}
-    </span>
+    {bottomRightBadgeTypeToText(bottomRightBadgeType)}
   </span>
 )
 
