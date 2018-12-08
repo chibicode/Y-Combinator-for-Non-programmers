@@ -8,6 +8,8 @@ import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import Page from 'src/components/Page'
+// https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
+import Logo from 'src/images/CSMoji-Logo.svg'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
 import h from 'src/lib/h'
@@ -22,8 +24,6 @@ import {
   ns,
   spaces
 } from 'src/lib/theme'
-// https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../images/CSMoji-Logo.svg'
 
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
