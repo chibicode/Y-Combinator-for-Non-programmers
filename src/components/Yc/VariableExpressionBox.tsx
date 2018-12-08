@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
@@ -72,10 +72,12 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                   position: absolute;
                   right: -0.2em;
                   bottom: 0;
-                  z-index: ${zIndices('emojiBadge')};
+                  z-index: ${zIndices('bottomRightBadge')};
                 `}
               >
-                <EmojiBadge bottomRightBadgeType={expression.bottomRightBadgeType} />
+                <BottomRightBadge
+                  bottomRightBadgeType={expression.bottomRightBadgeType}
+                />
               </span>
             )}
           </span>

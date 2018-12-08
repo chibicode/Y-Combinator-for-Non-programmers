@@ -3,7 +3,7 @@ import React from 'react'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
-interface EmojiBadgeProps {
+interface BottomRightBadgeProps {
   bottomRightBadgeType: Exclude<
     VariableExpression['bottomRightBadgeType'],
     'none'
@@ -12,7 +12,7 @@ interface EmojiBadgeProps {
 }
 
 const bottomRightBadgeTypeToColors = (
-  x: EmojiBadgeProps['bottomRightBadgeType']
+  x: BottomRightBadgeProps['bottomRightBadgeType']
 ): string =>
   ({
     callArg: css`
@@ -34,7 +34,7 @@ const bottomRightBadgeTypeToColors = (
   }[x])
 
 const bottomRightBadgeTypeToText = (
-  x: EmojiBadgeProps['bottomRightBadgeType']
+  x: BottomRightBadgeProps['bottomRightBadgeType']
 ) =>
   ({
     callArg: 't',
@@ -43,7 +43,7 @@ const bottomRightBadgeTypeToText = (
     funcUnbound: 'm'
   }[x])
 
-const EmojiBadge: React.SFC<EmojiBadgeProps> = ({
+const BottomRightBadge: React.SFC<BottomRightBadgeProps> = ({
   bottomRightBadgeType,
   inline
 }) => (
@@ -90,4 +90,4 @@ const EmojiBadge: React.SFC<EmojiBadgeProps> = ({
   </span>
 )
 
-export default EmojiBadge
+export default BottomRightBadge

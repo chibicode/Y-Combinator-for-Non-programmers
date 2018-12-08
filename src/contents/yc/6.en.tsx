@@ -3,7 +3,7 @@ import { Em, H3, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode6 } from 'src/components/Yc/AllExpressionRunners'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -20,10 +20,11 @@ export default () => {
       </P>
       <P>
         <Strong>Notice:</Strong> To speed this up, we now show all{' '}
-        <EmojiBadge bottomRightBadgeType="funcBound" inline />{' '}
-        <EmojiBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-        <EmojiBadge bottomRightBadgeType="funcArg" inline />{' '}
-        <EmojiBadge bottomRightBadgeType="callArg" inline /> at the same time.
+        <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+        <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+        <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+        <BottomRightBadge bottomRightBadgeType="callArg" inline /> at the same
+        time.
       </P>
       <H3>More Priorities</H3>
       <P>Next, take a look at this {h('ycBentoBox')}:</P>

@@ -3,7 +3,7 @@ import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -31,7 +31,7 @@ export default () => {
       <P>
         ご覧の通り、
         <Em>
-          <EmojiBadge bottomRightBadgeType="callArg" inline />
+          <BottomRightBadge bottomRightBadgeType="callArg" inline />
           がついている料理がすべて <InlineBackground bgPattern="star" />{' '}
           の部分にコピペされた
         </Em>
@@ -55,9 +55,9 @@ export default () => {
             サンドイッチ <Emoji size="mdlg">🥪</Emoji>
           </Strong>{' '}
           が、
-          <EmojiBadge bottomRightBadgeType="callArg" inline /> と{' '}
-          <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
-          <EmojiBadge bottomRightBadgeType="funcBound" inline />
+          <BottomRightBadge bottomRightBadgeType="callArg" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           にあることに注目です。
         </Em>
         .
@@ -66,9 +66,9 @@ export default () => {
       <P>
         <Em>
           同じ料理が
-          <EmojiBadge bottomRightBadgeType="callArg" inline /> と{' '}
-          <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
-          <EmojiBadge bottomRightBadgeType="funcBound" inline />
+          <BottomRightBadge bottomRightBadgeType="callArg" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           にあると、
           <Strong>
             シャッフルタイム <Emoji>🔀</Emoji>
@@ -86,16 +86,17 @@ export default () => {
       <Ul>
         <UlLi>
           <Em>
-            <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
-            <EmojiBadge bottomRightBadgeType="funcBound" inline /> にある全てのサンドイッチ{' '}
-            <Emoji size="mdlg">🥪</Emoji> がまだ使われていない
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            にある全てのサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+            がまだ使われていない
             <Strong>新しい</Strong>
             料理になる。
           </Em>
         </UlLi>
         <UlLi>
-          <EmojiBadge bottomRightBadgeType="callArg" inline /> にあるサンドイッチ{' '}
-          <Emoji size="mdlg">🥪</Emoji> はそのまま。
+          <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+          にあるサンドイッチ <Emoji size="mdlg">🥪</Emoji> はそのまま。
         </UlLi>
       </Ul>
       <P>

@@ -3,7 +3,7 @@ import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -28,7 +28,8 @@ export default () => {
       <P>
         As you can see,{' '}
         <Em>
-          everything labeled as <EmojiBadge bottomRightBadgeType="callArg" inline /> gets
+          everything labeled as{' '}
+          <BottomRightBadge bottomRightBadgeType="callArg" inline /> gets
           “copy-pasted” into the matched box{' '}
           <InlineBackground bgPattern="star" />.
         </Em>
@@ -48,9 +49,9 @@ export default () => {
           <Strong>
             sandwich <Emoji size="mdlg">🥪</Emoji>
           </Strong>{' '}
-          appears in <EmojiBadge bottomRightBadgeType="callArg" inline />,{' '}
-          <EmojiBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
-          <EmojiBadge bottomRightBadgeType="funcBound" inline />
+          appears in <BottomRightBadge bottomRightBadgeType="callArg" inline />,{' '}
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
+          <BottomRightBadge bottomRightBadgeType="funcBound" inline />
         </Em>
         .
       </P>
@@ -58,9 +59,9 @@ export default () => {
       <P>
         <Em>
           Whenever there’s <Strong>the same item</Strong> that appears in{' '}
-          <EmojiBadge bottomRightBadgeType="callArg" inline />,{' '}
-          <EmojiBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
-          <EmojiBadge bottomRightBadgeType="funcBound" inline />, it’s{' '}
+          <BottomRightBadge bottomRightBadgeType="callArg" inline />,{' '}
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />, and{' '}
+          <BottomRightBadge bottomRightBadgeType="funcBound" inline />, it’s{' '}
           <Strong>
             Shuffle Time <Emoji>🔀</Emoji>
           </Strong>
@@ -79,15 +80,16 @@ export default () => {
         <UlLi>
           <Em>
             All sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
-            <EmojiBadge bottomRightBadgeType="funcUnbound" inline /> and{' '}
-            <EmojiBadge bottomRightBadgeType="funcBound" inline /> becomes a{' '}
-            <Strong>new dish</Strong> (that’s not yet in the {h('ycBentoBox')}
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> and{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
+            a <Strong>new dish</Strong> (that’s not yet in the {h('ycBentoBox')}
             ).
           </Em>
         </UlLi>
         <UlLi>
           The sandwich <Emoji size="mdlg">🥪</Emoji> in{' '}
-          <EmojiBadge bottomRightBadgeType="callArg" inline /> is unchanged.
+          <BottomRightBadge bottomRightBadgeType="callArg" inline /> is
+          unchanged.
         </UlLi>
       </Ul>
       <P>
