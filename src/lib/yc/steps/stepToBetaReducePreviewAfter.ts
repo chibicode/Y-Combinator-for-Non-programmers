@@ -28,9 +28,9 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     return {
       ...e,
-      highlightType: 'match',
+      highlightType: 'highlighted',
       topLeftBadgeType: 'betaReduced',
-      bottomRightBadgeType: 'none'
+      bottomRightBadgeType: 'funcBound'
     }
   } else if (isFunction(e)) {
     return {

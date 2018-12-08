@@ -4,6 +4,7 @@ import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
+import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
@@ -158,11 +159,12 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            Highlighting matches <InlineBackground bgPattern="star" />
+            <TopLeftBadge topLeftBadgeType="match" inline /> Matches found in{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            No matches in{' '}
+            <TopLeftBadge topLeftBadgeType="unmatch" inline /> No matches in{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
@@ -184,8 +186,10 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Matches replaced <Emoji>🆕</Emoji> with{' '}
-            <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            Matches <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            replaced with{' '}
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+            <TopLeftBadge topLeftBadgeType="betaReduced" inline />
           </>
         )
       } else {

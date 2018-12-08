@@ -66,11 +66,6 @@ interface VariableStates {
     readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
-  semiTransparentFuncUnbound: {
-    readonly highlightType: 'semiTransparent'
-    readonly topLeftBadgeType: 'none'
-    readonly bottomRightBadgeType: 'funcUnbound'
-  }
   highlightCallArg: {
     readonly highlightType: 'highlighted'
     readonly topLeftBadgeType: 'none'
@@ -112,19 +107,19 @@ interface VariableStates {
     readonly bottomRightBadgeType: 'callArg'
   }
   matchFuncBound: {
-    readonly highlightType: 'match'
-    readonly topLeftBadgeType: 'none'
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'unmatch'
     readonly bottomRightBadgeType: 'funcBound'
   }
   unmatchFuncBound: {
-    readonly highlightType: 'unmatch'
-    readonly topLeftBadgeType: 'none'
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'match'
     readonly bottomRightBadgeType: 'funcBound'
   }
   betaReduced: {
-    readonly highlightType: 'match'
+    readonly highlightType: 'highlighted'
     readonly topLeftBadgeType: 'betaReduced'
-    readonly bottomRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   removedFuncArg: {
     readonly highlightType: 'removed'
@@ -195,7 +190,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                   ?
                       | 'highlightFuncArgNoEmphBorder'
                       | 'activeCallArg'
-                      | 'semiTransparentFuncUnbound'
+                      | 'activeFuncUnbound'
                       | 'matchFuncBound'
                       | 'unmatchFuncBound'
                   : C extends 'betaReducePreviewAfter'
@@ -206,7 +201,12 @@ export type CtoV<C extends CallStates> = C extends 'default'
                         | 'highlightCallArg'
                         | 'betaReduced'
                     : C extends 'betaReducePreviewCrossed'
-                      ? 'active' | 'removedFuncArg' | 'removedCallArg'
+                      ?
+                          | 'active'
+                          | 'removedFuncArg'
+                          | 'removedCallArg'
+                          | 'activeFuncUnbound'
+                          | 'activeFuncBound'
                       : never
 
 export interface CallExpression {

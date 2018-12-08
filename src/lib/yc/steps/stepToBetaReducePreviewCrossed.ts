@@ -47,12 +47,19 @@ function toCrossed(
         topLeftBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
+    } else if (e.bound) {
+      return {
+        ...e,
+        highlightType: 'active',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'funcBound'
+      }
     } else {
       return {
         ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'none'
+        bottomRightBadgeType: 'funcUnbound'
       }
     }
   } else if (isFunction(e)) {

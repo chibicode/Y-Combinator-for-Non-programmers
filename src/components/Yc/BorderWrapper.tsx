@@ -1,23 +1,20 @@
 import { css, cx } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
-import ExpressionRunnerContext, {
-  ExpressionRunnerContextProps
-} from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import crossSvg from 'src/images/cross.url.svg'
-import starSvg from 'src/images/star.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
   highlightType: VariableExpression['highlightType'] | 'none'
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
+  topLeftBadgeType: VariableExpression['topLeftBadgeType']
   children: React.ReactNode
 }
 
 const background = (
   highlightType: VariableExpression['highlightType'] | 'none',
-  variableSize: ExpressionRunnerContextProps['variableSize'],
   isDoneOrReady: boolean
 ): string | undefined => {
   switch (highlightType) {
@@ -37,32 +34,14 @@ const background = (
         background: ${colors('white')};
       `
     }
-    case 'semiTransparent': {
-      return css`
-        background: ${colors('grey200')};
-      `
-    }
     case 'highlighted': {
       return css`
         background: ${colors('yellow100')};
       `
     }
-    case 'unmatch': {
-      return css`
-        background: ${colors('pink50')};
-      `
-    }
     case 'highlightedNoEmphBorder': {
       return css`
         background: ${colors('yellow100')};
-      `
-    }
-    case 'match': {
-      return css`
-        background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
-          ${variableSize === 'lg' ? 2 : 1.5}rem;
-        background-position: center center;
       `
     }
     case 'conflictResolvedCallArg':
@@ -100,10 +79,11 @@ const Cross: React.SFC<{}> = () => (
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   highlightType,
   bottomRightBadgeType,
+  topLeftBadgeType,
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ variableSize, isDoneOrReady }) => (
+    {({ isDoneOrReady }) => (
       <Flex
         className={cx(
           css`
@@ -113,18 +93,20 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             flex: 1;
             position: relative;
           `,
-          background(highlightType, variableSize, isDoneOrReady),
+          background(highlightType, isDoneOrReady),
           {
             [css`
               border-right: 5px solid ${colors('yellow900')};
             `]:
               highlightType === 'highlighted' &&
-              bottomRightBadgeType === 'funcBound',
+              bottomRightBadgeType === 'funcBound' &&
+              topLeftBadgeType === 'none',
             [css`
               border-left: 5px solid ${colors('pink400')};
             `]:
               highlightType === 'highlighted' &&
-              bottomRightBadgeType === 'funcArg'
+              bottomRightBadgeType === 'funcArg' &&
+              topLeftBadgeType === 'none'
           }
         )}
       >

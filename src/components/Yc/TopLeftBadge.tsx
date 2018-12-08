@@ -10,7 +10,9 @@ interface TopLeftBadgeProps {
 
 const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
   ({
-    betaReduced: '🆕'
+    betaReduced: '🆕',
+    match: '☑️',
+    unmatch: '❌'
   }[x])
 
 const TopLeftBadge: React.SFC<TopLeftBadgeProps> = ({
@@ -31,6 +33,7 @@ const TopLeftBadge: React.SFC<TopLeftBadgeProps> = ({
         [css`
           display: inline-flex;
           font-size: 1em;
+          transform: translateY(0.15em);
         `]: inline
       }
     )}

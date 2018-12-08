@@ -73,8 +73,8 @@ export function toBetaReducePreviewBefore(
         return {
           nextExpression: {
             ...e,
-            highlightType: 'match',
-            topLeftBadgeType: 'none',
+            highlightType: 'highlighted',
+            topLeftBadgeType: 'match',
             bottomRightBadgeType: 'funcBound'
           },
           matchExists: true
@@ -83,8 +83,8 @@ export function toBetaReducePreviewBefore(
         return {
           nextExpression: {
             ...e,
-            highlightType: 'unmatch',
-            topLeftBadgeType: 'none',
+            highlightType: 'highlighted',
+            topLeftBadgeType: 'unmatch',
             bottomRightBadgeType: 'funcBound'
           },
           matchExists: false
@@ -94,7 +94,7 @@ export function toBetaReducePreviewBefore(
       return {
         nextExpression: {
           ...e,
-          highlightType: 'semiTransparent',
+          highlightType: 'active',
           topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         },
