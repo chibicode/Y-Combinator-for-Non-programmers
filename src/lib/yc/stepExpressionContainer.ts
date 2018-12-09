@@ -55,6 +55,25 @@ const step = (
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
+  const alphaConvert = (): {
+    nextExpression: ExecutableCall | StepChild<'default'>
+    matchExists?: boolean
+    previouslyChangedExpressionState: CallStates
+  } => {
+    const conflicts = conflictingVariableNames(e)
+    if (conflicts.length > 0) {
+      return {
+        nextExpression: stepToNeedsAlphaConvert(e, conflicts),
+        previouslyChangedExpressionState: 'needsAlphaConvert'
+      }
+    } else {
+      return {
+        ...stepToBetaReducePreviewBefore(e),
+        previouslyChangedExpressionState: 'betaReducePreviewBefore'
+      }
+    }
+  }
+
   switch (e.state) {
     case 'default': {
       return {
@@ -65,54 +84,47 @@ const step = (
     case 'active': {
       if (showAllShowSteps) {
         return {
-          nextExpression: stepToShowFuncBound(e),
-          previouslyChangedExpressionState: 'showFuncBound'
+          nextExpression: stepToShowCallArg(e),
+          previouslyChangedExpressionState: 'showCallArg'
         }
       } else {
-        return {
-          nextExpression: stepToShowCallArg(e, false),
-          previouslyChangedExpressionState: 'showCallArg'
+        if (hasUnboundVariables(e.func.body)) {
+          return {
+            nextExpression: stepToShowFuncUnbound(e, false),
+            previouslyChangedExpressionState: 'showFuncUnbound'
+          }
+        } else {
+          return {
+            nextExpression: stepToShowFuncBound(e, false),
+            previouslyChangedExpressionState: 'showFuncBound'
+          }
         }
       }
     }
-    case 'showFuncBound': {
+    case 'showCallArg': {
       return {
         nextExpression: stepToShowFuncArg(e),
         previouslyChangedExpressionState: 'showFuncArg'
       }
     }
     case 'showFuncArg': {
+      return {
+        nextExpression: stepToShowFuncBound(e, true),
+        previouslyChangedExpressionState: 'showFuncBound'
+      }
+    }
+    case 'showFuncBound': {
       if (hasUnboundVariables(e.func.body)) {
         return {
-          nextExpression: stepToShowFuncUnbound(e),
+          nextExpression: stepToShowFuncUnbound(e, true),
           previouslyChangedExpressionState: 'showFuncUnbound'
         }
       } else {
-        return {
-          nextExpression: stepToShowCallArg(e, true),
-          previouslyChangedExpressionState: 'showCallArg'
-        }
+        return alphaConvert()
       }
     }
     case 'showFuncUnbound': {
-      return {
-        nextExpression: stepToShowCallArg(e, true),
-        previouslyChangedExpressionState: 'showCallArg'
-      }
-    }
-    case 'showCallArg': {
-      const conflicts = conflictingVariableNames(e)
-      if (conflicts.length > 0) {
-        return {
-          nextExpression: stepToNeedsAlphaConvert(e, conflicts),
-          previouslyChangedExpressionState: 'needsAlphaConvert'
-        }
-      } else {
-        return {
-          ...stepToBetaReducePreviewBefore(e),
-          previouslyChangedExpressionState: 'betaReducePreviewBefore'
-        }
-      }
+      return alphaConvert()
     }
     case 'needsAlphaConvert': {
       return {

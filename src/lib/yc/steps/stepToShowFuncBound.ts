@@ -1,4 +1,5 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
   ExecutableCall,
@@ -14,67 +15,96 @@ import {
 
 export function toShowFuncBound(
   e: VariableExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepVariable<'showFuncBound'>
 export function toShowFuncBound(
   e: FunctionExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepFunction<'showFuncBound'>
 export function toShowFuncBound(
   e: CallExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): NonExecutableStepCall<'showFuncBound'>
 export function toShowFuncBound(
   e: VariableExpression | FunctionExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepVariable<'showFuncBound'> | StepFunction<'showFuncBound'>
 export function toShowFuncBound(
   e: Expression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepChild<'showFuncBound'>
 export function toShowFuncBound(
   e: Expression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepChild<'showFuncBound'> {
   if (isVariable(e)) {
-    if (funcSide && e.bound) {
-      return {
-        ...e,
-        highlightType: 'highlighted',
-        topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'funcBound'
+    if (funcSide) {
+      if (e.bound) {
+        if (highlight) {
+          return {
+            ...e,
+            highlightType: 'highlighted',
+            topLeftBadgeType: 'none',
+            bottomRightBadgeType: 'funcBound'
+          }
+        } else {
+          return {
+            ...e,
+            highlightType: 'active',
+            topLeftBadgeType: 'none',
+            bottomRightBadgeType: 'funcBound'
+          }
+        }
+      } else {
+        return {
+          ...e,
+          highlightType: 'active',
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'none'
+        }
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'none'
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toShowFuncBound(e.arg, funcSide),
-      body: toShowFuncBound(e.body, funcSide)
+      arg: toShowFuncBound(e.arg, funcSide, highlight),
+      body: toShowFuncBound(e.body, funcSide, highlight)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      arg: toShowFuncBound(e.arg, funcSide),
-      func: toShowFuncBound(e.func, funcSide)
+      arg: toShowFuncBound(e.arg, funcSide, highlight),
+      func: toShowFuncBound(e.func, funcSide, highlight)
     }
   }
 }
 
 const stepToShowFuncBound = (
-  e: ExecutableCall
+  e: ExecutableCall,
+  highlight: boolean
 ): ExecutableStepCall<'showFuncBound'> => ({
   ...e,
   state: 'showFuncBound',
-  arg: toShowFuncBound(e.arg, false),
-  func: toShowFuncBound(e.func, true)
+  arg: toShowFuncBound(e.arg, false, highlight),
+  func: {
+    ...e.func,
+    arg: activeFuncArg(e.func.arg),
+    body: toShowFuncBound(e.func.body, true, highlight)
+  }
 })
 
 export default stepToShowFuncBound

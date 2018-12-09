@@ -38,19 +38,19 @@ export function toShowFuncArg(
   funcSide: boolean
 ): StepChild<'showFuncArg'> {
   if (isVariable(e)) {
-    if (funcSide && e.bound) {
+    if (funcSide) {
       return {
         ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'funcBound'
+        bottomRightBadgeType: 'none'
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'none'
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {
