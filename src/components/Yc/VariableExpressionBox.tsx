@@ -82,7 +82,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
               <span
                 className={css`
                   position: absolute;
-                  left: -0.2em;
+                  right: -0.18em;
                   top: 0;
                   z-index: ${zIndices('badge')};
                 `}
