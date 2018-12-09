@@ -90,7 +90,7 @@ export default () => {
           </Em>
         </UlLi>
         <UlLi>
-          例: <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} /> と{' '}
+          例: <InlineEmojiBoxes emojis={['🍗', '🍟', '🍗']} /> と{' '}
           <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />
         </UlLi>
       </Ul>
@@ -108,7 +108,7 @@ export default () => {
         </UlLi>
         <UlLi>
           例: <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> と{' '}
-          <InlineEmojiBoxes emojis={['🍝', '🥦', '🥦']} />
+          <InlineEmojiBoxes emojis={['🍝', '🥕', '🥕']} />
         </UlLi>
       </Ul>
       <P>
@@ -146,7 +146,7 @@ export default () => {
       <P>結果はこうなりました:</P>
       {episode11[i++]()}
       <P>
-        <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} /> のパターンは{' '}
+        <InlineEmojiBoxes emojis={['🥪', '🍔', '🍔']} /> のパターンは{' '}
         <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} /> ですので、
         <Em>
           二択暗号は
@@ -157,13 +157,13 @@ export default () => {
       <Ul>
         <UlLi>
           最初は
-          <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} />
+          <InlineEmojiBoxes emojis={['🍗', '🍟', '🍗']} />
           、すなわち二択暗号が
           {h('ycYes')} だった。
         </UlLi>
         <UlLi>
           最終的に
-          <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />
+          <InlineEmojiBoxes emojis={['🥪', '🍔', '🍔']} />
           になり、二択暗号が
           {h('ycNo')} になった。
         </UlLi>

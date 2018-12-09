@@ -11,7 +11,7 @@ interface TopLeftBadgeProps {
 const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
   ({
     betaReduced: '🆕',
-    match: '☑️',
+    match: '✅',
     unmatch: '❌',
     conflict: '🔀',
     conflictResolved: '🆕'

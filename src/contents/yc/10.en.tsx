@@ -71,7 +71,7 @@ export default () => {
           </Em>
         </UlLi>
         <UlLi>
-          Example: <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} /> and{' '}
+          Example: <InlineEmojiBoxes emojis={['🍗', '🍟', '🍗']} /> and{' '}
           <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />.
         </UlLi>
       </Ul>
@@ -87,7 +87,7 @@ export default () => {
         </UlLi>
         <UlLi>
           Example: <InlineEmojiBoxes emojis={['🍕', '🍛', '🍛']} /> and{' '}
-          <InlineEmojiBoxes emojis={['🍝', '🥦', '🥦']} />.
+          <InlineEmojiBoxes emojis={['🍝', '🥕', '🥕']} />.
         </UlLi>
       </Ul>
       <P>
@@ -118,18 +118,18 @@ export default () => {
       <P>So the end result was:</P>
       {episode11[i++]()}
       <P>
-        Notice that <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} /> has the
+        Notice that <InlineEmojiBoxes emojis={['🥪', '🍔', '🍔']} /> has the
         pattern <InlineEmojiBoxes emojis={['🔵', '🔴', '🔴']} />, so{' '}
         <Em>the secret boolean code is {h('ycNo')}</Em>.
       </P>
       <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
-          We started with <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} />,
+          We started with <InlineEmojiBoxes emojis={['🍗', '🍟', '🍗']} />,
           which has the secret boolean code {h('ycYes')}.
         </UlLi>
         <UlLi>
-          We ended up with <InlineEmojiBoxes emojis={['🥪', '🥗', '🥗']} />,
+          We ended up with <InlineEmojiBoxes emojis={['🥪', '🍔', '🍔']} />,
           which has the secret boolean code {h('ycNo')}.
         </UlLi>
         <UlLi>

@@ -30,10 +30,10 @@ export default () => {
       <P>Therefore, the above {h('ycBentoBox')} represents:</P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
           <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🍗</Emoji>
@@ -41,7 +41,7 @@ export default () => {
       </Ul>
       <H3>What Will Happen Next?</H3>
       <P>
-        In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
+        In the above scenario, after you eat burger <Emoji>🍔</Emoji>, the chef
         brings chicken <Emoji>🍗</Emoji>. So eventually,{' '}
         <Em>
           the chicken <Emoji>🍗</Emoji> will be the only dish
@@ -58,20 +58,20 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>
-        The salad <Emoji>🥗</Emoji> on the bottom right <Strong>matches</Strong>{' '}
-        with what you’re eating next <Emoji>😋</Emoji>. We indicate this{' '}
-        <Strong>match</Strong> using{' '}
+        The burger <Emoji>🍔</Emoji> on the bottom right{' '}
+        <Strong>matches</Strong> with what you’re eating next <Emoji>😋</Emoji>.
+        We indicate this <Strong>match</Strong> using{' '}
         <TopLeftBadge inline topLeftBadgeType="match" />.
       </P>
       {episode3[i++]()}
       <P>
-        After you eat the salad <Emoji>🥗</Emoji> on the bottom right, it{' '}
+        After you eat the burger <Emoji>🍔</Emoji> on the bottom right, it{' '}
         <Em>will be replaced</Em> by the chicken <Emoji>🍗</Emoji>. We indicate
         this using <TopLeftBadge inline topLeftBadgeType="betaReduced" />.
       </P>
       {episode3[i++]()}
       <P>
-        The salad <Emoji>🥗</Emoji> on the bottom left and the chicken{' '}
+        The burger <Emoji>🍔</Emoji> on the bottom left and the chicken{' '}
         <Emoji>🍗</Emoji> on the top <Em>will disappear</Em>. We indicate this
         using the{' '}
         <Em>

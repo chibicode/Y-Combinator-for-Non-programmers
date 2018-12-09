@@ -836,7 +836,7 @@ export const episode8 = [
       variableSize={'md'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -884,7 +884,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -950,7 +950,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -989,7 +989,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       isFastForwardPlayButton
-      caption={secretCodeCaption('🥗', 5)}
+      caption={secretCodeCaption('🍔', 5)}
       hideControls
       hideExplanations
     />
@@ -1001,7 +1001,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -1031,7 +1031,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={combineSecretCodeCaption('add', '🍔', 2, '🍚', 3)}
+      caption={combineSecretCodeCaption('add', '🍟', 2, '🍚', 3)}
     />
   ),
   () => (
@@ -1051,7 +1051,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -1078,7 +1078,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       isFastForwardPlayButton
-      caption={secretCodeCaption('🥗', 6)}
+      caption={secretCodeCaption('🍔', 6)}
       hideControls
       hideExplanations
     />
@@ -1090,7 +1090,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={combineSecretCodeCaption('multiply', '🍔', 2, '🍚', 3)}
+      caption={combineSecretCodeCaption('multiply', '🍟', 2, '🍚', 3)}
     />
   ),
   () => (

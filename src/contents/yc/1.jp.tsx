@@ -15,10 +15,10 @@ export default () => {
       <Ul size="lg">
         <UlLi>
           <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍗</Emoji>{' '}
-          <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
           <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🌮</Emoji>

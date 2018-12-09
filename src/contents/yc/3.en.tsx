@@ -35,17 +35,17 @@ export default () => {
           <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍣</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🍔</Emoji>
         </UlLi>
       </Ul>
       <P>
         <Em>So you don’t eat anything</Em>.
       </P>
       <P>
-        The salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji> is preparing will{' '}
-        <Strong>not</Strong> replace the sandwich <Emoji>🥪</Emoji>. Instead,
-        the salad <Emoji>🥗</Emoji> <Strong>disappears</Strong>. The sushi{' '}
-        <Emoji>🍣</Emoji> also disappears.
+        The burger <Emoji>🍔</Emoji> the chef <Emoji>👨‍🍳</Emoji> is preparing
+        will <Strong>not</Strong> replace the sandwich <Emoji>🥪</Emoji>.
+        Instead, the burger <Emoji>🍔</Emoji> <Strong>disappears</Strong>. The
+        sushi <Emoji>🍣</Emoji> also disappears.
       </P>
       {episode4[i++]()}
       <P>

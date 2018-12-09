@@ -34,10 +34,10 @@ export default () => {
       </P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
           <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🍗</Emoji>
@@ -46,7 +46,7 @@ export default () => {
 
       <H3>その次はどうなる？</H3>
       <P>
-        上の状況だと、あなたがサラダ <Emoji>🥗</Emoji>{' '}
+        上の状況だと、あなたがサラダ <Emoji>🍔</Emoji>{' '}
         を食べたあと、シェフはステーキ <Emoji>🍗</Emoji>{' '}
         を持ってきます。ということは、最終的には
         <Em>
@@ -68,20 +68,20 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>
-        右下のサラダ <Emoji>🥗</Emoji> は、あなたが食べたい料理{' '}
+        右下のサラダ <Emoji>🍔</Emoji> は、あなたが食べたい料理{' '}
         <Emoji>😋</Emoji> です。これを{' '}
         <TopLeftBadge inline topLeftBadgeType="match" /> で表します。
       </P>
       {episode3[i++]()}
       <P>
-        あなたがサラダ <Emoji>🥗</Emoji> を食べると、それがステーキ{' '}
+        あなたがサラダ <Emoji>🍔</Emoji> を食べると、それがステーキ{' '}
         <Emoji>🍗</Emoji> と<Em>入れ替わります</Em>
         。これを <TopLeftBadge inline topLeftBadgeType="betaReduced" />{' '}
         で表します。
       </P>
       {episode3[i++]()}
       <P>
-        食べ終わると、左下のサラダと <Emoji>🥗</Emoji> 上段のステーキ{' '}
+        食べ終わると、左下のサラダと <Emoji>🍔</Emoji> 上段のステーキ{' '}
         <Emoji>🍗</Emoji> は<Em>消えます</Em>
         。これを、
         <Em>

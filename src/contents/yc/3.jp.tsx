@@ -38,16 +38,16 @@ export default () => {
           <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍣</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🍔</Emoji>
         </UlLi>
       </Ul>
       <P>
         <Em>というわけで、あなたは何も食べれませんでした</Em>。
       </P>
       <P>
-        シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🥗</Emoji>{' '}
+        シェフ <Emoji>👨‍🍳</Emoji> が作ったサラダ <Emoji>🍔</Emoji>{' '}
         と、サンドイッチ <Emoji>🥪</Emoji> は<Strong>入れ替わりません</Strong>
-        。サラダ <Emoji>🥗</Emoji> は<Strong>消えてなくなります</Strong>
+        。サラダ <Emoji>🍔</Emoji> は<Strong>消えてなくなります</Strong>
         。お寿司 <Emoji>🍣</Emoji> も消えます。
       </P>
       {episode4[i++]()}
