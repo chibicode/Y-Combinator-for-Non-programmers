@@ -157,7 +157,10 @@ export default () => {
         <Em>your smartphone or your computer</Em>.
       </P>
       <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
-      <SideNoteSection heading="Can you just tell me what Y Combinator is?">
+      <SideNoteSection
+        heading="Can you just tell me what Y Combinator is?"
+        color="indigo"
+      >
         <P>
           Sure. <Em>This is what Y Combinator (in programming) looks like:</Em>
         </P>
@@ -171,7 +174,11 @@ export default () => {
           </Em>
         </P>
       </SideNoteSection>
-      <SideNoteSection heading="Who wrote this?" headingNoMarginBottom>
+      <SideNoteSection
+        heading="Who wrote this?"
+        headingNoMarginBottom
+        color="indigo"
+      >
         <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
         <P
           className={css`

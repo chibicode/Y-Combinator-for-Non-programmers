@@ -12,6 +12,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import SideNoteSection from 'src/components/SideNoteSection'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
@@ -99,37 +100,69 @@ export default () => {
         .
       </P>
       {episode2[i++]()}
-      <H3>Quiz: Labels</H3>
-      <P>Let’s do a quiz to check your understanding.</P>
-      <P>
-        <Strong>Question:</Strong>{' '}
-        <Em>
-          What do the labels look like for the following {h('ycBentoBox')}?
-        </Em>
-      </P>
+      <SideNoteSection heading={'Review Quiz: Labels'} color="pink">
+        <P>
+          <Strong>Question:</Strong>{' '}
+          <Em>
+            What are the correct labels for the following {h('ycBentoBox')}?
+          </Em>
+        </P>
+        {episode2[i++]()}
+        <P>
+          <Strong>Answer:</Strong>{' '}
+          <Em>
+            The chicken <Emoji size="mdlg">🍗</Emoji> is{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> and the
+            burgers <Emoji size="mdlg">🍔</Emoji> are{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+          </Em>
+        </P>
+        {episode2[i++]()}
+      </SideNoteSection>
       <H3>
         Check for matches in{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" />
       </H3>
       <P>
+        Next, we’ll look for items that appear in both{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+      </P>
+      {episode2[i++]()}
+      <P>
         <Em>
-          If there are same items in{' '}
+          If there are the same items in{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we call
           it a <Strong>match</Strong>, and we show{' '}
-          <TopLeftBadge inline topLeftBadgeType="match" /> next to the matching{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> item.
+          <TopLeftBadge inline topLeftBadgeType="match" /> next to{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
       {episode2[i++]()}
       <P>
-        In the above case, there’s sushi <Emoji size="mdlg">🍣</Emoji> on both{' '}
+        In the above case, there’s sushi <Emoji size="mdlg">🍣</Emoji> in both{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" />, so it’s a
-        match. We show <TopLeftBadge inline topLeftBadgeType="match" /> next to{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+        match <TopLeftBadge inline topLeftBadgeType="match" />.
       </P>
+      <SideNoteSection heading={'Review Quiz: Matches'} color="pink">
+        <P>
+          <Strong>Question:</Strong>{' '}
+          <Em>Does the following {h('ycBentoBox')} have a match?</Em>
+        </P>
+        {episode2[i++]()}
+        <P>
+          <Strong>Answer:</Strong>{' '}
+          <Em>
+            Yes. The burgers <Emoji size="mdlg">🍔</Emoji> match{' '}
+            <TopLeftBadge inline topLeftBadgeType="match" />.
+          </Em>
+        </P>
+        {episode2[i++]()}
+      </SideNoteSection>
       <H3>
         Matched items become the same as{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
@@ -138,7 +171,7 @@ export default () => {
         <Em>
           Next, every matching <TopLeftBadge inline topLeftBadgeType="match" />{' '}
           item in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>becomes</Strong> the same as items labeled as{' '}
+          <Strong>becomes</Strong> the same as the items in{' '}
           <BottomRightBadge inline bottomRightBadgeType="callArg" />. We show{' '}
           <TopLeftBadge inline topLeftBadgeType="betaReduced" /> next to it.
         </Em>
@@ -147,7 +180,7 @@ export default () => {
       <P>
         In the above case, the matched{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" /> becomes the
-        sandwich <Emoji size="mdlg">🥪</Emoji> (which is labeled as{' '}
+        sandwich <Emoji size="mdlg">🥪</Emoji> (which is in{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
         ).
       </P>

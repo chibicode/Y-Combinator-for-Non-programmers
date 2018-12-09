@@ -23,15 +23,13 @@ export const Em: React.SFC<JSX.IntrinsicElements['em']> = ({
   ...props
 }) => (
   <SectionContext.Consumer>
-    {({ currentSection }) => (
+    {({ emBackgroundColor }) => (
       <em
         {...props}
         className={cx(
           css`
             font-style: normal;
-            background: ${colors(
-              currentSection === 'sideNote' ? 'white66' : 'yellow100'
-            )};
+            background: ${emBackgroundColor || colors('yellow100')};
           `,
           className
         )}

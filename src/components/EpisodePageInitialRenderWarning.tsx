@@ -10,7 +10,7 @@ const EpisodePageInitialRenderWarning: React.SFC<{
   <GlobalContext.Consumer>
     {({ initialRender }) =>
       initialRender && (
-        <SideNoteSection>
+        <SideNoteSection color="indigo">
           <Content name="others/NewUser" componentProps={{ lessonName }} />
         </SideNoteSection>
       )

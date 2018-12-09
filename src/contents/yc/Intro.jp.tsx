@@ -159,7 +159,10 @@ export default () => {
         <Em>無料で閲覧できます</Em>。
       </P>
       <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
-      <SideNoteSection heading="Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？">
+      <SideNoteSection
+        heading="Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？"
+        color="indigo"
+      >
         <P>
           いいですよ。
           <Em>これがYコンビネーターです。</Em>
@@ -173,7 +176,10 @@ export default () => {
           </Em>
         </P>
       </SideNoteSection>
-      <SideNoteSection heading="このレッスンを作ったのは誰ですか？">
+      <SideNoteSection
+        heading="このレッスンを作ったのは誰ですか？"
+        color="indigo"
+      >
         <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
         <P
           className={css`

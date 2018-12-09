@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface SectionContextProps {
-  currentSection?: 'sideNote'
+  emBackgroundColor?: string
 }
 
 export const sectionContextDefault: SectionContextProps = {}

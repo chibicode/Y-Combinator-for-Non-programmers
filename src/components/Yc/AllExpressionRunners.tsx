@@ -93,10 +93,85 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[
