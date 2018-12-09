@@ -99,12 +99,12 @@ export default () => {
       <P>
         In this case,{' '}
         <Strong>
-          the sandwiches <Emoji size="mdlg">🥪</Emoji> became steak{' '}
-          <Emoji size="mdlg">🥩</Emoji>
+          the sandwiches <Emoji size="mdlg">🥪</Emoji> became chicken{' '}
+          <Emoji size="mdlg">🍗</Emoji>
         </Strong>
         .
       </P>
-      <EmojiSeparator emojis={['🥪', '🔀', '🥩']} />
+      <EmojiSeparator emojis={['🥪', '🔀', '🍗']} />
       <P>From here, {h('ycTryUntilDone', false)} as usual:</P>
       {episode7[i++]()}
       <P>That’s it!</P>

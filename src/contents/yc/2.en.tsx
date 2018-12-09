@@ -36,21 +36,21 @@ export default () => {
           <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🥗</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥩</Emoji>
+          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🍗</Emoji>
         </UlLi>
       </Ul>
       <H3>What Will Happen Next?</H3>
       <P>
         In the above scenario, after you eat salad <Emoji>🥗</Emoji>, the chef
-        brings steak <Emoji>🥩</Emoji>. So eventually,{' '}
+        brings chicken <Emoji>🍗</Emoji>. So eventually,{' '}
         <Em>
-          the steak <Emoji>🥩</Emoji> will be the only dish
+          the chicken <Emoji>🍗</Emoji> will be the only dish
         </Em>
         :
       </P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>
+          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍗</Emoji>
         </UlLi>
       </Ul>
       <P>
@@ -66,13 +66,13 @@ export default () => {
       {episode3[i++]()}
       <P>
         After you eat the salad <Emoji>🥗</Emoji> on the bottom right, it{' '}
-        <Em>will be replaced</Em> by the steak <Emoji>🥩</Emoji>. We indicate
+        <Em>will be replaced</Em> by the chicken <Emoji>🍗</Emoji>. We indicate
         this using <TopLeftBadge inline topLeftBadgeType="betaReduced" />.
       </P>
       {episode3[i++]()}
       <P>
-        The salad <Emoji>🥗</Emoji> on the bottom left and the steak{' '}
-        <Emoji>🥩</Emoji> on the top <Em>will disappear</Em>. We indicate this
+        The salad <Emoji>🥗</Emoji> on the bottom left and the chicken{' '}
+        <Emoji>🍗</Emoji> on the top <Em>will disappear</Em>. We indicate this
         using the{' '}
         <Em>
           “X” background <InlineBackground bgPattern="cross" />
@@ -81,7 +81,7 @@ export default () => {
       </P>
       {episode3[i++]()}
       <P>
-        In the end, only the steak <Emoji>🥩</Emoji> remains:
+        In the end, only the chicken <Emoji>🍗</Emoji> remains:
       </P>
       {episode3[i++]()}
       <H3>The Next and Previous Buttons</H3>

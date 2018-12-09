@@ -33,7 +33,7 @@ export default () => {
       <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
-          We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🍔']} />,
+          We started with <InlineEmojiBoxes emojis={['🍗', '🍔', '🍔']} />,
           which has the secret boolean code {h('ycNo')}.
         </UlLi>
         <UlLi>

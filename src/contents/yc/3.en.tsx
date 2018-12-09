@@ -128,7 +128,7 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          The steak <Emoji size="mdlg">🥩</Emoji> is the only available dish
+          The chicken <Emoji size="mdlg">🍗</Emoji> is the only available dish
           because it’s <Em>the rightmost item on the bottom row</Em>.
         </UlLi>
         <UlLi>

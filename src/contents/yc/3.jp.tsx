@@ -155,7 +155,7 @@ export default () => {
           食べれる料理は
           <Em>下段の一番右</Em>
           にあるステーキのみ。
-          <Emoji size="mdlg">🥩</Emoji>
+          <Emoji size="mdlg">🍗</Emoji>
         </UlLi>
         <UlLi>
           あなたが次に食べるのは、

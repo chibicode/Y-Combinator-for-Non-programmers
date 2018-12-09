@@ -108,11 +108,11 @@ export default () => {
         というわけで、
         <Strong>
           サンドイッチ <Emoji size="mdlg">🥪</Emoji> がステーキ{' '}
-          <Emoji size="mdlg">🥩</Emoji> に
+          <Emoji size="mdlg">🍗</Emoji> に
         </Strong>
         なりました。
       </P>
-      <EmojiSeparator emojis={['🥪', '🔀', '🥩']} />
+      <EmojiSeparator emojis={['🥪', '🔀', '🍗']} />
       <P>
         あとはいつも通り、
         {h('ycTryUntilDone')}:

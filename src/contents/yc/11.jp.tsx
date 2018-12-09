@@ -31,7 +31,7 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          最初は <InlineEmojiBoxes emojis={['🥗', '🥩', '🥩']} /> 、すなわち{' '}
+          最初は <InlineEmojiBoxes emojis={['🥗', '🍗', '🍗']} /> 、すなわち{' '}
           <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
           のパターンからはじまった。
         </UlLi>

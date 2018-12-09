@@ -71,7 +71,7 @@ export default () => {
           </Em>
         </UlLi>
         <UlLi>
-          Example: <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> and{' '}
+          Example: <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} /> and{' '}
           <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />.
         </UlLi>
       </Ul>
@@ -125,7 +125,7 @@ export default () => {
       <H3>To Summarize:</H3>
       <Ul>
         <UlLi>
-          We started with <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />,
+          We started with <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} />,
           which has the secret boolean code {h('ycYes')}.
         </UlLi>
         <UlLi>

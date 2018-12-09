@@ -90,7 +90,7 @@ export default () => {
           </Em>
         </UlLi>
         <UlLi>
-          例: <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} /> と{' '}
+          例: <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} /> と{' '}
           <InlineEmojiBoxes emojis={['🌭', '🍚', '🌭']} />
         </UlLi>
       </Ul>
@@ -157,7 +157,7 @@ export default () => {
       <Ul>
         <UlLi>
           最初は
-          <InlineEmojiBoxes emojis={['🥩', '🍔', '🥩']} />
+          <InlineEmojiBoxes emojis={['🍗', '🍔', '🍗']} />
           、すなわち二択暗号が
           {h('ycYes')} だった。
         </UlLi>

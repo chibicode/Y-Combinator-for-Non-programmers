@@ -14,7 +14,7 @@ export default () => {
       <P>仮に、次のような状態だった場合…</P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥩</Emoji>{' '}
+          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍗</Emoji>{' '}
           <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
         </UlLi>
         <UlLi>
@@ -29,7 +29,7 @@ export default () => {
       </P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🥩</Emoji>{' '}
+          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍗</Emoji>{' '}
           <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
         </UlLi>
       </Ul>

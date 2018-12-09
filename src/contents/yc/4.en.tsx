@@ -175,7 +175,7 @@ export default () => {
           <Emoji size="lg">🍔</Emoji>
         </OlLi>
         <OlLi>
-          <Emoji size="lg">🥩</Emoji>
+          <Emoji size="lg">🍗</Emoji>
         </OlLi>
       </Ol>
       <P>
