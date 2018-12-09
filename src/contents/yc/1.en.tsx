@@ -34,10 +34,8 @@ export default () => {
       <Blockquote>
         <P>
           <Strong>Bento [box]</Strong> is a meal common in Japanese cuisine,
-          made to take away from home to be eaten somewhere else. A traditional
-          bento consists of rice, fish or meat, and one or more pickled or
-          cooked vegetables as a side dish. ... People often take bento for a
-          picnic.
+          made to take away from home to be eaten somewhere else. … People often
+          take bento for a picnic.
         </P>
       </Blockquote>
       <H3>Interactive Bento Boxes</H3>
