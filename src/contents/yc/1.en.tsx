@@ -136,9 +136,8 @@ export default () => {
           If there are the same items in{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we call
-          it a <Strong>match</Strong>, and we show{' '}
-          <TopLeftBadge inline topLeftBadgeType="match" /> next to{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+          it a <Strong>match</Strong>{' '}
+          <TopLeftBadge inline topLeftBadgeType="match" />.
         </Em>
       </P>
       {episode2[i++]()}
@@ -167,13 +166,14 @@ export default () => {
         Matched items become the same as{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
       </H3>
+      {episode2[i++]()}
       <P>
         <Em>
           Next, every matching <TopLeftBadge inline topLeftBadgeType="match" />{' '}
           item in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           <Strong>becomes</Strong> the same as the items in{' '}
           <BottomRightBadge inline bottomRightBadgeType="callArg" />. We show{' '}
-          <TopLeftBadge inline topLeftBadgeType="betaReduced" /> next to it.
+          <TopLeftBadge inline topLeftBadgeType="betaReduced" />.
         </Em>
       </P>
       {episode2[i++]()}

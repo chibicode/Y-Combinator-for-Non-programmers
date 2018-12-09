@@ -140,12 +140,13 @@ export function toBetaReducePreviewBefore(
 
 const highlightFuncArg = (
   e: VariableExpression
-): VariableWithState<'highlightFuncArgNoEmphBorder'> => ({
+): VariableWithState<'matchFuncArg'> => ({
   ...e,
-  highlightType: 'highlightedNoEmphBorder',
-  topLeftBadgeType: 'none',
+  highlightType: 'highlighted',
+  topLeftBadgeType: 'match',
   bottomRightBadgeType: 'funcArg'
 })
+
 const stepToBetaReducePreviewBefore = (
   e: ExecutableCall
 ): {

@@ -193,6 +193,22 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'betaReducePreviewAfter'
         }
       ]}

@@ -39,11 +39,6 @@ const background = (
         background: ${colors('yellow100')};
       `
     }
-    case 'highlightedNoEmphBorder': {
-      return css`
-        background: ${colors('yellow100')};
-      `
-    }
   }
 }
 

@@ -46,11 +46,6 @@ interface VariableStates {
     readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcArg'
   }
-  highlightFuncArgNoEmphBorder: {
-    readonly highlightType: 'highlightedNoEmphBorder'
-    readonly topLeftBadgeType: 'none'
-    readonly bottomRightBadgeType: 'funcArg'
-  }
   activeFuncArg: {
     readonly highlightType: 'active'
     readonly topLeftBadgeType: 'none'
@@ -95,6 +90,11 @@ interface VariableStates {
     readonly highlightType: 'highlighted'
     readonly topLeftBadgeType: 'conflictResolved'
     readonly bottomRightBadgeType: 'funcBound'
+  }
+  matchFuncArg: {
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'match'
+    readonly bottomRightBadgeType: 'funcArg'
   }
   matchFuncBound: {
     readonly highlightType: 'highlighted'
@@ -180,9 +180,9 @@ export type CtoV<C extends CallStates> = C extends 'default'
                     | 'highlightCallArg'
                 : C extends 'betaReducePreviewBefore'
                   ?
-                      | 'highlightFuncArgNoEmphBorder'
                       | 'activeCallArg'
                       | 'activeFuncUnbound'
+                      | 'matchFuncArg'
                       | 'matchFuncBound'
                       | 'unmatchFuncBound'
                   : C extends 'betaReducePreviewAfter'
