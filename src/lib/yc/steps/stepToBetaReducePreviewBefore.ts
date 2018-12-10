@@ -17,8 +17,7 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 export function toBetaReducePreviewBefore(
   e: VariableExpression,
   from: VariableNames,
-  funcSide: boolean,
-  highlightCallArgSide?: boolean
+  funcSide: boolean
 ): {
   nextExpression: StepVariable<'betaReducePreviewBefore'>
   matchExists: boolean
@@ -26,8 +25,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: FunctionExpression,
   from: VariableNames,
-  funcSide: boolean,
-  highlightCallArgSide?: boolean
+  funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
   matchExists: boolean
@@ -35,8 +33,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: CallExpression,
   from: VariableNames,
-  funcSide: boolean,
-  highlightCallArgSide?: boolean
+  funcSide: boolean
 ): {
   nextExpression: NonExecutableStepCall<'betaReducePreviewBefore'>
   matchExists: boolean
@@ -44,8 +41,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: VariableExpression | FunctionExpression,
   from: VariableNames,
-  funcSide: boolean,
-  highlightCallArgSide?: boolean
+  funcSide: boolean
 ):
   | {
       nextExpression: StepVariable<'betaReducePreviewBefore'>
@@ -58,8 +54,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   from: VariableNames,
-  funcSide: boolean,
-  highlightCallArgSide?: boolean
+  funcSide: boolean
 ): {
   nextExpression: StepChild<'betaReducePreviewBefore'>
   matchExists: boolean
@@ -67,8 +62,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   from: VariableNames,
-  funcSide: boolean,
-  highlightCallArgSide?: boolean
+  funcSide: boolean
 ): {
   nextExpression: StepChild<'betaReducePreviewBefore'>
   matchExists: boolean
@@ -107,41 +101,19 @@ export function toBetaReducePreviewBefore(
         matchExists: false
       }
     } else {
-      if (highlightCallArgSide) {
-        return {
-          nextExpression: {
-            ...e,
-            highlightType: 'highlighted',
-            topLeftBadgeType: 'none',
-            bottomRightBadgeType: 'callArg'
-          },
-          matchExists: false
-        }
-      } else {
-        return {
-          nextExpression: {
-            ...e,
-            highlightType: 'active',
-            topLeftBadgeType: 'none',
-            bottomRightBadgeType: 'callArg'
-          },
-          matchExists: false
-        }
+      return {
+        nextExpression: {
+          ...e,
+          highlightType: 'active',
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
+        },
+        matchExists: false
       }
     }
   } else if (isFunction(e)) {
-    const argHelperResult = toBetaReducePreviewBefore(
-      e.arg,
-      from,
-      funcSide,
-      highlightCallArgSide
-    )
-    const bodyHelperResult = toBetaReducePreviewBefore(
-      e.body,
-      from,
-      funcSide,
-      highlightCallArgSide
-    )
+    const argHelperResult = toBetaReducePreviewBefore(e.arg, from, funcSide)
+    const bodyHelperResult = toBetaReducePreviewBefore(e.body, from, funcSide)
 
     return {
       nextExpression: {
@@ -152,18 +124,8 @@ export function toBetaReducePreviewBefore(
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
     }
   } else {
-    const argHelperResult = toBetaReducePreviewBefore(
-      e.arg,
-      from,
-      funcSide,
-      highlightCallArgSide
-    )
-    const funcHelperResult = toBetaReducePreviewBefore(
-      e.func,
-      from,
-      funcSide,
-      highlightCallArgSide
-    )
+    const argHelperResult = toBetaReducePreviewBefore(e.arg, from, funcSide)
+    const funcHelperResult = toBetaReducePreviewBefore(e.func, from, funcSide)
     return {
       nextExpression: {
         ...e,
@@ -177,39 +139,22 @@ export function toBetaReducePreviewBefore(
 }
 
 const funcArg = (
-  e: VariableExpression,
-  highlight: boolean
-):
-  | VariableWithState<'matchFuncArg'>
-  | VariableWithState<'matchFuncArgHighlighted'> =>
-  highlight
-    ? {
-        ...e,
-        highlightType: 'highlighted',
-        topLeftBadgeType: 'match',
-        bottomRightBadgeType: 'funcArg'
-      }
-    : {
-        ...e,
-        highlightType: 'active',
-        topLeftBadgeType: 'match',
-        bottomRightBadgeType: 'funcArg'
-      }
+  e: VariableExpression
+): VariableWithState<'matchFuncArgHighlighted'> => ({
+  ...e,
+  highlightType: 'highlighted',
+  topLeftBadgeType: 'match',
+  bottomRightBadgeType: 'funcArg'
+})
 
 const stepToBetaReducePreviewBefore = (
-  e: ExecutableCall,
-  highlightCallArgOnBetaReducePreview?: boolean
+  e: ExecutableCall
 ): {
   nextExpression: ExecutableStepCall<'betaReducePreviewBefore'>
   matchExists: boolean
 } => {
   const from = e.func.arg.name
-  const argResult = toBetaReducePreviewBefore(
-    e.arg,
-    from,
-    false,
-    highlightCallArgOnBetaReducePreview
-  )
+  const argResult = toBetaReducePreviewBefore(e.arg, from, false)
   const funcResult = toBetaReducePreviewBefore(e.func.body, from, true)
   const matchExists = argResult.matchExists || funcResult.matchExists
 
@@ -220,7 +165,7 @@ const stepToBetaReducePreviewBefore = (
       arg: argResult.nextExpression,
       func: {
         ...e.func,
-        arg: funcArg(e.func.arg, !highlightCallArgOnBetaReducePreview),
+        arg: funcArg(e.func.arg),
         body: funcResult.nextExpression
       }
     },

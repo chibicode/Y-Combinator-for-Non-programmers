@@ -1,15 +1,22 @@
 import React from 'react'
+import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   variableSize: 'sm' | 'md' | 'lg'
   isDoneOrReady: boolean
+  highlightOverrides: {
+    [key in VariableExpression['bottomRightBadgeType']]?:
+      | 'active'
+      | 'highlighted'
+  }
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   hidePriorities: false,
   variableSize: 'sm',
-  isDoneOrReady: false
+  isDoneOrReady: false,
+  highlightOverrides: {}
 }
 
 export default React.createContext<ExpressionRunnerContextProps>(

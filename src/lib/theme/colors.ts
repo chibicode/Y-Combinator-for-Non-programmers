@@ -1,4 +1,12 @@
-import { grey, indigo, orange, pink, yellow } from '@material-ui/core/colors'
+import {
+  blue,
+  grey,
+  indigo,
+  orange,
+  pink,
+  teal,
+  yellow
+} from '@material-ui/core/colors'
 import Color from 'color'
 
 // https://material.io/design/color/the-color-system.html
@@ -32,6 +40,8 @@ export const allColors = {
     .alpha(0.66)
     .hsl()
     .string(),
+  teal50: teal[50],
+  blue50: blue[50],
   yellow50: yellow[50],
   yellow100: yellow[100],
   yellow200: yellow[200],

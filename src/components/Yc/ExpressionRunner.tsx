@@ -52,7 +52,7 @@ interface ExpressionRunnerProps {
   hideForwardAndBackButtons?: boolean
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
-  highlightCallArgOnBetaReducePreview?: boolean
+  highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   caption?: {
     jp: React.ReactNode
     en: React.ReactNode
@@ -81,6 +81,7 @@ export default class ExpressionRunner extends React.Component<
     hideControls: false,
     hideExplanations: false,
     variableSize: expressionRunnerContextDefault.variableSize,
+    highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
     initializeInstructions: [],
     containerSize: 'xxs',
     resetIndex: false
@@ -94,15 +95,13 @@ export default class ExpressionRunner extends React.Component<
     const {
       expressionContainer,
       lastAllowedExpressionState,
-      showAllShowSteps,
-      highlightCallArgOnBetaReducePreview
+      showAllShowSteps
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
       lastAllowedExpressionState,
       stepOptions: {
-        showAllShowSteps,
-        highlightCallArgOnBetaReducePreview
+        showAllShowSteps
       }
     })
 
@@ -162,6 +161,7 @@ export default class ExpressionRunner extends React.Component<
       hidePlayButton,
       hideForwardAndBackButtons,
       showAllShowSteps,
+      highlightOverrides,
       caption
     } = this.props
     const {
@@ -173,6 +173,7 @@ export default class ExpressionRunner extends React.Component<
       <ExpressionRunnerContext.Provider
         value={{
           hidePriorities,
+          highlightOverrides,
           variableSize,
           isDoneOrReady:
             isContainerWithState(

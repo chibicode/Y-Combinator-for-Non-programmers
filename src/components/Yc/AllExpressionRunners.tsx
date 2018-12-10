@@ -128,6 +128,10 @@ export const episode2 = [
       hideControls
       hideExplanations
       variableSize={'lg'}
+      highlightOverrides={{
+        funcArg: 'highlighted',
+        funcBound: 'highlighted'
+      }}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -188,7 +192,6 @@ export const episode2 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      highlightCallArgOnBetaReducePreview
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[

@@ -14,8 +14,9 @@ interface BorderWrapperProps {
 }
 
 const background = (
-  highlightType: VariableExpression['highlightType'] | 'none',
-  isDoneOrReady: boolean
+  highlightType: BorderWrapperProps['highlightType'],
+  isDoneOrReady: boolean,
+  topLeftBadgeType: BorderWrapperProps['topLeftBadgeType']
 ): string | undefined => {
   switch (highlightType) {
     case 'default': {
@@ -35,9 +36,23 @@ const background = (
       `
     }
     case 'highlighted': {
-      return css`
-        background: ${colors('yellow100')};
-      `
+      if (topLeftBadgeType === 'match') {
+        return css`
+          background: ${colors('teal50')};
+        `
+      } else if (topLeftBadgeType === 'unmatch') {
+        return css`
+          background: ${colors('pink50')};
+        `
+      } else if (topLeftBadgeType === 'betaReduced') {
+        return css`
+          background: ${colors('blue50')};
+        `
+      } else {
+        return css`
+          background: ${colors('yellow100')};
+        `
+      }
     }
   }
 }
@@ -64,7 +79,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ isDoneOrReady }) => (
+    {({ isDoneOrReady, highlightOverrides }) => (
       <Flex
         className={cx(
           css`
@@ -74,7 +89,11 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             flex: 1;
             position: relative;
           `,
-          background(highlightType, isDoneOrReady),
+          background(
+            highlightOverrides[bottomRightBadgeType] || highlightType,
+            isDoneOrReady,
+            topLeftBadgeType
+          ),
           {
             [css`
               border-right: 5px solid ${colors('yellow900')};

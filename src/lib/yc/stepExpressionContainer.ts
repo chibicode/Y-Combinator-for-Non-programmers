@@ -49,7 +49,7 @@ const stepExpressionContainerReset = (
 
 const step = (
   e: DraftObject<ExecutableCall>,
-  { showAllShowSteps, highlightCallArgOnBetaReducePreview }: StepOptions,
+  { showAllShowSteps }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
@@ -69,10 +69,7 @@ const step = (
       }
     } else {
       return {
-        ...stepToBetaReducePreviewBefore(
-          e,
-          highlightCallArgOnBetaReducePreview
-        ),
+        ...stepToBetaReducePreviewBefore(e),
         previouslyChangedExpressionState: 'betaReducePreviewBefore'
       }
     }
@@ -138,10 +135,7 @@ const step = (
     }
     case 'alphaConvertDone': {
       return {
-        ...stepToBetaReducePreviewBefore(
-          e,
-          highlightCallArgOnBetaReducePreview
-        ),
+        ...stepToBetaReducePreviewBefore(e),
         previouslyChangedExpressionState: 'betaReducePreviewBefore'
       }
     }

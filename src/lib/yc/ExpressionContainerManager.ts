@@ -8,7 +8,6 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 export interface StepOptions {
   showAllShowSteps?: boolean
-  highlightCallArgOnBetaReducePreview?: boolean
 }
 
 export default class ExpressionContainerManager {
