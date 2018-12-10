@@ -4,7 +4,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -33,7 +33,7 @@ export default () => {
         <Em>
           <BottomRightBadge bottomRightBadgeType="callArg" inline />
           がついている料理がすべてマッチ{' '}
-          <TopLeftBadge inline topLeftBadgeType="match" />{' '}
+          <TopRightBadge inline topRightBadgeType="match" />{' '}
           したマスにコピペされた
         </Em>
         のがわかります。

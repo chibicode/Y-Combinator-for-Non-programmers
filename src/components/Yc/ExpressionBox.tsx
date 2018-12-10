@@ -25,8 +25,8 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
       bottomRightBadgeType={
         isVariable(expression) ? expression.bottomRightBadgeType : 'none'
       }
-      topLeftBadgeType={
-        isVariable(expression) ? expression.topLeftBadgeType : 'none'
+      topRightBadgeType={
+        isVariable(expression) ? expression.topRightBadgeType : 'none'
       }
     >
       {(() => {

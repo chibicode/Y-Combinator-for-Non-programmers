@@ -3,12 +3,12 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
-interface TopLeftBadgeProps {
-  topLeftBadgeType: Exclude<VariableExpression['topLeftBadgeType'], 'none'>
+interface TopRightBadgeProps {
+  topRightBadgeType: Exclude<VariableExpression['topRightBadgeType'], 'none'>
   inline?: boolean
 }
 
-const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
+const topRightBadgeTypeToEmoji = (x: TopRightBadgeProps['topRightBadgeType']) =>
   ({
     betaReduced: '🆕',
     match: '✅',
@@ -17,8 +17,8 @@ const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
     conflictResolved: '🆕'
   }[x])
 
-const TopLeftBadge: React.SFC<TopLeftBadgeProps> = ({
-  topLeftBadgeType,
+const TopRightBadge: React.SFC<TopRightBadgeProps> = ({
+  topRightBadgeType,
   inline
 }) => (
   <span
@@ -41,9 +41,9 @@ const TopLeftBadge: React.SFC<TopLeftBadgeProps> = ({
     )}
   >
     <Emoji noVerticalTransform>
-      {topLeftBadgeTypeToEmoji(topLeftBadgeType)}
+      {topRightBadgeTypeToEmoji(topRightBadgeType)}
     </Emoji>
   </span>
 )
 
-export default TopLeftBadge
+export default TopRightBadge

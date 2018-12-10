@@ -7,7 +7,7 @@ import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLab
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -78,7 +78,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                 />
               </span>
             )}
-            {expression.topLeftBadgeType !== 'none' && (
+            {expression.topRightBadgeType !== 'none' && (
               <span
                 className={css`
                   position: absolute;
@@ -87,7 +87,7 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                   z-index: ${zIndices('badge')};
                 `}
               >
-                <TopLeftBadge topLeftBadgeType={expression.topLeftBadgeType} />
+                <TopRightBadge topRightBadgeType={expression.topRightBadgeType} />
               </span>
             )}
           </span>

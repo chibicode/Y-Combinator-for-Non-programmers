@@ -9,14 +9,14 @@ import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 interface BorderWrapperProps {
   highlightType: VariableExpression['highlightType'] | 'none'
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
-  topLeftBadgeType: VariableExpression['topLeftBadgeType']
+  topRightBadgeType: VariableExpression['topRightBadgeType']
   children: React.ReactNode
 }
 
 const background = (
   highlightType: BorderWrapperProps['highlightType'],
   isDoneOrReady: boolean,
-  topLeftBadgeType: BorderWrapperProps['topLeftBadgeType']
+  topRightBadgeType: BorderWrapperProps['topRightBadgeType']
 ): string | undefined => {
   switch (highlightType) {
     case 'default': {
@@ -36,15 +36,15 @@ const background = (
       `
     }
     case 'highlighted': {
-      if (topLeftBadgeType === 'match') {
+      if (topRightBadgeType === 'match') {
         return css`
           background: ${colors('teal50')};
         `
-      } else if (topLeftBadgeType === 'unmatch') {
+      } else if (topRightBadgeType === 'unmatch') {
         return css`
           background: ${colors('pink50')};
         `
-      } else if (topLeftBadgeType === 'betaReduced') {
+      } else if (topRightBadgeType === 'betaReduced') {
         return css`
           background: ${colors('blue50')};
         `
@@ -75,7 +75,7 @@ const Cross: React.SFC<{}> = () => (
 const BorderWrapper: React.SFC<BorderWrapperProps> = ({
   highlightType,
   bottomRightBadgeType,
-  topLeftBadgeType,
+  topRightBadgeType,
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
@@ -92,7 +92,7 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
           background(
             highlightOverrides[bottomRightBadgeType] || highlightType,
             isDoneOrReady,
-            topLeftBadgeType
+            topRightBadgeType
           ),
           {
             [css`
@@ -100,13 +100,13 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             `]:
               highlightType === 'highlighted' &&
               bottomRightBadgeType === 'funcBound' &&
-              topLeftBadgeType === 'none',
+              topRightBadgeType === 'none',
             [css`
               border-left: 5px solid ${colors('pink400')};
             `]:
               highlightType === 'highlighted' &&
               bottomRightBadgeType === 'funcArg' &&
-              topLeftBadgeType === 'none'
+              topRightBadgeType === 'none'
           }
         )}
       >

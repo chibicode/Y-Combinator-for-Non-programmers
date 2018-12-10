@@ -48,7 +48,7 @@ export function toShowFuncUnbound(
       return {
         ...e,
         highlightType: 'active',
-        topLeftBadgeType: 'none',
+        topRightBadgeType: 'none',
         bottomRightBadgeType: 'funcBound'
       }
     } else if (funcSide && !e.bound) {
@@ -56,14 +56,14 @@ export function toShowFuncUnbound(
         return {
           ...e,
           highlightType: 'highlighted',
-          topLeftBadgeType: 'none',
+          topRightBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
-          topLeftBadgeType: 'none',
+          topRightBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       }
@@ -71,7 +71,7 @@ export function toShowFuncUnbound(
       return {
         ...e,
         highlightType: 'active',
-        topLeftBadgeType: 'none',
+        topRightBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
     }
@@ -96,7 +96,7 @@ export const activeFuncArg = (
 ): VariableWithState<'activeFuncArg'> => ({
   ...e,
   highlightType: 'active',
-  topLeftBadgeType: 'none',
+  topRightBadgeType: 'none',
   bottomRightBadgeType: 'funcArg'
 })
 

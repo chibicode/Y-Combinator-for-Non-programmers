@@ -13,7 +13,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode3 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -70,13 +70,13 @@ export default () => {
       <P>
         右下のサラダ <Emoji>🍔</Emoji> は、あなたが食べたい料理{' '}
         <Emoji>😋</Emoji> です。これを{' '}
-        <TopLeftBadge inline topLeftBadgeType="match" /> で表します。
+        <TopRightBadge inline topRightBadgeType="match" /> で表します。
       </P>
       {episode3[i++]()}
       <P>
         あなたがサラダ <Emoji>🍔</Emoji> を食べると、それがステーキ{' '}
         <Emoji>🍗</Emoji> と<Em>入れ替わります</Em>
-        。これを <TopLeftBadge inline topLeftBadgeType="betaReduced" />{' '}
+        。これを <TopRightBadge inline topRightBadgeType="betaReduced" />{' '}
         で表します。
       </P>
       {episode3[i++]()}

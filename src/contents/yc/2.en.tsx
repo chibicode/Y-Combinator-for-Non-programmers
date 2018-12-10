@@ -13,7 +13,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode3 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -61,13 +61,13 @@ export default () => {
         The burger <Emoji>🍔</Emoji> on the bottom right{' '}
         <Strong>matches</Strong> with what you’re eating next <Emoji>😋</Emoji>.
         We indicate this <Strong>match</Strong> using{' '}
-        <TopLeftBadge inline topLeftBadgeType="match" />.
+        <TopRightBadge inline topRightBadgeType="match" />.
       </P>
       {episode3[i++]()}
       <P>
         After you eat the burger <Emoji>🍔</Emoji> on the bottom right, it{' '}
         <Em>will be replaced</Em> by the chicken <Emoji>🍗</Emoji>. We indicate
-        this using <TopLeftBadge inline topLeftBadgeType="betaReduced" />.
+        this using <TopRightBadge inline topRightBadgeType="betaReduced" />.
       </P>
       {episode3[i++]()}
       <P>

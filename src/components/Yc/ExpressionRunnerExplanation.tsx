@@ -3,7 +3,7 @@ import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
@@ -158,24 +158,24 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            <TopLeftBadge topLeftBadgeType="match" inline /> Matches found in{' '}
+            <TopRightBadge topRightBadgeType="match" inline /> Matches found in{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            <TopLeftBadge topLeftBadgeType="unmatch" inline /> No matches in{' '}
+            <TopRightBadge topRightBadgeType="unmatch" inline /> No matches in{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       } else {
         return matchExists ? (
           <>
-            <TopLeftBadge topLeftBadgeType="match" inline /> マッチしました{' '}
+            <TopRightBadge topRightBadgeType="match" inline /> マッチしました{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            <TopLeftBadge topLeftBadgeType="unmatch" inline />{' '}
+            <TopRightBadge topRightBadgeType="unmatch" inline />{' '}
             マッチしませんでした{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
@@ -189,7 +189,7 @@ const stateToExplanation = ({
             Matches <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
             replaced with{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            <TopLeftBadge topLeftBadgeType="betaReduced" inline />
+            <TopRightBadge topRightBadgeType="betaReduced" inline />
           </>
         )
       } else {
@@ -199,7 +199,7 @@ const stateToExplanation = ({
             マッチしたのが{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             と入れ替わります{' '}
-            <TopLeftBadge topLeftBadgeType="betaReduced" inline />
+            <TopRightBadge topRightBadgeType="betaReduced" inline />
           </>
         )
       }
@@ -250,7 +250,7 @@ const stateToExplanation = ({
             <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> become{' '}
-            <TopLeftBadge topLeftBadgeType="conflictResolved" inline />
+            <TopRightBadge topRightBadgeType="conflictResolved" inline />
           </>
         )
       } else {
@@ -259,7 +259,7 @@ const stateToExplanation = ({
             <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が{' '}
-            <TopLeftBadge topLeftBadgeType="conflictResolved" inline /> に
+            <TopRightBadge topRightBadgeType="conflictResolved" inline /> に
           </>
         )
       }

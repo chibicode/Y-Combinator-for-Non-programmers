@@ -15,7 +15,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -182,7 +182,7 @@ export default () => {
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we call
           it a <Strong>match</Strong>{' '}
-          <TopLeftBadge inline topLeftBadgeType="match" />.
+          <TopRightBadge inline topRightBadgeType="match" />.
         </Em>
       </P>
       {episode2[i++]()}
@@ -190,7 +190,7 @@ export default () => {
         In the above case, there’s sushi <Emoji size="mdlg">🍣</Emoji> in both{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" />, so it’s a
-        match <TopLeftBadge inline topLeftBadgeType="match" />.
+        match <TopRightBadge inline topRightBadgeType="match" />.
       </P>
       <SideNoteSection
         heading={'Review Quiz: Step 2'}
@@ -206,7 +206,7 @@ export default () => {
           <Strong>Answer:</Strong>{' '}
           <Em>
             Yes. The burgers <Emoji size="mdlg">🍔</Emoji> match{' '}
-            <TopLeftBadge inline topLeftBadgeType="match" />.
+            <TopRightBadge inline topRightBadgeType="match" />.
           </Em>
         </P>
         {episode2[i++]()}
@@ -220,18 +220,18 @@ export default () => {
         Next, we’ll look at{' '}
         <Em>
           <BottomRightBadge inline bottomRightBadgeType="callArg" /> and the
-          matching <TopLeftBadge inline topLeftBadgeType="match" /> items in{' '}
+          matching <TopRightBadge inline topRightBadgeType="match" /> items in{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
       {episode2[i++]()}
       <P>
         <Em>
-          Every matching <TopLeftBadge inline topLeftBadgeType="match" /> item
+          Every matching <TopRightBadge inline topRightBadgeType="match" /> item
           in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           <Strong>turns into</Strong> the items in{' '}
           <BottomRightBadge inline bottomRightBadgeType="callArg" />. We show{' '}
-          <TopLeftBadge inline topLeftBadgeType="betaReduced" /> next to{' '}
+          <TopRightBadge inline topRightBadgeType="betaReduced" /> next to{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
@@ -256,10 +256,10 @@ export default () => {
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
-            <TopLeftBadge inline topLeftBadgeType="match" /> The matching burger{' '}
-            <Emoji size="mdlg">🍔</Emoji> becomes chicken{' '}
+            <TopRightBadge inline topRightBadgeType="match" /> The matching
+            burger <Emoji size="mdlg">🍔</Emoji> becomes chicken{' '}
             <Emoji size="mdlg">🍗</Emoji>{' '}
-            <TopLeftBadge inline topLeftBadgeType="betaReduced" />
+            <TopRightBadge inline topRightBadgeType="betaReduced" />
           </Em>
         </P>
         {episode2[i++]()}
