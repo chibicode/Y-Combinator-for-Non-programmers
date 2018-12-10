@@ -92,6 +92,11 @@ interface VariableStates {
     readonly bottomRightBadgeType: 'funcBound'
   }
   matchFuncArg: {
+    readonly highlightType: 'active'
+    readonly topLeftBadgeType: 'match'
+    readonly bottomRightBadgeType: 'funcArg'
+  }
+  matchFuncArgHighlighted: {
     readonly highlightType: 'highlighted'
     readonly topLeftBadgeType: 'match'
     readonly bottomRightBadgeType: 'funcArg'
@@ -181,8 +186,10 @@ export type CtoV<C extends CallStates> = C extends 'default'
                 : C extends 'betaReducePreviewBefore'
                   ?
                       | 'activeCallArg'
+                      | 'highlightCallArg'
                       | 'activeFuncUnbound'
                       | 'matchFuncArg'
+                      | 'matchFuncArgHighlighted'
                       | 'matchFuncBound'
                       | 'unmatchFuncBound'
                   : C extends 'betaReducePreviewAfter'

@@ -188,6 +188,7 @@ export const episode2 = [
       hidePriorities
       hideControls
       showAllShowSteps
+      highlightCallArgOnBetaReducePreview
       hideExplanations
       variableSize={'lg'}
       initializeInstructions={[

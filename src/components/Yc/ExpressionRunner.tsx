@@ -52,6 +52,7 @@ interface ExpressionRunnerProps {
   hideForwardAndBackButtons?: boolean
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
+  highlightCallArgOnBetaReducePreview?: boolean
   caption?: {
     jp: React.ReactNode
     en: React.ReactNode
@@ -93,12 +94,16 @@ export default class ExpressionRunner extends React.Component<
     const {
       expressionContainer,
       lastAllowedExpressionState,
-      showAllShowSteps
+      showAllShowSteps,
+      highlightCallArgOnBetaReducePreview
     } = props
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
       lastAllowedExpressionState,
-      showAllShowSteps
+      stepOptions: {
+        showAllShowSteps,
+        highlightCallArgOnBetaReducePreview
+      }
     })
 
     this.state = {

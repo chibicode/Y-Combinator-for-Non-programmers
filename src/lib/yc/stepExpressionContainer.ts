@@ -1,6 +1,7 @@
 import produce, { DraftObject } from 'immer'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
+import { StepOptions } from 'src/lib/yc/ExpressionContainerManager'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
@@ -48,7 +49,7 @@ const stepExpressionContainerReset = (
 
 const step = (
   e: DraftObject<ExecutableCall>,
-  showAllShowSteps?: boolean,
+  { showAllShowSteps, highlightCallArgOnBetaReducePreview }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
@@ -68,7 +69,10 @@ const step = (
       }
     } else {
       return {
-        ...stepToBetaReducePreviewBefore(e),
+        ...stepToBetaReducePreviewBefore(
+          e,
+          highlightCallArgOnBetaReducePreview
+        ),
         previouslyChangedExpressionState: 'betaReducePreviewBefore'
       }
     }
@@ -134,7 +138,10 @@ const step = (
     }
     case 'alphaConvertDone': {
       return {
-        ...stepToBetaReducePreviewBefore(e),
+        ...stepToBetaReducePreviewBefore(
+          e,
+          highlightCallArgOnBetaReducePreview
+        ),
         previouslyChangedExpressionState: 'betaReducePreviewBefore'
       }
     }
@@ -169,7 +176,7 @@ const step = (
   }
 }
 
-const recipe = (skipShowSteps?: boolean) => (
+const recipe = (stepOptions: StepOptions) => (
   draftContainer: DraftObject<
     | ContainerWithState<'ready'>
     | ContainerWithState<'stepped'>
@@ -195,7 +202,7 @@ const recipe = (skipShowSteps?: boolean) => (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = step(expression, skipShowSteps, draftContainer.matchExists)
+  } = step(expression, stepOptions, draftContainer.matchExists)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
@@ -228,7 +235,7 @@ const recipe = (skipShowSteps?: boolean) => (
 
 export default function stepExpressionContainer(
   e: ContainerWithState<'ready'> | ContainerWithState<'stepped'>,
-  showAllShowSteps?: boolean
+  stepOptions: StepOptions
 ):
   | ContainerWithState<'done'>
   | ContainerWithState<'stepped'>
@@ -237,7 +244,7 @@ export default function stepExpressionContainer(
     | ContainerWithState<'needsReset'>
     | ContainerWithState<'stepped'>
     | ContainerWithState<'ready'>
-  >(e, recipe(showAllShowSteps))
+  >(e, recipe(stepOptions))
 
   if (isContainerWithState(result, 'needsReset')) {
     return stepExpressionContainerReset(result)

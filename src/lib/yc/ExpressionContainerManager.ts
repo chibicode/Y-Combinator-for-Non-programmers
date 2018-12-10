@@ -6,6 +6,11 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 
+export interface StepOptions {
+  showAllShowSteps?: boolean
+  highlightCallArgOnBetaReducePreview?: boolean
+}
+
 export default class ExpressionContainerManager {
   public get currentState() {
     return {
@@ -44,20 +49,20 @@ export default class ExpressionContainerManager {
   // The YC example should specify maximumIndex.
   public maximumIndex = 100
   public lastAllowedExpressionState?: CallStates
-  public showAllShowSteps?: boolean
+  public stepOptions: StepOptions
 
   constructor({
     expressionContainer,
     lastAllowedExpressionState,
-    showAllShowSteps
+    stepOptions
   }: {
     expressionContainer: SteppedExpressionContainer
     lastAllowedExpressionState?: CallStates
-    showAllShowSteps?: boolean
+    stepOptions: StepOptions
   }) {
     this.expressionContainers.push(expressionContainer)
     this.lastAllowedExpressionState = lastAllowedExpressionState
-    this.showAllShowSteps = showAllShowSteps
+    this.stepOptions = stepOptions
     this.precompute()
   }
 
@@ -105,7 +110,7 @@ export default class ExpressionContainerManager {
         .currentExpressionContainer
       expressionContainer = stepExpressionContainer(
         expressionContainer,
-        this.showAllShowSteps
+        this.stepOptions
       )
 
       this.expressionContainers.push(expressionContainer)
