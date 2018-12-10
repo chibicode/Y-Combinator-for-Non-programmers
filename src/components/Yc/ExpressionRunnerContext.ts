@@ -6,9 +6,7 @@ export interface ExpressionRunnerContextProps {
   variableSize: 'sm' | 'md' | 'lg'
   isDoneOrReady: boolean
   highlightOverrides: {
-    [key in VariableExpression['bottomRightBadgeType']]?:
-      | 'active'
-      | 'highlighted'
+    [key in VariableExpression['bottomRightBadgeType']]?: VariableExpression['highlightType']
   }
 }
 

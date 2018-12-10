@@ -194,6 +194,11 @@ export const episode2 = [
       showAllShowSteps
       hideExplanations
       variableSize={'lg'}
+      highlightOverrides={{
+        funcArg: 'active',
+        funcBound: 'highlighted',
+        callArg: 'highlighted'
+      }}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -228,7 +233,53 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'active'
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewCrossed'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'nextIteration'
         }
       ]}
     />

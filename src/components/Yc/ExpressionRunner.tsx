@@ -229,6 +229,9 @@ export default class ExpressionRunner extends React.Component<
             <div
               className={css`
                 max-width: 100%;
+                /* Offset for -2px on border wrapper */
+                padding-left: 2px;
+                padding-right: 2px;
               `}
             >
               <div
