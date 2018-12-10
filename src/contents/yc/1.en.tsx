@@ -63,9 +63,10 @@ export default () => {
       </P>
       {episode2[i++]()}
       <P>
-        Just like real bento boxes <Emoji>🍱</Emoji>, each cell has a food item.
-        The top item is sandwich <Emoji size="mdlg">🥪</Emoji> and the bottom
-        two items are sushi <Emoji size="mdlg">🍣</Emoji>.
+        Just like real bento boxes <Emoji>🍱</Emoji>,{' '}
+        <Em>each cell has a food item</Em>. The top item is sandwich{' '}
+        <Emoji size="mdlg">🥪</Emoji> and the bottom two items are sushi{' '}
+        <Emoji size="mdlg">🍣</Emoji>.
       </P>
       <H3>Labels</H3>
       <P>
@@ -166,6 +167,7 @@ export default () => {
         Matched items become the same as{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
       </H3>
+      <P>Next, we’ll look at</P>
       {episode2[i++]()}
       <P>
         <Em>
