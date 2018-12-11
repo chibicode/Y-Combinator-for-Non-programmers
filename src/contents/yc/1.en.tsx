@@ -316,8 +316,9 @@ export default () => {
           remove the{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" /> label
         </Em>{' '}
-        on this step as well.
+        as well.
       </P>
+      <P>That’s it! We’ve covered all four steps!</P>
       <SideNoteSection
         heading={'Review Quiz: Step 4'}
         color="pink"
