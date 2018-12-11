@@ -87,7 +87,9 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
                   z-index: ${zIndices('badge')};
                 `}
               >
-                <TopRightBadge topRightBadgeType={expression.topRightBadgeType} />
+                <TopRightBadge
+                  topRightBadgeType={expression.topRightBadgeType}
+                />
               </span>
             )}
           </span>

@@ -109,7 +109,7 @@ export function toBetaReducePreviewAfter(
       return {
         ...e,
         highlightType: 'highlighted',
-        topRightBadgeType: 'none',
+        topRightBadgeType: 'betaReduceCallArg',
         bottomRightBadgeType: 'callArg'
       }
     }

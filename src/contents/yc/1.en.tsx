@@ -5,14 +5,18 @@ import {
   Em,
   ExternalLink,
   H3,
+  Hr,
   Ol,
   OlLi,
   P,
-  Strong
+  Strong,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
+import StarRating from 'src/components/StarRating'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
@@ -23,6 +27,29 @@ export default () => {
   let i = 0
   return (
     <>
+      <P>
+        Welcome to <Strong>Beginner Level 1</Strong> of “Y Combinator for
+        Non-Programmers”! <Emoji>👋</Emoji>
+      </P>
+      <P>
+        In this level, we’ll cover{' '}
+        <Em>the basics of the puzzles we’ll be solving.</Em>
+      </P>
+      <Ul>
+        <UlLi>
+          <Strong>Reading Time:</Strong> <Em>5 minutes</Em>
+        </UlLi>
+        <UlLi>
+          <Strong>Difficulty:</Strong> <StarRating num={2} /> — It will be
+          challenging because everything is new to you.
+        </UlLi>
+        <UlLi>
+          <Strong>Fun:</Strong> <StarRating num={1} /> — We’ll cover basics, so
+          it might be a bit boring, but it’ll get much better later!
+        </UlLi>
+      </Ul>
+      <Hr />
+      <H3>Let’s Get Started!</H3>
       <P>
         First, we’ll talk about <Strong>Bento Boxes</Strong>.
       </P>
@@ -102,7 +129,10 @@ export default () => {
           </Em>
         </OlLi>
       </Ol>
-      <P>We’ll cover each step.</P>
+      <P>
+        They look complicated, but they’re actually very simple after you get
+        used to it. Let’s take a look!
+      </P>
       <H3>
         Step 1: Label each item using{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />,{' '}
@@ -220,28 +250,24 @@ export default () => {
         Next, we’ll look at{' '}
         <Em>
           <BottomRightBadge inline bottomRightBadgeType="callArg" /> and the
-          matching <TopRightBadge inline topRightBadgeType="match" /> items in{' '}
+          matching <TopRightBadge inline topRightBadgeType="match" /> item in{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
       {episode2[i++]()}
       <P>
         <Em>
-          Every matching <TopRightBadge inline topRightBadgeType="match" /> item
+          The matching <TopRightBadge inline topRightBadgeType="match" /> item
           in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>turns into</Strong> the items in{' '}
-          <BottomRightBadge inline bottomRightBadgeType="callArg" />. We show{' '}
-          <TopRightBadge inline topRightBadgeType="betaReduced" /> next to{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
-        </Em>
+          <Strong>turns into</Strong> what’s in{' '}
+          <BottomRightBadge inline bottomRightBadgeType="callArg" />.
+        </Em>{' '}
       </P>
       {episode2[i++]()}
       <P>
-        In the above case, the matched sushi <Emoji size="mdlg">🍣</Emoji> in{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> becomes the
-        sandwich <Emoji size="mdlg">🥪</Emoji> (which is in{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" />
-        ).
+        We show <TopRightBadge inline topRightBadgeType="betaReduced" /> next to{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> when this
+        happens.
       </P>
       <SideNoteSection
         heading={'Review Quiz: Step 3'}
@@ -259,34 +285,61 @@ export default () => {
             <TopRightBadge inline topRightBadgeType="match" /> The matching
             burger <Emoji size="mdlg">🍔</Emoji> becomes chicken{' '}
             <Emoji size="mdlg">🍗</Emoji>{' '}
-            <TopRightBadge inline topRightBadgeType="betaReduced" />
+            <TopRightBadge inline topRightBadgeType="betaReduced" />.
           </Em>
         </P>
         {episode2[i++]()}
       </SideNoteSection>
       <H3>
-        Step 4: Remove{' '}
+        Step 4 (Last Step): Remove{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       </H3>
+      <P>This is the last step! We’ll continue from the end of step 3:</P>
+      {episode2[i++]()}
       <P>
-        Finally,{' '}
+        In this last step,{' '}
         <Em>
           we remove <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
           and <BottomRightBadge inline bottomRightBadgeType="funcArg" />:
         </Em>
       </P>
       {episode2[i++]()}
-      <P>
-        So in the end, the {h('ycBentoBox')} becomes this.{' '}
-        <Strong>Note:</Strong>{' '}
-        <Em>
-          we’ve removed the{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> label.
-        </Em>
-      </P>
+      <P>So in the end, the {h('ycBentoBox')} becomes this. </P>
       {episode2[i++]()}
-      <P>That’s all the steps!</P>
+      <P>
+        <Strong>Note:</Strong> we{' '}
+        <Em>
+          remove the{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> label
+        </Em>{' '}
+        on this step as well.
+      </P>
+      <SideNoteSection
+        heading={'Review Quiz: Step 4'}
+        color="pink"
+        noPaddingBottom
+      >
+        <P>
+          <Strong>Question:</Strong>{' '}
+          <Em>What happens next on the following {h('ycBentoBox')}?</Em>
+        </P>
+        {episode2[i++]()}
+        <P>
+          <Strong>Answer:</Strong>{' '}
+          <Em>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> are
+            removed…
+          </Em>
+        </P>
+        {episode2[i++]()}
+        <P>
+          So in the end, it becomes just chicken <Emoji size="mdlg">🍗</Emoji>:
+        </P>
+        {episode2[i++]()}
+      </SideNoteSection>
+      <H3>Putting All Steps Together</H3>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )

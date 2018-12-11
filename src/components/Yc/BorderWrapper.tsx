@@ -1,13 +1,15 @@
 import { css, cx } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
-import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerContext, {
+  HighlightOverrides
+} from 'src/components/Yc/ExpressionRunnerContext'
 import crossSvg from 'src/images/cross.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
-  highlightType: VariableExpression['highlightType'] | 'none'
+  highlightType: HighlightOverrides
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
   topRightBadgeType: VariableExpression['topRightBadgeType']
   children: React.ReactNode
@@ -35,6 +37,11 @@ const background = (
         background: ${colors('white')};
       `
     }
+    case 'forceYellowHighlight': {
+      return css`
+        background: ${colors('yellow100')};
+      `
+    }
     case 'highlighted': {
       if (topRightBadgeType === 'match') {
         return css`
@@ -44,7 +51,10 @@ const background = (
         return css`
           background: ${colors('pink50')};
         `
-      } else if (topRightBadgeType === 'betaReduced') {
+      } else if (
+        topRightBadgeType === 'betaReduced' ||
+        topRightBadgeType === 'betaReduceCallArg'
+      ) {
         return css`
           background: ${colors('blue50')};
         `

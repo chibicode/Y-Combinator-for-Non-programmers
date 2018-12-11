@@ -8,7 +8,9 @@ interface TopRightBadgeProps {
   inline?: boolean
 }
 
-const topRightBadgeTypeToEmoji = (x: TopRightBadgeProps['topRightBadgeType']) =>
+const topRightBadgeTypeToEmoji = (
+  x: Exclude<TopRightBadgeProps['topRightBadgeType'], 'betaReduceCallArg'>
+) =>
   ({
     betaReduced: '🆕',
     match: '✅',
@@ -40,9 +42,11 @@ const TopRightBadge: React.SFC<TopRightBadgeProps> = ({
       }
     )}
   >
-    <Emoji noVerticalTransform>
-      {topRightBadgeTypeToEmoji(topRightBadgeType)}
-    </Emoji>
+    {topRightBadgeType !== 'betaReduceCallArg' && (
+      <Emoji noVerticalTransform>
+        {topRightBadgeTypeToEmoji(topRightBadgeType)}
+      </Emoji>
+    )}
   </span>
 )
 

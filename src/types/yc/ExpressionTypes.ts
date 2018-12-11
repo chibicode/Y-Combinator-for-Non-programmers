@@ -66,6 +66,11 @@ interface VariableStates {
     readonly topRightBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
+  highlightCallArgBetaReduceCallArg: {
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'betaReduceCallArg'
+    readonly bottomRightBadgeType: 'callArg'
+  }
   activeCallArg: {
     readonly highlightType: 'active'
     readonly topRightBadgeType: 'none'
@@ -197,7 +202,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                         | 'activeFuncBound'
                         | 'activeFuncArg'
                         | 'activeFuncUnbound'
-                        | 'highlightCallArg'
+                        | 'highlightCallArgBetaReduceCallArg'
                         | 'betaReduced'
                     : C extends 'betaReducePreviewCrossed'
                       ?

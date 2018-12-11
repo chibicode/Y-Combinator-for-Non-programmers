@@ -4,9 +4,6 @@ const uniq = require('lodash/uniq')
 const allUsedEmojis = uniq([
   '🤔',
   '🙂',
-  '😋',
-  '🍽',
-  '👨‍🍳',
   '👋',
   '🍣',
   '🥪',
@@ -21,7 +18,6 @@ const allUsedEmojis = uniq([
   '😉',
   '👍',
   '❤️',
-  '😎',
   '🕶',
   '🆚',
   '👔',
@@ -75,7 +71,9 @@ const allUsedEmojis = uniq([
   '➖',
   '🔵',
   '🔴',
-  '↔️'
+  '↔️',
+  '⬇️',
+  '⭐️'
 ])
 
 // Copied from Twemoji

@@ -129,8 +129,8 @@ export const episode2 = [
       hideExplanations
       variableSize={'lg'}
       highlightOverrides={{
-        funcArg: 'highlighted',
-        funcBound: 'highlighted'
+        funcArg: 'forceYellowHighlight',
+        funcBound: 'forceYellowHighlight'
       }}
       initializeInstructions={[
         {
@@ -196,8 +196,8 @@ export const episode2 = [
       variableSize={'lg'}
       highlightOverrides={{
         funcArg: 'active',
-        funcBound: 'highlighted',
-        callArg: 'highlighted'
+        funcBound: 'forceYellowHighlight',
+        callArg: 'forceYellowHighlight'
       }}
       initializeInstructions={[
         {
@@ -264,6 +264,22 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'betaReducePreviewCrossed'
         }
       ]}
@@ -272,6 +288,53 @@ export const episode2 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'nextIteration'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewCrossed'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
       hidePriorities
       hideControls
       showAllShowSteps

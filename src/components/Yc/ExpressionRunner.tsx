@@ -1,7 +1,6 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
-import Emoji from 'src/components/Emoji'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionRunnerCaptionWrapper from 'src/components/Yc/ExpressionRunnerCaptionWrapper'
 import ExpressionRunnerContext, {
@@ -217,7 +216,7 @@ export default class ExpressionRunner extends React.Component<
             )}
             {caption && (
               <ExpressionRunnerCaptionWrapper pinkText>
-                <Emoji>⬇️</Emoji> {caption[locale]}
+                {caption[locale]}
               </ExpressionRunnerCaptionWrapper>
             )}
           </Container>

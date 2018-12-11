@@ -1,12 +1,17 @@
 import React from 'react'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
+export type HighlightOverrides =
+  | VariableExpression['highlightType']
+  | 'forceYellowHighlight'
+  | 'none'
+
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   variableSize: 'sm' | 'md' | 'lg'
   isDoneOrReady: boolean
   highlightOverrides: {
-    [key in VariableExpression['bottomRightBadgeType']]?: VariableExpression['highlightType']
+    [key in VariableExpression['bottomRightBadgeType']]?: HighlightOverrides
   }
 }
 

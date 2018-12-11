@@ -34,7 +34,7 @@ const EmojiSvg: React.SFC<{ name: string }> = ({ name }) => {
 interface EmojiProps {
   children?: string
   customChildren?: React.ReactNode
-  size?: 'md' | 'lg' | 'mdlg' | 'huge'
+  size?: 'md' | 'lg' | 'mdlg' | 'huge' | 'star'
   noVerticalTransform?: boolean
 }
 
@@ -43,6 +43,7 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     md: '1em',
     mdlg: '1.5em',
     lg: '2em',
+    star: '1.25em',
     huge: '6em'
   }[size])
 
