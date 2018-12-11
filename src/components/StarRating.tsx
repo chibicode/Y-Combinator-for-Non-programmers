@@ -9,7 +9,7 @@ const StarRating = ({ num }: { num: number }) => (
         <Emoji size="star">⭐️</Emoji>{' '}
       </Fragment>
     ))}
-    {Array.from({ length: 3 - num }).map((_, i) => (
+    {Array.from({ length: 5 - num }).map((_, i) => (
       <Fragment key={`graystar${i}`}>
         <Emoji size="star" customChildren={<GreyStar />} />{' '}
       </Fragment>

@@ -40,7 +40,7 @@ export default () => {
           <Strong>Reading Time:</Strong> <Em>5 minutes</Em>
         </UlLi>
         <UlLi>
-          <Strong>Difficulty:</Strong> <StarRating num={2} /> — It will be
+          <Strong>Difficulty:</Strong> <StarRating num={3} /> — It will be
           challenging because everything is new to you.
         </UlLi>
         <UlLi>
