@@ -158,8 +158,9 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            <TopRightBadge topRightBadgeType="match" inline /> Matches found in{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> matches{' '}
+            <TopRightBadge topRightBadgeType="match" inline />
           </>
         ) : (
           <>
@@ -186,10 +187,10 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Matches <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            replaced with{' '}
-            <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            <TopRightBadge topRightBadgeType="betaReduced" inline />
+            <TopRightBadge topRightBadgeType="match" inline />{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
+            the same as{' '}
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />
           </>
         )
       } else {

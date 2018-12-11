@@ -344,6 +344,13 @@ export default () => {
         {episode2[i++]()}
       </SideNoteSection>
       <H3>Putting All Steps Together</H3>
+      <P>
+        Let’s review the steps from the beginning. In the {h('ycBentoBox')}{' '}
+        below, {h('ycTryUntilDone', false)}.
+      </P>
+      {episode2[i++]()}
+      <P>How about this one? {h('ycTryUntilDone')}.</P>
+      {episode2[i++]()}
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )

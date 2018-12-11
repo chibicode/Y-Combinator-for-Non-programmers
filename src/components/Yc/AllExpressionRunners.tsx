@@ -346,6 +346,38 @@ export const episode2 = [
         }
       ]}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      hidePlayButton
+      showAllShowSteps
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression2}
+      hidePriorities
+      hidePlayButton
+      showAllShowSteps
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
   )
 ]
 
