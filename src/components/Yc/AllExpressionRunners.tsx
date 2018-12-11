@@ -378,6 +378,39 @@ export const episode2 = [
         }
       ]}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression3}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression3}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
   )
 ]
 

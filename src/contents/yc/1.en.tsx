@@ -75,7 +75,7 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          <Strong>Reading Time:</Strong> <Em>5 minutes</Em>
+          <Strong>Average Reading Time:</Strong> <Em>6 minutes</Em>
         </UlLi>
         <UlLi>
           <Strong>Difficulty:</Strong> <StarRating num={3} /> — It will be
@@ -357,10 +357,34 @@ export default () => {
       {episode2[i++]()}
       <P>How about this one? {h('ycTryUntilDone')}.</P>
       {episode2[i++]()}
-      <P>Hope you understood everything until this part!</P>
+      <P>Hope everything makes sense!</P>
       <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
         <FourSteps />
       </SideNoteSection>
+      <H3>Challenge Quiz</H3>
+      <P>
+        At the end of each episode, we give you a{' '}
+        <Strong>challenge quiz</Strong>.{' '}
+        <Em>
+          You should try, but they’re hard, so don’t worry if you have no idea.
+        </Em>
+      </P>
+      <P>
+        <Strong>Here’s the quiz:</Strong> What do you think will happen to the
+        following {h('ycBentoBox')} after taking all the steps?
+      </P>
+      {episode2[i++]()}
+      <P>
+        <Strong>Hint:</Strong> Here are the labels.{' '}
+        <Em>
+          Notice that <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+          and <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          <Strong>do not match</Strong>.
+        </Em>{' '}
+        What do you think happens then? Try guessing!
+      </P>
+      {episode2[i++]()}
+      <P>Click on the button below to see the answer!</P>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )
