@@ -46,9 +46,9 @@ const FourSteps = () => (
       </OlLi>
       <OlLi>
         <Em>
-          Matched <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          become the same as{' '}
-          <BottomRightBadge inline bottomRightBadgeType="callArg" />
+          Matched <TopRightBadge inline topRightBadgeType="match" />{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> become
+          the same as <BottomRightBadge inline bottomRightBadgeType="callArg" />
         </Em>
       </OlLi>
       <OlLi>
@@ -265,7 +265,7 @@ export default () => {
         <Em>
           The matching <TopRightBadge inline topRightBadgeType="match" /> item
           in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>turns into</Strong> what’s in{' '}
+          <Strong>becomes the same</Strong> as{' '}
           <BottomRightBadge inline bottomRightBadgeType="callArg" />.
         </Em>{' '}
       </P>
@@ -289,8 +289,9 @@ export default () => {
           <Strong>Answer:</Strong>{' '}
           <Em>
             <TopRightBadge inline topRightBadgeType="match" /> The matching
-            burger <Emoji size="mdlg">🍔</Emoji> becomes chicken{' '}
-            <Emoji size="mdlg">🍗</Emoji>{' '}
+            burger <Emoji size="mdlg">🍔</Emoji> in{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" /> becomes
+            chicken <Emoji size="mdlg">🍗</Emoji>{' '}
             <TopRightBadge inline topRightBadgeType="betaReduced" />.
           </Em>
         </P>

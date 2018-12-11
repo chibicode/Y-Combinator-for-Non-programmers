@@ -1,4 +1,6 @@
 import React from 'react'
+import Emoji from 'src/components/Emoji'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import {
   additionCaption,
   combineNotCaption,
@@ -11,6 +13,7 @@ import {
   yesCaption
 } from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
 export const introduction = [
@@ -215,6 +218,18 @@ export const episode1 = [
       showAllShowSteps
       hideExplanations
       variableSize={'lg'}
+      caption={{
+        en: (
+          <>
+            <Emoji size="mdlg">🍣</Emoji>{' '}
+            <TopRightBadge inline topRightBadgeType="match" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" /> became{' '}
+            <Emoji size="mdlg">🥪</Emoji> (same as{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />)
+          </>
+        ),
+        jp: <></>
+      }}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',

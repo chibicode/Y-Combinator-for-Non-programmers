@@ -209,7 +209,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Removing <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+            Remove <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             and <BottomRightBadge bottomRightBadgeType="funcArg" inline />
           </>
         )
