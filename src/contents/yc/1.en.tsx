@@ -23,6 +23,44 @@ import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
+const FourSteps = () => (
+  <>
+    <P>
+      There are <Strong>4 main steps</Strong> in bento box puzzles:
+    </P>
+    <Ol>
+      <OlLi>
+        <Em>
+          Label each item using{' '}
+          <BottomRightBadge inline bottomRightBadgeType="callArg" />,{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          Check for matches in{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          Matched <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          become the same as{' '}
+          <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          Remove <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        </Em>
+      </OlLi>
+    </Ol>
+  </>
+)
+
 export default () => {
   let i = 0
   return (
@@ -96,39 +134,7 @@ export default () => {
         <Emoji size="mdlg">🍣</Emoji>.
       </P>
       <H3>4 Steps</H3>
-      <P>
-        There are <Strong>4 main steps</Strong> in bento box puzzles:
-      </P>
-      <Ol>
-        <OlLi>
-          <Em>
-            Label each item using{' '}
-            <BottomRightBadge inline bottomRightBadgeType="callArg" />,{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-          </Em>
-        </OlLi>
-        <OlLi>
-          <Em>
-            Check for matches in{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-          </Em>
-        </OlLi>
-        <OlLi>
-          <Em>
-            Matched <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-            become the same as{' '}
-            <BottomRightBadge inline bottomRightBadgeType="callArg" />
-          </Em>
-        </OlLi>
-        <OlLi>
-          <Em>
-            Remove <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-            and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-          </Em>
-        </OlLi>
-      </Ol>
+      <FourSteps />
       <P>
         They look complicated, but they’re actually very simple after you get
         used to it. Let’s take a look!
@@ -343,7 +349,7 @@ export default () => {
         </P>
         {episode2[i++]()}
       </SideNoteSection>
-      <H3>Putting All Steps Together</H3>
+      <H3>Putting all steps together</H3>
       <P>
         Let’s review the steps from the beginning. In the {h('ycBentoBox')}{' '}
         below, {h('ycTryUntilDone', false)}.
@@ -351,6 +357,10 @@ export default () => {
       {episode2[i++]()}
       <P>How about this one? {h('ycTryUntilDone')}.</P>
       {episode2[i++]()}
+      <P>Hope you understood everything until this part!</P>
+      <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
+        <FourSteps />
+      </SideNoteSection>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )

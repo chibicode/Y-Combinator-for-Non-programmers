@@ -187,7 +187,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <TopRightBadge topRightBadgeType="match" inline />{' '}
+            Matched <TopRightBadge topRightBadgeType="match" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
             the same as{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />
@@ -311,12 +311,6 @@ const ExpressionRunnerExplanation: React.SFC<
       )
     ) : (
       <>
-        <Strong>
-          {locale === 'en' ? 'Step ' : 'ステップ'}
-          {currentStep}
-          {locale === 'en' ? '.' : '–'}
-          {currentSubstep}:
-        </Strong>{' '}
         {isDone ? (
           locale === 'en' ? (
             <>
