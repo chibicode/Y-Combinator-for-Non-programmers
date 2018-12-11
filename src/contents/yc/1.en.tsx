@@ -17,7 +17,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import StarRating from 'src/components/StarRating'
-import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import { episode1 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
@@ -126,7 +126,7 @@ export default () => {
         </Em>
         . Here’s what it looks like:
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         Just like real bento boxes <Emoji>🍱</Emoji>,{' '}
         <Em>each cell has a food item</Em>. The top item is sandwich{' '}
@@ -154,7 +154,7 @@ export default () => {
           op).
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Em>
           The <Strong>bottom left</Strong> item is labeled as{' '}
@@ -163,7 +163,7 @@ export default () => {
           eft).
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         Finally,{' '}
         <Em>
@@ -173,7 +173,7 @@ export default () => {
           ight).
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <SideNoteSection
         heading={'Review Quiz: Step 1'}
         color="pink"
@@ -185,7 +185,7 @@ export default () => {
             What are the correct labels for the following {h('ycBentoBox')}?
           </Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
@@ -196,7 +196,7 @@ export default () => {
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
           </Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
       </SideNoteSection>
       <H3>
         Step 2: Check for matches in{' '}
@@ -211,7 +211,7 @@ export default () => {
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Em>
           If there are the same items in{' '}
@@ -221,7 +221,7 @@ export default () => {
           <TopRightBadge inline topRightBadgeType="match" />.
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         In the above case, there’s sushi <Emoji size="mdlg">🍣</Emoji> in both{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
@@ -237,7 +237,7 @@ export default () => {
           <Strong>Question:</Strong>{' '}
           <Em>Does the following {h('ycBentoBox')} have a match?</Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
@@ -245,7 +245,7 @@ export default () => {
             <TopRightBadge inline topRightBadgeType="match" />.
           </Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
       </SideNoteSection>
       <H3>
         Step 3: Matched{' '}
@@ -260,7 +260,7 @@ export default () => {
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Em>
           The matching <TopRightBadge inline topRightBadgeType="match" /> item
@@ -269,7 +269,7 @@ export default () => {
           <BottomRightBadge inline bottomRightBadgeType="callArg" />.
         </Em>{' '}
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         We show <TopRightBadge inline topRightBadgeType="betaReduced" /> next to{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" /> when this
@@ -284,7 +284,7 @@ export default () => {
           <Strong>Question:</Strong>{' '}
           <Em>What happens next on the following {h('ycBentoBox')}?</Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
@@ -294,7 +294,7 @@ export default () => {
             <TopRightBadge inline topRightBadgeType="betaReduced" />.
           </Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
       </SideNoteSection>
       <H3>
         Step 4 (Last Step): Remove{' '}
@@ -302,7 +302,7 @@ export default () => {
         <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       </H3>
       <P>This is the last step! We’ll continue from the end of step 3:</P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         In this last step,{' '}
         <Em>
@@ -310,12 +310,12 @@ export default () => {
           and <BottomRightBadge inline bottomRightBadgeType="funcArg" />:
         </Em>
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         So in the end, the {h('ycBentoBox')} has just the sandwich{' '}
         <Emoji size="mdlg">🥪</Emoji>.{' '}
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Strong>Note:</Strong> we{' '}
         <Em>
@@ -334,7 +334,7 @@ export default () => {
           <Strong>Question:</Strong>{' '}
           <Em>What happens next on the following {h('ycBentoBox')}?</Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
@@ -343,20 +343,20 @@ export default () => {
             removed…
           </Em>
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
         <P>
           So in the end, it becomes just chicken <Emoji size="mdlg">🍗</Emoji>:
         </P>
-        {episode2[i++]()}
+        {episode1[i++]()}
       </SideNoteSection>
       <H3>Putting all steps together</H3>
       <P>
         Let’s review the steps from the beginning. In the {h('ycBentoBox')}{' '}
         below, {h('ycTryUntilDone', false)}.
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>How about this one? {h('ycTryUntilDone')}.</P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>Hope everything makes sense!</P>
       <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
         <FourSteps />
@@ -373,7 +373,7 @@ export default () => {
         <Strong>Here’s the quiz:</Strong> What do you think will happen to the
         following {h('ycBentoBox')} after taking all the steps?
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Strong>Hint:</Strong> Here are the labels.{' '}
         <Em>
@@ -383,7 +383,7 @@ export default () => {
         </Em>{' '}
         What do you think happens then? Try guessing!
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>Click on the button below to see the answer!</P>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>

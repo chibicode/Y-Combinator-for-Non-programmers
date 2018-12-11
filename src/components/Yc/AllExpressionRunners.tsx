@@ -27,10 +27,10 @@ export const introduction = [
 
 // NOTE: Use functions instead of just JSX.Element inside because
 // linter will complain that it's missing the key attribute
-export const episode2 = [
+export const episode1 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       hideExplanations
@@ -45,7 +45,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -61,7 +61,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -77,7 +77,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -93,7 +93,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -108,7 +108,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -123,7 +123,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       hideExplanations
@@ -142,7 +142,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -158,7 +158,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -173,7 +173,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -188,7 +188,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -209,7 +209,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -225,7 +225,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -240,7 +240,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -255,7 +255,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -271,7 +271,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -287,7 +287,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -302,7 +302,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -318,7 +318,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -334,7 +334,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -349,7 +349,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hidePlayButton
       showAllShowSteps
@@ -365,7 +365,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hidePlayButton
       showAllShowSteps
@@ -381,7 +381,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression3}
+      expressionContainer={lessonExpressions.episode1Expression3}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -398,7 +398,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression3}
+      expressionContainer={lessonExpressions.episode1Expression3}
       hidePriorities
       hideControls
       hideExplanations
@@ -417,7 +417,7 @@ export const episode2 = [
 export const episode3 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -432,7 +432,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -448,7 +448,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -464,7 +464,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -480,7 +480,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -496,7 +496,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -511,7 +511,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -525,7 +525,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePlayButton
       hidePriorities
       showAllShowSteps
@@ -541,7 +541,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hidePlayButton
       showAllShowSteps

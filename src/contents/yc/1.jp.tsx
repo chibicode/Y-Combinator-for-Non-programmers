@@ -2,7 +2,7 @@ import React from 'react'
 import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import { episode1 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -48,7 +48,7 @@ export default () => {
         </Em>
         」がたくさん出てきます。見た目はこんな感じです。それぞれのマスの中に食べ物が入っているので、弁当箱っぽく見えるでしょう？
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Strong>しかし、それぞれのマスはどういう意味なのでしょうか？</Strong>
         ひとつずつ解説していきましょう。
@@ -61,7 +61,7 @@ export default () => {
         </Em>
         この場合、食べられるのは寿司 <Emoji>🍣</Emoji> だけです。
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Em>
           次に、
@@ -70,7 +70,7 @@ export default () => {
         </Em>
         この場合、あなたが次に食べるのは寿司 <Emoji>🍣</Emoji> です。
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         最後に、
         <Em>
@@ -80,7 +80,7 @@ export default () => {
         </Em>
         この場合、シェフが作っているのはサンドイッチ <Emoji>🥪</Emoji> です。
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <P>
         <Strong>というわけで:</Strong> 上の
         {h('ycBentoBox')}
@@ -107,7 +107,7 @@ export default () => {
         {h('ycBentoBox')}
         は、どんな状況を表しているでしょう？
       </P>
-      {episode2[i++]()}
+      {episode1[i++]()}
       <Ul size="lg">
         <UlLi>
           <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">❓</Emoji>
