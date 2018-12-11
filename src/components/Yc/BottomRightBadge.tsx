@@ -84,7 +84,15 @@ const BottomRightBadge: React.SFC<BottomRightBadgeProps> = ({
       }
     )}
   >
-    {bottomRightBadgeTypeToText(bottomRightBadgeType)}
+    <span
+      className={cx({
+        [css`
+          transform: translateY(-0.05em);
+        `]: locale === 'jp'
+      })}
+    >
+      {bottomRightBadgeTypeToText(bottomRightBadgeType)}
+    </span>
   </span>
 )
 

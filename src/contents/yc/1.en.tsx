@@ -9,19 +9,49 @@ import {
   Ol,
   OlLi,
   P,
-  Strong,
-  Ul,
-  UlLi
+  Strong
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
-import StarRating from 'src/components/StarRating'
 import { episode1 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+
+const Step1 = () => (
+  <>
+    Label each item using{' '}
+    <BottomRightBadge inline bottomRightBadgeType="callArg" />,{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+  </>
+)
+
+const Step2 = () => (
+  <>
+    Check for matches in{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+  </>
+)
+
+const Step3 = () => (
+  <>
+    Matched <TopRightBadge inline topRightBadgeType="match" />{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" /> become the same
+    as <BottomRightBadge inline bottomRightBadgeType="callArg" />
+  </>
+)
+
+const Step4 = () => (
+  <>
+    Remove <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+  </>
+)
 
 const FourSteps = () => (
   <>
@@ -31,30 +61,22 @@ const FourSteps = () => (
     <Ol>
       <OlLi>
         <Em>
-          Label each item using{' '}
-          <BottomRightBadge inline bottomRightBadgeType="callArg" />,{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+          <Step1 />
         </Em>
       </OlLi>
       <OlLi>
         <Em>
-          Check for matches in{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+          <Step2 />
         </Em>
       </OlLi>
       <OlLi>
         <Em>
-          Matched <TopRightBadge inline topRightBadgeType="match" />{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> become
-          the same as <BottomRightBadge inline bottomRightBadgeType="callArg" />
+          <Step3 />
         </Em>
       </OlLi>
       <OlLi>
         <Em>
-          Remove <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+          <Step4 />
         </Em>
       </OlLi>
     </Ol>
@@ -73,19 +95,15 @@ export default () => {
         In this level, we’ll cover{' '}
         <Em>the basics of the puzzles we’ll be solving.</Em>
       </P>
-      <Ul>
-        <UlLi>
-          <Strong>Average Reading Time:</Strong> <Em>6 minutes</Em>
-        </UlLi>
-        <UlLi>
-          <Strong>Difficulty:</Strong> <StarRating num={3} /> — It will be
-          challenging because everything is new to you.
-        </UlLi>
-        <UlLi>
-          <Strong>Fun:</Strong> <StarRating num={1} /> — We’ll cover basics, so
-          it might be a bit boring, but it’ll get much better later!
-        </UlLi>
-      </Ul>
+      <EpisodeInfo
+        readingTime={6}
+        difficultyNum={3}
+        difficultyText="It will be
+        challenging because everything is new to you."
+        funNum={1}
+        funText="We’ll cover basics, so
+        it might be a bit boring, but it’ll get much better later!"
+      />
       <Hr />
       <H3>Let’s Get Started!</H3>
       <P>
@@ -133,31 +151,40 @@ export default () => {
         <Emoji size="mdlg">🥪</Emoji> and the bottom two items are sushi{' '}
         <Emoji size="mdlg">🍣</Emoji>.
       </P>
+      <P>Here’s another {h('ycBentoBox')}:</P>
+      {episode1[i++]()}
+      <P>
+        The top item is chicken <Emoji size="mdlg">🍗</Emoji> and the bottom two
+        items are hamburgers <Emoji size="mdlg">🍔</Emoji>.
+      </P>
+      <P>
+        Next, let’s talk about the basic rules of the bento box puzzles{' '}
+        <Emoji>🍱</Emoji>.
+      </P>
       <H3>4 Steps</H3>
       <FourSteps />
       <P>
         They look complicated, but they’re actually very simple after you get
         used to it. Let’s take a look!
       </P>
+      <EmojiSeparator emojis={['🔢', '🍱', '🔢']} />
       <H3>
-        Step 1: Label each item using{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" />,{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        Step 1: <Step1 />
       </H3>
       <P>
         Each food item has a label.{' '}
         <Em>
-          The <Strong>top</Strong> item is labeled as{' '}
-          <BottomRightBadge inline bottomRightBadgeType="callArg" /> (
-          <Strong>T</Strong>
+          The <Strong>top</Strong> sandwich <Emoji size="mdlg">🥪</Emoji>. is
+          labeled as <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+          (<Strong>T</Strong>
           op).
         </Em>
       </P>
       {episode1[i++]()}
       <P>
         <Em>
-          The <Strong>bottom left</Strong> item is labeled as{' '}
+          The <Strong>bottom left</Strong> sushi <Emoji size="mdlg">🍣</Emoji>.
+          is labeled as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (
           <Strong>L</Strong>
           eft).
@@ -167,7 +194,8 @@ export default () => {
       <P>
         Finally,{' '}
         <Em>
-          the <Strong>bottom right</Strong> item is labeled as{' '}
+          the <Strong>bottom right</Strong> sushi <Emoji size="mdlg">🍣</Emoji>.
+          is labeled as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (
           <Strong>R</Strong>
           ight).
@@ -199,9 +227,7 @@ export default () => {
         {episode1[i++]()}
       </SideNoteSection>
       <H3>
-        Step 2: Check for matches in{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        Step 2: <Step2 />
       </H3>
       <P>
         Next, we’ll look for{' '}
@@ -248,9 +274,7 @@ export default () => {
         {episode1[i++]()}
       </SideNoteSection>
       <H3>
-        Step 3: Matched{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> become the
-        same as <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        Step 3: <Step3 />
       </H3>
       <P>
         Next, we’ll look at{' '}
@@ -298,9 +322,7 @@ export default () => {
         {episode1[i++]()}
       </SideNoteSection>
       <H3>
-        Step 4 (Last Step): Remove{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        Step 4 (Last Step): <Step4 />
       </H3>
       <P>This is the last step! We’ll continue from the end of step 3:</P>
       {episode1[i++]()}

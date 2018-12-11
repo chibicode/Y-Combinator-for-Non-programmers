@@ -62,7 +62,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Strong>If you’re a programmer:</Strong> You might know that Y
-          Combinator is a programming concept. Maybe you've implemented it. But{' '}
+          Combinator is a programming concept. But{' '}
           <Em>
             can you explain what Y Combinator (in programming) is to a
             non-programmer
@@ -89,14 +89,14 @@ export default () => {
       <P>
         <Strong>Current Stats:</Strong>{' '}
         <ExternalLink href="http://www.ycombinator.com/press/">
-          As of writing (Fall 2018)
+          As of writing (2018)
         </ExternalLink>
-        , Y Combinator has invested in roughly 2000 startups like AirBnB and
+        , Y Combinator has invested in more than 2000 startups like AirBnB and
         Dropbox, and the total valuation of{' '}
         <ExternalLink href="http://www.ycombinator.com/topcompanies/">
           top 100 companies
         </ExternalLink>{' '}
-        is roughly $100 billion dollars.
+        is more than $100 billion dollars.
       </P>
       <P>
         <Strong>Now, why did they name it “Y Combinator”?</Strong> Here's what{' '}

@@ -48,6 +48,21 @@ export const episode1 = [
   ),
   () => (
     <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
       expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
