@@ -305,7 +305,10 @@ export default () => {
         </Em>
       </P>
       {episode2[i++]()}
-      <P>So in the end, the {h('ycBentoBox')} becomes this. </P>
+      <P>
+        So in the end, the {h('ycBentoBox')} has just the sandwich{' '}
+        <Emoji size="mdlg">🥪</Emoji>.{' '}
+      </P>
       {episode2[i++]()}
       <P>
         <Strong>Note:</Strong> we{' '}
