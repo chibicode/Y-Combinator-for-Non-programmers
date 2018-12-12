@@ -183,66 +183,74 @@ export default () => {
         noPaddingBottom
       >
         <P>
-          <Strong>Question:</Strong>{' '}
+          <Strong>質問:</Strong>{' '}
           <Em>
-            What are the correct labels for the following {h('ycBentoBox')}?
+            次の
+            {h('ycBentoBox')}
+            にある食べ物にはそれぞれどんな印がつくでしょう？
           </Em>
         </P>
         {episode1[i++]()}
         <P>
-          <Strong>Answer:</Strong>{' '}
+          <Strong>答え:</Strong>{' '}
           <Em>
-            The chicken <Emoji size="mdlg">🍗</Emoji> is{' '}
-            <BottomRightBadge inline bottomRightBadgeType="callArg" /> and the
-            burgers <Emoji size="mdlg">🍔</Emoji> are{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+            チキン <Emoji size="mdlg">🍗</Emoji> には{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />
+            、バーガー <Emoji size="mdlg">🍔</Emoji> には{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+            の印がつきます。
           </Em>
         </P>
         {episode1[i++]()}
       </SideNoteSection>
       <H3>
-        Step 2: Check for matches in{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+        ステップ2: <Step2 />
       </H3>
       <P>
-        Next, we’ll look for{' '}
+        次に、
         <Em>
-          items that appear in both{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          両方にある食べ物を探します。
         </Em>
       </P>
       {episode1[i++]()}
       <P>
         <Em>
-          If there are the same items in{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we call
-          it a <Strong>match</Strong>{' '}
-          <TopRightBadge inline topRightBadgeType="match" />.
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          それぞれに同じ食べ物があると、「
+          <Strong>マッチ</Strong>{' '}
+          <TopRightBadge inline topRightBadgeType="match" />
+          」です！
         </Em>
       </P>
       {episode1[i++]()}
       <P>
-        In the above case, there’s sushi <Emoji size="mdlg">🍣</Emoji> in both{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />, so it’s a
-        match <TopRightBadge inline topRightBadgeType="match" />.
+        上の
+        {h('ycBentoBox')}
+        の場合、寿司 <Emoji size="mdlg">🍣</Emoji> が
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+        それぞれにあるので、 「
+        <Strong>
+          マッチ <TopRightBadge inline topRightBadgeType="match" />
+        </Strong>
+        」ということになります。
       </P>
       <SideNoteSection
-        heading={'Review Quiz: Step 2'}
+        heading={'復習問題: ステップ2'}
         color="pink"
         noPaddingBottom
       >
         <P>
-          <Strong>Question:</Strong>{' '}
+          <Strong>質問:</Strong>{' '}
           <Em>Does the following {h('ycBentoBox')} have a match?</Em>
         </P>
         {episode1[i++]()}
         <P>
-          <Strong>Answer:</Strong>{' '}
+          <Strong>答え:</Strong>{' '}
           <Em>
             Yes. The burgers <Emoji size="mdlg">🍔</Emoji> match{' '}
             <TopRightBadge inline topRightBadgeType="match" />.
@@ -251,9 +259,7 @@ export default () => {
         {episode1[i++]()}
       </SideNoteSection>
       <H3>
-        Step 3: Matched{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> become the
-        same as <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        ステップ3: <Step3 />
       </H3>
       <P>
         Next, we’ll look at{' '}
@@ -279,17 +285,17 @@ export default () => {
         happens.
       </P>
       <SideNoteSection
-        heading={'Review Quiz: Step 3'}
+        heading={'復習問題: ステップ3'}
         color="pink"
         noPaddingBottom
       >
         <P>
-          <Strong>Question:</Strong>{' '}
+          <Strong>質問:</Strong>{' '}
           <Em>What happens next on the following {h('ycBentoBox')}?</Em>
         </P>
         {episode1[i++]()}
         <P>
-          <Strong>Answer:</Strong>{' '}
+          <Strong>答え:</Strong>{' '}
           <Em>
             <TopRightBadge inline topRightBadgeType="match" /> The matching
             burger <Emoji size="mdlg">🍔</Emoji> in{' '}
@@ -301,9 +307,7 @@ export default () => {
         {episode1[i++]()}
       </SideNoteSection>
       <H3>
-        Step 4 (Last Step): Remove{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        ステップ4 (これが最後): <Step4 />
       </H3>
       <P>This is the last step! We’ll continue from the end of step 3:</P>
       {episode1[i++]()}
@@ -330,17 +334,17 @@ export default () => {
       </P>
       <P>That’s it! We’ve covered all four steps!</P>
       <SideNoteSection
-        heading={'Review Quiz: Step 4'}
+        heading={'復習問題: ステップ4'}
         color="pink"
         noPaddingBottom
       >
         <P>
-          <Strong>Question:</Strong>{' '}
+          <Strong>質問:</Strong>{' '}
           <Em>What happens next on the following {h('ycBentoBox')}?</Em>
         </P>
         {episode1[i++]()}
         <P>
-          <Strong>Answer:</Strong>{' '}
+          <Strong>答え:</Strong>{' '}
           <Em>
             <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" /> are
