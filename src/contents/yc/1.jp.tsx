@@ -178,7 +178,7 @@ export default () => {
       </P>
       {episode1[i++]()}
       <SideNoteSection
-        heading={'Review Quiz: Step 1'}
+        heading={'復習問題: ステップ1'}
         color="pink"
         noPaddingBottom
       >
