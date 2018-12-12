@@ -29,6 +29,7 @@ export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
   lessonTitle: string
   episodeTitle?: React.ReactNode
+  episodeTitleString?: React.ReactNode
   episodeNumber?: number
   contentName: ContentProps['name']
 }
@@ -49,6 +50,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
   lessonTitle,
   lessonName,
   episodeTitle,
+  episodeTitleString,
   episodeNumber,
   contentName
 }) => (
@@ -56,7 +58,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
     <Head>
       <title key="title">
         {lessonTitle}
-        {episodeTitle && `- ${episodeTitle}`} | CSmoji
+        {episodeTitleString && ` | ${episodeTitleString}`} | CSmoji
       </title>
     </Head>
     <Container size="sm">
