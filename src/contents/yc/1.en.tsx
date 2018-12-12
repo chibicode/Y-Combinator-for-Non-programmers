@@ -348,7 +348,13 @@ export default () => {
         </Em>{' '}
         as well.
       </P>
-      <P>That’s it! We’ve covered all four steps!</P>
+      <P>
+        <Strong>
+          And we’re done!
+          <Emoji>🏁</Emoji>
+        </Strong>{' '}
+        We’ve covered all four steps!
+      </P>
       <SideNoteSection
         heading={'Review Quiz: Step 4'}
         color="pink"

@@ -339,7 +339,12 @@ export default () => {
         </Em>
         も外れます。
       </P>
-      <P>以上が、{h('ycBentoBox')}の4つのステップでした。</P>
+      <P>
+        <Strong>
+          これで終了 <Emoji>🏁</Emoji> です！
+        </Strong>
+        以上が、{h('ycBentoBox')}の4つのステップでした。
+      </P>
       <SideNoteSection
         heading={'復習問題: ステップ4'}
         color="pink"
@@ -370,7 +375,7 @@ export default () => {
       </P>
       <H3>もう一度おさらい</H3>
       <P>
-        ここでは、実際に手を動かして見れるように、{' '}
+        実際に手を動かして見れるように、{' '}
         <Em>
           {h('ycBentoBox')}に「{h('ycPrevious')}」と「{h('ycNext')}」
           ボタンを追加しました。
