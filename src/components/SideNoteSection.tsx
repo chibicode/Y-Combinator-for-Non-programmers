@@ -53,7 +53,6 @@ const SideNoteSection: React.FunctionComponent<SideNoteProps> = ({
           background: ${backgroundColor(color)};
           margin: 1.5rem 0;
           border-radius: ${radii(0.25)};
-          font-size: ${fontSizes(0.85)};
         `,
         {
           [css`
