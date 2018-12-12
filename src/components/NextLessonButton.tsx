@@ -12,7 +12,7 @@ interface NextLessonButtonProps {
   tertiaryText?: React.ReactNode
 }
 
-const NextLessonButton: React.SFC<NextLessonButtonProps> = ({
+const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> = ({
   primaryText,
   secondaryText,
   tertiaryText,

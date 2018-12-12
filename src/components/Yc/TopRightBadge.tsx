@@ -19,7 +19,7 @@ const topRightBadgeTypeToEmoji = (
     conflictResolved: '🆕'
   }[x])
 
-const TopRightBadge: React.SFC<TopRightBadgeProps> = ({
+const TopRightBadge: React.FunctionComponent<TopRightBadgeProps> = ({
   topRightBadgeType,
   inline
 }) => (

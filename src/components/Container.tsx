@@ -11,7 +11,7 @@ export interface ContainerProps {
   horizontalPadding?: keyof typeof allSpaces
 }
 
-const Container: React.SFC<ContainerProps> = ({
+const Container: React.FunctionComponent<ContainerProps> = ({
   children,
   Component = 'div',
   size,

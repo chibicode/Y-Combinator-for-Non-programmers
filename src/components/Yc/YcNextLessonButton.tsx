@@ -16,7 +16,7 @@ const primaryTextTypeToTranslationKey = (
     nextPage: 'ycNextButtonNextPagePrimaryText' as 'ycNextButtonNextPagePrimaryText'
   }[primaryTextType])
 
-const YcNextLessonButton: React.SFC<{
+const YcNextLessonButton: React.FunctionComponent<{
   nextEpisodeNumber: number
   primaryTextType?: PrimaryTextType
 }> = ({ nextEpisodeNumber, primaryTextType = 'quiz' }) => (

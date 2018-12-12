@@ -10,7 +10,7 @@ interface EmojiSeparatorProps {
   Component?: React.ComponentType | string
 }
 
-const EmojiSeparator: React.SFC<EmojiSeparatorProps> = ({
+const EmojiSeparator: React.FunctionComponent<EmojiSeparatorProps> = ({
   emojis,
   size = 'md',
   spacing = 'md',

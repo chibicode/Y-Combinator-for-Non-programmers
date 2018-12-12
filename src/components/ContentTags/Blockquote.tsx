@@ -2,7 +2,7 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import { colors, spaces } from 'src/lib/theme'
 
-export const Blockquote: React.SFC<JSX.IntrinsicElements['blockquote']> = ({
+export const Blockquote: React.FunctionComponent<JSX.IntrinsicElements['blockquote']> = ({
   className,
   ...props
 }) => (

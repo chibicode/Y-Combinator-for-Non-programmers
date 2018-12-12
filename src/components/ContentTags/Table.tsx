@@ -2,7 +2,7 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import { colors, spaces } from 'src/lib/theme'
 
-export const Table: React.SFC<JSX.IntrinsicElements['table']> = ({
+export const Table: React.FunctionComponent<JSX.IntrinsicElements['table']> = ({
   className,
   ...props
 }) => (
@@ -21,7 +21,7 @@ export const Table: React.SFC<JSX.IntrinsicElements['table']> = ({
   />
 )
 
-export const Th: React.SFC<JSX.IntrinsicElements['th']> = ({
+export const Th: React.FunctionComponent<JSX.IntrinsicElements['th']> = ({
   className,
   ...props
 }) => (
@@ -39,7 +39,7 @@ export const Th: React.SFC<JSX.IntrinsicElements['th']> = ({
   />
 )
 
-export const Td: React.SFC<JSX.IntrinsicElements['td']> = ({
+export const Td: React.FunctionComponent<JSX.IntrinsicElements['td']> = ({
   className,
   ...props
 }) => (

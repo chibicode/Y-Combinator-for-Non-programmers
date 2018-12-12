@@ -1,5 +1,5 @@
 import React from 'react'
 
-const DynamicLoading: React.SFC<{}> = () => <></>
+const DynamicLoading: React.FunctionComponent<{}> = () => <></>
 
 export default DynamicLoading

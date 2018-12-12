@@ -2,7 +2,7 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import { spaces } from 'src/lib/theme'
 
-export const P: React.SFC<JSX.IntrinsicElements['p']> = ({
+export const P: React.FunctionComponent<JSX.IntrinsicElements['p']> = ({
   className,
   ...props
 }) => (

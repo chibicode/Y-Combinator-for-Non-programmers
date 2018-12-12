@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 
-const ExpressionRunnerCaptionWrapper: React.SFC<{
+const ExpressionRunnerCaptionWrapper: React.FunctionComponent<{
   pinkText?: boolean
   children: React.ReactNode
 }> = ({ pinkText, children }) => (

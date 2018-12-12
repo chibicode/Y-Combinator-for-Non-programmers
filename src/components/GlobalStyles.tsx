@@ -40,7 +40,7 @@ injectGlobal`
   }
 `
 
-const GlobalStyles: React.SFC<{ children: React.ReactNode }> = ({
+const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children
 }) => (
   <div

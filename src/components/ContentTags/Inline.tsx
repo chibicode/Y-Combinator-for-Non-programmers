@@ -3,7 +3,7 @@ import React from 'react'
 import SectionContext from 'src/components/SectionContext'
 import { colors } from 'src/lib/theme'
 
-export const Strong: React.SFC<JSX.IntrinsicElements['strong']> = ({
+export const Strong: React.FunctionComponent<JSX.IntrinsicElements['strong']> = ({
   className,
   ...props
 }) => (
@@ -18,7 +18,7 @@ export const Strong: React.SFC<JSX.IntrinsicElements['strong']> = ({
   />
 )
 
-export const Em: React.SFC<JSX.IntrinsicElements['em']> = ({
+export const Em: React.FunctionComponent<JSX.IntrinsicElements['em']> = ({
   className,
   ...props
 }) => (

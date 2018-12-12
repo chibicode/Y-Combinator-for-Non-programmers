@@ -46,7 +46,7 @@ const navigationLinkClasses = css`
   font-size: ${fontSizes(0.7)};
 `
 
-const EpisodePage: React.SFC<EpisodePageProps> = ({
+const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
   lessonTitle,
   lessonName,
   episodeTitle,

@@ -2,7 +2,7 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import { colors } from 'src/lib/theme'
 
-export const Hr: React.SFC<JSX.IntrinsicElements['hr']> = ({
+export const Hr: React.FunctionComponent<JSX.IntrinsicElements['hr']> = ({
   className,
   ...props
 }) => (

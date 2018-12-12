@@ -15,7 +15,7 @@ function grabTheRightIcon(rawText: string) {
   )
 }
 
-const EmojiSvg: React.SFC<{ name: string }> = ({ name }) => {
+const EmojiSvg: React.FunctionComponent<{ name: string }> = ({ name }) => {
   const Component = dynamic(
     // @ts-ignore - import isn't typed correctly
     () =>
@@ -47,7 +47,7 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     huge: '6em'
   }[size])
 
-const Emoji: React.SFC<EmojiProps> = ({
+const Emoji: React.FunctionComponent<EmojiProps> = ({
   children,
   size = 'md',
   customChildren,

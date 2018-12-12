@@ -67,7 +67,7 @@ const background = (
   }
 }
 
-const Cross: React.SFC<{}> = () => (
+const Cross: React.FunctionComponent<{}> = () => (
   <div
     className={css`
       position: absolute;
@@ -82,7 +82,7 @@ const Cross: React.SFC<{}> = () => (
   />
 )
 
-const BorderWrapper: React.SFC<BorderWrapperProps> = ({
+const BorderWrapper: React.FunctionComponent<BorderWrapperProps> = ({
   highlightType,
   bottomRightBadgeType,
   topRightBadgeType,

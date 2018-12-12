@@ -271,7 +271,7 @@ const stateToExplanation = ({
   }
 }
 
-const ExpressionRunnerExplanation: React.SFC<
+const ExpressionRunnerExplanation: React.FunctionComponent<
   ExpressionRunnerExplanationProps
 > = ({
   expressionContainer,

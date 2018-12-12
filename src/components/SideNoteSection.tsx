@@ -33,7 +33,7 @@ const emBackgroundColor = (color: SideNoteProps['color']) =>
     yellow: colors('yellow200')
   }[color])
 
-const SideNoteSection: React.SFC<SideNoteProps> = ({
+const SideNoteSection: React.FunctionComponent<SideNoteProps> = ({
   children,
   heading,
   headingNoMarginBottom,

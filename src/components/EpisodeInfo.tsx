@@ -11,7 +11,7 @@ interface EpisodeInfoProps {
   funText: React.ReactNode
 }
 
-const EpisodeInfo: React.SFC<EpisodeInfoProps> = ({
+const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
   readingTime,
   difficultyNum,
   difficultyText,

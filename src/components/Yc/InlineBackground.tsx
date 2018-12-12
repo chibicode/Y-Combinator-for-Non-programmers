@@ -21,7 +21,7 @@ const bgPatternToSvg = (
   throw new Error()
 }
 
-const InlineBackground: React.SFC<InlineBackgroundProps> = ({
+const InlineBackground: React.FunctionComponent<InlineBackgroundProps> = ({
   bgColor,
   bgPattern,
   size = 'md'
