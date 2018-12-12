@@ -107,14 +107,14 @@ export const allTranslations = {
     en: (
       <>
         <Strong>
-          Done <Emoji>👍</Emoji>
+          Done <Emoji>🏁</Emoji>
         </Strong>
       </>
     ),
     jp: (
       <>
         <Strong>
-          終了 <Emoji>👍</Emoji>
+          終了 <Emoji>🏁</Emoji>
         </Strong>
       </>
     )

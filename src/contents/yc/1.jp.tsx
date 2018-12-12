@@ -12,7 +12,7 @@ import h from 'src/lib/h'
 
 const Step1 = () => (
   <>
-    それぞれの食べ物に
+    それぞれの料理に
     <BottomRightBadge inline bottomRightBadgeType="callArg" />、
     <BottomRightBadge inline bottomRightBadgeType="funcArg" />、
     <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -34,7 +34,7 @@ const Step3 = () => (
     <TopRightBadge inline topRightBadgeType="match" />{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" />が
     <BottomRightBadge inline bottomRightBadgeType="callArg" />
-    と同じ食べ物になる
+    と同じ料理になる
   </>
 )
 
@@ -111,7 +111,7 @@ export default () => {
       <P>
         下の図が、
         <Strong>{h('ycBentoBox')}</Strong>
-        です。実際の弁当箱のように、四角の中に何個かマスがあり、それぞれのマスの中に食べ物が入っています。
+        です。実際の弁当箱のように、四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています。
       </P>
       {episode1[i++]()}
       <P>
@@ -147,7 +147,7 @@ export default () => {
       <P>
         まず、
         {h('ycBentoBox')}
-        の中にある食べ物に印をつけるところからはじめましょう。
+        の中にある料理に印をつけるところからはじめましょう。
       </P>
       <P>
         <Em>
@@ -187,7 +187,7 @@ export default () => {
           <Em>
             次の
             {h('ycBentoBox')}
-            にある食べ物にはそれぞれどんな印がつくでしょう？
+            にある料理にはそれぞれどんな印がつくでしょう？
           </Em>
         </P>
         {episode1[i++]()}
@@ -212,7 +212,7 @@ export default () => {
         <Em>
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          両方にある食べ物を探します。
+          両方にある料理を探します。
         </Em>
       </P>
       {episode1[i++]()}
@@ -220,7 +220,7 @@ export default () => {
         <Em>
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          それぞれに同じ食べ物があると、「
+          それぞれに同じ料理があると、「
           <Strong>マッチ</Strong>{' '}
           <TopRightBadge inline topRightBadgeType="match" />
           」です！
@@ -246,14 +246,14 @@ export default () => {
       >
         <P>
           <Strong>質問:</Strong>{' '}
-          <Em>Does the following {h('ycBentoBox')} have a match?</Em>
+          <Em>下の{h('ycBentoBox')}にはマッチした料理があるでしょうか？</Em>
         </P>
         {episode1[i++]()}
         <P>
           <Strong>答え:</Strong>{' '}
           <Em>
-            Yes. The burgers <Emoji size="mdlg">🍔</Emoji> match{' '}
-            <TopRightBadge inline topRightBadgeType="match" />.
+            あります。バーガー <Emoji size="mdlg">🍔</Emoji> がマッチしています{' '}
+            <TopRightBadge inline topRightBadgeType="match" />。
           </Em>
         </P>
         {episode1[i++]()}
@@ -262,27 +262,31 @@ export default () => {
         ステップ3: <Step3 />
       </H3>
       <P>
-        Next, we’ll look at{' '}
+        次に、
         <Em>
-          <BottomRightBadge inline bottomRightBadgeType="callArg" /> and the
-          matching <TopRightBadge inline topRightBadgeType="match" /> item in{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+          <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+          の料理と、さきほどマッチ{' '}
+          <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          の料理に注目します。
         </Em>
       </P>
       {episode1[i++]()}
       <P>
+        <Strong>このステップでは、</Strong>{' '}
         <Em>
-          The matching <TopRightBadge inline topRightBadgeType="match" /> item
-          in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>becomes the same</Strong> as{' '}
-          <BottomRightBadge inline bottomRightBadgeType="callArg" />.
-        </Em>{' '}
+          マッチ <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          の料理が、
+          <BottomRightBadge inline bottomRightBadgeType="callArg" /> と
+          <Strong>同じ料理</Strong>になります。
+        </Em>
       </P>
       {episode1[i++]()}
       <P>
-        We show <TopRightBadge inline topRightBadgeType="betaReduced" /> next to{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> when this
-        happens.
+        このとき、 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+        の料理に <TopRightBadge inline topRightBadgeType="betaReduced" />{' '}
+        という印が表示されます。
       </P>
       <SideNoteSection
         heading={'復習問題: ステップ3'}
@@ -291,17 +295,17 @@ export default () => {
       >
         <P>
           <Strong>質問:</Strong>{' '}
-          <Em>What happens next on the following {h('ycBentoBox')}?</Em>
+          <Em>下の{h('ycBentoBox')}は、次のステップでどうなるでしょう？</Em>
         </P>
         {episode1[i++]()}
         <P>
           <Strong>答え:</Strong>{' '}
           <Em>
-            <TopRightBadge inline topRightBadgeType="match" /> The matching
-            burger <Emoji size="mdlg">🍔</Emoji> in{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" /> becomes
-            chicken <Emoji size="mdlg">🍗</Emoji>{' '}
-            <TopRightBadge inline topRightBadgeType="betaReduced" />.
+            マッチ <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+            のハンバーガー <Emoji size="mdlg">🍔</Emoji> が、チキン{' '}
+            <Emoji size="mdlg">🍗</Emoji> になります{' '}
+            <TopRightBadge inline topRightBadgeType="betaReduced" />。
           </Em>
         </P>
         {episode1[i++]()}
@@ -309,30 +313,33 @@ export default () => {
       <H3>
         ステップ4 (これが最後): <Step4 />
       </H3>
-      <P>This is the last step! We’ll continue from the end of step 3:</P>
+      <P>
+        これが最後のステップです！ステップ3のあと、{h('ycBentoBox')}
+        はこうなっています:
+      </P>
       {episode1[i++]()}
       <P>
-        In this last step,{' '}
+        このステップでは、
         <Em>
-          we remove <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-          and <BottomRightBadge inline bottomRightBadgeType="funcArg" />:
+          <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+          が消えます。
         </Em>
       </P>
       {episode1[i++]()}
       <P>
-        So in the end, the {h('ycBentoBox')} has just the sandwich{' '}
-        <Emoji size="mdlg">🥪</Emoji>.{' '}
+        つまり、残るのはサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+        だけになります。
       </P>
       {episode1[i++]()}
       <P>
-        <Strong>Note:</Strong> we{' '}
+        <Strong>ちなみに:</Strong> このステップで、{' '}
         <Em>
-          remove the{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> label
-        </Em>{' '}
-        as well.
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の印
+        </Em>
+        も外れます。
       </P>
-      <P>That’s it! We’ve covered all four steps!</P>
+      <P>以上が、{h('ycBentoBox')}の4つのステップでした。</P>
       <SideNoteSection
         heading={'復習問題: ステップ4'}
         color="pink"
@@ -340,33 +347,48 @@ export default () => {
       >
         <P>
           <Strong>質問:</Strong>{' '}
-          <Em>What happens next on the following {h('ycBentoBox')}?</Em>
+          <Em>下の{h('ycBentoBox')}は、次のステップでどうなるでしょう？</Em>
         </P>
         {episode1[i++]()}
         <P>
           <Strong>答え:</Strong>{' '}
           <Em>
-            <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> are
-            removed…
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            が消えるので…
           </Em>
         </P>
         {episode1[i++]()}
         <P>
-          So in the end, it becomes just chicken <Emoji size="mdlg">🍗</Emoji>:
+          最終的にはチキン <Emoji size="mdlg">🍗</Emoji> だけになります。
         </P>
         {episode1[i++]()}
       </SideNoteSection>
-      <H3>Putting all steps together</H3>
       <P>
-        Let’s review the steps from the beginning. In the {h('ycBentoBox')}{' '}
-        below, {h('ycTryUntilDone', false)}.
+        全部のステップを説明し終えたところで、きちんと覚えるために
+        <Em>もう一度最初からやってみましょう。</Em>
+      </P>
+      <H3>もう一度おさらい</H3>
+      <P>
+        ここでは、実際に手を動かして見れるように、{' '}
+        <Em>
+          {h('ycBentoBox')}に「{h('ycPrevious')}」と「{h('ycNext')}」
+          ボタンを追加しました。
+        </Em>
+      </P>
+      <EmojiSeparator emojis={['⬅️', '🍱', '➡️']} />
+      <P>
+        次の{h('ycBentoBox')}の下にある、「{h('ycNext')}」ボタンを「
+        {h('ycDone')}」 になるまで何度も押してみてください。
       </P>
       {episode1[i++]()}
-      <P>How about this one? {h('ycTryUntilDone')}.</P>
+      <P>
+        もう一つの{h('ycBentoBox')}でもやってみましょう。こちらでも、
+        {h('ycTryUntilDone')}.
+      </P>
       {episode1[i++]()}
-      <P>Hope everything makes sense!</P>
-      <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
+      <P>ここまでは理解できたでしょうか？</P>
+      <SideNoteSection heading={'これまでのまとめ'} color="yellow">
         <FourSteps />
       </SideNoteSection>
       <H3>Challenge Quiz</H3>

@@ -74,7 +74,7 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            下段の一番右は
+            下段の一番右は{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
@@ -108,7 +108,7 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            下段の一番左は
+            下段の一番左は{' '}
             <BottomRightBadge bottomRightBadgeType="funcArg" inline />
           </>
         )
@@ -137,8 +137,7 @@ const stateToExplanation = ({
         if (showAllShowSteps) {
           return (
             <>
-              上段は
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />
+              上段は <BottomRightBadge bottomRightBadgeType="callArg" inline />
             </>
           )
         } else {
@@ -216,7 +215,7 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            <BottomRightBadge bottomRightBadgeType="callArg" inline /> と
+            <BottomRightBadge bottomRightBadgeType="callArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
             が消えます
           </>
@@ -314,12 +313,12 @@ const ExpressionRunnerExplanation: React.FunctionComponent<
         {isDone ? (
           locale === 'en' ? (
             <>
-              Done! <Emoji>👍</Emoji>
+              Done! <Emoji>🏁</Emoji>
             </>
           ) : (
             <>
               終了！
-              <Emoji>👍</Emoji>
+              <Emoji>🏁</Emoji>
             </>
           )
         ) : (

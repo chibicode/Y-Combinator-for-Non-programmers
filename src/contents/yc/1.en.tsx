@@ -286,8 +286,9 @@ export default () => {
       </P>
       {episode1[i++]()}
       <P>
+        <Strong>In this step</Strong>,{' '}
         <Em>
-          The matching <TopRightBadge inline topRightBadgeType="match" /> item
+          the matching <TopRightBadge inline topRightBadgeType="match" /> item
           in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           <Strong>becomes the same</Strong> as{' '}
           <BottomRightBadge inline bottomRightBadgeType="callArg" />.
@@ -327,7 +328,7 @@ export default () => {
       <P>This is the last step! We’ll continue from the end of step 3:</P>
       {episode1[i++]()}
       <P>
-        In this last step,{' '}
+        In this step,{' '}
         <Em>
           we remove <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
           and <BottomRightBadge inline bottomRightBadgeType="funcArg" />:
@@ -340,7 +341,7 @@ export default () => {
       </P>
       {episode1[i++]()}
       <P>
-        <Strong>Note:</Strong> we{' '}
+        <Strong>Note:</Strong> In this step, we{' '}
         <Em>
           remove the{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" /> label
@@ -372,13 +373,26 @@ export default () => {
         </P>
         {episode1[i++]()}
       </SideNoteSection>
+      <P>
+        Now that we’ve covered all the steps,{' '}
+        <Em>let’s review the steps from the beginning.</Em>
+      </P>
       <H3>Putting all steps together</H3>
       <P>
-        Let’s review the steps from the beginning. In the {h('ycBentoBox')}{' '}
-        below, {h('ycTryUntilDone', false)}.
+        To do this interactively,{' '}
+        <Em>
+          I’ve added the {h('ycPrevious')} and {h('ycNext')} buttons to the{' '}
+          {h('ycBentoBox')}.
+        </Em>
+      </P>
+      <EmojiSeparator emojis={['⬅️', '🍱', '➡️']} />
+      <P>
+        In the {h('ycBentoBox')} below, {h('ycTryUntilDone', false)}.
       </P>
       {episode1[i++]()}
-      <P>How about this one? {h('ycTryUntilDone')}.</P>
+      <P>
+        How about this {h('ycBentoBox')}? {h('ycTryUntilDone')}.
+      </P>
       {episode1[i++]()}
       <P>Hope everything makes sense!</P>
       <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
