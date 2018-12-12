@@ -34,8 +34,8 @@ const EmojiSvg: React.FunctionComponent<{ name: string }> = ({ name }) => {
 interface EmojiProps {
   children?: string
   customChildren?: React.ReactNode
-  size?: 'md' | 'lg' | 'mdlg' | 'huge' | 'star'
-  noVerticalTransform?: boolean
+  size: 'md' | 'lg' | 'mdlg' | 'huge' | 'star'
+  noVerticalTransform: boolean
 }
 
 const sizeToHeight = (size: Required<EmojiProps>['size']) =>
@@ -47,12 +47,9 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     huge: '6em'
   }[size])
 
-const Emoji: React.FunctionComponent<EmojiProps> = ({
-  children,
-  size = 'md',
-  customChildren,
-  noVerticalTransform = false
-}) => (
+const Emoji: React.FunctionComponent<EmojiProps> & {
+  defaultProps: Partial<EmojiProps>
+} = ({ children, size, customChildren, noVerticalTransform }) => (
   <span
     className={cx(
       css`
@@ -71,5 +68,10 @@ const Emoji: React.FunctionComponent<EmojiProps> = ({
     {children && <EmojiSvg name={children} />}
   </span>
 )
+
+Emoji.defaultProps = {
+  size: 'md',
+  noVerticalTransform: false
+}
 
 export default Emoji

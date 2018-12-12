@@ -7,7 +7,7 @@ import { allColors } from 'src/lib/theme/colors'
 interface InlineBackgroundProps {
   bgColor?: keyof typeof allColors
   bgPattern?: 'cross'
-  size?: 'md' | 'mdlg'
+  size: 'md' | 'mdlg'
 }
 
 const bgPatternToSvg = (
@@ -21,11 +21,9 @@ const bgPatternToSvg = (
   throw new Error()
 }
 
-const InlineBackground: React.FunctionComponent<InlineBackgroundProps> = ({
-  bgColor,
-  bgPattern,
-  size = 'md'
-}) => (
+const InlineBackground: React.FunctionComponent<InlineBackgroundProps> & {
+  defaultProps: Partial<InlineBackgroundProps>
+} = ({ bgColor, bgPattern, size }) => (
   <span
     className={cx(
       css`
@@ -47,5 +45,9 @@ const InlineBackground: React.FunctionComponent<InlineBackgroundProps> = ({
     )}
   />
 )
+
+InlineBackground.defaultProps = {
+  size: 'md'
+}
 
 export default InlineBackground

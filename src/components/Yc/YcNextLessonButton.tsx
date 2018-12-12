@@ -7,6 +7,11 @@ import { remainingText } from 'src/lib/yc/numEpisodesForEachLevel'
 
 type PrimaryTextType = 'quiz' | 'start' | 'nextPage'
 
+interface YcNextLessonButtonProps {
+  nextEpisodeNumber: number
+  primaryTextType: PrimaryTextType
+}
+
 const primaryTextTypeToTranslationKey = (
   primaryTextType: PrimaryTextType
 ): keyof typeof allTranslations =>
@@ -16,10 +21,9 @@ const primaryTextTypeToTranslationKey = (
     nextPage: 'ycNextButtonNextPagePrimaryText' as 'ycNextButtonNextPagePrimaryText'
   }[primaryTextType])
 
-const YcNextLessonButton: React.FunctionComponent<{
-  nextEpisodeNumber: number
-  primaryTextType?: PrimaryTextType
-}> = ({ nextEpisodeNumber, primaryTextType = 'quiz' }) => (
+const YcNextLessonButton: React.FunctionComponent<YcNextLessonButtonProps> & {
+  defaultProps: Partial<YcNextLessonButtonProps>
+} = ({ nextEpisodeNumber, primaryTextType }) => (
   <NextLessonButton
     href={yc(nextEpisodeNumber)}
     primaryText={<>{h(primaryTextTypeToTranslationKey(primaryTextType))}</>}
@@ -31,5 +35,9 @@ const YcNextLessonButton: React.FunctionComponent<{
     tertiaryText={nextEpisodeNumber > 1 && remainingText(nextEpisodeNumber)}
   />
 )
+
+YcNextLessonButton.defaultProps = {
+  primaryTextType: 'quiz'
+}
 
 export default YcNextLessonButton

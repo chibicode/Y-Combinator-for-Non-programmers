@@ -5,17 +5,14 @@ import { fontSizes, ns, spaces } from 'src/lib/theme'
 
 interface EmojiSeparatorProps {
   emojis: string[]
-  size?: 'md' | 'lg'
-  spacing?: 'sm' | 'md'
-  Component?: React.ComponentType | string
+  size: 'md' | 'lg'
+  spacing: 'sm' | 'md'
+  Component: React.ComponentType<{ className?: string }> | string
 }
 
-const EmojiSeparator: React.FunctionComponent<EmojiSeparatorProps> = ({
-  emojis,
-  size = 'md',
-  spacing = 'md',
-  Component = 'div'
-}) => (
+const EmojiSeparator: React.FunctionComponent<EmojiSeparatorProps> & {
+  defaultProps: Partial<EmojiSeparatorProps>
+} = ({ emojis, size, spacing, Component }) => (
   <Component
     className={css`
       text-align: center;
@@ -34,5 +31,11 @@ const EmojiSeparator: React.FunctionComponent<EmojiSeparatorProps> = ({
     ))}
   </Component>
 )
+
+EmojiSeparator.defaultProps = {
+  size: 'md',
+  spacing: 'md',
+  Component: 'div'
+}
 
 export default EmojiSeparator

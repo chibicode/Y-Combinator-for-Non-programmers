@@ -5,19 +5,15 @@ import spaces, { allSpaces } from 'src/lib/theme/spaces'
 
 export interface ContainerProps {
   children: React.ReactNode
-  Component?: React.ComponentType | string
+  Component: React.ComponentType<{ className?: string }> | string
   size: keyof typeof allMaxWidths
-  verticalMargin?: keyof typeof allSpaces
-  horizontalPadding?: keyof typeof allSpaces
+  verticalMargin: keyof typeof allSpaces
+  horizontalPadding: keyof typeof allSpaces
 }
 
-const Container: React.FunctionComponent<ContainerProps> = ({
-  children,
-  Component = 'div',
-  size,
-  verticalMargin = 0,
-  horizontalPadding = 1.25
-}) => (
+const Container: React.FunctionComponent<ContainerProps> & {
+  defaultProps: Partial<ContainerProps>
+} = ({ children, Component, size, verticalMargin, horizontalPadding }) => (
   <Component
     className={cx(
       css`
@@ -30,5 +26,11 @@ const Container: React.FunctionComponent<ContainerProps> = ({
     {children}
   </Component>
 )
+
+Container.defaultProps = {
+  Component: 'div',
+  verticalMargin: 0,
+  horizontalPadding: 1.25
+}
 
 export default Container
