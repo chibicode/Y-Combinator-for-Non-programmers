@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import crossDarkSvg from 'src/images/cross-dark.url.svg'
 import { colors } from 'src/lib/theme'

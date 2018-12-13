@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper from 'src/components/Yc/BorderWrapper'

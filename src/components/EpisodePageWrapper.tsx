@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'

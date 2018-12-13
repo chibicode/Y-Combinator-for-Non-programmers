@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
 import { fontSizes, ns, spaces } from 'src/lib/theme'

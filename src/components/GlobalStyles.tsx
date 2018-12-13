@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, Global, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import 'modern-normalize'
 import React from 'react'
 import { colors, lineHeights, spaces } from 'src/lib/theme'
@@ -17,7 +18,6 @@ const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
       padding-bottom: ${spaces(3)};
     `}
   >
-    {children}
     <Global
       styles={css`
         /* NOTE:
@@ -85,6 +85,7 @@ const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
         }
       `}
     />
+    {children}
   </div>
 )
 

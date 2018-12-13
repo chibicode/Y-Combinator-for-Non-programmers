@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import { H3 } from 'src/components/ContentTags'
 import SectionContext from 'src/components/SectionContext'

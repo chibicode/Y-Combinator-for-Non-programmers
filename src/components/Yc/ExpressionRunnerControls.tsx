@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import h from 'src/lib/h'

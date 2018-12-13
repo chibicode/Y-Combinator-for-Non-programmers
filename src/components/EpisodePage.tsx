@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'

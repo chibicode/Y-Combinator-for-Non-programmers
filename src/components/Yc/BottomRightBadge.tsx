@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'

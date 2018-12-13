@@ -1,6 +1,7 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import dynamic from 'next/dynamic'
 import React from 'react'
 import EmojiLoader from 'src/components/Twemoji/2b1c'

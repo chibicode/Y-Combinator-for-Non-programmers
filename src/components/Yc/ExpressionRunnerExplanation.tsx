@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import SectionContext from 'src/components/SectionContext'
 import { colors } from 'src/lib/theme'

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
