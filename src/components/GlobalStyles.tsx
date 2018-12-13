@@ -18,6 +18,8 @@ const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
       padding-bottom: ${spaces(3)};
     `}
   >
+    {/* NOTE: For some reason, if this Global component appears AFTER {children},
+    then there's a moment where the styles are not applied. */}
     <Global
       styles={css`
         /* NOTE:
