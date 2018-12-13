@@ -422,7 +422,7 @@ export default () => {
         <Em>
           Notice that <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
           and <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>do not match</Strong>.
+          <Strong>do not match - they have different food items</Strong>.
         </Em>{' '}
         What do you think happens then? Try guessing!
       </P>

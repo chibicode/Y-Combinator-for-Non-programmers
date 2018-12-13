@@ -12,37 +12,33 @@ import h from 'src/lib/h'
 
 const Step1 = () => (
   <>
-    それぞれの料理に
-    <BottomRightBadge inline bottomRightBadgeType="callArg" />、
+    それぞれの料理に <BottomRightBadge inline bottomRightBadgeType="callArg" />
+    、
     <BottomRightBadge inline bottomRightBadgeType="funcArg" />、
-    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-    の印をつける
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の印をつける
   </>
 )
 
 const Step2 = () => (
   <>
-    <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
     がマッチするかチェック
   </>
 )
 
 const Step3 = () => (
   <>
-    マッチした
-    <TopRightBadge inline topRightBadgeType="match" />{' '}
-    <BottomRightBadge inline bottomRightBadgeType="funcBound" />が
-    <BottomRightBadge inline bottomRightBadgeType="callArg" />
-    と同じ料理になる
+    マッチした <TopRightBadge inline topRightBadgeType="match" />{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" /> が{' '}
+    <BottomRightBadge inline bottomRightBadgeType="callArg" /> と同じ料理になる
   </>
 )
 
 const Step4 = () => (
   <>
-    <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-    <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-    が消える
+    <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+    <BottomRightBadge inline bottomRightBadgeType="funcArg" /> が消える
   </>
 )
 
@@ -396,30 +392,30 @@ export default () => {
       <SideNoteSection heading={'これまでのまとめ'} color="yellow">
         <FourSteps />
       </SideNoteSection>
-      <H3>Challenge Quiz</H3>
+      <H3>クイズに挑戦</H3>
       <P>
-        At the end of each episode, we give you a{' '}
-        <Strong>challenge quiz</Strong>.{' '}
+        ページの最後には、
+        <Strong>ちょっと難しいクイズ問題</Strong>を用意しています。
+        <Em>わからなくてもいいので、チャレンジしてみてください。</Em>
+      </P>
+      <P>
+        <Strong>クイズはこちら。</Strong>次の{h('ycBentoBox')}
+        は、全てのステップを終えたらどうなるでしょう？
+      </P>
+      {episode1[i++]()}
+      <P>
+        <Strong>ヒント:</Strong> それぞれの料理に印をつけるとこうなります。
         <Em>
-          You should try, but they’re hard, so don’t worry if you have no idea.
+          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          <Strong>が違う料理なので、マッチしませんよね。</Strong>
         </Em>
-      </P>
-      <P>
-        <Strong>Here’s the quiz:</Strong> What do you think will happen to the
-        following {h('ycBentoBox')} after taking all the steps?
+        では、この場合はどうなると思いますか？予想してみてください！
       </P>
       {episode1[i++]()}
       <P>
-        <Strong>Hint:</Strong> Here are the labels.{' '}
-        <Em>
-          Notice that <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-          and <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>do not match</Strong>.
-        </Em>{' '}
-        What do you think happens then? Try guessing!
+        下のボタンをクリックしていただいて、次のページに進むと答えがわかります!
       </P>
-      {episode1[i++]()}
-      <P>Click on the button below to see the answer!</P>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )
