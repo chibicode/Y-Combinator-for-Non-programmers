@@ -1,16 +1,6 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
-import React from 'react'
+import styled from '@emotion/styled'
 import { spaces } from 'src/lib/theme'
 
-export const P: React.FunctionComponent<JSX.IntrinsicElements['p']> = ({
-  ...props
-}) => (
-  <p
-    {...props}
-    css={css`
-      margin: 0 0 ${spaces(1)};
-    `}
-  />
-)
+export const P = styled.p`
+  margin: 0 0 ${spaces(1)};
+`

@@ -5,6 +5,7 @@ import React from 'react'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
 import Page from 'src/components/Page'
+import SectionContext from 'src/components/SectionContext'
 import {
   colors,
   fontSizes,
@@ -41,7 +42,7 @@ const Index: React.FunctionComponent<{}> = () => (
         >
           <h1
             css={css`
-              margin: 0;
+              margin: 0 0 ${spaces(1)};
               font-size: ${fontSizes(1.75)};
             `}
           >
@@ -54,7 +55,14 @@ const Index: React.FunctionComponent<{}> = () => (
               <Logo />
             </span>
           </h1>
-          <Content name="others/Welcome" />
+          <SectionContext.Provider
+            value={{
+              emBackgroundColor: colors('yellow200'),
+              emForegroundColor: colors('indigo500')
+            }}
+          >
+            <Content name="others/Welcome" />
+          </SectionContext.Provider>
         </div>
         <div
           css={css`
