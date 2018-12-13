@@ -1,5 +1,5 @@
-import { css } from 'emotion'
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import {
   Blockquote,
   Em,
@@ -130,7 +130,7 @@ export default () => {
         <Em>a bento box has multiple cells, each with a food item</Em>.
       </P>
       <P
-        className={css`
+        css={css`
           text-align: center;
         `}
       >

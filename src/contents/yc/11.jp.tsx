@@ -1,5 +1,5 @@
-import { css } from 'emotion'
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import {
   Em,
   H3,
@@ -224,44 +224,21 @@ export default () => {
         <tbody>
           <tr>
             <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
               真
             </Td>
             <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
               真
             </Td>
             <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              真
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-            <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
@@ -270,21 +247,21 @@ export default () => {
           </tr>
           <tr>
             <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              偽
-            </Td>
-            <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
               真
             </Td>
             <Td
-              className={css`
+              css={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              偽
+            </Td>
+            <Td
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
@@ -293,21 +270,44 @@ export default () => {
           </tr>
           <tr>
             <Td
-              className={css`
+              css={css`
                 background-color: ${colors('pink50')};
               `}
             >
               偽
             </Td>
             <Td
-              className={css`
+              css={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              真
+            </Td>
+            <Td
+              css={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              真
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              css={css`
                 background-color: ${colors('pink50')};
               `}
             >
               偽
             </Td>
             <Td
-              className={css`
+              css={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              偽
+            </Td>
+            <Td
+              css={css`
                 background-color: ${colors('pink50')};
               `}
             >

@@ -1,21 +1,18 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { colors, spaces } from 'src/lib/theme'
 
-export const Blockquote: React.FunctionComponent<JSX.IntrinsicElements['blockquote']> = ({
-  className,
-  ...props
-}) => (
+export const Blockquote: React.FunctionComponent<
+  JSX.IntrinsicElements['blockquote']
+> = ({ ...props }) => (
   <blockquote
     {...props}
-    className={cx(
-      css`
-        border-left: 0.5rem solid ${colors('indigo50')};
-        padding-left: 1rem;
-        margin: 0 0 ${spaces(1)};
-        color: ${colors('indigo500')};
-      `,
-      className
-    )}
+    css={css`
+      border-left: 0.5rem solid ${colors('indigo50')};
+      padding-left: 1rem;
+      margin: 0 0 ${spaces(1)};
+      color: ${colors('indigo500')};
+    `}
   />
 )

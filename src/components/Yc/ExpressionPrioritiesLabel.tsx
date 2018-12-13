@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
@@ -63,19 +64,16 @@ const height = (
   return 1.3 * multiplier
 }
 
-const ExpressionPrioritiesLabelBox: React.FunctionComponent<ExpressionPrioritiesLabelBox> = ({
-  emphasize,
-  priority,
-  position,
-  collapsed
-}) => (
+const ExpressionPrioritiesLabelBox: React.FunctionComponent<
+  ExpressionPrioritiesLabelBox
+> = ({ emphasize, priority, position, collapsed }) => (
   <ExpressionPriorityContext.Consumer>
     {({ activePriority }) => (
       <ExpressionRunnerContext.Consumer>
         {({ variableSize }) => (
           <Flex>
             <FlexCenter
-              className={css`
+              css={css`
                 color: ${colors(
                   emphasize && activePriority === priority
                     ? 'white'
@@ -103,12 +101,11 @@ const ExpressionPrioritiesLabelBox: React.FunctionComponent<ExpressionPriorities
               `}
             >
               <div
-                className={
-                  position === 'bottomleft'
-                    ? css`
-                        transform: translateY(-1px);
-                      `
-                    : ''
+                css={
+                  position === 'bottomleft' &&
+                  css`
+                    transform: translateY(-1px);
+                  `
                 }
               >
                 {priority}
@@ -154,7 +151,7 @@ export default class ExpressionPrioritiesLabel extends React.Component<
     } else {
       return (
         <div
-          className={css`
+          css={css`
             position: absolute;
             left: 0px;
             ${

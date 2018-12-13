@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import Flex from 'src/components/Flex'
 
 const FlexCenter = styled(Flex)`

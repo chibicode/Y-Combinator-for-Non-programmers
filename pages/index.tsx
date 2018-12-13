@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
@@ -19,7 +20,7 @@ const Index: React.FunctionComponent<{}> = () => (
   <Page>
     <Container size="md">
       <div
-        className={css`
+        css={css`
           color: ${colors('indigo300')};
           padding: ${spaces(2)} 0;
           line-height: ${lineHeights(1.3)};
@@ -27,24 +28,24 @@ const Index: React.FunctionComponent<{}> = () => (
           font-weight: ${fontWeights(600)};
           letter-spacing: ${letterSpacings('title')};
           margin: 0 auto;
-          ${ns(css`
+          ${ns} {
             padding: ${spaces(4)} 0;
-          `)};
+          }
         `}
       >
         <div
-          className={css`
+          css={css`
             margin-bottom: 3em;
           `}
         >
           <h1
-            className={css`
+            css={css`
               margin: 0;
               font-size: ${fontSizes(1.75)};
             `}
           >
             <span
-              className={css`
+              css={css`
                 display: inline-block;
                 height: 2.5em;
               `}
@@ -55,7 +56,7 @@ const Index: React.FunctionComponent<{}> = () => (
           <Content name="others/Welcome" />
         </div>
         <div
-          className={css`
+          css={css`
             color: ${colors('indigo200')};
           `}
         >

@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
@@ -15,12 +16,12 @@ const FunctionExpressionBox: React.FunctionComponent<FunctionExpressionBoxProps>
   expression
 }) => (
   <Flex
-    className={css`
+    css={css`
       flex: 1;
     `}
   >
     <FlexCenter
-      className={css`
+      css={css`
         flex-grow: 1;
         flex-basis: 0;
         border-right: 1px solid ${colors('grey300')};
@@ -29,7 +30,7 @@ const FunctionExpressionBox: React.FunctionComponent<FunctionExpressionBoxProps>
       <ExpressionBox expression={expression.arg} />
     </FlexCenter>
     <FlexCenter
-      className={css`
+      css={css`
         flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
         flex-basis: 0;
         border-left: 1px solid ${colors('grey300')};

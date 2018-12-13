@@ -1,4 +1,5 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -24,23 +25,23 @@ const TopRightBadge: React.FunctionComponent<TopRightBadgeProps> = ({
   inline
 }) => (
   <span
-    className={cx(
+    css={[
       css`
         align-items: center;
         justify-content: center;
       `,
-      {
-        [css`
+      !inline &&
+        css`
           display: flex;
           font-size: 0.5em;
-        `]: !inline,
-        [css`
+        `,
+      inline &&
+        css`
           display: inline-flex;
           font-size: 1em;
           transform: translateY(0.15em);
-        `]: inline
-      }
-    )}
+        `
+    ]}
   >
     {topRightBadgeType !== 'betaReduceCallArg' && (
       <Emoji noVerticalTransform>

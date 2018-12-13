@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import Link, { LinkState } from 'next/link'
 import React from 'react'
 import { colors, fontWeights } from 'src/lib/theme'
@@ -19,7 +20,7 @@ const HomeLink: React.FunctionComponent<HomeLink> = ({
   <Link {...linkProps}>
     <a
       {...anchorProps}
-      className={css`
+      css={css`
         font-weight: ${fontWeights(800)};
         color: ${colors('pink400')};
         text-decoration: underline;

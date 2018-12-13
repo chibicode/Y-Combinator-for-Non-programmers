@@ -1,11 +1,11 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import h from 'src/lib/h'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 const Button: React.FunctionComponent<JSX.IntrinsicElements['button']> = ({
-  className,
   // Remove ref b/c it's HOC
   ref,
   ...props
@@ -13,39 +13,36 @@ const Button: React.FunctionComponent<JSX.IntrinsicElements['button']> = ({
   <ButtonWithTouchActiveStates
     {...props}
     activeBackgroundColor={colors('indigo100')}
-    className={cx(
-      css`
-        border-radius: ${radii(0.25)};
-        border: 2px solid ${colors('indigo300')};
-        background: #fff;
-        color: ${colors('indigo500')};
-        font-size: ${fontSizes(0.85)};
-        padding: ${spaces(0.5)} 0;
-        &:enabled {
-          cursor: pointer;
-        }
+    css={css`
+      border-radius: ${radii(0.25)};
+      border: 2px solid ${colors('indigo300')};
+      background: #fff;
+      color: ${colors('indigo500')};
+      font-size: ${fontSizes(0.85)};
+      padding: ${spaces(0.5)} 0;
+      &:enabled {
+        cursor: pointer;
+      }
 
-        &:disabled,
-        &:active:disabled {
-          color: ${colors('indigo300')};
+      &:disabled,
+      &:active:disabled {
+        color: ${colors('indigo300')};
+        background: ${colors('indigo50')};
+      }
+
+      @media (hover: hover) {
+        &:hover:enabled {
           background: ${colors('indigo50')};
         }
-
-        @media (hover: hover) {
-          &:hover:enabled {
-            background: ${colors('indigo50')};
-          }
-          &:focus {
-            box-shadow: inset 0 0 0 1px ${colors('indigo300')};
-            outline: none;
-          }
+        &:focus {
+          box-shadow: inset 0 0 0 1px ${colors('indigo300')};
+          outline: none;
         }
-        &:active:enabled {
-          background: ${colors('indigo100')};
-        }
-      `,
-      className
-    )}
+      }
+      &:active:enabled {
+        background: ${colors('indigo100')};
+      }
+    `}
   />
 )
 
@@ -67,7 +64,9 @@ const noOp = () => {
   return
 }
 
-const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControlsProps> = ({
+const ExpressionRunnerControls: React.FunctionComponent<
+  ExpressionRunnerControlsProps
+> = ({
   canStepForward,
   canStepBackward,
   onNextClick,
@@ -81,7 +80,7 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
   isDone
 }) => (
   <div
-    className={css`
+    css={css`
       display: flex;
       margin: ${spaces(0.75)} -2px 0 -2px;
     `}
@@ -89,7 +88,7 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
     {!hideForwardAndBackButtons && !isPlaying && canStepBackward ? (
       <Button
         onClick={onPreviousClick}
-        className={css`
+        css={css`
           flex: 1;
           margin-right: ${spaces(0.25)};
         `}
@@ -98,7 +97,7 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
       </Button>
     ) : (
       <div
-        className={css`
+        css={css`
           flex: 1;
           margin-right: ${spaces(0.25)};
           /* Same border as the button */
@@ -116,21 +115,22 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
                 : onAutoClick
               : onResetClick
           }
-          className={cx(
+          css={[
             css`
               flex: 1;
               margin-left: ${spaces(0.25)};
               margin-right: ${spaces(0.25)};
             `,
-            {
-              [css`
+            canStepForward &&
+              !isPlaying &&
+              css`
                 background: ${colors('yellow100')};
-              `]: canStepForward && !isPlaying,
-              [css`
+              `,
+            !canStepForward &&
+              css`
                 background: ${colors('pink50')};
-              `]: !canStepForward
-            }
-          )}
+              `
+          ]}
         >
           {canStepForward
             ? isPlaying
@@ -140,7 +140,7 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
         </Button>
       ) : (
         <div
-          className={css`
+          css={css`
             flex: 1;
             margin-left: ${spaces(0.25)};
             /* Same border as the button */
@@ -152,7 +152,7 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
       <Button
         onClick={canStepForward ? onNextClick : noOp}
         disabled={!canStepForward}
-        className={css`
+        css={css`
           flex: 1;
           margin-left: ${spaces(0.25)};
         `}
@@ -161,7 +161,7 @@ const ExpressionRunnerControls: React.FunctionComponent<ExpressionRunnerControls
       </Button>
     ) : (
       <div
-        className={css`
+        css={css`
           flex: 1;
           margin-left: ${spaces(0.25)};
           /* Same border as the button */

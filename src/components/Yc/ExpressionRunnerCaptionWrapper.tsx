@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 
@@ -7,7 +8,7 @@ const ExpressionRunnerCaptionWrapper: React.FunctionComponent<{
   children: React.ReactNode
 }> = ({ pinkText, children }) => (
   <div
-    className={css`
+    css={css`
       text-align: center;
       margin: ${spaces('-0.5')} -2px ${spaces(0.5)} -2px;
       font-size: ${fontSizes(0.85)};

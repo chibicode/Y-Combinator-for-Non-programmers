@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
@@ -286,7 +287,7 @@ const ExpressionRunnerExplanation: React.FunctionComponent<
       locale === 'en' ? (
         <>
           <Strong
-            className={css`
+            css={css`
               color: ${colors('pink400')};
             `}
           >
@@ -299,7 +300,7 @@ const ExpressionRunnerExplanation: React.FunctionComponent<
         <>
           <Emoji>▶️</Emoji> 残り{' '}
           <Strong
-            className={css`
+            css={css`
               color: ${colors('pink400')};
             `}
           >

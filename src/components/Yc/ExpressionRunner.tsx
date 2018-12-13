@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
@@ -226,7 +227,7 @@ export default class ExpressionRunner extends React.Component<
             verticalMargin={0}
           >
             <div
-              className={css`
+              css={css`
                 max-width: 100%;
                 /* Offset for -2px on border wrapper */
                 padding-left: 2px;
@@ -234,7 +235,7 @@ export default class ExpressionRunner extends React.Component<
               `}
             >
               <div
-                className={css`
+                css={css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                   opacity: ${isFastForwarding ? 0.8 : 1};
                   ${isFastForwarding ? 'filter: grayscale(100%);' : ''};

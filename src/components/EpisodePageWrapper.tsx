@@ -1,4 +1,5 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
@@ -30,7 +31,7 @@ const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
         <>
           {episodeTitlePrefix(episodeNumber, lessonName)}:{' '}
           <span
-            className={css`
+            css={css`
               color: ${colors('pink400')};
             `}
           >

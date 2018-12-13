@@ -1,4 +1,5 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
@@ -15,7 +16,7 @@ const CallExpressionBox: React.FunctionComponent<CallExpressionBoxProps> = ({
   expression
 }) => (
   <Flex
-    className={css`
+    css={css`
       flex-direction: column;
       flex: 1;
     `}
@@ -30,11 +31,12 @@ const CallExpressionBox: React.FunctionComponent<CallExpressionBoxProps> = ({
           }}
         >
           <FlexCenter
-            className={cx({
-              [css`
+            css={
+              expression.state !== 'default' &&
+              css`
                 border-bottom: 5px solid ${colors('indigo300')};
-              `]: expression.state !== 'default'
-            })}
+              `
+            }
           >
             <ExpressionBox expression={expression.arg} />
           </FlexCenter>

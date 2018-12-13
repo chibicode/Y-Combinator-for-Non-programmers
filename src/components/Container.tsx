@@ -1,11 +1,12 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import maxWidths, { allMaxWidths } from 'src/lib/theme/maxWidths'
 import spaces, { allSpaces } from 'src/lib/theme/spaces'
 
 export interface ContainerProps {
   children: React.ReactNode
-  Component: React.ComponentType<{ className?: string }> | string
+  Component: React.ComponentType | string
   size: keyof typeof allMaxWidths
   verticalMargin: keyof typeof allSpaces
   horizontalPadding: keyof typeof allSpaces
@@ -15,13 +16,11 @@ const Container: React.FunctionComponent<ContainerProps> & {
   defaultProps: Partial<ContainerProps>
 } = ({ children, Component, size, verticalMargin, horizontalPadding }) => (
   <Component
-    className={cx(
-      css`
-        max-width: ${maxWidths(size)};
-        margin: ${spaces(verticalMargin)} auto;
-        padding: 0 ${spaces(horizontalPadding)};
-      `
-    )}
+    css={css`
+      max-width: ${maxWidths(size)};
+      margin: ${spaces(verticalMargin)} auto;
+      padding: 0 ${spaces(horizontalPadding)};
+    `}
   >
     {children}
   </Component>
