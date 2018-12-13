@@ -38,7 +38,7 @@
     "@types/material-ui": "^0.21.5",
     "@types/next": "^7.0.5",
     "@types/nprogress": "^0.0.29",
-    "@types/react": "^16.7.13",
+    "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
     "babel-plugin-emotion": "^9.2.11",
     "babel-plugin-inline-react-svg": "^1.0.1",
@@ -54,5 +54,9 @@
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.2.2"
+  },
+  "resolutions": {
+    "@types/react": "16.7.17",
+    "@types/react-dom": "16.0.11"
   }
 }
