@@ -4,7 +4,7 @@ import Emoji from 'src/components/Emoji'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTranslations } from 'src/lib/t'
 
-const NewUser: React.SFC<{
+const NewUser: React.FunctionComponent<{
   componentProps: { lessonName: keyof typeof pathHelpers }
 }> = ({ componentProps }) => (
   <>

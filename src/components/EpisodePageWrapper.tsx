@@ -11,13 +11,20 @@ interface EpisodePageWrapperProps {
   lessonName: keyof typeof pathHelpers
 }
 
-const EpisodePageWrapper: React.SFC<EpisodePageWrapperProps> = ({
+const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
   lessonName,
   episodeNumber
 }) => (
   <EpisodePage
     lessonName={lessonName}
     lessonTitle={t(`${lessonName}Title` as keyof typeof allTranslations)}
+    episodeTitleString={
+      episodeNumber
+        ? `${episodeTitlePrefix(episodeNumber, lessonName)}: ${t(
+            `${lessonName}Episode${episodeNumber}` as keyof typeof allTranslations
+          )}`
+        : undefined
+    }
     episodeTitle={
       episodeNumber ? (
         <>

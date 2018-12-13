@@ -1,10 +1,10 @@
 import React from 'react'
-import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode6 } from 'src/components/Yc/AllExpressionRunners'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
+import { episode7 } from 'src/components/Yc/AllExpressionRunners'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -12,115 +12,141 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 5)}
+      {h('ycQuizReview', 6)}
       <P>{h('ycTryUntilDone')}:</P>
-      {episode6[i++]()}
+      {episode7[i++]()}
       <P>
-        というわけで、答えは
-        <Strong>お寿司</Strong> <Emoji>🍣</Emoji> です。
+        最終的には以下のようになったので、答えは
+        <Strong>Yes</Strong>
+        でした。
       </P>
+      {episode7[i++]()}
       <P>
-        <Strong>お気づきかもしれませんが、</Strong>
-        実行をスピーディーにするために、{' '}
-        <EmojiBadge badgeType="funcBound" inline />{' '}
-        <EmojiBadge badgeType="funcUnbound" inline />{' '}
-        <EmojiBadge badgeType="funcArg" inline />{' '}
-        <EmojiBadge badgeType="callArg" inline /> をすべて同時に表示しています。
-      </P>
-      <H3>続いてはこちら</H3>
-      <P>
-        今度はこの
-        {h('ycBentoBox')}
-        を見てみましょう:
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Em>
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が4つもありますよね。
-        </Em>{' '}
-        どれから先にやればいいのでしょうか？
-      </P>
-      <P>
-        <Strong>答え:</Strong>{' '}
-        <Em>
-          <Strong>いちばん左にある</Strong>{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめます。
-        </Em>
-      </P>
-      <H3>いちばん左</H3>
-      <P>
+        <Strong>ちょっと難しかった部分:</Strong>{' '}
+        下のステップはちょっと難しかったかもしれません。(
         <Em>{h('ycNext')} を押してみてください</Em>
-        。一番左にあるふたつの{' '}
-        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-        の部分からはじめるということが分かります。
+        ):
       </P>
-      {episode6[i++]()}
-      <P>このまま最後まで進めてしまいましょう:</P>
-      {episode6[i++]()}
-      <H3>ここまでのまとめ</H3>
+      {episode7[i++]()}
       <P>
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が複数あるときは、
+        ご覧の通り、
         <Em>
-          <Strong>いちばん左にある</Strong>{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめること。
+          <BottomRightBadge bottomRightBadgeType="callArg" inline />
+          がついている料理がすべてマッチ{' '}
+          <TopRightBadge inline topRightBadgeType="match" />{' '}
+          したマスにコピペされた
+        </Em>
+        のがわかります。
+      </P>
+      <P>
+        では、いよいよ最後の基本ルール、
+        <Strong>
+          シャッフルタイム <Emoji>🔀</Emoji>
+        </Strong>{' '}
+        を紹介します。
+      </P>
+      <EmojiSeparator emojis={['🔀', '🔀', '🔀']} />
+      <H3>シャッフルタイム</H3>
+      <P>
+        次の
+        {h('ycBentoBox')}
+        をご覧ください。{' '}
+        <Em>
+          <Strong>
+            サンドイッチ <Emoji size="mdlg">🥪</Emoji>
+          </Strong>{' '}
+          が、
+          <BottomRightBadge bottomRightBadgeType="callArg" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+          にあることに注目です。
+        </Em>
+        .
+      </P>
+      {episode7[i++]()}
+      <P>
+        <Em>
+          同じ料理が
+          <BottomRightBadge bottomRightBadgeType="callArg" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+          <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+          にあると、
+          <Strong>
+            シャッフルタイム <Emoji>🔀</Emoji>
+          </Strong>{' '}
+          になります。
         </Em>
       </P>
-      <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
-      <H3>1のペアからはじめられない場合</H3>
+      {episode7[i++]()}
       <P>
         <Strong>
-          たまに、
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめられない場合があります。
+          シャッフルタイム <Emoji>🔀</Emoji>
+        </Strong>{' '}
+        では、次のようなことが起こります:
+      </P>
+      <Ul>
+        <UlLi>
+          <Em>
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> と{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            にある全てのサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+            がまだ使われていない
+            <Strong>新しい</Strong>
+            料理になる。
+          </Em>
+        </UlLi>
+        <UlLi>
+          <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+          にあるサンドイッチ <Emoji size="mdlg">🥪</Emoji> はそのまま。
+        </UlLi>
+      </Ul>
+      <P>
+        <Em>{h('ycNext')} を押して、どうなるか見てみましょう:</Em>
+      </P>
+      {episode7[i++]()}
+      <P>
+        というわけで、
+        <Strong>
+          サンドイッチ <Emoji size="mdlg">🥪</Emoji> がステーキ{' '}
+          <Emoji size="mdlg">🍗</Emoji> に
         </Strong>
-        こちらをご覧ください:
+        なりました。
       </P>
-      {episode6[i++]()}
+      <EmojiSeparator emojis={['🥪', '🔀', '🍗']} />
       <P>
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        のペアはこちらですが、
-        <Em>
-          これはマスがふたつしかないので、先に進むことができないやつです！
-        </Em>
+        あとはいつも通り、
+        {h('ycTryUntilDone')}:
       </P>
-      {episode6[i++]()}
+      {episode7[i++]()}
+      <P>以上です！</P>
+      <H3>もうひとつの例</H3>
       <P>
-        このように
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        のペア からはじめられない時は、
-        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-        のペア からはじめる必要があります。
+        シャッフルタイム <Emoji>🔀</Emoji> が起きるもうひとつの例はこちら。
+        {h('ycTryUntilDone')}:
       </P>
-      {episode6[i++]()}
-      <H3>ここまでのまとめ</H3>
-      <P>
-        <Em>
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめられない時は、
-          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-          のペアからはじめ、
-        </Em>
-        それが無理なら次の数字へ…と続ける。
-      </P>
-      <P>それでは、ここでまたクイズです！</P>
-      <H3>クイズ</H3>
-      <P>
-        下の
-        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>YesかNoで答えてみてください:</Strong>{' '}
-        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>これはちょっと難しい問題ですが</Strong>
-        、諦めずにチャレンジしてみてください！
-      </P>
-      <YcNextLessonButton nextEpisodeNumber={7} />
+      {episode7[i++]()}
+      <H3>それではここで…</H3>
+      <P>良いお知らせがあります！</P>
+      <Ul>
+        <UlLi>
+          <Strong>
+            <Em>
+              シャッフルタイム <Emoji>🔀</Emoji>{' '}
+              のルールを暗記する必要はありません。
+            </Em>
+          </Strong>
+          「こういうルールもあるんだ」と思っていただければ大丈夫です。
+        </UlLi>
+        <UlLi>
+          <Strong>初級はこれで終了です！</Strong>
+          次の中級からは面白い問題を解いていきます。
+        </UlLi>
+        <UlLi>
+          <Strong>今回はクイズはなしです。</Strong>
+          そのまま次のページに進んでください！
+        </UlLi>
+      </Ul>
+      <YcNextLessonButton nextEpisodeNumber={7} primaryTextType="nextPage" />
     </>
   )
 }

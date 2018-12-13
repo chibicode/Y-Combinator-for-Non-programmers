@@ -2,23 +2,23 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import Flex from 'src/components/Flex'
 import ExpressionRunnerContext, {
-  ExpressionRunnerContextProps
+  HighlightOverrides
 } from 'src/components/Yc/ExpressionRunnerContext'
 import crossSvg from 'src/images/cross.url.svg'
-import starSvg from 'src/images/star.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
-  highlightType: VariableExpression['highlightType'] | 'none'
-  badgeType: VariableExpression['badgeType']
+  highlightType: HighlightOverrides
+  bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
+  topRightBadgeType: VariableExpression['topRightBadgeType']
   children: React.ReactNode
 }
 
 const background = (
-  highlightType: VariableExpression['highlightType'] | 'none',
-  variableSize: ExpressionRunnerContextProps['variableSize'],
-  isDoneOrReady: boolean
+  highlightType: BorderWrapperProps['highlightType'],
+  isDoneOrReady: boolean,
+  topRightBadgeType: BorderWrapperProps['topRightBadgeType']
 ): string | undefined => {
   switch (highlightType) {
     case 'default': {
@@ -37,52 +37,37 @@ const background = (
         background: ${colors('white')};
       `
     }
-    case 'semiTransparent': {
+    case 'forceYellowHighlight': {
       return css`
-        background: ${colors('grey200')};
+        background: ${colors('yellow100')};
       `
     }
     case 'highlighted': {
-      return css`
-        background: ${colors('yellow100')};
-      `
-    }
-    case 'unmatch': {
-      return css`
-        background: ${colors('pink50')};
-      `
-    }
-    case 'highlightedNoEmphBorder': {
-      return css`
-        background: ${colors('yellow100')};
-      `
-    }
-    case 'match': {
-      return css`
-        background-image: url(${starSvg});
-        background-size: ${variableSize === 'lg' ? 2 : 1.5}rem
-          ${variableSize === 'lg' ? 2 : 1.5}rem;
-        background-position: center center;
-      `
-    }
-    case 'conflictResolvedCallArg':
-    case 'conflictFuncUnbound':
-    case 'conflictFuncBound':
-    case 'conflictCallArg': {
-      return css`
-        background: ${colors('lightBlue50')};
-      `
-    }
-    case 'conflictResolvedFuncUnbound':
-    case 'conflictResolvedBound': {
-      return css`
-        background: ${colors('lightGreen100')};
-      `
+      if (topRightBadgeType === 'match') {
+        return css`
+          background: ${colors('teal50')};
+        `
+      } else if (topRightBadgeType === 'unmatch') {
+        return css`
+          background: ${colors('pink50')};
+        `
+      } else if (
+        topRightBadgeType === 'betaReduced' ||
+        topRightBadgeType === 'betaReduceCallArg'
+      ) {
+        return css`
+          background: ${colors('blue50')};
+        `
+      } else {
+        return css`
+          background: ${colors('yellow100')};
+        `
+      }
     }
   }
 }
 
-const Cross: React.SFC<{}> = () => (
+const Cross: React.FunctionComponent<{}> = () => (
   <div
     className={css`
       position: absolute;
@@ -97,13 +82,14 @@ const Cross: React.SFC<{}> = () => (
   />
 )
 
-const BorderWrapper: React.SFC<BorderWrapperProps> = ({
+const BorderWrapper: React.FunctionComponent<BorderWrapperProps> = ({
   highlightType,
-  badgeType,
+  bottomRightBadgeType,
+  topRightBadgeType,
   children
 }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ variableSize, isDoneOrReady }) => (
+    {({ isDoneOrReady, highlightOverrides }) => (
       <Flex
         className={cx(
           css`
@@ -113,14 +99,24 @@ const BorderWrapper: React.SFC<BorderWrapperProps> = ({
             flex: 1;
             position: relative;
           `,
-          background(highlightType, variableSize, isDoneOrReady),
+          background(
+            highlightOverrides[bottomRightBadgeType] || highlightType,
+            isDoneOrReady,
+            topRightBadgeType
+          ),
           {
             [css`
-              border-right: 5px solid ${colors('pink400')};
-            `]: highlightType === 'highlighted' && badgeType === 'funcBound',
+              border-right: 5px solid ${colors('yellow900')};
+            `]:
+              highlightType === 'highlighted' &&
+              bottomRightBadgeType === 'funcBound' &&
+              topRightBadgeType === 'none',
             [css`
               border-left: 5px solid ${colors('pink400')};
-            `]: highlightType === 'highlighted' && badgeType === 'funcArg'
+            `]:
+              highlightType === 'highlighted' &&
+              bottomRightBadgeType === 'funcArg' &&
+              topRightBadgeType === 'none'
           }
         )}
       >

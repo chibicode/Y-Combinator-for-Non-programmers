@@ -38,10 +38,20 @@ export function toShowFuncArg(
   funcSide: boolean
 ): StepChild<'showFuncArg'> {
   if (isVariable(e)) {
-    if (funcSide && e.bound) {
-      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
+    if (funcSide) {
+      return {
+        ...e,
+        highlightType: 'active',
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'none'
+      }
     } else {
-      return { ...e, highlightType: 'active', badgeType: 'none' }
+      return {
+        ...e,
+        highlightType: 'active',
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'callArg'
+      }
     }
   } else if (isFunction(e)) {
     return {
@@ -64,7 +74,8 @@ const highlightFuncArg = (
 ): VariableWithState<'highlightFuncArg'> => ({
   ...e,
   highlightType: 'highlighted',
-  badgeType: 'funcArg'
+  topRightBadgeType: 'none',
+  bottomRightBadgeType: 'funcArg'
 })
 
 const stepToShowFuncArg = (

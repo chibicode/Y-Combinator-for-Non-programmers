@@ -3,7 +3,7 @@ import React from 'react'
 import SectionContext from 'src/components/SectionContext'
 import { colors } from 'src/lib/theme'
 
-export const Strong: React.SFC<JSX.IntrinsicElements['strong']> = ({
+export const Strong: React.FunctionComponent<JSX.IntrinsicElements['strong']> = ({
   className,
   ...props
 }) => (
@@ -18,20 +18,18 @@ export const Strong: React.SFC<JSX.IntrinsicElements['strong']> = ({
   />
 )
 
-export const Em: React.SFC<JSX.IntrinsicElements['em']> = ({
+export const Em: React.FunctionComponent<JSX.IntrinsicElements['em']> = ({
   className,
   ...props
 }) => (
   <SectionContext.Consumer>
-    {({ currentSection }) => (
+    {({ emBackgroundColor }) => (
       <em
         {...props}
         className={cx(
           css`
             font-style: normal;
-            background: ${colors(
-              currentSection === 'sideNote' ? 'white66' : 'yellow100'
-            )};
+            background: ${emBackgroundColor || colors('yellow100')};
           `,
           className
         )}

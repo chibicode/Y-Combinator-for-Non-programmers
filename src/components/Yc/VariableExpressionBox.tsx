@@ -2,11 +2,12 @@ import { css } from 'emotion'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -36,7 +37,7 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
     sm: fontSizes(1.5)
   }[size])
 
-const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
+const VariableExpressionBox: React.FunctionComponent<VariableExpressionBoxProps> = ({
   expression
 }) => (
   <ExpressionRunnerContext.Consumer>
@@ -60,22 +61,35 @@ const VariableExpressionBox: React.SFC<VariableExpressionBoxProps> = ({
           <span
             className={css`
               position: relative;
-              opacity: ${expression.highlightType === 'semiTransparent'
-                ? 0.5
-                : 1};
             `}
           >
             <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
-            {expression.badgeType !== 'none' && (
+            {expression.bottomRightBadgeType !== 'none' && (
               <span
                 className={css`
                   position: absolute;
                   right: -0.2em;
                   bottom: 0;
-                  z-index: ${zIndices('emojiBadge')};
+                  z-index: ${zIndices('badge')};
                 `}
               >
-                <EmojiBadge badgeType={expression.badgeType} />
+                <BottomRightBadge
+                  bottomRightBadgeType={expression.bottomRightBadgeType}
+                />
+              </span>
+            )}
+            {expression.topRightBadgeType !== 'none' && (
+              <span
+                className={css`
+                  position: absolute;
+                  right: -0.18em;
+                  top: 0;
+                  z-index: ${zIndices('badge')};
+                `}
+              >
+                <TopRightBadge
+                  topRightBadgeType={expression.topRightBadgeType}
+                />
               </span>
             )}
           </span>

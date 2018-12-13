@@ -11,7 +11,7 @@ interface CallExpressionBoxProps {
   expression: CallExpression
 }
 
-const CallExpressionBox: React.SFC<CallExpressionBoxProps> = ({
+const CallExpressionBox: React.FunctionComponent<CallExpressionBoxProps> = ({
   expression
 }) => (
   <Flex

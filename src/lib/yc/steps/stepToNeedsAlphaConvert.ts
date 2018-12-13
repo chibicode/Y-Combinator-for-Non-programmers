@@ -49,35 +49,49 @@ export function toNeedsAlphaConvert(
       if (conflicts.includes(x.name)) {
         return {
           ...x,
-          highlightType: 'conflictFuncBound',
-          badgeType: 'funcBound'
+          highlightType: 'highlighted',
+          topRightBadgeType: 'conflict',
+          bottomRightBadgeType: 'funcBound'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
-          badgeType: 'funcBound'
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcBound'
         }
       }
     } else if (funcSide && !x.bound) {
       if (conflicts.includes(x.name)) {
         return {
           ...x,
-          highlightType: 'conflictFuncUnbound',
-          badgeType: 'funcUnbound'
+          highlightType: 'highlighted',
+          topRightBadgeType: 'conflict',
+          bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
-          badgeType: 'funcUnbound'
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcUnbound'
         }
       }
     } else {
       if (conflicts.includes(x.name)) {
-        return { ...x, highlightType: 'conflictCallArg', badgeType: 'callArg' }
+        return {
+          ...x,
+          highlightType: 'highlighted',
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
+        }
       } else {
-        return { ...x, highlightType: 'active', badgeType: 'callArg' }
+        return {
+          ...x,
+          highlightType: 'active',
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
+        }
       }
     }
   } else if (isFunction(x)) {

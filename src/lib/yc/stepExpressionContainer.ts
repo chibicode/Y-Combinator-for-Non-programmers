@@ -1,6 +1,7 @@
 import produce, { DraftObject } from 'immer'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
+import { StepOptions } from 'src/lib/yc/ExpressionContainerManager'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
@@ -48,13 +49,32 @@ const stepExpressionContainerReset = (
 
 const step = (
   e: DraftObject<ExecutableCall>,
-  showAllShowSteps?: boolean,
+  { showAllShowSteps }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
+  const alphaConvert = (): {
+    nextExpression: ExecutableCall | StepChild<'default'>
+    matchExists?: boolean
+    previouslyChangedExpressionState: CallStates
+  } => {
+    const conflicts = conflictingVariableNames(e)
+    if (conflicts.length > 0) {
+      return {
+        nextExpression: stepToNeedsAlphaConvert(e, conflicts),
+        previouslyChangedExpressionState: 'needsAlphaConvert'
+      }
+    } else {
+      return {
+        ...stepToBetaReducePreviewBefore(e),
+        previouslyChangedExpressionState: 'betaReducePreviewBefore'
+      }
+    }
+  }
+
   switch (e.state) {
     case 'default': {
       return {
@@ -65,54 +85,47 @@ const step = (
     case 'active': {
       if (showAllShowSteps) {
         return {
-          nextExpression: stepToShowFuncBound(e),
-          previouslyChangedExpressionState: 'showFuncBound'
+          nextExpression: stepToShowCallArg(e),
+          previouslyChangedExpressionState: 'showCallArg'
         }
       } else {
-        return {
-          nextExpression: stepToShowCallArg(e, false),
-          previouslyChangedExpressionState: 'showCallArg'
+        if (hasUnboundVariables(e.func.body)) {
+          return {
+            nextExpression: stepToShowFuncUnbound(e, false),
+            previouslyChangedExpressionState: 'showFuncUnbound'
+          }
+        } else {
+          return {
+            nextExpression: stepToShowFuncBound(e, false),
+            previouslyChangedExpressionState: 'showFuncBound'
+          }
         }
       }
     }
-    case 'showFuncBound': {
+    case 'showCallArg': {
       return {
         nextExpression: stepToShowFuncArg(e),
         previouslyChangedExpressionState: 'showFuncArg'
       }
     }
     case 'showFuncArg': {
+      return {
+        nextExpression: stepToShowFuncBound(e, true),
+        previouslyChangedExpressionState: 'showFuncBound'
+      }
+    }
+    case 'showFuncBound': {
       if (hasUnboundVariables(e.func.body)) {
         return {
-          nextExpression: stepToShowFuncUnbound(e),
+          nextExpression: stepToShowFuncUnbound(e, true),
           previouslyChangedExpressionState: 'showFuncUnbound'
         }
       } else {
-        return {
-          nextExpression: stepToShowCallArg(e, true),
-          previouslyChangedExpressionState: 'showCallArg'
-        }
+        return alphaConvert()
       }
     }
     case 'showFuncUnbound': {
-      return {
-        nextExpression: stepToShowCallArg(e, true),
-        previouslyChangedExpressionState: 'showCallArg'
-      }
-    }
-    case 'showCallArg': {
-      const conflicts = conflictingVariableNames(e)
-      if (conflicts.length > 0) {
-        return {
-          nextExpression: stepToNeedsAlphaConvert(e, conflicts),
-          previouslyChangedExpressionState: 'needsAlphaConvert'
-        }
-      } else {
-        return {
-          ...stepToBetaReducePreviewBefore(e),
-          previouslyChangedExpressionState: 'betaReducePreviewBefore'
-        }
-      }
+      return alphaConvert()
     }
     case 'needsAlphaConvert': {
       return {
@@ -157,7 +170,7 @@ const step = (
   }
 }
 
-const recipe = (skipShowSteps?: boolean) => (
+const recipe = (stepOptions: StepOptions) => (
   draftContainer: DraftObject<
     | ContainerWithState<'ready'>
     | ContainerWithState<'stepped'>
@@ -183,7 +196,7 @@ const recipe = (skipShowSteps?: boolean) => (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = step(expression, skipShowSteps, draftContainer.matchExists)
+  } = step(expression, stepOptions, draftContainer.matchExists)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
@@ -216,7 +229,7 @@ const recipe = (skipShowSteps?: boolean) => (
 
 export default function stepExpressionContainer(
   e: ContainerWithState<'ready'> | ContainerWithState<'stepped'>,
-  showAllShowSteps?: boolean
+  stepOptions: StepOptions
 ):
   | ContainerWithState<'done'>
   | ContainerWithState<'stepped'>
@@ -225,7 +238,7 @@ export default function stepExpressionContainer(
     | ContainerWithState<'needsReset'>
     | ContainerWithState<'stepped'>
     | ContainerWithState<'ready'>
-  >(e, recipe(showAllShowSteps))
+  >(e, recipe(stepOptions))
 
   if (isContainerWithState(result, 'needsReset')) {
     return stepExpressionContainerReset(result)

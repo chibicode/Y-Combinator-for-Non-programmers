@@ -3,6 +3,7 @@ import {
   Blockquote,
   Em,
   ExternalLink,
+  Hr,
   Ol,
   OlLi,
   P,
@@ -10,6 +11,7 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
+import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { introduction } from 'src/components/Yc/AllExpressionRunners'
@@ -20,7 +22,16 @@ export default () => {
   return (
     <>
       <P>
-        <Strong>クイズです。</Strong>「
+        ようこそ！
+        <Strong>CSmoji</Strong>
+        は、
+        <Em>絵文字</Em>で<Em>コンピューターサイエンス(CS)</Em>
+        を学べるサイトです。もちろん無料です。
+        <Emoji>😉</Emoji>
+      </P>
+      <Hr />
+      <P>
+        <Strong>まずはじめに、クイズです。</Strong>「
         <Strong>
           <Em>Yコンビネーター</Em>
         </Strong>
@@ -54,7 +65,7 @@ export default () => {
         </UlLi>
         <UlLi>
           <Strong>プログラマーの方なら、</Strong>
-          Yコンビネーターという「関数」がどんなものかご存知かもしれません。もしかしたら、Yコンビネーターを実装したことがあるかもしれません。でも、Yコンビネーターという関数がどんなものか、
+          Yコンビネーターという「関数」がどんなものかご存知かもしれません。でも、Yコンビネーターという関数がどんなものか、
           <Em>コードを書いたことがない人に説明できますか？</Em>
           「え、そんなの無理だよ！」と思った方は、ぜひこの記事を最後まで読んでみてください。もちろん、「Yコンビネーターという関数なんて、聞いたことがない」というプログラマーの方も大歓迎です。
         </UlLi>
@@ -148,7 +159,10 @@ export default () => {
         <Em>無料で閲覧できます</Em>。
       </P>
       <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
-      <SideNoteSection heading="Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？">
+      <SideNoteSection
+        heading="Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？"
+        color="indigo"
+      >
         <P>
           いいですよ。
           <Em>これがYコンビネーターです。</Em>
@@ -162,7 +176,10 @@ export default () => {
           </Em>
         </P>
       </SideNoteSection>
-      <SideNoteSection heading="このレッスンを作ったのは誰ですか？">
+      <SideNoteSection
+        heading="このレッスンを作ったのは誰ですか？"
+        color="indigo"
+      >
         <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
         <P
           className={css`
@@ -179,7 +196,11 @@ export default () => {
           <ExternalLink href="https://jp.chibicode.com/world-trip/">
             2017年はゆるく世界一周していました
           </ExternalLink>
-          。
+          。最近は、Factfulness (ファクトフルネス)という本を翻訳しました。(
+          <ExternalLink href="https://amzn.to/2QlZIqm">
+            Amazonリンク
+          </ExternalLink>
+          )
         </P>
       </SideNoteSection>
       <P>

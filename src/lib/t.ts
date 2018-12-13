@@ -11,54 +11,50 @@ export const allTranslations = {
     jp: 'あなたの知らないYコンビネーター'
   },
   ycEpisode1: {
-    en: 'Your Personal Chef',
-    jp: 'お抱えのシェフ'
-  },
-  ycEpisode2: {
     en: 'The Bento Boxes',
     jp: 'これっくらいの、お弁当箱に…'
   },
-  ycEpisode3: {
+  ycEpisode2: {
     en: 'The Next and Previous Buttons',
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
-  ycEpisode4: {
+  ycEpisode3: {
     en: '“Eat Later” List',
     jp: 'あとで食べるものリスト'
   },
-  ycEpisode5: {
+  ycEpisode4: {
     en: 'Priorities, Part 1',
     jp: '順序その1'
   },
-  ycEpisode6: {
+  ycEpisode5: {
     en: 'Priorities, Part 2',
     jp: '順序その2'
   },
-  ycEpisode7: {
+  ycEpisode6: {
     en: 'Shuffle Time',
     jp: 'シャッフルタイム'
   },
-  ycEpisode8: {
+  ycEpisode7: {
     en: 'Secret Code',
     jp: '弁当箱の暗号'
   },
-  ycEpisode9: {
+  ycEpisode8: {
     en: 'Plus One',
     jp: '1を足す'
   },
-  ycEpisode10: {
+  ycEpisode9: {
     en: 'Addition and Multiplication',
     jp: '足し算と掛け算'
   },
-  ycEpisode11: {
+  ycEpisode10: {
     en: 'Secret Boolean Code',
     jp: '弁当箱の二択暗号'
   },
-  ycEpisode12: {
+  ycEpisode11: {
     en: 'Both Yes?',
     jp: '両方とも「はい」？'
   },
-  ycEpisode13: {
+  ycEpisode12: {
     en: 'If, Then, Else',
     jp: '「はい」ならこうする、「いいえ」ならこうする'
   }

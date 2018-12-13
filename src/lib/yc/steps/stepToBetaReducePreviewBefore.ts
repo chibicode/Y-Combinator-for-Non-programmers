@@ -73,8 +73,9 @@ export function toBetaReducePreviewBefore(
         return {
           nextExpression: {
             ...e,
-            highlightType: 'match',
-            badgeType: 'funcBound'
+            highlightType: 'highlighted',
+            topRightBadgeType: 'match',
+            bottomRightBadgeType: 'funcBound'
           },
           matchExists: true
         }
@@ -82,8 +83,9 @@ export function toBetaReducePreviewBefore(
         return {
           nextExpression: {
             ...e,
-            highlightType: 'unmatch',
-            badgeType: 'funcBound'
+            highlightType: 'highlighted',
+            topRightBadgeType: 'unmatch',
+            bottomRightBadgeType: 'funcBound'
           },
           matchExists: false
         }
@@ -92,8 +94,9 @@ export function toBetaReducePreviewBefore(
       return {
         nextExpression: {
           ...e,
-          highlightType: 'semiTransparent',
-          badgeType: 'funcUnbound'
+          highlightType: 'active',
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcUnbound'
         },
         matchExists: false
       }
@@ -102,7 +105,8 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'active',
-          badgeType: 'callArg'
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
         },
         matchExists: false
       }
@@ -134,13 +138,15 @@ export function toBetaReducePreviewBefore(
   }
 }
 
-const highlightFuncArg = (
+const funcArg = (
   e: VariableExpression
-): VariableWithState<'highlightFuncArgNoEmphBorder'> => ({
+): VariableWithState<'matchFuncArgHighlighted'> => ({
   ...e,
-  highlightType: 'highlightedNoEmphBorder',
-  badgeType: 'funcArg'
+  highlightType: 'highlighted',
+  topRightBadgeType: 'match',
+  bottomRightBadgeType: 'funcArg'
 })
+
 const stepToBetaReducePreviewBefore = (
   e: ExecutableCall
 ): {
@@ -159,7 +165,7 @@ const stepToBetaReducePreviewBefore = (
       arg: argResult.nextExpression,
       func: {
         ...e.func,
-        arg: highlightFuncArg(e.func.arg),
+        arg: funcArg(e.func.arg),
         body: funcResult.nextExpression
       }
     },

@@ -7,18 +7,16 @@ import t from 'src/lib/t'
 export default () => (
   <>
     <p>
-      ようこそ！ <Emoji>👋</Emoji> CSmojiは、
-      <TextHighlight>絵文字</TextHighlight>
-      でコンピューターサイエンスを学べるサイトです。
+      <TextHighlight>CSmoji</TextHighlight>
+      は、
+      <TextHighlight>絵文字</TextHighlight>で
+      <TextHighlight>コンピューターサイエンス(CS)</TextHighlight>
+      を学べるサイトです。もちろん無料です。
       <Emoji>😉</Emoji>
     </p>
     <p>
-      よければ、レッスン第一弾「
+      レッスン第一弾はこちら→{' '}
       <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>
-      」をご覧ください。もちろん
-      <TextHighlight>無料</TextHighlight>
-      です。
-      <Emoji>👍</Emoji>
     </p>
   </>
 )

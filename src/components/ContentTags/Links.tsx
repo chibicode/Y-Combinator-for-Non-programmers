@@ -13,13 +13,13 @@ const commonLinkClass = css`
   }
 `
 
-export const ExternalLink: React.SFC<JSX.IntrinsicElements['a']> = ({
+export const ExternalLink: React.FunctionComponent<JSX.IntrinsicElements['a']> = ({
   className,
   ...props
 }) => <a {...props} className={cx(commonLinkClass, className)} />
 
 // NOTE: Can't use <ExternalLink> as a child of <Link> - the child of <Link> must be <a>
-export const InternalLink: React.SFC<JSX.IntrinsicElements['a']> = ({
+export const InternalLink: React.FunctionComponent<JSX.IntrinsicElements['a']> = ({
   href,
   className,
   ...props

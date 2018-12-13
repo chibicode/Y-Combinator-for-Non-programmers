@@ -1,5 +1,4 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
-import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
   ExecutableCall,
@@ -15,83 +14,70 @@ import {
 
 export function toShowCallArg(
   e: VariableExpression,
-  funcSide: boolean,
-  highlightCallArg: boolean
+  funcSide: boolean
 ): StepVariable<'showCallArg'>
 export function toShowCallArg(
   e: FunctionExpression,
-  funcSide: boolean,
-  highlightCallArg: boolean
+  funcSide: boolean
 ): StepFunction<'showCallArg'>
 export function toShowCallArg(
   e: CallExpression,
-  funcSide: boolean,
-  highlightCallArg: boolean
+  funcSide: boolean
 ): NonExecutableStepCall<'showCallArg'>
 export function toShowCallArg(
   e: VariableExpression | FunctionExpression,
-  funcSide: boolean,
-  highlightCallArg: boolean
+  funcSide: boolean
 ): StepVariable<'showCallArg'> | StepFunction<'showCallArg'>
 export function toShowCallArg(
   e: Expression,
-  funcSide: boolean,
-  highlightCallArg: boolean
+  funcSide: boolean
 ): StepChild<'showCallArg'>
 export function toShowCallArg(
   e: Expression,
-  funcSide: boolean,
-  highlightCallArg: boolean
+  funcSide: boolean
 ): StepChild<'showCallArg'> {
   if (isVariable(e)) {
-    if (funcSide && e.bound) {
-      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
-    } else if (funcSide && !e.bound) {
+    if (funcSide) {
       return {
         ...e,
         highlightType: 'active',
-        badgeType: 'funcUnbound'
-      }
-    } else if (highlightCallArg) {
-      return {
-        ...e,
-        highlightType: 'highlighted',
-        badgeType: 'callArg'
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'none'
       }
     } else {
       return {
         ...e,
-        highlightType: 'active',
-        badgeType: 'callArg'
+        highlightType: 'highlighted',
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toShowCallArg(e.arg, funcSide, highlightCallArg),
-      body: toShowCallArg(e.body, funcSide, highlightCallArg)
+      arg: toShowCallArg(e.arg, funcSide),
+      body: toShowCallArg(e.body, funcSide)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      arg: toShowCallArg(e.arg, funcSide, highlightCallArg),
-      func: toShowCallArg(e.func, funcSide, highlightCallArg)
+      arg: toShowCallArg(e.arg, funcSide),
+      func: toShowCallArg(e.func, funcSide)
     }
   }
 }
 
 const stepToShowCallArg = (
-  e: ExecutableCall,
-  highlightCallArg: boolean
+  e: ExecutableCall
 ): ExecutableStepCall<'showCallArg'> => ({
   ...e,
   state: 'showCallArg',
-  arg: toShowCallArg(e.arg, false, highlightCallArg),
+  arg: toShowCallArg(e.arg, false),
   func: {
     ...e.func,
-    arg: activeFuncArg(e.func.arg),
-    body: toShowCallArg(e.func.body, true, highlightCallArg)
+    arg: toShowCallArg(e.func.arg, true),
+    body: toShowCallArg(e.func.body, true)
   }
 })
 

@@ -1,23 +1,19 @@
 import { css, cx } from 'emotion'
 import React from 'react'
 import crossDarkSvg from 'src/images/cross-dark.url.svg'
-import starDarkSvg from 'src/images/star-dark.url.svg'
 import { colors } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
 
 interface InlineBackgroundProps {
   bgColor?: keyof typeof allColors
-  bgPattern?: 'star' | 'cross'
-  size?: 'md' | 'mdlg'
+  bgPattern?: 'cross'
+  size: 'md' | 'mdlg'
 }
 
 const bgPatternToSvg = (
   pattern: InlineBackgroundProps['bgPattern']
 ): string => {
   switch (pattern) {
-    case 'star': {
-      return starDarkSvg
-    }
     case 'cross': {
       return crossDarkSvg
     }
@@ -25,11 +21,9 @@ const bgPatternToSvg = (
   throw new Error()
 }
 
-const InlineBackground: React.SFC<InlineBackgroundProps> = ({
-  bgColor,
-  bgPattern,
-  size = 'md'
-}) => (
+const InlineBackground: React.FunctionComponent<InlineBackgroundProps> & {
+  defaultProps: Partial<InlineBackgroundProps>
+} = ({ bgColor, bgPattern, size }) => (
   <span
     className={cx(
       css`
@@ -51,5 +45,9 @@ const InlineBackground: React.SFC<InlineBackgroundProps> = ({
     )}
   />
 )
+
+InlineBackground.defaultProps = {
+  size: 'md'
+}
 
 export default InlineBackground

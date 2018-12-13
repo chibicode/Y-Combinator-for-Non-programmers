@@ -1,7 +1,6 @@
 import { css } from 'emotion'
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
-import Emoji from 'src/components/Emoji'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionRunnerCaptionWrapper from 'src/components/Yc/ExpressionRunnerCaptionWrapper'
 import ExpressionRunnerContext, {
@@ -52,6 +51,7 @@ interface ExpressionRunnerProps {
   hideForwardAndBackButtons?: boolean
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
+  highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   caption?: {
     jp: React.ReactNode
     en: React.ReactNode
@@ -80,6 +80,7 @@ export default class ExpressionRunner extends React.Component<
     hideControls: false,
     hideExplanations: false,
     variableSize: expressionRunnerContextDefault.variableSize,
+    highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
     initializeInstructions: [],
     containerSize: 'xxs',
     resetIndex: false
@@ -98,7 +99,9 @@ export default class ExpressionRunner extends React.Component<
     this.expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
       lastAllowedExpressionState,
-      showAllShowSteps
+      stepOptions: {
+        showAllShowSteps
+      }
     })
 
     this.state = {
@@ -157,6 +160,7 @@ export default class ExpressionRunner extends React.Component<
       hidePlayButton,
       hideForwardAndBackButtons,
       showAllShowSteps,
+      highlightOverrides,
       caption
     } = this.props
     const {
@@ -168,6 +172,7 @@ export default class ExpressionRunner extends React.Component<
       <ExpressionRunnerContext.Provider
         value={{
           hidePriorities,
+          highlightOverrides,
           variableSize,
           isDoneOrReady:
             isContainerWithState(
@@ -211,7 +216,7 @@ export default class ExpressionRunner extends React.Component<
             )}
             {caption && (
               <ExpressionRunnerCaptionWrapper pinkText>
-                <Emoji>⬇️</Emoji> {caption[locale]}
+                {caption[locale]}
               </ExpressionRunnerCaptionWrapper>
             )}
           </Container>
@@ -223,6 +228,9 @@ export default class ExpressionRunner extends React.Component<
             <div
               className={css`
                 max-width: 100%;
+                /* Offset for -2px on border wrapper */
+                padding-left: 2px;
+                padding-right: 2px;
               `}
             >
               <div

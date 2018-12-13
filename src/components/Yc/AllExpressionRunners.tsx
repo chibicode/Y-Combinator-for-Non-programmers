@@ -1,4 +1,6 @@
 import React from 'react'
+import Emoji from 'src/components/Emoji'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import {
   additionCaption,
   combineNotCaption,
@@ -11,6 +13,7 @@ import {
   yesCaption
 } from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
 export const introduction = [
@@ -27,10 +30,10 @@ export const introduction = [
 
 // NOTE: Use functions instead of just JSX.Element inside because
 // linter will complain that it's missing the key attribute
-export const episode2 = [
+export const episode1 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       hideExplanations
@@ -45,7 +48,22 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -54,14 +72,14 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
+          state: 'showCallArg'
         }
       ]}
     />
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -77,7 +95,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -86,14 +104,14 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showCallArg'
+          state: 'showFuncBound'
         }
       ]}
     />
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -102,6 +120,324 @@ export const episode2 = [
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      highlightOverrides={{
+        funcArg: 'forceYellowHighlight',
+        funcBound: 'forceYellowHighlight'
+      }}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      highlightOverrides={{
+        funcArg: 'active',
+        funcBound: 'forceYellowHighlight',
+        callArg: 'forceYellowHighlight'
+      }}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      caption={{
+        en: (
+          <>
+            <Emoji size="mdlg">🍣</Emoji>{' '}
+            <TopRightBadge inline topRightBadgeType="match" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" /> became{' '}
+            <Emoji size="mdlg">🥪</Emoji> (same as{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />)
+          </>
+        ),
+        jp: <></>
+      }}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewCrossed'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'nextIteration'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewCrossed'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'nextIteration'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression1}
+      hidePriorities
+      hidePlayButton
+      showAllShowSteps
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression2}
+      hidePriorities
+      hidePlayButton
+      showAllShowSteps
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
+      resetIndex
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
         }
       ]}
     />
@@ -111,7 +447,7 @@ export const episode2 = [
 export const episode3 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -126,7 +462,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -142,7 +478,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -158,7 +494,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -174,7 +510,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -190,7 +526,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -205,7 +541,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
       hideExplanations
@@ -219,7 +555,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression2}
+      expressionContainer={lessonExpressions.episode1Expression2}
       hidePlayButton
       hidePriorities
       showAllShowSteps
@@ -235,7 +571,7 @@ export const episode3 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode2Expression1}
+      expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hidePlayButton
       showAllShowSteps
@@ -804,7 +1140,7 @@ export const episode8 = [
       variableSize={'md'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -852,7 +1188,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -918,7 +1254,7 @@ export const episode9 = [
       variableSize={'md'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -957,7 +1293,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       isFastForwardPlayButton
-      caption={secretCodeCaption('🥗', 5)}
+      caption={secretCodeCaption('🍔', 5)}
       hideControls
       hideExplanations
     />
@@ -969,7 +1305,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -999,7 +1335,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={combineSecretCodeCaption('add', '🍔', 2, '🍚', 3)}
+      caption={combineSecretCodeCaption('add', '🍟', 2, '🍚', 3)}
     />
   ),
   () => (
@@ -1019,7 +1355,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={secretCodeCaption('🍔', 2)}
+      caption={secretCodeCaption('🍟', 2)}
     />
   ),
   () => (
@@ -1046,7 +1382,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       isFastForwardPlayButton
-      caption={secretCodeCaption('🥗', 6)}
+      caption={secretCodeCaption('🍔', 6)}
       hideControls
       hideExplanations
     />
@@ -1058,7 +1394,7 @@ export const episode10 = [
       variableSize={'sm'}
       hideControls
       hideExplanations
-      caption={combineSecretCodeCaption('multiply', '🍔', 2, '🍚', 3)}
+      caption={combineSecretCodeCaption('multiply', '🍟', 2, '🍚', 3)}
     />
   ),
   () => (

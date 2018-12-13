@@ -44,13 +44,22 @@ function toCrossed(
       return {
         ...e,
         highlightType: 'removed',
-        badgeType: 'callArg'
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'callArg'
+      }
+    } else if (e.bound) {
+      return {
+        ...e,
+        highlightType: 'active',
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'funcBound'
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
-        badgeType: 'none'
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'funcUnbound'
       }
     }
   } else if (isFunction(e)) {
@@ -74,7 +83,8 @@ const removeFuncArg = (
 ): VariableWithState<'removedFuncArg'> => ({
   ...e,
   highlightType: 'removed',
-  badgeType: 'funcArg'
+  topRightBadgeType: 'none',
+  bottomRightBadgeType: 'funcArg'
 })
 
 const stepToBetaReducePreviewCrossed = (

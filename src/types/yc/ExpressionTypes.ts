@@ -5,7 +5,8 @@ export interface VariableExpression {
   readonly name: VariableNames
   readonly bound: boolean
   readonly highlightType: VariableStates[keyof VariableStates]['highlightType']
-  readonly badgeType: VariableStates[keyof VariableStates]['badgeType']
+  readonly topRightBadgeType: VariableStates[keyof VariableStates]['topRightBadgeType']
+  readonly bottomRightBadgeType: VariableStates[keyof VariableStates]['bottomRightBadgeType']
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
 }
@@ -17,99 +18,118 @@ export type VariableWithState<
 interface VariableStates {
   default: {
     readonly highlightType: 'default'
-    readonly badgeType: 'none'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'none'
   }
   active: {
     readonly highlightType: 'active'
-    readonly badgeType: 'none'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'none'
   }
   emphasizePriority: {
     readonly highlightType: 'activeEmphasizePriority'
-    readonly badgeType: 'none'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'none'
   }
   highlightFuncBound: {
     readonly highlightType: 'highlighted'
-    readonly badgeType: 'funcBound'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   activeFuncBound: {
     readonly highlightType: 'active'
-    readonly badgeType: 'funcBound'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   highlightFuncArg: {
     readonly highlightType: 'highlighted'
-    readonly badgeType: 'funcArg'
-  }
-  highlightFuncArgNoEmphBorder: {
-    readonly highlightType: 'highlightedNoEmphBorder'
-    readonly badgeType: 'funcArg'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcArg'
   }
   activeFuncArg: {
     readonly highlightType: 'active'
-    readonly badgeType: 'funcArg'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcArg'
   }
   highlightFuncUnbound: {
     readonly highlightType: 'highlighted'
-    readonly badgeType: 'funcUnbound'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcUnbound'
   }
   activeFuncUnbound: {
     readonly highlightType: 'active'
-    readonly badgeType: 'funcUnbound'
-  }
-  semiTransparentFuncUnbound: {
-    readonly highlightType: 'semiTransparent'
-    readonly badgeType: 'funcUnbound'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcUnbound'
   }
   highlightCallArg: {
     readonly highlightType: 'highlighted'
-    readonly badgeType: 'callArg'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'callArg'
+  }
+  highlightCallArgBetaReduceCallArg: {
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'betaReduceCallArg'
+    readonly bottomRightBadgeType: 'callArg'
   }
   activeCallArg: {
     readonly highlightType: 'active'
-    readonly badgeType: 'callArg'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'callArg'
   }
   conflictFuncUnbound: {
-    readonly highlightType: 'conflictFuncUnbound'
-    readonly badgeType: 'funcUnbound'
-  }
-  conflictCallArg: {
-    readonly highlightType: 'conflictCallArg'
-    readonly badgeType: 'callArg'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'conflict'
+    readonly bottomRightBadgeType: 'funcUnbound'
   }
   conflictFuncBound: {
-    readonly highlightType: 'conflictFuncBound'
-    readonly badgeType: 'funcBound'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'conflict'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   conflictResolvedFuncUnbound: {
-    readonly highlightType: 'conflictResolvedFuncUnbound'
-    readonly badgeType: 'funcUnbound'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'conflictResolved'
+    readonly bottomRightBadgeType: 'funcUnbound'
   }
   conflictResolvedFuncBound: {
-    readonly highlightType: 'conflictResolvedBound'
-    readonly badgeType: 'funcBound'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'conflictResolved'
+    readonly bottomRightBadgeType: 'funcBound'
   }
-  conflictResolvedCallArg: {
-    readonly highlightType: 'conflictResolvedCallArg'
-    readonly badgeType: 'callArg'
+  matchFuncArg: {
+    readonly highlightType: 'active'
+    readonly topRightBadgeType: 'match'
+    readonly bottomRightBadgeType: 'funcArg'
+  }
+  matchFuncArgHighlighted: {
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'match'
+    readonly bottomRightBadgeType: 'funcArg'
   }
   matchFuncBound: {
-    readonly highlightType: 'match'
-    readonly badgeType: 'funcBound'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'unmatch'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   unmatchFuncBound: {
-    readonly highlightType: 'unmatch'
-    readonly badgeType: 'funcBound'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'match'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   betaReduced: {
-    readonly highlightType: 'match'
-    readonly badgeType: 'betaReduced'
+    readonly highlightType: 'highlighted'
+    readonly topRightBadgeType: 'betaReduced'
+    readonly bottomRightBadgeType: 'funcBound'
   }
   removedFuncArg: {
     readonly highlightType: 'removed'
-    readonly badgeType: 'funcArg'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'funcArg'
   }
   removedCallArg: {
     readonly highlightType: 'removed'
-    readonly badgeType: 'callArg'
+    readonly topRightBadgeType: 'none'
+    readonly bottomRightBadgeType: 'callArg'
   }
 }
 
@@ -131,23 +151,25 @@ export type CtoV<C extends CallStates> = C extends 'default'
   ? 'default'
   : C extends 'active'
     ? 'active' | 'emphasizePriority'
-    : C extends 'showFuncBound'
-      ? 'active' | 'highlightFuncBound'
+    : C extends 'showCallArg'
+      ? 'active' | 'highlightCallArg'
       : C extends 'showFuncArg'
-        ? 'active' | 'activeFuncBound' | 'highlightFuncArg'
-        : C extends 'showFuncUnbound'
+        ? 'active' | 'activeCallArg' | 'highlightFuncArg'
+        : C extends 'showFuncBound'
           ?
               | 'active'
               | 'activeFuncBound'
               | 'activeFuncArg'
-              | 'highlightFuncUnbound'
-          : C extends 'showCallArg'
+              | 'activeCallArg'
+              | 'highlightFuncBound'
+          : C extends 'showFuncUnbound'
             ?
+                | 'active'
                 | 'activeFuncBound'
                 | 'activeFuncArg'
-                | 'activeFuncUnbound'
-                | 'highlightCallArg'
                 | 'activeCallArg'
+                | 'activeFuncUnbound'
+                | 'highlightFuncUnbound'
             : C extends 'needsAlphaConvert'
               ?
                   | 'activeFuncBound'
@@ -156,7 +178,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
                   | 'activeCallArg'
                   | 'conflictFuncBound'
                   | 'conflictFuncUnbound'
-                  | 'conflictCallArg'
+                  | 'highlightCallArg'
               : C extends 'alphaConvertDone'
                 ?
                     | 'activeFuncBound'
@@ -165,12 +187,14 @@ export type CtoV<C extends CallStates> = C extends 'default'
                     | 'activeCallArg'
                     | 'conflictResolvedFuncUnbound'
                     | 'conflictResolvedFuncBound'
-                    | 'conflictResolvedCallArg'
+                    | 'highlightCallArg'
                 : C extends 'betaReducePreviewBefore'
                   ?
-                      | 'highlightFuncArgNoEmphBorder'
                       | 'activeCallArg'
-                      | 'semiTransparentFuncUnbound'
+                      | 'highlightCallArg'
+                      | 'activeFuncUnbound'
+                      | 'matchFuncArg'
+                      | 'matchFuncArgHighlighted'
                       | 'matchFuncBound'
                       | 'unmatchFuncBound'
                   : C extends 'betaReducePreviewAfter'
@@ -178,10 +202,15 @@ export type CtoV<C extends CallStates> = C extends 'default'
                         | 'activeFuncBound'
                         | 'activeFuncArg'
                         | 'activeFuncUnbound'
-                        | 'highlightCallArg'
+                        | 'highlightCallArgBetaReduceCallArg'
                         | 'betaReduced'
                     : C extends 'betaReducePreviewCrossed'
-                      ? 'active' | 'removedFuncArg' | 'removedCallArg'
+                      ?
+                          | 'active'
+                          | 'removedFuncArg'
+                          | 'removedCallArg'
+                          | 'activeFuncUnbound'
+                          | 'activeFuncBound'
                       : never
 
 export interface CallExpression {

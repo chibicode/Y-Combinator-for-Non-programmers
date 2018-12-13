@@ -57,42 +57,48 @@ export function toAlphaConvertDone(
           return {
             ...e,
             name: mapping[e.name],
-            highlightType: 'conflictResolvedBound',
-            badgeType: 'funcBound'
+            highlightType: 'highlighted',
+            topRightBadgeType: 'conflictResolved',
+            bottomRightBadgeType: 'funcBound'
           }
         } else {
           return {
             ...e,
             name: mapping[e.name],
-            highlightType: 'conflictResolvedFuncUnbound',
-            badgeType: 'funcUnbound'
+            highlightType: 'highlighted',
+            topRightBadgeType: 'conflictResolved',
+            bottomRightBadgeType: 'funcUnbound'
           }
         }
       } else if (funcSide && !e.bound) {
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'funcUnbound'
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'funcBound'
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcBound'
         }
       }
     } else {
       if (mapping[e.name]) {
         return {
           ...e,
-          highlightType: 'conflictResolvedCallArg',
-          badgeType: 'callArg'
+          highlightType: 'highlighted',
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
-          badgeType: 'callArg'
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'callArg'
         }
       }
     }

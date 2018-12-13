@@ -1,204 +1,125 @@
 import React from 'react'
-import {
-  Em,
-  H3,
-  Ol,
-  OlLi,
-  P,
-  Strong,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode5 } from 'src/components/Yc/AllExpressionRunners'
-import InlineBackground from 'src/components/Yc/InlineBackground'
+import { episode6 } from 'src/components/Yc/AllExpressionRunners'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-
-const Rules = () => (
-  <Ol>
-    <OlLi>
-      まず、{' '}
-      <Em>
-        <Strong>左上と左下</Strong>が
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        の部分
-      </Em>
-      を先にやる。
-    </OlLi>
-    <OlLi>
-      その後、
-      <Em>
-        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-        だった部分が
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        になるので
-      </Em>
-      、それをやる。
-    </OlLi>
-  </Ol>
-)
 
 export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 4)}
-      <P>{h('ycTryUntilDone')}</P>
-      {episode5[i++]()}
-      <P>いかがでしょう。正解できましたか？</P>
-      <H3>続いては: 縦に3段以上ある場合</H3>
+      {h('ycQuizReview', 5)}
+      <P>{h('ycTryUntilDone')}:</P>
+      {episode6[i++]()}
       <P>
-        次は、 <Em>縦に3段以上ある</Em>
+        というわけで、答えは
+        <Strong>お寿司</Strong> <Emoji>🍣</Emoji> です。
+      </P>
+      <P>
+        <Strong>お気づきかもしれませんが、</Strong>
+        実行をスピーディーにするために、{' '}
+        <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+        <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+        <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+        <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+        をすべて同時に表示しています。
+      </P>
+      <H3>続いてはこちら</H3>
+      <P>
+        今度はこの
         {h('ycBentoBox')}
-        を見ていきましょう。
+        を見てみましょう:
       </P>
-      {episode5[i++]()}
-      <P>
-        <Strong>疑問点:</Strong>
-      </P>
-      <Ul>
-        <UlLi>
-          <Em>縦に3段あった場合、どうすればいいのか？</Em>
-        </UlLi>
-        <UlLi>
-          <Em>
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>や{' '}
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-            と書いているのは何なのか？
-          </Em>
-        </UlLi>
-      </Ul>
-      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
-      <P>
-        <Strong>答えはこちら:</Strong>
-      </P>
-      <Rules />
-      <P>実際にやってみると分かりやすいです！</P>
-      <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
-      <H3>例</H3>
-      <P>
-        下の例で
-        <Em>{h('ycNext')}</Em>
-        を押してみてください。
-      </P>
-      {episode5[i++]()}
-      <P>すると、</P>
-      <Ul>
-        <UlLi>
-          <Em>
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が
-            <Strong>左上</Strong>か<Strong>左下</Strong>
-          </Em>
-          にある部分は白いまま。
-          <InlineBackground bgColor="white" />
-        </UlLi>
-        <UlLi>
-          <Em>
-            その他のマスは塗りつぶされている。
-            <InlineBackground bgColor="indigo50" />
-          </Em>{' '}
-          こちらはいったん
-          <Strong>置いておきます</Strong>。
-        </UlLi>
-      </Ul>
-      <H3>その次は？</H3>
+      {episode6[i++]()}
       <P>
         <Em>
-          白いマスの部分 <InlineBackground bgColor="white" />
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が4つもありますよね。
         </Em>{' '}
-        を以前と同じようにやります。塗りつぶされた部分は無視します。
-        <InlineBackground bgColor="indigo50" />
+        どれから先にやればいいのでしょうか？
       </P>
       <P>
+        <Strong>答え:</Strong>{' '}
         <Em>
-          {h('ycNext')}
-          を何度か押してみてください
-        </Em>
-        :
-      </P>
-      {episode5[i++]()}
-      <P>
-        バツ印のマス <InlineBackground bgPattern="cross" />{' '}
-        が消えた後はどうなるでしょう？
-        <Em>
-          {h('ycNext')}
-          を押してみてください。
+          <Strong>いちばん左にある</Strong>{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめます。
         </Em>
       </P>
-      {episode5[i++]()}
+      <H3>いちばん左</H3>
       <P>
-        <Strong>箇条書きで書くと:</Strong>
+        <Em>{h('ycNext')} を押してみてください</Em>
+        。一番左にあるふたつの{' '}
+        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+        の部分からはじめるということが分かります。
       </P>
-      <Ul>
-        <UlLi>
-          <Em>
-            全部のマスがまた白背景に。 <InlineBackground bgColor="white" />
-          </Em>
-        </UlLi>
-        <UlLi>
-          <Strong>重要:</Strong> 前回の{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消え、{' '}
-          <Em>
-            前回の <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が
-            <Strong>新しく</Strong>{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-            <Strong>になった</Strong>。
-          </Em>
-        </UlLi>
-      </Ul>
-      <H3>その次は？</H3>
+      {episode6[i++]()}
+      <P>このまま最後まで進めてしまいましょう:</P>
+      {episode6[i++]()}
+      <H3>ここまでのまとめ</H3>
       <P>
-        最後まで見ていきましょう。
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が複数あるときは、
         <Em>
-          {h('ycNext')}
-          を何度か押してみてください。
+          <Strong>いちばん左にある</Strong>{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめること。
         </Em>
       </P>
-      {episode5[i++]()}
+      <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
+      <H3>1のペアからはじめられない場合</H3>
       <P>
-        <Strong>ポイント:</Strong> サンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
-        はいちばん初めに「あとで食べるものリスト <Emoji>😎</Emoji>
-        」に入っていましたが、ここではサンドイッチが次に食べる料理{' '}
-        <Emoji>😋</Emoji> になっています。
+        <Strong>
+          たまに、
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめられない場合があります。
+        </Strong>
+        こちらをご覧ください:
       </P>
-      <EmojiSeparator emojis={['😎', '➡', '😋']} />
+      {episode6[i++]()}
       <P>
-        <Strong>以上です！</Strong> まとめにもう一度、
-        <Em>最初から最後まで見てみてください</Em>:
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        のペアはこちらですが、
+        <Em>
+          これはマスがふたつしかないので、先に進むことができないやつです！
+        </Em>
       </P>
-      {episode5[i++]()}
-      <H3>まとめ</H3>
-      <P>というわけで、以下のポイントをおさえておいてください。</P>
-      <Rules />
-      <P>ちゃんと理解できたか、クイズで確かめてみましょう。</P>
-      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+      {episode6[i++]()}
+      <P>
+        このように
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        のペア からはじめられない時は、
+        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        のペア からはじめる必要があります。
+      </P>
+      {episode6[i++]()}
+      <H3>ここまでのまとめ</H3>
+      <P>
+        <Em>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめられない時は、
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+          のペアからはじめ、
+        </Em>
+        それが無理なら次の数字へ…と続ける。
+      </P>
+      <P>それでは、ここでまたクイズです！</P>
       <H3>クイズ</H3>
       <P>
-        次の
-        {h('ycBentoBox')}
-        を最後まで進めると…
+        下の
+        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
       </P>
-      {episode5[i++]()}
+      {episode6[i++]()}
       <P>
-        <Strong>最後にひとつだけ残るのはどの料理でしょう？</Strong>
+        <Strong>YesかNoで答えてみてください:</Strong>{' '}
+        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
       </P>
-      <Ol>
-        <OlLi>
-          <Emoji size="lg">🍣</Emoji>
-        </OlLi>
-        <OlLi>
-          <Emoji size="lg">🍔</Emoji>
-        </OlLi>
-        <OlLi>
-          <Emoji size="lg">🥩</Emoji>
-        </OlLi>
-      </Ol>
+      {episode6[i++]()}
       <P>
-        <Em>頭の中で解くのは難しい問題なので</Em>
-        、自信がなくても大丈夫です！
+        <Strong>これはちょっと難しい問題ですが</Strong>
+        、諦めずにチャレンジしてみてください！
       </P>
       <YcNextLessonButton nextEpisodeNumber={6} />
     </>

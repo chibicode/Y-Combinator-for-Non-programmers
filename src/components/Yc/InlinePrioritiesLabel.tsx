@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 
-const InlinePrioritiesLabel: React.SFC<{
+const InlinePrioritiesLabel: React.FunctionComponent<{
   children: React.ReactNode
   revert?: boolean
 }> = ({ children, revert }) => (

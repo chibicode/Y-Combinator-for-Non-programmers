@@ -15,7 +15,7 @@ import {
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
 import Logo from '../src/images/CSmoji-Logo.svg'
 
-const Index: React.SFC<{}> = () => (
+const Index: React.FunctionComponent<{}> = () => (
   <Page>
     <Container size="md">
       <div

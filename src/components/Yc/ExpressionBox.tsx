@@ -12,7 +12,7 @@ interface ExpressionBoxProps {
   expression: Expression
 }
 
-const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
+const ExpressionBox: React.FunctionComponent<ExpressionBoxProps> = ({ expression }) => (
   <Flex
     className={css`
       width: 100%;
@@ -22,7 +22,12 @@ const ExpressionBox: React.SFC<ExpressionBoxProps> = ({ expression }) => (
   >
     <BorderWrapper
       highlightType={isVariable(expression) ? expression.highlightType : 'none'}
-      badgeType={isVariable(expression) ? expression.badgeType : 'none'}
+      bottomRightBadgeType={
+        isVariable(expression) ? expression.bottomRightBadgeType : 'none'
+      }
+      topRightBadgeType={
+        isVariable(expression) ? expression.topRightBadgeType : 'none'
+      }
     >
       {(() => {
         if (isVariable(expression)) {

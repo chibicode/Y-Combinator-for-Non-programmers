@@ -1,30 +1,38 @@
 import {
+  blue,
   grey,
   indigo,
-  lightBlue,
-  lightGreen,
+  orange,
   pink,
+  teal,
   yellow
 } from '@material-ui/core/colors'
 import Color from 'color'
 
+// https://material.io/design/color/the-color-system.html
 export const allColors = {
   socialBackground: indigo[500],
   grey200: grey[200],
   grey300: grey[300],
   grey500: grey[500],
+  grey700: grey[700],
   grey800: grey[800],
   grey900: grey[900],
-  lightBlue50: lightBlue[50],
-  lightGreen100: lightGreen[100],
   indigo50: indigo[50],
   indigo100: indigo[100],
   indigo200: indigo[200],
   indigo300: indigo[300],
+  indigo400: indigo[400],
   indigo500: indigo[500],
+  pink5050: Color(pink[50])
+    .alpha(0.5)
+    .hsl()
+    .string(),
   pink50: pink[50],
+  pink300: pink[300],
   pink400: pink[400],
   pink500: pink[500],
+  pink600: pink[600],
   pink700: pink[700],
   transparent: 'transparent',
   white: 'white',
@@ -32,11 +40,14 @@ export const allColors = {
     .alpha(0.66)
     .hsl()
     .string(),
+  teal50: teal[50],
+  blue50: blue[50],
+  yellow50: yellow[50],
   yellow100: yellow[100],
   yellow200: yellow[200],
   yellow600: yellow[600],
-  yellow800: yellow[800],
-  yellow900: yellow[900]
+  yellow900: yellow[900],
+  orange900: orange[900]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]

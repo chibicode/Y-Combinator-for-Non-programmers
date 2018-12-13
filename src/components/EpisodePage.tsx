@@ -23,12 +23,13 @@ import {
   spaces
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../images/CSMoji-Logo.svg'
+import Logo from '../images/CSmoji-Logo.svg'
 
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
   lessonTitle: string
   episodeTitle?: React.ReactNode
+  episodeTitleString?: React.ReactNode
   episodeNumber?: number
   contentName: ContentProps['name']
 }
@@ -45,10 +46,11 @@ const navigationLinkClasses = css`
   font-size: ${fontSizes(0.7)};
 `
 
-const EpisodePage: React.SFC<EpisodePageProps> = ({
+const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
   lessonTitle,
   lessonName,
   episodeTitle,
+  episodeTitleString,
   episodeNumber,
   contentName
 }) => (
@@ -56,7 +58,7 @@ const EpisodePage: React.SFC<EpisodePageProps> = ({
     <Head>
       <title key="title">
         {lessonTitle}
-        {episodeTitle && `- ${episodeTitle}`} | CSmoji
+        {episodeTitleString && ` | ${episodeTitleString}`} | CSmoji
       </title>
     </Head>
     <Container size="sm">

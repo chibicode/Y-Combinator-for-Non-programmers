@@ -4,13 +4,13 @@ import GlobalContext from 'src/components/GlobalContext'
 import SideNoteSection from 'src/components/SideNoteSection'
 import pathHelpers from 'src/lib/pathHelpers'
 
-const EpisodePageInitialRenderWarning: React.SFC<{
+const EpisodePageInitialRenderWarning: React.FunctionComponent<{
   lessonName: keyof typeof pathHelpers
 }> = ({ lessonName }) => (
   <GlobalContext.Consumer>
     {({ initialRender }) =>
       initialRender && (
-        <SideNoteSection>
+        <SideNoteSection color="indigo">
           <Content name="others/NewUser" componentProps={{ lessonName }} />
         </SideNoteSection>
       )

@@ -2,7 +2,7 @@ import { css, cx } from 'emotion'
 import React from 'react'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
 
-export const H3: React.SFC<JSX.IntrinsicElements['h3']> = ({
+export const H3: React.FunctionComponent<JSX.IntrinsicElements['h3']> = ({
   className,
   ...props
 }) => (

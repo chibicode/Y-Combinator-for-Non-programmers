@@ -28,7 +28,7 @@ interface UlProps extends DefaultUlProps {
   size?: 'md' | 'lg'
 }
 
-export const Ul: React.SFC<UlProps> = ({
+export const Ul: React.FunctionComponent<UlProps> = ({
   className,
   size = 'md',
   ...props
@@ -52,7 +52,7 @@ interface OlProps extends DefaultOlProps {
   size?: 'md' | 'lg'
 }
 
-export const Ol: React.SFC<OlProps> = ({ className, size, ...props }) => (
+export const Ol: React.FunctionComponent<OlProps> = ({ className, size, ...props }) => (
   <ol
     {...props}
     className={cx(
@@ -70,7 +70,7 @@ export const Ol: React.SFC<OlProps> = ({ className, size, ...props }) => (
   />
 )
 
-export const UlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
+export const UlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
   className,
   ...props
 }) => (
@@ -91,7 +91,7 @@ export const UlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
   />
 )
 
-export const OlLi: React.SFC<JSX.IntrinsicElements['li']> = ({
+export const OlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
   className,
   ...props
 }) => (

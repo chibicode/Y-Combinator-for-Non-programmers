@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  Blockquote,
   Em,
-  ExternalLink,
   H3,
+  Ol,
+  OlLi,
   P,
   Strong,
   Ul,
@@ -11,7 +11,9 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import { episode3 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -19,122 +21,97 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 1)}
-      <P>If the current situation is like this:</P>
+      {h('ycQuizReview', 2)}
+      {episode3[i++]()}
+      <P>
+        <Strong>Answer:</Strong> Here’s the annotated version:
+      </P>
+      {episode3[i++]()}
+      <P>Therefore, the above {h('ycBentoBox')} represents:</P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}
-          <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🥗</Emoji>
+          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍔</Emoji>
         </UlLi>
         <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🌮</Emoji>
+          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🍗</Emoji>
         </UlLi>
       </Ul>
+      <H3>What Will Happen Next?</H3>
       <P>
-        <Strong>Answer:</Strong> On the next step, it becomes:
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥩</Emoji>{' '}
-          <Emoji size="lg">🥪</Emoji> <Emoji size="lg">🌮</Emoji>
-        </UlLi>
-      </Ul>
-      <P>The salad is replaced with tacos. Hope you got it right!</P>
-      <H3>Interactive Bento Box</H3>
-      <P>
-        Now, let’s move on to the next topic: <Strong>Bento Boxes</Strong>.
-      </P>
-      <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
-      <P>
-        Bento boxes <Emoji>🍱</Emoji> are{' '}
-        <Em>traditional Japanese lunch boxes</Em> (as shown in the above
-        emojis). Here’s what{' '}
-        <ExternalLink href="https://simple.wikipedia.org/wiki/Bento">
-          Wikipedia (Simple English)
-        </ExternalLink>{' '}
-        says:
-      </P>
-      <Blockquote>
-        <P>
-          <Strong>Bento [box]</Strong> is a meal common in Japanese cuisine,
-          made to take away from home to be eaten somewhere else. A traditional
-          bento consists of rice, fish or meat, and one or more pickled or
-          cooked vegetables as a side dish. ... People often take bento for a
-          picnic.
-        </P>
-      </Blockquote>
-      <P>
-        In this tutorial, we’re going to play with an{' '}
+        In the above scenario, after you eat burger <Emoji>🍔</Emoji>, the chef
+        brings chicken <Emoji>🍗</Emoji>. So eventually,{' '}
         <Em>
-          interactive bento box <Emoji>🍱</Emoji>
+          the chicken <Emoji>🍗</Emoji> will be the only dish
         </Em>
-        . Here’s what it looks like. Each cell has a food item. It kind of looks
-        like a bento box, right?
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Strong>But what does each cell mean?</Strong> Let me explain.
-      </P>
-      <P>
-        <Em>
-          The <Strong>bottom right</Strong> cell represents all available dishes{' '}
-          <Emoji>🍽</Emoji>.
-        </Em>{' '}
-        In this case, the only available dish is sushi <Emoji>🍣</Emoji>.
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Em>
-          Next, the <Strong>bottom left</Strong> cell represents what you’re
-          eating next <Emoji>😋</Emoji>.
-        </Em>{' '}
-        In this case, you’ll be eating sushi <Emoji>🍣</Emoji> next.
-      </P>
-      {episode2[i++]()}
-      <P>
-        Finally,{' '}
-        <Em>
-          the <Strong>top</Strong> cell represents what the chef{' '}
-          <Emoji>👨‍🍳</Emoji> is preparing.
-        </Em>{' '}
-        In this case, the chef is preparing sandwich <Emoji>🥪</Emoji>.
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Strong>So:</Strong> the above {h('ycBentoBox')} represents the
-        following scenario.
+        :
       </P>
       <Ul size="lg">
         <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥪</Emoji>
+          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍗</Emoji>
         </UlLi>
       </Ul>
-      <P>Let’s do a quiz to check if you understood this!</P>
-      <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+      <P>
+        <Strong>Let’s see what happens to the {h('ycBentoBox')}:</Strong>
+      </P>
+      {episode3[i++]()}
+      <P>
+        The burger <Emoji>🍔</Emoji> on the bottom right{' '}
+        <Strong>matches</Strong> with what you’re eating next <Emoji>😋</Emoji>.
+        We indicate this <Strong>match</Strong> using{' '}
+        <TopRightBadge inline topRightBadgeType="match" />.
+      </P>
+      {episode3[i++]()}
+      <P>
+        After you eat the burger <Emoji>🍔</Emoji> on the bottom right, it{' '}
+        <Em>will be replaced</Em> by the chicken <Emoji>🍗</Emoji>. We indicate
+        this using <TopRightBadge inline topRightBadgeType="betaReduced" />.
+      </P>
+      {episode3[i++]()}
+      <P>
+        The burger <Emoji>🍔</Emoji> on the bottom left and the chicken{' '}
+        <Emoji>🍗</Emoji> on the top <Em>will disappear</Em>. We indicate this
+        using the{' '}
+        <Em>
+          “X” background <InlineBackground bgPattern="cross" />
+        </Em>
+        .
+      </P>
+      {episode3[i++]()}
+      <P>
+        In the end, only the chicken <Emoji>🍗</Emoji> remains:
+      </P>
+      {episode3[i++]()}
+      <H3>The Next and Previous Buttons</H3>
+      <P>
+        To see this interactively, I’ve added the {h('ycNext')} and{' '}
+        {h('ycPrevious')} buttons.
+      </P>
+      <Ol>
+        <OlLi>
+          In the {h('ycBentoBox')} below, {h('ycTryUntilDone', false)}.
+        </OlLi>
+        <OlLi>
+          Then <Em>try pressing {h('ycPrevious')} a few times</Em>.
+        </OlLi>
+      </Ol>
+      {episode3[i++]()}
+      <P>Try this one from the last page too!</P>
+      {episode3[i++]()}
+      <P>Hope you get the idea.</P>
+      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
+      <P>Now, time for some quiz…</P>
       <H3>Quiz</H3>
-      <P>What scenario does the this {h('ycBentoBox')} represent?</P>
-      {episode2[i++]()}
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">❓</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">❓</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">❓</Emoji>
-        </UlLi>
-      </Ul>
-      <P>Go to the next page to find out the answer!</P>
+      <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
+      {episode3[i++]()}
+      <P>
+        <Strong>True or False:</Strong>{' '}
+        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
+      </P>
+      {episode3[i++]()}
+      <P>It’s ok if you are not sure - I will explain on the next page!</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

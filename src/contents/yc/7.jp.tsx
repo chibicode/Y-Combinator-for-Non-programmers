@@ -2,9 +2,7 @@ import React from 'react'
 import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode7 } from 'src/components/Yc/AllExpressionRunners'
-import EmojiBadge from 'src/components/Yc/EmojiBadge'
-import InlineBackground from 'src/components/Yc/InlineBackground'
+import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 
@@ -12,139 +10,153 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 6)}
-      <P>{h('ycTryUntilDone')}:</P>
-      {episode7[i++]()}
+      <H3>{h('ycPlay')} ボタン</H3>
       <P>
-        最終的には以下のようになったので、答えは
-        <Strong>Yes</Strong>
-        でした。
+        中級レベルでは新しく「
+        <Strong>{h('ycPlay')}</Strong>
+        」ボタンを使うことができます。
       </P>
-      {episode7[i++]()}
       <P>
-        <Strong>ちょっと難しかった部分:</Strong>{' '}
-        下のステップはちょっと難しかったかもしれません。(
-        <Em>{h('ycNext')} を押してみてください</Em>
-        ):
+        <Em>下の 「{h('ycPlay')}」 を押してみてください。</Em>
       </P>
-      {episode7[i++]()}
+      {episode8[i++]()}
       <P>
-        ご覧の通り、
+        {h('ycBentoBox')}
+        を自動で実行してくれる、便利な機能です！
+      </P>
+      <EmojiSeparator emojis={['▶️', '🤗', '▶️']} />
+      <P>
+        それでは本題に入りましょう。
+        <Strong>弁当箱の暗号</Strong>
+        について説明します。
+      </P>
+      <H3>弁当箱の暗号</H3>
+      <P>
+        このページにあるそれぞれの
+        {h('ycBentoBox')}
+        には、
+        <Strong>あるパターンに基づいた暗号</Strong>
+        が隠されています。
+      </P>
+      <P>
         <Em>
-          <EmojiBadge badgeType="callArg" inline />
-          がついている料理がすべて <InlineBackground bgPattern="star" />{' '}
-          の部分にコピペされた
+          <Strong>あなたへの挑戦状:</Strong>{' '}
+          暗号がどんなパターンに基づいているか考えてみてください！
         </Em>
-        のがわかります。
       </P>
+      <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
+      <H3>暗号の例</H3>
       <P>
-        では、いよいよ最後の基本ルール、
-        <Strong>
-          シャッフルタイム <Emoji>🔀</Emoji>
-        </Strong>{' '}
-        を紹介します。
+        こちらに隠されている暗号は
+        <Strong>1</Strong>
+        です:
       </P>
-      <EmojiSeparator emojis={['🔀', '🔀', '🔀']} />
-      <H3>シャッフルタイム</H3>
+      {episode8[i++]()}
+      <P>
+        こちらに隠されている暗号は
+        <Strong>2</Strong>
+        です:
+      </P>
+      {episode8[i++]()}
+      <P>
+        こちらに隠されている暗号は
+        <Strong>3</Strong>
+        です:
+      </P>
+      {episode8[i++]()}
+      <P>パターンがわかりましたか？では、問題に挑戦してみましょう。</P>
+      <H3>クイズ: 暗号を解きあかせ</H3>
       <P>
         次の
         {h('ycBentoBox')}
-        をご覧ください。{' '}
-        <Em>
-          <Strong>
-            サンドイッチ <Emoji size="mdlg">🥪</Emoji>
-          </Strong>{' '}
-          が、
-          <EmojiBadge badgeType="callArg" inline /> と{' '}
-          <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
-          <EmojiBadge badgeType="funcBound" inline />
-          にあることに注目です。
-        </Em>
-        .
+        に隠されている暗号は何でしょう？
       </P>
-      {episode7[i++]()}
+      {episode8[i++]()}
+      <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
+      <H3>答え</H3>
       <P>
+        <Strong>答え:</Strong>{' '}
         <Em>
-          同じ料理が
-          <EmojiBadge badgeType="callArg" inline /> と{' '}
-          <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
-          <EmojiBadge badgeType="funcBound" inline />
-          にあると、
-          <Strong>
-            シャッフルタイム <Emoji>🔀</Emoji>
-          </Strong>{' '}
-          になります。
+          隠されている暗号は
+          <Strong>5</Strong>
+          です。
         </Em>
       </P>
-      {episode7[i++]()}
       <P>
-        <Strong>
-          シャッフルタイム <Emoji>🔀</Emoji>
-        </Strong>{' '}
-        では、次のようなことが起こります:
+        <Strong>パターンの説明:</Strong>
       </P>
       <Ul>
+        <UlLi>
+          <Strong>A</Strong>と<Strong>B</Strong>
+          の2種類の料理がある (<Emoji size="mdlg">🍝</Emoji> と{' '}
+          <Emoji size="mdlg">🍚</Emoji>
+          )。
+        </UlLi>
+        <UlLi>
+          <Strong>A</Strong>
+          は、
+          <Strong>真ん中</Strong>
+          のマスと
+          <Strong>右上</Strong>
+          のマスにある料理 (<Emoji size="mdlg">🍝</Emoji>。 ).
+        </UlLi>
+        <UlLi>
+          <Strong>B</Strong>
+          は、
+          <Strong>左</Strong>
+          のマスと
+          <Strong>右の残りのマス</Strong>
+          にある料理 (<Emoji size="mdlg">🍚</Emoji>
+          )。
+        </UlLi>
         <UlLi>
           <Em>
-            <EmojiBadge badgeType="funcUnbound" inline /> と{' '}
-            <EmojiBadge badgeType="funcBound" inline /> にある全てのサンドイッチ{' '}
-            <Emoji size="mdlg">🥪</Emoji> がまだ使われていない
-            <Strong>新しい</Strong>
-            料理になる。
+            右のマスにある
+            <Strong>B</Strong>
+            の料理の数が
+            <Strong>暗号の答え</Strong> (<Emoji size="mdlg">🍚</Emoji>{' '}
+            <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji>{' '}
+            <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji> ={' '}
+            <Strong>5</Strong>
+            )。
           </Em>
         </UlLi>
-        <UlLi>
-          <EmojiBadge badgeType="callArg" inline /> にあるサンドイッチ{' '}
-          <Emoji size="mdlg">🥪</Emoji> はそのまま。
-        </UlLi>
+        <P>
+          <Strong>簡単すぎましたか？</Strong>
+          では、もう少し難しい問題を出しましょう。
+        </P>
+        <EmojiSeparator emojis={['🔢', '🧐', '️🔢']} />
+        <H3>クイズ: 次はどうなる？</H3>
+        <P>
+          ここに、
+          <Em>
+            暗号が
+            <Strong>2</Strong>
+          </Em>
+          の{h('ycBentoBox')}
+          があります。
+        </P>
+        {episode8[i++]()}
+        <P>
+          これを次の
+          {h('ycBentoBox')}と<Strong>合体させます</Strong>:
+        </P>
+        {episode8[i++]()}
+        <P>合体させるとこうなります:</P>
+        {episode8[i++]()}
+        <P>
+          <Strong>問題:</Strong> では、上の弁当箱を
+          {h('ycDone')}
+          になるまで進めたら、いったいどうなるでしょう？
+        </P>
+        <P>
+          <Strong>ヒント:</Strong> 上の部分の弁当箱の暗号は
+          <Strong>2</Strong>
+          でした 。<Em>これが、新しい数字になります。</Em>
+          その新しい暗号は何になるでしょう？
+        </P>
+        <YcNextLessonButton nextEpisodeNumber={8} />
       </Ul>
-      <P>
-        <Em>{h('ycNext')} を押して、どうなるか見てみましょう:</Em>
-      </P>
-      {episode7[i++]()}
-      <P>
-        というわけで、
-        <Strong>
-          サンドイッチ <Emoji size="mdlg">🥪</Emoji> がステーキ{' '}
-          <Emoji size="mdlg">🥩</Emoji> に
-        </Strong>
-        なりました。
-      </P>
-      <EmojiSeparator emojis={['🥪', '🔀', '🥩']} />
-      <P>
-        あとはいつも通り、
-        {h('ycTryUntilDone')}:
-      </P>
-      {episode7[i++]()}
-      <P>以上です！</P>
-      <H3>もうひとつの例</H3>
-      <P>
-        シャッフルタイム <Emoji>🔀</Emoji> が起きるもうひとつの例はこちら。
-        {h('ycTryUntilDone')}:
-      </P>
-      {episode7[i++]()}
-      <H3>それではここで…</H3>
-      <P>良いお知らせがあります！</P>
-      <Ul>
-        <UlLi>
-          <Strong>
-            <Em>
-              シャッフルタイム <Emoji>🔀</Emoji>{' '}
-              のルールを暗記する必要はありません。
-            </Em>
-          </Strong>
-          「こういうルールもあるんだ」と思っていただければ大丈夫です。
-        </UlLi>
-        <UlLi>
-          <Strong>初級はこれで終了です！</Strong>
-          次の中級からは面白い問題を解いていきます。
-        </UlLi>
-        <UlLi>
-          <Strong>今回はクイズはなしです。</Strong>
-          そのまま次のページに進んでください！
-        </UlLi>
-      </Ul>
-      <YcNextLessonButton nextEpisodeNumber={8} primaryTextType="nextPage" />
     </>
   )
 }

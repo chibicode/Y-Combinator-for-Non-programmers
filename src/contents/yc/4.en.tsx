@@ -1,150 +1,187 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  Ol,
+  OlLi,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode4 } from 'src/components/Yc/AllExpressionRunners'
+import { episode5 } from 'src/components/Yc/AllExpressionRunners'
+import InlineBackground from 'src/components/Yc/InlineBackground'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+
+const Rules = () => (
+  <Ol>
+    <OlLi>
+      First,{' '}
+      <Em>
+        do the part that has <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s on the <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+        corner.
+      </Em>
+    </OlLi>
+    <OlLi>
+      <Em>
+        Then <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        ’s will become <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+        ’s.
+      </Em>{' '}
+      So do these next.
+    </OlLi>
+  </Ol>
+)
 
 export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 3)}
-      <P>I added the previous and next buttons. {h('ycTryUntilDone')}:</P>
-      {episode4[i++]()}
-      <P>
-        So the answer is:{' '}
-        <Em>
-          <Strong>
-            sandwich <Emoji>🥪</Emoji>
-          </Strong>
-        </Em>
-        . But why?
-      </P>
-      <EmojiSeparator emojis={['🥪', '🤔', '🥪']} />
-      <P>
-        This is because you want to eat sushi <Emoji>🍣</Emoji>, but it is not
-        available.
-      </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🥪</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍣</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🥗</Emoji>
-        </UlLi>
-      </Ul>
-      <P>
-        <Em>So you don’t eat anything</Em>.
-      </P>
-      <P>
-        The salad <Emoji>🥗</Emoji> the chef <Emoji>👨‍🍳</Emoji> is preparing will{' '}
-        <Strong>not</Strong> replace the sandwich <Emoji>🥪</Emoji>. Instead,
-        the salad <Emoji>🥗</Emoji> <Strong>disappears</Strong>. The sushi{' '}
-        <Emoji>🍣</Emoji> also disappears.
-      </P>
-      {episode4[i++]()}
-      <P>
-        Therefore just the sandwich <Emoji>🥪</Emoji> remains at the end:
-      </P>
-      {episode4[i++]()}
-      <H3>“Eat Later” List</H3>
-      <P>
-        Next, we’ll talk about the case when there are{' '}
-        <Em>more than two cells</Em> on the bottom. Check out this one:
-      </P>
-      {episode4[i++]()}
-      <P>
-        Here’s how to interpret this. First,{' '}
-        <Em>
-          <Strong>the bottom right cell</Strong> is what’s available{' '}
-          <Emoji>🍽</Emoji>
-        </Em>
-        .
-      </P>
-      {episode4[i++]()}
-      <P>
-        <Em>
-          The <Strong>bottom leftmost</Strong> cell represents what you’re
-          eating next <Emoji>😋</Emoji>
-        </Em>
-        .
-      </P>
-      {episode4[i++]()}
-      <P>
-        <Em>
-          <Strong>Now, this one’s new:</Strong> Everything else on the bottom
-          row is your <Strong>“eat later” list.</Strong> <Emoji>😎</Emoji>
-        </Em>{' '}
-        In this case, the sandwich <Emoji size="mdlg">🥪</Emoji> is in your “eat
-        later” list.
-      </P>
-      {episode4[i++]()}
-      <P>
-        <Strong>What it means:</Strong>{' '}
-        <Em>
-          You can <Strong>ignore</Strong> food in the “eat later” list{' '}
-          <Emoji>😎</Emoji> for now.
-        </Em>{' '}
-      </P>
-      <P>
-        In the <Strong>next episode</Strong>, we’ll talk about the case where
-        the “eat later” dishes <Emoji>😎</Emoji>{' '}
-        <Em>turn into what you’re eating next</Em> <Emoji>😋</Emoji>.
-      </P>
-      <EmojiSeparator emojis={['😎', '➡️', '😋']} />
-      <P>
-        And the <Strong>top cell</Strong> represents what the chef is preparing.
-        This is the same as before.
-      </P>
-      {episode4[i++]()}
+      {h('ycQuizReview', 4)}
       <P>{h('ycTryUntilDone')}:</P>
-      {episode4[i++]()}
+      {episode5[i++]()}
+      <P>Hope this wasn’t too difficult!</P>
+      <H3>Next Topic: More than 2 cells vertically</H3>
       <P>
-        <Strong>Again:</Strong>{' '}
-        <Em>
-          You can <Strong>ignore</Strong> food in the “eat later” list{' '}
-          <Emoji>😎</Emoji> for now.
-        </Em>{' '}
+        Next, we’ll talk about the {h('ycBentoBox')} where{' '}
+        <Em>there are more than 2 cells stacked on top of each other</Em>:
       </P>
+      {episode5[i++]()}
       <P>
-        In the <Strong>next episode</Strong>, we’ll talk about the case where
-        the “eat later” dishes <Emoji>😎</Emoji>{' '}
-        <Em>turn into what you’re eating next</Em> <Emoji>😋</Emoji>.
-      </P>
-      <EmojiSeparator emojis={['😎', '➡️', '😋']} />
-      <H3>Quiz: Four Cells on the Bottom</H3>
-      <P>
-        Check out the following {h('ycBentoBox')}.{' '}
-        <Em>What do you think will happen by the time it’s {h('ycDone')}?</Em>
-      </P>
-      {episode4[i++]()}
-      <P>
-        <Strong>Hint:</Strong>
+        <Strong>You might be wondering:</Strong>
       </P>
       <Ul>
         <UlLi>
-          The steak <Emoji size="mdlg">🥩</Emoji> is the only available dish
-          because it’s <Em>the rightmost item on the bottom row</Em>.
-        </UlLi>
-        <UlLi>
-          The sushi <Emoji size="mdlg">🍣</Emoji> is what you’re eating next
-          because it’s <Em>the leftmost item on the bottom row</Em>.
+          <Em>If there are 3 cells stacked vertically, what do we do?</Em>
         </UlLi>
         <UlLi>
           <Em>
-            <Strong>Everything else</Strong> on the bottom row is on the “eat
-            later” list <Emoji>😎</Emoji>, so{' '}
-            <Strong>you can ignore them</Strong>.
+            What are the signs that say{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>?
           </Em>
         </UlLi>
       </Ul>
-      {episode4[i++]()}
-      <P>Try to guess what will happen in the end!</P>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+      <P>
+        <Strong>Here’s the answer:</Strong>
+      </P>
+      <Rules />
+      <P>This will make sense after we work on an example!</P>
+      <EmojiSeparator emojis={['🥇', '➡️', '🥈']} />
+      <H3>Example</H3>
+      <P>
+        <Em>Try pressing {h('ycNext')}</Em> on the following example.
+      </P>
+      {episode5[i++]()}
+      <P>Notice that:</P>
+      <Ul>
+        <UlLi>
+          The part that has{' '}
+          <Em>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> on the{' '}
+            <Strong>top left</Strong> and the <Strong>bottom left</Strong>{' '}
+            corner
+          </Em>{' '}
+          is in white. <InlineBackground bgColor="white" />
+        </UlLi>
+        <UlLi>
+          <Em>
+            The rest is shaded. <InlineBackground bgColor="indigo50" />
+          </Em>{' '}
+          We’ll <Strong>ignore</Strong> this part for now.
+        </UlLi>
+      </Ul>
+      <H3>Continuing…</H3>
+      <P>
+        Then proceed with{' '}
+        <Em>
+          the white background part <InlineBackground bgColor="white" />
+        </Em>{' '}
+        as before. Ignore the shaded part.{' '}
+        <InlineBackground bgColor="indigo50" />
+      </P>
+      <P>
+        <Em>Try pressing {h('ycNext')} several times</Em>:
+      </P>
+      {episode5[i++]()}
+      <P>
+        Let’s see what happens when the crossed-out cells{' '}
+        <InlineBackground bgPattern="cross" /> are removed.{' '}
+        <Em>Try pressing {h('ycNext')}</Em>.
+      </P>
+      {episode5[i++]()}
+      <P>
+        <Strong>Here’s what happened:</Strong>
+      </P>
+      <Ul>
+        <UlLi>
+          <Em>
+            Everything is in white background again.{' '}
+            <InlineBackground bgColor="white" />
+          </Em>
+        </UlLi>
+        <UlLi>
+          <Strong>More Importantly:</Strong>{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> from before
+          disappears, and{' '}
+          <Em>
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> from before{' '}
+            <Strong>now becomes</Strong>{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          </Em>
+          .
+        </UlLi>
+      </Ul>
+      <H3>Continuing…</H3>
+      <P>
+        Let’s keep going until the end. <Em>Try pressing {h('ycNext')}</Em>
+      </P>
+      {episode5[i++]()}
+      <P>
+        <Strong>Note:</Strong> the sandwich <Emoji size="mdlg">🥪</Emoji> was on
+        the “eat later” list <Emoji>😎</Emoji> initially. But now, it became
+        what you’re eating next <Emoji>😋</Emoji>.
+      </P>
+      <EmojiSeparator emojis={['😎', '➡', '😋']} />
+      <P>
+        <Strong>That’s all!</Strong> Just for your reference, you can try it
+        from <Em>the beginning to the end</Em>:
+      </P>
+      {episode5[i++]()}
+      <H3>Review</H3>
+      <P>
+        <Strong>What you need to know:</Strong>
+      </P>
+      <Rules />
+      <P>Let’s do a quiz to make sure you understood this!</P>
+      <EmojiSeparator emojis={['🥇', '🤔', '🥈']} />
+      <H3>Quiz</H3>
+      <P>If you step through the following {h('ycBentoBox')} until the end…</P>
+      {episode5[i++]()}
+      <P>
+        <Strong>Which one will be the last food item remaining?</Strong>
+      </P>
+      <Ol>
+        <OlLi>
+          <Emoji size="lg">🍣</Emoji>
+        </OlLi>
+        <OlLi>
+          <Emoji size="lg">🍟</Emoji>
+        </OlLi>
+        <OlLi>
+          <Emoji size="lg">🍗</Emoji>
+        </OlLi>
+      </Ol>
+      <P>
+        <Em>This is hard to do in your head</Em>. So don’t worry if you aren’t
+        sure.
+      </P>
       <YcNextLessonButton nextEpisodeNumber={5} />
     </>
   )

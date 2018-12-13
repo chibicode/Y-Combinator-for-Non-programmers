@@ -107,14 +107,14 @@ export const allTranslations = {
     en: (
       <>
         <Strong>
-          Done <Emoji>✅</Emoji>
+          Done <Emoji>🏁</Emoji>
         </Strong>
       </>
     ),
     jp: (
       <>
         <Strong>
-          終了 <Emoji>✅</Emoji>
+          終了 <Emoji>🏁</Emoji>
         </Strong>
       </>
     )
@@ -159,13 +159,13 @@ export const allTranslations = {
   ycTryUntilDone: (capitalize = true) => ({
     en: (
       <Em>
-        {capitalize ? 'T' : 't'}
-        ry pressing {h('ycNext')} until you see {h('ycDone')}
+        {capitalize ? 'K' : 'k'}
+        eep pressing {h('ycNext')} until you see {h('ycDone')}
       </Em>
     ),
     jp: (
       <Em>
-        {h('ycDone')} になるまで {h('ycNext')} を押してみてください
+        {h('ycDone')} になるまで {h('ycNext')} を何度も押してみてください
       </Em>
     )
   }),

@@ -15,52 +15,78 @@ import {
 
 export function toShowFuncUnbound(
   e: VariableExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepVariable<'showFuncUnbound'>
 export function toShowFuncUnbound(
   e: FunctionExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepFunction<'showFuncUnbound'>
 export function toShowFuncUnbound(
   e: CallExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): NonExecutableStepCall<'showFuncUnbound'>
 export function toShowFuncUnbound(
   e: VariableExpression | FunctionExpression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepVariable<'showFuncUnbound'> | StepFunction<'showFuncUnbound'>
 export function toShowFuncUnbound(
   e: Expression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepChild<'showFuncUnbound'>
 export function toShowFuncUnbound(
   e: Expression,
-  funcSide: boolean
+  funcSide: boolean,
+  highlight: boolean
 ): StepChild<'showFuncUnbound'> {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      return { ...e, highlightType: 'active', badgeType: 'funcBound' }
-    } else if (funcSide && !e.bound) {
       return {
         ...e,
-        highlightType: 'highlighted',
-        badgeType: 'funcUnbound'
+        highlightType: 'active',
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'funcBound'
+      }
+    } else if (funcSide && !e.bound) {
+      if (highlight) {
+        return {
+          ...e,
+          highlightType: 'highlighted',
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcUnbound'
+        }
+      } else {
+        return {
+          ...e,
+          highlightType: 'active',
+          topRightBadgeType: 'none',
+          bottomRightBadgeType: 'funcUnbound'
+        }
       }
     } else {
-      return { ...e, highlightType: 'active', badgeType: 'none' }
+      return {
+        ...e,
+        highlightType: 'active',
+        topRightBadgeType: 'none',
+        bottomRightBadgeType: 'callArg'
+      }
     }
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toShowFuncUnbound(e.arg, funcSide),
-      body: toShowFuncUnbound(e.body, funcSide)
+      arg: toShowFuncUnbound(e.arg, funcSide, highlight),
+      body: toShowFuncUnbound(e.body, funcSide, highlight)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      arg: toShowFuncUnbound(e.arg, funcSide),
-      func: toShowFuncUnbound(e.func, funcSide)
+      arg: toShowFuncUnbound(e.arg, funcSide, highlight),
+      func: toShowFuncUnbound(e.func, funcSide, highlight)
     }
   }
 }
@@ -70,19 +96,21 @@ export const activeFuncArg = (
 ): VariableWithState<'activeFuncArg'> => ({
   ...e,
   highlightType: 'active',
-  badgeType: 'funcArg'
+  topRightBadgeType: 'none',
+  bottomRightBadgeType: 'funcArg'
 })
 
 const stepToShowFuncUnbound = (
-  e: ExecutableCall
+  e: ExecutableCall,
+  highlight: boolean
 ): ExecutableStepCall<'showFuncUnbound'> => ({
   ...e,
   state: 'showFuncUnbound',
-  arg: toShowFuncUnbound(e.arg, false),
+  arg: toShowFuncUnbound(e.arg, false, highlight),
   func: {
     ...e.func,
     arg: activeFuncArg(e.func.arg),
-    body: toShowFuncUnbound(e.func.body, true)
+    body: toShowFuncUnbound(e.func.body, true, highlight)
   }
 })
 

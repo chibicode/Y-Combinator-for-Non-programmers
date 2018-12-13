@@ -15,7 +15,7 @@ function grabTheRightIcon(rawText: string) {
   )
 }
 
-const EmojiSvg: React.SFC<{ name: string }> = ({ name }) => {
+const EmojiSvg: React.FunctionComponent<{ name: string }> = ({ name }) => {
   const Component = dynamic(
     // @ts-ignore - import isn't typed correctly
     () =>
@@ -34,23 +34,22 @@ const EmojiSvg: React.SFC<{ name: string }> = ({ name }) => {
 interface EmojiProps {
   children?: string
   customChildren?: React.ReactNode
-  size?: 'md' | 'lg' | 'mdlg'
-  noVerticalTransform?: boolean
+  size: 'md' | 'lg' | 'mdlg' | 'huge' | 'star'
+  noVerticalTransform: boolean
 }
 
 const sizeToHeight = (size: Required<EmojiProps>['size']) =>
   ({
     md: '1em',
     mdlg: '1.5em',
-    lg: '2em'
+    lg: '2em',
+    star: '1.25em',
+    huge: '6em'
   }[size])
 
-const Emoji: React.SFC<EmojiProps> = ({
-  children,
-  size = 'md',
-  customChildren,
-  noVerticalTransform = false
-}) => (
+const Emoji: React.FunctionComponent<EmojiProps> & {
+  defaultProps: Partial<EmojiProps>
+} = ({ children, size, customChildren, noVerticalTransform }) => (
   <span
     className={cx(
       css`
@@ -69,5 +68,10 @@ const Emoji: React.SFC<EmojiProps> = ({
     {children && <EmojiSvg name={children} />}
   </span>
 )
+
+Emoji.defaultProps = {
+  size: 'md',
+  noVerticalTransform: false
+}
 
 export default Emoji
