@@ -3142,13 +3142,6 @@ emotion-server@^9.2.12:
   dependencies:
     create-emotion-server "^9.2.12"
 
-emotion-theming@^9.2.9:
-  version "9.2.9"
-  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-9.2.9.tgz#2bfd77fdd47d3f5e60d59d97dd4cea4622657220"
-  integrity sha512-Ncyr1WocmDDrTbuYAzklIUC5iKiGtHy3e5ymoFXcka6SuvZl/EDMawegk4wVp72Agrcm1xemab3QOHfnOkpoMA==
-  dependencies:
-    hoist-non-react-statics "^2.3.1"
-
 emotion@^9.2.12:
   version "9.2.12"
   resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.2.12.tgz#53925aaa005614e65c6e43db8243c843574d1ea9"

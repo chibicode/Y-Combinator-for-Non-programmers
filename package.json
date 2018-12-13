@@ -7,7 +7,6 @@
     "color": "^3.1.0",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
-    "emotion-theming": "^9.2.9",
     "immer": "^1.8.2",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
