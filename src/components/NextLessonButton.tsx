@@ -1,11 +1,13 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import Link from 'next/link'
 import React from 'react'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
 
 interface NextLessonButtonProps {
-  Component: React.ComponentType<{ className?: string }> | string
+  Component: React.ComponentType | string
   href: string
   primaryText: React.ReactNode
   secondaryText?: React.ReactNode
@@ -16,14 +18,14 @@ const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> & {
   defaultProps: Partial<NextLessonButtonProps>
 } = ({ primaryText, secondaryText, tertiaryText, href, Component }) => (
   <Component
-    className={css`
+    css={css`
       text-align: center;
       margin: ${spaces(3)} 0;
     `}
   >
     <Link href={href}>
       <a
-        className={css`
+        css={css`
           display: inline-block;
           padding: ${locale === 'jp' ? spaces(0.25) : spaces(0.5)}
             ${spaces(1.5)} ${locale === 'jp' ? spaces(0.5) : spaces(0.75)};
@@ -50,7 +52,7 @@ const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> & {
         `}
       >
         <span
-          className={css`
+          css={css`
             font-size: ${fontSizes(1.25)};
             font-weight: bold;
             display: block;
@@ -60,7 +62,7 @@ const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> & {
         </span>
         {secondaryText && (
           <span
-            className={css`
+            css={css`
               font-size: ${fontSizes(0.85)};
               display: block;
             `}
@@ -72,7 +74,7 @@ const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> & {
     </Link>
     {tertiaryText && (
       <div
-        className={css`
+        css={css`
           font-size: ${fontSizes(0.85)};
           margin-top: ${spaces(0.75)};
           color: ${colors('grey500')};

@@ -1,4 +1,6 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import {
   Blockquote,
   Em,
@@ -181,7 +183,7 @@ export default () => {
       >
         <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
         <P
-          className={css`
+          css={css`
             margin-top: 0;
           `}
         >

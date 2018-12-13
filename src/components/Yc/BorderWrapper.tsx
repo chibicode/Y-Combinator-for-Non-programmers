@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx, SerializedStyles } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import Flex from 'src/components/Flex'
 import ExpressionRunnerContext, {
@@ -19,7 +21,7 @@ const background = (
   highlightType: BorderWrapperProps['highlightType'],
   isDoneOrReady: boolean,
   topRightBadgeType: BorderWrapperProps['topRightBadgeType']
-): string | undefined => {
+): SerializedStyles | undefined => {
   switch (highlightType) {
     case 'default': {
       return css`
@@ -69,7 +71,7 @@ const background = (
 
 const Cross: React.FunctionComponent<{}> = () => (
   <div
-    className={css`
+    css={css`
       position: absolute;
       top: 0;
       left: 0;
@@ -91,7 +93,7 @@ const BorderWrapper: React.FunctionComponent<BorderWrapperProps> = ({
   <ExpressionRunnerContext.Consumer>
     {({ isDoneOrReady, highlightOverrides }) => (
       <Flex
-        className={cx(
+        css={[
           css`
             margin: -2px;
             border: 2px solid ${colors('indigo300')};
@@ -104,21 +106,19 @@ const BorderWrapper: React.FunctionComponent<BorderWrapperProps> = ({
             isDoneOrReady,
             topRightBadgeType
           ),
-          {
-            [css`
+          highlightType === 'highlighted' &&
+            bottomRightBadgeType === 'funcBound' &&
+            topRightBadgeType === 'none' &&
+            css`
               border-right: 5px solid ${colors('yellow900')};
-            `]:
-              highlightType === 'highlighted' &&
-              bottomRightBadgeType === 'funcBound' &&
-              topRightBadgeType === 'none',
-            [css`
+            `,
+          highlightType === 'highlighted' &&
+            bottomRightBadgeType === 'funcArg' &&
+            topRightBadgeType === 'none' &&
+            css`
               border-left: 5px solid ${colors('pink400')};
-            `]:
-              highlightType === 'highlighted' &&
-              bottomRightBadgeType === 'funcArg' &&
-              topRightBadgeType === 'none'
-          }
-        )}
+            `
+        ]}
       >
         {highlightType === 'removed' && <Cross />}
         {children}

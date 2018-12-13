@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx, SerializedStyles } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
@@ -14,7 +16,7 @@ interface BottomRightBadgeProps {
 
 const bottomRightBadgeTypeToColors = (
   x: BottomRightBadgeProps['bottomRightBadgeType']
-): string =>
+): SerializedStyles =>
   ({
     callArg: css`
       background-color: ${colors('indigo300')};
@@ -56,7 +58,7 @@ const BottomRightBadge: React.FunctionComponent<BottomRightBadgeProps> = ({
   inline
 }) => (
   <span
-    className={cx(
+    css={[
       css`
         align-items: center;
         justify-content: center;
@@ -71,25 +73,26 @@ const BottomRightBadge: React.FunctionComponent<BottomRightBadgeProps> = ({
         border-style: solid;
       `,
       bottomRightBadgeTypeToColors(bottomRightBadgeType),
-      {
-        [css`
+      !inline &&
+        css`
           display: flex;
           font-size: 0.4em;
-        `]: !inline,
-        [css`
+        `,
+      inline &&
+        css`
           display: inline-flex;
           font-size: 0.85em;
           transform: translateY(-0.1em);
-        `]: inline
-      }
-    )}
+        `
+    ]}
   >
     <span
-      className={cx({
-        [css`
+      css={
+        locale === 'jp' &&
+        css`
           transform: translateY(-0.05em);
-        `]: locale === 'jp'
-      })}
+        `
+      }
     >
       {bottomRightBadgeTypeToText(bottomRightBadgeType)}
     </span>

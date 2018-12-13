@@ -1,5 +1,7 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import dynamic from 'next/dynamic'
 import React from 'react'
 import EmojiLoader from 'src/components/Twemoji/2b1c'
@@ -51,18 +53,17 @@ const Emoji: React.FunctionComponent<EmojiProps> & {
   defaultProps: Partial<EmojiProps>
 } = ({ children, size, customChildren, noVerticalTransform }) => (
   <span
-    className={cx(
+    css={[
       css`
         display: inline-flex;
         vertical-align: middle;
         height: ${sizeToHeight(size)};
       `,
-      {
-        [css`
+      !noVerticalTransform &&
+        css`
           transform: translateY(-0.1em);
-        `]: !noVerticalTransform
-      }
-    )}
+        `
+    ]}
   >
     {customChildren}
     {children && <EmojiSvg name={children} />}

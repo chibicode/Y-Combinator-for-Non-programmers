@@ -1,13 +1,12 @@
 {
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.4",
+    "@emotion/styled": "^10.0.4",
     "@material-ui/core": "^3.6.2",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "color": "^3.1.0",
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
-    "emotion-theming": "^9.2.9",
     "immer": "^1.8.2",
     "lodash": "^4.17.11",
     "modern-normalize": "^0.5.0",
@@ -15,7 +14,6 @@
     "nprogress": "^0.2.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-emotion": "^9.2.12",
     "twemoji": "^11.2.0"
   },
   "scripts": {
@@ -39,9 +37,9 @@
     "@types/material-ui": "^0.21.5",
     "@types/next": "^7.0.5",
     "@types/nprogress": "^0.0.29",
-    "@types/react": "^16.7.13",
+    "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
-    "babel-plugin-emotion": "^9.2.11",
+    "babel-plugin-emotion": "^10.0.4",
     "babel-plugin-inline-react-svg": "^1.0.1",
     "chokidar": "^2.0.4",
     "concurrently": "^4.1.0",
@@ -55,5 +53,9 @@
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.2.2"
+  },
+  "resolutions": {
+    "@types/react": "16.7.17",
+    "@types/react-dom": "16.0.11"
   }
 }

@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
@@ -63,7 +65,7 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
     </Head>
     <Container size="sm">
       <div
-        className={css`
+        css={css`
           display: flex;
           align-items: center;
           padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
@@ -72,41 +74,40 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
         `}
       >
         <div
-          className={css`
+          css={css`
             width: 32%;
             text-align: left;
           `}
         >
-          {episodeNumber &&
-            episodeNumber >= 1 && (
-              <InternalLink
-                href={pathHelpers[lessonName](
-                  episodeNumber === 1 ? undefined : episodeNumber - 1
-                )}
-                className={cx(navigationLinkClasses)}
-              >
-                ←{' '}
-                {episodeNumber === 1
-                  ? h('introductionPageLink')
-                  : episodeTitlePrefix(episodeNumber - 1, lessonName, true)}
-              </InternalLink>
-            )}
+          {episodeNumber && episodeNumber >= 1 && (
+            <InternalLink
+              href={pathHelpers[lessonName](
+                episodeNumber === 1 ? undefined : episodeNumber - 1
+              )}
+              css={navigationLinkClasses}
+            >
+              ←{' '}
+              {episodeNumber === 1
+                ? h('introductionPageLink')
+                : episodeTitlePrefix(episodeNumber - 1, lessonName, true)}
+            </InternalLink>
+          )}
         </div>
         <div
-          className={css`
+          css={css`
             width: 36%;
             text-align: center;
           `}
         >
           {/* <InternalLink
             href={pathHelpers[lessonName]('toc')}
-            className={navigationLinkClasses}
+            css={navigationLinkClasses}
           >
             {h('indexPageLink')}
           </InternalLink> */}
         </div>
         <div
-          className={css`
+          css={css`
             width: 32%;
             text-align: right;
           `}
@@ -114,7 +115,7 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
           {(episodeNumber || 0) < numEpisodes(lessonName) && (
             <InternalLink
               href={pathHelpers[lessonName]((episodeNumber || 0) + 1)}
-              className={navigationLinkClasses}
+              css={navigationLinkClasses}
             >
               {episodeTitlePrefix((episodeNumber || 0) + 1, lessonName, true)} →
             </InternalLink>
@@ -124,18 +125,18 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
     </Container>
     <Container size={episodeNumber ? 'sm' : 'lg'}>
       <div
-        className={css`
+        css={css`
           padding-top: ${spaces(1.5)};
         `}
       >
         <div
-          className={css`
+          css={css`
             text-align: center;
           `}
         >
           <Link href="/">
             <a
-              className={css`
+              css={css`
                 display: inline-block;
                 height: ${fontSizes(2.5)};
               `}
@@ -148,7 +149,7 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
         {episodeTitle ? (
           <>
             <h3
-              className={cx(
+              css={[
                 commonTitleClasses,
                 css`
                   color: ${colors('grey500')};
@@ -156,11 +157,11 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
                   font-size: ${fontSizes(1.25)};
                   margin: 0 auto;
                 `
-              )}
+              ]}
             >
               <InternalLink
                 href={pathHelpers[lessonName]()}
-                className={css`
+                css={css`
                   text-decoration: none;
                 `}
               >
@@ -168,7 +169,7 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
               </InternalLink>
             </h3>
             <h1
-              className={cx(
+              css={[
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
@@ -177,14 +178,14 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
                   font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};
                 `
-              )}
+              ]}
             >
               {episodeTitle}
             </h1>
           </>
         ) : (
           <h1
-            className={cx(
+            css={[
               commonTitleClasses,
               css`
                 color: ${colors('grey900')};
@@ -192,11 +193,11 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
                 font-size: ${fontSizes(2)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};
-                ${ns(css`
+                ${ns} {
                   font-size: ${fontSizes(2.5)};
-                `)};
+                }
               `
-            )}
+            ]}
           >
             {lessonTitle}
           </h1>

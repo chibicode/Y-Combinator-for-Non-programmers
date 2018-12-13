@@ -1,5 +1,6 @@
-import { css } from 'emotion'
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import {
   Em,
   H3,
@@ -208,44 +209,21 @@ export default () => {
         <tbody>
           <tr>
             <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
               True
             </Td>
             <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
               True
             </Td>
             <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-          </tr>
-          <tr>
-            <Td
-              className={css`
-                background-color: ${colors('yellow100')};
-              `}
-            >
-              True
-            </Td>
-            <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-            <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
@@ -254,21 +232,21 @@ export default () => {
           </tr>
           <tr>
             <Td
-              className={css`
-                background-color: ${colors('pink50')};
-              `}
-            >
-              False
-            </Td>
-            <Td
-              className={css`
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
               True
             </Td>
             <Td
-              className={css`
+              css={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              css={css`
                 background-color: ${colors('yellow100')};
               `}
             >
@@ -277,21 +255,44 @@ export default () => {
           </tr>
           <tr>
             <Td
-              className={css`
+              css={css`
                 background-color: ${colors('pink50')};
               `}
             >
               False
             </Td>
             <Td
-              className={css`
+              css={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+            <Td
+              css={css`
+                background-color: ${colors('yellow100')};
+              `}
+            >
+              True
+            </Td>
+          </tr>
+          <tr>
+            <Td
+              css={css`
                 background-color: ${colors('pink50')};
               `}
             >
               False
             </Td>
             <Td
-              className={css`
+              css={css`
+                background-color: ${colors('pink50')};
+              `}
+            >
+              False
+            </Td>
+            <Td
+              css={css`
                 background-color: ${colors('pink50')};
               `}
             >

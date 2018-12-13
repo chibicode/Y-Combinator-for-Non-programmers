@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 
 type ButtonWithTouchActiveStatesProps<
@@ -20,15 +22,16 @@ export default class ButtonWithTouchActiveStates extends React.Component<
   }
 
   public render() {
-    const { className, activeBackgroundColor, ...props } = this.props
+    const { activeBackgroundColor, ...props } = this.props
     return (
       <button
         {...props}
-        className={cx(className, {
-          [css`
+        css={
+          this.state.isActive &&
+          css`
             background: ${activeBackgroundColor} !important;
-          `]: this.state.isActive
-        })}
+          `
+        }
         onTouchStart={this.activate}
         onTouchEnd={this.deactivate}
         onTouchCancel={this.deactivate}

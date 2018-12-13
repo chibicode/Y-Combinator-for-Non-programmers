@@ -1,4 +1,6 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
@@ -10,7 +12,7 @@ interface InlineEmojiBoxProps {
 
 const InlineEmojiBoxes: React.FunctionComponent<InlineEmojiBoxProps> = ({ emojis }) => (
   <span
-    className={css`
+    css={css`
       display: inline-flex;
       vertical-align: middle;
       font-size: ${fontSizes(1.25)};
@@ -22,7 +24,7 @@ const InlineEmojiBoxes: React.FunctionComponent<InlineEmojiBoxProps> = ({ emojis
     {emojis.map((emoji, i) => (
       <FlexCenter
         key={`${emoji}${i}`}
-        className={css`
+        css={css`
           width: 1.5em;
           height: 1.5em;
           border-top: 2px solid ${colors('indigo300')};

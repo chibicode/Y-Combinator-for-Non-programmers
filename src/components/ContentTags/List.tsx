@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import { spaces } from 'src/lib/theme'
 
@@ -29,21 +31,18 @@ interface UlProps extends DefaultUlProps {
 }
 
 export const Ul: React.FunctionComponent<UlProps> = ({
-  className,
   size = 'md',
   ...props
 }) => (
   <ul
     {...props}
-    className={cx(
+    css={[
       commonListCss,
-      {
-        [css`
+      size === 'lg' &&
+        css`
           margin: ${spaces(1.75)} 0;
-        `]: size === 'lg'
-      },
-      className
-    )}
+        `
+    ]}
   />
 )
 
@@ -52,31 +51,28 @@ interface OlProps extends DefaultOlProps {
   size?: 'md' | 'lg'
 }
 
-export const Ol: React.FunctionComponent<OlProps> = ({ className, size, ...props }) => (
+export const Ol: React.FunctionComponent<OlProps> = ({ size, ...props }) => (
   <ol
     {...props}
-    className={cx(
+    css={[
       commonListCss,
-      {
-        [css`
+      size === 'lg' &&
+        css`
           margin: ${spaces(1.75)} 0;
-        `]: size === 'lg'
-      },
+        `,
       css`
         counter-reset: text;
-      `,
-      className
-    )}
+      `
+    ]}
   />
 )
 
 export const UlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
-  className,
   ...props
 }) => (
   <li
     {...props}
-    className={cx(
+    css={[
       commonListItemCss,
       css`
         &::before {
@@ -85,19 +81,17 @@ export const UlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
           content: '•';
           font-size: 0.8em;
         }
-      `,
-      className
-    )}
+      `
+    ]}
   />
 )
 
 export const OlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
-  className,
   ...props
 }) => (
   <li
     {...props}
-    className={cx(
+    css={[
       commonListItemCss,
       css`
         &::before {
@@ -105,8 +99,7 @@ export const OlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
           counter-increment: text;
           content: counter(text) '.';
         }
-      `,
-      className
-    )}
+      `
+    ]}
   />
 )

@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import Link from 'next/link'
 import React from 'react'
 import { colors } from 'src/lib/theme'
@@ -13,18 +15,15 @@ const commonLinkClass = css`
   }
 `
 
-export const ExternalLink: React.FunctionComponent<JSX.IntrinsicElements['a']> = ({
-  className,
-  ...props
-}) => <a {...props} className={cx(commonLinkClass, className)} />
+export const ExternalLink: React.FunctionComponent<
+  JSX.IntrinsicElements['a']
+> = ({ ...props }) => <a {...props} css={commonLinkClass} />
 
 // NOTE: Can't use <ExternalLink> as a child of <Link> - the child of <Link> must be <a>
-export const InternalLink: React.FunctionComponent<JSX.IntrinsicElements['a']> = ({
-  href,
-  className,
-  ...props
-}) => (
+export const InternalLink: React.FunctionComponent<
+  JSX.IntrinsicElements['a']
+> = ({ href, ...props }) => (
   <Link href={href}>
-    <a {...props} className={cx(commonLinkClass, className)} />
+    <a {...props} css={commonLinkClass} />
   </Link>
 )

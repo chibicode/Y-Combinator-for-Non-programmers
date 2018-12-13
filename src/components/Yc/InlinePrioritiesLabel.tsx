@@ -1,4 +1,6 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 
@@ -7,7 +9,7 @@ const InlinePrioritiesLabel: React.FunctionComponent<{
   revert?: boolean
 }> = ({ children, revert }) => (
   <span
-    className={css`
+    css={css`
       display: inline-block;
       vertical-align: text-bottom;
       padding: 0 ${spaces(0.25)};

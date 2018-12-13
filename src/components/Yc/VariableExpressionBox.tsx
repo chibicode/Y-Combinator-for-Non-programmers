@@ -1,4 +1,6 @@
-import { css } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
@@ -51,7 +53,7 @@ const VariableExpressionBox: React.FunctionComponent<VariableExpressionBoxProps>
           />
         )}
         <FlexCenter
-          className={css`
+          css={css`
             flex: 1;
             font-size: ${fontSize(variableSize)};
             padding: ${paddingTop(variableSize)} 0
@@ -59,14 +61,14 @@ const VariableExpressionBox: React.FunctionComponent<VariableExpressionBoxProps>
           `}
         >
           <span
-            className={css`
+            css={css`
               position: relative;
             `}
           >
             <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
             {expression.bottomRightBadgeType !== 'none' && (
               <span
-                className={css`
+                css={css`
                   position: absolute;
                   right: -0.2em;
                   bottom: 0;
@@ -80,7 +82,7 @@ const VariableExpressionBox: React.FunctionComponent<VariableExpressionBoxProps>
             )}
             {expression.topRightBadgeType !== 'none' && (
               <span
-                className={css`
+                css={css`
                   position: absolute;
                   right: -0.18em;
                   top: 0;

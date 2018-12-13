@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import { H3 } from 'src/components/ContentTags'
 import SectionContext from 'src/components/SectionContext'
@@ -44,7 +46,7 @@ const SideNoteSection: React.FunctionComponent<SideNoteProps> = ({
     value={{ emBackgroundColor: emBackgroundColor(color) }}
   >
     <div
-      className={cx(
+      css={[
         css`
           padding-top: ${spaces(0.75)};
           padding-left: ${spaces(1)};
@@ -54,16 +56,15 @@ const SideNoteSection: React.FunctionComponent<SideNoteProps> = ({
           margin: 1.5rem 0;
           border-radius: ${radii(0.25)};
         `,
-        {
-          [css`
+        !noPaddingBottom &&
+          css`
             padding-bottom: ${spaces(0.75)};
-          `]: !noPaddingBottom
-        }
-      )}
+          `
+      ]}
     >
       {heading && (
         <H3
-          className={css`
+          css={css`
             text-align: center;
             margin: 0 0 ${headingNoMarginBottom ? 0 : spaces(1)};
           `}

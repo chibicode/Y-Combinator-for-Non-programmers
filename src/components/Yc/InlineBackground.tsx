@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+export const jsxBabelFix = jsx
 import React from 'react'
 import crossDarkSvg from 'src/images/cross-dark.url.svg'
 import { colors } from 'src/lib/theme'
@@ -25,7 +27,7 @@ const InlineBackground: React.FunctionComponent<InlineBackgroundProps> & {
   defaultProps: Partial<InlineBackgroundProps>
 } = ({ bgColor, bgPattern, size }) => (
   <span
-    className={cx(
+    css={[
       css`
         display: inline-block;
         padding: ${size === 'mdlg' ? '0.6em' : '0.5em'};
@@ -42,7 +44,7 @@ const InlineBackground: React.FunctionComponent<InlineBackgroundProps> & {
           background-size: 1.5em 1.5em;
           background-position: center center;
         `
-    )}
+    ]}
   />
 )
 
