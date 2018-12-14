@@ -88,15 +88,14 @@ export default () => {
   let i = 0
   return (
     <>
-      <P>
-        Welcome to <Strong>Beginner Level 1</Strong> of “Y Combinator for
-        Non-Programmers”! <Emoji>👋</Emoji>
-      </P>
-      <P>
-        In this level, we’ll cover{' '}
-        <Em>the basics of the puzzles we’ll be solving.</Em>
-      </P>
       <EpisodeInfo
+        episodeNumber={1}
+        introText={
+          <>
+            In this level, we’ll cover{' '}
+            <Em>the basics of the puzzles we’ll be solving.</Em>
+          </>
+        }
         readingTime={6}
         difficultyNum={3}
         difficultyText="It will be

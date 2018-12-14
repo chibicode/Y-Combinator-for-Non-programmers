@@ -79,17 +79,15 @@ export default () => {
   let i = 0
   return (
     <>
-      <P>
-        「あなたの知らないYコンビネーター」の
-        <Strong>初級その1</Strong>
-        へようこそ！ <Emoji>👋</Emoji>
-      </P>
-      <P>
-        今回は、
-        <Em>これから何度も行うパズルの基本ルール</Em>
-        を紹介します。
-      </P>
       <EpisodeInfo
+        episodeNumber={1}
+        introText={
+          <>
+            今回は、
+            <Em>これから何度も行うパズルの基本ルール</Em>
+            を紹介します。
+          </>
+        }
         readingTime={6}
         difficultyNum={3}
         difficultyText="はじめてのことが多いので、少々難しいかもしれません。"
