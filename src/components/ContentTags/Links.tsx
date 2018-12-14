@@ -20,10 +20,11 @@ export const ExternalLink: React.FunctionComponent<
 > = ({ ...props }) => <a {...props} css={commonLinkClass} />
 
 // NOTE: Can't use <ExternalLink> as a child of <Link> - the child of <Link> must be <a>
+// NOTE: passHref is necessary if you use emotion
 export const InternalLink: React.FunctionComponent<
   JSX.IntrinsicElements['a']
 > = ({ href, ...props }) => (
-  <Link href={href}>
+  <Link href={href} passHref>
     <a {...props} css={commonLinkClass} />
   </Link>
 )

@@ -10,7 +10,7 @@ const EpisodePageInitialRenderWarning: React.FunctionComponent<{
   <GlobalContext.Consumer>
     {({ initialRender }) =>
       initialRender && (
-        <SideNoteSection color="indigo">
+        <SideNoteSection color="yellow">
           <Content name="others/NewUser" componentProps={{ lessonName }} />
         </SideNoteSection>
       )
