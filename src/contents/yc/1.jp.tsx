@@ -1,5 +1,15 @@
 import React from 'react'
-import { Em, H3, Hr, Ol, OlLi, P, Strong } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  Hr,
+  Img,
+  Ol,
+  OlLi,
+  P,
+  PFullWidth,
+  Strong
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
@@ -45,8 +55,7 @@ const Step4 = () => (
 const FourSteps = () => (
   <>
     <P>
-      {h('ycBentoBox')}
-      のパズルには
+      {h('ycBentoBox')}には
       <Strong>4つのステップ</Strong>
       があります:
     </P>
@@ -93,12 +102,16 @@ export default () => {
         funText="基本ルールを紹介するので、少々つまらないかも。でも、後から面白くなるので、めげずに読み進めてください！"
         progressText={'これを終えれば、初級は残り3ページです！'}
       />
-      <Hr />
-      <H3>不思議な弁当箱</H3>
+      <H3>弁当箱のパズル</H3>
       <P>
-        まずはじめに、
-        <Strong>{h('ycBentoBox')}</Strong>
-        について解説します。
+        まずはじめにこちらの写真をご覧ください。わたしの地元、横浜の崎陽軒で販売されているお弁当です。
+      </P>
+      <PFullWidth>
+        <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />
+      </PFullWidth>
+      <P>
+        なぜお弁当の写真をお見せしたかというと、これからわたしたちは
+        <Strong>{h('ycBentoBox')}</Strong>を解いていくからです。
       </P>
       <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
       <P>
@@ -124,9 +137,8 @@ export default () => {
         が入っています。
       </P>
       <P>
-        これらの
-        {h('ycBentoBox')}
-        は実はパズルになっています。そのルールを紹介しましょう。
+        では次に、
+        {h('ycBentoBox')}のルールを紹介しましょう。
       </P>
       <H3>4つのステップ</H3>
       <FourSteps />

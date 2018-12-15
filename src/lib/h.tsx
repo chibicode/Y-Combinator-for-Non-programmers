@@ -19,7 +19,7 @@ export const allTranslations = {
     ),
     jp: (
       <>
-        「不思議な弁当箱 <Emoji>🍱</Emoji>」
+        「弁当箱のパズル <Emoji>🍱</Emoji>」
       </>
     )
   }),
