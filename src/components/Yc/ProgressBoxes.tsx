@@ -51,10 +51,10 @@ const Box: React.FunctionComponent<{
         `,
       wide
         ? css`
-            width: 1.25rem;
+            width: 1.1rem;
           `
         : css`
-            width: 0.8rem;
+            width: 0.85rem;
           `
     ]}
   >
@@ -63,11 +63,11 @@ const Box: React.FunctionComponent<{
 )
 
 const shouldHighlightBeginner = (currentEpisode: number, i: number) =>
-  currentEpisode - 1 === i
+  currentEpisode - 1 >= i
 const shouldHighlightIntermediate = (currentEpisode: number, i: number) =>
-  currentEpisode - numBeginnerLevels === i
+  currentEpisode - numBeginnerLevels >= i
 const shouldHighlightAdvanced = (currentEpisode: number, i: number) =>
-  currentEpisode - numIntermediateLevels - numBeginnerLevels === i
+  currentEpisode - numIntermediateLevels - numBeginnerLevels >= i
 
 const ProgressBoxes: React.FunctionComponent<ProgressBoxesProps> = ({
   currentEpisode
