@@ -1,7 +1,7 @@
 import React from 'react'
-import { Em, InternalLink, P, Strong } from 'src/components/ContentTags'
+import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
+import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
 import { yc } from 'src/lib/pathHelpers'
 
@@ -132,18 +132,21 @@ export const allTranslations = {
     jp: '次のページへ進む'
   }),
   ycNextButtonSecondaryText: (nextEpisodeNumber: number) => ({
-    en: <>Continue to {episodeTitlePrefix(nextEpisodeNumber, 'yc')}</>,
-    jp: <>{episodeTitlePrefix(nextEpisodeNumber, 'yc')}へ</>
+    en: <>Continue to {episodeTitlePrefix(nextEpisodeNumber, 'yc').prefix}</>,
+    jp: <>{episodeTitlePrefix(nextEpisodeNumber, 'yc').prefix}へ</>
   }),
   ycQuizReview: (previousEpisodeNumber: number) => ({
     en: (
-      <P>
-        <Strong>Quiz Review:</Strong> Let’s take a look at{' '}
-        <InternalLink href={yc(previousEpisodeNumber)}>
-          the quiz from episode {previousEpisodeNumber}
-        </InternalLink>
-        .
-      </P>
+      <>
+        <H3>Quiz Review</H3>
+        <P>
+          Let’s take a look at{' '}
+          <InternalLink href={yc(previousEpisodeNumber)}>
+            the quiz from episode {previousEpisodeNumber}
+          </InternalLink>
+          .
+        </P>
+      </>
     ),
     jp: (
       <P>

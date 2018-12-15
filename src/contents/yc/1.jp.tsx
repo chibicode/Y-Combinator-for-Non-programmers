@@ -89,10 +89,9 @@ export default () => {
           </>
         }
         readingTime={6}
-        difficultyNum={3}
-        difficultyText="はじめてのことが多いので、少々難しいかもしれません。"
         funNum={1}
         funText="基本ルールを紹介するので、少々つまらないかも。でも、後から面白くなるので、めげずに読み進めてください！"
+        progressText={'これを終えれば、初級は残り3ページです！'}
       />
       <Hr />
       <H3>不思議な弁当箱</H3>

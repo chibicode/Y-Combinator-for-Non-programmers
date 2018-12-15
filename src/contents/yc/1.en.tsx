@@ -1,16 +1,13 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import {
-  Blockquote,
   Em,
-  ExternalLink,
   H3,
-  Hr,
+  Img,
   Ol,
   OlLi,
   P,
-  Strong
+  Strong,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -97,14 +94,11 @@ export default () => {
           </>
         }
         readingTime={6}
-        difficultyNum={3}
-        difficultyText="It will be
-        challenging because everything is new to you."
         funNum={1}
         funText="We’ll cover basics, so
-        it might be a bit boring, but it’ll get much better later!"
+        it might be a bit boring. But it’ll get much better later!"
+        progressText={'After this, 3 more Beginner Levels left!'}
       />
-      <Hr />
       <H3>Let’s Get Started!</H3>
       <P>
         First, we’ll talk about <Strong>Bento Boxes</Strong>.
@@ -112,30 +106,25 @@ export default () => {
       <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
       <P>
         <Strong>Bento boxes</Strong> <Emoji>🍱</Emoji> are{' '}
-        <Em>traditional Japanese lunch boxes</Em>. Here’s what{' '}
-        <ExternalLink href="https://simple.wikipedia.org/wiki/Bento">
-          Wikipedia (Simple English)
-        </ExternalLink>{' '}
-        says:
+        <Em>traditional Japanese lunch boxes</Em>.
       </P>
-      <Blockquote>
-        <P>
-          <Strong>Bento [box]</Strong> is a meal common in Japanese cuisine,
-          made to take away from home to be eaten somewhere else. … People often
-          take bento for a picnic.
-        </P>
-      </Blockquote>
       <P>
-        And just like the bento box emoji,{' '}
-        <Em>a bento box has multiple cells, each with a food item</Em>.
+        <Strong>Example:</Strong> These are the <Strong>bento boxes</Strong>{' '}
+        <Emoji>🍱</Emoji> sold at Kiyoken restaurant in Yokohama, Japan (my
+        hometown).
       </P>
-      <P
-        css={css`
-          text-align: center;
-        `}
-      >
-        <Emoji size="huge">🍱</Emoji>
+      <P>
+        <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />
       </P>
+      <P>As you can see:</P>
+      <Ul>
+        <UlLi>
+          Each {h('ycBentoBox')} has <Em>multiple sections</Em>.
+        </UlLi>
+        <UlLi>
+          Each section has a <Em>food item</Em>.
+        </UlLi>
+      </Ul>
       <H3>Bento Box Puzzles</H3>
       <P>
         In this tutorial, we’re going to play with{' '}
@@ -147,9 +136,9 @@ export default () => {
       {episode1[i++]()}
       <P>
         Just like real bento boxes <Emoji>🍱</Emoji>,{' '}
-        <Em>each cell has a food item</Em>. The top item is sandwich{' '}
-        <Emoji size="mdlg">🥪</Emoji> and the bottom two items are sushi{' '}
-        <Emoji size="mdlg">🍣</Emoji>.
+        <Em>there are multiple sections, and each section has a food item</Em>.
+        The top item is sandwich <Emoji size="mdlg">🥪</Emoji> and the bottom
+        two items are sushi <Emoji size="mdlg">🍣</Emoji>.
       </P>
       <P>Here’s another {h('ycBentoBox')}:</P>
       {episode1[i++]()}

@@ -3,10 +3,9 @@ import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
+import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTranslations } from 'src/lib/t'
-import { colors } from 'src/lib/theme'
 
 interface EpisodePageWrapperProps {
   episodeNumber?: number
@@ -22,7 +21,7 @@ const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
     lessonTitle={t(`${lessonName}Title` as keyof typeof allTranslations)}
     episodeTitleString={
       episodeNumber
-        ? `${episodeTitlePrefix(episodeNumber, lessonName)}: ${t(
+        ? `${episodeTitlePrefix(episodeNumber, lessonName).prefix}: ${t(
             `${lessonName}Episode${episodeNumber}` as keyof typeof allTranslations
           )}`
         : undefined
@@ -30,10 +29,10 @@ const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
     episodeTitle={
       episodeNumber ? (
         <>
-          {episodeTitlePrefix(episodeNumber, lessonName)}:{' '}
+          {episodeTitlePrefix(episodeNumber, lessonName).prefix}:{' '}
           <span
             css={css`
-              color: ${colors('pink400')};
+              color: ${episodeTitlePrefix(episodeNumber, lessonName).color};
             `}
           >
             {t(

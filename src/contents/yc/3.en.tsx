@@ -55,13 +55,13 @@ export default () => {
       <H3>“Eat Later” List</H3>
       <P>
         Next, we’ll talk about the case when there are{' '}
-        <Em>more than two cells</Em> on the bottom. Check out this one:
+        <Em>more than two sections</Em> on the bottom. Check out this one:
       </P>
       {episode4[i++]()}
       <P>
         Here’s how to interpret this. First,{' '}
         <Em>
-          <Strong>the bottom right cell</Strong> is what’s available{' '}
+          <Strong>the bottom right section</Strong> is what’s available{' '}
           <Emoji>🍽</Emoji>
         </Em>
         .
@@ -69,7 +69,7 @@ export default () => {
       {episode4[i++]()}
       <P>
         <Em>
-          The <Strong>bottom leftmost</Strong> cell represents what you’re
+          The <Strong>bottom leftmost</Strong> section represents what you’re
           eating next <Emoji>😋</Emoji>
         </Em>
         .
@@ -98,8 +98,8 @@ export default () => {
       </P>
       <EmojiSeparator emojis={['😎', '➡️', '😋']} />
       <P>
-        And the <Strong>top cell</Strong> represents what the chef is preparing.
-        This is the same as before.
+        And the <Strong>top section</Strong> represents what the chef is
+        preparing. This is the same as before.
       </P>
       {episode4[i++]()}
       <P>{h('ycTryUntilDone')}:</P>
@@ -117,7 +117,7 @@ export default () => {
         <Em>turn into what you’re eating next</Em> <Emoji>😋</Emoji>.
       </P>
       <EmojiSeparator emojis={['😎', '➡️', '😋']} />
-      <H3>Quiz: Four Cells on the Bottom</H3>
+      <H3>Quiz: Four sections on the Bottom</H3>
       <P>
         Check out the following {h('ycBentoBox')}.{' '}
         <Em>What do you think will happen by the time it’s {h('ycDone')}?</Em>

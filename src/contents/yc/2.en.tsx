@@ -11,6 +11,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EpisodeInfo from 'src/components/EpisodeInfo'
 import { episode3 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
@@ -21,6 +22,19 @@ export default () => {
   let i = 0
   return (
     <>
+      <EpisodeInfo
+        episodeNumber={2}
+        progressText={'You’re halfway done with beginner levels after this!'}
+        introText={
+          <>
+            In this level, we’ll talk about <Em>three more scenarios</Em> for
+            the {h('ycBentoBox', true)}.
+          </>
+        }
+        readingTime={6}
+        funNum={1}
+        funText="It’s not too exciting yet. But please keep reading!"
+      />
       {h('ycQuizReview', 2)}
       {episode3[i++]()}
       <P>

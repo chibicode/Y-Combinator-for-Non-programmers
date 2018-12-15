@@ -74,20 +74,20 @@ export default () => {
           ).
         </UlLi>
         <UlLi>
-          <Strong>A:</Strong> Dishes in the <Strong>middle</Strong> cell and the{' '}
-          <Strong>top right</Strong> cell (<Emoji size="mdlg">🍝</Emoji>
+          <Strong>A:</Strong> Dishes in the <Strong>middle</Strong> section and
+          the <Strong>top right</Strong> section (<Emoji size="mdlg">🍝</Emoji>
           ).
         </UlLi>
         <UlLi>
-          <Strong>B:</Strong> Dishes in the <Strong>left</Strong> cell and the{' '}
-          <Strong>remaining cells in the right</Strong>. (
+          <Strong>B:</Strong> Dishes in the <Strong>left</Strong> section and
+          the <Strong>remaining sections in the right</Strong>. (
           <Emoji size="mdlg">🍚</Emoji>
           ).
         </UlLi>
         <UlLi>
           <Em>
             The number of <Strong>B</Strong>
-            ’s in the right-most cells is the <Strong>secret code</Strong> (
+            ’s in the right-most sections is the <Strong>secret code</Strong> (
             <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji>{' '}
             <Emoji size="mdlg">🍚</Emoji> <Emoji size="mdlg">🍚</Emoji>{' '}
             <Emoji size="mdlg">🍚</Emoji> = <Strong>5</Strong>)

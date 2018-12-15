@@ -11,7 +11,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import Page from 'src/components/Page'
 import episodeEmojis from 'src/lib/episodeEmojis'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefix'
+import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
 import pathHelpers from 'src/lib/pathHelpers'
@@ -89,7 +89,8 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
               ←{' '}
               {episodeNumber === 1
                 ? h('introductionPageLink')
-                : episodeTitlePrefix(episodeNumber - 1, lessonName, true)}
+                : episodeTitlePrefix(episodeNumber - 1, lessonName, true)
+                    .prefix}
             </InternalLink>
           )}
         </div>
@@ -117,7 +118,11 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
               href={pathHelpers[lessonName]((episodeNumber || 0) + 1)}
               css={navigationLinkClasses}
             >
-              {episodeTitlePrefix((episodeNumber || 0) + 1, lessonName, true)} →
+              {
+                episodeTitlePrefix((episodeNumber || 0) + 1, lessonName, true)
+                  .prefix
+              }{' '}
+              →
             </InternalLink>
           )}
         </div>

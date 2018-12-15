@@ -46,10 +46,10 @@ export default () => {
       <P>{h('ycTryUntilDone')}:</P>
       {episode5[i++]()}
       <P>Hope this wasn’t too difficult!</P>
-      <H3>Next Topic: More than 2 cells vertically</H3>
+      <H3>Next Topic: More than 2 sections vertically</H3>
       <P>
         Next, we’ll talk about the {h('ycBentoBox')} where{' '}
-        <Em>there are more than 2 cells stacked on top of each other</Em>:
+        <Em>there are more than 2 sections stacked on top of each other</Em>:
       </P>
       {episode5[i++]()}
       <P>
@@ -57,7 +57,7 @@ export default () => {
       </P>
       <Ul>
         <UlLi>
-          <Em>If there are 3 cells stacked vertically, what do we do?</Em>
+          <Em>If there are 3 sections stacked vertically, what do we do?</Em>
         </UlLi>
         <UlLi>
           <Em>
@@ -111,7 +111,7 @@ export default () => {
       </P>
       {episode5[i++]()}
       <P>
-        Let’s see what happens when the crossed-out cells{' '}
+        Let’s see what happens when the crossed-out sections{' '}
         <InlineBackground bgPattern="cross" /> are removed.{' '}
         <Em>Try pressing {h('ycNext')}</Em>.
       </P>

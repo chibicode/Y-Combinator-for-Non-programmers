@@ -1,7 +1,8 @@
 import locale from 'src/lib/locale'
 
-export const numBeginnerLevels = 6
-export const numIntermediateLevels = 6
+export const numBeginnerLevels = 4
+export const numIntermediateLevels = 4
+export const numAdvancedLevels = 4
 
 export const remainingText = (nextEpisode: number) => {
   if (nextEpisode <= numBeginnerLevels) {

@@ -15,7 +15,7 @@ export const allTranslations = {
     jp: 'これっくらいの、お弁当箱に…'
   },
   ycEpisode2: {
-    en: 'The Next and Previous Buttons',
+    en: 'Three Scenarios',
     jp: '「次へ」ボタンと「前へ」ボタン'
   },
   ycEpisode3: {
