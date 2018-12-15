@@ -52,7 +52,7 @@ const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
       <StarRating num={funNum} /> — {funText}
     </P>
     <P>
-      <Strong>{locale === 'jp' ? '進捗グラフ' : 'Progress'}:</Strong>{' '}
+      <Strong>{locale === 'jp' ? '進捗メーター' : 'Progress'}:</Strong>{' '}
       <ProgressBoxes currentEpisode={episodeNumber} /> — {progressText}
     </P>
     <Hr />

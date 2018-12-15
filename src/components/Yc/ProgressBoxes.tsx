@@ -54,7 +54,7 @@ const Box: React.FunctionComponent<{
             width: 1.25rem;
           `
         : css`
-            width: 0.85rem;
+            width: 0.8rem;
           `
     ]}
   >
