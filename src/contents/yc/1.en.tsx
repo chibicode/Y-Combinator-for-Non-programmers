@@ -5,6 +5,7 @@ import {
   Ol,
   OlLi,
   P,
+  PFullWidth,
   Strong,
   Ul,
   UlLi
@@ -113,16 +114,16 @@ export default () => {
         <Emoji>🍱</Emoji> sold at Kiyoken restaurant in Yokohama, Japan (my
         hometown).
       </P>
-      <P>
+      <PFullWidth>
         <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />
-      </P>
+      </PFullWidth>
       <P>As you can see:</P>
       <Ul>
         <UlLi>
-          Each {h('ycBentoBox')} has <Em>multiple sections</Em>.
+          Each {h('ycBentoBox')} has <Em>multiple, rectangular sections</Em>.
         </UlLi>
         <UlLi>
-          Each section has a <Em>food item</Em>.
+          Each rectangular section has a <Em>food item</Em>.
         </UlLi>
       </Ul>
       <H3>Bento Box Puzzles</H3>
@@ -135,9 +136,9 @@ export default () => {
       </P>
       {episode1[i++]()}
       <P>
-        Just like real bento boxes <Emoji>🍱</Emoji>,{' '}
-        <Em>there are multiple sections, and each section has a food item</Em>.
-        The top item is sandwich <Emoji size="mdlg">🥪</Emoji> and the bottom
+        Just like real bento boxes <Emoji>🍱</Emoji>, there are{' '}
+        <Em>multiple rectangular sections, and each section has a food item</Em>
+        . The top item is sandwich <Emoji size="mdlg">🥪</Emoji> and the bottom
         two items are sushi <Emoji size="mdlg">🍣</Emoji>.
       </P>
       <P>Here’s another {h('ycBentoBox')}:</P>
