@@ -390,20 +390,20 @@ export default () => {
       <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
         <FourSteps />
       </SideNoteSection>
-      <H3>
-        <Emoji>🔥</Emoji> Challenge Quiz <Emoji>🔥</Emoji>
-      </H3>
+      <H3>{h('ycTrueOrFalse')} Quiz</H3>
       <P>
-        At the end of each episode, we give you a{' '}
-        <Strong>challenge quiz</Strong> <Emoji>🔥</Emoji>.{' '}
+        At the end of each episode, we give you a {h('ycTrueOrFalse')} quiz.{' '}
         <Em>
-          You should try, but they’re hard, so don’t worry if you have no idea.
+          You should try, but they’re challenging, so don’t worry if you have no
+          idea.
         </Em>
       </P>
       <P>
-        <Strong>Here’s the quiz:</Strong> What do you think will happen to the
-        following {h('ycBentoBox')} after taking all the steps?
+        <Strong>Here’s the quiz:</Strong> Suppose we take all the steps on the
+        following {h('ycBentoBox')}:
       </P>
+      {episode1[i++]()}
+      <P>{h('ycTrueOrFalse')}: Will it eventually become this?</P>
       {episode1[i++]()}
       <P>Try guessing before you click on the button below!</P>
       <YcNextLessonButton nextEpisodeNumber={2} />

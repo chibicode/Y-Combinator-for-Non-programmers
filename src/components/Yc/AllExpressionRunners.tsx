@@ -433,6 +433,21 @@ export const episode1 = [
         }
       ]}
     />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      hideExplanations
+      resetIndex
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilTheEnd'
+        }
+      ]}
+    />
   )
 ]
 

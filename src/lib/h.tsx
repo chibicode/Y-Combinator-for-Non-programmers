@@ -119,6 +119,20 @@ export const allTranslations = {
       </>
     )
   }),
+  ycTrueOrFalse: () => ({
+    en: (
+      <>
+        <Strong>True</Strong> <Emoji>👍</Emoji> or <Strong>False</Strong>{' '}
+        <Emoji>👎</Emoji>
+      </>
+    ),
+    jp: (
+      <>
+        「<Strong>はい</Strong> <Emoji>🙋🏻‍♀️</Emoji>」か「<Strong>いいえ</Strong>{' '}
+        <Emoji>🙅🏻‍♀️</Emoji>」
+      </>
+    )
+  }),
   ycNextButtonStartPrimaryText: () => ({
     en: 'OK, Let’s Go!',
     jp: '次のページへ進む'
