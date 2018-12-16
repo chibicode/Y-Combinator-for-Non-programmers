@@ -1,25 +1,70 @@
 import React from 'react'
 import { Em, Hr, P, Strong } from 'src/components/ContentTags'
 import StarRating from 'src/components/StarRating'
-import ProgressBoxes from 'src/components/Yc/ProgressBoxes'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
 
 interface EpisodeInfoProps {
-  readingTime: number
-  funNum: number
-  funText: React.ReactNode
-  episodeNumber: number
+  episodeNumber: 1 | 2
   introText: React.ReactNode
-  progressText: React.ReactNode
+  outroText?: React.ReactNode
 }
 
+const episodeInfo: {
+  [s in EpisodeInfoProps['episodeNumber']]: {
+    readingTime: number
+    difficulty: { num: number; text: string }
+    fun: { num: number; text: string }
+  }
+} = {
+  1: {
+    readingTime: 6,
+    difficulty: {
+      num: 3,
+      text:
+        locale === 'jp'
+          ? 'はじめてのことばかりなので、少々難しいかも。'
+          : 'Because everything is new, it might be a bit difficult.'
+    },
+    fun: {
+      num: 1,
+      text:
+        locale === 'jp'
+          ? '基本ルールを紹介するので、少々つまらないかも。でも後から面白くなるので、めげずに読み進めてください！'
+          : 'We’ll cover basics, so it might be a bit boring. But it’ll get much better later!'
+    }
+  },
+  2: {
+    readingTime: 4,
+    difficulty: {
+      num: 1,
+      text:
+        locale === 'jp'
+          ? '前のページより簡単なはず！'
+          : 'Should be much easier than the last level!'
+    },
+    fun: {
+      num: 1,
+      text:
+        locale === 'jp'
+          ? 'まだ基本ルールの説明なので、星ひとつです！'
+          : 'We’re still talking about basics, so I just made it one star.'
+    }
+  }
+}
+
+const readingTimeFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
+  episodeInfo[episodeNumber].readingTime
+
+const difficultyFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
+  episodeInfo[episodeNumber].difficulty
+
+const funFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
+  episodeInfo[episodeNumber].difficulty
+
 const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
-  readingTime,
-  funNum,
-  funText,
   episodeNumber,
-  progressText,
+  outroText,
   introText
 }) => (
   <>
@@ -45,18 +90,21 @@ const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
         {locale === 'jp' ? '平均読了時間' : 'Average Reading Time'}:
       </Strong>{' '}
       <Em>
-        {readingTime}
+        {readingTimeFor(episodeNumber)}
         {locale === 'jp' ? '分' : ' minutes'}
       </Em>
     </P>
     <P>
-      <Strong>{locale === 'jp' ? '面白さ' : 'Fun'}:</Strong>{' '}
-      <StarRating num={funNum} /> — {funText}
+      <Strong>{locale === 'jp' ? '難しさ' : 'Difficulty'}:</Strong>{' '}
+      <StarRating num={difficultyFor(episodeNumber).num} /> —{' '}
+      {difficultyFor(episodeNumber).text}
     </P>
     <P>
-      <Strong>{locale === 'jp' ? '進捗メーター' : 'Progress'}:</Strong>{' '}
-      <ProgressBoxes currentEpisode={episodeNumber} /> — {progressText}
+      <Strong>{locale === 'jp' ? '面白さ' : 'Fun'}:</Strong>{' '}
+      <StarRating num={funFor(episodeNumber).num} /> —{' '}
+      {funFor(episodeNumber).text}
     </P>
+    {outroText}
     <Hr />
   </>
 )

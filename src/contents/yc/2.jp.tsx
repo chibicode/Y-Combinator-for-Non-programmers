@@ -1,18 +1,11 @@
 import React from 'react'
-import {
-  Em,
-  H3,
-  Ol,
-  OlLi,
-  P,
-  Strong,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EpisodeInfo from 'src/components/EpisodeInfo'
+import SideNoteSection from 'src/components/SideNoteSection'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
-import InlineBackground from 'src/components/Yc/InlineBackground'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -21,117 +14,140 @@ export default () => {
   let i = 0
   return (
     <>
-      {h('ycQuizReview', 2)}
-      {episode2[i++]()}
+      <EpisodeInfo
+        episodeNumber={2}
+        introText={
+          <>
+            In this level, we’ll talk about <Em>three more scenarios</Em> for
+            the {h('ycBentoBox', true)}.
+          </>
+        }
+      />
+      {h('ycQuizReview', 1)}
       <P>
-        <Strong>答え:</Strong> それぞれの料理に印をつけてみると、こうなります。
+        (<Strong>The question was:</Strong> What will happen to the following{' '}
+        {h('ycBentoBox')} after taking all the steps?)
       </P>
       {episode2[i++]()}
+      <P>Let’s try and see what happens. {h('ycTryUntilDone')}.</P>
+      {episode2[i++]()}
       <P>
-        つまり、
-        {h('ycBentoBox')}
-        は、以下の状況を表しています。
+        <Strong>So the answer was:</Strong>
       </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍔</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> 食べる → <Emoji size="lg">🍔</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> 調理中 → <Emoji size="lg">🍗</Emoji>
-        </UlLi>
-      </Ul>
-
-      <H3>その次はどうなる？</H3>
+      {episode2[i++]()}
+      <H3>Explanation</H3>
       <P>
-        上の状況だと、あなたがサラダ <Emoji>🍔</Emoji>{' '}
-        を食べたあと、シェフはステーキ <Emoji>🍗</Emoji>{' '}
-        を持ってきます。ということは、最終的には
-        <Em>
-          料理はステーキ <Emoji>🍗</Emoji> だけ
-        </Em>
-        になりますね。
+        Let’s quickly go over what happened. First, these are the labels. The
+        burger <Emoji size="mdlg">🍔</Emoji> on the top row is{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />.{' '}
       </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> 料理 → <Emoji size="lg">🍗</Emoji>
-        </UlLi>
-      </Ul>
+      {episode2[i++]()}
       <P>
+        On the bottom row, sushi <Emoji size="mdlg">🍣</Emoji> on the left is{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" />. Then there
+        are <Em>two items</Em> on the right (sushi <Emoji size="mdlg">🍣</Emoji>{' '}
+        and sandwich <Emoji size="mdlg">🥪</Emoji>
+        ), both are labeled as{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+      </P>
+      <P>
+        <Strong>Next:</Strong> Let’s look at matches{' '}
+        <TopRightBadge inline topRightBadgeType="match" />.
+      </P>
+      {episode2[i++]()}
+      <P>
+        On <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
+        <Emoji size="mdlg">🍣</Emoji> matches{' '}
+        <TopRightBadge inline topRightBadgeType="match" />, but sandwich{' '}
+        <Emoji size="mdlg">🥪</Emoji> does not match{' '}
+        <TopRightBadge inline topRightBadgeType="unmatch" />.
+      </P>
+      {episode2[i++]()}
+      <P>
+        Therefore, on{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
+        <Emoji size="mdlg">🍣</Emoji> becomes burger{' '}
+        <Emoji size="mdlg">🍔</Emoji> (which was in{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        ),{' '}
         <Strong>
-          では、
-          {h('ycBentoBox')}
-          はどうなるか見てみましょう。
+          but sandwich <Emoji size="mdlg">🥪</Emoji> does not change.
         </Strong>
       </P>
+      <P>After that, it’s the same as before:</P>
+      {episode2[i++]()}
+      <P>Hope everything made sense!</P>
+      <EmojiSeparator emojis={['❌', '🤗', '✅']} />
+      <H3>
+        New in this episode: The Middle{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> Item
+      </H3>
+      <P>Next, we’ll take a look at this {h('ycBentoBox')}:</P>
       {episode2[i++]()}
       <P>
-        右下のサラダ <Emoji>🍔</Emoji> は、あなたが食べたい料理{' '}
-        <Emoji>😋</Emoji> です。これを{' '}
-        <TopRightBadge inline topRightBadgeType="match" /> で表します。
-      </P>
-      {episode2[i++]()}
-      <P>
-        あなたがサラダ <Emoji>🍔</Emoji> を食べると、それがステーキ{' '}
-        <Emoji>🍗</Emoji> と<Em>入れ替わります</Em>
-        。これを <TopRightBadge inline topRightBadgeType="betaReduced" />{' '}
-        で表します。
-      </P>
-      {episode2[i++]()}
-      <P>
-        食べ終わると、左下のサラダと <Emoji>🍔</Emoji> 上段のステーキ{' '}
-        <Emoji>🍗</Emoji> は<Em>消えます</Em>
-        。これを、
+        Unlike the ones we’ve seen before,{' '}
         <Em>
-          バツ印 <InlineBackground bgPattern="cross" /> で示します。
+          there’s an item in the <Strong>middle section</Strong> of the bottom
+          row
+        </Em>{' '}
+        (sandwich <Emoji size="mdlg">🥪</Emoji>):
+      </P>
+      {episode2[i++]()}
+      <P>
+        Let’s see what label this has.{' '}
+        <Em>Press {h('ycNext')} several times below:</Em>
+      </P>
+      {episode2[i++]()}
+      <P>
+        As you can see, the sandwich <Emoji size="mdlg">🥪</Emoji> in the middle
+        is labeled as{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+      </P>
+      <P>
+        Let’s see what happens next. <Em>Press {h('ycNext')} once below:</Em>
+      </P>
+      {episode2[i++]()}
+      <P>
+        As you just saw, you can <Strong>ignore</Strong>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
+        we’re checking for matches{' '}
+        <TopRightBadge inline topRightBadgeType="match" />.
+      </P>
+      <P>Let’s keep going: {h('ycTryUntilDone')}:</P>
+      {episode2[i++]()}
+      <P>So, here’s what we learned:</P>
+      <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
+        <Ul>
+          <UlLi>
+            Middle items in the bottom row are labeled as{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+          </UlLi>
+          <UlLi>
+            You can ignore{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
+            we’re checking for matches{' '}
+            <TopRightBadge inline topRightBadgeType="match" />.
+          </UlLi>
+        </Ul>
+      </SideNoteSection>
+      <P>Let’s try a challenge quiz!</P>
+      <H3>
+        <Emoji>🔥</Emoji> Challenge Quiz <Emoji>🔥</Emoji>
+      </H3>
+      <P>
+        <Strong>Question:</Strong>{' '}
+        <Em>
+          What will happen to the following {h('ycBentoBox')} after taking all
+          the steps?
         </Em>
       </P>
       {episode2[i++]()}
       <P>
-        最終的に、残ったのはステーキ <Emoji>🍗</Emoji> だけになりました。
+        <Strong>Hint:</Strong> The middle two items (sandwich{' '}
+        <Emoji size="mdlg">🥪</Emoji> and burger <Emoji size="mdlg">🍔</Emoji>)
+        are <Strong>both</Strong>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
       </P>
-      {episode2[i++]()}
-      <H3>「次へ」ボタンと「前へ」ボタン</H3>
-      <P>
-        遷移をわかりやすくするために、「
-        {h('ycNext')}
-        」ボタンと「
-        {h('ycPrevious')}
-        」ボタンを設置してみました。
-      </P>
-      <Ol>
-        <OlLi>{h('ycTryUntilDone')}。</OlLi>
-        <OlLi>
-          そしたら今度は、{' '}
-          <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>。
-        </OlLi>
-      </Ol>
-      {episode2[i++]()}
-      <P>
-        こちらは前回で登場したもうひとつの例です。同じようにボタンを試してみてください。
-      </P>
-      {episode2[i++]()}
-      <P>コツがつかめてきたでしょうか？</P>
-      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
-      <P>では、クイズに挑戦してみましょう。</P>
-      <H3>クイズ</H3>
-      <P>
-        下の
-        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
-      </P>
-      {episode2[i++]()}
-      <P>
-        <Strong>YesかNoで答えてみてください:</Strong>{' '}
-        <Em>
-          最終的に
-          {h('ycBentoBox')}
-          は次のようになるでしょうか？
-        </Em>
-      </P>
-      {episode2[i++]()}
-      <P>答えに自信がなくても大丈夫です。次のページで説明しますので！</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

@@ -94,11 +94,6 @@ export default () => {
             <Em>the basics of the puzzles we’ll be solving.</Em>
           </>
         }
-        readingTime={6}
-        funNum={1}
-        funText="We’ll cover basics, so
-        it might be a bit boring. But it’ll get much better later!"
-        progressText={'After this, 3 more Beginner Levels left!'}
       />
       <H3>Let’s Get Started!</H3>
       <P>

@@ -16,16 +16,12 @@ export default () => {
     <>
       <EpisodeInfo
         episodeNumber={2}
-        progressText={'You’re halfway done with beginner levels after this!'}
         introText={
           <>
             In this level, we’ll talk about <Em>three more scenarios</Em> for
             the {h('ycBentoBox', true)}.
           </>
         }
-        readingTime={5}
-        funNum={1}
-        funText="It’s not too exciting yet. But please keep reading!"
       />
       {h('ycQuizReview', 1)}
       <P>
