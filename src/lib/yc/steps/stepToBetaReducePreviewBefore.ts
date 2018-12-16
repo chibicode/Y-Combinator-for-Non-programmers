@@ -139,13 +139,24 @@ export function toBetaReducePreviewBefore(
 }
 
 const funcArg = (
-  e: VariableExpression
-): VariableWithState<'matchFuncArgHighlighted'> => ({
-  ...e,
-  highlightType: 'highlighted',
-  topRightBadgeType: 'match',
-  bottomRightBadgeType: 'funcArg'
-})
+  e: VariableExpression,
+  matchExists: boolean
+):
+  | VariableWithState<'matchFuncArgHighlighted'>
+  | VariableWithState<'unmatchFuncArgHighlighted'> =>
+  matchExists
+    ? {
+        ...e,
+        highlightType: 'highlighted',
+        topRightBadgeType: 'match',
+        bottomRightBadgeType: 'funcArg'
+      }
+    : {
+        ...e,
+        highlightType: 'highlighted',
+        topRightBadgeType: 'unmatch',
+        bottomRightBadgeType: 'funcArg'
+      }
 
 const stepToBetaReducePreviewBefore = (
   e: ExecutableCall
@@ -165,7 +176,7 @@ const stepToBetaReducePreviewBefore = (
       arg: argResult.nextExpression,
       func: {
         ...e.func,
-        arg: funcArg(e.func.arg),
+        arg: funcArg(e.func.arg, matchExists),
         body: funcResult.nextExpression
       }
     },

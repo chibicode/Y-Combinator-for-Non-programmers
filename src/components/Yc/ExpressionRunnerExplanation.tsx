@@ -159,27 +159,31 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> matches{' '}
-            <TopRightBadge topRightBadgeType="match" inline />
+            There’s a match <TopRightBadge topRightBadgeType="match" inline />{' '}
+            between <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+            and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            <TopRightBadge topRightBadgeType="unmatch" inline /> No matches in{' '}
+            There’s no match{' '}
+            <TopRightBadge topRightBadgeType="unmatch" inline /> between{' '}
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       } else {
         return matchExists ? (
           <>
-            <TopRightBadge topRightBadgeType="match" inline /> マッチしました{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            がマッチしました <TopRightBadge topRightBadgeType="match" inline />
           </>
         ) : (
           <>
-            <TopRightBadge topRightBadgeType="unmatch" inline />{' '}
-            マッチしませんでした{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            がマッチしませんでした{' '}
+            <TopRightBadge topRightBadgeType="unmatch" inline />
           </>
         )
       }
