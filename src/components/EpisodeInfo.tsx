@@ -51,7 +51,9 @@ const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
       )}
     </P>
     <P>
-      <Strong>{locale === 'jp' ? '読了時間' : 'Reading Time'}:</Strong>{' '}
+      <Strong>
+        {locale === 'jp' ? '平均読了時間' : 'Average Reading Time'}:
+      </Strong>{' '}
       <Em>
         {readingTime}
         {locale === 'jp' ? '分' : ' minutes'}

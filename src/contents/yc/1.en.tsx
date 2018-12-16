@@ -111,8 +111,8 @@ export default () => {
       </P>
       <P>
         <Strong>Example:</Strong> These are the <Strong>bento boxes</Strong>{' '}
-        <Emoji>🍱</Emoji> sold at Kiyoken restaurant in Yokohama, Japan (my
-        hometown).
+        <Emoji>🍱</Emoji> sold at Kiyoken restaurant in Yokohama, Japan–my
+        hometown (photo taken by me).
       </P>
       <PFullWidth>
         <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />

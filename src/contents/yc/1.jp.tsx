@@ -103,7 +103,7 @@ export default () => {
       />
       <H3>弁当箱のパズル</H3>
       <P>
-        まずはじめにこちらの写真をご覧ください。わたしの地元、横浜の崎陽軒で販売されているお弁当です。
+        まずはじめにこちらの写真をご覧ください。わたしの地元、横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
       </P>
       <PFullWidth>
         <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />

@@ -90,6 +90,12 @@ export default () => {
       <P>After that, it’s the same as before:</P>
       {episode2[i++]()}
       <P>Hope everything made sense!</P>
+      <EmojiSeparator emojis={['❌', '🤗', '✅']} />
+      <H3>
+        New in this episode: The Middle{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> Item
+      </H3>
+      <P>Next, we’ll take a look at this {h('ycBentoBox')}:</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )
