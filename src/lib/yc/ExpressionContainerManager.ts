@@ -100,6 +100,12 @@ export default class ExpressionContainerManager {
     }
   }
 
+  public stepForwardUntilTheEnd() {
+    while (this.canStepForward) {
+      this.stepForward()
+    }
+  }
+
   private precompute() {
     while (
       this.isUnderMaxIndex &&

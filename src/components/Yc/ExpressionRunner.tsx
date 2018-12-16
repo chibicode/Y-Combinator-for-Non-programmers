@@ -37,6 +37,9 @@ type InitializeInstruction =
   | {
       type: 'nextIteration'
     }
+  | {
+      type: 'stepForwardUntilTheEnd'
+    }
 
 interface ExpressionRunnerProps {
   expressionContainer: SteppedExpressionContainer
@@ -134,6 +137,8 @@ export default class ExpressionRunner extends React.Component<
           this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
             'default'
           )
+        } else if (initializeInstruction.type === 'stepForwardUntilTheEnd') {
+          this.expressionContainerManager.stepForwardUntilTheEnd()
         }
       })
 

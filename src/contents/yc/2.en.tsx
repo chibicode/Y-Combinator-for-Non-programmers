@@ -13,6 +13,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
@@ -43,91 +44,52 @@ export default () => {
       {episode2[i++]()}
       <P>Let’s try and see what happens. {h('ycTryUntilDone')}.</P>
       {episode2[i++]()}
-      <P>Therefore, the above {h('ycBentoBox')} represents:</P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍔</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">😋</Emoji> Eating → <Emoji size="lg">🍔</Emoji>
-        </UlLi>
-        <UlLi>
-          <Emoji size="lg">👨‍🍳</Emoji> Preparing → <Emoji size="lg">🍗</Emoji>
-        </UlLi>
-      </Ul>
-      <H3>What Will Happen Next?</H3>
       <P>
-        In the above scenario, after you eat burger <Emoji>🍔</Emoji>, the chef
-        brings chicken <Emoji>🍗</Emoji>. So eventually,{' '}
-        <Em>
-          the chicken <Emoji>🍗</Emoji> will be the only dish
-        </Em>
-        :
+        <Strong>So the answer was:</Strong>
       </P>
-      <Ul size="lg">
-        <UlLi>
-          <Emoji size="lg">🍽</Emoji> Dishes → <Emoji size="lg">🍗</Emoji>
-        </UlLi>
-      </Ul>
+      {episode2[i++]()}
+      <H3>Explanation</H3>
       <P>
-        <Strong>Let’s see what happens to the {h('ycBentoBox')}:</Strong>
+        Let’s quickly go over what happened. First, these are the labels. The
+        burger <Emoji size="mdlg">🍔</Emoji> on the top row is{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />.{' '}
       </P>
       {episode2[i++]()}
       <P>
-        The burger <Emoji>🍔</Emoji> on the bottom right{' '}
-        <Strong>matches</Strong> with what you’re eating next <Emoji>😋</Emoji>.
-        We indicate this <Strong>match</Strong> using{' '}
+        On the bottom row, sushi <Emoji size="mdlg">🍣</Emoji> on the left is{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" />. Then there
+        are <Em>two items</Em> on the right (sushi <Emoji size="mdlg">🍣</Emoji>{' '}
+        and sandwich <Emoji size="mdlg">🥪</Emoji>
+        ), both are labeled as{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
+      </P>
+      <P>
+        <Strong>Next:</Strong> Let’s look at matches{' '}
         <TopRightBadge inline topRightBadgeType="match" />.
       </P>
       {episode2[i++]()}
       <P>
-        After you eat the burger <Emoji>🍔</Emoji> on the bottom right, it{' '}
-        <Em>will be replaced</Em> by the chicken <Emoji>🍗</Emoji>. We indicate
-        this using <TopRightBadge inline topRightBadgeType="betaReduced" />.
+        On <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
+        <Emoji size="mdlg">🍣</Emoji> matches{' '}
+        <TopRightBadge inline topRightBadgeType="match" />, but sandwich{' '}
+        <Emoji size="mdlg">🥪</Emoji> does not match{' '}
+        <TopRightBadge inline topRightBadgeType="unmatch" />.
       </P>
       {episode2[i++]()}
       <P>
-        The burger <Emoji>🍔</Emoji> on the bottom left and the chicken{' '}
-        <Emoji>🍗</Emoji> on the top <Em>will disappear</Em>. We indicate this
-        using the{' '}
-        <Em>
-          “X” background <InlineBackground bgPattern="cross" />
-        </Em>
-        .
+        Therefore, on{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
+        <Emoji size="mdlg">🍣</Emoji> becomes burger{' '}
+        <Emoji size="mdlg">🍔</Emoji> (which was in{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        ),{' '}
+        <Strong>
+          but sandwich <Emoji size="mdlg">🥪</Emoji> does not change.
+        </Strong>
       </P>
+      <P>After that, it’s the same as before:</P>
       {episode2[i++]()}
-      <P>
-        In the end, only the chicken <Emoji>🍗</Emoji> remains:
-      </P>
-      {episode2[i++]()}
-      <H3>The Next and Previous Buttons</H3>
-      <P>
-        To see this interactively, I’ve added the {h('ycNext')} and{' '}
-        {h('ycPrevious')} buttons.
-      </P>
-      <Ol>
-        <OlLi>
-          In the {h('ycBentoBox')} below, {h('ycTryUntilDone', false)}.
-        </OlLi>
-        <OlLi>
-          Then <Em>try pressing {h('ycPrevious')} a few times</Em>.
-        </OlLi>
-      </Ol>
-      {episode2[i++]()}
-      <P>Try this one from the last page too!</P>
-      {episode2[i++]()}
-      <P>Hope you get the idea.</P>
-      <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
-      <P>Now, time for some quiz…</P>
-      <H3>Quiz</H3>
-      <P>Suppose that currently the {h('ycBentoBox')} looks like this:</P>
-      {episode2[i++]()}
-      <P>
-        <Strong>True or False:</Strong>{' '}
-        <Em>Will the above {h('ycBentoBox')} eventually turn into this?</Em>
-      </P>
-      {episode2[i++]()}
-      <P>It’s ok if you are not sure - I will explain on the next page!</P>
+      <P>Hope everything made sense!</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

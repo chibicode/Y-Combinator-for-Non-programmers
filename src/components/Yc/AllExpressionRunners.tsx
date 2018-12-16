@@ -448,7 +448,7 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
+          state: 'active'
         }
       ]}
     />
@@ -459,10 +459,84 @@ export const episode2 = [
       variableSize={'lg'}
       resetIndex
       hidePlayButton
+      hidePriorities
+      showAllShowSteps
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      hideExplanations
+      resetIndex
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilTheEnd'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      hideExplanations
+      variableSize={'lg'}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'showFuncBound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewBefore'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewAfter'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode1Expression3}
+      hidePriorities
+      hideControls
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'betaReducePreviewCrossed'
         }
       ]}
     />
