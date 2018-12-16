@@ -138,7 +138,7 @@ export const allTranslations = {
   ycQuizReview: (previousEpisodeNumber: number) => ({
     en: (
       <>
-        <H3>Quiz Review</H3>
+        <H3>Challenge Quiz Review</H3>
         <P>
           Let’s take a look at{' '}
           <InternalLink href={yc(previousEpisodeNumber)}>
@@ -149,14 +149,15 @@ export const allTranslations = {
       </>
     ),
     jp: (
-      <P>
-        <Strong>
+      <>
+        <H3>クイズの答え合わせ</H3>
+        <P>
           <InternalLink href={yc(previousEpisodeNumber)}>
             前のページで出したクイズ
           </InternalLink>
           の答え合わせをしましょう。
-        </Strong>
-      </P>
+        </P>
+      </>
     )
   }),
   ycTryUntilDone: (capitalize = true) => ({

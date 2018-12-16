@@ -444,34 +444,33 @@ export const episode1 = [
   )
 ]
 
-export const episode3 = [
+export const episode2 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
+      expressionContainer={lessonExpressions.episode1Expression3}
       hidePriorities
       hideControls
       hideExplanations
+      resetIndex
       variableSize={'lg'}
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'active'
+          state: 'showFuncBound'
         }
       ]}
     />
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
-      hidePriorities
-      hideControls
-      showAllShowSteps
-      hideExplanations
+      expressionContainer={lessonExpressions.episode1Expression3}
       variableSize={'lg'}
+      resetIndex
+      hidePlayButton
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showCallArg'
+          state: 'showFuncBound'
         }
       ]}
     />

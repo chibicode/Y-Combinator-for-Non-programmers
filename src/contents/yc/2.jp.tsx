@@ -11,7 +11,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode3 } from 'src/components/Yc/AllExpressionRunners'
+import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
@@ -22,11 +22,11 @@ export default () => {
   return (
     <>
       {h('ycQuizReview', 2)}
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         <Strong>答え:</Strong> それぞれの料理に印をつけてみると、こうなります。
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         つまり、
         {h('ycBentoBox')}
@@ -66,20 +66,20 @@ export default () => {
           はどうなるか見てみましょう。
         </Strong>
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         右下のサラダ <Emoji>🍔</Emoji> は、あなたが食べたい料理{' '}
         <Emoji>😋</Emoji> です。これを{' '}
         <TopRightBadge inline topRightBadgeType="match" /> で表します。
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         あなたがサラダ <Emoji>🍔</Emoji> を食べると、それがステーキ{' '}
         <Emoji>🍗</Emoji> と<Em>入れ替わります</Em>
         。これを <TopRightBadge inline topRightBadgeType="betaReduced" />{' '}
         で表します。
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         食べ終わると、左下のサラダと <Emoji>🍔</Emoji> 上段のステーキ{' '}
         <Emoji>🍗</Emoji> は<Em>消えます</Em>
@@ -88,11 +88,11 @@ export default () => {
           バツ印 <InlineBackground bgPattern="cross" /> で示します。
         </Em>
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         最終的に、残ったのはステーキ <Emoji>🍗</Emoji> だけになりました。
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <H3>「次へ」ボタンと「前へ」ボタン</H3>
       <P>
         遷移をわかりやすくするために、「
@@ -108,11 +108,11 @@ export default () => {
           <Em>{h('ycPrevious')} ボタンを何度か押してみてください</Em>。
         </OlLi>
       </Ol>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         こちらは前回で登場したもうひとつの例です。同じようにボタンを試してみてください。
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>コツがつかめてきたでしょうか？</P>
       <EmojiSeparator emojis={['⬅️', '🤗', '➡️']} />
       <P>では、クイズに挑戦してみましょう。</P>
@@ -121,7 +121,7 @@ export default () => {
         下の
         {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>
         <Strong>YesかNoで答えてみてください:</Strong>{' '}
         <Em>
@@ -130,7 +130,7 @@ export default () => {
           は次のようになるでしょうか？
         </Em>
       </P>
-      {episode3[i++]()}
+      {episode2[i++]()}
       <P>答えに自信がなくても大丈夫です。次のページで説明しますので！</P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
