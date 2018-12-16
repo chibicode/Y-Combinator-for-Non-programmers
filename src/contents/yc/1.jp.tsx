@@ -415,9 +415,7 @@ export default () => {
         <Em>最終的には、上の{h('ycBentoBox')}は以下のようになるでしょうか？</Em>
       </P>
       {episode1[i++]()}
-      <P>
-        勘で予想してみてください！下のボタンをクリックしていただいて、次のページに進むと答えがわかります。
-      </P>
+      {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )

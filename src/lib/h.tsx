@@ -119,6 +119,38 @@ export const allTranslations = {
       </>
     )
   }),
+  ycTrue: () => ({
+    en: (
+      <>
+        <Strong>True</Strong> <Emoji>👍</Emoji>
+      </>
+    ),
+    jp: (
+      <>
+        「<Strong>はい</Strong> <Emoji>🙋🏻‍♀️</Emoji>」
+      </>
+    )
+  }),
+  ycFalse: () => ({
+    en: (
+      <>
+        <Strong>False</Strong> <Emoji>👎</Emoji>
+      </>
+    ),
+    jp: (
+      <>
+        「<Strong>いいえ</Strong> <Emoji>🙅🏻‍♀️</Emoji>」
+      </>
+    )
+  }),
+  ycTryGuessing: () => ({
+    en: <P>Try guessing before you click on the button below!</P>,
+    jp: (
+      <P>
+        勘で予想してみてください！下のボタンをクリックしていただいて、次のページに進むと答えがわかります。
+      </P>
+    )
+  }),
   ycTrueOrFalse: () => ({
     en: (
       <>

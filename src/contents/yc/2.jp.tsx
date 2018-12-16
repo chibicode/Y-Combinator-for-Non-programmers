@@ -31,9 +31,7 @@ export default () => {
       {episode2[i++]()}
       <P>Let’s try and see what happens. {h('ycTryUntilDone')}.</P>
       {episode2[i++]()}
-      <P>
-        <Strong>So the answer was:</Strong>
-      </P>
+      <P>So the answer was {h('ycTrue')}:</P>
       {episode2[i++]()}
       <H3>Explanation</H3>
       <P>
@@ -130,24 +128,18 @@ export default () => {
           </UlLi>
         </Ul>
       </SideNoteSection>
-      <P>Let’s try a challenge quiz!</P>
-      <H3>
-        <Emoji>🔥</Emoji> Challenge Quiz <Emoji>🔥</Emoji>
-      </H3>
+      <P>Let’s try a quiz!</P>
+      <H3>{h('ycTrueOrFalse')} Quiz</H3>
       <P>
         <Strong>Question:</Strong>{' '}
         <Em>
-          What will happen to the following {h('ycBentoBox')} after taking all
-          the steps?
+          Suppose we take all the steps on the following {h('ycBentoBox')}:
         </Em>
       </P>
       {episode2[i++]()}
-      <P>
-        <Strong>Hint:</Strong> The middle two items (sandwich{' '}
-        <Emoji size="mdlg">🥪</Emoji> and burger <Emoji size="mdlg">🍔</Emoji>)
-        are <Strong>both</Strong>{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
-      </P>
+      <P>{h('ycTrueOrFalse')}: Will it eventually become this?</P>
+      {episode2[i++]()}
+      {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

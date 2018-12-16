@@ -50,6 +50,11 @@ export const episode2Expression2 = initializeExpressionContainer([
   'd'
 ])
 
+export const episode2Expression3 = initializeExpressionContainer({
+  arg: 'c',
+  body: ['d', 'd']
+})
+
 export const episode4Expression1 = initializeExpressionContainer([
   {
     arg: 'a',

@@ -405,7 +405,7 @@ export default () => {
       {episode1[i++]()}
       <P>{h('ycTrueOrFalse')}: Will it eventually become this?</P>
       {episode1[i++]()}
-      <P>Try guessing before you click on the button below!</P>
+      {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )
