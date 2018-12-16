@@ -1,5 +1,5 @@
 import React from 'react'
-import { Em, Hr, P, Strong } from 'src/components/ContentTags'
+import { Em, Hr, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import StarRating from 'src/components/StarRating'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
@@ -60,7 +60,7 @@ const difficultyFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
   episodeInfo[episodeNumber].difficulty
 
 const funFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
-  episodeInfo[episodeNumber].difficulty
+  episodeInfo[episodeNumber].fun
 
 const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
   episodeNumber,
@@ -85,25 +85,27 @@ const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
         </>
       )}
     </P>
-    <P>
-      <Strong>
-        {locale === 'jp' ? '平均読了時間' : 'Average Reading Time'}:
-      </Strong>{' '}
-      <Em>
-        {readingTimeFor(episodeNumber)}
-        {locale === 'jp' ? '分' : ' minutes'}
-      </Em>
-    </P>
-    <P>
-      <Strong>{locale === 'jp' ? '難しさ' : 'Difficulty'}:</Strong>{' '}
-      <StarRating num={difficultyFor(episodeNumber).num} /> —{' '}
-      {difficultyFor(episodeNumber).text}
-    </P>
-    <P>
-      <Strong>{locale === 'jp' ? '面白さ' : 'Fun'}:</Strong>{' '}
-      <StarRating num={funFor(episodeNumber).num} /> —{' '}
-      {funFor(episodeNumber).text}
-    </P>
+    <Ul>
+      <UlLi>
+        <Strong>
+          {locale === 'jp' ? '平均読了時間' : 'Average Reading Time'}:
+        </Strong>{' '}
+        <Em>
+          {readingTimeFor(episodeNumber)}
+          {locale === 'jp' ? '分' : ' minutes'}
+        </Em>
+      </UlLi>
+      <UlLi>
+        <Strong>{locale === 'jp' ? '難しさ' : 'Difficulty'}:</Strong>{' '}
+        <StarRating num={difficultyFor(episodeNumber).num} /> —{' '}
+        {difficultyFor(episodeNumber).text}
+      </UlLi>
+      <UlLi>
+        <Strong>{locale === 'jp' ? '面白さ' : 'Fun'}:</Strong>{' '}
+        <StarRating num={funFor(episodeNumber).num} /> —{' '}
+        {funFor(episodeNumber).text}
+      </UlLi>
+    </Ul>
     {outroText}
     <Hr />
   </>
