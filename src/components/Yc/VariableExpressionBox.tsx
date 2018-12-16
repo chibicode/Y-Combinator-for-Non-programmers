@@ -39,11 +39,11 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
     sm: fontSizes(1.5)
   }[size])
 
-const VariableExpressionBox: React.FunctionComponent<VariableExpressionBoxProps> = ({
-  expression
-}) => (
+const VariableExpressionBox: React.FunctionComponent<
+  VariableExpressionBoxProps
+> = ({ expression }) => (
   <ExpressionRunnerContext.Consumer>
-    {({ hidePriorities, variableSize }) => (
+    {({ hidePriorities, variableSize, hideBottomRightBadges }) => (
       <>
         {!hidePriorities && (
           <ExpressionPrioritiesLabel
@@ -66,20 +66,21 @@ const VariableExpressionBox: React.FunctionComponent<VariableExpressionBoxProps>
             `}
           >
             <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
-            {expression.bottomRightBadgeType !== 'none' && (
-              <span
-                css={css`
-                  position: absolute;
-                  right: -0.2em;
-                  bottom: 0;
-                  z-index: ${zIndices('badge')};
-                `}
-              >
-                <BottomRightBadge
-                  bottomRightBadgeType={expression.bottomRightBadgeType}
-                />
-              </span>
-            )}
+            {!hideBottomRightBadges &&
+              expression.bottomRightBadgeType !== 'none' && (
+                <span
+                  css={css`
+                    position: absolute;
+                    right: -0.2em;
+                    bottom: 0;
+                    z-index: ${zIndices('badge')};
+                  `}
+                >
+                  <BottomRightBadge
+                    bottomRightBadgeType={expression.bottomRightBadgeType}
+                  />
+                </span>
+              )}
             {expression.topRightBadgeType !== 'none' && (
               <span
                 css={css`

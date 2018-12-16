@@ -1,20 +1,11 @@
 import React from 'react'
-import {
-  Em,
-  H3,
-  Ol,
-  OlLi,
-  P,
-  Strong,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
+import SideNoteSection from 'src/components/SideNoteSection'
 import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import InlineBackground from 'src/components/Yc/InlineBackground'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
@@ -32,7 +23,7 @@ export default () => {
             the {h('ycBentoBox', true)}.
           </>
         }
-        readingTime={6}
+        readingTime={5}
         funNum={1}
         funText="It’s not too exciting yet. But please keep reading!"
       />
@@ -96,6 +87,71 @@ export default () => {
         <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> Item
       </H3>
       <P>Next, we’ll take a look at this {h('ycBentoBox')}:</P>
+      {episode2[i++]()}
+      <P>
+        Unlike the ones we’ve seen before,{' '}
+        <Em>
+          there’s an item in the <Strong>middle section</Strong> of the bottom
+          row
+        </Em>{' '}
+        (sandwich <Emoji size="mdlg">🥪</Emoji>):
+      </P>
+      {episode2[i++]()}
+      <P>
+        Let’s see what label this has.{' '}
+        <Em>Press {h('ycNext')} several times below:</Em>
+      </P>
+      {episode2[i++]()}
+      <P>
+        As you can see, the sandwich <Emoji size="mdlg">🥪</Emoji> in the middle
+        is labeled as{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+      </P>
+      <P>
+        Let’s see what happens next. <Em>Press {h('ycNext')} once below:</Em>
+      </P>
+      {episode2[i++]()}
+      <P>
+        As you just saw, you can <Strong>ignore</Strong>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
+        we’re checking for matches{' '}
+        <TopRightBadge inline topRightBadgeType="match" />.
+      </P>
+      <P>Let’s keep going: {h('ycTryUntilDone')}:</P>
+      {episode2[i++]()}
+      <P>So, here’s what we learned:</P>
+      <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
+        <Ul>
+          <UlLi>
+            Middle items in the bottom row are labeled as{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+          </UlLi>
+          <UlLi>
+            You can ignore{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
+            we’re checking for matches{' '}
+            <TopRightBadge inline topRightBadgeType="match" />.
+          </UlLi>
+        </Ul>
+      </SideNoteSection>
+      <P>Let’s try a challenge quiz!</P>
+      <H3>
+        <Emoji>🔥</Emoji> Challenge Quiz <Emoji>🔥</Emoji>
+      </H3>
+      <P>
+        <Strong>Question:</Strong>{' '}
+        <Em>
+          What will happen to the following {h('ycBentoBox')} after taking all
+          the steps?
+        </Em>
+      </P>
+      {episode2[i++]()}
+      <P>
+        <Strong>Hint:</Strong> The middle two items (sandwich{' '}
+        <Emoji size="mdlg">🥪</Emoji> and burger <Emoji size="mdlg">🍔</Emoji>)
+        are <Strong>both</Strong>{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+      </P>
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>
   )

@@ -86,14 +86,14 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> “Eat
-            Later” list
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+            Middle items on bottom row
           </>
         )
       } else {
         return (
           <>
-            あとで食べるものリスト{' '}
+            下段の真ん中は{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
           </>
         )

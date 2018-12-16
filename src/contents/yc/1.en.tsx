@@ -395,10 +395,12 @@ export default () => {
       <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
         <FourSteps />
       </SideNoteSection>
-      <H3>Challenge Quiz</H3>
+      <H3>
+        <Emoji>🔥</Emoji> Challenge Quiz <Emoji>🔥</Emoji>
+      </H3>
       <P>
         At the end of each episode, we give you a{' '}
-        <Strong>challenge quiz</Strong>.{' '}
+        <Strong>challenge quiz</Strong> <Emoji>🔥</Emoji>.{' '}
         <Em>
           You should try, but they’re hard, so don’t worry if you have no idea.
         </Em>

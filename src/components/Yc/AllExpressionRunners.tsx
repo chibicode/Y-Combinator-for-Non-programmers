@@ -543,7 +543,7 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
+      expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
       showAllShowSteps
@@ -552,18 +552,70 @@ export const episode2 = [
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showCallArg'
+          state: 'active'
         }
       ]}
     />
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
+      expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
-      hideExplanations
       showAllShowSteps
+      hideExplanations
+      variableSize={'lg'}
+      hideBottomRightBadges
+      highlightOverrides={{
+        funcUnbound: 'forceYellowHighlight'
+      }}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncUnbound'
+        }
+      ]}
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      showAllShowSteps
+      resetIndex
+      hidePlayButton
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'active'
+        }
+      ]}
+      lastAllowedExpressionState="showFuncUnbound"
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      showAllShowSteps
+      hidePlayButton
+      variableSize={'lg'}
+      initializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncUnbound'
+        }
+      ]}
+      lastAllowedExpressionState="betaReducePreviewBefore"
+    />
+  ),
+  () => (
+    <ExpressionRunner
+      expressionContainer={lessonExpressions.episode2Expression1}
+      hidePriorities
+      showAllShowSteps
+      hidePlayButton
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -575,106 +627,18 @@ export const episode2 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
+      expressionContainer={lessonExpressions.episode2Expression2}
       hidePriorities
-      hideControls
-      hideExplanations
       showAllShowSteps
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewAfter'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
-      hidePriorities
-      hideControls
-      hideExplanations
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewCrossed'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
-      hidePriorities
-      hideControls
-      hideExplanations
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'nextIteration'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression2}
       hidePlayButton
-      hidePriorities
-      showAllShowSteps
-      resetIndex
+      containerSize="xs"
+      hideControls
       variableSize={'lg'}
+      hideExplanations
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'active'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression1}
-      hidePriorities
-      hidePlayButton
-      showAllShowSteps
-      resetIndex
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'active'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode3Expression1}
-      hidePriorities
-      hideControls
-      hideExplanations
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showCallArg'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode3Expression1}
-      hidePriorities
-      hideControls
-      hideExplanations
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'nextIteration'
         }
       ]}
     />
@@ -684,7 +648,7 @@ export const episode2 = [
 export const episode4 = [
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode3Expression1}
+      expressionContainer={lessonExpressions.episode2Expression1}
       hidePlayButton
       hidePriorities
       resetIndex
@@ -699,7 +663,7 @@ export const episode4 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode3Expression1}
+      expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
       hideExplanations
@@ -714,7 +678,7 @@ export const episode4 = [
   ),
   () => (
     <ExpressionRunner
-      expressionContainer={lessonExpressions.episode3Expression1}
+      expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
       hideExplanations

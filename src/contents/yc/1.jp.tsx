@@ -403,10 +403,13 @@ export default () => {
       <SideNoteSection heading={'これまでのまとめ'} color="yellow">
         <FourSteps />
       </SideNoteSection>
-      <H3>クイズに挑戦</H3>
+      <H3>
+        <Emoji>🔥</Emoji> クイズに挑戦 <Emoji>🔥</Emoji>
+      </H3>
       <P>
         ページの最後には、
-        <Strong>ちょっと難しいクイズ問題</Strong>を用意しています。
+        <Strong>ちょっと難しいクイズ問題</Strong> <Emoji>🔥</Emoji>{' '}
+        を用意しています。
         <Em>わからなくてもいいので、チャレンジしてみてください。</Em>
       </P>
       <P>

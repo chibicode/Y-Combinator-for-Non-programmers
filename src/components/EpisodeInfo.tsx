@@ -14,16 +14,6 @@ interface EpisodeInfoProps {
   progressText: React.ReactNode
 }
 
-const timeToString = (readingTime: number) => {
-  if (readingTime === 6) {
-    return locale === 'jp'
-      ? '他のページより、やや長め'
-      : 'A little longer than other levels'
-  } else {
-    return ''
-  }
-}
-
 const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
   readingTime,
   funNum,
@@ -57,8 +47,7 @@ const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
       <Em>
         {readingTime}
         {locale === 'jp' ? '分' : ' minutes'}
-      </Em>{' '}
-      — {timeToString(readingTime)}
+      </Em>
     </P>
     <P>
       <Strong>{locale === 'jp' ? '面白さ' : 'Fun'}:</Strong>{' '}

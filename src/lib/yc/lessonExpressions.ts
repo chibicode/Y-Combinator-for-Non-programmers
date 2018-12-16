@@ -25,12 +25,29 @@ export const episode1Expression3 = initializeExpressionContainer([
   'c'
 ])
 
-export const episode3Expression1 = initializeExpressionContainer([
+export const episode2Expression1 = initializeExpressionContainer([
   {
     arg: 'a',
-    body: 'b'
+    body: {
+      arg: 'b',
+      body: 'a'
+    }
   },
-  'c'
+  'd'
+])
+
+export const episode2Expression2 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['a', 'b']
+      }
+    }
+  },
+  'd'
 ])
 
 export const episode4Expression1 = initializeExpressionContainer([

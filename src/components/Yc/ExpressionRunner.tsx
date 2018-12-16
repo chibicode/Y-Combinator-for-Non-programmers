@@ -44,6 +44,7 @@ type InitializeInstruction =
 interface ExpressionRunnerProps {
   expressionContainer: SteppedExpressionContainer
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
+  hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
   hideExplanations: boolean
   variableSize: ExpressionRunnerContextProps['variableSize']
@@ -82,6 +83,7 @@ export default class ExpressionRunner extends React.Component<
 > {
   public static defaultProps = {
     hidePriorities: expressionRunnerContextDefault.hidePriorities,
+    hideBottomRightBadges: expressionRunnerContextDefault.hideBottomRightBadges,
     hideControls: false,
     hideExplanations: false,
     variableSize: expressionRunnerContextDefault.variableSize,
@@ -168,6 +170,7 @@ export default class ExpressionRunner extends React.Component<
       hideForwardAndBackButtons,
       showAllShowSteps,
       highlightOverrides,
+      hideBottomRightBadges,
       caption
     } = this.props
     const {
@@ -180,6 +183,7 @@ export default class ExpressionRunner extends React.Component<
         value={{
           hidePriorities,
           highlightOverrides,
+          hideBottomRightBadges,
           variableSize,
           isDoneOrReady:
             isContainerWithState(
