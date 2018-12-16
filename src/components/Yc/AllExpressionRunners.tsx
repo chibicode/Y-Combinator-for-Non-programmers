@@ -236,14 +236,22 @@ export const episode1 = [
       caption={{
         en: (
           <>
-            <Emoji size="mdlg">🍣</Emoji>{' '}
+            <Emoji size="mdlg">🍣</Emoji> (
             <TopRightBadge inline topRightBadgeType="match" />{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" /> became{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />) became{' '}
             <Emoji size="mdlg">🥪</Emoji> (same as{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />)
           </>
         ),
-        jp: <></>
+        jp: (
+          <>
+            <Emoji size="mdlg">🍣</Emoji> (
+            <TopRightBadge inline topRightBadgeType="match" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />) が{' '}
+            <Emoji size="mdlg">🥪</Emoji> になった(
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と同じ)
+          </>
+        )
       }}
       initializeInstructions={[
         {
@@ -422,22 +430,6 @@ export const episode1 = [
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
           state: 'active'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression3}
-      hidePriorities
-      hideControls
-      hideExplanations
-      variableSize={'lg'}
-      resetIndex
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
         }
       ]}
     />

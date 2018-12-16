@@ -31,14 +31,14 @@ const Step1 = () => (
 const Step2 = () => (
   <>
     <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-    <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-    がマッチするかチェック
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" /> にマッチ{' '}
+    <TopRightBadge inline topRightBadgeType="match" /> する料理があるかチェック
   </>
 )
 
 const Step3 = () => (
   <>
-    マッチした <TopRightBadge inline topRightBadgeType="match" />{' '}
+    マッチ <TopRightBadge inline topRightBadgeType="match" /> した{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" /> が{' '}
     <BottomRightBadge inline bottomRightBadgeType="callArg" /> と同じ料理になる
   </>
@@ -200,7 +200,7 @@ export default () => {
           <Em>
             チキン <Emoji size="mdlg">🍗</Emoji> には{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />
-            、バーガー <Emoji size="mdlg">🍔</Emoji> には{' '}
+            、ハンバーガー <Emoji size="mdlg">🍔</Emoji> には{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
             の印がつきます。
@@ -222,12 +222,13 @@ export default () => {
       {episode1[i++]()}
       <P>
         <Em>
+          もし、ある料理が{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          それぞれに同じ料理があると、「
+          の両方にある場合、それを「
           <Strong>マッチ</Strong>{' '}
           <TopRightBadge inline topRightBadgeType="match" />
-          」です！
+          」と呼びます。
         </Em>
       </P>
       {episode1[i++]()}
@@ -256,8 +257,10 @@ export default () => {
         <P>
           <Strong>答え:</Strong>{' '}
           <Em>
-            あります。バーガー <Emoji size="mdlg">🍔</Emoji> がマッチしています{' '}
-            <TopRightBadge inline topRightBadgeType="match" />。
+            あります。ハンバーガー <Emoji size="mdlg">🍔</Emoji> が
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+            それぞれにあるからです。
           </Em>
         </P>
         {episode1[i++]()}
@@ -412,17 +415,7 @@ export default () => {
       </P>
       {episode1[i++]()}
       <P>
-        <Strong>ヒント:</Strong> それぞれの料理に印をつけるとこうなります。
-        <Em>
-          <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>が違う料理なので、マッチしませんよね。</Strong>
-        </Em>
-        では、この場合はどうなると思いますか？予想してみてください！
-      </P>
-      {episode1[i++]()}
-      <P>
-        下のボタンをクリックしていただいて、次のページに進むと答えがわかります!
+        勘で予想してみてください！下のボタンをクリックしていただいて、次のページに進むと答えがわかります。
       </P>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>

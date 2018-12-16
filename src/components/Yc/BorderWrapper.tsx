@@ -110,13 +110,13 @@ const BorderWrapper: React.FunctionComponent<BorderWrapperProps> = ({
             bottomRightBadgeType === 'funcBound' &&
             topRightBadgeType === 'none' &&
             css`
-              border-right: 5px solid ${colors('yellow900')};
+              border-right: 10px solid ${colors('yellow900')};
             `,
           highlightType === 'highlighted' &&
             bottomRightBadgeType === 'funcArg' &&
             topRightBadgeType === 'none' &&
             css`
-              border-left: 5px solid ${colors('pink400')};
+              border-left: 10px solid ${colors('pink400')};
             `
         ]}
       >

@@ -176,13 +176,14 @@ const stateToExplanation = ({
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            がマッチしました <TopRightBadge topRightBadgeType="match" inline />
+            にマッチ <TopRightBadge topRightBadgeType="match" inline />{' '}
+            する料理があります
           </>
         ) : (
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            がマッチしませんでした{' '}
+            がひとつもマッチしませんでした{' '}
             <TopRightBadge topRightBadgeType="unmatch" inline />
           </>
         )

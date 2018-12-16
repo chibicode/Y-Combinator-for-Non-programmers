@@ -35,7 +35,7 @@ const CallExpressionBox: React.FunctionComponent<CallExpressionBoxProps> = ({
             css={
               expression.state !== 'default' &&
               css`
-                border-bottom: 5px solid ${colors('indigo300')};
+                border-bottom: 10px solid ${colors('indigo300')};
               `
             }
           >

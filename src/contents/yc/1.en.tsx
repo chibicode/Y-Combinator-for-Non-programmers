@@ -31,7 +31,7 @@ const Step1 = () => (
 
 const Step2 = () => (
   <>
-    Check for matches in{' '}
+    Check for matches <TopRightBadge inline topRightBadgeType="match" /> in{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" />
   </>
@@ -164,7 +164,7 @@ export default () => {
       <P>
         Each food item has a label.{' '}
         <Em>
-          The <Strong>top</Strong> sandwich <Emoji size="mdlg">🥪</Emoji>. is
+          The <Strong>top</Strong> sandwich <Emoji size="mdlg">🥪</Emoji> is
           labeled as <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
           (<Strong>T</Strong>
           op).
@@ -173,7 +173,7 @@ export default () => {
       {episode1[i++]()}
       <P>
         <Em>
-          The <Strong>bottom left</Strong> sushi <Emoji size="mdlg">🍣</Emoji>.
+          The <Strong>bottom left</Strong> sushi <Emoji size="mdlg">🍣</Emoji>{' '}
           is labeled as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (
           <Strong>L</Strong>
@@ -184,7 +184,7 @@ export default () => {
       <P>
         Finally,{' '}
         <Em>
-          the <Strong>bottom right</Strong> sushi <Emoji size="mdlg">🍣</Emoji>.
+          the <Strong>bottom right</Strong> sushi <Emoji size="mdlg">🍣</Emoji>{' '}
           is labeled as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (
           <Strong>R</Strong>
@@ -230,7 +230,7 @@ export default () => {
       {episode1[i++]()}
       <P>
         <Em>
-          If there are the same items in{' '}
+          If some food items exist in both{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we call
           it a <Strong>match</Strong>{' '}
@@ -257,8 +257,9 @@ export default () => {
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
-            Yes. The burgers <Emoji size="mdlg">🍔</Emoji> match{' '}
-            <TopRightBadge inline topRightBadgeType="match" />.
+            Yes. The burger exist in both{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
           </Em>
         </P>
         {episode1[i++]()}
@@ -407,17 +408,7 @@ export default () => {
         following {h('ycBentoBox')} after taking all the steps?
       </P>
       {episode1[i++]()}
-      <P>
-        <Strong>Hint:</Strong> Here are the labels.{' '}
-        <Em>
-          Notice that <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-          and <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-          <Strong>do not match - they have different food items</Strong>.
-        </Em>{' '}
-        What do you think happens then? Try guessing!
-      </P>
-      {episode1[i++]()}
-      <P>Click on the button below to see the answer!</P>
+      <P>Try guessing before you click on the button below!</P>
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>
   )
