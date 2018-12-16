@@ -399,18 +399,20 @@ export default () => {
       <SideNoteSection heading={'これまでのまとめ'} color="yellow">
         <FourSteps />
       </SideNoteSection>
-      <H3>
-        <Emoji>🔥</Emoji> クイズに挑戦 <Emoji>🔥</Emoji>
-      </H3>
+      <H3>二択クイズに挑戦</H3>
       <P>
         ページの最後には、
-        <Strong>ちょっと難しいクイズ問題</Strong> <Emoji>🔥</Emoji>{' '}
-        を用意しています。
+        <Strong>ちょっと難しい二択クイズ</Strong>を用意しています。
         <Em>わからなくてもいいので、チャレンジしてみてください。</Em>
       </P>
       <P>
-        <Strong>クイズはこちら。</Strong>次の{h('ycBentoBox')}
-        は、全てのステップを終えたらどうなるでしょう？
+        <Strong>クイズはこちら。</Strong>仮に、次の{h('ycBentoBox')}
+        で、全てのステップを実行したとします。
+      </P>
+      {episode1[i++]()}
+      <P>
+        {h('ycTrueOrFalse')}で答えてください:{' '}
+        <Em>最終的には、上の{h('ycBentoBox')}は以下のようになるでしょうか？</Em>
       </P>
       {episode1[i++]()}
       <P>
