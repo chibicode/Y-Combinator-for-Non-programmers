@@ -28,9 +28,9 @@ const Box: React.FunctionComponent<{
   highlight: boolean
   color: string
   lightColor: string
-  borderRight?: boolean
   wide: boolean
-}> = ({ children, highlight, color, lightColor, borderRight, wide }) => (
+  borderRight?: boolean
+}> = ({ children, highlight, color, lightColor, wide, borderRight }) => (
   <FlexCenter
     css={[
       css`
@@ -47,7 +47,7 @@ const Box: React.FunctionComponent<{
           `,
       borderRight &&
         css`
-          border-right: 2px solid ${colors('grey300')};
+          border-right: 2px solid ${colors('grey700')};
         `,
       wide
         ? css`
@@ -69,6 +69,13 @@ const shouldHighlightIntermediate = (currentEpisode: number, i: number) =>
 const shouldHighlightAdvanced = (currentEpisode: number, i: number) =>
   currentEpisode - numIntermediateLevels - numBeginnerLevels >= i
 
+const shouldBorderBeginner = (currentEpisode: number, i: number) =>
+  currentEpisode - 1 === i
+const shouldBorderIntermediate = (currentEpisode: number, i: number) =>
+  currentEpisode - numBeginnerLevels === i
+const shouldBorderAdvanced = (currentEpisode: number, i: number) =>
+  currentEpisode - numIntermediateLevels - numBeginnerLevels >= i
+
 const ProgressBoxes: React.FunctionComponent<ProgressBoxesProps> = ({
   currentEpisode
 }) => (
@@ -88,10 +95,10 @@ const ProgressBoxes: React.FunctionComponent<ProgressBoxesProps> = ({
       <Box
         key={`beginner${i}`}
         highlight={shouldHighlightBeginner(currentEpisode, i)}
+        borderRight={shouldBorderBeginner(currentEpisode, i)}
         color={beginnerColor}
         lightColor={beginnerColorLight}
         wide={i === 0}
-        borderRight={i + 1 === numBeginnerLevels}
       >
         {i === 0 && (locale === 'jp' ? '初' : 'B')}
         {i + 1}
@@ -101,10 +108,10 @@ const ProgressBoxes: React.FunctionComponent<ProgressBoxesProps> = ({
       <Box
         key={`intermediate${i}`}
         highlight={shouldHighlightIntermediate(currentEpisode, i)}
+        borderRight={shouldBorderIntermediate(currentEpisode, i)}
         color={intermediateColor}
         lightColor={intermediateColorLight}
         wide={i === 0}
-        borderRight={i + 1 === numIntermediateLevels}
       >
         {i === 0 && (locale === 'jp' ? '中' : 'I')}
         {i + 1}
@@ -114,6 +121,7 @@ const ProgressBoxes: React.FunctionComponent<ProgressBoxesProps> = ({
       <Box
         key={`advanced${i}`}
         highlight={shouldHighlightAdvanced(currentEpisode, i)}
+        borderRight={shouldBorderAdvanced(currentEpisode, i)}
         color={advancedColor}
         wide={i === 0}
         lightColor={advancedColorLight}

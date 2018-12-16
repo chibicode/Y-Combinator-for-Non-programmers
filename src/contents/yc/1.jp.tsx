@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Em,
   H3,
-  Hr,
   Img,
   Ol,
   OlLi,
