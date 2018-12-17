@@ -4,11 +4,15 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import {
+  episode1Quiz,
+  episode2,
+  episode2Quiz
+} from 'src/components/Yc/AllExpressionRunners'
+import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-import { Quiz as Quiz1 } from 'src/contents/yc/1.jp'
 import h from 'src/lib/h'
 
 export default () => {
@@ -21,7 +25,7 @@ export default () => {
       />
       {h('ycQuizReview', 1)}
       <SideNoteSection color="pink" noPaddingBottom>
-        <Quiz1 />
+        <BasicTrueFalseQuiz quizzes={episode1Quiz} />
       </SideNoteSection>
       <P>
         <Strong>答えはこちら。</Strong>
@@ -34,17 +38,17 @@ export default () => {
       {episode2[i++]()}
       <H3>手短に説明</H3>
       <P>
-        どうしてこうなるか、手短に説明します。まず、印は下のようになります。上段では、ハンバーガー{' '}
-        <Emoji size="mdlg">🍔</Emoji> の印が{' '}
+        どうしてこうなるか、手短に説明します。まず、バッジは下のようになります。上段では、ハンバーガー{' '}
+        <Emoji size="mdlg">🍔</Emoji> のバッジが{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
         です。
       </P>
       {episode2[i++]()}
       <P>
-        下段だと、左の寿司 <Emoji size="mdlg">🍣</Emoji> の印が{' '}
+        下段だと、左の寿司 <Emoji size="mdlg">🍣</Emoji> のバッジが{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
         で、右にある寿司 <Emoji size="mdlg">🍣</Emoji> とサンドイッチ{' '}
-        <Emoji size="mdlg">🥪</Emoji> の印は両方とも{' '}
+        <Emoji size="mdlg">🥪</Emoji> のバッジは両方とも{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" /> です。
       </P>
       <P>
@@ -80,68 +84,67 @@ export default () => {
       <P>どうだったでしょう。正解できましたか？</P>
       <EmojiSeparator emojis={['❌', '🤗', '✅']} />
       <H3>
-        New in this episode: The Middle{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> Item
+        今回新登場の「
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+        」(真ん中の料理)
       </H3>
-      <P>Next, we’ll take a look at this {h('ycBentoBox')}:</P>
+      <P>今回は、次の{h('ycBentoBox')}をやってみます:</P>
       {episode2[i++]()}
       <P>
-        Unlike the ones we’ve seen before,{' '}
+        以前のとは違い、
         <Em>
-          there’s an item in the <Strong>middle section</Strong> of the bottom
-          row
+          下段の<Strong>真ん中に</Strong>料理があります
         </Em>{' '}
-        (sandwich <Emoji size="mdlg">🥪</Emoji>):
+        (サンドイッチ <Emoji size="mdlg">🥪</Emoji>):
       </P>
       {episode2[i++]()}
       <P>
-        Let’s see what label this has.{' '}
-        <Em>Press {h('ycNext')} several times below:</Em>
+        これのバッジは何になるでしょう？{' '}
+        <Em>{h('ycNext')} を何度か押してみてください:</Em>
       </P>
       {episode2[i++]()}
       <P>
-        As you can see, the sandwich <Emoji size="mdlg">🥪</Emoji> in the middle
-        is labeled as{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+        というわけで、真ん中にあるサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+        のバッジは{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+        のようです。
       </P>
       <P>
-        Let’s see what happens next. <Em>Press {h('ycNext')} once below:</Em>
+        このままいくとどうなるでしょう。
+        <Em>もう一度 {h('ycNext')} を押してみてください:</Em>
       </P>
       {episode2[i++]()}
       <P>
-        As you just saw, you can <Strong>ignore</Strong>{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
-        we’re checking for matches{' '}
-        <TopRightBadge inline topRightBadgeType="match" />.
+        <Em>
+          見ての通り、マッチ <TopRightBadge inline topRightBadgeType="match" />{' '}
+          を探す際に、{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+          の料理は
+          <Strong>無視してかまいません</Strong>。
+        </Em>
       </P>
-      <P>Let’s keep going: {h('ycTryUntilDone')}:</P>
+      <P>では、このまま最後までやってみましょう。{h('ycTryUntilDone')}。</P>
       {episode2[i++]()}
-      <P>So, here’s what we learned:</P>
+      <P>というわけで、まとめるとこうなります。</P>
       <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
         <Ul>
           <UlLi>
-            Middle items in the bottom row are labeled as{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />.
+            下段の真ん中にある料理には{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+            のバッジをつける。
           </UlLi>
           <UlLi>
-            You can ignore{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
-            we’re checking for matches{' '}
-            <TopRightBadge inline topRightBadgeType="match" />.
+            マッチ <TopRightBadge inline topRightBadgeType="match" />{' '}
+            を探す際に、
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+            の料理は
+            <Strong>無視してかまわない</Strong>。
           </UlLi>
         </Ul>
       </SideNoteSection>
-      <P>Let’s try a quiz!</P>
-      <H3>{h('ycTrueOrFalse')} Quiz</H3>
-      <P>
-        <Strong>Question:</Strong>{' '}
-        <Em>
-          Suppose we take all the steps on the following {h('ycBentoBox')}:
-        </Em>
-      </P>
-      {episode2[i++]()}
-      <P>{h('ycTrueOrFalse')}: Will it eventually become this?</P>
-      {episode2[i++]()}
+      <P>それではここでクイズです！</P>
+      <H3>二択クイズ</H3>
+      <BasicTrueFalseQuiz quizzes={episode2Quiz} />
       {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>

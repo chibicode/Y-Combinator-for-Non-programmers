@@ -15,27 +15,11 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
+import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-
-export const Quiz: React.FunctionComponent<{ prefix?: React.ReactNode }> = ({
-  prefix
-}) => {
-  let i = 0
-  return (
-    <>
-      <P>
-        {prefix}Suppose we take all the steps on the following {h('ycBentoBox')}
-        :
-      </P>
-      {episode1Quiz[i++]()}
-      <P>{h('ycTrueOrFalse')}: Will it eventually become this?</P>
-      {episode1Quiz[i++]()}
-    </>
-  )
-}
 
 const Step1 = () => (
   <>
@@ -415,7 +399,10 @@ export default () => {
           idea.
         </Em>
       </P>
-      <Quiz prefix={<Strong>Here’s the quiz: </Strong>} />
+      <BasicTrueFalseQuiz
+        prefix={<Strong>Here’s the quiz: </Strong>}
+        quizzes={episode1Quiz}
+      />
       {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>

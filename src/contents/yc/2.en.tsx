@@ -4,11 +4,15 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { episode2 } from 'src/components/Yc/AllExpressionRunners'
+import {
+  episode1Quiz,
+  episode2,
+  episode2Quiz
+} from 'src/components/Yc/AllExpressionRunners'
+import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-import { Quiz as Quiz1 } from 'src/contents/yc/1.en'
 import h from 'src/lib/h'
 
 export default () => {
@@ -23,7 +27,7 @@ export default () => {
       />
       {h('ycQuizReview', 1)}
       <SideNoteSection color="pink" noPaddingBottom>
-        <Quiz1 />
+        <BasicTrueFalseQuiz quizzes={episode1Quiz} />
       </SideNoteSection>
       <P>
         <Strong>Here’s the answer.</Strong> {h('ycTryUntilDone')}.
@@ -85,7 +89,7 @@ export default () => {
         New in this episode: The Middle{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> Item
       </H3>
-      <P>Next, we’ll take a look at this {h('ycBentoBox')}:</P>
+      <P>In this level, we’ll take a look at this {h('ycBentoBox')}:</P>
       {episode2[i++]()}
       <P>
         Unlike the ones we’ve seen before,{' '}
@@ -111,10 +115,13 @@ export default () => {
       </P>
       {episode2[i++]()}
       <P>
-        As you just saw, you can <Strong>ignore</Strong>{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
-        we’re checking for matches{' '}
-        <TopRightBadge inline topRightBadgeType="match" />.
+        As you just saw,{' '}
+        <Em>
+          you can <Strong>ignore</Strong>{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
+          we’re checking for matches{' '}
+          <TopRightBadge inline topRightBadgeType="match" />.
+        </Em>
       </P>
       <P>Let’s keep going: {h('ycTryUntilDone')}:</P>
       {episode2[i++]()}
@@ -135,15 +142,7 @@ export default () => {
       </SideNoteSection>
       <P>Let’s try a quiz!</P>
       <H3>{h('ycTrueOrFalse')} Quiz</H3>
-      <P>
-        <Strong>Question:</Strong>{' '}
-        <Em>
-          Suppose we take all the steps on the following {h('ycBentoBox')}:
-        </Em>
-      </P>
-      {episode2[i++]()}
-      <P>{h('ycTrueOrFalse')}: Will it eventually become this?</P>
-      {episode2[i++]()}
+      <BasicTrueFalseQuiz quizzes={episode2Quiz} />
       {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={3} />
     </>

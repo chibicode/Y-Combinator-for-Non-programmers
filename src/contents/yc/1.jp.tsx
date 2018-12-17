@@ -14,37 +14,19 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
+import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
-
-export const Quiz: React.FunctionComponent<{ prefix?: React.ReactNode }> = ({
-  prefix
-}) => {
-  let i = 0
-  return (
-    <>
-      <P>
-        {prefix}仮に、次の{h('ycBentoBox')}
-        で、全てのステップを実行したとします。
-      </P>
-      {episode1Quiz[i++]()}
-      <P>
-        {h('ycTrueOrFalse')}で答えてください:{' '}
-        <Em>最終的には、上の{h('ycBentoBox')}は以下のようになるでしょうか？</Em>
-      </P>
-      {episode1Quiz[i++]()}
-    </>
-  )
-}
 
 const Step1 = () => (
   <>
     それぞれの料理に <BottomRightBadge inline bottomRightBadgeType="callArg" />
     、
     <BottomRightBadge inline bottomRightBadgeType="funcArg" />、
-    <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の印をつける
+    <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+    のバッジをつける
   </>
 )
 
@@ -167,14 +149,14 @@ export default () => {
       <P>
         まず、
         {h('ycBentoBox')}
-        の中にある料理に印をつけるところからはじめましょう。
+        の中にある料理にバッジをつけるところからはじめましょう。
       </P>
       <P>
         <Em>
           <Strong>上段</Strong>
           にあるサンドイッチ <Emoji size="mdlg">🥪</Emoji> には、
           <BottomRightBadge inline bottomRightBadgeType="callArg" />
-          の印をつけます。
+          のバッジをつけます。
         </Em>
       </P>
       {episode1[i++]()}
@@ -183,7 +165,7 @@ export default () => {
           <Strong>下段の左</Strong>
           にある寿司 <Emoji size="mdlg">🍣</Emoji> には、
           <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-          の印をつけます。
+          のバッジをつけます。
         </Em>
       </P>
       {episode1[i++]()}
@@ -193,7 +175,7 @@ export default () => {
           <Strong>下段の右</Strong>
           にある寿司 <Emoji size="mdlg">🍣</Emoji> には、
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-          の印をつけます。
+          のバッジをつけます。
         </Em>
       </P>
       {episode1[i++]()}
@@ -207,7 +189,7 @@ export default () => {
           <Em>
             次の
             {h('ycBentoBox')}
-            にある料理にはそれぞれどんな印がつくでしょう？
+            にある料理にはそれぞれどんなバッジがつくでしょう？
           </Em>
         </P>
         {episode1[i++]()}
@@ -219,7 +201,7 @@ export default () => {
             、ハンバーガー <Emoji size="mdlg">🍔</Emoji> には{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-            の印がつきます。
+            のバッジがつきます。
           </Em>
         </P>
         {episode1[i++]()}
@@ -309,7 +291,7 @@ export default () => {
       <P>
         このとき、 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
         の料理に <TopRightBadge inline topRightBadgeType="betaReduced" />{' '}
-        という印が表示されます。
+        というバッジが表示されます。
       </P>
       <SideNoteSection
         heading={'復習問題: ステップ3'}
@@ -358,7 +340,7 @@ export default () => {
       <P>
         <Strong>ちなみに:</Strong> このステップで、{' '}
         <Em>
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の印
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" /> のバッジ
         </Em>
         も外れます。
       </P>
@@ -425,7 +407,10 @@ export default () => {
         <Strong>ちょっと難しい二択クイズ</Strong>を用意しています。
         <Em>わからなくてもいいので、チャレンジしてみてください。</Em>
       </P>
-      <Quiz prefix={<Strong>クイズはこちら。</Strong>} />
+      <BasicTrueFalseQuiz
+        prefix={<Strong>クイズはこちら。</Strong>}
+        quizzes={episode1Quiz}
+      />
       {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>

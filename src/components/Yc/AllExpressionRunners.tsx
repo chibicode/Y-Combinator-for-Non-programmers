@@ -626,7 +626,10 @@ export const episode2 = [
         }
       ]}
     />
-  ),
+  )
+]
+
+export const episode2Quiz = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode2Expression2}
