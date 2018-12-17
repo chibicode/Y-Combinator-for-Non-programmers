@@ -154,14 +154,12 @@ export const allTranslations = {
   ycTrueOrFalse: () => ({
     en: (
       <>
-        <Strong>True</Strong> <Emoji>👍</Emoji> or <Strong>False</Strong>{' '}
-        <Emoji>👎</Emoji>
+        {h('ycTrue')} or {h('ycFalse')}
       </>
     ),
     jp: (
       <>
-        「<Strong>はい</Strong> <Emoji>🙋🏻‍♀️</Emoji>」か「<Strong>いいえ</Strong>{' '}
-        <Emoji>🙅🏻‍♀️</Emoji>」
+        {h('ycTrue')}か{h('ycFalse')}
       </>
     )
   }),
@@ -184,9 +182,9 @@ export const allTranslations = {
   ycQuizReview: (previousEpisodeNumber: number) => ({
     en: (
       <>
-        <H3>Challenge Quiz Review</H3>
+        <H3>{h('ycTrueOrFalse')} Quiz Review</H3>
         <P>
-          Let’s take a look at{' '}
+          Before we begin, let’s take a look at{' '}
           <InternalLink href={yc(previousEpisodeNumber)}>
             the quiz from episode {previousEpisodeNumber}
           </InternalLink>
@@ -196,8 +194,9 @@ export const allTranslations = {
     ),
     jp: (
       <>
-        <H3>クイズの答え合わせ</H3>
+        <H3>二択クイズの答え合わせ</H3>
         <P>
+          まずはじめに、
           <InternalLink href={yc(previousEpisodeNumber)}>
             前のページで出したクイズ
           </InternalLink>

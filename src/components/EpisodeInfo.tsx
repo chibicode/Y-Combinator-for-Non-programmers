@@ -48,7 +48,7 @@ const episodeInfo: {
       text:
         locale === 'jp'
           ? 'まだ基本ルールの説明なので、星ひとつです！'
-          : 'We’re still talking about basics, so I just made it one star.'
+          : 'We’re still talking about basics, so one star still.'
     }
   }
 }

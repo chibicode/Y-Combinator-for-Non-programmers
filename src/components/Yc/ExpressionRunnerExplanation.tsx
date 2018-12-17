@@ -202,9 +202,9 @@ const stateToExplanation = ({
       } else {
         return (
           <>
+            マッチした{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            マッチしたのが{' '}
-            <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+            の料理が <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             と入れ替わります{' '}
             <TopRightBadge topRightBadgeType="betaReduced" inline />
           </>

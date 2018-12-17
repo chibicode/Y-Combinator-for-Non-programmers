@@ -455,22 +455,6 @@ export const episode2 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode1Expression3}
-      hidePriorities
-      hideControls
-      hideExplanations
-      resetIndex
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'active'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode1Expression3}
       variableSize={'lg'}
       resetIndex
       hidePlayButton

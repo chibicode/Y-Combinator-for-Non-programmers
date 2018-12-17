@@ -16,7 +16,7 @@ export const allTitles = {
   },
   ycEpisode2: {
     en: 'The Middle Item',
-    jp: '「次へ」ボタンと「前へ」ボタン'
+    jp: '真ん中の料理'
   },
   ycEpisode3: {
     en: '“Eat Later” List',

@@ -21,14 +21,12 @@ export default () => {
         }
       />
       {h('ycQuizReview', 1)}
+      <P>{h('ycTryUntilDone')}.</P>
+      {episode2[i++]()}
       <P>
-        (<Strong>The question was:</Strong> What will happen to the following{' '}
-        {h('ycBentoBox')} after taking all the steps?)
+        So the answer for the {h('ycTrueOrFalse')} question was:{' '}
+        <Em>{h('ycTrue')}</Em>:
       </P>
-      {episode2[i++]()}
-      <P>Let’s try and see what happens. {h('ycTryUntilDone')}.</P>
-      {episode2[i++]()}
-      <P>So the answer was {h('ycTrue')}:</P>
       {episode2[i++]()}
       <H3>Explanation</H3>
       <P>

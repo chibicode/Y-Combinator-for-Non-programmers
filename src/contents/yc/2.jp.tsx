@@ -16,22 +16,14 @@ export default () => {
     <>
       <EpisodeInfo
         episodeNumber={2}
-        introText={
-          <>
-            In this level, we’ll talk about <Em>three more scenarios</Em> for
-            the {h('ycBentoBox', true)}.
-          </>
-        }
+        introText={<>今回も{h('ycBentoBox')}の基本操作を説明していきます。</>}
       />
       {h('ycQuizReview', 1)}
+      <P>{h('ycTryUntilDone')}.</P>
+      {episode2[i++]()}
       <P>
-        (<Strong>The question was:</Strong> What will happen to the following{' '}
-        {h('ycBentoBox')} after taking all the steps?)
+        というわけで、二択問題の答えは<Em>{h('ycTrue')}</Em>でした。
       </P>
-      {episode2[i++]()}
-      <P>Let’s try and see what happens. {h('ycTryUntilDone')}.</P>
-      {episode2[i++]()}
-      <P>So the answer was {h('ycTrue')}:</P>
       {episode2[i++]()}
       <H3>Explanation</H3>
       <P>
