@@ -8,6 +8,7 @@ import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import { Quiz as Quiz1 } from 'src/contents/yc/1.jp'
 import h from 'src/lib/h'
 
 export default () => {
@@ -19,54 +20,64 @@ export default () => {
         introText={<>今回も{h('ycBentoBox')}の基本操作を説明していきます。</>}
       />
       {h('ycQuizReview', 1)}
-      <P>{h('ycTryUntilDone')}.</P>
+      <SideNoteSection color="pink" noPaddingBottom>
+        <Quiz1 />
+      </SideNoteSection>
+      <P>
+        <Strong>答えはこちら。</Strong>
+        {h('ycTryUntilDone')}.
+      </P>
       {episode2[i++]()}
       <P>
         というわけで、二択問題の答えは<Em>{h('ycTrue')}</Em>でした。
       </P>
       {episode2[i++]()}
-      <H3>Explanation</H3>
+      <H3>手短に説明</H3>
       <P>
-        Let’s quickly go over what happened. First, these are the labels. The
-        burger <Emoji size="mdlg">🍔</Emoji> on the top row is{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" />.{' '}
-      </P>
-      {episode2[i++]()}
-      <P>
-        On the bottom row, sushi <Emoji size="mdlg">🍣</Emoji> on the left is{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" />. Then there
-        are <Em>two items</Em> on the right (sushi <Emoji size="mdlg">🍣</Emoji>{' '}
-        and sandwich <Emoji size="mdlg">🥪</Emoji>
-        ), both are labeled as{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
-      </P>
-      <P>
-        <Strong>Next:</Strong> Let’s look at matches{' '}
-        <TopRightBadge inline topRightBadgeType="match" />.
-      </P>
-      {episode2[i++]()}
-      <P>
-        On <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
-        <Emoji size="mdlg">🍣</Emoji> matches{' '}
-        <TopRightBadge inline topRightBadgeType="match" />, but sandwich{' '}
-        <Emoji size="mdlg">🥪</Emoji> does not match{' '}
-        <TopRightBadge inline topRightBadgeType="unmatch" />.
-      </P>
-      {episode2[i++]()}
-      <P>
-        Therefore, on{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
-        <Emoji size="mdlg">🍣</Emoji> becomes burger{' '}
-        <Emoji size="mdlg">🍔</Emoji> (which was in{' '}
+        どうしてこうなるか、手短に説明します。まず、印は下のようになります。上段では、ハンバーガー{' '}
+        <Emoji size="mdlg">🍔</Emoji> の印が{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
-        ),{' '}
+        です。
+      </P>
+      {episode2[i++]()}
+      <P>
+        下段だと、左の寿司 <Emoji size="mdlg">🍣</Emoji> の印が{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+        で、右にある寿司 <Emoji size="mdlg">🍣</Emoji> とサンドイッチ{' '}
+        <Emoji size="mdlg">🥪</Emoji> の印は両方とも{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> です。
+      </P>
+      <P>
+        <Strong>次は、</Strong>マッチするかどうか{' '}
+        <TopRightBadge inline topRightBadgeType="match" /> 見てみましょう。
+      </P>
+      {episode2[i++]()}
+      <P>
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の寿司{' '}
+        <Emoji size="mdlg">🍣</Emoji> はマッチ{' '}
+        <TopRightBadge inline topRightBadgeType="match" />{' '}
+        しましたが、サンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
+        はマッチしませんでした。{' '}
+        <TopRightBadge inline topRightBadgeType="unmatch" />
+      </P>
+      {episode2[i++]()}
+      <P>
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の寿司{' '}
+        <Emoji size="mdlg">🍣</Emoji> は{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+        と同じハンバーグ <Emoji size="mdlg">🍔</Emoji>{' '}
+        に変わりますが、マッチしなかった
         <Strong>
-          but sandwich <Emoji size="mdlg">🥪</Emoji> does not change.
+          サンドイッチ <Emoji size="mdlg">🥪</Emoji> は変わりません。
         </Strong>
       </P>
-      <P>After that, it’s the same as before:</P>
+      <P>
+        そのあとは前回と同じく、{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> が消えます:
+      </P>
       {episode2[i++]()}
-      <P>Hope everything made sense!</P>
+      <P>どうだったでしょう。正解できましたか？</P>
       <EmojiSeparator emojis={['❌', '🤗', '✅']} />
       <H3>
         New in this episode: The Middle{' '}

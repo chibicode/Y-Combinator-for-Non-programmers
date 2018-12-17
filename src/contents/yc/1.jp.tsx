@@ -13,11 +13,31 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { episode1 } from 'src/components/Yc/AllExpressionRunners'
+import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+
+export const Quiz: React.FunctionComponent<{ prefix?: React.ReactNode }> = ({
+  prefix
+}) => {
+  let i = 0
+  return (
+    <>
+      <P>
+        {prefix}仮に、次の{h('ycBentoBox')}
+        で、全てのステップを実行したとします。
+      </P>
+      {episode1Quiz[i++]()}
+      <P>
+        {h('ycTrueOrFalse')}で答えてください:{' '}
+        <Em>最終的には、上の{h('ycBentoBox')}は以下のようになるでしょうか？</Em>
+      </P>
+      {episode1Quiz[i++]()}
+    </>
+  )
+}
 
 const Step1 = () => (
   <>
@@ -405,16 +425,7 @@ export default () => {
         <Strong>ちょっと難しい二択クイズ</Strong>を用意しています。
         <Em>わからなくてもいいので、チャレンジしてみてください。</Em>
       </P>
-      <P>
-        <Strong>クイズはこちら。</Strong>仮に、次の{h('ycBentoBox')}
-        で、全てのステップを実行したとします。
-      </P>
-      {episode1[i++]()}
-      <P>
-        {h('ycTrueOrFalse')}で答えてください:{' '}
-        <Em>最終的には、上の{h('ycBentoBox')}は以下のようになるでしょうか？</Em>
-      </P>
-      {episode1[i++]()}
+      <Quiz prefix={<Strong>クイズはこちら。</Strong>} />
       {h('ycTryGuessing')}
       <YcNextLessonButton nextEpisodeNumber={2} />
     </>

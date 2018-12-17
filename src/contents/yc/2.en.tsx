@@ -8,6 +8,7 @@ import { episode2 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import { Quiz as Quiz1 } from 'src/contents/yc/1.en'
 import h from 'src/lib/h'
 
 export default () => {
@@ -21,18 +22,23 @@ export default () => {
         }
       />
       {h('ycQuizReview', 1)}
-      <P>{h('ycTryUntilDone')}.</P>
+      <SideNoteSection color="pink" noPaddingBottom>
+        <Quiz1 />
+      </SideNoteSection>
+      <P>
+        <Strong>Here’s the answer.</Strong> {h('ycTryUntilDone')}.
+      </P>
       {episode2[i++]()}
       <P>
         So the answer for the {h('ycTrueOrFalse')} question was:{' '}
         <Em>{h('ycTrue')}</Em>:
       </P>
       {episode2[i++]()}
-      <H3>Explanation</H3>
+      <H3>Quick Explanation</H3>
       <P>
         Let’s quickly go over what happened. First, these are the labels. The
         burger <Emoji size="mdlg">🍔</Emoji> on the top row is{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" />.{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />.
       </P>
       {episode2[i++]()}
       <P>
@@ -67,7 +73,11 @@ export default () => {
           but sandwich <Emoji size="mdlg">🥪</Emoji> does not change.
         </Strong>
       </P>
-      <P>After that, it’s the same as before:</P>
+      <P>
+        After that, <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+        and <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+        disappear, like before:
+      </P>
       {episode2[i++]()}
       <P>Hope everything made sense!</P>
       <EmojiSeparator emojis={['❌', '🤗', '✅']} />

@@ -127,7 +127,7 @@ export const allTranslations = {
     ),
     jp: (
       <>
-        「<Strong>はい</Strong> <Emoji>🙋🏻‍♀️</Emoji>」
+        「<Strong>はい</Strong> <Emoji>🙆🏻‍♀️</Emoji>」
       </>
     )
   }),
