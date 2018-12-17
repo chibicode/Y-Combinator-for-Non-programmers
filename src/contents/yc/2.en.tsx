@@ -17,10 +17,7 @@ export default () => {
       <EpisodeInfo
         episodeNumber={2}
         introText={
-          <>
-            In this level, we’ll talk about <Em>three more scenarios</Em> for
-            the {h('ycBentoBox', true)}.
-          </>
+          <>In this level, we’ll cover some more {h('ycBentoBox')} basics.</>
         }
       />
       {h('ycQuizReview', 1)}
