@@ -1,6 +1,6 @@
 import locale from 'src/lib/locale'
 
-export const allTranslations = {
+export const allTitles = {
   title: {
     // Must fit in https://moz.com/learn/seo/title-tag
     en: 'CSmoji: Learn Computer Science with Emojis',
@@ -60,6 +60,6 @@ export const allTranslations = {
   }
 }
 
-const h = (x: keyof typeof allTranslations) => allTranslations[x][locale]
+const h = (x: keyof typeof allTitles) => allTitles[x][locale]
 
 export default h

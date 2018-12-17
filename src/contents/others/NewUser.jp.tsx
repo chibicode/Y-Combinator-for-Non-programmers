@@ -1,7 +1,7 @@
 import React from 'react'
 import { Em, InternalLink, Strong } from 'src/components/ContentTags'
 import pathHelpers from 'src/lib/pathHelpers'
-import t, { allTranslations } from 'src/lib/t'
+import t, { allTitles } from 'src/lib/titles'
 
 const NewUser: React.FunctionComponent<{
   componentProps: { lessonName: keyof typeof pathHelpers }
@@ -9,7 +9,7 @@ const NewUser: React.FunctionComponent<{
   <>
     <Strong>ハロー！</Strong>このページは「
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      {t(`${componentProps.lessonName}Title` as keyof typeof allTranslations)}
+      {t(`${componentProps.lessonName}Title` as keyof typeof allTitles)}
     </InternalLink>
     」という記事の途中です。はじめから読むには、
     <Em>

@@ -5,7 +5,7 @@ import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import pathHelpers from 'src/lib/pathHelpers'
-import t, { allTranslations } from 'src/lib/t'
+import t, { allTitles } from 'src/lib/titles'
 
 interface EpisodePageWrapperProps {
   episodeNumber?: number
@@ -18,11 +18,11 @@ const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
 }) => (
   <EpisodePage
     lessonName={lessonName}
-    lessonTitle={t(`${lessonName}Title` as keyof typeof allTranslations)}
+    lessonTitle={t(`${lessonName}Title` as keyof typeof allTitles)}
     episodeTitleString={
       episodeNumber
         ? `${episodeTitlePrefix(episodeNumber, lessonName).prefix}: ${t(
-            `${lessonName}Episode${episodeNumber}` as keyof typeof allTranslations
+            `${lessonName}Episode${episodeNumber}` as keyof typeof allTitles
           )}`
         : undefined
     }
@@ -36,7 +36,7 @@ const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
             `}
           >
             {t(
-              `${lessonName}Episode${episodeNumber}` as keyof typeof allTranslations
+              `${lessonName}Episode${episodeNumber}` as keyof typeof allTitles
             )}
           </span>
         </>

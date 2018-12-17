@@ -1,8 +1,8 @@
 import pathHelpers from 'src/lib/pathHelpers'
-import { allTranslations } from 'src/lib/t'
+import { allTitles } from 'src/lib/titles'
 
 const numEpisodes = (lessonName: keyof typeof pathHelpers) =>
-  Object.keys(allTranslations).filter(x =>
+  Object.keys(allTitles).filter(x =>
     x.match(new RegExp(`${lessonName}Episode\\d+`))
   ).length
 
