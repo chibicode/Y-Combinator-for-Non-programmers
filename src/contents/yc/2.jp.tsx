@@ -126,7 +126,7 @@ export default () => {
       <P>では、このまま最後までやってみましょう。{h('ycTryUntilDone')}。</P>
       {episode2[i++]()}
       <P>というわけで、まとめるとこうなります。</P>
-      <SideNoteSection heading={'What we’ve learned so far'} color="yellow">
+      <SideNoteSection heading={h('ycWhatWeHaveLearned')} color="yellow">
         <Ul>
           <UlLi>
             下段の真ん中にある料理には{' '}

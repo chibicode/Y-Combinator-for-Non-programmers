@@ -398,7 +398,7 @@ export default () => {
       </P>
       {episode1[i++]()}
       <P>ここまでは理解できたでしょうか？</P>
-      <SideNoteSection heading={'これまでのまとめ'} color="yellow">
+      <SideNoteSection heading={h('ycWhatWeHaveLearned')} color="yellow">
         <FourSteps />
       </SideNoteSection>
       <H3>二択クイズに挑戦</H3>

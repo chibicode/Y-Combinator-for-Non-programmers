@@ -103,6 +103,10 @@ export const allTranslations = {
       </>
     )
   }),
+  ycWhatWeHaveLearned: () => ({
+    en: <>What we have learned so far</>,
+    jp: <>これまでのまとめ</>
+  }),
   ycDone: () => ({
     en: (
       <>
