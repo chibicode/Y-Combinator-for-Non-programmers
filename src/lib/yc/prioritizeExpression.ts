@@ -1,65 +1,72 @@
 import { isCall, isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
-
 import { CallExpression, Expression } from 'src/types/yc/ExpressionTypes'
 
-function prioritizeCallExpressionHelper<E extends CallExpression>({
-  expression,
-  priority
-}: {
-  expression: E
-  priority: number
-}): E {
-  let newArg: Expression
-  let newFunc: Expression
+function helperWrapper<PE extends Expression = Expression>(
+  wrapperExpression: PE
+): PE {
+  let priority = 0
 
-  if (isCall(expression.func)) {
-    const funcResult = prioritizeCallExpressionHelper({
-      expression: expression.func,
-      priority
-    })
-    newFunc = funcResult
-    priority = funcResult.priority + 1
-  } else {
-    newFunc = prioritizeExpressionHelper(expression.func)
-  }
+  function prioritizeCallExpressionHelper<E extends CallExpression>(
+    expression: E
+  ): E {
+    let newArg: Expression | null = null
+    let newFunc: Expression | null = null
 
-  if (isCall(expression.arg)) {
-    const argResult = prioritizeCallExpressionHelper({
-      expression: expression.arg,
-      priority
-    })
-    newArg = argResult
-    priority = argResult.priority + 1
-  } else {
-    newArg = prioritizeExpressionHelper(expression.arg)
-  }
+    if (isCall(expression.func)) {
+      const funcResult = prioritizeCallExpressionHelper(expression.func)
+      newFunc = funcResult
+    }
 
-  return { ...expression, func: newFunc, arg: newArg, priority }
-}
+    if (isCall(expression.arg)) {
+      const argResult = prioritizeCallExpressionHelper(expression.arg)
+      newArg = argResult
+    }
 
-function prioritizeExpressionHelper<E extends Expression = Expression>(
-  expression: E
-): E {
-  if (isVariable(expression)) {
+    const finalPriority = ++priority
+
+    if (!isCall(expression.func)) {
+      newFunc = prioritizeExpressionHelper(expression.func)
+    }
+
+    if (!isCall(expression.arg)) {
+      newArg = prioritizeExpressionHelper(expression.arg)
+    }
+
+    if (!newFunc || !newArg) {
+      throw new Error()
+    }
+
     return {
       ...expression,
-      argPriorityAgg: new Array<number>(),
-      funcPriorityAgg: new Array<number>()
+      func: newFunc,
+      arg: newArg,
+      priority: finalPriority
     }
-  } else if (isCall(expression)) {
-    return prioritizeCallExpressionHelper({
-      priority: 1,
-      expression
-    })
-  } else if (isFunction(expression)) {
-    return {
-      ...expression,
-      arg: prioritizeExpressionHelper(expression.arg),
-      body: prioritizeExpressionHelper(expression.body)
-    }
-  } else {
-    throw new Error()
   }
+
+  function prioritizeExpressionHelper<E extends Expression = Expression>(
+    expression: E
+  ): E {
+    if (isVariable(expression)) {
+      return {
+        ...expression,
+        argPriorityAgg: new Array<number>(),
+        funcPriorityAgg: new Array<number>()
+      }
+    } else if (isCall(expression)) {
+      return prioritizeCallExpressionHelper(expression)
+    } else if (isFunction(expression)) {
+      return {
+        ...expression,
+        arg: prioritizeExpressionHelper(expression.arg),
+        body: prioritizeExpressionHelper(expression.body)
+      }
+    } else {
+      throw new Error()
+    }
+  }
+
+  return prioritizeExpressionHelper(wrapperExpression)
 }
 
 function populatePriorityAggs<E extends Expression>({
@@ -110,7 +117,7 @@ export default function prioritizeExpression<E extends Expression = Expression>(
   expression: E
 ): E {
   return populatePriorityAggs({
-    expression: prioritizeExpressionHelper(expression),
+    expression: helperWrapper(expression),
     argPriorityAgg: new Array<number>(),
     funcPriorityAgg: new Array<number>()
   })
