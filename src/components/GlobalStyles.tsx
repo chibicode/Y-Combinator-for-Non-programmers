@@ -4,7 +4,7 @@ export const jsxBabelFix = jsx
 import 'modern-normalize'
 import React from 'react'
 import { colors, lineHeights, spaces } from 'src/lib/theme'
-import { NOT_SMALL } from 'src/lib/theme/ns'
+import ns from 'src/lib/theme/ns'
 const indigo = colors('indigo500')
 
 const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
@@ -12,8 +12,6 @@ const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
 }) => (
   <div
     css={css`
-      color: ${colors('grey800')};
-      line-height: ${lineHeights(1.5)};
       /* TODO: Temporary until page footer is ready */
       padding-bottom: ${spaces(3)};
     `}
@@ -26,9 +24,11 @@ const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
      double-tap optimization was removed: https://github.com/twbs/bootstrap/commit/2e15b9488874d8c129e6bd4da0425ecbac359c03 */
         html {
           font-size: 18px;
+          color: ${colors('grey800')};
+          line-height: ${lineHeights(1.5)};
         }
 
-        @media screen and (min-width: ${NOT_SMALL}) {
+        ${ns} {
           html {
             /* NOTE: BorderWrapper background image size can be 1.5rem, so if this is not even
          they won't be able to repeat correctly. */
