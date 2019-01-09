@@ -2,6 +2,7 @@ const twemoji = require('twemoji')
 const uniq = require('lodash/uniq')
 
 const allUsedEmojis = uniq([
+  '🆓',
   '🤔',
   '🙂',
   '👋',

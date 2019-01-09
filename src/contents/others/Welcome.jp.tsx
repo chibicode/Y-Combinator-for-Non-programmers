@@ -10,12 +10,16 @@ export default () => (
       <Em>CSmoji</Em>
       では、
       <Em>絵文字</Em>を使った<Em>コンピューターサイエンス(CS)</Em>
-      の教科書を無料で配布しています。
+      の教科書を無料で配布しています。<Emoji>🆓</Emoji>
+    </P>
+    <P>
+      <Em>コードは一切出てきません。</Em>
+      プログラミング未経験の方でも、プログラミング的な思考方法を身につけることができます。
       <Emoji>😉</Emoji>
     </P>
     <P>
-      第1弾の教科書はこちら→{' '}
-      <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>
+      教科書第1弾はこちらから見れます！ →{' '}
+      <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>{' '}
     </P>
   </>
 )

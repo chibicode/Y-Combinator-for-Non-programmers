@@ -30,7 +30,7 @@ const Container: React.FC<ContainerProps> & {
 Container.defaultProps = {
   Component: 'div',
   verticalMargin: 0,
-  horizontalPadding: 1.25
+  horizontalPadding: 0.75
 }
 
 export default Container

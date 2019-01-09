@@ -5,7 +5,6 @@ import {
   Blockquote,
   Em,
   ExternalLink,
-  Hr,
   Ol,
   OlLi,
   P,
@@ -13,7 +12,6 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { introduction } from 'src/components/Yc/AllExpressionRunners'
@@ -23,15 +21,6 @@ export default () => {
   let i = 0
   return (
     <>
-      <P>
-        ようこそ！
-        <Strong>CSmoji</Strong>
-        は、
-        <Em>絵文字</Em>で<Em>コンピューターサイエンス(CS)</Em>
-        を学べるサイトです。もちろん無料です。
-        <Emoji>😉</Emoji>
-      </P>
-      <Hr />
       <P>
         <Strong>まずはじめに、クイズです。</Strong>「
         <Strong>
