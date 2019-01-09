@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, Global, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
+import Card from 'src/components/Card'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import { InternalLink } from 'src/components/ContentTags'
@@ -21,7 +22,6 @@ import {
   fontWeights,
   letterSpacings,
   lineHeights,
-  ns,
   spaces
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
@@ -31,8 +31,10 @@ export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
   lessonTitle: string
   episodeTitle?: React.ReactNode
+  intro: React.ReactNode
   episodeTitleString?: React.ReactNode
   episodeNumber?: number
+  episodeName?: string
   contentName: ContentProps['name']
 }
 
@@ -44,13 +46,15 @@ const commonTitleClasses = css`
 
 const navigationLinkClasses = css`
   text-decoration: none;
-  color: ${colors('indigo200')};
+  color: ${colors('indigo300')};
+  font-weight: bold;
   font-size: ${fontSizes(0.7)};
 `
 
 const EpisodePage: React.FC<EpisodePageProps> = ({
   lessonTitle,
   lessonName,
+  intro,
   episodeTitle,
   episodeTitleString,
   episodeNumber,
@@ -63,6 +67,14 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
         {episodeTitleString && ` | ${episodeTitleString}`} | CSmoji
       </title>
     </Head>
+    <Global
+      styles={css`
+        html,
+        body {
+          background-color: ${colors('indigo50')};
+        }
+      `}
+    />
     <Container size="sm">
       <div
         css={css`
@@ -70,7 +82,7 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
           align-items: center;
           padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
           border-bottom: 1px solid ${colors('indigo50')};
-          margin: 0 ${spaces('-1.25')} ${spaces(0.5)} ${spaces('-1.25')};
+          margin: 0 ${spaces('-0.5')} ${spaces(0.5)} ${spaces('-0.5')};
         `}
       >
         <div
@@ -127,100 +139,92 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
           )}
         </div>
       </div>
-    </Container>
-    <Container size={episodeNumber ? 'sm' : 'lg'}>
-      <div
-        css={css`
-          padding-top: ${spaces(1.5)};
-        `}
-      >
-        <div
-          css={css`
-            text-align: center;
-          `}
-        >
-          <Link href="/" passHref>
-            <a
-              css={css`
-                display: inline-block;
-                height: ${fontSizes(2.5)};
-              `}
-            >
-              <Logo />
-            </a>
-          </Link>
-        </div>
-
-        {episodeTitle ? (
-          <>
-            <h3
-              css={[
-                commonTitleClasses,
-                css`
-                  color: ${colors('grey500')};
-                  padding-top: ${spaces(1.5)};
-                  font-size: ${fontSizes(1.25)};
-                  margin: 0 auto;
-                `
-              ]}
-            >
-              <InternalLink
-                href={pathHelpers[lessonName]()}
+      <Card>
+        <>
+          <div
+            css={css`
+              text-align: center;
+            `}
+          >
+            <Link href="/" passHref>
+              <a
                 css={css`
-                  text-decoration: none;
+                  display: inline-block;
+                  height: ${fontSizes(2.5)};
                 `}
               >
-                {lessonTitle}
-              </InternalLink>
-            </h3>
+                <Logo />
+              </a>
+            </Link>
+          </div>
+
+          {episodeTitle ? (
+            <>
+              <h3
+                css={[
+                  commonTitleClasses,
+                  css`
+                    color: ${colors('grey500')};
+                    padding-top: ${spaces(1.5)};
+                    font-size: ${fontSizes(1.25)};
+                    margin: 0 auto;
+                  `
+                ]}
+              >
+                <InternalLink
+                  href={pathHelpers[lessonName]()}
+                  css={css`
+                    text-decoration: none;
+                  `}
+                >
+                  {lessonTitle}
+                </InternalLink>
+              </h3>
+              <h1
+                css={[
+                  commonTitleClasses,
+                  css`
+                    color: ${colors('grey900')};
+                    line-height: ${lineHeights(1.3)};
+                    font-size: ${fontSizes(2)};
+                    font-weight: ${fontWeights(800)};
+                    margin: 0 auto ${spaces(0.5)};
+                  `
+                ]}
+              >
+                {episodeTitle}
+              </h1>
+            </>
+          ) : (
             <h1
               css={[
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
-                  line-height: ${lineHeights(1.3)};
+                  padding-top: ${spaces(2)};
                   font-size: ${fontSizes(2)};
-                  font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};
+                  font-weight: ${fontWeights(800)};
                 `
               ]}
             >
-              {episodeTitle}
+              {lessonTitle}
             </h1>
-          </>
+          )}
+        </>
+        {episodeNumber ? (
+          <EmojiSeparator
+            size="lg"
+            emojis={episodeEmojis[lessonName][episodeNumber]}
+          />
         ) : (
-          <h1
-            css={[
-              commonTitleClasses,
-              css`
-                color: ${colors('grey900')};
-                padding-top: ${spaces(2)};
-                font-size: ${fontSizes(2)};
-                margin: 0 auto ${spaces(0.5)};
-                font-weight: ${fontWeights(800)};
-                ${ns} {
-                  font-size: ${fontSizes(2.5)};
-                }
-              `
-            ]}
-          >
-            {lessonTitle}
-          </h1>
+          <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
         )}
-      </div>
-    </Container>
-    <Container size="sm">
-      {episodeNumber ? (
-        <EmojiSeparator
-          size="lg"
-          emojis={episodeEmojis[lessonName][episodeNumber]}
-        />
-      ) : (
-        <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
-      )}
-      {episodeNumber && (
-        <EpisodePageInitialRenderWarning lessonName={lessonName} />
-      )}
+        {intro}
+        {episodeNumber && (
+          <EpisodePageInitialRenderWarning lessonName={lessonName} />
+        )}
+      </Card>
       <Content name={contentName} />
     </Container>
   </Page>
