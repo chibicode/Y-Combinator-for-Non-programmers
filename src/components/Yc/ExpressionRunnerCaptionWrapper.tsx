@@ -4,7 +4,7 @@ export const jsxBabelFix = jsx
 import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 
-const ExpressionRunnerCaptionWrapper: React.FunctionComponent<{
+const ExpressionRunnerCaptionWrapper: React.FC<{
   pinkText?: boolean
   children: React.ReactNode
 }> = ({ pinkText, children }) => (

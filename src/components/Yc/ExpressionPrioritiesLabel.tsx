@@ -65,7 +65,7 @@ const height = (
   return 1.3 * multiplier
 }
 
-const ExpressionPrioritiesLabelBox: React.FunctionComponent<
+const ExpressionPrioritiesLabelBox: React.FC<
   ExpressionPrioritiesLabelBox
 > = ({ emphasize, priority, position, collapsed }) => (
   <ExpressionPriorityContext.Consumer>
@@ -119,7 +119,7 @@ const ExpressionPrioritiesLabelBox: React.FunctionComponent<
   </ExpressionPriorityContext.Consumer>
 )
 
-const ExpressionPrioritiesLabelExpanded: React.FunctionComponent<
+const ExpressionPrioritiesLabelExpanded: React.FC<
   ExpressionPrioritiesLabelDefaultProps
 > = ({ priorities, position, emphasize }) => (
   <Flex>

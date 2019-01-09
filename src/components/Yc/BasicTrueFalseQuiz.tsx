@@ -3,7 +3,7 @@ import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 
-const Quiz: React.FunctionComponent<{
+const Quiz: React.FC<{
   prefix?: React.ReactNode
   quizzes: Array<() => JSX.Element>
 }> = ({ prefix, quizzes }) => {

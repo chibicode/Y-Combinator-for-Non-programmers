@@ -69,7 +69,7 @@ const background = (
   }
 }
 
-const Cross: React.FunctionComponent<{}> = () => (
+const Cross: React.FC<{}> = () => (
   <div
     css={css`
       position: absolute;
@@ -84,7 +84,7 @@ const Cross: React.FunctionComponent<{}> = () => (
   />
 )
 
-const BorderWrapper: React.FunctionComponent<BorderWrapperProps> = ({
+const BorderWrapper: React.FC<BorderWrapperProps> = ({
   highlightType,
   bottomRightBadgeType,
   topRightBadgeType,

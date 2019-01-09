@@ -13,7 +13,7 @@ interface HomeLink {
   children: React.ReactNode
 }
 
-const HomeLink: React.FunctionComponent<HomeLink> = ({
+const HomeLink: React.FC<HomeLink> = ({
   children,
   linkProps,
   anchorProps

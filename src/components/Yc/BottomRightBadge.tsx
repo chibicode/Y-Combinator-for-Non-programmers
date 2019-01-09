@@ -53,7 +53,7 @@ const bottomRightBadgeTypeToText = (
         funcUnbound: 'm'
       }[x]
 
-const BottomRightBadge: React.FunctionComponent<BottomRightBadgeProps> = ({
+const BottomRightBadge: React.FC<BottomRightBadgeProps> = ({
   bottomRightBadgeType,
   inline
 }) => (

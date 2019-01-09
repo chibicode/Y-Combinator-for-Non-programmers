@@ -5,7 +5,7 @@ import GlobalContextProvider from 'src/components/GlobalContextProvider'
 import GlobalStyles from 'src/components/GlobalStyles'
 import t from 'src/lib/titles'
 
-const Page: React.FunctionComponent<{ children: React.ReactNode }> = ({
+const Page: React.FC<{ children: React.ReactNode }> = ({
   children
 }) => (
   <GlobalContextProvider>

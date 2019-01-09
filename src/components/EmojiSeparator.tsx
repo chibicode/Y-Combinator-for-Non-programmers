@@ -12,7 +12,7 @@ interface EmojiSeparatorProps {
   Component: React.ComponentType | string
 }
 
-const EmojiSeparator: React.FunctionComponent<EmojiSeparatorProps> & {
+const EmojiSeparator: React.FC<EmojiSeparatorProps> & {
   defaultProps: Partial<EmojiSeparatorProps>
 } = ({ emojis, size, spacing, Component }) => (
   <Component

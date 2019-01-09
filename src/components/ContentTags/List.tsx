@@ -30,7 +30,7 @@ interface UlProps extends DefaultUlProps {
   size?: 'md' | 'lg'
 }
 
-export const Ul: React.FunctionComponent<UlProps> = ({
+export const Ul: React.FC<UlProps> = ({
   size = 'md',
   ...props
 }) => (
@@ -51,7 +51,7 @@ interface OlProps extends DefaultOlProps {
   size?: 'md' | 'lg'
 }
 
-export const Ol: React.FunctionComponent<OlProps> = ({ size, ...props }) => (
+export const Ol: React.FC<OlProps> = ({ size, ...props }) => (
   <ol
     {...props}
     css={[
@@ -67,7 +67,7 @@ export const Ol: React.FunctionComponent<OlProps> = ({ size, ...props }) => (
   />
 )
 
-export const UlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
+export const UlLi: React.FC<JSX.IntrinsicElements['li']> = ({
   ...props
 }) => (
   <li
@@ -86,7 +86,7 @@ export const UlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
   />
 )
 
-export const OlLi: React.FunctionComponent<JSX.IntrinsicElements['li']> = ({
+export const OlLi: React.FC<JSX.IntrinsicElements['li']> = ({
   ...props
 }) => (
   <li

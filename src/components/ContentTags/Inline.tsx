@@ -10,7 +10,7 @@ export const Strong = styled.strong`
   font-weight: bold;
 `
 
-export const Em: React.FunctionComponent<JSX.IntrinsicElements['em']> = ({
+export const Em: React.FC<JSX.IntrinsicElements['em']> = ({
   ...props
 }) => (
   <SectionContext.Consumer>

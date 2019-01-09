@@ -6,7 +6,7 @@ import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveSta
 import h from 'src/lib/h'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
-const Button: React.FunctionComponent<JSX.IntrinsicElements['button']> = ({
+const Button: React.FC<JSX.IntrinsicElements['button']> = ({
   // Remove ref b/c it's HOC
   ref,
   ...props
@@ -65,7 +65,7 @@ const noOp = () => {
   return
 }
 
-const ExpressionRunnerControls: React.FunctionComponent<
+const ExpressionRunnerControls: React.FC<
   ExpressionRunnerControlsProps
 > = ({
   canStepForward,

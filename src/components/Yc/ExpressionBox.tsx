@@ -14,7 +14,7 @@ interface ExpressionBoxProps {
   expression: Expression
 }
 
-const ExpressionBox: React.FunctionComponent<ExpressionBoxProps> = ({ expression }) => (
+const ExpressionBox: React.FC<ExpressionBoxProps> = ({ expression }) => (
   <Flex
     css={css`
       width: 100%;

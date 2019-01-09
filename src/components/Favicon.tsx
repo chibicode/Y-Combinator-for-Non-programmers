@@ -5,7 +5,7 @@ import { colors } from 'src/lib/theme'
 const faviconPrefix = `/static/images/favicon`
 const faviconBgColor = colors('socialBackground')
 
-const Favicon: React.FunctionComponent<{}> = () => (
+const Favicon: React.FC<{}> = () => (
   <>
     <link
       rel="apple-touch-icon"

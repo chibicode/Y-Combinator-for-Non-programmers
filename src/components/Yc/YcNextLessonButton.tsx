@@ -21,7 +21,7 @@ const primaryTextTypeToTranslationKey = (
     nextPage: 'ycNextButtonNextPagePrimaryText' as 'ycNextButtonNextPagePrimaryText'
   }[primaryTextType])
 
-const YcNextLessonButton: React.FunctionComponent<YcNextLessonButtonProps> & {
+const YcNextLessonButton: React.FC<YcNextLessonButtonProps> & {
   defaultProps: Partial<YcNextLessonButtonProps>
 } = ({ nextEpisodeNumber, primaryTextType }) => (
   <NextLessonButton

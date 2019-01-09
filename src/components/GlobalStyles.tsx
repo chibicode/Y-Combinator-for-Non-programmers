@@ -7,7 +7,7 @@ import { colors, lineHeights, spaces } from 'src/lib/theme'
 import ns from 'src/lib/theme/ns'
 const indigo = colors('indigo500')
 
-const GlobalStyles: React.FunctionComponent<{ children: React.ReactNode }> = ({
+const GlobalStyles: React.FC<{ children: React.ReactNode }> = ({
   children
 }) => (
   <div

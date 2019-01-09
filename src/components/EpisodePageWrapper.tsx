@@ -12,7 +12,7 @@ interface EpisodePageWrapperProps {
   lessonName: keyof typeof pathHelpers
 }
 
-const EpisodePageWrapper: React.FunctionComponent<EpisodePageWrapperProps> = ({
+const EpisodePageWrapper: React.FC<EpisodePageWrapperProps> = ({
   lessonName,
   episodeNumber
 }) => (

@@ -3,7 +3,7 @@ import { Em, InternalLink, Strong } from 'src/components/ContentTags'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTitles } from 'src/lib/titles'
 
-const NewUser: React.FunctionComponent<{
+const NewUser: React.FC<{
   componentProps: { lessonName: keyof typeof pathHelpers }
 }> = ({ componentProps }) => (
   <>

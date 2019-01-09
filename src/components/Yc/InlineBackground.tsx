@@ -23,7 +23,7 @@ const bgPatternToSvg = (
   throw new Error()
 }
 
-const InlineBackground: React.FunctionComponent<InlineBackgroundProps> & {
+const InlineBackground: React.FC<InlineBackgroundProps> & {
   defaultProps: Partial<InlineBackgroundProps>
 } = ({ bgColor, bgPattern, size }) => (
   <span

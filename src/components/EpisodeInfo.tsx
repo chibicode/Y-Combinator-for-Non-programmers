@@ -62,7 +62,7 @@ const difficultyFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
 const funFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
   episodeInfo[episodeNumber].fun
 
-const EpisodeInfo: React.FunctionComponent<EpisodeInfoProps> = ({
+const EpisodeInfo: React.FC<EpisodeInfoProps> = ({
   episodeNumber,
   outroText,
   introText

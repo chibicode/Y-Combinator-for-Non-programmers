@@ -10,7 +10,7 @@ interface InlineEmojiBoxProps {
   emojis: string[]
 }
 
-const InlineEmojiBoxes: React.FunctionComponent<InlineEmojiBoxProps> = ({ emojis }) => (
+const InlineEmojiBoxes: React.FC<InlineEmojiBoxProps> = ({ emojis }) => (
   <span
     css={css`
       display: inline-flex;

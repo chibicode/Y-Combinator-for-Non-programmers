@@ -13,7 +13,7 @@ interface CallExpressionBoxProps {
   expression: CallExpression
 }
 
-const CallExpressionBox: React.FunctionComponent<CallExpressionBoxProps> = ({
+const CallExpressionBox: React.FC<CallExpressionBoxProps> = ({
   expression
 }) => (
   <Flex

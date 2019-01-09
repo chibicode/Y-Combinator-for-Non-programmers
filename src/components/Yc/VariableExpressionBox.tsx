@@ -39,7 +39,7 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
     sm: fontSizes(1.5)
   }[size])
 
-const VariableExpressionBox: React.FunctionComponent<
+const VariableExpressionBox: React.FC<
   VariableExpressionBoxProps
 > = ({ expression }) => (
   <ExpressionRunnerContext.Consumer>

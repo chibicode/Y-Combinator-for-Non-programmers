@@ -13,7 +13,7 @@ export interface ContainerProps {
   horizontalPadding: keyof typeof allSpaces
 }
 
-const Container: React.FunctionComponent<ContainerProps> & {
+const Container: React.FC<ContainerProps> & {
   defaultProps: Partial<ContainerProps>
 } = ({ children, Component, size, verticalMargin, horizontalPadding }) => (
   <Component

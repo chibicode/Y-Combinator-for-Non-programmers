@@ -14,7 +14,7 @@ interface NextLessonButtonProps {
   tertiaryText?: React.ReactNode
 }
 
-const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> & {
+const NextLessonButton: React.FC<NextLessonButtonProps> & {
   defaultProps: Partial<NextLessonButtonProps>
 } = ({ primaryText, secondaryText, tertiaryText, href, Component }) => (
   <Component
