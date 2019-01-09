@@ -10,7 +10,7 @@ export default () => (
       <Em>CSmoji</Em>
       では、
       <Em>絵文字</Em>を使った<Em>コンピューターサイエンス(CS)</Em>
-      の教科書を無料で配布しています。<Emoji>🆓</Emoji>
+      のオンライン教科書を無料で配布しています。<Emoji>🆓</Emoji>
     </P>
     <P>
       <Em>コードは一切出てきません。</Em>

@@ -3,16 +3,26 @@ import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import React from 'react'
 import SectionContext from 'src/components/SectionContext'
-import { colors, radii, spaces } from 'src/lib/theme'
+import locale from 'src/lib/locale'
+import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 interface CardProps {
   children: React.ReactNode
   color: 'white' | 'pink' | 'yellow'
+  slideNumber?: number
+  slideCount?: number
 }
 
 const backgroundColor = (color: CardProps['color']) =>
   ({
     white: colors('white'),
+    pink: colors('pink5050'),
+    yellow: colors('yellow50')
+  }[color])
+
+const slideLabelColor = (color: CardProps['color']) =>
+  ({
+    white: colors('grey100'),
     pink: colors('pink5050'),
     yellow: colors('yellow50')
   }[color])
@@ -24,9 +34,7 @@ const emBackgroundColor = (color: CardProps['color']) =>
     yellow: colors('yellow200')
   }[color])
 
-const Card: React.FC<CardProps> & {
-  defaultProps: Partial<CardProps>
-} = ({ children, color }) => (
+const Card = ({ children, color, slideNumber, slideCount }: CardProps) => (
   <>
     <SectionContext.Provider
       value={{ emBackgroundColor: emBackgroundColor(color) }}
@@ -37,10 +45,41 @@ const Card: React.FC<CardProps> & {
           padding-left: ${spaces(1)};
           padding-right: ${spaces(1)};
           padding-bottom: ${spaces(0.5)};
+          position: relative;
           background: ${backgroundColor(color)};
           border-radius: ${radii(0.5)};
         `}
       >
+        {slideNumber && slideCount && (
+          <div
+            css={css`
+              position: absolute;
+              bottom: -0.5rem;
+              right: 1rem;
+              font-size: ${fontSizes(0.75)};
+              line-height: 1;
+              background: ${slideLabelColor(color)};
+              padding: ${spaces(0.25)} ${spaces(0.5)};
+              border-radius: 9999px;
+            `}
+          >
+            {locale === 'jp' ? (
+              <>
+                スライド{' '}
+                <span
+                  css={css`
+                    font-weight: bold;
+                  `}
+                >
+                  {slideNumber}
+                </span>{' '}
+                / {slideCount}
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
+        )}
         {children}
       </div>
     </SectionContext.Provider>

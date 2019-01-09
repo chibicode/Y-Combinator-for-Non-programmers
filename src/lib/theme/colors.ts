@@ -12,6 +12,7 @@ import Color from 'color'
 // https://material.io/design/color/the-color-system.html
 export const allColors = {
   socialBackground: indigo[500],
+  grey100: grey[100],
   grey200: grey[200],
   grey300: grey[300],
   grey400: grey[400],
