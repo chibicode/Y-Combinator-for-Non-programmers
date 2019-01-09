@@ -8,13 +8,13 @@ export default () => (
   <>
     <P>
       <Em>CSmoji</Em>
-      は、
-      <Em>絵文字</Em>で<Em>コンピューターサイエンス(CS)</Em>
-      を学べるサイトです。もちろん無料です。
+      では、
+      <Em>絵文字</Em>を使った<Em>コンピューターサイエンス(CS)</Em>
+      の教科書を無料で配布しています。
       <Emoji>😉</Emoji>
     </P>
     <P>
-      レッスン第一弾はこちら→{' '}
+      第1弾の教科書はこちら→{' '}
       <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>
     </P>
   </>

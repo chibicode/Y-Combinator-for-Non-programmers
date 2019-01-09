@@ -3,11 +3,6 @@ import dynamic from 'next/dynamic'
 import DynamicLoading from 'src/components/DynamicLoading'
 
 export interface BundleTypes {
-  'others/ComingSoon': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
-  }
-
   'others/NewUser': {
     jp: React.ComponentType<any>
     en: React.ComponentType<any>
@@ -80,20 +75,6 @@ export interface BundleTypes {
 }
 
 const bundles: BundleTypes = {
-  'others/ComingSoon': {
-    en: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'others/ComingSoon.en' */ 'src/contents/others/ComingSoon.en'),
-      { loading: () => <DynamicLoading /> }
-    ),
-    jp: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'others/ComingSoon.jp' */ 'src/contents/others/ComingSoon.jp'),
-      { loading: () => <DynamicLoading /> }
-    )
-  },
   'others/NewUser': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly

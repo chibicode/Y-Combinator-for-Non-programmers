@@ -18,7 +18,7 @@ const HomeLink: React.FunctionComponent<HomeLink> = ({
   linkProps,
   anchorProps
 }) => (
-  <Link {...linkProps}>
+  <Link {...linkProps} passHref>
     <a
       {...anchorProps}
       css={css`

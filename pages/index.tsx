@@ -64,13 +64,6 @@ const Index: React.FunctionComponent<{}> = () => (
             <Content name="others/Welcome" />
           </SectionContext.Provider>
         </div>
-        <div
-          css={css`
-            color: ${colors('indigo200')};
-          `}
-        >
-          <Content name="others/ComingSoon" />
-        </div>
       </div>
     </Container>
   </Page>

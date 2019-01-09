@@ -23,7 +23,7 @@ const NextLessonButton: React.FunctionComponent<NextLessonButtonProps> & {
       margin: ${spaces(3)} 0;
     `}
   >
-    <Link href={href}>
+    <Link href={href} passHref>
       <a
         css={css`
           display: inline-block;

@@ -139,7 +139,7 @@ const EpisodePage: React.FunctionComponent<EpisodePageProps> = ({
             text-align: center;
           `}
         >
-          <Link href="/">
+          <Link href="/" passHref>
             <a
               css={css`
                 display: inline-block;
