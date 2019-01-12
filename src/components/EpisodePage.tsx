@@ -157,7 +157,6 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
               </a>
             </Link>
           </div>
-
           {episodeTitle ? (
             <>
               <h3

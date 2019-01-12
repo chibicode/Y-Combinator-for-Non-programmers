@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
+import Card from 'src/components/Card'
 import {
   Blockquote,
   Em,
@@ -21,24 +22,26 @@ export default () => {
   let i = 0
   return (
     <>
-      <P>
-        <Strong>まずはじめに、クイズです。</Strong>「
-        <Strong>
-          <Em>Yコンビネーター</Em>
-        </Strong>
-        」という単語の意味として正しいのはどれでしょう？
-      </P>
-      <Ol>
-        <OlLi>
-          スタートアップ企業に投資し育成する、シリコンバレー発の
-          <Em>スタートアップ養成スクール</Em>。
-        </OlLi>
-        <OlLi>
-          繰り返し処理がないプログラミング言語でも繰り返し処理を可能にする、
-          <Em>プログラミングのテクニックのひとつ</Em>。
-        </OlLi>
-      </Ol>
-      <EmojiSeparator emojis={['1️⃣', '🤔', '2️⃣']} Component={P} />
+      <Card>
+        <P>
+          <Strong>まずはじめに、クイズです。</Strong>「
+          <Strong>
+            <Em>Yコンビネーター</Em>
+          </Strong>
+          」という単語の意味として正しいのはどれでしょう？
+        </P>
+        <Ol>
+          <OlLi>
+            スタートアップ企業に投資し育成する、シリコンバレー発の
+            <Em>スタートアップ養成スクール</Em>。
+          </OlLi>
+          <OlLi>
+            繰り返し処理がないプログラミング言語でも繰り返し処理を可能にする、
+            <Em>プログラミングのテクニックのひとつ</Em>。
+          </OlLi>
+        </Ol>
+        <EmojiSeparator emojis={['1️⃣', '🤔', '2️⃣']} halfMarginBottom />
+      </Card>
       <P>
         <Strong>
           答え: Yコンビネーターの定義として正しいのは、

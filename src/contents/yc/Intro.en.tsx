@@ -46,7 +46,7 @@ export default () => {
           implement loops in a programming language that doesn’t support loops.
         </OlLi>
       </Ol>
-      <EmojiSeparator emojis={['1️⃣', '🤔', '2️⃣']} Component={P} />
+      <EmojiSeparator emojis={['1️⃣', '🤔', '2️⃣']} />
       <P>
         <Strong>
           Answer: <Em>1 and 2 are both correct</Em>.

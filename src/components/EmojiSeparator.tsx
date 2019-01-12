@@ -9,17 +9,18 @@ interface EmojiSeparatorProps {
   emojis: string[]
   size: 'md' | 'lg'
   spacing: 'sm' | 'md'
+  halfMarginBottom?: boolean
   Component: React.ComponentType | string
 }
 
 const EmojiSeparator: React.FC<EmojiSeparatorProps> & {
   defaultProps: Partial<EmojiSeparatorProps>
-} = ({ emojis, size, spacing, Component }) => (
+} = ({ emojis, size, spacing, Component, halfMarginBottom }) => (
   <Component
     css={css`
       text-align: center;
       margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(1.25)} 0
-        ${spacing === 'sm' ? 0 : spaces(1.75)};
+        ${spacing === 'sm' ? 0 : halfMarginBottom ? spaces(0.75) : spaces(1.75)};
       font-size: ${size === 'lg' ? fontSizes(3) : fontSizes(2)};
       ${ns} {
         font-size: ${size === 'lg' ? fontSizes(4) : fontSizes(2.5)};
