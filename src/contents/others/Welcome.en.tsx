@@ -6,11 +6,16 @@ import { yc } from 'src/lib/pathHelpers'
 export default () => (
   <>
     <P>
-      <Em>CSmoji</Em> is a collection of free online books that teach you{' '}
-      <Em>Computer Science</Em> using <Em>emojis</Em>. <Emoji>😉</Emoji>
+      <Em>CSmoji</Em> is a collection of free <Emoji>🆓</Emoji> interactive
+      textbooks that teach you <Em>Computer Science</Em> using <Em>emojis</Em>.{' '}
+      <Emoji>😉</Emoji>
     </P>
     <P>
-      Try our first book for free:{' '}
+      <Em>There’s no coding involved,</Em> so it’s great for non-programmers.{' '}
+      <Emoji>👍</Emoji>
+    </P>
+    <P>
+      Try our first textbook for free:{' '}
       <HomeLink linkProps={{ href: yc() }}>
         Y Combinator for Non-Programmers
       </HomeLink>
