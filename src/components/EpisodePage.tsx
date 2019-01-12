@@ -2,47 +2,27 @@
 import { css, Global, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import Head from 'next/head'
-import Link from 'next/link'
 import React from 'react'
-import Card from 'src/components/Card'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import { InternalLink } from 'src/components/ContentTags'
-import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
+import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
 import Page from 'src/components/Page'
-import episodeEmojis from 'src/lib/episodeEmojis'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
 import pathHelpers from 'src/lib/pathHelpers'
-import {
-  colors,
-  fontSizes,
-  fontWeights,
-  letterSpacings,
-  lineHeights,
-  spaces
-} from 'src/lib/theme'
-// https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../images/CSmoji-Logo.svg'
+import { colors, fontSizes, spaces } from 'src/lib/theme'
 
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers
   lessonTitle: string
   episodeTitle?: React.ReactNode
-  intro: React.ReactNode
   episodeTitleString?: React.ReactNode
   episodeNumber?: number
   episodeName?: string
   contentName: ContentProps['name']
 }
-
-const commonTitleClasses = css`
-  line-height: ${lineHeights(1.3)};
-  letter-spacing: ${letterSpacings('title')};
-  text-align: center;
-`
 
 const navigationLinkClasses = css`
   text-decoration: none;
@@ -54,7 +34,6 @@ const navigationLinkClasses = css`
 const EpisodePage: React.FC<EpisodePageProps> = ({
   lessonTitle,
   lessonName,
-  intro,
   episodeTitle,
   episodeTitleString,
   episodeNumber,
@@ -139,92 +118,16 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
           )}
         </div>
       </div>
-      <Card>
-        <>
-          <div
-            css={css`
-              text-align: center;
-            `}
-          >
-            <Link href="/" passHref>
-              <a
-                css={css`
-                  display: inline-block;
-                  height: ${fontSizes(2.5)};
-                `}
-              >
-                <Logo />
-              </a>
-            </Link>
-          </div>
-          {episodeTitle ? (
-            <>
-              <h3
-                css={[
-                  commonTitleClasses,
-                  css`
-                    color: ${colors('grey500')};
-                    padding-top: ${spaces(1.5)};
-                    font-size: ${fontSizes(1.25)};
-                    margin: 0 auto;
-                  `
-                ]}
-              >
-                <InternalLink
-                  href={pathHelpers[lessonName]()}
-                  css={css`
-                    text-decoration: none;
-                  `}
-                >
-                  {lessonTitle}
-                </InternalLink>
-              </h3>
-              <h1
-                css={[
-                  commonTitleClasses,
-                  css`
-                    color: ${colors('grey900')};
-                    line-height: ${lineHeights(1.3)};
-                    font-size: ${fontSizes(2)};
-                    font-weight: ${fontWeights(800)};
-                    margin: 0 auto ${spaces(0.5)};
-                  `
-                ]}
-              >
-                {episodeTitle}
-              </h1>
-            </>
-          ) : (
-            <h1
-              css={[
-                commonTitleClasses,
-                css`
-                  color: ${colors('grey900')};
-                  padding-top: ${spaces(2)};
-                  font-size: ${fontSizes(2)};
-                  margin: 0 auto ${spaces(0.5)};
-                  font-weight: ${fontWeights(800)};
-                `
-              ]}
-            >
-              {lessonTitle}
-            </h1>
-          )}
-        </>
-        {episodeNumber ? (
-          <EmojiSeparator
-            size="lg"
-            emojis={episodeEmojis[lessonName][episodeNumber]}
-          />
-        ) : (
-          <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
-        )}
-        {intro}
-        {episodeNumber && (
-          <EpisodePageInitialRenderWarning lessonName={lessonName} />
-        )}
-      </Card>
-      <Content name={contentName} />
+      <EpisodeHeroContext.Provider
+        value={{
+          lessonName,
+          lessonTitle,
+          episodeTitle,
+          episodeNumber
+        }}
+      >
+        <Content name={contentName} />
+      </EpisodeHeroContext.Provider>
     </Container>
   </Page>
 )

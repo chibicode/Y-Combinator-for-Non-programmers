@@ -14,14 +14,40 @@ import {
   UlLi
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EpisodeHero from 'src/components/EpisodeHero'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { introduction } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import t from 'src/lib/titles'
 
 export default () => {
   let i = 0
   return (
     <>
+      <Card>
+        <EpisodeHero>
+          <P>
+            こんにちは。
+            <Em>
+              <Strong>CSmoji</Strong>
+            </Em>
+            では、
+            <Em>絵文字</Em>を使った<Em>コンピューターサイエンス(CS)</Em>
+            のオンライン教科書を無料で配布しています。
+          </P>
+          <P>
+            <Em>コードは一切出てきません。</Em>
+            プログラミング未経験の方でも、プログラミング的な思考方法を身につけることができます。
+          </P>
+          <P>
+            そんな教科書の第1弾が、この「
+            <Em>
+              <Strong>{t('ycTitle')}</Strong>
+            </Em>
+            」です。ぜひお楽しみください！
+          </P>
+        </EpisodeHero>
+      </Card>
       <Card>
         <P>
           <Strong>まずはじめに、クイズです。</Strong>「
