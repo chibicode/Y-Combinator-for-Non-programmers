@@ -6,7 +6,7 @@ import { yc } from 'src/lib/pathHelpers'
 export default () => (
   <>
     <P>
-      <Em>CSmoji</Em> is a collection of free <Emoji>🆓</Emoji> interactive
+      <Em>CSmoji</Em> is a collection of free interactive
       textbooks that teach you <Em>Computer Science</Em> using <Em>emojis</Em>.{' '}
       <Emoji>😉</Emoji>
     </P>
