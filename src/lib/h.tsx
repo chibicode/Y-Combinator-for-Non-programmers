@@ -148,10 +148,10 @@ export const allTranslations = {
     )
   }),
   ycTryGuessing: () => ({
-    en: <P>Try guessing before you click on the button below!</P>,
+    en: <P>Try guessing before you press on the button below!</P>,
     jp: (
       <P>
-        勘で予想してみてください！下のボタンをクリックしていただいて、次のページに進むと答えがわかります。
+        勘で予想してみてください！下のボタンを押していただいて、次のページに進むと答えがわかります。
       </P>
     )
   }),

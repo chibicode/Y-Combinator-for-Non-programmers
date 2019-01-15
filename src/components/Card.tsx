@@ -48,6 +48,7 @@ const Card = ({ children, color, slideNumber, slideCount }: CardProps) => (
           position: relative;
           background: ${backgroundColor(color)};
           border-radius: ${radii(0.5)};
+          margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
         `}
       >
         {slideNumber && slideCount && (

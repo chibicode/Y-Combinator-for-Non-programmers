@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
-import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import pathHelpers from 'src/lib/pathHelpers'
 import {
@@ -114,9 +113,6 @@ const EpisodeHero = ({ children }: EpisodeHeroProps) => (
           <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
         )}
         {children}
-        {episodeNumber && (
-          <EpisodePageInitialRenderWarning lessonName={lessonName} />
-        )}
       </>
     )}
   </EpisodeHeroContext.Consumer>
