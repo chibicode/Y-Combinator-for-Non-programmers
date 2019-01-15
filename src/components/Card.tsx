@@ -63,34 +63,49 @@ const Card = ({ children, color, slideNumber, slideCount }: CardProps) => (
               border-radius: 9999px;
             `}
           >
-            {locale === 'jp' ? (
-              <>
-                スライド{' '}
-                <span
-                  css={css`
-                    font-weight: bold;
-                  `}
-                >
-                  {slideNumber}
-                </span>{' '}
-                / {slideCount}
-              </>
-            ) : (
-              <></>
-            )}
+            <>
+              {slideNumber === 1 && (
+                <>
+                  <span
+                    css={css`
+                      opacity: 0.5;
+                    `}
+                  >
+                    {locale === 'jp' ? 'スライド' : 'Slide'}
+                  </span>{' '}
+                </>
+              )}
+              <span
+                css={css`
+                  font-weight: bold;
+                `}
+              >
+                {slideNumber}
+              </span>{' '}
+              <span
+                css={css`
+                  opacity: 0.5;
+                `}
+              >
+                /
+              </span>{' '}
+              {slideCount}
+            </>
           </div>
         )}
         {children}
       </div>
     </SectionContext.Provider>
-    <div
-      css={css`
-        width: 1.25rem;
-        height: 2rem;
-        margin: 0 auto;
-        background: ${colors('indigo100')};
-      `}
-    />
+    {slideNumber !== slideCount && (
+      <div
+        css={css`
+          width: 1.25rem;
+          height: 2rem;
+          margin: 0 auto;
+          background: ${colors('indigo100')};
+        `}
+      />
+    )}
   </>
 )
 
