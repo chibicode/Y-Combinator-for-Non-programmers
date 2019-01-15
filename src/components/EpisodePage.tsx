@@ -3,6 +3,7 @@ import { css, Global, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import Head from 'next/head'
 import React from 'react'
+import { CardProps } from 'src/components/Card'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import { InternalLink } from 'src/components/ContentTags'
@@ -13,6 +14,11 @@ import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
 import pathHelpers from 'src/lib/pathHelpers'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
+
+export type EpisodeCardListProps = ReadonlyArray<{
+  color?: CardProps['color']
+  content: React.ReactNode
+}>
 
 export interface EpisodePageProps {
   lessonName: keyof typeof pathHelpers

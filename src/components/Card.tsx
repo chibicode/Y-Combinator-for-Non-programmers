@@ -6,7 +6,7 @@ import SectionContext from 'src/components/SectionContext'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
-interface CardProps {
+export interface CardProps {
   children: React.ReactNode
   color: 'white' | 'pink' | 'yellow'
   slideNumber?: number
