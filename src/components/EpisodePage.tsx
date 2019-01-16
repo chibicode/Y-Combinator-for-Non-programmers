@@ -26,7 +26,7 @@ export interface EpisodePageProps {
 
 const navigationLinkClasses = css`
   text-decoration: none;
-  color: ${colors('indigo300')};
+  color: ${colors('indigo500')};
   font-weight: bold;
   font-size: ${fontSizes(0.7)};
 `
@@ -60,7 +60,6 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
           display: flex;
           align-items: center;
           padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
-          border-bottom: 1px solid ${colors('indigo50')};
           margin: 0 ${spaces('-0.5')} ${spaces(0.5)} ${spaces('-0.5')};
         `}
       >

@@ -20,7 +20,7 @@ const NextLessonButton: React.FC<NextLessonButtonProps> & {
   <Component
     css={css`
       text-align: center;
-      margin: ${spaces(3)} 0;
+      margin: ${spaces(3)} 0 ${spaces(1.5)};
     `}
   >
     <Link href={href} passHref>
