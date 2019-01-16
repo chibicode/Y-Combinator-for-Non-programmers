@@ -5,6 +5,7 @@ import {
   Blockquote,
   Em,
   ExternalLink,
+  H3,
   Ol,
   OlLi,
   P,
@@ -194,56 +195,71 @@ export default () => {
                 nextEpisodeNumber={1}
                 primaryTextType="start"
               />
-              <SideNoteSection
-                heading="Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？"
-                color="indigo"
+            </>
+          )
+        },
+        {
+          color: 'indigo',
+          content: (
+            <>
+              <H3>
+                コラム:
+                Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？
+              </H3>
+              <P>
+                いいですよ。
+                <Em>これがYコンビネーターです。</Em>
+              </P>
+              {introduction[i++]()}
+              <P>
+                <Strong>何これ？</Strong>
+                と思われるかもしれませんが、紛れもなくこれはYコンビネーターです。
+                <Em>
+                  レッスンを進めていけば、それぞれの絵文字が何を意味するのか分かるようになります。
+                </Em>
+              </P>
+            </>
+          )
+        },
+        {
+          color: 'indigo',
+          content: (
+            <>
+              <H3>コラム: このレッスンを作ったのは誰ですか？</H3>
+              <EmojiSeparator
+                emojis={['👨‍🎤']}
+                Component={P}
+                spacing="sm"
+                size="lg"
+              />
+              <P
+                css={css`
+                  margin-top: 0;
+                `}
               >
-                <P>
-                  いいですよ。
-                  <Em>これがYコンビネーターです。</Em>
-                </P>
-                {introduction[i++]()}
-                <P>
-                  <Strong>何これ？</Strong>
-                  と思われるかもしれませんが、紛れもなくこれはYコンビネーターです。
-                  <Em>
-                    レッスンを進めていけば、それぞれの絵文字が何を意味するのか分かるようになります。
-                  </Em>
-                </P>
-              </SideNoteSection>
-              <SideNoteSection
-                heading="このレッスンを作ったのは誰ですか？"
-                color="indigo"
-              >
-                <EmojiSeparator
-                  emojis={['👨‍🎤']}
-                  Component={P}
-                  spacing="sm"
-                  size="lg"
-                />
-                <P
-                  css={css`
-                    margin-top: 0;
-                  `}
-                >
-                  申し遅れました。
-                  <Strong>上杉周作</Strong>
-                  と申します。
-                  <ExternalLink href="https://jp.chibicode.com/">
-                    たまにブログを書いている
-                  </ExternalLink>
-                  米国在住のエンジニアです。旅行好きで、
-                  <ExternalLink href="https://jp.chibicode.com/world-trip/">
-                    2017年はゆるく世界一周していました
-                  </ExternalLink>
-                  。最近は、Factfulness
-                  (ファクトフルネス)という本を翻訳しました。(
-                  <ExternalLink href="https://amzn.to/2QlZIqm">
-                    Amazonリンク
-                  </ExternalLink>
-                  )
-                </P>
-              </SideNoteSection>
+                申し遅れました。
+                <Strong>上杉周作</Strong>
+                と申します。
+                <ExternalLink href="https://jp.chibicode.com/">
+                  たまにブログを書いている
+                </ExternalLink>
+                米国在住のエンジニアです。旅行好きで、
+                <ExternalLink href="https://jp.chibicode.com/world-trip/">
+                  2017年はゆるく世界一周していました
+                </ExternalLink>
+                。最近は、Factfulness
+                (ファクトフルネス)という本を翻訳しました。(
+                <ExternalLink href="https://amzn.to/2QlZIqm">
+                  Amazonリンク
+                </ExternalLink>
+                )
+              </P>
+            </>
+          )
+        },
+        {
+          content: (
+            <>
               <P>
                 <Strong>自己紹介も終えたところで、</Strong>
                 ぜひ先に進んでみてください!

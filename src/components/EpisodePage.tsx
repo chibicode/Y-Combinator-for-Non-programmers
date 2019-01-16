@@ -50,7 +50,7 @@ const EpisodePage: React.FC<EpisodePageProps> = ({
       styles={css`
         html,
         body {
-          background-color: ${colors('indigo50')};
+          background-color: ${colors('indigo100')};
         }
       `}
     />
