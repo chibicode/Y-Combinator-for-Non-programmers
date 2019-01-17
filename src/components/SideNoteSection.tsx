@@ -24,7 +24,7 @@ const borderColor = (color: SideNoteProps['color']) =>
 const backgroundColor = (color: SideNoteProps['color']) =>
   ({
     indigo: colors('indigo50'),
-    pink: colors('pink5050'),
+    pink: colors('pink50'),
     yellow: colors('yellow50')
   }[color])
 

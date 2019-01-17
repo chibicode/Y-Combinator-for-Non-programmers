@@ -24,7 +24,7 @@ const backgroundColor = (color: CardProps['color']) =>
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     white: colors('indigo500'),
-    orange: colors('deepOrange600'),
+    orange: colors('deepOrange900'),
     yellow: colors('yellow50'),
     indigo: colors('indigo500')
   }[color])

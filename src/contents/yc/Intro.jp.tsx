@@ -18,6 +18,7 @@ import EpisodeHero from 'src/components/EpisodeHero'
 import { introduction } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
+import h from 'src/lib/h'
 import t from 'src/lib/titles'
 
 export default () => {
@@ -73,6 +74,7 @@ export default () => {
           color: 'orange',
           content: (
             <>
+              <H3>{h('yesNoQuiz')}</H3>
               <P>
                 <Strong>質問:</Strong> 「
                 <Strong>

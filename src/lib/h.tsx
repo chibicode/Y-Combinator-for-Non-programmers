@@ -11,6 +11,47 @@ interface LocaleJson {
 }
 
 export const allTranslations = {
+  yesNoQuiz: () => ({
+    en: (
+      <>
+        <Emoji>👍</Emoji> Yes / <Emoji>👎</Emoji> No Quiz
+      </>
+    ),
+    jp: (
+      <>
+        <Emoji>⭕️</Emoji>
+        <Emoji>❌</Emoji>クイズ
+      </>
+    )
+  }),
+  quizYes: () => ({
+    en: (
+      <>
+        <Emoji>👍</Emoji> Yes
+      </>
+    ),
+    jp: (
+      <>
+        <Emoji>⭕️</Emoji> はい
+      </>
+    )
+  }),
+  quizNo: () => ({
+    en: (
+      <>
+        <Strong>
+          <Emoji>👎</Emoji> No
+        </Strong>
+      </>
+    ),
+    jp: (
+      <>
+        <Strong>
+          <Emoji>❌</Emoji> いいえ
+        </Strong>
+      </>
+    )
+  }),
   ycBentoBox: (plural: boolean) => ({
     en: (
       <>
