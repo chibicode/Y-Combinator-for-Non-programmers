@@ -8,7 +8,7 @@ import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 
 export interface CardProps {
   children: React.ReactNode
-  color: 'white' | 'pink' | 'yellow' | 'indigo'
+  color: 'white' | 'orange' | 'yellow' | 'indigo'
   slideNumber?: number
   slideCount?: number
 }
@@ -16,7 +16,7 @@ export interface CardProps {
 const backgroundColor = (color: CardProps['color']) =>
   ({
     white: colors('white'),
-    pink: colors('pink5050'),
+    orange: colors('deepOrange50'),
     yellow: colors('yellow50'),
     indigo: colors('indigo50')
   }[color])
@@ -24,7 +24,7 @@ const backgroundColor = (color: CardProps['color']) =>
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     white: colors('indigo500'),
-    pink: colors('pink5050'),
+    orange: colors('deepOrange600'),
     yellow: colors('yellow50'),
     indigo: colors('indigo500')
   }[color])
@@ -32,7 +32,7 @@ const slideLabelBgColor = (color: CardProps['color']) =>
 const emBackgroundColor = (color: CardProps['color']) =>
   ({
     white: colors('yellow100'),
-    pink: colors('white'),
+    orange: colors('white'),
     yellow: colors('yellow200'),
     indigo: colors('white')
   }[color])

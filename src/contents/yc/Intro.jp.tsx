@@ -13,10 +13,10 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
+import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EpisodeHero from 'src/components/EpisodeHero'
-import SideNoteSection from 'src/components/SideNoteSection'
 import { introduction } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import t from 'src/lib/titles'
@@ -53,26 +53,36 @@ export default () => {
           )
         },
         {
+          color: 'white',
+          content: (
+            <>
+              <H3>
+                <Emoji>⭕️</Emoji>
+                <Emoji>❌</Emoji>クイズに挑戦
+              </H3>
+              <P>
+                この教科書では、<Emoji>⭕️</Emoji>
+                <Emoji>❌</Emoji>
+                クイズがたくさん出てきます。答えがわからなくても大丈夫。適当に勘で答えを選んでみてください。
+              </P>
+              <P>さっそく1問目をやってみましょう。</P>
+              <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
+            </>
+          )
+        },
+        {
+          color: 'orange',
           content: (
             <>
               <P>
-                <Strong>まずはじめに、クイズです。</Strong>「
+                <Strong>質問:</Strong> 「
                 <Strong>
                   <Em>Yコンビネーター</Em>
                 </Strong>
-                」という単語の意味として正しいのはどれでしょう？
+                」とは、スタートアップ企業に投資し育成する、シリコンバレー発の
+                <Em>スタートアップ養成スクール</Em>のことだ。<Emoji>⭕️</Emoji>
+                か<Emoji>❌</Emoji>か?
               </P>
-              <Ol>
-                <OlLi>
-                  スタートアップ企業に投資し育成する、シリコンバレー発の
-                  <Em>スタートアップ養成スクール</Em>。
-                </OlLi>
-                <OlLi>
-                  繰り返し処理がないプログラミング言語でも繰り返し処理を可能にする、
-                  <Em>プログラミングのテクニックのひとつ</Em>。
-                </OlLi>
-              </Ol>
-              <EmojiSeparator emojis={['1️⃣', '🤔', '2️⃣']} halfMarginBottom />
             </>
           )
         },
@@ -203,7 +213,6 @@ export default () => {
           content: (
             <>
               <H3>
-                コラム:
                 Yコンビネーターが何なのか、もったいぶらないで教えてくれませんか？
               </H3>
               <P>
@@ -225,7 +234,7 @@ export default () => {
           color: 'indigo',
           content: (
             <>
-              <H3>コラム: このレッスンを作ったのは誰ですか？</H3>
+              <H3>このレッスンを作ったのは誰ですか？</H3>
               <EmojiSeparator
                 emojis={['👨‍🎤']}
                 Component={P}

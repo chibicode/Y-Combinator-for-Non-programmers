@@ -1,5 +1,6 @@
 import {
   blue,
+  deepOrange,
   grey,
   indigo,
   orange,
@@ -49,6 +50,8 @@ export const allColors = {
   yellow200: yellow[200],
   yellow600: yellow[600],
   yellow900: yellow[900],
+  deepOrange50: deepOrange[50],
+  deepOrange600: deepOrange[600],
   orange900: orange[900]
 }
 

@@ -4,22 +4,19 @@ import styled from '@emotion/styled'
 export const jsxBabelFix = jsx
 import React from 'react'
 import SectionContext from 'src/components/SectionContext'
-import { colors } from 'src/lib/theme'
 
 export const Strong = styled.strong`
   font-weight: bold;
 `
 
-export const Em: React.FC<JSX.IntrinsicElements['em']> = ({
-  ...props
-}) => (
+export const Em: React.FC<JSX.IntrinsicElements['em']> = ({ ...props }) => (
   <SectionContext.Consumer>
     {({ emBackgroundColor, emForegroundColor }) => (
       <em
         {...props}
         css={css`
           font-style: normal;
-          background: ${emBackgroundColor || colors('yellow100')};
+          background: ${emBackgroundColor};
           color: ${emForegroundColor || 'inherit'};
         `}
       />
