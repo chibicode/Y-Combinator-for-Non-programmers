@@ -24,7 +24,31 @@ export const allTranslations = {
       </>
     )
   }),
-  quizYes: () => ({
+  yesNoQuizCorrect: () => ({
+    en: (
+      <>
+        <Emoji size="mdlg">😄</Emoji> Correct!
+      </>
+    ),
+    jp: (
+      <>
+        <Emoji size="mdlg">😄</Emoji> 正解！
+      </>
+    )
+  }),
+  yesNoQuizIncorrect: () => ({
+    en: (
+      <>
+        <Emoji size="mdlg">😭</Emoji> Oops!
+      </>
+    ),
+    jp: (
+      <>
+        <Emoji size="mdlg">😭</Emoji> 残念！
+      </>
+    )
+  }),
+  yesNoQuizYes: (hideText: boolean) => ({
     en: (
       <>
         <Emoji>👍</Emoji> Yes
@@ -32,11 +56,12 @@ export const allTranslations = {
     ),
     jp: (
       <>
-        <Emoji>⭕️</Emoji> はい
+        <Emoji>⭕️</Emoji>
+        {!hideText && ' はい'}
       </>
     )
   }),
-  quizNo: () => ({
+  yesNoQuizNo: (hideText: boolean) => ({
     en: (
       <>
         <Strong>
@@ -47,8 +72,27 @@ export const allTranslations = {
     jp: (
       <>
         <Strong>
-          <Emoji>❌</Emoji> いいえ
+          <Emoji>❌</Emoji>
+          {!hideText && ' いいえ'}
         </Strong>
+      </>
+    )
+  }),
+  yesNoQuizCorrectPostfix: () => ({
+    en: <>Good job!</>,
+    jp: <>さすがです！</>
+  }),
+  yesNoQuizIncorrectPostfix: (isYes: boolean) => ({
+    en: (
+      <>
+        The corret answer was {isYes ? h('yesNoQuizYes') : h('yesNoQuizNo')}.
+        But don’t worry!
+      </>
+    ),
+    jp: (
+      <>
+        正解は{isYes ? h('yesNoQuizYes', true) : h('yesNoQuizNo', true)}
+        でした。どんまい！
       </>
     )
   }),

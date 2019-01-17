@@ -2,8 +2,10 @@
 import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import React from 'react'
+import { P } from 'src/components/ContentTags'
 // import Emoji from 'src/components/Emoji'
 import h from 'src/lib/h'
+import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
 
 interface YesNoButtonsState {
@@ -72,38 +74,70 @@ export default class YesNoButtons extends React.Component<
 
   public render() {
     const { selection } = this.state
+    const { answer } = this.props
+    const isCorrect = selection === answer
     return (
-      <div
-        css={css`
-          text-align: center;
-          margin: ${spaces(2.5)} 0 ${spaces(1.5)};
-        `}
-      >
-        <Button
-          status={
-            selection === 'default'
-              ? 'default'
-              : selection === 'yes'
-              ? 'active'
-              : 'inactive'
-          }
-          onClick={this.onYesClick}
+      <>
+        <div
+          css={css`
+            text-align: center;
+            margin: ${spaces(2.5)} 0
+              ${selection === 'default' ? spaces(1.5) : spaces(1)};
+          `}
         >
-          {h('quizYes')}
-        </Button>
-        <Button
-          status={
-            selection === 'default'
-              ? 'default'
-              : selection === 'no'
-              ? 'active'
-              : 'inactive'
-          }
-          onClick={this.onNoClick}
-        >
-          {h('quizNo')}
-        </Button>
-      </div>
+          <Button
+            status={
+              selection === 'default'
+                ? 'default'
+                : selection === 'yes'
+                ? 'active'
+                : 'inactive'
+            }
+            onClick={this.onYesClick}
+          >
+            {h('yesNoQuizYes')}
+          </Button>
+          <Button
+            status={
+              selection === 'default'
+                ? 'default'
+                : selection === 'no'
+                ? 'active'
+                : 'inactive'
+            }
+            onClick={this.onNoClick}
+          >
+            {h('yesNoQuizNo')}
+          </Button>
+        </div>
+        {selection !== 'default' && (
+          <>
+            <P
+              css={css`
+                text-align: center;
+              `}
+            >
+              <strong>
+                {isCorrect ? h('yesNoQuizCorrect') : h('yesNoQuizIncorrect')}
+              </strong>
+              {locale === 'en' && ' '}
+              {isCorrect
+                ? h('yesNoQuizCorrectPostfix')
+                : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
+            </P>
+            <P
+              css={css`
+                text-align: center;
+              `}
+            >
+              ↓{' '}
+              {locale === 'en'
+                ? 'Please continue below!'
+                : '次のスライドへどうぞ!'}
+            </P>
+          </>
+        )}
+      </>
     )
   }
 
