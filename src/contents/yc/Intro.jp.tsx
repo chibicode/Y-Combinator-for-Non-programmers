@@ -6,8 +6,6 @@ import {
   Em,
   ExternalLink,
   H3,
-  Ol,
-  OlLi,
   P,
   Strong,
   Ul,
@@ -19,6 +17,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import EpisodeHero from 'src/components/EpisodeHero'
 import { introduction } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import YesNoButtons from 'src/components/YesNoButtons'
 import t from 'src/lib/titles'
 
 export default () => {
@@ -83,6 +82,7 @@ export default () => {
                 <Em>スタートアップ養成スクール</Em>のことだ。<Emoji>⭕️</Emoji>
                 か<Emoji>❌</Emoji>か?
               </P>
+              <YesNoButtons answer="yes" />
             </>
           )
         },

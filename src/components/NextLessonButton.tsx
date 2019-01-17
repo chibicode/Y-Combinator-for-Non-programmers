@@ -7,17 +7,19 @@ import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
 
 interface NextLessonButtonProps {
-  Component: React.ComponentType | string
   href: string
   primaryText: React.ReactNode
   secondaryText?: React.ReactNode
   tertiaryText?: React.ReactNode
 }
 
-const NextLessonButton: React.FC<NextLessonButtonProps> & {
-  defaultProps: Partial<NextLessonButtonProps>
-} = ({ primaryText, secondaryText, tertiaryText, href, Component }) => (
-  <Component
+const NextLessonButton: React.FC<NextLessonButtonProps> = ({
+  primaryText,
+  secondaryText,
+  tertiaryText,
+  href
+}) => (
+  <div
     css={css`
       text-align: center;
       margin: ${spaces(3)} 0 ${spaces(1.5)};
@@ -83,11 +85,7 @@ const NextLessonButton: React.FC<NextLessonButtonProps> & {
         {tertiaryText}
       </div>
     )}
-  </Component>
+  </div>
 )
-
-NextLessonButton.defaultProps = {
-  Component: 'div'
-}
 
 export default NextLessonButton
