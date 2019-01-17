@@ -2,8 +2,8 @@
 import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import React from 'react'
-import { P } from 'src/components/ContentTags'
-// import Emoji from 'src/components/Emoji'
+import CardContext, { CardContextProps } from 'src/components/CardContext'
+import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
@@ -31,22 +31,22 @@ const Button = ({ status, children, onClick }: ButtonProps) => (
       padding: ${spaces(0.75)} ${spaces(1)};
       border-radius: ${radii(0.5)};
       margin: 0 ${spaces(0.5)};
-      border: 2px solid ${colors('deepOrange900')};
+      border: 2px solid ${colors('grey700')};
       font-weight: bold;
       opacity: ${status === 'inactive' ? 0.5 : 1};
       background: ${status === 'active'
         ? colors('yellow100')
         : colors('white')};
-      color: ${colors('deepOrange900')};
+      color: ${colors('grey800')};
       text-decoration: none;
       line-height: ${lineHeights(1)};
       -webkit-user-select: none;
       box-shadow: ${status === 'active'
-        ? `inset 0 0 0 1px ${colors('deepOrange900')}`
+        ? `inset 0 0 0 1px ${colors('grey700')}`
         : 'none'};
 
       &:focus {
-        box-shadow: inset 0 0 0 1px ${colors('deepOrange900')};
+        box-shadow: inset 0 0 0 1px ${colors('grey700')};
         outline: none;
       }
 
@@ -68,6 +68,8 @@ export default class YesNoButtons extends React.Component<
   YesNoButtonsProps,
   YesNoButtonsState
 > {
+  public static contextType = CardContext
+
   public state: YesNoButtonsState = {
     selection: 'default'
   }
@@ -77,79 +79,91 @@ export default class YesNoButtons extends React.Component<
     const { answer } = this.props
     const isCorrect = selection === answer
     return (
-      <>
-        <div
-          css={css`
-            text-align: center;
-            margin: ${spaces(2.5)} 0
-              ${selection === 'default' ? spaces(1.5) : spaces(1)};
-          `}
-        >
-          <Button
-            status={
-              selection === 'default'
-                ? 'default'
-                : selection === 'yes'
-                ? 'active'
-                : 'inactive'
-            }
-            onClick={this.onYesClick}
-          >
-            {h('yesNoQuizYes')}
-          </Button>
-          <Button
-            status={
-              selection === 'default'
-                ? 'default'
-                : selection === 'no'
-                ? 'active'
-                : 'inactive'
-            }
-            onClick={this.onNoClick}
-          >
-            {h('yesNoQuizNo')}
-          </Button>
-        </div>
-        {selection !== 'default' && (
+      <CardContext.Consumer>
+        {({ updateColor }) => (
           <>
-            <P
+            {' '}
+            <div
               css={css`
                 text-align: center;
+                margin: ${spaces(2.5)} 0
+                  ${selection === 'default' ? spaces(1.5) : spaces(1)};
               `}
             >
-              <strong>
-                {isCorrect ? h('yesNoQuizCorrect') : h('yesNoQuizIncorrect')}
-              </strong>
-              {locale === 'en' && ' '}
-              {isCorrect
-                ? h('yesNoQuizCorrectPostfix')
-                : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
-            </P>
-            <P
-              css={css`
-                text-align: center;
-              `}
-            >
-              ↓{' '}
-              {locale === 'en'
-                ? 'Please continue below!'
-                : '次のスライドへどうぞ!'}
-            </P>
+              <Button
+                status={
+                  selection === 'default'
+                    ? 'default'
+                    : selection === 'yes'
+                    ? 'active'
+                    : 'inactive'
+                }
+                onClick={this.onButtonClick('yes', answer, updateColor)}
+              >
+                {h('yesNoQuizYes')}
+              </Button>
+              <Button
+                status={
+                  selection === 'default'
+                    ? 'default'
+                    : selection === 'no'
+                    ? 'active'
+                    : 'inactive'
+                }
+                onClick={this.onButtonClick('no', answer, updateColor)}
+              >
+                {h('yesNoQuizNo')}
+              </Button>
+            </div>
+            {selection !== 'default' && (
+              <>
+                <P
+                  css={css`
+                    text-align: center;
+                  `}
+                >
+                  <Em>
+                    <strong>
+                      {isCorrect
+                        ? h('yesNoQuizCorrect')
+                        : h('yesNoQuizIncorrect')}
+                    </strong>
+                    {locale === 'en' && ' '}
+                    {isCorrect
+                      ? h('yesNoQuizCorrectPostfix')
+                      : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
+                  </Em>
+                </P>
+                <P
+                  css={css`
+                    text-align: center;
+                  `}
+                >
+                  ↓{' '}
+                  {locale === 'en'
+                    ? 'Please continue below!'
+                    : 'そのまま読み進めてみてください!'}
+                </P>
+              </>
+            )}
           </>
         )}
-      </>
+      </CardContext.Consumer>
     )
   }
 
-  private onYesClick = () => {
-    if (this.state.selection === 'default') {
-      this.setState({ selection: 'yes' })
-    }
-  }
-
-  private onNoClick = () => {
-    if (this.state.selection === 'default') {
-      this.setState({ selection: 'no' })
+  private onButtonClick(
+    actual: YesNoButtonsProps['answer'],
+    expected: YesNoButtonsProps['answer'],
+    updateColor: CardContextProps['updateColor']
+  ) {
+    return () => {
+      if (this.state.selection === 'default') {
+        this.setState({ selection: actual })
+      }
+      if (actual === expected && updateColor) {
+        updateColor('teal')
+      }
     }
   }
 }

@@ -2,10 +2,10 @@
 import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
 import React from 'react'
+import CardContext from 'src/components/CardContext'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
 import Page from 'src/components/Page'
-import SectionContext from 'src/components/SectionContext'
 import {
   colors,
   fontSizes,
@@ -55,14 +55,14 @@ const Index: React.FC<{}> = () => (
               <Logo />
             </span>
           </h1>
-          <SectionContext.Provider
+          <CardContext.Provider
             value={{
               emBackgroundColor: colors('yellow200'),
               emForegroundColor: colors('indigo500')
             }}
           >
             <Content name="others/Welcome" />
-          </SectionContext.Provider>
+          </CardContext.Provider>
         </div>
       </div>
     </Container>

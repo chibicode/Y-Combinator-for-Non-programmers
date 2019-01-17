@@ -40,6 +40,7 @@ export const allColors = {
     .hsl()
     .string(),
   teal50: teal[50],
+  teal700: teal[700],
   blue50: blue[50],
   yellow50: yellow[50],
   yellow100: yellow[100],

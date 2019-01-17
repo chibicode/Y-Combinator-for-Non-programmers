@@ -3,14 +3,14 @@ import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 export const jsxBabelFix = jsx
 import React from 'react'
-import SectionContext from 'src/components/SectionContext'
+import CardContext from 'src/components/CardContext'
 
 export const Strong = styled.strong`
   font-weight: bold;
 `
 
 export const Em: React.FC<JSX.IntrinsicElements['em']> = ({ ...props }) => (
-  <SectionContext.Consumer>
+  <CardContext.Consumer>
     {({ emBackgroundColor, emForegroundColor }) => (
       <em
         {...props}
@@ -21,5 +21,5 @@ export const Em: React.FC<JSX.IntrinsicElements['em']> = ({ ...props }) => (
         `}
       />
     )}
-  </SectionContext.Consumer>
+  </CardContext.Consumer>
 )
