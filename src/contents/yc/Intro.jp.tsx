@@ -84,7 +84,7 @@ export default () => {
                 <Em>スタートアップ養成スクール</Em>のことだ。<Emoji>⭕️</Emoji>
                 か<Emoji>❌</Emoji>か?
               </P>
-              <P>↓ 正しいと思う方を押してみてください。</P>
+              <P>↓ 正しいと思う方を選んでみてください。</P>
               <YesNoButtons answer="yes" />
             </>
           )
