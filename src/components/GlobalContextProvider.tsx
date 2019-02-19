@@ -19,11 +19,16 @@ class GlobalContextProvider extends React.Component<
   }
 
   public componentDidMount() {
-    this.props.router.events.on('routeChangeComplete', this.handleRouteChange)
+    this.props.router &&
+      this.props.router.events.on('routeChangeComplete', this.handleRouteChange)
   }
 
   public componentWillUnmount() {
-    this.props.router.events.off('routeChangeComplete', this.handleRouteChange)
+    this.props.router &&
+      this.props.router.events.off(
+        'routeChangeComplete',
+        this.handleRouteChange
+      )
   }
 
   public render() {

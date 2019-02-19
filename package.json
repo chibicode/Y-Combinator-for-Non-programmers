@@ -53,9 +53,5 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.3.3"
-  },
-  "resolutions": {
-    "@types/react": "16.7.17",
-    "@types/react-dom": "16.0.11"
   }
 }
