@@ -24,10 +24,6 @@ interface ExpressionPrioritiesLabelBox {
   collapsed: boolean
 }
 
-interface ExpressionPrioritiesLabelState {
-  collapsed: boolean
-}
-
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
 
 const fontSize = (
@@ -65,9 +61,12 @@ const height = (
   return 1.3 * multiplier
 }
 
-const ExpressionPrioritiesLabelBox: React.FC<
-  ExpressionPrioritiesLabelBox
-> = ({ emphasize, priority, position, collapsed }) => (
+const ExpressionPrioritiesLabelBox: React.FC<ExpressionPrioritiesLabelBox> = ({
+  emphasize,
+  priority,
+  position,
+  collapsed
+}) => (
   <ExpressionPriorityContext.Consumer>
     {({ activePriority }) => (
       <ExpressionRunnerContext.Consumer>
@@ -135,45 +134,33 @@ const ExpressionPrioritiesLabelExpanded: React.FC<
   </Flex>
 )
 
-export default class ExpressionPrioritiesLabel extends React.Component<
-  ExpressionPrioritiesLabelProps,
-  ExpressionPrioritiesLabelState
-> {
-  public state = {
-    collapsed: false
-  }
+const ExpressionPrioritiesLabel = ({
+  priorities,
+  position,
+  emphasize
+}: ExpressionPrioritiesLabelProps) => (
+  <div
+    css={css`
+        position: absolute;
+        left: 0px;
+        ${
+          position === 'topleft'
+            ? css`
+                top: 0px;
+              `
+            : css`
+                bottom: 0px;
+              `
+        }
+        z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
+      `}
+  >
+    <ExpressionPrioritiesLabelExpanded
+      priorities={priorities}
+      emphasize={emphasize}
+      position={position}
+    />
+  </div>
+)
 
-  public render() {
-    const { priorities, position, emphasize } = this.props
-    const { collapsed } = this.state
-    if (collapsed) {
-      // TODO
-      return ''
-    } else {
-      return (
-        <div
-          css={css`
-            position: absolute;
-            left: 0px;
-            ${
-              position === 'topleft'
-                ? css`
-                    top: 0px;
-                  `
-                : css`
-                    bottom: 0px;
-                  `
-            }
-            z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
-          `}
-        >
-          <ExpressionPrioritiesLabelExpanded
-            priorities={priorities}
-            emphasize={emphasize}
-            position={position}
-          />
-        </div>
-      )
-    }
-  }
-}
+export default ExpressionPrioritiesLabel
