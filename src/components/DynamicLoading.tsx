@@ -1,5 +1,3 @@
-import React from 'react'
-
-const DynamicLoading: React.FC<{}> = () => <></>
+const DynamicLoading = () => null
 
 export default DynamicLoading
