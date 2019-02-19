@@ -1,47 +1,32 @@
 import { withRouter, WithRouterProps } from 'next/router'
-import React from 'react'
-import GlobalContext, {
-  globalContextDefault
-} from 'src/components/GlobalContext'
+import React, { useEffect, useState } from 'react'
+import GlobalContext from 'src/components/GlobalContext'
 
 interface GlobalContextProviderProps {
   children: React.ReactNode
 }
 
-type GlobalContextProviderState = typeof globalContextDefault
-
-class GlobalContextProvider extends React.Component<
-  GlobalContextProviderProps & WithRouterProps,
-  GlobalContextProviderState
-> {
-  public state = {
-    initialRender: true
-  }
-
-  public componentDidMount() {
-    this.props.router &&
-      this.props.router.events.on('routeChangeComplete', this.handleRouteChange)
-  }
-
-  public componentWillUnmount() {
-    this.props.router &&
-      this.props.router.events.off(
-        'routeChangeComplete',
-        this.handleRouteChange
-      )
-  }
-
-  public render() {
-    return (
-      <GlobalContext.Provider value={this.state}>
-        {this.props.children}
-      </GlobalContext.Provider>
-    )
-  }
-
-  private handleRouteChange = () => {
-    this.setState({ initialRender: false })
-  }
+const GlobalContextProvider = ({
+  router,
+  children
+}: GlobalContextProviderProps & WithRouterProps) => {
+  const [initialRender, setInitialRender] = useState(true)
+  useEffect(() => {
+    if (router) {
+      router.events.on('routeChangeComplete', handleRouteChange)
+    }
+    return () => {
+      if (router) {
+        router.events.off('routeChangeComplete', handleRouteChange)
+      }
+    }
+  })
+  const handleRouteChange = () => setInitialRender(false)
+  return (
+    <GlobalContext.Provider value={{ initialRender }}>
+      {children}
+    </GlobalContext.Provider>
+  )
 }
 
 export default withRouter<GlobalContextProviderProps>(GlobalContextProvider)
