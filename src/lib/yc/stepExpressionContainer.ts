@@ -1,4 +1,4 @@
-import produce, { DraftObject } from 'immer'
+import produce, { Draft } from 'immer'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import { StepOptions } from 'src/lib/yc/ExpressionContainerManager'
@@ -48,7 +48,7 @@ const stepExpressionContainerReset = (
 }
 
 const step = (
-  e: DraftObject<ExecutableCall>,
+  e: Draft<ExecutableCall>,
   { showAllShowSteps }: StepOptions,
   matchExists?: boolean
 ): {
@@ -171,7 +171,7 @@ const step = (
 }
 
 const recipe = (stepOptions: StepOptions) => (
-  draftContainer: DraftObject<
+  draftContainer: Draft<
     | ContainerWithState<'ready'>
     | ContainerWithState<'stepped'>
     | ContainerWithState<'needsReset'>
@@ -183,9 +183,9 @@ const recipe = (stepOptions: StepOptions) => (
     funcParent,
     callParentKey
   } = findNextCallExpressionAndParent<
-    DraftObject<ExecutableCall>,
-    DraftObject<CallExpression>,
-    DraftObject<FunctionExpression>
+    Draft<ExecutableCall>,
+    Draft<CallExpression>,
+    Draft<FunctionExpression>
   >(draftContainer.expression)
   if (!expression) {
     // Special case - already done to begin with
