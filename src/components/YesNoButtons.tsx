@@ -1,16 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 export const jsxBabelFix = jsx
-import React from 'react'
-import CardContext, { CardContextProps } from 'src/components/CardContext'
+import React, { useContext, useState } from 'react'
+import CardContext from 'src/components/CardContext'
 import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
 
-interface YesNoButtonsState {
-  selection: 'default' | 'yes' | 'no'
-}
+type YesNoButtonsSelection = 'default' | 'yes' | 'no'
 
 interface YesNoButtonsProps {
   answer: 'yes' | 'no'
@@ -64,106 +62,88 @@ const Button = ({ status, children, onClick }: ButtonProps) => (
   </button>
 )
 
-export default class YesNoButtons extends React.Component<
-  YesNoButtonsProps,
-  YesNoButtonsState
-> {
-  public static contextType = CardContext
-
-  public state: YesNoButtonsState = {
-    selection: 'default'
-  }
-
-  public render() {
-    const { selection } = this.state
-    const { answer } = this.props
-    const isCorrect = selection === answer
-    return (
-      <CardContext.Consumer>
-        {({ updateColor }) => (
-          <>
-            {' '}
-            <div
-              css={css`
-                text-align: center;
-                margin: ${spaces(2.5)} 0
-                  ${selection === 'default' ? spaces(1.5) : spaces(1)};
-              `}
-            >
-              <Button
-                status={
-                  selection === 'default'
-                    ? 'default'
-                    : selection === 'yes'
-                    ? 'active'
-                    : 'inactive'
-                }
-                onClick={this.onButtonClick('yes', answer, updateColor)}
-              >
-                {h('yesNoQuizYes')}
-              </Button>
-              <Button
-                status={
-                  selection === 'default'
-                    ? 'default'
-                    : selection === 'no'
-                    ? 'active'
-                    : 'inactive'
-                }
-                onClick={this.onButtonClick('no', answer, updateColor)}
-              >
-                {h('yesNoQuizNo')}
-              </Button>
-            </div>
-            {selection !== 'default' && (
-              <>
-                <P
-                  css={css`
-                    text-align: center;
-                  `}
-                >
-                  <Em>
-                    <strong>
-                      {isCorrect
-                        ? h('yesNoQuizCorrect')
-                        : h('yesNoQuizIncorrect')}
-                    </strong>
-                    {locale === 'en' && ' '}
-                    {isCorrect
-                      ? h('yesNoQuizCorrectPostfix')
-                      : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
-                  </Em>
-                </P>
-                <P
-                  css={css`
-                    text-align: center;
-                  `}
-                >
-                  ↓{' '}
-                  {locale === 'en'
-                    ? 'Please continue below!'
-                    : 'そのまま読み進めてみてください!'}
-                </P>
-              </>
-            )}
-          </>
-        )}
-      </CardContext.Consumer>
-    )
-  }
-
-  private onButtonClick(
+const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
+  const [selection, setSelection] = useState<YesNoButtonsSelection>('default')
+  const { updateColor } = useContext(CardContext)
+  const isCorrect = selection === answer
+  const onButtonClick = (
     actual: YesNoButtonsProps['answer'],
-    expected: YesNoButtonsProps['answer'],
-    updateColor: CardContextProps['updateColor']
-  ) {
+    expected: YesNoButtonsProps['answer']
+  ) => {
     return () => {
-      if (this.state.selection === 'default') {
-        this.setState({ selection: actual })
+      if (selection === 'default') {
+        setSelection(actual)
       }
       if (actual === expected && updateColor) {
         updateColor('teal')
       }
     }
   }
+  return (
+    <>
+      <div
+        css={css`
+          text-align: center;
+          margin: ${spaces(2.5)} 0
+            ${selection === 'default' ? spaces(1.5) : spaces(1)};
+        `}
+      >
+        <Button
+          status={
+            selection === 'default'
+              ? 'default'
+              : selection === 'yes'
+              ? 'active'
+              : 'inactive'
+          }
+          onClick={onButtonClick('yes', answer)}
+        >
+          {h('yesNoQuizYes')}
+        </Button>
+        <Button
+          status={
+            selection === 'default'
+              ? 'default'
+              : selection === 'no'
+              ? 'active'
+              : 'inactive'
+          }
+          onClick={onButtonClick('no', answer)}
+        >
+          {h('yesNoQuizNo')}
+        </Button>
+      </div>
+      {selection !== 'default' && (
+        <>
+          <P
+            css={css`
+              text-align: center;
+            `}
+          >
+            <Em>
+              <strong>
+                {isCorrect ? h('yesNoQuizCorrect') : h('yesNoQuizIncorrect')}
+              </strong>
+              {locale === 'en' && ' '}
+              {isCorrect
+                ? h('yesNoQuizCorrectPostfix')
+                : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
+            </Em>
+          </P>
+          <P
+            css={css`
+              text-align: center;
+            `}
+          >
+            ↓{' '}
+            {locale === 'en'
+              ? 'Please continue below!'
+              : 'そのまま読み進めてみてください!'}
+          </P>
+        </>
+      )}
+    </>
+  )
 }
+
+export default YesNoButtons
