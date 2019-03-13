@@ -35,13 +35,13 @@ const emBackgroundColor = (color: SideNoteProps['color']) =>
     yellow: colors('yellow200')
   }[color])
 
-const SideNoteSection: React.FC<SideNoteProps> = ({
+const SideNoteSection = ({
   children,
   heading,
   headingNoMarginBottom,
   noPaddingBottom,
   color
-}) => (
+}: SideNoteProps) => (
   <CardContext.Provider value={{ emBackgroundColor: emBackgroundColor(color) }}>
     <div
       css={[

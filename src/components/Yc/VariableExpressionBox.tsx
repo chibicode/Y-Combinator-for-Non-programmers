@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -39,9 +38,7 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
     sm: fontSizes(1.5)
   }[size])
 
-const VariableExpressionBox: React.FC<VariableExpressionBoxProps> = ({
-  expression
-}) => (
+const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => (
   <ExpressionRunnerContext.Consumer>
     {({ hidePriorities, variableSize, hideBottomRightBadges }) => (
       <>

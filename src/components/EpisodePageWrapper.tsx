@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import pathHelpers from 'src/lib/pathHelpers'
@@ -13,10 +12,10 @@ interface EpisodePageWrapperProps {
   lessonName: keyof typeof pathHelpers
 }
 
-const EpisodePageWrapper: React.FC<EpisodePageWrapperProps> = ({
+const EpisodePageWrapper = ({
   lessonName,
   episodeNumber
-}) => (
+}: EpisodePageWrapperProps) => (
   <EpisodePage
     lessonName={lessonName}
     lessonTitle={t(`${lessonName}Title` as keyof typeof allTitles)}

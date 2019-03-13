@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import crossDarkSvg from 'src/images/cross-dark.url.svg'
 import { colors } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
@@ -25,9 +24,11 @@ const bgPatternToSvg = (
   }
 }
 
-const InlineBackground: React.FC<InlineBackgroundProps> & {
-  defaultProps: Partial<InlineBackgroundProps>
-} = ({ bgColor, bgPattern, size }) => (
+const InlineBackground = ({
+  bgColor,
+  bgPattern,
+  size
+}: InlineBackgroundProps) => (
   <span
     css={[
       css`

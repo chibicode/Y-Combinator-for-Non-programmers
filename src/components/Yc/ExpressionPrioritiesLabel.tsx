@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
@@ -61,12 +60,12 @@ const height = (
   return 1.3 * multiplier
 }
 
-const ExpressionPrioritiesLabelBox: React.FC<ExpressionPrioritiesLabelBox> = ({
+const ExpressionPrioritiesLabelBox = ({
   emphasize,
   priority,
   position,
   collapsed
-}) => (
+}: ExpressionPrioritiesLabelBox) => (
   <ExpressionPriorityContext.Consumer>
     {({ activePriority }) => (
       <ExpressionRunnerContext.Consumer>
@@ -118,9 +117,11 @@ const ExpressionPrioritiesLabelBox: React.FC<ExpressionPrioritiesLabelBox> = ({
   </ExpressionPriorityContext.Consumer>
 )
 
-const ExpressionPrioritiesLabelExpanded: React.FC<
-  ExpressionPrioritiesLabelDefaultProps
-> = ({ priorities, position, emphasize }) => (
+const ExpressionPrioritiesLabelExpanded = ({
+  priorities,
+  position,
+  emphasize
+}: ExpressionPrioritiesLabelDefaultProps) => (
   <Flex>
     {priorities.map(priority => (
       <ExpressionPrioritiesLabelBox

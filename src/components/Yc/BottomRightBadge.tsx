@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
-import React from 'react'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -53,10 +52,10 @@ const bottomRightBadgeTypeToText = (
         funcUnbound: 'm'
       }[x]
 
-const BottomRightBadge: React.FC<BottomRightBadgeProps> = ({
+const BottomRightBadge = ({
   bottomRightBadgeType,
   inline
-}) => (
+}: BottomRightBadgeProps) => (
   <span
     css={[
       css`

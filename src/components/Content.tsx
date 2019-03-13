@@ -7,7 +7,7 @@ export interface ContentProps {
   componentProps?: object
 }
 
-const Content: React.FC<ContentProps> = ({ name, componentProps }) => {
+const Content = ({ name, componentProps }: ContentProps) => {
   const Component = (bundles[name] || {})[locale]
   if (!Component) {
     throw new Error(

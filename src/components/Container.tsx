@@ -13,9 +13,13 @@ export interface ContainerProps {
   horizontalPadding: keyof typeof allSpaces
 }
 
-const Container: React.FC<ContainerProps> & {
-  defaultProps: Partial<ContainerProps>
-} = ({ children, Component, size, verticalMargin, horizontalPadding }) => (
+const Container = ({
+  children,
+  Component,
+  size,
+  verticalMargin,
+  horizontalPadding
+}: ContainerProps) => (
   <Component
     css={css`
       max-width: ${maxWidths(size)};

@@ -13,12 +13,12 @@ interface NextLessonButtonProps {
   tertiaryText?: React.ReactNode
 }
 
-const NextLessonButton: React.FC<NextLessonButtonProps> = ({
+const NextLessonButton = ({
   primaryText,
   secondaryText,
   tertiaryText,
   href
-}) => (
+}: NextLessonButtonProps) => (
   <div
     css={css`
       text-align: center;

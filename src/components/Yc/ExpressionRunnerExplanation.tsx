@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -277,9 +276,7 @@ const stateToExplanation = ({
   }
 }
 
-const ExpressionRunnerExplanation: React.FC<
-  ExpressionRunnerExplanationProps
-> = ({
+const ExpressionRunnerExplanation = ({
   expressionContainer,
   currentStep,
   currentSubstep,
@@ -287,7 +284,7 @@ const ExpressionRunnerExplanation: React.FC<
   numSecondsRemaining,
   isPlaying,
   showAllShowSteps
-}) => (
+}: ExpressionRunnerExplanationProps) => (
   <>
     {isPlaying ? (
       locale === 'en' ? (

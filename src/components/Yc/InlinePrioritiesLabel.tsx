@@ -4,10 +4,13 @@ import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 export const jsxBabelFix = jsx
 
-const InlinePrioritiesLabel: React.FC<{
+const InlinePrioritiesLabel = ({
+  children,
+  revert
+}: {
   children: React.ReactNode
   revert?: boolean
-}> = ({ children, revert }) => (
+}) => (
   <span
     css={css`
       display: inline-block;

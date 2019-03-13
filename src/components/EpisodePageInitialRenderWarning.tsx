@@ -4,9 +4,11 @@ import GlobalContext from 'src/components/GlobalContext'
 import SideNoteSection from 'src/components/SideNoteSection'
 import pathHelpers from 'src/lib/pathHelpers'
 
-const EpisodePageInitialRenderWarning: React.FC<{
+const EpisodePageInitialRenderWarning = ({
+  lessonName
+}: {
   lessonName: keyof typeof pathHelpers
-}> = ({ lessonName }) => (
+}) => (
   <GlobalContext.Consumer>
     {({ initialRender }) =>
       initialRender && (

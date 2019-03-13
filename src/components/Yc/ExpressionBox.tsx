@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper from 'src/components/Yc/BorderWrapper'
 import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
@@ -14,7 +13,7 @@ interface ExpressionBoxProps {
   expression: Expression
 }
 
-const ExpressionBox: React.FC<ExpressionBoxProps> = ({ expression }) => (
+const ExpressionBox = ({ expression }: ExpressionBoxProps) => (
   <Flex
     css={css`
       width: 100%;
