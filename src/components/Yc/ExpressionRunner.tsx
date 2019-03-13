@@ -96,7 +96,7 @@ export default class ExpressionRunner extends React.Component<
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
 
-  constructor(props: ExpressionRunnerProps) {
+  public constructor(props: ExpressionRunnerProps) {
     super(props)
     const {
       expressionContainer,

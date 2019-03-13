@@ -19,8 +19,10 @@ const bgPatternToSvg = (
     case 'cross': {
       return crossDarkSvg
     }
+    default: {
+      throw new Error('error')
+    }
   }
-  throw new Error()
 }
 
 const InlineBackground: React.FC<InlineBackgroundProps> & {

@@ -50,7 +50,7 @@ export default class ExpressionContainerManager {
   public lastAllowedExpressionState?: CallStates
   public stepOptions: StepOptions
 
-  constructor({
+  public constructor({
     expressionContainer,
     lastAllowedExpressionState,
     stepOptions

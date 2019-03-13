@@ -43,8 +43,8 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
   if (isVariable(expression)) {
     return {
       ...expression,
-      argPriorityAgg: new Array<number>(),
-      funcPriorityAgg: new Array<number>()
+      argPriorityAgg: [] as number[],
+      funcPriorityAgg: [] as number[]
     }
   } else if (isCall(expression)) {
     return prioritizeCallExpressionHelper({
@@ -77,11 +77,11 @@ function populatePriorityAggs<E extends Expression>({
       arg: populatePriorityAggs<typeof expression.arg>({
         expression: expression.arg,
         argPriorityAgg: [expression.priority, ...argPriorityAgg],
-        funcPriorityAgg: new Array<number>()
+        funcPriorityAgg: [] as number[]
       }),
       func: populatePriorityAggs<typeof expression.func>({
         expression: expression.func,
-        argPriorityAgg: new Array<number>(),
+        argPriorityAgg: [] as number[],
         funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
       })
     }
@@ -95,8 +95,8 @@ function populatePriorityAggs<E extends Expression>({
       }),
       body: populatePriorityAggs<typeof expression.body>({
         expression: expression.body,
-        argPriorityAgg: new Array<number>(),
-        funcPriorityAgg: new Array<number>()
+        argPriorityAgg: [] as number[],
+        funcPriorityAgg: [] as number[]
       })
     }
   } else if (isVariable(expression)) {
@@ -111,7 +111,7 @@ export default function prioritizeExpression<E extends Expression = Expression>(
 ): E {
   return populatePriorityAggs({
     expression: prioritizeExpressionHelper(expression),
-    argPriorityAgg: new Array<number>(),
-    funcPriorityAgg: new Array<number>()
+    argPriorityAgg: [] as number[],
+    funcPriorityAgg: [] as number[]
   })
 }

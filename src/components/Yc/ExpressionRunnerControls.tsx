@@ -6,11 +6,7 @@ import h from 'src/lib/h'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 export const jsxBabelFix = jsx
 
-const Button: React.FC<JSX.IntrinsicElements['button']> = ({
-  // Remove ref b/c it's HOC
-  ref,
-  ...props
-}) => (
+const Button: React.FC<JSX.IntrinsicElements['button']> = props => (
   <ButtonWithTouchActiveStates
     {...props}
     activeBackgroundColor={colors('indigo100')}
