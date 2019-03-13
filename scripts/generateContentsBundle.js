@@ -17,8 +17,8 @@ const regenerate = path => {
       .map(
         name => `
           '${name}': {
-            jp: React.ComponentType<any>
-            en: React.ComponentType<any>
+            jp: React.ComponentType<{ componentProps?: object }>
+            en: React.ComponentType<{ componentProps?: object }>
           }`
       )
       .join('\n')
