@@ -67,7 +67,7 @@ const background = (
       }
     }
     default: {
-      throw new Error('error')
+      return undefined
     }
   }
 }
