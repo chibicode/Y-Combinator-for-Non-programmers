@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
 const InlinePrioritiesLabel: React.FC<{
   children: React.ReactNode

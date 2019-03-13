@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
@@ -13,6 +12,7 @@ import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
+export const jsxBabelFix = jsx
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -39,9 +39,9 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
     sm: fontSizes(1.5)
   }[size])
 
-const VariableExpressionBox: React.FC<
-  VariableExpressionBoxProps
-> = ({ expression }) => (
+const VariableExpressionBox: React.FC<VariableExpressionBoxProps> = ({
+  expression
+}) => (
   <ExpressionRunnerContext.Consumer>
     {({ hidePriorities, variableSize, hideBottomRightBadges }) => (
       <>

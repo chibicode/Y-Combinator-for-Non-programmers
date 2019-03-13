@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTitles } from 'src/lib/titles'
+export const jsxBabelFix = jsx
 
 interface EpisodePageWrapperProps {
   episodeNumber?: number

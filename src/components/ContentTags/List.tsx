@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import { spaces } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
 const commonListCss = css`
   padding: 0;
@@ -30,10 +30,7 @@ interface UlProps extends DefaultUlProps {
   size?: 'md' | 'lg'
 }
 
-export const Ul: React.FC<UlProps> = ({
-  size = 'md',
-  ...props
-}) => (
+export const Ul: React.FC<UlProps> = ({ size = 'md', ...props }) => (
   <ul
     {...props}
     css={[
@@ -67,9 +64,7 @@ export const Ol: React.FC<OlProps> = ({ size, ...props }) => (
   />
 )
 
-export const UlLi: React.FC<JSX.IntrinsicElements['li']> = ({
-  ...props
-}) => (
+export const UlLi: React.FC<JSX.IntrinsicElements['li']> = ({ ...props }) => (
   <li
     {...props}
     css={[
@@ -86,9 +81,7 @@ export const UlLi: React.FC<JSX.IntrinsicElements['li']> = ({
   />
 )
 
-export const OlLi: React.FC<JSX.IntrinsicElements['li']> = ({
-  ...props
-}) => (
+export const OlLi: React.FC<JSX.IntrinsicElements['li']> = ({ ...props }) => (
   <li
     {...props}
     css={[

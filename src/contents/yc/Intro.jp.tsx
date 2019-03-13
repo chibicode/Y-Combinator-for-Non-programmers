@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import {
   Blockquote,
   Em,
@@ -20,6 +19,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import h from 'src/lib/h'
 import t from 'src/lib/titles'
+export const jsxBabelFix = jsx
 
 export default () => {
   let i = 0

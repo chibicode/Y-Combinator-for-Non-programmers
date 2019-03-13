@@ -5,7 +5,7 @@ import locale from 'src/lib/locale'
 
 const Quiz: React.FC<{
   prefix?: React.ReactNode
-  quizzes: Array<() => JSX.Element>
+  quizzes: (() => JSX.Element)[]
 }> = ({ prefix, quizzes }) => {
   let i = 0
   return (

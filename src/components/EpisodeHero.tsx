@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-export const jsxBabelFix = jsx
 import Link from 'next/link'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -18,6 +17,7 @@ import {
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
 import Logo from '../images/CSmoji-Logo.svg'
+export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
   line-height: ${lineHeights(1.3)};
