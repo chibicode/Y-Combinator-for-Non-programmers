@@ -17,14 +17,14 @@
     "twemoji": "^11.3.0"
   },
   "scripts": {
-    "jp": "DEV_LOCALE=jp YOUR_BUILD_ID=jp next -p 3001",
-    "en": "DEV_LOCALE=en YOUR_BUILD_ID=en next -p 3000",
+    "jp": "DEV_LOCALE=jp NODE_ENV=development next -p 3001",
+    "en": "DEV_LOCALE=en NODE_ENV=development next -p 3000",
     "dev": "yarn prepare && concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
     "prepare": "tsc",
-    "build:en": "yarn prepare && PRODUCTION_LOCALE=en next build && PRODUCTION_LOCALE=en next export",
-    "build:jp": "yarn prepare && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
+    "build:en": "yarn prepare && PRODUCTION_LOCALE=en NODE_ENV=production next build && PRODUCTION_LOCALE=en NODE_ENV=production next export",
+    "build:jp": "yarn prepare && PRODUCTION_LOCALE=jp NODE_ENV=production next build && PRODUCTION_LOCALE=jp NODE_ENV=production next export",
     "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `node ./scripts/copyUsedEmojis.js` .twemoji && svgr --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji",
     "svg": "rm -rf src/components/Svg && svgr -d src/components/Svg static/images/svg",
     "type-check": "tsc -w",
