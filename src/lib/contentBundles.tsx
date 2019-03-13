@@ -1,76 +1,78 @@
 // WARNING: Do not modify this file - it's generated automatically.
+import React from 'react'
 import dynamic from 'next/dynamic'
+import { LoadableComponent } from 'react-loadable'
 import DynamicLoading from 'src/components/DynamicLoading'
 
 export interface BundleTypes {
   'others/NewUser': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'others/Welcome': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/1': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/10': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/11': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/2': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/3': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/4': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/5': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/6': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/7': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/8': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/9': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 
   'yc/Intro': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
   }
 }
 

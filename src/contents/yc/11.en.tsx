@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import {
   Em,
   H3,
@@ -21,6 +20,7 @@ import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { colors } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
 export default () => {
   let i = 0

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import maxWidths, { allMaxWidths } from 'src/lib/theme/maxWidths'
 import spaces, { allSpaces } from 'src/lib/theme/spaces'
+export const jsxBabelFix = jsx
 
 export interface ContainerProps {
   children: React.ReactNode

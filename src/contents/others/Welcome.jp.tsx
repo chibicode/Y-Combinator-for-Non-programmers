@@ -1,3 +1,4 @@
+import React from 'react'
 import { Em, P } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import HomeLink from 'src/components/HomeLink'

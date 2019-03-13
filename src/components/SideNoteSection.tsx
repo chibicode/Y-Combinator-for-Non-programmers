@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import CardContext from 'src/components/CardContext'
 import { H3 } from 'src/components/ContentTags'
 import { colors, radii, spaces } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
 interface SideNoteProps {
   heading?: React.ReactNode

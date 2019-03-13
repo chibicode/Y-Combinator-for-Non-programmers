@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
@@ -20,6 +19,7 @@ import {
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
+export const jsxBabelFix = jsx
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (isFastForwarding?: boolean) =>
@@ -96,7 +96,7 @@ export default class ExpressionRunner extends React.Component<
   private expressionContainerManager: ExpressionContainerManager
   private controlsRef = React.createRef<HTMLDivElement>()
 
-  constructor(props: ExpressionRunnerProps) {
+  public constructor(props: ExpressionRunnerProps) {
     super(props)
     const {
       expressionContainer,

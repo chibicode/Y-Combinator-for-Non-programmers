@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
@@ -10,6 +9,7 @@ import ExpressionRunnerContext, {
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
 import { allFontSizes } from 'src/lib/theme/fontSizes'
+export const jsxBabelFix = jsx
 
 interface ExpressionPrioritiesLabelProps {
   emphasize: boolean

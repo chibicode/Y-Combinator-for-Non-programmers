@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import Link from 'next/link'
 import React from 'react'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
 interface NextLessonButtonProps {
   href: string

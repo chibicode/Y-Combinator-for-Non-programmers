@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper from 'src/components/Yc/BorderWrapper'
@@ -9,6 +8,7 @@ import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
 import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
+export const jsxBabelFix = jsx
 
 interface ExpressionBoxProps {
   expression: Expression

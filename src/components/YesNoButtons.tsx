@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React, { useContext, useState } from 'react'
 import CardContext from 'src/components/CardContext'
 import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
 type YesNoButtonsSelection = 'default' | 'yes' | 'no'
 

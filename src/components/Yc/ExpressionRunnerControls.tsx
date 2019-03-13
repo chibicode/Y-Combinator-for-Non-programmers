@@ -1,16 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
 import React from 'react'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import h from 'src/lib/h'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
+export const jsxBabelFix = jsx
 
-const Button: React.FC<JSX.IntrinsicElements['button']> = ({
-  // Remove ref b/c it's HOC
-  ref,
-  ...props
-}) => (
+const Button: React.FC<JSX.IntrinsicElements['button']> = props => (
   <ButtonWithTouchActiveStates
     {...props}
     activeBackgroundColor={colors('indigo100')}
@@ -65,9 +61,7 @@ const noOp = () => {
   return
 }
 
-const ExpressionRunnerControls: React.FC<
-  ExpressionRunnerControlsProps
-> = ({
+const ExpressionRunnerControls: React.FC<ExpressionRunnerControlsProps> = ({
   canStepForward,
   canStepBackward,
   onNextClick,

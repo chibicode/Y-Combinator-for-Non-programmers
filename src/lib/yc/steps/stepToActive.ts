@@ -90,8 +90,8 @@ const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({
   arg: isFunction(e.arg)
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)
-      ? variableToEmphasize(e.arg)
-      : emphasizeArgPriorityCallExpression(toActive(e.arg)),
+    ? variableToEmphasize(e.arg)
+    : emphasizeArgPriorityCallExpression(toActive(e.arg)),
   func: toExecutableActiveFunction(e.func)
 })
 
