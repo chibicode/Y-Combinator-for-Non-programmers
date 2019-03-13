@@ -4,73 +4,73 @@ import DynamicLoading from 'src/components/DynamicLoading'
 
 export interface BundleTypes {
   'others/NewUser': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'others/Welcome': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/1': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/10': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/11': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/2': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/3': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/4': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/5': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/6': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/7': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/8': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/9': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 
   'yc/Intro': {
-    jp: React.ComponentType<any>
-    en: React.ComponentType<any>
+    jp: React.ComponentType<{ componentProps?: object }>
+    en: React.ComponentType<{ componentProps?: object }>
   }
 }
 
