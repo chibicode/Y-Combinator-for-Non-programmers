@@ -4,7 +4,7 @@ const path = require('path')
 
 const config = withCSS(
   withTypescript({
-    webpack(config, options) {
+    webpack(config) {
       config.resolve.alias = Object.assign({}, config.resolve.alias, {
         // Must also change tsconfig.json
         src: path.resolve(__dirname, 'src'),
@@ -18,12 +18,11 @@ const config = withCSS(
         }
       })
       return config
+    },
+    env: {
+      locale: process.env.APP_LOCALE
     }
   })
 )
-
-config.publicRuntimeConfig = {
-  locale: process.env.APP_LOCALE
-}
 
 module.exports = config
