@@ -17,6 +17,19 @@ const config = withCSS(
           options: {}
         }
       })
+      config.module.rules.push({
+        test: /\.svgr.svg$/,
+        use: {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: {
+                removeViewBox: false
+              }
+            }
+          }
+        }
+      })
       return config
     },
     env: {

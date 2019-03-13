@@ -13,8 +13,7 @@ import {
   ns,
   spaces
 } from 'src/lib/theme'
-// https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
-import Logo from '../src/images/CSmoji-Logo.svg'
+import Logo from 'src/images/CSmoji-Logo.svgr.svg'
 export const jsxBabelFix = jsx
 
 const Index = () => (
