@@ -40,6 +40,7 @@ const regenerate = path => {
 
     const fileContents = prettier.format(
       `// WARNING: Do not modify this file - it's generated automatically.
+      import React from 'react'
       import dynamic from 'next/dynamic'
       import DynamicLoading from 'src/components/DynamicLoading'
 
