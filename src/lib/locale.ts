@@ -1,4 +1,4 @@
-export const isJp = process.env.locale === 'jp'
-export const isEn = process.env.locale === 'en'
-const locale: 'en' | 'jp' = (process.env.locale as ('en' | 'jp')) || 'en'
-export default locale
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
+export default (publicRuntimeConfig.devLocale ||
+  process.env.productionLocale) as ('en' | 'jp')
