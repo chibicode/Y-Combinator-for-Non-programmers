@@ -17,8 +17,8 @@ const regenerate = path => {
       .map(
         name => `
           '${name}': {
-            jp: React.ComponentType<{ componentProps?: object }>
-            en: React.ComponentType<{ componentProps?: object }>
+            jp: React.ComponentType<any> & LoadableComponent
+            en: React.ComponentType<any> & LoadableComponent
           }`
       )
       .join('\n')
@@ -42,6 +42,9 @@ const regenerate = path => {
       `// WARNING: Do not modify this file - it's generated automatically.
       import React from 'react'
       import dynamic from 'next/dynamic'
+      import {
+        LoadableComponent
+      } from 'react-loadable'
       import DynamicLoading from 'src/components/DynamicLoading'
 
       export interface BundleTypes {
