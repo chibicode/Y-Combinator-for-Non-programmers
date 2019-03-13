@@ -62,11 +62,11 @@ const difficultyFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
 const funFor = (episodeNumber: EpisodeInfoProps['episodeNumber']) =>
   episodeInfo[episodeNumber].fun
 
-const EpisodeInfo: React.FC<EpisodeInfoProps> = ({
+const EpisodeInfo = ({
   episodeNumber,
   outroText,
   introText
-}) => (
+}: EpisodeInfoProps) => (
   <>
     <P>
       {locale === 'jp' ? (

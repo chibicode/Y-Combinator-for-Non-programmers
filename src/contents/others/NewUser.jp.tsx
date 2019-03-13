@@ -3,9 +3,11 @@ import { Em, InternalLink, P, Strong } from 'src/components/ContentTags'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTitles } from 'src/lib/titles'
 
-const NewUser: React.FC<{
+const NewUser = ({
+  componentProps
+}: {
   componentProps: { lessonName: keyof typeof pathHelpers }
-}> = ({ componentProps }) => (
+}) => (
   <P>
     <Strong>こんにちは！</Strong>このページは「
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>

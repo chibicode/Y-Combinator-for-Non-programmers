@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
@@ -13,9 +12,7 @@ interface CallExpressionBoxProps {
   expression: CallExpression
 }
 
-const CallExpressionBox: React.FC<CallExpressionBoxProps> = ({
-  expression
-}) => (
+const CallExpressionBox = ({ expression }: CallExpressionBoxProps) => (
   <Flex
     css={css`
       flex-direction: column;

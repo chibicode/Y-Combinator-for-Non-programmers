@@ -72,7 +72,7 @@ const background = (
   }
 }
 
-const Cross: React.FC<{}> = () => (
+const Cross = () => (
   <div
     css={css`
       position: absolute;
@@ -87,12 +87,12 @@ const Cross: React.FC<{}> = () => (
   />
 )
 
-const BorderWrapper: React.FC<BorderWrapperProps> = ({
+const BorderWrapper = ({
   highlightType,
   bottomRightBadgeType,
   topRightBadgeType,
   children
-}) => (
+}: BorderWrapperProps) => (
   <ExpressionRunnerContext.Consumer>
     {({ isDoneOrReady, highlightOverrides }) => (
       <Flex

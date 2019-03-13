@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import Emoji from 'src/components/Emoji'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 export const jsxBabelFix = jsx
@@ -21,10 +20,7 @@ const topRightBadgeTypeToEmoji = (
     conflictResolved: '🆕'
   }[x])
 
-const TopRightBadge: React.FC<TopRightBadgeProps> = ({
-  topRightBadgeType,
-  inline
-}) => (
+const TopRightBadge = ({ topRightBadgeType, inline }: TopRightBadgeProps) => (
   <span
     css={[
       css`

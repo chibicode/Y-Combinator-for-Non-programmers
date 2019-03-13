@@ -31,14 +31,14 @@ const navigationLinkClasses = css`
   font-size: ${fontSizes(0.7)};
 `
 
-const EpisodePage: React.FC<EpisodePageProps> = ({
+const EpisodePage = ({
   lessonTitle,
   lessonName,
   episodeTitle,
   episodeTitleString,
   episodeNumber,
   contentName
-}) => (
+}: EpisodePageProps) => (
   <Page>
     <Head>
       <title key="title">

@@ -3,10 +3,13 @@ import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 
-const Quiz: React.FC<{
+const Quiz = ({
+  prefix,
+  quizzes
+}: {
   prefix?: React.ReactNode
   quizzes: (() => JSX.Element)[]
-}> = ({ prefix, quizzes }) => {
+}) => {
   let i = 0
   return (
     <>

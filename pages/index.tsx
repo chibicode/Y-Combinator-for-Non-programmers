@@ -1,7 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-export const jsxBabelFix = jsx
-import React from 'react'
 import CardContext from 'src/components/CardContext'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
@@ -17,8 +15,9 @@ import {
 } from 'src/lib/theme'
 // https://github.com/airbnb/babel-plugin-inline-react-svg/pull/17
 import Logo from '../src/images/CSmoji-Logo.svg'
+export const jsxBabelFix = jsx
 
-const Index: React.FC<{}> = () => (
+const Index = () => (
   <Page>
     <Container size="md">
       <div

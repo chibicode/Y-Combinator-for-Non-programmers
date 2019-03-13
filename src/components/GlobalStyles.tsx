@@ -7,9 +7,7 @@ import ns from 'src/lib/theme/ns'
 export const jsxBabelFix = jsx
 const indigo = colors('indigo500')
 
-const GlobalStyles: React.FC<{ children: React.ReactNode }> = ({
-  children
-}) => (
+const GlobalStyles = ({ children }: { children: React.ReactNode }) => (
   <div
     css={css`
       /* TODO: Temporary until page footer is ready */

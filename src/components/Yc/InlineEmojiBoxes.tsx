@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
@@ -10,7 +9,7 @@ interface InlineEmojiBoxProps {
   emojis: string[]
 }
 
-const InlineEmojiBoxes: React.FC<InlineEmojiBoxProps> = ({ emojis }) => (
+const InlineEmojiBoxes = ({ emojis }: InlineEmojiBoxProps) => (
   <span
     css={css`
       display: inline-flex;

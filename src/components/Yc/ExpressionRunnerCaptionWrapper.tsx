@@ -4,10 +4,13 @@ import React from 'react'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
 export const jsxBabelFix = jsx
 
-const ExpressionRunnerCaptionWrapper: React.FC<{
+const ExpressionRunnerCaptionWrapper = ({
+  pinkText,
+  children
+}: {
   pinkText?: boolean
   children: React.ReactNode
-}> = ({ pinkText, children }) => (
+}) => (
   <div
     css={css`
       text-align: center;

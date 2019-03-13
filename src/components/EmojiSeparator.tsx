@@ -13,9 +13,13 @@ interface EmojiSeparatorProps {
   Component: React.ComponentType | string
 }
 
-const EmojiSeparator: React.FC<EmojiSeparatorProps> & {
-  defaultProps: Partial<EmojiSeparatorProps>
-} = ({ emojis, size, spacing, Component, halfMarginBottom }) => (
+const EmojiSeparator = ({
+  emojis,
+  size,
+  spacing,
+  Component,
+  halfMarginBottom
+}: EmojiSeparatorProps) => (
   <Component
     css={css`
       text-align: center;
