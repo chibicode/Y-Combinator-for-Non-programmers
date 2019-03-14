@@ -13,17 +13,25 @@
         "panel": "shared"
       },
       "isBackground": true,
-      "problemMatcher": "$tsc-watch"
-    },
-    {
-      "label": "Build",
-      "dependsOn": ["Monitor TS Errors", "eslint: lint whole folder"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "problemMatcher": "$tsc-watch",
       "runOptions": {
         "runOn": "folderOpen"
+      },
+      "group": "build"
+    },
+    {
+      "label": "lint",
+      "command": "./node_modules/.bin/eslint",
+      "args": ["--fix", "."],
+      "type": "shell",
+      "problemMatcher": ["$eslint-stylish"],
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared"
       }
     }
   ]
