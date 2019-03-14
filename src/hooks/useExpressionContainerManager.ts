@@ -9,16 +9,12 @@ const initializeExpressionManager = ({
   initializeInstructions,
   maxStepsAllowed,
   resetIndex,
-  expressionContainerManager,
-  setExpressionContainerManagerState
+  expressionContainerManager
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
   maxStepsAllowed: ExpressionRunnerProps['maxStepsAllowed']
   resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainerManager: ExpressionContainerManager
-  setExpressionContainerManagerState: React.Dispatch<
-    React.SetStateAction<ExpressionContainerManager['currentState']>
-  >
 }) => {
   if (initializeInstructions) {
     initializeInstructions.forEach(initializeInstruction => {
@@ -49,15 +45,14 @@ const initializeExpressionManager = ({
     }
     expressionContainerManager.minimumIndex =
       expressionContainerManager.currentIndex
-
-    setExpressionContainerManagerState(expressionContainerManager.currentState)
   }
 
   if (maxStepsAllowed) {
     expressionContainerManager.maximumIndex =
       expressionContainerManager.currentIndex + maxStepsAllowed
-    setExpressionContainerManagerState(expressionContainerManager.currentState)
   }
+
+  return expressionContainerManager
 }
 
 const useExpressionContainerManager = ({
@@ -90,12 +85,11 @@ const useExpressionContainerManager = ({
         showAllShowSteps
       }
     })
-    initializeExpressionManager({
+    expressionContainerManager = initializeExpressionManager({
       initializeInstructions,
       maxStepsAllowed,
       resetIndex,
-      expressionContainerManager,
-      setExpressionContainerManagerState
+      expressionContainerManager
     })
     ref.current = expressionContainerManager
     return expressionContainerManager
