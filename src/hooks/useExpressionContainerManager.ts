@@ -3,7 +3,7 @@ import useScrollAdjuster from 'src/hooks/useScrollAdjuster'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
-import { ExpressionRunnerProps } from 'src/components/Yc/ExpressionRunnerNew'
+import { ExpressionRunnerProps } from 'src/components/Yc/ExpressionRunner'
 
 const initializeExpressionManager = ({
   initializeInstructions,
