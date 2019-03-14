@@ -12,7 +12,7 @@ export default () => (
       では、
       <Em>絵文字</Em>で学べる
       <Em>コンピューターサイエンス(CS)</Em>
-      のオンライン教科書を無料で配布しています。<Emoji>😉</Emoji>
+      の無料オンラインレッスンです。<Emoji>😉</Emoji>
     </P>
     <P>
       <Em>コードは一切出てきません。</Em>
@@ -20,7 +20,7 @@ export default () => (
       <Emoji>👍</Emoji>
     </P>
     <P>
-      教科書第1弾はこちら！ →{' '}
+      レッスン第1弾はこちら！ →{' '}
       <HomeLink linkProps={{ href: yc() }}>{t('ycTitle')}</HomeLink>{' '}
     </P>
   </>
