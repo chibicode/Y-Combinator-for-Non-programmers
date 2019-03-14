@@ -286,7 +286,7 @@ const ExpressionRunnerExplanation = ({
   showAllShowSteps
 }: ExpressionRunnerExplanationProps) => (
   <>
-    {isPlaying ? (
+    {isPlaying && !isDone ? (
       locale === 'en' ? (
         <>
           <Strong
