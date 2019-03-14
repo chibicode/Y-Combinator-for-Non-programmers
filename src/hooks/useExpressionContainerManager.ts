@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import useScrollAdjuster from 'src/hooks/useScrollAdjuster'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
