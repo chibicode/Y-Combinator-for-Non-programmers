@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Content from 'src/components/Content'
 import GlobalContext from 'src/components/GlobalContext'
 import SideNoteSection from 'src/components/SideNoteSection'
@@ -8,16 +8,13 @@ const EpisodePageInitialRenderWarning = ({
   lessonName
 }: {
   lessonName: keyof typeof pathHelpers
-}) => (
-  <GlobalContext.Consumer>
-    {({ initialRender }) =>
-      initialRender && (
-        <SideNoteSection color="yellow">
-          <Content name="others/NewUser" componentProps={{ lessonName }} />
-        </SideNoteSection>
-      )
-    }
-  </GlobalContext.Consumer>
-)
+}) => {
+  const { initialRender } = useContext(GlobalContext)
+  return initialRender ? (
+    <SideNoteSection color="yellow">
+      <Content name="others/NewUser" componentProps={{ lessonName }} />
+    </SideNoteSection>
+  ) : null
+}
 
 export default EpisodePageInitialRenderWarning

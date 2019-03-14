@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
@@ -12,39 +13,38 @@ interface CallExpressionBoxProps {
   expression: CallExpression
 }
 
-const CallExpressionBox = ({ expression }: CallExpressionBoxProps) => (
-  <Flex
-    css={css`
-      flex-direction: column;
-      flex: 1;
-    `}
-  >
-    <ExpressionPriorityContext.Consumer>
-      {({ activePriority }) => (
-        <ExpressionPriorityContext.Provider
-          value={{
-            activePriority:
-              activePriority ||
-              (expression.state === 'active' ? expression.priority : undefined)
-          }}
+const CallExpressionBox = ({ expression }: CallExpressionBoxProps) => {
+  const { activePriority } = useContext(ExpressionPriorityContext)
+  return (
+    <Flex
+      css={css`
+        flex-direction: column;
+        flex: 1;
+      `}
+    >
+      <ExpressionPriorityContext.Provider
+        value={{
+          activePriority:
+            activePriority ||
+            (expression.state === 'active' ? expression.priority : undefined)
+        }}
+      >
+        <FlexCenter
+          css={
+            expression.state !== 'default' &&
+            css`
+              border-bottom: 10px solid ${colors('indigo300')};
+            `
+          }
         >
-          <FlexCenter
-            css={
-              expression.state !== 'default' &&
-              css`
-                border-bottom: 10px solid ${colors('indigo300')};
-              `
-            }
-          >
-            <ExpressionBox expression={expression.arg} />
-          </FlexCenter>
-          <FlexCenter>
-            <ExpressionBox expression={expression.func} />
-          </FlexCenter>
-        </ExpressionPriorityContext.Provider>
-      )}
-    </ExpressionPriorityContext.Consumer>
-  </Flex>
-)
+          <ExpressionBox expression={expression.arg} />
+        </FlexCenter>
+        <FlexCenter>
+          <ExpressionBox expression={expression.func} />
+        </FlexCenter>
+      </ExpressionPriorityContext.Provider>
+    </Flex>
+  )
+}
 
 export default CallExpressionBox

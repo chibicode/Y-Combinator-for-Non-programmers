@@ -1,26 +1,23 @@
 import React from 'react'
+import { useContext } from 'react'
 import Card from 'src/components/Card'
 import { CardProps } from 'src/components/Card'
 import Content from 'src/components/Content'
 import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
 import GlobalContext from 'src/components/GlobalContext'
 
-const EpisodePageInitialRenderWarning = () => (
-  <EpisodeHeroContext.Consumer>
-    {({ lessonName, episodeNumber }) => (
-      <GlobalContext.Consumer>
-        {({ initialRender }) =>
-          episodeNumber &&
-          initialRender && (
-            <Card color="yellow">
-              <Content name="others/NewUser" componentProps={{ lessonName }} />
-            </Card>
-          )
-        }
-      </GlobalContext.Consumer>
-    )}
-  </EpisodeHeroContext.Consumer>
-)
+const EpisodePageInitialRenderWarning = () => {
+  const { lessonName, episodeNumber } = useContext(EpisodeHeroContext)
+  const { initialRender } = useContext(GlobalContext)
+  if (!episodeNumber) {
+    throw new Error('error')
+  }
+  return !!episodeNumber && initialRender ? (
+    <Card color="yellow">
+      <Content name="others/NewUser" componentProps={{ lessonName }} />
+    </Card>
+  ) : null
+}
 
 export type EpisodeCardListType = ReadonlyArray<{
   color?: CardProps['color']
