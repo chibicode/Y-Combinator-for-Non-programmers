@@ -25,7 +25,12 @@ const useScrollAdjuster = ({
       setOffsetTop(controlsRef.current!.offsetTop)
       setShouldAdjustScroll(false)
     }
-  }, [shouldAdjustScroll])
+  }, [
+    controlsRef,
+    previousOffsetTop,
+    shouldAdjustScroll,
+    setShouldAdjustScroll
+  ])
 }
 
 export default useScrollAdjuster
