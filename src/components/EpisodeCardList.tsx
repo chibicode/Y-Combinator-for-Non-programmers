@@ -9,9 +9,6 @@ import GlobalContext from 'src/components/GlobalContext'
 const EpisodePageInitialRenderWarning = () => {
   const { lessonName, episodeNumber } = useContext(EpisodeHeroContext)
   const { initialRender } = useContext(GlobalContext)
-  if (!episodeNumber) {
-    throw new Error('error')
-  }
   return !!episodeNumber && initialRender ? (
     <Card color="yellow">
       <Content name="others/NewUser" componentProps={{ lessonName }} />
