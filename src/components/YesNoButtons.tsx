@@ -74,8 +74,12 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
       if (selection === 'default') {
         setSelection(actual)
       }
-      if (actual === expected && updateColor) {
-        updateColor('teal')
+      if (updateColor) {
+        if (actual === expected) {
+          updateColor('green')
+        } else {
+          updateColor('orange')
+        }
       }
     }
   }

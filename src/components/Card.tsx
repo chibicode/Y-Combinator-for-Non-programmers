@@ -8,7 +8,7 @@ export const jsxBabelFix = jsx
 
 export interface CardProps {
   children: React.ReactNode
-  color: 'white' | 'orange' | 'yellow' | 'indigo' | 'teal'
+  color: 'white' | 'orange' | 'yellow' | 'indigo' | 'green' | 'blue'
   slideNumber?: number
   slideCount?: number
 }
@@ -19,29 +19,32 @@ export interface CardState {
 
 const backgroundColor = (color: CardProps['color']) =>
   ({
-    teal: colors('teal50'),
+    green: colors('green50'),
     white: colors('white'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow50'),
-    indigo: colors('indigo50')
+    indigo: colors('indigo50'),
+    blue: colors('blue50')
   }[color])
 
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
-    teal: colors('teal700'),
+    green: colors('green800'),
     white: colors('indigo500'),
     orange: colors('deepOrange900'),
     yellow: colors('yellow50'),
-    indigo: colors('indigo500')
+    indigo: colors('indigo500'),
+    blue: colors('blue800')
   }[color])
 
 const emBackgroundColor = (color: CardProps['color']) =>
   ({
-    teal: colors('white'),
+    green: colors('white'),
     white: colors('yellow100'),
     orange: colors('white'),
     yellow: colors('yellow200'),
-    indigo: colors('white')
+    indigo: colors('white'),
+    blue: colors('white')
   }[color])
 
 const Card = ({ children, color, slideNumber, slideCount }: CardProps) => {

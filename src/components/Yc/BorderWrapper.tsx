@@ -47,7 +47,7 @@ const background = (
     case 'highlighted': {
       if (topRightBadgeType === 'match') {
         return css`
-          background: ${colors('teal50')};
+          background: ${colors('green50')};
         `
       } else if (topRightBadgeType === 'unmatch') {
         return css`

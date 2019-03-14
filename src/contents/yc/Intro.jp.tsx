@@ -63,7 +63,7 @@ export default () => {
               <P>
                 この教科書では、<Emoji>⭕️</Emoji>
                 <Emoji>❌</Emoji>
-                クイズがたくさん出てきます。答えがわからなくても大丈夫。適当に勘で答えを選んでみてください。
+                クイズがたくさん出てきます。答えがわからなくても大丈夫。テキトーに勘で答えを選んでみてください。
               </P>
               <P>さっそく1問目をやってみましょう。</P>
               <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
@@ -71,7 +71,7 @@ export default () => {
           )
         },
         {
-          color: 'orange',
+          color: 'blue',
           content: (
             <>
               <H3>{h('yesNoQuiz')}</H3>
