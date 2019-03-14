@@ -78,31 +78,27 @@ const useExpressionContainerManager = ({
   controlsRef: React.MutableRefObject<HTMLDivElement | null>
 }) => {
   const ref = useRef<ExpressionContainerManager>()
-  useEffect(
-    () =>
-      initializeExpressionManager({
-        initializeInstructions,
-        maxStepsAllowed,
-        resetIndex,
-        expressionContainerManager: getExpressionContainerManager(),
-        setExpressionContainerManagerState
-      }),
-    []
-  )
   const getExpressionContainerManager = () => {
     let manager = ref.current
     if (manager) {
       return manager
     }
-    let newObserver = new ExpressionContainerManager({
+    let expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
       lastAllowedExpressionState,
       stepOptions: {
         showAllShowSteps
       }
     })
-    ref.current = newObserver
-    return newObserver
+    initializeExpressionManager({
+      initializeInstructions,
+      maxStepsAllowed,
+      resetIndex,
+      expressionContainerManager,
+      setExpressionContainerManagerState
+    })
+    ref.current = expressionContainerManager
+    return expressionContainerManager
   }
   const [shouldAdjustScroll, setShouldAdjustScroll] = useState(false)
   const [
