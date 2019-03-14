@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -38,72 +39,70 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
     sm: fontSizes(1.5)
   }[size])
 
-const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => (
-  <ExpressionRunnerContext.Consumer>
-    {({ hidePriorities, variableSize, hideBottomRightBadges }) => (
-      <>
-        {!hidePriorities && (
-          <ExpressionPrioritiesLabel
-            priorities={expression.argPriorityAgg}
-            position="topleft"
-            emphasize={expression.highlightType === 'activeEmphasizePriority'}
-          />
-        )}
-        <FlexCenter
+const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
+  const { hidePriorities, variableSize, hideBottomRightBadges } = useContext(
+    ExpressionRunnerContext
+  )
+  return (
+    <>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          priorities={expression.argPriorityAgg}
+          position="topleft"
+          emphasize={expression.highlightType === 'activeEmphasizePriority'}
+        />
+      )}
+      <FlexCenter
+        css={css`
+          flex: 1;
+          font-size: ${fontSize(variableSize)};
+          padding: ${paddingTop(variableSize)} 0 ${paddingBottom(variableSize)};
+        `}
+      >
+        <span
           css={css`
-            flex: 1;
-            font-size: ${fontSize(variableSize)};
-            padding: ${paddingTop(variableSize)} 0
-              ${paddingBottom(variableSize)};
+            position: relative;
           `}
         >
-          <span
-            css={css`
-              position: relative;
-            `}
-          >
-            <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
-            {!hideBottomRightBadges &&
-              expression.bottomRightBadgeType !== 'none' && (
-                <span
-                  css={css`
-                    position: absolute;
-                    right: -0.2em;
-                    bottom: 0;
-                    z-index: ${zIndices('badge')};
-                  `}
-                >
-                  <BottomRightBadge
-                    bottomRightBadgeType={expression.bottomRightBadgeType}
-                  />
-                </span>
-              )}
-            {expression.topRightBadgeType !== 'none' && (
+          <Emoji>{letterEmojiMapping[expression.name]}</Emoji>
+          {!hideBottomRightBadges &&
+            expression.bottomRightBadgeType !== 'none' && (
               <span
                 css={css`
                   position: absolute;
-                  right: -0.18em;
-                  top: 0;
+                  right: -0.2em;
+                  bottom: 0;
                   z-index: ${zIndices('badge')};
                 `}
               >
-                <TopRightBadge
-                  topRightBadgeType={expression.topRightBadgeType}
+                <BottomRightBadge
+                  bottomRightBadgeType={expression.bottomRightBadgeType}
                 />
               </span>
             )}
-          </span>
-        </FlexCenter>
-        {!hidePriorities && (
-          <ExpressionPrioritiesLabel
-            priorities={expression.funcPriorityAgg}
-            position="bottomleft"
-            emphasize={expression.highlightType === 'activeEmphasizePriority'}
-          />
-        )}
-      </>
-    )}
-  </ExpressionRunnerContext.Consumer>
-)
+          {expression.topRightBadgeType !== 'none' && (
+            <span
+              css={css`
+                position: absolute;
+                right: -0.18em;
+                top: 0;
+                z-index: ${zIndices('badge')};
+              `}
+            >
+              <TopRightBadge topRightBadgeType={expression.topRightBadgeType} />
+            </span>
+          )}
+        </span>
+      </FlexCenter>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          priorities={expression.funcPriorityAgg}
+          position="bottomleft"
+          emphasize={expression.highlightType === 'activeEmphasizePriority'}
+        />
+      )}
+    </>
+  )
+}
 
 export default VariableExpressionBox

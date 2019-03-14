@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionRunnerCaptionWrapper from 'src/components/Yc/ExpressionRunnerCaptionWrapper'
@@ -19,6 +19,7 @@ import {
   SteppedExpressionContainer
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
+import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 export const jsxBabelFix = jsx
 
 // Must be equal to 1 / N to make timer count seconds evenly
@@ -41,7 +42,7 @@ type InitializeInstruction =
       type: 'stepForwardUntilTheEnd'
     }
 
-interface ExpressionRunnerProps {
+export interface ExpressionRunnerProps {
   expressionContainer: SteppedExpressionContainer
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
@@ -64,8 +65,7 @@ interface ExpressionRunnerProps {
   }
 }
 
-interface ExpressionRunnerState {
-  expressionContainerManagerState: ExpressionContainerManager['currentState']
+interface PlaybackState {
   isFastForwarding: boolean
   isPlaying: boolean
 }
@@ -77,294 +77,265 @@ const numSecondsRemaining = (
 ) =>
   Math.floor((numStepsRemaining * autoplaySpeed(isFastForwarding)) / 1000) + 1
 
-export default class ExpressionRunner extends React.Component<
-  ExpressionRunnerProps,
-  ExpressionRunnerState
-> {
-  public static defaultProps = {
-    hidePriorities: expressionRunnerContextDefault.hidePriorities,
-    hideBottomRightBadges: expressionRunnerContextDefault.hideBottomRightBadges,
-    hideControls: false,
-    hideExplanations: false,
-    variableSize: expressionRunnerContextDefault.variableSize,
-    highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
-    initializeInstructions: [],
-    containerSize: 'xxs',
-    resetIndex: false
-  }
-  private interval: NodeJS.Timer | null = null
-  private expressionContainerManager: ExpressionContainerManager
-  private controlsRef = React.createRef<HTMLDivElement>()
+const getActions = ({
+  isFastForwardPlayButton,
+  interval,
+  getExpressionContainerManager,
+  setPlaybackStatus,
+  expressionContainerManagerState,
+  setExpressionContainerManagerState,
+  setShouldAdjustScroll
+}: {
+  isFastForwardPlayButton?: boolean
+  interval: React.MutableRefObject<NodeJS.Timer | undefined>
+  getExpressionContainerManager: () => ExpressionContainerManager
+  setPlaybackStatus: React.Dispatch<React.SetStateAction<PlaybackState>>
+  expressionContainerManagerState: ExpressionContainerManager['currentState']
+  setExpressionContainerManagerState: React.Dispatch<
+    React.SetStateAction<ExpressionContainerManager['currentState']>
+  >
+  setShouldAdjustScroll: React.Dispatch<React.SetStateAction<boolean>>
+}) => {
+  const actions = {
+    stepForward() {
+      actions.step('forward')
+    },
 
-  public constructor(props: ExpressionRunnerProps) {
-    super(props)
-    const {
-      expressionContainer,
-      lastAllowedExpressionState,
-      showAllShowSteps
-    } = props
-    this.expressionContainerManager = new ExpressionContainerManager({
-      expressionContainer,
-      lastAllowedExpressionState,
-      stepOptions: {
-        showAllShowSteps
-      }
-    })
+    stepBackward() {
+      actions.step('backward')
+    },
 
-    this.state = {
-      expressionContainerManagerState: this.expressionContainerManager
-        .currentState,
-      isFastForwarding: false,
-      isPlaying: false
-    }
-  }
-
-  public componentDidMount() {
-    const { initializeInstructions, maxStepsAllowed, resetIndex } = this.props
-    if (initializeInstructions) {
-      initializeInstructions.forEach(initializeInstruction => {
-        if (initializeInstruction.type === 'stepForwardUntilContainerState') {
-          this.expressionContainerManager.stepForwardUntilContainerState(
-            initializeInstruction.state
-          )
-        } else if (
-          initializeInstruction.type ===
-          'stepForwardUntilPreviouslyChangedExpressionState'
-        ) {
-          this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
-            initializeInstruction.state
-          )
-        } else if (initializeInstruction.type === 'nextIteration') {
-          this.expressionContainerManager.stepForward()
-          this.expressionContainerManager.stepForwardUntilPreviouslyChangedExpressionState(
-            'default'
-          )
-        } else if (initializeInstruction.type === 'stepForwardUntilTheEnd') {
-          this.expressionContainerManager.stepForwardUntilTheEnd()
+    autoplay() {
+      interval.current = setInterval(() => {
+        if (expressionContainerManagerState.canStepForward) {
+          actions.step('forward')
+        } else {
+          actions.pause()
         }
+      }, autoplaySpeed(isFastForwardPlayButton))
+      setPlaybackStatus({
+        isPlaying: true,
+        isFastForwarding: !!isFastForwardPlayButton
       })
+    },
 
-      if (resetIndex) {
-        this.expressionContainerManager.startIndex = this.expressionContainerManager.currentIndex
+    pause() {
+      if (interval.current) {
+        clearInterval(interval.current)
       }
-      this.expressionContainerManager.minimumIndex = this.expressionContainerManager.currentIndex
+      setPlaybackStatus({
+        isPlaying: false,
+        isFastForwarding: false
+      })
+    },
 
-      this.syncState()
-    }
+    reset() {
+      if (interval.current) {
+        clearInterval(interval.current)
+      }
+      setPlaybackStatus({
+        isPlaying: false,
+        isFastForwarding: false
+      })
+      actions.step('reset')
+    },
 
-    if (maxStepsAllowed) {
-      this.expressionContainerManager.maximumIndex =
-        this.expressionContainerManager.currentIndex + maxStepsAllowed
-      this.syncState()
+    step(direction: 'forward' | 'backward' | 'reset') {
+      if (direction === 'forward') {
+        getExpressionContainerManager().stepForward()
+      } else if (direction === 'backward') {
+        getExpressionContainerManager().stepBackward()
+      } else {
+        getExpressionContainerManager().reset()
+      }
+      actions.syncState(true)
+    },
+
+    syncState(shouldAdjustScroll: boolean) {
+      setExpressionContainerManagerState(
+        getExpressionContainerManager().currentState
+      )
+      if (shouldAdjustScroll) {
+        setShouldAdjustScroll(true)
+      }
     }
   }
+  return actions
+}
 
-  public render() {
-    const {
-      hideControls,
-      hideExplanations,
-      hidePriorities,
-      variableSize,
-      containerSize,
-      hidePlayButton,
-      hideForwardAndBackButtons,
-      showAllShowSteps,
-      highlightOverrides,
-      hideBottomRightBadges,
-      caption
-    } = this.props
-    const {
-      expressionContainerManagerState,
-      isFastForwarding,
-      isPlaying
-    } = this.state
-    return (
-      <ExpressionRunnerContext.Provider
-        value={{
-          hidePriorities,
-          highlightOverrides,
-          hideBottomRightBadges,
-          variableSize,
-          isDoneOrReady:
-            isContainerWithState(
-              expressionContainerManagerState.expressionContainer,
-              'done'
-            ) ||
-            isContainerWithState(
-              expressionContainerManagerState.expressionContainer,
-              'ready'
-            )
-        }}
-      >
-        <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
-          <Container
-            size={containerSize === 'xxs' ? 'xs' : 'sm'}
-            horizontalPadding={0}
-            verticalMargin={0}
-          >
-            {!hideExplanations && (
-              <ExpressionRunnerCaptionWrapper>
-                <ExpressionRunnerExplanation
-                  isPlaying={isPlaying}
-                  numSecondsRemaining={numSecondsRemaining(
-                    expressionContainerManagerState.numStepsRemaining,
-                    isFastForwarding
-                  )}
-                  expressionContainer={
-                    expressionContainerManagerState.expressionContainer
-                  }
-                  isDone={isContainerWithState(
-                    expressionContainerManagerState.expressionContainer,
-                    'done'
-                  )}
-                  currentStep={expressionContainerManagerState.currentStep}
-                  currentSubstep={
-                    expressionContainerManagerState.currentSubstep
-                  }
-                  showAllShowSteps={showAllShowSteps}
-                />
-              </ExpressionRunnerCaptionWrapper>
-            )}
-            {caption && (
-              <ExpressionRunnerCaptionWrapper pinkText>
-                {caption[locale]}
-              </ExpressionRunnerCaptionWrapper>
-            )}
-          </Container>
-          <Container
-            size={containerSize}
-            horizontalPadding={0}
-            verticalMargin={0}
+const ExpressionRunner = ({
+  isFastForwardPlayButton,
+  expressionContainer,
+  lastAllowedExpressionState,
+  hideControls,
+  hideExplanations,
+  hidePriorities,
+  variableSize,
+  containerSize,
+  hidePlayButton,
+  hideForwardAndBackButtons,
+  showAllShowSteps,
+  highlightOverrides,
+  hideBottomRightBadges,
+  caption,
+  initializeInstructions,
+  maxStepsAllowed,
+  resetIndex
+}: ExpressionRunnerProps) => {
+  const controlsRef = useRef<HTMLDivElement>(null)
+  const {
+    getExpressionContainerManager,
+    expressionContainerManagerState,
+    setExpressionContainerManagerState,
+    setShouldAdjustScroll
+  } = useExpressionContainerManager({
+    expressionContainer,
+    lastAllowedExpressionState,
+    showAllShowSteps,
+    controlsRef,
+    initializeInstructions,
+    maxStepsAllowed,
+    resetIndex
+  })
+  const interval = useRef<NodeJS.Timer>()
+  const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
+    PlaybackState
+  >({
+    isFastForwarding: false,
+    isPlaying: false
+  })
+  const actions = getActions({
+    isFastForwardPlayButton,
+    interval,
+    getExpressionContainerManager,
+    setPlaybackStatus,
+    expressionContainerManagerState,
+    setExpressionContainerManagerState,
+    setShouldAdjustScroll
+  })
+
+  return (
+    <ExpressionRunnerContext.Provider
+      value={{
+        hidePriorities,
+        highlightOverrides,
+        hideBottomRightBadges,
+        variableSize,
+        isDoneOrReady:
+          isContainerWithState(
+            expressionContainerManagerState.expressionContainer,
+            'done'
+          ) ||
+          isContainerWithState(
+            expressionContainerManagerState.expressionContainer,
+            'ready'
+          )
+      }}
+    >
+      <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
+        <Container
+          size={containerSize === 'xxs' ? 'xs' : 'sm'}
+          horizontalPadding={0}
+          verticalMargin={0}
+        >
+          {!hideExplanations && (
+            <ExpressionRunnerCaptionWrapper>
+              <ExpressionRunnerExplanation
+                isPlaying={isPlaying}
+                numSecondsRemaining={numSecondsRemaining(
+                  expressionContainerManagerState.numStepsRemaining,
+                  isFastForwarding
+                )}
+                expressionContainer={
+                  expressionContainerManagerState.expressionContainer
+                }
+                isDone={isContainerWithState(
+                  expressionContainerManagerState.expressionContainer,
+                  'done'
+                )}
+                currentStep={expressionContainerManagerState.currentStep}
+                currentSubstep={expressionContainerManagerState.currentSubstep}
+                showAllShowSteps={showAllShowSteps}
+              />
+            </ExpressionRunnerCaptionWrapper>
+          )}
+          {caption && (
+            <ExpressionRunnerCaptionWrapper pinkText>
+              {caption[locale]}
+            </ExpressionRunnerCaptionWrapper>
+          )}
+        </Container>
+        <Container
+          size={containerSize}
+          horizontalPadding={0}
+          verticalMargin={0}
+        >
+          <div
+            css={css`
+              max-width: 100%;
+              /* Offset for -2px on border wrapper */
+              padding-left: 2px;
+              padding-right: 2px;
+            `}
           >
             <div
               css={css`
-                max-width: 100%;
-                /* Offset for -2px on border wrapper */
-                padding-left: 2px;
-                padding-right: 2px;
+                line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+                opacity: ${isFastForwarding ? 0.8 : 1};
+                ${isFastForwarding ? 'filter: grayscale(100%);' : ''};
               `}
             >
-              <div
-                css={css`
-                  line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isFastForwarding ? 0.8 : 1};
-                  ${isFastForwarding ? 'filter: grayscale(100%);' : ''};
-                `}
-              >
-                <ExpressionBox
-                  expression={
-                    expressionContainerManagerState.expressionContainer
-                      .expression
-                  }
-                />
-              </div>
+              <ExpressionBox
+                expression={
+                  expressionContainerManagerState.expressionContainer.expression
+                }
+              />
             </div>
-          </Container>
-          <Container
-            size={containerSize}
-            horizontalPadding={0}
-            verticalMargin={0}
-          >
-            {!hideControls && (
-              <div ref={this.controlsRef}>
-                <ExpressionRunnerControls
-                  onNextClick={this.stepForward}
-                  onPreviousClick={this.stepBackward}
-                  canStepForward={
-                    expressionContainerManagerState.canStepForward
-                  }
-                  canStepBackward={
-                    expressionContainerManagerState.canStepBackward
-                  }
-                  showPlayButton={!hidePlayButton}
-                  isPlaying={isPlaying}
-                  isDone={isContainerWithState(
-                    expressionContainerManagerState.expressionContainer,
-                    'done'
-                  )}
-                  onAutoClick={this.autoplay}
-                  onPauseClick={this.pause}
-                  onResetClick={this.reset}
-                  hideForwardAndBackButtons={!!hideForwardAndBackButtons}
-                />
-              </div>
-            )}
-          </Container>
+          </div>
         </Container>
-      </ExpressionRunnerContext.Provider>
-    )
-  }
-
-  private stepForward = () => {
-    this.step('forward')
-  }
-
-  private stepBackward = () => {
-    this.step('backward')
-  }
-
-  private autoplay = () => {
-    const { isFastForwardPlayButton } = this.props
-    this.interval = setInterval(() => {
-      if (this.state.expressionContainerManagerState.canStepForward) {
-        this.step('forward')
-      } else {
-        this.pause()
-      }
-    }, autoplaySpeed(isFastForwardPlayButton))
-    this.setState({
-      isPlaying: true,
-      isFastForwarding: !!isFastForwardPlayButton
-    })
-  }
-
-  private pause = () => {
-    if (this.interval) {
-      clearInterval(this.interval)
-    }
-    this.setState({
-      isPlaying: false,
-      isFastForwarding: false
-    })
-  }
-
-  private reset = () => {
-    if (this.interval) {
-      clearInterval(this.interval)
-    }
-    this.setState({
-      isPlaying: false,
-      isFastForwarding: false
-    })
-    this.step('reset')
-  }
-
-  private step(direction: 'forward' | 'backward' | 'reset') {
-    const previousOffsetTop = this.controlsRef.current!.offsetTop
-    if (direction === 'forward') {
-      this.expressionContainerManager.stepForward()
-    } else if (direction === 'backward') {
-      this.expressionContainerManager.stepBackward()
-    } else {
-      this.expressionContainerManager.reset()
-    }
-    this.syncState(() => {
-      window.scroll(
-        0,
-        window.pageYOffset +
-          this.controlsRef.current!.offsetTop -
-          previousOffsetTop
-      )
-    })
-  }
-
-  private syncState(callback?: () => void) {
-    this.setState(
-      {
-        expressionContainerManagerState: this.expressionContainerManager
-          .currentState
-      },
-      callback
-    )
-  }
+        <Container
+          size={containerSize}
+          horizontalPadding={0}
+          verticalMargin={0}
+        >
+          {!hideControls && (
+            <div ref={controlsRef}>
+              <ExpressionRunnerControls
+                onNextClick={actions.stepForward}
+                onPreviousClick={actions.stepBackward}
+                canStepForward={expressionContainerManagerState.canStepForward}
+                canStepBackward={
+                  expressionContainerManagerState.canStepBackward
+                }
+                showPlayButton={!hidePlayButton}
+                isPlaying={isPlaying}
+                isDone={isContainerWithState(
+                  expressionContainerManagerState.expressionContainer,
+                  'done'
+                )}
+                onAutoClick={actions.autoplay}
+                onPauseClick={actions.pause}
+                onResetClick={actions.reset}
+                hideForwardAndBackButtons={!!hideForwardAndBackButtons}
+              />
+            </div>
+          )}
+        </Container>
+      </Container>
+    </ExpressionRunnerContext.Provider>
+  )
 }
+
+ExpressionRunner.defaultProps = {
+  hidePriorities: expressionRunnerContextDefault.hidePriorities,
+  hideBottomRightBadges: expressionRunnerContextDefault.hideBottomRightBadges,
+  hideControls: false,
+  hideExplanations: false,
+  variableSize: expressionRunnerContextDefault.variableSize,
+  highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
+  initializeInstructions: [],
+  containerSize: 'xxs',
+  resetIndex: false
+}
+
+export default ExpressionRunner

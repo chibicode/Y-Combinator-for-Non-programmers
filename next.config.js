@@ -33,8 +33,7 @@ const config = withCSS(
       return config
     },
     env: {
-      productionLocale: process.env.PRODUCTION_LOCALE,
-      NODE_ENV: process.env.NODE_ENV
+      productionLocale: process.env.PRODUCTION_LOCALE
     },
     publicRuntimeConfig: {
       devLocale: process.env.DEV_LOCALE

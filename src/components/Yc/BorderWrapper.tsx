@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
-import React from 'react'
+import React, { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import ExpressionRunnerContext, {
   HighlightOverrides
@@ -92,42 +92,43 @@ const BorderWrapper = ({
   bottomRightBadgeType,
   topRightBadgeType,
   children
-}: BorderWrapperProps) => (
-  <ExpressionRunnerContext.Consumer>
-    {({ isDoneOrReady, highlightOverrides }) => (
-      <Flex
-        css={[
+}: BorderWrapperProps) => {
+  const { isDoneOrReady, highlightOverrides } = useContext(
+    ExpressionRunnerContext
+  )
+  return (
+    <Flex
+      css={[
+        css`
+          margin: -2px;
+          border: 2px solid ${colors('indigo300')};
+          align-items: center;
+          flex: 1;
+          position: relative;
+        `,
+        background(
+          highlightOverrides[bottomRightBadgeType] || highlightType,
+          isDoneOrReady,
+          topRightBadgeType
+        ),
+        highlightType === 'highlighted' &&
+          bottomRightBadgeType === 'funcBound' &&
+          topRightBadgeType === 'none' &&
           css`
-            margin: -2px;
-            border: 2px solid ${colors('indigo300')};
-            align-items: center;
-            flex: 1;
-            position: relative;
+            border-right: 10px solid ${colors('yellow900')};
           `,
-          background(
-            highlightOverrides[bottomRightBadgeType] || highlightType,
-            isDoneOrReady,
-            topRightBadgeType
-          ),
-          highlightType === 'highlighted' &&
-            bottomRightBadgeType === 'funcBound' &&
-            topRightBadgeType === 'none' &&
-            css`
-              border-right: 10px solid ${colors('yellow900')};
-            `,
-          highlightType === 'highlighted' &&
-            bottomRightBadgeType === 'funcArg' &&
-            topRightBadgeType === 'none' &&
-            css`
-              border-left: 10px solid ${colors('pink400')};
-            `
-        ]}
-      >
-        {highlightType === 'removed' && <Cross />}
-        {children}
-      </Flex>
-    )}
-  </ExpressionRunnerContext.Consumer>
-)
+        highlightType === 'highlighted' &&
+          bottomRightBadgeType === 'funcArg' &&
+          topRightBadgeType === 'none' &&
+          css`
+            border-left: 10px solid ${colors('pink400')};
+          `
+      ]}
+    >
+      {highlightType === 'removed' && <Cross />}
+      {children}
+    </Flex>
+  )
+}
 
 export default BorderWrapper
