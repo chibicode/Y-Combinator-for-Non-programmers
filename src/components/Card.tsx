@@ -8,10 +8,12 @@ export const jsxBabelFix = jsx
 
 export interface CardProps {
   children: React.ReactNode
-  footerButton?: React.ReactNode
+  footerButtonContent?: React.ReactNode
+  footerButtonOnClick?: () => void
   color: 'white' | 'orange' | 'yellow' | 'indigo' | 'green' | 'blue'
   slideNumber?: number
   slideCount?: number
+  isLast?: boolean
 }
 
 export interface CardState {
@@ -65,7 +67,9 @@ const Card = ({
   color,
   slideNumber,
   slideCount,
-  footerButton
+  footerButtonContent,
+  footerButtonOnClick,
+  isLast
 }: CardProps) => {
   const [overrideColor, setOverrideColor] = useState<
     CardProps['color'] | undefined
@@ -134,22 +138,27 @@ const Card = ({
                 padding-top: ${spaces(1)};
                 padding-left: ${spaces(1)};
                 padding-right: ${spaces(1)};
-                padding-bottom: ${footerButton ? spaces(0.25) : spaces(0.5)};
+                padding-bottom: ${footerButtonContent
+                  ? spaces(0.25)
+                  : spaces(0.5)};
 
                 ${ns} {
                   padding-top: ${spaces(2)};
                   padding-left: ${spaces(2)};
                   padding-right: ${spaces(2)};
-                  padding-bottom: ${footerButton ? spaces(0.75) : spaces(1.5)};
+                  padding-bottom: ${footerButtonContent
+                    ? spaces(0.75)
+                    : spaces(1.5)};
                 }
                 background: ${backgroundColor(finalColor)};
               `}
             >
               {children}
             </div>
-            {footerButton && (
+            {footerButtonContent && (
               <button
                 type="button"
+                onClick={footerButtonOnClick}
                 css={css`
                   padding-top: ${spaces(1)};
                   padding-left: ${spaces(1)};
@@ -177,13 +186,13 @@ const Card = ({
                   }
                 `}
               >
-                {footerButton}
+                {footerButtonContent}
               </button>
             )}
           </div>{' '}
         </div>
       </CardContext.Provider>
-      {slideNumber !== slideCount && (
+      {isLast && (
         <div
           css={css`
             width: 1.25rem;
