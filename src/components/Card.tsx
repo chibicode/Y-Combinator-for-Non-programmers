@@ -8,6 +8,7 @@ export const jsxBabelFix = jsx
 
 export interface CardProps {
   children: React.ReactNode
+  footerButton?: React.ReactNode
   color: 'white' | 'orange' | 'yellow' | 'indigo' | 'green' | 'blue'
   slideNumber?: number
   slideCount?: number
@@ -16,6 +17,16 @@ export interface CardProps {
 export interface CardState {
   overrideColor?: CardProps['color']
 }
+
+const footerButtonBackgroundColor = (color: CardProps['color']) =>
+  ({
+    green: colors('green100'),
+    white: colors('white'),
+    orange: colors('deepOrange100'),
+    yellow: colors('yellow100'),
+    indigo: colors('indigo200'),
+    blue: colors('blue100')
+  }[color])
 
 const backgroundColor = (color: CardProps['color']) =>
   ({
@@ -47,7 +58,13 @@ const emBackgroundColor = (color: CardProps['color']) =>
     blue: colors('white')
   }[color])
 
-const Card = ({ children, color, slideNumber, slideCount }: CardProps) => {
+const Card = ({
+  children,
+  color,
+  slideNumber,
+  slideCount,
+  footerButton
+}: CardProps) => {
   const [overrideColor, setOverrideColor] = useState<
     CardProps['color'] | undefined
   >(undefined)
@@ -64,21 +81,7 @@ const Card = ({ children, color, slideNumber, slideCount }: CardProps) => {
       >
         <div
           css={css`
-            padding-top: ${spaces(1)};
-            padding-left: ${spaces(1)};
-            padding-right: ${spaces(1)};
-            padding-bottom: ${spaces(0.5)};
-
-            ${ns} {
-              padding-top: ${spaces(2)};
-              padding-left: ${spaces(2)};
-              padding-right: ${spaces(2)};
-              padding-bottom: ${spaces(1.5)};
-            }
             position: relative;
-            background: ${backgroundColor(finalColor)};
-            border-radius: ${radii(0.5)};
-            margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
           `}
         >
           {slideNumber && slideCount && (
@@ -116,7 +119,62 @@ const Card = ({ children, color, slideNumber, slideCount }: CardProps) => {
               </>
             </div>
           )}
-          {children}
+          <div
+            css={css`
+              border-radius: ${radii(0.5)};
+              overflow: hidden;
+              margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
+            `}
+          >
+            <div
+              css={css`
+                padding-top: ${spaces(1)};
+                padding-left: ${spaces(1)};
+                padding-right: ${spaces(1)};
+                padding-bottom: ${footerButton ? spaces(0.25) : spaces(0.5)};
+
+                ${ns} {
+                  padding-top: ${spaces(2)};
+                  padding-left: ${spaces(2)};
+                  padding-right: ${spaces(2)};
+                  padding-bottom: ${footerButton ? spaces(0.75) : spaces(1.5)};
+                }
+                background: ${backgroundColor(finalColor)};
+              `}
+            >
+              {children}
+            </div>
+            {footerButton && (
+              <button
+                type="button"
+                css={css`
+                  padding-top: ${spaces(1)};
+                  padding-left: ${spaces(1)};
+                  padding-right: ${spaces(1)};
+                  padding-bottom: ${spaces(1)};
+                  background: ${colors('white')};
+                  border: none;
+                  width: 100%;
+                  outline: 0;
+                  font-weight: bold;
+                  cursor: pointer;
+
+                  ${ns} {
+                    padding-top: ${spaces(1)};
+                    padding-left: ${spaces(2)};
+                    padding-right: ${spaces(2)};
+                    padding-bottom: ${spaces(1)};
+                  }
+
+                  &:hover {
+                    background: ${colors('yellow100')};
+                  }
+                `}
+              >
+                {footerButton}
+              </button>
+            )}
+          </div>{' '}
         </div>
       </CardContext.Provider>
       {slideNumber !== slideCount && (

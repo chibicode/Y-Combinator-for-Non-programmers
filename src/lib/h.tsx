@@ -11,6 +11,18 @@ interface LocaleJson {
 }
 
 export const allTranslations = {
+  yesNoQuizSeeAnswer: () => ({
+    en: (
+      <>
+        <Emoji>⬇️</Emoji> See Answer <Emoji>⬇️</Emoji>
+      </>
+    ),
+    jp: (
+      <>
+        <Emoji>⬇️</Emoji> 答えを見る <Emoji>⬇️</Emoji>
+      </>
+    )
+  }),
   yesNoQuiz: () => ({
     en: (
       <>

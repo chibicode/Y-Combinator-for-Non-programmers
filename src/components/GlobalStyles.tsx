@@ -10,7 +10,6 @@ const indigo = colors('indigo500')
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => (
   <div
     css={css`
-      /* TODO: Temporary until page footer is ready */
       padding-bottom: ${spaces(3)};
     `}
   >

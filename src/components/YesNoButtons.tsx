@@ -88,8 +88,8 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
       <div
         css={css`
           text-align: center;
-          margin: ${spaces(2.5)} 0
-            ${selection === 'default' ? spaces(1.5) : spaces(1)};
+          margin: ${spaces(2)} 0
+            ${selection === 'default' ? spaces(1.75) : spaces(1.25)};
         `}
       >
         <Button

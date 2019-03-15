@@ -53,7 +53,6 @@ export default () => {
           )
         },
         {
-          color: 'white',
           content: (
             <>
               <H3>
@@ -71,7 +70,7 @@ export default () => {
           )
         },
         {
-          color: 'blue',
+          type: 'yesNoQuiz' as 'yesNoQuiz',
           content: (
             <>
               <H3>{h('yesNoQuiz')}</H3>
@@ -212,7 +211,6 @@ export default () => {
           )
         },
         {
-          color: 'indigo',
           content: (
             <>
               <H3>
@@ -234,7 +232,6 @@ export default () => {
           )
         },
         {
-          color: 'indigo',
           content: (
             <>
               <H3>このレッスンを作ったのは誰ですか？</H3>

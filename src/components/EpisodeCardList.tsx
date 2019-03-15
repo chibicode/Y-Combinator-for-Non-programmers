@@ -5,6 +5,7 @@ import { CardProps } from 'src/components/Card'
 import Content from 'src/components/Content'
 import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
 import GlobalContext from 'src/components/GlobalContext'
+import h from 'src/lib/h'
 
 const EpisodePageInitialRenderWarning = () => {
   const { lessonName, episodeNumber } = useContext(EpisodeHeroContext)
@@ -16,20 +17,37 @@ const EpisodePageInitialRenderWarning = () => {
   ) : null
 }
 
-export type EpisodeCardListType = ReadonlyArray<{
-  color?: CardProps['color']
+interface EpisodeCardType {
+  type?: 'yesNoQuiz'
   content: React.ReactNode
-}>
+}
+
+export type EpisodeCardListType = ReadonlyArray<EpisodeCardType>
+
+const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
+  type
+    ? {
+        yesNoQuiz: 'blue' as 'blue'
+      }[type]
+    : 'white'
+
+const hasFooterButton = (type: EpisodeCardType['type']) => type === 'yesNoQuiz'
+
+const FooterButtonContent = ({ type }: { type: EpisodeCardType['type'] }) =>
+  type === 'yesNoQuiz' ? <>{h('yesNoQuizSeeAnswer')}</> : null
 
 const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => (
   <>
     <EpisodePageInitialRenderWarning />
-    {cards.map(({ color, content }, index) => (
+    {cards.map(({ type, content }, index) => (
       <Card
         slideNumber={index + 1}
         slideCount={cards.length}
         key={`card${index}`}
-        color={color}
+        color={typeToColor(type)}
+        footerButton={
+          hasFooterButton(type) && <FooterButtonContent type={type} />
+        }
       >
         {content}
       </Card>
