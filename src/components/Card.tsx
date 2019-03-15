@@ -18,14 +18,15 @@ export interface CardState {
   overrideColor?: CardProps['color']
 }
 
-const footerButtonBackgroundColor = (color: CardProps['color']) =>
+// First color before the text turns white
+const borderColor = (color: CardProps['color']) =>
   ({
-    green: colors('green100'),
-    white: colors('white'),
-    orange: colors('deepOrange100'),
-    yellow: colors('yellow100'),
-    indigo: colors('indigo200'),
-    blue: colors('blue100')
+    green: colors('green600'),
+    white: colors('indigo200'),
+    orange: colors('deepOrange600'),
+    yellow: colors('yellow900'),
+    indigo: colors('indigo300'),
+    blue: colors('blue600')
   }[color])
 
 const backgroundColor = (color: CardProps['color']) =>
@@ -38,6 +39,7 @@ const backgroundColor = (color: CardProps['color']) =>
     blue: colors('blue50')
   }[color])
 
+// 3rd lightest color where the text is white
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     green: colors('green800'),
@@ -122,6 +124,7 @@ const Card = ({
           <div
             css={css`
               border-radius: ${radii(0.5)};
+              border: 2px solid ${borderColor(finalColor)};
               overflow: hidden;
               margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
             `}
@@ -153,7 +156,10 @@ const Card = ({
                   padding-right: ${spaces(1)};
                   padding-bottom: ${spaces(1)};
                   background: ${colors('white')};
-                  border: none;
+                  border-left: none;
+                  border-right: none;
+                  border-bottom: none;
+                  border-top: 2px solid ${borderColor(finalColor)};
                   width: 100%;
                   outline: 0;
                   font-weight: bold;

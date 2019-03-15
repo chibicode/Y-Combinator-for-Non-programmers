@@ -13,7 +13,7 @@ const NewUser = ({
     <InternalLink href={pathHelpers[componentProps.lessonName]()}>
       {t(`${componentProps.lessonName}Title` as keyof typeof allTitles)}
     </InternalLink>
-    」という、コンピューターサイエンスの無料オンラインレッスンです。はじめから読むには、
+    」という、コンピューターサイエンスの無料レッスンです。はじめから読むには、
     <Em>
       <InternalLink href={pathHelpers[componentProps.lessonName]()}>
         <Strong>こちらを押してください</Strong>

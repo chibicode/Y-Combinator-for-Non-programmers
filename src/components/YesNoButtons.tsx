@@ -29,7 +29,7 @@ const Button = ({ status, children, onClick }: ButtonProps) => (
       padding: ${spaces(0.75)} ${spaces(1)};
       border-radius: ${radii(0.5)};
       margin: 0 ${spaces(0.5)};
-      border: 2px solid ${colors('grey700')};
+      border: 2px solid ${colors('blue600')};
       font-weight: bold;
       opacity: ${status === 'inactive' ? 0.5 : 1};
       background: ${status === 'active'
