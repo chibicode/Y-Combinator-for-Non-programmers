@@ -19,14 +19,13 @@ export type CardAction = 'default' | 'yesSelected' | 'noSelected' | 'skipped'
 export type CardActionResult = 'default' | 'correct' | 'incorrect'
 
 const cardActionToColor = (
-  cardAction: CardAction
+  cardActionResult: CardActionResult
 ): CardProps['color'] | undefined =>
   ({
     default: undefined,
-    yesSelected: 'green' as 'green',
-    noSelected: 'orange' as 'orange',
-    skipped: undefined
-  }[cardAction])
+    correct: 'green' as 'green',
+    incorrect: 'orange' as 'orange'
+  }[cardActionResult])
 
 const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
   type
@@ -35,7 +34,10 @@ const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
       }[type]
     : 'white'
 
-const hasFooterButton = (type: EpisodeCardType['type']) => type === 'yesNoQuiz'
+const hasFooterButton = (
+  type: EpisodeCardType['type'],
+  cardActionTaken: CardAction
+) => type === 'yesNoQuiz' && cardActionTaken === 'default'
 
 const FooterButtonContent = ({ type }: { type: EpisodeCardType['type'] }) =>
   type === 'yesNoQuiz' ? <>{h('yesNoQuizSeeAnswer')}</> : null
@@ -67,9 +69,11 @@ const CardWrapper = ({
     >
       <Card
         {...{ slideNumber, slideCount, isLast, children, cardActionTaken }}
-        color={cardActionToColor(cardActionTaken) || typeToColor(type)}
+        color={cardActionToColor(cardActionResult) || typeToColor(type)}
         footerButtonContent={
-          hasFooterButton(type) && <FooterButtonContent type={type} />
+          hasFooterButton(type, cardActionTaken) && (
+            <FooterButtonContent type={type} />
+          )
         }
         footerButtonOnClick={() => takeCardAction('skipped')}
       />

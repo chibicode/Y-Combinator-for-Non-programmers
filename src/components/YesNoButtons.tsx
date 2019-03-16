@@ -38,11 +38,11 @@ const Button = ({ status, children, onClick }: ButtonProps) => (
       line-height: ${lineHeights(1)};
       -webkit-user-select: none;
       box-shadow: ${status === 'active'
-        ? `inset 0 0 0 1px ${colors('grey700')}`
+        ? `inset 0 0 0 1px ${colors('blue600')}`
         : 'none'};
 
       &:focus {
-        box-shadow: inset 0 0 0 1px ${colors('grey700')};
+        box-shadow: inset 0 0 0 1px ${colors('blue600')};
         outline: none;
       }
 
@@ -96,7 +96,8 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           status={
             cardActionTaken === 'default'
               ? 'default'
-              : cardActionTaken === 'yesSelected'
+              : cardActionTaken === 'yesSelected' ||
+                (cardActionTaken === 'skipped' && answer === 'yes')
               ? 'active'
               : 'inactive'
           }
@@ -108,7 +109,8 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           status={
             cardActionTaken === 'default'
               ? 'default'
-              : cardActionTaken === 'noSelected'
+              : cardActionTaken === 'noSelected' ||
+                (cardActionTaken === 'skipped' && answer === 'no')
               ? 'active'
               : 'inactive'
           }
@@ -117,7 +119,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizNo')}
         </Button>
       </div>
-      {cardActionResult !== 'default' && (
+      {(cardActionResult !== 'default' || cardActionTaken === 'skipped') && (
         <>
           <P
             css={css`
@@ -126,12 +128,16 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           >
             <Em>
               <strong>
-                {cardActionResult === 'correct'
+                {cardActionTaken === 'skipped'
+                  ? h('yesNoQuizSkipped')
+                  : cardActionResult === 'correct'
                   ? h('yesNoQuizCorrect')
                   : h('yesNoQuizIncorrect')}
               </strong>
               {locale === 'en' && ' '}
-              {cardActionResult === 'correct'
+              {cardActionTaken === 'skipped'
+                ? h('yesNoQuizSkippedPostfix', answer === 'yes')
+                : cardActionResult === 'correct'
                 ? h('yesNoQuizCorrectPostfix')
                 : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
             </Em>
