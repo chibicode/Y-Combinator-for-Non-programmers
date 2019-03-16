@@ -93,6 +93,7 @@ export default () => {
         {
           content: (
             <>
+              <H3>{h('yesNoQuizAnswerHeading', true)}</H3>
               <P>
                 <Strong>
                   答え: Yコンビネーターの定義として正しいのは、

@@ -23,6 +23,19 @@ export const allTranslations = {
       </>
     )
   }),
+  yesNoQuizAnswerHeading: (isYes: boolean) => ({
+    en: (
+      <>
+        Correct Answer: <Emoji>{isYes ? '👍' : '👎'}</Emoji>{' '}
+        {isYes ? 'Yes' : 'No'}
+      </>
+    ),
+    jp: (
+      <>
+        正解は<Emoji>{isYes ? '⭕️' : '❌'}</Emoji>
+      </>
+    )
+  }),
   yesNoQuiz: () => ({
     en: (
       <>
