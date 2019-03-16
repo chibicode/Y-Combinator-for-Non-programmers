@@ -30,11 +30,11 @@ export default () => {
           content: (
             <EpisodeHero>
               <P>
-                こんにちは。
+                こんにちは！当サイト「
                 <Em>
                   <Strong>CSmoji</Strong>
                 </Em>
-                では、
+                」 では、
                 <Em>絵文字</Em>を使った<Em>コンピューターサイエンス(CS)</Em>
                 の無料レッスンを公開しています。
               </P>
@@ -60,7 +60,7 @@ export default () => {
                 <Emoji>❌</Emoji>クイズに挑戦
               </H3>
               <P>
-                この教科書では、<Emoji>⭕️</Emoji>
+                このレッスンでは、<Emoji>⭕️</Emoji>
                 <Emoji>❌</Emoji>
                 クイズがたくさん出てきます。答えがわからなくても大丈夫。テキトーに勘で答えを選んでみてください。
               </P>
@@ -83,7 +83,9 @@ export default () => {
                 <Em>スタートアップ養成スクール</Em>のことだ。<Emoji>⭕️</Emoji>
                 か<Emoji>❌</Emoji>か?
               </P>
-              <P>↓ 正しいと思う方を選んでみてください。</P>
+              <P>
+                ↓ 正しいと思う方を選んでみてください。テキトーに選んでも大丈夫！
+              </P>
               <YesNoButtons answer="yes" />
             </>
           )
