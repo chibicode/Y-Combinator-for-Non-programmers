@@ -20,13 +20,16 @@ export type CardAction = 'default' | 'yesSelected' | 'noSelected' | 'skipped'
 export type CardActionResult = 'default' | 'correct' | 'incorrect'
 
 const cardActionToColor = (
+  cardAction: CardAction,
   cardActionResult: CardActionResult
 ): CardProps['color'] | undefined =>
-  ({
-    default: undefined,
-    correct: 'green' as 'green',
-    incorrect: 'orange' as 'orange'
-  }[cardActionResult])
+  cardAction === 'skipped'
+    ? 'green'
+    : {
+        default: undefined,
+        correct: 'green' as 'green',
+        incorrect: 'orange' as 'orange'
+      }[cardActionResult]
 
 const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
   type
@@ -72,7 +75,10 @@ const CardWrapper = ({
       <div ref={domRef}>
         <Card
           {...{ slideNumber, slideCount, isLast, children, cardActionTaken }}
-          color={cardActionToColor(cardActionResult) || typeToColor(type)}
+          color={
+            cardActionToColor(cardActionTaken, cardActionResult) ||
+            typeToColor(type)
+          }
           footerButtonContent={
             hasFooterButton(type, cardActionTaken) && (
               <FooterButtonContent type={type} />
