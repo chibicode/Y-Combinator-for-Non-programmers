@@ -8,11 +8,13 @@ function useCardScroll<E extends HTMLElement>(dep?: any) {
       skipNextRef.current = true
     } else {
       if (domRef.current) {
-        window.scrollTo({
-          top: domRef.current.offsetTop,
-          left: 0,
-          behavior: 'smooth'
-        })
+        if (window.scrollY < domRef.current.offsetTop) {
+          window.scrollTo({
+            top: domRef.current.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
       }
     }
   }, [dep])
