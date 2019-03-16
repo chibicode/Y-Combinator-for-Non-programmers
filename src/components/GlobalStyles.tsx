@@ -10,7 +10,7 @@ const indigo = colors('indigo500')
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => (
   <div
     css={css`
-      padding-bottom: ${spaces(3)};
+      padding-bottom: ${spaces(6)};
     `}
   >
     {/* NOTE: For some reason, if this Global component appears AFTER {children},
