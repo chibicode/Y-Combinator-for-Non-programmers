@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'src/components/Card'
 import { CardProps } from 'src/components/Card'
 import { EpisodeCardType } from 'src/components/EpisodeCardList'
 import h from 'src/lib/h'
+import CardActionContext from 'src/components/CardActionContext'
 
 interface CardWrapperProps {
   slideNumber?: number
@@ -12,6 +13,20 @@ interface CardWrapperProps {
   type?: EpisodeCardType['type']
   setLastVisibleCardIndex: () => void
 }
+
+export type CardAction = 'default' | 'yesSelected' | 'noSelected' | 'skipped'
+
+export type CardActionResult = 'default' | 'correct' | 'incorrect'
+
+const cardActionToColor = (
+  cardAction: CardAction
+): CardProps['color'] | undefined =>
+  ({
+    default: undefined,
+    yesSelected: 'green' as 'green',
+    noSelected: 'orange' as 'orange',
+    skipped: undefined
+  }[cardAction])
 
 const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
   type
@@ -32,17 +47,34 @@ const CardWrapper = ({
   children,
   type,
   setLastVisibleCardIndex
-}: CardWrapperProps) => (
-  <Card
-    {...{ slideNumber, slideCount, isLast, children }}
-    color={typeToColor(type)}
-    footerButtonContent={
-      hasFooterButton(type) && <FooterButtonContent type={type} />
-    }
-    footerButtonOnClick={
-      hasFooterButton(type) ? setLastVisibleCardIndex : undefined
-    }
-  />
-)
+}: CardWrapperProps) => {
+  const [cardActionTaken, setCardActionTaken] = useState<CardAction>('default')
+  const [cardActionResult, setCardActionResult] = useState<CardActionResult>(
+    'default'
+  )
+  const takeCardAction = (cardAction: CardAction) => {
+    setCardActionTaken(cardAction)
+    setLastVisibleCardIndex()
+  }
+  return (
+    <CardActionContext.Provider
+      value={{
+        takeCardAction,
+        cardActionTaken,
+        setCardActionResult,
+        cardActionResult
+      }}
+    >
+      <Card
+        {...{ slideNumber, slideCount, isLast, children, cardActionTaken }}
+        color={cardActionToColor(cardActionTaken) || typeToColor(type)}
+        footerButtonContent={
+          hasFooterButton(type) && <FooterButtonContent type={type} />
+        }
+        footerButtonOnClick={() => takeCardAction('skipped')}
+      />
+    </CardActionContext.Provider>
+  )
+}
 
 export default CardWrapper

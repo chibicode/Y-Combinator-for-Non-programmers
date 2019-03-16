@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React, { useState } from 'react'
+import React from 'react'
 import CardContext from 'src/components/CardContext'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
+import { CardAction } from 'src/components/CardWrapper'
 export const jsxBabelFix = jsx
 
 export interface CardProps {
@@ -14,6 +15,7 @@ export interface CardProps {
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
+  cardActionTaken: CardAction
 }
 
 export interface CardState {
@@ -63,151 +65,143 @@ const emBackgroundColor = (color: CardProps['color']) =>
   }[color])
 
 const Card = ({
-  children,
   color,
+  children,
   slideNumber,
   slideCount,
   footerButtonContent,
   footerButtonOnClick,
   isLast
-}: CardProps) => {
-  const [overrideColor, setOverrideColor] = useState<
-    CardProps['color'] | undefined
-  >(undefined)
-  const finalColor = overrideColor || color
-  const updateColor = (newColor: CardProps['color']) =>
-    setOverrideColor(newColor)
-  return (
-    <>
-      <CardContext.Provider
-        value={{
-          emBackgroundColor: emBackgroundColor(finalColor),
-          updateColor
-        }}
+}: CardProps) => (
+  <>
+    <CardContext.Provider
+      value={{
+        emBackgroundColor: emBackgroundColor(color)
+      }}
+    >
+      <div
+        css={css`
+          position: relative;
+        `}
       >
-        <div
-          css={css`
-            position: relative;
-          `}
-        >
-          {slideNumber && slideCount && (
-            <div
-              css={css`
-                position: absolute;
-                bottom: -0.5rem;
-                right: 1rem;
-                font-size: ${fontSizes(0.75)};
-                line-height: 1;
-                color: ${colors('white')};
-                background: ${slideLabelBgColor(finalColor)};
-                padding: ${spaces(0.25)} ${spaces(0.5)};
-                border-radius: 9999px;
-              `}
-            >
-              <>
-                {slideNumber === 1 && (
-                  <>{locale === 'jp' ? 'スライド' : 'Slide'} </>
-                )}
-                <span
-                  css={css`
-                    font-weight: bold;
-                  `}
-                >
-                  {slideNumber}
-                </span>{' '}
-                <span
-                  css={css`
-                    color: ${colors('white66')};
-                  `}
-                >
-                  / {slideCount}
-                </span>
-              </>
-            </div>
-          )}
+        {slideNumber && slideCount && (
           <div
             css={css`
-              border-radius: ${radii(0.5)};
-              border: 2px solid ${borderColor(finalColor)};
-              overflow: hidden;
-              margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
+              position: absolute;
+              bottom: -0.5rem;
+              right: 1rem;
+              font-size: ${fontSizes(0.75)};
+              line-height: 1;
+              color: ${colors('white')};
+              background: ${slideLabelBgColor(color)};
+              padding: ${spaces(0.25)} ${spaces(0.5)};
+              border-radius: 9999px;
             `}
           >
-            <div
+            <>
+              {slideNumber === 1 && (
+                <>{locale === 'jp' ? 'スライド' : 'Slide'} </>
+              )}
+              <span
+                css={css`
+                  font-weight: bold;
+                `}
+              >
+                {slideNumber}
+              </span>{' '}
+              <span
+                css={css`
+                  color: ${colors('white66')};
+                `}
+              >
+                / {slideCount}
+              </span>
+            </>
+          </div>
+        )}
+        <div
+          css={css`
+            border-radius: ${radii(0.5)};
+            border: 2px solid ${borderColor(color)};
+            overflow: hidden;
+            margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
+          `}
+        >
+          <div
+            css={css`
+              padding-top: ${spaces(1)};
+              padding-left: ${spaces(1)};
+              padding-right: ${spaces(1)};
+              padding-bottom: ${footerButtonContent
+                ? spaces(0.25)
+                : spaces(0.5)};
+
+              ${ns} {
+                padding-top: ${spaces(2)};
+                padding-left: ${spaces(2)};
+                padding-right: ${spaces(2)};
+                padding-bottom: ${footerButtonContent
+                  ? spaces(0.75)
+                  : spaces(1.5)};
+              }
+              background: ${backgroundColor(color)};
+            `}
+          >
+            {children}
+          </div>
+          {footerButtonContent && (
+            <button
+              type="button"
+              onClick={footerButtonOnClick}
               css={css`
                 padding-top: ${spaces(1)};
                 padding-left: ${spaces(1)};
                 padding-right: ${spaces(1)};
-                padding-bottom: ${footerButtonContent
-                  ? spaces(0.25)
-                  : spaces(0.5)};
+                padding-bottom: ${spaces(1)};
+                background: ${colors('white')};
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+                border-top: 2px solid ${borderColor(color)};
+                width: 100%;
+                outline: 0;
+                font-weight: bold;
+                cursor: pointer;
 
                 ${ns} {
-                  padding-top: ${spaces(2)};
+                  padding-top: ${spaces(1)};
                   padding-left: ${spaces(2)};
                   padding-right: ${spaces(2)};
-                  padding-bottom: ${footerButtonContent
-                    ? spaces(0.75)
-                    : spaces(1.5)};
+                  padding-bottom: ${spaces(1)};
                 }
-                background: ${backgroundColor(finalColor)};
+
+                &:hover {
+                  background: ${colors('yellow100')};
+                }
               `}
             >
-              {children}
-            </div>
-            {footerButtonContent && (
-              <button
-                type="button"
-                onClick={footerButtonOnClick}
-                css={css`
-                  padding-top: ${spaces(1)};
-                  padding-left: ${spaces(1)};
-                  padding-right: ${spaces(1)};
-                  padding-bottom: ${spaces(1)};
-                  background: ${colors('white')};
-                  border-left: none;
-                  border-right: none;
-                  border-bottom: none;
-                  border-top: 2px solid ${borderColor(finalColor)};
-                  width: 100%;
-                  outline: 0;
-                  font-weight: bold;
-                  cursor: pointer;
-
-                  ${ns} {
-                    padding-top: ${spaces(1)};
-                    padding-left: ${spaces(2)};
-                    padding-right: ${spaces(2)};
-                    padding-bottom: ${spaces(1)};
-                  }
-
-                  &:hover {
-                    background: ${colors('yellow100')};
-                  }
-                `}
-              >
-                {footerButtonContent}
-              </button>
-            )}
-          </div>{' '}
-        </div>
-      </CardContext.Provider>
-      {isLast && (
-        <div
-          css={css`
-            width: 1.25rem;
-            height: 2rem;
-            margin: 0 auto;
-            background: ${colors('indigo200')};
-          `}
-        />
-      )}
-    </>
-  )
-}
+              {footerButtonContent}
+            </button>
+          )}
+        </div>{' '}
+      </div>
+    </CardContext.Provider>
+    {isLast && (
+      <div
+        css={css`
+          width: 1.25rem;
+          height: 2rem;
+          margin: 0 auto;
+          background: ${colors('indigo200')};
+        `}
+      />
+    )}
+  </>
+)
 
 Card.defaultProps = {
-  color: 'white'
+  color: 'white',
+  cardActionTaken: 'default'
 }
 
 export default Card

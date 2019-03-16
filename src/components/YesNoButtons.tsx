@@ -1,14 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React, { useContext, useState } from 'react'
-import CardContext from 'src/components/CardContext'
+import React, { useContext } from 'react'
 import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
+import CardActionContext from 'src/components/CardActionContext'
 export const jsxBabelFix = jsx
-
-type YesNoButtonsSelection = 'default' | 'yes' | 'no'
 
 interface YesNoButtonsProps {
   answer: 'yes' | 'no'
@@ -63,23 +61,26 @@ const Button = ({ status, children, onClick }: ButtonProps) => (
 )
 
 const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
-  const [selection, setSelection] = useState<YesNoButtonsSelection>('default')
-  const { updateColor } = useContext(CardContext)
-  const isCorrect = selection === answer
+  const {
+    cardActionTaken,
+    cardActionResult,
+    setCardActionResult,
+    takeCardAction
+  } = useContext(CardActionContext)
   const onButtonClick = (
     actual: YesNoButtonsProps['answer'],
     expected: YesNoButtonsProps['answer']
   ) => {
     return () => {
-      if (selection === 'default') {
-        setSelection(actual)
+      if (actual === 'yes') {
+        takeCardAction('yesSelected')
+      } else {
+        takeCardAction('noSelected')
       }
-      if (updateColor) {
-        if (actual === expected) {
-          updateColor('green')
-        } else {
-          updateColor('orange')
-        }
+      if (actual === expected) {
+        setCardActionResult('correct')
+      } else {
+        setCardActionResult('incorrect')
       }
     }
   }
@@ -88,15 +89,14 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
       <div
         css={css`
           text-align: center;
-          margin: ${spaces(2)} 0
-            ${selection === 'default' ? spaces(1.75) : spaces(1.25)};
+          margin: ${spaces(2)} 0 ${spaces(1.5)};
         `}
       >
         <Button
           status={
-            selection === 'default'
+            cardActionTaken === 'default'
               ? 'default'
-              : selection === 'yes'
+              : cardActionTaken === 'yesSelected'
               ? 'active'
               : 'inactive'
           }
@@ -106,9 +106,9 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
         </Button>
         <Button
           status={
-            selection === 'default'
+            cardActionTaken === 'default'
               ? 'default'
-              : selection === 'no'
+              : cardActionTaken === 'noSelected'
               ? 'active'
               : 'inactive'
           }
@@ -117,7 +117,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizNo')}
         </Button>
       </div>
-      {selection !== 'default' && (
+      {cardActionResult !== 'default' && (
         <>
           <P
             css={css`
@@ -126,23 +126,15 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           >
             <Em>
               <strong>
-                {isCorrect ? h('yesNoQuizCorrect') : h('yesNoQuizIncorrect')}
+                {cardActionResult === 'correct'
+                  ? h('yesNoQuizCorrect')
+                  : h('yesNoQuizIncorrect')}
               </strong>
               {locale === 'en' && ' '}
-              {isCorrect
+              {cardActionResult === 'correct'
                 ? h('yesNoQuizCorrectPostfix')
                 : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
             </Em>
-          </P>
-          <P
-            css={css`
-              text-align: center;
-            `}
-          >
-            ↓{' '}
-            {locale === 'en'
-              ? 'Please continue below!'
-              : 'そのまま読み進めてみてください!'}
           </P>
         </>
       )}
