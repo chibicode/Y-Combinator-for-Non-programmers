@@ -11,7 +11,7 @@ export default () => (
       <Em>CSmoji</Em>
       では、
       <Em>絵文字</Em>で学べる
-      <Em>コンピューターサイエンス(CS)</Em>
+      <Em>コンピューターサイエンス</Em>
       の無料レッスンです。<Emoji>😉</Emoji>
     </P>
     <P>
