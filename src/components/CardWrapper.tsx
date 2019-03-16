@@ -4,6 +4,7 @@ import { CardProps } from 'src/components/Card'
 import { EpisodeCardType } from 'src/components/EpisodeCardList'
 import h from 'src/lib/h'
 import CardActionContext from 'src/components/CardActionContext'
+import useCardScroll from 'src/hooks/useCardScroll'
 
 interface CardWrapperProps {
   slideNumber?: number
@@ -58,6 +59,7 @@ const CardWrapper = ({
     setCardActionTaken(cardAction)
     setLastVisibleCardIndex()
   }
+  const domRef = useCardScroll<HTMLDivElement>(cardActionTaken)
   return (
     <CardActionContext.Provider
       value={{
@@ -67,16 +69,18 @@ const CardWrapper = ({
         cardActionResult
       }}
     >
-      <Card
-        {...{ slideNumber, slideCount, isLast, children, cardActionTaken }}
-        color={cardActionToColor(cardActionResult) || typeToColor(type)}
-        footerButtonContent={
-          hasFooterButton(type, cardActionTaken) && (
-            <FooterButtonContent type={type} />
-          )
-        }
-        footerButtonOnClick={() => takeCardAction('skipped')}
-      />
+      <div ref={domRef}>
+        <Card
+          {...{ slideNumber, slideCount, isLast, children, cardActionTaken }}
+          color={cardActionToColor(cardActionResult) || typeToColor(type)}
+          footerButtonContent={
+            hasFooterButton(type, cardActionTaken) && (
+              <FooterButtonContent type={type} />
+            )
+          }
+          footerButtonOnClick={() => takeCardAction('skipped')}
+        />
+      </div>
     </CardActionContext.Provider>
   )
 }
