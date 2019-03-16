@@ -4,6 +4,7 @@ import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import pathHelpers from 'src/lib/pathHelpers'
 import t, { allTitles } from 'src/lib/titles'
+import GlobalContextSetter from 'src/components/GlobalContextSetter'
 export const jsxBabelFix = jsx
 
 interface EpisodePageWrapperProps {
@@ -16,41 +17,43 @@ const EpisodePageWrapper = ({
   lessonName,
   episodeNumber
 }: EpisodePageWrapperProps) => (
-  <EpisodePage
-    lessonName={lessonName}
-    lessonTitle={t(`${lessonName}Title` as keyof typeof allTitles)}
-    episodeTitleString={
-      episodeNumber
-        ? `${episodeTitlePrefix(episodeNumber, lessonName).prefix}: ${t(
-            `${lessonName}Episode${episodeNumber}` as keyof typeof allTitles
-          )}`
-        : undefined
-    }
-    episodeTitle={
-      episodeNumber ? (
-        <>
-          {episodeTitlePrefix(episodeNumber, lessonName).prefix}:{' '}
-          <span
-            css={css`
-              color: ${episodeTitlePrefix(episodeNumber, lessonName).color};
-            `}
-          >
-            {t(
+  <GlobalContextSetter {...{ lessonName, episodeNumber }}>
+    <EpisodePage
+      lessonName={lessonName}
+      lessonTitle={t(`${lessonName}Title` as keyof typeof allTitles)}
+      episodeTitleString={
+        episodeNumber
+          ? `${episodeTitlePrefix(episodeNumber, lessonName).prefix}: ${t(
               `${lessonName}Episode${episodeNumber}` as keyof typeof allTitles
-            )}
-          </span>
-        </>
-      ) : (
-        undefined
-      )
-    }
-    episodeNumber={episodeNumber}
-    contentName={
-      (episodeNumber
-        ? `${lessonName}/${episodeNumber}`
-        : `${lessonName}/Intro`) as EpisodePageProps['contentName']
-    }
-  />
+            )}`
+          : undefined
+      }
+      episodeTitle={
+        episodeNumber ? (
+          <>
+            {episodeTitlePrefix(episodeNumber, lessonName).prefix}:{' '}
+            <span
+              css={css`
+                color: ${episodeTitlePrefix(episodeNumber, lessonName).color};
+              `}
+            >
+              {t(
+                `${lessonName}Episode${episodeNumber}` as keyof typeof allTitles
+              )}
+            </span>
+          </>
+        ) : (
+          undefined
+        )
+      }
+      episodeNumber={episodeNumber}
+      contentName={
+        (episodeNumber
+          ? `${lessonName}/${episodeNumber}`
+          : `${lessonName}/Intro`) as EpisodePageProps['contentName']
+      }
+    />
+  </GlobalContextSetter>
 )
 
 export default EpisodePageWrapper

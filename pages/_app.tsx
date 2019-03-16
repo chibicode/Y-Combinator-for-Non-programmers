@@ -1,7 +1,9 @@
-import App from 'next/app'
+import React from 'react'
+import App, { Container } from 'next/app'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { pageview } from 'src/lib/gtag'
+import GlobalState from 'src/components/GlobalState'
 
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start())
@@ -11,4 +13,15 @@ Router.events.on('routeChangeComplete', (url: string) => {
 })
 Router.events.on('routeChangeError', () => NProgress.done())
 
-export default App
+export default class MyApp extends App {
+  public render() {
+    const { Component, pageProps } = this.props
+    return (
+      <Container>
+        <GlobalState>
+          <Component {...pageProps} />
+        </GlobalState>
+      </Container>
+    )
+  }
+}
