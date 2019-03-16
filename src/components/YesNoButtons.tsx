@@ -5,6 +5,7 @@ import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
+import { CardActionResult } from 'src/components/CardWrapper'
 import CardActionContext from 'src/components/CardActionContext'
 export const jsxBabelFix = jsx
 
@@ -14,51 +15,59 @@ interface YesNoButtonsProps {
 
 interface ButtonProps {
   status: 'default' | 'active' | 'inactive'
+  result: CardActionResult
   children: React.ReactNode
   onClick: React.MouseEventHandler
 }
 
-const Button = ({ status, children, onClick }: ButtonProps) => (
-  <button
-    disabled={status !== 'default'}
-    onClick={onClick}
-    css={css`
-      cursor: ${status === 'default' ? 'pointer' : 'default'};
-      padding: ${spaces(0.75)} ${spaces(1)};
-      border-radius: ${radii(0.5)};
-      margin: 0 ${spaces(0.5)};
-      border: 2px solid ${colors('blue600')};
-      font-weight: bold;
-      opacity: ${status === 'inactive' ? 0.5 : 1};
-      background: ${status === 'active'
-        ? colors('yellow100')
-        : colors('white')};
-      color: ${colors('grey800')};
-      text-decoration: none;
-      line-height: ${lineHeights(1)};
-      -webkit-user-select: none;
-      box-shadow: ${status === 'active'
-        ? `inset 0 0 0 1px ${colors('blue600')}`
-        : 'none'};
-
-      &:focus {
-        box-shadow: inset 0 0 0 1px ${colors('blue600')};
-        outline: none;
-      }
-
-      &:hover,
-      &:active {
-        background-color: ${status === 'default'
-          ? colors('yellow100')
-          : status === 'active'
+const Button = ({ result, status, children, onClick }: ButtonProps) => {
+  const borderColor = {
+    correct: colors('green600'),
+    default: colors('blue600'),
+    incorrect: colors('deepOrange600')
+  }[result]
+  return (
+    <button
+      disabled={status !== 'default'}
+      onClick={onClick}
+      css={css`
+        cursor: ${status === 'default' ? 'pointer' : 'default'};
+        padding: ${spaces(0.75)} ${spaces(1)};
+        border-radius: ${radii(0.5)};
+        margin: 0 ${spaces(0.5)};
+        border: 2px solid ${borderColor};
+        font-weight: bold;
+        opacity: ${status === 'inactive' ? 0.5 : 1};
+        background: ${status === 'active'
           ? colors('yellow100')
           : colors('white')};
-      }
-    `}
-  >
-    {children}
-  </button>
-)
+        color: ${colors('grey800')};
+        text-decoration: none;
+        line-height: ${lineHeights(1)};
+        -webkit-user-select: none;
+        box-shadow: ${status === 'active'
+          ? `inset 0 0 0 1px ${borderColor}`
+          : 'none'};
+
+        &:focus {
+          box-shadow: inset 0 0 0 1px ${borderColor};
+          outline: none;
+        }
+
+        &:hover,
+        &:active {
+          background-color: ${status === 'default'
+            ? colors('yellow100')
+            : status === 'active'
+            ? colors('yellow100')
+            : colors('white')};
+        }
+      `}
+    >
+      {children}
+    </button>
+  )
+}
 
 const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
   const {
@@ -93,6 +102,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
         `}
       >
         <Button
+          result={cardActionResult}
           status={
             cardActionTaken === 'default'
               ? 'default'
@@ -106,6 +116,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizYes')}
         </Button>
         <Button
+          result={cardActionResult}
           status={
             cardActionTaken === 'default'
               ? 'default'
