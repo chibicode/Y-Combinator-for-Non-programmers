@@ -21,14 +21,14 @@ const EpisodePageWrapper = ({
       lessonName={lessonName}
       lessonTitle={t(`${lessonName}Title` as keyof typeof allTitles)}
       episodeTitleString={
-        episodeNumber
+        episodeNumber > 0
           ? `${episodeTitlePrefix(episodeNumber, lessonName).prefix}: ${t(
               `${lessonName}Episode${episodeNumber}` as keyof typeof allTitles
             )}`
           : undefined
       }
       episodeTitle={
-        episodeNumber ? (
+        episodeNumber > 0 ? (
           <>
             {episodeTitlePrefix(episodeNumber, lessonName).prefix}:{' '}
             <span

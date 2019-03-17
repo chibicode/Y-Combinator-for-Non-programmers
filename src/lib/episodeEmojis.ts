@@ -4,7 +4,7 @@ const episodeEmojis: {
   [lessonName in string]: { [lessonNumber in number | string]: string[] }
 } = {
   yc: {
-    index: ['🤔', '🤔', '🤔'],
+    0: ['🤔', '🤔', '🤔'],
     1: ['🍱', '🍱', '🍱'],
     2: locale === 'jp' ? ['🀄️', '🀄️', '🀄️'] : ['Ⓜ', 'Ⓜ', 'Ⓜ'],
     3: ['😎', '😎', '😎'],
