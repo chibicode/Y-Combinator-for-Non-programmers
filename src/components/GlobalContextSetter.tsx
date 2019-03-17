@@ -5,7 +5,7 @@ import pathHelpers from 'src/lib/pathHelpers'
 
 interface GlobalContextProviderProps {
   children: React.ReactNode
-  episodeNumber?: number
+  episodeNumber: number
   lessonName: keyof typeof pathHelpers
 }
 
@@ -14,15 +14,20 @@ const GlobalContextSetter = ({
   lessonName,
   children
 }: GlobalContextProviderProps & WithRouterProps) => {
-  const { initialEpisode, setInitialEpisode } = useContext(GlobalContext)
+  const { furthestEpisodes, setFurthestEpisodes } = useContext(GlobalContext)
   useEffect(() => {
-    if (!initialEpisode.lessonName) {
-      setInitialEpisode({
-        episodeNumber,
-        lessonName
+    const furthestEpisodeForThisLesson = furthestEpisodes[lessonName]
+    if (
+      !furthestEpisodeForThisLesson ||
+      (typeof furthestEpisodeForThisLesson !== 'undefined' &&
+        furthestEpisodeForThisLesson < episodeNumber)
+    ) {
+      setFurthestEpisodes({
+        ...furthestEpisodes,
+        [lessonName]: episodeNumber
       })
     }
-  }, [episodeNumber, initialEpisode.lessonName, lessonName, setInitialEpisode])
+  }, [episodeNumber, furthestEpisodes, lessonName, setFurthestEpisodes])
   return <React.Fragment>{children}</React.Fragment>
 }
 

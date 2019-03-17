@@ -8,6 +8,7 @@ type EpisodeHeroContextProps = Pick<
 
 export const episodeHeroContextDefault: EpisodeHeroContextProps = {
   lessonName: 'yc',
+  episodeNumber: 0,
   lessonTitle: ''
 }
 

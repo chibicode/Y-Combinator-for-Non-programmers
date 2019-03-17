@@ -8,8 +8,7 @@ import GlobalContextSetter from 'src/components/GlobalContextSetter'
 export const jsxBabelFix = jsx
 
 interface EpisodePageWrapperProps {
-  episodeNumber?: number
-  episodeName?: string
+  episodeNumber: number
   lessonName: keyof typeof pathHelpers
 }
 
@@ -48,9 +47,7 @@ const EpisodePageWrapper = ({
       }
       episodeNumber={episodeNumber}
       contentName={
-        (episodeNumber
-          ? `${lessonName}/${episodeNumber}`
-          : `${lessonName}/Intro`) as EpisodePageProps['contentName']
+        `${lessonName}/${episodeNumber}` as EpisodePageProps['contentName']
       }
     />
   </GlobalContextSetter>

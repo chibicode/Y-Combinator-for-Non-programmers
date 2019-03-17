@@ -1,23 +1,20 @@
 import React from 'react'
 import pathHelpers from 'src/lib/pathHelpers'
 
-export interface InitialEpisode {
-  lessonName?: keyof typeof pathHelpers
-  episodeNumber?: number
-}
+export type FurthestEpisodes = { [k in keyof typeof pathHelpers]?: number }
 
 export interface GlobalContextProps {
   initialRender: boolean
-  initialEpisode: InitialEpisode
+  furthestEpisodes: FurthestEpisodes
   setInitialRender: React.Dispatch<React.SetStateAction<boolean>>
-  setInitialEpisode: React.Dispatch<React.SetStateAction<InitialEpisode>>
+  setFurthestEpisodes: React.Dispatch<React.SetStateAction<FurthestEpisodes>>
 }
 
 export const globalContextDefault: GlobalContextProps = {
   initialRender: true,
-  initialEpisode: {},
+  furthestEpisodes: {},
   setInitialRender: () => {},
-  setInitialEpisode: () => {}
+  setFurthestEpisodes: () => {}
 }
 
 export default React.createContext<GlobalContextProps>(globalContextDefault)

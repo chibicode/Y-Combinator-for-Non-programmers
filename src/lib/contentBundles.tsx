@@ -15,6 +15,11 @@ export interface BundleTypes {
     en: React.ComponentType<any> & LoadableComponent
   }
 
+  'yc/0': {
+    jp: React.ComponentType<any> & LoadableComponent
+    en: React.ComponentType<any> & LoadableComponent
+  }
+
   'yc/1': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
@@ -69,11 +74,6 @@ export interface BundleTypes {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
-
-  'yc/Intro': {
-    jp: React.ComponentType<any> & LoadableComponent
-    en: React.ComponentType<any> & LoadableComponent
-  }
 }
 
 const bundles: BundleTypes = {
@@ -102,6 +102,18 @@ const bundles: BundleTypes = {
       // @ts-ignore - import isn't typed correctly
       () =>
         import(/* webpackChunkName: 'others/Welcome.jp' */ 'src/contents/others/Welcome.jp'),
+      { loading: () => <DynamicLoading /> }
+    )
+  },
+  'yc/0': {
+    en: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/0.en' */ 'src/contents/yc/0.en'),
+      { loading: () => <DynamicLoading /> }
+    ),
+    jp: dynamic(
+      // @ts-ignore - import isn't typed correctly
+      () => import(/* webpackChunkName: 'yc/0.jp' */ 'src/contents/yc/0.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
@@ -234,20 +246,6 @@ const bundles: BundleTypes = {
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
       () => import(/* webpackChunkName: 'yc/9.jp' */ 'src/contents/yc/9.jp'),
-      { loading: () => <DynamicLoading /> }
-    )
-  },
-  'yc/Intro': {
-    en: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'yc/Intro.en' */ 'src/contents/yc/Intro.en'),
-      { loading: () => <DynamicLoading /> }
-    ),
-    jp: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'yc/Intro.jp' */ 'src/contents/yc/Intro.jp'),
       { loading: () => <DynamicLoading /> }
     )
   }

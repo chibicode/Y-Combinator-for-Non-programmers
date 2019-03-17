@@ -48,7 +48,7 @@ export default () => {
                 <Em>
                   <Strong>{t('ycTitle')}</Strong>
                 </Em>
-                」です。<Em>約60分</Em>
+                」です。<Em>約45分</Em>
                 で終えることができるので、通勤・通学・昼休みの時間にやるのにぴったりです。ぜひお楽しみください！
               </P>
             </EpisodeHero>

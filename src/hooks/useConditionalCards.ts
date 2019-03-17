@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import GlobalContext from 'src/components/GlobalContext'
+import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
 import { EpisodeCardListType } from 'src/components/EpisodeCardList'
 
 const getNextYesNoQuizIndex = (
@@ -14,8 +16,13 @@ const getNextYesNoQuizIndex = (
 }
 
 const useConditionalCards = (cards: EpisodeCardListType) => {
+  const { furthestEpisodes } = useContext(GlobalContext)
+  const { lessonName, episodeNumber } = useContext(EpisodeHeroContext)
+  const furthestEpisodeForThisLesson = furthestEpisodes[lessonName]
   const [nextYesNoQuizIndex, setNextYesNoQuizIndex] = useState(
-    getNextYesNoQuizIndex(cards)
+    furthestEpisodeForThisLesson && episodeNumber < furthestEpisodeForThisLesson
+      ? cards.length - 1
+      : getNextYesNoQuizIndex(cards)
   )
   const setLastVisibleCardIndex = () => {
     setNextYesNoQuizIndex(getNextYesNoQuizIndex(cards, nextYesNoQuizIndex + 1))
