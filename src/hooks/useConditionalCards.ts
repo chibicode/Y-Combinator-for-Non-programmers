@@ -25,7 +25,11 @@ const useConditionalCards = (cards: EpisodeCardListType) => {
       : getNextYesNoQuizIndex(cards)
   )
   const setLastVisibleCardIndex = () => {
-    setNextYesNoQuizIndex(getNextYesNoQuizIndex(cards, nextYesNoQuizIndex + 1))
+    if (nextYesNoQuizIndex + 1 < cards.length) {
+      setNextYesNoQuizIndex(
+        getNextYesNoQuizIndex(cards, nextYesNoQuizIndex + 1)
+      )
+    }
   }
 
   return {
