@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core'
 import {
   Blockquote,
   Em,
+  Img,
   ExternalLink,
   H3,
   P,
@@ -67,7 +68,7 @@ export default () => {
                 」という方には、コンピューターサイエンスを学ぶのがおすすめです。
               </P>
               <P>
-                もちろん、短期間ですべてを学ぶことはできません。だから当サイトでは、コンピューターサイエンスという学問のごく一部を紹介し、読者の皆様に
+                もちろん、短期間ですべてを学ぶことはできません。だから当サイトでは、コンピューターサイエンスという学問のごく一部を紹介し、みなさんに
                 <Em>
                   「コンピューターサイエンスって面白い！」「もっと学んでみたい！」
                 </Em>
@@ -77,13 +78,50 @@ export default () => {
           )
         },
         {
-          title: 'プログラミングはやりません',
+          title: 'パソコンでもスマホでもOK！',
           content: (
-            <P>
-              当サイトでは、よくあるプログラミング学習サイトとは違い、
-              <Em>プログラムを書く必要はありません。</Em>
-              スマホひとつで、最初から最後まで終えることができます。プログラミング未経験者でも大歓迎です。数学の知識も必要ありません。
-            </P>
+            <>
+              <EmojiSeparator halfMarginBottom emojis={['💻', '🆗', '📱']} />
+              <P>
+                当サイトでは、よくあるプログラミング学習サイトとは違い、
+                <Em>プログラムを書く必要はありません。</Em>
+                だから、スマホひとつで完結します。プログラミング未経験者でも大歓迎です。数学の知識もいりません。中学生レベルの学力があれば最後までできます。
+              </P>
+            </>
+          )
+        },
+        {
+          title: 'このレッスンを作ったのは誰ですか？',
+          content: (
+            <>
+              <EmojiSeparator halfMarginBottom emojis={['🇯🇵', '👨🏻‍💻', '🇺🇸']} />
+              <P
+                css={css`
+                  margin-top: 0;
+                `}
+              >
+                申し遅れました。
+                <Strong>上杉周作</Strong>
+                と申します。アメリカの大学でコンピューターサイエンスを学んだ米国在住のプログラマーです。最近は、『
+                <ExternalLink href="https://amzn.to/2QlZIqm">
+                  ファクトフルネス(Factfulness)
+                </ExternalLink>
+                』という本を共訳しました。
+              </P>
+              <P>
+                <Img
+                  size="small"
+                  src="/static/images/yc/factfulness.jpg"
+                  alt="ファクトフルネス"
+                />
+              </P>
+              <P>
+                <ExternalLink href="https://jp.chibicode.com/">
+                  筆者の詳しいプロフィールとブログはこちら
+                </ExternalLink>
+                。
+              </P>
+            </>
           )
         },
         {
@@ -116,8 +154,11 @@ export default () => {
                 <Strong>
                   <Em>Yコンビネーター</Em>
                 </Strong>
-                」とは、「繰り返し処理」を実現するためのプログラミングのテクニックだ。
-                <Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か?
+                」とは、
+                <Em>
+                  「繰り返し処理」に関連するコンピューターサイエンス用語だ
+                </Em>
+                。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か?
               </P>
               <P>
                 ↓ 正しいと思う方を選んでみてください。テキトーに選んでも大丈夫！
@@ -134,17 +175,37 @@ export default () => {
               <P>
                 <Em>
                   「<Strong>Yコンビネーター</Strong>
-                  」とは、「繰り返し処理」を実現するためのプログラミングのテクニックです。
+                  」とは、「繰り返し処理」に関連するコンピューターサイエンス用語です。
                 </Em>
-                それがどういうことなのか、これから学んでいきましょう！
+                どういう意味なのか、これから学んでいきましょう！
               </P>
               <YcNextLessonButton
                 nextEpisodeNumber={1}
                 primaryTextType="start"
               />
               <P>
-                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉を知っている方は、続くコラムも読んでみてください。
+                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉を知っている方は、この下のコラムも読んでみてください。(読み飛ばしても大丈夫です。)
               </P>
+            </>
+          )
+        },
+        {
+          title: 'プログラミングができる方は…',
+          type: 'sideNote' as 'sideNote',
+          preview: (
+            <>
+              <p>繰り返し処理といえば</p>
+            </>
+          ),
+          content: (
+            <>
+              <P>Hello</P>
+            </>
+          )
+        },
+        {
+          content: (
+            <>
               <Ul>
                 <UlLi>
                   <Strong>ITベンチャー業界にいる方なら、</Strong>
@@ -278,41 +339,7 @@ export default () => {
             </>
           )
         },
-        {
-          content: (
-            <>
-              <H3>このレッスンを作ったのは誰ですか？</H3>
-              <EmojiSeparator
-                emojis={['👨‍🎤']}
-                Component={P}
-                spacing="sm"
-                size="lg"
-              />
-              <P
-                css={css`
-                  margin-top: 0;
-                `}
-              >
-                申し遅れました。
-                <Strong>上杉周作</Strong>
-                と申します。
-                <ExternalLink href="https://jp.chibicode.com/">
-                  たまにブログを書いている
-                </ExternalLink>
-                米国在住のエンジニアです。旅行好きで、
-                <ExternalLink href="https://jp.chibicode.com/world-trip/">
-                  2017年はゆるく世界一周していました
-                </ExternalLink>
-                。最近は、Factfulness
-                (ファクトフルネス)という本を翻訳しました。(
-                <ExternalLink href="https://amzn.to/2QlZIqm">
-                  Amazonリンク
-                </ExternalLink>
-                )
-              </P>
-            </>
-          )
-        },
+
         {
           content: (
             <>

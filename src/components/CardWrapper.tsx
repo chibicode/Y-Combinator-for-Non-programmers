@@ -11,6 +11,7 @@ interface CardWrapperProps {
   slideCount?: number
   isLast?: boolean
   children: React.ReactNode
+  preview?: React.ReactNode
   type?: EpisodeCardType['type']
   title?: React.ReactNode
   setLastVisibleCardIndex: () => void
@@ -35,7 +36,8 @@ const cardActionToColor = (
 const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
   type
     ? {
-        yesNoQuiz: 'blue' as 'blue'
+        yesNoQuiz: 'blue' as 'blue',
+        sideNote: 'indigo' as 'indigo'
       }[type]
     : 'white'
 
@@ -52,6 +54,7 @@ const CardWrapper = ({
   slideCount,
   isLast,
   children,
+  preview,
   type,
   setLastVisibleCardIndex,
   title
@@ -80,6 +83,7 @@ const CardWrapper = ({
             slideNumber,
             slideCount,
             isLast,
+            preview,
             children,
             cardActionTaken,
             title

@@ -6,6 +6,7 @@ import locale from 'src/lib/locale'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
+import CardContent from 'src/components/CardContent'
 export const jsxBabelFix = jsx
 
 export interface CardProps {
@@ -17,6 +18,7 @@ export interface CardProps {
   slideCount?: number
   isLast?: boolean
   title?: React.ReactNode
+  preview?: React.ReactNode
   cardActionTaken: CardAction
 }
 
@@ -70,6 +72,7 @@ const Card = ({
   title,
   color,
   children,
+  preview,
   slideNumber,
   slideCount,
   footerButtonContent,
@@ -151,7 +154,7 @@ const Card = ({
             `}
           >
             {title && <H3>{title}</H3>}
-            {children}
+            <CardContent preview={preview}>{children}</CardContent>
           </div>
           {footerButtonContent && (
             <button

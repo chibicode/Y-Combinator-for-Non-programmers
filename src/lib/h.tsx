@@ -395,6 +395,10 @@ export const allTranslations = {
   indexPageLink: () => ({
     en: 'View All Pages',
     jp: '目次'
+  }),
+  sideNotePrefix: () => ({
+    en: 'Side Note',
+    jp: '余談'
   })
 }
 
