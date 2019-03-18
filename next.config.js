@@ -33,8 +33,12 @@ const config = withCSS(
       return config
     },
     env: {
-      productionLocale: process.env.PRODUCTION_LOCALE
+      locale: process.env.PRODUCTION_LOCALE,
+      showHiddenCardsOnQuiz: process.env.SHOW_HIDDEN_CARDS_ON_QUIZ
     },
+    // For locale, if running 2 servers (JP and EN) locally, if you use build-time config
+    // (env instead of publicRuntimeConfig) then the config overlaps in both servers.
+    // So must use publicRuntimeConfig instead.
     publicRuntimeConfig: {
       devLocale: process.env.DEV_LOCALE
     }

@@ -18,8 +18,8 @@
     "twemoji": "^11.3.0"
   },
   "scripts": {
-    "jp": "DEV_LOCALE=jp next -p 3001",
-    "en": "DEV_LOCALE=en next -p 3000",
+    "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 3001",
+    "en": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=en next -p 3000",
     "dev": "yarn tsc && yarn eslint && concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
     "contents:watch": "node ./scripts/generateContentsBundle.js watch",
