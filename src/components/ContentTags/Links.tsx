@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { colors } from 'src/lib/theme'
 export const jsxBabelFix = jsx
 
-const commonLinkClass = css`
+export const commonLinkClass = css`
   &:hover {
     background-color: ${colors('pink50')};
   }

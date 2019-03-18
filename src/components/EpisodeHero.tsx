@@ -105,14 +105,10 @@ const EpisodeHero = ({ children }: EpisodeHeroProps) => {
           </h1>
         )}
       </>
-      {episodeNumber ? (
-        <EmojiSeparator
-          size="lg"
-          emojis={episodeEmojis[lessonName][episodeNumber]}
-        />
-      ) : (
-        <EmojiSeparator size="lg" emojis={episodeEmojis[lessonName].index} />
-      )}
+      <EmojiSeparator
+        size="lg"
+        emojis={episodeEmojis[lessonName][episodeNumber]}
+      />
       {children}
     </>
   )

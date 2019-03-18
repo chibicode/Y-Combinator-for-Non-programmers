@@ -1,4 +1,4 @@
 export const yc = (params?: string | number) =>
-  `/lessons/y-combinator-for-non-programmers${params ? `/${params}` : ''}`
+  `/yc${params ? `/${params}` : ''}`
 
 export default { yc }

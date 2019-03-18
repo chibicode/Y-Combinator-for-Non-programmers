@@ -19,8 +19,7 @@ export interface EpisodePageProps {
   lessonTitle: string
   episodeTitle?: React.ReactNode
   episodeTitleString?: React.ReactNode
-  episodeNumber?: number
-  episodeName?: string
+  episodeNumber: number
   contentName: ContentProps['name']
 }
 
@@ -69,7 +68,7 @@ const EpisodePage = ({
             text-align: left;
           `}
         >
-          {episodeNumber && episodeNumber >= 1 && (
+          {episodeNumber >= 1 && (
             <InternalLink
               href={pathHelpers[lessonName](
                 episodeNumber === 1 ? undefined : episodeNumber - 1

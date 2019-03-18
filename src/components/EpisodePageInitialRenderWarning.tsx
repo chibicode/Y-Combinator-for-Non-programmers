@@ -1,19 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useContext } from 'react'
+import Card from 'src/components/Card'
 import Content from 'src/components/Content'
+import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
 import GlobalContext from 'src/components/GlobalContext'
-import SideNoteSection from 'src/components/SideNoteSection'
-import pathHelpers from 'src/lib/pathHelpers'
 
-const EpisodePageInitialRenderWarning = ({
-  lessonName
-}: {
-  lessonName: keyof typeof pathHelpers
-}) => {
+const EpisodePageInitialRenderWarning = () => {
+  const { lessonName, episodeNumber } = useContext(EpisodeHeroContext)
   const { initialRender } = useContext(GlobalContext)
-  return initialRender ? (
-    <SideNoteSection color="yellow">
+  return !!episodeNumber && initialRender ? (
+    <Card color="yellow">
       <Content name="others/NewUser" componentProps={{ lessonName }} />
-    </SideNoteSection>
+    </Card>
   ) : null
 }
 

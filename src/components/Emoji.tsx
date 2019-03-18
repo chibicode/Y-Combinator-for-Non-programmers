@@ -64,7 +64,7 @@ const Emoji = ({
       `,
       !noVerticalTransform &&
         css`
-          transform: translateY(-0.1em);
+          transform: translateY(-0.125em);
         `
     ]}
   >

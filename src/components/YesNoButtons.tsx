@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React, { useContext, useState } from 'react'
-import CardContext from 'src/components/CardContext'
+import React, { useContext } from 'react'
 import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
+import { CardAction, CardActionResult } from 'src/components/CardWrapper'
+import CardActionContext from 'src/components/CardActionContext'
 export const jsxBabelFix = jsx
-
-type YesNoButtonsSelection = 'default' | 'yes' | 'no'
 
 interface YesNoButtonsProps {
   answer: 'yes' | 'no'
@@ -16,66 +15,91 @@ interface YesNoButtonsProps {
 
 interface ButtonProps {
   status: 'default' | 'active' | 'inactive'
+  cardActionResult: CardActionResult
+  cardActionTaken: CardAction
   children: React.ReactNode
   onClick: React.MouseEventHandler
 }
 
-const Button = ({ status, children, onClick }: ButtonProps) => (
-  <button
-    disabled={status !== 'default'}
-    onClick={onClick}
-    css={css`
-      cursor: ${status === 'default' ? 'pointer' : 'default'};
-      padding: ${spaces(0.75)} ${spaces(1)};
-      border-radius: ${radii(0.5)};
-      margin: 0 ${spaces(0.5)};
-      border: 2px solid ${colors('grey700')};
-      font-weight: bold;
-      opacity: ${status === 'inactive' ? 0.5 : 1};
-      background: ${status === 'active'
-        ? colors('yellow100')
-        : colors('white')};
-      color: ${colors('grey800')};
-      text-decoration: none;
-      line-height: ${lineHeights(1)};
-      -webkit-user-select: none;
-      box-shadow: ${status === 'active'
-        ? `inset 0 0 0 1px ${colors('grey700')}`
-        : 'none'};
-
-      &:focus {
-        box-shadow: inset 0 0 0 1px ${colors('grey700')};
-        outline: none;
-      }
-
-      &:hover,
-      &:active {
-        background-color: ${status === 'default'
-          ? colors('yellow100')
-          : status === 'active'
+const Button = ({
+  cardActionResult,
+  cardActionTaken,
+  status,
+  children,
+  onClick
+}: ButtonProps) => {
+  const borderColor =
+    cardActionTaken === 'skipped'
+      ? colors('green600')
+      : {
+          correct: colors('green600'),
+          default: colors('blue600'),
+          incorrect: colors('deepOrange600')
+        }[cardActionResult]
+  return (
+    <button
+      disabled={status !== 'default'}
+      onClick={onClick}
+      css={css`
+        cursor: ${status === 'default' ? 'pointer' : 'default'};
+        padding: ${spaces(0.75)} ${spaces(1)};
+        border-radius: ${radii(0.5)};
+        margin: 0 ${spaces(0.5)};
+        border: 2px solid ${borderColor};
+        font-weight: bold;
+        opacity: ${status === 'inactive' ? 0.5 : 1};
+        background: ${status === 'active'
           ? colors('yellow100')
           : colors('white')};
-      }
-    `}
-  >
-    {children}
-  </button>
-)
+        color: ${colors('grey800')};
+        text-decoration: none;
+        line-height: ${lineHeights(1)};
+        -webkit-user-select: none;
+        box-shadow: ${status === 'active'
+          ? `inset 0 0 0 1px ${borderColor}`
+          : 'none'};
+
+        &:focus {
+          box-shadow: inset 0 0 0 1px ${borderColor};
+          outline: none;
+        }
+
+        &:hover,
+        &:active {
+          background-color: ${status === 'default'
+            ? colors('yellow100')
+            : status === 'active'
+            ? colors('yellow100')
+            : colors('white')};
+        }
+      `}
+    >
+      {children}
+    </button>
+  )
+}
 
 const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
-  const [selection, setSelection] = useState<YesNoButtonsSelection>('default')
-  const { updateColor } = useContext(CardContext)
-  const isCorrect = selection === answer
+  const {
+    cardActionTaken,
+    cardActionResult,
+    setCardActionResult,
+    takeCardAction
+  } = useContext(CardActionContext)
   const onButtonClick = (
     actual: YesNoButtonsProps['answer'],
     expected: YesNoButtonsProps['answer']
   ) => {
     return () => {
-      if (selection === 'default') {
-        setSelection(actual)
+      if (actual === 'yes') {
+        takeCardAction('yesSelected')
+      } else {
+        takeCardAction('noSelected')
       }
-      if (actual === expected && updateColor) {
-        updateColor('teal')
+      if (actual === expected) {
+        setCardActionResult('correct')
+      } else {
+        setCardActionResult('incorrect')
       }
     }
   }
@@ -84,15 +108,17 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
       <div
         css={css`
           text-align: center;
-          margin: ${spaces(2.5)} 0
-            ${selection === 'default' ? spaces(1.5) : spaces(1)};
+          margin: ${spaces(2)} 0 ${spaces(1.5)};
         `}
       >
         <Button
+          cardActionResult={cardActionResult}
+          cardActionTaken={cardActionTaken}
           status={
-            selection === 'default'
+            cardActionTaken === 'default'
               ? 'default'
-              : selection === 'yes'
+              : cardActionTaken === 'yesSelected' ||
+                (cardActionTaken === 'skipped' && answer === 'yes')
               ? 'active'
               : 'inactive'
           }
@@ -101,10 +127,13 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizYes')}
         </Button>
         <Button
+          cardActionTaken={cardActionTaken}
+          cardActionResult={cardActionResult}
           status={
-            selection === 'default'
+            cardActionTaken === 'default'
               ? 'default'
-              : selection === 'no'
+              : cardActionTaken === 'noSelected' ||
+                (cardActionTaken === 'skipped' && answer === 'no')
               ? 'active'
               : 'inactive'
           }
@@ -113,7 +142,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizNo')}
         </Button>
       </div>
-      {selection !== 'default' && (
+      {(cardActionResult !== 'default' || cardActionTaken === 'skipped') && (
         <>
           <P
             css={css`
@@ -122,23 +151,19 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           >
             <Em>
               <strong>
-                {isCorrect ? h('yesNoQuizCorrect') : h('yesNoQuizIncorrect')}
+                {cardActionTaken === 'skipped'
+                  ? h('yesNoQuizSkipped')
+                  : cardActionResult === 'correct'
+                  ? h('yesNoQuizCorrect')
+                  : h('yesNoQuizIncorrect')}
               </strong>
               {locale === 'en' && ' '}
-              {isCorrect
+              {cardActionTaken === 'skipped'
+                ? h('yesNoQuizSkippedPostfix', answer === 'yes')
+                : cardActionResult === 'correct'
                 ? h('yesNoQuizCorrectPostfix')
                 : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
             </Em>
-          </P>
-          <P
-            css={css`
-              text-align: center;
-            `}
-          >
-            ↓{' '}
-            {locale === 'en'
-              ? 'Please continue below!'
-              : 'そのまま読み進めてみてください!'}
           </P>
         </>
       )}
