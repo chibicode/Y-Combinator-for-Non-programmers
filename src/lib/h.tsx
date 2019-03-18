@@ -399,6 +399,10 @@ export const allTranslations = {
   sideNotePrefix: () => ({
     en: 'Side Note',
     jp: '余談'
+  }),
+  continueReading: () => ({
+    en: 'Continue reading…',
+    jp: '続きを読む'
   })
 }
 
