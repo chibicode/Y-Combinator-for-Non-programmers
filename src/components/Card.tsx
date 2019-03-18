@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import CardContext from 'src/components/CardContext'
+import CardThemeContext from 'src/components/CardThemeContext'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
@@ -80,7 +80,7 @@ const Card = ({
   isLast
 }: CardProps) => (
   <>
-    <CardContext.Provider
+    <CardThemeContext.Provider
       value={{
         emBackgroundColor: emBackgroundColor(color)
       }}
@@ -200,7 +200,7 @@ const Card = ({
           )}
         </div>{' '}
       </div>
-    </CardContext.Provider>
+    </CardThemeContext.Provider>
     {!isLast && slideNumber !== undefined && (
       <div
         css={css`

@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
+import EpisodeContext from 'src/components/EpisodeContext'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import pathHelpers from 'src/lib/pathHelpers'
 import {
@@ -30,7 +30,7 @@ interface EpisodeHeroProps {
 
 const EpisodeHero = ({ children }: EpisodeHeroProps) => {
   const { lessonName, lessonTitle, episodeTitle, episodeNumber } = useContext(
-    EpisodeHeroContext
+    EpisodeContext
   )
   return (
     <>
