@@ -22,7 +22,7 @@ const NextLessonButton = ({
   <div
     css={css`
       text-align: center;
-      margin: ${spaces(3)} 0 ${spaces(1.5)};
+      margin: ${spaces(2)} 0 ${spaces(2)};
     `}
   >
     <Link href={href} passHref>

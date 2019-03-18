@@ -23,7 +23,7 @@ const EmojiSeparator = ({
   <Component
     css={css`
       text-align: center;
-      margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(1.25)} 0
+      margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(1)} 0
         ${spacing === 'sm' ? 0 : halfMarginBottom ? spaces(0.75) : spaces(1.75)};
       font-size: ${size === 'lg' ? fontSizes(3) : fontSizes(2)};
       ${ns} {

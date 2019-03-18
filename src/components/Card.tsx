@@ -4,6 +4,7 @@ import React from 'react'
 import CardContext from 'src/components/CardContext'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
+import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
 export const jsxBabelFix = jsx
 
@@ -15,6 +16,7 @@ export interface CardProps {
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
+  title?: React.ReactNode
   cardActionTaken: CardAction
 }
 
@@ -65,6 +67,7 @@ const emBackgroundColor = (color: CardProps['color']) =>
   }[color])
 
 const Card = ({
+  title,
   color,
   children,
   slideNumber,
@@ -137,7 +140,7 @@ const Card = ({
                 : spaces(0.5)};
 
               ${ns} {
-                padding-top: ${spaces(2)};
+                padding-top: ${spaces(1.5)};
                 padding-left: ${spaces(2)};
                 padding-right: ${spaces(2)};
                 padding-bottom: ${footerButtonContent
@@ -147,6 +150,7 @@ const Card = ({
               background: ${backgroundColor(color)};
             `}
           >
+            {title && <H3>{title}</H3>}
             {children}
           </div>
           {footerButtonContent && (

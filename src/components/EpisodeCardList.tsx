@@ -5,6 +5,7 @@ import useConditionalCards from 'src/hooks/useConditionalCards'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz'
+  title?: React.ReactNode
   content: React.ReactNode
 }
 
@@ -17,7 +18,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
   return (
     <>
       <EpisodePageInitialRenderWarning />
-      {cards.map(({ type, content }, index) =>
+      {cards.map(({ title, type, content }, index) =>
         index <= lastVisibleCardIndex ? (
           <CardWrapper
             slideNumber={index + 1}
@@ -25,6 +26,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             key={`card${index}`}
             type={type}
             isLast={index < lastVisibleCardIndex}
+            title={title}
             setLastVisibleCardIndex={setLastVisibleCardIndex}
           >
             {content}

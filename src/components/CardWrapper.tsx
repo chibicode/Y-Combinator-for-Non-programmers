@@ -12,6 +12,7 @@ interface CardWrapperProps {
   isLast?: boolean
   children: React.ReactNode
   type?: EpisodeCardType['type']
+  title?: React.ReactNode
   setLastVisibleCardIndex: () => void
 }
 
@@ -52,7 +53,8 @@ const CardWrapper = ({
   isLast,
   children,
   type,
-  setLastVisibleCardIndex
+  setLastVisibleCardIndex,
+  title
 }: CardWrapperProps) => {
   const [cardActionTaken, setCardActionTaken] = useState<CardAction>('default')
   const [cardActionResult, setCardActionResult] = useState<CardActionResult>(
@@ -74,7 +76,14 @@ const CardWrapper = ({
     >
       <div ref={domRef}>
         <Card
-          {...{ slideNumber, slideCount, isLast, children, cardActionTaken }}
+          {...{
+            slideNumber,
+            slideCount,
+            isLast,
+            children,
+            cardActionTaken,
+            title
+          }}
           color={
             cardActionToColor(cardActionTaken, cardActionResult) ||
             typeToColor(type)
