@@ -5,7 +5,6 @@ import {
   Em,
   Img,
   ExternalLink,
-  H3,
   P,
   Strong,
   Ul,
@@ -164,9 +163,9 @@ export default () => {
         },
         {
           type: 'yesNoQuiz' as 'yesNoQuiz',
+          title: h('yesNoQuiz'),
           content: (
             <>
-              <H3>{h('yesNoQuiz')}</H3>
               <P>
                 <Strong>質問:</Strong> このレッスンの題名は「
                 <Strong>あなたの知らないYコンビネーター</Strong>」。この「
@@ -187,9 +186,9 @@ export default () => {
           )
         },
         {
+          title: h('yesNoQuizAnswerHeading', true),
           content: (
             <>
-              <H3>{h('yesNoQuizAnswerHeading', true)}</H3>
               <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} halfMarginBottom />
               <P>
                 <Em>
