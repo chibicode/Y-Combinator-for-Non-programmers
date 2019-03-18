@@ -147,8 +147,8 @@ const Card = ({
                 padding-left: ${spaces(2)};
                 padding-right: ${spaces(2)};
                 padding-bottom: ${footerButtonContent
-                  ? spaces(0.75)
-                  : spaces(1.5)};
+                  ? spaces(0.5)
+                  : spaces(1)};
               }
               background: ${backgroundColor(color)};
             `}
@@ -201,7 +201,7 @@ const Card = ({
         </div>{' '}
       </div>
     </CardContext.Provider>
-    {!isLast && (
+    {!isLast && slideNumber !== undefined && (
       <div
         css={css`
           width: 1.25rem;

@@ -8,19 +8,25 @@ const NewUser = ({
 }: {
   componentProps: { lessonName: keyof typeof pathHelpers }
 }) => (
-  <P>
-    <Strong>こんにちは！</Strong>このページは「
-    <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-      {t(`${componentProps.lessonName}Title` as keyof typeof allTitles)}
-    </InternalLink>
-    」という、コンピューターサイエンスの無料レッスンです。はじめから読むには、
-    <Em>
+  <>
+    <P>
+      <Strong>こんにちは！</Strong>このページは「
       <InternalLink href={pathHelpers[componentProps.lessonName]()}>
-        <Strong>こちらを押してください</Strong>
+        {t(`${componentProps.lessonName}Title` as keyof typeof allTitles)}
       </InternalLink>
-    </Em>
-    。
-  </P>
+      」という、コンピューターサイエンスの無料レッスンです。はじめから読むには、
+      <Em>
+        <InternalLink href={pathHelpers[componentProps.lessonName]()}>
+          <Strong>こちらからどうぞ</Strong>
+        </InternalLink>
+      </Em>
+      。続きから読むには、
+      <InternalLink href={pathHelpers[componentProps.lessonName]('toc')}>
+        こちらの目次からどうぞ
+      </InternalLink>
+      。
+    </P>
+  </>
 )
 
 export default NewUser
