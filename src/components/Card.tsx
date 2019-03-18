@@ -190,7 +190,7 @@ const Card = ({
         </div>{' '}
       </div>
     </CardContext.Provider>
-    {isLast && (
+    {!isLast && (
       <div
         css={css`
           width: 1.25rem;

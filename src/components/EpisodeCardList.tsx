@@ -25,7 +25,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             slideCount={cards.length}
             key={`card${index}`}
             type={type}
-            isLast={index < lastVisibleCardIndex}
+            isLast={index === lastVisibleCardIndex}
             title={title}
             setLastVisibleCardIndex={setLastVisibleCardIndex}
           >

@@ -34,7 +34,7 @@ const useConditionalCards = (cards: EpisodeCardListType) => {
 
   if (process.env.showHiddenCardsOnQuiz) {
     return {
-      lastVisibleCardIndex: cards.length,
+      lastVisibleCardIndex: cards.length - 1,
       setLastVisibleCardIndex: () => {}
     }
   } else {
