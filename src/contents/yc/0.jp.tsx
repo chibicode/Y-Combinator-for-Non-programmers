@@ -15,15 +15,15 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EpisodeHero from 'src/components/EpisodeHero'
-import { introduction } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
+import pathHelpers from 'src/lib/pathHelpers'
+import { InternalLink } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import t from 'src/lib/titles'
 export const jsxBabelFix = jsx
 
 export default () => {
-  let i = 0
   return (
     <EpisodeCardList
       cards={[
@@ -51,7 +51,20 @@ export default () => {
           )
         },
         {
-          title: 'コンピューターサイエンスって何？',
+          title: '続きからはじめる場合',
+          type: 'warning',
+          content: (
+            <P>
+              すでにレッスンを途中まで終えた方は、
+              <InternalLink href={pathHelpers['yc']('toc')}>
+                こちらの目次ページから続きをやってみてください
+              </InternalLink>
+              。
+            </P>
+          )
+        },
+        {
+          title: 'はじめに: コンピューターサイエンスって何？',
           content: (
             <>
               <EmojiSeparator emojis={['🤖', '🤔', '🤖']} halfMarginBottom />

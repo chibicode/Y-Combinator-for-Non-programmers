@@ -53,7 +53,7 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     green: colors('green800'),
     white: colors('indigo500'),
     orange: colors('deepOrange900'),
-    yellow: colors('yellow50'),
+    yellow: colors('yellow900'),
     indigo: colors('indigo500'),
     blue: colors('blue800')
   }[color])
@@ -153,7 +153,15 @@ const Card = ({
               background: ${backgroundColor(color)};
             `}
           >
-            {title && <H3>{title}</H3>}
+            {title && (
+              <H3
+                css={css`
+                  text-align: center;
+                `}
+              >
+                {title}
+              </H3>
+            )}
             <CardContent preview={preview}>{children}</CardContent>
           </div>
           {footerButtonContent && (
