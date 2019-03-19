@@ -10,6 +10,7 @@ import {
   Strong
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
+import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
@@ -138,9 +139,18 @@ export default () => {
               </P>
               {episode1[i++]()}
               <P>
-                上のマスにはサンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
-                があり、下の左右のマスには寿司 <Emoji size="mdlg">🍣</Emoji>{' '}
-                が入っています。
+                上のマスには
+                <EmojiWithText letter="d" />
+                が、真ん中のマスには
+                <EmojiWithText letter="c" />
+                、下のマスには
+                <EmojiWithText letter="a" />
+                がふたつと
+                <EmojiWithText letter="b" />
+                がひとつ入っています。
+              </P>
+              <P>
+                「寿司とハンバーガーが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
               </P>
               <P>
                 もうひとつ、
