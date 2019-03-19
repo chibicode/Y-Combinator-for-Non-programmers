@@ -13,7 +13,6 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
 import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
@@ -88,15 +87,6 @@ export default () => {
   let i = 0
   return (
     <>
-      <EpisodeInfo
-        episodeNumber={1}
-        introText={
-          <>
-            In this level, we’ll cover{' '}
-            <Em>the basics of the puzzles we’ll be solving.</Em>
-          </>
-        }
-      />
       <H3>Let’s Get Started!</H3>
       <P>
         First, we’ll talk about <Strong>Bento Boxes</Strong>.
