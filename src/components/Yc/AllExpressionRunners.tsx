@@ -27,6 +27,12 @@ export const episode1 = [
     />
   ),
   () => (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="default"
+    />
+  ),
+  () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities

@@ -141,7 +141,7 @@ export default () => {
               <P>
                 上のマスには
                 <EmojiWithText letter="d" />
-                が、真ん中のマスには
+                、真ん中のマスには
                 <EmojiWithText letter="c" />
                 、下のマスには
                 <EmojiWithText letter="a" />
@@ -152,6 +152,7 @@ export default () => {
               <P>
                 「寿司とハンバーガーが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
               </P>
+              <EmojiSeparator emojis={['🍣', '🤔', '🍔']} />
               <P>
                 もうひとつ、
                 {h('ycBentoBox')}
@@ -159,12 +160,22 @@ export default () => {
               </P>
               {episode1[i++]()}
               <P>
-                上のマスにはチキン <Emoji size="mdlg">🍗</Emoji>
-                、下の左右のマスにはハンバーガー <Emoji size="mdlg">
-                  🍔
-                </Emoji>{' '}
-                が入っています。
+                上のマスには
+                <EmojiWithText letter="h" />
+                、真ん中のマスには
+                <EmojiWithText letter="g" />
+                、下のマスには
+                <EmojiWithText letter="e" />
+                がひとつと
+                <EmojiWithText letter="f" />
+                がふたつ入っています。
               </P>
+            </>
+          )
+        },
+        {
+          content: (
+            <>
               <P>
                 では次に、
                 {h('ycBentoBox')}のルールを紹介しましょう。
