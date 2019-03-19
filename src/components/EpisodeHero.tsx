@@ -19,7 +19,7 @@ import Logo from 'src/images/CSmoji-Logo.svgr.svg'
 export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
-  line-height: ${lineHeights(1.3)};
+  line-height: ${lineHeights(1.1)};
   letter-spacing: ${letterSpacings('title')};
   text-align: center;
 `
@@ -74,7 +74,6 @@ const EpisodeHero = () => {
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
-                  line-height: ${lineHeights(1.3)};
                   font-size: ${fontSizes(2)};
                   font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};

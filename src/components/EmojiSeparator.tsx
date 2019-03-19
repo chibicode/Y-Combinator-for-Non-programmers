@@ -24,7 +24,7 @@ const EmojiSeparator = ({
     css={css`
       text-align: center;
       margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(1)} 0
-        ${spacing === 'sm' ? 0 : halfMarginBottom ? spaces(0.75) : spaces(1.75)};
+        ${spacing === 'sm' ? 0 : halfMarginBottom ? spaces(0.75) : spaces(1.5)};
       font-size: ${size === 'lg' ? fontSizes(3) : fontSizes(2)};
       ${ns} {
         font-size: ${size === 'lg' ? fontSizes(4) : fontSizes(2.5)};
