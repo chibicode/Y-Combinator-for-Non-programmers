@@ -27,7 +27,7 @@ const navigationLinkClasses = css`
   text-decoration: none;
   color: ${colors('indigo500')};
   font-weight: bold;
-  font-size: ${fontSizes(0.7)};
+  font-size: ${fontSizes(0.85)};
 `
 
 const EpisodePage = ({

@@ -45,16 +45,29 @@ export interface HProps {
     | { name: 'sideNotePrefix' }
     | { name: 'continueReading' }
     | { name: 'titlePrefix' }
+    | { name: 'episodeWelcomeText' }
 }
 
 const H = ({ args }: HProps) => {
   const { lessonName, episodeNumber } = useContext(EpisodeContext)
 
   if (args.name === 'titlePrefix') {
+    return <>{episodeTitlePrefix(episodeNumber, lessonName).prefix}</>
+  }
+  if (args.name === 'episodeWelcomeText') {
     if (locale === 'en') {
-      return <>{episodeTitlePrefix(episodeNumber, lessonName).prefix}</>
+      return (
+        <Strong>
+          Welcome to <H args={{ name: 'titlePrefix' }} />!
+        </Strong>
+      )
     } else {
-      return <>{episodeTitlePrefix(episodeNumber, lessonName).prefix}</>
+      return (
+        <Strong>
+          <H args={{ name: 'titlePrefix' }} />
+          へようこそ！
+        </Strong>
+      )
     }
   }
   if (args.name === 'yesNoQuizSeeAnswer') {

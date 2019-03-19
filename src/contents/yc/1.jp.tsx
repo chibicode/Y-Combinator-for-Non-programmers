@@ -11,7 +11,6 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
 import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
 import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
@@ -21,6 +20,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EpisodeHero from 'src/components/EpisodeHero'
 import h from 'src/lib/h'
+import H from 'src/components/H'
 
 const Step1 = () => (
   <>
@@ -95,16 +95,12 @@ export default () => {
         {
           content: (
             <EpisodeHero>
-              <EpisodeInfo
-                episodeNumber={1}
-                introText={
-                  <>
-                    今回は、
-                    <Em>これから何度も行うパズルの基本ルール</Em>
-                    を紹介します。
-                  </>
-                }
-              />
+              <P>
+                <H args={{ name: 'episodeWelcomeText' }} />
+                今回は、
+                <Em>とあるパズルの基本ルール</Em>
+                を紹介します。
+              </P>
               <H3>弁当箱のパズル</H3>
               <P>
                 まずはじめにこちらの写真をご覧ください。わたしの地元、横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
