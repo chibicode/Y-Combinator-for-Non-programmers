@@ -26,7 +26,7 @@ export const jsxBabelFix = jsx
 const autoplaySpeed = (isFastForwarding?: boolean) =>
   isFastForwarding ? 250 : 500
 
-type InitializeInstruction =
+export type InitializeInstruction =
   | {
       type: 'stepForwardUntilContainerState'
       state: ExpressionContainerStates

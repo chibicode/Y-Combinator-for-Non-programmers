@@ -106,20 +106,31 @@ export default () => {
           )
         },
         {
+          title: '弁当箱のパズル',
           content: (
             <>
-              <H3>弁当箱のパズル</H3>
               <P>
-                まずはじめにこちらの写真をご覧ください。わたしの地元、横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
+                まずはじめにこちらの写真をご覧ください。わたしの地元・横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
               </P>
               <PFullWidth>
                 <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />
               </PFullWidth>
               <P>
-                なぜお弁当の写真をお見せしたかというと、これからわたしたちは
-                <Strong>{h('ycBentoBox')}</Strong>を解いていくからです。
+                なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
+                <Strong>{h('ycBentoBox')}</Strong>
+                という名前がついているからです。
               </P>
               <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
+              <P>
+                <Strong>{h('ycBentoBox')}</Strong>がどんなものか、説明しますね！
+              </P>
+            </>
+          )
+        },
+        {
+          title: 'これが弁当箱のパズル！',
+          content: (
+            <>
               <P>
                 下の図が、
                 <Strong>{h('ycBentoBox')}</Strong>
