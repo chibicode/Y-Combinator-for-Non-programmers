@@ -94,7 +94,8 @@ export default () => {
       cards={[
         {
           content: (
-            <EpisodeHero>
+            <>
+              <EpisodeHero />
               <P>
                 <H args={{ name: 'episodeWelcomeText' }} />
                 今回は、
@@ -446,7 +447,7 @@ export default () => {
               />
               {h('ycTryGuessing')}
               <YcNextLessonButton nextEpisodeNumber={2} />
-            </EpisodeHero>
+            </>
           )
         }
       ]}

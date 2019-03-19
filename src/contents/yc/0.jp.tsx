@@ -28,7 +28,8 @@ export default () => {
       cards={[
         {
           content: (
-            <EpisodeHero>
+            <>
+              <EpisodeHero />
               <P>
                 こんにちは！当サイト「
                 <Em>
@@ -46,7 +47,7 @@ export default () => {
                 」です。<Em>約30〜60分</Em>
                 で終えることができるので、通勤・通学・昼休みの時間にやるのにぴったりです。ぜひお楽しみください！
               </P>
-            </EpisodeHero>
+            </>
           )
         },
         {

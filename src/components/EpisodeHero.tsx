@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import Link from 'next/link'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -24,11 +24,7 @@ const commonTitleClasses = css`
   text-align: center;
 `
 
-interface EpisodeHeroProps {
-  children: React.ReactNode
-}
-
-const EpisodeHero = ({ children }: EpisodeHeroProps) => {
+const EpisodeHero = () => {
   const { lessonName, lessonTitle, episodeTitle, episodeNumber } = useContext(
     EpisodeContext
   )
@@ -109,7 +105,6 @@ const EpisodeHero = ({ children }: EpisodeHeroProps) => {
         size="lg"
         emojis={episodeEmojis[lessonName][episodeNumber]}
       />
-      {children}
     </>
   )
 }
