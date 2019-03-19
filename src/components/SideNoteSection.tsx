@@ -42,7 +42,9 @@ const SideNoteSection = ({
   noPaddingBottom,
   color
 }: SideNoteProps) => (
-  <CardThemeContext.Provider value={{ emBackgroundColor: emBackgroundColor(color) }}>
+  <CardThemeContext.Provider
+    value={{ emBackgroundColor: emBackgroundColor(color) }}
+  >
     <div
       css={[
         css`
