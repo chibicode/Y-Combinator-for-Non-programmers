@@ -18,7 +18,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import pathHelpers from 'src/lib/pathHelpers'
 import { InternalLink } from 'src/components/ContentTags'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 import t from 'src/lib/titles'
 export const jsxBabelFix = jsx
 
@@ -163,7 +163,7 @@ export default () => {
         },
         {
           type: 'yesNoQuiz' as 'yesNoQuiz',
-          title: h('yesNoQuiz'),
+          title: <H args={{ name: 'yesNoQuiz' }} />,
           content: (
             <>
               <P>
@@ -186,7 +186,7 @@ export default () => {
           )
         },
         {
-          title: h('yesNoQuizAnswerHeading', true),
+          title: <H args={{ name: 'yesNoQuizAnswerHeading', isYes: true }} />,
           content: (
             <>
               <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} halfMarginBottom />
