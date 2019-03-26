@@ -26,15 +26,15 @@ export interface CardState {
   overrideColor?: CardProps['color']
 }
 
-// First color before the text turns white
+// Second color before the text turns white
 const borderColor = (color: CardProps['color']) =>
   ({
-    green: colors('green600'),
-    white: colors('indigo200'),
-    orange: colors('deepOrange600'),
-    yellow: colors('yellow900'),
-    indigo: colors('indigo300'),
-    blue: colors('blue600')
+    green: colors('green400'),
+    white: colors('purple100'),
+    orange: colors('deepOrange400'),
+    yellow: colors('yellow800'),
+    indigo: colors('indigo100'),
+    blue: colors('blue400')
   }[color])
 
 const backgroundColor = (color: CardProps['color']) =>
@@ -47,15 +47,15 @@ const backgroundColor = (color: CardProps['color']) =>
     blue: colors('blue50')
   }[color])
 
-// 3rd lightest color where the text is white
+// First where the text is white
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
-    green: colors('green800'),
-    white: colors('indigo500'),
-    orange: colors('deepOrange900'),
+    green: colors('green600'),
+    white: colors('purple300'),
+    orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
-    indigo: colors('indigo500'),
-    blue: colors('blue800')
+    indigo: colors('indigo300'),
+    blue: colors('blue600')
   }[color])
 
 const emBackgroundColor = (color: CardProps['color']) =>
@@ -207,7 +207,7 @@ const Card = ({
           width: 1.25rem;
           height: 2rem;
           margin: 0 auto;
-          background: ${colors('indigo200')};
+          background: ${colors('purple100')};
         `}
       />
     )}

@@ -5,12 +5,9 @@ import { colors } from 'src/lib/theme'
 export const jsxBabelFix = jsx
 
 export const commonLinkClass = css`
-  &:hover {
-    background-color: ${colors('pink50')};
-  }
-
+  &:hover,
   &:active {
-    background-color: ${colors('pink50')};
+    background-color: ${colors('purple50')};
   }
 `
 

@@ -30,11 +30,11 @@ const Button = ({
 }: ButtonProps) => {
   const borderColor =
     cardActionTaken === 'skipped'
-      ? colors('green600')
+      ? colors('green400')
       : {
-          correct: colors('green600'),
-          default: colors('blue600'),
-          incorrect: colors('deepOrange600')
+          correct: colors('green400'),
+          default: colors('blue400'),
+          incorrect: colors('deepOrange400')
         }[cardActionResult]
   return (
     <button

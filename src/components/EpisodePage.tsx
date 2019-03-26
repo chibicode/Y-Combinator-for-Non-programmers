@@ -23,9 +23,14 @@ export interface EpisodePageProps {
 
 const navigationLinkClasses = css`
   text-decoration: none;
-  color: ${colors('indigo500')};
+  color: ${colors('purple500')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
+
+  &:hover,
+  &:active {
+    background: ${colors('white')};
+  }
 `
 
 const EpisodePage = ({
@@ -46,7 +51,7 @@ const EpisodePage = ({
       styles={css`
         html,
         body {
-          background-color: ${colors('indigo100')};
+          background-color: ${colors('purple50')};
         }
       `}
     />
