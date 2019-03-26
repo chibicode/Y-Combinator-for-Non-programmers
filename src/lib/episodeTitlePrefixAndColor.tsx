@@ -5,8 +5,8 @@ import {
   numIntermediateLevels as numYcIntermediateLevels
 } from 'src/lib/yc/numEpisodesForEachLevel'
 
-export const beginnerColor = colors('yellow900')
-export const intermediateColor = colors('indigo300')
+export const beginnerColor = colors('green600')
+export const intermediateColor = colors('blue600')
 export const advancedColor = colors('pink400')
 
 const episodeTitlePrefixAndColor = (

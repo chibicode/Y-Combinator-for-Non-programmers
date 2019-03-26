@@ -24,14 +24,14 @@ const EpisodePageWrapper = ({ episodeNumber }: EpisodePageWrapperProps) => (
       episodeTitle={
         episodeNumber > 0 ? (
           <>
-            {episodeTitlePrefix(episodeNumber).prefix}:{' '}
             <span
               css={css`
                 color: ${episodeTitlePrefix(episodeNumber).color};
               `}
             >
-              {t(`episode${episodeNumber}` as keyof typeof allTitles)}
+              {episodeTitlePrefix(episodeNumber).prefix}:{' '}
             </span>
+            {t(`episode${episodeNumber}` as keyof typeof allTitles)}
           </>
         ) : (
           undefined
