@@ -127,7 +127,7 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <>
-          <Emoji size="mdlg">🤔</Emoji> 答えを見る
+          <Emoji size="mdlg">🤔</Emoji> 正解を見る
         </>
       )
     }
