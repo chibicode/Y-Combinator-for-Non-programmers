@@ -3,8 +3,8 @@ import locale from 'src/lib/locale'
 export const allTitles = {
   title: {
     // Must fit in https://moz.com/learn/seo/title-tag
-    en: 'Y Combinator for Everyone: Learn Computer Science with Emojis',
-    jp: '誰でも学べるコンピューターサイエンス: Yコンビネーターって何だろう？'
+    en: 'Y Combinator for Everyone',
+    jp: '誰でも学べるコンピューターサイエンス'
   },
   episode1: {
     en: 'The Bento Boxes',
