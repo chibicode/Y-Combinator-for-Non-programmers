@@ -3,58 +3,54 @@ import locale from 'src/lib/locale'
 export const allTitles = {
   title: {
     // Must fit in https://moz.com/learn/seo/title-tag
-    en: 'CSmoji: Learn Computer Science with Emojis',
-    jp: 'CSmoji: 絵文字で学ぶコンピューターサイエンス'
+    en: 'Y Combinator for Everyone: Learn Computer Science with Emojis',
+    jp: '誰でも学べるコンピューターサイエンス：Yコンビネーターとは何か？'
   },
-  ycTitle: {
-    en: 'Y Combinator for Non-Programmers',
-    jp: 'あなたの知らないYコンビネーター'
-  },
-  ycEpisode1: {
+  episode1: {
     en: 'The Bento Boxes',
     jp: 'これっくらいの、お弁当箱に…'
   },
-  ycEpisode2: {
+  episode2: {
     en: 'The Middle Item',
     jp: '真ん中の料理'
   },
-  ycEpisode3: {
+  episode3: {
     en: '“Eat Later” List',
     jp: 'あとで食べるものリスト'
   },
-  ycEpisode4: {
+  episode4: {
     en: 'Priorities, Part 1',
     jp: '順序その1'
   },
-  ycEpisode5: {
+  episode5: {
     en: 'Priorities, Part 2',
     jp: '順序その2'
   },
-  ycEpisode6: {
+  episode6: {
     en: 'Shuffle Time',
     jp: 'シャッフルタイム'
   },
-  ycEpisode7: {
+  episode7: {
     en: 'Secret Code',
     jp: '弁当箱の暗号'
   },
-  ycEpisode8: {
+  episode8: {
     en: 'Plus One',
     jp: '1を足す'
   },
-  ycEpisode9: {
+  episode9: {
     en: 'Addition and Multiplication',
     jp: '足し算と掛け算'
   },
-  ycEpisode10: {
+  episode10: {
     en: 'Secret Boolean Code',
     jp: '弁当箱の二択暗号'
   },
-  ycEpisode11: {
+  episode11: {
     en: 'Both Yes?',
     jp: '両方とも「はい」？'
   },
-  ycEpisode12: {
+  episode12: {
     en: 'If, Then, Else',
     jp: '「はい」ならこうする、「いいえ」ならこうする'
   }

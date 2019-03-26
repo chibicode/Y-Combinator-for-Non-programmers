@@ -3,7 +3,6 @@ import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
-import { yc } from 'src/lib/pathHelpers'
 
 interface LocaleJson {
   en: JSX.Element | string
@@ -313,8 +312,8 @@ export const allTranslations = {
     jp: '次のページへ進む'
   }),
   ycNextButtonSecondaryText: (nextEpisodeNumber: number) => ({
-    en: <>Continue to {episodeTitlePrefix(nextEpisodeNumber, 'yc').prefix}</>,
-    jp: <>{episodeTitlePrefix(nextEpisodeNumber, 'yc').prefix}へ</>
+    en: <>Continue to {episodeTitlePrefix(nextEpisodeNumber).prefix}</>,
+    jp: <>{episodeTitlePrefix(nextEpisodeNumber).prefix}へ</>
   }),
   ycQuizReview: (previousEpisodeNumber: number) => ({
     en: (
@@ -322,7 +321,7 @@ export const allTranslations = {
         <H3>{h('ycTrueOrFalse')} Quiz Review</H3>
         <P>
           Before we begin, let’s take a look at{' '}
-          <InternalLink href={yc(previousEpisodeNumber)}>
+          <InternalLink href={`/${previousEpisodeNumber}`}>
             the quiz from episode {previousEpisodeNumber}
           </InternalLink>
           .
@@ -334,7 +333,7 @@ export const allTranslations = {
         <H3>二択クイズの答え合わせ</H3>
         <P>
           まずはじめに、
-          <InternalLink href={yc(previousEpisodeNumber)}>
+          <InternalLink href={`/${previousEpisodeNumber}`}>
             前のページで出したクイズ
           </InternalLink>
           の答え合わせをしましょう。

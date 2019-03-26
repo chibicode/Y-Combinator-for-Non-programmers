@@ -2,7 +2,6 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import NextLessonButton from 'src/components/NextLessonButton'
 import h, { allTranslations } from 'src/lib/h'
-import { yc } from 'src/lib/pathHelpers'
 import { remainingText } from 'src/lib/yc/numEpisodesForEachLevel'
 
 type PrimaryTextType = 'quiz' | 'start' | 'nextPage'
@@ -26,7 +25,7 @@ const YcNextLessonButton = ({
   primaryTextType
 }: YcNextLessonButtonProps) => (
   <NextLessonButton
-    href={yc(nextEpisodeNumber)}
+    href={`/${nextEpisodeNumber}`}
     primaryText={<>{h(primaryTextTypeToTranslationKey(primaryTextType))}</>}
     secondaryText={
       <>

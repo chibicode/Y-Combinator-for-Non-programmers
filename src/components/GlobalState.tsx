@@ -1,7 +1,6 @@
 import { withRouter, WithRouterProps } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import GlobalContext, {
-  FurthestEpisodes,
   globalContextDefault
 } from 'src/components/GlobalContext'
 
@@ -12,8 +11,8 @@ const GlobalState = ({
   const [initialRender, setInitialRender] = useState(
     globalContextDefault.initialRender
   )
-  const [furthestEpisodes, setFurthestEpisodes] = useState<FurthestEpisodes>(
-    globalContextDefault.furthestEpisodes
+  const [furthestEpisode, setFurthestEpisode] = useState(
+    globalContextDefault.furthestEpisode
   )
   useEffect(() => {
     const handleRouteChange = () => {
@@ -33,8 +32,8 @@ const GlobalState = ({
       value={{
         initialRender,
         setInitialRender,
-        furthestEpisodes,
-        setFurthestEpisodes
+        furthestEpisode,
+        setFurthestEpisode
       }}
     >
       {children}

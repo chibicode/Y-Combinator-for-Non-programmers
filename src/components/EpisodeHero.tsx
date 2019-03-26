@@ -6,7 +6,6 @@ import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeContext from 'src/components/EpisodeContext'
 import episodeEmojis from 'src/lib/episodeEmojis'
-import pathHelpers from 'src/lib/pathHelpers'
 import {
   colors,
   fontSizes,
@@ -25,7 +24,7 @@ const commonTitleClasses = css`
 `
 
 const EpisodeHero = () => {
-  const { lessonName, lessonTitle, episodeTitle, episodeNumber } = useContext(
+  const { lessonTitle, episodeTitle, episodeNumber } = useContext(
     EpisodeContext
   )
   return (
@@ -61,7 +60,7 @@ const EpisodeHero = () => {
               ]}
             >
               <InternalLink
-                href={pathHelpers[lessonName]()}
+                href={'/'}
                 css={css`
                   text-decoration: none;
                 `}
@@ -100,10 +99,7 @@ const EpisodeHero = () => {
           </h1>
         )}
       </>
-      <EmojiSeparator
-        size="lg"
-        emojis={episodeEmojis[lessonName][episodeNumber]}
-      />
+      <EmojiSeparator size="lg" emojis={episodeEmojis[episodeNumber]} />
     </>
   )
 }

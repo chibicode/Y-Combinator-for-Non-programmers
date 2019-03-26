@@ -3,7 +3,7 @@ import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
-import { yc } from 'src/lib/pathHelpers'
+import t from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 
 export interface HProps {
@@ -46,13 +46,50 @@ export interface HProps {
     | { name: 'continueReading' }
     | { name: 'titlePrefix' }
     | { name: 'episodeWelcomeText' }
+    | { name: 'newUser' }
 }
 
 const H = ({ args }: HProps) => {
-  const { lessonName, episodeNumber } = useContext(EpisodeContext)
+  const { episodeNumber } = useContext(EpisodeContext)
 
   if (args.name === 'titlePrefix') {
-    return <>{episodeTitlePrefix(episodeNumber, lessonName).prefix}</>
+    return <>{episodeTitlePrefix(episodeNumber).prefix}</>
+  }
+  if (args.name === 'newUser') {
+    if (locale === 'en') {
+      return (
+        <P>
+          <Strong>Hello!</Strong> This is{' '}
+          <Strong>page {episodeNumber + 1}</Strong> of the series called “
+          <InternalLink href={'/'}>{t('title')}</InternalLink>
+          ”. If you just got here,
+          <Em>
+            <InternalLink href={'/'}>
+              <Strong>click here to read from the beginning</Strong>
+            </InternalLink>
+          </Em>
+          . Or you can view the
+          <InternalLink href={'/toc'}>table of contents</InternalLink>.
+        </P>
+      )
+    } else {
+      return (
+        <P>
+          <Strong>こんにちは！</Strong>このページは「
+          <InternalLink href={'/'}>{t('title')}</InternalLink>
+          」という記事の
+          <Strong>{episodeNumber + 1}ページ目</Strong>
+          です。1ページ目から読むには
+          <Em>
+            <InternalLink href={'/'}>
+              <Strong>こちらからどうぞ</Strong>
+            </InternalLink>
+          </Em>
+          。目次を見るには
+          <InternalLink href={'/toc'}>こちらからどうぞ</InternalLink>。
+        </P>
+      )
+    }
   }
   if (args.name === 'episodeWelcomeText') {
     if (locale === 'en') {
@@ -476,12 +513,10 @@ const H = ({ args }: HProps) => {
   if (args.name === 'ycNextButtonSecondaryText') {
     if (locale === 'en') {
       return (
-        <>
-          Continue to {episodeTitlePrefix(args.nextEpisodeNumber, 'yc').prefix}
-        </>
+        <>Continue to {episodeTitlePrefix(args.nextEpisodeNumber).prefix}</>
       )
     } else {
-      return <>{episodeTitlePrefix(args.nextEpisodeNumber, 'yc').prefix}へ</>
+      return <>{episodeTitlePrefix(args.nextEpisodeNumber).prefix}へ</>
     }
   }
   if (args.name === 'ycQuizReview') {
@@ -493,7 +528,7 @@ const H = ({ args }: HProps) => {
           </H3>
           <P>
             Before we begin, let’s take a look at{' '}
-            <InternalLink href={yc(args.previousEpisodeNumber)}>
+            <InternalLink href={`/${args.previousEpisodeNumber}`}>
               the quiz from episode {args.previousEpisodeNumber}
             </InternalLink>
             .
@@ -506,7 +541,7 @@ const H = ({ args }: HProps) => {
           <H3>二択クイズの答え合わせ</H3>
           <P>
             まずはじめに、
-            <InternalLink href={yc(args.previousEpisodeNumber)}>
+            <InternalLink href={`/${args.previousEpisodeNumber}`}>
               前のページで出したクイズ
             </InternalLink>
             の答え合わせをしましょう。

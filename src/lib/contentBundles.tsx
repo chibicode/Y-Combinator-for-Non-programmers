@@ -5,247 +5,209 @@ import { LoadableComponent } from 'react-loadable'
 import DynamicLoading from 'src/components/DynamicLoading'
 
 export interface BundleTypes {
-  'others/NewUser': {
+  '0': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'others/Welcome': {
+  '1': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/0': {
+  '10': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/1': {
+  '11': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/10': {
+  '2': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/11': {
+  '3': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/2': {
+  '4': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/3': {
+  '5': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/4': {
+  '6': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/5': {
+  '7': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/6': {
+  '8': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 
-  'yc/7': {
-    jp: React.ComponentType<any> & LoadableComponent
-    en: React.ComponentType<any> & LoadableComponent
-  }
-
-  'yc/8': {
-    jp: React.ComponentType<any> & LoadableComponent
-    en: React.ComponentType<any> & LoadableComponent
-  }
-
-  'yc/9': {
+  '9': {
     jp: React.ComponentType<any> & LoadableComponent
     en: React.ComponentType<any> & LoadableComponent
   }
 }
 
 const bundles: BundleTypes = {
-  'others/NewUser': {
+  '0': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'others/NewUser.en' */ 'src/contents/others/NewUser.en'),
+      () => import(/* webpackChunkName: '0.en' */ 'src/contents/0.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'others/NewUser.jp' */ 'src/contents/others/NewUser.jp'),
+      () => import(/* webpackChunkName: '0.jp' */ 'src/contents/0.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'others/Welcome': {
+  '1': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'others/Welcome.en' */ 'src/contents/others/Welcome.en'),
+      () => import(/* webpackChunkName: '1.en' */ 'src/contents/1.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () =>
-        import(/* webpackChunkName: 'others/Welcome.jp' */ 'src/contents/others/Welcome.jp'),
+      () => import(/* webpackChunkName: '1.jp' */ 'src/contents/1.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/0': {
+  '10': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/0.en' */ 'src/contents/yc/0.en'),
+      () => import(/* webpackChunkName: '10.en' */ 'src/contents/10.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/0.jp' */ 'src/contents/yc/0.jp'),
+      () => import(/* webpackChunkName: '10.jp' */ 'src/contents/10.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/1': {
+  '11': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/1.en' */ 'src/contents/yc/1.en'),
+      () => import(/* webpackChunkName: '11.en' */ 'src/contents/11.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/1.jp' */ 'src/contents/yc/1.jp'),
+      () => import(/* webpackChunkName: '11.jp' */ 'src/contents/11.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/10': {
+  '2': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/10.en' */ 'src/contents/yc/10.en'),
+      () => import(/* webpackChunkName: '2.en' */ 'src/contents/2.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/10.jp' */ 'src/contents/yc/10.jp'),
+      () => import(/* webpackChunkName: '2.jp' */ 'src/contents/2.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/11': {
+  '3': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/11.en' */ 'src/contents/yc/11.en'),
+      () => import(/* webpackChunkName: '3.en' */ 'src/contents/3.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/11.jp' */ 'src/contents/yc/11.jp'),
+      () => import(/* webpackChunkName: '3.jp' */ 'src/contents/3.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/2': {
+  '4': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/2.en' */ 'src/contents/yc/2.en'),
+      () => import(/* webpackChunkName: '4.en' */ 'src/contents/4.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/2.jp' */ 'src/contents/yc/2.jp'),
+      () => import(/* webpackChunkName: '4.jp' */ 'src/contents/4.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/3': {
+  '5': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/3.en' */ 'src/contents/yc/3.en'),
+      () => import(/* webpackChunkName: '5.en' */ 'src/contents/5.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/3.jp' */ 'src/contents/yc/3.jp'),
+      () => import(/* webpackChunkName: '5.jp' */ 'src/contents/5.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/4': {
+  '6': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/4.en' */ 'src/contents/yc/4.en'),
+      () => import(/* webpackChunkName: '6.en' */ 'src/contents/6.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/4.jp' */ 'src/contents/yc/4.jp'),
+      () => import(/* webpackChunkName: '6.jp' */ 'src/contents/6.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/5': {
+  '7': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/5.en' */ 'src/contents/yc/5.en'),
+      () => import(/* webpackChunkName: '7.en' */ 'src/contents/7.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/5.jp' */ 'src/contents/yc/5.jp'),
+      () => import(/* webpackChunkName: '7.jp' */ 'src/contents/7.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/6': {
+  '8': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/6.en' */ 'src/contents/yc/6.en'),
+      () => import(/* webpackChunkName: '8.en' */ 'src/contents/8.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/6.jp' */ 'src/contents/yc/6.jp'),
+      () => import(/* webpackChunkName: '8.jp' */ 'src/contents/8.jp'),
       { loading: () => <DynamicLoading /> }
     )
   },
-  'yc/7': {
+  '9': {
     en: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/7.en' */ 'src/contents/yc/7.en'),
+      () => import(/* webpackChunkName: '9.en' */ 'src/contents/9.en'),
       { loading: () => <DynamicLoading /> }
     ),
     jp: dynamic(
       // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/7.jp' */ 'src/contents/yc/7.jp'),
-      { loading: () => <DynamicLoading /> }
-    )
-  },
-  'yc/8': {
-    en: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/8.en' */ 'src/contents/yc/8.en'),
-      { loading: () => <DynamicLoading /> }
-    ),
-    jp: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/8.jp' */ 'src/contents/yc/8.jp'),
-      { loading: () => <DynamicLoading /> }
-    )
-  },
-  'yc/9': {
-    en: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/9.en' */ 'src/contents/yc/9.en'),
-      { loading: () => <DynamicLoading /> }
-    ),
-    jp: dynamic(
-      // @ts-ignore - import isn't typed correctly
-      () => import(/* webpackChunkName: 'yc/9.jp' */ 'src/contents/yc/9.jp'),
+      () => import(/* webpackChunkName: '9.jp' */ 'src/contents/9.jp'),
       { loading: () => <DynamicLoading /> }
     )
   }

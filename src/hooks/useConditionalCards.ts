@@ -16,11 +16,10 @@ const getNextYesNoQuizIndex = (
 }
 
 const useConditionalCards = (cards: EpisodeCardListType) => {
-  const { furthestEpisodes } = useContext(GlobalContext)
-  const { lessonName, episodeNumber } = useContext(EpisodeContext)
-  const furthestEpisodeForThisLesson = furthestEpisodes[lessonName]
+  const { furthestEpisode } = useContext(GlobalContext)
+  const { episodeNumber } = useContext(EpisodeContext)
   const [nextYesNoQuizIndex, setNextYesNoQuizIndex] = useState(
-    furthestEpisodeForThisLesson && episodeNumber < furthestEpisodeForThisLesson
+    furthestEpisode && episodeNumber < furthestEpisode
       ? cards.length - 1
       : getNextYesNoQuizIndex(cards)
   )

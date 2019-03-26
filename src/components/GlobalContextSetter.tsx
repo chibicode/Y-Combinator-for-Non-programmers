@@ -1,37 +1,26 @@
 import React, { useEffect, useContext } from 'react'
 import GlobalContext from 'src/components/GlobalContext'
-import pathHelpers from 'src/lib/pathHelpers'
 
 interface GlobalContextProviderProps {
   children: React.ReactNode
   episodeNumber: number
-  lessonName: keyof typeof pathHelpers
 }
 
 const GlobalContextSetter = ({
   episodeNumber,
-  lessonName,
   children
 }: GlobalContextProviderProps) => {
-  const { setFurthestEpisodes } = useContext(GlobalContext)
+  const { setFurthestEpisode } = useContext(GlobalContext)
   useEffect(() => {
     // https://overreacted.io/a-complete-guide-to-useeffect/#making-effects-self-sufficient
-    setFurthestEpisodes(prevFurthestEpisodes => {
-      const furthestEpisodeForThisLesson = prevFurthestEpisodes[lessonName]
-      if (
-        !furthestEpisodeForThisLesson ||
-        (typeof furthestEpisodeForThisLesson !== 'undefined' &&
-          furthestEpisodeForThisLesson < episodeNumber)
-      ) {
-        return {
-          ...prevFurthestEpisodes,
-          [lessonName]: episodeNumber
-        }
+    setFurthestEpisode(prevFurthestEpisode => {
+      if (prevFurthestEpisode < episodeNumber) {
+        return episodeNumber
       } else {
-        return prevFurthestEpisodes
+        return prevFurthestEpisode
       }
     })
-  }, [episodeNumber, lessonName, setFurthestEpisodes])
+  }, [episodeNumber, setFurthestEpisode])
   return <React.Fragment>{children}</React.Fragment>
 }
 

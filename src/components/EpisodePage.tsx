@@ -10,12 +10,10 @@ import Page from 'src/components/Page'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
-import pathHelpers from 'src/lib/pathHelpers'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
 export const jsxBabelFix = jsx
 
 export interface EpisodePageProps {
-  lessonName: keyof typeof pathHelpers
   lessonTitle: string
   episodeTitle?: React.ReactNode
   episodeTitleString?: React.ReactNode
@@ -32,7 +30,6 @@ const navigationLinkClasses = css`
 
 const EpisodePage = ({
   lessonTitle,
-  lessonName,
   episodeTitle,
   episodeTitleString,
   episodeNumber,
@@ -70,16 +67,13 @@ const EpisodePage = ({
         >
           {episodeNumber >= 1 && (
             <InternalLink
-              href={pathHelpers[lessonName](
-                episodeNumber === 1 ? undefined : episodeNumber - 1
-              )}
+              href={`/${episodeNumber === 1 ? '' : episodeNumber - 1}`}
               css={navigationLinkClasses}
             >
               ←{' '}
               {episodeNumber === 1
                 ? h('introductionPageLink')
-                : episodeTitlePrefix(episodeNumber - 1, lessonName, true)
-                    .prefix}
+                : episodeTitlePrefix(episodeNumber - 1, true).prefix}
             </InternalLink>
           )}
         </div>
@@ -90,7 +84,7 @@ const EpisodePage = ({
           `}
         >
           {/* <InternalLink
-            href={pathHelpers[lessonName]('toc')}
+            href={'/toc'}
             css={navigationLinkClasses}
           >
             {h('indexPageLink')}
@@ -102,23 +96,18 @@ const EpisodePage = ({
             text-align: right;
           `}
         >
-          {(episodeNumber || 0) < numEpisodes(lessonName) && (
+          {(episodeNumber || 0) < numEpisodes && (
             <InternalLink
-              href={pathHelpers[lessonName]((episodeNumber || 0) + 1)}
+              href={`/${(episodeNumber || 0) + 1}`}
               css={navigationLinkClasses}
             >
-              {
-                episodeTitlePrefix((episodeNumber || 0) + 1, lessonName, true)
-                  .prefix
-              }{' '}
-              →
+              {episodeTitlePrefix((episodeNumber || 0) + 1, true).prefix} →
             </InternalLink>
           )}
         </div>
       </div>
       <EpisodeContext.Provider
         value={{
-          lessonName,
           lessonTitle,
           episodeTitle,
           episodeNumber
