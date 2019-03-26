@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
-import Link from 'next/link'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeContext from 'src/components/EpisodeContext'
@@ -71,7 +70,7 @@ const EpisodeHero = () => {
               commonTitleClasses,
               css`
                 color: ${colors('grey900')};
-                padding-top: ${spaces(2)};
+                padding-top: ${spaces(0.5)};
                 font-size: ${fontSizes(2)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};

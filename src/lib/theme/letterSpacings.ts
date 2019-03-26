@@ -1,5 +1,5 @@
 export const allLetterSpacings = {
-  title: '-.015em'
+  title: '-.025em'
 }
 
 const letterSpacings = (x: keyof typeof allLetterSpacings) =>

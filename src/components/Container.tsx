@@ -34,7 +34,7 @@ const Container = ({
 Container.defaultProps = {
   Component: 'div',
   verticalMargin: 0,
-  horizontalPadding: 0.75
+  horizontalPadding: 0.5
 }
 
 export default Container
