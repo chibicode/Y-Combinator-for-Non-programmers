@@ -14,7 +14,6 @@ import {
   lineHeights,
   spaces
 } from 'src/lib/theme'
-import Logo from 'src/images/CSmoji-Logo.svgr.svg'
 export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
@@ -30,22 +29,6 @@ const EpisodeHero = () => {
   return (
     <>
       <>
-        <div
-          css={css`
-            text-align: center;
-          `}
-        >
-          <Link href="/" passHref>
-            <a
-              css={css`
-                display: inline-block;
-                height: ${fontSizes(2.5)};
-              `}
-            >
-              <Logo />
-            </a>
-          </Link>
-        </div>
         {episodeTitle ? (
           <>
             <h3

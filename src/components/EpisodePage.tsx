@@ -39,7 +39,7 @@ const EpisodePage = ({
     <Head>
       <title key="title">
         {lessonTitle}
-        {episodeTitleString && ` | ${episodeTitleString}`} | CSmoji
+        {episodeTitleString && ` | ${episodeTitleString}`}
       </title>
     </Head>
     <Global
