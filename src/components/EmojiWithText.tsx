@@ -21,7 +21,7 @@ const EmojiWithText = ({ letter, size }: EmojiWithTextProps) => {
   return (
     <span
       css={css`
-        background-color: ${colors('indigo50')};
+        background-color: ${colors('white')};
       `}
     >
       {label[locale]} <Emoji size={size}>{emoji}</Emoji>{' '}

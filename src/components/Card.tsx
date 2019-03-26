@@ -13,7 +13,7 @@ export interface CardProps {
   children: React.ReactNode
   footerButtonContent?: React.ReactNode
   footerButtonOnClick?: () => void
-  color: 'white' | 'orange' | 'yellow' | 'indigo' | 'green' | 'blue'
+  color: 'white' | 'orange' | 'yellow' | 'brown' | 'green' | 'blue'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -26,35 +26,40 @@ export interface CardState {
   overrideColor?: CardProps['color']
 }
 
-// Second color before the text turns white
-const borderColor = (color: CardProps['color']) =>
-  ({
-    green: colors('green400'),
-    white: colors('purple100'),
-    orange: colors('deepOrange400'),
-    yellow: colors('yellow800'),
-    indigo: colors('indigo100'),
-    blue: colors('blue400')
-  }[color])
-
 const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
-    white: colors('white'),
+    white: colors('grey100'),
     orange: colors('deepOrange50'),
-    yellow: colors('yellow50'),
-    indigo: colors('indigo50'),
+    yellow: colors('yellow100'),
+    brown: colors('brown50'),
     blue: colors('blue50')
   }[color])
+
+const backgroundDarker1 = (color: CardProps['color']) => {
+  if (color === 'blue') {
+    return colors('blue100')
+  } else {
+    backgroundColor(color)
+  }
+}
+
+const backgroundDarker2 = (color: CardProps['color']) => {
+  if (color === 'blue') {
+    return colors('blue200')
+  } else {
+    backgroundColor(color)
+  }
+}
 
 // First where the text is white
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     green: colors('green600'),
-    white: colors('purple300'),
+    white: colors('grey600'),
     orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
-    indigo: colors('indigo300'),
+    brown: colors('brown300'),
     blue: colors('blue600')
   }[color])
 
@@ -64,7 +69,7 @@ const emBackgroundColor = (color: CardProps['color']) =>
     white: colors('yellow100'),
     orange: colors('white'),
     yellow: colors('yellow200'),
-    indigo: colors('white'),
+    brown: colors('white'),
     blue: colors('white')
   }[color])
 
@@ -128,7 +133,6 @@ const Card = ({
         <div
           css={css`
             border-radius: ${radii(0.5)};
-            border: 2px solid ${borderColor(color)};
             overflow: hidden;
             margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
           `}
@@ -173,11 +177,8 @@ const Card = ({
                 padding-left: ${spaces(1)};
                 padding-right: ${spaces(1)};
                 padding-bottom: ${spaces(1)};
-                background: ${colors('white')};
-                border-left: none;
-                border-right: none;
-                border-bottom: none;
-                border-top: 2px solid ${borderColor(color)};
+                border: none;
+                background: ${backgroundDarker1(color)};
                 width: 100%;
                 outline: 0;
                 font-weight: bold;
@@ -191,7 +192,7 @@ const Card = ({
                 }
 
                 &:hover {
-                  background: ${colors('yellow100')};
+                  background: ${backgroundDarker2(color)};
                 }
               `}
             >
@@ -207,7 +208,7 @@ const Card = ({
           width: 1.25rem;
           height: 2rem;
           margin: 0 auto;
-          background: ${colors('purple100')};
+          background: ${colors('grey300')};
         `}
       />
     )}

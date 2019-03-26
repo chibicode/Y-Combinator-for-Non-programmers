@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, Global, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import React from 'react'
 import Container from 'src/components/Container'
@@ -23,13 +23,13 @@ export interface EpisodePageProps {
 
 const navigationLinkClasses = css`
   text-decoration: none;
-  color: ${colors('purple500')};
+  color: ${colors('grey600')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
 
   &:hover,
   &:active {
-    background: ${colors('white')};
+    background: ${colors('yellow100')};
   }
 `
 
@@ -47,14 +47,6 @@ const EpisodePage = ({
         {episodeTitleString && ` | ${episodeTitleString}`}
       </title>
     </Head>
-    <Global
-      styles={css`
-        html,
-        body {
-          background-color: ${colors('purple50')};
-        }
-      `}
-    />
     <Container size="sm">
       <div
         css={css`

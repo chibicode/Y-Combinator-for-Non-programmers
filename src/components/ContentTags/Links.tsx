@@ -7,7 +7,7 @@ export const jsxBabelFix = jsx
 export const commonLinkClass = css`
   &:hover,
   &:active {
-    background-color: ${colors('purple50')};
+    background-color: ${colors('white')};
   }
 `
 

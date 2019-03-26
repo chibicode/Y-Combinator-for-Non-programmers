@@ -7,7 +7,7 @@ import React from 'react'
 import { colors, lineHeights, spaces } from 'src/lib/theme'
 import ns from 'src/lib/theme/ns'
 export const jsxBabelFix = jsx
-const indigo = colors('indigo500')
+const pink = colors('pink500')
 
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
@@ -63,7 +63,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
           }
 
           #nprogress .bar {
-            background: ${indigo};
+            background: ${pink};
 
             position: fixed;
             z-index: 1031;
@@ -81,7 +81,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             right: 0px;
             width: 100px;
             height: 100%;
-            box-shadow: 0 0 10px ${indigo}, 0 0 5px ${indigo};
+            box-shadow: 0 0 10px ${pink}, 0 0 5px ${pink};
             opacity: 1;
 
             -webkit-transform: rotate(3deg) translate(0px, -4px);
