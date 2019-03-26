@@ -29,7 +29,7 @@ const navigationLinkClasses = css`
 
   &:hover,
   &:active {
-    background: ${colors('yellow100')};
+    background: ${colors('pink50')};
   }
 `
 

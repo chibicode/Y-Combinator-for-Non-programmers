@@ -29,7 +29,7 @@ export interface CardState {
 const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
-    white: colors('grey100'),
+    white: colors('grey200'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),
     brown: colors('brown50'),
@@ -66,9 +66,9 @@ const slideLabelBgColor = (color: CardProps['color']) =>
 const emBackgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('white'),
-    white: colors('yellow100'),
+    white: colors('white'),
     orange: colors('white'),
-    yellow: colors('yellow200'),
+    yellow: colors('white'),
     brown: colors('white'),
     blue: colors('white')
   }[color])
