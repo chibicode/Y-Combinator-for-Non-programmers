@@ -31,7 +31,7 @@ const bottomRightBadgeTypeToColors = (
     `,
     funcBound: css`
       background-color: ${colors('yellow900')};
-      border-color: ${colors('orange900')};
+      border-color: ${colors('deepOrange800')};
     `
   }[x])
 
