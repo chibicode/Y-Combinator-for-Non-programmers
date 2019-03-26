@@ -107,7 +107,7 @@ export default () => {
           )
         },
         {
-          title: '弁当箱のパズル',
+          title: <H args={{ name: 'ycBentoBox' }} />,
           content: (
             <>
               <P>
@@ -118,24 +118,34 @@ export default () => {
               </PFullWidth>
               <P>
                 なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-                <Strong>{h('ycBentoBox')}</Strong>
+                <H args={{ name: 'ycBentoBox' }} />
                 という名前がついているからです。
               </P>
               <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
               <P>
-                <Strong>{h('ycBentoBox')}</Strong>がどんなものか、説明しますね！
+                <H args={{ name: 'ycBentoBox' }} />
+                がどんなものか、説明しますね！
               </P>
             </>
           )
         },
         {
-          title: 'これが弁当箱のパズル！',
+          title: (
+            <>
+              これが
+              <H args={{ name: 'ycBentoBox' }} />
+            </>
+          ),
           content: (
             <>
               <P>
                 下の図が、
-                <Strong>{h('ycBentoBox')}</Strong>
-                です。実際の弁当箱のように、四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています。
+                <H args={{ name: 'ycBentoBox' }} />
+                です。実際の弁当箱のように、
+                <Em>
+                  四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
+                </Em>
+                。
               </P>
               {episode1[i++]()}
               <P>
@@ -153,14 +163,26 @@ export default () => {
                 「寿司とハンバーガーが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
               </P>
               <EmojiSeparator emojis={['🍣', '🤔', '🍔']} />
+            </>
+          )
+        },
+        {
+          title: (
+            <>
+              ふたつめの
+              <H args={{ name: 'ycBentoBox' }} />
+            </>
+          ),
+          content: (
+            <>
               <P>
                 もうひとつ、
-                {h('ycBentoBox')}
+                <H args={{ name: 'ycBentoBox' }} />
                 の例を紹介しましょう:
               </P>
               {episode1[i++]()}
               <P>
-                上のマスには
+                こちらは、上のマスには
                 <EmojiWithText letter="h" />
                 、真ん中のマスには
                 <EmojiWithText letter="g" />
@@ -170,17 +192,38 @@ export default () => {
                 <EmojiWithText letter="f" />
                 がふたつ入っています。
               </P>
+              <P>
+                それでは次に、
+                <H args={{ name: 'ycBentoBox' }} />
+                のルールを紹介していきます。
+              </P>
+            </>
+          )
+        },
+        {
+          title: (
+            <>
+              <H args={{ name: 'ycBentoBox' }} />
+              のルール
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                <H args={{ name: 'ycBentoBox' }} />
+                を解くには、以下の5つのステップを繰り返す必要があります。
+              </P>
+              <P>
+                <Emoji>1️⃣</Emoji>ワンペア・<Emoji>🔘</Emoji>
+                ラベル・<Emoji>✅</Emoji>マッチ・<Emoji>🆕</Emoji>チェンジ・
+                <Emoji>❌</Emoji>デリート
+              </P>
             </>
           )
         },
         {
           content: (
             <>
-              <P>
-                では次に、
-                {h('ycBentoBox')}のルールを紹介しましょう。
-              </P>
-              <H3>4つのステップ</H3>
               <FourSteps />
               <P>
                 複雑に聞こえるかもしれませんが、慣れたら簡単です。早速やってみましょう！

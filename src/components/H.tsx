@@ -19,7 +19,7 @@ export interface HProps {
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
     | { name: 'yesNoQuizSkippedPostfix'; isYes: boolean }
-    | { name: 'ycBentoBox'; plural: boolean }
+    | { name: 'ycBentoBox'; plural?: boolean }
     | { name: 'ycNext' }
     | { name: 'ycPlay' }
     | { name: 'ycPause' }
@@ -263,15 +263,15 @@ const H = ({ args }: HProps) => {
   if (args.name === 'ycBentoBox') {
     if (locale === 'en') {
       return (
-        <>
+        <Strong>
           {`“bento box${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
-        </>
+        </Strong>
       )
     } else {
       return (
-        <>
+        <Strong>
           「弁当箱のパズル <Emoji>🍱</Emoji>」
-        </>
+        </Strong>
       )
     }
   }
