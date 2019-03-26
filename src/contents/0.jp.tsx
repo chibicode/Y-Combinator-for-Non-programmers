@@ -16,7 +16,6 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import EpisodeHero from 'src/components/EpisodeHero'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
-import pathHelpers from 'src/lib/pathHelpers'
 import { InternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import t from 'src/lib/titles'
@@ -42,7 +41,7 @@ export default () => {
               <P>
                 今回はレッスン第1弾・「
                 <Em>
-                  <Strong>{t('ycTitle')}</Strong>
+                  <Strong>{t('title')}</Strong>
                 </Em>
                 」です。<Em>約30〜60分</Em>
                 で終えることができるので、通勤・通学・昼休みの時間にやるのにぴったりです。ぜひお楽しみください！
@@ -56,7 +55,7 @@ export default () => {
           content: (
             <P>
               すでにレッスンを途中まで終えた方は、
-              <InternalLink href={pathHelpers['yc']('toc')}>
+              <InternalLink href="/toc">
                 こちらの目次ページから続きをやってみてください
               </InternalLink>
               。

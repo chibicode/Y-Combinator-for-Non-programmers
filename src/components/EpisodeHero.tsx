@@ -1,12 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
-import Link from 'next/link'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeContext from 'src/components/EpisodeContext'
 import episodeEmojis from 'src/lib/episodeEmojis'
-import pathHelpers from 'src/lib/pathHelpers'
 import {
   colors,
   fontSizes,
@@ -15,7 +13,6 @@ import {
   lineHeights,
   spaces
 } from 'src/lib/theme'
-import Logo from 'src/images/CSmoji-Logo.svgr.svg'
 export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
@@ -25,28 +22,12 @@ const commonTitleClasses = css`
 `
 
 const EpisodeHero = () => {
-  const { lessonName, lessonTitle, episodeTitle, episodeNumber } = useContext(
+  const { lessonTitle, episodeTitle, episodeNumber } = useContext(
     EpisodeContext
   )
   return (
     <>
       <>
-        <div
-          css={css`
-            text-align: center;
-          `}
-        >
-          <Link href="/" passHref>
-            <a
-              css={css`
-                display: inline-block;
-                height: ${fontSizes(2.5)};
-              `}
-            >
-              <Logo />
-            </a>
-          </Link>
-        </div>
         {episodeTitle ? (
           <>
             <h3
@@ -61,7 +42,7 @@ const EpisodeHero = () => {
               ]}
             >
               <InternalLink
-                href={pathHelpers[lessonName]()}
+                href={'/'}
                 css={css`
                   text-decoration: none;
                 `}
@@ -89,7 +70,7 @@ const EpisodeHero = () => {
               commonTitleClasses,
               css`
                 color: ${colors('grey900')};
-                padding-top: ${spaces(2)};
+                padding-top: ${spaces(0.5)};
                 font-size: ${fontSizes(2)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};
@@ -100,10 +81,7 @@ const EpisodeHero = () => {
           </h1>
         )}
       </>
-      <EmojiSeparator
-        size="lg"
-        emojis={episodeEmojis[lessonName][episodeNumber]}
-      />
+      <EmojiSeparator size="lg" emojis={episodeEmojis[episodeNumber]} />
     </>
   )
 }

@@ -19,7 +19,6 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 export const jsxBabelFix = jsx
 
 export default () => {
-  let i = 0
   return (
     <>
       <P>
