@@ -13,6 +13,7 @@ import {
   lineHeights,
   spaces
 } from 'src/lib/theme'
+import H from 'src/components/H'
 export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
@@ -22,9 +23,7 @@ const commonTitleClasses = css`
 `
 
 const EpisodeHero = () => {
-  const { lessonTitle, episodeTitle, episodeNumber } = useContext(
-    EpisodeContext
-  )
+  const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   return (
     <>
       <>
@@ -47,7 +46,7 @@ const EpisodeHero = () => {
                   text-decoration: none;
                 `}
               >
-                {lessonTitle}
+                <H args={{ name: 'titleSplit' }} />
               </InternalLink>
             </h3>
             <h1
@@ -77,7 +76,7 @@ const EpisodeHero = () => {
               `
             ]}
           >
-            {lessonTitle}
+            <H args={{ name: 'titleSplit' }} />
           </h1>
         )}
       </>

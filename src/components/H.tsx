@@ -47,6 +47,7 @@ export interface HProps {
     | { name: 'titlePrefix' }
     | { name: 'episodeWelcomeText' }
     | { name: 'newUser' }
+    | { name: 'titleSplit' }
 }
 
 const H = ({ args }: HProps) => {
@@ -54,6 +55,19 @@ const H = ({ args }: HProps) => {
 
   if (args.name === 'titlePrefix') {
     return <>{episodeTitlePrefix(episodeNumber).prefix}</>
+  }
+  if (args.name === 'titleSplit') {
+    if (locale === 'en') {
+      return <>{t('title')}</>
+    } else {
+      return (
+        <>
+          コンピュターサイエンスと
+          <br />
+          魔法のYコンビネーター
+        </>
+      )
+    }
   }
   if (args.name === 'newUser') {
     if (locale === 'en') {
