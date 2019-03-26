@@ -77,11 +77,9 @@ const H = ({ args }: HProps) => {
           <Strong>page {episodeNumber + 1}</Strong> of the series called “
           <InternalLink href={'/'}>{t('title')}</InternalLink>
           ”. If you just got here,
-          <Em>
-            <InternalLink href={'/'}>
-              <Strong>click here to read from the beginning</Strong>
-            </InternalLink>
-          </Em>
+          <InternalLink href={'/'}>
+            <Strong>click here to read from the beginning</Strong>
+          </InternalLink>
           . Or you can view the
           <InternalLink href={'/toc'}>table of contents</InternalLink>.
         </P>
@@ -94,13 +92,11 @@ const H = ({ args }: HProps) => {
           」という記事の
           <Strong>{episodeNumber + 1}ページ目</Strong>
           です。1ページ目から読むには
-          <Em>
-            <InternalLink href={'/'}>
-              <Strong>こちらからどうぞ</Strong>
-            </InternalLink>
-          </Em>
-          。目次を見るには
-          <InternalLink href={'/toc'}>こちらからどうぞ</InternalLink>。
+          <InternalLink href={'/'}>
+            <Strong>こちらからどうぞ</Strong>
+          </InternalLink>
+          。目次は
+          <InternalLink href={'/toc'}>こちら</InternalLink>。
         </P>
       )
     }
