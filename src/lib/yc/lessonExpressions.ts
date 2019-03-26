@@ -1,6 +1,30 @@
 import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
 import { FunctionExpressionParams } from 'src/types/yc/ExpressionParamTypes'
 
+export const e1E1 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'a'
+    }
+  },
+  'c',
+  'd'
+])
+
+export const e1E2 = initializeExpressionContainer([
+  {
+    arg: 'e',
+    body: {
+      arg: 'f',
+      body: 'f'
+    }
+  },
+  'g',
+  'h'
+])
+
 export const episode1Expression1 = initializeExpressionContainer([
   {
     arg: 'a',

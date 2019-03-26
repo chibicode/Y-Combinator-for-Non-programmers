@@ -5,7 +5,7 @@ import React from 'react'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import { InternalLink } from 'src/components/ContentTags'
-import EpisodeHeroContext from 'src/components/EpisodeHeroContext'
+import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
@@ -27,7 +27,7 @@ const navigationLinkClasses = css`
   text-decoration: none;
   color: ${colors('indigo500')};
   font-weight: bold;
-  font-size: ${fontSizes(0.7)};
+  font-size: ${fontSizes(0.85)};
 `
 
 const EpisodePage = ({
@@ -116,7 +116,7 @@ const EpisodePage = ({
           )}
         </div>
       </div>
-      <EpisodeHeroContext.Provider
+      <EpisodeContext.Provider
         value={{
           lessonName,
           lessonTitle,
@@ -125,7 +125,7 @@ const EpisodePage = ({
         }}
       >
         <Content name={contentName} />
-      </EpisodeHeroContext.Provider>
+      </EpisodeContext.Provider>
     </Container>
   </Page>
 )

@@ -2,7 +2,6 @@ import React from 'react'
 import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EpisodeInfo from 'src/components/EpisodeInfo'
 import SideNoteSection from 'src/components/SideNoteSection'
 import {
   episode1Quiz,
@@ -19,10 +18,6 @@ export default () => {
   let i = 0
   return (
     <>
-      <EpisodeInfo
-        episodeNumber={2}
-        introText={<>今回も{h('ycBentoBox')}の基本操作を説明していきます。</>}
-      />
       {h('ycQuizReview', 1)}
       <SideNoteSection color="pink" noPaddingBottom>
         <BasicTrueFalseQuiz quizzes={episode1Quiz} />

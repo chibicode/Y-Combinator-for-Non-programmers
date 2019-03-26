@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import styled from '@emotion/styled'
-import CardContext from 'src/components/CardContext'
+import CardThemeContext from 'src/components/CardThemeContext'
 export const jsxBabelFix = jsx
 
 export const Strong = styled.strong`
@@ -10,7 +10,7 @@ export const Strong = styled.strong`
 `
 
 export const Em = (props: JSX.IntrinsicElements['em']) => {
-  const { emBackgroundColor, emForegroundColor } = useContext(CardContext)
+  const { emBackgroundColor, emForegroundColor } = useContext(CardThemeContext)
   return (
     <em
       {...props}

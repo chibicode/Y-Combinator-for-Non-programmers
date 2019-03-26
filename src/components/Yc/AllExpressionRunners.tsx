@@ -13,24 +13,25 @@ import {
   yesCaption
 } from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
+import { ExpressionRunnerSimple } from 'src/components/Yc/ExpressionRunnerShorthand'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
-
-export const introduction = [
-  () => (
-    <ExpressionRunner
-      containerSize={'xs'}
-      expressionContainer={lessonExpressions.yCombinatorContainer}
-      hideControls
-      hideExplanations
-      variableSize={'lg'}
-    />
-  )
-]
 
 // NOTE: Use functions instead of just JSX.Element inside because
 // linter will complain that it's missing the key attribute
 export const episode1 = [
+  () => (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="default"
+    />
+  ),
+  () => (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="default"
+    />
+  ),
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode1Expression1}

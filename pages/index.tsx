@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import CardContext from 'src/components/CardContext'
+import CardThemeContext from 'src/components/CardThemeContext'
 import Container from 'src/components/Container'
 import Content from 'src/components/Content'
 import Page from 'src/components/Page'
@@ -53,14 +53,14 @@ const Index = () => (
               <Logo />
             </span>
           </h1>
-          <CardContext.Provider
+          <CardThemeContext.Provider
             value={{
               emBackgroundColor: colors('yellow200'),
               emForegroundColor: colors('indigo500')
             }}
           >
             <Content name="others/Welcome" />
-          </CardContext.Provider>
+          </CardThemeContext.Provider>
         </div>
       </div>
     </Container>

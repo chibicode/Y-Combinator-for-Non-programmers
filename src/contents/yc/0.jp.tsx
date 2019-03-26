@@ -18,7 +18,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import pathHelpers from 'src/lib/pathHelpers'
 import { InternalLink } from 'src/components/ContentTags'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 import t from 'src/lib/titles'
 export const jsxBabelFix = jsx
 
@@ -28,7 +28,8 @@ export default () => {
       cards={[
         {
           content: (
-            <EpisodeHero>
+            <>
+              <EpisodeHero />
               <P>
                 こんにちは！当サイト「
                 <Em>
@@ -43,10 +44,10 @@ export default () => {
                 <Em>
                   <Strong>{t('ycTitle')}</Strong>
                 </Em>
-                」です。<Em>約45分</Em>
+                」です。<Em>約30〜60分</Em>
                 で終えることができるので、通勤・通学・昼休みの時間にやるのにぴったりです。ぜひお楽しみください！
               </P>
-            </EpisodeHero>
+            </>
           )
         },
         {
@@ -80,11 +81,11 @@ export default () => {
                 」という方には、コンピューターサイエンスを学ぶのがおすすめです。
               </P>
               <P>
-                もちろん、短期間ですべてを学ぶことはできません。だから当サイトでは、コンピューターサイエンスという学問のごく一部を紹介し、みなさんに
+                もちろん、短期間ですべてを学ぶことはできません。だから当サイトでは、コンピューターサイエンスという学問のごく一部を入門編として紹介しています。みなさんに
                 <Em>
-                  「コンピューターサイエンスって面白い！」「もっと学んでみたい！」
+                  「コンピューターサイエンスって面白い！」「自分にもできるかも」「もっと学んでみたい！」
                 </Em>
-                と思ってもらえることを目標としています。
+                と思ってもらえたら嬉しいです。
               </P>
             </>
           )
@@ -135,7 +136,7 @@ export default () => {
               </P>
               <P>
                 <ExternalLink href="https://jp.chibicode.com/">
-                  筆者の詳しいプロフィールとブログはこちら
+                  わたしの詳しいプロフィールとブログはこちら
                 </ExternalLink>
                 。
               </P>
@@ -163,7 +164,7 @@ export default () => {
         },
         {
           type: 'yesNoQuiz' as 'yesNoQuiz',
-          title: h('yesNoQuiz'),
+          title: <H args={{ name: 'yesNoQuiz' }} />,
           content: (
             <>
               <P>
@@ -186,7 +187,7 @@ export default () => {
           )
         },
         {
-          title: h('yesNoQuizAnswerHeading', true),
+          title: <H args={{ name: 'yesNoQuizAnswerHeading', isYes: true }} />,
           content: (
             <>
               <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} halfMarginBottom />

@@ -15,7 +15,6 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { introduction } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 export const jsxBabelFix = jsx
 
@@ -166,7 +165,6 @@ export default () => {
         <P>
           Sure. <Em>This is what Y Combinator (in programming) looks like:</Em>
         </P>
-        {introduction[i++]()}
         <P>
           <Strong>This is not a joke.</Strong> I will teach you what Y
           Combinator is using these food emojis.{' '}

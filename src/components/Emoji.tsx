@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import dynamic from 'next/dynamic'
-import React from 'react'
 import EmojiLoader from 'src/components/Twemoji/2b1c'
 import twemoji from 'twemoji'
 export const jsxBabelFix = jsx
@@ -33,9 +32,8 @@ const EmojiSvg = ({ name }: { name: string }) => {
   return <Component />
 }
 
-interface EmojiProps {
+export interface EmojiProps {
   children?: string
-  customChildren?: React.ReactNode
   size: 'md' | 'lg' | 'mdlg' | 'huge' | 'star'
   noVerticalTransform: boolean
 }
@@ -49,12 +47,7 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     huge: '6em'
   }[size])
 
-const Emoji = ({
-  children,
-  size,
-  customChildren,
-  noVerticalTransform
-}: EmojiProps) => (
+const Emoji = ({ children, size, noVerticalTransform }: EmojiProps) => (
   <span
     css={[
       css`
@@ -68,7 +61,6 @@ const Emoji = ({
         `
     ]}
   >
-    {customChildren}
     {children && <EmojiSvg name={children} />}
   </span>
 )

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import CardContext from 'src/components/CardContext'
+import CardThemeContext from 'src/components/CardThemeContext'
 import { H3 } from 'src/components/ContentTags'
 import { colors, radii, spaces } from 'src/lib/theme'
 export const jsxBabelFix = jsx
@@ -42,7 +42,9 @@ const SideNoteSection = ({
   noPaddingBottom,
   color
 }: SideNoteProps) => (
-  <CardContext.Provider value={{ emBackgroundColor: emBackgroundColor(color) }}>
+  <CardThemeContext.Provider
+    value={{ emBackgroundColor: emBackgroundColor(color) }}
+  >
     <div
       css={[
         css`
@@ -72,7 +74,7 @@ const SideNoteSection = ({
       )}
       {children}
     </div>
-  </CardContext.Provider>
+  </CardThemeContext.Provider>
 )
 
 export default SideNoteSection
