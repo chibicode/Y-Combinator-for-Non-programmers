@@ -12,7 +12,7 @@ import Color from 'color'
 
 // https://material.io/design/color/the-color-system.html
 export const allColors = {
-  grey150: '#f2f2f2',
+  grey150: '#f1f1f1',
   grey300: grey[300],
   grey500: grey[500],
   grey600: grey[600],

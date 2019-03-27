@@ -61,7 +61,7 @@ const EpisodeHero = () => {
                 `
               ]}
             >
-              {episodeTitle}
+              <Em>{episodeTitle}</Em>
             </h1>
           </>
         ) : (
