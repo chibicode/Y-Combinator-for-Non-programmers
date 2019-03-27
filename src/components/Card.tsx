@@ -8,6 +8,18 @@ import { CardAction } from 'src/components/CardWrapper'
 import CardContent from 'src/components/CardContent'
 export const jsxBabelFix = jsx
 
+interface CardColorContextProps {
+  color: CardProps['color']
+}
+
+const cardColorContextDefault: CardColorContextProps = {
+  color: 'white'
+}
+
+export const CardColorContext = React.createContext<CardColorContextProps>(
+  cardColorContextDefault
+)
+
 export interface CardProps {
   children: React.ReactNode
   color: 'white' | 'orange' | 'yellow' | 'purple' | 'green' | 'blue'
@@ -53,7 +65,7 @@ const Card = ({
   slideCount,
   isLast
 }: CardProps) => (
-  <>
+  <CardColorContext.Provider value={{ color }}>
     <div
       css={css`
         position: relative;
@@ -140,7 +152,7 @@ const Card = ({
         `}
       />
     )}
-  </>
+  </CardColorContext.Provider>
 )
 
 Card.defaultProps = {

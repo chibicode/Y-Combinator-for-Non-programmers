@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import React, { useContext } from 'react'
 import { colors } from 'src/lib/theme'
+import { CardColorContext } from 'src/components/Card'
 
 interface HighlightContextProps {
   inHighlight: boolean
@@ -16,13 +17,13 @@ const HighlightContext = React.createContext<HighlightContextProps>(
 )
 
 export const Strong = ({
-  children,
-  pinkHighlight
+  children
 }: {
   children: React.ReactNode
   pinkHighlight?: boolean
 }) => {
   const { inHighlight } = useContext(HighlightContext)
+  const { color } = useContext(CardColorContext)
   if (inHighlight) {
     return (
       <span
@@ -39,7 +40,9 @@ export const Strong = ({
         <span
           css={css`
             font-weight: bold;
-            background: ${colors(pinkHighlight ? 'pink50' : 'yellow10050')};
+            background: ${colors(
+              color === 'yellow' ? 'pink50' : 'yellow10050'
+            )};
           `}
         >
           {children}
@@ -50,13 +53,13 @@ export const Strong = ({
 }
 
 export const Em = ({
-  children,
-  pinkHighlight
+  children
 }: {
   children: React.ReactNode
   pinkHighlight?: boolean
 }) => {
   const { inHighlight } = useContext(HighlightContext)
+  const { color } = useContext(CardColorContext)
   if (inHighlight) {
     return (
       <span
@@ -73,7 +76,9 @@ export const Em = ({
         <span
           css={css`
             font-style: normal;
-            background: ${colors(pinkHighlight ? 'pink50' : 'yellow10050')};
+            background: ${colors(
+              color === 'yellow' ? 'pink50' : 'yellow10050'
+            )};
           `}
         >
           {children}
