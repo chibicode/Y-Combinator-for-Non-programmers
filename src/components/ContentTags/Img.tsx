@@ -14,7 +14,7 @@ export const Img = ({
     css={
       size === 'small'
         ? css`
-            max-width: 200px;
+            max-width: 7em;
             width: 100%;
             margin: 0 auto;
             display: block;

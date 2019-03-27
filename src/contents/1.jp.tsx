@@ -19,7 +19,6 @@ import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import EpisodeHero from 'src/components/EpisodeHero'
 import h from 'src/lib/h'
 import H from 'src/components/H'
 
