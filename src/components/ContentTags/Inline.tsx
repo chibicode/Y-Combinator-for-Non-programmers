@@ -7,5 +7,5 @@ export const Strong = styled.strong`
 
 // Use span to allow nesting
 export const Em = styled.span`
-  background: ${colors('white')};
+  background: ${colors('yellow50')};
 `
