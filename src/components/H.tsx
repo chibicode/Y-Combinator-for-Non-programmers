@@ -13,12 +13,10 @@ export interface HProps {
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
     | { name: 'yesNoQuizIncorrect' }
-    | { name: 'yesNoQuizSkipped' }
     | { name: 'yesNoQuizYes'; hideText?: boolean }
     | { name: 'yesNoQuizNo'; hideText?: boolean }
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
-    | { name: 'yesNoQuizSkippedPostfix'; isYes: boolean }
     | { name: 'ycBentoBox'; plural?: boolean }
     | { name: 'ycNext' }
     | { name: 'ycPlay' }
@@ -195,21 +193,6 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'yesNoQuizSkipped') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Emoji size="mdlg">😉</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Emoji size="mdlg">😉</Emoji>
-        </>
-      )
-    }
-  }
   if (args.name === 'yesNoQuizYes') {
     if (locale === 'en') {
       return (
@@ -276,33 +259,6 @@ const H = ({ args }: HProps) => {
             <H args={{ name: 'yesNoQuizNo', hideText: true }} />
           )}
           でした。どんまい！
-        </>
-      )
-    }
-  }
-  if (args.name === 'yesNoQuizSkippedPostfix') {
-    if (locale === 'en') {
-      return (
-        <>
-          The corret answer was{' '}
-          {args.isYes ? (
-            <H args={{ name: 'yesNoQuizYes' }} />
-          ) : (
-            <H args={{ name: 'yesNoQuizNo' }} />
-          )}
-          .
-        </>
-      )
-    } else {
-      return (
-        <>
-          正解は
-          {args.isYes ? (
-            <H args={{ name: 'yesNoQuizYes', hideText: true }} />
-          ) : (
-            <H args={{ name: 'yesNoQuizNo', hideText: true }} />
-          )}
-          でした。
         </>
       )
     }

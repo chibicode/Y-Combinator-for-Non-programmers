@@ -5,7 +5,7 @@ import { Em, P } from 'src/components/ContentTags'
 import h from 'src/lib/h'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
-import { CardAction, CardActionResult } from 'src/components/CardWrapper'
+import { CardActionResult } from 'src/components/CardWrapper'
 import CardActionContext from 'src/components/CardActionContext'
 export const jsxBabelFix = jsx
 
@@ -16,26 +16,21 @@ interface YesNoButtonsProps {
 interface ButtonProps {
   status: 'default' | 'active' | 'inactive'
   cardActionResult: CardActionResult
-  cardActionTaken: CardAction
   children: React.ReactNode
   onClick: React.MouseEventHandler
 }
 
 const Button = ({
   cardActionResult,
-  cardActionTaken,
   status,
   children,
   onClick
 }: ButtonProps) => {
-  const borderColor =
-    cardActionTaken === 'skipped'
-      ? colors('green400')
-      : {
-          correct: colors('green400'),
-          default: colors('blue400'),
-          incorrect: colors('deepOrange400')
-        }[cardActionResult]
+  const borderColor = {
+    correct: colors('green400'),
+    default: colors('blue400'),
+    incorrect: colors('deepOrange400')
+  }[cardActionResult]
   return (
     <button
       disabled={status !== 'default'}
@@ -113,12 +108,10 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
       >
         <Button
           cardActionResult={cardActionResult}
-          cardActionTaken={cardActionTaken}
           status={
             cardActionTaken === 'default'
               ? 'default'
-              : cardActionTaken === 'yesSelected' ||
-                (cardActionTaken === 'skipped' && answer === 'yes')
+              : cardActionTaken === 'yesSelected'
               ? 'active'
               : 'inactive'
           }
@@ -127,13 +120,11 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizYes')}
         </Button>
         <Button
-          cardActionTaken={cardActionTaken}
           cardActionResult={cardActionResult}
           status={
             cardActionTaken === 'default'
               ? 'default'
-              : cardActionTaken === 'noSelected' ||
-                (cardActionTaken === 'skipped' && answer === 'no')
+              : cardActionTaken === 'noSelected'
               ? 'active'
               : 'inactive'
           }
@@ -142,7 +133,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           {h('yesNoQuizNo')}
         </Button>
       </div>
-      {(cardActionResult !== 'default' || cardActionTaken === 'skipped') && (
+      {cardActionResult !== 'default' && (
         <>
           <P
             css={css`
@@ -151,16 +142,12 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           >
             <Em>
               <strong>
-                {cardActionTaken === 'skipped'
-                  ? h('yesNoQuizSkipped')
-                  : cardActionResult === 'correct'
+                {cardActionResult === 'correct'
                   ? h('yesNoQuizCorrect')
                   : h('yesNoQuizIncorrect')}
               </strong>
               {locale === 'en' && ' '}
-              {cardActionTaken === 'skipped'
-                ? h('yesNoQuizSkippedPostfix', answer === 'yes')
-                : cardActionResult === 'correct'
+              {cardActionResult === 'correct'
                 ? h('yesNoQuizCorrectPostfix')
                 : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
             </Em>

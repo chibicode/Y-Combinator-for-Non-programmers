@@ -72,18 +72,6 @@ export const allTranslations = {
       </>
     )
   }),
-  yesNoQuizSkipped: () => ({
-    en: (
-      <>
-        <Emoji size="mdlg">😉</Emoji>
-      </>
-    ),
-    jp: (
-      <>
-        <Emoji size="mdlg">😉</Emoji>
-      </>
-    )
-  }),
   yesNoQuizYes: (hideText: boolean) => ({
     en: (
       <>
@@ -129,17 +117,6 @@ export const allTranslations = {
       <>
         正解は{isYes ? h('yesNoQuizYes', true) : h('yesNoQuizNo', true)}
         でした。どんまい！
-      </>
-    )
-  }),
-  yesNoQuizSkippedPostfix: (isYes: boolean) => ({
-    en: (
-      <>The corret answer was {isYes ? h('yesNoQuizYes') : h('yesNoQuizNo')}.</>
-    ),
-    jp: (
-      <>
-        正解は{isYes ? h('yesNoQuizYes', true) : h('yesNoQuizNo', true)}
-        でした。
       </>
     )
   }),

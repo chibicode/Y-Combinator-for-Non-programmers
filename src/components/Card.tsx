@@ -10,8 +10,6 @@ export const jsxBabelFix = jsx
 
 export interface CardProps {
   children: React.ReactNode
-  footerButtonContent?: React.ReactNode
-  footerButtonOnClick?: () => void
   color: 'white' | 'orange' | 'yellow' | 'brown' | 'green' | 'blue'
   slideNumber?: number
   slideCount?: number
@@ -28,28 +26,12 @@ export interface CardState {
 const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
-    white: colors('grey200'),
+    white: colors('grey150'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),
     brown: colors('brown50'),
     blue: colors('blue50')
   }[color])
-
-const backgroundDarker1 = (color: CardProps['color']) => {
-  if (color === 'blue') {
-    return colors('blue100')
-  } else {
-    backgroundColor(color)
-  }
-}
-
-const backgroundDarker2 = (color: CardProps['color']) => {
-  if (color === 'blue') {
-    return colors('blue200')
-  } else {
-    backgroundColor(color)
-  }
-}
 
 // First where the text is white
 const slideLabelBgColor = (color: CardProps['color']) =>
@@ -69,8 +51,6 @@ const Card = ({
   preview,
   slideNumber,
   slideCount,
-  footerButtonContent,
-  footerButtonOnClick,
   isLast
 }: CardProps) => (
   <>
@@ -126,13 +106,13 @@ const Card = ({
             padding-top: ${spaces(1)};
             padding-left: ${spaces(1)};
             padding-right: ${spaces(1)};
-            padding-bottom: ${footerButtonContent ? spaces(0.25) : spaces(0.5)};
+            padding-bottom: ${spaces(0.5)};
 
             ${ns} {
               padding-top: ${spaces(1.5)};
               padding-left: ${spaces(2)};
               padding-right: ${spaces(2)};
-              padding-bottom: ${footerButtonContent ? spaces(0.5) : spaces(1)};
+              padding-bottom: ${spaces(1)};
             }
             background: ${backgroundColor(color)};
           `}
@@ -148,37 +128,6 @@ const Card = ({
           )}
           <CardContent preview={preview}>{children}</CardContent>
         </div>
-        {footerButtonContent && (
-          <button
-            type="button"
-            onClick={footerButtonOnClick}
-            css={css`
-              padding-top: ${spaces(1)};
-              padding-left: ${spaces(1)};
-              padding-right: ${spaces(1)};
-              padding-bottom: ${spaces(1)};
-              border: none;
-              background: ${backgroundDarker1(color)};
-              width: 100%;
-              outline: 0;
-              font-weight: bold;
-              cursor: pointer;
-
-              ${ns} {
-                padding-top: ${spaces(1)};
-                padding-left: ${spaces(2)};
-                padding-right: ${spaces(2)};
-                padding-bottom: ${spaces(1)};
-              }
-
-              &:hover {
-                background: ${backgroundDarker2(color)};
-              }
-            `}
-          >
-            {footerButtonContent}
-          </button>
-        )}
       </div>{' '}
     </div>
     {!isLast && slideNumber !== undefined && (

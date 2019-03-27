@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Card from 'src/components/Card'
 import { CardProps } from 'src/components/Card'
 import { EpisodeCardType } from 'src/components/EpisodeCardList'
-import h from 'src/lib/h'
 import CardActionContext from 'src/components/CardActionContext'
 import useCardScroll from 'src/hooks/useCardScroll'
 
@@ -17,21 +16,18 @@ interface CardWrapperProps {
   setLastVisibleCardIndex: () => void
 }
 
-export type CardAction = 'default' | 'yesSelected' | 'noSelected' | 'skipped'
+export type CardAction = 'default' | 'yesSelected' | 'noSelected'
 
 export type CardActionResult = 'default' | 'correct' | 'incorrect'
 
 const cardActionToColor = (
-  cardAction: CardAction,
   cardActionResult: CardActionResult
 ): CardProps['color'] | undefined =>
-  cardAction === 'skipped'
-    ? 'green'
-    : {
-        default: undefined,
-        correct: 'green' as 'green',
-        incorrect: 'orange' as 'orange'
-      }[cardActionResult]
+  ({
+    default: undefined,
+    correct: 'green' as 'green',
+    incorrect: 'orange' as 'orange'
+  }[cardActionResult])
 
 const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
   type
@@ -41,14 +37,6 @@ const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
         warning: 'yellow' as 'yellow'
       }[type]
     : 'white'
-
-const hasFooterButton = (
-  type: EpisodeCardType['type'],
-  cardActionTaken: CardAction
-) => type === 'yesNoQuiz' && cardActionTaken === 'default'
-
-const FooterButtonContent = ({ type }: { type: EpisodeCardType['type'] }) =>
-  type === 'yesNoQuiz' ? <>{h('yesNoQuizSeeAnswer')}</> : null
 
 const CardWrapper = ({
   slideNumber,
@@ -89,16 +77,7 @@ const CardWrapper = ({
             cardActionTaken,
             title
           }}
-          color={
-            cardActionToColor(cardActionTaken, cardActionResult) ||
-            typeToColor(type)
-          }
-          footerButtonContent={
-            hasFooterButton(type, cardActionTaken) && (
-              <FooterButtonContent type={type} />
-            )
-          }
-          footerButtonOnClick={() => takeCardAction('skipped')}
+          color={cardActionToColor(cardActionResult) || typeToColor(type)}
         />
       </div>
     </CardActionContext.Provider>
