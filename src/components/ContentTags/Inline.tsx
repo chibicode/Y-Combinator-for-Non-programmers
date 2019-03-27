@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core'
 import React, { useContext } from 'react'
 import { colors } from 'src/lib/theme'
 import { CardColorContext } from 'src/components/Card'
+export const jsxBabelFix = jsx
 
 interface HighlightContextProps {
   inHighlight: boolean
@@ -41,7 +42,7 @@ export const Strong = ({
           css={css`
             font-weight: bold;
             background: ${colors(
-              color === 'yellow' ? 'pink5050' : 'yellow10050'
+              color === 'yellow' ? 'pink10050' : 'yellow10050'
             )};
           `}
         >
@@ -77,7 +78,7 @@ export const Em = ({
           css={css`
             font-style: normal;
             background: ${colors(
-              color === 'yellow' ? 'pink5050' : 'yellow10050'
+              color === 'yellow' ? 'pink10050' : 'yellow10050'
             )};
           `}
         >

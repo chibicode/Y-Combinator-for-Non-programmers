@@ -15,6 +15,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
+import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import t from 'src/lib/titles'
 export const jsxBabelFix = jsx
@@ -57,6 +58,14 @@ export default () => {
               <P>
                 <Strong>公開日:</Strong> 2019年4月20日
               </P>
+            </>
+          )
+        },
+        {
+          title: '目次',
+          content: (
+            <>
+              <Toc />
             </>
           )
         },
