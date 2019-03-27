@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import React, { useContext } from 'react'
 import { Em, P } from 'src/components/ContentTags'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
 import { CardActionResult } from 'src/components/CardWrapper'
@@ -117,7 +117,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           }
           onClick={onButtonClick('yes', answer)}
         >
-          {h('yesNoQuizYes')}
+          <H args={{ name: 'yesNoQuizYes' }} />
         </Button>
         <Button
           cardActionResult={cardActionResult}
@@ -130,7 +130,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           }
           onClick={onButtonClick('no', answer)}
         >
-          {h('yesNoQuizNo')}
+          <H args={{ name: 'yesNoQuizNo' }} />
         </Button>
       </div>
       {cardActionResult !== 'default' && (
@@ -142,14 +142,23 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           >
             <Em>
               <strong>
-                {cardActionResult === 'correct'
-                  ? h('yesNoQuizCorrect')
-                  : h('yesNoQuizIncorrect')}
+                {cardActionResult === 'correct' ? (
+                  <H args={{ name: 'yesNoQuizCorrect' }} />
+                ) : (
+                  <H args={{ name: 'yesNoQuizIncorrect' }} />
+                )}
               </strong>
               {locale === 'en' && ' '}
-              {cardActionResult === 'correct'
-                ? h('yesNoQuizCorrectPostfix')
-                : h('yesNoQuizIncorrectPostfix', answer === 'yes')}
+              {cardActionResult === 'correct' ? (
+                <H args={{ name: 'yesNoQuizCorrectPostfix' }} />
+              ) : (
+                <H
+                  args={{
+                    name: 'yesNoQuizIncorrectPostfix',
+                    isYes: answer === 'yes'
+                  }}
+                />
+              )}
             </Em>
           </P>
         </>

@@ -213,18 +213,14 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
-            <Emoji>👎</Emoji> No
-          </Strong>
+          <Emoji>👎</Emoji> No
         </>
       )
     } else {
       return (
         <>
-          <Strong>
-            <Emoji>❌</Emoji>
-            {!args.hideText && ' いいえ'}
-          </Strong>
+          <Emoji>❌</Emoji>
+          {!args.hideText && ' いいえ'}
         </>
       )
     }
