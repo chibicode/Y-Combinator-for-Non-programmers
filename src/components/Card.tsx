@@ -6,7 +6,6 @@ import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
 import CardContent from 'src/components/CardContent'
-export const jsxBabelFix = jsx
 
 interface CardColorContextProps {
   color: CardProps['color']

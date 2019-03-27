@@ -4,7 +4,6 @@ import { css, jsx } from '@emotion/core'
 import dynamic from 'next/dynamic'
 import EmojiLoader from 'src/components/Twemoji/2b1c'
 import twemoji from 'twemoji'
-export const jsxBabelFix = jsx
 
 // Copied from Twemoji
 const UFE0Fg = /\uFE0F/g

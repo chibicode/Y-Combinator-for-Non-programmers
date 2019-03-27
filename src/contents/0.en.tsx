@@ -16,7 +16,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-export const jsxBabelFix = jsx
 
 export default () => {
   return (

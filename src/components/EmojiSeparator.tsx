@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
 import { fontSizes, ns, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 interface EmojiSeparatorProps {
   emojis: string[]

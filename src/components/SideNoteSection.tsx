@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { H3 } from 'src/components/ContentTags'
 import { radii, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 interface SideNoteProps {
   heading?: React.ReactNode

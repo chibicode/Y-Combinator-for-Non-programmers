@@ -9,7 +9,6 @@ import ExpressionRunnerContext, {
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
 import { allFontSizes } from 'src/lib/theme/fontSizes'
-export const jsxBabelFix = jsx
 
 interface ExpressionPrioritiesLabelProps {
   emphasize: boolean

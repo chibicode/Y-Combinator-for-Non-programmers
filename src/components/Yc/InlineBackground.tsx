@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import crossDarkSvg from 'src/images/cross-dark.url.svg'
 import { colors } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
-export const jsxBabelFix = jsx
 
 interface InlineBackgroundProps {
   bgColor?: keyof typeof allColors

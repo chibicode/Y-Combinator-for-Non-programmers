@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
 import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 interface InlineEmojiBoxProps {
   emojis: string[]

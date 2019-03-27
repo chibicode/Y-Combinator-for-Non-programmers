@@ -8,7 +8,6 @@ import ExpressionRunnerContext, {
 import crossSvg from 'src/images/cross.url.svg'
 import { colors, zIndices } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface BorderWrapperProps {
   highlightType: HighlightOverrides

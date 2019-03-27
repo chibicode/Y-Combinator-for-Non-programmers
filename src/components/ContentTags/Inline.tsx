@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import React, { useContext } from 'react'
 import { colors } from 'src/lib/theme'
 import { CardColorContext } from 'src/components/Card'
-export const jsxBabelFix = jsx
 
 interface HighlightContextProps {
   inHighlight: boolean

@@ -11,7 +11,6 @@ import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
 import numEpisodes from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 export interface EpisodePageProps {
   lessonTitle: string

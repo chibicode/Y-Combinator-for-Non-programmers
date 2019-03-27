@@ -7,7 +7,6 @@ import locale from 'src/lib/locale'
 import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
 import { CardActionResult } from 'src/components/CardWrapper'
 import CardActionContext from 'src/components/CardActionContext'
-export const jsxBabelFix = jsx
 
 interface YesNoButtonsProps {
   answer: 'yes' | 'no'

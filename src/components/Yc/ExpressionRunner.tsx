@@ -20,7 +20,6 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
-export const jsxBabelFix = jsx
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (isFastForwarding?: boolean) =>

@@ -18,7 +18,6 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import t from 'src/lib/titles'
-export const jsxBabelFix = jsx
 
 export default () => {
   return (

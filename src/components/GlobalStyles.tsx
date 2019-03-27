@@ -6,7 +6,6 @@ import 'modern-normalize'
 import React from 'react'
 import { colors, lineHeights, spaces } from 'src/lib/theme'
 import ns from 'src/lib/theme/ns'
-export const jsxBabelFix = jsx
 const pink = colors('pink500')
 
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => {

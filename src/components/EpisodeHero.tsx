@@ -15,7 +15,6 @@ import {
   ns
 } from 'src/lib/theme'
 import H from 'src/components/H'
-export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
   line-height: ${lineHeights(1.1)};

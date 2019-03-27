@@ -2,7 +2,6 @@
 import { css, jsx } from '@emotion/core'
 import Link from 'next/link'
 import { colors } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 export const commonLinkClass = css`
   &:hover,

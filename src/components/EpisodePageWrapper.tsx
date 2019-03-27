@@ -4,7 +4,6 @@ import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import t, { allTitles } from 'src/lib/titles'
 import GlobalContextSetter from 'src/components/GlobalContextSetter'
-export const jsxBabelFix = jsx
 
 interface EpisodePageWrapperProps {
   episodeNumber: number
