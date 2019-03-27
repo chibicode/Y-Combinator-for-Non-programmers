@@ -13,11 +13,12 @@ import {
   lineHeights,
   spaces
 } from 'src/lib/theme'
+import { Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
-  line-height: ${lineHeights(1.1)};
+  line-height: ${lineHeights(1.2)};
   letter-spacing: ${letterSpacings('title')};
   text-align: center;
 `
@@ -76,7 +77,9 @@ const EpisodeHero = () => {
               `
             ]}
           >
-            <H args={{ name: 'titleSplit' }} />
+            <Em>
+              <H args={{ name: 'titleSplit' }} />
+            </Em>
           </h1>
         )}
       </>
