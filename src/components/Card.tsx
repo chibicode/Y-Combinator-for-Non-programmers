@@ -10,7 +10,7 @@ export const jsxBabelFix = jsx
 
 export interface CardProps {
   children: React.ReactNode
-  color: 'white' | 'orange' | 'yellow' | 'brown' | 'green' | 'blue'
+  color: 'white' | 'orange' | 'yellow' | 'purple' | 'green' | 'blue'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -29,7 +29,7 @@ const backgroundColor = (color: CardProps['color']) =>
     white: colors('grey150'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),
-    brown: colors('brown50'),
+    purple: colors('purple50'),
     blue: colors('blue50')
   }[color])
 
@@ -40,7 +40,7 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     white: colors('grey600'),
     orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
-    brown: colors('brown300'),
+    purple: colors('purple300'),
     blue: colors('blue600')
   }[color])
 

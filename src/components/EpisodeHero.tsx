@@ -11,14 +11,14 @@ import {
   fontWeights,
   letterSpacings,
   lineHeights,
-  spaces
+  spaces,
+  ns
 } from 'src/lib/theme'
-import { Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 export const jsxBabelFix = jsx
 
 const commonTitleClasses = css`
-  line-height: ${lineHeights(1.2)};
+  line-height: ${lineHeights(1.1)};
   letter-spacing: ${letterSpacings('title')};
   text-align: center;
 `
@@ -26,7 +26,11 @@ const commonTitleClasses = css`
 const EpisodeHero = () => {
   const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   return (
-    <>
+    <header
+      css={css`
+        padding: ${spaces(0.5)} 0;
+      `}
+    >
       <>
         {episodeTitle ? (
           <>
@@ -35,8 +39,11 @@ const EpisodeHero = () => {
                 commonTitleClasses,
                 css`
                   color: ${colors('grey600')};
-                  padding: ${spaces(1)} 0 ${spaces(0.5)};
+                  padding: ${spaces(1)} 0 ${spaces(1)};
                   font-size: ${fontSizes(1.25)};
+                  ${ns} {
+                    font-size: ${fontSizes(1.5)};
+                  }
                   margin: 0 auto;
                 `
               ]}
@@ -55,13 +62,16 @@ const EpisodeHero = () => {
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
-                  font-size: ${fontSizes(2)};
+                  font-size: ${fontSizes(1.75)};
+                  ${ns} {
+                    font-size: ${fontSizes(2)};
+                  }
                   font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};
                 `
               ]}
             >
-              <Em>{episodeTitle}</Em>
+              {episodeTitle}
             </h1>
           </>
         ) : (
@@ -71,20 +81,22 @@ const EpisodeHero = () => {
               css`
                 color: ${colors('grey900')};
                 padding-top: ${spaces(0.5)};
-                font-size: ${fontSizes(2)};
+                font-size: ${fontSizes(1.75)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};
+
+                ${ns} {
+                  font-size: ${fontSizes(2.5)};
+                }
               `
             ]}
           >
-            <Em>
-              <H args={{ name: 'titleSplit' }} />
-            </Em>
+            <H args={{ name: 'titleSplit' }} />
           </h1>
         )}
       </>
       <EmojiSeparator size="lg" emojis={episodeEmojis[episodeNumber]} />
-    </>
+    </header>
   )
 }
 

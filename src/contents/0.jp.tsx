@@ -13,10 +13,8 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import EpisodeHero from 'src/components/EpisodeHero'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
-import { InternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import t from 'src/lib/titles'
 export const jsxBabelFix = jsx
@@ -26,17 +24,24 @@ export default () => {
     <EpisodeCardList
       cards={[
         {
+          title: '自己紹介と、この記事について',
           content: (
             <>
-              <EpisodeHero />
+              <EmojiSeparator halfMarginBottom emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
               <P>
-                こんにちは！当サイト「
-                <Em>
-                  <Strong>CSmoji</Strong>
-                </Em>
-                」 では、
-                <Em>絵文字</Em>を使った<Em>コンピューターサイエンス</Em>
-                (略して“CS”)の無料レッスンを公開しています。
+                こんにちは、<Strong>上杉周作</Strong>
+                と申します。米国在住のプログラマー兼ブロガーです。2019年に発売されたベストセラー本『
+                <ExternalLink href="https://amzn.to/2QlZIqm">
+                  ファクトフルネス
+                </ExternalLink>
+                』の共訳者でもあります。
+              </P>
+              <P>
+                <Img
+                  size="small"
+                  src="/static/images/yc/factfulness.jpg"
+                  alt="ファクトフルネス"
+                />
               </P>
               <P>
                 今回はレッスン第1弾・「
@@ -47,19 +52,6 @@ export default () => {
                 で終えることができるので、通勤・通学・昼休みの時間にやるのにぴったりです。ぜひお楽しみください！
               </P>
             </>
-          )
-        },
-        {
-          title: '続きからはじめる場合',
-          type: 'warning',
-          content: (
-            <P>
-              すでにレッスンを途中まで終えた方は、
-              <InternalLink href="/toc">
-                こちらの目次ページから続きをやってみてください
-              </InternalLink>
-              。
-            </P>
           )
         },
         {

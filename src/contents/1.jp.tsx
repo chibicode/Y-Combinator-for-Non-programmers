@@ -94,22 +94,15 @@ export default () => {
     <EpisodeCardList
       cards={[
         {
+          title: <H args={{ name: 'ycBentoBox' }} />,
           content: (
             <>
-              <EpisodeHero />
               <P>
                 <H args={{ name: 'episodeWelcomeText' }} />
                 今回は、
                 <Em>とあるパズルの基本ルール</Em>
                 を紹介します。
               </P>
-            </>
-          )
-        },
-        {
-          title: <H args={{ name: 'ycBentoBox' }} />,
-          content: (
-            <>
               <P>
                 まずはじめにこちらの写真をご覧ください。わたしの地元・横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
               </P>

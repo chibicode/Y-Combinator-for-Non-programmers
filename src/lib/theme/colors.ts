@@ -4,7 +4,7 @@ import {
   grey,
   indigo,
   pink,
-  brown,
+  purple,
   green,
   yellow
 } from '@material-ui/core/colors'
@@ -19,10 +19,10 @@ export const allColors = {
   grey700: grey[700],
   grey800: grey[800],
   grey900: grey[900],
-  brown50: brown[50],
-  brown100: brown[100],
-  brown300: brown[300],
-  brown600: brown[600],
+  purple50: purple[50],
+  purple100: purple[100],
+  purple300: purple[300],
+  purple700: purple[700],
   indigo50: indigo[50],
   indigo100: indigo[100],
   indigo300: indigo[300],
