@@ -28,6 +28,16 @@ const mix = (color: CardProps['color'], base: string) =>
     .hsl()
     .string()
 
+export const InlineHeader = ({ children }: { children: React.ReactNode }) => (
+  <span
+    css={css`
+      font-weight: bold;
+    `}
+  >
+    {children}
+  </span>
+)
+
 export const Strong = ({
   children
 }: {

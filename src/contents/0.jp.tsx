@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import {
   Blockquote,
   Em,
@@ -7,8 +7,7 @@ import {
   ExternalLink,
   P,
   Strong,
-  Ul,
-  UlLi
+  InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -49,7 +48,10 @@ export default () => {
               </P>
               <P>
                 本記事「<Strong>{lessonTitle}</Strong>
-                」は、わたしのブロガー人生の中で最も時間をかけた、とっておきの記事です。試行錯誤を繰り返しすぎて、執筆に10ヶ月近くかかってしまいました。でもその分、自信を持っておすすめできる記事になったかなと思います。
+                」は、わたしのブロガー人生の中で最も時間をかけた、とっておきの記事です。試行錯誤を繰り返しすぎて、執筆に10ヶ月近くかかってしまいました。ネタそのものは、10年近く温めていたものです。
+              </P>
+              <P>
+                時間をかけた分、自信を持っておすすめできる記事になったかなと思います。
               </P>
               <P>
                 少々長いですが、章ごとにページを分けているので、途中で一時休憩することもできます。最後まで楽しんでいただけると嬉しいです。
@@ -97,6 +99,14 @@ export default () => {
                 </Em>
                 」という方には、コンピューターサイエンスを学ぶことをおすすめします。
               </P>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                わたしは米国カーネギーメロン大学のコンピューターサイエンス学士号を修得しました。
+                <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
+                  最優秀TA(ティーチングアシスタント、教育助手)賞も受賞しています
+                </ExternalLink>
+                。
+              </P>
             </>
           )
         },
@@ -106,20 +116,23 @@ export default () => {
             <>
               <EmojiSeparator emojis={['🤔', '💭', '📝']} halfMarginBottom />
               <P>
-                もちろん、短期間ですべてを学ぶことはできません。だからこの記事では、
+                もちろん、短期間でコンピューターサイエンスのすべてを学ぶことはできません。だからこの記事では、
                 <Strong>
                   「コンピューターサイエンスを学んでみたい」というきっかけを提供できれば
                 </Strong>
-                と思っています。みなさんに
+                と思っています。きっかけさえ掴むことができれば、教材はネットに豊富にあるので、みずから学んでいけるようになります。
+              </P>
+              <P>
+                だからこの記事の目標は、みなさんに
                 <Em>
                   「コンピューターサイエンスって面白い！」「自分でもわかるかも！」「もっと知りたい！」
                 </Em>
-                と思ってもらうのが目標です。
+                と思ってもらうことです。
               </P>
               <P>
                 そのために今回は、コンピューターサイエンスの中でも特に面白い題材について解説します。それがこの記事の題名にもある「
                 <Strong>Yコンビネーター</Strong>
-                」です。いったい何のことなんでしょう？
+                」です。
               </P>
             </>
           )
@@ -130,8 +143,16 @@ export default () => {
           content: (
             <>
               <P>
-                というわけで質問です。分からなくて当然なので、勘で答えてみてください！
+                この記事の題名は「<Em>{lessonTitle}</Em>」ですが、「
+                <Strong>Yコンビネーター</Strong>
+                」とはいったい何のことなのでしょう？
               </P>
+              <P>
+                すぐに正解を言っても面白くないので、
+                <Emoji>⭕️</Emoji> <Emoji>❌</Emoji>
+                クイズ形式で出題します。分からなくて当然なので、勘で答えてみてください！
+              </P>
+              <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
               <P>
                 <Strong>質問:</Strong> <Em>Yコンビネーター</Em>
                 」とは、
@@ -164,7 +185,8 @@ export default () => {
                 primaryTextType="start"
               />
               <P>
-                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下のコラムも読んでみてください。(読み飛ばしても大丈夫です。)
+                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下のコラムも読んでみてください。(
+                <Em>読み飛ばしても大丈夫です。</Em>)
               </P>
             </>
           )
@@ -195,12 +217,12 @@ export default () => {
           )
         },
         {
-          title: '別の意味の「Yコンビネーター」',
+          title: 'IT業界で耳にする「Yコンビネーター」',
           type: 'sideNote' as 'sideNote',
           preview: (
             <>
               <P>
-                <Em>ITベンチャー業界</Em>にいる方なら、別の意味で
+                <Em>IT業界</Em>にいる方なら、別の意味で
                 「Yコンビネーター」という言葉をご存知かもしれません。
               </P>
             </>
@@ -279,7 +301,7 @@ export default () => {
           )
         },
         {
-          title: 'それでは始めましょう！',
+          title: '余談はこれくらいにして、早速始めましょう！',
           content: (
             <>
               <YcNextLessonButton
