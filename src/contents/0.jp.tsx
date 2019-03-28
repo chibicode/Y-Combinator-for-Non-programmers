@@ -98,7 +98,7 @@ export default () => {
                   </ExternalLink>
                   全米トップレベルです。
                 </P>
-                <EmojiSeparator emojis={['🇺🇸', '👨‍🎓', '🏫']} />
+                <EmojiSeparator emojis={['🇺🇸', '👨🏻‍🎓', '🏫']} />
               </>
             )
           },
