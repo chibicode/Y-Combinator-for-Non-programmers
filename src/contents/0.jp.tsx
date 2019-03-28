@@ -17,6 +17,7 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import { lessonTitle } from 'src/lib/titles'
+import { dateString, dateSchemaString } from 'src/lib/date'
 
 export default () => {
   return (
@@ -28,9 +29,10 @@ export default () => {
             color: 'purple',
             content: (
               <P>
-                <InlineHeader>公開日:</InlineHeader> 2019年4月20日
+                <InlineHeader>公開日:</InlineHeader>{' '}
+                <time dateTime={dateSchemaString}>{dateString}</time>
                 <br />
-                <InlineHeader>記事のソースコード:</InlineHeader>{' '}
+                <InlineHeader>ソースコード:</InlineHeader>{' '}
                 <ExternalLink href="https://github.com/chibicode/yc">
                   GitHubで公開中
                 </ExternalLink>
