@@ -3,7 +3,7 @@ import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
-import t from 'src/lib/titles'
+import { lessonTitle } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 
 export interface HProps {
@@ -56,7 +56,7 @@ const H = ({ args }: HProps) => {
   }
   if (args.name === 'titleSplit') {
     if (locale === 'en') {
-      return <>{t('title')}</>
+      return <>{lessonTitle}</>
     } else {
       return (
         <>
@@ -73,7 +73,7 @@ const H = ({ args }: HProps) => {
         <P>
           <Strong>Hello!</Strong> This is{' '}
           <Strong>page {episodeNumber + 1}</Strong> of the series called “
-          <InternalLink href={'/'}>{t('title')}</InternalLink>
+          <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,
           <InternalLink href={'/'}>
             <Strong>click here to read from the beginning</Strong>
@@ -86,7 +86,7 @@ const H = ({ args }: HProps) => {
       return (
         <P>
           <Strong>こんにちは！</Strong>このページは「
-          <InternalLink href={'/'}>{t('title')}</InternalLink>
+          <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           」という記事の
           <Strong>{episodeNumber + 1}ページ目</Strong>
           です。1ページ目から読むには

@@ -30,8 +30,8 @@ export const allColors = {
   indigo500: indigo[500],
   pink50: pink[50],
   pink100: pink[100],
-  pink10050: Color(pink[100])
-    .alpha(0.5)
+  pink10066: Color(pink[100])
+    .alpha(0.66)
     .hsl()
     .string(),
   pink400: pink[400],
@@ -52,8 +52,8 @@ export const allColors = {
   blue600: blue[600],
   yellow50: yellow[50],
   yellow100: yellow[100],
-  yellow10050: Color(yellow[100])
-    .alpha(0.5)
+  yellow10066: Color(yellow[100])
+    .alpha(0.66)
     .hsl()
     .string(),
   yellow900: yellow[900],

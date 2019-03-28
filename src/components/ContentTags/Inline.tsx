@@ -41,7 +41,7 @@ export const Strong = ({
           css={css`
             font-weight: bold;
             background: ${colors(
-              color === 'yellow' ? 'pink10050' : 'yellow10050'
+              color === 'yellow' ? 'pink10066' : 'yellow10066'
             )};
           `}
         >
@@ -77,7 +77,7 @@ export const Em = ({
           css={css`
             font-style: normal;
             background: ${colors(
-              color === 'yellow' ? 'pink10050' : 'yellow10050'
+              color === 'yellow' ? 'pink10066' : 'yellow10066'
             )};
           `}
         >

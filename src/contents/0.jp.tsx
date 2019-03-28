@@ -17,7 +17,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
-import t from 'src/lib/titles'
+import { lessonTitle } from 'src/lib/titles'
 
 export default () => {
   return (
@@ -48,7 +48,7 @@ export default () => {
                 />
               </P>
               <P>
-                本記事「<Strong>{t('title')}</Strong>
+                本記事「<Strong>{lessonTitle}</Strong>
                 」は、わたしのブロガー人生の中で最も時間をかけた、とっておきの記事です。試行錯誤を繰り返しすぎて、執筆に10ヶ月近くかかってしまいました。でもその分、自信を持っておすすめできる記事になったかなと思います。
               </P>
               <P>
@@ -64,6 +64,7 @@ export default () => {
           title: '目次',
           content: (
             <>
+              <EmojiSeparator emojis={['📗', '📘', '📕']} halfMarginBottom />
               <Toc />
             </>
           )

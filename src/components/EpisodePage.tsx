@@ -9,7 +9,7 @@ import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
-import numEpisodes from 'src/lib/numEpisodes'
+import { numEpisodes } from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
 
 export interface EpisodePageProps {
@@ -25,11 +25,6 @@ const navigationLinkClasses = css`
   color: ${colors('grey600')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
-
-  &:hover,
-  &:active {
-    text-decoration: underline;
-  }
 `
 
 const EpisodePage = ({

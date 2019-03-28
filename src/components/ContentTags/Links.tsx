@@ -6,7 +6,7 @@ import { colors } from 'src/lib/theme'
 export const commonLinkClass = css`
   &:hover,
   &:active {
-    background-color: ${colors('pink100')};
+    background-color: ${colors('pink10066')};
   }
 `
 
