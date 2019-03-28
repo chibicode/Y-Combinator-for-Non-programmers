@@ -34,8 +34,9 @@ const EpisodePage = ({
   episodeNumber,
   contentName
 }: EpisodePageProps) => {
-  const title = `${lessonTitle}${episodeTitleString &&
-    ` | ${episodeTitleString}`}`
+  const title = `${lessonTitle}${
+    episodeTitleString ? ` | ${episodeTitleString}` : ''
+  }`
   return (
     <Page>
       <Head>

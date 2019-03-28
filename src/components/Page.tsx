@@ -4,6 +4,7 @@ import Favicon from 'src/components/Favicon'
 import GlobalStyles from 'src/components/GlobalStyles'
 import { GA_TRACKING_ID } from '../lib/gtag'
 import { dateSchemaString } from 'src/lib/date'
+import { ogLocale } from 'src/lib/locale'
 
 const Page = ({ children }: { children: React.ReactNode }) => (
   <GlobalStyles>
@@ -14,6 +15,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
         key="viewport"
       />
       <meta property="og:type" content="article" />
+      <meta property="og:locale" content={ogLocale} />
       <meta property="article:published_time" content={dateSchemaString} />
       <Favicon />
       <script
