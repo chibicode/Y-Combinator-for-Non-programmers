@@ -31,7 +31,11 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
           }
 
           html,
-          body {
+          body,
+          input,
+          textarea,
+          select,
+          button {
             font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
               'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
               sans-serif;
