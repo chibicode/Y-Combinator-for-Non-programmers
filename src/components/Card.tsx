@@ -21,7 +21,7 @@ export const CardColorContext = React.createContext<CardColorContextProps>(
 
 export interface CardProps {
   children: React.ReactNode
-  color: 'white' | 'orange' | 'yellow' | 'purple' | 'green' | 'blue'
+  color: 'white' | 'orange' | 'yellow' | 'purple' | 'green' | 'blue' | 'indigo'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -41,7 +41,8 @@ export const backgroundColor = (color: CardProps['color']) =>
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),
     purple: colors('purple50'),
-    blue: colors('blue50')
+    blue: colors('blue50'),
+    indigo: colors('indigo50')
   }[color])
 
 // First where the text is white
@@ -52,7 +53,8 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
     purple: colors('purple300'),
-    blue: colors('blue600')
+    blue: colors('blue600'),
+    indigo: colors('indigo300')
   }[color])
 
 const Card = ({

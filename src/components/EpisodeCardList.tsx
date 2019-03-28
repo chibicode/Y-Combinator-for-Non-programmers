@@ -6,7 +6,7 @@ import useConditionalCards from 'src/hooks/useConditionalCards'
 import h from 'src/lib/h'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'warning'
+  type?: 'yesNoQuiz' | 'sideNote' | 'warning' | 'meta'
   title?: React.ReactNode
   preview?: React.ReactNode
   content: React.ReactNode

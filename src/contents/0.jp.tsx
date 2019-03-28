@@ -62,6 +62,7 @@ export default () => {
         },
         {
           title: '目次',
+          type: 'meta',
           content: (
             <>
               <EmojiSeparator emojis={['📗', '📘', '📕']} halfMarginBottom />
