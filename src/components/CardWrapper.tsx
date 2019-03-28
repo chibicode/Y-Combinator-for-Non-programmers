@@ -13,6 +13,7 @@ interface CardWrapperProps {
   preview?: React.ReactNode
   type?: EpisodeCardType['type']
   title?: React.ReactNode
+  footer?: CardProps['footer']
   setLastVisibleCardIndex: () => void
 }
 
@@ -47,7 +48,8 @@ const CardWrapper = ({
   preview,
   type,
   setLastVisibleCardIndex,
-  title
+  title,
+  footer
 }: CardWrapperProps) => {
   const [cardActionTaken, setCardActionTaken] = useState<CardAction>('default')
   const [cardActionResult, setCardActionResult] = useState<CardActionResult>(
@@ -76,7 +78,8 @@ const CardWrapper = ({
             preview,
             children,
             cardActionTaken,
-            title
+            title,
+            footer
           }}
           color={cardActionToColor(cardActionResult) || typeToColor(type)}
         />

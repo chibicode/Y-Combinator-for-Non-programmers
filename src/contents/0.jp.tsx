@@ -24,6 +24,19 @@ export default () => {
       cards={[
         {
           title: '自己紹介と、この記事について',
+          footer: {
+            color: 'purple',
+            content: (
+              <P>
+                <InlineHeader>公開日:</InlineHeader> 2019年4月20日
+                <br />
+                <InlineHeader>記事のソースコード:</InlineHeader>{' '}
+                <ExternalLink href="https://github.com/chibicode/yc">
+                  GitHubで公開中
+                </ExternalLink>
+              </P>
+            )
+          },
           content: (
             <>
               <EmojiSeparator halfMarginBottom emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
@@ -48,16 +61,10 @@ export default () => {
               </P>
               <P>
                 本記事「<Strong>{lessonTitle}</Strong>
-                」は、わたしのブロガー人生の中で最も時間をかけた、とっておきの記事です。試行錯誤を繰り返しすぎて、執筆に10ヶ月近くかかってしまいました。ネタそのものは、10年近く温めていたものです。
+                」は、わたしのブロガー人生の中で最も時間をかけた、とっておきの記事です。試行錯誤を繰り返しすぎて、執筆に10ヶ月近くかかってしまいました。ネタそのものは、10年近く温めていたものです。時間をかけた分、自信を持っておすすめできる記事になったかなと思います。
               </P>
               <P>
-                時間をかけた分、自信を持っておすすめできる記事になったかなと思います。
-              </P>
-              <P>
-                少々長いですが、章ごとにページを分けているので、途中で一時休憩することもできます。最後まで楽しんでいただけると嬉しいです。
-              </P>
-              <P>
-                <Strong>公開日:</Strong> 2019年4月20日
+                少々長いですが、章ごとにページを分けているので、途中で一時休憩することもできます。最後まで無料で公開しているので、楽しんでいただけると嬉しいです。
               </P>
             </>
           )
@@ -74,6 +81,23 @@ export default () => {
         },
         {
           title: 'はじめに: コンピューターサイエンスって何？',
+          footer: {
+            color: 'purple',
+            content: (
+              <P>
+                <InlineHeader>余談:</InlineHeader>{' '}
+                筆者は米国カーネギーメロン大学のコンピューターサイエンス学士号を修得しました。
+                <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
+                  最優秀TA(ティーチング・アシスタント/教育助手)賞も受賞しています
+                </ExternalLink>
+                。 ちなみにカーネギーメロン大学は、コンピューターサイエンスでは
+                <ExternalLink href="https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings">
+                  スタンフォード大やマサチューセッツ工科大と並んで
+                </ExternalLink>
+                全米トップレベルです。
+              </P>
+            )
+          },
           content: (
             <>
               <EmojiSeparator emojis={['🤖', '🤔', '🤖']} halfMarginBottom />
@@ -99,14 +123,6 @@ export default () => {
                 </Em>
                 」という方には、コンピューターサイエンスを学ぶことをおすすめします。
               </P>
-              <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
-                わたしは米国カーネギーメロン大学のコンピューターサイエンス学士号を修得しました。
-                <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
-                  最優秀TA(ティーチングアシスタント、教育助手)賞も受賞しています
-                </ExternalLink>
-                。
-              </P>
             </>
           )
         },
@@ -116,36 +132,31 @@ export default () => {
             <>
               <EmojiSeparator emojis={['🤔', '💭', '📝']} halfMarginBottom />
               <P>
-                もちろん、短期間でコンピューターサイエンスのすべてを学ぶことはできません。だからこの記事では、
+                もちろん、短期間でコンピューターサイエンスのすべてを学ぶことはできません。だからこの記事の目標は、
                 <Strong>
-                  「コンピューターサイエンスを学んでみたい」というきっかけを提供できれば
+                  「コンピューターサイエンスを学んでみたい」というきっかけを提供すること
                 </Strong>
-                と思っています。きっかけさえ掴むことができれば、教材はネットに豊富にあるので、みずから学んでいけるようになります。
-              </P>
-              <P>
-                だからこの記事の目標は、みなさんに
+                です。
                 <Em>
                   「コンピューターサイエンスって面白い！」「自分でもわかるかも！」「もっと知りたい！」
                 </Em>
-                と思ってもらうことです。
+                と思ってもらえれば幸いです。
               </P>
               <P>
-                そのために今回は、コンピューターサイエンスの中でも特に面白い題材について解説します。それがこの記事の題名にもある「
-                <Strong>Yコンビネーター</Strong>
-                」です。
+                きっかけさえ掴むことができれば、教材はネットに豊富にあるので、みずから学んでいけるようになります。これを読んでくださっているのが中高生の方でしたら、大学でコンピューターサイエンスを専攻してみるのも良いかもしれません。
               </P>
             </>
           )
         },
         {
-          type: 'yesNoQuiz' as 'yesNoQuiz',
           title: <>Yコンビネーターって何？</>,
           content: (
             <>
               <P>
-                この記事の題名は「<Em>{lessonTitle}</Em>」ですが、「
+                というわけで今回は、コンピューターサイエンスの中でも特に面白い題材について解説します。それがこの記事の題名「
+                <Em>{lessonTitle}</Em>」にもある「
                 <Strong>Yコンビネーター</Strong>
-                」とはいったい何のことなのでしょう？
+                」です。いったい何のことなのでしょう？
               </P>
               <P>
                 すぐに正解を言っても面白くないので、
@@ -153,8 +164,22 @@ export default () => {
                 クイズ形式で出題します。分からなくて当然なので、勘で答えてみてください！
               </P>
               <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
+            </>
+          )
+        },
+        {
+          type: 'yesNoQuiz' as 'yesNoQuiz',
+          title: (
+            <>
+              <Emoji>⭕️</Emoji> <Emoji>❌</Emoji>
+              クイズ
+            </>
+          ),
+          content: (
+            <>
               <P>
-                <Strong>質問:</Strong> <Em>Yコンビネーター</Em>
+                <InlineHeader>質問:</InlineHeader>{' '}
+                <Strong>Yコンビネーター</Strong>
                 」とは、
                 <Em>
                   「繰り返し処理」に関連するコンピューターサイエンス用語だ
@@ -170,6 +195,15 @@ export default () => {
         },
         {
           title: <H args={{ name: 'yesNoQuizAnswerHeading', isYes: true }} />,
+          footer: {
+            color: 'purple',
+            content: (
+              <P>
+                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下の余談も読んでみてください。(
+                読み飛ばしても大丈夫です。)
+              </P>
+            )
+          },
           content: (
             <>
               <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} halfMarginBottom />
@@ -184,10 +218,6 @@ export default () => {
                 nextEpisodeNumber={1}
                 primaryTextType="start"
               />
-              <P>
-                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下のコラムも読んでみてください。(
-                <Em>読み飛ばしても大丈夫です。</Em>)
-              </P>
             </>
           )
         },
@@ -217,7 +247,7 @@ export default () => {
           )
         },
         {
-          title: 'IT業界で耳にする「Yコンビネーター」',
+          title: 'IT業界の「Yコンビネーター」',
           type: 'sideNote' as 'sideNote',
           preview: (
             <>

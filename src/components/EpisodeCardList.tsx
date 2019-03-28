@@ -2,6 +2,7 @@ import React from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import EpisodeHero from 'src/components/EpisodeHero'
+import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import h from 'src/lib/h'
 
@@ -10,6 +11,7 @@ export interface EpisodeCardType {
   title?: React.ReactNode
   preview?: React.ReactNode
   content: React.ReactNode
+  footer?: CardProps['footer']
 }
 
 export type EpisodeCardListType = ReadonlyArray<EpisodeCardType>
@@ -22,7 +24,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
     <>
       <EpisodePageInitialRenderWarning />
       <EpisodeHero />
-      {cards.map(({ title, type, content, preview }, index) =>
+      {cards.map(({ title, type, content, preview, footer }, index) =>
         index <= lastVisibleCardIndex ? (
           <CardWrapper
             slideNumber={index + 1}
@@ -41,6 +43,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             }
             setLastVisibleCardIndex={setLastVisibleCardIndex}
             preview={preview}
+            footer={footer}
           >
             {content}
           </CardWrapper>

@@ -28,6 +28,10 @@ export interface CardProps {
   title?: React.ReactNode
   preview?: React.ReactNode
   cardActionTaken: CardAction
+  footer?: {
+    content: React.ReactNode
+    color: CardProps['color']
+  }
 }
 
 export interface CardState {
@@ -64,7 +68,8 @@ const Card = ({
   preview,
   slideNumber,
   slideCount,
-  isLast
+  isLast,
+  footer
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
     <div
@@ -141,7 +146,29 @@ const Card = ({
           )}
           <CardContent preview={preview}>{children}</CardContent>
         </div>
-      </div>{' '}
+        {footer && (
+          <div
+            css={css`
+              margin-top: ${spaces('-0.5')};
+              padding-top: ${spaces(0.75)};
+              padding-left: ${spaces(1)};
+              padding-right: ${spaces(1)};
+              padding-bottom: ${spaces(0.5)};
+
+              ${ns} {
+                margin-top: ${spaces('-0.75')};
+                padding-top: ${spaces(1.25)};
+                padding-left: ${spaces(2)};
+                padding-right: ${spaces(2)};
+                padding-bottom: ${spaces(1)};
+              }
+              background: ${backgroundColor(footer.color)};
+            `}
+          >
+            {footer.content}
+          </div>
+        )}
+      </div>
     </div>
     {!isLast && slideNumber !== undefined && (
       <div
