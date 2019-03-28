@@ -8,7 +8,6 @@ interface EmojiSeparatorProps {
   emojis: string[]
   size: 'md' | 'lg'
   spacing: 'sm' | 'md'
-  halfMarginBottom?: boolean
   Component: React.ComponentType | string
 }
 
@@ -16,14 +15,13 @@ const EmojiSeparator = ({
   emojis,
   size,
   spacing,
-  Component,
-  halfMarginBottom
+  Component
 }: EmojiSeparatorProps) => (
   <Component
     css={css`
       text-align: center;
       margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(0.5)} 0
-        ${spacing === 'sm' ? 0 : halfMarginBottom ? spaces(0.75) : spaces(1.5)};
+        ${spacing === 'sm' ? 0 : spaces(0.75)};
       font-size: ${size === 'lg' ? fontSizes(3) : fontSizes(2)};
       ${ns} {
         font-size: ${size === 'lg' ? fontSizes(4) : fontSizes(2.5)};

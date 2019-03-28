@@ -39,7 +39,7 @@ export default () => {
           },
           content: (
             <>
-              <EmojiSeparator halfMarginBottom emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
+              <EmojiSeparator emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
               <P>
                 こんにちは、<Strong>上杉周作</Strong>
                 と申します。米国在住のプログラマー兼ブロガーです。2019年のベストセラー本『
@@ -74,7 +74,7 @@ export default () => {
           type: 'meta',
           content: (
             <>
-              <EmojiSeparator emojis={['📗', '📘', '📕']} halfMarginBottom />
+              <EmojiSeparator emojis={['📗', '📘', '📕']} />
               <Toc />
             </>
           )
@@ -84,23 +84,27 @@ export default () => {
           footer: {
             color: 'purple',
             content: (
-              <P>
-                <InlineHeader>余談:</InlineHeader>{' '}
-                筆者は米国カーネギーメロン大学のコンピューターサイエンス学士号を修得しました。
-                <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
-                  最優秀TA(ティーチング・アシスタント/教育助手)賞も受賞しています
-                </ExternalLink>
-                。 ちなみにカーネギーメロン大学は、コンピューターサイエンスでは
-                <ExternalLink href="https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings">
-                  スタンフォード大やマサチューセッツ工科大と並んで
-                </ExternalLink>
-                全米トップレベルです。
-              </P>
+              <>
+                <P>
+                  <InlineHeader>余談:</InlineHeader>{' '}
+                  筆者は米国カーネギーメロン大学のコンピューターサイエンス学士号を修得しました。
+                  <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
+                    最優秀TA(ティーチング・アシスタント/教育助手)賞も受賞しています
+                  </ExternalLink>
+                  。
+                  ちなみにカーネギーメロン大学は、コンピューターサイエンスでは
+                  <ExternalLink href="https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings">
+                    スタンフォード大やマサチューセッツ工科大と並んで
+                  </ExternalLink>
+                  全米トップレベルです。
+                </P>
+                <EmojiSeparator emojis={['🇺🇸', '👨‍🎓', '🏫']} />
+              </>
             )
           },
           content: (
             <>
-              <EmojiSeparator emojis={['🤖', '🤔', '🤖']} halfMarginBottom />
+              <EmojiSeparator emojis={['🤖', '🤔', '🤖']} />
               <P>
                 この記事のタイトルは「<Strong>{lessonTitle}</Strong>」ですが、
                 <Em>
@@ -130,7 +134,7 @@ export default () => {
           title: 'コンピューターサイエンスを学ぶきっかけに',
           content: (
             <>
-              <EmojiSeparator emojis={['🤔', '💭', '📝']} halfMarginBottom />
+              <EmojiSeparator emojis={['📝', '🤔', '💭']} />
               <P>
                 もちろん、短期間でコンピューターサイエンスのすべてを学ぶことはできません。だからこの記事の目標は、
                 <Strong>
@@ -152,6 +156,7 @@ export default () => {
           title: <>Yコンビネーターって何？</>,
           content: (
             <>
+              <EmojiSeparator emojis={['🧙‍♂️', '🤔', '🧙‍♂️']} />
               <P>
                 というわけで今回は、コンピューターサイエンスの中でも特に面白い題材について解説します。それがこの記事の題名「
                 <Em>{lessonTitle}</Em>」にもある「
@@ -163,7 +168,7 @@ export default () => {
                 <Emoji>⭕️</Emoji> <Emoji>❌</Emoji>
                 クイズ形式で出題します。分からなくて当然なので、勘で答えてみてください！
               </P>
-              <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
+              <EmojiSeparator emojis={['⭕️', '😉', '❌']} />
             </>
           )
         },
@@ -206,7 +211,7 @@ export default () => {
           },
           content: (
             <>
-              <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} halfMarginBottom />
+              <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
               <P>
                 <Em>
                   「<Strong>Yコンビネーター</Strong>
@@ -321,7 +326,7 @@ export default () => {
           title: 'パソコンでもスマホでもOK！',
           content: (
             <>
-              <EmojiSeparator halfMarginBottom emojis={['💻', '🆗', '📱']} />
+              <EmojiSeparator emojis={['💻', '🆗', '📱']} />
               <P>
                 当サイトでは、よくあるプログラミング学習サイトとは違い、
                 <Em>プログラムを書く必要はありません。</Em>
