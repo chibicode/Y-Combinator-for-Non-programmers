@@ -33,81 +33,83 @@ const EpisodePage = ({
   episodeTitleString,
   episodeNumber,
   contentName
-}: EpisodePageProps) => (
-  <Page>
-    <Head>
-      <title key="title">
-        {lessonTitle}
-        {episodeTitleString && ` | ${episodeTitleString}`}
-      </title>
-    </Head>
-    <Container size="sm">
-      <div
-        css={css`
-          display: flex;
-          align-items: center;
-          padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
-          margin: 0 ${spaces('-0.5')} ${spaces(0.5)} ${spaces('-0.5')};
-        `}
-      >
+}: EpisodePageProps) => {
+  const title = `${lessonTitle}${episodeTitleString &&
+    ` | ${episodeTitleString}`}`
+  return (
+    <Page>
+      <Head>
+        <title key="title">{title}</title>
+        <meta property="og:title" content={title} />
+      </Head>
+      <Container size="sm">
         <div
           css={css`
-            width: 32%;
-            text-align: left;
+            display: flex;
+            align-items: center;
+            padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
+            margin: 0 ${spaces('-0.5')} ${spaces(0.5)} ${spaces('-0.5')};
           `}
         >
-          {episodeNumber >= 1 && (
-            <InternalLink
-              href={`/${episodeNumber === 1 ? '' : episodeNumber - 1}`}
-              css={navigationLinkClasses}
-            >
-              ←{' '}
-              {episodeNumber === 1
-                ? h('introductionPageLink')
-                : episodeTitlePrefix(episodeNumber - 1, true).prefix}
-            </InternalLink>
-          )}
-        </div>
-        <div
-          css={css`
-            width: 36%;
-            text-align: center;
-          `}
-        >
-          {/* <InternalLink
+          <div
+            css={css`
+              width: 32%;
+              text-align: left;
+            `}
+          >
+            {episodeNumber >= 1 && (
+              <InternalLink
+                href={`/${episodeNumber === 1 ? '' : episodeNumber - 1}`}
+                css={navigationLinkClasses}
+              >
+                ←{' '}
+                {episodeNumber === 1
+                  ? h('introductionPageLink')
+                  : episodeTitlePrefix(episodeNumber - 1, true).prefix}
+              </InternalLink>
+            )}
+          </div>
+          <div
+            css={css`
+              width: 36%;
+              text-align: center;
+            `}
+          >
+            {/* <InternalLink
             href={'/toc'}
             css={navigationLinkClasses}
           >
             {h('indexPageLink')}
           </InternalLink> */}
+          </div>
+          <div
+            css={css`
+              width: 32%;
+              text-align: right;
+            `}
+          >
+            {(episodeNumber || 0) < numEpisodes && (
+              <InternalLink
+                href={`/${(episodeNumber || 0) + 1}`}
+                css={navigationLinkClasses}
+              >
+                {episodeTitlePrefix((episodeNumber || 0) + 1, true).prefix} →
+              </InternalLink>
+            )}
+          </div>
         </div>
-        <div
-          css={css`
-            width: 32%;
-            text-align: right;
-          `}
+        <EpisodeContext.Provider
+          value={{
+            lessonTitle,
+            episodeTitle,
+            episodeNumber
+          }}
         >
-          {(episodeNumber || 0) < numEpisodes && (
-            <InternalLink
-              href={`/${(episodeNumber || 0) + 1}`}
-              css={navigationLinkClasses}
-            >
-              {episodeTitlePrefix((episodeNumber || 0) + 1, true).prefix} →
-            </InternalLink>
-          )}
-        </div>
-      </div>
-      <EpisodeContext.Provider
-        value={{
-          lessonTitle,
-          episodeTitle,
-          episodeNumber
-        }}
-      >
-        <Content name={contentName} />
-      </EpisodeContext.Provider>
-    </Container>
-  </Page>
-)
+          <Content name={contentName} />
+        </EpisodeContext.Provider>
+      </Container>
+    </Page>
+  )
+}
 
 export default EpisodePage

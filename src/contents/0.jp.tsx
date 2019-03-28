@@ -98,7 +98,7 @@ export default () => {
                   。
                   ちなみにカーネギーメロン大学は、コンピューターサイエンスでは
                   <ExternalLink href="https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings">
-                    スタンフォード大やマサチューセッツ工科大と並んで
+                    スタンフォード大やマサチューセッツ工科大などと並んで
                   </ExternalLink>
                   全米トップレベルです。
                 </P>
