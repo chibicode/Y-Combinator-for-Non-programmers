@@ -30,6 +30,13 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             line-height: ${lineHeights(1.5)};
           }
 
+          html,
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+              'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
+              sans-serif;
+          }
+
           ${ns} {
             html {
               /* NOTE: BorderWrapper background image size can be 1.5rem, so if this is not even
@@ -54,6 +61,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
           button {
             -webkit-user-select: none;
             -webkit-tap-highlight-color: transparent;
+            font-size: inherit;
           }
 
           /* Make clicks pass-through */
