@@ -1,5 +1,13 @@
 import React, { useContext } from 'react'
-import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  InternalLink,
+  P,
+  Strong,
+  InlineHeader
+} from 'src/components/ContentTags'
+import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import Emoji from 'src/components/Emoji'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
@@ -17,27 +25,31 @@ export interface HProps {
     | { name: 'yesNoQuizNo'; hideText?: boolean }
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
-    | { name: 'ycBentoBox'; plural?: boolean }
-    | { name: 'ycNext' }
-    | { name: 'ycPlay' }
-    | { name: 'ycPause' }
-    | { name: 'ycReset' }
-    | { name: 'ycPrevious' }
-    | { name: 'ycWhatWeHaveLearned' }
-    | { name: 'ycDone' }
-    | { name: 'ycTrue' }
-    | { name: 'ycFalse' }
-    | { name: 'ycTryGuessing' }
-    | { name: 'ycTrueOrFalse' }
-    | { name: 'ycNextButtonStartPrimaryText' }
-    | { name: 'ycNextButtonCheckAnswerPrimaryText' }
-    | { name: 'ycNextButtonNextPagePrimaryText' }
-    | { name: 'ycNextButtonSecondaryText'; nextEpisodeNumber: number }
-    | { name: 'ycQuizReview'; previousEpisodeNumber: number }
-    | { name: 'ycTryUntilDone'; capitalize?: boolean }
-    | { name: 'ycPlayUntilDone'; capitalize?: boolean }
-    | { name: 'ycYes' }
-    | { name: 'ycNo' }
+    | {
+        name: 'bentoBox'
+        plural?: boolean
+        highlightType?: InlineHighlightType
+      }
+    | { name: 'next' }
+    | { name: 'play' }
+    | { name: 'pause' }
+    | { name: 'reset' }
+    | { name: 'previous' }
+    | { name: 'whatWeHaveLearned' }
+    | { name: 'done' }
+    | { name: 'true' }
+    | { name: 'false' }
+    | { name: 'tryGuessing' }
+    | { name: 'trueOrFalse' }
+    | { name: 'nextButtonStartPrimaryText' }
+    | { name: 'nextButtonCheckAnswerPrimaryText' }
+    | { name: 'nextButtonNextPagePrimaryText' }
+    | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
+    | { name: 'quizReview'; previousEpisodeNumber: number }
+    | { name: 'tryUntilDone'; capitalize?: boolean }
+    | { name: 'playUntilDone'; capitalize?: boolean }
+    | { name: 'yes' }
+    | { name: 'no' }
     | { name: 'introductionPageLink' }
     | { name: 'indexPageLink' }
     | { name: 'sideNotePrefix' }
@@ -71,8 +83,8 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <P>
-          <Strong>Hello!</Strong> This is{' '}
-          <Strong>page {episodeNumber + 1}</Strong> of the series called “
+          <InlineHeader>Hello!</InlineHeader> This is{' '}
+          <Em>page {episodeNumber + 1}</Em> of the series called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,
           <InternalLink href={'/'}>
@@ -85,10 +97,10 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <P>
-          <Strong>こんにちは！</Strong>このページは「
+          <InlineHeader>こんにちは！</InlineHeader>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           」という記事の
-          <Strong>{episodeNumber + 1}ページ目</Strong>
+          <Em>{episodeNumber + 1}ページ目</Em>
           です。1ページ目から読むには
           <InternalLink href={'/'}>
             <Strong>こちらからどうぞ</Strong>
@@ -102,16 +114,16 @@ const H = ({ args }: HProps) => {
   if (args.name === 'episodeWelcomeText') {
     if (locale === 'en') {
       return (
-        <Strong>
+        <InlineHeader>
           Welcome to <H args={{ name: 'titlePrefix' }} />!
-        </Strong>
+        </InlineHeader>
       )
     } else {
       return (
-        <Strong>
+        <InlineHeader>
           <H args={{ name: 'titlePrefix' }} />
           へようこそ！
-        </Strong>
+        </InlineHeader>
       )
     }
   }
@@ -259,22 +271,22 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycBentoBox') {
+  if (args.name === 'bentoBox') {
     if (locale === 'en') {
       return (
-        <Strong>
+        <Strong highlightType={args.highlightType}>
           {`“bento box${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
         </Strong>
       )
     } else {
       return (
-        <Strong>
+        <Strong highlightType={args.highlightType}>
           「弁当箱のパズル <Emoji>🍱</Emoji>」
         </Strong>
       )
     }
   }
-  if (args.name === 'ycNext') {
+  if (args.name === 'next') {
     if (locale === 'en') {
       return (
         <>
@@ -293,7 +305,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycPlay') {
+  if (args.name === 'play') {
     if (locale === 'en') {
       return (
         <>
@@ -312,7 +324,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycPause') {
+  if (args.name === 'pause') {
     if (locale === 'en') {
       return (
         <>
@@ -331,7 +343,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycReset') {
+  if (args.name === 'reset') {
     if (locale === 'en') {
       return (
         <>
@@ -350,7 +362,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycPrevious') {
+  if (args.name === 'previous') {
     if (locale === 'en') {
       return (
         <>
@@ -369,14 +381,14 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycWhatWeHaveLearned') {
+  if (args.name === 'whatWeHaveLearned') {
     if (locale === 'en') {
       return <>What we have learned so far</>
     } else {
       return <>これまでのまとめ</>
     }
   }
-  if (args.name === 'ycDone') {
+  if (args.name === 'done') {
     if (locale === 'en') {
       return (
         <>
@@ -395,7 +407,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycTrue') {
+  if (args.name === 'true') {
     if (locale === 'en') {
       return (
         <>
@@ -410,7 +422,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycFalse') {
+  if (args.name === 'false') {
     if (locale === 'en') {
       return (
         <>
@@ -425,7 +437,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycTryGuessing') {
+  if (args.name === 'tryGuessing') {
     if (locale === 'en') {
       return <P>Try guessing before you press on the button below!</P>
     } else {
@@ -436,43 +448,43 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycTrueOrFalse') {
+  if (args.name === 'trueOrFalse') {
     if (locale === 'en') {
       return (
         <>
-          <H args={{ name: 'ycTrue' }} /> or <H args={{ name: 'ycFalse' }} />
+          <H args={{ name: 'true' }} /> or <H args={{ name: 'false' }} />
         </>
       )
     } else {
       return (
         <>
-          <H args={{ name: 'ycTrue' }} />か<H args={{ name: 'ycFalse' }} />
+          <H args={{ name: 'true' }} />か<H args={{ name: 'false' }} />
         </>
       )
     }
   }
-  if (args.name === 'ycNextButtonStartPrimaryText') {
+  if (args.name === 'nextButtonStartPrimaryText') {
     if (locale === 'en') {
       return <>OK, Let’s Go!</>
     } else {
       return <>次のページへ進む</>
     }
   }
-  if (args.name === 'ycNextButtonCheckAnswerPrimaryText') {
+  if (args.name === 'nextButtonCheckAnswerPrimaryText') {
     if (locale === 'en') {
       return <>Check My Answer</>
     } else {
       return <>次のページへ進む</>
     }
   }
-  if (args.name === 'ycNextButtonNextPagePrimaryText') {
+  if (args.name === 'nextButtonNextPagePrimaryText') {
     if (locale === 'en') {
       return <>Go to Next Page</>
     } else {
       return <>次のページへ進む</>
     }
   }
-  if (args.name === 'ycNextButtonSecondaryText') {
+  if (args.name === 'nextButtonSecondaryText') {
     if (locale === 'en') {
       return (
         <>Continue to {episodeTitlePrefix(args.nextEpisodeNumber).prefix}</>
@@ -481,12 +493,12 @@ const H = ({ args }: HProps) => {
       return <>{episodeTitlePrefix(args.nextEpisodeNumber).prefix}へ</>
     }
   }
-  if (args.name === 'ycQuizReview') {
+  if (args.name === 'quizReview') {
     if (locale === 'en') {
       return (
         <>
           <H3>
-            <H args={{ name: 'ycTrueOrFalse' }} /> Quiz Review
+            <H args={{ name: 'trueOrFalse' }} /> Quiz Review
           </H3>
           <P>
             Before we begin, let’s take a look at{' '}
@@ -512,45 +524,45 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycTryUntilDone') {
+  if (args.name === 'tryUntilDone') {
     const capitalize =
       typeof args.capitalize === 'undefined' ? true : args.capitalize
     if (locale === 'en') {
       return (
         <Em>
           {capitalize ? 'K' : 'k'}
-          eep pressing <H args={{ name: 'ycNext' }} /> until you see{' '}
-          <H args={{ name: 'ycDone' }} />
+          eep pressing <H args={{ name: 'next' }} /> until you see{' '}
+          <H args={{ name: 'done' }} />
         </Em>
       )
     } else {
       return (
         <Em>
-          <H args={{ name: 'ycDone' }} /> になるまで{' '}
-          <H args={{ name: 'ycNext' }} /> を何度も押してみてください
+          <H args={{ name: 'done' }} /> になるまで <H args={{ name: 'next' }} />{' '}
+          を何度も押してみてください
         </Em>
       )
     }
   }
-  if (args.name === 'ycPlayUntilDone') {
+  if (args.name === 'playUntilDone') {
     const capitalize =
       typeof args.capitalize === 'undefined' ? true : args.capitalize
     if (locale === 'en') {
       return (
         <Em>
           {capitalize ? 'T' : 't'}
-          ry pressing <H args={{ name: 'ycPlay' }} />
+          ry pressing <H args={{ name: 'play' }} />
         </Em>
       )
     } else {
       return (
         <Em>
-          <H args={{ name: 'ycPlay' }} /> を押してみてください
+          <H args={{ name: 'play' }} /> を押してみてください
         </Em>
       )
     }
   }
-  if (args.name === 'ycYes') {
+  if (args.name === 'yes') {
     if (locale === 'en') {
       return (
         <Strong>
@@ -565,7 +577,7 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'ycNo') {
+  if (args.name === 'no') {
     if (locale === 'en') {
       return (
         <Strong>

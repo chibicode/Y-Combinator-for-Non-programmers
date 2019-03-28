@@ -93,13 +93,14 @@ export default () => {
     <EpisodeCardList
       cards={[
         {
-          title: <H args={{ name: 'ycBentoBox' }} />,
+          title: <H args={{ name: 'bentoBox', highlightType: 'none' }} />,
           content: (
             <>
               <P>
                 <H args={{ name: 'episodeWelcomeText' }} />
+                この記事では、とあるパズルを使ってYコンビネーターとは何かを学んでいきます。
                 今回は、
-                <Em>とあるパズルの基本ルール</Em>
+                <Em>このパズルの基本ルール</Em>
                 を紹介します。
               </P>
               <P>
@@ -110,12 +111,12 @@ export default () => {
               </PFullWidth>
               <P>
                 なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-                <H args={{ name: 'ycBentoBox' }} />
+                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
                 という名前がついているからです。
               </P>
               <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
               <P>
-                <H args={{ name: 'ycBentoBox' }} />
+                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
                 がどんなものか、説明しますね！
               </P>
             </>
@@ -125,14 +126,14 @@ export default () => {
           title: (
             <>
               これが
-              <H args={{ name: 'ycBentoBox' }} />
+              <H args={{ name: 'bentoBox', highlightType: 'none' }} />
             </>
           ),
           content: (
             <>
               <P>
                 下の図が、
-                <H args={{ name: 'ycBentoBox' }} />
+                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
                 です。実際の弁当箱のように、
                 <Em>
                   四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
@@ -162,14 +163,14 @@ export default () => {
           title: (
             <>
               ふたつめの
-              <H args={{ name: 'ycBentoBox' }} />
+              <H args={{ name: 'bentoBox', highlightType: 'none' }} />
             </>
           ),
           content: (
             <>
               <P>
                 もうひとつ、
-                <H args={{ name: 'ycBentoBox' }} />
+                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
                 の例を紹介しましょう:
               </P>
               {episode1[i++]()}
@@ -186,7 +187,7 @@ export default () => {
               </P>
               <P>
                 それでは次に、
-                <H args={{ name: 'ycBentoBox' }} />
+                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
                 のルールを紹介していきます。
               </P>
             </>
@@ -195,14 +196,14 @@ export default () => {
         {
           title: (
             <>
-              <H args={{ name: 'ycBentoBox' }} />
+              <H args={{ name: 'bentoBox', highlightType: 'none' }} />
               のルール
             </>
           ),
           content: (
             <>
               <P>
-                <H args={{ name: 'ycBentoBox' }} />
+                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
                 を解くには、以下の5つのステップを繰り返す必要があります。
               </P>
               <P>

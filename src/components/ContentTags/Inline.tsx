@@ -10,6 +10,8 @@ import {
 } from 'src/components/Card'
 import { LinkContext } from 'src/components/ContentTags/Links'
 
+export type InlineHighlightType = 'default' | 'white' | 'none'
+
 interface HighlightContextProps {
   inHighlight: boolean
 }
@@ -39,15 +41,16 @@ export const InlineHeader = ({ children }: { children: React.ReactNode }) => (
 )
 
 export const Strong = ({
-  children
+  children,
+  highlightType
 }: {
   children: React.ReactNode
-  pinkHighlight?: boolean
+  highlightType?: InlineHighlightType
 }) => {
   const { inHighlight } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
-  if (inHighlight) {
+  if (inHighlight || highlightType === 'none') {
     return (
       <span
         css={css`
@@ -64,7 +67,9 @@ export const Strong = ({
           css={[
             css`
               font-weight: bold;
-              background: ${color === 'yellow'
+              background: ${highlightType === 'white'
+                ? colors('white')
+                : color === 'yellow'
                 ? mix(color, colors('pink100'))
                 : mix(color, colors('yellow100'))};
             `,
@@ -84,16 +89,21 @@ export const Strong = ({
   }
 }
 
+Strong.defaultProps = {
+  highlightType: 'default'
+}
+
 export const Em = ({
-  children
+  children,
+  highlightType
 }: {
   children: React.ReactNode
-  pinkHighlight?: boolean
+  highlightType?: InlineHighlightType
 }) => {
   const { inHighlight } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
-  if (inHighlight) {
+  if (inHighlight || highlightType === 'none') {
     return (
       <span
         css={css`
@@ -110,7 +120,9 @@ export const Em = ({
           css={[
             css`
               font-style: normal;
-              background: ${color === 'yellow'
+              background: ${highlightType === 'white'
+                ? colors('white')
+                : color === 'yellow'
                 ? mix(color, colors('pink100'))
                 : mix(color, colors('yellow100'))};
             `,
@@ -128,4 +140,8 @@ export const Em = ({
       </HighlightContext.Provider>
     )
   }
+}
+
+Em.defaultProps = {
+  highlightType: 'default'
 }
