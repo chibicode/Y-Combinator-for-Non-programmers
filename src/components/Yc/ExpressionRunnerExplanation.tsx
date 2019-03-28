@@ -8,7 +8,6 @@ import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer

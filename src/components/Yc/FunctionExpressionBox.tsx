@@ -6,7 +6,6 @@ import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import colors from 'src/lib/theme/colors'
 import maxNestedFunctionDepth from 'src/lib/yc/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface FunctionExpressionBoxProps {
   expression: FunctionExpression

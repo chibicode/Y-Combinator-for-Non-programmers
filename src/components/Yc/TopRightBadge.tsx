@@ -2,7 +2,6 @@
 import { css, jsx } from '@emotion/core'
 import Emoji from 'src/components/Emoji'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface TopRightBadgeProps {
   topRightBadgeType: Exclude<VariableExpression['topRightBadgeType'], 'none'>

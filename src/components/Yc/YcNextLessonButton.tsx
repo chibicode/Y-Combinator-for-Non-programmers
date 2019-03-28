@@ -2,7 +2,7 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import NextLessonButton from 'src/components/NextLessonButton'
 import h, { allTranslations } from 'src/lib/h'
-import { remainingText } from 'src/lib/yc/numEpisodesForEachLevel'
+import { remainingText } from 'src/lib/numEpisodes'
 
 type PrimaryTextType = 'quiz' | 'start' | 'nextPage'
 

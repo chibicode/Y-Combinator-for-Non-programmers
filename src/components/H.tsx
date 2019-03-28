@@ -3,7 +3,7 @@ import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
-import t from 'src/lib/titles'
+import { lessonTitle } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 
 export interface HProps {
@@ -13,12 +13,10 @@ export interface HProps {
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
     | { name: 'yesNoQuizIncorrect' }
-    | { name: 'yesNoQuizSkipped' }
     | { name: 'yesNoQuizYes'; hideText?: boolean }
     | { name: 'yesNoQuizNo'; hideText?: boolean }
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
-    | { name: 'yesNoQuizSkippedPostfix'; isYes: boolean }
     | { name: 'ycBentoBox'; plural?: boolean }
     | { name: 'ycNext' }
     | { name: 'ycPlay' }
@@ -47,6 +45,7 @@ export interface HProps {
     | { name: 'titlePrefix' }
     | { name: 'episodeWelcomeText' }
     | { name: 'newUser' }
+    | { name: 'titleSplit' }
 }
 
 const H = ({ args }: HProps) => {
@@ -55,19 +54,30 @@ const H = ({ args }: HProps) => {
   if (args.name === 'titlePrefix') {
     return <>{episodeTitlePrefix(episodeNumber).prefix}</>
   }
+  if (args.name === 'titleSplit') {
+    if (locale === 'en') {
+      return <>{lessonTitle}</>
+    } else {
+      return (
+        <>
+          コンピュターサイエンスと
+          <br />
+          魔法のYコンビネーター
+        </>
+      )
+    }
+  }
   if (args.name === 'newUser') {
     if (locale === 'en') {
       return (
         <P>
           <Strong>Hello!</Strong> This is{' '}
           <Strong>page {episodeNumber + 1}</Strong> of the series called “
-          <InternalLink href={'/'}>{t('title')}</InternalLink>
+          <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,
-          <Em>
-            <InternalLink href={'/'}>
-              <Strong>click here to read from the beginning</Strong>
-            </InternalLink>
-          </Em>
+          <InternalLink href={'/'}>
+            <Strong>click here to read from the beginning</Strong>
+          </InternalLink>
           . Or you can view the
           <InternalLink href={'/toc'}>table of contents</InternalLink>.
         </P>
@@ -76,17 +86,15 @@ const H = ({ args }: HProps) => {
       return (
         <P>
           <Strong>こんにちは！</Strong>このページは「
-          <InternalLink href={'/'}>{t('title')}</InternalLink>
+          <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           」という記事の
           <Strong>{episodeNumber + 1}ページ目</Strong>
           です。1ページ目から読むには
-          <Em>
-            <InternalLink href={'/'}>
-              <Strong>こちらからどうぞ</Strong>
-            </InternalLink>
-          </Em>
-          。目次を見るには
-          <InternalLink href={'/toc'}>こちらからどうぞ</InternalLink>。
+          <InternalLink href={'/'}>
+            <Strong>こちらからどうぞ</Strong>
+          </InternalLink>
+          。目次は
+          <InternalLink href={'/toc'}>こちら</InternalLink>。
         </P>
       )
     }
@@ -117,7 +125,7 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <>
-          <Emoji size="mdlg">🤔</Emoji> 答えを見る
+          <Emoji size="mdlg">🤔</Emoji> 正解を見る
         </>
       )
     }
@@ -185,21 +193,6 @@ const H = ({ args }: HProps) => {
       )
     }
   }
-  if (args.name === 'yesNoQuizSkipped') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Emoji size="mdlg">😉</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Emoji size="mdlg">😉</Emoji>
-        </>
-      )
-    }
-  }
   if (args.name === 'yesNoQuizYes') {
     if (locale === 'en') {
       return (
@@ -220,18 +213,14 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
-            <Emoji>👎</Emoji> No
-          </Strong>
+          <Emoji>👎</Emoji> No
         </>
       )
     } else {
       return (
         <>
-          <Strong>
-            <Emoji>❌</Emoji>
-            {!args.hideText && ' いいえ'}
-          </Strong>
+          <Emoji>❌</Emoji>
+          {!args.hideText && ' いいえ'}
         </>
       )
     }
@@ -266,33 +255,6 @@ const H = ({ args }: HProps) => {
             <H args={{ name: 'yesNoQuizNo', hideText: true }} />
           )}
           でした。どんまい！
-        </>
-      )
-    }
-  }
-  if (args.name === 'yesNoQuizSkippedPostfix') {
-    if (locale === 'en') {
-      return (
-        <>
-          The corret answer was{' '}
-          {args.isYes ? (
-            <H args={{ name: 'yesNoQuizYes' }} />
-          ) : (
-            <H args={{ name: 'yesNoQuizNo' }} />
-          )}
-          .
-        </>
-      )
-    } else {
-      return (
-        <>
-          正解は
-          {args.isYes ? (
-            <H args={{ name: 'yesNoQuizYes', hideText: true }} />
-          ) : (
-            <H args={{ name: 'yesNoQuizNo', hideText: true }} />
-          )}
-          でした。
         </>
       )
     }

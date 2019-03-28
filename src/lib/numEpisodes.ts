@@ -1,7 +1,38 @@
-import { allTitles } from 'src/lib/titles'
+import locale from 'src/lib/locale'
 
-const numEpisodes = Object.keys(allTitles).filter(x =>
-  x.match(new RegExp(`episode\\d+`))
-).length
+export const numBeginnerLevels = 4
+export const numIntermediateLevels = 4
+export const numAdvancedLevels = 4
+export const numEpisodes =
+  numBeginnerLevels + numIntermediateLevels + numAdvancedLevels
 
-export default numEpisodes
+export const remainingText = (nextEpisode: number) => {
+  if (nextEpisode <= numBeginnerLevels) {
+    const num = numBeginnerLevels - nextEpisode + 1
+    if (locale === 'jp') {
+      return `初級は残り${num}ページです！`
+    } else {
+      return `${num} more Beginner Level${num > 1 ? 's' : ''} left!`
+    }
+  } else if (nextEpisode === numBeginnerLevels + 1) {
+    if (locale === 'jp') {
+      return `次は中級です！`
+    } else {
+      return `Next Up: Intermediate Levels!`
+    }
+  } else if (nextEpisode <= numBeginnerLevels + numIntermediateLevels) {
+    const num = numBeginnerLevels + numIntermediateLevels - nextEpisode + 1
+    if (locale === 'jp') {
+      return `中級は残り${num}ページです！`
+    } else {
+      return `${num} more Intermediate Level${num > 1 ? 's' : ''} left!`
+    }
+  } else if (nextEpisode === numBeginnerLevels + numIntermediateLevels + 1) {
+    if (locale === 'jp') {
+      return `次は上級です！`
+    } else {
+      return `Next Up: Advanced Levels!`
+    }
+  }
+  return undefined
+}

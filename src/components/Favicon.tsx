@@ -3,7 +3,7 @@ import { colors } from 'src/lib/theme'
 
 // Favicon generated from https://realfavicongenerator.net
 const faviconPrefix = `/static/images/favicon`
-const faviconBgColor = colors('socialBackground')
+const faviconBgColor = colors('grey300')
 
 const Favicon = () => (
   <>

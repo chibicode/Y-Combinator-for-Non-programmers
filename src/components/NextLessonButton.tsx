@@ -4,7 +4,6 @@ import Link from 'next/link'
 import React from 'react'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 interface NextLessonButtonProps {
   href: string
@@ -32,7 +31,7 @@ const NextLessonButton = ({
           padding: ${locale === 'jp' ? spaces(0.25) : spaces(0.5)}
             ${spaces(1.5)} ${locale === 'jp' ? spaces(0.5) : spaces(0.75)};
           border-radius: ${radii(0.5)};
-          border: 2px solid ${colors('pink700')};
+          border: 2px solid ${colors('pink600')};
           background: ${colors('pink400')};
           color: #fff;
           text-decoration: none;
@@ -40,7 +39,7 @@ const NextLessonButton = ({
           -webkit-user-select: none;
 
           &:focus {
-            box-shadow: inset 0 0 0 1px ${colors('pink700')};
+            box-shadow: inset 0 0 0 1px ${colors('pink600')};
             outline: none;
           }
 

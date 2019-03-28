@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import h from 'src/lib/h'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 const Button = (props: JSX.IntrinsicElements['button']) => (
   <ButtonWithTouchActiveStates

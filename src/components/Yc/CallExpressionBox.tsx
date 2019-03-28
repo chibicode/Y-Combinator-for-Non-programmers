@@ -7,7 +7,6 @@ import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
 import colors from 'src/lib/theme/colors'
 import { CallExpression } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface CallExpressionBoxProps {
   expression: CallExpression

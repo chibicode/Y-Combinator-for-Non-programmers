@@ -1,11 +1,12 @@
 import React from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
+import EpisodeHero from 'src/components/EpisodeHero'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import h from 'src/lib/h'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'warning'
+  type?: 'yesNoQuiz' | 'sideNote' | 'warning' | 'meta'
   title?: React.ReactNode
   preview?: React.ReactNode
   content: React.ReactNode
@@ -20,6 +21,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
   return (
     <>
       <EpisodePageInitialRenderWarning />
+      <EpisodeHero />
       {cards.map(({ title, type, content, preview }, index) =>
         index <= lastVisibleCardIndex ? (
           <CardWrapper

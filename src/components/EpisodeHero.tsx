@@ -11,9 +11,10 @@ import {
   fontWeights,
   letterSpacings,
   lineHeights,
-  spaces
+  spaces,
+  ns
 } from 'src/lib/theme'
-export const jsxBabelFix = jsx
+import H from 'src/components/H'
 
 const commonTitleClasses = css`
   line-height: ${lineHeights(1.1)};
@@ -22,11 +23,13 @@ const commonTitleClasses = css`
 `
 
 const EpisodeHero = () => {
-  const { lessonTitle, episodeTitle, episodeNumber } = useContext(
-    EpisodeContext
-  )
+  const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   return (
-    <>
+    <header
+      css={css`
+        padding: ${spaces(0.5)} 0;
+      `}
+    >
       <>
         {episodeTitle ? (
           <>
@@ -34,9 +37,12 @@ const EpisodeHero = () => {
               css={[
                 commonTitleClasses,
                 css`
-                  color: ${colors('grey500')};
-                  padding-top: ${spaces(1.5)};
+                  color: ${colors('grey600')};
+                  padding: ${spaces(1)} 0 ${spaces(1)};
                   font-size: ${fontSizes(1.25)};
+                  ${ns} {
+                    font-size: ${fontSizes(1.5)};
+                  }
                   margin: 0 auto;
                 `
               ]}
@@ -47,7 +53,7 @@ const EpisodeHero = () => {
                   text-decoration: none;
                 `}
               >
-                {lessonTitle}
+                <H args={{ name: 'titleSplit' }} />
               </InternalLink>
             </h3>
             <h1
@@ -55,7 +61,10 @@ const EpisodeHero = () => {
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
-                  font-size: ${fontSizes(2)};
+                  font-size: ${fontSizes(1.75)};
+                  ${ns} {
+                    font-size: ${fontSizes(2)};
+                  }
                   font-weight: ${fontWeights(800)};
                   margin: 0 auto ${spaces(0.5)};
                 `
@@ -71,18 +80,22 @@ const EpisodeHero = () => {
               css`
                 color: ${colors('grey900')};
                 padding-top: ${spaces(0.5)};
-                font-size: ${fontSizes(2)};
+                font-size: ${fontSizes(1.75)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};
+
+                ${ns} {
+                  font-size: ${fontSizes(2.5)};
+                }
               `
             ]}
           >
-            {lessonTitle}
+            <H args={{ name: 'titleSplit' }} />
           </h1>
         )}
       </>
       <EmojiSeparator size="lg" emojis={episodeEmojis[episodeNumber]} />
-    </>
+    </header>
   )
 }
 

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 import Favicon from 'src/components/Favicon'
 import GlobalStyles from 'src/components/GlobalStyles'
-import t from 'src/lib/titles'
+import { lessonTitle } from 'src/lib/titles'
 import { GA_TRACKING_ID } from '../lib/gtag'
 
 const Page = ({ children }: { children: React.ReactNode }) => (
@@ -13,7 +13,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
         key="viewport"
       />
-      <title key="title">{t('title')}</title>
+      <title key="title">{lessonTitle}</title>
       <Favicon />
       <script
         async

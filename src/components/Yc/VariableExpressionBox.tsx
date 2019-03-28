@@ -12,7 +12,6 @@ import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression

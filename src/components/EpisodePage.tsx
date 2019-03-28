@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, Global, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import React from 'react'
 import Container from 'src/components/Container'
@@ -9,9 +9,8 @@ import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
-import numEpisodes from 'src/lib/numEpisodes'
+import { numEpisodes } from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -23,7 +22,7 @@ export interface EpisodePageProps {
 
 const navigationLinkClasses = css`
   text-decoration: none;
-  color: ${colors('indigo500')};
+  color: ${colors('grey600')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
 `
@@ -42,14 +41,6 @@ const EpisodePage = ({
         {episodeTitleString && ` | ${episodeTitleString}`}
       </title>
     </Head>
-    <Global
-      styles={css`
-        html,
-        body {
-          background-color: ${colors('indigo100')};
-        }
-      `}
-    />
     <Container size="sm">
       <div
         css={css`

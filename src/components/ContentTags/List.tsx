@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
-export const jsxBabelFix = jsx
 
 const commonListCss = css`
   padding: 0;

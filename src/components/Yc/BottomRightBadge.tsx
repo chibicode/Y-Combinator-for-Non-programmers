@@ -3,7 +3,6 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
-export const jsxBabelFix = jsx
 
 interface BottomRightBadgeProps {
   bottomRightBadgeType: Exclude<
@@ -31,7 +30,7 @@ const bottomRightBadgeTypeToColors = (
     `,
     funcBound: css`
       background-color: ${colors('yellow900')};
-      border-color: ${colors('orange900')};
+      border-color: ${colors('deepOrange800')};
     `
   }[x])
 

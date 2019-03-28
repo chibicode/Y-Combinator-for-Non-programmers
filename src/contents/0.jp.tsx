@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import {
   Blockquote,
   Em,
@@ -7,124 +7,37 @@ import {
   ExternalLink,
   P,
   Strong,
-  Ul,
-  UlLi
+  InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import EpisodeHero from 'src/components/EpisodeHero'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
-import { InternalLink } from 'src/components/ContentTags'
+import Toc from 'src/components/Toc'
 import H from 'src/components/H'
-import t from 'src/lib/titles'
-export const jsxBabelFix = jsx
+import { lessonTitle } from 'src/lib/titles'
 
 export default () => {
   return (
     <EpisodeCardList
       cards={[
         {
+          title: '自己紹介と、この記事について',
           content: (
             <>
-              <EpisodeHero />
+              <EmojiSeparator halfMarginBottom emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
               <P>
-                こんにちは！当サイト「
-                <Em>
-                  <Strong>CSmoji</Strong>
-                </Em>
-                」 では、
-                <Em>絵文字</Em>を使った<Em>コンピューターサイエンス</Em>
-                (略して“CS”)の無料レッスンを公開しています。
-              </P>
-              <P>
-                今回はレッスン第1弾・「
-                <Em>
-                  <Strong>{t('title')}</Strong>
-                </Em>
-                」です。<Em>約30〜60分</Em>
-                で終えることができるので、通勤・通学・昼休みの時間にやるのにぴったりです。ぜひお楽しみください！
-              </P>
-            </>
-          )
-        },
-        {
-          title: '続きからはじめる場合',
-          type: 'warning',
-          content: (
-            <P>
-              すでにレッスンを途中まで終えた方は、
-              <InternalLink href="/toc">
-                こちらの目次ページから続きをやってみてください
-              </InternalLink>
-              。
-            </P>
-          )
-        },
-        {
-          title: 'はじめに: コンピューターサイエンスって何？',
-          content: (
-            <>
-              <EmojiSeparator emojis={['🤖', '🤔', '🤖']} halfMarginBottom />
-              <P>
-                コンピューターサイエンスとは、
-                <Em>プログラミングやAI開発の根幹となる学問です。</Em>
-                たとえば、グーグルの検索エンジンや、カメラアプリの顔認識機能には、コンピューターサイエンスの考え方が応用されています。
-              </P>
-              <P>
-                プログラミングをマスターしなくても、コンピュターサイエンスの基本的な考え方を学ぶことで、アプリやAIがなぜ動くのかをなんとなく理解することができます。「
-                <Em>
-                  プログラミングを勉強する気はないけど、アプリやAIが動く原理を学んでみたい
-                </Em>
-                」という方には、コンピューターサイエンスを学ぶのがおすすめです。
-              </P>
-              <P>
-                もちろん、短期間ですべてを学ぶことはできません。だから当サイトでは、コンピューターサイエンスという学問のごく一部を入門編として紹介しています。みなさんに
-                <Em>
-                  「コンピューターサイエンスって面白い！」「自分にもできるかも」「もっと学んでみたい！」
-                </Em>
-                と思ってもらえたら嬉しいです。
-              </P>
-            </>
-          )
-        },
-        {
-          title: 'パソコンでもスマホでもOK！',
-          content: (
-            <>
-              <EmojiSeparator halfMarginBottom emojis={['💻', '🆗', '📱']} />
-              <Ul>
-                <UlLi>
-                  当サイトでは、よくあるプログラミング学習サイトとは違い、
-                  <Em>プログラムを書く必要はありません。</Em>
-                  だから、スマホひとつで完結します。
-                </UlLi>
-                <UlLi>プログラミング未経験者でも大歓迎です。</UlLi>
-                <UlLi>
-                  数学などの理系知識もいりません。中学卒業レベルの学力があれば最後までできます。
-                </UlLi>
-              </Ul>
-            </>
-          )
-        },
-        {
-          title: 'このレッスンを作ったのは誰ですか？',
-          content: (
-            <>
-              <EmojiSeparator halfMarginBottom emojis={['🇯🇵', '👨🏻‍💻', '🇺🇸']} />
-              <P
-                css={css`
-                  margin-top: 0;
-                `}
-              >
-                申し遅れました。
-                <Strong>上杉周作</Strong>
-                と申します。アメリカの大学でコンピューターサイエンスを学んだ米国在住のプログラマーです。最近は、『
+                こんにちは、<Strong>上杉周作</Strong>
+                と申します。米国在住のプログラマー兼ブロガーです。2019年のベストセラー本『
                 <ExternalLink href="https://amzn.to/2QlZIqm">
-                  ファクトフルネス(Factfulness)
+                  <Strong>ファクトフルネス</Strong>
                 </ExternalLink>
-                』という本を共訳しました。
+                』の共訳者でもあります。
+                <ExternalLink href="https://jp.chibicode.com/">
+                  詳しいプロフィールとブログはこちら
+                </ExternalLink>
+                。
               </P>
               <P>
                 <Img
@@ -134,8 +47,63 @@ export default () => {
                 />
               </P>
               <P>
-                <ExternalLink href="https://jp.chibicode.com/">
-                  わたしの詳しいプロフィールとブログはこちら
+                本記事「<Strong>{lessonTitle}</Strong>
+                」は、わたしのブロガー人生の中で最も時間をかけた、とっておきの記事です。試行錯誤を繰り返しすぎて、執筆に10ヶ月近くかかってしまいました。ネタそのものは、10年近く温めていたものです。
+              </P>
+              <P>
+                時間をかけた分、自信を持っておすすめできる記事になったかなと思います。
+              </P>
+              <P>
+                少々長いですが、章ごとにページを分けているので、途中で一時休憩することもできます。最後まで楽しんでいただけると嬉しいです。
+              </P>
+              <P>
+                <Strong>公開日:</Strong> 2019年4月20日
+              </P>
+            </>
+          )
+        },
+        {
+          title: '目次',
+          type: 'meta',
+          content: (
+            <>
+              <EmojiSeparator emojis={['📗', '📘', '📕']} halfMarginBottom />
+              <Toc />
+            </>
+          )
+        },
+        {
+          title: 'はじめに: コンピューターサイエンスって何？',
+          content: (
+            <>
+              <EmojiSeparator emojis={['🤖', '🤔', '🤖']} halfMarginBottom />
+              <P>
+                この記事のタイトルは「<Strong>{lessonTitle}</Strong>」ですが、
+                <Em>
+                  コンピュターサイエンスとは何か
+                  、ご存じない方がほとんどだと思います
+                </Em>
+                。
+              </P>
+              <P>
+                <Strong>
+                  コンピューターサイエンスとは、
+                  プログラミングやAI開発の根幹となる学問です。
+                </Strong>
+                たとえば、グーグルなどの検索エンジンや、地図アプリのナビ機能、カメラアプリの顔認識機能には、コンピューターサイエンスの考え方が応用されています。
+              </P>
+              <P>
+                プログラミングをマスターしなくても、コンピュターサイエンスの基本的な考え方を学ぶことで、アプリやAIがなぜ動くのかをなんとなく理解することができます。「
+                <Em>
+                  プログラミングを勉強する気はないけど、プログラミング的な考え方は知っておきたい
+                </Em>
+                」という方には、コンピューターサイエンスを学ぶことをおすすめします。
+              </P>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                わたしは米国カーネギーメロン大学のコンピューターサイエンス学士号を修得しました。
+                <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
+                  最優秀TA(ティーチングアシスタント、教育助手)賞も受賞しています
                 </ExternalLink>
                 。
               </P>
@@ -143,35 +111,50 @@ export default () => {
           )
         },
         {
-          title: (
-            <>
-              <Emoji>⭕️</Emoji>
-              <Emoji>❌</Emoji>クイズに挑戦
-            </>
-          ),
+          title: 'コンピューターサイエンスを学ぶきっかけに',
           content: (
             <>
+              <EmojiSeparator emojis={['🤔', '💭', '📝']} halfMarginBottom />
               <P>
-                当サイトでは、<Emoji>⭕️</Emoji>
-                <Emoji>❌</Emoji>
-                クイズがたくさん出てきます。答えがわからなくても大丈夫。テキトーに勘で答えを選んでみてください。
+                もちろん、短期間でコンピューターサイエンスのすべてを学ぶことはできません。だからこの記事では、
+                <Strong>
+                  「コンピューターサイエンスを学んでみたい」というきっかけを提供できれば
+                </Strong>
+                と思っています。きっかけさえ掴むことができれば、教材はネットに豊富にあるので、みずから学んでいけるようになります。
               </P>
-              <P>さっそく1問目をやってみましょう。</P>
-              <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
+              <P>
+                だからこの記事の目標は、みなさんに
+                <Em>
+                  「コンピューターサイエンスって面白い！」「自分でもわかるかも！」「もっと知りたい！」
+                </Em>
+                と思ってもらうことです。
+              </P>
+              <P>
+                そのために今回は、コンピューターサイエンスの中でも特に面白い題材について解説します。それがこの記事の題名にもある「
+                <Strong>Yコンビネーター</Strong>
+                」です。
+              </P>
             </>
           )
         },
         {
           type: 'yesNoQuiz' as 'yesNoQuiz',
-          title: <H args={{ name: 'yesNoQuiz' }} />,
+          title: <>Yコンビネーターって何？</>,
           content: (
             <>
               <P>
-                <Strong>質問:</Strong> このレッスンの題名は「
-                <Strong>あなたの知らないYコンビネーター</Strong>」。この「
-                <Strong>
-                  <Em>Yコンビネーター</Em>
-                </Strong>
+                この記事の題名は「<Em>{lessonTitle}</Em>」ですが、「
+                <Strong>Yコンビネーター</Strong>
+                」とはいったい何のことなのでしょう？
+              </P>
+              <P>
+                すぐに正解を言っても面白くないので、
+                <Emoji>⭕️</Emoji> <Emoji>❌</Emoji>
+                クイズ形式で出題します。分からなくて当然なので、勘で答えてみてください！
+              </P>
+              <EmojiSeparator emojis={['⭕️', '🤔', '❌']} halfMarginBottom />
+              <P>
+                <Strong>質問:</Strong> <Em>Yコンビネーター</Em>
                 」とは、
                 <Em>
                   「繰り返し処理」に関連するコンピューターサイエンス用語だ
@@ -202,7 +185,8 @@ export default () => {
                 primaryTextType="start"
               />
               <P>
-                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下のコラムも読んでみてください。(読み飛ばしても大丈夫です。)
+                プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下のコラムも読んでみてください。(
+                <Em>読み飛ばしても大丈夫です。</Em>)
               </P>
             </>
           )
@@ -233,12 +217,12 @@ export default () => {
           )
         },
         {
-          title: '別の意味の「Yコンビネーター」',
+          title: 'IT業界で耳にする「Yコンビネーター」',
           type: 'sideNote' as 'sideNote',
           preview: (
             <>
               <P>
-                <Em>ITベンチャー業界</Em>にいる方なら、別の意味で
+                <Em>IT業界</Em>にいる方なら、別の意味で
                 「Yコンビネーター」という言葉をご存知かもしれません。
               </P>
             </>
@@ -303,7 +287,21 @@ export default () => {
           )
         },
         {
-          title: 'それでは始めましょう！',
+          type: 'sideNote' as 'sideNote',
+          title: 'パソコンでもスマホでもOK！',
+          content: (
+            <>
+              <EmojiSeparator halfMarginBottom emojis={['💻', '🆗', '📱']} />
+              <P>
+                当サイトでは、よくあるプログラミング学習サイトとは違い、
+                <Em>プログラムを書く必要はありません。</Em>
+                だから、スマホひとつで完結します。プログラミング未経験者でも大歓迎です。
+              </P>
+            </>
+          )
+        },
+        {
+          title: '余談はこれくらいにして、早速始めましょう！',
           content: (
             <>
               <YcNextLessonButton

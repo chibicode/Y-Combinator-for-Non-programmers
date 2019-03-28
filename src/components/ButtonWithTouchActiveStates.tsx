@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useState } from 'react'
-export const jsxBabelFix = jsx
 
 type ButtonWithTouchActiveStatesProps<
   T = JSX.IntrinsicElements['button']
