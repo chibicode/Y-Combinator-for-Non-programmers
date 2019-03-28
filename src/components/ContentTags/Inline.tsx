@@ -2,7 +2,13 @@
 import { css, jsx } from '@emotion/core'
 import React, { useContext } from 'react'
 import { colors } from 'src/lib/theme'
-import { CardColorContext } from 'src/components/Card'
+import Color from 'color'
+import {
+  backgroundColor,
+  CardColorContext,
+  CardProps
+} from 'src/components/Card'
+import { LinkContext } from 'src/components/ContentTags/Links'
 
 interface HighlightContextProps {
   inHighlight: boolean
@@ -16,6 +22,12 @@ const HighlightContext = React.createContext<HighlightContextProps>(
   highlightContextDefault
 )
 
+const mix = (color: CardProps['color'], base: string) =>
+  Color(base)
+    .mix(Color(backgroundColor(color)), 0.33)
+    .hsl()
+    .string()
+
 export const Strong = ({
   children
 }: {
@@ -23,6 +35,7 @@ export const Strong = ({
   pinkHighlight?: boolean
 }) => {
   const { inHighlight } = useContext(HighlightContext)
+  const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
   if (inHighlight) {
     return (
@@ -38,12 +51,21 @@ export const Strong = ({
     return (
       <HighlightContext.Provider value={{ inHighlight: true }}>
         <span
-          css={css`
-            font-weight: bold;
-            background: ${colors(
-              color === 'yellow' ? 'pink10066' : 'yellow10066'
-            )};
-          `}
+          css={[
+            css`
+              font-weight: bold;
+              background: ${color === 'yellow'
+                ? mix(color, colors('pink100'))
+                : mix(color, colors('yellow100'))};
+            `,
+            inLink &&
+              css`
+                &:hover,
+                &:active {
+                  background: ${colors('pink100')};
+                }
+              `
+          ]}
         >
           {children}
         </span>
@@ -59,6 +81,7 @@ export const Em = ({
   pinkHighlight?: boolean
 }) => {
   const { inHighlight } = useContext(HighlightContext)
+  const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
   if (inHighlight) {
     return (
@@ -74,12 +97,21 @@ export const Em = ({
     return (
       <HighlightContext.Provider value={{ inHighlight: true }}>
         <span
-          css={css`
-            font-style: normal;
-            background: ${colors(
-              color === 'yellow' ? 'pink10066' : 'yellow10066'
-            )};
-          `}
+          css={[
+            css`
+              font-style: normal;
+              background: ${color === 'yellow'
+                ? mix(color, colors('pink100'))
+                : mix(color, colors('yellow100'))};
+            `,
+            inLink &&
+              css`
+                &:hover,
+                &:active {
+                  background: ${colors('pink100')};
+                }
+              `
+          ]}
         >
           {children}
         </span>

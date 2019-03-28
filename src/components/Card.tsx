@@ -34,7 +34,7 @@ export interface CardState {
   overrideColor?: CardProps['color']
 }
 
-const backgroundColor = (color: CardProps['color']) =>
+export const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
     white: colors('grey150'),
