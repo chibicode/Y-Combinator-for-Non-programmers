@@ -17,7 +17,6 @@ const Page = ({ children }: { children: React.ReactNode }) => (
       <meta property="og:type" content="article" />
       <meta property="og:locale" content={ogLocale} />
       <meta property="article:published_time" content={dateSchemaString} />
-      <Favicon />
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -32,6 +31,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
         }}
       />
     </Head>
+    <Favicon />
     {children}
   </GlobalStyles>
 )

@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import { colors } from 'src/lib/theme'
 
 // Favicon generated from https://realfavicongenerator.net
@@ -6,7 +7,7 @@ const faviconPrefix = `/static/images/favicon`
 const faviconBgColor = colors('grey300')
 
 const Favicon = () => (
-  <>
+  <Head>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -32,7 +33,7 @@ const Favicon = () => (
     />
     <meta name="msapplication-TileColor" content={faviconBgColor} />
     <meta name="theme-color" content={faviconBgColor} />
-  </>
+  </Head>
 )
 
 export default Favicon
