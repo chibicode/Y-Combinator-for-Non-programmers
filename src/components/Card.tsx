@@ -36,6 +36,7 @@ export interface CardProps {
   title?: React.ReactNode
   preview?: React.ReactNode
   cardActionTaken: CardAction
+  header?: React.ReactNode
   footer?: {
     content: React.ReactNode
     color: CardProps['color']
@@ -79,7 +80,8 @@ const Card = ({
   slideNumber,
   slideCount,
   isLast,
-  footer
+  footer,
+  header
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
     <div
@@ -87,6 +89,7 @@ const Card = ({
         position: relative;
       `}
     >
+      {header}
       {slideNumber && slideCount && (
         <div
           css={css`

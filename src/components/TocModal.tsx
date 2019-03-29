@@ -51,10 +51,44 @@ const titleCss = css`
   }
 `
 
-const TocModal = () => {
+const TocModal = ({ hideModal }: { hideModal: () => void }) => {
   return (
     <Modal>
-      <Card color="white" title={<H args={{ name: 'toc' }} />}>
+      <Card
+        color="white"
+        title={<H args={{ name: 'toc' }} />}
+        header={
+          <button
+            type="button"
+            onClick={hideModal}
+            css={css`
+              position: absolute;
+              right: ${spaces(0.5)};
+              top: ${spaces(0.5)};
+              padding: ${spaces(0.5)} ${spaces(0.5)};
+              color: ${colors('indigo500')};
+              font-size: ${fontSizes(0.85)};
+              font-weight: bold;
+              line-height: 1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+              border-radius: 0.25rem;
+              border: none;
+              background: none;
+              cursor: pointer;
+              background: ${colors('indigo50')};
+
+              &:hover {
+                background: ${colors('indigo100')};
+              }
+            `}
+          >
+            <H args={{ name: 'tocClose' }} />
+          </button>
+        }
+      >
         <InternalLink href="/" css={linkCss}>
           <span
             css={[
@@ -65,7 +99,7 @@ const TocModal = () => {
               prefixCss
             ]}
           >
-            序章
+            <H args={{ name: 'introductionPageLink' }} />
           </span>
           <span css={titleCss}>{lessonTitle}</span>
           <EmojiSeparator

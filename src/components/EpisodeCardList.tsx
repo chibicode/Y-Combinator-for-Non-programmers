@@ -4,7 +4,7 @@ import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRe
 import EpisodeHero from 'src/components/EpisodeHero'
 import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'warning' | 'meta'
@@ -35,7 +35,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             title={
               type === 'sideNote' ? (
                 <>
-                  {h('sideNotePrefix')}: {title}
+                  <H args={{ name: 'sideNotePrefix' }} />: {title}
                 </>
               ) : (
                 title

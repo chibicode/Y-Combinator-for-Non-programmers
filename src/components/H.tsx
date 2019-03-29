@@ -59,6 +59,7 @@ export interface HProps {
     | { name: 'newUser' }
     | { name: 'titleSplit' }
     | { name: 'toc' }
+    | { name: 'tocClose' }
 }
 
 const H = ({ args }: HProps) => {
@@ -626,6 +627,13 @@ const H = ({ args }: HProps) => {
       return <>Table of Contents</>
     } else {
       return <>目次</>
+    }
+  }
+  if (args.name === 'tocClose') {
+    if (locale === 'en') {
+      return <>Close</>
+    } else {
+      return <>閉じる</>
     }
   }
   throw new Error('error')

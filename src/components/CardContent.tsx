@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { P, LinkButton } from 'src/components/ContentTags'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 
 export interface CardContentProps {
   children: React.ReactNode
@@ -15,7 +15,7 @@ const CardContent = ({ preview, children }: CardContentProps) => {
       {previewOnly && (
         <P>
           <LinkButton onClick={() => setPreviewOnly(false)}>
-            {h('continueReading')}
+            <H args={{ name: 'continueReading' }} />
           </LinkButton>
         </P>
       )}
