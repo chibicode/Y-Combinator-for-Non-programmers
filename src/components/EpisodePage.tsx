@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import { InternalLink } from 'src/components/ContentTags'
@@ -11,6 +11,8 @@ import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
 import { numEpisodes } from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
+import TocModal from 'src/components/TocModal'
+import { commonLinkClass } from 'src/components/ContentTags/Links'
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -25,6 +27,10 @@ const navigationLinkClasses = css`
   color: ${colors('grey600')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 `
 
 const EpisodePage = ({
@@ -37,12 +43,16 @@ const EpisodePage = ({
   const title = `${lessonTitle}${
     episodeTitleString ? ` | ${episodeTitleString}` : ''
   }`
+  const [modalVisible, setModalVisible] = useState(false)
+  const hideModal = () => setModalVisible(false)
+  const showModal = () => setModalVisible(true)
   return (
     <Page>
       <Head>
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
       </Head>
+      {modalVisible && <TocModal hideModal={hideModal} />}
       <Container size="sm">
         <div
           css={css`
@@ -76,12 +86,21 @@ const EpisodePage = ({
               text-align: center;
             `}
           >
-            {/* <InternalLink
-            href={'/toc'}
-            css={navigationLinkClasses}
-          >
-            {h('indexPageLink')}
-          </InternalLink> */}
+            <button
+              type="button"
+              onClick={showModal}
+              css={[
+                navigationLinkClasses,
+                commonLinkClass,
+                css`
+                  &:focus {
+                    outline: none;
+                  }
+                `
+              ]}
+            >
+              {h('indexPageLink')}
+            </button>
           </div>
           <div
             css={css`

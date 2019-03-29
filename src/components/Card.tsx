@@ -12,7 +12,7 @@ interface CardColorContextProps {
 }
 
 const cardColorContextDefault: CardColorContextProps = {
-  color: 'white'
+  color: 'grey'
 }
 
 export const CardColorContext = React.createContext<CardColorContextProps>(
@@ -21,13 +21,22 @@ export const CardColorContext = React.createContext<CardColorContextProps>(
 
 export interface CardProps {
   children: React.ReactNode
-  color: 'white' | 'orange' | 'yellow' | 'purple' | 'green' | 'blue' | 'indigo'
+  color:
+    | 'grey'
+    | 'orange'
+    | 'yellow'
+    | 'purple'
+    | 'green'
+    | 'blue'
+    | 'indigo'
+    | 'white'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
   title?: React.ReactNode
   preview?: React.ReactNode
   cardActionTaken: CardAction
+  header?: React.ReactNode
   footer?: {
     content: React.ReactNode
     color: CardProps['color']
@@ -41,7 +50,8 @@ export interface CardState {
 export const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
-    white: colors('grey150'),
+    grey: colors('grey150'),
+    white: colors('white'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),
     purple: colors('purple50'),
@@ -53,6 +63,7 @@ export const backgroundColor = (color: CardProps['color']) =>
 const slideLabelBgColor = (color: CardProps['color']) =>
   ({
     green: colors('green600'),
+    grey: colors('grey600'),
     white: colors('grey600'),
     orange: colors('deepOrange600'),
     yellow: colors('yellow900'),
@@ -69,7 +80,8 @@ const Card = ({
   slideNumber,
   slideCount,
   isLast,
-  footer
+  footer,
+  header
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
     <div
@@ -77,6 +89,7 @@ const Card = ({
         position: relative;
       `}
     >
+      {header}
       {slideNumber && slideCount && (
         <div
           css={css`
@@ -184,7 +197,7 @@ const Card = ({
 )
 
 Card.defaultProps = {
-  color: 'white',
+  color: 'grey',
   cardActionTaken: 'default'
 }
 

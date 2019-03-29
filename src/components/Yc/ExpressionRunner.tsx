@@ -231,7 +231,7 @@ const ExpressionRunner = ({
           )
       }}
     >
-      <Container size={'md'} horizontalPadding={0} verticalMargin={1.75}>
+      <Container horizontalPadding={0} verticalMargin={1.75}>
         <Container
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}

@@ -177,7 +177,7 @@ export default () => {
         headingNoMarginBottom
         color="indigo"
       >
-        <EmojiSeparator emojis={['👨‍🎤']} Component={P} spacing="sm" size="lg" />
+        <EmojiSeparator emojis={['👨‍🎤']} Component={P} size="lg" />
         <P
           css={css`
             margin-top: 0;
