@@ -1,7 +1,7 @@
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 const locale = (publicRuntimeConfig.devLocale ||
-  process.env.PRODUCTION_LOCALE) as ('en' | 'jp')
+  process.env.productionLocale) as ('en' | 'jp')
 
 export default locale
 
