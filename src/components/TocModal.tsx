@@ -53,7 +53,7 @@ const titleCss = css`
 
 const TocModal = ({ hideModal }: { hideModal: () => void }) => {
   return (
-    <Modal>
+    <Modal onClickBackground={hideModal}>
       <Card
         color="white"
         title={<H args={{ name: 'toc' }} />}
@@ -89,7 +89,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           </button>
         }
       >
-        <InternalLink href="/" css={linkCss}>
+        <InternalLink href="/" css={linkCss} onClick={hideModal}>
           <span
             css={[
               css`
@@ -112,7 +112,12 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           const episodeNumber = i + 1
           const { prefix, color } = episodeTitlePrefixAndColor(episodeNumber)
           return (
-            <InternalLink href={`/${episodeNumber}`} key={i} css={linkCss}>
+            <InternalLink
+              href={`/${episodeNumber}`}
+              key={i}
+              css={linkCss}
+              onClick={hideModal}
+            >
               <span
                 css={[
                   css`
