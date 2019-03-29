@@ -22,6 +22,10 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
     then there's a moment where the styles are not applied. */}
       <Global
         styles={css`
+          * {
+            touch-action: manipulation;
+          }
+
           /* NOTE:
      double-tap optimization was removed: https://github.com/twbs/bootstrap/commit/2e15b9488874d8c129e6bd4da0425ecbac359c03 */
           html {
