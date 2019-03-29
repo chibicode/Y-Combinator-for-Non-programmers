@@ -8,7 +8,7 @@ import { InternalLink } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 import { numEpisodes } from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
 import TocModal from 'src/components/TocModal'
@@ -74,9 +74,11 @@ const EpisodePage = ({
                 css={navigationLinkClasses}
               >
                 ←{' '}
-                {episodeNumber === 1
-                  ? h('introductionPageLink')
-                  : episodeTitlePrefix(episodeNumber - 1, true).prefix}
+                {episodeNumber === 1 ? (
+                  <H args={{ name: 'introductionPageLink' }} />
+                ) : (
+                  episodeTitlePrefix(episodeNumber - 1, true).prefix
+                )}
               </InternalLink>
             )}
           </div>
@@ -99,7 +101,7 @@ const EpisodePage = ({
                 `
               ]}
             >
-              {h('indexPageLink')}
+              <H args={{ name: 'indexPageLink' }} />
             </button>
           </div>
           <div
