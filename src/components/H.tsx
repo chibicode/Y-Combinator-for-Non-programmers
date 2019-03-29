@@ -92,8 +92,7 @@ const H = ({ args }: HProps) => {
           <InternalLink href={'/'}>
             <Strong>click here to read from the beginning</Strong>
           </InternalLink>
-          . Or you can view the
-          <InternalLink href={'/toc'}>table of contents</InternalLink>.
+          .
         </P>
       )
     } else {
@@ -107,8 +106,7 @@ const H = ({ args }: HProps) => {
           <InternalLink href={'/'}>
             <Strong>こちらからどうぞ</Strong>
           </InternalLink>
-          。目次は
-          <InternalLink href={'/toc'}>こちら</InternalLink>。
+          。
         </P>
       )
     }
