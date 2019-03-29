@@ -58,6 +58,7 @@ export interface HProps {
     | { name: 'episodeWelcomeText' }
     | { name: 'newUser' }
     | { name: 'titleSplit' }
+    | { name: 'toc' }
 }
 
 const H = ({ args }: HProps) => {
@@ -618,6 +619,13 @@ const H = ({ args }: HProps) => {
       return <>Continue reading…</>
     } else {
       return <>続きを読む</>
+    }
+  }
+  if (args.name === 'toc') {
+    if (locale === 'en') {
+      return <>Table of Contents</>
+    } else {
+      return <>目次</>
     }
   }
   throw new Error('error')

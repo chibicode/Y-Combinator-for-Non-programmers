@@ -11,6 +11,7 @@ import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import h from 'src/lib/h'
 import { numEpisodes } from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
+import TocModal from 'src/components/TocModal'
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -43,6 +44,7 @@ const EpisodePage = ({
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
       </Head>
+      <TocModal />
       <Container size="sm">
         <div
           css={css`

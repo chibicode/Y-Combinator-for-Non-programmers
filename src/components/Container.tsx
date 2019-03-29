@@ -32,6 +32,7 @@ const Container = ({
 
 Container.defaultProps = {
   Component: 'div',
+  size: 'sm',
   verticalMargin: 0,
   horizontalPadding: 0.5
 }

@@ -38,7 +38,7 @@ const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
         warning: 'yellow' as 'yellow',
         meta: 'indigo' as 'indigo'
       }[type]
-    : 'white'
+    : 'grey'
 
 const CardWrapper = ({
   slideNumber,

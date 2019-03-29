@@ -6,25 +6,38 @@ import { fontSizes, ns, spaces } from 'src/lib/theme'
 
 interface EmojiSeparatorProps {
   emojis: string[]
-  size: 'md' | 'lg'
-  spacing: 'sm' | 'md'
+  size: 'sm' | 'md' | 'lg'
+  alignCenter: boolean
   Component: React.ComponentType | string
 }
+
+const fontSize = (size: EmojiSeparatorProps['size']) =>
+  ({
+    sm: [fontSizes(1.5), fontSizes(1.5)],
+    md: [fontSizes(2), fontSizes(2.5)],
+    lg: [fontSizes(3), fontSizes(4)]
+  }[size])
+
+const margins = (size: EmojiSeparatorProps['size']) =>
+  ({
+    sm: [spaces(0), spaces(0)],
+    md: [spaces(0.5), spaces(0.75)],
+    lg: [spaces(0.5), spaces(0.75)]
+  }[size])
 
 const EmojiSeparator = ({
   emojis,
   size,
-  spacing,
-  Component
+  Component,
+  alignCenter
 }: EmojiSeparatorProps) => (
   <Component
     css={css`
-      text-align: center;
-      margin: ${spacing === 'sm' ? spaces('-0.5') : spaces(0.5)} 0
-        ${spacing === 'sm' ? 0 : spaces(0.75)};
-      font-size: ${size === 'lg' ? fontSizes(3) : fontSizes(2)};
+      text-align: ${alignCenter ? 'center' : 'left'};
+      margin: ${margins(size)[0]} 0 ${margins(size)[1]};
+      font-size: ${fontSize(size)[0]};
       ${ns} {
-        font-size: ${size === 'lg' ? fontSizes(4) : fontSizes(2.5)};
+        font-size: ${fontSize(size)[1]};
       }
     `}
   >
@@ -39,7 +52,8 @@ const EmojiSeparator = ({
 EmojiSeparator.defaultProps = {
   size: 'md',
   spacing: 'md',
-  Component: 'div'
+  Component: 'div',
+  alignCenter: true
 }
 
 export default EmojiSeparator
