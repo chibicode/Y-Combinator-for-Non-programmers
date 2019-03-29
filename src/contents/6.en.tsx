@@ -134,7 +134,7 @@ export default () => {
           <Strong>There’s no quiz.</Strong> Head straight to the next page!
         </UlLi>
       </Ul>
-      <YcNextLessonButton nextEpisodeNumber={7} primaryTextType="nextPage" />
+      <YcNextLessonButton nextEpisodeNumber={7} />
     </>
   )
 }

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
-import h from 'src/lib/h'
+import H from 'src/components/H'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 
 const Button = (props: JSX.IntrinsicElements['button']) => (
@@ -86,7 +86,7 @@ const ExpressionRunnerControls = ({
           margin-right: ${spaces(0.25)};
         `}
       >
-        {h('ycPrevious')}
+        <H args={{ name: 'previous' }} />
       </Button>
     ) : (
       <div
@@ -125,11 +125,15 @@ const ExpressionRunnerControls = ({
               `
           ]}
         >
-          {canStepForward
-            ? isPlaying
-              ? h('ycPause')
-              : h('ycPlay')
-            : h('ycReset')}
+          {canStepForward ? (
+            isPlaying ? (
+              <H args={{ name: 'pause' }} />
+            ) : (
+              <H args={{ name: 'play' }} />
+            )
+          ) : (
+            <H args={{ name: 'reset' }} />
+          )}
         </Button>
       ) : (
         <div
@@ -150,7 +154,11 @@ const ExpressionRunnerControls = ({
           margin-left: ${spaces(0.25)};
         `}
       >
-        {canStepForward ? h('ycNext') : h('ycDone')}
+        {canStepForward ? (
+          <H args={{ name: 'next' }} />
+        ) : (
+          <H args={{ name: 'done' }} />
+        )}
       </Button>
     ) : (
       <div

@@ -41,8 +41,6 @@ export interface HProps {
     | { name: 'false' }
     | { name: 'tryGuessing' }
     | { name: 'trueOrFalse' }
-    | { name: 'nextButtonStartPrimaryText' }
-    | { name: 'nextButtonCheckAnswerPrimaryText' }
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
     | { name: 'quizReview'; previousEpisodeNumber: number }
@@ -461,20 +459,6 @@ const H = ({ args }: HProps) => {
           <H args={{ name: 'true' }} />か<H args={{ name: 'false' }} />
         </>
       )
-    }
-  }
-  if (args.name === 'nextButtonStartPrimaryText') {
-    if (locale === 'en') {
-      return <>OK, Let’s Go!</>
-    } else {
-      return <>次のページへ進む</>
-    }
-  }
-  if (args.name === 'nextButtonCheckAnswerPrimaryText') {
-    if (locale === 'en') {
-      return <>Check My Answer</>
-    } else {
-      return <>次のページへ進む</>
     }
   }
   if (args.name === 'nextButtonNextPagePrimaryText') {

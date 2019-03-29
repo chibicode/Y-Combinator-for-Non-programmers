@@ -255,10 +255,7 @@ export default () => {
                 </Em>
                 どういう意味なのか、これから学んでいきましょう！
               </P>
-              <YcNextLessonButton
-                nextEpisodeNumber={1}
-                primaryTextType="start"
-              />
+              <YcNextLessonButton nextEpisodeNumber={1} />
             </>
           )
         },
@@ -361,10 +358,7 @@ export default () => {
           title: '余談はこれくらいにして、早速始めましょう！',
           content: (
             <>
-              <YcNextLessonButton
-                nextEpisodeNumber={1}
-                primaryTextType="start"
-              />
+              <YcNextLessonButton nextEpisodeNumber={1} />
             </>
           )
         }

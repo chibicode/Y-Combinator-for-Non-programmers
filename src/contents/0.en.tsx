@@ -155,7 +155,7 @@ export default () => {
         <Em>you can read everything for free</Em>. You can do it from{' '}
         <Em>your smartphone or your computer</Em>.
       </P>
-      <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
+      <YcNextLessonButton nextEpisodeNumber={1} />
       <SideNoteSection
         heading="Can you just tell me what Y Combinator is?"
         color="indigo"
@@ -227,7 +227,7 @@ export default () => {
         <Strong>Alright.</Strong> Now that you know who I am… Are you ready to
         go to the next page? Again, <Em>you can read everything for free</Em>.
       </P>
-      <YcNextLessonButton nextEpisodeNumber={1} primaryTextType="start" />
+      <YcNextLessonButton nextEpisodeNumber={1} />
     </>
   )
 }

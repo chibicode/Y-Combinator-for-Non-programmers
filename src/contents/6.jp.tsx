@@ -146,7 +146,7 @@ export default () => {
           そのまま次のページに進んでください！
         </UlLi>
       </Ul>
-      <YcNextLessonButton nextEpisodeNumber={7} primaryTextType="nextPage" />
+      <YcNextLessonButton nextEpisodeNumber={7} />
     </>
   )
 }

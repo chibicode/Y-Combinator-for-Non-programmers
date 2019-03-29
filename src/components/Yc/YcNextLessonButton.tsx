@@ -1,35 +1,21 @@
 import React from 'react'
 import Emoji from 'src/components/Emoji'
 import NextLessonButton from 'src/components/NextLessonButton'
-import h, { allTranslations } from 'src/lib/h'
+import H from 'src/components/H'
 import { remainingText } from 'src/lib/numEpisodes'
-
-type PrimaryTextType = 'quiz' | 'start' | 'nextPage'
 
 interface YcNextLessonButtonProps {
   nextEpisodeNumber: number
-  primaryTextType: PrimaryTextType
 }
 
-const primaryTextTypeToTranslationKey = (
-  primaryTextType: PrimaryTextType
-): keyof typeof allTranslations =>
-  ({
-    quiz: 'ycNextButtonCheckAnswerPrimaryText' as 'ycNextButtonCheckAnswerPrimaryText',
-    start: 'ycNextButtonStartPrimaryText' as 'ycNextButtonStartPrimaryText',
-    nextPage: 'ycNextButtonNextPagePrimaryText' as 'ycNextButtonNextPagePrimaryText'
-  }[primaryTextType])
-
-const YcNextLessonButton = ({
-  nextEpisodeNumber,
-  primaryTextType
-}: YcNextLessonButtonProps) => (
+const YcNextLessonButton = ({ nextEpisodeNumber }: YcNextLessonButtonProps) => (
   <NextLessonButton
     href={`/${nextEpisodeNumber}`}
-    primaryText={<>{h(primaryTextTypeToTranslationKey(primaryTextType))}</>}
+    primaryText={<H args={{ name: 'nextButtonNextPagePrimaryText' }} />}
     secondaryText={
       <>
-        {h('ycNextButtonSecondaryText', nextEpisodeNumber)} <Emoji>🙂</Emoji>
+        <H args={{ name: 'nextButtonSecondaryText', nextEpisodeNumber }} />{' '}
+        <Emoji>🙂</Emoji>
       </>
     }
     tertiaryText={nextEpisodeNumber > 1 && remainingText(nextEpisodeNumber)}
