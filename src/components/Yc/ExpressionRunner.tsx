@@ -46,7 +46,7 @@ export interface ExpressionRunnerProps {
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
-  hideExplanations: boolean
+  explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitial'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
@@ -58,6 +58,7 @@ export interface ExpressionRunnerProps {
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
+  skipToTheEnd: boolean
   caption?: {
     jp: React.ReactNode
     en: React.ReactNode
@@ -104,6 +105,10 @@ const getActions = ({
       actions.step('backward')
     },
 
+    skipToTheEnd() {
+      actions.step('skipToEnd')
+    },
+
     autoplay() {
       interval.current = setInterval(() => {
         if (expressionContainerManagerState.canStepForward) {
@@ -139,11 +144,13 @@ const getActions = ({
       actions.step('reset')
     },
 
-    step(direction: 'forward' | 'backward' | 'reset') {
+    step(direction: 'forward' | 'backward' | 'reset' | 'skipToEnd') {
       if (direction === 'forward') {
         getExpressionContainerManager().stepForward()
       } else if (direction === 'backward') {
         getExpressionContainerManager().stepBackward()
+      } else if (direction === 'skipToEnd') {
+        getExpressionContainerManager().stepForwardUntilTheEnd()
       } else {
         getExpressionContainerManager().reset()
       }
@@ -167,7 +174,7 @@ const ExpressionRunner = ({
   expressionContainer,
   lastAllowedExpressionState,
   hideControls,
-  hideExplanations,
+  explanationsVisibility,
   hidePriorities,
   variableSize,
   containerSize,
@@ -179,7 +186,8 @@ const ExpressionRunner = ({
   caption,
   initializeInstructions,
   maxStepsAllowed,
-  resetIndex
+  resetIndex,
+  skipToTheEnd
 }: ExpressionRunnerProps) => {
   const controlsRef = useRef<HTMLDivElement>(null)
   const {
@@ -237,7 +245,10 @@ const ExpressionRunner = ({
           horizontalPadding={0}
           verticalMargin={0}
         >
-          {!hideExplanations && (
+          {(explanationsVisibility === 'visible' ||
+            (explanationsVisibility === 'hiddenInitial' &&
+              getExpressionContainerManager().currentStepAndSubstep
+                .currentStep > 1)) && (
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
@@ -313,8 +324,10 @@ const ExpressionRunner = ({
                   'done'
                 )}
                 onAutoClick={actions.autoplay}
+                onSkipToTheEndClick={actions.skipToTheEnd}
                 onPauseClick={actions.pause}
                 onResetClick={actions.reset}
+                skipToTheEnd={skipToTheEnd}
                 hideForwardAndBackButtons={!!hideForwardAndBackButtons}
               />
             </div>
@@ -329,12 +342,16 @@ ExpressionRunner.defaultProps = {
   hidePriorities: expressionRunnerContextDefault.hidePriorities,
   hideBottomRightBadges: expressionRunnerContextDefault.hideBottomRightBadges,
   hideControls: false,
-  hideExplanations: false,
+  explanationsVisibility: 'visible',
   variableSize: expressionRunnerContextDefault.variableSize,
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   initializeInstructions: [],
   containerSize: 'xxs',
-  resetIndex: false
+  resetIndex: false,
+  skipToTheEnd: false,
+  hidePlayButton: false,
+  hideForwardAndBackButtons: false,
+  isFastForwardPlayButton: false
 }
 
 export default ExpressionRunner

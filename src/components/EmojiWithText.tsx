@@ -18,7 +18,7 @@ const EmojiWithText = ({ letter, size }: EmojiWithTextProps) => {
     throw new Error()
   }
   return (
-    <Em>
+    <Em highlightType="white">
       {label[locale]} <Emoji size={size}>{emoji}</Emoji>{' '}
     </Em>
   )

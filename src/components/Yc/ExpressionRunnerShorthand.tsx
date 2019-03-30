@@ -18,9 +18,35 @@ export const ExpressionRunnerSimple = ({
     expressionContainer={expressionContainer}
     hideControls
     hidePriorities
-    hideExplanations
+    explanationsVisibility="hidden"
     caption={caption}
     variableSize={'lg'}
+    initializeInstructions={[
+      {
+        type: 'stepForwardUntilPreviouslyChangedExpressionState',
+        state: initialState
+      }
+    ]}
+  />
+)
+
+export const ExpressionRunnerPlayButtonOnly = ({
+  expressionContainer,
+  initialState,
+  caption
+}: {
+  expressionContainer: SteppedExpressionContainer
+  initialState: CallStates
+  caption?: ExpressionRunnerProps['caption']
+}) => (
+  <ExpressionRunner
+    expressionContainer={expressionContainer}
+    hidePriorities
+    skipToTheEnd
+    hideForwardAndBackButtons
+    caption={caption}
+    variableSize={'lg'}
+    explanationsVisibility="hiddenInitial"
     initializeInstructions={[
       {
         type: 'stepForwardUntilPreviouslyChangedExpressionState',

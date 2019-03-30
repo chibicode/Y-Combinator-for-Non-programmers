@@ -13,7 +13,10 @@ import {
   yesCaption
 } from 'src/components/Yc/effectCaptions'
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
-import { ExpressionRunnerSimple } from 'src/components/Yc/ExpressionRunnerShorthand'
+import {
+  ExpressionRunnerSimple,
+  ExpressionRunnerPlayButtonOnly
+} from 'src/components/Yc/ExpressionRunnerShorthand'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
@@ -43,6 +46,12 @@ export default {
       expressionContainer={lessonExpressions.e1E4}
       initialState="default"
     />
+  ),
+  itbm: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="default"
+    />
   )
 }
 
@@ -54,7 +63,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -69,7 +78,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -85,7 +94,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -101,7 +110,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -117,7 +126,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -132,7 +141,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -147,7 +156,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -162,7 +171,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       highlightOverrides={{
         funcArg: 'forceYellowHighlight',
@@ -182,7 +191,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -197,7 +206,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -212,7 +221,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -228,7 +237,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       highlightOverrides={{
         funcArg: 'active',
@@ -249,7 +258,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       caption={{
         en: (
@@ -284,7 +293,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -299,7 +308,7 @@ export const episode1 = [
       expressionContainer={lessonExpressions.episode1Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -315,7 +324,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -331,7 +340,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -347,7 +356,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -362,7 +371,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -378,7 +387,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -394,7 +403,7 @@ export const episode1 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -444,7 +453,7 @@ export const episode1Quiz = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       resetIndex
       initializeInstructions={[
@@ -460,7 +469,7 @@ export const episode1Quiz = [
       expressionContainer={lessonExpressions.episode1Expression3}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       resetIndex
       variableSize={'lg'}
       initializeInstructions={[
@@ -494,7 +503,7 @@ export const episode2 = [
       expressionContainer={lessonExpressions.episode1Expression3}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       resetIndex
       variableSize={'lg'}
       initializeInstructions={[
@@ -509,7 +518,7 @@ export const episode2 = [
       expressionContainer={lessonExpressions.episode1Expression3}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -567,7 +576,7 @@ export const episode2 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -583,7 +592,7 @@ export const episode2 = [
       hidePriorities
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       hideBottomRightBadges
       highlightOverrides={{
@@ -657,7 +666,7 @@ export const episode2Quiz = [
       containerSize="xs"
       hideControls
       variableSize={'lg'}
-      hideExplanations
+      explanationsVisibility="hidden"
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -674,7 +683,7 @@ export const episode2Quiz = [
       hidePlayButton
       hideControls
       variableSize={'lg'}
-      hideExplanations
+      explanationsVisibility="hidden"
       initializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -706,7 +715,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -721,7 +730,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode2Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -735,7 +744,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -750,7 +759,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
@@ -766,7 +775,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
@@ -782,7 +791,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
@@ -798,7 +807,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression1}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       showAllShowSteps
       variableSize={'lg'}
       initializeInstructions={[
@@ -830,7 +839,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -846,7 +855,7 @@ export const episode4 = [
       expressionContainer={lessonExpressions.episode4Expression2}
       hidePriorities
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
         {
@@ -881,7 +890,7 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode5Expression1}
       hidePlayButton
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
     />
   ),
@@ -954,7 +963,7 @@ export const episode5 = [
       expressionContainer={lessonExpressions.episode5Expression2}
       hideControls
       showAllShowSteps
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
     />
   )
@@ -972,7 +981,7 @@ export const episode6 = [
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode6Expression1}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       containerSize={'xs'}
       variableSize={'lg'}
     />
@@ -1005,7 +1014,7 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression4}
       containerSize={'xs'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
     />
   ),
@@ -1014,7 +1023,7 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression5}
       containerSize={'xs'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
     />
   ),
@@ -1031,14 +1040,14 @@ export const episode6 = [
       expressionContainer={lessonExpressions.episode6Expression2}
       containerSize={'xs'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       variableSize={'lg'}
     />
   ),
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode6Expression3}
       containerSize={'xs'}
       variableSize={'lg'}
@@ -1058,7 +1067,7 @@ export const episode7 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode6Expression3}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1082,7 +1091,7 @@ export const episode7 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode7Expression1}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1162,7 +1171,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1171,7 +1180,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1180,7 +1189,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1189,7 +1198,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1198,7 +1207,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍚', 5)}
     />
   ),
@@ -1208,7 +1217,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍟', 2)}
     />
   ),
@@ -1218,7 +1227,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1227,7 +1236,7 @@ export const episode8 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   )
 ]
@@ -1246,7 +1255,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🥪', 3)}
     />
   ),
@@ -1256,7 +1265,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍟', 2)}
     />
   ),
@@ -1266,7 +1275,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={plusOneCaption}
     />
   ),
@@ -1276,7 +1285,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍛', 4)}
     />
   ),
@@ -1293,7 +1302,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🥪', 5)}
     />
   ),
@@ -1303,7 +1312,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={plusOneCaption}
     />
   ),
@@ -1313,7 +1322,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1322,7 +1331,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍟', 2)}
     />
   ),
@@ -1332,7 +1341,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍚', 3)}
     />
   ),
@@ -1342,7 +1351,7 @@ export const episode9 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   )
 ]
@@ -1364,7 +1373,7 @@ export const episode10 = [
       isFastForwardPlayButton
       caption={secretCodeCaption('🍔', 5)}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1373,7 +1382,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍟', 2)}
     />
   ),
@@ -1383,7 +1392,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍚', 3)}
     />
   ),
@@ -1393,7 +1402,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={additionCaption}
     />
   ),
@@ -1403,7 +1412,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={combineSecretCodeCaption('add', '🍟', 2, '🍚', 3)}
     />
   ),
@@ -1413,7 +1422,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={multiplicationCaption}
     />
   ),
@@ -1423,7 +1432,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍟', 2)}
     />
   ),
@@ -1433,7 +1442,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={secretCodeCaption('🍚', 3)}
     />
   ),
@@ -1453,7 +1462,7 @@ export const episode10 = [
       isFastForwardPlayButton
       caption={secretCodeCaption('🍔', 6)}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1462,7 +1471,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={combineSecretCodeCaption('multiply', '🍟', 2, '🍚', 3)}
     />
   ),
@@ -1472,7 +1481,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={additionCaption}
     />
   ),
@@ -1482,7 +1491,7 @@ export const episode10 = [
       containerSize={'xs'}
       variableSize={'sm'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={multiplicationCaption}
     />
   )
@@ -1492,7 +1501,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression1}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1501,7 +1510,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression2}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1510,7 +1519,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression3}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1519,7 +1528,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression4}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1528,7 +1537,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={yesCaption}
       expressionContainer={lessonExpressions.episode11Expression5}
       containerSize={'xs'}
@@ -1538,7 +1547,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression7}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1547,7 +1556,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression8}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1563,7 +1572,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={noCaption}
       expressionContainer={lessonExpressions.episode11Expression9}
       containerSize={'xs'}
@@ -1573,7 +1582,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={noCaption}
       expressionContainer={lessonExpressions.episode11Expression6}
       containerSize={'xs'}
@@ -1583,7 +1592,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression7}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1592,7 +1601,7 @@ export const episode11 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression10}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1611,7 +1620,7 @@ export const episode12 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       caption={yesCaption}
       expressionContainer={lessonExpressions.episode12Expression1}
       containerSize={'xs'}
@@ -1621,7 +1630,7 @@ export const episode12 = [
   () => (
     <ExpressionRunner
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
       expressionContainer={lessonExpressions.episode11Expression10}
       containerSize={'xs'}
       variableSize={'md'}
@@ -1634,7 +1643,7 @@ export const episode12 = [
       variableSize={'md'}
       caption={notCaption}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1644,7 +1653,7 @@ export const episode12 = [
       variableSize={'md'}
       caption={combineNotCaption('yes')}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1654,7 +1663,7 @@ export const episode12 = [
       variableSize={'md'}
       caption={combineNotCaption('no')}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1663,7 +1672,7 @@ export const episode12 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1672,7 +1681,7 @@ export const episode12 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   ),
   () => (
@@ -1709,7 +1718,7 @@ export const episode12 = [
       containerSize={'xs'}
       variableSize={'md'}
       hideControls
-      hideExplanations
+      explanationsVisibility="hidden"
     />
   )
 ]

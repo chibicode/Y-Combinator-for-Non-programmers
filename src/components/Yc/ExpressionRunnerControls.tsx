@@ -48,11 +48,13 @@ interface ExpressionRunnerControlsProps {
   isPlaying: boolean
   showPlayButton: boolean
   hideForwardAndBackButtons: boolean
+  skipToTheEnd: boolean
   onNextClick: () => void
   onPreviousClick: () => void
   onAutoClick: () => void
   onPauseClick: () => void
   onResetClick: () => void
+  onSkipToTheEndClick: () => void
 }
 
 const noOp = () => {
@@ -69,12 +71,15 @@ const ExpressionRunnerControls = ({
   onAutoClick,
   onPauseClick,
   onResetClick,
+  onSkipToTheEndClick,
+  skipToTheEnd,
   hideForwardAndBackButtons,
   isDone
 }: ExpressionRunnerControlsProps) => (
   <div
     css={css`
       display: flex;
+      justify-content: center;
       margin: ${spaces(0.75)} -2px 0 -2px;
     `}
   >
@@ -89,30 +94,34 @@ const ExpressionRunnerControls = ({
         <H args={{ name: 'previous' }} />
       </Button>
     ) : (
-      <div
-        css={css`
-          flex: 1;
-          margin-right: ${spaces(0.25)};
-          /* Same border as the button */
-          border: 2px solid transparent;
-        `}
-      />
+      !skipToTheEnd && (
+        <div
+          css={css`
+            flex: 1;
+            margin-right: ${spaces(0.25)};
+            /* Same border as the button */
+            border: 2px solid transparent;
+          `}
+        />
+      )
     )}
     {showPlayButton &&
       (canStepForward || isDone ? (
         <Button
           onClick={
             canStepForward
-              ? isPlaying
+              ? skipToTheEnd
+                ? onSkipToTheEndClick
+                : isPlaying
                 ? onPauseClick
                 : onAutoClick
               : onResetClick
           }
           css={[
             css`
-              flex: 1;
-              margin-left: ${spaces(0.25)};
-              margin-right: ${spaces(0.25)};
+              flex: ${skipToTheEnd ? 0.5 : 1};
+              margin-left: ${spaces(skipToTheEnd ? 0 : 0.25)};
+              margin-right: ${spaces(skipToTheEnd ? 0 : 0.25)};
             `,
             canStepForward &&
               !isPlaying &&
@@ -127,12 +136,12 @@ const ExpressionRunnerControls = ({
         >
           {canStepForward ? (
             isPlaying ? (
-              <H args={{ name: 'pause' }} />
+              <H args={{ name: 'pause' }} highlightType="none" />
             ) : (
-              <H args={{ name: 'play' }} />
+              <H args={{ name: 'play' }} highlightType="none" />
             )
           ) : (
-            <H args={{ name: 'reset' }} />
+            <H args={{ name: 'reset' }} highlightType="none" />
           )}
         </Button>
       ) : (
@@ -161,14 +170,16 @@ const ExpressionRunnerControls = ({
         )}
       </Button>
     ) : (
-      <div
-        css={css`
-          flex: 1;
-          margin-left: ${spaces(0.25)};
-          /* Same border as the button */
-          border: 2px solid transparent;
-        `}
-      />
+      !skipToTheEnd && (
+        <div
+          css={css`
+            flex: 1;
+            margin-left: ${spaces(0.25)};
+            /* Same border as the button */
+            border: 2px solid transparent;
+          `}
+        />
+      )
     )}
   </div>
 )

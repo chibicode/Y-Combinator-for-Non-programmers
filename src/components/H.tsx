@@ -15,6 +15,7 @@ import { lessonTitle } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 
 export interface HProps {
+  highlightType?: InlineHighlightType
   args:
     | { name: 'yesNoQuizSeeAnswer' }
     | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
@@ -31,7 +32,7 @@ export interface HProps {
         highlightType?: InlineHighlightType
       }
     | { name: 'next' }
-    | { name: 'play'; highlightType?: InlineHighlightType }
+    | { name: 'play' }
     | { name: 'pause' }
     | { name: 'reset' }
     | { name: 'previous' }
@@ -58,9 +59,10 @@ export interface HProps {
     | { name: 'titleSplit' }
     | { name: 'toc' }
     | { name: 'tocClose' }
+    | { name: 'playButton' }
 }
 
-const H = ({ args }: HProps) => {
+const H = ({ args, highlightType }: HProps) => {
   const { episodeNumber } = useContext(EpisodeContext)
 
   if (args.name === 'titlePrefix') {
@@ -272,13 +274,13 @@ const H = ({ args }: HProps) => {
   if (args.name === 'bentoBox') {
     if (locale === 'en') {
       return (
-        <Strong highlightType={args.highlightType}>
+        <Strong highlightType={highlightType}>
           {`“bento box${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
         </Strong>
       )
     } else {
       return (
-        <Strong highlightType={args.highlightType}>
+        <Strong highlightType={highlightType}>
           「弁当箱のパズル <Emoji>🍱</Emoji>」
         </Strong>
       )
@@ -307,7 +309,7 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={args.highlightType}>
+          <Strong highlightType={highlightType}>
             Play <Emoji>▶️</Emoji>
           </Strong>
         </>
@@ -315,7 +317,7 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <>
-          <Strong highlightType={args.highlightType}>
+          <Strong highlightType={highlightType}>
             実行 <Emoji>▶️</Emoji>
           </Strong>
         </>
@@ -345,7 +347,7 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
+          <Strong highlightType={highlightType}>
             Reset <Emoji>↩️</Emoji>
           </Strong>
         </>
@@ -353,8 +355,8 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <>
-          <Strong>
-            最初から <Emoji>↩️</Emoji>
+          <Strong highlightType={highlightType}>
+            やり直す <Emoji>↩️</Emoji>
           </Strong>
         </>
       )
@@ -390,7 +392,7 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
+          <Strong highlightType={highlightType}>
             Done <Emoji>🏁</Emoji>
           </Strong>
         </>
@@ -398,8 +400,8 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <>
-          <Strong>
-            終了 <Emoji>🏁</Emoji>
+          <Strong highlightType={highlightType}>
+            実行完了! <Emoji>🏁</Emoji>
           </Strong>
         </>
       )
@@ -616,6 +618,26 @@ const H = ({ args }: HProps) => {
       return <>Close</>
     } else {
       return <>閉じる</>
+    }
+  }
+  if (args.name === 'playButton') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Strong highlightType={highlightType}>
+            <H args={{ name: 'play' }} highlightType={highlightType} /> button
+          </Strong>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Strong highlightType={highlightType}>
+            <H args={{ name: 'play' }} highlightType={highlightType} />
+            ボタン
+          </Strong>
+        </>
+      )
     }
   }
   throw new Error('error')

@@ -97,7 +97,7 @@ export default () => {
     <EpisodeCardList
       cards={[
         {
-          title: <H args={{ name: 'bentoBox', highlightType: 'none' }} />,
+          title: <H args={{ name: 'bentoBox' }} highlightType="none" />,
           content: (
             <>
               <P>
@@ -115,12 +115,12 @@ export default () => {
               </PFullWidth>
               <P>
                 なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
                 という名前がついているからです。
               </P>
               <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
               <P>
-                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
                 がどんなものか、説明しますね！
               </P>
             </>
@@ -130,14 +130,14 @@ export default () => {
           title: (
             <>
               これが
-              <H args={{ name: 'bentoBox', highlightType: 'none' }} />
+              <H args={{ name: 'bentoBox' }} highlightType="none" />
             </>
           ),
           content: (
             <>
               <P>
                 下の図が、
-                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
                 です。実際の弁当箱のように、
                 <Em>
                   四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
@@ -163,14 +163,14 @@ export default () => {
           title: (
             <>
               まだまだあるよ
-              <H args={{ name: 'bentoBox', highlightType: 'none' }} />
+              <H args={{ name: 'bentoBox' }} highlightType="none" />
             </>
           ),
           content: (
             <>
               <P>
                 さらに何個か、
-                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
                 の例を紹介していきます:
               </P>
               <P>
@@ -205,21 +205,41 @@ export default () => {
         {
           title: (
             <>
-              「<H args={{ name: 'play', highlightType: 'none' }} />」 ボタン
+              <H args={{ name: 'playButton' }} highlightType="none" />
             </>
           ),
           content: (
             <>
               <P>
-                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
-                を解くには、以下の5つのステップを繰り返す必要があります。
+                それぞれの
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                には、
+                <H args={{ name: 'playButton' }} highlightType="none" />
+                があります。押すとどうなるか、試してみましょう！
               </P>
               <P>
-                <Emoji>1️⃣</Emoji>ワンペア・<Emoji>🔘</Emoji>
-                ラベル・<Emoji>✅</Emoji>マッチ・<Emoji>🆕</Emoji>チェンジ・
-                <Emoji>❌</Emoji>デリート
+                <Em>
+                  下の
+                  <H args={{ name: 'playButton' }} highlightType="none" />
+                  を押してみてください
+                </Em>
+                :
               </P>
+              {AER.itbm}
             </>
+          )
+        },
+        {
+          content: (
+            <P>
+              どうやら、さきほどの
+              <H args={{ name: 'bentoBox' }} highlightType="white" />
+              は、
+              <H args={{ name: 'play' }} highlightType="none" />
+              すると、最終的に
+              <EmojiWithText letter="b" />
+              だけになるようです。
+            </P>
           )
         },
         {

@@ -8,6 +8,7 @@ import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
+import H from 'src/components/H'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -314,16 +315,7 @@ const ExpressionRunnerExplanation = ({
     ) : (
       <>
         {isDone ? (
-          locale === 'en' ? (
-            <>
-              Done! <Emoji>🏁</Emoji>
-            </>
-          ) : (
-            <>
-              終了！
-              <Emoji>🏁</Emoji>
-            </>
-          )
+          <H args={{ name: 'done' }} highlightType="none" />
         ) : (
           stateToExplanation({
             state: expressionContainer.previouslyChangedExpressionState,
