@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import distanceFromTop from 'src/lib/distanceFromTop'
 
 function useCardScroll<E extends HTMLElement>(dep?: any) {
   const skipNextRef = useRef(false)
@@ -8,9 +9,9 @@ function useCardScroll<E extends HTMLElement>(dep?: any) {
       skipNextRef.current = true
     } else {
       if (domRef.current) {
-        if (window.scrollY < domRef.current.offsetTop) {
+        if (window.pageYOffset < distanceFromTop(domRef.current)) {
           window.scrollTo({
-            top: domRef.current.offsetTop,
+            top: distanceFromTop(domRef.current),
             left: 0,
             behavior: 'smooth'
           })
