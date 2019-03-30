@@ -302,6 +302,9 @@ export default () => (
             、その1
           </>
         ),
+        footer: {
+          content: <P>分からなくても大丈夫です！勘で答えてみてください。</P>
+        },
         content: (
           <>
             <P>
@@ -316,7 +319,6 @@ export default () => (
             </P>
             {AER.vvjn}
             <YesNoButtons answer="yes" />
-            <P>分からなくても大丈夫です！勘で答えてみてください。</P>
           </>
         )
       },
@@ -328,6 +330,9 @@ export default () => (
             、その2
           </>
         ),
+        footer: {
+          content: <P>分からなくても大丈夫です！勘で答えてみてください。</P>
+        },
         content: (
           <>
             <P>
@@ -342,7 +347,6 @@ export default () => (
             </P>
             {AER.olef}
             <YesNoButtons answer="no" />
-            <P>分からなくても大丈夫です！勘で答えてみてください。</P>
           </>
         )
       },
