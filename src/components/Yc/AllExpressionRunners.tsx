@@ -15,7 +15,8 @@ import {
 import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import {
   ExpressionRunnerSimple,
-  ExpressionRunnerPlayButtonOnly
+  ExpressionRunnerPlayButtonOnly,
+  ExpressionRunnerPairSimple
 } from 'src/components/Yc/ExpressionRunnerShorthand'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
@@ -49,6 +50,12 @@ export default {
   ),
   itbm: (
     <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="default"
+    />
+  ),
+  uqwm: (
+    <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e1E1}
       initialState="default"
     />

@@ -60,6 +60,7 @@ export interface HProps {
     | { name: 'toc' }
     | { name: 'tocClose' }
     | { name: 'playButton' }
+    | { name: 'afterPlay' }
 }
 
 const H = ({ args, highlightType }: HProps) => {
@@ -638,6 +639,13 @@ const H = ({ args, highlightType }: HProps) => {
           </Strong>
         </>
       )
+    }
+  }
+  if (args.name === 'afterPlay') {
+    if (locale === 'en') {
+      return <Strong highlightType={highlightType}>Result</Strong>
+    } else {
+      return <Strong highlightType={highlightType}>実行結果</Strong>
     }
   }
   throw new Error('error')

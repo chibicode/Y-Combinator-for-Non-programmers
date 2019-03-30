@@ -230,16 +230,25 @@ export default () => {
           )
         },
         {
-          content: (
-            <P>
-              どうやら、さきほどの
-              <H args={{ name: 'bentoBox' }} highlightType="white" />
-              は、
+          title: (
+            <>
               <H args={{ name: 'play' }} highlightType="none" />
-              すると、最終的に
-              <EmojiWithText letter="b" />
-              だけになるようです。
-            </P>
+              するとこうなった
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                どうやら、さきほどの
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                は、
+                <H args={{ name: 'play' }} highlightType="none" />
+                すると、最終的に
+                <EmojiWithText letter="b" />
+                だけになるようです。
+              </P>
+              {AER.uqwm}
+            </>
           )
         },
         {
