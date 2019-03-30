@@ -95,6 +95,31 @@ export default {
       expressionContainer={lessonExpressions.e1E4}
       initialState="default"
     />
+  ),
+  loai: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E5}
+      initialState="default"
+    />
+  ),
+  vvjn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E5}
+      initialState="default"
+      isDone
+    />
+  ),
+  hbgo: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E6}
+      initialState="default"
+    />
+  ),
+  olef: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E7}
+      initialState="default"
+    />
   )
 }
 

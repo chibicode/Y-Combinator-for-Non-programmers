@@ -33,6 +33,24 @@ export const e1E4 = initializeExpressionContainer([
   'j'
 ])
 
+export const e1E5 = initializeExpressionContainer([
+  {
+    arg: 'k',
+    body: 'k'
+  },
+  'l'
+])
+
+export const e1E6 = initializeExpressionContainer([
+  {
+    arg: 'm',
+    body: 'n'
+  },
+  'o'
+])
+
+export const e1E7 = initializeExpressionContainer('o')
+
 export const episode1Expression1 = initializeExpressionContainer([
   {
     arg: 'a',

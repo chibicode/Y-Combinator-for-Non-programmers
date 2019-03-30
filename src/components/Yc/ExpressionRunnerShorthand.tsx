@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import ExpressionRunner, {
-  ExpressionRunnerProps
-} from 'src/components/Yc/ExpressionRunner'
+import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import { P } from 'src/components/ContentTags'
@@ -12,10 +10,12 @@ import { spaces } from 'src/lib/theme'
 
 export const ExpressionRunnerSimple = ({
   expressionContainer,
-  initialState
+  initialState,
+  isDone
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
+  isDone: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -24,13 +24,21 @@ export const ExpressionRunnerSimple = ({
     explanationsVisibility="hidden"
     variableSize={'lg'}
     initializeInstructions={[
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: initialState
-      }
+      isDone
+        ? {
+            type: 'stepForwardUntilTheEnd'
+          }
+        : {
+            type: 'stepForwardUntilPreviouslyChangedExpressionState',
+            state: initialState
+          }
     ]}
   />
 )
+
+ExpressionRunnerSimple.defaultProps = {
+  isDone: false
+}
 
 export const ExpressionRunnerPlayButtonOnly = ({
   expressionContainer,
@@ -61,7 +69,6 @@ export const ExpressionRunnerPairSimple = ({
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
-  caption?: ExpressionRunnerProps['caption']
 }) => (
   <>
     <ExpressionRunner

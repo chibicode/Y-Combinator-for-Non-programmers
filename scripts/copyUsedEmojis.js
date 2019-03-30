@@ -1,16 +1,15 @@
 const twemoji = require('twemoji')
 const uniq = require('lodash/uniq')
+const letterEmojis = Object.values(
+  require('../src/lib/yc/letterEmojiMapping.json')
+)
 
 const allUsedEmojis = uniq([
+  ...letterEmojis,
   '🆓',
   '🤔',
   '🙂',
   '👋',
-  '🍣',
-  '🥪',
-  '🍔',
-  '🍗',
-  '🌮',
   '🍱',
   '❓',
   '🇯🇵',
@@ -39,28 +38,6 @@ const allUsedEmojis = uniq([
   '🥇',
   '🥈',
   '🥉',
-  '🍕',
-  '🍛',
-  '🌭',
-  '🆕',
-  '🍚',
-  '🍝',
-  '🥕',
-  '🍟',
-  '🍆',
-  '🥟',
-  '🥐',
-  '🥞',
-  '🧀',
-  '🍇',
-  '🍎',
-  '🍒',
-  '🍋',
-  '🍌',
-  '🍍',
-  '🎂',
-  '🍪',
-  '🍦',
   '🔀',
   '▶️',
   '↩️',
@@ -99,7 +76,8 @@ const allUsedEmojis = uniq([
   '💭',
   '👨🏻‍🎓',
   '🏫',
-  '😅'
+  '😅',
+  '😍'
 ])
 
 // Copied from Twemoji

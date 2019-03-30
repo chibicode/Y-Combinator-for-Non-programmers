@@ -13,6 +13,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import YesNoButtons from 'src/components/YesNoButtons'
 import SideNoteSection from 'src/components/SideNoteSection'
 import AER, {
   episode1,
@@ -102,8 +103,8 @@ export default () => {
             <>
               <P>
                 <H args={{ name: 'episodeWelcomeText' }} />
-                この記事では、とあるパズルを使ってYコンビネーターとは何かを学んでいきます。
-                今回は、
+                この記事では、<Strong>とあるパズル</Strong>
+                を使ってYコンビネーターとは何かを学んでいきます。 今回は、
                 <Em>このパズルの基本ルール</Em>
                 を紹介します。
               </P>
@@ -368,6 +369,58 @@ export default () => {
                 <Em>「サッパリ分からん」という方でも全然心配ありません！</Em>
                 とりあえず勘で答えてみてOKです。<Emoji>😉</Emoji>
               </P>
+            </>
+          )
+        },
+        {
+          type: 'yesNoQuiz' as 'yesNoQuiz',
+          title: (
+            <>
+              <H args={{ name: 'yesNoQuiz' }} />
+              、その1
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                <InlineHeader>質問:</InlineHeader> こちらの
+                <H args={{ name: 'bentoBox' }} />を<H args={{ name: 'play' }} />
+                すると、
+              </P>
+              {AER.loai}
+              <P>
+                <Strong>最終的に下のようになるでしょうか？</Strong>
+                これまでの法則から予想してみてください。
+              </P>
+              {AER.vvjn}
+              <P>分からなくても大丈夫です！勘で答えてみてください。</P>
+              <YesNoButtons answer="yes" />
+            </>
+          )
+        },
+        {
+          type: 'yesNoQuiz' as 'yesNoQuiz',
+          title: (
+            <>
+              <H args={{ name: 'yesNoQuiz' }} />
+              、その2
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                <InlineHeader>質問:</InlineHeader> こちらの
+                <H args={{ name: 'bentoBox' }} />を<H args={{ name: 'play' }} />
+                すると、
+              </P>
+              {AER.hbgo}
+              <P>
+                <Strong>最終的に下のようになるでしょうか？</Strong>
+                これまでの法則から予想してみてください。
+              </P>
+              {AER.olef}
+              <P>分からなくても大丈夫です！勘で答えてみてください。</P>
+              <YesNoButtons answer="no" />
             </>
           )
         },
