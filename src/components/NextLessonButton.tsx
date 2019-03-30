@@ -78,7 +78,7 @@ const NextLessonButton = ({
         css={css`
           font-size: ${fontSizes(0.85)};
           margin-top: ${spaces(0.75)};
-          color: ${colors('grey500')};
+          color: ${colors('grey600')};
         `}
       >
         {tertiaryText}

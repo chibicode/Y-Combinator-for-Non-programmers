@@ -62,9 +62,9 @@ const emojiLabelMapping: {
     en: 'dumpling',
     jp: '餃子'
   },
-  '🥐': {
-    en: 'croissant',
-    jp: 'クロワッサン'
+  '🍞': {
+    en: 'bread',
+    jp: 'パン'
   },
   '🥞': {
     en: 'pancakes',

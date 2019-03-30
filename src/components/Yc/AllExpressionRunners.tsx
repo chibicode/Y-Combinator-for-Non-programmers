@@ -120,6 +120,18 @@ export default {
       expressionContainer={lessonExpressions.e1E7}
       initialState="default"
     />
+  ),
+  zzyu: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E5}
+      initialState="default"
+    />
+  ),
+  qpjt: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E6}
+      initialState="default"
+    />
   )
 }
 
