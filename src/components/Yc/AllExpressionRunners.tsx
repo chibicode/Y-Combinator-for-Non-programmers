@@ -17,21 +17,38 @@ import { ExpressionRunnerSimple } from 'src/components/Yc/ExpressionRunnerShorth
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
-// NOTE: Use functions instead of just JSX.Element inside because
-// linter will complain that it's missing the key attribute
-export const episode1 = [
-  () => (
+// Keys generated using a Ruby script running on an Alfred workflow:
+// print 4.times.map { (97 + rand(26)).chr }.join
+export default {
+  ilpo: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E1}
       initialState="default"
     />
   ),
-  () => (
+  imyd: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E2}
       initialState="default"
     />
   ),
+  emmb: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E3}
+      initialState="default"
+    />
+  ),
+  jozw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E4}
+      initialState="default"
+    />
+  )
+}
+
+// NOTE: Use functions instead of just JSX.Element inside because
+// linter will complain that it's missing the key attribute
+export const episode1 = [
   () => (
     <ExpressionRunner
       expressionContainer={lessonExpressions.episode1Expression1}

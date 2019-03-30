@@ -31,7 +31,7 @@ export interface HProps {
         highlightType?: InlineHighlightType
       }
     | { name: 'next' }
-    | { name: 'play' }
+    | { name: 'play'; highlightType?: InlineHighlightType }
     | { name: 'pause' }
     | { name: 'reset' }
     | { name: 'previous' }
@@ -307,7 +307,7 @@ const H = ({ args }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
+          <Strong highlightType={args.highlightType}>
             Play <Emoji>▶️</Emoji>
           </Strong>
         </>
@@ -315,7 +315,7 @@ const H = ({ args }: HProps) => {
     } else {
       return (
         <>
-          <Strong>
+          <Strong highlightType={args.highlightType}>
             実行 <Emoji>▶️</Emoji>
           </Strong>
         </>

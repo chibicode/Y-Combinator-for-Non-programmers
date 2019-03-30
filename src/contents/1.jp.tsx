@@ -7,13 +7,17 @@ import {
   OlLi,
   P,
   PFullWidth,
-  Strong
+  Strong,
+  InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
-import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
+import AER, {
+  episode1,
+  episode1Quiz
+} from 'src/components/Yc/AllExpressionRunners'
 import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
@@ -140,64 +144,68 @@ export default () => {
                 </Em>
                 。
               </P>
-              {episode1[i++]()}
+              {AER.ilpo}
               <P>
                 上のマスには
-                <EmojiWithText letter="d" />
-                、真ん中のマスには
-                <EmojiWithText letter="c" />
+                <EmojiWithText letter="b" />
                 、下のマスには
                 <EmojiWithText letter="a" />
-                がふたつと
-                <EmojiWithText letter="b" />
-                がひとつ入っています。
+                がふたつ入っています。
               </P>
               <P>
-                「寿司とハンバーガーが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
+                「寿司とサンドイッチが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
               </P>
-              <EmojiSeparator emojis={['🍣', '🤔', '🍔']} />
+              <EmojiSeparator emojis={['🍣', '😅', '🥪']} />
             </>
           )
         },
         {
           title: (
             <>
-              ふたつめの
+              まだまだあるよ
               <H args={{ name: 'bentoBox', highlightType: 'none' }} />
             </>
           ),
           content: (
             <>
               <P>
-                もうひとつ、
+                さらに何個か、
                 <H args={{ name: 'bentoBox', highlightType: 'white' }} />
-                の例を紹介しましょう:
+                の例を紹介していきます:
               </P>
-              {episode1[i++]()}
               <P>
-                こちらは、上のマスには
-                <EmojiWithText letter="h" />
-                、真ん中のマスには
+                <InlineHeader>例その1:</InlineHeader> 上のマスには
+                <EmojiWithText letter="e" />
+                、下のマスには
+                <EmojiWithText letter="c" />と
+                <EmojiWithText letter="d" />
+                が入っています。
+              </P>
+              {AER.imyd}
+              <P>
+                <InlineHeader>例その2:</InlineHeader> こちらは、上のマスには
                 <EmojiWithText letter="g" />
                 、下のマスには
-                <EmojiWithText letter="e" />
-                がひとつと
                 <EmojiWithText letter="f" />
                 がふたつ入っています。
               </P>
+              {AER.emmb}
               <P>
-                それでは次に、
-                <H args={{ name: 'bentoBox', highlightType: 'white' }} />
-                のルールを紹介していきます。
+                <InlineHeader>例その3:</InlineHeader> こちらは、上のマスには
+                <EmojiWithText letter="j" />
+                、下のマスには
+                <EmojiWithText letter="h" />と
+                <EmojiWithText letter="i" />
+                が入っています。
               </P>
+              {AER.jozw}
             </>
           )
         },
         {
           title: (
             <>
-              <H args={{ name: 'bentoBox', highlightType: 'none' }} />
-              のルール
+              「<H args={{ name: 'play', highlightType: 'none' }} />」 ボタン
             </>
           ),
           content: (
