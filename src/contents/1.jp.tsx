@@ -260,6 +260,11 @@ export default () => {
                 だけになるようです。
               </P>
               {AER.uqwm}
+              <P>
+                なぜこうなるかを説明する前に、他の
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                も実行してみましょう。
+              </P>
             </>
           )
         },
