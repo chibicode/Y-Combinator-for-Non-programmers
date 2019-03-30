@@ -227,7 +227,19 @@ export default () => {
               </P>
               {AER.itbm}
             </>
-          )
+          ),
+          footer: {
+            color: 'purple',
+            content: (
+              <>
+                <P>
+                  <InlineHeader>ちなみに:</InlineHeader>{' '}
+                  <H args={{ name: 'reset' }} highlightType="none" />{' '}
+                  を押せばもう一度最初から実行できます。
+                </P>
+              </>
+            )
+          }
         },
         {
           title: (
