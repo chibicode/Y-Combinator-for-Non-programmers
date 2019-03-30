@@ -20,6 +20,7 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
+import ExpressionRunnerScrollAdjuster from 'src/components/Yc/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
 
 // Must be equal to 1 / N to make timer count seconds evenly
@@ -84,8 +85,7 @@ const getActions = ({
   getExpressionContainerManager,
   setPlaybackStatus,
   expressionContainerManagerState,
-  setExpressionContainerManagerState,
-  setShouldAdjustScroll
+  setExpressionContainerManagerState
 }: {
   isFastForwardPlayButton?: boolean
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
@@ -95,7 +95,6 @@ const getActions = ({
   setExpressionContainerManagerState: React.Dispatch<
     React.SetStateAction<ExpressionContainerManager['currentState']>
   >
-  setShouldAdjustScroll: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const actions = {
     stepForward() {
@@ -155,16 +154,13 @@ const getActions = ({
       } else {
         getExpressionContainerManager().reset()
       }
-      actions.syncState(true)
+      actions.syncState()
     },
 
-    syncState(shouldAdjustScroll: boolean) {
+    syncState() {
       setExpressionContainerManagerState(
         getExpressionContainerManager().currentState
       )
-      if (shouldAdjustScroll) {
-        setShouldAdjustScroll(true)
-      }
     }
   }
   return actions
@@ -190,17 +186,14 @@ const ExpressionRunner = ({
   resetIndex,
   skipToTheEnd
 }: ExpressionRunnerProps) => {
-  const controlsRef = useRef<HTMLDivElement>(null)
   const {
     getExpressionContainerManager,
     expressionContainerManagerState,
-    setExpressionContainerManagerState,
-    setShouldAdjustScroll
+    setExpressionContainerManagerState
   } = useExpressionContainerManager({
     expressionContainer,
     lastAllowedExpressionState,
     showAllShowSteps,
-    controlsRef,
     initializeInstructions,
     maxStepsAllowed,
     resetIndex
@@ -218,8 +211,7 @@ const ExpressionRunner = ({
     getExpressionContainerManager,
     setPlaybackStatus,
     expressionContainerManagerState,
-    setExpressionContainerManagerState,
-    setShouldAdjustScroll
+    setExpressionContainerManagerState
   })
 
   return (
@@ -303,30 +295,27 @@ const ExpressionRunner = ({
             </div>
           </div>
         </Container>
+        <ExpressionRunnerScrollAdjuster />
         <Container size={containerSize} horizontalPadding={0}>
           {!hideControls && (
-            <div ref={controlsRef}>
-              <ExpressionRunnerControls
-                onNextClick={actions.stepForward}
-                onPreviousClick={actions.stepBackward}
-                canStepForward={expressionContainerManagerState.canStepForward}
-                canStepBackward={
-                  expressionContainerManagerState.canStepBackward
-                }
-                showPlayButton={!hidePlayButton}
-                isPlaying={isPlaying}
-                isDone={isContainerWithState(
-                  expressionContainerManagerState.expressionContainer,
-                  'done'
-                )}
-                onAutoClick={actions.autoplay}
-                onSkipToTheEndClick={actions.skipToTheEnd}
-                onPauseClick={actions.pause}
-                onResetClick={actions.reset}
-                skipToTheEnd={skipToTheEnd}
-                hideForwardAndBackButtons={!!hideForwardAndBackButtons}
-              />
-            </div>
+            <ExpressionRunnerControls
+              onNextClick={actions.stepForward}
+              onPreviousClick={actions.stepBackward}
+              canStepForward={expressionContainerManagerState.canStepForward}
+              canStepBackward={expressionContainerManagerState.canStepBackward}
+              showPlayButton={!hidePlayButton}
+              isPlaying={isPlaying}
+              isDone={isContainerWithState(
+                expressionContainerManagerState.expressionContainer,
+                'done'
+              )}
+              onAutoClick={actions.autoplay}
+              onSkipToTheEndClick={actions.skipToTheEnd}
+              onPauseClick={actions.pause}
+              onResetClick={actions.reset}
+              skipToTheEnd={skipToTheEnd}
+              hideForwardAndBackButtons={!!hideForwardAndBackButtons}
+            />
           )}
         </Container>
       </div>

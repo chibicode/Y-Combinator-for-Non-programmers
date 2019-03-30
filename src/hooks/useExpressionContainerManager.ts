@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react'
-import useScrollAdjuster from 'src/hooks/useScrollAdjuster'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
@@ -61,8 +60,7 @@ const useExpressionContainerManager = ({
   resetIndex,
   expressionContainer,
   lastAllowedExpressionState,
-  showAllShowSteps,
-  controlsRef
+  showAllShowSteps
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
   maxStepsAllowed: ExpressionRunnerProps['maxStepsAllowed']
@@ -70,7 +68,6 @@ const useExpressionContainerManager = ({
   expressionContainer: SteppedExpressionContainer
   lastAllowedExpressionState?: CallStates
   showAllShowSteps?: boolean
-  controlsRef: React.MutableRefObject<HTMLDivElement | null>
 }) => {
   const ref = useRef<ExpressionContainerManager>()
   const getExpressionContainerManager = () => {
@@ -94,21 +91,14 @@ const useExpressionContainerManager = ({
     ref.current = expressionContainerManager
     return expressionContainerManager
   }
-  const [shouldAdjustScroll, setShouldAdjustScroll] = useState(false)
   const [
     expressionContainerManagerState,
     setExpressionContainerManagerState
   ] = useState(getExpressionContainerManager().currentState)
-  useScrollAdjuster({
-    controlsRef,
-    shouldAdjustScroll,
-    setShouldAdjustScroll
-  })
   return {
     getExpressionContainerManager,
     expressionContainerManagerState,
-    setExpressionContainerManagerState,
-    setShouldAdjustScroll
+    setExpressionContainerManagerState
   }
 }
 
