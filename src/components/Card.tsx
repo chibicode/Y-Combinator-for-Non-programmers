@@ -39,7 +39,7 @@ export interface CardProps {
   header?: React.ReactNode
   footer?: {
     content: React.ReactNode
-    color: CardProps['color']
+    color?: CardProps['color']
   }
 }
 
@@ -175,7 +175,7 @@ const Card = ({
                 padding-right: ${spaces(2)};
                 padding-bottom: ${spaces(1)};
               }
-              background: ${backgroundColor(footer.color)};
+              background: ${backgroundColor(footer.color || 'purple')};
             `}
           >
             {footer.content}

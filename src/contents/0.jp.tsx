@@ -26,7 +26,6 @@ export default () => {
         {
           title: '自己紹介と、この記事について',
           footer: {
-            color: 'purple',
             content: (
               <P>
                 <InlineHeader>公開日:</InlineHeader>{' '}
@@ -86,21 +85,15 @@ export default () => {
         {
           title: 'はじめに: コンピューターサイエンスって何？',
           footer: {
-            color: 'purple',
             content: (
               <>
                 <P>
                   <InlineHeader>余談:</InlineHeader>{' '}
-                  筆者は米国カーネギーメロン大学のコンピューターサイエンス学士号保持者です(修士は別の学科)。
+                  筆者は米国カーネギーメロン大学のコンピューターサイエンス学部卒です。最優秀TA(教育助手)賞も
                   <ExternalLink href="https://www.cs.cmu.edu/~scsfacts/uesugi.html">
-                    最優秀TA(教育助手)賞も受賞しています
+                    受賞しています
                   </ExternalLink>
                   。
-                  ちなみにカーネギーメロン大学は、コンピューターサイエンスでは
-                  <ExternalLink href="https://www.usnews.com/best-graduate-schools/top-science-schools/computer-science-rankings">
-                    スタンフォード大やマサチューセッツ工科大などと並んで
-                  </ExternalLink>
-                  全米トップレベルです。
                 </P>
                 <EmojiSeparator emojis={['🇺🇸', '👨🏻‍🎓', '🏫']} />
               </>
@@ -200,8 +193,8 @@ export default () => {
               <P>Yコンビネーターとは、いったい何のことなのでしょう？</P>
               <P>
                 すぐに正解を言っても面白くないので、
-                <Emoji>⭕️</Emoji> <Emoji>❌</Emoji>
-                クイズ形式で出題します。分からなくて当然なので、勘で答えてみてください！
+                <H args={{ name: 'yesNoQuiz' }} />
+                形式で出題します。分からなくて当然なので、勘で答えてみてください！
               </P>
               <EmojiSeparator emojis={['⭕️', '😉', '❌']} />
             </>
@@ -211,8 +204,7 @@ export default () => {
           type: 'yesNoQuiz' as 'yesNoQuiz',
           title: (
             <>
-              <Emoji>⭕️</Emoji> <Emoji>❌</Emoji>
-              クイズ
+              <H args={{ name: 'yesNoQuiz' }} />
             </>
           ),
           content: (
@@ -236,7 +228,6 @@ export default () => {
         {
           title: <H args={{ name: 'yesNoQuizAnswerHeading', isYes: true }} />,
           footer: {
-            color: 'purple',
             content: (
               <P>
                 プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下の余談も読んでみてください。(

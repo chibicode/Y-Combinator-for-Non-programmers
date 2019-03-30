@@ -115,12 +115,12 @@ export default () => {
               </PFullWidth>
               <P>
                 なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 という名前がついているからです。
               </P>
               <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
               <P>
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 がどんなものか、説明しますね！
               </P>
             </>
@@ -137,21 +137,21 @@ export default () => {
             <>
               <P>
                 下の図が、
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 です。実際の弁当箱のように、
                 <Em>
                   四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
                 </Em>
                 。
               </P>
-              {AER.ilpo}
               <P>
-                上のマスには
+                <InlineHeader>例その1:</InlineHeader> 上のマスには
                 <EmojiWithText letter="b" />
                 、下のマスには
                 <EmojiWithText letter="a" />
                 がふたつ入っています。
               </P>
+              {AER.ilpo}
               <P>
                 「寿司とサンドイッチが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
               </P>
@@ -170,11 +170,11 @@ export default () => {
             <>
               <P>
                 さらに何個か、
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 の例を紹介していきます:
               </P>
               <P>
-                <InlineHeader>例その1:</InlineHeader> 上のマスには
+                <InlineHeader>例その2:</InlineHeader> 上のマスには
                 <EmojiWithText letter="e" />
                 、下のマスには
                 <EmojiWithText letter="c" />と
@@ -183,7 +183,7 @@ export default () => {
               </P>
               {AER.imyd}
               <P>
-                <InlineHeader>例その2:</InlineHeader> こちらは、上のマスには
+                <InlineHeader>例その3:</InlineHeader> こちらは、上のマスには
                 <EmojiWithText letter="g" />
                 、下のマスには
                 <EmojiWithText letter="f" />
@@ -191,7 +191,7 @@ export default () => {
               </P>
               {AER.emmb}
               <P>
-                <InlineHeader>例その3:</InlineHeader> こちらは、上のマスには
+                <InlineHeader>例その4:</InlineHeader> こちらは、上のマスには
                 <EmojiWithText letter="j" />
                 、下のマスには
                 <EmojiWithText letter="h" />と
@@ -212,14 +212,14 @@ export default () => {
             <>
               <P>
                 それぞれの
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 には、
                 <H args={{ name: 'playButton' }} highlightType="none" />
-                があります。押すとどうなるか、試してみましょう！
+                があります。
               </P>
               <P>
-                こちらは、最初に紹介した
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <InlineHeader>例その1:</InlineHeader> こちらは、最初に紹介した
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 です。
                 <Em>
                   下の
@@ -232,7 +232,6 @@ export default () => {
             </>
           ),
           footer: {
-            color: 'purple',
             content: (
               <>
                 <P>
@@ -255,17 +254,21 @@ export default () => {
             <>
               <P>
                 どうやら、さきほどの
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 は、
                 <H args={{ name: 'play' }} highlightType="none" />
                 すると、最終的に
                 <EmojiWithText letter="b" />
                 だけになるようです。
               </P>
+              <P>
+                <InlineHeader>例その1:</InlineHeader>
+              </P>
               {AER.uqwm}
               <P>
-                なぜこうなるかを説明する前に、他の
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                実はこれ、<Strong>ある法則</Strong>
+                に従っています。その法則を説明する前に、他の
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 も実行してみましょう。
               </P>
             </>
@@ -283,25 +286,32 @@ export default () => {
             <>
               <P>
                 先ほど紹介した3つの
-                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                <H args={{ name: 'bentoBox' }} highlightType="none" />
                 を、それぞれ
                 <H args={{ name: 'play' }} highlightType="none" />
                 してみましょう！
               </P>
               <P>
-                <InlineHeader>例その1</InlineHeader>
+                <InlineHeader>例その2:</InlineHeader>
               </P>
               {AER.zwpj}
               <P>
-                <InlineHeader>例その2</InlineHeader>
+                <InlineHeader>例その3:</InlineHeader>
               </P>
               {AER.dqkc}
               <P>
-                <InlineHeader>例その3</InlineHeader>
+                <InlineHeader>例その4:</InlineHeader>
               </P>
               {AER.ldox}
             </>
-          )
+          ),
+          footer: {
+            content: (
+              <P>
+                どれもある法則に従っています。どんな法則か、考えみてください！
+              </P>
+            )
+          }
         },
         {
           title: (
@@ -313,25 +323,47 @@ export default () => {
             <>
               <P>それぞれ、このような結果になりました！</P>
               <P>
-                <InlineHeader>例その1</InlineHeader>
+                <InlineHeader>例その2:</InlineHeader>
               </P>
               {AER.bgfl}
               <P>
-                <InlineHeader>例その2</InlineHeader>
+                <InlineHeader>例その3:</InlineHeader>
               </P>
               {AER.tuqr}
               <P>
-                <InlineHeader>例その3</InlineHeader>
+                <InlineHeader>例その4:</InlineHeader>
               </P>
               {AER.cpkp}
             </>
-          )
+          ),
+          footer: {
+            content: (
+              <P>
+                どれもある法則に従っています。どんな法則か、考えみてください！
+              </P>
+            )
+          }
         },
         {
-          title: <>パターンがわかりましたか？</>,
+          title: <>法則がわかりましたか？</>,
           content: (
             <>
               <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
+              <P>
+                上記あわせて4種類の
+                <H args={{ name: 'bentoBox' }} highlightType="none" />を
+                <H args={{ name: 'play' }} highlightType="none" />
+                しましたが、どれも<Strong>ある法則</Strong>に従っています。
+              </P>
+              <P>
+                <InlineHeader>その法則がわかりましたか？</InlineHeader>
+                もう一度4つの例を見て、考えてみてください！
+              </P>
+              <P>
+                なんとなく予想がついたら、合っているかどうか次の
+                <H args={{ name: 'yesNoQuiz' }} />
+                でチェックしてみましょう！
+              </P>
             </>
           )
         },
