@@ -8,7 +8,6 @@ export interface ContainerProps {
   children: React.ReactNode
   Component: React.ComponentType | string
   size: keyof typeof allMaxWidths
-  verticalMargin: keyof typeof allSpaces
   horizontalPadding: keyof typeof allSpaces
 }
 
@@ -16,13 +15,12 @@ const Container = ({
   children,
   Component,
   size,
-  verticalMargin,
   horizontalPadding
 }: ContainerProps) => (
   <Component
     css={css`
       max-width: ${maxWidths(size)};
-      margin: ${spaces(verticalMargin)} auto;
+      margin: 0 auto;
       padding: 0 ${spaces(horizontalPadding)};
     `}
   >

@@ -20,6 +20,7 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
+import { spaces } from 'src/lib/theme'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (isFastForwarding?: boolean) =>
@@ -239,11 +240,14 @@ const ExpressionRunner = ({
           )
       }}
     >
-      <Container horizontalPadding={0} verticalMargin={1.75}>
+      <div
+        css={css`
+          margin: ${spaces(1.5)} 0 ${spaces(2)};
+        `}
+      >
         <Container
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
-          verticalMargin={0}
         >
           {(explanationsVisibility === 'visible' ||
             (explanationsVisibility === 'hiddenInitial' &&
@@ -275,11 +279,7 @@ const ExpressionRunner = ({
             </ExpressionRunnerCaptionWrapper>
           )}
         </Container>
-        <Container
-          size={containerSize}
-          horizontalPadding={0}
-          verticalMargin={0}
-        >
+        <Container size={containerSize} horizontalPadding={0}>
           <div
             css={css`
               max-width: 100%;
@@ -303,11 +303,7 @@ const ExpressionRunner = ({
             </div>
           </div>
         </Container>
-        <Container
-          size={containerSize}
-          horizontalPadding={0}
-          verticalMargin={0}
-        >
+        <Container size={containerSize} horizontalPadding={0}>
           {!hideControls && (
             <div ref={controlsRef}>
               <ExpressionRunnerControls
@@ -333,7 +329,7 @@ const ExpressionRunner = ({
             </div>
           )}
         </Container>
-      </Container>
+      </div>
     </ExpressionRunnerContext.Provider>
   )
 }

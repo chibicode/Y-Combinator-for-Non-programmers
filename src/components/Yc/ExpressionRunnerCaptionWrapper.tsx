@@ -13,7 +13,7 @@ const ExpressionRunnerCaptionWrapper = ({
   <div
     css={css`
       text-align: center;
-      margin: ${spaces('-0.5')} -2px ${spaces(0.5)} -2px;
+      margin: ${spaces('-0.75')} -2px ${spaces(0.5)} -2px;
       font-size: ${fontSizes(0.85)};
       color: ${colors(pinkText ? 'pink400' : 'indigo300')};
       /* Use bigger line height to compensate for badges */

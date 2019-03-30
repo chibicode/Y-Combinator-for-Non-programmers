@@ -80,7 +80,7 @@ export const ExpressionRunnerPairSimple = ({
     <P
       css={css`
         text-align: center;
-        margin: ${spaces('-0.5')} 0 ${spaces('-0.5')};
+        margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
       `}
     >
       <Emoji>⬇️</Emoji> <H args={{ name: 'afterPlay' }} highlightType="none" />{' '}

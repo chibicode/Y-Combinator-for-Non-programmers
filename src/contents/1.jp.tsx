@@ -218,6 +218,9 @@ export default () => {
                 があります。押すとどうなるか、試してみましょう！
               </P>
               <P>
+                こちらは、最初に紹介した
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                です。
                 <Em>
                   下の
                   <H args={{ name: 'playButton' }} highlightType="none" />
@@ -245,7 +248,7 @@ export default () => {
           title: (
             <>
               <H args={{ name: 'play' }} highlightType="none" />
-              するとこうなった
+              するとこうなります
             </>
           ),
           content: (
@@ -265,6 +268,70 @@ export default () => {
                 <H args={{ name: 'bentoBox' }} highlightType="white" />
                 も実行してみましょう。
               </P>
+            </>
+          )
+        },
+        {
+          title: (
+            <>
+              他のも
+              <H args={{ name: 'play' }} highlightType="none" />
+              してみましょう
+            </>
+          ),
+          content: (
+            <>
+              <P>
+                先ほど紹介した3つの
+                <H args={{ name: 'bentoBox' }} highlightType="white" />
+                を、それぞれ
+                <H args={{ name: 'play' }} highlightType="none" />
+                してみましょう！
+              </P>
+              <P>
+                <InlineHeader>例その1</InlineHeader>
+              </P>
+              {AER.zwpj}
+              <P>
+                <InlineHeader>例その2</InlineHeader>
+              </P>
+              {AER.dqkc}
+              <P>
+                <InlineHeader>例その3</InlineHeader>
+              </P>
+              {AER.ldox}
+            </>
+          )
+        },
+        {
+          title: (
+            <>
+              <H args={{ name: 'afterPlay' }} highlightType="none" />
+            </>
+          ),
+          content: (
+            <>
+              <P>それぞれ、このような結果になりました！</P>
+              <P>
+                <InlineHeader>例その1</InlineHeader>
+              </P>
+              {AER.bgfl}
+              <P>
+                <InlineHeader>例その2</InlineHeader>
+              </P>
+              {AER.tuqr}
+              <P>
+                <InlineHeader>例その3</InlineHeader>
+              </P>
+              {AER.cpkp}
+            </>
+          )
+        },
+        {
+          title: <>パターンがわかりましたか？</>,
+          content: (
+            <>
+              <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
             </>
           )
         },

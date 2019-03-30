@@ -59,6 +59,42 @@ export default {
       expressionContainer={lessonExpressions.e1E1}
       initialState="default"
     />
+  ),
+  zwpj: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="default"
+    />
+  ),
+  dqkc: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E3}
+      initialState="default"
+    />
+  ),
+  ldox: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E4}
+      initialState="default"
+    />
+  ),
+  bgfl: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="default"
+    />
+  ),
+  tuqr: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e1E3}
+      initialState="default"
+    />
+  ),
+  cpkp: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e1E4}
+      initialState="default"
+    />
   )
 }
 
