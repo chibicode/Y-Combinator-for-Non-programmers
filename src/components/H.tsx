@@ -674,14 +674,14 @@ const H = ({ args, highlightType }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>some rule</Strong>{' '}
-          <Emoji>🧐</Emoji>
+          <Emoji>🤫</Emoji>
         </>
       )
     } else {
       return (
         <>
           <Strong highlightType={highlightType}>ある法則</Strong>{' '}
-          <Emoji>㊙️</Emoji>
+          <Emoji>🤫</Emoji>
         </>
       )
     }
