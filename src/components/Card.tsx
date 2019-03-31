@@ -87,8 +87,6 @@ const Card = ({
     <div
       css={css`
         position: relative;
-        margin-left: ${spaces('-0.25')};
-        margin-right: ${spaces('-0.25')};
       `}
     >
       {header}

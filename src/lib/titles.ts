@@ -17,8 +17,8 @@ export const episodeTitles = {
     8: 'Plus One',
     9: 'Addition and Multiplication',
     10: 'Secret Boolean Code',
-    11: 'Both Yes',
-    12: 'If, Then, Else'
+    11: 'Both Yes'
+    // 12: 'If, Then, Else'
   },
   jp: {
     1: 'これっくらいの、お弁当箱に…',
@@ -31,7 +31,22 @@ export const episodeTitles = {
     8: '1を足す',
     9: '足し算と掛け算',
     10: '弁当箱の暗号',
-    11: '両方とも「はい」？',
-    12: '「はい」ならこうする、「いいえ」ならこうする'
+    11: '両方とも「はい」？'
+    // 12: '「はい」ならこうする、「いいえ」ならこうする'
+  }
+}[locale]
+
+export const episodePrefixes = {
+  en: {
+    intro: 'Intro',
+    begginer: 'Beginner',
+    intermediate: 'Intermediate',
+    advanced: 'Advanced'
+  },
+  jp: {
+    intro: '序章',
+    begginer: '初級',
+    intermediate: '中級',
+    advanced: '上級'
   }
 }[locale]

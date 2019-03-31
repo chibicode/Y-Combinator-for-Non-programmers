@@ -49,7 +49,7 @@ export interface HProps {
     | { name: 'playUntilDone'; capitalize?: boolean }
     | { name: 'yes' }
     | { name: 'no' }
-    | { name: 'introductionPageLink' }
+    | { name: 'introductionPrefix' }
     | { name: 'indexPageLink' }
     | { name: 'sideNotePrefix' }
     | { name: 'continueReading' }
@@ -63,6 +63,7 @@ export interface HProps {
     | { name: 'afterPlay' }
     | { name: 'yesNoQuizDontWorry' }
     | { name: 'unknownRule' }
+    | { name: 'pageUnderConstruction' }
 }
 
 const H = ({ args, highlightType }: HProps) => {
@@ -581,16 +582,16 @@ const H = ({ args, highlightType }: HProps) => {
       )
     }
   }
-  if (args.name === 'introductionPageLink') {
+  if (args.name === 'introductionPrefix') {
     if (locale === 'en') {
-      return <>Introduction</>
+      return <>Intro</>
     } else {
       return <>序章</>
     }
   }
   if (args.name === 'indexPageLink') {
     if (locale === 'en') {
-      return <>View All Pages</>
+      return <>View All</>
     } else {
       return <>目次</>
     }
@@ -684,6 +685,13 @@ const H = ({ args, highlightType }: HProps) => {
           <Emoji>🤫</Emoji>
         </>
       )
+    }
+  }
+  if (args.name === 'pageUnderConstruction') {
+    if (locale === 'en') {
+      return <>This page is under construction.</>
+    } else {
+      return <>このページは現在工事中です。</>
     }
   }
   throw new Error('error')

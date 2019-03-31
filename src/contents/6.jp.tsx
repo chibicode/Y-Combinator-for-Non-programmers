@@ -7,8 +7,11 @@ import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import EpisodeCardList from 'src/components/EpisodeCardList'
 
-export default () => {
+export default () => <EpisodeCardList cards={[]} />
+
+export const old = () => {
   let i = 0
   return (
     <>

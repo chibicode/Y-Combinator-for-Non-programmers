@@ -20,8 +20,11 @@ import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { colors } from 'src/lib/theme'
+import EpisodeCardList from 'src/components/EpisodeCardList'
 
-export default () => {
+export default () => <EpisodeCardList cards={[]} />
+
+export const old = () => {
   let i = 0
   return (
     <>

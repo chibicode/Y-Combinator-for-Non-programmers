@@ -16,6 +16,9 @@ import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import EpisodeCardList from 'src/components/EpisodeCardList'
+
+export default () => <EpisodeCardList cards={[]} />
 
 const Rules = () => (
   <Ol>
@@ -41,7 +44,7 @@ const Rules = () => (
   </Ol>
 )
 
-export default () => {
+export const old = () => {
   let i = 0
   return (
     <>

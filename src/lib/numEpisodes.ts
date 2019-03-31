@@ -2,7 +2,7 @@ import locale from 'src/lib/locale'
 
 export const numBeginnerLevels = 4
 export const numIntermediateLevels = 4
-export const numAdvancedLevels = 4
+export const numAdvancedLevels = 3
 export const numEpisodes =
   numBeginnerLevels + numIntermediateLevels + numAdvancedLevels
 

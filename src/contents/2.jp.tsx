@@ -7,8 +7,7 @@ import {
   Ul,
   UlLi,
   Ol,
-  OlLi,
-  InlineHeader
+  OlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -28,6 +27,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 // import AER from 'src/components/Yc/AllExpressionRunners'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 // import H from 'src/components/H'
+import h from 'src/lib/h'
 
 const Step1 = () => (
   <>

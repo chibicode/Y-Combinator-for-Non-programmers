@@ -5,6 +5,7 @@ import episodeTitlePrefixAndColor from 'src/lib/episodeTitlePrefixAndColor'
 import { lessonTitle, episodeTitles } from 'src/lib/titles'
 import { colors, spaces } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
+import H from 'src/components/H'
 
 const Toc = () => (
   <ul
@@ -34,7 +35,7 @@ const Toc = () => (
             color: ${colors('grey600')};
           `}
         >
-          序章:
+          <H args={{ name: 'introductionPrefix' }} />:
         </span>{' '}
         {lessonTitle}
       </InternalLink>

@@ -31,6 +31,10 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             touch-action: manipulation;
           }
 
+          body {
+            margin: 0;
+          }
+
           html,
           body,
           input,

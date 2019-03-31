@@ -99,7 +99,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
               prefixCss
             ]}
           >
-            <H args={{ name: 'introductionPageLink' }} />
+            <H args={{ name: 'introductionPrefix' }} />
           </span>
           <span css={titleCss}>{lessonTitle}</span>
           <EmojiSeparator

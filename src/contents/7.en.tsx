@@ -5,8 +5,11 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import EpisodeCardList from 'src/components/EpisodeCardList'
 
-export default () => {
+export default () => <EpisodeCardList cards={[]} />
+
+export const old = () => {
   let i = 0
   return (
     <>

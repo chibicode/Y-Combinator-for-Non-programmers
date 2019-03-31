@@ -16,8 +16,11 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import EpisodeCardList from 'src/components/EpisodeCardList'
 
-export default () => {
+export default () => <EpisodeCardList cards={[]} />
+
+export const old = () => {
   return (
     <>
       <P>

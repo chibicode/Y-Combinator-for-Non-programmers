@@ -7,7 +7,7 @@ import Content, { ContentProps } from 'src/components/Content'
 import { InternalLink } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
+import episodeTitlePrefixAndColor from 'src/lib/episodeTitlePrefixAndColor'
 import H from 'src/components/H'
 import { numEpisodes } from 'src/lib/numEpisodes'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
@@ -26,7 +26,7 @@ const navigationLinkClasses = css`
   text-decoration: none;
   color: ${colors('grey600')};
   font-weight: bold;
-  font-size: ${fontSizes(0.85)};
+  font-size: ${fontSizes(0.75)};
   background: none;
   border: none;
   padding: 0;
@@ -58,33 +58,40 @@ const EpisodePage = ({
           css={css`
             display: flex;
             align-items: center;
-            padding: ${spaces(0.5)} ${spaces(0.5)} ${spaces(0.5)};
-            margin: 0 ${spaces('-0.5')} ${spaces(0.5)} ${spaces('-0.5')};
+            justify-content: space-between;
+            padding: ${spaces(0.5)} 0;
+            margin: 0 0 ${spaces(0.5)};
           `}
         >
           <div
             css={css`
-              width: 32%;
+              width: 35%;
               text-align: left;
             `}
           >
             {episodeNumber >= 1 && (
               <InternalLink
                 href={`/${episodeNumber === 1 ? '' : episodeNumber - 1}`}
-                css={navigationLinkClasses}
+                css={[
+                  navigationLinkClasses,
+                  css`
+                    color: ${episodeTitlePrefixAndColor(episodeNumber - 1, true)
+                      .color};
+                  `
+                ]}
               >
-                ←{' '}
+                «{' '}
                 {episodeNumber === 1 ? (
-                  <H args={{ name: 'introductionPageLink' }} />
+                  <H args={{ name: 'introductionPrefix' }} />
                 ) : (
-                  episodeTitlePrefix(episodeNumber - 1, true).prefix
+                  episodeTitlePrefixAndColor(episodeNumber - 1, true).prefix
                 )}
               </InternalLink>
             )}
           </div>
           <div
             css={css`
-              width: 36%;
+              width: 27%;
               text-align: center;
             `}
           >
@@ -106,7 +113,7 @@ const EpisodePage = ({
           </div>
           <div
             css={css`
-              width: 32%;
+              width: 35%;
               text-align: right;
             `}
           >
@@ -115,7 +122,11 @@ const EpisodePage = ({
                 href={`/${(episodeNumber || 0) + 1}`}
                 css={navigationLinkClasses}
               >
-                {episodeTitlePrefix((episodeNumber || 0) + 1, true).prefix} →
+                {
+                  episodeTitlePrefixAndColor((episodeNumber || 0) + 1, true)
+                    .prefix
+                }{' '}
+                »
               </InternalLink>
             )}
           </div>

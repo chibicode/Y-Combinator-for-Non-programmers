@@ -364,7 +364,7 @@ export const allTranslations = {
       </Strong>
     )
   }),
-  introductionPageLink: () => ({
+  introductionPrefix: () => ({
     en: 'Introduction',
     jp: '序章'
   }),

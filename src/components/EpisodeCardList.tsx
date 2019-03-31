@@ -5,6 +5,7 @@ import EpisodeHero from 'src/components/EpisodeHero'
 import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import H from 'src/components/H'
+import { P } from 'src/components/ContentTags'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'warning' | 'meta'
@@ -24,30 +25,38 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
     <>
       <EpisodePageInitialRenderWarning />
       <EpisodeHero />
-      {cards.map(({ title, type, content, preview, footer }, index) =>
-        index <= lastVisibleCardIndex ? (
-          <CardWrapper
-            slideNumber={index + 1}
-            slideCount={cards.length}
-            key={`card${index}`}
-            type={type}
-            isLast={index === lastVisibleCardIndex}
-            title={
-              type === 'sideNote' ? (
-                <>
-                  <H args={{ name: 'sideNotePrefix' }} />: {title}
-                </>
-              ) : (
-                title
-              )
-            }
-            setLastVisibleCardIndex={setLastVisibleCardIndex}
-            preview={preview}
-            footer={footer}
-          >
-            {content}
-          </CardWrapper>
-        ) : null
+      {cards.length > 0 ? (
+        cards.map(({ title, type, content, preview, footer }, index) =>
+          index <= lastVisibleCardIndex ? (
+            <CardWrapper
+              slideNumber={index + 1}
+              slideCount={cards.length}
+              key={`card${index}`}
+              type={type}
+              isLast={index === lastVisibleCardIndex}
+              title={
+                type === 'sideNote' ? (
+                  <>
+                    <H args={{ name: 'sideNotePrefix' }} />: {title}
+                  </>
+                ) : (
+                  title
+                )
+              }
+              setLastVisibleCardIndex={setLastVisibleCardIndex}
+              preview={preview}
+              footer={footer}
+            >
+              {content}
+            </CardWrapper>
+          ) : null
+        )
+      ) : (
+        <CardWrapper setLastVisibleCardIndex={setLastVisibleCardIndex}>
+          <P>
+            <H args={{ name: 'pageUnderConstruction' }} />
+          </P>
+        </CardWrapper>
       )}
     </>
   )
