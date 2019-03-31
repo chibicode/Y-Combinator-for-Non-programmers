@@ -62,6 +62,7 @@ export interface HProps {
     | { name: 'playButton' }
     | { name: 'afterPlay' }
     | { name: 'yesNoQuizDontWorry' }
+    | { name: 'unknownRule' }
 }
 
 const H = ({ args, highlightType }: HProps) => {
@@ -664,6 +665,23 @@ const H = ({ args, highlightType }: HProps) => {
           <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
           <br />
           勘で答えてみてください。
+        </>
+      )
+    }
+  }
+  if (args.name === 'unknownRule') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Strong highlightType={highlightType}>some rule</Strong>{' '}
+          <Emoji>🧐</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Strong highlightType={highlightType}>ある法則</Strong>{' '}
+          <Emoji>㊙️</Emoji>
         </>
       )
     }

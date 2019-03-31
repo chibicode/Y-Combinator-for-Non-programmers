@@ -189,7 +189,8 @@ export default () => (
             </P>
             {AER.uqwm}
             <P>
-              実はこれ、<Strong>ある法則</Strong>
+              実はこれ、
+              <H args={{ name: 'unknownRule' }} highlightType="none" />
               に従っています。その法則を説明する前に、他の
               <H args={{ name: 'bentoBox' }} highlightType="none" />
               も実行してみましょう。
@@ -231,7 +232,9 @@ export default () => (
         footer: {
           content: (
             <P>
-              どれもある法則に従っています。どんな法則か、考えみてください！
+              どれも
+              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              に従っています。どんな法則か、考えみてください！
             </P>
           )
         }
@@ -262,7 +265,9 @@ export default () => (
         footer: {
           content: (
             <P>
-              どれもある法則に従っています。どんな法則か、考えみてください！
+              どれも
+              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              に従っています。どんな法則か、考えみてください！
             </P>
           )
         }
@@ -276,7 +281,9 @@ export default () => (
               上記あわせて4種類の
               <H args={{ name: 'bentoBox' }} highlightType="none" />を
               <H args={{ name: 'play' }} highlightType="none" />
-              しましたが、どれも<Strong>ある法則</Strong>に従っています。
+              しましたが、どれも
+              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              に従っています。
             </P>
             <P>
               <InlineHeader>その法則がわかりましたか？</InlineHeader>
