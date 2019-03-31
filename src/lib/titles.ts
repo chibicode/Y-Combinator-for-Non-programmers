@@ -1,4 +1,8 @@
 import locale from 'src/lib/locale'
+import {
+  episodeCategory,
+  episodeNumberWithinCategory
+} from 'src/lib/episodeCategories'
 
 export const lessonTitle = {
   en: 'Y Combinator for Everyone',
@@ -39,14 +43,23 @@ export const episodeTitles = {
 export const episodePrefixes = {
   en: {
     intro: 'Intro',
-    begginer: 'Beginner',
+    beginner: 'Beginner',
     intermediate: 'Intermediate',
     advanced: 'Advanced'
   },
   jp: {
     intro: '序章',
-    begginer: '初級',
+    beginner: '初級',
     intermediate: '中級',
     advanced: '上級'
   }
 }[locale]
+
+export const episodeTitleWithPrefix = (episodeNumber: number) =>
+  `${
+    episodePrefixes[
+      episodeCategory(episodeNumber) as keyof typeof episodePrefixes
+    ]
+  }${episodeNumberWithinCategory(episodeNumber)}:${locale === 'en' ? ' ' : ''}${
+    episodeTitles[episodeNumber as keyof typeof episodeTitles]
+  }`

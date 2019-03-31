@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core'
 import Modal from 'src/components/Modal'
 import Card from 'src/components/Card'
 import H from 'src/components/H'
-import { numEpisodes } from 'src/lib/numEpisodes'
+import { numEpisodes } from 'src/lib/episodeCategories'
 import episodeTitlePrefixAndColor from 'src/lib/episodeTitlePrefixAndColor'
 import { lessonTitle, episodeTitles } from 'src/lib/titles'
 import {

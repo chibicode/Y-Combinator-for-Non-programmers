@@ -2,7 +2,7 @@ import React from 'react'
 import Emoji from 'src/components/Emoji'
 import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
-import { remainingText } from 'src/lib/numEpisodes'
+import { remainingText } from 'src/lib/episodeCategories'
 
 interface YcNextLessonButtonProps {
   nextEpisodeNumber: number

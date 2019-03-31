@@ -2,7 +2,11 @@
 import { css, jsx } from '@emotion/core'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
 import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
-import { lessonTitle, episodeTitles } from 'src/lib/titles'
+import {
+  lessonTitle,
+  episodeTitles,
+  episodeTitleWithPrefix
+} from 'src/lib/titles'
 import GlobalContextSetter from 'src/components/GlobalContextSetter'
 
 interface EpisodePageWrapperProps {
@@ -14,11 +18,7 @@ const EpisodePageWrapper = ({ episodeNumber }: EpisodePageWrapperProps) => (
     <EpisodePage
       lessonTitle={lessonTitle}
       episodeTitleString={
-        episodeNumber > 0
-          ? `${episodeTitlePrefix(episodeNumber).prefix}: ${
-              episodeTitles[episodeNumber as keyof typeof episodeTitles]
-            }}`
-          : undefined
+        episodeNumber > 0 ? episodeTitleWithPrefix(episodeNumber) : undefined
       }
       episodeTitle={
         episodeNumber > 0 ? (

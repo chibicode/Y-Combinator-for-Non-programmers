@@ -3,7 +3,7 @@ import { colors } from 'src/lib/theme'
 import {
   numBeginnerEpisodes,
   numIntermediateEpisodes
-} from 'src/lib/numEpisodes'
+} from 'src/lib/episodeCategories'
 
 export const beginnerColor = colors('green600')
 export const intermediateColor = colors('blue600')

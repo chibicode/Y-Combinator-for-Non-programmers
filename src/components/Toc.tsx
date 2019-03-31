@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import { numEpisodes } from 'src/lib/numEpisodes'
+import { numEpisodes } from 'src/lib/episodeCategories'
 import episodeTitlePrefixAndColor from 'src/lib/episodeTitlePrefixAndColor'
 import { lessonTitle, episodeTitles } from 'src/lib/titles'
 import { colors, spaces } from 'src/lib/theme'
