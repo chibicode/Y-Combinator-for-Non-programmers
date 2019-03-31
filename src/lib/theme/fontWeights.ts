@@ -3,7 +3,8 @@ export const allFontWeights = {
   400: 400,
   600: 600,
   700: 700,
-  800: 800
+  800: 800,
+  900: 900
 }
 
 const fontWeights = (x: keyof typeof allFontWeights) => allFontWeights[x]

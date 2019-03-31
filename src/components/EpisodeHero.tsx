@@ -88,6 +88,7 @@ const EpisodeHero = () => {
 
                 ${ns} {
                   font-size: ${fontSizes(2.5)};
+                  font-weight: ${fontWeights(900)};
                 }
               `
             ]}
