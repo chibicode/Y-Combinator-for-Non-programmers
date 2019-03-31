@@ -160,13 +160,20 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <InlineHeader>余談1:</InlineHeader>{' '}
                 <Em>
                   この記事を筆者が最も読んでもらいたいのは、
                   <Strong>小学校教諭</Strong>
                   の方々です
                 </Em>
                 。日本でも小学生向けのプログラミング教育がはじまりますが、教員の方々にコンピューターサイセンスの基礎知識があれば、指導の質が上がると思うからです。
+              </P>
+              <P>
+                <InlineHeader>余談2:</InlineHeader> ちなみに筆者は2016年に『
+                <ExternalLink href="https://jp.chibicode.com/2-cs-vs-programming/">
+                  「プログラミング」と「プログラミング的思考」の違いを、分かったつもりになれるヒント
+                </ExternalLink>
+                』という記事を書き、小学校教員の方々から大きな反響がありました。記事の内容は朝日新聞出版の雑誌『AERA』にも掲載されました。
               </P>
             </>
           )
@@ -322,7 +329,7 @@ export default () => (
               src="https://www.youtube.com/embed/FITJMJjASUs"
             />
             <P>
-              講演のクライマックスで出てくるYコンビネーターのコードはこちら(Ruby言語)。「難しそう」と思った方は、まずはこの記事を読んでみてもいいかもしれません。
+              講演のクライマックス(50分あたり)に出てくるYコンビネーターのコードはこちら。言語はRubyです。
             </P>
             <Pre>
               <Code>{`y = ->(f){
@@ -330,6 +337,10 @@ export default () => (
   ->(x){f.(->(v){ x.(x).(v)})} )
 }`}</Code>
             </Pre>
+            <P>
+              「意味不明」と思われた方は、ぜひこの記事を読み進めてみてください！
+            </P>
+            <YcNextLessonButton nextEpisodeNumber={1} />
           </>
         )
       },
@@ -398,8 +409,9 @@ export default () => (
               <Em>
                 しかし、今回のレッスンをやれば、プログラマーではなくてもYコンビネーターを理解できます
               </Em>
-              。ITベンチャー養成機関としての「Yコンビネーター」をご存知の方も、ぜひ読み進めてみて下さい！
+              。ITベンチャー養成機関としての「Yコンビネーター」をご存知の方も、ぜひ読み進めてみてください！
             </P>
+            <YcNextLessonButton nextEpisodeNumber={1} />
           </>
         )
       },
