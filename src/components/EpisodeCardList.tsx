@@ -9,7 +9,7 @@ import H from 'src/components/H'
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'warning' | 'meta'
   title?: React.ReactNode
-  preview?: React.ReactNode
+  preview?: CardProps['preview']
   content: React.ReactNode
   footer?: CardProps['footer']
 }

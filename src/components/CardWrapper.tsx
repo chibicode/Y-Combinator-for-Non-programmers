@@ -10,7 +10,7 @@ interface CardWrapperProps {
   slideCount?: number
   isLast?: boolean
   children: React.ReactNode
-  preview?: React.ReactNode
+  preview?: CardProps['preview']
   type?: EpisodeCardType['type']
   title?: React.ReactNode
   footer?: CardProps['footer']

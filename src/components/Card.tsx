@@ -5,7 +5,7 @@ import locale from 'src/lib/locale'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
-import CardContent from 'src/components/CardContent'
+import CardContent, { CardContentProps } from 'src/components/CardContent'
 
 interface CardColorContextProps {
   color: CardProps['color']
@@ -34,7 +34,7 @@ export interface CardProps {
   slideCount?: number
   isLast?: boolean
   title?: React.ReactNode
-  preview?: React.ReactNode
+  preview?: CardContentProps['preview']
   cardActionTaken: CardAction
   header?: React.ReactNode
   footer?: {
@@ -87,8 +87,8 @@ const Card = ({
     <div
       css={css`
         position: relative;
-        margin-left: ${spaces('-0.5')};
-        margin-right: ${spaces('-0.5')};
+        margin-left: ${spaces('-0.25')};
+        margin-right: ${spaces('-0.25')};
       `}
     >
       {header}

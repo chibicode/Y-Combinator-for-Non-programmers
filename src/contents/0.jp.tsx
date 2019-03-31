@@ -76,7 +76,7 @@ export default () => (
       },
       {
         title: '目次',
-        type: 'meta',
+        type: 'meta' as 'meta',
         content: (
           <>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
@@ -160,20 +160,13 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>余談1:</InlineHeader>{' '}
+                <InlineHeader>余談:</InlineHeader>{' '}
                 <Em>
                   この記事を筆者が最も読んでもらいたいのは、
                   <Strong>小学校教諭</Strong>
                   の方々です
                 </Em>
                 。日本でも小学生向けのプログラミング教育がはじまりますが、教員の方々にコンピューターサイセンスの基礎知識があれば、指導の質が上がると思うからです。
-              </P>
-              <P>
-                <InlineHeader>余談2:</InlineHeader> ちなみに筆者は2016年に『
-                <ExternalLink href="https://jp.chibicode.com/2-cs-vs-programming/">
-                  「プログラミング」と「プログラミング的思考」の違いを、分かったつもりになれるヒント
-                </ExternalLink>
-                』という記事を書き、小学校教員の方々から大きな反響がありました。記事の内容は朝日新聞出版の雑誌『AERA』にも掲載されました。
               </P>
             </>
           )
@@ -290,14 +283,21 @@ export default () => (
       {
         title: 'プログラミングができる方へ',
         type: 'sideNote' as 'sideNote',
-        preview: (
-          <P>
-            プログラミングができる方が「繰り返し処理」と聞くと、「
-            <Strong>for文</Strong>」「<Strong>while文</Strong>」「
-            <Strong>再帰</Strong>
-            」を思い浮かべると思います。
-          </P>
-        ),
+        preview: {
+          content: (
+            <P>
+              プログラミングができる方が「繰り返し処理」と聞くと、「
+              <Strong>for文</Strong>」「<Strong>while文</Strong>」「
+              <Strong>再帰</Strong>
+              」を思い浮かべると思います。
+            </P>
+          ),
+          text: (
+            <>
+              <H args={{ name: 'continueReading' }} /> (プログラマー向け)
+            </>
+          )
+        },
         content: (
           <>
             <P>
@@ -310,7 +310,7 @@ export default () => (
               なのです。どういうことかは記事の中で説明します。
             </P>
             <P>
-              <InlineHeader>プログラマーに特化した説明:</InlineHeader>{' '}
+              <InlineHeader>ちなみに:</InlineHeader>{' '}
               この記事はプログラミング知識ゼロの方でも分かるように書いていますので、「
               <Em>プログラマーに特化した説明のほうがいい</Em>
               」と思う方もいらっしゃるかもしれません。そんな方には、Rakeの作者でもある故・Jim
@@ -321,7 +321,7 @@ export default () => (
               」をおすすめします。
             </P>
             <P>
-              このとき筆者は実際に観客として拝聴したのですが、素晴らしい講演でした。英語ですが字幕が完備されており、ライブコーディングなので理解しやすいと思います。動画はこちらです。
+              このときわたしは実際に観客として拝聴したのですが、素晴らしい講演でした。英語ですが字幕が完備されており、ライブコーディングなので理解しやすいと思います。動画はこちらです。
             </P>
             <YoutubeEmbed
               width={560}
@@ -338,7 +338,7 @@ export default () => (
 }`}</Code>
             </Pre>
             <P>
-              「意味不明」と思われた方は、ぜひこの記事を読み進めてみてください！
+              上記の講演とこの記事の内容はほぼ100%異なります。ぜひこの記事も読んでみてください。
             </P>
             <YcNextLessonButton nextEpisodeNumber={1} />
           </>
@@ -347,14 +347,21 @@ export default () => (
       {
         title: 'IT業界の「Yコンビネーター」',
         type: 'sideNote' as 'sideNote',
-        preview: (
-          <>
-            <P>
-              <Em>IT業界</Em>にいる方なら、別の意味で
-              「Yコンビネーター」という言葉をご存知かもしれません。
-            </P>
-          </>
-        ),
+        preview: {
+          content: (
+            <>
+              <P>
+                <Em>IT業界</Em>にいる方なら、別の意味で
+                「Yコンビネーター」という言葉をご存知かもしれません。
+              </P>
+            </>
+          ),
+          text: (
+            <>
+              <H args={{ name: 'continueReading' }} /> (IT業界の方向け)
+            </>
+          )
+        },
         content: (
           <>
             <P>
