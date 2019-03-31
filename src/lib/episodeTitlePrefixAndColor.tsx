@@ -1,6 +1,9 @@
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
-import { numBeginnerLevels, numIntermediateLevels } from 'src/lib/numEpisodes'
+import {
+  numBeginnerEpisodes,
+  numIntermediateEpisodes
+} from 'src/lib/numEpisodes'
 
 export const beginnerColor = colors('green600')
 export const intermediateColor = colors('blue600')
@@ -10,7 +13,7 @@ const episodeTitlePrefixAndColor = (
   episodeNumber: number,
   abbreviated: boolean = false
 ) => {
-  if (episodeNumber <= numBeginnerLevels) {
+  if (episodeNumber <= numBeginnerEpisodes) {
     return {
       prefix:
         locale === 'jp'
@@ -18,11 +21,11 @@ const episodeTitlePrefixAndColor = (
           : `Beginner ${!abbreviated ? 'Level ' : ''}${episodeNumber}`,
       color: beginnerColor
     }
-  } else if (episodeNumber <= numBeginnerLevels + numIntermediateLevels) {
+  } else if (episodeNumber <= numBeginnerEpisodes + numIntermediateEpisodes) {
     return {
       prefix:
         locale === 'jp'
-          ? `中級その${episodeNumber - numBeginnerLevels}`
+          ? `中級その${episodeNumber - numBeginnerEpisodes}`
           : `Intermediate ${!abbreviated ? 'Level ' : ''}${episodeNumber}`,
       color: intermediateColor
     }
@@ -31,11 +34,11 @@ const episodeTitlePrefixAndColor = (
       prefix:
         locale === 'jp'
           ? `上級その${episodeNumber -
-              numBeginnerLevels -
-              numIntermediateLevels}`
+              numBeginnerEpisodes -
+              numIntermediateEpisodes}`
           : `Advanced ${!abbreviated ? 'Level ' : ''}${episodeNumber -
-              numBeginnerLevels -
-              numIntermediateLevels}`,
+              numBeginnerEpisodes -
+              numIntermediateEpisodes}`,
       color: advancedColor
     }
   }
