@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import { Em, P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import locale from 'src/lib/locale'
-import { colors, lineHeights, radii, spaces } from 'src/lib/theme'
+import { fontSizes, colors, lineHeights, radii, spaces } from 'src/lib/theme'
 import { CardActionResult } from 'src/components/CardWrapper'
 import CardActionContext from 'src/components/CardActionContext'
 
@@ -132,13 +132,24 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
           <H args={{ name: 'yesNoQuizNo' }} />
         </Button>
       </div>
-      {cardActionResult !== 'default' && (
-        <>
-          <P
-            css={css`
-              text-align: center;
-            `}
-          >
+      <>
+        <P
+          css={css`
+            text-align: center;
+          `}
+        >
+          {cardActionResult === 'default' ? (
+            <span
+              css={css`
+                font-size: ${fontSizes(0.85)};
+                display: block;
+                margin-top: ${spaces('-0.5')};
+                color: ${colors('grey700')};
+              `}
+            >
+              <H args={{ name: 'yesNoQuizDontWorry' }} />
+            </span>
+          ) : (
             <Em>
               <strong>
                 {cardActionResult === 'correct' ? (
@@ -159,9 +170,9 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
                 />
               )}
             </Em>
-          </P>
-        </>
-      )}
+          )}
+        </P>
+      </>
     </>
   )
 }

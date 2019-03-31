@@ -61,6 +61,7 @@ export interface HProps {
     | { name: 'tocClose' }
     | { name: 'playButton' }
     | { name: 'afterPlay' }
+    | { name: 'yesNoQuizDontWorry' }
 }
 
 const H = ({ args, highlightType }: HProps) => {
@@ -646,6 +647,25 @@ const H = ({ args, highlightType }: HProps) => {
       return <Strong highlightType={highlightType}>Result</Strong>
     } else {
       return <Strong highlightType={highlightType}>実行結果</Strong>
+    }
+  }
+  if (args.name === 'yesNoQuizDontWorry') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Emoji size="mdlg">😉</Emoji> Don’t worry if you have no idea.
+          <br />
+          Just take a guess!
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
+          <br />
+          勘で答えてみてください。
+        </>
+      )
     }
   }
   throw new Error('error')

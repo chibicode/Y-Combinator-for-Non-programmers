@@ -237,9 +237,6 @@ export default () => (
               <Em>「繰り返し処理」に関連するコンピューターサイエンス用語だ</Em>
               。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か?
             </P>
-            <P>
-              ↓ 正しいと思う方を選んでみてください。テキトーに選んでも大丈夫！
-            </P>
             <YesNoButtons answer="yes" />
           </>
         )
