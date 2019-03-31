@@ -90,8 +90,8 @@ export const ExpressionRunnerPairSimple = ({
         margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
       `}
     >
-      <Emoji>⬇️</Emoji> <H args={{ name: 'afterPlay' }} highlightType="none" />{' '}
-      <Emoji>⬇️</Emoji>
+      <Emoji>🔽</Emoji> <H args={{ name: 'afterPlay' }} highlightType="none" />{' '}
+      <Emoji>🔽</Emoji>
     </P>
     <ExpressionRunner
       expressionContainer={expressionContainer}
