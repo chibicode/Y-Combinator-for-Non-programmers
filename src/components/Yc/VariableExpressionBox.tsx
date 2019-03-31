@@ -35,7 +35,7 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
     lg: fontSizes(2.5),
     md: fontSizes(2),
-    sm: fontSizes(1.5)
+    sm: fontSizes(1.4)
   }[size])
 
 const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {

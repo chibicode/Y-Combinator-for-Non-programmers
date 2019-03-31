@@ -7,7 +7,9 @@ import {
   ExternalLink,
   P,
   Strong,
-  InlineHeader
+  Code,
+  InlineHeader,
+  Pre
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -18,12 +20,13 @@ import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import { lessonTitle } from 'src/lib/titles'
 import { dateString, dateSchemaString } from 'src/lib/date'
+import YoutubeEmbed from 'src/components/YoutubeEmbed'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: '自己紹介と、この記事について',
+        title: '自己紹介/この記事について',
         footer: {
           content: (
             <P>
@@ -151,18 +154,23 @@ export default () => (
             <P>
               「コンピューターサイエンスって面白い！」「自分でもわかるかも！」「もっと知りたい！」と思ってくださる方が増えたらいいなと思っています。
             </P>
-            <P>
-              <InlineHeader>中高生の読者様には:</InlineHeader> 「
-              <Em>大学でコンピューターサイエンスを学んでみたい</Em>
-              」と読後に思っていただけると嬉しいです。
-            </P>
-            <P>
-              <InlineHeader>教員の読者様には:</InlineHeader> 「
-              <Em>教え子にコンピューターサイエンスを薦めてみたい</Em>
-              」と読後に思っていただけると嬉しいです。
-            </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <Em>
+                  この記事を筆者が最も読んでもらいたいのは、
+                  <Strong>小学校教諭</Strong>
+                  の方々です
+                </Em>
+                。日本でも小学生向けのプログラミング教育がはじまりますが、教員の方々にコンピューターサイセンスの基礎知識があれば、指導の質が上がると思うからです。
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>スマホで完結。数学の知識も必要なし。</>,
@@ -189,7 +197,7 @@ export default () => (
         )
       },
       {
-        title: <>本題: Yコンビネーターって何？</>,
+        title: <>Yコンビネーターって何？</>,
         content: (
           <>
             <EmojiSeparator emojis={['🧙‍♂️', '🤔', '🧙‍♂️']} />
@@ -199,7 +207,11 @@ export default () => (
               <Strong>Yコンビネーター</Strong>
               」です。
             </P>
-            <P>Yコンビネーターとは、いったい何のことなのでしょう？</P>
+            <P>
+              <Strong>
+                Yコンビネーターとは、いったい何のことなのでしょう？
+              </Strong>
+            </P>
             <P>
               すぐに正解を言っても面白くないので、
               <H args={{ name: 'yesNoQuiz' }} />
@@ -252,7 +264,7 @@ export default () => (
               </Em>
             </P>
             <P>
-              これは約10年前、わたしが大学でコンピューターサイエンスを専攻していたときに学んだ用語なのですが、
+              これは約10年前、筆者が大学でコンピューターサイエンスを専攻していたときに学んだ用語なのですが、
               <Em>
                 あまりに興味深くて<Strong>感動</Strong>してしまった
               </Em>
@@ -261,7 +273,7 @@ export default () => (
             <EmojiSeparator emojis={['😲', '😍', '😭']} />
             <P>
               今回の記事では、「<Strong>Yコンビネーター</Strong>
-              」が何か、なぜ興味深いのかを伝えていきたいと思います。そうすることで、コンピューターサイエンスの面白さが伝わればいいなと思っています。
+              」が何か、なぜ興味深いのかを伝えていきます。そうすることで、コンピューターサイエンスの面白さが伝わればいいなと思っています。
             </P>
             <P>さっそく次に進みましょう！</P>
             <YcNextLessonButton nextEpisodeNumber={1} />
@@ -288,8 +300,36 @@ export default () => (
                 <Strong>再帰</Strong>
                 」が存在しないプログラミング言語でも、繰り返し処理を可能にするテクニック
               </Em>
-              なのです。どういうことかは読んでからのお楽しみ。
+              なのです。どういうことかは記事の中で説明します。
             </P>
+            <P>
+              <InlineHeader>プログラマーに特化した説明:</InlineHeader>{' '}
+              この記事はプログラミング知識ゼロの方でも分かるように書いていますので、「
+              <Em>プログラマーに特化した説明のほうがいい</Em>
+              」と思う方もいらっしゃるかもしれません。そんな方には、Rakeの作者でもある故・Jim
+              Weirich氏がRubyConf 2012にて行った講演「
+              <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                Y Not- Adventures in Functional Programming
+              </ExternalLink>
+              」をおすすめします。
+            </P>
+            <P>
+              このとき筆者は実際に観客として拝聴したのですが、素晴らしい講演でした。英語ですが字幕が完備されており、ライブコーディングなので理解しやすいと思います。動画はこちらです。
+            </P>
+            <YoutubeEmbed
+              width={560}
+              height={315}
+              src="https://www.youtube.com/embed/FITJMJjASUs"
+            />
+            <P>
+              講演のクライマックスで出てくるYコンビネーターのコードはこちら(Ruby言語)。「難しそう」と思った方は、まずはこの記事を読んでみてもいいかもしれません。
+            </P>
+            <Pre>
+              <Code>{`y = ->(f){
+  ->(x){f.(->(v){ x.(x).(v)})}.(
+  ->(x){f.(->(v){ x.(x).(v)})} )
+}`}</Code>
+            </Pre>
           </>
         )
       },

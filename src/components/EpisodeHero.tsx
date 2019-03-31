@@ -28,6 +28,8 @@ const EpisodeHero = () => {
     <header
       css={css`
         padding: ${spaces(0.5)} 0;
+        margin-left: ${spaces('-0.5')};
+        margin-right: ${spaces('-0.5')};
       `}
     >
       <>
@@ -39,9 +41,9 @@ const EpisodeHero = () => {
                 css`
                   color: ${colors('grey600')};
                   padding: ${spaces(1)} 0 ${spaces(1)};
-                  font-size: ${fontSizes(1.25)};
+                  font-size: ${fontSizes(1.2)};
                   ${ns} {
-                    font-size: ${fontSizes(1.5)};
+                    font-size: ${fontSizes(1.4)};
                   }
                   margin: 0 auto;
                 `
@@ -61,7 +63,7 @@ const EpisodeHero = () => {
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
-                  font-size: ${fontSizes(1.75)};
+                  font-size: ${fontSizes(1.7)};
                   ${ns} {
                     font-size: ${fontSizes(2)};
                   }
@@ -80,7 +82,7 @@ const EpisodeHero = () => {
               css`
                 color: ${colors('grey900')};
                 padding-top: ${spaces(0.5)};
-                font-size: ${fontSizes(1.75)};
+                font-size: ${fontSizes(1.7)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};
 

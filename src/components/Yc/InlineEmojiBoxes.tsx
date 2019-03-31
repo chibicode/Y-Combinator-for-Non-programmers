@@ -13,7 +13,7 @@ const InlineEmojiBoxes = ({ emojis }: InlineEmojiBoxProps) => (
     css={css`
       display: inline-flex;
       vertical-align: middle;
-      font-size: ${fontSizes(1.25)};
+      font-size: ${fontSizes(1.2)};
       line-height: ${lineHeights(1.3, { ignoreLocale: true })};
       margin: ${spaces(0.25)} ${spaces(0.25)};
       background: ${colors('white')};

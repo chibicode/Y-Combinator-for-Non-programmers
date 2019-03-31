@@ -31,7 +31,7 @@ export default () => (
               を紹介します。
             </P>
             <P>
-              まずはじめにこちらの写真をご覧ください。わたしの地元・横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
+              まずはじめにこちらの写真をご覧ください。筆者の地元・横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
             </P>
             <PFullWidth>
               <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />
@@ -85,7 +85,7 @@ export default () => (
       {
         title: (
           <>
-            まだまだあるよ
+            まだあるよ
             <H args={{ name: 'bentoBox' }} highlightType="none" />
           </>
         ),

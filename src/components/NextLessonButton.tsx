@@ -54,7 +54,7 @@ const NextLessonButton = ({
       >
         <span
           css={css`
-            font-size: ${fontSizes(1.25)};
+            font-size: ${fontSizes(1.2)};
             font-weight: bold;
             display: block;
           `}

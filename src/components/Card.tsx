@@ -87,6 +87,8 @@ const Card = ({
     <div
       css={css`
         position: relative;
+        margin-left: ${spaces('-0.5')};
+        margin-right: ${spaces('-0.5')};
       `}
     >
       {header}
@@ -152,6 +154,8 @@ const Card = ({
             <H3
               css={css`
                 text-align: center;
+                margin-left: ${spaces('-0.5')};
+                margin-right: ${spaces('-0.5')};
               `}
             >
               {title}

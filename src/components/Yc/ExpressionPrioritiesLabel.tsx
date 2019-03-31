@@ -8,7 +8,6 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices } from 'src/lib/theme'
-import { allFontSizes } from 'src/lib/theme/fontSizes'
 
 interface ExpressionPrioritiesLabelProps {
   emphasize: boolean
@@ -27,13 +26,13 @@ type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
 
 const fontSize = (
   variableSize: ExpressionRunnerContextProps['variableSize']
-): keyof typeof allFontSizes => {
+): string => {
   if (variableSize === 'lg') {
-    return 0.75
+    return fontSizes(0.75)
   } else if (variableSize === 'md') {
-    return 0.7
+    return fontSizes(0.7)
   } else {
-    return 0.6
+    return fontSizes(0.6)
   }
 }
 
@@ -75,7 +74,7 @@ const ExpressionPrioritiesLabelBox = ({
           color: ${colors(
             emphasize && activePriority === priority ? 'white' : 'indigo300'
           )};
-          font-size: ${fontSizes(fontSize(variableSize))};
+          font-size: ${fontSize(variableSize)};
           font-weight: bold;
           width: ${width(variableSize, collapsed)}em;
           height: ${height(variableSize)}em;

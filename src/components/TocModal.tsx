@@ -40,7 +40,7 @@ const prefixCss = css`
 `
 
 const titleCss = css`
-  font-size: ${fontSizes(1.25)};
+  font-size: ${fontSizes(1.2)};
   display: block;
   font-weight: ${fontWeights(800)};
   line-height: ${lineHeights(1.1)};
