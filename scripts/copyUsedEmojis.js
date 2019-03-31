@@ -4,6 +4,8 @@ const letterEmojis = Object.values(
   require('../src/lib/yc/letterEmojiMapping.json')
 )
 
+// NOTE: Disabling svgo because it's causing
+// some emojis like 😍 to be rendered incorrectly.
 const allUsedEmojis = uniq([
   ...letterEmojis,
   '🆓',

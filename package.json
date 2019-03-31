@@ -31,7 +31,7 @@
     "eslint": "eslint",
     "build:en": "yarn tsc && yarn eslint && PRODUCTION_LOCALE=en next build && PRODUCTION_LOCALE=en next export",
     "build:jp": "yarn tsc && yarn eslint && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
-    "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `node ./scripts/copyUsedEmojis.js` .twemoji && svgr --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji",
+    "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `node ./scripts/copyUsedEmojis.js` .twemoji && svgr --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji",
     "svg": "rm -rf src/components/Svg && svgr -d src/components/Svg static/images/svg",
     "type-check": "tsc -w",
     "test": "jest"
