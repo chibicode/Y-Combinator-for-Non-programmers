@@ -329,7 +329,7 @@ export default () => (
               src="https://www.youtube.com/embed/FITJMJjASUs"
             />
             <P>
-              講演のクライマックス(50分あたり)に出てくるYコンビネーターのコードはこちら。言語はRubyです。
+              動画のクライマックス(50分あたり)に出てくるYコンビネーターのコードはこちら。言語はRubyです。
             </P>
             <Pre>
               <Code>{`y = ->(f){
@@ -338,7 +338,7 @@ export default () => (
 }`}</Code>
             </Pre>
             <P>
-              上記の講演とこの記事の内容はほぼ100%異なります。ぜひこの記事も読んでみてください。
+              Weirich氏の講演は素晴らしかったですが、この記事の内容とはほぼ100%異なります。というわけで、ぜひこの記事も読んでみてください。
             </P>
             <YcNextLessonButton nextEpisodeNumber={1} />
           </>
