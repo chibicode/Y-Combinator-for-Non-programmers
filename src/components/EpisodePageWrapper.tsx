@@ -1,13 +1,8 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 import EpisodePage, { EpisodePageProps } from 'src/components/EpisodePage'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
-import {
-  lessonTitle,
-  episodeTitles,
-  episodeTitleWithPrefix
-} from 'src/lib/titles'
+import { lessonTitle, episodeTitleWithPrefix } from 'src/lib/titles'
 import GlobalContextSetter from 'src/components/GlobalContextSetter'
+import H from 'src/components/H'
 
 interface EpisodePageWrapperProps {
   episodeNumber: number
@@ -22,16 +17,7 @@ const EpisodePageWrapper = ({ episodeNumber }: EpisodePageWrapperProps) => (
       }
       episodeTitle={
         episodeNumber > 0 ? (
-          <>
-            <span
-              css={css`
-                color: ${episodeTitlePrefix(episodeNumber).color};
-              `}
-            >
-              {episodeTitlePrefix(episodeNumber).prefix}:{' '}
-            </span>
-            {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
-          </>
+          <H args={{ name: 'titleWithPrefixColored' }} />
         ) : (
           undefined
         )

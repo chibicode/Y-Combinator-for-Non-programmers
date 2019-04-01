@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import { numEpisodes } from 'src/lib/episodeCategories'
-import episodeTitlePrefixAndColor from 'src/lib/episodeTitlePrefixAndColor'
-import { lessonTitle, episodeTitles } from 'src/lib/titles'
+import { lessonTitle } from 'src/lib/titles'
 import { colors, spaces } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
 import H from 'src/components/H'
@@ -42,7 +41,6 @@ const Toc = () => (
     </li>
     {[...Array(numEpisodes).keys()].map(i => {
       const episodeNumber = i + 1
-      const { prefix, color } = episodeTitlePrefixAndColor(episodeNumber)
       return (
         <li
           key={i}
@@ -60,14 +58,10 @@ const Toc = () => (
               }
             `}
           >
-            <span
-              css={css`
-                color: ${color};
-              `}
-            >
-              {prefix}:
-            </span>{' '}
-            {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
+            <H
+              args={{ name: 'titleWithPrefixColored' }}
+              episodeNumberOverrides={episodeNumber}
+            />
           </InternalLink>
         </li>
       )

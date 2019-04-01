@@ -19,7 +19,9 @@ export const episodeCategory = (episodeNumber: number) => {
 }
 
 export const episodeNumberWithinCategory = (episodeNumber: number) => {
-  if (episodeNumber <= numBeginnerEpisodes) {
+  if (episodeNumber === 0) {
+    return undefined
+  } else if (episodeNumber <= numBeginnerEpisodes) {
     return episodeNumber
   } else if (episodeNumber <= numBeginnerEpisodes + numIntermediateEpisodes) {
     return episodeNumber - numBeginnerEpisodes

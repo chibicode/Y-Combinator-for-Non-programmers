@@ -4,7 +4,6 @@ import Modal from 'src/components/Modal'
 import Card from 'src/components/Card'
 import H from 'src/components/H'
 import { numEpisodes } from 'src/lib/episodeCategories'
-import episodeTitlePrefixAndColor from 'src/lib/episodeTitlePrefixAndColor'
 import { lessonTitle, episodeTitles } from 'src/lib/titles'
 import {
   fontWeights,
@@ -110,7 +109,6 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
         </InternalLink>
         {[...Array(numEpisodes).keys()].map(i => {
           const episodeNumber = i + 1
-          const { prefix, color } = episodeTitlePrefixAndColor(episodeNumber)
           return (
             <InternalLink
               href={`/${episodeNumber}`}
@@ -121,13 +119,15 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
               <span
                 css={[
                   css`
-                    color: ${color};
                     display: block;
                   `,
                   prefixCss
                 ]}
               >
-                {prefix}:
+                <H
+                  args={{ name: 'titlePrefixColored' }}
+                  episodeNumberOverrides={episodeNumber}
+                />
               </span>
               <span css={titleCss}>
                 {episodeTitles[episodeNumber as keyof typeof episodeTitles]}

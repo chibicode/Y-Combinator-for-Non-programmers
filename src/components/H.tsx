@@ -1,4 +1,6 @@
-import React, { useContext } from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+import { useContext } from 'react'
 import {
   Em,
   H3,
@@ -9,13 +11,15 @@ import {
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import Emoji from 'src/components/Emoji'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
-import { lessonTitle } from 'src/lib/titles'
+import { lessonTitle, episodePrefix, episodeTitles } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
+import { colors } from 'src/lib/theme'
+import { episodeCategory } from 'src/lib/episodeCategories'
 
 export interface HProps {
   highlightType?: InlineHighlightType
+  episodeNumberOverrides?: number
   args:
     | { name: 'yesNoQuizSeeAnswer' }
     | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
@@ -54,6 +58,8 @@ export interface HProps {
     | { name: 'sideNotePrefix' }
     | { name: 'continueReading' }
     | { name: 'titlePrefix' }
+    | { name: 'titlePrefixColored' }
+    | { name: 'titleWithPrefixColored' }
     | { name: 'episodeWelcomeText' }
     | { name: 'newUser' }
     | { name: 'titleSplit' }
@@ -66,11 +72,46 @@ export interface HProps {
     | { name: 'pageUnderConstruction' }
 }
 
-const H = ({ args, highlightType }: HProps) => {
-  const { episodeNumber } = useContext(EpisodeContext)
+const prefixColors = {
+  intro: colors('grey600'),
+  beginner: colors('green600'),
+  intermediate: colors('blue600'),
+  advanced: colors('pink400')
+}
+
+const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
+  const episodeNumberFromContext = useContext(EpisodeContext).episodeNumber
+  const episodeNumber = episodeNumberOverrides || episodeNumberFromContext
 
   if (args.name === 'titlePrefix') {
-    return <>{episodeTitlePrefix(episodeNumber).prefix}</>
+    return <>{episodePrefix(episodeNumber)}</>
+  }
+  if (args.name === 'titlePrefixColored') {
+    return (
+      <span
+        css={css`
+          color: ${prefixColors[
+            episodeCategory(episodeNumber) as keyof typeof prefixColors
+          ]};
+        `}
+      >
+        <H
+          args={{ name: 'titlePrefix' }}
+          episodeNumberOverrides={episodeNumberOverrides}
+        />
+      </span>
+    )
+  }
+  if (args.name === 'titleWithPrefixColored') {
+    return (
+      <>
+        <H
+          args={{ name: 'titlePrefixColored' }}
+          episodeNumberOverrides={episodeNumberOverrides}
+        />
+        : {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
+      </>
+    )
   }
   if (args.name === 'titleSplit') {
     if (locale === 'en') {
@@ -476,11 +517,9 @@ const H = ({ args, highlightType }: HProps) => {
   }
   if (args.name === 'nextButtonSecondaryText') {
     if (locale === 'en') {
-      return (
-        <>Continue to {episodeTitlePrefix(args.nextEpisodeNumber).prefix}</>
-      )
+      return <>Continue to {episodePrefix(args.nextEpisodeNumber)}</>
     } else {
-      return <>{episodeTitlePrefix(args.nextEpisodeNumber).prefix}へ</>
+      return <>{episodePrefix(args.nextEpisodeNumber)}へ</>
     }
   }
   if (args.name === 'quizReview') {

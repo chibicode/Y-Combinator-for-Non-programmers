@@ -1,7 +1,6 @@
 import React from 'react'
 import { Em, H3, InternalLink, P, Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-import episodeTitlePrefix from 'src/lib/episodeTitlePrefixAndColor'
 import locale from 'src/lib/locale'
 
 interface LocaleJson {
@@ -288,9 +287,9 @@ export const allTranslations = {
     en: 'Go to Next Page',
     jp: '次のページへ進む'
   }),
-  ycNextButtonSecondaryText: (nextEpisodeNumber: number) => ({
-    en: <>Continue to {episodeTitlePrefix(nextEpisodeNumber).prefix}</>,
-    jp: <>{episodeTitlePrefix(nextEpisodeNumber).prefix}へ</>
+  ycNextButtonSecondaryText: () => ({
+    en: <></>,
+    jp: <></>
   }),
   ycQuizReview: (previousEpisodeNumber: number) => ({
     en: (

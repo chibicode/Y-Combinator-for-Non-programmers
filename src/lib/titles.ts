@@ -55,11 +55,20 @@ export const episodePrefixes = {
   }
 }[locale]
 
-export const episodeTitleWithPrefix = (episodeNumber: number) =>
+export const episodePrefix = (episodeNumber: number) =>
   `${
     episodePrefixes[
       episodeCategory(episodeNumber) as keyof typeof episodePrefixes
     ]
-  }${episodeNumberWithinCategory(episodeNumber)}:${locale === 'en' ? ' ' : ''}${
+  }${
+    episodeNumberWithinCategory(episodeNumber)
+      ? `${locale === 'en' ? ' ' : 'その'}${episodeNumberWithinCategory(
+          episodeNumber
+        )}`
+      : ''
+  }`
+
+export const episodeTitleWithPrefix = (episodeNumber: number) =>
+  `${episodePrefix(episodeNumber)}: ${
     episodeTitles[episodeNumber as keyof typeof episodeTitles]
   }`
