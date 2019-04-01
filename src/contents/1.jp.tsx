@@ -20,7 +20,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <H args={{ name: 'bentoBox' }} highlightType="none" />,
+        title: <H args={{ name: 'bentoBox' }} />,
         content: (
           <>
             <P>
@@ -38,12 +38,12 @@ export default () => (
             </PFullWidth>
             <P>
               なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               という名前がついているからです。
             </P>
             <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
             <P>
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               がどんなものか、説明しますね！
             </P>
           </>
@@ -53,14 +53,14 @@ export default () => (
         title: (
           <>
             これが
-            <H args={{ name: 'bentoBox' }} highlightType="none" />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
           <>
             <P>
               下の図が、
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               です。実際の弁当箱のように、
               <Em>
                 四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
@@ -86,14 +86,14 @@ export default () => (
         title: (
           <>
             まだあるよ
-            <H args={{ name: 'bentoBox' }} highlightType="none" />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
           <>
             <P>
               さらに何個か、
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               の例を紹介していきます:
             </P>
             <P>
@@ -128,25 +128,25 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'playButton' }} highlightType="none" />
+            <H args={{ name: 'playButton' }} />
           </>
         ),
         content: (
           <>
             <P>
               それぞれの
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               には、
-              <H args={{ name: 'playButton' }} highlightType="none" />
+              <H args={{ name: 'playButton' }} />
               があります。
             </P>
             <P>
               <InlineHeader>例その1:</InlineHeader> こちらは、最初に紹介した
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               です。
               <Em>
                 下の
-                <H args={{ name: 'playButton' }} highlightType="none" />
+                <H args={{ name: 'playButton' }} />
                 を押してみてください
               </Em>
               :
@@ -159,7 +159,7 @@ export default () => (
             <>
               <P>
                 <InlineHeader>ちなみに:</InlineHeader>{' '}
-                <H args={{ name: 'reset' }} highlightType="none" />{' '}
+                <H args={{ name: 'reset' }} />{' '}
                 を押せばもう一度最初から実行できます。
               </P>
             </>
@@ -169,7 +169,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} highlightType="none" />
+            <H args={{ name: 'play' }} />
             するとこうなります
           </>
         ),
@@ -177,9 +177,9 @@ export default () => (
           <>
             <P>
               どうやら、さきほどの
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               は、
-              <H args={{ name: 'play' }} highlightType="none" />
+              <H args={{ name: 'play' }} />
               すると、最終的に
               <EmojiWithText letter="b" />
               だけになるようです。
@@ -190,9 +190,9 @@ export default () => (
             {AER.uqwm}
             <P>
               実はこれ、
-              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              <H args={{ name: 'unknownRule' }} />
               に従っています。その法則を説明する前に、他の
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               も実行してみましょう。
             </P>
           </>
@@ -202,7 +202,7 @@ export default () => (
         title: (
           <>
             他のも
-            <H args={{ name: 'play' }} highlightType="none" />
+            <H args={{ name: 'play' }} />
             してみましょう
           </>
         ),
@@ -210,9 +210,9 @@ export default () => (
           <>
             <P>
               先ほど紹介した3つの
-              <H args={{ name: 'bentoBox' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />
               を、それぞれ
-              <H args={{ name: 'play' }} highlightType="none" />
+              <H args={{ name: 'play' }} />
               してみましょう！
             </P>
             <P>
@@ -233,7 +233,7 @@ export default () => (
           content: (
             <P>
               どれも
-              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              <H args={{ name: 'unknownRule' }} />
               に従っています。どんな法則か、考えみてください！
             </P>
           )
@@ -242,7 +242,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'afterPlay' }} highlightType="none" />
+            <H args={{ name: 'afterPlay' }} />
           </>
         ),
         content: (
@@ -266,7 +266,7 @@ export default () => (
           content: (
             <P>
               どれも
-              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              <H args={{ name: 'unknownRule' }} />
               に従っています。どんな法則か、考えみてください！
             </P>
           )
@@ -279,10 +279,10 @@ export default () => (
             <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
             <P>
               上記あわせて4種類の
-              <H args={{ name: 'bentoBox' }} highlightType="none" />を
-              <H args={{ name: 'play' }} highlightType="none" />
+              <H args={{ name: 'bentoBox' }} />を
+              <H args={{ name: 'play' }} />
               しましたが、どれも
-              <H args={{ name: 'unknownRule' }} highlightType="none" />
+              <H args={{ name: 'unknownRule' }} />
               に従っています。
             </P>
             <P>

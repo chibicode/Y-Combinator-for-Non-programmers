@@ -18,7 +18,7 @@ import { colors } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
 
 export interface HProps {
-  highlightType?: InlineHighlightType
+  highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
     | { name: 'yesNoQuizSeeAnswer' }
@@ -734,6 +734,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     }
   }
   throw new Error('error')
+}
+
+H.defaultProps = {
+  highlightType: 'none'
 }
 
 export default H
