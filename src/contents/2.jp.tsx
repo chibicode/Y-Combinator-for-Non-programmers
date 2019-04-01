@@ -104,7 +104,7 @@ export default () => (
               <H args={{ name: 'episodeWelcomeText' }} />
               さっそく前回紹介した
               <H args={{ name: 'bentoBox' }} />
-              の法則を紹介していきましょう。
+              の法則 <Emoji>🤫</Emoji> を紹介していきましょう。
             </P>
             <P>
               ここでは、前回のはじめに登場した
