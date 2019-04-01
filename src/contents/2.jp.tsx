@@ -12,7 +12,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import SideNoteSection from 'src/components/SideNoteSection'
-import {
+import AER, {
   episode1,
   episode1Quiz,
   episode2,
@@ -24,7 +24,6 @@ import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 // import EmojiWithText from 'src/components/EmojiWithText'
 // import YesNoButtons from 'src/components/YesNoButtons'
-// import AER from 'src/components/Yc/AllExpressionRunners'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import h from 'src/lib/h'
@@ -107,7 +106,26 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               の法則を紹介していきましょう。
             </P>
-            <P>?</P>
+            <P>
+              ここでは、前回のはじめに登場した
+              <H args={{ name: 'bentoBox', short: true }} />(
+              <Strong>例その1</Strong>)を使って説明します:
+            </P>
+            {AER.uqwm}
+          </>
+        )
+      },
+      {
+        title: '法則その1: バッジをつける',
+        content: (
+          <>
+            <EmojiSeparator
+              badges={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ]}
+            />
           </>
         )
       }

@@ -34,6 +34,7 @@ export interface HProps {
         name: 'bentoBox'
         plural?: boolean
         highlightType?: InlineHighlightType
+        short?: boolean
       }
     | { name: 'next' }
     | { name: 'play' }
@@ -324,7 +325,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         </Strong>
       )
     } else {
-      return (
+      return args.short ? (
+        <>
+          弁当箱 <Emoji>🍱</Emoji>
+        </>
+      ) : (
         <Strong highlightType={highlightType}>
           「弁当箱のパズル <Emoji>🍱</Emoji>」
         </Strong>

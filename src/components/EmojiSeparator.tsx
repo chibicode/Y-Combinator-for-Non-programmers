@@ -6,6 +6,7 @@ import { fontSizes, ns, spaces } from 'src/lib/theme'
 
 interface EmojiSeparatorProps {
   emojis: string[]
+  badges?: React.ReactNode[]
   size: 'sm' | 'md' | 'lg'
   alignCenter: boolean
   Component: React.ComponentType | string
@@ -27,6 +28,7 @@ const margins = (size: EmojiSeparatorProps['size']) =>
 
 const EmojiSeparator = ({
   emojis,
+  badges,
   size,
   Component,
   alignCenter
@@ -41,11 +43,15 @@ const EmojiSeparator = ({
       }
     `}
   >
-    {emojis.map((emoji, index) => (
-      <Fragment key={`${emoji}${index}`}>
-        <Emoji>{emoji}</Emoji>{' '}
-      </Fragment>
-    ))}
+    {badges
+      ? badges.map((badge, index) => (
+          <Fragment key={`${badge}${index}`}>{badge} </Fragment>
+        ))
+      : emojis.map((emoji, index) => (
+          <Fragment key={`${emoji}${index}`}>
+            <Emoji>{emoji}</Emoji>{' '}
+          </Fragment>
+        ))}
   </Component>
 )
 
@@ -53,7 +59,8 @@ EmojiSeparator.defaultProps = {
   size: 'md',
   spacing: 'md',
   Component: 'div',
-  alignCenter: true
+  alignCenter: true,
+  emojis: []
 }
 
 export default EmojiSeparator
