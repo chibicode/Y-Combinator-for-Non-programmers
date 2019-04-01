@@ -26,7 +26,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import AER from 'src/components/Yc/AllExpressionRunners'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-// import H from 'src/components/H'
+import H from 'src/components/H'
 import h from 'src/lib/h'
 
 const Step1 = () => (
@@ -94,7 +94,26 @@ const FourSteps = () => (
   </>
 )
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: '弁当箱の法則',
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              さっそく前回紹介した
+              <H args={{ name: 'bentoBox' }} />
+              の法則を紹介していきましょう。
+            </P>
+            <P>?</P>
+          </>
+        )
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0
