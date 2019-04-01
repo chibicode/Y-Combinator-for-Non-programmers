@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { InternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import { numEpisodes } from 'src/lib/episodeCategories'
-import { colors, fontSizes, spaces } from 'src/lib/theme'
+import { colors, fontSizes, spaces, radii } from 'src/lib/theme'
 import { commonLinkClass } from 'src/components/ContentTags/Links'
 
 export interface EpisodePageProps {
@@ -18,8 +18,11 @@ const navigationLinkClasses = css`
   font-size: ${fontSizes(0.75)};
   background: none;
   border: none;
-  padding: 0;
+  border-radius: ${radii(0.5)};
+  padding: ${spaces(0.25)} ${spaces(0.5)};
+  margin: ${spaces('-0.5')};
   cursor: pointer;
+  display: inline-block;
 `
 
 const EpisodePageHeader = ({ episodeNumber, showModal }: EpisodePageProps) => {
