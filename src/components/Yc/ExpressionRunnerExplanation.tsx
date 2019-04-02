@@ -18,20 +18,49 @@ interface ExpressionRunnerExplanationProps {
   isPlaying: boolean
   numSecondsRemaining: number
   showAllShowSteps?: boolean
+  hideFuncUnboundBadge?: boolean
 }
+
+const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
+  locale === 'en' ? (
+    <>
+      Showing <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+      {!hideFuncUnboundBadge && (
+        <>
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+        </>
+      )}
+      <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+      <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+    </>
+  ) : (
+    <>
+      <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+      {!hideFuncUnboundBadge && (
+        <>
+          <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+        </>
+      )}
+      <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+      <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+      はこうなります
+    </>
+  )
 
 const stateToExplanation = ({
   state,
   matchExists,
   currentStep,
   currentSubstep,
-  showAllShowSteps
+  showAllShowSteps,
+  hideFuncUnboundBadge
 }: {
   state: CallStates
   matchExists?: boolean
   currentStep: number
   currentSubstep: number
   showAllShowSteps?: boolean
+  hideFuncUnboundBadge?: boolean
 }) => {
   if (currentStep === 1 && currentSubstep === 1) {
     if (locale === 'en') {
@@ -66,36 +95,52 @@ const stateToExplanation = ({
     }
     case 'showFuncBound': {
       if (locale === 'en') {
-        return (
-          <>
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            Rightmost on bottom row
-          </>
-        )
+        if (showAllShowSteps) {
+          return (
+            <>
+              <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+              Rightmost on bottom row
+            </>
+          )
+        } else {
+          return allAtOnce(hideFuncUnboundBadge)
+        }
       } else {
-        return (
-          <>
-            下段の一番右は{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-          </>
-        )
+        if (showAllShowSteps) {
+          return (
+            <>
+              下段の一番右は{' '}
+              <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            </>
+          )
+        } else {
+          return allAtOnce(hideFuncUnboundBadge)
+        }
       }
     }
     case 'showFuncUnbound': {
       if (locale === 'en') {
-        return (
-          <>
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            Middle items on bottom row
-          </>
-        )
+        if (showAllShowSteps) {
+          return (
+            <>
+              <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
+              Middle items on bottom row
+            </>
+          )
+        } else {
+          return allAtOnce(hideFuncUnboundBadge)
+        }
       } else {
-        return (
-          <>
-            下段の真ん中は{' '}
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
-          </>
-        )
+        if (showAllShowSteps) {
+          return (
+            <>
+              下段の真ん中は{' '}
+              <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
+            </>
+          )
+        } else {
+          return allAtOnce(hideFuncUnboundBadge)
+        }
       }
     }
     case 'showFuncArg': {
@@ -117,41 +162,17 @@ const stateToExplanation = ({
     }
     case 'showCallArg': {
       if (locale === 'en') {
-        if (showAllShowSteps) {
-          return (
-            <>
-              <BottomRightBadge bottomRightBadgeType="callArg" inline /> Top row
-            </>
-          )
-        } else {
-          return (
-            <>
-              Showing{' '}
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />
-            </>
-          )
-        }
+        return (
+          <>
+            <BottomRightBadge bottomRightBadgeType="callArg" inline /> Top row
+          </>
+        )
       } else {
-        if (showAllShowSteps) {
-          return (
-            <>
-              上段は <BottomRightBadge bottomRightBadgeType="callArg" inline />
-            </>
-          )
-        } else {
-          return (
-            <>
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-              はこうなります
-            </>
-          )
-        }
+        return (
+          <>
+            上段は <BottomRightBadge bottomRightBadgeType="callArg" inline />
+          </>
+        )
       }
     }
     case 'betaReducePreviewBefore': {
@@ -283,7 +304,8 @@ const ExpressionRunnerExplanation = ({
   isDone,
   numSecondsRemaining,
   isPlaying,
-  showAllShowSteps
+  showAllShowSteps,
+  hideFuncUnboundBadge
 }: ExpressionRunnerExplanationProps) => (
   <>
     {isPlaying && !isDone ? (
@@ -322,7 +344,8 @@ const ExpressionRunnerExplanation = ({
             currentStep,
             currentSubstep,
             matchExists: expressionContainer.matchExists,
-            showAllShowSteps
+            showAllShowSteps,
+            hideFuncUnboundBadge
           })
         )}
       </>

@@ -4,6 +4,7 @@ import {
   H3,
   P,
   Strong,
+  // InlineHeader,
   Ul,
   UlLi,
   Ol,
@@ -121,8 +122,15 @@ export default () => (
           <>
             <P>
               まず、
-              <H args={{ name: 'bentoBox', short: true }} />
-              のそれぞれの料理に以下の3つの印をつけます。
+              <Strong>
+                上の料理には{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                、左の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                、右の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の印をつけます。
+              </Strong>
             </P>
             <EmojiSeparator
               size="sm"
@@ -133,15 +141,10 @@ export default () => (
               ]}
             />
             <P>
-              <Strong>
-                上の料理には
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                、左の料理には
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                、右の料理には
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                の印をつけます。
-              </Strong>
+              <Em>
+                <H args={{ name: 'next' }} />
+                を押してみてください:
+              </Em>
             </P>
             {AER.ozbe}
           </>

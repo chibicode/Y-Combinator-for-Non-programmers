@@ -61,6 +61,7 @@ export interface ExpressionRunnerProps {
   showAllShowSteps?: boolean
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   skipToTheEnd: boolean
+  hideFuncUnboundBadgeOnExplanation: boolean
   caption?: {
     jp: React.ReactNode
     en: React.ReactNode
@@ -184,7 +185,8 @@ const ExpressionRunner = ({
   initializeInstructions,
   maxStepsAllowed,
   resetIndex,
-  skipToTheEnd
+  skipToTheEnd,
+  hideFuncUnboundBadgeOnExplanation
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -243,8 +245,7 @@ const ExpressionRunner = ({
         >
           {(explanationsVisibility === 'visible' ||
             (explanationsVisibility === 'hiddenInitial' &&
-              getExpressionContainerManager().currentStepAndSubstep
-                .currentStep > 1)) && (
+              expressionContainerManagerState.numStepsTaken > 0)) && (
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
@@ -262,6 +263,7 @@ const ExpressionRunner = ({
                 currentStep={expressionContainerManagerState.currentStep}
                 currentSubstep={expressionContainerManagerState.currentSubstep}
                 showAllShowSteps={showAllShowSteps}
+                hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
               />
             </ExpressionRunnerCaptionWrapper>
           )}
@@ -336,7 +338,8 @@ ExpressionRunner.defaultProps = {
   skipToTheEnd: false,
   hidePlayButton: false,
   hideForwardAndBackButtons: false,
-  isFastForwardPlayButton: false
+  isFastForwardPlayButton: false,
+  hideFuncUnboundBadgeOnExplanation: false
 }
 
 export default ExpressionRunner

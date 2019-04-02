@@ -17,6 +17,7 @@ export default class ExpressionContainerManager {
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
       numStepsRemaining: this.numStepsRemaining,
+      numStepsTaken: this.currentIndex - this.startIndex,
       ...this.currentStepAndSubstep
     }
   }

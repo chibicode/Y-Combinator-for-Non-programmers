@@ -111,18 +111,22 @@ export const ExpressionRunnerPairSimple = ({
 export const ExpressionRunnerSingleStep = ({
   expressionContainer,
   initialState,
-  finalState
+  finalState,
+  hideFuncUnboundBadgeOnExplanation
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   finalState: CallStates
+  hideFuncUnboundBadgeOnExplanation: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hidePriorities
+    hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     hidePlayButton
-    explanationsVisibility="hidden"
+    explanationsVisibility="hiddenInitial"
     variableSize={'lg'}
+    resetIndex
     lastAllowedExpressionState={finalState}
     initializeInstructions={[
       {
@@ -132,3 +136,7 @@ export const ExpressionRunnerSingleStep = ({
     ]}
   />
 )
+
+ExpressionRunnerSingleStep.defaultProps = {
+  hideFuncUnboundBadgeOnExplanation: true
+}
