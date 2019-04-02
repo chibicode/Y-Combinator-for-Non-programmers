@@ -107,3 +107,28 @@ export const ExpressionRunnerPairSimple = ({
     />
   </>
 )
+
+export const ExpressionRunnerSingleStep = ({
+  expressionContainer,
+  initialState,
+  finalState
+}: {
+  expressionContainer: SteppedExpressionContainer
+  initialState: CallStates
+  finalState: CallStates
+}) => (
+  <ExpressionRunner
+    expressionContainer={expressionContainer}
+    hidePriorities
+    hidePlayButton
+    explanationsVisibility="hidden"
+    variableSize={'lg'}
+    lastAllowedExpressionState={finalState}
+    initializeInstructions={[
+      {
+        type: 'stepForwardUntilPreviouslyChangedExpressionState',
+        state: initialState
+      }
+    ]}
+  />
+)

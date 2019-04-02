@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
 import { fontSizes, ns, spaces } from 'src/lib/theme'
@@ -10,18 +10,19 @@ interface EmojiSeparatorProps {
   size: 'sm' | 'md' | 'lg'
   alignCenter: boolean
   Component: React.ComponentType | string
+  cssOverrides?: SerializedStyles
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
   ({
-    sm: [fontSizes(1.4), fontSizes(1.4)],
+    sm: [fontSizes(1.4), fontSizes(1.7)],
     md: [fontSizes(2), fontSizes(2.5)],
     lg: [fontSizes(3), fontSizes(4)]
   }[size])
 
 const margins = (size: EmojiSeparatorProps['size']) =>
   ({
-    sm: [spaces(0), spaces(0)],
+    sm: [spaces(1.5), spaces(1.75)],
     md: [spaces(0.5), spaces(0.75)],
     lg: [spaces(0.5), spaces(0.75)]
   }[size])
@@ -31,17 +32,21 @@ const EmojiSeparator = ({
   badges,
   size,
   Component,
-  alignCenter
+  alignCenter,
+  cssOverrides
 }: EmojiSeparatorProps) => (
   <Component
-    css={css`
-      text-align: ${alignCenter ? 'center' : 'left'};
-      margin: ${margins(size)[0]} 0 ${margins(size)[1]};
-      font-size: ${fontSize(size)[0]};
-      ${ns} {
-        font-size: ${fontSize(size)[1]};
-      }
-    `}
+    css={[
+      css`
+        text-align: ${alignCenter ? 'center' : 'left'};
+        margin: ${margins(size)[0]} 0 ${margins(size)[1]};
+        font-size: ${fontSize(size)[0]};
+        ${ns} {
+          font-size: ${fontSize(size)[1]};
+        }
+      `,
+      cssOverrides
+    ]}
   >
     {badges
       ? badges.map((badge, index) => (

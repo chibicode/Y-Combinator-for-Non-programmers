@@ -88,7 +88,6 @@ const ExpressionRunnerControls = ({
         onClick={onPreviousClick}
         css={css`
           flex: 1;
-          margin-right: ${spaces(0.25)};
         `}
       >
         <H args={{ name: 'previous' }} />
@@ -98,7 +97,6 @@ const ExpressionRunnerControls = ({
         <div
           css={css`
             flex: 1;
-            margin-right: ${spaces(0.25)};
             /* Same border as the button */
             border: 2px solid transparent;
           `}
@@ -120,8 +118,6 @@ const ExpressionRunnerControls = ({
           css={[
             css`
               flex: ${skipToTheEnd ? 0.5 : 1};
-              margin-left: ${spaces(skipToTheEnd ? 0 : 0.25)};
-              margin-right: ${spaces(skipToTheEnd ? 0 : 0.25)};
             `,
             canStepForward &&
               !isPlaying &&
@@ -148,7 +144,6 @@ const ExpressionRunnerControls = ({
         <div
           css={css`
             flex: 1;
-            margin-left: ${spaces(0.25)};
             /* Same border as the button */
             border: 2px solid transparent;
           `}
@@ -160,7 +155,6 @@ const ExpressionRunnerControls = ({
         disabled={!canStepForward}
         css={css`
           flex: 1;
-          margin-left: ${spaces(0.25)};
         `}
       >
         {canStepForward ? (
@@ -174,7 +168,6 @@ const ExpressionRunnerControls = ({
         <div
           css={css`
             flex: 1;
-            margin-left: ${spaces(0.25)};
             /* Same border as the button */
             border: 2px solid transparent;
           `}

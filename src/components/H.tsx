@@ -340,7 +340,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
+          <Strong highlightType={highlightType}>
             Next <Emoji>➡️</Emoji>
           </Strong>
         </>
@@ -348,7 +348,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Strong>
+          <Strong highlightType={highlightType}>
             次へ <Emoji>➡️</Emoji>
           </Strong>
         </>
@@ -416,7 +416,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
+          <Strong highlightType={highlightType}>
             <Emoji>⬅️</Emoji> Previous
           </Strong>
         </>
@@ -424,7 +424,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Strong>
+          <Strong highlightType={highlightType}>
             <Emoji>⬅️</Emoji> 前へ
           </Strong>
         </>

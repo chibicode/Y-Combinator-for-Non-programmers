@@ -116,16 +116,34 @@ export default () => (
         )
       },
       {
-        title: '法則その1: バッジをつける',
+        title: '法則その1: 印をつける',
         content: (
           <>
+            <P>
+              まず、
+              <H args={{ name: 'bentoBox', short: true }} />
+              のそれぞれの料理に以下の3つの印をつけます。
+            </P>
             <EmojiSeparator
+              size="sm"
               badges={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               ]}
             />
+            <P>
+              <Strong>
+                上の料理には
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                、左の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                、右の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の印をつけます。
+              </Strong>
+            </P>
+            {AER.ozbe}
           </>
         )
       }

@@ -135,8 +135,8 @@ const Card = ({
         <div
           css={css`
             padding-top: ${spaces(1)};
-            padding-left: ${spaces(1)};
-            padding-right: ${spaces(1)};
+            padding-left: ${spaces(0.75)};
+            padding-right: ${spaces(0.75)};
             padding-bottom: ${spaces(0.5)};
 
             ${ns} {
@@ -152,8 +152,8 @@ const Card = ({
             <H3
               css={css`
                 text-align: center;
-                margin-left: ${spaces('-0.5')};
-                margin-right: ${spaces('-0.5')};
+                margin-left: ${spaces('-0.25')};
+                margin-right: ${spaces('-0.25')};
               `}
             >
               {title}

@@ -16,7 +16,8 @@ import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
-  ExpressionRunnerPairSimple
+  ExpressionRunnerPairSimple,
+  ExpressionRunnerSingleStep
 } from 'src/components/Yc/ExpressionRunnerShorthand'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
@@ -131,6 +132,13 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E6}
       initialState="default"
+    />
+  ),
+  ozbe: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="active"
+      finalState="showFuncBound"
     />
   )
 }

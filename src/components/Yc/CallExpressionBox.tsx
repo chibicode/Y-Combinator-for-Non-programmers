@@ -5,7 +5,6 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
 import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
-import colors from 'src/lib/theme/colors'
 import { CallExpression } from 'src/types/yc/ExpressionTypes'
 
 interface CallExpressionBoxProps {
@@ -28,14 +27,7 @@ const CallExpressionBox = ({ expression }: CallExpressionBoxProps) => {
             (expression.state === 'active' ? expression.priority : undefined)
         }}
       >
-        <FlexCenter
-          css={
-            expression.state !== 'default' &&
-            css`
-              border-bottom: 10px solid ${colors('indigo300')};
-            `
-          }
-        >
+        <FlexCenter css={expression.state !== 'default'}>
           <ExpressionBox expression={expression.arg} />
         </FlexCenter>
         <FlexCenter>

@@ -104,6 +104,9 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           <EmojiSeparator
             emojis={episodeEmojis[0]}
             size="sm"
+            cssOverrides={css`
+              margin: 0;
+            `}
             alignCenter={false}
           />
         </InternalLink>
@@ -136,6 +139,9 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
                 emojis={episodeEmojis[episodeNumber]}
                 alignCenter={false}
                 size="sm"
+                cssOverrides={css`
+                  margin: 0;
+                `}
               />
             </InternalLink>
           )
