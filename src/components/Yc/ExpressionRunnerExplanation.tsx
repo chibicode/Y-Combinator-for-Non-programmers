@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopBadge from 'src/components/Yc/TopBadge'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
@@ -179,14 +179,13 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            There’s a match <TopRightBadge topRightBadgeType="match" inline />{' '}
-            between <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-            and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            There’s a match <TopBadge topBadgeType="match" inline /> between{' '}
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            There’s no match{' '}
-            <TopRightBadge topRightBadgeType="unmatch" inline /> between{' '}
+            There’s no match <TopBadge topBadgeType="unmatch" inline /> between{' '}
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
@@ -196,15 +195,14 @@ const stateToExplanation = ({
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> に一致{' '}
-            <TopRightBadge topRightBadgeType="match" inline />{' '}
-            する料理があります
+            <TopBadge topBadgeType="match" inline /> する料理があります
           </>
         ) : (
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
             がひとつも一致しませんでした{' '}
-            <TopRightBadge topRightBadgeType="unmatch" inline />
+            <TopBadge topBadgeType="unmatch" inline />
           </>
         )
       }
@@ -213,7 +211,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Matched <TopRightBadge topRightBadgeType="match" inline />{' '}
+            Matched <TopBadge topBadgeType="match" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
             the same as{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />
@@ -223,11 +221,9 @@ const stateToExplanation = ({
         return (
           <>
             <BottomRightBadge bottomRightBadgeType="callArg" inline />
-            の料理を
-            <H args={{ name: 'match' }} />
-            した
+            の料理を一致した
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-            の部分にコピペ
+            の部分にコピペ <Emoji>↘</Emoji>
           </>
         )
       }
@@ -278,7 +274,7 @@ const stateToExplanation = ({
             <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> become{' '}
-            <TopRightBadge topRightBadgeType="conflictResolved" inline />
+            <TopBadge topBadgeType="conflictResolved" inline />
           </>
         )
       } else {
@@ -287,7 +283,7 @@ const stateToExplanation = ({
             <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が{' '}
-            <TopRightBadge topRightBadgeType="conflictResolved" inline /> に
+            <TopBadge topBadgeType="conflictResolved" inline /> に
           </>
         )
       }

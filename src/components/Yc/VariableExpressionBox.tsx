@@ -8,7 +8,7 @@ import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLab
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopBadge from 'src/components/Yc/TopBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
@@ -79,16 +79,26 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                 />
               </span>
             )}
-          {expression.topRightBadgeType !== 'none' && (
+          {expression.topBadgeType !== 'none' && (
             <span
-              css={css`
-                position: absolute;
-                right: -0.18em;
-                top: 0;
-                z-index: ${zIndices('badge')};
-              `}
+              css={[
+                css`
+                  position: absolute;
+
+                  top: 0;
+                  z-index: ${zIndices('badge')};
+                `,
+                expression.topBadgeType === 'betaReduced' &&
+                  css`
+                    left: -0.18em;
+                  `,
+                expression.topBadgeType !== 'betaReduced' &&
+                  css`
+                    right: -0.18em;
+                  `
+              ]}
             >
-              <TopRightBadge topRightBadgeType={expression.topRightBadgeType} />
+              <TopBadge topBadgeType={expression.topBadgeType} />
             </span>
           )}
         </span>

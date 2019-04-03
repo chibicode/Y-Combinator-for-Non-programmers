@@ -21,7 +21,7 @@ import AER, {
 } from 'src/components/Yc/AllExpressionRunners'
 import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 // import EmojiWithText from 'src/components/EmojiWithText'
 // import YesNoButtons from 'src/components/YesNoButtons'
@@ -43,13 +43,13 @@ const Step2 = () => (
   <>
     <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" /> にマッチ{' '}
-    <TopRightBadge inline topRightBadgeType="match" /> する料理があるかチェック
+    <TopBadge inline topBadgeType="match" /> する料理があるかチェック
   </>
 )
 
 const Step3 = () => (
   <>
-    マッチ <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+    マッチ <TopBadge inline topBadgeType="match" /> した{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" /> が{' '}
     <BottomRightBadge inline bottomRightBadgeType="callArg" /> と同じ料理になる
   </>
@@ -300,8 +300,7 @@ export const old = () => {
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           の両方にある場合、それを「
-          <Strong>マッチ</Strong>{' '}
-          <TopRightBadge inline topRightBadgeType="match" />
+          <Strong>マッチ</Strong> <TopBadge inline topBadgeType="match" />
           」と呼びます。
         </Em>
       </P>
@@ -314,7 +313,7 @@ export const old = () => {
         <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
         それぞれにあるので、 「
         <Strong>
-          マッチ <TopRightBadge inline topRightBadgeType="match" />
+          マッチ <TopBadge inline topBadgeType="match" />
         </Strong>
         」ということになります。
       </P>
@@ -346,8 +345,7 @@ export const old = () => {
         次に、
         <Em>
           <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-          の料理と、さきほどマッチ{' '}
-          <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+          の料理と、さきほどマッチ <TopBadge inline topBadgeType="match" /> した{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           の料理に注目します。
         </Em>
@@ -356,7 +354,7 @@ export const old = () => {
       <P>
         <Strong>このステップでは、</Strong>{' '}
         <Em>
-          マッチ <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+          マッチ <TopBadge inline topBadgeType="match" /> した{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           の料理が、
           <BottomRightBadge inline bottomRightBadgeType="callArg" /> と
@@ -366,7 +364,7 @@ export const old = () => {
       {episode1[i++]()}
       <P>
         このとき、 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-        の料理に <TopRightBadge inline topRightBadgeType="betaReduced" />{' '}
+        の料理に <TopBadge inline topBadgeType="betaReduced" />{' '}
         というバッジが表示されます。
       </P>
       <SideNoteSection
@@ -382,11 +380,11 @@ export const old = () => {
         <P>
           <Strong>答え:</Strong>{' '}
           <Em>
-            マッチ <TopRightBadge inline topRightBadgeType="match" /> した{' '}
+            マッチ <TopBadge inline topBadgeType="match" /> した{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
             のハンバーガー <Emoji size="mdlg">🍔</Emoji> が、チキン{' '}
             <Emoji size="mdlg">🍗</Emoji> になります{' '}
-            <TopRightBadge inline topRightBadgeType="betaReduced" />。
+            <TopBadge inline topBadgeType="betaReduced" />。
           </Em>
         </P>
         {episode1[i++]()}
@@ -519,16 +517,15 @@ export const old = () => {
       </P>
       <P>
         <Strong>次は、</Strong>マッチするかどうか{' '}
-        <TopRightBadge inline topRightBadgeType="match" /> 見てみましょう。
+        <TopBadge inline topBadgeType="match" /> 見てみましょう。
       </P>
       {episode2[j++]()}
       <P>
         <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の寿司{' '}
         <Emoji size="mdlg">🍣</Emoji> はマッチ{' '}
-        <TopRightBadge inline topRightBadgeType="match" />{' '}
-        しましたが、サンドイッチ <Emoji size="mdlg">🥪</Emoji>{' '}
-        はマッチしませんでした。{' '}
-        <TopRightBadge inline topRightBadgeType="unmatch" />
+        <TopBadge inline topBadgeType="match" /> しましたが、サンドイッチ{' '}
+        <Emoji size="mdlg">🥪</Emoji> はマッチしませんでした。{' '}
+        <TopBadge inline topBadgeType="unmatch" />
       </P>
       {episode2[j++]()}
       <P>
@@ -582,7 +579,7 @@ export const old = () => {
       {episode2[j++]()}
       <P>
         <Em>
-          見ての通り、マッチ <TopRightBadge inline topRightBadgeType="match" />{' '}
+          見ての通り、マッチ <TopBadge inline topBadgeType="match" />{' '}
           を探す際に、{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
           の料理は
@@ -600,8 +597,7 @@ export const old = () => {
             のバッジをつける。
           </UlLi>
           <UlLi>
-            マッチ <TopRightBadge inline topRightBadgeType="match" />{' '}
-            を探す際に、
+            マッチ <TopBadge inline topBadgeType="match" /> を探す際に、
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
             の料理は
             <Strong>無視してかまわない</Strong>。

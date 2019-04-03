@@ -74,7 +74,7 @@ export function toBetaReducePreviewBefore(
           nextExpression: {
             ...e,
             highlightType: 'highlighted',
-            topRightBadgeType: 'match',
+            topBadgeType: 'match',
             bottomRightBadgeType: 'funcBound'
           },
           matchExists: true
@@ -84,7 +84,7 @@ export function toBetaReducePreviewBefore(
           nextExpression: {
             ...e,
             highlightType: 'highlighted',
-            topRightBadgeType: 'unmatch',
+            topBadgeType: 'unmatch',
             bottomRightBadgeType: 'funcBound'
           },
           matchExists: false
@@ -95,7 +95,7 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'active',
-          topRightBadgeType: 'none',
+          topBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         },
         matchExists: false
@@ -105,7 +105,7 @@ export function toBetaReducePreviewBefore(
         nextExpression: {
           ...e,
           highlightType: 'active',
-          topRightBadgeType: 'none',
+          topBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         },
         matchExists: false
@@ -148,13 +148,13 @@ const funcArg = (
     ? {
         ...e,
         highlightType: 'highlighted',
-        topRightBadgeType: 'match',
+        topBadgeType: 'match',
         bottomRightBadgeType: 'funcArg'
       }
     : {
         ...e,
         highlightType: 'highlighted',
-        topRightBadgeType: 'unmatch',
+        topBadgeType: 'unmatch',
         bottomRightBadgeType: 'funcArg'
       }
 

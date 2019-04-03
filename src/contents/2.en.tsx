@@ -10,7 +10,7 @@ import {
 } from 'src/components/Yc/AllExpressionRunners'
 import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -51,15 +51,15 @@ export const old = () => {
       </P>
       <P>
         <Strong>Next:</Strong> Let’s look at matches{' '}
-        <TopRightBadge inline topRightBadgeType="match" />.
+        <TopBadge inline topBadgeType="match" />.
       </P>
       {episode2[i++]()}
       <P>
         On <BottomRightBadge inline bottomRightBadgeType="funcBound" />, sushi{' '}
         <Emoji size="mdlg">🍣</Emoji> matches{' '}
-        <TopRightBadge inline topRightBadgeType="match" />, but sandwich{' '}
+        <TopBadge inline topBadgeType="match" />, but sandwich{' '}
         <Emoji size="mdlg">🥪</Emoji> does not match{' '}
-        <TopRightBadge inline topRightBadgeType="unmatch" />.
+        <TopBadge inline topBadgeType="unmatch" />.
       </P>
       {episode2[i++]()}
       <P>
@@ -115,8 +115,7 @@ export const old = () => {
         <Em>
           you can <Strong>ignore</Strong>{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
-          we’re checking for matches{' '}
-          <TopRightBadge inline topRightBadgeType="match" />.
+          we’re checking for matches <TopBadge inline topBadgeType="match" />.
         </Em>
       </P>
       <P>Let’s keep going: {h('ycTryUntilDone')}:</P>
@@ -131,8 +130,7 @@ export const old = () => {
           <UlLi>
             You can ignore{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> when
-            we’re checking for matches{' '}
-            <TopRightBadge inline topRightBadgeType="match" />.
+            we’re checking for matches <TopBadge inline topBadgeType="match" />.
           </UlLi>
         </Ul>
       </SideNoteSection>

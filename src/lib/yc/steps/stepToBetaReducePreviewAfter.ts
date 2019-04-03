@@ -29,7 +29,7 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
     return {
       ...e,
       highlightType: 'highlighted',
-      topRightBadgeType: 'betaReduced',
+      topBadgeType: 'betaReduced',
       bottomRightBadgeType: 'funcBound'
     }
   } else if (isFunction(e)) {
@@ -94,7 +94,7 @@ export function toBetaReducePreviewAfter(
         return {
           ...e,
           highlightType: 'active',
-          topRightBadgeType: 'none',
+          topBadgeType: 'none',
           bottomRightBadgeType: 'funcBound'
         }
       }
@@ -102,14 +102,14 @@ export function toBetaReducePreviewAfter(
       return {
         ...e,
         highlightType: 'active',
-        topRightBadgeType: 'none',
+        topBadgeType: 'none',
         bottomRightBadgeType: 'funcUnbound'
       }
     } else {
       return {
         ...e,
         highlightType: 'highlighted',
-        topRightBadgeType: 'betaReduceCallArg',
+        topBadgeType: 'betaReduceCallArg',
         bottomRightBadgeType: 'callArg'
       }
     }

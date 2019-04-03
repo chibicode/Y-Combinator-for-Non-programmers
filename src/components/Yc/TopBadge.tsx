@@ -3,23 +3,23 @@ import { css, jsx } from '@emotion/core'
 import Emoji from 'src/components/Emoji'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
-interface TopRightBadgeProps {
-  topRightBadgeType: Exclude<VariableExpression['topRightBadgeType'], 'none'>
+interface TopBadgeProps {
+  topBadgeType: Exclude<VariableExpression['topBadgeType'], 'none'>
   inline?: boolean
 }
 
-const topRightBadgeTypeToEmoji = (
-  x: Exclude<TopRightBadgeProps['topRightBadgeType'], 'betaReduceCallArg'>
+const topBadgeTypeToEmoji = (
+  x: Exclude<TopBadgeProps['topBadgeType'], 'betaReduceCallArg'>
 ) =>
   ({
-    betaReduced: '⬇️',
+    betaReduced: '↘',
     match: '✅',
     unmatch: '❌',
     conflict: '🔀',
     conflictResolved: '🆕'
   }[x])
 
-const TopRightBadge = ({ topRightBadgeType, inline }: TopRightBadgeProps) => (
+const TopBadge = ({ topBadgeType, inline }: TopBadgeProps) => (
   <span
     css={[
       css`
@@ -39,12 +39,10 @@ const TopRightBadge = ({ topRightBadgeType, inline }: TopRightBadgeProps) => (
         `
     ]}
   >
-    {topRightBadgeType !== 'betaReduceCallArg' && (
-      <Emoji noVerticalTransform>
-        {topRightBadgeTypeToEmoji(topRightBadgeType)}
-      </Emoji>
+    {topBadgeType !== 'betaReduceCallArg' && (
+      <Emoji noVerticalTransform>{topBadgeTypeToEmoji(topBadgeType)}</Emoji>
     )}
   </span>
 )
 
-export default TopRightBadge
+export default TopBadge

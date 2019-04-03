@@ -17,7 +17,7 @@ import SideNoteSection from 'src/components/SideNoteSection'
 import { episode1, episode1Quiz } from 'src/components/Yc/AllExpressionRunners'
 import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -35,7 +35,7 @@ const Step1 = () => (
 
 const Step2 = () => (
   <>
-    Check for matches <TopRightBadge inline topRightBadgeType="match" /> in{' '}
+    Check for matches <TopBadge inline topBadgeType="match" /> in{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" />
   </>
@@ -43,7 +43,7 @@ const Step2 = () => (
 
 const Step3 = () => (
   <>
-    Matched <TopRightBadge inline topRightBadgeType="match" />{' '}
+    Matched <TopBadge inline topBadgeType="match" />{' '}
     <BottomRightBadge inline bottomRightBadgeType="funcBound" /> become the same
     as <BottomRightBadge inline bottomRightBadgeType="callArg" />
   </>
@@ -223,8 +223,7 @@ export const old = () => {
           If some food items exist in both{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />, we call
-          it a <Strong>match</Strong>{' '}
-          <TopRightBadge inline topRightBadgeType="match" />.
+          it a <Strong>match</Strong> <TopBadge inline topBadgeType="match" />.
         </Em>
       </P>
       {episode1[i++]()}
@@ -232,7 +231,7 @@ export const old = () => {
         In the above case, there’s sushi <Emoji size="mdlg">🍣</Emoji> in both{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" /> and{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" />, so it’s a
-        match <TopRightBadge inline topRightBadgeType="match" />.
+        match <TopBadge inline topBadgeType="match" />.
       </P>
       <SideNoteSection
         heading={'Review Quiz: Step 2'}
@@ -261,7 +260,7 @@ export const old = () => {
         Next, we’ll look at{' '}
         <Em>
           <BottomRightBadge inline bottomRightBadgeType="callArg" /> and the
-          matching <TopRightBadge inline topRightBadgeType="match" /> item in{' '}
+          matching <TopBadge inline topBadgeType="match" /> item in{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />.
         </Em>
       </P>
@@ -269,15 +268,15 @@ export const old = () => {
       <P>
         <Strong>In this step</Strong>,{' '}
         <Em>
-          the matching <TopRightBadge inline topRightBadgeType="match" /> item
-          in <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+          the matching <TopBadge inline topBadgeType="match" /> item in{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
           <Strong>becomes the same</Strong> as{' '}
           <BottomRightBadge inline bottomRightBadgeType="callArg" />.
         </Em>{' '}
       </P>
       {episode1[i++]()}
       <P>
-        We show <TopRightBadge inline topRightBadgeType="betaReduced" /> next to{' '}
+        We show <TopBadge inline topBadgeType="betaReduced" /> next to{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcBound" /> when this
         happens.
       </P>
@@ -294,11 +293,11 @@ export const old = () => {
         <P>
           <Strong>Answer:</Strong>{' '}
           <Em>
-            <TopRightBadge inline topRightBadgeType="match" /> The matching
-            burger <Emoji size="mdlg">🍔</Emoji> in{' '}
+            <TopBadge inline topBadgeType="match" /> The matching burger{' '}
+            <Emoji size="mdlg">🍔</Emoji> in{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" /> becomes
             chicken <Emoji size="mdlg">🍗</Emoji>{' '}
-            <TopRightBadge inline topRightBadgeType="betaReduced" />.
+            <TopBadge inline topBadgeType="betaReduced" />.
           </Em>
         </P>
         {episode1[i++]()}

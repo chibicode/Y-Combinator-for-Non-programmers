@@ -19,7 +19,7 @@ import {
   ExpressionRunnerPairSimple,
   ExpressionRunnerSingleStep
 } from 'src/components/Yc/ExpressionRunnerShorthand'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopBadge from 'src/components/Yc/TopBadge'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
@@ -366,7 +366,7 @@ export const episode1 = [
         en: (
           <>
             <Emoji size="mdlg">🍣</Emoji> (
-            <TopRightBadge inline topRightBadgeType="match" />{' '}
+            <TopBadge inline topBadgeType="match" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />) became{' '}
             <Emoji size="mdlg">🥪</Emoji> (same as{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />)
@@ -375,7 +375,7 @@ export const episode1 = [
         jp: (
           <>
             <Emoji size="mdlg">🍣</Emoji> (
-            <TopRightBadge inline topRightBadgeType="match" />{' '}
+            <TopBadge inline topBadgeType="match" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />) が{' '}
             <Emoji size="mdlg">🥪</Emoji> になった(
             <BottomRightBadge inline bottomRightBadgeType="callArg" /> と同じ)

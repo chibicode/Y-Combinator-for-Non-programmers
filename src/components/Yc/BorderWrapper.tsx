@@ -12,14 +12,14 @@ import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 interface BorderWrapperProps {
   highlightType: HighlightOverrides
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
-  topRightBadgeType: VariableExpression['topRightBadgeType']
+  topBadgeType: VariableExpression['topBadgeType']
   children: React.ReactNode
 }
 
 const background = (
   highlightType: BorderWrapperProps['highlightType'],
   isDoneOrReady: boolean,
-  topRightBadgeType: BorderWrapperProps['topRightBadgeType']
+  topBadgeType: BorderWrapperProps['topBadgeType']
 ): SerializedStyles | undefined => {
   switch (highlightType) {
     case 'default': {
@@ -44,17 +44,17 @@ const background = (
       `
     }
     case 'highlighted': {
-      if (topRightBadgeType === 'match') {
+      if (topBadgeType === 'match') {
         return css`
           background: ${colors('green50')};
         `
-      } else if (topRightBadgeType === 'unmatch') {
+      } else if (topBadgeType === 'unmatch') {
         return css`
           background: ${colors('pink50')};
         `
       } else if (
-        topRightBadgeType === 'betaReduced' ||
-        topRightBadgeType === 'betaReduceCallArg'
+        topBadgeType === 'betaReduced' ||
+        topBadgeType === 'betaReduceCallArg'
       ) {
         return css`
           background: ${colors('blue50')};
@@ -89,7 +89,7 @@ const Cross = () => (
 const BorderWrapper = ({
   highlightType,
   bottomRightBadgeType,
-  topRightBadgeType,
+  topBadgeType,
   children
 }: BorderWrapperProps) => {
   const { isDoneOrReady, highlightOverrides } = useContext(
@@ -108,17 +108,17 @@ const BorderWrapper = ({
         background(
           highlightOverrides[bottomRightBadgeType] || highlightType,
           isDoneOrReady,
-          topRightBadgeType
+          topBadgeType
         ),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&
-          topRightBadgeType === 'none' &&
+          topBadgeType === 'none' &&
           css`
             border-right: 10px solid ${colors('yellow900')};
           `,
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcArg' &&
-          topRightBadgeType === 'none' &&
+          topBadgeType === 'none' &&
           css`
             border-left: 10px solid ${colors('pink400')};
           `

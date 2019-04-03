@@ -44,7 +44,7 @@ const buildVariableExpression = (
 ): StepVariable => ({
   name,
   highlightType: 'default',
-  topRightBadgeType: 'none',
+  topBadgeType: 'none',
   bottomRightBadgeType: 'none',
   type: 'variable',
   argPriorityAgg: [],
