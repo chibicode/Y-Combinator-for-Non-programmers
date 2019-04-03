@@ -83,17 +83,17 @@ const ExpressionRunnerControls = ({
       margin: ${spaces(0.75)} -2px 0 -2px;
     `}
   >
-    {!hideForwardAndBackButtons && !isPlaying && canStepBackward ? (
-      <Button
-        onClick={onPreviousClick}
-        css={css`
-          flex: 1;
-        `}
-      >
-        <H args={{ name: 'previous' }} />
-      </Button>
-    ) : (
-      !skipToTheEnd && (
+    {!showPlayButton &&
+      (!isPlaying && canStepBackward ? (
+        <Button
+          onClick={onPreviousClick}
+          css={css`
+            flex: 1;
+          `}
+        >
+          <H args={{ name: 'previous' }} />
+        </Button>
+      ) : (
         <div
           css={css`
             flex: 1;
@@ -101,8 +101,7 @@ const ExpressionRunnerControls = ({
             border: 2px solid transparent;
           `}
         />
-      )
-    )}
+      ))}
     {showPlayButton &&
       (canStepForward || isDone ? (
         <Button
@@ -117,7 +116,7 @@ const ExpressionRunnerControls = ({
           }
           css={[
             css`
-              flex: ${skipToTheEnd ? 0.5 : 1};
+              flex: 0.5;
             `,
             canStepForward &&
               !isPlaying &&
@@ -149,22 +148,22 @@ const ExpressionRunnerControls = ({
           `}
         />
       ))}
-    {!hideForwardAndBackButtons && !isPlaying && (canStepForward || isDone) ? (
-      <Button
-        onClick={canStepForward ? onNextClick : noOp}
-        disabled={!canStepForward}
-        css={css`
-          flex: 1;
-        `}
-      >
-        {canStepForward ? (
-          <H args={{ name: 'next' }} />
-        ) : (
-          <H args={{ name: 'done' }} />
-        )}
-      </Button>
-    ) : (
-      !skipToTheEnd && (
+    {!showPlayButton &&
+      (!isPlaying && (canStepForward || isDone) ? (
+        <Button
+          onClick={canStepForward ? onNextClick : noOp}
+          disabled={!canStepForward}
+          css={css`
+            flex: 1;
+          `}
+        >
+          {canStepForward ? (
+            <H args={{ name: 'next' }} />
+          ) : (
+            <H args={{ name: 'done' }} />
+          )}
+        </Button>
+      ) : (
         <div
           css={css`
             flex: 1;
@@ -172,8 +171,7 @@ const ExpressionRunnerControls = ({
             border: 2px solid transparent;
           `}
         />
-      )
-    )}
+      ))}
   </div>
 )
 
