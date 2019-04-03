@@ -383,6 +383,14 @@ export default () => (
       {
         title: <>早送りで見てみましょう</>,
         content: <>{AER.wunw}</>
+      },
+      {
+        title: <>…</>,
+        content: (
+          <>
+            <YcNextLessonButton nextEpisodeNumber={3} />
+          </>
+        )
       }
     ]}
   />

@@ -1247,7 +1247,6 @@ export const episode7 = [
 export const episode8 = [
   () => (
     <ExpressionRunner
-      hideForwardAndBackButtons
       expressionContainer={lessonExpressions.episode5Expression1}
       containerSize={'xs'}
       variableSize={'md'}

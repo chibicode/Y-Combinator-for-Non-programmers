@@ -39,7 +39,7 @@ export interface HProps {
       }
     | { name: 'next' }
     | { name: 'play' }
-    | { name: 'pause' }
+    | { name: 'playing' }
     | { name: 'reset' }
     | { name: 'previous' }
     | { name: 'whatWeHaveLearned' }
@@ -376,21 +376,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'pause') {
+  if (args.name === 'playing') {
     if (locale === 'en') {
       return (
         <>
-          <Strong>
-            Pause <Emoji>⏸</Emoji>
-          </Strong>
+          <Strong highlightType={highlightType}>Playing…</Strong>
         </>
       )
     } else {
       return (
         <>
-          <Strong>
-            一時停止 <Emoji>⏸</Emoji>
-          </Strong>
+          <Strong highlightType={highlightType}>実行中…</Strong>
         </>
       )
     }

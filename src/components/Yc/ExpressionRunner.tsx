@@ -48,7 +48,7 @@ export interface ExpressionRunnerProps {
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
-  explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitial'
+  explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitial' | 'doneOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
@@ -215,6 +215,14 @@ const ExpressionRunner = ({
     expressionContainerManagerState,
     setExpressionContainerManagerState
   })
+  const isDone = isContainerWithState(
+    expressionContainerManagerState.expressionContainer,
+    'done'
+  )
+  const isReady = isContainerWithState(
+    expressionContainerManagerState.expressionContainer,
+    'ready'
+  )
 
   return (
     <ExpressionRunnerContext.Provider
@@ -223,15 +231,7 @@ const ExpressionRunner = ({
         highlightOverrides,
         hideBottomRightBadges,
         variableSize,
-        isDoneOrReady:
-          isContainerWithState(
-            expressionContainerManagerState.expressionContainer,
-            'done'
-          ) ||
-          isContainerWithState(
-            expressionContainerManagerState.expressionContainer,
-            'ready'
-          )
+        isDoneOrReady: isDone || isReady
       }}
     >
       <div
@@ -245,7 +245,8 @@ const ExpressionRunner = ({
         >
           {(explanationsVisibility === 'visible' ||
             (explanationsVisibility === 'hiddenInitial' &&
-              expressionContainerManagerState.numStepsTaken > 0)) && (
+              expressionContainerManagerState.numStepsTaken > 0) ||
+            (explanationsVisibility === 'doneOnly' && isDone)) && (
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
@@ -256,10 +257,7 @@ const ExpressionRunner = ({
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
-                isDone={isContainerWithState(
-                  expressionContainerManagerState.expressionContainer,
-                  'done'
-                )}
+                isDone={isDone}
                 currentStep={expressionContainerManagerState.currentStep}
                 currentSubstep={expressionContainerManagerState.currentSubstep}
                 showAllShowSteps={showAllShowSteps}
@@ -308,13 +306,9 @@ const ExpressionRunner = ({
               canStepBackward={expressionContainerManagerState.canStepBackward}
               showPlayButton={!hidePlayButton}
               isPlaying={isPlaying}
-              isDone={isContainerWithState(
-                expressionContainerManagerState.expressionContainer,
-                'done'
-              )}
+              isDone={isDone}
               onAutoClick={actions.autoplay}
               onSkipToTheEndClick={actions.skipToTheEnd}
-              onPauseClick={actions.pause}
               onResetClick={actions.reset}
               skipToTheEnd={skipToTheEnd}
             />

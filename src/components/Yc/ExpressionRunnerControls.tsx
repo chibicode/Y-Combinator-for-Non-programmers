@@ -51,7 +51,6 @@ interface ExpressionRunnerControlsProps {
   onNextClick: () => void
   onPreviousClick: () => void
   onAutoClick: () => void
-  onPauseClick: () => void
   onResetClick: () => void
   onSkipToTheEndClick: () => void
 }
@@ -68,7 +67,6 @@ const ExpressionRunnerControls = ({
   showPlayButton,
   isPlaying,
   onAutoClick,
-  onPauseClick,
   onResetClick,
   onSkipToTheEndClick,
   skipToTheEnd,
@@ -103,12 +101,11 @@ const ExpressionRunnerControls = ({
     {showPlayButton &&
       (canStepForward || isDone ? (
         <Button
+          disabled={isPlaying && !isDone}
           onClick={
             canStepForward
               ? skipToTheEnd
                 ? onSkipToTheEndClick
-                : isPlaying
-                ? onPauseClick
                 : onAutoClick
               : onResetClick
           }
@@ -129,7 +126,7 @@ const ExpressionRunnerControls = ({
         >
           {canStepForward ? (
             isPlaying ? (
-              <H args={{ name: 'pause' }} highlightType="none" />
+              <H args={{ name: 'playing' }} highlightType="none" />
             ) : (
               <H args={{ name: 'play' }} highlightType="none" />
             )

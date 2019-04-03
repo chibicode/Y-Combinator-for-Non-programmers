@@ -44,20 +44,23 @@ ExpressionRunnerSimple.defaultProps = {
 export const ExpressionRunnerPlayButtonOnly = ({
   expressionContainer,
   initialState,
-  skipToTheEnd
+  skipToTheEnd,
+  hideFuncUnboundBadgeOnExplanation
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   skipToTheEnd: boolean
+  hideFuncUnboundBadgeOnExplanation: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hidePriorities
     resetIndex
+    hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
     hideRemainingTime
     variableSize={'lg'}
-    explanationsVisibility="hiddenInitial"
+    explanationsVisibility="doneOnly"
     initializeInstructions={[
       {
         type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -69,7 +72,8 @@ export const ExpressionRunnerPlayButtonOnly = ({
 
 ExpressionRunnerPlayButtonOnly.defaultProps = {
   initialState: 'default',
-  skipToTheEnd: true
+  skipToTheEnd: true,
+  hideFuncUnboundBadgeOnExplanation: true
 }
 
 export const ExpressionRunnerPairSimple = ({
