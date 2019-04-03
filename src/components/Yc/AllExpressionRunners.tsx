@@ -166,6 +166,26 @@ export default {
       expressionContainer={lessonExpressions.e1E1}
       isDone
     />
+  ),
+  sgfj: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="showFuncBound"
+      finalState="betaReducePreviewBefore"
+    />
+  ),
+  gwtp: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="betaReducePreviewBefore"
+      finalState="betaReducePreviewCrossed"
+    />
+  ),
+  ahsd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E2}
+      isDone
+    />
   )
 }
 

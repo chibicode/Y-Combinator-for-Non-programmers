@@ -4,7 +4,7 @@ import {
   H3,
   P,
   Strong,
-  // InlineHeader,
+  InlineHeader,
   Ul,
   UlLi,
   Ol,
@@ -164,8 +164,8 @@ export default () => (
               size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
-                <Emoji>✅</Emoji>,
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
+                <Emoji>✅</Emoji>
               ]}
             />
             <P>
@@ -220,8 +220,8 @@ export default () => (
             <EmojiSeparator
               size="sm"
               nodes={[
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <Emoji>❌</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               ]}
             />
@@ -235,8 +235,150 @@ export default () => (
               だけになります。
             </P>
             {AER.osqo}
+            <P>以上です！簡単だったでしょう？</P>
           </>
         )
+      },
+      {
+        title: <>ここまでのまとめ</>,
+        type: 'summary',
+        content: (
+          <>
+            <P>まとめるとこんな感じになります:</P>
+            <Ol>
+              <OlLi>
+                <InlineHeader>印をつける:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              </OlLi>
+              <OlLi>
+                <InlineHeader>一致チェック:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                <Emoji>✅</Emoji>
+              </OlLi>
+              <OlLi>
+                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <Emoji>➡️</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              </OlLi>
+              <OlLi>
+                <InlineHeader>消す:</InlineHeader> <Emoji>❌</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              </OlLi>
+            </Ol>
+          </>
+        )
+      },
+      {
+        title: <>一致しなかったら？</>,
+        content: (
+          <>
+            <P>
+              <Strong>
+                もし
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                が一致しなかったらどうするのでしょうか？
+              </Strong>
+            </P>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
+                <Emoji>❌</Emoji>
+              ]}
+            />
+            <P>
+              たとえば、前回にもあったマクドナルド式の
+              <H args={{ name: 'bentoBox', short: true }} />
+              は、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が一致しません。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.sgfj}
+            <P>こういう場合どうするかというと…(下に続く)</P>
+          </>
+        )
+      },
+      {
+        title: <>コピペはせず、消すだけ！</>,
+        content: (
+          <>
+            <P>
+              <Strong>
+                コピペ (
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <Emoji>➡️</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                )はせずに、ただ
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                を消すだけです。
+              </Strong>
+            </P>
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.gwtp}
+            <P>
+              そして、最終的に
+              <EmojiWithText letter="d" />
+              だけになります。
+            </P>
+            {AER.ahsd}
+          </>
+        )
+      },
+      {
+        title: <>ここまでのまとめ(改訂版)</>,
+        type: 'summary',
+        content: (
+          <>
+            <P>
+              まとめるとこんな感じになります(ステップ3に変更点を加えました):
+            </P>
+            <Ol>
+              <OlLi>
+                <InlineHeader>印をつける:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              </OlLi>
+              <OlLi>
+                <InlineHeader>一致チェック:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                <Emoji>✅</Emoji>
+              </OlLi>
+              <OlLi>
+                <Strong>
+                  (<H args={{ name: 'match' }} />
+                  した部分のみ)
+                </Strong>
+                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <Emoji>➡️</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              </OlLi>
+              <OlLi>
+                <InlineHeader>消す:</InlineHeader> <Emoji>❌</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              </OlLi>
+            </Ol>
+          </>
+        )
+      },
+      {
+        title: <>早送りで見てみましょう</>,
+        content: <></>
       }
     ]}
   />

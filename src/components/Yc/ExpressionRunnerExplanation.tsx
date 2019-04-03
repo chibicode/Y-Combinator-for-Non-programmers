@@ -201,8 +201,7 @@ const stateToExplanation = ({
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            がひとつも一致しませんでした{' '}
-            <TopBadge topBadgeType="unmatch" inline />
+            が一致しませんでした <TopBadge topBadgeType="unmatch" inline />
           </>
         )
       }
