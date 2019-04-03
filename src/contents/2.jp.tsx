@@ -23,7 +23,7 @@ import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-// import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiWithText from 'src/components/EmojiWithText'
 // import YesNoButtons from 'src/components/YesNoButtons'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
@@ -202,6 +202,39 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.evqx}
+          </>
+        )
+      },
+      {
+        title: <>法則その4: 消す</>,
+        content: (
+          <>
+            <P>
+              最後に、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                が消えます。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>❌</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.msiw}
+            <P>
+              そして、最終的に
+              <EmojiWithText letter="b" />
+              だけになります。
+            </P>
+            {AER.osqo}
           </>
         )
       }

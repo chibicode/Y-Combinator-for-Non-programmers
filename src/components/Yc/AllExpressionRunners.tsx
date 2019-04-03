@@ -106,7 +106,6 @@ export default {
   vvjn: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E5}
-      initialState="default"
       isDone
     />
   ),
@@ -153,6 +152,19 @@ export default {
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewBefore"
       finalState="betaReducePreviewAfter"
+    />
+  ),
+  msiw: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="betaReducePreviewAfter"
+      finalState="betaReducePreviewCrossed"
+    />
+  ),
+  osqo: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E1}
+      isDone
     />
   )
 }

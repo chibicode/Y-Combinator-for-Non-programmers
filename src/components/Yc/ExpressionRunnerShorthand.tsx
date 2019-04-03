@@ -37,7 +37,8 @@ export const ExpressionRunnerSimple = ({
 )
 
 ExpressionRunnerSimple.defaultProps = {
-  isDone: false
+  isDone: false,
+  initialState: 'default'
 }
 
 export const ExpressionRunnerPlayButtonOnly = ({
