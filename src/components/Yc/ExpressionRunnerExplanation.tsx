@@ -43,7 +43,7 @@ const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
       )}
       <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
       <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-      はこうなります
+      の印をつけます
     </>
   )
 
@@ -195,15 +195,15 @@ const stateToExplanation = ({
         return matchExists ? (
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            にマッチ <TopRightBadge topRightBadgeType="match" inline />{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> に一致{' '}
+            <TopRightBadge topRightBadgeType="match" inline />{' '}
             する料理があります
           </>
         ) : (
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            がひとつもマッチしませんでした{' '}
+            がひとつも一致しませんでした{' '}
             <TopRightBadge topRightBadgeType="unmatch" inline />
           </>
         )
@@ -222,7 +222,7 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            マッチした{' '}
+            一致した{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
             の料理が <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             と入れ替わります{' '}

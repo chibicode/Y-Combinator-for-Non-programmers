@@ -6,7 +6,7 @@ import { fontSizes, ns, spaces } from 'src/lib/theme'
 
 interface EmojiSeparatorProps {
   emojis: string[]
-  badges?: React.ReactNode[]
+  nodes?: React.ReactNode[]
   size: 'sm' | 'md' | 'lg'
   alignCenter: boolean
   Component: React.ComponentType | string
@@ -29,7 +29,7 @@ const margins = (size: EmojiSeparatorProps['size']) =>
 
 const EmojiSeparator = ({
   emojis,
-  badges,
+  nodes,
   size,
   Component,
   alignCenter,
@@ -48,9 +48,9 @@ const EmojiSeparator = ({
       cssOverrides
     ]}
   >
-    {badges
-      ? badges.map((badge, index) => (
-          <Fragment key={`${badge}${index}`}>{badge} </Fragment>
+    {nodes
+      ? nodes.map((node, index) => (
+          <Fragment key={`node-${index}`}>{node} </Fragment>
         ))
       : emojis.map((emoji, index) => (
           <Fragment key={`${emoji}${index}`}>

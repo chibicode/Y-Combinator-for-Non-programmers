@@ -140,6 +140,13 @@ export default {
       initialState="active"
       finalState="showFuncBound"
     />
+  ),
+  rqjo: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="showFuncBound"
+      finalState="betaReducePreviewBefore"
+    />
   )
 }
 

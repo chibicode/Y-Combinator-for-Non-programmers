@@ -134,7 +134,7 @@ export default () => (
             </P>
             <EmojiSeparator
               size="sm"
-              badges={[
+              nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -151,8 +151,42 @@ export default () => (
         )
       },
       {
-        title: '法則その2: 印をつける',
-        content: <></>
+        title: (
+          <>
+            法則その2:{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            が一致するかチェック
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                続いて、
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                が一致するかチェックし、一致した料理には、
+                <Emoji>✅</Emoji>を付けます。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <Emoji>✅</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ]}
+            />
+            <P>
+              <Em>
+                <H args={{ name: 'next' }} />
+                を押してみてください:
+              </Em>
+            </P>
+            {AER.rqjo}
+          </>
+        )
       }
     ]}
   />
