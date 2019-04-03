@@ -1,33 +1,21 @@
 import React from 'react'
 import {
   Em,
-  H3,
   P,
   Strong,
   InlineHeader,
-  Ul,
-  UlLi,
   Ol,
   OlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import SideNoteSection from 'src/components/SideNoteSection'
-import AER, {
-  episode1,
-  episode1Quiz,
-  episode2,
-  episode2Quiz
-} from 'src/components/Yc/AllExpressionRunners'
-import BasicTrueFalseQuiz from 'src/components/Yc/BasicTrueFalseQuiz'
+import AER from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
-import h from 'src/lib/h'
 
 export default () => (
   <EpisodeCardList
@@ -354,15 +342,12 @@ export default () => (
             </P>
             {AER.xwim}
             <P>
-              答えは次のページにありますが、試しに
+              次のページで詳しく説明しますが、
               <H args={{ name: 'yesNoQuiz' }} />
-              をやってみましょう。
+              をやってみましょう。勘で答えてみてください。
             </P>
             <P>
-              <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox', short: true }} />を
-              <H args={{ name: 'play' }} />
-              すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
             {AER.awxz}
             <YesNoButtons answer="yes" />

@@ -62,30 +62,6 @@ export const e2E1 = initializeExpressionContainer([
   'c'
 ])
 
-export const episode1Expression1 = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: 'a'
-  },
-  'b'
-])
-
-export const episode1Expression2 = initializeExpressionContainer([
-  {
-    arg: 'c',
-    body: 'c'
-  },
-  'd'
-])
-
-export const episode1Expression3 = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: ['b', 'a']
-  },
-  'c'
-])
-
 export const episode2Expression1 = initializeExpressionContainer([
   {
     arg: 'a',
@@ -96,25 +72,6 @@ export const episode2Expression1 = initializeExpressionContainer([
   },
   'd'
 ])
-
-export const episode2Expression2 = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: {
-        arg: 'c',
-        body: ['a', 'b']
-      }
-    }
-  },
-  'd'
-])
-
-export const episode2Expression3 = initializeExpressionContainer({
-  arg: 'c',
-  body: ['d', 'd']
-})
 
 export const episode4Expression1 = initializeExpressionContainer([
   {

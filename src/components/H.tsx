@@ -76,6 +76,7 @@ export interface HProps {
     | { name: 'unknownRule' }
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
+    | { name: 'whatHappensAtTheEndQuestion' }
 }
 
 const prefixColors = {
@@ -824,6 +825,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineHeader>質問:</InlineHeader>
+        </>
+      )
+    }
+  }
+  if (args.name === 'whatHappensAtTheEndQuestion') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'question' }} /> 上の
+          <H args={{ name: 'bentoBox', short: true }} />を
+          <H args={{ name: 'play' }} />
+          すると、<Strong>最終的に下のようになるでしょうか？</Strong>
         </>
       )
     }

@@ -69,9 +69,9 @@ export default () => (
               。
             </P>
             <P>
-              <InlineHeader>例その1:</InlineHeader> 上のマスには
+              <InlineHeader>例その1:</InlineHeader> 上段には
               <EmojiWithText letter="b" />
-              、下のマスには
+              、下段には
               <EmojiWithText letter="a" />
               がふたつ入っています。
             </P>
@@ -98,9 +98,9 @@ export default () => (
               の例を紹介していきます:
             </P>
             <P>
-              <InlineHeader>例その2:</InlineHeader> 上のマスには
+              <InlineHeader>例その2:</InlineHeader> 上段には
               <EmojiWithText letter="e" />
-              、下のマスには
+              、下段には
               <EmojiWithText letter="c" />と
               <EmojiWithText letter="d" />
               が入っています。
@@ -109,9 +109,9 @@ export default () => (
             <P>マクドナルドのメニューにありそうな食べ物ばかりですね！</P>
             <Hr />
             <P>
-              <InlineHeader>例その3:</InlineHeader> 上のマスには
+              <InlineHeader>例その3:</InlineHeader> 上段には
               <EmojiWithText letter="g" />
-              、下のマスには
+              、下段には
               <EmojiWithText letter="f" />
               がふたつ入っています。
             </P>
@@ -123,9 +123,9 @@ export default () => (
             </P>
             <Hr />
             <P>
-              <InlineHeader>例その4:</InlineHeader> 上のマスには
+              <InlineHeader>例その4:</InlineHeader> 上段には
               <EmojiWithText letter="j" />
-              、下のマスには
+              、下段には
               <EmojiWithText letter="h" />と
               <EmojiWithText letter="i" />
               が入っています。

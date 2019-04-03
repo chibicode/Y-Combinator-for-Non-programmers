@@ -6,8 +6,68 @@ import { episode4 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import AER from 'src/components/Yc/AllExpressionRunners'
+import H from 'src/components/H'
+import EmojiWithText from 'src/components/EmojiWithText'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: '3つの料理',
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              前回の最後には、以下のような
+              <H args={{ name: 'bentoBox' }} />
+              を紹介しました。
+            </P>
+            {AER.xwim}
+            <P>
+              <Strong>
+                下段に3つの料理(
+                <EmojiWithText letter="a" />、<EmojiWithText letter="b" />、
+                <EmojiWithText letter="a" />)
+              </Strong>
+              がありますが、この場合どうなるのかを解説していきます。
+            </P>
+          </>
+        )
+      },
+      {
+        title: '真ん中の料理',
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              の代わりに、
+              <Strong>
+                真ん中にある料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の印をつけます。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <Emoji>🤗</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+          </>
+        )
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0
