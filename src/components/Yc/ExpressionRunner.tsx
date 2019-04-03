@@ -56,7 +56,6 @@ export interface ExpressionRunnerProps {
   containerSize: ContainerProps['size']
   resetIndex: boolean
   hidePlayButton?: boolean
-  hideForwardAndBackButtons?: boolean
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
@@ -178,7 +177,6 @@ const ExpressionRunner = ({
   variableSize,
   containerSize,
   hidePlayButton,
-  hideForwardAndBackButtons,
   showAllShowSteps,
   highlightOverrides,
   hideBottomRightBadges,
@@ -319,7 +317,6 @@ const ExpressionRunner = ({
               onPauseClick={actions.pause}
               onResetClick={actions.reset}
               skipToTheEnd={skipToTheEnd}
-              hideForwardAndBackButtons={!!hideForwardAndBackButtons}
             />
           )}
         </Container>
@@ -340,7 +337,6 @@ ExpressionRunner.defaultProps = {
   resetIndex: false,
   skipToTheEnd: false,
   hidePlayButton: false,
-  hideForwardAndBackButtons: false,
   isFastForwardPlayButton: false,
   hideFuncUnboundBadgeOnExplanation: false,
   hideRemainingTime: false

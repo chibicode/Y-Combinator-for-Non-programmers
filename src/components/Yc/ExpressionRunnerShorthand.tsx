@@ -56,7 +56,6 @@ export const ExpressionRunnerPlayButtonOnly = ({
     resetIndex
     skipToTheEnd={skipToTheEnd}
     hideRemainingTime
-    hideForwardAndBackButtons
     variableSize={'lg'}
     explanationsVisibility="hiddenInitial"
     initializeInstructions={[

@@ -47,7 +47,6 @@ interface ExpressionRunnerControlsProps {
   isDone: boolean
   isPlaying: boolean
   showPlayButton: boolean
-  hideForwardAndBackButtons: boolean
   skipToTheEnd: boolean
   onNextClick: () => void
   onPreviousClick: () => void
@@ -73,7 +72,6 @@ const ExpressionRunnerControls = ({
   onResetClick,
   onSkipToTheEndClick,
   skipToTheEnd,
-  hideForwardAndBackButtons,
   isDone
 }: ExpressionRunnerControlsProps) => (
   <div
