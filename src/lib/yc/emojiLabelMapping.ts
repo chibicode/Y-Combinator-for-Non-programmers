@@ -34,13 +34,13 @@ const emojiLabelMapping: {
     en: 'curry',
     jp: 'カレー'
   },
-  '🌭': {
-    en: 'hotdog',
-    jp: 'ホットドッグ'
+  '🥦': {
+    en: 'broccoli',
+    jp: 'ブロッコリー'
   },
-  '🍚': {
-    en: 'rice',
-    jp: 'ライス'
+  '🌽': {
+    en: 'corn',
+    jp: 'トウモロコシ'
   },
   '🍝': {
     en: 'spaghetti',
@@ -48,7 +48,7 @@ const emojiLabelMapping: {
   },
   '🥕': {
     en: 'carrot',
-    jp: 'にんじん'
+    jp: 'ニンジン'
   },
   '🥗': {
     en: 'salad',

@@ -4,6 +4,7 @@ import {
   Img,
   P,
   PFullWidth,
+  Hr,
   Strong,
   InlineHeader
 } from 'src/components/ContentTags'
@@ -105,8 +106,10 @@ export default () => (
               が入っています。
             </P>
             {AER.imyd}
+            <P>マクドナルドのメニューにありそうな食べ物ばかりですね！</P>
+            <Hr />
             <P>
-              <InlineHeader>例その3:</InlineHeader> こちらは、上のマスには
+              <InlineHeader>例その3:</InlineHeader> 上のマスには
               <EmojiWithText letter="g" />
               、下のマスには
               <EmojiWithText letter="f" />
@@ -114,7 +117,13 @@ export default () => (
             </P>
             {AER.emmb}
             <P>
-              <InlineHeader>例その4:</InlineHeader> こちらは、上のマスには
+              こちらは、イタリアンな
+              <H args={{ name: 'bentoBox', short: true }} />
+              ですね！
+            </P>
+            <Hr />
+            <P>
+              <InlineHeader>例その4:</InlineHeader> 上のマスには
               <EmojiWithText letter="j" />
               、下のマスには
               <EmojiWithText letter="h" />と
@@ -122,6 +131,7 @@ export default () => (
               が入っています。
             </P>
             {AER.jozw}
+            <P>こちらは普通に美味しそうですね。</P>
           </>
         )
       },
@@ -191,7 +201,10 @@ export default () => (
             <P>
               実はこれ、
               <H args={{ name: 'unknownRule' }} />
-              に従っています。その法則を説明する前に、他の
+              に従っているんです。
+            </P>
+            <P>
+              その法則を説明する前に、他の
               <H args={{ name: 'bentoBox' }} />
               も実行してみましょう。
             </P>
@@ -312,13 +325,16 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>質問:</InlineHeader> こちらの
-              <H args={{ name: 'bentoBox' }} />を<H args={{ name: 'play' }} />
-              すると、
+              <InlineHeader>質問:</InlineHeader>{' '}
+              こちらに、ヘルシーな野菜が入っている
+              <H args={{ name: 'bentoBox' }} />
+              があります。
             </P>
             {AER.loai}
             <P>
-              <Strong>最終的に下のようになるでしょうか？</Strong>
+              これを
+              <H args={{ name: 'play' }} />
+              すると、<Strong>最終的に下のようになるでしょうか？</Strong>
               これまでの法則から予想してみてください。
             </P>
             {AER.vvjn}
@@ -376,7 +392,7 @@ export default () => (
               <Strong>
                 2問目の正解は<Emoji>❌</Emoji>
               </Strong>{' '}
-              (<EmojiWithText letter="o" />
+              (<EmojiWithText letter="k" />
               ではない) でした。
             </P>
           </>

@@ -149,6 +149,10 @@ export default () => (
             {AER.ozbe}
           </>
         )
+      },
+      {
+        title: '法則その2: 印をつける',
+        content: <></>
       }
     ]}
   />

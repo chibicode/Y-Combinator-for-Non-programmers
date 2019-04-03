@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
-import { colors } from 'src/lib/theme'
+import { maxWidths, spaces, colors } from 'src/lib/theme'
 
 export const Hr = styled.hr`
   border-top: none;
-  border-bottom: 1px solid ${colors('grey300')};
-  margin-top: 2em;
-  margin-bottom: 2em;
-  width: 25%;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid ${colors('white')};
+  margin: ${spaces(2)} auto ${spaces(2)};
+  max-width: ${maxWidths('xxxs')};
 `

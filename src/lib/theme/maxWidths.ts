@@ -1,4 +1,5 @@
 export const allMaxWidths = {
+  xxxs: (1104 / 12) * 2,
   xxs: (1104 / 12) * 4,
   xs: (1104 / 12) * 6,
   sm: (1104 / 12) * 9,
