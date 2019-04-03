@@ -382,12 +382,38 @@ export default () => (
       },
       {
         title: <>早送りで見てみましょう</>,
-        content: <>{AER.wunw}</>
-      },
-      {
-        title: <>…</>,
         content: (
           <>
+            <P>
+              締めくくりに、それぞれ最初から最後まで早送りで見てみましょう。
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.wunw}
+            <P>
+              こちらも
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.jbam}
+          </>
+        )
+      },
+      {
+        title: <>以上、弁当箱の法則でした</>,
+        content: (
+          <>
+            <P>
+              次からはもう少し複雑な
+              <H args={{ name: 'bentoBox' }} />
+              が登場します。
+            </P>
+            <P>
+              <InlineHeader>たとえばこちらをご覧ください。</InlineHeader>
+              下には3つのマスがありますね。この場合はどうなるのでしょうか？
+            </P>
+            {AER.xwim}
+            <P>次のページで見ていきましょう！</P>
             <YcNextLessonButton nextEpisodeNumber={3} />
           </>
         )

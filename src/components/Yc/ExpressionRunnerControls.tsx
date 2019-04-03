@@ -126,9 +126,11 @@ const ExpressionRunnerControls = ({
         >
           {canStepForward ? (
             isPlaying ? (
-              <H args={{ name: 'playing' }} highlightType="none" />
-            ) : (
+              <H args={{ name: 'fastForwarding' }} highlightType="none" />
+            ) : skipToTheEnd ? (
               <H args={{ name: 'play' }} highlightType="none" />
+            ) : (
+              <H args={{ name: 'fastForward' }} highlightType="none" />
             )
           ) : (
             <H args={{ name: 'reset' }} highlightType="none" />

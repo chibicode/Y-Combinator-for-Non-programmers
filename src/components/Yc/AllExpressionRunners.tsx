@@ -140,7 +140,15 @@ export default {
       initialState="active"
       skipToTheEnd={false}
     />
-  )
+  ),
+  jbam: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="active"
+      skipToTheEnd={false}
+    />
+  ),
+  xwim: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e2E1} />
 }
 
 // NOTE: Use functions instead of just JSX.Element inside because

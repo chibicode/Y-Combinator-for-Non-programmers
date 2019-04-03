@@ -22,6 +22,7 @@ export interface HProps {
   episodeNumberOverrides?: number
   args:
     | { name: 'pressNext' }
+    | { name: 'pressFastForward' }
     | { name: 'yesNoQuizSeeAnswer' }
     | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
     | { name: 'yesNoQuiz' }
@@ -39,7 +40,8 @@ export interface HProps {
       }
     | { name: 'next' }
     | { name: 'play' }
-    | { name: 'playing' }
+    | { name: 'fastForward' }
+    | { name: 'fastForwarding' }
     | { name: 'reset' }
     | { name: 'previous' }
     | { name: 'whatWeHaveLearned' }
@@ -376,17 +378,36 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'playing') {
+  if (args.name === 'fastForward') {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>Playing…</Strong>
+          <Strong highlightType={highlightType}>
+            Fast Forward <Emoji>⏩</Emoji>
+          </Strong>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>実行中…</Strong>
+          <Strong highlightType={highlightType}>
+            早送り <Emoji>⏩</Emoji>
+          </Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'fastForwarding') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Strong highlightType={highlightType}>Fast Forwarding…</Strong>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Strong highlightType={highlightType}>早送り中…</Strong>
         </>
       )
     }
@@ -765,6 +786,26 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Em>
             <H args={{ name: 'next' }} />
+            を押してみてください:
+          </Em>
+        </>
+      )
+    }
+  }
+  if (args.name === 'pressFastForward') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Em>
+            Press <H args={{ name: 'fastForward' }} />:
+          </Em>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Em>
+            <H args={{ name: 'fastForward' }} />
             を押してみてください:
           </Em>
         </>
