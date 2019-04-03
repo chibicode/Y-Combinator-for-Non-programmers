@@ -47,7 +47,6 @@ const Button = ({
           : colors('white')};
         color: ${colors('grey800')};
         text-decoration: none;
-        line-height: ${lineHeights(1)};
         -webkit-user-select: none;
         box-shadow: ${status === 'active'
           ? `inset 0 0 0 1px ${borderColor}`

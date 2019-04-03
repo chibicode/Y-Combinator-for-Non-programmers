@@ -54,7 +54,7 @@ const EmojiSeparator = ({
         ))
       : emojis.map((emoji, index) => (
           <Fragment key={`${emoji}${index}`}>
-            <Emoji>{emoji}</Emoji>{' '}
+            <Emoji size="sm">{emoji}</Emoji>{' '}
           </Fragment>
         ))}
   </Component>

@@ -220,7 +220,7 @@ export default () => (
             <EmojiSeparator
               size="sm"
               nodes={[
-                <Emoji>❌</Emoji>,
+                <Emoji>💥</Emoji>,
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               ]}
@@ -265,7 +265,7 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               </OlLi>
               <OlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>❌</Emoji>{' '}
+                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               </OlLi>
@@ -294,7 +294,7 @@ export default () => (
               ]}
             />
             <P>
-              たとえば、前回にもあったマクドナルド式の
+              たとえば、前回にもあったマクドナルド風の
               <H args={{ name: 'bentoBox', short: true }} />
               は、
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
@@ -342,7 +342,11 @@ export default () => (
         content: (
           <>
             <P>
-              まとめるとこんな感じになります(ステップ3に変更点を加えました):
+              まとめるとこんな感じになります(
+              <Em>
+                ステップ3に<Strong>変更点</Strong>を加えました
+              </Em>
+              ):
             </P>
             <Ol>
               <OlLi>
@@ -368,7 +372,7 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               </OlLi>
               <OlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>❌</Emoji>{' '}
+                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               </OlLi>

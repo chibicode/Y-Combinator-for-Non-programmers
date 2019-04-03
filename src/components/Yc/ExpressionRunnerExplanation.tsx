@@ -231,8 +231,9 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Remove <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            and <BottomRightBadge bottomRightBadgeType="funcArg" inline />
+            <Emoji>💥</Emoji> Remove{' '}
+            <BottomRightBadge bottomRightBadgeType="callArg" inline /> and{' '}
+            <BottomRightBadge bottomRightBadgeType="funcArg" inline />
           </>
         )
       } else {
@@ -240,7 +241,7 @@ const stateToExplanation = ({
           <>
             <BottomRightBadge bottomRightBadgeType="callArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-            が消えます
+            が消えます <Emoji>💥</Emoji>
           </>
         )
       }

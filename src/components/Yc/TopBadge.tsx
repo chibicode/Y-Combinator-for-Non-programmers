@@ -40,7 +40,9 @@ const TopBadge = ({ topBadgeType, inline }: TopBadgeProps) => (
     ]}
   >
     {topBadgeType !== 'betaReduceCallArg' && (
-      <Emoji noVerticalTransform>{topBadgeTypeToEmoji(topBadgeType)}</Emoji>
+      <Emoji size="sm" noVerticalTransform>
+        {topBadgeTypeToEmoji(topBadgeType)}
+      </Emoji>
     )}
   </span>
 )

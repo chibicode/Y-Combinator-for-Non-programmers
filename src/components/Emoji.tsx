@@ -33,13 +33,14 @@ const EmojiSvg = ({ name }: { name: string }) => {
 
 export interface EmojiProps {
   children?: string
-  size: 'md' | 'lg' | 'mdlg'
+  size: 'md' | 'lg' | 'mdlg' | 'sm'
   noVerticalTransform: boolean
 }
 
 const sizeToHeight = (size: Required<EmojiProps>['size']) =>
   ({
-    md: '1em',
+    sm: '1em',
+    md: '1.2em',
     mdlg: '1.4em',
     lg: '2em'
   }[size])
