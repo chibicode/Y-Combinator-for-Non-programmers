@@ -43,15 +43,19 @@ ExpressionRunnerSimple.defaultProps = {
 
 export const ExpressionRunnerPlayButtonOnly = ({
   expressionContainer,
-  initialState
+  initialState,
+  skipToTheEnd
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
+  skipToTheEnd: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hidePriorities
-    skipToTheEnd
+    resetIndex
+    skipToTheEnd={skipToTheEnd}
+    hideRemainingTime
     hideForwardAndBackButtons
     variableSize={'lg'}
     explanationsVisibility="hiddenInitial"
@@ -63,6 +67,11 @@ export const ExpressionRunnerPlayButtonOnly = ({
     ]}
   />
 )
+
+ExpressionRunnerPlayButtonOnly.defaultProps = {
+  initialState: 'default',
+  skipToTheEnd: true
+}
 
 export const ExpressionRunnerPairSimple = ({
   expressionContainer,
@@ -108,6 +117,10 @@ export const ExpressionRunnerPairSimple = ({
     />
   </>
 )
+
+ExpressionRunnerPairSimple.defaultProps = {
+  initialState: 'default'
+}
 
 export const ExpressionRunnerSingleStep = ({
   expressionContainer,

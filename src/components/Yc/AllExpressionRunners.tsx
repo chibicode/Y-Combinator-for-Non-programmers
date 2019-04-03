@@ -25,112 +25,59 @@ import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join
 export default {
-  ilpo: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E1}
-      initialState="default"
-    />
-  ),
-  imyd: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E2}
-      initialState="default"
-    />
-  ),
-  emmb: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E3}
-      initialState="default"
-    />
-  ),
-  jozw: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E4}
-      initialState="default"
-    />
-  ),
+  ilpo: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E1} />,
+  imyd: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E2} />,
+  emmb: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E3} />,
+  jozw: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E4} />,
   itbm: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E1}
-      initialState="default"
     />
   ),
   uqwm: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e1E1}
-      initialState="default"
-    />
+    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E1} />
   ),
   zwpj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E2}
-      initialState="default"
     />
   ),
   dqkc: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E3}
-      initialState="default"
     />
   ),
   ldox: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E4}
-      initialState="default"
     />
   ),
   bgfl: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e1E2}
-      initialState="default"
-    />
+    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E2} />
   ),
   tuqr: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e1E3}
-      initialState="default"
-    />
+    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E3} />
   ),
   cpkp: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e1E4}
-      initialState="default"
-    />
+    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E4} />
   ),
-  loai: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E5}
-      initialState="default"
-    />
-  ),
+  loai: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E5} />,
   vvjn: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E5}
       isDone
     />
   ),
-  hbgo: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E6}
-      initialState="default"
-    />
-  ),
-  olef: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e1E7}
-      initialState="default"
-    />
-  ),
+  hbgo: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E6} />,
+  olef: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E7} />,
   zzyu: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E5}
-      initialState="default"
     />
   ),
   qpjt: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E6}
-      initialState="default"
     />
   ),
   ozbe: (
@@ -185,6 +132,13 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E2}
       isDone
+    />
+  ),
+  wunw: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="active"
+      skipToTheEnd={false}
     />
   )
 }

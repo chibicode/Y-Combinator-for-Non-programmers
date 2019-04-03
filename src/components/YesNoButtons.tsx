@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import { Em, P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import locale from 'src/lib/locale'
-import { fontSizes, colors, lineHeights, radii, spaces } from 'src/lib/theme'
+import { fontSizes, colors, radii, spaces } from 'src/lib/theme'
 import { CardActionResult } from 'src/components/CardWrapper'
 import CardActionContext from 'src/components/CardActionContext'
 

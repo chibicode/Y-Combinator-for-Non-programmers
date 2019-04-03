@@ -25,7 +25,7 @@ import { spaces } from 'src/lib/theme'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (isFastForwarding?: boolean) =>
-  isFastForwarding ? 250 : 500
+  isFastForwarding ? 250 : 1000
 
 export type InitializeInstruction =
   | {
@@ -61,6 +61,7 @@ export interface ExpressionRunnerProps {
   showAllShowSteps?: boolean
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   skipToTheEnd: boolean
+  hideRemainingTime: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   caption?: {
     jp: React.ReactNode
@@ -186,7 +187,8 @@ const ExpressionRunner = ({
   maxStepsAllowed,
   resetIndex,
   skipToTheEnd,
-  hideFuncUnboundBadgeOnExplanation
+  hideFuncUnboundBadgeOnExplanation,
+  hideRemainingTime
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -264,6 +266,7 @@ const ExpressionRunner = ({
                 currentSubstep={expressionContainerManagerState.currentSubstep}
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
+                hideRemainingTime={hideRemainingTime}
               />
             </ExpressionRunnerCaptionWrapper>
           )}
@@ -339,7 +342,8 @@ ExpressionRunner.defaultProps = {
   hidePlayButton: false,
   hideForwardAndBackButtons: false,
   isFastForwardPlayButton: false,
-  hideFuncUnboundBadgeOnExplanation: false
+  hideFuncUnboundBadgeOnExplanation: false,
+  hideRemainingTime: false
 }
 
 export default ExpressionRunner

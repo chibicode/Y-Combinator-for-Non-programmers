@@ -382,7 +382,7 @@ export default () => (
       },
       {
         title: <>早送りで見てみましょう</>,
-        content: <></>
+        content: <>{AER.wunw}</>
       }
     ]}
   />

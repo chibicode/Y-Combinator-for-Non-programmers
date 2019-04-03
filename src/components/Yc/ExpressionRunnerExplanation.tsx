@@ -19,6 +19,7 @@ interface ExpressionRunnerExplanationProps {
   numSecondsRemaining: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
+  hideRemainingTime: boolean
 }
 
 const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
@@ -302,10 +303,11 @@ const ExpressionRunnerExplanation = ({
   numSecondsRemaining,
   isPlaying,
   showAllShowSteps,
-  hideFuncUnboundBadge
+  hideFuncUnboundBadge,
+  hideRemainingTime
 }: ExpressionRunnerExplanationProps) => (
   <>
-    {isPlaying && !isDone ? (
+    {isPlaying && !hideRemainingTime && !isDone ? (
       locale === 'en' ? (
         <>
           <Strong
