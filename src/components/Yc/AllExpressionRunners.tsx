@@ -148,7 +148,18 @@ export default {
       skipToTheEnd={false}
     />
   ),
-  xwim: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e2E1} />
+  xwim: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e2E1} />,
+  awxz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e2E1}
+      isDone
+    />
+  ),
+  ldts: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e2E1}
+    />
+  )
 }
 
 // NOTE: Use functions instead of just JSX.Element inside because

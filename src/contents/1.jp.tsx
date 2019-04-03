@@ -310,7 +310,7 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz' as 'yesNoQuiz',
+        type: 'yesNoQuiz',
         title: (
           <>
             <H args={{ name: 'yesNoQuiz' }} />
@@ -320,7 +320,7 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>質問:</InlineHeader>{' '}
+              <H args={{ name: 'question' }} />{' '}
               こちらに、ヘルシーな野菜が入っている
               <H args={{ name: 'bentoBox' }} />
               があります。
@@ -338,7 +338,7 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz' as 'yesNoQuiz',
+        type: 'yesNoQuiz',
         title: (
           <>
             <H args={{ name: 'yesNoQuiz' }} />
@@ -348,7 +348,7 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>質問:</InlineHeader> こちらの
+              <H args={{ name: 'question' }} /> こちらの
               <H args={{ name: 'bentoBox' }} />を<H args={{ name: 'play' }} />
               すると、
             </P>

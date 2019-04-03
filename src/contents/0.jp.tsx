@@ -231,8 +231,7 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>質問:</InlineHeader>{' '}
-              <Strong>Yコンビネーター</Strong>
+              <H args={{ name: 'question' }} /> <Strong>Yコンビネーター</Strong>
               」とは、
               <Em>「繰り返し処理」に関連するコンピューターサイエンス用語だ</Em>
               。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か?

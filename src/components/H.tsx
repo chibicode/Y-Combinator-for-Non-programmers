@@ -75,6 +75,7 @@ export interface HProps {
     | { name: 'yesNoQuizDontWorry' }
     | { name: 'unknownRule' }
     | { name: 'pageUnderConstruction' }
+    | { name: 'question' }
 }
 
 const prefixColors = {
@@ -808,6 +809,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <H args={{ name: 'fastForward' }} />
             を押してみてください:
           </Em>
+        </>
+      )
+    }
+  }
+  if (args.name === 'question') {
+    if (locale === 'en') {
+      return (
+        <>
+          <InlineHeader>Question:</InlineHeader>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <InlineHeader>質問:</InlineHeader>
         </>
       )
     }
