@@ -21,6 +21,7 @@ export interface HProps {
   highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
+    | { name: 'pressNext' }
     | { name: 'yesNoQuizSeeAnswer' }
     | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
     | { name: 'yesNoQuiz' }
@@ -45,6 +46,7 @@ export interface HProps {
     | { name: 'done' }
     | { name: 'true' }
     | { name: 'false' }
+    | { name: 'match' }
     | { name: 'tryGuessing' }
     | { name: 'trueOrFalse' }
     | { name: 'nextButtonNextPagePrimaryText' }
@@ -736,6 +738,41 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>This page is under construction.</>
     } else {
       return <>このページは現在工事中です。</>
+    }
+  }
+  if (args.name === 'match') {
+    if (locale === 'en') {
+      return (
+        <>
+          match <Emoji>✅</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          一致 <Emoji>✅</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'pressNext') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Em>
+            Press <H args={{ name: 'next' }} />:
+          </Em>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Em>
+            <H args={{ name: 'next' }} />
+            を押してみてください:
+          </Em>
+        </>
+      )
     }
   }
   throw new Error('error')

@@ -12,7 +12,7 @@ const topRightBadgeTypeToEmoji = (
   x: Exclude<TopRightBadgeProps['topRightBadgeType'], 'betaReduceCallArg'>
 ) =>
   ({
-    betaReduced: '🆕',
+    betaReduced: '⬇️',
     match: '✅',
     unmatch: '❌',
     conflict: '🔀',

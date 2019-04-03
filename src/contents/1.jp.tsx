@@ -154,12 +154,7 @@ export default () => (
               <InlineHeader>例その1:</InlineHeader> こちらは、最初に紹介した
               <H args={{ name: 'bentoBox' }} />
               です。
-              <Em>
-                下の
-                <H args={{ name: 'playButton' }} />
-                を押してみてください
-              </Em>
-              :
+              <H args={{ name: 'pressNext' }} />
             </P>
             {AER.itbm}
           </>

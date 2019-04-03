@@ -222,11 +222,12 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            一致した{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            の料理が <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            と入れ替わります{' '}
-            <TopRightBadge topRightBadgeType="betaReduced" inline />
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            の料理を
+            <H args={{ name: 'match' }} />
+            した
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            の部分にコピペ
           </>
         )
       }

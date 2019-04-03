@@ -147,6 +147,13 @@ export default {
       initialState="showFuncBound"
       finalState="betaReducePreviewBefore"
     />
+  ),
+  evqx: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="betaReducePreviewBefore"
+      finalState="betaReducePreviewAfter"
+    />
   )
 }
 

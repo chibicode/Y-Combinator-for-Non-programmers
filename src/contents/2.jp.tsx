@@ -141,29 +141,19 @@ export default () => (
               ]}
             />
             <P>
-              <Em>
-                <H args={{ name: 'next' }} />
-                を押してみてください:
-              </Em>
+              <H args={{ name: 'pressNext' }} />
             </P>
             {AER.ozbe}
           </>
         )
       },
       {
-        title: (
-          <>
-            法則その2:{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-            が一致するかチェック
-          </>
-        ),
+        title: <>法則その2: 一致チェック</>,
         content: (
           <>
             <P>
+              続いて、
               <Strong>
-                続いて、
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
                 が一致するかチェックし、一致した料理には、
@@ -179,12 +169,39 @@ export default () => (
               ]}
             />
             <P>
-              <Em>
-                <H args={{ name: 'next' }} />
-                を押してみてください:
-              </Em>
+              <H args={{ name: 'pressNext' }} />
             </P>
             {AER.rqjo}
+          </>
+        )
+      },
+      {
+        title: <>法則その3: コピペする</>,
+        content: (
+          <>
+            <P>
+              続いて、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の料理を、
+                <H args={{ name: 'match' }} />
+                した
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の部分にコピペします。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>➡️</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.evqx}
           </>
         )
       }
