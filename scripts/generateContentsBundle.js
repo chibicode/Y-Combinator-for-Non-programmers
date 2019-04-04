@@ -79,6 +79,6 @@ if (process.argv[2] === 'watch') {
   chokidar
     .watch('./src/contents/**/*.tsx')
     .on('unlink', path => regenerate(path))
+} else {
+  regenerate()
 }
-
-regenerate()
