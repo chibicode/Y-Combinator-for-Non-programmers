@@ -51,15 +51,15 @@ const regenerate = path => {
         ${bundleInterfaceString}
       }
 
-      const bundles: BundleTypes = {
+      const bundle: BundleTypes = {
         ${bundleObjectString}
       }
 
-      export default bundles`,
+      export default bundle`,
       { semi: false, singleQuote: true, parser: 'typescript' }
     )
 
-    fs.writeFile('./src/lib/contentBundles.tsx', fileContents, err => {
+    fs.writeFile('./src/lib/contentsBundle.tsx', fileContents, err => {
       if (err) {
         throw err
       }

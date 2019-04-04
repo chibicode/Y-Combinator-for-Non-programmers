@@ -87,7 +87,7 @@ export interface BundleTypes {
   }
 }
 
-const bundles: BundleTypes = {
+const bundle: BundleTypes = {
   '0': {
     en: En0,
     jp: Jp0
@@ -138,4 +138,4 @@ const bundles: BundleTypes = {
   }
 }
 
-export default bundles
+export default bundle

@@ -1,5 +1,5 @@
 import React from 'react'
-import bundles, { BundleTypes } from 'src/lib/contentBundles'
+import bundle, { BundleTypes } from 'src/lib/contentsBundle'
 import locale from 'src/lib/locale'
 
 export interface ContentProps {
@@ -7,7 +7,7 @@ export interface ContentProps {
 }
 
 const Content = ({ name }: ContentProps) => {
-  const Component = (bundles[name] || {})[locale]
+  const Component = (bundle[name] || {})[locale]
   if (!Component) {
     throw new Error(
       `Component is ${Component}. name: ${name}, locale: ${locale}`

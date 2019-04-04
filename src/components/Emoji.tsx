@@ -1,30 +1,27 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import dynamic from 'next/dynamic'
-import EmojiLoader from 'src/components/Twemoji/2b1c'
 import twemoji from 'twemoji'
+import emojisBundle from 'src/lib/emojisBundle'
 
 // Copied from Twemoji
 const UFE0Fg = /\uFE0F/g
 const U200D = String.fromCharCode(0x200d)
-function grabTheRightIcon(rawText: string) {
+function grabTheRightIcon(rawText: string): string {
   // if variant is present as \uFE0F
   return twemoji.convert.toCodePoint(
     rawText.indexOf(U200D) < 0 ? rawText.replace(UFE0Fg, '') : rawText
   )
 }
 
+const emojiComponentName = (name: string) =>
+  `${name.replace('Emoji', '').replace(/ZZ/g, '-')}`
+
 const EmojiSvg = ({ name }: { name: string }) => {
-  const Component = dynamic(
-    // @ts-ignore - import isn't typed correctly
-    () =>
-      import(`src/components/Twemoji/${grabTheRightIcon(name)}`).catch(() => {
-        console.error(`Missing '${name}',`)
-        return EmojiLoader
-      }),
-    { loading: () => <EmojiLoader /> }
-  )
+  const Component =
+    emojisBundle[
+      emojiComponentName(grabTheRightIcon(name)) as keyof typeof emojisBundle
+    ]
   if (!Component) {
     throw new Error(`Component is ${Component}. name: ${name}`)
   }
