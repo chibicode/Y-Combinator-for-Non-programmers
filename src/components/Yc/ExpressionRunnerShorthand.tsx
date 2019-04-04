@@ -155,5 +155,5 @@ export const ExpressionRunnerSingleStep = ({
 )
 
 ExpressionRunnerSingleStep.defaultProps = {
-  hideFuncUnboundBadgeOnExplanation: true
+  hideFuncUnboundBadgeOnExplanation: false
 }

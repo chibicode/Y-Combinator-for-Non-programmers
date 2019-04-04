@@ -79,6 +79,7 @@ export default {
   ),
   ozbe: (
     <ExpressionRunnerSingleStep
+      hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E1}
       initialState="active"
       finalState="showFuncBound"
@@ -86,6 +87,7 @@ export default {
   ),
   rqjo: (
     <ExpressionRunnerSingleStep
+      hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E1}
       initialState="showFuncBound"
       finalState="betaReducePreviewBefore"
@@ -93,6 +95,7 @@ export default {
   ),
   evqx: (
     <ExpressionRunnerSingleStep
+      hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewBefore"
       finalState="betaReducePreviewAfter"
@@ -100,6 +103,7 @@ export default {
   ),
   msiw: (
     <ExpressionRunnerSingleStep
+      hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewAfter"
       finalState="betaReducePreviewCrossed"
@@ -113,6 +117,7 @@ export default {
   ),
   sgfj: (
     <ExpressionRunnerSingleStep
+      hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E2}
       initialState="showFuncBound"
       finalState="betaReducePreviewBefore"
@@ -120,6 +125,7 @@ export default {
   ),
   gwtp: (
     <ExpressionRunnerSingleStep
+      hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E2}
       initialState="betaReducePreviewBefore"
       finalState="betaReducePreviewCrossed"
@@ -157,8 +163,19 @@ export default {
       expressionContainer={lessonExpressions.e2E1}
     />
   ),
-  gegu: (
-    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e2E1} />
+  rmsd: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e2E1}
+      initialState="active"
+      finalState="showFuncUnbound"
+    />
+  ),
+  jmqh: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e2E1}
+      initialState="active"
+      skipToTheEnd={false}
+    />
   )
 }
 

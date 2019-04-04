@@ -26,23 +26,23 @@ const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
   locale === 'en' ? (
     <>
       Showing <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+      <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
       {!hideFuncUnboundBadge && (
         <>
           <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
         </>
       )}
-      <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
       <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
     </>
   ) : (
     <>
       <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+      <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
       {!hideFuncUnboundBadge && (
         <>
           <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
         </>
       )}
-      <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
       <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
       の印をつけます
     </>

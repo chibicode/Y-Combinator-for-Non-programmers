@@ -1,5 +1,16 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  P,
+  Strong,
+  Ul,
+  Hr,
+  UlLi,
+  InlineHeader,
+  Ol,
+  OlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode4 } from 'src/components/Yc/AllExpressionRunners'
@@ -61,6 +72,68 @@ export default () => (
             />
             <P>
               <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.rmsd}
+          </>
+        )
+      },
+      {
+        title: '真ん中の料理はスルー',
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              の印をつける以外は<Strong>今までと変わりません:</Strong>
+            </P>
+            <Ol>
+              <OlLi>
+                <Strong>
+                  <InlineHeader>印をつける:</InlineHeader>{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                </Strong>
+              </OlLi>
+              <OlLi>
+                <InlineHeader>一致チェック:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                <Emoji>✅</Emoji>
+              </OlLi>
+              <OlLi>
+                (<H args={{ name: 'match' }} />
+                した部分のみ)
+                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <Emoji>➡️</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              </OlLi>
+              <OlLi>
+                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              </OlLi>
+            </Ol>
+            <P>
+              上記の通り、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の料理はコピペにも影響されず、消されることもありません。
+              </Strong>
+              つまり、スルーして大丈夫ということです。
+            </P>
+            <Hr />
+            <P>
+              というわけで最後まで見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.jmqh}
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              にある
+              <EmojiWithText letter="b" />
+              はスルーされたので、最後まで何も起きません。
             </P>
           </>
         )
