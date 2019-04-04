@@ -27,6 +27,7 @@ export default () => (
         title: '3つの料理',
         content: (
           <>
+            <EmojiSeparator letters={['a', 'b', 'a']} />
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               前回の最後には、以下のような
@@ -123,6 +124,17 @@ export default () => (
               <EmojiWithText letter="b" />
               には、最後まで何も起きません。
             </P>
+            <P>というわけで、実行結果はこうなります。</P>
+            {AER.iped}
+          </>
+        )
+      },
+      {
+        title: '3段の弁当箱',
+        content: (
+          <>
+            <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />
+            <P>下の2段は先ほどと一緒だが…</P>
           </>
         )
       }

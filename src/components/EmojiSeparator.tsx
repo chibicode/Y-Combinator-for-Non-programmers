@@ -3,9 +3,12 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
 import { fontSizes, ns, spaces } from 'src/lib/theme'
+import { VariableNames } from 'src/types/yc/VariableNames'
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 interface EmojiSeparatorProps {
   emojis: string[]
+  letters?: VariableNames[]
   nodes?: React.ReactNode[]
   size: 'sm' | 'md' | 'lg'
   alignCenter: boolean
@@ -28,6 +31,7 @@ const margins = (size: EmojiSeparatorProps['size']) =>
   }[size])
 
 const EmojiSeparator = ({
+  letters,
   emojis,
   nodes,
   size,
@@ -48,7 +52,13 @@ const EmojiSeparator = ({
       cssOverrides
     ]}
   >
-    {nodes
+    {letters
+      ? letters.map((letter, index) => (
+          <Fragment key={`${letter}${index}`}>
+            <Emoji size="sm">{letterEmojiMapping[letter]}</Emoji>{' '}
+          </Fragment>
+        ))
+      : nodes
       ? nodes.map((node, index) => (
           <Fragment key={`node-${index}`}>{node} </Fragment>
         ))

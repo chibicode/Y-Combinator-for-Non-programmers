@@ -176,6 +176,9 @@ export default {
       initialState="showFuncUnbound"
       skipToTheEnd={false}
     />
+  ),
+  iped: (
+    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e2E1} />
   )
 }
 
