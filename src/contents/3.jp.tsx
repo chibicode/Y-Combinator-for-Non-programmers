@@ -1,15 +1,13 @@
 import React from 'react'
 import {
+  InlineHeader,
   Em,
   H3,
   P,
   Strong,
   Ul,
-  Hr,
   UlLi,
-  InlineHeader,
-  Ol,
-  OlLi
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -84,20 +82,46 @@ export default () => (
             <P>
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                の料理はコピペにも影響されず、消されることもありません。
+                の料理は、
               </Strong>
-              つまり、スルーして大丈夫ということです。
             </P>
+            <Ul>
+              <UlLi>
+                <InlineHeader>
+                  コピペ(
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="callArg"
+                  />{' '}
+                  <Emoji>➡️</Emoji>{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  )にも影響されず、
+                </InlineHeader>
+              </UlLi>
+              <UlLi>
+                <InlineHeader>
+                  消されること(<Emoji>💥</Emoji>{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                  )もありません。
+                </InlineHeader>
+              </UlLi>
+            </Ul>
+            <P>
+              <Strong>つまり、スルーして大丈夫ということです。</Strong>
+            </P>
+            <Hr />
             <P>
               というわけで最後まで見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.jmqh}
             <P>
+              ご覧の通り
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               にある
               <EmojiWithText letter="b" />
-              はスルーされたので、最後まで何も起きません。
+              には、最後まで何も起きません。
             </P>
           </>
         )
