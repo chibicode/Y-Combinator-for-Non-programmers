@@ -82,48 +82,12 @@ export default () => (
         content: (
           <>
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              の印をつける以外は<Strong>今までと変わりません:</Strong>
-            </P>
-            <Ol>
-              <OlLi>
-                <Strong>
-                  <InlineHeader>印をつける:</InlineHeader>{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                </Strong>
-              </OlLi>
-              <OlLi>
-                <InlineHeader>一致チェック:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                <Emoji>✅</Emoji>
-              </OlLi>
-              <OlLi>
-                (<H args={{ name: 'match' }} />
-                した部分のみ)
-                <InlineHeader>コピペする:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <Emoji>➡️</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              </OlLi>
-              <OlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              </OlLi>
-            </Ol>
-            <P>
-              上記の通り、
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                 の料理はコピペにも影響されず、消されることもありません。
               </Strong>
               つまり、スルーして大丈夫ということです。
             </P>
-            <Hr />
             <P>
               というわけで最後まで見てみましょう。
               <H args={{ name: 'pressFastForward' }} />

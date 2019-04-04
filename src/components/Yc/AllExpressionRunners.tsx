@@ -173,7 +173,7 @@ export default {
   jmqh: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e2E1}
-      initialState="active"
+      initialState="showFuncUnbound"
       skipToTheEnd={false}
     />
   )
