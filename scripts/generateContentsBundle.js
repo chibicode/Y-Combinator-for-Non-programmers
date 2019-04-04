@@ -17,9 +17,17 @@ const regenerate = path => {
       .map(
         name => `
           '${name}': {
-            jp: React.ComponentType<any> & LoadableComponent
-            en: React.ComponentType<any> & LoadableComponent
+            jp: React.ComponentType<{}>
+            en: React.ComponentType<{}>
           }`
+      )
+      .join('\n')
+
+    const importString = uniqueNames
+      .map(
+        name =>
+          `import Jp${name} from 'src/contents/${name}.jp'
+           import En${name} from 'src/contents/${name}.en'`
       )
       .join('\n')
 
@@ -27,12 +35,8 @@ const regenerate = path => {
       .map(
         name => `
           '${name}': {
-            en: dynamic(
-              // @ts-ignore - import isn't typed correctly
-              () => import(/* webpackChunkName: '${name}.en' */ 'src/contents/${name}.en'), { loading: () => <DynamicLoading /> }),
-            jp: dynamic(
-              // @ts-ignore - import isn't typed correctly
-              () => import(/* webpackChunkName: '${name}.jp' */ 'src/contents/${name}.jp'), { loading: () => <DynamicLoading /> })
+            en: En${name},
+            jp: Jp${name}
           }
         `
       )
@@ -41,11 +45,7 @@ const regenerate = path => {
     const fileContents = prettier.format(
       `// WARNING: Do not modify this file - it's generated automatically.
       import React from 'react'
-      import dynamic from 'next/dynamic'
-      import {
-        LoadableComponent
-      } from 'react-loadable'
-      import DynamicLoading from 'src/components/DynamicLoading'
+      ${importString}
 
       export interface BundleTypes {
         ${bundleInterfaceString}
