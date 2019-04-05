@@ -323,10 +323,10 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz',
         title: (
           <>
-            <H args={{ name: 'yesNoQuiz' }} />
+            複雑な
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
@@ -341,11 +341,24 @@ export default () => (
               下には3つのマスがありますね。この場合はどうなるのでしょうか？
             </P>
             {AER.xwim}
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
             <P>
-              次のページで詳しく説明しますが、
+              次のページで詳しく説明しますが、先に
               <H args={{ name: 'yesNoQuiz' }} />
               をやってみましょう。勘で答えてみてください。
             </P>
+            {AER.xwim}
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
