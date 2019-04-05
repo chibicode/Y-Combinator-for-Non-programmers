@@ -9,6 +9,7 @@ import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import H from 'src/components/H'
+import InlineBackground from 'src/components/Yc/InlineBackground'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -89,9 +90,13 @@ const stateToExplanation = ({
     }
     case 'active': {
       if (locale === 'en') {
-        return <>We’ll focus on these…</>
+        return <>…</>
       } else {
-        return <>この部分をやっていきます</>
+        return (
+          <>
+            白色 <InlineBackground bgColor={'white'} /> の部分に注目します
+          </>
+        )
       }
     }
     case 'showFuncBound': {

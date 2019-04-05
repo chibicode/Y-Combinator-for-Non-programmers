@@ -52,7 +52,7 @@ export default () => (
       {
         title: (
           <>
-            先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアをやる
+            先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアに注目
           </>
         ),
         content: (
@@ -64,6 +64,27 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
             />
+            <P>
+              <Strong>
+                まず、左上と左下に
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                がある部分に注目します。
+              </Strong>
+              先ほどの
+              <H args={{ name: 'bentoBox', short: true }} />
+              場合、中段と下段です。
+            </P>
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.aaov}
+            <P>
+              左上と左下がピンク色の{' '}
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+              になり、背景が白色 <InlineBackground bgColor={'white'} />{' '}
+              に、それ以外の背景が暗い色{' '}
+              <InlineBackground bgColor={'indigo50'} /> になりました。
+            </P>
           </>
         )
       }

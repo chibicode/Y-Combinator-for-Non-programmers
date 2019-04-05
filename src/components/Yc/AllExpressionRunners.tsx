@@ -210,6 +210,14 @@ export default {
       expressionContainer={lessonExpressions.e3E3}
       showPriorities
     />
+  ),
+  aaov: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e3E3}
+      initialState="default"
+      finalState="active"
+      showPriorities
+    />
   )
 }
 

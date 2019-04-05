@@ -4,8 +4,7 @@ import { useEffect } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 import 'modern-normalize'
 import React from 'react'
-import { colors, lineHeights, spaces } from 'src/lib/theme'
-import ns from 'src/lib/theme/ns'
+import { colors, lineHeights, spaces, ns } from 'src/lib/theme'
 const pink = colors('pink500')
 
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
@@ -28,7 +27,6 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             font-size: 18px;
             color: ${colors('grey800')};
             line-height: ${lineHeights(1.5)};
-            touch-action: manipulation;
           }
 
           body {

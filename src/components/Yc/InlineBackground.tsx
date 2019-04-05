@@ -32,7 +32,7 @@ const InlineBackground = ({
     css={[
       css`
         display: inline-block;
-        padding: ${size === 'mdlg' ? '0.6em' : '0.5em'};
+        padding: ${size === 'mdlg' ? '0.6em' : '0.55em'};
         border: 2px solid ${colors('indigo300')};
         vertical-align: text-bottom;
       `,
