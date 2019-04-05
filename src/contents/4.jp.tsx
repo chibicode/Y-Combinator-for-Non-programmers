@@ -48,6 +48,24 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        title: (
+          <>
+            先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアをやる
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>🥇</Emoji>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />

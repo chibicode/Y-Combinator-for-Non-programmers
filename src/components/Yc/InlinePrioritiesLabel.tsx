@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
+import { colors, lineHeights } from 'src/lib/theme'
 
 const InlinePrioritiesLabel = ({
   children,
@@ -14,9 +14,9 @@ const InlinePrioritiesLabel = ({
     css={css`
       display: inline-block;
       vertical-align: text-bottom;
-      padding: 0 ${spaces(0.25)};
+      padding: 0 0.35em;
       color: ${colors(revert ? 'white' : 'indigo300')};
-      font-size: ${fontSizes(0.75)};
+      font-size: 0.85em;
       font-weight: bold;
       line-height: ${lineHeights(1.3, { ignoreLocale: true })};
       border: 2px solid ${colors('indigo300')};
