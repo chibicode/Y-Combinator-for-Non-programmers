@@ -17,8 +17,41 @@ import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import AER from 'src/components/Yc/AllExpressionRunners'
+import H from 'src/components/H'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: (
+          <>
+            3段の
+            <H args={{ name: 'bentoBox', short: true }} />
+            の法則
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              前回は、以下のような3段の
+              <H args={{ name: 'bentoBox' }} />
+              を紹介しました。
+            </P>
+            {AER.dkiy}
+            <P>
+              これを
+              <H args={{ name: 'play' }} />
+              するとどうなるのか説明していきます！
+            </P>
+          </>
+        )
+      }
+    ]}
+  />
+)
 
 const Rules = () => (
   <Ol>

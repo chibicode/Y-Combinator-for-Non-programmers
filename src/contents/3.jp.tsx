@@ -205,7 +205,12 @@ export default () => (
         )
       },
       {
-        title: '3段の弁当箱',
+        title: (
+          <>
+            3段の
+            <H args={{ name: 'bentoBox', short: true }} />
+          </>
+        ),
         content: (
           <>
             <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />
@@ -262,7 +267,12 @@ export default () => (
         )
       },
       {
-        title: '3段の弁当箱、その2',
+        title: (
+          <>
+            <H args={{ name: 'bentoBox', short: true }} />
+            、その2
+          </>
+        ),
         content: (
           <>
             <P>
