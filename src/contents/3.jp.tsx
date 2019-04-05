@@ -287,7 +287,7 @@ export default () => (
         content: (
           <>
             <P>
-              予想が正しいか、
+              法則が分かりましたか？
               <H args={{ name: 'yesNoQuiz' }} />
               で確かめてみましょう！
             </P>
@@ -317,7 +317,7 @@ export default () => (
               (<EmojiWithText letter="k" />
               ではない) でした。
             </P>
-            <P>どういう法則でこうなるのかは、次のページで説明します！</P>
+            <P>どういう法則でこうなったのかは、次のページで説明します！</P>
             <YcNextLessonButton nextEpisodeNumber={4} />
           </>
         )
