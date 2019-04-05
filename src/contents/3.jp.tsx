@@ -215,13 +215,16 @@ export default () => (
               をご覧ください:
             </P>
             {AER.cvtc}
+            <P>
+              <InlineHeader>今までになかった特徴が2つあります:</InlineHeader>
+            </P>
             <Ul>
               <UlLi>
                 下の2段は先ほどと一緒ですが、
                 <Em>
                   一番上に
                   <EmojiWithText letter="d" />
-                  が追加されています。
+                  が追加されており、<Strong>3段</Strong>になっています。
                 </Em>
               </UlLi>
               <UlLi>
@@ -232,6 +235,11 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
+            <P>
+              どういうことか説明する前に、まずは
+              <H args={{ name: 'play' }} />
+              してみましょう！
+            </P>
           </>
         )
       },
@@ -240,9 +248,7 @@ export default () => (
         content: (
           <>
             <P>
-              さっそく
-              <H args={{ name: 'play' }} />
-              してみましょう。
+              というわけで、
               <H args={{ name: 'playUntilDone' }} />
             </P>
             {AER.xhbi}
