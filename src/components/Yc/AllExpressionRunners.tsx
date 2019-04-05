@@ -179,6 +179,37 @@ export default {
   ),
   iped: (
     <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e2E1} />
+  ),
+  cvtc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E1}
+      showPriorities
+    />
+  ),
+  xhbi: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E1}
+      showPriorities
+    />
+  ),
+  tbij: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E2}
+      showPriorities
+    />
+  ),
+  dkiy: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E3}
+      showPriorities
+    />
+  ),
+  owcy: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E4} />,
+  bagn: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E3}
+      showPriorities
+    />
   )
 }
 

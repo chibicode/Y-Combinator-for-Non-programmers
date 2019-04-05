@@ -58,9 +58,9 @@ const emojiLabelMapping: {
     en: 'eggplant',
     jp: 'ナス'
   },
-  '🥟': {
-    en: 'dumpling',
-    jp: '餃子'
+  '🌭': {
+    en: 'hot dog',
+    jp: 'ホットドッグ'
   },
   '🍞': {
     en: 'bread',

@@ -11,16 +11,18 @@ import { spaces } from 'src/lib/theme'
 export const ExpressionRunnerSimple = ({
   expressionContainer,
   initialState,
-  isDone
+  isDone,
+  showPriorities
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   isDone: boolean
+  showPriorities: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hideControls
-    hidePriorities
+    hidePriorities={!showPriorities}
     explanationsVisibility="hidden"
     variableSize={'lg'}
     initializeInstructions={[
@@ -38,23 +40,26 @@ export const ExpressionRunnerSimple = ({
 
 ExpressionRunnerSimple.defaultProps = {
   isDone: false,
-  initialState: 'default'
+  initialState: 'default',
+  showPriorities: false
 }
 
 export const ExpressionRunnerPlayButtonOnly = ({
   expressionContainer,
   initialState,
   skipToTheEnd,
-  hideFuncUnboundBadgeOnExplanation
+  hideFuncUnboundBadgeOnExplanation,
+  showPriorities
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
+  showPriorities: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
-    hidePriorities
+    hidePriorities={!showPriorities}
     resetIndex
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
@@ -73,7 +78,8 @@ export const ExpressionRunnerPlayButtonOnly = ({
 ExpressionRunnerPlayButtonOnly.defaultProps = {
   initialState: 'default',
   skipToTheEnd: true,
-  hideFuncUnboundBadgeOnExplanation: true
+  hideFuncUnboundBadgeOnExplanation: true,
+  showPriorities: false
 }
 
 export const ExpressionRunnerPairSimple = ({

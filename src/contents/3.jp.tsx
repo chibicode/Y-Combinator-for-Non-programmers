@@ -7,7 +7,9 @@ import {
   Strong,
   Ul,
   UlLi,
-  Hr
+  Hr,
+  Ol,
+  OlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -15,10 +17,12 @@ import { episode4 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import YesNoButtons from 'src/components/YesNoButtons'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 
 export default () => (
   <EpisodeCardList
@@ -130,11 +134,175 @@ export default () => (
         )
       },
       {
+        title: <>ここまでのまとめ</>,
+        type: 'summary',
+        content: (
+          <>
+            <P>
+              まとめるとこんな感じになります(
+              <Em>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                について<Strong>変更点</Strong>を加えました
+              </Em>
+              ):
+            </P>
+            <Ol>
+              <OlLi>
+                <Strong>
+                  <InlineHeader>印をつける:</InlineHeader>{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                </Strong>
+              </OlLi>
+              <OlLi>
+                <InlineHeader>一致チェック:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                <Emoji>✅</Emoji> (
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  は無視
+                </Strong>
+                )
+              </OlLi>
+              <OlLi>
+                (<H args={{ name: 'match' }} />
+                した部分のみ)
+                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <Emoji>➡️</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  は無視
+                </Strong>
+                )
+              </OlLi>
+              <OlLi>
+                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  は無視
+                </Strong>
+                )
+              </OlLi>
+            </Ol>
+          </>
+        )
+      },
+      {
         title: '3段の弁当箱',
         content: (
           <>
             <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />
-            <P>下の2段は先ほどと一緒だが…</P>
+            <P>
+              続いて、こちらの
+              <H args={{ name: 'bentoBox' }} />
+              をご覧ください:
+            </P>
+            {AER.cvtc}
+            <Ul>
+              <UlLi>
+                下の2段は先ほどと一緒ですが、
+                <Em>
+                  一番上に
+                  <EmojiWithText letter="d" />
+                  が追加されています。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や{' '}
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                  という数字が左端に表示されています。
+                </Em>
+              </UlLi>
+            </Ul>
+          </>
+        )
+      },
+      {
+        title: '実行するとどうなる？',
+        content: (
+          <>
+            <P>
+              さっそく
+              <H args={{ name: 'play' }} />
+              してみましょう。
+              <H args={{ name: 'playUntilDone' }} />
+            </P>
+            {AER.xhbi}
+            <P>
+              最終的に
+              <EmojiWithText letter="c" />
+              だけになりました。
+              <Strong>どういう法則でこうなったか、分かりますか？</Strong>
+            </P>
+          </>
+        )
+      },
+      {
+        title: '3段の弁当箱、その2',
+        content: (
+          <>
+            <P>
+              こちらの
+              <H args={{ name: 'bentoBox' }} />
+              はどうでしょう？
+              <H args={{ name: 'playUntilDone' }} />
+            </P>
+            {AER.tbij}
+            <P>
+              こちらは最終的に
+              <EmojiWithText letter="g" />
+              だけになりました。 こちらも、
+              <Strong>どういう法則でこうなったか、分かりますか？</Strong>
+            </P>
+          </>
+        )
+      },
+      {
+        title: <H args={{ name: 'yesNoQuiz' }} />,
+        type: 'yesNoQuiz',
+        content: (
+          <>
+            <P>
+              予想が正しいか、
+              <H args={{ name: 'yesNoQuiz' }} />
+              で確かめてみましょう！
+            </P>
+            {AER.dkiy}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.owcy}
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: <>答え合わせ</>,
+        content: (
+          <>
+            <P>
+              正解はこちら。
+              <H args={{ name: 'playUntilDone' }} />
+            </P>
+            {AER.bagn}
+            <P>
+              <Strong>
+                <EmojiWithText letter="m" />
+                だけになったので、正解は<Emoji>❌</Emoji>
+              </Strong>
+              (<EmojiWithText letter="k" />
+              ではない) でした。
+            </P>
+            <P>どういう法則でこうなるのかは、次のページで説明します！</P>
+            <YcNextLessonButton nextEpisodeNumber={4} />
           </>
         )
       }

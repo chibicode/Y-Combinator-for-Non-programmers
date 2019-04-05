@@ -359,9 +359,10 @@ export default () => (
         content: (
           <>
             <P>
-              正解は<Emoji>⭕️</Emoji>でした。
-              <H args={{ name: 'play' }} />
-              してみてください:
+              <Strong>
+                正解は<Emoji>⭕️</Emoji>でした。
+              </Strong>
+              <H args={{ name: 'playUntilDone' }} />
             </P>
             {AER.ldts}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
