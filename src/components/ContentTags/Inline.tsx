@@ -77,7 +77,7 @@ export const Strong = ({
               css`
                 &:hover,
                 &:active {
-                  background: ${colors('pink100')};
+                  background: ${colors('indigo100')};
                 }
               `
           ]}

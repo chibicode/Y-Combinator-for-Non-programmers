@@ -23,6 +23,11 @@ const navigationLinkClasses = css`
   margin: ${spaces('-0.5')};
   cursor: pointer;
   display: inline-block;
+
+  &:hover,
+  &:active {
+    background-color: ${colors('indigo50')};
+  }
 `
 
 const EpisodePageHeader = ({ episodeNumber, showModal }: EpisodePageProps) => {
@@ -65,8 +70,8 @@ const EpisodePageHeader = ({ episodeNumber, showModal }: EpisodePageProps) => {
           type="button"
           onClick={showModal}
           css={[
-            navigationLinkClasses,
             commonLinkClass,
+            navigationLinkClasses,
             css`
               &:focus {
                 outline: none;
