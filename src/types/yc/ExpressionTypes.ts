@@ -278,5 +278,5 @@ export type StepChild<C extends CallStates = 'default'> =
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
-type Distribute<U> = U extends any ? ExecutableStepCall<U> : never
+type Distribute<U> = U extends CallStates ? ExecutableStepCall<U> : never
 export type ExecutableCall = Distribute<CallStates>
