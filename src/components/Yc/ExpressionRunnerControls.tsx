@@ -98,53 +98,44 @@ const ExpressionRunnerControls = ({
           `}
         />
       ))}
-    {showPlayButton &&
-      (canStepForward || isDone ? (
-        <Button
-          disabled={isPlaying && !isDone}
-          onClick={
-            canStepForward
-              ? skipToTheEnd
-                ? onSkipToTheEndClick
-                : onAutoClick
-              : onResetClick
-          }
-          css={[
+    {showPlayButton && (
+      <Button
+        disabled={isPlaying && !isDone && canStepForward}
+        onClick={
+          canStepForward
+            ? skipToTheEnd
+              ? onSkipToTheEndClick
+              : onAutoClick
+            : onResetClick
+        }
+        css={[
+          css`
+            flex: 0.5;
+          `,
+          canStepForward &&
+            !isPlaying &&
             css`
-              flex: 0.5;
+              background: ${colors('yellow100')};
             `,
-            canStepForward &&
-              !isPlaying &&
-              css`
-                background: ${colors('yellow100')};
-              `,
-            !canStepForward &&
-              css`
-                background: ${colors('pink50')};
-              `
-          ]}
-        >
-          {canStepForward ? (
-            isPlaying ? (
-              <H args={{ name: 'fastForwarding' }} highlightType="none" />
-            ) : skipToTheEnd ? (
-              <H args={{ name: 'play' }} highlightType="none" />
-            ) : (
-              <H args={{ name: 'fastForward' }} highlightType="none" />
-            )
+          !canStepForward &&
+            css`
+              background: ${colors('pink50')};
+            `
+        ]}
+      >
+        {canStepForward ? (
+          isPlaying ? (
+            <H args={{ name: 'fastForwarding' }} highlightType="none" />
+          ) : skipToTheEnd ? (
+            <H args={{ name: 'play' }} highlightType="none" />
           ) : (
-            <H args={{ name: 'reset' }} highlightType="none" />
-          )}
-        </Button>
-      ) : (
-        <div
-          css={css`
-            flex: 1;
-            /* Same border as the button */
-            border: 2px solid transparent;
-          `}
-        />
-      ))}
+            <H args={{ name: 'fastForward' }} highlightType="none" />
+          )
+        ) : (
+          <H args={{ name: 'reset' }} highlightType="none" />
+        )}
+      </Button>
+    )}
     {!showPlayButton &&
       (!isPlaying && (canStepForward || isDone) ? (
         <Button

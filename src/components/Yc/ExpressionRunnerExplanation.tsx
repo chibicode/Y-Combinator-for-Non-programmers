@@ -10,6 +10,7 @@ import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerType
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import H from 'src/components/H'
 import InlineBackground from 'src/components/Yc/InlineBackground'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -83,9 +84,14 @@ const stateToExplanation = ({
   switch (state) {
     case 'default': {
       if (locale === 'en') {
-        return <>Removed!</>
+        return <>…</>
       } else {
-        return <>消えました！</>
+        return (
+          <>
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>に
+          </>
+        )
       }
     }
     case 'active': {

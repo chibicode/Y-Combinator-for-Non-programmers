@@ -218,6 +218,23 @@ export default {
       finalState="active"
       showPriorities
     />
+  ),
+  qxgl: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E3}
+      showPriorities
+      initialState="active"
+      lastAllowedExpressionState="betaReducePreviewCrossed"
+      skipToTheEnd={false}
+    />
+  ),
+  uwma: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e3E3}
+      initialState="betaReducePreviewCrossed"
+      finalState="default"
+      showPriorities
+    />
   )
 }
 

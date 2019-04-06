@@ -47,6 +47,7 @@ ExpressionRunnerSimple.defaultProps = {
 export const ExpressionRunnerPlayButtonOnly = ({
   expressionContainer,
   initialState,
+  lastAllowedExpressionState,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
   showPriorities
@@ -56,6 +57,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
+  lastAllowedExpressionState?: CallStates
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -66,6 +68,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
     hideRemainingTime
     variableSize={'lg'}
     explanationsVisibility="doneOnly"
+    lastAllowedExpressionState={lastAllowedExpressionState}
     initializeInstructions={[
       {
         type: 'stepForwardUntilPreviouslyChangedExpressionState',

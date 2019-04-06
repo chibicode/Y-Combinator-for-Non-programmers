@@ -14,6 +14,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode5 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -84,6 +85,70 @@ export default () => (
               になり、背景が白色 <InlineBackground bgColor={'white'} />{' '}
               に、それ以外の背景が暗い色{' '}
               <InlineBackground bgColor={'indigo50'} /> になりました。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペア部分を終わらせる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              次に、今までと同じように
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペア部分
+              を終わらせます。
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.qxgl}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペア部分が終わったら
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペア部分が消えたら<Emoji>💥</Emoji>、
+              <Strong>
+                以前の
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になります。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>,
+                <Emoji>➡</Emoji>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ]}
+            />
+            <P>
+              先ほどの続きから確かめてみましょう。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.uwma}
+            <P>
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                が消えた後に、以前の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>がなくなり、
+                以前の<InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
+              </Strong>
             </P>
           </>
         )
