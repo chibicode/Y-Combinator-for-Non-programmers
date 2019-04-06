@@ -5,17 +5,19 @@ import { colors, lineHeights, radii } from 'src/lib/theme'
 
 const InlinePrioritiesLabel = ({
   children,
-  revert
+  revert,
+  square
 }: {
   children: React.ReactNode
   revert?: boolean
+  square?: boolean
 }) => (
   <span
     css={css`
       display: inline-block;
       vertical-align: text-bottom;
       width: 1.3em;
-      border-radius: ${radii(9999)};
+      border-radius: ${square ? 0 : radii(9999)};
       text-align: center;
       color: ${colors(revert ? 'white' : 'indigo300')};
       font-size: 0.85em;

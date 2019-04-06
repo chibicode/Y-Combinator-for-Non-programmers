@@ -272,7 +272,7 @@ const ExpressionRunner = ({
             </ExpressionRunnerCaptionWrapper>
           )}
         </Container>
-        <Container size={containerSize} horizontalPadding={0}>
+        <Container size={containerSize} horizontalPadding={0.25}>
           <div
             css={css`
               max-width: 100%;
@@ -297,7 +297,7 @@ const ExpressionRunner = ({
           </div>
         </Container>
         <ExpressionRunnerScrollAdjuster />
-        <Container size={containerSize} horizontalPadding={0}>
+        <Container size={containerSize} horizontalPadding={0.25}>
           {!hideControls && (
             <ExpressionRunnerControls
               onNextClick={actions.stepForward}

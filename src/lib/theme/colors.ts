@@ -24,6 +24,7 @@ export const allColors = {
   purple700: purple[700],
   indigo50: indigo[50],
   indigo100: indigo[100],
+  indigo200: indigo[200],
   indigo300: indigo[300],
   indigo30066: Color(indigo[300])
     .alpha(0.66)

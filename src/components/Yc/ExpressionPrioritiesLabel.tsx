@@ -15,10 +15,11 @@ interface ExpressionPrioritiesLabelProps {
   position: 'topleft' | 'bottomleft'
 }
 
-interface ExpressionPrioritiesLabelBox {
+interface ExpressionPrioritiesLabelBoxProps {
   emphasize: boolean
   priority: number
   offset: number
+  position: 'topleft' | 'bottomleft'
 }
 
 const fontSize = (
@@ -33,7 +34,18 @@ const fontSize = (
   }
 }
 
-const size = (
+const width = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): number => {
+  const multiplier = {
+    lg: 1.07,
+    md: 0.9,
+    sm: 0.75
+  }[variableSize]
+  return 1.3 * multiplier
+}
+
+const height = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   const multiplier = {
@@ -44,37 +56,76 @@ const size = (
   return 1.3 * multiplier
 }
 
+const left = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): number =>
+  ({
+    lg: -1.291,
+    md: -0.92,
+    sm: -0.92
+  }[variableSize])
+
 const ExpressionPrioritiesLabelBox = ({
   emphasize,
+  position,
   priority,
   offset
-}: ExpressionPrioritiesLabelBox) => {
+}: ExpressionPrioritiesLabelBoxProps) => {
   const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
     <Flex
-      css={css`
-        position: relative;
-        left: ${-offset * 0.2 * size(variableSize)}em;
-        z-index: ${-offset};
-      `}
+      css={[
+        css`
+          position: relative;
+          z-index: ${-offset};
+        `,
+        variableSize === 'lg' &&
+          position === 'topleft' &&
+          css`
+            top: ${-offset * 0.2 * width(variableSize)}em;
+          `,
+        variableSize === 'lg' &&
+          position === 'bottomleft' &&
+          css`
+            bottom: ${-offset * 0.2 * width(variableSize)}em;
+          `
+      ]}
     >
       <FlexCenter
-        css={css`
-          color: ${colors(
-            emphasize && activePriority === priority ? 'white' : 'indigo300'
-          )};
-          font-size: ${fontSize(variableSize)};
-          font-weight: bold;
-          width: ${size(variableSize)}em;
-          height: ${size(variableSize)}em;
-          line-height: 1;
-          background: ${colors(
-            emphasize && activePriority === priority ? 'pink400' : 'white'
-          )};
-          border: 2px solid ${colors('indigo300')};
-          border-radius: ${radii(9999)};
-        `}
+        css={[
+          css`
+            color: ${colors(
+              emphasize && activePriority === priority ? 'white' : 'indigo300'
+            )};
+            font-size: ${fontSize(variableSize)};
+            font-weight: bold;
+            width: ${width(variableSize)}em;
+            height: ${height(variableSize)}em;
+            line-height: 1;
+            background: ${colors(
+              emphasize && activePriority === priority
+                ? 'pink400'
+                : variableSize === 'lg'
+                ? 'white'
+                : 'transparent'
+            )};
+          `,
+          variableSize === 'lg'
+            ? css`
+                border: 2px solid ${colors('indigo300')};
+                border-radius: ${radii(9999)};
+              `
+            : position === 'topleft'
+            ? css`
+                border-right: 2px solid ${colors('indigo300')};
+                border-bottom: 2px solid ${colors('indigo300')};
+              `
+            : css`
+                border-top: 2px solid ${colors('indigo300')};
+                border-right: 2px solid ${colors('indigo300')};
+              `
+        ]}
       >
         {priority}
       </FlexCenter>
@@ -90,24 +141,37 @@ const ExpressionPrioritiesLabel = ({
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
     <div
-      css={css`
+      css={[
+        css`
         position: absolute;
-        left: ${(-1 * size(variableSize)) / 2}em;
         ${
           position === 'topleft'
             ? css`
-                top: ${(-1 * size(variableSize)) / 2}em;
+                top: 0;
               `
             : css`
-                bottom: ${(-1 * size(variableSize)) / 2}em;
+                bottom: 0;
               `
         }
         z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
-      `}
+      `,
+        css`
+          left: ${variableSize === 'lg' ? left(variableSize) : 0}em;
+        `
+      ]}
     >
-      <Flex>
+      <Flex
+        css={css`
+          flex-direction: ${variableSize === 'lg'
+            ? position === 'topleft'
+              ? 'column'
+              : 'column-reverse'
+            : 'row'};
+        `}
+      >
         {priorities.map((priority, index) => (
           <ExpressionPrioritiesLabelBox
+            position={position}
             emphasize={emphasize}
             offset={index}
             key={priority}

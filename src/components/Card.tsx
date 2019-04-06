@@ -130,8 +130,6 @@ const Card = ({
       )}
       <div
         css={css`
-          border-radius: ${radii(0.5)};
-          overflow: hidden;
           margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
         `}
       >
@@ -148,6 +146,7 @@ const Card = ({
               padding-right: ${spaces(2)};
               padding-bottom: ${spaces(1)};
             }
+            border-radius: ${radii(0.5)};
             background: ${backgroundColor(color)};
           `}
         >
