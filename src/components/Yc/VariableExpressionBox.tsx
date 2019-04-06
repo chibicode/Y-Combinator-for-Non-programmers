@@ -48,6 +48,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
         <ExpressionPrioritiesLabel
           priorities={expression.argPriorityAgg}
           position="topleft"
+          removing={expression.highlightType === 'removed'}
           emphasize={expression.highlightType === 'activeEmphasizePriority'}
         />
       )}
@@ -110,6 +111,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
       {!hidePriorities && (
         <ExpressionPrioritiesLabel
           priorities={expression.funcPriorityAgg}
+          removing={expression.highlightType === 'removed'}
           position="bottomleft"
           emphasize={expression.highlightType === 'activeEmphasizePriority'}
         />

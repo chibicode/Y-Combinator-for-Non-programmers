@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
+import Emoji from 'src/components/Emoji'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
@@ -13,6 +14,7 @@ interface ExpressionPrioritiesLabelProps {
   emphasize: boolean
   priorities: number[]
   position: 'topleft' | 'bottomleft'
+  removing?: boolean
 }
 
 interface ExpressionPrioritiesLabelBoxProps {
@@ -20,6 +22,7 @@ interface ExpressionPrioritiesLabelBoxProps {
   priority: number
   offset: number
   position: 'topleft' | 'bottomleft'
+  removing: boolean
 }
 
 const fontSize = (
@@ -69,7 +72,8 @@ const ExpressionPrioritiesLabelBox = ({
   emphasize,
   position,
   priority,
-  offset
+  offset,
+  removing
 }: ExpressionPrioritiesLabelBoxProps) => {
   const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
@@ -92,43 +96,47 @@ const ExpressionPrioritiesLabelBox = ({
           `
       ]}
     >
-      <FlexCenter
-        css={[
-          css`
-            color: ${colors(
-              emphasize && activePriority === priority ? 'white' : 'indigo300'
-            )};
-            font-size: ${fontSize(variableSize)};
-            font-weight: bold;
-            width: ${width(variableSize)}em;
-            height: ${height(variableSize)}em;
-            line-height: 1;
-            background: ${colors(
-              emphasize && activePriority === priority
-                ? 'pink400'
-                : variableSize === 'lg'
-                ? 'white'
-                : 'transparent'
-            )};
-          `,
-          variableSize === 'lg'
-            ? css`
-                border: 2px solid ${colors('indigo300')};
-                border-radius: ${radii(9999)};
-              `
-            : position === 'topleft'
-            ? css`
-                border-right: 2px solid ${colors('indigo300')};
-                border-bottom: 2px solid ${colors('indigo300')};
-              `
-            : css`
-                border-top: 2px solid ${colors('indigo300')};
-                border-right: 2px solid ${colors('indigo300')};
-              `
-        ]}
-      >
-        {priority}
-      </FlexCenter>
+      {removing ? (
+        <Emoji>💥</Emoji>
+      ) : (
+        <FlexCenter
+          css={[
+            css`
+              color: ${colors(
+                emphasize && activePriority === priority ? 'white' : 'indigo300'
+              )};
+              font-size: ${fontSize(variableSize)};
+              font-weight: bold;
+              width: ${width(variableSize)}em;
+              height: ${height(variableSize)}em;
+              line-height: 1;
+              background: ${colors(
+                emphasize && activePriority === priority
+                  ? 'pink400'
+                  : variableSize === 'lg'
+                  ? 'white'
+                  : 'transparent'
+              )};
+            `,
+            variableSize === 'lg'
+              ? css`
+                  border: 2px solid ${colors('indigo300')};
+                  border-radius: ${radii(9999)};
+                `
+              : position === 'topleft'
+              ? css`
+                  border-right: 2px solid ${colors('indigo300')};
+                  border-bottom: 2px solid ${colors('indigo300')};
+                `
+              : css`
+                  border-top: 2px solid ${colors('indigo300')};
+                  border-right: 2px solid ${colors('indigo300')};
+                `
+          ]}
+        >
+          {priority}
+        </FlexCenter>
+      )}
     </Flex>
   )
 }
@@ -136,7 +144,8 @@ const ExpressionPrioritiesLabelBox = ({
 const ExpressionPrioritiesLabel = ({
   priorities,
   position,
-  emphasize
+  emphasize,
+  removing
 }: ExpressionPrioritiesLabelProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
@@ -171,6 +180,7 @@ const ExpressionPrioritiesLabel = ({
       >
         {priorities.map((priority, index) => (
           <ExpressionPrioritiesLabelBox
+            removing={!!removing && priority === 1}
             position={position}
             emphasize={emphasize}
             offset={index}
