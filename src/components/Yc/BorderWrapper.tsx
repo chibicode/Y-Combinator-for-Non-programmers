@@ -26,7 +26,11 @@ const background = (
         background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};
       `
     }
-    case 'removed':
+    case 'removed': {
+      return css`
+        background: ${colors('deepOrange50')};
+      `
+    }
     case 'active': {
       return css`
         background: ${colors('white')};
@@ -49,7 +53,7 @@ const background = (
         `
       } else if (topBadgeType === 'unmatch') {
         return css`
-          background: ${colors('pink50')};
+          background: ${colors('purple50')};
         `
       } else if (
         topBadgeType === 'betaReduced' ||

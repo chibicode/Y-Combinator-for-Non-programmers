@@ -18,7 +18,7 @@ interface ExpressionPrioritiesLabelProps {
 interface ExpressionPrioritiesLabelBox {
   emphasize: boolean
   priority: number
-  position: ExpressionPrioritiesLabelProps['position']
+  offset: number
 }
 
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
@@ -48,12 +48,19 @@ const size = (
 
 const ExpressionPrioritiesLabelBox = ({
   emphasize,
-  priority
+  priority,
+  offset
 }: ExpressionPrioritiesLabelBox) => {
   const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
-    <Flex>
+    <Flex
+      css={css`
+        position: relative;
+        left: ${-offset * 0.2 * size(variableSize)}em;
+        z-index: ${-offset};
+      `}
+    >
       <FlexCenter
         css={css`
           color: ${colors(
@@ -79,14 +86,13 @@ const ExpressionPrioritiesLabelBox = ({
 
 const ExpressionPrioritiesLabelExpanded = ({
   priorities,
-  position,
   emphasize
 }: ExpressionPrioritiesLabelDefaultProps) => (
   <Flex>
-    {priorities.map(priority => (
+    {priorities.map((priority, index) => (
       <ExpressionPrioritiesLabelBox
         emphasize={emphasize}
-        position={position}
+        offset={index}
         key={priority}
         priority={priority}
       />
@@ -120,7 +126,6 @@ const ExpressionPrioritiesLabel = ({
       <ExpressionPrioritiesLabelExpanded
         priorities={priorities}
         emphasize={emphasize}
-        position={position}
       />
     </div>
   )

@@ -88,8 +88,9 @@ const stateToExplanation = ({
       } else {
         return (
           <>
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が消え、{' '}
             <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>に
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> に
           </>
         )
       }

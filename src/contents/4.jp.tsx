@@ -80,11 +80,13 @@ export default () => (
             </P>
             {AER.aaov}
             <P>
-              左上と左下がピンク色の{' '}
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-              になり、背景が白色 <InlineBackground bgColor={'white'} />{' '}
-              に、それ以外の背景が暗い色{' '}
-              <InlineBackground bgColor={'indigo50'} /> になりました。
+              <Em>
+                左上と左下がピンク色の{' '}
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+                になり、背景が白色 <InlineBackground bgColor={'white'} />{' '}
+                に、それ以外の背景が暗い色{' '}
+                <InlineBackground bgColor={'indigo50'} /> になりました。
+              </Em>
             </P>
           </>
         )
@@ -99,9 +101,13 @@ export default () => (
         content: (
           <>
             <P>
-              次に、今までと同じように
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペア部分
-              を終わらせます。
+              次に、
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペア部分(
+              <Em>
+                背景が白色 <InlineBackground bgColor={'white'} />
+              </Em>
+              )を今までと同じように終わらせます。
             </P>
             <P>
               <H args={{ name: 'pressFastForward' }} />
@@ -128,8 +134,8 @@ export default () => (
             <P>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペア部分が終わったら、
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>がなくなり、
               <Strong>
-                以前の
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になります。
               </Strong>
@@ -137,7 +143,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>,
-                <Emoji>➡</Emoji>,
+                <Emoji>👉</Emoji>,
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
             />
@@ -147,12 +153,12 @@ export default () => (
             </P>
             {AER.uwma}
             <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              が消えた<Emoji>💥</Emoji>瞬間に
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                が消えた<Emoji>💥</Emoji>後に、以前の
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>がなくなり、
-                以前の<InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
               </Strong>
             </P>
