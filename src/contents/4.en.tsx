@@ -114,8 +114,7 @@ export const old = () => {
       </P>
       {episode5[i++]()}
       <P>
-        Let’s see what happens when the crossed-out sections{' '}
-        <InlineBackground bgPattern="cross" /> are removed.{' '}
+        Let’s see what happens when the crossed-out sections are removed.{' '}
         <Em>Try pressing {h('ycNext')}</Em>.
       </P>
       {episode5[i++]()}

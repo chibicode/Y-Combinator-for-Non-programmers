@@ -1,33 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import crossDarkSvg from 'src/images/cross-dark.url.svg'
 import { colors } from 'src/lib/theme'
 import { allColors } from 'src/lib/theme/colors'
 
 interface InlineBackgroundProps {
-  bgColor?: keyof typeof allColors
-  bgPattern?: 'cross'
+  bgColor: keyof typeof allColors
   size: 'md' | 'mdlg'
 }
 
-const bgPatternToSvg = (
-  pattern: InlineBackgroundProps['bgPattern']
-): string => {
-  switch (pattern) {
-    case 'cross': {
-      return crossDarkSvg
-    }
-    default: {
-      throw new Error('error')
-    }
-  }
-}
-
-const InlineBackground = ({
-  bgColor,
-  bgPattern,
-  size
-}: InlineBackgroundProps) => (
+const InlineBackground = ({ bgColor, size }: InlineBackgroundProps) => (
   <span
     css={[
       css`
@@ -35,17 +16,8 @@ const InlineBackground = ({
         padding: ${size === 'mdlg' ? '0.6em' : '0.55em'};
         border: 2px solid ${colors('indigo300')};
         vertical-align: text-bottom;
-      `,
-      bgColor &&
-        css`
-          background-color: ${colors(bgColor)};
-        `,
-      bgPattern &&
-        css`
-          background-image: url(${bgPatternToSvg(bgPattern)});
-          background-size: 1.5em 1.5em;
-          background-position: center center;
-        `
+        background-color: ${colors(bgColor)};
+      `
     ]}
   />
 )

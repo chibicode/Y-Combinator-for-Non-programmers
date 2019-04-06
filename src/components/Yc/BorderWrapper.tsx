@@ -5,8 +5,7 @@ import Flex from 'src/components/Flex'
 import ExpressionRunnerContext, {
   HighlightOverrides
 } from 'src/components/Yc/ExpressionRunnerContext'
-import crossSvg from 'src/images/cross.url.svg'
-import { colors, zIndices } from 'src/lib/theme'
+import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
@@ -71,21 +70,6 @@ const background = (
   }
 }
 
-const Cross = () => (
-  <div
-    css={css`
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: ${zIndices('cross')};
-      background-image: url(${crossSvg});
-      background-size: 100% 100%;
-    `}
-  />
-)
-
 const BorderWrapper = ({
   highlightType,
   bottomRightBadgeType,
@@ -124,7 +108,6 @@ const BorderWrapper = ({
           `
       ]}
     >
-      {highlightType === 'removed' && <Cross />}
       {children}
     </Flex>
   )

@@ -107,6 +107,12 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.qxgl}
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              が消える<Emoji>💥</Emoji>
+              ところまで終わりました。この次がキーポイントです。
+            </P>
           </>
         )
       },
@@ -121,7 +127,7 @@ export default () => (
           <>
             <P>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペア部分が消えたら<Emoji>💥</Emoji>、
+              のペア部分が終わったら、
               <Strong>
                 以前の
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
@@ -144,7 +150,7 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                が消えた後に、以前の
+                が消えた<Emoji>💥</Emoji>後に、以前の
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>がなくなり、
                 以前の<InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
@@ -261,8 +267,7 @@ export const old = () => {
       </P>
       {episode5[i++]()}
       <P>
-        バツ印のマス <InlineBackground bgPattern="cross" />{' '}
-        が消えた後はどうなるでしょう？
+        バツ印のマスが消えた後はどうなるでしょう？
         <Em>
           {h('ycNext')}
           を押してみてください。

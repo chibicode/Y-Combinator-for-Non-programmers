@@ -63,7 +63,11 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
             position: relative;
           `}
         >
-          <Emoji size="sm">{letterEmojiMapping[expression.name]}</Emoji>
+          <Emoji size="sm">
+            {expression.highlightType === 'removed'
+              ? '💥'
+              : letterEmojiMapping[expression.name]}
+          </Emoji>
           {!hideBottomRightBadges &&
             expression.bottomRightBadgeType !== 'none' && (
               <span
