@@ -111,7 +111,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               が消える<Emoji>💥</Emoji>
-              ところまで終わりました。この次がキーポイントです。
+              ところまで進みました。この次がポイントです。
             </P>
           </>
         )

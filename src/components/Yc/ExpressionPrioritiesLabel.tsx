@@ -7,7 +7,7 @@ import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityConte
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
-import { colors, fontSizes, zIndices } from 'src/lib/theme'
+import { colors, fontSizes, zIndices, radii } from 'src/lib/theme'
 
 interface ExpressionPrioritiesLabelProps {
   emphasize: boolean
@@ -19,7 +19,6 @@ interface ExpressionPrioritiesLabelBox {
   emphasize: boolean
   priority: number
   position: ExpressionPrioritiesLabelProps['position']
-  collapsed: boolean
 }
 
 type ExpressionPrioritiesLabelDefaultProps = ExpressionPrioritiesLabelProps
@@ -36,34 +35,20 @@ const fontSize = (
   }
 }
 
-const width = (
-  variableSize: ExpressionRunnerContextProps['variableSize'],
-  collapsed: boolean
+const size = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   const multiplier = {
     lg: 1.07,
     md: 1,
     sm: 0.93
   }[variableSize]
-  return (collapsed ? 2 : 1.2) * multiplier
-}
-
-const height = (
-  variableSize: ExpressionRunnerContextProps['variableSize']
-): number => {
-  const multiplier = {
-    lg: 1.07,
-    md: 1,
-    sm: 1
-  }[variableSize]
   return 1.3 * multiplier
 }
 
 const ExpressionPrioritiesLabelBox = ({
   emphasize,
-  priority,
-  position,
-  collapsed
+  priority
 }: ExpressionPrioritiesLabelBox) => {
   const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
@@ -76,33 +61,17 @@ const ExpressionPrioritiesLabelBox = ({
           )};
           font-size: ${fontSize(variableSize)};
           font-weight: bold;
-          width: ${width(variableSize, collapsed)}em;
-          height: ${height(variableSize)}em;
+          width: ${size(variableSize)}em;
+          height: ${size(variableSize)}em;
           line-height: 1;
           background: ${colors(
-            emphasize && activePriority === priority ? 'pink400' : 'transparent'
+            emphasize && activePriority === priority ? 'pink400' : 'white'
           )};
-          ${position === 'topleft'
-            ? css`
-                border-right: 2px solid ${colors('indigo300')};
-                border-bottom: 2px solid ${colors('indigo300')};
-              `
-            : css`
-                border-top: 2px solid ${colors('indigo300')};
-                border-right: 2px solid ${colors('indigo300')};
-              `};
+          border: 2px solid ${colors('indigo300')};
+          border-radius: ${radii(9999)};
         `}
       >
-        <div
-          css={
-            position === 'bottomleft' &&
-            css`
-              transform: translateY(-1px);
-            `
-          }
-        >
-          {priority}
-        </div>
+        {priority}
       </FlexCenter>
     </Flex>
   )
@@ -119,7 +88,6 @@ const ExpressionPrioritiesLabelExpanded = ({
         emphasize={emphasize}
         position={position}
         key={priority}
-        collapsed={false}
         priority={priority}
       />
     ))}
@@ -130,29 +98,32 @@ const ExpressionPrioritiesLabel = ({
   priorities,
   position,
   emphasize
-}: ExpressionPrioritiesLabelProps) => (
-  <div
-    css={css`
+}: ExpressionPrioritiesLabelProps) => {
+  const { variableSize } = useContext(ExpressionRunnerContext)
+  return (
+    <div
+      css={css`
         position: absolute;
-        left: 0px;
+        left: ${(-1 * size(variableSize)) / 2}em;
         ${
           position === 'topleft'
             ? css`
-                top: 0px;
+                top: ${(-1 * size(variableSize)) / 2}em;
               `
             : css`
-                bottom: 0px;
+                bottom: ${(-1 * size(variableSize)) / 2}em;
               `
         }
         z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
       `}
-  >
-    <ExpressionPrioritiesLabelExpanded
-      priorities={priorities}
-      emphasize={emphasize}
-      position={position}
-    />
-  </div>
-)
+    >
+      <ExpressionPrioritiesLabelExpanded
+        priorities={priorities}
+        emphasize={emphasize}
+        position={position}
+      />
+    </div>
+  )
+}
 
 export default ExpressionPrioritiesLabel
