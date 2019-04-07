@@ -1,4 +1,3 @@
-import produce, { Draft } from 'immer'
 import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import { StepOptions } from 'src/lib/yc/ExpressionContainerManager'
@@ -6,6 +5,8 @@ import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAn
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
+import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
+import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
   stepToActive,
@@ -48,7 +49,7 @@ const stepExpressionContainerReset = (
 }
 
 const step = (
-  e: Draft<ExecutableCall>,
+  e: ExecutableCall,
   { showAllShowSteps }: StepOptions,
   matchExists?: boolean
 ): {
@@ -170,33 +171,36 @@ const step = (
   }
 }
 
-const recipe = (stepOptions: StepOptions) => (
-  draftContainer: Draft<
-    | ContainerWithState<'ready'>
-    | ContainerWithState<'stepped'>
-    | ContainerWithState<'needsReset'>
-  >
-): ContainerWithState<'needsReset'> | ContainerWithState<'stepped'> | void => {
+const runStep = (
+  e: ContainerWithState<'ready'> | ContainerWithState<'stepped'>,
+  stepOptions: StepOptions
+):
+  | ContainerWithState<'needsReset'>
+  | ContainerWithState<'stepped'>
+  | ContainerWithState<'ready'> => {
   const {
     expression,
     callParent,
     funcParent,
     callParentKey
   } = findNextCallExpressionAndParent<
-    Draft<ExecutableCall>,
-    Draft<CallExpression>,
-    Draft<FunctionExpression>
-  >(draftContainer.expression)
+    ExecutableCall,
+    CallExpression,
+    FunctionExpression
+  >(e.expression)
   if (!expression) {
     // Special case - already done to begin with
-    draftContainer.containerState = 'needsReset'
-    return
+    return {
+      ...e,
+      containerState: 'needsReset'
+    }
   }
+
   const {
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = step(expression, stepOptions, draftContainer.matchExists)
+  } = step(expression, stepOptions, e.matchExists)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
@@ -209,22 +213,42 @@ const recipe = (stepOptions: StepOptions) => (
       : { ...newContainer, containerState: 'stepped' }
   }
 
+  let newExpression: typeof e.expression
+
   if (callParent && callParentKey) {
-    callParent[callParentKey] = nextExpression
+    newExpression = replaceCallParentKey(
+      e.expression,
+      callParent,
+      callParentKey,
+      nextExpression
+    )
   } else if (funcParent) {
-    funcParent.body = nextExpression
+    newExpression = replaceFuncParentKey(
+      e.expression,
+      funcParent,
+      nextExpression
+    )
   } else {
     throw new Error()
   }
 
   if (previouslyChangedExpressionState === 'default') {
-    draftContainer.containerState = 'needsReset'
+    return {
+      ...e,
+      expression: newExpression,
+      containerState: 'needsReset',
+      matchExists,
+      previouslyChangedExpressionState
+    }
   } else {
-    draftContainer.containerState = 'stepped'
+    return {
+      ...e,
+      expression: newExpression,
+      containerState: 'stepped',
+      matchExists,
+      previouslyChangedExpressionState
+    }
   }
-
-  draftContainer.matchExists = matchExists
-  draftContainer.previouslyChangedExpressionState = previouslyChangedExpressionState
 }
 
 export default function stepExpressionContainer(
@@ -234,11 +258,7 @@ export default function stepExpressionContainer(
   | ContainerWithState<'done'>
   | ContainerWithState<'stepped'>
   | ContainerWithState<'ready'> {
-  const result = produce<
-    | ContainerWithState<'needsReset'>
-    | ContainerWithState<'stepped'>
-    | ContainerWithState<'ready'>
-  >(e, recipe(stepOptions))
+  const result = runStep(e, stepOptions)
 
   if (isContainerWithState(result, 'needsReset')) {
     return stepExpressionContainerReset(result)
