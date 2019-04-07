@@ -7,7 +7,8 @@ import {
   P,
   Strong,
   Ul,
-  UlLi
+  UlLi,
+  InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -83,8 +84,7 @@ export default () => (
               <Em>
                 左上と左下がピンク色の{' '}
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-                になり、背景が白色 <InlineBackground bgColor={'white'} />{' '}
-                に、それ以外の背景が暗い色{' '}
+                になり、中段と下段以外の背景が暗い色{' '}
                 <InlineBackground bgColor={'indigo50'} /> になりました。
               </Em>
             </P>
@@ -94,7 +94,7 @@ export default () => (
       {
         title: (
           <>
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
             のペア部分を終わらせる
           </>
         ),
@@ -102,7 +102,7 @@ export default () => (
           <>
             <P>
               次に、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
               のペア部分(
               <Em>
                 背景が白色 <InlineBackground bgColor={'white'} />
@@ -114,10 +114,13 @@ export default () => (
             </P>
             {AER.qxgl}
             <P>
+              <InlineHeader>ポイント:</InlineHeader>{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               が消える<Emoji>💥</Emoji>
-              ところまで進みました。この次がポイントです。
+              ところまで進んだところで、
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              のペアも<Emoji>💥</Emoji>になっていることに注目です。
             </P>
           </>
         )
@@ -125,19 +128,33 @@ export default () => (
       {
         title: (
           <>
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            のペア部分が終わったら
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え
+            <Emoji>💥</Emoji>、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            が<InlinePrioritiesLabel>1</InlinePrioritiesLabel>に
           </>
         ),
         content: (
           <>
             <P>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペア部分が終わったら、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>がなくなり、
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              のペア部分が終わると同時に、
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え{' '}
+              <Emoji>💥</Emoji>、
               <Strong>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になります。
+              </Strong>
+            </P>
+            <P>
+              先ほどの続きから確かめてみましょう。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.uwma}
+            <P>
+              ご覧の通り、
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
               </Strong>
             </P>
             <EmojiSeparator
@@ -147,21 +164,6 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
             />
-            <P>
-              先ほどの続きから確かめてみましょう。
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.uwma}
-            <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              が消えた<Emoji>💥</Emoji>瞬間に
-              <Strong>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>がなくなり、
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
-              </Strong>
-            </P>
           </>
         )
       }
