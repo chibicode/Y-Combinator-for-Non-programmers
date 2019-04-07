@@ -146,7 +146,10 @@ const Card = ({
               padding-right: ${spaces(2)};
               padding-bottom: ${spaces(1)};
             }
-            border-radius: ${radii(0.5)};
+            border-top-right-radius: ${radii(0.5)};
+            border-top-left-radius: ${radii(0.5)};
+            border-bottom-right-radius: ${footer ? 0 : radii(0.5)};
+            border-bottom-left-radius: ${footer ? 0 : radii(0.5)};
             background: ${backgroundColor(color)};
           `}
         >
@@ -180,6 +183,8 @@ const Card = ({
                 padding-bottom: ${spaces(1)};
               }
               background: ${backgroundColor(footer.color || 'purple')};
+              border-bottom-right-radius: ${radii(0.5)};
+              border-bottom-left-radius: ${radii(0.5)};
             `}
           >
             {footer.content}

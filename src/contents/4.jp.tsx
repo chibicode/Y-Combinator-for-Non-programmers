@@ -21,6 +21,7 @@ import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import H from 'src/components/H'
+import EmojiWithText from 'src/components/EmojiWithText'
 
 export default () => (
   <EpisodeCardList
@@ -72,9 +73,6 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                 の印がある部分に注目します。
               </Strong>
-              先ほどの
-              <H args={{ name: 'bentoBox', short: true }} />
-              場合、中段と下段です。
             </P>
             <P>
               <H args={{ name: 'pressNext' }} />
@@ -82,8 +80,9 @@ export default () => (
             {AER.aaov}
             <P>
               <Em>
-                左上と左下がピンク色の{' '}
-                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアがピンク色
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
                 になり、中段と下段以外の背景が暗い色{' '}
                 <InlineBackground bgColor={'indigo50'} /> になりました。
               </Em>
@@ -114,11 +113,7 @@ export default () => (
             </P>
             {AER.qxgl}
             <P>
-              <InlineHeader>ポイント:</InlineHeader>{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              が消える<Emoji>💥</Emoji>
-              ところまで進んだところで、
+              <InlineHeader>ポイント:</InlineHeader> 最後に
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
               の印も<Emoji>💥</Emoji>に変化していることに注目です。
             </P>
@@ -133,21 +128,32 @@ export default () => (
             が<InlinePrioritiesLabel>1</InlinePrioritiesLabel>に
           </>
         ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>余談:</InlineHeader> このタイミングで
+                <EmojiWithText letter="m" />
+                の部分の背景も暗い色 <InlineBackground
+                  bgColor={'indigo50'}
+                />{' '}
+                から白色 <InlineBackground bgColor={'white'} />{' '}
+                にリセットされます。
+              </P>
+            </>
+          )
+        },
         content: (
           <>
             <P>
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペア部分が終わると同時に、
-              <InlinePrioritiesLabel revert>
-                1
-              </InlinePrioritiesLabel>の印が消え <Emoji>💥</Emoji>、
+              続いて<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              の印が消え <Emoji>💥</Emoji>、
               <Strong>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>の印が
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>の印になります。
               </Strong>
             </P>
             <P>
-              先ほどの続きから確かめてみましょう。
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.uwma}
