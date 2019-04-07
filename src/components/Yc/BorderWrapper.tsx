@@ -36,11 +36,6 @@ const background = (
         background: ${colors('white')};
       `
     }
-    case 'activeEmphasizePriority': {
-      return css`
-        background: ${colors('white')};
-      `
-    }
     case 'forceYellowHighlight': {
       return css`
         background: ${colors('yellow100')};

@@ -7,6 +7,7 @@ export interface VariableExpression {
   readonly highlightType: VariableStates[keyof VariableStates]['highlightType']
   readonly topBadgeType: VariableStates[keyof VariableStates]['topBadgeType']
   readonly bottomRightBadgeType: VariableStates[keyof VariableStates]['bottomRightBadgeType']
+  readonly emphasizePriority: boolean
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
 }
@@ -14,6 +15,13 @@ export interface VariableExpression {
 export type VariableWithState<
   S extends keyof VariableStates
 > = VariableExpression & VariableStates[S]
+
+export type VariableWithEmphasizePriorityAndState<
+  S extends keyof VariableStates
+> = VariableExpression &
+  VariableStates[S] & {
+    readonly emphasizePriority: true
+  }
 
 interface VariableStates {
   default: {
@@ -23,11 +31,6 @@ interface VariableStates {
   }
   active: {
     readonly highlightType: 'active'
-    readonly topBadgeType: 'none'
-    readonly bottomRightBadgeType: 'none'
-  }
-  emphasizePriority: {
-    readonly highlightType: 'activeEmphasizePriority'
     readonly topBadgeType: 'none'
     readonly bottomRightBadgeType: 'none'
   }
@@ -155,7 +158,7 @@ export type CallStates =
 export type CtoV<C extends CallStates> = C extends 'default'
   ? 'default'
   : C extends 'active'
-  ? 'active' | 'emphasizePriority'
+  ? 'active'
   : C extends 'showCallArg'
   ? 'active' | 'highlightCallArg'
   : C extends 'showFuncArg'

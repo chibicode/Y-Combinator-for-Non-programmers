@@ -37,7 +37,8 @@ export default function resetExpression(
       bottomRightBadgeType: 'none',
       bound: expression.bound,
       argPriorityAgg: [],
-      funcPriorityAgg: []
+      funcPriorityAgg: [],
+      emphasizePriority: false
     }
   } else if (isCall(expression)) {
     return {

@@ -49,7 +49,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           priorities={expression.argPriorityAgg}
           position="topleft"
           removing={expression.highlightType === 'removed'}
-          emphasize={expression.highlightType === 'activeEmphasizePriority'}
+          emphasize={expression.emphasizePriority}
         />
       )}
       <FlexCenter
@@ -113,7 +113,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           priorities={expression.funcPriorityAgg}
           removing={expression.highlightType === 'removed'}
           position="bottomleft"
-          emphasize={expression.highlightType === 'activeEmphasizePriority'}
+          emphasize={expression.emphasizePriority}
         />
       )}
     </>

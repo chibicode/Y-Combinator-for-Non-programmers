@@ -49,6 +49,7 @@ const buildVariableExpression = (
   type: 'variable',
   argPriorityAgg: [],
   funcPriorityAgg: [],
+  emphasizePriority: false,
   bound
 })
 

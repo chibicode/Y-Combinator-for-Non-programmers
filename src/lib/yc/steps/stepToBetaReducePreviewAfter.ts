@@ -30,7 +30,8 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
       ...e,
       highlightType: 'highlighted',
       topBadgeType: 'betaReduced',
-      bottomRightBadgeType: 'funcBound'
+      bottomRightBadgeType: 'funcBound',
+      emphasizePriority: false
     }
   } else if (isFunction(e)) {
     return {

@@ -10,7 +10,7 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableWithState
+  VariableWithEmphasizePriorityAndState
 } from 'src/types/yc/ExpressionTypes'
 
 function toActive(e: VariableExpression): StepVariable<'active'>
@@ -46,12 +46,13 @@ function toActive(e: Expression): StepChild<'active'> {
 
 const variableToEmphasize = (
   e: VariableExpression
-): VariableWithState<'emphasizePriority'> => {
+): VariableWithEmphasizePriorityAndState<'active'> => {
   return {
     ...e,
     topBadgeType: 'none',
     bottomRightBadgeType: 'none',
-    highlightType: 'activeEmphasizePriority'
+    highlightType: 'active',
+    emphasizePriority: true
   }
 }
 

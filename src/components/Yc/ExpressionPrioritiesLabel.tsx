@@ -3,7 +3,6 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
@@ -30,6 +29,18 @@ const fontSize = (
 ): string => {
   if (variableSize === 'lg') {
     return fontSizes(0.75)
+  } else if (variableSize === 'md') {
+    return fontSizes(0.7)
+  } else {
+    return fontSizes(0.6)
+  }
+}
+
+const emojiFontSize = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): string => {
+  if (variableSize === 'lg') {
+    return fontSizes(1)
   } else if (variableSize === 'md') {
     return fontSizes(0.7)
   } else {
@@ -75,7 +86,6 @@ const ExpressionPrioritiesLabelBox = ({
   offset,
   removing
 }: ExpressionPrioritiesLabelBoxProps) => {
-  const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
     <Flex
@@ -97,13 +107,19 @@ const ExpressionPrioritiesLabelBox = ({
       ]}
     >
       {removing ? (
-        <Emoji>💥</Emoji>
+        <span
+          css={css`
+            font-size: ${emojiFontSize(variableSize)};
+          `}
+        >
+          <Emoji>💥</Emoji>
+        </span>
       ) : (
         <FlexCenter
           css={[
             css`
               color: ${colors(
-                emphasize && activePriority === priority ? 'white' : 'indigo300'
+                emphasize && 1 === priority ? 'white' : 'indigo300'
               )};
               font-size: ${fontSize(variableSize)};
               font-weight: bold;
@@ -111,7 +127,7 @@ const ExpressionPrioritiesLabelBox = ({
               height: ${height(variableSize)}em;
               line-height: 1;
               background: ${colors(
-                emphasize && activePriority === priority
+                emphasize && 1 === priority
                   ? 'pink400'
                   : variableSize === 'lg'
                   ? 'white'

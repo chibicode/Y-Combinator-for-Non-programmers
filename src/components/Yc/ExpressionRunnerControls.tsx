@@ -48,7 +48,6 @@ interface ExpressionRunnerControlsProps {
   isPlaying: boolean
   showPlayButton: boolean
   skipToTheEnd: boolean
-  hidePriorities: boolean
   onNextClick: () => void
   onPreviousClick: () => void
   onAutoClick: () => void
@@ -71,14 +70,13 @@ const ExpressionRunnerControls = ({
   onResetClick,
   onSkipToTheEndClick,
   skipToTheEnd,
-  isDone,
-  hidePriorities
+  isDone
 }: ExpressionRunnerControlsProps) => (
   <div
     css={css`
       display: flex;
       justify-content: center;
-      margin: ${spaces(hidePriorities ? 1 : 1.25)} -2px 0 -2px;
+      margin: ${spaces(1)} -2px 0 -2px;
     `}
   >
     {!showPlayButton &&

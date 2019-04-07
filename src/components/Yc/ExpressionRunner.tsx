@@ -311,7 +311,6 @@ const ExpressionRunner = ({
               onSkipToTheEndClick={actions.skipToTheEnd}
               onResetClick={actions.reset}
               skipToTheEnd={skipToTheEnd}
-              hidePriorities={hidePriorities}
             />
           )}
         </Container>
