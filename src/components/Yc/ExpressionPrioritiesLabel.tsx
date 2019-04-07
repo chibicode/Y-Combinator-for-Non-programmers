@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
+import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
@@ -86,6 +87,7 @@ const ExpressionPrioritiesLabelBox = ({
   offset,
   removing
 }: ExpressionPrioritiesLabelBoxProps) => {
+  const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
     <Flex
@@ -106,7 +108,7 @@ const ExpressionPrioritiesLabelBox = ({
           `
       ]}
     >
-      {removing ? (
+      {removing && emphasize && activePriority === priority ? (
         <span
           css={css`
             font-size: ${emojiFontSize(variableSize)};
@@ -119,7 +121,7 @@ const ExpressionPrioritiesLabelBox = ({
           css={[
             css`
               color: ${colors(
-                emphasize && 1 === priority ? 'white' : 'indigo300'
+                emphasize && activePriority === priority ? 'white' : 'indigo300'
               )};
               font-size: ${fontSize(variableSize)};
               font-weight: bold;
@@ -127,7 +129,7 @@ const ExpressionPrioritiesLabelBox = ({
               height: ${height(variableSize)}em;
               line-height: 1;
               background: ${colors(
-                emphasize && 1 === priority
+                emphasize && activePriority === priority
                   ? 'pink400'
                   : variableSize === 'lg'
                   ? 'white'
@@ -164,6 +166,7 @@ const ExpressionPrioritiesLabel = ({
   removing
 }: ExpressionPrioritiesLabelProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
+  const { activePriority } = useContext(ExpressionPriorityContext)
   return (
     <div
       css={[
@@ -196,7 +199,7 @@ const ExpressionPrioritiesLabel = ({
       >
         {priorities.map((priority, index) => (
           <ExpressionPrioritiesLabelBox
-            removing={!!removing && priority === 1}
+            removing={!!removing && priority === activePriority}
             position={position}
             emphasize={emphasize}
             offset={index}
