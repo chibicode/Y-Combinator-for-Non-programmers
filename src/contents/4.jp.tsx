@@ -15,7 +15,6 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode5 } from 'src/components/Yc/AllExpressionRunners'
 import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -172,6 +171,19 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            残った<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアを終わらせる
+          </>
+        ),
+        content: (
+          <>
+            <P>?</P>
           </>
         )
       }
