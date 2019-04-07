@@ -70,7 +70,7 @@ export default () => (
               <Strong>
                 まず、左上と左下に
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                がある部分に注目します。
+                の印がある部分に注目します。
               </Strong>
               先ほどの
               <H args={{ name: 'bentoBox', short: true }} />
@@ -120,7 +120,7 @@ export default () => (
               が消える<Emoji>💥</Emoji>
               ところまで進んだところで、
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペアも<Emoji>💥</Emoji>になっていることに注目です。
+              の印も<Emoji>💥</Emoji>に変化していることに注目です。
             </P>
           </>
         )
@@ -138,11 +138,12 @@ export default () => (
             <P>
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
               のペア部分が終わると同時に、
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え{' '}
-              <Emoji>💥</Emoji>、
+              <InlinePrioritiesLabel revert>
+                1
+              </InlinePrioritiesLabel>の印が消え <Emoji>💥</Emoji>、
               <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になります。
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>の印が
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>の印になります。
               </Strong>
             </P>
             <P>
@@ -153,8 +154,9 @@ export default () => (
             <P>
               ご覧の通り、
               <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>の印が
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                の印になりました。
               </Strong>
             </P>
             <EmojiSeparator
