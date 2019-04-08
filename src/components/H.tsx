@@ -32,6 +32,7 @@ export interface HProps {
     | { name: 'yesNoQuizNo'; hideText?: boolean }
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
+    | { name: 'pauseIfLost' }
     | {
         name: 'bentoBox'
         plural?: boolean
@@ -40,8 +41,8 @@ export interface HProps {
       }
     | { name: 'next' }
     | { name: 'play' }
+    | { name: 'pause' }
     | { name: 'fastForward' }
-    | { name: 'fastForwarding' }
     | { name: 'reset' }
     | { name: 'previous' }
     | { name: 'whatWeHaveLearned' }
@@ -399,17 +400,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'fastForwarding') {
+  if (args.name === 'pause') {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>Fast Forwarding…</Strong>
+          <Strong highlightType={highlightType}>
+            Pause <Emoji>⏸</Emoji>
+          </Strong>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>早送り中…</Strong>
+          <Strong highlightType={highlightType}>
+            一時停止 <Emoji>⏸</Emoji>
+          </Strong>
         </>
       )
     }
@@ -839,6 +844,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'bentoBox', short: true }} />を
           <H args={{ name: 'play' }} />
           すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'pauseIfLost') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return (
+        <>
+          途中でわからなくなったら、
+          <H args={{ name: 'pause' }} />
+          を押してみてください。説明が上に表示されます。
         </>
       )
     }

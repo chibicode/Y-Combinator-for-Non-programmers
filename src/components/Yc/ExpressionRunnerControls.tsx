@@ -3,6 +3,8 @@ import { css, jsx } from '@emotion/core'
 import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import H from 'src/components/H'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
+import Emoji from 'src/components/Emoji'
+import { useState } from 'react'
 
 const Button = (props: JSX.IntrinsicElements['button']) => (
   <ButtonWithTouchActiveStates
@@ -53,11 +55,38 @@ interface ExpressionRunnerControlsProps {
   onAutoClick: () => void
   onResetClick: () => void
   onSkipToTheEndClick: () => void
+  onPauseClick: () => void
 }
 
 const noOp = () => {
   return
 }
+
+const ButtonPlaceholder = ({
+  width,
+  flex
+}: {
+  width?: number
+  flex?: number
+}) => (
+  <div
+    css={[
+      width &&
+        css`
+          width: ${width}%;
+        `,
+      flex &&
+        css`
+          /* Same border as the button */
+          border: 2px solid transparent;
+          flex: ${flex};
+        `
+    ]}
+  />
+)
+
+const sideButtonsWidth = 24
+const centerButtonWidth = 48
 
 const ExpressionRunnerControls = ({
   canStepForward,
@@ -68,19 +97,44 @@ const ExpressionRunnerControls = ({
   isPlaying,
   onAutoClick,
   onResetClick,
+  onPauseClick,
   onSkipToTheEndClick,
   skipToTheEnd,
   isDone
-}: ExpressionRunnerControlsProps) => (
-  <div
-    css={css`
-      display: flex;
-      justify-content: center;
-      margin: ${spaces(1)} -2px 0 -2px;
-    `}
-  >
-    {!showPlayButton &&
-      (!isPlaying && canStepBackward ? (
+}: ExpressionRunnerControlsProps) => {
+  const [playClicked, setPlayClicked] = useState(false)
+  const onAutoClickWrapper = () => {
+    setPlayClicked(true)
+    onAutoClick()
+  }
+  const onResetClickWrapper = () => {
+    setPlayClicked(false)
+    onResetClick()
+  }
+  return (
+    <div
+      css={css`
+        display: flex;
+        justify-content: space-between;
+        margin: ${spaces(1)} -2px 0 -2px;
+      `}
+    >
+      {showPlayButton ? (
+        <>
+          {!isPlaying && canStepBackward ? (
+            <Button
+              onClick={onPreviousClick}
+              css={css`
+                width: ${sideButtonsWidth}%;
+              `}
+            >
+              <Emoji>⬅</Emoji>
+            </Button>
+          ) : (
+            <ButtonPlaceholder width={sideButtonsWidth} />
+          )}
+        </>
+      ) : canStepBackward ? (
         <Button
           onClick={onPreviousClick}
           css={css`
@@ -90,54 +144,63 @@ const ExpressionRunnerControls = ({
           <H args={{ name: 'previous' }} />
         </Button>
       ) : (
-        <div
-          css={css`
-            flex: 1;
-            /* Same border as the button */
-            border: 2px solid transparent;
-          `}
-        />
-      ))}
-    {showPlayButton && (
-      <Button
-        disabled={isPlaying && !isDone && canStepForward}
-        onClick={
-          canStepForward
-            ? skipToTheEnd
-              ? onSkipToTheEndClick
-              : onAutoClick
-            : onResetClick
-        }
-        css={[
-          css`
-            flex: 0.5;
-          `,
-          canStepForward &&
-            !isPlaying &&
+        <ButtonPlaceholder flex={1} />
+      )}
+      {showPlayButton && (
+        <Button
+          onClick={
+            canStepForward
+              ? skipToTheEnd
+                ? onSkipToTheEndClick
+                : isPlaying
+                ? onPauseClick
+                : onAutoClickWrapper
+              : onResetClickWrapper
+          }
+          css={[
             css`
-              background: ${colors('yellow100')};
+              width: ${centerButtonWidth}%;
             `,
-          !canStepForward &&
-            css`
-              background: ${colors('pink50')};
-            `
-        ]}
-      >
-        {canStepForward ? (
-          isPlaying ? (
-            <H args={{ name: 'fastForwarding' }} highlightType="none" />
-          ) : skipToTheEnd ? (
-            <H args={{ name: 'play' }} highlightType="none" />
+            canStepForward &&
+              !isPlaying &&
+              css`
+                background: ${colors('yellow100')};
+              `,
+            !canStepForward &&
+              css`
+                background: ${colors('pink50')};
+              `
+          ]}
+        >
+          {canStepForward ? (
+            isPlaying ? (
+              <H args={{ name: 'pause' }} highlightType="none" />
+            ) : skipToTheEnd ? (
+              <H args={{ name: 'play' }} highlightType="none" />
+            ) : (
+              <H args={{ name: 'fastForward' }} highlightType="none" />
+            )
           ) : (
-            <H args={{ name: 'fastForward' }} highlightType="none" />
-          )
-        ) : (
-          <H args={{ name: 'reset' }} highlightType="none" />
-        )}
-      </Button>
-    )}
-    {!showPlayButton &&
-      (!isPlaying && (canStepForward || isDone) ? (
+            <H args={{ name: 'reset' }} highlightType="none" />
+          )}
+        </Button>
+      )}
+      {showPlayButton ? (
+        <>
+          {!isPlaying && canStepForward && playClicked ? (
+            <Button
+              onClick={onNextClick}
+              css={css`
+                width: ${sideButtonsWidth}%;
+              `}
+            >
+              <Emoji>➡️</Emoji>
+            </Button>
+          ) : (
+            <ButtonPlaceholder width={sideButtonsWidth} />
+          )}
+        </>
+      ) : canStepForward || isDone ? (
         <Button
           onClick={canStepForward ? onNextClick : noOp}
           disabled={!canStepForward}
@@ -152,15 +215,10 @@ const ExpressionRunnerControls = ({
           )}
         </Button>
       ) : (
-        <div
-          css={css`
-            flex: 1;
-            /* Same border as the button */
-            border: 2px solid transparent;
-          `}
-        />
-      ))}
-  </div>
-)
+        <ButtonPlaceholder flex={1} />
+      )}
+    </div>
+  )
+}
 
 export default ExpressionRunnerControls

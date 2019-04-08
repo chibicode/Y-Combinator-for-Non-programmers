@@ -7,9 +7,32 @@ import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: <>応用問題</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              今回が初級の最後です。
+            </P>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <P>
+              中級に進む前に、
+              <Strong>今までに学んだことの応用問題を解いていきます。</Strong>
+              さっそくやっていきましょう！
+            </P>
+          </>
+        )
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0

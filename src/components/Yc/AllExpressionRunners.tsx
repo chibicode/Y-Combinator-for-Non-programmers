@@ -235,110 +235,37 @@ export default {
       finalState="default"
       showPriorities
     />
+  ),
+  kvso: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E3}
+      nextIteration
+      showPriorities
+      skipToTheEnd={false}
+    />
+  ),
+  snsr: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E3}
+      showPriorities
+      skipToTheEnd={false}
+    />
+  ),
+  gmck: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E1}
+      showPriorities
+      skipToTheEnd={false}
+    />
+  ),
+  hdxc: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E2}
+      showPriorities
+      skipToTheEnd={false}
+    />
   )
 }
-
-export const episode5 = [
-  () => (
-    <ExpressionRunner
-      containerSize="xs"
-      expressionContainer={lessonExpressions.episode4Expression2}
-      hidePlayButton
-      hidePriorities
-      showAllShowSteps
-      resetIndex
-      variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'active'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      hidePlayButton
-      hideControls
-      explanationsVisibility="hidden"
-      variableSize={'lg'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      hidePlayButton
-      variableSize={'lg'}
-      maxStepsAllowed={1}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      hidePlayButton
-      variableSize={'lg'}
-      lastAllowedExpressionState="betaReducePreviewCrossed"
-      showAllShowSteps
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'active'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      hidePlayButton
-      variableSize={'lg'}
-      maxStepsAllowed={1}
-      showAllShowSteps
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'betaReducePreviewCrossed'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      hidePlayButton
-      variableSize={'lg'}
-      showAllShowSteps
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showCallArg'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'default'
-        }
-      ]}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      hidePlayButton
-      showAllShowSteps
-      variableSize={'lg'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression2}
-      hideControls
-      showAllShowSteps
-      explanationsVisibility="hidden"
-      variableSize={'lg'}
-    />
-  )
-]
 
 export const episode6 = [
   () => (

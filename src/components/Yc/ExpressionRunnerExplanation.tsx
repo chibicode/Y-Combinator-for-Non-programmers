@@ -349,7 +349,7 @@ const ExpressionRunnerExplanation = ({
         {isDone ? (
           <H args={{ name: 'done' }} highlightType="none" />
         ) : (
-          !hideRemainingTime &&
+          !isPlaying &&
           stateToExplanation({
             state: expressionContainer.previouslyChangedExpressionState,
             currentStep,

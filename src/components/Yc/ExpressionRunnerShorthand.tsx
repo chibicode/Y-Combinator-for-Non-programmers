@@ -50,7 +50,8 @@ export const ExpressionRunnerPlayButtonOnly = ({
   lastAllowedExpressionState,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
-  showPriorities
+  showPriorities,
+  nextIteration
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -58,6 +59,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
   lastAllowedExpressionState?: CallStates
+  nextIteration?: boolean
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -67,14 +69,26 @@ export const ExpressionRunnerPlayButtonOnly = ({
     skipToTheEnd={skipToTheEnd}
     hideRemainingTime
     variableSize={'lg'}
-    explanationsVisibility="doneOnly"
+    explanationsVisibility="hiddenInitialPausedOnly"
     lastAllowedExpressionState={lastAllowedExpressionState}
-    initializeInstructions={[
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: initialState
-      }
-    ]}
+    initializeInstructions={
+      nextIteration
+        ? [
+            {
+              type: 'nextIteration'
+            },
+            {
+              type: 'stepForwardUntilPreviouslyChangedExpressionState',
+              state: initialState
+            }
+          ]
+        : [
+            {
+              type: 'stepForwardUntilPreviouslyChangedExpressionState',
+              state: initialState
+            }
+          ]
+    }
   />
 )
 

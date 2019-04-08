@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css, Global } from '@emotion/core'
-import { colors, spaces, ns } from 'src/lib/theme'
+import { zIndices, colors, spaces, ns } from 'src/lib/theme'
 import Container from 'src/components/Container'
 import { useRef } from 'react'
 
@@ -26,7 +26,7 @@ const Modal = ({
         width: 100%;
         height: 100%;
         background: ${colors('indigo30066')};
-        z-index: 1;
+        z-index: ${zIndices('modal')};
         overflow-y: auto;
         padding: ${spaces(1)} 0;
         ${ns} {

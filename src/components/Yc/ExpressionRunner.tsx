@@ -48,7 +48,11 @@ export interface ExpressionRunnerProps {
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
-  explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitial' | 'doneOnly'
+  explanationsVisibility:
+    | 'visible'
+    | 'hidden'
+    | 'hiddenInitial'
+    | 'hiddenInitialPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
@@ -85,14 +89,12 @@ const getActions = ({
   interval,
   getExpressionContainerManager,
   setPlaybackStatus,
-  expressionContainerManagerState,
   setExpressionContainerManagerState
 }: {
   isFastForwardPlayButton?: boolean
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
   getExpressionContainerManager: () => ExpressionContainerManager
   setPlaybackStatus: React.Dispatch<React.SetStateAction<PlaybackState>>
-  expressionContainerManagerState: ExpressionContainerManager['currentState']
   setExpressionContainerManagerState: React.Dispatch<
     React.SetStateAction<ExpressionContainerManager['currentState']>
   >
@@ -112,9 +114,12 @@ const getActions = ({
 
     autoplay() {
       interval.current = setInterval(() => {
-        if (expressionContainerManagerState.canStepForward) {
+        // Must use getExpressionContainerManager()
+        if (getExpressionContainerManager().currentState.canStepForward) {
           actions.step('forward')
-        } else {
+        }
+        // As soon as canStepForward is false, cancel immediately
+        if (!getExpressionContainerManager().currentState.canStepForward) {
           actions.pause()
         }
       }, autoplaySpeed(isFastForwardPlayButton))
@@ -212,7 +217,6 @@ const ExpressionRunner = ({
     interval,
     getExpressionContainerManager,
     setPlaybackStatus,
-    expressionContainerManagerState,
     setExpressionContainerManagerState
   })
   const isDone = isContainerWithState(
@@ -246,7 +250,9 @@ const ExpressionRunner = ({
           {(explanationsVisibility === 'visible' ||
             (explanationsVisibility === 'hiddenInitial' &&
               expressionContainerManagerState.numStepsTaken > 0) ||
-            (explanationsVisibility === 'doneOnly' && isDone)) && (
+            (explanationsVisibility === 'hiddenInitialPausedOnly' &&
+              !isPlaying &&
+              expressionContainerManagerState.numStepsTaken > 0)) && (
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
@@ -276,9 +282,6 @@ const ExpressionRunner = ({
           <div
             css={css`
               max-width: 100%;
-              /* Offset for -2px on border wrapper */
-              padding-left: 2px;
-              padding-right: 2px;
             `}
           >
             <div
@@ -311,6 +314,7 @@ const ExpressionRunner = ({
               onSkipToTheEndClick={actions.skipToTheEnd}
               onResetClick={actions.reset}
               skipToTheEnd={skipToTheEnd}
+              onPauseClick={actions.pause}
             />
           )}
         </Container>
