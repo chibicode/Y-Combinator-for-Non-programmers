@@ -121,7 +121,7 @@ const ExpressionRunnerControls = ({
     >
       {showPlayButton ? (
         <>
-          {!isPlaying && canStepBackward ? (
+          {!isPlaying && canStepBackward && !skipToTheEnd ? (
             <Button
               onClick={onPreviousClick}
               css={css`
@@ -187,7 +187,7 @@ const ExpressionRunnerControls = ({
       )}
       {showPlayButton ? (
         <>
-          {!isPlaying && canStepForward && playClicked ? (
+          {!isPlaying && canStepForward && playClicked && !skipToTheEnd ? (
             <Button
               onClick={onNextClick}
               css={css`
