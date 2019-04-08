@@ -232,7 +232,7 @@ const stateToExplanation = ({
         return (
           <>
             <BottomRightBadge bottomRightBadgeType="callArg" inline />
-            の料理を一致した
+            を一致した
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
             の部分にコピペ <Emoji>↘</Emoji>
           </>

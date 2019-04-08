@@ -106,7 +106,7 @@ export default () => (
               が入っています。
             </P>
             {AER.imyd}
-            <P>マクドナルドのメニューにありそうな食べ物ばかりですね！</P>
+            <P>マクドナルドのメニューにありそうな料理ばかりですね！</P>
             <Hr />
             <P>
               <InlineHeader>例その3:</InlineHeader> 上段には
