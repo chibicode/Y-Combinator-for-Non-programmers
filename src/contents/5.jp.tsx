@@ -1,5 +1,5 @@
 import React from 'react'
-import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import { Em, H3, P, Strong, Hr } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode6 } from 'src/components/Yc/AllExpressionRunners'
@@ -12,7 +12,6 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
-import EmojiForLetter from 'src/components/EmojiForLetter'
 
 export default () => (
   <EpisodeCardList
@@ -71,10 +70,10 @@ export default () => (
               <Strong>
                 正解は<Emoji>⭕️</Emoji>でした。
               </Strong>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.ijot}
-            <P>最初のステップについて詳しく解説しますね！</P>
+            <P>詳しく解説しますね！</P>
           </>
         )
       },
@@ -91,25 +90,11 @@ export default () => (
             <P>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアがふたつ以上ある場合は、
-              <Strong>いちばん左のペアからはじめます。</Strong>
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
-                <Emoji>⬅️</Emoji>,
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              ]}
-            />
-            <P>
-              <H args={{ name: 'pressNext' }} />
+              <Strong>いちばん左のペアからはじめます。</Strong> (下の場合は
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              のペアから)
             </P>
             {AER.aezk}
-            <P>
-              いちばん左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアの色が変わって
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              になりました。
-            </P>
           </>
         )
       },
@@ -149,13 +134,7 @@ export default () => (
                 になるのです。
               </Strong>
             </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="b" />,
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
-                <EmojiForLetter letter="c" />
-              ]}
-            />
+            <Hr />
             <P>
               そして、
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
@@ -176,7 +155,31 @@ export default () => (
         ),
         content: (
           <>
-            <P>?</P>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              にあるふたつの料理のうち、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <H args={{ name: 'match' }} />
+              するのは
+              <EmojiWithText letter="b" />
+              だけです。
+            </P>
+            {AER.dtzu}
+            <P>
+              というわけで、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              にある
+              <EmojiWithText letter="a" />が<H args={{ name: 'copy' }} />
+              されるのは一箇所だけです。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.efyy}
+            <P>
+              残りは
+              <H args={{ name: 'fastForward' }} />
+              で見ていきましょう:
+            </P>
+            {AER.izgz}
           </>
         )
       }

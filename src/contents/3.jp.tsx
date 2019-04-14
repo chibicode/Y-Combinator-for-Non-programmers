@@ -89,7 +89,7 @@ export default () => (
             <Ul>
               <UlLi>
                 <InlineHeader>
-                  コピペ(
+                  コピー(
                   <BottomRightBadge
                     inline
                     bottomRightBadgeType="callArg"
@@ -180,7 +180,7 @@ export default () => (
               <OlLi>
                 (<H args={{ name: 'match' }} />
                 した部分のみ)
-                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <InlineHeader>コピーする:</InlineHeader>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>➡️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (

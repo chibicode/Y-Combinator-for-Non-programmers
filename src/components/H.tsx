@@ -80,6 +80,7 @@ export interface HProps {
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisBentoBox' }
     | { name: 'pressFastForward' }
+    | { name: 'copy' }
 }
 
 const prefixColors = {
@@ -887,6 +888,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           途中でわからなくなったら、
           <H args={{ name: 'pause' }} />
           を押してみてください。説明が上に表示されます。
+        </>
+      )
+    }
+  }
+  if (args.name === 'copy') {
+    if (locale === 'en') {
+      return (
+        <>
+          copy <Emoji>↘️</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          コピー <Emoji>↘️</Emoji>
         </>
       )
     }

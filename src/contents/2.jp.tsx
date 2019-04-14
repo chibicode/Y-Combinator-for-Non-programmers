@@ -99,7 +99,7 @@ export default () => (
         )
       },
       {
-        title: <>法則その3: コピペする</>,
+        title: <>法則その3: コピーする</>,
         content: (
           <>
             <P>
@@ -110,7 +110,7 @@ export default () => (
                 <H args={{ name: 'match' }} />
                 した
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                の部分にコピペします。
+                の部分にコピーします。
               </Strong>
             </P>
             <EmojiSeparator
@@ -182,7 +182,7 @@ export default () => (
                 <Emoji>✅</Emoji>
               </OlLi>
               <OlLi>
-                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <InlineHeader>コピーする:</InlineHeader>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>➡️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -231,12 +231,12 @@ export default () => (
         )
       },
       {
-        title: <>コピペはせず、消すだけ！</>,
+        title: <>コピーはせず、消すだけ！</>,
         content: (
           <>
             <P>
               <Strong>
-                コピペ (
+                コピー (
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>➡️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -289,7 +289,7 @@ export default () => (
                   (<H args={{ name: 'match' }} />
                   した部分のみ)
                 </Strong>
-                <InlineHeader>コピペする:</InlineHeader>{' '}
+                <InlineHeader>コピーする:</InlineHeader>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>➡️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />

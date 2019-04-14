@@ -281,16 +281,13 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e5E1}
       showPriorities
-      skipToTheEnd={false}
     />
   ),
   aezk: (
-    <ExpressionRunnerSingleStep
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E1}
-      initialState="default"
-      finalState="active"
+      initialState="active"
       showPriorities
-      explanationsVisibility="hidden"
     />
   ),
   ainx: (
@@ -309,6 +306,30 @@ export default {
       expressionContainer={lessonExpressions.e5E1}
       initialState="showFuncUnbound"
       showPriorities
+    />
+  ),
+  dtzu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="betaReducePreviewBefore"
+      showPriorities
+      explanationsVisibility="visible"
+    />
+  ),
+  efyy: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="betaReducePreviewBefore"
+      finalState="betaReducePreviewAfter"
+      showPriorities
+    />
+  ),
+  izgz: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="betaReducePreviewAfter"
+      showPriorities
+      skipToTheEnd={false}
     />
   )
 }

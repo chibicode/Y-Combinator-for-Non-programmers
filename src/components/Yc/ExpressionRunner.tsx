@@ -240,7 +240,7 @@ const ExpressionRunner = ({
     >
       <div
         css={css`
-          margin: ${spaces(1.5)} 0 ${spaces(2)};
+          margin: ${spaces(2.25)} 0 ${spaces(2.5)};
         `}
       >
         <Container

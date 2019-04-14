@@ -14,6 +14,7 @@ export const ExpressionRunnerSimple = ({
   expressionContainer,
   initialState,
   isDone,
+  explanationsVisibility,
   showPriorities,
   showAllShowSteps
 }: {
@@ -22,12 +23,13 @@ export const ExpressionRunnerSimple = ({
   isDone: boolean
   showPriorities: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+  explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hideControls
     hidePriorities={!showPriorities}
-    explanationsVisibility="hidden"
+    explanationsVisibility={explanationsVisibility}
     showAllShowSteps={showAllShowSteps}
     variableSize={'lg'}
     initializeInstructions={[
@@ -46,7 +48,8 @@ export const ExpressionRunnerSimple = ({
 ExpressionRunnerSimple.defaultProps = {
   isDone: false,
   initialState: 'default',
-  showPriorities: false
+  showPriorities: false,
+  explanationsVisibility: 'hidden'
 }
 
 export const ExpressionRunnerPlayButtonOnly = ({

@@ -234,7 +234,8 @@ const stateToExplanation = ({
             <BottomRightBadge bottomRightBadgeType="callArg" inline />
             を一致した
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-            の部分にコピペ <Emoji>↘</Emoji>
+            の部分に
+            <H args={{ name: 'copy' }} highlightType="none" />
           </>
         )
       }

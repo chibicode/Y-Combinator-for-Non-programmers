@@ -36,7 +36,7 @@ export const old = () => {
         <Em>
           <BottomRightBadge bottomRightBadgeType="callArg" inline />
           がついている料理がすべてマッチ{' '}
-          <TopBadge inline topBadgeType="match" /> したマスにコピペされた
+          <TopBadge inline topBadgeType="match" /> したマスにコピーされた
         </Em>
         のがわかります。
       </P>
