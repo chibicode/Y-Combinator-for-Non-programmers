@@ -29,7 +29,7 @@ export const old = () => {
   return (
     <>
       {h('ycQuizReview', 11)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       {episode12[i++]()}
       <P>So the result was {h('ycYes')}:</P>
       {episode12[i++]()}
@@ -98,7 +98,7 @@ export const old = () => {
         ’s on top.
       </P>
       {episode12[i++]()}
-      <P>{h('ycPlayUntilDone')} and see what happens:</P>
+      <P>{h('ycpressPlay')} and see what happens:</P>
       {episode12[i++]()}
       <P>
         <Strong>Result:</Strong> It ended up as{' '}
@@ -109,7 +109,7 @@ export const old = () => {
       <P>
         What if we put <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> and{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
-        {h('ycPlayUntilDone')} and see what happens:
+        {h('ycpressPlay')} and see what happens:
       </P>
       {episode12[i++]()}
       <P>
@@ -122,7 +122,7 @@ export const old = () => {
         What if we reverse and put{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> and{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> at the top?{' '}
-        {h('ycPlayUntilDone')} and see what happens:
+        {h('ycpressPlay')} and see what happens:
       </P>
       {episode12[i++]()}
       <P>
@@ -141,7 +141,7 @@ export const old = () => {
       <P>
         Finally, what if we put <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
         and <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> at the top?{' '}
-        {h('ycPlayUntilDone')} and see what happens:
+        {h('ycpressPlay')} and see what happens:
       </P>
       {episode12[i++]()}
       <P>

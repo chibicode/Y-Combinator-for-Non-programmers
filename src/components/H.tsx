@@ -22,7 +22,6 @@ export interface HProps {
   episodeNumberOverrides?: number
   args:
     | { name: 'pressNext' }
-    | { name: 'pressFastForward' }
     | { name: 'yesNoQuizSeeAnswer' }
     | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
     | { name: 'yesNoQuiz' }
@@ -50,13 +49,14 @@ export interface HProps {
     | { name: 'true' }
     | { name: 'false' }
     | { name: 'match' }
+    | { name: 'unmatch' }
     | { name: 'tryGuessing' }
     | { name: 'trueOrFalse' }
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
     | { name: 'quizReview'; previousEpisodeNumber: number }
     | { name: 'tryUntilDone'; capitalize?: boolean }
-    | { name: 'playUntilDone'; capitalize?: boolean }
+    | { name: 'pressPlay'; capitalize?: boolean }
     | { name: 'yes' }
     | { name: 'no' }
     | { name: 'introductionPrefix' }
@@ -78,6 +78,8 @@ export interface HProps {
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
+    | { name: 'lookAtThisBentoBox' }
+    | { name: 'pressFastForward' }
 }
 
 const prefixColors = {
@@ -604,7 +606,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'playUntilDone') {
+  if (args.name === 'pressPlay') {
     const capitalize =
       typeof args.capitalize === 'undefined' ? true : args.capitalize
     if (locale === 'en') {
@@ -779,6 +781,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'unmatch') {
+    if (locale === 'en') {
+      return (
+        <>
+          unmatch <Emoji>❌</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          不一致 <Emoji>❌</Emoji>
+        </>
+      )
+    }
+  }
   if (args.name === 'pressNext') {
     if (locale === 'en') {
       return (
@@ -844,6 +861,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'bentoBox', short: true }} />を
           <H args={{ name: 'play' }} />
           すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'lookAtThisBentoBox') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return (
+        <>
+          こちらの
+          <H args={{ name: 'bentoBox', short: true }} />
+          をご覧ください
         </>
       )
     }

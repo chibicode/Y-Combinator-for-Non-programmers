@@ -264,6 +264,52 @@ export default {
       showPriorities
       skipToTheEnd={false}
     />
+  ),
+  laea: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E1}
+      showPriorities
+    />
+  ),
+  cgpd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E1}
+      isDone
+    />
+  ),
+  ijot: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E1}
+      showPriorities
+      skipToTheEnd={false}
+    />
+  ),
+  aezk: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="default"
+      finalState="active"
+      showPriorities
+      explanationsVisibility="hidden"
+    />
+  ),
+  ainx: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="active"
+      lastAllowedExpressionState="showFuncBound"
+      showPriorities
+      showAllShowSteps
+      skipToTheEnd={false}
+    />
+  ),
+  ielw: (
+    <ExpressionRunnerSimple
+      showAllShowSteps
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="showFuncUnbound"
+      showPriorities
+    />
   )
 }
 

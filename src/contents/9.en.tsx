@@ -14,7 +14,7 @@ export const old = () => {
   return (
     <>
       {h('ycQuizReview', 9)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       <P>
         (<Strong>Note:</Strong> The {h('ycPlay')} button runs faster here
         because there are a lot of steps.)
@@ -82,7 +82,7 @@ export const old = () => {
       {episode10[i++]()}
       <P>
         And the following {h('ycBentoBox')} should calculate <Strong>2</Strong>{' '}
-        × <Strong>3</Strong>. {h('ycPlayUntilDone')}.
+        × <Strong>3</Strong>. {h('ycpressPlay')}.
       </P>
       {episode10[i++]()}
       <P>

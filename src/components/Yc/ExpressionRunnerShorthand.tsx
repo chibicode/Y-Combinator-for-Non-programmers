@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import ExpressionRunner from 'src/components/Yc/ExpressionRunner'
+import ExpressionRunner, {
+  ExpressionRunnerProps
+} from 'src/components/Yc/ExpressionRunner'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import { P } from 'src/components/ContentTags'
@@ -12,18 +14,21 @@ export const ExpressionRunnerSimple = ({
   expressionContainer,
   initialState,
   isDone,
-  showPriorities
+  showPriorities,
+  showAllShowSteps
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   isDone: boolean
   showPriorities: boolean
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hideControls
     hidePriorities={!showPriorities}
     explanationsVisibility="hidden"
+    showAllShowSteps={showAllShowSteps}
     variableSize={'lg'}
     initializeInstructions={[
       isDone
@@ -51,7 +56,8 @@ export const ExpressionRunnerPlayButtonOnly = ({
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
   showPriorities,
-  nextIteration
+  nextIteration,
+  showAllShowSteps
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -60,11 +66,13 @@ export const ExpressionRunnerPlayButtonOnly = ({
   showPriorities: boolean
   lastAllowedExpressionState?: CallStates
   nextIteration?: boolean
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     resetIndex
+    showAllShowSteps={showAllShowSteps}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
     hideRemainingTime
@@ -153,20 +161,22 @@ export const ExpressionRunnerSingleStep = ({
   initialState,
   finalState,
   hideFuncUnboundBadgeOnExplanation,
-  showPriorities
+  showPriorities,
+  explanationsVisibility
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   finalState: CallStates
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
+  explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     hidePlayButton
-    explanationsVisibility="hiddenInitial"
+    explanationsVisibility={explanationsVisibility}
     variableSize={'lg'}
     resetIndex
     lastAllowedExpressionState={finalState}
@@ -181,5 +191,6 @@ export const ExpressionRunnerSingleStep = ({
 
 ExpressionRunnerSingleStep.defaultProps = {
   hideFuncUnboundBadgeOnExplanation: false,
-  showPriorities: false
+  showPriorities: false,
+  explanationsVisibility: 'hiddenInitial'
 }

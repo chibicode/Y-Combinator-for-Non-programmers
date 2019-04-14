@@ -116,7 +116,7 @@ export const old = () => {
       </P>
       <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
       <H3>Let’s Try!</H3>
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       {episode11[i++]()}
       <P>So the end result was:</P>
       {episode11[i++]()}

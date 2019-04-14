@@ -330,7 +330,7 @@ export const allTranslations = {
       </Em>
     )
   }),
-  ycPlayUntilDone: (capitalize = true) => ({
+  ycpressPlay: (capitalize = true) => ({
     en: (
       <Em>
         {capitalize ? 'T' : 't'}

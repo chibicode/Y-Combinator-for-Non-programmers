@@ -100,6 +100,20 @@ export const e3E3 = initializeExpressionContainer([
 
 export const e3E4 = initializeExpressionContainer('k')
 
+export const e5E1 = initializeExpressionContainer([
+  {
+    arg: 'b',
+    body: [
+      {
+        arg: 'c',
+        body: 'c'
+      },
+      'b'
+    ]
+  },
+  'a'
+])
+
 export const episode5Expression1 = initializeExpressionContainer([
   {
     arg: 'a',

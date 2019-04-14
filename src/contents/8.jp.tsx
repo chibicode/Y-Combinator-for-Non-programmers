@@ -13,7 +13,7 @@ export const old = () => {
   return (
     <>
       {h('ycQuizReview', 8)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       {episode9[i++]()}
       <P>つまり、最終的にはこうなりました。</P>
       {episode9[i++]()}
@@ -56,7 +56,7 @@ export const old = () => {
         これをまた例の
         <Strong>「暗号の数字に1を足す」効果がある弁当箱</Strong>
         と合体させてみましたので、
-        {h('ycPlayUntilDone')}。
+        {h('ycpressPlay')}。
       </P>
       {episode9[i++]()}
       <P>

@@ -27,7 +27,7 @@ export const old = () => {
   return (
     <>
       {h('ycQuizReview', 11)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       {episode12[i++]()}
       <P>
         <Strong>まとめると:</Strong>
@@ -101,7 +101,7 @@ export const old = () => {
       {episode12[i++]()}
       <P>
         これで、
-        {h('ycPlayUntilDone')}。
+        {h('ycpressPlay')}。
       </P>
       {episode12[i++]()}
       <P>
@@ -114,7 +114,7 @@ export const old = () => {
         それでは、上に <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} /> と{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
         をくっつけたらどうなるでしょう？これで
-        {h('ycPlayUntilDone')}。
+        {h('ycpressPlay')}。
       </P>
       {episode12[i++]()}
       <P>
@@ -128,7 +128,7 @@ export const old = () => {
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> と{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '1️⃣']} />{' '}
         をくっつけたらどうなるでしょう？これで
-        {h('ycPlayUntilDone')}。
+        {h('ycpressPlay')}。
       </P>
       {episode12[i++]()}
       <P>
@@ -147,7 +147,7 @@ export const old = () => {
         最後は、 <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} /> と{' '}
         <InlineEmojiBoxes emojis={['1️⃣', '2️⃣', '2️⃣']} />{' '}
         を上にくっつけてみます。これで
-        {h('ycPlayUntilDone')}。
+        {h('ycpressPlay')}。
       </P>
       {episode12[i++]()}
       <P>

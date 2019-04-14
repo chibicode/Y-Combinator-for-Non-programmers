@@ -254,7 +254,7 @@ export default () => (
           <>
             <P>
               というわけで、
-              <H args={{ name: 'playUntilDone' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.xhbi}
             <P>
@@ -279,7 +279,7 @@ export default () => (
               こちらの
               <H args={{ name: 'bentoBox' }} />
               はどうでしょう？
-              <H args={{ name: 'playUntilDone' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.tbij}
             <P>
@@ -316,7 +316,7 @@ export default () => (
           <>
             <P>
               正解はこちら。
-              <H args={{ name: 'playUntilDone' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.bagn}
             <P>

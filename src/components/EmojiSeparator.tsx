@@ -26,7 +26,7 @@ const fontSize = (size: EmojiSeparatorProps['size']) =>
 const margins = (size: EmojiSeparatorProps['size']) =>
   ({
     sm: [spaces(1.5), spaces(1.75)],
-    md: [spaces(0.5), spaces(0.75)],
+    md: [spaces(1), spaces(1.25)],
     lg: [spaces(0.5), spaces(0.75)]
   }[size])
 
@@ -60,7 +60,14 @@ const EmojiSeparator = ({
         ))
       : nodes
       ? nodes.map((node, index) => (
-          <Fragment key={`node-${index}`}>{node} </Fragment>
+          <span
+            key={`node-${index}`}
+            css={css`
+              font-size: 0.83em;
+            `}
+          >
+            {node}{' '}
+          </span>
         ))
       : emojis.map((emoji, index) => (
           <Fragment key={`${emoji}${index}`}>

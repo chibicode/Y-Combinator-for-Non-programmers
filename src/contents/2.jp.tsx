@@ -375,7 +375,7 @@ export default () => (
               <Strong>
                 正解は<Emoji>⭕️</Emoji>でした。
               </Strong>
-              <H args={{ name: 'playUntilDone' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.ldts}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>

@@ -13,7 +13,7 @@ export const old = () => {
   return (
     <>
       {h('ycQuizReview', 9)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       <P>
         (<Strong>ちなみに:</Strong> ステップが多いため、
         {h('ycPlay')} ボタンの実行速度を少し速くしています。)
@@ -96,7 +96,7 @@ export const old = () => {
         さきほどの弁当箱と組み合わせれば、
         <Strong>2</Strong> × <Strong>3</Strong>
         を計算してくれます。
-        {h('ycPlayUntilDone')}。
+        {h('ycpressPlay')}。
       </P>
       {episode10[i++]()}
       <P>

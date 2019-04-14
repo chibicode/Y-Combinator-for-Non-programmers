@@ -13,7 +13,7 @@ export const old = () => {
   return (
     <>
       {h('ycQuizReview', 8)}
-      <P>{h('ycPlayUntilDone')}:</P>
+      <P>{h('ycpressPlay')}:</P>
       {episode9[i++]()}
       <P>So in the end, it became:</P>
       {episode9[i++]()}
@@ -44,7 +44,7 @@ export const old = () => {
       {episode9[i++]()}
       <P>
         Let’s combine this with the {h('ycBentoBox')} that has an effect of{' '}
-        <Strong>adding 1 to the secret code</Strong>. {h('ycPlayUntilDone')}。
+        <Strong>adding 1 to the secret code</Strong>. {h('ycpressPlay')}。
       </P>
       {episode9[i++]()}
       <P>

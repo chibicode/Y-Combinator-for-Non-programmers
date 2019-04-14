@@ -9,6 +9,10 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import AER from 'src/components/Yc/AllExpressionRunners'
+import YesNoButtons from 'src/components/YesNoButtons'
+import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 
 export default () => (
   <EpisodeCardList
@@ -27,6 +31,152 @@ export default () => (
               <Strong>今までに学んだことの応用問題を解いていきます。</Strong>
               さっそくやっていきましょう！
             </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            第1問: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のツーペア
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />
+              <Strong>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアがふたつありますね。
+              </Strong>
+            </P>
+            {AER.laea}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.cgpd}
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            正解は<Emoji>⭕️</Emoji>
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                正解は<Emoji>⭕️</Emoji>でした。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.ijot}
+            <P>最初のステップについて詳しく解説しますね！</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            1問目の解説その1: いちばん左の
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアからはじめる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアがふたつ以上ある場合は、
+              <Strong>いちばん左のペアからはじめます。</Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>⬅️</Emoji>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.aezk}
+            <P>
+              いちばん左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアの色が変わって
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              になりました。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            1問目の解説その2:{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            はこうなる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              さらに、
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.ainx}
+            <P>
+              解説のために、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> →
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> →
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" /> →
+              …と順番に表示しています。
+            </P>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              になったのは
+              <EmojiWithText letter="b" />
+              と右側の
+              <EmojiWithText letter="c" />
+              でした。
+              <Strong>
+                このふたつは右端の枠に接してるので、
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                になるのです。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
+                <EmojiForLetter letter="c" />
+              ]}
+            />
+            <P>
+              そして、
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              になるのは真ん中の
+              <EmojiWithText letter="c" />
+              です。
+            </P>
+            {AER.ielw}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            1問目の解説その3: <H args={{ name: 'match' }} />と
+            <H args={{ name: 'unmatch' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>?</P>
           </>
         )
       }
@@ -78,7 +228,7 @@ export const old = () => {
       <H3>いちばん左</H3>
       <P>
         <Em>{h('ycNext')} を押してみてください</Em>
-        。一番左にあるふたつの{' '}
+        。いちばん左にあるふたつの{' '}
         <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
         の部分からはじめるということが分かります。
       </P>
