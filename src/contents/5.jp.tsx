@@ -183,6 +183,8 @@ export default () => (
           </>
         )
       }
+      // TODO: do the one where you copy more than one item on one of the previous episodes
+      // TODO: Instead of 応用問題 call it 優先順位(後編)
     ]}
   />
 )

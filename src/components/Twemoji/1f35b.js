@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Svg1f35b = props => (
+const Svg1F35B = props => (
   <svg viewBox="0 0 36 36" {...props}>
     <ellipse fill="#939598" cx={18} cy={23} rx={18} ry={10} />
     <ellipse fill="#F1F2F2" cx={18} cy={21} rx={18} ry={10} />
@@ -20,4 +20,4 @@ const Svg1f35b = props => (
   </svg>
 )
 
-export default Svg1f35b
+export default Svg1F35B

@@ -56,7 +56,6 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
@@ -84,7 +83,6 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
@@ -114,7 +112,6 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <Emoji>➡️</Emoji>,
@@ -141,7 +138,6 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <Emoji>💥</Emoji>,
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
@@ -209,7 +205,6 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,

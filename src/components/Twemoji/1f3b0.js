@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Svg1f3b0 = props => (
+const Svg1F3B0 = props => (
   <svg viewBox="0 0 36 36" {...props}>
     <path
       fill="#31373D"
@@ -26,4 +26,4 @@ const Svg1f3b0 = props => (
   </svg>
 )
 
-export default Svg1f3b0
+export default Svg1F3B0

@@ -331,6 +331,21 @@ export default {
       showPriorities
       skipToTheEnd={false}
     />
+  ),
+  ljjg: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E5} />,
+  vglb: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E6} />,
+  skzv: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E5}
+    />
+  ),
+  egmr: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e3E5}
+      initialState="active"
+      finalState="showFuncBound"
+      hideFuncUnboundBadgeOnExplanation
+    />
   )
 }
 

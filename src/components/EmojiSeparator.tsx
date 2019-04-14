@@ -63,7 +63,7 @@ const EmojiSeparator = ({
           <span
             key={`node-${index}`}
             css={css`
-              font-size: 0.83em;
+              font-size: ${1 / 1.2}3em;
             `}
           >
             {node}{' '}

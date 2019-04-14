@@ -62,7 +62,6 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
                 <Emoji>🤗</Emoji>,
@@ -73,6 +72,11 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.rmsd}
+            <P>
+              <EmojiWithText letter="b" />に
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              の印がつきました。
+            </P>
           </>
         )
       },
@@ -112,7 +116,6 @@ export default () => (
               <Strong>つまり、スルーして大丈夫ということです。</Strong>
             </P>
             <EmojiSeparator
-              size="sm"
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
                 <Emoji>🙄</Emoji>,
@@ -201,6 +204,63 @@ export default () => (
                 )
               </OlLi>
             </Ol>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: <>2✕2の弁当箱</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['2️⃣', '✖️', '2️⃣']} />
+            <P>
+              続いて、こちらの
+              <H args={{ name: 'bentoBox' }} />
+              をご覧ください。これを
+              <H args={{ name: 'play' }} />
+              するとどうなるでしょう？
+            </P>
+            {AER.ljjg}
+            <P>
+              <H args={{ name: 'yesNoQuiz' }} />
+              をやってみましょう。
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.vglb}
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            答えは<Emoji>❌</Emoji>
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              答えは<Emoji>❌</Emoji>でした。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.skzv}
+            <P>どうしてこうなったか説明しますね！</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />
+            がふたつ
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.egmr}
           </>
         )
       },
