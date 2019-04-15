@@ -93,6 +93,12 @@ export default {
       finalState="betaReducePreviewBefore"
     />
   ),
+  zzxj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="showFuncBound"
+    />
+  ),
   evqx: (
     <ExpressionRunnerSingleStep
       hideFuncUnboundBadgeOnExplanation
@@ -101,12 +107,31 @@ export default {
       finalState="betaReducePreviewAfter"
     />
   ),
+  keck: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="betaReducePreviewBefore"
+    />
+  ),
   msiw: (
     <ExpressionRunnerSingleStep
       hideFuncUnboundBadgeOnExplanation
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewAfter"
       finalState="betaReducePreviewCrossed"
+    />
+  ),
+  qoms: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="betaReducePreviewAfter"
+    />
+  ),
+  mhgm: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e1E1}
+      initialState="betaReducePreviewCrossed"
+      finalIsDone
     />
   ),
   osqo: (
@@ -126,6 +151,13 @@ export default {
   gwtp: (
     <ExpressionRunnerSingleStep
       hideFuncUnboundBadgeOnExplanation
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="betaReducePreviewBefore"
+      finalState="betaReducePreviewCrossed"
+    />
+  ),
+  zxfv: (
+    <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e1E2}
       initialState="betaReducePreviewBefore"
       finalState="betaReducePreviewCrossed"

@@ -191,7 +191,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+            <H args={{ name: 'summary' }} />
           </>
         ),
         type: 'summary',

@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Em,
-  P,
-  Strong,
-  InlineHeader,
-  Ol,
-  OlLi
-} from 'src/components/ContentTags'
+import { P, Strong, InlineHeader, Ol, OlLi } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/Yc/AllExpressionRunners'
@@ -66,6 +59,16 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.ozbe}
+            <P>
+              <EmojiWithText letter="b" />に
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              の印が、下の
+              <EmojiWithText letter="a" />
+              ふたつにそれぞれ
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              の印がつきました。
+            </P>
           </>
         )
       },
@@ -93,6 +96,12 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.rqjo}
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="a" />が<H args={{ name: 'match' }} />
+              しました。
+            </P>
           </>
         )
       },
@@ -114,7 +123,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                <Emoji>➡️</Emoji>,
+                <Emoji>↘️</Emoji>,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               ]}
             />
@@ -122,6 +131,13 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.evqx}
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />の
+              <EmojiWithText letter="b" />が
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
+              <H args={{ name: 'copy' }} />
+              されました。
+            </P>
           </>
         )
       },
@@ -161,38 +177,39 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+            <H args={{ name: 'summary' }} />
           </>
         ),
         type: 'summary',
         content: (
           <>
-            <P>まとめるとこんな感じになります:</P>
-            <Ol>
-              <OlLi>
-                <InlineHeader>印をつける:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              </OlLi>
-              <OlLi>
-                <InlineHeader>一致チェック:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                <Emoji>✅</Emoji>
-              </OlLi>
-              <OlLi>
-                <InlineHeader>コピーする:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <Emoji>➡️</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              </OlLi>
-              <OlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              </OlLi>
-            </Ol>
+            <P>
+              1. <InlineHeader>印をつける:</InlineHeader>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            </P>
+            {AER.zzxj}
+            <P>
+              2. <InlineHeader>一致チェック:</InlineHeader>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              <Emoji>✅</Emoji>
+            </P>
+            {AER.keck}
+            <P>
+              3. <InlineHeader>コピーする:</InlineHeader>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <Emoji>↘️</Emoji>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            </P>
+            {AER.qoms}
+            <P>
+              4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+            </P>
+            {AER.mhgm}
           </>
         )
       },
@@ -237,7 +254,7 @@ export default () => (
               <Strong>
                 コピー (
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <Emoji>➡️</Emoji>{' '}
+                <Emoji>↘️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
                 )はせずに、ただ
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
@@ -261,49 +278,27 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
-            (改訂版)
+            <H args={{ name: 'summary' }} />: 一致しなかった場合
           </>
         ),
         type: 'summary',
         content: (
           <>
             <P>
-              まとめるとこんな感じになります(
-              <Em>
-                ステップ3に<Strong>変更点</Strong>を加えました
-              </Em>
-              ):
-            </P>
-            <Ol>
-              <OlLi>
-                <InlineHeader>印をつける:</InlineHeader>{' '}
+              一致しなかった場合、
+              <Strong>
+                コピー (
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <Emoji>↘️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              </OlLi>
-              <OlLi>
-                <InlineHeader>一致チェック:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                <Emoji>✅</Emoji>
-              </OlLi>
-              <OlLi>
-                <Strong>
-                  (<H args={{ name: 'match' }} />
-                  した部分のみ)
-                </Strong>
-                <InlineHeader>コピーする:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <Emoji>➡️</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              </OlLi>
-              <OlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                )はせずに、ただ
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              </OlLi>
-            </Ol>
+                を消す
+              </Strong>
+              。
+            </P>
+            {AER.zxfv}
           </>
         )
       },

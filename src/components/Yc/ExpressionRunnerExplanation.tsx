@@ -53,15 +53,11 @@ const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
 const stateToExplanation = ({
   state,
   matchExists,
-  currentStep,
-  currentSubstep,
   showAllShowSteps,
   hideFuncUnboundBadge
 }: {
   state: CallStates
   matchExists?: boolean
-  currentStep: number
-  currentSubstep: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
 }) => {
@@ -293,8 +289,6 @@ const stateToExplanation = ({
 
 const ExpressionRunnerExplanation = ({
   expressionContainer,
-  currentStep,
-  currentSubstep,
   isDone,
   numSecondsRemaining,
   isPlaying,
@@ -337,8 +331,6 @@ const ExpressionRunnerExplanation = ({
           !isPlaying &&
           stateToExplanation({
             state: expressionContainer.previouslyChangedExpressionState,
-            currentStep,
-            currentSubstep,
             matchExists: expressionContainer.matchExists,
             showAllShowSteps,
             hideFuncUnboundBadge

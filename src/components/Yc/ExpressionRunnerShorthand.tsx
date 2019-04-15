@@ -112,10 +112,14 @@ ExpressionRunnerPlayButtonOnly.defaultProps = {
 
 export const ExpressionRunnerPairSimple = ({
   expressionContainer,
-  initialState
+  initialState,
+  finalIsDone,
+  finalState
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
+  finalIsDone: boolean
+  finalState?: CallStates
 }) => (
   <>
     <ExpressionRunner
@@ -137,8 +141,17 @@ export const ExpressionRunnerPairSimple = ({
         margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
       `}
     >
-      <Emoji>🔽</Emoji> <H args={{ name: 'afterPlay' }} highlightType="none" />{' '}
-      <Emoji>🔽</Emoji>
+      {finalState || finalIsDone ? (
+        <>
+          <Emoji size="mdlg">⬇️</Emoji>
+        </>
+      ) : (
+        <>
+          <Emoji>🔽</Emoji>{' '}
+          <H args={{ name: 'afterPlay' }} highlightType="none" />{' '}
+          <Emoji>🔽</Emoji>
+        </>
+      )}
     </P>
     <ExpressionRunner
       expressionContainer={expressionContainer}
@@ -147,16 +160,22 @@ export const ExpressionRunnerPairSimple = ({
       explanationsVisibility="hidden"
       variableSize={'lg'}
       initializeInstructions={[
-        {
-          type: 'stepForwardUntilTheEnd'
-        }
+        finalState
+          ? {
+              type: 'stepForwardUntilPreviouslyChangedExpressionState',
+              state: finalState
+            }
+          : {
+              type: 'stepForwardUntilTheEnd'
+            }
       ]}
     />
   </>
 )
 
 ExpressionRunnerPairSimple.defaultProps = {
-  initialState: 'default'
+  initialState: 'default',
+  finalIsDone: false
 }
 
 export const ExpressionRunnerSingleStep = ({

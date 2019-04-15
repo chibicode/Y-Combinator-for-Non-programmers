@@ -81,7 +81,7 @@ export interface HProps {
     | { name: 'lookAtThisBentoBox' }
     | { name: 'pressFastForward' }
     | { name: 'copy' }
-    | { name: 'heresWhatYouNeedToKnow' }
+    | { name: 'summary' }
 }
 
 const prefixColors = {
@@ -908,7 +908,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'heresWhatYouNeedToKnow') {
+  if (args.name === 'summary') {
     if (locale === 'en') {
       return <>Summary</>
     } else {

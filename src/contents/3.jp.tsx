@@ -6,8 +6,6 @@ import {
   Strong,
   Ul,
   UlLi,
-  Ol,
-  OlLi,
   Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
@@ -139,8 +137,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />:
-            上段に複数の料理がある場合
+            <H args={{ name: 'summary' }} />: 上段に複数の料理がある場合
           </>
         ),
         type: 'summary',
@@ -294,7 +291,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />:
+            <H args={{ name: 'summary' }} />:
             下段に左でも右でもない料理がある場合
           </>
         ),
