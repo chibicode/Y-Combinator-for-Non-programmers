@@ -1,5 +1,14 @@
 import React from 'react'
-import { Em, H3, P, Strong, Hr } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  P,
+  Strong,
+  Hr,
+  Ol,
+  OlLi,
+  InlineHeader
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode6 } from 'src/components/Yc/AllExpressionRunners'
@@ -27,9 +36,27 @@ export default () => (
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
               中級に進む前に、
-              <Strong>今までに学んだことの応用問題を解いていきます。</Strong>
-              さっそくやっていきましょう！
+              <Strong>どういう順番でやるのか分かりにくい</Strong>
+              <H args={{ name: 'bentoBox' }} />
+              を2つ紹介します:
             </P>
+            <Ol>
+              <OlLi>
+                <InlineHeader>第1問:</InlineHeader>{' '}
+                <Strong>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  のツーペア
+                </Strong>
+              </OlLi>
+              <OlLi>
+                <InlineHeader>第2問:</InlineHeader>{' '}
+                <Strong>
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                  からはじめる
+                </Strong>
+              </OlLi>
+            </Ol>
+            <P>さっそく見ていきましょう！</P>
           </>
         )
       },
@@ -165,12 +192,20 @@ export default () => (
               だけです。
             </P>
             {AER.dtzu}
+            <Hr />
             <P>
               というわけで、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />
               にある
-              <EmojiWithText letter="a" />が<H args={{ name: 'copy' }} />
-              されるのは一箇所だけです。
+              <EmojiWithText letter="a" />
+              が、
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="b" />
+              のところに
+              <H args={{ name: 'copy' }} />
+              されます。
+            </P>
+            <P>
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.efyy}
@@ -180,6 +215,11 @@ export default () => (
               で見ていきましょう:
             </P>
             {AER.izgz}
+            <P>
+              というわけで、最後に残ったのは
+              <EmojiWithText letter="a" />
+              でした。
+            </P>
           </>
         )
       }
