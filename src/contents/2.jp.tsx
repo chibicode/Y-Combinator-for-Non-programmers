@@ -1,5 +1,5 @@
 import React from 'react'
-import { P, Strong, InlineHeader, Ol, OlLi } from 'src/components/ContentTags'
+import { P, Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/Yc/AllExpressionRunners'
@@ -9,6 +9,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
+import episodeEmojis from 'src/lib/episodeEmojis'
 
 export default () => (
   <EpisodeCardList
@@ -318,6 +319,7 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.jbam}
+            <P>法則を覚えたら、次に進みましょう！</P>
           </>
         )
       },
@@ -335,7 +337,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               が登場します。
             </P>
-            <EmojiSeparator emojis={['4️⃣', '🤤', '🍱']} />
+            <EmojiSeparator emojis={episodeEmojis[3]} />
             <P>
               <InlineHeader>たとえばこちらをご覧ください。</InlineHeader>
               <Strong>上に2マス、下にも2マス</Strong>
