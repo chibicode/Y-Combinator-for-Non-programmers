@@ -70,7 +70,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />
+              <H args={{ name: 'lookAtThisBentoBox' }} />。
               <Strong>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                 のペアがふたつありますね。
@@ -107,7 +107,7 @@ export default () => (
       {
         title: (
           <>
-            1問目の解説その1: いちばん左の
+            第1問の解説その1: いちばん左の
             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
             のペアからはじめる
           </>
@@ -128,7 +128,7 @@ export default () => (
       {
         title: (
           <>
-            1問目の解説その2:{' '}
+            第1問の解説その2:{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />と
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
             はこうなる
@@ -176,7 +176,7 @@ export default () => (
       {
         title: (
           <>
-            1問目の解説その3: <H args={{ name: 'match' }} />と
+            第1問の解説その3: <H args={{ name: 'match' }} />と
             <H args={{ name: 'unmatch' }} />
           </>
         ),
@@ -220,6 +220,28 @@ export default () => (
               <EmojiWithText letter="a" />
               でした。
             </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            第2問: <InlinePrioritiesLabel>2</InlinePrioritiesLabel>からはじめる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.pqfs}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.mbrh}
+            {AER.cgpd}
+            <YesNoButtons answer="yes" />
           </>
         )
       }

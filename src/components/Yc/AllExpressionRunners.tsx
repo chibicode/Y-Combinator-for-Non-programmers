@@ -474,6 +474,19 @@ export default {
       expressionContainer={lessonExpressions.e3E5}
       initialState="betaReducePreviewAfter"
     />
+  ),
+  pqfs: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E3}
+      showPriorities
+    />
+  ),
+  mbrh: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E3}
+      showPriorities
+      skipToTheEnd={false}
+    />
   )
 }
 
