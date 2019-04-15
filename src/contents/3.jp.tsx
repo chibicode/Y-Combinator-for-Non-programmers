@@ -7,7 +7,8 @@ import {
   Ul,
   UlLi,
   Ol,
-  OlLi
+  OlLi,
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -17,6 +18,7 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 
@@ -261,6 +263,77 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.egmr}
+            <P>
+              このように、
+              <EmojiWithText letter="e" />と<EmojiWithText letter="f" />
+              が両方とも
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              になります。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="e" />,
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="f" />
+              ]}
+            />
+            <P>
+              <Strong>
+                上段にある料理すべてに
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の印がつくというわけです。
+              </Strong>
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />
+            はふたつとも
+            <H args={{ name: 'copy' }} />
+            する
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              先に進めると、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が両方とも
+              <EmojiWithText letter="d" />
+              なので
+              <H args={{ name: 'match' }} />
+              します。
+            </P>
+            <P>
+              その次の
+              <H args={{ name: 'copy' }} />
+              のステップがどうなるか見てみましょう。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.fivy}
+            <P>
+              <Strong>
+                このように、
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の料理は両方とも
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
+                <H args={{ name: 'copy' }} />
+                されます。
+              </Strong>
+            </P>
+            <Hr />
+            <P>
+              そして最終的に
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              が消えて終了です。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.dmwy}
           </>
         )
       },

@@ -65,22 +65,6 @@ const stateToExplanation = ({
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
 }) => {
-  if (currentStep === 1 && currentSubstep === 1) {
-    if (locale === 'en') {
-      return (
-        <>
-          Let’s begin! <Emoji>🍱</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          スタート！
-          <Emoji>🍱</Emoji>
-        </>
-      )
-    }
-  }
   switch (state) {
     case 'default': {
       if (locale === 'en') {

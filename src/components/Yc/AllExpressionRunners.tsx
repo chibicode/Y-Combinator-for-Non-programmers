@@ -346,6 +346,21 @@ export default {
       finalState="showFuncBound"
       hideFuncUnboundBadgeOnExplanation
     />
+  ),
+  fivy: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e3E5}
+      initialState="betaReducePreviewBefore"
+      finalState="betaReducePreviewAfter"
+      explanationsVisibility="visible"
+    />
+  ),
+  dmwy: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e3E5}
+      initialState="betaReducePreviewAfter"
+      skipToTheEnd={false}
+    />
   )
 }
 
