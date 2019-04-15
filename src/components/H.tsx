@@ -910,9 +910,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'heresWhatYouNeedToKnow') {
     if (locale === 'en') {
-      return <>Here’s what you need to know</>
+      return <>Summary</>
     } else {
-      return <>ここまでのまとめ</>
+      return <>まとめ</>
     }
   }
   throw new Error('error')

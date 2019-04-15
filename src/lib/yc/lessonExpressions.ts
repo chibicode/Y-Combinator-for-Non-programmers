@@ -111,8 +111,6 @@ export const e3E5 = initializeExpressionContainer([
   }
 ])
 
-export const e3E6 = initializeExpressionContainer(['e', 'f'])
-
 export const e5E1 = initializeExpressionContainer([
   {
     arg: 'b',

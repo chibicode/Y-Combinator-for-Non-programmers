@@ -329,22 +329,24 @@ export default () => (
       {
         title: (
           <>
-            複雑な
-            <H args={{ name: 'bentoBox' }} />
+            予告: 4品の
+            <H args={{ name: 'bentoBox', short: true }} />
           </>
         ),
         content: (
           <>
             <P>
-              次のページからはもう少し複雑な
+              次のページからは4品の料理が入った
               <H args={{ name: 'bentoBox' }} />
               が登場します。
             </P>
+            <EmojiSeparator emojis={['4️⃣', '🤤', '🍱']} />
             <P>
               <InlineHeader>たとえばこちらをご覧ください。</InlineHeader>
-              下には3つのマスがありますね。この場合はどうなるのでしょうか？
+              <Strong>上に2マス、下にも2マス</Strong>
+              ありますね。この場合はどうなるのでしょうか？
             </P>
-            {AER.xwim}
+            {AER.ljjg}
           </>
         )
       },
@@ -362,11 +364,11 @@ export default () => (
               <H args={{ name: 'yesNoQuiz' }} />
               をやってみましょう。勘で答えてみてください。
             </P>
-            {AER.xwim}
+            {AER.ljjg}
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.awxz}
+            {AER.ebag}
             <YesNoButtons answer="yes" />
           </>
         )
@@ -381,7 +383,7 @@ export default () => (
               </Strong>
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.ldts}
+            {AER.skzv}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
             <YcNextLessonButton nextEpisodeNumber={3} />
           </>

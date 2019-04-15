@@ -26,15 +26,157 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: '3つの料理',
+        title: <>2✕2の弁当箱</>,
         content: (
           <>
-            <EmojiSeparator letters={['a', 'b', 'a']} />
+            <EmojiSeparator emojis={['2️⃣', '✖️', '2️⃣']} />
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               前回の最後には、以下のような
               <H args={{ name: 'bentoBox' }} />
               を紹介しました。
+            </P>
+            {AER.ljjg}
+            <P>
+              <Strong>
+                上段にふたつの料理(
+                <EmojiWithText letter="e" />と<EmojiWithText letter="f" />)
+              </Strong>
+              がありますが、この場合どうなるのかを解説していきます。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />
+            がふたつ
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              さっそく
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.egmr}
+            <P>
+              このように、
+              <EmojiWithText letter="e" />と<EmojiWithText letter="f" />
+              が両方とも
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              になります。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="e" />,
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="f" />
+              ]}
+            />
+            <P>
+              <Strong>
+                上段にある料理すべてに
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の印がつくというわけです。
+              </Strong>
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />
+            はふたつとも
+            <H args={{ name: 'copy' }} />
+            する
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              先に進めると、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が両方とも
+              <EmojiWithText letter="d" />
+              なので
+              <H args={{ name: 'match' }} />
+              します。
+            </P>
+            {AER.lygz}
+            <P>
+              その次の
+              <H args={{ name: 'copy' }} />
+              のステップがどうなるか見てみましょう。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.fivy}
+            <P>
+              <Strong>
+                このように、
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の料理は両方とも
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
+                <H args={{ name: 'copy' }} />
+                されます。
+              </Strong>
+            </P>
+            <Hr />
+            <P>
+              そして最終的に
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              が消えて終了です。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.dmwy}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />:
+            上段に複数の料理がある場合
+          </>
+        ),
+        type: 'summary',
+        content: (
+          <>
+            <P>
+              <Strong>
+                1. 上段に複数の料理があるときは、すべてに
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の印がつく。
+              </Strong>
+            </P>
+            {AER.fpsd}
+            <P>
+              2. (<H args={{ name: 'match' }} />
+              した場合のみ)
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の料理はすべて
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
+                <H args={{ name: 'copy' }} />
+                される。
+              </Strong>
+            </P>
+            {AER.vegw}
+          </>
+        )
+      },
+      {
+        title: '下段に3つの料理',
+        content: (
+          <>
+            <P>
+              続いて、こちらの
+              <H args={{ name: 'bentoBox' }} />
+              をご覧ください。
             </P>
             {AER.xwim}
             <P>
@@ -43,8 +185,9 @@ export default () => (
                 <EmojiWithText letter="a" />、<EmojiWithText letter="b" />、
                 <EmojiWithText letter="a" />)
               </Strong>
-              がありますが、この場合どうなるのかを解説していきます。
+              がありますが、この場合はどうなるのでしょう？
             </P>
+            <EmojiSeparator letters={['a', 'b', 'a']} />
           </>
         )
       },
@@ -151,186 +294,30 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />:
+            下段に左でも右でもない料理がある場合
           </>
         ),
         type: 'summary',
         content: (
           <>
-            <Ol>
-              <OlLi>
-                <Strong>
-                  下段の真ん中の料理には
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  の印をつける。
-                </Strong>
-              </OlLi>
-              <OlLi>
-                <Strong>
-                  残りのステップで
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  はスルーする。
-                </Strong>
-              </OlLi>
-            </Ol>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: <>2✕2の弁当箱</>,
-        content: (
-          <>
-            <EmojiSeparator emojis={['2️⃣', '✖️', '2️⃣']} />
             <P>
-              続いて、こちらの
-              <H args={{ name: 'bentoBox' }} />
-              をご覧ください。これを
-              <H args={{ name: 'play' }} />
-              するとどうなるでしょう？
-            </P>
-            {AER.ljjg}
-            <P>
-              <H args={{ name: 'yesNoQuiz' }} />
-              をやってみましょう。
-              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
-            </P>
-            {AER.vglb}
-            <YesNoButtons answer="no" />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            答えは<Emoji>❌</Emoji>
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              答えは<Emoji>❌</Emoji>でした。
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            {AER.skzv}
-            <P>どうしてこうなったか説明しますね！</P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <BottomRightBadge inline bottomRightBadgeType="callArg" />
-            がふたつ
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.egmr}
-            <P>
-              このように、
-              <EmojiWithText letter="e" />と<EmojiWithText letter="f" />
-              が両方とも
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />
-              になります。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="e" />,
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                <EmojiForLetter letter="f" />
-              ]}
-            />
-            <P>
+              1.{' '}
               <Strong>
-                上段にある料理すべてに
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                の印がつくというわけです。
+                下段の真ん中の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の印をつける。
               </Strong>
             </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <BottomRightBadge inline bottomRightBadgeType="callArg" />
-            はふたつとも
-            <H args={{ name: 'copy' }} />
-            する
-          </>
-        ),
-        content: (
-          <>
+            {AER.qwke}
             <P>
-              先に進めると、
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              が両方とも
-              <EmojiWithText letter="d" />
-              なので
-              <H args={{ name: 'match' }} />
-              します。
-            </P>
-            <P>
-              その次の
-              <H args={{ name: 'copy' }} />
-              のステップがどうなるか見てみましょう。
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.fivy}
-            <P>
+              2.{' '}
               <Strong>
-                このように、
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                の料理は両方とも
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
-                <H args={{ name: 'copy' }} />
-                されます。
+                残りのステップで
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                はスルーする。
               </Strong>
             </P>
-            <Hr />
-            <P>
-              そして最終的に
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              が消えて終了です。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.dmwy}
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
-          </>
-        ),
-        type: 'summary',
-        content: (
-          <>
-            <Ol>
-              <OlLi>
-                <Strong>
-                  上段に複数の料理があるときは、すべてに
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                  の印がつく。
-                </Strong>
-              </OlLi>
-              <OlLi>
-                <Strong>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                  の料理はすべて
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
-                  <H args={{ name: 'copy' }} />
-                  されます。
-                </Strong>
-              </OlLi>
-            </Ol>
           </>
         )
       },
@@ -373,31 +360,45 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
-            <P>
-              次のページに行く前に、まずは
-              <H args={{ name: 'play' }} />
-              してみましょう！
-            </P>
+            <P>この場合はどうなるのでしょうか？</P>
           </>
         )
       },
       {
-        title: '実行するとどうなる？',
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
         content: (
           <>
             <P>
-              というわけで、
+              次のページで詳しく説明しますが、先に
+              <H args={{ name: 'yesNoQuiz' }} />
+              をやってみましょう。勘で答えてみてください。
+            </P>
+            {AER.cvtc}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.uemm}
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: '答え合わせ',
+        content: (
+          <>
+            <P>
+              <Strong>
+                正解は<Emoji>⭕️</Emoji>でした。
+              </Strong>
               <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.xhbi}
-            <P>
-              最終的に
-              <EmojiWithText letter="c" />
-              だけになりました。
-              <Strong>
-                どういう法則でこうなったか、次のページで説明します！
-              </Strong>
-            </P>
+            <P>どういう法則でこうなるのかは、次のページで説明します！</P>
             <YcNextLessonButton nextEpisodeNumber={4} />
           </>
         )

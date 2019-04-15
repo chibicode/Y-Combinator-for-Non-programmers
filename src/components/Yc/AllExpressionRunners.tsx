@@ -177,6 +177,12 @@ export default {
       skipToTheEnd={false}
     />
   ),
+  qwke: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e2E1}
+      initialState="showFuncUnbound"
+    />
+  ),
   iped: (
     <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e2E1} />
   ),
@@ -184,6 +190,13 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
       showPriorities
+    />
+  ),
+  uemm: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E1}
+      showPriorities
+      isDone
     />
   ),
   xhbi: (
@@ -333,7 +346,12 @@ export default {
     />
   ),
   ljjg: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E5} />,
-  vglb: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E6} />,
+  ebag: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E5}
+      isDone
+    />
+  ),
   skzv: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e3E5}
@@ -347,12 +365,18 @@ export default {
       hideFuncUnboundBadgeOnExplanation
     />
   ),
+  lygz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E5}
+      initialState="betaReducePreviewBefore"
+      explanationsVisibility="visible"
+    />
+  ),
   fivy: (
     <ExpressionRunnerSingleStep
       expressionContainer={lessonExpressions.e3E5}
       initialState="betaReducePreviewBefore"
       finalState="betaReducePreviewAfter"
-      explanationsVisibility="visible"
     />
   ),
   dmwy: (
@@ -360,6 +384,18 @@ export default {
       expressionContainer={lessonExpressions.e3E5}
       initialState="betaReducePreviewAfter"
       skipToTheEnd={false}
+    />
+  ),
+  fpsd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E5}
+      initialState="showFuncBound"
+    />
+  ),
+  vegw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E5}
+      initialState="betaReducePreviewAfter"
     />
   )
 }
