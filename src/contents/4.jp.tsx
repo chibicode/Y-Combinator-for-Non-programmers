@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Em,
-  Ol,
-  OlLi,
-  P,
-  Strong,
-  InlineHeader
-} from 'src/components/ContentTags'
+import { Hr, Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import InlineBackground from 'src/components/Yc/InlineBackground'
@@ -16,6 +9,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -37,7 +31,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               を紹介しました。
             </P>
-            {AER.dkiy}
+            {AER.cvtc}
             <P>
               これを
               <H args={{ name: 'play' }} />
@@ -127,7 +121,7 @@ export default () => (
             <>
               <P>
                 <InlineHeader>余談:</InlineHeader> このタイミングで
-                <EmojiWithText letter="m" />
+                <EmojiWithText letter="d" />
                 の部分の背景も暗い色 <InlineBackground
                   bgColor={'indigo50'}
                 />{' '}
@@ -197,69 +191,89 @@ export default () => (
         type: 'summary',
         content: (
           <>
-            <Ol>
-              <OlLi>
-                <InlineHeader>
-                  先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                  のペアをやる
-                </InlineHeader>
-              </OlLi>
-              <OlLi>
-                <InlineHeader>
-                  それが終わると同時に、
-                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になる
-                </InlineHeader>
-              </OlLi>
-              <OlLi>↑を繰り返して最後まで終わらせる</OlLi>
-            </Ol>
-            <EmojiSeparator emojis={['🥇', '🤩', '🥈']} />
             <P>
-              先ほどの
-              <H args={{ name: 'bentoBox', short: true }} />
-              を最初から
-              <H args={{ name: 'fastForward' }} />
-              すると、流れがつかめるかなと思います:
+              1.{' '}
+              <InlineHeader>
+                先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアをやる
+              </InlineHeader>
             </P>
-            {AER.snsr}
+            <P>
+              2.{' '}
+              <InlineHeader>
+                それが終わると同時に、
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になる
+              </InlineHeader>
+            </P>
+            {AER.jrxw}
+            <P>
+              3.{' '}
+              <InlineHeader>
+                同じことを繰り返して最後まで終わらせる
+              </InlineHeader>
+            </P>
+            {AER.esyi}
           </>
-        ),
-        footer: {
-          content: (
-            <P>
-              <H args={{ name: 'pauseIfLost' }} />
-            </P>
-          )
-        }
+        )
       },
       {
-        title: <>他の例でも試してみましょう</>,
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
         content: (
           <>
             <P>
-              前のページで登場した他の2つの
-              <H args={{ name: 'bentoBox', short: true }} />
-              の例も見てみましょう。
+              マスターしたか、
+              <H args={{ name: 'yesNoQuiz' }} />
+              でチェックしてみましょう！
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
+            {AER.dkiy}
             <P>
-              <InlineHeader>例その1 </InlineHeader> /{' '}
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.gmck}
+            {AER.owcy}
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            正解は<Emoji>❌</Emoji>
+          </>
+        ),
+        content: (
+          <>
             <P>
-              <InlineHeader>例その2</InlineHeader> /{' '}
+              <Strong>
+                正解は<Emoji>❌</Emoji>でした。
+              </Strong>
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.hdxc}
-          </>
-        ),
-        footer: {
-          content: (
             <P>
               <H args={{ name: 'pauseIfLost' }} />
             </P>
-          )
-        }
+            <Hr />
+            <P>
+              <InlineHeader>1周目はこうなり…</InlineHeader>
+            </P>
+            {AER.wepe}
+            <P>
+              <InlineHeader>
+                最終的には
+                <EmojiWithText letter="h" />
+                が残ります:
+              </InlineHeader>
+            </P>
+            {AER.bwop}
+          </>
+        )
       },
       {
         title: <>次が初級ラスト！</>,

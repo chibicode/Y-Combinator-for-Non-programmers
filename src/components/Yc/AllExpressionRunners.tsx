@@ -237,28 +237,16 @@ export default {
       showPriorities
     />
   ),
-  tbij: (
-    <ExpressionRunnerPlayButtonOnly
+  dkiy: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E2}
       showPriorities
     />
   ),
-  dkiy: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e3E3}
-      showPriorities
-    />
-  ),
-  owcy: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E4} />,
-  bagn: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e3E3}
-      showPriorities
-    />
-  ),
+  owcy: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e3E3} />,
   aaov: (
     <ExpressionRunnerSingleStep
-      expressionContainer={lessonExpressions.e3E3}
+      expressionContainer={lessonExpressions.e3E1}
       initialState="default"
       finalState="active"
       showPriorities
@@ -266,7 +254,7 @@ export default {
   ),
   qxgl: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e3E3}
+      expressionContainer={lessonExpressions.e3E1}
       showPriorities
       initialState="active"
       lastAllowedExpressionState="betaReducePreviewCrossed"
@@ -275,7 +263,7 @@ export default {
   ),
   uwma: (
     <ExpressionRunnerSingleStep
-      expressionContainer={lessonExpressions.e3E3}
+      expressionContainer={lessonExpressions.e3E1}
       initialState="betaReducePreviewCrossed"
       finalState="default"
       showPriorities
@@ -283,7 +271,7 @@ export default {
   ),
   kvso: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e3E3}
+      expressionContainer={lessonExpressions.e3E1}
       nextIteration
       showPriorities
       skipToTheEnd={false}
@@ -291,16 +279,41 @@ export default {
   ),
   snsr: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e3E3}
+      expressionContainer={lessonExpressions.e3E1}
       showPriorities
       skipToTheEnd={false}
     />
   ),
-  gmck: (
-    <ExpressionRunnerPlayButtonOnly
+  jrxw: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e3E1}
+      initialState="showFuncUnbound"
+      showPriorities
+      secondInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'default'
+        }
+      ]}
+    />
+  ),
+  esyi: (
+    <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e3E1}
       showPriorities
-      skipToTheEnd={false}
+      firstInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+      finalIsDone
     />
   ),
   hdxc: (
@@ -308,6 +321,38 @@ export default {
       expressionContainer={lessonExpressions.e3E2}
       showPriorities
       skipToTheEnd={false}
+    />
+  ),
+  wepe: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e3E2}
+      initialState="showFuncUnbound"
+      showPriorities
+      secondInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'default'
+        }
+      ]}
+    />
+  ),
+  bwop: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e3E2}
+      showPriorities
+      firstInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+      finalIsDone
     />
   ),
   laea: (

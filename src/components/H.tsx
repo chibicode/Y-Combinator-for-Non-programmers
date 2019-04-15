@@ -887,8 +887,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           途中でわからなくなったら、
-          <H args={{ name: 'pause' }} />
-          を押してみてください。説明が上に表示されます。
+          <Strong highlightType={highlightType}>
+            <H args={{ name: 'pause' }} />
+            を押してみてください
+          </Strong>
+          。説明が上に表示されます。
         </>
       )
     }

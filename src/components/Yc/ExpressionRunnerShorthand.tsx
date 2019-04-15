@@ -114,26 +114,36 @@ export const ExpressionRunnerPairSimple = ({
   expressionContainer,
   initialState,
   finalIsDone,
-  finalState
+  finalState,
+  showPriorities,
+  firstInitializeInstructions,
+  secondInitializeInstructions
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   finalIsDone: boolean
   finalState?: CallStates
+  showPriorities: boolean
+  firstInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
+  secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
 }) => (
   <>
     <ExpressionRunner
       expressionContainer={expressionContainer}
       hideControls
-      hidePriorities
+      hidePriorities={!showPriorities}
       explanationsVisibility="hidden"
       variableSize={'lg'}
-      initializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: initialState
-        }
-      ]}
+      initializeInstructions={
+        firstInitializeInstructions
+          ? firstInitializeInstructions
+          : [
+              {
+                type: 'stepForwardUntilPreviouslyChangedExpressionState',
+                state: initialState
+              }
+            ]
+      }
     />
     <P
       css={css`
@@ -141,7 +151,7 @@ export const ExpressionRunnerPairSimple = ({
         margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
       `}
     >
-      {finalState || finalIsDone ? (
+      {finalState || finalIsDone || secondInitializeInstructions ? (
         <>
           <Emoji size="mdlg">⬇️</Emoji>
         </>
@@ -156,26 +166,31 @@ export const ExpressionRunnerPairSimple = ({
     <ExpressionRunner
       expressionContainer={expressionContainer}
       hideControls
-      hidePriorities
+      hidePriorities={!showPriorities}
       explanationsVisibility="hidden"
       variableSize={'lg'}
-      initializeInstructions={[
-        finalState
-          ? {
-              type: 'stepForwardUntilPreviouslyChangedExpressionState',
-              state: finalState
-            }
-          : {
-              type: 'stepForwardUntilTheEnd'
-            }
-      ]}
+      initializeInstructions={
+        secondInitializeInstructions
+          ? secondInitializeInstructions
+          : [
+              finalState
+                ? {
+                    type: 'stepForwardUntilPreviouslyChangedExpressionState',
+                    state: finalState
+                  }
+                : {
+                    type: 'stepForwardUntilTheEnd'
+                  }
+            ]
+      }
     />
   </>
 )
 
 ExpressionRunnerPairSimple.defaultProps = {
   initialState: 'default',
-  finalIsDone: false
+  finalIsDone: false,
+  showPriorities: false
 }
 
 export const ExpressionRunnerSingleStep = ({

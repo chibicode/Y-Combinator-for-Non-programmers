@@ -371,7 +371,11 @@ export default () => (
         )
       },
       {
-        title: <>答え合わせ</>,
+        title: (
+          <>
+            正解は<Emoji>⭕️</Emoji>
+          </>
+        ),
         content: (
           <>
             <P>

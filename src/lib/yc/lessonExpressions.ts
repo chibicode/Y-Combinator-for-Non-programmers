@@ -79,26 +79,14 @@ export const e3E2 = initializeExpressionContainer([
     arg: 'e',
     body: {
       arg: 'f',
-      body: 'g'
+      body: 'f'
     }
   },
-  'h',
-  'i'
+  'g',
+  'h'
 ])
 
-export const e3E3 = initializeExpressionContainer([
-  {
-    arg: 'j',
-    body: {
-      arg: 'k',
-      body: 'k'
-    }
-  },
-  'l',
-  'm'
-])
-
-export const e3E4 = initializeExpressionContainer('k')
+export const e3E3 = initializeExpressionContainer('f')
 
 export const e3E5 = initializeExpressionContainer([
   {
