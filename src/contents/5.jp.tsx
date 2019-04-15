@@ -38,7 +38,7 @@ export default () => (
               中級に進む前に、
               <Strong>どういう順番でやるのか分かりにくい</Strong>
               <H args={{ name: 'bentoBox' }} />
-              を2つ紹介します:
+              を3つ紹介します:
             </P>
             <Ol>
               <OlLi>
@@ -51,8 +51,8 @@ export default () => (
               <OlLi>
                 <InlineHeader>第2問:</InlineHeader>{' '}
                 <Strong>
-                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                  からはじめる
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  ができない
                 </Strong>
               </OlLi>
             </Ol>
@@ -227,7 +227,7 @@ export default () => (
         type: 'yesNoQuiz',
         title: (
           <>
-            第2問: <InlinePrioritiesLabel>2</InlinePrioritiesLabel>からはじめる
+            第2問: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>ができない
           </>
         ),
         content: (
@@ -240,13 +240,50 @@ export default () => (
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
             {AER.mbrh}
-            {AER.cgpd}
             <YesNoButtons answer="yes" />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            正解は<Emoji>⭕️</Emoji>
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                正解は<Emoji>⭕️</Emoji>でした。
+              </Strong>
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.wbru}
+            <P>詳しく解説しますね！</P>
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>を先にやるときは
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>の部分がすべて
+              <BottomRightBadge bottomRightBadgeType="callArg" inline />
+              になる
+            </P>
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>まとめ…覚えなくても大丈夫!</P>
+          </>
+        )
       }
-      // TODO: do the one where you copy more than one item on one of the previous episodes
-      // TODO: Instead of 応用問題 call it 優先順位(後編)
     ]}
   />
 )

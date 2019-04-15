@@ -477,15 +477,21 @@ export default {
   ),
   pqfs: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e5E3}
+      expressionContainer={lessonExpressions.e5E2}
       showPriorities
     />
   ),
   mbrh: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e5E3}
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E2}
       showPriorities
-      skipToTheEnd={false}
+      isDone
+    />
+  ),
+  wbru: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E2}
+      showPriorities
     />
   )
 }
