@@ -189,7 +189,11 @@ export default () => (
         )
       },
       {
-        title: <>ここまでのまとめ</>,
+        title: (
+          <>
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+          </>
+        ),
         type: 'summary',
         content: (
           <>

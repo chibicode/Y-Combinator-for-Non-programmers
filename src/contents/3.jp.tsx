@@ -149,61 +149,28 @@ export default () => (
         )
       },
       {
-        title: <>ここまでのまとめ</>,
+        title: (
+          <>
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+          </>
+        ),
         type: 'summary',
         content: (
           <>
-            <P>
-              まとめるとこんな感じになります(
-              <Em>
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                について<Strong>変更点</Strong>を加えました
-              </Em>
-              ):
-            </P>
             <Ol>
               <OlLi>
                 <Strong>
-                  <InlineHeader>印をつける:</InlineHeader>{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  下段の真ん中の料理には
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  の印をつける。
                 </Strong>
               </OlLi>
               <OlLi>
-                <InlineHeader>一致チェック:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                <Emoji>✅</Emoji> (
                 <Strong>
+                  残りのステップで
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  は無視
+                  はスルーする。
                 </Strong>
-                )
-              </OlLi>
-              <OlLi>
-                (<H args={{ name: 'match' }} />
-                した部分のみ)
-                <InlineHeader>コピーする:</InlineHeader>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <Emoji>➡️</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" /> (
-                <Strong>
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  は無視
-                </Strong>
-                )
-              </OlLi>
-              <OlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> (
-                <Strong>
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  は無視
-                </Strong>
-                )
               </OlLi>
             </Ol>
           </>
@@ -340,7 +307,37 @@ export default () => (
       {
         title: (
           <>
-            3段の
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+          </>
+        ),
+        type: 'summary',
+        content: (
+          <>
+            <Ol>
+              <OlLi>
+                <Strong>
+                  上段に複数の料理があるときは、すべてに
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                  の印がつく。
+                </Strong>
+              </OlLi>
+              <OlLi>
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                  の料理はすべて
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
+                  <H args={{ name: 'copy' }} />
+                  されます。
+                </Strong>
+              </OlLi>
+            </Ol>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            予告: 3段の
             <H args={{ name: 'bentoBox', short: true }} />
           </>
         ),
@@ -348,9 +345,12 @@ export default () => (
           <>
             <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />
             <P>
-              続いて、こちらの
-              <H args={{ name: 'bentoBox' }} />
-              をご覧ください:
+              次のページからは、下のような
+              <Strong>
+                3段の
+                <H args={{ name: 'bentoBox' }} />
+              </Strong>
+              が登場します:
             </P>
             {AER.cvtc}
             <P>
@@ -374,7 +374,7 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              どういうことか説明する前に、まずは
+              次のページに行く前に、まずは
               <H args={{ name: 'play' }} />
               してみましょう！
             </P>
@@ -394,77 +394,80 @@ export default () => (
               最終的に
               <EmojiWithText letter="c" />
               だけになりました。
-              <Strong>どういう法則でこうなったか、分かりますか？</Strong>
-            </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'bentoBox', short: true }} />
-            、その2
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              こちらの
-              <H args={{ name: 'bentoBox' }} />
-              はどうでしょう？
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            {AER.tbij}
-            <P>
-              こちらは最終的に
-              <EmojiWithText letter="g" />
-              だけになりました。 こちらも、
-              <Strong>どういう法則でこうなったか、分かりますか？</Strong>
-            </P>
-          </>
-        )
-      },
-      {
-        title: <H args={{ name: 'yesNoQuiz' }} />,
-        type: 'yesNoQuiz',
-        content: (
-          <>
-            <P>
-              法則が分かりましたか？
-              <H args={{ name: 'yesNoQuiz' }} />
-              で確かめてみましょう！
-            </P>
-            {AER.dkiy}
-            <P>
-              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
-            </P>
-            {AER.owcy}
-            <YesNoButtons answer="no" />
-          </>
-        )
-      },
-      {
-        title: <>答え合わせ</>,
-        content: (
-          <>
-            <P>
-              正解はこちら。
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            {AER.bagn}
-            <P>
               <Strong>
-                <EmojiWithText letter="m" />
-                だけになったので、正解は<Emoji>❌</Emoji>
+                どういう法則でこうなったか、次のページで説明します！
               </Strong>
-              (<EmojiWithText letter="k" />
-              ではない) でした。
             </P>
-            <P>どういう法則でこうなったのかは、次のページで説明します！</P>
             <YcNextLessonButton nextEpisodeNumber={4} />
           </>
         )
       }
+      // {
+      //   title: (
+      //     <>
+      //       <H args={{ name: 'bentoBox', short: true }} />
+      //       、その2
+      //     </>
+      //   ),
+      //   content: (
+      //     <>
+      //       <P>
+      //         こちらの
+      //         <H args={{ name: 'bentoBox' }} />
+      //         はどうでしょう？
+      //         <H args={{ name: 'pressPlay' }} />
+      //       </P>
+      //       {AER.tbij}
+      //       <P>
+      //         こちらは最終的に
+      //         <EmojiWithText letter="g" />
+      //         だけになりました。 こちらも、
+      //         <Strong>どういう法則でこうなったか、分かりますか？</Strong>
+      //       </P>
+      //     </>
+      //   )
+      // },
+      // {
+      //   title: <H args={{ name: 'yesNoQuiz' }} />,
+      //   type: 'yesNoQuiz',
+      //   content: (
+      //     <>
+      //       <P>
+      //         法則が分かりましたか？
+      //         <H args={{ name: 'yesNoQuiz' }} />
+      //         で確かめてみましょう！
+      //       </P>
+      //       {AER.dkiy}
+      //       <P>
+      //         <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+      //       </P>
+      //       {AER.owcy}
+      //       <YesNoButtons answer="no" />
+      //     </>
+      //   )
+      // },
+      // {
+      //   title: <>答え合わせ</>,
+      //   content: (
+      //     <>
+      //       <P>
+      //         正解はこちら。
+      //         <H args={{ name: 'pressPlay' }} />
+      //       </P>
+      //       {AER.bagn}
+      //       <P>
+      //         <Strong>
+      //           <EmojiWithText letter="m" />
+      //           だけになったので、正解は<Emoji>❌</Emoji>
+      //         </Strong>
+      //         (<EmojiWithText letter="k" />
+      //         ではない) でした。
+      //       </P>
+      //       <P>どういう法則でこうなったのかは、次のページで説明します！</P>
+      //       <YcNextLessonButton nextEpisodeNumber={4} />
+      //     </>
+      //   )
+      // }
     ]}
   />
 )

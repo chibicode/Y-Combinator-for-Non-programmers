@@ -81,6 +81,7 @@ export interface HProps {
     | { name: 'lookAtThisBentoBox' }
     | { name: 'pressFastForward' }
     | { name: 'copy' }
+    | { name: 'heresWhatYouNeedToKnow' }
 }
 
 const prefixColors = {
@@ -905,6 +906,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           コピー <Emoji>↘️</Emoji>
         </>
       )
+    }
+  }
+  if (args.name === 'heresWhatYouNeedToKnow') {
+    if (locale === 'en') {
+      return <>Here’s what you need to know</>
+    } else {
+      return <>ここまでのまとめ</>
     }
   }
   throw new Error('error')

@@ -159,7 +159,11 @@ export default () => (
         )
       },
       {
-        title: <>ここまでのまとめ</>,
+        title: (
+          <>
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+          </>
+        ),
         type: 'summary',
         content: (
           <>
@@ -255,7 +259,12 @@ export default () => (
         )
       },
       {
-        title: <>ここまでのまとめ(改訂版)</>,
+        title: (
+          <>
+            <H args={{ name: 'heresWhatYouNeedToKnow' }} />
+            (改訂版)
+          </>
+        ),
         type: 'summary',
         content: (
           <>
