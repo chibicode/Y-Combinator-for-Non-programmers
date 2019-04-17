@@ -41,3 +41,13 @@ export const InternalLink = ({
     </Link>
   </LinkContext.Provider>
 )
+
+export const NoOpLink = (props: JSX.IntrinsicElements['a']) => (
+  <a
+    {...props}
+    css={commonLinkClass}
+    onClick={e => {
+      e.preventDefault()
+    }}
+  />
+)

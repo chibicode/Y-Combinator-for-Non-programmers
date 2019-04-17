@@ -199,7 +199,8 @@ export const ExpressionRunnerSingleStep = ({
   finalState,
   hideFuncUnboundBadgeOnExplanation,
   showPriorities,
-  explanationsVisibility
+  explanationsVisibility,
+  showAllShowSteps
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -207,6 +208,7 @@ export const ExpressionRunnerSingleStep = ({
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -217,6 +219,7 @@ export const ExpressionRunnerSingleStep = ({
     variableSize={'lg'}
     resetIndex
     lastAllowedExpressionState={finalState}
+    showAllShowSteps={showAllShowSteps}
     initializeInstructions={[
       {
         type: 'stepForwardUntilPreviouslyChangedExpressionState',

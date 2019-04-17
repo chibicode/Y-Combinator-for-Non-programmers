@@ -1,32 +1,35 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import {
   Em,
-  H3,
   P,
   Strong,
   Hr,
   Ol,
   OlLi,
-  InlineHeader
+  Ul,
+  UlLi,
+  InlineHeader,
+  NoOpLink
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import { episode6 } from 'src/components/Yc/AllExpressionRunners'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-import h from 'src/lib/h'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
+import { episodeUrl } from 'src/lib/meta'
+import { fontSizes } from 'src/lib/theme'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>応用問題</>,
+        title: <>順番はどうなる？</>,
         content: (
           <>
             <P>
@@ -69,6 +72,11 @@ export default () => (
         ),
         content: (
           <>
+            <P>
+              わからなくてもいいので、先に
+              <H args={{ name: 'yesNoQuiz' }} />
+              を解いてみましょう！クイズの後に解説していきます。
+            </P>
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />。
               <Strong>
@@ -117,11 +125,16 @@ export default () => (
             <P>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアがふたつ以上ある場合は、
-              <Strong>いちばん左のペアからはじめます。</Strong> (下の場合は
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペアから)
+              <Strong>いちばん左のペアからはじめます。</Strong>
             </P>
             {AER.aezk}
+            <P>
+              上の
+              <H args={{ name: 'bentoBox', short: true }} />
+              の場合は、 左にある
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              のペアからはじめます。
+            </P>
           </>
         )
       },
@@ -140,14 +153,14 @@ export default () => (
               さらに、
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.ainx}
             <P>
-              解説のために、
+              (解説のために、
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> →
               <BottomRightBadge inline bottomRightBadgeType="funcArg" /> →
               <BottomRightBadge inline bottomRightBadgeType="funcBound" /> →
-              …と順番に表示しています。
+              …と順番に表示します。)
             </P>
+            {AER.ainx}
             <P>
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               になったのは
@@ -264,144 +277,212 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: (
+          <>
+            第2問の解説その1: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアができない場合、
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+          </>
+        ),
         content: (
           <>
             <P>
-              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>を先にやるときは
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>の部分がすべて
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />
-              になる
+              <Strong>
+                この
+                <H args={{ name: 'bentoBox', short: true }} />の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアをご覧ください。
+              </Strong>
+            </P>
+            {AER.pqfs}
+            <P>
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアは
+                <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
+                のふたつだけなので、先に進むことができません。
+              </Em>{' '}
+              (<BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+              <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+              <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+              の3つが揃ってないと進めません)
+            </P>
+            <Hr />
+            <P>
+              こういう場合は、
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+            </P>
+            {AER.tntc}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            第2問の解説その2: <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            のペアからはじめる場合、
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            はこうなる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+              のペアからはじめる場合、
+              <Strong>
+                <BottomRightBadge bottomRightBadgeType="callArg" inline />は
+                <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
+                両方になります。
+              </Strong>
+            </P>
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.hwtu}
+            <P>
+              <InlineHeader>
+                細かい説明はこちら (覚えなくてもOKです):
+              </InlineHeader>
+            </P>
+            <Ul>
+              <UlLi>
+                上の例のように
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめる場合、
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアの部分が
+                <BottomRightBadge bottomRightBadgeType="callArg" inline />
+                になります。
+              </UlLi>
+              <UlLi>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>、
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>両方がダメで、
+                <InlinePrioritiesLabel>3</InlinePrioritiesLabel>
+                のペアからはじめる場合、
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>、
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアの部分が
+                <BottomRightBadge bottomRightBadgeType="callArg" inline />
+                になります。
+              </UlLi>
+            </Ul>
+            <Hr />
+            <P>
+              残りは
+              <H args={{ name: 'fastForward' }} />
+              で見ていきましょう:
+            </P>
+            {AER.usta}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlineHeader>重要:</InlineHeader>{' '}
+              <Strong>これらの法則を暗記する必要はありません。</Strong>
+              中級以降、これらの法則を使う場面が出てきますが、覚えていなくても先に進めますのでご心配なく。
+            </P>
+            <Hr />
+            <P>
+              <InlineHeader>1.</InlineHeader>{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアがふたつ以上ある場合は、
+              <Strong>いちばん左のペアからはじめます。</Strong>
+            </P>
+            {AER.hykj}
+            <P>
+              <InlineHeader>2.</InlineHeader>{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアに料理が2つしかない場合、そこから始めるのは無理なので、
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+              そしてこの場合、
+              <Strong>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアの部分が
+                <BottomRightBadge bottomRightBadgeType="callArg" inline />
+                になります。
+              </Strong>
+            </P>
+            {AER.mpal}
+            <P>
+              <InlineHeader>
+                繰り返しますが、これらの法則を暗記する必要はありません！
+              </InlineHeader>
+              なんとなく「ふーん、そういう法則もあるんだ」と思っていただければ大丈夫です。
             </P>
           </>
         )
       },
       {
-        title: <></>,
+        title: <>初級はここまで！</>,
         content: (
           <>
-            <P>まとめ…覚えなくても大丈夫!</P>
+            <P>
+              以上が初級編でした！基礎はほとんどカバーしたので、次の中級編からは応用に入っていきます。
+            </P>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <P>
+              <InlineHeader>
+                「法則を覚えきれていない」という方でも、先に進むにあたって支障はありません。
+              </InlineHeader>
+              「なんとなく」の理解で十分です！
+            </P>
+            <YcNextLessonButton nextEpisodeNumber={6} />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>ちょっと休憩？</>,
+        content: (
+          <>
+            <P>
+              「中級に入る前にちょっと休憩したい」という方は、もしよければですが、
+              <Strong>
+                ツイッターなどのSNSで「魔法のYコンビネーターの記事、とりあえず初級編は終わった」
+              </Strong>
+              とつぶやいてくださると、大変ありがたいです。
+            </P>
+            <EmojiSeparator emojis={['📱', '🙂', '💬']} />
+            <P>
+              <InlineHeader>
+                その際には、こちらのリンクをコピーしてシェアしてください↓
+              </InlineHeader>
+            </P>
+            <P
+              css={css`
+                text-align: center;
+                font-size: ${fontSizes(1.2)};
+              `}
+            >
+              <Em>
+                <NoOpLink href={episodeUrl(6)}>{episodeUrl(6)}</NoOpLink>
+              </Em>
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>準備はできましたか？</>,
+        content: (
+          <>
+            <YcNextLessonButton nextEpisodeNumber={6} />
           </>
         )
       }
     ]}
   />
 )
-
-export const old = () => {
-  let i = 0
-  return (
-    <>
-      {h('ycQuizReview', 5)}
-      <P>{h('ycTryUntilDone')}:</P>
-      {episode6[i++]()}
-      <P>
-        というわけで、答えは
-        <Strong>お寿司</Strong> <Emoji>🍣</Emoji> です。
-      </P>
-      <P>
-        <Strong>お気づきかもしれませんが、</Strong>
-        実行をスピーディーにするために、{' '}
-        <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-        <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-        <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-        <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-        をすべて同時に表示しています。
-      </P>
-      <H3>続いてはこちら</H3>
-      <P>
-        今度はこの
-        {h('ycBentoBox')}
-        を見てみましょう:
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Em>
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が4つもありますよね。
-        </Em>{' '}
-        どれから先にやればいいのでしょうか？
-      </P>
-      <P>
-        <Strong>答え:</Strong>{' '}
-        <Em>
-          <Strong>いちばん左にある</Strong>{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめます。
-        </Em>
-      </P>
-      <H3>いちばん左</H3>
-      <P>
-        <Em>{h('ycNext')} を押してみてください</Em>
-        。いちばん左にあるふたつの{' '}
-        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-        の部分からはじめるということが分かります。
-      </P>
-      {episode6[i++]()}
-      <P>このまま最後まで進めてしまいましょう:</P>
-      {episode6[i++]()}
-      <H3>ここまでのまとめ</H3>
-      <P>
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> が複数あるときは、
-        <Em>
-          <Strong>いちばん左にある</Strong>{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめること。
-        </Em>
-      </P>
-      <EmojiSeparator emojis={['⬅️', '🤔', '⬅️']} />
-      <H3>1のペアからはじめられない場合</H3>
-      <P>
-        <Strong>
-          たまに、
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめられない場合があります。
-        </Strong>
-        こちらをご覧ください:
-      </P>
-      {episode6[i++]()}
-      <P>
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        のペアはこちらですが、
-        <Em>
-          これはマスがふたつしかないので、先に進むことができないやつです！
-        </Em>
-      </P>
-      {episode6[i++]()}
-      <P>
-        このように
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-        のペア からはじめられない時は、
-        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-        のペア からはじめる必要があります。
-      </P>
-      {episode6[i++]()}
-      <H3>ここまでのまとめ</H3>
-      <P>
-        <Em>
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-          のペアからはじめられない時は、
-          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-          のペアからはじめ、
-        </Em>
-        それが無理なら次の数字へ…と続ける。
-      </P>
-      <P>それでは、ここでまたクイズです！</P>
-      <H3>クイズ</H3>
-      <P>
-        下の
-        {h('ycBentoBox')}を {h('ycNext')} とどんどん進めたとします。
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>YesかNoで答えてみてください:</Strong>{' '}
-        <Em>最終的に {h('ycBentoBox')} は次のようになるでしょうか？</Em>
-      </P>
-      {episode6[i++]()}
-      <P>
-        <Strong>これはちょっと難しい問題ですが</Strong>
-        、諦めずにチャレンジしてみてください！
-      </P>
-      <YcNextLessonButton nextEpisodeNumber={6} />
-    </>
-  )
-}

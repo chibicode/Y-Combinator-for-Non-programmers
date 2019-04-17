@@ -390,6 +390,13 @@ export default {
       skipToTheEnd={false}
     />
   ),
+  hykj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E1}
+      initialState="showFuncUnbound"
+      showPriorities
+    />
+  ),
   ielw: (
     <ExpressionRunnerSimple
       showAllShowSteps
@@ -481,6 +488,13 @@ export default {
       showPriorities
     />
   ),
+  tntc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E2}
+      initialState="active"
+      showPriorities
+    />
+  ),
   mbrh: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E2}
@@ -491,6 +505,31 @@ export default {
   wbru: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e5E2}
+      showPriorities
+    />
+  ),
+  hwtu: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e5E2}
+      initialState="active"
+      finalState="showCallArg"
+      showAllShowSteps
+      showPriorities
+    />
+  ),
+  usta: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E2}
+      initialState="showCallArg"
+      skipToTheEnd={false}
+      showAllShowSteps
+      showPriorities
+    />
+  ),
+  mpal: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E2}
+      initialState="showFuncBound"
       showPriorities
     />
   )
