@@ -10,7 +10,8 @@ import {
   Ul,
   UlLi,
   InlineHeader,
-  NoOpLink
+  NoOpLink,
+  Blockquote
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -450,12 +451,16 @@ export default () => (
         content: (
           <>
             <P>
-              「中級に入る前にちょっと休憩したい」という方は、もしよければですが、
-              <Strong>
-                ツイッターなどのSNSで「魔法のYコンビネーターの記事、とりあえず初級編は終わった」
-              </Strong>
-              とつぶやいてくださると、大変ありがたいです。
+              「中級に入る前にちょっと休憩したい」という方は、もしよければですが、ツイッターなどのSNSで
             </P>
+            <Blockquote>
+              <P>
+                <Strong>
+                  「魔法のYコンビネーター、とりあえず初級編は終わった」
+                </Strong>
+              </P>
+            </Blockquote>
+            <P>とつぶやいてくださると、宣伝になるので大変ありがたいです。</P>
             <EmojiSeparator emojis={['📱', '🙂', '💬']} />
             <P>
               <InlineHeader>
@@ -476,7 +481,7 @@ export default () => (
         )
       },
       {
-        title: <>準備はできましたか？</>,
+        title: <>それでは中級に進みましょう！</>,
         content: (
           <>
             <YcNextLessonButton nextEpisodeNumber={6} />
