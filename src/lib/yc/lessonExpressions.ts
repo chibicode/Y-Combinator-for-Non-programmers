@@ -594,3 +594,83 @@ export const infiniteLoop = initializeExpressionContainer([
   yCombinator,
   recursiveFunction
 ])
+
+const isZeroFalse: FunctionExpressionParams = {
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: 'b'
+  }
+}
+
+const isZeroTrue: FunctionExpressionParams = {
+  arg: 'c',
+  body: {
+    arg: 'd',
+    body: 'c'
+  }
+}
+
+const isZero: FunctionExpressionParams = {
+  arg: 'e',
+  body: [
+    'e',
+    {
+      arg: 'f',
+      body: isZeroFalse
+    },
+    isZeroTrue
+  ]
+}
+
+const testZero: FunctionExpressionParams = {
+  arg: 'g',
+  body: {
+    arg: 'h',
+    body: 'h'
+  }
+}
+
+const testOne: FunctionExpressionParams = {
+  arg: 'g',
+  body: {
+    arg: 'h',
+    body: ['g', 'h']
+  }
+}
+
+const testTwo: FunctionExpressionParams = {
+  arg: 'g',
+  body: {
+    arg: 'h',
+    body: ['g', ['g', 'h']]
+  }
+}
+
+export const isZeroZero = initializeExpressionContainer([
+  isZero,
+  testZero,
+  'y',
+  'z'
+])
+
+export const isZeroOne = initializeExpressionContainer([
+  isZero,
+  testOne,
+  'y',
+  'z'
+])
+
+export const isZeroTwo = initializeExpressionContainer([
+  isZero,
+  testTwo,
+  'y',
+  'z'
+])
+
+export const isZeroQuestion = initializeExpressionContainer([
+  isZero,
+  'question',
+  'y',
+  'z'
+])

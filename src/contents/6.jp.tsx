@@ -8,8 +8,26 @@ import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import AER from 'src/components/Yc/AllExpressionRunners'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        content: <>{AER.isZeroZeroTest}</>
+      },
+      {
+        content: <>{AER.isZeroOneTest}</>
+      },
+      {
+        content: <>{AER.isZeroTwoTest}</>
+      },
+      {
+        content: <>{AER.isZeroQuestion}</>
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0

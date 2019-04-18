@@ -60,7 +60,9 @@ export const ExpressionRunnerPlayButtonOnly = ({
   hideFuncUnboundBadgeOnExplanation,
   showPriorities,
   nextIteration,
-  showAllShowSteps
+  showAllShowSteps,
+  isFastForwardPlayButton,
+  skipAlphaConvert
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -70,8 +72,11 @@ export const ExpressionRunnerPlayButtonOnly = ({
   lastAllowedExpressionState?: CallStates
   nextIteration?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+  isFastForwardPlayButton: boolean
+  skipAlphaConvert: boolean
 }) => (
   <ExpressionRunner
+    isFastForwardPlayButton={isFastForwardPlayButton}
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     resetIndex
@@ -80,6 +85,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
     skipToTheEnd={skipToTheEnd}
     hideRemainingTime
     variableSize={'lg'}
+    skipAlphaConvert={skipAlphaConvert}
     explanationsVisibility="hiddenInitialPausedOnly"
     lastAllowedExpressionState={lastAllowedExpressionState}
     initializeInstructions={
@@ -107,7 +113,9 @@ ExpressionRunnerPlayButtonOnly.defaultProps = {
   initialState: 'default',
   skipToTheEnd: true,
   hideFuncUnboundBadgeOnExplanation: true,
-  showPriorities: false
+  showPriorities: false,
+  isFastForwardPlayButton: false,
+  skipAlphaConvert: false
 }
 
 export const ExpressionRunnerPairSimple = ({

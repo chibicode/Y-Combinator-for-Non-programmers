@@ -532,6 +532,43 @@ export default {
       initialState="showFuncBound"
       showPriorities
     />
+  ),
+  // If the number is 0, get donut (a donut looks like candy)
+  // Else, get candy
+  isZeroZeroTest: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.isZeroZero}
+      showPriorities
+      isFastForwardPlayButton
+      skipToTheEnd={false}
+    />
+  ),
+  isZeroOneTest: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.isZeroOne}
+      showPriorities
+      isFastForwardPlayButton
+      skipToTheEnd={false}
+    />
+  ),
+  // alphaConvert is not necessary because it does
+  // (x => a => b => c)(a => b => c) and x is not used
+  isZeroTwoTest: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.isZeroTwo}
+      showPriorities
+      skipAlphaConvert
+      isFastForwardPlayButton
+      skipToTheEnd={false}
+    />
+  ),
+  isZeroQuestion: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.isZeroQuestion}
+      showPriorities
+      isFastForwardPlayButton
+      skipToTheEnd={false}
+    />
   )
 }
 

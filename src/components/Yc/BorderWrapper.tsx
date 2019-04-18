@@ -13,13 +13,20 @@ interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
   topBadgeType: VariableExpression['topBadgeType']
   children: React.ReactNode
+  isQuestion: boolean
 }
 
 const background = (
   highlightType: BorderWrapperProps['highlightType'],
   isDoneOrReady: boolean,
-  topBadgeType: BorderWrapperProps['topBadgeType']
+  topBadgeType: BorderWrapperProps['topBadgeType'],
+  isQuestion: boolean
 ): SerializedStyles | undefined => {
+  if (isQuestion) {
+    return css`
+      background: ${colors('indigo400')};
+    `
+  }
   switch (highlightType) {
     case 'default': {
       return css`
@@ -73,7 +80,8 @@ const BorderWrapper = ({
   highlightType,
   bottomRightBadgeType,
   topBadgeType,
-  children
+  children,
+  isQuestion
 }: BorderWrapperProps) => {
   const { isDoneOrReady, highlightOverrides } = useContext(
     ExpressionRunnerContext
@@ -91,7 +99,8 @@ const BorderWrapper = ({
         background(
           highlightOverrides[bottomRightBadgeType] || highlightType,
           isDoneOrReady,
-          topBadgeType
+          topBadgeType,
+          isQuestion
         ),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&

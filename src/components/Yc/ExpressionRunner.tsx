@@ -62,6 +62,7 @@ export interface ExpressionRunnerProps {
   hidePlayButton?: boolean
   isFastForwardPlayButton?: boolean
   showAllShowSteps?: boolean
+  skipAlphaConvert?: boolean
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   skipToTheEnd: boolean
   hideRemainingTime: boolean
@@ -183,6 +184,7 @@ const ExpressionRunner = ({
   containerSize,
   hidePlayButton,
   showAllShowSteps,
+  skipAlphaConvert,
   highlightOverrides,
   hideBottomRightBadges,
   caption,
@@ -201,6 +203,7 @@ const ExpressionRunner = ({
     expressionContainer,
     lastAllowedExpressionState,
     showAllShowSteps,
+    skipAlphaConvert,
     initializeInstructions,
     maxStepsAllowed,
     resetIndex

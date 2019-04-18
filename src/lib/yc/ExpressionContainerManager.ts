@@ -8,6 +8,7 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 
 export interface StepOptions {
   showAllShowSteps?: boolean
+  skipAlphaConvert?: boolean
 }
 
 export default class ExpressionContainerManager {

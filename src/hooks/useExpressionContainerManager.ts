@@ -60,7 +60,8 @@ const useExpressionContainerManager = ({
   resetIndex,
   expressionContainer,
   lastAllowedExpressionState,
-  showAllShowSteps
+  showAllShowSteps,
+  skipAlphaConvert
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
   maxStepsAllowed: ExpressionRunnerProps['maxStepsAllowed']
@@ -68,6 +69,7 @@ const useExpressionContainerManager = ({
   expressionContainer: SteppedExpressionContainer
   lastAllowedExpressionState?: CallStates
   showAllShowSteps?: boolean
+  skipAlphaConvert?: boolean
 }) => {
   const ref = useRef<ExpressionContainerManager>()
   const getExpressionContainerManager = () => {
@@ -79,7 +81,8 @@ const useExpressionContainerManager = ({
       expressionContainer,
       lastAllowedExpressionState,
       stepOptions: {
-        showAllShowSteps
+        showAllShowSteps,
+        skipAlphaConvert
       }
     })
     expressionContainerManager = initializeExpressionManager({

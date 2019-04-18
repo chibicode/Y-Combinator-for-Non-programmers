@@ -50,7 +50,7 @@ const stepExpressionContainerReset = (
 
 const step = (
   e: ExecutableCall,
-  { showAllShowSteps }: StepOptions,
+  { showAllShowSteps, skipAlphaConvert }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
@@ -62,7 +62,7 @@ const step = (
     matchExists?: boolean
     previouslyChangedExpressionState: CallStates
   } => {
-    const conflicts = conflictingVariableNames(e)
+    const conflicts = skipAlphaConvert ? [] : conflictingVariableNames(e)
     if (conflicts.length > 0) {
       return {
         nextExpression: stepToNeedsAlphaConvert(e, conflicts),
