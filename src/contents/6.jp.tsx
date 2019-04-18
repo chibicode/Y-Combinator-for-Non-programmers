@@ -23,6 +23,9 @@ export default () => (
         content: <>{AER.isZeroTwoTest}</>
       },
       {
+        content: <>{AER.isZeroThreeTest}</>
+      },
+      {
         content: <>{AER.isZeroQuestion}</>
       }
     ]}

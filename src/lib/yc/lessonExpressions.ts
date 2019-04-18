@@ -1,5 +1,9 @@
 import initializeExpressionContainer from 'src/lib/yc/initializeExpressionContainer'
-import { FunctionExpressionParams } from 'src/types/yc/ExpressionParamTypes'
+import {
+  FunctionExpressionParams,
+  ExpressionParams,
+  CallExpressionParams
+} from 'src/types/yc/ExpressionParamTypes'
 
 export const e1E1 = initializeExpressionContainer([
   {
@@ -595,82 +599,73 @@ export const infiniteLoop = initializeExpressionContainer([
   recursiveFunction
 ])
 
-const isZeroFalse: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'b',
-    body: 'b'
-  }
-}
-
-const isZeroTrue: FunctionExpressionParams = {
-  arg: 'c',
-  body: {
-    arg: 'd',
-    body: 'c'
-  }
-}
-
-const isZero: FunctionExpressionParams = {
-  arg: 'e',
-  body: [
-    'e',
-    {
-      arg: 'f',
-      body: isZeroFalse
-    },
-    isZeroTrue
-  ]
-}
+export const isZero = (e: ExpressionParams): CallExpressionParams => [
+  [
+    [
+      [
+        e,
+        {
+          arg: 'e',
+          body: {
+            arg: 'a',
+            body: {
+              arg: 'b',
+              body: 'b'
+            }
+          }
+        }
+      ],
+      {
+        arg: 'c',
+        body: {
+          arg: 'd',
+          body: 'c'
+        }
+      }
+    ],
+    'y'
+  ],
+  'z'
+]
 
 const testZero: FunctionExpressionParams = {
-  arg: 'g',
+  arg: 'f',
   body: {
-    arg: 'h',
-    body: 'h'
+    arg: 'g',
+    body: 'g'
   }
 }
 
 const testOne: FunctionExpressionParams = {
-  arg: 'g',
+  arg: 'f',
   body: {
-    arg: 'h',
-    body: ['g', 'h']
+    arg: 'g',
+    body: ['f', 'g']
   }
 }
 
 const testTwo: FunctionExpressionParams = {
-  arg: 'g',
+  arg: 'f',
   body: {
-    arg: 'h',
-    body: ['g', ['g', 'h']]
+    arg: 'g',
+    body: ['f', ['f', 'g']]
   }
 }
 
-export const isZeroZero = initializeExpressionContainer([
-  isZero,
-  testZero,
-  'y',
-  'z'
-])
+const testThree: FunctionExpressionParams = {
+  arg: 'f',
+  body: {
+    arg: 'g',
+    body: ['f', ['f', ['f', 'g']]]
+  }
+}
 
-export const isZeroOne = initializeExpressionContainer([
-  isZero,
-  testOne,
-  'y',
-  'z'
-])
+export const isZeroZero = initializeExpressionContainer(isZero(testZero))
 
-export const isZeroTwo = initializeExpressionContainer([
-  isZero,
-  testTwo,
-  'y',
-  'z'
-])
+export const isZeroOne = initializeExpressionContainer(isZero(testOne))
 
-export const isZeroQuestion = initializeExpressionContainer([
-  isZero,
-  'question',
-  'y',
-  'z'
-])
+export const isZeroTwo = initializeExpressionContainer(isZero(testTwo))
+
+export const isZeroThree = initializeExpressionContainer(isZero(testThree))
+
+export const isZeroQuestion = initializeExpressionContainer(isZero('question'))

@@ -533,6 +533,7 @@ export default {
       showPriorities
     />
   ),
+  // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy
   isZeroZeroTest: (
@@ -556,6 +557,17 @@ export default {
   isZeroTwoTest: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.isZeroTwo}
+      showPriorities
+      skipAlphaConvert
+      isFastForwardPlayButton
+      skipToTheEnd={false}
+    />
+  ),
+  // alphaConvert is not necessary because it does
+  // (x => a => b => c)(a => b => c) and x is not used
+  isZeroThreeTest: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.isZeroThree}
       showPriorities
       skipAlphaConvert
       isFastForwardPlayButton
