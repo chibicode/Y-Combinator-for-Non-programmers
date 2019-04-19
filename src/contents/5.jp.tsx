@@ -303,10 +303,15 @@ export default () => (
                 <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
                 のふたつだけなので、先に進むことができません。
               </Em>{' '}
-              (<BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-              の3つが揃ってないと進めません)
+            </P>
+            <P>
+              <Strong>
+                <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+                <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+                <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+                の3つが揃ってないと進めない
+              </Strong>
+              のです。
             </P>
             <Hr />
             <P>
@@ -317,6 +322,13 @@ export default () => (
               </Strong>
             </P>
             {AER.tntc}
+            <P>
+              この時、
+              <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+              <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+              <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+              がどうなるかは次で解説します！
+            </P>
           </>
         )
       },
@@ -329,6 +341,34 @@ export default () => (
             はこうなる
           </>
         ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>余談:</InlineHeader>{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアにも、
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアにも
+                <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+                <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+                <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+                が揃っていない場合、
+                <Em>
+                  <InlinePrioritiesLabel>3</InlinePrioritiesLabel>
+                  のペアからはじめることになります。
+                </Em>
+              </P>
+              <P>
+                その場合、
+                <Em>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>と
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>両方が
+                  <BottomRightBadge bottomRightBadgeType="callArg" inline />
+                  になります。
+                </Em>
+              </P>
+            </>
+          )
+        },
         content: (
           <>
             <P>
@@ -345,30 +385,14 @@ export default () => (
             </P>
             {AER.hwtu}
             <P>
-              <InlineHeader>
-                細かい説明はこちら (覚えなくてもOKです):
-              </InlineHeader>
-            </P>
-            <Ul>
-              <UlLi>
-                上の例のように
+              <Em>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
                 のペアからはじめる場合、
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアの部分が
                 <BottomRightBadge bottomRightBadgeType="callArg" inline />
                 になります。
-              </UlLi>
-              <UlLi>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>、
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>両方がダメで、
-                <InlinePrioritiesLabel>3</InlinePrioritiesLabel>
-                のペアからはじめる場合、
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>、
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアの部分が
-                <BottomRightBadge bottomRightBadgeType="callArg" inline />
-                になります。
-              </UlLi>
-            </Ul>
+              </Em>
+            </P>
             <Hr />
             <P>
               残りは

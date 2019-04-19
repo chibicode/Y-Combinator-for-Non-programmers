@@ -27,7 +27,9 @@ const variableNamesArray: ReadonlyArray<VariableNames> = [
   'x',
   'y',
   'z',
-  'question'
+  'question',
+  'A',
+  'B'
 ]
 
 export default variableNamesArray

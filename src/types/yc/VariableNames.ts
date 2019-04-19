@@ -26,3 +26,5 @@ export type VariableNames =
   | 'y'
   | 'z'
   | 'question'
+  | 'A'
+  | 'B'
