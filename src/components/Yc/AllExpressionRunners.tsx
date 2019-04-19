@@ -555,6 +555,27 @@ export default {
       newCaption={<H args={{ name: 'secretCodeSimple', number: 2 }} />}
     />
   ),
+  e6E4: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E4}
+      showPriorities
+    />
+  ),
+  e6E5: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E4}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeSimple', number: 3 }} />}
+    />
+  ),
+  e6E6: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e6E5} />,
+  e6E7: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E6}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeSimple', number: 4 }} />}
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy

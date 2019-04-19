@@ -129,6 +129,15 @@ export const e5E2 = initializeExpressionContainer([
 export const e6E1 = initializeExpressionContainer(numberParams('a', 'b', 0))
 export const e6E2 = initializeExpressionContainer(numberParams('c', 'd', 1))
 export const e6E3 = initializeExpressionContainer(numberParams('e', 'f', 2))
+export const e6E4 = initializeExpressionContainer(numberParams('g', 'h', 3))
+export const e6E5 = initializeExpressionContainer({
+  arg: 'A',
+  body: {
+    arg: 'B',
+    body: ['question', 'B']
+  }
+})
+export const e6E6 = initializeExpressionContainer(numberParams('A', 'B', 4))
 
 export const episode5Expression1 = initializeExpressionContainer([
   {

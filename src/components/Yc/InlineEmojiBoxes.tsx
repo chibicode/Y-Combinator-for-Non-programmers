@@ -2,21 +2,20 @@
 import { css, jsx } from '@emotion/core'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
-import { colors, fontSizes, lineHeights, spaces } from 'src/lib/theme'
+import { colors, spaces } from 'src/lib/theme'
 
 interface InlineEmojiBoxProps {
   emojis: string[]
+  background: string
 }
 
-const InlineEmojiBoxes = ({ emojis }: InlineEmojiBoxProps) => (
+const InlineEmojiBoxes = ({ emojis, background }: InlineEmojiBoxProps) => (
   <span
     css={css`
       display: inline-flex;
-      vertical-align: middle;
-      font-size: ${fontSizes(1.2)};
-      line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-      margin: ${spaces(0.25)} ${spaces(0.25)};
-      background: ${colors('white')};
+      vertical-align: -0.25em;
+      margin: 0 ${spaces(0.25)};
+      background: ${background};
     `}
   >
     {emojis.map((emoji, i) => (
@@ -38,5 +37,9 @@ const InlineEmojiBoxes = ({ emojis }: InlineEmojiBoxProps) => (
     ))}
   </span>
 )
+
+InlineEmojiBoxes.defaultProps = {
+  background: colors('white')
+}
 
 export default InlineEmojiBoxes

@@ -6,7 +6,8 @@ import {
   P,
   Strong,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -18,6 +19,10 @@ import h from 'src/lib/h'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
+import YesNoButtons from 'src/components/YesNoButtons'
+import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
+import { colors } from 'src/lib/theme'
+import EmojiWithText from 'src/components/EmojiWithText'
 
 export default () => (
   <EpisodeCardList
@@ -81,6 +86,84 @@ export default () => (
               もうお分かりでしょうか？
               <H args={{ name: 'yesNoQuiz' }} />
               で確かめてみましょう！
+            </P>
+            <EmojiSeparator emojis={['⭕️', '🧐', '️❌']} />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.e6E4}
+            <P>
+              <InlineHeader>問題:</InlineHeader>{' '}
+              <Em>
+                こちらに隠されている暗号は<Strong>「4」</Strong>でしょうか？
+              </Em>
+            </P>
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: <>正解は「3」</>,
+        content: (
+          <>
+            {AER.e6E5}
+            <P>なぜ暗号が「3」なのか説明しますね！</P>
+          </>
+        )
+      },
+      {
+        title: <>暗号の法則</>,
+        content: (
+          <>
+            <P>
+              <InlineHeader>暗号の法則:</InlineHeader>{' '}
+              もし、次のようなパターンの
+              <H args={{ name: 'bentoBox', short: true }} />
+              があり:
+            </P>
+            {AER.e6E6}
+            <P>
+              <InlineEmojiBoxes
+                emojis={['❔']}
+                background={colors('indigo400')}
+              />
+              の中に<Emoji size="mdlg">🅰️</Emoji>が縦に並んでいる場合、その
+              <Strong>
+                <Emoji size="mdlg">🅰️</Emoji>の数が暗号の答えになります
+              </Strong>
+              。
+            </P>
+            <Hr />
+            <P>
+              たとえば、こちらは<Emoji size="mdlg">🅰️</Emoji>
+              が縦に4個並んでいるので、暗号は<Strong>「4」</Strong>になります:
+            </P>
+            {AER.e6E7}
+            <Hr />
+            <P>
+              先ほどの例だと、
+              <Emoji>🅰️</Emoji>は<EmojiWithText letter="g" />、<Emoji>🅱️</Emoji>
+              は<EmojiWithText letter="h" />
+              になります。
+            </P>
+            {AER.e6E5}
+            <P>
+              そして右下に
+              <EmojiWithText letter="g" />
+              が縦に3個並んでいるので、暗号は<Strong>「3」</Strong>
+              というわけです。
             </P>
           </>
         )
