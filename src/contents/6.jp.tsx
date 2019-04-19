@@ -148,7 +148,7 @@ export default () => (
             <Hr />
             <P>
               たとえば、こちらは<Emoji size="mdlg">🅰️</Emoji>
-              が縦に4個並んでいるので、暗号は<Strong>「4」</Strong>になります:
+              が縦に2個並んでいるので、暗号は<Strong>「2」</Strong>になります:
             </P>
             {AER.cqpa}
           </>

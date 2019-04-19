@@ -137,7 +137,7 @@ export const e6E5 = initializeExpressionContainer({
     body: ['question', 'B']
   }
 })
-export const e6E6 = initializeExpressionContainer(numberParams('A', 'B', 4))
+export const e6E6 = initializeExpressionContainer(numberParams('A', 'B', 2))
 
 export const episode5Expression1 = initializeExpressionContainer([
   {

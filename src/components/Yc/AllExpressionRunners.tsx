@@ -574,7 +574,7 @@ export default {
       expressionContainer={lessonExpressions.e6E6}
       showPriorities
       newCaption={
-        <H args={{ name: 'secretCodeCaption', number: 4, letter: 'A' }} />
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'A' }} />
       }
     />
   ),
