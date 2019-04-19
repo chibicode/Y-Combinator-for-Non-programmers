@@ -53,7 +53,7 @@ export default () => (
         ),
         content: (
           <>
-            {AER.e6E1}
+            {AER.tiok}
             <P>
               これだけでは暗号の法則がわからないと思うので、もう2個見ていきましょう！
             </P>
@@ -68,7 +68,7 @@ export default () => (
         ),
         content: (
           <>
-            {AER.e6E2}
+            {AER.tfho}
             <P>そろそろ分かりましたか？あと1個見ていきましょう！</P>
           </>
         )
@@ -81,7 +81,7 @@ export default () => (
         ),
         content: (
           <>
-            {AER.e6E3}
+            {AER.idcf}
             <P>
               もうお分かりでしょうか？
               <H args={{ name: 'yesNoQuiz' }} />
@@ -103,7 +103,7 @@ export default () => (
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.e6E4}
+            {AER.xemt}
             <P>
               <InlineHeader>問題:</InlineHeader>{' '}
               <Em>
@@ -118,7 +118,7 @@ export default () => (
         title: <>正解は「3」</>,
         content: (
           <>
-            {AER.e6E5}
+            {AER.bpwl}
             <P>なぜ暗号が「3」なのか説明しますね！</P>
           </>
         )
@@ -133,7 +133,7 @@ export default () => (
               <H args={{ name: 'bentoBox', short: true }} />
               があり:
             </P>
-            {AER.e6E6}
+            {AER.eozk}
             <P>
               <InlineEmojiBoxes
                 emojis={['❔']}
@@ -150,19 +150,41 @@ export default () => (
               たとえば、こちらは<Emoji size="mdlg">🅰️</Emoji>
               が縦に4個並んでいるので、暗号は<Strong>「4」</Strong>になります:
             </P>
-            {AER.e6E7}
-            <Hr />
+            {AER.cqpa}
+          </>
+        )
+      },
+      {
+        title: <>先ほどの例で説明します</>,
+        content: (
+          <>
+            {AER.qsfp}
             <P>
-              先ほどの例だと、
+              先ほどのクイズの例だと、
               <Emoji>🅰️</Emoji>は<EmojiWithText letter="g" />、<Emoji>🅱️</Emoji>
               は<EmojiWithText letter="h" />
               になります。
             </P>
-            {AER.e6E5}
             <P>
               そして右下に
+              <Emoji>🅰️</Emoji>である
               <EmojiWithText letter="g" />
               が縦に3個並んでいるので、暗号は<Strong>「3」</Strong>
+              というわけです。
+            </P>
+            <Hr />
+            {AER.tiok}
+            <P>
+              こちらの例だと、<Emoji>🅰️</Emoji>は<EmojiWithText letter="a" />、
+              <Emoji>🅱️</Emoji>
+              は<EmojiWithText letter="b" />
+              になります。
+            </P>
+            <P>
+              しかし、右下に
+              <Emoji>🅰️</Emoji>である
+              <EmojiWithText letter="a" />
+              がひとつもないので、暗号は<Strong>「0」</Strong>
               というわけです。
             </P>
           </>

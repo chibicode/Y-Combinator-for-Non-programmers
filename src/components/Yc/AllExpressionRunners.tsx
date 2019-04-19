@@ -534,46 +534,57 @@ export default {
       showPriorities
     />
   ),
-  e6E1: (
+  tiok: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E1}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeSimple', number: 0 }} />}
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 0 }} />}
     />
   ),
-  e6E2: (
+  tfho: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E2}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeSimple', number: 1 }} />}
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 1 }} />}
     />
   ),
-  e6E3: (
+  idcf: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E3}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeSimple', number: 2 }} />}
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 2 }} />}
     />
   ),
-  e6E4: (
+  xemt: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}
       showPriorities
     />
   ),
-  e6E5: (
+  bpwl: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeSimple', number: 3 }} />}
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 3 }} />}
     />
   ),
-  e6E6: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e6E5} />,
-  e6E7: (
+  eozk: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e6E5} />,
+  cqpa: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E6}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeSimple', number: 4 }} />}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 4, letter: 'A' }} />
+      }
+    />
+  ),
+  qsfp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E4}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
+      }
     />
   ),
   // What snack do I get?

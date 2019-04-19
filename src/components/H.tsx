@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { Fragment } from 'react'
 import { useContext } from 'react'
 import {
   Em,
@@ -14,8 +15,10 @@ import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
 import { lessonTitle, episodePrefix, episodeTitles } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
-import { colors } from 'src/lib/theme'
+import { colors, fontSizes } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import { VariableNames } from 'src/types/yc/VariableNames'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -82,8 +85,14 @@ export interface HProps {
     | { name: 'pressFastForward' }
     | { name: 'copy' }
     | { name: 'summary' }
-    | { name: 'secretCodeSimple'; number: number }
+    | { name: 'secretCodeCaptionSimple'; number: number }
+    | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
 }
+
+const slightlyLargeCaptionCss = css`
+  font-size: ${fontSizes(1.2)};
+  vertical-align: -0.08em;
+`
 
 const prefixColors = {
   intro: colors('grey600'),
@@ -919,13 +928,44 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>まとめ</>
     }
   }
-  if (args.name === 'secretCodeSimple') {
+  if (args.name === 'secretCodeCaptionSimple') {
     if (locale === 'en') {
       return <>...</>
     } else {
       return (
         <>
-          暗号は「<Strong>{args.number}</Strong>」です
+          暗号は <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong>{' '}
+          です
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeCaption') {
+    if (locale === 'en') {
+      return (
+        <>
+          Secret Code ={' '}
+          <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong> (
+          {[...Array(args.number)].map((_, i) => (
+            <Fragment key={`${i} ${args.letter}`}>
+              <EmojiForLetter letter={args.letter} />
+              {i < args.number - 1 && ' '}
+            </Fragment>
+          ))}
+          )
+        </>
+      )
+    } else {
+      return (
+        <>
+          暗号 = <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong> (
+          {[...Array(args.number)].map((_, i) => (
+            <Fragment key={`${i} ${args.letter}`}>
+              <EmojiForLetter letter={args.letter} />
+              {i < args.number - 1 && ' '}
+            </Fragment>
+          ))}
+          )
         </>
       )
     }

@@ -41,12 +41,11 @@ export const InlineHeader = ({ children }: { children: React.ReactNode }) => (
 )
 
 export const Strong = ({
-  children,
-  highlightType
+  highlightType,
+  ...props
 }: {
-  children: React.ReactNode
   highlightType?: InlineHighlightType
-}) => {
+} & JSX.IntrinsicElements['span']) => {
   const { inHighlight } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
@@ -56,8 +55,9 @@ export const Strong = ({
         css={css`
           font-weight: bold;
         `}
+        {...props}
       >
-        {children}
+        {props.children}
       </span>
     )
   } else {
@@ -81,8 +81,9 @@ export const Strong = ({
                 }
               `
           ]}
+          {...props}
         >
-          {children}
+          {props.children}
         </span>
       </HighlightContext.Provider>
     )
