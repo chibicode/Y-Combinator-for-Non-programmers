@@ -67,6 +67,7 @@ export interface ExpressionRunnerProps {
   skipToTheEnd: boolean
   hideRemainingTime: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
+  newCaption?: React.ReactNode
   caption?: {
     jp: React.ReactNode
     en: React.ReactNode
@@ -175,6 +176,7 @@ const getActions = ({
 
 const ExpressionRunner = ({
   isFastForwardPlayButton,
+  newCaption,
   expressionContainer,
   lastAllowedExpressionState,
   hideControls,
@@ -273,6 +275,11 @@ const ExpressionRunner = ({
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
                 hideRemainingTime={hideRemainingTime}
               />
+            </ExpressionRunnerCaptionWrapper>
+          )}
+          {newCaption && (
+            <ExpressionRunnerCaptionWrapper pinkText>
+              {newCaption}
             </ExpressionRunnerCaptionWrapper>
           )}
           {caption && (

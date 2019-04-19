@@ -16,7 +16,8 @@ export const ExpressionRunnerSimple = ({
   isDone,
   explanationsVisibility,
   showPriorities,
-  showAllShowSteps
+  showAllShowSteps,
+  newCaption
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -24,6 +25,7 @@ export const ExpressionRunnerSimple = ({
   showPriorities: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
+  newCaption?: ExpressionRunnerProps['newCaption']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -32,6 +34,7 @@ export const ExpressionRunnerSimple = ({
     explanationsVisibility={explanationsVisibility}
     showAllShowSteps={showAllShowSteps}
     variableSize={'lg'}
+    newCaption={newCaption}
     initializeInstructions={[
       isDone
         ? {

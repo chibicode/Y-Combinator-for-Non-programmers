@@ -1,5 +1,13 @@
 import React from 'react'
-import { Em, H3, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  InlineHeader,
+  Em,
+  H3,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode7 } from 'src/components/Yc/AllExpressionRunners'
@@ -7,6 +15,7 @@ import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopBadge from 'src/components/Yc/TopBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
+import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 
@@ -14,19 +23,67 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        content: <>{AER.isZeroZeroTest}</>
+        title: <>弁当箱の暗号</>,
+        content: (
+          <>
+            <P>
+              このページにあるそれぞれの
+              {h('ycBentoBox')}には、
+              <Strong>あるパターンに基づいた暗号</Strong>
+              が隠されています。
+            </P>
+            <EmojiSeparator emojis={['❓', '🧐', '️❓']} />
+            <P>
+              <InlineHeader>あなたへの挑戦状:</InlineHeader>{' '}
+              <Em>暗号がどんな法則に基づいているか考えてみてください！</Em>
+            </P>
+          </>
+        )
       },
       {
-        content: <>{AER.isZeroOneTest}</>
+        title: (
+          <>
+            こちらに隠されている暗号は<Em>「0」</Em>です
+          </>
+        ),
+        content: (
+          <>
+            {AER.e6E1}
+            <P>
+              これだけでは暗号の法則がわからないと思うので、もう2個見ていきましょう！
+            </P>
+          </>
+        )
       },
       {
-        content: <>{AER.isZeroTwoTest}</>
+        title: (
+          <>
+            こちらに隠されている暗号は<Em>「1」</Em>です
+          </>
+        ),
+        content: (
+          <>
+            {AER.e6E2}
+            <P>そろそろ分かりましたか？あと1個見ていきましょう！</P>
+          </>
+        )
       },
       {
-        content: <>{AER.isZeroThreeTest}</>
-      },
-      {
-        content: <>{AER.isZeroQuestion}</>
+        title: (
+          <>
+            こちらに隠されている暗号は<Em>「2」</Em>です
+          </>
+        ),
+        content: (
+          <>
+            {AER.e6E3}
+            <P>
+              もうお分かりでしょうか？
+              <H args={{ name: 'yesNoQuiz' }} />
+              で確かめてみましょう！
+            </P>
+          </>
+        )
       }
     ]}
   />

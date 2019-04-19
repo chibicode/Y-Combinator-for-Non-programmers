@@ -82,6 +82,7 @@ export interface HProps {
     | { name: 'pressFastForward' }
     | { name: 'copy' }
     | { name: 'summary' }
+    | { name: 'secretCodeSimple'; number: number }
 }
 
 const prefixColors = {
@@ -916,6 +917,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Summary</>
     } else {
       return <>まとめ</>
+    }
+  }
+  if (args.name === 'secretCodeSimple') {
+    if (locale === 'en') {
+      return <>...</>
+    } else {
+      return (
+        <>
+          暗号は「<Strong>{args.number}</Strong>」です
+        </>
+      )
     }
   }
   throw new Error('error')

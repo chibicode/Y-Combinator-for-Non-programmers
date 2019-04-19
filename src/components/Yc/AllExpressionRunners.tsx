@@ -18,6 +18,7 @@ import {
   ExpressionRunnerSingleStep
 } from 'src/components/Yc/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
+import H from 'src/components/H'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join
@@ -531,6 +532,27 @@ export default {
       expressionContainer={lessonExpressions.e5E2}
       initialState="showFuncBound"
       showPriorities
+    />
+  ),
+  e6E1: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E1}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeSimple', number: 0 }} />}
+    />
+  ),
+  e6E2: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E2}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeSimple', number: 1 }} />}
+    />
+  ),
+  e6E3: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E3}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeSimple', number: 2 }} />}
     />
   ),
   // What snack do I get?

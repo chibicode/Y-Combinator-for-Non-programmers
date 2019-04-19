@@ -7,8 +7,6 @@ import {
   Hr,
   Ol,
   OlLi,
-  Ul,
-  UlLi,
   InlineHeader,
   NoOpLink,
   Blockquote
