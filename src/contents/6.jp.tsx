@@ -235,9 +235,25 @@ export default () => (
                 上の
                 <H args={{ name: 'bentoBox', short: true }} />を
                 <H args={{ name: 'play' }} />
-                すると、最終的にどうなるでしょう？
+                すると、最終的にどうなるのでしょう？
               </Strong>
             </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>難しいと思うので、二択で聞いてみます。</P>
+            {AER.eavp}
+            <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
+            <YesNoButtons answer="yes" />
           </>
         )
       }

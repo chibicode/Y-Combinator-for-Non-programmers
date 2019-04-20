@@ -81,6 +81,7 @@ export interface HProps {
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
+    | { name: 'whatsTheNumberQuestion'; number: number }
     | { name: 'lookAtThisBentoBox' }
     | { name: 'pressFastForward' }
     | { name: 'copy' }
@@ -873,6 +874,24 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'bentoBox', short: true }} />を
           <H args={{ name: 'play' }} />
           すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'whatsTheNumberQuestion') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'question' }} /> 上の
+          <H args={{ name: 'bentoBox', short: true }} />を
+          <H args={{ name: 'play' }} />
+          すると、最終的に
+          <Em>
+            暗号が<Strong>「{args.number}」</Strong>になる
+          </Em>
+          。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
         </>
       )
     }
