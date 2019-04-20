@@ -614,6 +614,10 @@ export default {
       expressionContainer={lessonExpressions.e6E8}
       showPriorities
       containerSize={'xs'}
+      highlightOverrides={{
+        b: 'highlighted',
+        a: 'highlighted'
+      }}
     />
   ),
   // What snack do I get?

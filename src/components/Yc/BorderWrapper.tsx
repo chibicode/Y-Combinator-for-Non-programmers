@@ -2,18 +2,16 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { useContext } from 'react'
 import Flex from 'src/components/Flex'
-import ExpressionRunnerContext, {
-  HighlightOverrides
-} from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
-  highlightType: HighlightOverrides
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
   topBadgeType: VariableExpression['topBadgeType']
   children: React.ReactNode
   isQuestion: boolean
+  highlightType: VariableExpression['highlightType'] | 'none'
 }
 
 const background = (
@@ -41,11 +39,6 @@ const background = (
     case 'active': {
       return css`
         background: ${colors('white')};
-      `
-    }
-    case 'forceYellowHighlight': {
-      return css`
-        background: ${colors('yellow100')};
       `
     }
     case 'highlighted': {
@@ -83,9 +76,7 @@ const BorderWrapper = ({
   children,
   isQuestion
 }: BorderWrapperProps) => {
-  const { isDoneOrReady, highlightOverrides } = useContext(
-    ExpressionRunnerContext
-  )
+  const { isDoneOrReady } = useContext(ExpressionRunnerContext)
   return (
     <Flex
       css={[
@@ -96,12 +87,7 @@ const BorderWrapper = ({
           flex: 1;
           position: relative;
         `,
-        background(
-          highlightOverrides[bottomRightBadgeType] || highlightType,
-          isDoneOrReady,
-          topBadgeType,
-          isQuestion
-        ),
+        background(highlightType, isDoneOrReady, topBadgeType, isQuestion),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&
           topBadgeType === 'none' &&

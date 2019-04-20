@@ -1,21 +1,16 @@
 import React from 'react'
-import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
-
-export type HighlightOverrides =
-  | VariableExpression['highlightType']
-  | 'forceYellowHighlight'
-  | 'none'
+import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   hideBottomRightBadges: boolean
   variableSize: 'sm' | 'md' | 'lg'
   isDoneOrReady: boolean
-  highlightOverrides: {
-    [key in VariableExpression['bottomRightBadgeType']]?: HighlightOverrides
-  }
   bottomRightBadgeOverrides: { [key in VariableNames]?: string }
+  highlightOverrides: {
+    [key in VariableNames]?: VariableExpression['highlightType']
+  }
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
@@ -23,8 +18,8 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   hideBottomRightBadges: false,
   variableSize: 'sm',
   isDoneOrReady: false,
-  highlightOverrides: {},
-  bottomRightBadgeOverrides: {}
+  bottomRightBadgeOverrides: {},
+  highlightOverrides: {}
 }
 
 export default React.createContext<ExpressionRunnerContextProps>(

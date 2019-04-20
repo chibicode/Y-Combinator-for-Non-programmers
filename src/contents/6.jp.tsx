@@ -229,6 +229,15 @@ export default () => (
               に埋め込んでみましょう:
             </P>
             {AER.mauj}
+            <P>
+              ここで質問です。
+              <Strong>
+                上の
+                <H args={{ name: 'bentoBox', short: true }} />を
+                <H args={{ name: 'play' }} />
+                すると、最終的にどうなるでしょう？
+              </Strong>
+            </P>
           </>
         )
       }
