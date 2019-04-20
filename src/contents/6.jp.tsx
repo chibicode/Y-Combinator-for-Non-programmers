@@ -251,7 +251,9 @@ export default () => (
               <Strong>最終的に暗号が「1」になります。</Strong>
             </P>
             <P>
-              <H args={{ name: 'pressFastForward' }} /> (いつもの倍速で進みます)
+              <H args={{ name: 'pressFastForward' }} /> (いつもの
+              <InlineHeader>倍速</InlineHeader>
+              で進みますので、目に優しく半透明にしています)
             </P>
             {AER.wafy}
             <Hr />

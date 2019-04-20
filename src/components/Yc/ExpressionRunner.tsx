@@ -124,7 +124,7 @@ const getActions = ({
       }, autoplaySpeed(speed))
       setPlaybackStatus({
         isPlaying: true,
-        isFastForwarding: speed > 2
+        isFastForwarding: speed > 1
       })
     },
 
@@ -296,8 +296,7 @@ const ExpressionRunner = ({
             <div
               css={css`
                 line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                opacity: ${isFastForwarding ? 0.8 : 1};
-                ${isFastForwarding ? 'filter: grayscale(100%);' : ''};
+                opacity: ${isFastForwarding ? 0.6 : 1};
               `}
             >
               <ExpressionBox
