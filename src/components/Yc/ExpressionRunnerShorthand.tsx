@@ -17,7 +17,8 @@ export const ExpressionRunnerSimple = ({
   explanationsVisibility,
   showPriorities,
   showAllShowSteps,
-  newCaption
+  newCaption,
+  bottomRightBadgeOverrides
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -26,6 +27,7 @@ export const ExpressionRunnerSimple = ({
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
   newCaption?: ExpressionRunnerProps['newCaption']
+  bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -35,6 +37,7 @@ export const ExpressionRunnerSimple = ({
     showAllShowSteps={showAllShowSteps}
     variableSize={'lg'}
     newCaption={newCaption}
+    bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     initializeInstructions={[
       isDone
         ? {

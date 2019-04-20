@@ -39,9 +39,12 @@ const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
   }[size])
 
 const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
-  const { hidePriorities, variableSize, hideBottomRightBadges } = useContext(
-    ExpressionRunnerContext
-  )
+  const {
+    hidePriorities,
+    variableSize,
+    hideBottomRightBadges,
+    bottomRightBadgeOverrides
+  } = useContext(ExpressionRunnerContext)
   return (
     <>
       {!hidePriorities && (
@@ -69,6 +72,28 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
               ? '💥'
               : letterEmojiMapping[expression.name]}
           </Emoji>
+          {bottomRightBadgeOverrides[expression.name] && (
+            <span
+              css={css`
+                position: absolute;
+                right: -0.2em;
+                bottom: 0;
+                z-index: ${zIndices('badge')};
+              `}
+            >
+              <span
+                css={css`
+                  display: inline-flex;
+                  font-size: 0.5em;
+                  transform: translateY(0.3em);
+                `}
+              >
+                <Emoji size="sm" noVerticalTransform>
+                  {bottomRightBadgeOverrides[expression.name]}
+                </Emoji>
+              </span>
+            </span>
+          )}
           {!hideBottomRightBadges &&
             expression.bottomRightBadgeType !== 'none' && (
               <span

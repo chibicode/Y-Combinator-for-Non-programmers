@@ -67,6 +67,7 @@ export interface ExpressionRunnerProps {
   skipToTheEnd: boolean
   hideRemainingTime: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
+  bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   newCaption?: React.ReactNode
   caption?: {
     jp: React.ReactNode
@@ -195,6 +196,7 @@ const ExpressionRunner = ({
   resetIndex,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
+  bottomRightBadgeOverrides,
   hideRemainingTime
 }: ExpressionRunnerProps) => {
   const {
@@ -239,6 +241,7 @@ const ExpressionRunner = ({
         hidePriorities,
         highlightOverrides,
         hideBottomRightBadges,
+        bottomRightBadgeOverrides,
         variableSize,
         isDoneOrReady: isDone || isReady
       }}
@@ -347,7 +350,9 @@ ExpressionRunner.defaultProps = {
   hidePlayButton: false,
   isFastForwardPlayButton: false,
   hideFuncUnboundBadgeOnExplanation: false,
-  hideRemainingTime: false
+  hideRemainingTime: false,
+  bottomRightBadgeOverrides:
+    expressionRunnerContextDefault.bottomRightBadgeOverrides
 }
 
 export default ExpressionRunner

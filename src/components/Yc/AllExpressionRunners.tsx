@@ -585,6 +585,21 @@ export default {
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
       }
+      bottomRightBadgeOverrides={{
+        h: '🅱️',
+        g: '🅰️'
+      }}
+    />
+  ),
+  xpvh: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E1}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 0 }} />}
+      bottomRightBadgeOverrides={{
+        b: '🅱️',
+        a: '🅰️'
+      }}
     />
   ),
   // What snack do I get?
