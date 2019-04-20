@@ -95,7 +95,8 @@ const allUsedEmojis = uniq([
   '💬',
   '🆕',
   '⁉',
-  '0️⃣'
+  '0️⃣',
+  '🤨'
 ])
 
 // Copied from Twemoji
