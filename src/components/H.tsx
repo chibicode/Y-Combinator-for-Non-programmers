@@ -887,9 +887,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'question' }} /> 上の
           <H args={{ name: 'bentoBox', short: true }} />を
           <H args={{ name: 'play' }} />
-          すると、最終的に
+          すると、
           <Em>
-            暗号が<Strong>「{args.number}」</Strong>になる
+            最終的に暗号が<Strong>「{args.number}」</Strong>になる
           </Em>
           。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
         </>

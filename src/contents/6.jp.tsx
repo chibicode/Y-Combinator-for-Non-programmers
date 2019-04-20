@@ -250,7 +250,11 @@ export default () => (
         ),
         content: (
           <>
-            <P>難しいと思うので、二択で聞いてみます。</P>
+            <P>
+              難しいと思うので、二択の
+              <H args={{ name: 'yesNoQuiz' }} />
+              で聞いてみます。
+            </P>
             {AER.eavp}
             <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
             <YesNoButtons answer="yes" />
