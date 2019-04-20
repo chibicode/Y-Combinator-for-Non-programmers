@@ -24,8 +24,7 @@ import ExpressionRunnerScrollAdjuster from 'src/components/Yc/ExpressionRunnerSc
 import { spaces } from 'src/lib/theme'
 
 // Must be equal to 1 / N to make timer count seconds evenly
-const autoplaySpeed = (isFastForwarding?: boolean) =>
-  isFastForwarding ? 250 : 1000
+const autoplaySpeed = (speed: number) => 1000 / speed
 
 export type InitializeInstruction =
   | {
@@ -60,7 +59,7 @@ export interface ExpressionRunnerProps {
   containerSize: ContainerProps['size']
   resetIndex: boolean
   hidePlayButton?: boolean
-  isFastForwardPlayButton?: boolean
+  speed: number
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
   skipToTheEnd: boolean
@@ -81,20 +80,17 @@ interface PlaybackState {
 }
 
 // Use floor() + 1 instead of ceil() to make sure it's nonzero
-const numSecondsRemaining = (
-  numStepsRemaining: number,
-  isFastForwarding?: boolean
-) =>
-  Math.floor((numStepsRemaining * autoplaySpeed(isFastForwarding)) / 1000) + 1
+const numSecondsRemaining = (numStepsRemaining: number, speed: number) =>
+  Math.floor((numStepsRemaining * autoplaySpeed(speed)) / 1000) + 1
 
 const getActions = ({
-  isFastForwardPlayButton,
+  speed,
   interval,
   getExpressionContainerManager,
   setPlaybackStatus,
   setExpressionContainerManagerState
 }: {
-  isFastForwardPlayButton?: boolean
+  speed: number
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
   getExpressionContainerManager: () => ExpressionContainerManager
   setPlaybackStatus: React.Dispatch<React.SetStateAction<PlaybackState>>
@@ -125,10 +121,10 @@ const getActions = ({
         if (!getExpressionContainerManager().currentState.canStepForward) {
           actions.pause()
         }
-      }, autoplaySpeed(isFastForwardPlayButton))
+      }, autoplaySpeed(speed))
       setPlaybackStatus({
         isPlaying: true,
-        isFastForwarding: !!isFastForwardPlayButton
+        isFastForwarding: speed > 2
       })
     },
 
@@ -176,7 +172,7 @@ const getActions = ({
 }
 
 const ExpressionRunner = ({
-  isFastForwardPlayButton,
+  speed,
   newCaption,
   expressionContainer,
   lastAllowedExpressionState,
@@ -220,7 +216,7 @@ const ExpressionRunner = ({
     isPlaying: false
   })
   const actions = getActions({
-    isFastForwardPlayButton,
+    speed,
     interval,
     getExpressionContainerManager,
     setPlaybackStatus,
@@ -266,7 +262,7 @@ const ExpressionRunner = ({
                 isPlaying={isPlaying}
                 numSecondsRemaining={numSecondsRemaining(
                   expressionContainerManagerState.numStepsRemaining,
-                  isFastForwarding
+                  speed
                 )}
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
@@ -281,12 +277,12 @@ const ExpressionRunner = ({
             </ExpressionRunnerCaptionWrapper>
           )}
           {newCaption && (
-            <ExpressionRunnerCaptionWrapper pinkText>
+            <ExpressionRunnerCaptionWrapper>
               {newCaption}
             </ExpressionRunnerCaptionWrapper>
           )}
           {caption && (
-            <ExpressionRunnerCaptionWrapper pinkText>
+            <ExpressionRunnerCaptionWrapper>
               {caption[locale]}
             </ExpressionRunnerCaptionWrapper>
           )}
@@ -347,7 +343,7 @@ ExpressionRunner.defaultProps = {
   resetIndex: false,
   skipToTheEnd: false,
   hidePlayButton: false,
-  isFastForwardPlayButton: false,
+  speed: 1,
   hideFuncUnboundBadgeOnExplanation: false,
   hideRemainingTime: false,
   bottomRightBadgeOverrides:

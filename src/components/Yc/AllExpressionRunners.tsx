@@ -633,7 +633,18 @@ export default {
       showPriorities
       containerSize={'xs'}
       skipToTheEnd={false}
-      isFastForwardPlayButton
+      speed={2}
+    />
+  ),
+  badn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E8}
+      showPriorities
+      isDone
+      containerSize={'xs'}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
+      }
     />
   ),
   // What snack do I get?
@@ -643,7 +654,7 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.isZeroZero}
       showPriorities
-      isFastForwardPlayButton
+      speed={2}
       skipToTheEnd={false}
     />
   ),
@@ -651,7 +662,7 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.isZeroOne}
       showPriorities
-      isFastForwardPlayButton
+      speed={2}
       skipToTheEnd={false}
     />
   ),
@@ -662,7 +673,7 @@ export default {
       expressionContainer={lessonExpressions.isZeroTwo}
       showPriorities
       skipAlphaConvert
-      isFastForwardPlayButton
+      speed={2}
       skipToTheEnd={false}
     />
   ),
@@ -673,7 +684,7 @@ export default {
       expressionContainer={lessonExpressions.isZeroThree}
       showPriorities
       skipAlphaConvert
-      isFastForwardPlayButton
+      speed={2}
       skipToTheEnd={false}
     />
   ),
@@ -681,7 +692,7 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.isZeroQuestion}
       showPriorities
-      isFastForwardPlayButton
+      speed={2}
       skipToTheEnd={false}
     />
   )
@@ -993,7 +1004,7 @@ export const episode10 = [
       expressionContainer={lessonExpressions.episode9Expression7}
       containerSize={'xs'}
       variableSize={'sm'}
-      isFastForwardPlayButton
+      speed={2}
     />
   ),
   () => (
@@ -1001,7 +1012,7 @@ export const episode10 = [
       expressionContainer={lessonExpressions.episode10Expression1}
       containerSize={'xs'}
       variableSize={'sm'}
-      isFastForwardPlayButton
+      speed={2}
       caption={secretCodeCaption('🍔', 5)}
       hideControls
       explanationsVisibility="hidden"
@@ -1082,7 +1093,7 @@ export const episode10 = [
       expressionContainer={lessonExpressions.episode10Expression3}
       containerSize={'xs'}
       variableSize={'sm'}
-      isFastForwardPlayButton
+      speed={2}
     />
   ),
   () => (
@@ -1090,7 +1101,7 @@ export const episode10 = [
       expressionContainer={lessonExpressions.episode10Expression4}
       containerSize={'xs'}
       variableSize={'sm'}
-      isFastForwardPlayButton
+      speed={2}
       caption={secretCodeCaption('🍔', 6)}
       hideControls
       explanationsVisibility="hidden"

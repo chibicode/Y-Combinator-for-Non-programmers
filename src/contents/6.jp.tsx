@@ -20,8 +20,7 @@ import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import YesNoButtons from 'src/components/YesNoButtons'
-import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
-import { colors } from 'src/lib/theme'
+import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EmojiWithText from 'src/components/EmojiWithText'
 
 export default () => (
@@ -136,10 +135,7 @@ export default () => (
             </P>
             {AER.eozk}
             <P>
-              <InlineEmojiBoxes
-                emojis={['❔']}
-                background={colors('indigo400')}
-              />
+              <InlineEmojiBoxesForQuestion />
               の中に<Emoji size="mdlg">🅰️</Emoji>が縦に並んでいる場合、その
               <Strong>
                 <Emoji size="mdlg">🅰️</Emoji>の数が暗号の答えになります
@@ -207,10 +203,7 @@ export default () => (
             <P>
               ここで、上の
               <H args={{ name: 'bentoBox', short: true }} />の
-              <InlineEmojiBoxes
-                emojis={['❔']}
-                background={colors('indigo400')}
-              />
+              <InlineEmojiBoxesForQuestion />
               の部分に、
               <Em>
                 暗号が<Strong>「0」</Strong>の
@@ -221,11 +214,7 @@ export default () => (
             </P>
             {AER.tiok}
             <P>
-              さっそく{' '}
-              <InlineEmojiBoxes
-                emojis={['❔']}
-                background={colors('indigo400')}
-              />
+              さっそく <InlineEmojiBoxesForQuestion />
               に埋め込んでみましょう:
             </P>
             {AER.mauj}
@@ -274,9 +263,62 @@ export default () => (
               <Strong>最終的に暗号が「1」になります。</Strong>
             </P>
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward' }} /> (いつもの倍速で進みます)
             </P>
             {AER.wafy}
+            <Hr />
+            <P>
+              つまり、最終的に暗号が<Strong>「1」</Strong>になりました。
+            </P>
+            {AER.badn}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>まとめると</>,
+        content: (
+          <>
+            <P>
+              1. こちらの
+              <H args={{ name: 'bentoBox', short: true }} />
+              の、
+              <InlineEmojiBoxesForQuestion />
+              の部分に…
+            </P>
+            {AER.qmof}
+            <P>
+              2. 暗号が<Strong>「0」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              を…
+            </P>
+            {AER.tiok}
+            <P>
+              3. 埋め込んで、最後まで
+              <H args={{ name: 'play' }} />
+              すると…
+            </P>
+            {AER.mauj}
+            <P>
+              4. 暗号が<Strong>「1」</Strong>になります:
+            </P>
+            {AER.badn}
+          </>
+        )
+      },
+      {
+        title: <>ということは…</>,
+        content: (
+          <>
+            {AER.qmof}
+            <P>
+              この
+              <H args={{ name: 'bentoBox', short: true }} />
+              にはどういう効果があるか、もうお分かりでしょうか？
+            </P>
+            <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
+            <P>答えは次のページに！</P>
+            <YcNextLessonButton nextEpisodeNumber={7} />
           </>
         )
       }

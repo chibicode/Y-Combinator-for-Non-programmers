@@ -109,6 +109,7 @@ import Emoji2b07 from 'src/components/Twemoji/2b07'
 import Emoji2b1c from 'src/components/Twemoji/2b1c'
 import Emoji2b50 from 'src/components/Twemoji/2b50'
 import Emoji2b55 from 'src/components/Twemoji/2b55'
+import Emoji30ZZ20e3 from 'src/components/Twemoji/30-20e3'
 import Emoji31ZZ20e3 from 'src/components/Twemoji/31-20e3'
 import Emoji32ZZ20e3 from 'src/components/Twemoji/32-20e3'
 import Emoji33ZZ20e3 from 'src/components/Twemoji/33-20e3'
@@ -224,6 +225,7 @@ export interface BundleTypes {
   '2b1c': React.ComponentType<{}>
   '2b50': React.ComponentType<{}>
   '2b55': React.ComponentType<{}>
+  '30-20e3': React.ComponentType<{}>
   '31-20e3': React.ComponentType<{}>
   '32-20e3': React.ComponentType<{}>
   '33-20e3': React.ComponentType<{}>
@@ -340,6 +342,7 @@ const bundle: BundleTypes = {
   '2b1c': Emoji2b1c,
   '2b50': Emoji2b50,
   '2b55': Emoji2b55,
+  '30-20e3': Emoji30ZZ20e3,
   '31-20e3': Emoji31ZZ20e3,
   '32-20e3': Emoji32ZZ20e3,
   '33-20e3': Emoji33ZZ20e3,

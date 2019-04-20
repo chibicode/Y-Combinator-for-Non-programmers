@@ -9,6 +9,10 @@ interface InlineEmojiBoxProps {
   background: string
 }
 
+export const InlineEmojiBoxesForQuestion = () => (
+  <InlineEmojiBoxes emojis={['❔']} background={colors('indigo400')} />
+)
+
 const InlineEmojiBoxes = ({ emojis, background }: InlineEmojiBoxProps) => (
   <span
     css={css`
