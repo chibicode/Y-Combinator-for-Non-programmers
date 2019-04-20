@@ -602,6 +602,20 @@ export default {
       }}
     />
   ),
+  qmof: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E7}
+      showPriorities
+      containerSize={'xs'}
+    />
+  ),
+  mauj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E8}
+      showPriorities
+      containerSize={'xs'}
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy

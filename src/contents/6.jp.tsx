@@ -124,6 +124,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: <>暗号の法則</>,
         content: (
           <>
@@ -158,13 +159,13 @@ export default () => (
         title: <>先ほどの例で説明します</>,
         content: (
           <>
-            {AER.qsfp}
             <P>
               先ほどのクイズの例だと、
               <Emoji>🅰️</Emoji>は<EmojiWithText letter="g" />、<Emoji>🅱️</Emoji>
               は<EmojiWithText letter="h" />
               になります。
             </P>
+            {AER.qsfp}
             <P>
               そして右下に
               <Emoji>🅰️</Emoji>である
@@ -173,13 +174,13 @@ export default () => (
               というわけです。
             </P>
             <Hr />
-            {AER.xpvh}
             <P>
               こちらの例だと、<Emoji>🅰️</Emoji>は<EmojiWithText letter="a" />、
               <Emoji>🅱️</Emoji>
               は<EmojiWithText letter="b" />
               になります。
             </P>
+            {AER.xpvh}
             <P>
               しかし、右下に
               <Emoji>🅰️</Emoji>である
@@ -187,6 +188,47 @@ export default () => (
               がひとつもないので、暗号は<Strong>「0」</Strong>
               というわけです。
             </P>
+          </>
+        )
+      },
+      {
+        title: <>ここでちょっと難しい質問です</>,
+        content: (
+          <>
+            <P>
+              「<InlineHeader>暗号と言うわりには、簡単すぎる</InlineHeader>
+              」とお思いですか？それでは、ちょっと難しい質問をしてみましょう。
+            </P>
+            <EmojiSeparator emojis={['⁉', '🧐', '⁉']} />
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.qmof}
+            <P>
+              ここで、上の
+              <H args={{ name: 'bentoBox', short: true }} />の
+              <InlineEmojiBoxes
+                emojis={['❔']}
+                background={colors('indigo400')}
+              />
+              の部分に、
+              <Em>
+                暗号が<Strong>「0」</Strong>の
+                <H args={{ name: 'bentoBox', short: true }} />
+                を埋め込みます
+              </Em>
+              。つまり、こちらを埋め込むわけです。
+            </P>
+            {AER.tiok}
+            <P>
+              さっそく{' '}
+              <InlineEmojiBoxes
+                emojis={['❔']}
+                background={colors('indigo400')}
+              />
+              に埋め込んでみましょう:
+            </P>
+            {AER.mauj}
           </>
         )
       }

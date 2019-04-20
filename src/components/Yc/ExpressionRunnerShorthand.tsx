@@ -18,7 +18,9 @@ export const ExpressionRunnerSimple = ({
   showPriorities,
   showAllShowSteps,
   newCaption,
-  bottomRightBadgeOverrides
+  bottomRightBadgeOverrides,
+  variableSize,
+  containerSize
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -28,6 +30,8 @@ export const ExpressionRunnerSimple = ({
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
   newCaption?: ExpressionRunnerProps['newCaption']
   bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
+  variableSize: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -35,7 +39,8 @@ export const ExpressionRunnerSimple = ({
     hidePriorities={!showPriorities}
     explanationsVisibility={explanationsVisibility}
     showAllShowSteps={showAllShowSteps}
-    variableSize={'lg'}
+    variableSize={variableSize}
+    containerSize={containerSize}
     newCaption={newCaption}
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     initializeInstructions={[
@@ -55,7 +60,8 @@ ExpressionRunnerSimple.defaultProps = {
   isDone: false,
   initialState: 'default',
   showPriorities: false,
-  explanationsVisibility: 'hidden'
+  explanationsVisibility: 'hidden',
+  variableSize: 'lg'
 }
 
 export const ExpressionRunnerPlayButtonOnly = ({

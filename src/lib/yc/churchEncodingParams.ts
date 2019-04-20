@@ -29,3 +29,20 @@ export const numberParams = (
     }
   }
 }
+
+export const succParams = (
+  a: VariableNames,
+  b: VariableNames,
+  c: VariableNames
+): FunctionExpressionParams => {
+  return {
+    arg: a,
+    body: {
+      arg: b,
+      body: {
+        arg: c,
+        body: [b, [a, b, c]]
+      }
+    }
+  }
+}
