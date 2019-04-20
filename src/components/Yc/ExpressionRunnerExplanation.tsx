@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { Strong } from 'src/components/ContentTags'
+import { Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopBadge from 'src/components/Yc/TopBadge'
@@ -300,26 +300,26 @@ const ExpressionRunnerExplanation = ({
     {isPlaying && !hideRemainingTime && !isDone ? (
       locale === 'en' ? (
         <>
-          <Strong
+          <InlineHeader
             css={css`
               color: ${colors('pink400')};
             `}
           >
             {numSecondsRemaining}
-          </Strong>{' '}
+          </InlineHeader>{' '}
           second
           {numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>▶️</Emoji>
         </>
       ) : (
         <>
           <Emoji>▶️</Emoji> 残り{' '}
-          <Strong
+          <InlineHeader
             css={css`
               color: ${colors('pink400')};
             `}
           >
             {numSecondsRemaining}
-          </Strong>{' '}
+          </InlineHeader>{' '}
           秒…
         </>
       )

@@ -102,11 +102,13 @@ export const ExpressionRunnerPlayButtonOnly = ({
     showAllShowSteps={showAllShowSteps}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
-    hideRemainingTime
+    hideRemainingTime={speed === 1}
     variableSize={variableSize}
     containerSize={containerSize}
     skipAlphaConvert={skipAlphaConvert}
-    explanationsVisibility="hiddenInitialPausedOnly"
+    explanationsVisibility={
+      speed === 1 ? 'hiddenInitialPausedOnly' : 'hiddenInitial'
+    }
     lastAllowedExpressionState={lastAllowedExpressionState}
     initializeInstructions={
       nextIteration
