@@ -627,6 +627,15 @@ export default {
       containerSize={'xs'}
     />
   ),
+  wafy: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e6E8}
+      showPriorities
+      containerSize={'xs'}
+      skipToTheEnd={false}
+      isFastForwardPlayButton
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy

@@ -260,6 +260,25 @@ export default () => (
             <YesNoButtons answer="yes" />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            正解は<Emoji>⭕️</Emoji>
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              正解は<Emoji>⭕️</Emoji>。
+              <Strong>最終的に暗号が「1」になります。</Strong>
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.wafy}
+          </>
+        )
       }
     ]}
   />
