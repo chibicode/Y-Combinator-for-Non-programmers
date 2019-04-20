@@ -19,14 +19,15 @@ export default () => (
         content: (
           <>
             <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              中級では、「<Strong>弁当箱の暗号</Strong>」を見ていきます。
+            </P>
+            <EmojiSeparator emojis={['❓', '🧐', '️❓']} />
+            <P>
               このページにあるそれぞれの
               {h('ycBentoBox')}には、
               <Strong>あるパターンに基づいた暗号</Strong>
               が隠されています。
-            </P>
-            <EmojiSeparator emojis={['❓', '🧐', '️❓']} />
-            <P>
-              <InlineHeader>あなたへの挑戦状:</InlineHeader>{' '}
               <Em>暗号がどんな法則に基づいているか考えてみてください！</Em>
             </P>
           </>
@@ -42,7 +43,9 @@ export default () => (
           <>
             {AER.tiok}
             <P>
-              これだけでは暗号の法則がわからないと思うので、もう2個見ていきましょう！
+              これだけでは暗号の法則がわからないと思うので、
+              <InlineHeader>もう2個</InlineHeader>
+              見ていきましょう！
             </P>
           </>
         )
@@ -56,7 +59,10 @@ export default () => (
         content: (
           <>
             {AER.tfho}
-            <P>そろそろ分かりましたか？あと1個見ていきましょう！</P>
+            <P>
+              そろそろ分かりましたか？<InlineHeader>あと1個</InlineHeader>
+              見ていきましょう！
+            </P>
           </>
         )
       },
