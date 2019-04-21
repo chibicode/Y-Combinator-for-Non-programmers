@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { Strong, InlineHeader } from 'src/components/ContentTags'
+import { jsx } from '@emotion/core'
+import { Strong } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import TopBadge from 'src/components/Yc/TopBadge'
 import locale from 'src/lib/locale'
-import { colors } from 'src/lib/theme'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import H from 'src/components/H'
@@ -18,10 +17,8 @@ interface ExpressionRunnerExplanationProps {
   currentStep: number
   currentSubstep: number
   isPlaying: boolean
-  numSecondsRemaining: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
-  hideRemainingTime: boolean
 }
 
 const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
@@ -290,40 +287,12 @@ const stateToExplanation = ({
 const ExpressionRunnerExplanation = ({
   expressionContainer,
   isDone,
-  numSecondsRemaining,
   isPlaying,
   showAllShowSteps,
-  hideFuncUnboundBadge,
-  hideRemainingTime
+  hideFuncUnboundBadge
 }: ExpressionRunnerExplanationProps) => (
   <>
-    {isPlaying && !hideRemainingTime && !isDone ? (
-      locale === 'en' ? (
-        <>
-          <InlineHeader
-            css={css`
-              color: ${colors('pink400')};
-            `}
-          >
-            {numSecondsRemaining}
-          </InlineHeader>{' '}
-          second
-          {numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>▶️</Emoji>
-        </>
-      ) : (
-        <>
-          <Emoji>▶️</Emoji> 残り{' '}
-          <InlineHeader
-            css={css`
-              color: ${colors('pink400')};
-            `}
-          >
-            {numSecondsRemaining}
-          </InlineHeader>{' '}
-          秒…
-        </>
-      )
-    ) : (
+    {
       <>
         {isDone ? (
           <H args={{ name: 'done' }} highlightType="none" />
@@ -337,7 +306,7 @@ const ExpressionRunnerExplanation = ({
           })
         )}
       </>
-    )}
+    }
   </>
 )
 

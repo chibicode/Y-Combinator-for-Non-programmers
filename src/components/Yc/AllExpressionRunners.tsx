@@ -666,7 +666,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={2}
+      speed={3}
     />
   ),
   rceu: (
@@ -678,6 +678,35 @@ export default {
       variableSize={'md'}
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'd' }} />
+      }
+    />
+  ),
+  sisn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E3}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 2 }} />}
+    />
+  ),
+  syhh: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e7E4}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={3}
+    />
+  ),
+  ablz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E4}
+      showPriorities
+      isDone
+      containerSize={'xs'}
+      variableSize={'md'}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'd' }} />
       }
     />
   ),

@@ -22,6 +22,7 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/Yc/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
+import ExpressionRunnerTimer from 'src/components/Yc/ExpressionRunnerTimer'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed
@@ -260,10 +261,6 @@ const ExpressionRunner = ({
             <ExpressionRunnerCaptionWrapper>
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
-                numSecondsRemaining={numSecondsRemaining(
-                  expressionContainerManagerState.numStepsRemaining,
-                  speed
-                )}
                 expressionContainer={
                   expressionContainerManagerState.expressionContainer
                 }
@@ -272,7 +269,6 @@ const ExpressionRunner = ({
                 currentSubstep={expressionContainerManagerState.currentSubstep}
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
-                hideRemainingTime={hideRemainingTime}
               />
             </ExpressionRunnerCaptionWrapper>
           )}
@@ -296,7 +292,7 @@ const ExpressionRunner = ({
             <div
               css={css`
                 line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                opacity: ${isFastForwarding ? 0.6 : 1};
+                opacity: ${isFastForwarding ? 0.5 : 1};
               `}
             >
               <ExpressionBox
@@ -324,6 +320,28 @@ const ExpressionRunner = ({
               skipToTheEnd={skipToTheEnd}
               onPauseClick={actions.pause}
             />
+          )}
+          {(explanationsVisibility === 'visible' ||
+            (explanationsVisibility === 'hiddenInitial' &&
+              expressionContainerManagerState.numStepsTaken > 0) ||
+            (explanationsVisibility === 'hiddenInitialPausedOnly' &&
+              !isPlaying &&
+              expressionContainerManagerState.numStepsTaken > 0)) && (
+            <ExpressionRunnerCaptionWrapper
+              css={css`
+                margin-top: ${spaces(0.5)};
+              `}
+            >
+              <ExpressionRunnerTimer
+                isPlaying={isPlaying}
+                numSecondsRemaining={numSecondsRemaining(
+                  expressionContainerManagerState.numStepsRemaining,
+                  speed
+                )}
+                isDone={isDone}
+                hideRemainingTime={hideRemainingTime}
+              />
+            </ExpressionRunnerCaptionWrapper>
           )}
         </Container>
       </div>

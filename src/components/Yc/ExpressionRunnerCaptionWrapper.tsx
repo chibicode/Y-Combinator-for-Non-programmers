@@ -1,13 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import { colors, fontSizes, spaces } from 'src/lib/theme'
 
-const ExpressionRunnerCaptionWrapper = ({
-  children
-}: {
-  children: React.ReactNode
-}) => (
+const ExpressionRunnerCaptionWrapper = (
+  props: JSX.IntrinsicElements['div']
+) => (
   <div
     css={css`
       text-align: center;
@@ -15,9 +12,8 @@ const ExpressionRunnerCaptionWrapper = ({
       font-size: ${fontSizes(0.85)};
       color: ${colors('indigo400')};
     `}
-  >
-    {children}
-  </div>
+    {...props}
+  />
 )
 
 export default ExpressionRunnerCaptionWrapper

@@ -49,7 +49,33 @@ export default () => (
       },
       {
         title: <>暗号が「2」の場合</>,
-        content: <></>
+        content: (
+          <>
+            <P>暗号が「2」だったらどうでしょう？</P>
+            {AER.sisn}
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.syhh}
+            <P>
+              最終的に暗号が<Strong>「3」</Strong>になりました:
+            </P>
+            {AER.ablz}
+            <P>
+              つまり、暗号が<Strong>「2」</Strong>から<Strong>「3」</Strong>
+              に変化したというわけです。
+            </P>
+            <EmojiSeparator emojis={['2️⃣', '➡️', '3️⃣']} />
+          </>
+        )
+      },
+      {
+        title: <>1を足す弁当箱</>,
+        content: (
+          <>
+            <P>?</P>
+          </>
+        )
       }
     ]}
   />
