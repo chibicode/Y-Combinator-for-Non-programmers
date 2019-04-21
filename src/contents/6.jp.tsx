@@ -299,6 +299,11 @@ export default () => (
               4. 暗号が<Strong>「1」</Strong>になります:
             </P>
             {AER.badn}
+            <P>
+              5. つまり、もともと<Strong>「0」</Strong>だった暗号が
+              <Strong>「1」</Strong>になりました:
+            </P>
+            <EmojiSeparator emojis={['0️⃣', '➡️', '1️⃣']} />
           </>
         )
       },

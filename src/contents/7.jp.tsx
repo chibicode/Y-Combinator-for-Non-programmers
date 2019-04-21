@@ -4,11 +4,56 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode8 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import AER from 'src/components/Yc/AllExpressionRunners'
 import h from 'src/lib/h'
+import H from 'src/components/H'
 
 import EpisodeCardList from 'src/components/EpisodeCardList'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: <>暗号が「1」の場合</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              前回紹介したこちらの
+              <H args={{ name: 'bentoBox', short: true }} />
+              ですが、
+            </P>
+            {AER.qmof}
+            <P>
+              今度は暗号が<Strong>「1」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              と組み合わせてみましょう。
+            </P>
+            {AER.slyk}
+            <P>
+              するとどうなるでしょうか？
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.eemn}
+            <P>
+              最終的に暗号が<Strong>「2」</Strong>になりました:
+            </P>
+            {AER.rceu}
+            <P>
+              つまり、暗号が<Strong>「1」</Strong>から<Strong>「2」</Strong>
+              に変化したというわけです。
+            </P>
+            <EmojiSeparator emojis={['1️⃣', '➡️', '2️⃣']} />
+          </>
+        )
+      },
+      {
+        title: <>暗号が「2」の場合</>,
+        content: <></>
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0

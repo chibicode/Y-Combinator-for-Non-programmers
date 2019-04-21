@@ -76,7 +76,7 @@ const left = (
 ): number =>
   ({
     lg: -1.291,
-    md: -0.92,
+    md: -1.07,
     sm: -0.92
   }[variableSize])
 
@@ -96,12 +96,12 @@ const ExpressionPrioritiesLabelBox = ({
           position: relative;
           z-index: ${-offset};
         `,
-        variableSize === 'lg' &&
+        variableSize !== 'sm' &&
           position === 'topleft' &&
           css`
             top: ${-offset * 0.2 * width(variableSize)}em;
           `,
-        variableSize === 'lg' &&
+        variableSize !== 'sm' &&
           position === 'bottomleft' &&
           css`
             bottom: ${-offset * 0.2 * width(variableSize)}em;
@@ -131,12 +131,12 @@ const ExpressionPrioritiesLabelBox = ({
               background: ${colors(
                 emphasize && activePriority === priority
                   ? 'pink400'
-                  : variableSize === 'lg'
+                  : variableSize !== 'sm'
                   ? 'white'
                   : 'transparent'
               )};
             `,
-            variableSize === 'lg'
+            variableSize !== 'sm'
               ? css`
                   border: 2px solid ${colors('indigo300')};
                   border-radius: ${radii(9999)};
@@ -184,13 +184,13 @@ const ExpressionPrioritiesLabel = ({
         z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
       `,
         css`
-          left: ${variableSize === 'lg' ? left(variableSize) : 0}em;
+          left: ${variableSize !== 'sm' ? left(variableSize) : 0}em;
         `
       ]}
     >
       <Flex
         css={css`
-          flex-direction: ${variableSize === 'lg'
+          flex-direction: ${variableSize !== 'sm'
             ? position === 'topleft'
               ? 'column'
               : 'column-reverse'

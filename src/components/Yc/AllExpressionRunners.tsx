@@ -607,6 +607,7 @@ export default {
       expressionContainer={lessonExpressions.e6E7}
       showPriorities
       containerSize={'xs'}
+      variableSize={'md'}
     />
   ),
   mauj: (
@@ -614,6 +615,7 @@ export default {
       expressionContainer={lessonExpressions.e6E8}
       showPriorities
       containerSize={'xs'}
+      variableSize={'md'}
       highlightOverrides={{
         b: 'highlighted',
         a: 'highlighted'
@@ -625,6 +627,7 @@ export default {
       expressionContainer={lessonExpressions.e6E8}
       showPriorities
       containerSize={'xs'}
+      variableSize={'md'}
     />
   ),
   wafy: (
@@ -632,6 +635,7 @@ export default {
       expressionContainer={lessonExpressions.e6E8}
       showPriorities
       containerSize={'xs'}
+      variableSize={'md'}
       skipToTheEnd={false}
       speed={2}
     />
@@ -642,8 +646,38 @@ export default {
       showPriorities
       isDone
       containerSize={'xs'}
+      variableSize={'md'}
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
+      }
+    />
+  ),
+  slyk: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E1}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 1 }} />}
+    />
+  ),
+  eemn: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e7E2}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={2}
+    />
+  ),
+  rceu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E2}
+      showPriorities
+      isDone
+      containerSize={'xs'}
+      variableSize={'md'}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'd' }} />
       }
     />
   ),

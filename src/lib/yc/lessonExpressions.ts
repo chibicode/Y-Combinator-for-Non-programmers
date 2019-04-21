@@ -147,6 +147,12 @@ export const e6E8 = initializeExpressionContainer([
   numberParams('a', 'b', 0)
 ])
 
+export const e7E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
+export const e7E2 = initializeExpressionContainer([
+  succParams('c', 'd', 'e'),
+  numberParams('a', 'b', 1)
+])
+
 export const episode5Expression1 = initializeExpressionContainer([
   {
     arg: 'a',
