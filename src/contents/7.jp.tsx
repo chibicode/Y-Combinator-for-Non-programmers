@@ -258,10 +258,14 @@ export default () => (
             </P>
             {AER.unck}
             <P>
-              こちらは、最終的に暗号が<Strong>「4」</Strong>になりました！「
-              <Strong>3 + 1 = 4</Strong>」も無事計算できました。
+              こちらは、最終的に暗号が<Strong>「4」</Strong>になりました！
             </P>
             {AER.cpbj}
+            <P>
+              というわけで、「
+              <Strong>3 + 1 = 4</Strong>」も計算できてしまいました。
+            </P>
+            <EmojiSeparator emojis={['3️⃣', '➕', '️1️⃣']} />
           </>
         )
       }
