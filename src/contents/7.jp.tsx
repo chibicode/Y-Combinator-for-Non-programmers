@@ -124,6 +124,18 @@ export default () => (
             <P>さっそく検証してみましょう！</P>
           </>
         )
+      },
+      {
+        title: <>1 + 2 = 3</>,
+        content: (
+          <>
+            <P>
+              こちらに暗号が<Strong>「1」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              があります:
+            </P>
+          </>
+        )
       }
     ]}
   />

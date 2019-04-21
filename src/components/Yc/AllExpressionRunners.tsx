@@ -656,7 +656,9 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E1}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 1 }} />}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
+      }
     />
   ),
   eemn: (
@@ -685,7 +687,9 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E3}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 2 }} />}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'a' }} />
+      }
     />
   ),
   syhh: (

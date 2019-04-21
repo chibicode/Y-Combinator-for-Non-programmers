@@ -964,27 +964,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           Secret Code ={' '}
-          <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong> (
-          {[...Array(args.number)].map((_, i) => (
-            <Fragment key={`${i} ${args.letter}`}>
-              <EmojiForLetter letter={args.letter} />
-              {i < args.number - 1 && ' '}
-            </Fragment>
-          ))}
-          )
+          <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong> (右下に
+          <EmojiForLetter letter={args.letter} />が
+          <Strong>{args.number}</Strong>個)
         </>
       )
     } else {
       return (
         <>
-          暗号 = <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong> (
-          {[...Array(args.number)].map((_, i) => (
-            <Fragment key={`${i} ${args.letter}`}>
-              <EmojiForLetter letter={args.letter} />
-              {i < args.number - 1 && ' '}
-            </Fragment>
-          ))}
-          )
+          暗号 = <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong>{' '}
+          (右下に
+          <EmojiForLetter letter={args.letter} />が
+          <Strong>{args.number}</Strong>個)
         </>
       )
     }
