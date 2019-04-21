@@ -7,7 +7,7 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import h from 'src/lib/h'
 import H from 'src/components/H'
-
+import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 
 export default () => (
@@ -70,10 +70,58 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: <>1を足す弁当箱</>,
         content: (
           <>
-            <P>?</P>
+            <P>
+              結論から言うと、この
+              <H args={{ name: 'bentoBox', short: true }} />
+              には、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                に入っている
+                <H args={{ name: 'bentoBox', short: true }} />
+                の暗号に「1」を加える効果があります。
+              </Strong>
+            </P>
+            {AER.qmof}
+            <P>
+              <InlineEmojiBoxesForQuestion />
+              の暗号が<Strong>「1」</Strong>だったら実行後に暗号が
+              <Strong>「2」</Strong>
+              になり、
+              <InlineEmojiBoxesForQuestion />
+              の暗号が<Strong>「2」</Strong>だったら実行後に暗号が
+              <Strong>「3」</Strong>
+              になるというわけです。
+            </P>
+            <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
+          </>
+        )
+      },
+      {
+        title: <>つまり…</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'bentoBox' }} />は
+              <Em>
+                ただのパズルかと思いきや、「<Strong>1を足す</Strong>
+                」という<Strong>簡単な計算</Strong>をすることもできる
+              </Em>
+              ようです。
+            </P>
+            <EmojiSeparator emojis={['🍱', '➕', '️1️⃣']} />
+            <P>
+              他にはどんな計算ができるのでしょう？たとえば、
+              <Strong>
+                <H args={{ name: 'bentoBox', short: true }} />{' '}
+                同士の足し算はできるのでしょうか？
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
+            <P>さっそく検証してみましょう！</P>
           </>
         )
       }
