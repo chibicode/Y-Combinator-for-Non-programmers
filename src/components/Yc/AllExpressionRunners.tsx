@@ -714,13 +714,44 @@ export default {
       }
     />
   ),
-  vrvl: (
+  bpza: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E5}
       showPriorities
       newCaption={
-        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'f' }} />
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'e' }} />
       }
+    />
+  ),
+  vrvl: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E6}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'g' }} />
+      }
+    />
+  ),
+  goif: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E7}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  hdwy: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E8}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted',
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
     />
   ),
   // What snack do I get?

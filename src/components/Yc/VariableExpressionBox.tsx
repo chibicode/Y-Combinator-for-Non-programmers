@@ -34,7 +34,7 @@ const paddingBottom = (size: ExpressionRunnerContextProps['variableSize']) =>
 const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
   ({
     lg: fontSizes(2.5),
-    md: fontSizes(2),
+    md: fontSizes(1.7),
     sm: fontSizes(1.4)
   }[size])
 

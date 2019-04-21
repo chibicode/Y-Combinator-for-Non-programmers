@@ -46,3 +46,24 @@ export const succParams = (
     }
   }
 }
+
+export const addParams = (
+  a: VariableNames,
+  b: VariableNames,
+  c: VariableNames,
+  d: VariableNames
+): FunctionExpressionParams => {
+  return {
+    arg: a,
+    body: {
+      arg: b,
+      body: {
+        arg: c,
+        body: {
+          arg: d,
+          body: [[a, c], [[b, c], d]]
+        }
+      }
+    }
+  }
+}

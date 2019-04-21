@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { Fragment } from 'react'
 import { useContext } from 'react'
 import {
   Em,
@@ -40,6 +39,7 @@ export interface HProps {
         plural?: boolean
         highlightType?: InlineHighlightType
         short?: boolean
+        skipEmoji?: boolean
       }
     | { name: 'next' }
     | { name: 'play' }
@@ -347,7 +347,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         </Strong>
       )
     } else {
-      return args.short ? (
+      return args.skipEmoji ? (
+        <>弁当箱</>
+      ) : args.short ? (
         <>
           弁当箱 <Emoji>🍱</Emoji>
         </>

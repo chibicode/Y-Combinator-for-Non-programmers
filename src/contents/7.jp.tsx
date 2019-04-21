@@ -9,6 +9,7 @@ import h from 'src/lib/h'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -134,7 +135,7 @@ export default () => (
               <H args={{ name: 'bentoBox', short: true }} />
               があります:
             </P>
-            {AER.slyk}
+            {AER.bpza}
             <P>
               そして、こちらには暗号が<Strong>「2」</Strong>の
               <H args={{ name: 'bentoBox', short: true }} />
@@ -148,6 +149,47 @@ export default () => (
               を計算することはできるのでしょうか？
             </P>
             <EmojiSeparator emojis={['1️⃣', '➕', '️2️⃣']} />
+            <P>
+              <H args={{ name: 'yesNoQuiz' }} />
+              で試してみましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              こちらに
+              <InlineEmojiBoxesForQuestion />
+              がふたつある
+              <H args={{ name: 'bentoBox', short: true }} />
+              があります:
+            </P>
+            {AER.goif}
+            <P>
+              <InlineEmojiBoxesForQuestion />
+              の部分に、先ほどの暗号が<Strong>「1」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              と暗号が<Strong>「2」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を埋め込みます。
+            </P>
+            {AER.hdwy}
+            <P>
+              さて、これで<Strong>1 + 2 = 3</Strong>
+              が計算できるのでしょうか？というわけで、ここで質問です。
+            </P>
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 3 }} />
+            </P>
+            <YesNoButtons answer="yes" />
           </>
         )
       }

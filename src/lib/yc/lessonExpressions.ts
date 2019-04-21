@@ -4,7 +4,11 @@ import {
   ExpressionParams,
   CallExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
-import { numberParams, succParams } from 'src/lib/yc/churchEncodingParams'
+import {
+  numberParams,
+  succParams,
+  addParams
+} from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
   {
@@ -158,7 +162,18 @@ export const e7E4 = initializeExpressionContainer([
   numberParams('a', 'b', 2)
 ])
 
-export const e7E5 = initializeExpressionContainer(numberParams('f', 'g', 2))
+export const e7E5 = initializeExpressionContainer(numberParams('e', 'f', 1))
+export const e7E6 = initializeExpressionContainer(numberParams('g', 'h', 2))
+export const e7E7 = initializeExpressionContainer([
+  addParams('a', 'b', 'c', 'd'),
+  'question',
+  'question'
+])
+export const e7E8 = initializeExpressionContainer([
+  addParams('a', 'b', 'c', 'd'),
+  numberParams('e', 'f', 1),
+  numberParams('g', 'h', 2)
+])
 
 export const episode5Expression1 = initializeExpressionContainer([
   {

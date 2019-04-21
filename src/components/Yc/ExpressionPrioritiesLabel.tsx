@@ -31,7 +31,7 @@ const fontSize = (
   if (variableSize === 'lg') {
     return fontSizes(0.75)
   } else if (variableSize === 'md') {
-    return fontSizes(0.7)
+    return fontSizes(0.6)
   } else {
     return fontSizes(0.6)
   }
@@ -43,7 +43,7 @@ const emojiFontSize = (
   if (variableSize === 'lg') {
     return fontSizes(1)
   } else if (variableSize === 'md') {
-    return fontSizes(0.7)
+    return fontSizes(0.6)
   } else {
     return fontSizes(0.6)
   }
@@ -76,7 +76,7 @@ const left = (
 ): number =>
   ({
     lg: -1.291,
-    md: -1.07,
+    md: -0.92,
     sm: -0.92
   }[variableSize])
 
