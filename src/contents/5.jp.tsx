@@ -11,7 +11,6 @@ import {
   NoOpLink,
   Blockquote
 } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
@@ -95,14 +94,15 @@ export default () => (
       {
         title: (
           <>
-            正解は<Emoji>⭕️</Emoji>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
         content: (
           <>
             <P>
               <Strong>
-                正解は<Emoji>⭕️</Emoji>でした。
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
               </Strong>
               <H args={{ name: 'pressPlay' }} />
             </P>
@@ -259,14 +259,15 @@ export default () => (
       {
         title: (
           <>
-            正解は<Emoji>⭕️</Emoji>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
         content: (
           <>
             <P>
               <Strong>
-                正解は<Emoji>⭕️</Emoji>でした。
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
               </Strong>
               <H args={{ name: 'pressPlay' }} />
             </P>

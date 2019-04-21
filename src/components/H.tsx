@@ -88,6 +88,7 @@ export interface HProps {
     | { name: 'summary' }
     | { name: 'secretCodeCaptionSimple'; number: number }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
+    | { name: 'theAnswerIs'; isYes: boolean }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -978,6 +979,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           (右下に
           <EmojiForLetter letter={args.letter} />が
           <Strong>{args.number}</Strong>個)
+        </>
+      )
+    }
+  }
+  if (args.name === 'theAnswerIs') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          正解は<Emoji>{args.isYes ? '⭕️' : '❌'}</Emoji>
         </>
       )
     }

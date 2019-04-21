@@ -171,20 +171,13 @@ export const e7E7 = initializeExpressionContainer([
 ])
 export const e7E8 = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
-  numberParams('e', 'f', 1),
-  numberParams('g', 'h', 2)
+  numberParams('g', 'h', 2),
+  numberParams('e', 'f', 1)
 ])
-
-export const episode5Expression1 = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: 'a'
-    }
-  },
-  'c',
-  'd'
+export const e7E9 = initializeExpressionContainer([
+  addParams('a', 'b', 'c', 'd'),
+  numberParams('e', 'f', 1),
+  numberParams('g', 'h', 3)
 ])
 
 const baseTrue: FunctionExpressionParams = {
@@ -306,38 +299,6 @@ const baseMult: FunctionExpressionParams = {
     }
   }
 }
-
-export const episode8Expression2 = initializeExpressionContainer({
-  arg: 'c',
-  body: {
-    arg: 'd',
-    body: ['c', 'd']
-  }
-})
-
-export const episode8Expression3 = initializeExpressionContainer({
-  arg: 'e',
-  body: {
-    arg: 'f',
-    body: ['e', ['e', 'f']]
-  }
-})
-
-export const episode8Expression4 = initializeExpressionContainer({
-  arg: 'g',
-  body: {
-    arg: 'h',
-    body: ['g', ['g', ['g', 'h']]]
-  }
-})
-
-export const episode8Expression5 = initializeExpressionContainer({
-  arg: 'i',
-  body: {
-    arg: 'j',
-    body: ['i', ['i', ['i', ['i', ['i', 'j']]]]]
-  }
-})
 
 const baseTwo: FunctionExpressionParams = {
   arg: 'e',

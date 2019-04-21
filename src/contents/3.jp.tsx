@@ -387,14 +387,15 @@ export default () => (
       {
         title: (
           <>
-            正解は<Emoji>⭕️</Emoji>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
         content: (
           <>
             <P>
               <Strong>
-                正解は<Emoji>⭕️</Emoji>でした。
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
               </Strong>
               <H args={{ name: 'pressPlay' }} />
             </P>
@@ -404,72 +405,6 @@ export default () => (
           </>
         )
       }
-      // {
-      //   title: (
-      //     <>
-      //       <H args={{ name: 'bentoBox', short: true }} />
-      //       、その2
-      //     </>
-      //   ),
-      //   content: (
-      //     <>
-      //       <P>
-      //         こちらの
-      //         <H args={{ name: 'bentoBox' }} />
-      //         はどうでしょう？
-      //         <H args={{ name: 'pressPlay' }} />
-      //       </P>
-      //       {AER.tbij}
-      //       <P>
-      //         こちらは最終的に
-      //         <EmojiWithText letter="g" />
-      //         だけになりました。 こちらも、
-      //         <Strong>どういう法則でこうなったか、分かりますか？</Strong>
-      //       </P>
-      //     </>
-      //   )
-      // },
-      // {
-      //   title: <H args={{ name: 'yesNoQuiz' }} />,
-      //   type: 'yesNoQuiz',
-      //   content: (
-      //     <>
-      //       <P>
-      //         法則が分かりましたか？
-      //         <H args={{ name: 'yesNoQuiz' }} />
-      //         で確かめてみましょう！
-      //       </P>
-      //       {AER.dkiy}
-      //       <P>
-      //         <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
-      //       </P>
-      //       {AER.owcy}
-      //       <YesNoButtons answer="no" />
-      //     </>
-      //   )
-      // },
-      // {
-      //   title: <>答え合わせ</>,
-      //   content: (
-      //     <>
-      //       <P>
-      //         正解はこちら。
-      //         <H args={{ name: 'pressPlay' }} />
-      //       </P>
-      //       {AER.bagn}
-      //       <P>
-      //         <Strong>
-      //           <EmojiWithText letter="m" />
-      //           だけになったので、正解は<Emoji>❌</Emoji>
-      //         </Strong>
-      //         (<EmojiWithText letter="k" />
-      //         ではない) でした。
-      //       </P>
-      //       <P>どういう法則でこうなったのかは、次のページで説明します！</P>
-      //       <YcNextLessonButton nextEpisodeNumber={4} />
-      //     </>
-      //   )
-      // }
     ]}
   />
 )

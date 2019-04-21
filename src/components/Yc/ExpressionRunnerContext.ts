@@ -11,6 +11,7 @@ export interface ExpressionRunnerContextProps {
   highlightOverrides: {
     [key in VariableNames]?: VariableExpression['highlightType']
   }
+  started: boolean
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
@@ -18,6 +19,7 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   hideBottomRightBadges: false,
   variableSize: 'sm',
   isDoneOrReady: false,
+  started: false,
   bottomRightBadgeOverrides: {},
   highlightOverrides: {}
 }

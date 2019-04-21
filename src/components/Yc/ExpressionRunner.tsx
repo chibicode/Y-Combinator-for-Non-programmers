@@ -240,6 +240,7 @@ const ExpressionRunner = ({
         bottomRightBadgeOverrides,
         highlightOverrides,
         variableSize,
+        started: expressionContainerManagerState.numStepsTaken > 0,
         isDoneOrReady: isDone || isReady
       }}
     >

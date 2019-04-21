@@ -247,13 +247,13 @@ export default () => (
       {
         title: (
           <>
-            正解は<Emoji>⭕️</Emoji>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
         content: (
           <>
             <P>
-              正解は<Emoji>⭕️</Emoji>。
+              <H args={{ name: 'theAnswerIs', isYes: true }} />。
               <Strong>最終的に暗号が「1」になります。</Strong>
             </P>
             <P>

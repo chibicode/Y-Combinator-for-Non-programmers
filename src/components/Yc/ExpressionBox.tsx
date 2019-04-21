@@ -15,7 +15,7 @@ interface ExpressionBoxProps {
 }
 
 const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
-  const { highlightOverrides } = useContext(ExpressionRunnerContext)
+  const { highlightOverrides, started } = useContext(ExpressionRunnerContext)
   return (
     <Flex
       css={css`
@@ -27,7 +27,8 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
       <BorderWrapper
         highlightType={
           isVariable(expression)
-            ? highlightOverrides[expression.name] || expression.highlightType
+            ? (!started && highlightOverrides[expression.name]) ||
+              expression.highlightType
             : 'none'
         }
         bottomRightBadgeType={

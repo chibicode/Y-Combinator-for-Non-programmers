@@ -754,6 +754,56 @@ export default {
       }}
     />
   ),
+  rome: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e7E8}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={4}
+    />
+  ),
+  dhdk: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E8}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      isDone
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'c' }} />
+      }
+    />
+  ),
+  unck: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e7E9}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={4}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted',
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
+    />
+  ),
+  cpbj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E9}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      isDone
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 4, letter: 'c' }} />
+      }
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy
@@ -804,90 +854,6 @@ export default {
     />
   )
 }
-
-export const episode8 = [
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode5Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression2}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression3}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression4}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression5}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression5}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🍚', 5)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression6}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🍟', 2)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression7}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression8}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  )
-]
 
 export const episode9 = [
   () => (

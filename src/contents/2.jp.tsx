@@ -373,14 +373,15 @@ export default () => (
       {
         title: (
           <>
-            正解は<Emoji>⭕️</Emoji>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
         content: (
           <>
             <P>
               <Strong>
-                正解は<Emoji>⭕️</Emoji>でした。
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
               </Strong>
               <H args={{ name: 'pressPlay' }} />
             </P>

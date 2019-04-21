@@ -374,7 +374,8 @@ export default () => (
             <P>
               つまり
               <Strong>
-                1問目の正解は<Emoji>⭕️</Emoji>
+                1問目の
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
               </Strong>
               でした。
             </P>
@@ -385,7 +386,8 @@ export default () => (
             <P>
               つまり
               <Strong>
-                2問目の正解は<Emoji>❌</Emoji>
+                2問目の
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
               </Strong>{' '}
               (<EmojiWithText letter="k" />
               ではない) でした。
