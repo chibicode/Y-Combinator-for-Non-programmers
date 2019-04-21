@@ -158,6 +158,8 @@ export const e7E4 = initializeExpressionContainer([
   numberParams('a', 'b', 2)
 ])
 
+export const e7E5 = initializeExpressionContainer(numberParams('f', 'g', 2))
+
 export const episode5Expression1 = initializeExpressionContainer([
   {
     arg: 'a',

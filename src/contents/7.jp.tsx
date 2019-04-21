@@ -126,7 +126,7 @@ export default () => (
         )
       },
       {
-        title: <>1 + 2 = 3</>,
+        title: <>1 + 2 = 3?</>,
         content: (
           <>
             <P>
@@ -134,6 +134,20 @@ export default () => (
               <H args={{ name: 'bentoBox', short: true }} />
               があります:
             </P>
+            {AER.slyk}
+            <P>
+              そして、こちらには暗号が<Strong>「2」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              があります:
+            </P>
+            {AER.vrvl}
+            <P>
+              このふたつの
+              <H args={{ name: 'bentoBox', short: true }} />
+              の暗号を足して、<Strong>1 + 2 = 3</Strong>
+              を計算することはできるのでしょうか？
+            </P>
+            <EmojiSeparator emojis={['1️⃣', '➕', '️2️⃣']} />
           </>
         )
       }

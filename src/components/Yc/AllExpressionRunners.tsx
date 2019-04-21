@@ -714,6 +714,15 @@ export default {
       }
     />
   ),
+  vrvl: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E5}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'f' }} />
+      }
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy
