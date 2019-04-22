@@ -819,6 +819,15 @@ export default {
       variableSize={'md'}
     />
   ),
+  drvu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E1}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      newCaption={<H args={{ name: 'secretCodeMultiplyCaption' }} />}
+    />
+  ),
   bdlj: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e8E2}

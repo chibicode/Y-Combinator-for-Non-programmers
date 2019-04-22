@@ -90,6 +90,7 @@ export interface HProps {
     | { name: 'secretCodeCaptionSimple'; number: number }
     | { name: 'secretCodeAddOneCaption' }
     | { name: 'secretCodeAddCaption' }
+    | { name: 'secretCodeMultiplyCaption' }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean }
 }
@@ -1018,6 +1019,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
+          <InlineEmojiBoxesForQuestion size="md" /> を計算
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeMultiplyCaption') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>✖️</Emoji>{' '}
           <InlineEmojiBoxesForQuestion size="md" /> を計算
         </>
       )

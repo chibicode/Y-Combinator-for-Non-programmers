@@ -1,5 +1,12 @@
 import React from 'react'
-import { Em, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  InlineHeader,
+  Em,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
@@ -114,12 +121,16 @@ export default () => (
             <P>つまり、</P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の弁当箱ふたつを埋め込んで
+                暗号が<Strong>「1」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                ふたつを埋め込んで
                 <H args={{ name: 'play' }} />
                 すると、
               </UlLi>
               <UlLi>
-                最終的に暗号が<Strong>「1」</Strong>の弁当箱になる。
+                最終的に暗号が<Strong>「1」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                になる。
               </UlLi>
             </Ul>
             <P>どういう計算が起きているか、分かりましたか？</P>
@@ -149,17 +160,104 @@ export default () => (
             <P>つまり、</P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>
-                の弁当箱ふたつを埋め込んで
+                暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                ふたつを埋め込んで
                 <H args={{ name: 'play' }} />
                 すると、
               </UlLi>
               <UlLi>
-                最終的に暗号が<Strong>「6」</Strong>の弁当箱になる。
+                最終的に暗号が<Strong>「6」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                になる。
               </UlLi>
             </Ul>
+            <P>そろそろどんな計算が起きたかお分かりでしょうか？</P>
           </>
         )
+      },
+      {
+        title: (
+          <>
+            掛け算の
+            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator emojis={['🍱', '✖️', '️🍱']} />
+            <P>
+              そう、答えは<Strong>「掛け算」</Strong>です。
+              <Em>「1 ✕ 1 = 1」「2 ✕ 3 = 6」</Em>を計算していたんですね。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              まとめると、この
+              <H args={{ name: 'bentoBox', short: true }} />
+              は、
+              <Strong>
+                ふたつの
+                <InlineEmojiBoxesForQuestion />
+                に入っている
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                の暗号を掛け算してくれます。
+              </Strong>
+            </P>
+            {AER.drvu}
+            <P>
+              足し算の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              は右下に料理が5個ありましたが、こちらは
+              <Strong>右下の料理が4個</Strong>
+              しかないのがポイントです。
+            </P>
+            <P>
+              <InlineHeader>ちなみに:</InlineHeader> 今回も、
+              <Strong>
+                上の
+                <H args={{ name: 'bentoBox', short: true }} />
+                を暗記する必要はありません。
+              </Strong>
+              そのまま読み進めて下さい！
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>他の計算もできます</>,
+        content: (
+          <>
+            <P>
+              時間の都合上ここでは紹介できませんが、掛け算以外にも、暗号の
+              <Strong>引き算や割り算</Strong>
+              ができる
+              <H args={{ name: 'bentoBox', short: true }} />
+              もあります。
+            </P>
+            <EmojiSeparator emojis={['➖', '🍱️', '➗']} />
+            <P>
+              つまり、
+              <H args={{ name: 'bentoBox' }} />は<Strong>電卓</Strong>
+              のように使えるのです。ある種の<Strong>「計算機」</Strong>
+              と読んでも過言ではないでしょう。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>コンピューターサイエンス = 計算機科学</>,
+        content: <></>
       }
     ]}
   />
