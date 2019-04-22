@@ -895,7 +895,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'play' }} />
           すると、
           <Em>
-            最終的に暗号が<Strong>「{args.number}」</Strong>になる
+            最終的に暗号が
+            <Strong css={slightlyLargeCaptionCss}>「{args.number}」</Strong>
+            になる
           </Em>
           。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
         </>

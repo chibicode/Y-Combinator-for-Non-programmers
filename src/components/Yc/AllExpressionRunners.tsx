@@ -847,6 +847,20 @@ export default {
       }
     />
   ),
+  mame: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E4}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted',
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy

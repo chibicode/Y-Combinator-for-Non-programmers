@@ -2,8 +2,10 @@ import React from 'react'
 import { Em, P, Strong } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import H from 'src/components/H'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -57,6 +59,28 @@ export default () => (
             </P>
             {AER.bdlj}
             {AER.ifwb}
+            <P>
+              さきほどの
+              <H args={{ name: 'bentoBox', short: true }} />の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込んでみます:
+            </P>
+            {AER.mame}
+            <P>
+              さきほどの「足し算」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              とは
+              <Em>
+                微妙に右下が違いますが、こちらも足し算(
+                <Strong>2 + 3 = 5</Strong>
+                )になるのでしょうか？それとも、別な計算をするのでしょうか？
+              </Em>
+              というわけで、質問です。
+            </P>
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 5 }} />
+            </P>
+            <YesNoButtons answer="no" />
           </>
         )
       }

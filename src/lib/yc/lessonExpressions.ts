@@ -190,6 +190,12 @@ export const e8E1 = initializeExpressionContainer([
 export const e8E2 = initializeExpressionContainer(numberParams('e', 'f', 2))
 export const e8E3 = initializeExpressionContainer(numberParams('g', 'h', 3))
 
+export const e8E4 = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  numberParams('g', 'h', 3),
+  numberParams('e', 'f', 2)
+])
+
 const baseTrue: FunctionExpressionParams = {
   arg: 'd',
   body: {
