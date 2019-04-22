@@ -653,8 +653,6 @@ export default {
       expressionContainer={lessonExpressions.e6E8}
       showPriorities
       isDone
-      containerSize={'xs'}
-      variableSize={'md'}
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
       }
@@ -684,8 +682,6 @@ export default {
       expressionContainer={lessonExpressions.e7E2}
       showPriorities
       isDone
-      containerSize={'xs'}
-      variableSize={'md'}
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'd' }} />
       }
@@ -715,8 +711,6 @@ export default {
       expressionContainer={lessonExpressions.e7E4}
       showPriorities
       isDone
-      containerSize={'xs'}
-      variableSize={'md'}
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'd' }} />
       }
@@ -785,8 +779,6 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E8}
       showPriorities
-      containerSize={'xs'}
-      variableSize={'md'}
       isDone
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'c' }} />
@@ -813,8 +805,6 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E9}
       showPriorities
-      containerSize={'xs'}
-      variableSize={'md'}
       isDone
       newCaption={
         <H args={{ name: 'secretCodeCaption', number: 4, letter: 'c' }} />
@@ -859,6 +849,68 @@ export default {
         g: 'highlighted',
         h: 'highlighted'
       }}
+    />
+  ),
+  ngus: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e8E4}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={5}
+    />
+  ),
+  dymt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E5}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'e' }} />
+      }
+    />
+  ),
+  mhwq: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E6}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'g' }} />
+      }
+    />
+  ),
+  sojz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E7}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted',
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
+    />
+  ),
+  ktyt: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e8E7}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={4}
+    />
+  ),
+  aeyv: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E7}
+      showPriorities
+      isDone
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'c' }} />
+      }
     />
   ),
   // What snack do I get?

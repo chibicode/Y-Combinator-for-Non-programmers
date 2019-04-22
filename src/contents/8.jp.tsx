@@ -60,34 +60,57 @@ export default () => (
         content: (
           <>
             <P>
-              ここに暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>の
+              ここに暗号が<Strong>「1」</Strong>の
               <H args={{ name: 'bentoBox', short: true }} />
-              があります:
+              がふたつあります:
             </P>
-            {AER.bdlj}
-            {AER.ifwb}
+            {AER.dymt}
+            {AER.mhwq}
             <P>
               さきほどの
               <H args={{ name: 'bentoBox', short: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます:
             </P>
-            {AER.mame}
+            {AER.sojz}
             <P>
               さきほどの「足し算」の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               とは
               <Em>
                 微妙に右下が違いますが、こちらも足し算(
-                <Strong>2 + 3 = 5</Strong>
-                )になるのでしょうか？それとも、別な計算をするのでしょうか？
+                <Strong>1 + 1 = 2</Strong>
+                )になるのでしょうか？それとも、別な計算結果が出るのでしょうか？
               </Em>
               というわけで、質問です。
             </P>
             <P>
-              <H args={{ name: 'whatsTheNumberQuestion', number: 5 }} />
+              <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
             </P>
             <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.ktyt}
+            <P>
+              なんと、最終的に暗号が<Strong>「1」</Strong>になりました！
+            </P>
+            {AER.aeyv}
           </>
         )
       }

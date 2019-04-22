@@ -43,7 +43,7 @@ const emojiFontSize = (
   if (variableSize === 'lg') {
     return fontSizes(1)
   } else if (variableSize === 'md') {
-    return fontSizes(0.6)
+    return fontSizes(0.7)
   } else {
     return fontSizes(0.6)
   }

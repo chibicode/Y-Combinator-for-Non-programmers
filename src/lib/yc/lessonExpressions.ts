@@ -196,6 +196,15 @@ export const e8E4 = initializeExpressionContainer([
   numberParams('e', 'f', 2)
 ])
 
+export const e8E5 = initializeExpressionContainer(numberParams('e', 'f', 1))
+export const e8E6 = initializeExpressionContainer(numberParams('g', 'h', 1))
+
+export const e8E7 = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  numberParams('g', 'h', 1),
+  numberParams('e', 'f', 1)
+])
+
 const baseTrue: FunctionExpressionParams = {
   arg: 'd',
   body: {
