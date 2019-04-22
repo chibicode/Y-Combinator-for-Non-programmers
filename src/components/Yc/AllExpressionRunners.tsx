@@ -6,7 +6,6 @@ import {
   multiplicationCaption,
   noCaption,
   notCaption,
-  plusOneCaption,
   secretCodeCaption,
   yesCaption
 } from 'src/components/Yc/effectCaptions'
@@ -854,121 +853,6 @@ export default {
     />
   )
 }
-
-export const episode9 = [
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression8}
-      containerSize={'xs'}
-      variableSize={'md'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression1}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🥪', 3)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression6}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🍟', 2)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression7}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={plusOneCaption}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression2}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🍛', 4)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression3}
-      containerSize={'xs'}
-      variableSize={'md'}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression4}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🥪', 5)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression7}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={plusOneCaption}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression5}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode8Expression6}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🍟', 2)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression6}
-      containerSize={'xs'}
-      variableSize={'md'}
-      hideControls
-      explanationsVisibility="hidden"
-      caption={secretCodeCaption('🍚', 3)}
-    />
-  ),
-  () => (
-    <ExpressionRunner
-      expressionContainer={lessonExpressions.episode9Expression7}
-      containerSize={'xs'}
-      variableSize={'sm'}
-      hideControls
-      explanationsVisibility="hidden"
-    />
-  )
-]
 
 export const episode10 = [
   () => (

@@ -326,13 +326,6 @@ const baseThree: FunctionExpressionParams = {
 
 export const episode8Expression6 = initializeExpressionContainer(baseTwo)
 
-export const episode8Expression7 = initializeExpressionContainer(baseSucc)
-
-export const episode8Expression8 = initializeExpressionContainer([
-  baseSucc,
-  baseTwo
-])
-
 export const episode9Expression1 = initializeExpressionContainer({
   arg: 'b',
   body: {
