@@ -28,6 +28,13 @@ export default () => (
             </P>
             {AER.ksya}
             <P>
+              「足し算」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              では右下に<Strong>5個</Strong>の料理がありましたが、こちらには
+              <Strong>4個</Strong>しかありません。
+            </P>
+            <P>
+              では、
               <Em>
                 こちらの
                 <H args={{ name: 'bentoBox', short: true }} />
