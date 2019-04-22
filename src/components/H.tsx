@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
   Em,
@@ -87,6 +88,8 @@ export interface HProps {
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'secretCodeCaptionSimple'; number: number }
+    | { name: 'secretCodeAddOneCaption' }
+    | { name: 'secretCodeAddCaption' }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean }
 }
@@ -990,6 +993,30 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           正解は<Emoji>{args.isYes ? '⭕️' : '❌'}</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeAddOneCaption') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
+          <Emoji>1️⃣</Emoji> を計算
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeAddCaption') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
+          <InlineEmojiBoxesForQuestion size="md" /> を計算
         </>
       )
     }

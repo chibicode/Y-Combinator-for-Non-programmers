@@ -7,18 +7,35 @@ import { colors, spaces } from 'src/lib/theme'
 interface InlineEmojiBoxProps {
   emojis: string[]
   background: string
+  size: 'md' | 'lg'
 }
 
-export const InlineEmojiBoxesForQuestion = () => (
-  <InlineEmojiBoxes emojis={['❔']} background={colors('indigo400')} />
+export const InlineEmojiBoxesForQuestion = ({
+  size
+}: {
+  size: InlineEmojiBoxProps['size']
+}) => (
+  <InlineEmojiBoxes
+    emojis={['❔']}
+    background={colors('indigo400')}
+    size={size}
+  />
 )
 
-const InlineEmojiBoxes = ({ emojis, background }: InlineEmojiBoxProps) => (
+InlineEmojiBoxesForQuestion.defaultProps = {
+  size: 'lg'
+}
+
+const InlineEmojiBoxes = ({
+  emojis,
+  background,
+  size
+}: InlineEmojiBoxProps) => (
   <span
     css={css`
       display: inline-flex;
-      vertical-align: -0.25em;
-      margin: 0 ${spaces(0.25)};
+      vertical-align: ${size === 'lg' ? '-0.25em' : '-0.2em'};
+      margin: 0 ${size === 'lg' ? spaces(0.25) : 0};
       background: ${background};
     `}
   >
@@ -26,8 +43,8 @@ const InlineEmojiBoxes = ({ emojis, background }: InlineEmojiBoxProps) => (
       <FlexCenter
         key={`${emoji}${i}`}
         css={css`
-          width: 1.5em;
-          height: 1.5em;
+          width: ${size === 'lg' ? '1.5em' : '1.25em'};
+          height: ${size === 'lg' ? '1.5em' : '1.25em'};
           border-top: 2px solid ${colors('indigo300')};
           border-bottom: 2px solid ${colors('indigo300')};
           border-left: 2px solid ${colors('indigo300')};
@@ -43,7 +60,8 @@ const InlineEmojiBoxes = ({ emojis, background }: InlineEmojiBoxProps) => (
 )
 
 InlineEmojiBoxes.defaultProps = {
-  background: colors('white')
+  background: colors('white'),
+  size: 'lg'
 }
 
 export default InlineEmojiBoxes

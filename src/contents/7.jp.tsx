@@ -84,7 +84,7 @@ export default () => (
                 の暗号に「1」を加える効果があります。
               </Strong>
             </P>
-            {AER.qmof}
+            {AER.xgei}
             <P>
               <InlineEmojiBoxesForQuestion />
               の暗号が<Strong>「1」</Strong>だったら実行後に暗号が
@@ -291,7 +291,7 @@ export default () => (
                 の暗号を足し算してくれます。
               </Strong>
             </P>
-            {AER.goif}
+            {AER.bxdf}
             <P>
               <InlineHeader>ちなみに:</InlineHeader> 今回も、
               <Strong>

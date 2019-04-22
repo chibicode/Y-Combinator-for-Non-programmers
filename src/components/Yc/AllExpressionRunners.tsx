@@ -609,6 +609,15 @@ export default {
       variableSize={'md'}
     />
   ),
+  xgei: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E7}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      newCaption={<H args={{ name: 'secretCodeAddOneCaption' }} />}
+    />
+  ),
   mauj: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E8}
@@ -735,6 +744,15 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E7}
       showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  bxdf: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E7}
+      showPriorities
+      newCaption={<H args={{ name: 'secretCodeAddCaption' }} />}
       containerSize={'xs'}
       variableSize={'md'}
     />
