@@ -7,7 +7,8 @@ import {
 import {
   numberParams,
   succParams,
-  addParams
+  addParams,
+  multParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -179,6 +180,15 @@ export const e7E9 = initializeExpressionContainer([
   numberParams('e', 'f', 1),
   numberParams('g', 'h', 3)
 ])
+
+export const e8E1 = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  'question',
+  'question'
+])
+
+export const e8E2 = initializeExpressionContainer(numberParams('e', 'f', 2))
+export const e8E3 = initializeExpressionContainer(numberParams('g', 'h', 3))
 
 const baseTrue: FunctionExpressionParams = {
   arg: 'd',

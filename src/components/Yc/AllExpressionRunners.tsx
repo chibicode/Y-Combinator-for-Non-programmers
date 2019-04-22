@@ -821,6 +821,32 @@ export default {
       }
     />
   ),
+  ksya: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E1}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  bdlj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E2}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'e' }} />
+      }
+    />
+  ),
+  ifwb: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E3}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
+      }
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy

@@ -67,3 +67,24 @@ export const addParams = (
     }
   }
 }
+
+export const multParams = (
+  a: VariableNames,
+  b: VariableNames,
+  c: VariableNames,
+  d: VariableNames
+): FunctionExpressionParams => {
+  return {
+    arg: a,
+    body: {
+      arg: b,
+      body: {
+        arg: c,
+        body: {
+          arg: d,
+          body: [[a, [b, c]], d]
+        }
+      }
+    }
+  }
+}
