@@ -1,5 +1,5 @@
 import React from 'react'
-import { Em, P, Strong } from 'src/components/ContentTags'
+import { Em, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
@@ -111,6 +111,53 @@ export default () => (
               なんと、最終的に暗号が<Strong>「1」</Strong>になりました！
             </P>
             {AER.aeyv}
+            <P>つまり、</P>
+            <Ul>
+              <UlLi>
+                暗号が<Strong>「1」</Strong>の弁当箱ふたつを埋め込んで
+                <H args={{ name: 'play' }} />
+                すると、
+              </UlLi>
+              <UlLi>
+                最終的に暗号が<Strong>「1」</Strong>の弁当箱になる。
+              </UlLi>
+            </Ul>
+            <P>どういう計算が起きているか、分かりましたか？</P>
+          </>
+        )
+      },
+      {
+        title: <>2と3を組み合わせると…</>,
+        content: (
+          <>
+            <P>
+              今度は暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              を使ってみましょう:
+            </P>
+            {AER.bdlj}
+            {AER.ifwb}
+            <P>
+              埋め込むとこうなります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.ngus}
+            <P>
+              こちらは、最終的に暗号が<Strong>「6」</Strong>になりました！
+            </P>
+            {AER.ujfj}
+            <P>つまり、</P>
+            <Ul>
+              <UlLi>
+                暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>
+                の弁当箱ふたつを埋め込んで
+                <H args={{ name: 'play' }} />
+                すると、
+              </UlLi>
+              <UlLi>
+                最終的に暗号が<Strong>「6」</Strong>の弁当箱になる。
+              </UlLi>
+            </Ul>
           </>
         )
       }

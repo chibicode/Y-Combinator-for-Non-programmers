@@ -859,6 +859,23 @@ export default {
       variableSize={'md'}
       skipToTheEnd={false}
       speed={5}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted',
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
+    />
+  ),
+  ujfj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E4}
+      showPriorities
+      isDone
+      variableSize={'md'}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 6, letter: 'c' }} />
+      }
     />
   ),
   dymt: (
