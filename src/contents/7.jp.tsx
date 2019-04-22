@@ -7,6 +7,7 @@ import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -266,6 +267,61 @@ export default () => (
               <Strong>3 + 1 = 4</Strong>」も計算できてしまいました。
             </P>
             <EmojiSeparator emojis={['3️⃣', '➕', '️1️⃣']} />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              まとめると、この
+              <H args={{ name: 'bentoBox', short: true }} />
+              は、
+              <Strong>
+                ふたつの
+                <InlineEmojiBoxesForQuestion />
+                に入っている
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                の暗号を足し算してくれます。
+              </Strong>
+            </P>
+            {AER.goif}
+            <P>
+              <InlineHeader>ちなみに:</InlineHeader> 今回も、
+              <Strong>
+                上の
+                <H args={{ name: 'bentoBox', short: true }} />
+                を暗記する必要はありません。
+              </Strong>
+              そのまま読み進めて下さい！
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>足し算以外の計算はできるのか？</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'bentoBox' }} />は
+              <Em>
+                ただのパズルかと思いきや、「<Strong>足し算</Strong>」
+              </Em>
+              ができてしまうんです。
+            </P>
+            <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
+            <P>
+              実は、
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              ができるのは足し算だけではありません。
+            </P>
+            <YcNextLessonButton nextEpisodeNumber={8} />
           </>
         )
       }
