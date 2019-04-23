@@ -41,6 +41,7 @@ import Emoji1f44d from 'src/components/Twemoji/1f44d'
 import Emoji1f44e from 'src/components/Twemoji/1f44e'
 import Emoji1f454 from 'src/components/Twemoji/1f454'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fb-200d-1f4bb'
+import Emoji1f4a1 from 'src/components/Twemoji/1f4a1'
 import Emoji1f4a5 from 'src/components/Twemoji/1f4a5'
 import Emoji1f4ac from 'src/components/Twemoji/1f4ac'
 import Emoji1f4ad from 'src/components/Twemoji/1f4ad'
@@ -87,6 +88,7 @@ import Emoji1f966 from 'src/components/Twemoji/1f966'
 import Emoji1f96a from 'src/components/Twemoji/1f96a'
 import Emoji1f9c0 from 'src/components/Twemoji/1f9c0'
 import Emoji1f9d0 from 'src/components/Twemoji/1f9d0'
+import Emoji1f9d3ZZ1f3fb from 'src/components/Twemoji/1f9d3-1f3fb'
 import Emoji1f9d9ZZ200dZZ2642ZZfe0f from 'src/components/Twemoji/1f9d9-200d-2642-fe0f'
 import Emoji2049 from 'src/components/Twemoji/2049'
 import Emoji2194 from 'src/components/Twemoji/2194'
@@ -159,6 +161,7 @@ export interface BundleTypes {
   '1f44e': React.ComponentType<{}>
   '1f454': React.ComponentType<{}>
   '1f468-1f3fb-200d-1f4bb': React.ComponentType<{}>
+  '1f4a1': React.ComponentType<{}>
   '1f4a5': React.ComponentType<{}>
   '1f4ac': React.ComponentType<{}>
   '1f4ad': React.ComponentType<{}>
@@ -205,6 +208,7 @@ export interface BundleTypes {
   '1f96a': React.ComponentType<{}>
   '1f9c0': React.ComponentType<{}>
   '1f9d0': React.ComponentType<{}>
+  '1f9d3-1f3fb': React.ComponentType<{}>
   '1f9d9-200d-2642-fe0f': React.ComponentType<{}>
   '2049': React.ComponentType<{}>
   '2194': React.ComponentType<{}>
@@ -278,6 +282,7 @@ const bundle: BundleTypes = {
   '1f44e': Emoji1f44e,
   '1f454': Emoji1f454,
   '1f468-1f3fb-200d-1f4bb': Emoji1f468ZZ1f3fbZZ200dZZ1f4bb,
+  '1f4a1': Emoji1f4a1,
   '1f4a5': Emoji1f4a5,
   '1f4ac': Emoji1f4ac,
   '1f4ad': Emoji1f4ad,
@@ -324,6 +329,7 @@ const bundle: BundleTypes = {
   '1f96a': Emoji1f96a,
   '1f9c0': Emoji1f9c0,
   '1f9d0': Emoji1f9d0,
+  '1f9d3-1f3fb': Emoji1f9d3ZZ1f3fb,
   '1f9d9-200d-2642-fe0f': Emoji1f9d9ZZ200dZZ2642ZZfe0f,
   '2049': Emoji2049,
   '2194': Emoji2194,

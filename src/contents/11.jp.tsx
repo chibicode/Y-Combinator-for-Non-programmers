@@ -9,7 +9,8 @@ import {
   Td,
   Th,
   Ul,
-  UlLi
+  UlLi,
+  ExternalLink
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -19,8 +20,39 @@ import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import { colors } from 'src/lib/theme'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import H from 'src/components/H'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: (
+          <>
+            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            も計算機
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator emojis={['💡', '🧓🏻', '🍱']} />
+            <P>
+              そして実は、
+              <Em>
+                <H args={{ name: 'bentoBox' }} />
+                と非常に似た計算機が、1930年代にコンピューター科学者達によって考案されているのです。
+              </Em>
+              その計算機は「
+              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%A0%E3%83%80%E8%A8%88%E7%AE%97">
+                <Strong>ラムダ計算</Strong>
+              </ExternalLink>
+              」と呼ばれました。シンプルで高性能なこの計算機は、特にプログラミング言語の開発に大きな影響を与えました。
+            </P>
+          </>
+        )
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0
