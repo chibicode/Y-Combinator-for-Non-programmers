@@ -958,6 +958,14 @@ export default {
       }}
     />
   ),
+  fqwj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E1}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
   tkqr: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e9E2}
@@ -1047,6 +1055,15 @@ export default {
       skipToTheEnd={false}
       speed={4}
       skipAlphaConvert
+    />
+  ),
+  nlxe: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E1}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      newCaption={<H args={{ name: 'ifCaption' }} />}
     />
   ),
   // What snack do I get?

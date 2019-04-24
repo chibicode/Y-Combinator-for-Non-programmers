@@ -143,7 +143,7 @@ export default () => (
                 が残ります。
               </Strong>
             </P>
-            {AER.bxfv}
+            {AER.fqwj}
             <P>
               では、
               <InlineEmojiBoxesForQuestion />
@@ -247,7 +247,7 @@ export default () => (
                 </Strong>
               </UlLi>
             </Ul>
-            {AER.bxfv}
+            {AER.fqwj}
             <EmojiSeparator emojis={['🍬', '🤔', '🍩']} />
             <P>
               面白いですね。では最後に、暗号が<Strong>「2」</Strong>
@@ -358,10 +358,61 @@ export default () => (
                 </Strong>
               </UlLi>
             </Ul>
-            {AER.bxfv}
+            {AER.fqwj}
             <P>
               そろそろパターンが分かってきましたか？それでは、種明かしをしましょう！
             </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            暗号が「0」かどうか判別できる
+            <H args={{ name: 'bentoBox', short: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              実は先ほどの
+              <H args={{ name: 'bentoBox', short: true }} />
+              は、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                の暗号が「0」かどうかを判別できる
+              </Strong>
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              なのです。
+            </P>
+            <Ul>
+              <UlLi>
+                もし
+                <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込んで実行した場合、最後に
+                <Strong>
+                  <EmojiWithText letter="y" />
+                </Strong>
+                が残ります 。
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['0️⃣', '➡️', '🍩']} />
+            <Ul>
+              <UlLi>
+                もし
+                <InlineEmojiBoxesForQuestion />に
+                <Strong>暗号が「1以上」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込んで実行した場合、最後に
+                <Strong>
+                  <EmojiWithText letter="z" />
+                </Strong>
+                が残ります 。
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['🔢', '➡️', '🍬']} />
+            {AER.nlxe}
           </>
         )
       }
