@@ -9,7 +9,7 @@ const commonListCss = css`
 `
 
 const commonListItemCss = css`
-  margin: 0 0 ${2 / 3}em 1.5em;
+  margin: 0 0 ${2 / 3}em 1em;
 
   &::before {
     /* Style taken from medium.com,
@@ -19,6 +19,8 @@ const commonListItemCss = css`
     width: 3.5em;
     margin-left: -3.5em;
     text-align: right;
+    box-sizing: border-box;
+    vertical-align: top;
   }
 `
 
@@ -69,7 +71,7 @@ export const UlLi = ({ ...props }: JSX.IntrinsicElements['li']) => (
       commonListItemCss,
       css`
         &::before {
-          padding-right: 1em;
+          padding-right: 0.6em;
           padding-top: 0.2em;
           content: '•';
           font-size: 0.8em;

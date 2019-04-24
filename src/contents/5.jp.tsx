@@ -5,8 +5,8 @@ import {
   P,
   Strong,
   Hr,
-  Ol,
-  OlLi,
+  Ul,
+  UlLi,
   InlineHeader,
   NoOpLink,
   Blockquote
@@ -41,22 +41,22 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               を3つ紹介します:
             </P>
-            <Ol>
-              <OlLi>
+            <Ul>
+              <UlLi>
                 <InlineHeader>第1問:</InlineHeader>{' '}
                 <Strong>
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                   のツーペア
                 </Strong>
-              </OlLi>
-              <OlLi>
+              </UlLi>
+              <UlLi>
                 <InlineHeader>第2問:</InlineHeader>{' '}
                 <Strong>
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                   ができない
                 </Strong>
-              </OlLi>
-            </Ol>
+              </UlLi>
+            </Ul>
             <P>さっそく見ていきましょう！</P>
           </>
         )
