@@ -9,8 +9,6 @@ const commonListCss = css`
 `
 
 const commonListItemCss = css`
-  margin: 0 0 ${2 / 3}em 1em;
-
   &::before {
     /* Style taken from medium.com,
     removed position: absolute because it was
@@ -70,6 +68,7 @@ export const UlLi = ({ ...props }: JSX.IntrinsicElements['li']) => (
     css={[
       commonListItemCss,
       css`
+        margin: 0 0 ${2 / 3}em 1em;
         &::before {
           padding-right: 0.6em;
           padding-top: 0.2em;
@@ -87,8 +86,9 @@ export const OlLi = (props: JSX.IntrinsicElements['li']) => (
     css={[
       commonListItemCss,
       css`
+        margin: 0 0 ${2 / 3}em 1.4em;
         &::before {
-          padding-right: ${4 / 7}em;
+          padding-right: 0.4em;
           counter-increment: text;
           content: counter(text) '.';
         }

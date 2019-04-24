@@ -94,12 +94,11 @@ Strong.defaultProps = {
 }
 
 export const Em = ({
-  children,
-  highlightType
+  highlightType,
+  ...props
 }: {
-  children: React.ReactNode
   highlightType: InlineHighlightType
-}) => {
+} & JSX.IntrinsicElements['span']) => {
   const { inHighlightType } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
@@ -109,9 +108,8 @@ export const Em = ({
         css={css`
           font-style: normal;
         `}
-      >
-        {children}
-      </span>
+        {...props}
+      />
     )
   } else {
     return (
@@ -134,9 +132,8 @@ export const Em = ({
                 }
               `
           ]}
-        >
-          {children}
-        </span>
+          {...props}
+        />
       </HighlightContext.Provider>
     )
   }

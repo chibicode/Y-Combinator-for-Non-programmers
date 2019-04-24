@@ -8,7 +8,7 @@ import {
   Ul,
   UlLi,
   InlineHeader,
-  NoOpLink,
+  ExternalLink,
   Blockquote
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -21,7 +21,7 @@ import AER from 'src/components/Yc/AllExpressionRunners'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
 import { episodeUrl } from 'src/lib/meta'
-import { fontSizes } from 'src/lib/theme'
+import { colors, fontSizes } from 'src/lib/theme'
 
 export default () => (
   <EpisodeCardList
@@ -39,7 +39,7 @@ export default () => (
               中級に進む前に、
               <Strong>どういう順番でやるのか分かりにくい</Strong>
               <H args={{ name: 'bentoBox' }} />
-              を3つ紹介します:
+              をふたつ紹介します:
             </P>
             <Ul>
               <UlLi>
@@ -487,18 +487,32 @@ export default () => (
             <EmojiSeparator emojis={['📱', '🙂', '💬']} />
             <P>
               <InlineHeader>
-                その際には、こちらのリンクをコピーしてシェアしてください↓
-              </InlineHeader>
+                その際には、こちらのURLをコピーしてシェアしてください↓
+              </InlineHeader>{' '}
             </P>
             <P
               css={css`
                 text-align: center;
-                font-size: ${fontSizes(1.2)};
               `}
             >
-              <Em>
-                <NoOpLink href={episodeUrl(6)}>{episodeUrl(6)}</NoOpLink>
+              <Em
+                css={css`
+                  font-size: ${fontSizes(1.2)};
+                `}
+              >
+                <ExternalLink href={episodeUrl(6)}>
+                  {episodeUrl(6)}
+                </ExternalLink>
               </Em>
+              <br />
+              <span
+                css={css`
+                  font-size: ${fontSizes(0.85)};
+                  color: ${colors('grey700')};
+                `}
+              >
+                (↑ 中級その1に飛ぶURLです)
+              </span>
             </P>
           </>
         )
