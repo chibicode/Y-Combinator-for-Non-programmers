@@ -1,7 +1,8 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 import {
   ExpressionParams,
-  FunctionExpressionParams
+  FunctionExpressionParams,
+  CallExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 
 const nest = (
@@ -88,3 +89,39 @@ export const multParams = (
     }
   }
 }
+
+export const isZeroParams = (
+  a: VariableNames,
+  b: VariableNames,
+  c: VariableNames,
+  d: VariableNames,
+  e: VariableNames,
+  testExpression: ExpressionParams
+): CallExpressionParams => [
+  [
+    [
+      [
+        testExpression,
+        {
+          arg: e,
+          body: {
+            arg: a,
+            body: {
+              arg: b,
+              body: b
+            }
+          }
+        }
+      ],
+      {
+        arg: c,
+        body: {
+          arg: d,
+          body: c
+        }
+      }
+    ],
+    'y'
+  ],
+  'z'
+]

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
+import { Strong } from 'src/components/ContentTags'
 
 interface NextLessonButtonProps {
   href: string
@@ -81,7 +82,7 @@ const NextLessonButton = ({
           color: ${colors('grey600')};
         `}
       >
-        {tertiaryText}
+        <Strong>{tertiaryText}</Strong>
       </div>
     )}
   </div>

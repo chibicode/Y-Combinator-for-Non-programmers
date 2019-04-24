@@ -8,7 +8,8 @@ import {
   numberParams,
   succParams,
   addParams,
-  multParams
+  multParams,
+  isZeroParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -204,6 +205,45 @@ export const e8E7 = initializeExpressionContainer([
   numberParams('g', 'h', 1),
   numberParams('e', 'f', 1)
 ])
+
+export const isZero = (e: ExpressionParams): CallExpressionParams => [
+  [
+    [
+      [
+        e,
+        {
+          arg: 'e',
+          body: {
+            arg: 'a',
+            body: {
+              arg: 'b',
+              body: 'b'
+            }
+          }
+        }
+      ],
+      {
+        arg: 'c',
+        body: {
+          arg: 'd',
+          body: 'c'
+        }
+      }
+    ],
+    'y'
+  ],
+  'z'
+]
+
+export const e9E1 = initializeExpressionContainer(
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'question')
+)
+
+export const e9E2 = initializeExpressionContainer(
+  isZeroParams('a', 'b', 'c', 'd', 'e', numberParams('f', 'g', 0))
+)
+
+export const e9E3 = initializeExpressionContainer(numberParams('f', 'g', 0))
 
 const baseTrue: FunctionExpressionParams = {
   arg: 'd',
@@ -488,35 +528,6 @@ export const infiniteLoop = initializeExpressionContainer([
   recursiveFunction
 ])
 
-export const isZero = (e: ExpressionParams): CallExpressionParams => [
-  [
-    [
-      [
-        e,
-        {
-          arg: 'e',
-          body: {
-            arg: 'a',
-            body: {
-              arg: 'b',
-              body: 'b'
-            }
-          }
-        }
-      ],
-      {
-        arg: 'c',
-        body: {
-          arg: 'd',
-          body: 'c'
-        }
-      }
-    ],
-    'y'
-  ],
-  'z'
-]
-
 const testZero: FunctionExpressionParams = {
   arg: 'f',
   body: {
@@ -556,5 +567,3 @@ export const isZeroOne = initializeExpressionContainer(isZero(testOne))
 export const isZeroTwo = initializeExpressionContainer(isZero(testTwo))
 
 export const isZeroThree = initializeExpressionContainer(isZero(testThree))
-
-export const isZeroQuestion = initializeExpressionContainer(isZero('question'))

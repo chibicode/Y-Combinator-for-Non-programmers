@@ -2,6 +2,7 @@ import React from 'react'
 import {
   InlineHeader,
   Em,
+  Hr,
   P,
   Strong,
   Ul,
@@ -23,6 +24,7 @@ export default () => (
         content: (
           <>
             <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
               こちらが、前回紹介した<Strong>「足し算」</Strong>ができる
               <H args={{ name: 'bentoBox', short: true }} />
               です:
@@ -88,14 +90,17 @@ export default () => (
               <Em>
                 微妙に右下が違いますが、こちらも足し算(
                 <Strong>1 + 1 = 2</Strong>
-                )になるのでしょうか？それとも、別な計算結果が出るのでしょうか？
+                )になるのでしょうか？
               </Em>
-              というわけで、質問です。
             </P>
+            <P>
+              それとも、別な計算結果が出るのでしょうか？というわけで、質問です。
+            </P>
+            <Hr />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
             </P>
-            <YesNoButtons answer="no" />
+            <YesNoButtons answer="no" tooHard />
           </>
         )
       },
@@ -269,7 +274,9 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
             <P>
-              他に何かできることはあるのでしょうか？次のページで見ていきます！
+              他に何か
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              にできることはあるのでしょうか？次のページで見ていきます！
             </P>
             <YcNextLessonButton nextEpisodeNumber={9} />
           </>

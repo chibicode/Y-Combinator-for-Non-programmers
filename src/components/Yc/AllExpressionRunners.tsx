@@ -594,11 +594,22 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E1}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 0 }} />}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'a' }} />
+      }
       bottomRightBadgeOverrides={{
         b: '🅱️',
         a: '🅰️'
       }}
+    />
+  ),
+  nicg: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E1}
+      showPriorities
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'a' }} />
+      }
     />
   ),
   qmof: (
@@ -939,6 +950,44 @@ export default {
       }
     />
   ),
+  bxfv: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E1}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  tkqr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E2}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      highlightOverrides={{
+        f: 'highlighted',
+        g: 'highlighted'
+      }}
+    />
+  ),
+  fhlw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E3}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'f' }} />
+      }
+    />
+  ),
+  jliw: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e9E2}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={3}
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy
@@ -976,14 +1025,6 @@ export default {
       expressionContainer={lessonExpressions.isZeroThree}
       showPriorities
       skipAlphaConvert
-      speed={2}
-      skipToTheEnd={false}
-    />
-  ),
-  isZeroQuestion: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.isZeroQuestion}
-      showPriorities
       speed={2}
       skipToTheEnd={false}
     />

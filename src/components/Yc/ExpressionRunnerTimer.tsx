@@ -32,11 +32,11 @@ const ExpressionRunnerTimer = ({
             {numSecondsRemaining}
           </InlineHeader>{' '}
           second
-          {numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>▶️</Emoji>
+          {numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>⏩</Emoji>
         </>
       ) : (
         <>
-          <Emoji>▶️</Emoji> 残り{' '}
+          <Emoji>⏩</Emoji> 残り{' '}
           <InlineHeader
             css={css`
               color: ${colors('pink400')};

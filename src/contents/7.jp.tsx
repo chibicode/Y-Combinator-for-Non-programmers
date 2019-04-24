@@ -196,7 +196,7 @@ export default () => (
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 3 }} />
             </P>
-            <YesNoButtons answer="yes" />
+            <YesNoButtons answer="yes" tooHard />
           </>
         )
       },

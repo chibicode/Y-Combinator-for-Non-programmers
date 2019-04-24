@@ -104,7 +104,7 @@ const emojiLabelMapping: {
   },
   '🍩': {
     en: 'donut',
-    jp: 'ドーナッツ'
+    jp: 'ドーナツ'
   },
   '🍫': {
     en: 'chocolate',

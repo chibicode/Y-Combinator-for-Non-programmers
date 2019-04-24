@@ -5,8 +5,120 @@ import { episode10 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import h from 'src/lib/h'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import EmojiWithText from 'src/components/EmojiWithText'
+import Emoji from 'src/components/Emoji'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import H from 'src/components/H'
+import AER from 'src/components/Yc/AllExpressionRunners'
+import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import YesNoButtons from 'src/components/YesNoButtons'
 
-export default () => <EpisodeCardList cards={[]} />
+export default () => (
+  <EpisodeCardList
+    cards={[
+      {
+        title: (
+          <>
+            おやつが入っている
+            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              今回は、次の
+              <H args={{ name: 'bentoBox' }} />
+              を見ていきます:
+            </P>
+            {AER.bxfv}
+            <P>
+              この
+              <H args={{ name: 'bentoBox', short: true }} />、
+              <Em>
+                上のほうに
+                <EmojiWithText letter="z" />と<EmojiWithText letter="y" />
+                といった「おやつ」がある
+              </Em>
+              のに注目です。
+            </P>
+            <EmojiSeparator emojis={['🍬', '😍', '🍩']} />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <EmojiForLetter letter="z" /> か <EmojiForLetter letter="y" />
+            、どっち？
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              次に、<Strong>暗号が「0」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を用意します。
+            </P>
+            {AER.fhlw}
+            <P>
+              こちらを、先ほどの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込んでみます。
+            </P>
+            {AER.tkqr}
+            <P>
+              実は、これを最後まで
+              <H args={{ name: 'play' }} />
+              すると、
+              <Strong>
+                最終的に
+                <EmojiWithText letter="z" />か<EmojiWithText letter="y" />
+                のどちらかが残ります
+              </Strong>
+              。
+            </P>
+            <EmojiSeparator emojis={['🍬', '🤔', '🍩']} />
+            <P>というわけで、ここで質問です！</P>
+            <P>
+              <Strong>質問:</Strong> 上の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'play' }} />
+              したら最後に残るのは「
+              <EmojiWithText letter="z" />
+              」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+            </P>
+            <YesNoButtons answer="no" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} /> (残るのは
+            <EmojiWithText letter="y" />)
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false }} />
+              でした。残るのは
+              <EmojiWithText letter="y" />
+              です。
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.jliw}
+          </>
+        )
+      }
+    ]}
+  />
+)
 
 export const old = () => {
   let i = 0

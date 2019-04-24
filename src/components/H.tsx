@@ -77,7 +77,7 @@ export interface HProps {
     | { name: 'tocClose' }
     | { name: 'playButton' }
     | { name: 'afterPlay' }
-    | { name: 'yesNoQuizDontWorry' }
+    | { name: 'yesNoQuizDontWorry'; tooHard: boolean }
     | { name: 'unknownRule' }
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
@@ -745,19 +745,24 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'yesNoQuizDontWorry') {
     if (locale === 'en') {
-      return (
-        <>
-          <Emoji size="mdlg">😉</Emoji> Don’t worry if you have no idea.
-          <br />
-          Just take a guess!
-        </>
-      )
+      return <></>
     } else {
       return (
         <>
-          <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
-          <br />
-          勘で答えてみてください。
+          {args.tooHard ? (
+            <>
+              <Emoji size="mdlg">🤯</Emoji>{' '}
+              <Strong>頭の中で解くのは大変</Strong>なので、
+              <br />
+              適当に勘で答えてみてください。
+            </>
+          ) : (
+            <>
+              <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
+              <br />
+              適当に勘で答えてみてください。
+            </>
+          )}
         </>
       )
     }

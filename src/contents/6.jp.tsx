@@ -206,7 +206,7 @@ export default () => (
               </Em>
               。つまり、こちらを埋め込むわけです。
             </P>
-            {AER.tiok}
+            {AER.nicg}
             <P>
               さっそく <InlineEmojiBoxesForQuestion />
               に埋め込んでみましょう:
@@ -239,8 +239,10 @@ export default () => (
               で聞いてみます。
             </P>
             {AER.eavp}
-            <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
-            <YesNoButtons answer="yes" />
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
+            </P>
+            <YesNoButtons answer="yes" tooHard />
           </>
         )
       },
@@ -288,7 +290,7 @@ export default () => (
               <H args={{ name: 'bentoBox', short: true }} />
               を…
             </P>
-            {AER.tiok}
+            {AER.nicg}
             <P>
               3. 埋め込んで、最後まで
               <H args={{ name: 'play' }} />
