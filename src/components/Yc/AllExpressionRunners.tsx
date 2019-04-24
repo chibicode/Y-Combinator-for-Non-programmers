@@ -952,6 +952,10 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
+      highlightOverrides={{
+        z: 'highlighted',
+        y: 'highlighted'
+      }}
     />
   ),
   tkqr: (
@@ -1012,6 +1016,37 @@ export default {
       variableSize={'md'}
       skipToTheEnd={false}
       speed={4}
+    />
+  ),
+  kupy: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E6}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'f' }} />
+      }
+    />
+  ),
+  qdkf: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E7}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      highlightOverrides={{
+        f: 'highlighted',
+        g: 'highlighted'
+      }}
+    />
+  ),
+  gtwk: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e9E7}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={4}
+      skipAlphaConvert
     />
   ),
   // What snack do I get?

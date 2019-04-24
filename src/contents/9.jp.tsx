@@ -23,7 +23,7 @@ export default () => (
       {
         title: (
           <>
-            おやつが入っている
+            おやつ入りの
             <H args={{ name: 'bentoBox', skipEmoji: true }} />
           </>
         ),
@@ -232,15 +232,19 @@ export default () => (
                 暗号が<Strong>「0」</Strong>の
                 <H args={{ name: 'bentoBox', skipEmoji: true }} />
                 を埋め込むと、
-                <EmojiWithText letter="y" />
-                が残る
+                <Strong>
+                  <EmojiWithText letter="y" />
+                  が残る
+                </Strong>
               </UlLi>
               <UlLi>
                 暗号が<Strong>「1」</Strong>の
                 <H args={{ name: 'bentoBox', skipEmoji: true }} />
                 を埋め込むと、
-                <EmojiWithText letter="z" />
-                が残る
+                <Strong>
+                  <EmojiWithText letter="z" />
+                  が残る
+                </Strong>
               </UlLi>
             </Ul>
             {AER.bxfv}
@@ -248,6 +252,115 @@ export default () => (
             <P>
               面白いですね。では最後に、暗号が<Strong>「2」</Strong>
               の場合を見てみましょう。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <EmojiForLetter letter="z" /> か <EmojiForLetter letter="y" />
+            、どっち？その3
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              最後に、<Strong>暗号が「2」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を用意し、
+            </P>
+            {AER.kupy}
+            <P>
+              先ほどの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込んでみます。
+            </P>
+            {AER.qdkf}
+            <P>というわけで、ここで質問です！</P>
+            <P>
+              <Strong>質問:</Strong> 上の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'play' }} />
+              したら最後に残るのは「
+              <EmojiWithText letter="z" />
+              」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+            </P>
+            <YesNoButtons answer="yes" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} /> (残るのは
+            <EmojiWithText letter="z" />)
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: true }} />
+              でした。残るのは
+              <EmojiWithText letter="z" />
+              です。
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.gtwk}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlineHeader>ここまでをまとめると:</InlineHeader> 下の
+              <H args={{ name: 'bentoBox', short: true }} />の
+              <InlineEmojiBoxesForQuestion />
+              の部分に…
+            </P>
+            <Ul>
+              <UlLi>
+                暗号が<Strong>「0」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込むと、
+                <Strong>
+                  <EmojiWithText letter="y" />
+                  が残る
+                </Strong>
+              </UlLi>
+              <UlLi>
+                暗号が<Strong>「1」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込むと、
+                <Strong>
+                  <EmojiWithText letter="z" />
+                  が残る
+                </Strong>
+              </UlLi>
+              <UlLi>
+                暗号が<Strong>「2」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込むと、
+                <Strong>
+                  <EmojiWithText letter="z" />
+                  が残る
+                </Strong>
+              </UlLi>
+            </Ul>
+            {AER.bxfv}
+            <P>
+              そろそろパターンが分かってきましたか？それでは、種明かしをしましょう！
             </P>
           </>
         )
