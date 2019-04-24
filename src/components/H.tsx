@@ -93,7 +93,7 @@ export interface HProps {
     | { name: 'secretCodeMultiplyCaption' }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean }
-    | { name: 'ifCaption' }
+    | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1050,12 +1050,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <InlineEmojiBoxesForQuestion size="md" /> が{' '}
           <Strong css={slightlyLargeCaptionCss}>0</Strong> なら
-          <EmojiForLetter letter="y" size="mdlg" />、
+          {args.ifZero}、
           <Strong>
             <span css={slightlyLargeCaptionCss}>1</span>以上
           </Strong>
           なら
-          <EmojiForLetter letter="z" size="mdlg"/>
+          {args.ifNonZero}
+          になる
         </>
       )
     }

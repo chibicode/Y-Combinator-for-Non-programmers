@@ -96,6 +96,8 @@ export const isZeroParams = (
   c: VariableNames,
   d: VariableNames,
   e: VariableNames,
+  y: ExpressionParams,
+  z: ExpressionParams,
   testExpression: ExpressionParams
 ): CallExpressionParams => [
   [
@@ -121,7 +123,7 @@ export const isZeroParams = (
         }
       }
     ],
-    'y'
+    y
   ],
-  'z'
+  z
 ]

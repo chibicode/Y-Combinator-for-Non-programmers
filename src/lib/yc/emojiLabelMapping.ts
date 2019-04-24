@@ -86,17 +86,17 @@ const emojiLabelMapping: {
     en: 'cherry',
     jp: 'さくらんぼ'
   },
-  '🍋': {
-    en: 'lemon',
-    jp: 'レモン'
+  '🍿': {
+    en: 'popcorn',
+    jp: 'ポップコーン'
   },
-  '🍌': {
-    en: 'banana',
-    jp: 'バナナ'
+  '🍪': {
+    en: 'cookie',
+    jp: 'クッキー'
   },
-  '🍍': {
-    en: 'pineapple',
-    jp: 'パイナップル'
+  '🍰': {
+    en: 'cake',
+    jp: 'ケーキ'
   },
   '🍬': {
     en: 'candy',

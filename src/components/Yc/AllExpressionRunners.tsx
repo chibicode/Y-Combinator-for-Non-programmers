@@ -14,6 +14,9 @@ import {
 } from 'src/components/Yc/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 import H from 'src/components/H'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join
@@ -1063,7 +1066,40 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      newCaption={<H args={{ name: 'ifCaption' }} />}
+      newCaption={
+        <H
+          args={{
+            name: 'ifCaption',
+            ifZero: <EmojiForLetter letter="y" size="mdlg" />,
+            ifNonZero: <EmojiForLetter letter="z" size="mdlg" />
+          }}
+        />
+      }
+    />
+  ),
+  dvrw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E8}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      newCaption={
+        <H
+          args={{
+            name: 'ifCaption',
+            ifZero: <EmojiForLetter letter="y" size="mdlg" />,
+            ifNonZero: (
+              <InlineEmojiBoxes
+                emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
+              />
+            )
+          }}
+        />
+      }
+      highlightOverrides={{
+        w: 'highlighted',
+        x: 'highlighted'
+      }}
     />
   ),
   // What snack do I get?

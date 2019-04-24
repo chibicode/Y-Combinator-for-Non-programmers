@@ -236,24 +236,37 @@ export const isZero = (e: ExpressionParams): CallExpressionParams => [
 ]
 
 export const e9E1 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', 'question')
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', 'question')
 )
 
 export const e9E2 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', numberParams('f', 'g', 0))
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 0))
 )
 
 export const e9E3 = initializeExpressionContainer(numberParams('f', 'g', 0))
 export const e9E4 = initializeExpressionContainer(numberParams('f', 'g', 1))
 
 export const e9E5 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', numberParams('f', 'g', 1))
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 1))
 )
 
 export const e9E6 = initializeExpressionContainer(numberParams('f', 'g', 2))
 
 export const e9E7 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', numberParams('f', 'g', 2))
+  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 2))
+)
+
+export const e9E8 = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'y',
+    { arg: 'w', body: 'x' },
+    'question'
+  )
 )
 
 const baseTrue: FunctionExpressionParams = {

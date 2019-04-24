@@ -5,7 +5,8 @@ import {
   Strong,
   InlineHeader,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -14,8 +15,11 @@ import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AllExpressionRunners'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import InlineEmojiBoxes, {
+  InlineEmojiBoxesForQuestion
+} from 'src/components/Yc/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 export default () => (
   <EpisodeCardList
@@ -415,6 +419,54 @@ export default () => (
             {AER.nlxe}
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <EmojiForLetter letter="z" />や<EmojiForLetter letter="y" />
+            の部分を変えても同様
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              ちなみに、
+              <Strong>
+                <EmojiWithText letter="z" />や<EmojiWithText letter="y" />
+                の部分を別なものに変えても同様の結果になります
+              </Strong>
+              。
+            </P>
+            <Hr />
+            <P>
+              たとえば次の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              だと、先ほど
+              <Strong>
+                <EmojiWithText letter="z" />
+              </Strong>
+              だった部分が
+              <InlineEmojiBoxes
+                emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
+              />
+              になっています。
+            </P>
+            {AER.dvrw}
+            <P>
+              この場合、
+              <InlineEmojiBoxesForQuestion />が<Strong>「0」</Strong>なら最後は
+              <EmojiWithText letter="y" />、<Strong>「1」</Strong>なら
+              <InlineEmojiBoxes
+                emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
+              />
+              になります。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: <></>
       }
     ]}
   />
