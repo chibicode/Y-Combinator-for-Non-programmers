@@ -465,8 +465,27 @@ export default () => (
         )
       },
       {
-        title: <></>,
-        content: <></>
+        title: (
+          <>
+            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            は「条件分岐」もできる
+          </>
+        ),
+        content: (
+          <>
+            <P>?</P>
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>余談:</InlineHeader> プログラミングだと、
+                <Strong>「If文」</Strong>とも呼んだりします。
+              </P>
+            </>
+          )
+        }
       }
     ]}
   />
