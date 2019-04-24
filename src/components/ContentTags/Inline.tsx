@@ -13,11 +13,11 @@ import { LinkContext } from 'src/components/ContentTags/Links'
 export type InlineHighlightType = 'default' | 'white' | 'none'
 
 interface HighlightContextProps {
-  inHighlight: boolean
+  inHighlightType: InlineHighlightType
 }
 
 const highlightContextDefault: HighlightContextProps = {
-  inHighlight: false
+  inHighlightType: 'none'
 }
 
 const HighlightContext = React.createContext<HighlightContextProps>(
@@ -43,12 +43,12 @@ export const Strong = ({
   highlightType,
   ...props
 }: {
-  highlightType?: InlineHighlightType
+  highlightType: InlineHighlightType
 } & JSX.IntrinsicElements['span']) => {
-  const { inHighlight } = useContext(HighlightContext)
+  const { inHighlightType } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
-  if (inHighlight || highlightType === 'none') {
+  if (inHighlightType === 'white' || highlightType === 'none') {
     return (
       <span
         css={css`
@@ -61,7 +61,7 @@ export const Strong = ({
     )
   } else {
     return (
-      <HighlightContext.Provider value={{ inHighlight: true }}>
+      <HighlightContext.Provider value={{ inHighlightType: highlightType }}>
         <span
           css={[
             css`
@@ -98,12 +98,12 @@ export const Em = ({
   highlightType
 }: {
   children: React.ReactNode
-  highlightType?: InlineHighlightType
+  highlightType: InlineHighlightType
 }) => {
-  const { inHighlight } = useContext(HighlightContext)
+  const { inHighlightType } = useContext(HighlightContext)
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
-  if (inHighlight || highlightType === 'none') {
+  if (inHighlightType === 'white' || highlightType === 'none') {
     return (
       <span
         css={css`
@@ -115,7 +115,7 @@ export const Em = ({
     )
   } else {
     return (
-      <HighlightContext.Provider value={{ inHighlight: true }}>
+      <HighlightContext.Provider value={{ inHighlightType: highlightType }}>
         <span
           css={[
             css`

@@ -988,6 +988,36 @@ export default {
       speed={3}
     />
   ),
+  yehl: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E4}
+      newCaption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'f' }} />
+      }
+    />
+  ),
+  mrky: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e9E5}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      highlightOverrides={{
+        f: 'highlighted',
+        g: 'highlighted'
+      }}
+    />
+  ),
+  ctyl: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e9E5}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={4}
+    />
+  ),
   // What snack do I get?
   // If the number is 0, get donut (a donut looks like candy)
   // Else, get candy

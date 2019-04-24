@@ -1,5 +1,13 @@
 import React from 'react'
-import { Em, H3, P, Strong } from 'src/components/ContentTags'
+import {
+  Em,
+  H3,
+  P,
+  Strong,
+  InlineHeader,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import { episode10 } from 'src/components/Yc/AllExpressionRunners'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
@@ -113,6 +121,138 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.jliw}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              下の
+              <InlineEmojiBoxesForQuestion />
+              の部分に暗号が<Strong>「0」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              を埋め込んで
+              <H args={{ name: 'play' }} />
+              すると、
+              <Strong>
+                最終的に
+                <EmojiWithText letter="y" />
+                が残ります。
+              </Strong>
+            </P>
+            {AER.bxfv}
+            <P>
+              では、
+              <InlineEmojiBoxesForQuestion />
+              に他の暗号の
+              <H args={{ name: 'bentoBox', short: true }} />
+              を埋め込んだらどうなるのでしょう？確かめてみましょう。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <EmojiForLetter letter="z" /> か <EmojiForLetter letter="y" />
+            、どっち？その2
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              今度は、<Strong>暗号が「1」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を用意し、
+            </P>
+            {AER.yehl}
+            <P>
+              先ほどの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込んでみます。
+            </P>
+            {AER.mrky}
+            <P>というわけで、ここで質問です！</P>
+            <P>
+              <Strong>質問:</Strong> 上の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'play' }} />
+              したら最後に残るのは「
+              <EmojiWithText letter="z" />
+              」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+            </P>
+            <YesNoButtons answer="yes" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} /> (残るのは
+            <EmojiWithText letter="z" />)
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: true }} />
+              でした。残るのは
+              <EmojiWithText letter="z" />
+              です。
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.ctyl}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlineHeader>ここまでをまとめると:</InlineHeader> 下の
+              <H args={{ name: 'bentoBox', short: true }} />の
+              <InlineEmojiBoxesForQuestion />
+              の部分に…
+            </P>
+            <Ul>
+              <UlLi>
+                暗号が<Strong>「0」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込むと、
+                <EmojiWithText letter="y" />
+                が残る
+              </UlLi>
+              <UlLi>
+                暗号が<Strong>「1」</Strong>の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込むと、
+                <EmojiWithText letter="z" />
+                が残る
+              </UlLi>
+            </Ul>
+            {AER.bxfv}
+            <EmojiSeparator emojis={['🍬', '🤔', '🍩']} />
+            <P>
+              不思議ですね。では最後に、暗号が<Strong>「2」</Strong>
+              の場合を見てみましょう。
+            </P>
           </>
         )
       }

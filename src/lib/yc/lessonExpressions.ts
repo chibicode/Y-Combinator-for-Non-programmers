@@ -244,6 +244,11 @@ export const e9E2 = initializeExpressionContainer(
 )
 
 export const e9E3 = initializeExpressionContainer(numberParams('f', 'g', 0))
+export const e9E4 = initializeExpressionContainer(numberParams('f', 'g', 1))
+
+export const e9E5 = initializeExpressionContainer(
+  isZeroParams('a', 'b', 'c', 'd', 'e', numberParams('f', 'g', 1))
+)
 
 const baseTrue: FunctionExpressionParams = {
   arg: 'd',
