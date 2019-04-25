@@ -26,6 +26,7 @@ const linkCss = css`
   margin-right: ${spaces('-0.5')};
   padding: ${spaces(0.5)};
   border-radius: ${radii(0.5)};
+  -webkit-tap-highlight-color: transparent;
 
   &:hover,
   &:active {
