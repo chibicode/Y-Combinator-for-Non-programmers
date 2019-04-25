@@ -29,4 +29,7 @@ export type VariableNames =
   | 'A'
   | 'B'
 
-export type VariableValues = [VariableNames, number]
+export interface VariableNamesWithAlphaConvertCount {
+  name: VariableNames
+  count: number
+}

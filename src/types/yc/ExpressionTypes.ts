@@ -80,6 +80,11 @@ interface VariableStates {
     readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
+  conflictCallArg: {
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'conflict'
+    readonly bottomRightBadgeType: 'callArg'
+  }
   conflictFuncUnbound: {
     readonly highlightType: 'highlighted'
     readonly topLeftBadgeType: 'conflict'
@@ -186,6 +191,7 @@ export type CtoV<C extends CallStates> = C extends 'default'
       | 'activeFuncUnbound'
       | 'activeCallArg'
       | 'conflictFuncBound'
+      | 'conflictCallArg'
       | 'conflictFuncUnbound'
       | 'highlightCallArg'
   : C extends 'alphaConvertDone'

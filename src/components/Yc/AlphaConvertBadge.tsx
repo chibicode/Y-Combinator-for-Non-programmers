@@ -17,7 +17,9 @@ const AlphaConvertBadge = ({ count, inline }: AlphaConvertBadge) => (
       !inline &&
         css`
           display: flex;
-          font-size: 0.75em;
+          position: relative;
+          font-size: ${count > 0 ? '0.55em' : '0.75em'};
+          left: ${count > 1 ? '-0.14em' : 0};
         `,
       inline &&
         css`
@@ -28,7 +30,7 @@ const AlphaConvertBadge = ({ count, inline }: AlphaConvertBadge) => (
     ]}
   >
     <Emoji size="sm" noVerticalTransform>
-      {count === 1 ? '🥤' : '🍺'}
+      {count > 1 ? '🍵' : '🥤'}
     </Emoji>
   </span>
 )

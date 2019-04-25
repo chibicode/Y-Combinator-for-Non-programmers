@@ -57,6 +57,10 @@ const background = (
         return css`
           background: ${colors('blue50')};
         `
+      } else if (topLeftBadgeType === 'conflict') {
+        return css`
+          background: ${colors('pink50')};
+        `
       } else {
         return css`
           background: ${colors('yellow100')};

@@ -13,7 +13,7 @@ const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
     betaReduced: '↘',
     match: '✅',
     unmatch: '❌',
-    conflict: '⚠️',
+    conflict: '⚠️️',
     betaReduceCallArg: undefined,
     conflictResolved: undefined
   }[x])
