@@ -429,7 +429,7 @@ const recursiveFunction: FunctionExpressionParams = {
   arg: 'd',
   body: {
     arg: 'e',
-    body: ['d', 'e']
+    body: [succParams('i', 'j', 'k'), ['d', 'e']]
   }
 }
 
@@ -437,43 +437,3 @@ export const infiniteLoop = initializeExpressionContainer([
   yCombinator,
   recursiveFunction
 ])
-
-const testZero: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: 'g'
-  }
-}
-
-const testOne: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: ['f', 'g']
-  }
-}
-
-const testTwo: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: ['f', ['f', 'g']]
-  }
-}
-
-const testThree: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: ['f', ['f', ['f', 'g']]]
-  }
-}
-
-export const isZeroZero = initializeExpressionContainer(isZero(testZero))
-
-export const isZeroOne = initializeExpressionContainer(isZero(testOne))
-
-export const isZeroTwo = initializeExpressionContainer(isZero(testTwo))
-
-export const isZeroThree = initializeExpressionContainer(isZero(testThree))

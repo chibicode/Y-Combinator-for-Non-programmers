@@ -25,7 +25,7 @@ function toDefault(e: Expression): StepChild<'default'> {
     return {
       ...e,
       highlightType: 'default',
-      topBadgeType: 'none',
+      topLeftBadgeType: 'none',
       bottomRightBadgeType: 'none'
     }
   } else if (isFunction(e)) {

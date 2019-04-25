@@ -41,14 +41,14 @@ export function toShowCallArg(
       return {
         ...e,
         highlightType: 'active',
-        topBadgeType: 'none',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'none'
       }
     } else {
       return {
         ...e,
         highlightType: 'highlighted',
-        topBadgeType: 'none',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
     }

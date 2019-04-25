@@ -50,14 +50,14 @@ export function toNeedsAlphaConvert(
         return {
           ...x,
           highlightType: 'highlighted',
-          topBadgeType: 'conflict',
+          topLeftBadgeType: 'conflict',
           bottomRightBadgeType: 'funcBound'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcBound'
         }
       }
@@ -66,14 +66,14 @@ export function toNeedsAlphaConvert(
         return {
           ...x,
           highlightType: 'highlighted',
-          topBadgeType: 'conflict',
+          topLeftBadgeType: 'conflict',
           bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       }
@@ -82,14 +82,14 @@ export function toNeedsAlphaConvert(
         return {
           ...x,
           highlightType: 'highlighted',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         }
       } else {
         return {
           ...x,
           highlightType: 'active',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         }
       }

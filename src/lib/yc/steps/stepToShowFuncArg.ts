@@ -42,14 +42,14 @@ export function toShowFuncArg(
       return {
         ...e,
         highlightType: 'active',
-        topBadgeType: 'none',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'none'
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
-        topBadgeType: 'none',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
     }
@@ -74,7 +74,7 @@ const highlightFuncArg = (
 ): VariableWithState<'highlightFuncArg'> => ({
   ...e,
   highlightType: 'highlighted',
-  topBadgeType: 'none',
+  topLeftBadgeType: 'none',
   bottomRightBadgeType: 'funcArg'
 })
 

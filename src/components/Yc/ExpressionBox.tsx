@@ -34,7 +34,7 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
         bottomRightBadgeType={
           isVariable(expression) ? expression.bottomRightBadgeType : 'none'
         }
-        topBadgeType={isVariable(expression) ? expression.topBadgeType : 'none'}
+        topLeftBadgeType={isVariable(expression) ? expression.topLeftBadgeType : 'none'}
         isQuestion={
           isVariable(expression) ? expression.name === 'question' : false
         }

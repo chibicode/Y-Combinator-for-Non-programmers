@@ -50,14 +50,14 @@ export function toShowFuncBound(
           return {
             ...e,
             highlightType: 'highlighted',
-            topBadgeType: 'none',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           }
         } else {
           return {
             ...e,
             highlightType: 'active',
-            topBadgeType: 'none',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           }
         }
@@ -65,7 +65,7 @@ export function toShowFuncBound(
         return {
           ...e,
           highlightType: 'active',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'none'
         }
       }
@@ -73,7 +73,7 @@ export function toShowFuncBound(
       return {
         ...e,
         highlightType: 'active',
-        topBadgeType: 'none',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
     }
