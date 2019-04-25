@@ -492,7 +492,7 @@ export default () => (
               ここでは時間の都合上紹介できませんでしたが、
               <H args={{ name: 'bentoBox', short: true }} />
               を使えば、さまざまな条件分岐を表現することができます。たとえば「
-              <Em>Aの暗号はBの暗号より大きいか、小さいか</Em>」を判別できる
+              <Em>Aの暗号はBの暗号より大きいか、小さいか、それとも等しいか</Em>」を判別できる
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               もあります。
             </P>

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 import {
   Em,
   P,
@@ -7,9 +6,7 @@ import {
   Hr,
   Ul,
   UlLi,
-  InlineHeader,
-  ExternalLink,
-  Blockquote
+  InlineHeader
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -20,8 +17,6 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
-import { episodeUrl } from 'src/lib/meta'
-import { colors, fontSizes } from 'src/lib/theme'
 
 export default () => (
   <EpisodeCardList
