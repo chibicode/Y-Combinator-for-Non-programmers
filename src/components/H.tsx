@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { episodeUrl } from 'src/lib/meta'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
@@ -8,17 +9,25 @@ import {
   InternalLink,
   P,
   Strong,
-  InlineHeader
+  InlineHeader,
+  Blockquote,
+  ExternalLink
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
-import { lessonTitle, episodePrefix, episodeTitles } from 'src/lib/titles'
+import {
+  lessonTitle,
+  episodeCategoryName,
+  episodePrefix,
+  episodeTitles
+} from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { colors, fontSizes } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import { VariableNames } from 'src/types/yc/VariableNames'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -94,6 +103,9 @@ export interface HProps {
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
+    | {
+        name: 'takeABreak'
+      }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -111,6 +123,8 @@ const prefixColors = {
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   const episodeNumberFromContext = useContext(EpisodeContext).episodeNumber
   const episodeNumber = episodeNumberOverrides || episodeNumberFromContext
+  const currentEpisodeCategoryName = episodeCategoryName(episodeNumber)
+  const nextEpisodeCategoryName = episodeCategoryName(episodeNumber + 1)
 
   if (args.name === 'titlePrefix') {
     return <>{episodePrefix(episodeNumber)}</>
@@ -1057,6 +1071,59 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           なら
           {args.ifNonZero}
           になる
+        </>
+      )
+    }
+  }
+  if (args.name === 'takeABreak') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <P>
+            「{nextEpisodeCategoryName}
+            に入る前にちょっと休憩したい」という方は、もしよければですが、ツイッターなどのSNSで
+          </P>
+          <Blockquote>
+            <P>
+              <Strong>
+                「魔法のYコンビネーター、とりあえず{currentEpisodeCategoryName}
+                編は終わった」
+              </Strong>
+            </P>
+          </Blockquote>
+          <P>とつぶやいてくださると、宣伝になるので大変ありがたいです。</P>
+          <EmojiSeparator emojis={['📱', '🙂', '💬']} />
+          <P>
+            <InlineHeader>
+              その際には、こちらのURLをコピーしてシェアしてください↓
+            </InlineHeader>{' '}
+          </P>
+          <P
+            css={css`
+              text-align: center;
+            `}
+          >
+            <Em
+              css={css`
+                font-size: ${fontSizes(1.2)};
+              `}
+            >
+              <ExternalLink href={episodeUrl(episodeNumber + 1)}>
+                {episodeUrl(episodeNumber + 1)}
+              </ExternalLink>
+            </Em>
+            <br />
+            <span
+              css={css`
+                font-size: ${fontSizes(0.85)};
+                color: ${colors('grey700')};
+              `}
+            >
+              (↑ {nextEpisodeCategoryName}その1に飛ぶURLです)
+            </span>
+          </P>
         </>
       )
     }

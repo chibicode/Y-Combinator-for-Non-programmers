@@ -55,12 +55,13 @@ export const episodePrefixes = {
   }
 }[locale]
 
+export const episodeCategoryName = (episodeNumber: number) =>
+  episodePrefixes[
+    episodeCategory(episodeNumber) as keyof typeof episodePrefixes
+  ]
+
 export const episodePrefix = (episodeNumber: number) =>
-  `${
-    episodePrefixes[
-      episodeCategory(episodeNumber) as keyof typeof episodePrefixes
-    ]
-  }${
+  `${episodeCategoryName(episodeNumber)}${
     episodeNumberWithinCategory(episodeNumber)
       ? `${locale === 'en' ? ' ' : 'その'}${episodeNumberWithinCategory(
           episodeNumber

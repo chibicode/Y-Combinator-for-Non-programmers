@@ -473,47 +473,7 @@ export default () => (
         title: <>ちょっと休憩？</>,
         content: (
           <>
-            <P>
-              「中級に入る前にちょっと休憩したい」という方は、もしよければですが、ツイッターなどのSNSで
-            </P>
-            <Blockquote>
-              <P>
-                <Strong>
-                  「魔法のYコンビネーター、とりあえず初級編は終わった」
-                </Strong>
-              </P>
-            </Blockquote>
-            <P>とつぶやいてくださると、宣伝になるので大変ありがたいです。</P>
-            <EmojiSeparator emojis={['📱', '🙂', '💬']} />
-            <P>
-              <InlineHeader>
-                その際には、こちらのURLをコピーしてシェアしてください↓
-              </InlineHeader>{' '}
-            </P>
-            <P
-              css={css`
-                text-align: center;
-              `}
-            >
-              <Em
-                css={css`
-                  font-size: ${fontSizes(1.2)};
-                `}
-              >
-                <ExternalLink href={episodeUrl(6)}>
-                  {episodeUrl(6)}
-                </ExternalLink>
-              </Em>
-              <br />
-              <span
-                css={css`
-                  font-size: ${fontSizes(0.85)};
-                  color: ${colors('grey700')};
-                `}
-              >
-                (↑ 中級その1に飛ぶURLです)
-              </span>
-            </P>
+            <H args={{ name: 'takeABreak' }} />
           </>
         )
       },

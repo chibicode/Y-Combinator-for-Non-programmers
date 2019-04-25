@@ -534,7 +534,7 @@ export default () => (
           content: (
             <>
               <P>
-                <inlineHeader>余談:</inlineHeader>{' '}
+                <InlineHeader>余談:</InlineHeader>{' '}
                 <H args={{ name: 'bentoBox', short: true }} />
                 で条件分岐をする場合、それぞれの条件を数字で表す工夫が必要です。たとえば「平日
                 = 1」「週末 = 2」と表すなど。
@@ -560,6 +560,23 @@ export default () => (
               そしてそこでやっと、記事の題名にもある「
               <Strong>Yコンビネーター</Strong>」が登場します。乞うご期待！
             </P>
+            <YcNextLessonButton nextEpisodeNumber={10} />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>ちょっと休憩？</>,
+        content: (
+          <>
+            <H args={{ name: 'takeABreak' }} />
+          </>
+        )
+      },
+      {
+        title: <>それでは上級に進みましょう！</>,
+        content: (
+          <>
             <YcNextLessonButton nextEpisodeNumber={10} />
           </>
         )
