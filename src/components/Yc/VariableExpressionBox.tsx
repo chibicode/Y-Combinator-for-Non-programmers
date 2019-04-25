@@ -12,6 +12,7 @@ import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
+import AlphaConvertBadge from 'src/components/Yc/AlphaConvertBadge'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -121,6 +122,20 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
               ]}
             >
               <TopLeftBadge topLeftBadgeType={expression.topLeftBadgeType} />
+            </span>
+          )}
+          {expression.alphaConverCount > 0 && (
+            <span
+              css={[
+                css`
+                  position: absolute;
+                  top: -0.2em;
+                  z-index: ${zIndices('badge')};
+                  right: -0.27em;
+                `
+              ]}
+            >
+              <AlphaConvertBadge count={expression.alphaConverCount} />
             </span>
           )}
         </span>

@@ -1,11 +1,6 @@
-import difference from 'lodash/difference'
-import uniq from 'lodash/uniq'
-import zipObject from 'lodash/zipObject'
-import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
+import { conflictingVariableNamesObject } from 'src/lib/yc/conflictingVariableNames'
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
-import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
-import variableNamesArray from 'src/lib/yc/variableNamesArray'
 import {
   CallExpression,
   ExecutableCall,
@@ -22,41 +17,41 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 
 export function toAlphaConvertDone(
   e: VariableExpression,
-  mapping: { [index: string]: VariableNames },
+  conflictObj: Partial<Record<VariableNames, true>>,
   funcSide: boolean
 ): StepVariable<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: FunctionExpression,
-  mapping: { [index: string]: VariableNames },
+  conflictObj: Partial<Record<VariableNames, true>>,
   funcSide: boolean
 ): StepFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: CallExpression,
-  mapping: { [index: string]: VariableNames },
+  conflictObj: Partial<Record<VariableNames, true>>,
   funcSide: boolean
 ): NonExecutableStepCall<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: VariableExpression | FunctionExpression,
-  mapping: { [index: string]: VariableNames },
+  conflictObj: Partial<Record<VariableNames, true>>,
   funcSide: boolean
 ): StepVariable<'alphaConvertDone'> | StepFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: Expression,
-  mapping: { [index: string]: VariableNames },
+  conflictObj: Partial<Record<VariableNames, true>>,
   funcSide: boolean
 ): StepChild<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: Expression,
-  mapping: { [index: string]: VariableNames },
+  conflictObj: Partial<Record<VariableNames, true>>,
   funcSide: boolean
 ): StepChild<'alphaConvertDone'> {
   if (isVariable(e)) {
     if (funcSide) {
-      if (mapping[e.name]) {
+      if (conflictObj[e.name]) {
         if (e.bound) {
           return {
             ...e,
-            name: mapping[e.name],
+            alphaConverCount: e.alphaConverCount + 1,
             highlightType: 'highlighted',
             topLeftBadgeType: 'conflictResolved',
             bottomRightBadgeType: 'funcBound'
@@ -64,7 +59,7 @@ export function toAlphaConvertDone(
         } else {
           return {
             ...e,
-            name: mapping[e.name],
+            alphaConverCount: e.alphaConverCount + 1,
             highlightType: 'highlighted',
             topLeftBadgeType: 'conflictResolved',
             bottomRightBadgeType: 'funcUnbound'
@@ -86,7 +81,7 @@ export function toAlphaConvertDone(
         }
       }
     } else {
-      if (mapping[e.name]) {
+      if (conflictObj[e.name]) {
         return {
           ...e,
           highlightType: 'highlighted',
@@ -105,15 +100,15 @@ export function toAlphaConvertDone(
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toAlphaConvertDone(e.arg, mapping, funcSide),
-      body: toAlphaConvertDone(e.body, mapping, funcSide)
+      arg: toAlphaConvertDone(e.arg, conflictObj, funcSide),
+      body: toAlphaConvertDone(e.body, conflictObj, funcSide)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      arg: toAlphaConvertDone(e.arg, mapping, funcSide),
-      func: toAlphaConvertDone(e.func, mapping, funcSide)
+      arg: toAlphaConvertDone(e.arg, conflictObj, funcSide),
+      func: toAlphaConvertDone(e.func, conflictObj, funcSide)
     }
   }
 }
@@ -121,28 +116,15 @@ export function toAlphaConvertDone(
 const stepToAlphaConvertDone = (
   e: ExecutableCall
 ): ExecutableStepCall<'alphaConvertDone'> => {
-  const sortedConflicts = conflictingVariableNames(e).sort()
-  if (sortedConflicts.length === 0) {
-    throw new Error('There must be a conflict if this function was called')
-  }
-  const allUsedVariableNames = uniq(getAllVariableNames(e))
-  const usableVariableNames = difference(
-    variableNamesArray,
-    allUsedVariableNames
-  )
-  const usableVariableNamesSliced = usableVariableNames.slice(
-    0,
-    sortedConflicts.length
-  )
-  const mapping = zipObject(sortedConflicts, usableVariableNamesSliced)
+  const conflictObj = conflictingVariableNamesObject(e)
   return {
     ...e,
     state: 'alphaConvertDone',
-    arg: toAlphaConvertDone(e.arg, mapping, false),
+    arg: toAlphaConvertDone(e.arg, conflictObj, false),
     func: {
       ...e.func,
       arg: activeFuncArg(e.func.arg),
-      body: toAlphaConvertDone(e.func.body, mapping, true)
+      body: toAlphaConvertDone(e.func.body, conflictObj, true)
     }
   }
 }

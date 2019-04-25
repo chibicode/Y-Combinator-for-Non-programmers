@@ -8,15 +8,14 @@ interface TopLeftBadgeProps {
   inline?: boolean
 }
 
-const topLeftBadgeTypeToEmoji = (
-  x: Exclude<TopLeftBadgeProps['topLeftBadgeType'], 'betaReduceCallArg'>
-) =>
+const topLeftBadgeTypeToEmoji = (x: TopLeftBadgeProps['topLeftBadgeType']) =>
   ({
     betaReduced: '↘',
     match: '✅',
     unmatch: '❌',
-    conflict: '🔀',
-    conflictResolved: '🆕'
+    conflict: '⚠️',
+    betaReduceCallArg: undefined,
+    conflictResolved: undefined
   }[x])
 
 const TopLeftBadge = ({ topLeftBadgeType, inline }: TopLeftBadgeProps) => (
@@ -39,7 +38,7 @@ const TopLeftBadge = ({ topLeftBadgeType, inline }: TopLeftBadgeProps) => (
         `
     ]}
   >
-    {topLeftBadgeType !== 'betaReduceCallArg' && (
+    {topLeftBadgeTypeToEmoji(topLeftBadgeType) && (
       <Emoji size="sm" noVerticalTransform>
         {topLeftBadgeTypeToEmoji(topLeftBadgeType)}
       </Emoji>

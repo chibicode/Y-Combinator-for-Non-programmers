@@ -28,3 +28,5 @@ export type VariableNames =
   | 'question'
   | 'A'
   | 'B'
+
+export type VariableValues = [VariableNames, number]

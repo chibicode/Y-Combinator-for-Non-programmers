@@ -38,7 +38,8 @@ export default function resetExpression(
       bound: expression.bound,
       argPriorityAgg: [],
       funcPriorityAgg: [],
-      emphasizePriority: false
+      emphasizePriority: false,
+      alphaConverCount: expression.alphaConverCount
     }
   } else if (isCall(expression)) {
     return {

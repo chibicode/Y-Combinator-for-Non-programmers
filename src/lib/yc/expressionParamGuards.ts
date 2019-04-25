@@ -5,15 +5,10 @@ import {
   VariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 
-import variableNamesArray from './variableNamesArray'
-
 export function isVariableExpressionParams(
   expressionParams: ExpressionParams
 ): expressionParams is VariableExpressionParams {
-  return (
-    typeof expressionParams === 'string' &&
-    variableNamesArray.indexOf(expressionParams) >= 0
-  )
+  return typeof expressionParams === 'string'
 }
 
 export function isFunctionExpressionParams(
