@@ -1119,6 +1119,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
+      speed={4}
     />
   )
 }

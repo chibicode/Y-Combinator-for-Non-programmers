@@ -424,12 +424,17 @@ export const episode12Expression1 = initializeExpressionContainer({
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
-// a => b => (a b)
+// Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']
+export const addOnePizza: FunctionExpressionParams = {
+  arg: 'e',
+  body: ['e', 'f']
+}
+
 const recursiveFunction: FunctionExpressionParams = {
   arg: 'd',
   body: {
     arg: 'e',
-    body: [succParams('i', 'j', 'k'), ['d', 'e']]
+    body: [['d', 'e'], 'f']
   }
 }
 
