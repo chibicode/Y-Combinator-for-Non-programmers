@@ -526,10 +526,22 @@ export default () => (
             <P>
               四則演算も条件分岐もできる
               <H args={{ name: 'bentoBox', short: true }} />
-              なら、(工夫すれば)カラオケの料金を計算できるのです。
+              なら、カラオケの料金を計算できるのです。
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <inlineHeader>余談:</inlineHeader>{' '}
+                <H args={{ name: 'bentoBox', short: true }} />
+                で条件分岐をする場合、それぞれの条件を数字で表す工夫が必要です。たとえば「平日
+                = 1」「週末 = 2」と表すなど。
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>四則演算や条件分岐よりさらに複雑な処理はできるのか？</>,
