@@ -41,6 +41,16 @@ const background = (
         background: ${colors('white')};
       `
     }
+    case 'betaReduceCallArgHighlighted': {
+      return css`
+        background: ${colors('blue50')};
+      `
+    }
+    case 'conflictResolvedHighlighted': {
+      return css`
+        background: ${colors('cyan50')};
+      `
+    }
     case 'highlighted': {
       if (topLeftBadgeType === 'match') {
         return css`
@@ -50,16 +60,13 @@ const background = (
         return css`
           background: ${colors('purple50')};
         `
-      } else if (
-        topLeftBadgeType === 'betaReduced' ||
-        topLeftBadgeType === 'betaReduceCallArg'
-      ) {
+      } else if (topLeftBadgeType === 'betaReduced') {
         return css`
           background: ${colors('blue50')};
         `
       } else if (topLeftBadgeType === 'conflict') {
         return css`
-          background: ${colors('pink50')};
+          background: ${colors('lime50')};
         `
       } else {
         return css`

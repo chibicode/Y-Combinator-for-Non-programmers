@@ -71,8 +71,8 @@ interface VariableStates {
     readonly bottomRightBadgeType: 'callArg'
   }
   highlightCallArgBetaReduceCallArg: {
-    readonly highlightType: 'highlighted'
-    readonly topLeftBadgeType: 'betaReduceCallArg'
+    readonly highlightType: 'betaReduceCallArgHighlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
   activeCallArg: {
@@ -96,13 +96,13 @@ interface VariableStates {
     readonly bottomRightBadgeType: 'funcBound'
   }
   conflictResolvedFuncUnbound: {
-    readonly highlightType: 'highlighted'
-    readonly topLeftBadgeType: 'conflictResolved'
+    readonly highlightType: 'conflictResolvedHighlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcUnbound'
   }
   conflictResolvedFuncBound: {
-    readonly highlightType: 'highlighted'
-    readonly topLeftBadgeType: 'conflictResolved'
+    readonly highlightType: 'conflictResolvedHighlighted'
+    readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
   matchFuncArg: {

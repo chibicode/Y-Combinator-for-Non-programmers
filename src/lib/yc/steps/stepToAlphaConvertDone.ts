@@ -52,16 +52,16 @@ export function toAlphaConvertDone(
           return {
             ...e,
             alphaConverCount: e.alphaConverCount + 1,
-            highlightType: 'highlighted',
-            topLeftBadgeType: 'conflictResolved',
+            highlightType: 'conflictResolvedHighlighted',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           }
         } else {
           return {
             ...e,
             alphaConverCount: e.alphaConverCount + 1,
-            highlightType: 'highlighted',
-            topLeftBadgeType: 'conflictResolved',
+            highlightType: 'conflictResolvedHighlighted',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcUnbound'
           }
         }

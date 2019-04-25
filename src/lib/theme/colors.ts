@@ -6,7 +6,9 @@ import {
   pink,
   purple,
   green,
-  yellow
+  yellow,
+  cyan,
+  lime
 } from '@material-ui/core/colors'
 import Color from 'color'
 
@@ -32,6 +34,8 @@ export const allColors = {
     .string(),
   indigo400: indigo[400],
   indigo500: indigo[500],
+  cyan50: cyan[50],
+  lime50: lime[50],
   pink50: pink[50],
   pink100: pink[100],
   pink400: pink[400],

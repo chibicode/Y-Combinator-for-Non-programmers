@@ -110,8 +110,8 @@ export function toBetaReducePreviewAfter(
     } else {
       return {
         ...e,
-        highlightType: 'highlighted',
-        topLeftBadgeType: 'betaReduceCallArg',
+        highlightType: 'betaReduceCallArgHighlighted',
+        topLeftBadgeType: 'none',
         bottomRightBadgeType: 'callArg'
       }
     }

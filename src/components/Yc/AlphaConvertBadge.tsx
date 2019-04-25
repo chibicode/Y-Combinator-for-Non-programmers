@@ -18,8 +18,9 @@ const AlphaConvertBadge = ({ count, inline }: AlphaConvertBadge) => (
         css`
           display: flex;
           position: relative;
-          font-size: ${count > 0 ? '0.55em' : '0.75em'};
-          left: ${count > 1 ? '-0.14em' : 0};
+          font-size: ${count > 1 ? '0.5em' : '0.6em'};
+          top: ${count > 1 ? '0.15em' : 0};
+          left: ${count > 1 ? '-0.05em' : '0.05em'};
         `,
       inline &&
         css`
