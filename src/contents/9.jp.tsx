@@ -12,6 +12,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import Emoji from 'src/components/Emoji'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AllExpressionRunners'
@@ -474,20 +475,82 @@ export default () => (
         content: (
           <>
             <P>
-              たとえばXとYが同じか、Xのほうが大きいか、Yのほうが大きかという比較もできる
+              今回紹介したのは、「<Em>暗号が0か、それ以外か</Em>
+              」を判別し、それぞれ違う結果を出す
+              <H args={{ name: 'bentoBox', short: true }} />
+              でした。
+            </P>
+            <EmojiSeparator emojis={['0️⃣', '❓', '🔢']} />
+            <P>
+              こういった処理は専門用語で「<Strong>条件分岐</Strong>
+              」と言います。プログラミングをしたことがある方や、エクセルが得意な方には「
+              <Strong>IF文</Strong>
+              (または<Em>IF関数</Em>
+              )」と言ったほうが分かりやすいかもしれません。
+            </P>
+            <P>
+              ここでは時間の都合上紹介できませんでしたが、
+              <H args={{ name: 'bentoBox', short: true }} />
+              を使えば、さまざまな条件分岐を表現することができます。たとえば「
+              <Em>Aの暗号はBの暗号より大きいか、小さいか</Em>」を判別できる
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              もあります。
+            </P>
+            <EmojiSeparator emojis={['🅰️', '❓', '🅱️']} />
+            <P>
+              何が言いたいかというと、
+              <H args={{ name: 'bentoBox', short: true }} />
+              は「<Strong>四則演算だけでなく、条件分岐もできる</Strong>
+              」ということです。
             </P>
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <InlineHeader>余談:</InlineHeader> プログラミングだと、
-                <Strong>「If文」</Strong>とも呼んだりします。
-              </P>
-            </>
-          )
-        }
+        )
+      },
+      {
+        title: <>条件分岐ができれば、複雑な計算ができる</>,
+        content: (
+          <>
+            <P>
+              条件分岐ができれば、
+              <Em>複雑な計算を行うことができます</Em>
+              。たとえば、<Strong>カラオケの利用料金の計算</Strong>。
+            </P>
+            <EmojiSeparator emojis={['🎤', '😄', '🎶']} />
+            <P>
+              「カラオケの部屋代が1時間あたりいくらか」「何時間利用したか」だけであれば四則演算で計算できます。しかし、実際は
+              <Em>
+                「平日か週末か」「昼か夜か」「学生か大人か」等によって料金体系が変わってくる
+              </Em>
+              ので、条件分岐が必要です。
+            </P>
+            <P>
+              四則演算も条件分岐もできる
+              <H args={{ name: 'bentoBox', short: true }} />
+              なら、(工夫すれば)カラオケの料金を計算できるのです。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>四則演算や条件分岐よりさらに複雑な処理はできるのか？</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
+            <P>
+              四則演算や条件分岐ができるだけでも十分すごいですが、
+              <Strong>
+                <H args={{ name: 'bentoBox', short: true }} />
+                はもっと複雑な処理を行うことができます
+              </Strong>
+              。ぜひ、次のページから始まる上級編で紹介させてください。
+            </P>
+            <P>
+              そしてそこでやっと、記事の題名にもある「
+              <Strong>Yコンビネーター</Strong>」が登場します。乞うご期待！
+            </P>
+            <YcNextLessonButton nextEpisodeNumber={10} />
+          </>
+        )
       }
     ]}
   />
