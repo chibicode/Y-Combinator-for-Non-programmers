@@ -188,7 +188,9 @@ export default () => (
               <H args={{ name: 'bentoBox', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
-              <EmojiWithText letter="z" />
+              <Strong>
+                <EmojiWithText letter="z" />
+              </Strong>
               」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
             </P>
             <YesNoButtons answer="yes" tooHard />
