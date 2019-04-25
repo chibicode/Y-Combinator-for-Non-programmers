@@ -28,8 +28,6 @@ const EpisodeHero = () => {
     <header
       css={css`
         padding: ${spaces(0.5)} 0;
-        margin-left: ${spaces('-0.5')};
-        margin-right: ${spaces('-0.5')};
       `}
     >
       <>

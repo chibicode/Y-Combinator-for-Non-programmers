@@ -449,7 +449,7 @@ export default () => (
               <InlineEmojiBoxes
                 emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
               />
-              になっています。
+              になっています。(<Em>黄色</Em>の部分)
             </P>
             {AER.dvrw}
             <P>

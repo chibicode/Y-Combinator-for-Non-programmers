@@ -186,7 +186,7 @@ export default () => (
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               と暗号が<Strong>「2」</Strong>の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              を埋め込みます。(<Em>黄色の部分</Em>)
+              を埋め込みます。(<Em>黄色</Em>の部分)
             </P>
             {AER.hdwy}
             <P>
