@@ -424,12 +424,17 @@ export const episode12Expression1 = initializeExpressionContainer({
 
 export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 
-// a => b => (a b)
+// Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']
+export const addOnePizza: FunctionExpressionParams = {
+  arg: 'e',
+  body: ['e', 'f']
+}
+
 const recursiveFunction: FunctionExpressionParams = {
   arg: 'd',
   body: {
     arg: 'e',
-    body: ['d', 'e']
+    body: [['d', 'e'], 'f']
   }
 }
 
@@ -437,43 +442,3 @@ export const infiniteLoop = initializeExpressionContainer([
   yCombinator,
   recursiveFunction
 ])
-
-const testZero: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: 'g'
-  }
-}
-
-const testOne: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: ['f', 'g']
-  }
-}
-
-const testTwo: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: ['f', ['f', 'g']]
-  }
-}
-
-const testThree: FunctionExpressionParams = {
-  arg: 'f',
-  body: {
-    arg: 'g',
-    body: ['f', ['f', ['f', 'g']]]
-  }
-}
-
-export const isZeroZero = initializeExpressionContainer(isZero(testZero))
-
-export const isZeroOne = initializeExpressionContainer(isZero(testOne))
-
-export const isZeroTwo = initializeExpressionContainer(isZero(testTwo))
-
-export const isZeroThree = initializeExpressionContainer(isZero(testThree))

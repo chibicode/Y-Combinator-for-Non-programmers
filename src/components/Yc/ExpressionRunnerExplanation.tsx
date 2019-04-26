@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Strong } from 'src/components/ContentTags'
+import { InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopBadge from 'src/components/Yc/TopBadge'
+import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import locale from 'src/lib/locale'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import H from 'src/components/H'
-import InlineBackground from 'src/components/Yc/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 
 interface ExpressionRunnerExplanationProps {
@@ -77,7 +76,8 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            白色 <InlineBackground bgColor={'white'} /> の部分に注目します
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+            の部分に注目します
           </>
         )
       }
@@ -168,15 +168,15 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return matchExists ? (
           <>
-            There’s a match <TopBadge topBadgeType="match" inline /> between{' '}
-            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            There’s a match <TopLeftBadge topLeftBadgeType="match" inline />{' '}
+            between <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+            and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         ) : (
           <>
-            There’s no match <TopBadge topBadgeType="unmatch" inline /> between{' '}
-            <BottomRightBadge bottomRightBadgeType="funcArg" inline /> and{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            There’s no match <TopLeftBadge topLeftBadgeType="unmatch" inline />{' '}
+            between <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
+            and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       } else {
@@ -184,13 +184,14 @@ const stateToExplanation = ({
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> に一致{' '}
-            <TopBadge topBadgeType="match" inline /> する料理があります
+            <TopLeftBadge topLeftBadgeType="match" inline /> する料理があります
           </>
         ) : (
           <>
             <BottomRightBadge bottomRightBadgeType="funcArg" inline /> と{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            が一致しませんでした <TopBadge topBadgeType="unmatch" inline />
+            が一致しませんでした{' '}
+            <TopLeftBadge topLeftBadgeType="unmatch" inline />
           </>
         )
       }
@@ -199,7 +200,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Matched <TopBadge topBadgeType="match" inline />{' '}
+            Matched <TopLeftBadge topLeftBadgeType="match" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
             the same as{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />
@@ -240,19 +241,19 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong> (same item in{' '}
+            <Emoji>⚠️</Emoji> <InlineHeader>Warning</InlineHeader>: Same item in{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />)
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       } else {
         return (
           <>
-            <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong> (
+            <Emoji>⚠️</Emoji> <InlineHeader>注意:</InlineHeader>{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が同じ)
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が同じ
           </>
         )
       }
@@ -261,19 +262,17 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji>🔀</Emoji> <Strong>Shuffle Time</Strong>:{' '}
+            Added drinks for{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> become{' '}
-            <TopBadge topBadgeType="conflictResolved" inline />
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
         )
       } else {
         return (
           <>
-            <Emoji>🔀</Emoji> <Strong>シャッフルタイム</Strong>:{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が{' '}
-            <TopBadge topBadgeType="conflictResolved" inline /> に
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            にドリンクを追加
           </>
         )
       }

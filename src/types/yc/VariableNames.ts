@@ -28,3 +28,8 @@ export type VariableNames =
   | 'question'
   | 'A'
   | 'B'
+
+export interface VariableNamesWithAlphaConvertCount {
+  name: VariableNames
+  count: number
+}

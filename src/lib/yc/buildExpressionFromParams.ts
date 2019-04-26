@@ -44,13 +44,14 @@ const buildVariableExpression = (
 ): StepVariable => ({
   name,
   highlightType: 'default',
-  topBadgeType: 'none',
+  topLeftBadgeType: 'none',
   bottomRightBadgeType: 'none',
   type: 'variable',
   argPriorityAgg: [],
   funcPriorityAgg: [],
   emphasizePriority: false,
-  bound
+  bound,
+  alphaConverCount: 0
 })
 
 export default function buildExpressionFromParams(

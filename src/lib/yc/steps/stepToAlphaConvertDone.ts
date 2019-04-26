@@ -1,11 +1,6 @@
-import difference from 'lodash/difference'
-import uniq from 'lodash/uniq'
-import zipObject from 'lodash/zipObject'
-import conflictingVariableNames from 'src/lib/yc/conflictingVariableNames'
+import { getConflicts } from 'src/lib/yc/getConflicts'
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
-import getAllVariableNames from 'src/lib/yc/getAllVariableNames'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
-import variableNamesArray from 'src/lib/yc/variableNamesArray'
 import {
   CallExpression,
   ExecutableCall,
@@ -18,55 +13,55 @@ import {
   StepVariable,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { Conflicts } from 'src/lib/yc/getConflicts'
 
 export function toAlphaConvertDone(
   e: VariableExpression,
-  mapping: { [index: string]: VariableNames },
+  conflicts: Conflicts,
   funcSide: boolean
 ): StepVariable<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: FunctionExpression,
-  mapping: { [index: string]: VariableNames },
+  conflicts: Conflicts,
   funcSide: boolean
 ): StepFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: CallExpression,
-  mapping: { [index: string]: VariableNames },
+  conflicts: Conflicts,
   funcSide: boolean
 ): NonExecutableStepCall<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: VariableExpression | FunctionExpression,
-  mapping: { [index: string]: VariableNames },
+  conflicts: Conflicts,
   funcSide: boolean
 ): StepVariable<'alphaConvertDone'> | StepFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: Expression,
-  mapping: { [index: string]: VariableNames },
+  conflicts: Conflicts,
   funcSide: boolean
 ): StepChild<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: Expression,
-  mapping: { [index: string]: VariableNames },
+  conflicts: Conflicts,
   funcSide: boolean
 ): StepChild<'alphaConvertDone'> {
   if (isVariable(e)) {
     if (funcSide) {
-      if (mapping[e.name]) {
+      if (conflicts[e.name] && conflicts[e.name]![e.alphaConverCount]) {
         if (e.bound) {
           return {
             ...e,
-            name: mapping[e.name],
-            highlightType: 'highlighted',
-            topBadgeType: 'conflictResolved',
+            alphaConverCount: e.alphaConverCount + 1,
+            highlightType: 'conflictResolvedHighlighted',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
           }
         } else {
           return {
             ...e,
-            name: mapping[e.name],
-            highlightType: 'highlighted',
-            topBadgeType: 'conflictResolved',
+            alphaConverCount: e.alphaConverCount + 1,
+            highlightType: 'conflictResolvedHighlighted',
+            topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcUnbound'
           }
         }
@@ -74,46 +69,37 @@ export function toAlphaConvertDone(
         return {
           ...e,
           highlightType: 'active',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
-          topBadgeType: 'none',
+          topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcBound'
         }
       }
     } else {
-      if (mapping[e.name]) {
-        return {
-          ...e,
-          highlightType: 'highlighted',
-          topBadgeType: 'none',
-          bottomRightBadgeType: 'callArg'
-        }
-      } else {
-        return {
-          ...e,
-          highlightType: 'active',
-          topBadgeType: 'none',
-          bottomRightBadgeType: 'callArg'
-        }
+      return {
+        ...e,
+        highlightType: 'active',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toAlphaConvertDone(e.arg, mapping, funcSide),
-      body: toAlphaConvertDone(e.body, mapping, funcSide)
+      arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
+      body: toAlphaConvertDone(e.body, conflicts, funcSide)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      arg: toAlphaConvertDone(e.arg, mapping, funcSide),
-      func: toAlphaConvertDone(e.func, mapping, funcSide)
+      arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
+      func: toAlphaConvertDone(e.func, conflicts, funcSide)
     }
   }
 }
@@ -121,28 +107,15 @@ export function toAlphaConvertDone(
 const stepToAlphaConvertDone = (
   e: ExecutableCall
 ): ExecutableStepCall<'alphaConvertDone'> => {
-  const sortedConflicts = conflictingVariableNames(e).sort()
-  if (sortedConflicts.length === 0) {
-    throw new Error('There must be a conflict if this function was called')
-  }
-  const allUsedVariableNames = uniq(getAllVariableNames(e))
-  const usableVariableNames = difference(
-    variableNamesArray,
-    allUsedVariableNames
-  )
-  const usableVariableNamesSliced = usableVariableNames.slice(
-    0,
-    sortedConflicts.length
-  )
-  const mapping = zipObject(sortedConflicts, usableVariableNamesSliced)
+  const conflicts = getConflicts(e)
   return {
     ...e,
     state: 'alphaConvertDone',
-    arg: toAlphaConvertDone(e.arg, mapping, false),
+    arg: toAlphaConvertDone(e.arg, conflicts, false),
     func: {
       ...e.func,
       arg: activeFuncArg(e.func.arg),
-      body: toAlphaConvertDone(e.func.body, mapping, true)
+      body: toAlphaConvertDone(e.func.body, conflicts, true)
     }
   }
 }

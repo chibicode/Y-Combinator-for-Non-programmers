@@ -8,7 +8,7 @@ import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
-  topBadgeType: VariableExpression['topBadgeType']
+  topLeftBadgeType: VariableExpression['topLeftBadgeType']
   children: React.ReactNode
   isQuestion: boolean
   highlightType: VariableExpression['highlightType'] | 'none'
@@ -17,7 +17,7 @@ interface BorderWrapperProps {
 const background = (
   highlightType: BorderWrapperProps['highlightType'],
   isDoneOrReady: boolean,
-  topBadgeType: BorderWrapperProps['topBadgeType'],
+  topLeftBadgeType: BorderWrapperProps['topLeftBadgeType'],
   isQuestion: boolean
 ): SerializedStyles | undefined => {
   if (isQuestion) {
@@ -41,21 +41,32 @@ const background = (
         background: ${colors('white')};
       `
     }
+    case 'betaReduceCallArgHighlighted': {
+      return css`
+        background: ${colors('blue50')};
+      `
+    }
+    case 'conflictResolvedHighlighted': {
+      return css`
+        background: ${colors('cyan50')};
+      `
+    }
     case 'highlighted': {
-      if (topBadgeType === 'match') {
+      if (topLeftBadgeType === 'match') {
         return css`
           background: ${colors('green50')};
         `
-      } else if (topBadgeType === 'unmatch') {
+      } else if (topLeftBadgeType === 'unmatch') {
         return css`
           background: ${colors('purple50')};
         `
-      } else if (
-        topBadgeType === 'betaReduced' ||
-        topBadgeType === 'betaReduceCallArg'
-      ) {
+      } else if (topLeftBadgeType === 'betaReduced') {
         return css`
           background: ${colors('blue50')};
+        `
+      } else if (topLeftBadgeType === 'conflict') {
+        return css`
+          background: ${colors('lime50')};
         `
       } else {
         return css`
@@ -72,7 +83,7 @@ const background = (
 const BorderWrapper = ({
   highlightType,
   bottomRightBadgeType,
-  topBadgeType,
+  topLeftBadgeType,
   children,
   isQuestion
 }: BorderWrapperProps) => {
@@ -87,16 +98,16 @@ const BorderWrapper = ({
           flex: 1;
           position: relative;
         `,
-        background(highlightType, isDoneOrReady, topBadgeType, isQuestion),
+        background(highlightType, isDoneOrReady, topLeftBadgeType, isQuestion),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&
-          topBadgeType === 'none' &&
+          topLeftBadgeType === 'none' &&
           css`
             border-right: 10px solid ${colors('yellow900')};
           `,
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcArg' &&
-          topBadgeType === 'none' &&
+          topLeftBadgeType === 'none' &&
           css`
             border-left: 10px solid ${colors('pink400')};
           `

@@ -1102,45 +1102,24 @@ export default {
       }}
     />
   ),
-  // What snack do I get?
-  // If the number is 0, get donut (a donut looks like candy)
-  // Else, get candy
-  isZeroZeroTest: (
+  oluu: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.isZeroZero}
+      expressionContainer={lessonExpressions.infiniteLoop}
       showPriorities
-      speed={2}
+      containerSize={'xs'}
+      variableSize={'md'}
       skipToTheEnd={false}
-    />
-  ),
-  isZeroOneTest: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.isZeroOne}
-      showPriorities
-      speed={2}
-      skipToTheEnd={false}
-    />
-  ),
-  // alphaConvert is not necessary because it does
-  // (x => a => b => c)(a => b => c) and x is not used
-  isZeroTwoTest: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.isZeroTwo}
-      showPriorities
       skipAlphaConvert
-      speed={2}
-      skipToTheEnd={false}
     />
   ),
-  // alphaConvert is not necessary because it does
-  // (x => a => b => c)(a => b => c) and x is not used
-  isZeroThreeTest: (
+  ikqs: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.isZeroThree}
+      expressionContainer={lessonExpressions.infiniteLoop}
       showPriorities
-      skipAlphaConvert
-      speed={2}
+      containerSize={'xs'}
+      variableSize={'md'}
       skipToTheEnd={false}
+      speed={4}
     />
   )
 }

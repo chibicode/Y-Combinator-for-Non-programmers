@@ -33,12 +33,13 @@ export default function resetExpression(
       type: 'variable',
       name: expression.name,
       highlightType: 'default',
-      topBadgeType: 'none',
+      topLeftBadgeType: 'none',
       bottomRightBadgeType: 'none',
       bound: expression.bound,
       argPriorityAgg: [],
       funcPriorityAgg: [],
-      emphasizePriority: false
+      emphasizePriority: false,
+      alphaConverCount: expression.alphaConverCount
     }
   } else if (isCall(expression)) {
     return {
