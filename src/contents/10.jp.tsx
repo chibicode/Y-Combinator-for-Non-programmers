@@ -111,6 +111,25 @@ export default () => (
             <YesNoButtons answer="no" tooHard />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.eqbo}
+          </>
+        )
       }
     ]}
   />

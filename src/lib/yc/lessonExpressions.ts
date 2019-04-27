@@ -9,7 +9,9 @@ import {
   succParams,
   addParams,
   multParams,
-  isZeroParams
+  isZeroParams,
+  highlighted,
+  multParamsRightHighlighted
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -206,6 +208,12 @@ export const e8E7 = initializeExpressionContainer([
   numberParams('e', 'f', 1)
 ])
 
+export const e8E8 = initializeExpressionContainer([
+  multParamsRightHighlighted('a', 'b', 'c', 'd'),
+  'question',
+  'question'
+])
+
 export const isZero = (e: ExpressionParams): CallExpressionParams => [
   [
     [
@@ -290,6 +298,19 @@ export const e9E8 = initializeExpressionContainer(
 export const e10E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
 
 export const e10E2 = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'y',
+    'z',
+    numberParams(highlighted('a'), highlighted('b'), 1)
+  )
+)
+
+export const e10E3 = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'b', 1))
 )
 

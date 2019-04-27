@@ -1,12 +1,14 @@
 import {
   isCallExpressionParams,
-  isVariableExpressionParams
+  isVariableExpressionParams,
+  isHighlightedVariableExpressionParams
 } from 'src/lib/yc/expressionParamGuards'
 import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
-  VariableExpressionParams
+  VariableExpressionParams,
+  HighlightedVariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
@@ -40,10 +42,11 @@ function nestCallExpressions(expression: any) {
 
 const buildVariableExpression = (
   name: VariableNames,
-  bound: boolean
+  bound: boolean,
+  highlightType: 'default' | 'highlighted'
 ): StepVariable => ({
   name,
-  highlightType: 'default',
+  highlightType,
   topLeftBadgeType: 'none',
   bottomRightBadgeType: 'none',
   type: 'variable',
@@ -58,6 +61,9 @@ export default function buildExpressionFromParams(
   expressionParams: VariableExpressionParams
 ): StepVariable
 export default function buildExpressionFromParams(
+  expressionParams: HighlightedVariableExpressionParams
+): StepVariable
+export default function buildExpressionFromParams(
   expressionParams: CallExpressionParams
 ): NonExecutableStepCall
 export default function buildExpressionFromParams(
@@ -70,7 +76,7 @@ export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): StepChild {
   if (isVariableExpressionParams(expressionParams)) {
-    return buildVariableExpression(expressionParams, true)
+    return buildVariableExpression(expressionParams, true, 'default')
   } else if (isCallExpressionParams(expressionParams)) {
     let nestedCallExpressionParams: CallExpressionParams
     nestedCallExpressionParams =
@@ -85,11 +91,25 @@ export default function buildExpressionFromParams(
       type: 'call',
       priority: 0
     }
+  } else if (isHighlightedVariableExpressionParams(expressionParams)) {
+    return buildVariableExpression(expressionParams.name, true, 'highlighted')
   } else {
-    return {
-      arg: buildVariableExpression(expressionParams.arg, false),
-      body: buildExpressionFromParams(expressionParams.body),
-      type: 'function'
+    if (isHighlightedVariableExpressionParams(expressionParams.arg)) {
+      return {
+        arg: buildVariableExpression(
+          expressionParams.arg.name,
+          false,
+          'highlighted'
+        ),
+        body: buildExpressionFromParams(expressionParams.body),
+        type: 'function'
+      }
+    } else {
+      return {
+        arg: buildVariableExpression(expressionParams.arg, false, 'default'),
+        body: buildExpressionFromParams(expressionParams.body),
+        type: 'function'
+      }
     }
   }
 }

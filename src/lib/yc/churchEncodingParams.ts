@@ -2,12 +2,20 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 import {
   ExpressionParams,
   FunctionExpressionParams,
-  CallExpressionParams
+  CallExpressionParams,
+  HighlightedVariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 
+export const highlighted = (
+  name: VariableNames
+): HighlightedVariableExpressionParams => ({
+  name,
+  highlighted: true
+})
+
 const nest = (
-  f: VariableNames,
-  x: VariableNames,
+  f: VariableNames | HighlightedVariableExpressionParams,
+  x: VariableNames | HighlightedVariableExpressionParams,
   n: number
 ): ExpressionParams => {
   if (n === 0) {
@@ -18,8 +26,8 @@ const nest = (
 }
 
 export const numberParams = (
-  f: VariableNames,
-  x: VariableNames,
+  f: VariableNames | HighlightedVariableExpressionParams,
+  x: VariableNames | HighlightedVariableExpressionParams,
   n: number
 ): FunctionExpressionParams => {
   return {
@@ -84,6 +92,30 @@ export const multParams = (
         body: {
           arg: d,
           body: [[a, [b, c]], d]
+        }
+      }
+    }
+  }
+}
+
+export const multParamsRightHighlighted = (
+  a: VariableNames,
+  b: VariableNames,
+  c: VariableNames,
+  d: VariableNames
+): FunctionExpressionParams => {
+  return {
+    arg: a,
+    body: {
+      arg: b,
+      body: {
+        arg: c,
+        body: {
+          arg: d,
+          body: [
+            [highlighted(a), [highlighted(b), highlighted(c)]],
+            highlighted(d)
+          ]
         }
       }
     }

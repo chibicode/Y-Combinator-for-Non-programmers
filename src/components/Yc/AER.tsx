@@ -816,7 +816,7 @@ export default {
   ),
   ksya: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e8E1}
+      expressionContainer={lessonExpressions.e8E8}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
@@ -1110,6 +1110,16 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
+    />
+  ),
+  eqbo: (
+    <ExpressionRunnerPlayButtonOnly
+      skipToTheEnd={false}
+      expressionContainer={lessonExpressions.e10E3}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      speed={4}
     />
   )
 }
