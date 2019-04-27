@@ -12,36 +12,36 @@ import {
   StepVariable,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
-import { Conflicts } from 'src/lib/yc/getConflicts'
+import { VariableNamesToNumbersObj } from 'src/lib/yc/variablesHelper'
 
 export function toNeedsAlphaConvert(
   x: VariableExpression,
-  conflicts: Conflicts,
+  conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepVariable<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   x: FunctionExpression,
-  conflicts: Conflicts,
+  conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   x: CallExpression,
-  conflicts: Conflicts,
+  conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): NonExecutableStepCall<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   x: VariableExpression | FunctionExpression,
-  conflicts: Conflicts,
+  conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepVariable<'needsAlphaConvert'> | StepFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   x: Expression,
-  conflicts: Conflicts,
+  conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepChild<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   x: Expression,
-  conflicts: Conflicts,
+  conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepChild<'needsAlphaConvert'> {
   if (isVariable(x)) {
@@ -112,7 +112,7 @@ export function toNeedsAlphaConvert(
 
 const stepToNeedsAlphaConvert = (
   x: ExecutableCall,
-  conflicts: Conflicts
+  conflicts: VariableNamesToNumbersObj
 ): ExecutableStepCall<'needsAlphaConvert'> => ({
   ...x,
   state: 'needsAlphaConvert',

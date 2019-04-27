@@ -74,10 +74,12 @@ function conflictingVariableNamesEncoded(
   return intersection(argVariableNames, funcBodyUnboundedVariableNamesExceptArg)
 }
 
-export type Conflicts = Partial<Record<VariableNames, Record<number, true>>>
+export type VariableNamesToNumbersObj = Partial<
+  Record<VariableNames, Record<number, true>>
+>
 
-export function getConflicts(expression: ExecutableCall): Conflicts {
-  return conflictingVariableNamesEncoded(expression).reduce(
+function reduceHelper(arr: ReadonlyArray<string>) {
+  return arr.reduce(
     (
       accumulator: Partial<Record<VariableNames, Record<number, true>>>,
       currentValue
@@ -97,4 +99,16 @@ export function getConflicts(expression: ExecutableCall): Conflicts {
     },
     {}
   )
+}
+
+export function getConflicts(
+  expression: ExecutableCall
+): VariableNamesToNumbersObj {
+  return reduceHelper(conflictingVariableNamesEncoded(expression))
+}
+
+export function getAllVariables(
+  expression: Expression
+): VariableNamesToNumbersObj {
+  return reduceHelper(getAllVariableNamesEncoded(expression))
 }

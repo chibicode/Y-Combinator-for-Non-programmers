@@ -1120,6 +1120,27 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       speed={4}
+      skipAlphaConvert
+    />
+  ),
+  mpyr: (
+    <ExpressionRunnerPlayButtonOnly
+      skipToTheEnd={false}
+      expressionContainer={lessonExpressions.e10E4}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      speed={4}
+    />
+  ),
+  qsxk: (
+    <ExpressionRunnerPlayButtonOnly
+      skipToTheEnd={false}
+      expressionContainer={lessonExpressions.e10ETest}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      speed={4}
     />
   )
 }
