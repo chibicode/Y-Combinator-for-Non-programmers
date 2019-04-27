@@ -277,18 +277,6 @@ export const e9E8 = initializeExpressionContainer(
   )
 )
 
-// export const e10E1 = initializeExpressionContainer([
-//   {
-//     arg: 'a',
-//     body: {
-//       arg: 'b',
-//       body: 'a'
-//     }
-//   },
-//   'question',
-//   'v'
-// ])
-
 export const e10E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
 
 export const e10E2 = initializeExpressionContainer(
@@ -308,9 +296,17 @@ export const e10E3 = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'b', 1))
 )
 
-export const e10E4 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 1))
-)
+export const e10E4 = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'a'
+    }
+  },
+  'question',
+  'v'
+])
 
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',

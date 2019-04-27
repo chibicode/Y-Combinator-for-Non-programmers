@@ -1132,5 +1132,11 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  wbpx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E4}
+      showPriorities
+    />
   )
 }

@@ -6,7 +6,8 @@ import {
   InlineHeader,
   Strong,
   Ul,
-  UlLi
+  UlLi,
+  Em
 } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'
@@ -143,6 +144,51 @@ export default () => (
             {AER.xlwo}
             <P>前回では上手くいったのに、どうしてこうなったのでしょう？</P>
             <EmojiSeparator emojis={['🤯', '❓', '🍬']} />
+          </>
+        )
+      },
+      {
+        title: <>シンプルな例で考えてみる</>,
+        content: (
+          <>
+            <P>
+              原因を解明するためには、
+              <Em>
+                先ほどの
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                よりもシンプルな
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                で考えてみたほうが分かりやすい
+              </Em>
+              と思います。というわけで、
+              <H args={{ name: 'lookAtThisBentoBox' }} />。
+            </P>
+            {AER.wbpx}
+            <P>注目ポイントはふたつあります:</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  一番上に
+                  <Strong>
+                    <EmojiWithText letter="v" />
+                  </Strong>
+                  が入っています。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <InlineEmojiBoxesForQuestion />
+                  の部分には、料理が<Strong>ひとつだけ</Strong>入ります。
+                </Em>
+              </UlLi>
+            </Ul>
+            <P>
+              とりあえず、適当に
+              <InlineEmojiBoxesForQuestion />
+              に何か料理を入れてみましょう。
+            </P>
+            <Hr />
+            <P>というわけで…</P>
           </>
         )
       }

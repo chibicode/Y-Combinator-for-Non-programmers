@@ -67,7 +67,8 @@ ExpressionRunnerSimple.defaultProps = {
   initialState: 'default',
   showPriorities: false,
   explanationsVisibility: 'hidden',
-  variableSize: 'lg'
+  variableSize: 'lg',
+  skipAlphaConvert: false
 }
 
 export const ExpressionRunnerPlayButtonOnly = ({
