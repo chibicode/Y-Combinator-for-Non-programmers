@@ -128,8 +128,6 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.eqbo}
-            {AER.mpyr}
-            {AER.qsxk}
           </>
         )
       }
