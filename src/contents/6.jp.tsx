@@ -3,7 +3,6 @@ import { InlineHeader, Em, P, Strong, Hr } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-import h from 'src/lib/h'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AllExpressionRunners'
@@ -25,7 +24,8 @@ export default () => (
             <EmojiSeparator emojis={['❓', '🧐', '️❓']} />
             <P>
               このページにあるそれぞれの
-              {h('ycBentoBox')}には、
+              <H args={{ name: 'bentoBox' }} />
+              には、
               <Strong>あるパターンに基づいた暗号</Strong>
               が隠されています。
               <Em>暗号がどんな法則に基づいているか考えてみてください！</Em>

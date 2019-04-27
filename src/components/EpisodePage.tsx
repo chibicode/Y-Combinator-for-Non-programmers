@@ -6,6 +6,7 @@ import EpisodePageHeader from 'src/components/EpisodePageHeader'
 import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
+import episodeEmojis from 'src/lib/episodeEmojis'
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -23,7 +24,9 @@ const EpisodePage = ({
   contentName
 }: EpisodePageProps) => {
   const title = `${lessonTitle}${
-    episodeTitleString ? ` | ${episodeTitleString}` : ''
+    episodeTitleString
+      ? ` ${episodeEmojis[episodeNumber].join('')} ${episodeTitleString}`
+      : ''
   }`
   const [modalVisible, setModalVisible] = useState(false)
   const hideModal = () => setModalVisible(false)

@@ -156,7 +156,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>,
-                <Emoji>👉</Emoji>,
+                <Emoji>➡</Emoji>,
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
             />

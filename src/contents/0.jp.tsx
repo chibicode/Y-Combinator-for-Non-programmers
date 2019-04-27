@@ -261,7 +261,7 @@ export default () => (
               </Em>
               のを覚えています。
             </P>
-            <EmojiSeparator emojis={['😲', '😍', '😭']} />
+            <EmojiSeparator emojis={['✨', '😭', '✨']} />
             <P>
               今回の記事では、
               <Strong>
@@ -381,7 +381,7 @@ export default () => (
               </ExternalLink>
               。
             </P>
-            <EmojiSeparator emojis={['🕶', '🆚', '👔']} Component={P} />
+            <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
             <Blockquote>
               <P>
                 <Strong>

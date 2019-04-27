@@ -5,7 +5,6 @@ import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
   Em,
-  H3,
   InternalLink,
   P,
   Strong,
@@ -34,7 +33,6 @@ export interface HProps {
   episodeNumberOverrides?: number
   args:
     | { name: 'pressNext' }
-    | { name: 'yesNoQuizSeeAnswer' }
     | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
@@ -57,21 +55,12 @@ export interface HProps {
     | { name: 'fastForward' }
     | { name: 'reset' }
     | { name: 'previous' }
-    | { name: 'whatWeHaveLearned' }
     | { name: 'done' }
-    | { name: 'true' }
-    | { name: 'false' }
     | { name: 'match' }
     | { name: 'unmatch' }
-    | { name: 'tryGuessing' }
-    | { name: 'trueOrFalse' }
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
-    | { name: 'quizReview'; previousEpisodeNumber: number }
-    | { name: 'tryUntilDone'; capitalize?: boolean }
     | { name: 'pressPlay'; capitalize?: boolean }
-    | { name: 'yes' }
-    | { name: 'no' }
     | { name: 'introductionPrefix' }
     | { name: 'indexPageLink' }
     | { name: 'sideNotePrefix' }
@@ -212,21 +201,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'titlePrefix' }} />
           へようこそ！
         </InlineHeader>
-      )
-    }
-  }
-  if (args.name === 'yesNoQuizSeeAnswer') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Emoji size="mdlg">🤔</Emoji> See Answer
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Emoji size="mdlg">🤔</Emoji> 正解を見る
-        </>
       )
     }
   }
@@ -494,13 +468,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'whatWeHaveLearned') {
-    if (locale === 'en') {
-      return <>What we have learned so far</>
-    } else {
-      return <>これまでのまとめ</>
-    }
-  }
   if (args.name === 'done') {
     if (locale === 'en') {
       return (
@@ -520,62 +487,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'true') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Strong>True</Strong> <Emoji>👍</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          「<Strong>はい</Strong> <Emoji>🙆🏻‍♀️</Emoji>」
-        </>
-      )
-    }
-  }
-  if (args.name === 'false') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Strong>False</Strong> <Emoji>👎</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          「<Strong>いいえ</Strong> <Emoji>🙅🏻‍♀️</Emoji>」
-        </>
-      )
-    }
-  }
-  if (args.name === 'tryGuessing') {
-    if (locale === 'en') {
-      return <P>Try guessing before you press on the button below!</P>
-    } else {
-      return (
-        <P>
-          勘で予想してみてください！下のボタンを押していただいて、次のページに進むと答えがわかります。
-        </P>
-      )
-    }
-  }
-  if (args.name === 'trueOrFalse') {
-    if (locale === 'en') {
-      return (
-        <>
-          <H args={{ name: 'true' }} /> or <H args={{ name: 'false' }} />
-        </>
-      )
-    } else {
-      return (
-        <>
-          <H args={{ name: 'true' }} />か<H args={{ name: 'false' }} />
-        </>
-      )
-    }
-  }
   if (args.name === 'nextButtonNextPagePrimaryText') {
     if (locale === 'en') {
       return <>Go to Next Page</>
@@ -588,57 +499,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Continue to {episodePrefix(args.nextEpisodeNumber)}</>
     } else {
       return <>{episodePrefix(args.nextEpisodeNumber)}へ</>
-    }
-  }
-  if (args.name === 'quizReview') {
-    if (locale === 'en') {
-      return (
-        <>
-          <H3>
-            <H args={{ name: 'trueOrFalse' }} /> Quiz Review
-          </H3>
-          <P>
-            Before we begin, let’s take a look at{' '}
-            <InternalLink href={`/${args.previousEpisodeNumber}`}>
-              the quiz from episode {args.previousEpisodeNumber}
-            </InternalLink>
-            .
-          </P>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <H3>二択クイズの答え合わせ</H3>
-          <P>
-            まずはじめに、
-            <InternalLink href={`/${args.previousEpisodeNumber}`}>
-              前のページで出したクイズ
-            </InternalLink>
-            の答え合わせをしましょう。
-          </P>
-        </>
-      )
-    }
-  }
-  if (args.name === 'tryUntilDone') {
-    const capitalize =
-      typeof args.capitalize === 'undefined' ? true : args.capitalize
-    if (locale === 'en') {
-      return (
-        <Em>
-          {capitalize ? 'K' : 'k'}
-          eep pressing <H args={{ name: 'next' }} /> until you see{' '}
-          <H args={{ name: 'done' }} />
-        </Em>
-      )
-    } else {
-      return (
-        <Em>
-          <H args={{ name: 'done' }} /> になるまで <H args={{ name: 'next' }} />{' '}
-          を何度も押してみてください
-        </Em>
-      )
     }
   }
   if (args.name === 'pressPlay') {
@@ -656,36 +516,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <Em>
           <H args={{ name: 'play' }} /> を押してみてください:
         </Em>
-      )
-    }
-  }
-  if (args.name === 'yes') {
-    if (locale === 'en') {
-      return (
-        <Strong>
-          Yes <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔵</Emoji>
-        </Strong>
-      )
-    } else {
-      return (
-        <Strong>
-          「はい」 <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔵</Emoji>
-        </Strong>
-      )
-    }
-  }
-  if (args.name === 'no') {
-    if (locale === 'en') {
-      return (
-        <Strong>
-          No <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔴</Emoji>
-        </Strong>
-      )
-    } else {
-      return (
-        <Strong>
-          「いいえ」 <Emoji>🔵</Emoji> <Emoji>🔴</Emoji> <Emoji>🔴</Emoji>
-        </Strong>
       )
     }
   }
