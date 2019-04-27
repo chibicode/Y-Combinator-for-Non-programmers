@@ -15,7 +15,7 @@ import Emoji from 'src/components/Emoji'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
-import AER from 'src/components/Yc/AllExpressionRunners'
+import AER from 'src/components/Yc/AER'
 import InlineEmojiBoxes, {
   InlineEmojiBoxesForQuestion
 } from 'src/components/Yc/InlineEmojiBoxes'

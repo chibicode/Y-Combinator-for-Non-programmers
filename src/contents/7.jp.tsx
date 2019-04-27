@@ -1,7 +1,7 @@
 import React from 'react'
 import { InlineHeader, Em, P, Strong } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import AER from 'src/components/Yc/AllExpressionRunners'
+import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EpisodeCardList from 'src/components/EpisodeCardList'

@@ -17,7 +17,7 @@ export const ExpressionRunnerSimple = ({
   explanationsVisibility,
   showPriorities,
   showAllShowSteps,
-  newCaption,
+  caption,
   bottomRightBadgeOverrides,
   highlightOverrides,
   variableSize,
@@ -29,7 +29,7 @@ export const ExpressionRunnerSimple = ({
   showPriorities: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
-  newCaption?: ExpressionRunnerProps['newCaption']
+  caption?: ExpressionRunnerProps['caption']
   bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   variableSize: ExpressionRunnerProps['variableSize']
@@ -43,7 +43,7 @@ export const ExpressionRunnerSimple = ({
     showAllShowSteps={showAllShowSteps}
     variableSize={variableSize}
     containerSize={containerSize}
-    newCaption={newCaption}
+    caption={caption}
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     highlightOverrides={highlightOverrides}
     initializeInstructions={[

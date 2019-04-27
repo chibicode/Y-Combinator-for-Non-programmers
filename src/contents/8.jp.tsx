@@ -11,7 +11,7 @@ import {
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
-import AER from 'src/components/Yc/AllExpressionRunners'
+import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'

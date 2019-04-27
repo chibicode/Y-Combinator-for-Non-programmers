@@ -14,7 +14,7 @@ import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import AER from 'src/components/Yc/AllExpressionRunners'
+import AER from 'src/components/Yc/AER'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
 

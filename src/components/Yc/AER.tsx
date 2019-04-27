@@ -529,21 +529,21 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E1}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 0 }} />}
+      caption={<H args={{ name: 'secretCodeCaptionSimple', number: 0 }} />}
     />
   ),
   tfho: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E2}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 1 }} />}
+      caption={<H args={{ name: 'secretCodeCaptionSimple', number: 1 }} />}
     />
   ),
   idcf: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E3}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 2 }} />}
+      caption={<H args={{ name: 'secretCodeCaptionSimple', number: 2 }} />}
     />
   ),
   xemt: (
@@ -556,7 +556,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeCaptionSimple', number: 3 }} />}
+      caption={<H args={{ name: 'secretCodeCaptionSimple', number: 3 }} />}
     />
   ),
   eozk: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e6E5} />,
@@ -564,7 +564,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E6}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'A' }} />
       }
     />
@@ -573,7 +573,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
       }
       bottomRightBadgeOverrides={{
@@ -586,7 +586,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E1}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 0, letter: 'a' }} />
       }
       bottomRightBadgeOverrides={{
@@ -599,7 +599,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E1}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 0, letter: 'a' }} />
       }
     />
@@ -618,7 +618,7 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      newCaption={<H args={{ name: 'secretCodeAddOneCaption' }} />}
+      caption={<H args={{ name: 'secretCodeAddOneCaption' }} />}
     />
   ),
   mauj: (
@@ -656,7 +656,7 @@ export default {
       expressionContainer={lessonExpressions.e6E8}
       showPriorities
       isDone
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
       }
     />
@@ -665,7 +665,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E1}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
       }
     />
@@ -685,7 +685,7 @@ export default {
       expressionContainer={lessonExpressions.e7E2}
       showPriorities
       isDone
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'd' }} />
       }
     />
@@ -694,7 +694,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E3}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'a' }} />
       }
     />
@@ -714,7 +714,7 @@ export default {
       expressionContainer={lessonExpressions.e7E4}
       showPriorities
       isDone
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'd' }} />
       }
     />
@@ -723,7 +723,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E5}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'e' }} />
       }
     />
@@ -732,7 +732,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E6}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'g' }} />
       }
     />
@@ -749,7 +749,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E7}
       showPriorities
-      newCaption={<H args={{ name: 'secretCodeAddCaption' }} />}
+      caption={<H args={{ name: 'secretCodeAddCaption' }} />}
       containerSize={'xs'}
       variableSize={'md'}
     />
@@ -783,7 +783,7 @@ export default {
       expressionContainer={lessonExpressions.e7E8}
       showPriorities
       isDone
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'c' }} />
       }
     />
@@ -809,7 +809,7 @@ export default {
       expressionContainer={lessonExpressions.e7E9}
       showPriorities
       isDone
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 4, letter: 'c' }} />
       }
     />
@@ -828,14 +828,14 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      newCaption={<H args={{ name: 'secretCodeMultiplyCaption' }} />}
+      caption={<H args={{ name: 'secretCodeMultiplyCaption' }} />}
     />
   ),
   bdlj: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e8E2}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'e' }} />
       }
     />
@@ -844,7 +844,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e8E3}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
       }
     />
@@ -885,7 +885,7 @@ export default {
       showPriorities
       isDone
       variableSize={'md'}
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 6, letter: 'c' }} />
       }
     />
@@ -894,7 +894,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e8E5}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'e' }} />
       }
     />
@@ -903,7 +903,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e8E6}
       showPriorities
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'g' }} />
       }
     />
@@ -937,7 +937,7 @@ export default {
       expressionContainer={lessonExpressions.e8E7}
       showPriorities
       isDone
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'c' }} />
       }
     />
@@ -977,7 +977,7 @@ export default {
   fhlw: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e9E3}
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 0, letter: 'f' }} />
       }
     />
@@ -995,7 +995,7 @@ export default {
   yehl: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e9E4}
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'f' }} />
       }
     />
@@ -1025,7 +1025,7 @@ export default {
   kupy: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e9E6}
-      newCaption={
+      caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'f' }} />
       }
     />
@@ -1059,7 +1059,7 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      newCaption={
+      caption={
         <H
           args={{
             name: 'ifCaption',
@@ -1076,7 +1076,7 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      newCaption={
+      caption={
         <H
           args={{
             name: 'ifCaption',
@@ -1095,24 +1095,21 @@ export default {
       }}
     />
   ),
-  oluu: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.infiniteLoop}
+  azge: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E1}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
+      }
       showPriorities
-      containerSize={'xs'}
-      variableSize={'md'}
-      skipToTheEnd={false}
-      skipAlphaConvert
     />
   ),
-  ikqs: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.infiniteLoop}
+  eigf: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E2}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      skipToTheEnd={false}
-      speed={4}
     />
   )
 }

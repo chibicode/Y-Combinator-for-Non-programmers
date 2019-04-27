@@ -10,7 +10,6 @@ import ExpressionRunnerContext, {
 } from 'src/components/Yc/ExpressionRunnerContext'
 import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
-import locale from 'src/lib/locale'
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
@@ -68,11 +67,7 @@ export interface ExpressionRunnerProps {
   hideFuncUnboundBadgeOnExplanation: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
-  newCaption?: React.ReactNode
-  caption?: {
-    jp: React.ReactNode
-    en: React.ReactNode
-  }
+  caption?: React.ReactNode
 }
 
 interface PlaybackState {
@@ -174,7 +169,7 @@ const getActions = ({
 
 const ExpressionRunner = ({
   speed,
-  newCaption,
+  caption,
   expressionContainer,
   lastAllowedExpressionState,
   hideControls,
@@ -186,7 +181,6 @@ const ExpressionRunner = ({
   showAllShowSteps,
   skipAlphaConvert,
   hideBottomRightBadges,
-  caption,
   initializeInstructions,
   maxStepsAllowed,
   resetIndex,
@@ -273,14 +267,9 @@ const ExpressionRunner = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {newCaption && (
-            <ExpressionRunnerCaptionWrapper>
-              {newCaption}
-            </ExpressionRunnerCaptionWrapper>
-          )}
           {caption && (
             <ExpressionRunnerCaptionWrapper>
-              {caption[locale]}
+              {caption}
             </ExpressionRunnerCaptionWrapper>
           )}
         </Container>
