@@ -1122,5 +1122,15 @@ export default {
       speed={4}
       skipAlphaConvert
     />
+  ),
+  xlwo: (
+    <ExpressionRunnerSimple
+      isDone
+      expressionContainer={lessonExpressions.e10E3}
+      showPriorities
+      skipAlphaConvert
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 }

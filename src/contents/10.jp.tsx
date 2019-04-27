@@ -14,6 +14,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -128,6 +129,20 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.eqbo}
+            <P>
+              なんと、もともとの暗号は
+              <Strong>「1」</Strong>だったのに、
+              <EmojiWithText letter="z" />
+              ではなく、
+              <Strong>
+                下のような全然関係ない
+                <H args={{ name: 'bentoBox', short: true }} />
+              </Strong>
+              が残ってしまいました！
+            </P>
+            {AER.xlwo}
+            <P>前回では上手くいったのに、どうしてこうなったのでしょう？</P>
+            <EmojiSeparator emojis={['🤯', '❓', '🍬']} />
           </>
         )
       }

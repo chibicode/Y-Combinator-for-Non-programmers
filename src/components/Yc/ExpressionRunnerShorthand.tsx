@@ -21,11 +21,13 @@ export const ExpressionRunnerSimple = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   variableSize,
-  containerSize
+  containerSize,
+  skipAlphaConvert
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   isDone: boolean
+  skipAlphaConvert: boolean
   showPriorities: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
@@ -44,6 +46,7 @@ export const ExpressionRunnerSimple = ({
     variableSize={variableSize}
     containerSize={containerSize}
     caption={caption}
+    skipAlphaConvert={skipAlphaConvert}
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     highlightOverrides={highlightOverrides}
     initializeInstructions={[
