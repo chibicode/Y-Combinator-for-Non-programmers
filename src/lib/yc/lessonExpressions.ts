@@ -11,7 +11,8 @@ import {
   multParams,
   isZeroParams,
   highlighted,
-  multParamsRightHighlighted
+  multParamsRightHighlighted,
+  alphaConversionSimpleExampleParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -296,17 +297,17 @@ export const e10E3 = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'b', 1))
 )
 
-export const e10E4 = initializeExpressionContainer([
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: 'a'
-    }
-  },
-  'question',
-  'v'
-])
+export const e10E4 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('question')
+)
+
+export const e10E5 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('c')
+)
+
+export const e10E6 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('d')
+)
 
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',

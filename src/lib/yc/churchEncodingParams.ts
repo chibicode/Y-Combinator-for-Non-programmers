@@ -159,3 +159,17 @@ export const isZeroParams = (
   ],
   z
 ]
+
+export const alphaConversionSimpleExampleParams = (
+  question: VariableNames
+): CallExpressionParams => [
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'a'
+    }
+  },
+  question,
+  'v'
+]

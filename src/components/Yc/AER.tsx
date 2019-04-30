@@ -1138,5 +1138,27 @@ export default {
       expressionContainer={lessonExpressions.e10E4}
       showPriorities
     />
+  ),
+  gszp: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E5}
+      showPriorities
+      skipToTheEnd={false}
+      speed={2}
+      highlightOverrides={{
+        c: 'highlighted'
+      }}
+    />
+  ),
+  kntz: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E6}
+      showPriorities
+      skipToTheEnd={false}
+      speed={2}
+      highlightOverrides={{
+        d: 'highlighted'
+      }}
+    />
   )
 }

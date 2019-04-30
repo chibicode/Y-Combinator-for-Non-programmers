@@ -182,13 +182,62 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlineEmojiBoxesForQuestion size="md" /> に何か入れてみる
+          </>
+        ),
+        content: (
+          <>
             <P>
-              とりあえず、適当に
-              <InlineEmojiBoxesForQuestion />
-              に何か料理を入れてみましょう。
+              とりあえず、
+              <EmojiWithText letter="c" />
+              を<InlineEmojiBoxesForQuestion />
+              に入れてみました。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.gszp}
+            <P>
+              <Strong>
+                最終的に
+                <EmojiWithText letter="c" />
+                になりますね。
+              </Strong>
             </P>
             <Hr />
-            <P>というわけで…</P>
+            <P>
+              <EmojiWithText letter="d" />
+              を<InlineEmojiBoxesForQuestion />
+              に入れてみたらどうでしょう？
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.kntz}
+            <P>
+              <Strong>
+                こちらは、最終的に
+                <EmojiWithText letter="d" />
+                になりました。
+              </Strong>
+            </P>
+            <Hr />
+            {AER.wbpx}
+            <P>
+              ということは、こちらの
+              <H args={{ name: 'bentoBox', short: true }} />を
+              <H args={{ name: 'play' }} />
+              すると、かならず
+              <Strong>
+                最終的に
+                <InlineEmojiBoxesForQuestion />
+                の料理だけになる
+              </Strong>
+              のでしょうか？
+            </P>
+            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
           </>
         )
       }

@@ -26,6 +26,18 @@ InlineEmojiBoxesForQuestion.defaultProps = {
   size: 'lg'
 }
 
+const widthAndHeight = (size: InlineEmojiBoxProps['size']) =>
+  ({
+    lg: 1.5,
+    md: 1.25
+  }[size])
+
+const emojiSize = (size: InlineEmojiBoxProps['size']): 'md' | 'sm' =>
+  ({
+    lg: 'md' as 'md',
+    md: 'sm' as 'sm'
+  }[size])
+
 const InlineEmojiBoxes = ({
   emojis,
   background,
@@ -43,8 +55,8 @@ const InlineEmojiBoxes = ({
       <FlexCenter
         key={`${emoji}${i}`}
         css={css`
-          width: ${size === 'lg' ? '1.5em' : '1.25em'};
-          height: ${size === 'lg' ? '1.5em' : '1.25em'};
+          width: ${widthAndHeight(size)}em;
+          height: ${widthAndHeight(size)}em;
           border-top: 2px solid ${colors('indigo300')};
           border-bottom: 2px solid ${colors('indigo300')};
           border-left: 2px solid ${colors('indigo300')};
@@ -53,7 +65,9 @@ const InlineEmojiBoxes = ({
           margin-right: -1px;
         `}
       >
-        <Emoji noVerticalTransform>{emoji}</Emoji>
+        <Emoji noVerticalTransform size={emojiSize(size)}>
+          {emoji}
+        </Emoji>
       </FlexCenter>
     ))}
   </span>
