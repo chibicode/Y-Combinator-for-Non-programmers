@@ -13,6 +13,7 @@ import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -238,6 +239,69 @@ export default () => (
               のでしょうか？
             </P>
             <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiWithText letter="b" />
+            を入れてみると
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="b" />
+                を入れてみる
+              </Strong>
+              とどうなるでしょう？
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />{' '}
+              (さきほどのふたつの例と比べて、ゆっくりと進みます)
+            </P>
+            {AER.bmms}
+            <P>
+              なんと、最後に
+              <Strong>
+                <EmojiWithText letter="v" />
+              </Strong>
+              が残りました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="v" />,
+                <Emoji>🤯</Emoji>,
+                <EmojiForLetter letter="v" />
+              ]}
+            />
+            <P>まとめると、こうなります:</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  <InlineEmojiBoxesForQuestion />に
+                  <Strong>
+                    <EmojiWithText letter="b" />
+                  </Strong>
+                  を入れた場合、
+                  <Strong>
+                    <EmojiWithText letter="v" />
+                  </Strong>
+                  が残る。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  それ以外の場合、
+                  <InlineEmojiBoxesForQuestion />
+                  に入れた料理が残る。
+                </Em>
+              </UlLi>
+            </Ul>
+            <P>でも、どうしてこうなったのでしょう？</P>
           </>
         )
       }

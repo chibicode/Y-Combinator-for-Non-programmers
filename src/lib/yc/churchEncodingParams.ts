@@ -161,7 +161,7 @@ export const isZeroParams = (
 ]
 
 export const alphaConversionSimpleExampleParams = (
-  question: VariableNames
+  question: VariableNames | HighlightedVariableExpressionParams
 ): CallExpressionParams => [
   {
     arg: 'a',

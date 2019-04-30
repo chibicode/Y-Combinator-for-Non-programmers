@@ -309,6 +309,13 @@ export const e10E6 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('d')
 )
 
+export const e10E7 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams({
+    name: 'b',
+    highlighted: true
+  })
+)
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

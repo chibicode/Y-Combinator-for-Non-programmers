@@ -1160,5 +1160,13 @@ export default {
         d: 'highlighted'
       }}
     />
+  ),
+  bmms: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E7}
+      showPriorities
+      skipAlphaConvert
+      skipToTheEnd={false}
+    />
   )
 }
