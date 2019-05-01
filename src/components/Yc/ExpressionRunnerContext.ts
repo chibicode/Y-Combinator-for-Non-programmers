@@ -12,6 +12,7 @@ export interface ExpressionRunnerContextProps {
     [key in VariableNames]?: VariableExpression['highlightType']
   }
   started: boolean
+  highlightOverrideActiveAfterStart: boolean
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
@@ -21,7 +22,8 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   isDoneOrReady: false,
   started: false,
   bottomRightBadgeOverrides: {},
-  highlightOverrides: {}
+  highlightOverrides: {},
+  highlightOverrideActiveAfterStart: false
 }
 
 export default React.createContext<ExpressionRunnerContextProps>(

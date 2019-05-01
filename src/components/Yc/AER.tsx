@@ -1168,5 +1168,33 @@ export default {
       skipAlphaConvert
       skipToTheEnd={false}
     />
+  ),
+  gmcn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E7}
+      showPriorities
+      skipAlphaConvert
+      initialState="showFuncUnbound"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      highlightOverrideActiveAfterStart
+    />
+  ),
+  dpst: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E5}
+      showPriorities
+      skipAlphaConvert
+      initialState="showFuncUnbound"
+    />
+  ),
+  bsbn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E6}
+      showPriorities
+      skipAlphaConvert
+      initialState="showFuncUnbound"
+    />
   )
 }

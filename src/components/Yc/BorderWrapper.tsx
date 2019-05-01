@@ -11,7 +11,7 @@ interface BorderWrapperProps {
   topLeftBadgeType: VariableExpression['topLeftBadgeType']
   children: React.ReactNode
   isQuestion: boolean
-  highlightType: VariableExpression['highlightType'] | 'none'
+  highlightType: VariableExpression['highlightType'] | 'none' | 'pink'
 }
 
 const background = (
@@ -26,6 +26,11 @@ const background = (
     `
   }
   switch (highlightType) {
+    case 'pink': {
+      return css`
+        background: ${colors('pink50')};
+      `
+    }
     case 'default': {
       return css`
         background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};

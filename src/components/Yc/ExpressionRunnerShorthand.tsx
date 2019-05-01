@@ -20,6 +20,7 @@ export const ExpressionRunnerSimple = ({
   caption,
   bottomRightBadgeOverrides,
   highlightOverrides,
+  highlightOverrideActiveAfterStart,
   variableSize,
   containerSize,
   skipAlphaConvert
@@ -36,6 +37,7 @@ export const ExpressionRunnerSimple = ({
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   variableSize: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
+  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -49,6 +51,7 @@ export const ExpressionRunnerSimple = ({
     skipAlphaConvert={skipAlphaConvert}
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     highlightOverrides={highlightOverrides}
+    highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
     initializeInstructions={[
       isDone
         ? {

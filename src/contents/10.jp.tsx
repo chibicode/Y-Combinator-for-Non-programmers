@@ -10,6 +10,7 @@ import {
   Em
 } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -17,6 +18,7 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 
 export default () => (
   <EpisodeCardList
@@ -302,6 +304,60 @@ export default () => (
               </UlLi>
             </Ul>
             <P>でも、どうしてこうなったのでしょう？</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            に同じ料理があるかどうかで結果が変わる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              理由は、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理があるかどうかで結果が変わる
+              </Strong>
+              からです。
+            </P>
+            <P>
+              さきほど
+              <InlineEmojiBoxesForQuestion />に
+              <Strong>
+                <EmojiWithText letter="b" />
+              </Strong>
+              を入れた場合、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
+              <Strong>
+                両方とも
+                <Strong>
+                  <EmojiWithText letter="b" />
+                </Strong>
+                に
+              </Strong>
+              なっているのに注目です。
+            </P>
+            {AER.gmcn}
+            <P>
+              この状態で進めていくと、
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              が終わった時に、
+            </P>
+            <P>
+              それ以外の料理を入れた場合、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              に同じ料理はありません。
+            </P>
+            {AER.dpst}
+            {AER.bsbn}
           </>
         )
       }

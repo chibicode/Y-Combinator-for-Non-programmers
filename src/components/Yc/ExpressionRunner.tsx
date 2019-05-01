@@ -68,6 +68,7 @@ export interface ExpressionRunnerProps {
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   caption?: React.ReactNode
+  highlightOverrideActiveAfterStart: boolean
 }
 
 interface PlaybackState {
@@ -188,7 +189,8 @@ const ExpressionRunner = ({
   hideFuncUnboundBadgeOnExplanation,
   bottomRightBadgeOverrides,
   highlightOverrides,
-  hideRemainingTime
+  hideRemainingTime,
+  highlightOverrideActiveAfterStart
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -233,6 +235,7 @@ const ExpressionRunner = ({
         hideBottomRightBadges,
         bottomRightBadgeOverrides,
         highlightOverrides,
+        highlightOverrideActiveAfterStart,
         variableSize,
         started: expressionContainerManagerState.numStepsTaken > 0,
         isDoneOrReady: isDone || isReady
@@ -355,7 +358,9 @@ ExpressionRunner.defaultProps = {
   hideRemainingTime: false,
   bottomRightBadgeOverrides:
     expressionRunnerContextDefault.bottomRightBadgeOverrides,
-  highlightOverrides: expressionRunnerContextDefault.highlightOverrides
+  highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
+  highlightOverrideActiveAfterStart:
+    expressionRunnerContextDefault.highlightOverrideActiveAfterStart
 }
 
 export default ExpressionRunner
