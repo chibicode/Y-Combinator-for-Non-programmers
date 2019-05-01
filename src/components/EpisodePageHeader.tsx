@@ -27,7 +27,7 @@ const EpisodePageHeader = ({
         episodeNumber >= 1 && (
           <InternalLink
             href={`/${episodeNumber === 1 ? '' : episodeNumber - 1}`}
-            css={[navigationLinkClasses]}
+            css={navigationLinkClasses}
           >
             «{' '}
             <H

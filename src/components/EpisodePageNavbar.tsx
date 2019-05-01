@@ -5,7 +5,7 @@ import { colors, fontSizes, spaces, radii } from 'src/lib/theme'
 export interface EpisodePageNavbarProps {
   cssOverrides?: SerializedStyles
   leftContent: React.ReactNode
-  centerContent: React.ReactNode
+  centerContent?: React.ReactNode
   rightContent: React.ReactNode
 }
 
@@ -48,7 +48,7 @@ const EpisodePageNavbar = ({
     >
       <div
         css={css`
-          width: 35%;
+          width: ${centerContent ? 35 : 50}%;
           text-align: left;
         `}
       >
@@ -64,7 +64,7 @@ const EpisodePageNavbar = ({
       </div>
       <div
         css={css`
-          width: 35%;
+          width: ${centerContent ? 35 : 50}%;
           text-align: right;
         `}
       >
