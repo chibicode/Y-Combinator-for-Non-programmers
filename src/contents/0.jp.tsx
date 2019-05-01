@@ -21,6 +21,7 @@ import H from 'src/components/H'
 import { lessonTitle } from 'src/lib/titles'
 import { dateString, dateSchemaString } from 'src/lib/date'
 import YoutubeEmbed from 'src/components/YoutubeEmbed'
+import { githubRepo } from 'src/lib/meta'
 
 export const whatIsComputerScience = (
   <>
@@ -46,9 +47,7 @@ export default () => (
               <time dateTime={dateSchemaString}>{dateString}</time>
               <br />
               <InlineHeader>ソースコード:</InlineHeader>{' '}
-              <ExternalLink href="https://github.com/chibicode/yc">
-                GitHubで公開中
-              </ExternalLink>
+              <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
             </P>
           )
         },

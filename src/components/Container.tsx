@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import React from 'react'
 import maxWidths, { allMaxWidths } from 'src/lib/theme/maxWidths'
 import spaces, { allSpaces } from 'src/lib/theme/spaces'
@@ -9,20 +9,25 @@ export interface ContainerProps {
   Component: React.ComponentType | string
   size: keyof typeof allMaxWidths
   horizontalPadding: keyof typeof allSpaces
+  cssOverrides?: SerializedStyles
 }
 
 const Container = ({
   children,
   Component,
   size,
-  horizontalPadding
+  horizontalPadding,
+  cssOverrides
 }: ContainerProps) => (
   <Component
-    css={css`
-      max-width: ${maxWidths(size)};
-      margin: 0 auto;
-      padding: 0 ${spaces(horizontalPadding)};
-    `}
+    css={[
+      css`
+        max-width: ${maxWidths(size)};
+        margin: 0 auto;
+        padding: 0 ${spaces(horizontalPadding)};
+      `,
+      cssOverrides
+    ]}
   >
     {children}
   </Component>
@@ -31,7 +36,6 @@ const Container = ({
 Container.defaultProps = {
   Component: 'div',
   size: 'sm',
-  verticalMargin: 0,
   horizontalPadding: 0.5
 }
 

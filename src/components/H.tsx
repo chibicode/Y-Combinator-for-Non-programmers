@@ -95,6 +95,12 @@ export interface HProps {
     | {
         name: 'takeABreak'
       }
+    | {
+        name: 'privacyPolicy'
+      }
+    | {
+        name: 'aboutThisSite'
+      }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -956,6 +962,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </P>
         </>
       )
+    }
+  }
+  if (args.name === 'privacyPolicy') {
+    if (locale === 'en') {
+      return <>Privacy Policy</>
+    } else {
+      return <>プライバシーポリシー</>
+    }
+  }
+  if (args.name === 'aboutThisSite') {
+    if (locale === 'en') {
+      return <>About this Site</>
+    } else {
+      return <>このサイトについて</>
     }
   }
   throw new Error('error')

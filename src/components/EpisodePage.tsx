@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Container from 'src/components/Container'
 import Content, { ContentProps } from 'src/components/Content'
 import EpisodePageHeader from 'src/components/EpisodePageHeader'
+import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
@@ -52,6 +53,7 @@ const EpisodePage = ({
         >
           <Content name={contentName} />
         </EpisodeContext.Provider>
+        <EpisodePageFooter />
       </Container>
     </Page>
   )

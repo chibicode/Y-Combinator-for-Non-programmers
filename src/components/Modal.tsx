@@ -28,10 +28,6 @@ const Modal = ({
         background: ${colors('indigo30066')};
         z-index: ${zIndices('modal')};
         overflow-y: auto;
-        padding: ${spaces(1)} 0;
-        ${ns} {
-          padding: ${spaces(2)} 0;
-        }
       `}
       ref={sectionEl}
       onClick={onClick}
@@ -45,7 +41,19 @@ const Modal = ({
           `
         ]}
       />
-      <Container>{children}</Container>
+      <Container
+        cssOverrides={css`
+          margin-top: ${spaces(1)};
+          margin-bottom: ${spaces(1)};
+
+          ${ns} {
+            margin-top: ${spaces(2)};
+            margin-bottom: ${spaces(2)};
+          }
+        `}
+      >
+        {children}
+      </Container>
     </section>
   )
 }

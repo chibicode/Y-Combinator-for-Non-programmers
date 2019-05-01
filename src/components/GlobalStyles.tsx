@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 import 'modern-normalize'
 import React from 'react'
-import { colors, lineHeights, spaces, ns } from 'src/lib/theme'
+import { colors, lineHeights, ns } from 'src/lib/theme'
 const pink = colors('pink500')
 
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
@@ -12,11 +12,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
     smoothscroll.polyfill()
   }, [])
   return (
-    <div
-      css={css`
-        padding-bottom: ${spaces(6)};
-      `}
-    >
+    <div>
       {/* NOTE: For some reason, if this Global component appears AFTER {children},
     then there's a moment where the styles are not applied. */}
       <Global
