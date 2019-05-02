@@ -13,7 +13,6 @@ import {
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
-import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 
 function matchBetaReduced(
   e: VariableExpression
@@ -29,6 +28,8 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     return {
       ...e,
+      // argPriorityAgg: [],
+      // funcPriorityAgg: [],
       highlightType: 'highlighted',
       topLeftBadgeType: 'betaReduced',
       bottomRightBadgeType: 'funcBound',
@@ -168,7 +169,7 @@ const stepToBetaReducePreviewAfter = (
   const fromAlphaConverCount = e.func.arg.alphaConverCount
   const to = e.arg
 
-  return prioritizeExpression({
+  return {
     ...e,
     state: 'betaReducePreviewAfter',
     arg: toBetaReducePreviewAfter(
@@ -189,7 +190,7 @@ const stepToBetaReducePreviewAfter = (
         true
       )
     }
-  })
+  }
 }
 
 export default stepToBetaReducePreviewAfter

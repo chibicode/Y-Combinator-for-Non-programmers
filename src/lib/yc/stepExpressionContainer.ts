@@ -28,6 +28,7 @@ import {
   FunctionExpression,
   StepChild
 } from 'src/types/yc/ExpressionTypes'
+import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 
 const stepExpressionContainerReset = (
   e: ContainerWithState<'needsReset'>
@@ -204,7 +205,10 @@ const runStep = (
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
-      expression: nextExpression,
+      expression:
+        previouslyChangedExpressionState === 'betaReducePreviewAfter'
+          ? prioritizeExpression(nextExpression)
+          : nextExpression,
       previouslyChangedExpressionState,
       matchExists
     }
@@ -243,7 +247,10 @@ const runStep = (
   } else {
     return {
       ...e,
-      expression: newExpression,
+      expression:
+        previouslyChangedExpressionState === 'betaReducePreviewAfter'
+          ? prioritizeExpression(newExpression)
+          : newExpression,
       containerState: 'stepped',
       matchExists,
       previouslyChangedExpressionState
