@@ -1194,6 +1194,7 @@ export default {
       expressionContainer={lessonExpressions.e10E7}
       showPriorities
       skipAlphaConvert
+      hidePrioritiesOnSecond
       firstInitializeInstructions={[
         {
           type: 'stepForwardUntilPreviouslyChangedExpressionState',
@@ -1218,7 +1219,6 @@ export default {
   mpcx: (
     <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e10E7}
-      showPriorities
       skipAlphaConvert
       firstInitializeInstructions={[
         {
@@ -1262,6 +1262,7 @@ export default {
     <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e10E5}
       showPriorities
+      hidePrioritiesOnSecond
       skipAlphaConvert
       firstInitializeInstructions={[
         {
@@ -1283,7 +1284,6 @@ export default {
   ttvy: (
     <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e10E5}
-      showPriorities
       skipAlphaConvert
       firstInitializeInstructions={[
         {

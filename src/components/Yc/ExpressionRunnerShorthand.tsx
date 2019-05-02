@@ -157,6 +157,7 @@ export const ExpressionRunnerPairSimple = ({
   finalIsDone,
   finalState,
   showPriorities,
+  hidePrioritiesOnSecond,
   firstInitializeInstructions,
   secondInitializeInstructions,
   highlightOverrides,
@@ -168,6 +169,7 @@ export const ExpressionRunnerPairSimple = ({
   finalIsDone: boolean
   finalState?: CallStates
   showPriorities: boolean
+  hidePrioritiesOnSecond: boolean
   skipAlphaConvert: boolean
   firstInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
   secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
@@ -216,7 +218,7 @@ export const ExpressionRunnerPairSimple = ({
     <ExpressionRunner
       expressionContainer={expressionContainer}
       hideControls
-      hidePriorities={!showPriorities}
+      hidePriorities={!showPriorities || hidePrioritiesOnSecond}
       explanationsVisibility="hidden"
       variableSize={'lg'}
       skipAlphaConvert={skipAlphaConvert}
@@ -244,7 +246,8 @@ ExpressionRunnerPairSimple.defaultProps = {
   initialState: 'default',
   finalIsDone: false,
   showPriorities: false,
-  skipAlphaConvert: false
+  skipAlphaConvert: false,
+  hidePrioritiesOnSecond: false
 }
 
 export const ExpressionRunnerSingleStep = ({
