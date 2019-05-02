@@ -414,6 +414,19 @@ export default () => (
                 が同じか違うかで、結果が変わる場合がある。
               </Strong>
             </P>
+            <Hr />
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
+              <InlineHeader>同じ場合:</InlineHeader>
+            </P>
+            {AER.ywja}
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
+              <InlineHeader>違う場合:</InlineHeader>
+            </P>
+            {AER.tuzs}
           </>
         )
       }

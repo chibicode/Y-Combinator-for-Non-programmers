@@ -1300,5 +1300,45 @@ export default {
         }
       ]}
     />
+  ),
+  ywja: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e10E7}
+      skipAlphaConvert
+      showPriorities
+      firstInitializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncUnbound'
+        }
+      ]}
+      secondInitializeInstructions={[
+        {
+          type: 'stepForwardUntilTheEnd'
+        }
+      ]}
+      highlightOverrideActiveAfterStart
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+    />
+  ),
+  tuzs: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e10E5}
+      skipAlphaConvert
+      showPriorities
+      firstInitializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncUnbound'
+        }
+      ]}
+      secondInitializeInstructions={[
+        {
+          type: 'stepForwardUntilTheEnd'
+        }
+      ]}
+    />
   )
 }
