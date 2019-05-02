@@ -63,7 +63,6 @@ export interface ExpressionRunnerProps {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
   skipToTheEnd: boolean
-  hideRemainingTime: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
@@ -121,7 +120,7 @@ const getActions = ({
       }, autoplaySpeed(speed))
       setPlaybackStatus({
         isPlaying: true,
-        isFastForwarding: speed > 1
+        isFastForwarding: speed > 1.5
       })
     },
 
@@ -189,7 +188,6 @@ const ExpressionRunner = ({
   hideFuncUnboundBadgeOnExplanation,
   bottomRightBadgeOverrides,
   highlightOverrides,
-  hideRemainingTime,
   highlightOverrideActiveAfterStart
 }: ExpressionRunnerProps) => {
   const {
@@ -332,7 +330,7 @@ const ExpressionRunner = ({
                   speed
                 )}
                 isDone={isDone}
-                hideRemainingTime={hideRemainingTime}
+                hideRemainingTime={speed <= 1.5}
               />
             </ExpressionRunnerCaptionWrapper>
           )}
@@ -355,7 +353,6 @@ ExpressionRunner.defaultProps = {
   hidePlayButton: false,
   speed: 1,
   hideFuncUnboundBadgeOnExplanation: false,
-  hideRemainingTime: false,
   bottomRightBadgeOverrides:
     expressionRunnerContextDefault.bottomRightBadgeOverrides,
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,

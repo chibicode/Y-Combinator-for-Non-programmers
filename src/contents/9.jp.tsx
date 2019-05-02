@@ -11,7 +11,6 @@ import {
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
-import Emoji from 'src/components/Emoji'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
@@ -92,14 +91,15 @@ export default () => (
             <EmojiSeparator emojis={['🍬', '🤔', '🍩']} />
             <P>というわけで、ここで質問です！</P>
             <P>
-              <Strong>質問:</Strong> 上の
+              <H args={{ name: 'question' }} /> 上の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>
-              」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+              」だ。
+              <H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="no" tooHard />
           </>
@@ -186,14 +186,15 @@ export default () => (
             {AER.mrky}
             <P>というわけで、ここで質問です！</P>
             <P>
-              <Strong>質問:</Strong> 上の
+              <H args={{ name: 'question' }} /> 上の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>
-              」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+              」だ。
+              <H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="yes" tooHard />
           </>
@@ -290,14 +291,15 @@ export default () => (
             {AER.qdkf}
             <P>というわけで、ここで質問です！</P>
             <P>
-              <Strong>質問:</Strong> 上の
+              <H args={{ name: 'question' }} /> 上の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>
-              」だ。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+              」だ。
+              <H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="yes" tooHard />
           </>

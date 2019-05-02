@@ -23,18 +23,6 @@ import { dateString, dateSchemaString } from 'src/lib/date'
 import YoutubeEmbed from 'src/components/YoutubeEmbed'
 import { githubRepo } from 'src/lib/meta'
 
-export const whatIsComputerScience = (
-  <>
-    <P>
-      <Strong>
-        コンピューターサイエンスとは、
-        プログラミングやAI開発の根幹となる学問です。
-      </Strong>
-      たとえば、グーグルなどの検索エンジンや、地図アプリのナビ機能、カメラアプリの顔認識機能には、コンピューターサイエンスの考え方が応用されています。
-    </P>
-  </>
-)
-
 export default () => (
   <EpisodeCardList
     cards={[
@@ -118,7 +106,9 @@ export default () => (
               </Em>
               。
             </P>
-            {whatIsComputerScience}
+            <P>
+              <H args={{ name: 'whatIsComputerScience' }} />
+            </P>
             <P>
               プログラミングをマスターしなくても、コンピュターサイエンスの勘所を押さえれば、たとえばAIがどう作られているのかをなんとなく理解することができます。
             </P>

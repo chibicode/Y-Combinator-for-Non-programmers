@@ -94,6 +94,8 @@ export interface HProps {
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
+    | { name: 'whatIsComputerScience' }
+    | { name: 'yesOrNo' }
     | {
         name: 'takeABreak'
       }
@@ -598,7 +600,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'yesNoQuizDontWorry') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -758,7 +760,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Strong css={slightlyLargeCaptionCss}>「{args.number}」</Strong>
             になる
           </Em>
-          。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+          。<H args={{ name: 'yesOrNo' }} />
         </>
       )
     }
@@ -849,7 +851,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'theAnswerIs') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -860,7 +862,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'secretCodeAddOneCaption') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -872,7 +874,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'secretCodeAddCaption') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -884,7 +886,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'secretCodeMultiplyCaption') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -896,7 +898,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'ifCaption') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -915,7 +917,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'takeABreak') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
@@ -999,6 +1001,32 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               が違う！
             </>
           )}
+        </>
+      )
+    }
+  }
+  if (args.name === 'whatIsComputerScience') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Strong>
+            コンピューターサイエンスとは、
+            プログラミングやAI開発の根幹となる学問です。
+          </Strong>
+          たとえば、グーグルなどの検索エンジンや、地図アプリのナビ機能、カメラアプリの顔認識機能には、コンピューターサイエンスの考え方が応用されています。
+        </>
+      )
+    }
+  }
+  if (args.name === 'yesOrNo') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
         </>
       )
     }

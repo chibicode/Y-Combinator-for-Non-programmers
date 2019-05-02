@@ -98,7 +98,7 @@ export default () => (
             </P>
             {AER.xemt}
             <P>
-              <InlineHeader>問題:</InlineHeader>{' '}
+              <H args={{ name: 'question' }} />{' '}
               <Em>
                 こちらに隠されている暗号は<Strong>「4」</Strong>でしょうか？
               </Em>

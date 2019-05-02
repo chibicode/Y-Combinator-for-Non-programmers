@@ -112,7 +112,6 @@ export const ExpressionRunnerPlayButtonOnly = ({
     showAllShowSteps={showAllShowSteps}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
-    hideRemainingTime={speed === 1}
     variableSize={variableSize}
     containerSize={containerSize}
     skipAlphaConvert={skipAlphaConvert}
