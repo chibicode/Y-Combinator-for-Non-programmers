@@ -23,12 +23,14 @@ export const ExpressionRunnerSimple = ({
   highlightOverrideActiveAfterStart,
   variableSize,
   containerSize,
-  skipAlphaConvert
+  skipAlphaConvert,
+  nextIteration
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   isDone: boolean
   skipAlphaConvert: boolean
+  nextIteration?: boolean
   showPriorities: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
@@ -52,16 +54,28 @@ export const ExpressionRunnerSimple = ({
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     highlightOverrides={highlightOverrides}
     highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
-    initializeInstructions={[
-      isDone
-        ? {
-            type: 'stepForwardUntilTheEnd'
-          }
-        : {
-            type: 'stepForwardUntilPreviouslyChangedExpressionState',
-            state: initialState
-          }
-    ]}
+    initializeInstructions={
+      nextIteration
+        ? [
+            {
+              type: 'nextIteration'
+            },
+            {
+              type: 'stepForwardUntilPreviouslyChangedExpressionState',
+              state: initialState
+            }
+          ]
+        : [
+            isDone
+              ? {
+                  type: 'stepForwardUntilTheEnd'
+                }
+              : {
+                  type: 'stepForwardUntilPreviouslyChangedExpressionState',
+                  state: initialState
+                }
+          ]
+    }
   />
 )
 

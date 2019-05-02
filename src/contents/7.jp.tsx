@@ -1,5 +1,5 @@
 import React from 'react'
-import { InlineHeader, Em, P, Strong } from 'src/components/ContentTags'
+import { Em, P, Strong } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'
@@ -97,7 +97,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
             <P>
-              <InlineHeader>ちなみに:</InlineHeader>{' '}
+              <H args={{ name: 'byTheWay' }} />{' '}
               <Strong>
                 上の
                 <H args={{ name: 'bentoBox', short: true }} />
@@ -293,7 +293,7 @@ export default () => (
             </P>
             {AER.bxdf}
             <P>
-              <InlineHeader>ちなみに:</InlineHeader> 今回も、
+              <H args={{ name: 'byTheWay' }} /> 今回も、
               <Strong>
                 上の
                 <H args={{ name: 'bentoBox', short: true }} />

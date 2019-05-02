@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  Hr,
-  P,
-  InlineHeader,
-  Strong,
-  Ul,
-  UlLi,
-  Em
-} from 'src/components/ContentTags'
+import { Hr, P, Strong, Ul, UlLi, Em } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import H from 'src/components/H'
@@ -124,15 +116,16 @@ export default () => (
                 <Strong>
                   <InlineEmojiBoxesForQuestion />
                   に料理をひとつだけ入れて
+                  <H args={{ name: 'play' }} />
+                  すると
                 </Strong>
-                <H args={{ name: 'play' }} />
-                すると、
+                、
               </UlLi>
               <UlLi>
                 最終的にかならず
                 <Strong>
                   <InlineEmojiBoxesForQuestion />
-                  に入れた料理がひとつだけ残る
+                  に入れた料理が残る
                 </Strong>
                 。<H args={{ name: 'yesOrNo' }} />
               </UlLi>
@@ -144,23 +137,35 @@ export default () => (
       {
         title: (
           <>
-            <EmojiWithText letter="b" />
-            を入れてみると
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
           </>
         ),
         content: (
           <>
             <P>
-              では、
               <Strong>
-                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="b" />
-                を入れてみる
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
               </Strong>
-              とどうなるでしょう？
             </P>
             <P>
+              <Strong>
+                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="b" />
+                を入れる
+              </Strong>
+              のがポイントです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <Emoji>➡</Emoji>,
+                <InlineEmojiBoxesForQuestion size="md" />
+              ]}
+            />
+            <P>
+              <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="b" />
+              を入れてみると下のようになります。
               <H args={{ name: 'pressFastForward' }} />{' '}
-              (さきほどのふたつの例と比べて、ゆっくりと進みます)
             </P>
             {AER.bmms}
             <P>
@@ -168,7 +173,7 @@ export default () => (
               <Strong>
                 <EmojiWithText letter="v" />
               </Strong>
-              が残りました。
+              が残りました！
             </P>
             <EmojiSeparator
               nodes={[
@@ -177,7 +182,24 @@ export default () => (
                 <EmojiForLetter letter="v" />
               ]}
             />
-            <P>まとめると、こうなります:</P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              こちらの
+              <H args={{ name: 'bentoBox', short: true }} />
+              の…
+            </P>
+            {AER.wbpx}
             <Ul>
               <UlLi>
                 <Em>
@@ -217,7 +239,7 @@ export default () => (
         content: (
           <>
             <P>
-              理由は、さきほど
+              理由は、
               <InlineEmojiBoxesForQuestion />に
               <Strong>
                 <EmojiWithText letter="b" />
@@ -237,18 +259,16 @@ export default () => (
             {AER.gmcn}
             <P>
               すると途中で
-              <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                が両方とも
-                <EmojiWithText letter="b" />
-                になり…
-              </Strong>
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が両方とも
+              <EmojiWithText letter="b" />
+              になり…
             </P>
             {AER.dqlf}
             <P>
               最後に
-              <EmojiWithText letter="b" />
+              <EmojiWithText letter="v" />
               が残るのです。
             </P>
             {AER.mpcx}
@@ -309,24 +329,40 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                が同じか違うかで、結果が変わる場合がある。
+                が同じか違うかで、結果が変わる
+                <H args={{ name: 'bentoBox' }} />
+                がある。
               </Strong>
             </P>
             <Hr />
             <P>
+              たとえばこちらは
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
-              <InlineHeader>同じ場合:</InlineHeader>
+              <Strong>同じ場合</Strong>。
+              <H args={{ name: 'play' }} />
+              すると最後に
+              <EmojiWithText letter="v" />
+              が残ります。
             </P>
             {AER.ywja}
             <P>
+              こちらは
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
-              <InlineHeader>違う場合:</InlineHeader>
+              <Strong>違う場合</Strong>。
+              <H args={{ name: 'play' }} />
+              すると最後に
+              <EmojiWithText letter="c" />
+              が残ります。
             </P>
             {AER.tuzs}
           </>
         )
+      },
+      {
+        title: <>だから何？</>,
+        content: <></>
       }
     ]}
   />

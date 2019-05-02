@@ -46,9 +46,10 @@ const InlineEmojiBoxes = ({
   <span
     css={css`
       display: inline-flex;
-      vertical-align: ${size === 'lg' ? '-0.25em' : '-0.2em'};
+      vertical-align: ${size === 'lg' ? '-0.16em' : '-0.08em'};
       margin: 0 ${size === 'lg' ? spaces(0.25) : 0};
       background: ${background};
+      font-size: 0.9em;
     `}
   >
     {emojis.map((emoji, i) => (

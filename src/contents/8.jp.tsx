@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  InlineHeader,
-  Em,
-  Hr,
-  P,
-  Strong,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { Em, Hr, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
@@ -229,7 +221,7 @@ export default () => (
               しかないのがポイントです。
             </P>
             <P>
-              <InlineHeader>ちなみに:</InlineHeader> 今回も、
+              <H args={{ name: 'byTheWay' }} /> 今回も、
               <Strong>
                 上の
                 <H args={{ name: 'bentoBox', short: true }} />

@@ -1167,6 +1167,7 @@ export default {
       expressionContainer={lessonExpressions.e10E7}
       showPriorities
       skipAlphaConvert
+      speed={1.25}
       skipToTheEnd={false}
     />
   ),
@@ -1190,26 +1191,11 @@ export default {
     />
   ),
   dqlf: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e10E7}
-      showPriorities
       skipAlphaConvert
-      hidePrioritiesOnSecond
-      firstInitializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncUnbound'
-        }
-      ]}
-      secondInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
+      nextIteration
+      initialState="showFuncBound"
       highlightOverrideActiveAfterStart
       highlightOverrides={{
         b: 'highlighted'
@@ -1217,27 +1203,10 @@ export default {
     />
   ),
   mpcx: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e10E7}
       skipAlphaConvert
-      firstInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
-      secondInitializeInstructions={[
-        {
-          type: 'stepForwardUntilTheEnd'
-        }
-      ]}
-      highlightOverrideActiveAfterStart
-      highlightOverrides={{
-        b: 'highlighted'
-      }}
+      isDone
     />
   ),
   dpst: (
@@ -1259,46 +1228,19 @@ export default {
     />
   ),
   xhwx: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e10E5}
       showPriorities
-      hidePrioritiesOnSecond
+      nextIteration
+      initialState="showFuncBound"
       skipAlphaConvert
-      firstInitializeInstructions={[
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncUnbound'
-        }
-      ]}
-      secondInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
     />
   ),
   ttvy: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e10E5}
       skipAlphaConvert
-      firstInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
-      secondInitializeInstructions={[
-        {
-          type: 'stepForwardUntilTheEnd'
-        }
-      ]}
+      isDone
     />
   ),
   ywja: (

@@ -163,8 +163,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
-                <H args={{ name: 'reset' }} />{' '}
+                <H args={{ name: 'byTheWay' }} /> <H args={{ name: 'reset' }} />{' '}
                 を押せばもう一度最初から実行できます。
               </P>
             </>

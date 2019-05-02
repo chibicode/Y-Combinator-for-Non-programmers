@@ -215,7 +215,33 @@ export default () => (
             </P>
             {AER.esyi}
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <H args={{ name: 'byTheWay' }} />{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>や
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>以外にも、
+                <InlinePrioritiesLabel>3</InlinePrioritiesLabel>や
+                <InlinePrioritiesLabel>4</InlinePrioritiesLabel>
+                などが登場する場合もあります。
+              </P>
+              <P>
+                この場合も似たようになります。すなわち
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアが終わったときに、
+                <Strong>
+                  <InlinePrioritiesLabel>3</InlinePrioritiesLabel>が
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>になり、
+                  <InlinePrioritiesLabel>4</InlinePrioritiesLabel>が
+                  <InlinePrioritiesLabel>3</InlinePrioritiesLabel>に
+                </Strong>
+                なります。
+              </P>
+            </>
+          )
+        }
       },
       {
         type: 'yesNoQuiz',

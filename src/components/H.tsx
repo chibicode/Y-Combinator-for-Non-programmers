@@ -43,6 +43,7 @@ export interface HProps {
     | { name: 'yesNoQuizCorrectPostfix' }
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
     | { name: 'pauseIfLost' }
+    | { name: 'byTheWay' }
     | {
         name: 'bentoBox'
         plural?: boolean
@@ -1027,6 +1028,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
+        </>
+      )
+    }
+  }
+  if (args.name === 'byTheWay') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <InlineHeader>ちなみに:</InlineHeader>
         </>
       )
     }
