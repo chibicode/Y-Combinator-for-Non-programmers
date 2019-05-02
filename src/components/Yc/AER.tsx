@@ -1,4 +1,5 @@
 import React from 'react'
+import { Strong } from 'src/components/ContentTags'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
@@ -1178,6 +1179,13 @@ export default {
       highlightOverrides={{
         b: 'highlighted'
       }}
+      caption={
+        <Strong>
+          <H
+            args={{ name: 'isCallArgAndFuncUnboundTheSameCaption', same: true }}
+          />
+        </Strong>
+      }
       highlightOverrideActiveAfterStart
     />
   ),
@@ -1225,6 +1233,16 @@ export default {
       showPriorities
       skipAlphaConvert
       initialState="showFuncUnbound"
+      caption={
+        <Strong>
+          <H
+            args={{
+              name: 'isCallArgAndFuncUnboundTheSameCaption',
+              same: false
+            }}
+          />
+        </Strong>
+      }
     />
   ),
   xhwx: (

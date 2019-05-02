@@ -406,6 +406,15 @@ export default () => (
             {AER.ttvy}
           </>
         )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: <></>
       }
     ]}
   />

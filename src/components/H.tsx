@@ -27,6 +27,7 @@ import { episodeCategory } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import { VariableNames } from 'src/types/yc/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -86,6 +87,7 @@ export interface HProps {
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'secretCodeCaptionSimple'; number: number }
+    | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
     | { name: 'secretCodeAddCaption' }
     | { name: 'secretCodeMultiplyCaption' }
@@ -976,6 +978,29 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>About this Site</>
     } else {
       return <>このサイトについて</>
+    }
+  }
+  if (args.name === 'isCallArgAndFuncUnboundTheSameCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          {args.same ? (
+            <>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が同じ！
+            </>
+          ) : (
+            <>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が違う！
+            </>
+          )}
+        </>
+      )
     }
   }
   throw new Error('error')
