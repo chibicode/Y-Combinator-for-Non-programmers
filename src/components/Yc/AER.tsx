@@ -1190,13 +1190,26 @@ export default {
     />
   ),
   dqlf: (
-    <ExpressionRunnerPlayButtonOnly
+    <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e10E7}
       showPriorities
       skipAlphaConvert
-      skipToTheEnd={false}
-      initialState="showFuncUnbound"
-      lastAllowedExpressionState="showFuncBound"
+      firstInitializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncUnbound'
+        }
+      ]}
+      secondInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+      highlightOverrideActiveAfterStart
       highlightOverrides={{
         b: 'highlighted'
       }}
@@ -1246,13 +1259,25 @@ export default {
     />
   ),
   xhwx: (
-    <ExpressionRunnerPlayButtonOnly
+    <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e10E5}
       showPriorities
       skipAlphaConvert
-      skipToTheEnd={false}
-      initialState="showFuncUnbound"
-      lastAllowedExpressionState="showFuncBound"
+      firstInitializeInstructions={[
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncUnbound'
+        }
+      ]}
+      secondInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
     />
   ),
   ttvy: (

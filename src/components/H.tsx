@@ -83,7 +83,7 @@ export interface HProps {
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'whatsTheNumberQuestion'; number: number }
     | { name: 'lookAtThisBentoBox' }
-    | { name: 'pressFastForward' }
+    | { name: 'pressFastForward'; skipColon?: boolean }
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'secretCodeCaptionSimple'; number: number }
@@ -708,7 +708,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Em>
             <H args={{ name: 'fastForward' }} />
-            を押してみてください:
+            を押してみてください{args.skipColon ? '' : ':'}
           </Em>
         </>
       )

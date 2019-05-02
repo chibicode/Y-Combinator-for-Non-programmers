@@ -311,22 +311,15 @@ export default () => (
           <>
             <BottomRightBadge inline bottomRightBadgeType="callArg" />と
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-            に同じ料理があるかどうかで結果が変わる
+            が両方とも
+            <EmojiWithText letter="b" />
+            になるから
           </>
         ),
         content: (
           <>
             <P>
-              理由は、
-              <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                に同じ料理があるかどうかで結果が変わる
-              </Strong>
-              からです。
-            </P>
-            <P>
-              さきほど
+              理由は、さきほど
               <InlineEmojiBoxesForQuestion />に
               <Strong>
                 <EmojiWithText letter="b" />
@@ -339,25 +332,24 @@ export default () => (
                 <Strong>
                   <EmojiWithText letter="b" />
                 </Strong>
-                に
+                になるから
               </Strong>
-              なっているのに注目です。
+              です。
             </P>
             {AER.gmcn}
             <P>
-              このまま進めていくと、後に
+              すると途中で
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
                 が両方とも
                 <EmojiWithText letter="b" />
-                になります。
+                になり…
               </Strong>
-              <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.dqlf}
             <P>
-              こうして、最後に
+              最後に
               <EmojiWithText letter="b" />
               が残るのです。
             </P>
@@ -370,7 +362,7 @@ export default () => (
           <>
             <BottomRightBadge inline bottomRightBadgeType="callArg" />と
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-            に同じ料理があるかどうかで結果が変わる (続き)
+            が違うとどうなるか
           </>
         ),
         content: (
@@ -383,7 +375,7 @@ export default () => (
               に入れた場合、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              に同じ料理はありません。
+              が異なります。
             </P>
             {AER.dpst}
             <P>
@@ -391,13 +383,12 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                が同じになることはありません。
+                が同じにならず…
               </Strong>
-              <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.xhwx}
             <P>
-              というわけで、最初に
+              最初に
               <InlineEmojiBoxesForQuestion />
               に入れた
               <EmojiWithText letter="c" />
@@ -414,7 +405,17 @@ export default () => (
             <H args={{ name: 'summary' }} />
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <P>
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                が同じか違うかで、結果が変わる場合がある。
+              </Strong>
+            </P>
+          </>
+        )
       }
     ]}
   />
