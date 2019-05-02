@@ -18,7 +18,6 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 
 export default () => (
   <EpisodeCardList
@@ -346,18 +345,65 @@ export default () => (
             </P>
             {AER.gmcn}
             <P>
-              この状態で進めていくと、
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              が終わった時に、
+              このまま進めていくと、後に
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                が両方とも
+                <EmojiWithText letter="b" />
+                になります。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
             </P>
+            {AER.dqlf}
             <P>
-              それ以外の料理を入れた場合、
+              こうして、最後に
+              <EmojiWithText letter="b" />
+              が残るのです。
+            </P>
+            {AER.mpcx}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            に同じ料理があるかどうかで結果が変わる (続き)
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              それ以外の料理(たとえば
+              <EmojiWithText letter="c" />
+              )を
+              <InlineEmojiBoxesForQuestion />
+              に入れた場合、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               に同じ料理はありません。
             </P>
             {AER.dpst}
-            {AER.bsbn}
+            <P>
+              すると先ほどと違い、途中で
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                が同じになることはありません。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.xhwx}
+            <P>
+              というわけで、最初に
+              <InlineEmojiBoxesForQuestion />
+              に入れた
+              <EmojiWithText letter="c" />
+              が残るのです。
+            </P>
+            {AER.ttvy}
           </>
         )
       }

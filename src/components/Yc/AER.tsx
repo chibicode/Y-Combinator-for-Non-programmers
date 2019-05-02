@@ -1181,6 +1181,44 @@ export default {
       highlightOverrideActiveAfterStart
     />
   ),
+  dqlf: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E7}
+      showPriorities
+      skipAlphaConvert
+      skipToTheEnd={false}
+      initialState="showFuncUnbound"
+      lastAllowedExpressionState="showFuncBound"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+    />
+  ),
+  mpcx: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e10E7}
+      showPriorities
+      skipAlphaConvert
+      firstInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+      secondInitializeInstructions={[
+        {
+          type: 'stepForwardUntilTheEnd'
+        }
+      ]}
+      highlightOverrideActiveAfterStart
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+    />
+  ),
   dpst: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e10E5}
@@ -1189,12 +1227,35 @@ export default {
       initialState="showFuncUnbound"
     />
   ),
-  bsbn: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e10E6}
+  xhwx: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E5}
       showPriorities
       skipAlphaConvert
+      skipToTheEnd={false}
       initialState="showFuncUnbound"
+      lastAllowedExpressionState="showFuncBound"
+    />
+  ),
+  ttvy: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e10E5}
+      showPriorities
+      skipAlphaConvert
+      firstInitializeInstructions={[
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: 'showFuncBound'
+        }
+      ]}
+      secondInitializeInstructions={[
+        {
+          type: 'stepForwardUntilTheEnd'
+        }
+      ]}
     />
   )
 }

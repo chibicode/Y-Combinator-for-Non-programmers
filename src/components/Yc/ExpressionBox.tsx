@@ -29,6 +29,13 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
       `}
     >
       <BorderWrapper
+        highlightOverridden={
+          !!(
+            isVariable(expression) &&
+            (!started || highlightOverrideActiveAfterStart) &&
+            highlightOverrides[expression.name]
+          )
+        }
         highlightType={
           isVariable(expression)
             ? ((!started || highlightOverrideActiveAfterStart) &&

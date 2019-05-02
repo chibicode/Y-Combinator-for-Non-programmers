@@ -12,6 +12,7 @@ interface BorderWrapperProps {
   children: React.ReactNode
   isQuestion: boolean
   highlightType: VariableExpression['highlightType'] | 'none' | 'pink'
+  highlightOverridden: boolean
 }
 
 const background = (
@@ -87,6 +88,7 @@ const background = (
 
 const BorderWrapper = ({
   highlightType,
+  highlightOverridden,
   bottomRightBadgeType,
   topLeftBadgeType,
   children,
@@ -107,12 +109,14 @@ const BorderWrapper = ({
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&
           topLeftBadgeType === 'none' &&
+          !highlightOverridden &&
           css`
             border-right: 10px solid ${colors('yellow900')};
           `,
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcArg' &&
           topLeftBadgeType === 'none' &&
+          !highlightOverridden &&
           css`
             border-left: 10px solid ${colors('pink400')};
           `
