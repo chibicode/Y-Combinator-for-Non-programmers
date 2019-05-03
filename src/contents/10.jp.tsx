@@ -343,7 +343,7 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                が同じか違うかで、結果が変わる
+                に同じ料理があるかどうかで、結果が変わる
                 <H args={{ name: 'bentoBox' }} />
                 がある。
               </Strong>
@@ -367,7 +367,7 @@ export default () => (
             </P>
             {AER.ywja}
             <P>
-              こちらは先ほどとほとんど同じですが、
+              こちらは先ほどと似ていますが、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
               <Strong>違います</Strong>。
@@ -387,10 +387,13 @@ export default () => (
             <P>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              が同じか違うかで、結果が変わる
-              <H args={{ name: 'bentoBox', short: true }} />
-              があることがわかりましたが、「<Em>だからどうした？</Em>
-              」とお思いかもしれません。
+              に同じ料理があるかどうかで、結果が変わる
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              があることがわかりました。
+            </P>
+            <P>
+              でも、「<Em>だから何なの？</Em>
+              」と思う方がいらっしゃるかもしれません。
             </P>
             <EmojiSeparator
               nodes={[
@@ -400,8 +403,9 @@ export default () => (
               ]}
             />
             <P>
+              というわけで、
               <Strong>
-                なぜこのことが大事なのかは、次のページで解説します！
+                なぜこれが大事なポイントなのか、次のページで解説します！
               </Strong>
             </P>
             <YcNextLessonButton nextEpisodeNumber={11} />

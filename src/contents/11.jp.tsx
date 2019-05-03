@@ -1,5 +1,12 @@
 import React from 'react'
-import { Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
+import {
+  Ul,
+  UlLi,
+  Em,
+  P,
+  Strong,
+  InlineHeader
+} from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -164,7 +171,7 @@ export default () => (
           <>
             答え: <BottomRightBadge inline bottomRightBadgeType="callArg" />と
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-            が同じだから
+            に同じ料理があるか
           </>
         ),
         content: (
@@ -174,7 +181,7 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                が同じか違うかで、結果が変わる
+                に同じ料理があるかどうかで、結果が変わる
                 <H args={{ name: 'bentoBox', short: true }} />
                 がある
               </Strong>
@@ -196,11 +203,146 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                が同じになる
+                に同じ料理がある
               </Strong>
               のです。こちらをご覧ください。
             </P>
             {AER.fdpd}
+            <P>
+              <Strong>
+                <EmojiWithText letter="b" />が
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の両方にありますね。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>このことが結果を狂わせているのです。</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            もし
+            <EmojiWithText letter="b" />
+            じゃなかったら？
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、暗号に
+              <EmojiWithText letter="b" />
+              を使わなければ大丈夫なのか、確かめてみましょう。
+            </P>
+            <P>
+              こちらも<Strong>暗号が「1」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              ですが、
+              <EmojiWithText letter="b" />
+              のかわりに
+              <EmojiWithText letter="c" />
+              を使っています。
+            </P>
+            {AER.zlgw}
+            <P>
+              こちらを条件分岐の
+              <H args={{ name: 'bentoBox', short: true }} />
+              に埋め込んでみます(<Em>黄色の部分</Em>)。
+            </P>
+            {AER.ttgq}
+            <P>
+              この場合、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              に同じ料理はありません。では、
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.xrzv}
+            <P>
+              ちゃんと
+              <EmojiWithText letter="z" />
+              が最後に残りました！
+            </P>
+            {AER.pyfd}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            もし
+            <EmojiWithText letter="e" />
+            だったら？
+          </>
+        ),
+        content: <></>
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                条件分岐の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                は、
+                <InlineEmojiBoxesForQuestion />
+                に入る
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                によっては機能しなくなる。
+              </Strong>
+            </P>
+            {AER.nlxe}
+            <P>
+              もしも
+              <InlineEmojiBoxesForQuestion />
+              に入る
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <Strong>真ん中に</Strong>、
+            </P>
+            <Ul>
+              <UlLi>
+                <Strong>
+                  <EmojiWithText letter="a" />
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  <EmojiWithText letter="b" />
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  <EmojiWithText letter="e" />
+                </Strong>
+              </UlLi>
+            </Ul>
+            <P>
+              のどれかがある場合、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理が入ることになる
+              </Strong>
+              。下は
+              <EmojiWithText letter="b" />
+              が入った場合の例。
+            </P>
+            {AER.fdpd}
+            <P>このような場合、正しく条件分岐ができなくなる。</P>
           </>
         )
       }

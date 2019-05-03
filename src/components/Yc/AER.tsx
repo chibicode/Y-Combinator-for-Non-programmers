@@ -1296,5 +1296,44 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  zlgw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11E4}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
+      }
+      showPriorities
+    />
+  ),
+  ttgq: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11E5}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  xrzv: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11E6}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipAlphaConvert
+      speed={4}
+      skipToTheEnd={false}
+      initialState="showFuncUnbound"
+    />
+  ),
+  pyfd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11E6}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipAlphaConvert
+      isDone
+    />
   )
 }
