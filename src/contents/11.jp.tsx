@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Ul,
-  UlLi,
-  Em,
-  P,
-  Strong,
-  InlineHeader
-} from 'src/components/ContentTags'
+import { Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -276,16 +269,6 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            もし
-            <EmojiWithText letter="e" />
-            だったら？
-          </>
-        ),
-        content: <></>
-      },
-      {
         type: 'summary',
         title: (
           <>
@@ -307,42 +290,33 @@ export default () => (
             </P>
             {AER.nlxe}
             <P>
-              もしも
+              たとえば、もしも
               <InlineEmojiBoxesForQuestion />
               に入る
               <H args={{ name: 'bentoBox', skipEmoji: true }} />の
-              <Strong>真ん中に</Strong>、
-            </P>
-            <Ul>
-              <UlLi>
-                <Strong>
-                  <EmojiWithText letter="a" />
-                </Strong>
-              </UlLi>
-              <UlLi>
-                <Strong>
-                  <EmojiWithText letter="b" />
-                </Strong>
-              </UlLi>
-              <UlLi>
-                <Strong>
-                  <EmojiWithText letter="e" />
-                </Strong>
-              </UlLi>
-            </Ul>
-            <P>
-              のどれかがある場合、
+              <Strong>
+                真ん中に
+                <EmojiWithText letter="b" />
+              </Strong>
+              がある場合、
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                 に同じ料理が入ることになる
               </Strong>
-              。下は
-              <EmojiWithText letter="b" />
-              が入った場合の例。
+              。
             </P>
             {AER.fdpd}
-            <P>このような場合、正しく条件分岐ができなくなる。</P>
+            <P>
+              <Strong>こうなると、正しく条件分岐ができなくなる。</Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="z" />,
+                <Emoji>❌</Emoji>,
+                <EmojiForLetter letter="y" />
+              ]}
+            />
           </>
         )
       }
