@@ -243,8 +243,7 @@ const stateToExplanation = ({
           <>
             <Emoji>⚠️</Emoji> <InlineHeader>Warning</InlineHeader>: Same item in{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
           </>
         )
       } else {
@@ -252,8 +251,8 @@ const stateToExplanation = ({
           <>
             <Emoji>⚠️</Emoji> <InlineHeader>注意:</InlineHeader>{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> が同じ
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
+            が同じ
           </>
         )
       }

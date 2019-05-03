@@ -308,7 +308,9 @@ export default () => (
             </P>
             {AER.fdpd}
             <P>
-              <Strong>こうなると、正しく条件分岐ができなくなる。</Strong>
+              <Strong>
+                すると、いつもと結果が変わり、正しく条件分岐ができなくなる。
+              </Strong>
             </P>
             <EmojiSeparator
               nodes={[
@@ -317,6 +319,47 @@ export default () => (
                 <EmojiForLetter letter="y" />
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>正しく条件分岐ができるようにするには？</>,
+        content: (
+          <>
+            <P>
+              では、
+              <Strong>
+                暗号にどんな料理が含まれていても、正しく条件分岐ができるようにするには
+              </Strong>
+              どうすればいいのでしょう？
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="z" />,
+                <Emoji>🤔</Emoji>,
+                <EmojiForLetter letter="y" />
+              ]}
+            />
+            <P>
+              答えはシンプルです。
+              <Strong>
+                必要に応じて、暗号に使われている料理を変えればいい
+              </Strong>
+              のです。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>?</>,
+        content: (
+          <>
+            <P>
+              たとえば、こちらの先ほどの
+              <H args={{ name: 'bentoBox', short: true }} />
+              をご覧ください。
+            </P>
+            {AER.dygl}
           </>
         )
       }

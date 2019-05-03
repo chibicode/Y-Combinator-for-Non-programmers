@@ -1335,5 +1335,15 @@ export default {
       skipAlphaConvert
       isDone
     />
+  ),
+  dygl: (
+    <ExpressionRunnerSimple
+      explanationsVisibility="visible"
+      expressionContainer={lessonExpressions.e11E3}
+      showPriorities
+      initialState="needsAlphaConvert"
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 }

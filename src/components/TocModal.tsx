@@ -4,7 +4,7 @@ import Modal from 'src/components/Modal'
 import Card from 'src/components/Card'
 import H from 'src/components/H'
 import { numEpisodes } from 'src/lib/episodeCategories'
-import { lessonTitle, episodeTitles, episodePrefixes } from 'src/lib/titles'
+import { lessonTitle, episodeTitles } from 'src/lib/titles'
 import {
   fontWeights,
   fontSizes,
@@ -139,7 +139,9 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
                 {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
               </span>
               <EmojiSeparator
-                emojis={episodeEmojis[episodeNumber]}
+                emojis={
+                  episodeEmojis[episodeNumber as keyof typeof episodeEmojis]
+                }
                 alignCenter={false}
                 size="sm"
                 cssOverrides={css`
@@ -171,7 +173,9 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
             {episodeTitles[(numEpisodes + 1) as keyof typeof episodeTitles]}
           </span>
           <EmojiSeparator
-            emojis={episodeEmojis[numEpisodes + 1]}
+            emojis={
+              episodeEmojis[(numEpisodes + 1) as keyof typeof episodeEmojis]
+            }
             size="sm"
             cssOverrides={css`
               margin: 0;

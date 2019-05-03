@@ -26,7 +26,9 @@ const EpisodePage = ({
 }: EpisodePageProps) => {
   const title = `${lessonTitle}${
     episodeTitleString
-      ? ` ${episodeEmojis[episodeNumber].join('')} ${episodeTitleString}`
+      ? ` ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis].join(
+          ''
+        )} ${episodeTitleString}`
       : ''
   }`
   const [modalVisible, setModalVisible] = useState(false)
