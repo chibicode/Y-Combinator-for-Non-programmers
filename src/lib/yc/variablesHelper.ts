@@ -7,7 +7,7 @@ import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
 interface GetAllVariableNamesOptions {
-  filter?: 'bound' | 'unbound'
+  filter?: 'unbound'
 }
 
 function encodeVariableNameAndAlphaConvertCount(
@@ -31,11 +31,7 @@ function getAllVariableNamesEncodedWithDuplicates(
   { filter }: GetAllVariableNamesOptions
 ): ReadonlyArray<string> {
   if (isVariable(expression)) {
-    if (
-      (filter === 'bound' && expression.bound) ||
-      (filter === 'unbound' && !expression.bound) ||
-      !filter
-    ) {
+    if ((filter === 'unbound' && !expression.bound) || !filter) {
       return [
         encodeVariableNameAndAlphaConvertCount(
           expression.name,
