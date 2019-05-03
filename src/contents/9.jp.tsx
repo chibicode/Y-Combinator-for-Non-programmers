@@ -13,6 +13,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AER'
 import InlineEmojiBoxes, {
@@ -410,7 +411,13 @@ export default () => (
                 が残ります 。
               </UlLi>
             </Ul>
-            <EmojiSeparator emojis={['0️⃣', '➡️', '🍩']} />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>0️⃣</Emoji>,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="y" />
+              ]}
+            />
             <Ul>
               <UlLi>
                 もし
@@ -424,7 +431,13 @@ export default () => (
                 が残ります 。
               </UlLi>
             </Ul>
-            <EmojiSeparator emojis={['🔢', '➡️', '🍬']} />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🔢</Emoji>,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="z" />
+              ]}
+            />
             {AER.nlxe}
           </>
         )

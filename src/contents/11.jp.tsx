@@ -5,13 +5,12 @@ import {
   Strong,
   ExternalLink,
   InlineHeader,
-  Blockquote,
-  Ul,
-  Hr,
-  UlLi
+  Blockquote
 } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import Emoji from 'src/components/Emoji'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
@@ -22,43 +21,62 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>前回の続き</>,
+        title: (
+          <>
+            条件分岐の
+            <H args={{ name: 'bentoBox', short: true }} />
+            、再び
+          </>
+        ),
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              前回紹介した「条件分岐」の
+              中級の最後で紹介した「条件分岐」の
               <H args={{ name: 'bentoBox', short: true }} />
               をもう一度ご覧ください。
             </P>
             {AER.nlxe}
             <P>
               <InlineHeader>復習:</InlineHeader> 上の
-              <H args={{ name: 'bentoBox', short: true }} />の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に…
             </P>
-            <Ul>
-              <UlLi>
-                暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-                を埋め込むと、
-                <Strong>
-                  <EmojiWithText letter="y" />
-                  が残る
-                </Strong>
-              </UlLi>
-              <UlLi>
-                暗号が<Strong>「1以上」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-                を埋め込むと、
-                <Strong>
-                  <EmojiWithText letter="z" />
-                  が残る
-                </Strong>
-              </UlLi>
-            </Ul>
-            <Hr />
+            <P>
+              暗号が<Strong>「0」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を埋め込むと、
+              <Strong>
+                <EmojiWithText letter="y" />
+                が残る
+              </Strong>
+              。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>0️⃣</Emoji>,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="y" />
+              ]}
+            />
+            <P>
+              暗号が<Strong>「1以上」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を埋め込むと、
+              <Strong>
+                <EmojiWithText letter="z" />
+                が残る
+              </Strong>
+              。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🔢</Emoji>,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="z" />
+              ]}
+            />
             <P>
               それでは、ここで
               <H args={{ name: 'yesNoQuiz' }} />
@@ -89,18 +107,6 @@ export default () => (
               の部分に埋め込んでみます。
             </P>
             {AER.eigf}
-            <P>
-              暗号が
-              <Strong>「1以上」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              を埋め込むと、
-              <Strong>
-                <EmojiWithText letter="z" />
-                が残る
-              </Strong>
-              、と先ほど書きました。というわけで質問です。
-            </P>
-            <Hr />
             <P>
               <H args={{ name: 'question' }} /> 上の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />を
@@ -144,7 +150,17 @@ export default () => (
               が残ってしまいました！
             </P>
             {AER.xlwo}
-            <P>前回では上手くいったのに、どうしてこうなったのでしょう？</P>
+            <P>
+              先ほど、「
+              <Em>
+                暗号が1以上の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を埋め込むと、
+                <EmojiWithText letter="z" />
+                が残る
+              </Em>
+              」と書いたのと矛盾していますよね。どうしてこうなったのでしょう？
+            </P>
             <EmojiSeparator emojis={['🤯', '❓', '🍬']} />
           </>
         )
