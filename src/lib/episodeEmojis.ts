@@ -1,3 +1,5 @@
+import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+
 const episodeEmojis: { [lessonNumber in number]: string[] } = {
   0: ['🤖', '🤔', '🧙‍♂️'],
   1: ['🍱', '😍', '🍱'],
@@ -8,8 +10,8 @@ const episodeEmojis: { [lessonNumber in number]: string[] } = {
   6: ['🅰️', '🧐', '️🅱️'],
   7: ['➕', '🤨', '️🍱'],
   8: ['🍱', '😵', '✖️'],
-  9: ['🍬', '😏', '🍩'],
-  10: ['❓', '❓', '️❓'],
+  9: [letterEmojiMapping['z'], '😏', letterEmojiMapping['y']],
+  10: [letterEmojiMapping['v'], '🥳', letterEmojiMapping['v']],
   11: ['❓', '❓', '️❓']
 }
 

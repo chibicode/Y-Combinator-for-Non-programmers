@@ -1230,7 +1230,6 @@ export default {
   xhwx: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e10E5}
-      showPriorities
       nextIteration
       initialState="showFuncBound"
       skipAlphaConvert

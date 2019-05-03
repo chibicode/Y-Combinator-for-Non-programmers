@@ -1,6 +1,7 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { Hr, P, Strong, Ul, UlLi, Em } from 'src/components/ContentTags'
+import { P, Strong, Ul, UlLi, Em } from 'src/components/ContentTags'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import AER from 'src/components/Yc/AER'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import H from 'src/components/H'
@@ -75,7 +76,13 @@ export default () => (
               </Strong>
               が最後に残りますね。
             </P>
-            <Hr />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="c" />,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="c" />
+              ]}
+            />
             <P>
               <EmojiWithText letter="d" />
               を<InlineEmojiBoxesForQuestion />
@@ -92,6 +99,13 @@ export default () => (
               </Strong>
               が最後に残りました。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="d" />,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="d" />
+              ]}
+            />
           </>
         )
       },
@@ -178,7 +192,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <EmojiForLetter letter="v" />,
-                <Emoji>🤯</Emoji>,
+                <Emoji>🥳</Emoji>,
                 <EmojiForLetter letter="v" />
               ]}
             />
@@ -334,7 +348,13 @@ export default () => (
                 がある。
               </Strong>
             </P>
-            <Hr />
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>❓</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
             <P>
               たとえばこちらは
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
@@ -347,10 +367,10 @@ export default () => (
             </P>
             {AER.ywja}
             <P>
-              こちらは
+              こちらは先ほどとほとんど同じですが、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
-              <Strong>違う場合</Strong>。
+              <Strong>違います</Strong>。
               <H args={{ name: 'play' }} />
               すると最後に
               <EmojiWithText letter="c" />
@@ -362,7 +382,31 @@ export default () => (
       },
       {
         title: <>だから何？</>,
-        content: <></>
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が同じか違うかで、結果が変わる
+              <H args={{ name: 'bentoBox', short: true }} />
+              があることがわかりましたが、「<Em>だからどうした？</Em>
+              」とお思いかもしれません。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>🤔</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              <Strong>
+                なぜこのことが大事なのかは、次のページで解説します！
+              </Strong>
+            </P>
+            <YcNextLessonButton nextEpisodeNumber={11} />
+          </>
+        )
       }
     ]}
   />
