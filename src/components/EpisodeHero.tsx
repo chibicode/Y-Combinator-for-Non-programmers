@@ -95,7 +95,10 @@ const EpisodeHero = () => {
           </h1>
         )}
       </>
-      <EmojiSeparator size="lg" emojis={episodeEmojis[episodeNumber]} />
+      <EmojiSeparator
+        size="lg"
+        emojis={episodeEmojis[episodeNumber as keyof typeof episodeEmojis]}
+      />
     </header>
   )
 }

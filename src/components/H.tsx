@@ -67,7 +67,7 @@ export interface HProps {
     | { name: 'sideNotePrefix' }
     | { name: 'continueReading' }
     | { name: 'titlePrefix' }
-    | { name: 'titlePrefixColored' }
+    | { name: 'titlePrefixColored'; addColon?: boolean }
     | { name: 'titleWithPrefixColored' }
     | { name: 'episodeWelcomeText' }
     | { name: 'newUser' }
@@ -143,6 +143,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           args={{ name: 'titlePrefix' }}
           episodeNumberOverrides={episodeNumberOverrides}
         />
+        {args.addColon ? ':' : ''}
       </span>
     )
   }
@@ -150,10 +151,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     return (
       <>
         <H
-          args={{ name: 'titlePrefixColored' }}
+          args={{ name: 'titlePrefixColored', addColon: true }}
           episodeNumberOverrides={episodeNumberOverrides}
-        />
-        : {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
+        />{' '}
+        {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
       </>
     )
   }
