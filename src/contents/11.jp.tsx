@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hr, Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
+import { Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -365,7 +365,12 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               に同じ料理(
               <EmojiWithText letter="b" />
-              )があるので、このままだと条件分岐ができません。
+              )があるので、このままだと条件分岐ができません。(
+              <Em>
+                このことを、左上に表示された
+                <Emoji>⚠️</Emoji>アイコンが表しています。
+              </Em>
+              )
             </P>
             <P>
               ではここで、小さな変更を加えてみます。その変更とは、
