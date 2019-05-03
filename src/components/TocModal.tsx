@@ -4,7 +4,7 @@ import Modal from 'src/components/Modal'
 import Card from 'src/components/Card'
 import H from 'src/components/H'
 import { numEpisodes } from 'src/lib/episodeCategories'
-import { lessonTitle, episodeTitles } from 'src/lib/titles'
+import { lessonTitle, episodeTitles, episodePrefixes } from 'src/lib/titles'
 import {
   fontWeights,
   fontSizes,
@@ -93,13 +93,15 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           <span
             css={[
               css`
-                color: ${colors('grey600')};
                 display: block;
               `,
               prefixCss
             ]}
           >
-            <H args={{ name: 'introductionPrefix' }} />
+            <H
+              args={{ name: 'titlePrefixColored' }}
+              episodeNumberOverrides={0}
+            />
           </span>
           <span css={titleCss}>{lessonTitle}</span>
           <EmojiSeparator
@@ -147,6 +149,36 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
             </InternalLink>
           )
         })}
+        <InternalLink
+          href={`/${numEpisodes + 1}`}
+          css={linkCss}
+          onClick={hideModal}
+        >
+          <span
+            css={[
+              css`
+                display: block;
+              `,
+              prefixCss
+            ]}
+          >
+            <H
+              args={{ name: 'titlePrefixColored' }}
+              episodeNumberOverrides={numEpisodes + 1}
+            />
+          </span>
+          <span css={titleCss}>
+            {episodeTitles[(numEpisodes + 1) as keyof typeof episodeTitles]}
+          </span>
+          <EmojiSeparator
+            emojis={episodeEmojis[numEpisodes + 1]}
+            size="sm"
+            cssOverrides={css`
+              margin: 0;
+            `}
+            alignCenter={false}
+          />
+        </InternalLink>
       </Card>
     </Modal>
   )

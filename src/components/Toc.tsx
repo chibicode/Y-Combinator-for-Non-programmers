@@ -5,6 +5,7 @@ import { lessonTitle } from 'src/lib/titles'
 import { colors, spaces } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
 import H from 'src/components/H'
+import { episodeTitles, episodePrefixes } from 'src/lib/titles'
 
 const Toc = () => (
   <ul
@@ -34,7 +35,7 @@ const Toc = () => (
             color: ${colors('grey600')};
           `}
         >
-          <H args={{ name: 'introductionPrefix' }} />:
+          {episodePrefixes.intro}
         </span>{' '}
         {lessonTitle}
       </InternalLink>
@@ -66,6 +67,31 @@ const Toc = () => (
         </li>
       )
     })}
+    <li
+      css={css`
+        font-weight: bold;
+        margin-bottom: ${spaces(0.25)};
+      `}
+    >
+      <InternalLink
+        href={`/${numEpisodes + 1}`}
+        css={css`
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
+        `}
+      >
+        <span
+          css={css`
+            color: ${colors('grey600')};
+          `}
+        >
+          {episodePrefixes.epilogue}
+        </span>{' '}
+        {episodeTitles[numEpisodes as keyof typeof episodeTitles]}
+      </InternalLink>
+    </li>
   </ul>
 )
 

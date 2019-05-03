@@ -8,6 +8,14 @@ import Jp10 from 'src/contents/10.jp'
 import En10 from 'src/contents/10.en'
 import Jp11 from 'src/contents/11.jp'
 import En11 from 'src/contents/11.en'
+import Jp12 from 'src/contents/12.jp'
+import En12 from 'src/contents/12.en'
+import Jp13 from 'src/contents/13.jp'
+import En13 from 'src/contents/13.en'
+import Jp14 from 'src/contents/14.jp'
+import En14 from 'src/contents/14.en'
+import Jp15 from 'src/contents/15.jp'
+import En15 from 'src/contents/15.en'
 import Jp2 from 'src/contents/2.jp'
 import En2 from 'src/contents/2.en'
 import Jp3 from 'src/contents/3.jp'
@@ -42,6 +50,26 @@ export interface BundleTypes {
   }
 
   '11': {
+    jp: React.ComponentType<{}>
+    en: React.ComponentType<{}>
+  }
+
+  '12': {
+    jp: React.ComponentType<{}>
+    en: React.ComponentType<{}>
+  }
+
+  '13': {
+    jp: React.ComponentType<{}>
+    en: React.ComponentType<{}>
+  }
+
+  '14': {
+    jp: React.ComponentType<{}>
+    en: React.ComponentType<{}>
+  }
+
+  '15': {
     jp: React.ComponentType<{}>
     en: React.ComponentType<{}>
   }
@@ -103,6 +131,22 @@ const bundle: BundleTypes = {
   '11': {
     en: En11,
     jp: Jp11
+  },
+  '12': {
+    en: En12,
+    jp: Jp12
+  },
+  '13': {
+    en: En13,
+    jp: Jp13
+  },
+  '14': {
+    en: En14,
+    jp: Jp14
+  },
+  '15': {
+    en: En15,
+    jp: Jp15
   },
   '2': {
     en: En2,

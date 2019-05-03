@@ -63,7 +63,6 @@ export interface HProps {
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
     | { name: 'pressPlay'; capitalize?: boolean }
-    | { name: 'introductionPrefix' }
     | { name: 'indexPageLink' }
     | { name: 'sideNotePrefix' }
     | { name: 'continueReading' }
@@ -96,6 +95,7 @@ export interface HProps {
     | { name: 'theAnswerIs'; isYes: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
     | { name: 'whatIsComputerScience' }
+    | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
     | {
         name: 'takeABreak'
@@ -117,7 +117,8 @@ const prefixColors = {
   intro: colors('grey600'),
   beginner: colors('green600'),
   intermediate: colors('blue600'),
-  advanced: colors('pink400')
+  advanced: colors('pink400'),
+  epilogue: colors('deepOrange400')
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -528,13 +529,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'play' }} /> を押してみてください:
         </Em>
       )
-    }
-  }
-  if (args.name === 'introductionPrefix') {
-    if (locale === 'en') {
-      return <>Intro</>
-    } else {
-      return <>序章</>
     }
   }
   if (args.name === 'indexPageLink') {
@@ -1041,6 +1035,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <InlineHeader>ちなみに:</InlineHeader>
         </>
       )
+    }
+  }
+  if (args.name === 'epiloguePrefix') {
+    if (locale === 'en') {
+      return <>Epilogue</>
+    } else {
+      return <>エピローグ</>
     }
   }
   throw new Error('error')
