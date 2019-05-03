@@ -249,10 +249,9 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            <Emoji>⚠️</Emoji> <InlineHeader>注意:</InlineHeader>{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
-            が同じ
+            に同じ料理があります <Emoji>⚠️</Emoji>
           </>
         )
       }

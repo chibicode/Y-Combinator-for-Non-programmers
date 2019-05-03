@@ -1,5 +1,5 @@
 import React from 'react'
-import { Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
+import { Hr, Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -343,7 +343,7 @@ export default () => (
             <P>
               答えはシンプルです。
               <Strong>
-                必要に応じて、暗号に使われている料理を変えればいい
+                必要に応じて、暗号に使われている料理に変更を加えればいい
               </Strong>
               のです。
             </P>
@@ -351,7 +351,7 @@ export default () => (
         )
       },
       {
-        title: <>?</>,
+        title: <>飲み物を追加</>,
         content: (
           <>
             <P>
@@ -360,6 +360,29 @@ export default () => (
               をご覧ください。
             </P>
             {AER.dygl}
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              に同じ料理(
+              <EmojiWithText letter="b" />
+              )があるので、このままだと条件分岐ができません。
+            </P>
+            <P>
+              ではここで、小さな変更を加えてみます。その変更とは、
+              <Strong>
+                料理に
+                <H args={{ name: 'drink' }} />
+                を追加すること
+              </Strong>
+              です。どういうことか、ゆっくり説明しますね！
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🥤</Emoji>,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="b" />
+              ]}
+            />
           </>
         )
       }

@@ -97,6 +97,7 @@ export interface HProps {
     | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
+    | { name: 'drink'; skipEmoji?: boolean }
     | {
         name: 'takeABreak'
       }
@@ -1043,6 +1044,25 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Epilogue</>
     } else {
       return <>エピローグ</>
+    }
+  }
+  if (args.name === 'drink') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          飲み物
+          {args.skipEmoji ? (
+            ''
+          ) : (
+            <>
+              {' '}
+              <Emoji>🥤</Emoji>
+            </>
+          )}
+        </>
+      )
     }
   }
   throw new Error('error')
