@@ -13,7 +13,7 @@ const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
   8: ['🍱', '😵', '✖️'],
   9: [letterEmojiMapping['z'], '😏', letterEmojiMapping['y']],
   10: [letterEmojiMapping['v'], '🥳', letterEmojiMapping['v']],
-  11: ['❓', '❓', '️❓'],
+  11: ['🥤', '🤗', '️🥤'],
   12: ['❓', '❓', '️❓'],
   13: ['❓', '❓', '️❓'],
   14: ['❓', '❓', '️❓'],
