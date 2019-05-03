@@ -24,7 +24,8 @@ export const ExpressionRunnerSimple = ({
   variableSize,
   containerSize,
   skipAlphaConvert,
-  nextIteration
+  nextIteration,
+  highlightOverridesCallArgAndFuncUnboundOnly
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -40,6 +41,7 @@ export const ExpressionRunnerSimple = ({
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
+  highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
 }) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -48,6 +50,9 @@ export const ExpressionRunnerSimple = ({
     explanationsVisibility={explanationsVisibility}
     showAllShowSteps={showAllShowSteps}
     variableSize={variableSize}
+    highlightOverridesCallArgAndFuncUnboundOnly={
+      highlightOverridesCallArgAndFuncUnboundOnly
+    }
     containerSize={containerSize}
     caption={caption}
     skipAlphaConvert={skipAlphaConvert}

@@ -6,7 +6,7 @@ import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
-interface BorderWrapperProps {
+export interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
   topLeftBadgeType: VariableExpression['topLeftBadgeType']
   children: React.ReactNode

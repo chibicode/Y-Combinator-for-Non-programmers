@@ -278,9 +278,25 @@ export const e9E8 = initializeExpressionContainer(
   )
 )
 
-export const e10E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
+export const e10E1 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('question')
+)
 
 export const e10E2 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('c')
+)
+
+export const e10E3 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('d')
+)
+
+export const e10E4 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams(highlighted('b'))
+)
+
+export const e11E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
+
+export const e11E2 = initializeExpressionContainer(
   isZeroParams(
     'a',
     'b',
@@ -293,27 +309,8 @@ export const e10E2 = initializeExpressionContainer(
   )
 )
 
-export const e10E3 = initializeExpressionContainer(
+export const e11E3 = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'b', 1))
-)
-
-export const e10E4 = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams('question')
-)
-
-export const e10E5 = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams('c')
-)
-
-export const e10E6 = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams('d')
-)
-
-export const e10E7 = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams({
-    name: 'b',
-    highlighted: true
-  })
 )
 
 const yCombinator: FunctionExpressionParams = {

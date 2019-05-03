@@ -64,6 +64,7 @@ export interface ExpressionRunnerProps {
   skipAlphaConvert?: boolean
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
+  highlightOverridesCallArgAndFuncUnboundOnly: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   caption?: React.ReactNode
@@ -186,6 +187,7 @@ const ExpressionRunner = ({
   resetIndex,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
+  highlightOverridesCallArgAndFuncUnboundOnly,
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart
@@ -234,6 +236,7 @@ const ExpressionRunner = ({
         bottomRightBadgeOverrides,
         highlightOverrides,
         highlightOverrideActiveAfterStart,
+        highlightOverridesCallArgAndFuncUnboundOnly,
         variableSize,
         started: expressionContainerManagerState.numStepsTaken > 0,
         isDoneOrReady: isDone || isReady
@@ -353,6 +356,7 @@ ExpressionRunner.defaultProps = {
   hidePlayButton: false,
   speed: 1,
   hideFuncUnboundBadgeOnExplanation: false,
+  highlightOverridesCallArgAndFuncUnboundOnly: false,
   bottomRightBadgeOverrides:
     expressionRunnerContextDefault.bottomRightBadgeOverrides,
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,

@@ -123,11 +123,11 @@ export const multParamsRightHighlighted = (
 }
 
 export const isZeroParams = (
-  a: VariableNames,
-  b: VariableNames,
-  c: VariableNames,
-  d: VariableNames,
-  e: VariableNames,
+  a: VariableNames | HighlightedVariableExpressionParams,
+  b: VariableNames | HighlightedVariableExpressionParams,
+  c: VariableNames | HighlightedVariableExpressionParams,
+  d: VariableNames | HighlightedVariableExpressionParams,
+  e: VariableNames | HighlightedVariableExpressionParams,
   y: ExpressionParams,
   z: ExpressionParams,
   testExpression: ExpressionParams

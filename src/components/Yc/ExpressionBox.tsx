@@ -2,7 +2,9 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
-import BorderWrapper from 'src/components/Yc/BorderWrapper'
+import BorderWrapper, {
+  BorderWrapperProps
+} from 'src/components/Yc/BorderWrapper'
 import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
@@ -18,8 +20,31 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
   const {
     highlightOverrides,
     started,
-    highlightOverrideActiveAfterStart
+    highlightOverrideActiveAfterStart,
+    highlightOverridesCallArgAndFuncUnboundOnly
   } = useContext(ExpressionRunnerContext)
+  let highlightOverridden: BorderWrapperProps['highlightOverridden'] = !!(
+    isVariable(expression) &&
+    (!started || highlightOverrideActiveAfterStart) &&
+    highlightOverrides[expression.name]
+  )
+  let highlightType: BorderWrapperProps['highlightType'] = isVariable(
+    expression
+  )
+    ? ((!started || highlightOverrideActiveAfterStart) &&
+        highlightOverrides[expression.name]) ||
+      expression.highlightType
+    : 'none'
+
+  if (
+    highlightOverridesCallArgAndFuncUnboundOnly &&
+    isVariable(expression) &&
+    (expression.bottomRightBadgeType !== 'callArg' &&
+      expression.bottomRightBadgeType !== 'funcUnbound')
+  ) {
+    highlightOverridden = false
+    highlightType = expression.highlightType
+  }
   return (
     <Flex
       css={css`
@@ -29,20 +54,8 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
       `}
     >
       <BorderWrapper
-        highlightOverridden={
-          !!(
-            isVariable(expression) &&
-            (!started || highlightOverrideActiveAfterStart) &&
-            highlightOverrides[expression.name]
-          )
-        }
-        highlightType={
-          isVariable(expression)
-            ? ((!started || highlightOverrideActiveAfterStart) &&
-                highlightOverrides[expression.name]) ||
-              expression.highlightType
-            : 'none'
-        }
+        highlightOverridden={highlightOverridden}
+        highlightType={highlightType}
         bottomRightBadgeType={
           isVariable(expression) ? expression.bottomRightBadgeType : 'none'
         }

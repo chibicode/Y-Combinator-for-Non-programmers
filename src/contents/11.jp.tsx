@@ -9,6 +9,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 
 export default () => (
   <EpisodeCardList
@@ -155,6 +156,51 @@ export default () => (
               」と書いたのと矛盾していますよね。どうしてこうなったのでしょう？
             </P>
             <EmojiSeparator emojis={['🤯', '❓', '🍬']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            答え: <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            が同じだから
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              前回、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                が同じか違うかで、結果が変わる
+                <H args={{ name: 'bentoBox', short: true }} />
+                がある
+              </Strong>
+              と説明しました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>❓</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              先ほどの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              では、
+              <H args={{ name: 'play' }} />
+              直後に
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                が同じになる
+              </Strong>
+              のです。こちらをご覧ください。
+            </P>
+            {AER.fdpd}
           </>
         )
       }
