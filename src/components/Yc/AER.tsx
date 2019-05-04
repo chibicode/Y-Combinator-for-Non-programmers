@@ -1379,5 +1379,25 @@ export default {
         <H args={{ name: 'noCallArgFuncUnboundOverlap', letter: 'b' }} />
       }
     />
+  ),
+  sqnu: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11E3}
+      showPriorities
+      initialState="alphaConvertDone"
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={4}
+    />
+  ),
+  fjxw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11E3}
+      showPriorities
+      isDone
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 }

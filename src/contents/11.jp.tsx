@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  Hr,
   Ul,
   UlLi,
   Em,
@@ -16,6 +15,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetterWithAlphaConvertBadge from 'src/components/EmojiForLetterWithAlphaConvertBadge'
 import YesNoButtons from 'src/components/YesNoButtons'
+import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -513,7 +513,7 @@ export default () => (
                 <Strong>
                   <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                  が同じになる、という状況を必ず回避できる。
+                  が被るという状況を必ず回避できる。
                 </Strong>
               </UlLi>
               <EmojiSeparator
@@ -531,6 +531,81 @@ export default () => (
                 ]}
               />
             </Ul>
+          </>
+        )
+      },
+      {
+        title: <>最後まで進めると…</>,
+        content: (
+          <>
+            <P>
+              では、
+              <H args={{ name: 'drink' }} />
+              をつけた時点から最後まで
+              <H args={{ name: 'fastForward' }} />
+              してみましょう。
+            </P>
+            {AER.sqnu}
+            <P>
+              ちゃんと
+              <EmojiWithText letter="z" />
+              が残りました！
+            </P>
+            {AER.fjxw}
+            <P>
+              つまり、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が同じになる場合でも、
+              <H args={{ name: 'drink' }} />
+              をつけることで、<Em>条件分岐が正しく機能する</Em>のです。
+            </P>
+            <EmojiSeparator emojis={['🥤', '🤗', '️🥤']} />
+          </>
+        )
+      },
+      {
+        title: <>暗記する必要はありません！</>,
+        content: (
+          <>
+            <P>
+              今回紹介した
+              <H args={{ name: 'drink' }} />
+              のルールは、
+              <Em>
+                次以降のページに出てくる、
+                <Strong>
+                  条件分岐以外の
+                  <H args={{ name: 'bentoBox', short: true }} />
+                  にも適用されます
+                </Strong>
+                。
+              </Em>
+            </P>
+            <EmojiSeparator emojis={['🥤', '🍱', '️🥤']} />
+            <P>
+              ただし、<Strong>ルールを暗記する必要はありません</Strong>。
+            </P>
+            <P>
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'fastForward' }} />
+              をする途中で
+              <H args={{ name: 'drink' }} />
+              が出てきたら、「<Em>ああ、あのルールね</Em>
+              」と思ってくださるだけで大丈夫です。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>次のページへ</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['🔥', '️😤', '🔥']} />
+            <P>
+              そろそろラストスパートに入ります！ゴールまでもう少しです。あと少しお付き合いください！
+            </P>
+            <YcNextLessonButton nextEpisodeNumber={12} />
           </>
         )
       }
