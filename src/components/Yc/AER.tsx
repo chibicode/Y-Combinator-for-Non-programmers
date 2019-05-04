@@ -1399,5 +1399,11 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  bcso: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E1}
+      showPriorities
+    />
   )
 }

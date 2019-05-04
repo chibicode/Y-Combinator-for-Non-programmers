@@ -179,3 +179,11 @@ export const alphaConversionSimpleExampleParams = (
   question,
   'v'
 ]
+
+export const addOneItemParams = (
+  a: VariableNames | HighlightedVariableExpressionParams,
+  b: VariableNames | HighlightedVariableExpressionParams
+): FunctionExpressionParams => ({
+  arg: a,
+  body: [a, b]
+})

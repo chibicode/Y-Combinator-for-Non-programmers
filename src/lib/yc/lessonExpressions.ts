@@ -12,7 +12,8 @@ import {
   isZeroParams,
   highlighted,
   multParamsRightHighlighted,
-  alphaConversionSimpleExampleParams
+  alphaConversionSimpleExampleParams,
+  addOneItemParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -345,6 +346,11 @@ export const e11E7 = initializeExpressionContainer(
   )
 )
 
+export const e12E1 = initializeExpressionContainer([
+  addOneItemParams('e', 'u'),
+  'question'
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
@@ -370,7 +376,7 @@ export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
 // Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']
 export const addOnePizza: FunctionExpressionParams = {
   arg: 'e',
-  body: ['e', 'f']
+  body: ['e', 'u']
 }
 
 const recursiveFunction: FunctionExpressionParams = {
