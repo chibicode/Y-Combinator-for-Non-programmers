@@ -6,19 +6,13 @@
 - 当サイトの文章は[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)ライセンスです。
 - 文章以外のソースコードは[MIT](docs/license-non-text.txt)ライセンスです。
 
-## データについて
+## プライバシーポリシー
 
-- 利用者数を計測するためにGoogle Analyticsを利用していますが、IPアドレスの収集は匿名化しています。
+- [こちらをご覧ください](docs/privacy-policy-jp.md)。
 
 ## 作者について
 
-上杉周作 ([shu@chibicode.com](mailto:shu@chibicode.com))
+**上杉周作**
 
-## フレームワークについて
-
-Next.jsを利用しています。
-
-```
-yarn install
-yarn dev
-```
+- [メール](mailto:shu@chibicode.com)
+- [ブログ](https://jp.chibicode.com)
