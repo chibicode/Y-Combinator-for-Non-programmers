@@ -332,6 +332,19 @@ export const e11E6 = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'c', 1))
 )
 
+export const e11E7 = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'y',
+    'z',
+    numberParams('a', 'b', 1, true)
+  )
+)
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

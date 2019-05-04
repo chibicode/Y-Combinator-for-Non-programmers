@@ -69,6 +69,7 @@ export interface ExpressionRunnerProps {
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
+  showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
 }
 
 interface PlaybackState {
@@ -170,6 +171,7 @@ const getActions = ({
 
 const ExpressionRunner = ({
   speed,
+  showOnlyFocused,
   caption,
   expressionContainer,
   lastAllowedExpressionState,
@@ -238,6 +240,7 @@ const ExpressionRunner = ({
         highlightOverrideActiveAfterStart,
         highlightOverridesCallArgAndFuncUnboundOnly,
         variableSize,
+        showOnlyFocused,
         started: expressionContainerManagerState.numStepsTaken > 0,
         isDoneOrReady: isDone || isReady
       }}
@@ -361,7 +364,8 @@ ExpressionRunner.defaultProps = {
     expressionRunnerContextDefault.bottomRightBadgeOverrides,
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
-    expressionRunnerContextDefault.highlightOverrideActiveAfterStart
+    expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
+  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused
 }
 
 export default ExpressionRunner

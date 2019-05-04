@@ -14,6 +14,7 @@ export interface ExpressionRunnerContextProps {
   started: boolean
   highlightOverrideActiveAfterStart: boolean
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
+  showOnlyFocused: boolean
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
@@ -25,7 +26,8 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   bottomRightBadgeOverrides: {},
   highlightOverrides: {},
   highlightOverrideActiveAfterStart: false,
-  highlightOverridesCallArgAndFuncUnboundOnly: false
+  highlightOverridesCallArgAndFuncUnboundOnly: false,
+  showOnlyFocused: false
 }
 
 export default React.createContext<ExpressionRunnerContextProps>(

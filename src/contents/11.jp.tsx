@@ -351,7 +351,7 @@ export default () => (
         )
       },
       {
-        title: <>飲み物を追加</>,
+        title: <></>,
         content: (
           <>
             <P>
@@ -372,22 +372,26 @@ export default () => (
               </Em>
               )
             </P>
-            <P>
-              ではここで、小さな変更を加えてみます。その変更とは、
-              <Strong>
-                料理に
-                <H args={{ name: 'drink' }} />
-                を追加すること
-              </Strong>
-              です。どういうことか、ゆっくり説明しますね！
-            </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>🥤</Emoji>,
-                <Emoji>➡️</Emoji>,
-                <EmojiForLetter letter="b" />
+                <Emoji>⚠️</Emoji>,
+                <EmojiForLetter letter="b" />,
+                <Emoji>⚠️</Emoji>
               ]}
             />
+            <P>
+              ではここで、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の部分に注目してみましょう。
+              </Strong>
+              暗号が<Strong>「1」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              です。
+            </P>
+            {AER.kogx}
           </>
         )
       }

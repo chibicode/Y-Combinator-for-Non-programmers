@@ -1345,5 +1345,18 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  kogx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11E7}
+      showPriorities
+      showOnlyFocused
+      initialState="needsAlphaConvert"
+      containerSize={'xs'}
+      variableSize={'md'}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
+      }
+    />
   )
 }

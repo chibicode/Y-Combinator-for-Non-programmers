@@ -102,13 +102,15 @@ export default function buildExpressionFromParams(
           'highlighted'
         ),
         body: buildExpressionFromParams(expressionParams.body),
-        type: 'function'
+        type: 'function',
+        meta: expressionParams.meta
       }
     } else {
       return {
         arg: buildVariableExpression(expressionParams.arg, false, 'default'),
         body: buildExpressionFromParams(expressionParams.body),
-        type: 'function'
+        type: 'function',
+        meta: expressionParams.meta
       }
     }
   }

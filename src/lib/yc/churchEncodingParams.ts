@@ -28,14 +28,20 @@ const nest = (
 export const numberParams = (
   f: VariableNames | HighlightedVariableExpressionParams,
   x: VariableNames | HighlightedVariableExpressionParams,
-  n: number
+  n: number,
+  focused?: boolean
 ): FunctionExpressionParams => {
   return {
     arg: f,
     body: {
       arg: x,
       body: nest(f, x, n)
-    }
+    },
+    meta: focused
+      ? {
+          focused
+        }
+      : undefined
   }
 }
 

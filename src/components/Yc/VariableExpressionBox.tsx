@@ -44,59 +44,41 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
     hidePriorities,
     variableSize,
     hideBottomRightBadges,
-    bottomRightBadgeOverrides
+    bottomRightBadgeOverrides,
+    showOnlyFocused
   } = useContext(ExpressionRunnerContext)
-  return (
-    <>
-      {!hidePriorities && (
-        <ExpressionPrioritiesLabel
-          priorities={expression.argPriorityAgg}
-          position="topleft"
-          removing={expression.highlightType === 'removed'}
-          emphasize={expression.emphasizePriority}
-        />
-      )}
-      <FlexCenter
-        css={css`
-          flex: 1;
-          font-size: ${fontSize(variableSize)};
-          padding: ${paddingTop(variableSize)} 0 ${paddingBottom(variableSize)};
-        `}
-      >
-        <span
+  if (showOnlyFocused) {
+    return <></>
+  } else {
+    return (
+      <>
+        {!hidePriorities && (
+          <ExpressionPrioritiesLabel
+            priorities={expression.argPriorityAgg}
+            position="topleft"
+            removing={expression.highlightType === 'removed'}
+            emphasize={expression.emphasizePriority}
+          />
+        )}
+        <FlexCenter
           css={css`
-            position: relative;
+            flex: 1;
+            font-size: ${fontSize(variableSize)};
+            padding: ${paddingTop(variableSize)} 0
+              ${paddingBottom(variableSize)};
           `}
         >
-          <Emoji size="sm">
-            {expression.highlightType === 'removed'
-              ? '💥'
-              : letterEmojiMapping[expression.name]}
-          </Emoji>
-          {bottomRightBadgeOverrides[expression.name] && (
-            <span
-              css={css`
-                position: absolute;
-                right: -0.2em;
-                bottom: 0;
-                z-index: ${zIndices('badge')};
-              `}
-            >
-              <span
-                css={css`
-                  display: inline-flex;
-                  font-size: 0.5em;
-                  transform: translateY(0.3em);
-                `}
-              >
-                <Emoji size="sm" noVerticalTransform>
-                  {bottomRightBadgeOverrides[expression.name]}
-                </Emoji>
-              </span>
-            </span>
-          )}
-          {!hideBottomRightBadges &&
-            expression.bottomRightBadgeType !== 'none' && (
+          <span
+            css={css`
+              position: relative;
+            `}
+          >
+            <Emoji size="sm">
+              {expression.highlightType === 'removed'
+                ? '💥'
+                : letterEmojiMapping[expression.name]}
+            </Emoji>
+            {bottomRightBadgeOverrides[expression.name] && (
               <span
                 css={css`
                   position: absolute;
@@ -105,51 +87,75 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                   z-index: ${zIndices('badge')};
                 `}
               >
-                <BottomRightBadge
-                  bottomRightBadgeType={expression.bottomRightBadgeType}
-                />
+                <span
+                  css={css`
+                    display: inline-flex;
+                    font-size: 0.5em;
+                    transform: translateY(0.3em);
+                  `}
+                >
+                  <Emoji size="sm" noVerticalTransform>
+                    {bottomRightBadgeOverrides[expression.name]}
+                  </Emoji>
+                </span>
               </span>
             )}
-          {expression.topLeftBadgeType !== 'none' && (
-            <span
-              css={[
-                css`
-                  position: absolute;
-                  top: 0;
-                  z-index: ${zIndices('badge')};
-                  left: -0.18em;
-                `
-              ]}
-            >
-              <TopLeftBadge topLeftBadgeType={expression.topLeftBadgeType} />
-            </span>
-          )}
-          {expression.alphaConverCount > 0 && (
-            <span
-              css={[
-                css`
-                  position: absolute;
-                  top: -0.1em;
-                  z-index: ${zIndices('badge')};
-                  right: -0.2em;
-                `
-              ]}
-            >
-              <AlphaConvertBadge count={expression.alphaConverCount} />
-            </span>
-          )}
-        </span>
-      </FlexCenter>
-      {!hidePriorities && (
-        <ExpressionPrioritiesLabel
-          priorities={expression.funcPriorityAgg}
-          removing={expression.highlightType === 'removed'}
-          position="bottomleft"
-          emphasize={expression.emphasizePriority}
-        />
-      )}
-    </>
-  )
+            {!hideBottomRightBadges &&
+              expression.bottomRightBadgeType !== 'none' && (
+                <span
+                  css={css`
+                    position: absolute;
+                    right: -0.2em;
+                    bottom: 0;
+                    z-index: ${zIndices('badge')};
+                  `}
+                >
+                  <BottomRightBadge
+                    bottomRightBadgeType={expression.bottomRightBadgeType}
+                  />
+                </span>
+              )}
+            {expression.topLeftBadgeType !== 'none' && (
+              <span
+                css={[
+                  css`
+                    position: absolute;
+                    top: 0;
+                    z-index: ${zIndices('badge')};
+                    left: -0.18em;
+                  `
+                ]}
+              >
+                <TopLeftBadge topLeftBadgeType={expression.topLeftBadgeType} />
+              </span>
+            )}
+            {expression.alphaConverCount > 0 && (
+              <span
+                css={[
+                  css`
+                    position: absolute;
+                    top: -0.1em;
+                    z-index: ${zIndices('badge')};
+                    right: -0.2em;
+                  `
+                ]}
+              >
+                <AlphaConvertBadge count={expression.alphaConverCount} />
+              </span>
+            )}
+          </span>
+        </FlexCenter>
+        {!hidePriorities && (
+          <ExpressionPrioritiesLabel
+            priorities={expression.funcPriorityAgg}
+            removing={expression.highlightType === 'removed'}
+            position="bottomleft"
+            emphasize={expression.emphasizePriority}
+          />
+        )}
+      </>
+    )
+  }
 }
 
 export default VariableExpressionBox
