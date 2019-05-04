@@ -603,7 +603,7 @@ export default () => (
           <>
             <EmojiSeparator emojis={['🔥', '️😤', '🔥']} />
             <P>
-              そろそろラストスパートに入ります！ゴールまでもう少しです。あと少しお付き合いください！
+              そろそろこの記事のクライマックスに入ります！ゴールまでもう少しです。あと少しお付き合いください！
             </P>
             <YcNextLessonButton nextEpisodeNumber={12} />
           </>
