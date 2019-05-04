@@ -1,11 +1,20 @@
 import React from 'react'
-import { Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
+import {
+  Hr,
+  Ul,
+  UlLi,
+  Em,
+  P,
+  Strong,
+  InlineHeader
+} from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetterWithAlphaConvertBadge from 'src/components/EmojiForLetterWithAlphaConvertBadge'
 import YesNoButtons from 'src/components/YesNoButtons'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
@@ -341,20 +350,6 @@ export default () => (
               ]}
             />
             <P>
-              答えはシンプルです。
-              <Strong>
-                必要に応じて、暗号に使われている料理に変更を加えればいい
-              </Strong>
-              のです。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <></>,
-        content: (
-          <>
-            <P>
               たとえば、こちらの先ほどの
               <H args={{ name: 'bentoBox', short: true }} />
               をご覧ください。
@@ -379,8 +374,21 @@ export default () => (
                 <Emoji>⚠️</Emoji>
               ]}
             />
+            <P>どうすれば、この状況を打開できるでしょうか？</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'drink' }} />
+            をつける
+          </>
+        ),
+        content: (
+          <>
             <P>
-              ではここで、
+              では、一番下にある
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
@@ -392,6 +400,137 @@ export default () => (
               です。
             </P>
             {AER.kogx}
+            <P>
+              ここで、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                にある
+                <EmojiWithText letter="b" />
+                に、
+                <H args={{ name: 'drink' }} />
+                の印をつけます。
+              </Strong>
+            </P>
+            {AER.qxhk}
+            <P>
+              <InlineHeader>ポイント:</InlineHeader>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />の
+              <EmojiWithText letter="b" />
+              だけでなく、
+              <Em>
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+                <EmojiWithText letter="b" />
+                にも
+                <H args={{ name: 'drink' }} />
+                を加えることによって、これまでと同じ
+                <Strong>「1」</Strong>の暗号の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                になります
+              </Em>
+              。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            が被らなくなる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />の
+                <EmojiWithText letter="b" />に<H args={{ name: 'drink' }} />
+                がついたことで、
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />の
+                <EmojiWithText letter="b" />
+                と被らなくなります。
+              </Strong>
+            </P>
+            {AER.bpyh}
+            <P>
+              「<H args={{ name: 'drink' }} />
+              がある
+              <EmojiWithText letter="b" />
+              」と、「
+              <H args={{ name: 'drink' }} />
+              がない
+              <EmojiWithText letter="b" />
+              」は、<Strong>別物として扱われるので、被らなくなる</Strong>
+              のです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <Emoji>🆚</Emoji>,
+                <EmojiForLetterWithAlphaConvertBadge alphaConvertCount={1}>
+                  <EmojiForLetter letter="b" />
+                </EmojiForLetterWithAlphaConvertBadge>
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <Ul>
+              <UlLi>
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  に同じ料理があるときは…
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  と
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  にあるそれと同じ料理に
+                  <H args={{ name: 'drink' }} />
+                  をつける。
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <H args={{ name: 'drink' }} />
+                をつけても、<Strong>暗号は変わらない</Strong>。
+              </UlLi>
+              <UlLi>
+                だがこうすることで、
+                <Strong>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                  が同じになる、という状況を必ず回避できる。
+                </Strong>
+              </UlLi>
+              <EmojiSeparator
+                nodes={[
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                  <EmojiForLetterWithAlphaConvertBadge alphaConvertCount={1}>
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />
+                  </EmojiForLetterWithAlphaConvertBadge>,
+                  <EmojiForLetterWithAlphaConvertBadge alphaConvertCount={1}>
+                    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  </EmojiForLetterWithAlphaConvertBadge>
+                ]}
+              />
+            </Ul>
           </>
         )
       }

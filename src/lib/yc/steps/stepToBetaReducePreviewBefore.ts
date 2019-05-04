@@ -17,7 +17,7 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 export function toBetaReducePreviewBefore(
   e: VariableExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepVariable<'betaReducePreviewBefore'>
@@ -26,7 +26,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: FunctionExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
@@ -35,7 +35,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: CallExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: NonExecutableStepCall<'betaReducePreviewBefore'>
@@ -44,7 +44,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: VariableExpression | FunctionExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   funcSide: boolean
 ):
   | {
@@ -58,7 +58,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepChild<'betaReducePreviewBefore'>
@@ -67,7 +67,7 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepChild<'betaReducePreviewBefore'>
@@ -75,7 +75,10 @@ export function toBetaReducePreviewBefore(
 } {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      if (e.name === fromName && e.alphaConverCount === fromAlphaConverCount) {
+      if (
+        e.name === fromName &&
+        e.alphaConvertCount === fromalphaConvertCount
+      ) {
         return {
           nextExpression: {
             ...e,
@@ -121,13 +124,13 @@ export function toBetaReducePreviewBefore(
     const argHelperResult = toBetaReducePreviewBefore(
       e.arg,
       fromName,
-      fromAlphaConverCount,
+      fromalphaConvertCount,
       funcSide
     )
     const bodyHelperResult = toBetaReducePreviewBefore(
       e.body,
       fromName,
-      fromAlphaConverCount,
+      fromalphaConvertCount,
       funcSide
     )
 
@@ -143,13 +146,13 @@ export function toBetaReducePreviewBefore(
     const argHelperResult = toBetaReducePreviewBefore(
       e.arg,
       fromName,
-      fromAlphaConverCount,
+      fromalphaConvertCount,
       funcSide
     )
     const funcHelperResult = toBetaReducePreviewBefore(
       e.func,
       fromName,
-      fromAlphaConverCount,
+      fromalphaConvertCount,
       funcSide
     )
     return {
@@ -191,17 +194,17 @@ const stepToBetaReducePreviewBefore = (
   matchExists: boolean
 } => {
   const fromName = e.func.arg.name
-  const fromAlphaConverCount = e.func.arg.alphaConverCount
+  const fromalphaConvertCount = e.func.arg.alphaConvertCount
   const argResult = toBetaReducePreviewBefore(
     e.arg,
     fromName,
-    fromAlphaConverCount,
+    fromalphaConvertCount,
     false
   )
   const funcResult = toBetaReducePreviewBefore(
     e.func.body,
     fromName,
-    fromAlphaConverCount,
+    fromalphaConvertCount,
     true
   )
   const matchExists = argResult.matchExists || funcResult.matchExists

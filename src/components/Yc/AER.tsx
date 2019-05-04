@@ -1353,9 +1353,30 @@ export default {
       showOnlyFocused
       initialState="needsAlphaConvert"
       containerSize={'xs'}
-      variableSize={'md'}
       caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
+      }
+    />
+  ),
+  qxhk: (
+    <ExpressionRunnerSimple
+      explanationsVisibility="visible"
+      expressionContainer={lessonExpressions.e11E7}
+      showPriorities
+      showOnlyFocused
+      initialState="alphaConvertDone"
+      containerSize={'xs'}
+    />
+  ),
+  bpyh: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11E3}
+      showPriorities
+      initialState="alphaConvertDone"
+      containerSize={'xs'}
+      variableSize={'md'}
+      caption={
+        <H args={{ name: 'noCallArgFuncUnboundOverlap', letter: 'b' }} />
       }
     />
   )

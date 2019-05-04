@@ -53,7 +53,7 @@ export function toNeedsAlphaConvert(
         bottomRightBadgeType: 'funcBound'
       }
     } else if (funcSide && !x.bound) {
-      if (conflicts[x.name] && conflicts[x.name]![x.alphaConverCount]) {
+      if (conflicts[x.name] && conflicts[x.name]![x.alphaConvertCount]) {
         return {
           ...x,
           highlightType: 'highlighted',
@@ -69,7 +69,7 @@ export function toNeedsAlphaConvert(
         }
       }
     } else {
-      if (conflicts[x.name] && conflicts[x.name]![x.alphaConverCount]) {
+      if (conflicts[x.name] && conflicts[x.name]![x.alphaConvertCount]) {
         return {
           ...x,
           highlightType: 'highlighted',

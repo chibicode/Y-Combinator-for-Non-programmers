@@ -129,7 +129,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                 <TopLeftBadge topLeftBadgeType={expression.topLeftBadgeType} />
               </span>
             )}
-            {expression.alphaConverCount > 0 && (
+            {expression.alphaConvertCount > 0 && (
               <span
                 css={[
                   css`
@@ -140,7 +140,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                   `
                 ]}
               >
-                <AlphaConvertBadge count={expression.alphaConverCount} />
+                <AlphaConvertBadge count={expression.alphaConvertCount} />
               </span>
             )}
           </span>

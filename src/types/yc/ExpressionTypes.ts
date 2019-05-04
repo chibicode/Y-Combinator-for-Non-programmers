@@ -10,7 +10,7 @@ export interface VariableExpression {
   readonly emphasizePriority: boolean
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
-  readonly alphaConverCount: number
+  readonly alphaConvertCount: number
 }
 
 export type VariableWithState<

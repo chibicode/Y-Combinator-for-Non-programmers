@@ -98,15 +98,10 @@ export interface HProps {
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
     | { name: 'drink'; skipEmoji?: boolean }
-    | {
-        name: 'takeABreak'
-      }
-    | {
-        name: 'privacyPolicy'
-      }
-    | {
-        name: 'aboutThisSite'
-      }
+    | { name: 'takeABreak' }
+    | { name: 'privacyPolicy' }
+    | { name: 'aboutThisSite' }
+    | { name: 'noCallArgFuncUnboundOverlap'; letter: VariableNames }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1052,15 +1047,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          飲み物
+          ドリンク
           {args.skipEmoji ? (
             ''
           ) : (
             <>
-              {' '}
               <Emoji>🥤</Emoji>
             </>
           )}
+        </>
+      )
+    }
+  }
+  if (args.name === 'noCallArgFuncUnboundOverlap') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Strong>
+            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> の{' '}
+            <EmojiForLetter letter={args.letter} /> には <Emoji>🥤</Emoji>
+            があり、
+            <BottomRightBadge bottomRightBadgeType="callArg" inline /> の
+            <EmojiForLetter letter={args.letter} /> にはない
+          </Strong>
         </>
       )
     }

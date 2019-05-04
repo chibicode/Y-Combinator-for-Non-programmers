@@ -35,7 +35,7 @@ function getAllVariableNamesEncodedWithDuplicates(
       return [
         encodeVariableNameAndAlphaConvertCount(
           expression.name,
-          expression.alphaConverCount
+          expression.alphaConvertCount
         )
       ]
     } else {

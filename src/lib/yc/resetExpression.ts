@@ -39,7 +39,7 @@ export default function resetExpression(
       argPriorityAgg: [],
       funcPriorityAgg: [],
       emphasizePriority: false,
-      alphaConverCount: expression.alphaConverCount
+      alphaConvertCount: expression.alphaConvertCount
     }
   } else if (isCall(expression)) {
     return {

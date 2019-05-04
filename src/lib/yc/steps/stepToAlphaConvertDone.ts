@@ -53,7 +53,7 @@ export function toAlphaConvertDone(
 ): StepChild<'alphaConvertDone'> {
   if (isVariable(e)) {
     if (funcSide) {
-      if (conflicts[e.name] && conflicts[e.name]![e.alphaConverCount]) {
+      if (conflicts[e.name] && conflicts[e.name]![e.alphaConvertCount]) {
         const maxAlphaConvertCount = Math.max.apply(
           Math,
           Object.keys(allVariables[e.name]!).map(x => parseInt(x))
@@ -61,7 +61,7 @@ export function toAlphaConvertDone(
         if (e.bound) {
           return {
             ...e,
-            alphaConverCount: maxAlphaConvertCount + 1,
+            alphaConvertCount: maxAlphaConvertCount + 1,
             highlightType: 'conflictResolvedHighlighted',
             topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
@@ -69,7 +69,7 @@ export function toAlphaConvertDone(
         } else {
           return {
             ...e,
-            alphaConverCount: maxAlphaConvertCount + 1,
+            alphaConvertCount: maxAlphaConvertCount + 1,
             highlightType: 'conflictResolvedHighlighted',
             topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcUnbound'

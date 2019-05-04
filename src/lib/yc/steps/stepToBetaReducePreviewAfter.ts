@@ -54,28 +54,28 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
 export function toBetaReducePreviewAfter(
   e: VariableExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): StepVariable<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: FunctionExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): StepFunction<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: CallExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): NonExecutableStepCall<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: VariableExpression | FunctionExpression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ):
@@ -84,20 +84,23 @@ export function toBetaReducePreviewAfter(
 export function toBetaReducePreviewAfter(
   e: Expression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): StepChild<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: Expression,
   fromName: VariableNames,
-  fromAlphaConverCount: number,
+  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      if (e.name === fromName && e.alphaConverCount === fromAlphaConverCount) {
+      if (
+        e.name === fromName &&
+        e.alphaConvertCount === fromalphaConvertCount
+      ) {
         return matchBetaReduced(to)
       } else {
         return {
@@ -128,14 +131,14 @@ export function toBetaReducePreviewAfter(
       arg: toBetaReducePreviewAfter(
         e.arg,
         fromName,
-        fromAlphaConverCount,
+        fromalphaConvertCount,
         to,
         funcSide
       ),
       body: toBetaReducePreviewAfter(
         e.body,
         fromName,
-        fromAlphaConverCount,
+        fromalphaConvertCount,
         to,
         funcSide
       )
@@ -147,14 +150,14 @@ export function toBetaReducePreviewAfter(
       arg: toBetaReducePreviewAfter(
         e.arg,
         fromName,
-        fromAlphaConverCount,
+        fromalphaConvertCount,
         to,
         funcSide
       ),
       func: toBetaReducePreviewAfter(
         e.func,
         fromName,
-        fromAlphaConverCount,
+        fromalphaConvertCount,
         to,
         funcSide
       )
@@ -166,7 +169,7 @@ const stepToBetaReducePreviewAfter = (
   e: ExecutableCall
 ): ExecutableStepCall<'betaReducePreviewAfter'> => {
   const fromName = e.func.arg.name
-  const fromAlphaConverCount = e.func.arg.alphaConverCount
+  const fromalphaConvertCount = e.func.arg.alphaConvertCount
   const to = e.arg
 
   return {
@@ -175,7 +178,7 @@ const stepToBetaReducePreviewAfter = (
     arg: toBetaReducePreviewAfter(
       e.arg,
       fromName,
-      fromAlphaConverCount,
+      fromalphaConvertCount,
       to,
       false
     ),
@@ -185,7 +188,7 @@ const stepToBetaReducePreviewAfter = (
       body: toBetaReducePreviewAfter(
         e.func.body,
         fromName,
-        fromAlphaConverCount,
+        fromalphaConvertCount,
         to,
         true
       )

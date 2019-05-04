@@ -260,7 +260,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return (
           <>
-            Added drinks for{' '}
+            Added <H args={{ name: 'drink' }} /> for{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />
           </>
@@ -269,8 +269,9 @@ const stateToExplanation = ({
         return (
           <>
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            にドリンクを追加
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> に
+            <H args={{ name: 'drink' }} />
+            を追加
           </>
         )
       }
