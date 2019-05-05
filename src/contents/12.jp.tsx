@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { Hr, P, Strong } from 'src/components/ContentTags'
+import { P, Strong } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AER'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
