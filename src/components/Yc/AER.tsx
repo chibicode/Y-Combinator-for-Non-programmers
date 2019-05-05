@@ -1405,5 +1405,58 @@ export default {
       expressionContainer={lessonExpressions.e12E1}
       showPriorities
     />
+  ),
+  klah: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E2}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.25}
+    />
+  ),
+  agso: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E2}
+      isDone
+    />
+  ),
+  hqbn: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E3}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.25}
+    />
+  ),
+  wnxr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E3}
+      isDone
+    />
+  ),
+  oyde: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e12E2}
+      variableSize={'md'}
+    />
+  ),
+  caqd: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e12E3}
+      variableSize={'md'}
+    />
+  ),
+  uixu: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e12E4}
+      variableSize={'md'}
+    />
+  ),
+  qiri: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E1}
+      showPriorities
+      variableSize={'md'}
+    />
   )
 }

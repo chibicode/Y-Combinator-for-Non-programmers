@@ -19,7 +19,8 @@ const background = (
   highlightType: BorderWrapperProps['highlightType'],
   isDoneOrReady: boolean,
   topLeftBadgeType: BorderWrapperProps['topLeftBadgeType'],
-  isQuestion: boolean
+  isQuestion: boolean,
+  started: boolean
 ): SerializedStyles | undefined => {
   if (isQuestion) {
     return css`
@@ -27,6 +28,13 @@ const background = (
     `
   }
   switch (highlightType) {
+    case 'initialHighlighted': {
+      return css`
+        background: ${colors(
+          started ? (isDoneOrReady ? 'white' : 'indigo50') : 'yellow100'
+        )};
+      `
+    }
     case 'pink': {
       return css`
         background: ${colors('pink50')};
@@ -94,7 +102,7 @@ const BorderWrapper = ({
   children,
   isQuestion
 }: BorderWrapperProps) => {
-  const { isDoneOrReady } = useContext(ExpressionRunnerContext)
+  const { isDoneOrReady, started } = useContext(ExpressionRunnerContext)
   return (
     <Flex
       css={[
@@ -105,7 +113,13 @@ const BorderWrapper = ({
           flex: 1;
           position: relative;
         `,
-        background(highlightType, isDoneOrReady, topLeftBadgeType, isQuestion),
+        background(
+          highlightType,
+          isDoneOrReady,
+          topLeftBadgeType,
+          isQuestion,
+          started
+        ),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&
           topLeftBadgeType === 'none' &&

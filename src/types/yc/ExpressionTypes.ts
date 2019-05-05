@@ -26,7 +26,7 @@ export type VariableWithEmphasizePriorityAndState<
 
 interface VariableStates {
   default: {
-    readonly highlightType: 'default' | 'highlighted'
+    readonly highlightType: 'default' | 'initialHighlighted'
     readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'none'
   }

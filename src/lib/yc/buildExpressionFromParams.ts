@@ -43,7 +43,7 @@ function nestCallExpressions(expression: any) {
 const buildVariableExpression = (
   name: VariableNames,
   bound: boolean,
-  highlightType: 'default' | 'highlighted'
+  highlightType: 'default' | 'initialHighlighted'
 ): StepVariable => ({
   name,
   highlightType,
@@ -92,14 +92,18 @@ export default function buildExpressionFromParams(
       priority: 0
     }
   } else if (isHighlightedVariableExpressionParams(expressionParams)) {
-    return buildVariableExpression(expressionParams.name, true, 'highlighted')
+    return buildVariableExpression(
+      expressionParams.name,
+      true,
+      'initialHighlighted'
+    )
   } else {
     if (isHighlightedVariableExpressionParams(expressionParams.arg)) {
       return {
         arg: buildVariableExpression(
           expressionParams.arg.name,
           false,
-          'highlighted'
+          'initialHighlighted'
         ),
         body: buildExpressionFromParams(expressionParams.body),
         type: 'function',

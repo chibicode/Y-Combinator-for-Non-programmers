@@ -183,7 +183,8 @@ export const ExpressionRunnerPairSimple = ({
   secondInitializeInstructions,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  skipAlphaConvert
+  skipAlphaConvert,
+  variableSize
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -196,6 +197,7 @@ export const ExpressionRunnerPairSimple = ({
   secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
+  variableSize: ExpressionRunnerProps['variableSize']
 }) => (
   <>
     <ExpressionRunner
@@ -203,7 +205,7 @@ export const ExpressionRunnerPairSimple = ({
       hideControls
       hidePriorities={!showPriorities}
       explanationsVisibility="hidden"
-      variableSize={'lg'}
+      variableSize={variableSize}
       skipAlphaConvert={skipAlphaConvert}
       highlightOverrides={highlightOverrides}
       highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
@@ -241,7 +243,7 @@ export const ExpressionRunnerPairSimple = ({
       hideControls
       hidePriorities={!showPriorities || hidePrioritiesOnSecond}
       explanationsVisibility="hidden"
-      variableSize={'lg'}
+      variableSize={variableSize}
       skipAlphaConvert={skipAlphaConvert}
       highlightOverrides={highlightOverrides}
       highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
@@ -268,7 +270,8 @@ ExpressionRunnerPairSimple.defaultProps = {
   finalIsDone: false,
   showPriorities: false,
   skipAlphaConvert: false,
-  hidePrioritiesOnSecond: false
+  hidePrioritiesOnSecond: false,
+  variableSize: 'lg'
 }
 
 export const ExpressionRunnerSingleStep = ({

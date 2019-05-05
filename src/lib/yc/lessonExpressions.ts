@@ -351,6 +351,42 @@ export const e12E1 = initializeExpressionContainer([
   'question'
 ])
 
+export const e12E2 = initializeExpressionContainer([
+  addOneItemParams('e', 'u'),
+  {
+    name: 'u',
+    highlighted: true
+  }
+])
+
+export const e12E3 = initializeExpressionContainer([
+  addOneItemParams('e', 'u'),
+  {
+    name: 'u',
+    highlighted: true
+  },
+  {
+    name: 'u',
+    highlighted: true
+  }
+])
+
+export const e12E4 = initializeExpressionContainer([
+  addOneItemParams('e', 'u'),
+  {
+    name: 'u',
+    highlighted: true
+  },
+  {
+    name: 'u',
+    highlighted: true
+  },
+  {
+    name: 'u',
+    highlighted: true
+  }
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
