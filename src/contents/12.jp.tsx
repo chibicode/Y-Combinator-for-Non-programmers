@@ -107,6 +107,19 @@ export default () => (
             {AER.uixu}
           </>
         )
+      },
+      {
+        title: <>?</>,
+        content: (
+          <>
+            <P>
+              次に、こちらの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              をご覧ください。
+            </P>
+            {AER.wawo}
+          </>
+        )
       }
     ]}
   />

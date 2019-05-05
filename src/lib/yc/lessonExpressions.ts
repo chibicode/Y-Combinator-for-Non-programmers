@@ -407,7 +407,30 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
-export const yCombinatorContainer = initializeExpressionContainer(yCombinator)
+const wikipediaYCombinator: FunctionExpressionParams = {
+  arg: 'a',
+  body: [
+    {
+      arg: 'b',
+      body: ['a', ['b', 'b']]
+    },
+    {
+      arg: 'b',
+      body: ['a', ['b', 'b']]
+    }
+  ]
+}
+
+export const e12E5 = initializeExpressionContainer([
+  wikipediaYCombinator,
+  'question'
+  // addOneItemParams('e', 'u')
+])
+
+export const yCombinatorContainer = initializeExpressionContainer([
+  yCombinator,
+  'question'
+])
 
 // Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']
 export const addOnePizza: FunctionExpressionParams = {

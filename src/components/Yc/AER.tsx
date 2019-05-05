@@ -1458,5 +1458,12 @@ export default {
       showPriorities
       variableSize={'md'}
     />
+  ),
+  wawo: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E5}
+      showPriorities
+      skipToTheEnd={false}
+    />
   )
 }
