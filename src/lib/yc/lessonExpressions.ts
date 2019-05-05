@@ -13,7 +13,8 @@ import {
   highlighted,
   multParamsRightHighlighted,
   alphaConversionSimpleExampleParams,
-  addOneItemParams
+  addOneItemParams,
+  predParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -385,6 +386,11 @@ export const e12E4 = initializeExpressionContainer([
     name: 'u',
     highlighted: true
   }
+])
+
+export const subtractionTest = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  numberParams('g', 'h', 3)
 ])
 
 const yCombinator: FunctionExpressionParams = {

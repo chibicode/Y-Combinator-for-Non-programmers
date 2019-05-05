@@ -1465,5 +1465,14 @@ export default {
       showPriorities
       skipToTheEnd={false}
     />
+  ),
+  fcvl: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.subtractionTest}
+      skipToTheEnd={false}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 }
