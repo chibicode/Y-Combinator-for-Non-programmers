@@ -17,7 +17,8 @@ const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
   12: ['❓', '❓', '️❓'],
   13: ['❓', '❓', '️❓'],
   14: ['❓', '❓', '️❓'],
-  15: ['❓', '❓', '️❓']
+  15: ['❓', '❓', '️❓'],
+  16: ['❓', '❓', '️❓']
 }
 
 export default episodeEmojis

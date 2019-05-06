@@ -16,6 +16,8 @@ import Jp14 from 'src/contents/14.jp'
 import En14 from 'src/contents/14.en'
 import Jp15 from 'src/contents/15.jp'
 import En15 from 'src/contents/15.en'
+import Jp16 from 'src/contents/16.jp'
+import En16 from 'src/contents/16.en'
 import Jp2 from 'src/contents/2.jp'
 import En2 from 'src/contents/2.en'
 import Jp3 from 'src/contents/3.jp'
@@ -70,6 +72,11 @@ export interface BundleTypes {
   }
 
   '15': {
+    jp: React.ComponentType<{}>
+    en: React.ComponentType<{}>
+  }
+
+  '16': {
     jp: React.ComponentType<{}>
     en: React.ComponentType<{}>
   }
@@ -147,6 +154,10 @@ const bundle: BundleTypes = {
   '15': {
     en: En15,
     jp: Jp15
+  },
+  '16': {
+    en: En16,
+    jp: Jp16
   },
   '2': {
     en: En2,
