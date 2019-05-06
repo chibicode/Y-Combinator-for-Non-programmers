@@ -248,10 +248,16 @@ export interface FunctionExpression {
   readonly meta?: FunctionExpressionMeta
 }
 
+export interface ShorthandFunctionExpression {
+  readonly type: 'shorthandFunction'
+  readonly name: 'pred' | 'isOne'
+}
+
 export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
+  | ShorthandFunctionExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
@@ -269,7 +275,7 @@ type NonExecutable<E extends Expression> = CallExpression & {
 
 type Executable<
   S extends CallStates,
-  F extends FunctionExpression,
+  F extends FunctionExpression | ShorthandFunctionExpression,
   E extends Expression
 > = CallExpression & {
   readonly arg: E

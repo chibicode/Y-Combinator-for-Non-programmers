@@ -3,7 +3,8 @@ import {
   ExecutableCall,
   Expression,
   FunctionExpression,
-  VariableExpression
+  VariableExpression,
+  ShorthandFunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export function isVariable<V extends VariableExpression = VariableExpression>(
@@ -28,4 +29,10 @@ export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
   return isFunction(expression.func)
+}
+
+export function isShorthandFunction<
+  E extends ShorthandFunctionExpression = ShorthandFunctionExpression
+>(expression: Expression): expression is E {
+  return expression.type === 'shorthandFunction'
 }
