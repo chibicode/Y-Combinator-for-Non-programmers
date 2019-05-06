@@ -18,10 +18,10 @@
     "twemoji": "^12.0.1"
   },
   "scripts": {
-    "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 3001",
-    "en": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=en next -p 3000",
-    "jp:hide-cards": "DEV_LOCALE=jp next -p 3001",
-    "en:hide-cards": "DEV_LOCALE=en next -p 3000",
+    "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 9991",
+    "en": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=en next -p 9990",
+    "jp:hide-cards": "DEV_LOCALE=jp next -p 9991",
+    "en:hide-cards": "DEV_LOCALE=en next -p 9990",
     "dev": "rm -rf .next && yarn tsc && yarn eslint && concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\" \"yarn twemoji:watch\"",
     "dev:hide-cards": "rm -rf .next && yarn tsc && yarn eslint && concurrently \"yarn jp:hide-cards\" \"yarn en:hide-cards\" \"yarn contents:watch\" \"yarn twemoji:watch\"",
     "contents": "node ./scripts/generateContentsBundle.js",
