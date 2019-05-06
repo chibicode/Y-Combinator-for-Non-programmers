@@ -161,7 +161,7 @@ export type CallStates =
   | 'betaReducePreviewCrossed'
 
 // Call state to possible variable state
-export type CtoV<C extends CallStates> = C extends 'default'
+export type CallStateToVariableState<C extends CallStates> = C extends 'default'
   ? 'default'
   : C extends 'active'
   ? 'active'
@@ -248,10 +248,25 @@ export interface FunctionExpression {
   readonly meta?: FunctionExpressionMeta
 }
 
+export interface ShorthandFunctionStates {
+  default: {
+    readonly highlightType: 'default'
+  }
+}
+
 export interface ShorthandFunctionExpression {
   readonly type: 'shorthandFunction'
   readonly name: 'pred' | 'isOne'
+  readonly state: ShorthandFunctionStates
 }
+
+export type ShorthandFunctionWithState<
+  S extends keyof ShorthandFunctionStates
+> = ShorthandFunctionExpression & ShorthandFunctionStates[S]
+
+export type CallStateToShorthandFunctionState<
+  C extends CallStates
+> = C extends 'default' ? 'default' : 'default'
 
 export type Expression =
   | VariableExpression
@@ -284,18 +299,26 @@ type Executable<
 }
 
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
-  CtoV<C>
+  CallStateToVariableState<C>
 >
+export type StepShorthandFunction<
+  C extends CallStates = 'default'
+> = ShorthandFunctionWithState<CallStateToShorthandFunctionState<C>>
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
 export interface ExecutableStepCall<C extends CallStates = 'default'>
-  extends Executable<C, StepFunction<C>, StepChild<C>> {}
+  extends Executable<
+    C,
+    StepFunction<C> | StepShorthandFunction<C>,
+    StepChild<C>
+  > {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
   | NonExecutableStepCall<C>
+  | StepShorthandFunction<C>
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
