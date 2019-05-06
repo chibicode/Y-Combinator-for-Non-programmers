@@ -257,7 +257,7 @@ export interface ShorthandFunctionStates {
 export interface ShorthandFunctionExpression {
   readonly type: 'shorthandFunction'
   readonly name: 'pred' | 'isOne'
-  readonly state: ShorthandFunctionStates
+  readonly highlightType: ShorthandFunctionStates[keyof ShorthandFunctionStates]['highlightType']
 }
 
 export type ShorthandFunctionWithState<
