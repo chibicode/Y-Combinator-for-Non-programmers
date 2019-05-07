@@ -1,10 +1,16 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
   ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
+  ShorthandFunctionExpression,
+  StepShorthandFunction,
   NonExecutableStepCall,
   StepChild,
   StepFunction,
@@ -30,6 +36,15 @@ export function toBetaReducePreviewBefore(
   funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
+  matchExists: boolean
+}
+export function toBetaReducePreviewBefore(
+  e: ShorthandFunctionExpression,
+  fromName: VariableNames,
+  fromalphaConvertCount: number,
+  funcSide: boolean
+): {
+  nextExpression: StepShorthandFunction<'betaReducePreviewBefore'>
   matchExists: boolean
 }
 export function toBetaReducePreviewBefore(
@@ -141,6 +156,14 @@ export function toBetaReducePreviewBefore(
         body: bodyHelperResult.nextExpression
       },
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
+    }
+  } else if (isShorthandFunction(e)) {
+    return {
+      nextExpression: {
+        ...e,
+        highlightType: 'default'
+      },
+      matchExists: false
     }
   } else {
     const argHelperResult = toBetaReducePreviewBefore(

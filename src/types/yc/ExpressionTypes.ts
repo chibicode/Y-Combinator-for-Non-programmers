@@ -160,8 +160,6 @@ export type CallStates =
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewCrossed'
 
-export type CallStatesShorthand = 'default' | 'active'
-
 // Call state to possible variable state
 export type CallStateToVariableState<C extends CallStates> = C extends 'default'
   ? 'default'
@@ -271,7 +269,7 @@ export type ShorthandFunctionWithState<
 
 export type CallStateToShorthandFunctionState<
   C extends CallStates
-> = C extends 'default' ? 'default' : 'active'
+> = C extends 'default' ? 'default' : C extends 'active' ? 'active' : 'default'
 
 export type Expression =
   | VariableExpression
@@ -304,7 +302,7 @@ type ExecutableRegular<
 }
 
 type ExecutableShorthand<
-  S extends CallStatesShorthand,
+  S extends CallStates,
   F extends ShorthandFunctionExpression,
   E extends Expression
 > = CallExpression & {
@@ -325,9 +323,8 @@ export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
 export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
   extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
-export interface ExecutableStepCallShorthand<
-  C extends CallStatesShorthand = 'default'
-> extends ExecutableShorthand<C, StepShorthandFunction<C>, StepChild<C>> {}
+export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
+  extends ExecutableShorthand<C, StepShorthandFunction<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
@@ -341,12 +338,10 @@ type DistributeStepCallRegular<U> = U extends CallStates
   : never
 export type ExecutableCallRegular = DistributeStepCallRegular<CallStates>
 
-type DistributeStepCallShorthand<U> = U extends CallStatesShorthand
+type DistributeStepCallShorthand<U> = U extends CallStates
   ? ExecutableStepCallShorthand<U>
   : never
 
-export type ExecutableCallShorthand = DistributeStepCallShorthand<
-  CallStatesShorthand
->
+export type ExecutableCallShorthand = DistributeStepCallShorthand<CallStates>
 
 export type ExecutableCall = ExecutableCallRegular | ExecutableCallShorthand

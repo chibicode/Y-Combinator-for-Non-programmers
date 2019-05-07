@@ -1,4 +1,8 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -10,7 +14,9 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression
+  VariableExpression,
+  ShorthandFunctionExpression,
+  StepShorthandFunction
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -20,6 +26,9 @@ function matchBetaReduced(
 function matchBetaReduced(
   e: FunctionExpression
 ): StepFunction<'betaReducePreviewAfter'>
+function matchBetaReduced(
+  e: ShorthandFunctionExpression
+): StepShorthandFunction<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: CallExpression
 ): NonExecutableStepCall<'betaReducePreviewAfter'>
@@ -40,6 +49,11 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
       ...e,
       arg: matchBetaReduced(e.arg),
       body: matchBetaReduced(e.body)
+    }
+  } else if (isShorthandFunction(e)) {
+    return {
+      ...e,
+      highlightType: 'default'
     }
   } else {
     return {
@@ -65,6 +79,13 @@ export function toBetaReducePreviewAfter(
   to: Expression,
   funcSide: boolean
 ): StepFunction<'betaReducePreviewAfter'>
+export function toBetaReducePreviewAfter(
+  e: ShorthandFunctionExpression,
+  fromName: VariableNames,
+  fromalphaConvertCount: number,
+  to: Expression,
+  funcSide: boolean
+): StepShorthandFunction<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: CallExpression,
   fromName: VariableNames,
@@ -142,6 +163,11 @@ export function toBetaReducePreviewAfter(
         to,
         funcSide
       )
+    }
+  } else if (isShorthandFunction(e)) {
+    return {
+      ...e,
+      highlightType: 'default'
     }
   } else {
     return {
