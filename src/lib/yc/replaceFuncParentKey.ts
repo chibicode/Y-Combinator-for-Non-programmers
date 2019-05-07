@@ -9,44 +9,44 @@ import {
   FunctionExpression,
   VariableExpression,
   StepChild,
-  ExecutableCallRegular,
+  ExecutableCall,
   ShorthandFunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function replaceFuncParentKey(
   expression: VariableExpression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): VariableExpression
 export default function replaceFuncParentKey(
   expression: ShorthandFunctionExpression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): ShorthandFunctionExpression
 export default function replaceFuncParentKey(
   expression: FunctionExpression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): FunctionExpression
 export default function replaceFuncParentKey(
   expression: CallExpression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): CallExpression
 export default function replaceFuncParentKey(
   expression: VariableExpression | FunctionExpression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): VariableExpression | FunctionExpression
 export default function replaceFuncParentKey(
   expression: Expression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): Expression
 export default function replaceFuncParentKey(
   expression: Expression,
   target: FunctionExpression,
-  replaceWith: ExecutableCallRegular | StepChild<'default'>
+  replaceWith: ExecutableCall | StepChild<'default'>
 ): Expression {
   if (isVariable(expression)) {
     return expression
