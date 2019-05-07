@@ -1,6 +1,5 @@
 import { getConflicts } from 'src/lib/yc/variablesHelper'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
-import { isShorthandFunction } from 'src/lib/yc/expressionTypeGuards'
 import { StepOptions } from 'src/lib/yc/ExpressionContainerManager'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
@@ -116,12 +115,7 @@ const stepRegular = (
       }
     }
     case 'active': {
-      if (isShorthandFunction(e.func)) {
-        return {
-          nextExpression: stepToShorthandExec(e),
-          previouslyChangedExpressionState: 'default'
-        }
-      } else if (showAllShowSteps) {
+      if (showAllShowSteps) {
         return {
           nextExpression: stepToShowCallArg(e),
           previouslyChangedExpressionState: 'showCallArg'

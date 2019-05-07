@@ -48,7 +48,10 @@ function toActive(e: Expression): StepChild<'active'> {
       body: toActive(e.body)
     }
   } else if (isShorthandFunction(e)) {
-    return e
+    return {
+      ...e,
+      highlightType: 'active'
+    }
   } else {
     return {
       ...e,
@@ -116,7 +119,7 @@ export default function stepToActive(
     : isVariable(e.arg)
     ? variableToEmphasize(e.arg)
     : isShorthandFunction(e.arg)
-    ? e.arg
+    ? toActive(e.arg)
     : emphasizeArgPriorityCallExpression(toActive(e.arg))
   if (isExecutableCallRegular(e)) {
     return {
@@ -129,7 +132,8 @@ export default function stepToActive(
     return {
       ...e,
       state: 'active',
-      arg
+      arg,
+      func: toActive(e.func)
     }
   }
 }

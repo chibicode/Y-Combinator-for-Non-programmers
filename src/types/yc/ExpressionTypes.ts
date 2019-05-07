@@ -254,6 +254,9 @@ export interface ShorthandFunctionStates {
   default: {
     readonly highlightType: 'default'
   }
+  active: {
+    readonly highlightType: 'active'
+  }
 }
 
 export interface ShorthandFunctionExpression {
@@ -268,7 +271,7 @@ export type ShorthandFunctionWithState<
 
 export type CallStateToShorthandFunctionState<
   C extends CallStates
-> = C extends 'default' ? 'default' : 'default'
+> = C extends 'default' ? 'default' : 'active'
 
 export type Expression =
   | VariableExpression
