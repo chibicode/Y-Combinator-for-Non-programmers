@@ -7,6 +7,7 @@ import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
+import { isExecutableCallRegular } from 'src/lib/yc/expressionTypeGuards'
 import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -26,9 +27,11 @@ import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpression,
   CallStates,
-  ExecutableCallRegular,
+  ExecutableCall,
   FunctionExpression,
-  StepChild
+  StepChild,
+  ExecutableCallShorthand,
+  ExecutableCallRegular
 } from 'src/types/yc/ExpressionTypes'
 import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 
@@ -51,7 +54,15 @@ const stepExpressionContainerReset = (
   }
 }
 
-const step = (
+const stepShorthand = (
+  e: ExecutableCallShorthand
+): {
+  nextExpression: ExecutableCallShorthand | StepChild<'default'>
+  matchExists?: boolean
+  previouslyChangedExpressionState: CallStates
+} => {}
+
+const stepRegular = (
   e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
   matchExists?: boolean
@@ -192,7 +203,7 @@ const runStep = (
     funcParent,
     callParentKey
   } = findNextCallExpressionAndParent<
-    ExecutableCallRegular,
+    ExecutableCall,
     CallExpression,
     FunctionExpression
   >(e.expression)
@@ -208,7 +219,9 @@ const runStep = (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = step(expression, stepOptions, e.matchExists)
+  } = isExecutableCallRegular(expression)
+    ? stepRegular(expression, stepOptions, e.matchExists)
+    : stepShorthand(expression)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
