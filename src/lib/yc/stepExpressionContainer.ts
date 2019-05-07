@@ -60,7 +60,25 @@ const stepShorthand = (
   nextExpression: ExecutableCallShorthand | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
-} => {}
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    case 'active': {
+      return {
+        nextExpression: stepToShorthandExec(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    default: {
+      throw new Error()
+    }
+  }
+}
 
 const stepRegular = (
   e: ExecutableCallRegular,
