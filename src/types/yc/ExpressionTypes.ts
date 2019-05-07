@@ -160,6 +160,8 @@ export type CallStates =
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewCrossed'
 
+export type CallStatesShorthand = 'default' | 'active'
+
 // Call state to possible variable state
 export type CallStateToVariableState<C extends CallStates> = C extends 'default'
   ? 'default'
@@ -314,6 +316,8 @@ export interface ExecutableStepCall<C extends CallStates = 'default'>
     StepFunction<C> | StepShorthandFunction<C>,
     StepChild<C>
   > {}
+export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
+  extends Executable<C, StepShorthandFunction<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
@@ -322,5 +326,15 @@ export type StepChild<C extends CallStates = 'default'> =
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
-type Distribute<U> = U extends CallStates ? ExecutableStepCall<U> : never
-export type ExecutableCall = Distribute<CallStates>
+type DistributeStepCall<U> = U extends CallStates
+  ? ExecutableStepCall<U>
+  : never
+export type ExecutableCall = DistributeStepCall<CallStates>
+
+type DistributeStepCallShorthand<U> = U extends CallStatesShorthand
+  ? ExecutableStepCallShorthand<U>
+  : never
+
+export type ExecutableCallShorthand = DistributeStepCallShorthand<
+  CallStatesShorthand
+>
