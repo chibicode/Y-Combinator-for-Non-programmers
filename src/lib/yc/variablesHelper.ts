@@ -2,7 +2,11 @@ import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
 import { ExecutableCall } from 'src/types/yc/ExpressionTypes'
 import uniq from 'lodash/uniq'
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -41,6 +45,8 @@ function getAllVariableNamesEncodedWithDuplicates(
     } else {
       return []
     }
+  } else if (isShorthandFunction(expression)) {
+    return []
   } else if (isCall(expression)) {
     return getAllVariableNamesEncoded(expression.arg, { filter }).concat(
       getAllVariableNamesEncoded(expression.func, { filter })
@@ -62,12 +68,19 @@ function getAllVariableNamesEncoded(
 function conflictingVariableNamesEncoded(
   expression: ExecutableCall
 ): ReadonlyArray<string> {
-  const argVariableNames = getAllVariableNamesEncoded(expression.arg)
-  const funcBodyUnboundedVariableNamesExceptArg = difference(
-    getAllVariableNamesEncoded(expression.func.body, { filter: 'unbound' }),
-    [expression.func.arg.name]
-  )
-  return intersection(argVariableNames, funcBodyUnboundedVariableNamesExceptArg)
+  if (isShorthandFunction(expression.func)) {
+    return []
+  } else {
+    const argVariableNames = getAllVariableNamesEncoded(expression.arg)
+    const funcBodyUnboundedVariableNamesExceptArg = difference(
+      getAllVariableNamesEncoded(expression.func.body, { filter: 'unbound' }),
+      [expression.func.arg.name]
+    )
+    return intersection(
+      argVariableNames,
+      funcBodyUnboundedVariableNamesExceptArg
+    )
+  }
 }
 
 export type VariableNamesToNumbersObj = Partial<
