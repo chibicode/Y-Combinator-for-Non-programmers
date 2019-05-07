@@ -433,6 +433,13 @@ export const e12E5 = initializeExpressionContainer([
   // addOneItemParams('e', 'u')
 ])
 
+export const e12E6 = initializeExpressionContainer([
+  {
+    shorthand: 'isOne'
+  },
+  'a'
+])
+
 export const yCombinatorContainer = initializeExpressionContainer([
   yCombinator,
   'question'

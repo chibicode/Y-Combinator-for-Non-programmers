@@ -1474,5 +1474,12 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  imru: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E6}
+      skipToTheEnd={false}
+      showPriorities
+    />
   )
 }
