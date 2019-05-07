@@ -1,8 +1,8 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -188,9 +188,9 @@ const funcArg = (
       }
 
 const stepToBetaReducePreviewBefore = (
-  e: ExecutableCall
+  e: ExecutableCallRegular
 ): {
-  nextExpression: ExecutableStepCall<'betaReducePreviewBefore'>
+  nextExpression: ExecutableStepCallRegular<'betaReducePreviewBefore'>
   matchExists: boolean
 } => {
   const fromName = e.func.arg.name

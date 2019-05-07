@@ -26,7 +26,7 @@ import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpression,
   CallStates,
-  ExecutableCall,
+  ExecutableCallRegular,
   FunctionExpression,
   StepChild
 } from 'src/types/yc/ExpressionTypes'
@@ -52,16 +52,16 @@ const stepExpressionContainerReset = (
 }
 
 const step = (
-  e: ExecutableCall,
+  e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
   matchExists?: boolean
 ): {
-  nextExpression: ExecutableCall | StepChild<'default'>
+  nextExpression: ExecutableCallRegular | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
   const alphaConvert = (): {
-    nextExpression: ExecutableCall | StepChild<'default'>
+    nextExpression: ExecutableCallRegular | StepChild<'default'>
     matchExists?: boolean
     previouslyChangedExpressionState: CallStates
   } => {
@@ -192,7 +192,7 @@ const runStep = (
     funcParent,
     callParentKey
   } = findNextCallExpressionAndParent<
-    ExecutableCall,
+    ExecutableCallRegular,
     CallExpression,
     FunctionExpression
   >(e.expression)

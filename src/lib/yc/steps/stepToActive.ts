@@ -1,8 +1,8 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -85,7 +85,9 @@ const emphasizeArgPriorityCallExpression = (
   }
 }
 
-const stepToActive = (e: ExecutableCall): ExecutableStepCall<'active'> => ({
+const stepToActive = (
+  e: ExecutableCallRegular
+): ExecutableStepCallRegular<'active'> => ({
   ...e,
   state: 'active',
   arg: isFunction(e.arg)

@@ -290,9 +290,19 @@ type NonExecutable<E extends Expression> = CallExpression & {
   readonly func: E
 }
 
-type Executable<
+type ExecutableRegular<
   S extends CallStates,
-  F extends FunctionExpression | ShorthandFunctionExpression,
+  F extends FunctionExpression,
+  E extends Expression
+> = CallExpression & {
+  readonly arg: E
+  readonly state: S
+  readonly func: F
+}
+
+type ExecutableShorthand<
+  S extends CallStatesShorthand,
+  F extends ShorthandFunctionExpression,
   E extends Expression
 > = CallExpression & {
   readonly arg: E
@@ -310,14 +320,11 @@ export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
-export interface ExecutableStepCall<C extends CallStates = 'default'>
-  extends Executable<
-    C,
-    StepFunction<C> | StepShorthandFunction<C>,
-    StepChild<C>
-  > {}
-export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
-  extends Executable<C, StepShorthandFunction<C>, StepChild<C>> {}
+export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
+  extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
+export interface ExecutableStepCallShorthand<
+  C extends CallStatesShorthand = 'default'
+> extends ExecutableShorthand<C, StepShorthandFunction<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
@@ -326,10 +333,10 @@ export type StepChild<C extends CallStates = 'default'> =
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
-type DistributeStepCall<U> = U extends CallStates
-  ? ExecutableStepCall<U>
+type DistributeStepCallRegular<U> = U extends CallStates
+  ? ExecutableStepCallRegular<U>
   : never
-export type ExecutableCall = DistributeStepCall<CallStates>
+export type ExecutableCallRegular = DistributeStepCallRegular<CallStates>
 
 type DistributeStepCallShorthand<U> = U extends CallStatesShorthand
   ? ExecutableStepCallShorthand<U>
@@ -338,3 +345,5 @@ type DistributeStepCallShorthand<U> = U extends CallStatesShorthand
 export type ExecutableCallShorthand = DistributeStepCallShorthand<
   CallStatesShorthand
 >
+
+export type ExecutableCall = ExecutableCallRegular | ExecutableCallShorthand

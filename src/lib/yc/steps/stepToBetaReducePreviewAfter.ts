@@ -2,8 +2,8 @@ import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -166,8 +166,8 @@ export function toBetaReducePreviewAfter(
 }
 
 const stepToBetaReducePreviewAfter = (
-  e: ExecutableCall
-): ExecutableStepCall<'betaReducePreviewAfter'> => {
+  e: ExecutableCallRegular
+): ExecutableStepCallRegular<'betaReducePreviewAfter'> => {
   const fromName = e.func.arg.name
   const fromalphaConvertCount = e.func.arg.alphaConvertCount
   const to = e.arg

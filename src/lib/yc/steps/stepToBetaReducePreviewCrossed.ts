@@ -1,8 +1,8 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -88,8 +88,8 @@ const removeFuncArg = (
 })
 
 const stepToBetaReducePreviewCrossed = (
-  e: ExecutableCall
-): ExecutableStepCall<'betaReducePreviewCrossed'> => ({
+  e: ExecutableCallRegular
+): ExecutableStepCallRegular<'betaReducePreviewCrossed'> => ({
   ...e,
   state: 'betaReducePreviewCrossed',
   arg: toCrossed(e.arg, true),

@@ -2,8 +2,8 @@ import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -102,9 +102,9 @@ export function toNeedsAlphaConvert(
 }
 
 const stepToNeedsAlphaConvert = (
-  x: ExecutableCall,
+  x: ExecutableCallRegular,
   conflicts: VariableNamesToNumbersObj
-): ExecutableStepCall<'needsAlphaConvert'> => ({
+): ExecutableStepCallRegular<'needsAlphaConvert'> => ({
   ...x,
   state: 'needsAlphaConvert',
   arg: toNeedsAlphaConvert(x.arg, conflicts, false),

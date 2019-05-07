@@ -1,8 +1,8 @@
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -79,8 +79,8 @@ const highlightFuncArg = (
 })
 
 const stepToShowFuncArg = (
-  e: ExecutableCall
-): ExecutableStepCall<'showFuncArg'> => ({
+  e: ExecutableCallRegular
+): ExecutableStepCallRegular<'showFuncArg'> => ({
   ...e,
   state: 'showFuncArg',
   arg: toShowFuncArg(e.arg, false),
