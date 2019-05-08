@@ -390,7 +390,7 @@ export const e12E4 = initializeExpressionContainer([
 
 export const subtractionTest = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
-  numberParams('g', 'h', 3)
+  numberParams('g', 'h', 1)
 ])
 
 const yCombinator: FunctionExpressionParams = {
