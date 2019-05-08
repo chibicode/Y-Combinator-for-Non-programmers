@@ -9,7 +9,12 @@ import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
 import ShorthandFunctionExpressionBox from 'src/components/Yc/ShorthandFunctionExpressionBox'
-import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 
@@ -35,6 +40,8 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
     ? ((!started || highlightOverrideActiveAfterStart) &&
         highlightOverrides[expression.name]) ||
       expression.highlightType
+    : isShorthandFunction(expression)
+    ? expression.highlightType
     : 'none'
 
   if (
