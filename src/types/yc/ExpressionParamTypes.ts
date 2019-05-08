@@ -21,6 +21,7 @@ export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
 
 export interface ShorthandFunctionExpressionParams {
   readonly shorthand: ShorthandFunctionExpression['name']
+  readonly args?: ExpressionParams[]
 }
 
 export type ExpressionParams =

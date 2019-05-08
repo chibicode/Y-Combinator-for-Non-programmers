@@ -62,6 +62,7 @@ export default function resetExpression(
     return {
       type: 'shorthandFunction',
       name: expression.name,
+      args: expression.args.map(arg => resetExpression(arg)),
       highlightType: 'default',
       argPriorityAgg: [],
       funcPriorityAgg: [],

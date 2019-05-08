@@ -127,6 +127,9 @@ export default function buildExpressionFromParams(
     return {
       type: 'shorthandFunction',
       name: expressionParams.shorthand,
+      args: expressionParams.args
+        ? expressionParams.args.map(param => buildExpressionFromParams(param))
+        : [],
       highlightType: 'default',
       argPriorityAgg: [],
       funcPriorityAgg: [],
