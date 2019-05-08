@@ -127,7 +127,10 @@ export default function buildExpressionFromParams(
     return {
       type: 'shorthandFunction',
       name: expressionParams.shorthand,
-      highlightType: 'default'
+      highlightType: 'default',
+      argPriorityAgg: [],
+      funcPriorityAgg: [],
+      emphasizePriority: false
     }
   }
 }

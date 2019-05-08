@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
 import FlexCenter from 'src/components/FlexCenter'
+import ExpressionPrioritiesLabel from 'src/components/Yc/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 import shorthandFunctionEmojiMapping from 'src/lib/yc/shorthandFunctionEmojiMapping'
 import { ShorthandFunctionExpression } from 'src/types/yc/ExpressionTypes'
@@ -19,9 +20,16 @@ interface ShorthandFunctionExpressionBoxProps {
 const ShorthandFunctionExpressionBox = ({
   expression
 }: ShorthandFunctionExpressionBoxProps) => {
-  const { variableSize } = useContext(ExpressionRunnerContext)
+  const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   return (
     <>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          priorities={expression.argPriorityAgg}
+          position="topleft"
+          emphasize={expression.emphasizePriority}
+        />
+      )}
       <FlexCenter
         css={css`
           flex: 1;
@@ -42,6 +50,13 @@ const ShorthandFunctionExpressionBox = ({
           ))}
         </span>
       </FlexCenter>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          priorities={expression.funcPriorityAgg}
+          position="bottomleft"
+          emphasize={expression.emphasizePriority}
+        />
+      )}
     </>
   )
 }

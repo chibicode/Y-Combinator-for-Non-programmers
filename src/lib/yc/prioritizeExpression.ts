@@ -63,7 +63,11 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
       body: prioritizeExpressionHelper(expression.body)
     }
   } else if (isShorthandFunction(expression)) {
-    return expression
+    return {
+      ...expression,
+      argPriorityAgg: [] as number[],
+      funcPriorityAgg: [] as number[]
+    }
   } else {
     throw new Error()
   }
@@ -109,7 +113,7 @@ function populatePriorityAggs<E extends Expression>({
   } else if (isVariable(expression)) {
     return { ...expression, argPriorityAgg, funcPriorityAgg }
   } else if (isShorthandFunction(expression)) {
-    return expression
+    return { ...expression, argPriorityAgg, funcPriorityAgg }
   } else {
     throw new Error()
   }

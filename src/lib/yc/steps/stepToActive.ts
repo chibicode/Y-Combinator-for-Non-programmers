@@ -50,7 +50,8 @@ function toActive(e: Expression): StepChild<'active'> {
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'active'
+      highlightType: 'active',
+      emphasizePriority: true
     }
   } else {
     return {

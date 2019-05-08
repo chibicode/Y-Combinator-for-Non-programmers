@@ -62,7 +62,10 @@ export default function resetExpression(
     return {
       type: 'shorthandFunction',
       name: expression.name,
-      highlightType: 'default'
+      highlightType: 'default',
+      argPriorityAgg: [],
+      funcPriorityAgg: [],
+      emphasizePriority: false
     }
   } else {
     return {

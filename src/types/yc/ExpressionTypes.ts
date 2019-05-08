@@ -262,6 +262,9 @@ export interface ShorthandFunctionExpression {
   readonly type: 'shorthandFunction'
   readonly name: ShorthandFunctionNames
   readonly highlightType: ShorthandFunctionStates[keyof ShorthandFunctionStates]['highlightType']
+  readonly emphasizePriority: boolean
+  readonly argPriorityAgg: number[]
+  readonly funcPriorityAgg: number[]
 }
 
 export type ShorthandFunctionWithState<
