@@ -18,21 +18,27 @@ interface VariableExpressionBoxProps {
   expression: VariableExpression
 }
 
-const paddingTop = (size: ExpressionRunnerContextProps['variableSize']) =>
+export const variableExpressionBoxPaddingTop = (
+  size: ExpressionRunnerContextProps['variableSize']
+) =>
   ({
     lg: spaces(0.5),
     md: spaces(0.375),
     sm: spaces(0.2)
   }[size])
 
-const paddingBottom = (size: ExpressionRunnerContextProps['variableSize']) =>
+export const variableExpressionBoxPaddingBottom = (
+  size: ExpressionRunnerContextProps['variableSize']
+) =>
   ({
     lg: spaces(0.75),
     md: spaces(0.5),
     sm: spaces(0.25)
   }[size])
 
-const fontSize = (size: ExpressionRunnerContextProps['variableSize']) =>
+export const variableExpressionBoxFontSize = (
+  size: ExpressionRunnerContextProps['variableSize']
+) =>
   ({
     lg: fontSizes(2.5),
     md: fontSizes(1.7),
@@ -63,9 +69,9 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
         <FlexCenter
           css={css`
             flex: 1;
-            font-size: ${fontSize(variableSize)};
-            padding: ${paddingTop(variableSize)} 0
-              ${paddingBottom(variableSize)};
+            font-size: ${variableExpressionBoxFontSize(variableSize)};
+            padding: ${variableExpressionBoxPaddingTop(variableSize)} 0
+              ${variableExpressionBoxPaddingBottom(variableSize)};
           `}
         >
           <span

@@ -1,4 +1,5 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
+import { ShorthandFunctionNames } from 'src/types/yc/ShorthandFunctionNames'
 
 export interface VariableExpression {
   readonly type: 'variable'
@@ -259,7 +260,7 @@ export interface ShorthandFunctionStates {
 
 export interface ShorthandFunctionExpression {
   readonly type: 'shorthandFunction'
-  readonly name: 'pred' | 'isOne'
+  readonly name: ShorthandFunctionNames
   readonly highlightType: ShorthandFunctionStates[keyof ShorthandFunctionStates]['highlightType']
 }
 

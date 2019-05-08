@@ -435,7 +435,7 @@ export const e12E5 = initializeExpressionContainer([
 
 export const e12E6 = initializeExpressionContainer([
   {
-    shorthand: 'isOne'
+    shorthand: 'isZero'
   },
   'a'
 ])
