@@ -1,33 +1,36 @@
 import {
   ExecutableCallShorthand,
-  StepChild
+  StepChild,
+  Expression
 } from 'src/types/yc/ExpressionTypes'
-import { isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isCall } from 'src/lib/yc/expressionTypeGuards'
 import toDefault from 'src/lib/yc/toDefault'
 
-// function pred<E extends NumberExpression>(number: E): E {
-//   const inner = number.body.body
-//   if (isVariable(inner)) {
-//     return number
-//   } else {
-//     return {
-//       ...number,
-//       body: {
-//         ...number.body,
-//         body: number.body.arg
-//       }
-//     }
-//   }
-// }
+function pred(number: Expression): Expression {
+  if (isFunction(number)) {
+    const numberBody = number.body
+    if (isFunction(numberBody)) {
+      const numberBodyBody = numberBody.body
+      if (isCall(numberBodyBody)) {
+        return {
+          ...number,
+          body: {
+            ...numberBody,
+            body: numberBodyBody.arg
+          }
+        }
+      }
+    }
+  }
+  throw new Error()
+}
 
 const stepToShorthandExec = (
   e: ExecutableCallShorthand
 ): StepChild<'default'> => {
-  // if (isNumber<NumberExpression & StepChild>(e.arg)) {
-  //   if (e.func.name === 'pred') {
-  //     return toDefault(pred<NumberExpression & StepChild>(e.arg))
-  //   }
-  // }
+  if (e.func.name === 'pred') {
+    return toDefault(pred(e.arg))
+  }
   return toDefault(e)
 }
 

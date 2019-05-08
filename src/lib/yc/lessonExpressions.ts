@@ -437,7 +437,7 @@ export const e12E6 = initializeExpressionContainer([
   {
     shorthand: 'pred'
   },
-  numberParams('a', 'b', 1)
+  numberParams('a', 'b', 2)
 ])
 
 export const yCombinatorContainer = initializeExpressionContainer([
