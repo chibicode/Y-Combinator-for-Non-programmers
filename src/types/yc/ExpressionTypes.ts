@@ -14,6 +14,10 @@ export interface VariableExpression {
   readonly alphaConvertCount: number
 }
 
+export type VariableWithName<VN extends VariableNames> = VariableExpression & {
+  readonly name: VN
+}
+
 export type VariableWithState<
   S extends keyof VariableStates
 > = VariableExpression & VariableStates[S]
@@ -349,3 +353,41 @@ type DistributeStepCallShorthand<U> = U extends CallStates
 export type ExecutableCallShorthand = DistributeStepCallShorthand<CallStates>
 
 export type ExecutableCall = ExecutableCallRegular | ExecutableCallShorthand
+
+type DistributeVariableWithName<VN> = VN extends VariableNames
+  ? VariableWithName<VN>
+  : never
+
+export type VariablesUnion = DistributeVariableWithName<VariableNames>
+
+export type NumberExpressionInner<
+  A extends VariablesUnion,
+  B extends VariablesUnion
+> =
+  | B
+  | (CallExpression & {
+      readonly arg: NumberExpressionInner<A, B>
+      readonly func: B
+    })
+
+export type NumberExpressionBase<
+  A extends VariablesUnion,
+  B extends VariablesUnion
+> = FunctionExpression & {
+  arg: A
+  body: FunctionExpression & {
+    arg: B
+    body: NumberExpressionInner<A, B>
+  }
+}
+
+type DistributeNumberExpression<A, B> = A extends VariablesUnion
+  ? B extends VariablesUnion
+    ? NumberExpressionBase<A, B>
+    : never
+  : never
+
+export type NumberExpression = DistributeNumberExpression<
+  VariablesUnion,
+  VariablesUnion
+>
