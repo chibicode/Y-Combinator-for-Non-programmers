@@ -25,13 +25,13 @@ function pred(number: Expression): Expression {
   throw new Error()
 }
 
-const stepToShorthandExec = (
+const stepToShorthandFuncResult = (
   e: ExecutableCallShorthand
 ): StepChild<'default'> => {
   if (e.func.name === 'pred') {
     return toDefault(pred(e.arg))
   }
-  return toDefault(e)
+  throw new Error()
 }
 
-export default stepToShorthandExec
+export default stepToShorthandFuncResult

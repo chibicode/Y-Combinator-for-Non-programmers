@@ -6,7 +6,10 @@ import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
-import { isExecutableCallRegular } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isShorthandFunction,
+  isExecutableCallRegular
+} from 'src/lib/yc/expressionTypeGuards'
 import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -20,7 +23,8 @@ import {
   stepToShowFuncArg,
   stepToShowFuncBound,
   stepToShowFuncUnbound,
-  stepToShorthandExec
+  stepToShorthandFuncResult,
+  stepToShorthandArgResult
 } from 'src/lib/yc/steps'
 import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
@@ -69,7 +73,33 @@ const stepShorthand = (
     }
     case 'active': {
       return {
-        nextExpression: stepToShorthandExec(e),
+        nextExpression: stepToShorthandFuncResult(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    default: {
+      throw new Error()
+    }
+  }
+}
+
+const stepShorthandArg = (
+  e: ExecutableCallRegular
+): {
+  nextExpression: ExecutableCallRegular | StepChild<'default'>
+  matchExists?: boolean
+  previouslyChangedExpressionState: CallStates
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    case 'active': {
+      return {
+        nextExpression: stepToShorthandArgResult(e),
         previouslyChangedExpressionState: 'default'
       }
     }
@@ -232,7 +262,9 @@ const runStep = (
     matchExists,
     previouslyChangedExpressionState
   } = isExecutableCallRegular(expression)
-    ? stepRegular(expression, stepOptions, e.matchExists)
+    ? isShorthandFunction(expression.arg)
+      ? stepShorthandArg(expression)
+      : stepRegular(expression, stepOptions, e.matchExists)
     : stepShorthand(expression)
 
   if (!callParent && !callParentKey && !funcParent) {
