@@ -14,7 +14,7 @@ export default function maxNestedFunctionDepth(expression: Expression): number {
       maxNestedFunctionDepth(expression.func)
     )
   } else if (isShorthandFunction(expression)) {
-    return 0
+    return Math.max(...expression.args.map(arg => maxNestedFunctionDepth(arg)))
   } else {
     return 1 + maxNestedFunctionDepth(expression.body)
   }

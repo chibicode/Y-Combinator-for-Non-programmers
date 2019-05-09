@@ -53,7 +53,8 @@ function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg => matchBetaReduced(arg))
     }
   } else {
     return {
@@ -167,7 +168,16 @@ export function toBetaReducePreviewAfter(
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg =>
+        toBetaReducePreviewAfter(
+          arg,
+          fromName,
+          fromalphaConvertCount,
+          to,
+          funcSide
+        )
+      )
     }
   } else {
     return {
