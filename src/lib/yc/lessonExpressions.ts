@@ -476,7 +476,7 @@ export const e12E8 = initializeExpressionContainer([
       }
     }
   ],
-  numberParams('f', 'g', 0)
+  numberParams('f', 'g', 2)
 ])
 
 export const yCombinatorContainer = initializeExpressionContainer([

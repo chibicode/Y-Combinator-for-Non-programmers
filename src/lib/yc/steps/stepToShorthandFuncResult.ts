@@ -22,7 +22,7 @@ function pred(number: Expression): Expression {
       }
     }
   }
-  throw new Error()
+  return number
 }
 
 const stepToShorthandFuncResult = (

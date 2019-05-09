@@ -1497,7 +1497,7 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      skipAlphaConvert
+      speed={5}
     />
   )
 }
