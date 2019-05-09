@@ -97,7 +97,8 @@ export function toShowFuncBound(
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg => toShowFuncBound(arg, funcSide, highlight))
     }
   } else {
     return {

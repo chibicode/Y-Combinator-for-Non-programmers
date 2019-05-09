@@ -272,6 +272,12 @@ export interface ShorthandFunctionExpression {
   readonly funcPriorityAgg: number[]
 }
 
+type ShorthandFunctionWithArgs<
+  E extends Expression
+> = ShorthandFunctionExpression & {
+  readonly args: E[]
+}
+
 export type ShorthandFunctionWithState<
   S extends keyof ShorthandFunctionStates
 > = ShorthandFunctionExpression & ShorthandFunctionStates[S]
@@ -323,9 +329,14 @@ type ExecutableShorthand<
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
-export type StepShorthandFunction<
+type StepShorthandFunctionBase<
   C extends CallStates = 'default'
 > = ShorthandFunctionWithState<CallStateToShorthandFunctionState<C>>
+interface StepShorthandFunctionWithArgs<C extends CallStates = 'default'>
+  extends ShorthandFunctionWithArgs<StepChild<C>> {}
+export type StepShorthandFunction<
+  C extends CallStates = 'default'
+> = StepShorthandFunctionBase<C> & StepShorthandFunctionWithArgs<C>
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 export interface NonExecutableStepCall<C extends CallStates = 'default'>

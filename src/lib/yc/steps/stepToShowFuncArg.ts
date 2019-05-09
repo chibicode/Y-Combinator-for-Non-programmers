@@ -72,7 +72,8 @@ export function toShowFuncArg(
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg => toShowFuncArg(arg, funcSide))
     }
   } else {
     return {

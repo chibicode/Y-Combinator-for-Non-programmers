@@ -95,7 +95,8 @@ export function toShowFuncUnbound(
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg => toShowFuncUnbound(arg, funcSide, highlight))
     }
   } else {
     return {
