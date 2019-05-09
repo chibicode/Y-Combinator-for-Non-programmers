@@ -51,7 +51,8 @@ function toActive(e: Expression): StepChild<'active'> {
     return {
       ...e,
       highlightType: 'active',
-      emphasizePriority: true
+      emphasizePriority: true,
+      args: e.args.map(arg => toActive(arg))
     }
   } else {
     return {

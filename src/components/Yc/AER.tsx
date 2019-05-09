@@ -1481,5 +1481,12 @@ export default {
       skipToTheEnd={false}
       showPriorities
     />
+  ),
+  eahq: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E7}
+      skipToTheEnd={false}
+      showPriorities
+    />
   )
 }

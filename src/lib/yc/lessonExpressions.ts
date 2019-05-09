@@ -440,6 +440,14 @@ export const e12E6 = initializeExpressionContainer([
   numberParams('a', 'b', 2)
 ])
 
+export const e12E7 = initializeExpressionContainer([
+  numberParams('a', 'b', 0),
+  {
+    shorthand: 'isZero',
+    args: ['c', 'd']
+  }
+])
+
 export const yCombinatorContainer = initializeExpressionContainer([
   yCombinator,
   'question'

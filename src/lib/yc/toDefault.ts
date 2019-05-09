@@ -51,7 +51,8 @@ export default function toDefault(e: Expression): StepChild<'default'> {
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg => toDefault(arg))
     }
   } else {
     return {
