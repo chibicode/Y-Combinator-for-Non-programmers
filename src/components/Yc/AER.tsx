@@ -1488,5 +1488,14 @@ export default {
       skipToTheEnd={false}
       showPriorities
     />
+  ),
+  ypkf: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E8}
+      skipToTheEnd={false}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 }

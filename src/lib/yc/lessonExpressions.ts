@@ -448,6 +448,34 @@ export const e12E7 = initializeExpressionContainer([
   }
 ])
 
+export const e12E8 = initializeExpressionContainer([
+  [
+    wikipediaYCombinator,
+    {
+      arg: 'c',
+      body: {
+        arg: 'd',
+        body: {
+          shorthand: 'isZero',
+          args: [
+            'e',
+            [
+              'c',
+              [
+                {
+                  shorthand: 'pred'
+                },
+                'd'
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  numberParams('f', 'g', 0)
+])
+
 export const yCombinatorContainer = initializeExpressionContainer([
   yCombinator,
   'question'
