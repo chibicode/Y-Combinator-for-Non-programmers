@@ -1469,11 +1469,9 @@ export default {
   fcvl: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.subtractionTest}
-      skipToTheEnd={false}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      skipAlphaConvert
     />
   ),
   imru: (
