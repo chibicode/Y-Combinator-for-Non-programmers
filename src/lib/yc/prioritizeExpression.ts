@@ -16,14 +16,15 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
 }): E {
   let newArg: Expression
   let newFunc: Expression
+  let childPriority = priority + 1
 
   if (isCall(expression.func)) {
     const funcResult = prioritizeCallExpressionHelper({
       expression: expression.func,
-      priority
+      priority: childPriority
     })
     newFunc = funcResult
-    priority = funcResult.priority + 1
+    childPriority = funcResult.priority + 1
   } else {
     newFunc = prioritizeExpressionHelper(expression.func)
   }
@@ -31,10 +32,9 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
   if (isCall(expression.arg)) {
     const argResult = prioritizeCallExpressionHelper({
       expression: expression.arg,
-      priority
+      priority: childPriority
     })
     newArg = argResult
-    priority = argResult.priority + 1
   } else {
     newArg = prioritizeExpressionHelper(expression.arg)
   }

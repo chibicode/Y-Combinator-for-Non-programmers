@@ -455,21 +455,24 @@ export const e12E8 = initializeExpressionContainer([
       arg: 'c',
       body: {
         arg: 'd',
-        body: {
-          shorthand: 'isZero',
-          args: [
-            'e',
-            [
-              'c',
+        body: [
+          'd',
+          {
+            shorthand: 'isZero',
+            args: [
+              'e',
               [
-                {
-                  shorthand: 'pred'
-                },
-                'd'
+                'c',
+                [
+                  {
+                    shorthand: 'pred'
+                  },
+                  'd'
+                ]
               ]
             ]
-          ]
-        }
+          }
+        ]
       }
     }
   ],
