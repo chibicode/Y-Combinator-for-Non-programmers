@@ -13,18 +13,23 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
 }: {
   expression: E
   priority: number
-}): E {
+}): {
+  expression: E
+  maxDescendantPriority: number
+} {
   let newArg: Expression
   let newFunc: Expression
-  let childPriority = priority + 1
+  let currentPriority = priority
+  let maxDescendantPriority = priority
 
   if (isCall(expression.func)) {
     const funcResult = prioritizeCallExpressionHelper({
       expression: expression.func,
-      priority: childPriority
+      priority
     })
-    newFunc = funcResult
-    childPriority = funcResult.priority + 1
+    newFunc = funcResult.expression
+    currentPriority = funcResult.maxDescendantPriority + 1
+    maxDescendantPriority = currentPriority
   } else {
     newFunc = prioritizeExpressionHelper(expression.func)
   }
@@ -32,14 +37,23 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
   if (isCall(expression.arg)) {
     const argResult = prioritizeCallExpressionHelper({
       expression: expression.arg,
-      priority: childPriority
+      priority: currentPriority + 1
     })
-    newArg = argResult
+    newArg = argResult.expression
+    maxDescendantPriority = argResult.maxDescendantPriority
   } else {
     newArg = prioritizeExpressionHelper(expression.arg)
   }
 
-  return { ...expression, func: newFunc, arg: newArg, priority }
+  return {
+    expression: {
+      ...expression,
+      func: newFunc,
+      arg: newArg,
+      priority: currentPriority
+    },
+    maxDescendantPriority
+  }
 }
 
 function prioritizeExpressionHelper<E extends Expression = Expression>(
@@ -55,7 +69,7 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
     return prioritizeCallExpressionHelper({
       priority: 1,
       expression
-    })
+    }).expression
   } else if (isFunction(expression)) {
     return {
       ...expression,
