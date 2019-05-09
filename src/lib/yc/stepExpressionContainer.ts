@@ -118,7 +118,7 @@ const stepRegular = (
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
-  const alphaConvert = (): {
+  const toNeedsAlphaConvertOrBetaReducePreviewBefore = (): {
     nextExpression: ExecutableCallRegular | StepChild<'default'>
     matchExists?: boolean
     previouslyChangedExpressionState: CallStates
@@ -183,11 +183,11 @@ const stepRegular = (
           previouslyChangedExpressionState: 'showFuncUnbound'
         }
       } else {
-        return alphaConvert()
+        return toNeedsAlphaConvertOrBetaReducePreviewBefore()
       }
     }
     case 'showFuncUnbound': {
-      return alphaConvert()
+      return toNeedsAlphaConvertOrBetaReducePreviewBefore()
     }
     case 'needsAlphaConvert': {
       return {
