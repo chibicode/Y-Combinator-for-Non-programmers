@@ -14,10 +14,6 @@ export interface VariableExpression {
   readonly alphaConvertCount: number
 }
 
-export type VariableWithName<VN extends VariableNames> = VariableExpression & {
-  readonly name: VN
-}
-
 export type VariableWithState<
   S extends keyof VariableStates
 > = VariableExpression & VariableStates[S]
