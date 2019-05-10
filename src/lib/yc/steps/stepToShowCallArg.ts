@@ -1,8 +1,14 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ShorthandFunctionExpression,
+  StepShorthandFunction,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -20,6 +26,10 @@ export function toShowCallArg(
   e: FunctionExpression,
   funcSide: boolean
 ): StepFunction<'showCallArg'>
+export function toShowCallArg(
+  e: ShorthandFunctionExpression,
+  funcSide: boolean
+): StepShorthandFunction<'showCallArg'>
 export function toShowCallArg(
   e: CallExpression,
   funcSide: boolean
@@ -58,6 +68,12 @@ export function toShowCallArg(
       arg: toShowCallArg(e.arg, funcSide),
       body: toShowCallArg(e.body, funcSide)
     }
+  } else if (isShorthandFunction(e)) {
+    return {
+      ...e,
+      highlightType: 'default',
+      args: e.args.map(arg => toShowCallArg(arg, funcSide))
+    }
   } else {
     return {
       ...e,
@@ -69,8 +85,8 @@ export function toShowCallArg(
 }
 
 const stepToShowCallArg = (
-  e: ExecutableCall
-): ExecutableStepCall<'showCallArg'> => ({
+  e: ExecutableCallRegular
+): ExecutableStepCallRegular<'showCallArg'> => ({
   ...e,
   state: 'showCallArg',
   arg: toShowCallArg(e.arg, false),

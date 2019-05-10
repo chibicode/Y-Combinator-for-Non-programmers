@@ -1,4 +1,8 @@
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function maxNestedFunctionDepth(expression: Expression): number {
@@ -9,6 +13,8 @@ export default function maxNestedFunctionDepth(expression: Expression): number {
       maxNestedFunctionDepth(expression.arg),
       maxNestedFunctionDepth(expression.func)
     )
+  } else if (isShorthandFunction(expression)) {
+    return Math.max(...expression.args.map(arg => maxNestedFunctionDepth(arg)))
   } else {
     return 1 + maxNestedFunctionDepth(expression.body)
   }

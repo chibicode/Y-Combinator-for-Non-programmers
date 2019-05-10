@@ -1,4 +1,9 @@
-import { isCall, isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isCall,
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 
 import { CallExpression, Expression } from 'src/types/yc/ExpressionTypes'
 
@@ -8,17 +13,23 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
 }: {
   expression: E
   priority: number
-}): E {
+}): {
+  expression: E
+  maxDescendantPriority: number
+} {
   let newArg: Expression
   let newFunc: Expression
+  let currentPriority = priority
+  let maxDescendantPriority = priority
 
   if (isCall(expression.func)) {
     const funcResult = prioritizeCallExpressionHelper({
       expression: expression.func,
       priority
     })
-    newFunc = funcResult
-    priority = funcResult.priority + 1
+    newFunc = funcResult.expression
+    currentPriority = funcResult.maxDescendantPriority + 1
+    maxDescendantPriority = currentPriority
   } else {
     newFunc = prioritizeExpressionHelper(expression.func)
   }
@@ -26,15 +37,23 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
   if (isCall(expression.arg)) {
     const argResult = prioritizeCallExpressionHelper({
       expression: expression.arg,
-      priority
+      priority: currentPriority + 1
     })
-    newArg = argResult
-    priority = argResult.priority + 1
+    newArg = argResult.expression
+    maxDescendantPriority = argResult.maxDescendantPriority
   } else {
     newArg = prioritizeExpressionHelper(expression.arg)
   }
 
-  return { ...expression, func: newFunc, arg: newArg, priority }
+  return {
+    expression: {
+      ...expression,
+      func: newFunc,
+      arg: newArg,
+      priority: currentPriority
+    },
+    maxDescendantPriority
+  }
 }
 
 function prioritizeExpressionHelper<E extends Expression = Expression>(
@@ -50,12 +69,18 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
     return prioritizeCallExpressionHelper({
       priority: 1,
       expression
-    })
+    }).expression
   } else if (isFunction(expression)) {
     return {
       ...expression,
       arg: prioritizeExpressionHelper(expression.arg),
       body: prioritizeExpressionHelper(expression.body)
+    }
+  } else if (isShorthandFunction(expression)) {
+    return {
+      ...expression,
+      argPriorityAgg: [] as number[],
+      funcPriorityAgg: [] as number[]
     }
   } else {
     throw new Error()
@@ -100,6 +125,8 @@ function populatePriorityAggs<E extends Expression>({
       })
     }
   } else if (isVariable(expression)) {
+    return { ...expression, argPriorityAgg, funcPriorityAgg }
+  } else if (isShorthandFunction(expression)) {
     return { ...expression, argPriorityAgg, funcPriorityAgg }
   } else {
     throw new Error()

@@ -1,9 +1,15 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ShorthandFunctionExpression,
+  StepShorthandFunction,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -23,6 +29,11 @@ export function toShowFuncBound(
   funcSide: boolean,
   highlight: boolean
 ): StepFunction<'showFuncBound'>
+export function toShowFuncBound(
+  e: ShorthandFunctionExpression,
+  funcSide: boolean,
+  highlight: boolean
+): StepShorthandFunction<'showFuncBound'>
 export function toShowFuncBound(
   e: CallExpression,
   funcSide: boolean,
@@ -83,6 +94,12 @@ export function toShowFuncBound(
       arg: toShowFuncBound(e.arg, funcSide, highlight),
       body: toShowFuncBound(e.body, funcSide, highlight)
     }
+  } else if (isShorthandFunction(e)) {
+    return {
+      ...e,
+      highlightType: 'default',
+      args: e.args.map(arg => toShowFuncBound(arg, funcSide, highlight))
+    }
   } else {
     return {
       ...e,
@@ -94,9 +111,9 @@ export function toShowFuncBound(
 }
 
 const stepToShowFuncBound = (
-  e: ExecutableCall,
+  e: ExecutableCallRegular,
   highlight: boolean
-): ExecutableStepCall<'showFuncBound'> => ({
+): ExecutableStepCallRegular<'showFuncBound'> => ({
   ...e,
   state: 'showFuncBound',
   arg: toShowFuncBound(e.arg, false, highlight),

@@ -1,5 +1,8 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
-import { FunctionExpressionMeta } from 'src/types/yc/ExpressionTypes'
+import {
+  FunctionExpressionMeta,
+  ShorthandFunctionExpression
+} from 'src/types/yc/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
   readonly name: VariableNames
@@ -16,8 +19,14 @@ export interface FunctionExpressionParams {
 // https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
 export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
 
+export interface ShorthandFunctionExpressionParams {
+  readonly shorthand: ShorthandFunctionExpression['name']
+  readonly args?: ExpressionParams[]
+}
+
 export type ExpressionParams =
   | VariableExpressionParams
   | FunctionExpressionParams
   | CallExpressionParams
   | HighlightedVariableExpressionParams
+  | ShorthandFunctionExpressionParams

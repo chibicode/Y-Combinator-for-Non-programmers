@@ -1,11 +1,17 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
+  ShorthandFunctionExpression,
+  StepShorthandFunction,
   StepChild,
   StepFunction,
   StepVariable,
@@ -23,6 +29,11 @@ export function toShowFuncUnbound(
   funcSide: boolean,
   highlight: boolean
 ): StepFunction<'showFuncUnbound'>
+export function toShowFuncUnbound(
+  e: ShorthandFunctionExpression,
+  funcSide: boolean,
+  highlight: boolean
+): StepShorthandFunction<'showFuncUnbound'>
 export function toShowFuncUnbound(
   e: CallExpression,
   funcSide: boolean,
@@ -81,6 +92,12 @@ export function toShowFuncUnbound(
       arg: toShowFuncUnbound(e.arg, funcSide, highlight),
       body: toShowFuncUnbound(e.body, funcSide, highlight)
     }
+  } else if (isShorthandFunction(e)) {
+    return {
+      ...e,
+      highlightType: 'default',
+      args: e.args.map(arg => toShowFuncUnbound(arg, funcSide, highlight))
+    }
   } else {
     return {
       ...e,
@@ -101,9 +118,9 @@ export const activeFuncArg = (
 })
 
 const stepToShowFuncUnbound = (
-  e: ExecutableCall,
+  e: ExecutableCallRegular,
   highlight: boolean
-): ExecutableStepCall<'showFuncUnbound'> => ({
+): ExecutableStepCallRegular<'showFuncUnbound'> => ({
   ...e,
   state: 'showFuncUnbound',
   arg: toShowFuncUnbound(e.arg, false, highlight),

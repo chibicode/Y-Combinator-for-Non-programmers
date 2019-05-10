@@ -45,6 +45,13 @@ function helper<
   callParent?: C
   callParentKey?: 'func' | 'arg'
 }): FindResult<E, C, F> {
+  if (isExecutableCall<E>(expression)) {
+    return {
+      expression,
+      callParent,
+      callParentKey
+    }
+  }
   if (isCall<C>(expression.func)) {
     const result: FindResult<E, C, F> = helper({
       expression: expression.func,
@@ -67,16 +74,8 @@ function helper<
     }
   }
 
-  if (isExecutableCall<E>(expression)) {
-    return {
-      expression,
-      callParent,
-      callParentKey
-    }
-  } else {
-    const notFound: FindResult<E, C, F> = {}
-    return notFound
-  }
+  const notFound: FindResult<E, C, F> = {}
+  return notFound
 }
 
 export default function findNextCallExpressionAndParent<

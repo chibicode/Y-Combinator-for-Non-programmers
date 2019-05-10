@@ -1,10 +1,16 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
+  ShorthandFunctionExpression,
+  StepShorthandFunction,
   NonExecutableStepCall,
   StepChild,
   StepFunction,
@@ -30,6 +36,15 @@ export function toBetaReducePreviewBefore(
   funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
+  matchExists: boolean
+}
+export function toBetaReducePreviewBefore(
+  e: ShorthandFunctionExpression,
+  fromName: VariableNames,
+  fromalphaConvertCount: number,
+  funcSide: boolean
+): {
+  nextExpression: StepShorthandFunction<'betaReducePreviewBefore'>
   matchExists: boolean
 }
 export function toBetaReducePreviewBefore(
@@ -142,6 +157,19 @@ export function toBetaReducePreviewBefore(
       },
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
     }
+  } else if (isShorthandFunction(e)) {
+    const argsResults = e.args.map(arg =>
+      toBetaReducePreviewBefore(arg, fromName, fromalphaConvertCount, funcSide)
+    )
+    return {
+      nextExpression: {
+        ...e,
+        highlightType: 'default',
+        args: argsResults.map(argsResult => argsResult.nextExpression)
+      },
+      matchExists:
+        argsResults.filter(argsResult => argsResult.matchExists).length > 0
+    }
   } else {
     const argHelperResult = toBetaReducePreviewBefore(
       e.arg,
@@ -188,9 +216,9 @@ const funcArg = (
       }
 
 const stepToBetaReducePreviewBefore = (
-  e: ExecutableCall
+  e: ExecutableCallRegular
 ): {
-  nextExpression: ExecutableStepCall<'betaReducePreviewBefore'>
+  nextExpression: ExecutableStepCallRegular<'betaReducePreviewBefore'>
   matchExists: boolean
 } => {
   const fromName = e.func.arg.name

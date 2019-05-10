@@ -8,7 +8,13 @@ import BorderWrapper, {
 import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import ShorthandFunctionExpressionBox from 'src/components/Yc/ShorthandFunctionExpressionBox'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isShorthandFunction
+} from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
 
@@ -34,6 +40,8 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
     ? ((!started || highlightOverrideActiveAfterStart) &&
         highlightOverrides[expression.name]) ||
       expression.highlightType
+    : isShorthandFunction(expression)
+    ? expression.highlightType
     : 'none'
 
   if (
@@ -71,8 +79,10 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
             return <VariableExpressionBox expression={expression} />
           } else if (isCall(expression)) {
             return <CallExpressionBox expression={expression} />
-          } else {
+          } else if (isFunction(expression)) {
             return <FunctionExpressionBox expression={expression} />
+          } else {
+            return <ShorthandFunctionExpressionBox expression={expression} />
           }
         })()}
       </BorderWrapper>

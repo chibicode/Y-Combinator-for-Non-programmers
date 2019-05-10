@@ -1,19 +1,22 @@
 import {
   isCallExpressionParams,
   isVariableExpressionParams,
-  isHighlightedVariableExpressionParams
+  isHighlightedVariableExpressionParams,
+  isFunctionExpressionParams
 } from 'src/lib/yc/expressionParamGuards'
 import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams,
-  HighlightedVariableExpressionParams
+  HighlightedVariableExpressionParams,
+  ShorthandFunctionExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
   StepChild,
   StepFunction,
+  StepShorthandFunction,
   StepVariable
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
@@ -70,6 +73,9 @@ export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
 ): StepFunction
 export default function buildExpressionFromParams(
+  expressionParams: ShorthandFunctionExpressionParams
+): StepShorthandFunction
+export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): StepChild
 export default function buildExpressionFromParams(
@@ -97,7 +103,7 @@ export default function buildExpressionFromParams(
       true,
       'initialHighlighted'
     )
-  } else {
+  } else if (isFunctionExpressionParams(expressionParams)) {
     if (isHighlightedVariableExpressionParams(expressionParams.arg)) {
       return {
         arg: buildVariableExpression(
@@ -116,6 +122,18 @@ export default function buildExpressionFromParams(
         type: 'function',
         meta: expressionParams.meta
       }
+    }
+  } else {
+    return {
+      type: 'shorthandFunction',
+      name: expressionParams.shorthand,
+      args: expressionParams.args
+        ? expressionParams.args.map(param => buildExpressionFromParams(param))
+        : [],
+      highlightType: 'default',
+      argPriorityAgg: [],
+      funcPriorityAgg: [],
+      emphasizePriority: false
     }
   }
 }
