@@ -12,11 +12,29 @@ export interface VariableExpression {
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
   readonly alphaConvertCount: number
+  readonly shorthandFunc?: 'predIfNonZero'
+  readonly shorthandNumber?: number
+}
+
+export interface VariableShorthandFunc extends VariableExpression {
+  readonly shorthandFunc: 'predIfNonZero'
+}
+
+export interface VariableShorthandNumber extends VariableExpression {
+  readonly shorthandNumber: number
 }
 
 export type VariableWithState<
   S extends keyof VariableStates
 > = VariableExpression & VariableStates[S]
+
+export type VariableWithStateShorthandFunc<
+  S extends keyof VariableStates
+> = VariableShorthandFunc & VariableStates[S]
+
+export type VariableWithStateShorthandNumber<
+  S extends keyof VariableStates
+> = VariableShorthandNumber & VariableStates[S]
 
 export type VariableWithEmphasizePriorityAndState<
   S extends keyof VariableStates
@@ -306,15 +324,27 @@ type ExecutableRegular<
   S extends CallStates,
   F extends FunctionExpression,
   E extends Expression
-> = CallExpression & {
-  readonly arg: E
-  readonly state: S
-  readonly func: F
-}
+> = CallExpression &
+  ({
+    readonly state: S
+  }) &
+  (
+    | {
+        readonly arg: E
+        readonly func: F
+      }
+    | {
+        readonly arg: VariableWithStateShorthandNumber<
+          CallStateToVariableState<S>
+        >
+        readonly func: VariableWithStateShorthandFunc<
+          CallStateToVariableState<S>
+        >
+      })
 
 type ExecutableShorthand<
   S extends CallStates,
-  F extends ShorthandFunctionExpression,
+  F extends ShorthandFunctionExpression | VariableExpression,
   E extends Expression
 > = CallExpression & {
   readonly arg: E
@@ -325,6 +355,12 @@ type ExecutableShorthand<
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
+export type StepVariableShorthandFunc<
+  C extends CallStates = 'default'
+> = VariableWithStateShorthandFunc<CallStateToVariableState<C>>
+export type StepVariableShorthandNumber<
+  C extends CallStates = 'default'
+> = VariableWithStateShorthandNumber<CallStateToVariableState<C>>
 type StepShorthandFunctionBase<
   C extends CallStates = 'default'
 > = ShorthandFunctionWithState<CallStateToShorthandFunctionState<C>>
@@ -337,12 +373,15 @@ export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
-export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
-  extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
+export type ExecutableStepCallRegular<
+  C extends CallStates = 'default'
+> = ExecutableRegular<C, StepFunction<C>, StepChild<C>>
 export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
   extends ExecutableShorthand<C, StepShorthandFunction<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
+  | StepVariableShorthandFunc<C>
+  | StepVariableShorthandNumber<C>
   | StepFunction<C>
   | NonExecutableStepCall<C>
   | StepShorthandFunction<C>
