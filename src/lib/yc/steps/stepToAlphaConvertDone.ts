@@ -119,7 +119,10 @@ export function toAlphaConvertDone(
   } else if (isShorthandFunction(e)) {
     return {
       ...e,
-      highlightType: 'default'
+      highlightType: 'default',
+      args: e.args.map(arg =>
+        toAlphaConvertDone(arg, conflicts, allVariables, funcSide)
+      )
     }
   } else {
     return {

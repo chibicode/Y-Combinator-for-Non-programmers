@@ -21,98 +21,99 @@ import {
 import { VariableNamesToNumbersObj } from 'src/lib/yc/variablesHelper'
 
 export function toNeedsAlphaConvert(
-  x: VariableExpression,
+  e: VariableExpression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepVariable<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
-  x: FunctionExpression,
+  e: FunctionExpression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
-  x: ShorthandFunctionExpression,
+  e: ShorthandFunctionExpression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepShorthandFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
-  x: CallExpression,
+  e: CallExpression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): NonExecutableStepCall<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
-  x: VariableExpression | FunctionExpression,
+  e: VariableExpression | FunctionExpression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepVariable<'needsAlphaConvert'> | StepFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
-  x: Expression,
+  e: Expression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepChild<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
-  x: Expression,
+  e: Expression,
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepChild<'needsAlphaConvert'> {
-  if (isVariable(x)) {
-    if (funcSide && x.bound) {
+  if (isVariable(e)) {
+    if (funcSide && e.bound) {
       return {
-        ...x,
+        ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
         bottomRightBadgeType: 'funcBound'
       }
-    } else if (funcSide && !x.bound) {
-      if (conflicts[x.name] && conflicts[x.name]![x.alphaConvertCount]) {
+    } else if (funcSide && !e.bound) {
+      if (conflicts[e.name] && conflicts[e.name]![e.alphaConvertCount]) {
         return {
-          ...x,
+          ...e,
           highlightType: 'highlighted',
           topLeftBadgeType: 'conflict',
           bottomRightBadgeType: 'funcUnbound'
         }
       } else {
         return {
-          ...x,
+          ...e,
           highlightType: 'active',
           topLeftBadgeType: 'none',
           bottomRightBadgeType: 'funcUnbound'
         }
       }
     } else {
-      if (conflicts[x.name] && conflicts[x.name]![x.alphaConvertCount]) {
+      if (conflicts[e.name] && conflicts[e.name]![e.alphaConvertCount]) {
         return {
-          ...x,
+          ...e,
           highlightType: 'highlighted',
           topLeftBadgeType: 'conflict',
           bottomRightBadgeType: 'callArg'
         }
       } else {
         return {
-          ...x,
+          ...e,
           highlightType: 'active',
           topLeftBadgeType: 'none',
           bottomRightBadgeType: 'callArg'
         }
       }
     }
-  } else if (isShorthandFunction(x)) {
+  } else if (isShorthandFunction(e)) {
     return {
-      ...x,
-      highlightType: 'default'
+      ...e,
+      highlightType: 'default',
+      args: e.args.map(arg => toNeedsAlphaConvert(arg, conflicts, funcSide))
     }
-  } else if (isFunction(x)) {
+  } else if (isFunction(e)) {
     return {
-      ...x,
-      arg: toNeedsAlphaConvert(x.arg, conflicts, funcSide),
-      body: toNeedsAlphaConvert(x.body, conflicts, funcSide)
+      ...e,
+      arg: toNeedsAlphaConvert(e.arg, conflicts, funcSide),
+      body: toNeedsAlphaConvert(e.body, conflicts, funcSide)
     }
   } else {
     return {
-      ...x,
+      ...e,
       state: 'default',
-      arg: toNeedsAlphaConvert(x.arg, conflicts, funcSide),
-      func: toNeedsAlphaConvert(x.func, conflicts, funcSide)
+      arg: toNeedsAlphaConvert(e.arg, conflicts, funcSide),
+      func: toNeedsAlphaConvert(e.func, conflicts, funcSide)
     }
   }
 }

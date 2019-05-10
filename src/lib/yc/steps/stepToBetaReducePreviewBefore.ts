@@ -158,12 +158,17 @@ export function toBetaReducePreviewBefore(
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
     }
   } else if (isShorthandFunction(e)) {
+    const argsResults = e.args.map(arg =>
+      toBetaReducePreviewBefore(arg, fromName, fromalphaConvertCount, funcSide)
+    )
     return {
       nextExpression: {
         ...e,
-        highlightType: 'default'
+        highlightType: 'default',
+        args: argsResults.map(argsResult => argsResult.nextExpression)
       },
-      matchExists: false
+      matchExists:
+        argsResults.filter(argsResult => argsResult.matchExists).length > 0
     }
   } else {
     const argHelperResult = toBetaReducePreviewBefore(
