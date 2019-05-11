@@ -438,6 +438,26 @@ export const yCombinatorContainer = initializeExpressionContainer([
   'question'
 ])
 
+export const ycTest = initializeExpressionContainer([
+  wikipediaYCombinator,
+  {
+    arg: 'c',
+    body: {
+      arg: 'd',
+      body: [
+        {
+          name: 'c',
+          shorthandFunc: 'predIfNonZero'
+        },
+        'd'
+      ]
+    }
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
 // Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']
 export const addOnePizza: FunctionExpressionParams = {
   arg: 'e',

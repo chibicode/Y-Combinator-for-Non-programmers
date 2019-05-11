@@ -136,7 +136,7 @@ export default function buildExpressionFromParams(
     }
   } else {
     return {
-      ...buildVariableExpression('question', true, 'default'),
+      ...buildVariableExpression('shorthandNumber', true, 'default'),
       shorthandNumber: expressionParams.shorthandNumber
     }
   }

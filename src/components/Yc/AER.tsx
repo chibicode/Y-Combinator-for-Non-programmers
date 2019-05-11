@@ -1473,5 +1473,13 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
+  ),
+  hzlj: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.ycTest}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
   )
 }
