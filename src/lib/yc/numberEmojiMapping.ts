@@ -1,0 +1,9 @@
+const numberEmojiMapping: Record<number, string> = {
+  0: '0️⃣',
+  1: '1️⃣',
+  2: '2️⃣',
+  3: '3️⃣',
+  4: '4️⃣'
+}
+
+export default numberEmojiMapping
