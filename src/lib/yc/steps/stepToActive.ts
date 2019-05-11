@@ -6,11 +6,11 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCallRegular,
+  ExecutableCall,
   ShorthandFunctionExpression,
   StepShorthandFunction,
   ExecutableStepCallShorthand,
-  ExecutableStepCallRegular,
+  ExecutableStepCall,
   Expression,
   ExecutableCall,
   FunctionExpression,
@@ -108,14 +108,14 @@ const emphasizeArgPriorityCallExpression = (
 }
 
 export default function stepToActive(
-  e: ExecutableCallRegular
-): ExecutableStepCallRegular<'active'>
+  e: ExecutableCall
+): ExecutableStepCall<'active'>
 export default function stepToActive(
   e: ExecutableCallShorthand
 ): ExecutableStepCallShorthand<'active'>
 export default function stepToActive(
   e: ExecutableCall
-): ExecutableStepCallRegular<'active'> | ExecutableStepCallShorthand<'active'> {
+): ExecutableStepCall<'active'> | ExecutableStepCallShorthand<'active'> {
   const arg = isFunction(e.arg)
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)

@@ -6,10 +6,7 @@ import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
-import {
-  isShorthandFunction,
-  isExecutableCallRegular
-} from 'src/lib/yc/expressionTypeGuards'
+import { isExecutableCall } from 'src/lib/yc/expressionTypeGuards'
 import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -32,9 +29,7 @@ import {
   CallStates,
   ExecutableCall,
   FunctionExpression,
-  StepChild,
-  ExecutableCallShorthand,
-  ExecutableCallRegular
+  StepChild
 } from 'src/types/yc/ExpressionTypes'
 import prioritizeExpression from 'src/lib/yc/prioritizeExpression'
 
@@ -84,9 +79,9 @@ const stepShorthand = (
 }
 
 const stepShorthandArg = (
-  e: ExecutableCallRegular
+  e: ExecutableCall
 ): {
-  nextExpression: ExecutableCallRegular | StepChild<'default'>
+  nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
@@ -110,16 +105,16 @@ const stepShorthandArg = (
 }
 
 const stepRegular = (
-  e: ExecutableCallRegular,
+  e: ExecutableCall,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
   matchExists?: boolean
 ): {
-  nextExpression: ExecutableCallRegular | StepChild<'default'>
+  nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
   const toNeedsAlphaConvertOrBetaReducePreviewBefore = (): {
-    nextExpression: ExecutableCallRegular | StepChild<'default'>
+    nextExpression: ExecutableCall | StepChild<'default'>
     matchExists?: boolean
     previouslyChangedExpressionState: CallStates
   } => {
@@ -261,7 +256,7 @@ const runStep = (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = isExecutableCallRegular(expression)
+  } = isExecutableCall(expression)
     ? isShorthandFunction(expression.arg)
       ? stepShorthandArg(expression)
       : stepRegular(expression, stepOptions, e.matchExists)

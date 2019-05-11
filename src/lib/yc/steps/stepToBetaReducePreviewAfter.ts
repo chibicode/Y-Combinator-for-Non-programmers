@@ -6,8 +6,8 @@ import {
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCallRegular,
-  ExecutableStepCallRegular,
+  ExecutableCall,
+  ExecutableStepCall,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -202,8 +202,8 @@ export function toBetaReducePreviewAfter(
 }
 
 const stepToBetaReducePreviewAfter = (
-  e: ExecutableCallRegular
-): ExecutableStepCallRegular<'betaReducePreviewAfter'> => {
+  e: ExecutableCall
+): ExecutableStepCall<'betaReducePreviewAfter'> => {
   const fromName = e.func.arg.name
   const fromalphaConvertCount = e.func.arg.alphaConvertCount
   const to = e.arg

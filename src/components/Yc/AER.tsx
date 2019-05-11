@@ -1473,29 +1473,5 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
     />
-  ),
-  imru: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E6}
-      skipToTheEnd={false}
-      showPriorities
-    />
-  ),
-  eahq: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E7}
-      skipToTheEnd={false}
-      showPriorities
-    />
-  ),
-  ypkf: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E8}
-      skipToTheEnd={false}
-      showPriorities
-      containerSize={'xs'}
-      variableSize={'md'}
-      speed={5}
-    />
   )
 }

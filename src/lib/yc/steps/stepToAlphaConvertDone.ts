@@ -7,8 +7,8 @@ import {
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCallRegular,
-  ExecutableStepCallRegular,
+  ExecutableCall,
+  ExecutableStepCall,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -135,8 +135,8 @@ export function toAlphaConvertDone(
 }
 
 const stepToAlphaConvertDone = (
-  e: ExecutableCallRegular
-): ExecutableStepCallRegular<'alphaConvertDone'> => {
+  e: ExecutableCall
+): ExecutableStepCall<'alphaConvertDone'> => {
   const conflicts = getConflicts(e)
   const allVariables = getAllVariables(e)
   return {

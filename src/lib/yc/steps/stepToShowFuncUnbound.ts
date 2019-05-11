@@ -5,8 +5,8 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCallRegular,
-  ExecutableStepCallRegular,
+  ExecutableCall,
+  ExecutableStepCall,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -118,9 +118,9 @@ export const activeFuncArg = (
 })
 
 const stepToShowFuncUnbound = (
-  e: ExecutableCallRegular,
+  e: ExecutableCall,
   highlight: boolean
-): ExecutableStepCallRegular<'showFuncUnbound'> => ({
+): ExecutableStepCall<'showFuncUnbound'> => ({
   ...e,
   state: 'showFuncUnbound',
   arg: toShowFuncUnbound(e.arg, false, highlight),

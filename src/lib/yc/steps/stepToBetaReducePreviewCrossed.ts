@@ -5,8 +5,8 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCallRegular,
-  ExecutableStepCallRegular,
+  ExecutableCall,
+  ExecutableStepCall,
   ShorthandFunctionExpression,
   StepShorthandFunction,
   Expression,
@@ -104,8 +104,8 @@ const removeFuncArg = (
 })
 
 const stepToBetaReducePreviewCrossed = (
-  e: ExecutableCallRegular
-): ExecutableStepCallRegular<'betaReducePreviewCrossed'> => ({
+  e: ExecutableCall
+): ExecutableStepCall<'betaReducePreviewCrossed'> => ({
   ...e,
   state: 'betaReducePreviewCrossed',
   arg: toCrossed(e.arg, true),

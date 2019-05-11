@@ -1,8 +1,4 @@
-import {
-  isCall,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -11,9 +7,7 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression,
-  ShorthandFunctionExpression,
-  StepShorthandFunction
+  VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpression(
@@ -22,9 +16,6 @@ export default function resetExpression(
 export default function resetExpression(
   expression: FunctionExpression
 ): StepFunction<'default'>
-export default function resetExpression(
-  expression: ShorthandFunctionExpression
-): StepShorthandFunction<'default'>
 export default function resetExpression(
   expression: CallExpression
 ): NonExecutableStepCall<'default'>
@@ -48,7 +39,9 @@ export default function resetExpression(
       argPriorityAgg: [],
       funcPriorityAgg: [],
       emphasizePriority: false,
-      alphaConvertCount: expression.alphaConvertCount
+      alphaConvertCount: expression.alphaConvertCount,
+      shorthandFunc: expression.shorthandFunc,
+      shorthandNumber: expression.shorthandNumber
     }
   } else if (isCall(expression)) {
     return {
@@ -57,16 +50,6 @@ export default function resetExpression(
       arg: resetExpression(expression.arg),
       func: resetExpression(expression.func),
       priority: 0
-    }
-  } else if (isShorthandFunction(expression)) {
-    return {
-      type: 'shorthandFunction',
-      name: expression.name,
-      args: expression.args.map(arg => resetExpression(arg)),
-      highlightType: 'default',
-      argPriorityAgg: [],
-      funcPriorityAgg: [],
-      emphasizePriority: false
     }
   } else {
     return {

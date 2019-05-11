@@ -1,5 +1,5 @@
 import {
-  ExecutableCallRegular,
+  ExecutableCall,
   StepChild,
   Expression
 } from 'src/types/yc/ExpressionTypes'
@@ -25,9 +25,7 @@ function isZero(number: Expression, args: Expression[]): Expression {
   throw new Error()
 }
 
-const stepToShorthandArgResult = (
-  e: ExecutableCallRegular
-): StepChild<'default'> => {
+const stepToShorthandArgResult = (e: ExecutableCall): StepChild<'default'> => {
   if (isShorthandFunction(e.arg) && e.arg.name === 'isZero') {
     return toDefault(isZero(e.func, e.arg.args))
   }

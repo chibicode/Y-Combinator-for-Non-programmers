@@ -7,8 +7,8 @@ import {
   CallExpression,
   ShorthandFunctionExpression,
   StepShorthandFunction,
-  ExecutableCallRegular,
-  ExecutableStepCallRegular,
+  ExecutableCall,
+  ExecutableStepCall,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -85,8 +85,8 @@ export function toShowCallArg(
 }
 
 const stepToShowCallArg = (
-  e: ExecutableCallRegular
-): ExecutableStepCallRegular<'showCallArg'> => ({
+  e: ExecutableCall
+): ExecutableStepCall<'showCallArg'> => ({
   ...e,
   state: 'showCallArg',
   arg: toShowCallArg(e.arg, false),

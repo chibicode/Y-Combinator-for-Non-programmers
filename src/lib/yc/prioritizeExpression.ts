@@ -1,9 +1,4 @@
-import {
-  isCall,
-  isFunction,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 
 import { CallExpression, Expression } from 'src/types/yc/ExpressionTypes'
 
@@ -76,12 +71,6 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
       arg: prioritizeExpressionHelper(expression.arg),
       body: prioritizeExpressionHelper(expression.body)
     }
-  } else if (isShorthandFunction(expression)) {
-    return {
-      ...expression,
-      argPriorityAgg: [] as number[],
-      funcPriorityAgg: [] as number[]
-    }
   } else {
     throw new Error()
   }
@@ -125,8 +114,6 @@ function populatePriorityAggs<E extends Expression>({
       })
     }
   } else if (isVariable(expression)) {
-    return { ...expression, argPriorityAgg, funcPriorityAgg }
-  } else if (isShorthandFunction(expression)) {
     return { ...expression, argPriorityAgg, funcPriorityAgg }
   } else {
     throw new Error()

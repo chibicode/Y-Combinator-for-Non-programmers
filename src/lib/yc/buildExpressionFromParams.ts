@@ -2,7 +2,8 @@ import {
   isCallExpressionParams,
   isVariableExpressionParams,
   isHighlightedVariableExpressionParams,
-  isFunctionExpressionParams
+  isFunctionExpressionParams,
+  isVariableShorthandFuncParams
 } from 'src/lib/yc/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -10,14 +11,16 @@ import {
   FunctionExpressionParams,
   VariableExpressionParams,
   HighlightedVariableExpressionParams,
-  ShorthandFunctionExpressionParams
+  VariableShorthandFuncParams,
+  VariableShorthandNumberParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
   StepChild,
   StepFunction,
-  StepShorthandFunction,
-  StepVariable
+  StepVariable,
+  StepVariableShorthandFunc,
+  StepVariableShorthandNumber
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -73,8 +76,11 @@ export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
 ): StepFunction
 export default function buildExpressionFromParams(
-  expressionParams: ShorthandFunctionExpressionParams
-): StepShorthandFunction
+  expressionParams: VariableShorthandFuncParams
+): StepVariableShorthandFunc
+export default function buildExpressionFromParams(
+  expressionParams: VariableShorthandNumberParams
+): StepVariableShorthandNumber
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): StepChild
@@ -123,17 +129,15 @@ export default function buildExpressionFromParams(
         meta: expressionParams.meta
       }
     }
+  } else if (isVariableShorthandFuncParams(expressionParams)) {
+    return {
+      ...buildVariableExpression(expressionParams.name, true, 'default'),
+      shorthandFunc: expressionParams.shorthandFunc
+    }
   } else {
     return {
-      type: 'shorthandFunction',
-      name: expressionParams.shorthand,
-      args: expressionParams.args
-        ? expressionParams.args.map(param => buildExpressionFromParams(param))
-        : [],
-      highlightType: 'default',
-      argPriorityAgg: [],
-      funcPriorityAgg: [],
-      emphasizePriority: false
+      ...buildVariableExpression('question', true, 'default'),
+      shorthandNumber: expressionParams.shorthandNumber
     }
   }
 }

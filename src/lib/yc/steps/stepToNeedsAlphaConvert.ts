@@ -6,8 +6,8 @@ import {
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCallRegular,
-  ExecutableStepCallRegular,
+  ExecutableCall,
+  ExecutableStepCall,
   ShorthandFunctionExpression,
   StepShorthandFunction,
   Expression,
@@ -119,9 +119,9 @@ export function toNeedsAlphaConvert(
 }
 
 const stepToNeedsAlphaConvert = (
-  x: ExecutableCallRegular,
+  x: ExecutableCall,
   conflicts: VariableNamesToNumbersObj
-): ExecutableStepCallRegular<'needsAlphaConvert'> => ({
+): ExecutableStepCall<'needsAlphaConvert'> => ({
   ...x,
   state: 'needsAlphaConvert',
   arg: toNeedsAlphaConvert(x.arg, conflicts, false),

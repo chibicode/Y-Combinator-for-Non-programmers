@@ -6,10 +6,10 @@ import {
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCallRegular,
+  ExecutableCall,
   ShorthandFunctionExpression,
   StepShorthandFunction,
-  ExecutableStepCallRegular,
+  ExecutableStepCall,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -111,9 +111,9 @@ export function toShowFuncBound(
 }
 
 const stepToShowFuncBound = (
-  e: ExecutableCallRegular,
+  e: ExecutableCall,
   highlight: boolean
-): ExecutableStepCallRegular<'showFuncBound'> => ({
+): ExecutableStepCall<'showFuncBound'> => ({
   ...e,
   state: 'showFuncBound',
   arg: toShowFuncBound(e.arg, false, highlight),

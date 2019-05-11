@@ -3,6 +3,8 @@ import {
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams,
+  VariableShorthandFuncParams,
+  VariableShorthandNumberParams,
   HighlightedVariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 
@@ -12,6 +14,24 @@ export function isHighlightedVariableExpressionParams(
   return (
     !!(expressionParams as HighlightedVariableExpressionParams).name &&
     !!(expressionParams as HighlightedVariableExpressionParams).highlighted
+  )
+}
+
+export function isVariableShorthandFuncParams(
+  expressionParams: ExpressionParams
+): expressionParams is VariableShorthandFuncParams {
+  return (
+    !!(expressionParams as VariableShorthandFuncParams).name &&
+    !!(expressionParams as VariableShorthandFuncParams).shorthandFunc
+  )
+}
+
+export function isVariableShorthandNumberParams(
+  expressionParams: ExpressionParams
+): expressionParams is VariableShorthandNumberParams {
+  return (
+    !!(expressionParams as VariableShorthandNumberParams).shorthandNumber !==
+    undefined
   )
 }
 
