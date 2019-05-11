@@ -11,6 +11,7 @@ import ExpressionRunnerContext, {
 import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import numberEmojiMapping from 'src/lib/yc/numberEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 import AlphaConvertBadge from 'src/components/Yc/AlphaConvertBadge'
 
@@ -80,10 +81,34 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
             `}
           >
             <Emoji size="sm">
-              {expression.highlightType === 'removed'
+              {expression.shorthandNumber !== undefined
+                ? numberEmojiMapping[expression.shorthandNumber]
+                : expression.highlightType === 'removed'
                 ? '💥'
                 : letterEmojiMapping[expression.name]}
             </Emoji>
+            {expression.shorthandFunc && (
+              <span
+                css={css`
+                  position: absolute;
+                  right: -0.2em;
+                  top: -0.6em;
+                  z-index: ${zIndices('badge')};
+                `}
+              >
+                <span
+                  css={css`
+                    display: inline-flex;
+                    font-size: 0.5em;
+                    transform: translateY(0.3em);
+                  `}
+                >
+                  <Emoji size="sm" noVerticalTransform>
+                    *️⃣
+                  </Emoji>
+                </span>
+              </span>
+            )}
             {bottomRightBadgeOverrides[expression.name] && (
               <span
                 css={css`

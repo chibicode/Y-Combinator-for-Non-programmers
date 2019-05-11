@@ -1474,28 +1474,12 @@ export default {
       variableSize={'md'}
     />
   ),
-  imru: (
+  hzlj: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E6}
-      skipToTheEnd={false}
-      showPriorities
-    />
-  ),
-  eahq: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E7}
-      skipToTheEnd={false}
-      showPriorities
-    />
-  ),
-  ypkf: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E8}
-      skipToTheEnd={false}
+      expressionContainer={lessonExpressions.ycTest}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
-      speed={5}
     />
   )
 }

@@ -5,7 +5,7 @@ import uniq from 'lodash/uniq'
 import {
   isCall,
   isVariable,
-  isShorthandFunction
+  isVariableShorthandFunc
 } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
@@ -45,8 +45,6 @@ function getAllVariableNamesEncodedWithDuplicates(
     } else {
       return []
     }
-  } else if (isShorthandFunction(expression)) {
-    return []
   } else if (isCall(expression)) {
     return getAllVariableNamesEncoded(expression.arg, { filter }).concat(
       getAllVariableNamesEncoded(expression.func, { filter })
@@ -68,7 +66,7 @@ function getAllVariableNamesEncoded(
 function conflictingVariableNamesEncoded(
   expression: ExecutableCallRegular
 ): ReadonlyArray<string> {
-  if (isShorthandFunction(expression.func)) {
+  if (isVariableShorthandFunc(expression.func)) {
     return []
   } else {
     const argVariableNames = getAllVariableNamesEncoded(expression.arg)

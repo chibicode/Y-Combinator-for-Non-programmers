@@ -1,16 +1,11 @@
-import {
-  isCall,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
   FunctionExpression,
   VariableExpression,
   StepChild,
-  ExecutableCall,
-  ShorthandFunctionExpression
+  ExecutableCall
 } from 'src/types/yc/ExpressionTypes'
 
 export default function replaceCallParentKey(
@@ -25,12 +20,6 @@ export default function replaceCallParentKey(
   key: 'func' | 'arg',
   replaceWith: ExecutableCall | StepChild<'default'>
 ): FunctionExpression
-export default function replaceCallParentKey(
-  expression: ShorthandFunctionExpression,
-  target: CallExpression,
-  key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
-): ShorthandFunctionExpression
 export default function replaceCallParentKey(
   expression: CallExpression,
   target: CallExpression,
@@ -70,8 +59,6 @@ export default function replaceCallParentKey(
         func: replaceCallParentKey(expression.func, target, key, replaceWith)
       }
     }
-  } else if (isShorthandFunction(expression)) {
-    return expression
   } else {
     return {
       ...expression,

@@ -1,27 +1,18 @@
-import {
-  isFunction,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ShorthandFunctionExpression,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression,
-  StepShorthandFunction
+  VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function toDefault(
   e: VariableExpression
 ): StepVariable<'default'>
-export default function toDefault(
-  e: ShorthandFunctionExpression
-): StepShorthandFunction<'default'>
 export default function toDefault(
   e: FunctionExpression
 ): StepFunction<'default'>
@@ -47,12 +38,6 @@ export default function toDefault(e: Expression): StepChild<'default'> {
       ...e,
       arg: toDefault(e.arg),
       body: toDefault(e.body)
-    }
-  } else if (isShorthandFunction(e)) {
-    return {
-      ...e,
-      highlightType: 'default',
-      args: e.args.map(arg => toDefault(arg))
     }
   } else {
     return {

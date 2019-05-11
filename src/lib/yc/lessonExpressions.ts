@@ -433,46 +433,29 @@ export const e12E5 = initializeExpressionContainer([
   // addOneItemParams('e', 'u')
 ])
 
-export const e12E6 = initializeExpressionContainer([
-  {
-    shorthand: 'pred'
-  },
-  numberParams('a', 'b', 2)
-])
-
-export const e12E7 = initializeExpressionContainer([
-  numberParams('a', 'b', 0),
-  {
-    shorthand: 'isZero',
-    args: ['c', 'd']
-  }
-])
-
-export const e12E8 = initializeExpressionContainer([
-  [
-    wikipediaYCombinator,
-    {
-      arg: 'c',
-      body: {
-        arg: 'd',
-        body: [
-          'c',
-          [
-            {
-              shorthand: 'pred'
-            },
-            'd'
-          ]
-        ]
-      }
-    }
-  ],
-  numberParams('f', 'g', 2)
-])
-
 export const yCombinatorContainer = initializeExpressionContainer([
   yCombinator,
   'question'
+])
+
+export const ycTest = initializeExpressionContainer([
+  wikipediaYCombinator,
+  {
+    arg: 'c',
+    body: {
+      arg: 'd',
+      body: [
+        {
+          name: 'c',
+          shorthandFunc: 'predIfNonZero'
+        },
+        'd'
+      ]
+    }
+  },
+  {
+    shorthandNumber: 3
+  }
 ])
 
 // Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']

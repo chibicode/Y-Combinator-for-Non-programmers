@@ -1,5 +1,4 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
-import { ShorthandFunctionNames } from 'src/types/yc/ShorthandFunctionNames'
 
 export interface VariableExpression {
   readonly type: 'variable'
@@ -12,15 +11,29 @@ export interface VariableExpression {
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
   readonly alphaConvertCount: number
+  readonly shorthandFunc?: 'predIfNonZero'
+  readonly shorthandNumber?: number
 }
 
-export type VariableWithName<VN extends VariableNames> = VariableExpression & {
-  readonly name: VN
+export interface VariableShorthandFunc extends VariableExpression {
+  readonly shorthandFunc: 'predIfNonZero'
+}
+
+export interface VariableShorthandNumber extends VariableExpression {
+  readonly shorthandNumber: number
 }
 
 export type VariableWithState<
   S extends keyof VariableStates
 > = VariableExpression & VariableStates[S]
+
+export type VariableWithStateShorthandFunc<
+  S extends keyof VariableStates
+> = VariableShorthandFunc & VariableStates[S]
+
+export type VariableWithStateShorthandNumber<
+  S extends keyof VariableStates
+> = VariableShorthandNumber & VariableStates[S]
 
 export type VariableWithEmphasizePriorityAndState<
   S extends keyof VariableStates
@@ -253,44 +266,10 @@ export interface FunctionExpression {
   readonly meta?: FunctionExpressionMeta
 }
 
-export interface ShorthandFunctionStates {
-  default: {
-    readonly highlightType: 'default'
-  }
-  active: {
-    readonly highlightType: 'active'
-  }
-}
-
-export interface ShorthandFunctionExpression {
-  readonly type: 'shorthandFunction'
-  readonly name: ShorthandFunctionNames
-  readonly args: Expression[]
-  readonly highlightType: ShorthandFunctionStates[keyof ShorthandFunctionStates]['highlightType']
-  readonly emphasizePriority: boolean
-  readonly argPriorityAgg: number[]
-  readonly funcPriorityAgg: number[]
-}
-
-type ShorthandFunctionWithArgs<
-  E extends Expression
-> = ShorthandFunctionExpression & {
-  readonly args: E[]
-}
-
-export type ShorthandFunctionWithState<
-  S extends keyof ShorthandFunctionStates
-> = ShorthandFunctionExpression & ShorthandFunctionStates[S]
-
-export type CallStateToShorthandFunctionState<
-  C extends CallStates
-> = C extends 'default' ? 'default' : C extends 'active' ? 'active' : 'default'
-
 export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
-  | ShorthandFunctionExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
@@ -310,33 +289,33 @@ type ExecutableRegular<
   S extends CallStates,
   F extends FunctionExpression,
   E extends Expression
-> = CallExpression & {
-  readonly arg: E
-  readonly state: S
-  readonly func: F
-}
+> = CallExpression &
+  ({
+    readonly state: S
+    readonly arg: E
+    readonly func: F
+  })
 
 type ExecutableShorthand<
   S extends CallStates,
-  F extends ShorthandFunctionExpression,
+  F extends VariableShorthandFunc,
   E extends Expression
-> = CallExpression & {
-  readonly arg: E
-  readonly state: S
-  readonly func: F
-}
+> = CallExpression &
+  ({
+    readonly state: S
+    readonly arg: E
+    readonly func: F
+  })
 
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
-type StepShorthandFunctionBase<
+export type StepVariableShorthandFunc<
   C extends CallStates = 'default'
-> = ShorthandFunctionWithState<CallStateToShorthandFunctionState<C>>
-interface StepShorthandFunctionWithArgs<C extends CallStates = 'default'>
-  extends ShorthandFunctionWithArgs<StepChild<C>> {}
-export type StepShorthandFunction<
+> = VariableWithStateShorthandFunc<CallStateToVariableState<C>>
+export type StepVariableShorthandNumber<
   C extends CallStates = 'default'
-> = StepShorthandFunctionBase<C> & StepShorthandFunctionWithArgs<C>
+> = VariableWithStateShorthandNumber<CallStateToVariableState<C>>
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
@@ -344,12 +323,11 @@ export interface NonExecutableStepCall<C extends CallStates = 'default'>
 export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
   extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
 export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
-  extends ExecutableShorthand<C, StepShorthandFunction<C>, StepChild<C>> {}
+  extends ExecutableShorthand<C, StepVariableShorthandFunc<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
   | NonExecutableStepCall<C>
-  | StepShorthandFunction<C>
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
@@ -361,7 +339,6 @@ export type ExecutableCallRegular = DistributeStepCallRegular<CallStates>
 type DistributeStepCallShorthand<U> = U extends CallStates
   ? ExecutableStepCallShorthand<U>
   : never
-
 export type ExecutableCallShorthand = DistributeStepCallShorthand<CallStates>
 
 export type ExecutableCall = ExecutableCallRegular | ExecutableCallShorthand

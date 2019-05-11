@@ -1,15 +1,9 @@
-import {
-  isFunction,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
   ExecutableCallRegular,
   ExecutableStepCallRegular,
-  ShorthandFunctionExpression,
-  StepShorthandFunction,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -30,11 +24,6 @@ export function toNeedsAlphaConvert(
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepFunction<'needsAlphaConvert'>
-export function toNeedsAlphaConvert(
-  e: ShorthandFunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
-  funcSide: boolean
-): StepShorthandFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: CallExpression,
   conflicts: VariableNamesToNumbersObj,
@@ -95,12 +84,6 @@ export function toNeedsAlphaConvert(
           bottomRightBadgeType: 'callArg'
         }
       }
-    }
-  } else if (isShorthandFunction(e)) {
-    return {
-      ...e,
-      highlightType: 'default',
-      args: e.args.map(arg => toNeedsAlphaConvert(arg, conflicts, funcSide))
     }
   } else if (isFunction(e)) {
     return {

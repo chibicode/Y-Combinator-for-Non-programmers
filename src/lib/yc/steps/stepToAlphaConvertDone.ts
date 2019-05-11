@@ -1,9 +1,5 @@
 import { getConflicts, getAllVariables } from 'src/lib/yc/variablesHelper'
-import {
-  isFunction,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -15,9 +11,7 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression,
-  ShorthandFunctionExpression,
-  StepShorthandFunction
+  VariableExpression
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNamesToNumbersObj } from 'src/lib/yc/variablesHelper'
 
@@ -33,12 +27,6 @@ export function toAlphaConvertDone(
   allVariables: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepFunction<'alphaConvertDone'>
-export function toAlphaConvertDone(
-  e: ShorthandFunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
-  funcSide: boolean
-): StepShorthandFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: CallExpression,
   conflicts: VariableNamesToNumbersObj,
@@ -115,14 +103,6 @@ export function toAlphaConvertDone(
       ...e,
       arg: toAlphaConvertDone(e.arg, conflicts, allVariables, funcSide),
       body: toAlphaConvertDone(e.body, conflicts, allVariables, funcSide)
-    }
-  } else if (isShorthandFunction(e)) {
-    return {
-      ...e,
-      highlightType: 'default',
-      args: e.args.map(arg =>
-        toAlphaConvertDone(arg, conflicts, allVariables, funcSide)
-      )
     }
   } else {
     return {

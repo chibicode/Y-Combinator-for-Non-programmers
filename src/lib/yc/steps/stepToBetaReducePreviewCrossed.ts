@@ -1,14 +1,8 @@
-import {
-  isFunction,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
   ExecutableStepCallRegular,
-  ShorthandFunctionExpression,
-  StepShorthandFunction,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -27,10 +21,6 @@ function toCrossed(
   e: FunctionExpression,
   isCallArg: boolean
 ): StepFunction<'betaReducePreviewCrossed'>
-function toCrossed(
-  e: ShorthandFunctionExpression,
-  isCallArg: boolean
-): StepShorthandFunction<'betaReducePreviewCrossed'>
 function toCrossed(
   e: CallExpression,
   isCallArg: boolean
@@ -77,12 +67,6 @@ function toCrossed(
       ...e,
       arg: toCrossed(e.arg, isCallArg),
       body: toCrossed(e.body, isCallArg)
-    }
-  } else if (isShorthandFunction(e)) {
-    return {
-      ...e,
-      highlightType: 'default',
-      args: e.args.map(arg => toCrossed(arg, isCallArg))
     }
   } else {
     return {

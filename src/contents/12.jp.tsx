@@ -119,9 +119,7 @@ export default () => (
             </P>
             {AER.wawo}
             {AER.fcvl}
-            {AER.imru}
-            {AER.eahq}
-            {AER.ypkf}
+            {AER.hzlj}
           </>
         )
       }
