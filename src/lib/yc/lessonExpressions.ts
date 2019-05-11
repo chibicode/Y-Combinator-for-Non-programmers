@@ -451,6 +451,7 @@ export const ycTest = initializeExpressionContainer([
         },
         [
           'question',
+          'd',
           [
             'c',
             {
