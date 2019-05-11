@@ -27,5 +27,7 @@
   "z": "🍬",
   "question": "❔",
   "A": "🅰️",
-  "B": "🅱️"
+  "B": "🅱️",
+  "shorthandNumber": "❔",
+  "shorthandFunc": "❔"
 }

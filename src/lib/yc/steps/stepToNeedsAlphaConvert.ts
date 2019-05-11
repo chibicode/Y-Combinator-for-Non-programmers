@@ -1,15 +1,9 @@
-import {
-  isFunction,
-  isVariable,
-  isShorthandFunction
-} from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
-  ExecutableCall,
-  ExecutableStepCall,
-  ShorthandFunctionExpression,
-  StepShorthandFunction,
+  ExecutableCallRegular,
+  ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
@@ -30,11 +24,6 @@ export function toNeedsAlphaConvert(
   conflicts: VariableNamesToNumbersObj,
   funcSide: boolean
 ): StepFunction<'needsAlphaConvert'>
-export function toNeedsAlphaConvert(
-  e: ShorthandFunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
-  funcSide: boolean
-): StepShorthandFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: CallExpression,
   conflicts: VariableNamesToNumbersObj,
@@ -96,12 +85,6 @@ export function toNeedsAlphaConvert(
         }
       }
     }
-  } else if (isShorthandFunction(e)) {
-    return {
-      ...e,
-      highlightType: 'default',
-      args: e.args.map(arg => toNeedsAlphaConvert(arg, conflicts, funcSide))
-    }
   } else if (isFunction(e)) {
     return {
       ...e,
@@ -119,9 +102,9 @@ export function toNeedsAlphaConvert(
 }
 
 const stepToNeedsAlphaConvert = (
-  x: ExecutableCall,
+  x: ExecutableCallRegular,
   conflicts: VariableNamesToNumbersObj
-): ExecutableStepCall<'needsAlphaConvert'> => ({
+): ExecutableStepCallRegular<'needsAlphaConvert'> => ({
   ...x,
   state: 'needsAlphaConvert',
   arg: toNeedsAlphaConvert(x.arg, conflicts, false),

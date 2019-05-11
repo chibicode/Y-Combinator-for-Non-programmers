@@ -6,11 +6,12 @@ import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
-import { isExecutableCall } from 'src/lib/yc/expressionTypeGuards'
+import { isExecutableCallRegular } from 'src/lib/yc/expressionTypeGuards'
 import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
   stepToActive,
+  stepToShorthandResult,
   stepToAlphaConvertDone,
   stepToBetaReducePreviewAfter,
   stepToBetaReducePreviewBefore,
@@ -19,14 +20,14 @@ import {
   stepToShowCallArg,
   stepToShowFuncArg,
   stepToShowFuncBound,
-  stepToShowFuncUnbound,
-  stepToShorthandFuncResult,
-  stepToShorthandArgResult
+  stepToShowFuncUnbound
 } from 'src/lib/yc/steps'
 import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
   CallExpression,
   CallStates,
+  ExecutableCallRegular,
+  ExecutableCallShorthand,
   ExecutableCall,
   FunctionExpression,
   StepChild
@@ -55,32 +56,6 @@ const stepExpressionContainerReset = (
 const stepShorthand = (
   e: ExecutableCallShorthand
 ): {
-  nextExpression: ExecutableCallShorthand | StepChild<'default'>
-  matchExists?: boolean
-  previouslyChangedExpressionState: CallStates
-} => {
-  switch (e.state) {
-    case 'default': {
-      return {
-        nextExpression: stepToActive(e),
-        previouslyChangedExpressionState: 'active'
-      }
-    }
-    case 'active': {
-      return {
-        nextExpression: stepToShorthandFuncResult(e),
-        previouslyChangedExpressionState: 'default'
-      }
-    }
-    default: {
-      throw new Error()
-    }
-  }
-}
-
-const stepShorthandArg = (
-  e: ExecutableCall
-): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: CallStates
@@ -94,7 +69,7 @@ const stepShorthandArg = (
     }
     case 'active': {
       return {
-        nextExpression: stepToShorthandArgResult(e),
+        nextExpression: stepToShorthandResult(e),
         previouslyChangedExpressionState: 'default'
       }
     }
@@ -105,7 +80,7 @@ const stepShorthandArg = (
 }
 
 const stepRegular = (
-  e: ExecutableCall,
+  e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
   matchExists?: boolean
 ): {
@@ -240,7 +215,7 @@ const runStep = (
     funcParent,
     callParentKey
   } = findNextCallExpressionAndParent<
-    ExecutableCall,
+    ExecutableCallRegular,
     CallExpression,
     FunctionExpression
   >(e.expression)
@@ -256,10 +231,8 @@ const runStep = (
     nextExpression,
     matchExists,
     previouslyChangedExpressionState
-  } = isExecutableCall(expression)
-    ? isShorthandFunction(expression.arg)
-      ? stepShorthandArg(expression)
-      : stepRegular(expression, stepOptions, e.matchExists)
+  } = isExecutableCallRegular(expression)
+    ? stepRegular(expression, stepOptions, e.matchExists)
     : stepShorthand(expression)
 
   if (!callParent && !callParentKey && !funcParent) {

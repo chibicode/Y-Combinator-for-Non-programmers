@@ -1,20 +1,18 @@
 import {
   isFunction,
   isVariable,
-  isExecutableCallRegular,
-  isShorthandFunction
+  isExecutableCallRegular
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableCall,
-  ShorthandFunctionExpression,
-  StepShorthandFunction,
   ExecutableStepCallShorthand,
-  ExecutableStepCall,
+  ExecutableStepCallRegular,
   Expression,
-  ExecutableCall,
+  ExecutableCallRegular,
   FunctionExpression,
   NonExecutableStepCall,
+  VariableShorthandFunc,
+  StepVariableShorthandFunc,
   ExecutableCallShorthand,
   StepChild,
   StepFunction,
@@ -23,11 +21,9 @@ import {
   VariableWithEmphasizePriorityAndState
 } from 'src/types/yc/ExpressionTypes'
 
+function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
-function toActive(
-  e: ShorthandFunctionExpression
-): StepShorthandFunction<'active'>
 function toActive(e: CallExpression): NonExecutableStepCall<'active'>
 function toActive(
   e: VariableExpression | FunctionExpression
@@ -46,13 +42,6 @@ function toActive(e: Expression): StepChild<'active'> {
       ...e,
       arg: toActive(e.arg),
       body: toActive(e.body)
-    }
-  } else if (isShorthandFunction(e)) {
-    return {
-      ...e,
-      highlightType: 'active',
-      emphasizePriority: true,
-      args: e.args.map(arg => toActive(arg))
     }
   } else {
     return {
@@ -97,8 +86,6 @@ const emphasizeArgPriorityCallExpression = (
       ...e,
       arg: toExecutableActiveFunction(e.arg)
     }
-  } else if (isShorthandFunction(e.arg)) {
-    return e
   } else {
     return {
       ...e,
@@ -108,20 +95,18 @@ const emphasizeArgPriorityCallExpression = (
 }
 
 export default function stepToActive(
-  e: ExecutableCall
-): ExecutableStepCall<'active'>
+  e: ExecutableCallRegular
+): ExecutableStepCallRegular<'active'>
 export default function stepToActive(
   e: ExecutableCallShorthand
 ): ExecutableStepCallShorthand<'active'>
 export default function stepToActive(
-  e: ExecutableCall
-): ExecutableStepCall<'active'> | ExecutableStepCallShorthand<'active'> {
+  e: ExecutableCallRegular | ExecutableCallShorthand
+): ExecutableStepCallRegular<'active'> | ExecutableStepCallShorthand<'active'> {
   const arg = isFunction(e.arg)
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)
     ? variableToEmphasize(e.arg)
-    : isShorthandFunction(e.arg)
-    ? toActive(e.arg)
     : emphasizeArgPriorityCallExpression(toActive(e.arg))
   if (isExecutableCallRegular(e)) {
     return {

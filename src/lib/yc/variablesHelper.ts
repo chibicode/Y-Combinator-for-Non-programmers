@@ -1,8 +1,12 @@
 import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
-import { ExecutableCall } from 'src/types/yc/ExpressionTypes'
+import { ExecutableCallRegular } from 'src/types/yc/ExpressionTypes'
 import uniq from 'lodash/uniq'
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isVariableShorthandFunc
+} from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -60,9 +64,9 @@ function getAllVariableNamesEncoded(
 }
 
 function conflictingVariableNamesEncoded(
-  expression: ExecutableCall
+  expression: ExecutableCallRegular
 ): ReadonlyArray<string> {
-  if (isShorthandFunction(expression.func)) {
+  if (isVariableShorthandFunc(expression.func)) {
     return []
   } else {
     const argVariableNames = getAllVariableNamesEncoded(expression.arg)
@@ -105,7 +109,7 @@ function reduceHelper(arr: ReadonlyArray<string>) {
 }
 
 export function getConflicts(
-  expression: ExecutableCall
+  expression: ExecutableCallRegular
 ): VariableNamesToNumbersObj {
   return reduceHelper(conflictingVariableNamesEncoded(expression))
 }
