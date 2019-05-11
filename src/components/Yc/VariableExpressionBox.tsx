@@ -109,6 +109,28 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                 </span>
               </span>
             )}
+            {expression.shorthandUnary && (
+              <span
+                css={css`
+                  position: absolute;
+                  right: -0.2em;
+                  top: -0.6em;
+                  z-index: ${zIndices('badge')};
+                `}
+              >
+                <span
+                  css={css`
+                    display: inline-flex;
+                    font-size: 0.5em;
+                    transform: translateY(0.3em);
+                  `}
+                >
+                  <Emoji size="sm" noVerticalTransform>
+                    ➖
+                  </Emoji>
+                </span>
+              </span>
+            )}
             {bottomRightBadgeOverrides[expression.name] && (
               <span
                 css={css`

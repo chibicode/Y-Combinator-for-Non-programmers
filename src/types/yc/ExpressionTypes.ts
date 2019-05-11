@@ -28,6 +28,9 @@ export interface VariableShorthandUnary extends VariableExpression {
   readonly shorthandUnary: NonNullable<VariableExpression['shorthandUnary']>
 }
 
+export type VariableShorthandUnaryNumber = VariableShorthandNumber &
+  VariableShorthandUnary
+
 export type VariableWithState<
   S extends keyof VariableStates
 > = VariableExpression & VariableStates[S]
@@ -39,6 +42,10 @@ export type VariableWithStateShorthandBinary<
 export type VariableWithStateShorthandNumber<
   S extends keyof VariableStates
 > = VariableShorthandNumber & VariableStates[S]
+
+export type VariableWithStateShorthandUnary<
+  S extends keyof VariableStates
+> = VariableShorthandUnary & VariableStates[S]
 
 export type VariableWithEmphasizePriorityAndState<
   S extends keyof VariableStates
@@ -321,8 +328,13 @@ export type StepVariableShorthandBinary<
 export type StepVariableShorthandNumber<
   C extends CallStates = 'default'
 > = VariableWithStateShorthandNumber<CallStateToVariableState<C>>
+export type StepVariableShorthandUnary<
+  C extends CallStates = 'default'
+> = VariableWithStateShorthandUnary<CallStateToVariableState<C>>
+
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
+
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
 export interface ExecutableStepCallRegular<C extends CallStates = 'default'>

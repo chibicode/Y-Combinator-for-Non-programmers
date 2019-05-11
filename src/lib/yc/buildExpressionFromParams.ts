@@ -3,7 +3,8 @@ import {
   isVariableExpressionParams,
   isHighlightedVariableExpressionParams,
   isFunctionExpressionParams,
-  isVariableShorthandBinaryParams
+  isVariableShorthandBinaryParams,
+  isVariableShorthandUnaryParams
 } from 'src/lib/yc/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -133,6 +134,11 @@ export default function buildExpressionFromParams(
     return {
       ...buildVariableExpression(expressionParams.name, true, 'default'),
       shorthandBinary: expressionParams.shorthandBinary
+    }
+  } else if (isVariableShorthandUnaryParams(expressionParams)) {
+    return {
+      ...buildVariableExpression(expressionParams.name, true, 'default'),
+      shorthandUnary: expressionParams.shorthandUnary
     }
   } else {
     return {
