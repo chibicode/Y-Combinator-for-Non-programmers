@@ -20,7 +20,8 @@ import {
   stepToShowCallArg,
   stepToShowFuncArg,
   stepToShowFuncBound,
-  stepToShowFuncUnbound
+  stepToShowFuncUnbound,
+  stepToBetaReduceUnaryExecuted
 } from 'src/lib/yc/steps'
 import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
@@ -58,6 +59,7 @@ const stepShorthand = (
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
+  executableUnaryExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
   switch (e.state) {
@@ -82,10 +84,12 @@ const stepShorthand = (
 const stepRegular = (
   e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
-  matchExists?: boolean
+  matchExists?: boolean,
+  executableUnaryExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
+  executableUnaryExists?: boolean
   previouslyChangedExpressionState: CallStates
 } => {
   const toNeedsAlphaConvertOrBetaReducePreviewBefore = (): {
@@ -174,7 +178,7 @@ const stepRegular = (
     case 'betaReducePreviewBefore': {
       if (matchExists) {
         return {
-          nextExpression: stepToBetaReducePreviewAfter(e),
+          ...stepToBetaReducePreviewAfter(e),
           previouslyChangedExpressionState: 'betaReducePreviewAfter'
         }
       } else {
@@ -185,6 +189,19 @@ const stepRegular = (
       }
     }
     case 'betaReducePreviewAfter': {
+      if (executableUnaryExists) {
+        return {
+          nextExpression: stepToBetaReduceUnaryExecuted(e),
+          previouslyChangedExpressionState: 'betaReducePreviewUnaryExecuted'
+        }
+      } else {
+        return {
+          nextExpression: stepToBetaReducePreviewCrossed(e),
+          previouslyChangedExpressionState: 'betaReducePreviewCrossed'
+        }
+      }
+    }
+    case 'betaReducePreviewUnaryExecuted': {
       return {
         nextExpression: stepToBetaReducePreviewCrossed(e),
         previouslyChangedExpressionState: 'betaReducePreviewCrossed'
@@ -230,9 +247,15 @@ const runStep = (
   const {
     nextExpression,
     matchExists,
+    executableUnaryExists,
     previouslyChangedExpressionState
   } = isExecutableCallRegular(expression)
-    ? stepRegular(expression, stepOptions, e.matchExists)
+    ? stepRegular(
+        expression,
+        stepOptions,
+        e.matchExists,
+        e.executableUnaryExists
+      )
     : stepShorthand(expression)
 
   if (!callParent && !callParentKey && !funcParent) {
@@ -242,7 +265,8 @@ const runStep = (
           ? prioritizeExpression(nextExpression)
           : nextExpression,
       previouslyChangedExpressionState,
-      matchExists
+      matchExists,
+      executableUnaryExists
     }
     return previouslyChangedExpressionState === 'default'
       ? { ...newContainer, containerState: 'needsReset' }
@@ -274,6 +298,7 @@ const runStep = (
       expression: newExpression,
       containerState: 'needsReset',
       matchExists,
+      executableUnaryExists,
       previouslyChangedExpressionState
     }
   } else {
@@ -285,6 +310,7 @@ const runStep = (
           : newExpression,
       containerState: 'stepped',
       matchExists,
+      executableUnaryExists,
       previouslyChangedExpressionState
     }
   }

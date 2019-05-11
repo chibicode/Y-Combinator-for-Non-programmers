@@ -1480,6 +1480,7 @@ export default {
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
+      skipToTheEnd={false}
     />
   )
 }

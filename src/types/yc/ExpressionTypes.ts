@@ -28,6 +28,11 @@ export interface VariableShorthandUnary extends VariableExpression {
   readonly shorthandUnary: NonNullable<VariableExpression['shorthandUnary']>
 }
 
+export interface VariableShorthandNonUnaryNumber extends VariableExpression {
+  readonly shorthandUnary: undefined
+  readonly shorthandNumber: NonNullable<VariableExpression['shorthandNumber']>
+}
+
 export type VariableShorthandUnaryNumber = VariableShorthandNumber &
   VariableShorthandUnary
 
@@ -46,6 +51,10 @@ export type VariableWithStateShorthandNumber<
 export type VariableWithStateShorthandUnary<
   S extends keyof VariableStates
 > = VariableShorthandUnary & VariableStates[S]
+
+export type VariableWithStateShorthandNonUnaryNumber<
+  S extends keyof VariableStates
+> = VariableShorthandNonUnaryNumber & VariableStates[S]
 
 export type VariableWithEmphasizePriorityAndState<
   S extends keyof VariableStates
@@ -188,6 +197,7 @@ export type CallStates =
   | 'alphaConvertDone'
   | 'betaReducePreviewBefore'
   | 'betaReducePreviewAfter'
+  | 'betaReducePreviewUnaryExecuted'
   | 'betaReducePreviewCrossed'
 
 // Call state to possible variable state
@@ -250,6 +260,8 @@ export type CallStateToVariableState<C extends CallStates> = C extends 'default'
       | 'activeFuncUnbound'
       | 'highlightCallArgBetaReduceCallArg'
       | 'betaReduced'
+  : C extends 'betaReducePreviewUnaryExecuted'
+  ? 'active'
   : C extends 'betaReducePreviewCrossed'
   ?
       | 'active'
@@ -331,6 +343,9 @@ export type StepVariableShorthandNumber<
 export type StepVariableShorthandUnary<
   C extends CallStates = 'default'
 > = VariableWithStateShorthandUnary<CallStateToVariableState<C>>
+export type StepVariableShorthandNonUnaryNumber<
+  C extends CallStates = 'default'
+> = VariableWithStateShorthandNonUnaryNumber<CallStateToVariableState<C>>
 
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
