@@ -11,7 +11,7 @@ import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
   stepToActive,
-  stepToShorthandResult,
+  stepToShorthandBinaryResult,
   stepToAlphaConvertDone,
   stepToBetaReducePreviewAfter,
   stepToBetaReducePreviewBefore,
@@ -69,7 +69,7 @@ const stepShorthand = (
     }
     case 'active': {
       return {
-        nextExpression: stepToShorthandResult(e),
+        nextExpression: stepToShorthandBinaryResult(e),
         previouslyChangedExpressionState: 'default'
       }
     }
