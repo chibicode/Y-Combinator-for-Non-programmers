@@ -58,8 +58,8 @@ function matchBetaReduced(
     return {
       result: {
         ...e,
-        shorthandBinary,
-        shorthandUnary,
+        shorthandBinary: e.shorthandBinary || shorthandBinary,
+        shorthandUnary: e.shorthandUnary || shorthandUnary,
         highlightType: 'highlighted',
         topLeftBadgeType: 'betaReduced',
         bottomRightBadgeType: 'funcBound',
