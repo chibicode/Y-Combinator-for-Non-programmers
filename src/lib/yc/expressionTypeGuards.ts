@@ -48,5 +48,7 @@ export function isExecutableCallShorthand<E extends ExecutableCallShorthand>(
 export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
-  return isVariableShorthandFunc(expression.func)
+  return (
+    isExecutableCallShorthand(expression) || isExecutableCallRegular(expression)
+  )
 }
