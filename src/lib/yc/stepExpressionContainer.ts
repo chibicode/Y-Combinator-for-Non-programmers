@@ -27,7 +27,7 @@ import {
   CallExpression,
   CallStates,
   ExecutableCallRegular,
-  ExecutableCallShorthand,
+  ExecutableCallShorthandBinary,
   ExecutableCall,
   FunctionExpression,
   StepChild
@@ -54,7 +54,7 @@ const stepExpressionContainerReset = (
 }
 
 const stepShorthand = (
-  e: ExecutableCallShorthand
+  e: ExecutableCallShorthandBinary
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean

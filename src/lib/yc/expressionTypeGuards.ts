@@ -3,9 +3,9 @@ import {
   Expression,
   FunctionExpression,
   VariableExpression,
-  VariableShorthandFunc,
+  VariableShorthandBinary,
   ExecutableCallRegular,
-  ExecutableCallShorthand,
+  ExecutableCallShorthandBinary,
   ExecutableCall
 } from 'src/types/yc/ExpressionTypes'
 
@@ -27,8 +27,8 @@ export function isFunction<E extends FunctionExpression = FunctionExpression>(
   return expression.type === 'function'
 }
 
-export function isVariableShorthandFunc<
-  V extends VariableShorthandFunc = VariableShorthandFunc
+export function isVariableShorthandBinary<
+  V extends VariableShorthandBinary = VariableShorthandBinary
 >(expression: Expression): expression is V {
   return isVariable(expression) && expression.shorthandBinary !== undefined
 }
@@ -39,16 +39,17 @@ export function isExecutableCallRegular<E extends ExecutableCallRegular>(
   return isFunction(expression.func)
 }
 
-export function isExecutableCallShorthand<E extends ExecutableCallShorthand>(
-  expression: CallExpression
-): expression is E {
-  return isVariableShorthandFunc(expression.func)
+export function isExecutableCallShorthandBinary<
+  E extends ExecutableCallShorthandBinary
+>(expression: CallExpression): expression is E {
+  return isVariableShorthandBinary(expression.func)
 }
 
 export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
   return (
-    isExecutableCallShorthand(expression) || isExecutableCallRegular(expression)
+    isExecutableCallShorthandBinary(expression) ||
+    isExecutableCallRegular(expression)
   )
 }

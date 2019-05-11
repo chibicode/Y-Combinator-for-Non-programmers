@@ -3,7 +3,7 @@ import {
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams,
-  VariableShorthandFuncParams,
+  VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   HighlightedVariableExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
@@ -17,12 +17,12 @@ export function isHighlightedVariableExpressionParams(
   )
 }
 
-export function isVariableShorthandFuncParams(
+export function isVariableShorthandBinaryParams(
   expressionParams: ExpressionParams
-): expressionParams is VariableShorthandFuncParams {
+): expressionParams is VariableShorthandBinaryParams {
   return (
-    !!(expressionParams as VariableShorthandFuncParams).name &&
-    !!(expressionParams as VariableShorthandFuncParams).shorthandBinary
+    !!(expressionParams as VariableShorthandBinaryParams).name &&
+    !!(expressionParams as VariableShorthandBinaryParams).shorthandBinary
   )
 }
 
