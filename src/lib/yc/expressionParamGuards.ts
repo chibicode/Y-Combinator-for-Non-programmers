@@ -22,7 +22,7 @@ export function isVariableShorthandFuncParams(
 ): expressionParams is VariableShorthandFuncParams {
   return (
     !!(expressionParams as VariableShorthandFuncParams).name &&
-    !!(expressionParams as VariableShorthandFuncParams).shorthandFunc
+    !!(expressionParams as VariableShorthandFuncParams).shorthandBinary
   )
 }
 

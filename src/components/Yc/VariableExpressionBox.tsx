@@ -87,7 +87,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                 ? '💥'
                 : letterEmojiMapping[expression.name]}
             </Emoji>
-            {expression.shorthandFunc && (
+            {expression.shorthandBinary && (
               <span
                 css={css`
                   position: absolute;

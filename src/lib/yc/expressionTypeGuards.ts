@@ -30,7 +30,7 @@ export function isFunction<E extends FunctionExpression = FunctionExpression>(
 export function isVariableShorthandFunc<
   V extends VariableShorthandFunc = VariableShorthandFunc
 >(expression: Expression): expression is V {
-  return isVariable(expression) && expression.shorthandFunc !== undefined
+  return isVariable(expression) && expression.shorthandBinary !== undefined
 }
 
 export function isExecutableCallRegular<E extends ExecutableCallRegular>(

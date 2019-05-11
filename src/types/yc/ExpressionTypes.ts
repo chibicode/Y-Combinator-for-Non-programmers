@@ -11,12 +11,12 @@ export interface VariableExpression {
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
   readonly alphaConvertCount: number
-  readonly shorthandFunc?: 'predIfNonZero'
+  readonly shorthandBinary?: 'isZero'
   readonly shorthandNumber?: number
 }
 
 export interface VariableShorthandFunc extends VariableExpression {
-  readonly shorthandFunc: 'predIfNonZero'
+  readonly shorthandBinary: NonNullable<VariableExpression['shorthandBinary']>
 }
 
 export interface VariableShorthandNumber extends VariableExpression {

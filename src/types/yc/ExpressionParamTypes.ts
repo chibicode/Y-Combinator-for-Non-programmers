@@ -12,7 +12,7 @@ export interface HighlightedVariableExpressionParams {
 
 export interface VariableShorthandFuncParams {
   readonly name: VariableNames
-  readonly shorthandFunc: VariableShorthandFunc['shorthandFunc']
+  readonly shorthandBinary: VariableShorthandFunc['shorthandBinary']
 }
 
 export interface VariableShorthandNumberParams {

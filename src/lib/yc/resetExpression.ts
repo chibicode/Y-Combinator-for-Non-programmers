@@ -40,7 +40,7 @@ export default function resetExpression(
       funcPriorityAgg: [],
       emphasizePriority: false,
       alphaConvertCount: expression.alphaConvertCount,
-      shorthandFunc: expression.shorthandFunc,
+      shorthandBinary: expression.shorthandBinary,
       shorthandNumber: expression.shorthandNumber
     }
   } else if (isCall(expression)) {
