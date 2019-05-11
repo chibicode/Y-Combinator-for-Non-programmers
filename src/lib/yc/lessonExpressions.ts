@@ -446,13 +446,13 @@ export const ycTest = initializeExpressionContainer([
       arg: 'd',
       body: [
         {
-          name: 'c',
+          name: 'd',
           shorthandBinary: 'isZero'
         },
         [
-          'd',
+          'c',
           {
-            name: 'c',
+            name: 'd',
             shorthandUnary: 'pred'
           }
         ]

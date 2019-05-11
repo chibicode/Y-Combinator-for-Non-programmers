@@ -10,7 +10,7 @@ const stepToShorthandBinaryResult = (
 ): StepChild<'default'> => {
   if (isVariableShorthandNumber(e.func)) {
     if (e.func.shorthandNumber === 0) {
-      return toDefault(e.func)
+      return { ...toDefault(e.func), shorthandBinary: undefined }
     } else {
       return toDefault(e.arg)
     }

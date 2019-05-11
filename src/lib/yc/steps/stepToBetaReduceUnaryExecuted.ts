@@ -49,7 +49,8 @@ function toBetaReduceUnaryExecuted(
         topLeftBadgeType: 'none',
         bottomRightBadgeType: 'none',
         highlightType: 'active',
-        shorthandNumber: e.shorthandNumber - 1
+        shorthandNumber: e.shorthandNumber > 1 ? e.shorthandNumber - 1 : 0,
+        shorthandUnary: undefined
       }
     } else {
       return {
