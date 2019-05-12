@@ -49,11 +49,13 @@ const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
 const stateToExplanation = ({
   state,
   matchExists,
+  activePriority,
   showAllShowSteps,
   hideFuncUnboundBadge
 }: {
   state: CallStates
   matchExists?: boolean
+  activePriority?: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
 }) => {
@@ -62,12 +64,7 @@ const stateToExplanation = ({
       if (locale === 'en') {
         return <>…</>
       } else {
-        return (
-          <>
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> に
-          </>
-        )
+        return <>次に進みます！</>
       }
     }
     case 'active': {
@@ -76,8 +73,10 @@ const stateToExplanation = ({
       } else {
         return (
           <>
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
-            の部分に注目します
+            <InlinePrioritiesLabel revert>
+              {activePriority}
+            </InlinePrioritiesLabel>
+            のペアに注目します
           </>
         )
       }
@@ -299,6 +298,7 @@ const ExpressionRunnerExplanation = ({
           stateToExplanation({
             state: expressionContainer.previouslyChangedExpressionState,
             matchExists: expressionContainer.matchExists,
+            activePriority: expressionContainer.activePriority,
             showAllShowSteps,
             hideFuncUnboundBadge
           })

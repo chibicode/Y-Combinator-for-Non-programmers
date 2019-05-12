@@ -243,6 +243,7 @@ const runStep = (
       containerState: 'needsReset'
     }
   }
+  const activePriority = expression.priority
 
   const {
     nextExpression,
@@ -266,7 +267,8 @@ const runStep = (
           : nextExpression,
       previouslyChangedExpressionState,
       matchExists,
-      executableUnaryExists
+      executableUnaryExists,
+      activePriority
     }
     return previouslyChangedExpressionState === 'default'
       ? { ...newContainer, containerState: 'needsReset' }
@@ -298,6 +300,7 @@ const runStep = (
       expression: newExpression,
       containerState: 'needsReset',
       matchExists,
+      activePriority,
       executableUnaryExists,
       previouslyChangedExpressionState
     }
@@ -310,6 +313,7 @@ const runStep = (
           : newExpression,
       containerState: 'stepped',
       matchExists,
+      activePriority,
       executableUnaryExists,
       previouslyChangedExpressionState
     }

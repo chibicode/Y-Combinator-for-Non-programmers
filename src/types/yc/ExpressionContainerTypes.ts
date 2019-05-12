@@ -13,6 +13,7 @@ export interface ExpressionContainer<E extends Expression = Expression> {
   readonly previouslyChangedExpressionState: CallStates
   readonly matchExists?: boolean
   readonly executableUnaryExists?: boolean
+  readonly activePriority?: number
 }
 
 export type ContainerWithState<
