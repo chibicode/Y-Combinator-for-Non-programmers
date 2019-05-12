@@ -32,9 +32,9 @@ export default () => (
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
               中級に進む前に、
-              <Strong>どういう順番でやるのか分かりにくい</Strong>
+              <Strong>どう進めるのか分かりにくい</Strong>
               <H args={{ name: 'bentoBox' }} />
-              をふたつ紹介します:
+              を3つ紹介します:
             </P>
             <Ul>
               <UlLi>
@@ -48,7 +48,8 @@ export default () => (
                 <InlineHeader>第2問:</InlineHeader>{' '}
                 <Strong>
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                  ができない
+                  のペアの中に<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                  のペアがある
                 </Strong>
               </UlLi>
             </Ul>
@@ -121,14 +122,12 @@ export default () => (
               のペアがふたつ以上ある場合は、
               <Strong>いちばん左のペアからはじめます。</Strong>
             </P>
-            {AER.aezk}
             <P>
-              上の
-              <H args={{ name: 'bentoBox', short: true }} />
-              の場合は、 左にある
+              下のような場合、 左側にある
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペアからはじめます。
+              のペアから からはじめます。
             </P>
+            {AER.aezk}
           </>
         )
       },
@@ -234,7 +233,9 @@ export default () => (
         type: 'yesNoQuiz',
         title: (
           <>
-            第2問: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>ができない
+            第2問: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアの中に<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            のペアがある
           </>
         ),
         content: (
@@ -274,9 +275,11 @@ export default () => (
       {
         title: (
           <>
-            第2問の解説その1: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-            のペアができない場合、
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+            第2問の解説: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアの中に<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            のペアがある場合、
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            はこうなる
           </>
         ),
         content: (
@@ -285,108 +288,21 @@ export default () => (
               <Strong>
                 この
                 <H args={{ name: 'bentoBox', short: true }} />の
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアをご覧ください。
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+                のペアの中には、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアが入っています。
               </Strong>
             </P>
             {AER.pqfs}
             <P>
-              <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアは
-                <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
-                のふたつだけなので、先に進むことができません。
-              </Em>{' '}
-            </P>
-            <P>
               <Strong>
-                <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-                <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-                <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-                の3つが揃ってないと進めない
-              </Strong>
-              のです。
-            </P>
-            <Hr />
-            <P>
-              こういう場合は、
-              <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                のペアからはじめます。
-              </Strong>
-            </P>
-            {AER.tntc}
-            <P>
-              この時、
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-              がどうなるかは次で解説します！
-            </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            第2問の解説その2: <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-            のペアからはじめる場合、
-            <BottomRightBadge bottomRightBadgeType="callArg" inline />
-            はこうなる
-          </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <InlineHeader>余談:</InlineHeader>{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアにも、
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアにも
-                <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-                <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-                <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-                が揃っていない場合、
-                <Em>
-                  <InlinePrioritiesLabel>3</InlinePrioritiesLabel>
-                  のペアからはじめることになります。
-                </Em>
-              </P>
-              <P>
-                その場合、
-                <Em>
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>と
-                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>両方が
-                  <BottomRightBadge bottomRightBadgeType="callArg" inline />
-                  になります。
-                </Em>
-              </P>
-            </>
-          )
-        },
-        content: (
-          <>
-            <P>
-              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-              のペアからはじめる場合、
-              <Strong>
-                <BottomRightBadge bottomRightBadgeType="callArg" inline />は
-                <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
-                両方になります。
-              </Strong>
-            </P>
-            <P>
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.hwtu}
-            <P>
-              <Em>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                のペアからはじめる場合、
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアの部分が
+                この場合、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアの部分が
                 <BottomRightBadge bottomRightBadgeType="callArg" inline />
                 になります。
-              </Em>
+              </Strong>
             </P>
+            {AER.hwtu}
             <Hr />
             <P>
               残りは
@@ -397,6 +313,7 @@ export default () => (
           </>
         )
       },
+
       {
         type: 'summary',
         title: (
@@ -409,6 +326,8 @@ export default () => (
             <P>
               <InlineHeader>重要:</InlineHeader>{' '}
               <Strong>これらの法則を暗記する必要はありません。</Strong>
+              なんとなく「<Em>こういうルールがあるんだな</Em>
+              」と思ってくだされば大丈夫です。
               中級以降、これらの法則を使う場面が出てきますが、覚えていなくても先に進めますのでご心配なく。
             </P>
             <Hr />
@@ -422,14 +341,10 @@ export default () => (
             <P>
               <InlineHeader>2.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアに料理が2つしかない場合、そこから始めるのは無理なので、
+              のペアの間に<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+              のペアがある場合、
               <Strong>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                のペアからはじめます。
-              </Strong>
-              そしてこの場合、
-              <Strong>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                 のペアの部分が
                 <BottomRightBadge bottomRightBadgeType="callArg" inline />
                 になります。

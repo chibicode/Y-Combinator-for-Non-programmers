@@ -479,6 +479,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E2}
       showPriorities
+      initialState="active"
     />
   ),
   tntc: (
@@ -502,10 +503,9 @@ export default {
     />
   ),
   hwtu: (
-    <ExpressionRunnerSingleStep
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E2}
-      initialState="active"
-      finalState="showCallArg"
+      initialState="showCallArg"
       showAllShowSteps
       showPriorities
     />

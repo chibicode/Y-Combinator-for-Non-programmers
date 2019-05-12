@@ -90,7 +90,7 @@ function populatePriorityAggs<E extends Expression>({
       ...expression,
       arg: populatePriorityAggs<typeof expression.arg>({
         expression: expression.arg,
-        argPriorityAgg: [expression.priority, ...argPriorityAgg],
+        argPriorityAgg: [...argPriorityAgg, expression.priority],
         funcPriorityAgg: [] as number[]
       }),
       func: populatePriorityAggs<typeof expression.func>({
