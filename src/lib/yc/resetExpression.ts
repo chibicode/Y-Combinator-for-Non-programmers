@@ -30,18 +30,14 @@ export default function resetExpression(
 ): StepChild<'default'> {
   if (isVariable(expression)) {
     return {
+      ...expression,
       type: 'variable',
-      name: expression.name,
       highlightType: 'default',
       topLeftBadgeType: 'none',
       bottomRightBadgeType: 'none',
-      bound: expression.bound,
       argPriorityAgg: [],
       funcPriorityAgg: [],
-      emphasizePriority: false,
-      alphaConvertCount: expression.alphaConvertCount,
-      shorthandFunc: expression.shorthandFunc,
-      shorthandNumber: expression.shorthandNumber
+      emphasizePriority: false
     }
   } else if (isCall(expression)) {
     return {

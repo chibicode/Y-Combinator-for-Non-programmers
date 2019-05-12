@@ -1,7 +1,8 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 import {
   FunctionExpressionMeta,
-  VariableShorthandFunc,
+  VariableShorthandBinary,
+  VariableShorthandUnary,
   VariableShorthandNumber
 } from 'src/types/yc/ExpressionTypes'
 
@@ -10,13 +11,18 @@ export interface HighlightedVariableExpressionParams {
   readonly highlighted: true
 }
 
-export interface VariableShorthandFuncParams {
+export interface VariableShorthandBinaryParams {
   readonly name: VariableNames
-  readonly shorthandFunc: VariableShorthandFunc['shorthandFunc']
+  readonly shorthandBinary: VariableShorthandBinary['shorthandBinary']
 }
 
 export interface VariableShorthandNumberParams {
   readonly shorthandNumber: VariableShorthandNumber['shorthandNumber']
+}
+
+export interface VariableShorthandUnaryParams {
+  readonly name: VariableNames
+  readonly shorthandUnary: VariableShorthandUnary['shorthandUnary']
 }
 
 export type VariableExpressionParams = VariableNames
@@ -34,5 +40,6 @@ export type ExpressionParams =
   | FunctionExpressionParams
   | CallExpressionParams
   | HighlightedVariableExpressionParams
-  | VariableShorthandFuncParams
+  | VariableShorthandBinaryParams
   | VariableShorthandNumberParams
+  | VariableShorthandUnaryParams

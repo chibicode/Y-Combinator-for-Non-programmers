@@ -5,7 +5,7 @@ import uniq from 'lodash/uniq'
 import {
   isCall,
   isVariable,
-  isVariableShorthandFunc
+  isVariableShorthandBinary
 } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
@@ -66,7 +66,7 @@ function getAllVariableNamesEncoded(
 function conflictingVariableNamesEncoded(
   expression: ExecutableCallRegular
 ): ReadonlyArray<string> {
-  if (isVariableShorthandFunc(expression.func)) {
+  if (isVariableShorthandBinary(expression.func)) {
     return []
   } else {
     const argVariableNames = getAllVariableNamesEncoded(expression.arg)

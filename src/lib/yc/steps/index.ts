@@ -28,5 +28,8 @@ export {
 } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 export { default as removeCrossed } from 'src/lib/yc/steps/removeCrossed'
 export {
-  default as stepToShorthandResult
-} from 'src/lib/yc/steps/stepToShorthandResult'
+  default as stepToShorthandBinaryResult
+} from 'src/lib/yc/steps/stepToShorthandBinaryResult'
+export {
+  default as stepToBetaReduceUnaryExecuted
+} from 'src/lib/yc/steps/stepToBetaReduceUnaryExecuted'

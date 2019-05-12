@@ -5,15 +5,15 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableStepCallShorthand,
+  ExecutableStepCallShorthandBinary,
   ExecutableStepCallRegular,
   Expression,
   ExecutableCallRegular,
   FunctionExpression,
   NonExecutableStepCall,
-  VariableShorthandFunc,
-  StepVariableShorthandFunc,
-  ExecutableCallShorthand,
+  VariableShorthandBinary,
+  StepVariableShorthandBinary,
+  ExecutableCallShorthandBinary,
   StepChild,
   StepFunction,
   StepVariable,
@@ -21,7 +21,9 @@ import {
   VariableWithEmphasizePriorityAndState
 } from 'src/types/yc/ExpressionTypes'
 
-function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
+function toActive(
+  e: VariableShorthandBinary
+): StepVariableShorthandBinary<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
 function toActive(e: CallExpression): NonExecutableStepCall<'active'>
@@ -98,11 +100,13 @@ export default function stepToActive(
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'active'>
 export default function stepToActive(
-  e: ExecutableCallShorthand
-): ExecutableStepCallShorthand<'active'>
+  e: ExecutableCallShorthandBinary
+): ExecutableStepCallShorthandBinary<'active'>
 export default function stepToActive(
-  e: ExecutableCallRegular | ExecutableCallShorthand
-): ExecutableStepCallRegular<'active'> | ExecutableStepCallShorthand<'active'> {
+  e: ExecutableCallRegular | ExecutableCallShorthandBinary
+):
+  | ExecutableStepCallRegular<'active'>
+  | ExecutableStepCallShorthandBinary<'active'> {
   const arg = isFunction(e.arg)
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)

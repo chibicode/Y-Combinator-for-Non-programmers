@@ -3,7 +3,8 @@ import {
   isVariableExpressionParams,
   isHighlightedVariableExpressionParams,
   isFunctionExpressionParams,
-  isVariableShorthandFuncParams
+  isVariableShorthandBinaryParams,
+  isVariableShorthandUnaryParams
 } from 'src/lib/yc/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -11,7 +12,7 @@ import {
   FunctionExpressionParams,
   VariableExpressionParams,
   HighlightedVariableExpressionParams,
-  VariableShorthandFuncParams,
+  VariableShorthandBinaryParams,
   VariableShorthandNumberParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
@@ -19,7 +20,7 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  StepVariableShorthandFunc,
+  StepVariableShorthandBinary,
   StepVariableShorthandNumber
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
@@ -76,8 +77,8 @@ export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
 ): StepFunction
 export default function buildExpressionFromParams(
-  expressionParams: VariableShorthandFuncParams
-): StepVariableShorthandFunc
+  expressionParams: VariableShorthandBinaryParams
+): StepVariableShorthandBinary
 export default function buildExpressionFromParams(
   expressionParams: VariableShorthandNumberParams
 ): StepVariableShorthandNumber
@@ -129,10 +130,15 @@ export default function buildExpressionFromParams(
         meta: expressionParams.meta
       }
     }
-  } else if (isVariableShorthandFuncParams(expressionParams)) {
+  } else if (isVariableShorthandBinaryParams(expressionParams)) {
     return {
       ...buildVariableExpression(expressionParams.name, true, 'default'),
-      shorthandFunc: expressionParams.shorthandFunc
+      shorthandBinary: expressionParams.shorthandBinary
+    }
+  } else if (isVariableShorthandUnaryParams(expressionParams)) {
+    return {
+      ...buildVariableExpression(expressionParams.name, true, 'default'),
+      shorthandUnary: expressionParams.shorthandUnary
     }
   } else {
     return {
