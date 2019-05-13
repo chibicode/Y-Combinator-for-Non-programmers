@@ -1137,6 +1137,28 @@ export default {
       }}
     />
   ),
+  ofee: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E1}
+      showPriorities
+    />
+  ),
+  wwdd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E2}
+      showPriorities
+    />
+  ),
+  ggxt: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E1}
+      showPriorities
+      skipAlphaConvert
+      explanationsVisibility="hidden"
+      lastAllowedExpressionState="default"
+      skipToTheEnd={false}
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}
