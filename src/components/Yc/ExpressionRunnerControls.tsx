@@ -4,7 +4,6 @@ import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveSta
 import H from 'src/components/H'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 import Emoji from 'src/components/Emoji'
-import { useState } from 'react'
 
 const Button = (props: JSX.IntrinsicElements['button']) => (
   <ButtonWithTouchActiveStates
@@ -56,6 +55,8 @@ interface ExpressionRunnerControlsProps {
   onResetClick: () => void
   onSkipToTheEndClick: () => void
   onPauseClick: () => void
+  playClicked: boolean
+  setPlayClicked: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const noOp = () => {
@@ -100,9 +101,10 @@ const ExpressionRunnerControls = ({
   onPauseClick,
   onSkipToTheEndClick,
   skipToTheEnd,
-  isDone
+  isDone,
+  playClicked,
+  setPlayClicked
 }: ExpressionRunnerControlsProps) => {
-  const [playClicked, setPlayClicked] = useState(false)
   const onAutoClickWrapper = () => {
     setPlayClicked(true)
     onAutoClick()

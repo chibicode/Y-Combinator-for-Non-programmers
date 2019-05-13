@@ -70,6 +70,7 @@ export interface ExpressionRunnerProps {
   caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
   showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
+  resetAtTheEnd: boolean
 }
 
 interface PlaybackState {
@@ -86,15 +87,19 @@ const getActions = ({
   interval,
   getExpressionContainerManager,
   setPlaybackStatus,
-  setExpressionContainerManagerState
+  setExpressionContainerManagerState,
+  resetAtTheEnd,
+  setPlayClicked
 }: {
   speed: number
+  resetAtTheEnd: ExpressionRunnerProps['resetAtTheEnd']
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
   getExpressionContainerManager: () => ExpressionContainerManager
   setPlaybackStatus: React.Dispatch<React.SetStateAction<PlaybackState>>
   setExpressionContainerManagerState: React.Dispatch<
     React.SetStateAction<ExpressionContainerManager['currentState']>
   >
+  setPlayClicked: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const actions = {
     stepForward() {
@@ -148,8 +153,10 @@ const getActions = ({
     },
 
     step(direction: 'forward' | 'backward' | 'reset' | 'skipToEnd') {
+      let resetIfNecessary = false
       if (direction === 'forward') {
         getExpressionContainerManager().stepForward()
+        resetIfNecessary = true
       } else if (direction === 'backward') {
         getExpressionContainerManager().stepBackward()
       } else if (direction === 'skipToEnd') {
@@ -158,6 +165,15 @@ const getActions = ({
         getExpressionContainerManager().reset()
       }
       actions.syncState()
+
+      if (
+        resetIfNecessary &&
+        resetAtTheEnd &&
+        !getExpressionContainerManager().currentState.canStepForward
+      ) {
+        actions.reset()
+        setPlayClicked(false)
+      }
     },
 
     syncState() {
@@ -192,7 +208,8 @@ const ExpressionRunner = ({
   highlightOverridesCallArgAndFuncUnboundOnly,
   bottomRightBadgeOverrides,
   highlightOverrides,
-  highlightOverrideActiveAfterStart
+  highlightOverrideActiveAfterStart,
+  resetAtTheEnd
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -214,12 +231,15 @@ const ExpressionRunner = ({
     isFastForwarding: false,
     isPlaying: false
   })
+  const [playClicked, setPlayClicked] = useState(false)
   const actions = getActions({
     speed,
     interval,
     getExpressionContainerManager,
     setPlaybackStatus,
-    setExpressionContainerManagerState
+    setExpressionContainerManagerState,
+    resetAtTheEnd,
+    setPlayClicked
   })
   const isDone = isContainerWithState(
     expressionContainerManagerState.expressionContainer,
@@ -229,6 +249,7 @@ const ExpressionRunner = ({
     expressionContainerManagerState.expressionContainer,
     'ready'
   )
+  const atLeastOneStepTaken = expressionContainerManagerState.numStepsTaken > 0
 
   return (
     <ExpressionRunnerContext.Provider
@@ -241,7 +262,7 @@ const ExpressionRunner = ({
         highlightOverridesCallArgAndFuncUnboundOnly,
         variableSize,
         showOnlyFocused,
-        started: expressionContainerManagerState.numStepsTaken > 0,
+        started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady
       }}
     >
@@ -316,6 +337,8 @@ const ExpressionRunner = ({
               onResetClick={actions.reset}
               skipToTheEnd={skipToTheEnd}
               onPauseClick={actions.pause}
+              playClicked={playClicked}
+              setPlayClicked={setPlayClicked}
             />
           )}
           {(explanationsVisibility === 'visible' ||
@@ -365,7 +388,8 @@ ExpressionRunner.defaultProps = {
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
-  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused
+  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
+  resetAtTheEnd: false
 }
 
 export default ExpressionRunner

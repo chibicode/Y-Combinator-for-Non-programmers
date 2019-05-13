@@ -1157,6 +1157,7 @@ export default {
       explanationsVisibility="hidden"
       lastAllowedExpressionState="default"
       skipToTheEnd={false}
+      resetAtTheEnd
     />
   ),
   azge: (

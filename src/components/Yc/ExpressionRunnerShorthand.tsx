@@ -110,7 +110,8 @@ export const ExpressionRunnerPlayButtonOnly = ({
   variableSize,
   containerSize,
   highlightOverrides,
-  explanationsVisibility
+  explanationsVisibility,
+  resetAtTheEnd
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
@@ -126,9 +127,11 @@ export const ExpressionRunnerPlayButtonOnly = ({
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
+  resetAtTheEnd?: ExpressionRunnerProps['resetAtTheEnd']
 }) => (
   <ExpressionRunner
     speed={speed}
+    resetAtTheEnd={resetAtTheEnd}
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     highlightOverrides={highlightOverrides}
