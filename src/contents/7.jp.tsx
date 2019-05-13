@@ -321,7 +321,7 @@ export default () => (
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               ができるのは足し算だけではありません。
             </P>
-            <YcNextLessonButton nextEpisodeNumber={8} />
+            <YcNextLessonButton />
           </>
         )
       }

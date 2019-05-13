@@ -311,7 +311,7 @@ export default () => (
               のページです。ここまでお付き合いいただき、ありがとうございます！
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
-            <YcNextLessonButton nextEpisodeNumber={5} />
+            <YcNextLessonButton />
           </>
         )
       }

@@ -401,7 +401,7 @@ export default () => (
             </P>
             {AER.xhbi}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
-            <YcNextLessonButton nextEpisodeNumber={4} />
+            <YcNextLessonButton />
           </>
         )
       }

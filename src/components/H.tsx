@@ -928,9 +928,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <P>とつぶやいてくださると、宣伝になるので大変ありがたいです。</P>
           <EmojiSeparator emojis={['📱', '🙂', '💬']} />
           <P>
-            <InlineHeader>
-              その際には、こちらのURLをコピーしてシェアしてください↓
-            </InlineHeader>{' '}
+            <Strong>その際には、下のURLをコピーしてシェアしてください。</Strong>
+            <Em>
+              後にこのURLを開けば、
+              <Strong>{nextEpisodeCategoryName}その1</Strong>
+              に飛ぶことができるので、ブックマークとしても便利です。
+            </Em>
           </P>
           <P
             css={css`
@@ -938,6 +941,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             `}
           >
             <Em
+              highlightType="white"
               css={css`
                 font-size: ${fontSizes(1.2)};
               `}

@@ -565,7 +565,7 @@ export default () => (
               </Strong>
               。中級編最後となる次のページで見ていきましょう！
             </P>
-            <YcNextLessonButton nextEpisodeNumber={10} />
+            <YcNextLessonButton />
           </>
         )
       }

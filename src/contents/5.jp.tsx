@@ -495,7 +495,7 @@ export default () => (
               </Em>
               「なんとなく」の理解で十分です！
             </P>
-            <YcNextLessonButton nextEpisodeNumber={6} />
+            <YcNextLessonButton />
           </>
         )
       },
@@ -512,7 +512,7 @@ export default () => (
         title: <>それでは中級に進みましょう！</>,
         content: (
           <>
-            <YcNextLessonButton nextEpisodeNumber={6} />
+            <YcNextLessonButton />
           </>
         )
       }

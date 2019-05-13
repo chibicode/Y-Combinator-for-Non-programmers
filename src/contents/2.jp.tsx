@@ -387,7 +387,7 @@ export default () => (
             </P>
             {AER.skzv}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
-            <YcNextLessonButton nextEpisodeNumber={3} />
+            <YcNextLessonButton />
           </>
         )
       }

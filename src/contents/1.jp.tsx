@@ -403,7 +403,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
             </P>
-            <YcNextLessonButton nextEpisodeNumber={2} />
+            <YcNextLessonButton />
           </>
         )
       }

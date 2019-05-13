@@ -260,7 +260,7 @@ export default () => (
               。そうすることで、コンピューターサイエンスの魅力が伝わればいいなと思っています。
             </P>
             <P>さっそく次に進みましょう！</P>
-            <YcNextLessonButton nextEpisodeNumber={1} />
+            <YcNextLessonButton />
           </>
         )
       },
@@ -324,7 +324,7 @@ export default () => (
             <P>
               Weirich氏の講演は素晴らしかったですが、この記事とは内容が180度異なります。というわけで、ぜひこの記事も読んでみてください。
             </P>
-            <YcNextLessonButton nextEpisodeNumber={1} />
+            <YcNextLessonButton />
           </>
         )
       },
@@ -402,7 +402,7 @@ export default () => (
               </Em>
               。ITベンチャー養成機関としての「Yコンビネーター」をご存知の方も、ぜひ読み進めてみてください！
             </P>
-            <YcNextLessonButton nextEpisodeNumber={1} />
+            <YcNextLessonButton />
           </>
         )
       },
@@ -410,7 +410,7 @@ export default () => (
         title: '余談はこれくらいにして、早速始めましょう！',
         content: (
           <>
-            <YcNextLessonButton nextEpisodeNumber={1} />
+            <YcNextLessonButton />
           </>
         )
       }

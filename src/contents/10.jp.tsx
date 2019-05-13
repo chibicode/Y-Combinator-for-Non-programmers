@@ -58,11 +58,7 @@ export default () => (
             <H args={{ name: 'theAnswerIs', isYes: false }} />
           </>
         ),
-        content: (
-          <>
-            <P>{AER.ggxt}</P>
-          </>
-        )
+        content: <>{AER.ggxt}</>
       },
       {
         type: 'sideNote',
@@ -77,7 +73,7 @@ export default () => (
         title: <>それでは上級に進みましょう！</>,
         content: (
           <>
-            <YcNextLessonButton nextEpisodeNumber={10} />
+            <YcNextLessonButton />
           </>
         )
       }

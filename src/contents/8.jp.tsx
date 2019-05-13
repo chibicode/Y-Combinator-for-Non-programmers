@@ -270,7 +270,7 @@ export default () => (
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               にできることはあるのでしょうか？次のページで見ていきます！
             </P>
-            <YcNextLessonButton nextEpisodeNumber={9} />
+            <YcNextLessonButton />
           </>
         )
       }

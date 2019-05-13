@@ -321,7 +321,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
             <P>答えは次のページに！</P>
-            <YcNextLessonButton nextEpisodeNumber={7} />
+            <YcNextLessonButton />
           </>
         )
       }
