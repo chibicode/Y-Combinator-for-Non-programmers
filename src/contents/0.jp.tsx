@@ -223,7 +223,7 @@ export default () => (
               <H args={{ name: 'question' }} /> <Strong>Yコンビネーター</Strong>
               」とは、
               <Em>「繰り返し処理」に関連するコンピューターサイエンス用語だ</Em>
-              。<Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か?
+              。<H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="yes" />
           </>

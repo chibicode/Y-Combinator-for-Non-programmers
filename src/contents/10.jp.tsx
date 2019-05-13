@@ -115,6 +115,19 @@ export default () => (
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
             {AER.gxuj}
+            <P>
+              <H args={{ name: 'question' }} /> この
+              <H args={{ name: 'bentoBox', short: true }} />を
+              <H args={{ name: 'fastForward' }} />
+              すると、先ほどと同じように
+              <Strong>
+                一周して同じ
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                に戻る。
+              </Strong>
+              <H args={{ name: 'yesOrNo' }} />
+            </P>
+            <YesNoButtons answer="no" />
           </>
         )
       },
