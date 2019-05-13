@@ -13,7 +13,7 @@ const EmbedResponsive = ({
   width: number
   height: number
 }) => (
-  <P
+  <div
     css={css`
       position: relative;
       display: block;
@@ -39,7 +39,7 @@ const EmbedResponsive = ({
     `}
   >
     {children}
-  </P>
+  </div>
 )
 
 export default EmbedResponsive

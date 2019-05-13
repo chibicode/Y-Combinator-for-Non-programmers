@@ -19,6 +19,7 @@ import {
   lessonTitle,
   episodeCategoryName,
   episodePrefix,
+  episodePrefixes,
   episodeTitles
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
@@ -102,6 +103,10 @@ export interface HProps {
     | { name: 'privacyPolicy' }
     | { name: 'aboutThisSite' }
     | { name: 'noCallArgFuncUnboundOverlap'; letter: VariableNames }
+    | {
+        name: 'categoryNameColored'
+        category: keyof typeof episodePrefixes
+      }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -140,6 +145,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           episodeNumberOverrides={episodeNumberOverrides}
         />
         {args.addColon ? ':' : ''}
+      </span>
+    )
+  }
+  if (args.name === 'categoryNameColored') {
+    return (
+      <span
+        css={css`
+          color: ${prefixColors[args.category]};
+        `}
+      >
+        {episodePrefixes[args.category]}
       </span>
     )
   }

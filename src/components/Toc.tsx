@@ -35,7 +35,7 @@ const Toc = () => (
             color: ${colors('grey600')};
           `}
         >
-          {episodePrefixes.intro}
+          {episodePrefixes.intro}:
         </span>{' '}
         {lessonTitle}
       </InternalLink>
@@ -87,7 +87,7 @@ const Toc = () => (
             color: ${colors('grey600')};
           `}
         >
-          {episodePrefixes.epilogue}
+          {episodePrefixes.epilogue}:
         </span>{' '}
         {episodeTitles[numEpisodes as keyof typeof episodeTitles]}
       </InternalLink>

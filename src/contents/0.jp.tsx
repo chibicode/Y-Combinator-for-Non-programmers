@@ -27,7 +27,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: '自己紹介/この記事について',
+        title: '自己紹介',
         footer: {
           content: (
             <P>
@@ -63,10 +63,7 @@ export default () => (
             </P>
             <P>
               本記事「<Strong>{lessonTitle}</Strong>
-              」は、筆者のブロガー人生の中で最も時間をかけた、とっておきの記事です。
-            </P>
-            <P>
-              少々長いですが、章ごとにページを分けているので、途中で一時休憩することもできます。すべて
+              」は、筆者のブロガー人生の中で最も時間をかけた、とっておきの記事です。すべて
               <Strong>無料</Strong>
               で公開しているので、最後まで楽しんでいただけると嬉しいです。
             </P>
@@ -74,24 +71,51 @@ export default () => (
         )
       },
       {
-        title: '目次',
+        title: '読了時間と目次',
         type: 'meta' as 'meta',
         content: (
           <>
+            <P>
+              本記事は、
+              <InlineHeader>
+                <H
+                  args={{ name: 'categoryNameColored', category: 'beginner' }}
+                />
+                ・
+                <H
+                  args={{
+                    name: 'categoryNameColored',
+                    category: 'intermediate'
+                  }}
+                />
+                ・
+                <H
+                  args={{
+                    name: 'categoryNameColored',
+                    category: 'advanced'
+                  }}
+                />
+              </InlineHeader>
+              それぞれ<Strong>5ページずつ、全15ページ</Strong>
+              で構成されています。
+            </P>
+            <P>
+              <InlineHeader>読了時間:</InlineHeader>{' '}
+              それぞれのページごとに3〜4分、合計で
+              <Strong>45〜60分</Strong>
+              ほどかかります。お昼休みや通勤時間にぜひ。
+            </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
             <Toc />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Emoji size="mdlg">🆓</Emoji> これらすべて、
-                <Strong>無料</Strong>で公開しています！
-              </P>
-            </>
-          )
-        }
+        )
+        // footer: {
+        //   content: (
+        //     <>
+
+        //     </>
+        //   )
+        // }
       },
       {
         title: 'はじめに: コンピューターサイエンスって何？',
@@ -138,22 +162,7 @@ export default () => (
               「コンピューターサイエンスって面白い！」「自分でもわかるかも！」「もっと知りたい！」と思ってくださる方が増えたらいいなと思っています。
             </P>
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <InlineHeader>余談:</InlineHeader>{' '}
-                <Em>
-                  この記事を筆者が最も読んでもらいたいのは、
-                  <Strong>小学校教諭</Strong>
-                  の方々です
-                </Em>
-                。日本でも2020年から小学生向けのプログラミング教育がはじまります。教員の方々にコンピューターサイセンスの基礎知識があれば、より良い指導ができるのではないでしょうか。
-              </P>
-            </>
-          )
-        }
+        )
       },
       {
         title: <>スマホで完結。数学の知識も必要なし。</>,
@@ -173,7 +182,7 @@ export default () => (
                 <Emoji>➕</Emoji>」と「<Strong>掛け算</Strong> <Emoji>✖️</Emoji>
                 」だけ
               </Em>
-              です。九九より難しい数式は一切登場しません。
+              です。それより難しい数式は一切登場しません。
             </P>
             <P>それでは、本題に入りましょう！</P>
           </>
@@ -297,34 +306,34 @@ export default () => (
               <H args={{ name: 'byTheWay' }} />{' '}
               この記事はプログラミング知識ゼロの方でも分かるように書いていますので、「
               <Em>プログラマーに特化した説明のほうがいい</Em>
-              」と思う方もいらっしゃるかもしれません。そんな方には、Rakeの作者でもある故・Jim
-              Weirich氏がRubyConf 2012にて行った講演「
-              <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                Y Not- Adventures in Functional Programming
-              </ExternalLink>
-              」をおすすめします。
+              」と思う方もいらっしゃるかもしれません。
             </P>
             <P>
-              このときわたしは実際に観客として拝聴したのですが、素晴らしい講演でした。英語ですが字幕付きで見ることができます。
+              そんな方には、Rakeの作者でもある故・Jim Weirich氏がRubyConf
+              2012にて行った講演「
+              <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                <InlineHeader>
+                  Y Not - Adventures in Functional Programming
+                </InlineHeader>
+              </ExternalLink>
+              」をおすすめします。英語ですが字幕付きで見ることができます。
             </P>
             <YoutubeEmbed
               width={560}
               height={315}
               src="https://www.youtube.com/embed/FITJMJjASUs"
+              caption={'ちなみにこの時、筆者は観客として参加していました。'}
             />
-            <P>
-              動画のクライマックス(50分あたり)に出てくるYコンビネーターのコードはこちら。言語はRubyです。
-            </P>
-            <Pre>
-              <Code>{`y = ->(f){
-  ->(x){f.(->(v){ x.(x).(v)})}.(
-  ->(x){f.(->(v){ x.(x).(v)})} )
-}`}</Code>
-            </Pre>
             <P>
               Weirich氏の講演は素晴らしかったですが、この記事とは内容が180度異なります。というわけで、ぜひこの記事も読んでみてください。
             </P>
             <YcNextLessonButton />
+            <P>
+              <InlineHeader>GitHub:</InlineHeader>{' '}
+              また、この記事のソースコードは
+              <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
+              です。
+            </P>
           </>
         )
       },
