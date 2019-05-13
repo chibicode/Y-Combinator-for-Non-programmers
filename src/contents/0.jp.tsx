@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 import {
   Blockquote,
   Em,
@@ -7,7 +6,6 @@ import {
   ExternalLink,
   P,
   Strong,
-  H3,
   InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'

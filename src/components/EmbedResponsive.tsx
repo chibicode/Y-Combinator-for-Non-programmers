@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import { P } from 'src/components/ContentTags/P'
 
 const ratioToPercent = (width: number, height: number) => (height / width) * 100
 
