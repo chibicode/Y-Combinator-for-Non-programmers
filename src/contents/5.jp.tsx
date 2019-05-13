@@ -17,6 +17,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AER'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
+import { ContentClear } from 'material-ui/svg-icons'
 
 export default () => (
   <EpisodeCardList
@@ -50,6 +51,13 @@ export default () => (
                   <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                   のペアの中に<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
                   のペアがある
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <InlineHeader>第3問:</InlineHeader>{' '}
+                <Strong>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  のペアからはじめられない
                 </Strong>
               </UlLi>
             </Ul>
@@ -243,7 +251,7 @@ export default () => (
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.pqfs}
+            {AER.zywk}
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
@@ -310,10 +318,113 @@ export default () => (
               で見ていきましょう:
             </P>
             {AER.usta}
+            <P>
+              というわけで、最終的に
+              <EmojiWithText letter="c" />と<EmojiWithText letter="b" />
+              が残りました。
+            </P>
           </>
         )
       },
-
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            第3問: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアからはじめられない
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              これが最後の問題です！
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.gtdu}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.qpkm}
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
+              </Strong>
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.udvh}
+            <P>詳しく解説しますね！</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            第3問の解説: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアのからはじめられない場合、
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              今回は
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめようとしても、
+                <Strong>
+                  下段には
+                  <EmojiWithText letter="b" />
+                  しかありません。
+                </Strong>
+              </Em>
+            </P>
+            {AER.gtdu}
+            <P>
+              <Strong>
+                下段にふたつの料理 (
+                <BottomRightBadge bottomRightBadgeType="funcArg" inline />と
+                <BottomRightBadge bottomRightBadgeType="funcBound" inline />)
+                がないので、先に進められないのです
+              </Strong>
+              。
+            </P>
+            <P>
+              このように<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめられない場合は、
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+            </P>
+            {AER.dqey}
+            <Hr />
+            <P>
+              残りは
+              <H args={{ name: 'fastForward' }} />
+              で見ていきましょう:
+            </P>
+            {AER.diis}
+            <P>
+              というわけで、最終的に
+              <EmojiWithText letter="c" />と<EmojiWithText letter="b" />
+              が残りました。
+            </P>
+          </>
+        )
+      },
       {
         type: 'summary',
         title: (
@@ -323,14 +434,6 @@ export default () => (
         ),
         content: (
           <>
-            <P>
-              <InlineHeader>重要:</InlineHeader>{' '}
-              <Strong>これらの法則を暗記する必要はありません。</Strong>
-              なんとなく「<Em>こういうルールがあるんだな</Em>
-              」と思ってくだされば大丈夫です。
-              中級以降、これらの法則を使う場面が出てきますが、覚えていなくても先に進めますのでご心配なく。
-            </P>
-            <Hr />
             <P>
               <InlineHeader>1.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
@@ -352,10 +455,29 @@ export default () => (
             </P>
             {AER.mpal}
             <P>
-              <InlineHeader>
-                繰り返しますが、これらの法則を暗記する必要はありません！
-              </InlineHeader>
-              なんとなく「ふーん、そういう法則もあるんだ」と思っていただければ大丈夫です。
+              <InlineHeader>3.</InlineHeader>{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめられない場合、(下段にひとつの料理しかない場合)
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアの部分からはじめます。
+              </Strong>
+            </P>
+            {AER.dqey}
+          </>
+        )
+      },
+      {
+        title: <>暗記する必要はありません！</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['✨', '😉', '✨']} />
+            <P>
+              <InlineHeader>重要:</InlineHeader>{' '}
+              <Strong>これらの法則を暗記する必要はありません。</Strong>
+              なんとなく「<Em>こういうルールがあるんだな</Em>
+              」と思ってくだされば大丈夫です。
+              中級以降、これらの法則を使う場面が出てきますが、覚えていなくても先に進めますのでご心配なく。
             </P>
           </>
         )
@@ -369,9 +491,9 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
-              <InlineHeader>
+              <Em>
                 「法則を覚えきれていない」という方でも、先に進むにあたって支障はありません。
-              </InlineHeader>
+              </Em>
               「なんとなく」の理解で十分です！
             </P>
             <YcNextLessonButton nextEpisodeNumber={6} />

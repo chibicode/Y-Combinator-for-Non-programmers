@@ -381,6 +381,7 @@ export default {
       showPriorities
       showAllShowSteps
       skipToTheEnd={false}
+      explanationsVisibility="hidden"
     />
   ),
   hykj: (
@@ -475,6 +476,13 @@ export default {
       initialState="betaReducePreviewAfter"
     />
   ),
+  zywk: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E2}
+      showPriorities
+      initialState="default"
+    />
+  ),
   pqfs: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E2}
@@ -523,6 +531,40 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E2}
       initialState="showFuncBound"
+      showPriorities
+    />
+  ),
+  gtdu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E3}
+      showPriorities
+    />
+  ),
+  qpkm: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E3}
+      showPriorities
+      isDone
+    />
+  ),
+  udvh: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E3}
+      showPriorities
+    />
+  ),
+  dqey: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E3}
+      initialState="active"
+      showPriorities
+    />
+  ),
+  diis: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e5E3}
+      initialState="active"
+      skipToTheEnd={false}
       showPriorities
     />
   ),
