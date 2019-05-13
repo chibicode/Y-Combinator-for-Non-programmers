@@ -563,29 +563,8 @@ export default () => (
                 <H args={{ name: 'bentoBox', short: true }} />
                 はもっと複雑な処理を行うことができます
               </Strong>
-              。ぜひ、次のページから始まる上級編で紹介させてください。
+              。中級編最後となる次のページで見ていきましょう！
             </P>
-            <P>
-              そしてそこでやっと、記事の題名にもある「
-              <Strong>Yコンビネーター</Strong>」が登場します。乞うご期待！
-            </P>
-            <YcNextLessonButton nextEpisodeNumber={10} />
-          </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: <>ちょっと休憩？</>,
-        content: (
-          <>
-            <H args={{ name: 'takeABreak' }} />
-          </>
-        )
-      },
-      {
-        title: <>それでは上級に進みましょう！</>,
-        content: (
-          <>
             <YcNextLessonButton nextEpisodeNumber={10} />
           </>
         )
