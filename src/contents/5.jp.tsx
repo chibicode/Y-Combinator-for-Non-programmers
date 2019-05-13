@@ -22,12 +22,12 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>順番はどうなる？</>,
+        title: <>初級の最後です！</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              今回が初級の最後です。
+              <Strong>今回が初級の最後です。</Strong>
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
