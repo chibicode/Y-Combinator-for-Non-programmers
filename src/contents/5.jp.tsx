@@ -17,7 +17,6 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/Yc/AER'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
-import { ContentClear } from 'material-ui/svg-icons'
 
 export default () => (
   <EpisodeCardList
