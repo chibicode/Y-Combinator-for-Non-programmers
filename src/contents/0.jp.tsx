@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import {
   Blockquote,
   Em,
@@ -7,9 +7,8 @@ import {
   ExternalLink,
   P,
   Strong,
-  Code,
-  InlineHeader,
-  Pre
+  H3,
+  InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -71,7 +70,7 @@ export default () => (
         )
       },
       {
-        title: '読了時間と目次',
+        title: '目次',
         type: 'meta' as 'meta',
         content: (
           <>
@@ -97,13 +96,12 @@ export default () => (
                 />
               </InlineHeader>
               それぞれ<Strong>5ページずつ、全15ページ</Strong>
-              で構成されています。
-            </P>
-            <P>
-              <InlineHeader>読了時間:</InlineHeader>{' '}
-              それぞれのページごとに3〜4分、合計で
-              <Strong>45〜60分</Strong>
-              ほどかかります。お昼休みや通勤時間にぜひ。
+              で構成されています。読了時間は人によりますが、
+              <Em>
+                1ページ<Strong>約3〜4分</Strong>、合計で
+                <Strong>45〜60分</Strong>
+              </Em>
+              ほどかかるでしょう。お昼休みや通勤時間にぜひ。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
             <Toc />
