@@ -1160,6 +1160,13 @@ export default {
       resetAtTheEnd
     />
   ),
+  gxuj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E3}
+      showPriorities
+      variableSize="md"
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}

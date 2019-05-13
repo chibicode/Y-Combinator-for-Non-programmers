@@ -303,6 +303,17 @@ export const e10E1 = initializeExpressionContainer([
 
 export const e10E2 = initializeExpressionContainer('b')
 
+export const e10E3 = initializeExpressionContainer([
+  {
+    arg: 'b',
+    body: ['a', ['b', 'b']]
+  },
+  {
+    arg: 'b',
+    body: ['a', ['b', 'b']]
+  }
+])
+
 export const e11E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
 
 export const e11E2 = initializeExpressionContainer(

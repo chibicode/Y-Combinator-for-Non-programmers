@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import AER from 'src/components/Yc/AER'
 // import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -58,7 +58,65 @@ export default () => (
             <H args={{ name: 'theAnswerIs', isYes: false }} />
           </>
         ),
-        content: <>{AER.ggxt}</>
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false }} />
+              でした。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.ggxt}
+            <P>
+              <Strong>
+                なんと、一周して最初と同じ
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                に戻ってしまいました！
+              </Strong>
+            </P>
+            <P>
+              そう、これは、永遠に終わりがない
+              <Strong>
+                <H args={{ name: 'infiniteBentoBox' }} />
+              </Strong>
+              なのです。
+            </P>
+            <EmojiSeparator emojis={['♾', '🍱', '♾']} />
+          </>
+        )
+      },
+      {
+        title: <>何の役に立つの？</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'infiniteBentoBox' }} />
+              は興味深いですが、<Em>いったい何の役に立つのでしょうか？</Em>
+              所詮、ただ同じことを繰り返すだけですよね。
+            </P>
+            <EmojiSeparator emojis={['😒', '🍱', '♾']} />
+            <P>
+              たしかに、先ほどの
+              <H args={{ name: 'infiniteBentoBox' }} />
+              のままでは何の役にも立ちません。では、少し工夫を加えてみましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.gxuj}
+          </>
+        )
       },
       {
         type: 'sideNote',

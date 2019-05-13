@@ -107,6 +107,7 @@ export interface HProps {
         name: 'categoryNameColored'
         category: keyof typeof episodePrefixes
       }
+    | { name: 'infiniteBentoBox' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1069,6 +1070,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <BottomRightBadge bottomRightBadgeType="callArg" inline /> の
             <EmojiForLetter letter={args.letter} /> にはない
           </Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'infiniteBentoBox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          「
+          <InlineHeader>
+            無限ループの弁当箱 <Emoji>♾</Emoji>
+          </InlineHeader>
+          」
         </>
       )
     }
