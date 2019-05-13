@@ -24,6 +24,25 @@ export default () => (
               <Strong>今回が中級の最後です。</Strong>
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <P>
+              <H args={{ name: 'yesNoQuiz' }} />
+              からやっていきましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
           </>
         )
       },
