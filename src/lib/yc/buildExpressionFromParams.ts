@@ -60,8 +60,7 @@ const buildVariableExpression = (
   argPriorityAgg: [],
   funcPriorityAgg: [],
   emphasizePriority: false,
-  bound,
-  alphaConvertCount: 0
+  bound
 })
 
 export default function buildExpressionFromParams(

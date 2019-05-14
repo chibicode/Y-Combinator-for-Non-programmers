@@ -17,7 +17,6 @@ import { VariableNames } from 'src/types/yc/VariableNames'
 export function toBetaReducePreviewBefore(
   e: VariableExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepVariable<'betaReducePreviewBefore'>
@@ -26,7 +25,6 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: FunctionExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
@@ -35,7 +33,6 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: CallExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: NonExecutableStepCall<'betaReducePreviewBefore'>
@@ -44,7 +41,6 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: VariableExpression | FunctionExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   funcSide: boolean
 ):
   | {
@@ -58,7 +54,6 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepChild<'betaReducePreviewBefore'>
@@ -67,7 +62,6 @@ export function toBetaReducePreviewBefore(
 export function toBetaReducePreviewBefore(
   e: Expression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   funcSide: boolean
 ): {
   nextExpression: StepChild<'betaReducePreviewBefore'>
@@ -75,10 +69,7 @@ export function toBetaReducePreviewBefore(
 } {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      if (
-        e.name === fromName &&
-        e.alphaConvertCount === fromalphaConvertCount
-      ) {
+      if (e.name === fromName) {
         return {
           nextExpression: {
             ...e,
@@ -121,16 +112,10 @@ export function toBetaReducePreviewBefore(
       }
     }
   } else if (isFunction(e)) {
-    const argHelperResult = toBetaReducePreviewBefore(
-      e.arg,
-      fromName,
-      fromalphaConvertCount,
-      funcSide
-    )
+    const argHelperResult = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
     const bodyHelperResult = toBetaReducePreviewBefore(
       e.body,
       fromName,
-      fromalphaConvertCount,
       funcSide
     )
 
@@ -143,16 +128,10 @@ export function toBetaReducePreviewBefore(
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
     }
   } else {
-    const argHelperResult = toBetaReducePreviewBefore(
-      e.arg,
-      fromName,
-      fromalphaConvertCount,
-      funcSide
-    )
+    const argHelperResult = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
     const funcHelperResult = toBetaReducePreviewBefore(
       e.func,
       fromName,
-      fromalphaConvertCount,
       funcSide
     )
     return {
@@ -194,19 +173,8 @@ const stepToBetaReducePreviewBefore = (
   matchExists: boolean
 } => {
   const fromName = e.func.arg.name
-  const fromalphaConvertCount = e.func.arg.alphaConvertCount
-  const argResult = toBetaReducePreviewBefore(
-    e.arg,
-    fromName,
-    fromalphaConvertCount,
-    false
-  )
-  const funcResult = toBetaReducePreviewBefore(
-    e.func.body,
-    fromName,
-    fromalphaConvertCount,
-    true
-  )
+  const argResult = toBetaReducePreviewBefore(e.arg, fromName, false)
+  const funcResult = toBetaReducePreviewBefore(e.func.body, fromName, true)
   const matchExists = argResult.matchExists || funcResult.matchExists
 
   return {

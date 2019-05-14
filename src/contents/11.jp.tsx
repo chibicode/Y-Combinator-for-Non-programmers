@@ -13,7 +13,6 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
-import EmojiForLetterWithAlphaConvertBadge from 'src/components/EmojiForLetterWithAlphaConvertBadge'
 import YesNoButtons from 'src/components/YesNoButtons'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import H from 'src/components/H'
@@ -469,9 +468,7 @@ export default () => (
               nodes={[
                 <EmojiForLetter letter="b" />,
                 <Emoji>🆚</Emoji>,
-                <EmojiForLetterWithAlphaConvertBadge alphaConvertCount={1}>
-                  <EmojiForLetter letter="b" />
-                </EmojiForLetterWithAlphaConvertBadge>
+                <EmojiForLetter letter="b" />
               ]}
             />
           </>
@@ -519,15 +516,11 @@ export default () => (
               <EmojiSeparator
                 nodes={[
                   <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                  <EmojiForLetterWithAlphaConvertBadge alphaConvertCount={1}>
-                    <BottomRightBadge
-                      inline
-                      bottomRightBadgeType="funcUnbound"
-                    />
-                  </EmojiForLetterWithAlphaConvertBadge>,
-                  <EmojiForLetterWithAlphaConvertBadge alphaConvertCount={1}>
-                    <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                  </EmojiForLetterWithAlphaConvertBadge>
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="funcUnbound"
+                  />,
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
                 ]}
               />
             </Ul>
