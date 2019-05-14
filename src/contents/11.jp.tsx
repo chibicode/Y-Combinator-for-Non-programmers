@@ -95,6 +95,54 @@ export default () => (
         )
       },
       {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              こちらに暗号が「<Strong>0</Strong>」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              がふたつあります。ひとつめは先ほどと同じですが、
+            </P>
+            {AER.qvgv}
+            <P>
+              ふたつめは、
+              <Strong>
+                先ほどあった
+                <EmojiWithText letter="f" />
+                が
+                <EmojiWithText letter="b" />
+                に変わっています。
+              </Strong>
+            </P>
+            {AER.hdew}
+            <P>
+              これらを「
+              <Strong>
+                掛け算の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込んでみます。
+            </P>
+            {AER.svjg}
+            <P>
+              こちらも、先ほどと同じように「<Strong>0 ✕ 0 = 0</Strong>
+              」を計算してくれるのでしょうか？というわけで質問です。
+            </P>
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
+            </P>
+            <YesNoButtons answer="no" tooHard />
+          </>
+        )
+      },
+      {
         title: (
           <>
             条件分岐の

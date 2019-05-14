@@ -391,6 +391,12 @@ export const e11NewE3 = initializeExpressionContainer([
   numberParams(highlighted('e'), highlighted('f'), 0),
   numberParams(highlighted('g'), highlighted('h'), 0)
 ])
+export const e11NewE4 = initializeExpressionContainer(numberParams('e', 'b', 0))
+export const e11NewE5 = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  numberParams(highlighted('e'), highlighted('b'), 0),
+  numberParams(highlighted('g'), highlighted('h'), 0)
+])
 
 export const e12E1 = initializeExpressionContainer([
   addOneItemParams('e', 'u'),

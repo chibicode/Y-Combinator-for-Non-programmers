@@ -1252,6 +1252,25 @@ export default {
       }
     />
   ),
+  hdew: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE4}
+      showPriorities
+      variableSize="md"
+      containerSize="xs"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'e' }} />
+      }
+    />
+  ),
+  svjg: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE5}
+      showPriorities
+      variableSize="md"
+      containerSize="xs"
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}
