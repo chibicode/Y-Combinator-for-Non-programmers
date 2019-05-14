@@ -384,6 +384,14 @@ export const e11E7 = initializeExpressionContainer(
   )
 )
 
+export const e11NewE1 = initializeExpressionContainer(numberParams('g', 'h', 0))
+export const e11NewE2 = initializeExpressionContainer(numberParams('e', 'f', 0))
+export const e11NewE3 = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  numberParams(highlighted('e'), highlighted('f'), 0),
+  numberParams(highlighted('g'), highlighted('h'), 0)
+])
+
 export const e12E1 = initializeExpressionContainer([
   addOneItemParams('e', 'u'),
   'question'
@@ -428,6 +436,12 @@ export const e12E4 = initializeExpressionContainer([
 export const subtractionTest = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 2)
+])
+
+export const addTest = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  numberParams('e', 'b', 0),
+  numberParams('f', 'g', 0)
 ])
 
 const yCombinator: FunctionExpressionParams = {
