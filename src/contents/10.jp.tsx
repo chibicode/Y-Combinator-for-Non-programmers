@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Em } from 'src/components/ContentTags'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
@@ -7,10 +8,8 @@ import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Emoji from 'src/components/Emoji'
-import EmojiForLetter from 'src/components/EmojiForLetter'
-// import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import EmojiWithText from 'src/components/EmojiWithText'
 
 export default () => (
   <EpisodeCardList
@@ -151,28 +150,76 @@ export default () => (
               なのですが、さきほどと違い、
               <Strong>
                 一番下にある
-                <EmojiWithText letter="a" />
+                <InlineEmojiBoxesForQuestion />
                 が毎回ひとつずつ増えています。
               </Strong>
             </P>
-            <EmojiSeparator letters={['a', 'a', 'a']} />
+            <EmojiSeparator
+              nodes={[
+                <InlineEmojiBoxesForQuestion />,
+                <InlineEmojiBoxesForQuestion />,
+                <InlineEmojiBoxesForQuestion />
+              ]}
+            />
             <P>
               上の例は長くなるので3回目のループで中断しましたが、たとえばループが5回繰り返された時点では、
-              <EmojiWithText letter="a" />
+              <InlineEmojiBoxesForQuestion />
               が一番下に5個登場します。
             </P>
             {AER.opvb}
             <P>
               そしてこのまま続けていけば、
-              <EmojiWithText letter="a" />
+              <InlineEmojiBoxesForQuestion />
               の数は無限に増えていくのです。
             </P>
             <EmojiSeparator
               nodes={[
                 <Emoji>♾</Emoji>,
-                <EmojiForLetter letter="a" />,
+                <InlineEmojiBoxesForQuestion />,
                 <Emoji>♾</Emoji>
               ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>これは役に立つのか？</>,
+        content: (
+          <>
+            <P>
+              <InlineEmojiBoxesForQuestion />
+              には何を入れてもいいので、たとえば以前紹介した「
+              <Strong>
+                1を足す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」を入れることもできます。
+            </P>
+            <EmojiSeparator emojis={['🍱', '➕', '1️⃣']} />
+            <P>
+              そうすれば、<Strong>無限に1を足していく</Strong>
+              ことができますよね。
+            </P>
+            <EmojiSeparator
+              emojis={['🍱', '➕', '1️⃣']}
+              cssOverrides={css`
+                margin-bottom: 0;
+              `}
+            />
+            <EmojiSeparator
+              emojis={['🍱', '➕', '1️⃣']}
+              cssOverrides={css`
+                margin-top: 0;
+                margin-bottom: 0;
+                opacity: 0.66;
+              `}
+            />
+            <EmojiSeparator
+              emojis={['🍱', '➕', '1️⃣']}
+              cssOverrides={css`
+                margin-top: 0;
+                opacity: 0.33;
+              `}
             />
           </>
         )

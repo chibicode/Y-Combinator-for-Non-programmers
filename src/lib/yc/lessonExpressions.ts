@@ -306,11 +306,11 @@ export const e10E2 = initializeExpressionContainer('b')
 export const e10E3 = initializeExpressionContainer([
   {
     arg: 'b',
-    body: ['a', ['b', 'b']]
+    body: ['question', ['b', 'b']]
   },
   {
     arg: 'b',
-    body: ['a', ['b', 'b']]
+    body: ['question', ['b', 'b']]
   }
 ])
 
