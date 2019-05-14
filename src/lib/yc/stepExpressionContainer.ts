@@ -1,4 +1,4 @@
-import { getConflicts } from 'src/lib/yc/variablesHelper'
+import getConflictsToUnused from 'src/lib/yc/getConflictsToUnused'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import { StepOptions } from 'src/lib/yc/ExpressionContainerManager'
 import findNextCallExpressionAndParent from 'src/lib/yc/findNextCallExpressionAndParent'
@@ -97,7 +97,7 @@ const stepRegular = (
     matchExists?: boolean
     previouslyChangedExpressionState: CallStates
   } => {
-    const conflicts = skipAlphaConvert ? {} : getConflicts(e)
+    const conflicts = skipAlphaConvert ? {} : getConflictsToUnused(e)
     if (Object.keys(conflicts).length > 0) {
       return {
         nextExpression: stepToNeedsAlphaConvert(e, conflicts),

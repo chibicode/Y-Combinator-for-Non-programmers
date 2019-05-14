@@ -99,7 +99,6 @@ function matchBetaReduced(
 export function toBetaReducePreviewAfter(
   e: VariableExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): {
@@ -109,7 +108,6 @@ export function toBetaReducePreviewAfter(
 export function toBetaReducePreviewAfter(
   e: FunctionExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): {
@@ -119,7 +117,6 @@ export function toBetaReducePreviewAfter(
 export function toBetaReducePreviewAfter(
   e: CallExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): {
@@ -129,7 +126,6 @@ export function toBetaReducePreviewAfter(
 export function toBetaReducePreviewAfter(
   e: VariableExpression | FunctionExpression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): {
@@ -141,7 +137,6 @@ export function toBetaReducePreviewAfter(
 export function toBetaReducePreviewAfter(
   e: Expression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): {
@@ -151,7 +146,6 @@ export function toBetaReducePreviewAfter(
 export function toBetaReducePreviewAfter(
   e: Expression,
   fromName: VariableNames,
-  fromalphaConvertCount: number,
   to: Expression,
   funcSide: boolean
 ): {
@@ -160,10 +154,7 @@ export function toBetaReducePreviewAfter(
 } {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
-      if (
-        e.name === fromName &&
-        e.alphaConvertCount === fromalphaConvertCount
-      ) {
+      if (e.name === fromName) {
         return matchBetaReduced(to, e.shorthandBinary, e.shorthandUnary)
       } else {
         return {
@@ -198,20 +189,8 @@ export function toBetaReducePreviewAfter(
       }
     }
   } else if (isFunction(e)) {
-    const arg = toBetaReducePreviewAfter(
-      e.arg,
-      fromName,
-      fromalphaConvertCount,
-      to,
-      funcSide
-    )
-    const body = toBetaReducePreviewAfter(
-      e.body,
-      fromName,
-      fromalphaConvertCount,
-      to,
-      funcSide
-    )
+    const arg = toBetaReducePreviewAfter(e.arg, fromName, to, funcSide)
+    const body = toBetaReducePreviewAfter(e.body, fromName, to, funcSide)
     return {
       result: {
         ...e,
@@ -222,20 +201,8 @@ export function toBetaReducePreviewAfter(
         arg.executableUnaryExists || body.executableUnaryExists
     }
   } else {
-    const arg = toBetaReducePreviewAfter(
-      e.arg,
-      fromName,
-      fromalphaConvertCount,
-      to,
-      funcSide
-    )
-    const func = toBetaReducePreviewAfter(
-      e.func,
-      fromName,
-      fromalphaConvertCount,
-      to,
-      funcSide
-    )
+    const arg = toBetaReducePreviewAfter(e.arg, fromName, to, funcSide)
+    const func = toBetaReducePreviewAfter(e.func, fromName, to, funcSide)
     return {
       result: {
         ...e,
@@ -256,22 +223,9 @@ const stepToBetaReducePreviewAfter = (
   executableUnaryExists: boolean
 } => {
   const fromName = e.func.arg.name
-  const fromalphaConvertCount = e.func.arg.alphaConvertCount
   const to = e.arg
-  const funcBody = toBetaReducePreviewAfter(
-    e.func.body,
-    fromName,
-    fromalphaConvertCount,
-    to,
-    true
-  )
-  const arg = toBetaReducePreviewAfter(
-    e.arg,
-    fromName,
-    fromalphaConvertCount,
-    to,
-    false
-  )
+  const funcBody = toBetaReducePreviewAfter(e.func.body, fromName, to, true)
+  const arg = toBetaReducePreviewAfter(e.arg, fromName, to, false)
 
   return {
     executableUnaryExists:

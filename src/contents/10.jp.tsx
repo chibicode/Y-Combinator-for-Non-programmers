@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, InlineHeader } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import AER from 'src/components/Yc/AER'
 import H from 'src/components/H'

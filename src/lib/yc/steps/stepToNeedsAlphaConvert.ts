@@ -12,36 +12,36 @@ import {
   StepVariable,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
-import { VariableNamesToNumbersObj } from 'src/lib/yc/variablesHelper'
+import { ConflictingNamesToUnusedNames } from 'src/lib/yc/getConflictsToUnused'
 
 export function toNeedsAlphaConvert(
   e: VariableExpression,
-  conflicts: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepVariable<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: FunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: CallExpression,
-  conflicts: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): NonExecutableStepCall<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: VariableExpression | FunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepVariable<'needsAlphaConvert'> | StepFunction<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: Expression,
-  conflicts: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepChild<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: Expression,
-  conflicts: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepChild<'needsAlphaConvert'> {
   if (isVariable(e)) {
@@ -53,7 +53,7 @@ export function toNeedsAlphaConvert(
         bottomRightBadgeType: 'funcBound'
       }
     } else if (funcSide && !e.bound) {
-      if (conflicts[e.name] && conflicts[e.name]![e.alphaConvertCount]) {
+      if (conflicts[e.name]) {
         return {
           ...e,
           highlightType: 'highlighted',
@@ -69,7 +69,7 @@ export function toNeedsAlphaConvert(
         }
       }
     } else {
-      if (conflicts[e.name] && conflicts[e.name]![e.alphaConvertCount]) {
+      if (conflicts[e.name]) {
         return {
           ...e,
           highlightType: 'highlighted',
@@ -103,7 +103,7 @@ export function toNeedsAlphaConvert(
 
 const stepToNeedsAlphaConvert = (
   x: ExecutableCallRegular,
-  conflicts: VariableNamesToNumbersObj
+  conflicts: ConflictingNamesToUnusedNames
 ): ExecutableStepCallRegular<'needsAlphaConvert'> => ({
   ...x,
   state: 'needsAlphaConvert',

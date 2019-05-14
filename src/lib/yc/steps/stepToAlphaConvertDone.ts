@@ -1,4 +1,3 @@
-import { getConflicts, getAllVariables } from 'src/lib/yc/variablesHelper'
 import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
@@ -13,55 +12,48 @@ import {
   StepVariable,
   VariableExpression
 } from 'src/types/yc/ExpressionTypes'
-import { VariableNamesToNumbersObj } from 'src/lib/yc/variablesHelper'
+import getConflictsToUnused, {
+  ConflictingNamesToUnusedNames
+} from 'src/lib/yc/getConflictsToUnused'
 
 export function toAlphaConvertDone(
   e: VariableExpression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepVariable<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: FunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: CallExpression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): NonExecutableStepCall<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: VariableExpression | FunctionExpression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepVariable<'alphaConvertDone'> | StepFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: Expression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepChild<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: Expression,
-  conflicts: VariableNamesToNumbersObj,
-  allVariables: VariableNamesToNumbersObj,
+  conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepChild<'alphaConvertDone'> {
   if (isVariable(e)) {
     if (funcSide) {
-      if (conflicts[e.name] && conflicts[e.name]![e.alphaConvertCount]) {
-        const maxAlphaConvertCount = Math.max.apply(
-          Math,
-          Object.keys(allVariables[e.name]!).map(x => parseInt(x))
-        )
+      const conflictsResult = conflicts[e.name]
+      if (conflictsResult !== undefined) {
         if (e.bound) {
           return {
             ...e,
-            alphaConvertCount: maxAlphaConvertCount + 1,
+            name: conflictsResult,
             highlightType: 'conflictResolvedHighlighted',
             topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcBound'
@@ -69,7 +61,7 @@ export function toAlphaConvertDone(
         } else {
           return {
             ...e,
-            alphaConvertCount: maxAlphaConvertCount + 1,
+            name: conflictsResult,
             highlightType: 'conflictResolvedHighlighted',
             topLeftBadgeType: 'none',
             bottomRightBadgeType: 'funcUnbound'
@@ -101,15 +93,15 @@ export function toAlphaConvertDone(
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toAlphaConvertDone(e.arg, conflicts, allVariables, funcSide),
-      body: toAlphaConvertDone(e.body, conflicts, allVariables, funcSide)
+      arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
+      body: toAlphaConvertDone(e.body, conflicts, funcSide)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      arg: toAlphaConvertDone(e.arg, conflicts, allVariables, funcSide),
-      func: toAlphaConvertDone(e.func, conflicts, allVariables, funcSide)
+      arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
+      func: toAlphaConvertDone(e.func, conflicts, funcSide)
     }
   }
 }
@@ -117,16 +109,15 @@ export function toAlphaConvertDone(
 const stepToAlphaConvertDone = (
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'alphaConvertDone'> => {
-  const conflicts = getConflicts(e)
-  const allVariables = getAllVariables(e)
+  const conflictsToUnused = getConflictsToUnused(e)
   return {
     ...e,
     state: 'alphaConvertDone',
-    arg: toAlphaConvertDone(e.arg, conflicts, allVariables, false),
+    arg: toAlphaConvertDone(e.arg, conflictsToUnused, false),
     func: {
       ...e.func,
       arg: activeFuncArg(e.func.arg),
-      body: toAlphaConvertDone(e.func.body, conflicts, allVariables, true)
+      body: toAlphaConvertDone(e.func.body, conflictsToUnused, true)
     }
   }
 }
