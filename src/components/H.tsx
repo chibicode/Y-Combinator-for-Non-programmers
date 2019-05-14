@@ -109,6 +109,7 @@ export interface HProps {
       }
     | { name: 'infiniteBentoBox' }
     | { name: 'stoppedBecauseInfiniteLoop' }
+    | { name: 'secretCodeAddOneCaptionWithoutQuestion' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -878,6 +879,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
           <Emoji>1️⃣</Emoji> を計算
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeAddOneCaptionWithoutQuestion') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Emoji>1️⃣</Emoji> を足す
+          <H args={{ name: 'bentoBox', skipEmoji: true }} />
         </>
       )
     }

@@ -183,7 +183,12 @@ export default () => (
         )
       },
       {
-        title: <>これは役に立つのか？</>,
+        title: (
+          <>
+            <InlineEmojiBoxesForQuestion />
+            には何を入れてもいい
+          </>
+        ),
         content: (
           <>
             <P>
@@ -195,32 +200,28 @@ export default () => (
               </Strong>
               」を入れることもできます。
             </P>
-            <EmojiSeparator emojis={['🍱', '➕', '1️⃣']} />
+            {AER.nehp}
             <P>
-              そうすれば、<Strong>無限に1を足していく</Strong>
-              ことができますよね。
+              先ほどの
+              <InlineEmojiBoxesForQuestion />
+              の部分に入れてみます(<Em>黄色の部分</Em>)。
             </P>
-            <EmojiSeparator
-              emojis={['🍱', '➕', '1️⃣']}
-              cssOverrides={css`
-                margin-bottom: 0;
-              `}
-            />
-            <EmojiSeparator
-              emojis={['🍱', '➕', '1️⃣']}
-              cssOverrides={css`
-                margin-top: 0;
-                margin-bottom: 0;
-                opacity: 0.66;
-              `}
-            />
-            <EmojiSeparator
-              emojis={['🍱', '➕', '1️⃣']}
-              cssOverrides={css`
-                margin-top: 0;
-                opacity: 0.33;
-              `}
-            />
+            {AER.mizw}
+            <P>
+              これを
+              <H args={{ name: 'play' }} />
+              すれば、先ほどと同じように、
+              <Strong>
+                1を足す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              がどんどん一番下に追加されていきます。(時間の都合上、ここでは省略します。)
+            </P>
+            <P>
+              つまり、<Strong>1 + 1 + 1 + 1…</Strong>
+              という、無限に続く1の足し算ができるのです。
+            </P>
+            <EmojiSeparator emojis={['➕', '1️⃣', '♾']} />
           </>
         )
       },

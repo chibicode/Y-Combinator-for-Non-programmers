@@ -314,6 +314,25 @@ export const e10E3 = initializeExpressionContainer([
   }
 ])
 
+export const e10E4 = initializeExpressionContainer(succParams('c', 'd', 'e'))
+
+export const e10E5 = initializeExpressionContainer([
+  {
+    arg: 'b',
+    body: [
+      succParams(highlighted('c'), highlighted('d'), highlighted('e')),
+      ['b', 'b']
+    ]
+  },
+  {
+    arg: 'b',
+    body: [
+      succParams(highlighted('c'), highlighted('d'), highlighted('e')),
+      ['b', 'b']
+    ]
+  }
+])
+
 export const e11E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
 
 export const e11E2 = initializeExpressionContainer(

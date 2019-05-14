@@ -1190,6 +1190,22 @@ export default {
       variableSize="md"
     />
   ),
+  nehp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E4}
+      showPriorities
+      isDone
+      caption={<H args={{ name: 'secretCodeAddOneCaptionWithoutQuestion' }} />}
+      variableSize="md"
+    />
+  ),
+  mizw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E5}
+      showPriorities
+      variableSize="md"
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}

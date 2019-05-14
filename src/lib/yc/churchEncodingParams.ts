@@ -46,9 +46,9 @@ export const numberParams = (
 }
 
 export const succParams = (
-  a: VariableNames,
-  b: VariableNames,
-  c: VariableNames
+  a: VariableNames | HighlightedVariableExpressionParams,
+  b: VariableNames | HighlightedVariableExpressionParams,
+  c: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,
