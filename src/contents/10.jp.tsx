@@ -1,10 +1,8 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, InlineHeader } from 'src/components/ContentTags'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import AER from 'src/components/Yc/AER'
-// import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Emoji from 'src/components/Emoji'
@@ -162,7 +160,7 @@ export default () => (
               ]}
             />
             <P>
-              上の例は長くなるので3回目のループで中断しましたが、たとえばループが5回繰り返された時点では、
+              上の例は長くなるので3回目で中断しましたが、たとえば5回繰り返された時点では、
               <InlineEmojiBoxesForQuestion />
               が一番下に5個登場します。
             </P>
@@ -222,6 +220,89 @@ export default () => (
               という、無限に続く1の足し算ができるのです。
             </P>
             <EmojiSeparator emojis={['➕', '1️⃣', '♾']} />
+          </>
+        )
+      },
+      {
+        title: <>しかし、それでも役に立たない</>,
+        content: (
+          <>
+            <P>
+              しかし、無限に続く計算ができても、あまり意味はありません。1を無限に足し算しても、何の役にも立ちません。
+            </P>
+            <P>
+              求められているのは、「無限に何かを繰り返す
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              」ではなく、「
+              <Strong>
+                ある条件を満たすまで、何かを繰り返す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」です。そういう
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              があれば、役に立ちます。
+            </P>
+            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
+            <P>
+              たとえば、「<Strong>2を10回掛けたら何になるか</Strong>
+              」を求めたいとします:
+            </P>
+            <P>
+              <Strong highlightType="white">
+                2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2
+              </Strong>
+            </P>
+            <P>
+              答えは「1024」なのですが、これを求めるためには、「
+              <Em>
+                2の掛け算を<Strong>10回だけ</Strong>繰り返す
+              </Em>
+              」
+              <H args={{ name: 'bentoBox', short: true }} />
+              が必要になってきます。
+              <Em>
+                「10回繰り返す」という<Strong>条件</Strong>
+                を満たしたら、自動的に実行を終了しなければいけません
+              </Em>
+              。
+            </P>
+            <EmojiSeparator emojis={['🔟', '🤔', '❓']} />
+            <P>
+              では、
+              <Em>
+                <Strong>
+                  どんな
+                  <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                  を使えば
+                </Strong>
+                、決められた条件を満たすまで計算を繰り返すことができるのでしょう？
+              </Em>
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>答えは上級編で</>,
+        content: (
+          <>
+            <P>
+              というわけで、次からはじまる上級編では、「
+              <Strong>
+                ある条件を満たすまで、何かを繰り返す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」が果たして存在するのかどうか、検証していきたいと思います。
+            </P>
+            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
+            <P>
+              そして上級編ではついに、記事の題名にもある「
+              <Strong>魔法のYコンビネーター</Strong>」が登場します。
+            </P>
+            <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
+            <P>
+              ここまで読んでくださり、ありがとうございます！最後まで楽しんでいただけると嬉しいです。下のボタンから、上級編に進むことができます。
+            </P>
+            <YcNextLessonButton />
           </>
         )
       },
