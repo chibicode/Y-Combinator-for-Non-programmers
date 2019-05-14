@@ -9,6 +9,8 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 export interface StepOptions {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
+  lastAllowedExpressionState?: CallStates
+  maxAllowedDefaultStateCount?: number
 }
 
 export default class ExpressionContainerManager {
@@ -49,20 +51,16 @@ export default class ExpressionContainerManager {
   // TODO: Because of precomputing, if this is high the app will crash for Y Combinator.
   // The YC example should specify maximumIndex.
   public maximumIndex = 100
-  public lastAllowedExpressionState?: CallStates
   public stepOptions: StepOptions
 
   public constructor({
     expressionContainer,
-    lastAllowedExpressionState,
     stepOptions
   }: {
     expressionContainer: SteppedExpressionContainer
-    lastAllowedExpressionState?: CallStates
     stepOptions: StepOptions
   }) {
     this.expressionContainers.push(expressionContainer)
-    this.lastAllowedExpressionState = lastAllowedExpressionState
     this.stepOptions = stepOptions
     this.precompute()
   }
@@ -109,6 +107,7 @@ export default class ExpressionContainerManager {
   }
 
   private precompute() {
+    let becameDefaultCount = 0
     while (
       this.isUnderMaxIndex &&
       !isContainerWithState(this.currentExpressionContainer, 'done')
@@ -128,11 +127,21 @@ export default class ExpressionContainerManager {
       }
 
       if (
-        this.lastAllowedExpressionState &&
-        this.lastAllowedExpressionState ===
+        this.stepOptions.lastAllowedExpressionState &&
+        this.stepOptions.lastAllowedExpressionState ===
           expressionContainer.previouslyChangedExpressionState
       ) {
         this.maximumIndex = this.currentIndex
+      }
+
+      if (expressionContainer.previouslyChangedExpressionState === 'default') {
+        becameDefaultCount += 1
+        if (
+          this.stepOptions.maxAllowedDefaultStateCount &&
+          this.stepOptions.maxAllowedDefaultStateCount === becameDefaultCount
+        ) {
+          this.maximumIndex = this.currentIndex
+        }
       }
     }
     this.currentIndex = 0

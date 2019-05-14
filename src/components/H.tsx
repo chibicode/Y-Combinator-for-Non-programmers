@@ -108,6 +108,7 @@ export interface HProps {
         category: keyof typeof episodePrefixes
       }
     | { name: 'infiniteBentoBox' }
+    | { name: 'stoppedBecauseInfiniteLoop' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1086,6 +1087,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </InlineHeader>
           」
         </>
+      )
+    }
+  }
+  if (args.name === 'stoppedBecauseInfiniteLoop') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <Strong>
+          <Emoji>♾</Emoji> 無限に続くので、ここで中断します！
+        </Strong>
       )
     }
   }

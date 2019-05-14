@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
-import { CallStates } from 'src/types/yc/ExpressionTypes'
 import { ExpressionRunnerProps } from 'src/components/Yc/ExpressionRunner'
 
 const initializeExpressionManager = ({
@@ -59,6 +58,7 @@ const useExpressionContainerManager = ({
   maxStepsAllowed,
   resetIndex,
   expressionContainer,
+  maxAllowedDefaultStateCount,
   lastAllowedExpressionState,
   showAllShowSteps,
   skipAlphaConvert
@@ -67,7 +67,8 @@ const useExpressionContainerManager = ({
   maxStepsAllowed: ExpressionRunnerProps['maxStepsAllowed']
   resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainer: SteppedExpressionContainer
-  lastAllowedExpressionState?: CallStates
+  lastAllowedExpressionState?: ExpressionRunnerProps['lastAllowedExpressionState']
+  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
 }) => {
@@ -79,10 +80,11 @@ const useExpressionContainerManager = ({
     }
     let expressionContainerManager = new ExpressionContainerManager({
       expressionContainer,
-      lastAllowedExpressionState,
       stepOptions: {
         showAllShowSteps,
-        skipAlphaConvert
+        skipAlphaConvert,
+        lastAllowedExpressionState,
+        maxAllowedDefaultStateCount
       }
     })
     expressionContainerManager = initializeExpressionManager({

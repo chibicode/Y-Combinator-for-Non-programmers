@@ -61,7 +61,7 @@ const EpisodeHero = () => {
                 commonTitleClasses,
                 css`
                   color: ${colors('grey900')};
-                  font-size: ${fontSizes(1.7)};
+                  font-size: ${fontSizes(1.6)};
                   ${ns} {
                     font-size: ${fontSizes(2)};
                   }
@@ -80,7 +80,7 @@ const EpisodeHero = () => {
               css`
                 color: ${colors('grey900')};
                 padding-top: ${spaces(0.5)};
-                font-size: ${fontSizes(1.7)};
+                font-size: ${fontSizes(1.6)};
                 margin: 0 auto ${spaces(0.5)};
                 font-weight: ${fontWeights(800)};
 

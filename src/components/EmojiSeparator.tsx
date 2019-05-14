@@ -18,7 +18,7 @@ interface EmojiSeparatorProps {
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
   ({
-    sm: [fontSizes(1.4), fontSizes(1.7)],
+    sm: [fontSizes(1.4), fontSizes(1.6)],
     md: [fontSizes(2), fontSizes(2.5)],
     lg: [fontSizes(3), fontSizes(4)]
   }[size])

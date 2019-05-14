@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core'
 import React, { useState, useRef } from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
 import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import H from 'src/components/H'
 import ExpressionRunnerCaptionWrapper from 'src/components/Yc/ExpressionRunnerCaptionWrapper'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
@@ -56,6 +57,7 @@ export interface ExpressionRunnerProps {
   initializeInstructions: ReadonlyArray<InitializeInstruction>
   maxStepsAllowed?: number
   lastAllowedExpressionState?: CallStates
+  maxAllowedDefaultStateCount?: number
   containerSize: ContainerProps['size']
   resetIndex: boolean
   hidePlayButton?: boolean
@@ -191,6 +193,7 @@ const ExpressionRunner = ({
   caption,
   expressionContainer,
   lastAllowedExpressionState,
+  maxAllowedDefaultStateCount,
   hideControls,
   explanationsVisibility,
   hidePriorities,
@@ -222,7 +225,8 @@ const ExpressionRunner = ({
     skipAlphaConvert,
     initializeInstructions,
     maxStepsAllowed,
-    resetIndex
+    resetIndex,
+    maxAllowedDefaultStateCount
   })
   const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
@@ -363,6 +367,17 @@ const ExpressionRunner = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
+          {!hideControls &&
+            maxAllowedDefaultStateCount &&
+            !expressionContainerManagerState.canStepForward && (
+              <ExpressionRunnerCaptionWrapper
+                css={css`
+                  margin-top: ${spaces(0.5)};
+                `}
+              >
+                <H args={{ name: 'stoppedBecauseInfiniteLoop' }} />
+              </ExpressionRunnerCaptionWrapper>
+            )}
         </Container>
       </div>
     </ExpressionRunnerContext.Provider>

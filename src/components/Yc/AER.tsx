@@ -1167,6 +1167,29 @@ export default {
       variableSize="md"
     />
   ),
+  aqbs: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e10E3}
+      showPriorities
+      skipAlphaConvert
+      explanationsVisibility="hidden"
+      maxAllowedDefaultStateCount={3}
+      skipToTheEnd={false}
+      variableSize="md"
+      speed={1.25}
+    />
+  ),
+  opvb: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e10E3}
+      showPriorities
+      skipAlphaConvert
+      explanationsVisibility="hidden"
+      maxAllowedDefaultStateCount={5}
+      isDone
+      variableSize="md"
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}

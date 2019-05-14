@@ -6,11 +6,11 @@ import AER from 'src/components/Yc/AER'
 // import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
-// import Emoji from 'src/components/Emoji'
-// import EmojiWithText from 'src/components/EmojiWithText'
-// import EmojiForLetter from 'src/components/EmojiForLetter'
+import Emoji from 'src/components/Emoji'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 // import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiWithText from 'src/components/EmojiWithText'
 
 export default () => (
   <EpisodeCardList
@@ -128,6 +128,52 @@ export default () => (
               <H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false }} />
+              でした。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.aqbs}
+            <P>
+              お気づきでしょうか？これも
+              <H args={{ name: 'infiniteBentoBox' }} />
+              なのですが、さきほどと違い、
+              <Strong>
+                一番下にある
+                <EmojiWithText letter="a" />
+                が毎回ひとつずつ増えています。
+              </Strong>
+            </P>
+            <EmojiSeparator letters={['a', 'a', 'a']} />
+            <P>
+              上の例は長くなるので3回目のループで中断しましたが、たとえばループが5回繰り返された時点では、
+              <EmojiWithText letter="a" />
+              が一番下に5個登場します。
+            </P>
+            {AER.opvb}
+            <P>
+              そしてこのまま続けていけば、
+              <EmojiWithText letter="a" />
+              の数は無限に増えていくのです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>♾</Emoji>,
+                <EmojiForLetter letter="a" />,
+                <Emoji>♾</Emoji>
+              ]}
+            />
           </>
         )
       },

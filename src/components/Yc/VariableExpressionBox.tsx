@@ -24,7 +24,7 @@ export const variableExpressionBoxPaddingTop = (
 ) =>
   ({
     lg: spaces(0.5),
-    md: spaces(0.375),
+    md: spaces(0.25),
     sm: spaces(0.2)
   }[size])
 
@@ -33,7 +33,7 @@ export const variableExpressionBoxPaddingBottom = (
 ) =>
   ({
     lg: spaces(0.75),
-    md: spaces(0.5),
+    md: spaces(0.375),
     sm: spaces(0.25)
   }[size])
 
@@ -42,7 +42,7 @@ export const variableExpressionBoxFontSize = (
 ) =>
   ({
     lg: fontSizes(2.5),
-    md: fontSizes(1.7),
+    md: fontSizes(1.6),
     sm: fontSizes(1.4)
   }[size])
 
