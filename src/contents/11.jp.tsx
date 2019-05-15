@@ -35,10 +35,14 @@ export default () => (
             </P>
             {AER.ongi}
             <P>
+              ふたつの
               <InlineEmojiBoxesForQuestion />
-              には、<Strong>2つの異なる料理を縦に並べて</Strong>
-              入れます。たとえば、
-              <EmojiWithText letter="d" />と<EmojiWithText letter="c" />
+              には、<Strong>同じ料理がそれぞれひとつずつ</Strong>
+              入ります。
+            </P>
+            <P>
+              たとえば、
+              <EmojiWithText letter="b" />
               を<InlineEmojiBoxesForQuestion />
               に入れてみます。
             </P>
@@ -52,10 +56,7 @@ export default () => (
             <P>
               結果、
               <Strong>
-                最初に
-                <InlineEmojiBoxesForQuestion />
-                に入れた
-                <EmojiWithText letter="d" />と<EmojiWithText letter="c" />
+                <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
                 が最後に残りました！
               </Strong>
             </P>
@@ -63,25 +64,41 @@ export default () => (
             <Hr />
             <P>
               他の料理ではどうでしょう？今度は、
-              <EmojiWithText letter="f" />と<EmojiWithText letter="e" />
-              を<InlineEmojiBoxesForQuestion />
+              <EmojiWithText letter="c" />
+              をそれぞれの
+              <InlineEmojiBoxesForQuestion />
               に入れてみました。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.dzju}
             <P>
-              今回も、
+              今回も、先ほどと同じく
               <Strong>
-                <InlineEmojiBoxesForQuestion />
-                に入れた
-                <EmojiWithText letter="f" />と<EmojiWithText letter="e" />
+                <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
                 が最後に残りました！
               </Strong>
             </P>
             <P>
-              というわけで、ここで
+              つまり、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                に何を入れても
+              </Strong>
+              、最後に
+              <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
+              が残るのでしょうか？
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="u" />,
+                <Emoji>🤔</Emoji>,
+                <EmojiForLetter letter="v" />
+              ]}
+            />
+            <P>
+              というわけで、
               <H args={{ name: 'yesNoQuiz' }} />
-              の時間です！
+              です！
             </P>
           </>
         )
@@ -96,20 +113,17 @@ export default () => (
         content: (
           <>
             <P>
-              先ほどのように、こちらの
+              <H args={{ name: 'question' }} /> こちらの
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               の<InlineEmojiBoxesForQuestion />
-              の部分に<Strong>2つの異なる料理を縦に並べたとします。</Strong>
+              の部分に<Strong>それぞれ同じ料理を入れた場合、</Strong>
             </P>
             {AER.ongi}
             <P>
-              <H args={{ name: 'question' }} /> そうやって
-              <H args={{ name: 'play' }} />
-              した場合、
               <Strong>
-                最初に
-                <InlineEmojiBoxesForQuestion />
-                に入れたふたつの料理が、必ず最後に残る。
+                必ず
+                <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
+                が最後に残る。
               </Strong>
               <H args={{ name: 'yesOrNo' }} />
             </P>
@@ -132,22 +146,15 @@ export default () => (
               </Strong>
               でも、なぜでしょう？
             </P>
+            <EmojiSeparator emojis={['❓', '😬', '❓']} />
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
-            </P>
-            {AER.hweq}
-            <P>
-              これを
-              <InlineEmojiBoxesForQuestion />
-              に入れてみましょう。今まで通りならば、これを
-              <H args={{ name: 'play' }} />
-              した際、最後に
-              <EmojiWithText letter="h" />と<EmojiWithText letter="v" />
-              が残るはずですよね。
-            </P>
-            {AER.zulc}
-            <P>
-              では、
+              <InlineHeader>解説:</InlineHeader>{' '}
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                に<EmojiWithText letter="v" />
+                を入れてみました。
+              </Strong>
+              これで、
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.iphu}
@@ -155,35 +162,26 @@ export default () => (
               なんと、
               <Strong>
                 最後に
-                <EmojiWithText letter="h" />
+                <EmojiWithText letter="u" />
                 がふたつ残りました。
               </Strong>
             </P>
             {AER.ddrz}
             <P>
-              最初
-              <InlineEmojiBoxesForQuestion />
-              の下にあった
-              <EmojiWithText letter="v" />
-              が消え、代わりに
-              <EmojiWithText letter="h" />
-              が出現したのです。
-            </P>
-            <P>
               だから、質問にあった「
               <Strong>
-                最初に
-                <InlineEmojiBoxesForQuestion />
-                に入れた料理が、必ず最後に残る。
+                必ず
+                <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
+                が最後に残る。
               </Strong>
               」というのは間違いなので、答えは<Emoji>❌</Emoji>
               というわけです。でも、どうしてこうなったのでしょう？
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="v" />,
+                <EmojiForLetter letter="u" />,
                 <Emoji>🤔</Emoji>,
-                <EmojiForLetter letter="h" />
+                <EmojiForLetter letter="u" />
               ]}
             />
           </>

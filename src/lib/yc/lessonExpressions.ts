@@ -13,7 +13,8 @@ import {
   highlighted,
   multParamsRightHighlighted,
   addOneItemParams,
-  predParams
+  predParams,
+  alphaConvertExampleParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -333,31 +334,18 @@ export const e10E5 = initializeExpressionContainer([
   }
 ])
 
-const e11Bottom: FunctionExpressionParams = {
-  arg: 'a',
-  body: {
-    arg: 'v',
-    body: ['a', 'v']
-  }
-}
-
-export const e11NewE1 = initializeExpressionContainer([e11Bottom, 'question'])
-export const e11NewE2 = initializeExpressionContainer([
-  e11Bottom,
-  highlighted('c'),
-  highlighted('d')
-])
-export const e11NewE3 = initializeExpressionContainer([
-  e11Bottom,
-  highlighted('e'),
-  highlighted('f')
-])
-export const e11NewE4 = initializeExpressionContainer(['v', 'h'])
-export const e11NewE5 = initializeExpressionContainer([
-  e11Bottom,
-  highlighted('v'),
-  highlighted('h')
-])
+export const e11NewE1 = initializeExpressionContainer(
+  alphaConvertExampleParams(highlighted('question'))
+)
+export const e11NewE2 = initializeExpressionContainer(
+  alphaConvertExampleParams(highlighted('b'))
+)
+export const e11NewE3 = initializeExpressionContainer(
+  alphaConvertExampleParams(highlighted('c'))
+)
+export const e11NewE4 = initializeExpressionContainer(
+  alphaConvertExampleParams(highlighted('v'))
+)
 
 export const e11E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
 

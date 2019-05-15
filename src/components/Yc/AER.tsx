@@ -1241,22 +1241,9 @@ export default {
       speed={1.5}
     />
   ),
-  hweq: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11NewE4}
-      showPriorities
-    />
-  ),
-  zulc: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11NewE5}
-      showPriorities
-      skipAlphaConvert
-    />
-  ),
   iphu: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e11NewE5}
+      expressionContainer={lessonExpressions.e11NewE4}
       showPriorities
       skipToTheEnd={false}
       speed={1.5}
@@ -1265,7 +1252,7 @@ export default {
   ),
   ddrz: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11NewE5}
+      expressionContainer={lessonExpressions.e11NewE4}
       showPriorities
       skipAlphaConvert
       isDone
