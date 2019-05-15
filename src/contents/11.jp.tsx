@@ -256,6 +256,18 @@ export default () => (
               <EmojiWithText letter="u" />
               がふたつ残るのです。
             </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiWithText letter="v" />
+            以外 を入れた場合
+          </>
+        ),
+        content: (
+          <>
             <P>
               では、
               <Strong>
@@ -266,11 +278,6 @@ export default () => (
             </P>
           </>
         )
-      },
-      {
-        title: <><EmojiWithText letter="v" />以外
-        を入れた場合</>,
-        content: <></>
       },
       {
         title: <>結論: </>,
