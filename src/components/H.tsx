@@ -1050,7 +1050,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>Epilogue</>
     } else {
-      return <>エピローグ</>
+      return <>あとがき</>
     }
   }
   if (args.name === 'drink') {

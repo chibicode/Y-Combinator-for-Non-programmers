@@ -6,7 +6,9 @@ import {
   ExternalLink,
   P,
   Strong,
-  InlineHeader
+  InlineHeader,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -68,8 +70,17 @@ export default () => (
         )
       },
       {
-        title: '目次',
-        type: 'meta' as 'meta',
+        type: 'meta',
+        title: <>目次</>,
+        content: (
+          <>
+            <Toc />
+          </>
+        )
+      },
+      {
+        title: '読了時間',
+        type: 'meta',
         content: (
           <>
             <P>
@@ -94,15 +105,45 @@ export default () => (
                 />
               </InlineHeader>
               それぞれ<Strong>5ページずつ、全15ページ</Strong>
-              で構成されています。読了時間は人によりますが、
-              <Em>
-                1ページ<Strong>約3〜4分</Strong>、合計で
-                <Strong>45〜60分</Strong>
-              </Em>
-              ほどかかるでしょう。お昼休みや通勤時間にぜひ。
+              で構成されています。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <Toc />
+            <P>筆者の予想だと、平均的な人の読了時間は、</P>
+            <Ul>
+              <UlLi>
+                <InlineHeader>
+                  <H
+                    args={{ name: 'categoryNameColored', category: 'beginner' }}
+                  />
+                </InlineHeader>
+                は1ページ<Em>3分</Em>、合計<Em>15分</Em>
+              </UlLi>
+              <UlLi>
+                <InlineHeader>
+                  <H
+                    args={{
+                      name: 'categoryNameColored',
+                      category: 'intermediate'
+                    }}
+                  />
+                </InlineHeader>
+                は1ページ<Em>4分</Em>、合計<Em>20分</Em>
+              </UlLi>
+              <UlLi>
+                <InlineHeader>
+                  <H
+                    args={{ name: 'categoryNameColored', category: 'advanced' }}
+                  />
+                </InlineHeader>
+                は1ページ<Em>5分</Em>、合計<Em>25分</Em>
+              </UlLi>
+              <UlLi>
+                全部合わせて<Strong>60分</Strong>
+              </UlLi>
+            </Ul>
+            <P>
+              ほどだと思います。記事というより、電子書籍に近いかもしれません。お昼休みや通勤時間にぜひ。
+            </P>
           </>
         )
         // footer: {
