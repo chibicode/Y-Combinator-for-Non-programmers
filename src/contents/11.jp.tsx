@@ -263,18 +263,19 @@ export default () => (
         title: (
           <>
             <EmojiWithText letter="v" />
-            以外 を入れた場合
+            以外を入れた場合
           </>
         ),
         content: (
           <>
             <P>
               では、
+              <InlineEmojiBoxesForQuestion />に
               <Strong>
-                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="v" />
-                以外を入れた場合
+                <EmojiWithText letter="v" />
+                以外
               </Strong>
-              、途中経過はどうなるのでしょう？
+              を入れた場合、途中経過はどうなるのでしょう？
             </P>
           </>
         )
@@ -294,7 +295,18 @@ export default () => (
         title: <></>,
         content: (
           <>
-            <P>結果が変わらないようにするには？</P>
+            <P>
+              これは掛け算の弁当箱。結果が変わる？ →
+              結果が変わると暗号の計算もうまくいかなくなってしまう！
+            </P>
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>解決策: 結果が変わらないように変える。新規ルール！</P>
           </>
         )
       },
