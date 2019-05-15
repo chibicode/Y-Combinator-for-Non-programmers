@@ -1114,6 +1114,29 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'isCallArgAndFuncUnboundTheSameCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          {args.same ? (
+            <>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が同じ！
+            </>
+          ) : (
+            <>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が違う！
+            </>
+          )}
+        </>
+      )
+    }
+  }
   throw new Error('error')
 }
 

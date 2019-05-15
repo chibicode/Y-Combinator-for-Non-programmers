@@ -255,6 +255,17 @@ const ExpressionRunner = ({
     'ready'
   )
   const atLeastOneStepTaken = expressionContainerManagerState.numStepsTaken > 0
+  const explanationsVisible =
+    explanationsVisibility === 'visible' ||
+    (explanationsVisibility === 'hiddenInitial' &&
+      expressionContainerManagerState.numStepsTaken > 0) ||
+    (explanationsVisibility === 'hiddenInitialPausedOnly' &&
+      !isPlaying &&
+      expressionContainerManagerState.numStepsTaken > 0) ||
+    (explanationsVisibility === 'hiddenInitialAndLastPausedOnly' &&
+      !isPlaying &&
+      expressionContainerManagerState.numStepsTaken > 0 &&
+      expressionContainerManagerState.canStepForward)
 
   return (
     <ExpressionRunnerContext.Provider
@@ -280,32 +291,21 @@ const ExpressionRunner = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {explanationsVisibility === 'visible' ||
-            (explanationsVisibility === 'hiddenInitial' &&
-              expressionContainerManagerState.numStepsTaken > 0) ||
-            (explanationsVisibility === 'hiddenInitialPausedOnly' &&
-              !isPlaying &&
-              expressionContainerManagerState.numStepsTaken > 0) ||
-            (explanationsVisibility === 'hiddenInitialAndLastPausedOnly' &&
-              !isPlaying &&
-              expressionContainerManagerState.numStepsTaken > 0 &&
-              expressionContainerManagerState.canStepForward && (
-                <ExpressionRunnerCaptionWrapper>
-                  <ExpressionRunnerExplanation
-                    isPlaying={isPlaying}
-                    expressionContainer={
-                      expressionContainerManagerState.expressionContainer
-                    }
-                    isDone={isDone}
-                    currentStep={expressionContainerManagerState.currentStep}
-                    currentSubstep={
-                      expressionContainerManagerState.currentSubstep
-                    }
-                    showAllShowSteps={showAllShowSteps}
-                    hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
-                  />
-                </ExpressionRunnerCaptionWrapper>
-              ))}
+          {explanationsVisible && (
+            <ExpressionRunnerCaptionWrapper>
+              <ExpressionRunnerExplanation
+                isPlaying={isPlaying}
+                expressionContainer={
+                  expressionContainerManagerState.expressionContainer
+                }
+                isDone={isDone}
+                currentStep={expressionContainerManagerState.currentStep}
+                currentSubstep={expressionContainerManagerState.currentSubstep}
+                showAllShowSteps={showAllShowSteps}
+                hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
+              />
+            </ExpressionRunnerCaptionWrapper>
+          )}
           {caption && (
             <ExpressionRunnerCaptionWrapper>
               {caption}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Strong } from 'src/components/ContentTags'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
@@ -1278,6 +1279,128 @@ export default {
       speed={1.25}
       explanationsVisibility="hiddenInitialAndLastPausedOnly"
       skipToTheEnd={false}
+    />
+  ),
+  wbpx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE1}
+      showPriorities
+    />
+  ),
+  gszp: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE2}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.25}
+      highlightOverrides={{
+        c: 'highlighted'
+      }}
+    />
+  ),
+  kntz: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE3}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.25}
+      highlightOverrides={{
+        d: 'highlighted'
+      }}
+    />
+  ),
+  bmms: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE4}
+      showPriorities
+      skipAlphaConvert
+      speed={1.25}
+      skipToTheEnd={false}
+    />
+  ),
+  gmcn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE4}
+      showPriorities
+      skipAlphaConvert
+      initialState="showFuncUnbound"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      caption={
+        <Strong>
+          <H
+            args={{ name: 'isCallArgAndFuncUnboundTheSameCaption', same: true }}
+          />
+        </Strong>
+      }
+      highlightOverrideActiveAfterStart
+    />
+  ),
+  vpjw: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE4}
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
+      skipAlphaConvert
+      showPriorities
+      initialState="showFuncUnbound"
+      lastAllowedExpressionState="showFuncBound"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      skipToTheEnd={false}
+      speed={1.25}
+    />
+  ),
+  kjyi: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE4}
+      skipAlphaConvert
+      showPriorities
+      nextIteration
+      initialState="showFuncBound"
+      skipToTheEnd={false}
+      speed={1.25}
+    />
+  ),
+  dpst: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE2}
+      showPriorities
+      skipAlphaConvert
+      initialState="showFuncUnbound"
+      caption={
+        <Strong>
+          <H
+            args={{
+              name: 'isCallArgAndFuncUnboundTheSameCaption',
+              same: false
+            }}
+          />
+        </Strong>
+      }
+    />
+  ),
+  xhwx: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE2}
+      skipAlphaConvert
+      showPriorities
+      initialState="showFuncUnbound"
+      lastAllowedExpressionState="showFuncBound"
+      skipToTheEnd={false}
+      speed={1.25}
+    />
+  ),
+  ttvy: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE2}
+      skipAlphaConvert
+      showPriorities
+      nextIteration
+      initialState="showFuncBound"
+      skipToTheEnd={false}
+      speed={1.25}
     />
   ),
   zayk: (

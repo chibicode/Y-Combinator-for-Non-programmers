@@ -14,7 +14,8 @@ import {
   multParamsRightHighlighted,
   addOneItemParams,
   predParams,
-  alphaConvertExampleParams
+  alphaConvertExampleParams,
+  alphaConversionSimpleExampleParams
 } from 'src/lib/yc/churchEncodingParams'
 
 export const e1E1 = initializeExpressionContainer([
@@ -333,6 +334,22 @@ export const e10E5 = initializeExpressionContainer([
     ]
   }
 ])
+
+export const e11zE1 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('question')
+)
+
+export const e11zE2 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('c')
+)
+
+export const e11zE3 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams('d')
+)
+
+export const e11zE4 = initializeExpressionContainer(
+  alphaConversionSimpleExampleParams(highlighted('b'))
+)
 
 export const e11NewE1 = initializeExpressionContainer(
   alphaConvertExampleParams(highlighted('question'))
