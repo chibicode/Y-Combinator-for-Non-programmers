@@ -28,6 +28,7 @@ export default () => (
         title: <>同じ料理が最後に残る</>,
         content: (
           <>
+            {AER.zayk}
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               早速、

@@ -1280,6 +1280,15 @@ export default {
       skipToTheEnd={false}
     />
   ),
+  zayk: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.alphaConvertTest}
+      showPriorities
+      skipAlphaConvert
+      speed={1.25}
+      skipToTheEnd={false}
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}

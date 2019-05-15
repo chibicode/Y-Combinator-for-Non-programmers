@@ -478,6 +478,11 @@ const wikipediaYCombinator: FunctionExpressionParams = {
   ]
 }
 
+export const alphaConvertTest = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'b', 1)
+])
+
 export const e12E5 = initializeExpressionContainer([
   wikipediaYCombinator,
   'question'
