@@ -1177,7 +1177,7 @@ export default {
       maxAllowedDefaultStateCount={3}
       skipToTheEnd={false}
       variableSize="md"
-      speed={1.25}
+      speed={1.5}
     />
   ),
   opvb: (
@@ -1224,7 +1224,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE2}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   rssa: (
@@ -1239,7 +1239,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE3}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   iphu: (
@@ -1247,7 +1247,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE4}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
       skipAlphaConvert
     />
   ),
@@ -1265,7 +1265,7 @@ export default {
       showPriorities
       skipAlphaConvert
       lastAllowedExpressionState="default"
-      speed={1.25}
+      speed={1.5}
       explanationsVisibility="hiddenInitialAndLastPausedOnly"
       skipToTheEnd={false}
     />
@@ -1276,7 +1276,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE4}
       showPriorities
       skipAlphaConvert
-      speed={1.25}
+      speed={1.5}
       explanationsVisibility="hiddenInitialAndLastPausedOnly"
       skipToTheEnd={false}
     />
@@ -1292,7 +1292,7 @@ export default {
       expressionContainer={lessonExpressions.e11zE2}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
       highlightOverrides={{
         c: 'highlighted'
       }}
@@ -1303,7 +1303,7 @@ export default {
       expressionContainer={lessonExpressions.e11zE3}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
       highlightOverrides={{
         d: 'highlighted'
       }}
@@ -1314,7 +1314,7 @@ export default {
       expressionContainer={lessonExpressions.e11zE4}
       showPriorities
       skipAlphaConvert
-      speed={1.25}
+      speed={1.5}
       skipToTheEnd={false}
     />
   ),
@@ -1349,7 +1349,7 @@ export default {
         b: 'highlighted'
       }}
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   kjyi: (
@@ -1360,7 +1360,7 @@ export default {
       nextIteration
       initialState="showFuncBound"
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   dpst: (
@@ -1389,7 +1389,7 @@ export default {
       initialState="showFuncUnbound"
       lastAllowedExpressionState="showFuncBound"
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   ttvy: (
@@ -1400,7 +1400,7 @@ export default {
       nextIteration
       initialState="showFuncBound"
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   zayk: (
@@ -1408,7 +1408,7 @@ export default {
       expressionContainer={lessonExpressions.alphaConvertTest}
       showPriorities
       skipAlphaConvert
-      speed={1.25}
+      speed={1.5}
       skipToTheEnd={false}
     />
   ),
@@ -1579,7 +1579,7 @@ export default {
       expressionContainer={lessonExpressions.e12E2}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   agso: (
@@ -1593,7 +1593,7 @@ export default {
       expressionContainer={lessonExpressions.e12E3}
       showPriorities
       skipToTheEnd={false}
-      speed={1.25}
+      speed={1.5}
     />
   ),
   wnxr: (
