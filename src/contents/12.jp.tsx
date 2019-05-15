@@ -120,7 +120,6 @@ export default () => (
             {AER.wawo}
             {AER.fcvl}
             {AER.hzlj}
-            {AER.yfsx}
           </>
         )
       }

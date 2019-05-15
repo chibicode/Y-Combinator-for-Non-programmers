@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Ul,
   UlLi,
+  Hr,
   Em,
   P,
   Strong,
@@ -23,73 +24,63 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: (
-          <>
-            掛け算の
-            <H args={{ name: 'bentoBox', short: true }} />
-            、再び
-          </>
-        ),
+        title: <>同じ料理が最後に残る</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              今回は話を少し戻しまして、中級編で紹介した「
-              <Strong>
-                掛け算の
-                <H args={{ name: 'bentoBox', short: true }} />
-              </Strong>
-              」をもう一度紹介します。
+              早速、
+              <H args={{ name: 'lookAtThisBentoBox' }} />。
             </P>
-            <EmojiSeparator emojis={['🍱', '✖️', '️🍱']} />
+            {AER.ongi}
             <P>
-              以前紹介した通り、こちらの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              は、
-              <Strong>
-                ふたつの
-                <InlineEmojiBoxesForQuestion />
-                に入っている
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-                の暗号を掛け算してくれます。
-              </Strong>
-            </P>
-            {AER.drvu}
-          </>
-        )
-      },
-      {
-        title: <>0 ✕ 0 = 0</>,
-        content: (
-          <>
-            <P>
-              たとえば、こちらに暗号が「<Strong>0</Strong>」の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              がふたつあります。
-            </P>
-            {AER.qvgv}
-            {AER.ovur}
-            <P>
-              これらを「
-              <Strong>
-                掛け算の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              </Strong>
-              」の
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込むと、<Strong>0 ✕ 0 = 0</Strong>
-              を計算してくれるはずです。というわけで、
+              には、<Strong>2つの異なる料理を縦に並べて</Strong>
+              入れます。たとえば、
+              <EmojiWithText letter="d" />と<EmojiWithText letter="c" />
+              を<InlineEmojiBoxesForQuestion />
+              に入れてみます。
+            </P>
+            {AER.lxrg}
+            <P>
+              これを
+              <H args={{ name: 'fastForward' }} />
+              するとどうなるでしょう？ぜひ試してみてください:
+            </P>
+            {AER.wdpv}
+            <P>
+              結果、
+              <Strong>
+                最初に
+                <InlineEmojiBoxesForQuestion />
+                に入れた
+                <EmojiWithText letter="d" />と<EmojiWithText letter="c" />
+                が最後に残りました！
+              </Strong>
+            </P>
+            {AER.rssa}
+            <Hr />
+            <P>
+              他の料理ではどうでしょう？今度は、
+              <EmojiWithText letter="f" />と<EmojiWithText letter="e" />
+              を<InlineEmojiBoxesForQuestion />
+              に入れてみました。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.qzbv}
+            {AER.dzju}
             <P>
-              予想通り、暗号が「<Strong>0</Strong>」の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              が残りました。
+              今回も、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                に入れた
+                <EmojiWithText letter="f" />と<EmojiWithText letter="e" />
+                が最後に残りました！
+              </Strong>
             </P>
-            {AER.uqdo}
             <P>
-              ここまでは中級編で話したことと同じですね。今回は上級編なので、ひとひねり加えてみましょう。
+              というわけで、ここで
+              <H args={{ name: 'yesNoQuiz' }} />
+              の時間です！
             </P>
           </>
         )
@@ -104,41 +95,96 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに暗号が「<Strong>0</Strong>」の
+              先ほどのように、こちらの
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              がふたつあります。ひとつめは先ほどと同じですが、
+              の<InlineEmojiBoxesForQuestion />
+              の部分に<Strong>2つの異なる料理を縦に並べたとします。</Strong>
             </P>
-            {AER.qvgv}
+            {AER.ongi}
             <P>
-              ふたつめは、
+              <H args={{ name: 'question' }} /> そうやって
+              <H args={{ name: 'play' }} />
+              した場合、
               <Strong>
-                先ほどあった
-                <EmojiWithText letter="f" />
-                が
-                <EmojiWithText letter="b" />
-                に変わっています。
+                最初に
+                <InlineEmojiBoxesForQuestion />
+                に入れた料理が、必ず最後に残る。
               </Strong>
+              <H args={{ name: 'yesOrNo' }} />
             </P>
-            {AER.hdew}
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
             <P>
-              これらを「
               <Strong>
-                掛け算の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
               </Strong>
-              」の
+              でも、なぜでしょう？
+            </P>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.hweq}
+            <P>
+              これを
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
+              に入れてみましょう。今まで通りならば、これを
+              <H args={{ name: 'play' }} />
+              した際、最後に
+              <EmojiWithText letter="b" />と<EmojiWithText letter="f" />
+              が残るはずですよね。
             </P>
-            {AER.svjg}
+            {AER.zulc}
             <P>
-              こちらも、先ほどと同じように「<Strong>0 ✕ 0 = 0</Strong>
-              」を計算してくれるのでしょうか？というわけで質問です。
+              では、
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.iphu}
+            <P>
+              なんと、
+              <Strong>
+                最後に
+                <EmojiWithText letter="f" />
+                がふたつ残りました。
+              </Strong>
+            </P>
+            {AER.ddrz}
+            <P>
+              最初
+              <InlineEmojiBoxesForQuestion />
+              の下にあった
+              <EmojiWithText letter="b" />
+              が消え、代わりに
+              <EmojiWithText letter="f" />
+              が出現したのです。
             </P>
             <P>
-              <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
+              だから、質問にあった「
+              <Strong>
+                最初に
+                <InlineEmojiBoxesForQuestion />
+                に入れた料理が、必ず最後に残る。
+              </Strong>
+              」というのは間違いなので、答えは<Emoji>❌</Emoji>
+              というわけです。でも、どうしてこうなったのでしょう？
             </P>
-            <YesNoButtons answer="no" tooHard />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="f" />,
+                <Emoji>🤔</Emoji>,
+                <EmojiForLetter letter="f" />
+              ]}
+            />
           </>
         )
       },

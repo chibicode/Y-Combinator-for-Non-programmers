@@ -1206,69 +1206,69 @@ export default {
       variableSize="md"
     />
   ),
-  qvgv: (
+  ongi: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11NewE1}
       showPriorities
-      variableSize="md"
-      containerSize="xs"
-      caption={
-        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'g' }} />
-      }
     />
   ),
-  ovur: (
+  lxrg: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11NewE2}
       showPriorities
-      variableSize="md"
-      containerSize="xs"
-      caption={
-        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'e' }} />
-      }
     />
   ),
-  qzbv: (
+  wdpv: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11NewE2}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.5}
+    />
+  ),
+  rssa: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE2}
+      showPriorities
+      isDone
+    />
+  ),
+  dzju: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e11NewE3}
       showPriorities
       skipToTheEnd={false}
-      speed={4}
-      skipAlphaConvert
-      variableSize="md"
-      containerSize="xs"
+      speed={1.5}
     />
   ),
-  uqdo: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11NewE3}
-      isDone
-      showPriorities
-      skipAlphaConvert
-      variableSize="md"
-      containerSize="xs"
-      caption={
-        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'c' }} />
-      }
-    />
-  ),
-  hdew: (
+  hweq: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11NewE4}
       showPriorities
-      variableSize="md"
-      containerSize="xs"
-      caption={
-        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'e' }} />
-      }
     />
   ),
-  svjg: (
+  zulc: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11NewE5}
       showPriorities
-      variableSize="md"
-      containerSize="xs"
+      skipAlphaConvert
+    />
+  ),
+  iphu: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11NewE5}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.5}
+      skipAlphaConvert
+    />
+  ),
+  ddrz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE5}
+      showPriorities
+      skipAlphaConvert
+      isDone
     />
   ),
   azge: (
@@ -1505,17 +1505,6 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
       showPriorities
-      containerSize={'xs'}
-      variableSize={'md'}
-      skipToTheEnd={false}
-      speed={5}
-    />
-  ),
-  yfsx: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.addTest}
-      showPriorities
-      skipAlphaConvert
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
