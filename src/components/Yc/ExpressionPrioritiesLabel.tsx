@@ -29,7 +29,7 @@ const fontSize = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): string => {
   if (variableSize === 'lg') {
-    return fontSizes(0.75)
+    return fontSizes(0.7)
   } else if (variableSize === 'md') {
     return fontSizes(0.6)
   } else {
@@ -53,7 +53,7 @@ const width = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   const multiplier = {
-    lg: 1.07,
+    lg: 1,
     md: 0.9,
     sm: 0.75
   }[variableSize]
@@ -64,7 +64,7 @@ const height = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   const multiplier = {
-    lg: 1.07,
+    lg: 1,
     md: 1,
     sm: 0.93
   }[variableSize]
@@ -75,7 +75,7 @@ const left = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number =>
   ({
-    lg: -1.291,
+    lg: -1.15,
     md: -0.92,
     sm: -0.92
   }[variableSize])

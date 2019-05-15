@@ -22,7 +22,7 @@ export const variableExpressionBoxPaddingTop = (
   size: ExpressionRunnerContextProps['variableSize']
 ) =>
   ({
-    lg: spaces(0.5),
+    lg: spaces(0.375),
     md: spaces(0.25),
     sm: spaces(0.2)
   }[size])
@@ -31,7 +31,7 @@ export const variableExpressionBoxPaddingBottom = (
   size: ExpressionRunnerContextProps['variableSize']
 ) =>
   ({
-    lg: spaces(0.75),
+    lg: spaces(0.5),
     md: spaces(0.375),
     sm: spaces(0.25)
   }[size])
@@ -40,7 +40,7 @@ export const variableExpressionBoxFontSize = (
   size: ExpressionRunnerContextProps['variableSize']
 ) =>
   ({
-    lg: fontSizes(2.5),
+    lg: fontSizes(2),
     md: fontSizes(1.6),
     sm: fontSizes(1.4)
   }[size])
