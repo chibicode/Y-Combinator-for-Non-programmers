@@ -380,7 +380,7 @@ export default {
       showPriorities
       showAllShowSteps
       skipToTheEnd={false}
-      explanationsVisibility="hidden"
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
     />
   ),
   hykj: (
@@ -1154,7 +1154,7 @@ export default {
       expressionContainer={lessonExpressions.e10E1}
       showPriorities
       skipAlphaConvert
-      explanationsVisibility="hidden"
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
       lastAllowedExpressionState="default"
       skipToTheEnd={false}
       resetAtTheEnd
@@ -1172,7 +1172,7 @@ export default {
       expressionContainer={lessonExpressions.e10E3}
       showPriorities
       skipAlphaConvert
-      explanationsVisibility="hidden"
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
       maxAllowedDefaultStateCount={3}
       skipToTheEnd={false}
       variableSize="md"
@@ -1184,7 +1184,7 @@ export default {
       expressionContainer={lessonExpressions.e10E3}
       showPriorities
       skipAlphaConvert
-      explanationsVisibility="hidden"
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
       maxAllowedDefaultStateCount={5}
       isDone
       variableSize="md"
@@ -1223,7 +1223,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE2}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.25}
     />
   ),
   rssa: (
@@ -1238,7 +1238,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE3}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.25}
     />
   ),
   iphu: (
@@ -1246,7 +1246,7 @@ export default {
       expressionContainer={lessonExpressions.e11NewE4}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.25}
       skipAlphaConvert
     />
   ),
@@ -1256,6 +1256,28 @@ export default {
       showPriorities
       skipAlphaConvert
       isDone
+    />
+  ),
+  ypik: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11NewE4}
+      showPriorities
+      skipAlphaConvert
+      lastAllowedExpressionState="default"
+      speed={1.25}
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
+      skipToTheEnd={false}
+    />
+  ),
+  jpum: (
+    <ExpressionRunnerPlayButtonOnly
+      nextIteration
+      expressionContainer={lessonExpressions.e11NewE4}
+      showPriorities
+      skipAlphaConvert
+      speed={1.25}
+      explanationsVisibility="hiddenInitialAndLastPausedOnly"
+      skipToTheEnd={false}
     />
   ),
   azge: (

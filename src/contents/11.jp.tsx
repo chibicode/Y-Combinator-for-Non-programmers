@@ -188,15 +188,106 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: (
+          <>
+            <EmojiWithText letter="v" />
+            を入れた場合
+          </>
+        ),
         content: (
           <>
             <P>
-              途中まで見てみることにしましょう。下の
-              <H args={{ name: 'fastForward' }} />
-              を押すと、最初の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアが消えた直後まで進みます。
+              <Strong>
+                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="v" />
+                を入れた場合と、それ以外の場合、それぞれの途中経過
+              </Strong>
+              を見ていくことにしましょう。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="v" />,
+                <Emoji>🆚</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
+            <P>
+              まず、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="v" />
+                を入れた場合
+              </Strong>
+              。
+              <Em>
+                下の
+                <H args={{ name: 'fastForward' }} />
+                を押すと、最初の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアが消えた直後まで進みます
+              </Em>
+              。
+            </P>
+            {AER.ypik}
+            <P>
+              ご覧の通り、
+              <Strong>
+                下の3つがすべて
+                <EmojiWithText letter="v" />
+                になりました。
+              </Strong>
+            </P>
+            <P>
+              そして、このまま最後まで進めると、
+              <Strong>
+                上にある
+                <EmojiWithText letter="u" />
+                が2箇所に
+                <H args={{ name: 'copy' }} />
+                される
+              </Strong>
+              のです。
+              <Em>
+                <H args={{ name: 'fastForward' }} />
+                して確かめてみてください
+              </Em>
+              :
+            </P>
+            {AER.jpum}
+            <P>
+              こうして、
+              <EmojiWithText letter="u" />
+              がふたつ残るのです。
+            </P>
+            <P>
+              では、
+              <Strong>
+                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="v" />
+                以外を入れた場合
+              </Strong>
+              、途中経過はどうなるのでしょう？
+            </P>
+          </>
+        )
+      },
+      {
+        title: <><EmojiWithText letter="v" />以外
+        を入れた場合</>,
+        content: <></>
+      },
+      {
+        title: <>結論: </>,
+        content: (
+          <>
+            <P>
+              結果が変わってしまうか、どうやって見分ければいいのか？答え:
+              中と上をチェックする
+            </P>
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>結果が変わらないようにするには？</P>
           </>
         )
       },
