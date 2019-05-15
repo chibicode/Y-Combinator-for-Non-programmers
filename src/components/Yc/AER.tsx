@@ -1206,6 +1206,71 @@ export default {
       variableSize="md"
     />
   ),
+  qvgv: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE1}
+      showPriorities
+      variableSize="md"
+      containerSize="xs"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'g' }} />
+      }
+    />
+  ),
+  ovur: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE2}
+      showPriorities
+      variableSize="md"
+      containerSize="xs"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'e' }} />
+      }
+    />
+  ),
+  qzbv: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11NewE3}
+      showPriorities
+      skipToTheEnd={false}
+      speed={4}
+      skipAlphaConvert
+      variableSize="md"
+      containerSize="xs"
+    />
+  ),
+  uqdo: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE3}
+      isDone
+      showPriorities
+      skipAlphaConvert
+      variableSize="md"
+      containerSize="xs"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'c' }} />
+      }
+    />
+  ),
+  hdew: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE4}
+      showPriorities
+      variableSize="md"
+      containerSize="xs"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'e' }} />
+      }
+    />
+  ),
+  svjg: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11NewE5}
+      showPriorities
+      variableSize="md"
+      containerSize="xs"
+    />
+  ),
   azge: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e11E1}
@@ -1440,6 +1505,17 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
       showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={5}
+    />
+  ),
+  yfsx: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.addTest}
+      showPriorities
+      skipAlphaConvert
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}

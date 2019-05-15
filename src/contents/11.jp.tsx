@@ -25,6 +25,126 @@ export default () => (
       {
         title: (
           <>
+            掛け算の
+            <H args={{ name: 'bentoBox', short: true }} />
+            、再び
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              今回は話を少し戻しまして、中級編で紹介した「
+              <Strong>
+                掛け算の
+                <H args={{ name: 'bentoBox', short: true }} />
+              </Strong>
+              」をもう一度紹介します。
+            </P>
+            <EmojiSeparator emojis={['🍱', '✖️', '️🍱']} />
+            <P>
+              以前紹介した通り、こちらの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              は、
+              <Strong>
+                ふたつの
+                <InlineEmojiBoxesForQuestion />
+                に入っている
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                の暗号を掛け算してくれます。
+              </Strong>
+            </P>
+            {AER.drvu}
+          </>
+        )
+      },
+      {
+        title: <>0 ✕ 0 = 0</>,
+        content: (
+          <>
+            <P>
+              たとえば、こちらに暗号が「<Strong>0</Strong>」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              がふたつあります。
+            </P>
+            {AER.qvgv}
+            {AER.ovur}
+            <P>
+              これらを「
+              <Strong>
+                掛け算の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込むと、<Strong>0 ✕ 0 = 0</Strong>
+              を計算してくれるはずです。というわけで、
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.qzbv}
+            <P>
+              予想通り、暗号が「<Strong>0</Strong>」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              が残りました。
+            </P>
+            {AER.uqdo}
+            <P>
+              ここまでは中級編で話したことと同じですね。今回は上級編なので、ひとひねり加えてみましょう。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              こちらに暗号が「<Strong>0</Strong>」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              がふたつあります。ひとつめは先ほどと同じですが、
+            </P>
+            {AER.qvgv}
+            <P>
+              ふたつめは、
+              <Strong>
+                先ほどあった
+                <EmojiWithText letter="f" />
+                が
+                <EmojiWithText letter="b" />
+                に変わっています。
+              </Strong>
+            </P>
+            {AER.hdew}
+            <P>
+              これらを「
+              <Strong>
+                掛け算の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」の
+              <InlineEmojiBoxesForQuestion />
+              の部分に埋め込んでみます。
+            </P>
+            {AER.svjg}
+            <P>
+              こちらも、先ほどと同じように「<Strong>0 ✕ 0 = 0</Strong>
+              」を計算してくれるのでしょうか？というわけで質問です。
+            </P>
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
+            </P>
+            <YesNoButtons answer="no" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
             条件分岐の
             <H args={{ name: 'bentoBox', short: true }} />
             、再び
