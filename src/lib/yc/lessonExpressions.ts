@@ -336,8 +336,8 @@ export const e10E5 = initializeExpressionContainer([
 const e11Bottom: FunctionExpressionParams = {
   arg: 'a',
   body: {
-    arg: 'b',
-    body: ['a', 'b']
+    arg: 'v',
+    body: ['a', 'v']
   }
 }
 
@@ -352,11 +352,11 @@ export const e11NewE3 = initializeExpressionContainer([
   highlighted('e'),
   highlighted('f')
 ])
-export const e11NewE4 = initializeExpressionContainer(['b', 'f'])
+export const e11NewE4 = initializeExpressionContainer(['v', 'h'])
 export const e11NewE5 = initializeExpressionContainer([
   e11Bottom,
-  highlighted('b'),
-  highlighted('f')
+  highlighted('v'),
+  highlighted('h')
 ])
 
 export const e11E1 = initializeExpressionContainer(numberParams('a', 'b', 1))

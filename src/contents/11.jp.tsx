@@ -9,6 +9,7 @@ import {
   InlineHeader
 } from 'src/components/ContentTags'
 import AER from 'src/components/Yc/AER'
+import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
@@ -108,7 +109,7 @@ export default () => (
               <Strong>
                 最初に
                 <InlineEmojiBoxesForQuestion />
-                に入れた料理が、必ず最後に残る。
+                に入れたふたつの料理が、必ず最後に残る。
               </Strong>
               <H args={{ name: 'yesOrNo' }} />
             </P>
@@ -141,7 +142,7 @@ export default () => (
               に入れてみましょう。今まで通りならば、これを
               <H args={{ name: 'play' }} />
               した際、最後に
-              <EmojiWithText letter="b" />と<EmojiWithText letter="f" />
+              <EmojiWithText letter="h" />と<EmojiWithText letter="v" />
               が残るはずですよね。
             </P>
             {AER.zulc}
@@ -154,7 +155,7 @@ export default () => (
               なんと、
               <Strong>
                 最後に
-                <EmojiWithText letter="f" />
+                <EmojiWithText letter="h" />
                 がふたつ残りました。
               </Strong>
             </P>
@@ -163,9 +164,9 @@ export default () => (
               最初
               <InlineEmojiBoxesForQuestion />
               の下にあった
-              <EmojiWithText letter="b" />
+              <EmojiWithText letter="v" />
               が消え、代わりに
-              <EmojiWithText letter="f" />
+              <EmojiWithText letter="h" />
               が出現したのです。
             </P>
             <P>
@@ -180,11 +181,24 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="f" />,
+                <EmojiForLetter letter="v" />,
                 <Emoji>🤔</Emoji>,
-                <EmojiForLetter letter="f" />
+                <EmojiForLetter letter="h" />
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>
+              途中まで見てみることにしましょう。下の
+              <H args={{ name: 'fastForward' }} />
+              を押すと、最初の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアが消えた直後まで進みます。
+            </P>
           </>
         )
       },
