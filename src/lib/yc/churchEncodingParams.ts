@@ -48,7 +48,8 @@ export const numberParams = (
 export const succParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,
-  c: VariableNames | HighlightedVariableExpressionParams
+  c: VariableNames | HighlightedVariableExpressionParams,
+  focused?: boolean
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -58,7 +59,12 @@ export const succParams = (
         arg: c,
         body: [b, [a, b, c]]
       }
-    }
+    },
+    meta: focused
+      ? {
+          focused
+        }
+      : undefined
   }
 }
 

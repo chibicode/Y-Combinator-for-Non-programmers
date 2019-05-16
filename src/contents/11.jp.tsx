@@ -465,6 +465,7 @@ export default () => (
         ),
         content: (
           <>
+            <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
             <P>
               以前紹介した、「
               <Strong>
@@ -628,6 +629,65 @@ export default () => (
                 どうすれば「1 + 1 = 2」を正しく計算できるでしょうか？
               </Strong>
             </P>
+            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            解決策: どちらかの
+            <EmojiWithText letter="b" />
+            を別の料理にする
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              これを解決するには、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />か
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              のどちらかの
+              <EmojiWithText letter="b" />
+              を別の料理にしないといけません。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <Emoji>➡️</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
+            <P>
+              どちらでもいいですが、ここでは
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の
+                <EmojiWithText letter="b" />
+                を変えることにしましょう。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <Emoji>❓</Emoji>
+              ]}
+            />
+            <P>
+              しかし、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の
+                <EmojiWithText letter="b" />
+                を変えるなら、
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+                <EmojiWithText letter="b" />
+                も同じく変えないといけません。
+              </Strong>
+              でないと、
+            </P>
+            {AER.oiwu}
           </>
         )
       },

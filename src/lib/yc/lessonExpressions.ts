@@ -357,6 +357,10 @@ export const e11zE6 = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
+export const e11zE7 = initializeExpressionContainer([
+  succParams('a', 'b', 'c', true),
+  numberParams(highlighted('d'), highlighted('b'), 1)
+])
 
 export const e11NewE1 = initializeExpressionContainer(
   alphaConvertExampleParams(highlighted('question'))

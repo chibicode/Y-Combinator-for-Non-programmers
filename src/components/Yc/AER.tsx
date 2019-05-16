@@ -1472,6 +1472,21 @@ export default {
       }
     />
   ),
+  oiwu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE7}
+      showPriorities
+      initialState="showFuncUnbound"
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      highlightOverrideActiveAfterStart
+      showOnlyFocused
+    />
+  ),
+
   zayk: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.alphaConvertTest}
