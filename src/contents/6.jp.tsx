@@ -204,7 +204,7 @@ export default () => (
                 <H args={{ name: 'bentoBox', short: true }} />
                 を埋め込みます
               </Em>
-              。つまり、こちらを埋め込むわけです。
+              。たとえば、こちらを埋め込むわけです。
             </P>
             {AER.nicg}
             <P>

@@ -461,16 +461,42 @@ export default () => (
             <P>
               以前紹介した、「
               <Strong>
-                暗号に1を足す
+                <InlineEmojiBoxesForQuestion />
+                の暗号に1を足す
                 <H args={{ name: 'bentoBox', short: true }} />
               </Strong>
               」をご覧ください。
             </P>
             {AER.xgei}
             <P>
-              こちらに、暗号が「<Strong>1</Strong>」の
+              そしてこちらに、暗号が「<Strong>1</Strong>」の
               <H args={{ name: 'bentoBox', short: true }} />
               を用意しました。
+            </P>
+            {AER.slyk}
+            <P>
+              これを
+              <InlineEmojiBoxesForQuestion />
+              に埋め込んで、
+              <H args={{ name: 'fastForward' }} />
+              してみましょう。
+            </P>
+            {AER.eemn}
+            <P>
+              最終的に暗号が「<Strong>2</Strong>」の
+              <H args={{ name: 'bentoBox', short: true }} />
+              が残りました。
+            </P>
+            {AER.rceu}
+            <P>
+              以前話した通り、「<Strong>1 + 1 = 2</Strong>
+              」が計算できたわけですね。
+            </P>
+            <EmojiSeparator emojis={['1️⃣', '➕', '1️⃣']} />
+            <P>
+              では、ここでまた
+              <H args={{ name: 'yesNoQuiz' }} />
+              をしてみましょう！
             </P>
           </>
         )
@@ -485,10 +511,9 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'question' }} /> こちらの
+              こちらに別の暗号が「<Strong>1</Strong>」の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              の<InlineEmojiBoxesForQuestion />
-              の部分に<Strong>それぞれ同じ料理を入れた場合、</Strong>
+              があります。
             </P>
             {AER.ongi}
             <P>

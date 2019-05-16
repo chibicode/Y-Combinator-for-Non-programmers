@@ -640,10 +640,10 @@ export default {
   ),
   nicg: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e6E1}
+      expressionContainer={lessonExpressions.e6E8}
       showPriorities
       caption={
-        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'a' }} />
+        <H args={{ name: 'secretCodeCaption', number: 0, letter: 'd' }} />
       }
     />
   ),
@@ -666,19 +666,19 @@ export default {
   ),
   mauj: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e6E8}
+      expressionContainer={lessonExpressions.e6E9}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
       highlightOverrides={{
-        b: 'highlighted',
-        a: 'highlighted'
+        d: 'highlighted',
+        e: 'highlighted'
       }}
     />
   ),
   eavp: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e6E8}
+      expressionContainer={lessonExpressions.e6E9}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
@@ -686,7 +686,7 @@ export default {
   ),
   wafy: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e6E8}
+      expressionContainer={lessonExpressions.e6E9}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
@@ -696,11 +696,11 @@ export default {
   ),
   badn: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e6E8}
+      expressionContainer={lessonExpressions.e6E9}
       showPriorities
       isDone
       caption={
-        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'b' }} />
       }
     />
   ),
@@ -709,7 +709,7 @@ export default {
       expressionContainer={lessonExpressions.e7E1}
       showPriorities
       caption={
-        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'a' }} />
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
       }
     />
   ),
@@ -721,6 +721,10 @@ export default {
       variableSize={'md'}
       skipToTheEnd={false}
       speed={3}
+      highlightOverrides={{
+        d: 'highlighted',
+        e: 'highlighted'
+      }}
     />
   ),
   rceu: (
@@ -729,7 +733,7 @@ export default {
       showPriorities
       isDone
       caption={
-        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'd' }} />
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'b' }} />
       }
     />
   ),
@@ -738,7 +742,7 @@ export default {
       expressionContainer={lessonExpressions.e7E3}
       showPriorities
       caption={
-        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'a' }} />
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'd' }} />
       }
     />
   ),
@@ -749,6 +753,10 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
+      highlightOverrides={{
+        d: 'highlighted',
+        e: 'highlighted'
+      }}
       speed={3}
     />
   ),
@@ -758,7 +766,7 @@ export default {
       showPriorities
       isDone
       caption={
-        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'd' }} />
+        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'b' }} />
       }
     />
   ),

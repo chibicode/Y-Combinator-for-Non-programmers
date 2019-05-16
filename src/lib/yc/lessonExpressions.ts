@@ -162,23 +162,24 @@ export const e6E5 = initializeExpressionContainer({
 })
 export const e6E6 = initializeExpressionContainer(numberParams('A', 'B', 2))
 export const e6E7 = initializeExpressionContainer([
-  succParams('c', 'd', 'e'),
+  succParams('a', 'b', 'c'),
   'question'
 ])
-export const e6E8 = initializeExpressionContainer([
-  succParams('c', 'd', 'e'),
-  numberParams('a', 'b', 0)
+export const e6E8 = initializeExpressionContainer(numberParams('d', 'e', 0))
+export const e6E9 = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'e', 0)
 ])
 
-export const e7E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
+export const e7E1 = initializeExpressionContainer(numberParams('d', 'e', 1))
 export const e7E2 = initializeExpressionContainer([
-  succParams('c', 'd', 'e'),
-  numberParams('a', 'b', 1)
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'e', 1)
 ])
-export const e7E3 = initializeExpressionContainer(numberParams('a', 'b', 2))
+export const e7E3 = initializeExpressionContainer(numberParams('d', 'e', 2))
 export const e7E4 = initializeExpressionContainer([
-  succParams('c', 'd', 'e'),
-  numberParams('a', 'b', 2)
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'e', 2)
 ])
 
 export const e7E5 = initializeExpressionContainer(numberParams('e', 'f', 1))
