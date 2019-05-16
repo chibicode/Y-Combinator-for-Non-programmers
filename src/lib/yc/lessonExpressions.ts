@@ -359,6 +359,10 @@ export const e11E7 = initializeExpressionContainer([
   succParams('a', 'b', 'c', true),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
+export const e12E1 = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  'question'
+])
 
 export const subtractionTest = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),

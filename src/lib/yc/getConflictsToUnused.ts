@@ -9,7 +9,7 @@ import {
 } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
-import allVariableNames from 'src/lib/yc/allVariableNames'
+import alphaConvertTargetVariableNames from 'src/lib/yc/alphaConvertTargetVariableNames'
 
 interface GetAllVariableNamesOptions {
   filter?: 'unbound'
@@ -70,7 +70,10 @@ export default function getConflictsToUnused(
 ): ConflictingNamesToUnusedNames {
   const conflicts = conflictingVariableNames(expression)
   const allUsed = getAllVariableNames(expression)
-  const available = difference<VariableNames>(allVariableNames, allUsed)
+  const available = difference<VariableNames>(
+    alphaConvertTargetVariableNames,
+    allUsed
+  )
   return conflicts.reduce(
     (result, current, index) => ({
       ...result,

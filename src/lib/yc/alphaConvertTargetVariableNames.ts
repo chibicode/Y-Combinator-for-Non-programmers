@@ -1,6 +1,6 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-const allVariableNames: ReadonlyArray<VariableNames> = [
+const alphaConvertTargetVariableNames: ReadonlyArray<VariableNames> = [
   'a',
   'b',
   'c',
@@ -26,11 +26,7 @@ const allVariableNames: ReadonlyArray<VariableNames> = [
   'w',
   'x',
   'y',
-  'z',
-  'question',
-  'A',
-  'B',
-  'shorthandNumber'
+  'z'
 ]
 
-export default allVariableNames
+export default alphaConvertTargetVariableNames
