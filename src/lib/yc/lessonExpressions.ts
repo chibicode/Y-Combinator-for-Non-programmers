@@ -12,7 +12,6 @@ import {
   isZeroParams,
   highlighted,
   multParamsRightHighlighted,
-  addOneItemParams,
   predParams,
   alphaConversionSimpleExampleParams
 } from 'src/lib/yc/churchEncodingParams'
@@ -361,47 +360,6 @@ export const e11E7 = initializeExpressionContainer([
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
 
-export const e12E1 = initializeExpressionContainer([
-  addOneItemParams('e', 'u'),
-  'question'
-])
-
-export const e12E2 = initializeExpressionContainer([
-  addOneItemParams('e', 'u'),
-  {
-    name: 'u',
-    highlighted: true
-  }
-])
-
-export const e12E3 = initializeExpressionContainer([
-  addOneItemParams('e', 'u'),
-  {
-    name: 'u',
-    highlighted: true
-  },
-  {
-    name: 'u',
-    highlighted: true
-  }
-])
-
-export const e12E4 = initializeExpressionContainer([
-  addOneItemParams('e', 'u'),
-  {
-    name: 'u',
-    highlighted: true
-  },
-  {
-    name: 'u',
-    highlighted: true
-  },
-  {
-    name: 'u',
-    highlighted: true
-  }
-])
-
 export const subtractionTest = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 2)
@@ -411,26 +369,6 @@ const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
     {
-      arg: 'c',
-      body: ['c', 'c']
-    },
-    {
-      arg: 'c',
-      body: [
-        'a',
-        {
-          arg: 'b',
-          body: ['c', 'c', 'b']
-        }
-      ]
-    }
-  ]
-}
-
-const wikipediaYCombinator: FunctionExpressionParams = {
-  arg: 'a',
-  body: [
-    {
       arg: 'b',
       body: ['a', ['b', 'b']]
     },
@@ -440,20 +378,9 @@ const wikipediaYCombinator: FunctionExpressionParams = {
     }
   ]
 }
-
-export const e12E5 = initializeExpressionContainer([
-  wikipediaYCombinator,
-  'question'
-  // addOneItemParams('e', 'u')
-])
-
-export const yCombinatorContainer = initializeExpressionContainer([
-  yCombinator,
-  'question'
-])
 
 export const ycTest = initializeExpressionContainer([
-  wikipediaYCombinator,
+  yCombinator,
   {
     arg: 'c',
     body: {
@@ -480,23 +407,4 @@ export const ycTest = initializeExpressionContainer([
   {
     shorthandNumber: 3
   }
-])
-
-// Apply this to say ['f', 'f', 'f'] and you'll get ['f', 'f', 'f', 'f']
-export const addOnePizza: FunctionExpressionParams = {
-  arg: 'e',
-  body: ['e', 'u']
-}
-
-const recursiveFunction: FunctionExpressionParams = {
-  arg: 'd',
-  body: {
-    arg: 'e',
-    body: [['d', 'e'], 'f']
-  }
-}
-
-export const infiniteLoop = initializeExpressionContainer([
-  yCombinator,
-  recursiveFunction
 ])

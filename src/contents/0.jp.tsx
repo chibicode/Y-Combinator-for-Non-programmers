@@ -116,7 +116,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'beginner' }}
                   />
                 </InlineHeader>
-                は1ページ<Em>3分</Em>、合計<Em>15分</Em>
+                は1ページ<Strong>3〜4分</Strong>、合計<Strong>15〜20分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -127,7 +127,7 @@ export default () => (
                     }}
                   />
                 </InlineHeader>
-                は1ページ<Em>4分</Em>、合計<Em>20分</Em>
+                は1ページ<Strong>4〜6分</Strong>、合計<Strong>20〜30分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -135,10 +135,10 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'advanced' }}
                   />
                 </InlineHeader>
-                は1ページ<Em>5分</Em>、合計<Em>25分</Em>
+                は1ページ<Strong>5〜8分</Strong>、合計<Strong>25〜40分</Strong>
               </UlLi>
               <UlLi>
-                全部合わせて<Strong>60分</Strong>
+                全部合わせて<Strong>60〜90分</Strong>
               </UlLi>
             </Ul>
             <P>

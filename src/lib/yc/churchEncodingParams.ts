@@ -209,14 +209,6 @@ export const isZeroParams = (
   z
 ]
 
-export const addOneItemParams = (
-  a: VariableNames | HighlightedVariableExpressionParams,
-  b: VariableNames | HighlightedVariableExpressionParams
-): FunctionExpressionParams => ({
-  arg: a,
-  body: [a, b]
-})
-
 export const alphaConversionSimpleExampleParams = (
   question: VariableNames | HighlightedVariableExpressionParams
 ): CallExpressionParams => [
