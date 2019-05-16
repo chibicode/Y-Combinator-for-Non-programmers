@@ -256,20 +256,13 @@ const stateToExplanation = ({
     }
     case 'alphaConvertDone': {
       if (locale === 'en') {
-        return (
-          <>
-            Added <H args={{ name: 'drink' }} /> for{' '}
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
-          </>
-        )
+        return <>?</>
       } else {
         return (
           <>
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> に
-            <H args={{ name: 'drink' }} />
-            を追加
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
+            を別な料理に
           </>
         )
       }

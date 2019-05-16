@@ -99,7 +99,6 @@ export interface HProps {
     | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
-    | { name: 'drink'; skipEmoji?: boolean }
     | { name: 'takeABreak' }
     | { name: 'privacyPolicy' }
     | { name: 'aboutThisSite' }
@@ -1069,24 +1068,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Epilogue</>
     } else {
       return <>あとがき</>
-    }
-  }
-  if (args.name === 'drink') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          ドリンク
-          {args.skipEmoji ? (
-            ''
-          ) : (
-            <>
-              <Emoji>🥤</Emoji>
-            </>
-          )}
-        </>
-      )
     }
   }
   if (args.name === 'noCallArgFuncUnboundOverlap') {

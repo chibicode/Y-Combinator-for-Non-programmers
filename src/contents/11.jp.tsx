@@ -1055,12 +1055,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'drink' }} />
-            をつける
-          </>
-        ),
+        title: <>? をつける</>,
         content: (
           <>
             <P>
@@ -1083,9 +1078,7 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
                 にある
                 <EmojiWithText letter="b" />
-                に、
-                <H args={{ name: 'drink' }} />
-                の印をつけます。
+                に、 ? の印をつけます。
               </Strong>
             </P>
             {AER.qxhk}
@@ -1097,9 +1090,7 @@ export default () => (
               <Em>
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
                 <EmojiWithText letter="b" />
-                にも
-                <H args={{ name: 'drink' }} />
-                を加えることによって、これまでと同じ
+                にも ? を加えることによって、これまでと同じ
                 <Strong>「1」</Strong>の暗号の
                 <H args={{ name: 'bentoBox', skipEmoji: true }} />
                 になります
@@ -1122,8 +1113,8 @@ export default () => (
             <P>
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />の
-                <EmojiWithText letter="b" />に<H args={{ name: 'drink' }} />
-                がついたことで、
+                <EmojiWithText letter="b" />
+                に? がついたことで、
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />の
                 <EmojiWithText letter="b" />
                 と被らなくなります。
@@ -1131,12 +1122,9 @@ export default () => (
             </P>
             {AER.bpyh}
             <P>
-              「<H args={{ name: 'drink' }} />
-              がある
+              「? がある
               <EmojiWithText letter="b" />
-              」と、「
-              <H args={{ name: 'drink' }} />
-              がない
+              」と、「 ? がない
               <EmojiWithText letter="b" />
               」は、<Strong>別物として扱われるので、被らなくなる</Strong>
               のです。
@@ -1173,14 +1161,11 @@ export default () => (
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
                   と
                   <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                  にあるそれと同じ料理に
-                  <H args={{ name: 'drink' }} />
-                  をつける。
+                  にあるそれと同じ料理に ? をつける。
                 </Strong>
               </UlLi>
               <UlLi>
-                <H args={{ name: 'drink' }} />
-                をつけても、<Strong>暗号は変わらない</Strong>。
+                ? をつけても、<Strong>暗号は変わらない</Strong>。
               </UlLi>
               <UlLi>
                 だがこうすることで、
@@ -1209,9 +1194,7 @@ export default () => (
         content: (
           <>
             <P>
-              では、
-              <H args={{ name: 'drink' }} />
-              をつけた時点から最後まで
+              では、 ? をつけた時点から最後まで
               <H args={{ name: 'fastForward' }} />
               してみましょう。
             </P>
@@ -1226,9 +1209,8 @@ export default () => (
               つまり、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              が同じになる場合でも、
-              <H args={{ name: 'drink' }} />
-              をつけることで、<Em>条件分岐が正しく機能する</Em>のです。
+              が同じになる場合でも、 ? をつけることで、
+              <Em>条件分岐が正しく機能する</Em>のです。
             </P>
             <EmojiSeparator emojis={['🥤', '🤗', '️🥤']} />
           </>
@@ -1239,9 +1221,7 @@ export default () => (
         content: (
           <>
             <P>
-              今回紹介した
-              <H args={{ name: 'drink' }} />
-              のルールは、
+              今回紹介した ? のルールは、
               <Em>
                 次以降のページに出てくる、
                 <Strong>
@@ -1259,9 +1239,7 @@ export default () => (
             <P>
               <H args={{ name: 'bentoBox', skipEmoji: true }} />を
               <H args={{ name: 'fastForward' }} />
-              をする途中で
-              <H args={{ name: 'drink' }} />
-              が出てきたら、「<Em>ああ、あのルールね</Em>
+              をする途中で ? が出てきたら、「<Em>ああ、あのルールね</Em>
               」と思ってくださるだけで大丈夫です。
             </P>
           </>
