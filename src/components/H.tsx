@@ -93,6 +93,7 @@ export interface HProps {
     | { name: 'secretCodeAddCaption' }
     | { name: 'secretCodeMultiplyCaption' }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
+    | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
     | { name: 'whatIsComputerScience' }
@@ -856,6 +857,22 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           (右下に
           <EmojiForLetter letter={args.letter} />が
           <Strong>{args.number}</Strong>個)
+        </>
+      )
+    }
+  }
+  if (args.name === 'notSecretCodeCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          暗号 =
+          <Strong css={slightlyLargeCaptionCss}>{args.number}ではない</Strong>
+          <br />
+          (右下に
+          <EmojiForLetter letter={args.letter} />が
+          <Strong>{args.number}</Strong>個ないから)
         </>
       )
     }

@@ -546,46 +546,32 @@ export default () => (
                 <H args={{ name: 'theAnswerIs', isYes: false }} />
                 でした。
               </Strong>
-              でも、なぜでしょう？
-            </P>
-            <EmojiSeparator emojis={['❓', '😬', '❓']} />
-            <P>
-              <InlineHeader>解説:</InlineHeader>{' '}
-              <Strong>
-                <InlineEmojiBoxesForQuestion />
-                に<EmojiWithText letter="v" />
-                を入れてみました。
-              </Strong>
-              これで、
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.iphu}
+            {AER.zuam}
             <P>
-              なんと、
+              最後に残ったのは、
               <Strong>
-                最後に
-                <EmojiWithText letter="u" />
-                がふたつ残りました。
+                暗号が「2」の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                ではありません。
               </Strong>
+              よく似ていますが、違います。
             </P>
-            {AER.ddrz}
             <P>
-              だから、質問にあった「
+              なぜなら、
               <Strong>
-                必ず
-                <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
-                が最後に残る。
+                <EmojiWithText letter="b" />
+                が右下にひとつしかないからです
               </Strong>
-              」というのは間違いなので、答えは<Emoji>❌</Emoji>
-              というわけです。でも、どうしてこうなるのでしょう？
+              。暗号が「2」の場合、
+              <EmojiWithText letter="b" />
+              が右下にふたつありますが、これはそうではありません。
             </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="u" />,
-                <Emoji>🤔</Emoji>,
-                <EmojiForLetter letter="u" />
-              ]}
-            />
+            {AER.kfcw}
+            <P>
+              つまり、<Strong>1 + 1 = 2</Strong>にならなかったのです。
+            </P>
           </>
         )
       },

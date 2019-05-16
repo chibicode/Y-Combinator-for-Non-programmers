@@ -1429,6 +1429,30 @@ export default {
       variableSize="md"
     />
   ),
+  zuam: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE6}
+      showPriorities
+      skipToTheEnd={false}
+      skipAlphaConvert
+      speed={3}
+      containerSize="xs"
+      variableSize="md"
+    />
+  ),
+  kfcw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE6}
+      showPriorities
+      isDone
+      skipAlphaConvert
+      containerSize="xs"
+      variableSize="md"
+      caption={
+        <H args={{ name: 'notSecretCodeCaption', number: 2, letter: 'b' }} />
+      }
+    />
+  ),
   zayk: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.alphaConvertTest}
