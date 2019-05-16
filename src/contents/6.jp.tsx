@@ -121,21 +121,7 @@ export default () => (
         title: <>暗号の法則</>,
         content: (
           <>
-            <P>
-              <InlineHeader>暗号の法則:</InlineHeader>{' '}
-              もし、次のようなパターンの
-              <H args={{ name: 'bentoBox', short: true }} />
-              があり:
-            </P>
-            {AER.eozk}
-            <P>
-              <InlineEmojiBoxesForQuestion />
-              の中に<Emoji size="mdlg">🅰️</Emoji>が縦に並んでいる場合、その
-              <Strong>
-                <Emoji size="mdlg">🅰️</Emoji>の数が暗号の答えになります
-              </Strong>
-              。
-            </P>
+            <H args={{ name: 'secretCodeReview', example: AER.eozk }} />
             <Hr />
             <P>
               たとえば、こちらは右下に<Emoji size="mdlg">🅰️</Emoji>

@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   Ul,
+  Hr,
   UlLi,
   Em,
   P,
@@ -451,8 +452,32 @@ export default () => (
             />
             <P>
               というわけで、
-              <Em>なぜこれが大事なポイントなのか、解説していきます！</Em>
+              <Em>
+                結果が変わることによってどんな問題が発生するのか、以前紹介した
+                <Strong>
+                  <H args={{ name: 'bentoBox', short: true }} />
+                  の暗号
+                </Strong>
+                を用いて解説していきます！
+              </Em>
             </P>
+          </>
+        )
+      },
+      {
+        title: <>暗号の復習</>,
+        content: (
+          <>
+            <P>
+              中級で話した「
+              <Strong>
+                <H args={{ name: 'bentoBox', short: true }} />
+                の暗号
+              </Strong>
+              」について忘れてしまった方もいるかもしれないので、復習としてここに法則をもう一度書いておきますね。
+            </P>
+            <Hr />
+            <H args={{ name: 'secretCodeReview', example: AER.eozk }} />
           </>
         )
       },
@@ -699,13 +724,16 @@ export default () => (
             />
             <P>
               でないと、
-              <H args={{ name: 'match' }} />が<H args={{ name: 'unmatch' }} />
+              <H args={{ name: 'match' }} />や<H args={{ name: 'unmatch' }} />
               などのパターンが変わってしまい、 「
               <Strong>
                 1を足す
                 <H args={{ name: 'bentoBox', skipEmoji: true }} />
               </Strong>
-              」として機能しなくなってしまいます。
+              」として機能しなくなってしまいます。だから、
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              を同時に変えないといけないのです。
             </P>
             {AER.oiwu}
           </>
@@ -789,7 +817,7 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                を違う料理に変えることによって、結果が変わってしまうのを避けることができます。
+                の該当する料理を違う料理に変えることによって、結果が変わってしまうのを避けることができます。
               </Strong>
             </P>
             {AER.tkbr}

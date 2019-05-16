@@ -111,6 +111,7 @@ export interface HProps {
     | { name: 'infiniteBentoBox' }
     | { name: 'stoppedBecauseInfiniteLoop' }
     | { name: 'secretCodeAddOneCaptionWithoutQuestion' }
+    | { name: 'secretCodeReview'; example: React.ReactNode }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1130,6 +1131,30 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           だけでなく、
           <BottomRightBadge inline bottomRightBadgeType="funcBound" />
           も変える
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeReview') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <P>
+            <InlineHeader>暗号の法則:</InlineHeader> もし、次のようなパターンの
+            <H args={{ name: 'bentoBox', short: true }} />
+            があり:
+          </P>
+          {args.example}
+          <P>
+            <InlineEmojiBoxesForQuestion />
+            の中に<Emoji size="mdlg">🅰️</Emoji>が縦に並んでいる場合、その
+            <Strong>
+              <Emoji size="mdlg">🅰️</Emoji>の数が暗号の答えになります
+            </Strong>
+            。
+          </P>
         </>
       )
     }
