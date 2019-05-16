@@ -261,6 +261,13 @@ export default () => (
         ),
         content: (
           <>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
             <P>
               理由は、
               <InlineEmojiBoxesForQuestion />に
@@ -572,6 +579,54 @@ export default () => (
             {AER.kfcw}
             <P>
               つまり、<Strong>1 + 1 = 2</Strong>にならなかったのです。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            理由: <EmojiWithText letter="b" />が
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            にあるから
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              先ほど、「
+              <Em>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理があるかどうかで、結果が変わることがある。
+              </Em>
+              」と説明しました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              「1 + 1 = 2」にならなかった理由は、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理(
+                <EmojiWithText letter="b" />
+                )があり、
+              </Strong>
+              これが結果を狂わせてしまったからです。
+            </P>
+            {AER.jxyg}
+            <P>
+              では、
+              <Strong>
+                どうすれば「1 + 1 = 2」を正しく計算できるでしょうか？
+              </Strong>
             </P>
           </>
         )

@@ -1453,6 +1453,25 @@ export default {
       }
     />
   ),
+  jxyg: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE6}
+      showPriorities
+      initialState="showFuncUnbound"
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      highlightOverridesCallArgAndFuncUnboundOnly
+      highlightOverrideActiveAfterStart
+      caption={
+        <H
+          args={{ name: 'isCallArgAndFuncUnboundTheSameCaption', same: true }}
+        />
+      }
+    />
+  ),
   zayk: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.alphaConvertTest}

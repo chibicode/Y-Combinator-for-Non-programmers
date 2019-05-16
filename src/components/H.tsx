@@ -1123,13 +1123,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              が同じ！
+              に同じ料理がある
             </>
           ) : (
             <>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              が違う！
+              に同じ料理がない
             </>
           )}
         </>
