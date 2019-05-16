@@ -70,7 +70,12 @@ export default () => (
       },
       {
         type: 'summary',
-        title: <>1を足す弁当箱</>,
+        title: (
+          <>
+            1を足す
+            <H args={{ name: 'bentoBox', short: true }} />
+          </>
+        ),
         content: (
           <>
             <P>

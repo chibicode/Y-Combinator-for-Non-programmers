@@ -421,6 +421,61 @@ export default () => (
         )
       },
       {
+        title: <>何か問題でも？</>,
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              に同じ料理があるかどうかで、結果が変わる
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              があることがわかりました。
+            </P>
+            <P>
+              でも、「<Em>それで何か問題でもあるの？</Em>
+              」と思う方がいらっしゃるかもしれません。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>🤔</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              というわけで、
+              <Em>なぜこれが大事なポイントなのか、解説していきます！</Em>
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            1を足す
+            <H args={{ name: 'bentoBox', short: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              以前紹介した、「
+              <Strong>
+                暗号に1を足す
+                <H args={{ name: 'bentoBox', short: true }} />
+              </Strong>
+              」をご覧ください。
+            </P>
+            {AER.xgei}
+            <P>
+              こちらに、暗号が「<Strong>1</Strong>」の
+              <H args={{ name: 'bentoBox', short: true }} />
+              を用意しました。
+            </P>
+          </>
+        )
+      },
+      {
         type: 'yesNoQuiz',
         title: (
           <>
