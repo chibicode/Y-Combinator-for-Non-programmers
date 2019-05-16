@@ -1519,6 +1519,49 @@ export default {
       }
     />
   ),
+  rzbq: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e11zE7}
+      showPriorities
+      initialState="alphaConvertDone"
+      containerSize="xs"
+      variableSize="md"
+      skipToTheEnd={false}
+      speed={3}
+    />
+  ),
+  jlet: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE7}
+      isDone
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'e' }} />
+      }
+    />
+  ),
+  kqip: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE6}
+      showPriorities
+      initialState="needsAlphaConvert"
+      containerSize="xs"
+      variableSize="md"
+      explanationsVisibility="visible"
+    />
+  ),
+  tkbr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE6}
+      showPriorities
+      initialState="alphaConvertDone"
+      containerSize="xs"
+      variableSize="md"
+      explanationsVisibility="visible"
+    />
+  ),
   zayk: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.alphaConvertTest}
