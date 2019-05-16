@@ -515,14 +515,19 @@ export default () => (
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               があります。
             </P>
-            {AER.ongi}
+            {AER.lrja}
             <P>
+              これを、先ほどの「
               <Strong>
-                必ず
-                <EmojiWithText letter="u" />と<EmojiWithText letter="v" />
-                が最後に残る。
+                <InlineEmojiBoxesForQuestion />
+                の暗号に1を足す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
               </Strong>
-              <H args={{ name: 'yesOrNo' }} />
+              」に入れてみます。
+            </P>
+            {AER.bcae}
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
             </P>
             <YesNoButtons answer="no" />
           </>

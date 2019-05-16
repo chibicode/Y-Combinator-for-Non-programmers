@@ -1411,6 +1411,24 @@ export default {
       speed={1.5}
     />
   ),
+  lrja: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE5}
+      showPriorities
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
+      }
+    />
+  ),
+  bcae: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE6}
+      showPriorities
+      skipAlphaConvert
+      containerSize="xs"
+      variableSize="md"
+    />
+  ),
   zayk: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.alphaConvertTest}

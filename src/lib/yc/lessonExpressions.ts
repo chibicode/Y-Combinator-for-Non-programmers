@@ -352,6 +352,12 @@ export const e11zE4 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams(highlighted('b'))
 )
 
+export const e11zE5 = initializeExpressionContainer(numberParams('d', 'b', 1))
+export const e11zE6 = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams(highlighted('d'), highlighted('b'), 1)
+])
+
 export const e11NewE1 = initializeExpressionContainer(
   alphaConvertExampleParams(highlighted('question'))
 )
