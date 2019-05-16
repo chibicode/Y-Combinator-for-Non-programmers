@@ -1071,23 +1071,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>あとがき</>
     }
   }
-  if (args.name === 'noCallArgFuncUnboundOverlap') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Strong>
-            <BottomRightBadge bottomRightBadgeType="funcUnbound" inline /> の{' '}
-            <EmojiForLetter letter={args.letter} /> には <Emoji>🥤</Emoji>
-            があり、
-            <BottomRightBadge bottomRightBadgeType="callArg" inline /> の
-            <EmojiForLetter letter={args.letter} /> にはない
-          </Strong>
-        </>
-      )
-    }
-  }
   if (args.name === 'infiniteBentoBox') {
     if (locale === 'en') {
       return <>?</>

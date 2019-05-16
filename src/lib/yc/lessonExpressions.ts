@@ -14,7 +14,6 @@ import {
   multParamsRightHighlighted,
   addOneItemParams,
   predParams,
-  alphaConvertExampleParams,
   alphaConversionSimpleExampleParams
 } from 'src/lib/yc/churchEncodingParams'
 
@@ -336,95 +335,31 @@ export const e10E5 = initializeExpressionContainer([
   }
 ])
 
-export const e11zE1 = initializeExpressionContainer(
+export const e11E1 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('question')
 )
 
-export const e11zE2 = initializeExpressionContainer(
+export const e11E2 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('c')
 )
 
-export const e11zE3 = initializeExpressionContainer(
+export const e11E3 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('d')
 )
 
-export const e11zE4 = initializeExpressionContainer(
+export const e11E4 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams(highlighted('b'))
 )
 
-export const e11zE5 = initializeExpressionContainer(numberParams('d', 'b', 1))
-export const e11zE6 = initializeExpressionContainer([
+export const e11E5 = initializeExpressionContainer(numberParams('d', 'b', 1))
+export const e11E6 = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
-export const e11zE7 = initializeExpressionContainer([
+export const e11E7 = initializeExpressionContainer([
   succParams('a', 'b', 'c', true),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
-
-export const e11NewE1 = initializeExpressionContainer(
-  alphaConvertExampleParams(highlighted('question'))
-)
-export const e11NewE2 = initializeExpressionContainer(
-  alphaConvertExampleParams(highlighted('b'))
-)
-export const e11NewE3 = initializeExpressionContainer(
-  alphaConvertExampleParams(highlighted('c'))
-)
-export const e11NewE4 = initializeExpressionContainer(
-  alphaConvertExampleParams(highlighted('v'))
-)
-
-export const e11E1 = initializeExpressionContainer(numberParams('a', 'b', 1))
-
-export const e11E2 = initializeExpressionContainer(
-  isZeroParams(
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'y',
-    'z',
-    numberParams(highlighted('a'), highlighted('b'), 1)
-  )
-)
-
-export const e11E3 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'b', 1))
-)
-
-export const e11E4 = initializeExpressionContainer(numberParams('a', 'c', 1))
-
-export const e11E5 = initializeExpressionContainer(
-  isZeroParams(
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'y',
-    'z',
-    numberParams(highlighted('a'), highlighted('c'), 1)
-  )
-)
-
-export const e11E6 = initializeExpressionContainer(
-  isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('a', 'c', 1))
-)
-
-export const e11E7 = initializeExpressionContainer(
-  isZeroParams(
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'y',
-    'z',
-    numberParams('a', 'b', 1, true)
-  )
-)
 
 export const e12E1 = initializeExpressionContainer([
   addOneItemParams('e', 'u'),
@@ -505,11 +440,6 @@ const wikipediaYCombinator: FunctionExpressionParams = {
     }
   ]
 }
-
-export const alphaConvertTest = initializeExpressionContainer([
-  succParams('a', 'b', 'c'),
-  numberParams('d', 'b', 1)
-])
 
 export const e12E5 = initializeExpressionContainer([
   wikipediaYCombinator,
