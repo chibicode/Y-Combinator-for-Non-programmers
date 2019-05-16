@@ -868,7 +868,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           暗号 =
-          <Strong css={slightlyLargeCaptionCss}>{args.number}ではない</Strong>
+          <Strong css={slightlyLargeCaptionCss}>{args.number}ではない</Strong>{' '}
+          <Emoji>❌</Emoji>
           <br />
           (右下に
           <EmojiForLetter letter={args.letter} />が

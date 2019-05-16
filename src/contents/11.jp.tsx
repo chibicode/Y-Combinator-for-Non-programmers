@@ -558,6 +558,7 @@ export default () => (
               </Strong>
               よく似ていますが、違います。
             </P>
+            <EmojiSeparator emojis={['❌', '2️⃣', '❌']} />
             <P>
               なぜなら、
               <Strong>
@@ -566,7 +567,7 @@ export default () => (
               </Strong>
               。暗号が「2」の場合、
               <EmojiWithText letter="b" />
-              が右下にふたつありますが、これはそうではありません。
+              が右下にふたつありますが、ここではひとつしかありません。
             </P>
             {AER.kfcw}
             <P>
