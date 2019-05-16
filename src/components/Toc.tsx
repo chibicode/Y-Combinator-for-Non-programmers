@@ -2,10 +2,10 @@
 import { jsx, css } from '@emotion/core'
 import { numEpisodes } from 'src/lib/episodeCategories'
 import { lessonTitle } from 'src/lib/titles'
-import { colors, spaces } from 'src/lib/theme'
+import { spaces } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
 import H from 'src/components/H'
-import { episodeTitles, episodePrefixes } from 'src/lib/titles'
+import { episodeTitles } from 'src/lib/titles'
 
 const Toc = () => (
   <ul
@@ -30,13 +30,10 @@ const Toc = () => (
           }
         `}
       >
-        <span
-          css={css`
-            color: ${colors('grey600')};
-          `}
-        >
-          {episodePrefixes.intro}:
-        </span>{' '}
+        <H
+          args={{ name: 'titlePrefixColored', addColon: true }}
+          episodeNumberOverrides={0}
+        />{' '}
         {lessonTitle}
       </InternalLink>
     </li>
@@ -82,13 +79,10 @@ const Toc = () => (
           }
         `}
       >
-        <span
-          css={css`
-            color: ${colors('grey600')};
-          `}
-        >
-          {episodePrefixes.epilogue}:
-        </span>{' '}
+        <H
+          args={{ name: 'titlePrefixColored', addColon: true }}
+          episodeNumberOverrides={numEpisodes + 1}
+        />{' '}
         {episodeTitles[numEpisodes as keyof typeof episodeTitles]}
       </InternalLink>
     </li>
