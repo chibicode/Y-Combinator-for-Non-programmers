@@ -4,7 +4,7 @@ import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
-interface BottomRightBadgeProps {
+export interface BottomRightBadgeProps {
   bottomRightBadgeType: Exclude<
     VariableExpression['bottomRightBadgeType'],
     'none'

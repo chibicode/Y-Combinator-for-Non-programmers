@@ -16,6 +16,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -669,8 +670,10 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="b" />,
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="funcUnbound">
+                  <EmojiForLetter letter="b" />
+                </EmojiForLetterWithBottomRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
                 <Emoji>❓</Emoji>
               ]}
             />
@@ -685,9 +688,72 @@ export default () => (
                 <EmojiWithText letter="b" />
                 も同じく変えないといけません。
               </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="funcBound">
+                  <EmojiForLetter letter="b" />
+                </EmojiForLetterWithBottomRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
+            <P>
               でないと、
+              <H args={{ name: 'match' }} />が<H args={{ name: 'unmatch' }} />
+              などのパターンが変わってしまい、 「
+              <Strong>
+                1を足す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」として機能しなくなってしまいます。
             </P>
             {AER.oiwu}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiWithText letter="b" />を<EmojiWithText letter="e" />に
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="e" />
+              ]}
+            />
+            <P>
+              というわけで、
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <Strong>
+                <EmojiWithText letter="b" />を<EmojiWithText letter="e" />
+                に変えてみました。
+              </Strong>
+            </P>
+            {AER.uqpp}
+            <P>
+              <InlineHeader>ちなみに:</InlineHeader>{' '}
+              <Em>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の他の料理と被らなければ、何の料理に変えても構いません。
+              </Em>
+            </P>
+            <P>
+              こうすることで、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が被らなくなりました！
+            </P>
+            {AER.hxmk}
           </>
         )
       },

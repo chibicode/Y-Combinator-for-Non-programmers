@@ -87,6 +87,7 @@ export interface HProps {
     | { name: 'pressFastForward'; skipColon?: boolean }
     | { name: 'copy' }
     | { name: 'summary' }
+    | { name: 'mustChangeBothFuncUnboundAndBound' }
     | { name: 'secretCodeCaptionSimple'; number: number }
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
@@ -1132,6 +1133,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               に同じ料理がない
             </>
           )}
+        </>
+      )
+    }
+  }
+  if (args.name === 'mustChangeBothFuncUnboundAndBound') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+          だけでなく、
+          <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+          も変える
         </>
       )
     }

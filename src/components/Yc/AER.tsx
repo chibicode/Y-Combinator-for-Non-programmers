@@ -1484,9 +1484,41 @@ export default {
       }}
       highlightOverrideActiveAfterStart
       showOnlyFocused
+      caption={<H args={{ name: 'mustChangeBothFuncUnboundAndBound' }} />}
     />
   ),
-
+  uqpp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE7}
+      showPriorities
+      initialState="alphaConvertDone"
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      highlightOverrideActiveAfterStart
+      showOnlyFocused
+    />
+  ),
+  hxmk: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e11zE7}
+      showPriorities
+      initialState="alphaConvertDone"
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+      highlightOverrideActiveAfterStart
+      caption={
+        <H
+          args={{ name: 'isCallArgAndFuncUnboundTheSameCaption', same: false }}
+        />
+      }
+    />
+  ),
   zayk: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.alphaConvertTest}

@@ -60,14 +60,15 @@ const EmojiSeparator = ({
         ))
       : nodes
       ? nodes.map((node, index) => (
-          <span
-            key={`node-${index}`}
-            css={css`
-              font-size: ${1 / 1.2}3em;
-            `}
-          >
-            {node}{' '}
-          </span>
+          <Fragment key={`node-${index}`}>
+            <span
+              css={css`
+                font-size: ${1 / 1.2}em;
+              `}
+            >
+              {node}
+            </span>{' '}
+          </Fragment>
         ))
       : emojis.map((emoji, index) => (
           <Fragment key={`${emoji}${index}`}>
