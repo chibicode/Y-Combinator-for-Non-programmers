@@ -1495,6 +1495,45 @@ export default {
       containerSize="xs"
       variableSize="md"
     />
+  ),
+  imgp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E2}
+      showPriorities
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'g' }} />
+      }
+    />
+  ),
+  lxnu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E3}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+    />
+  ),
+  ccon: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E3}
+      showPriorities
+      skipToTheEnd={false}
+      containerSize="xs"
+      variableSize="md"
+      speed={8}
+    />
+  ),
+  npfx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E3}
+      isDone
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'b' }} />
+      }
+    />
   )
   // fcvl: (
   //   <ExpressionRunnerPlayButtonOnly

@@ -152,7 +152,7 @@ export default () => (
                 </Strong>
                 。<H args={{ name: 'yesOrNo' }} />
               </UlLi>
-              <YesNoButtons answer="no" />
+              <YesNoButtons answer="no" tooHard />
             </Ul>
           </>
         )
