@@ -181,7 +181,6 @@ export default () => (
                 )に自動的に変わります。
               </Strong>
             </P>
-
             <EmojiSeparator
               nodes={[
                 <EmojiForLetter letter="e" />,
@@ -190,9 +189,21 @@ export default () => (
               ]}
             />
             <P>
+              実際に確かめてみましょう。
               <H args={{ name: 'pressNext' }} />
             </P>
             {AER.plxd}
+            <P>
+              ご覧の通り、
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              にある
+              <EmojiWithText letter="e" />
+              が、
+              <EmojiWithText letter="a" />
+              に変わりました。
+            </P>
             <P>
               これを行わないと、「<Strong>1を引く</Strong>」
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
@@ -200,6 +211,10 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        title: <></>,
+        content: <></>
       }
     ]}
   />
