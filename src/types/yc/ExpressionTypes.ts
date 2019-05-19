@@ -289,10 +289,29 @@ export interface FunctionExpression {
   readonly meta?: FunctionExpressionMeta
 }
 
+type ShorthandFunctionHighlightTypes = 'default' | 'active'
+
+export type CallStateToShorthandFunctionHighlightTypes<
+  C extends CallStates
+> = C extends 'default' ? 'default' : 'active'
+
+export interface ShorthandFunctionExpression {
+  readonly type: 'shorthandFunction'
+  readonly shorthand: 'pred'
+  readonly highlightType: ShorthandFunctionHighlightTypes
+}
+
+export type ShorthandFunctionExpressionWithHighlightType<
+  H extends ShorthandFunctionHighlightTypes
+> = ShorthandFunctionExpression & {
+  highlightType: H
+}
+
 export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
+  | ShorthandFunctionExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
@@ -330,6 +349,17 @@ type ExecutableShorthandBinary<
     readonly func: F
   })
 
+type ExecutableShorthand<
+  S extends CallStates,
+  F extends ShorthandFunctionExpression,
+  E extends Expression
+> = CallExpression &
+  ({
+    readonly state: S
+    readonly arg: E
+    readonly func: F
+  })
+
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
@@ -348,7 +378,11 @@ export type StepVariableShorthandNonUnaryNumber<
 
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
-
+export type StepShorthandFunction<
+  C extends CallStates = 'default'
+> = ShorthandFunctionExpressionWithHighlightType<
+  CallStateToShorthandFunctionHighlightTypes<C>
+>
 export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
 export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
@@ -361,10 +395,13 @@ export interface ExecutableStepCallShorthandBinary<
     StepVariableShorthandBinary<C>,
     StepChild<C>
   > {}
+export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
+  extends ExecutableShorthand<C, StepShorthandFunction<C>, StepChild<C>> {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
   | NonExecutableStepCall<C>
+  | StepShorthandFunction<C>
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157
@@ -380,6 +417,12 @@ export type ExecutableCallShorthandBinary = DistributeStepCallShorthandBinary<
   CallStates
 >
 
+type DistributeStepCallShorthand<U> = U extends CallStates
+  ? ExecutableStepCallShorthand<U>
+  : never
+export type ExecutableCallShorthand = DistributeStepCallShorthand<CallStates>
+
 export type ExecutableCall =
   | ExecutableCallRegular
   | ExecutableCallShorthandBinary
+  | ExecutableCallShorthand
