@@ -293,23 +293,28 @@ export const ExpressionRunnerSingleStep = ({
   hideFuncUnboundBadgeOnExplanation,
   showPriorities,
   explanationsVisibility,
-  showAllShowSteps
+  showAllShowSteps,
+  variableSize,
+  containerSize
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: CallStates
   finalState: CallStates
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
+  variableSize: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }) => (
   <ExpressionRunner
+    variableSize={variableSize}
+    containerSize={containerSize}
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     hidePlayButton
     explanationsVisibility={explanationsVisibility}
-    variableSize={'lg'}
     resetIndex
     lastAllowedExpressionState={finalState}
     showAllShowSteps={showAllShowSteps}
@@ -325,5 +330,6 @@ export const ExpressionRunnerSingleStep = ({
 ExpressionRunnerSingleStep.defaultProps = {
   hideFuncUnboundBadgeOnExplanation: false,
   showPriorities: false,
-  explanationsVisibility: 'hiddenInitial'
+  explanationsVisibility: 'hiddenInitial',
+  variableSize: 'lg'
 }

@@ -455,7 +455,7 @@ export default () => (
               ちなみに、
               <Strong>
                 <EmojiWithText letter="z" />や<EmojiWithText letter="y" />
-                の部分を別なものに変えても同様の結果になります
+                の部分を別のものに変えても同様の結果になります
               </Strong>
               。
             </P>

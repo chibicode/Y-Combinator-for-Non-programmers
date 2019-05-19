@@ -7,6 +7,7 @@ import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import Emoji from 'src/components/Emoji'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 
 export default () => (
@@ -100,7 +101,13 @@ export default () => (
               <Strong>「3」</Strong>
               になるというわけです。
             </P>
-            <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
+            <EmojiSeparator
+              nodes={[
+                <InlineEmojiBoxesForQuestion size="md" />,
+                <Emoji>➕</Emoji>,
+                <Emoji>1️⃣</Emoji>
+              ]}
+            />
             <P>
               <H args={{ name: 'byTheWay' }} />{' '}
               <Strong>

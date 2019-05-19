@@ -262,7 +262,7 @@ const stateToExplanation = ({
           <>
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-            を別な料理に
+            を別の料理に
           </>
         )
       }

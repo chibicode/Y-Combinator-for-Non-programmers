@@ -112,6 +112,7 @@ export interface HProps {
     | { name: 'stoppedBecauseInfiniteLoop' }
     | { name: 'secretCodeAddOneCaptionWithoutQuestion' }
     | { name: 'secretCodeReview'; example: React.ReactNode }
+    | { name: 'secretCodeMinusOneCaption' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -897,6 +898,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
+          <Emoji>1️⃣</Emoji> を計算
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeMinusOneCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➖</Emoji>{' '}
           <Emoji>1️⃣</Emoji> を計算
         </>
       )

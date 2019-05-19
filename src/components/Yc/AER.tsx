@@ -1534,6 +1534,38 @@ export default {
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'b' }} />
       }
     />
+  ),
+  pnob: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E1}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={<H args={{ name: 'secretCodeMinusOneCaption' }} />}
+    />
+  ),
+  rqdn: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E3}
+      showPriorities
+      explanationsVisibility="hiddenInitial"
+      lastAllowedExpressionState="needsAlphaConvert"
+      containerSize="xs"
+      variableSize="md"
+      speed={5}
+      skipToTheEnd={false}
+    />
+  ),
+  plxd: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e12E3}
+      showPriorities
+      explanationsVisibility="visible"
+      initialState="needsAlphaConvert"
+      finalState="alphaConvertDone"
+      containerSize="xs"
+      variableSize="md"
+    />
   )
   // fcvl: (
   //   <ExpressionRunnerPlayButtonOnly

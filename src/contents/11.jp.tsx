@@ -490,7 +490,13 @@ export default () => (
         ),
         content: (
           <>
-            <EmojiSeparator emojis={['❓', '➕', '1️⃣']} />
+            <EmojiSeparator
+              nodes={[
+                <InlineEmojiBoxesForQuestion size="md" />,
+                <Emoji>➕</Emoji>,
+                <Emoji>1️⃣</Emoji>
+              ]}
+            />
             <P>
               以前紹介した、「
               <Strong>
@@ -817,7 +823,7 @@ export default () => (
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                の該当する料理を違う料理に変えることによって、結果が変わってしまうのを避けることができます。
+                の該当する料理を別の料理に変えることによって、結果が変わってしまうのを避けることができます。
               </Strong>
             </P>
             {AER.tkbr}

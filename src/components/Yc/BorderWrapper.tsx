@@ -80,7 +80,7 @@ const background = (
         `
       } else if (topLeftBadgeType === 'conflict') {
         return css`
-          background: ${colors('lime50')};
+          background: ${colors('brown50')};
         `
       } else {
         return css`
