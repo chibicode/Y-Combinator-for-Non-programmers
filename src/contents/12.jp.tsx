@@ -256,7 +256,18 @@ export default () => (
       },
       {
         title: <>暗号を数字で表示する</>,
-        content: <></>
+        content: (
+          <>
+            <P>
+              まず、<Em>暗号を数字で表示してみます</Em>。たとえば、こちらは
+              <Strong>暗号が「2」</Strong>の
+              <H args={{ name: 'bentoBox', short: true }} />
+              なので、
+            </P>
+            {AER.imgp}
+            <P>このように数字で表示します。</P>
+          </>
+        )
       }
     ]}
   />
