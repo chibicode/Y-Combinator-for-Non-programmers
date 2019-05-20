@@ -6,7 +6,10 @@ import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
-import { isExecutableCallRegular } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isExecutableCallRegular,
+  isExecutableCallShorthand
+} from 'src/lib/yc/expressionTypeGuards'
 import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -17,6 +20,7 @@ import {
   stepToBetaReducePreviewBefore,
   stepToBetaReducePreviewCrossed,
   stepToNeedsAlphaConvert,
+  stepToShorthandResult,
   stepToShowCallArg,
   stepToShowFuncArg,
   stepToShowFuncBound,
@@ -29,6 +33,7 @@ import {
   CallStates,
   ExecutableCallRegular,
   ExecutableCallShorthandBinary,
+  ExecutableCallShorthand,
   ExecutableCall,
   FunctionExpression,
   StepChild
@@ -54,7 +59,7 @@ const stepExpressionContainerReset = (
   }
 }
 
-const stepShorthand = (
+const stepShorthandBinary = (
   e: ExecutableCallShorthandBinary
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
@@ -72,6 +77,33 @@ const stepShorthand = (
     case 'active': {
       return {
         nextExpression: stepToShorthandBinaryResult(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    default: {
+      throw new Error()
+    }
+  }
+}
+
+const stepToShorthand = (
+  e: ExecutableCallShorthand
+): {
+  nextExpression: ExecutableCall | StepChild<'default'>
+  matchExists?: boolean
+  executableUnaryExists?: boolean
+  previouslyChangedExpressionState: CallStates
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    case 'active': {
+      return {
+        nextExpression: stepToShorthandResult(e),
         previouslyChangedExpressionState: 'default'
       }
     }
@@ -257,7 +289,9 @@ const runStep = (
         e.matchExists,
         e.executableUnaryExists
       )
-    : stepShorthand(expression)
+    : isExecutableCallShorthand(expression)
+    ? stepToShorthand(expression)
+    : stepShorthandBinary(expression)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {

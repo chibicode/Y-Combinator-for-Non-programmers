@@ -78,6 +78,7 @@ export function isExecutableCall<E extends ExecutableCall>(
 ): expression is E {
   return (
     isExecutableCallShorthandBinary(expression) ||
-    isExecutableCallRegular(expression)
+    isExecutableCallRegular(expression) ||
+    isExecutableCallShorthand(expression)
   )
 }

@@ -33,3 +33,6 @@ export {
 export {
   default as stepToBetaReduceUnaryExecuted
 } from 'src/lib/yc/steps/stepToBetaReduceUnaryExecuted'
+export {
+  default as stepToShorthandResult
+} from 'src/lib/yc/steps/stepToShorthandResult'

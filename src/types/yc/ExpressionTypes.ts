@@ -295,6 +295,7 @@ export interface ShorthandFunctionExpression {
   readonly emphasizePriority: boolean
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
+  readonly predValue: 1
 }
 
 export type ShorthandFunctionExpressionWithHighlightType<
