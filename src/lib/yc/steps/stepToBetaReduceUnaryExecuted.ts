@@ -15,9 +15,9 @@ import {
 import {
   isFunction,
   isVariable,
-  isVariableShorthandUnary,
-  isVariableShorthandNumber
+  isVariableShorthandUnaryNumber
 } from 'src/lib/yc/expressionTypeGuards'
+import processUnaryNumber from 'src/lib/yc/processUnaryNumber'
 
 function toBetaReduceUnaryExecuted(
   e: VariableShorthandUnaryNumber
@@ -43,15 +43,8 @@ function toBetaReduceUnaryExecuted(
   e: Expression
 ): StepChild<'betaReducePreviewUnaryExecuted'> {
   if (isVariable(e)) {
-    if (isVariableShorthandUnary(e) && isVariableShorthandNumber(e)) {
-      return {
-        ...e,
-        topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'none',
-        highlightType: 'active',
-        shorthandNumber: e.shorthandNumber > 1 ? e.shorthandNumber - 1 : 0,
-        shorthandUnary: undefined
-      }
+    if (isVariableShorthandUnaryNumber(e)) {
+      return processUnaryNumber(e)
     } else {
       return {
         ...e,

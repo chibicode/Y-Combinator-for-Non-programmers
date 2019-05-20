@@ -6,7 +6,11 @@ import hasUnboundVariables from 'src/lib/yc/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/yc/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/yc/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/yc/replaceCallParentKey'
-import { isExecutableCallRegular } from 'src/lib/yc/expressionTypeGuards'
+import {
+  isExecutableCallRegular,
+  isVariableShorthandUnaryNumber
+} from 'src/lib/yc/expressionTypeGuards'
+import processUnaryNumber from 'src/lib/yc/processUnaryNumber'
 import replaceFuncParentKey from 'src/lib/yc/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -225,7 +229,16 @@ const runStep = (
 ):
   | ContainerWithState<'needsReset'>
   | ContainerWithState<'stepped'>
-  | ContainerWithState<'ready'> => {
+  | ContainerWithState<'ready'>
+  | ContainerWithState<'done'> => {
+  if (isVariableShorthandUnaryNumber(e.expression)) {
+    return {
+      ...e,
+      expression: processUnaryNumber(e.expression),
+      containerState: 'done'
+    }
+  }
+
   const {
     expression,
     callParent,

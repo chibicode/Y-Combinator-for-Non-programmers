@@ -8,7 +8,8 @@ import {
   VariableShorthandNumber,
   ExecutableCallRegular,
   ExecutableCallShorthandBinary,
-  ExecutableCall
+  ExecutableCall,
+  VariableShorthandUnaryNumber
 } from 'src/types/yc/ExpressionTypes'
 
 export function isVariable<V extends VariableExpression = VariableExpression>(
@@ -45,6 +46,15 @@ export function isVariableShorthandBinary<
   V extends VariableShorthandBinary = VariableShorthandBinary
 >(expression: Expression): expression is V {
   return isVariable(expression) && expression.shorthandBinary !== undefined
+}
+
+export function isVariableShorthandUnaryNumber<
+  V extends VariableShorthandUnaryNumber = VariableShorthandUnaryNumber
+>(expression: Expression): expression is V {
+  return (
+    isVariableShorthandNumber(expression) &&
+    isVariableShorthandUnary(expression)
+  )
 }
 
 export function isExecutableCallRegular<E extends ExecutableCallRegular>(
