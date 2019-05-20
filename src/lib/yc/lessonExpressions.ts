@@ -368,6 +368,10 @@ export const e12E3 = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams(highlighted('g'), highlighted('h'), 2)
 ])
+export const e12E4 = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  numberParams('g', 'h', 2)
+])
 
 // TODO: Show how much easier this would be using shorthand
 export const e12EX = initializeExpressionContainer([

@@ -1556,6 +1556,18 @@ export default {
       skipToTheEnd={false}
     />
   ),
+  fiab: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E4}
+      showPriorities
+      explanationsVisibility="hiddenInitial"
+      lastAllowedExpressionState="needsAlphaConvert"
+      containerSize="xs"
+      variableSize="md"
+      speed={5}
+      skipToTheEnd={false}
+    />
+  ),
   plxd: (
     <ExpressionRunnerSingleStep
       expressionContainer={lessonExpressions.e12E3}
@@ -1565,6 +1577,15 @@ export default {
       finalState="alphaConvertDone"
       containerSize="xs"
       variableSize="md"
+    />
+  ),
+  zaoc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E4}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={<H args={{ name: 'secretCodeTwoMinusOneCaption' }} />}
     />
   )
   // fcvl: (

@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AER'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
@@ -159,7 +159,7 @@ export default () => (
               先ほどの例で確かめてみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.rqdn}
+            {AER.fiab}
             <P>
               <Strong>
                 <EmojiWithText letter="e" />が
@@ -213,7 +213,38 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: (
+          <>
+            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            を「省略表示」できないか？
+          </>
+        ),
+        content: (
+          <>
+            {AER.zaoc}
+            <P>
+              上の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              は、「<Strong>2 - 1</Strong>」を計算できることがわかりましたが、
+              <Em>
+                少し複雑すぎて、ひと目見て何が起きているかわかりにくいですよね。
+              </Em>
+            </P>
+            <EmojiSeparator emojis={['❓', '🤯', '❓']} />
+            <P>
+              <InlineHeader>疑問:</InlineHeader>{' '}
+              <Em>
+                上の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                を何らかの手法で「<Strong>省略表示</Strong>
+                」することで、何が起きているをかわかりやすくする方法はないでしょうか？
+              </Em>
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>暗号を数字で表示する</>,
         content: <></>
       }
     ]}
