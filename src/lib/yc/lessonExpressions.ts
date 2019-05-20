@@ -382,6 +382,10 @@ export const e12E6 = initializeExpressionContainer([
     initialHighlight: true
   }
 ])
+export const e12E7 = initializeExpressionContainer({
+  shorthandNumber: 2,
+  shorthandUnary: 'pred'
+})
 
 // TODO: Show how much easier this would be using shorthand
 export const e12EX = initializeExpressionContainer([

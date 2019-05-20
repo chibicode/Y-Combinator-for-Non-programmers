@@ -10,6 +10,7 @@ import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 
 export default () => (
   <EpisodeCardList
@@ -227,7 +228,7 @@ export default () => (
         title: (
           <>
             <H args={{ name: 'bentoBox', skipEmoji: true }} />
-            を「省略表示」できないか？
+            を「省略表記」できないか？
           </>
         ),
         content: (
@@ -247,7 +248,7 @@ export default () => (
               <Em>
                 上の
                 <H args={{ name: 'bentoBox', skipEmoji: true }} />
-                を何らかの手法で「<Strong>省略表示</Strong>
+                を何らかの手法で「<Strong>省略表記</Strong>
                 」することで、何が起きているをかわかりやすくする方法はないでしょうか？
               </Em>
             </P>
@@ -274,13 +275,13 @@ export default () => (
             <P>このように数字で表示してみます。</P>
             {AER.xekr}
             <P>
-              数字で省略表示することで、ひと目見て何のことか分かりやすくなりました。
+              数字で省略表記することで、ひと目見て何のことか分かりやすくなりました。
             </P>
           </>
         )
       },
       {
-        title: <>引き算の省略表示</>,
+        title: <>引き算の省略表記</>,
         content: (
           <>
             <P>
@@ -292,10 +293,24 @@ export default () => (
             </P>
             {AER.uqts}
             <P>
-              下の「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              も省略してみたいと思います。
+              今度は、「<Strong>1を引く</Strong>」部分も省略してみましょう。
             </P>
+            <P>
+              シンプルに、
+              <Strong>
+                <TopRightBadge topRightBadgeType="pred" inline />
+                の記号を<Emoji>2️⃣</Emoji>の右上に配置
+              </Strong>
+              することによって、2から「<Strong>1を引く</Strong>
+              」ことを省略表記してみます。
+            </P>
+            {AER.ojma}
+            <P>
+              これを
+              <H args={{ name: 'play' }} />
+              してみましょう:
+            </P>
+            {AER.yykk}
           </>
         )
       }

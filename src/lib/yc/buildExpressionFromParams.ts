@@ -146,7 +146,8 @@ export default function buildExpressionFromParams(
         true,
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
-      shorthandNumber: expressionParams.shorthandNumber
+      shorthandNumber: expressionParams.shorthandNumber,
+      shorthandUnary: expressionParams.shorthandUnary
     }
   }
 }

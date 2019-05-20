@@ -1607,6 +1607,14 @@ export default {
       containerSize="xs"
       variableSize="md"
     />
+  ),
+  ojma: (
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e12E7} />
+  ),
+  yykk: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E7}
+    />
   )
   // fcvl: (
   //   <ExpressionRunnerPlayButtonOnly

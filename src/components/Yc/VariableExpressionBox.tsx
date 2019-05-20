@@ -9,6 +9,7 @@ import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/Yc/ExpressionRunnerContext'
 import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import TopRightBadge from 'src/components/Yc/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 import numberEmojiMapping from 'src/lib/yc/numberEmojiMapping'
@@ -112,22 +113,12 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
               <span
                 css={css`
                   position: absolute;
-                  right: -0.2em;
-                  top: -0.6em;
+                  right: -0.3em;
+                  top: 0;
                   z-index: ${zIndices('badge')};
                 `}
               >
-                <span
-                  css={css`
-                    display: inline-flex;
-                    font-size: 0.5em;
-                    transform: translateY(0.3em);
-                  `}
-                >
-                  <Emoji size="sm" noVerticalTransform>
-                    ➖
-                  </Emoji>
-                </span>
+                <TopRightBadge topRightBadgeType={expression.shorthandUnary} />
               </span>
             )}
             {bottomRightBadgeOverrides[expression.name] && (
