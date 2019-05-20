@@ -1566,24 +1566,15 @@ export default {
       containerSize="xs"
       variableSize="md"
     />
+  ),
+  hzlj: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.ycTest}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={5}
+    />
   )
-  // fcvl: (
-  //   <ExpressionRunnerPlayButtonOnly
-  //     expressionContainer={lessonExpressions.subtractionTest}
-  //     showPriorities
-  //     containerSize={'xs'}
-  //     variableSize={'md'}
-  //     skipAlphaConvert
-  //   />
-  // ),
-  // hzlj: (
-  //   <ExpressionRunnerPlayButtonOnly
-  //     expressionContainer={lessonExpressions.ycTest}
-  //     showPriorities
-  //     containerSize={'xs'}
-  //     variableSize={'md'}
-  //     skipToTheEnd={false}
-  //     speed={5}
-  //   />
-  // )
 }

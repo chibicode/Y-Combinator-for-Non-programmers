@@ -369,11 +369,6 @@ export const e12E3 = initializeExpressionContainer([
   numberParams(highlighted('g'), highlighted('h'), 2)
 ])
 
-export const subtractionTest = initializeExpressionContainer([
-  predParams('a', 'b', 'c', 'd', 'e', 'f'),
-  numberParams('g', 'h', 2)
-])
-
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
@@ -400,14 +395,12 @@ export const ycTest = initializeExpressionContainer([
           shorthandBinary: 'isZero'
         },
         [
-          'question',
-          'd',
+          'c',
           [
-            'c',
             {
-              name: 'd',
-              shorthandUnary: 'pred'
-            }
+              shorthand: 'pred'
+            },
+            'd'
           ]
         ]
       ]
