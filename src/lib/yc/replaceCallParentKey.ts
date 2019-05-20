@@ -1,4 +1,4 @@
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -59,10 +59,12 @@ export default function replaceCallParentKey(
         func: replaceCallParentKey(expression.func, target, key, replaceWith)
       }
     }
-  } else {
+  } else if (isFunction(expression)) {
     return {
       ...expression,
       body: replaceCallParentKey(expression.body, target, key, replaceWith)
     }
+  } else {
+    return expression
   }
 }

@@ -55,13 +55,6 @@ export type VariableWithStateShorthandNonUnaryNumber<
   S extends keyof VariableStates
 > = VariableShorthandNonUnaryNumber & VariableStates[S]
 
-export type VariableWithEmphasizePriorityAndState<
-  S extends keyof VariableStates
-> = VariableExpression &
-  VariableStates[S] & {
-    readonly emphasizePriority: true
-  }
-
 interface VariableStates {
   default: {
     readonly highlightType: 'default' | 'initialHighlighted'
@@ -293,12 +286,15 @@ type ShorthandFunctionHighlightTypes = 'default' | 'active'
 
 export type CallStateToShorthandFunctionHighlightTypes<
   C extends CallStates
-> = C extends 'default' ? 'default' : 'active'
+> = C extends 'active' ? 'active' : 'default'
 
 export interface ShorthandFunctionExpression {
   readonly type: 'shorthandFunction'
   readonly shorthand: 'pred'
   readonly highlightType: ShorthandFunctionHighlightTypes
+  readonly emphasizePriority: boolean
+  readonly argPriorityAgg: number[]
+  readonly funcPriorityAgg: number[]
 }
 
 export type ShorthandFunctionExpressionWithHighlightType<

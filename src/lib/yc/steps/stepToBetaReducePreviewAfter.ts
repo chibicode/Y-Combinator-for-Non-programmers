@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -10,7 +10,9 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression
+  VariableExpression,
+  ShorthandFunctionExpression,
+  StepShorthandFunction
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -28,6 +30,14 @@ function matchBetaReduced(
   shorthandUnary: VariableExpression['shorthandUnary']
 ): {
   result: StepFunction<'betaReducePreviewAfter'>
+  executableUnaryExists: boolean
+}
+function matchBetaReduced(
+  e: ShorthandFunctionExpression,
+  shorthandBinary: VariableExpression['shorthandBinary'],
+  shorthandUnary: VariableExpression['shorthandUnary']
+): {
+  result: StepShorthandFunction<'betaReducePreviewAfter'>
   executableUnaryExists: boolean
 }
 function matchBetaReduced(
@@ -80,7 +90,7 @@ function matchBetaReduced(
       executableUnaryExists:
         arg.executableUnaryExists || body.executableUnaryExists
     }
-  } else {
+  } else if (isCall(e)) {
     const arg = matchBetaReduced(e.arg, shorthandBinary, shorthandUnary)
     const func = matchBetaReduced(e.func, shorthandBinary, shorthandUnary)
     return {
@@ -92,6 +102,14 @@ function matchBetaReduced(
       },
       executableUnaryExists:
         arg.executableUnaryExists || func.executableUnaryExists
+    }
+  } else {
+    return {
+      result: {
+        ...e,
+        highlightType: 'default'
+      },
+      executableUnaryExists: false
     }
   }
 }
@@ -112,6 +130,15 @@ export function toBetaReducePreviewAfter(
   funcSide: boolean
 ): {
   result: StepFunction<'betaReducePreviewAfter'>
+  executableUnaryExists: boolean
+}
+export function toBetaReducePreviewAfter(
+  e: ShorthandFunctionExpression,
+  fromName: VariableNames,
+  to: Expression,
+  funcSide: boolean
+): {
+  result: StepShorthandFunction<'betaReducePreviewAfter'>
   executableUnaryExists: boolean
 }
 export function toBetaReducePreviewAfter(
@@ -200,7 +227,7 @@ export function toBetaReducePreviewAfter(
       executableUnaryExists:
         arg.executableUnaryExists || body.executableUnaryExists
     }
-  } else {
+  } else if (isCall(e)) {
     const arg = toBetaReducePreviewAfter(e.arg, fromName, to, funcSide)
     const func = toBetaReducePreviewAfter(e.func, fromName, to, funcSide)
     return {
@@ -212,6 +239,14 @@ export function toBetaReducePreviewAfter(
       },
       executableUnaryExists:
         arg.executableUnaryExists || func.executableUnaryExists
+    }
+  } else {
+    return {
+      result: {
+        ...e,
+        highlightType: 'default'
+      },
+      executableUnaryExists: false
     }
   }
 }

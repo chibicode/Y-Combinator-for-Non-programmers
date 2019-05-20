@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -10,7 +10,9 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableWithState
+  VariableWithState,
+  ShorthandFunctionExpression,
+  StepShorthandFunction
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -28,6 +30,14 @@ export function toBetaReducePreviewBefore(
   funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
+  matchExists: boolean
+}
+export function toBetaReducePreviewBefore(
+  e: ShorthandFunctionExpression,
+  fromName: VariableNames,
+  funcSide: boolean
+): {
+  nextExpression: StepShorthandFunction<'betaReducePreviewBefore'>
   matchExists: boolean
 }
 export function toBetaReducePreviewBefore(
@@ -127,7 +137,7 @@ export function toBetaReducePreviewBefore(
       },
       matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
     }
-  } else {
+  } else if (isCall(e)) {
     const argHelperResult = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
     const funcHelperResult = toBetaReducePreviewBefore(
       e.func,
@@ -142,6 +152,14 @@ export function toBetaReducePreviewBefore(
         func: funcHelperResult.nextExpression
       },
       matchExists: argHelperResult.matchExists || funcHelperResult.matchExists
+    }
+  } else {
+    return {
+      nextExpression: {
+        ...e,
+        highlightType: 'default'
+      },
+      matchExists: false
     }
   }
 }

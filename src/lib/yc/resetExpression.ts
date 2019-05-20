@@ -1,4 +1,4 @@
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -47,11 +47,19 @@ export default function resetExpression(
       func: resetExpression(expression.func),
       priority: 0
     }
-  } else {
+  } else if (isFunction(expression)) {
     return {
       type: 'function',
       arg: resetExpression(expression.arg),
       body: resetExpression(expression.body)
+    }
+  } else {
+    return {
+      ...expression,
+      highlightType: 'default',
+      argPriorityAgg: [],
+      funcPriorityAgg: [],
+      emphasizePriority: false
     }
   }
 }

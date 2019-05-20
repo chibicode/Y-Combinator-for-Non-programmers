@@ -10,11 +10,14 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableShorthandUnaryNumber
+  VariableShorthandUnaryNumber,
+  ShorthandFunctionExpression,
+  StepShorthandFunction
 } from 'src/types/yc/ExpressionTypes'
 import {
   isFunction,
   isVariable,
+  isCall,
   isVariableShorthandUnary,
   isVariableShorthandNumber
 } from 'src/lib/yc/expressionTypeGuards'
@@ -28,6 +31,9 @@ function toBetaReduceUnaryExecuted(
 function toBetaReduceUnaryExecuted(
   e: FunctionExpression
 ): StepFunction<'betaReducePreviewUnaryExecuted'>
+function toBetaReduceUnaryExecuted(
+  e: ShorthandFunctionExpression
+): StepShorthandFunction<'betaReducePreviewUnaryExecuted'>
 function toBetaReduceUnaryExecuted(
   e: CallExpression
 ): NonExecutableStepCall<'betaReducePreviewUnaryExecuted'>
@@ -66,12 +72,17 @@ function toBetaReduceUnaryExecuted(
       arg: toBetaReduceUnaryExecuted(e.arg),
       body: toBetaReduceUnaryExecuted(e.body)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toBetaReduceUnaryExecuted(e.arg),
       func: toBetaReduceUnaryExecuted(e.func)
+    }
+  } else {
+    return {
+      ...e,
+      highlightType: 'default'
     }
   }
 }

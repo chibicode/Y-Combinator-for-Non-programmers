@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -10,7 +10,9 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableWithState
+  VariableWithState,
+  ShorthandFunctionExpression,
+  StepShorthandFunction
 } from 'src/types/yc/ExpressionTypes'
 
 export function toShowFuncUnbound(
@@ -23,6 +25,11 @@ export function toShowFuncUnbound(
   funcSide: boolean,
   highlight: boolean
 ): StepFunction<'showFuncUnbound'>
+export function toShowFuncUnbound(
+  e: ShorthandFunctionExpression,
+  funcSide: boolean,
+  highlight: boolean
+): StepShorthandFunction<'showFuncBound'>
 export function toShowFuncUnbound(
   e: CallExpression,
   funcSide: boolean,
@@ -81,12 +88,17 @@ export function toShowFuncUnbound(
       arg: toShowFuncUnbound(e.arg, funcSide, highlight),
       body: toShowFuncUnbound(e.body, funcSide, highlight)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toShowFuncUnbound(e.arg, funcSide, highlight),
       func: toShowFuncUnbound(e.func, funcSide, highlight)
+    }
+  } else {
+    return {
+      ...e,
+      highlightType: 'default'
     }
   }
 }

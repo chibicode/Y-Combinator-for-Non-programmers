@@ -1,8 +1,10 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
   ExecutableCallRegular,
+  ShorthandFunctionExpression,
+  StepShorthandFunction,
   ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
@@ -26,6 +28,11 @@ export function toAlphaConvertDone(
   conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepFunction<'alphaConvertDone'>
+export function toAlphaConvertDone(
+  e: ShorthandFunctionExpression,
+  conflicts: ConflictingNamesToUnusedNames,
+  funcSide: boolean
+): StepShorthandFunction<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: CallExpression,
   conflicts: ConflictingNamesToUnusedNames,
@@ -96,12 +103,17 @@ export function toAlphaConvertDone(
       arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
       body: toAlphaConvertDone(e.body, conflicts, funcSide)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
       func: toAlphaConvertDone(e.func, conflicts, funcSide)
+    }
+  } else {
+    return {
+      ...e,
+      highlightType: 'default'
     }
   }
 }
