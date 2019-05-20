@@ -369,6 +369,15 @@ export const e12E3 = initializeExpressionContainer([
   numberParams(highlighted('g'), highlighted('h'), 2)
 ])
 
+// TODO: Show how much easier this would be using shorthand
+export const e12EX = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
+  },
+  numberParams(highlighted('g'), highlighted('h'), 3)
+])
+
 export const subtractionTest = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 2)
