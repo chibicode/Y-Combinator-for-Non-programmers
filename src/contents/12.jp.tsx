@@ -168,6 +168,13 @@ export default () => (
               </Strong>
               にそれぞれありますね。前回説明した通り、このままだと正しい結果が出ません。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="e" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
             <P>
               というわけで、正しい結果を出すために、
               <Strong>
