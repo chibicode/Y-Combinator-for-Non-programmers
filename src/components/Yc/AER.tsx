@@ -1601,7 +1601,7 @@ export default {
     />
   ),
   uqts: (
-    <ExpressionRunnerPlayButtonOnly
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e12E6}
       showPriorities
       containerSize="xs"

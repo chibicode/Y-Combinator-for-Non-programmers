@@ -276,14 +276,6 @@ export default () => (
             <P>
               数字で省略表示することで、ひと目見て何のことか分かりやすくなりました。
             </P>
-            <Hr />
-            <P>
-              これを、先ほどの「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              に入れてみました。
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            {AER.uqts}
           </>
         )
       },
@@ -291,7 +283,19 @@ export default () => (
         title: <>引き算の省略表示</>,
         content: (
           <>
-            <P>これを実行すると、</P>
+            <P>
+              <Emoji>2️⃣</Emoji>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を、先ほどの「<Strong>1を引く</Strong>」
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              に入れてみました。
+            </P>
+            {AER.uqts}
+            <P>
+              下の「<Strong>1を引く</Strong>」
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              も省略してみたいと思います。
+            </P>
           </>
         )
       }
