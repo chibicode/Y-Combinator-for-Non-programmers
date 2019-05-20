@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
+import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AER'
 import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
@@ -216,6 +216,7 @@ export default () => (
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
               として機能しません。ここでは詳しく書きませんが、引き算とは全然違う答えが出てしまうのです。
             </P>
+            <Hr />
             <P>
               以上、前回紹介したルールが役に立っているよ、という余談でした。
             </P>
