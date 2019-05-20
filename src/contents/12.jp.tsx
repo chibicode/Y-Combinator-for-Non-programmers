@@ -259,13 +259,39 @@ export default () => (
         content: (
           <>
             <P>
-              まず、<Em>暗号を数字で表示してみます</Em>。たとえば、こちらは
+              まず、
+              <Em>
+                暗号の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+                <Strong>数字で</Strong>表示してみます
+              </Em>
+              。たとえば、こちらは
               <Strong>暗号が「2」</Strong>の
               <H args={{ name: 'bentoBox', short: true }} />
               なので、
             </P>
             {AER.imgp}
-            <P>このように数字で表示します。</P>
+            <P>このように数字で表示してみます。</P>
+            {AER.xekr}
+            <P>
+              数字で省略表示することで、ひと目見て何のことか分かりやすくなりました。
+            </P>
+            <Hr />
+            <P>
+              これを、先ほどの「<Strong>1を引く</Strong>」
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              に入れてみました。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.uqts}
+          </>
+        )
+      },
+      {
+        title: <>引き算の省略表示</>,
+        content: (
+          <>
+            <P>これを実行すると、</P>
           </>
         )
       }

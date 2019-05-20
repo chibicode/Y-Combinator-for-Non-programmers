@@ -372,6 +372,16 @@ export const e12E4 = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 2)
 ])
+export const e12E5 = initializeExpressionContainer({
+  shorthandNumber: 2
+})
+export const e12E6 = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  {
+    shorthandNumber: 2,
+    initialHighlight: true
+  }
+])
 
 // TODO: Show how much easier this would be using shorthand
 export const e12EX = initializeExpressionContainer([

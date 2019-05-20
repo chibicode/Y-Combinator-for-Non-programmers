@@ -5,7 +5,8 @@ import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
-  VariableExpressionParams
+  VariableExpressionParams,
+  VariableShorthandNumberParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   CallExpression,
@@ -23,6 +24,9 @@ export default function initializeExpressionContainer(
 export default function initializeExpressionContainer(
   expressionParams: FunctionExpressionParams
 ): ContainerWithState<'ready', FunctionExpression>
+export default function initializeExpressionContainer(
+  expressionParams: VariableShorthandNumberParams
+): ContainerWithState<'ready', VariableExpression>
 export default function initializeExpressionContainer(
   expressionParams: ExpressionParams
 ): ContainerWithState<'ready', Expression> {

@@ -141,7 +141,11 @@ export default function buildExpressionFromParams(
     }
   } else {
     return {
-      ...buildVariableExpression('shorthandNumber', true, 'default'),
+      ...buildVariableExpression(
+        'shorthandNumber',
+        true,
+        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
+      ),
       shorthandNumber: expressionParams.shorthandNumber
     }
   }

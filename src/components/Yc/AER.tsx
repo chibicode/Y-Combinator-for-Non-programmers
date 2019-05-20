@@ -1587,6 +1587,26 @@ export default {
       variableSize="md"
       caption={<H args={{ name: 'secretCodeTwoMinusOneCaption' }} />}
     />
+  ),
+  xekr: (
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e12E5} />
+  ),
+  lial: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E6}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={<H args={{ name: 'secretCodeTwoMinusOneCaption' }} />}
+    />
+  ),
+  uqts: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E6}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+    />
   )
   // fcvl: (
   //   <ExpressionRunnerPlayButtonOnly
