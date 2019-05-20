@@ -1616,15 +1616,6 @@ export default {
       expressionContainer={lessonExpressions.e12E7}
     />
   )
-  // fcvl: (
-  //   <ExpressionRunnerPlayButtonOnly
-  //     expressionContainer={lessonExpressions.subtractionTest}
-  //     showPriorities
-  //     containerSize={'xs'}
-  //     variableSize={'md'}
-  //     skipAlphaConvert
-  //   />
-  // ),
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly
   //     expressionContainer={lessonExpressions.ycTest}
