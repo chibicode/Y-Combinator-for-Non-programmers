@@ -6,7 +6,8 @@ import {
   VariableExpressionParams,
   VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
-  HighlightedVariableExpressionParams
+  HighlightedVariableExpressionParams,
+  ShorthandFunctionExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 
 export function isHighlightedVariableExpressionParams(
@@ -64,4 +65,10 @@ export function isCallExpressionParams(
   expressionParams: ExpressionParams
 ): expressionParams is CallExpressionParams {
   return Array.isArray(expressionParams)
+}
+
+export function isShorthandFunctionParams(
+  expressionParams: ExpressionParams
+): expressionParams is ShorthandFunctionExpressionParams {
+  return !!(expressionParams as ShorthandFunctionExpressionParams).shorthand
 }

@@ -3,7 +3,8 @@ import {
   FunctionExpressionMeta,
   VariableShorthandBinary,
   VariableShorthandUnary,
-  VariableShorthandNumber
+  VariableShorthandNumber,
+  ShorthandFunctionExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
@@ -32,8 +33,13 @@ export interface FunctionExpressionParams {
   readonly body: ExpressionParams
   readonly meta?: FunctionExpressionMeta
 }
+
 // https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
 export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
+
+export interface ShorthandFunctionExpressionParams {
+  readonly shorthand: ShorthandFunctionExpression['shorthand']
+}
 
 export type ExpressionParams =
   | VariableExpressionParams
@@ -43,3 +49,4 @@ export type ExpressionParams =
   | VariableShorthandBinaryParams
   | VariableShorthandNumberParams
   | VariableShorthandUnaryParams
+  | ShorthandFunctionExpressionParams
