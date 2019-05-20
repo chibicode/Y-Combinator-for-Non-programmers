@@ -32,8 +32,8 @@ const TopRightBadge = ({ topRightBadgeType, inline }: TopRightBadgeProps) => (
         css`
           display: flex;
           font-size: 0.4em;
-          width: 1.4em;
-          height: 1.4em;
+          width: 1.3em;
+          height: 1.3em;
         `,
       inline &&
         css`

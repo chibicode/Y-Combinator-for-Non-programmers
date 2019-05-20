@@ -113,8 +113,8 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
               <span
                 css={css`
                   position: absolute;
-                  right: -0.3em;
-                  top: 0;
+                  right: -0.23em;
+                  top: -0.05em;
                   z-index: ${zIndices('badge')};
                 `}
               >
