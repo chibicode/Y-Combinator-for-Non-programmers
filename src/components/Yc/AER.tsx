@@ -1661,6 +1661,9 @@ export default {
         e: 'highlighted',
         f: 'highlighted'
       }}
+      caption={
+        <H args={{ name: 'secretCodeLetterMinusOneCaption', letter: 'i' }} />
+      }
     />
   ),
   ufyc: (

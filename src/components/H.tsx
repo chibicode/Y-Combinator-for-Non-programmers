@@ -114,6 +114,7 @@ export interface HProps {
     | { name: 'secretCodeReview'; example: React.ReactNode }
     | { name: 'secretCodeMinusOneCaption' }
     | { name: 'secretCodeTwoMinusOneCaption' }
+    | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -927,6 +928,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'secretCodeLetterMinusOneCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <EmojiForLetter letter={args.letter} /> <Emoji>➖</Emoji>{' '}
+          <Emoji>1️⃣</Emoji> を計算
+        </>
+      )
+    }
+  }
   if (args.name === 'secretCodeAddOneCaptionWithoutQuestion') {
     if (locale === 'en') {
       return <>?</>
@@ -1061,9 +1074,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Strong>
             コンピューターサイエンスとは、
-            プログラミングやAI開発の根幹となる学問です。
+            ソフトウェアやAI開発の根幹となる学問です。
           </Strong>
-          たとえば、グーグルなどの検索エンジンや、地図アプリのナビ機能、カメラアプリの顔認識機能には、コンピューターサイエンスの考え方が応用されています。
+          たとえば、<Emoji>🔎</Emoji> グーグルなどの検索エンジン、
+          <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
+          カメラアプリの顔認識機能には
+          、コンピューターサイエンスの考え方が応用されています。
         </>
       )
     }

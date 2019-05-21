@@ -26,7 +26,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              この記事では、<Strong>とあるパズル</Strong>
+              当記事では、<Strong>とあるパズル</Strong>
               を使ってYコンビネーターとは何かを学んでいきます。 今回は、
               <Em>このパズルの基本ルール</Em>
               を紹介します。

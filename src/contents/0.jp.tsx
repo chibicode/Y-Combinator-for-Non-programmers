@@ -1,6 +1,9 @@
 import React from 'react'
+import { numEpisodes } from 'src/lib/episodeCategories'
 import {
   Blockquote,
+  Ol,
+  OlLi,
   Em,
   Img,
   ExternalLink,
@@ -62,7 +65,7 @@ export default () => (
             </P>
             <P>
               本記事「<Strong>{lessonTitle}</Strong>
-              」は、筆者のブロガー人生の中で最も時間をかけた、とっておきの記事です。すべて
+              」は、筆者のブロガー人生の中で最も執筆に時間をかけた記事です。すべて
               <Strong>無料</Strong>
               で公開しているので、最後まで楽しんでいただけると嬉しいです。
             </P>
@@ -104,11 +107,27 @@ export default () => (
                   }}
                 />
               </InlineHeader>
-              それぞれ<Strong>5ページずつ、全15ページ</Strong>
+              それぞれ<Strong>5ページずつ、</Strong>
+              それに「
+              <InlineHeader>
+                <H
+                  args={{ name: 'titlePrefixColored' }}
+                  episodeNumberOverrides={0}
+                />
+              </InlineHeader>
+              」と「
+              <InlineHeader>
+                <H
+                  args={{ name: 'titlePrefixColored' }}
+                  episodeNumberOverrides={numEpisodes + 1}
+                />
+              </InlineHeader>
+              」を加えた
+              <Strong>全17ページ</Strong>
               で構成されています。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <P>筆者の予想だと、平均的な人の読了時間は、</P>
+            <P>筆者の予想だと、平均的な読者の読了時間は、</P>
             <Ul>
               <UlLi>
                 <InlineHeader>
@@ -116,7 +135,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'beginner' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>3〜4分</Strong>、合計<Strong>15〜20分</Strong>
+                は1ページ<Strong>4分</Strong>、合計<Strong>20分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -127,7 +146,7 @@ export default () => (
                     }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>4〜6分</Strong>、合計<Strong>20〜30分</Strong>
+                は1ページ<Strong>5分</Strong>、合計<Strong>25分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -135,10 +154,26 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'advanced' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>5〜8分</Strong>、合計<Strong>25〜40分</Strong>
+                は1ページ<Strong>6分</Strong>、合計<Strong>30分</Strong>
               </UlLi>
               <UlLi>
-                全部合わせて<Strong>60〜90分</Strong>
+                <InlineHeader>
+                  <H
+                    args={{ name: 'titlePrefixColored' }}
+                    episodeNumberOverrides={0}
+                  />
+                </InlineHeader>
+                と
+                <InlineHeader>
+                  <H
+                    args={{ name: 'titlePrefixColored' }}
+                    episodeNumberOverrides={numEpisodes + 1}
+                  />
+                </InlineHeader>
+                合わせて<Strong>5分</Strong>
+              </UlLi>
+              <UlLi>
+                全部合わせて<Strong>1時間20分</Strong>
               </UlLi>
             </Ul>
             <P>
@@ -155,49 +190,86 @@ export default () => (
         // }
       },
       {
-        title: 'はじめに: コンピューターサイエンスって何？',
+        title: 'コンピューターサイエンスって何？',
         content: (
           <>
             <EmojiSeparator emojis={['🤖', '🤔', '🤖']} />
             <P>
-              この記事のタイトルは「<Strong>{lessonTitle}</Strong>」ですが、
+              当記事のタイトルは「<Strong>{lessonTitle}</Strong>」ですが、
               <Em>
-                コンピュターサイエンスとは何か
-                、ご存じない方がほとんどだと思います
+                コンピュターサイエンスとは何か、ご存じない方がほとんどだと思います
               </Em>
               。
             </P>
             <P>
               <H args={{ name: 'whatIsComputerScience' }} />
             </P>
+            <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
             <P>
-              プログラミングをマスターしなくても、コンピュターサイエンスの勘所を押さえれば、たとえばAIがどう作られているのかをなんとなく理解することができます。
+              そして、
+              <Strong>
+                コンピューターサイエンスの基礎を学ぶのに、プログラミングは必要ありません
+              </Strong>
+              。コードを書かなくても、コンピューターサイエンスの知識をつけることは可能です。
             </P>
+            <EmojiSeparator emojis={['😉', '💻', '❌']} />
             <P>
-              「
+              だから、「
               <Em>
-                プログラミングを勉強する気はないけど、プログラミング的な考え方は知っておきたい
+                ソフトウェアやAIについての理解を深めたいが、
+                <Strong>プログラミングを勉強する気は毛頭ない</Strong>
               </Em>
-              」という方は、コンピューターサイエンスをかじってみるのもいいかもしれません。
+              」という方には、コンピューターサイエンスをかじってみるのをおすすめします。当記事は、そんな方のために書きました。
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                筆者は、米国の大学でコンピューターサイエンスを専攻しました。
+              </P>
+            </>
+          )
+        }
       },
       {
-        title: 'コンピューターサイエンスを学ぶきっかけに',
+        title: '学ぶきっかけに',
         content: (
           <>
+            <P>当記事では、次の3点に留意しました。</P>
             <EmojiSeparator emojis={['📝', '🤔', '💭']} />
-            <P>
-              もちろん、短期間でコンピューターサイエンスのすべてを学ぶことはできません。だからこの記事の目標は、
-              <Strong>
-                「コンピューターサイエンスを学んでみたい」と思うきっかけをみなさんに提供すること
-              </Strong>
-              です。
-            </P>
-            <P>
-              「コンピューターサイエンスって面白い！」「自分でもわかるかも！」「もっと知りたい！」と思ってくださる方が増えたらいいなと思っています。
-            </P>
+            <Ol>
+              <OlLi>
+                短時間でコンピューターサイエンスのすべてを説明することはできません。だから、当記事では「
+                <Em>筆者が最も面白いと思ったコンピューターサイエンスの題材</Em>
+                」を<Strong>ひとつだけ</Strong>
+                紹介します。広く浅くではなく、狭く深くを心がけました。
+              </OlLi>
+              <OlLi>
+                当記事の目標は、
+                <Em>
+                  コンピューターサイエンスを学ぶ「<Strong>きっかけ</Strong>」
+                </Em>
+                を提供することです。読後に、「コンピューターサイエンスって面白い！」「もっと知りたい！」と思ってくだされば嬉しいです。
+                ただ、あくまで「きっかけ」を提供する記事なので、
+                <Em>ハイレベルで実践的な内容は提供できません</Em>
+                が、あしからず。
+              </OlLi>
+              <OlLi>
+                当記事は、「プログラミングを勉強する気は毛頭ない」という方向けに書きました。だから、
+                <Em>
+                  プログラミングを勉強中の方や、プログラマーの方にとっては、この記事は役に立たないかもしれません
+                </Em>
+                。ただ、
+                <Em>
+                  役には立たなくても、「<Strong>読み物として面白い</Strong>
+                  」と思っていただけるかもしれません
+                </Em>
+                。もしもお時間があれば、読み進めてくださると嬉しいです。
+              </OlLi>
+            </Ol>
           </>
         )
       },
@@ -205,23 +277,22 @@ export default () => (
         title: <>スマホで完結。数学の知識も必要なし</>,
         content: (
           <>
-            {' '}
-            <EmojiSeparator emojis={['😉', '📱', '🆗']} />
             <P>
-              当サイトでは、よくあるプログラミング学習サイトとは違い、
-              <Em>プログラムを書く必要はありません。</Em>
-              だから、スマホひとつで完結します。プログラミング経験者にも、未経験者にも楽しんでもらえるように書いています。
+              当記事ではプログラミングを行わないので、
+              <Em>パソコンは必要ありません</Em>
+              。スマホで読み進めることができます。
             </P>
+            <EmojiSeparator emojis={['😉', '📱', '🆗']} />
             <P>
               また、コンピューターサイエンスは数学と深く結びついていますが、
               <Em>
-                この記事に必要な数学知識は「<Strong>足し算</Strong>{' '}
+                当記事に必要な数学知識は「<Strong>足し算</Strong>{' '}
                 <Emoji>➕</Emoji>」と「<Strong>掛け算</Strong> <Emoji>✖️</Emoji>
                 」だけ
               </Em>
               です。それより難しい数式は一切登場しません。
             </P>
-            <P>それでは、本題に入りましょう！</P>
+            <P>前置きはこれくらいにして、本題に入りましょう！</P>
           </>
         )
       },
@@ -231,7 +302,7 @@ export default () => (
           <>
             <EmojiSeparator emojis={['🧙‍♂️', '🤔', '🧙‍♂️']} />
             <P>
-              この記事では、コンピューターサイエンスの中でも特に面白い題材を解説します。それがこの記事の題名「
+              当記事では、コンピューターサイエンスの中でも特に面白い題材を解説します。それが題名「
               <Em>{lessonTitle}</Em>」にもある「
               <Strong>Yコンビネーター</Strong>
               」です。
@@ -290,7 +361,7 @@ export default () => (
               </Em>
             </P>
             <P>
-              これは約10年前、筆者が大学でコンピューターサイエンスを専攻していたときに学んだ用語なのですが、
+              筆者はYコンビネーターについて約10年前に学んだのですが、
               <Em>
                 あまりに興味深くて<Strong>感動</Strong>してしまった
               </Em>
@@ -341,7 +412,7 @@ export default () => (
             </P>
             <P>
               <H args={{ name: 'byTheWay' }} />{' '}
-              この記事はプログラミング知識ゼロの方でも分かるように書いていますので、「
+              当記事はプログラミング知識ゼロの方でも分かるように書いていますので、「
               <Em>プログラマーに特化した説明のほうがいい</Em>
               」と思う方もいらっしゃるかもしれません。
             </P>
@@ -362,12 +433,11 @@ export default () => (
               caption={'ちなみにこの時、筆者は観客として参加していました。'}
             />
             <P>
-              Weirich氏の講演は素晴らしかったですが、この記事とは内容が180度異なります。というわけで、ぜひこの記事も読んでみてください。
+              Weirich氏の講演は素晴らしかったですが、当記事とは内容が180度異なりますので、両方見てくださると嬉しいです。
             </P>
             <YcNextLessonButton />
             <P>
-              <InlineHeader>GitHub:</InlineHeader>{' '}
-              また、この記事のソースコードは
+              <InlineHeader>GitHub:</InlineHeader> また、当記事のソースコードは
               <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
               です。
             </P>
@@ -444,7 +514,7 @@ export default () => (
             </P>
             <P>
               <Em>
-                しかし、この記事を読めば、プログラマーではなくてもYコンビネーターを理解できます
+                しかし、当記事を読めば、プログラマーではなくてもYコンビネーターを理解できます
               </Em>
               。ITベンチャー養成機関としての「Yコンビネーター」をご存知の方も、ぜひ読み進めてみてください！
             </P>

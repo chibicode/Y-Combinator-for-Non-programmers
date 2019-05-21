@@ -90,8 +90,7 @@ const stepShorthand = (
 const stepRegular = (
   e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
-  matchExists?: boolean,
-  executableUnaryExists?: boolean
+  matchExists?: boolean
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
@@ -266,12 +265,7 @@ const runStep = (
     executableUnaryExists,
     previouslyChangedExpressionState
   } = isExecutableCallRegular(expression)
-    ? stepRegular(
-        expression,
-        stepOptions,
-        e.matchExists,
-        e.executableUnaryExists
-      )
+    ? stepRegular(expression, stepOptions, e.matchExists)
     : stepShorthand(expression)
 
   if (!callParent && !callParentKey && !funcParent) {
