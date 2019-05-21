@@ -127,7 +127,7 @@ export default () => (
               で構成されています。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <P>筆者の予想だと、平均的な読了時間は、</P>
+            <P>筆者の予想だと、平均読了時間は以下の通りです。</P>
             <Ul>
               <UlLi>
                 <InlineHeader>
@@ -154,7 +154,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'advanced' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>5分</Strong>、合計5✕5 = <Strong>25分</Strong>
+                は1ページ<Strong>6分</Strong>、合計6✕5 = <Strong>30分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -173,11 +173,14 @@ export default () => (
                 合わせて<Strong>10分</Strong>
               </UlLi>
               <UlLi>
-                全部合わせて<Strong>80分</Strong>ほど
+                全部合わせて<Strong>85分</Strong>ほど
               </UlLi>
             </Ul>
             <P>
-              読むのが早い方は、この半分以下の時間で読み切ることができるかもしれません。長いですが、記事というより電子書籍だと思って、少しずつ読み進めてくだされば幸いです。
+              読むのが早い方は、この半分以下の時間で読み切ることができるかもしれません。
+            </P>
+            <P>
+              長いですが、記事というより電子書籍だと思って、少しずつ読み進めてくだされば幸いです。
             </P>
           </>
         )
@@ -265,7 +268,7 @@ export default () => (
             <>
               <P>
                 <InlineHeader>注意:</InlineHeader>{' '}
-                プログラミングを勉強中の方や、プログラマーの方にとって、この記事は読み物として楽しめても、役には立たないでしょう。
+                プログラミングを勉強中の方や、プログラマーの方にとって、この記事は読み物として楽しめても、キャリアの役には立たないでしょう。
               </P>
             </>
           )
@@ -419,8 +422,8 @@ export default () => (
               caption={'ちなみにこの時、筆者は観客として参加していました。'}
             />
             <P>
-              <InlineHeader>GitHub:</InlineHeader>{' '}
-              ちなみに、当記事のソースコードは
+              <InlineHeader>余談:</InlineHeader>{' '}
+              当記事はTypeScriptとNext.jsで書いています。ソースコードは
               <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
               です。
             </P>
