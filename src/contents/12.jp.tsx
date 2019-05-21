@@ -374,17 +374,22 @@ export default () => (
             </P>
             {AER.yvia}
             <P>
-              次に、右下の部分は「
+              次に、右下には
+              <Strong>
+                <EmojiWithText letter="i" />
+              </Strong>
+              と、その下に「
               <Strong>
                 1を引く
                 <H args={{ name: 'bentoBox', skipEmoji: true }} />
               </Strong>
-              」です。
+              」があります。
             </P>
             {AER.qifg}
             <P>
-              そしてこの場合、1を引く
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />が
+              この場合、「1を引く
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              」が
               <Strong>
                 <EmojiWithText letter="i" />
                 の真下にある
@@ -414,10 +419,22 @@ export default () => (
             {AER.pbgd}
             <P>
               つまり、「<Strong>1 - 1</Strong>
-              」の計算が行われるので、最終的に暗号は<Emoji>0️⃣</Emoji>
+              」の計算が行われるので、
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
+                  <Emoji>1️⃣</Emoji>
+                </EmojiForLetterWithTopRightBadgeWrapper>,
+                <Emoji>✨</Emoji>
+              ]}
+            />
+            <P>
+              最終的に暗号は<Emoji>0️⃣</Emoji>
               になります。
             </P>
-            <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
+            <EmojiSeparator emojis={['✨', '0️⃣', '✨']} />
             <P>
               もともとの
               <H args={{ name: 'bentoBox', skipEmoji: true }} />

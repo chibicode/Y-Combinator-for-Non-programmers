@@ -25,10 +25,10 @@ const EmojiForLetterWithTopRightBadgeWrapper = ({
         css={[
           css`
             position: absolute;
-            top: -0.15em;
+            top: -0.2em;
             font-size: 1.3em;
             z-index: ${zIndices('badge')};
-            right: -0.15em;
+            right: -0.25em;
           `
         ]}
       >
