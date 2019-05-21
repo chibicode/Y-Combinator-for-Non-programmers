@@ -1615,6 +1615,67 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e12E7}
     />
+  ),
+  exww: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E8}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+    />
+  ),
+  qgun: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E8}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 1, letter: 'g' }} />
+      }
+    />
+  ),
+  yvia: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E9}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+    />
+  ),
+  qifg: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E10}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        a: 'highlighted',
+        b: 'highlighted',
+        c: 'highlighted',
+        d: 'highlighted',
+        e: 'highlighted',
+        f: 'highlighted'
+      }}
+    />
+  ),
+  ufyc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E11}
+      showPriorities
+    />
+  ),
+  pbgd: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e12E12}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.5}
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly

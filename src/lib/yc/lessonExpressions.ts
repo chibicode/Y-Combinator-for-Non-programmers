@@ -387,6 +387,62 @@ export const e12E7 = initializeExpressionContainer({
   shorthandUnary: 'pred'
 })
 
+export const e12E8 = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
+  },
+  numberParams('g', 'h', 1)
+])
+
+export const e12E9 = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
+  },
+  {
+    shorthandNumber: 1,
+    initialHighlight: true
+  }
+])
+
+export const e12E10 = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), highlighted('i')]
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
+export const e12E11 = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: {
+      shorthandUnary: 'pred',
+      name: 'i',
+      initialHighlight: true
+    }
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
+export const e12E12 = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: {
+      shorthandUnary: 'pred',
+      name: 'i'
+    }
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
 // TODO: Show how much easier this would be using shorthand
 export const e12EX = initializeExpressionContainer([
   {

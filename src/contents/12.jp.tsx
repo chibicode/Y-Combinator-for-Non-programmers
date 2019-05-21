@@ -11,6 +11,7 @@ import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
 
 export default () => (
   <EpisodeCardList
@@ -312,7 +313,119 @@ export default () => (
             </P>
             {AER.yykk}
             <P>
-              このように省略表記することで、だいぶ分かりやすくなりました。次は、これを実際に役立ててみましょう！
+              このように省略表記することで、だいぶ分かりやすくなりました。次は、
+              <H args={{ name: 'yesNoQuiz' }} />
+              をしながら、これを実際に役立ててみましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.exww}
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
+            </P>
+            <YesNoButtons answer="yes" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
+              </Strong>
+              最終的に暗号は<Emoji>0️⃣</Emoji>
+              になります。
+            </P>
+            <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
+            <P>
+              <H args={{ name: 'fastForward' }} />
+              する前に、先ほどの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を省略表記してみましょう。
+            </P>
+            <P>
+              まず、上の部分は「<Strong>1</Strong>」の暗号の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              なので、
+            </P>
+            {AER.qgun}
+            <P>
+              <Emoji>1️⃣</Emoji>と省略表記します。
+            </P>
+            {AER.yvia}
+            <P>
+              次に、右下の部分は「
+              <Strong>
+                1を引く
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」です。
+            </P>
+            {AER.qifg}
+            <P>
+              そしてこの場合、1を引く
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />が
+              <Strong>
+                <EmojiWithText letter="i" />
+                の真下にある
+              </Strong>
+              ので、「
+              <Strong>
+                <EmojiWithText letter="i" />
+                に入る暗号から1を引く
+              </Strong>
+              」ということになります。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
+                  <EmojiForLetter letter="i" />
+                </EmojiForLetterWithTopRightBadgeWrapper>,
+                <Emoji>✨</Emoji>
+              ]}
+            />
+            <P>つまり省略表記すると、こうなります:</P>
+            {AER.ufyc}
+            <P>
+              ここまでくると、どうなるかわかりやすいですね。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.pbgd}
+            <P>
+              つまり、「<Strong>1 - 1</Strong>
+              」の計算が行われるので、最終的に暗号は<Emoji>0️⃣</Emoji>
+              になります。
+            </P>
+            <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
+            <P>
+              もともとの
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              は複雑でしたが、
+              <Strong>
+                省略表記をすることで、何が起きているかがひと目で分かるようになった
+              </Strong>
+              、という例でした。
             </P>
           </>
         )

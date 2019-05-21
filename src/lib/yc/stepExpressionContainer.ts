@@ -24,8 +24,7 @@ import {
   stepToShowCallArg,
   stepToShowFuncArg,
   stepToShowFuncBound,
-  stepToShowFuncUnbound,
-  stepToBetaReduceUnaryExecuted
+  stepToShowFuncUnbound
 } from 'src/lib/yc/steps'
 import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
 import {
@@ -48,7 +47,10 @@ const stepExpressionContainerReset = (
   const nextCallExpressionAndParent = findNextCallExpressionAndParent(
     newContainer.expression
   )
-  if (nextCallExpressionAndParent.expression) {
+  if (
+    nextCallExpressionAndParent.expression ||
+    isVariableShorthandUnaryNumber(e.expression)
+  ) {
     return newContainer
   } else {
     return {
@@ -193,17 +195,17 @@ const stepRegular = (
       }
     }
     case 'betaReducePreviewAfter': {
-      if (executableUnaryExists) {
-        return {
-          nextExpression: stepToBetaReduceUnaryExecuted(e),
-          previouslyChangedExpressionState: 'betaReducePreviewUnaryExecuted'
-        }
-      } else {
-        return {
-          nextExpression: stepToBetaReducePreviewCrossed(e),
-          previouslyChangedExpressionState: 'betaReducePreviewCrossed'
-        }
+      // if (executableUnaryExists) {
+      //   return {
+      //     nextExpression: stepToBetaReduceUnaryExecuted(e),
+      //     previouslyChangedExpressionState: 'betaReducePreviewUnaryExecuted'
+      //   }
+      // } else {
+      return {
+        nextExpression: stepToBetaReducePreviewCrossed(e),
+        previouslyChangedExpressionState: 'betaReducePreviewCrossed'
       }
+      // }
     }
     case 'betaReducePreviewUnaryExecuted': {
       return {

@@ -136,7 +136,11 @@ export default function buildExpressionFromParams(
     }
   } else if (isVariableShorthandUnaryParams(expressionParams)) {
     return {
-      ...buildVariableExpression(expressionParams.name, true, 'default'),
+      ...buildVariableExpression(
+        expressionParams.name,
+        true,
+        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
+      ),
       shorthandUnary: expressionParams.shorthandUnary
     }
   } else {
