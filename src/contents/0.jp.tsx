@@ -127,7 +127,7 @@ export default () => (
               で構成されています。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <P>筆者の予想だと、平均的な読者の読了時間は、</P>
+            <P>筆者の予想だと、平均的な読了時間は、</P>
             <Ul>
               <UlLi>
                 <InlineHeader>
@@ -135,7 +135,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'beginner' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>4分</Strong>、合計<Strong>20分</Strong>
+                は1ページ<Strong>4分</Strong>、合計4✕5 = <Strong>20分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -146,7 +146,7 @@ export default () => (
                     }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>5分</Strong>、合計<Strong>25分</Strong>
+                は1ページ<Strong>5分</Strong>、合計5✕5 = <Strong>25分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -154,7 +154,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'advanced' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>6分</Strong>、合計<Strong>30分</Strong>
+                は1ページ<Strong>5分</Strong>、合計5✕5 = <Strong>25分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -170,24 +170,17 @@ export default () => (
                     episodeNumberOverrides={numEpisodes + 1}
                   />
                 </InlineHeader>
-                合わせて<Strong>5分</Strong>
+                合わせて<Strong>10分</Strong>
               </UlLi>
               <UlLi>
-                全部合わせて<Strong>1時間20分</Strong>
+                全部合わせて<Strong>80分</Strong>ほど
               </UlLi>
             </Ul>
             <P>
-              ほどでしょう。記事というより、電子書籍に近いかもしれません。お昼休みや通勤時間にぜひ。
+              読むのが早い方は、この半分以下の時間で読み切ることができるかもしれません。長いですが、記事というより電子書籍だと思って、少しずつ読み進めてくだされば幸いです。
             </P>
           </>
         )
-        // footer: {
-        //   content: (
-        //     <>
-
-        //     </>
-        //   )
-        // }
       },
       {
         title: <>コンピューターサイエンスって何？</>,
@@ -201,10 +194,35 @@ export default () => (
               </Em>
               。
             </P>
-            <P>
-              <H args={{ name: 'whatIsComputerScience' }} />
-            </P>
+            <H args={{ name: 'whatIsComputerScience' }} />
             <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
+            <P>
+              だからもしも、「
+              <Em>
+                世間を騒がせているアプリやAIが、どんな仕組みでできているのか、ほんの少しでいいから理解してみたい
+              </Em>
+              」と思うことがありましたら、コンピューターサイエンスをかじってみるのをお薦めします。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: <>プログラミングや数学は必要？</>,
+        content: (
+          <>
+            <P>では、いきなりですが質問です。</P>
+            <EmojiSeparator emojis={['💻', '🤔', '🔢']} />
+            <P>
+              <InlineHeader>質問:</InlineHeader>{' '}
+              <Em>
+                コンピューターサイエンスを学ぶためには、
+                <Strong>プログラミング、または高度な数学の知識が必要だ</Strong>
+                。
+              </Em>
+              <H args={{ name: 'yesOrNo' }} />
+            </P>
+            <YesNoButtons answer="no" />
           </>
         )
       },
