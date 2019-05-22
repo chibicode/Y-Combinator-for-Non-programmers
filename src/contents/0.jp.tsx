@@ -125,7 +125,7 @@ export default () => (
               で構成されています。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <P>筆者の予想だと、平均読了時間は以下の通りです。</P>
+            <P>筆者の予想だと、平均読了時間はおそらく:</P>
             <Ul>
               <UlLi>
                 <InlineHeader>
@@ -133,7 +133,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'beginner' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>4分</Strong>、合計4✕5 = <Strong>20分</Strong>
+                は1ページ<Strong>3〜4分</Strong>、合計<Strong>15〜20分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -144,7 +144,7 @@ export default () => (
                     }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>5分</Strong>、合計5✕5 = <Strong>25分</Strong>
+                は1ページ<Strong>4〜5分</Strong>、合計<Strong>20〜25分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -152,7 +152,7 @@ export default () => (
                     args={{ name: 'categoryNameColored', category: 'advanced' }}
                   />
                 </InlineHeader>
-                は1ページ<Strong>6分</Strong>、合計6✕5 = <Strong>30分</Strong>
+                は1ページ<Strong>5〜6分</Strong>、合計<Strong>25〜30分</Strong>
               </UlLi>
               <UlLi>
                 <InlineHeader>
@@ -168,10 +168,10 @@ export default () => (
                     episodeNumberOverrides={numEpisodes + 1}
                   />
                 </InlineHeader>
-                合わせて<Strong>10分</Strong>
+                合わせて<Strong>5〜10分</Strong>
               </UlLi>
               <UlLi>
-                全部合わせて<Strong>85分</Strong>ほど
+                全部合わせて<Strong>65〜85分</Strong>ほど
               </UlLi>
             </Ul>
             <P>
