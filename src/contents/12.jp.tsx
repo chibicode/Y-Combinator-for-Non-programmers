@@ -11,35 +11,83 @@ import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
 import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
-import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
+import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
+        title: <>暗号の復習</>,
+        content: (
+          <>
+            <P>
+              中級で話した「
+              <Strong>
+                <H args={{ name: 'bentoBox', short: true }} />
+                の暗号
+              </Strong>
+              」について忘れてしまった方もいるかもしれないので、復習としてここに法則をもう一度書いておきますね。
+            </P>
+            <Hr />
+            <H args={{ name: 'secretCodeReview', example: AER.eozk }} />
+          </>
+        )
+      },
+      {
         title: (
           <>
-            複雑な
+            1を足す
             <H args={{ name: 'bentoBox', short: true }} />
           </>
         ),
         content: (
           <>
+            <EmojiSeparator
+              nodes={[
+                <InlineEmojiBoxesForQuestion size="md" />,
+                <Emoji>➕</Emoji>,
+                <Emoji>1️⃣</Emoji>
+              ]}
+            />
             <P>
-              <H args={{ name: 'episodeWelcomeText' }} />
-              早速、
-              <H args={{ name: 'lookAtThisBentoBox' }} />。
+              以前紹介した、「
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                の暗号に1を足す
+                <H args={{ name: 'bentoBox', short: true }} />
+              </Strong>
+              」をご覧ください。
             </P>
-            {AER.gopk}
+            {AER.xgei}
             <P>
-              今まで見たことがないくらい複雑な
+              そしてこちらに、暗号が「<Strong>1</Strong>」の
               <H args={{ name: 'bentoBox', short: true }} />
-              ですね。これは、どういう効果があるのでしょうか？
+              を用意しました。
             </P>
+            {AER.slyk}
             <P>
+              これを
+              <InlineEmojiBoxesForQuestion />
+              に埋め込んで、
+              <H args={{ name: 'fastForward' }} />
+              してみましょう。
+            </P>
+            {AER.eemn}
+            <P>
+              最終的に暗号が「<Strong>2</Strong>」の
+              <H args={{ name: 'bentoBox', short: true }} />
+              が残りました。
+            </P>
+            {AER.rceu}
+            <P>
+              以前話した通り、「<Strong>1 + 1 = 2</Strong>
+              」が計算できたわけですね。
+            </P>
+            <EmojiSeparator emojis={['1️⃣', '➕', '1️⃣']} />
+            <P>
+              では、ここでまた
               <H args={{ name: 'yesNoQuiz' }} />
-              で検証してみましょう！
+              をしてみましょう！
             </P>
           </>
         )
@@ -54,418 +102,323 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに、暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox', short: true }} />
-              を用意しました。
+              こちらに別の暗号が「<Strong>1</Strong>」の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              があります。
             </P>
-            {AER.imgp}
+            {AER.lrja}
             <P>
-              これを、先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
-              <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
+              これを、先ほどの「
+              <Strong>
+                <InlineEmojiBoxesForQuestion />
+                の暗号に1を足す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」に入れてみます。
             </P>
-            {AER.lxnu}
+            {AER.bcae}
             <P>
-              <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
+              <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
             </P>
-            <YesNoButtons answer="yes" tooHard />
+            <YesNoButtons answer="no" />
           </>
         )
       },
       {
         title: (
           <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
           </>
         ),
         content: (
           <>
             <P>
               <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
                 でした。
               </Strong>
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.ccon}
+            {AER.zuam}
             <P>
-              最後に残ったのは、暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              でした。
+              最後に残ったのは、
+              <Strong>
+                暗号が「2」の
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                ではありません。
+              </Strong>
+              よく似ていますが、違います。
             </P>
-            {AER.npfx}
+            <EmojiSeparator emojis={['❌', '2️⃣', '❌']} />
             <P>
-              もともとの暗号は「<Strong>2</Strong>」だったので、「
-              <Strong>2</Strong>」が「<Strong>1</Strong>」になったわけです。
+              なぜなら、
+              <Strong>
+                <EmojiWithText letter="b" />
+                が右下にひとつしかないからです
+              </Strong>
+              。暗号が「2」の場合、
+              <EmojiWithText letter="b" />
+              が右下にふたつありますが、ここではひとつしかありません。
             </P>
-            <EmojiSeparator emojis={['2️⃣', '➡️', '1️⃣']} />
+            {AER.kfcw}
+            <P>
+              つまり、<Strong>1 + 1 = 2</Strong>にならなかったのです。
+            </P>
           </>
         )
       },
       {
         title: (
           <>
-            1を引く
-            <H args={{ name: 'bentoBox', short: true }} />
-          </>
-        ),
-        content: (
-          <>
-            {AER.pnob}
-            <P>
-              つまり、これは
-              <InlineEmojiBoxesForQuestion />
-              の暗号から「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', short: true }} />
-              なのです。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <InlineEmojiBoxesForQuestion size="md" />,
-                <Emoji>➖</Emoji>,
-                <Emoji>1️⃣</Emoji>
-              ]}
-            />
-            <P>
-              足し算や掛け算の
-              <H args={{ name: 'bentoBox', short: true }} />
-              より、かなり複雑ですよね。
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: (
-          <>
+            理由: <EmojiWithText letter="b" />が
             <BottomRightBadge inline bottomRightBadgeType="callArg" />と
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-            が必ず同じになる
+            にあるから
           </>
         ),
         content: (
           <>
             <P>
-              <InlineHeader>ちなみに:</InlineHeader>{' '}
-              <InlineEmojiBoxesForQuestion />
-              にどんな料理を入れても、
-              <H args={{ name: 'fastForward' }} />
-              の途中で、
-              <Strong>
+              前回、「
+              <Em>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                に必ず同じ料理が登場します。
-              </Strong>
-            </P>
-            <P>
-              先ほどの例で確かめてみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.fiab}
-            <P>
-              <Strong>
-                <EmojiWithText letter="e" />が
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              </Strong>
-              にそれぞれありますね。前回説明した通り、このままだと正しい結果が出ません。
+                に同じ料理があるかどうかで、結果が変わることがある。
+              </Em>
+              」と説明しました。
             </P>
             <EmojiSeparator
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                <EmojiForLetter letter="e" />,
+                <EmojiForLetter letter="b" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ]}
             />
             <P>
-              というわけで、正しい結果を出すために、
+              「1 + 1 = 2」にならなかった理由は、
               <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                と
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                にある
-                <EmojiWithText letter="e" />
-                が、まだ使われていない別の料理(
-                <EmojiWithText letter="a" />
-                )に自動的に変わります。
+                に同じ料理(
+                <EmojiWithText letter="b" />
+                )があり、
+              </Strong>
+              これが結果を狂わせてしまったからです。
+            </P>
+            {AER.jxyg}
+            <P>
+              では、
+              <Strong>
+                どうすれば「1 + 1 = 2」を正しく計算できるでしょうか？
               </Strong>
             </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="e" />,
-                <Emoji>➡️</Emoji>,
-                <EmojiForLetter letter="a" />
-              ]}
-            />
+            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            解決策: どちらかの
+            <EmojiWithText letter="b" />
+            を別の料理にする
+          </>
+        ),
+        content: (
+          <>
             <P>
-              実際に確かめてみましょう。
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.plxd}
-            <P>
-              ご覧の通り、
+              これを解決するには、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />か
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              にある
-              <EmojiWithText letter="e" />
-              が、
-              <EmojiWithText letter="a" />
-              に変わりました。
+              のどちらかの
+              <EmojiWithText letter="b" />
+              を別の料理にしないといけません。
             </P>
-            <P>
-              これを行わないと、「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              として機能しません。ここでは詳しく書きませんが、引き算とは全然違う答えが出てしまうのです。
-            </P>
-            <Hr />
-            <P>
-              以上、前回紹介したルールが役に立っているよ、という余談でした。
-            </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'bentoBox', skipEmoji: true }} />
-            を「省略表記」できないか？
-          </>
-        ),
-        content: (
-          <>
-            {AER.zaoc}
-            <P>
-              上の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              は、「<Strong>2 - 1</Strong>」を計算できることがわかりましたが、
-              <Em>
-                少し複雑すぎて、ひと目見て何が起きているかわかりにくいですよね。
-              </Em>
-            </P>
-            <EmojiSeparator emojis={['❓', '🤯', '❓']} />
-            <P>
-              <InlineHeader>疑問:</InlineHeader>{' '}
-              <Em>
-                上の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-                を何らかの手法で「<Strong>省略表記</Strong>
-                」することで、何が起きているをかわかりやすくする方法はないでしょうか？
-              </Em>
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>暗号の省略表記</>,
-        content: (
-          <>
-            <P>
-              まず、
-              <Em>
-                暗号の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />を
-                <Strong>数字で</Strong>表示してみます
-              </Em>
-              。たとえば、こちらは
-              <Strong>暗号が「2」</Strong>の
-              <H args={{ name: 'bentoBox', short: true }} />
-              なので、
-            </P>
-            {AER.imgp}
-            <P>このように数字で表示してみます。</P>
-            {AER.xekr}
-            <P>
-              数字で省略表記することで、ひと目見て何のことか分かりやすくなりました。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>引き算の省略表記</>,
-        content: (
-          <>
-            <P>
-              <Emoji>2️⃣</Emoji>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              を、先ほどの「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              に入れてみました。
-            </P>
-            {AER.uqts}
-            <P>
-              今度は、「<Strong>1を引く</Strong>」部分も省略してみましょう。
-            </P>
-            <P>
-              <Strong>
-                <TopRightBadge topRightBadgeType="pred" inline />
-                の記号を<Emoji>2️⃣</Emoji>の右上に表示
-              </Strong>
-              することによって、2から「<Strong>1を引く</Strong>
-              」ことを省略表記してみます。
-            </P>
-            {AER.ojma}
-            <P>
-              これを
-              <H args={{ name: 'play' }} />
-              すると、<Emoji>2️⃣</Emoji>が<Emoji>1️⃣</Emoji>になります。
-            </P>
-            {AER.yykk}
-            <P>このように省略表記することで、だいぶ分かりやすくなりました。</P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <Emoji>2️⃣</Emoji>
-                </EmojiForLetterWithTopRightBadgeWrapper>,
+                <EmojiForLetter letter="b" />,
                 <Emoji>➡️</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <Emoji>❓</Emoji>
               ]}
             />
             <P>
-              次は、
-              <H args={{ name: 'yesNoQuiz' }} />
-              をしながら、これを実際に役立ててみましょう！
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
-            </P>
-            {AER.exww}
-            <P>
-              <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
-            </P>
-            <YesNoButtons answer="yes" tooHard />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
+              どちらでもいいですが、ここでは
               <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の
+                <EmojiWithText letter="b" />
+                を変えることにしましょう。
               </Strong>
-              最終的に暗号は<Emoji>0️⃣</Emoji>
-              になります。
-            </P>
-            <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
-            <P>
-              <H args={{ name: 'fastForward' }} />
-              する前に、先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              を省略表記してみましょう。
-            </P>
-            <P>
-              まず、上の部分は「<Strong>1</Strong>」の暗号の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              なので、
-            </P>
-            {AER.qgun}
-            <P>
-              <Emoji>1️⃣</Emoji>と省略表記します。
-            </P>
-            {AER.yvia}
-            <P>
-              次に、右下には
-              <Strong>
-                <EmojiWithText letter="i" />
-              </Strong>
-              と、その下に「
-              <Strong>
-                1を引く
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              </Strong>
-              」があります。
-            </P>
-            {AER.qifg}
-            <P>
-              この場合、「1を引く
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              」が
-              <Strong>
-                <EmojiWithText letter="i" />
-                の真下にある
-              </Strong>
-              ので、「
-              <Strong>
-                <EmojiWithText letter="i" />
-                に入る暗号から1を引く
-              </Strong>
-              」ということになります。
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="i" />,
-                <Emoji>➖</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="funcUnbound">
+                  <EmojiForLetter letter="b" />
+                </EmojiForLetterWithBottomRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
+                <Emoji>❓</Emoji>
               ]}
             />
-            <P>つまり省略表記すると、こうなります:</P>
-            {AER.ufyc}
             <P>
-              ここまでくると、どうなるかわかりやすいですね。
+              しかし、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                の
+                <EmojiWithText letter="b" />
+                を変えるなら、
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+                <EmojiWithText letter="b" />
+                も同じく変えないといけません。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="funcBound">
+                  <EmojiForLetter letter="b" />
+                </EmojiForLetterWithBottomRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
+            <P>
+              でないと、
+              <H args={{ name: 'match' }} />や<H args={{ name: 'unmatch' }} />
+              などのパターンが変わってしまい、 「
+              <Strong>
+                1を足す
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              </Strong>
+              」として機能しなくなってしまいます。だから、
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              を同時に変えないといけないのです。
+            </P>
+            {AER.oiwu}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiWithText letter="b" />を<EmojiWithText letter="e" />に
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="e" />
+              ]}
+            />
+            <P>
+              というわけで、
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <Strong>
+                <EmojiWithText letter="b" />を<EmojiWithText letter="e" />
+                に変えてみました。
+              </Strong>
+            </P>
+            {AER.uqpp}
+            <P>
+              <InlineHeader>ちなみに:</InlineHeader>{' '}
+              <Em>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の他の料理と被らなければ、何の料理に変えても構いません。
+              </Em>
+            </P>
+            <P>
+              こうすることで、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              が被らなくなりました！
+            </P>
+            {AER.hxmk}
+            <P>
+              このまま最後まで進めてみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.pbgd}
+            {AER.rzbq}
             <P>
-              つまり、「<Strong>1 - 1</Strong>
-              」の計算が行われるので、最終的に暗号は<Emoji>0️⃣</Emoji>
-              になります。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <Emoji>1️⃣</Emoji>
-                </EmojiForLetterWithTopRightBadgeWrapper>,
-                <Emoji>➡️</Emoji>,
-                <Emoji>0️⃣</Emoji>
-              ]}
-            />
-            <P>
-              もともとの
+              すると、最後に暗号が「<Strong>2</Strong>」の
               <H args={{ name: 'bentoBox', skipEmoji: true }} />
-              は複雑でしたが、
-              <Strong>
-                省略表記をすることで、何が起きているかがひと目で分かるようになった
-              </Strong>
-              、という例でした。
+              が残りました。「<Strong>1 + 1 = 2</Strong>」が計算できたわけです。
             </P>
+            {AER.jlet}
+            <P>というわけで、まとめに入りましょう！</P>
           </>
         )
       },
       {
-        title: <>上級も残り少し</>,
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
         content: (
           <>
-            <P>上級編も残り2ページとなりました！</P>
-            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
-              次のページでは、
               <Strong>
-                条件分岐の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
-                を省略表記していきます。
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理がある場合は…
               </Strong>
-              そして、中級編の最後で話した「<Strong>繰り返し処理</Strong>
-              」について、もう一度検証していきます。
+            </P>
+            {AER.kqip}
+            <P>
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の該当する料理を別の料理に変えることによって、結果が変わってしまうのを避けることができます。
+              </Strong>
+            </P>
+            {AER.tkbr}
+            <P>
+              <InlineHeader>ちなみに:</InlineHeader>{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              の他の料理と被らなければ、何の料理に変えても構いません。
+            </P>
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                このルールは次のページにある
+                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                から
+                <Strong>自動で発動するので、 暗記する必要はありません。</Strong>
+                なんとなく「
+                <Em>こういうルールがあるんだな</Em>
+                」と思ってくだされば大丈夫です。
+              </P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>お疲れ様でした！</>,
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              にまつわる新ルールについてはこれで終了です。
+            </P>
+            <EmojiSeparator emojis={['🎉', '🥳', '🎉']} />
+            <P>
+              次のページからは、
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              の「<Strong>省略表記</Strong>」について見ていきます。
             </P>
             <YcNextLessonButton />
           </>

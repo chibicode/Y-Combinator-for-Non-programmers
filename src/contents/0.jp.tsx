@@ -2,8 +2,6 @@ import React from 'react'
 import { numEpisodes } from 'src/lib/episodeCategories'
 import {
   Blockquote,
-  Ol,
-  OlLi,
   Em,
   Img,
   ExternalLink,
@@ -262,7 +260,7 @@ export default () => (
                 <Em>
                   プログラミングを勉強する気はないけれど、ソフトウェアについて詳しくなりたいから、コンピューターサイエンスを学んでみようかな
                 </Em>
-                」という方が増えることを願っています。
+                」と思ってくださる方が増えることを願っています。
               </UlLi>
             </Ul>
           </>
@@ -293,7 +291,7 @@ export default () => (
         content: (
           <>
             <P>
-              当記事では、コンピューターサイエンスの中でも特に面白い、上級者向けの題材について解説します。それが題名「
+              当記事では、コンピューターサイエンスの中でも特に興味深い、上級者向けの題材について解説します。それが題名「
               <Em>{lessonTitle}</Em>」にもある「
               <Strong>Yコンビネーター</Strong>
               」です。
@@ -344,7 +342,7 @@ export default () => (
             <P>
               Yコンビネーターはとても複雑ながら、非常に興味深く、はじめて学んだときは「
               <Em>まるで魔法みたいだ！</Em>
-              」と感動してしまったのを覚えています。
+              」と知的な感動を覚えました。
             </P>
             <EmojiSeparator emojis={['😭', '✨', '🧙‍♂️']} />
             <P>
