@@ -33,11 +33,18 @@ export const ExternalLink = (props: JSX.IntrinsicElements['a']) => (
 // NOTE: passHref is necessary if you use emotion
 export const InternalLink = ({
   href,
+  prefetch,
   ...props
-}: JSX.IntrinsicElements['a']) => (
+}: JSX.IntrinsicElements['a'] & {
+  prefetch: boolean
+}) => (
   <LinkContext.Provider value={{ inLink: true }}>
-    <Link href={href} passHref>
+    <Link href={href} passHref prefetch={prefetch}>
       <a {...props} css={commonLinkClass} />
     </Link>
   </LinkContext.Provider>
 )
+
+InternalLink.defaultProps = {
+  prefetch: false
+}

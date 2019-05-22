@@ -49,6 +49,7 @@ const EpisodeHero = () => {
             >
               <InternalLink
                 href={'/'}
+                prefetch
                 css={css`
                   text-decoration: none;
                 `}

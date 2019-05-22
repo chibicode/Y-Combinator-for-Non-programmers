@@ -28,6 +28,7 @@ const EpisodePageHeader = ({
           <InternalLink
             href={`/${episodeNumber === 1 ? '' : episodeNumber - 1}`}
             css={navigationLinkClasses}
+            prefetch
           >
             «{' '}
             <H
@@ -59,6 +60,7 @@ const EpisodePageHeader = ({
           <InternalLink
             href={`/${episodeNumber + 1}`}
             css={navigationLinkClasses}
+            prefetch
           >
             <H
               args={{ name: 'titlePrefixColored' }}
