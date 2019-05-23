@@ -1,7 +1,8 @@
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
+  ConditionalExpression,
   FunctionExpression,
   VariableExpression,
   StepChild,
@@ -23,6 +24,11 @@ export default function replaceFuncParentKey(
   target: FunctionExpression,
   replaceWith: ExecutableCall | StepChild<'default'>
 ): CallExpression
+export default function replaceFuncParentKey(
+  expression: ConditionalExpression,
+  target: FunctionExpression,
+  replaceWith: ExecutableCall | StepChild<'default'>
+): ConditionalExpression
 export default function replaceFuncParentKey(
   expression: VariableExpression | FunctionExpression,
   target: FunctionExpression,
@@ -46,7 +52,7 @@ export default function replaceFuncParentKey(
       arg: replaceFuncParentKey(expression.arg, target, replaceWith),
       func: replaceFuncParentKey(expression.func, target, replaceWith)
     }
-  } else {
+  } else if (isFunction(expression)) {
     if (expression === target) {
       return {
         ...expression,
@@ -57,6 +63,17 @@ export default function replaceFuncParentKey(
         ...expression,
         body: replaceFuncParentKey(expression.body, target, replaceWith)
       }
+    }
+  } else {
+    return {
+      ...expression,
+      condition: replaceFuncParentKey(
+        expression.condition,
+        target,
+        replaceWith
+      ),
+      trueCase: replaceFuncParentKey(expression.trueCase, target, replaceWith),
+      falseCase: replaceFuncParentKey(expression.falseCase, target, replaceWith)
     }
   }
 }
