@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "target": "esnext",
     "module": "esnext",
     "resolveJsonModule": true,
@@ -22,5 +23,6 @@
       "src/*": ["src/*"],
       "test/*": ["test/*"]
     }
-  }
+  },
+  "include": ["./src", "./pages"]
 }
