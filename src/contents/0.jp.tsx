@@ -213,7 +213,7 @@ export default () => (
         content: (
           <>
             <P>では、ここで質問です。</P>
-            <EmojiSeparator emojis={['💻', '🤔', '🔢']} />
+            <EmojiSeparator emojis={['💻', '🤔', '💻']} />
             <P>
               <InlineHeader>質問:</InlineHeader>{' '}
               <Em>
@@ -242,7 +242,7 @@ export default () => (
               </Strong>
               コードを書かなくとも、コンピューターサイエンスを素養を身につけることは可能です。
             </P>
-            <EmojiSeparator emojis={['💻', '❌', '🔢']} />
+            <EmojiSeparator emojis={['😉', '💻', '❌']} />
             <P>
               当記事ではこのことを証明すべく、
               <Em>
@@ -270,6 +270,7 @@ export default () => (
               </UlLi>
             </Ul>
             <P>…と思ってくださる方が増えることを願っています。</P>
+            <EmojiSeparator emojis={['📝', '🤔', '💭']} />
           </>
         )
       },
@@ -304,10 +305,7 @@ export default () => (
               」です。
             </P>
             <P>
-              この
-              <Strong>
-                Yコンビネーターとは、いったい何のことなのでしょう？
-              </Strong>
+              この「Yコンビネーター」とは、いったい何のことなのでしょう？
               <H args={{ name: 'yesNoQuiz' }} />
               形式で出題しますので、勘で答えてみてください！
             </P>

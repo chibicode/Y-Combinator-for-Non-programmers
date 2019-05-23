@@ -8,7 +8,6 @@ const letterEmojis = Object.values(
 // some emojis like 😍 to be rendered incorrectly.
 const allUsedEmojis = uniq([
   ...letterEmojis,
-  '🆓',
   '🤔',
   '🙂',
   '🍱',

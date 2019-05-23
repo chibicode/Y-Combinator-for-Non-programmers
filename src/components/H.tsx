@@ -1087,7 +1087,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               身近なものでいえば、<Emoji>🔎</Emoji> グーグルなどの検索エンジン、
               <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
-              カメラアプリの顔認識機能には、コンピューターサイエンスの長年の研究結果が応用されています。
+              カメラアプリの顔認識機能には、コンピューターサイエンスの研究結果が応用されています。
             </UlLi>
           </Ul>
         </>
