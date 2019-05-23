@@ -9,8 +9,10 @@ import {
   NonExecutableStepCall,
   StepChild,
   StepFunction,
+  StepConditional,
   StepVariable,
-  VariableExpression
+  VariableExpression,
+  ConditionalExpression
 } from 'src/types/yc/ExpressionTypes'
 import getConflictsToUnused, {
   ConflictingNamesToUnusedNames
@@ -26,6 +28,11 @@ export function toAlphaConvertDone(
   conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepFunction<'alphaConvertDone'>
+export function toAlphaConvertDone(
+  e: ConditionalExpression,
+  conflicts: ConflictingNamesToUnusedNames,
+  funcSide: boolean
+): StepConditional<'alphaConvertDone'>
 export function toAlphaConvertDone(
   e: CallExpression,
   conflicts: ConflictingNamesToUnusedNames,
