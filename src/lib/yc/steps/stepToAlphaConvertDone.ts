@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -96,12 +96,19 @@ export function toAlphaConvertDone(
       arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
       body: toAlphaConvertDone(e.body, conflicts, funcSide)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
       func: toAlphaConvertDone(e.func, conflicts, funcSide)
+    }
+  } else {
+    return {
+      ...e,
+      condition: toAlphaConvertDone(e.condition, conflicts, funcSide),
+      trueCase: toAlphaConvertDone(e.trueCase, conflicts, funcSide),
+      falseCase: toAlphaConvertDone(e.falseCase, conflicts, funcSide)
     }
   }
 }
