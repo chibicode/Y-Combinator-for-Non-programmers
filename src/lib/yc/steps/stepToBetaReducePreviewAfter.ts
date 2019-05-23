@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -7,6 +7,8 @@ import {
   Expression,
   FunctionExpression,
   NonExecutableStepCall,
+  ConditionalExpression,
+  StepConditional,
   StepChild,
   StepFunction,
   StepVariable,
@@ -28,6 +30,14 @@ function matchBetaReduced(
   shorthandUnary: VariableExpression['shorthandUnary']
 ): {
   result: StepFunction<'betaReducePreviewAfter'>
+  executableUnaryExists: boolean
+}
+function matchBetaReduced(
+  e: ConditionalExpression,
+  shorthandBinary: VariableExpression['shorthandBinary'],
+  shorthandUnary: VariableExpression['shorthandUnary']
+): {
+  result: StepConditional<'betaReducePreviewAfter'>
   executableUnaryExists: boolean
 }
 function matchBetaReduced(
@@ -80,7 +90,7 @@ function matchBetaReduced(
       executableUnaryExists:
         arg.executableUnaryExists || body.executableUnaryExists
     }
-  } else {
+  } else if (isCall(e)) {
     const arg = matchBetaReduced(e.arg, shorthandBinary, shorthandUnary)
     const func = matchBetaReduced(e.func, shorthandBinary, shorthandUnary)
     return {
@@ -92,6 +102,34 @@ function matchBetaReduced(
       },
       executableUnaryExists:
         arg.executableUnaryExists || func.executableUnaryExists
+    }
+  } else {
+    const condition = matchBetaReduced(
+      e.condition,
+      shorthandBinary,
+      shorthandUnary
+    )
+    const trueCase = matchBetaReduced(
+      e.trueCase,
+      shorthandBinary,
+      shorthandUnary
+    )
+    const falseCase = matchBetaReduced(
+      e.falseCase,
+      shorthandBinary,
+      shorthandUnary
+    )
+    return {
+      result: {
+        ...e,
+        condition: condition.result,
+        trueCase: trueCase.result,
+        falseCase: falseCase.result
+      },
+      executableUnaryExists:
+        condition.executableUnaryExists ||
+        trueCase.executableUnaryExists ||
+        falseCase.executableUnaryExists
     }
   }
 }
@@ -112,6 +150,15 @@ export function toBetaReducePreviewAfter(
   funcSide: boolean
 ): {
   result: StepFunction<'betaReducePreviewAfter'>
+  executableUnaryExists: boolean
+}
+export function toBetaReducePreviewAfter(
+  e: ConditionalExpression,
+  fromName: VariableNames,
+  to: Expression,
+  funcSide: boolean
+): {
+  result: StepConditional<'betaReducePreviewAfter'>
   executableUnaryExists: boolean
 }
 export function toBetaReducePreviewAfter(
@@ -200,7 +247,7 @@ export function toBetaReducePreviewAfter(
       executableUnaryExists:
         arg.executableUnaryExists || body.executableUnaryExists
     }
-  } else {
+  } else if (isCall(e)) {
     const arg = toBetaReducePreviewAfter(e.arg, fromName, to, funcSide)
     const func = toBetaReducePreviewAfter(e.func, fromName, to, funcSide)
     return {
@@ -212,6 +259,37 @@ export function toBetaReducePreviewAfter(
       },
       executableUnaryExists:
         arg.executableUnaryExists || func.executableUnaryExists
+    }
+  } else {
+    const condition = toBetaReducePreviewAfter(
+      e.condition,
+      fromName,
+      to,
+      funcSide
+    )
+    const trueCase = toBetaReducePreviewAfter(
+      e.trueCase,
+      fromName,
+      to,
+      funcSide
+    )
+    const falseCase = toBetaReducePreviewAfter(
+      e.falseCase,
+      fromName,
+      to,
+      funcSide
+    )
+    return {
+      result: {
+        ...e,
+        condition: condition.result,
+        trueCase: trueCase.result,
+        falseCase: falseCase.result
+      },
+      executableUnaryExists:
+        condition.executableUnaryExists ||
+        trueCase.executableUnaryExists ||
+        falseCase.executableUnaryExists
     }
   }
 }
