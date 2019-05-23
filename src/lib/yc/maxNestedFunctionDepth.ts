@@ -1,4 +1,4 @@
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 
 export default function maxNestedFunctionDepth(expression: Expression): number {
@@ -9,7 +9,13 @@ export default function maxNestedFunctionDepth(expression: Expression): number {
       maxNestedFunctionDepth(expression.arg),
       maxNestedFunctionDepth(expression.func)
     )
-  } else {
+  } else if (isFunction(expression)) {
     return 1 + maxNestedFunctionDepth(expression.body)
+  } else {
+    return Math.max(
+      maxNestedFunctionDepth(expression.condition),
+      maxNestedFunctionDepth(expression.trueCase),
+      maxNestedFunctionDepth(expression.falseCase)
+    )
   }
 }
