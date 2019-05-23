@@ -18,7 +18,7 @@ interface GetAllVariableNamesOptions {
 function getAllVariableNamesWithDuplicates(
   expression: Expression,
   { filter }: GetAllVariableNamesOptions
-): ReadonlyArray<VariableNames> {
+): readonly VariableNames[] {
   if (isVariable(expression)) {
     if ((filter === 'unbound' && !expression.bound) || !filter) {
       return [expression.name]
@@ -39,13 +39,13 @@ function getAllVariableNamesWithDuplicates(
 function getAllVariableNames(
   expression: Expression,
   opts: GetAllVariableNamesOptions = {}
-): ReadonlyArray<VariableNames> {
+): readonly VariableNames[] {
   return uniq(getAllVariableNamesWithDuplicates(expression, opts))
 }
 
 function conflictingVariableNames(
   expression: ExecutableCallRegular
-): ReadonlyArray<VariableNames> {
+): readonly VariableNames[] {
   if (isVariableShorthandBinary(expression.func)) {
     return []
   } else {

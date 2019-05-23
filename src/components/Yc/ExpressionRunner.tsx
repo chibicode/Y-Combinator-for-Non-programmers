@@ -55,7 +55,7 @@ export interface ExpressionRunnerProps {
     | 'hiddenInitialPausedOnly'
     | 'hiddenInitialAndLastPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions: ReadonlyArray<InitializeInstruction>
+  initializeInstructions: readonly InitializeInstruction[]
   maxStepsAllowed?: number
   lastAllowedExpressionState?: CallStates
   maxAllowedDefaultStateCount?: number

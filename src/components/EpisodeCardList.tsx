@@ -15,7 +15,7 @@ export interface EpisodeCardType {
   footer?: CardProps['footer']
 }
 
-export type EpisodeCardListType = ReadonlyArray<EpisodeCardType>
+export type EpisodeCardListType = readonly EpisodeCardType[]
 
 const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
   const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
