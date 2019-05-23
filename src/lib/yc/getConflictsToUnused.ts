@@ -5,6 +5,7 @@ import uniq from 'lodash/uniq'
 import {
   isCall,
   isVariable,
+  isFunction,
   isVariableShorthandBinary
 } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
@@ -29,10 +30,14 @@ function getAllVariableNamesWithDuplicates(
     return getAllVariableNames(expression.arg, { filter }).concat(
       getAllVariableNames(expression.func, { filter })
     )
-  } else {
+  } else if (isFunction(expression)) {
     return getAllVariableNames(expression.arg, { filter }).concat(
       getAllVariableNames(expression.body, { filter })
     )
+  } else {
+    return getAllVariableNames(expression.condition, { filter })
+      .concat(getAllVariableNames(expression.trueCase, { filter }))
+      .concat(getAllVariableNames(expression.falseCase, { filter }))
   }
 }
 
