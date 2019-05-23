@@ -3,6 +3,7 @@ import { numEpisodes } from 'src/lib/episodeCategories'
 import {
   Blockquote,
   Em,
+  Hr,
   Img,
   ExternalLink,
   P,
@@ -197,22 +198,43 @@ export default () => (
             </P>
             <H args={{ name: 'whatIsComputerScience' }} />
             <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
-            <P>
-              もしも、「
-              <Em>
-                世間を騒がせているアプリやAIが、どんな仕組みでできているのか、ほんの少しでいいから理解してみたい
-              </Em>
-              」と思われたことがありましたら、コンピューターサイエンスを少しかじってみても良いかもしれません。
-            </P>
+            <Ul>
+              <UlLi>
+                もしも、「
+                <Em>
+                  世間を騒がせているアプリやAIが、どんな仕組みでできているのか、ほんの少しでいいから理解してみたい
+                </Em>
+                」と思われたことがありましたら、コンピューターサイエンスを少しかじってみても良いかもしれません。
+              </UlLi>
+            </Ul>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                もちろん、コンピューターサイエンスの詳しい説明は後に行います。だから、
+                <Em>
+                  「まだ、コンピューターサイエンスが何のことかサッパリわからない」と思われても大丈夫です
+                </Em>
+                。そのまま読み進めて下さい！
+              </P>
+            </>
+          )
+        }
       },
       {
         type: 'yesNoQuiz',
         title: <>プログラミングは必要？</>,
         content: (
           <>
-            <P>では、ここで質問です。</P>
+            <P>
+              では、本題に入る前に、ここでひとつ
+              <Strong>
+                <H args={{ name: 'yesNoQuiz' }} />
+              </Strong>
+              を行います。適当に勘で答えてみてください！
+            </P>
             <EmojiSeparator emojis={['💻', '🤔', '💻']} />
             <P>
               <InlineHeader>質問:</InlineHeader>{' '}
