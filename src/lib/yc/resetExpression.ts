@@ -1,4 +1,4 @@
-import { isCall, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -31,7 +31,6 @@ export default function resetExpression(
   if (isVariable(expression)) {
     return {
       ...expression,
-      type: 'variable',
       highlightType: 'default',
       topLeftBadgeType: 'none',
       bottomRightBadgeType: 'none',
@@ -41,17 +40,24 @@ export default function resetExpression(
     }
   } else if (isCall(expression)) {
     return {
-      type: 'call',
+      ...expression,
       state: 'default',
       arg: resetExpression(expression.arg),
       func: resetExpression(expression.func),
       priority: 0
     }
-  } else {
+  } else if (isFunction(expression)) {
     return {
-      type: 'function',
+      ...expression,
       arg: resetExpression(expression.arg),
       body: resetExpression(expression.body)
+    }
+  } else {
+    return {
+      ...expression,
+      condition: resetExpression(expression.condition),
+      trueCase: resetExpression(expression.trueCase),
+      falseCase: resetExpression(expression.falseCase)
     }
   }
 }
