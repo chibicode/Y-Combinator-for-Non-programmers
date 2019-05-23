@@ -289,10 +289,19 @@ export interface FunctionExpression {
   readonly meta?: FunctionExpressionMeta
 }
 
+export interface ConditionalExpression {
+  readonly type: 'conditional'
+  readonly checkType: 'isZero'
+  readonly condition: Expression
+  readonly trueCase: Expression
+  readonly falseCase: Expression
+}
+
 export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
+  | ConditionalExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
