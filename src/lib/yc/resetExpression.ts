@@ -7,7 +7,9 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression
+  ConditionalExpression,
+  VariableExpression,
+  StepConditional
 } from 'src/types/yc/ExpressionTypes'
 
 export default function resetExpression(
@@ -16,6 +18,9 @@ export default function resetExpression(
 export default function resetExpression(
   expression: FunctionExpression
 ): StepFunction<'default'>
+export default function resetExpression(
+  expression: ConditionalExpression
+): StepConditional<'default'>
 export default function resetExpression(
   expression: CallExpression
 ): NonExecutableStepCall<'default'>
