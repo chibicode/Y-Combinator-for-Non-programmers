@@ -1,3 +1,6 @@
+.tsbuildinfo
+report.*.json
+
 out
 .envrc
 .twemoji
