@@ -1,2 +1,2 @@
-# [Y Combinator for Everyone](https://yc.chibicode.com)
+# [Y Combinator for Everyone](https://y.chibicode.com)
 
