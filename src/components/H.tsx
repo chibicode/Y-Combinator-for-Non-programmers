@@ -105,7 +105,6 @@ export interface HProps {
     | { name: 'takeABreak' }
     | { name: 'privacyPolicy' }
     | { name: 'aboutThisSite' }
-    | { name: 'noCallArgFuncUnboundOverlap'; letter: VariableNames }
     | {
         name: 'categoryNameColored'
         category: keyof typeof episodePrefixes
@@ -117,6 +116,8 @@ export interface HProps {
     | { name: 'secretCodeMinusOneCaption' }
     | { name: 'secretCodeTwoMinusOneCaption' }
     | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
+    | { name: 'pageNotFound' }
+    | { name: 'lookAtToc' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1209,7 +1210,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  throw new Error('error')
+  if (args.name === 'pageNotFound') {
+    if (locale === 'en') {
+      return <>Page Not Found</>
+    } else {
+      return <>ページが見つかりません</>
+    }
+  }
+  if (args.name === 'lookAtToc') {
+    if (locale === 'en') {
+      return <>Take a look at the table of contents:</>
+    } else {
+      return <>目次はこちらです:</>
+    }
+  }
+  throw new Error()
 }
 
 H.defaultProps = {
