@@ -10,7 +10,9 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableWithState
+  VariableWithState,
+  ConditionalExpression,
+  StepConditional
 } from 'src/types/yc/ExpressionTypes'
 
 function toCrossed(
@@ -21,6 +23,10 @@ function toCrossed(
   e: FunctionExpression,
   isCallArg: boolean
 ): StepFunction<'betaReducePreviewCrossed'>
+function toCrossed(
+  e: ConditionalExpression,
+  isCallArg: boolean
+): StepConditional<'betaReducePreviewCrossed'>
 function toCrossed(
   e: CallExpression,
   isCallArg: boolean

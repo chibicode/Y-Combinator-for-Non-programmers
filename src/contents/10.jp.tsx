@@ -296,7 +296,11 @@ export default () => (
             <EmojiSeparator emojis={['❓', '🍱', '❓']} />
             <P>
               そして上級編ではついに、記事の題名にもある「
-              <Strong>魔法のYコンビネーター</Strong>」が登場します。
+              <Strong>
+                魔法の
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              」が登場します。
             </P>
             <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
             <P>

@@ -2,6 +2,7 @@ import React from 'react'
 import { numEpisodes } from 'src/lib/episodeCategories'
 import {
   Blockquote,
+  Hr,
   Em,
   Img,
   ExternalLink,
@@ -44,7 +45,7 @@ export default () => (
             <EmojiSeparator emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
             <P>
               こんにちは、<Strong>上杉周作</Strong>
-              と申します。米国在住のプログラマー兼ブロガーです。2019年のベストセラー本『
+              と申します。米国在住のプログラマー兼ブロガーです。2019年に日経BP社から発売された『
               <ExternalLink href="https://amzn.to/2QlZIqm">
                 <Strong>ファクトフルネス</Strong>
               </ExternalLink>
@@ -65,7 +66,7 @@ export default () => (
               本記事「<Strong>{lessonTitle}</Strong>
               」は、筆者のブロガー人生の中で最も執筆に時間をかけた記事です。すべて
               <Strong>無料</Strong>
-              で公開しているので、最後まで楽しんでいただけると嬉しいです。
+              で公開しているので、最後まで楽しんでいただけると幸いです。
             </P>
           </>
         )
@@ -184,17 +185,26 @@ export default () => (
         )
       },
       {
-        title: <>コンピューターサイエンスって何？</>,
+        title: (
+          <>
+            <H args={{ name: 'computerScience' }} />
+            って何？
+          </>
+        ),
         content: (
           <>
             <EmojiSeparator emojis={['🤖', '🤔', '🤖']} />
             <P>
               当記事のタイトルは「<Strong>{lessonTitle}</Strong>」ですが、
               <Em>
-                コンピュターサイエンスとは何か、ご存じない方がほとんどだと思います
+                <H args={{ name: 'computerScience' }} />
+                という単語自体、聞いたことがない方がほとんどだと思います
               </Em>
-              。
+              。そんな方向けに、かなり単純化して説明します。
+              <H args={{ name: 'computerScience' }} />
+              についてご存知の方は読み飛ばしてください。
             </P>
+            <Hr />
             <H args={{ name: 'whatIsComputerScience' }} />
             <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
             <Ul>
@@ -203,7 +213,9 @@ export default () => (
                 <Em>
                   世間を騒がせているアプリやAIが、どんな仕組みでできているのか、ほんの少しでいいから理解してみたい
                 </Em>
-                」と思われたことがありましたら、コンピューターサイエンスを少しかじってみても良いかもしれません。
+                」と思われたことがありましたら、
+                <H args={{ name: 'computerScience' }} />
+                を少しかじってみても良いかもしれません。
               </UlLi>
             </Ul>
           </>
@@ -212,10 +224,13 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>補足:</InlineHeader>{' '}
-                もちろん、コンピューターサイエンスの詳しい説明は後に行います。だから、
+                <InlineHeader>補足:</InlineHeader> もちろん、
+                <H args={{ name: 'computerScience' }} />
+                の詳しい説明は後に行います。だから、
                 <Em>
-                  「まだ、コンピューターサイエンスが何のことかサッパリわからない」と思われても大丈夫です
+                  「まだ、
+                  <H args={{ name: 'computerScience' }} />
+                  が何のことかサッパリわからない」と思われても大丈夫です
                 </Em>
                 。そのまま読み進めて下さい！
               </P>
@@ -239,7 +254,8 @@ export default () => (
             <P>
               <InlineHeader>質問:</InlineHeader>{' '}
               <Em>
-                コンピューターサイエンスを学ぶためには、
+                <H args={{ name: 'computerScience' }} />
+                の基礎を学ぶためには、
                 <Strong>プログラミングの知識が必要だ</Strong>。
               </Em>
               <H args={{ name: 'yesOrNo' }} />
@@ -260,33 +276,42 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: false }} />
               でした。あくまで筆者の考えですが、
               <Strong>
-                コンピューターサイエンスを学ぶのに、プログラミングの知識は必須ではありません。
+                <H args={{ name: 'computerScience' }} />
+                の基礎を学ぶのに、プログラミングの知識は必須ではありません。
               </Strong>
-              コードを書かなくとも、コンピューターサイエンスを素養を身につけることは可能です。
+              コードを書かなくとも、
+              <H args={{ name: 'computerScience' }} />
+              の基礎を身につけることは可能です。
             </P>
             <EmojiSeparator emojis={['😉', '💻', '❌']} />
             <P>
               当記事ではこのことを証明すべく、
               <Em>
-                プログラミングを一切使わずに、コンピューターサイエンスの中でも
-                <Strong>ハイレベルな題材</Strong>について解説します。
+                プログラミングを一切使わずに、
+                <H args={{ name: 'computerScience' }} />
+                の中でも
+                <Strong>ある程度難しい題材</Strong>について解説します。
               </Em>
             </P>
             <P>
-              簡単なコンピューターサイエンスの題材だけでなく、ハイレベルな題材でも、プログラミング抜きに学ぶことができるのです。このことを体感してもらうことで、
+              簡単な
+              <H args={{ name: 'computerScience' }} />
+              の題材だけでなく、ある程度難しい題材でも、プログラミング抜きに学ぶことができるのです。このことを体感してもらうことで、
             </P>
             <Ul>
               <UlLi>
                 「
                 <Em>
-                  プログラミング抜きにハイレベルな内容まで学べるんだったら、自分にもできるかも
+                  プログラミング抜きにある程度難しい内容まで学べるんだったら、自分にもできるかも
                 </Em>
                 」
               </UlLi>
               <UlLi>
                 「
                 <Em>
-                  プログラミングを勉強する気はないけれど、ソフトウェアについての理解を深めたいから、コンピューターサイエンスを学んでみようかな
+                  プログラミングを勉強する気はないけれど、ソフトウェアについての理解を深めたいから、
+                  <H args={{ name: 'computerScience' }} />
+                  を学んでみようかな
                 </Em>
                 」
               </UlLi>
@@ -303,12 +328,14 @@ export default () => (
                 <Em>
                   「プログラミングを勉強したい、または勉強中」という方には、当記事は役立たないかもしれません。
                 </Em>
-                それでも、「読み物としては面白いかも」と思っていただけたら嬉しいです。
+                それでも、「読み物としては面白いかも」と思っていただけたら幸いです。
               </P>
               <P>
                 <InlineHeader>補足2:</InlineHeader> 筆者は、「
                 <Em>
-                  プログラミングを勉強するのに越したことはないけれど、現実的には、大多数の人は一行もコードを書かないまま一生を終える。そういった人たち向けの、コンピューターサイエンスの教材がもっと増えるべき
+                  プログラミングを勉強するのに越したことはないけれど、現実的には、大多数の人は一行もコードを書かないまま一生を終える。そういった人たち向けの、
+                  <H args={{ name: 'computerScience' }} />
+                  の教材がもっと増えるべき
                 </Em>
                 」と考える立場です。
               </P>
@@ -327,35 +354,73 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['😉', '📱', '🆗']} />
             <P>
-              数学の知識もほとんど必要ありません。
+              また、当記事では数学の知識もほとんど必要ありません。
               <Em>単純な足し算、引き算、掛け算以外の数式は一切登場しません</Em>
               ので、ご安心ください。
             </P>
-            <P>前置きはこれくらいにして、本題に入りましょう！</P>
+            <EmojiSeparator emojis={['➕', '➖', '✖️']} />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader>{' '}
+                <H args={{ name: 'computerScience' }} />
+                の教材の多くは、教科書・講義・記事などを参考に、パソコンでプログラムを書いて学ぶことを前提としています。しかし、それでは学習者が限定されてしまいます。
+              </P>
+              <P>
+                だから筆者は、当記事のように
+                <Em>
+                  「スマホで完結する
+                  <H args={{ name: 'computerScience' }} />
+                  の教材」が増えるべき
+                </Em>
+                だと考えています。せっかくスマホが当たり前の世の中になったのだから、有効活用すべきです。
+              </P>
+            </>
+          )
+        }
       },
       {
         type: 'yesNoQuiz',
-        title: <>Yコンビネーターって何？</>,
+        title: (
+          <>
+            <H args={{ name: 'yCombinator' }} />
+            って何？
+          </>
+        ),
         content: (
           <>
             <P>
-              当記事では、コンピューターサイエンスの中でもハイレベルな題材について解説します。それが題名「
+              当記事では、
+              <H args={{ name: 'computerScience' }} />
+              の中でもある程度難しい題材について解説します。それが題名「
               <Em>{lessonTitle}</Em>」にもある「
-              <Strong>Yコンビネーター</Strong>
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
               」です。
             </P>
             <P>
-              この「Yコンビネーター」とは、いったい何のことなのでしょう？
+              この「
+              <H args={{ name: 'yCombinator' }} />
+              」とは、いったい何のことなのでしょう？
               <H args={{ name: 'yesNoQuiz' }} />
               形式で出題しますので、勘で答えてみてください！
             </P>
             <EmojiSeparator emojis={['🧙‍♂️', '🤔', '🧙‍♂️']} />
             <P>
-              <H args={{ name: 'question' }} /> <Strong>Yコンビネーター</Strong>
+              <H args={{ name: 'question' }} />{' '}
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
               」とは、
-              <Em>「繰り返し処理」に関連するコンピューターサイエンス用語だ</Em>
+              <Em>
+                「繰り返し処理」に関連する
+                <H args={{ name: 'computerScience' }} />
+                用語だ
+              </Em>
               。<H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="yes" />
@@ -368,7 +433,9 @@ export default () => (
           content: (
             <P>
               <InlineHeader>補足:</InlineHeader>{' '}
-              プログラミングができる方や、別の意味で「Yコンビネーター」という言葉をご存知の方は、この下の余談も読んでみてください。(
+              プログラミングができる方や、別の意味で「
+              <H args={{ name: 'yCombinator' }} />
+              」という言葉をご存知の方は、この下の余談も読んでみてください。(
               読み飛ばしても大丈夫です。)
             </P>
           )
@@ -378,16 +445,27 @@ export default () => (
             <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
             <P>
               <Em>
-                「<Strong>Yコンビネーター</Strong>
-                」とは、「繰り返し処理」に関連するコンピューターサイエンス用語です。
+                「
+                <Strong>
+                  <H args={{ name: 'yCombinator' }} />
+                </Strong>
+                」とは、「繰り返し処理」に関連する
+                <H args={{ name: 'computerScience' }} />
+                用語です。
               </Em>
             </P>
             <P>
-              筆者は米国の大学でコンピューターサイエンスを専攻したのですが、「
-              <InlineHeader>Yコンビネーター</InlineHeader>」は
-              <Em>大学3年生向けの授業で教わる</Em>
-              ハイレベルな題材でした。 そこではじめて「
-              <InlineHeader>Yコンビネーター</InlineHeader>
+              筆者は米国の大学で
+              <H args={{ name: 'computerScience' }} />
+              を専攻したのですが、「
+              <InlineHeader>
+                <H args={{ name: 'yCombinator' }} />
+              </InlineHeader>
+              」は
+              <Em>大学3年生向けの授業で教わる</Em>題材でした。 そこではじめて「
+              <InlineHeader>
+                <H args={{ name: 'yCombinator' }} />
+              </InlineHeader>
               」について学んだときは、「
               <Em>まるで魔法みたいだ！</Em>
               」と知的な感動を覚えました。
@@ -396,10 +474,13 @@ export default () => (
             <P>
               今回の記事では、
               <Strong>
-                「Yコンビネーター」とは何なのか、そしてなぜ興味深いのかを、
+                「<H args={{ name: 'yCombinator' }} />
+                」とは何なのか、そしてなぜ興味深いのかを、
                 誰にでもわかるように説明します
               </Strong>
-              。そうすることで、コンピューターサイエンスの魅力が伝わればいいなと思っています。
+              。そうすることで、
+              <H args={{ name: 'computerScience' }} />
+              の魅力が伝わればいいなと思っています。
             </P>
             <P>
               先述した通り、
@@ -433,7 +514,8 @@ export default () => (
           <>
             <P>
               <Em>
-                Yコンビネーターは、「
+                <H args={{ name: 'yCombinator' }} />
+                は、「
                 <Strong>for文</Strong>」「<Strong>while文</Strong>」「
                 <Strong>再帰</Strong>
                 」が存在しないプログラミング言語でも、繰り返し処理を可能にするテクニック
@@ -472,14 +554,20 @@ export default () => (
         )
       },
       {
-        title: 'IT業界の「Yコンビネーター」',
+        title: (
+          <>
+            IT業界の「
+            <H args={{ name: 'yCombinator' }} />」
+          </>
+        ),
         type: 'sideNote',
         preview: {
           content: (
             <>
               <P>
-                <Em>IT業界</Em>にいる方なら、別の意味で
-                「Yコンビネーター」という言葉をご存知かもしれません。
+                <Em>IT業界</Em>にいる方なら、別の意味で 「
+                <H args={{ name: 'yCombinator' }} />
+                」という言葉をご存知かもしれません。
               </P>
             </>
           ),
@@ -493,7 +581,8 @@ export default () => (
           <>
             <P>
               <Em>
-                Yコンビネーターは、シリコンバレーで最も有名なITベンチャー養成機関の名でもあります。
+                <H args={{ name: 'yCombinator' }} />
+                は、シリコンバレーで最も有名なITベンチャー養成機関の名でもあります。
               </Em>
               AirBnBをはじめとする超有名ITベンチャーを多数輩出しており、
               約2000の卒業企業のうち、トップ100社の企業価値を合計すると
@@ -505,9 +594,12 @@ export default () => (
             </P>
             <P>
               <Strong>
-                では、なぜYコンビネーターという名称がつけられたのでしょうか？
+                では、なぜ
+                <H args={{ name: 'yCombinator' }} />
+                という名称がつけられたのでしょうか？
               </Strong>
-              Yコンビネーター創業者のひとり、ポール・グレアム氏は
+              <H args={{ name: 'yCombinator' }} />
+              創業者のひとり、ポール・グレアム氏は
               <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                 インタビューでこう語っていました
               </ExternalLink>
@@ -518,11 +610,13 @@ export default () => (
               <P>
                 <Strong>
                   <Em>
-                    Yコンビネーターとは、プログラミングのテクニックのひとつです。
+                    <H args={{ name: 'yCombinator' }} />
+                    とは、プログラミングのテクニックのひとつです。
                   </Em>
                 </Strong>{' '}
-                (中略)
-                個人的に、Yコンビネーターがあまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
+                (中略) 個人的に、
+                <H args={{ name: 'yCombinator' }} />
+                があまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
                 <Em>われわれが投資する起業家を選別する</Em>
                 際に、この名前が役立ちました。
               </P>
@@ -530,20 +624,34 @@ export default () => (
                 <Em>
                   わたしたちは凄腕プログラマーの起業家は招き入れたかったが、スーツ姿のビジネスパーソンは門前払いにしたかった。
                 </Em>
-                凄腕プログラマーがわたしたちのことを聞いたら、こう思うでしょう。「Yコンビネーターって名のITベンチャー養成機関だって？最高じゃん！きっと、面白い人たちが集まっているに違いない」と。いっぽう、スーツの人たちは、Yコンビネーターと聞いても何のことやらさっぱり、となりますから。
+                凄腕プログラマーがわたしたちのことを聞いたら、こう思うでしょう。「
+                <H args={{ name: 'yCombinator' }} />
+                って名のITベンチャー養成機関だって？最高じゃん！きっと、面白い人たちが集まっているに違いない」と。いっぽう、スーツの人たちは、
+                <H args={{ name: 'yCombinator' }} />
+                と聞いても何のことやらさっぱり、となりますから。
               </P>
             </Blockquote>
             <P>
               <Strong>ざっくり言うと:</Strong>{' '}
-              彼らは凄腕プログラマーの起業家に投資したかった。だから、「Yコンビネーター」という
-              <Em>高度なコンピューターサイエンスの専門用語</Em>
+              彼らは凄腕プログラマーの起業家に投資したかった。だから、「
+              <H args={{ name: 'yCombinator' }} />
+              」という
+              <Em>
+                高度な
+                <H args={{ name: 'computerScience' }} />
+                の専門用語
+              </Em>
               をITベンチャー養成機関の名前につけることで、凄腕プログラマーを呼び寄せたのです。
             </P>
             <P>
               <Em>
-                しかし、当記事を読めば、プログラマーではなくてもYコンビネーターを理解できます
+                しかし、当記事を読めば、プログラマーではなくても
+                <H args={{ name: 'yCombinator' }} />
+                を理解できます
               </Em>
-              。ITベンチャー養成機関としての「Yコンビネーター」をご存知の方も、ぜひ読み進めてみてください！
+              。ITベンチャー養成機関としての「
+              <H args={{ name: 'yCombinator' }} />
+              」をご存知の方も、ぜひ読み進めてみてください！
             </P>
           </>
         )

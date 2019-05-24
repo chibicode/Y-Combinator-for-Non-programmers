@@ -6,7 +6,7 @@ import {
 
 export const lessonTitle = {
   en: 'Y Combinator for Everyone',
-  jp: 'コンピューターサイエンスと魔法のYコンビネーター'
+  jp: 'コンピュータサイエンスと魔法のYコンビネータ'
 }[locale]
 
 export const episodeTitles = {
