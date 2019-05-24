@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -10,7 +10,9 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableWithState
+  VariableWithState,
+  ConditionalExpression,
+  StepConditional
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -28,6 +30,14 @@ export function toBetaReducePreviewBefore(
   funcSide: boolean
 ): {
   nextExpression: StepFunction<'betaReducePreviewBefore'>
+  matchExists: boolean
+}
+export function toBetaReducePreviewBefore(
+  e: ConditionalExpression,
+  fromName: VariableNames,
+  funcSide: boolean
+): {
+  nextExpression: StepConditional<'betaReducePreviewBefore'>
   matchExists: boolean
 }
 export function toBetaReducePreviewBefore(
@@ -112,36 +122,42 @@ export function toBetaReducePreviewBefore(
       }
     }
   } else if (isFunction(e)) {
-    const argHelperResult = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
-    const bodyHelperResult = toBetaReducePreviewBefore(
-      e.body,
-      fromName,
-      funcSide
-    )
+    const arg = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
+    const body = toBetaReducePreviewBefore(e.body, fromName, funcSide)
 
     return {
       nextExpression: {
         ...e,
-        arg: argHelperResult.nextExpression,
-        body: bodyHelperResult.nextExpression
+        arg: arg.nextExpression,
+        body: body.nextExpression
       },
-      matchExists: argHelperResult.matchExists || bodyHelperResult.matchExists
+      matchExists: arg.matchExists || body.matchExists
     }
-  } else {
-    const argHelperResult = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
-    const funcHelperResult = toBetaReducePreviewBefore(
-      e.func,
-      fromName,
-      funcSide
-    )
+  } else if (isCall(e)) {
+    const arg = toBetaReducePreviewBefore(e.arg, fromName, funcSide)
+    const func = toBetaReducePreviewBefore(e.func, fromName, funcSide)
     return {
       nextExpression: {
         ...e,
         state: 'default',
-        arg: argHelperResult.nextExpression,
-        func: funcHelperResult.nextExpression
+        arg: arg.nextExpression,
+        func: func.nextExpression
       },
-      matchExists: argHelperResult.matchExists || funcHelperResult.matchExists
+      matchExists: arg.matchExists || func.matchExists
+    }
+  } else {
+    const condition = toBetaReducePreviewBefore(e.condition, fromName, funcSide)
+    const trueCase = toBetaReducePreviewBefore(e.trueCase, fromName, funcSide)
+    const falseCase = toBetaReducePreviewBefore(e.falseCase, fromName, funcSide)
+    return {
+      nextExpression: {
+        ...e,
+        condition: condition.nextExpression,
+        trueCase: trueCase.nextExpression,
+        falseCase: falseCase.nextExpression
+      },
+      matchExists:
+        condition.matchExists || trueCase.matchExists || falseCase.matchExists
     }
   }
 }

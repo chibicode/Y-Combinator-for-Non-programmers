@@ -5,6 +5,7 @@ import uniq from 'lodash/uniq'
 import {
   isCall,
   isVariable,
+  isFunction,
   isVariableShorthandBinary
 } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
@@ -18,7 +19,7 @@ interface GetAllVariableNamesOptions {
 function getAllVariableNamesWithDuplicates(
   expression: Expression,
   { filter }: GetAllVariableNamesOptions
-): ReadonlyArray<VariableNames> {
+): readonly VariableNames[] {
   if (isVariable(expression)) {
     if ((filter === 'unbound' && !expression.bound) || !filter) {
       return [expression.name]
@@ -29,23 +30,27 @@ function getAllVariableNamesWithDuplicates(
     return getAllVariableNames(expression.arg, { filter }).concat(
       getAllVariableNames(expression.func, { filter })
     )
-  } else {
+  } else if (isFunction(expression)) {
     return getAllVariableNames(expression.arg, { filter }).concat(
       getAllVariableNames(expression.body, { filter })
     )
+  } else {
+    return getAllVariableNames(expression.condition, { filter })
+      .concat(getAllVariableNames(expression.trueCase, { filter }))
+      .concat(getAllVariableNames(expression.falseCase, { filter }))
   }
 }
 
 function getAllVariableNames(
   expression: Expression,
   opts: GetAllVariableNamesOptions = {}
-): ReadonlyArray<VariableNames> {
+): readonly VariableNames[] {
   return uniq(getAllVariableNamesWithDuplicates(expression, opts))
 }
 
 function conflictingVariableNames(
   expression: ExecutableCallRegular
-): ReadonlyArray<VariableNames> {
+): readonly VariableNames[] {
   if (isVariableShorthandBinary(expression.func)) {
     return []
   } else {

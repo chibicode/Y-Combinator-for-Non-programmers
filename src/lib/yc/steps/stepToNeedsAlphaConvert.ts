@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -6,6 +6,8 @@ import {
   ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
+  StepConditional,
+  ConditionalExpression,
   NonExecutableStepCall,
   StepChild,
   StepFunction,
@@ -24,6 +26,11 @@ export function toNeedsAlphaConvert(
   conflicts: ConflictingNamesToUnusedNames,
   funcSide: boolean
 ): StepFunction<'needsAlphaConvert'>
+export function toNeedsAlphaConvert(
+  e: ConditionalExpression,
+  conflicts: ConflictingNamesToUnusedNames,
+  funcSide: boolean
+): StepConditional<'needsAlphaConvert'>
 export function toNeedsAlphaConvert(
   e: CallExpression,
   conflicts: ConflictingNamesToUnusedNames,
@@ -91,12 +98,19 @@ export function toNeedsAlphaConvert(
       arg: toNeedsAlphaConvert(e.arg, conflicts, funcSide),
       body: toNeedsAlphaConvert(e.body, conflicts, funcSide)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toNeedsAlphaConvert(e.arg, conflicts, funcSide),
       func: toNeedsAlphaConvert(e.func, conflicts, funcSide)
+    }
+  } else {
+    return {
+      ...e,
+      condition: toNeedsAlphaConvert(e.condition, conflicts, funcSide),
+      trueCase: toNeedsAlphaConvert(e.trueCase, conflicts, funcSide),
+      falseCase: toNeedsAlphaConvert(e.falseCase, conflicts, funcSide)
     }
   }
 }

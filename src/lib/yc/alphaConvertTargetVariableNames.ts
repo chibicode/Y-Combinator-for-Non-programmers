@@ -1,6 +1,6 @@
 import { VariableNames } from 'src/types/yc/VariableNames'
 
-const alphaConvertTargetVariableNames: ReadonlyArray<VariableNames> = [
+const alphaConvertTargetVariableNames: readonly VariableNames[] = [
   'a',
   'b',
   'c',

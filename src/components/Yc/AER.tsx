@@ -1679,6 +1679,12 @@ export default {
       skipToTheEnd={false}
       speed={1.5}
     />
+  ),
+  hvdn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.conditionalTest}
+      showPriorities
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly

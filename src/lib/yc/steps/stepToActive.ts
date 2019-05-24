@@ -1,7 +1,8 @@
 import {
   isFunction,
   isVariable,
-  isExecutableCallRegular
+  isExecutableCallRegular,
+  isCall
 } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
@@ -18,7 +19,9 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression,
-  VariableWithEmphasizePriorityAndState
+  VariableWithEmphasizePriorityAndState,
+  ConditionalExpression,
+  StepConditional
 } from 'src/types/yc/ExpressionTypes'
 
 function toActive(
@@ -26,6 +29,7 @@ function toActive(
 ): StepVariableShorthandBinary<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
+function toActive(e: ConditionalExpression): StepConditional<'active'>
 function toActive(e: CallExpression): NonExecutableStepCall<'active'>
 function toActive(
   e: VariableExpression | FunctionExpression
@@ -45,12 +49,19 @@ function toActive(e: Expression): StepChild<'active'> {
       arg: toActive(e.arg),
       body: toActive(e.body)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toActive(e.arg),
       func: toActive(e.func)
+    }
+  } else {
+    return {
+      ...e,
+      condition: toActive(e.condition),
+      trueCase: toActive(e.trueCase),
+      falseCase: toActive(e.falseCase)
     }
   }
 }
@@ -88,11 +99,13 @@ const emphasizeArgPriorityCallExpression = (
       ...e,
       arg: toExecutableActiveFunction(e.arg)
     }
-  } else {
+  } else if (isCall<NonExecutableStepCall<'active'>>(e.arg)) {
     return {
       ...e,
       arg: emphasizeArgPriorityCallExpression(e.arg)
     }
+  } else {
+    return e
   }
 }
 
@@ -111,7 +124,9 @@ export default function stepToActive(
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)
     ? variableToEmphasize(e.arg)
-    : emphasizeArgPriorityCallExpression(toActive(e.arg))
+    : isCall(e.arg)
+    ? emphasizeArgPriorityCallExpression(toActive(e.arg))
+    : toActive(e.arg)
   if (isExecutableCallRegular(e)) {
     return {
       ...e,

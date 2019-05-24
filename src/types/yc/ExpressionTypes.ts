@@ -289,10 +289,19 @@ export interface FunctionExpression {
   readonly meta?: FunctionExpressionMeta
 }
 
+export interface ConditionalExpression {
+  readonly type: 'conditional'
+  readonly checkType: 'isZero'
+  readonly condition: Expression
+  readonly trueCase: Expression
+  readonly falseCase: Expression
+}
+
 export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
+  | ConditionalExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
@@ -300,6 +309,16 @@ type FunctionWithArgBody<
 > = FunctionExpression & {
   readonly arg: A
   readonly body: B
+}
+
+type ConditionalWith<
+  C extends Expression,
+  T extends Expression,
+  F extends Expression
+> = ConditionalExpression & {
+  readonly condition: C
+  readonly trueCase: T
+  readonly falseCase: F
 }
 
 type NonExecutable<E extends Expression> = CallExpression & {
@@ -345,7 +364,8 @@ export type StepVariableShorthandUnary<
 export type StepVariableShorthandNonUnaryNumber<
   C extends CallStates = 'default'
 > = VariableWithStateShorthandNonUnaryNumber<CallStateToVariableState<C>>
-
+export interface StepConditional<C extends CallStates = 'default'>
+  extends ConditionalWith<StepChild<C>, StepChild<C>, StepChild<C>> {}
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 
@@ -364,6 +384,7 @@ export interface ExecutableStepCallShorthandBinary<
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
+  | StepConditional<C>
   | NonExecutableStepCall<C>
 
 // Map from a union type to another union type

@@ -47,6 +47,8 @@ export interface HProps {
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
     | { name: 'pauseIfLost' }
     | { name: 'byTheWay' }
+    | { name: 'computerScience' }
+    | { name: 'yCombinator' }
     | {
         name: 'bentoBox'
         plural?: boolean
@@ -187,9 +189,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          コンピュターサイエンスと
+          コンピュータサイエンスと
           <br />
-          魔法のYコンビネーター
+          魔法のYコンビネータ
         </>
       )
     }
@@ -1011,7 +1013,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Blockquote>
             <P>
               <Strong>
-                「魔法のYコンビネーター、とりあえず{currentEpisodeCategoryName}
+                「魔法のYコンビネータ、とりあえず{currentEpisodeCategoryName}
                 編は終わった」
               </Strong>
             </P>
@@ -1077,7 +1079,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <P>
             <Strong>
-              コンピューターサイエンスとは、一言で言えば「ソフトウェア開発の根幹となる学問」です。
+              コンピュータサイエンスとは、一言で言えば「ソフトウェア開発の根幹となる学問」です。
             </Strong>
           </P>
           <Ul>
@@ -1087,7 +1089,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               身近なものでいえば、<Emoji>🔎</Emoji> グーグルなどの検索エンジン、
               <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
-              カメラアプリの顔認識機能には、コンピューターサイエンスの研究結果が応用されています。
+              カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
             </UlLi>
           </Ul>
         </>
@@ -1222,6 +1224,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Take a look at the table of contents:</>
     } else {
       return <>目次はこちらです:</>
+    }
+  }
+  if (args.name === 'computerScience') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>コンピュータサイエンス</>
+    }
+  }
+  if (args.name === 'yCombinator') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>Yコンビネータ</>
     }
   }
   throw new Error()

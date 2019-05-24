@@ -3,7 +3,8 @@ import {
   FunctionExpressionMeta,
   VariableShorthandBinary,
   VariableShorthandUnary,
-  VariableShorthandNumber
+  VariableShorthandNumber,
+  ConditionalExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
@@ -38,6 +39,13 @@ export interface FunctionExpressionParams {
 // https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
 export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}
 
+export interface ConditionalExpressionParams {
+  readonly condition: ExpressionParams
+  readonly trueCase: ExpressionParams
+  readonly falseCase: ExpressionParams
+  readonly checkType: ConditionalExpression['checkType']
+}
+
 export type ExpressionParams =
   | VariableExpressionParams
   | FunctionExpressionParams
@@ -46,3 +54,4 @@ export type ExpressionParams =
   | VariableShorthandBinaryParams
   | VariableShorthandNumberParams
   | VariableShorthandUnaryParams
+  | ConditionalExpressionParams

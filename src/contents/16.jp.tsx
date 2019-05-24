@@ -39,12 +39,12 @@ export default () => (
         )
       },
       {
-        title: <>コンピューターサイエンス = 計算機科学</>,
+        title: <>コンピュータサイエンス = 計算機科学</>,
         content: (
           <>
             <P>
               当記事の題名に入っている「
-              <Strong>コンピューターサイエンス</Strong>
+              <Strong>コンピュータサイエンス</Strong>
               」という言葉について、最初のページで以下のように説明しました:
             </P>
             <Blockquote>
@@ -53,7 +53,7 @@ export default () => (
               </P>
             </Blockquote>
             <P>
-              実はコンピューターサイエンスは、日本語では「
+              実はコンピュータサイエンスは、日本語では「
               <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6">
                 <Strong>計算機科学</Strong>
               </ExternalLink>
@@ -68,7 +68,7 @@ export default () => (
             <P>
               だから、
               <Em>
-                「コンピューターサイエンス = 計算機科学」は、
+                「コンピュータサイエンス = 計算機科学」は、
                 <Strong>「計算機」について考える学問</Strong>なのです
               </Em>
               。
@@ -83,7 +83,7 @@ export default () => (
         content: (
           <>
             <P>
-              コンピューターサイエンスは、「計算機」について考える学問です。そして学問なので、さまざまな
+              コンピュータサイエンスは、「計算機」について考える学問です。そして学問なので、さまざまな
               <Strong>問い(命題)</Strong>
               があります。
             </P>

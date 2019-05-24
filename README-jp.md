@@ -1,4 +1,4 @@
-# [コンピュターサイエンスと魔法のYコンビネーター](https://yj.chibicode.com)
+# [コンピュータサイエンスと魔法のYコンビネータ](https://yj.chibicode.com)
 
 ## ライセンスについて
 
