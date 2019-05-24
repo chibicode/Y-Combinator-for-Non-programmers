@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -74,12 +74,19 @@ function toCrossed(
       arg: toCrossed(e.arg, isCallArg),
       body: toCrossed(e.body, isCallArg)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toCrossed(e.arg, isCallArg),
       func: toCrossed(e.func, isCallArg)
+    }
+  } else {
+    return {
+      ...e,
+      condition: toCrossed(e.condition, isCallArg),
+      trueCase: toCrossed(e.trueCase, isCallArg),
+      falseCase: toCrossed(e.falseCase, isCallArg)
     }
   }
 }
