@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -39,12 +39,19 @@ export default function toDefault(e: Expression): StepChild<'default'> {
       arg: toDefault(e.arg),
       body: toDefault(e.body)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toDefault(e.arg),
       func: toDefault(e.func)
+    }
+  } else {
+    return {
+      ...e,
+      condition: toDefault(e.condition),
+      trueCase: toDefault(e.trueCase),
+      falseCase: toDefault(e.falseCase)
     }
   }
 }

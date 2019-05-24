@@ -1,4 +1,4 @@
-import { isFunction, isVariable } from 'src/lib/yc/expressionTypeGuards'
+import { isFunction, isVariable, isCall } from 'src/lib/yc/expressionTypeGuards'
 import { activeFuncArg } from 'src/lib/yc/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -6,6 +6,8 @@ import {
   ExecutableStepCallRegular,
   Expression,
   FunctionExpression,
+  StepConditional,
+  ConditionalExpression,
   NonExecutableStepCall,
   StepChild,
   StepFunction,
@@ -23,6 +25,11 @@ export function toShowFuncBound(
   funcSide: boolean,
   highlight: boolean
 ): StepFunction<'showFuncBound'>
+export function toShowFuncBound(
+  e: ConditionalExpression,
+  funcSide: boolean,
+  highlight: boolean
+): StepConditional<'showFuncBound'>
 export function toShowFuncBound(
   e: CallExpression,
   funcSide: boolean,
@@ -83,12 +90,19 @@ export function toShowFuncBound(
       arg: toShowFuncBound(e.arg, funcSide, highlight),
       body: toShowFuncBound(e.body, funcSide, highlight)
     }
-  } else {
+  } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
       arg: toShowFuncBound(e.arg, funcSide, highlight),
       func: toShowFuncBound(e.func, funcSide, highlight)
+    }
+  } else {
+    return {
+      ...e,
+      condition: toShowFuncBound(e.condition, funcSide, highlight),
+      trueCase: toShowFuncBound(e.trueCase, funcSide, highlight),
+      falseCase: toShowFuncBound(e.falseCase, funcSide, highlight)
     }
   }
 }
