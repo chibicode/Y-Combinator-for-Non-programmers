@@ -4,7 +4,8 @@ import {
   isHighlightedVariableExpressionParams,
   isFunctionExpressionParams,
   isVariableShorthandBinaryParams,
-  isVariableShorthandUnaryParams
+  isVariableShorthandUnaryParams,
+  isVariableShorthandNumberParams
 } from 'src/lib/yc/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -13,7 +14,8 @@ import {
   VariableExpressionParams,
   HighlightedVariableExpressionParams,
   VariableShorthandBinaryParams,
-  VariableShorthandNumberParams
+  VariableShorthandNumberParams,
+  ConditionalExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
@@ -21,7 +23,8 @@ import {
   StepFunction,
   StepVariable,
   StepVariableShorthandBinary,
-  StepVariableShorthandNumber
+  StepVariableShorthandNumber,
+  StepConditional
 } from 'src/types/yc/ExpressionTypes'
 import { VariableNames } from 'src/types/yc/VariableNames'
 
@@ -81,6 +84,9 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: VariableShorthandNumberParams
 ): StepVariableShorthandNumber
+export default function buildExpressionFromParams(
+  expressionParams: ConditionalExpressionParams
+): StepConditional
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): StepChild
@@ -143,7 +149,7 @@ export default function buildExpressionFromParams(
       ),
       shorthandUnary: expressionParams.shorthandUnary
     }
-  } else {
+  } else if (isVariableShorthandNumberParams(expressionParams)) {
     return {
       ...buildVariableExpression(
         'shorthandNumber',
@@ -152,6 +158,14 @@ export default function buildExpressionFromParams(
       ),
       shorthandNumber: expressionParams.shorthandNumber,
       shorthandUnary: expressionParams.shorthandUnary
+    }
+  } else {
+    return {
+      type: 'conditional',
+      checkType: expressionParams.checkType,
+      condition: buildExpressionFromParams(expressionParams.condition),
+      trueCase: buildExpressionFromParams(expressionParams.trueCase),
+      falseCase: buildExpressionFromParams(expressionParams.falseCase)
     }
   }
 }
