@@ -22,15 +22,17 @@ const linkCss = css`
   margin-bottom: ${spaces(1)};
   text-decoration: none;
   display: block;
-  margin-left: ${spaces('-0.5')};
-  margin-right: ${spaces('-0.5')};
+  text-align: center;
+  margin-left: ${spaces('-0.25')};
+  margin-right: ${spaces('-0.25')};
   padding: ${spaces(0.5)};
   border-radius: ${radii(0.5)};
   -webkit-tap-highlight-color: transparent;
+  background: ${colors('white')};
 
   &:hover,
   &:active {
-    background: ${colors('indigo50')};
+    background: ${colors('yellow100')};
   }
 `
 
@@ -55,7 +57,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
   return (
     <Modal onClickBackground={hideModal}>
       <Card
-        color="white"
+        color="indigo"
         title={<H args={{ name: 'toc' }} />}
         header={
           <button
@@ -66,7 +68,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
               right: ${spaces(0.5)};
               top: ${spaces(0.5)};
               padding: ${spaces(0.5)} ${spaces(0.5)};
-              color: ${colors('indigo500')};
+              color: ${colors('white')};
               font-size: ${fontSizes(0.85)};
               font-weight: bold;
               line-height: 1;
@@ -78,10 +80,10 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
               border: none;
               background: none;
               cursor: pointer;
-              background: ${colors('indigo50')};
+              background: ${colors('indigo300')};
 
               &:hover {
-                background: ${colors('indigo100')};
+                background: ${colors('indigo400')};
               }
             `}
           >
@@ -109,6 +111,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
             size="sm"
             cssOverrides={css`
               margin: 0;
+              text-align: center;
             `}
             alignCenter={false}
           />
@@ -146,6 +149,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
                 size="sm"
                 cssOverrides={css`
                   margin: 0;
+                  text-align: center;
                 `}
               />
             </InternalLink>
@@ -179,6 +183,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
             size="sm"
             cssOverrides={css`
               margin: 0;
+              text-align: center;
             `}
             alignCenter={false}
           />

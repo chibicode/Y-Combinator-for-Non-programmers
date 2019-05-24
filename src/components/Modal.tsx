@@ -25,7 +25,7 @@ const Modal = ({
         top: 0;
         width: 100%;
         height: 100%;
-        background: ${colors('indigo30066')};
+        background: ${colors('indigo30090')};
         z-index: ${zIndices('modal')};
         overflow-y: auto;
       `}
@@ -42,6 +42,7 @@ const Modal = ({
         ]}
       />
       <Container
+        size="smsm"
         cssOverrides={css`
           margin-top: ${spaces(1)};
           margin-bottom: ${spaces(1)};
