@@ -3,6 +3,7 @@ import {
   Expression,
   FunctionExpression,
   VariableExpression,
+  ConditionalExpression,
   VariableShorthandBinary,
   VariableShorthandUnary,
   VariableShorthandNumber,
@@ -28,6 +29,12 @@ export function isFunction<E extends FunctionExpression = FunctionExpression>(
   expression: Expression
 ): expression is E {
   return expression.type === 'function'
+}
+
+export function isConditional<
+  E extends ConditionalExpression = ConditionalExpression
+>(expression: Expression): expression is E {
+  return expression.type === 'conditional'
 }
 
 export function isVariableShorthandUnary<

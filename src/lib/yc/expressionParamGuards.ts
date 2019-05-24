@@ -41,7 +41,7 @@ export function isVariableShorthandNumberParams(
   expressionParams: ExpressionParams
 ): expressionParams is VariableShorthandNumberParams {
   return (
-    !!(expressionParams as VariableShorthandNumberParams).shorthandNumber !==
+    (expressionParams as VariableShorthandNumberParams).shorthandNumber !==
     undefined
   )
 }
