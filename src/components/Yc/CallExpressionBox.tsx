@@ -27,7 +27,7 @@ const CallExpressionBox = ({ expression }: CallExpressionBoxProps) => {
             (expression.state !== 'default' ? expression.priority : undefined)
         }}
       >
-        <FlexCenter css={expression.state !== 'default'}>
+        <FlexCenter>
           <ExpressionBox expression={expression.arg} />
         </FlexCenter>
         <FlexCenter>

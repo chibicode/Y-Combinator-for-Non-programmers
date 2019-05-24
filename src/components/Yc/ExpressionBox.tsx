@@ -8,6 +8,7 @@ import BorderWrapper, {
 import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
 import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
+import ConditionalExpressionBox from 'src/components/Yc/ConditionalExpressionBox'
 import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
 import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
@@ -74,7 +75,7 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
           } else if (isFunction(expression)) {
             return <FunctionExpressionBox expression={expression} />
           } else {
-            return <></>
+            return <ConditionalExpressionBox expression={expression} />
           }
         })()}
       </BorderWrapper>
