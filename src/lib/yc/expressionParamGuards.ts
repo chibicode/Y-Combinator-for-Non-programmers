@@ -73,6 +73,7 @@ export function isConditionalParams(
   return (
     !!(expressionParams as ConditionalExpressionParams).condition &&
     !!(expressionParams as ConditionalExpressionParams).trueCase &&
-    !!(expressionParams as ConditionalExpressionParams).falseCase
+    !!(expressionParams as ConditionalExpressionParams).falseCase &&
+    !!(expressionParams as ConditionalExpressionParams).checkType
   )
 }

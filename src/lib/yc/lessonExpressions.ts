@@ -443,14 +443,12 @@ export const e12E12 = initializeExpressionContainer([
   }
 ])
 
-// TODO: Show how much easier this would be using shorthand
-export const e12EX = initializeExpressionContainer([
-  {
-    arg: 'i',
-    body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
-  },
-  numberParams(highlighted('g'), highlighted('h'), 3)
-])
+export const conditionalTest = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'a',
+  trueCase: 'b',
+  falseCase: 'c'
+})
 
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',

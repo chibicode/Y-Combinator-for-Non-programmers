@@ -6,13 +6,15 @@ import {
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams,
-  VariableShorthandNumberParams
+  VariableShorthandNumberParams,
+  ConditionalExpressionParams
 } from 'src/types/yc/ExpressionParamTypes'
 import {
   CallExpression,
   Expression,
   FunctionExpression,
-  VariableExpression
+  VariableExpression,
+  ConditionalExpression
 } from 'src/types/yc/ExpressionTypes'
 
 export default function initializeExpressionContainer(
@@ -24,6 +26,9 @@ export default function initializeExpressionContainer(
 export default function initializeExpressionContainer(
   expressionParams: FunctionExpressionParams
 ): ContainerWithState<'ready', FunctionExpression>
+export default function initializeExpressionContainer(
+  expressionParams: ConditionalExpressionParams
+): ContainerWithState<'ready', ConditionalExpression>
 export default function initializeExpressionContainer(
   expressionParams: VariableShorthandNumberParams
 ): ContainerWithState<'ready', VariableExpression>
