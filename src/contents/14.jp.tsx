@@ -13,7 +13,6 @@ import { colors } from 'src/lib/theme'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import EmojiWithText from 'src/components/EmojiWithText'
-import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import {
   InlineEmojiBoxesForCondition,
