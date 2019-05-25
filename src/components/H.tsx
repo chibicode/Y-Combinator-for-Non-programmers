@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { episodeUrl } from 'src/lib/meta'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
   Em,
@@ -29,9 +29,9 @@ import { colors, fontSizes } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiWithText from 'src/components/EmojiWithText'
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 
 export interface HProps {
   highlightType: InlineHighlightType

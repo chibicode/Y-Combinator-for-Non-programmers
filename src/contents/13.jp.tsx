@@ -2,16 +2,16 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/Yc/AER'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import AER from 'src/components/AER'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-import TopRightBadge from 'src/components/Yc/TopRightBadge'
+import TopRightBadge from 'src/components/TopRightBadge'
 import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
 
 export default () => (
@@ -467,7 +467,7 @@ export default () => (
               そして、中級編の最後で話した「<Strong>繰り返し処理</Strong>
               」について、もう一度検証していきます。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

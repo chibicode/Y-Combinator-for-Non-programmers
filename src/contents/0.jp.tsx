@@ -15,7 +15,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
@@ -58,7 +58,7 @@ export default () => (
             <P>
               <Img
                 size="small"
-                src="/static/images/yc/factfulness.jpg"
+                src="/static/images/factfulness.jpg"
                 alt="ファクトフルネス"
               />
             </P>
@@ -484,7 +484,7 @@ export default () => (
               また、当記事は最後まで<Strong>無料</Strong>で公開しています。
             </P>
             <P>というわけで、さっそくはじめてみましょう！</P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       },
@@ -656,7 +656,7 @@ export default () => (
         title: '余談はこれくらいにして、早速始めましょう！',
         content: (
           <>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

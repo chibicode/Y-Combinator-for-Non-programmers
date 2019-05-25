@@ -12,8 +12,8 @@ import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
-import AER from 'src/components/Yc/AER'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import AER from 'src/components/AER'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 
@@ -37,7 +37,7 @@ export default () => (
               まずはじめにこちらの写真をご覧ください。筆者の地元・横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
             </P>
             <PFullWidth>
-              <Img src="/static/images/yc/bentoboxes.jpg" alt="Bento Boxes" />
+              <Img src="/static/images/bentoboxes.jpg" alt="Bento Boxes" />
             </PFullWidth>
             <P>
               なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
@@ -406,7 +406,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

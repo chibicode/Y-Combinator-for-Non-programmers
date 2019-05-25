@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
-import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
-import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
-import { ExpressionRunnerProps } from 'src/components/Yc/ExpressionRunner'
+import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
+import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import { ExpressionRunnerProps } from 'src/components/ExpressionRunner'
 
 const initializeExpressionManager = ({
   initializeInstructions,

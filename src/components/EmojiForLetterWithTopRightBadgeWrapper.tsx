@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { zIndices } from 'src/lib/theme'
-import TopRightBadge, {
-  TopRightBadgeProps
-} from 'src/components/Yc/TopRightBadge'
+import TopRightBadge, { TopRightBadgeProps } from 'src/components/TopRightBadge'
 
 interface EmojiForLetterWithBottomRightBadgeWrapperProps {
   topRightBadgeType: TopRightBadgeProps['topRightBadgeType']

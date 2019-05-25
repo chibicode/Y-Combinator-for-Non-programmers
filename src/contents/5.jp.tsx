@@ -9,12 +9,12 @@ import {
   InlineHeader
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import AER from 'src/components/Yc/AER'
+import AER from 'src/components/AER'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
 
@@ -495,7 +495,7 @@ export default () => (
               </Em>
               「なんとなく」の理解で十分です！
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       },
@@ -512,7 +512,7 @@ export default () => (
         title: <>それでは中級に進みましょう！</>,
         content: (
           <>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

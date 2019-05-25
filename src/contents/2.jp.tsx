@@ -2,9 +2,9 @@ import React from 'react'
 import { P, Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import AER from 'src/components/Yc/AER'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import AER from 'src/components/AER'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -387,7 +387,7 @@ export default () => (
             </P>
             {AER.skzv}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

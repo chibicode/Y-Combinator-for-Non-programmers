@@ -1,12 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Em } from 'src/components/ContentTags'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-import AER from 'src/components/Yc/AER'
+import NextLessonButton from 'src/components/NextLessonButton'
+import AER from 'src/components/AER'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Emoji from 'src/components/Emoji'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export default () => (
@@ -306,7 +306,7 @@ export default () => (
             <P>
               ここまで読んでくださり、ありがとうございます！最後まで楽しんでいただけると嬉しいです。下のボタンから、上級編に進むことができます。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       },
@@ -323,7 +323,7 @@ export default () => (
         title: <>それでは上級に進みましょう！</>,
         content: (
           <>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

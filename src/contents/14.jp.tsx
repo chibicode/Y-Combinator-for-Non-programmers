@@ -2,7 +2,7 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/Yc/AER'
+import AER from 'src/components/AER'
 
 export default () => (
   <EpisodeCardList

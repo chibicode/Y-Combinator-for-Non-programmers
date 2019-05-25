@@ -2,13 +2,13 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/Yc/AER'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import AER from 'src/components/AER'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
@@ -420,7 +420,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               の「<Strong>省略表記</Strong>」について見ていきます。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

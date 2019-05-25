@@ -2,11 +2,11 @@ import React from 'react'
 import { Hr, Em, P, Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import InlineBackground from 'src/components/Yc/InlineBackground'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import InlineBackground from 'src/components/InlineBackground'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import AER from 'src/components/Yc/AER'
+import AER from 'src/components/AER'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
@@ -311,7 +311,7 @@ export default () => (
               のページです。ここまでお付き合いいただき、ありがとうございます！
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

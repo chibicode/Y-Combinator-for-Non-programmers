@@ -1,16 +1,16 @@
 import React from 'react'
 import { Ul, UlLi, Em, P, Strong } from 'src/components/ContentTags'
-import AER from 'src/components/Yc/AER'
+import AER from 'src/components/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 
 export default () => (
   <EpisodeCardList
@@ -452,7 +452,7 @@ export default () => (
                 を用いて解説していきます！
               </Em>
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }
