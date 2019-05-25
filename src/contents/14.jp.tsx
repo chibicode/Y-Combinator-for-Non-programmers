@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
+import { P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/Yc/AER'
 
@@ -37,9 +37,12 @@ export default () => (
             <P>
               先ほどの
               <H args={{ name: 'bentoBox' }} />
-              を省略表記すると、こうなります:
+              を、次のように省略表記してみましょう:
             </P>
             {AER.hvdn}
+            <Ul>
+              <UlLi />
+            </Ul>
           </>
         )
       }
