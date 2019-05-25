@@ -23,8 +23,4 @@ const YcNextLessonButton = () => {
   )
 }
 
-YcNextLessonButton.defaultProps = {
-  primaryTextType: 'quiz'
-}
-
 export default YcNextLessonButton
