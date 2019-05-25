@@ -445,9 +445,9 @@ export const e12E12 = initializeExpressionContainer([
 
 export const conditionalTest = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'a',
-  trueCase: 'b',
-  falseCase: 'c'
+  condition: 'question',
+  trueCase: numberParams('a', 'b', 2),
+  falseCase: numberParams('a', 'b', 2)
 })
 
 const yCombinator: FunctionExpressionParams = {

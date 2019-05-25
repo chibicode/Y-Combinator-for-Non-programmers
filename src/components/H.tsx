@@ -28,6 +28,7 @@ import EpisodeContext from 'src/components/EpisodeContext'
 import { colors, fontSizes } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import EmojiWithText from 'src/components/EmojiWithText'
 import { VariableNames } from 'src/types/yc/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
@@ -49,6 +50,7 @@ export interface HProps {
     | { name: 'byTheWay' }
     | { name: 'computerScience' }
     | { name: 'yCombinator' }
+    | { name: 'isZeroReview' }
     | {
         name: 'bentoBox'
         plural?: boolean
@@ -1238,6 +1240,67 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       return <>Yコンビネータ</>
+    }
+  }
+  if (args.name === 'isZeroReview') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Ul>
+            <UlLi>
+              もし
+              <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を埋め込んで実行した場合、最後に
+              <Strong>
+                <EmojiWithText letter="y" />
+              </Strong>
+              が残ります 。
+            </UlLi>
+          </Ul>
+          <EmojiSeparator
+            nodes={[
+              <Emoji>0️⃣</Emoji>,
+              <Emoji>➡️</Emoji>,
+              <EmojiForLetter letter="y" />
+            ]}
+            description={
+              <>
+                「<Strong>0</Strong>」なら
+                <EmojiWithText letter="y" />に
+              </>
+            }
+          />
+          <Ul>
+            <UlLi>
+              もし
+              <InlineEmojiBoxesForQuestion />に<Strong>暗号が「1以上」</Strong>
+              の
+              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              を埋め込んで実行した場合、最後に
+              <Strong>
+                <EmojiWithText letter="z" />
+              </Strong>
+              が残ります 。
+            </UlLi>
+          </Ul>
+          <EmojiSeparator
+            nodes={[
+              <Emoji>🔢</Emoji>,
+              <Emoji>➡️</Emoji>,
+              <EmojiForLetter letter="z" />
+            ]}
+            description={
+              <>
+                「<Strong>1以上</Strong>」なら
+                <EmojiWithText letter="z" />に
+              </>
+            }
+          />
+        </>
+      )
     }
   }
   throw new Error()

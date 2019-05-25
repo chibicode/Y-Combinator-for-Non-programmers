@@ -2,7 +2,7 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
-import { fontSizes, ns, spaces } from 'src/lib/theme'
+import { colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
 import { VariableNames } from 'src/types/yc/VariableNames'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
@@ -14,6 +14,7 @@ interface EmojiSeparatorProps {
   alignCenter: boolean
   Component: React.ComponentType | string
   cssOverrides?: SerializedStyles
+  description?: React.ReactNode
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -37,7 +38,8 @@ const EmojiSeparator = ({
   size,
   Component,
   alignCenter,
-  cssOverrides
+  cssOverrides,
+  description
 }: EmojiSeparatorProps) => (
   <Component
     css={[
@@ -52,29 +54,44 @@ const EmojiSeparator = ({
       cssOverrides
     ]}
   >
-    {letters
-      ? letters.map((letter, index) => (
-          <Fragment key={`${letter}${index}`}>
-            <Emoji size="sm">{letterEmojiMapping[letter]}</Emoji>{' '}
-          </Fragment>
-        ))
-      : nodes
-      ? nodes.map((node, index) => (
-          <Fragment key={`node-${index}`}>
-            <span
-              css={css`
-                font-size: ${1 / 1.2}em;
-              `}
-            >
-              {node}
-            </span>{' '}
-          </Fragment>
-        ))
-      : emojis.map((emoji, index) => (
-          <Fragment key={`${emoji}${index}`}>
-            <Emoji size="sm">{emoji}</Emoji>{' '}
-          </Fragment>
-        ))}
+    <>
+      {letters
+        ? letters.map((letter, index) => (
+            <Fragment key={`${letter}${index}`}>
+              <Emoji size="sm">{letterEmojiMapping[letter]}</Emoji>{' '}
+            </Fragment>
+          ))
+        : nodes
+        ? nodes.map((node, index) => (
+            <Fragment key={`node-${index}`}>
+              <span
+                css={css`
+                  font-size: ${1 / 1.2}em;
+                `}
+              >
+                {node}
+              </span>{' '}
+            </Fragment>
+          ))
+        : emojis.map((emoji, index) => (
+            <Fragment key={`${emoji}${index}`}>
+              <Emoji size="sm">{emoji}</Emoji>{' '}
+            </Fragment>
+          ))}
+      {description && (
+        <div
+          css={css`
+            font-size: ${fontSizes(0.85)};
+            color: ${colors('grey600')};
+            padding-bottom: ${spaces(0.5)};
+            max-width: ${maxWidths('xxs')};
+            margin: 0 auto;
+          `}
+        >
+          {description}
+        </div>
+      )}
+    </>
   </Component>
 )
 
