@@ -11,8 +11,8 @@ import ExpressionRunnerContext, {
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import TopRightBadge from 'src/components/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
-import numberEmojiMapping from 'src/lib/yc/numberEmojiMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
+import numberEmojiMapping from 'src/lib/numberEmojiMapping'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 
 interface VariableExpressionBoxProps {

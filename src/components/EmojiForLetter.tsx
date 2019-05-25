@@ -1,7 +1,7 @@
 import React from 'react'
 import { VariableNames } from 'src/types/yc/VariableNames'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 interface EmojiWithTextProps {
   letter: VariableNames

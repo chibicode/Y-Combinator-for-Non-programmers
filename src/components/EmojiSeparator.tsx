@@ -4,7 +4,7 @@ import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
 import { colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
 import { VariableNames } from 'src/types/yc/VariableNames'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 interface EmojiSeparatorProps {
   emojis: string[]

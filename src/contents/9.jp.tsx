@@ -19,7 +19,7 @@ import InlineEmojiBoxes, {
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 export default () => (
   <EpisodeCardList

@@ -1,4 +1,4 @@
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { episodeTitles } from 'src/lib/titles'
 
 const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {

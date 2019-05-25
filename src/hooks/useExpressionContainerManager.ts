@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
+import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/components/ExpressionRunner'
 

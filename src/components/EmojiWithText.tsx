@@ -2,8 +2,8 @@ import React from 'react'
 import locale from 'src/lib/locale'
 import { VariableNames } from 'src/types/yc/VariableNames'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
-import emojiLabelMapping from 'src/lib/yc/emojiLabelMapping'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import emojiLabelMapping from 'src/lib/emojiLabelMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { Em } from 'src/components/ContentTags'
 
 interface EmojiWithTextProps {

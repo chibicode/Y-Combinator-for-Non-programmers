@@ -6,11 +6,11 @@ import {
   ExpressionRunnerPairSimple,
   ExpressionRunnerSingleStep
 } from 'src/components/ExpressionRunnerShorthand'
-import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
+import * as lessonExpressions from 'src/lib/lessonExpressions'
 import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
-import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join

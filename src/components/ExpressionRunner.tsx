@@ -12,8 +12,8 @@ import ExpressionRunnerContext, {
 import ExpressionRunnerControls from 'src/components/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
-import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
-import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
+import { isContainerWithState } from 'src/lib/expressionContainerGuards'
+import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
 import {
   ExpressionContainerStates,
   SteppedExpressionContainer
