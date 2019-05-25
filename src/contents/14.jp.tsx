@@ -3,6 +3,12 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
+import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiSeparator from 'src/components/EmojiSeparator'
+import {
+  InlineEmojiBoxesForCondition,
+  InlineEmojiBoxesForQuestion
+} from 'src/components/InlineEmojiBoxes'
 
 export default () => (
   <EpisodeCardList
@@ -41,8 +47,29 @@ export default () => (
             </P>
             {AER.hvdn}
             <Ul>
-              <UlLi />
+              <UlLi>
+                まず、
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                (一番下、黄色い枠)の中にある
+                <InlineEmojiBoxesForQuestion />
+                の暗号が「0」かどうかチェックします。
+              </UlLi>
+              <UlLi>
+                もし「<Strong>0</Strong>」なら、{' '}
+                <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                (真ん中、青い枠)に入っている料理が残ります。この場合は
+                <EmojiWithText letter="y" />
+                です。
+              </UlLi>
+              <UlLi>
+                もし「<Strong>1以上</Strong>なら」、{' '}
+                <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                (一番上、赤い枠)に入っている料理が残ります。この場合は
+                <EmojiWithText letter="z" />
+                です。
+              </UlLi>
             </Ul>
+            <EmojiSeparator emojis={['⬆️', '0️⃣', '🔢']} />
           </>
         )
       }

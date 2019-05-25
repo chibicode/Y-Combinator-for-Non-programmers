@@ -4,7 +4,6 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
 import { ConditionalExpression } from 'src/types/ExpressionTypes'
-import { colors } from 'src/lib/theme'
 import ConditionalBorder from 'src/components/ConditionalBorder'
 
 interface ConditionalExpressionBoxProps {
@@ -27,11 +26,7 @@ const ConditionalExpressionBox = ({
           position: relative;
         `}
       >
-        <ConditionalBorder
-          color={colors('pink100')}
-          addBottom
-          iconType="trueCase"
-        />
+        <ConditionalBorder addBottom type="falseCase" />
         <ExpressionBox expression={expression.falseCase} />
       </FlexCenter>
       <FlexCenter
@@ -39,11 +34,7 @@ const ConditionalExpressionBox = ({
           position: relative;
         `}
       >
-        <ConditionalBorder
-          color={colors('blue100')}
-          addBottom
-          iconType="falseCase"
-        />
+        <ConditionalBorder addBottom type="trueCase" />
         <ExpressionBox expression={expression.trueCase} />
       </FlexCenter>
       <FlexCenter
@@ -51,7 +42,7 @@ const ConditionalExpressionBox = ({
           position: relative;
         `}
       >
-        <ConditionalBorder color={colors('yellow400')} iconType="condition" />
+        <ConditionalBorder type="condition" />
         <ExpressionBox expression={expression.condition} />
       </FlexCenter>
     </Flex>
