@@ -14,12 +14,8 @@ export {
 export {
   default as stepToNeedsAlphaConvert
 } from 'src/lib/steps/stepToNeedsAlphaConvert'
-export {
-  default as stepToShowCallArg
-} from 'src/lib/steps/stepToShowCallArg'
-export {
-  default as stepToShowFuncArg
-} from 'src/lib/steps/stepToShowFuncArg'
+export { default as stepToShowCallArg } from 'src/lib/steps/stepToShowCallArg'
+export { default as stepToShowFuncArg } from 'src/lib/steps/stepToShowFuncArg'
 export {
   default as stepToShowFuncBound
 } from 'src/lib/steps/stepToShowFuncBound'
