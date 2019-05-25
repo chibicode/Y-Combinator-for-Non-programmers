@@ -2,9 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
-import BorderWrapper, {
-  BorderWrapperProps
-} from 'src/components/BorderWrapper'
+import BorderWrapper, { BorderWrapperProps } from 'src/components/BorderWrapper'
 import CallExpressionBox from 'src/components/CallExpressionBox'
 import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/VariableExpressionBox'

@@ -20,7 +20,7 @@ import {
 } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
-import ExpressionRunnerScrollAdjuster from 'src/components/Yc/ExpressionRunnerScrollAdjuster'
+import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
 import ExpressionRunnerTimer from 'src/components/ExpressionRunnerTimer'
 
