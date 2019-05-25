@@ -1694,6 +1694,12 @@ export default {
         />
       }
     />
+  ),
+  vxnm: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E2}
+      showPriorities
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import YesNoButtons from 'src/components/YesNoButtons'
 import {
   Em,
   InlineHeader,
@@ -138,7 +139,13 @@ export default () => (
               では、試しに
               <H args={{ name: 'yesNoQuiz' }} />
               を行ってみましょう！
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
+            {AER.vxnm}
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
+            </P>
+            <YesNoButtons answer="no" />
           </>
         )
       }
