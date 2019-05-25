@@ -182,12 +182,12 @@ export default () => (
             {AER.qmof}
             <P>
               ここで、上の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
+              <H args={{ name: 'bentoBox' }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に、
               <Em>
                 暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                <H args={{ name: 'bentoBox' }} />
                 を埋め込みます
               </Em>
               。たとえば、こちらを埋め込むわけです。
@@ -202,7 +202,7 @@ export default () => (
               ここで質問です。
               <Strong>
                 上の
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />を
+                <H args={{ name: 'bentoBox' }} />を
                 <H args={{ name: 'play' }} />
                 すると、最終的にどうなるのでしょう？
               </Strong>
@@ -265,7 +265,7 @@ export default () => (
           <>
             <P>
               1. こちらの
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               の、
               <InlineEmojiBoxesForQuestion />
               の部分に…
@@ -273,7 +273,7 @@ export default () => (
             {AER.qmof}
             <P>
               2. 暗号が<Strong>「0」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を…
             </P>
             {AER.nicg}
@@ -302,7 +302,7 @@ export default () => (
             {AER.qmof}
             <P>
               この
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               にはどういう効果があるか、もうお分かりでしょうか？
             </P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />

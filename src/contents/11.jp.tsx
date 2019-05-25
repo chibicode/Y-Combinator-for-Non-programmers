@@ -126,7 +126,7 @@ export default () => (
             <Ul>
               <UlLi>
                 こちらの
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
+                <H args={{ name: 'bentoBox' }} />の
                 <Strong>
                   <InlineEmojiBoxesForQuestion />
                   に料理をひとつだけ入れて
@@ -210,7 +210,7 @@ export default () => (
           <>
             <P>
               こちらの
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               の…
             </P>
             {AER.wbpx}
@@ -446,7 +446,7 @@ export default () => (
               <Em>
                 結果が変わることによってどんな問題が発生するのか、以前紹介した
                 <Strong>
-                  <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                  <H args={{ name: 'bentoBox' }} />
                   の暗号
                 </Strong>
                 を用いて解説していきます！

@@ -322,7 +322,7 @@ export default () => (
         title: (
           <>
             予告: 3段の
-            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (

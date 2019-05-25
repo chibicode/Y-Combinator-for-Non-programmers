@@ -120,7 +120,7 @@ export default () => (
             {AER.emmb}
             <P>
               こちらは、イタリアンな
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               ですね！
             </P>
             <Hr />

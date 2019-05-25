@@ -18,7 +18,7 @@ export default () => (
         title: (
           <>
             3段の
-            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+            <H args={{ name: 'bentoBox' }} />
             の法則
           </>
         ),
