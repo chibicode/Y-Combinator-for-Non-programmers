@@ -7,18 +7,22 @@ import { colors, spaces } from 'src/lib/theme'
 interface InlineEmojiBoxProps {
   emojis: string[]
   background: string
+  children?: React.ReactNode
   size: 'md' | 'lg'
 }
 
 export const InlineEmojiBoxesForQuestion = ({
-  size
+  size,
+  children
 }: {
   size: InlineEmojiBoxProps['size']
+  children?: React.ReactNode
 }) => (
   <InlineEmojiBoxes
     emojis={['❔']}
     background={colors('indigo400')}
     size={size}
+    children={children}
   />
 )
 
@@ -41,7 +45,8 @@ const emojiSize = (size: InlineEmojiBoxProps['size']): 'md' | 'sm' =>
 const InlineEmojiBoxes = ({
   emojis,
   background,
-  size
+  size,
+  children
 }: InlineEmojiBoxProps) => (
   <span
     css={css`
@@ -66,6 +71,7 @@ const InlineEmojiBoxes = ({
           margin-right: -1px;
         `}
       >
+        {children}
         <Emoji noVerticalTransform size={emojiSize(size)}>
           {emoji}
         </Emoji>
