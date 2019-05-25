@@ -34,7 +34,11 @@ export default () => (
         title: <>条件分岐の省略表記</>,
         content: (
           <>
-            <P>では、これを省略表記するとどうなるでしょう？</P>
+            <P>
+              先ほどの
+              <H args={{ name: 'bentoBox' }} />
+              を省略表記すると、こうなります:
+            </P>
             {AER.hvdn}
           </>
         )

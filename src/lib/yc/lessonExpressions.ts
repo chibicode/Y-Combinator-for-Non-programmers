@@ -443,6 +443,13 @@ export const e12E12 = initializeExpressionContainer([
   }
 ])
 
+export const e13E1 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'question',
+  trueCase: 'y',
+  falseCase: 'z'
+})
+
 export const conditionalTest = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'question',
