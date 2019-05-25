@@ -195,9 +195,9 @@ export default () => (
             <P>
               <InlineEmojiBoxesForQuestion />
               の部分に、先ほどの暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               と暗号が<Strong>「2」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を埋め込みます。(<Em>黄色</Em>の部分)
             </P>
             {AER.hdwy}
@@ -256,14 +256,14 @@ export default () => (
                 が3個
               </Em>
               )の
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               と暗号が<Strong>「1」</Strong> (右下に
               <Em>
                 <EmojiForLetter letter="f" />
                 が1個
               </Em>
               )の
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を埋め込んでみます。
             </P>
             <P>
@@ -299,7 +299,7 @@ export default () => (
                 ふたつの
                 <InlineEmojiBoxesForQuestion />
                 に入っている
-                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+                <H args={{ name: 'bentoBox' }} />
                 の暗号を足し算してくれます。
               </Strong>
             </P>
@@ -330,7 +330,7 @@ export default () => (
             <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
             <P>
               実は、
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               ができるのは足し算だけではありません。
             </P>
             <YcNextLessonButton />

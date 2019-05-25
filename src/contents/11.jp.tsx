@@ -20,7 +20,7 @@ export default () => (
           <>
             <EmojiWithText letter="v" />
             の入った
-            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
@@ -367,7 +367,7 @@ export default () => (
             />
             <P>
               先ほどの
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               だと、
             </P>
             {AER.wbpx}
@@ -427,7 +427,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               に同じ料理があるかどうかで、結果が変わる
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               があることがわかりました。
             </P>
             <P>

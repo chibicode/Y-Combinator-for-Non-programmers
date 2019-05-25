@@ -51,6 +51,7 @@ export interface HProps {
     | { name: 'computerScience' }
     | { name: 'yCombinator' }
     | { name: 'isZeroReview' }
+    | { name: 'bentoBox'; plural?: boolean }
     | {
         name: 'bentoBoxPuzzle'
         plural?: boolean
@@ -392,6 +393,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           「弁当箱のパズル <Emoji>🍱</Emoji>」
         </Strong>
       )
+    }
+  }
+  if (args.name === 'bentoBox') {
+    if (locale === 'en') {
+      return <>“bento box${args.plural ? 'es' : ''}”</>
+    } else {
+      return <>弁当箱</>
     }
   }
   if (args.name === 'next') {
@@ -954,7 +962,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Emoji>1️⃣</Emoji> を足す
-          <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+          <H args={{ name: 'bentoBox' }} />
         </>
       )
     }
@@ -1252,7 +1260,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を埋め込んで実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="y" />
@@ -1278,7 +1286,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「1以上」</Strong>
               の
-              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を埋め込んで実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="z" />

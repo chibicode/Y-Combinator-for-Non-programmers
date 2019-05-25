@@ -11,7 +11,7 @@ export default () => (
         title: (
           <>
             条件分岐の弁当箱
-            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
@@ -21,7 +21,7 @@ export default () => (
               今回は、以前紹介した「
               <Strong>
                 条件分岐の
-                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
+                <H args={{ name: 'bentoBox' }} />
               </Strong>
               」を省略表記していきます。まずは、復習から:
             </P>
