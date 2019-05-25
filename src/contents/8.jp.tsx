@@ -6,7 +6,7 @@ import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import AER from 'src/components/AER'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -270,7 +270,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               にできることはあるのでしょうか？次のページで見ていきます！
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

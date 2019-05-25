@@ -8,7 +8,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -333,7 +333,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               ができるのは足し算だけではありません。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

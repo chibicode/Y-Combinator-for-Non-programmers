@@ -2,7 +2,7 @@ import React from 'react'
 import { InlineHeader, Em, P, Strong, Hr } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/AER'
@@ -307,7 +307,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
             <P>答えは次のページに！</P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

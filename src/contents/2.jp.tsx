@@ -4,7 +4,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
 import BottomRightBadge from 'src/components/BottomRightBadge'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -387,7 +387,7 @@ export default () => (
             </P>
             {AER.skzv}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

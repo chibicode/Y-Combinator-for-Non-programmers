@@ -7,7 +7,7 @@ import Emoji from 'src/components/Emoji'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import BottomRightBadge from 'src/components/BottomRightBadge'
@@ -452,7 +452,7 @@ export default () => (
                 を用いて解説していきます！
               </Em>
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

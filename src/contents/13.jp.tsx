@@ -8,7 +8,7 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import TopRightBadge from 'src/components/TopRightBadge'
@@ -467,7 +467,7 @@ export default () => (
               そして、中級編の最後で話した「<Strong>繰り返し処理</Strong>
               」について、もう一度検証していきます。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

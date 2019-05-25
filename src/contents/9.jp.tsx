@@ -11,7 +11,7 @@ import {
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
@@ -526,7 +526,7 @@ export default () => (
               </Strong>
               。中級編最後となる次のページで見ていきましょう！
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

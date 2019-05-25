@@ -10,7 +10,7 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
 import AER from 'src/components/AER'
@@ -401,7 +401,7 @@ export default () => (
             </P>
             {AER.xhbi}
             <P>どういう法則でこうなるのかは、次のページで説明します！</P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

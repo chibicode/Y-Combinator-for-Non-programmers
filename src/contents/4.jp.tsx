@@ -4,7 +4,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import InlineBackground from 'src/components/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import AER from 'src/components/AER'
 import H from 'src/components/H'
@@ -311,7 +311,7 @@ export default () => (
               のページです。ここまでお付き合いいただき、ありがとうございます！
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }

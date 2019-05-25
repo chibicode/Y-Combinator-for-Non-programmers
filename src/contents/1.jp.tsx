@@ -13,7 +13,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
 import AER from 'src/components/AER'
-import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 
@@ -406,7 +406,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
             </P>
-            <YcNextLessonButton />
+            <NextLessonButton />
           </>
         )
       }
