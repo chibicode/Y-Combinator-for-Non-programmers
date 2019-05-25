@@ -92,18 +92,18 @@ export default () => (
               ・
               <span
                 css={css`
-                  background: ${colors('teal100')};
-                `}
-              >
-                <InlineHeader>青</InlineHeader>
-              </span>
-              ・
-              <span
-                css={css`
                   background: ${colors('yellow200')};
                 `}
               >
                 <InlineHeader>黄色</InlineHeader>
+              </span>
+              ・
+              <span
+                css={css`
+                  background: ${colors('teal100')};
+                `}
+              >
+                <InlineHeader>青</InlineHeader>
               </span>
               と、まるで縦型の信号機みたいですね。ちなみに、日本では横型の信号機が主流ですが、世界のほとんどの国では縦型が主流です。
             </P>
