@@ -55,7 +55,6 @@ export interface HProps {
     | {
         name: 'bentoBoxPuzzle'
         plural?: boolean
-        highlightType?: InlineHighlightType
       }
     | { name: 'next' }
     | { name: 'play' }
