@@ -15,9 +15,9 @@ const ConditionalBorder = ({
   smallEmoji
 }: ConditionalBorderProps) => {
   const color = {
-    trueCase: colors('blue100'),
+    trueCase: colors('teal100'),
     falseCase: colors('pink100'),
-    condition: colors('yellow400')
+    condition: colors('yellow200')
   }[type]
   return (
     <span
@@ -49,7 +49,7 @@ const ConditionalBorder = ({
             <Emoji size={smallEmoji ? 'sm' : 'md'}>🔢</Emoji>
           )}
           {type === 'condition' && (
-            <Emoji size={smallEmoji ? 'sm' : 'md'}>⬆️</Emoji>
+            <Emoji size={smallEmoji ? 'sm' : 'md'}>↕️</Emoji>
           )}
         </span>
       )}

@@ -1,11 +1,19 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { InlineHeader, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  Em,
+  InlineHeader,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import { colors } from 'src/lib/theme'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import EmojiWithText from 'src/components/EmojiWithText'
+import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import {
   InlineEmojiBoxesForCondition,
@@ -50,48 +58,18 @@ export default () => (
             {AER.nlxe}
             <P>次のように省略表記してみましょう:</P>
             {AER.hvdn}
-            <P>
-              <EmojiWithText letter="y" />と<InlineEmojiBoxesForQuestion />
-              の間にある2列が省略され、かなりシンプルになりました。枠にも
-              <span
-                css={css`
-                  background: ${colors('pink100')};
-                `}
-              >
-                <InlineHeader>赤</InlineHeader>
-              </span>
-              ・
-              <span
-                css={css`
-                  background: ${colors('blue100')};
-                `}
-              >
-                <InlineHeader>青</InlineHeader>
-              </span>
-              ・
-              <span
-                css={css`
-                  background: ${colors('yellow400')};
-                `}
-              >
-                <InlineHeader>黄色</InlineHeader>
-              </span>
-              の色がつき、それぞれの枠の左上には枠の意味を表す絵文字がつき、何が起きているか分かりやすくなりました。
-            </P>
-            <EmojiSeparator emojis={['⬆️', '0️⃣', '🔢']} />
-            <P>仕組みは以下の通りです:</P>
             <Ul>
               <UlLi>
                 まず、
                 <InlineEmojiBoxesForCondition type="condition" />{' '}
-                (一番下、黄色い枠)の中にある
+                (真ん中、黄色い枠)の中にある
                 <InlineEmojiBoxesForQuestion />
                 の暗号が「0」かどうかチェックします。
               </UlLi>
               <UlLi>
                 もし「<Strong>0</Strong>」なら、{' '}
                 <InlineEmojiBoxesForCondition type="trueCase" />{' '}
-                (真ん中、青い枠)に入っている料理が残ります。この場合は
+                (一番下、青い枠)に入っている料理が残ります。この場合は
                 <EmojiWithText letter="y" />
                 です。
               </UlLi>
@@ -103,6 +81,60 @@ export default () => (
                 です。
               </UlLi>
             </Ul>
+            <EmojiSeparator emojis={['0️⃣', '🚦', '🔢']} />
+            <P>
+              <span
+                css={css`
+                  background: ${colors('pink100')};
+                `}
+              >
+                <InlineHeader>赤</InlineHeader>
+              </span>
+              ・
+              <span
+                css={css`
+                  background: ${colors('teal100')};
+                `}
+              >
+                <InlineHeader>青</InlineHeader>
+              </span>
+              ・
+              <span
+                css={css`
+                  background: ${colors('yellow200')};
+                `}
+              >
+                <InlineHeader>黄色</InlineHeader>
+              </span>
+              と、まるで縦型の信号みたいですね。ちなみに、日本では横型の信号機が主流ですが、世界のほとんどの国では縦型が主流です。
+            </P>
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader>{' '}
+                <Em>
+                  省略前と違う点としては、
+                  <InlineEmojiBoxesForQuestion />
+                  が一番下から真ん中に移動した点です。
+                </Em>
+                このような配置にしたほうが、見た目的に分かりやすいと判断しました。
+              </P>
+            </>
+          )
+        }
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
             <P>
               では、試しに
               <H args={{ name: 'yesNoQuiz' }} />
@@ -110,11 +142,6 @@ export default () => (
             </P>
           </>
         )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: <>?</>,
-        content: <></>
       }
     ]}
   />

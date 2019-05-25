@@ -8,6 +8,7 @@ import {
   green,
   yellow,
   cyan,
+  teal,
   brown
 } from '@material-ui/core/colors'
 import Color from 'color'
@@ -36,6 +37,7 @@ export const allColors = {
   indigo400: indigo[400],
   indigo500: indigo[500],
   cyan50: cyan[50],
+  teal100: teal[100],
   brown50: brown[50],
   pink50: pink[50],
   pink100: pink[100],
@@ -52,12 +54,11 @@ export const allColors = {
   green400: green[400],
   green600: green[600],
   blue50: blue[50],
-  blue100: blue[100],
   blue400: blue[400],
   blue600: blue[600],
   yellow50: yellow[50],
   yellow100: yellow[100],
-  yellow400: yellow[400],
+  yellow200: yellow[200],
   yellow900: yellow[900],
   deepOrange50: deepOrange[50],
   deepOrange400: deepOrange[400],

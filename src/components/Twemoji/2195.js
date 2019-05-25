@@ -1,13 +1,14 @@
 import React from 'react'
 
-const Svg2B06 = props => (
+const Svg2195 = props => (
   <svg viewBox="0 0 36 36" {...props}>
     <path
       fill="#3B88C3"
       d="M36 32c0 2.209-1.791 4-4 4H4c-2.209 0-4-1.791-4-4V4c0-2.209 1.791-4 4-4h28c2.209 0 4 1.791 4 4v28z"
     />
-    <path fill="#FFF" d="M22 29v-9h7L18 7 7 20h7v9z" />
+    <path fill="#FFF" d="M27 13L18 3 9 13zm-9 20l9-10H9z" />
+    <path fill="#FFF" d="M14 12h8v12h-8z" />
   </svg>
 )
 
-export default Svg2B06
+export default Svg2195

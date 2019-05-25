@@ -34,16 +34,16 @@ const ConditionalExpressionBox = ({
           position: relative;
         `}
       >
-        <ConditionalBorder addBottom type="trueCase" />
-        <ExpressionBox expression={expression.trueCase} />
+        <ConditionalBorder addBottom type="condition" />
+        <ExpressionBox expression={expression.condition} />
       </FlexCenter>
       <FlexCenter
         css={css`
           position: relative;
         `}
       >
-        <ConditionalBorder type="condition" />
-        <ExpressionBox expression={expression.condition} />
+        <ConditionalBorder type="trueCase" />
+        <ExpressionBox expression={expression.trueCase} />
       </FlexCenter>
     </Flex>
   )

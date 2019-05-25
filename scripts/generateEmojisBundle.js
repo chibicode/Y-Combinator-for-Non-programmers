@@ -62,7 +62,7 @@ const regenerate = () => {
 if (process.argv[2] === 'watch') {
   chokidar
     .watch(
-      ['./src/lib/yc/letterEmojiMapping.json', './scripts/copyUsedEmojis.js'],
+      ['./src/lib/letterEmojiMapping.json', './scripts/copyUsedEmojis.js'],
       { ignoreInitial: true }
     )
     .on('change', path => {

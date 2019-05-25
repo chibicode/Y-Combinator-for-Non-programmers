@@ -1,7 +1,7 @@
 const twemoji = require('twemoji')
 const uniq = require('lodash/uniq')
 const letterEmojis = Object.values(
-  require('../src/lib/yc/letterEmojiMapping.json')
+  require('../src/lib/letterEmojiMapping.json')
 )
 
 // NOTE: Disabling svgo because it's causing
@@ -96,7 +96,8 @@ const allUsedEmojis = uniq([
   '🗺',
   '📷',
   '😴',
-  '⬆️'
+  '↕️',
+  '🚦'
 ])
 
 // Copied from Twemoji
