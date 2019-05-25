@@ -1,5 +1,5 @@
 import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
-import { Expression } from 'src/types/yc/ExpressionTypes'
+import { Expression } from 'src/types/ExpressionTypes'
 
 export default function hasUnboundVariables(expression: Expression): boolean {
   if (isVariable(expression)) {

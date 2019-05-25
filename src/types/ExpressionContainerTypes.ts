@@ -1,4 +1,4 @@
-import { CallStates, Expression } from 'src/types/yc/ExpressionTypes'
+import { CallStates, Expression } from 'src/types/ExpressionTypes'
 
 export type ExpressionContainerStates =
   | 'ready'

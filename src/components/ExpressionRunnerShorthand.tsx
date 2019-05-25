@@ -3,8 +3,8 @@ import { css, jsx } from '@emotion/core'
 import ExpressionRunner, {
   ExpressionRunnerProps
 } from 'src/components/ExpressionRunner'
-import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
-import { CallStates } from 'src/types/yc/ExpressionTypes'
+import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import { CallStates } from 'src/types/ExpressionTypes'
 import { P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'

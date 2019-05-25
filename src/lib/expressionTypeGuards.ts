@@ -11,7 +11,7 @@ import {
   ExecutableCallShorthandBinary,
   ExecutableCall,
   VariableShorthandUnaryNumber
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export function isVariable<V extends VariableExpression = VariableExpression>(
   expression: Expression

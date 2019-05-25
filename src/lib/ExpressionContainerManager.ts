@@ -3,8 +3,8 @@ import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {
   ExpressionContainerStates,
   SteppedExpressionContainer
-} from 'src/types/yc/ExpressionContainerTypes'
-import { CallStates } from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionContainerTypes'
+import { CallStates } from 'src/types/ExpressionTypes'
 
 export interface StepOptions {
   showAllShowSteps?: boolean

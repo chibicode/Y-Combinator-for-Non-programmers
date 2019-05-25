@@ -26,7 +26,7 @@ import {
   stepToShowFuncBound,
   stepToShowFuncUnbound
 } from 'src/lib/steps'
-import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpression,
   CallStates,
@@ -35,7 +35,7 @@ import {
   ExecutableCall,
   FunctionExpression,
   StepChild
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 
 const stepExpressionContainerReset = (

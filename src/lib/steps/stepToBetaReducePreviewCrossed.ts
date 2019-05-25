@@ -13,7 +13,7 @@ import {
   VariableWithState,
   ConditionalExpression,
   StepConditional
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 function toCrossed(
   e: VariableExpression,

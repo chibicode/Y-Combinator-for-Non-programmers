@@ -7,7 +7,7 @@ import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
 import colors from 'src/lib/theme/colors'
 import maxNestedFunctionDepth from 'src/lib/maxNestedFunctionDepth'
-import { FunctionExpression } from 'src/types/yc/ExpressionTypes'
+import { FunctionExpression } from 'src/types/ExpressionTypes'
 
 interface FunctionExpressionBoxProps {
   expression: FunctionExpression

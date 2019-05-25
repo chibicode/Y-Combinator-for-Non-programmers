@@ -1,6 +1,6 @@
 import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
-import { ExecutableCallRegular } from 'src/types/yc/ExpressionTypes'
+import { ExecutableCallRegular } from 'src/types/ExpressionTypes'
 import uniq from 'lodash/uniq'
 import {
   isCall,
@@ -8,8 +8,8 @@ import {
   isFunction,
   isVariableShorthandBinary
 } from 'src/lib/expressionTypeGuards'
-import { Expression } from 'src/types/yc/ExpressionTypes'
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { Expression } from 'src/types/ExpressionTypes'
+import { VariableNames } from 'src/types/VariableNames'
 import alphaConvertTargetVariableNames from 'src/lib/alphaConvertTargetVariableNames'
 
 interface GetAllVariableNamesOptions {

@@ -4,7 +4,7 @@ import {
   isVariable,
   isConditional
 } from 'src/lib/expressionTypeGuards'
-import { CallExpression, Expression } from 'src/types/yc/ExpressionTypes'
+import { CallExpression, Expression } from 'src/types/ExpressionTypes'
 
 function prioritizeCallExpressionHelper<E extends CallExpression>({
   expression,

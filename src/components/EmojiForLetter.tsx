@@ -1,5 +1,5 @@
 import React from 'react'
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 

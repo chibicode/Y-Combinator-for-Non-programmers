@@ -22,7 +22,7 @@ import {
   VariableWithEmphasizePriorityAndState,
   ConditionalExpression,
   StepConditional
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 function toActive(
   e: VariableShorthandBinary

@@ -8,7 +8,7 @@ import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/VariableExpressionBox'
 import ConditionalExpressionBox from 'src/components/ConditionalExpressionBox'
 import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
-import { Expression } from 'src/types/yc/ExpressionTypes'
+import { Expression } from 'src/types/ExpressionTypes'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 
 interface ExpressionBoxProps {

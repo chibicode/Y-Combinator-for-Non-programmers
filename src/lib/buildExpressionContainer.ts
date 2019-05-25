@@ -1,19 +1,19 @@
 import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
-import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
   ConditionalExpressionParams,
   VariableExpressionParams
-} from 'src/types/yc/ExpressionParamTypes'
+} from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
   StepChild,
   StepFunction,
   StepConditional,
   StepVariable
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function buildExpressionContainer(
   expressionParams: VariableExpressionParams

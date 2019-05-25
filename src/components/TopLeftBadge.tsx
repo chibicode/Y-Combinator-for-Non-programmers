@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import Emoji from 'src/components/Emoji'
-import { VariableExpression } from 'src/types/yc/ExpressionTypes'
+import { VariableExpression } from 'src/types/ExpressionTypes'
 
 interface TopLeftBadgeProps {
   topLeftBadgeType: Exclude<VariableExpression['topLeftBadgeType'], 'none'>

@@ -1,10 +1,10 @@
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 import {
   ExpressionParams,
   FunctionExpressionParams,
   CallExpressionParams,
   HighlightedVariableExpressionParams
-} from 'src/types/yc/ExpressionParamTypes'
+} from 'src/types/ExpressionParamTypes'
 
 export const highlighted = (
   name: VariableNames

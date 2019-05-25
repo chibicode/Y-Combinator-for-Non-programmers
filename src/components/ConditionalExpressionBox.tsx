@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
-import { ConditionalExpression } from 'src/types/yc/ExpressionTypes'
+import { ConditionalExpression } from 'src/types/ExpressionTypes'
 import { colors } from 'src/lib/theme'
 import ConditionalBorder from 'src/components/ConditionalBorder'
 

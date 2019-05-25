@@ -1,10 +1,10 @@
-import { Expression } from 'src/types/yc/ExpressionTypes'
+import { Expression } from 'src/types/ExpressionTypes'
 
 import {
   ContainerWithState,
   ExpressionContainer,
   ExpressionContainerStates
-} from 'src/types/yc/ExpressionContainerTypes'
+} from 'src/types/ExpressionContainerTypes'
 
 export function isContainerWithState<
   S extends ExpressionContainerStates,

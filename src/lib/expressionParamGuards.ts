@@ -8,7 +8,7 @@ import {
   VariableShorthandNumberParams,
   HighlightedVariableExpressionParams,
   ConditionalExpressionParams
-} from 'src/types/yc/ExpressionParamTypes'
+} from 'src/types/ExpressionParamTypes'
 
 export function isHighlightedVariableExpressionParams(
   expressionParams: ExpressionParams

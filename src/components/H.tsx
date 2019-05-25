@@ -29,7 +29,7 @@ import { colors, fontSizes } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiWithText from 'src/components/EmojiWithText'
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 

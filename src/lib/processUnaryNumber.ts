@@ -1,7 +1,7 @@
 import {
   StepVariableShorthandNonUnaryNumber,
   VariableShorthandUnaryNumber
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function processUnaryNumber(
   e: VariableShorthandUnaryNumber

@@ -1,6 +1,6 @@
 import buildExpressionContainer from 'src/lib/buildExpressionContainer'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
-import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
+import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,
   ExpressionParams,
@@ -8,14 +8,14 @@ import {
   VariableExpressionParams,
   VariableShorthandNumberParams,
   ConditionalExpressionParams
-} from 'src/types/yc/ExpressionParamTypes'
+} from 'src/types/ExpressionParamTypes'
 import {
   CallExpression,
   Expression,
   FunctionExpression,
   VariableExpression,
   ConditionalExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function initializeExpressionContainer(
   expressionParams: VariableExpressionParams

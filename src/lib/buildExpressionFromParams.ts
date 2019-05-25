@@ -16,7 +16,7 @@ import {
   VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   ConditionalExpressionParams
-} from 'src/types/yc/ExpressionParamTypes'
+} from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
   StepChild,
@@ -25,8 +25,8 @@ import {
   StepVariableShorthandBinary,
   StepVariableShorthandNumber,
   StepConditional
-} from 'src/types/yc/ExpressionTypes'
-import { VariableNames } from 'src/types/yc/VariableNames'
+} from 'src/types/ExpressionTypes'
+import { VariableNames } from 'src/types/VariableNames'
 
 function nestCallExpressions(
   expression: CallExpressionParams

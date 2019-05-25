@@ -17,8 +17,8 @@ import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
 import {
   ExpressionContainerStates,
   SteppedExpressionContainer
-} from 'src/types/yc/ExpressionContainerTypes'
-import { CallStates } from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionContainerTypes'
+import { CallStates } from 'src/types/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'

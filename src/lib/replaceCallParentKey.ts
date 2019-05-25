@@ -7,7 +7,7 @@ import {
   StepChild,
   ExecutableCall,
   ConditionalExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function replaceCallParentKey(
   expression: VariableExpression,

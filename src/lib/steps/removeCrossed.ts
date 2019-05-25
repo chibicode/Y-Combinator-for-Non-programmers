@@ -1,4 +1,4 @@
-import { ExecutableCallRegular, StepChild } from 'src/types/yc/ExpressionTypes'
+import { ExecutableCallRegular, StepChild } from 'src/types/ExpressionTypes'
 import toDefault from 'src/lib/toDefault'
 
 const removeCrossed = (e: ExecutableCallRegular): StepChild<'default'> =>

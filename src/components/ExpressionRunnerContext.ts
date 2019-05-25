@@ -1,6 +1,6 @@
 import React from 'react'
-import { VariableNames } from 'src/types/yc/VariableNames'
-import { VariableExpression } from 'src/types/yc/ExpressionTypes'
+import { VariableNames } from 'src/types/VariableNames'
+import { VariableExpression } from 'src/types/ExpressionTypes'
 
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean

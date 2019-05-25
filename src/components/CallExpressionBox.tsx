@@ -5,7 +5,7 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
 import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
-import { CallExpression } from 'src/types/yc/ExpressionTypes'
+import { CallExpression } from 'src/types/ExpressionTypes'
 
 interface CallExpressionBoxProps {
   expression: CallExpression

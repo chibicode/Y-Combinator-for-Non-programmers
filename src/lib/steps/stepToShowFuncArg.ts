@@ -13,7 +13,7 @@ import {
   StepVariable,
   VariableExpression,
   VariableWithState
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export function toShowFuncArg(
   e: VariableExpression,

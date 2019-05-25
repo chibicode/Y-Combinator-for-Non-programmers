@@ -7,7 +7,7 @@ import {
   VariableExpression,
   StepChild,
   ExecutableCall
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function replaceFuncParentKey(
   expression: VariableExpression,

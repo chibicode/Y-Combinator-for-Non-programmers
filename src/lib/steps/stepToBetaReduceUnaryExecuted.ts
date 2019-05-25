@@ -13,7 +13,7 @@ import {
   VariableShorthandUnaryNumber,
   ConditionalExpression,
   StepConditional
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 import {
   isFunction,
   isCall,

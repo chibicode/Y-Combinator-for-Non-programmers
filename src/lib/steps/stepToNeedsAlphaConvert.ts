@@ -13,7 +13,7 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 import { ConflictingNamesToUnusedNames } from 'src/lib/getConflictsToUnused'
 
 export function toNeedsAlphaConvert(

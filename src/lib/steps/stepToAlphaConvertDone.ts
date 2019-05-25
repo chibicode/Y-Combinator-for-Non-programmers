@@ -13,7 +13,7 @@ import {
   StepVariable,
   VariableExpression,
   ConditionalExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 import getConflictsToUnused, {
   ConflictingNamesToUnusedNames
 } from 'src/lib/getConflictsToUnused'

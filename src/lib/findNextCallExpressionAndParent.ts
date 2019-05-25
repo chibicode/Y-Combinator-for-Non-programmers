@@ -8,7 +8,7 @@ import {
   ExecutableCall,
   Expression,
   FunctionExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export interface FindResult<
   E extends ExecutableCall,

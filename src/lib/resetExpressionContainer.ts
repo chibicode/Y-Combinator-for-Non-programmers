@@ -1,6 +1,6 @@
 import resetExpression from 'src/lib/resetExpression'
-import { ContainerWithState } from 'src/types/yc/ExpressionContainerTypes'
-import { StepChild } from 'src/types/yc/ExpressionTypes'
+import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
+import { StepChild } from 'src/types/ExpressionTypes'
 
 export default function resetExpressionContainer(
   expressionContainer: ContainerWithState<'needsReset'>

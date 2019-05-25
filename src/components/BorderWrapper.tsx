@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { colors } from 'src/lib/theme'
-import { VariableExpression } from 'src/types/yc/ExpressionTypes'
+import { VariableExpression } from 'src/types/ExpressionTypes'
 
 export interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']

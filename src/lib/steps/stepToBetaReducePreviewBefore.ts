@@ -13,8 +13,8 @@ import {
   VariableWithState,
   ConditionalExpression,
   StepConditional
-} from 'src/types/yc/ExpressionTypes'
-import { VariableNames } from 'src/types/yc/VariableNames'
+} from 'src/types/ExpressionTypes'
+import { VariableNames } from 'src/types/VariableNames'
 
 export function toBetaReducePreviewBefore(
   e: VariableExpression,

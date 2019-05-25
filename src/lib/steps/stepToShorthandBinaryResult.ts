@@ -1,7 +1,7 @@
 import {
   ExecutableCallShorthandBinary,
   StepChild
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 import { isVariableShorthandNumber } from 'src/lib/expressionTypeGuards'
 import toDefault from 'src/lib/toDefault'
 

@@ -10,7 +10,7 @@ import {
   ConditionalExpression,
   VariableExpression,
   StepConditional
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function resetExpression(
   expression: VariableExpression

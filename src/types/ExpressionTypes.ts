@@ -1,4 +1,4 @@
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 
 export interface VariableExpression {
   readonly type: 'variable'

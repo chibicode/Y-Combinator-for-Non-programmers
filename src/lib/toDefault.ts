@@ -8,7 +8,7 @@ import {
   StepFunction,
   StepVariable,
   VariableExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export default function toDefault(
   e: VariableExpression

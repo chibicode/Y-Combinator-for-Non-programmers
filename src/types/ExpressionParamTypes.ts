@@ -1,11 +1,11 @@
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 import {
   FunctionExpressionMeta,
   VariableShorthandBinary,
   VariableShorthandUnary,
   VariableShorthandNumber,
   ConditionalExpression
-} from 'src/types/yc/ExpressionTypes'
+} from 'src/types/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
   readonly name: VariableNames

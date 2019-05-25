@@ -58,7 +58,7 @@ export default () => (
             <P>
               <Img
                 size="small"
-                src="/static/images/yc/factfulness.jpg"
+                src="/static/images/factfulness.jpg"
                 alt="ファクトフルネス"
               />
             </P>

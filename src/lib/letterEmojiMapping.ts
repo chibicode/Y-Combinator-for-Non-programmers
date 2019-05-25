@@ -1,4 +1,4 @@
-import { VariableNames } from 'src/types/yc/VariableNames'
+import { VariableNames } from 'src/types/VariableNames'
 import jsonMapping from './letterEmojiMapping.json'
 
 const letterEmojiMapping: Record<VariableNames, string> = jsonMapping

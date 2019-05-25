@@ -3,7 +3,7 @@ import {
   FunctionExpressionParams,
   ExpressionParams,
   CallExpressionParams
-} from 'src/types/yc/ExpressionParamTypes'
+} from 'src/types/ExpressionParamTypes'
 import {
   numberParams,
   succParams,

@@ -2,7 +2,7 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import locale from 'src/lib/locale'
 import { colors } from 'src/lib/theme'
-import { VariableExpression } from 'src/types/yc/ExpressionTypes'
+import { VariableExpression } from 'src/types/ExpressionTypes'
 
 export interface BottomRightBadgeProps {
   bottomRightBadgeType: Exclude<
