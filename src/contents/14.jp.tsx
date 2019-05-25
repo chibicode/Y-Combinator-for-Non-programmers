@@ -10,7 +10,7 @@ export default () => (
       {
         title: (
           <>
-            条件分岐の弁当箱
+            条件分岐の
             <H args={{ name: 'bentoBox' }} />
           </>
         ),
