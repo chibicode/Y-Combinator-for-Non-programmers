@@ -294,7 +294,7 @@ export default () => (
             <P>
               <Strong>
                 この
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
+                <H args={{ name: 'bentoBox' }} />の
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
                 のペアの中には、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
                 のペアが入っています。

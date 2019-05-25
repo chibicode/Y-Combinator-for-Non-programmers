@@ -114,7 +114,7 @@ export default () => (
             {AER.gxuj}
             <P>
               <H args={{ name: 'question' }} /> この
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />を
+              <H args={{ name: 'bentoBox' }} />を
               <H args={{ name: 'fastForward' }} />
               すると、先ほどと同じように
               <Strong>
@@ -258,7 +258,7 @@ export default () => (
                 2の掛け算を<Strong>10回だけ</Strong>繰り返す
               </Em>
               」
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               が必要になってきます。
               <Em>
                 「10回繰り返す」という<Strong>条件</Strong>

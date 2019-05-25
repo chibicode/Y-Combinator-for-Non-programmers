@@ -23,7 +23,7 @@ export default () => (
             <P>
               中級で話した「
               <Strong>
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                <H args={{ name: 'bentoBox' }} />
                 の暗号
               </Strong>
               」について忘れてしまった方もいるかもしれないので、復習としてここに法則をもう一度書いておきますね。
@@ -37,7 +37,7 @@ export default () => (
         title: (
           <>
             1を足す
-            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
@@ -54,14 +54,14 @@ export default () => (
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 の暗号に1を足す
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                <H args={{ name: 'bentoBox' }} />
               </Strong>
               」をご覧ください。
             </P>
             {AER.xgei}
             <P>
               そしてこちらに、暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を用意しました。
             </P>
             {AER.slyk}
@@ -75,7 +75,7 @@ export default () => (
             {AER.eemn}
             <P>
               最終的に暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               が残りました。
             </P>
             {AER.rceu}

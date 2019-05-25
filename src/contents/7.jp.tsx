@@ -20,13 +20,13 @@ export default () => (
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               前回紹介したこちらの
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               ですが、
             </P>
             {AER.qmof}
             <P>
               今度は暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               と組み合わせてみましょう。
             </P>
             {AER.slyk}
@@ -74,19 +74,19 @@ export default () => (
         title: (
           <>
             1を足す
-            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
           <>
             <P>
               結論から言うと、この
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               には、
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 に入っている
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                <H args={{ name: 'bentoBox' }} />
                 の暗号に「1」を加える効果があります。
               </Strong>
             </P>
@@ -112,7 +112,7 @@ export default () => (
               <H args={{ name: 'byTheWay' }} />{' '}
               <Strong>
                 上の
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                <H args={{ name: 'bentoBox' }} />
                 を暗記する必要はありません。
               </Strong>
               そのまま読み進めて下さい！
@@ -136,7 +136,7 @@ export default () => (
             <P>
               他にはどんな計算ができるのでしょう？たとえば、
               <Strong>
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />{' '}
+                <H args={{ name: 'bentoBox' }} />{' '}
                 同士の足し算はできるのでしょうか？
               </Strong>
             </P>
@@ -151,19 +151,19 @@ export default () => (
           <>
             <P>
               こちらに暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               があります:
             </P>
             {AER.bpza}
             <P>
               そして、こちらには暗号が<Strong>「2」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               があります:
             </P>
             {AER.vrvl}
             <P>
               このふたつの
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               の暗号を足して、<Strong>1 + 2 = 3</Strong>
               を計算することはできるのでしょうか？
             </P>
@@ -188,7 +188,7 @@ export default () => (
               こちらに
               <InlineEmojiBoxesForQuestion />
               がふたつある
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               があります:
             </P>
             {AER.goif}
@@ -293,7 +293,7 @@ export default () => (
           <>
             <P>
               まとめると、この
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               は、
               <Strong>
                 ふたつの
@@ -308,7 +308,7 @@ export default () => (
               <H args={{ name: 'byTheWay' }} /> 今回も、
               <Strong>
                 上の
-                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+                <H args={{ name: 'bentoBox' }} />
                 を暗記する必要はありません。
               </Strong>
               そのまま読み進めて下さい！

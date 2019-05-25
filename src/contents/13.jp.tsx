@@ -21,7 +21,7 @@ export default () => (
         title: (
           <>
             複雑な
-            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
@@ -34,7 +34,7 @@ export default () => (
             {AER.gopk}
             <P>
               今まで見たことがないくらい複雑な
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               ですね。これは、どういう効果があるのでしょうか？
             </P>
             <P>
@@ -55,7 +55,7 @@ export default () => (
           <>
             <P>
               こちらに、暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               を用意しました。
             </P>
             {AER.imgp}
@@ -107,7 +107,7 @@ export default () => (
         title: (
           <>
             1を引く
-            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+            <H args={{ name: 'bentoBox' }} />
           </>
         ),
         content: (
@@ -117,7 +117,7 @@ export default () => (
               つまり、これは
               <InlineEmojiBoxesForQuestion />
               の暗号から「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               なのです。
             </P>
             <EmojiSeparator
@@ -129,7 +129,7 @@ export default () => (
             />
             <P>
               足し算や掛け算の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               より、かなり複雑ですよね。
             </P>
           </>
@@ -270,7 +270,7 @@ export default () => (
               </Em>
               。たとえば、こちらは
               <Strong>暗号が「2」</Strong>の
-              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
+              <H args={{ name: 'bentoBox' }} />
               なので、
             </P>
             {AER.imgp}
