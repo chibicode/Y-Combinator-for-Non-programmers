@@ -1684,6 +1684,15 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e13E1}
       showPriorities
+      caption={
+        <H
+          args={{
+            name: 'ifCaption',
+            ifZero: <EmojiForLetter letter="y" size="mdlg" />,
+            ifNonZero: <EmojiForLetter letter="z" size="mdlg" />
+          }}
+        />
+      }
     />
   )
   // hzlj: (
