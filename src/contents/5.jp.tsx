@@ -33,7 +33,7 @@ export default () => (
             <P>
               中級に進む前に、
               <Strong>どう進めるのか分かりにくい</Strong>
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               を3つ紹介します:
             </P>
             <Ul>
@@ -294,7 +294,7 @@ export default () => (
             <P>
               <Strong>
                 この
-                <H args={{ name: 'bentoBox', short: true }} />の
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
                 のペアの中には、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
                 のペアが入っています。

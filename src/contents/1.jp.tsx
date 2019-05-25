@@ -21,7 +21,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <H args={{ name: 'bentoBox' }} />,
+        title: <H args={{ name: 'bentoBoxPuzzle' }} />,
         content: (
           <>
             <P>
@@ -41,12 +41,12 @@ export default () => (
             </PFullWidth>
             <P>
               なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               という名前がついているからです。
             </P>
             <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
             <P>
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               がどんなものか、説明しますね！
             </P>
           </>
@@ -56,14 +56,14 @@ export default () => (
         title: (
           <>
             これが
-            <H args={{ name: 'bentoBox' }} />
+            <H args={{ name: 'bentoBoxPuzzle' }} />
           </>
         ),
         content: (
           <>
             <P>
               下の図が、
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               です。実際の弁当箱のように、
               <Em>
                 四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
@@ -89,14 +89,14 @@ export default () => (
         title: (
           <>
             まだあるよ
-            <H args={{ name: 'bentoBox' }} />
+            <H args={{ name: 'bentoBoxPuzzle' }} />
           </>
         ),
         content: (
           <>
             <P>
               さらに何個か、
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               の例を紹介していきます:
             </P>
             <P>
@@ -120,7 +120,7 @@ export default () => (
             {AER.emmb}
             <P>
               こちらは、イタリアンな
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               ですね！
             </P>
             <Hr />
@@ -147,14 +147,14 @@ export default () => (
           <>
             <P>
               それぞれの
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               には、
               <H args={{ name: 'playButton' }} />
               があります。
             </P>
             <P>
               <InlineHeader>例その1:</InlineHeader> こちらは、最初に紹介した
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               です。
               <H args={{ name: 'pressNext' }} />
             </P>
@@ -183,7 +183,7 @@ export default () => (
           <>
             <P>
               どうやら、さきほどの
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               は、
               <H args={{ name: 'play' }} />
               すると、最終的に
@@ -201,7 +201,7 @@ export default () => (
             </P>
             <P>
               その法則を説明する前に、他の
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               も実行してみましょう。
             </P>
           </>
@@ -219,7 +219,7 @@ export default () => (
           <>
             <P>
               先ほど紹介した3つの
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               を、それぞれ
               <H args={{ name: 'play' }} />
               してみましょう！
@@ -288,7 +288,7 @@ export default () => (
             <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
             <P>
               上記あわせて4種類の
-              <H args={{ name: 'bentoBox' }} />を
+              <H args={{ name: 'bentoBoxPuzzle' }} />を
               <H args={{ name: 'play' }} />
               しましたが、どれも
               <H args={{ name: 'unknownRule' }} />
@@ -323,7 +323,7 @@ export default () => (
             <P>
               <H args={{ name: 'question' }} />{' '}
               こちらに、ヘルシーな野菜が入っている
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               があります。
             </P>
             {AER.loai}
@@ -350,7 +350,8 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'question' }} /> こちらの
-              <H args={{ name: 'bentoBox' }} />を<H args={{ name: 'play' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />を
+              <H args={{ name: 'play' }} />
               すると、
             </P>
             {AER.hbgo}
@@ -402,7 +403,7 @@ export default () => (
           <>
             <P>
               次のページで
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
             </P>
             <YcNextLessonButton />

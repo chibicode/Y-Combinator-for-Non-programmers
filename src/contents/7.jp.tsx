@@ -20,13 +20,13 @@ export default () => (
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               前回紹介したこちらの
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               ですが、
             </P>
             {AER.qmof}
             <P>
               今度は暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               と組み合わせてみましょう。
             </P>
             {AER.slyk}
@@ -74,19 +74,19 @@ export default () => (
         title: (
           <>
             1を足す
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
           <>
             <P>
               結論から言うと、この
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               には、
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 に入っている
-                <H args={{ name: 'bentoBox', short: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
                 の暗号に「1」を加える効果があります。
               </Strong>
             </P>
@@ -112,7 +112,7 @@ export default () => (
               <H args={{ name: 'byTheWay' }} />{' '}
               <Strong>
                 上の
-                <H args={{ name: 'bentoBox', short: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
                 を暗記する必要はありません。
               </Strong>
               そのまま読み進めて下さい！
@@ -125,7 +125,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'bentoBox' }} />は
+              <H args={{ name: 'bentoBoxPuzzle' }} />は
               <Em>
                 ただのパズルかと思いきや、「<Strong>1を足す</Strong>
                 」という<Strong>簡単な計算</Strong>をすることもできる
@@ -136,7 +136,7 @@ export default () => (
             <P>
               他にはどんな計算ができるのでしょう？たとえば、
               <Strong>
-                <H args={{ name: 'bentoBox', short: true }} />{' '}
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />{' '}
                 同士の足し算はできるのでしょうか？
               </Strong>
             </P>
@@ -151,19 +151,19 @@ export default () => (
           <>
             <P>
               こちらに暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               があります:
             </P>
             {AER.bpza}
             <P>
               そして、こちらには暗号が<Strong>「2」</Strong>の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               があります:
             </P>
             {AER.vrvl}
             <P>
               このふたつの
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               の暗号を足して、<Strong>1 + 2 = 3</Strong>
               を計算することはできるのでしょうか？
             </P>
@@ -188,16 +188,16 @@ export default () => (
               こちらに
               <InlineEmojiBoxesForQuestion />
               がふたつある
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               があります:
             </P>
             {AER.goif}
             <P>
               <InlineEmojiBoxesForQuestion />
               の部分に、先ほどの暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               と暗号が<Strong>「2」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を埋め込みます。(<Em>黄色</Em>の部分)
             </P>
             {AER.hdwy}
@@ -233,7 +233,7 @@ export default () => (
             </P>
             {AER.dhdk}
             <P>
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               は、<Strong>1 + 2 = 3</Strong>を計算することもできるんです。
             </P>
             <EmojiSeparator emojis={['1️⃣', '➕', '️2️⃣']} />
@@ -256,14 +256,14 @@ export default () => (
                 が3個
               </Em>
               )の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               と暗号が<Strong>「1」</Strong> (右下に
               <Em>
                 <EmojiForLetter letter="f" />
                 が1個
               </Em>
               )の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を埋め込んでみます。
             </P>
             <P>
@@ -293,13 +293,13 @@ export default () => (
           <>
             <P>
               まとめると、この
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               は、
               <Strong>
                 ふたつの
                 <InlineEmojiBoxesForQuestion />
                 に入っている
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 の暗号を足し算してくれます。
               </Strong>
             </P>
@@ -308,7 +308,7 @@ export default () => (
               <H args={{ name: 'byTheWay' }} /> 今回も、
               <Strong>
                 上の
-                <H args={{ name: 'bentoBox', short: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
                 を暗記する必要はありません。
               </Strong>
               そのまま読み進めて下さい！
@@ -321,7 +321,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'bentoBox' }} />は
+              <H args={{ name: 'bentoBoxPuzzle' }} />は
               <Em>
                 ただのパズルかと思いきや、「<Strong>足し算</Strong>」
               </Em>
@@ -330,7 +330,7 @@ export default () => (
             <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
             <P>
               実は、
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               ができるのは足し算だけではありません。
             </P>
             <YcNextLessonButton />

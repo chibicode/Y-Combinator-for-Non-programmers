@@ -21,7 +21,7 @@ export default () => (
         title: (
           <>
             複雑な
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
@@ -34,7 +34,7 @@ export default () => (
             {AER.gopk}
             <P>
               今まで見たことがないくらい複雑な
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               ですね。これは、どういう効果があるのでしょうか？
             </P>
             <P>
@@ -55,13 +55,13 @@ export default () => (
           <>
             <P>
               こちらに、暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               を用意しました。
             </P>
             {AER.imgp}
             <P>
               これを、先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
@@ -91,7 +91,7 @@ export default () => (
             {AER.ccon}
             <P>
               最後に残ったのは、暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               でした。
             </P>
             {AER.npfx}
@@ -107,7 +107,7 @@ export default () => (
         title: (
           <>
             1を引く
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
@@ -117,7 +117,7 @@ export default () => (
               つまり、これは
               <InlineEmojiBoxesForQuestion />
               の暗号から「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               なのです。
             </P>
             <EmojiSeparator
@@ -129,7 +129,7 @@ export default () => (
             />
             <P>
               足し算や掛け算の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               より、かなり複雑ですよね。
             </P>
           </>
@@ -216,7 +216,7 @@ export default () => (
             </P>
             <P>
               これを行わないと、「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               として機能しません。ここでは詳しく書きませんが、引き算とは全然違う答えが出てしまうのです。
             </P>
             <Hr />
@@ -229,7 +229,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
             を「省略表記」できないか？
           </>
         ),
@@ -238,7 +238,7 @@ export default () => (
             {AER.zaoc}
             <P>
               上の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               は、「<Strong>2 - 1</Strong>」を計算できることがわかりましたが、
               <Em>
                 少し複雑すぎて、ひと目見て何が起きているかわかりにくいですよね。
@@ -249,7 +249,7 @@ export default () => (
               <InlineHeader>疑問:</InlineHeader>{' '}
               <Em>
                 上の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を何らかの手法で「<Strong>省略表記</Strong>
                 」することで、何が起きているをかわかりやすくする方法はないでしょうか？
               </Em>
@@ -265,12 +265,12 @@ export default () => (
               まず、
               <Em>
                 暗号の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />を
                 <Strong>数字で</Strong>表示してみます
               </Em>
               。たとえば、こちらは
               <Strong>暗号が「2」</Strong>の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               なので、
             </P>
             {AER.imgp}
@@ -288,9 +288,9 @@ export default () => (
           <>
             <P>
               <Emoji>2️⃣</Emoji>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を、先ほどの「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               に入れてみました。
             </P>
             {AER.uqts}
@@ -370,12 +370,12 @@ export default () => (
             <P>
               <H args={{ name: 'fastForward' }} />
               する前に、先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を省略表記してみましょう。
             </P>
             <P>
               まず、上の部分は「<Strong>1</Strong>」の暗号の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               なので、
             </P>
             {AER.qgun}
@@ -391,14 +391,14 @@ export default () => (
               と、その下に「
               <Strong>
                 1を引く
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               」があります。
             </P>
             {AER.qifg}
             <P>
               この場合、「1を引く
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               」が
               <Strong>
                 <EmojiWithText letter="i" />
@@ -441,7 +441,7 @@ export default () => (
             />
             <P>
               もともとの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               は複雑でしたが、
               <Strong>
                 省略表記をすることで、何が起きているかがひと目で分かるようになった
@@ -461,7 +461,7 @@ export default () => (
               次のページでは、
               <Strong>
                 条件分岐の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を省略表記していきます。
               </Strong>
               そして、中級編の最後で話した「<Strong>繰り返し処理</Strong>

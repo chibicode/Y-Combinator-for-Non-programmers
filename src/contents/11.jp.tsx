@@ -20,7 +20,7 @@ export default () => (
           <>
             <EmojiWithText letter="v" />
             の入った
-            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
           </>
         ),
         content: (
@@ -126,7 +126,7 @@ export default () => (
             <Ul>
               <UlLi>
                 こちらの
-                <H args={{ name: 'bentoBox', short: true }} />の
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
                 <Strong>
                   <InlineEmojiBoxesForQuestion />
                   に料理をひとつだけ入れて
@@ -210,7 +210,7 @@ export default () => (
           <>
             <P>
               こちらの
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               の…
             </P>
             {AER.wbpx}
@@ -367,7 +367,7 @@ export default () => (
             />
             <P>
               先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               だと、
             </P>
             {AER.wbpx}
@@ -427,7 +427,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               に同じ料理があるかどうかで、結果が変わる
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               があることがわかりました。
             </P>
             <P>
@@ -446,7 +446,7 @@ export default () => (
               <Em>
                 結果が変わることによってどんな問題が発生するのか、以前紹介した
                 <Strong>
-                  <H args={{ name: 'bentoBox', short: true }} />
+                  <H args={{ name: 'bentoBoxPuzzle', short: true }} />
                   の暗号
                 </Strong>
                 を用いて解説していきます！

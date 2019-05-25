@@ -66,7 +66,7 @@ export default () => (
             <P>
               <Strong>
                 なんと、一周して最初と同じ
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 に戻ってしまいました！
               </Strong>
             </P>
@@ -114,12 +114,12 @@ export default () => (
             {AER.gxuj}
             <P>
               <H args={{ name: 'question' }} /> この
-              <H args={{ name: 'bentoBox', short: true }} />を
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />を
               <H args={{ name: 'fastForward' }} />
               すると、先ほどと同じように
               <Strong>
                 一周して同じ
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 に戻る。
               </Strong>
               <H args={{ name: 'yesOrNo' }} />
@@ -194,7 +194,7 @@ export default () => (
               には何を入れてもいいので、たとえば以前紹介した「
               <Strong>
                 1を足す
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               」を入れることもできます。
             </P>
@@ -211,7 +211,7 @@ export default () => (
               すれば、先ほどと同じように、
               <Strong>
                 1を足す
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               がどんどん一番下に追加されていきます。(時間の都合上、ここでは省略します。)
             </P>
@@ -232,14 +232,14 @@ export default () => (
             </P>
             <P>
               求められているのは、「無限に何かを繰り返す
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               」ではなく、「
               <Strong>
                 ある条件を満たすまで、何かを繰り返す
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               」です。そういう
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               があれば、役に立ちます。
             </P>
             <EmojiSeparator emojis={['❓', '🍱', '❓']} />
@@ -258,7 +258,7 @@ export default () => (
                 2の掛け算を<Strong>10回だけ</Strong>繰り返す
               </Em>
               」
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               が必要になってきます。
               <Em>
                 「10回繰り返す」という<Strong>条件</Strong>
@@ -272,7 +272,7 @@ export default () => (
               <Em>
                 <Strong>
                   どんな
-                  <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                  <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                   を使えば
                 </Strong>
                 、決められた条件を満たすまで計算を繰り返すことができるのでしょう？
@@ -289,7 +289,7 @@ export default () => (
               というわけで、次からはじまる上級編では、「
               <Strong>
                 ある条件を満たすまで、何かを繰り返す
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               」が果たして存在するのかどうか、検証していきたいと思います。
             </P>

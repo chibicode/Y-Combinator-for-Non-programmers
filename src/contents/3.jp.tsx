@@ -31,7 +31,7 @@ export default () => (
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               前回の最後には、以下のような
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               を紹介しました。
             </P>
             {AER.ljjg}
@@ -172,7 +172,7 @@ export default () => (
           <>
             <P>
               続いて、こちらの
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               をご覧ください。
             </P>
             {AER.xwim}
@@ -322,7 +322,7 @@ export default () => (
         title: (
           <>
             予告: 3段の
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
@@ -332,7 +332,7 @@ export default () => (
               次のページからは、下のような
               <Strong>
                 3段の
-                <H args={{ name: 'bentoBox' }} />
+                <H args={{ name: 'bentoBoxPuzzle' }} />
               </Strong>
               が登場します:
             </P>

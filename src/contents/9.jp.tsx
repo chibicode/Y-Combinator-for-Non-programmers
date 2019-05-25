@@ -28,7 +28,7 @@ export default () => (
         title: (
           <>
             おやつ入りの
-            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
           </>
         ),
         content: (
@@ -36,13 +36,13 @@ export default () => (
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               今回は、次の
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               を見ていきます:
             </P>
             {AER.bxfv}
             <P>
               この
-              <H args={{ name: 'bentoBox', short: true }} />、
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />、
               <Em>
                 上のほうに
                 <EmojiWithText letter="z" />と<EmojiWithText letter="y" />
@@ -66,13 +66,13 @@ export default () => (
           <>
             <P>
               次に、<Strong>暗号が「0」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を用意します。
             </P>
             {AER.fhlw}
             <P>
               こちらを、先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
@@ -92,7 +92,7 @@ export default () => (
             <P>というわけで、ここで質問です！</P>
             <P>
               <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
@@ -140,7 +140,7 @@ export default () => (
               下の
               <InlineEmojiBoxesForQuestion />
               の部分に暗号が<Strong>「0」</Strong>の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               を埋め込んで
               <H args={{ name: 'play' }} />
               すると、
@@ -155,7 +155,7 @@ export default () => (
               では、
               <InlineEmojiBoxesForQuestion />
               に他の暗号の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               を埋め込んだらどうなるのでしょう？確かめてみましょう。
             </P>
           </>
@@ -173,13 +173,13 @@ export default () => (
           <>
             <P>
               今度は、<Strong>暗号が「1」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を用意し、
             </P>
             {AER.yehl}
             <P>
               先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
@@ -187,7 +187,7 @@ export default () => (
             <P>というわけで、ここで質問です！</P>
             <P>
               <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
@@ -233,14 +233,14 @@ export default () => (
           <>
             <P>
               <InlineHeader>ここまでをまとめると:</InlineHeader> 下の
-              <H args={{ name: 'bentoBox', short: true }} />の
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に…
             </P>
             <Ul>
               <UlLi>
                 暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="y" />
@@ -249,7 +249,7 @@ export default () => (
               </UlLi>
               <UlLi>
                 暗号が<Strong>「1」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="z" />
@@ -278,13 +278,13 @@ export default () => (
           <>
             <P>
               最後に、<Strong>暗号が「2」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を用意し、
             </P>
             {AER.kupy}
             <P>
               先ほどの
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />の
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
@@ -292,7 +292,7 @@ export default () => (
             <P>というわけで、ここで質問です！</P>
             <P>
               <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />を
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
@@ -338,14 +338,14 @@ export default () => (
           <>
             <P>
               <InlineHeader>ここまでをまとめると:</InlineHeader> 下の
-              <H args={{ name: 'bentoBox', short: true }} />の
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />の
               <InlineEmojiBoxesForQuestion />
               の部分に…
             </P>
             <Ul>
               <UlLi>
                 暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="y" />
@@ -354,7 +354,7 @@ export default () => (
               </UlLi>
               <UlLi>
                 暗号が<Strong>「1」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="z" />
@@ -363,7 +363,7 @@ export default () => (
               </UlLi>
               <UlLi>
                 暗号が<Strong>「2」</Strong>の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="z" />
@@ -382,20 +382,20 @@ export default () => (
         title: (
           <>
             暗号が「0」かどうか判別できる
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
           <>
             <P>
               実は先ほどの
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               は、
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 の暗号が「0」かどうかを判別できる
               </Strong>
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               なのです。
             </P>
             <H args={{ name: 'isZeroReview' }} />
@@ -423,7 +423,7 @@ export default () => (
             <Hr />
             <P>
               たとえば次の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               だと、先ほど
               <Strong>
                 <EmojiWithText letter="z" />
@@ -450,7 +450,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
             は「条件分岐」もできる
           </>
         ),
@@ -459,7 +459,7 @@ export default () => (
             <P>
               今回紹介したのは、「<Em>暗号が0か、それ以外か</Em>
               」を判別し、それぞれ違う結果を出す
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               でした。
             </P>
             <EmojiSeparator emojis={['0️⃣', '❓', '🔢']} />
@@ -472,17 +472,17 @@ export default () => (
             </P>
             <P>
               ここでは時間の都合上紹介できませんでしたが、
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               を使えば、さまざまな条件分岐を表現することができます。たとえば「
               <Em>Aの暗号はBの暗号より大きいか、小さいか、それとも等しいか</Em>
               」を判別できる
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               もあります。
             </P>
             <EmojiSeparator emojis={['🅰️', '❓', '🅱️']} />
             <P>
               何が言いたいかというと、
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               は「<Strong>四則演算だけでなく、条件分岐もできる</Strong>
               」ということです。
             </P>
@@ -507,7 +507,7 @@ export default () => (
               ので、条件分岐をしなければ正しい料金は計算できません。
             </P>
             <P>
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               は四則演算も条件分岐もできるので、カラオケの料金といった複雑な計算も(工夫すれば)できてしまうのです。
             </P>
           </>
@@ -521,7 +521,7 @@ export default () => (
             <P>
               四則演算や条件分岐ができるだけでも十分すごいですが、
               <Strong>
-                <H args={{ name: 'bentoBox', short: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
                 はもっと複雑な処理を行うことができます
               </Strong>
               。中級編最後となる次のページで見ていきましょう！

@@ -52,7 +52,7 @@ export interface HProps {
     | { name: 'yCombinator' }
     | { name: 'isZeroReview' }
     | {
-        name: 'bentoBox'
+        name: 'bentoBoxPuzzle'
         plural?: boolean
         highlightType?: InlineHighlightType
         short?: boolean
@@ -373,7 +373,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'bentoBox') {
+  if (args.name === 'bentoBoxPuzzle') {
     if (locale === 'en') {
       return (
         <Strong highlightType={highlightType}>
@@ -761,7 +761,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <H args={{ name: 'question' }} /> 上の
-          <H args={{ name: 'bentoBox', short: true }} />を
+          <H args={{ name: 'bentoBoxPuzzle', short: true }} />を
           <H args={{ name: 'play' }} />
           すると、<Strong>最終的に下のようになるでしょうか？</Strong>
         </>
@@ -775,7 +775,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <H args={{ name: 'question' }} /> 上の
-          <H args={{ name: 'bentoBox', short: true }} />を
+          <H args={{ name: 'bentoBoxPuzzle', short: true }} />を
           <H args={{ name: 'play' }} />
           すると、
           <Em>
@@ -795,7 +795,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           こちらの
-          <H args={{ name: 'bentoBox', short: true }} />
+          <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           をご覧ください
         </>
       )
@@ -954,7 +954,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Emoji>1️⃣</Emoji> を足す
-          <H args={{ name: 'bentoBox', skipEmoji: true }} />
+          <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
         </>
       )
     }
@@ -1198,7 +1198,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <P>
             <InlineHeader>暗号の法則:</InlineHeader> もし、次のようなパターンの
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
             があり:
           </P>
           {args.example}
@@ -1252,7 +1252,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を埋め込んで実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="y" />
@@ -1278,7 +1278,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「1以上」</Strong>
               の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を埋め込んで実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="z" />

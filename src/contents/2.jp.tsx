@@ -21,12 +21,12 @@ export default () => (
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               さっそく前回紹介した
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               の法則 <Emoji>🤫</Emoji> を紹介していきましょう。
             </P>
             <P>
               ここでは、前回のはじめに登場した
-              <H args={{ name: 'bentoBox', short: true }} />(
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />(
               <Strong>例その1</Strong>)を使って説明します:
             </P>
             {AER.uqwm}
@@ -235,7 +235,7 @@ export default () => (
             />
             <P>
               たとえば、前回にもあったマクドナルド風の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               は、
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -327,14 +327,14 @@ export default () => (
         title: (
           <>
             予告: 4品の
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
           <>
             <P>
               次のページからは4品の料理が入った
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               が登場します。
             </P>
             <EmojiSeparator emojis={episodeEmojis[3]} />

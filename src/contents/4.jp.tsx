@@ -18,7 +18,7 @@ export default () => (
         title: (
           <>
             3段の
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
             の法則
           </>
         ),
@@ -28,7 +28,7 @@ export default () => (
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               前回は、以下のような3段の
-              <H args={{ name: 'bentoBox' }} />
+              <H args={{ name: 'bentoBoxPuzzle' }} />
               を紹介しました。
             </P>
             {AER.cvtc}

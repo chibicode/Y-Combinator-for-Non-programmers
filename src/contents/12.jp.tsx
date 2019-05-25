@@ -23,7 +23,7 @@ export default () => (
             <P>
               中級で話した「
               <Strong>
-                <H args={{ name: 'bentoBox', short: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
                 の暗号
               </Strong>
               」について忘れてしまった方もいるかもしれないので、復習としてここに法則をもう一度書いておきますね。
@@ -37,7 +37,7 @@ export default () => (
         title: (
           <>
             1を足す
-            <H args={{ name: 'bentoBox', short: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', short: true }} />
           </>
         ),
         content: (
@@ -54,14 +54,14 @@ export default () => (
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 の暗号に1を足す
-                <H args={{ name: 'bentoBox', short: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               </Strong>
               」をご覧ください。
             </P>
             {AER.xgei}
             <P>
               そしてこちらに、暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               を用意しました。
             </P>
             {AER.slyk}
@@ -75,7 +75,7 @@ export default () => (
             {AER.eemn}
             <P>
               最終的に暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox', short: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', short: true }} />
               が残りました。
             </P>
             {AER.rceu}
@@ -103,7 +103,7 @@ export default () => (
           <>
             <P>
               こちらに別の暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               があります。
             </P>
             {AER.lrja}
@@ -112,7 +112,7 @@ export default () => (
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 の暗号に1を足す
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               」に入れてみます。
             </P>
@@ -144,7 +144,7 @@ export default () => (
               最後に残ったのは、
               <Strong>
                 暗号が「2」の
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 ではありません。
               </Strong>
               よく似ていますが、違います。
@@ -286,7 +286,7 @@ export default () => (
               などのパターンが変わってしまい、 「
               <Strong>
                 1を足す
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               </Strong>
               」として機能しなくなってしまいます。だから、
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
@@ -346,7 +346,7 @@ export default () => (
             {AER.rzbq}
             <P>
               すると、最後に暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               が残りました。「<Strong>1 + 1 = 2</Strong>」が計算できたわけです。
             </P>
             {AER.jlet}
@@ -394,7 +394,7 @@ export default () => (
             <>
               <P>
                 このルールは次のページにある
-                <H args={{ name: 'bentoBox', skipEmoji: true }} />
+                <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
                 から
                 <Strong>自動で発動するので、 暗記する必要はありません。</Strong>
                 なんとなく「
@@ -417,7 +417,7 @@ export default () => (
             <EmojiSeparator emojis={['🎉', '🥳', '🎉']} />
             <P>
               次のページからは、
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               の「<Strong>省略表記</Strong>」について見ていきます。
             </P>
             <YcNextLessonButton />

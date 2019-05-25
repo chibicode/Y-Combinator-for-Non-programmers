@@ -16,7 +16,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBox', skipEmoji: true }} />
+            <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
             も計算機
           </>
         ),
@@ -26,7 +26,7 @@ export default () => (
             <P>
               そして実は、
               <Em>
-                <H args={{ name: 'bentoBox' }} />
+                <H args={{ name: 'bentoBoxPuzzle' }} />
                 と非常に似た計算機が、1930年代にコンピューター科学者達によって考案されているのです。
               </Em>
               その計算機は「
@@ -105,14 +105,14 @@ export default () => (
           <>
             <P>
               先ほど話したように、
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />は
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />は
               <Em>
                 足し算・掛け算・引き算・割り算といった四則演算ができる計算機です
               </Em>
               。
             </P>
             <P>
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               が面白いのは、
               <Strong>仕組みがシンプルでありながら高性能である</Strong>
               ということです。
@@ -134,7 +134,7 @@ export default () => (
             </P>
             <P>
               というわけで、次のページからは、
-              <H args={{ name: 'bentoBox', skipEmoji: true }} />
+              <H args={{ name: 'bentoBoxPuzzle', skipEmoji: true }} />
               を使ったさらにハイレベルな計算を紹介していきます。数学的に難しいわけではないので、ご心配なく！
             </P>
           </>
