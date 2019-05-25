@@ -15,7 +15,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import YcNextLessonButton from 'src/components/YcNextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'

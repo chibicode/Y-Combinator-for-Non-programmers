@@ -2,15 +2,15 @@
 import { css, jsx } from '@emotion/core'
 import React, { useState, useRef } from 'react'
 import Container, { ContainerProps } from 'src/components/Container'
-import ExpressionBox from 'src/components/Yc/ExpressionBox'
+import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
-import ExpressionRunnerCaptionWrapper from 'src/components/Yc/ExpressionRunnerCaptionWrapper'
+import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
 import ExpressionRunnerContext, {
   expressionRunnerContextDefault,
   ExpressionRunnerContextProps
-} from 'src/components/Yc/ExpressionRunnerContext'
-import ExpressionRunnerControls from 'src/components/Yc/ExpressionRunnerControls'
-import ExpressionRunnerExplanation from 'src/components/Yc/ExpressionRunnerExplanation'
+} from 'src/components/ExpressionRunnerContext'
+import ExpressionRunnerControls from 'src/components/ExpressionRunnerControls'
+import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/yc/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/yc/ExpressionContainerManager'
@@ -22,7 +22,7 @@ import { CallStates } from 'src/types/yc/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/Yc/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
-import ExpressionRunnerTimer from 'src/components/Yc/ExpressionRunnerTimer'
+import ExpressionRunnerTimer from 'src/components/ExpressionRunnerTimer'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed

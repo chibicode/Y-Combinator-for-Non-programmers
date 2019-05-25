@@ -4,14 +4,14 @@ import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper, {
   BorderWrapperProps
-} from 'src/components/Yc/BorderWrapper'
-import CallExpressionBox from 'src/components/Yc/CallExpressionBox'
-import FunctionExpressionBox from 'src/components/Yc/FunctionExpressionBox'
-import VariableExpressionBox from 'src/components/Yc/VariableExpressionBox'
-import ConditionalExpressionBox from 'src/components/Yc/ConditionalExpressionBox'
+} from 'src/components/BorderWrapper'
+import CallExpressionBox from 'src/components/CallExpressionBox'
+import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
+import VariableExpressionBox from 'src/components/VariableExpressionBox'
+import ConditionalExpressionBox from 'src/components/ConditionalExpressionBox'
 import { isCall, isVariable, isFunction } from 'src/lib/yc/expressionTypeGuards'
 import { Expression } from 'src/types/yc/ExpressionTypes'
-import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 
 interface ExpressionBoxProps {
   expression: Expression

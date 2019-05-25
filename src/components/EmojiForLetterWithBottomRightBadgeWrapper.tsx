@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { zIndices } from 'src/lib/theme'
 import BottomRightBadge, {
   BottomRightBadgeProps
-} from 'src/components/Yc/BottomRightBadge'
+} from 'src/components/BottomRightBadge'
 
 interface EmojiForLetterWithBottomRightBadgeWrapperProps {
   bottomRightBadgeType: BottomRightBadgeProps['bottomRightBadgeType']

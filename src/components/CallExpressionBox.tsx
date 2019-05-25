@@ -3,8 +3,8 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import ExpressionBox from 'src/components/Yc/ExpressionBox'
-import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
+import ExpressionBox from 'src/components/ExpressionBox'
+import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import { CallExpression } from 'src/types/yc/ExpressionTypes'
 
 interface CallExpressionBoxProps {

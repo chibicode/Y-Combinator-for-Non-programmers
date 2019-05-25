@@ -5,11 +5,11 @@ import {
   ExpressionRunnerPlayButtonOnly,
   ExpressionRunnerPairSimple,
   ExpressionRunnerSingleStep
-} from 'src/components/Yc/ExpressionRunnerShorthand'
+} from 'src/components/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/yc/lessonExpressions'
 import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-import InlineEmojiBoxes from 'src/components/Yc/InlineEmojiBoxes'
+import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 
 // Keys generated using a Ruby script running on an Alfred workflow:

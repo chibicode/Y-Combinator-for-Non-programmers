@@ -2,7 +2,7 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { useContext } from 'react'
 import Flex from 'src/components/Flex'
-import ExpressionRunnerContext from 'src/components/Yc/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/yc/ExpressionTypes'
 

@@ -10,15 +10,15 @@ import {
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import YcNextLessonButton from 'src/components/YcNextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
-import AER from 'src/components/Yc/AER'
+import AER from 'src/components/AER'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 
 export default () => (
   <EpisodeCardList

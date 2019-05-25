@@ -1,13 +1,13 @@
 import React from 'react'
 import { InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
-import BottomRightBadge from 'src/components/Yc/BottomRightBadge'
-import TopLeftBadge from 'src/components/Yc/TopLeftBadge'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import TopLeftBadge from 'src/components/TopLeftBadge'
 import locale from 'src/lib/locale'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import H from 'src/components/H'
-import InlinePrioritiesLabel from 'src/components/Yc/InlinePrioritiesLabel'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer

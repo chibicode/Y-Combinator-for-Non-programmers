@@ -1,12 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Em } from 'src/components/ContentTags'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
-import AER from 'src/components/Yc/AER'
+import YcNextLessonButton from 'src/components/YcNextLessonButton'
+import AER from 'src/components/AER'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Emoji from 'src/components/Emoji'
-import { InlineEmojiBoxesForQuestion } from 'src/components/Yc/InlineEmojiBoxes'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export default () => (

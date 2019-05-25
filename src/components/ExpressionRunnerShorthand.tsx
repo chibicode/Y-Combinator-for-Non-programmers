@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import ExpressionRunner, {
   ExpressionRunnerProps
-} from 'src/components/Yc/ExpressionRunner'
+} from 'src/components/ExpressionRunner'
 import { SteppedExpressionContainer } from 'src/types/yc/ExpressionContainerTypes'
 import { CallStates } from 'src/types/yc/ExpressionTypes'
 import { P } from 'src/components/ContentTags'

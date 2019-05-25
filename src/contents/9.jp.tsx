@@ -11,13 +11,13 @@ import {
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiWithText from 'src/components/EmojiWithText'
-import YcNextLessonButton from 'src/components/Yc/YcNextLessonButton'
+import YcNextLessonButton from 'src/components/YcNextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
-import AER from 'src/components/Yc/AER'
+import AER from 'src/components/AER'
 import InlineEmojiBoxes, {
   InlineEmojiBoxesForQuestion
-} from 'src/components/Yc/InlineEmojiBoxes'
+} from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import letterEmojiMapping from 'src/lib/yc/letterEmojiMapping'
 

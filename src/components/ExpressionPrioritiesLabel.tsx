@@ -3,11 +3,11 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
-import ExpressionPriorityContext from 'src/components/Yc/ExpressionPriorityContext'
+import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
-} from 'src/components/Yc/ExpressionRunnerContext'
+} from 'src/components/ExpressionRunnerContext'
 import { colors, fontSizes, zIndices, radii } from 'src/lib/theme'
 
 interface ExpressionPrioritiesLabelProps {
