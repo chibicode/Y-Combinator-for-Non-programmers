@@ -1700,6 +1700,13 @@ export default {
       expressionContainer={lessonExpressions.e13E2}
       showPriorities
     />
+  ),
+  xefx: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e13E2}
+      showPriorities
+      skipToTheEnd={false}
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly
