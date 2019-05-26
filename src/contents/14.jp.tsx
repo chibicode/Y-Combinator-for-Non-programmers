@@ -14,6 +14,7 @@ import { colors } from 'src/lib/theme'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import EmojiWithText from 'src/components/EmojiWithText'
+import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import {
   InlineEmojiBoxesForCondition,
@@ -106,7 +107,10 @@ export default () => (
               >
                 <InlineHeader>青</InlineHeader>
               </span>
-              と、まるで縦型の信号機みたいですね。ちなみに、日本では横型の信号機が主流ですが、世界のほとんどの国では縦型が主流です。
+              と、まるで縦型の信号機 <Emoji>🚦</Emoji>{' '}
+              みたいですね。ちなみに、日本では横型の信号機 <Emoji>🚥</Emoji>{' '}
+              が主流ですが、世界のほとんどの国では縦型 <Emoji>🚦</Emoji>{' '}
+              が主流です。
             </P>
           </>
         ),
@@ -146,6 +150,24 @@ export default () => (
               <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
             </P>
             <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
           </>
         )
       }

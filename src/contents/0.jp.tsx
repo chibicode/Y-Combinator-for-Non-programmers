@@ -273,8 +273,11 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'theAnswerIs', isYes: false }} />
-              でした。あくまで筆者の考えですが、
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
+              </Strong>
+              あくまで筆者の考えですが、
               <Strong>
                 <H args={{ name: 'computerScience' }} />
                 の基礎を学ぶのに、プログラミングの知識は必須ではありません。

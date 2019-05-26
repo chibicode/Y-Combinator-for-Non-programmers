@@ -241,7 +241,10 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'theAnswerIs', isYes: true }} />。
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
+              </Strong>
               <Strong>最終的に暗号が「1」になります。</Strong>
             </P>
             <P>
