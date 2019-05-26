@@ -166,7 +166,7 @@ export default () => (
                 <H args={{ name: 'theAnswerIs', isYes: false }} />
                 でした。
               </Strong>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.xefx}
           </>

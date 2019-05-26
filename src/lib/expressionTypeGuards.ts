@@ -89,5 +89,5 @@ export function isExecutableCall<E extends ExecutableCall>(
 export function isExecutableConditional<E extends ExecutableConditional>(
   expression: ConditionalExpression
 ): expression is E {
-  return isVariableShorthandNumber(expression)
+  return isVariableShorthandNumber(expression.condition)
 }

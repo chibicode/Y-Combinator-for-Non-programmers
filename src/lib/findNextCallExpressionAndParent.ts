@@ -68,7 +68,9 @@ function helper({
   } else {
     if (isExecutableConditional(expression)) {
       return {
-        expression
+        expression,
+        callParent,
+        callParentKey
       }
     }
   }
