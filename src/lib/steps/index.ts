@@ -29,3 +29,6 @@ export {
 export {
   default as stepToBetaReduceUnaryExecuted
 } from 'src/lib/steps/stepToBetaReduceUnaryExecuted'
+export {
+  default as stepToConditionalExecuted
+} from 'src/lib/steps/stepToConditionalExecuted'

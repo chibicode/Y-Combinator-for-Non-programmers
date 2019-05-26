@@ -7,6 +7,7 @@ import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer
 import resetExpressionContainer from 'src/lib/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/replaceCallParentKey'
 import {
+  isCall,
   isExecutableCallRegular,
   isVariableShorthandUnaryNumber
 } from 'src/lib/expressionTypeGuards'
@@ -24,16 +25,16 @@ import {
   stepToShowCallArg,
   stepToShowFuncArg,
   stepToShowFuncBound,
-  stepToShowFuncUnbound
+  stepToShowFuncUnbound,
+  stepToConditionalExecuted
 } from 'src/lib/steps'
 import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
-  CallExpression,
   CallStates,
   ExecutableCallRegular,
   ExecutableCallShorthandBinary,
   ExecutableCall,
-  FunctionExpression,
+  ExecutableConditional,
   StepChild
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
@@ -57,6 +58,20 @@ const stepExpressionContainerReset = (
       ...newContainer,
       containerState: 'done'
     }
+  }
+}
+
+const stepConditional = (
+  e: ExecutableConditional
+): {
+  nextExpression: StepChild<'default'>
+  matchExists?: boolean
+  executableUnaryExists?: boolean
+  previouslyChangedExpressionState: CallStates
+} => {
+  return {
+    nextExpression: stepToConditionalExecuted(e),
+    previouslyChangedExpressionState: 'default'
   }
 }
 
@@ -245,11 +260,7 @@ const runStep = (
     callParent,
     funcParent,
     callParentKey
-  } = findNextCallExpressionAndParent<
-    ExecutableCallRegular,
-    CallExpression,
-    FunctionExpression
-  >(e.expression)
+  } = findNextCallExpressionAndParent(e.expression)
   if (!expression) {
     // Special case - already done to begin with
     return {
@@ -264,9 +275,11 @@ const runStep = (
     matchExists,
     executableUnaryExists,
     previouslyChangedExpressionState
-  } = isExecutableCallRegular(expression)
-    ? stepRegular(expression, stepOptions, e.matchExists)
-    : stepShorthand(expression)
+  } = isCall(expression)
+    ? isExecutableCallRegular(expression)
+      ? stepRegular(expression, stepOptions, e.matchExists)
+      : stepShorthand(expression)
+    : stepConditional(expression)
 
   if (!callParent && !callParentKey && !funcParent) {
     const newContainer = {
