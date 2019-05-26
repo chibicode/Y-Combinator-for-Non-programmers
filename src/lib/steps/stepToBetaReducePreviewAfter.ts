@@ -122,6 +122,7 @@ function matchBetaReduced(
     return {
       result: {
         ...e,
+        state: 'default',
         condition: condition.result,
         trueCase: trueCase.result,
         falseCase: falseCase.result
@@ -282,6 +283,7 @@ export function toBetaReducePreviewAfter(
     return {
       result: {
         ...e,
+        state: 'default',
         condition: condition.result,
         trueCase: trueCase.result,
         falseCase: falseCase.result

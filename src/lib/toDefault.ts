@@ -49,6 +49,7 @@ export default function toDefault(e: Expression): StepChild<'default'> {
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toDefault(e.condition),
       trueCase: toDefault(e.trueCase),
       falseCase: toDefault(e.falseCase)

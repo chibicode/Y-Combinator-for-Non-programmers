@@ -100,6 +100,7 @@ export function toShowFuncBound(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toShowFuncBound(e.condition, funcSide, highlight),
       trueCase: toShowFuncBound(e.trueCase, funcSide, highlight),
       falseCase: toShowFuncBound(e.falseCase, funcSide, highlight)

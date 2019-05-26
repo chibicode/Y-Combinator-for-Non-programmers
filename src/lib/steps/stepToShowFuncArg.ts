@@ -75,6 +75,7 @@ export function toShowFuncArg(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toShowFuncArg(e.condition, funcSide),
       trueCase: toShowFuncArg(e.trueCase, funcSide),
       falseCase: toShowFuncArg(e.falseCase, funcSide)

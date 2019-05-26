@@ -4,8 +4,10 @@ import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import locale from 'src/lib/locale'
-import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
-import { CallStates } from 'src/types/ExpressionTypes'
+import {
+  SteppedExpressionContainer,
+  ExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
 import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 
@@ -52,7 +54,7 @@ const stateToExplanation = ({
   showAllShowSteps,
   hideFuncUnboundBadge
 }: {
-  state: CallStates
+  state: ExpressionContainer['previouslyChangedExpressionState']
   matchExists?: boolean
   activePriority?: number
   showAllShowSteps?: boolean

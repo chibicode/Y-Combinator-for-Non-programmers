@@ -60,6 +60,7 @@ export default function resetExpression(
   } else {
     return {
       ...expression,
+      state: 'default',
       priority: 0,
       condition: resetExpression(expression.condition),
       trueCase: resetExpression(expression.trueCase),

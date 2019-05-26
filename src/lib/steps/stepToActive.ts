@@ -59,6 +59,7 @@ function toActive(e: Expression): StepChild<'active'> {
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toActive(e.condition),
       trueCase: toActive(e.trueCase),
       falseCase: toActive(e.falseCase)

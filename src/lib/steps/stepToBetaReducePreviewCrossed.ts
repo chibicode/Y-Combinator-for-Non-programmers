@@ -84,6 +84,7 @@ function toCrossed(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toCrossed(e.condition, isCallArg),
       trueCase: toCrossed(e.trueCase, isCallArg),
       falseCase: toCrossed(e.falseCase, isCallArg)

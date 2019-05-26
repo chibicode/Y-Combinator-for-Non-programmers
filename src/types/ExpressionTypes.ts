@@ -199,6 +199,12 @@ export type CallStates =
   | 'betaReducePreviewUnaryExecuted'
   | 'betaReducePreviewCrossed'
 
+export type ConditionalSates =
+  | 'default'
+  | 'conditionActive'
+  | 'trueCaseActive'
+  | 'falseCaseActive'
+
 // Call state to possible variable state
 export type CallStateToVariableState<C extends CallStates> = C extends 'default'
   ? 'default'
@@ -296,6 +302,7 @@ export interface ConditionalExpression {
   readonly trueCase: Expression
   readonly falseCase: Expression
   readonly priority: number
+  readonly state: ConditionalSates
 }
 
 export type Expression =
@@ -312,11 +319,12 @@ type FunctionWithArgBody<
   readonly body: B
 }
 
-type ConditionalWith<
+type NonExecutableConditional<
   C extends Expression,
   T extends Expression,
   F extends Expression
 > = ConditionalExpression & {
+  readonly state: 'default'
   readonly condition: C
   readonly trueCase: T
   readonly falseCase: F
@@ -377,7 +385,7 @@ export type StepVariableShorthandNonUnaryNumber<
   C extends CallStates = 'default'
 > = VariableWithStateShorthandNonUnaryNumber<CallStateToVariableState<C>>
 export interface StepConditional<C extends CallStates = 'default'>
-  extends ConditionalWith<StepChild<C>, StepChild<C>, StepChild<C>> {}
+  extends NonExecutableConditional<StepChild<C>, StepChild<C>, StepChild<C>> {}
 export interface StepFunction<C extends CallStates = 'default'>
   extends FunctionWithArgBody<StepVariable<C>, StepChild<C>> {}
 

@@ -152,6 +152,7 @@ export function toBetaReducePreviewBefore(
     return {
       nextExpression: {
         ...e,
+        state: 'default',
         condition: condition.nextExpression,
         trueCase: trueCase.nextExpression,
         falseCase: falseCase.nextExpression

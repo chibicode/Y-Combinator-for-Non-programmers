@@ -1,4 +1,8 @@
-import { CallStates, Expression } from 'src/types/ExpressionTypes'
+import {
+  CallStates,
+  ConditionalSates,
+  Expression
+} from 'src/types/ExpressionTypes'
 
 export type ExpressionContainerStates =
   | 'ready'
@@ -10,7 +14,7 @@ export type ExpressionContainerStates =
 export interface ExpressionContainer<E extends Expression = Expression> {
   readonly expression: E
   readonly containerState: ExpressionContainerStates
-  readonly previouslyChangedExpressionState: CallStates
+  readonly previouslyChangedExpressionState: CallStates | ConditionalSates
   readonly matchExists?: boolean
   readonly executableUnaryExists?: boolean
   readonly activePriority?: number

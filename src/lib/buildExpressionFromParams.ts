@@ -162,6 +162,7 @@ export default function buildExpressionFromParams(
   } else {
     return {
       type: 'conditional',
+      state: 'default',
       checkType: expressionParams.checkType,
       condition: buildExpressionFromParams(expressionParams.condition),
       trueCase: buildExpressionFromParams(expressionParams.trueCase),
