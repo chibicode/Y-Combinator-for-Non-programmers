@@ -6,6 +6,7 @@ import hasUnboundVariables from 'src/lib/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/replaceCallParentKey'
+import replaceConditionalParentKey from 'src/lib/replaceConditionalParentKey'
 import {
   isCall,
   isExecutableCallRegular,
@@ -259,6 +260,7 @@ const runStep = (
     expression,
     callParent,
     funcParent,
+    conditionalParent,
     callParentKey
   } = findNextCallExpressionAndParent(e.expression)
   if (!expression) {
@@ -281,7 +283,7 @@ const runStep = (
       : stepShorthand(expression)
     : stepConditional(expression)
 
-  if (!callParent && !callParentKey && !funcParent) {
+  if (!callParent && !callParentKey && !funcParent && !conditionalParent) {
     const newContainer = {
       expression:
         previouslyChangedExpressionState === 'betaReducePreviewAfter'
@@ -310,6 +312,12 @@ const runStep = (
     newExpression = replaceFuncParentKey(
       e.expression,
       funcParent,
+      nextExpression
+    )
+  } else if (conditionalParent) {
+    newExpression = replaceConditionalParentKey(
+      e.expression,
+      conditionalParent,
       nextExpression
     )
   } else {

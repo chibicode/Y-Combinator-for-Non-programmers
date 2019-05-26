@@ -18,6 +18,7 @@ export interface FindResult {
   readonly expression?: ExecutableCall | ExecutableConditional
   readonly callParent?: CallExpression
   readonly funcParent?: FunctionExpression
+  readonly conditionalParent?: ConditionalExpression
   readonly callParentKey?: 'func' | 'arg'
 }
 
@@ -28,10 +29,12 @@ export interface FindResult {
  */
 function helper({
   expression,
+  conditionalParent,
   callParent,
   callParentKey
 }: {
   expression: CallExpression | ConditionalExpression
+  conditionalParent?: ConditionalExpression
   callParent?: CallExpression
   callParentKey?: 'func' | 'arg'
 }): FindResult {
@@ -40,7 +43,8 @@ function helper({
       return {
         expression,
         callParent,
-        callParentKey
+        callParentKey,
+        conditionalParent
       }
     }
 
@@ -70,7 +74,18 @@ function helper({
       return {
         expression,
         callParent,
-        callParentKey
+        callParentKey,
+        conditionalParent
+      }
+    }
+
+    if (isCall(expression.condition) || isConditional(expression.condition)) {
+      const result: FindResult = helper({
+        expression: expression.condition,
+        conditionalParent: expression
+      })
+      if (result.expression) {
+        return result
       }
     }
   }
@@ -96,7 +111,7 @@ export default function findNextCallExpressionAndParent(
       const helperResult = helper({
         expression: currentExpression
       })
-      if (helperResult.callParent) {
+      if (helperResult.callParent || helperResult.conditionalParent) {
         return helperResult
       } else if (previousExpression) {
         return {
