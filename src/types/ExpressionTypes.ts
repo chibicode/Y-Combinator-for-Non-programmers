@@ -295,6 +295,7 @@ export interface ConditionalExpression {
   readonly condition: Expression
   readonly trueCase: Expression
   readonly falseCase: Expression
+  readonly priority: number
 }
 
 export type Expression =

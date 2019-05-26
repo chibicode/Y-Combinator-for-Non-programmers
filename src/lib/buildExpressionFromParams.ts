@@ -165,7 +165,8 @@ export default function buildExpressionFromParams(
       checkType: expressionParams.checkType,
       condition: buildExpressionFromParams(expressionParams.condition),
       trueCase: buildExpressionFromParams(expressionParams.trueCase),
-      falseCase: buildExpressionFromParams(expressionParams.falseCase)
+      falseCase: buildExpressionFromParams(expressionParams.falseCase),
+      priority: 0
     }
   }
 }
