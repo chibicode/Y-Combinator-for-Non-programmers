@@ -350,6 +350,17 @@ type ExecutableShorthandBinary<
     readonly func: F
   })
 
+type ExecutableConditionalNumber<
+  C extends VariableShorthandNumber,
+  T extends Expression,
+  F extends Expression
+> = ConditionalExpression &
+  ({
+    readonly condition: C
+    readonly trueCase: T
+    readonly falseCase: F
+  })
+
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
   CallStateToVariableState<C>
 >
@@ -382,6 +393,12 @@ export interface ExecutableStepCallShorthandBinary<
     StepVariableShorthandBinary<C>,
     StepChild<C>
   > {}
+export interface ExecutableStepConditional<C extends CallStates = 'default'>
+  extends ExecutableConditionalNumber<
+    VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
+    StepChild<C>,
+    StepChild<C>
+  > {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
   | StepFunction<C>
@@ -405,3 +422,8 @@ export type ExecutableCallShorthandBinary = DistributeStepCallShorthandBinary<
 export type ExecutableCall =
   | ExecutableCallRegular
   | ExecutableCallShorthandBinary
+
+type DistributeStepConditional<U> = U extends CallStates
+  ? ExecutableStepConditional<U>
+  : never
+export type ExecutableConditional = DistributeStepConditional<CallStates>
