@@ -30,7 +30,14 @@ const ConditionalExpressionBox = ({
             position: relative;
           `}
         >
-          <ConditionalBorder addBottom type="falseCase" />
+          <ConditionalBorder
+            addBottom
+            type="falseCase"
+            shaded={
+              expression.state === 'trueCaseActive' ||
+              expression.state === 'conditionActive'
+            }
+          />
           <ExpressionBox expression={expression.falseCase} />
         </FlexCenter>
         <FlexCenter
@@ -38,7 +45,14 @@ const ConditionalExpressionBox = ({
             position: relative;
           `}
         >
-          <ConditionalBorder addBottom type="condition" />
+          <ConditionalBorder
+            addBottom
+            type="condition"
+            shaded={
+              expression.state === 'trueCaseActive' ||
+              expression.state === 'falseCaseActive'
+            }
+          />
           <ExpressionBox expression={expression.condition} />
         </FlexCenter>
         <FlexCenter
@@ -46,7 +60,13 @@ const ConditionalExpressionBox = ({
             position: relative;
           `}
         >
-          <ConditionalBorder type="trueCase" />
+          <ConditionalBorder
+            type="trueCase"
+            shaded={
+              expression.state === 'falseCaseActive' ||
+              expression.state === 'conditionActive'
+            }
+          />
           <ExpressionBox expression={expression.trueCase} />
         </FlexCenter>
       </Flex>
