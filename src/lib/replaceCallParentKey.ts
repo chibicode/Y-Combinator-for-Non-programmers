@@ -4,8 +4,6 @@ import {
   Expression,
   FunctionExpression,
   VariableExpression,
-  StepChild,
-  ExecutableCall,
   ConditionalExpression
 } from 'src/types/ExpressionTypes'
 
@@ -13,43 +11,43 @@ export default function replaceCallParentKey(
   expression: VariableExpression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): VariableExpression
 export default function replaceCallParentKey(
   expression: FunctionExpression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): FunctionExpression
 export default function replaceCallParentKey(
   expression: CallExpression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): CallExpression
 export default function replaceCallParentKey(
   expression: ConditionalExpression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): ConditionalExpression
 export default function replaceCallParentKey(
   expression: VariableExpression | FunctionExpression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): VariableExpression | FunctionExpression
 export default function replaceCallParentKey(
   expression: Expression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): Expression
 export default function replaceCallParentKey(
   expression: Expression,
   target: CallExpression,
   key: 'func' | 'arg',
-  replaceWith: ExecutableCall | StepChild<'default'>
+  replaceWith: Expression
 ): Expression {
   if (isVariable(expression)) {
     return expression

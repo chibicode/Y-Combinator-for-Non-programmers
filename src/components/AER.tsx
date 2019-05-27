@@ -1701,6 +1701,7 @@ export default {
   xefx: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E2}
+      skipToTheEnd={false}
     />
   )
   // hzlj: (

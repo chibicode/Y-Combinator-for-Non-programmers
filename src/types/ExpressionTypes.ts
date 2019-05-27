@@ -199,7 +199,7 @@ export type CallStates =
   | 'betaReducePreviewUnaryExecuted'
   | 'betaReducePreviewCrossed'
 
-export type ConditionalSates =
+export type ConditionalStates =
   | 'default'
   | 'conditionActive'
   | 'trueCaseActive'
@@ -302,7 +302,7 @@ export interface ConditionalExpression {
   readonly trueCase: Expression
   readonly falseCase: Expression
   readonly priority: number
-  readonly state: ConditionalSates
+  readonly state: ConditionalStates
 }
 
 export type Expression =
@@ -361,12 +361,14 @@ type ExecutableShorthandBinary<
 type ExecutableConditionalNumber<
   C extends VariableShorthandNumber,
   T extends Expression,
-  F extends Expression
+  F extends Expression,
+  S extends ConditionalStates
 > = ConditionalExpression &
   ({
     readonly condition: C
     readonly trueCase: T
     readonly falseCase: F
+    readonly state: S
   })
 
 export type StepVariable<C extends CallStates = 'default'> = VariableWithState<
@@ -401,11 +403,15 @@ export interface ExecutableStepCallShorthandBinary<
     StepVariableShorthandBinary<C>,
     StepChild<C>
   > {}
-export interface ExecutableStepConditional<C extends CallStates = 'default'>
+export interface ExecutableStepConditional<
+  C extends CallStates = 'default',
+  S extends ConditionalStates = 'default'
+>
   extends ExecutableConditionalNumber<
     VariableWithStateShorthandNumber<CallStateToVariableState<C>>,
     StepChild<C>,
-    StepChild<C>
+    StepChild<C>,
+    S
   > {}
 export type StepChild<C extends CallStates = 'default'> =
   | StepVariable<C>
@@ -431,7 +437,19 @@ export type ExecutableCall =
   | ExecutableCallRegular
   | ExecutableCallShorthandBinary
 
-type DistributeStepConditional<U> = U extends CallStates
-  ? ExecutableStepConditional<U>
+type DistributeStepConditional<
+  U,
+  S extends ConditionalStates
+> = U extends CallStates ? ExecutableStepConditional<U, S> : never
+
+export type ExecutableConditional<
+  S extends ConditionalStates = 'default'
+> = DistributeStepConditional<CallStates, S>
+
+type DistributeExecutableConditionalStates<S> = S extends ConditionalStates
+  ? ExecutableConditional<S>
   : never
-export type ExecutableConditional = DistributeStepConditional<CallStates>
+
+export type ExecutableConditionalStatesDistributed = DistributeExecutableConditionalStates<
+  ConditionalStates
+>

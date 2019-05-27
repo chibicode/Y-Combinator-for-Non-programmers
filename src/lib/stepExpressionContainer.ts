@@ -27,16 +27,20 @@ import {
   stepToShowFuncArg,
   stepToShowFuncBound,
   stepToShowFuncUnbound,
-  stepToConditionalExecuted
+  stepToCaseActive,
+  stepToConditionActive,
+  stepToCaseProcessed
 } from 'src/lib/steps'
-import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
-  CallStates,
+  ContainerWithState,
+  ExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
+import {
   ExecutableCallRegular,
   ExecutableCallShorthandBinary,
-  ExecutableCall,
-  ExecutableConditional,
-  StepChild
+  StepChild,
+  ExecutableConditionalStatesDistributed,
+  ExecutableCall
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 
@@ -63,17 +67,41 @@ const stepExpressionContainerReset = (
 }
 
 const stepConditional = (
-  e: ExecutableConditional
+  e: ExecutableConditionalStatesDistributed
 ): {
-  nextExpression: StepChild<'default'>
+  nextExpression: ExecutableConditionalStatesDistributed | StepChild<'default'>
   matchExists?: boolean
   executableUnaryExists?: boolean
-  previouslyChangedExpressionState: CallStates
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
-  return {
-    nextExpression: stepToConditionalExecuted(e),
-    previouslyChangedExpressionState: 'default'
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToConditionActive(e),
+        previouslyChangedExpressionState: 'conditionActive'
+      }
+    }
+    case 'conditionActive': {
+      const nextExpression = stepToCaseActive(e)
+      return {
+        nextExpression,
+        previouslyChangedExpressionState: nextExpression.state
+      }
+    }
+    case 'trueCaseActive': {
+      return {
+        nextExpression: stepToCaseProcessed(e, true),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    case 'falseCaseActive': {
+      return {
+        nextExpression: stepToCaseProcessed(e, false),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
   }
+  throw new Error()
 }
 
 const stepShorthand = (
@@ -82,7 +110,7 @@ const stepShorthand = (
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   executableUnaryExists?: boolean
-  previouslyChangedExpressionState: CallStates
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   switch (e.state) {
     case 'default': {
@@ -111,12 +139,12 @@ const stepRegular = (
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   executableUnaryExists?: boolean
-  previouslyChangedExpressionState: CallStates
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   const toNeedsAlphaConvertOrBetaReducePreviewBefore = (): {
     nextExpression: ExecutableCall | StepChild<'default'>
     matchExists?: boolean
-    previouslyChangedExpressionState: CallStates
+    previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
   } => {
     const conflicts = skipAlphaConvert ? {} : getConflictsToUnused(e)
     if (Object.keys(conflicts).length > 0) {
