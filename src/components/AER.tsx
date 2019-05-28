@@ -1780,7 +1780,7 @@ export default {
       expressionContainer={lessonExpressions.ycTest}
       showPriorities
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'sm'}
       skipToTheEnd={false}
       speed={5}
     />

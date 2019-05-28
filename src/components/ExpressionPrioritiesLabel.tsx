@@ -34,7 +34,7 @@ const fontSize = (
   } else if (variableSize === 'md') {
     return fontSizes(0.6)
   } else {
-    return fontSizes(0.6)
+    return fontSizes(0.5)
   }
 }
 
@@ -56,7 +56,7 @@ const width = (
   const multiplier = {
     lg: 1,
     md: 0.9,
-    sm: 0.75
+    sm: 0.9
   }[variableSize]
   return 1.3 * multiplier
 }
@@ -78,7 +78,7 @@ const left = (
   ({
     lg: -1,
     md: -0.85,
-    sm: -0.85
+    sm: -0.7
   }[variableSize])
 
 const ExpressionPrioritiesLabelBox = ({
@@ -98,13 +98,11 @@ const ExpressionPrioritiesLabelBox = ({
           position: relative;
           z-index: ${-offset};
         `,
-        variableSize !== 'sm' &&
-          position === 'topleft' &&
+        position === 'topleft' &&
           css`
             top: ${-offset * 0.2 * width(variableSize)}em;
           `,
-        variableSize !== 'sm' &&
-          position === 'bottomleft' &&
+        position === 'bottomleft' &&
           css`
             bottom: ${-offset * 0.2 * width(variableSize)}em;
           `
@@ -131,27 +129,11 @@ const ExpressionPrioritiesLabelBox = ({
               height: ${height(variableSize)}em;
               line-height: 1;
               background: ${colors(
-                emphasize && activePriority === priority
-                  ? 'pink400'
-                  : variableSize !== 'sm'
-                  ? 'white'
-                  : 'transparent'
+                emphasize && activePriority === priority ? 'pink400' : 'white'
               )};
-            `,
-            variableSize !== 'sm'
-              ? css`
-                  border: 2px solid ${colors('indigo300')};
-                  border-radius: ${radii(9999)};
-                `
-              : position === 'topleft'
-              ? css`
-                  border-right: 2px solid ${colors('indigo300')};
-                  border-bottom: 2px solid ${colors('indigo300')};
-                `
-              : css`
-                  border-top: 2px solid ${colors('indigo300')};
-                  border-right: 2px solid ${colors('indigo300')};
-                `
+              border: 2px solid ${colors('indigo300')};
+              border-radius: ${radii(9999)};
+            `
           ]}
         >
           {priority}
@@ -178,30 +160,24 @@ const ExpressionPrioritiesLabel = ({
     <div
       css={[
         css`
-        position: absolute;
-        ${
-          position === 'topleft'
-            ? css`
-                top: 0;
-              `
-            : css`
-                bottom: 0;
-              `
-        }
-        z-index: ${zIndices('expressionPriorityNumber')};
-      `,
-        css`
-          left: ${variableSize !== 'sm' ? left(variableSize) : 0}em;
-        `
+          position: absolute;
+          z-index: ${zIndices('expressionPriorityNumber')};
+          left: ${left(variableSize)}em;
+        `,
+        position === 'topleft'
+          ? css`
+              top: 0;
+            `
+          : css`
+              bottom: 0;
+            `
       ]}
     >
       <Flex
         css={css`
-          flex-direction: ${variableSize !== 'sm'
-            ? position === 'topleft'
-              ? 'column'
-              : 'column-reverse'
-            : 'row'};
+          flex-direction: ${position === 'topleft'
+            ? 'column'
+            : 'column-reverse'};
         `}
       >
         {priorities.map((priority, index) => (

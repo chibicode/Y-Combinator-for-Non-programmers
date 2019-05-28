@@ -1,4 +1,5 @@
 export const allFontSizes = {
+  0.5: 0.5,
   0.6: 0.6,
   0.7: 0.7,
   0.75: 0.75,
