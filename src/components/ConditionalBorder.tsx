@@ -84,4 +84,8 @@ const ConditionalBorder = ({
   )
 }
 
+ConditionalBorder.defaultProps = {
+  shaded: false
+}
+
 export default ConditionalBorder

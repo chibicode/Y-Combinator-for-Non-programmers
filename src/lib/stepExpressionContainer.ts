@@ -29,7 +29,8 @@ import {
   stepToShowFuncUnbound,
   stepToCaseActive,
   stepToConditionActive,
-  stepToCaseProcessed
+  stepToCaseProcessed,
+  stepToCaseOnly
 } from 'src/lib/steps'
 import {
   ContainerWithState,
@@ -90,11 +91,23 @@ const stepConditional = (
     }
     case 'trueCaseActive': {
       return {
+        nextExpression: stepToCaseOnly(e, true),
+        previouslyChangedExpressionState: 'trueCaseOnly'
+      }
+    }
+    case 'falseCaseActive': {
+      return {
+        nextExpression: stepToCaseOnly(e, false),
+        previouslyChangedExpressionState: 'falseCaseOnly'
+      }
+    }
+    case 'trueCaseOnly': {
+      return {
         nextExpression: stepToCaseProcessed(e, true),
         previouslyChangedExpressionState: 'default'
       }
     }
-    case 'falseCaseActive': {
+    case 'falseCaseOnly': {
       return {
         nextExpression: stepToCaseProcessed(e, false),
         previouslyChangedExpressionState: 'default'

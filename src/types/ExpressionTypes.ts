@@ -204,6 +204,8 @@ export type ConditionalStates =
   | 'conditionActive'
   | 'trueCaseActive'
   | 'falseCaseActive'
+  | 'trueCaseOnly'
+  | 'falseCaseOnly'
 
 // Call state to possible variable state
 export type CallStateToVariableState<C extends CallStates> = C extends 'default'

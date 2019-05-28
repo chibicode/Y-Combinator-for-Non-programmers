@@ -39,3 +39,4 @@ export { default as stepToCaseActive } from 'src/lib/steps/stepToCaseActive'
 export {
   default as stepToCaseProcessed
 } from 'src/lib/steps/stepToCaseProcessed'
+export { default as stepToCaseOnly } from 'src/lib/steps/stepToCaseOnly'
