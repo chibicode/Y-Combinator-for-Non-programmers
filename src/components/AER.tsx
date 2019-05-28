@@ -1737,6 +1737,43 @@ export default {
       showPriorities
       speed={1.5}
     />
+  ),
+  dwnj: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e13E3}
+      skipToTheEnd={false}
+      showPriorities
+      lastAllowedExpressionState="default"
+    />
+  ),
+  guuf: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E3}
+      showPriorities
+      explanationsVisibility="visible"
+      nextIteration
+      initialState="conditionActive"
+    />
+  ),
+  lrrr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E3}
+      showPriorities
+      nextIteration
+      explanationsVisibility="visible"
+      initialState="trueCaseActive"
+    />
+  ),
+  dpar: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e13E3}
+      showPriorities
+      speed={1.5}
+      skipToTheEnd={false}
+      nextIteration
+      explanationsVisibility="visible"
+      initialState="trueCaseOnly"
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly

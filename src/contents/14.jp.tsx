@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 import {
   Em,
   InlineHeader,
@@ -174,7 +175,7 @@ export default () => (
             <P>
               手短に解説します。まず、
               <InlineEmojiBoxesForCondition type="condition" />{' '}
-              (真ん中、黄色い枠)の中にある暗号が「0」かどうかチェックします。
+              の中にある暗号が「0」かどうかチェックします。
             </P>
             {AER.wcsz}
             <P>
@@ -229,6 +230,30 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.cnoq}
+            <P>
+              今回も手短に解説します。まず、
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="a" />が<Emoji>0️⃣</Emoji>に変わります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.dwnj}
+            <P>
+              ここで、
+              <InlineEmojiBoxesForCondition type="condition" />{' '}
+              の中にある暗号が「0」かどうかチェックします。
+            </P>
+            {AER.guuf}
+            <P>
+              <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
+              <Emoji>0️⃣</Emoji> なので、下の{' '}
+              <InlineEmojiBoxesForCondition type="trueCase" /> が残ります。
+            </P>
+            {AER.lrrr}
+            <P>
+              そして、最後に<Emoji>2️⃣</Emoji>が残ります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.dpar}
           </>
         )
       }
