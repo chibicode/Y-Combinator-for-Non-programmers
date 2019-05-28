@@ -463,6 +463,31 @@ export const e13E2 = initializeExpressionContainer({
   }
 })
 
+export const e13E3 = initializeExpressionContainer([
+  [
+    {
+      arg: 'a',
+      body: {
+        checkType: 'isZero',
+        condition: 'a',
+        trueCase: {
+          arg: 'b',
+          body: 'b'
+        },
+        falseCase: {
+          shorthandNumber: 1
+        }
+      }
+    },
+    {
+      shorthandNumber: 0
+    }
+  ],
+  {
+    shorthandNumber: 2
+  }
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

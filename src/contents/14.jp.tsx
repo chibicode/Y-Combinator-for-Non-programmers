@@ -187,6 +187,22 @@ export default () => (
             {AER.xsby}
           </>
         )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              次に進む前に、理解を確実にするためにもう一問やってみましょう。
+            </P>
+            {AER.repd}
+          </>
+        )
       }
     ]}
   />

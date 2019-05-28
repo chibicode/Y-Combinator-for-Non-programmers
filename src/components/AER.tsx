@@ -1723,6 +1723,13 @@ export default {
       expressionContainer={lessonExpressions.e13E2}
       isDone
     />
+  ),
+  repd: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e13E3}
+      skipToTheEnd={false}
+      showPriorities
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly
