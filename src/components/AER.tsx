@@ -1703,6 +1703,26 @@ export default {
       expressionContainer={lessonExpressions.e13E2}
       skipToTheEnd={false}
     />
+  ),
+  wcsz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E2}
+      explanationsVisibility="visible"
+      initialState="conditionActive"
+    />
+  ),
+  psqo: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E2}
+      explanationsVisibility="visible"
+      initialState="falseCaseActive"
+    />
+  ),
+  xsby: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E2}
+      isDone
+    />
   )
   // hzlj: (
   //   <ExpressionRunnerPlayButtonOnly

@@ -3,7 +3,10 @@ import { css, jsx } from '@emotion/core'
 import ExpressionRunner, {
   ExpressionRunnerProps
 } from 'src/components/ExpressionRunner'
-import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import {
+  ExpressionContainer,
+  SteppedExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
 import { CallStates } from 'src/types/ExpressionTypes'
 import { P } from 'src/components/ContentTags'
 import H from 'src/components/H'
@@ -30,7 +33,7 @@ export const ExpressionRunnerSimple = ({
   highlightOverridesCallArgAndFuncUnboundOnly
 }: {
   expressionContainer: SteppedExpressionContainer
-  initialState: CallStates
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
   isDone: boolean
   skipAlphaConvert: boolean
   nextIteration?: boolean
@@ -118,7 +121,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   resetAtTheEnd
 }: {
   expressionContainer: SteppedExpressionContainer
-  initialState: CallStates
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
@@ -199,9 +202,9 @@ export const ExpressionRunnerPairSimple = ({
   variableSize
 }: {
   expressionContainer: SteppedExpressionContainer
-  initialState: CallStates
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
   finalIsDone: boolean
-  finalState?: CallStates
+  finalState?: ExpressionContainer['previouslyChangedExpressionState']
   showPriorities: boolean
   hidePrioritiesOnSecond: boolean
   skipAlphaConvert: boolean
@@ -298,8 +301,8 @@ export const ExpressionRunnerSingleStep = ({
   containerSize
 }: {
   expressionContainer: SteppedExpressionContainer
-  initialState: CallStates
-  finalState: CallStates
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
+  finalState: ExpressionContainer['previouslyChangedExpressionState']
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
   variableSize: ExpressionRunnerProps['variableSize']

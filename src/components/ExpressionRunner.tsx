@@ -16,9 +16,9 @@ import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
 import {
   ExpressionContainerStates,
-  SteppedExpressionContainer
+  SteppedExpressionContainer,
+  ExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import { CallStates } from 'src/types/ExpressionTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
@@ -34,7 +34,7 @@ export type InitializeInstruction =
     }
   | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
-      state: CallStates
+      state: ExpressionContainer['previouslyChangedExpressionState']
     }
   | {
       type: 'nextIteration'
@@ -57,7 +57,7 @@ export interface ExpressionRunnerProps {
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
   maxStepsAllowed?: number
-  lastAllowedExpressionState?: CallStates
+  lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   maxAllowedDefaultStateCount?: number
   containerSize: ContainerProps['size']
   resetIndex: boolean

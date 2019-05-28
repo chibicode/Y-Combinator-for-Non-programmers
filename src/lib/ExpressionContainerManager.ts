@@ -2,14 +2,14 @@ import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {
   ExpressionContainerStates,
-  SteppedExpressionContainer
+  SteppedExpressionContainer,
+  ExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import { CallStates } from 'src/types/ExpressionTypes'
 
 export interface StepOptions {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
-  lastAllowedExpressionState?: CallStates
+  lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   maxAllowedDefaultStateCount?: number
 }
 
@@ -75,7 +75,9 @@ export default class ExpressionContainerManager {
     this.currentIndex = this.startIndex
   }
 
-  public stepForwardUntilPreviouslyChangedExpressionState(state: CallStates) {
+  public stepForwardUntilPreviouslyChangedExpressionState(
+    state: ExpressionContainer['previouslyChangedExpressionState']
+  ) {
     while (
       this.currentExpressionContainer.previouslyChangedExpressionState !==
         state &&
