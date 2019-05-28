@@ -1774,15 +1774,15 @@ export default {
       explanationsVisibility="visible"
       initialState="trueCaseOnly"
     />
+  ),
+  hzlj: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.ycTest}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      skipToTheEnd={false}
+      speed={5}
+    />
   )
-  // hzlj: (
-  //   <ExpressionRunnerPlayButtonOnly
-  //     expressionContainer={lessonExpressions.ycTest}
-  //     showPriorities
-  //     containerSize={'xs'}
-  //     variableSize={'md'}
-  //     skipToTheEnd={false}
-  //     speed={5}
-  //   />
-  // )
 }
