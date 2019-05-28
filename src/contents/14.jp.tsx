@@ -166,6 +166,8 @@ export default () => (
                 <H args={{ name: 'theAnswerIs', isYes: false }} />
                 でした。
               </Strong>
+              暗号は「<Strong>4</Strong>」ではなく、「<Strong>2</Strong>
+              」になります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.xefx}
@@ -199,8 +201,34 @@ export default () => (
           <>
             <P>
               次に進む前に、理解を確実にするためにもう一問やってみましょう。
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
             {AER.repd}
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
+            </P>
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+                でした。
+              </Strong>
+              暗号は「<Strong>1</Strong>」ではなく、「<Strong>2</Strong>
+              」になります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.cnoq}
           </>
         )
       }

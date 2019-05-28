@@ -1725,10 +1725,17 @@ export default {
     />
   ),
   repd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E3}
+      showPriorities
+    />
+  ),
+  cnoq: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E3}
       skipToTheEnd={false}
       showPriorities
+      speed={1.5}
     />
   )
   // hzlj: (
