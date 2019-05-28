@@ -453,13 +453,13 @@ export const e13E1 = initializeExpressionContainer({
 export const e13E2 = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
-    shorthandNumber: 1
+    shorthandNumber: 3
   },
   trueCase: {
-    shorthandNumber: 2
+    shorthandNumber: 4
   },
   falseCase: {
-    shorthandNumber: 0
+    shorthandNumber: 2
   }
 })
 

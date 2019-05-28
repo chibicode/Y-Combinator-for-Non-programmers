@@ -21,16 +21,6 @@ import {
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
 
-const step1 = (
-  <>
-    まず、
-    <InlineEmojiBoxesForCondition type="condition" />{' '}
-    (真ん中、黄色い枠)の中にある
-    <InlineEmojiBoxesForQuestion />
-    の暗号が「0」かどうかチェックします。
-  </>
-)
-
 export default () => (
   <EpisodeCardList
     cards={[
@@ -70,7 +60,13 @@ export default () => (
             <P>次のように省略表記してみましょう:</P>
             {AER.hvdn}
             <Ul>
-              <UlLi>{step1}</UlLi>
+              <UlLi>
+                まず、
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                (真ん中、黄色い枠)の中にある
+                <InlineEmojiBoxesForQuestion />
+                の暗号が「0」かどうかチェックします。
+              </UlLi>
               <UlLi>
                 もし「<Strong>0</Strong>」なら、{' '}
                 <InlineEmojiBoxesForCondition type="trueCase" />{' '}
@@ -151,7 +147,7 @@ export default () => (
             </P>
             {AER.vxnm}
             <P>
-              <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
+              <H args={{ name: 'whatsTheNumberQuestion', number: 4 }} />
             </P>
             <YesNoButtons answer="no" />
           </>
@@ -173,15 +169,20 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.xefx}
-            <P>手短に解説します。{step1}</P>
+            <P>
+              手短に解説します。まず、
+              <InlineEmojiBoxesForCondition type="condition" />{' '}
+              (真ん中、黄色い枠)の中にある暗号が「0」かどうかチェックします。
+            </P>
             {AER.wcsz}
             <P>
-              暗号が <Emoji>1️⃣</Emoji> なので、「1以上」の方、つまり上の{' '}
+              <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
+              <Emoji>3️⃣</Emoji> なので、「1以上」の方、つまり上の{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> が残ります。
             </P>
             {AER.psqo}
             <P>
-              というわけで、最後は<Emoji>0️⃣</Emoji>だけになります。
+              というわけで、最後は <Emoji>2️⃣</Emoji> だけになります。
             </P>
             {AER.xsby}
           </>
