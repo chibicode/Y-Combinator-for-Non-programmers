@@ -108,6 +108,7 @@ export function toNeedsAlphaConvert(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toNeedsAlphaConvert(e.condition, conflicts, funcSide),
       trueCase: toNeedsAlphaConvert(e.trueCase, conflicts, funcSide),
       falseCase: toNeedsAlphaConvert(e.falseCase, conflicts, funcSide)

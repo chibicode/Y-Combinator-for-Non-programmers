@@ -1696,15 +1696,11 @@ export default {
     />
   ),
   vxnm: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E2}
-      showPriorities
-    />
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e13E2} />
   ),
   xefx: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E2}
-      showPriorities
       skipToTheEnd={false}
     />
   )

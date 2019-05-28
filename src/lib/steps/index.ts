@@ -29,3 +29,14 @@ export {
 export {
   default as stepToBetaReduceUnaryExecuted
 } from 'src/lib/steps/stepToBetaReduceUnaryExecuted'
+export {
+  default as stepToConditionalExecuted
+} from 'src/lib/steps/stepToConditionalExecuted'
+export {
+  default as stepToConditionActive
+} from 'src/lib/steps/stepToConditionActive'
+export { default as stepToCaseActive } from 'src/lib/steps/stepToCaseActive'
+export {
+  default as stepToCaseProcessed
+} from 'src/lib/steps/stepToCaseProcessed'
+export { default as stepToCaseOnly } from 'src/lib/steps/stepToCaseOnly'

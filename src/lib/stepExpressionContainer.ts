@@ -6,7 +6,9 @@ import hasUnboundVariables from 'src/lib/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
 import resetExpressionContainer from 'src/lib/resetExpressionContainer'
 import replaceCallParentKey from 'src/lib/replaceCallParentKey'
+import replaceConditionalParentKey from 'src/lib/replaceConditionalParentKey'
 import {
+  isCall,
   isExecutableCallRegular,
   isVariableShorthandUnaryNumber
 } from 'src/lib/expressionTypeGuards'
@@ -24,17 +26,22 @@ import {
   stepToShowCallArg,
   stepToShowFuncArg,
   stepToShowFuncBound,
-  stepToShowFuncUnbound
+  stepToShowFuncUnbound,
+  stepToCaseActive,
+  stepToConditionActive,
+  stepToCaseProcessed,
+  stepToCaseOnly
 } from 'src/lib/steps'
-import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
-  CallExpression,
-  CallStates,
+  ContainerWithState,
+  ExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
+import {
   ExecutableCallRegular,
   ExecutableCallShorthandBinary,
-  ExecutableCall,
-  FunctionExpression,
-  StepChild
+  StepChild,
+  ExecutableConditionalStatesDistributed,
+  ExecutableCall
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 
@@ -60,13 +67,63 @@ const stepExpressionContainerReset = (
   }
 }
 
+const stepConditional = (
+  e: ExecutableConditionalStatesDistributed
+): {
+  nextExpression: ExecutableConditionalStatesDistributed | StepChild<'default'>
+  matchExists?: boolean
+  executableUnaryExists?: boolean
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToConditionActive(e),
+        previouslyChangedExpressionState: 'conditionActive'
+      }
+    }
+    case 'conditionActive': {
+      const nextExpression = stepToCaseActive(e)
+      return {
+        nextExpression,
+        previouslyChangedExpressionState: nextExpression.state
+      }
+    }
+    case 'trueCaseActive': {
+      return {
+        nextExpression: stepToCaseOnly(e, true),
+        previouslyChangedExpressionState: 'trueCaseOnly'
+      }
+    }
+    case 'falseCaseActive': {
+      return {
+        nextExpression: stepToCaseOnly(e, false),
+        previouslyChangedExpressionState: 'falseCaseOnly'
+      }
+    }
+    case 'trueCaseOnly': {
+      return {
+        nextExpression: stepToCaseProcessed(e, true),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    case 'falseCaseOnly': {
+      return {
+        nextExpression: stepToCaseProcessed(e, false),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+  }
+  throw new Error()
+}
+
 const stepShorthand = (
   e: ExecutableCallShorthandBinary
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   executableUnaryExists?: boolean
-  previouslyChangedExpressionState: CallStates
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   switch (e.state) {
     case 'default': {
@@ -95,12 +152,12 @@ const stepRegular = (
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   executableUnaryExists?: boolean
-  previouslyChangedExpressionState: CallStates
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   const toNeedsAlphaConvertOrBetaReducePreviewBefore = (): {
     nextExpression: ExecutableCall | StepChild<'default'>
     matchExists?: boolean
-    previouslyChangedExpressionState: CallStates
+    previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
   } => {
     const conflicts = skipAlphaConvert ? {} : getConflictsToUnused(e)
     if (Object.keys(conflicts).length > 0) {
@@ -244,12 +301,9 @@ const runStep = (
     expression,
     callParent,
     funcParent,
+    conditionalParent,
     callParentKey
-  } = findNextCallExpressionAndParent<
-    ExecutableCallRegular,
-    CallExpression,
-    FunctionExpression
-  >(e.expression)
+  } = findNextCallExpressionAndParent(e.expression)
   if (!expression) {
     // Special case - already done to begin with
     return {
@@ -264,11 +318,13 @@ const runStep = (
     matchExists,
     executableUnaryExists,
     previouslyChangedExpressionState
-  } = isExecutableCallRegular(expression)
-    ? stepRegular(expression, stepOptions, e.matchExists)
-    : stepShorthand(expression)
+  } = isCall(expression)
+    ? isExecutableCallRegular(expression)
+      ? stepRegular(expression, stepOptions, e.matchExists)
+      : stepShorthand(expression)
+    : stepConditional(expression)
 
-  if (!callParent && !callParentKey && !funcParent) {
+  if (!callParent && !callParentKey && !funcParent && !conditionalParent) {
     const newContainer = {
       expression:
         previouslyChangedExpressionState === 'betaReducePreviewAfter'
@@ -297,6 +353,12 @@ const runStep = (
     newExpression = replaceFuncParentKey(
       e.expression,
       funcParent,
+      nextExpression
+    )
+  } else if (conditionalParent) {
+    newExpression = replaceConditionalParentKey(
+      e.expression,
+      conditionalParent,
       nextExpression
     )
   } else {

@@ -98,6 +98,7 @@ export function toShowFuncUnbound(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toShowFuncUnbound(e.condition, funcSide, highlight),
       trueCase: toShowFuncUnbound(e.trueCase, funcSide, highlight),
       falseCase: toShowFuncUnbound(e.falseCase, funcSide, highlight)

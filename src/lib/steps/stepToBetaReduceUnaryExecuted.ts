@@ -75,6 +75,7 @@ function toBetaReduceUnaryExecuted(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toBetaReduceUnaryExecuted(e.condition),
       trueCase: toBetaReduceUnaryExecuted(e.trueCase),
       falseCase: toBetaReduceUnaryExecuted(e.falseCase)

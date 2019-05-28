@@ -4,10 +4,13 @@ import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import locale from 'src/lib/locale'
-import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
-import { CallStates } from 'src/types/ExpressionTypes'
+import {
+  SteppedExpressionContainer,
+  ExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
 import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -52,7 +55,7 @@ const stateToExplanation = ({
   showAllShowSteps,
   hideFuncUnboundBadge
 }: {
-  state: CallStates
+  state: ExpressionContainer['previouslyChangedExpressionState']
   matchExists?: boolean
   activePriority?: number
   showAllShowSteps?: boolean
@@ -263,6 +266,44 @@ const stateToExplanation = ({
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
             を別の料理に
+          </>
+        )
+      }
+    }
+    case 'conditionActive': {
+      if (locale === 'en') {
+        return <>?</>
+      } else {
+        return (
+          <>
+            <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+            <Emoji size="mdlg">0️⃣</Emoji> かどうかチェック
+          </>
+        )
+      }
+    }
+    case 'trueCaseOnly':
+    case 'trueCaseActive': {
+      if (locale === 'en') {
+        return <>?</>
+      } else {
+        return (
+          <>
+            <Emoji size="mdlg">0️⃣</Emoji>なので{' '}
+            <InlineEmojiBoxesForCondition type="trueCase" /> が残ります
+          </>
+        )
+      }
+    }
+    case 'falseCaseOnly':
+    case 'falseCaseActive': {
+      if (locale === 'en') {
+        return <>?</>
+      } else {
+        return (
+          <>
+            1以上 <Emoji size="mdlg">🔢</Emoji> なので{' '}
+            <InlineEmojiBoxesForCondition type="falseCase" /> が残ります
           </>
         )
       }

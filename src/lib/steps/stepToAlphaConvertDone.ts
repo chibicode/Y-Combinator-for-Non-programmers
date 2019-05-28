@@ -113,6 +113,7 @@ export function toAlphaConvertDone(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toAlphaConvertDone(e.condition, conflicts, funcSide),
       trueCase: toAlphaConvertDone(e.trueCase, conflicts, funcSide),
       falseCase: toAlphaConvertDone(e.falseCase, conflicts, funcSide)

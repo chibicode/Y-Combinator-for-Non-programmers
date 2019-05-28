@@ -5,6 +5,7 @@ import Flex from 'src/components/Flex'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/ExpressionTypes'
+import ConditionalContext from 'src/components/ConditionalContext'
 
 export interface BorderWrapperProps {
   bottomRightBadgeType: VariableExpression['bottomRightBadgeType']
@@ -15,16 +16,29 @@ export interface BorderWrapperProps {
   highlightOverridden: boolean
 }
 
-const background = (
-  highlightType: BorderWrapperProps['highlightType'],
-  isDoneOrReady: boolean,
-  topLeftBadgeType: BorderWrapperProps['topLeftBadgeType'],
-  isQuestion: boolean,
+const background = ({
+  highlightType,
+  isDoneOrReady,
+  topLeftBadgeType,
+  isQuestion,
+  started,
+  conditionalActive
+}: {
+  highlightType: BorderWrapperProps['highlightType']
+  isDoneOrReady: boolean
+  topLeftBadgeType: BorderWrapperProps['topLeftBadgeType']
+  isQuestion: boolean
   started: boolean
-): SerializedStyles | undefined => {
+  conditionalActive: boolean
+}): SerializedStyles | undefined => {
   if (isQuestion) {
     return css`
       background: ${colors('indigo400')};
+    `
+  }
+  if (conditionalActive) {
+    return css`
+      background: ${colors('white')};
     `
   }
   switch (highlightType) {
@@ -103,6 +117,7 @@ const BorderWrapper = ({
   isQuestion
 }: BorderWrapperProps) => {
   const { isDoneOrReady, started } = useContext(ExpressionRunnerContext)
+  const { conditionalActive } = useContext(ConditionalContext)
   return (
     <Flex
       css={[
@@ -113,13 +128,14 @@ const BorderWrapper = ({
           flex: 1;
           position: relative;
         `,
-        background(
+        background({
           highlightType,
           isDoneOrReady,
           topLeftBadgeType,
           isQuestion,
-          started
-        ),
+          started,
+          conditionalActive
+        }),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&
           topLeftBadgeType === 'none' &&

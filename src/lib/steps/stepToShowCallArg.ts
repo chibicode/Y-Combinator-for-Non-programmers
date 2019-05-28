@@ -74,6 +74,7 @@ export function toShowCallArg(
   } else {
     return {
       ...e,
+      state: 'default',
       condition: toShowCallArg(e.condition, funcSide),
       trueCase: toShowCallArg(e.trueCase, funcSide),
       falseCase: toShowCallArg(e.falseCase, funcSide)

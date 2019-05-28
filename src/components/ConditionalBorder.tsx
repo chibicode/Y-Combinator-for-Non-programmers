@@ -7,12 +7,14 @@ export interface ConditionalBorderProps {
   addBottom?: boolean
   smallEmoji?: boolean
   type: 'trueCase' | 'falseCase' | 'condition'
+  shaded: boolean
 }
 
 const ConditionalBorder = ({
   addBottom,
   type,
-  smallEmoji
+  smallEmoji,
+  shaded
 }: ConditionalBorderProps) => {
   const color = {
     trueCase: colors('teal100'),
@@ -20,25 +22,26 @@ const ConditionalBorder = ({
     condition: colors('yellow200')
   }[type]
   return (
-    <span
-      css={css`
-        display: block;
-        position: absolute;
-        z-index: ${zIndices('conditionalBorder')};
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: ${addBottom ? 2 : 0}px;
-        border: 8px solid ${color};
-      `}
-    >
+    <>
+      <span
+        css={css`
+          display: block;
+          position: absolute;
+          z-index: ${zIndices('conditionalBorderOuter')};
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: ${shaded ? colors('grey50050') : 'transparent'};
+        `}
+      />
       {type && (
         <span
           css={css`
             position: absolute;
-            z-index: ${zIndices('conditionalBorder')};
-            top: -6px;
-            left: -8px;
+            z-index: ${zIndices('conditionalBorderIcons')};
+            top: 2px;
+            left: 0px;
             display: inline-flex;
           `}
         >
@@ -55,17 +58,34 @@ const ConditionalBorder = ({
       )}
       <span
         css={css`
+          display: block;
           position: absolute;
-          top: 0px;
-          left: 0px;
-          right: 0px;
-          bottom: 0px;
-          border: 2px solid ${colors('indigo300')};
-          z-index: zIndices('conditionalBorderInner');
+          z-index: ${zIndices('conditionalBorder')};
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: ${addBottom ? 2 : 0}px;
+          border: 8px solid ${color};
         `}
-      />
-    </span>
+      >
+        <span
+          css={css`
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            border: 2px solid ${colors('indigo300')};
+            z-index: zIndices('conditionalBorderInner');
+          `}
+        />
+      </span>
+    </>
   )
+}
+
+ConditionalBorder.defaultProps = {
+  shaded: false
 }
 
 export default ConditionalBorder

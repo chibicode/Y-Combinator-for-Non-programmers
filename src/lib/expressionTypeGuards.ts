@@ -10,6 +10,7 @@ import {
   ExecutableCallRegular,
   ExecutableCallShorthandBinary,
   ExecutableCall,
+  ExecutableConditional,
   VariableShorthandUnaryNumber
 } from 'src/types/ExpressionTypes'
 
@@ -83,4 +84,10 @@ export function isExecutableCall<E extends ExecutableCall>(
     isExecutableCallShorthandBinary(expression) ||
     isExecutableCallRegular(expression)
   )
+}
+
+export function isExecutableConditional<E extends ExecutableConditional>(
+  expression: ConditionalExpression
+): expression is E {
+  return isVariableShorthandNumber(expression.condition)
 }

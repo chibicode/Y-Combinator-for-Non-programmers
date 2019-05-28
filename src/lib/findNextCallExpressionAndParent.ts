@@ -1,23 +1,24 @@
 import {
   isCall,
   isExecutableCall,
-  isFunction
+  isFunction,
+  isConditional,
+  isExecutableConditional
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCall,
   Expression,
-  FunctionExpression
+  FunctionExpression,
+  ExecutableConditional,
+  ConditionalExpression
 } from 'src/types/ExpressionTypes'
 
-export interface FindResult<
-  E extends ExecutableCall,
-  C extends CallExpression,
-  F extends FunctionExpression
-> {
-  readonly expression?: E
-  readonly callParent?: C
-  readonly funcParent?: F
+export interface FindResult {
+  readonly expression?: ExecutableCall | ExecutableConditional
+  readonly callParent?: CallExpression
+  readonly funcParent?: FunctionExpression
+  readonly conditionalParent?: ConditionalExpression
   readonly callParentKey?: 'func' | 'arg'
 }
 
@@ -25,77 +26,92 @@ export interface FindResult<
  * Run DFS on callExpression to find ExecutableCallExpression
  * and its parent information (could be missing if root expression).
  * DFS looks for functions first before arguments.
- *
- * @template E
- * @template C
- * @template F
- * @param {C} callExpression
- * @returns {FindResult<E, C, F>}
  */
-function helper<
-  E extends ExecutableCall,
-  C extends CallExpression,
-  F extends FunctionExpression
->({
+function helper({
   expression,
+  conditionalParent,
   callParent,
   callParentKey
 }: {
-  expression: C
-  callParent?: C
+  expression: CallExpression | ConditionalExpression
+  conditionalParent?: ConditionalExpression
+  callParent?: CallExpression
   callParentKey?: 'func' | 'arg'
-}): FindResult<E, C, F> {
-  if (isExecutableCall<E>(expression)) {
-    return {
-      expression,
-      callParent,
-      callParentKey
+}): FindResult {
+  if (isCall(expression)) {
+    if (isExecutableCall(expression)) {
+      return {
+        expression,
+        callParent,
+        callParentKey,
+        conditionalParent
+      }
     }
-  }
-  if (isCall<C>(expression.func)) {
-    const result: FindResult<E, C, F> = helper({
-      expression: expression.func,
-      callParentKey: 'func',
-      callParent: expression
-    })
-    if (result.expression) {
-      return result
+
+    if (isCall(expression.func) || isConditional(expression.func)) {
+      const result: FindResult = helper({
+        expression: expression.func,
+        callParentKey: 'func',
+        callParent: expression
+      })
+      if (result.expression) {
+        return result
+      }
+    }
+
+    if (isCall(expression.arg) || isConditional(expression.arg)) {
+      const result: FindResult = helper({
+        expression: expression.arg,
+        callParentKey: 'arg',
+        callParent: expression
+      })
+      if (result.expression) {
+        return result
+      }
+    }
+  } else {
+    if (isExecutableConditional(expression)) {
+      return {
+        expression,
+        callParent,
+        callParentKey,
+        conditionalParent
+      }
+    }
+
+    if (isCall(expression.condition) || isConditional(expression.condition)) {
+      const result: FindResult = helper({
+        expression: expression.condition,
+        conditionalParent: expression
+      })
+      if (result.expression) {
+        return result
+      }
     }
   }
 
-  if (isCall<C>(expression.arg)) {
-    const result: FindResult<E, C, F> = helper({
-      expression: expression.arg,
-      callParentKey: 'arg',
-      callParent: expression
-    })
-    if (result.expression) {
-      return result
-    }
-  }
-
-  const notFound: FindResult<E, C, F> = {}
+  const notFound: FindResult = {}
   return notFound
 }
 
-export default function findNextCallExpressionAndParent<
-  E extends ExecutableCall,
-  C extends CallExpression,
-  F extends FunctionExpression
->(expression: Expression): FindResult<E, C, F> {
-  const notFound: FindResult<E, C, F> = {}
-  if (isCall<C>(expression)) {
-    return helper<E, C, F>({ expression })
-  } else if (isFunction<F>(expression)) {
+export default function findNextCallExpressionAndParent(
+  expression: Expression
+): FindResult {
+  const notFound: FindResult = {}
+  if (isCall(expression) || isConditional(expression)) {
+    return helper({ expression })
+  } else if (isFunction(expression)) {
     let currentExpression: Expression = expression
-    let previousExpression: F | null = null
-    while (isFunction<F>(currentExpression)) {
+    let previousExpression: FunctionExpression | null = null
+    while (isFunction(currentExpression)) {
       previousExpression = currentExpression
       currentExpression = currentExpression.body
     }
-    if (isCall<C>(currentExpression)) {
-      const helperResult = helper<E, C, F>({ expression: currentExpression })
-      if (helperResult.callParent) {
+    if (isCall(currentExpression) || isConditional(currentExpression)) {
+      const helperResult = helper({
+        expression: currentExpression
+      })
+      if (helperResult.callParent || helperResult.conditionalParent) {
         return helperResult
       } else if (previousExpression) {
         return {

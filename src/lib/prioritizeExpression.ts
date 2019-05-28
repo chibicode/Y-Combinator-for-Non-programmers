@@ -4,7 +4,11 @@ import {
   isVariable,
   isConditional
 } from 'src/lib/expressionTypeGuards'
-import { CallExpression, Expression } from 'src/types/ExpressionTypes'
+import {
+  CallExpression,
+  Expression,
+  ConditionalExpression
+} from 'src/types/ExpressionTypes'
 
 function prioritizeCallExpressionHelper<E extends CallExpression>({
   expression,
@@ -21,11 +25,20 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
   let currentPriority = priority
   let maxDescendantPriority = priority
 
-  if (isCall(expression.func)) {
-    const funcResult = prioritizeCallExpressionHelper({
-      expression: expression.func,
-      priority
-    })
+  if (isCall(expression.func) || isConditional(expression.func)) {
+    let funcResult
+    if (isCall(expression.func)) {
+      funcResult = prioritizeCallExpressionHelper({
+        expression: expression.func,
+        priority
+      })
+    } else {
+      funcResult = prioritizeConditionalExpressionHelper({
+        expression: expression.func,
+        priority
+      })
+    }
+
     newFunc = funcResult.expression
     currentPriority = funcResult.maxDescendantPriority + 1
     maxDescendantPriority = currentPriority
@@ -33,11 +46,20 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
     newFunc = prioritizeExpressionHelper(expression.func)
   }
 
-  if (isCall(expression.arg)) {
-    const argResult = prioritizeCallExpressionHelper({
-      expression: expression.arg,
-      priority: currentPriority + 1
-    })
+  if (isCall(expression.arg) || isConditional(expression.arg)) {
+    let argResult
+    if (isCall(expression.arg)) {
+      argResult = prioritizeCallExpressionHelper({
+        expression: expression.arg,
+        priority: currentPriority + 1
+      })
+    } else {
+      argResult = prioritizeConditionalExpressionHelper({
+        expression: expression.arg,
+        priority: currentPriority + 1
+      })
+    }
+
     newArg = argResult.expression
     maxDescendantPriority = argResult.maxDescendantPriority
   } else {
@@ -49,6 +71,94 @@ function prioritizeCallExpressionHelper<E extends CallExpression>({
       ...expression,
       func: newFunc,
       arg: newArg,
+      priority: currentPriority
+    },
+    maxDescendantPriority
+  }
+}
+
+function prioritizeConditionalExpressionHelper<
+  E extends ConditionalExpression
+>({
+  expression,
+  priority
+}: {
+  expression: E
+  priority: number
+}): {
+  expression: E
+  maxDescendantPriority: number
+} {
+  let newCondition: Expression
+  let newTrueCase: Expression
+  let newFalseCase: Expression
+  let currentPriority = priority
+  let maxDescendantPriority = priority
+
+  if (isCall(expression.condition) || isConditional(expression.condition)) {
+    let conditionResult
+    if (isCall(expression.condition)) {
+      conditionResult = prioritizeCallExpressionHelper({
+        expression: expression.condition,
+        priority
+      })
+    } else {
+      conditionResult = prioritizeConditionalExpressionHelper({
+        expression: expression.condition,
+        priority
+      })
+    }
+    newCondition = conditionResult.expression
+    currentPriority = conditionResult.maxDescendantPriority + 1
+    maxDescendantPriority = currentPriority
+  } else {
+    newCondition = prioritizeExpressionHelper(expression.condition)
+  }
+
+  if (isCall(expression.trueCase) || isConditional(expression.trueCase)) {
+    let trueCaseResult
+    if (isCall(expression.trueCase)) {
+      trueCaseResult = prioritizeCallExpressionHelper({
+        expression: expression.trueCase,
+        priority: currentPriority + 1
+      })
+    } else {
+      trueCaseResult = prioritizeConditionalExpressionHelper({
+        expression: expression.trueCase,
+        priority: currentPriority + 1
+      })
+    }
+    newTrueCase = trueCaseResult.expression
+    maxDescendantPriority = trueCaseResult.maxDescendantPriority
+  } else {
+    newTrueCase = prioritizeExpressionHelper(expression.trueCase)
+  }
+
+  if (isCall(expression.falseCase) || isConditional(expression.falseCase)) {
+    let falseCaseResult
+    if (isCall(expression.falseCase)) {
+      falseCaseResult = prioritizeCallExpressionHelper({
+        expression: expression.falseCase,
+        priority: currentPriority + 1
+      })
+    } else {
+      falseCaseResult = prioritizeConditionalExpressionHelper({
+        expression: expression.falseCase,
+        priority: currentPriority + 1
+      })
+    }
+    newFalseCase = falseCaseResult.expression
+    maxDescendantPriority = falseCaseResult.maxDescendantPriority
+  } else {
+    newFalseCase = prioritizeExpressionHelper(expression.falseCase)
+  }
+
+  return {
+    expression: {
+      ...expression,
+      condition: newCondition,
+      trueCase: newTrueCase,
+      falseCase: newFalseCase,
       priority: currentPriority
     },
     maxDescendantPriority
@@ -76,12 +186,10 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
       body: prioritizeExpressionHelper(expression.body)
     }
   } else if (isConditional(expression)) {
-    return {
-      ...expression,
-      condition: prioritizeExpressionHelper(expression.condition),
-      trueCase: prioritizeExpressionHelper(expression.trueCase),
-      falseCase: prioritizeExpressionHelper(expression.falseCase)
-    }
+    return prioritizeConditionalExpressionHelper({
+      priority: 1,
+      expression
+    }).expression
   } else {
     throw new Error()
   }
@@ -127,7 +235,24 @@ function populatePriorityAggs<E extends Expression>({
   } else if (isVariable(expression)) {
     return { ...expression, argPriorityAgg, funcPriorityAgg }
   } else if (isConditional(expression)) {
-    return expression
+    return {
+      ...expression,
+      falseCase: populatePriorityAggs<typeof expression.falseCase>({
+        expression: expression.falseCase,
+        argPriorityAgg: [...argPriorityAgg, expression.priority],
+        funcPriorityAgg: [] as number[]
+      }),
+      condition: populatePriorityAggs<typeof expression.trueCase>({
+        expression: expression.condition,
+        argPriorityAgg: [] as number[],
+        funcPriorityAgg: [] as number[]
+      }),
+      trueCase: populatePriorityAggs<typeof expression.trueCase>({
+        expression: expression.trueCase,
+        argPriorityAgg: [] as number[],
+        funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
+      })
+    }
   } else {
     throw new Error()
   }
