@@ -29,7 +29,7 @@ const background = ({
   topLeftBadgeType: BorderWrapperProps['topLeftBadgeType']
   isQuestion: boolean
   started: boolean
-  conditionalActive: boolean
+  conditionalActive?: boolean
 }): SerializedStyles | undefined => {
   if (isQuestion) {
     return css`
@@ -117,7 +117,7 @@ const BorderWrapper = ({
   isQuestion
 }: BorderWrapperProps) => {
   const { isDoneOrReady, started } = useContext(ExpressionRunnerContext)
-  const { conditionalActive } = useContext(ConditionalContext)
+  const { conditionalState } = useContext(ConditionalContext)
   return (
     <Flex
       css={[
@@ -134,7 +134,7 @@ const BorderWrapper = ({
           topLeftBadgeType,
           isQuestion,
           started,
-          conditionalActive
+          conditionalActive: conditionalState && conditionalState !== 'default'
         }),
         highlightType === 'highlighted' &&
           bottomRightBadgeType === 'funcBound' &&

@@ -8,6 +8,7 @@ import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/ExpressionRunnerContext'
+import ConditionalContext from 'src/components/ConditionalContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import TopRightBadge from 'src/components/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
@@ -54,6 +55,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
     bottomRightBadgeOverrides,
     showOnlyFocused
   } = useContext(ExpressionRunnerContext)
+  const { conditionalState } = useContext(ConditionalContext)
   if (showOnlyFocused) {
     return <></>
   } else {
@@ -61,10 +63,17 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
       <>
         {!hidePriorities && (
           <ExpressionPrioritiesLabel
+            hideActive={
+              conditionalState === 'trueCaseOnly' ||
+              conditionalState === 'falseCaseOnly'
+            }
             priorities={expression.argPriorityAgg}
             position="topleft"
             removing={expression.highlightType === 'removed'}
-            emphasize={expression.emphasizePriority}
+            emphasize={
+              expression.emphasizePriority ||
+              !!(conditionalState && conditionalState !== 'default')
+            }
           />
         )}
         <FlexCenter
@@ -176,10 +185,17 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
         </FlexCenter>
         {!hidePriorities && (
           <ExpressionPrioritiesLabel
+            hideActive={
+              conditionalState === 'trueCaseOnly' ||
+              conditionalState === 'falseCaseOnly'
+            }
             priorities={expression.funcPriorityAgg}
             removing={expression.highlightType === 'removed'}
             position="bottomleft"
-            emphasize={expression.emphasizePriority}
+            emphasize={
+              expression.emphasizePriority ||
+              !!(conditionalState && conditionalState !== 'default')
+            }
           />
         )}
       </>

@@ -1,12 +1,11 @@
 import React from 'react'
+import { ConditionalExpression } from 'src/types/ExpressionTypes'
 
 export interface ConditionalContextProps {
-  conditionalActive: boolean
+  conditionalState?: ConditionalExpression['state']
 }
 
-export const conditionalContextDefault: ConditionalContextProps = {
-  conditionalActive: false
-}
+export const conditionalContextDefault: ConditionalContextProps = {}
 
 export default React.createContext<ConditionalContextProps>(
   conditionalContextDefault
