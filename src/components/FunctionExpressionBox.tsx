@@ -5,7 +5,6 @@ import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
-import colors from 'src/lib/theme/colors'
 import maxNestedFunctionDepth from 'src/lib/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
 
@@ -44,7 +43,6 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
             css={css`
               flex-grow: 1;
               flex-basis: 0;
-              border-right: 1px solid ${colors('grey300')};
             `}
           >
             <ExpressionBox expression={expression.arg} />
@@ -53,7 +51,6 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
             css={css`
               flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
               flex-basis: 0;
-              border-left: 1px solid ${colors('grey300')};
             `}
           >
             <ExpressionBox expression={expression.body} />

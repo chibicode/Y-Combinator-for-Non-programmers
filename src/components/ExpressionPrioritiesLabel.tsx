@@ -24,7 +24,6 @@ interface ExpressionPrioritiesLabelBoxProps {
   offset: number
   position: 'topleft' | 'bottomleft'
   removing: boolean
-  hideActive: boolean
 }
 
 const fontSize = (
@@ -77,9 +76,9 @@ const left = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number =>
   ({
-    lg: -1.15,
-    md: -0.92,
-    sm: -0.92
+    lg: -1,
+    md: -0.85,
+    sm: -0.85
   }[variableSize])
 
 const ExpressionPrioritiesLabelBox = ({
@@ -87,15 +86,10 @@ const ExpressionPrioritiesLabelBox = ({
   position,
   priority,
   offset,
-  removing,
-  hideActive
+  removing
 }: ExpressionPrioritiesLabelBoxProps) => {
   const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
-
-  if (hideActive && activePriority === priority) {
-    return <></>
-  }
 
   return (
     <Flex
@@ -176,6 +170,10 @@ const ExpressionPrioritiesLabel = ({
 }: ExpressionPrioritiesLabelProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
   const { activePriority } = useContext(ExpressionPriorityContext)
+
+  if (hideActive) {
+    priorities = priorities.filter(x => x !== activePriority)
+  }
   return (
     <div
       css={[
@@ -214,7 +212,6 @@ const ExpressionPrioritiesLabel = ({
             offset={index}
             key={priority}
             priority={priority}
-            hideActive={hideActive}
           />
         ))}
       </Flex>

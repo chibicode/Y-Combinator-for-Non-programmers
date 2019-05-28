@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
 import BottomRightBadge from 'src/components/BottomRightBadge'
@@ -11,7 +10,6 @@ import {
   Ul,
   UlLi
 } from 'src/components/ContentTags'
-import { colors } from 'src/lib/theme'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -64,50 +62,29 @@ export default () => (
               <UlLi>
                 まず、
                 <InlineEmojiBoxesForCondition type="condition" />{' '}
-                (真ん中、黄色い枠)の中にある
+                (真ん中、黄色い左枠)の中にある
                 <InlineEmojiBoxesForQuestion />
                 の暗号が「0」かどうかチェックします。
               </UlLi>
               <UlLi>
                 もし「<Strong>0</Strong>」なら、{' '}
                 <InlineEmojiBoxesForCondition type="trueCase" />{' '}
-                (一番下、青い枠)に入っている料理が残ります。この場合は
+                (一番下、青い左枠)に入っている料理が残ります。この場合は
                 <EmojiWithText letter="y" />
                 です。
               </UlLi>
               <UlLi>
                 もし「<Strong>1以上</Strong>なら」、{' '}
                 <InlineEmojiBoxesForCondition type="falseCase" />{' '}
-                (一番上、赤い枠)に入っている料理が残ります。この場合は
+                (一番上、赤い左枠)に入っている料理が残ります。この場合は
                 <EmojiWithText letter="z" />
                 です。
               </UlLi>
             </Ul>
             <EmojiSeparator emojis={['0️⃣', '🚦', '🔢']} />
             <P>
-              <span
-                css={css`
-                  background: ${colors('pink100')};
-                `}
-              >
-                <InlineHeader>赤</InlineHeader>
-              </span>
-              ・
-              <span
-                css={css`
-                  background: ${colors('yellow200')};
-                `}
-              >
-                <InlineHeader>黄色</InlineHeader>
-              </span>
-              ・
-              <span
-                css={css`
-                  background: ${colors('teal100')};
-                `}
-              >
-                <InlineHeader>青</InlineHeader>
-              </span>
+              <InlineHeader>赤</InlineHeader>・<InlineHeader>黄色</InlineHeader>
+              ・<InlineHeader>青</InlineHeader>
               と、まるで縦型の信号機 <Emoji>🚦</Emoji>{' '}
               みたいですね。ちなみに、日本では横型の信号機 <Emoji>🚥</Emoji>{' '}
               が主流ですが、世界のほとんどの国では縦型 <Emoji>🚦</Emoji>{' '}

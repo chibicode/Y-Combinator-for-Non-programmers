@@ -4,22 +4,20 @@ import Emoji from 'src/components/Emoji'
 import { zIndices, colors } from 'src/lib/theme'
 
 export interface ConditionalBorderProps {
-  addBottom?: boolean
   smallEmoji?: boolean
   type: 'trueCase' | 'falseCase' | 'condition'
   shaded: boolean
 }
 
 const ConditionalBorder = ({
-  addBottom,
   type,
   smallEmoji,
   shaded
 }: ConditionalBorderProps) => {
   const color = {
-    trueCase: colors('teal100'),
-    falseCase: colors('pink100'),
-    condition: colors('yellow200')
+    trueCase: colors('teal200'),
+    falseCase: colors('pink200'),
+    condition: colors('yellow400')
   }[type]
   return (
     <>
@@ -27,7 +25,7 @@ const ConditionalBorder = ({
         css={css`
           display: block;
           position: absolute;
-          z-index: ${zIndices('conditionalBorderOuter')};
+          z-index: ${zIndices('conditionalBorderShade')};
           top: 0;
           left: 0;
           right: 0;
@@ -39,9 +37,9 @@ const ConditionalBorder = ({
         <span
           css={css`
             position: absolute;
-            z-index: ${zIndices('conditionalBorderIcons')};
-            top: 2px;
-            left: 0px;
+            z-index: ${zIndices('badge')};
+            top: 5px;
+            left: 2px;
             display: inline-flex;
           `}
         >
@@ -63,23 +61,12 @@ const ConditionalBorder = ({
           z-index: ${zIndices('conditionalBorder')};
           top: 0;
           left: 0;
-          right: 0;
-          bottom: ${addBottom ? 2 : 0}px;
-          border: 8px solid ${color};
+          bottom: 0;
+          width: 0.625em;
+          background: ${color};
+          border-right: 2px solid ${colors('indigo300')};
         `}
-      >
-        <span
-          css={css`
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            border: 2px solid ${colors('indigo300')};
-            z-index: zIndices('conditionalBorderInner');
-          `}
-        />
-      </span>
+      />
     </>
   )
 }

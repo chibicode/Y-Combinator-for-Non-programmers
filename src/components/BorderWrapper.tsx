@@ -3,7 +3,7 @@ import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
-import { colors } from 'src/lib/theme'
+import { zIndices, colors } from 'src/lib/theme'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import ConditionalContext from 'src/components/ConditionalContext'
 
@@ -14,6 +14,7 @@ export interface BorderWrapperProps {
   isQuestion: boolean
   highlightType: VariableExpression['highlightType'] | 'none' | 'pink'
   highlightOverridden: boolean
+  topLevel: boolean
 }
 
 const background = ({
@@ -114,7 +115,8 @@ const BorderWrapper = ({
   bottomRightBadgeType,
   topLeftBadgeType,
   children,
-  isQuestion
+  isQuestion,
+  topLevel
 }: BorderWrapperProps) => {
   const { isDoneOrReady, started } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
@@ -122,8 +124,6 @@ const BorderWrapper = ({
     <Flex
       css={[
         css`
-          margin: -2px;
-          border: 2px solid ${colors('indigo300')};
           align-items: center;
           flex: 1;
           position: relative;
@@ -135,26 +135,68 @@ const BorderWrapper = ({
           isQuestion,
           started,
           conditionalActive: conditionalState && conditionalState !== 'default'
-        }),
-        highlightType === 'highlighted' &&
-          bottomRightBadgeType === 'funcBound' &&
-          topLeftBadgeType === 'none' &&
-          !highlightOverridden &&
-          css`
-            border-right: 10px solid ${colors('yellow900')};
-          `,
-        highlightType === 'highlighted' &&
-          bottomRightBadgeType === 'funcArg' &&
-          topLeftBadgeType === 'none' &&
-          !highlightOverridden &&
-          css`
-            border-left: 10px solid ${colors('pink400')};
-          `
+        })
       ]}
     >
+      <span
+        css={[
+          css`
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-top: 2px solid ${colors('indigo300')};
+            border-left: 2px solid ${colors('indigo300')};
+            z-index: ${zIndices('border')};
+          `,
+          topLevel &&
+            css`
+              border-bottom: 2px solid ${colors('indigo300')};
+              border-right: 2px solid ${colors('indigo300')};
+            `
+        ]}
+      />
+      {highlightType === 'highlighted' &&
+        bottomRightBadgeType === 'funcBound' &&
+        topLeftBadgeType === 'none' &&
+        !highlightOverridden && (
+          <span
+            css={css`
+              display: block;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 10px;
+              background: ${colors('yellow900')};
+            `}
+          />
+        )}
+      {highlightType === 'highlighted' &&
+        bottomRightBadgeType === 'funcArg' &&
+        topLeftBadgeType === 'none' &&
+        !highlightOverridden && (
+          <span
+            css={css`
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 10px;
+              background: ${colors('pink400')};
+            `}
+          />
+        )}
       {children}
     </Flex>
   )
+}
+
+BorderWrapper.defaultProps = {
+  topLevel: false
 }
 
 export default BorderWrapper

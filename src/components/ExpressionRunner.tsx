@@ -328,6 +328,7 @@ const ExpressionRunner = ({
                 expression={
                   expressionContainerManagerState.expressionContainer.expression
                 }
+                topLevel
               />
             </div>
           </div>

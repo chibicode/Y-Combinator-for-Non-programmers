@@ -13,9 +13,10 @@ import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 
 interface ExpressionBoxProps {
   expression: Expression
+  topLevel: boolean
 }
 
-const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
+const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
   const {
     highlightOverrides,
     started,
@@ -53,6 +54,7 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
       `}
     >
       <BorderWrapper
+        topLevel={topLevel}
         highlightOverridden={highlightOverridden}
         highlightType={highlightType}
         bottomRightBadgeType={
@@ -79,6 +81,10 @@ const ExpressionBox = ({ expression }: ExpressionBoxProps) => {
       </BorderWrapper>
     </Flex>
   )
+}
+
+ExpressionBox.defaultProps = {
+  topLevel: false
 }
 
 export default ExpressionBox

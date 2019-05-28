@@ -1,10 +1,10 @@
 export const allZIndices = {
-  conditionalBorderInner: 98,
-  conditionalBorder: 98,
-  conditionalBorderOuter: 99,
-  conditionalBorderIcons: 100,
-  badge: 100,
-  expressionPriorityNumberWrapperDefault: 100,
+  conditionalBorderInner: 97,
+  conditionalBorder: 97,
+  conditionalBorderShade: 98,
+  border: 100,
+  badge: 101,
+  expressionPriorityNumberWrapperDefault: 101,
   modal: 1000
 }
 

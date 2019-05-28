@@ -40,7 +40,6 @@ const ConditionalExpressionBox = ({
               `}
             >
               <ConditionalBorder
-                addBottom={expression.state !== 'falseCaseOnly'}
                 type="falseCase"
                 shaded={
                   expression.state === 'trueCaseActive' ||
@@ -58,7 +57,6 @@ const ConditionalExpressionBox = ({
                 `}
               >
                 <ConditionalBorder
-                  addBottom
                   type="condition"
                   shaded={
                     expression.state === 'trueCaseActive' ||
