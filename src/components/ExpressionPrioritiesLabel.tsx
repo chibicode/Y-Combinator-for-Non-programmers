@@ -188,7 +188,7 @@ const ExpressionPrioritiesLabel = ({
                 bottom: 0;
               `
         }
-        z-index: ${zIndices('expressionPriorityNumberWrapperDefault')};
+        z-index: ${zIndices('expressionPriorityNumber')};
       `,
         css`
           left: ${variableSize !== 'sm' ? left(variableSize) : 0}em;

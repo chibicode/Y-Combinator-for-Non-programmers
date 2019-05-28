@@ -231,6 +231,7 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.dpar}
+            {AER.hzlj}
           </>
         )
       }
