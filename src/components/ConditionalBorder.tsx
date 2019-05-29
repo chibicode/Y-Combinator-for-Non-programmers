@@ -11,6 +11,7 @@ export interface ConditionalBorderProps {
   smallEmoji?: boolean
   type: 'trueCase' | 'falseCase' | 'condition'
   shaded: boolean
+  variableSizeOverrides?: ExpressionRunnerContextProps['variableSize']
 }
 
 const fontSize = (
@@ -29,18 +30,19 @@ const width = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   if (variableSize === 'lg') {
-    return 0.6
+    return 0.7
   } else if (variableSize === 'md') {
-    return 0.5
+    return 0.6
   } else {
-    return 0.4
+    return 0.5
   }
 }
 
 const ConditionalBorder = ({
   type,
   smallEmoji,
-  shaded
+  shaded,
+  variableSizeOverrides
 }: ConditionalBorderProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
   const color = {
@@ -70,7 +72,7 @@ const ConditionalBorder = ({
             top: 4px;
             left: 2px;
             display: inline-flex;
-            font-size: ${fontSize(variableSize)};
+            font-size: ${fontSize(variableSizeOverrides || variableSize)};
           `}
         >
           {type === 'trueCase' && (

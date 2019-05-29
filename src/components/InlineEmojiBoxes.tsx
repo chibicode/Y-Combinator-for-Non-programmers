@@ -21,7 +21,7 @@ export const InlineEmojiBoxesForCondition = ({
 }) => (
   <InlineEmojiBoxes
     size="xl"
-    borderBadge={<ConditionalBorder smallEmoji type={type} />}
+    borderBadge={<ConditionalBorder variableSizeOverrides="md" type={type} />}
   />
 )
 
@@ -96,7 +96,7 @@ const InlineEmojiBoxes = ({
         : size === 'xl'
         ? 'middle'
         : '-0.08em'};
-      margin: ${spaces(0.25)} ${size === 'lg' ? spaces(0.25) : 0};
+      margin: ${spaces(0.25)} ${size !== 'md' ? spaces(0.25) : 0};
       background: ${background};
       font-size: 0.9em;
     `}
