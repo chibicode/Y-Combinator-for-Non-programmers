@@ -301,8 +301,13 @@ export default () => (
         )
       },
       {
-        title: <></>,
-        content: <></>
+        title: (
+          <>
+            復習: 繰り返しの
+            <H args={{ name: 'bentoBox' }} />
+          </>
+        ),
+        content: <>!</>
       }
     ]}
   />

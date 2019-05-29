@@ -239,7 +239,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               」ではなく、「
               <Strong>
-                ある条件を満たすまで、何かを繰り返す
+                決められた回数分、何かを繰り返す
                 <H args={{ name: 'bentoBox' }} />
               </Strong>
               」です。そういう
@@ -264,11 +264,6 @@ export default () => (
               」
               <H args={{ name: 'bentoBox' }} />
               が必要になってきます。
-              <Em>
-                「10回繰り返す」という<Strong>条件</Strong>
-                を満たしたら、自動的に実行を終了しなければいけません
-              </Em>
-              。
             </P>
             <EmojiSeparator emojis={['🔟', '🤔', '❓']} />
             <P>
@@ -290,12 +285,12 @@ export default () => (
         content: (
           <>
             <P>
-              というわけで、次からはじまる上級編では、「
+              「
               <Strong>
-                ある条件を満たすまで、何かを繰り返す
+                決められた回数分、何かを繰り返す
                 <H args={{ name: 'bentoBox' }} />
               </Strong>
-              」が果たして存在するのかどうか、検証していきたいと思います。
+              」は果たして存在するのでしょうか？答えは上級編にあります。
             </P>
             <EmojiSeparator emojis={['❓', '🍱', '❓']} />
             <P>
