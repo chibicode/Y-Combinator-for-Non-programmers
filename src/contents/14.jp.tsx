@@ -231,7 +231,44 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.dpar}
-            {AER.hzlj}
+          </>
+        )
+      },
+      {
+        title: <>あくまで「省略表記」です</>,
+        content: (
+          <>
+            <P>
+              忘れないでおきたいのが、
+              <Em>これらはあくまで「省略表記」だということです</Em>。
+              <Strong>
+                <H args={{ name: 'bentoBox' }} />
+                の新しい機能について解説しているわけではなく、今まであった機能を省略表記しているだけです。
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['0️⃣', '↔️', '🔢']} />
+            <P>
+              たとえば、先ほどの
+              <H args={{ name: 'yesNoQuiz' }} />
+              で出題したこちらの
+              <H args={{ name: 'bentoBox' }} />
+              は、
+            </P>
+            {AER.repd}
+            <P>
+              <InlineHeader>
+                条件分岐の省略表記を使わないと、次のようになります
+              </InlineHeader>
+              <Em>(黄色の部分):</Em>
+            </P>
+            {AER.ylil}
+            <P>
+              さらに、
+              <InlineHeader>
+                暗号の省略表記を使わないと、次のようになります
+              </InlineHeader>
+              <Em>(黄色の部分):</Em>
+            </P>
           </>
         )
       }

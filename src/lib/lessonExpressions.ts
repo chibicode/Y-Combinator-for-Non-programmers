@@ -488,6 +488,36 @@ export const e13E3 = initializeExpressionContainer([
   }
 ])
 
+export const e13E4 = initializeExpressionContainer([
+  [
+    {
+      arg: 'a',
+      body: isZeroParams(
+        { name: 'b', highlighted: true },
+        { name: 'c', highlighted: true },
+        { name: 'd', highlighted: true },
+        { name: 'e', highlighted: true },
+        { name: 'f', highlighted: true },
+        {
+          arg: { name: 'g', highlighted: true },
+          body: { name: 'g', highlighted: true }
+        },
+        {
+          shorthandNumber: 1,
+          initialHighlight: true
+        },
+        { name: 'a', highlighted: true }
+      )
+    },
+    {
+      shorthandNumber: 0
+    }
+  ],
+  {
+    shorthandNumber: 2
+  }
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

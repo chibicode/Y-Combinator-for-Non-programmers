@@ -1775,6 +1775,14 @@ export default {
       initialState="trueCaseOnly"
     />
   ),
+  ylil: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E4}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
