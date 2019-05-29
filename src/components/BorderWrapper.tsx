@@ -119,7 +119,7 @@ const BorderWrapper = ({
   topLevel
 }: BorderWrapperProps) => {
   const { isDoneOrReady, started } = useContext(ExpressionRunnerContext)
-  const { conditionalState } = useContext(ConditionalContext)
+  const { conditionalOutermostState } = useContext(ConditionalContext)
   return (
     <Flex
       css={[
@@ -134,7 +134,8 @@ const BorderWrapper = ({
           topLeftBadgeType,
           isQuestion,
           started,
-          conditionalActive: conditionalState && conditionalState !== 'default'
+          conditionalActive:
+            conditionalOutermostState && conditionalOutermostState !== 'default'
         })
       ]}
     >

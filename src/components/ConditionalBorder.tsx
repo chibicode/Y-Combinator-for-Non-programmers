@@ -1,7 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
-import { zIndices, colors } from 'src/lib/theme'
+import { zIndices, colors, fontSizes } from 'src/lib/theme'
+import ExpressionRunnerContext, {
+  ExpressionRunnerContextProps
+} from 'src/components/ExpressionRunnerContext'
 
 export interface ConditionalBorderProps {
   smallEmoji?: boolean
@@ -9,11 +13,36 @@ export interface ConditionalBorderProps {
   shaded: boolean
 }
 
+const fontSize = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): string => {
+  if (variableSize === 'lg') {
+    return fontSizes(1)
+  } else if (variableSize === 'md') {
+    return fontSizes(0.85)
+  } else {
+    return fontSizes(0.7)
+  }
+}
+
+const width = (
+  variableSize: ExpressionRunnerContextProps['variableSize']
+): number => {
+  if (variableSize === 'lg') {
+    return 0.6
+  } else if (variableSize === 'md') {
+    return 0.5
+  } else {
+    return 0.4
+  }
+}
+
 const ConditionalBorder = ({
   type,
   smallEmoji,
   shaded
 }: ConditionalBorderProps) => {
+  const { variableSize } = useContext(ExpressionRunnerContext)
   const color = {
     trueCase: colors('teal200'),
     falseCase: colors('pink200'),
@@ -38,9 +67,10 @@ const ConditionalBorder = ({
           css={css`
             position: absolute;
             z-index: ${zIndices('badge')};
-            top: 5px;
+            top: 4px;
             left: 2px;
             display: inline-flex;
+            font-size: ${fontSize(variableSize)};
           `}
         >
           {type === 'trueCase' && (
@@ -62,7 +92,7 @@ const ConditionalBorder = ({
           top: 0;
           left: 0;
           bottom: 0;
-          width: 0.625em;
+          width: ${width(variableSize)}em;
           background: ${color};
           border-right: 2px solid ${colors('indigo300')};
         `}

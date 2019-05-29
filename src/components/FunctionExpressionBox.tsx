@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
+import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
@@ -47,14 +48,20 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
           >
             <ExpressionBox expression={expression.arg} />
           </FlexCenter>
-          <FlexCenter
-            css={css`
-              flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
-              flex-basis: 0;
-            `}
+          <ExpressionPriorityContext.Provider
+            value={{
+              activePriority: undefined
+            }}
           >
-            <ExpressionBox expression={expression.body} />
-          </FlexCenter>
+            <FlexCenter
+              css={css`
+                flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
+                flex-basis: 0;
+              `}
+            >
+              <ExpressionBox expression={expression.body} />
+            </FlexCenter>
+          </ExpressionPriorityContext.Provider>
         </Flex>
       </ExpressionRunnerContext.Provider>
     )

@@ -3,6 +3,7 @@ import { ConditionalExpression } from 'src/types/ExpressionTypes'
 
 export interface ConditionalContextProps {
   conditionalState?: ConditionalExpression['state']
+  conditionalOutermostState?: ConditionalExpression['state']
 }
 
 export const conditionalContextDefault: ConditionalContextProps = {}

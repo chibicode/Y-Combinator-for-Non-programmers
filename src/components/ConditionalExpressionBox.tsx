@@ -16,14 +16,18 @@ interface ConditionalExpressionBoxProps {
 const ConditionalExpressionBox = ({
   expression
 }: ConditionalExpressionBoxProps) => {
-  const { activePriority } = useContext(ExpressionPriorityContext)
+  const { conditionalOutermostState } = useContext(ConditionalContext)
   return (
-    <ConditionalContext.Provider value={{ conditionalState: expression.state }}>
+    <ConditionalContext.Provider
+      value={{
+        conditionalState: expression.state,
+        conditionalOutermostState: conditionalOutermostState || expression.state
+      }}
+    >
       <ExpressionPriorityContext.Provider
         value={{
           activePriority:
-            activePriority ||
-            (expression.state !== 'default' ? expression.priority : undefined)
+            expression.state !== 'default' ? expression.priority : undefined
         }}
       >
         <Flex
