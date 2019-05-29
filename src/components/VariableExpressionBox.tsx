@@ -90,10 +90,10 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
             `}
           >
             <Emoji size="sm">
-              {expression.shorthandNumber !== undefined
-                ? numberEmojiMapping[expression.shorthandNumber]
-                : expression.highlightType === 'removed'
+              {expression.highlightType === 'removed'
                 ? '💥'
+                : expression.shorthandNumber !== undefined
+                ? numberEmojiMapping[expression.shorthandNumber]
                 : letterEmojiMapping[expression.name]}
             </Emoji>
             {expression.shorthandBinary && (
