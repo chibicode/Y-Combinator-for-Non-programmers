@@ -1783,6 +1783,43 @@ export default {
       variableSize={'md'}
     />
   ),
+  vqcw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E5}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+    />
+  ),
+  dcfi: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e13E6}
+      showPriorities
+      skipToTheEnd={false}
+      containerSize={'xs'}
+      variableSize={'md'}
+      speed={5}
+    />
+  ),
+  bmnc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E6}
+      isDone
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'md'}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'l' }} />
+      }
+    />
+  ),
+  ufze: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E3}
+      showPriorities
+      isDone
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

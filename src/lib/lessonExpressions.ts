@@ -518,6 +518,52 @@ export const e13E4 = initializeExpressionContainer([
   }
 ])
 
+export const e13E5 = initializeExpressionContainer([
+  [
+    {
+      arg: 'a',
+      body: isZeroParams(
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        {
+          arg: 'g',
+          body: 'g'
+        },
+        numberParams(highlighted('h'), highlighted('i'), 1),
+        'a'
+      )
+    },
+    numberParams(highlighted('j'), highlighted('k'), 0)
+  ],
+  numberParams(highlighted('l'), highlighted('m'), 2)
+])
+
+export const e13E6 = initializeExpressionContainer([
+  [
+    {
+      arg: 'a',
+      body: isZeroParams(
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        {
+          arg: 'g',
+          body: 'g'
+        },
+        numberParams('h', 'i', 1),
+        'a'
+      )
+    },
+    numberParams('j', 'k', 0)
+  ],
+  numberParams('l', 'm', 2)
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
