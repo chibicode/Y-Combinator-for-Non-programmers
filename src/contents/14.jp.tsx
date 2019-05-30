@@ -1,9 +1,11 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
+import NextLessonButton from 'src/components/NextLessonButton'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import {
   Em,
+  Hr,
   InlineHeader,
   P,
   Strong,
@@ -19,6 +21,7 @@ import {
   InlineEmojiBoxesForCondition,
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
+import TopRightBadge from 'src/components/TopRightBadge'
 
 export default () => (
   <EpisodeCardList
@@ -230,9 +233,8 @@ export default () => (
               忘れないでおきたいのが、
               <Em>これらはあくまで「省略表記」だということです</Em>。
               <Strong>
-                省略表記は今まであった機能をひと目で分かりやすいようにしているだけ
+                省略表記は「今まであった機能」をひと目で分かりやすいようにしているだけです。
               </Strong>
-              で、新しい機能ではありません。
             </P>
             <EmojiSeparator emojis={['0️⃣', '↔️', '🔢']} />
             <P>
@@ -279,18 +281,148 @@ export default () => (
             <P>
               繰り返しますが、
               <Strong>
-                省略表記は今まであった機能をひと目で分かりやすいようにしているだけ
+                省略表記は「今まであった機能」をひと目で分かりやすいようにしているだけです。
               </Strong>
-              で、新しい機能ではありません。
             </P>
           </>
         )
       },
       {
-        title: <>なぜ省略表記について語ったの？</>,
+        title: <>ところで: なぜ省略表記について語ったの？</>,
         content: (
           <>
-            <P>前回と今回で、s</P>
+            <P>
+              前回と今回で、「<Strong>1を引く弁当箱</Strong>」と「
+              <Strong>条件分岐の弁当箱</Strong>
+              」の省略表記について語りました。なぜこれらの説明を行ったか、わかりますか？
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <TopRightBadge inline topRightBadgeType="pred" />,
+                <Emoji>🤔</Emoji>,
+                <Emoji>↕️</Emoji>
+              ]}
+            />
+            <P>答えを言う前に、少しだけ中級編の復習をしましょう！</P>
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>復習: 無限ループの弁当箱</>,
+        content: (
+          <>
+            <P>
+              <Strong>中級編の最後を思い出してください。</Strong>
+              下のような、「<Strong>無限ループの弁当箱</Strong>
+              」を紹介したことを覚えていらっしゃいますでしょうか。この弁当箱を
+              <H args={{ name: 'fastForward' }} />
+              すると、一番下にある
+              <InlineEmojiBoxesForQuestion />
+              が無限にひとつずつ増えていきます。
+            </P>
+            {AER.aqbs}
+            <P>
+              上の例は長くなるので3回目で中断しましたが、たとえば5回繰り返された時点では、
+              <InlineEmojiBoxesForQuestion />
+              が一番下に5個登場します。
+            </P>
+            {AER.opvb}
+            <P>
+              しかし、無限に何かを繰り返すことができても役には立ちません。求められているのは、「無限に何かを繰り返す弁当箱」ではなく、「
+              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
+              」です。そういう弁当箱があれば、役に立ちます。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>復習: ある条件を満たすまで繰り返す</>,
+        content: (
+          <>
+            <P>中級では、以下のように書きました:</P>
+            <Hr />
+            <H args={{ name: 'whyWeNeedFiniteBentoBox' }} />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              そろそろお気づきでしょうか？ではここで
+              <H args={{ name: 'yesNoQuiz' }} />
+              です！
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <TopRightBadge inline topRightBadgeType="pred" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>↕️</Emoji>
+              ]}
+            />
+            <P>
+              <H args={{ name: 'question' }} /> 「<Strong>1を引く弁当箱</Strong>
+              」と「
+              <Strong>条件分岐の弁当箱</Strong>
+              」を組み合わせることで、「
+              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
+              」を作ることができる。
+              <H args={{ name: 'yesOrNo' }} />
+            </P>
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
+              </Strong>
+              「<Strong>1を引く弁当箱</Strong>
+              」と「
+              <Strong>条件分岐の弁当箱</Strong>
+              」を組み合わせることで、「
+              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
+              」を作ることができるのです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <TopRightBadge inline topRightBadgeType="pred" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>↕️</Emoji>
+              ]}
+            />
+            <P>
+              次が上級最後のページです(その後はエピローグです)。そこで、「
+              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
+              」がどんなものか紹介します。そしてついに、記事の題名にもある「
+              <Strong>
+                魔法の
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              」が登場します。
+            </P>
+            <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
+            <P>
+              ここまで読んでくださり、ありがとうございます！上級最後のページも楽しんでくださると嬉しいです。
+            </P>
+            <NextLessonButton />
           </>
         )
       }

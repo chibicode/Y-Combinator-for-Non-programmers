@@ -34,15 +34,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
               key={`card${index}`}
               type={type}
               isLast={index === lastVisibleCardIndex}
-              title={
-                type === 'sideNote' ? (
-                  <>
-                    <H args={{ name: 'sideNotePrefix' }} />: {title}
-                  </>
-                ) : (
-                  title
-                )
-              }
+              title={title}
               setLastVisibleCardIndex={setLastVisibleCardIndex}
               preview={preview}
               footer={footer}

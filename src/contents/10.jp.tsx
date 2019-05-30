@@ -1,13 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  InlineHeader,
-  Strong,
-  Em,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import NextLessonButton from 'src/components/NextLessonButton'
 import AER from 'src/components/AER'
 import H from 'src/components/H'
@@ -241,56 +234,7 @@ export default () => (
         title: <>ある条件を満たすまで繰り返す</>,
         content: (
           <>
-            <P>たとえば、以下の式をご覧ください:</P>
-            <EmojiSeparator
-              size="sm"
-              emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-            />
-            <P>上の式は、</P>
-            <Ul>
-              <UlLi>
-                <Strong>「4」からはじめて、</Strong>
-              </UlLi>
-              <UlLi>
-                <Strong>どんどん「1」を引いた数を掛け算していき、</Strong>
-              </UlLi>
-              <UlLi>
-                <Strong>最後に「1」を掛けるまで繰り返す</Strong>
-              </UlLi>
-            </Ul>
-            <P>
-              という計算です。(数学用語だと、こういった計算は「
-              <InlineHeader>階乗</InlineHeader>
-              」と言います)
-            </P>
-            <P>これを、たとえば「5」からはじめた場合は以下の通りになります。</P>
-            <EmojiSeparator
-              size="sm"
-              emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-            />
-            <P>
-              このような計算をするには、
-              <Strong>「1」を掛けるまで繰り返す</Strong>
-              、という処理が必要です。
-            </P>
-            <P>
-              さきほどのような、
-              <Em>
-                「無限に何かを繰り返す」弁当箱では、このような計算は不可能です。このような計算をするには、
-                <Strong>
-                  「ある条件を満たすまで、何かを繰り返す弁当箱」を使わないといけません。
-                </Strong>
-              </Em>
-            </P>
-            <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
-            <P>
-              では、
-              <Em>
-                <Strong>
-                  どんな弁当箱を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのでしょう？
-                </Strong>
-              </Em>
-            </P>
+            <H args={{ name: 'whyWeNeedFiniteBentoBox' }} />
           </>
         )
       },

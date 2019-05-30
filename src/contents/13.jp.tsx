@@ -116,6 +116,7 @@ export default () => (
         type: 'sideNote',
         title: (
           <>
+            <H args={{ name: 'sideNotePrefix' }} />:{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />と
             <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
             が必ず同じになる

@@ -1196,6 +1196,7 @@ export default {
       explanationsVisibility="hiddenInitialAndLastPausedOnly"
       maxAllowedDefaultStateCount={5}
       isDone
+      caption={<H args={{ name: 'infinitelyAddingQuestionCaption' }} />}
       variableSize="md"
     />
   ),

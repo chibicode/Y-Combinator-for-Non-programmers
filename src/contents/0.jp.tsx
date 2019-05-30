@@ -492,7 +492,11 @@ export default () => (
         )
       },
       {
-        title: 'プログラミングができる方へ',
+        title: (
+          <>
+            <H args={{ name: 'sideNotePrefix' }} />: プログラミングができる方へ
+          </>
+        ),
         type: 'sideNote',
         preview: {
           content: (
@@ -555,7 +559,7 @@ export default () => (
       {
         title: (
           <>
-            IT業界の「
+            <H args={{ name: 'sideNotePrefix' }} />: IT業界の「
             <H args={{ name: 'yCombinator' }} />」
           </>
         ),
