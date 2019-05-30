@@ -5,7 +5,8 @@ import {
   isFunctionExpressionParams,
   isVariableShorthandBinaryParams,
   isVariableShorthandUnaryParams,
-  isVariableShorthandNumberParams
+  isVariableShorthandNumberParams,
+  isMagicalVariableParams
 } from 'src/lib/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -15,7 +16,8 @@ import {
   HighlightedVariableExpressionParams,
   VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
-  ConditionalExpressionParams
+  ConditionalExpressionParams,
+  MagicalVariableParams
 } from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
@@ -24,7 +26,8 @@ import {
   StepVariable,
   StepVariableShorthandBinary,
   StepVariableShorthandNumber,
-  StepConditional
+  StepConditional,
+  StepMagicalVariable
 } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
 
@@ -81,6 +84,9 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: VariableShorthandBinaryParams
 ): StepVariableShorthandBinary
+export default function buildExpressionFromParams(
+  expressionParams: MagicalVariableParams
+): StepMagicalVariable
 export default function buildExpressionFromParams(
   expressionParams: VariableShorthandNumberParams
 ): StepVariableShorthandNumber
@@ -158,6 +164,15 @@ export default function buildExpressionFromParams(
       ),
       shorthandNumber: expressionParams.shorthandNumber,
       shorthandUnary: expressionParams.shorthandUnary
+    }
+  } else if (isMagicalVariableParams(expressionParams)) {
+    return {
+      ...buildVariableExpression(
+        expressionParams.name,
+        true,
+        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
+      ),
+      isMagical: true
     }
   } else {
     return {
