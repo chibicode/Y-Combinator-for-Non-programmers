@@ -153,7 +153,10 @@ export default function stepToActive(
       ...e,
       state: 'active',
       arg,
-      func: toActive(e.func)
+      func: {
+        ...toActive(e.func),
+        emphasizePriority: true
+      }
     }
   } else {
     return {
