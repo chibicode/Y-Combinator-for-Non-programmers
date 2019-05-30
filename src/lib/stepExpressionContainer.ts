@@ -31,7 +31,9 @@ import {
   stepToCaseActive,
   stepToConditionActive,
   stepToCaseProcessed,
-  stepToCaseOnly
+  stepToCaseOnly,
+  stepToMagicalExpanded,
+  stepToDefault
 } from 'src/lib/steps'
 import {
   ContainerWithState,
@@ -136,8 +138,8 @@ const stepMagical = (
     }
     case 'active': {
       return {
-        nextExpression: e,
-        previouslyChangedExpressionState: 'default'
+        nextExpression: stepToMagicalExpanded(e),
+        previouslyChangedExpressionState: 'magicalExpanded'
       }
     }
     default: {
@@ -203,6 +205,12 @@ const stepRegular = (
   }
 
   switch (e.state) {
+    case 'magicalExpanded': {
+      return {
+        nextExpression: stepToDefault(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
     case 'default': {
       return {
         nextExpression: stepToActive(e),

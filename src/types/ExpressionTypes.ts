@@ -192,6 +192,11 @@ interface VariableStates {
     readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'callArg'
   }
+  highlighted: {
+    readonly highlightType: 'highlighted'
+    readonly topLeftBadgeType: 'none'
+    readonly bottomRightBadgeType: 'none'
+  }
 }
 
 export type CallStates =
@@ -207,6 +212,7 @@ export type CallStates =
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewUnaryExecuted'
   | 'betaReducePreviewCrossed'
+  | 'magicalExpanded'
 
 export type ConditionalStates =
   | 'default'
@@ -285,6 +291,8 @@ export type CallStateToVariableState<C extends CallStates> = C extends 'default'
       | 'removedCallArg'
       | 'activeFuncUnbound'
       | 'activeFuncBound'
+  : C extends 'magicalExpanded'
+  ? 'highlighted' | 'active'
   : never
 
 export interface CallExpression {

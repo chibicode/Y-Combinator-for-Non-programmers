@@ -124,7 +124,7 @@ export default function stepToActive(
 ): ExecutableStepCallShorthandBinary<'active'>
 export default function stepToActive(
   e: ExecutableCallMagical
-): ExecutableStepCallShorthandBinary<'active'>
+): ExecutableStepCallMagical<'active'>
 export default function stepToActive(
   e:
     | ExecutableCallRegular

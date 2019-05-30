@@ -40,3 +40,7 @@ export {
   default as stepToCaseProcessed
 } from 'src/lib/steps/stepToCaseProcessed'
 export { default as stepToCaseOnly } from 'src/lib/steps/stepToCaseOnly'
+export { default as stepToDefault } from 'src/lib/steps/stepToDefault'
+export {
+  default as stepToMagicalExpanded
+} from 'src/lib/steps/stepToMagicalExpanded'
