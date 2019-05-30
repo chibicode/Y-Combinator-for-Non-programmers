@@ -350,44 +350,44 @@ export const e11E4 = initializeExpressionContainer(
   alphaConversionSimpleExampleParams(highlighted('b'))
 )
 
-export const e11E5 = initializeExpressionContainer(numberParams('d', 'b', 1))
-export const e11E6 = initializeExpressionContainer([
+export const e12E1 = initializeExpressionContainer(numberParams('d', 'b', 1))
+export const e12E2 = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
-export const e11E7 = initializeExpressionContainer([
+export const e12E3 = initializeExpressionContainer([
   succParams('a', 'b', 'c', true),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
-export const e12E1 = initializeExpressionContainer([
+export const e133E1 = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   'question'
 ])
-export const e12E2 = initializeExpressionContainer(numberParams('g', 'h', 2))
-export const e12E3 = initializeExpressionContainer([
+export const e13E2 = initializeExpressionContainer(numberParams('g', 'h', 2))
+export const e13E3 = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams(highlighted('g'), highlighted('h'), 2)
 ])
-export const e12E4 = initializeExpressionContainer([
+export const e13E4 = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 2)
 ])
-export const e12E5 = initializeExpressionContainer({
+export const e13E5 = initializeExpressionContainer({
   shorthandNumber: 2
 })
-export const e12E6 = initializeExpressionContainer([
+export const e13E6 = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   {
     shorthandNumber: 2,
     initialHighlight: true
   }
 ])
-export const e12E7 = initializeExpressionContainer({
+export const e13E7 = initializeExpressionContainer({
   shorthandNumber: 2,
   shorthandUnary: 'pred'
 })
 
-export const e12E8 = initializeExpressionContainer([
+export const e13E8 = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
@@ -395,7 +395,7 @@ export const e12E8 = initializeExpressionContainer([
   numberParams('g', 'h', 1)
 ])
 
-export const e12E9 = initializeExpressionContainer([
+export const e13E9 = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
@@ -406,7 +406,7 @@ export const e12E9 = initializeExpressionContainer([
   }
 ])
 
-export const e12E10 = initializeExpressionContainer([
+export const e13E10 = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), highlighted('i')]
@@ -416,7 +416,7 @@ export const e12E10 = initializeExpressionContainer([
   }
 ])
 
-export const e12E11 = initializeExpressionContainer([
+export const e13E11 = initializeExpressionContainer([
   {
     arg: 'i',
     body: {
@@ -430,7 +430,7 @@ export const e12E11 = initializeExpressionContainer([
   }
 ])
 
-export const e12E12 = initializeExpressionContainer([
+export const e13E12 = initializeExpressionContainer([
   {
     arg: 'i',
     body: {
@@ -443,14 +443,14 @@ export const e12E12 = initializeExpressionContainer([
   }
 ])
 
-export const e13E1 = initializeExpressionContainer({
+export const e14E1 = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'question',
   trueCase: 'y',
   falseCase: 'z'
 })
 
-export const e13E2 = initializeExpressionContainer({
+export const e14E2 = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 3
@@ -463,7 +463,7 @@ export const e13E2 = initializeExpressionContainer({
   }
 })
 
-export const e13E3 = initializeExpressionContainer([
+export const e14E3 = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -488,7 +488,7 @@ export const e13E3 = initializeExpressionContainer([
   }
 ])
 
-export const e13E4 = initializeExpressionContainer([
+export const e14E4 = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -518,7 +518,7 @@ export const e13E4 = initializeExpressionContainer([
   }
 ])
 
-export const e13E5 = initializeExpressionContainer([
+export const e14E5 = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -541,7 +541,7 @@ export const e13E5 = initializeExpressionContainer([
   numberParams(highlighted('l'), highlighted('m'), 2)
 ])
 
-export const e13E6 = initializeExpressionContainer([
+export const e14E6 = initializeExpressionContainer([
   [
     {
       arg: 'a',
