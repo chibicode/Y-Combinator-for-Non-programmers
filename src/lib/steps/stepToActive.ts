@@ -2,6 +2,7 @@ import {
   isFunction,
   isVariable,
   isExecutableCallRegular,
+  isExecutableCallMagical,
   isCall
 } from 'src/lib/expressionTypeGuards'
 import {
@@ -21,12 +22,17 @@ import {
   VariableExpression,
   VariableWithEmphasizePriorityAndState,
   ConditionalExpression,
-  StepConditional
+  StepConditional,
+  ExecutableCallMagical,
+  MagicalVariable,
+  StepMagicalVariable,
+  ExecutableStepCallMagical
 } from 'src/types/ExpressionTypes'
 
 function toActive(
   e: VariableShorthandBinary
 ): StepVariableShorthandBinary<'active'>
+function toActive(e: MagicalVariable): StepMagicalVariable<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
 function toActive(e: ConditionalExpression): StepConditional<'active'>
@@ -117,10 +123,17 @@ export default function stepToActive(
   e: ExecutableCallShorthandBinary
 ): ExecutableStepCallShorthandBinary<'active'>
 export default function stepToActive(
-  e: ExecutableCallRegular | ExecutableCallShorthandBinary
+  e: ExecutableCallMagical
+): ExecutableStepCallShorthandBinary<'active'>
+export default function stepToActive(
+  e:
+    | ExecutableCallRegular
+    | ExecutableCallShorthandBinary
+    | ExecutableCallMagical
 ):
   | ExecutableStepCallRegular<'active'>
-  | ExecutableStepCallShorthandBinary<'active'> {
+  | ExecutableStepCallShorthandBinary<'active'>
+  | ExecutableStepCallMagical<'active'> {
   const arg = isFunction(e.arg)
     ? toExecutableActiveFunction(e.arg)
     : isVariable(e.arg)
@@ -134,6 +147,13 @@ export default function stepToActive(
       state: 'active',
       arg,
       func: toExecutableActiveFunction(e.func)
+    }
+  } else if (isExecutableCallMagical(e)) {
+    return {
+      ...e,
+      state: 'active',
+      arg,
+      func: toActive(e.func)
     }
   } else {
     return {

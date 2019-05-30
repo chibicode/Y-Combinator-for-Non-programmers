@@ -130,7 +130,7 @@ const stepMagical = (
   switch (e.state) {
     case 'default': {
       return {
-        nextExpression: e,
+        nextExpression: stepToActive(e),
         previouslyChangedExpressionState: 'active'
       }
     }
