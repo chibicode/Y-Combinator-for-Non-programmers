@@ -1821,6 +1821,12 @@ export default {
       isDone
     />
   ),
+  zxux: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

@@ -564,6 +564,16 @@ export const e14E6 = initializeExpressionContainer([
   numberParams('l', 'm', 2)
 ])
 
+export const e15E1 = initializeExpressionContainer([
+  {
+    magical: true,
+    name: 'a'
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
