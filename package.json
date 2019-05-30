@@ -3,7 +3,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
-    "@material-ui/core": "^3.9.3",
+    "@material-ui/core": "^4.0.1",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "color": "^3.1.1",
@@ -15,7 +15,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "smoothscroll-polyfill": "^0.4.4",
-    "twemoji": "^12.0.1"
+    "twemoji": "^12.0.4"
   },
   "scripts": {
     "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 9991",
@@ -39,15 +39,15 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@svgr/cli": "^4.2.0",
+    "@svgr/cli": "^4.3.0",
     "@types/color": "^3.0.0",
     "@types/jest": "^24.0.13",
-    "@types/lodash": "^4.14.130",
-    "@types/luxon": "^1.13.0",
+    "@types/lodash": "^4.14.132",
+    "@types/luxon": "^1.15.1",
     "@types/material-ui": "^0.21.6",
     "@types/next": "^8.0.5",
     "@types/nprogress": "^0.0.29",
-    "@types/react": "^16.8.18",
+    "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
@@ -59,8 +59,8 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-react-app": "^4.0.1",
-    "eslint-plugin-flowtype": "^3.9.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
@@ -69,6 +69,6 @@
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.0-rc"
+    "typescript": "^3.5.1"
   }
 }
