@@ -1,6 +1,13 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import {
+  P,
+  InlineHeader,
+  Strong,
+  Em,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import NextLessonButton from 'src/components/NextLessonButton'
 import AER from 'src/components/AER'
 import H from 'src/components/H'
@@ -239,7 +246,7 @@ export default () => (
               <H args={{ name: 'bentoBox' }} />
               」ではなく、「
               <Strong>
-                決められた回数分、何かを繰り返す
+                ある条件を満たすまで、何かを繰り返す
                 <H args={{ name: 'bentoBox' }} />
               </Strong>
               」です。そういう
@@ -247,34 +254,67 @@ export default () => (
               があれば、役に立ちます。
             </P>
             <EmojiSeparator emojis={['❓', '🍱', '❓']} />
+          </>
+        )
+      },
+      {
+        title: <>ある条件を満たすまで繰り返す</>,
+        content: (
+          <>
+            <P>たとえば、以下の式をご覧ください:</P>
+            <EmojiSeparator
+              size="sm"
+              emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+            />
+            <P>上の式は、</P>
+            <Ul>
+              <UlLi>
+                <Strong>「4」からはじめて、</Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>どんどん「1」を引いた数を掛け算していき、</Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>最後に「1」を掛けるまで繰り返す</Strong>
+              </UlLi>
+            </Ul>
             <P>
-              たとえば、「<Strong>2を10回掛けたら何になるか</Strong>
-              」を求めたいとします:
+              という計算です。(数学用語だと、こういった計算は「
+              <InlineHeader>階乗</InlineHeader>
+              」と言います)
+            </P>
+            <P>これを、たとえば「5」からはじめた場合は以下の通りになります。</P>
+            <EmojiSeparator
+              size="sm"
+              emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+            />
+            <P>
+              このような計算をするには、
+              <Strong>「1」を掛けるまで繰り返す</Strong>
+              、という処理が必要です。
             </P>
             <P>
-              <Strong highlightType="white">
-                2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2 ✕ 2
-              </Strong>
-            </P>
-            <P>
-              答えは「1024」なのですが、これを求めるためには、「
+              さきほどのような、
               <Em>
-                2の掛け算を<Strong>10回だけ</Strong>繰り返す
+                「無限に何かを繰り返す」
+                <H args={{ name: 'bentoBox' }} />
+                では、このような計算は不可能です。このような計算をするには、
+                <Strong>
+                  「ある条件を満たすまで、何かを繰り返す
+                  <H args={{ name: 'bentoBox' }} />
+                  」を使わないといけません。
+                </Strong>
               </Em>
-              」
-              <H args={{ name: 'bentoBox' }} />
-              が必要になってきます。
             </P>
-            <EmojiSeparator emojis={['🔟', '🤔', '❓']} />
+            <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
             <P>
               では、
               <Em>
                 <Strong>
                   どんな
                   <H args={{ name: 'bentoBox' }} />
-                  を使えば
+                  を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのでしょう？
                 </Strong>
-                、決められた条件を満たすまで計算を繰り返すことができるのでしょう？
               </Em>
             </P>
           </>
@@ -285,14 +325,10 @@ export default () => (
         content: (
           <>
             <P>
-              「
-              <Strong>
-                決められた回数分、何かを繰り返す
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
-              」は果たして存在するのでしょうか？答えは上級編にあります。
+              どんな
+              <H args={{ name: 'bentoBox' }} />
+              を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのか。その答えは上級編にあります。
             </P>
-            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
             <P>
               そして上級編ではついに、記事の題名にもある「
               <Strong>
@@ -303,7 +339,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
             <P>
-              ここまで読んでくださり、ありがとうございます！最後まで楽しんでいただけると嬉しいです。下のボタンから、上級編に進むことができます。
+              ここまで読んでくださり、ありがとうございます！次から上級編に入ります。最後まで楽しんでいただけると嬉しいです。
             </P>
             <NextLessonButton />
           </>
