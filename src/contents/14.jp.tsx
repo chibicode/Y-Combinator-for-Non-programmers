@@ -301,13 +301,12 @@ export default () => (
         )
       },
       {
-        title: (
+        title: <>なぜ省略表記について語ったの？</>,
+        content: (
           <>
-            復習: 繰り返しの
-            <H args={{ name: 'bentoBox' }} />
+            <P>前回と今回で、</P>
           </>
-        ),
-        content: <>!</>
+        )
       }
     ]}
   />
