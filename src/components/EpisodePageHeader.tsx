@@ -56,7 +56,7 @@ const EpisodePageHeader = ({
         </button>
       }
       rightContent={
-        episodeNumber < numEpisodes && (
+        episodeNumber < numEpisodes + 1 && (
           <InternalLink
             href={`/${episodeNumber + 1}`}
             css={navigationLinkClasses}
