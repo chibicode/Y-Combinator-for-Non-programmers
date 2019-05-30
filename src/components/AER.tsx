@@ -1822,9 +1822,10 @@ export default {
     />
   ),
   zxux: (
-    <ExpressionRunnerSimple
+    <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e15E1}
       showPriorities
+      skipToTheEnd={false}
     />
   ),
   hzlj: (

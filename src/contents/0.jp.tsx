@@ -408,7 +408,7 @@ export default () => (
               <H args={{ name: 'yesNoQuiz' }} />
               形式で出題しますので、勘で答えてみてください！
             </P>
-            <EmojiSeparator emojis={['🧙‍♂️', '🤔', '🧙‍♂️']} />
+            <EmojiSeparator emojis={['🧙‍♀️', '🤔', '🧙‍♀️']} />
             <P>
               <H args={{ name: 'question' }} />{' '}
               <Strong>
@@ -469,7 +469,7 @@ export default () => (
               <Em>まるで魔法みたいだ！</Em>
               」と知的な感動を覚えました。
             </P>
-            <EmojiSeparator emojis={['😭', '✨', '🧙‍♂️']} />
+            <EmojiSeparator emojis={['😭', '✨', '🧙‍♀️']} />
             <P>
               今回の記事では、
               <Strong>

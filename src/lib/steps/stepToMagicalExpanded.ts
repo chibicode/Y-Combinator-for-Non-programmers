@@ -109,14 +109,14 @@ export default function stepToMagicalExpanded(
         state: 'default',
         priority: 0,
         func: {
-          ...arg,
-          shorthandUnary: 'pred'
-        },
-        arg: {
           ...e.func,
           highlightType: 'highlighted',
           topLeftBadgeType: 'none',
           bottomRightBadgeType: 'none'
+        },
+        arg: {
+          ...arg,
+          shorthandUnary: 'pred'
         }
       }
     }

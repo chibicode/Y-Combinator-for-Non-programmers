@@ -418,7 +418,7 @@ export default () => (
               </Strong>
               」が登場します。
             </P>
-            <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
+            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
             <P>
               ここまで読んでくださり、ありがとうございます！上級最後のページも楽しんでくださると嬉しいです。
             </P>

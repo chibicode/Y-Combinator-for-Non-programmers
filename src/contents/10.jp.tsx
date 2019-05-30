@@ -253,7 +253,7 @@ export default () => (
               </Strong>
               」が登場します。
             </P>
-            <EmojiSeparator emojis={['✨', '🧙‍♂️', '✨']} />
+            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
             <P>
               ここまで読んでくださり、ありがとうございます！次から上級編に入ります。最後まで楽しんでいただけると嬉しいです。
             </P>

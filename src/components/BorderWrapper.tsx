@@ -33,9 +33,15 @@ const background = ({
   conditionalActive?: boolean
 }): SerializedStyles | undefined => {
   if (isQuestion) {
-    return css`
-      background: ${colors('indigo400')};
-    `
+    if (highlightType === 'highlighted') {
+      return css`
+        background: ${colors('indigo400MixYellow')};
+      `
+    } else {
+      return css`
+        background: ${colors('indigo400')};
+      `
+    }
   }
   if (conditionalActive) {
     return css`

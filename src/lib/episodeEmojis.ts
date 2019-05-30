@@ -2,7 +2,7 @@ import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { episodeTitles } from 'src/lib/titles'
 
 const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
-  0: ['🤖', '🤔', '🧙‍♂️'],
+  0: ['🤖', '🤔', '🧙‍♀️'],
   1: ['🍱', '😍', '🍱'],
   2: ['✅', '🤫', '💥'],
   3: ['4️⃣', '😋', '🍱'],
@@ -17,7 +17,7 @@ const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
   12: [letterEmojiMapping['b'], '😎', letterEmojiMapping['e']],
   13: ['➖', '🤯', '️1️⃣'],
   14: ['0️⃣', '🥴', '️🔢'],
-  15: ['✨', '🤩', '🧙‍♂️'],
+  15: ['✨', '🤩', '🧙‍♀️'],
   16: ['️🤖', '🤗', '️🤖']
 }
 

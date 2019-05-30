@@ -95,7 +95,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
                 : expression.shorthandNumber !== undefined
                 ? numberEmojiMapping[expression.shorthandNumber]
                 : expression.isMagical
-                ? '🧙‍♂️'
+                ? '🧙‍♀️'
                 : letterEmojiMapping[expression.name]}
             </Emoji>
             {expression.shorthandBinary && (
