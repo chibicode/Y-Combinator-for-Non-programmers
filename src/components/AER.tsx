@@ -1340,7 +1340,7 @@ export default {
   ),
   lrja: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E5}
+      expressionContainer={lessonExpressions.e12E1}
       showPriorities
       caption={
         <H args={{ name: 'secretCodeCaption', number: 1, letter: 'd' }} />
@@ -1349,7 +1349,7 @@ export default {
   ),
   bcae: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E6}
+      expressionContainer={lessonExpressions.e12E2}
       showPriorities
       skipAlphaConvert
       containerSize="xs"
@@ -1358,7 +1358,7 @@ export default {
   ),
   zuam: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e11E6}
+      expressionContainer={lessonExpressions.e12E2}
       showPriorities
       skipToTheEnd={false}
       skipAlphaConvert
@@ -1369,7 +1369,7 @@ export default {
   ),
   kfcw: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E6}
+      expressionContainer={lessonExpressions.e12E2}
       showPriorities
       isDone
       skipAlphaConvert
@@ -1382,7 +1382,7 @@ export default {
   ),
   jxyg: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E6}
+      expressionContainer={lessonExpressions.e12E2}
       showPriorities
       initialState="showFuncUnbound"
       containerSize="xs"
@@ -1401,7 +1401,7 @@ export default {
   ),
   oiwu: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E7}
+      expressionContainer={lessonExpressions.e12E3}
       showPriorities
       initialState="showFuncUnbound"
       containerSize="xs"
@@ -1416,7 +1416,7 @@ export default {
   ),
   uqpp: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E7}
+      expressionContainer={lessonExpressions.e12E3}
       showPriorities
       initialState="alphaConvertDone"
       containerSize="xs"
@@ -1430,7 +1430,7 @@ export default {
   ),
   hxmk: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E7}
+      expressionContainer={lessonExpressions.e12E3}
       showPriorities
       initialState="alphaConvertDone"
       containerSize="xs"
@@ -1448,7 +1448,7 @@ export default {
   ),
   rzbq: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e11E7}
+      expressionContainer={lessonExpressions.e12E3}
       showPriorities
       initialState="alphaConvertDone"
       containerSize="xs"
@@ -1459,7 +1459,7 @@ export default {
   ),
   jlet: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E7}
+      expressionContainer={lessonExpressions.e12E3}
       isDone
       showPriorities
       containerSize="xs"
@@ -1471,7 +1471,7 @@ export default {
   ),
   kqip: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E6}
+      expressionContainer={lessonExpressions.e12E2}
       showPriorities
       initialState="needsAlphaConvert"
       containerSize="xs"
@@ -1481,7 +1481,7 @@ export default {
   ),
   tkbr: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e11E6}
+      expressionContainer={lessonExpressions.e12E2}
       showPriorities
       initialState="alphaConvertDone"
       containerSize="xs"
@@ -1491,7 +1491,7 @@ export default {
   ),
   gopk: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E1}
+      expressionContainer={lessonExpressions.e133E1}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1499,7 +1499,7 @@ export default {
   ),
   imgp: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E2}
+      expressionContainer={lessonExpressions.e13E2}
       showPriorities
       caption={
         <H args={{ name: 'secretCodeCaption', number: 2, letter: 'g' }} />
@@ -1508,7 +1508,7 @@ export default {
   ),
   lxnu: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E3}
+      expressionContainer={lessonExpressions.e13E3}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1516,7 +1516,7 @@ export default {
   ),
   ccon: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E3}
+      expressionContainer={lessonExpressions.e13E3}
       showPriorities
       skipToTheEnd={false}
       containerSize="xs"
@@ -1526,7 +1526,7 @@ export default {
   ),
   npfx: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E3}
+      expressionContainer={lessonExpressions.e13E3}
       isDone
       showPriorities
       containerSize="xs"
@@ -1538,7 +1538,7 @@ export default {
   ),
   pnob: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E1}
+      expressionContainer={lessonExpressions.e133E1}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1547,7 +1547,7 @@ export default {
   ),
   rqdn: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E3}
+      expressionContainer={lessonExpressions.e13E3}
       showPriorities
       explanationsVisibility="hiddenInitial"
       lastAllowedExpressionState="needsAlphaConvert"
@@ -1559,7 +1559,7 @@ export default {
   ),
   fiab: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E4}
+      expressionContainer={lessonExpressions.e13E4}
       showPriorities
       explanationsVisibility="hiddenInitial"
       lastAllowedExpressionState="needsAlphaConvert"
@@ -1571,7 +1571,7 @@ export default {
   ),
   plxd: (
     <ExpressionRunnerSingleStep
-      expressionContainer={lessonExpressions.e12E3}
+      expressionContainer={lessonExpressions.e13E3}
       showPriorities
       explanationsVisibility="visible"
       initialState="needsAlphaConvert"
@@ -1582,7 +1582,7 @@ export default {
   ),
   zaoc: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E4}
+      expressionContainer={lessonExpressions.e13E4}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1590,11 +1590,11 @@ export default {
     />
   ),
   xekr: (
-    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e12E5} />
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e13E5} />
   ),
   lial: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E6}
+      expressionContainer={lessonExpressions.e13E6}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1603,23 +1603,23 @@ export default {
   ),
   uqts: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E6}
+      expressionContainer={lessonExpressions.e13E6}
       showPriorities
       containerSize="xs"
       variableSize="md"
     />
   ),
   ojma: (
-    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e12E7} />
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e13E7} />
   ),
   yykk: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E7}
+      expressionContainer={lessonExpressions.e13E7}
     />
   ),
   exww: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E8}
+      expressionContainer={lessonExpressions.e13E8}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1627,7 +1627,7 @@ export default {
   ),
   qgun: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E8}
+      expressionContainer={lessonExpressions.e13E8}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1642,7 +1642,7 @@ export default {
   ),
   yvia: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E9}
+      expressionContainer={lessonExpressions.e13E9}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1650,7 +1650,7 @@ export default {
   ),
   qifg: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E10}
+      expressionContainer={lessonExpressions.e13E10}
       showPriorities
       containerSize="xs"
       variableSize="md"
@@ -1669,13 +1669,13 @@ export default {
   ),
   ufyc: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e12E11}
+      expressionContainer={lessonExpressions.e13E11}
       showPriorities
     />
   ),
   pbgd: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e12E12}
+      expressionContainer={lessonExpressions.e13E12}
       showPriorities
       skipToTheEnd={false}
       speed={1.5}
@@ -1683,7 +1683,7 @@ export default {
   ),
   hvdn: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E1}
+      expressionContainer={lessonExpressions.e14E1}
       showPriorities
       caption={
         <H
@@ -1697,43 +1697,43 @@ export default {
     />
   ),
   vxnm: (
-    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e13E2} />
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e14E2} />
   ),
   xefx: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e13E2}
+      expressionContainer={lessonExpressions.e14E2}
       skipToTheEnd={false}
     />
   ),
   wcsz: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E2}
+      expressionContainer={lessonExpressions.e14E2}
       explanationsVisibility="visible"
       initialState="conditionActive"
     />
   ),
   psqo: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E2}
+      expressionContainer={lessonExpressions.e14E2}
       explanationsVisibility="visible"
       initialState="falseCaseActive"
     />
   ),
   xsby: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E2}
+      expressionContainer={lessonExpressions.e14E2}
       isDone
     />
   ),
   repd: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       showPriorities
     />
   ),
   cnoq: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       skipToTheEnd={false}
       showPriorities
       speed={1.5}
@@ -1741,7 +1741,7 @@ export default {
   ),
   dwnj: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       skipToTheEnd={false}
       showPriorities
       lastAllowedExpressionState="default"
@@ -1749,7 +1749,7 @@ export default {
   ),
   guuf: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       showPriorities
       explanationsVisibility="visible"
       nextIteration
@@ -1758,7 +1758,7 @@ export default {
   ),
   lrrr: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       showPriorities
       nextIteration
       explanationsVisibility="visible"
@@ -1767,7 +1767,7 @@ export default {
   ),
   dpar: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       showPriorities
       speed={1.5}
       skipToTheEnd={false}
@@ -1778,7 +1778,7 @@ export default {
   ),
   ylil: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E4}
+      expressionContainer={lessonExpressions.e14E4}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
@@ -1786,7 +1786,7 @@ export default {
   ),
   vqcw: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E5}
+      expressionContainer={lessonExpressions.e14E5}
       showPriorities
       containerSize={'xs'}
       variableSize={'md'}
@@ -1794,7 +1794,7 @@ export default {
   ),
   dcfi: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e13E6}
+      expressionContainer={lessonExpressions.e14E6}
       showPriorities
       skipToTheEnd={false}
       containerSize={'xs'}
@@ -1804,7 +1804,7 @@ export default {
   ),
   bmnc: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E6}
+      expressionContainer={lessonExpressions.e14E6}
       isDone
       showPriorities
       containerSize={'xs'}
@@ -1816,9 +1816,15 @@ export default {
   ),
   ufze: (
     <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e13E3}
+      expressionContainer={lessonExpressions.e14E3}
       showPriorities
       isDone
+    />
+  ),
+  zxux: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
     />
   ),
   hzlj: (

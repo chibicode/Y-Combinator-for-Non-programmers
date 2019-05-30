@@ -13,6 +13,7 @@ export interface VariableExpression {
   readonly shorthandBinary?: 'isZero'
   readonly shorthandNumber?: number
   readonly shorthandUnary?: 'pred'
+  readonly isMagical?: boolean
 }
 
 export interface VariableShorthandBinary extends VariableExpression {
@@ -30,6 +31,10 @@ export interface VariableShorthandUnary extends VariableExpression {
 export interface VariableShorthandNonUnaryNumber extends VariableExpression {
   readonly shorthandUnary: undefined
   readonly shorthandNumber: NonNullable<VariableExpression['shorthandNumber']>
+}
+
+export interface MagicalVariable extends VariableExpression {
+  readonly isMagical: true
 }
 
 export type VariableShorthandUnaryNumber = VariableShorthandNumber &
@@ -61,6 +66,10 @@ export type VariableWithEmphasizePriorityAndState<
   VariableStates[S] & {
     readonly emphasizePriority: true
   }
+
+export type MagicalVariableWithState<
+  S extends keyof VariableStates
+> = MagicalVariable & VariableStates[S]
 
 interface VariableStates {
   default: {
@@ -360,6 +369,17 @@ type ExecutableShorthandBinary<
     readonly func: F
   })
 
+type ExecutableMagical<
+  S extends CallStates,
+  F extends MagicalVariable,
+  E extends Expression
+> = CallExpression &
+  ({
+    readonly state: S
+    readonly arg: E
+    readonly func: F
+  })
+
 type ExecutableConditionalNumber<
   C extends VariableShorthandNumber,
   T extends Expression,
@@ -388,6 +408,9 @@ export type StepVariableShorthandUnary<
 export type StepVariableShorthandNonUnaryNumber<
   C extends CallStates = 'default'
 > = VariableWithStateShorthandNonUnaryNumber<CallStateToVariableState<C>>
+export type StepMagicalVariable<
+  C extends CallStates = 'default'
+> = MagicalVariableWithState<CallStateToVariableState<C>>
 export interface StepConditional<C extends CallStates = 'default'>
   extends NonExecutableConditional<StepChild<C>, StepChild<C>, StepChild<C>> {}
 export interface StepFunction<C extends CallStates = 'default'>
@@ -405,6 +428,8 @@ export interface ExecutableStepCallShorthandBinary<
     StepVariableShorthandBinary<C>,
     StepChild<C>
   > {}
+export interface ExecutableStepCallMagical<C extends CallStates = 'default'>
+  extends ExecutableMagical<C, StepMagicalVariable<C>, StepChild<C>> {}
 export interface ExecutableStepConditional<
   C extends CallStates = 'default',
   S extends ConditionalStates = 'default'
@@ -435,9 +460,15 @@ export type ExecutableCallShorthandBinary = DistributeStepCallShorthandBinary<
   CallStates
 >
 
+type DistributeStepCallMagical<U> = U extends CallStates
+  ? ExecutableStepCallMagical<U>
+  : never
+export type ExecutableCallMagical = DistributeStepCallMagical<CallStates>
+
 export type ExecutableCall =
   | ExecutableCallRegular
   | ExecutableCallShorthandBinary
+  | ExecutableCallMagical
 
 type DistributeStepConditional<
   U,

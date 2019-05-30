@@ -7,7 +7,8 @@ import {
   VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   HighlightedVariableExpressionParams,
-  ConditionalExpressionParams
+  ConditionalExpressionParams,
+  MagicalVariableParams
 } from 'src/types/ExpressionParamTypes'
 
 export function isHighlightedVariableExpressionParams(
@@ -44,6 +45,12 @@ export function isVariableShorthandNumberParams(
     (expressionParams as VariableShorthandNumberParams).shorthandNumber !==
     undefined
   )
+}
+
+export function isMagicalVariableParams(
+  expressionParams: ExpressionParams
+): expressionParams is MagicalVariableParams {
+  return (expressionParams as MagicalVariableParams).magical
 }
 
 export function isVariableExpressionParams(
