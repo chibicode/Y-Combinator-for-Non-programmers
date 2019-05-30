@@ -19,8 +19,7 @@ export default () => (
         title: (
           <>
             <EmojiWithText letter="v" />
-            の入った
-            <H args={{ name: 'bentoBox' }} />
+            の入った弁当箱
           </>
         ),
         content: (
@@ -125,8 +124,7 @@ export default () => (
             </P>
             <Ul>
               <UlLi>
-                こちらの
-                <H args={{ name: 'bentoBox' }} />の
+                こちらの弁当箱の
                 <Strong>
                   <InlineEmojiBoxesForQuestion />
                   に料理をひとつだけ入れて
@@ -208,11 +206,7 @@ export default () => (
         ),
         content: (
           <>
-            <P>
-              こちらの
-              <H args={{ name: 'bentoBox' }} />
-              の…
-            </P>
+            <P>こちらの弁当箱の…</P>
             {AER.wbpx}
             <Ul>
               <UlLi>
@@ -365,11 +359,7 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               ]}
             />
-            <P>
-              先ほどの
-              <H args={{ name: 'bentoBox' }} />
-              だと、
-            </P>
+            <P>先ほどの弁当箱だと、</P>
             {AER.wbpx}
             <P>
               <Em>
@@ -426,9 +416,7 @@ export default () => (
             <P>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              に同じ料理があるかどうかで、結果が変わる
-              <H args={{ name: 'bentoBox' }} />
-              があることがわかりました。
+              に同じ料理があるかどうかで、結果が変わる弁当箱があることがわかりました。
             </P>
             <P>
               でも、「<Em>それで何か問題でもあるの？</Em>
@@ -445,10 +433,7 @@ export default () => (
               というわけで次のページでは、
               <Em>
                 結果が変わることによってどんな問題が発生するのか、以前紹介した
-                <Strong>
-                  <H args={{ name: 'bentoBox' }} />
-                  の暗号
-                </Strong>
+                <Strong>弁当箱の暗号</Strong>
                 を用いて解説していきます！
               </Em>
             </P>

@@ -118,11 +118,7 @@ export default () => (
               がふたつ入っています。
             </P>
             {AER.emmb}
-            <P>
-              こちらは、イタリアンな
-              <H args={{ name: 'bentoBox' }} />
-              ですね！
-            </P>
+            <P>こちらは、イタリアンな弁当箱ですね！</P>
             <Hr />
             <P>
               <InlineHeader>例その4:</InlineHeader> 上段には

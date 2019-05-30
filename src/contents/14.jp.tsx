@@ -24,21 +24,13 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: (
-          <>
-            条件分岐の
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>条件分岐の弁当箱</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               今回は、以前紹介した「
-              <Strong>
-                条件分岐の
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
+              <Strong>条件分岐の弁当箱</Strong>
               」を省略表記していきます。まずは、復習から:
             </P>
             {AER.nlxe}
@@ -50,11 +42,7 @@ export default () => (
         title: <>条件分岐の省略表記</>,
         content: (
           <>
-            <P>
-              では、この条件分岐の
-              <H args={{ name: 'bentoBox' }} />
-              を、
-            </P>
+            <P>では、この条件分岐の弁当箱を、</P>
             {AER.nlxe}
             <P>次のように省略表記してみましょう:</P>
             {AER.hvdn}
@@ -250,9 +238,7 @@ export default () => (
             <P>
               たとえば、先ほどの
               <H args={{ name: 'yesNoQuiz' }} />
-              で出題したこちらの
-              <H args={{ name: 'bentoBox' }} />
-              は、
+              で出題したこちらの弁当箱は、
             </P>
             {AER.repd}
             <P>
@@ -304,7 +290,7 @@ export default () => (
         title: <>なぜ省略表記について語ったの？</>,
         content: (
           <>
-            <P>前回と今回で、</P>
+            <P>前回と今回で、s</P>
           </>
         )
       }

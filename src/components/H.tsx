@@ -51,7 +51,6 @@ export interface HProps {
     | { name: 'computerScience' }
     | { name: 'yCombinator' }
     | { name: 'isZeroReview' }
-    | { name: 'bentoBox'; plural?: boolean }
     | {
         name: 'bentoBoxPuzzle'
         plural?: boolean
@@ -384,13 +383,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           「弁当箱のパズル <Emoji>🍱</Emoji>」
         </Strong>
       )
-    }
-  }
-  if (args.name === 'bentoBox') {
-    if (locale === 'en') {
-      return <>“bento box${args.plural ? 'es' : ''}”</>
-    } else {
-      return <>弁当箱</>
     }
   }
   if (args.name === 'next') {
@@ -759,8 +751,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <H args={{ name: 'question' }} /> 上の
-          <H args={{ name: 'bentoBox' }} />を
+          <H args={{ name: 'question' }} /> 上の弁当箱を
           <H args={{ name: 'play' }} />
           すると、<Strong>最終的に下のようになるでしょうか？</Strong>
         </>
@@ -773,8 +764,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <H args={{ name: 'question' }} /> 上の
-          <H args={{ name: 'bentoBox' }} />を
+          <H args={{ name: 'question' }} /> 上の弁当箱を
           <H args={{ name: 'play' }} />
           すると、
           <Em>
@@ -791,13 +781,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>…</>
     } else {
-      return (
-        <>
-          こちらの
-          <H args={{ name: 'bentoBox' }} />
-          をご覧ください
-        </>
-      )
+      return <>こちらの弁当箱をご覧ください</>
     }
   }
   if (args.name === 'pauseIfLost') {
@@ -952,8 +936,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji>1️⃣</Emoji> を足す
-          <H args={{ name: 'bentoBox' }} />
+          <Emoji>1️⃣</Emoji> を足す弁当箱
         </>
       )
     }
@@ -1196,9 +1179,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <P>
-            <InlineHeader>暗号の法則:</InlineHeader> もし、次のようなパターンの
-            <H args={{ name: 'bentoBox' }} />
-            があり:
+            <InlineHeader>暗号の法則:</InlineHeader>{' '}
+            もし、次のようなパターンの弁当箱があり:
           </P>
           {args.example}
           <P>
@@ -1250,9 +1232,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Ul>
             <UlLi>
               もし
-              <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を埋め込んで実行した場合、最後に
+              <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>
+              の弁当箱を埋め込んで実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="y" />
               </Strong>
@@ -1276,9 +1257,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「1以上」</Strong>
-              の
-              <H args={{ name: 'bentoBox' }} />
-              を埋め込んで実行した場合、最後に
+              の弁当箱を埋め込んで実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>

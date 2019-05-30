@@ -15,13 +15,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: (
-          <>
-            3段の
-            <H args={{ name: 'bentoBox' }} />
-            の法則
-          </>
-        ),
+        title: <>3段の弁当箱の法則</>,
         content: (
           <>
             <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />

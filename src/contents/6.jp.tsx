@@ -181,14 +181,11 @@ export default () => (
             </P>
             {AER.qmof}
             <P>
-              ここで、上の
-              <H args={{ name: 'bentoBox' }} />の
+              ここで、上の弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に、
               <Em>
-                暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                を埋め込みます
+                暗号が<Strong>「0」</Strong>の弁当箱を埋め込みます
               </Em>
               。たとえば、こちらを埋め込むわけです。
             </P>
@@ -201,8 +198,7 @@ export default () => (
             <P>
               ここで質問です。
               <Strong>
-                上の
-                <H args={{ name: 'bentoBox' }} />を
+                上の弁当箱を
                 <H args={{ name: 'play' }} />
                 すると、最終的にどうなるのでしょう？
               </Strong>
@@ -267,17 +263,13 @@ export default () => (
         content: (
           <>
             <P>
-              1. こちらの
-              <H args={{ name: 'bentoBox' }} />
-              の、
+              1. こちらの弁当箱の、
               <InlineEmojiBoxesForQuestion />
               の部分に…
             </P>
             {AER.qmof}
             <P>
-              2. 暗号が<Strong>「0」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を…
+              2. 暗号が<Strong>「0」</Strong>の弁当箱を…
             </P>
             {AER.nicg}
             <P>
@@ -303,11 +295,7 @@ export default () => (
         content: (
           <>
             {AER.qmof}
-            <P>
-              この
-              <H args={{ name: 'bentoBox' }} />
-              にはどういう効果があるか、もうお分かりでしょうか？
-            </P>
+            <P>この弁当箱にはどういう効果があるか、もうお分かりでしょうか？</P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
             <P>答えは次のページに！</P>
             <NextLessonButton />

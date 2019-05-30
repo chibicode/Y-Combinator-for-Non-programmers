@@ -17,31 +17,24 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              こちらが、前回紹介した<Strong>「足し算」</Strong>ができる
-              <H args={{ name: 'bentoBox' }} />
-              です:
+              こちらが、前回紹介した<Strong>「足し算」</Strong>
+              ができる弁当箱です:
             </P>
             {AER.bxdf}
             <P>
-              そして下にあるのが、上のと微妙に違う
-              <H args={{ name: 'bentoBox' }} />
-              です。 <Strong>右下の部分が微妙に違う</Strong>
+              そして下にあるのが、上のと微妙に違う弁当箱です。{' '}
+              <Strong>右下の部分が微妙に違う</Strong>
               のがお分かりでしょうか。
             </P>
             {AER.ksya}
             <P>
-              「足し算」の
-              <H args={{ name: 'bentoBox' }} />
-              では右下に<Strong>5個</Strong>の料理がありましたが、こちらには
+              「足し算」の弁当箱では右下に<Strong>5個</Strong>
+              の料理がありましたが、こちらには
               <Strong>4個</Strong>しかありません。
             </P>
             <P>
               では、
-              <Em>
-                こちらの
-                <H args={{ name: 'bentoBox' }} />
-                は、どんな計算ができるのでしょう？
-              </Em>
+              <Em>こちらの弁当箱は、どんな計算ができるのでしょう？</Em>
             </P>
             <EmojiSeparator emojis={['🍱', '❓', '️🍱']} />
             <P>
@@ -62,23 +55,18 @@ export default () => (
         content: (
           <>
             <P>
-              ここに暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              がふたつあります:
+              ここに暗号が<Strong>「1」</Strong>の弁当箱がふたつあります:
             </P>
             {AER.dymt}
             {AER.mhwq}
             <P>
-              さきほどの
-              <H args={{ name: 'bentoBox' }} />の
+              さきほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます:
             </P>
             {AER.sojz}
             <P>
-              さきほどの「足し算」の
-              <H args={{ name: 'bentoBox' }} />
-              とは
+              さきほどの「足し算」の弁当箱とは
               <Em>
                 微妙に右下が違いますが、こちらも足し算(
                 <Strong>1 + 1 = 2</Strong>
@@ -119,16 +107,12 @@ export default () => (
             <P>つまり、</P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                ふたつを埋め込んで
+                暗号が<Strong>「1」</Strong>の弁当箱ふたつを埋め込んで
                 <H args={{ name: 'play' }} />
                 すると、
               </UlLi>
               <UlLi>
-                最終的に暗号が<Strong>「1」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                になる。
+                最終的に暗号が<Strong>「1」</Strong>の弁当箱になる。
               </UlLi>
             </Ul>
             <P>どういう計算が起きているか、分かりましたか？</P>
@@ -140,9 +124,8 @@ export default () => (
         content: (
           <>
             <P>
-              今度は暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を使ってみましょう:
+              今度は暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>
+              の弁当箱を使ってみましょう:
             </P>
             {AER.bdlj}
             {AER.ifwb}
@@ -158,16 +141,13 @@ export default () => (
             <P>つまり、</P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                ふたつを埋め込んで
+                暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>
+                の弁当箱ふたつを埋め込んで
                 <H args={{ name: 'play' }} />
                 すると、
               </UlLi>
               <UlLi>
-                最終的に暗号が<Strong>「6」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                になる。
+                最終的に暗号が<Strong>「6」</Strong>の弁当箱になる。
               </UlLi>
             </Ul>
             <P>そろそろどんな計算が起きたかお分かりでしょうか？</P>
@@ -175,12 +155,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            掛け算の
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>掛け算の弁当箱</>,
         content: (
           <>
             <EmojiSeparator emojis={['🍱', '✖️', '️🍱']} />
@@ -201,32 +176,22 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、この
-              <H args={{ name: 'bentoBox' }} />
-              は、
+              まとめると、この弁当箱は、
               <Strong>
                 ふたつの
                 <InlineEmojiBoxesForQuestion />
-                に入っている
-                <H args={{ name: 'bentoBox' }} />
-                の暗号を掛け算してくれます。
+                に入っている弁当箱の暗号を掛け算してくれます。
               </Strong>
             </P>
             {AER.drvu}
             <P>
-              足し算の
-              <H args={{ name: 'bentoBox' }} />
-              は右下に料理が5個ありましたが、こちらは
+              足し算の弁当箱は右下に料理が5個ありましたが、こちらは
               <Strong>右下の料理が4個</Strong>
               しかないのがポイントです。
             </P>
             <P>
               <H args={{ name: 'byTheWay' }} /> 今回も、
-              <Strong>
-                上の
-                <H args={{ name: 'bentoBox' }} />
-                を暗記する必要はありません。
-              </Strong>
+              <Strong>上の弁当箱を暗記する必要はありません。</Strong>
               そのまま読み進めて下さい！
             </P>
           </>
@@ -239,9 +204,7 @@ export default () => (
             <P>
               時間の都合上ここでは紹介できませんが、掛け算以外にも、暗号の
               <Strong>引き算や割り算</Strong>
-              ができる
-              <H args={{ name: 'bentoBox' }} />
-              もあります。
+              ができる弁当箱もあります。
             </P>
             <EmojiSeparator emojis={['➖', '🍱️', '➗']} />
             <P>
@@ -257,8 +220,7 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'bentoBox' }} />
-              に四則演算ができることがわかりましたが、これだと
+              弁当箱に四則演算ができることがわかりましたが、これだと
               <Em>
                 <Strong>普通の電卓</Strong>とさほど変わりません
               </Em>
@@ -266,9 +228,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
             <P>
-              他に何か
-              <H args={{ name: 'bentoBox' }} />
-              にできることはあるのでしょうか？次のページで見ていきます！
+              他に何か弁当箱にできることはあるのでしょうか？次のページで見ていきます！
             </P>
             <NextLessonButton />
           </>

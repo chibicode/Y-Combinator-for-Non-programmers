@@ -319,12 +319,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            予告: 3段の
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>予告: 3段の弁当箱</>,
         content: (
           <>
             <EmojiSeparator emojis={['🍱', '3️⃣', '🍱']} />

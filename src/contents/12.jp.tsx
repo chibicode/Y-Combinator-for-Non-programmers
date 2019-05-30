@@ -22,10 +22,7 @@ export default () => (
           <>
             <P>
               中級で話した「
-              <Strong>
-                <H args={{ name: 'bentoBox' }} />
-                の暗号
-              </Strong>
+              <Strong>弁当箱の暗号</Strong>
               」について忘れてしまった方もいるかもしれないので、復習としてここに法則をもう一度書いておきますね。
             </P>
             <Hr />
@@ -34,12 +31,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            1を足す
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>1を足す弁当箱</>,
         content: (
           <>
             <EmojiSeparator
@@ -53,16 +45,14 @@ export default () => (
               以前紹介した、「
               <Strong>
                 <InlineEmojiBoxesForQuestion />
-                の暗号に1を足す
-                <H args={{ name: 'bentoBox' }} />
+                の暗号に1を足す弁当箱
               </Strong>
               」をご覧ください。
             </P>
             {AER.xgei}
             <P>
-              そしてこちらに、暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox' }} />
-              を用意しました。
+              そしてこちらに、暗号が「<Strong>1</Strong>
+              」の弁当箱を用意しました。
             </P>
             {AER.slyk}
             <P>
@@ -74,9 +64,7 @@ export default () => (
             </P>
             {AER.eemn}
             <P>
-              最終的に暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox' }} />
-              が残りました。
+              最終的に暗号が「<Strong>2</Strong>」の弁当箱が残りました。
             </P>
             {AER.rceu}
             <P>
@@ -102,17 +90,14 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに別の暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox' }} />
-              があります。
+              こちらに別の暗号が「<Strong>1</Strong>」の弁当箱があります。
             </P>
             {AER.lrja}
             <P>
               これを、先ほどの「
               <Strong>
                 <InlineEmojiBoxesForQuestion />
-                の暗号に1を足す
-                <H args={{ name: 'bentoBox' }} />
+                の暗号に1を足す弁当箱
               </Strong>
               」に入れてみます。
             </P>
@@ -142,11 +127,7 @@ export default () => (
             {AER.zuam}
             <P>
               最後に残ったのは、
-              <Strong>
-                暗号が「2」の
-                <H args={{ name: 'bentoBox' }} />
-                ではありません。
-              </Strong>
+              <Strong>暗号が「2」の弁当箱ではありません。</Strong>
               よく似ていますが、違います。
             </P>
             <EmojiSeparator emojis={['❌', '2️⃣', '❌']} />
@@ -283,11 +264,7 @@ export default () => (
             <P>
               でないと、
               <H args={{ name: 'match' }} />や<H args={{ name: 'unmatch' }} />
-              などのパターンが変わってしまい、 「
-              <Strong>
-                1を足す
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
+              などのパターンが変わってしまい、 「<Strong>1を足す弁当箱</Strong>
               」として機能しなくなってしまいます。だから、
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -345,9 +322,8 @@ export default () => (
             </P>
             {AER.rzbq}
             <P>
-              すると、最後に暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox' }} />
-              が残りました。「<Strong>1 + 1 = 2</Strong>」が計算できたわけです。
+              すると、最後に暗号が「<Strong>2</Strong>」の弁当箱が残りました。「
+              <Strong>1 + 1 = 2</Strong>」が計算できたわけです。
             </P>
             {AER.jlet}
             <P>というわけで、まとめに入りましょう！</P>
@@ -393,9 +369,7 @@ export default () => (
           content: (
             <>
               <P>
-                このルールは次のページにある
-                <H args={{ name: 'bentoBox' }} />
-                から
+                このルールは次のページにある弁当箱から
                 <Strong>自動で発動するので、 暗記する必要はありません。</Strong>
                 なんとなく「
                 <Em>こういうルールがあるんだな</Em>
@@ -416,9 +390,8 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🎉', '🥳', '🎉']} />
             <P>
-              次のページからは、
-              <H args={{ name: 'bentoBox' }} />
-              の「<Strong>省略表記</Strong>」について見ていきます。
+              次のページからは、弁当箱の「<Strong>省略表記</Strong>
+              」について見ていきます。
             </P>
             <NextLessonButton />
           </>

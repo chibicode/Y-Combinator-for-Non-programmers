@@ -25,12 +25,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: (
-          <>
-            おやつ入りの
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>おやつ入りの弁当箱</>,
         content: (
           <>
             <P>
@@ -41,8 +36,7 @@ export default () => (
             </P>
             {AER.bxfv}
             <P>
-              この
-              <H args={{ name: 'bentoBox' }} />、
+              この弁当箱、
               <Em>
                 上のほうに
                 <EmojiWithText letter="z" />と<EmojiWithText letter="y" />
@@ -65,14 +59,11 @@ export default () => (
         content: (
           <>
             <P>
-              次に、<Strong>暗号が「0」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を用意します。
+              次に、<Strong>暗号が「0」</Strong>の弁当箱を用意します。
             </P>
             {AER.fhlw}
             <P>
-              こちらを、先ほどの
-              <H args={{ name: 'bentoBox' }} />の
+              こちらを、先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
@@ -91,8 +82,7 @@ export default () => (
             <EmojiSeparator emojis={['🍬', '🤔', '🍩']} />
             <P>というわけで、ここで質問です！</P>
             <P>
-              <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox' }} />を
+              <H args={{ name: 'question' }} /> 上の弁当箱を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
@@ -142,9 +132,7 @@ export default () => (
             <P>
               下の
               <InlineEmojiBoxesForQuestion />
-              の部分に暗号が<Strong>「0」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を埋め込んで
+              の部分に暗号が<Strong>「0」</Strong>の弁当箱を埋め込んで
               <H args={{ name: 'play' }} />
               すると、
               <Strong>
@@ -157,9 +145,7 @@ export default () => (
             <P>
               では、
               <InlineEmojiBoxesForQuestion />
-              に他の暗号の
-              <H args={{ name: 'bentoBox' }} />
-              を埋め込んだらどうなるのでしょう？確かめてみましょう。
+              に他の暗号の弁当箱を埋め込んだらどうなるのでしょう？確かめてみましょう。
             </P>
           </>
         )
@@ -175,22 +161,18 @@ export default () => (
         content: (
           <>
             <P>
-              今度は、<Strong>暗号が「1」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を用意し、
+              今度は、<Strong>暗号が「1」</Strong>の弁当箱を用意し、
             </P>
             {AER.yehl}
             <P>
-              先ほどの
-              <H args={{ name: 'bentoBox' }} />の
+              先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
             {AER.mrky}
             <P>というわけで、ここで質問です！</P>
             <P>
-              <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox' }} />を
+              <H args={{ name: 'question' }} /> 上の弁当箱を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
@@ -238,25 +220,20 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>ここまでをまとめると:</InlineHeader> 下の
-              <H args={{ name: 'bentoBox' }} />の
+              <InlineHeader>ここまでをまとめると:</InlineHeader> 下の弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に…
             </P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                を埋め込むと、
+                暗号が<Strong>「0」</Strong>の弁当箱を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="y" />
                   が残る
                 </Strong>
               </UlLi>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                を埋め込むと、
+                暗号が<Strong>「1」</Strong>の弁当箱を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="z" />
                   が残る
@@ -283,22 +260,18 @@ export default () => (
         content: (
           <>
             <P>
-              最後に、<Strong>暗号が「2」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を用意し、
+              最後に、<Strong>暗号が「2」</Strong>の弁当箱を用意し、
             </P>
             {AER.kupy}
             <P>
-              先ほどの
-              <H args={{ name: 'bentoBox' }} />の
+              先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
             {AER.qdkf}
             <P>というわけで、ここで質問です！</P>
             <P>
-              <H args={{ name: 'question' }} /> 上の
-              <H args={{ name: 'bentoBox' }} />を
+              <H args={{ name: 'question' }} /> 上の弁当箱を
               <H args={{ name: 'play' }} />
               したら最後に残るのは「
               <Strong>
@@ -346,34 +319,27 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>ここまでをまとめると:</InlineHeader> 下の
-              <H args={{ name: 'bentoBox' }} />の
+              <InlineHeader>ここまでをまとめると:</InlineHeader> 下の弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に…
             </P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「0」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                を埋め込むと、
+                暗号が<Strong>「0」</Strong>の弁当箱を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="y" />
                   が残る
                 </Strong>
               </UlLi>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                を埋め込むと、
+                暗号が<Strong>「1」</Strong>の弁当箱を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="z" />
                   が残る
                 </Strong>
               </UlLi>
               <UlLi>
-                暗号が<Strong>「2」</Strong>の
-                <H args={{ name: 'bentoBox' }} />
-                を埋め込むと、
+                暗号が<Strong>「2」</Strong>の弁当箱を埋め込むと、
                 <Strong>
                   <EmojiWithText letter="z" />
                   が残る
@@ -388,24 +354,16 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            暗号が「0」かどうか判別できる
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>暗号が「0」かどうか判別できる弁当箱</>,
         content: (
           <>
             <P>
-              実は先ほどの
-              <H args={{ name: 'bentoBox' }} />
-              は、
+              実は先ほどの弁当箱は、
               <Strong>
                 <InlineEmojiBoxesForQuestion />
                 の暗号が「0」かどうかを判別できる
               </Strong>
-              <H args={{ name: 'bentoBox' }} />
-              なのです。
+              弁当箱なのです。
             </P>
             <H args={{ name: 'isZeroReview' }} />
             {AER.nlxe}
@@ -431,9 +389,7 @@ export default () => (
             </P>
             <Hr />
             <P>
-              たとえば次の
-              <H args={{ name: 'bentoBox' }} />
-              だと、先ほど
+              たとえば次の弁当箱だと、先ほど
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>
@@ -457,19 +413,12 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'bentoBox' }} />
-            は「条件分岐」もできる
-          </>
-        ),
+        title: <>弁当箱は「条件分岐」もできる</>,
         content: (
           <>
             <P>
               今回紹介したのは、「<Em>暗号が0か、それ以外か</Em>
-              」を判別し、それぞれ違う結果を出す
-              <H args={{ name: 'bentoBox' }} />
-              でした。
+              」を判別し、それぞれ違う結果を出す弁当箱でした。
             </P>
             <EmojiSeparator emojis={['0️⃣', '❓', '🔢']} />
             <P>
@@ -480,19 +429,14 @@ export default () => (
               )」と言ったほうが分かりやすいかもしれません。
             </P>
             <P>
-              ここでは時間の都合上紹介できませんでしたが、
-              <H args={{ name: 'bentoBox' }} />
-              を使えば、さまざまな条件分岐を表現することができます。たとえば「
+              ここでは時間の都合上紹介できませんでしたが、弁当箱を使えば、さまざまな条件分岐を表現することができます。たとえば「
               <Em>Aの暗号はBの暗号より大きいか、小さいか、それとも等しいか</Em>
-              」を判別できる
-              <H args={{ name: 'bentoBox' }} />
-              もあります。
+              」を判別できる弁当箱もあります。
             </P>
             <EmojiSeparator emojis={['🅰️', '❓', '🅱️']} />
             <P>
-              何が言いたいかというと、
-              <H args={{ name: 'bentoBox' }} />
-              は「<Strong>四則演算だけでなく、条件分岐もできる</Strong>
+              何が言いたいかというと、弁当箱は「
+              <Strong>四則演算だけでなく、条件分岐もできる</Strong>
               」ということです。
             </P>
           </>
@@ -516,8 +460,7 @@ export default () => (
               ので、条件分岐をしなければ正しい料金は計算できません。
             </P>
             <P>
-              <H args={{ name: 'bentoBox' }} />
-              は四則演算も条件分岐もできるので、カラオケの料金といった複雑な計算も(工夫すれば)できてしまうのです。
+              弁当箱は四則演算も条件分岐もできるので、カラオケの料金といった複雑な計算も(工夫すれば)できてしまうのです。
             </P>
           </>
         )
@@ -529,10 +472,7 @@ export default () => (
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
             <P>
               四則演算や条件分岐ができるだけでも十分すごいですが、
-              <Strong>
-                <H args={{ name: 'bentoBox' }} />
-                はもっと複雑な処理を行うことができます
-              </Strong>
+              <Strong>弁当箱はもっと複雑な処理を行うことができます</Strong>
               。中級編最後となる次のページで見ていきましょう！
             </P>
             <NextLessonButton />

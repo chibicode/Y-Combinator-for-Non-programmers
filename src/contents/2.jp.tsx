@@ -25,8 +25,7 @@ export default () => (
               の法則 <Emoji>🤫</Emoji> を紹介していきましょう。
             </P>
             <P>
-              ここでは、前回のはじめに登場した
-              <H args={{ name: 'bentoBox' }} />(<Strong>例その1</Strong>
+              ここでは、前回のはじめに登場した弁当箱(<Strong>例その1</Strong>
               )を使って説明します:
             </P>
             {AER.uqwm}
@@ -234,9 +233,7 @@ export default () => (
               ]}
             />
             <P>
-              たとえば、前回にもあったマクドナルド風の
-              <H args={{ name: 'bentoBox' }} />
-              は、
+              たとえば、前回にもあったマクドナルド風の弁当箱は、
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               が一致しません。
@@ -324,12 +321,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            予告: 4品の
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>予告: 4品の弁当箱</>,
         content: (
           <>
             <P>

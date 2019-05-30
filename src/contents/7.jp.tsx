@@ -19,15 +19,12 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              前回紹介したこちらの
-              <H args={{ name: 'bentoBox' }} />
-              ですが、
+              前回紹介したこちらの弁当箱ですが、
             </P>
             {AER.qmof}
             <P>
-              今度は暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              と組み合わせてみましょう。
+              今度は暗号が<Strong>「1」</Strong>
+              の弁当箱と組み合わせてみましょう。
             </P>
             {AER.slyk}
             <P>
@@ -71,23 +68,14 @@ export default () => (
       },
       {
         type: 'summary',
-        title: (
-          <>
-            1を足す
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>1を足す弁当箱</>,
         content: (
           <>
             <P>
-              結論から言うと、この
-              <H args={{ name: 'bentoBox' }} />
-              には、
+              結論から言うと、この弁当箱には、
               <Strong>
                 <InlineEmojiBoxesForQuestion />
-                に入っている
-                <H args={{ name: 'bentoBox' }} />
-                の暗号に「1」を加える効果があります。
+                に入っている弁当箱の暗号に「1」を加える効果があります。
               </Strong>
             </P>
             {AER.xgei}
@@ -110,11 +98,7 @@ export default () => (
             />
             <P>
               <H args={{ name: 'byTheWay' }} />{' '}
-              <Strong>
-                上の
-                <H args={{ name: 'bentoBox' }} />
-                を暗記する必要はありません。
-              </Strong>
+              <Strong>上の弁当箱を暗記する必要はありません。</Strong>
               そのまま読み進めて下さい！
             </P>
           </>
@@ -135,10 +119,7 @@ export default () => (
             <EmojiSeparator emojis={['🍱', '➕', '️1️⃣']} />
             <P>
               他にはどんな計算ができるのでしょう？たとえば、
-              <Strong>
-                <H args={{ name: 'bentoBox' }} />{' '}
-                同士の足し算はできるのでしょうか？
-              </Strong>
+              <Strong>弁当箱 同士の足し算はできるのでしょうか？</Strong>
             </P>
             <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
             <P>さっそく検証してみましょう！</P>
@@ -150,21 +131,15 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              があります:
+              こちらに暗号が<Strong>「1」</Strong>の弁当箱があります:
             </P>
             {AER.bpza}
             <P>
-              そして、こちらには暗号が<Strong>「2」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              があります:
+              そして、こちらには暗号が<Strong>「2」</Strong>の弁当箱があります:
             </P>
             {AER.vrvl}
             <P>
-              このふたつの
-              <H args={{ name: 'bentoBox' }} />
-              の暗号を足して、<Strong>1 + 2 = 3</Strong>
+              このふたつの弁当箱の暗号を足して、<Strong>1 + 2 = 3</Strong>
               を計算することはできるのでしょうか？
             </P>
             <EmojiSeparator emojis={['1️⃣', '➕', '️2️⃣']} />
@@ -187,18 +162,14 @@ export default () => (
             <P>
               こちらに
               <InlineEmojiBoxesForQuestion />
-              がふたつある
-              <H args={{ name: 'bentoBox' }} />
-              があります:
+              がふたつある弁当箱があります:
             </P>
             {AER.goif}
             <P>
               <InlineEmojiBoxesForQuestion />
-              の部分に、先ほどの暗号が<Strong>「1」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              と暗号が<Strong>「2」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              を埋め込みます。(<Em>黄色</Em>の部分)
+              の部分に、先ほどの暗号が<Strong>「1」</Strong>の弁当箱と暗号が
+              <Strong>「2」</Strong>の弁当箱を埋め込みます。(<Em>黄色</Em>
+              の部分)
             </P>
             {AER.hdwy}
             <P>
@@ -255,16 +226,12 @@ export default () => (
                 <EmojiForLetter letter="g" />
                 が3個
               </Em>
-              )の
-              <H args={{ name: 'bentoBox' }} />
-              と暗号が<Strong>「1」</Strong> (右下に
+              )の弁当箱と暗号が<Strong>「1」</Strong> (右下に
               <Em>
                 <EmojiForLetter letter="f" />
                 が1個
               </Em>
-              )の
-              <H args={{ name: 'bentoBox' }} />
-              を埋め込んでみます。
+              )の弁当箱を埋め込んでみます。
             </P>
             <P>
               <H args={{ name: 'pressPlay' }} />
@@ -292,25 +259,17 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、この
-              <H args={{ name: 'bentoBox' }} />
-              は、
+              まとめると、この弁当箱は、
               <Strong>
                 ふたつの
                 <InlineEmojiBoxesForQuestion />
-                に入っている
-                <H args={{ name: 'bentoBox' }} />
-                の暗号を足し算してくれます。
+                に入っている弁当箱の暗号を足し算してくれます。
               </Strong>
             </P>
             {AER.bxdf}
             <P>
               <H args={{ name: 'byTheWay' }} /> 今回も、
-              <Strong>
-                上の
-                <H args={{ name: 'bentoBox' }} />
-                を暗記する必要はありません。
-              </Strong>
+              <Strong>上の弁当箱を暗記する必要はありません。</Strong>
               そのまま読み進めて下さい！
             </P>
           </>
@@ -328,11 +287,7 @@ export default () => (
               ができてしまうんです。
             </P>
             <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
-            <P>
-              実は、
-              <H args={{ name: 'bentoBox' }} />
-              ができるのは足し算だけではありません。
-            </P>
+            <P>実は、弁当箱ができるのは足し算だけではありません。</P>
             <NextLessonButton />
           </>
         )

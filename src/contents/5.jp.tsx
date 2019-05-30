@@ -293,8 +293,7 @@ export default () => (
           <>
             <P>
               <Strong>
-                この
-                <H args={{ name: 'bentoBox' }} />の
+                この弁当箱の
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
                 のペアの中には、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
                 のペアが入っています。

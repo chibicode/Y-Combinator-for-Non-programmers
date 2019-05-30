@@ -74,9 +74,7 @@ export default () => (
             {AER.ggxt}
             <P>
               <Strong>
-                なんと、一周して最初と同じ
-                <H args={{ name: 'bentoBox' }} />
-                に戻ってしまいました！
+                なんと、一周して最初と同じ弁当箱に戻ってしまいました！
               </Strong>
             </P>
             <P>
@@ -122,15 +120,10 @@ export default () => (
             </P>
             {AER.gxuj}
             <P>
-              <H args={{ name: 'question' }} /> この
-              <H args={{ name: 'bentoBox' }} />を
+              <H args={{ name: 'question' }} /> この弁当箱を
               <H args={{ name: 'fastForward' }} />
               すると、先ほどと同じように
-              <Strong>
-                一周して同じ
-                <H args={{ name: 'bentoBox' }} />
-                に戻る。
-              </Strong>
+              <Strong>一周して同じ弁当箱に戻る。</Strong>
               <H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="no" />
@@ -203,10 +196,7 @@ export default () => (
             <P>
               <InlineEmojiBoxesForQuestion />
               には何を入れてもいいので、たとえば以前紹介した「
-              <Strong>
-                1を足す
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
+              <Strong>1を足す弁当箱</Strong>
               」を入れることもできます。
             </P>
             {AER.nehp}
@@ -220,10 +210,7 @@ export default () => (
               これを
               <H args={{ name: 'play' }} />
               すれば、先ほどと同じように、
-              <Strong>
-                1を足す
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
+              <Strong>1を足す弁当箱</Strong>
               がどんどん一番下に追加されていきます。(時間の都合上、ここでは省略します。)
             </P>
             <P>
@@ -242,16 +229,9 @@ export default () => (
               しかし、無限に続く計算ができても、あまり意味はありません。1を無限に足し算しても、何の役にも立ちません。
             </P>
             <P>
-              求められているのは、「無限に何かを繰り返す
-              <H args={{ name: 'bentoBox' }} />
-              」ではなく、「
-              <Strong>
-                ある条件を満たすまで、何かを繰り返す
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
-              」です。そういう
-              <H args={{ name: 'bentoBox' }} />
-              があれば、役に立ちます。
+              求められているのは、「無限に何かを繰り返す弁当箱」ではなく、「
+              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
+              」です。そういう弁当箱があれば、役に立ちます。
             </P>
             <EmojiSeparator emojis={['❓', '🍱', '❓']} />
           </>
@@ -296,13 +276,9 @@ export default () => (
             <P>
               さきほどのような、
               <Em>
-                「無限に何かを繰り返す」
-                <H args={{ name: 'bentoBox' }} />
-                では、このような計算は不可能です。このような計算をするには、
+                「無限に何かを繰り返す」弁当箱では、このような計算は不可能です。このような計算をするには、
                 <Strong>
-                  「ある条件を満たすまで、何かを繰り返す
-                  <H args={{ name: 'bentoBox' }} />
-                  」を使わないといけません。
+                  「ある条件を満たすまで、何かを繰り返す弁当箱」を使わないといけません。
                 </Strong>
               </Em>
             </P>
@@ -311,9 +287,7 @@ export default () => (
               では、
               <Em>
                 <Strong>
-                  どんな
-                  <H args={{ name: 'bentoBox' }} />
-                  を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのでしょう？
+                  どんな弁当箱を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのでしょう？
                 </Strong>
               </Em>
             </P>
@@ -325,9 +299,7 @@ export default () => (
         content: (
           <>
             <P>
-              どんな
-              <H args={{ name: 'bentoBox' }} />
-              を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのか。その答えは上級編にあります。
+              どんな弁当箱を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのか。その答えは上級編にあります。
             </P>
             <P>
               そして上級編ではついに、記事の題名にもある「

@@ -18,12 +18,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: (
-          <>
-            複雑な
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>複雑な弁当箱</>,
         content: (
           <>
             <P>
@@ -33,9 +28,7 @@ export default () => (
             </P>
             {AER.gopk}
             <P>
-              今まで見たことがないくらい複雑な
-              <H args={{ name: 'bentoBox' }} />
-              ですね。これは、どういう効果があるのでしょうか？
+              今まで見たことがないくらい複雑な弁当箱ですね。これは、どういう効果があるのでしょうか？
             </P>
             <P>
               <H args={{ name: 'yesNoQuiz' }} />
@@ -54,14 +47,11 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに、暗号が「<Strong>2</Strong>」の
-              <H args={{ name: 'bentoBox' }} />
-              を用意しました。
+              こちらに、暗号が「<Strong>2</Strong>」の弁当箱を用意しました。
             </P>
             {AER.imgp}
             <P>
-              これを、先ほどの
-              <H args={{ name: 'bentoBox' }} />の
+              これを、先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に埋め込んでみます。
             </P>
@@ -90,9 +80,7 @@ export default () => (
             </P>
             {AER.ccon}
             <P>
-              最後に残ったのは、暗号が「<Strong>1</Strong>」の
-              <H args={{ name: 'bentoBox' }} />
-              でした。
+              最後に残ったのは、暗号が「<Strong>1</Strong>」の弁当箱でした。
             </P>
             {AER.npfx}
             <P>
@@ -104,21 +92,14 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            1を引く
-            <H args={{ name: 'bentoBox' }} />
-          </>
-        ),
+        title: <>1を引く弁当箱</>,
         content: (
           <>
             {AER.pnob}
             <P>
               つまり、これは
               <InlineEmojiBoxesForQuestion />
-              の暗号から「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox' }} />
-              なのです。
+              の暗号から「<Strong>1を引く</Strong>」弁当箱なのです。
             </P>
             <EmojiSeparator
               nodes={[
@@ -127,11 +108,7 @@ export default () => (
                 <Emoji>1️⃣</Emoji>
               ]}
             />
-            <P>
-              足し算や掛け算の
-              <H args={{ name: 'bentoBox' }} />
-              より、かなり複雑ですよね。
-            </P>
+            <P>足し算や掛け算の弁当箱より、かなり複雑ですよね。</P>
           </>
         )
       },
@@ -215,9 +192,8 @@ export default () => (
               に変わりました。
             </P>
             <P>
-              これを行わないと、「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox' }} />
-              として機能しません。ここでは詳しく書きませんが、引き算とは全然違う答えが出てしまうのです。
+              これを行わないと、「<Strong>1を引く</Strong>
+              」弁当箱として機能しません。ここでは詳しく書きませんが、引き算とは全然違う答えが出てしまうのです。
             </P>
             <Hr />
             <P>
@@ -227,19 +203,13 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'bentoBox' }} />
-            を「省略表記」できないか？
-          </>
-        ),
+        title: <>弁当箱を「省略表記」できないか？</>,
         content: (
           <>
             {AER.zaoc}
             <P>
-              上の
-              <H args={{ name: 'bentoBox' }} />
-              は、「<Strong>2 - 1</Strong>」を計算できることがわかりましたが、
+              上の弁当箱は、「<Strong>2 - 1</Strong>
+              」を計算できることがわかりましたが、
               <Em>
                 少し複雑すぎて、ひと目見て何が起きているかわかりにくいですよね。
               </Em>
@@ -248,9 +218,7 @@ export default () => (
             <P>
               <InlineHeader>疑問:</InlineHeader>{' '}
               <Em>
-                上の
-                <H args={{ name: 'bentoBox' }} />
-                を何らかの手法で「<Strong>省略表記</Strong>
+                上の弁当箱を何らかの手法で「<Strong>省略表記</Strong>
                 」することで、何が起きているをかわかりやすくする方法はないでしょうか？
               </Em>
             </P>
@@ -264,14 +232,11 @@ export default () => (
             <P>
               まず、
               <Em>
-                暗号の
-                <H args={{ name: 'bentoBox' }} />を<Strong>数字で</Strong>
+                暗号の弁当箱を<Strong>数字で</Strong>
                 表示してみます
               </Em>
               。たとえば、こちらは
-              <Strong>暗号が「2」</Strong>の
-              <H args={{ name: 'bentoBox' }} />
-              なので、
+              <Strong>暗号が「2」</Strong>の弁当箱なので、
             </P>
             {AER.imgp}
             <P>このように数字で表示してみます。</P>
@@ -287,11 +252,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Emoji>2️⃣</Emoji>の
-              <H args={{ name: 'bentoBox' }} />
-              を、先ほどの「<Strong>1を引く</Strong>」
-              <H args={{ name: 'bentoBox' }} />
-              に入れてみました。
+              <Emoji>2️⃣</Emoji>の弁当箱を、先ほどの「<Strong>1を引く</Strong>
+              」弁当箱に入れてみました。
             </P>
             {AER.uqts}
             <P>
@@ -369,14 +331,10 @@ export default () => (
             <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
             <P>
               <H args={{ name: 'fastForward' }} />
-              する前に、先ほどの
-              <H args={{ name: 'bentoBox' }} />
-              を省略表記してみましょう。
+              する前に、先ほどの弁当箱を省略表記してみましょう。
             </P>
             <P>
-              まず、上の部分は「<Strong>1</Strong>」の暗号の
-              <H args={{ name: 'bentoBox' }} />
-              なので、
+              まず、上の部分は「<Strong>1</Strong>」の暗号の弁当箱なので、
             </P>
             {AER.qgun}
             <P>
@@ -389,17 +347,12 @@ export default () => (
                 <EmojiWithText letter="i" />
               </Strong>
               と、その下に「
-              <Strong>
-                1を引く
-                <H args={{ name: 'bentoBox' }} />
-              </Strong>
+              <Strong>1を引く弁当箱</Strong>
               」があります。
             </P>
             {AER.qifg}
             <P>
-              この場合、「1を引く
-              <H args={{ name: 'bentoBox' }} />
-              」が
+              この場合、「1を引く弁当箱」が
               <Strong>
                 <EmojiWithText letter="i" />
                 の真下にある
@@ -440,9 +393,7 @@ export default () => (
               ]}
             />
             <P>
-              もともとの
-              <H args={{ name: 'bentoBox' }} />
-              は複雑でしたが、
+              もともとの弁当箱は複雑でしたが、
               <Strong>
                 省略表記をすることで、何が起きているかがひと目で分かるようになった
               </Strong>
@@ -459,11 +410,7 @@ export default () => (
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
               次のページでは、
-              <Strong>
-                条件分岐の
-                <H args={{ name: 'bentoBox' }} />
-                を省略表記していきます。
-              </Strong>
+              <Strong>条件分岐の弁当箱を省略表記していきます。</Strong>
               そして、中級編の最後で話した「<Strong>繰り返し処理</Strong>
               」について、もう一度検証していきます。
             </P>
