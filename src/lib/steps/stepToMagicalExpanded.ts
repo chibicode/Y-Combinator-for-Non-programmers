@@ -17,9 +17,8 @@ import {
   MagicalVariable,
   StepMagicalVariable
 } from 'src/types/ExpressionTypes'
-import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
-import magicalVariableName from 'src/lib/magicalVariableName'
+import buildMagicalStepFunction from 'src/lib/buildMagicalStepFunction'
 
 function toMagicalExpanded(
   e: VariableShorthandBinary
@@ -78,61 +77,9 @@ function toMagicalExpanded(e: Expression): StepChild<'magicalExpanded'> {
 export default function stepToMagicalExpanded(
   e: ExecutableCallMagical
 ): ExecutableStepCallRegular<'magicalExpanded'> {
-  const arg: StepVariable<'magicalExpanded'> = {
-    ...e.func,
-    name: magicalVariableName,
-    isMagical: false,
-    highlightType: 'highlighted',
-    topLeftBadgeType: 'none',
-    bottomRightBadgeType: 'none'
-  }
-  const body: StepConditional<'magicalExpanded'> = {
-    type: 'conditional',
-    checkType: 'isZero',
-    condition: arg,
-    priority: 0,
-    state: 'default',
-    trueCase: {
-      ...buildExpressionFromParams({
-        shorthandNumber: 1
-      }),
-      highlightType: 'highlighted'
-    },
-    falseCase: {
-      type: 'call',
-      state: 'default',
-      priority: 0,
-      func: {
-        ...buildExpressionFromParams('question'),
-        highlightType: 'highlighted'
-      },
-      arg: {
-        type: 'call',
-        state: 'default',
-        priority: 0,
-        func: {
-          ...e.func,
-          highlightType: 'highlighted',
-          topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'none'
-        },
-        arg: {
-          ...arg,
-          shorthandUnary: 'pred'
-        }
-      }
-    }
-  }
-
-  const func: StepFunction<'magicalExpanded'> = {
-    type: 'function',
-    arg,
-    body
-  }
-
   const result: ExecutableStepCallRegular<'magicalExpanded'> = {
     state: 'magicalExpanded',
-    func,
+    func: buildMagicalStepFunction(),
     type: 'call',
     priority: 0,
     arg: toMagicalExpanded(e.arg)
