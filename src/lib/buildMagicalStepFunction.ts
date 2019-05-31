@@ -8,23 +8,26 @@ import {
 } from 'src/types/ExpressionTypes'
 
 const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
-  const arg: StepVariable<'magicalExpanded'> = {
-    type: 'variable',
-    bound: false,
-    emphasizePriority: true,
-    argPriorityAgg: [],
-    funcPriorityAgg: [],
-    name: magicalVariableName,
-    isMagical: false,
-    highlightType: 'highlighted',
-    topLeftBadgeType: 'none',
-    bottomRightBadgeType: 'none'
+  const variable = (bound: boolean): StepVariable<'magicalExpanded'> => {
+    return {
+      type: 'variable',
+      bound,
+      emphasizePriority: true,
+      argPriorityAgg: [],
+      funcPriorityAgg: [],
+      name: magicalVariableName,
+      isMagical: false,
+      highlightType: 'highlighted',
+      topLeftBadgeType: 'none',
+      bottomRightBadgeType: 'none'
+    }
   }
+  const arg: StepVariable<'magicalExpanded'> = variable(false)
 
   const body: StepConditional<'magicalExpanded'> = {
     type: 'conditional',
     checkType: 'isZero',
-    condition: arg,
+    condition: variable(true),
     priority: 0,
     state: 'default',
     trueCase: {
@@ -47,7 +50,7 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
         priority: 0,
         func: {
           type: 'variable',
-          bound: false,
+          bound: true,
           emphasizePriority: false,
           name: 'magical',
           argPriorityAgg: [],
@@ -57,7 +60,7 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
           bottomRightBadgeType: 'none'
         },
         arg: {
-          ...arg,
+          ...variable(true),
           shorthandUnary: 'pred'
         }
       }

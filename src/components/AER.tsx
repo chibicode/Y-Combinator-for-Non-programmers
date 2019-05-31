@@ -1853,6 +1853,7 @@ export default {
       nextIteration
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={1}
     />
   ),
   hzlj: (

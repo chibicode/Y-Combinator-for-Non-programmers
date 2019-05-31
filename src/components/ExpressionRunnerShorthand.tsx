@@ -105,6 +105,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   expressionContainer,
   initialState,
   lastAllowedExpressionState,
+  lastAllowedExpressionStateAfterIterations,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
   showPriorities,
@@ -125,6 +126,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
+  lastAllowedExpressionStateAfterIterations?: number
   nextIteration?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   speed: number
@@ -155,6 +157,9 @@ export const ExpressionRunnerPlayButtonOnly = ({
       (speed === 1 ? 'hiddenInitialPausedOnly' : 'hiddenInitial')
     }
     lastAllowedExpressionState={lastAllowedExpressionState}
+    lastAllowedExpressionStateAfterIterations={
+      lastAllowedExpressionStateAfterIterations
+    }
     initializeInstructions={
       nextIteration
         ? [

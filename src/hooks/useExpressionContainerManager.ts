@@ -5,12 +5,10 @@ import { ExpressionRunnerProps } from 'src/components/ExpressionRunner'
 
 const initializeExpressionManager = ({
   initializeInstructions,
-  maxStepsAllowed,
   resetIndex,
   expressionContainerManager
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
-  maxStepsAllowed: ExpressionRunnerProps['maxStepsAllowed']
   resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainerManager: ExpressionContainerManager
 }) => {
@@ -45,29 +43,24 @@ const initializeExpressionManager = ({
       expressionContainerManager.currentIndex
   }
 
-  if (maxStepsAllowed) {
-    expressionContainerManager.maximumIndex =
-      expressionContainerManager.currentIndex + maxStepsAllowed
-  }
-
   return expressionContainerManager
 }
 
 const useExpressionContainerManager = ({
   initializeInstructions,
-  maxStepsAllowed,
   resetIndex,
   expressionContainer,
   maxAllowedDefaultStateCount,
   lastAllowedExpressionState,
+  lastAllowedExpressionStateAfterIterations,
   showAllShowSteps,
   skipAlphaConvert
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
-  maxStepsAllowed: ExpressionRunnerProps['maxStepsAllowed']
   resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainer: SteppedExpressionContainer
   lastAllowedExpressionState?: ExpressionRunnerProps['lastAllowedExpressionState']
+  lastAllowedExpressionStateAfterIterations?: number
   maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
@@ -84,12 +77,12 @@ const useExpressionContainerManager = ({
         showAllShowSteps,
         skipAlphaConvert,
         lastAllowedExpressionState,
+        lastAllowedExpressionStateAfterIterations,
         maxAllowedDefaultStateCount
       }
     })
     expressionContainerManager = initializeExpressionManager({
       initializeInstructions,
-      maxStepsAllowed,
       resetIndex,
       expressionContainerManager
     })

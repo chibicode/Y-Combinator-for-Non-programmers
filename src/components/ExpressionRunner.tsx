@@ -58,6 +58,7 @@ export interface ExpressionRunnerProps {
   initializeInstructions: readonly InitializeInstruction[]
   maxStepsAllowed?: number
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
+  lastAllowedExpressionStateAfterIterations?: number
   maxAllowedDefaultStateCount?: number
   containerSize: ContainerProps['size']
   resetIndex: boolean
@@ -194,6 +195,7 @@ const ExpressionRunner = ({
   caption,
   expressionContainer,
   lastAllowedExpressionState,
+  lastAllowedExpressionStateAfterIterations,
   maxAllowedDefaultStateCount,
   hideControls,
   explanationsVisibility,
@@ -205,7 +207,6 @@ const ExpressionRunner = ({
   skipAlphaConvert,
   hideBottomRightBadges,
   initializeInstructions,
-  maxStepsAllowed,
   resetIndex,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
@@ -222,10 +223,10 @@ const ExpressionRunner = ({
   } = useExpressionContainerManager({
     expressionContainer,
     lastAllowedExpressionState,
+    lastAllowedExpressionStateAfterIterations,
     showAllShowSteps,
     skipAlphaConvert,
     initializeInstructions,
-    maxStepsAllowed,
     resetIndex,
     maxAllowedDefaultStateCount
   })
@@ -299,8 +300,6 @@ const ExpressionRunner = ({
                   expressionContainerManagerState.expressionContainer
                 }
                 isDone={isDone}
-                currentStep={expressionContainerManagerState.currentStep}
-                currentSubstep={expressionContainerManagerState.currentSubstep}
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
               />

@@ -15,8 +15,6 @@ import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
   isDone: boolean
-  currentStep: number
-  currentSubstep: number
   isPlaying: boolean
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
