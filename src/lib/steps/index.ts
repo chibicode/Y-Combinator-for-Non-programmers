@@ -27,9 +27,6 @@ export {
   default as stepToShorthandBinaryResult
 } from 'src/lib/steps/stepToShorthandBinaryResult'
 export {
-  default as stepToBetaReduceUnaryExecuted
-} from 'src/lib/steps/stepToBetaReduceUnaryExecuted'
-export {
   default as stepToConditionalExecuted
 } from 'src/lib/steps/stepToConditionalExecuted'
 export {

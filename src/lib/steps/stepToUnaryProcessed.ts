@@ -10,14 +10,24 @@ import {
   VariableExpression
 } from 'src/types/ExpressionTypes'
 
-function toUnaryProcessed(e: VariableExpression): StepVariable<'default'>
-function toUnaryProcessed(e: FunctionExpression): StepFunction<'default'>
-function toUnaryProcessed(e: CallExpression): NonExecutableStepCall<'default'>
-function toUnaryProcessed(
+export default function stepToUnaryProcessed(
+  e: VariableExpression
+): StepVariable<'default'>
+export default function stepToUnaryProcessed(
+  e: FunctionExpression
+): StepFunction<'default'>
+export default function stepToUnaryProcessed(
+  e: CallExpression
+): NonExecutableStepCall<'default'>
+export default function stepToUnaryProcessed(
   e: VariableExpression | FunctionExpression
 ): StepVariable<'default'> | StepFunction<'default'>
-function toUnaryProcessed(e: Expression): StepChild<'default'>
-function toUnaryProcessed(e: Expression): StepChild<'default'> {
+export default function stepToUnaryProcessed(
+  e: Expression
+): StepChild<'default'>
+export default function stepToUnaryProcessed(
+  e: Expression
+): StepChild<'default'> {
   if (isVariable(e)) {
     if (e.shorthandUnary && e.shorthandNumber !== undefined) {
       return {
@@ -39,29 +49,23 @@ function toUnaryProcessed(e: Expression): StepChild<'default'> {
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toUnaryProcessed(e.arg),
-      body: toUnaryProcessed(e.body)
+      arg: stepToUnaryProcessed(e.arg),
+      body: stepToUnaryProcessed(e.body)
     }
   } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
-      arg: toUnaryProcessed(e.arg),
-      func: toUnaryProcessed(e.func)
+      arg: stepToUnaryProcessed(e.arg),
+      func: stepToUnaryProcessed(e.func)
     }
   } else {
     return {
       ...e,
       state: 'default',
-      condition: toUnaryProcessed(e.condition),
-      trueCase: toUnaryProcessed(e.trueCase),
-      falseCase: toUnaryProcessed(e.falseCase)
+      condition: stepToUnaryProcessed(e.condition),
+      trueCase: stepToUnaryProcessed(e.trueCase),
+      falseCase: stepToUnaryProcessed(e.falseCase)
     }
   }
-}
-
-export default function stepToUnaryProcessed(
-  e: Expression
-): StepChild<'default'> {
-  return toUnaryProcessed(e)
 }
