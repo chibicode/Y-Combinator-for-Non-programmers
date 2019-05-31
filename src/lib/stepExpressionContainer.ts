@@ -33,7 +33,9 @@ import {
   stepToCaseProcessed,
   stepToCaseOnly,
   stepToMagicalExpanded,
-  stepToDefault
+  stepToDefault,
+  stepToShowExecutableUnary,
+  stepToUnaryProcessed
 } from 'src/lib/steps'
 import {
   ContainerWithState,
@@ -178,9 +180,13 @@ const stepShorthand = (
 const stepRegular = (
   e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
-  matchExists?: boolean
+  matchExists?: boolean,
+  executableUnaryExists?: boolean
 ): {
-  nextExpression: ExecutableCall | StepChild<'default'>
+  nextExpression:
+    | ExecutableCall
+    | StepChild<'default'>
+    | StepChild<'showExecutableUnary'>
   matchExists?: boolean
   executableUnaryExists?: boolean
   previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
@@ -288,28 +294,30 @@ const stepRegular = (
       }
     }
     case 'betaReducePreviewAfter': {
-      // if (executableUnaryExists) {
-      //   return {
-      //     nextExpression: stepToBetaReduceUnaryExecuted(e),
-      //     previouslyChangedExpressionState: 'betaReducePreviewUnaryExecuted'
-      //   }
-      // } else {
       return {
         nextExpression: stepToBetaReducePreviewCrossed(e),
-        previouslyChangedExpressionState: 'betaReducePreviewCrossed'
+        previouslyChangedExpressionState: 'betaReducePreviewCrossed',
+        executableUnaryExists
       }
-      // }
     }
     case 'betaReducePreviewUnaryExecuted': {
       return {
         nextExpression: stepToBetaReducePreviewCrossed(e),
-        previouslyChangedExpressionState: 'betaReducePreviewCrossed'
+        previouslyChangedExpressionState: 'betaReducePreviewCrossed',
+        executableUnaryExists
       }
     }
     case 'betaReducePreviewCrossed': {
-      return {
-        nextExpression: removeCrossed(e),
-        previouslyChangedExpressionState: 'default'
+      if (executableUnaryExists) {
+        return {
+          nextExpression: stepToShowExecutableUnary(e),
+          previouslyChangedExpressionState: 'showExecutableUnary'
+        }
+      } else {
+        return {
+          nextExpression: removeCrossed(e),
+          previouslyChangedExpressionState: 'default'
+        }
       }
     }
     default: {
@@ -331,6 +339,15 @@ const runStep = (
       ...e,
       expression: processUnaryNumber(e.expression),
       containerState: 'done'
+    }
+  }
+
+  if (e.previouslyChangedExpressionState === 'showExecutableUnary') {
+    return {
+      ...e,
+      expression: stepToUnaryProcessed(e.expression),
+      previouslyChangedExpressionState: 'default',
+      containerState: 'needsReset'
     }
   }
 
@@ -357,7 +374,12 @@ const runStep = (
     previouslyChangedExpressionState
   } = isCall(expression)
     ? isExecutableCallRegular(expression)
-      ? stepRegular(expression, stepOptions, e.matchExists)
+      ? stepRegular(
+          expression,
+          stepOptions,
+          e.matchExists,
+          e.executableUnaryExists
+        )
       : isExecutableCallMagical(expression)
       ? stepMagical(expression)
       : stepShorthand(expression)

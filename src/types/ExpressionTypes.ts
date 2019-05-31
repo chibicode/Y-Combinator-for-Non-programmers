@@ -211,6 +211,7 @@ export type CallStates =
   | 'betaReducePreviewBefore'
   | 'betaReducePreviewAfter'
   | 'betaReducePreviewUnaryExecuted'
+  | 'showExecutableUnary'
   | 'betaReducePreviewCrossed'
   | 'magicalExpanded'
 
@@ -225,6 +226,8 @@ export type ConditionalStates =
 // Call state to possible variable state
 export type CallStateToVariableState<C extends CallStates> = C extends 'default'
   ? 'default'
+  : C extends 'showExecutableUnary'
+  ? 'active' | 'highlighted'
   : C extends 'active'
   ? 'active'
   : C extends 'showCallArg'

@@ -1852,8 +1852,6 @@ export default {
       showPriorities
       nextIteration
       skipToTheEnd={false}
-      lastAllowedExpressionState="default"
-      lastAllowedExpressionStateAfterIterations={1}
     />
   ),
   hzlj: (

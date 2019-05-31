@@ -44,3 +44,9 @@ export { default as stepToDefault } from 'src/lib/steps/stepToDefault'
 export {
   default as stepToMagicalExpanded
 } from 'src/lib/steps/stepToMagicalExpanded'
+export {
+  default as stepToShowExecutableUnary
+} from 'src/lib/steps/stepToShowExecutableUnary'
+export {
+  default as stepToUnaryProcessed
+} from 'src/lib/steps/stepToUnaryProcessed'

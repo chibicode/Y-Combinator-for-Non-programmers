@@ -19,8 +19,6 @@ export default function toDefault(
 export default function toDefault(
   e: CallExpression
 ): NonExecutableStepCall<'default'>
-// This is necessary - otherwise if you pass in VariableExpression | FunctionExpression
-// it will think of it as Expression instead.
 export default function toDefault(
   e: VariableExpression | FunctionExpression
 ): StepVariable<'default'> | StepFunction<'default'>
