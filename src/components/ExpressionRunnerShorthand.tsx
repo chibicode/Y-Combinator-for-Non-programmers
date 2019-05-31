@@ -7,7 +7,6 @@ import {
   ExpressionContainer,
   SteppedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import { CallStates } from 'src/types/ExpressionTypes'
 import { P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
@@ -125,7 +124,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
-  lastAllowedExpressionState?: CallStates
+  lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   nextIteration?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   speed: number

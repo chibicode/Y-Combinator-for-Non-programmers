@@ -120,6 +120,18 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        title: <>魔女がもう一度</>,
+        content: (
+          <>
+            <P>
+              先に進めてみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.syfp}
+          </>
+        )
       }
     ]}
   />

@@ -1846,6 +1846,15 @@ export default {
       }}
     />
   ),
+  syfp: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIteration
+      skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
