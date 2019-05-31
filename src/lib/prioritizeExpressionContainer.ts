@@ -9,6 +9,7 @@ export default function prioritizeExpressionContainer<E extends Expression>(
     containerState: 'ready',
     previouslyChangedExpressionState:
       expressionContainer.previouslyChangedExpressionState,
-    expression: prioritizeExpression<E>(expressionContainer.expression)
+    expression: prioritizeExpression<E>(expressionContainer.expression),
+    unaryJustExecuted: expressionContainer.unaryJustExecuted
   }
 }

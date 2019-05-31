@@ -333,7 +333,8 @@ const runStep = (
         ...e,
         expression: stepToUnaryProcessed(e.expression),
         previouslyChangedExpressionState: 'default',
-        containerState: 'needsReset'
+        containerState: 'needsReset',
+        unaryJustExecuted: true
       }
     }
   }
@@ -349,6 +350,7 @@ const runStep = (
     // Special case - already done to begin with
     return {
       ...e,
+      unaryJustExecuted: undefined,
       containerState: 'needsReset'
     }
   }
@@ -377,8 +379,16 @@ const runStep = (
       activePriority
     }
     return previouslyChangedExpressionState === 'default'
-      ? { ...newContainer, containerState: 'needsReset' }
-      : { ...newContainer, containerState: 'stepped' }
+      ? {
+          ...newContainer,
+          unaryJustExecuted: undefined,
+          containerState: 'needsReset'
+        }
+      : {
+          ...newContainer,
+          unaryJustExecuted: undefined,
+          containerState: 'stepped'
+        }
   }
 
   let newExpression: typeof e.expression

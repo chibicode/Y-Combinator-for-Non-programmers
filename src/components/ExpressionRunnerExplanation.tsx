@@ -3,6 +3,7 @@ import { InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadge from 'src/components/TopLeftBadge'
+import TopRightBadge from 'src/components/TopRightBadge'
 import locale from 'src/lib/locale'
 import {
   SteppedExpressionContainer,
@@ -46,19 +47,33 @@ const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
     </>
   )
 
-const stateToExplanation = ({
+const Explanation = ({
   state,
   matchExists,
   activePriority,
   showAllShowSteps,
-  hideFuncUnboundBadge
+  hideFuncUnboundBadge,
+  unaryJustExecuted
 }: {
   state: ExpressionContainer['previouslyChangedExpressionState']
   matchExists?: boolean
   activePriority?: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
+  unaryJustExecuted?: boolean
 }) => {
+  if (unaryJustExecuted) {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <TopRightBadge inline topRightBadgeType="pred" /> が実行されました！
+        </>
+      )
+    }
+  }
+
   switch (state) {
     case 'default': {
       if (locale === 'en') {
@@ -318,8 +333,19 @@ const stateToExplanation = ({
         )
       }
     }
+    case 'showExecutableUnary': {
+      if (locale === 'en') {
+        return <>?</>
+      } else {
+        return (
+          <>
+            <TopRightBadge inline topRightBadgeType="pred" /> を実行します
+          </>
+        )
+      }
+    }
     default: {
-      return ''
+      return <></>
     }
   }
 }
@@ -337,14 +363,16 @@ const ExpressionRunnerExplanation = ({
         {isDone ? (
           <H args={{ name: 'done' }} highlightType="none" />
         ) : (
-          !isPlaying &&
-          stateToExplanation({
-            state: expressionContainer.previouslyChangedExpressionState,
-            matchExists: expressionContainer.matchExists,
-            activePriority: expressionContainer.activePriority,
-            showAllShowSteps,
-            hideFuncUnboundBadge
-          })
+          !isPlaying && (
+            <Explanation
+              state={expressionContainer.previouslyChangedExpressionState}
+              matchExists={expressionContainer.matchExists}
+              activePriority={expressionContainer.activePriority}
+              showAllShowSteps={showAllShowSteps}
+              unaryJustExecuted={expressionContainer.unaryJustExecuted}
+              hideFuncUnboundBadge={hideFuncUnboundBadge}
+            />
+          )
         )}
       </>
     }

@@ -1852,6 +1852,7 @@ export default {
       showPriorities
       nextIteration
       skipToTheEnd={false}
+      speed={1.5}
     />
   ),
   hzlj: (
