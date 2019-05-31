@@ -19,6 +19,7 @@ import {
 } from 'src/types/ExpressionTypes'
 import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
+import magicalVariableName from 'src/lib/magicalVariableName'
 
 function toMagicalExpanded(
   e: VariableShorthandBinary
@@ -79,6 +80,7 @@ export default function stepToMagicalExpanded(
 ): ExecutableStepCallRegular<'magicalExpanded'> {
   const arg: StepVariable<'magicalExpanded'> = {
     ...e.func,
+    name: magicalVariableName,
     isMagical: false,
     highlightType: 'highlighted',
     topLeftBadgeType: 'none',

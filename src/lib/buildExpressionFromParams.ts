@@ -168,7 +168,7 @@ export default function buildExpressionFromParams(
   } else if (isMagicalVariableParams(expressionParams)) {
     return {
       ...buildVariableExpression(
-        expressionParams.name,
+        'magical',
         true,
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),

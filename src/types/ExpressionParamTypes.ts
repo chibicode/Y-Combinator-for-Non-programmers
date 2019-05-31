@@ -30,7 +30,6 @@ export interface VariableShorthandUnaryParams {
 }
 
 export interface MagicalVariableParams {
-  readonly name: VariableNames
   readonly initialHighlight?: boolean
   readonly magical: true
 }
