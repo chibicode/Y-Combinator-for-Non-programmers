@@ -34,7 +34,6 @@ import {
   stepToCaseOnly,
   stepToMagicalExpanded,
   stepToDefault,
-  stepToShowExecutableUnary,
   stepToUnaryProcessed
 } from 'src/lib/steps'
 import {
@@ -78,7 +77,6 @@ const stepConditional = (
 ): {
   nextExpression: ExecutableConditionalStatesDistributed | StepChild<'default'>
   matchExists?: boolean
-  executableUnaryExists?: boolean
   previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   switch (e.state) {
@@ -128,7 +126,6 @@ const stepMagical = (
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
-  executableUnaryExists?: boolean
   previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   switch (e.state) {
@@ -155,7 +152,6 @@ const stepShorthand = (
 ): {
   nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
-  executableUnaryExists?: boolean
   previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   switch (e.state) {
@@ -180,15 +176,13 @@ const stepShorthand = (
 const stepRegular = (
   e: ExecutableCallRegular,
   { showAllShowSteps, skipAlphaConvert }: StepOptions,
-  matchExists?: boolean,
-  executableUnaryExists?: boolean
+  matchExists?: boolean
 ): {
   nextExpression:
     | ExecutableCall
     | StepChild<'default'>
     | StepChild<'showExecutableUnary'>
   matchExists?: boolean
-  executableUnaryExists?: boolean
   previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
   const toNeedsAlphaConvertOrBetaReducePreviewBefore = (): {
@@ -283,7 +277,7 @@ const stepRegular = (
     case 'betaReducePreviewBefore': {
       if (matchExists) {
         return {
-          ...stepToBetaReducePreviewAfter(e),
+          nextExpression: stepToBetaReducePreviewAfter(e),
           previouslyChangedExpressionState: 'betaReducePreviewAfter'
         }
       } else {
@@ -296,28 +290,19 @@ const stepRegular = (
     case 'betaReducePreviewAfter': {
       return {
         nextExpression: stepToBetaReducePreviewCrossed(e),
-        previouslyChangedExpressionState: 'betaReducePreviewCrossed',
-        executableUnaryExists
+        previouslyChangedExpressionState: 'betaReducePreviewCrossed'
       }
     }
     case 'betaReducePreviewUnaryExecuted': {
       return {
         nextExpression: stepToBetaReducePreviewCrossed(e),
-        previouslyChangedExpressionState: 'betaReducePreviewCrossed',
-        executableUnaryExists
+        previouslyChangedExpressionState: 'betaReducePreviewCrossed'
       }
     }
     case 'betaReducePreviewCrossed': {
-      if (executableUnaryExists) {
-        return {
-          nextExpression: stepToShowExecutableUnary(e),
-          previouslyChangedExpressionState: 'showExecutableUnary'
-        }
-      } else {
-        return {
-          nextExpression: removeCrossed(e),
-          previouslyChangedExpressionState: 'default'
-        }
+      return {
+        nextExpression: removeCrossed(e),
+        previouslyChangedExpressionState: 'default'
       }
     }
     default: {
@@ -370,16 +355,10 @@ const runStep = (
   const {
     nextExpression,
     matchExists,
-    executableUnaryExists,
     previouslyChangedExpressionState
   } = isCall(expression)
     ? isExecutableCallRegular(expression)
-      ? stepRegular(
-          expression,
-          stepOptions,
-          e.matchExists,
-          e.executableUnaryExists
-        )
+      ? stepRegular(expression, stepOptions, e.matchExists)
       : isExecutableCallMagical(expression)
       ? stepMagical(expression)
       : stepShorthand(expression)
@@ -393,7 +372,6 @@ const runStep = (
           : nextExpression,
       previouslyChangedExpressionState,
       matchExists,
-      executableUnaryExists,
       activePriority
     }
     return previouslyChangedExpressionState === 'default'
@@ -433,7 +411,6 @@ const runStep = (
       containerState: 'needsReset',
       matchExists,
       activePriority,
-      executableUnaryExists,
       previouslyChangedExpressionState
     }
   } else {
@@ -446,7 +423,6 @@ const runStep = (
       containerState: 'stepped',
       matchExists,
       activePriority,
-      executableUnaryExists,
       previouslyChangedExpressionState
     }
   }

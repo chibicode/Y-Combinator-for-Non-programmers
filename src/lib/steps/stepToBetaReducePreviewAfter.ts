@@ -20,88 +20,58 @@ function matchBetaReduced(
   e: VariableExpression,
   shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
-): {
-  result: StepVariable<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepVariable<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: FunctionExpression,
   shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
-): {
-  result: StepFunction<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepFunction<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: ConditionalExpression,
   shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
-): {
-  result: StepConditional<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepConditional<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: CallExpression,
   shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
-): {
-  result: NonExecutableStepCall<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): NonExecutableStepCall<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: Expression,
   shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
-): {
-  result: StepChild<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepChild<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: Expression,
   shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
-): {
-  result: StepChild<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-} {
+): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     return {
-      result: {
-        ...e,
-        shorthandBinary: e.shorthandBinary || shorthandBinary,
-        shorthandUnary: e.shorthandUnary || shorthandUnary,
-        highlightType: 'highlighted',
-        topLeftBadgeType: 'betaReduced',
-        bottomRightBadgeType: 'funcBound',
-        emphasizePriority: false
-      },
-      executableUnaryExists:
-        shorthandUnary !== undefined && e.shorthandNumber !== undefined
+      ...e,
+      shorthandBinary: e.shorthandBinary || shorthandBinary,
+      shorthandUnary: e.shorthandUnary || shorthandUnary,
+      highlightType: 'highlighted',
+      topLeftBadgeType: 'betaReduced',
+      bottomRightBadgeType: 'funcBound',
+      emphasizePriority: false
     }
   } else if (isFunction(e)) {
     const arg = matchBetaReduced(e.arg, shorthandBinary, shorthandUnary)
     const body = matchBetaReduced(e.body, shorthandBinary, shorthandUnary)
     return {
-      result: {
-        ...e,
-        arg: arg.result,
-        body: body.result
-      },
-      executableUnaryExists:
-        arg.executableUnaryExists || body.executableUnaryExists
+      ...e,
+      arg,
+      body
     }
   } else if (isCall(e)) {
     const arg = matchBetaReduced(e.arg, shorthandBinary, shorthandUnary)
     const func = matchBetaReduced(e.func, shorthandBinary, shorthandUnary)
     return {
-      result: {
-        ...e,
-        state: 'default',
-        arg: arg.result,
-        func: func.result
-      },
-      executableUnaryExists:
-        arg.executableUnaryExists || func.executableUnaryExists
+      ...e,
+      state: 'default',
+      arg,
+      func
     }
   } else {
     const condition = matchBetaReduced(
@@ -120,17 +90,11 @@ function matchBetaReduced(
       shorthandUnary
     )
     return {
-      result: {
-        ...e,
-        state: 'default',
-        condition: condition.result,
-        trueCase: trueCase.result,
-        falseCase: falseCase.result
-      },
-      executableUnaryExists:
-        condition.executableUnaryExists ||
-        trueCase.executableUnaryExists ||
-        falseCase.executableUnaryExists
+      ...e,
+      state: 'default',
+      condition: condition,
+      trueCase: trueCase,
+      falseCase: falseCase
     }
   }
 }
@@ -140,126 +104,88 @@ export function toBetaReducePreviewAfter(
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result: StepVariable<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepVariable<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: FunctionExpression,
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result: StepFunction<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepFunction<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: ConditionalExpression,
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result: StepConditional<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepConditional<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: CallExpression,
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result: NonExecutableStepCall<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): NonExecutableStepCall<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: VariableExpression | FunctionExpression,
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result:
-    | StepVariable<'betaReducePreviewAfter'>
-    | StepFunction<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+):
+  | StepVariable<'betaReducePreviewAfter'>
+  | StepFunction<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: Expression,
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result: StepChild<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-}
+): StepChild<'betaReducePreviewAfter'>
 export function toBetaReducePreviewAfter(
   e: Expression,
   fromName: VariableNames,
   to: Expression,
   funcSide: boolean
-): {
-  result: StepChild<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-} {
+): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     if (funcSide && e.bound) {
       if (e.name === fromName) {
         return matchBetaReduced(to, e.shorthandBinary, e.shorthandUnary)
       } else {
         return {
-          result: {
-            ...e,
-            highlightType: 'active',
-            topLeftBadgeType: 'none',
-            bottomRightBadgeType: 'funcBound'
-          },
-          executableUnaryExists: false
+          ...e,
+          highlightType: 'active',
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'funcBound'
         }
       }
     } else if (funcSide && !e.bound) {
       return {
-        result: {
-          ...e,
-          highlightType: 'active',
-          topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'funcUnbound'
-        },
-        executableUnaryExists: false
+        ...e,
+        highlightType: 'active',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'funcUnbound'
       }
     } else {
       return {
-        result: {
-          ...e,
-          highlightType: 'betaReduceCallArgHighlighted',
-          topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'callArg'
-        },
-        executableUnaryExists: false
+        ...e,
+        highlightType: 'betaReduceCallArgHighlighted',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'callArg'
       }
     }
   } else if (isFunction(e)) {
     const arg = toBetaReducePreviewAfter(e.arg, fromName, to, funcSide)
     const body = toBetaReducePreviewAfter(e.body, fromName, to, funcSide)
     return {
-      result: {
-        ...e,
-        arg: arg.result,
-        body: body.result
-      },
-      executableUnaryExists:
-        arg.executableUnaryExists || body.executableUnaryExists
+      ...e,
+      arg,
+      body
     }
   } else if (isCall(e)) {
     const arg = toBetaReducePreviewAfter(e.arg, fromName, to, funcSide)
     const func = toBetaReducePreviewAfter(e.func, fromName, to, funcSide)
     return {
-      result: {
-        ...e,
-        state: 'default',
-        arg: arg.result,
-        func: func.result
-      },
-      executableUnaryExists:
-        arg.executableUnaryExists || func.executableUnaryExists
+      ...e,
+      state: 'default',
+      arg,
+      func
     }
   } else {
     const condition = toBetaReducePreviewAfter(
@@ -281,44 +207,31 @@ export function toBetaReducePreviewAfter(
       funcSide
     )
     return {
-      result: {
-        ...e,
-        state: 'default',
-        condition: condition.result,
-        trueCase: trueCase.result,
-        falseCase: falseCase.result
-      },
-      executableUnaryExists:
-        condition.executableUnaryExists ||
-        trueCase.executableUnaryExists ||
-        falseCase.executableUnaryExists
+      ...e,
+      state: 'default',
+      condition: condition,
+      trueCase: trueCase,
+      falseCase: falseCase
     }
   }
 }
 
 const stepToBetaReducePreviewAfter = (
   e: ExecutableCallRegular
-): {
-  nextExpression: ExecutableStepCallRegular<'betaReducePreviewAfter'>
-  executableUnaryExists: boolean
-} => {
+): ExecutableStepCallRegular<'betaReducePreviewAfter'> => {
   const fromName = e.func.arg.name
   const to = e.arg
   const funcBody = toBetaReducePreviewAfter(e.func.body, fromName, to, true)
   const arg = toBetaReducePreviewAfter(e.arg, fromName, to, false)
 
   return {
-    executableUnaryExists:
-      arg.executableUnaryExists || funcBody.executableUnaryExists,
-    nextExpression: {
-      ...e,
-      state: 'betaReducePreviewAfter',
-      arg: arg.result,
-      func: {
-        ...e.func,
-        arg: activeFuncArg(e.func.arg),
-        body: funcBody.result
-      }
+    ...e,
+    state: 'betaReducePreviewAfter',
+    arg,
+    func: {
+      ...e.func,
+      arg: activeFuncArg(e.func.arg),
+      body: funcBody
     }
   }
 }
