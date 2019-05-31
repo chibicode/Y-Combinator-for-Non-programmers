@@ -1363,7 +1363,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          魔女 <Emoji>🧙‍♀️</Emoji>
+          <InlineHeader>魔女</InlineHeader> <Emoji>🧙‍♀️</Emoji>
         </>
       )
     }

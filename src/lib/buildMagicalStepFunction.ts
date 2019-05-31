@@ -11,7 +11,7 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
   const arg: StepVariable<'magicalExpanded'> = {
     type: 'variable',
     bound: false,
-    emphasizePriority: false,
+    emphasizePriority: true,
     argPriorityAgg: [],
     funcPriorityAgg: [],
     name: magicalVariableName,

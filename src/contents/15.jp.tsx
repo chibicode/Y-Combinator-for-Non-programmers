@@ -1,9 +1,13 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Ol, OlLi, Em } from 'src/components/ContentTags'
+import { Ul, UlLi, P, Strong, Ol, OlLi, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import Emoji from 'src/components/Emoji'
+import EmojiWithText from 'src/components/EmojiWithText'
+import magicalVariableName from 'src/lib/magicalVariableName'
 
 export default () => (
   <EpisodeCardList
@@ -49,6 +53,7 @@ export default () => (
       {
         title: (
           <>
+            弁当箱の
             <H args={{ name: 'witch' }} />
           </>
         ),
@@ -70,7 +75,47 @@ export default () => (
                 <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
                 」をラクに作ることができます。
               </Em>
-              どういう機能か説明しましょう。
+              まずはどういう機能か説明しましょう。
+            </P>
+            <P>
+              次の弁当箱は、下に
+              <H args={{ name: 'witch' }} />
+              が、上に<Emoji>3️⃣</Emoji>
+              が入っています。
+            </P>
+            {AER.zxux}
+            <P>
+              これを進めると、下の
+              <H args={{ name: 'witch' }} />
+              の部分が次のように変化します。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.itzl}
+            <P>ポイントは次の3点です:</P>
+            <Ul>
+              <UlLi>
+                先ほどのように、弁当箱の下側に
+                <H args={{ name: 'witch' }} />
+                がある場合、必ずこのように変化します。
+              </UlLi>
+              <UlLi>
+                上の<Emoji>3️⃣</Emoji>には何も起きません。
+              </UlLi>
+              <UlLi>
+                変化後の弁当箱には
+                <EmojiWithText letter={magicalVariableName} />や
+                <Emoji>1️⃣</Emoji>や<InlineEmojiBoxesForQuestion />
+                があるのに加え、
+                <Strong>
+                  <H args={{ name: 'witch' }} />
+                  がまた出現しているのに注目です
+                </Strong>
+                。
+              </UlLi>
+            </Ul>
+            {AER.gtnr}
+            <P>
+              <Strong>重要: このルールを覚える必要はありません！</Strong>とりあえず読み進めてみてください。
             </P>
           </>
         )

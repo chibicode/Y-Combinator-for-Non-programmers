@@ -308,6 +308,18 @@ const stateToExplanation = ({
         )
       }
     }
+    case 'magicalExpanded': {
+      if (locale === 'en') {
+        return <>?</>
+      } else {
+        return (
+          <>
+            <H args={{ name: 'witch' }} />
+            の部分が変化します
+          </>
+        )
+      }
+    }
     default: {
       return ''
     }

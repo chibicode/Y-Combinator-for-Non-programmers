@@ -1822,10 +1822,28 @@ export default {
     />
   ),
   zxux: (
-    <ExpressionRunnerPlayButtonOnly
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E1}
       showPriorities
-      skipToTheEnd={false}
+    />
+  ),
+  itzl: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      initialState="active"
+      finalState="magicalExpanded"
+    />
+  ),
+  gtnr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIteration
+      highlightOverrideActiveAfterStart
+      highlightOverrides={{
+        magical: 'highlighted'
+      }}
     />
   ),
   hzlj: (
