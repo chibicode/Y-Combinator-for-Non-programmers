@@ -106,6 +106,7 @@ export interface HProps {
     | { name: 'yesOrNo' }
     | { name: 'takeABreak' }
     | { name: 'privacyPolicy' }
+    | { name: 'witch' }
     | { name: 'aboutThisSite' }
     | {
         name: 'categoryNameColored'
@@ -1352,6 +1353,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </Strong>
             </Em>
           </P>
+        </>
+      )
+    }
+  }
+  if (args.name === 'witch') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          魔女 <Emoji>🧙‍♀️</Emoji>
         </>
       )
     }
