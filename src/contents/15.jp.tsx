@@ -184,7 +184,34 @@ export default () => (
       },
       {
         title: <>ここまでの振り返り</>,
-        content: <></>
+        type: 'summary',
+        content: (
+          <>
+            <P>まだ途中ですが、ここまでを振り返ると、</P>
+            <Ul>
+              <UlLi>
+                最初は<Emoji>3️⃣</Emoji>と
+                <H args={{ name: 'witch' }} />
+                だった弁当箱が、
+              </UlLi>
+              <UlLi>
+                <Emoji>2️⃣</Emoji>と
+                <H args={{ name: 'witch' }} />と<InlineEmojiBoxesForQuestion />
+                の弁当箱に変わった。
+              </UlLi>
+            </Ul>
+            <P>
+              つまり、
+              <Strong>
+                数字が1減り、
+                <H args={{ name: 'witch' }} />
+                はそのままで、下に
+                <InlineEmojiBoxesForQuestion />
+                がひとつ増えました。
+              </Strong>
+            </P>
+          </>
+        )
       }
     ]}
   />
