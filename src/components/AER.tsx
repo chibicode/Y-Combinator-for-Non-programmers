@@ -4,7 +4,8 @@ import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
   ExpressionRunnerPairSimpleDeprecated,
-  ExpressionRunnerSingleStep
+  ExpressionRunnerSingleStep,
+  ExpressionRunnerPairSimple
 } from 'src/components/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/lessonExpressions'
 import H from 'src/components/H'
@@ -1887,6 +1888,20 @@ export default {
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={3}
       speed={1.5}
+    />
+  ),
+  ifxr: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      finalNextIterations={4}
+      finalState="default"
+      finalFastForward
+      finalCaption={
+        <H
+          args={{ name: 'magicTransition', numberBefore: 3, numberAfter: 2 }}
+        />
+      }
     />
   ),
   hzlj: (

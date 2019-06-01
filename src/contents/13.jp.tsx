@@ -1,5 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import EmojiNumber from 'src/components/EmojiNumber'
 import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
@@ -105,7 +106,7 @@ export default () => (
               nodes={[
                 <InlineEmojiBoxesForQuestion size="md" />,
                 <Emoji>➖</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <EmojiNumber number={1} />
               ]}
             />
             <P>足し算や掛け算の弁当箱より、かなり複雑ですよね。</P>
@@ -253,7 +254,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Emoji>2️⃣</Emoji>の弁当箱を、先ほどの「<Strong>1を引く</Strong>
+              <EmojiNumber number={2} />
+              の弁当箱を、先ほどの「<Strong>1を引く</Strong>
               」弁当箱に入れてみました。
             </P>
             {AER.uqts}
@@ -263,7 +265,9 @@ export default () => (
             <P>
               <Strong>
                 <TopRightBadge topRightBadgeType="pred" inline />
-                の記号を<Emoji>2️⃣</Emoji>の右上に表示
+                の記号を
+                <EmojiNumber number={2} />
+                の右上に表示
               </Strong>
               することによって、2から「<Strong>1を引く</Strong>
               」ことを省略表記してみます。
@@ -272,17 +276,19 @@ export default () => (
             <P>
               これを
               <H args={{ name: 'play' }} />
-              すると、<Emoji>2️⃣</Emoji>が<Emoji>1️⃣</Emoji>になります。
+              すると、
+              <EmojiNumber number={2} />が<EmojiNumber number={1} />
+              になります。
             </P>
             {AER.yykk}
             <P>このように省略表記することで、だいぶ分かりやすくなりました。</P>
             <EmojiSeparator
               nodes={[
                 <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <Emoji>2️⃣</Emoji>
+                  <EmojiNumber number={2} />
                 </EmojiForLetterWithTopRightBadgeWrapper>,
                 <Emoji>➡️</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <EmojiNumber number={1} />
               ]}
             />
             <P>
@@ -326,7 +332,8 @@ export default () => (
                 <H args={{ name: 'theAnswerIs', isYes: true }} />
                 でした。
               </Strong>
-              最終的に暗号は<Emoji>0️⃣</Emoji>
+              最終的に暗号は
+              <EmojiNumber number={0} />
               になります。
             </P>
             <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
@@ -339,7 +346,8 @@ export default () => (
             </P>
             {AER.qgun}
             <P>
-              <Emoji>1️⃣</Emoji>と省略表記します。
+              <EmojiNumber number={1} />
+              と省略表記します。
             </P>
             {AER.yvia}
             <P>
@@ -369,7 +377,7 @@ export default () => (
               nodes={[
                 <EmojiForLetter letter="i" />,
                 <Emoji>➖</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <EmojiNumber number={1} />
               ]}
             />
             <P>つまり省略表記すると、こうなります:</P>
@@ -381,16 +389,17 @@ export default () => (
             {AER.pbgd}
             <P>
               つまり、「<Strong>1 - 1</Strong>
-              」の計算が行われるので、最終的に暗号は<Emoji>0️⃣</Emoji>
+              」の計算が行われるので、最終的に暗号は
+              <EmojiNumber number={0} />
               になります。
             </P>
             <EmojiSeparator
               nodes={[
                 <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <Emoji>1️⃣</Emoji>
+                  <EmojiNumber number={1} />
                 </EmojiForLetterWithTopRightBadgeWrapper>,
                 <Emoji>➡️</Emoji>,
-                <Emoji>0️⃣</Emoji>
+                <EmojiNumber number={0} />
               ]}
             />
             <P>

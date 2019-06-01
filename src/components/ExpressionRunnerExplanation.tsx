@@ -1,5 +1,6 @@
 import React from 'react'
 import { InlineHeader } from 'src/components/ContentTags'
+import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadge from 'src/components/TopLeftBadge'
@@ -290,7 +291,7 @@ const Explanation = ({
         return (
           <>
             <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-            <Emoji size="mdlg">0️⃣</Emoji> かどうかチェック
+            <EmojiNumber number={0} size="mdlg" /> かどうかチェック
           </>
         )
       }

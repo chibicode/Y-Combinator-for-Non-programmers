@@ -231,12 +231,14 @@ export const ExpressionRunnerPairSimple = ({
   finalState,
   finalCaption,
   finalNextIteration,
-  finalNextIterations
+  finalNextIterations,
+  finalFastForward
 }: ExpressionRunnerSimpleProps & {
   finalState: ExpressionRunnerSimpleProps['initialState']
   finalCaption?: ExpressionRunnerSimpleProps['caption']
   finalNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
   finalNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
+  finalFastForward?: boolean
 }) => (
   <>
     <ExpressionRunnerSimple
@@ -266,7 +268,7 @@ export const ExpressionRunnerPairSimple = ({
         margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
       `}
     >
-      <Emoji size="mdlg">⬇️</Emoji>
+      <Emoji size="mdlg">{finalFastForward ? '⏬' : '⬇️'}</Emoji>
     </P>
     <ExpressionRunnerSimple
       {...{
@@ -292,6 +294,10 @@ export const ExpressionRunnerPairSimple = ({
     />
   </>
 )
+
+ExpressionRunnerPairSimple.defaultProps = {
+  ...ExpressionRunnerSimple.defaultProps
+}
 
 export const ExpressionRunnerPairSimpleDeprecated = ({
   expressionContainer,

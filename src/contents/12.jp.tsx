@@ -11,6 +11,7 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 
 export default () => (
@@ -38,7 +39,7 @@ export default () => (
               nodes={[
                 <InlineEmojiBoxesForQuestion size="md" />,
                 <Emoji>➕</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <EmojiNumber number={1} />
               ]}
             />
             <P>

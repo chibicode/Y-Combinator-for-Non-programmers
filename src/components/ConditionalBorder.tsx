@@ -6,6 +6,7 @@ import { zIndices, colors, fontSizes } from 'src/lib/theme'
 import ExpressionRunnerContext, {
   ExpressionRunnerContextProps
 } from 'src/components/ExpressionRunnerContext'
+import EmojiNumber from 'src/components/EmojiNumber'
 
 export interface ConditionalBorderProps {
   smallEmoji?: boolean
@@ -76,7 +77,7 @@ const ConditionalBorder = ({
           `}
         >
           {type === 'trueCase' && (
-            <Emoji size={smallEmoji ? 'sm' : 'md'}>0️⃣</Emoji>
+            <EmojiNumber number={0} size={smallEmoji ? 'sm' : 'md'} />
           )}
           {type === 'falseCase' && (
             <Emoji size={smallEmoji ? 'sm' : 'md'}>🔢</Emoji>

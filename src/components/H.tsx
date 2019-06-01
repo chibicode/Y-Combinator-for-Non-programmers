@@ -29,6 +29,7 @@ import { colors, fontSizes } from 'src/lib/theme'
 import { episodeCategory } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiNumber from 'src/components/EmojiNumber'
 import { VariableNames } from 'src/types/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/BottomRightBadge'
@@ -123,6 +124,7 @@ export interface HProps {
     | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
+    | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -894,7 +896,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
-          <Emoji>1️⃣</Emoji> を計算
+          <EmojiNumber number={1} /> を計算
         </>
       )
     }
@@ -906,7 +908,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➖</Emoji>{' '}
-          <Emoji>1️⃣</Emoji> を計算
+          <EmojiNumber number={1} /> を計算
         </>
       )
     }
@@ -917,7 +919,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji>2️⃣</Emoji> <Emoji>➖</Emoji> <Emoji>1️⃣</Emoji> を計算
+          <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
+          <EmojiNumber number={1} /> を計算
         </>
       )
     }
@@ -929,7 +932,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <EmojiForLetter letter={args.letter} /> <Emoji>➖</Emoji>{' '}
-          <Emoji>1️⃣</Emoji> を計算
+          <EmojiNumber number={1} /> を計算
         </>
       )
     }
@@ -940,7 +943,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji>1️⃣</Emoji> を足す弁当箱
+          <EmojiNumber number={1} /> を足す弁当箱
         </>
       )
     }
@@ -1266,7 +1269,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </Ul>
           <EmojiSeparator
             nodes={[
-              <Emoji>0️⃣</Emoji>,
+              <EmojiNumber number={0} />,
               <Emoji>➡️</Emoji>,
               <EmojiForLetter letter="y" />
             ]}
@@ -1372,6 +1375,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineHeader>魔女</InlineHeader> <Emoji>🧙‍♀️</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'magicTransition') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <EmojiNumber number={args.numberBefore} />が
+          <EmojiNumber number={args.numberAfter} />
+          に、下の <InlineEmojiBoxesForQuestion size="md" /> がひとつ増える
         </>
       )
     }

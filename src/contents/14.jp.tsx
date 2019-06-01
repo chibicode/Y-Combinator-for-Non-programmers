@@ -1,6 +1,7 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
+import EmojiNumber from 'src/components/EmojiNumber'
 import NextLessonButton from 'src/components/NextLessonButton'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import {
@@ -148,12 +149,12 @@ export default () => (
             {AER.wcsz}
             <P>
               <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
-              <Emoji>3️⃣</Emoji> なので、「1以上」の方、つまり上の{' '}
+              <EmojiNumber number={3} /> なので、「1以上」の方、つまり上の{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> が残ります。
             </P>
             {AER.psqo}
             <P>
-              というわけで、最後は <Emoji>2️⃣</Emoji> だけになります。
+              というわけで、最後は <EmojiNumber number={2} /> だけになります。
             </P>
             {AER.xsby}
           </>
@@ -201,7 +202,8 @@ export default () => (
             <P>
               今回も手短に解説します。まず、
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
-              <EmojiWithText letter="a" />が<Emoji>0️⃣</Emoji>に変わります。
+              <EmojiWithText letter="a" />が<EmojiNumber number={0} />
+              に変わります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.dwnj}
@@ -213,12 +215,14 @@ export default () => (
             {AER.guuf}
             <P>
               <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
-              <Emoji>0️⃣</Emoji> なので、下の{' '}
+              <EmojiNumber number={0} /> なので、下の{' '}
               <InlineEmojiBoxesForCondition type="trueCase" /> が残ります。
             </P>
             {AER.lrrr}
             <P>
-              そして、最後に<Emoji>2️⃣</Emoji>が残ります。
+              そして、最後に
+              <EmojiNumber number={2} />
+              が残ります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.dpar}
@@ -270,7 +274,8 @@ export default () => (
             <P>
               先ほどの
               <H args={{ name: 'yesNoQuiz' }} />
-              でも、結果は<Emoji>2️⃣</Emoji>
+              でも、結果は
+              <EmojiNumber number={2} />
               になったので、
               <Strong>
                 省略表記をした場合もしない場合も、同じ暗号の結果になる

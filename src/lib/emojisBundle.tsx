@@ -97,6 +97,7 @@ import Emoji2195 from 'src/components/Twemoji/2195'
 import Emoji2198 from 'src/components/Twemoji/2198'
 import Emoji21a9 from 'src/components/Twemoji/21a9'
 import Emoji23e9 from 'src/components/Twemoji/23e9'
+import Emoji23ec from 'src/components/Twemoji/23ec'
 import Emoji23f8 from 'src/components/Twemoji/23f8'
 import Emoji25b6 from 'src/components/Twemoji/25b6'
 import Emoji267e from 'src/components/Twemoji/267e'
@@ -221,6 +222,7 @@ export interface BundleTypes {
   '2198': React.ComponentType<{}>
   '21a9': React.ComponentType<{}>
   '23e9': React.ComponentType<{}>
+  '23ec': React.ComponentType<{}>
   '23f8': React.ComponentType<{}>
   '25b6': React.ComponentType<{}>
   '267e': React.ComponentType<{}>
@@ -346,6 +348,7 @@ const bundle: BundleTypes = {
   '2198': Emoji2198,
   '21a9': Emoji21a9,
   '23e9': Emoji23e9,
+  '23ec': Emoji23ec,
   '23f8': Emoji23f8,
   '25b6': Emoji25b6,
   '267e': Emoji267e,

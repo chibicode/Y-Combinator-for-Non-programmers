@@ -1,5 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import EmojiNumber from 'src/components/EmojiNumber'
 import { Ul, UlLi, P, Strong, Ol, OlLi, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
@@ -86,7 +87,8 @@ export default () => (
             <P>
               次の弁当箱は、下に
               <H args={{ name: 'witch' }} />
-              が、上に<Emoji>3️⃣</Emoji>
+              が、上に
+              <EmojiNumber number={3} />
               が入っています。
             </P>
             {AER.zxux}
@@ -105,12 +107,14 @@ export default () => (
                 がある場合、必ずこのように変化します。
               </UlLi>
               <UlLi>
-                上の<Emoji>3️⃣</Emoji>には何も起きません。
+                上の
+                <EmojiNumber number={3} />
+                には何も起きません。
               </UlLi>
               <UlLi>
                 変化後の弁当箱には
                 <EmojiWithText letter={magicalVariableName} />や
-                <Emoji>1️⃣</Emoji>や<InlineEmojiBoxesForQuestion />
+                <EmojiNumber number={1} />や<InlineEmojiBoxesForQuestion />
                 があるのに加え、
                 <Strong>
                   <H args={{ name: 'witch' }} />
@@ -139,13 +143,15 @@ export default () => (
             <P>
               ご覧の通り、
               <EmojiWithText letter={magicalVariableName} />
-              が、上にあった<Emoji>3️⃣</Emoji>に変わりました。
+              が、上にあった
+              <EmojiNumber number={3} />
+              に変わりました。
             </P>
             <EmojiSeparator
               nodes={[
                 <EmojiForLetter letter={magicalVariableName} />,
                 <Emoji>➡️</Emoji>,
-                <Emoji>3️⃣</Emoji>
+                <EmojiNumber number={3} />
               ]}
             />
             <P>
@@ -154,18 +160,20 @@ export default () => (
             </P>
             {AER.wdol}
             <P>
-              ご覧の通り、<Emoji>3️⃣</Emoji>に
+              ご覧の通り、
+              <EmojiNumber number={3} />に
               <TopRightBadge inline topRightBadgeType="pred" />
-              がついていたので、<Emoji>3️⃣</Emoji>が<Emoji>2️⃣</Emoji>
+              がついていたので、
+              <EmojiNumber number={3} />が<EmojiNumber number={2} />
               になりました。
             </P>
             <EmojiSeparator
               nodes={[
                 <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <Emoji>3️⃣</Emoji>
+                  <EmojiNumber number={3} />
                 </EmojiForLetterWithTopRightBadgeWrapper>,
                 <Emoji>➡️</Emoji>,
-                <Emoji>2️⃣</Emoji>
+                <EmojiNumber number={2} />
               ]}
             />
             <P>
@@ -176,7 +184,8 @@ export default () => (
             <P>
               ご覧の通り、条件分岐の弁当箱で、
               <InlineEmojiBoxesForCondition type="condition" /> の中にある暗号が
-              <Emoji>3️⃣</Emoji>だったため、上にある{' '}
+              <EmojiNumber number={3} />
+              だったため、上にある{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> が残りました。
             </P>
           </>
@@ -190,12 +199,13 @@ export default () => (
             <P>まだ途中ですが、ここまでを振り返ると、</P>
             <Ul>
               <UlLi>
-                最初は<Emoji>3️⃣</Emoji>と
+                最初は
+                <EmojiNumber number={3} />と
                 <H args={{ name: 'witch' }} />
                 だった弁当箱が、
               </UlLi>
               <UlLi>
-                <Emoji>2️⃣</Emoji>と
+                <EmojiNumber number={2} />と
                 <H args={{ name: 'witch' }} />と<InlineEmojiBoxesForQuestion />
                 の弁当箱に変わった。
               </UlLi>
@@ -210,6 +220,7 @@ export default () => (
                 がひとつ増えました。
               </Strong>
             </P>
+            {AER.ifxr}
           </>
         )
       }

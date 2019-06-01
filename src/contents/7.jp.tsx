@@ -1,5 +1,6 @@
 import React from 'react'
 import { Em, P, Strong } from 'src/components/ContentTags'
+import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
 import H from 'src/components/H'
@@ -93,7 +94,7 @@ export default () => (
               nodes={[
                 <InlineEmojiBoxesForQuestion size="md" />,
                 <Emoji>➕</Emoji>,
-                <Emoji>1️⃣</Emoji>
+                <EmojiNumber number={1} />
               ]}
             />
             <P>
