@@ -14,6 +14,8 @@ export interface StepOptions {
   maxAllowedDefaultStateCount?: number
 }
 
+const DEFAULT_MAX_INDEX = 100
+
 export default class ExpressionContainerManager {
   public get currentState() {
     return {
@@ -21,7 +23,8 @@ export default class ExpressionContainerManager {
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
       numStepsRemaining: this.numStepsRemaining,
-      numStepsTaken: this.currentIndex - this.startIndex
+      numStepsTaken: this.currentIndex - this.startIndex,
+      maxIndexSet: this.maximumIndex !== DEFAULT_MAX_INDEX
     }
   }
 
@@ -29,9 +32,7 @@ export default class ExpressionContainerManager {
   public currentIndex = 0
   public startIndex = 0
   public minimumIndex = 0
-  // TODO: Because of precomputing, if this is high the app will crash for Y Combinator.
-  // The YC example should specify maximumIndex.
-  public maximumIndex = 100
+  public maximumIndex = DEFAULT_MAX_INDEX
   public stepOptions: StepOptions
 
   public constructor({
@@ -109,7 +110,7 @@ export default class ExpressionContainerManager {
         this.stepOptions.lastAllowedExpressionState &&
         this.stepOptions.lastAllowedExpressionState ===
           expressionContainer.previouslyChangedExpressionState &&
-        (this.stepOptions.lastAllowedExpressionStateAfterIterations || 0) ===
+        (this.stepOptions.lastAllowedExpressionStateAfterIterations || 0) <=
           becameDefaultCount
       ) {
         this.maximumIndex = this.currentIndex

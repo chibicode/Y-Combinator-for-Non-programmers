@@ -58,6 +58,7 @@ export interface HProps {
       }
     | { name: 'next' }
     | { name: 'play' }
+    | { name: 'fastForwarding' }
     | { name: 'pause' }
     | { name: 'fastForward' }
     | { name: 'reset' }
@@ -443,6 +444,25 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Strong highlightType={highlightType}>
             早送り <Emoji>⏩</Emoji>
+          </Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'fastForwarding') {
+    if (locale === 'en') {
+      return (
+        <>
+          <Strong highlightType={highlightType}>
+            Fast Forwarding… <Emoji>⏩</Emoji>
+          </Strong>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Strong highlightType={highlightType}>
+            早送り中… <Emoji>⏩</Emoji>
           </Strong>
         </>
       )

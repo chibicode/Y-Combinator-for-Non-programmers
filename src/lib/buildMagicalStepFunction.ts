@@ -27,7 +27,10 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
   const body: StepConditional<'magicalExpanded'> = {
     type: 'conditional',
     checkType: 'isZero',
-    condition: variable(true),
+    condition: {
+      ...variable(true),
+      shorthandUnary: 'pred'
+    },
     priority: 0,
     state: 'default',
     trueCase: {

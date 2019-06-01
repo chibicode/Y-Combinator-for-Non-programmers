@@ -51,7 +51,6 @@ export interface ExpressionRunnerProps {
   explanationsVisibility:
     | 'visible'
     | 'hidden'
-    | 'hiddenInitial'
     | 'hiddenInitialPausedOnly'
     | 'hiddenInitialAndLastPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
@@ -258,8 +257,6 @@ const ExpressionRunner = ({
   const atLeastOneStepTaken = expressionContainerManagerState.numStepsTaken > 0
   const explanationsVisible =
     explanationsVisibility === 'visible' ||
-    (explanationsVisibility === 'hiddenInitial' &&
-      expressionContainerManagerState.numStepsTaken > 0) ||
     (explanationsVisibility === 'hiddenInitialPausedOnly' &&
       !isPlaying &&
       expressionContainerManagerState.numStepsTaken > 0) ||
@@ -310,6 +307,11 @@ const ExpressionRunner = ({
               {caption}
             </ExpressionRunnerCaptionWrapper>
           )}
+          {!caption && isPlaying && (
+            <ExpressionRunnerCaptionWrapper>
+              <H args={{ name: 'fastForwarding' }} />
+            </ExpressionRunnerCaptionWrapper>
+          )}
         </Container>
         <Container size={containerSize} horizontalPadding={0.25}>
           <div
@@ -320,7 +322,7 @@ const ExpressionRunner = ({
             <div
               css={css`
                 line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                opacity: ${isFastForwarding ? 0.5 : 1};
+                opacity: ${isFastForwarding ? 0.6 : 1};
               `}
             >
               <ExpressionBox
@@ -358,8 +360,6 @@ const ExpressionRunner = ({
           horizontalPadding={0}
         >
           {(explanationsVisibility === 'visible' ||
-            (explanationsVisibility === 'hiddenInitial' &&
-              expressionContainerManagerState.numStepsTaken > 0) ||
             (explanationsVisibility === 'hiddenInitialPausedOnly' &&
               !isPlaying &&
               expressionContainerManagerState.numStepsTaken > 0)) && (
@@ -379,21 +379,23 @@ const ExpressionRunner = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {!hideControls && !expressionContainerManagerState.canStepForward && (
-            <ExpressionRunnerCaptionWrapper
-              css={css`
-                margin-top: ${spaces(0.5)};
-              `}
-            >
-              {maxAllowedDefaultStateCount ? (
-                <H args={{ name: 'stoppedBecauseInfiniteLoop' }} />
-              ) : (
-                !hidePlayButton && (
-                  <H args={{ name: 'stoppedForExplanation' }} />
-                )
-              )}
-            </ExpressionRunnerCaptionWrapper>
-          )}
+          {!hideControls &&
+            !expressionContainerManagerState.canStepForward &&
+            expressionContainerManagerState.maxIndexSet && (
+              <ExpressionRunnerCaptionWrapper
+                css={css`
+                  margin-top: ${spaces(0.5)};
+                `}
+              >
+                {maxAllowedDefaultStateCount ? (
+                  <H args={{ name: 'stoppedBecauseInfiniteLoop' }} />
+                ) : (
+                  !hidePlayButton && (
+                    <H args={{ name: 'stoppedForExplanation' }} />
+                  )
+                )}
+              </ExpressionRunnerCaptionWrapper>
+            )}
         </Container>
       </div>
     </ExpressionRunnerContext.Provider>

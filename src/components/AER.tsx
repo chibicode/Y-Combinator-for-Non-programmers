@@ -1560,7 +1560,7 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E3}
       showPriorities
-      explanationsVisibility="hiddenInitial"
+      explanationsVisibility="hiddenInitialPausedOnly"
       lastAllowedExpressionState="needsAlphaConvert"
       containerSize="xs"
       variableSize="md"
@@ -1572,7 +1572,7 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E4}
       showPriorities
-      explanationsVisibility="hiddenInitial"
+      explanationsVisibility="hiddenInitialPausedOnly"
       lastAllowedExpressionState="needsAlphaConvert"
       containerSize="xs"
       variableSize="md"
@@ -1946,7 +1946,53 @@ export default {
       showPriorities
       nextIterations={8}
       skipToTheEnd={false}
+      lastAllowedExpressionState="conditionActive"
+      lastAllowedExpressionStateAfterIterations={8}
       speed={1.5}
+      variableSize="md"
+    />
+  ),
+  umce: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIterations={8}
+      initialState="trueCaseActive"
+      variableSize="md"
+    />
+  ),
+  orhx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIterations={8}
+      initialState="trueCaseActive"
+      variableSize="md"
+    />
+  ),
+  dyef: (
+    <ExpressionRunnerSimple
+      explanationsVisibility="visible"
+      expressionContainer={lessonExpressions.e15E1}
+      isDone
+      showPriorities
+      variableSize="md"
+    />
+  ),
+  xtjt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      isDone
+      showPriorities
+      variableSize="md"
+    />
+  ),
+  mnfh: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      skipToTheEnd={false}
+      speed={7}
       variableSize="md"
     />
   ),

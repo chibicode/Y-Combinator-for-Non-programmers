@@ -165,7 +165,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   variableSize: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
-  explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
+  explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
   resetAtTheEnd?: ExpressionRunnerProps['resetAtTheEnd']
   maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
 }) => (
@@ -183,10 +183,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
     variableSize={variableSize}
     containerSize={containerSize}
     skipAlphaConvert={skipAlphaConvert}
-    explanationsVisibility={
-      explanationsVisibility ||
-      (speed === 1 ? 'hiddenInitialPausedOnly' : 'hiddenInitial')
-    }
+    explanationsVisibility={explanationsVisibility || 'hiddenInitialPausedOnly'}
     lastAllowedExpressionState={lastAllowedExpressionState}
     lastAllowedExpressionStateAfterIterations={
       lastAllowedExpressionStateAfterIterations
@@ -206,7 +203,8 @@ ExpressionRunnerPlayButtonOnly.defaultProps = {
   showPriorities: false,
   speed: 1,
   skipAlphaConvert: false,
-  variableSize: 'lg'
+  variableSize: 'lg',
+  explanationsVisibility: 'hiddenInitialPausedOnly'
 }
 
 export const ExpressionRunnerPairSimple = ({
@@ -448,6 +446,6 @@ export const ExpressionRunnerSingleStep = ({
 ExpressionRunnerSingleStep.defaultProps = {
   hideFuncUnboundBadgeOnExplanation: false,
   showPriorities: false,
-  explanationsVisibility: 'hiddenInitial',
+  explanationsVisibility: 'hiddenInitialPausedOnly',
   variableSize: 'lg'
 }

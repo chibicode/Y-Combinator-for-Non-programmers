@@ -423,7 +423,8 @@ const runStep = (
       containerState: 'needsReset',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState
+      previouslyChangedExpressionState,
+      unaryJustExecuted: undefined
     }
   } else {
     return {
@@ -435,7 +436,8 @@ const runStep = (
       containerState: 'stepped',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState
+      previouslyChangedExpressionState,
+      unaryJustExecuted: undefined
     }
   }
 }

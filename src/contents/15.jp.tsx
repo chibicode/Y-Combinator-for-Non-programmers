@@ -184,7 +184,7 @@ export default () => (
             <P>
               ご覧の通り、条件分岐の弁当箱で、
               <InlineEmojiBoxesForCondition type="condition" /> の中にある暗号が
-              <EmojiNumber number={3} />
+              <EmojiNumber number={2} />
               だったため、上にある{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> が残りました。
             </P>
@@ -225,7 +225,13 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: (
+          <>
+            最後は
+            <H args={{ name: 'witch' }} />
+            が消える
+          </>
+        ),
         content: (
           <>
             <P>
@@ -249,6 +255,69 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.zvet}
+            <P>
+              ここで、
+              <Strong>
+                今までではじめて、
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                の中にある暗号が
+                <EmojiNumber number={0} />
+                になりました。ということは、次は下側にある
+                <InlineEmojiBoxesForCondition type="trueCase" />
+                が残るということです。
+              </Strong>
+            </P>
+            {AER.umce}
+            <P>
+              <Strong>
+                つまり、上側にあった
+                <H args={{ name: 'witch' }} />
+                が消え、これにて実行が完了します。
+              </Strong>
+            </P>
+            {AER.dyef}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                つまり、
+                <EmojiNumber number={3} />と<H args={{ name: 'witch' }} />
+                が入っている弁当箱を
+                <H args={{ name: 'play' }} />
+                すると、
+              </Strong>
+            </P>
+            {AER.zxux}
+            <P>
+              <Strong>
+                <EmojiNumber number={1} />
+                と、その下に
+                <InlineEmojiBoxesForQuestion />
+                がふたつ残ります。
+              </Strong>
+            </P>
+            {AER.xtjt}
+            <P>
+              下の
+              <H args={{ name: 'fastForward' }} />
+              を押すと、最初から最後まで超特急で見ることができます。
+            </P>
+            {AER.mnfh}
+            <P>
+              それでは、ここで
+              <H args={{ name: 'yesNoQuiz' }} />
+              をしてみましょう！
+            </P>
           </>
         )
       }
