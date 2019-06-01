@@ -3,10 +3,16 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { Ul, UlLi, P, Strong, Ol, OlLi, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import {
+  InlineEmojiBoxesForQuestion,
+  InlineEmojiBoxesForCondition
+} from 'src/components/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import TopRightBadge from 'src/components/TopRightBadge'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
 import magicalVariableName from 'src/lib/magicalVariableName'
 
 export default () => (
@@ -122,7 +128,7 @@ export default () => (
         )
       },
       {
-        title: <>魔女がもう一度</>,
+        title: <>先に進めてみる</>,
         content: (
           <>
             <P>
@@ -130,8 +136,55 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.syfp}
+            <P>
+              ご覧の通り、
+              <EmojiWithText letter={magicalVariableName} />
+              が、上にあった<Emoji>3️⃣</Emoji>に変わりました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter={magicalVariableName} />,
+                <Emoji>➡️</Emoji>,
+                <Emoji>3️⃣</Emoji>
+              ]}
+            />
+            <P>
+              続きを見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.wdol}
+            <P>
+              ご覧の通り、<Emoji>3️⃣</Emoji>に
+              <TopRightBadge inline topRightBadgeType="pred" />
+              がついていたので、<Emoji>3️⃣</Emoji>が<Emoji>2️⃣</Emoji>
+              になりました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
+                  <Emoji>3️⃣</Emoji>
+                </EmojiForLetterWithTopRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
+                <Emoji>2️⃣</Emoji>
+              ]}
+            />
+            <P>
+              続きを見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.luir}
+            <P>
+              ご覧の通り、条件分岐の弁当箱で、
+              <InlineEmojiBoxesForCondition type="condition" /> の中にある暗号が
+              <Emoji>3️⃣</Emoji>だったため、上にある{' '}
+              <InlineEmojiBoxesForCondition type="falseCase" /> が残りました。
+            </P>
           </>
         )
+      },
+      {
+        title: <>ここまでの振り返り</>,
+        content: <></>
       }
     ]}
   />

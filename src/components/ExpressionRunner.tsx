@@ -352,6 +352,11 @@ const ExpressionRunner = ({
               setPlayClicked={setPlayClicked}
             />
           )}
+        </Container>
+        <Container
+          size={containerSize === 'xxs' ? 'xs' : 'sm'}
+          horizontalPadding={0}
+        >
           {(explanationsVisibility === 'visible' ||
             (explanationsVisibility === 'hiddenInitial' &&
               expressionContainerManagerState.numStepsTaken > 0) ||
@@ -374,17 +379,21 @@ const ExpressionRunner = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {!hideControls &&
-            maxAllowedDefaultStateCount &&
-            !expressionContainerManagerState.canStepForward && (
-              <ExpressionRunnerCaptionWrapper
-                css={css`
-                  margin-top: ${spaces(0.5)};
-                `}
-              >
+          {!hideControls && !expressionContainerManagerState.canStepForward && (
+            <ExpressionRunnerCaptionWrapper
+              css={css`
+                margin-top: ${spaces(0.5)};
+              `}
+            >
+              {maxAllowedDefaultStateCount ? (
                 <H args={{ name: 'stoppedBecauseInfiniteLoop' }} />
-              </ExpressionRunnerCaptionWrapper>
-            )}
+              ) : (
+                !hidePlayButton && (
+                  <H args={{ name: 'stoppedForExplanation' }} />
+                )
+              )}
+            </ExpressionRunnerCaptionWrapper>
+          )}
         </Container>
       </div>
     </ExpressionRunnerContext.Provider>

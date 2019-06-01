@@ -302,8 +302,7 @@ const Explanation = ({
       } else {
         return (
           <>
-            <Emoji size="mdlg">0️⃣</Emoji>なので{' '}
-            <InlineEmojiBoxesForCondition type="trueCase" /> が残ります
+            0なので <InlineEmojiBoxesForCondition type="trueCase" /> が残ります
           </>
         )
       }
@@ -315,8 +314,8 @@ const Explanation = ({
       } else {
         return (
           <>
-            1以上 <Emoji size="mdlg">🔢</Emoji> なので{' '}
-            <InlineEmojiBoxesForCondition type="falseCase" /> が残ります
+            1以上なので <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+            が残ります
           </>
         )
       }

@@ -114,6 +114,7 @@ export interface HProps {
       }
     | { name: 'infiniteBentoBox' }
     | { name: 'stoppedBecauseInfiniteLoop' }
+    | { name: 'stoppedForExplanation' }
     | { name: 'infinitelyAddingQuestionCaption' }
     | { name: 'secretCodeAddOneCaptionWithoutQuestion' }
     | { name: 'secretCodeReview'; example: React.ReactNode }
@@ -1136,6 +1137,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Emoji>♾</Emoji> 無限に続くので、ここで中断します！
         </Strong>
       )
+    }
+  }
+  if (args.name === 'stoppedForExplanation') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <Strong>まだ途中ですが、説明のため一旦ここまで！</Strong>
     }
   }
   if (args.name === 'isCallArgAndFuncUnboundTheSameCaption') {

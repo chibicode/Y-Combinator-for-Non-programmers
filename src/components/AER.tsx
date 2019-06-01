@@ -1852,6 +1852,30 @@ export default {
       showPriorities
       nextIteration
       skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={1}
+      speed={1.5}
+    />
+  ),
+  wdol: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIterations={2}
+      skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={2}
+      speed={1.5}
+    />
+  ),
+  luir: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIterations={3}
+      skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={3}
       speed={1.5}
     />
   ),
