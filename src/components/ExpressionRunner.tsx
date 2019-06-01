@@ -22,10 +22,10 @@ import {
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
-import ExpressionRunnerTimer from 'src/components/ExpressionRunnerTimer'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed
+const FASTFORWARDING_THRESHOLD = 1.5
 
 export type InitializeInstruction =
   | {
@@ -130,7 +130,7 @@ const getActions = ({
       }, autoplaySpeed(speed))
       setPlaybackStatus({
         isPlaying: true,
-        isFastForwarding: speed > 1.5
+        isFastForwarding: speed > FASTFORWARDING_THRESHOLD
       })
     },
 
@@ -359,23 +359,20 @@ const ExpressionRunner = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {(explanationsVisibility === 'visible' ||
-            (explanationsVisibility === 'hiddenInitialPausedOnly' &&
-              !isPlaying &&
-              expressionContainerManagerState.numStepsTaken > 0)) && (
+          {isPlaying && isFastForwarding && !isDone && (
             <ExpressionRunnerCaptionWrapper
               css={css`
                 margin-top: ${spaces(0.5)};
               `}
             >
-              <ExpressionRunnerTimer
-                isPlaying={isPlaying}
-                numSecondsRemaining={numSecondsRemaining(
-                  expressionContainerManagerState.numStepsRemaining,
-                  speed
-                )}
-                isDone={isDone}
-                hideRemainingTime={speed <= 1.5}
+              <H
+                args={{
+                  name: 'timer',
+                  numSecondsRemaining: numSecondsRemaining(
+                    expressionContainerManagerState.numStepsRemaining,
+                    speed
+                  )
+                }}
               />
             </ExpressionRunnerCaptionWrapper>
           )}

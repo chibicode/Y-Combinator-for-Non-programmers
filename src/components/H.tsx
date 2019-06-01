@@ -126,6 +126,7 @@ export interface HProps {
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
     | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
+    | { name: 'timer'; numSecondsRemaining: number }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1408,6 +1409,37 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <EmojiNumber number={args.numberBefore} /> が{' '}
           <EmojiNumber number={args.numberAfter} />
           に、下の <InlineEmojiBoxesForQuestion size="md" /> がひとつ増える
+        </>
+      )
+    }
+  }
+  if (args.name === 'timer') {
+    if (locale === 'en') {
+      return (
+        <>
+          <InlineHeader
+            css={css`
+              color: ${colors('pink400')};
+            `}
+          >
+            {args.numSecondsRemaining}
+          </InlineHeader>{' '}
+          second
+          {args.numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>⏩</Emoji>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Emoji>⏩</Emoji> 残り{' '}
+          <InlineHeader
+            css={css`
+              color: ${colors('pink400')};
+            `}
+          >
+            {args.numSecondsRemaining}
+          </InlineHeader>{' '}
+          秒…
         </>
       )
     }
