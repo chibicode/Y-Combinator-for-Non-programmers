@@ -1836,6 +1836,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E1}
       showPriorities
+      variableSize="md"
     />
   ),
   itzl: (
@@ -1844,6 +1845,7 @@ export default {
       showPriorities
       initialState="active"
       finalState="magicalExpanded"
+      variableSize="md"
     />
   ),
   gtnr: (
@@ -1855,6 +1857,7 @@ export default {
       highlightOverrides={{
         magical: 'highlighted'
       }}
+      variableSize="md"
     />
   ),
   syfp: (
@@ -1866,6 +1869,7 @@ export default {
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={1}
       speed={1.5}
+      variableSize="md"
     />
   ),
   wdol: (
@@ -1877,6 +1881,7 @@ export default {
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={2}
       speed={1.5}
+      variableSize="md"
     />
   ),
   luir: (
@@ -1888,6 +1893,7 @@ export default {
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={3}
       speed={1.5}
+      variableSize="md"
     />
   ),
   ifxr: (
@@ -1902,6 +1908,46 @@ export default {
           args={{ name: 'magicTransition', numberBefore: 3, numberAfter: 2 }}
         />
       }
+      variableSize="md"
+    />
+  ),
+  mihy: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIterations={4}
+      skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={7}
+      speed={1.5}
+      variableSize="md"
+    />
+  ),
+  davn: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      initialState="default"
+      nextIterations={4}
+      finalNextIterations={8}
+      finalState="default"
+      finalFastForward
+      finalCaption={
+        <H
+          args={{ name: 'magicTransition', numberBefore: 2, numberAfter: 1 }}
+        />
+      }
+      variableSize="md"
+    />
+  ),
+  zvet: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      nextIterations={8}
+      skipToTheEnd={false}
+      speed={1.5}
+      variableSize="md"
     />
   ),
   hzlj: (

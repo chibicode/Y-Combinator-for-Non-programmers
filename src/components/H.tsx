@@ -1385,7 +1385,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <EmojiNumber number={args.numberBefore} />が
+          <EmojiNumber number={args.numberBefore} /> が{' '}
           <EmojiNumber number={args.numberAfter} />
           に、下の <InlineEmojiBoxesForQuestion size="md" /> がひとつ増える
         </>

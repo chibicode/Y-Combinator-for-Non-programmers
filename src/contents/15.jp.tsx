@@ -223,6 +223,34 @@ export default () => (
             {AER.ifxr}
           </>
         )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>
+              さらに続きを見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.mihy}
+            <P>
+              先ほどとほとんど同じことが起こりました！
+              <Strong>
+                数字が1減り、
+                <H args={{ name: 'witch' }} />
+                はそのままで、下に
+                <InlineEmojiBoxesForQuestion />
+                がまたひとつ増えました。
+              </Strong>
+            </P>
+            {AER.davn}
+            <P>
+              さらに続きを見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.zvet}
+          </>
+        )
       }
     ]}
   />
