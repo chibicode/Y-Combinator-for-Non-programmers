@@ -57,7 +57,8 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
           funcPriorityAgg: [],
           highlightType: 'highlighted',
           topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'none'
+          bottomRightBadgeType: 'none',
+          isMagical: true
         },
         arg: {
           ...variable(true),
