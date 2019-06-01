@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import ExpressionRunner, {
-  ExpressionRunnerProps
+  ExpressionRunnerProps,
+  InitializeInstruction
 } from 'src/components/ExpressionRunner'
 import {
   ExpressionContainer,
@@ -11,6 +12,46 @@ import { P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import { spaces } from 'src/lib/theme'
+
+const initializeInstructions = ({
+  nextIteration,
+  nextIterations,
+  isDone,
+  initialState
+}: {
+  nextIteration?: boolean
+  nextIterations?: number
+  isDone?: boolean
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
+}): readonly InitializeInstruction[] =>
+  nextIteration
+    ? [
+        {
+          type: 'nextIteration'
+        },
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: initialState
+        }
+      ]
+    : nextIterations
+    ? [
+        ...Array(nextIterations).fill({ type: 'nextIteration' }),
+        {
+          type: 'stepForwardUntilPreviouslyChangedExpressionState',
+          state: initialState
+        }
+      ]
+    : [
+        isDone
+          ? {
+              type: 'stepForwardUntilTheEnd'
+            }
+          : {
+              type: 'stepForwardUntilPreviouslyChangedExpressionState',
+              state: initialState
+            }
+      ]
 
 export const ExpressionRunnerSimple = ({
   expressionContainer,
@@ -28,6 +69,7 @@ export const ExpressionRunnerSimple = ({
   containerSize,
   skipAlphaConvert,
   nextIteration,
+  nextIterations,
   showOnlyFocused,
   highlightOverridesCallArgAndFuncUnboundOnly
 }: {
@@ -36,6 +78,7 @@ export const ExpressionRunnerSimple = ({
   isDone: boolean
   skipAlphaConvert: boolean
   nextIteration?: boolean
+  nextIterations?: number
   showPriorities: boolean
   maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
@@ -67,28 +110,12 @@ export const ExpressionRunnerSimple = ({
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     highlightOverrides={highlightOverrides}
     highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
-    initializeInstructions={
-      nextIteration
-        ? [
-            {
-              type: 'nextIteration'
-            },
-            {
-              type: 'stepForwardUntilPreviouslyChangedExpressionState',
-              state: initialState
-            }
-          ]
-        : [
-            isDone
-              ? {
-                  type: 'stepForwardUntilTheEnd'
-                }
-              : {
-                  type: 'stepForwardUntilPreviouslyChangedExpressionState',
-                  state: initialState
-                }
-          ]
-    }
+    initializeInstructions={initializeInstructions({
+      nextIteration,
+      nextIterations,
+      isDone,
+      initialState
+    })}
   />
 )
 
@@ -110,6 +137,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   hideFuncUnboundBadgeOnExplanation,
   showPriorities,
   nextIteration,
+  nextIterations,
   showAllShowSteps,
   speed,
   skipAlphaConvert,
@@ -128,6 +156,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
   nextIteration?: boolean
+  nextIterations?: number
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   speed: number
   skipAlphaConvert: boolean
@@ -160,24 +189,11 @@ export const ExpressionRunnerPlayButtonOnly = ({
     lastAllowedExpressionStateAfterIterations={
       lastAllowedExpressionStateAfterIterations
     }
-    initializeInstructions={
-      nextIteration
-        ? [
-            {
-              type: 'nextIteration'
-            },
-            {
-              type: 'stepForwardUntilPreviouslyChangedExpressionState',
-              state: initialState
-            }
-          ]
-        : [
-            {
-              type: 'stepForwardUntilPreviouslyChangedExpressionState',
-              state: initialState
-            }
-          ]
-    }
+    initializeInstructions={initializeInstructions({
+      nextIteration,
+      nextIterations,
+      initialState
+    })}
   />
 )
 
@@ -302,13 +318,17 @@ export const ExpressionRunnerSingleStep = ({
   explanationsVisibility,
   showAllShowSteps,
   variableSize,
-  containerSize
+  containerSize,
+  nextIteration,
+  nextIterations
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: ExpressionContainer['previouslyChangedExpressionState']
   finalState: ExpressionContainer['previouslyChangedExpressionState']
   hideFuncUnboundBadgeOnExplanation: boolean
   showPriorities: boolean
+  nextIteration?: boolean
+  nextIterations?: number
   variableSize: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
@@ -325,12 +345,11 @@ export const ExpressionRunnerSingleStep = ({
     resetIndex
     lastAllowedExpressionState={finalState}
     showAllShowSteps={showAllShowSteps}
-    initializeInstructions={[
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: initialState
-      }
-    ]}
+    initializeInstructions={initializeInstructions({
+      nextIteration,
+      nextIterations,
+      initialState
+    })}
   />
 )
 
