@@ -116,7 +116,5 @@ function grabTheRightIcon(rawText) {
 }
 
 console.log(
-  allUsedEmojis
-    .map(x => `./node_modules/twemoji/2/svg/${grabTheRightIcon(x)}.svg`)
-    .join(' ')
+  allUsedEmojis.map(x => `.twemoji_svg/${grabTheRightIcon(x)}.svg`).join(' ')
 )

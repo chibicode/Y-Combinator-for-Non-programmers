@@ -8068,10 +8068,10 @@ twemoji-parser@12.0.0:
   resolved "https://registry.yarnpkg.com/twemoji-parser/-/twemoji-parser-12.0.0.tgz#870ea374b495595baa3bddb719e902b39ea7ccd1"
   integrity sha512-JWZHBY32zKXo6GQ/JIQGLbbSQ5a3k+NHh5VkQ5AJFA++6cr+EtErj1aG8H4K7x8GwQ9/YzArNBQ06ryvKZL+WQ==
 
-twemoji@12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/twemoji/-/twemoji-12.0.2.tgz#c89c0a4a282cf1b9eceb2f37cd038a294a8dc641"
-  integrity sha512-OXZVUCvMsGFisllAwT6zCaZiMkwJJ2gGn9G1ooyeAP1UtkNy5AYAyii1VSDGBveQ4iKNEWGUbzNqi9uUkpEAFA==
+twemoji@^12.0.4:
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/twemoji/-/twemoji-12.0.4.tgz#f247bb32141a8fa9486ce87eae7abd2c6188eaed"
+  integrity sha512-VEiLYeUErB0t6d3euviuMIXINUUGq0KTksvsqPOmt06oPc7iLO10w5tlYTbVEpiQ+IO2IpkaS9O63D5NIdHrDw==
   dependencies:
     twemoji-parser "12.0.0"
 

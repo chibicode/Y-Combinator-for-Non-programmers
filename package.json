@@ -15,7 +15,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "smoothscroll-polyfill": "^0.4.4",
-    "twemoji": "12.0.2"
+    "twemoji": "^12.0.4"
   },
   "scripts": {
     "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 9991",

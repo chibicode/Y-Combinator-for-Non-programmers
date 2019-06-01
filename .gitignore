@@ -4,6 +4,7 @@ report.*.json
 out
 .envrc
 .twemoji
+.twemoji_svg
 
 # Logs
 logs
