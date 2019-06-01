@@ -53,6 +53,27 @@ const initializeInstructions = ({
             }
       ]
 
+interface ExpressionRunnerSimpleProps {
+  expressionContainer: SteppedExpressionContainer
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
+  isDone: boolean
+  skipAlphaConvert: boolean
+  nextIteration?: boolean
+  nextIterations?: number
+  showPriorities: boolean
+  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+  explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
+  caption?: ExpressionRunnerProps['caption']
+  bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
+  variableSize: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
+  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
+  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
+  highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
+  showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
+}
+
 export const ExpressionRunnerSimple = ({
   expressionContainer,
   initialState,
@@ -72,26 +93,7 @@ export const ExpressionRunnerSimple = ({
   nextIterations,
   showOnlyFocused,
   highlightOverridesCallArgAndFuncUnboundOnly
-}: {
-  expressionContainer: SteppedExpressionContainer
-  initialState: ExpressionContainer['previouslyChangedExpressionState']
-  isDone: boolean
-  skipAlphaConvert: boolean
-  nextIteration?: boolean
-  nextIterations?: number
-  showPriorities: boolean
-  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
-  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
-  explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
-  caption?: ExpressionRunnerProps['caption']
-  bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
-  variableSize: ExpressionRunnerProps['variableSize']
-  containerSize?: ExpressionRunnerProps['containerSize']
-  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
-  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
-  highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
-  showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
-}) => (
+}: ExpressionRunnerSimpleProps) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
     hideControls
@@ -210,6 +212,90 @@ ExpressionRunnerPlayButtonOnly.defaultProps = {
 export const ExpressionRunnerPairSimple = ({
   expressionContainer,
   initialState,
+  isDone,
+  explanationsVisibility,
+  showPriorities,
+  showAllShowSteps,
+  caption,
+  bottomRightBadgeOverrides,
+  highlightOverrides,
+  highlightOverrideActiveAfterStart,
+  maxAllowedDefaultStateCount,
+  variableSize,
+  containerSize,
+  skipAlphaConvert,
+  nextIteration,
+  nextIterations,
+  showOnlyFocused,
+  highlightOverridesCallArgAndFuncUnboundOnly,
+  finalState,
+  finalCaption,
+  finalNextIteration,
+  finalNextIterations
+}: ExpressionRunnerSimpleProps & {
+  finalState: ExpressionRunnerSimpleProps['initialState']
+  finalCaption?: ExpressionRunnerSimpleProps['caption']
+  finalNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
+  finalNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
+}) => (
+  <>
+    <ExpressionRunnerSimple
+      {...{
+        expressionContainer,
+        initialState,
+        explanationsVisibility,
+        showPriorities,
+        showAllShowSteps,
+        caption,
+        bottomRightBadgeOverrides,
+        highlightOverrides,
+        highlightOverrideActiveAfterStart,
+        maxAllowedDefaultStateCount,
+        variableSize,
+        containerSize,
+        skipAlphaConvert,
+        nextIteration,
+        nextIterations,
+        showOnlyFocused,
+        highlightOverridesCallArgAndFuncUnboundOnly
+      }}
+    />
+    <P
+      css={css`
+        text-align: center;
+        margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
+      `}
+    >
+      <Emoji size="mdlg">⬇️</Emoji>
+    </P>
+    <ExpressionRunnerSimple
+      {...{
+        expressionContainer,
+        isDone,
+        explanationsVisibility,
+        showPriorities,
+        showAllShowSteps,
+        bottomRightBadgeOverrides,
+        highlightOverrides,
+        highlightOverrideActiveAfterStart,
+        maxAllowedDefaultStateCount,
+        variableSize,
+        containerSize,
+        skipAlphaConvert,
+        showOnlyFocused,
+        highlightOverridesCallArgAndFuncUnboundOnly
+      }}
+      initialState={finalState}
+      caption={finalCaption}
+      nextIteration={finalNextIteration}
+      nextIterations={finalNextIterations}
+    />
+  </>
+)
+
+export const ExpressionRunnerPairSimpleDeprecated = ({
+  expressionContainer,
+  initialState,
   finalIsDone,
   finalState,
   showPriorities,
@@ -300,7 +386,7 @@ export const ExpressionRunnerPairSimple = ({
   </>
 )
 
-ExpressionRunnerPairSimple.defaultProps = {
+ExpressionRunnerPairSimpleDeprecated.defaultProps = {
   initialState: 'default',
   finalIsDone: false,
   showPriorities: false,

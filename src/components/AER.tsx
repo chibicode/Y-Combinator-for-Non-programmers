@@ -3,7 +3,7 @@ import { Strong } from 'src/components/ContentTags'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
-  ExpressionRunnerPairSimple,
+  ExpressionRunnerPairSimpleDeprecated,
   ExpressionRunnerSingleStep
 } from 'src/components/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/lessonExpressions'
@@ -25,7 +25,9 @@ export default {
     />
   ),
   uqwm: (
-    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E1} />
+    <ExpressionRunnerPairSimpleDeprecated
+      expressionContainer={lessonExpressions.e1E1}
+    />
   ),
   zwpj: (
     <ExpressionRunnerPlayButtonOnly
@@ -43,13 +45,19 @@ export default {
     />
   ),
   bgfl: (
-    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E2} />
+    <ExpressionRunnerPairSimpleDeprecated
+      expressionContainer={lessonExpressions.e1E2}
+    />
   ),
   tuqr: (
-    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E3} />
+    <ExpressionRunnerPairSimpleDeprecated
+      expressionContainer={lessonExpressions.e1E3}
+    />
   ),
   cpkp: (
-    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e1E4} />
+    <ExpressionRunnerPairSimpleDeprecated
+      expressionContainer={lessonExpressions.e1E4}
+    />
   ),
   loai: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E5} />,
   vvjn: (
@@ -121,7 +129,7 @@ export default {
     />
   ),
   mhgm: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewCrossed"
       finalIsDone
@@ -150,7 +158,7 @@ export default {
     />
   ),
   zxfv: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e1E2}
       initialState="betaReducePreviewBefore"
       finalState="betaReducePreviewCrossed"
@@ -209,7 +217,9 @@ export default {
     />
   ),
   iped: (
-    <ExpressionRunnerPairSimple expressionContainer={lessonExpressions.e2E1} />
+    <ExpressionRunnerPairSimpleDeprecated
+      expressionContainer={lessonExpressions.e2E1}
+    />
   ),
   cvtc: (
     <ExpressionRunnerSimple
@@ -278,7 +288,7 @@ export default {
     />
   ),
   jrxw: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e3E1}
       initialState="showFuncUnbound"
       showPriorities
@@ -294,7 +304,7 @@ export default {
     />
   ),
   esyi: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e3E1}
       showPriorities
       firstInitializeInstructions={[
@@ -317,7 +327,7 @@ export default {
     />
   ),
   wepe: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e3E2}
       initialState="showFuncUnbound"
       showPriorities
@@ -333,7 +343,7 @@ export default {
     />
   ),
   bwop: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e3E2}
       showPriorities
       firstInitializeInstructions={[
