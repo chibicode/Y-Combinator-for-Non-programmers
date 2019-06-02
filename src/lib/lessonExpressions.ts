@@ -584,6 +584,16 @@ export const e15E2 = initializeExpressionContainer([
   }
 ])
 
+export const e15E3 = initializeExpressionContainer([
+  {
+    magical: true,
+    name: 't'
+  },
+  {
+    shorthandNumber: 5
+  }
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

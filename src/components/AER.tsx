@@ -2011,6 +2011,40 @@ export default {
       variableSize="md"
     />
   ),
+  peoq: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E2}
+      showPriorities
+      skipToTheEnd={false}
+      speed={8}
+      variableSize="md"
+    />
+  ),
+  xsux: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E2}
+      showPriorities
+      isDone
+      variableSize="md"
+    />
+  ),
+  osqg: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E3}
+      skipToTheEnd={false}
+      showPriorities
+      speed={10}
+      variableSize="md"
+    />
+  ),
+  jcvr: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E3}
+      showPriorities
+      isDone
+      variableSize="md"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

@@ -232,7 +232,7 @@ export const ExpressionRunnerPairSimple = ({
   finalNextIterations,
   finalFastForward
 }: ExpressionRunnerSimpleProps & {
-  finalState: ExpressionRunnerSimpleProps['initialState']
+  finalState?: ExpressionRunnerSimpleProps['initialState']
   finalCaption?: ExpressionRunnerSimpleProps['caption']
   finalNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
   finalNextIterations?: ExpressionRunnerSimpleProps['nextIterations']

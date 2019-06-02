@@ -6,6 +6,7 @@ import {
   UlLi,
   P,
   Strong,
+  InlineHeader,
   Ol,
   OlLi,
   Em,
@@ -352,6 +353,84 @@ export default () => (
             </P>
             {AER.fsmk}
             <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+                でした。
+              </Strong>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.peoq}
+            <P>
+              <Strong>
+                つまり、
+                <EmojiNumber number={4} />と<H args={{ name: 'witch' }} />
+                が入っている弁当箱を
+                <H args={{ name: 'play' }} />
+                すると、
+                <EmojiNumber number={1} />
+                と、その下に
+                <InlineEmojiBoxesForQuestion />
+                が3つ残ります。1
+              </Strong>
+            </P>
+            {AER.xsux}
+            <P>そろそろパターンが見えてきましたか？</P>
+            <EmojiSeparator emojis={['🧙‍♀️', '🤔', '🧙‍♀️']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={5} />
+            からはじめた場合
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              上に
+              <EmojiNumber number={5} />
+              がある場合はどうでしょう？
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.osqg}
+            <P>
+              今回は、下に
+              <InlineEmojiBoxesForQuestion />
+              が4つ残りました！
+            </P>
+            {AER.jcvr}
+            <P>それでは、ここでパターンを解説しましょう！</P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'witch' }} />
+            のパターン
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlineHeader>パターン:</InlineHeader>{' '}
+              次のような弁当箱を実行した場合、
+            </P>
           </>
         )
       }
