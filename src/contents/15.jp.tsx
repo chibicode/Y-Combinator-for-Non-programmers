@@ -432,6 +432,14 @@ export default () => (
               次のような弁当箱を実行した場合、
             </P>
             {AER.miez}
+            <P>
+              Next quiz: what if we change ? to apple? then what if we change ?
+              to [apple, question]?
+            </P>
+            <P>
+              later quiz: is it possible to implement witch w/ just using
+              regular bento boxes?
+            </P>
           </>
         )
       }
