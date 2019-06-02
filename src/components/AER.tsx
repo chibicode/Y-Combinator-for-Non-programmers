@@ -2045,6 +2045,9 @@ export default {
       variableSize="md"
     />
   ),
+  miez: (
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E4} />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

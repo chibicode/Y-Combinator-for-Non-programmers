@@ -431,6 +431,7 @@ export default () => (
               <InlineHeader>パターン:</InlineHeader>{' '}
               次のような弁当箱を実行した場合、
             </P>
+            {AER.miez}
           </>
         )
       }

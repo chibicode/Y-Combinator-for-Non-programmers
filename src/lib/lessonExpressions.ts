@@ -594,6 +594,8 @@ export const e15E3 = initializeExpressionContainer([
   }
 ])
 
+export const e15E4 = initializeExpressionContainer('someNumber')
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

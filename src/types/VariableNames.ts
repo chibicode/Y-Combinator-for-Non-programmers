@@ -30,6 +30,8 @@ export type VariableNames =
   | 'B'
   | 'shorthandNumber'
   | 'magical'
+  | 'someNumber'
+  | 'questionTimesSomeNumberMinusOne'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames
