@@ -1,7 +1,16 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiNumber from 'src/components/EmojiNumber'
-import { Ul, UlLi, P, Strong, Ol, OlLi, Em } from 'src/components/ContentTags'
+import {
+  Ul,
+  UlLi,
+  P,
+  Strong,
+  Ol,
+  OlLi,
+  Em,
+  Hr
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import {
@@ -15,6 +24,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
 import magicalVariableName from 'src/lib/magicalVariableName'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -307,6 +317,7 @@ export default () => (
               </Strong>
             </P>
             {AER.xtjt}
+            <Hr />
             <P>
               下の
               <H args={{ name: 'fastForward' }} />
@@ -318,6 +329,29 @@ export default () => (
               <H args={{ name: 'yesNoQuiz' }} />
               をしてみましょう！
             </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              今度は、上に
+              <EmojiNumber number={4} />
+              があります。
+            </P>
+            {AER.yklt}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.fsmk}
+            <YesNoButtons answer="yes" />
           </>
         )
       }

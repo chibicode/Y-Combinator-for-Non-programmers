@@ -1996,6 +1996,21 @@ export default {
       variableSize="md"
     />
   ),
+  yklt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E2}
+      showPriorities
+      variableSize="md"
+    />
+  ),
+  fsmk: (
+    <ExpressionRunnerSimple
+      isDone
+      expressionContainer={lessonExpressions.e15E2}
+      showPriorities
+      variableSize="md"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
