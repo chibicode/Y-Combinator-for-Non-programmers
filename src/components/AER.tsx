@@ -2048,6 +2048,9 @@ export default {
   miez: (
     <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E4} />
   ),
+  fapu: (
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E5} />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

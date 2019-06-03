@@ -93,6 +93,7 @@ export interface HProps {
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'mustChangeBothFuncUnboundAndBound' }
+    | { name: 'secretCodeLabel'; minusOne?: boolean }
     | { name: 'secretCodeCaptionSimple'; number: number }
     | { name: 'whyWeNeedFiniteBentoBox' }
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
@@ -1442,6 +1443,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           秒…
         </>
       )
+    }
+  }
+  if (args.name === 'secretCodeLabel') {
+    if (locale === 'en') {
+      return <>Number</>
+    } else {
+      return <>暗号{args.minusOne ? ' – 1' : ''}</>
     }
   }
   throw new Error()

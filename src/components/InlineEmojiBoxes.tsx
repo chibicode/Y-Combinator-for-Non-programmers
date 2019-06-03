@@ -69,10 +69,7 @@ const Border = ({
     css={css`
       width: ${widthAndHeight(size)}em;
       height: ${widthAndHeight(size)}em;
-      border-top: 2px solid ${colors('indigo300')};
-      border-bottom: 2px solid ${colors('indigo300')};
-      border-left: 2px solid ${colors('indigo300')};
-      border-right: 2px solid ${colors('indigo300')};
+      border: 2px solid ${colors('indigo300')};
       margin-left: -1px;
       margin-right: -1px;
       position: relative;

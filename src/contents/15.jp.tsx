@@ -433,6 +433,14 @@ export default () => (
             </P>
             {AER.miez}
             <P>
+              最終的に
+              <EmojiNumber number={1} />
+              と、その下に
+              <InlineEmojiBoxesForQuestion />
+              が「<Strong>暗号から1を引いた数</Strong>」ぶん縦に並びます。
+            </P>
+            {AER.fapu}
+            <P>
               Next quiz: what if we change ? to apple? then what if we change ?
               to [apple, question]?
             </P>
