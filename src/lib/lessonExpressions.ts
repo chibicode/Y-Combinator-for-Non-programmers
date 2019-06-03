@@ -575,7 +575,7 @@ export const e14E7 = initializeExpressionContainer([
 export const e14E8 = initializeExpressionContainer([
   'question',
   {
-    shorthandNumber: 5
+    shorthandNumber: 4
   }
 ])
 

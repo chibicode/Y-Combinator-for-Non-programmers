@@ -134,7 +134,7 @@ export interface HProps {
     | { name: 'lookAtToc' }
     | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
     | { name: 'timer'; numSecondsRemaining: number }
-    | { name: 'whatCanComputeFactorial'; start: 3 | 5 }
+    | { name: 'whatCanComputeFactorial'; start: 3 | 4 }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1371,18 +1371,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </P>
           <P>
             これを、たとえば「<Strong>4</Strong>
-            」からはじめた場合は以下の通りになり、
+            」からはじめた場合は以下の通りになります。(ちなみに、
+            <Em>4 ✕ 3 ✕ 2 ✕ 1 = 24</Em>です。)
           </P>
           <EmojiSeparator
             size="sm"
             emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-          />
-          <P>
-            「<Strong>5</Strong>」からはじめた場合は以下の通りになります。
-          </P>
-          <EmojiSeparator
-            size="sm"
-            emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
           />
           <P>
             このように、
@@ -1406,7 +1400,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               下の弁当箱の
               <InlineEmojiBoxesForQuestion />
               に何を入れたら、それぞれ「<Strong>3 ✕ 2 ✕ 1</Strong>」「
-              <Strong>5 ✕ 4 ✕ 3 ✕ 2 ✕ 1</Strong>」を計算できるでしょう？
+              <Strong>4 ✕ 3 ✕ 2 ✕ 1</Strong>」を計算できるでしょう？
             </Em>
             (どちらの
             <InlineEmojiBoxesForQuestion />
@@ -1425,8 +1419,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <P>
             必要なのは、「
             <Strong>最後に1を掛けたら、そこで繰り返しを終了する</Strong>
-            」弁当箱です。つまり、「無限に何かを繰り返す」のではなく、「
-            <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+            」弁当箱です。
+          </P>
+          <EmojiSeparator emojis={['✖️', '1️⃣', '👈']} />
+          <P>
+            つまり、「無限に何かを繰り返す」弁当箱ではなく、「
+            <Strong>ある条件を満たす</Strong>
+            <Em>(たとえば、最後に1を掛ける)</Em>
+            <Strong>まで、何かを繰り返す</Strong>
             」弁当箱が求められているのです。
           </P>
           <P>では、そんな弁当箱は存在するのでしょうか？</P>
@@ -1499,16 +1499,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'whatCanComputeFactorial') {
     if (locale === 'en') {
-      return <></>
+      return <>?</>
     } else {
       return (
         <>
           <InlineEmojiBoxesForQuestion />
           に何を入れたら、
           <br />
-          {args.start === 5 && (
+          {args.start === 4 && (
             <>
-              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
               <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
             </>
           )}
@@ -1520,7 +1519,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  throw new Error()
+  throw new Error(args.name)
 }
 
 H.defaultProps = {

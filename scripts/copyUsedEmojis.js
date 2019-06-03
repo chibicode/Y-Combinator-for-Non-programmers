@@ -103,7 +103,8 @@ const allUsedEmojis = uniq([
   '5️⃣',
   '🥴',
   '🤩',
-  '⏬'
+  '⏬',
+  '👈'
 ])
 
 // Copied from Twemoji

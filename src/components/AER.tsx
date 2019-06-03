@@ -1842,7 +1842,7 @@ export default {
   kqzn: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E8}
-      caption={<H args={{ name: 'whatCanComputeFactorial', start: 5 }} />}
+      caption={<H args={{ name: 'whatCanComputeFactorial', start: 4 }} />}
     />
   ),
   zxux: (
