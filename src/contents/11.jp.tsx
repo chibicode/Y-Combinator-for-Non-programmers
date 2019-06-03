@@ -11,6 +11,7 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import { cakeVariableName } from 'src/lib/specialVariableNames'
 
 export default () => (
   <EpisodeCardList
@@ -18,7 +19,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiWithText letter="v" />
+            <EmojiWithText letter={cakeVariableName} />
             の入った弁当箱
           </>
         ),
@@ -36,7 +37,7 @@ export default () => (
                 <Em>
                   一番上に
                   <Strong>
-                    <EmojiWithText letter="v" />
+                    <EmojiWithText letter={cakeVariableName} />
                   </Strong>
                   が入っています。
                 </Em>
@@ -183,15 +184,15 @@ export default () => (
             <P>
               なんと、最後に
               <Strong>
-                <EmojiWithText letter="v" />
+                <EmojiWithText letter={cakeVariableName} />
               </Strong>
               が残りました！
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="v" />,
+                <EmojiForLetter letter={cakeVariableName} />,
                 <Emoji>🥳</Emoji>,
-                <EmojiForLetter letter="v" />
+                <EmojiForLetter letter={cakeVariableName} />
               ]}
             />
           </>
@@ -217,7 +218,7 @@ export default () => (
                   </Strong>
                   を入れた場合、
                   <Strong>
-                    <EmojiWithText letter="v" />
+                    <EmojiWithText letter={cakeVariableName} />
                   </Strong>
                   が残る。
                 </Em>
@@ -285,7 +286,7 @@ export default () => (
             {AER.vpjw}
             <P>
               最後に
-              <EmojiWithText letter="v" />
+              <EmojiWithText letter={cakeVariableName} />
               が残るのです。(
               <H args={{ name: 'pressFastForward', skipColon: true }} />)
             </P>
@@ -395,7 +396,7 @@ export default () => (
                 </Strong>
                 を入れた場合、
                 <Strong>
-                  <EmojiWithText letter="v" />
+                  <EmojiWithText letter={cakeVariableName} />
                 </Strong>
                 が残る。
               </UlLi>

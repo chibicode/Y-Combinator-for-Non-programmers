@@ -24,7 +24,10 @@ import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
-import { magicalVariableName } from 'src/lib/specialVariableNames'
+import {
+  magicalVariableName,
+  cakeVariableName
+} from 'src/lib/specialVariableNames'
 import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
@@ -466,14 +469,39 @@ export default () => (
             {AER.hknv}
             <P>
               では、
-              <H args={{ name: 'witch' }} />
-              の機能を変更し、
-              <InlineEmojiBoxesForQuestion />
-              の代わりに、
-              <EmojiWithText letter="v" />
-              が登場するようにしたらどうなるでしょう？
+              <Strong>
+                <H args={{ name: 'witch' }} />
+                の機能を変更し、
+                <InlineEmojiBoxesForQuestion />
+                の代わりに、
+                <EmojiWithText letter={cakeVariableName} />
+                が登場するようにしたらどうなるでしょう？
+              </Strong>
             </P>
             {AER.njwf}
+            <P>
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.njmb}
+            <P>
+              最後に
+              <InlineEmojiBoxesForQuestion />
+              がふたつ残るかわりに、
+              <EmojiWithText letter={cakeVariableName} />
+              がふたつ残りました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter={cakeVariableName} />,
+                <Emoji>🧙‍♀️</Emoji>,
+                <EmojiForLetter letter={cakeVariableName} />
+              ]}
+            />
+            <P>
+              それでは、ここで
+              <H args={{ name: 'yesNoQuiz' }} />
+              の時間です！
+            </P>
           </>
         )
       }

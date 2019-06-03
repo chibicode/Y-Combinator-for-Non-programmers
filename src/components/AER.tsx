@@ -2075,6 +2075,13 @@ export default {
       }}
     />
   ),
+  njmb: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E6}
+      showPriorities
+      variableSize="md"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
