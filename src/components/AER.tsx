@@ -2102,6 +2102,15 @@ export default {
   sydo: (
     <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E8} />
   ),
+  wean: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E9}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.5}
+      variableSize="md"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

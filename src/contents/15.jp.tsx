@@ -541,8 +541,10 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              まず、途中まで見てみましょう:
+              まず、途中まで見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
             </P>
+            {AER.wean}
           </>
         )
       }
