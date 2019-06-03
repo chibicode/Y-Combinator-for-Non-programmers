@@ -1347,14 +1347,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <P>たとえば、以下の式をご覧ください:</P>
-          <EmojiSeparator
-            size="sm"
-            emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-          />
+          <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
           <P>上の式は、</P>
           <Ul>
             <UlLi>
-              <Strong>「4」からはじめて、</Strong>
+              <Strong>「3」からはじめて、</Strong>
             </UlLi>
             <UlLi>
               <Strong>どんどん「1」を引いた数を掛け算していき、</Strong>
@@ -1364,27 +1361,44 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </UlLi>
           </Ul>
           <P>
-            という計算です。(数学用語だと、こういった計算は「
-            <InlineHeader>階乗</InlineHeader>
-            」と言います)
+            という計算です。(ちなみに、<Em>3 ✕ 2 ✕ 1 = 6</Em>です。)
           </P>
-          <P>これを、たとえば「5」からはじめた場合は以下の通りになります。</P>
+          <P>
+            これを、たとえば「<Strong>4</Strong>
+            」からはじめた場合は以下の通りになり、
+          </P>
+          <EmojiSeparator
+            size="sm"
+            emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+          />
+          <P>
+            「<Strong>5</Strong>」からはじめた場合は以下の通りになります。
+          </P>
           <EmojiSeparator
             size="sm"
             emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
           />
           <P>
-            このような計算をするには、
-            <Strong>最後に「1」を掛けるまで、掛け算を繰り返す</Strong>
-            、という処理が必要です。
+            このように、
+            <Strong>
+              ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
+            </Strong>
+            という計算を、数学用語で「<Strong>階乗</Strong>」と呼びます。
           </P>
+          <P>
+            この階乗のポイントは、「
+            <Strong>最後に1を掛けたら、そこで計算を終了する</Strong>
+            」ということです。
+          </P>
+          <EmojiSeparator emojis={['✖️', '1️⃣', '👈']} />
           <P>
             さきほどのような、
             <Em>
-              「無限に何かを繰り返す」弁当箱では、このような計算は不可能です。このような計算をするには、
+              「無限に何かを繰り返す」弁当箱では、このような計算は不可能です。必要なのは、
               <Strong>
-                「ある条件を満たすまで、何かを繰り返す弁当箱」を使わないといけません。
+                「ある条件を満たすまで、何かを繰り返す弁当箱」です。
               </Strong>
+              そしてこの場合、「ある条件を満たす = 最後に1を掛ける」となります。
             </Em>
           </P>
           <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
