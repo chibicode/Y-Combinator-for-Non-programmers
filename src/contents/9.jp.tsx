@@ -105,10 +105,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
               残るのは
               <EmojiWithText letter="y" />
               です。
@@ -195,10 +192,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               残るのは
               <EmojiWithText letter="z" />
               です。
@@ -294,10 +288,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               残るのは
               <EmojiWithText letter="z" />
               です。

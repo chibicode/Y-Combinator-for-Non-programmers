@@ -193,10 +193,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.rome}

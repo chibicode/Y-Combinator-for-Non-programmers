@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { Fragment } from 'react'
 import { episodeUrl } from 'src/lib/meta'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import { useContext } from 'react'
@@ -102,7 +103,7 @@ export interface HProps {
     | { name: 'secretCodeMultiplyCaption' }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
-    | { name: 'theAnswerIs'; isYes: boolean }
+    | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
     | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
@@ -904,11 +905,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return (
-        <>
+      const childNode = (
+        <Fragment>
           正解は<Emoji>{args.isYes ? '⭕️' : '❌'}</Emoji>
-        </>
+        </Fragment>
       )
+      if (args.sentence) {
+        return (
+          <>
+            <Strong>{childNode}</Strong>でした。
+          </>
+        )
+      } else {
+        return childNode
+      }
     }
   }
   if (args.name === 'secretCodeAddOneCaption') {

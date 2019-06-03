@@ -73,10 +73,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.ccon}
@@ -328,10 +325,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               最終的に暗号は
               <EmojiNumber number={0} />
               になります。

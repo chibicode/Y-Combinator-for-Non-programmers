@@ -156,10 +156,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
             </P>
             <P>
               <Strong>

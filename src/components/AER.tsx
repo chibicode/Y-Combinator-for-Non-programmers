@@ -2080,6 +2080,8 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e15E6}
       showPriorities
+      skipToTheEnd={false}
+      speed={10}
       variableSize="md"
     />
   ),

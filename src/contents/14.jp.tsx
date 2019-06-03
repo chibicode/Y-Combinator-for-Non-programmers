@@ -132,10 +132,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
               暗号は「<Strong>4</Strong>」ではなく、「<Strong>2</Strong>
               」になります。
               <H args={{ name: 'pressFastForward' }} />
@@ -190,10 +187,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
               暗号は「<Strong>1</Strong>」ではなく、「<Strong>2</Strong>
               」になります。
               <H args={{ name: 'pressFastForward' }} />
@@ -395,10 +389,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               「<Strong>1を引く弁当箱</Strong>
               」と「
               <Strong>条件分岐の弁当箱</Strong>

@@ -368,10 +368,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-                でした。
-              </Strong>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.peoq}
@@ -480,7 +477,7 @@ export default () => (
             </P>
             {AER.njwf}
             <P>
-              <H args={{ name: 'pressPlay' }} />
+              <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.njmb}
             <P>
@@ -531,6 +528,21 @@ export default () => (
             </P>
             {AER.sydo}
             <YesNoButtons answer="no" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              まず、途中まで見てみましょう:
+            </P>
           </>
         )
       }
