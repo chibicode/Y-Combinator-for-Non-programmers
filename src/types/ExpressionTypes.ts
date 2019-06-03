@@ -13,7 +13,11 @@ export interface VariableExpression {
   readonly shorthandBinary?: 'isZero'
   readonly shorthandNumber?: number
   readonly shorthandUnary?: 'pred'
-  readonly magicalType?: 'question' | 'variable'
+  readonly magicalType?:
+    | 'question'
+    | 'variable'
+    | 'magical'
+    | 'magicalHighlightWorkaround'
 }
 
 export interface VariableShorthandBinary extends VariableExpression {

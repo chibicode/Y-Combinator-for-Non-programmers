@@ -620,6 +620,24 @@ export const e15E6 = initializeExpressionContainer([
   }
 ])
 
+export const e15E7 = initializeExpressionContainer([
+  {
+    magical: 'magicalHighlightWorkaround',
+    name: magicalVariableName
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
+export const e15E8 = initializeExpressionContainer([
+  magicalVariableName,
+  magicalVariableName,
+  {
+    shorthandNumber: 1
+  }
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

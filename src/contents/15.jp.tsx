@@ -504,6 +504,35 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、
+              <Strong>
+                <H args={{ name: 'witch' }} />
+                の機能を変更し、
+                <InlineEmojiBoxesForQuestion />
+                の代わりに、
+                <EmojiWithText letter={magicalVariableName} />
+                が登場するようにしてみます。
+              </Strong>
+            </P>
+            {AER.hpiv}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.sydo}
+            <YesNoButtons answer="no" />
+          </>
+        )
       }
     ]}
   />

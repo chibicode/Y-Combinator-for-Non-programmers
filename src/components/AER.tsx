@@ -12,6 +12,7 @@ import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
+import { cakeVariableName } from 'src/lib/specialVariableNames'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join
@@ -2071,7 +2072,7 @@ export default {
       variableSize="md"
       highlightOverrideActiveAfterStart
       highlightOverrides={{
-        v: 'highlighted'
+        [cakeVariableName]: 'highlighted'
       }}
     />
   ),
@@ -2081,6 +2082,23 @@ export default {
       showPriorities
       variableSize="md"
     />
+  ),
+  hpiv: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E7}
+      showPriorities
+      variableSize="md"
+      initialState="default"
+      finalState="default"
+      finalNextIteration
+      highlightOverrideActiveAfterStart
+      highlightOverrides={{
+        magicalHighlightWorkaround: 'highlighted'
+      }}
+    />
+  ),
+  sydo: (
+    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E8} />
   ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly

@@ -32,6 +32,7 @@ export type VariableNames =
   | 'magical'
   | 'someNumber'
   | 'questionTimesSomeNumberMinusOne'
+  | 'magicalHighlightWorkaround'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

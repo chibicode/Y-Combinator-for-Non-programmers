@@ -1,4 +1,7 @@
-import { magicalVariableName } from 'src/lib/specialVariableNames'
+import {
+  magicalVariableName,
+  magicalVariableHighlightWorkaroundName
+} from 'src/lib/specialVariableNames'
 import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 import {
@@ -34,7 +37,9 @@ const buildMagicalStepFunction = (
 
   const newPlaceholder: ExpressionParams = {
     question: 'question' as VariableExpressionParams,
-    variable: cakeVariableName
+    variable: cakeVariableName,
+    magical: magicalVariableName,
+    magicalHighlightWorkaround: magicalVariableHighlightWorkaroundName
   }[magicalType]
 
   const body: StepConditional<'magicalExpanded'> = {
