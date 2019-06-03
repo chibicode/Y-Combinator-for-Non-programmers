@@ -355,7 +355,7 @@ export default () => (
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
             {AER.fsmk}
-            <YesNoButtons answer="yes" />
+            <YesNoButtons answer="yes" tooHard />
           </>
         )
       },
@@ -530,7 +530,7 @@ export default () => (
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
             {AER.sydo}
-            <YesNoButtons answer="no" />
+            <YesNoButtons answer="no" tooHard />
           </>
         )
       }
