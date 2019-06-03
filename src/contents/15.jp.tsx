@@ -24,7 +24,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
-import magicalVariableName from 'src/lib/magicalVariableName'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
@@ -440,14 +440,40 @@ export default () => (
               が「<Strong>暗号から1を引いた数</Strong>」ぶん縦に並びます。
             </P>
             {AER.fapu}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'witch' }} />
+            の機能を変更する
+          </>
+        ),
+        content: (
+          <>
             <P>
-              Next quiz: what if we change ? to apple? then what if we change ?
-              to [apple, question]?
+              <H args={{ name: 'witch' }} />は
+              <Strong>
+                あくまで架空の機能なので、好きなように機能を変更してもかまいません。
+              </Strong>
             </P>
             <P>
-              later quiz: is it possible to implement witch w/ just using
-              regular bento boxes?
+              たとえば、先ほど
+              <H args={{ name: 'witch' }} />
+              は次のように変化する、と説明しました。
             </P>
+            {AER.hknv}
+            <P>
+              では、
+              <H args={{ name: 'witch' }} />
+              の機能を変更し、
+              <InlineEmojiBoxesForQuestion />
+              の代わりに、
+              <EmojiWithText letter="v" />
+              が登場するようにしたらどうなるでしょう？
+            </P>
+            {AER.njwf}
           </>
         )
       }

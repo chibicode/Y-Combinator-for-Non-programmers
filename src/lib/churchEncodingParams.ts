@@ -5,6 +5,7 @@ import {
   CallExpressionParams,
   HighlightedVariableExpressionParams
 } from 'src/types/ExpressionParamTypes'
+import { cakeVariableName } from 'src/lib/specialVariableNames'
 
 export const highlighted = (
   name: VariableNames
@@ -220,5 +221,5 @@ export const alphaConversionSimpleExampleParams = (
     }
   },
   question,
-  'v'
+  cakeVariableName
 ]

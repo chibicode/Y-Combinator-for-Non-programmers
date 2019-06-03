@@ -50,7 +50,7 @@ export function isVariableShorthandNumberParams(
 export function isMagicalVariableParams(
   expressionParams: ExpressionParams
 ): expressionParams is MagicalVariableParams {
-  return (expressionParams as MagicalVariableParams).magical
+  return (expressionParams as MagicalVariableParams).magical !== undefined
 }
 
 export function isVariableExpressionParams(

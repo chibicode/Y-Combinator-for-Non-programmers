@@ -13,7 +13,7 @@ export interface VariableExpression {
   readonly shorthandBinary?: 'isZero'
   readonly shorthandNumber?: number
   readonly shorthandUnary?: 'pred'
-  readonly isMagical?: boolean
+  readonly magicalType?: 'question' | 'variable'
 }
 
 export interface VariableShorthandBinary extends VariableExpression {
@@ -34,7 +34,7 @@ export interface VariableShorthandNonUnaryNumber extends VariableExpression {
 }
 
 export interface MagicalVariable extends VariableExpression {
-  readonly isMagical: true
+  readonly magicalType: NonNullable<VariableExpression['magicalType']>
 }
 
 export type VariableShorthandUnaryNumber = VariableShorthandNumber &

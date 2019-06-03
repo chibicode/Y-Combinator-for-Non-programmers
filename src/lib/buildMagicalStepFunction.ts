@@ -1,13 +1,21 @@
-import magicalVariableName from 'src/lib/magicalVariableName'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 import {
   StepFunction,
   StepVariable,
-  StepConditional
+  StepConditional,
+  MagicalVariable
 } from 'src/types/ExpressionTypes'
+import {
+  ExpressionParams,
+  VariableExpressionParams
+} from 'src/types/ExpressionParamTypes'
+import { cakeVariableName } from 'src/lib/specialVariableNames'
 
-const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
+const buildMagicalStepFunction = (
+  magicalType: MagicalVariable['magicalType']
+): StepFunction<'magicalExpanded'> => {
   const variable = (bound: boolean): StepVariable<'magicalExpanded'> => {
     return {
       type: 'variable',
@@ -16,13 +24,18 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
       argPriorityAgg: [],
       funcPriorityAgg: [],
       name: magicalVariableName,
-      isMagical: false,
+      magicalType,
       highlightType: 'highlighted',
       topLeftBadgeType: 'none',
       bottomRightBadgeType: 'none'
     }
   }
   const arg: StepVariable<'magicalExpanded'> = variable(false)
+
+  const newPlaceholder: ExpressionParams = {
+    question: 'question' as VariableExpressionParams,
+    variable: cakeVariableName
+  }[magicalType]
 
   const body: StepConditional<'magicalExpanded'> = {
     type: 'conditional',
@@ -44,7 +57,7 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
       state: 'default',
       priority: 0,
       func: {
-        ...buildExpressionFromParams('question'),
+        ...buildExpressionFromParams(newPlaceholder),
         highlightType: 'highlighted'
       },
       arg: {
@@ -61,7 +74,7 @@ const buildMagicalStepFunction = (): StepFunction<'magicalExpanded'> => {
           highlightType: 'highlighted',
           topLeftBadgeType: 'none',
           bottomRightBadgeType: 'none',
-          isMagical: true
+          magicalType
         },
         arg: {
           ...variable(true),

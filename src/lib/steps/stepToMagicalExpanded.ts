@@ -79,7 +79,7 @@ export default function stepToMagicalExpanded(
 ): ExecutableStepCallRegular<'magicalExpanded'> {
   const result: ExecutableStepCallRegular<'magicalExpanded'> = {
     state: 'magicalExpanded',
-    func: buildMagicalStepFunction(),
+    func: buildMagicalStepFunction(e.func.magicalType),
     type: 'call',
     priority: 0,
     arg: toMagicalExpanded(e.arg)

@@ -15,7 +15,7 @@ import {
   predParams,
   alphaConversionSimpleExampleParams
 } from 'src/lib/churchEncodingParams'
-import magicalVariableName from 'src/lib/magicalVariableName'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 
 export const e1E1 = initializeExpressionContainer([
   {
@@ -567,7 +567,7 @@ export const e14E6 = initializeExpressionContainer([
 
 export const e15E1 = initializeExpressionContainer([
   {
-    magical: true,
+    magical: 'question',
     name: magicalVariableName
   },
   {
@@ -577,7 +577,7 @@ export const e15E1 = initializeExpressionContainer([
 
 export const e15E2 = initializeExpressionContainer([
   {
-    magical: true,
+    magical: 'question',
     name: magicalVariableName
   },
   {
@@ -587,7 +587,7 @@ export const e15E2 = initializeExpressionContainer([
 
 export const e15E3 = initializeExpressionContainer([
   {
-    magical: true,
+    magical: 'question',
     name: magicalVariableName
   },
   {
@@ -597,7 +597,7 @@ export const e15E3 = initializeExpressionContainer([
 
 export const e15E4 = initializeExpressionContainer([
   {
-    magical: true,
+    magical: 'question',
     name: magicalVariableName
   },
   'someNumber'
@@ -607,6 +607,16 @@ export const e15E5 = initializeExpressionContainer([
   'questionTimesSomeNumberMinusOne',
   {
     shorthandNumber: 1
+  }
+])
+
+export const e15E6 = initializeExpressionContainer([
+  {
+    magical: 'variable',
+    name: magicalVariableName
+  },
+  {
+    shorthandNumber: 3
   }
 ])
 

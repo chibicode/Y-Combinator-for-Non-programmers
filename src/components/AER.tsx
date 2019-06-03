@@ -2051,6 +2051,30 @@ export default {
   fapu: (
     <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E5} />
   ),
+  hknv: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      initialState="default"
+      finalState="default"
+      finalNextIteration
+      variableSize="md"
+    />
+  ),
+  njwf: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E6}
+      showPriorities
+      initialState="default"
+      finalState="default"
+      finalNextIteration
+      variableSize="md"
+      highlightOverrideActiveAfterStart
+      highlightOverrides={{
+        v: 'highlighted'
+      }}
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}
