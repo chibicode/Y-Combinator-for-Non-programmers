@@ -6,7 +6,6 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import {
   Em,
-  Hr,
   InlineHeader,
   P,
   Strong,
@@ -340,9 +339,13 @@ export default () => (
         title: <>復習: ある条件を満たすまで繰り返す</>,
         content: (
           <>
-            <P>中級では、以下のように書きました:</P>
-            <Hr />
-            <H args={{ name: 'whyWeNeedFiniteBentoBox' }} />
+            <H
+              args={{
+                name: 'whyWeNeedFiniteBentoBox',
+                example1: AER.rreb,
+                example2: AER.kqzn
+              }}
+            />
           </>
         )
       },

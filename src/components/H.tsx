@@ -12,6 +12,7 @@ import {
   UlLi,
   Strong,
   InlineHeader,
+  Hr,
   Blockquote,
   ExternalLink
 } from 'src/components/ContentTags'
@@ -96,7 +97,11 @@ export interface HProps {
     | { name: 'mustChangeBothFuncUnboundAndBound' }
     | { name: 'secretCodeLabel'; minusOne?: boolean }
     | { name: 'secretCodeCaptionSimple'; number: number }
-    | { name: 'whyWeNeedFiniteBentoBox' }
+    | {
+        name: 'whyWeNeedFiniteBentoBox'
+        example1: React.ReactNode
+        example2: React.ReactNode
+      }
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
     | { name: 'secretCodeAddCaption' }
@@ -129,6 +134,7 @@ export interface HProps {
     | { name: 'lookAtToc' }
     | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
     | { name: 'timer'; numSecondsRemaining: number }
+    | { name: 'whatCanComputeFactorial'; start: 3 | 5 }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1383,14 +1389,26 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Strong>
               ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
             </Strong>
-            という計算を、数学用語で「<Strong>階乗</Strong>」と呼びます。
+            という計算を、数学用語で「<Strong>階乗</Strong>
+            」と呼びます(覚えなくても大丈夫です)。
           </P>
+          <Hr />
           <P>
-            この階乗のポイントは、「
-            <Strong>最後に1を掛けたら、そこで計算を終了する</Strong>
-            」ということです。
+            <H args={{ name: 'question' }} />
+            では、
+            <Strong>
+              こういった計算を、弁当箱を使って行うことができるでしょうか？
+            </Strong>
+            たとえば、
+            <Em>
+              下の弁当箱の
+              <InlineEmojiBoxesForQuestion />
+              に何を入れたら、それぞれ「<Strong>3 ✕ 2 ✕ 1</Strong>」「
+              <Strong>5 ✕ 4 ✕ 3 ✕ 2 ✕ 1</Strong>」を計算できるでしょう？
+            </Em>
           </P>
-          <EmojiSeparator emojis={['✖️', '1️⃣', '👈']} />
+          {args.example1}
+          {args.example2}
           <P>
             さきほどのような、
             <Em>
@@ -1474,6 +1492,29 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Number</>
     } else {
       return <>暗号{args.minusOne ? ' – 1' : ''}</>
+    }
+  }
+  if (args.name === 'whatCanComputeFactorial') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <InlineEmojiBoxesForQuestion />
+          に何を入れたら、
+          <br />
+          {args.start === 5 && (
+            <>
+              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+            </>
+          )}
+          <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+          <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+          <EmojiNumber number={1} />
+          が計算できる？
+        </>
+      )
     }
   }
   throw new Error()
