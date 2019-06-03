@@ -1399,6 +1399,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Strong>
               こういった計算を、弁当箱を使って行うことができるでしょうか？
             </Strong>
+          </P>
+          <P>
             たとえば、
             <Em>
               下の弁当箱の
@@ -1406,28 +1408,29 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               に何を入れたら、それぞれ「<Strong>3 ✕ 2 ✕ 1</Strong>」「
               <Strong>5 ✕ 4 ✕ 3 ✕ 2 ✕ 1</Strong>」を計算できるでしょう？
             </Em>
+            (どちらの
+            <InlineEmojiBoxesForQuestion />
+            にも、<Strong>同じ弁当箱</Strong>が入ります。)
           </P>
           {args.example1}
           {args.example2}
           <P>
             さきほどのような、
             <Em>
-              「無限に何かを繰り返す」弁当箱では、このような計算は不可能です。必要なのは、
-              <Strong>
-                「ある条件を満たすまで、何かを繰り返す弁当箱」です。
-              </Strong>
-              そしてこの場合、「ある条件を満たす = 最後に1を掛ける」となります。
+              「無限に何かを繰り返す」弁当箱では、
+              <Strong>このような計算は不可能</Strong>です。
             </Em>
           </P>
-          <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
+          <EmojiSeparator emojis={['❌', '♾', '❌']} />
           <P>
-            では、
-            <Em>
-              <Strong>
-                どんな弁当箱を使えば、「ある条件を満たすまで、何かを繰り返す」ことができるのでしょう？
-              </Strong>
-            </Em>
+            必要なのは、「
+            <Strong>最後に1を掛けたら、そこで繰り返しを終了する</Strong>
+            」弁当箱です。つまり、「無限に何かを繰り返す」のではなく、「
+            <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+            」弁当箱が求められているのです。
           </P>
+          <P>では、そんな弁当箱は存在するのでしょうか？</P>
+          <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
         </>
       )
     }

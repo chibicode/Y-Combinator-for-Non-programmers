@@ -10,7 +10,8 @@ import {
   P,
   Strong,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
@@ -327,9 +328,9 @@ export default () => (
             </P>
             {AER.opvb}
             <P>
-              しかし、無限に何かを繰り返すことができても役には立ちません。求められているのは、「無限に何かを繰り返す弁当箱」ではなく、「
-              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
-              」です。そういう弁当箱があれば、役に立ちます。
+              しかし、無限に何かを繰り返すことができても役には立ちません。求められているのは、「無限に何かを繰り返す」弁当箱ではなく、「
+              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+              」弁当箱です。そういう弁当箱があれば、役に立ちます。
             </P>
           </>
         )
@@ -339,6 +340,8 @@ export default () => (
         title: <>復習: ある条件を満たすまで繰り返す</>,
         content: (
           <>
+            <P>中級の最後には、以下のように書きました:</P>
+            <Hr />
             <H
               args={{
                 name: 'whyWeNeedFiniteBentoBox',
@@ -375,8 +378,8 @@ export default () => (
               」と「
               <Strong>条件分岐の弁当箱</Strong>
               」を組み合わせることで、「
-              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
-              」を作ることができる。
+              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+              」弁当箱を作ることができる。
               <H args={{ name: 'yesOrNo' }} />
             </P>
             <YesNoButtons answer="yes" />
@@ -397,8 +400,8 @@ export default () => (
               」と「
               <Strong>条件分岐の弁当箱</Strong>
               」を組み合わせることで、「
-              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
-              」を作ることができるのです。
+              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+              」弁当箱を作ることができるのです。
             </P>
             <EmojiSeparator
               nodes={[
@@ -409,8 +412,8 @@ export default () => (
             />
             <P>
               次が上級最後のページです(その後はエピローグです)。そこで、「
-              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
-              」がどんなものか紹介します。そしてついに、記事の題名にもある「
+              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+              」弁当箱がどんなものか紹介します。そしてついに、記事の題名にもある「
               <Strong>
                 魔法の
                 <H args={{ name: 'yCombinator' }} />
