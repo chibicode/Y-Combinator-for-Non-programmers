@@ -35,6 +35,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import { VariableNames } from 'src/types/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import TwitterEmbed from 'src/components/TwitterEmbed'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -115,6 +116,7 @@ export interface HProps {
     | { name: 'yesOrNo' }
     | { name: 'takeABreak' }
     | { name: 'shareTitle' }
+    | { name: 'shareContent' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
     | { name: 'aboutThisSite' }
@@ -1529,8 +1531,22 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       } else if (episodeNumber === numEpisodes - 1) {
         return <>ちょっと休憩？</>
       } else {
-        return <>ありがあとうございました</>
+        return <>ありがとうございました</>
       }
+    }
+  }
+  if (args.name === 'shareContent') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <P>
+            この記事は長いので、お手すきの際にお読みになってくださると嬉しいです。もしよければ、ページを閉じる前にこちらのツイートをリツイートしてくださると嬉しいです。
+          </P>
+          <TwitterEmbed id="1104633520389943296" />
+        </>
+      )
     }
   }
   throw new Error()

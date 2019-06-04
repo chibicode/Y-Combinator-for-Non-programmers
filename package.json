@@ -18,8 +18,8 @@
     "twemoji": "^12.0.4"
   },
   "scripts": {
-    "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 9991",
-    "en": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=en next -p 9990",
+    "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp next -p 9991",
+    "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
     "jp:hide-cards": "DEV_LOCALE=jp next -p 9991",
     "en:hide-cards": "DEV_LOCALE=en next -p 9990",
     "dev": "rm -rf .next && yarn tsc && yarn eslint && concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\" \"yarn twemoji:watch\"",

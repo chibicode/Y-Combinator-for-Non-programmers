@@ -6,6 +6,7 @@ import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
+import { shareVisible } from 'src/lib/twitter'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary'
@@ -31,19 +32,20 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             index <= lastVisibleCardIndex ? (
               <CardWrapper
                 slideNumber={index + 1}
-                slideCount={cards.length + 1}
+                slideCount={shareVisible ? cards.length + 1 : cards.length}
                 key={`card${index}`}
                 type={type}
                 title={title}
                 setLastVisibleCardIndex={setLastVisibleCardIndex}
                 preview={preview}
+                isLast={index === lastVisibleCardIndex && !shareVisible}
                 footer={footer}
               >
                 {content}
               </CardWrapper>
             ) : null
           )}
-          {cards.length - 1 === lastVisibleCardIndex && (
+          {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
             <CardWrapper
               slideNumber={cards.length + 1}
               slideCount={cards.length + 1}
@@ -52,7 +54,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
               setLastVisibleCardIndex={setLastVisibleCardIndex}
               title={<H args={{ name: 'shareTitle' }} />}
             >
-              Test
+              <H args={{ name: 'shareContent' }} />
             </CardWrapper>
           )}
         </>

@@ -14,7 +14,7 @@ const config = withCSS(
     },
     env: {
       productionLocale: process.env.PRODUCTION_LOCALE,
-      showHiddenCardsOnQuiz: process.env.SHOW_HIDDEN_CARDS_ON_QUIZ
+      isDevelopment: process.env.IS_DEVELOPMENT
     },
     // For locale, if running 2 servers (JP and EN) locally, if you use build-time config
     // (env instead of publicRuntimeConfig) then the config overlaps in both servers.
