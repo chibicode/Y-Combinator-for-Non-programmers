@@ -5,8 +5,9 @@ import EpisodeHero from 'src/components/EpisodeHero'
 import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
 import H from 'src/components/H'
-import { P } from 'src/components/ContentTags'
+import { P, Hr } from 'src/components/ContentTags'
 import { shareVisible } from 'src/lib/twitter'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary'
@@ -55,6 +56,8 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
               title={<H args={{ name: 'shareTitle' }} />}
             >
               <H args={{ name: 'shareContent' }} />
+              <Hr />
+              <NextLessonButton />
             </CardWrapper>
           )}
         </>

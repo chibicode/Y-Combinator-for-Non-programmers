@@ -260,23 +260,6 @@ export default () => (
             <NextLessonButton />
           </>
         )
-      },
-      {
-        type: 'sideNote',
-        title: <>ちょっと休憩？</>,
-        content: (
-          <>
-            <H args={{ name: 'takeABreak' }} />
-          </>
-        )
-      },
-      {
-        title: <>それでは上級に進みましょう！</>,
-        content: (
-          <>
-            <NextLessonButton />
-          </>
-        )
       }
     ]}
   />

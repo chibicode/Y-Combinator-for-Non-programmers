@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
-import { episodeUrl } from 'src/lib/meta'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
@@ -13,7 +12,6 @@ import {
   Strong,
   InlineHeader,
   Hr,
-  Blockquote,
   ExternalLink
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
@@ -21,7 +19,6 @@ import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
 import {
   lessonTitle,
-  episodeCategoryName,
   episodePrefix,
   episodePrefixes,
   episodeTitles
@@ -36,6 +33,7 @@ import { VariableNames } from 'src/types/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwitterEmbed from 'src/components/TwitterEmbed'
+import { shareId } from 'src/lib/twitter'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -114,7 +112,6 @@ export interface HProps {
     | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
-    | { name: 'takeABreak' }
     | { name: 'shareTitle' }
     | { name: 'shareContent' }
     | { name: 'privacyPolicy' }
@@ -156,8 +153,6 @@ const prefixColors = {
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   const episodeNumberFromContext = useContext(EpisodeContext).episodeNumber
   const episodeNumber = episodeNumberOverrides || episodeNumberFromContext
-  const currentEpisodeCategoryName = episodeCategoryName(episodeNumber)
-  const nextEpisodeCategoryName = episodeCategoryName(episodeNumber + 1)
 
   if (args.name === 'titlePrefix') {
     return <>{episodePrefix(episodeNumber)}</>
@@ -1032,63 +1027,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'takeABreak') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>
-            「{nextEpisodeCategoryName}
-            に入る前にちょっと休憩したい」という方は、もしよければですが、ツイッターなどのSNSで
-          </P>
-          <Blockquote>
-            <P>
-              <Strong>
-                「魔法のYコンビネータ、とりあえず{currentEpisodeCategoryName}
-                編は終わった」
-              </Strong>
-            </P>
-          </Blockquote>
-          <P>とつぶやいてくださると、宣伝になるので大変ありがたいです。</P>
-          <EmojiSeparator emojis={['📱', '🙂', '💬']} />
-          <P>
-            <Strong>その際には、下のURLをコピーしてシェアしてください。</Strong>
-            <Em>
-              後にこのURLを開けば、
-              <Strong>{nextEpisodeCategoryName}その1</Strong>
-              に飛ぶことができるので、ブックマークとしても便利です。
-            </Em>
-          </P>
-          <P
-            css={css`
-              text-align: center;
-            `}
-          >
-            <Em
-              highlightType="white"
-              css={css`
-                font-size: ${fontSizes(1.2)};
-              `}
-            >
-              <ExternalLink href={episodeUrl(episodeNumber + 1)}>
-                {episodeUrl(episodeNumber + 1)}
-              </ExternalLink>
-            </Em>
-            <br />
-            <span
-              css={css`
-                font-size: ${fontSizes(0.85)};
-                color: ${colors('grey700')};
-              `}
-            >
-              (↑ {nextEpisodeCategoryName}その1に飛ぶURLです)
-            </span>
-          </P>
-        </>
-      )
-    }
-  }
   if (args.name === 'privacyPolicy') {
     if (locale === 'en') {
       return <>Privacy Policy</>
@@ -1528,10 +1466,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       if (episodeNumber === 0) {
         return <>「あとで読む」前に</>
-      } else if (episodeNumber === numEpisodes - 1) {
-        return <>ちょっと休憩？</>
-      } else {
+      } else if (episodeNumber === numEpisodes + 1) {
         return <>ありがとうございました</>
+      } else {
+        return <>「ちょっとひと休み」の前に</>
       }
     }
   }
@@ -1539,14 +1477,38 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return (
-        <>
-          <P>
-            この記事は長いので、お手すきの際にお読みになってくださると嬉しいです。もしよければ、ページを閉じる前にこちらのツイートをリツイートしてくださると嬉しいです。
-          </P>
-          <TwitterEmbed id="1104633520389943296" />
-        </>
-      )
+      if (episodeNumber <= numEpisodes) {
+        let quitReason: React.ReactNode
+        if (episodeNumber === 0) {
+          quitReason = <>時間がないから、あとで読もう</>
+        } else {
+          quitReason = <>読むのに疲れたから、ひと休みしよう</>
+        }
+
+        return (
+          <>
+            <P>
+              「{quitReason}
+              」という方にお願いがあります。差し支えなければ、ページを閉じる前に
+              <Em>
+                下のツイートをリツイート、または引用リツイートしてくださると、宣伝になるので非常に助かります。
+              </Em>
+            </P>
+            <TwitterEmbed id={shareId} />
+            <P>
+              また、当記事の内容について質問がございましたら、
+              <Em>上のツイートにスクリーンショット付きで返信</Em>
+              してくだされば最優先で対応します。メール(
+              <ExternalLink href="mailto:shu@chibicode.com">
+                shu@chibicode.com
+              </ExternalLink>
+              )でもご質問にお答えできますが、返事が遅れるかもしれません。
+            </P>
+          </>
+        )
+      } else {
+        return <>?</>
+      }
     }
   }
   throw new Error()
