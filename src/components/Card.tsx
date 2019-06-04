@@ -176,18 +176,11 @@ const Card = ({
         >
           {title && (
             <H3
-              css={[
-                css`
-                  text-align: center;
-                  margin-left: ${spaces('-0.25')};
-                  margin-right: ${spaces('-0.25')};
-                `,
-                color === 'transparent' &&
-                  css`
-                    color: ${colors('grey600')};
-                    font-weight: ${fontWeights(400)};
-                  `
-              ]}
+              css={css`
+                text-align: center;
+                margin-left: ${spaces('-0.25')};
+                margin-right: ${spaces('-0.25')};
+              `}
             >
               {title}
             </H3>
