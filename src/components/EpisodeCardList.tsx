@@ -8,7 +8,7 @@ import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'warning' | 'meta' | 'summary'
+  type?: 'yesNoQuiz' | 'sideNote' | 'share' | 'meta' | 'summary'
   title?: React.ReactNode
   preview?: CardProps['preview']
   content: React.ReactNode
