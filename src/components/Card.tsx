@@ -165,8 +165,12 @@ const Card = ({
             `,
             color === 'transparent' &&
               css`
-                border: 2px dashed ${colors('grey150')};
+                border: 2px solid ${colors('grey150')};
                 color: ${colors('grey500')};
+                padding-bottom: 0;
+                ${ns} {
+                  padding-bottom: 0;
+                }
               `
           ]}
         >
