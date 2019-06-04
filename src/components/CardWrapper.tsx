@@ -36,7 +36,8 @@ const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
         yesNoQuiz: 'blue' as 'blue',
         sideNote: 'purple' as 'purple',
         meta: 'indigo' as 'indigo',
-        summary: 'pink' as 'pink'
+        summary: 'pink' as 'pink',
+        transparent: 'transparent' as 'transparent'
       }[type]
     : 'grey'
 

@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import EpisodeHero from 'src/components/EpisodeHero'
@@ -8,9 +9,10 @@ import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
 import { shareVisible } from 'src/lib/twitter'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { spaces } from 'src/lib/theme'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary'
+  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'transparent'
   title?: React.ReactNode
   preview?: CardProps['preview']
   content: React.ReactNode
@@ -33,13 +35,13 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             index <= lastVisibleCardIndex ? (
               <CardWrapper
                 slideNumber={index + 1}
-                slideCount={shareVisible ? cards.length + 1 : cards.length}
+                slideCount={cards.length}
                 key={`card${index}`}
                 type={type}
                 title={title}
                 setLastVisibleCardIndex={setLastVisibleCardIndex}
                 preview={preview}
-                isLast={index === lastVisibleCardIndex && !shareVisible}
+                isLast={index === lastVisibleCardIndex}
                 footer={footer}
               >
                 {content}
@@ -47,17 +49,21 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
             ) : null
           )}
           {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
-            <CardWrapper
-              slideNumber={cards.length + 1}
-              slideCount={cards.length + 1}
-              type="meta"
-              isLast
-              setLastVisibleCardIndex={setLastVisibleCardIndex}
-              title={<H args={{ name: 'shareTitle' }} />}
+            <div
+              css={css`
+                margin: ${spaces(3)} 0 0;
+              `}
             >
-              <H args={{ name: 'shareContent' }} />
-              <NextLessonButton />
-            </CardWrapper>
+              <CardWrapper
+                type="transparent"
+                isLast
+                setLastVisibleCardIndex={setLastVisibleCardIndex}
+                title={<H args={{ name: 'shareTitle' }} />}
+              >
+                <H args={{ name: 'shareContent' }} />
+                <NextLessonButton />
+              </CardWrapper>
+            </div>
           )}
         </>
       ) : (

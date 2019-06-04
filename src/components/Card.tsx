@@ -2,7 +2,14 @@
 import { css, jsx } from '@emotion/core'
 import React from 'react'
 import locale from 'src/lib/locale'
-import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
+import {
+  colors,
+  fontWeights,
+  fontSizes,
+  ns,
+  radii,
+  spaces
+} from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
 import CardContent, { CardContentProps } from 'src/components/CardContent'
@@ -31,6 +38,7 @@ export interface CardProps {
     | 'indigo'
     | 'white'
     | 'pink'
+    | 'transparent'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -58,7 +66,8 @@ export const backgroundColor = (color: CardProps['color']) =>
     purple: colors('purple50'),
     blue: colors('blue50'),
     indigo: colors('indigo50'),
-    pink: colors('pink50')
+    pink: colors('pink50'),
+    transparent: 'transparent'
   }[color])
 
 // First where the text is white
@@ -72,7 +81,8 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     purple: colors('purple300'),
     blue: colors('blue600'),
     indigo: colors('indigo300'),
-    pink: colors('pink400')
+    pink: colors('pink400'),
+    transparent: 'transparent'
   }[color])
 
 const Card = ({
@@ -134,32 +144,46 @@ const Card = ({
         `}
       >
         <div
-          css={css`
-            padding-top: ${spaces(1)};
-            padding-left: ${spaces(0.75)};
-            padding-right: ${spaces(0.75)};
-            padding-bottom: ${spaces(0.5)};
+          css={[
+            css`
+              padding-top: ${spaces(1)};
+              padding-left: ${spaces(0.75)};
+              padding-right: ${spaces(0.75)};
+              padding-bottom: ${spaces(0.5)};
 
-            ${ns} {
-              padding-top: ${spaces(1.5)};
-              padding-left: ${spaces(2)};
-              padding-right: ${spaces(2)};
-              padding-bottom: ${spaces(1)};
-            }
-            border-top-right-radius: ${radii(0.5)};
-            border-top-left-radius: ${radii(0.5)};
-            border-bottom-right-radius: ${footer ? 0 : radii(0.5)};
-            border-bottom-left-radius: ${footer ? 0 : radii(0.5)};
-            background: ${backgroundColor(color)};
-          `}
+              ${ns} {
+                padding-top: ${spaces(1.5)};
+                padding-left: ${spaces(2)};
+                padding-right: ${spaces(2)};
+                padding-bottom: ${spaces(1)};
+              }
+              border-top-right-radius: ${radii(0.5)};
+              border-top-left-radius: ${radii(0.5)};
+              border-bottom-right-radius: ${footer ? 0 : radii(0.5)};
+              border-bottom-left-radius: ${footer ? 0 : radii(0.5)};
+              background: ${backgroundColor(color)};
+            `,
+            color === 'transparent' &&
+              css`
+                border: 2px dashed ${colors('grey150')};
+                color: ${colors('grey500')};
+              `
+          ]}
         >
           {title && (
             <H3
-              css={css`
-                text-align: center;
-                margin-left: ${spaces('-0.25')};
-                margin-right: ${spaces('-0.25')};
-              `}
+              css={[
+                css`
+                  text-align: center;
+                  margin-left: ${spaces('-0.25')};
+                  margin-right: ${spaces('-0.25')};
+                `,
+                color === 'transparent' &&
+                  css`
+                    color: ${colors('grey600')};
+                    font-weight: ${fontWeights(400)};
+                  `
+              ]}
             >
               {title}
             </H3>
