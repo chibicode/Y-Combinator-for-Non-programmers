@@ -112,7 +112,6 @@ export interface HProps {
     | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
-    | { name: 'shareTitle' }
     | { name: 'shareContent' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
@@ -1460,19 +1459,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'shareTitle') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      if (episodeNumber === 0) {
-        return <>「あとで読む」前に</>
-      } else if (episodeNumber === numEpisodes + 1) {
-        return <>ありがとうございました</>
-      } else {
-        return <>「ちょっとひと休み」の前に</>
-      }
-    }
-  }
   if (args.name === 'shareContent') {
     if (locale === 'en') {
       return <>?</>
@@ -1480,15 +1466,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (episodeNumber <= numEpisodes) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
-          quitReason = <>長いからあとで読もう</>
+          quitReason = <>時間がないからあとで読もう</>
         } else {
-          quitReason = <>ちょっとひと休みしよう</>
+          quitReason = <>長いのでひと休みしよう</>
         }
 
         return (
           <>
             <P>
-              「{quitReason}
+              <InlineHeader>お願い:</InlineHeader>「{quitReason}
               」という方にお願いがあります。差し支えなければ、ページを閉じる前に
               <Em>
                 下のツイートをリツイート、または引用リツイートしてくださると、宣伝になるので非常に助かります。

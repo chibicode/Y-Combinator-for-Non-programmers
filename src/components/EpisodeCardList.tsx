@@ -58,7 +58,6 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
                 type="transparent"
                 isLast
                 setLastVisibleCardIndex={setLastVisibleCardIndex}
-                title={<H args={{ name: 'shareTitle' }} />}
               >
                 <H args={{ name: 'shareContent' }} />
                 <NextLessonButton />
