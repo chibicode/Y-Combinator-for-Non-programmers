@@ -30,11 +30,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
         gtag('config', '${GA_TRACKING_ID}', { 'anonymize_ip': true });`
         }}
       />
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"
-      />
+      <script async src="https://platform.twitter.com/widgets.js" />
     </Head>
     <Favicon />
     {children}

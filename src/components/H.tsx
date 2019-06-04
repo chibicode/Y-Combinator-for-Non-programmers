@@ -1504,6 +1504,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </ExternalLink>
               )でもご質問にお答えできますが、返事が遅れるかもしれません。
             </P>
+            <P>
+              ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
+            </P>
           </>
         )
       } else {

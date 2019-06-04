@@ -7,6 +7,7 @@ import locale from 'src/lib/locale'
 declare global {
   interface Window {
     twttr: any
+    __twttr: any
   }
 }
 
