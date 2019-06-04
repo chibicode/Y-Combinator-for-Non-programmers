@@ -1480,9 +1480,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (episodeNumber <= numEpisodes) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
-          quitReason = <>時間がないから、あとで読もう</>
+          quitReason = <>長いからあとで読もう</>
         } else {
-          quitReason = <>読むのに疲れたから、ひと休みしよう</>
+          quitReason = <>ちょっとひと休みしよう</>
         }
 
         return (
