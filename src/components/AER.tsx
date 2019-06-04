@@ -1833,6 +1833,18 @@ export default {
       isDone
     />
   ),
+  rreb: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E7}
+      caption={<H args={{ name: 'whatCanComputeFactorial', start: 3 }} />}
+    />
+  ),
+  kqzn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E8}
+      caption={<H args={{ name: 'whatCanComputeFactorial', start: 4 }} />}
+    />
+  ),
   zxux: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E1}
