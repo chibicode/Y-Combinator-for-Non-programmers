@@ -8,7 +8,7 @@ import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'share' | 'meta' | 'summary'
+  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary'
   title?: React.ReactNode
   preview?: CardProps['preview']
   content: React.ReactNode
@@ -26,23 +26,36 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
       <EpisodePageInitialRenderWarning />
       <EpisodeHero />
       {cards.length > 0 ? (
-        cards.map(({ title, type, content, preview, footer }, index) =>
-          index <= lastVisibleCardIndex ? (
+        <>
+          {cards.map(({ title, type, content, preview, footer }, index) =>
+            index <= lastVisibleCardIndex ? (
+              <CardWrapper
+                slideNumber={index + 1}
+                slideCount={cards.length + 1}
+                key={`card${index}`}
+                type={type}
+                title={title}
+                setLastVisibleCardIndex={setLastVisibleCardIndex}
+                preview={preview}
+                footer={footer}
+              >
+                {content}
+              </CardWrapper>
+            ) : null
+          )}
+          {cards.length - 1 === lastVisibleCardIndex && (
             <CardWrapper
-              slideNumber={index + 1}
-              slideCount={cards.length}
-              key={`card${index}`}
-              type={type}
-              isLast={index === lastVisibleCardIndex}
-              title={title}
+              slideNumber={cards.length + 1}
+              slideCount={cards.length + 1}
+              type="meta"
+              isLast
               setLastVisibleCardIndex={setLastVisibleCardIndex}
-              preview={preview}
-              footer={footer}
+              title={<H args={{ name: 'shareTitle' }} />}
             >
-              {content}
+              Test
             </CardWrapper>
-          ) : null
-        )
+          )}
+        </>
       ) : (
         <CardWrapper setLastVisibleCardIndex={setLastVisibleCardIndex}>
           <P>

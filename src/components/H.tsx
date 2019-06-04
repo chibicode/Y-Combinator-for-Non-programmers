@@ -28,7 +28,7 @@ import {
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { colors, fontSizes } from 'src/lib/theme'
-import { episodeCategory } from 'src/lib/episodeCategories'
+import { episodeCategory, numEpisodes } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -114,6 +114,7 @@ export interface HProps {
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
     | { name: 'takeABreak' }
+    | { name: 'shareTitle' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
     | { name: 'aboutThisSite' }
@@ -1517,6 +1518,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           が計算できる？
         </>
       )
+    }
+  }
+  if (args.name === 'shareTitle') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      if (episodeNumber === 0) {
+        return <>「あとで読む」前に</>
+      } else if (episodeNumber === numEpisodes - 1) {
+        return <>ちょっと休憩？</>
+      } else {
+        return <>ありがあとうございました</>
+      }
     }
   }
   throw new Error()
