@@ -1519,7 +1519,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  throw new Error(args.name)
+  throw new Error()
 }
 
 H.defaultProps = {
