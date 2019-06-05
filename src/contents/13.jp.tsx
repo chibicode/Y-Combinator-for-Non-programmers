@@ -308,35 +308,6 @@ export default () => (
       },
       {
         type: 'sideNote',
-        title: <>復習: 無限ループの弁当箱</>,
-        content: (
-          <>
-            <P>
-              <Strong>中級編の最後を思い出してください。</Strong>
-              下のような、「<Strong>無限ループの弁当箱</Strong>
-              」を紹介したことを覚えていらっしゃいますでしょうか。この弁当箱を
-              <H args={{ name: 'fastForward' }} />
-              すると、一番下にある
-              <InlineEmojiBoxesForQuestion />
-              が無限にひとつずつ増えていきます。
-            </P>
-            {AER.aqbs}
-            <P>
-              上の例は長くなるので3回目で中断しましたが、たとえば5回繰り返された時点では、
-              <InlineEmojiBoxesForQuestion />
-              が一番下に5個登場します。
-            </P>
-            {AER.opvb}
-            <P>
-              しかし、無限に何かを繰り返すことができても役には立ちません。求められているのは、「無限に何かを繰り返す」弁当箱ではなく、「
-              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
-              」弁当箱です。そういう弁当箱があれば、役に立ちます。
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'sideNote',
         title: <>復習: ある条件を満たすまで繰り返す</>,
         content: (
           <>

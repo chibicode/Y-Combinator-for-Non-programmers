@@ -11,7 +11,6 @@ export interface StepOptions {
   skipAlphaConvert?: boolean
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  maxAllowedDefaultStateCount?: number
 }
 
 const DEFAULT_MAX_INDEX = 100
@@ -118,12 +117,6 @@ export default class ExpressionContainerManager {
 
       if (expressionContainer.previouslyChangedExpressionState === 'default') {
         becameDefaultCount += 1
-        if (
-          this.stepOptions.maxAllowedDefaultStateCount &&
-          this.stepOptions.maxAllowedDefaultStateCount === becameDefaultCount
-        ) {
-          this.maximumIndex = this.currentIndex
-        }
       }
     }
     this.currentIndex = 0

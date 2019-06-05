@@ -61,7 +61,6 @@ interface ExpressionRunnerSimpleProps {
   nextIteration?: boolean
   nextIterations?: number
   showPriorities: boolean
-  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
   caption?: ExpressionRunnerProps['caption']
@@ -85,7 +84,6 @@ export const ExpressionRunnerSimple = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  maxAllowedDefaultStateCount,
   variableSize,
   containerSize,
   skipAlphaConvert,
@@ -104,7 +102,6 @@ export const ExpressionRunnerSimple = ({
     highlightOverridesCallArgAndFuncUnboundOnly={
       highlightOverridesCallArgAndFuncUnboundOnly
     }
-    maxAllowedDefaultStateCount={maxAllowedDefaultStateCount}
     showOnlyFocused={showOnlyFocused}
     containerSize={containerSize}
     caption={caption}
@@ -146,9 +143,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   variableSize,
   containerSize,
   highlightOverrides,
-  maxAllowedDefaultStateCount,
-  explanationsVisibility,
-  resetAtTheEnd
+  explanationsVisibility
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: ExpressionContainer['previouslyChangedExpressionState']
@@ -166,13 +161,9 @@ export const ExpressionRunnerPlayButtonOnly = ({
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
-  resetAtTheEnd?: ExpressionRunnerProps['resetAtTheEnd']
-  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
 }) => (
   <ExpressionRunner
     speed={speed}
-    resetAtTheEnd={resetAtTheEnd}
-    maxAllowedDefaultStateCount={maxAllowedDefaultStateCount}
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     highlightOverrides={highlightOverrides}
@@ -218,7 +209,6 @@ export const ExpressionRunnerPairSimple = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  maxAllowedDefaultStateCount,
   variableSize,
   containerSize,
   skipAlphaConvert,
@@ -250,7 +240,6 @@ export const ExpressionRunnerPairSimple = ({
         bottomRightBadgeOverrides,
         highlightOverrides,
         highlightOverrideActiveAfterStart,
-        maxAllowedDefaultStateCount,
         variableSize,
         containerSize,
         skipAlphaConvert,
@@ -278,7 +267,6 @@ export const ExpressionRunnerPairSimple = ({
         bottomRightBadgeOverrides,
         highlightOverrides,
         highlightOverrideActiveAfterStart,
-        maxAllowedDefaultStateCount,
         variableSize,
         containerSize,
         skipAlphaConvert,

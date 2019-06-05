@@ -58,7 +58,6 @@ export interface ExpressionRunnerProps {
   maxStepsAllowed?: number
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  maxAllowedDefaultStateCount?: number
   containerSize: ContainerProps['size']
   resetIndex: boolean
   hidePlayButton?: boolean
@@ -73,7 +72,6 @@ export interface ExpressionRunnerProps {
   caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
   showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
-  resetAtTheEnd: boolean
 }
 
 interface PlaybackState {
@@ -91,11 +89,9 @@ const getActions = ({
   getExpressionContainerManager,
   setPlaybackStatus,
   setExpressionContainerManagerState,
-  resetAtTheEnd,
   setPlayClicked
 }: {
   speed: number
-  resetAtTheEnd: ExpressionRunnerProps['resetAtTheEnd']
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
   getExpressionContainerManager: () => ExpressionContainerManager
   setPlaybackStatus: React.Dispatch<React.SetStateAction<PlaybackState>>
@@ -171,7 +167,6 @@ const getActions = ({
 
       if (
         resetIfNecessary &&
-        resetAtTheEnd &&
         !getExpressionContainerManager().currentState.canStepForward
       ) {
         actions.reset()
@@ -195,7 +190,6 @@ const ExpressionRunner = ({
   expressionContainer,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
-  maxAllowedDefaultStateCount,
   hideControls,
   explanationsVisibility,
   hidePriorities,
@@ -212,8 +206,7 @@ const ExpressionRunner = ({
   highlightOverridesCallArgAndFuncUnboundOnly,
   bottomRightBadgeOverrides,
   highlightOverrides,
-  highlightOverrideActiveAfterStart,
-  resetAtTheEnd
+  highlightOverrideActiveAfterStart
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -226,8 +219,7 @@ const ExpressionRunner = ({
     showAllShowSteps,
     skipAlphaConvert,
     initializeInstructions,
-    resetIndex,
-    maxAllowedDefaultStateCount
+    resetIndex
   })
   const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
@@ -243,7 +235,6 @@ const ExpressionRunner = ({
     getExpressionContainerManager,
     setPlaybackStatus,
     setExpressionContainerManagerState,
-    resetAtTheEnd,
     setPlayClicked
   })
   const isDone = isContainerWithState(
@@ -384,12 +375,8 @@ const ExpressionRunner = ({
                   margin-top: ${spaces(0.5)};
                 `}
               >
-                {maxAllowedDefaultStateCount ? (
-                  <H args={{ name: 'stoppedBecauseInfiniteLoop' }} />
-                ) : (
-                  !hidePlayButton && (
-                    <H args={{ name: 'stoppedForExplanation' }} />
-                  )
+                {!hidePlayButton && (
+                  <H args={{ name: 'stoppedForExplanation' }} />
                 )}
               </ExpressionRunnerCaptionWrapper>
             )}
@@ -418,8 +405,7 @@ ExpressionRunner.defaultProps = {
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
-  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
-  resetAtTheEnd: false
+  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused
 }
 
 export default ExpressionRunner

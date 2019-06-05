@@ -50,7 +50,6 @@ const useExpressionContainerManager = ({
   initializeInstructions,
   resetIndex,
   expressionContainer,
-  maxAllowedDefaultStateCount,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
   showAllShowSteps,
@@ -61,7 +60,6 @@ const useExpressionContainerManager = ({
   expressionContainer: SteppedExpressionContainer
   lastAllowedExpressionState?: ExpressionRunnerProps['lastAllowedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
 }) => {
@@ -77,8 +75,7 @@ const useExpressionContainerManager = ({
         showAllShowSteps,
         skipAlphaConvert,
         lastAllowedExpressionState,
-        lastAllowedExpressionStateAfterIterations,
-        maxAllowedDefaultStateCount
+        lastAllowedExpressionStateAfterIterations
       }
     })
     expressionContainerManager = initializeExpressionManager({

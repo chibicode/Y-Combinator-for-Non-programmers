@@ -120,8 +120,6 @@ export interface HProps {
         name: 'categoryNameColored'
         category: keyof typeof episodePrefixes
       }
-    | { name: 'infiniteBentoBox' }
-    | { name: 'stoppedBecauseInfiniteLoop' }
     | { name: 'stoppedForExplanation' }
     | { name: 'infinitelyAddingQuestionCaption' }
     | { name: 'secretCodeAddOneCaptionWithoutQuestion' }
@@ -1094,32 +1092,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>あとがき</>
     }
   }
-  if (args.name === 'infiniteBentoBox') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          「
-          <InlineHeader>
-            無限ループの弁当箱 <Emoji>♾</Emoji>
-          </InlineHeader>
-          」
-        </>
-      )
-    }
-  }
-  if (args.name === 'stoppedBecauseInfiniteLoop') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <Strong>
-          <Emoji>♾</Emoji> 無限に続くので、ここで中断します！
-        </Strong>
-      )
-    }
-  }
   if (args.name === 'stoppedForExplanation') {
     if (locale === 'en') {
       return <>?</>
@@ -1348,29 +1320,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </P>
           {args.example1}
           {args.example2}
-          <P>
-            さきほどのような、
-            <Em>
-              「無限に何かを繰り返す」弁当箱では、
-              <Strong>このような計算は不可能</Strong>です。
-            </Em>
-          </P>
-          <EmojiSeparator emojis={['❌', '♾', '❌']} />
-          <P>
-            必要なのは、「
-            <Strong>最後に1を掛けたら、そこで繰り返しを終了する</Strong>
-            」弁当箱です。
-          </P>
-          <EmojiSeparator emojis={['✖️', '1️⃣', '👈']} />
-          <P>
-            つまり、「無限に何かを繰り返す」弁当箱ではなく、「
-            <Strong>ある条件を満たす</Strong>
-            <Em>(たとえば、最後に1を掛ける)</Em>
-            <Strong>まで、何かを繰り返す</Strong>
-            」弁当箱が求められているのです。
-          </P>
-          <P>では、そんな弁当箱は存在するのでしょうか？</P>
-          <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
         </>
       )
     }
