@@ -11,8 +11,8 @@ Router.events.on('routeChangeStart', () => {
   reloadTwitterScript()
   NProgress.start()
 })
-Router.events.on('routeChangeComplete', (url: string) => {
-  pageview(url)
+Router.events.on('routeChangeComplete', (path: string) => {
+  pageview(path)
   NProgress.done()
 })
 Router.events.on('routeChangeError', () => NProgress.done())
