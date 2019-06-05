@@ -10,7 +10,7 @@ export interface VariableExpression {
   readonly emphasizePriority: boolean
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
-  readonly shorthandBinary?: 'isZero'
+  readonly shorthandBinary?: 'mult'
   readonly shorthandNumber?: number
   readonly shorthandUnary?: 'pred'
   readonly magicalType?:
@@ -381,6 +381,20 @@ type ExecutableMagical<
     readonly func: F
   })
 
+type ExecutableBinary<
+  S extends CallStates,
+  B extends VariableShorthandBinary,
+  N extends VariableShorthandNumber
+> = CallExpression &
+  ({
+    readonly state: S
+    readonly arg: CallExpression & {
+      readonly func: B
+      readonly arg: N
+    }
+    readonly func: N
+  })
+
 type ExecutableConditionalNumber<
   C extends VariableShorthandNumber,
   T extends Expression,
@@ -423,6 +437,12 @@ export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
   extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
 export interface ExecutableStepCallMagical<C extends CallStates = 'default'>
   extends ExecutableMagical<C, StepMagicalVariable<C>, StepChild<C>> {}
+export interface ExecutableStepCallBinary<C extends CallStates = 'default'>
+  extends ExecutableBinary<
+    C,
+    StepVariableShorthandBinary<C>,
+    StepVariableShorthandNumber<C>
+  > {}
 export interface ExecutableStepConditional<
   C extends CallStates = 'default',
   S extends ConditionalStates = 'default'
@@ -446,12 +466,20 @@ type DistributeStepCallRegular<U> = U extends CallStates
   : never
 export type ExecutableCallRegular = DistributeStepCallRegular<CallStates>
 
+type DistributeStepCallBinary<U> = U extends CallStates
+  ? ExecutableStepCallBinary<U>
+  : never
+export type ExecutableCallBinary = DistributeStepCallBinary<CallStates>
+
 type DistributeStepCallMagical<U> = U extends CallStates
   ? ExecutableStepCallMagical<U>
   : never
 export type ExecutableCallMagical = DistributeStepCallMagical<CallStates>
 
-export type ExecutableCall = ExecutableCallRegular | ExecutableCallMagical
+export type ExecutableCall =
+  | ExecutableCallRegular
+  | ExecutableCallMagical
+  | ExecutableCallBinary
 
 type DistributeStepConditional<
   U,

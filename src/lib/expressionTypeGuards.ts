@@ -10,6 +10,7 @@ import {
   ExecutableCallRegular,
   ExecutableCall,
   ExecutableConditional,
+  ExecutableCallBinary,
   VariableShorthandUnaryNumber,
   ExecutableCallMagical,
   MagicalVariable
@@ -84,11 +85,24 @@ export function isExecutableCallMagical<E extends ExecutableCallMagical>(
   return isMagicalVariable(expression.func)
 }
 
+export function isExecutableCallBinary<E extends ExecutableCallBinary>(
+  expression: CallExpression
+): expression is E {
+  return (
+    isCall(expression.arg) &&
+    isVariableShorthandNumber(expression.func) &&
+    isVariableShorthandNumber(expression.arg.arg) &&
+    isVariableShorthandBinary(expression.arg.func)
+  )
+}
+
 export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
   return (
-    isExecutableCallRegular(expression) || isExecutableCallMagical(expression)
+    isExecutableCallRegular(expression) ||
+    isExecutableCallMagical(expression) ||
+    isExecutableCallBinary(expression)
   )
 }
 

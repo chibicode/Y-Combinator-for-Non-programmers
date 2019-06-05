@@ -44,3 +44,6 @@ export {
 export {
   default as stepToUnaryProcessed
 } from 'src/lib/steps/stepToUnaryProcessed'
+export {
+  default as stepToBinaryComputed
+} from 'src/lib/steps/stepToBinaryComputed'

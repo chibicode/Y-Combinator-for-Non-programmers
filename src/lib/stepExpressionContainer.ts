@@ -11,7 +11,8 @@ import checkExecutableUnaryExists from 'src/lib/checkExecutableUnaryExists'
 import {
   isCall,
   isExecutableCallRegular,
-  isVariableShorthandUnaryNumber
+  isVariableShorthandUnaryNumber,
+  isExecutableCallMagical
 } from 'src/lib/expressionTypeGuards'
 import replaceFuncParentKey from 'src/lib/replaceFuncParentKey'
 import {
@@ -33,7 +34,8 @@ import {
   stepToMagicalExpanded,
   stepToDefault,
   stepToShowExecutableUnary,
-  stepToUnaryProcessed
+  stepToUnaryProcessed,
+  stepToBinaryComputed
 } from 'src/lib/steps'
 import {
   ContainerWithState,
@@ -44,7 +46,8 @@ import {
   StepChild,
   ExecutableConditionalStatesDistributed,
   ExecutableCall,
-  ExecutableCallMagical
+  ExecutableCallMagical,
+  ExecutableCallBinary
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 
@@ -117,6 +120,32 @@ const stepConditional = (
     }
   }
   throw new Error()
+}
+
+const stepBinary = (
+  e: ExecutableCallBinary
+): {
+  nextExpression: ExecutableCall | StepChild<'default'>
+  matchExists?: boolean
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    case 'active': {
+      return {
+        nextExpression: stepToBinaryComputed(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    default: {
+      throw new Error()
+    }
+  }
 }
 
 const stepMagical = (
@@ -334,7 +363,9 @@ const runStep = (
   } = isCall(expression)
     ? isExecutableCallRegular(expression)
       ? stepRegular(expression, stepOptions, e.matchExists)
-      : stepMagical(expression)
+      : isExecutableCallMagical(expression)
+      ? stepMagical(expression)
+      : stepBinary(expression)
     : stepConditional(expression)
 
   if (!callParent && !callParentKey && !funcParent && !conditionalParent) {
