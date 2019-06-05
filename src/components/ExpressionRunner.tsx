@@ -88,8 +88,7 @@ const getActions = ({
   interval,
   getExpressionContainerManager,
   setPlaybackStatus,
-  setExpressionContainerManagerState,
-  setPlayClicked
+  setExpressionContainerManagerState
 }: {
   speed: number
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
@@ -98,7 +97,6 @@ const getActions = ({
   setExpressionContainerManagerState: React.Dispatch<
     React.SetStateAction<ExpressionContainerManager['currentState']>
   >
-  setPlayClicked: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const actions = {
     stepForward() {
@@ -224,8 +222,7 @@ const ExpressionRunner = ({
     interval,
     getExpressionContainerManager,
     setPlaybackStatus,
-    setExpressionContainerManagerState,
-    setPlayClicked
+    setExpressionContainerManagerState
   })
   const isDone = isContainerWithState(
     expressionContainerManagerState.expressionContainer,
