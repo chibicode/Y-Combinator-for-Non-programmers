@@ -2,14 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import React from 'react'
 import locale from 'src/lib/locale'
-import {
-  colors,
-  fontWeights,
-  fontSizes,
-  ns,
-  radii,
-  spaces
-} from 'src/lib/theme'
+import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
 import CardContent, { CardContentProps } from 'src/components/CardContent'
