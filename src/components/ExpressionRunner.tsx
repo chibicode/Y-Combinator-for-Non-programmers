@@ -152,10 +152,8 @@ const getActions = ({
     },
 
     step(direction: 'forward' | 'backward' | 'reset' | 'skipToEnd') {
-      let resetIfNecessary = false
       if (direction === 'forward') {
         getExpressionContainerManager().stepForward()
-        resetIfNecessary = true
       } else if (direction === 'backward') {
         getExpressionContainerManager().stepBackward()
       } else if (direction === 'skipToEnd') {
@@ -164,14 +162,6 @@ const getActions = ({
         getExpressionContainerManager().reset()
       }
       actions.syncState()
-
-      if (
-        resetIfNecessary &&
-        !getExpressionContainerManager().currentState.canStepForward
-      ) {
-        actions.reset()
-        setPlayClicked(false)
-      }
     },
 
     syncState() {
