@@ -676,6 +676,20 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
+export const multTest = initializeExpressionContainer([
+  {
+    shorthandNumber: 2
+  },
+  [
+    {
+      shorthandBinary: 'mult'
+    },
+    {
+      shorthandNumber: 3
+    }
+  ]
+])
+
 export const ycTest = initializeExpressionContainer([
   yCombinator,
   {

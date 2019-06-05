@@ -2053,6 +2053,15 @@ export default {
       variableSize="md"
     />
   ),
+  ricq: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.multTest}
+      showPriorities
+      skipToTheEnd={false}
+      speed={1.5}
+      variableSize="md"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

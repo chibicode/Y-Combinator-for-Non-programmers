@@ -134,6 +134,8 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             ? '💥'
             : expression.shorthandNumber !== undefined
             ? numberEmojiMapping[expression.shorthandNumber]
+            : expression.shorthandBinary !== undefined
+            ? '✖️'
             : letterEmojiMapping[expression.name]}
         </Emoji>
         {expression.shorthandUnary && (

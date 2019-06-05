@@ -29,6 +29,7 @@ export type VariableNames =
   | 'A'
   | 'B'
   | 'shorthandNumber'
+  | 'shorthandBinary'
   | 'magical'
   | 'someNumber'
   | 'questionTimesSomeNumberMinusOne'

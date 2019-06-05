@@ -143,7 +143,7 @@ export default function buildExpressionFromParams(
     }
   } else if (isVariableShorthandBinaryParams(expressionParams)) {
     return {
-      ...buildVariableExpression(expressionParams.name, true, 'default'),
+      ...buildVariableExpression('shorthandBinary', true, 'default'),
       shorthandBinary: expressionParams.shorthandBinary
     }
   } else if (isVariableShorthandUnaryParams(expressionParams)) {

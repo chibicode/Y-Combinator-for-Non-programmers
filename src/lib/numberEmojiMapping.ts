@@ -4,7 +4,8 @@ const numberEmojiMapping: Record<number, string> = {
   2: '2️⃣',
   3: '3️⃣',
   4: '4️⃣',
-  5: '5️⃣'
+  5: '5️⃣',
+  6: '6️⃣'
 }
 
 export default numberEmojiMapping

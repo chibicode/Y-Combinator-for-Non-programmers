@@ -14,8 +14,8 @@ export interface HighlightedVariableExpressionParams {
 }
 
 export interface VariableShorthandBinaryParams {
-  readonly name: VariableNames
   readonly shorthandBinary: VariableShorthandBinary['shorthandBinary']
+  readonly initialHighlight?: boolean
 }
 
 export interface VariableShorthandNumberParams {
