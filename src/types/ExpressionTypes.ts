@@ -370,17 +370,6 @@ type ExecutableRegular<
     readonly func: F
   })
 
-type ExecutableShorthandBinary<
-  S extends CallStates,
-  F extends VariableShorthandBinary,
-  E extends Expression
-> = CallExpression &
-  ({
-    readonly state: S
-    readonly arg: E
-    readonly func: F
-  })
-
 type ExecutableMagical<
   S extends CallStates,
   F extends MagicalVariable,
@@ -432,14 +421,6 @@ export interface NonExecutableStepCall<C extends CallStates = 'default'>
   extends NonExecutable<StepChild<C>> {}
 export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
   extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
-export interface ExecutableStepCallShorthandBinary<
-  C extends CallStates = 'default'
->
-  extends ExecutableShorthandBinary<
-    C,
-    StepVariableShorthandBinary<C>,
-    StepChild<C>
-  > {}
 export interface ExecutableStepCallMagical<C extends CallStates = 'default'>
   extends ExecutableMagical<C, StepMagicalVariable<C>, StepChild<C>> {}
 export interface ExecutableStepConditional<
@@ -465,22 +446,12 @@ type DistributeStepCallRegular<U> = U extends CallStates
   : never
 export type ExecutableCallRegular = DistributeStepCallRegular<CallStates>
 
-type DistributeStepCallShorthandBinary<U> = U extends CallStates
-  ? ExecutableStepCallShorthandBinary<U>
-  : never
-export type ExecutableCallShorthandBinary = DistributeStepCallShorthandBinary<
-  CallStates
->
-
 type DistributeStepCallMagical<U> = U extends CallStates
   ? ExecutableStepCallMagical<U>
   : never
 export type ExecutableCallMagical = DistributeStepCallMagical<CallStates>
 
-export type ExecutableCall =
-  | ExecutableCallRegular
-  | ExecutableCallShorthandBinary
-  | ExecutableCallMagical
+export type ExecutableCall = ExecutableCallRegular | ExecutableCallMagical
 
 type DistributeStepConditional<
   U,

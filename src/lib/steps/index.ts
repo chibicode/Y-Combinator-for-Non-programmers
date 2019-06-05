@@ -24,9 +24,6 @@ export {
 } from 'src/lib/steps/stepToShowFuncUnbound'
 export { default as removeCrossed } from 'src/lib/steps/removeCrossed'
 export {
-  default as stepToShorthandBinaryResult
-} from 'src/lib/steps/stepToShorthandBinaryResult'
-export {
   default as stepToConditionalExecuted
 } from 'src/lib/steps/stepToConditionalExecuted'
 export {
