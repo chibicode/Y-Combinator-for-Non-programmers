@@ -1,6 +1,6 @@
 // Without this, page transition causes an error like:
 //  __twttr.callbacks.cb0 is not a function
-const reloadTwitterSript = () => {
+const reloadTwitterScript = () => {
   window.twttr = window.__twttr = {}
   const scriptTag = document.createElement('script')
   const firstScriptTag = document.getElementsByTagName('script')[0]
@@ -9,4 +9,4 @@ const reloadTwitterSript = () => {
   firstScriptTag.parentNode!.insertBefore(scriptTag, firstScriptTag)
 }
 
-export default reloadTwitterSript
+export default reloadTwitterScript
