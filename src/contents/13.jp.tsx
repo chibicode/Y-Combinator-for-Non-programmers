@@ -77,10 +77,7 @@ export default () => (
             <P>
               <InlineHeader>赤</InlineHeader>・<InlineHeader>黄色</InlineHeader>
               ・<InlineHeader>青</InlineHeader>
-              と、まるで縦型の信号機 <Emoji>🚦</Emoji>{' '}
-              みたいですね。ちなみに、日本では横型の信号機 <Emoji>🚥</Emoji>{' '}
-              が主流ですが、世界のほとんどの国では縦型 <Emoji>🚦</Emoji>{' '}
-              が主流です。
+              と、まるで縦型の信号機 <Emoji>🚦</Emoji> みたいですね。
             </P>
           </>
         ),
