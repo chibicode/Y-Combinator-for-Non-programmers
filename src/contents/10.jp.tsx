@@ -1,19 +1,28 @@
 import React from 'react'
-import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
-import NextLessonButton from 'src/components/NextLessonButton'
+import { Ul, UlLi, Em, P, Strong } from 'src/components/ContentTags'
 import AER from 'src/components/AER'
-import H from 'src/components/H'
-import YesNoButtons from 'src/components/YesNoButtons'
-import Emoji from 'src/components/Emoji'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
+import Emoji from 'src/components/Emoji'
+import EpisodeCardList from 'src/components/EpisodeCardList'
+import EmojiWithText from 'src/components/EmojiWithText'
+import YesNoButtons from 'src/components/YesNoButtons'
+import NextLessonButton from 'src/components/NextLessonButton'
+import H from 'src/components/H'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import { cakeVariableName } from 'src/lib/specialVariableNames'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>中級の最後です！</>,
+        title: (
+          <>
+            <EmojiWithText letter={cakeVariableName} />
+            の入った弁当箱
+          </>
+        ),
         content: (
           <>
             <P>
@@ -22,9 +31,85 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
-              <H args={{ name: 'yesNoQuiz' }} />
-              からやっていきましょう！
+              早速、
+              <H args={{ name: 'lookAtThisBentoBox' }} />。
             </P>
+            {AER.wbpx}
+            <P>注目ポイントはふたつあります:</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  一番上に
+                  <Strong>
+                    <EmojiWithText letter={cakeVariableName} />
+                  </Strong>
+                  が入っています。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <InlineEmojiBoxesForQuestion />
+                  の部分には、料理が「<Strong>ひとつだけ</Strong>」入ります。
+                </Em>
+              </UlLi>
+            </Ul>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlineEmojiBoxesForQuestion size="md" /> に何か入れてみる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              とりあえず、
+              <EmojiWithText letter="c" />
+              を<InlineEmojiBoxesForQuestion />
+              に入れてみました。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.gszp}
+            <P>
+              <InlineEmojiBoxesForQuestion />
+              に入っていた
+              <Strong>
+                <EmojiWithText letter="c" />
+              </Strong>
+              が最後に残りますね。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="c" />,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="c" />
+              ]}
+            />
+            <P>
+              <EmojiWithText letter="d" />
+              を<InlineEmojiBoxesForQuestion />
+              に入れてみたらどうでしょう？
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.kntz}
+            <P>
+              今回も、
+              <InlineEmojiBoxesForQuestion />
+              に入っていた
+              <Strong>
+                <EmojiWithText letter="d" />
+              </Strong>
+              が最後に残りました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="d" />,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetter letter="d" />
+              ]}
+            />
           </>
         )
       },
@@ -37,15 +122,32 @@ export default () => (
         ),
         content: (
           <>
+            <P>では、ここで質問です！</P>
+            {AER.wbpx}
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'question' }} />
             </P>
-            {AER.ofee}
-            <P>
-              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
-            </P>
-            {AER.wwdd}
-            <YesNoButtons answer="no" />
+            <Ul>
+              <UlLi>
+                こちらの弁当箱の
+                <Strong>
+                  <InlineEmojiBoxesForQuestion />
+                  に料理をひとつだけ入れて
+                  <H args={{ name: 'play' }} />
+                  すると
+                </Strong>
+                、
+              </UlLi>
+              <UlLi>
+                最終的にかならず
+                <Strong>
+                  <InlineEmojiBoxesForQuestion />
+                  に入れた料理が残る
+                </Strong>
+                。<H args={{ name: 'yesOrNo' }} />
+              </UlLi>
+              <YesNoButtons answer="no" tooHard />
+            </Ul>
           </>
         )
       },
@@ -59,204 +161,296 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.ggxt}
             <P>
               <Strong>
-                なんと、一周して最初と同じ弁当箱に戻ってしまいました！
+                <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="b" />
+                を入れる
               </Strong>
-            </P>
-            <P>
-              そう、これは、永遠に終わりがない
-              <Strong>
-                <H args={{ name: 'infiniteBentoBox' }} />
-              </Strong>
-              なのです。
-            </P>
-            <EmojiSeparator emojis={['♾', '🍱', '♾']} />
-          </>
-        )
-      },
-      {
-        title: <>何の役に立つの？</>,
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'infiniteBentoBox' }} />
-              は興味深いですが、<Em>いったい何の役に立つのでしょうか？</Em>
-              所詮、ただ同じことを繰り返すだけですよね。
-            </P>
-            <EmojiSeparator emojis={['😒', '🍱', '♾']} />
-            <P>
-              たしかに、先ほどの
-              <H args={{ name: 'infiniteBentoBox' }} />
-              のままでは何の役にも立ちません。では、少し工夫を加えてみましょう！
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
-            </P>
-            {AER.gxuj}
-            <P>
-              <H args={{ name: 'question' }} /> この弁当箱を
-              <H args={{ name: 'fastForward' }} />
-              すると、先ほどと同じように
-              <Strong>一周して同じ弁当箱に戻る。</Strong>
-              <H args={{ name: 'yesOrNo' }} />
-            </P>
-            <YesNoButtons answer="no" />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: false }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.aqbs}
-            <P>
-              お気づきでしょうか？これも
-              <H args={{ name: 'infiniteBentoBox' }} />
-              なのですが、さきほどと違い、
-              <Strong>
-                一番下にある
-                <InlineEmojiBoxesForQuestion />
-                が毎回ひとつずつ増えています。
-              </Strong>
+              のがポイントです。
             </P>
             <EmojiSeparator
               nodes={[
-                <InlineEmojiBoxesForQuestion />,
-                <InlineEmojiBoxesForQuestion />,
-                <InlineEmojiBoxesForQuestion />
+                <EmojiForLetter letter="b" />,
+                <Emoji>🤔</Emoji>,
+                <InlineEmojiBoxesForQuestion size="md" />
               ]}
             />
             <P>
-              上の例は長くなるので3回目で中断しましたが、たとえば5回繰り返された時点では、
-              <InlineEmojiBoxesForQuestion />
-              が一番下に5個登場します。
+              <InlineEmojiBoxesForQuestion />に<EmojiWithText letter="b" />
+              を入れてみると下のようになります。
+              <H args={{ name: 'pressFastForward' }} />{' '}
             </P>
-            {AER.opvb}
+            {AER.bmms}
             <P>
-              そしてこのまま続けていけば、
-              <InlineEmojiBoxesForQuestion />
-              の数は無限に増えていくのです。
+              なんと、最後に
+              <Strong>
+                <EmojiWithText letter={cakeVariableName} />
+              </Strong>
+              が残りました！
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>♾</Emoji>,
-                <InlineEmojiBoxesForQuestion />,
-                <Emoji>♾</Emoji>
+                <EmojiForLetter letter={cakeVariableName} />,
+                <Emoji>🥳</Emoji>,
+                <EmojiForLetter letter={cakeVariableName} />
               ]}
             />
           </>
         )
       },
       {
+        type: 'summary',
         title: (
           <>
-            <InlineEmojiBoxesForQuestion />
-            には何を入れてもいい
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>こちらの弁当箱の…</P>
+            {AER.wbpx}
+            <Ul>
+              <UlLi>
+                <Em>
+                  <InlineEmojiBoxesForQuestion />に
+                  <Strong>
+                    <EmojiWithText letter="b" />
+                  </Strong>
+                  を入れた場合、
+                  <Strong>
+                    <EmojiWithText letter={cakeVariableName} />
+                  </Strong>
+                  が残る。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <InlineEmojiBoxesForQuestion />
+                  にそれ以外を入れた場合、
+                  <InlineEmojiBoxesForQuestion />
+                  に入れた料理が残る。
+                </Em>
+              </UlLi>
+            </Ul>
+            <P>でも、どうしてこうなったのでしょう？</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            が両方とも
+            <EmojiWithText letter="b" />
+            になるから
+          </>
+        ),
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              理由は、
+              <InlineEmojiBoxesForQuestion />に
+              <Strong>
+                <EmojiWithText letter="b" />
+              </Strong>
+              を入れた場合、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
+              <Strong>
+                両方とも
+                <Strong>
+                  <EmojiWithText letter="b" />
+                </Strong>
+                になるから
+              </Strong>
+              です。
+            </P>
+            {AER.gmcn}
+            <P>
+              すると途中で
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が両方とも
+              <EmojiWithText letter="b" />
+              になり…(
+              <H args={{ name: 'pressFastForward', skipColon: true }} />)
+            </P>
+            {AER.vpjw}
+            <P>
+              最後に
+              <EmojiWithText letter={cakeVariableName} />
+              が残るのです。(
+              <H args={{ name: 'pressFastForward', skipColon: true }} />)
+            </P>
+            {AER.kjyi}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+            が違うとどうなるか
           </>
         ),
         content: (
           <>
             <P>
+              それ以外の料理(たとえば
+              <EmojiWithText letter="c" />
+              )を
               <InlineEmojiBoxesForQuestion />
-              には何を入れてもいいので、たとえば以前紹介した「
-              <Strong>1を足す弁当箱</Strong>
-              」を入れることもできます。
-            </P>
-            {AER.nehp}
-            <P>
-              先ほどの
-              <InlineEmojiBoxesForQuestion />
-              の部分に入れてみます(<Em>黄色の部分</Em>)。
-            </P>
-            {AER.mizw}
-            <P>
-              これを
-              <H args={{ name: 'play' }} />
-              すれば、先ほどと同じように、
-              <Strong>1を足す弁当箱</Strong>
-              がどんどん一番下に追加されていきます。(時間の都合上、ここでは省略します。)
-            </P>
-            <P>
-              つまり、<Strong>1 + 1 + 1 + 1…</Strong>
-              という、無限に続く1の足し算ができるのです。
-            </P>
-            <EmojiSeparator emojis={['➕', '1️⃣', '♾']} />
-          </>
-        )
-      },
-      {
-        title: <>しかし、それでも役に立たない</>,
-        content: (
-          <>
-            <P>
-              しかし、無限に続く計算ができても、あまり意味はありません。1を無限に足し算しても、何の役にも立ちません。
-            </P>
-            <P>
-              求められているのは、「無限に何かを繰り返す」弁当箱ではなく、「
-              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
-              」弁当箱です。そういう弁当箱があれば、役に立ちます。
-            </P>
-            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
-          </>
-        )
-      },
-      {
-        title: <>ある条件を満たすまで繰り返す</>,
-        content: (
-          <>
-            <H
-              args={{
-                name: 'whyWeNeedFiniteBentoBox',
-                example1: AER.rreb,
-                example2: AER.kqzn
-              }}
-            />
-          </>
-        )
-      },
-      {
-        title: <>答えは上級編で</>,
-        content: (
-          <>
-            <P>
-              果たして、「ある条件を満たすまで、何かを繰り返す」弁当箱は存在するのか。その答えは上級編にあります。
-            </P>
-            <P>
-              そして上級編ではついに、記事の題名にもある「
+              に入れた場合、
               <Strong>
-                魔法の
-                <H args={{ name: 'yCombinator' }} />
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                が異なります。
               </Strong>
-              」が登場します。
             </P>
-            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
+            {AER.dpst}
             <P>
-              ここまで読んでくださり、ありがとうございます！次から上級編に入ります。最後まで楽しんでいただけると嬉しいです。
+              すると先ほどと違い、途中で
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が同じにならず…(
+              <H args={{ name: 'pressFastForward', skipColon: true }} />)
             </P>
+            {AER.xhwx}
+            <P>
+              最初に
+              <InlineEmojiBoxesForQuestion />
+              に入れた
+              <EmojiWithText letter="c" />
+              が残るのです。(
+              <H args={{ name: 'pressFastForward', skipColon: true }} />)
+            </P>
+            {AER.ttvy}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理があるかどうかで、結果が変わることがある。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>🆚</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>先ほどの弁当箱だと、</P>
+            {AER.wbpx}
+            <P>
+              <Em>
+                <InlineEmojiBoxesForQuestion />に
+                <Strong>
+                  <EmojiWithText letter="b" />
+                </Strong>
+                を入れた場合、
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
+                <Strong>同じになる。</Strong>
+              </Em>
+            </P>
+            {AER.gmcn}
+            <P>
+              <Em>
+                <InlineEmojiBoxesForQuestion />
+                にそれ以外を入れた場合、
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />が
+                <Strong>異なる。</Strong>
+              </Em>
+            </P>
+            {AER.dpst}
+            <P>
+              だから、<Strong>それぞれ違う結果になる。</Strong>
+            </P>
+            <Ul>
+              <UlLi>
+                <InlineEmojiBoxesForQuestion />に
+                <Strong>
+                  <EmojiWithText letter="b" />
+                </Strong>
+                を入れた場合、
+                <Strong>
+                  <EmojiWithText letter={cakeVariableName} />
+                </Strong>
+                が残る。
+              </UlLi>
+              <UlLi>
+                <InlineEmojiBoxesForQuestion />
+                にそれ以外を入れた場合、
+                <InlineEmojiBoxesForQuestion />
+                に入れた料理が残る。
+              </UlLi>
+            </Ul>
+          </>
+        )
+      },
+      {
+        title: <>何か問題でも？</>,
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              に同じ料理があるかどうかで、結果が変わる弁当箱があることがわかりました。
+            </P>
+            <P>
+              でも、「<Em>それで何か問題でもあるの？</Em>
+              」と思う方がいらっしゃるかもしれません。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>🤔</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              というわけで、次のページでは、
+              <Em>
+                結果が変わることによってどんな問題が発生するのか、以前紹介した
+                <Strong>弁当箱の暗号</Strong>
+                を用いて解説していきます！
+              </Em>
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>中級はここまで！</>,
+        content: (
+          <>
+            <P>
+              以上で中級編は終わりです。ここまで読んでくださり、ありがとうございます！次から上級編に入ります。
+            </P>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <P>最後まで楽しんでいただけると嬉しいです。</P>
             <NextLessonButton />
           </>
         )

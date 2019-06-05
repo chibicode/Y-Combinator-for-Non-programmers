@@ -1,375 +1,29 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import EmojiNumber from 'src/components/EmojiNumber'
-import {
-  Ul,
-  UlLi,
-  P,
-  Strong,
-  InlineHeader,
-  Ol,
-  OlLi,
-  Em,
-  Hr
-} from 'src/components/ContentTags'
-import H from 'src/components/H'
+import { P, Strong, Em } from 'src/components/ContentTags'
+import NextLessonButton from 'src/components/NextLessonButton'
 import AER from 'src/components/AER'
-import {
-  InlineEmojiBoxesForQuestion,
-  InlineEmojiBoxesForCondition
-} from 'src/components/InlineEmojiBoxes'
-import EmojiSeparator from 'src/components/EmojiSeparator'
-import TopRightBadge from 'src/components/TopRightBadge'
-import Emoji from 'src/components/Emoji'
-import EmojiWithText from 'src/components/EmojiWithText'
-import EmojiForLetter from 'src/components/EmojiForLetter'
-import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
-import {
-  magicalVariableName,
-  cakeVariableName
-} from 'src/lib/specialVariableNames'
+import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
+import Emoji from 'src/components/Emoji'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>これが上級最後！</>,
+        title: <>中級の最後です！</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              これが上級最後のページです(次のページはエピローグです)。
+              <Strong>今回が中級の最後です。</Strong>
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
-              最後だけあって、
-              <Strong>今回はいままでより文章量が多いです。</Strong>
-              でも、ここまで読み進めてくださった方なら、最後まで読み切ることができるはずです！
-            </P>
-            <P>それでは、早速はじめましょう！</P>
-          </>
-        )
-      },
-      {
-        title: <>前回の続き</>,
-        content: (
-          <>
-            <P>
-              前回の最後で、
-              <Strong>
-                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-              </Strong>
-              という計算(またの名を「<Strong>階乗</Strong>
-              」)について説明しました。
-            </P>
-            <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
-            <EmojiSeparator
-              size="sm"
-              emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-            />
-            <P>
-              今回は、どんな弁当箱を使えば、こういった計算ができるのかについて考えていきます。
-            </P>
-            {AER.rreb}
-            {AER.kqzn}
-          </>
-        )
-      },
-      {
-        title: <></>,
-        content: (
-          <>
-            <P>
-              前回話した通り、この上級最終回では 「
-              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>」
-              の解説をします。
-            </P>
-            <EmojiSeparator emojis={['🤔', '🍱', '❓']} />
-            <P>
-              できるだけ分かりやすく解説するために、以下の順番で解説していきます。
-            </P>
-            <Ol>
-              <OlLi>
-                まず、
-                <Strong>実際には存在しない架空の弁当箱の機能を使い</Strong>
-                、「<Em>ある条件を満たすまで、何かを繰り返す弁当箱</Em>
-                」を作ってみます。
-              </OlLi>
-              <OlLi>
-                その後に、<Strong>従来の弁当箱の機能だけを使い</Strong>
-                、「<Em>ある条件を満たすまで、何かを繰り返す弁当箱</Em>
-                」を作ってみます。
-              </OlLi>
-            </Ol>
-            <P>
-              「架空の機能って何？」とお考えかもしれません。さっそく説明していきます！
-            </P>
-            <EmojiSeparator emojis={['🤔', '💭', '❓']} />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            弁当箱の
-            <H args={{ name: 'witch' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              まず、「
-              <Strong>
-                弁当箱の
-                <H args={{ name: 'witch' }} />
-              </Strong>
-              」という「架空の」機能を紹介します。
-            </P>
-            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
-            <P>
-              この機能は実際には存在しない機能なのですが、
-              <Em>
-                もし仮にこの機能を使うことができれば、「
-                <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
-                」をラクに作ることができます。
-              </Em>
-              まずはどういう機能か説明しましょう。
-            </P>
-            <P>
-              次の弁当箱は、下に
-              <H args={{ name: 'witch' }} />
-              が、上に
-              <EmojiNumber number={3} />
-              が入っています。
-            </P>
-            {AER.zxux}
-            <P>
-              これを進めると、下の
-              <H args={{ name: 'witch' }} />
-              の部分が次のように変化します。
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.itzl}
-            <P>ポイントは次の3点です:</P>
-            <Ul>
-              <UlLi>
-                先ほどのように、弁当箱の下側に
-                <H args={{ name: 'witch' }} />
-                がある場合、必ずこのように変化します。
-              </UlLi>
-              <UlLi>
-                上の
-                <EmojiNumber number={3} />
-                には何も起きません。
-              </UlLi>
-              <UlLi>
-                変化後の弁当箱には
-                <EmojiWithText letter={magicalVariableName} />や
-                <EmojiNumber number={1} />や<InlineEmojiBoxesForQuestion />
-                があるのに加え、
-                <Strong>
-                  <H args={{ name: 'witch' }} />
-                  がまた出現しているのに注目です
-                </Strong>
-                。
-              </UlLi>
-            </Ul>
-            {AER.gtnr}
-            <P>
-              <Strong>重要: このルールを覚える必要はありません！</Strong>
-              とりあえず読み進めてみてください。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>先に進めてみる</>,
-        content: (
-          <>
-            <P>
-              先に進めてみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.syfp}
-            <P>
-              ご覧の通り、
-              <EmojiWithText letter={magicalVariableName} />
-              が、上にあった
-              <EmojiNumber number={3} />
-              に変わりました。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter={magicalVariableName} />,
-                <Emoji>➡️</Emoji>,
-                <EmojiNumber number={3} />
-              ]}
-            />
-            <P>
-              続きを見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.wdol}
-            <P>
-              ご覧の通り、
-              <EmojiNumber number={3} />に
-              <TopRightBadge inline topRightBadgeType="pred" />
-              がついていたので、
-              <EmojiNumber number={3} />が<EmojiNumber number={2} />
-              になりました。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <EmojiNumber number={3} />
-                </EmojiForLetterWithTopRightBadgeWrapper>,
-                <Emoji>➡️</Emoji>,
-                <EmojiNumber number={2} />
-              ]}
-            />
-            <P>
-              続きを見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.luir}
-            <P>
-              ご覧の通り、条件分岐の弁当箱で、
-              <InlineEmojiBoxesForCondition type="condition" /> の中にある暗号が
-              <EmojiNumber number={2} />
-              だったため、上にある{' '}
-              <InlineEmojiBoxesForCondition type="falseCase" /> が残りました。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>ここまでの振り返り</>,
-        type: 'summary',
-        content: (
-          <>
-            <P>まだ途中ですが、ここまでを振り返ると、</P>
-            <Ul>
-              <UlLi>
-                最初は
-                <EmojiNumber number={3} />と
-                <H args={{ name: 'witch' }} />
-                だった弁当箱が、
-              </UlLi>
-              <UlLi>
-                <EmojiNumber number={2} />と
-                <H args={{ name: 'witch' }} />と<InlineEmojiBoxesForQuestion />
-                の弁当箱に変わった。
-              </UlLi>
-            </Ul>
-            <P>
-              つまり、
-              <Strong>
-                数字が1減り、
-                <H args={{ name: 'witch' }} />
-                はそのままで、下に
-                <InlineEmojiBoxesForQuestion />
-                がひとつ増えました。
-              </Strong>
-            </P>
-            {AER.ifxr}
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            最後は
-            <H args={{ name: 'witch' }} />
-            が消える
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              さらに続きを見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.mihy}
-            <P>
-              先ほどとほとんど同じことが起こりました！
-              <Strong>
-                数字が1減り、
-                <H args={{ name: 'witch' }} />
-                はそのままで、下に
-                <InlineEmojiBoxesForQuestion />
-                がまたひとつ増えました。
-              </Strong>
-            </P>
-            {AER.davn}
-            <P>
-              さらに続きを見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.zvet}
-            <P>
-              ここで、
-              <Strong>
-                今までではじめて、
-                <InlineEmojiBoxesForCondition type="condition" />{' '}
-                の中にある暗号が
-                <EmojiNumber number={0} />
-                になりました。ということは、次は下側にある
-                <InlineEmojiBoxesForCondition type="trueCase" />
-                が残るということです。
-              </Strong>
-            </P>
-            {AER.umce}
-            <P>
-              <Strong>
-                つまり、上側にあった
-                <H args={{ name: 'witch' }} />
-                が消え、これにて実行が完了します。
-              </Strong>
-            </P>
-            {AER.dyef}
-          </>
-        )
-      },
-      {
-        type: 'summary',
-        title: (
-          <>
-            <H args={{ name: 'summary' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <Strong>
-                つまり、
-                <EmojiNumber number={3} />と<H args={{ name: 'witch' }} />
-                が入っている弁当箱を
-                <H args={{ name: 'play' }} />
-                すると、
-              </Strong>
-            </P>
-            {AER.zxux}
-            <P>
-              <Strong>
-                <EmojiNumber number={1} />
-                と、その下に
-                <InlineEmojiBoxesForQuestion />
-                がふたつ残ります。
-              </Strong>
-            </P>
-            {AER.xtjt}
-            <Hr />
-            <P>
-              下の
-              <H args={{ name: 'fastForward' }} />
-              を押すと、最初から最後まで超特急で見ることができます。
-            </P>
-            {AER.mnfh}
-            <P>
-              それでは、ここで
               <H args={{ name: 'yesNoQuiz' }} />
-              をしてみましょう！
+              からやっていきましょう！
             </P>
           </>
         )
@@ -384,188 +38,14 @@ export default () => (
         content: (
           <>
             <P>
-              今度は、上に
-              <EmojiNumber number={4} />
-              があります。
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.yklt}
+            {AER.ofee}
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.fsmk}
-            <YesNoButtons answer="yes" tooHard />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.peoq}
-            <P>
-              <Strong>
-                つまり、
-                <EmojiNumber number={4} />と<H args={{ name: 'witch' }} />
-                が入っている弁当箱を
-                <H args={{ name: 'play' }} />
-                すると、
-                <EmojiNumber number={1} />
-                と、その下に
-                <InlineEmojiBoxesForQuestion />
-                が3つ残ります。1
-              </Strong>
-            </P>
-            {AER.xsux}
-            <P>そろそろパターンが見えてきましたか？</P>
-            <EmojiSeparator emojis={['🧙‍♀️', '🤔', '🧙‍♀️']} />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <EmojiNumber number={5} />
-            からはじめた場合
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              上に
-              <EmojiNumber number={5} />
-              がある場合はどうでしょう？
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.osqg}
-            <P>
-              今回は、下に
-              <InlineEmojiBoxesForQuestion />
-              が4つ残りました！
-            </P>
-            {AER.jcvr}
-            <P>それでは、ここでパターンを解説しましょう！</P>
-          </>
-        )
-      },
-      {
-        type: 'summary',
-        title: (
-          <>
-            <H args={{ name: 'witch' }} />
-            のパターン
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <InlineHeader>パターン:</InlineHeader>{' '}
-              次のような弁当箱を実行した場合、
-            </P>
-            {AER.miez}
-            <P>
-              最終的に
-              <EmojiNumber number={1} />
-              と、その下に
-              <InlineEmojiBoxesForQuestion />
-              が「<Strong>暗号から1を引いた数</Strong>」ぶん縦に並びます。
-            </P>
-            {AER.fapu}
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'witch' }} />
-            の機能を変更する
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'witch' }} />は
-              <Strong>
-                あくまで架空の機能なので、好きなように機能を変更してもかまいません。
-              </Strong>
-            </P>
-            <P>
-              たとえば、先ほど
-              <H args={{ name: 'witch' }} />
-              は次のように変化する、と説明しました。
-            </P>
-            {AER.hknv}
-            <P>
-              では、
-              <Strong>
-                <H args={{ name: 'witch' }} />
-                の機能を変更し、
-                <InlineEmojiBoxesForQuestion />
-                の代わりに、
-                <EmojiWithText letter={cakeVariableName} />
-                が登場するようにしたらどうなるでしょう？
-              </Strong>
-            </P>
-            {AER.njwf}
-            <P>
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.njmb}
-            <P>
-              最後に
-              <InlineEmojiBoxesForQuestion />
-              がふたつ残るかわりに、
-              <EmojiWithText letter={cakeVariableName} />
-              がふたつ残りました。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter={cakeVariableName} />,
-                <Emoji>🧙‍♀️</Emoji>,
-                <EmojiForLetter letter={cakeVariableName} />
-              ]}
-            />
-            <P>
-              それでは、ここで
-              <H args={{ name: 'yesNoQuiz' }} />
-              の時間です！
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              では、
-              <Strong>
-                <H args={{ name: 'witch' }} />
-                の機能を変更し、
-                <InlineEmojiBoxesForQuestion />
-                の代わりに、
-                <EmojiWithText letter={magicalVariableName} />
-                が登場するようにしてみます。
-              </Strong>
-            </P>
-            {AER.hpiv}
-            <P>
-              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
-            </P>
-            {AER.sydo}
-            <YesNoButtons answer="no" tooHard />
+            {AER.wwdd}
+            <YesNoButtons answer="no" />
           </>
         )
       },
@@ -579,10 +59,205 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              まず、途中まで見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.wean}
+            {AER.ggxt}
+            <P>
+              <Strong>
+                なんと、一周して最初と同じ弁当箱に戻ってしまいました！
+              </Strong>
+            </P>
+            <P>
+              そう、これは、永遠に終わりがない
+              <Strong>
+                <H args={{ name: 'infiniteBentoBox' }} />
+              </Strong>
+              なのです。
+            </P>
+            <EmojiSeparator emojis={['♾', '🍱', '♾']} />
+          </>
+        )
+      },
+      {
+        title: <>何の役に立つの？</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'infiniteBentoBox' }} />
+              は興味深いですが、<Em>いったい何の役に立つのでしょうか？</Em>
+              所詮、ただ同じことを繰り返すだけですよね。
+            </P>
+            <EmojiSeparator emojis={['😒', '🍱', '♾']} />
+            <P>
+              たしかに、先ほどの
+              <H args={{ name: 'infiniteBentoBox' }} />
+              のままでは何の役にも立ちません。では、少し工夫を加えてみましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.gxuj}
+            <P>
+              <H args={{ name: 'question' }} /> この弁当箱を
+              <H args={{ name: 'fastForward' }} />
+              すると、先ほどと同じように
+              <Strong>一周して同じ弁当箱に戻る。</Strong>
+              <H args={{ name: 'yesOrNo' }} />
+            </P>
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.aqbs}
+            <P>
+              お気づきでしょうか？これも
+              <H args={{ name: 'infiniteBentoBox' }} />
+              なのですが、さきほどと違い、
+              <Strong>
+                一番下にある
+                <InlineEmojiBoxesForQuestion />
+                が毎回ひとつずつ増えています。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <InlineEmojiBoxesForQuestion />,
+                <InlineEmojiBoxesForQuestion />,
+                <InlineEmojiBoxesForQuestion />
+              ]}
+            />
+            <P>
+              上の例は長くなるので3回目で中断しましたが、たとえば5回繰り返された時点では、
+              <InlineEmojiBoxesForQuestion />
+              が一番下に5個登場します。
+            </P>
+            {AER.opvb}
+            <P>
+              そしてこのまま続けていけば、
+              <InlineEmojiBoxesForQuestion />
+              の数は無限に増えていくのです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>♾</Emoji>,
+                <InlineEmojiBoxesForQuestion />,
+                <Emoji>♾</Emoji>
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlineEmojiBoxesForQuestion />
+            には何を入れてもいい
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlineEmojiBoxesForQuestion />
+              には何を入れてもいいので、たとえば以前紹介した「
+              <Strong>1を足す弁当箱</Strong>
+              」を入れることもできます。
+            </P>
+            {AER.nehp}
+            <P>
+              先ほどの
+              <InlineEmojiBoxesForQuestion />
+              の部分に入れてみます(<Em>黄色の部分</Em>)。
+            </P>
+            {AER.mizw}
+            <P>
+              これを
+              <H args={{ name: 'play' }} />
+              すれば、先ほどと同じように、
+              <Strong>1を足す弁当箱</Strong>
+              がどんどん一番下に追加されていきます。(時間の都合上、ここでは省略します。)
+            </P>
+            <P>
+              つまり、<Strong>1 + 1 + 1 + 1…</Strong>
+              という、無限に続く1の足し算ができるのです。
+            </P>
+            <EmojiSeparator emojis={['➕', '1️⃣', '♾']} />
+          </>
+        )
+      },
+      {
+        title: <>しかし、それでも役に立たない</>,
+        content: (
+          <>
+            <P>
+              しかし、無限に続く計算ができても、あまり意味はありません。1を無限に足し算しても、何の役にも立ちません。
+            </P>
+            <P>
+              求められているのは、「無限に何かを繰り返す」弁当箱ではなく、「
+              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
+              」弁当箱です。そういう弁当箱があれば、役に立ちます。
+            </P>
+            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
+          </>
+        )
+      },
+      {
+        title: <>ある条件を満たすまで繰り返す</>,
+        content: (
+          <>
+            <H
+              args={{
+                name: 'whyWeNeedFiniteBentoBox',
+                example1: AER.rreb,
+                example2: AER.kqzn
+              }}
+            />
+          </>
+        )
+      },
+      {
+        title: <>答えは上級編で</>,
+        content: (
+          <>
+            <P>
+              果たして、「ある条件を満たすまで、何かを繰り返す」弁当箱は存在するのか。その答えは上級編にあります。
+            </P>
+            <P>
+              そして上級編ではついに、記事の題名にもある「
+              <Strong>
+                魔法の
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              」が登場します。
+            </P>
+            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
+            <P>
+              ここまで読んでくださり、ありがとうございます！次から上級編に入ります。最後まで楽しんでいただけると嬉しいです。
+            </P>
+            <NextLessonButton />
           </>
         )
       }

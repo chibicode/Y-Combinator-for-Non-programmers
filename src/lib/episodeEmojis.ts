@@ -13,16 +13,16 @@ const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
   7: ['➕', '🤨', '️🍱'],
   8: ['🍱', '😵', '✖️'],
   9: [letterEmojiMapping['z'], '😏', letterEmojiMapping['y']],
-  10: ['♾', '🤪', '♾'],
-  11: [
+  10: [
     letterEmojiMapping[cakeVariableName],
     '🥳',
     letterEmojiMapping[cakeVariableName]
   ],
-  12: [letterEmojiMapping['b'], '😎', letterEmojiMapping['e']],
-  13: ['➖', '🤯', '️1️⃣'],
-  14: ['0️⃣', '🥴', '️🔢'],
-  15: ['✨', '🤩', '🧙‍♀️'],
+  11: [letterEmojiMapping['b'], '😎', letterEmojiMapping['e']],
+  12: ['➖', '🤯', '️1️⃣'],
+  13: ['0️⃣', '🥴', '️🔢'],
+  14: ['🧙‍♀️', '😨', '🧙‍♀️'],
+  15: ['✨', '🤩', '✨'],
   16: ['️🤖', '🤗', '️🤖']
 }
 
