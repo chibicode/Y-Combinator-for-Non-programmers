@@ -1424,9 +1424,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <>
             <P>
               <InlineHeader>お願い:</InlineHeader>「{quitReason}
-              」という方にお願いがあります。差し支えなければ、ページを閉じる前に
+              」とお思いの方にお願いがあります。差し支えなければ、ページを閉じる前に
               <Em>
-                下のツイートをリツイート、または引用リツイートしてくださると、宣伝になるので非常に助かります。
+                下のツイートをリツイートしてくださると、宣伝になるので非常に助かります。
               </Em>
             </P>
             <TwitterEmbed id={shareId} />
@@ -1437,7 +1437,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               <ExternalLink href="mailto:shu@chibicode.com">
                 shu@chibicode.com
               </ExternalLink>
-              )でもご質問にお答えできますが、返事が遅れるかもしれません。
+              )でもお答えできますが、返事が遅れる可能性が高いです。
             </P>
             <P>
               ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
