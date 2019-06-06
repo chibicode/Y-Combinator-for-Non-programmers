@@ -407,31 +407,55 @@ export default () => (
         )
       },
       {
-        title: <>掛け算の省略表記</>,
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
         content: (
           <>
-            <P>ついでに、中級で紹介した他の弁当箱も省略表記してみましょう。</P>
             <P>
-              たとえば、こちらは中級その3で紹介した「
-              <Strong>掛け算の弁当箱</Strong>」です。
+              今回の内容を短くまとめておきましょう。まず、こちらは
               <InlineEmojiBoxesForQuestion />
-              にそれぞれ暗号を入れて
-              <H args={{ name: 'play' }} />
-              すると、そのふたつの暗号を掛け算してくれます。
+              から「<Strong>1を引く</Strong>」弁当箱です。
             </P>
-            {AER.drvu}
-            <P>これを、次のように省略表記してみましょう:</P>
+            {AER.pnob}
+            <P>
+              なかなか複雑なので、省略表記をすると何が起きてるか分かりやすくなります。たとえば
+              <Strong>
+                <EmojiNumber number={2} />
+                から1を引く弁当箱
+              </Strong>
+              は、以下のように省略表記できます:
+            </P>
+            {AER.ojma}
+            <P>
+              これを実行すると、
+              <EmojiNumber number={1} />
+              になります。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
+                  <EmojiNumber number={2} />
+                </EmojiForLetterWithTopRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+            />
           </>
         )
       },
       {
-        title: <>次は、条件分岐の省略表記</>,
+        title: <>以前紹介した弁当箱も省略表記してみます</>,
         content: (
           <>
-            <EmojiSeparator emojis={['0️⃣', '🥴', '️🔢']} />
+            <EmojiSeparator emojis={['✖️', '🥴', '↕️']} />
             <P>
               お疲れ様でした！次のページでは、以前紹介した
-              <Strong>条件分岐の弁当箱を省略表記していきます。</Strong>
+              <Strong>掛け算の弁当箱</Strong>と<Strong>条件分岐の弁当箱</Strong>
+              を省略表記していきます。
             </P>
             <NextLessonButton />
           </>
