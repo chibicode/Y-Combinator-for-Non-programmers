@@ -1775,6 +1775,18 @@ export default {
       caption={<H args={{ name: 'whatCanComputeFactorial', start: 4 }} />}
     />
   ),
+  lyod: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E9}
+      caption={<H args={{ name: 'secretCodeMultiplyCaption' }} />}
+    />
+  ),
+  imba: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E10}
+      caption={<H args={{ name: 'secretCodeMultiplyCaption' }} />}
+    />
+  ),
   zxux: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
