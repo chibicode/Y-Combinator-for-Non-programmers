@@ -10,8 +10,7 @@ import {
   P,
   Strong,
   Ul,
-  UlLi,
-  Hr
+  UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
