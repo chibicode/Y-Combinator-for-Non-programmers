@@ -22,7 +22,9 @@ import {
   InlineEmojiBoxesForCondition,
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 import TopRightBadge from 'src/components/TopRightBadge'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 
 export default () => (
   <EpisodeCardList
@@ -432,110 +434,51 @@ export default () => (
         content: (
           <>
             <P>
-              前回と今回で、「<Strong>1を引く弁当箱</Strong>」と「
+              前回と今回で、「<Strong>1を引く弁当箱</Strong>」「
+              <Strong>掛け算の弁当箱</Strong>」「
               <Strong>条件分岐の弁当箱</Strong>
-              」の省略表記について語りました。なぜこれらの説明を行ったか、わかりますか？
+              」の省略表記について語りました。
             </P>
             <EmojiSeparator
               nodes={[
                 <TopRightBadge inline topRightBadgeType="pred" />,
-                <Emoji>🤔</Emoji>,
+                <Emoji>✖️</Emoji>,
                 <Emoji>↕️</Emoji>
               ]}
             />
-            <P>答えを言う前に、少しだけ中級編の復習をしましょう！</P>
+            <P>省略表記について説明した理由は、以下の通りです:</P>
+            <Ul>
+              <UlLi>
+                次のページから、「<Em>1を引く弁当箱</Em>」「
+                <Em>掛け算の弁当箱</Em>」「
+                <Em>条件分岐の弁当箱</Em>
+                」を全部使って、
+                <Strong>今までで最も複雑な計算</Strong>を行います。
+              </UlLi>
+              <UlLi>
+                とても複雑なので、それぞれの弁当箱を省略表記することで、
+                <Strong>何が起きているかを少しでも分かりやすくしたい</Strong>
+                、というわけです。
+              </UlLi>
+            </Ul>
           </>
         )
       },
       {
-        type: 'sideNote',
-        title: <>復習: ある条件を満たすまで繰り返す</>,
-        content: (
-          <>
-            <P>中級の最後には、以下のように書きました:</P>
-            <Hr />
-            <H
-              args={{
-                name: 'whyWeNeedFiniteBentoBox',
-                example1: AER.rreb,
-                example2: AER.kqzn
-              }}
-            />
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-          </>
-        ),
+        title: <>上級も残り2ページ！</>,
         content: (
           <>
             <P>
-              そろそろお気づきでしょうか？ではここで
-              <H args={{ name: 'yesNoQuiz' }} />
-              です！
+              お疲れ様でした！上級も残り2ページです。次のページでは、「
+              <Strong>弁当箱の魔女</Strong>」が登場します。お楽しみに！
             </P>
             <EmojiSeparator
               nodes={[
-                <TopRightBadge inline topRightBadgeType="pred" />,
-                <Emoji>🍱</Emoji>,
-                <Emoji>↕️</Emoji>
+                <EmojiForLetter letter={magicalVariableName} />,
+                <Emoji>🧙‍♀️</Emoji>,
+                <EmojiForLetter letter={magicalVariableName} />
               ]}
             />
-            <P>
-              <H args={{ name: 'question' }} /> 「<Strong>1を引く弁当箱</Strong>
-              」と「
-              <Strong>条件分岐の弁当箱</Strong>
-              」を組み合わせることで、「
-              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
-              」弁当箱を作ることができる。
-              <H args={{ name: 'yesOrNo' }} />
-            </P>
-            <YesNoButtons answer="yes" />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              「<Strong>1を引く弁当箱</Strong>
-              」と「
-              <Strong>条件分岐の弁当箱</Strong>
-              」を組み合わせることで、「
-              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
-              」弁当箱を作ることができるのです。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <TopRightBadge inline topRightBadgeType="pred" />,
-                <Emoji>🍱</Emoji>,
-                <Emoji>↕️</Emoji>
-              ]}
-            />
-            <P>
-              次が上級最後のページです(その後はエピローグです)。そこで、「
-              <Strong>ある条件を満たすまで、何かを繰り返す</Strong>
-              」弁当箱がどんなものか紹介します。そしてついに、記事の題名にもある「
-              <Strong>
-                魔法の
-                <H args={{ name: 'yCombinator' }} />
-              </Strong>
-              」が登場します。
-            </P>
-            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
-            <P>
-              ここまで読んでくださり、ありがとうございます！上級最後のページも楽しんでくださると嬉しいです。
-            </P>
             <NextLessonButton />
           </>
         )

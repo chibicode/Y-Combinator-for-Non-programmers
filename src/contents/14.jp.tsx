@@ -37,6 +37,13 @@ export default () => (
         title: <>これが上級最後！</>,
         content: (
           <>
+            <H
+              args={{
+                name: 'whyWeNeedFiniteBentoBox',
+                example1: AER.rreb,
+                example2: AER.kqzn
+              }}
+            />
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
               これが上級最後のページです(次のページはエピローグです)。
