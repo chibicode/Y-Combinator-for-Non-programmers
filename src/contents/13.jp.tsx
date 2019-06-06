@@ -28,12 +28,42 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>条件分岐の弁当箱</>,
+        title: <>掛け算の弁当箱</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              今回は、以前紹介した「
+              今回はまず、中級で紹介した「<Strong>掛け算の弁当箱</Strong>
+              」を省略表記していきます。
+            </P>
+            <EmojiSeparator emojis={['✖️', '🍱', '✖️']} />
+            <P>
+              下にあるのが「<Strong>掛け算の弁当箱</Strong>
+              」です。
+              <InlineEmojiBoxesForQuestion />
+              にそれぞれ暗号を入れて
+              <H args={{ name: 'play' }} />
+              すると、そのふたつの暗号を掛け算してくれます。
+            </P>
+            {AER.drvu}
+            <P>では、さっそく省略表記してみましょう！</P>
+          </>
+        )
+      },
+      {
+        title: <>掛け算の省略表記</>,
+        content: (
+          <>
+            <P>先ほどの掛け算の弁当箱を省略表記すると、以下のようになります:</P>
+          </>
+        )
+      },
+      {
+        title: <>条件分岐の弁当箱</>,
+        content: (
+          <>
+            <P>
+              続いて、以前紹介した「
               <Strong>条件分岐の弁当箱</Strong>
               」を省略表記していきます。まずは、復習から:
             </P>
