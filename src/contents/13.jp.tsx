@@ -126,7 +126,8 @@ export default () => (
             </P>
             {AER.zifr}
             <P>
-              というわけで、最終的に暗号は「<Strong>6</Strong>」になります。
+              というわけで、最終的に暗号は「<Strong>6</Strong>
+              」になります。掛け算の省略表記については以上です！
             </P>
           </>
         )
@@ -403,7 +404,28 @@ export default () => (
             <H args={{ name: 'summary' }} />
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <P>
+              <InlineHeader>掛け算の弁当箱の省略表記:</InlineHeader> こちらは、
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} />
+              を計算する弁当箱の省略表記です。
+            </P>
+            {AER.omlc}
+            <P>
+              <InlineHeader>条件分岐の弁当箱の省略表記:</InlineHeader>{' '}
+              こちらは、
+              <InlineEmojiBoxesForQuestion />が<EmojiNumber number={0} />
+              なら
+              <EmojiWithText letter="y" />、<EmojiNumber number={1} />
+              以上なら
+              <EmojiWithText letter="z" />
+              になる弁当箱の省略表記です。
+            </P>
+            {AER.hvdn}
+          </>
+        )
       },
       {
         title: <>ところで: なぜ省略表記について語ったの？</>,

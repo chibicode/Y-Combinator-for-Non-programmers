@@ -104,7 +104,7 @@ export interface HProps {
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
     | { name: 'secretCodeAddCaption' }
-    | { name: 'secretCodeMultiplyCaption' }
+    | { name: 'secretCodeMultiplyCaption'; arg1?: number; arg2?: number }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
@@ -999,8 +999,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>✖️</Emoji>{' '}
-          <InlineEmojiBoxesForQuestion size="md" /> を計算
+          {args.arg1 ? (
+            <EmojiNumber number={args.arg1} />
+          ) : (
+            <InlineEmojiBoxesForQuestion size="md" />
+          )}{' '}
+          <Emoji>✖️</Emoji>{' '}
+          {args.arg2 ? (
+            <EmojiNumber number={args.arg2} />
+          ) : (
+            <InlineEmojiBoxesForQuestion size="md" />
+          )}{' '}
+          を計算
         </>
       )
     }

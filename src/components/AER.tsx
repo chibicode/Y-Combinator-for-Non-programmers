@@ -1634,7 +1634,6 @@ export default {
   hvdn: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e13E1}
-      showPriorities
       caption={
         <H
           args={{
@@ -1798,6 +1797,14 @@ export default {
   zifr: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E11}
+    />
+  ),
+  omlc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E11}
+      caption={
+        <H args={{ name: 'secretCodeMultiplyCaption', arg1: 2, arg2: 3 }} />
+      }
     />
   ),
   zxux: (
