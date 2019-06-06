@@ -838,7 +838,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={4}
+      speed={6}
     />
   ),
   dhdk: (
@@ -858,7 +858,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={4}
+      speed={6}
       highlightOverrides={{
         e: 'highlighted',
         f: 'highlighted',
@@ -933,7 +933,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={5}
+      speed={8}
       highlightOverrides={{
         e: 'highlighted',
         f: 'highlighted',
@@ -992,7 +992,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={4}
+      speed={6}
     />
   ),
   aeyv: (
