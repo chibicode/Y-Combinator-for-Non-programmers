@@ -1434,7 +1434,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <>
             <P>
               <InlineHeader>お願い:</InlineHeader>「{quitReason}
-              」とお思いの方にお願いがあります。差し支えなければ、ページを閉じる前に
+              」とお考えの方にお願いがあります。差し支えなければ、このページを閉じる前に
               <Em>
                 下のツイートをリツイートしてくださると、宣伝になるので非常に助かります。
               </Em>

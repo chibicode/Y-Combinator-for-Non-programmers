@@ -65,6 +65,7 @@ const TwitterEmbed = ({ id }: { id: string }) => {
       <blockquote
         class="twitter-tweet tw-align-center"
         data-dnt="true"
+        data-cards="hidden"
         data-lang="${locale}"
       >
         <a href="https://twitter.com/chibicode/status/${id}"></a>

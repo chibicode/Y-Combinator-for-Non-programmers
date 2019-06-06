@@ -12,7 +12,7 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import { spaces } from 'src/lib/theme'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'transparent'
+  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'share'
   title?: React.ReactNode
   preview?: CardProps['preview']
   content: React.ReactNode
@@ -51,16 +51,16 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
           {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
             <div
               css={css`
-                margin: ${spaces(3)} 0 0;
+                margin: ${spaces(5)} 0 0;
               `}
             >
               <CardWrapper
-                type="transparent"
+                type="share"
                 isLast
                 setLastVisibleCardIndex={setLastVisibleCardIndex}
               >
                 <H args={{ name: 'shareContent' }} />
-                <NextLessonButton />
+                <NextLessonButton halfMargin />
               </CardWrapper>
             </div>
           )}

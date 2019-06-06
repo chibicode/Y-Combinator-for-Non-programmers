@@ -31,7 +31,7 @@ export interface CardProps {
     | 'indigo'
     | 'white'
     | 'pink'
-    | 'transparent'
+    | 'brown'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -60,7 +60,7 @@ export const backgroundColor = (color: CardProps['color']) =>
     blue: colors('blue50'),
     indigo: colors('indigo50'),
     pink: colors('pink50'),
-    transparent: 'transparent'
+    brown: colors('brown50')
   }[color])
 
 // First where the text is white
@@ -75,7 +75,7 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     blue: colors('blue600'),
     indigo: colors('indigo300'),
     pink: colors('pink400'),
-    transparent: 'transparent'
+    brown: 'transparent'
   }[color])
 
 const Card = ({
@@ -137,35 +137,24 @@ const Card = ({
         `}
       >
         <div
-          css={[
-            css`
-              padding-top: ${spaces(1)};
-              padding-left: ${spaces(0.75)};
-              padding-right: ${spaces(0.75)};
-              padding-bottom: ${spaces(0.5)};
+          css={css`
+            padding-top: ${spaces(1)};
+            padding-left: ${spaces(0.75)};
+            padding-right: ${spaces(0.75)};
+            padding-bottom: ${spaces(0.5)};
 
-              ${ns} {
-                padding-top: ${spaces(1.5)};
-                padding-left: ${spaces(2)};
-                padding-right: ${spaces(2)};
-                padding-bottom: ${spaces(1)};
-              }
-              border-top-right-radius: ${radii(0.5)};
-              border-top-left-radius: ${radii(0.5)};
-              border-bottom-right-radius: ${footer ? 0 : radii(0.5)};
-              border-bottom-left-radius: ${footer ? 0 : radii(0.5)};
-              background: ${backgroundColor(color)};
-            `,
-            color === 'transparent' &&
-              css`
-                border: 2px solid ${colors('grey150')};
-                color: ${colors('grey600')};
-                padding-bottom: 0;
-                ${ns} {
-                  padding-bottom: 0;
-                }
-              `
-          ]}
+            ${ns} {
+              padding-top: ${spaces(1.5)};
+              padding-left: ${spaces(2)};
+              padding-right: ${spaces(2)};
+              padding-bottom: ${spaces(1)};
+            }
+            border-top-right-radius: ${radii(0.5)};
+            border-top-left-radius: ${radii(0.5)};
+            border-bottom-right-radius: ${footer ? 0 : radii(0.5)};
+            border-bottom-left-radius: ${footer ? 0 : radii(0.5)};
+            background: ${backgroundColor(color)};
+          `}
         >
           {title && (
             <H3
