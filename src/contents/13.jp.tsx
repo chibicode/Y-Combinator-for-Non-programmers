@@ -65,6 +65,7 @@ export default () => (
                 せっかく省略表記をするのであれば、もう少しひと目見て分かりやすくしたいところです。
               </Em>
             </P>
+            <EmojiSeparator emojis={['✖️', '🤔', '✖️']} />
             <P>
               では、
               <Strong>
@@ -75,8 +76,11 @@ export default () => (
             </P>
             {AER.imba}
             <P>
-              あくまで省略表記なので、<Emoji>✖️</Emoji>
-              の印をどこに配置しようが意味は同じです。それなら、ひと目見たときに分かりやすい方を優先したほうが良いのです。というわけで、こちらの案(
+              <Strong>
+                あくまで省略表記なので、<Emoji>✖️</Emoji>
+                の印をどこに配置しようが意味は変わりません。
+              </Strong>
+              それなら、ひと目見たときに分かりやすい方を優先したほうが良いのです。というわけで、こちらの案(
               <Emoji>✖️</Emoji>が真ん中)を採用したいと思います。
             </P>
           </>
@@ -86,7 +90,44 @@ export default () => (
         title: <>掛け算の省略表記の実践</>,
         content: (
           <>
-            <P />
+            <P>
+              さっそく省略表記を使ってみましょう。こちらの弁当箱をご覧ください:
+            </P>
+            {AER.pzwe}
+            <P>解説すると、</P>
+            <Ul>
+              <UlLi>
+                一番上の部分は、
+                <Em>
+                  暗号が「<Strong>2</Strong>」の弁当箱
+                </Em>{' '}
+                (右下に
+                <EmojiWithText letter="e" />
+                がふたつ)
+              </UlLi>
+              <UlLi>
+                真ん中の部分は、
+                <Em>
+                  暗号が「<Strong>3</Strong>」の弁当箱
+                </Em>{' '}
+                (右下に
+                <EmojiWithText letter="g" />
+                が3つ)
+              </UlLi>
+              <UlLi>
+                一番下の部分は、<Em>掛け算の弁当箱</Em>
+              </UlLi>
+            </Ul>
+            <P>というわけで、「2 ✕ 3」を計算する弁当箱ですね。</P>
+            <EmojiSeparator emojis={['2️⃣', '✖️', '3️⃣']} />
+            <P>
+              省略表記すると下のようになります。 早速、
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.zifr}
+            <P>
+              というわけで、最終的に暗号は「<Strong>6</Strong>」になります。
+            </P>
           </>
         )
       },
@@ -153,7 +194,17 @@ export default () => (
                   <InlineEmojiBoxesForQuestion />
                   が一番下から真ん中に移動した点です。
                 </Em>
-                このような配置にしたほうが、見た目的に分かりやすいと判断しました。
+              </P>
+              <P>
+                掛け算の省略表記のときにも話しましたが、
+                <Em>
+                  あくまで省略表記である限り、
+                  <InlineEmojiBoxesForQuestion />
+                  をどこに配置しようが意味は変わりません。{' '}
+                </Em>
+                ここでは、
+                <InlineEmojiBoxesForQuestion />
+                を真ん中に配置にしたほうが、ひと目見て分かりやすいと判断しました。
               </P>
             </>
           )
@@ -344,6 +395,15 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: <></>
       },
       {
         title: <>ところで: なぜ省略表記について語ったの？</>,

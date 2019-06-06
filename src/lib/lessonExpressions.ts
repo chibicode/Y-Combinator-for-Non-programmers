@@ -553,6 +553,20 @@ export const e13E10 = initializeExpressionContainer([
   ]
 ])
 
+export const e13E11 = initializeExpressionContainer([
+  {
+    shorthandNumber: 3
+  },
+  [
+    {
+      shorthandBinary: 'mult'
+    },
+    {
+      shorthandNumber: 2
+    }
+  ]
+])
+
 export const e14E1 = initializeExpressionContainer([
   {
     magical: 'question',

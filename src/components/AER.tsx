@@ -822,7 +822,7 @@ export default {
       expressionContainer={lessonExpressions.e7E8}
       showPriorities
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'sm'}
       highlightOverrides={{
         e: 'highlighted',
         f: 'highlighted',
@@ -836,7 +836,7 @@ export default {
       expressionContainer={lessonExpressions.e7E8}
       showPriorities
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'sm'}
       skipToTheEnd={false}
       speed={6}
     />
@@ -856,7 +856,7 @@ export default {
       expressionContainer={lessonExpressions.e7E9}
       showPriorities
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'sm'}
       skipToTheEnd={false}
       speed={6}
       highlightOverrides={{
@@ -931,7 +931,7 @@ export default {
       expressionContainer={lessonExpressions.e8E4}
       showPriorities
       containerSize={'xs'}
-      variableSize={'md'}
+      variableSize={'sm'}
       skipToTheEnd={false}
       speed={8}
       highlightOverrides={{
@@ -940,6 +940,14 @@ export default {
         g: 'highlighted',
         h: 'highlighted'
       }}
+    />
+  ),
+  pzwe: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e8E4}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'sm'}
     />
   ),
   ujfj: (
@@ -1785,6 +1793,11 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e13E10}
       caption={<H args={{ name: 'secretCodeMultiplyCaption' }} />}
+    />
+  ),
+  zifr: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e13E11}
     />
   ),
   zxux: (
