@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
 import { useState, useRef, useEffect } from 'react'
-import locale from 'src/lib/locale'
+import locale, { lang } from 'src/lib/locale'
 
 declare global {
   interface Window {
@@ -42,11 +42,19 @@ const TwitterEmbed = ({ id }: { id: string }) => {
       if (
         window.twttr &&
         window.twttr.widgets &&
-        window.twttr.widgets.load &&
+        window.twttr.widgets.createTweet &&
         wrapperEl.current
       ) {
-        window.twttr.widgets.load(wrapperEl.current)
-        setTwitterLoaded(true)
+        window.twttr.widgets
+          .createTweet(id, wrapperEl.current, {
+            dnt: true,
+            cards: 'hidden',
+            lang: locale,
+            align: 'center'
+          })
+          .then(() => {
+            setTwitterLoaded(true)
+          })
       }
     },
     twitterLoaded ? null : EMBED_DELAY
@@ -60,18 +68,6 @@ const TwitterEmbed = ({ id }: { id: string }) => {
           `
       ]}
       ref={wrapperEl}
-      dangerouslySetInnerHTML={{
-        __html: `
-      <blockquote
-        class="twitter-tweet tw-align-center"
-        data-dnt="true"
-        data-cards="hidden"
-        data-lang="${locale}"
-      >
-        <a href="https://twitter.com/chibicode/status/${id}"></a>
-      </blockquote>
-      `
-      }}
     />
   )
 }
