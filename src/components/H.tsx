@@ -40,7 +40,6 @@ export interface HProps {
   episodeNumberOverrides?: number
   args:
     | { name: 'pressNext' }
-    | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
     | { name: 'yesNoQuizIncorrect' }
@@ -109,7 +108,6 @@ export interface HProps {
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
-    | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
     | { name: 'shareContent' }
@@ -249,23 +247,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'titlePrefix' }} />
           へようこそ！
         </InlineHeader>
-      )
-    }
-  }
-  if (args.name === 'yesNoQuizAnswerHeading') {
-    const { isYes } = args
-    if (locale === 'en') {
-      return (
-        <>
-          Correct Answer: <Emoji>{args.isYes ? '👍' : '👎'}</Emoji>{' '}
-          {isYes ? 'Yes' : 'No'}
-        </>
-      )
-    } else {
-      return (
-        <>
-          正解は<Emoji>{isYes ? '⭕️' : '❌'}</Emoji>
-        </>
       )
     }
   }
@@ -1046,31 +1027,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>About this Site</>
     } else {
       return <>このサイトについて</>
-    }
-  }
-  if (args.name === 'whatIsComputerScience') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>
-            <Strong>
-              コンピュータサイエンスとは、一言で言えば「ソフトウェア開発の根幹となる学問」です。
-            </Strong>
-          </P>
-          <Ul>
-            <UlLi>
-              ここで言うソフトウェアとは、アプリ・ウェブサービス・ITシステムや組み込みシステム・ゲーム・AIなど、「コンピュータープログラムによって機能するもの」の総称です。
-            </UlLi>
-            <UlLi>
-              身近なものでいえば、<Emoji>🔎</Emoji> グーグルなどの検索エンジン、
-              <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
-              カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
-            </UlLi>
-          </Ul>
-        </>
-      )
     }
   }
   if (args.name === 'yesOrNo') {
