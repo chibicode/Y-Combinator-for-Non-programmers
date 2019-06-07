@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
 import { useState, useRef, useEffect } from 'react'
-import locale, { lang } from 'src/lib/locale'
+import { lang } from 'src/lib/locale'
 
 declare global {
   interface Window {
@@ -49,7 +49,7 @@ const TwitterEmbed = ({ id }: { id: string }) => {
           .createTweet(id, wrapperEl.current, {
             dnt: true,
             cards: 'hidden',
-            lang: locale,
+            lang,
             align: 'center'
           })
           .then(() => {
