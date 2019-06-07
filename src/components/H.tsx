@@ -111,6 +111,7 @@ export interface HProps {
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
     | { name: 'shareContent' }
+    | { name: 'shareTitle' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
     | { name: 'aboutThisSite' }
@@ -1381,9 +1382,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (episodeNumber <= numEpisodes) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
-          quitReason = <>時間がないからあとで読もう</>
+          quitReason = <Em>時間がないからあとで読もう</Em>
         } else {
-          quitReason = <>長いのでひと休みしよう</>
+          quitReason = <Em>長いのでひと休みしよう</Em>
         }
 
         return (
@@ -1408,6 +1409,27 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>
               ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
             </P>
+          </>
+        )
+      } else {
+        return <>?</>
+      }
+    }
+  }
+  if (args.name === 'shareTitle') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      if (episodeNumber === 0) {
+        return (
+          <>
+            <Emoji>🥺</Emoji>「あとで読む」前に <Emoji>🥺</Emoji>
+          </>
+        )
+      } else if (episodeNumber <= numEpisodes) {
+        return (
+          <>
+            <Emoji>😴</Emoji> ひと休みする前に <Emoji>😴</Emoji>
           </>
         )
       } else {

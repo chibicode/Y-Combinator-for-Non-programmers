@@ -57,6 +57,7 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
               <CardWrapper
                 type="share"
                 isLast
+                title={<H args={{ name: 'shareTitle' }} />}
                 setLastVisibleCardIndex={setLastVisibleCardIndex}
               >
                 <H args={{ name: 'shareContent' }} />
