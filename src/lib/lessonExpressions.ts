@@ -567,6 +567,13 @@ export const e13E11 = initializeExpressionContainer([
   ]
 ])
 
+export const e13E12 = initializeExpressionContainer([
+  'question',
+  {
+    shorthandNumber: 5
+  }
+])
+
 export const e14E1 = initializeExpressionContainer([
   {
     magical: 'question',

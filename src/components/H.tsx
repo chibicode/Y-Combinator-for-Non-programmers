@@ -95,11 +95,6 @@ export interface HProps {
     | { name: 'mustChangeBothFuncUnboundAndBound' }
     | { name: 'secretCodeLabel'; minusOne?: boolean }
     | { name: 'secretCodeCaptionSimple'; number: number }
-    | {
-        name: 'whyWeNeedFiniteBentoBox'
-        example1: React.ReactNode
-        example2: React.ReactNode
-      }
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
     | { name: 'secretCodeAddCaption' }
@@ -130,7 +125,7 @@ export interface HProps {
     | { name: 'lookAtToc' }
     | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
     | { name: 'timer'; numSecondsRemaining: number }
-    | { name: 'whatCanComputeFactorial'; start: 3 | 4 }
+    | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1225,72 +1220,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'whyWeNeedFiniteBentoBox') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>たとえば、以下の式をご覧ください:</P>
-          <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
-          <P>上の式は、</P>
-          <Ul>
-            <UlLi>
-              <Strong>「3」からはじめて、</Strong>
-            </UlLi>
-            <UlLi>
-              <Strong>どんどん「1」を引いた数を掛け算していき、</Strong>
-            </UlLi>
-            <UlLi>
-              <Strong>最後に「1」を掛けるまで繰り返す</Strong>
-            </UlLi>
-          </Ul>
-          <P>
-            という計算です。(ちなみに、<Em>3 ✕ 2 ✕ 1 = 6</Em>です。)
-          </P>
-          <P>
-            これを、たとえば「<Strong>4</Strong>
-            」からはじめた場合は以下の通りになります。(ちなみに、
-            <Em>4 ✕ 3 ✕ 2 ✕ 1 = 24</Em>です。)
-          </P>
-          <EmojiSeparator
-            size="sm"
-            emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-          />
-          <P>
-            このように、
-            <Strong>
-              ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-            </Strong>
-            という計算を、数学用語で「<Strong>階乗</Strong>
-            」と呼びます(覚えなくても大丈夫です)。
-          </P>
-          <Hr />
-          <P>
-            <H args={{ name: 'question' }} />
-            では、
-            <Strong>
-              こういった計算を、弁当箱を使って行うことができるでしょうか？
-            </Strong>
-          </P>
-          <P>
-            たとえば、
-            <Em>
-              下の弁当箱の
-              <InlineEmojiBoxesForQuestion />
-              に何を入れたら、それぞれ「<Strong>3 ✕ 2 ✕ 1</Strong>」「
-              <Strong>4 ✕ 3 ✕ 2 ✕ 1</Strong>」を計算できるでしょう？
-            </Em>
-            (どちらの
-            <InlineEmojiBoxesForQuestion />
-            にも、<Strong>同じ弁当箱</Strong>が入ります。)
-          </P>
-          {args.example1}
-          {args.example2}
-        </>
-      )
-    }
-  }
   if (args.name === 'witch') {
     if (locale === 'en') {
       return <>?</>
@@ -1362,7 +1291,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <InlineEmojiBoxesForQuestion />
           に何を入れたら、
           <br />
-          {args.start === 4 && (
+          {args.start === 5 && (
+            <>
+              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
+            </>
+          )}
+          {args.start >= 4 && (
             <>
               <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
             </>

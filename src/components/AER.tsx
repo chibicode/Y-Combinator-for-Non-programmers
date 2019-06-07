@@ -1782,6 +1782,12 @@ export default {
       caption={<H args={{ name: 'whatCanComputeFactorial', start: 4 }} />}
     />
   ),
+  aimh: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e13E12}
+      caption={<H args={{ name: 'whatCanComputeFactorial', start: 5 }} />}
+    />
+  ),
   lyod: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e13E9}

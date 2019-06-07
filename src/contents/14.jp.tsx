@@ -34,85 +34,95 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>これが上級最後！</>,
+        title: <>複雑な計算</>,
         content: (
           <>
-            <H
-              args={{
-                name: 'whyWeNeedFiniteBentoBox',
-                example1: AER.rreb,
-                example2: AER.kqzn
-              }}
-            />
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              これが上級最後のページです(次のページはエピローグです)。
-            </P>
-            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
-            <P>
-              最後だけあって、
-              <Strong>今回はいままでより文章量が多いです。</Strong>
-              でも、ここまで読み進めてくださった方なら、最後まで読み切ることができるはずです！
-            </P>
-            <P>それでは、早速はじめましょう！</P>
-          </>
-        )
-      },
-      {
-        title: <>前回の続き</>,
-        content: (
-          <>
-            <P>
-              前回の最後で、
-              <Strong>
-                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-              </Strong>
-              という計算(またの名を「<Strong>階乗</Strong>
-              」)について説明しました。
+              今回は、弁当箱を使った<Strong>複雑な計算</Strong>
+              にチャレンジしていきます。まずは下の式をご覧下さい。
             </P>
             <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
+            <P>上の式は、</P>
+            <Ul>
+              <UlLi>
+                <Strong>「3」からはじめて、</Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>どんどん「1」を引いた数を掛け算していき、</Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>最後に「1」を掛けるまで繰り返す</Strong>
+              </UlLi>
+            </Ul>
+            <P>
+              という計算です。(ちなみに、<Em>3 ✕ 2 ✕ 1 = 6</Em>です。)
+            </P>
+            <P>
+              これを、たとえば「<Strong>4</Strong>
+              」からはじめた場合は以下の通りになり、
+            </P>
             <EmojiSeparator
               size="sm"
               emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>24</Strong>」になります
+                </>
+              }
             />
             <P>
-              今回は、どんな弁当箱を使えば、こういった計算ができるのかについて考えていきます。
+              「<Strong>5</Strong>
+              」からはじめた場合は以下の通りになります。
             </P>
-            {AER.rreb}
-            {AER.kqzn}
+            <EmojiSeparator
+              size="sm"
+              emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>120</Strong>」になります
+                </>
+              }
+            />
+            <P>
+              このように、
+              <Strong>
+                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
+              </Strong>
+              という計算を、数学用語で「<Strong>階乗</Strong>
+              」と呼びます。(豆知識なので、覚えなくても大丈夫です。)
+            </P>
           </>
         )
       },
       {
-        title: <></>,
+        title: <>弁当箱で計算できる？</>,
         content: (
           <>
             <P>
-              前回話した通り、この上級最終回では 「
-              <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>」
-              の解説をします。
+              <H args={{ name: 'question' }} />
+              では、
+              <Strong>
+                こういった計算を、弁当箱を使って行うことができるでしょうか？
+              </Strong>
             </P>
-            <EmojiSeparator emojis={['🤔', '🍱', '❓']} />
             <P>
-              できるだけ分かりやすく解説するために、以下の順番で解説していきます。
+              たとえば、
+              <Em>
+                下の弁当箱の
+                <InlineEmojiBoxesForQuestion />
+                に何を入れたら、「<Strong>3 ✕ 2 ✕ 1</Strong>
+                」を計算できるでしょう？
+              </Em>
             </P>
-            <Ol>
-              <OlLi>
-                まず、
-                <Strong>実際には存在しない架空の弁当箱の機能を使い</Strong>
-                、「<Em>ある条件を満たすまで、何かを繰り返す弁当箱</Em>
-                」を作ってみます。
-              </OlLi>
-              <OlLi>
-                その後に、<Strong>従来の弁当箱の機能だけを使い</Strong>
-                、「<Em>ある条件を満たすまで、何かを繰り返す弁当箱</Em>
-                」を作ってみます。
-              </OlLi>
-            </Ol>
+            {AER.rreb}
             <P>
-              「架空の機能って何？」とお考えかもしれません。さっそく説明していきます！
+              また、「<Strong>4 ✕ 3 ✕ 2 ✕ 1</Strong>」「
+              <Strong>5 ✕ 4 ✕ 3 ✕ 2 ✕ 1</Strong>」も計算できるでしょうか？
             </P>
-            <EmojiSeparator emojis={['🤔', '💭', '❓']} />
+            {AER.kqzn}
+            {AER.aimh}
+            <P>今回は、こういった計算ができるかどうか検証していきます！</P>
           </>
         )
       },
@@ -126,23 +136,64 @@ export default () => (
         content: (
           <>
             <P>
-              まず、「
+              はじめに、「
               <Strong>
                 弁当箱の
                 <H args={{ name: 'witch' }} />
               </Strong>
-              」という「架空の」機能を紹介します。
+              」という「<Em>架空の</Em>」機能を紹介します。
             </P>
             <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
             <P>
-              この機能は実際には存在しない機能なのですが、
-              <Em>
-                もし仮にこの機能を使うことができれば、「
-                <Strong>ある条件を満たすまで、何かを繰り返す弁当箱</Strong>
-                」をラクに作ることができます。
-              </Em>
-              まずはどういう機能か説明しましょう。
+              なぜ「<Em>架空の</Em>」機能かというと、これは
+              <Strong>実際には弁当箱に備わっていない機能だから</Strong>です。
             </P>
+            <P>
+              しかし、
+              <Strong>もし仮にこの機能を使うことができるとしたら</Strong>
+              、先ほどの
+            </P>
+            <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
+            <P>といった計算をカンタンに行うことができます。だから、</P>
+            <Ul>
+              <UlLi>
+                <Em>まずは、この架空の機能を使って上の計算を行い</Em>
+                (カンタン)、
+              </UlLi>
+              <UlLi>
+                <Em>その後、この架空の機能を使わずに上の計算を行う</Em>(複雑)
+              </UlLi>
+            </Ul>
+            <P>
+              といった順番で説明していきます。この順番で説明したほうが、分かりやすいかなと判断した次第です。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            弁当箱の
+            <H args={{ name: 'witch' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              前置きはこれくらいにして、「
+              <Strong>
+                弁当箱の
+                <H args={{ name: 'witch' }} />
+              </Strong>
+              」がどういう機能か説明しましょう。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter={magicalVariableName} />,
+                <Emoji>🧙‍♀️</Emoji>,
+                <EmojiForLetter letter={magicalVariableName} />
+              ]}
+            />
             <P>
               次の弁当箱は、下に
               <H args={{ name: 'witch' }} />
