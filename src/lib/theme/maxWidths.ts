@@ -1,11 +1,11 @@
 export const allMaxWidths = {
-  xxxs: (1104 / 12) * 2,
-  xxs: (1104 / 12) * 4,
-  xs: (1104 / 12) * 6,
-  smsm: (1104 / 12) * 8,
-  sm: (1104 / 12) * 9,
-  md: (1104 / 12) * 10,
-  lg: 1104
+  xxxs: (1140 / 12) * 2,
+  xxs: (1140 / 12) * 4,
+  xs: (1140 / 12) * 6,
+  smsm: (1140 / 12) * 8,
+  sm: (1140 / 12) * 9,
+  md: (1140 / 12) * 10,
+  lg: 1140
 }
 
 const maxWidths = (x: keyof typeof allMaxWidths) => `${allMaxWidths[x]}px`
