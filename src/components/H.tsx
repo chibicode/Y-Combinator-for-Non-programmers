@@ -11,7 +11,6 @@ import {
   UlLi,
   Strong,
   InlineHeader,
-  Hr,
   ExternalLink
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
