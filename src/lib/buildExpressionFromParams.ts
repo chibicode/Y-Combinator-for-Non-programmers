@@ -172,7 +172,7 @@ export default function buildExpressionFromParams(
         true,
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
-      magicalType: expressionParams.magical
+      magical: expressionParams.magical
     }
   } else {
     return {

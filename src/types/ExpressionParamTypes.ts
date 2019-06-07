@@ -4,8 +4,7 @@ import {
   VariableShorthandBinary,
   VariableShorthandUnary,
   VariableShorthandNumber,
-  ConditionalExpression,
-  MagicalVariable
+  ConditionalExpression
 } from 'src/types/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
@@ -32,7 +31,7 @@ export interface VariableShorthandUnaryParams {
 
 export interface MagicalVariableParams {
   readonly initialHighlight?: boolean
-  readonly magical: MagicalVariable['magicalType']
+  readonly magical: boolean
 }
 
 export type VariableExpressionParams = VariableNames

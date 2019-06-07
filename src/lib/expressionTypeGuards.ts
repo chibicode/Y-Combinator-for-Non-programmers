@@ -70,7 +70,7 @@ export function isVariableShorthandUnaryNumber<
 export function isMagicalVariable<V extends MagicalVariable = MagicalVariable>(
   expression: Expression
 ): expression is V {
-  return !!(isVariable(expression) && expression.magicalType)
+  return !!(isVariable(expression) && expression.magical)
 }
 
 export function isExecutableCallRegular<E extends ExecutableCallRegular>(

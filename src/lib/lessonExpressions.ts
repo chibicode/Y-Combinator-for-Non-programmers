@@ -576,7 +576,7 @@ export const e13E12 = initializeExpressionContainer([
 
 export const e14E1 = initializeExpressionContainer([
   {
-    magical: 'question',
+    magical: true,
     name: magicalVariableName
   },
   {
@@ -586,7 +586,7 @@ export const e14E1 = initializeExpressionContainer([
 
 export const e14E2 = initializeExpressionContainer([
   {
-    magical: 'question',
+    magical: true,
     name: magicalVariableName
   },
   {
@@ -596,7 +596,7 @@ export const e14E2 = initializeExpressionContainer([
 
 export const e14E3 = initializeExpressionContainer([
   {
-    magical: 'question',
+    magical: true,
     name: magicalVariableName
   },
   {
@@ -606,7 +606,7 @@ export const e14E3 = initializeExpressionContainer([
 
 export const e14E4 = initializeExpressionContainer([
   {
-    magical: 'question',
+    magical: true,
     name: magicalVariableName
   },
   'someNumber'
@@ -621,7 +621,7 @@ export const e15E5 = initializeExpressionContainer([
 
 export const e14E6 = initializeExpressionContainer([
   {
-    magical: 'variable',
+    magical: true,
     name: magicalVariableName
   },
   {
@@ -631,7 +631,7 @@ export const e14E6 = initializeExpressionContainer([
 
 export const e14E7 = initializeExpressionContainer([
   {
-    magical: 'magicalHighlightWorkaround',
+    magical: true,
     name: magicalVariableName
   },
   {
@@ -649,7 +649,7 @@ export const e14E8 = initializeExpressionContainer([
 
 export const e14E9 = initializeExpressionContainer([
   {
-    magical: 'magical',
+    magical: true,
     name: magicalVariableName
   },
   {
