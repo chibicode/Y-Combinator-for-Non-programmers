@@ -2,7 +2,6 @@ import React from 'react'
 import { numEpisodes } from 'src/lib/episodeCategories'
 import {
   Blockquote,
-  Hr,
   Em,
   Img,
   ExternalLink,
@@ -65,7 +64,7 @@ export default () => (
               </ExternalLink>
             </P>
             <P>
-              本記事「<Strong>{lessonTitle}</Strong>
+              当記事「<Strong>{lessonTitle}</Strong>
               」は、筆者のブロガー人生の中で最も執筆に時間をかけた記事です。すべて
               <Strong>無料</Strong>
               で公開しているので、最後まで楽しんでいただけると幸いです。
@@ -336,17 +335,8 @@ export default () => (
         title: <>目次</>,
         content: (
           <>
-            <Toc />
-          </>
-        )
-      },
-      {
-        title: '読了時間',
-        type: 'meta',
-        content: (
-          <>
             <P>
-              本記事は、
+              当記事は、
               <InlineHeader>
                 <H
                   args={{ name: 'categoryNameColored', category: 'beginner' }}
@@ -383,65 +373,12 @@ export default () => (
               </InlineHeader>
               」を加えた
               <Strong>全17ページ</Strong>
-              で構成されています。
-            </P>
-            <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <P>筆者の予想だと、平均読了時間はおそらく:</P>
-            <Ul>
-              <UlLi>
-                <InlineHeader>
-                  <H
-                    args={{ name: 'categoryNameColored', category: 'beginner' }}
-                  />
-                </InlineHeader>
-                は1ページ<Strong>3〜4分</Strong>、合計<Strong>15〜20分</Strong>
-              </UlLi>
-              <UlLi>
-                <InlineHeader>
-                  <H
-                    args={{
-                      name: 'categoryNameColored',
-                      category: 'intermediate'
-                    }}
-                  />
-                </InlineHeader>
-                は1ページ<Strong>4〜5分</Strong>、合計<Strong>20〜25分</Strong>
-              </UlLi>
-              <UlLi>
-                <InlineHeader>
-                  <H
-                    args={{ name: 'categoryNameColored', category: 'advanced' }}
-                  />
-                </InlineHeader>
-                は1ページ<Strong>5〜6分</Strong>、合計<Strong>25〜30分</Strong>
-              </UlLi>
-              <UlLi>
-                <InlineHeader>
-                  <H
-                    args={{ name: 'titlePrefixColored' }}
-                    episodeNumberOverrides={0}
-                  />
-                </InlineHeader>
-                と
-                <InlineHeader>
-                  <H
-                    args={{ name: 'titlePrefixColored' }}
-                    episodeNumberOverrides={numEpisodes + 1}
-                  />
-                </InlineHeader>
-                合わせて<Strong>5〜10分</Strong>
-              </UlLi>
-              <UlLi>
-                全部合わせて<Strong>65〜85分</Strong>ほど
-              </UlLi>
-            </Ul>
-            <P>
-              読むのが早い方は、この半分以下の時間で読み切ることができるかもしれません。
-            </P>
-            <P>
-              非常に長いですが、<Em>記事というより電子書籍</Em>
+              で構成されています。非常に長いですが、
+              <Em>記事というより電子書籍</Em>
               だと思って、少しずつ読み進めてくだされば幸いです。
             </P>
+            <EmojiSeparator emojis={['📗', '📘', '📕']} />
+            <Toc />
             <NextLessonButton />
           </>
         )

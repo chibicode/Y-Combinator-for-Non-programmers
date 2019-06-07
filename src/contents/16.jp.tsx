@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Em,
-  P,
-  Strong,
-  ExternalLink,
-  Blockquote
-} from 'src/components/ContentTags'
+import { Em, P, Strong, ExternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
