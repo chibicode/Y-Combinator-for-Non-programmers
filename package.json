@@ -8,7 +8,6 @@
     "color": "^3.1.1",
     "lodash": "^4.17.11",
     "luxon": "^1.15.0",
-    "modern-normalize": "^0.5.0",
     "next": "8.1.0",
     "nprogress": "^0.2.0",
     "react": "^16.8.6",
