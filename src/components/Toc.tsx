@@ -83,7 +83,7 @@ const Toc = () => (
           args={{ name: 'titlePrefixColored', addColon: true }}
           episodeNumberOverrides={numEpisodes + 1}
         />{' '}
-        {episodeTitles[numEpisodes as keyof typeof episodeTitles]}
+        {episodeTitles[(numEpisodes + 1) as keyof typeof episodeTitles]}
       </InternalLink>
     </li>
   </ul>
