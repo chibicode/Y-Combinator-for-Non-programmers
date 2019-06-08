@@ -1955,11 +1955,13 @@ export default {
     />
   ),
   orhx: (
-    <ExpressionRunnerSimple
+    <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
       nextIterations={12}
       variableSize="sm"
+      skipToTheEnd={false}
+      speed={1.5}
     />
   ),
   dyef: (

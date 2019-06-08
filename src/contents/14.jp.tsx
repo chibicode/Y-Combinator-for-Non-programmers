@@ -414,9 +414,16 @@ export default () => (
                 <H args={{ name: 'witch' }} />
                 が消え
               </Strong>
-              、残ったのは掛け算だけになりました。
+              、<Strong>残ったのは掛け算の省略表記</Strong>だけになりました。
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.orhx}
+            <P>
+              つまり、これで <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} /> の計算ができたわけです！
+            </P>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
           </>
         )
       },
