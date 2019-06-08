@@ -1839,6 +1839,7 @@ export default {
         magical: 'highlighted'
       }}
       variableSize="md"
+      caption={<H args={{ name: 'witchAppearsAgainCaption' }} />}
     />
   ),
   syfp: (
@@ -1884,12 +1885,8 @@ export default {
       finalNextIterations={4}
       finalState="default"
       finalFastForward
-      finalCaption={
-        <H
-          args={{ name: 'magicTransition', numberBefore: 3, numberAfter: 2 }}
-        />
-      }
       variableSize="md"
+      finalCaption={<H args={{ name: 'yellowPartsChangedCaption' }} />}
     />
   ),
   mihy: (
@@ -1913,11 +1910,6 @@ export default {
       finalNextIterations={8}
       finalState="default"
       finalFastForward
-      finalCaption={
-        <H
-          args={{ name: 'magicTransition', numberBefore: 2, numberAfter: 1 }}
-        />
-      }
       variableSize="md"
     />
   ),

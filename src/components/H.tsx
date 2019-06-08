@@ -108,6 +108,7 @@ export interface HProps {
     | { name: 'shareTitle' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
+    | { name: 'witchAppearsAgainCaption' }
     | { name: 'aboutThisSite' }
     | {
         name: 'categoryNameColored'
@@ -122,7 +123,7 @@ export interface HProps {
     | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
-    | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
+    | { name: 'yellowPartsChangedCaption' }
     | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
 }
@@ -1230,19 +1231,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'magicTransition') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <EmojiNumber number={args.numberBefore} /> が{' '}
-          <EmojiNumber number={args.numberAfter} />
-          に、下の <InlineEmojiBoxesForQuestion size="md" /> がひとつ増える
-        </>
-      )
-    }
-  }
   if (args.name === 'timer') {
     if (locale === 'en') {
       return (
@@ -1368,6 +1356,29 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       } else {
         return <>?</>
       }
+    }
+  }
+  if (args.name === 'witchAppearsAgainCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'witch' }} />
+          がまた登場します
+        </>
+      )
+    }
+  }
+  if (args.name === 'yellowPartsChangedCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Strong>黄色の部分</Strong>が変わった部分です！
+        </>
+      )
     }
   }
   throw new Error()

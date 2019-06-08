@@ -166,6 +166,7 @@ export default () => (
             </Ol>
             <P>
               といった順番で説明していきます。この順番で説明したほうが、分かりやすいかなと判断した次第です。
+              <Strong>とりあえず、読み進めてみてください！</Strong>
             </P>
           </>
         )
@@ -224,13 +225,13 @@ export default () => (
               <UlLi>
                 変化後の弁当箱には
                 <EmojiWithText letter={magicalVariableName} />や
-                <EmojiNumber number={1} />や<InlineEmojiBoxesForQuestion />
+                <EmojiNumber number={1} />
                 があるのに加え、
                 <Strong>
                   <H args={{ name: 'witch' }} />
-                  がまた出現しているのに注目です
+                  がまた登場しているのに注目です
                 </Strong>
-                。
+                (黄色の部分)。
               </UlLi>
             </Ul>
             {AER.gtnr}
@@ -271,10 +272,11 @@ export default () => (
             {AER.wdol}
             <P>
               ご覧の通り、
-              <EmojiNumber number={3} />に
               <TopRightBadge inline topRightBadgeType="pred" />
-              がついていたので、
-              <EmojiNumber number={3} />が<EmojiNumber number={2} />
+              がついている
+              <EmojiNumber number={3} />
+              は、
+              <EmojiNumber number={2} />
               になりました。
             </P>
             <EmojiSeparator
@@ -306,29 +308,9 @@ export default () => (
         type: 'summary',
         content: (
           <>
-            <P>まだ途中ですが、ここまでを振り返ると、</P>
-            <Ul>
-              <UlLi>
-                最初は
-                <EmojiNumber number={3} />と
-                <H args={{ name: 'witch' }} />
-                だった弁当箱が、
-              </UlLi>
-              <UlLi>
-                <EmojiNumber number={2} />と
-                <H args={{ name: 'witch' }} />と<InlineEmojiBoxesForQuestion />
-                の弁当箱に変わった。
-              </UlLi>
-            </Ul>
             <P>
-              つまり、
-              <Strong>
-                数字が1減り、
-                <H args={{ name: 'witch' }} />
-                はそのままで、下に
-                <InlineEmojiBoxesForQuestion />
-                がひとつ増えました。
-              </Strong>
+              まだ途中ですが、ここまでを振り返ると、こんな感じになります。
+              <Strong>黄色の部分</Strong>が変わった部分です。
             </P>
             {AER.ifxr}
           </>
