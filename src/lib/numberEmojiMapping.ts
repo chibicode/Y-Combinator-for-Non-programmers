@@ -8,4 +8,9 @@ const numberEmojiMapping: Record<number, string> = {
   6: '6️⃣'
 }
 
+export const numberEmojiMappingMultipleDigits: Record<number, string[]> = {
+  24: ['2️⃣', '4️⃣'],
+  120: ['1️⃣', '2️⃣', '0️⃣']
+}
+
 export default numberEmojiMapping

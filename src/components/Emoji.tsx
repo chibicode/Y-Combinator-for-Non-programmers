@@ -32,6 +32,7 @@ export interface EmojiProps {
   children?: string
   size: 'md' | 'lg' | 'mdlg' | 'sm'
   noVerticalTransform: boolean
+  cssOverrides?: SerializedStyles
 }
 
 const sizeToHeight = (size: Required<EmojiProps>['size']) =>
@@ -42,7 +43,12 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     lg: '2em'
   }[size])
 
-const Emoji = ({ children, size, noVerticalTransform }: EmojiProps) => (
+const Emoji = ({
+  children,
+  size,
+  noVerticalTransform,
+  cssOverrides
+}: EmojiProps) => (
   <span
     css={[
       css`
@@ -53,7 +59,8 @@ const Emoji = ({ children, size, noVerticalTransform }: EmojiProps) => (
       !noVerticalTransform &&
         css`
           transform: translateY(-0.125em);
-        `
+        `,
+      cssOverrides
     ]}
   >
     {children && <EmojiSvg name={children} />}

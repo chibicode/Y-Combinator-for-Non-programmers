@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import FlexCenter from 'src/components/FlexCenter'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
@@ -13,7 +14,6 @@ import TopLeftBadge from 'src/components/TopLeftBadge'
 import TopRightBadge from 'src/components/TopRightBadge'
 import { fontSizes, spaces, zIndices, colors, radii } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import numberEmojiMapping from 'src/lib/numberEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
 
@@ -129,15 +129,17 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           position: relative;
         `}
       >
-        <Emoji size="sm">
-          {expression.highlightType === 'removed'
-            ? '💥'
-            : expression.shorthandNumber !== undefined
-            ? numberEmojiMapping[expression.shorthandNumber]
-            : expression.shorthandBinary !== undefined
-            ? '✖️'
-            : letterEmojiMapping[expression.name]}
-        </Emoji>
+        {expression.shorthandNumber !== undefined ? (
+          <EmojiNumber size="sm" number={expression.shorthandNumber} />
+        ) : (
+          <Emoji size="sm">
+            {expression.highlightType === 'removed'
+              ? '💥'
+              : expression.shorthandBinary !== undefined
+              ? '✖️'
+              : letterEmojiMapping[expression.name]}
+          </Emoji>
+        )}
         {expression.shorthandUnary && (
           <span
             css={css`
