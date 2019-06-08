@@ -1964,12 +1964,11 @@ export default {
       speed={1.5}
     />
   ),
-  dyef: (
+  wqdb: (
     <ExpressionRunnerSimple
-      explanationsVisibility="visible"
       expressionContainer={lessonExpressions.e14E1}
-      isDone
       showPriorities
+      nextIterations={12}
       variableSize="sm"
     />
   ),

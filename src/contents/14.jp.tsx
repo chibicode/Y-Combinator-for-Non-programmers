@@ -441,18 +441,23 @@ export default () => (
                 つまり、
                 <EmojiNumber number={3} />と<H args={{ name: 'witch' }} />
                 が入っている弁当箱を
-                <H args={{ name: 'play' }} />
+                <H args={{ name: 'fastForward' }} />
                 すると、
               </Strong>
             </P>
             {AER.zxux}
             <P>
+              途中で、下から上に <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} /> という順番になり、
+            </P>
+            {AER.wqdb}
+            <P>
+              最終的に、
               <Strong>
-                <EmojiNumber number={1} />
-                と、その下に
-                <InlineEmojiBoxesForQuestion />
-                がふたつ残ります。
+                3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
               </Strong>
+              になります。
             </P>
             {AER.xtjt}
             <Hr />
