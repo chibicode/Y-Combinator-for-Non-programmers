@@ -292,7 +292,7 @@ export default () => (
         content: (
           <>
             {AER.qmof}
-            <P>この弁当箱にはどういう効果があるか、もうお分かりでしょうか？</P>
+            <P>この弁当箱にはどんな効果があるか、もうお分かりでしょうか？</P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
             <P>答えは次のページに！</P>
             <NextLessonButton />

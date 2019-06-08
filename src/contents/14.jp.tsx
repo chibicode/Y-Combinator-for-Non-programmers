@@ -185,7 +185,7 @@ export default () => (
                 弁当箱の
                 <H args={{ name: 'witch' }} />
               </Strong>
-              」がどういう機能か説明しましょう。
+              」がどんな機能か説明しましょう。
             </P>
             <EmojiSeparator
               nodes={[
