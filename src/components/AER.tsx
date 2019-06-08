@@ -1934,12 +1934,23 @@ export default {
       variableSize="sm"
     />
   ),
+  yvty: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={8}
+      explanationsVisibility="visible"
+      initialState="conditionActive"
+      variableSize="sm"
+    />
+  ),
   umce: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
       nextIterations={8}
       initialState="trueCaseActive"
+      explanationsVisibility="visible"
       variableSize="sm"
     />
   ),
@@ -1947,8 +1958,7 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
-      nextIterations={8}
-      initialState="trueCaseActive"
+      nextIterations={12}
       variableSize="sm"
     />
   ),

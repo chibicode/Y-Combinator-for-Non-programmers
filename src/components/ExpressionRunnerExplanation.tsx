@@ -306,7 +306,11 @@ const Explanation = ({
       } else {
         return (
           <>
-            0なので{' '}
+            <InlineEmojiBoxesForCondition
+              type="condition"
+              variableSizeOverrides="sm"
+            />{' '}
+            が <EmojiNumber number={0} size="mdlg" /> なので{' '}
             <InlineEmojiBoxesForCondition
               type="trueCase"
               variableSizeOverrides="sm"
@@ -323,7 +327,11 @@ const Explanation = ({
       } else {
         return (
           <>
-            1以上なので{' '}
+            <InlineEmojiBoxesForCondition
+              type="condition"
+              variableSizeOverrides="sm"
+            />{' '}
+            が1以上なので{' '}
             <InlineEmojiBoxesForCondition
               type="falseCase"
               variableSizeOverrides="sm"

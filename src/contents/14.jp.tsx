@@ -342,9 +342,9 @@ export default () => (
       {
         title: (
           <>
-            最後は
-            <H args={{ name: 'witch' }} />
-            が消える
+            <EmojiNumber number={2} />
+            から
+            <EmojiNumber number={1} />へ
           </>
         ),
         content: (
@@ -370,32 +370,53 @@ export default () => (
               </Em>
             </P>
             {AER.davn}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'witch' }} />
+            が消える
+          </>
+        ),
+        content: (
+          <>
             <P>
               さらに続きを見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.zvet}
             <P>
-              ここで、
+              ここで、条件分岐の
               <Strong>
-                今までではじめて、
                 <InlineEmojiBoxesForCondition type="condition" />{' '}
                 の中にある暗号が
                 <EmojiNumber number={0} />
-                になりました。ということは、次は下側にある
+                になりました。
+              </Strong>
+            </P>
+            {AER.yvty}
+            <P>
+              ということは、条件分岐が行われた後に、
+              <Strong>
+                下側の
                 <InlineEmojiBoxesForCondition type="trueCase" />
-                が残るということです。
+                に入っている
+                <EmojiNumber number={1} />
+                が残ります。
               </Strong>
             </P>
             {AER.umce}
             <P>
+              すると、
               <Strong>
-                つまり、上側にあった
                 <H args={{ name: 'witch' }} />
-                が消え、これにて実行が完了します。
+                が消え
               </Strong>
+              、残ったのは掛け算だけになりました。
             </P>
-            {AER.dyef}
+            {AER.orhx}
           </>
         )
       },
