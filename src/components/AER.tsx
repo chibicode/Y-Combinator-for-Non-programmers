@@ -1886,7 +1886,9 @@ export default {
       finalState="default"
       finalFastForward
       variableSize="md"
-      finalCaption={<H args={{ name: 'yellowPartsChangedCaption' }} />}
+      finalCaption={
+        <H args={{ name: 'magicalChangedCaption', fromNumber: 3 }} />
+      }
       finalArgPriorityAggHighlights={[1]}
       finalFuncPriorityAggHighlights={[1, 2]}
     />
@@ -1900,7 +1902,7 @@ export default {
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={7}
       speed={1.5}
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   davn: (
@@ -1912,8 +1914,10 @@ export default {
       finalNextIterations={8}
       finalState="default"
       finalFastForward
-      finalCaption={<H args={{ name: 'yellowPartsChangedCaption' }} />}
-      variableSize="md"
+      finalCaption={
+        <H args={{ name: 'magicalChangedCaption', fromNumber: 2 }} />
+      }
+      variableSize="sm"
       finalArgPriorityAggHighlights={[1]}
       finalFuncPriorityAggHighlights={[3, 4]}
     />
@@ -1927,7 +1931,7 @@ export default {
       lastAllowedExpressionState="conditionActive"
       lastAllowedExpressionStateAfterIterations={8}
       speed={1.5}
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   umce: (
@@ -1936,7 +1940,7 @@ export default {
       showPriorities
       nextIterations={8}
       initialState="trueCaseActive"
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   orhx: (
@@ -1945,7 +1949,7 @@ export default {
       showPriorities
       nextIterations={8}
       initialState="trueCaseActive"
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   dyef: (
@@ -1954,7 +1958,7 @@ export default {
       expressionContainer={lessonExpressions.e14E1}
       isDone
       showPriorities
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   xtjt: (

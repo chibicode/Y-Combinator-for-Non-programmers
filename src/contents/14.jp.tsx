@@ -308,14 +308,34 @@ export default () => (
         type: 'summary',
         content: (
           <>
-            <P>
-              まだ途中ですが、ここまでを振り返ると、こんな感じになります。
-              <Strong>黄色の部分</Strong>
-              は数字が「1」減り、
-              <Strong highlightType="blue">青色の部分</Strong>
-              が追加されました。
-            </P>
+            <P>まだ途中ですが、ここまでを振り返ると、</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  一番上の数字が
+                  <EmojiNumber number={3} />
+                  から
+                  <EmojiNumber number={2} />
+                  になり、(黄色の部分)
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em highlightType="blue">
+                  <H args={{ name: 'witch' }} />
+                  の下に<Emoji>✖️</Emoji>
+                  <EmojiNumber number={3} />
+                  が追加されました。(青色の部分)
+                </Em>
+              </UlLi>
+            </Ul>
             {AER.ifxr}
+            <P>
+              ちなみに前回説明した通り、
+              <Strong>
+                <Emoji>✖️</Emoji>は掛け算の省略表記
+              </Strong>
+              です。
+            </P>
           </>
         )
       },
@@ -335,10 +355,19 @@ export default () => (
             </P>
             {AER.mihy}
             <P>
-              結果、このようになりました。<Strong>黄色の部分</Strong>
-              は数字が「1」減り、
-              <Strong highlightType="blue">青色の部分</Strong>
-              が追加されました。
+              <Em>
+                一番上の数字が
+                <EmojiNumber number={2} />
+                から
+                <EmojiNumber number={1} />
+                になり、
+              </Em>
+              <Em highlightType="blue">
+                <H args={{ name: 'witch' }} />
+                の下に<Emoji>✖️</Emoji>
+                <EmojiNumber number={2} />
+                が追加されました。
+              </Em>
             </P>
             {AER.davn}
             <P>

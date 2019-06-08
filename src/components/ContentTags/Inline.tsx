@@ -120,7 +120,9 @@ export const Em = ({
           css={[
             css`
               font-style: normal;
-              background: ${highlightType === 'white'
+              background: ${highlightType === 'blue'
+                ? mix(color, colors('blue50'))
+                : highlightType === 'white'
                 ? colors('white')
                 : color === 'yellow'
                 ? mix(color, colors('pink100'))

@@ -123,7 +123,7 @@ export interface HProps {
     | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
-    | { name: 'yellowPartsChangedCaption' }
+    | { name: 'magicalChangedCaption'; fromNumber: number }
     | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
 }
@@ -1370,16 +1370,26 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'yellowPartsChangedCaption') {
+  if (args.name === 'magicalChangedCaption') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <>
-          <Strong>黄色の部分</Strong>は数字が「1」減り、
+          <Em>
+            一番上の数字が
+            <EmojiNumber number={args.fromNumber} />
+            から
+            <EmojiNumber number={args.fromNumber - 1} />
+            になり、
+          </Em>
           <br />
-          <Strong highlightType="blue">青色の部分</Strong>
-          が追加されました！
+          <Em highlightType="blue">
+            <H args={{ name: 'witch' }} />
+            の下に<Emoji>✖️</Emoji>
+            <EmojiNumber number={args.fromNumber} />
+            が追加されました。
+          </Em>
         </>
       )
     }
