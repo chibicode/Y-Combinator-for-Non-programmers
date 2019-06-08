@@ -45,6 +45,7 @@ const TwitterEmbed = ({ id }: { id: string }) => {
         window.twttr.widgets.createTweet &&
         wrapperEl.current
       ) {
+        wrapperEl.current.innerHTML = ''
         window.twttr.widgets
           .createTweet(id, wrapperEl.current, {
             dnt: true,
