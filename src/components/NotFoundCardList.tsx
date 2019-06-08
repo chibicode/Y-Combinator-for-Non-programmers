@@ -7,6 +7,7 @@ import H from 'src/components/H'
 
 const NotFoundCardList = () => (
   <EpisodeCardList
+    notFound
     cards={[
       {
         type: 'meta',

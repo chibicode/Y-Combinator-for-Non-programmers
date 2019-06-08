@@ -62,9 +62,9 @@ const BottomRightBadge = ({
         justify-content: center;
         color: ${colors('white')};
         line-height: 1;
-        width: 1.3em;
+        width: 1.5em;
         font-weight: bold;
-        height: 1.3em;
+        height: 1.5em;
         text-transform: uppercase;
         border-radius: 100%;
         border-width: 2px;
@@ -80,7 +80,7 @@ const BottomRightBadge = ({
         css`
           display: inline-flex;
           font-size: 0.85em;
-          transform: translateY(-0.1em);
+          transform: translateY(-0.05em);
         `
     ]}
   >

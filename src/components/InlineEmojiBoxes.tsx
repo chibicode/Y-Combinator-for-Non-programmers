@@ -15,15 +15,26 @@ interface InlineEmojiBoxProps {
 }
 
 export const InlineEmojiBoxesForCondition = ({
-  type
+  type,
+  variableSizeOverrides
 }: {
   type: ConditionalBorderProps['type']
+  variableSizeOverrides: ConditionalBorderProps['variableSizeOverrides']
 }) => (
   <InlineEmojiBoxes
     size="xl"
-    borderBadge={<ConditionalBorder variableSizeOverrides="md" type={type} />}
+    borderBadge={
+      <ConditionalBorder
+        variableSizeOverrides={variableSizeOverrides}
+        type={type}
+      />
+    }
   />
 )
+
+InlineEmojiBoxesForCondition.defaultProps = {
+  variableSizeOverrides: 'md'
+}
 
 export const InlineEmojiBoxesForQuestion = ({
   size,
@@ -47,8 +58,8 @@ InlineEmojiBoxesForQuestion.defaultProps = {
 const widthAndHeight = (size: InlineEmojiBoxProps['size']) =>
   ({
     xl: 2,
-    lg: 1.5,
-    md: 1.25
+    lg: 1.7,
+    md: 1.4
   }[size])
 
 const emojiSize = (size: InlineEmojiBoxProps['size']): 'md' | 'sm' =>

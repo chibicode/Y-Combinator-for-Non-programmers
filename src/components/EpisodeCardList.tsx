@@ -21,7 +21,13 @@ export interface EpisodeCardType {
 
 export type EpisodeCardListType = readonly EpisodeCardType[]
 
-const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
+const EpisodeCardList = ({
+  cards,
+  notFound
+}: {
+  cards: EpisodeCardListType
+  notFound: boolean
+}) => {
   const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
     cards
   )
@@ -48,23 +54,25 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
               </CardWrapper>
             ) : null
           )}
-          {shareVisible && cards.length - 1 === lastVisibleCardIndex && (
-            <div
-              css={css`
-                margin: ${spaces(5)} 0 0;
-              `}
-            >
-              <CardWrapper
-                type="share"
-                isLast
-                title={<H args={{ name: 'shareTitle' }} />}
-                setLastVisibleCardIndex={setLastVisibleCardIndex}
+          {shareVisible &&
+            !notFound &&
+            cards.length - 1 === lastVisibleCardIndex && (
+              <div
+                css={css`
+                  margin: ${spaces(5)} 0 0;
+                `}
               >
-                <H args={{ name: 'shareContent' }} />
-                <NextLessonButton halfMargin />
-              </CardWrapper>
-            </div>
-          )}
+                <CardWrapper
+                  type="share"
+                  isLast
+                  title={<H args={{ name: 'shareTitle' }} />}
+                  setLastVisibleCardIndex={setLastVisibleCardIndex}
+                >
+                  <H args={{ name: 'shareContent' }} />
+                  <NextLessonButton halfMargin />
+                </CardWrapper>
+              </div>
+            )}
         </>
       ) : (
         <CardWrapper setLastVisibleCardIndex={setLastVisibleCardIndex}>
@@ -75,6 +83,10 @@ const EpisodeCardList = ({ cards }: { cards: EpisodeCardListType }) => {
       )}
     </>
   )
+}
+
+EpisodeCardList.defaultProps = {
+  notFound: false
 }
 
 export default EpisodeCardList
