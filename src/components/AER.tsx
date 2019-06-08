@@ -1977,7 +1977,7 @@ export default {
       expressionContainer={lessonExpressions.e14E1}
       isDone
       showPriorities
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   mnfh: (
@@ -1986,22 +1986,22 @@ export default {
       showPriorities
       skipToTheEnd={false}
       speed={7}
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   yklt: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E2}
       showPriorities
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   fsmk: (
     <ExpressionRunnerSimple
-      isDone
       expressionContainer={lessonExpressions.e14E2}
       showPriorities
-      variableSize="md"
+      nextIterations={16}
+      variableSize="sm"
     />
   ),
   peoq: (
@@ -2010,15 +2010,19 @@ export default {
       showPriorities
       skipToTheEnd={false}
       speed={8}
-      variableSize="md"
+      variableSize="sm"
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={15}
     />
   ),
-  xsux: (
-    <ExpressionRunnerPairSimple
+  nfkp: (
+    <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e14E2}
       showPriorities
-      isDone
-      variableSize="md"
+      skipToTheEnd={false}
+      speed={1.5}
+      nextIterations={16}
+      variableSize="sm"
     />
   ),
   osqg: (

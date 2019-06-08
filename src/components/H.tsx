@@ -86,6 +86,7 @@ export interface HProps {
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
+    | { name: 'whatHappensInTheMiddleQuestion' }
     | { name: 'whatsTheNumberQuestion'; number: number }
     | { name: 'lookAtThisBentoBox' }
     | { name: 'pressFastForward'; skipColon?: boolean }
@@ -761,6 +762,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'question' }} /> 上の弁当箱を
           <H args={{ name: 'play' }} />
           すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+        </>
+      )
+    }
+  }
+  if (args.name === 'whatHappensInTheMiddleQuestion') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'question' }} /> 上の弁当箱を
+          <H args={{ name: 'fastForward' }} />
+          すると、<Strong>途中で下のようになるでしょうか？</Strong>
         </>
       )
     }

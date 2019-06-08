@@ -491,7 +491,7 @@ export default () => (
             </P>
             {AER.yklt}
             <P>
-              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+              <H args={{ name: 'whatHappensInTheMiddleQuestion' }} />
             </P>
             {AER.fsmk}
             <YesNoButtons answer="yes" tooHard />
@@ -512,21 +512,25 @@ export default () => (
             </P>
             {AER.peoq}
             <P>
-              <Strong>
-                つまり、
-                <EmojiNumber number={4} />と<H args={{ name: 'witch' }} />
-                が入っている弁当箱を
-                <H args={{ name: 'play' }} />
-                すると、
-                <EmojiNumber number={1} />
-                と、その下に
-                <InlineEmojiBoxesForQuestion />
-                が3つ残ります。1
-              </Strong>
+              というわけで、途中で下から上に
+              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} />
+              という順番になります。
             </P>
-            {AER.xsux}
-            <P>そろそろパターンが見えてきましたか？</P>
-            <EmojiSeparator emojis={['🧙‍♀️', '🤔', '🧙‍♀️']} />
+            <P>
+              では、最後まで見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.nfkp}
+            <P>
+              というわけで、最終的に
+              <Strong>
+                4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
+              </Strong>
+              になります。
+            </P>
           </>
         )
       },
