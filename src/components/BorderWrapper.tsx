@@ -12,7 +12,7 @@ export interface BorderWrapperProps {
   topLeftBadgeType: VariableExpression['topLeftBadgeType']
   children: React.ReactNode
   isQuestion: boolean
-  highlightType: VariableExpression['highlightType'] | 'none' | 'pink'
+  highlightType: VariableExpression['highlightType'] | 'none' | 'pink' | 'blue'
   highlightOverridden: boolean
   topLevel: boolean
 }
@@ -76,6 +76,7 @@ const background = ({
         background: ${colors('white')};
       `
     }
+    case 'blue':
     case 'betaReduceCallArgHighlighted': {
       return css`
         background: ${colors('blue50')};

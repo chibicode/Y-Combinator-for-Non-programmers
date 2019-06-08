@@ -310,7 +310,10 @@ export default () => (
           <>
             <P>
               まだ途中ですが、ここまでを振り返ると、こんな感じになります。
-              <Strong>黄色の部分</Strong>が変わった部分です。
+              <Strong>黄色の部分</Strong>
+              は数字が「1」減り、
+              <Strong highlightType="blue">青色の部分</Strong>
+              が追加されました。
             </P>
             {AER.ifxr}
           </>
@@ -332,14 +335,10 @@ export default () => (
             </P>
             {AER.mihy}
             <P>
-              先ほどとほとんど同じことが起こりました！
-              <Strong>
-                数字が1減り、
-                <H args={{ name: 'witch' }} />
-                はそのままで、下に
-                <InlineEmojiBoxesForQuestion />
-                がまたひとつ増えました。
-              </Strong>
+              結果、このようになりました。<Strong>黄色の部分</Strong>
+              は数字が「1」減り、
+              <Strong highlightType="blue">青色の部分</Strong>
+              が追加されました。
             </P>
             {AER.davn}
             <P>

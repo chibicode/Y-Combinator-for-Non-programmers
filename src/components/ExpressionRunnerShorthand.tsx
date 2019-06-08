@@ -71,6 +71,8 @@ interface ExpressionRunnerSimpleProps {
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
   highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
   showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
+  argPriorityAggHighlights?: readonly number[]
+  funcPriorityAggHighlights?: readonly number[]
 }
 
 export const ExpressionRunnerSimple = ({
@@ -90,7 +92,9 @@ export const ExpressionRunnerSimple = ({
   nextIteration,
   nextIterations,
   showOnlyFocused,
-  highlightOverridesCallArgAndFuncUnboundOnly
+  highlightOverridesCallArgAndFuncUnboundOnly,
+  argPriorityAggHighlights,
+  funcPriorityAggHighlights
 }: ExpressionRunnerSimpleProps) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -115,6 +119,8 @@ export const ExpressionRunnerSimple = ({
       isDone,
       initialState
     })}
+    argPriorityAggHighlights={argPriorityAggHighlights}
+    funcPriorityAggHighlights={funcPriorityAggHighlights}
   />
 )
 
@@ -220,13 +226,17 @@ export const ExpressionRunnerPairSimple = ({
   finalCaption,
   finalNextIteration,
   finalNextIterations,
-  finalFastForward
+  finalFastForward,
+  finalArgPriorityAggHighlights,
+  finalFuncPriorityAggHighlights
 }: ExpressionRunnerSimpleProps & {
   finalState?: ExpressionRunnerSimpleProps['initialState']
   finalCaption?: ExpressionRunnerSimpleProps['caption']
   finalNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
   finalNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
   finalFastForward?: boolean
+  finalArgPriorityAggHighlights?: ExpressionRunnerSimpleProps['argPriorityAggHighlights']
+  finalFuncPriorityAggHighlights?: ExpressionRunnerSimpleProps['funcPriorityAggHighlights']
 }) => (
   <>
     <ExpressionRunnerSimple
@@ -277,6 +287,8 @@ export const ExpressionRunnerPairSimple = ({
       caption={finalCaption}
       nextIteration={finalNextIteration}
       nextIterations={finalNextIterations}
+      argPriorityAggHighlights={finalArgPriorityAggHighlights}
+      funcPriorityAggHighlights={finalFuncPriorityAggHighlights}
     />
   </>
 )

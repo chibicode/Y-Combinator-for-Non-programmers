@@ -1887,6 +1887,8 @@ export default {
       finalFastForward
       variableSize="md"
       finalCaption={<H args={{ name: 'yellowPartsChangedCaption' }} />}
+      finalArgPriorityAggHighlights={[1]}
+      finalFuncPriorityAggHighlights={[1, 2]}
     />
   ),
   mihy: (
@@ -1910,7 +1912,10 @@ export default {
       finalNextIterations={8}
       finalState="default"
       finalFastForward
+      finalCaption={<H args={{ name: 'yellowPartsChangedCaption' }} />}
       variableSize="md"
+      finalArgPriorityAggHighlights={[1]}
+      finalFuncPriorityAggHighlights={[3, 4]}
     />
   ),
   zvet: (

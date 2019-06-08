@@ -1376,7 +1376,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Strong>黄色の部分</Strong>が変わった部分です！
+          <Strong>黄色の部分</Strong>は数字が「1」減り、
+          <br />
+          <Strong highlightType="blue">青色の部分</Strong>
+          が追加されました！
         </>
       )
     }
