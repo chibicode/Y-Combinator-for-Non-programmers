@@ -1327,10 +1327,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <>
             <P>
               <InlineHeader>お願い:</InlineHeader>「{quitReason}
-              」とお考えの方にお願いがあります。差し支えなければ、このページを閉じる前に
+              」とお考えの方にお願いがあります。
+            </P>
+            <P>
+              差し支えなければ、このページを閉じる前に
               <Em>
-                下のツイートをリツイートしてくださると、宣伝になるので非常に助かります。
+                <Strong>下のツイートをリツイート</Strong>
+                してくださると、宣伝になるので非常に助かります。
               </Em>
+              もしくは、「
+              <Strong>
+                <H args={{ name: 'titlePrefixColored' }} />
+                までは読み終えた
+              </Strong>
+              」と引用リツイートしてくださると、さらに嬉しいです。
             </P>
             <TwitterEmbed id={shareId} />
             <P>
