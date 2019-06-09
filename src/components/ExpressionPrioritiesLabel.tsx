@@ -115,7 +115,11 @@ const ExpressionPrioritiesLabelBox = ({
               border: 2px solid ${colors('indigo300')};
               white-space: nowrap;
               border-radius: ${radii(9999)};
-            `
+            `,
+            priority >= 10 &&
+              css`
+                letter-spacing: -0.1em;
+              `
           ]}
         >
           {priority}
