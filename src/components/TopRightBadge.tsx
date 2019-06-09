@@ -22,6 +22,7 @@ const TopRightBadge = ({ topRightBadgeType, inline }: TopRightBadgeProps) => (
         line-height: 1;
         font-weight: bold;
         text-transform: uppercase;
+        white-space: nowrap;
         border-radius: 100%;
         border-width: 2px;
         border-style: solid;
