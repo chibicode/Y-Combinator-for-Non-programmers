@@ -641,7 +641,9 @@ export default () => (
                 弁当箱の
                 <H args={{ name: 'witch' }} />
               </Strong>
-              」は次のように変化します。
+              」は、
+              <H args={{ name: 'witch' }} />
+              の部分が次のように変化する機能です。この変化が、先ほどの計算を可能にしているわけです。
             </P>
             {AER.xsve}
             <P>
