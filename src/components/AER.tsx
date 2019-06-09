@@ -12,7 +12,6 @@ import H from 'src/components/H'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import { cakeVariableName } from 'src/lib/specialVariableNames'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join
@@ -2062,71 +2061,6 @@ export default {
   fapu: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E5}
-      variableSize="md"
-    />
-  ),
-  hknv: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e14E1}
-      showPriorities
-      initialState="default"
-      finalState="default"
-      finalNextIteration
-      variableSize="md"
-    />
-  ),
-  njwf: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e14E6}
-      showPriorities
-      initialState="default"
-      finalState="default"
-      finalNextIteration
-      variableSize="md"
-      highlightOverrideActiveAfterStart
-      highlightOverrides={{
-        [cakeVariableName]: 'highlighted'
-      }}
-    />
-  ),
-  njmb: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e14E6}
-      showPriorities
-      skipToTheEnd={false}
-      speed={10}
-      variableSize="md"
-    />
-  ),
-  hpiv: (
-    <ExpressionRunnerPairSimple
-      expressionContainer={lessonExpressions.e14E7}
-      showPriorities
-      variableSize="md"
-      initialState="default"
-      finalState="default"
-      finalNextIteration
-      highlightOverrideActiveAfterStart
-    />
-  ),
-  sydo: (
-    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e14E8} />
-  ),
-  wean: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e14E9}
-      showPriorities
-      skipToTheEnd={false}
-      speed={1.5}
-      variableSize="md"
-    />
-  ),
-  ricq: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.multTest}
-      showPriorities
-      skipToTheEnd={false}
-      speed={1.5}
       variableSize="md"
     />
   ),

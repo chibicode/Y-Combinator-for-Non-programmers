@@ -639,44 +639,6 @@ export const e14E5 = initializeExpressionContainer([
   }
 ])
 
-export const e14E6 = initializeExpressionContainer([
-  {
-    magical: true,
-    name: magicalVariableName
-  },
-  {
-    shorthandNumber: 3
-  }
-])
-
-export const e14E7 = initializeExpressionContainer([
-  {
-    magical: true,
-    name: magicalVariableName
-  },
-  {
-    shorthandNumber: 3
-  }
-])
-
-export const e14E8 = initializeExpressionContainer([
-  magicalVariableName,
-  magicalVariableName,
-  {
-    shorthandNumber: 1
-  }
-])
-
-export const e14E9 = initializeExpressionContainer([
-  {
-    magical: true,
-    name: magicalVariableName
-  },
-  {
-    shorthandNumber: 3
-  }
-])
-
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [
@@ -690,20 +652,6 @@ const yCombinator: FunctionExpressionParams = {
     }
   ]
 }
-
-export const multTest = initializeExpressionContainer([
-  {
-    shorthandNumber: 2
-  },
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    {
-      shorthandNumber: 3
-    }
-  ]
-])
 
 export const ycTest = initializeExpressionContainer([
   yCombinator,
