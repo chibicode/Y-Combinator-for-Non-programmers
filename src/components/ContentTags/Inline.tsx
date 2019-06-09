@@ -10,7 +10,7 @@ import {
 } from 'src/components/Card'
 import { LinkContext } from 'src/components/ContentTags/Links'
 
-export type InlineHighlightType = 'default' | 'white' | 'none'
+export type InlineHighlightType = 'default' | 'white' | 'none' | 'blue'
 
 interface HighlightContextProps {
   inHighlightType: InlineHighlightType
@@ -66,7 +66,9 @@ export const Strong = ({
           css={[
             css`
               font-weight: bold;
-              background: ${highlightType === 'white'
+              background: ${highlightType === 'blue'
+                ? mix(color, colors('blue50'))
+                : highlightType === 'white'
                 ? colors('white')
                 : color === 'yellow'
                 ? mix(color, colors('pink100'))
@@ -118,7 +120,9 @@ export const Em = ({
           css={[
             css`
               font-style: normal;
-              background: ${highlightType === 'white'
+              background: ${highlightType === 'blue'
+                ? mix(color, colors('blue50'))
+                : highlightType === 'white'
                 ? colors('white')
                 : color === 'yellow'
                 ? mix(color, colors('pink100'))

@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Em,
-  P,
-  Strong,
-  ExternalLink,
-  Blockquote
-} from 'src/components/ContentTags'
+import { Em, P, Strong, ExternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
@@ -42,11 +36,6 @@ export default () => (
               <Strong>コンピュータサイエンス</Strong>
               」という言葉について、最初のページで以下のように説明しました:
             </P>
-            <Blockquote>
-              <P>
-                <H args={{ name: 'whatIsComputerScience' }} />
-              </P>
-            </Blockquote>
             <P>
               実はコンピュータサイエンスは、日本語では「
               <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6">

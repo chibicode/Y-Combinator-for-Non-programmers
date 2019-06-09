@@ -58,7 +58,6 @@ export interface ExpressionRunnerProps {
   maxStepsAllowed?: number
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  maxAllowedDefaultStateCount?: number
   containerSize: ContainerProps['size']
   resetIndex: boolean
   hidePlayButton?: boolean
@@ -73,7 +72,8 @@ export interface ExpressionRunnerProps {
   caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
   showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
-  resetAtTheEnd: boolean
+  argPriorityAggHighlights: readonly number[]
+  funcPriorityAggHighlights: readonly number[]
 }
 
 interface PlaybackState {
@@ -90,19 +90,15 @@ const getActions = ({
   interval,
   getExpressionContainerManager,
   setPlaybackStatus,
-  setExpressionContainerManagerState,
-  resetAtTheEnd,
-  setPlayClicked
+  setExpressionContainerManagerState
 }: {
   speed: number
-  resetAtTheEnd: ExpressionRunnerProps['resetAtTheEnd']
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
   getExpressionContainerManager: () => ExpressionContainerManager
   setPlaybackStatus: React.Dispatch<React.SetStateAction<PlaybackState>>
   setExpressionContainerManagerState: React.Dispatch<
     React.SetStateAction<ExpressionContainerManager['currentState']>
   >
-  setPlayClicked: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const actions = {
     stepForward() {
@@ -156,10 +152,8 @@ const getActions = ({
     },
 
     step(direction: 'forward' | 'backward' | 'reset' | 'skipToEnd') {
-      let resetIfNecessary = false
       if (direction === 'forward') {
         getExpressionContainerManager().stepForward()
-        resetIfNecessary = true
       } else if (direction === 'backward') {
         getExpressionContainerManager().stepBackward()
       } else if (direction === 'skipToEnd') {
@@ -168,15 +162,6 @@ const getActions = ({
         getExpressionContainerManager().reset()
       }
       actions.syncState()
-
-      if (
-        resetIfNecessary &&
-        resetAtTheEnd &&
-        !getExpressionContainerManager().currentState.canStepForward
-      ) {
-        actions.reset()
-        setPlayClicked(false)
-      }
     },
 
     syncState() {
@@ -195,7 +180,6 @@ const ExpressionRunner = ({
   expressionContainer,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
-  maxAllowedDefaultStateCount,
   hideControls,
   explanationsVisibility,
   hidePriorities,
@@ -213,7 +197,8 @@ const ExpressionRunner = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  resetAtTheEnd
+  argPriorityAggHighlights,
+  funcPriorityAggHighlights
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -226,8 +211,7 @@ const ExpressionRunner = ({
     showAllShowSteps,
     skipAlphaConvert,
     initializeInstructions,
-    resetIndex,
-    maxAllowedDefaultStateCount
+    resetIndex
   })
   const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
@@ -242,9 +226,7 @@ const ExpressionRunner = ({
     interval,
     getExpressionContainerManager,
     setPlaybackStatus,
-    setExpressionContainerManagerState,
-    resetAtTheEnd,
-    setPlayClicked
+    setExpressionContainerManagerState
   })
   const isDone = isContainerWithState(
     expressionContainerManagerState.expressionContainer,
@@ -277,7 +259,9 @@ const ExpressionRunner = ({
         variableSize,
         showOnlyFocused,
         started: atLeastOneStepTaken,
-        isDoneOrReady: isDone || isReady
+        isDoneOrReady: isDone || isReady,
+        argPriorityAggHighlights,
+        funcPriorityAggHighlights
       }}
     >
       <div
@@ -384,12 +368,8 @@ const ExpressionRunner = ({
                   margin-top: ${spaces(0.5)};
                 `}
               >
-                {maxAllowedDefaultStateCount ? (
-                  <H args={{ name: 'stoppedBecauseInfiniteLoop' }} />
-                ) : (
-                  !hidePlayButton && (
-                    <H args={{ name: 'stoppedForExplanation' }} />
-                  )
+                {!hidePlayButton && (
+                  <H args={{ name: 'stoppedForExplanation' }} />
                 )}
               </ExpressionRunnerCaptionWrapper>
             )}
@@ -419,7 +399,8 @@ ExpressionRunner.defaultProps = {
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
   showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
-  resetAtTheEnd: false
+  argPriorityAggHighlights: [],
+  funcPriorityAggHighlights: []
 }
 
 export default ExpressionRunner

@@ -18,7 +18,6 @@ import replaceFuncParentKey from 'src/lib/replaceFuncParentKey'
 import {
   removeCrossed,
   stepToActive,
-  stepToShorthandBinaryResult,
   stepToAlphaConvertDone,
   stepToBetaReducePreviewAfter,
   stepToBetaReducePreviewBefore,
@@ -35,7 +34,8 @@ import {
   stepToMagicalExpanded,
   stepToDefault,
   stepToShowExecutableUnary,
-  stepToUnaryProcessed
+  stepToUnaryProcessed,
+  stepToBinaryComputed
 } from 'src/lib/steps'
 import {
   ContainerWithState,
@@ -43,11 +43,11 @@ import {
 } from 'src/types/ExpressionContainerTypes'
 import {
   ExecutableCallRegular,
-  ExecutableCallShorthandBinary,
   StepChild,
   ExecutableConditionalStatesDistributed,
   ExecutableCall,
-  ExecutableCallMagical
+  ExecutableCallMagical,
+  ExecutableCallBinary
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
 
@@ -122,6 +122,32 @@ const stepConditional = (
   throw new Error()
 }
 
+const stepBinary = (
+  e: ExecutableCallBinary
+): {
+  nextExpression: ExecutableCall | StepChild<'default'>
+  matchExists?: boolean
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    case 'active': {
+      return {
+        nextExpression: stepToBinaryComputed(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
+    default: {
+      throw new Error()
+    }
+  }
+}
+
 const stepMagical = (
   e: ExecutableCallMagical
 ): {
@@ -140,32 +166,6 @@ const stepMagical = (
       return {
         nextExpression: stepToMagicalExpanded(e),
         previouslyChangedExpressionState: 'magicalExpanded'
-      }
-    }
-    default: {
-      throw new Error()
-    }
-  }
-}
-
-const stepShorthand = (
-  e: ExecutableCallShorthandBinary
-): {
-  nextExpression: ExecutableCall | StepChild<'default'>
-  matchExists?: boolean
-  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
-} => {
-  switch (e.state) {
-    case 'default': {
-      return {
-        nextExpression: stepToActive(e),
-        previouslyChangedExpressionState: 'active'
-      }
-    }
-    case 'active': {
-      return {
-        nextExpression: stepToShorthandBinaryResult(e),
-        previouslyChangedExpressionState: 'default'
       }
     }
     default: {
@@ -365,7 +365,7 @@ const runStep = (
       ? stepRegular(expression, stepOptions, e.matchExists)
       : isExecutableCallMagical(expression)
       ? stepMagical(expression)
-      : stepShorthand(expression)
+      : stepBinary(expression)
     : stepConditional(expression)
 
   if (!callParent && !callParentKey && !funcParent && !conditionalParent) {

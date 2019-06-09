@@ -4,11 +4,15 @@ import Router from 'next/router'
 import NProgress from 'nprogress'
 import { pageview } from 'src/lib/gtag'
 import GlobalState from 'src/components/GlobalState'
+import reloadTwitterScript from 'src/lib/reloadTwitterScript'
 
 NProgress.configure({ showSpinner: false })
-Router.events.on('routeChangeStart', () => NProgress.start())
-Router.events.on('routeChangeComplete', (url: string) => {
-  pageview(url)
+Router.events.on('routeChangeStart', () => {
+  reloadTwitterScript()
+  NProgress.start()
+})
+Router.events.on('routeChangeComplete', (path: string) => {
+  pageview(path)
   NProgress.done()
 })
 Router.events.on('routeChangeError', () => NProgress.done())

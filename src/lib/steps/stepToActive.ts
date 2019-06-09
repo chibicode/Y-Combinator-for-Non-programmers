@@ -2,12 +2,11 @@ import {
   isFunction,
   isVariable,
   isExecutableCallRegular,
-  isExecutableCallMagical,
-  isCall
+  isCall,
+  isExecutableCallBinary
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
-  ExecutableStepCallShorthandBinary,
   ExecutableStepCallRegular,
   Expression,
   ExecutableCallRegular,
@@ -15,7 +14,6 @@ import {
   NonExecutableStepCall,
   VariableShorthandBinary,
   StepVariableShorthandBinary,
-  ExecutableCallShorthandBinary,
   StepChild,
   StepFunction,
   StepVariable,
@@ -23,10 +21,12 @@ import {
   VariableWithEmphasizePriorityAndState,
   ConditionalExpression,
   StepConditional,
+  ExecutableCallBinary,
   ExecutableCallMagical,
   MagicalVariable,
   StepMagicalVariable,
-  ExecutableStepCallMagical
+  ExecutableStepCallMagical,
+  ExecutableStepCallBinary
 } from 'src/types/ExpressionTypes'
 
 function toActive(
@@ -120,50 +120,70 @@ export default function stepToActive(
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'active'>
 export default function stepToActive(
-  e: ExecutableCallShorthandBinary
-): ExecutableStepCallShorthandBinary<'active'>
-export default function stepToActive(
   e: ExecutableCallMagical
 ): ExecutableStepCallMagical<'active'>
 export default function stepToActive(
-  e:
-    | ExecutableCallRegular
-    | ExecutableCallShorthandBinary
-    | ExecutableCallMagical
+  e: ExecutableCallBinary
+): ExecutableStepCallBinary<'active'>
+export default function stepToActive(
+  e: ExecutableCallRegular | ExecutableCallMagical | ExecutableCallBinary
 ):
   | ExecutableStepCallRegular<'active'>
-  | ExecutableStepCallShorthandBinary<'active'>
-  | ExecutableStepCallMagical<'active'> {
-  const arg = isFunction(e.arg)
-    ? toExecutableActiveFunction(e.arg)
-    : isVariable(e.arg)
-    ? variableToEmphasize(e.arg)
-    : isCall(e.arg)
-    ? emphasizeArgPriorityCallExpression(toActive(e.arg))
-    : toActive(e.arg)
-  if (isExecutableCallRegular(e)) {
+  | ExecutableStepCallMagical<'active'>
+  | ExecutableStepCallBinary<'active'> {
+  if (isExecutableCallBinary(e)) {
     return {
       ...e,
       state: 'active',
-      arg,
-      func: toExecutableActiveFunction(e.func)
-    }
-  } else if (isExecutableCallMagical(e)) {
-    return {
-      ...e,
-      state: 'active',
-      arg,
+      arg: {
+        ...e.arg,
+        arg: {
+          ...e.arg.arg,
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'none',
+          highlightType: 'active',
+          emphasizePriority: true
+        },
+        func: {
+          ...e.arg.func,
+          topLeftBadgeType: 'none',
+          bottomRightBadgeType: 'none',
+          highlightType: 'active'
+        }
+      },
       func: {
-        ...toActive(e.func),
+        ...e.func,
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'none',
+        highlightType: 'active',
         emphasizePriority: true
       }
     }
   } else {
-    return {
-      ...e,
-      state: 'active',
-      arg,
-      func: toActive(e.func)
+    const arg = isFunction(e.arg)
+      ? toExecutableActiveFunction(e.arg)
+      : isVariable(e.arg)
+      ? variableToEmphasize(e.arg)
+      : isCall(e.arg)
+      ? emphasizeArgPriorityCallExpression(toActive(e.arg))
+      : toActive(e.arg)
+    if (isExecutableCallRegular(e)) {
+      return {
+        ...e,
+        state: 'active',
+        arg,
+        func: toExecutableActiveFunction(e.func)
+      }
+    } else {
+      return {
+        ...e,
+        state: 'active',
+        arg,
+        func: {
+          ...toActive(e.func),
+          emphasizePriority: true
+        }
+      }
     }
   }
 }

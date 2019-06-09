@@ -18,38 +18,31 @@ import { VariableNames } from 'src/types/VariableNames'
 
 function matchBetaReduced(
   e: VariableExpression,
-  shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
 ): StepVariable<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: FunctionExpression,
-  shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
 ): StepFunction<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: ConditionalExpression,
-  shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
 ): StepConditional<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: CallExpression,
-  shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
 ): NonExecutableStepCall<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: Expression,
-  shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
 ): StepChild<'betaReducePreviewAfter'>
 function matchBetaReduced(
   e: Expression,
-  shorthandBinary: VariableExpression['shorthandBinary'],
   shorthandUnary: VariableExpression['shorthandUnary']
 ): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     return {
       ...e,
-      shorthandBinary: e.shorthandBinary || shorthandBinary,
       shorthandUnary: e.shorthandUnary || shorthandUnary,
       highlightType: 'highlighted',
       topLeftBadgeType: 'betaReduced',
@@ -57,16 +50,16 @@ function matchBetaReduced(
       emphasizePriority: false
     }
   } else if (isFunction(e)) {
-    const arg = matchBetaReduced(e.arg, shorthandBinary, shorthandUnary)
-    const body = matchBetaReduced(e.body, shorthandBinary, shorthandUnary)
+    const arg = matchBetaReduced(e.arg, shorthandUnary)
+    const body = matchBetaReduced(e.body, shorthandUnary)
     return {
       ...e,
       arg,
       body
     }
   } else if (isCall(e)) {
-    const arg = matchBetaReduced(e.arg, shorthandBinary, shorthandUnary)
-    const func = matchBetaReduced(e.func, shorthandBinary, shorthandUnary)
+    const arg = matchBetaReduced(e.arg, shorthandUnary)
+    const func = matchBetaReduced(e.func, shorthandUnary)
     return {
       ...e,
       state: 'default',
@@ -74,21 +67,9 @@ function matchBetaReduced(
       func
     }
   } else {
-    const condition = matchBetaReduced(
-      e.condition,
-      shorthandBinary,
-      shorthandUnary
-    )
-    const trueCase = matchBetaReduced(
-      e.trueCase,
-      shorthandBinary,
-      shorthandUnary
-    )
-    const falseCase = matchBetaReduced(
-      e.falseCase,
-      shorthandBinary,
-      shorthandUnary
-    )
+    const condition = matchBetaReduced(e.condition, shorthandUnary)
+    const trueCase = matchBetaReduced(e.trueCase, shorthandUnary)
+    const falseCase = matchBetaReduced(e.falseCase, shorthandUnary)
     return {
       ...e,
       state: 'default',
@@ -146,7 +127,7 @@ export function toBetaReducePreviewAfter(
   if (isVariable(e)) {
     if (funcSide && e.bound) {
       if (e.name === fromName) {
-        return matchBetaReduced(to, e.shorthandBinary, e.shorthandUnary)
+        return matchBetaReduced(to, e.shorthandUnary)
       } else {
         return {
           ...e,

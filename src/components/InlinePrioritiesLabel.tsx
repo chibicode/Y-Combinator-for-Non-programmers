@@ -16,7 +16,8 @@ const InlinePrioritiesLabel = ({
     css={css`
       display: inline-block;
       vertical-align: text-bottom;
-      width: 1.3em;
+      width: 1.45em;
+      height: 1.45em;
       border-radius: ${square ? 0 : radii(9999)};
       text-align: center;
       color: ${colors(revert ? 'white' : 'indigo300')};

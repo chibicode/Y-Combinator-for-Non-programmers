@@ -50,28 +50,6 @@ const emojiFontSize = (
   }
 }
 
-const width = (
-  variableSize: ExpressionRunnerContextProps['variableSize']
-): number => {
-  const multiplier = {
-    lg: 1,
-    md: 0.9,
-    sm: 0.9
-  }[variableSize]
-  return 1.3 * multiplier
-}
-
-const height = (
-  variableSize: ExpressionRunnerContextProps['variableSize']
-): number => {
-  const multiplier = {
-    lg: 1,
-    md: 1,
-    sm: 0.93
-  }[variableSize]
-  return 1.3 * multiplier
-}
-
 const left = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number =>
@@ -90,6 +68,8 @@ const ExpressionPrioritiesLabelBox = ({
 }: ExpressionPrioritiesLabelBoxProps) => {
   const { activePriority } = useContext(ExpressionPriorityContext)
   const { variableSize } = useContext(ExpressionRunnerContext)
+  const width = 1.5
+  const height = 1.5
 
   return (
     <Flex
@@ -100,11 +80,11 @@ const ExpressionPrioritiesLabelBox = ({
         `,
         position === 'topleft' &&
           css`
-            top: ${-offset * 0.2 * width(variableSize)}em;
+            top: ${-offset * 0.15 * width}em;
           `,
         position === 'bottomleft' &&
           css`
-            bottom: ${-offset * 0.2 * width(variableSize)}em;
+            bottom: ${-offset * 0.15 * width}em;
           `
       ]}
     >
@@ -112,6 +92,7 @@ const ExpressionPrioritiesLabelBox = ({
         <span
           css={css`
             font-size: ${emojiFontSize(variableSize)};
+            margin-left: -0.05em;
           `}
         >
           <Emoji>💥</Emoji>
@@ -125,8 +106,8 @@ const ExpressionPrioritiesLabelBox = ({
               )};
               font-size: ${fontSize(variableSize)};
               font-weight: bold;
-              width: ${width(variableSize)}em;
-              height: ${height(variableSize)}em;
+              width: ${width}em;
+              height: ${height}em;
               line-height: 1;
               background: ${colors(
                 emphasize && activePriority === priority ? 'pink400' : 'white'

@@ -290,8 +290,11 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-            <EmojiNumber number={0} size="mdlg" /> かどうかチェック
+            <InlineEmojiBoxesForCondition
+              type="condition"
+              variableSizeOverrides="sm"
+            />{' '}
+            が <EmojiNumber number={0} size="mdlg" /> かどうかチェック
           </>
         )
       }
@@ -303,7 +306,16 @@ const Explanation = ({
       } else {
         return (
           <>
-            0なので <InlineEmojiBoxesForCondition type="trueCase" /> が残ります
+            <InlineEmojiBoxesForCondition
+              type="condition"
+              variableSizeOverrides="sm"
+            />{' '}
+            が <EmojiNumber number={0} size="mdlg" /> なので{' '}
+            <InlineEmojiBoxesForCondition
+              type="trueCase"
+              variableSizeOverrides="sm"
+            />{' '}
+            が残ります
           </>
         )
       }
@@ -315,7 +327,15 @@ const Explanation = ({
       } else {
         return (
           <>
-            1以上なので <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+            <InlineEmojiBoxesForCondition
+              type="condition"
+              variableSizeOverrides="sm"
+            />{' '}
+            が1以上なので{' '}
+            <InlineEmojiBoxesForCondition
+              type="falseCase"
+              variableSizeOverrides="sm"
+            />{' '}
             が残ります
           </>
         )

@@ -392,7 +392,7 @@ export default () => (
               <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.xhbi}
-            <P>どういう法則でこうなるのかは、次のページで説明します！</P>
+            <P>どんな法則でこうなるのかは、次のページで説明します！</P>
             <NextLessonButton />
           </>
         )

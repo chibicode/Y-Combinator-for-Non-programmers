@@ -2,12 +2,7 @@ import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
 import { ExecutableCallRegular } from 'src/types/ExpressionTypes'
 import uniq from 'lodash/uniq'
-import {
-  isCall,
-  isVariable,
-  isFunction,
-  isVariableShorthandBinary
-} from 'src/lib/expressionTypeGuards'
+import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
 import alphaConvertTargetVariableNames from 'src/lib/alphaConvertTargetVariableNames'
@@ -51,19 +46,12 @@ function getAllVariableNames(
 function conflictingVariableNames(
   expression: ExecutableCallRegular
 ): readonly VariableNames[] {
-  if (isVariableShorthandBinary(expression.func)) {
-    return []
-  } else {
-    const argVariableNames = getAllVariableNames(expression.arg)
-    const funcBodyUnboundedVariableNamesExceptArg = difference(
-      getAllVariableNames(expression.func.body, { filter: 'unbound' }),
-      [expression.func.arg.name]
-    )
-    return intersection(
-      argVariableNames,
-      funcBodyUnboundedVariableNamesExceptArg
-    )
-  }
+  const argVariableNames = getAllVariableNames(expression.arg)
+  const funcBodyUnboundedVariableNamesExceptArg = difference(
+    getAllVariableNames(expression.func.body, { filter: 'unbound' }),
+    [expression.func.arg.name]
+  )
+  return intersection(argVariableNames, funcBodyUnboundedVariableNamesExceptArg)
 }
 
 export type ConflictingNamesToUnusedNames = {

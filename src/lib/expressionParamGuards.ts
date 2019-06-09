@@ -23,10 +23,7 @@ export function isHighlightedVariableExpressionParams(
 export function isVariableShorthandBinaryParams(
   expressionParams: ExpressionParams
 ): expressionParams is VariableShorthandBinaryParams {
-  return (
-    !!(expressionParams as VariableShorthandBinaryParams).name &&
-    !!(expressionParams as VariableShorthandBinaryParams).shorthandBinary
-  )
+  return !!(expressionParams as VariableShorthandBinaryParams).shorthandBinary
 }
 
 export function isVariableShorthandUnaryParams(

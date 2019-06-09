@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import FlexCenter from 'src/components/FlexCenter'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
@@ -13,7 +14,6 @@ import TopLeftBadge from 'src/components/TopLeftBadge'
 import TopRightBadge from 'src/components/TopRightBadge'
 import { fontSizes, spaces, zIndices, colors, radii } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import numberEmojiMapping from 'src/lib/numberEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
 
@@ -48,30 +48,25 @@ export const variableExpressionBoxFontSize = (
     sm: fontSizes(1.4)
   }[size])
 
-const SecretCodeLabel = ({ minusOne }: { minusOne?: boolean }) => (
+const SecretCodeLabel = ({ number }: { number?: number }) => (
   <span
-    css={[
-      css`
-        font-size: 0.6em;
-        background: ${colors('secretCode')};
-        color: #fff;
-        padding: 0.25em 0.75em;
-        border-radius: ${radii(0.25)};
-        font-weight: bold;
-        display: inline-block;
-      `,
-      !minusOne &&
-        css`
-          transform: translateY(-0.1em);
-        `
-    ]}
+    css={css`
+      font-size: 0.6em;
+      background: ${colors('secretCode')};
+      color: #fff;
+      padding: 0.25em 0.75em;
+      border-radius: ${radii(0.25)};
+      font-weight: bold;
+      display: inline-block;
+      transform: translateY(-0.1em);
+    `}
   >
     <H
       args={{
-        name: 'secretCodeLabel',
-        minusOne: minusOne
+        name: 'secretCode'
       }}
     />
+    {number && <> – {number}</>}
   </span>
 )
 
@@ -83,43 +78,24 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   if (expression.name === 'someNumber') {
     return (
       <div>
-        <SecretCodeLabel />
+        <SecretCodeLabel number={expression.shorthandNumber} />
       </div>
     )
-  } else if (expression.name === 'questionTimesSomeNumberMinusOne') {
+  } else if (expression.name === 'abbreviated') {
     return (
-      <div
-        css={css`
-          text-align: center;
-          width: 100%;
-        `}
-      >
-        <div
-          css={css`
-            border: 2px solid ${colors('indigo300')};
-            margin: ${spaces(0.25)} ${spaces(0.75)};
-            padding: ${spaces(0.25)};
-            background: ${colors('indigo400')};
-          `}
-        >
-          <Emoji>❔</Emoji>
-        </div>
-        <div
+      <div>
+        <span
           css={css`
             font-size: 0.6em;
-            opacity: 0.5;
-            margin-top: 0.5em;
+            font-weight: bold;
+            color: ${colors('grey600')};
+            padding: 0.25em 0.75em;
+            transform: translateY(-0.1em);
+            display: inline-block;
           `}
         >
-          <Emoji>✖️</Emoji>
-        </div>
-        <div
-          css={css`
-            margin-bottom: 0.25em;
-          `}
-        >
-          <SecretCodeLabel minusOne />
-        </div>
+          (<H args={{ name: 'abbreviated' }} />)
+        </span>
       </div>
     )
   } else {
@@ -129,34 +105,16 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           position: relative;
         `}
       >
-        <Emoji size="sm">
-          {expression.highlightType === 'removed'
-            ? '💥'
-            : expression.shorthandNumber !== undefined
-            ? numberEmojiMapping[expression.shorthandNumber]
-            : letterEmojiMapping[expression.name]}
-        </Emoji>
-        {expression.shorthandBinary && (
-          <span
-            css={css`
-              position: absolute;
-              right: -0.2em;
-              top: -0.6em;
-              z-index: ${zIndices('badge')};
-            `}
-          >
-            <span
-              css={css`
-                display: inline-flex;
-                font-size: 0.5em;
-                transform: translateY(0.3em);
-              `}
-            >
-              <Emoji size="sm" noVerticalTransform>
-                *️⃣
-              </Emoji>
-            </span>
-          </span>
+        {expression.shorthandNumber !== undefined ? (
+          <EmojiNumber size="sm" number={expression.shorthandNumber} />
+        ) : (
+          <Emoji size="sm">
+            {expression.highlightType === 'removed'
+              ? '💥'
+              : expression.shorthandBinary !== undefined
+              ? '✖️'
+              : letterEmojiMapping[expression.name]}
+          </Emoji>
         )}
         {expression.shorthandUnary && (
           <span

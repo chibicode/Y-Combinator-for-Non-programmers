@@ -12,6 +12,7 @@ import { P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import { spaces } from 'src/lib/theme'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 const initializeInstructions = ({
   nextIteration,
@@ -61,7 +62,6 @@ interface ExpressionRunnerSimpleProps {
   nextIteration?: boolean
   nextIterations?: number
   showPriorities: boolean
-  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
   caption?: ExpressionRunnerProps['caption']
@@ -72,6 +72,8 @@ interface ExpressionRunnerSimpleProps {
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
   highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
   showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
+  argPriorityAggHighlights?: readonly number[]
+  funcPriorityAggHighlights?: readonly number[]
 }
 
 export const ExpressionRunnerSimple = ({
@@ -85,14 +87,15 @@ export const ExpressionRunnerSimple = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  maxAllowedDefaultStateCount,
   variableSize,
   containerSize,
   skipAlphaConvert,
   nextIteration,
   nextIterations,
   showOnlyFocused,
-  highlightOverridesCallArgAndFuncUnboundOnly
+  highlightOverridesCallArgAndFuncUnboundOnly,
+  argPriorityAggHighlights,
+  funcPriorityAggHighlights
 }: ExpressionRunnerSimpleProps) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -104,7 +107,6 @@ export const ExpressionRunnerSimple = ({
     highlightOverridesCallArgAndFuncUnboundOnly={
       highlightOverridesCallArgAndFuncUnboundOnly
     }
-    maxAllowedDefaultStateCount={maxAllowedDefaultStateCount}
     showOnlyFocused={showOnlyFocused}
     containerSize={containerSize}
     caption={caption}
@@ -118,6 +120,8 @@ export const ExpressionRunnerSimple = ({
       isDone,
       initialState
     })}
+    argPriorityAggHighlights={argPriorityAggHighlights}
+    funcPriorityAggHighlights={funcPriorityAggHighlights}
   />
 )
 
@@ -146,9 +150,7 @@ export const ExpressionRunnerPlayButtonOnly = ({
   variableSize,
   containerSize,
   highlightOverrides,
-  maxAllowedDefaultStateCount,
-  explanationsVisibility,
-  resetAtTheEnd
+  explanationsVisibility
 }: {
   expressionContainer: SteppedExpressionContainer
   initialState: ExpressionContainer['previouslyChangedExpressionState']
@@ -166,13 +168,9 @@ export const ExpressionRunnerPlayButtonOnly = ({
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility: ExpressionRunnerProps['explanationsVisibility']
-  resetAtTheEnd?: ExpressionRunnerProps['resetAtTheEnd']
-  maxAllowedDefaultStateCount?: ExpressionRunnerProps['maxAllowedDefaultStateCount']
 }) => (
   <ExpressionRunner
     speed={speed}
-    resetAtTheEnd={resetAtTheEnd}
-    maxAllowedDefaultStateCount={maxAllowedDefaultStateCount}
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     highlightOverrides={highlightOverrides}
@@ -218,7 +216,6 @@ export const ExpressionRunnerPairSimple = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  maxAllowedDefaultStateCount,
   variableSize,
   containerSize,
   skipAlphaConvert,
@@ -230,13 +227,29 @@ export const ExpressionRunnerPairSimple = ({
   finalCaption,
   finalNextIteration,
   finalNextIterations,
-  finalFastForward
+  finalFastForward,
+  finalArgPriorityAggHighlights,
+  finalFuncPriorityAggHighlights,
+  intermediateState,
+  intermediateCaption,
+  intermediateNextIteration,
+  intermediateNextIterations,
+  intermediateArgPriorityAggHighlights,
+  intermediateFuncPriorityAggHighlights
 }: ExpressionRunnerSimpleProps & {
   finalState?: ExpressionRunnerSimpleProps['initialState']
   finalCaption?: ExpressionRunnerSimpleProps['caption']
   finalNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
   finalNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
   finalFastForward?: boolean
+  finalArgPriorityAggHighlights?: ExpressionRunnerSimpleProps['argPriorityAggHighlights']
+  finalFuncPriorityAggHighlights?: ExpressionRunnerSimpleProps['funcPriorityAggHighlights']
+  intermediateState?: ExpressionRunnerSimpleProps['initialState']
+  intermediateCaption?: ExpressionRunnerSimpleProps['caption']
+  intermediateNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
+  intermediateNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
+  intermediateArgPriorityAggHighlights?: ExpressionRunnerSimpleProps['argPriorityAggHighlights']
+  intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleProps['funcPriorityAggHighlights']
 }) => (
   <>
     <ExpressionRunnerSimple
@@ -250,7 +263,6 @@ export const ExpressionRunnerPairSimple = ({
         bottomRightBadgeOverrides,
         highlightOverrides,
         highlightOverrideActiveAfterStart,
-        maxAllowedDefaultStateCount,
         variableSize,
         containerSize,
         skipAlphaConvert,
@@ -260,14 +272,36 @@ export const ExpressionRunnerPairSimple = ({
         highlightOverridesCallArgAndFuncUnboundOnly
       }}
     />
-    <P
-      css={css`
-        text-align: center;
-        margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
-      `}
-    >
-      <Emoji size="mdlg">{finalFastForward ? '⏬' : '⬇️'}</Emoji>
-    </P>
+    {intermediateState && (
+      <>
+        <ExpressionRunnerSeparator fastForward />
+        <ExpressionRunnerSimple
+          {...{
+            expressionContainer,
+            explanationsVisibility,
+            showPriorities,
+            showAllShowSteps,
+            bottomRightBadgeOverrides,
+            highlightOverrides,
+            highlightOverrideActiveAfterStart,
+            variableSize,
+            containerSize,
+            skipAlphaConvert,
+            showOnlyFocused,
+            highlightOverridesCallArgAndFuncUnboundOnly
+          }}
+          initialState={intermediateState}
+          caption={intermediateCaption}
+          nextIteration={intermediateNextIteration}
+          nextIterations={intermediateNextIterations}
+          argPriorityAggHighlights={intermediateArgPriorityAggHighlights}
+          funcPriorityAggHighlights={intermediateFuncPriorityAggHighlights}
+        />
+      </>
+    )}
+    <ExpressionRunnerSeparator
+      fastForward={!!(finalFastForward || intermediateState)}
+    />
     <ExpressionRunnerSimple
       {...{
         expressionContainer,
@@ -278,7 +312,6 @@ export const ExpressionRunnerPairSimple = ({
         bottomRightBadgeOverrides,
         highlightOverrides,
         highlightOverrideActiveAfterStart,
-        maxAllowedDefaultStateCount,
         variableSize,
         containerSize,
         skipAlphaConvert,
@@ -289,6 +322,8 @@ export const ExpressionRunnerPairSimple = ({
       caption={finalCaption}
       nextIteration={finalNextIteration}
       nextIterations={finalNextIterations}
+      argPriorityAggHighlights={finalArgPriorityAggHighlights}
+      funcPriorityAggHighlights={finalFuncPriorityAggHighlights}
     />
   </>
 )

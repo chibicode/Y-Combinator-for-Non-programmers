@@ -10,7 +10,7 @@ import { Strong } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'
 import Emoji from 'src/components/Emoji'
 
-const NextLessonButton = () => {
+const NextLessonButton = ({ halfMargin }: { halfMargin?: boolean }) => {
   const { episodeNumber } = useContext(EpisodeContext)
   const nextEpisodeNumber = episodeNumber + 1
 
@@ -18,7 +18,8 @@ const NextLessonButton = () => {
     <div
       css={css`
         text-align: center;
-        margin: ${spaces(2)} 0 ${spaces(2)};
+        margin: ${halfMargin ? spaces(1) : spaces(2)} 0
+          ${halfMargin ? spaces(1) : spaces(2)};
       `}
     >
       <Link href={`/${nextEpisodeNumber}`} passHref>

@@ -1,40 +1,271 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiNumber from 'src/components/EmojiNumber'
-import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
+import NextLessonButton from 'src/components/NextLessonButton'
+import BottomRightBadge from 'src/components/BottomRightBadge'
+import {
+  Em,
+  InlineHeader,
+  P,
+  Strong,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
-import YesNoButtons from 'src/components/YesNoButtons'
-import EmojiSeparator from 'src/components/EmojiSeparator'
-import Emoji from 'src/components/Emoji'
-import BottomRightBadge from 'src/components/BottomRightBadge'
-import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
-import EmojiForLetter from 'src/components/EmojiForLetter'
+import Emoji from 'src/components/Emoji'
+import EmojiSeparator from 'src/components/EmojiSeparator'
+import {
+  InlineEmojiBoxesForCondition,
+  InlineEmojiBoxesForQuestion
+} from 'src/components/InlineEmojiBoxes'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 import TopRightBadge from 'src/components/TopRightBadge'
-import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>複雑な弁当箱</>,
+        title: <>掛け算の弁当箱</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              早速、
-              <H args={{ name: 'lookAtThisBentoBox' }} />。
+              今回はまず、中級で紹介した「<Strong>掛け算の弁当箱</Strong>
+              」を省略表記していきます。
             </P>
-            {AER.gopk}
+            <EmojiSeparator emojis={['✖️', '🍱', '✖️']} />
             <P>
-              今まで見たことがないくらい複雑な弁当箱ですね。これは、どういう効果があるのでしょうか？
+              下にあるのが「<Strong>掛け算の弁当箱</Strong>
+              」です。
+              <InlineEmojiBoxesForQuestion />
+              にそれぞれ暗号を入れて
+              <H args={{ name: 'play' }} />
+              すると、そのふたつの暗号を掛け算してくれます。
             </P>
+            {AER.drvu}
+            <P>では、さっそく省略表記してみましょう！</P>
+          </>
+        )
+      },
+      {
+        title: <>掛け算の省略表記</>,
+        content: (
+          <>
             <P>
+              先ほどの掛け算の弁当箱の下の部分を、<Emoji>✖️</Emoji>
+              の記号に入れ替えてみると、以下のようになります:
+            </P>
+            {AER.lyod}
+            <P>
+              このままでもいいですが、
+              <Em>
+                せっかく省略表記をするのであれば、もう少しひと目見て分かりやすくしたいところです。
+              </Em>
+            </P>
+            <EmojiSeparator emojis={['✖️', '🤔', '✖️']} />
+            <P>
+              では、
+              <Strong>
+                次のように<Emoji>✖️</Emoji>
+                の記号を真ん中に配置してみたらどうでしょう？
+              </Strong>
+              こちらのほうが、ひと目見て「掛け算だ」と分かりやすいですよね。
+            </P>
+            {AER.imba}
+            <P>
+              <Strong>
+                あくまで省略表記なので、<Emoji>✖️</Emoji>
+                の印をどこに配置しようが意味は変わりません。
+              </Strong>
+              それなら、ひと目見たときに分かりやすい方を優先したほうが良いのです。というわけで、こちらの案(
+              <Emoji>✖️</Emoji>が真ん中)を採用したいと思います。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>掛け算の省略表記の実践</>,
+        content: (
+          <>
+            <P>
+              さっそく省略表記を使ってみましょう。こちらの弁当箱をご覧ください:
+            </P>
+            {AER.pzwe}
+            <P>解説すると、</P>
+            <Ul>
+              <UlLi>
+                一番上の部分は、
+                <Em>
+                  暗号が「<Strong>2</Strong>」の弁当箱
+                </Em>{' '}
+                (右下に
+                <EmojiWithText letter="e" />
+                がふたつ)
+              </UlLi>
+              <UlLi>
+                真ん中の部分は、
+                <Em>
+                  暗号が「<Strong>3</Strong>」の弁当箱
+                </Em>{' '}
+                (右下に
+                <EmojiWithText letter="g" />
+                が3つ)
+              </UlLi>
+              <UlLi>
+                一番下の部分は、<Em>掛け算の弁当箱</Em>
+              </UlLi>
+            </Ul>
+            <P>というわけで、「2 ✕ 3」を計算する弁当箱ですね。</P>
+            <EmojiSeparator emojis={['2️⃣', '✖️', '3️⃣']} />
+            <P>
+              省略表記すると下のようになります。 早速、
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            {AER.zifr}
+            <P>
+              というわけで、最終的に暗号は「<Strong>6</Strong>
+              」になります。掛け算の省略表記については以上です！
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>条件分岐の弁当箱</>,
+        content: (
+          <>
+            <P>
+              続いて、以前紹介した「
+              <Strong>条件分岐の弁当箱</Strong>
+              」を省略表記していきます。まずは、復習から:
+            </P>
+            {AER.nlxe}
+            <H args={{ name: 'isZeroReview' }} />
+          </>
+        )
+      },
+      {
+        title: <>条件分岐の省略表記</>,
+        content: (
+          <>
+            <P>では、この条件分岐の弁当箱を、</P>
+            {AER.nlxe}
+            <P>次のように省略表記してみましょう:</P>
+            {AER.hvdn}
+            <Ul>
+              <UlLi>
+                まず、
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                (真ん中、黄色い左枠)の中にある
+                <InlineEmojiBoxesForQuestion />
+                の暗号が「0」かどうかチェックします。
+              </UlLi>
+              <UlLi>
+                もし「<Strong>0</Strong>」なら、{' '}
+                <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                (一番下、青い左枠)に入っている料理が残ります。この場合は
+                <EmojiWithText letter="y" />
+                です。
+              </UlLi>
+              <UlLi>
+                もし「<Strong>1以上</Strong>なら」、{' '}
+                <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                (一番上、赤い左枠)に入っている料理が残ります。この場合は
+                <EmojiWithText letter="z" />
+                です。
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['0️⃣', '🚦', '🔢']} />
+            <P>
+              <InlineHeader>赤</InlineHeader>・<InlineHeader>黄色</InlineHeader>
+              ・<InlineHeader>青</InlineHeader>
+              と、まるで縦型の信号機 <Emoji>🚦</Emoji> みたいですね。
+            </P>
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader>{' '}
+                <Em>
+                  省略前と違う点としては、
+                  <InlineEmojiBoxesForQuestion />
+                  が一番下から真ん中に移動した点です。
+                </Em>
+              </P>
+              <P>
+                掛け算の省略表記のときにも話しましたが、
+                <Em>
+                  あくまで省略表記である限り、
+                  <InlineEmojiBoxesForQuestion />
+                  をどこに配置しようが意味は変わりません。{' '}
+                </Em>
+                ここでは、
+                <InlineEmojiBoxesForQuestion />
+                を真ん中に配置にしたほうが、ひと目見て分かりやすいと判断しました。
+              </P>
+            </>
+          )
+        }
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、試しに
               <H args={{ name: 'yesNoQuiz' }} />
-              で検証してみましょう！
+              を行ってみましょう！
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
+            {AER.vxnm}
+            <P>
+              <H args={{ name: 'whatsTheNumberQuestion', number: 4 }} />
+            </P>
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              暗号は「<Strong>4</Strong>」ではなく、「<Strong>2</Strong>
+              」になります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.xefx}
+            <P>
+              手短に解説します。まず、
+              <InlineEmojiBoxesForCondition type="condition" />{' '}
+              の中にある暗号が「0」かどうかチェックします。
+            </P>
+            {AER.wcsz}
+            <P>
+              <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
+              <EmojiNumber number={3} /> なので、「1以上」の方、つまり上の{' '}
+              <InlineEmojiBoxesForCondition type="falseCase" /> が残ります。
+            </P>
+            {AER.psqo}
+            <P>
+              というわけで、最後は <EmojiNumber number={2} /> だけになります。
+            </P>
+            {AER.xsby}
           </>
         )
       },
@@ -48,256 +279,18 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに、暗号が「<Strong>2</Strong>」の弁当箱を用意しました。
+              次に進む前に、理解を確実にするためにもう一問やってみましょう。
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.imgp}
-            <P>
-              これを、先ほどの弁当箱の
-              <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
-            </P>
-            {AER.lxnu}
+            {AER.repd}
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
             </P>
-            <YesNoButtons answer="yes" tooHard />
+            <YesNoButtons answer="no" />
           </>
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.ccon}
-            <P>
-              最後に残ったのは、暗号が「<Strong>1</Strong>」の弁当箱でした。
-            </P>
-            {AER.npfx}
-            <P>
-              もともとの暗号は「<Strong>2</Strong>」だったので、「
-              <Strong>2</Strong>」が「<Strong>1</Strong>」になったわけです。
-            </P>
-            <EmojiSeparator emojis={['2️⃣', '➡️', '1️⃣']} />
-          </>
-        )
-      },
-      {
-        title: <>1を引く弁当箱</>,
-        content: (
-          <>
-            {AER.pnob}
-            <P>
-              つまり、これは
-              <InlineEmojiBoxesForQuestion />
-              の暗号から「<Strong>1を引く</Strong>」弁当箱なのです。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <InlineEmojiBoxesForQuestion size="md" />,
-                <Emoji>➖</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-            />
-            <P>足し算や掛け算の弁当箱より、かなり複雑ですよね。</P>
-          </>
-        )
-      },
-      {
-        type: 'sideNote',
-        title: (
-          <>
-            <H args={{ name: 'sideNotePrefix' }} />:{' '}
-            <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-            が必ず同じになる
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <InlineHeader>ちなみに:</InlineHeader>{' '}
-              <InlineEmojiBoxesForQuestion />
-              にどんな料理を入れても、
-              <H args={{ name: 'fastForward' }} />
-              の途中で、
-              <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                に必ず同じ料理が登場します。
-              </Strong>
-            </P>
-            <P>
-              先ほどの例で確かめてみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.fiab}
-            <P>
-              <Strong>
-                <EmojiWithText letter="e" />が
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              </Strong>
-              にそれぞれありますね。前回説明した通り、このままだと正しい結果が出ません。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                <EmojiForLetter letter="e" />,
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              ]}
-            />
-            <P>
-              というわけで、正しい結果を出すために、
-              <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                と
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                にある
-                <EmojiWithText letter="e" />
-                が、まだ使われていない別の料理(
-                <EmojiWithText letter="a" />
-                )に自動的に変わります。
-              </Strong>
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="e" />,
-                <Emoji>➡️</Emoji>,
-                <EmojiForLetter letter="a" />
-              ]}
-            />
-            <P>
-              実際に確かめてみましょう。
-              <H args={{ name: 'pressNext' }} />
-            </P>
-            {AER.plxd}
-            <P>
-              ご覧の通り、
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              にある
-              <EmojiWithText letter="e" />
-              が、
-              <EmojiWithText letter="a" />
-              に変わりました。
-            </P>
-            <P>
-              これを行わないと、「<Strong>1を引く</Strong>
-              」弁当箱として機能しません。ここでは詳しく書きませんが、引き算とは全然違う答えが出てしまうのです。
-            </P>
-            <Hr />
-            <P>
-              以上、前回紹介したルールが役に立っているよ、という余談でした。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>弁当箱を「省略表記」できないか？</>,
-        content: (
-          <>
-            {AER.zaoc}
-            <P>
-              上の弁当箱は、「<Strong>2 - 1</Strong>
-              」を計算できることがわかりましたが、
-              <Em>
-                少し複雑すぎて、ひと目見て何が起きているかわかりにくいですよね。
-              </Em>
-            </P>
-            <EmojiSeparator emojis={['❓', '🤯', '❓']} />
-            <P>
-              <InlineHeader>疑問:</InlineHeader>{' '}
-              <Em>
-                上の弁当箱を何らかの手法で「<Strong>省略表記</Strong>
-                」することで、何が起きているをかわかりやすくする方法はないでしょうか？
-              </Em>
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>暗号の省略表記</>,
-        content: (
-          <>
-            <P>
-              まず、
-              <Em>
-                暗号の弁当箱を<Strong>数字で</Strong>
-                表示してみます
-              </Em>
-              。たとえば、こちらは
-              <Strong>暗号が「2」</Strong>の弁当箱なので、
-            </P>
-            {AER.imgp}
-            <P>このように数字で表示してみます。</P>
-            {AER.xekr}
-            <P>
-              数字で省略表記することで、ひと目見て何のことか分かりやすくなりました。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>引き算の省略表記</>,
-        content: (
-          <>
-            <P>
-              <EmojiNumber number={2} />
-              の弁当箱を、先ほどの「<Strong>1を引く</Strong>
-              」弁当箱に入れてみました。
-            </P>
-            {AER.uqts}
-            <P>
-              今度は、「<Strong>1を引く</Strong>」部分も省略してみましょう。
-            </P>
-            <P>
-              <Strong>
-                <TopRightBadge topRightBadgeType="pred" inline />
-                の記号を
-                <EmojiNumber number={2} />
-                の右上に表示
-              </Strong>
-              することによって、2から「<Strong>1を引く</Strong>
-              」ことを省略表記してみます。
-            </P>
-            {AER.ojma}
-            <P>
-              これを
-              <H args={{ name: 'play' }} />
-              すると、
-              <EmojiNumber number={2} />が<EmojiNumber number={1} />
-              になります。
-            </P>
-            {AER.yykk}
-            <P>このように省略表記することで、だいぶ分かりやすくなりました。</P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <EmojiNumber number={2} />
-                </EmojiForLetterWithTopRightBadgeWrapper>,
-                <Emoji>➡️</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-            />
-            <P>
-              次は、
-              <H args={{ name: 'yesNoQuiz' }} />
-              をしながら、これを実際に役立ててみましょう！
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
         title: (
           <>
             <H args={{ name: 'yesNoQuiz' }} />
@@ -306,118 +299,185 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />:
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              暗号は「<Strong>1</Strong>」ではなく、「<Strong>2</Strong>
+              」になります。
+              <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.exww}
+            {AER.cnoq}
             <P>
-              <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
+              今回も手短に解説します。まず、
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="a" />が<EmojiNumber number={0} />
+              に変わります。
+              <H args={{ name: 'pressFastForward' }} />
             </P>
-            <YesNoButtons answer="yes" tooHard />
+            {AER.dwnj}
+            <P>
+              ここで、
+              <InlineEmojiBoxesForCondition type="condition" />{' '}
+              の中にある暗号が「0」かどうかチェックします。
+            </P>
+            {AER.guuf}
+            <P>
+              <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
+              <EmojiNumber number={0} /> なので、下の{' '}
+              <InlineEmojiBoxesForCondition type="trueCase" /> が残ります。
+            </P>
+            {AER.lrrr}
+            <P>
+              そして、最後に
+              <EmojiNumber number={2} />
+              が残ります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.dpar}
           </>
         )
       },
       {
+        title: <>あくまで「省略表記」です</>,
+        content: (
+          <>
+            <P>
+              忘れないでおきたいのが、
+              <Em>これらはあくまで「省略表記」だということです</Em>。
+              <Strong>
+                省略表記は「今まであった機能」をひと目で分かりやすいようにしているだけです。
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['0️⃣', '↔️', '🔢']} />
+            <P>
+              たとえば、先ほどの
+              <H args={{ name: 'yesNoQuiz' }} />
+              で出題したこちらの弁当箱は、
+            </P>
+            {AER.repd}
+            <P>
+              <InlineHeader>
+                条件分岐の省略表記を使わないと、次のようになります
+              </InlineHeader>
+              <Em>(黄色の部分):</Em>
+            </P>
+            {AER.ylil}
+            <P>
+              さらに、
+              <InlineHeader>
+                暗号の省略表記を使わないと、次のようになります
+              </InlineHeader>
+              <Em>(黄色の部分):</Em>
+            </P>
+            {AER.vqcw}
+            <P>
+              結果は同じになるでしょうか？
+              <H args={{ name: 'pressFastForward' }} />:
+            </P>
+            {AER.dcfi}
+            <P>
+              結果、暗号は「<Strong>2</Strong>」になりました。
+            </P>
+            {AER.bmnc}
+            <P>
+              先ほどの
+              <H args={{ name: 'yesNoQuiz' }} />
+              でも、結果は
+              <EmojiNumber number={2} />
+              になったので、
+              <Strong>
+                省略表記をした場合もしない場合も、同じ暗号の結果になる
+              </Strong>
+              ということがお分かりいただけたでしょうか。
+            </P>
+            {AER.ufze}
+            <P>
+              繰り返しますが、
+              <Strong>
+                省略表記は「今まであった機能」をひと目で分かりやすいようにしているだけです。
+              </Strong>
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
         title: (
           <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
+            <H args={{ name: 'summary' }} />
           </>
         ),
         content: (
           <>
             <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              最終的に暗号は
-              <EmojiNumber number={0} />
-              になります。
+              <InlineHeader>掛け算の弁当箱の省略表記:</InlineHeader> こちらは、
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} />
+              を計算する弁当箱の省略表記です。
             </P>
-            <EmojiSeparator emojis={['1️⃣', '➡️', '0️⃣']} />
+            {AER.omlc}
             <P>
-              <H args={{ name: 'fastForward' }} />
-              する前に、先ほどの弁当箱を省略表記してみましょう。
+              <InlineHeader>条件分岐の弁当箱の省略表記:</InlineHeader>{' '}
+              こちらは、
+              <InlineEmojiBoxesForQuestion />が<EmojiNumber number={0} />
+              なら
+              <EmojiWithText letter="y" />、<EmojiNumber number={1} />
+              以上なら
+              <EmojiWithText letter="z" />
+              になる弁当箱の省略表記です。
             </P>
-            <P>
-              まず、上の部分は「<Strong>1</Strong>」の暗号の弁当箱なので、
-            </P>
-            {AER.qgun}
-            <P>
-              <EmojiNumber number={1} />
-              と省略表記します。
-            </P>
-            {AER.yvia}
-            <P>
-              次に、右下には
-              <Strong>
-                <EmojiWithText letter="i" />
-              </Strong>
-              と、その下に「
-              <Strong>1を引く弁当箱</Strong>
-              」があります。
-            </P>
-            {AER.qifg}
-            <P>
-              この場合、「1を引く弁当箱」が
-              <Strong>
-                <EmojiWithText letter="i" />
-                の真下にある
-              </Strong>
-              ので、「
-              <Strong>
-                <EmojiWithText letter="i" />
-                に入る暗号から1を引く
-              </Strong>
-              」ということになります。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetter letter="i" />,
-                <Emoji>➖</Emoji>,
-                <EmojiNumber number={1} />
-              ]}
-            />
-            <P>つまり省略表記すると、こうなります:</P>
-            {AER.ufyc}
-            <P>
-              ここまでくると、どうなるかわかりやすいですね。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.pbgd}
-            <P>
-              つまり、「<Strong>1 - 1</Strong>
-              」の計算が行われるので、最終的に暗号は
-              <EmojiNumber number={0} />
-              になります。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
-                  <EmojiNumber number={1} />
-                </EmojiForLetterWithTopRightBadgeWrapper>,
-                <Emoji>➡️</Emoji>,
-                <EmojiNumber number={0} />
-              ]}
-            />
-            <P>
-              もともとの弁当箱は複雑でしたが、
-              <Strong>
-                省略表記をすることで、何が起きているかがひと目で分かるようになった
-              </Strong>
-              、という例でした。
-            </P>
+            {AER.hvdn}
           </>
         )
       },
       {
-        title: <>上級も残り少し</>,
+        title: <>ところで: なぜ省略表記について語ったの？</>,
         content: (
           <>
-            <P>上級編も残り2ページとなりました！</P>
-            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
             <P>
-              次のページでは、
-              <Strong>条件分岐の弁当箱を省略表記していきます。</Strong>
-              そして、中級編の最後で話した「<Strong>繰り返し処理</Strong>
-              」について、もう一度検証していきます。
+              前回と今回で、「<Strong>1を引く弁当箱</Strong>」「
+              <Strong>掛け算の弁当箱</Strong>」「
+              <Strong>条件分岐の弁当箱</Strong>
+              」の省略表記について語りました。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <TopRightBadge inline topRightBadgeType="pred" />,
+                <Emoji>✖️</Emoji>,
+                <Emoji>↕️</Emoji>
+              ]}
+            />
+            <P>省略表記について説明した理由は、以下の通りです:</P>
+            <Ul>
+              <UlLi>
+                次のページから、「<Em>1を引く弁当箱</Em>」「
+                <Em>掛け算の弁当箱</Em>」「
+                <Em>条件分岐の弁当箱</Em>
+                」を全部使って、
+                <Strong>今までで最も複雑な計算</Strong>を行います。
+              </UlLi>
+              <UlLi>
+                とても複雑なので、それぞれの弁当箱を省略表記することで、
+                <Strong>何が起きているかを少しでも分かりやすくしたい</Strong>
+                、というわけです。
+              </UlLi>
+            </Ul>
+          </>
+        )
+      },
+      {
+        title: <>上級も残り2ページ！</>,
+        content: (
+          <>
+            <P>
+              お疲れ様でした！上級も残り2ページです。次のページでは、「
+              <Strong>弁当箱の魔女</Strong>」が登場します。お楽しみに！
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter={magicalVariableName} />,
+                <Emoji>🧙‍♀️</Emoji>,
+                <EmojiForLetter letter={magicalVariableName} />
+              ]}
+            />
             <NextLessonButton />
           </>
         )

@@ -1,6 +1,6 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import twemoji from 'twemoji'
 import emojisBundle from 'src/lib/emojisBundle'
 
@@ -32,6 +32,7 @@ export interface EmojiProps {
   children?: string
   size: 'md' | 'lg' | 'mdlg' | 'sm'
   noVerticalTransform: boolean
+  cssOverrides?: SerializedStyles
 }
 
 const sizeToHeight = (size: Required<EmojiProps>['size']) =>
@@ -42,7 +43,12 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     lg: '2em'
   }[size])
 
-const Emoji = ({ children, size, noVerticalTransform }: EmojiProps) => (
+const Emoji = ({
+  children,
+  size,
+  noVerticalTransform,
+  cssOverrides
+}: EmojiProps) => (
   <span
     css={[
       css`
@@ -53,7 +59,8 @@ const Emoji = ({ children, size, noVerticalTransform }: EmojiProps) => (
       !noVerticalTransform &&
         css`
           transform: translateY(-0.125em);
-        `
+        `,
+      cssOverrides
     ]}
   >
     {children && <EmojiSvg name={children} />}

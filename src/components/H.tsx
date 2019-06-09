@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
-import { episodeUrl } from 'src/lib/meta'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
@@ -12,8 +11,6 @@ import {
   UlLi,
   Strong,
   InlineHeader,
-  Hr,
-  Blockquote,
   ExternalLink
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
@@ -21,27 +18,27 @@ import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
 import {
   lessonTitle,
-  episodeCategoryName,
   episodePrefix,
   episodePrefixes,
   episodeTitles
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { colors, fontSizes } from 'src/lib/theme'
-import { episodeCategory } from 'src/lib/episodeCategories'
+import { episodeCategory, numEpisodes } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiNumber from 'src/components/EmojiNumber'
 import { VariableNames } from 'src/types/VariableNames'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import TwitterEmbed from 'src/components/TwitterEmbed'
+import { shareId } from 'src/lib/twitter'
 
 export interface HProps {
   highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
     | { name: 'pressNext' }
-    | { name: 'yesNoQuizAnswerHeading'; isYes: boolean }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
     | { name: 'yesNoQuizIncorrect' }
@@ -89,40 +86,35 @@ export interface HProps {
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
+    | { name: 'whatHappensInTheMiddleQuestion' }
     | { name: 'whatsTheNumberQuestion'; number: number }
     | { name: 'lookAtThisBentoBox' }
     | { name: 'pressFastForward'; skipColon?: boolean }
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'mustChangeBothFuncUnboundAndBound' }
-    | { name: 'secretCodeLabel'; minusOne?: boolean }
+    | { name: 'secretCode' }
     | { name: 'secretCodeCaptionSimple'; number: number }
-    | {
-        name: 'whyWeNeedFiniteBentoBox'
-        example1: React.ReactNode
-        example2: React.ReactNode
-      }
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
     | { name: 'secretCodeAddCaption' }
-    | { name: 'secretCodeMultiplyCaption' }
+    | { name: 'secretCodeMultiplyCaption'; arg1?: number; arg2?: number }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
-    | { name: 'whatIsComputerScience' }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
-    | { name: 'takeABreak' }
+    | { name: 'shareContent' }
+    | { name: 'shareTitle' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
+    | { name: 'witchAppearsAgainCaption' }
     | { name: 'aboutThisSite' }
     | {
         name: 'categoryNameColored'
         category: keyof typeof episodePrefixes
       }
-    | { name: 'infiniteBentoBox' }
-    | { name: 'stoppedBecauseInfiniteLoop' }
     | { name: 'stoppedForExplanation' }
     | { name: 'infinitelyAddingQuestionCaption' }
     | { name: 'secretCodeAddOneCaptionWithoutQuestion' }
@@ -132,9 +124,10 @@ export interface HProps {
     | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
-    | { name: 'magicTransition'; numberBefore: number; numberAfter: number }
+    | { name: 'magicalChangedCaption'; fromNumber: number }
     | { name: 'timer'; numSecondsRemaining: number }
-    | { name: 'whatCanComputeFactorial'; start: 3 | 4 }
+    | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
+    | { name: 'abbreviated' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -153,8 +146,6 @@ const prefixColors = {
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   const episodeNumberFromContext = useContext(EpisodeContext).episodeNumber
   const episodeNumber = episodeNumberOverrides || episodeNumberFromContext
-  const currentEpisodeCategoryName = episodeCategoryName(episodeNumber)
-  const nextEpisodeCategoryName = episodeCategoryName(episodeNumber + 1)
 
   if (args.name === 'titlePrefix') {
     return <>{episodePrefix(episodeNumber)}</>
@@ -254,23 +245,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <H args={{ name: 'titlePrefix' }} />
           へようこそ！
         </InlineHeader>
-      )
-    }
-  }
-  if (args.name === 'yesNoQuizAnswerHeading') {
-    const { isYes } = args
-    if (locale === 'en') {
-      return (
-        <>
-          Correct Answer: <Emoji>{args.isYes ? '👍' : '👎'}</Emoji>{' '}
-          {isYes ? 'Yes' : 'No'}
-        </>
-      )
-    } else {
-      return (
-        <>
-          正解は<Emoji>{isYes ? '⭕️' : '❌'}</Emoji>
-        </>
       )
     }
   }
@@ -793,6 +767,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'whatHappensInTheMiddleQuestion') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'question' }} /> 上の弁当箱を
+          <H args={{ name: 'fastForward' }} />
+          すると、<Strong>途中で下のようになるでしょうか？</Strong>
+        </>
+      )
+    }
+  }
   if (args.name === 'whatsTheNumberQuestion') {
     if (locale === 'en') {
       return <>…</>
@@ -1004,8 +991,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>✖️</Emoji>{' '}
-          <InlineEmojiBoxesForQuestion size="md" /> を計算
+          {args.arg1 ? (
+            <EmojiNumber number={args.arg1} />
+          ) : (
+            <InlineEmojiBoxesForQuestion size="md" />
+          )}{' '}
+          <Emoji>✖️</Emoji>{' '}
+          {args.arg2 ? (
+            <EmojiNumber number={args.arg2} />
+          ) : (
+            <InlineEmojiBoxesForQuestion size="md" />
+          )}{' '}
+          を計算
         </>
       )
     }
@@ -1029,63 +1026,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'takeABreak') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>
-            「{nextEpisodeCategoryName}
-            に入る前にちょっと休憩したい」という方は、もしよければですが、ツイッターなどのSNSで
-          </P>
-          <Blockquote>
-            <P>
-              <Strong>
-                「魔法のYコンビネータ、とりあえず{currentEpisodeCategoryName}
-                編は終わった」
-              </Strong>
-            </P>
-          </Blockquote>
-          <P>とつぶやいてくださると、宣伝になるので大変ありがたいです。</P>
-          <EmojiSeparator emojis={['📱', '🙂', '💬']} />
-          <P>
-            <Strong>その際には、下のURLをコピーしてシェアしてください。</Strong>
-            <Em>
-              後にこのURLを開けば、
-              <Strong>{nextEpisodeCategoryName}その1</Strong>
-              に飛ぶことができるので、ブックマークとしても便利です。
-            </Em>
-          </P>
-          <P
-            css={css`
-              text-align: center;
-            `}
-          >
-            <Em
-              highlightType="white"
-              css={css`
-                font-size: ${fontSizes(1.2)};
-              `}
-            >
-              <ExternalLink href={episodeUrl(episodeNumber + 1)}>
-                {episodeUrl(episodeNumber + 1)}
-              </ExternalLink>
-            </Em>
-            <br />
-            <span
-              css={css`
-                font-size: ${fontSizes(0.85)};
-                color: ${colors('grey700')};
-              `}
-            >
-              (↑ {nextEpisodeCategoryName}その1に飛ぶURLです)
-            </span>
-          </P>
-        </>
-      )
-    }
-  }
   if (args.name === 'privacyPolicy') {
     if (locale === 'en') {
       return <>Privacy Policy</>
@@ -1098,31 +1038,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>About this Site</>
     } else {
       return <>このサイトについて</>
-    }
-  }
-  if (args.name === 'whatIsComputerScience') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>
-            <Strong>
-              コンピュータサイエンスとは、一言で言えば「ソフトウェア開発の根幹となる学問」です。
-            </Strong>
-          </P>
-          <Ul>
-            <UlLi>
-              ここで言うソフトウェアとは、アプリ・ウェブサービス・ITシステムや組み込みシステム・ゲーム・AIなど、「コンピュータープログラムによって機能するもの」の総称です。
-            </UlLi>
-            <UlLi>
-              身近なものでいえば、<Emoji>🔎</Emoji> グーグルなどの検索エンジン、
-              <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
-              カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
-            </UlLi>
-          </Ul>
-        </>
-      )
     }
   }
   if (args.name === 'yesOrNo') {
@@ -1152,32 +1067,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Epilogue</>
     } else {
       return <>あとがき</>
-    }
-  }
-  if (args.name === 'infiniteBentoBox') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          「
-          <InlineHeader>
-            無限ループの弁当箱 <Emoji>♾</Emoji>
-          </InlineHeader>
-          」
-        </>
-      )
-    }
-  }
-  if (args.name === 'stoppedBecauseInfiniteLoop') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <Strong>
-          <Emoji>♾</Emoji> 無限に続くので、ここで中断します！
-        </Strong>
-      )
     }
   }
   if (args.name === 'stoppedForExplanation') {
@@ -1346,95 +1235,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'whyWeNeedFiniteBentoBox') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>たとえば、以下の式をご覧ください:</P>
-          <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
-          <P>上の式は、</P>
-          <Ul>
-            <UlLi>
-              <Strong>「3」からはじめて、</Strong>
-            </UlLi>
-            <UlLi>
-              <Strong>どんどん「1」を引いた数を掛け算していき、</Strong>
-            </UlLi>
-            <UlLi>
-              <Strong>最後に「1」を掛けるまで繰り返す</Strong>
-            </UlLi>
-          </Ul>
-          <P>
-            という計算です。(ちなみに、<Em>3 ✕ 2 ✕ 1 = 6</Em>です。)
-          </P>
-          <P>
-            これを、たとえば「<Strong>4</Strong>
-            」からはじめた場合は以下の通りになります。(ちなみに、
-            <Em>4 ✕ 3 ✕ 2 ✕ 1 = 24</Em>です。)
-          </P>
-          <EmojiSeparator
-            size="sm"
-            emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
-          />
-          <P>
-            このように、
-            <Strong>
-              ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-            </Strong>
-            という計算を、数学用語で「<Strong>階乗</Strong>
-            」と呼びます(覚えなくても大丈夫です)。
-          </P>
-          <Hr />
-          <P>
-            <H args={{ name: 'question' }} />
-            では、
-            <Strong>
-              こういった計算を、弁当箱を使って行うことができるでしょうか？
-            </Strong>
-          </P>
-          <P>
-            たとえば、
-            <Em>
-              下の弁当箱の
-              <InlineEmojiBoxesForQuestion />
-              に何を入れたら、それぞれ「<Strong>3 ✕ 2 ✕ 1</Strong>」「
-              <Strong>4 ✕ 3 ✕ 2 ✕ 1</Strong>」を計算できるでしょう？
-            </Em>
-            (どちらの
-            <InlineEmojiBoxesForQuestion />
-            にも、<Strong>同じ弁当箱</Strong>が入ります。)
-          </P>
-          {args.example1}
-          {args.example2}
-          <P>
-            さきほどのような、
-            <Em>
-              「無限に何かを繰り返す」弁当箱では、
-              <Strong>このような計算は不可能</Strong>です。
-            </Em>
-          </P>
-          <EmojiSeparator emojis={['❌', '♾', '❌']} />
-          <P>
-            必要なのは、「
-            <Strong>最後に1を掛けたら、そこで繰り返しを終了する</Strong>
-            」弁当箱です。
-          </P>
-          <EmojiSeparator emojis={['✖️', '1️⃣', '👈']} />
-          <P>
-            つまり、「無限に何かを繰り返す」弁当箱ではなく、「
-            <Strong>ある条件を満たす</Strong>
-            <Em>(たとえば、最後に1を掛ける)</Em>
-            <Strong>まで、何かを繰り返す</Strong>
-            」弁当箱が求められているのです。
-          </P>
-          <P>では、そんな弁当箱は存在するのでしょうか？</P>
-          <EmojiSeparator emojis={['🤔', '❓', '🍱']} />
-        </>
-      )
-    }
-  }
   if (args.name === 'witch') {
     if (locale === 'en') {
       return <>?</>
@@ -1442,19 +1242,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlineHeader>魔女</InlineHeader> <Emoji>🧙‍♀️</Emoji>
-        </>
-      )
-    }
-  }
-  if (args.name === 'magicTransition') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <EmojiNumber number={args.numberBefore} /> が{' '}
-          <EmojiNumber number={args.numberAfter} />
-          に、下の <InlineEmojiBoxesForQuestion size="md" /> がひとつ増える
         </>
       )
     }
@@ -1490,11 +1277,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'secretCodeLabel') {
+  if (args.name === 'secretCode') {
     if (locale === 'en') {
       return <>Number</>
     } else {
-      return <>暗号{args.minusOne ? ' – 1' : ''}</>
+      return <>暗号</>
     }
   }
   if (args.name === 'whatCanComputeFactorial') {
@@ -1506,7 +1293,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <InlineEmojiBoxesForQuestion />
           に何を入れたら、
           <br />
-          {args.start === 4 && (
+          {args.start === 5 && (
+            <>
+              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
+            </>
+          )}
+          {args.start >= 4 && (
             <>
               <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
             </>
@@ -1519,7 +1311,112 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  throw new Error(args.name)
+  if (args.name === 'shareContent') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      if (episodeNumber <= numEpisodes) {
+        let quitReason: React.ReactNode
+        if (episodeNumber === 0) {
+          quitReason = <Em>時間がないからあとで読もう</Em>
+        } else {
+          quitReason = <Em>長いのでひと休みしよう</Em>
+        }
+
+        return (
+          <>
+            <P>
+              <InlineHeader>お願い:</InlineHeader>「{quitReason}
+              」とお考えの方にお願いがあります。差し支えなければ、このページを閉じる前に
+              <Em>
+                下のツイートをリツイートしてくださると、宣伝になるので非常に助かります。
+              </Em>
+            </P>
+            <TwitterEmbed id={shareId} />
+            <P>
+              また、当記事の内容について質問がございましたら、
+              <Em>上のツイートにスクリーンショット付きで返信</Em>
+              してくだされば最優先で対応します。メール(
+              <ExternalLink href="mailto:shu@chibicode.com">
+                shu@chibicode.com
+              </ExternalLink>
+              )でもお答えできますが、返事が遅れる可能性が高いです。
+            </P>
+            <P>
+              ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
+            </P>
+          </>
+        )
+      } else {
+        return <>?</>
+      }
+    }
+  }
+  if (args.name === 'shareTitle') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      if (episodeNumber === 0) {
+        return (
+          <>
+            <Emoji>🥺</Emoji>「あとで読む」前に <Emoji>🥺</Emoji>
+          </>
+        )
+      } else if (episodeNumber <= numEpisodes) {
+        return (
+          <>
+            <Emoji>😴</Emoji> ひと休みする前に <Emoji>😴</Emoji>
+          </>
+        )
+      } else {
+        return <>?</>
+      }
+    }
+  }
+  if (args.name === 'witchAppearsAgainCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'witch' }} />
+          がまた登場します
+        </>
+      )
+    }
+  }
+  if (args.name === 'magicalChangedCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Em>
+            一番上の数字が
+            <EmojiNumber number={args.fromNumber} />
+            から
+            <EmojiNumber number={args.fromNumber - 1} />
+            になり、
+          </Em>
+          <br />
+          <Em highlightType="blue">
+            <H args={{ name: 'witch' }} />
+            の下に<Emoji>✖️</Emoji>
+            <EmojiNumber number={args.fromNumber} />
+            が追加されました。
+          </Em>
+        </>
+      )
+    }
+  }
+  if (args.name === 'abbreviated') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>省略</>
+    }
+  }
+  throw new Error()
 }
 
 H.defaultProps = {

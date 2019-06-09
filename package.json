@@ -4,12 +4,10 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
     "@material-ui/core": "^4.0.1",
-    "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "color": "^3.1.1",
     "lodash": "^4.17.11",
     "luxon": "^1.15.0",
-    "modern-normalize": "^0.5.0",
     "next": "8.1.0",
     "nprogress": "^0.2.0",
     "react": "^16.8.6",
@@ -18,8 +16,8 @@
     "twemoji": "^12.0.4"
   },
   "scripts": {
-    "jp": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=jp next -p 9991",
-    "en": "SHOW_HIDDEN_CARDS_ON_QUIZ=true DEV_LOCALE=en next -p 9990",
+    "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp next -p 9991",
+    "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
     "jp:hide-cards": "DEV_LOCALE=jp next -p 9991",
     "en:hide-cards": "DEV_LOCALE=en next -p 9990",
     "dev": "rm -rf .next && yarn tsc && yarn eslint && concurrently \"yarn jp\" \"yarn en\" \"yarn contents:watch\" \"yarn twemoji:watch\"",

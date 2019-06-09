@@ -31,6 +31,7 @@ export interface CardProps {
     | 'indigo'
     | 'white'
     | 'pink'
+    | 'brown'
   slideNumber?: number
   slideCount?: number
   isLast?: boolean
@@ -58,7 +59,8 @@ export const backgroundColor = (color: CardProps['color']) =>
     purple: colors('purple50'),
     blue: colors('blue50'),
     indigo: colors('indigo50'),
-    pink: colors('pink50')
+    pink: colors('pink50'),
+    brown: colors('brown50')
   }[color])
 
 // First where the text is white
@@ -72,7 +74,8 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     purple: colors('purple300'),
     blue: colors('blue600'),
     indigo: colors('indigo300'),
-    pink: colors('pink400')
+    pink: colors('pink400'),
+    brown: 'transparent'
   }[color])
 
 const Card = ({

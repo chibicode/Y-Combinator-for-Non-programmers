@@ -143,7 +143,7 @@ export default function buildExpressionFromParams(
     }
   } else if (isVariableShorthandBinaryParams(expressionParams)) {
     return {
-      ...buildVariableExpression(expressionParams.name, true, 'default'),
+      ...buildVariableExpression('shorthandBinary', true, 'default'),
       shorthandBinary: expressionParams.shorthandBinary
     }
   } else if (isVariableShorthandUnaryParams(expressionParams)) {
@@ -158,7 +158,7 @@ export default function buildExpressionFromParams(
   } else if (isVariableShorthandNumberParams(expressionParams)) {
     return {
       ...buildVariableExpression(
-        'shorthandNumber',
+        expressionParams.someNumber ? 'someNumber' : 'shorthandNumber',
         true,
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
@@ -172,7 +172,7 @@ export default function buildExpressionFromParams(
         true,
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
-      magicalType: expressionParams.magical
+      magical: expressionParams.magical
     }
   } else {
     return {

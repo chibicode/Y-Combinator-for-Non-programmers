@@ -21,7 +21,9 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
     highlightOverrides,
     started,
     highlightOverrideActiveAfterStart,
-    highlightOverridesCallArgAndFuncUnboundOnly
+    highlightOverridesCallArgAndFuncUnboundOnly,
+    argPriorityAggHighlights,
+    funcPriorityAggHighlights
   } = useContext(ExpressionRunnerContext)
   let highlightOverridden: BorderWrapperProps['highlightOverridden'] = !!(
     isVariable(expression) &&
@@ -45,6 +47,34 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
     highlightOverridden = false
     highlightType = expression.highlightType
   }
+
+  if (
+    isVariable(expression) &&
+    (argPriorityAggHighlights.length > 0 &&
+      argPriorityAggHighlights.filter(x =>
+        expression.argPriorityAgg.includes(x)
+      ).length > 0)
+  ) {
+    highlightOverridden = true
+    highlightType = 'highlighted'
+  }
+
+  if (
+    isVariable(expression) &&
+    (funcPriorityAggHighlights.length > 0 &&
+      funcPriorityAggHighlights.filter(x =>
+        expression.funcPriorityAgg.includes(x)
+      ).length > 0)
+  ) {
+    highlightOverridden = true
+    highlightType = 'blue'
+  }
+
+  if (isVariable(expression) && expression.name === 'abbreviated') {
+    highlightOverridden = true
+    highlightType = 'grey'
+  }
+
   return (
     <Flex
       css={css`
