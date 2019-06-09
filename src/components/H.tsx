@@ -24,7 +24,10 @@ import {
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { colors, fontSizes } from 'src/lib/theme'
-import { episodeCategory, numEpisodes } from 'src/lib/episodeCategories'
+import {
+  episodeCategory,
+  numEpisodesExceptFirstAndLast
+} from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -85,6 +88,7 @@ export interface HProps {
     | { name: 'unknownRule' }
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
+    | { name: 'prevAndNextLinks' }
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'whatHappensInTheMiddleQuestion' }
     | { name: 'whatsTheNumberQuestion'; number: number }
@@ -145,7 +149,12 @@ const prefixColors = {
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   const episodeNumberFromContext = useContext(EpisodeContext).episodeNumber
-  const episodeNumber = episodeNumberOverrides || episodeNumberFromContext
+
+  // episodeNumberOverrides can be zero, so can't use || operator
+  const episodeNumber =
+    episodeNumberOverrides !== undefined
+      ? episodeNumberOverrides
+      : episodeNumberFromContext
 
   if (args.name === 'titlePrefix') {
     return <>{episodePrefix(episodeNumber)}</>
@@ -1315,7 +1324,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      if (episodeNumber <= numEpisodes) {
+      if (episodeNumber <= numEpisodesExceptFirstAndLast) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
           quitReason = <Em>時間がないからあとで読もう</Em>
@@ -1376,7 +1385,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Emoji>🥺</Emoji>「あとで読む」前に <Emoji>🥺</Emoji>
           </>
         )
-      } else if (episodeNumber <= numEpisodes) {
+      } else if (episodeNumber <= numEpisodesExceptFirstAndLast) {
         return (
           <>
             <Emoji>😴</Emoji> ひと休みする前に <Emoji>😴</Emoji>
@@ -1428,6 +1437,50 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       return <>省略</>
+    }
+  }
+  if (args.name === 'prevAndNextLinks') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          前回:{' '}
+          <InternalLink
+            href={`/${episodeNumber - 1}`}
+            css={css`
+              text-decoration: none;
+              &:hover {
+                text-decoration: none;
+              }
+            `}
+          >
+            <InlineHeader>
+              <H
+                args={{ name: 'titlePrefixColored' }}
+                episodeNumberOverrides={episodeNumber - 1}
+              />
+            </InlineHeader>
+          </InternalLink>{' '}
+          / 次回:{' '}
+          <InternalLink
+            href={`/${episodeNumber + 1}`}
+            css={css`
+              text-decoration: none;
+              &:hover {
+                text-decoration: none;
+              }
+            `}
+          >
+            <InlineHeader>
+              <H
+                args={{ name: 'titlePrefixColored' }}
+                episodeNumberOverrides={episodeNumber + 1}
+              />
+            </InlineHeader>
+          </InternalLink>
+        </>
+      )
     }
   }
   throw new Error()

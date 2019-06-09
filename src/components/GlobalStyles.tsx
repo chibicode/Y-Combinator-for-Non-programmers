@@ -67,6 +67,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
               -webkit-user-select: none;
               -webkit-tap-highlight-color: transparent;
               font-size: inherit;
+              line-height: inherit;
             }
 
             /* Make clicks pass-through */

@@ -1,5 +1,5 @@
 import React from 'react'
-import { numEpisodes } from 'src/lib/episodeCategories'
+import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import {
   Blockquote,
   Em,
@@ -108,7 +108,7 @@ export default () => (
               <InlineHeader>
                 <H
                   args={{ name: 'titlePrefixColored' }}
-                  episodeNumberOverrides={numEpisodes + 1}
+                  episodeNumberOverrides={numEpisodesExceptFirstAndLast + 1}
                 />
               </InlineHeader>
               」を加えた
@@ -119,7 +119,6 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
             <Toc />
-            <NextLessonButton />
           </>
         )
       },

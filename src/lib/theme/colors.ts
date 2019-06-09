@@ -18,7 +18,7 @@ export const allColors = {
   secretCode: '#3B88C3',
   grey150: '#f1f1f1',
   grey300: grey[300],
-  grey400: grey[400],
+  grey500: grey[500],
   grey600: grey[600],
   grey700: grey[700],
   grey800: grey[800],

@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { InternalLink } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeContext from 'src/components/EpisodeContext'
+import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import {
   colors,
@@ -100,6 +101,18 @@ const EpisodeHero = () => {
         size="lg"
         emojis={episodeEmojis[episodeNumber as keyof typeof episodeEmojis]}
       />
+      {episodeNumber > 0 && episodeNumber <= numEpisodesExceptFirstAndLast && (
+        <div
+          css={css`
+            margin: ${spaces('-1')} 0 ${spaces(1.5)};
+            text-align: center;
+            font-size: ${fontSizes(0.85)};
+            color: ${colors('grey500')};
+          `}
+        >
+          <H args={{ name: 'prevAndNextLinks' }} />
+        </div>
+      )}
     </header>
   )
 }

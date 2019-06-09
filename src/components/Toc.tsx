@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import { numEpisodes } from 'src/lib/episodeCategories'
+import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import { lessonTitle } from 'src/lib/titles'
 import { spaces } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
@@ -37,7 +37,7 @@ const Toc = () => (
         {lessonTitle}
       </InternalLink>
     </li>
-    {[...Array(numEpisodes).keys()].map(i => {
+    {[...Array(numEpisodesExceptFirstAndLast).keys()].map(i => {
       const episodeNumber = i + 1
       return (
         <li
@@ -71,7 +71,7 @@ const Toc = () => (
       `}
     >
       <InternalLink
-        href={`/${numEpisodes + 1}`}
+        href={`/${numEpisodesExceptFirstAndLast + 1}`}
         css={css`
           text-decoration: none;
           &:hover {
@@ -81,9 +81,13 @@ const Toc = () => (
       >
         <H
           args={{ name: 'titlePrefixColored', addColon: true }}
-          episodeNumberOverrides={numEpisodes + 1}
+          episodeNumberOverrides={numEpisodesExceptFirstAndLast + 1}
         />{' '}
-        {episodeTitles[(numEpisodes + 1) as keyof typeof episodeTitles]}
+        {
+          episodeTitles[
+            (numEpisodesExceptFirstAndLast + 1) as keyof typeof episodeTitles
+          ]
+        }
       </InternalLink>
     </li>
   </ul>

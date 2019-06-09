@@ -2,53 +2,51 @@
 import { css, jsx } from '@emotion/core'
 import { ExternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import { spaces, colors } from 'src/lib/theme'
-import EpisodePageNavbar, {
-  navigationLinkClasses
-} from 'src/components/EpisodePageNavbar'
+import { spaces, colors, fontSizes } from 'src/lib/theme'
 import locale from 'src/lib/locale'
 import { githubRepo } from 'src/lib/meta'
 
-const linkClasses = [
-  navigationLinkClasses,
-  css`
-    font-weight: normal;
-    color: ${colors('grey400')};
+const linkClasses = css`
+  text-decoration: none;
+  font-size: ${fontSizes(0.75)};
+  color: ${colors('grey500')};
 
-    &:hover,
-    &:active {
-      color: ${colors('grey600')};
-    }
-  `
-]
+  &:hover,
+  &:active {
+    background: none;
+    color: ${colors('grey600')};
+  }
+`
 
 const EpisodePageFooter = () => {
   return (
-    <EpisodePageNavbar
-      cssOverrides={css`
-        margin: ${spaces(4)} 0 ${spaces(1)};
+    <div
+      css={css`
+        margin: ${spaces(2)} 0 0;
+        background: ${colors('grey150')};
+        text-align: center;
+        padding: ${spaces(1)} 0;
+        color: ${colors('grey500')};
       `}
-      leftContent={
-        <ExternalLink
-          href={`${githubRepo}/tree/master/docs/privacy-policy${
-            locale === 'jp' ? '-jp' : ''
-          }.md`}
-          css={linkClasses}
-        >
-          <H args={{ name: 'privacyPolicy' }} />
-        </ExternalLink>
-      }
-      rightContent={
-        <ExternalLink
-          href={`${githubRepo}/tree/master/README${
-            locale === 'jp' ? '-jp' : ''
-          }.md`}
-          css={linkClasses}
-        >
-          <H args={{ name: 'aboutThisSite' }} />
-        </ExternalLink>
-      }
-    />
+    >
+      <ExternalLink
+        href={`${githubRepo}/tree/master/docs/privacy-policy${
+          locale === 'jp' ? '-jp' : ''
+        }.md`}
+        css={linkClasses}
+      >
+        <H args={{ name: 'privacyPolicy' }} />
+      </ExternalLink>{' '}
+      &middot;{' '}
+      <ExternalLink
+        href={`${githubRepo}/tree/master/README${
+          locale === 'jp' ? '-jp' : ''
+        }.md`}
+        css={linkClasses}
+      >
+        <H args={{ name: 'aboutThisSite' }} />
+      </ExternalLink>
+    </div>
   )
 }
 

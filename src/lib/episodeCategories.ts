@@ -3,7 +3,7 @@ import locale from 'src/lib/locale'
 export const numBeginnerEpisodes = 5
 export const numIntermediateEpisodes = 5
 export const numAdvancedEpisodes = 5
-export const numEpisodes =
+export const numEpisodesExceptFirstAndLast =
   numBeginnerEpisodes + numIntermediateEpisodes + numAdvancedEpisodes
 
 export const episodeCategory = (episodeNumber: number) => {

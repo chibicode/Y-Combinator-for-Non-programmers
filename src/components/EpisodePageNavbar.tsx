@@ -1,19 +1,18 @@
 /** @jsx jsx */
-import { css, jsx, SerializedStyles } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import { colors, fontSizes, spaces, radii } from 'src/lib/theme'
 
 export interface EpisodePageNavbarProps {
-  cssOverrides?: SerializedStyles
   leftContent: React.ReactNode
   centerContent?: React.ReactNode
   rightContent: React.ReactNode
 }
 
-export const navigationLinkClasses = css`
+export const navigationLinkClasses = (isBottom?: boolean) => css`
   text-decoration: none;
-  color: ${colors('grey600')};
+  color: ${colors('grey700')};
   font-weight: bold;
-  font-size: ${fontSizes(0.75)};
+  font-size: ${fontSizes(0.85)};
   background: none;
   border: none;
   border-radius: ${radii(0.5)};
@@ -24,27 +23,23 @@ export const navigationLinkClasses = css`
 
   &:hover,
   &:active {
-    background-color: ${colors('indigo50')};
+    background-color: ${isBottom ? colors('indigo50') : colors('white')};
   }
 `
 
 const EpisodePageNavbar = ({
-  cssOverrides,
   leftContent,
   centerContent,
   rightContent
 }: EpisodePageNavbarProps) => {
   return (
     <div
-      css={[
-        css`
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: ${spaces(0.5)} 0;
-        `,
-        cssOverrides
-      ]}
+      css={css`
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: ${spaces(0.5)} 0;
+      `}
     >
       <div
         css={css`

@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core'
 import Modal from 'src/components/Modal'
 import Card from 'src/components/Card'
 import H from 'src/components/H'
-import { numEpisodes } from 'src/lib/episodeCategories'
+import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import { lessonTitle, episodeTitles } from 'src/lib/titles'
 import {
   fontWeights,
@@ -116,7 +116,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
             alignCenter={false}
           />
         </InternalLink>
-        {[...Array(numEpisodes).keys()].map(i => {
+        {[...Array(numEpisodesExceptFirstAndLast).keys()].map(i => {
           const episodeNumber = i + 1
           return (
             <InternalLink
@@ -156,7 +156,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           )
         })}
         <InternalLink
-          href={`/${numEpisodes + 1}`}
+          href={`/${numEpisodesExceptFirstAndLast + 1}`}
           css={linkCss}
           onClick={hideModal}
         >
@@ -170,15 +170,23 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           >
             <H
               args={{ name: 'titlePrefixColored' }}
-              episodeNumberOverrides={numEpisodes + 1}
+              episodeNumberOverrides={numEpisodesExceptFirstAndLast + 1}
             />
           </span>
           <span css={titleCss}>
-            {episodeTitles[(numEpisodes + 1) as keyof typeof episodeTitles]}
+            {
+              episodeTitles[
+                (numEpisodesExceptFirstAndLast +
+                  1) as keyof typeof episodeTitles
+              ]
+            }
           </span>
           <EmojiSeparator
             emojis={
-              episodeEmojis[(numEpisodes + 1) as keyof typeof episodeEmojis]
+              episodeEmojis[
+                (numEpisodesExceptFirstAndLast +
+                  1) as keyof typeof episodeEmojis
+              ]
             }
             size="sm"
             cssOverrides={css`

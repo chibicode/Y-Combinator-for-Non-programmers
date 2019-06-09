@@ -47,19 +47,19 @@ const EpisodePage = ({
         <meta property="og:title" content={title} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
+      {!notFound ? (
+        <EpisodePageHeader
+          showModal={showModal}
+          episodeNumber={episodeNumber}
+        />
+      ) : (
+        <div
+          css={css`
+            padding-top: ${spaces(1)};
+          `}
+        />
+      )}
       <Container size="sm">
-        {!notFound ? (
-          <EpisodePageHeader
-            showModal={showModal}
-            episodeNumber={episodeNumber}
-          />
-        ) : (
-          <div
-            css={css`
-              padding-top: ${spaces(1)};
-            `}
-          />
-        )}
         <EpisodeContext.Provider
           value={{
             lessonTitle,
@@ -69,8 +69,15 @@ const EpisodePage = ({
         >
           {notFound ? <NotFoundCardList /> : <Content name={contentName} />}
         </EpisodeContext.Provider>
-        <EpisodePageFooter />
       </Container>
+      {!notFound && (
+        <EpisodePageHeader
+          showModal={showModal}
+          episodeNumber={episodeNumber}
+          isBottom
+        />
+      )}
+      <EpisodePageFooter />
     </Page>
   )
 }

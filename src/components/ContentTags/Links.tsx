@@ -19,7 +19,7 @@ export const LinkContext = React.createContext<LinkContextProps>(
 export const commonLinkClass = css`
   &:hover,
   &:active {
-    background-color: ${colors('indigo100')};
+    background-color: ${colors('indigo50')};
   }
 `
 
