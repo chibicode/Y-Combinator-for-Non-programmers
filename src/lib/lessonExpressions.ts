@@ -669,14 +669,27 @@ export const ycTest = initializeExpressionContainer([
       arg: 'd',
       body: {
         checkType: 'isZero',
-        condition: 'd',
-        trueCase: 'd',
+        condition: {
+          name: 'd',
+          shorthandUnary: 'pred'
+        },
+        trueCase: {
+          shorthandNumber: 1
+        },
         falseCase: [
-          'c',
-          {
-            name: 'd',
-            shorthandUnary: 'pred'
-          }
+          'd',
+          [
+            {
+              shorthandBinary: 'mult'
+            },
+            [
+              'c',
+              {
+                name: 'd',
+                shorthandUnary: 'pred'
+              }
+            ]
+          ]
         ]
       }
     }
