@@ -71,6 +71,59 @@ export default () => (
         )
       },
       {
+        type: 'meta',
+        title: <>目次</>,
+        content: (
+          <>
+            <P>
+              当記事は、
+              <InlineHeader>
+                <H
+                  args={{ name: 'categoryNameColored', category: 'beginner' }}
+                />
+                ・
+                <H
+                  args={{
+                    name: 'categoryNameColored',
+                    category: 'intermediate'
+                  }}
+                />
+                ・
+                <H
+                  args={{
+                    name: 'categoryNameColored',
+                    category: 'advanced'
+                  }}
+                />
+              </InlineHeader>
+              それぞれ<Strong>5ページずつ、</Strong>
+              それに「
+              <InlineHeader>
+                <H
+                  args={{ name: 'titlePrefixColored' }}
+                  episodeNumberOverrides={0}
+                />
+              </InlineHeader>
+              」と「
+              <InlineHeader>
+                <H
+                  args={{ name: 'titlePrefixColored' }}
+                  episodeNumberOverrides={numEpisodes + 1}
+                />
+              </InlineHeader>
+              」を加えた
+              <Strong>全17ページ</Strong>
+              で構成されています。非常に長いですが、
+              <Em>記事というより電子書籍</Em>
+              だと思って、少しずつ読み進めてくだされば幸いです。
+            </P>
+            <EmojiSeparator emojis={['📗', '📘', '📕']} />
+            <Toc />
+            <NextLessonButton />
+          </>
+        )
+      },
+      {
         type: 'yesNoQuiz',
         title: (
           <>
@@ -321,65 +374,12 @@ export default () => (
         footer: {
           content: (
             <P>
-              「目次を先に読みたい」という方は、そのまま下にスクロールしてください。また、プログラミングができる方や、別の意味で「
+              プログラミングができる方や、別の意味で「
               <H args={{ name: 'yCombinator' }} />
               」という言葉をご存知の方は、さらに下にある余談も読んでみてください。
             </P>
           )
         }
-      },
-      {
-        type: 'meta',
-        title: <>目次</>,
-        content: (
-          <>
-            <P>
-              当記事は、
-              <InlineHeader>
-                <H
-                  args={{ name: 'categoryNameColored', category: 'beginner' }}
-                />
-                ・
-                <H
-                  args={{
-                    name: 'categoryNameColored',
-                    category: 'intermediate'
-                  }}
-                />
-                ・
-                <H
-                  args={{
-                    name: 'categoryNameColored',
-                    category: 'advanced'
-                  }}
-                />
-              </InlineHeader>
-              それぞれ<Strong>5ページずつ、</Strong>
-              それに「
-              <InlineHeader>
-                <H
-                  args={{ name: 'titlePrefixColored' }}
-                  episodeNumberOverrides={0}
-                />
-              </InlineHeader>
-              」と「
-              <InlineHeader>
-                <H
-                  args={{ name: 'titlePrefixColored' }}
-                  episodeNumberOverrides={numEpisodes + 1}
-                />
-              </InlineHeader>
-              」を加えた
-              <Strong>全17ページ</Strong>
-              で構成されています。非常に長いですが、
-              <Em>記事というより電子書籍</Em>
-              だと思って、少しずつ読み進めてくだされば幸いです。
-            </P>
-            <EmojiSeparator emojis={['📗', '📘', '📕']} />
-            <Toc />
-            <NextLessonButton />
-          </>
-        )
       },
       {
         title: (
