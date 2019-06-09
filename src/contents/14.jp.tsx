@@ -624,6 +624,19 @@ export default () => (
             {AER.fapu}
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'witch' }} />
+            を使わずにできるか？
+          </>
+        ),
+        content: <></>
+      },
+      {
+        title: <>次が上級最後！</>,
+        content: <></>
       }
     ]}
   />

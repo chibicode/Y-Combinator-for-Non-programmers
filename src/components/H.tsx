@@ -1335,12 +1335,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Strong>下のツイートをリツイート</Strong>
                 してくださると、宣伝になるので非常に助かります。
               </Em>
-              もしくは、「
-              <Strong>
-                <H args={{ name: 'titlePrefixColored' }} />
-                までは読み終えた
-              </Strong>
-              」と引用リツイートしてくださると、さらに嬉しいです。
+              {episodeNumber > 0 && (
+                <>
+                  もしくは、「
+                  <Strong>
+                    <H args={{ name: 'titlePrefixColored' }} />
+                    までは読み終えた
+                  </Strong>
+                  」と引用リツイートしてくださると、さらに嬉しいです。
+                </>
+              )}
             </P>
             <TwitterEmbed id={shareId} />
             <P>
