@@ -473,6 +473,7 @@ export const ExpressionRunnerSingleStep = ({
     explanationsVisibility={explanationsVisibility}
     resetIndex
     lastAllowedExpressionState={finalState}
+    lastAllowedExpressionStateAfterIterations={nextIterations}
     showAllShowSteps={showAllShowSteps}
     initializeInstructions={initializeInstructions({
       nextIteration,

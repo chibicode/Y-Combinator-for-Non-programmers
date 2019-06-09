@@ -1892,12 +1892,23 @@ export default {
       finalFuncPriorityAggHighlights={[1, 2]}
     />
   ),
+  vkpm: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={4}
+      variableSize="sm"
+      initialState="active"
+      finalState="magicalExpanded"
+    />
+  ),
   mihy: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
       nextIterations={4}
       skipToTheEnd={false}
+      initialState="magicalExpanded"
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={7}
       speed={1.5}
@@ -1921,6 +1932,16 @@ export default {
       finalFuncPriorityAggHighlights={[3, 4]}
     />
   ),
+  qltx: (
+    <ExpressionRunnerSingleStep
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={8}
+      initialState="active"
+      finalState="magicalExpanded"
+      variableSize="sm"
+    />
+  ),
   zvet: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e14E1}
@@ -1929,6 +1950,7 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="conditionActive"
       lastAllowedExpressionStateAfterIterations={8}
+      initialState="magicalExpanded"
       speed={1.5}
       variableSize="sm"
     />

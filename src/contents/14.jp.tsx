@@ -349,7 +349,20 @@ export default () => (
           <>
             <P>
               さらに続きを見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.vkpm}
+            <P>
+              またしても、
+              <Em>
+                <H args={{ name: 'witch' }} />
+                の部分が前回と同じように変化しました。
+              </Em>
+              その後どうなるのか、
+              <Em>
+                <H args={{ name: 'fastForward' }} />
+                して見てみましょう！
+              </Em>
             </P>
             {AER.mihy}
             <P>
@@ -382,6 +395,13 @@ export default () => (
           <>
             <P>
               さらに続きを見てみましょう。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            {AER.qltx}
+            <P>
+              以前と同じく、
+              <H args={{ name: 'witch' }} />
+              が変化しました。続いて、
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.zvet}
