@@ -32,8 +32,7 @@ export type VariableNames =
   | 'shorthandBinary'
   | 'magical'
   | 'someNumber'
-  | 'questionTimesSomeNumberMinusOne'
-  | 'magicalHighlightWorkaround'
+  | 'abbreviated'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

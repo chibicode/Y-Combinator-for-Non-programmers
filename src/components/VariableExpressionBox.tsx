@@ -48,30 +48,25 @@ export const variableExpressionBoxFontSize = (
     sm: fontSizes(1.4)
   }[size])
 
-const SecretCodeLabel = ({ minusOne }: { minusOne?: boolean }) => (
+const SecretCodeLabel = ({ number }: { number?: number }) => (
   <span
-    css={[
-      css`
-        font-size: 0.6em;
-        background: ${colors('secretCode')};
-        color: #fff;
-        padding: 0.25em 0.75em;
-        border-radius: ${radii(0.25)};
-        font-weight: bold;
-        display: inline-block;
-      `,
-      !minusOne &&
-        css`
-          transform: translateY(-0.1em);
-        `
-    ]}
+    css={css`
+      font-size: 0.6em;
+      background: ${colors('secretCode')};
+      color: #fff;
+      padding: 0.25em 0.75em;
+      border-radius: ${radii(0.25)};
+      font-weight: bold;
+      display: inline-block;
+      transform: translateY(-0.1em);
+    `}
   >
     <H
       args={{
-        name: 'secretCodeLabel',
-        minusOne: minusOne
+        name: 'secretCode'
       }}
     />
+    {number && <> – {number}</>}
   </span>
 )
 
@@ -83,43 +78,24 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   if (expression.name === 'someNumber') {
     return (
       <div>
-        <SecretCodeLabel />
+        <SecretCodeLabel number={expression.shorthandNumber} />
       </div>
     )
-  } else if (expression.name === 'questionTimesSomeNumberMinusOne') {
+  } else if (expression.name === 'abbreviated') {
     return (
-      <div
-        css={css`
-          text-align: center;
-          width: 100%;
-        `}
-      >
-        <div
-          css={css`
-            border: 2px solid ${colors('indigo300')};
-            margin: ${spaces(0.25)} ${spaces(0.75)};
-            padding: ${spaces(0.25)};
-            background: ${colors('indigo400')};
-          `}
-        >
-          <Emoji>❔</Emoji>
-        </div>
-        <div
+      <div>
+        <span
           css={css`
             font-size: 0.6em;
-            opacity: 0.5;
-            margin-top: 0.5em;
+            font-weight: bold;
+            color: ${colors('grey600')};
+            padding: 0.25em 0.75em;
+            transform: translateY(-0.1em);
+            display: inline-block;
           `}
         >
-          <Emoji>✖️</Emoji>
-        </div>
-        <div
-          css={css`
-            margin-bottom: 0.25em;
-          `}
-        >
-          <SecretCodeLabel minusOne />
-        </div>
+          (<H args={{ name: 'abbreviated' }} />)
+        </span>
       </div>
     )
   } else {

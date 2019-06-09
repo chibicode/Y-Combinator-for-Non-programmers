@@ -93,7 +93,7 @@ export interface HProps {
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'mustChangeBothFuncUnboundAndBound' }
-    | { name: 'secretCodeLabel'; minusOne?: boolean }
+    | { name: 'secretCode' }
     | { name: 'secretCodeCaptionSimple'; number: number }
     | { name: 'isCallArgAndFuncUnboundTheSameCaption'; same: boolean }
     | { name: 'secretCodeAddOneCaption' }
@@ -127,6 +127,7 @@ export interface HProps {
     | { name: 'magicalChangedCaption'; fromNumber: number }
     | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
+    | { name: 'abbreviated' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1276,11 +1277,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'secretCodeLabel') {
+  if (args.name === 'secretCode') {
     if (locale === 'en') {
       return <>Number</>
     } else {
-      return <>暗号{args.minusOne ? ' – 1' : ''}</>
+      return <>暗号</>
     }
   }
   if (args.name === 'whatCanComputeFactorial') {
@@ -1406,6 +1407,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </Em>
         </>
       )
+    }
+  }
+  if (args.name === 'abbreviated') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>省略</>
     }
   }
   throw new Error()

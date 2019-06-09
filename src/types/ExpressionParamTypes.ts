@@ -21,6 +21,7 @@ export interface VariableShorthandNumberParams {
   readonly shorthandNumber: VariableShorthandNumber['shorthandNumber']
   readonly initialHighlight?: boolean
   readonly shorthandUnary?: VariableShorthandUnary['shorthandUnary']
+  readonly someNumber?: boolean
 }
 
 export interface VariableShorthandUnaryParams {

@@ -2035,11 +2035,35 @@ export default {
       intermediateNextIterations={20}
     />
   ),
+  vrwt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      variableSize="md"
+    />
+  ),
+  lodr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E2}
+      variableSize="md"
+    />
+  ),
+  fjyk: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E3}
+      variableSize="md"
+    />
+  ),
   miez: (
-    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e14E4} />
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E4}
+      variableSize="md"
+    />
   ),
   fapu: (
-    <ExpressionRunnerSimple expressionContainer={lessonExpressions.e15E5} />
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E5}
+      variableSize="md"
+    />
   ),
   hknv: (
     <ExpressionRunnerPairSimple
@@ -2083,9 +2107,6 @@ export default {
       finalState="default"
       finalNextIteration
       highlightOverrideActiveAfterStart
-      highlightOverrides={{
-        magicalHighlightWorkaround: 'highlighted'
-      }}
     />
   ),
   sydo: (

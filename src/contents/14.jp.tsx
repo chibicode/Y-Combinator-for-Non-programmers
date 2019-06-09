@@ -6,7 +6,6 @@ import {
   UlLi,
   P,
   Strong,
-  InlineHeader,
   Ol,
   OlLi,
   Em,
@@ -29,6 +28,7 @@ import {
   cakeVariableName
 } from 'src/lib/specialVariableNames'
 import YesNoButtons from 'src/components/YesNoButtons'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -562,6 +562,7 @@ export default () => (
               </Strong>
               になります。
             </P>
+            <P>それでは、まとめに入りましょう！</P>
           </>
         )
       },
@@ -570,24 +571,67 @@ export default () => (
         title: (
           <>
             <H args={{ name: 'witch' }} />
-            のパターン
+            のまとめ
           </>
         ),
         content: (
           <>
             <P>
-              <InlineHeader>パターン:</InlineHeader>{' '}
-              次のような弁当箱を実行した場合、
+              「
+              <Strong>
+                弁当箱の
+                <H args={{ name: 'witch' }} />
+              </Strong>
+              」を使うと、「
+              <Strong>
+                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
+              </Strong>
+              」という計算を行うことができます。
             </P>
+            {AER.vrwt}
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="sm"
+              emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>6</Strong>」になります
+                </>
+              }
+            />
+            {AER.lodr}
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="sm"
+              emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>24</Strong>」になります
+                </>
+              }
+            />
+            {AER.fjyk}
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="sm"
+              emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>120</Strong>」になります
+                </>
+              }
+            />
+            <P>上側にどんな暗号を入れても、</P>
             {AER.miez}
-            <P>
-              最終的に
-              <EmojiNumber number={1} />
-              と、その下に
-              <InlineEmojiBoxesForQuestion />
-              が「<Strong>暗号から1を引いた数</Strong>」ぶん縦に並びます。
-            </P>
+            <P>途中で以下のような形になるので、</P>
             {AER.fapu}
+            <P>
+              「
+              <Strong>
+                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
+              </Strong>
+              」という計算を行うことができます。
+            </P>
           </>
         )
       },

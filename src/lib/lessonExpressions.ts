@@ -612,8 +612,28 @@ export const e14E4 = initializeExpressionContainer([
   'someNumber'
 ])
 
-export const e15E5 = initializeExpressionContainer([
-  'questionTimesSomeNumberMinusOne',
+export const e14E5 = initializeExpressionContainer([
+  'someNumber',
+  {
+    shorthandBinary: 'mult'
+  },
+  {
+    someNumber: true,
+    shorthandNumber: 1
+  },
+  {
+    shorthandBinary: 'mult'
+  },
+  'abbreviated',
+  {
+    shorthandBinary: 'mult'
+  },
+  {
+    shorthandNumber: 2
+  },
+  {
+    shorthandBinary: 'mult'
+  },
   {
     shorthandNumber: 1
   }

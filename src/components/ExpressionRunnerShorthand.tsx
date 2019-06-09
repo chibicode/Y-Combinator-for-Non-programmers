@@ -12,6 +12,7 @@ import { P } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import { spaces } from 'src/lib/theme'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 const initializeInstructions = ({
   nextIteration,
@@ -204,17 +205,6 @@ ExpressionRunnerPlayButtonOnly.defaultProps = {
   explanationsVisibility: 'hiddenInitialPausedOnly'
 }
 
-const Separator = ({ fastForward }: { fastForward?: boolean }) => (
-  <P
-    css={css`
-      text-align: center;
-      margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
-    `}
-  >
-    <Emoji size="mdlg">{fastForward ? '⏬' : '⬇️'}</Emoji>
-  </P>
-)
-
 export const ExpressionRunnerPairSimple = ({
   expressionContainer,
   initialState,
@@ -244,7 +234,6 @@ export const ExpressionRunnerPairSimple = ({
   intermediateCaption,
   intermediateNextIteration,
   intermediateNextIterations,
-  intermediateFastForward,
   intermediateArgPriorityAggHighlights,
   intermediateFuncPriorityAggHighlights
 }: ExpressionRunnerSimpleProps & {
@@ -259,7 +248,6 @@ export const ExpressionRunnerPairSimple = ({
   intermediateCaption?: ExpressionRunnerSimpleProps['caption']
   intermediateNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
   intermediateNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
-  intermediateFastForward?: boolean
   intermediateArgPriorityAggHighlights?: ExpressionRunnerSimpleProps['argPriorityAggHighlights']
   intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleProps['funcPriorityAggHighlights']
 }) => (
@@ -286,7 +274,7 @@ export const ExpressionRunnerPairSimple = ({
     />
     {intermediateState && (
       <>
-        <Separator fastForward={intermediateFastForward} />
+        <ExpressionRunnerSeparator fastForward />
         <ExpressionRunnerSimple
           {...{
             expressionContainer,
@@ -311,7 +299,9 @@ export const ExpressionRunnerPairSimple = ({
         />
       </>
     )}
-    <Separator fastForward={finalFastForward} />
+    <ExpressionRunnerSeparator
+      fastForward={!!(finalFastForward || intermediateState)}
+    />
     <ExpressionRunnerSimple
       {...{
         expressionContainer,
