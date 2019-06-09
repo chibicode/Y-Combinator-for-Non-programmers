@@ -311,7 +311,7 @@ export const ExpressionRunnerPairSimple = ({
         />
       </>
     )}
-    <Separator />
+    <Separator fastForward={finalFastForward} />
     <ExpressionRunnerSimple
       {...{
         expressionContainer,
