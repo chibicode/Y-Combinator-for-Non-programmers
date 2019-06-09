@@ -639,6 +639,14 @@ export const e14E5 = initializeExpressionContainer([
   }
 ])
 
+export const e14E6 = initializeExpressionContainer([
+  {
+    magical: true,
+    name: magicalVariableName
+  },
+  'question'
+])
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

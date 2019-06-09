@@ -26,6 +26,7 @@ import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLette
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -632,11 +633,87 @@ export default () => (
             を使わずにできるか？
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <P>
+              復習になりますが、「
+              <Strong>
+                弁当箱の
+                <H args={{ name: 'witch' }} />
+              </Strong>
+              」は次のように変化します。
+            </P>
+            {AER.xsve}
+            <P>
+              しかし、冒頭でも書いた通り、「
+              <Strong>
+                弁当箱の
+                <H args={{ name: 'witch' }} />
+              </Strong>
+              」は<Strong>架空の機能</Strong>
+              で、実際には弁当箱に備わっていない機能です。
+            </P>
+            <EmojiSeparator emojis={['❌', '🧙‍♀️', '❌']} />
+            <P>
+              繰り返しますが、「
+              <Em>
+                もし仮に
+                <H args={{ name: 'witch' }} />
+                の機能を使うことができたら、
+                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={1} />{' '}
+                といった計算をカンタンに行うことができる
+              </Em>
+              」から、この
+              <H args={{ name: 'witch' }} />
+              の機能を紹介したまでなのです。
+            </P>
+            <P>
+              <Em>
+                <H args={{ name: 'witch' }} />
+                を使うのは、いわばズルをするようなもの。
+              </Em>
+              従来の弁当箱の機能だけで、正々堂々とやるのが理想です。
+            </P>
+            <P>
+              <Strong>
+                では、
+                <H args={{ name: 'witch' }} />
+                を使わずに、従来の弁当箱の機能だけを使って
+                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={1} />{' '}
+                といった計算を行うには、どうすればいいのでしょうか？
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+          </>
+        )
       },
       {
-        title: <>次が上級最後！</>,
-        content: <></>
+        title: <>答えは上級最後のページで！</>,
+        content: (
+          <>
+            <P>
+              答えは、次の上級最後のページで紹介します。ここでついに、記事のタイトルにもある「
+              <Strong>
+                魔法の
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              」が登場します。
+            </P>
+            <EmojiSeparator emojis={['✨', '🤗', '✨']} />
+            <P>
+              ここまでお付き合いくださり、ありがとうございます。
+              <Em>
+                次の上級最後のページの後は、もうエピローグしか残っていません。
+              </Em>
+              あと少しでゴールです！
+            </P>
+            <NextLessonButton />
+          </>
+        )
       }
     ]}
   />

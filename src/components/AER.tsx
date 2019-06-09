@@ -2064,6 +2064,16 @@ export default {
       variableSize="md"
     />
   ),
+  xsve: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e14E6}
+      variableSize="md"
+      explanationsVisibility="visible"
+      hideFirstExplanations
+      finalState="magicalExpanded"
+      finalFastForward
+    />
+  ),
   hzlj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.ycTest}

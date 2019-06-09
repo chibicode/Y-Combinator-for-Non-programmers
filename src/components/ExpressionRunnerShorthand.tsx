@@ -210,6 +210,7 @@ export const ExpressionRunnerPairSimple = ({
   initialState,
   isDone,
   explanationsVisibility,
+  hideFirstExplanations,
   showPriorities,
   showAllShowSteps,
   caption,
@@ -237,6 +238,7 @@ export const ExpressionRunnerPairSimple = ({
   intermediateArgPriorityAggHighlights,
   intermediateFuncPriorityAggHighlights
 }: ExpressionRunnerSimpleProps & {
+  hideFirstExplanations?: boolean
   finalState?: ExpressionRunnerSimpleProps['initialState']
   finalCaption?: ExpressionRunnerSimpleProps['caption']
   finalNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
@@ -256,7 +258,6 @@ export const ExpressionRunnerPairSimple = ({
       {...{
         expressionContainer,
         initialState,
-        explanationsVisibility,
         showPriorities,
         showAllShowSteps,
         caption,
@@ -271,6 +272,9 @@ export const ExpressionRunnerPairSimple = ({
         showOnlyFocused,
         highlightOverridesCallArgAndFuncUnboundOnly
       }}
+      explanationsVisibility={
+        hideFirstExplanations ? undefined : explanationsVisibility
+      }
     />
     {intermediateState && (
       <>
