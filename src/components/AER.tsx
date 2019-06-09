@@ -2026,20 +2026,13 @@ export default {
     />
   ),
   osqg: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e14E3}
-      skipToTheEnd={false}
-      showPriorities
-      speed={10}
-      variableSize="md"
-    />
-  ),
-  jcvr: (
     <ExpressionRunnerPairSimple
       expressionContainer={lessonExpressions.e14E3}
       showPriorities
+      variableSize="sm"
       isDone
-      variableSize="md"
+      intermediateState="default"
+      intermediateNextIterations={20}
     />
   ),
   miez: (

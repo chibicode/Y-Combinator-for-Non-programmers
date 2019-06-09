@@ -544,19 +544,24 @@ export default () => (
         content: (
           <>
             <P>
-              上に
+              時間の都合上省略しますが、
               <EmojiNumber number={5} />
-              がある場合はどうでしょう？
-              <H args={{ name: 'pressFastForward' }} />
+              からはじめる場合も、途中で下から
+              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} />
+              という順番になります。
             </P>
             {AER.osqg}
             <P>
-              今回は、下に
-              <InlineEmojiBoxesForQuestion />
-              が4つ残りました！
+              そして、最終的に
+              <Strong>
+                5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
+              </Strong>
+              になります。
             </P>
-            {AER.jcvr}
-            <P>それでは、ここでパターンを解説しましょう！</P>
           </>
         )
       },

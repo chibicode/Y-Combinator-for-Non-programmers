@@ -1,6 +1,6 @@
 // Inspired by https://github.com/ZxMYS/react-twemoji
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, SerializedStyles } from '@emotion/core'
 import twemoji from 'twemoji'
 import emojisBundle from 'src/lib/emojisBundle'
 

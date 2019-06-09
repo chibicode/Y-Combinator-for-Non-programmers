@@ -204,6 +204,17 @@ ExpressionRunnerPlayButtonOnly.defaultProps = {
   explanationsVisibility: 'hiddenInitialPausedOnly'
 }
 
+const Separator = ({ fastForward }: { fastForward?: boolean }) => (
+  <P
+    css={css`
+      text-align: center;
+      margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
+    `}
+  >
+    <Emoji size="mdlg">{fastForward ? '⏬' : '⬇️'}</Emoji>
+  </P>
+)
+
 export const ExpressionRunnerPairSimple = ({
   expressionContainer,
   initialState,
@@ -228,7 +239,14 @@ export const ExpressionRunnerPairSimple = ({
   finalNextIterations,
   finalFastForward,
   finalArgPriorityAggHighlights,
-  finalFuncPriorityAggHighlights
+  finalFuncPriorityAggHighlights,
+  intermediateState,
+  intermediateCaption,
+  intermediateNextIteration,
+  intermediateNextIterations,
+  intermediateFastForward,
+  intermediateArgPriorityAggHighlights,
+  intermediateFuncPriorityAggHighlights
 }: ExpressionRunnerSimpleProps & {
   finalState?: ExpressionRunnerSimpleProps['initialState']
   finalCaption?: ExpressionRunnerSimpleProps['caption']
@@ -237,6 +255,13 @@ export const ExpressionRunnerPairSimple = ({
   finalFastForward?: boolean
   finalArgPriorityAggHighlights?: ExpressionRunnerSimpleProps['argPriorityAggHighlights']
   finalFuncPriorityAggHighlights?: ExpressionRunnerSimpleProps['funcPriorityAggHighlights']
+  intermediateState?: ExpressionRunnerSimpleProps['initialState']
+  intermediateCaption?: ExpressionRunnerSimpleProps['caption']
+  intermediateNextIteration?: ExpressionRunnerSimpleProps['nextIteration']
+  intermediateNextIterations?: ExpressionRunnerSimpleProps['nextIterations']
+  intermediateFastForward?: boolean
+  intermediateArgPriorityAggHighlights?: ExpressionRunnerSimpleProps['argPriorityAggHighlights']
+  intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleProps['funcPriorityAggHighlights']
 }) => (
   <>
     <ExpressionRunnerSimple
@@ -259,14 +284,34 @@ export const ExpressionRunnerPairSimple = ({
         highlightOverridesCallArgAndFuncUnboundOnly
       }}
     />
-    <P
-      css={css`
-        text-align: center;
-        margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
-      `}
-    >
-      <Emoji size="mdlg">{finalFastForward ? '⏬' : '⬇️'}</Emoji>
-    </P>
+    {intermediateState && (
+      <>
+        <Separator fastForward={intermediateFastForward} />
+        <ExpressionRunnerSimple
+          {...{
+            expressionContainer,
+            explanationsVisibility,
+            showPriorities,
+            showAllShowSteps,
+            bottomRightBadgeOverrides,
+            highlightOverrides,
+            highlightOverrideActiveAfterStart,
+            variableSize,
+            containerSize,
+            skipAlphaConvert,
+            showOnlyFocused,
+            highlightOverridesCallArgAndFuncUnboundOnly
+          }}
+          initialState={intermediateState}
+          caption={intermediateCaption}
+          nextIteration={intermediateNextIteration}
+          nextIterations={intermediateNextIterations}
+          argPriorityAggHighlights={intermediateArgPriorityAggHighlights}
+          funcPriorityAggHighlights={intermediateFuncPriorityAggHighlights}
+        />
+      </>
+    )}
+    <Separator />
     <ExpressionRunnerSimple
       {...{
         expressionContainer,
