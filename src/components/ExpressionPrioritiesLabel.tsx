@@ -113,6 +113,7 @@ const ExpressionPrioritiesLabelBox = ({
                 emphasize && activePriority === priority ? 'pink400' : 'white'
               )};
               border: 2px solid ${colors('indigo300')};
+              white-space: nowrap;
               border-radius: ${radii(9999)};
             `
           ]}
