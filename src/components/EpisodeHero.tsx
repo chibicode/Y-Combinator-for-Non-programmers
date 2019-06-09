@@ -106,7 +106,7 @@ const EpisodeHero = () => {
           css={css`
             margin: ${spaces('-1')} 0 ${spaces(1.5)};
             text-align: center;
-            font-size: ${fontSizes(0.85)};
+            font-size: ${fontSizes(0.75)};
             color: ${colors('grey500')};
           `}
         >

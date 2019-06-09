@@ -64,7 +64,8 @@ const EpisodePage = ({
           value={{
             lessonTitle,
             episodeTitle,
-            episodeNumber
+            episodeNumber,
+            showModal
           }}
         >
           {notFound ? <NotFoundCardList /> : <Content name={contentName} />}

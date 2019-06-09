@@ -11,7 +11,8 @@ import {
   UlLi,
   Strong,
   InlineHeader,
-  ExternalLink
+  ExternalLink,
+  LinkButton
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import Emoji from 'src/components/Emoji'
@@ -148,13 +149,13 @@ const prefixColors = {
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
-  const episodeNumberFromContext = useContext(EpisodeContext).episodeNumber
+  const episodeContext = useContext(EpisodeContext)
 
   // episodeNumberOverrides can be zero, so can't use || operator
   const episodeNumber =
     episodeNumberOverrides !== undefined
       ? episodeNumberOverrides
-      : episodeNumberFromContext
+      : episodeContext.episodeNumber
 
   if (args.name === 'titlePrefix') {
     return <>{episodePrefix(episodeNumber)}</>
@@ -1445,10 +1446,24 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          前回:{' '}
+          <LinkButton
+            css={css`
+              text-decoration: none;
+              background: ${colors('yellow100')};
+              &:hover {
+                text-decoration: none;
+              }
+            `}
+            onClick={episodeContext.showModal}
+          >
+            <InlineHeader>目次</InlineHeader>
+          </LinkButton>{' '}
+          / 前へ:{' '}
           <InternalLink
             href={`/${episodeNumber - 1}`}
             css={css`
+              background: ${colors('yellow100')};
+              display: inline-block;
               text-decoration: none;
               &:hover {
                 text-decoration: none;
@@ -1462,11 +1477,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               />
             </InlineHeader>
           </InternalLink>{' '}
-          / 次回:{' '}
+          / 次へ:{' '}
           <InternalLink
             href={`/${episodeNumber + 1}`}
             css={css`
               text-decoration: none;
+              display: inline-block;
+              background: ${colors('yellow100')};
               &:hover {
                 text-decoration: none;
               }
