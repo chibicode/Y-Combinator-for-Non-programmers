@@ -23,10 +23,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
-import {
-  magicalVariableName,
-  cakeVariableName
-} from 'src/lib/specialVariableNames'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
