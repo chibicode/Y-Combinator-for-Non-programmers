@@ -1176,7 +1176,7 @@ export default {
       expressionContainer={lessonExpressions.e10E2}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
       highlightOverrides={{
         c: 'highlighted'
       }}
@@ -1187,7 +1187,7 @@ export default {
       expressionContainer={lessonExpressions.e10E3}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
       highlightOverrides={{
         d: 'highlighted'
       }}
@@ -1198,7 +1198,7 @@ export default {
       expressionContainer={lessonExpressions.e10E4}
       showPriorities
       skipAlphaConvert
-      speed={1.5}
+      speed={1.75}
       skipToTheEnd={false}
     />
   ),
@@ -1233,7 +1233,7 @@ export default {
         b: 'highlighted'
       }}
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
     />
   ),
   kjyi: (
@@ -1244,7 +1244,7 @@ export default {
       nextIteration
       initialState="showFuncBound"
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
     />
   ),
   dpst: (
@@ -1273,7 +1273,7 @@ export default {
       initialState="showFuncUnbound"
       lastAllowedExpressionState="showFuncBound"
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
     />
   ),
   ttvy: (
@@ -1284,7 +1284,7 @@ export default {
       nextIteration
       initialState="showFuncBound"
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
     />
   ),
   lrja: (
@@ -1627,7 +1627,7 @@ export default {
       expressionContainer={lessonExpressions.e12E12}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
     />
   ),
   hvdn: (
@@ -1684,7 +1684,7 @@ export default {
       expressionContainer={lessonExpressions.e13E3}
       skipToTheEnd={false}
       showPriorities
-      speed={1.5}
+      speed={1.75}
     />
   ),
   dwnj: (
@@ -1717,7 +1717,7 @@ export default {
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e13E3}
       showPriorities
-      speed={1.5}
+      speed={1.75}
       skipToTheEnd={false}
       nextIteration
       explanationsVisibility="visible"
@@ -1862,7 +1862,7 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={1}
-      speed={1.5}
+      speed={1.75}
       variableSize="md"
     />
   ),
@@ -1874,7 +1874,7 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={2}
-      speed={1.5}
+      speed={1.75}
       variableSize="md"
     />
   ),
@@ -1886,7 +1886,7 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={3}
-      speed={1.5}
+      speed={1.75}
       variableSize="md"
     />
   ),
@@ -1924,7 +1924,7 @@ export default {
       initialState="magicalExpanded"
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={7}
-      speed={1.5}
+      speed={1.75}
       variableSize="sm"
     />
   ),
@@ -1964,7 +1964,7 @@ export default {
       lastAllowedExpressionState="conditionActive"
       lastAllowedExpressionStateAfterIterations={8}
       initialState="magicalExpanded"
-      speed={1.5}
+      speed={1.75}
       variableSize="sm"
     />
   ),
@@ -1995,7 +1995,7 @@ export default {
       nextIterations={12}
       variableSize="sm"
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
     />
   ),
   wqdb: (
@@ -2054,7 +2054,7 @@ export default {
       expressionContainer={lessonExpressions.e14E2}
       showPriorities
       skipToTheEnd={false}
-      speed={1.5}
+      speed={1.75}
       nextIterations={16}
       variableSize="sm"
     />
