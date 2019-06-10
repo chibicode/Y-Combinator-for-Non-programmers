@@ -1854,17 +1854,6 @@ export default {
       caption={<H args={{ name: 'witchAppearsAgainCaption' }} />}
     />
   ),
-  tdau: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e15E1}
-      showPriorities
-      highlightOverrides={{
-        s: 'highlighted'
-      }}
-      variableSize="md"
-      caption={<H args={{ name: 'witchReplacedCaption' }} />}
-    />
-  ),
   syfp: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e14E1}
@@ -2130,14 +2119,46 @@ export default {
       intermediateNextIterations={12}
     />
   ),
-  hzlj: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.ycTest}
+  tdau: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
       showPriorities
-      containerSize={'xs'}
-      variableSize={'sm'}
-      skipToTheEnd={false}
-      speed={5}
+      highlightOverrides={{
+        s: 'highlighted'
+      }}
+      variableSize="md"
+      caption={<H args={{ name: 'witchReplacedCaption' }} />}
+    />
+  ),
+  lkwr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E2}
+      showPriorities
+      highlightOverrides={{
+        s: 'highlighted'
+      }}
+      variableSize="md"
+      containerSize="xs"
+    />
+  ),
+  osih: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E3}
+      showPriorities
+      highlightOverrides={{
+        a: 'highlighted',
+        b: 'highlighted'
+      }}
+      variableSize="sm"
+      containerSize="xs"
+    />
+  ),
+  hzlj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E4}
+      showPriorities
+      containerSize="xs"
+      variableSize="sm"
     />
   )
 }

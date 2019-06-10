@@ -647,34 +647,44 @@ export const e14E6 = initializeExpressionContainer([
   'question'
 ])
 
-export const e15E1 = initializeExpressionContainer([
-  {
-    arg: magicalVariableName,
-    body: {
-      checkType: 'isZero',
-      condition: {
-        shorthandUnary: 'pred',
-        name: magicalVariableName
-      },
-      trueCase: {
-        shorthandNumber: 1
-      },
-      falseCase: [
-        magicalVariableName,
+const updatedMagicalParams: FunctionExpressionParams = {
+  arg: magicalVariableName,
+  body: {
+    checkType: 'isZero',
+    condition: {
+      shorthandUnary: 'pred',
+      name: magicalVariableName
+    },
+    trueCase: {
+      shorthandNumber: 1
+    },
+    falseCase: [
+      magicalVariableName,
+      [
+        {
+          shorthandBinary: 'mult'
+        },
         [
+          's',
           {
-            shorthandBinary: 'mult'
-          },
-          [
-            's',
-            {
-              shorthandUnary: 'pred',
-              name: magicalVariableName
-            }
-          ]
+            shorthandUnary: 'pred',
+            name: magicalVariableName
+          }
         ]
       ]
-    }
+    ]
+  }
+}
+
+export const e15E1 = initializeExpressionContainer([
+  updatedMagicalParams,
+  'question'
+])
+
+export const e15E2 = initializeExpressionContainer([
+  {
+    arg: 's',
+    body: updatedMagicalParams
   },
   'question'
 ])
@@ -693,42 +703,27 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
-export const ycTest = initializeExpressionContainer([
+export const e15E3 = initializeExpressionContainer([
   [
     yCombinator,
     {
-      arg: 'c',
-      body: {
-        arg: 'd',
-        body: {
-          checkType: 'isZero',
-          condition: {
-            name: 'd',
-            shorthandUnary: 'pred'
-          },
-          trueCase: {
-            shorthandNumber: 1
-          },
-          falseCase: [
-            'd',
-            [
-              {
-                shorthandBinary: 'mult'
-              },
-              [
-                'c',
-                {
-                  name: 'd',
-                  shorthandUnary: 'pred'
-                }
-              ]
-            ]
-          ]
-        }
-      }
+      arg: 's',
+      body: updatedMagicalParams
+    }
+  ],
+  'question'
+])
+
+export const e15E4 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParams
     }
   ],
   {
-    shorthandNumber: 3
+    shorthandNumber: 3,
+    initialHighlight: true
   }
 ])

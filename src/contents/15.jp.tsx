@@ -1,12 +1,15 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -93,6 +96,78 @@ export default () => (
             />
             <P>すると、こうなります。</P>
             {AER.tdau}
+            <P>
+              そして、理由はまだ明かしませんが、左側にも
+              <EmojiWithText letter="s" />
+              を入れます。
+            </P>
+            {AER.lkwr}
+            <P>
+              そして、同じく理由はまだ明かしませんが、下側にも次のように
+              <EmojiWithText letter="a" />と<EmojiWithText letter="b" />
+              が入っている弁当箱を配置します。
+            </P>
+            {AER.osih}
+            <P>
+              では、ここで質問です:{' '}
+              <Strong>
+                上の弁当箱の
+                <InlineEmojiBoxesForQuestion />
+                に暗号の数字を入れてみると、何が起きるでしょう？
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <EmojiNumber number={3} />
+            を入れてみる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'yesNoQuiz' }} />
+              形式で出題してみます。
+              <Strong>
+                先ほどの弁当箱の
+                <InlineEmojiBoxesForQuestion />
+                の部分に
+                <EmojiNumber number={3} />
+                を入れたとします
+              </Strong>
+              (<Em>一番上の黄色の部分</Em>)。
+            </P>
+            {AER.hzlj}
+            <P>
+              <H args={{ name: 'whatHappensInTheMiddleQuestion' }} />
+              すなわち、
+              <Em>
+                <H args={{ name: 'witch' }} />
+                を使った場合と同じになるでしょうか？
+              </Em>
+            </P>
+            {AER.wqdb}
+            <YesNoButtons answer="yes" tooHard />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
+              ゆっくり進めて見てみましょう！
+            </P>
           </>
         )
       }
