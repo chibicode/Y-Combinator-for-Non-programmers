@@ -1084,7 +1084,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <Strong>まだ途中ですが、説明のため一旦ここまで！</Strong>
+      return <Strong>まだ途中ですが、解説のため一時停止します！</Strong>
     }
   }
   if (args.name === 'isCallArgAndFuncUnboundTheSameCaption') {

@@ -2160,5 +2160,16 @@ export default {
       containerSize="xs"
       variableSize="sm"
     />
+  ),
+  plts: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      skipToTheEnd={false}
+      containerSize="xs"
+      variableSize="xs"
+      lastAllowedExpressionState="conditionActive"
+      speed={4}
+    />
   )
 }

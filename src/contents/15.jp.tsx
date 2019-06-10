@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
@@ -8,7 +8,10 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import {
+  InlineEmojiBoxesForCondition,
+  InlineEmojiBoxesForQuestion
+} from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
@@ -166,8 +169,21 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              ゆっくり進めて見てみましょう！
+              途中で何回か止めながら見ていきましょう！
+              <H args={{ name: 'pressFastForward', skipColon: true }} />。
             </P>
+            <Ul>
+              <UlLi>弁当箱が縦長になるので、料理を小さく表示しています。</UlLi>
+              <UlLi>
+                解説のため、
+                <Strong>
+                  一番最初に
+                  <InlineEmojiBoxesForCondition type="condition" />{' '}
+                  の中にある暗号が「0」かどうかチェックするタイミングで一旦止めます。
+                </Strong>
+              </UlLi>
+            </Ul>
+            {AER.plts}
           </>
         )
       }

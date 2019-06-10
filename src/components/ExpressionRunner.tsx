@@ -25,7 +25,7 @@ import { spaces } from 'src/lib/theme'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed
-const FASTFORWARDING_THRESHOLD = 1.5
+const FASTFORWARDING_THRESHOLD = 2
 
 export type InitializeInstruction =
   | {
@@ -126,7 +126,7 @@ const getActions = ({
       }, autoplaySpeed(speed))
       setPlaybackStatus({
         isPlaying: true,
-        isFastForwarding: speed > FASTFORWARDING_THRESHOLD
+        isFastForwarding: speed >= FASTFORWARDING_THRESHOLD
       })
     },
 

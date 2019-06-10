@@ -13,7 +13,7 @@ export interface StepOptions {
   lastAllowedExpressionStateAfterIterations?: number
 }
 
-const DEFAULT_MAX_INDEX = 100
+const DEFAULT_MAX_INDEX = 300
 
 export default class ExpressionContainerManager {
   public get currentState() {
