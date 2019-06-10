@@ -647,7 +647,37 @@ export const e14E6 = initializeExpressionContainer([
   'question'
 ])
 
-export const e15E1 = initializeExpressionContainer('question')
+export const e15E1 = initializeExpressionContainer([
+  {
+    arg: magicalVariableName,
+    body: {
+      checkType: 'isZero',
+      condition: {
+        shorthandUnary: 'pred',
+        name: magicalVariableName
+      },
+      trueCase: {
+        shorthandNumber: 1
+      },
+      falseCase: [
+        magicalVariableName,
+        [
+          {
+            shorthandBinary: 'mult'
+          },
+          [
+            's',
+            {
+              shorthandUnary: 'pred',
+              name: magicalVariableName
+            }
+          ]
+        ]
+      ]
+    }
+  },
+  'question'
+])
 
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
@@ -664,38 +694,40 @@ const yCombinator: FunctionExpressionParams = {
 }
 
 export const ycTest = initializeExpressionContainer([
-  yCombinator,
-  {
-    arg: 'c',
-    body: {
-      arg: 'd',
+  [
+    yCombinator,
+    {
+      arg: 'c',
       body: {
-        checkType: 'isZero',
-        condition: {
-          name: 'd',
-          shorthandUnary: 'pred'
-        },
-        trueCase: {
-          shorthandNumber: 1
-        },
-        falseCase: [
-          'd',
-          [
-            {
-              shorthandBinary: 'mult'
-            },
+        arg: 'd',
+        body: {
+          checkType: 'isZero',
+          condition: {
+            name: 'd',
+            shorthandUnary: 'pred'
+          },
+          trueCase: {
+            shorthandNumber: 1
+          },
+          falseCase: [
+            'd',
             [
-              'c',
               {
-                name: 'd',
-                shorthandUnary: 'pred'
-              }
+                shorthandBinary: 'mult'
+              },
+              [
+                'c',
+                {
+                  name: 'd',
+                  shorthandUnary: 'pred'
+                }
+              ]
             ]
           ]
-        ]
+        }
       }
     }
-  },
+  ],
   {
     shorthandNumber: 3
   }
