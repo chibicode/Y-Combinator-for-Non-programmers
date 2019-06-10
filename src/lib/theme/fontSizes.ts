@@ -6,6 +6,7 @@ export const allFontSizes = {
   0.85: 0.85,
   1: 1,
   1.2: 1.2,
+  1.3: 1.3, // 1.3 is for variable box emoji only
   1.4: 1.4,
   1.6: 1.6,
   2: 2,

@@ -45,7 +45,7 @@ export const variableExpressionBoxFontSize = (
   ({
     lg: fontSizes(2),
     md: fontSizes(1.6),
-    sm: fontSizes(1.4)
+    sm: fontSizes(1.3)
   }[size])
 
 const SecretCodeLabel = ({ number }: { number?: number }) => (
