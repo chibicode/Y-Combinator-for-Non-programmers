@@ -82,9 +82,9 @@ const emojiLabelMapping: {
     en: 'apple',
     jp: 'リンゴ'
   },
-  '🍒': {
-    en: 'cherry',
-    jp: 'さくらんぼ'
+  '🍊': {
+    en: 'orange',
+    jp: 'ミカン'
   },
   '🍿': {
     en: 'popcorn',

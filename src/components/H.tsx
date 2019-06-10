@@ -115,6 +115,7 @@ export interface HProps {
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
     | { name: 'witchAppearsAgainCaption' }
+    | { name: 'witchReplacedCaption' }
     | { name: 'aboutThisSite' }
     | {
         name: 'categoryNameColored'
@@ -1405,6 +1406,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <H args={{ name: 'witch' }} />
           がまた登場します
+        </>
+      )
+    }
+  }
+  if (args.name === 'witchReplacedCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'witch' }} />
+          の代わりに、
+          <EmojiWithText letter="s" />
+          を入れます
         </>
       )
     }

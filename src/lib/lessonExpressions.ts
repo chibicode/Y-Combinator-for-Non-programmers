@@ -647,6 +647,8 @@ export const e14E6 = initializeExpressionContainer([
   'question'
 ])
 
+export const e15E1 = initializeExpressionContainer('question')
+
 const yCombinator: FunctionExpressionParams = {
   arg: 'a',
   body: [

@@ -1841,6 +1841,30 @@ export default {
       caption={<H args={{ name: 'witchAppearsAgainCaption' }} />}
     />
   ),
+  cfms: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E6}
+      showPriorities
+      nextIteration
+      highlightOverrideActiveAfterStart
+      highlightOverrides={{
+        magical: 'highlighted'
+      }}
+      variableSize="md"
+      caption={<H args={{ name: 'witchAppearsAgainCaption' }} />}
+    />
+  ),
+  tdau: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E1}
+      showPriorities
+      highlightOverrides={{
+        s: 'highlighted'
+      }}
+      variableSize="md"
+      caption={<H args={{ name: 'witchReplacedCaption' }} />}
+    />
+  ),
   syfp: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e14E1}
@@ -2094,6 +2118,16 @@ export default {
       hideFirstExplanations
       finalState="magicalExpanded"
       finalFastForward
+    />
+  ),
+  urhc: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      variableSize="sm"
+      isDone
+      intermediateState="default"
+      intermediateNextIterations={12}
     />
   ),
   hzlj: (
