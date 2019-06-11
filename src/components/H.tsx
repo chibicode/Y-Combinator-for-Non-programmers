@@ -131,8 +131,10 @@ export interface HProps {
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
     | { name: 'magicalChangedCaption'; fromNumber: number }
+    | { name: 'ycChangedCaption'; fromNumber: number }
     | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
+    | { name: 'abbreviated' }
     | { name: 'abbreviated' }
 }
 
@@ -1441,6 +1443,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em highlightType="blue">
             <H args={{ name: 'witch' }} />
             の下に<Emoji>✖️</Emoji>
+            <EmojiNumber number={args.fromNumber} />
+            が追加されました。
+          </Em>
+        </>
+      )
+    }
+  }
+  if (args.name === 'ycChangedCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Em>
+            一番上の数字が
+            <EmojiNumber number={args.fromNumber} />
+            から
+            <EmojiNumber number={args.fromNumber - 1} />
+            になり、
+          </Em>
+          <br />
+          その下に同じ弁当箱がふたつ(省略)、
+          <br />
+          <Em highlightType="blue">
+            その下に<Emoji>✖️</Emoji>
             <EmojiNumber number={args.fromNumber} />
             が追加されました。
           </Em>

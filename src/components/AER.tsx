@@ -2171,5 +2171,50 @@ export default {
       lastAllowedExpressionState="conditionActive"
       speed={4}
     />
+  ),
+  olri: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      skipToTheEnd={false}
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={5}
+      initialState="conditionActive"
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={5}
+      speed={1.75}
+    />
+  ),
+  pnux: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={6}
+    />
+  ),
+  xcnu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E6}
+      showPriorities
+      variableSize="md"
+      caption={<H args={{ name: 'ycChangedCaption', fromNumber: 3 }} />}
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[1, 2]}
+    />
+  ),
+  iisx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={4}
+      initialState="default"
+      variableSize="md"
+      caption={<H args={{ name: 'magicalChangedCaption', fromNumber: 3 }} />}
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[1, 2]}
+    />
   )
 }

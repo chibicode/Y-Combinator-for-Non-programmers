@@ -70,11 +70,6 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
     highlightType = 'blue'
   }
 
-  if (isVariable(expression) && expression.name === 'abbreviated') {
-    highlightOverridden = true
-    highlightType = 'grey'
-  }
-
   return (
     <Flex
       css={css`

@@ -740,3 +740,20 @@ export const e15E5 = initializeExpressionContainer([
     shorthandNumber: 3
   }
 ])
+
+export const e15E6 = initializeExpressionContainer([
+  {
+    shorthandNumber: 3
+  },
+  [
+    {
+      shorthandBinary: 'mult'
+    },
+    [
+      ['abbreviated', 'abbreviated'],
+      {
+        shorthandNumber: 2
+      }
+    ]
+  ]
+])

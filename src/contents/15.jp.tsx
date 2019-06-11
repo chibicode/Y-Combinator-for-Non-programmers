@@ -184,6 +184,24 @@ export default () => (
               </UlLi>
             </Ul>
             {AER.plts}
+            <P>
+              <InlineEmojiBoxesForCondition type="condition" /> が
+              <EmojiNumber number={2} />
+              なので、上側の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+              が残ります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.olri}
+            <P>かなり複雑な弁当箱になりました。</P>
+            {AER.pnux}
+            <P>よく見ると、下のような構造になっています。</P>
+            {AER.xcnu}
+            <P>
+              前回、
+              <H args={{ name: 'witch' }} />
+              を使ったときも、途中で似たような形になったのを覚えていますか？
+            </P>
+            {AER.iisx}
           </>
         )
       }

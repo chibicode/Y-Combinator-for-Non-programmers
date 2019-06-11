@@ -97,7 +97,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             display: inline-block;
           `}
         >
-          (<H args={{ name: 'abbreviated' }} />)
+          (<H args={{ name: expression.name }} />)
         </span>
       </div>
     )
