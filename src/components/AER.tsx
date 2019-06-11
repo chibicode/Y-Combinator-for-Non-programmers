@@ -2149,7 +2149,7 @@ export default {
         a: 'highlighted',
         b: 'highlighted'
       }}
-      variableSize="sm"
+      variableSize="xs"
       containerSize="xs"
     />
   ),
@@ -2158,7 +2158,7 @@ export default {
       expressionContainer={lessonExpressions.e15E4}
       showPriorities
       containerSize="xs"
-      variableSize="sm"
+      variableSize="xs"
     />
   ),
   plts: (
@@ -2167,7 +2167,7 @@ export default {
       showPriorities
       skipToTheEnd={false}
       containerSize="xs"
-      variableSize="xs"
+      variableSize="xxs"
       lastAllowedExpressionState="conditionActive"
       speed={4}
     />
@@ -2178,7 +2178,7 @@ export default {
       showPriorities
       skipToTheEnd={false}
       containerSize="xs"
-      variableSize="xs"
+      variableSize="xxs"
       nextIterations={5}
       initialState="conditionActive"
       lastAllowedExpressionState="default"
@@ -2192,7 +2192,7 @@ export default {
       showPriorities
       highlightFunctions
       containerSize="xs"
-      variableSize="xs"
+      variableSize="xxs"
       nextIterations={6}
     />
   ),

@@ -5,7 +5,7 @@ import { VariableExpression } from 'src/types/ExpressionTypes'
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   hideBottomRightBadges: boolean
-  variableSize: 'sm' | 'md' | 'lg' | 'xs'
+  variableSize: 'sm' | 'md' | 'lg' | 'xs' | 'xxs'
   isDoneOrReady: boolean
   bottomRightBadgeOverrides: { [key in VariableNames]?: string }
   highlightOverrides: {

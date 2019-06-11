@@ -12,7 +12,6 @@ import {
   InlineEmojiBoxesForCondition,
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
-import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
