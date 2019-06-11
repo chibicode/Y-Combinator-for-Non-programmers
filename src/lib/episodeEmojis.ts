@@ -22,7 +22,7 @@ const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> = {
   12: ['➖', '🤯', '️1️⃣'],
   13: ['✖️', '🥴', '↕️'],
   14: ['🧙‍♀️', '😨', '🧙‍♀️'],
-  15: ['✨', '🤩', '✨'],
+  15: [letterEmojiMapping['a'], '🤩', letterEmojiMapping['b']],
   16: ['️🤖', '🤗', '️🤖']
 }
 
