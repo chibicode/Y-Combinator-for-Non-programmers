@@ -124,18 +124,16 @@ export default () => (
         )
       },
       {
-        type: 'yesNoQuiz',
         title: (
           <>
             <EmojiNumber number={3} />
-            を入れてみる
+            を入れた場合
           </>
         ),
         content: (
           <>
             <P>
-              <H args={{ name: 'yesNoQuiz' }} />
-              形式で出題してみます。
+              たとえば、
               <Strong>
                 先ほどの弁当箱の
                 <InlineEmojiBoxesForQuestion />
@@ -147,30 +145,18 @@ export default () => (
             </P>
             {AER.hzlj}
             <P>
-              <H args={{ name: 'whatHappensInTheMiddleQuestion' }} />
-              すなわち、
-              <Em>
-                <H args={{ name: 'witch' }} />
-                を使った場合と同じになるでしょうか？
-              </Em>
+              これを
+              <H args={{ name: 'play' }} />
+              すると、結果はどうなるでしょう？
             </P>
-            {AER.wqdb}
-            <YesNoButtons answer="yes" tooHard />
           </>
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
-          </>
-        ),
+        title: <>検証してみましょう</>,
         content: (
           <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              途中で何回か止めながら見ていきましょう！
-            </P>
+            <P>途中で何回か止めながら見ていきましょう！</P>
             <Ul>
               <UlLi>弁当箱が縦長になるので、料理を小さく表示しています。</UlLi>
               <UlLi>
