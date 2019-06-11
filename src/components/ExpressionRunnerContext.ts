@@ -17,6 +17,8 @@ export interface ExpressionRunnerContextProps {
   showOnlyFocused: boolean
   argPriorityAggHighlights: readonly number[]
   funcPriorityAggHighlights: readonly number[]
+  highlightFunctions: boolean
+  highlightAllChildren: boolean
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
@@ -31,7 +33,9 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   highlightOverridesCallArgAndFuncUnboundOnly: false,
   showOnlyFocused: false,
   argPriorityAggHighlights: [],
-  funcPriorityAggHighlights: []
+  funcPriorityAggHighlights: [],
+  highlightFunctions: false,
+  highlightAllChildren: false
 }
 
 export default React.createContext<ExpressionRunnerContextProps>(

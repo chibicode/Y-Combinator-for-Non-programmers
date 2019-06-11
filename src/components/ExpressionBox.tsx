@@ -17,14 +17,17 @@ interface ExpressionBoxProps {
 }
 
 const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
+  const expressionRunnerContext = useContext(ExpressionRunnerContext)
   const {
     highlightOverrides,
+    highlightFunctions,
+    highlightAllChildren,
     started,
     highlightOverrideActiveAfterStart,
     highlightOverridesCallArgAndFuncUnboundOnly,
     argPriorityAggHighlights,
     funcPriorityAggHighlights
-  } = useContext(ExpressionRunnerContext)
+  } = expressionRunnerContext
   let highlightOverridden: BorderWrapperProps['highlightOverridden'] = !!(
     isVariable(expression) &&
     (!started || highlightOverrideActiveAfterStart) &&
@@ -71,40 +74,48 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
   }
 
   return (
-    <Flex
-      css={css`
-        width: 100%;
-        height: 100%;
-        position: relative;
-      `}
+    <ExpressionRunnerContext.Provider
+      value={{
+        ...expressionRunnerContext,
+        highlightAllChildren:
+          (highlightFunctions && isFunction(expression)) || highlightAllChildren
+      }}
     >
-      <BorderWrapper
-        topLevel={topLevel}
-        highlightOverridden={highlightOverridden}
-        highlightType={highlightType}
-        bottomRightBadgeType={
-          isVariable(expression) ? expression.bottomRightBadgeType : 'none'
-        }
-        topLeftBadgeType={
-          isVariable(expression) ? expression.topLeftBadgeType : 'none'
-        }
-        isQuestion={
-          isVariable(expression) ? expression.name === 'question' : false
-        }
+      <Flex
+        css={css`
+          width: 100%;
+          height: 100%;
+          position: relative;
+        `}
       >
-        {(() => {
-          if (isVariable(expression)) {
-            return <VariableExpressionBox expression={expression} />
-          } else if (isCall(expression)) {
-            return <CallExpressionBox expression={expression} />
-          } else if (isFunction(expression)) {
-            return <FunctionExpressionBox expression={expression} />
-          } else {
-            return <ConditionalExpressionBox expression={expression} />
+        <BorderWrapper
+          topLevel={topLevel}
+          highlightOverridden={highlightOverridden}
+          highlightType={highlightType}
+          bottomRightBadgeType={
+            isVariable(expression) ? expression.bottomRightBadgeType : 'none'
           }
-        })()}
-      </BorderWrapper>
-    </Flex>
+          topLeftBadgeType={
+            isVariable(expression) ? expression.topLeftBadgeType : 'none'
+          }
+          isQuestion={
+            isVariable(expression) ? expression.name === 'question' : false
+          }
+        >
+          {(() => {
+            if (isVariable(expression)) {
+              return <VariableExpressionBox expression={expression} />
+            } else if (isCall(expression)) {
+              return <CallExpressionBox expression={expression} />
+            } else if (isFunction(expression)) {
+              return <FunctionExpressionBox expression={expression} />
+            } else {
+              return <ConditionalExpressionBox expression={expression} />
+            }
+          })()}
+        </BorderWrapper>
+      </Flex>
+    </ExpressionRunnerContext.Provider>
   )
 }
 

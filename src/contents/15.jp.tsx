@@ -170,7 +170,6 @@ export default () => (
             <P>
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               途中で何回か止めながら見ていきましょう！
-              <H args={{ name: 'pressFastForward', skipColon: true }} />。
             </P>
             <Ul>
               <UlLi>弁当箱が縦長になるので、料理を小さく表示しています。</UlLi>
@@ -183,6 +182,9 @@ export default () => (
                 </Strong>
               </UlLi>
             </Ul>
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
             {AER.plts}
             <P>
               <InlineEmojiBoxesForCondition type="condition" /> が
@@ -192,9 +194,22 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.olri}
-            <P>かなり複雑な弁当箱になりました。</P>
+            <P>
+              かなり複雑な弁当箱になりました。ここで、
+              <Strong>上から2番目と3番目の部分</Strong>を
+              <Em>黄色に塗りつぶしてみました</Em>。すると、
+              <Strong>
+                黄色の部分の上半分と下半分は、まったく同じ形をしている
+              </Strong>
+              のがわかります。
+            </P>
             {AER.pnux}
-            <P>よく見ると、下のような構造になっています。</P>
+            <P>
+              いったん、<Em>黄色の部分</Em>
+              を省略してみましょう。すると次のようになります。
+            </P>
+            {AER.zhby}
+            <P>残った部分をよく見ると、下のような構造になっています。</P>
             {AER.xcnu}
             <P>
               前回、
@@ -202,6 +217,17 @@ export default () => (
               を使ったときも、途中で似たような形になったのを覚えていますか？
             </P>
             {AER.iisx}
+            <P>
+              ここまでは、前回
+              <H args={{ name: 'witch' }} />
+              を使った場合と似たような形になっています。ということは、
+              <Strong>
+                最終結果も
+                <H args={{ name: 'witch' }} />
+                を使った場合と同じになるのでしょうか？
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['🤔', '❓', '🧙‍♀️']} />
           </>
         )
       }

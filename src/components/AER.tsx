@@ -2190,9 +2190,21 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E5}
       showPriorities
+      highlightFunctions
       containerSize="xs"
       variableSize="xs"
       nextIterations={6}
+    />
+  ),
+  zhby: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E6}
+      showPriorities
+      variableSize="md"
+      highlightOverrides={{
+        abbreviated: 'highlighted'
+      }}
+      highlightOverrideActiveAfterStart
     />
   ),
   xcnu: (

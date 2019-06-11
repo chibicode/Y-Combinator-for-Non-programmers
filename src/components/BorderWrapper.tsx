@@ -125,7 +125,9 @@ const BorderWrapper = ({
   isQuestion,
   topLevel
 }: BorderWrapperProps) => {
-  const { isDoneOrReady, started } = useContext(ExpressionRunnerContext)
+  const { isDoneOrReady, started, highlightAllChildren } = useContext(
+    ExpressionRunnerContext
+  )
   const { conditionalOutermostState } = useContext(ConditionalContext)
   return (
     <Flex
@@ -136,7 +138,7 @@ const BorderWrapper = ({
           position: relative;
         `,
         background({
-          highlightType,
+          highlightType: highlightAllChildren ? 'highlighted' : highlightType,
           isDoneOrReady,
           topLeftBadgeType,
           isQuestion,

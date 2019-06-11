@@ -72,6 +72,7 @@ interface ExpressionRunnerSimpleProps {
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
   highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
   showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
+  highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
   argPriorityAggHighlights?: readonly number[]
   funcPriorityAggHighlights?: readonly number[]
 }
@@ -95,7 +96,8 @@ export const ExpressionRunnerSimple = ({
   showOnlyFocused,
   highlightOverridesCallArgAndFuncUnboundOnly,
   argPriorityAggHighlights,
-  funcPriorityAggHighlights
+  funcPriorityAggHighlights,
+  highlightFunctions
 }: ExpressionRunnerSimpleProps) => (
   <ExpressionRunner
     expressionContainer={expressionContainer}
@@ -113,6 +115,7 @@ export const ExpressionRunnerSimple = ({
     skipAlphaConvert={skipAlphaConvert}
     bottomRightBadgeOverrides={bottomRightBadgeOverrides}
     highlightOverrides={highlightOverrides}
+    highlightFunctions={highlightFunctions}
     highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
     initializeInstructions={initializeInstructions({
       nextIteration,

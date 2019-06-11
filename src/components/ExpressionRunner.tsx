@@ -74,6 +74,7 @@ export interface ExpressionRunnerProps {
   showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
   argPriorityAggHighlights: readonly number[]
   funcPriorityAggHighlights: readonly number[]
+  highlightFunctions: boolean
 }
 
 interface PlaybackState {
@@ -198,7 +199,8 @@ const ExpressionRunner = ({
   highlightOverrides,
   highlightOverrideActiveAfterStart,
   argPriorityAggHighlights,
-  funcPriorityAggHighlights
+  funcPriorityAggHighlights,
+  highlightFunctions
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -261,7 +263,10 @@ const ExpressionRunner = ({
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
         argPriorityAggHighlights,
-        funcPriorityAggHighlights
+        funcPriorityAggHighlights,
+        highlightFunctions,
+        highlightAllChildren:
+          expressionRunnerContextDefault.highlightAllChildren
       }}
     >
       <div
@@ -400,7 +405,8 @@ ExpressionRunner.defaultProps = {
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
   showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
   argPriorityAggHighlights: [],
-  funcPriorityAggHighlights: []
+  funcPriorityAggHighlights: [],
+  highlightFunctions: false
 }
 
 export default ExpressionRunner
