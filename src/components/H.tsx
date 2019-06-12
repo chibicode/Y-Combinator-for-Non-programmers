@@ -135,7 +135,6 @@ export interface HProps {
     | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
     | { name: 'abbreviated' }
-    | { name: 'abbreviated' }
 }
 
 const slightlyLargeCaptionCss = css`

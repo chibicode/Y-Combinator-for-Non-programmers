@@ -2228,5 +2228,61 @@ export default {
       argPriorityAggHighlights={[1]}
       funcPriorityAggHighlights={[1, 2]}
     />
+  ),
+  pzui: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      nextIterations={6}
+      skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={10}
+      speed={4}
+    />
+  ),
+  kfrt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      nextIterations={11}
+      highlightFunctions
+    />
+  ),
+  iygh: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E7}
+      showPriorities
+      variableSize="md"
+      highlightOverrides={{
+        abbreviated: 'highlighted'
+      }}
+      highlightOverrideActiveAfterStart
+    />
+  ),
+  ines: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E7}
+      showPriorities
+      variableSize="md"
+      caption={<H args={{ name: 'ycChangedCaption', fromNumber: 2 }} />}
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[3, 4]}
+    />
+  ),
+  gcnt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={8}
+      initialState="default"
+      variableSize="md"
+      caption={<H args={{ name: 'magicalChangedCaption', fromNumber: 2 }} />}
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[3, 4]}
+    />
   )
 }

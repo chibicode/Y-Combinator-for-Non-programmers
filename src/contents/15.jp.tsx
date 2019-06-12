@@ -181,8 +181,8 @@ export default () => (
             {AER.olri}
             <P>
               かなり複雑な弁当箱になりましたが、落ち着いて見ていきましょう。まず、
-              <Strong>上から2番目と3番目の部分</Strong>を
-              <Em>黄色に塗りつぶしてみました</Em>。
+              <Strong>上から2番目と3番目の部分</Strong>
+              <Em>を黄色に塗りつぶしてみました</Em>。
             </P>
             {AER.pnux}
             <P>
@@ -232,6 +232,50 @@ export default () => (
               引き続き見ていきましょう！
             </P>
             <EmojiSeparator emojis={['🤔', '❓', '🧙‍♀️']} />
+          </>
+        )
+      },
+      {
+        title: <>続きはどうなる？</>,
+        content: (
+          <>
+            <P>
+              続きを見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.pzui}
+            <P>
+              前回と同じように、
+              <Em>
+                <Strong>上から2番目と3番目の部分</Strong>
+                を黄色に塗りつぶしてみました。
+              </Em>
+            </P>
+            {AER.kfrt}
+            <P>省略すると、こうなります。</P>
+            {AER.iygh}
+            <P>
+              <Em>
+                一番上の数字が
+                <EmojiNumber number={2} />
+                から
+                <EmojiNumber number={1} />
+                になり、
+              </Em>
+              <Em highlightType="blue">
+                <Emoji>✖️</Emoji>
+                <EmojiNumber number={2} />
+                が追加されました。
+              </Em>
+            </P>
+            {AER.ines}
+            <P>
+              またしても、前回
+              <H args={{ name: 'witch' }} />
+              を使った場合と同じような途中経過になっています。
+            </P>
+            {AER.gcnt}
+            <P>それでは、最後まで進めてみましょう！</P>
           </>
         )
       }
