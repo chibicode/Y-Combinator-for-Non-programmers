@@ -317,7 +317,7 @@ export default () => (
               </Strong>
               、ということになります！
             </P>
-            <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+            {AER.mscz}
             <P>
               では、
               <EmojiNumber number={4} />や<EmojiNumber number={5} />
@@ -341,6 +341,29 @@ export default () => (
                 </>
               }
             />
+          </>
+        )
+      },
+      {
+        title: <>最初から最後まで一気に</>,
+        content: (
+          <>
+            <P>
+              ここからは時間を節約するために、最初から最後まで超特急で見ていきましょう！
+            </P>
+            <EmojiSeparator emojis={['🚅', '🤗', '🚅']} />
+            <P>
+              先ほどと同じく、こちらの弁当箱を使います。
+              <H args={{ name: 'witch' }} />
+              はどこにも入っていません。
+            </P>
+            {AER.dkbt}
+            <P>
+              まず、
+              <InlineEmojiBoxesForQuestion />に<EmojiNumber number={4} />
+              を入れてみました。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
           </>
         )
       }

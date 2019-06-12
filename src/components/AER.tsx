@@ -2153,6 +2153,14 @@ export default {
       containerSize="xs"
     />
   ),
+  dkbt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E3}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+    />
+  ),
   hzlj: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E4}
@@ -2307,6 +2315,17 @@ export default {
       nextIterations={16}
       skipToTheEnd={false}
       speed={1.75}
+    />
+  ),
+  mscz: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+      isDone
+      intermediateState="default"
+      intermediateNextIterations={16}
     />
   )
 }
