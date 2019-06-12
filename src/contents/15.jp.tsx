@@ -155,30 +155,11 @@ export default () => (
         title: <>検証してみましょう</>,
         content: (
           <>
-            <P>途中で何回か止めながら見ていきましょう！</P>
-            <Ul>
-              <UlLi>弁当箱が縦長になるので、料理を小さく表示しています。</UlLi>
-              <UlLi>
-                解説のため、
-                <Strong>
-                  一番最初に
-                  <InlineEmojiBoxesForCondition type="condition" />{' '}
-                  の中にある暗号が「0」かどうかチェックするタイミングで一旦止めます。
-                </Strong>
-              </UlLi>
-            </Ul>
             <P>
+              途中で何回か止めながら見ていきましょう！
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.plts}
-            <P>
-              <InlineEmojiBoxesForCondition type="condition" /> が
-              <EmojiNumber number={2} />
-              なので、上側の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
-              が残ります。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
-            {AER.olri}
             <P>
               かなり複雑な弁当箱になりましたが、落ち着いて見ていきましょう。まず、
               <Strong>上から2番目と3番目の部分</Strong>

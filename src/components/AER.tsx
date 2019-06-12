@@ -2176,22 +2176,9 @@ export default {
       skipToTheEnd={false}
       containerSize="xs"
       variableSize="xxs"
-      lastAllowedExpressionState="conditionActive"
-      speed={4}
-    />
-  ),
-  olri: (
-    <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e15E5}
-      showPriorities
-      skipToTheEnd={false}
-      containerSize="xs"
-      variableSize="xxs"
-      nextIterations={5}
-      initialState="conditionActive"
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={5}
-      speed={1.75}
+      speed={4}
     />
   ),
   pnux: (
