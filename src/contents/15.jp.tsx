@@ -180,7 +180,10 @@ export default () => (
             </P>
             {AER.olri}
             <P>
-              かなり複雑な弁当箱になりました。ここで、
+              かなり複雑な弁当箱になりましたが、落ち着いて見ていきましょう。
+            </P>
+            <P>
+              まず、
               <Strong>上から2番目と3番目の部分</Strong>を
               <Em>黄色に塗りつぶしてみました</Em>。すると、
               <Strong>
@@ -190,11 +193,29 @@ export default () => (
             </P>
             {AER.pnux}
             <P>
-              いったん、<Em>黄色の部分</Em>
+              次に、いったん<Em>黄色の部分</Em>
               を省略してみましょう。すると次のようになります。
             </P>
             {AER.zhby}
-            <P>残った部分をよく見ると、下のような構造になっています。</P>
+            <P>省略していない部分をよく見ると、</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  一番上の数字が
+                  <EmojiNumber number={3} />
+                  から
+                  <EmojiNumber number={2} />
+                  になり、(黄色の部分)
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em highlightType="blue">
+                  一番下に<Emoji>✖️</Emoji>
+                  <EmojiNumber number={3} />
+                  が追加されました。(青色の部分)
+                </Em>
+              </UlLi>
+            </Ul>
             {AER.xcnu}
             <P>
               前回、
