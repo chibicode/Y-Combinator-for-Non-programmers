@@ -286,8 +286,15 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.jruw}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>ということは…</>,
+        content: (
+          <>
             <P>
-              ということは…
               <Strong>
                 <H args={{ name: 'witch' }} />
                 を一切使わずに、
@@ -299,6 +306,18 @@ export default () => (
               、ということになります！
             </P>
             {AER.mscz}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={4} />や<EmojiNumber number={5} />
+            からはじめた場合
+          </>
+        ),
+        content: (
+          <>
             <P>
               では、
               <EmojiNumber number={4} />や<EmojiNumber number={5} />
@@ -322,21 +341,16 @@ export default () => (
                 </>
               }
             />
-          </>
-        )
-      },
-      {
-        title: <>最初から最後まで一気に</>,
-        content: (
-          <>
             <P>
               ここからは時間を節約するために、最初から最後まで超特急で見ていきましょう！
             </P>
             <EmojiSeparator emojis={['🚅', '🤗', '🚅']} />
             <P>
               先ほどと同じく、こちらの弁当箱を使います。
-              <H args={{ name: 'witch' }} />
-              はどこにも入っていません。
+              <Strong>
+                <H args={{ name: 'witch' }} />
+                はどこにも入っていないので、タネも仕掛けもありません！
+              </Strong>
             </P>
             {AER.dkbt}
             <P>
