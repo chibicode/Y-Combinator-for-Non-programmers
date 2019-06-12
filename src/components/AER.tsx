@@ -2284,5 +2284,29 @@ export default {
       argPriorityAggHighlights={[1]}
       funcPriorityAggHighlights={[3, 4]}
     />
+  ),
+  mdsc: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      nextIterations={11}
+      skipToTheEnd={false}
+      lastAllowedExpressionState="default"
+      lastAllowedExpressionStateAfterIterations={15}
+      speed={4}
+    />
+  ),
+  jruw: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      nextIterations={16}
+      skipToTheEnd={false}
+      speed={1.75}
+    />
   )
 }

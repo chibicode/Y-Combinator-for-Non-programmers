@@ -255,6 +255,7 @@ export default () => (
             <P>省略すると、こうなります。</P>
             {AER.iygh}
             <P>
+              よく見ると、
               <Em>
                 一番上の数字が
                 <EmojiNumber number={2} />
@@ -276,6 +277,70 @@ export default () => (
             </P>
             {AER.gcnt}
             <P>それでは、最後まで進めてみましょう！</P>
+          </>
+        )
+      },
+      {
+        title: <>結果は…？</>,
+        content: (
+          <>
+            <P>
+              先ほどの続きからです。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.mdsc}
+            <P>
+              なんと、
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} />
+              の計算を行う弁当箱になりました！
+            </P>
+            <P>
+              というわけで、最終結果は
+              <Strong>
+                3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
+              </Strong>
+              になります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.jruw}
+            <P>
+              ということは…
+              <Strong>
+                <H args={{ name: 'witch' }} />
+                を一切使わずに、
+                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={1} />
+                の計算ができてしまった
+              </Strong>
+              、ということになります！
+            </P>
+            <EmojiSeparator emojis={['🤯', '🤯', '🤯']} />
+            <P>
+              では、
+              <EmojiNumber number={4} />や<EmojiNumber number={5} />
+              からはじめた場合はどうなるでしょう？同じような計算ができるでしょうか？
+            </P>
+            <EmojiSeparator
+              size="sm"
+              emojis={['4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>24</Strong>」になります
+                </>
+              }
+            />
+            <EmojiSeparator
+              size="sm"
+              emojis={['5️⃣', '✖️', '4️⃣', '✖️', '3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']}
+              description={
+                <>
+                  ちなみに、答えは「<Strong>120</Strong>」になります
+                </>
+              }
+            />
           </>
         )
       }
