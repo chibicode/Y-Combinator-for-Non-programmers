@@ -364,6 +364,7 @@ export default () => (
               を入れてみました。
               <H args={{ name: 'pressFastForward' }} />
             </P>
+            {AER.jreq}
           </>
         )
       }

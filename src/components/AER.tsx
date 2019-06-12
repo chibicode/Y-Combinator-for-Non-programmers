@@ -2327,5 +2327,17 @@ export default {
       intermediateState="default"
       intermediateNextIterations={16}
     />
+  ),
+  jreq: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E8}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      lastAllowedExpressionState="default"
+      skipToTheEnd={false}
+      speed={15}
+      lastAllowedExpressionStateAfterIterations={20}
+    />
   )
 }
