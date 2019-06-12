@@ -8,10 +8,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
-import {
-  InlineEmojiBoxesForCondition,
-  InlineEmojiBoxesForQuestion
-} from 'src/components/InlineEmojiBoxes'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 
 export default () => (
   <EpisodeCardList
