@@ -7,7 +7,10 @@ import {
   ExternalLink,
   P,
   Strong,
-  InlineHeader
+  Ol,
+  OlLi,
+  InlineHeader,
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -333,8 +336,8 @@ export default () => (
             <P>
               話を戻すと、今回の記事では、
               <Strong>
-                「<H args={{ name: 'yCombinator' }} />
-                」とは何なのか、そしてなぜ興味深いのかを、
+                <H args={{ name: 'yCombinator' }} />
+                とは何なのか、そしてなぜ興味深いのかを、
                 誰にでもわかるように説明します
               </Strong>
               。そうすることで、
@@ -345,7 +348,7 @@ export default () => (
         )
       },
       {
-        title: <>さっそくはじめてみましょう！</>,
+        title: <>スマホで完結、難しい数式もない</>,
         content: (
           <>
             <P>
@@ -360,12 +363,44 @@ export default () => (
               ので、ご安心ください。
             </P>
             <EmojiSeparator emojis={['➕', '➖', '✖️']} />
+          </>
+        )
+      },
+      {
+        title: <>無料なので…</>,
+        content: (
+          <>
             <P>
               さらに、当記事は最後まで<Strong>無料</Strong>で公開しています。
             </P>
             <EmojiSeparator emojis={['🆓', '🤗', '🆓']} />
             <P>
-              ぜひ、最後までお楽しみいただけると嬉しいです。下のボタンを押して、さっそくはじめてみましょう！
+              だからというのも変ですが、
+              <Strong>当記事の内容に期待しすぎないでほしい</Strong>
+              です。
+              <Em>
+                当記事を読んでもプログラミングのスキルは上達しませんし、仕事で
+                <H args={{ name: 'yCombinator' }} />
+                の知識が役立つことはないでしょう。
+              </Em>
+            </P>
+            <P>
+              一方で、当記事を読めば、「
+              <Em>コンピュータサイエンスって面白そう</Em>」「
+              <Em>もっと学んでみたい</Em>
+              」といった<Strong>きっかけ</Strong>
+              が得られるかもしれません。そうなればいいなと思っています。
+            </P>
+            <P>あまり期待しすぎず、最後までお楽しみいただけると嬉しいです。</P>
+          </>
+        )
+      },
+      {
+        title: <>さっそくはじめてみましょう！</>,
+        content: (
+          <>
+            <P>
+              というわけで、下のボタンを押して、さっそくはじめてみましょう！
             </P>
             <NextLessonButton />
           </>
