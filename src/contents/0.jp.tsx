@@ -7,10 +7,7 @@ import {
   ExternalLink,
   P,
   Strong,
-  Ol,
-  OlLi,
-  InlineHeader,
-  Hr
+  InlineHeader
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
