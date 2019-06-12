@@ -94,7 +94,7 @@ export interface HProps {
     | { name: 'whatHappensInTheMiddleQuestion' }
     | { name: 'whatsTheNumberQuestion'; number: number }
     | { name: 'lookAtThisBentoBox' }
-    | { name: 'pressFastForward'; skipColon?: boolean }
+    | { name: 'pressFastForward'; skipColon?: boolean; pleaseWait?: boolean }
     | { name: 'copy' }
     | { name: 'summary' }
     | { name: 'mustChangeBothFuncUnboundAndBound' }
@@ -135,6 +135,7 @@ export interface HProps {
     | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
     | { name: 'abbreviated' }
+    | { name: 'itWillTakeTime' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -745,7 +746,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Em>
             <H args={{ name: 'fastForward' }} />
-            を押してみてください{args.skipColon ? '' : ':'}
+            を押してみてください
+            {args.pleaseWait ? '。' : args.skipColon ? '' : ':'}
+            {args.pleaseWait && <H args={{ name: 'itWillTakeTime' }} />}
           </Em>
         </>
       )
@@ -1479,6 +1482,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       return <>省略</>
+    }
+  }
+  if (args.name === 'itWillTakeTime') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Em highlightType="pink">
+            少し時間がかかりますが、お待ちいただけると嬉しいです！
+          </Em>
+        </>
+      )
     }
   }
   if (args.name === 'prevAndNextLinks') {

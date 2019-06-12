@@ -837,7 +837,7 @@ export default {
       containerSize={'xs'}
       variableSize={'sm'}
       skipToTheEnd={false}
-      speed={6}
+      speed={5}
     />
   ),
   dhdk: (
@@ -857,7 +857,7 @@ export default {
       containerSize={'xs'}
       variableSize={'sm'}
       skipToTheEnd={false}
-      speed={6}
+      speed={5}
       highlightOverrides={{
         e: 'highlighted',
         f: 'highlighted',
@@ -932,7 +932,7 @@ export default {
       containerSize={'xs'}
       variableSize={'sm'}
       skipToTheEnd={false}
-      speed={8}
+      speed={5}
       highlightOverrides={{
         e: 'highlighted',
         f: 'highlighted',
@@ -999,7 +999,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={6}
+      speed={5}
     />
   ),
   aeyv: (
@@ -1469,8 +1469,8 @@ export default {
       showPriorities
       skipToTheEnd={false}
       containerSize="xs"
-      variableSize="md"
-      speed={8}
+      variableSize="sm"
+      speed={5}
     />
   ),
   npfx: (
@@ -2019,7 +2019,7 @@ export default {
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
       skipToTheEnd={false}
-      speed={7}
+      speed={5}
       variableSize="sm"
     />
   ),
@@ -2043,8 +2043,8 @@ export default {
       expressionContainer={lessonExpressions.e14E2}
       showPriorities
       skipToTheEnd={false}
-      speed={8}
-      variableSize="sm"
+      speed={5}
+      variableSize="xs"
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={15}
     />

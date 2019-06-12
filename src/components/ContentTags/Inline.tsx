@@ -16,6 +16,7 @@ export type InlineHighlightType =
   | 'none'
   | 'blue'
   | 'yellow'
+  | 'pink'
 
 interface HighlightContextProps {
   inHighlightType: InlineHighlightType
@@ -127,7 +128,9 @@ export const Em = ({
           css={[
             css`
               font-style: normal;
-              background: ${highlightType === 'yellow'
+              background: ${highlightType === 'pink'
+                ? colors('pink50')
+                : highlightType === 'yellow'
                 ? colors('yellow100')
                 : highlightType === 'blue'
                 ? mix(color, colors('blue50'))

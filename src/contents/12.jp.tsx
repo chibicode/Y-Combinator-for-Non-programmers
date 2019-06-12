@@ -74,7 +74,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', pleaseWait: true }} />
             </P>
             {AER.ccon}
             <P>

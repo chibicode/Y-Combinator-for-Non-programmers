@@ -128,7 +128,7 @@ export default () => (
             {AER.ifwb}
             <P>
               埋め込むとこうなります。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', pleaseWait: true }} />
             </P>
             {AER.ngus}
             <P>
