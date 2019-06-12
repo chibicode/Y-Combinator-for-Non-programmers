@@ -7,7 +7,6 @@
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noEmit": true,
     "noUnusedLocals": true,
@@ -18,7 +17,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "esnext"],
     "paths": {
       "src/*": ["src/*"],
       "test/*": ["test/*"]
