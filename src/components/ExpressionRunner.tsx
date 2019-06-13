@@ -367,23 +367,34 @@ const ExpressionRunner = ({
           horizontalPadding={0}
         >
           {isPlaying && isFastForwarding && !isDone && (
-            <ExpressionRunnerCaptionWrapper
-              css={css`
-                margin-top: ${spaces(0.5)};
-              `}
-            >
-              <H
-                args={{
-                  name: 'timer',
-                  numSecondsRemaining: numSecondsRemaining(
-                    superFastForward
-                      ? expressionContainerManagerState.numStepsRemainingDefaultAndActiveOnly
-                      : expressionContainerManagerState.numStepsRemaining,
-                    speed
-                  )
-                }}
-              />
-            </ExpressionRunnerCaptionWrapper>
+            <>
+              <ExpressionRunnerCaptionWrapper
+                css={css`
+                  margin-top: ${spaces(0.5)};
+                `}
+              >
+                <H
+                  args={{
+                    name: 'timer',
+                    numSecondsRemaining: numSecondsRemaining(
+                      superFastForward
+                        ? expressionContainerManagerState.numStepsRemainingDefaultAndActiveOnly
+                        : expressionContainerManagerState.numStepsRemaining,
+                      speed
+                    )
+                  }}
+                />
+              </ExpressionRunnerCaptionWrapper>
+              {superFastForward && (
+                <ExpressionRunnerCaptionWrapper
+                  css={css`
+                    margin-top: ${spaces('-0.25')};
+                  `}
+                >
+                  <H args={{ name: 'skippingSteps' }} />
+                </ExpressionRunnerCaptionWrapper>
+              )}
+            </>
           )}
           {!hideControls &&
             !expressionContainerManagerState.canStepForward &&

@@ -354,7 +354,7 @@ export default () => (
               まず、
               <InlineEmojiBoxesForQuestion />に<EmojiNumber number={4} />
               を入れてみました。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', skippingSteps: true }} />
             </P>
             {AER.jreq}
           </>
