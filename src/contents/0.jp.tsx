@@ -334,8 +334,7 @@ export default () => (
               話を戻すと、今回の記事では、
               <Strong>
                 <H args={{ name: 'yCombinator' }} />
-                とは何なのか、そしてなぜ興味深いのかを、
-                誰にでもわかるように説明します
+                とは何なのか、そしてなぜ興味深いのかを、できる限り分かりやすく説明します
               </Strong>
               。そうすることで、
               <H args={{ name: 'computerScience' }} />
