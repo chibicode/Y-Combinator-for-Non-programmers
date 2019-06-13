@@ -22,6 +22,8 @@ export default class ExpressionContainerManager {
       canStepForward: this.canStepForward,
       canStepBackward: this.canStepBackward,
       numStepsRemaining: this.numStepsRemaining,
+      numStepsRemainingDefaultAndActiveOnly: this
+        .numStepsRemainingDefaultAndActiveOnly,
       numStepsTaken: this.currentIndex - this.startIndex,
       maxIndexSet: this.maximumIndex !== DEFAULT_MAX_INDEX
     }
@@ -54,6 +56,20 @@ export default class ExpressionContainerManager {
 
   public reset() {
     this.currentIndex = this.startIndex
+  }
+
+  public stepForwardUntilActiveOrDefault() {
+    do {
+      if (this.canStepForward) {
+        this.stepForward()
+      }
+    } while (
+      this.currentExpressionContainer.previouslyChangedExpressionState !==
+        'default' &&
+      this.currentExpressionContainer.previouslyChangedExpressionState !==
+        'active' &&
+      this.canStepForward
+    )
   }
 
   public stepForwardUntilPreviouslyChangedExpressionState(
@@ -148,5 +164,15 @@ export default class ExpressionContainerManager {
 
   private get numStepsRemaining() {
     return this.expressionContainers.length - this.currentIndex - 1
+  }
+
+  private get numStepsRemainingDefaultAndActiveOnly() {
+    return this.expressionContainers
+      .slice(this.currentIndex + 1)
+      .filter(
+        container =>
+          container.previouslyChangedExpressionState === 'default' ||
+          container.previouslyChangedExpressionState === 'active'
+      ).length
   }
 }

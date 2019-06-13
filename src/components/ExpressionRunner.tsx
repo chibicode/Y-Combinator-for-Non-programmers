@@ -75,6 +75,7 @@ export interface ExpressionRunnerProps {
   argPriorityAggHighlights: readonly number[]
   funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
+  superFastForward: boolean
 }
 
 interface PlaybackState {
@@ -91,7 +92,8 @@ const getActions = ({
   interval,
   getExpressionContainerManager,
   setPlaybackStatus,
-  setExpressionContainerManagerState
+  setExpressionContainerManagerState,
+  superFastForward
 }: {
   speed: number
   interval: React.MutableRefObject<NodeJS.Timer | undefined>
@@ -100,6 +102,7 @@ const getActions = ({
   setExpressionContainerManagerState: React.Dispatch<
     React.SetStateAction<ExpressionContainerManager['currentState']>
   >
+  superFastForward: ExpressionRunnerProps['superFastForward']
 }) => {
   const actions = {
     stepForward() {
@@ -118,7 +121,11 @@ const getActions = ({
       interval.current = setInterval(() => {
         // Must use getExpressionContainerManager()
         if (getExpressionContainerManager().currentState.canStepForward) {
-          actions.step('forward')
+          if (superFastForward) {
+            actions.step('forwardUntilActiveOrDefault')
+          } else {
+            actions.step('forward')
+          }
         }
         // As soon as canStepForward is false, cancel immediately
         if (!getExpressionContainerManager().currentState.canStepForward) {
@@ -152,13 +159,22 @@ const getActions = ({
       actions.step('reset')
     },
 
-    step(direction: 'forward' | 'backward' | 'reset' | 'skipToEnd') {
+    step(
+      direction:
+        | 'forward'
+        | 'backward'
+        | 'reset'
+        | 'skipToEnd'
+        | 'forwardUntilActiveOrDefault'
+    ) {
       if (direction === 'forward') {
         getExpressionContainerManager().stepForward()
       } else if (direction === 'backward') {
         getExpressionContainerManager().stepBackward()
       } else if (direction === 'skipToEnd') {
         getExpressionContainerManager().stepForwardUntilTheEnd()
+      } else if (direction === 'forwardUntilActiveOrDefault') {
+        getExpressionContainerManager().stepForwardUntilActiveOrDefault()
       } else {
         getExpressionContainerManager().reset()
       }
@@ -200,7 +216,8 @@ const ExpressionRunner = ({
   highlightOverrideActiveAfterStart,
   argPriorityAggHighlights,
   funcPriorityAggHighlights,
-  highlightFunctions
+  highlightFunctions,
+  superFastForward
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -228,7 +245,8 @@ const ExpressionRunner = ({
     interval,
     getExpressionContainerManager,
     setPlaybackStatus,
-    setExpressionContainerManagerState
+    setExpressionContainerManagerState,
+    superFastForward
   })
   const isDone = isContainerWithState(
     expressionContainerManagerState.expressionContainer,
@@ -358,7 +376,9 @@ const ExpressionRunner = ({
                 args={{
                   name: 'timer',
                   numSecondsRemaining: numSecondsRemaining(
-                    expressionContainerManagerState.numStepsRemaining,
+                    superFastForward
+                      ? expressionContainerManagerState.numStepsRemainingDefaultAndActiveOnly
+                      : expressionContainerManagerState.numStepsRemaining,
                     speed
                   )
                 }}
@@ -406,7 +426,8 @@ ExpressionRunner.defaultProps = {
   showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
   argPriorityAggHighlights: [],
   funcPriorityAggHighlights: [],
-  highlightFunctions: false
+  highlightFunctions: false,
+  superFastForward: false
 }
 
 export default ExpressionRunner

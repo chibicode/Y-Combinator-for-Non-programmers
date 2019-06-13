@@ -2323,8 +2323,9 @@ export default {
       variableSize="xxs"
       lastAllowedExpressionState="default"
       skipToTheEnd={false}
-      speed={15}
+      speed={5}
       lastAllowedExpressionStateAfterIterations={20}
+      superFastForward
     />
   )
 }
