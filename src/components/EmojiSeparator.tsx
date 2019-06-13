@@ -15,7 +15,8 @@ interface EmojiSeparatorProps {
   Component: React.ComponentType | string
   cssOverrides?: SerializedStyles
   description?: React.ReactNode
-  addDotDotDot: boolean
+  addDotDotDotFront: boolean
+  addDotDotDotEnd: boolean
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -32,6 +33,22 @@ const margins = (size: EmojiSeparatorProps['size']) =>
     lg: [spaces(0.5), spaces(0.75)]
   }[size])
 
+const DotDotDot = () => (
+  <span
+    css={css`
+      background: ${colors('secretCode')};
+      color: #fff;
+      padding: 0em 0.1em;
+      line-height: 1;
+      border-radius: ${radii(0.25)};
+      font-weight: bold;
+      display: inline-block;
+    `}
+  >
+    &middot;&middot;&middot;
+  </span>
+)
+
 const EmojiSeparator = ({
   letters,
   emojis,
@@ -41,7 +58,8 @@ const EmojiSeparator = ({
   alignCenter,
   cssOverrides,
   description,
-  addDotDotDot
+  addDotDotDotFront,
+  addDotDotDotEnd
 }: EmojiSeparatorProps) => (
   <Component
     css={[
@@ -57,6 +75,11 @@ const EmojiSeparator = ({
     ]}
   >
     <>
+      {addDotDotDotFront && (
+        <>
+          <DotDotDot />{' '}
+        </>
+      )}
       {letters
         ? letters.map((letter, index) => (
             <Fragment key={`${letter}${index}`}>
@@ -80,21 +103,7 @@ const EmojiSeparator = ({
               <Emoji size="sm">{emoji}</Emoji>{' '}
             </Fragment>
           ))}
-      {addDotDotDot && (
-        <span
-          css={css`
-            background: ${colors('secretCode')};
-            color: #fff;
-            padding: 0em 0.1em;
-            line-height: 1;
-            border-radius: ${radii(0.25)};
-            font-weight: bold;
-            display: inline-block;
-          `}
-        >
-          &middot;&middot;&middot;
-        </span>
-      )}
+      {addDotDotDotEnd && <DotDotDot />}
       {description && (
         <div
           css={css`
@@ -118,7 +127,8 @@ EmojiSeparator.defaultProps = {
   Component: 'div',
   alignCenter: true,
   emojis: [],
-  addDotDotDot: false
+  addDotDotDotFront: false,
+  addDotDotDotEnd: false
 }
 
 export default EmojiSeparator

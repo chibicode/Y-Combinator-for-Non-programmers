@@ -1,6 +1,14 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi, Hr } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Em,
+  Ul,
+  UlLi,
+  Hr,
+  InlineHeader
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
@@ -580,7 +588,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               size="sm"
-              addDotDotDot
+              addDotDotDotEnd
               emojis={['2️⃣', '✖️', '2️⃣', '✖️', '2️⃣', '✖️']}
               description={
                 <>
@@ -592,6 +600,61 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: <>弁当箱は、繰り返し処理ができる</>,
+        content: (
+          <>
+            <P>
+              何が言いたいかというと、下の弁当箱の
+              <InlineEmojiBoxesForQuestion />
+              の部分を変えることで、さまざまな<Strong>繰り返し処理</Strong>
+              を行うことができるのです。
+            </P>
+            {AER.nmoc}
+            <P>
+              たとえば、これまでは<Em>掛け算</Em>を紹介してきましたが、たとえば
+              <Em>
+                上に入っている暗号が
+                <EmojiNumber number={1} />
+                になるまで「<Strong>足し算</Strong>」を繰り返す、
+              </Em>
+              という計算もできます。
+            </P>
+            <EmojiSeparator
+              size="sm"
+              emojis={['➕', '3️⃣', '➕', '2️⃣', '➕', '1️⃣']}
+              addDotDotDotFront
+              description={
+                <>
+                  暗号が
+                  <EmojiNumber number={1} />
+                  になるまで繰り返して足す
+                </>
+              }
+            />
+            <P>
+              ここでは紹介しませんが、もっと<Strong>複雑な繰り返し処理</Strong>
+              を行うこともできます。
+            </P>
+            <P>
+              <InlineHeader>結論:</InlineHeader>{' '}
+              <Strong>
+                弁当箱は、もともと備わっている機能を工夫して使えば、繰り返し処理を行うことができるのです。
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['🔁', '🍱', '🔁']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            魔法の
+            <H args={{ name: 'yCombinator' }} />
+          </>
+        ),
+        content: <></>
       }
     ]}
   />

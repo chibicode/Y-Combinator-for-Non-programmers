@@ -2449,5 +2449,13 @@ export default {
       containerSize="xs"
       variableSize="xs"
     />
+  ),
+  nmoc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E15}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+    />
   )
 }

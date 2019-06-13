@@ -915,3 +915,27 @@ export const e15E14 = initializeExpressionContainer([
     highlighted: true
   }
 ])
+
+const updatedMagicalParamsCustomizable: FunctionExpressionParams = {
+  arg: magicalVariableName,
+  body: {
+    checkType: 'isZero',
+    condition: {
+      shorthandUnary: 'pred',
+      name: magicalVariableName
+    },
+    trueCase: 'question',
+    falseCase: 'question'
+  }
+}
+
+export const e15E15 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParamsCustomizable
+    }
+  ],
+  'someNumber'
+])
