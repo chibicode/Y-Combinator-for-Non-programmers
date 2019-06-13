@@ -402,6 +402,26 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              こちらのような弁当箱の一番上に<Em>暗号を入れて(黄色の部分)</Em>
+              <H args={{ name: 'fastForward' }} />
+              すると、
+            </P>
+            {AER.wcwd}
+            <P>途中で以下のような形になります。</P>
+            {AER.fapu}
+          </>
+        )
       }
     ]}
   />

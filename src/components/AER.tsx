@@ -2362,5 +2362,13 @@ export default {
       nextIterations={26}
       finalFastForward
     />
+  ),
+  wcwd: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E10}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+    />
   )
 }

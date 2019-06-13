@@ -143,7 +143,7 @@ export default () => (
               <Em>{lessonTitle}</Em>」ですが、
               <Strong>
                 <H args={{ name: 'computerScience' }} />
-                とは、一言でまとめると「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」だ。
+                とは、非常に単純化して言うと「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」だ。
               </Strong>
               <H args={{ name: 'yesOrNo' }} />
             </P>
@@ -164,8 +164,10 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <Em>
                 <H args={{ name: 'computerScience' }} />
-                とは、一言でまとめると「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
+                とは、非常に単純化して言うと「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
               </Em>
+            </P>
+            <P>
               ちなみに、ここで言う
               <Em>ソフトウェア</Em>
               とは、アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステムなど、「
@@ -233,7 +235,7 @@ export default () => (
               </Strong>
               プログラミングができるのに越したことはありませんが、プログラミングができなくても
               <H args={{ name: 'computerScience' }} />
-              の知識を身につけることは可能です。
+              の知識をある程度身につけることは可能です。
             </P>
             <EmojiSeparator emojis={['😉', '💻', '❌']} />
             <P>
@@ -244,9 +246,13 @@ export default () => (
                 の中でも 「<Strong>ある程度難しい題材</Strong>
                 」について解説します。
               </Em>
-              「簡単な
-              <H args={{ name: 'computerScience' }} />
-              の題材だけでなく、ある程度難しい題材でも、プログラミング抜きに学ぶことができる」ということを体感していただけたら幸いです。
+              記事を通して、「
+              <Em>
+                簡単な
+                <H args={{ name: 'computerScience' }} />
+                の題材だけでなく、ある程度難しい題材でも、プログラミング抜きに学ぶことができる
+              </Em>
+              」ということを体感していただけたら幸いです。
             </P>
           </>
         )
@@ -284,7 +290,7 @@ export default () => (
               <Strong>
                 <H args={{ name: 'yCombinator' }} />
               </Strong>
-              」とは、
+              」とは、非常に単純化して言うと
               <Em>
                 「繰り返し処理」に関連する
                 <H args={{ name: 'computerScience' }} />
@@ -308,7 +314,7 @@ export default () => (
                 <Strong>
                   <H args={{ name: 'yCombinator' }} />
                 </Strong>
-                」とは、「繰り返し処理」に関連する
+                」とは、非常に単純化して言うと「繰り返し処理」に関連する
                 <H args={{ name: 'computerScience' }} />
                 用語です。
               </Em>
@@ -331,10 +337,10 @@ export default () => (
               。1〜2年生向けの内容ではないので、「ある程度難しい題材」であることがうかがえます。
             </P>
             <P>
-              話を戻すと、今回の記事では、
+              話を戻しましょう。今回の記事では、
               <Strong>
                 <H args={{ name: 'yCombinator' }} />
-                とは何なのか、そしてなぜ興味深いのかを、できる限り分かりやすく説明します
+                とは何なのか、そしてなぜ興味深いのかを、プログラミングを使わずに可能な限り分かりやすく説明します
               </Strong>
               。そうすることで、
               <H args={{ name: 'computerScience' }} />
