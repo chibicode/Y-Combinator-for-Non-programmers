@@ -148,6 +148,7 @@ export interface HProps {
     | { name: 'factorialComputation'; start: 3 | 4 | 5 }
     | { name: 'changedToPowerCaption' }
     | { name: 'powerComputation'; power: 3 | 4 }
+    | { name: 'thisIsYCombinatorCaption'; too?: boolean }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1665,6 +1666,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <Strong>
           2 ✕ 2 ✕ 2 = <EmojiNumber number={8} />
         </Strong>
+      )
+    }
+  }
+  if (args.name === 'thisIsYCombinatorCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          これ{args.too ? 'も' : 'が'}
+          <Strong css={slightlyLargeCaptionCss}>
+            「<H args={{ name: 'yCombinator' }} />」
+          </Strong>
+          です
+        </>
       )
     }
   }

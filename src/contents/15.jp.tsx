@@ -648,13 +648,105 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
             魔法の
             <H args={{ name: 'yCombinator' }} />
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <P>
+              弁当箱の繰り返し処理を可能にしているのは、
+              <Strong>
+                下側に追加した、
+                <EmojiWithText letter="a" />と<EmojiWithText letter="b" />
+                からなる部分
+              </Strong>
+              です。
+            </P>
+            {AER.cnef}
+            <P>
+              この黄色の部分がないと、繰り返し処理を行うことができません。また、
+              <Em>
+                どんな繰り返し処理をするかによって
+                <InlineEmojiBoxesForQuestion />
+                の部分は変わっても、この黄色の部分は変わりません。
+              </Em>
+              毎回同じなのです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="a" />,
+                <Emoji>🤩</Emoji>,
+                <EmojiForLetter letter="b" />
+              ]}
+            />
+            <P>
+              実は、この黄色の部分には呼び名があります。そう、題名にもある「
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              」です。
+            </P>
+            {AER.news}
+            <P>
+              すなわち
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              とは、
+              <Strong>
+                繰り返し処理を行う際に必要となる、上のような形の弁当箱
+              </Strong>
+              のことを指すのです。
+            </P>
+            <P>
+              この
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              を使えば、
+              <H args={{ name: 'witch' }} />
+              を使わなくても繰り返し処理を行うことができる。
+              <Em>
+                まさに魔法のようだから、記事に「
+                <Strong>
+                  魔法の
+                  <H args={{ name: 'yCombinator' }} />
+                </Strong>
+                」という題名をつけたのです。
+              </Em>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="a" />,
+                <Emoji>🧙‍♀️</Emoji>,
+                <EmojiForLetter letter="b" />
+              ]}
+            />
+            <P>
+              もちろん、
+              <EmojiWithText letter="a" />や<EmojiWithText letter="b" />
+              を使う必要はありません。他の料理を使っても、同じパターンであれば
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              になります。
+            </P>
+            <P>
+              たとえば、
+              <EmojiWithText letter="c" />や<EmojiWithText letter="d" />
+              を使ってみました。こちらも
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              です。もちろん、同じように機能します。
+            </P>
+            {AER.xrzv}
+          </>
+        )
       }
     ]}
   />

@@ -2455,7 +2455,37 @@ export default {
       expressionContainer={lessonExpressions.e15E15}
       showPriorities
       containerSize="xs"
-      variableSize="xs"
+      variableSize="sm"
+    />
+  ),
+  cnef: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E15}
+      showPriorities
+      containerSize="xs"
+      variableSize="sm"
+      highlightOverrides={{
+        a: 'highlighted',
+        b: 'highlighted'
+      }}
+    />
+  ),
+  news: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E16}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={<H args={{ name: 'thisIsYCombinatorCaption' }} />}
+    />
+  ),
+  xrzv: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E17}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      caption={<H args={{ name: 'thisIsYCombinatorCaption', too: true }} />}
     />
   )
 }

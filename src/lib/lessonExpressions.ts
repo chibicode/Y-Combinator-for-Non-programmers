@@ -939,3 +939,19 @@ export const e15E15 = initializeExpressionContainer([
   ],
   'someNumber'
 ])
+
+export const e15E16 = initializeExpressionContainer(yCombinator)
+
+export const e15E17 = initializeExpressionContainer({
+  arg: 'c',
+  body: [
+    {
+      arg: 'd',
+      body: ['c', ['d', 'd']]
+    },
+    {
+      arg: 'd',
+      body: ['c', ['d', 'd']]
+    }
+  ]
+})
