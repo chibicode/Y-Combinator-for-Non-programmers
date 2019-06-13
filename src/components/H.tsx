@@ -1342,7 +1342,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <>
             <P>
               <InlineHeader>お願い:</InlineHeader>「{quitReason}
-              」とお考えの方にお願いがあります。
+              」とお考えの方にお願いがあります。(この文言は全ページに載せています。)
             </P>
             <P>
               差し支えなければ、このページを閉じる前に
