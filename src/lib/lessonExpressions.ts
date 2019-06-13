@@ -826,3 +826,16 @@ export const e15E10 = initializeExpressionContainer([
     highlighted: true
   }
 ])
+
+export const e15E11 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParams
+    }
+  ],
+  {
+    shorthandNumber: 3
+  }
+])

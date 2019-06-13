@@ -2370,5 +2370,13 @@ export default {
       variableSize="xs"
       containerSize="xs"
     />
+  ),
+  bcgc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E11}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+    />
   )
 }

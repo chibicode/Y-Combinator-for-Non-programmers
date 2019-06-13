@@ -421,6 +421,45 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'witch' }} />
+            よりも有能
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              繰り返しますが、たとえば
+              <H args={{ name: 'inlineFactorial', start: 3 }} />
+              を計算するのに、下のような
+              <H args={{ name: 'witch' }} />
+              の弁当箱を使わずとも、
+            </P>
+            {AER.zxux}
+            <P>
+              下の弁当箱を使えば、<Strong>従来の弁当箱の機能だけで</Strong>
+              <H args={{ name: 'inlineFactorial', start: 3 }} />
+              を計算できます。
+            </P>
+            {AER.bcgc}
+            <P>
+              しかも、上の弁当箱は
+              <H args={{ name: 'witch' }} />
+              よりも<Strong>優れている点</Strong>があります。それは、
+              <Strong>少し変更を加えることで、さらに違う計算もできる</Strong>
+              ということです。
+            </P>
+            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+            <P>
+              <Strong>さらに違う計算もできる</Strong>とはどういうことか、
+              <H args={{ name: 'yesNoQuiz' }} />
+              で見てみましょう！
+            </P>
+          </>
+        )
       }
     ]}
   />
