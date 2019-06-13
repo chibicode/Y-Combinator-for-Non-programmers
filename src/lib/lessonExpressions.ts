@@ -839,3 +839,49 @@ export const e15E11 = initializeExpressionContainer([
     shorthandNumber: 3
   }
 ])
+
+const updatedMagicalParamsForPower: FunctionExpressionParams = {
+  arg: magicalVariableName,
+  body: {
+    checkType: 'isZero',
+    condition: {
+      shorthandUnary: 'pred',
+      name: magicalVariableName
+    },
+    trueCase: {
+      shorthandNumber: 2,
+      initialHighlight: true
+    },
+    falseCase: [
+      {
+        shorthandNumber: 2,
+        initialHighlight: true
+      },
+      [
+        {
+          shorthandBinary: 'mult'
+        },
+        [
+          's',
+          {
+            shorthandUnary: 'pred',
+            name: magicalVariableName
+          }
+        ]
+      ]
+    ]
+  }
+}
+
+export const e15E12 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParamsForPower
+    }
+  ],
+  {
+    shorthandNumber: 3
+  }
+])

@@ -48,7 +48,6 @@ import Emoji1f4dd from 'src/components/Twemoji/1f4dd'
 import Emoji1f4f1 from 'src/components/Twemoji/1f4f1'
 import Emoji1f4f7 from 'src/components/Twemoji/1f4f7'
 import Emoji1f50e from 'src/components/Twemoji/1f50e'
-import Emoji1f51f from 'src/components/Twemoji/1f51f'
 import Emoji1f522 from 'src/components/Twemoji/1f522'
 import Emoji1f53d from 'src/components/Twemoji/1f53d'
 import Emoji1f5fa from 'src/components/Twemoji/1f5fa'
@@ -59,9 +58,7 @@ import Emoji1f60b from 'src/components/Twemoji/1f60b'
 import Emoji1f60d from 'src/components/Twemoji/1f60d'
 import Emoji1f60e from 'src/components/Twemoji/1f60e'
 import Emoji1f60f from 'src/components/Twemoji/1f60f'
-import Emoji1f612 from 'src/components/Twemoji/1f612'
 import Emoji1f621 from 'src/components/Twemoji/1f621'
-import Emoji1f624 from 'src/components/Twemoji/1f624'
 import Emoji1f628 from 'src/components/Twemoji/1f628'
 import Emoji1f62c from 'src/components/Twemoji/1f62c'
 import Emoji1f62d from 'src/components/Twemoji/1f62d'
@@ -77,7 +74,6 @@ import Emoji1f917 from 'src/components/Twemoji/1f917'
 import Emoji1f924 from 'src/components/Twemoji/1f924'
 import Emoji1f928 from 'src/components/Twemoji/1f928'
 import Emoji1f929 from 'src/components/Twemoji/1f929'
-import Emoji1f92a from 'src/components/Twemoji/1f92a'
 import Emoji1f92b from 'src/components/Twemoji/1f92b'
 import Emoji1f92f from 'src/components/Twemoji/1f92f'
 import Emoji1f947 from 'src/components/Twemoji/1f947'
@@ -102,10 +98,8 @@ import Emoji23e9 from 'src/components/Twemoji/23e9'
 import Emoji23ec from 'src/components/Twemoji/23ec'
 import Emoji23f8 from 'src/components/Twemoji/23f8'
 import Emoji25b6 from 'src/components/Twemoji/25b6'
-import Emoji267e from 'src/components/Twemoji/267e'
 import Emoji26a0 from 'src/components/Twemoji/26a0'
 import Emoji2705 from 'src/components/Twemoji/2705'
-import Emoji270b from 'src/components/Twemoji/270b'
 import Emoji2716 from 'src/components/Twemoji/2716'
 import Emoji2728 from 'src/components/Twemoji/2728'
 import Emoji274c from 'src/components/Twemoji/274c'
@@ -115,7 +109,6 @@ import Emoji2795 from 'src/components/Twemoji/2795'
 import Emoji2796 from 'src/components/Twemoji/2796'
 import Emoji2797 from 'src/components/Twemoji/2797'
 import Emoji27a1 from 'src/components/Twemoji/27a1'
-import Emoji2aZZ20e3 from 'src/components/Twemoji/2a-20e3'
 import Emoji2b05 from 'src/components/Twemoji/2b05'
 import Emoji2b07 from 'src/components/Twemoji/2b07'
 import Emoji2b55 from 'src/components/Twemoji/2b55'
@@ -126,6 +119,7 @@ import Emoji33ZZ20e3 from 'src/components/Twemoji/33-20e3'
 import Emoji34ZZ20e3 from 'src/components/Twemoji/34-20e3'
 import Emoji35ZZ20e3 from 'src/components/Twemoji/35-20e3'
 import Emoji36ZZ20e3 from 'src/components/Twemoji/36-20e3'
+import Emoji38ZZ20e3 from 'src/components/Twemoji/38-20e3'
 
 export interface BundleTypes {
   '1f170': React.ComponentType<{}>
@@ -176,7 +170,6 @@ export interface BundleTypes {
   '1f4f1': React.ComponentType<{}>
   '1f4f7': React.ComponentType<{}>
   '1f50e': React.ComponentType<{}>
-  '1f51f': React.ComponentType<{}>
   '1f522': React.ComponentType<{}>
   '1f53d': React.ComponentType<{}>
   '1f5fa': React.ComponentType<{}>
@@ -187,9 +180,7 @@ export interface BundleTypes {
   '1f60d': React.ComponentType<{}>
   '1f60e': React.ComponentType<{}>
   '1f60f': React.ComponentType<{}>
-  '1f612': React.ComponentType<{}>
   '1f621': React.ComponentType<{}>
-  '1f624': React.ComponentType<{}>
   '1f628': React.ComponentType<{}>
   '1f62c': React.ComponentType<{}>
   '1f62d': React.ComponentType<{}>
@@ -205,7 +196,6 @@ export interface BundleTypes {
   '1f924': React.ComponentType<{}>
   '1f928': React.ComponentType<{}>
   '1f929': React.ComponentType<{}>
-  '1f92a': React.ComponentType<{}>
   '1f92b': React.ComponentType<{}>
   '1f92f': React.ComponentType<{}>
   '1f947': React.ComponentType<{}>
@@ -230,10 +220,8 @@ export interface BundleTypes {
   '23ec': React.ComponentType<{}>
   '23f8': React.ComponentType<{}>
   '25b6': React.ComponentType<{}>
-  '267e': React.ComponentType<{}>
   '26a0': React.ComponentType<{}>
   '2705': React.ComponentType<{}>
-  '270b': React.ComponentType<{}>
   '2716': React.ComponentType<{}>
   '2728': React.ComponentType<{}>
   '274c': React.ComponentType<{}>
@@ -243,7 +231,6 @@ export interface BundleTypes {
   '2796': React.ComponentType<{}>
   '2797': React.ComponentType<{}>
   '27a1': React.ComponentType<{}>
-  '2a-20e3': React.ComponentType<{}>
   '2b05': React.ComponentType<{}>
   '2b07': React.ComponentType<{}>
   '2b55': React.ComponentType<{}>
@@ -254,6 +241,7 @@ export interface BundleTypes {
   '34-20e3': React.ComponentType<{}>
   '35-20e3': React.ComponentType<{}>
   '36-20e3': React.ComponentType<{}>
+  '38-20e3': React.ComponentType<{}>
 }
 
 const bundle: BundleTypes = {
@@ -305,7 +293,6 @@ const bundle: BundleTypes = {
   '1f4f1': Emoji1f4f1,
   '1f4f7': Emoji1f4f7,
   '1f50e': Emoji1f50e,
-  '1f51f': Emoji1f51f,
   '1f522': Emoji1f522,
   '1f53d': Emoji1f53d,
   '1f5fa': Emoji1f5fa,
@@ -316,9 +303,7 @@ const bundle: BundleTypes = {
   '1f60d': Emoji1f60d,
   '1f60e': Emoji1f60e,
   '1f60f': Emoji1f60f,
-  '1f612': Emoji1f612,
   '1f621': Emoji1f621,
-  '1f624': Emoji1f624,
   '1f628': Emoji1f628,
   '1f62c': Emoji1f62c,
   '1f62d': Emoji1f62d,
@@ -334,7 +319,6 @@ const bundle: BundleTypes = {
   '1f924': Emoji1f924,
   '1f928': Emoji1f928,
   '1f929': Emoji1f929,
-  '1f92a': Emoji1f92a,
   '1f92b': Emoji1f92b,
   '1f92f': Emoji1f92f,
   '1f947': Emoji1f947,
@@ -359,10 +343,8 @@ const bundle: BundleTypes = {
   '23ec': Emoji23ec,
   '23f8': Emoji23f8,
   '25b6': Emoji25b6,
-  '267e': Emoji267e,
   '26a0': Emoji26a0,
   '2705': Emoji2705,
-  '270b': Emoji270b,
   '2716': Emoji2716,
   '2728': Emoji2728,
   '274c': Emoji274c,
@@ -372,7 +354,6 @@ const bundle: BundleTypes = {
   '2796': Emoji2796,
   '2797': Emoji2797,
   '27a1': Emoji27a1,
-  '2a-20e3': Emoji2aZZ20e3,
   '2b05': Emoji2b05,
   '2b07': Emoji2b07,
   '2b55': Emoji2b55,
@@ -382,7 +363,8 @@ const bundle: BundleTypes = {
   '33-20e3': Emoji33ZZ20e3,
   '34-20e3': Emoji34ZZ20e3,
   '35-20e3': Emoji35ZZ20e3,
-  '36-20e3': Emoji36ZZ20e3
+  '36-20e3': Emoji36ZZ20e3,
+  '38-20e3': Emoji38ZZ20e3
 }
 
 export default bundle

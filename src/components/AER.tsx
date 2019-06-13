@@ -2378,5 +2378,20 @@ export default {
       containerSize="xs"
       variableSize="xs"
     />
+  ),
+  szou: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E12}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      caption={<H args={{ name: 'changedToPowerCaption' }} />}
+    />
+  ),
+  ysji: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E12}
+      isDone
+    />
   )
 }

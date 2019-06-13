@@ -37,6 +37,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId } from 'src/lib/twitter'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -145,6 +146,7 @@ export interface HProps {
     | { name: 'inlineFactorial'; start: 3 | 4 | 5 }
     | { name: 'factorialDefinition' }
     | { name: 'factorialComputation'; start: 3 | 4 | 5 }
+    | { name: 'changedToPowerCaption' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1633,6 +1635,25 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </Strong>
         )
       }
+    }
+  }
+  if (args.name === 'changedToPowerCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          上の
+          <EmojiNumber number={2} />
+          は以前は
+          <EmojiWithText letter={magicalVariableName} />
+          、下の
+          <EmojiNumber number={2} />
+          は以前は
+          <EmojiNumber number={1} />
+          でした。
+        </>
+      )
     }
   }
   throw new Error()

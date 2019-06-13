@@ -1,19 +1,21 @@
 const twemoji = require('twemoji')
 const uniq = require('lodash/uniq')
 const letterEmojis = Object.values(
-  require('../src/lib/letterEmojiMapping.json')
+  require('../src/lib/letterEmojiMappingJson.json')
+)
+const numberEmojis = Object.values(
+  require('../src/lib/numberEmojiMappingJson.json')
 )
 
 // NOTE: Disabling svgo because it's causing
 // some emojis like 😍 to be rendered incorrectly.
 const allUsedEmojis = uniq([
   ...letterEmojis,
+  ...numberEmojis,
   '🤔',
   '🙂',
   '🍱',
   '❓',
-  '1️⃣',
-  '2️⃣',
   '😉',
   '👍',
   '🏁',
@@ -61,16 +63,13 @@ const allUsedEmojis = uniq([
   '💥',
   '↘',
   '⏩',
-  '3️⃣',
   '🤤',
   '🙄',
   '😬',
   '🎉',
   '😋',
-  '4️⃣',
   '🆕',
   '⁉',
-  '0️⃣',
   '🤨',
   '😵',
   '🧓🏻',
@@ -83,13 +82,6 @@ const allUsedEmojis = uniq([
   '🎶',
   '✨',
   '️️⚠️️',
-  '️😤',
-  '*️⃣',
-  '🤪',
-  '♾',
-  '😒',
-  '✋',
-  '🔟',
   '🥳',
   '🔎',
   '🗺',
@@ -98,12 +90,10 @@ const allUsedEmojis = uniq([
   '↕️',
   '🚦',
   '↔️',
-  '5️⃣',
   '🥴',
   '🤩',
   '⏬',
   '😨',
-  '6️⃣',
   '🆓',
   '🚅',
   '😡'

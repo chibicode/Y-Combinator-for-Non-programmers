@@ -9,6 +9,7 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -457,6 +458,49 @@ export default () => (
               <Strong>さらに違う計算もできる</Strong>とはどういうことか、
               <H args={{ name: 'yesNoQuiz' }} />
               で見てみましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />
+              。前回の弁当箱に<Strong>二箇所</Strong>変更を加えました。
+              前回と比べて、
+              <Strong>
+                黄色の部分が両方とも
+                <EmojiNumber number={2} />
+                になっています。
+              </Strong>
+            </P>
+            {AER.szou}
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            {AER.ysji}
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
+              <H args={{ name: 'pressFastForward', skippingSteps: true }} />
             </P>
           </>
         )
