@@ -640,7 +640,7 @@ export default () => (
             <P>
               <InlineHeader>結論:</InlineHeader>{' '}
               <Strong>
-                弁当箱は、もともと備わっている機能を工夫して使えば、繰り返し処理を行うことができるのです。
+                弁当箱は、工夫をすることで、繰り返し処理を行うことができるのです。
               </Strong>
             </P>
             <EmojiSeparator emojis={['🔁', '🍱', '🔁']} />
