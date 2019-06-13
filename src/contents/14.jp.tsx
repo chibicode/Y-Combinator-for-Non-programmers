@@ -84,9 +84,7 @@ export default () => (
             />
             <P>
               このように、
-              <Strong>
-                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-              </Strong>
+              <H args={{ name: 'factorialDefinition' }} />
               という計算を、数学用語で「<Strong>階乗</Strong>
               」と呼びます。(豆知識なので、覚えなくても大丈夫です。)
             </P>
@@ -471,9 +469,7 @@ export default () => (
             {AER.wqdb}
             <P>
               最終的に、
-              <Strong>
-                3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
-              </Strong>
+              <H args={{ name: 'factorialComputation', start: 3 }} />
               になります。
             </P>
             {AER.xtjt}
@@ -540,9 +536,7 @@ export default () => (
             {AER.nfkp}
             <P>
               というわけで、最終的に
-              <Strong>
-                4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
-              </Strong>
+              <H args={{ name: 'factorialComputation', start: 4 }} />
               になります。
             </P>
           </>
@@ -567,9 +561,7 @@ export default () => (
             {AER.osqg}
             <P>
               そして、最終的に
-              <Strong>
-                5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
-              </Strong>
+              <H args={{ name: 'factorialComputation', start: 5 }} />
               になります。
             </P>
             <P>それでは、まとめに入りましょう！</P>
@@ -592,11 +584,9 @@ export default () => (
                 弁当箱の
                 <H args={{ name: 'witch' }} />
               </Strong>
-              」を使うと、「
-              <Strong>
-                ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-              </Strong>
-              」という計算を行うことができます。
+              」を使うと、
+              <H args={{ name: 'factorialDefinition' }} />
+              という計算を行うことができます。
             </P>
             {AER.vrwt}
             <ExpressionRunnerSeparator />

@@ -274,9 +274,7 @@ export default () => (
             </P>
             <P>
               というわけで、最終結果は
-              <Strong>
-                3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
-              </Strong>
+              <H args={{ name: 'factorialComputation', start: 3 }} />
               になります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
@@ -364,9 +362,7 @@ export default () => (
               結果、
               <H args={{ name: 'inlineFactorial', start: 4 }} />
               の弁当箱になりました！というわけで、最終的に
-              <Strong>
-                4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
-              </Strong>
+              <H args={{ name: 'factorialComputation', start: 4 }} />
               になります。
             </P>
             {AER.uitu}
@@ -382,9 +378,7 @@ export default () => (
               結果、
               <H args={{ name: 'inlineFactorial', start: 5 }} />
               の弁当箱になりました！というわけで、最終的に
-              <Strong>
-                5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
-              </Strong>
+              <H args={{ name: 'factorialComputation', start: 5 }} />
               になります。
             </P>
             {AER.wxqy}
@@ -420,6 +414,11 @@ export default () => (
             {AER.wcwd}
             <P>途中で以下のような形になります。</P>
             {AER.fapu}
+            <P>
+              つまり、
+              <H args={{ name: 'factorialDefinition' }} />
+              という計算を行うことができるのです。
+            </P>
           </>
         )
       }

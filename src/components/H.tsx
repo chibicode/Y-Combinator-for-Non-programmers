@@ -143,6 +143,8 @@ export interface HProps {
     | { name: 'itWillTakeTime' }
     | { name: 'skippingSteps' }
     | { name: 'inlineFactorial'; start: 3 | 4 | 5 }
+    | { name: 'factorialDefinition' }
+    | { name: 'factorialComputation'; start: 3 | 4 | 5 }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1342,7 +1344,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <>
             <P>
               <InlineHeader>お願い:</InlineHeader>「{quitReason}
-              」とお考えの方にお願いがあります。(この文言は全ページに載せています。)
+              」とお考えの方にお願いがあります。
             </P>
             <P>
               差し支えなければ、このページを閉じる前に
@@ -1363,6 +1365,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               図々しいお願いで恐縮です。
             </P>
             <TwitterEmbed id={shareId} />
+            {episodeNumber > 0 && (
+              <P>
+                ちなみに、この文言を全ページに載せているのは、ひと休みされるタイミングは読者によってさまざまだからです。
+                <Em>何度もツイートしていただきたいからではありません。</Em>
+              </P>
+            )}
             <P>
               また、当記事の内容について質問がございましたら、
               <Em>
@@ -1586,6 +1594,46 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <Emoji>✖️</Emoji> <EmojiNumber number={1} />
       </>
     )
+  }
+  if (args.name === 'factorialDefinition') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          「
+          <Strong>
+            ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
+          </Strong>
+          」
+        </>
+      )
+    }
+  }
+  if (args.name === 'factorialComputation') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      if (args.start === 5) {
+        return (
+          <Strong>
+            5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
+          </Strong>
+        )
+      } else if (args.start === 4) {
+        return (
+          <Strong>
+            4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
+          </Strong>
+        )
+      } else {
+        return (
+          <Strong>
+            3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
+          </Strong>
+        )
+      }
+    }
   }
   throw new Error()
 }
