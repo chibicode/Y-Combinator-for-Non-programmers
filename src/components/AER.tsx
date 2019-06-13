@@ -2096,7 +2096,7 @@ export default {
   fapu: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E5}
-      variableSize="md"
+      variableSize="sm"
     />
   ),
   xsve: (
