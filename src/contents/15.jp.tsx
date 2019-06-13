@@ -364,6 +364,14 @@ export default () => (
               <H args={{ name: 'pressFastForward', skippingSteps: true }} />
             </P>
             {AER.jreq}
+            <P>
+              結果、
+              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} />
+              の弁当箱になりました！
+            </P>
           </>
         )
       }

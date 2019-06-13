@@ -7,7 +7,8 @@ import {
   ExternalLink,
   P,
   Strong,
-  InlineHeader
+  InlineHeader,
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -143,7 +144,7 @@ export default () => (
               <Em>{lessonTitle}</Em>」ですが、
               <Strong>
                 <H args={{ name: 'computerScience' }} />
-                とは、一言で言えば「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」だ。
+                とは、一言でまとめると「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」だ。
               </Strong>
               <H args={{ name: 'yesOrNo' }} />
             </P>
@@ -164,7 +165,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <Em>
                 <H args={{ name: 'computerScience' }} />
-                とは、一言で言えば「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
+                とは、一言でまとめると「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
               </Em>
               ちなみに、ここで言う
               <Em>ソフトウェア</Em>
@@ -345,7 +346,7 @@ export default () => (
         )
       },
       {
-        title: <>スマホで完結、難しい数式もない</>,
+        title: <>スマホでOK、難しい数式もない</>,
         content: (
           <>
             <P>
@@ -364,7 +365,7 @@ export default () => (
         )
       },
       {
-        title: <>無料なので…</>,
+        title: <>無料なので、あしからず</>,
         content: (
           <>
             <P>
@@ -382,14 +383,25 @@ export default () => (
               <Em>
                 最後まで読み終えてもプログラミングのスキルは上達しませんし、当記事の内容が仕事やキャリアに役立つことはないでしょう。
               </Em>
-              どちらかというと、<Em>別に知らなくても構わない</Em>内容です。
+              どちらかというと、<Em>別に知らなくても構わない</Em>
+              内容です。
             </P>
+            <P>
+              だから、
+              <Strong>
+                「わたしは実用的な記事だけ読みたいんだ <Emoji>😡</Emoji>
+                」という方は、今すぐこのページを閉じてくださると嬉しいです。
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['❌', '😡', '❌']} />
             <P>
               一方で、当記事を読めば、「
               <Em>コンピュータサイエンスって面白そう</Em>」「
               <Em>もっと学んでみたい</Em>
               」といった<Strong>きっかけ</Strong>
-              が得られるかもしれません。そうなればいいなと思っています。
+              が得られるかもしれません。そうなればいいなと思っていますが、「
+              <Em>つまらん</Em>」「
+              <Em>逆に興味が無くなった</Em>」と思われる方もいるでしょう。
             </P>
             <P>あまり期待しすぎず、最後までお楽しみいただけると嬉しいです。</P>
           </>

@@ -1368,9 +1368,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                     <H args={{ name: 'titlePrefixColored' }} />
                     までは読み終えた
                   </Strong>
-                  」と引用リツイートしてくださると、さらに嬉しいです。
+                  」と引用リツイートしてくださると、さらに励みになります。
                 </>
               )}
+              図々しいお願いで恐縮です。
             </P>
             <TwitterEmbed id={shareId} />
             <P>
@@ -1397,11 +1398,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       if (episodeNumber === 0) {
-        return (
-          <>
-            <Emoji>🥺</Emoji>「あとで読む」前に <Emoji>🥺</Emoji>
-          </>
-        )
+        return <>「あとで読む」前に</>
       } else if (episodeNumber <= numEpisodesExceptFirstAndLast) {
         return (
           <>
