@@ -350,6 +350,13 @@ export default () => (
               </Strong>
             </P>
             {AER.dkbt}
+          </>
+        )
+      },
+      {
+        title: <>結果は…</>,
+        content: (
+          <>
             <P>
               まず、
               <InlineEmojiBoxesForQuestion />に<EmojiNumber number={4} />
