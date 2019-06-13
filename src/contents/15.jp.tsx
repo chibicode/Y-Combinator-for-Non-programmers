@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
@@ -269,9 +269,7 @@ export default () => (
             {AER.mdsc}
             <P>
               なんと、
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} />
+              <H args={{ name: 'inlineFactorial', start: 3 }} />
               の計算を行う弁当箱になりました！
             </P>
             <P>
@@ -295,9 +293,7 @@ export default () => (
               <Strong>
                 <H args={{ name: 'witch' }} />
                 を一切使わずに、
-                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                <EmojiNumber number={1} />
+                <H args={{ name: 'inlineFactorial', start: 3 }} />
                 の計算ができてしまった
               </Strong>
               、ということになります！
@@ -360,17 +356,49 @@ export default () => (
             <P>
               まず、
               <InlineEmojiBoxesForQuestion />に<EmojiNumber number={4} />
-              を入れてみました。
+              を入れてみました(<Em>黄色の部分</Em>)。
               <H args={{ name: 'pressFastForward', skippingSteps: true }} />
             </P>
             {AER.jreq}
             <P>
               結果、
-              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} />
-              の弁当箱になりました！
+              <H args={{ name: 'inlineFactorial', start: 4 }} />
+              の弁当箱になりました！というわけで、最終的に
+              <Strong>
+                4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
+              </Strong>
+              になります。
+            </P>
+            {AER.uitu}
+            <Hr />
+            <P>
+              次は、
+              <InlineEmojiBoxesForQuestion />に<EmojiNumber number={5} />
+              を入れてみましょう(<Em>黄色の部分</Em>)。
+              <H args={{ name: 'pressFastForward', skippingSteps: true }} />
+            </P>
+            {AER.bozr}
+            <P>
+              結果、
+              <H args={{ name: 'inlineFactorial', start: 5 }} />
+              の弁当箱になりました！というわけで、最終的に
+              <Strong>
+                5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
+              </Strong>
+              になります。
+            </P>
+            {AER.wxqy}
+            <P>
+              つまり、
+              <Strong>
+                <EmojiNumber number={4} />
+                からはじめても
+                <EmojiNumber number={5} />
+                からはじめても、
+                <H args={{ name: 'witch' }} />
+                を使った場合と同じ結果になる
+              </Strong>
+              のです！
             </P>
           </>
         )

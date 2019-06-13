@@ -142,6 +142,7 @@ export interface HProps {
     | { name: 'abbreviated' }
     | { name: 'itWillTakeTime' }
     | { name: 'skippingSteps' }
+    | { name: 'inlineFactorial'; start: 3 | 4 | 5 }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1319,19 +1320,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <InlineEmojiBoxesForQuestion />
           に何を入れたら、
           <br />
-          {args.start === 5 && (
-            <>
-              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
-            </>
-          )}
-          {args.start >= 4 && (
-            <>
-              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-            </>
-          )}
-          <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-          <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-          <EmojiNumber number={1} />
+          <H args={{ name: 'inlineFactorial', start: args.start }} />
           が計算できる？
         </>
       )
@@ -1376,7 +1365,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <TwitterEmbed id={shareId} />
             <P>
               また、当記事の内容について質問がございましたら、
-              <Em>上のツイートにスクリーンショット付きで返信</Em>
+              <Em>
+                上のツイートに<Strong>スクリーンショット付き</Strong>で返信
+              </Em>
               してくだされば最優先で対応します。メール(
               <ExternalLink href="mailto:shu@chibicode.com">
                 shu@chibicode.com
@@ -1577,6 +1568,24 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         </>
       )
     }
+  }
+  if (args.name === 'inlineFactorial') {
+    return (
+      <>
+        {args.start === 5 && (
+          <>
+            <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
+          </>
+        )}
+        {args.start >= 4 && (
+          <>
+            <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+          </>
+        )}
+        <EmojiNumber number={3} /> <Emoji>✖️</Emoji> <EmojiNumber number={2} />{' '}
+        <Emoji>✖️</Emoji> <EmojiNumber number={1} />
+      </>
+    )
   }
   throw new Error()
 }

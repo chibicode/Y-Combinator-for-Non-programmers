@@ -437,9 +437,8 @@ export default () => (
             </P>
             {AER.orhx}
             <P>
-              つまり、これで <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} /> の計算ができたわけです！
+              つまり、これで <H args={{ name: 'inlineFactorial', start: 3 }} />
+              の計算ができたわけです！
             </P>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
           </>
@@ -465,9 +464,9 @@ export default () => (
             </P>
             {AER.zxux}
             <P>
-              途中で、下から上に <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} /> という順番になり、
+              途中で、下から上に{' '}
+              <H args={{ name: 'inlineFactorial', start: 3 }} />{' '}
+              という順番になり、
             </P>
             {AER.wqdb}
             <P>
@@ -531,10 +530,7 @@ export default () => (
             {AER.peoq}
             <P>
               というわけで、途中で下から上に
-              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} />
+              <H args={{ name: 'inlineFactorial', start: 4 }} />
               という順番になります。
             </P>
             <P>
@@ -565,11 +561,7 @@ export default () => (
               時間の都合上省略しますが、
               <EmojiNumber number={5} />
               からはじめる場合も、途中で下から
-              <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} />
+              <H args={{ name: 'inlineFactorial', start: 5 }} />
               という順番になります。
             </P>
             {AER.osqg}
@@ -682,9 +674,7 @@ export default () => (
                 もし仮に
                 <H args={{ name: 'witch' }} />
                 の機能を使うことができたら、
-                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                <EmojiNumber number={1} />{' '}
+                <H args={{ name: 'inlineFactorial', start: 3 }} />
                 といった計算をカンタンに行うことができる
               </Em>
               」から、この
@@ -703,9 +693,7 @@ export default () => (
                 では、
                 <H args={{ name: 'witch' }} />
                 を使わずに、従来の弁当箱の機能だけを使って
-                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                <EmojiNumber number={1} />{' '}
+                <H args={{ name: 'inlineFactorial', start: 3 }} />
                 といった計算を行うには、どうすればいいのでしょうか？
               </Strong>
             </P>

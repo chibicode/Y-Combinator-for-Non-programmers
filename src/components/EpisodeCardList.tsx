@@ -59,7 +59,7 @@ const EpisodeCardList = ({
             cards.length - 1 === lastVisibleCardIndex && (
               <div
                 css={css`
-                  margin: ${spaces(5)} 0 0;
+                  padding: ${spaces(8)} 0 ${spaces(1)};
                 `}
               >
                 <CardWrapper

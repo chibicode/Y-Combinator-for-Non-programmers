@@ -2327,5 +2327,40 @@ export default {
       lastAllowedExpressionStateAfterIterations={20}
       superFastForward
     />
+  ),
+  uitu: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E8}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      isDone
+      nextIterations={21}
+      finalFastForward
+    />
+  ),
+  bozr: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E9}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      lastAllowedExpressionState="default"
+      skipToTheEnd={false}
+      speed={5}
+      lastAllowedExpressionStateAfterIterations={25}
+      superFastForward
+    />
+  ),
+  wxqy: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E9}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      isDone
+      nextIterations={26}
+      finalFastForward
+    />
   )
 }

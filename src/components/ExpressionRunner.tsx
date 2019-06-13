@@ -385,15 +385,6 @@ const ExpressionRunner = ({
                   }}
                 />
               </ExpressionRunnerCaptionWrapper>
-              {superFastForward && (
-                <ExpressionRunnerCaptionWrapper
-                  css={css`
-                    margin-top: ${spaces('-0.25')};
-                  `}
-                >
-                  <H args={{ name: 'skippingSteps' }} />
-                </ExpressionRunnerCaptionWrapper>
-              )}
             </>
           )}
           {!hideControls &&
