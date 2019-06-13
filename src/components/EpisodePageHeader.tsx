@@ -30,7 +30,7 @@ const EpisodePageHeader = ({
             `
           : css`
               margin: 0 0 ${spaces(2)};
-              background: ${colors('indigo50')};
+              background: ${colors('grey150')};
             `
       }
     >
