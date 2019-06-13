@@ -2,7 +2,7 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import React, { Fragment } from 'react'
 import Emoji from 'src/components/Emoji'
-import { colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
+import { radii, colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
 import { VariableNames } from 'src/types/VariableNames'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
@@ -15,6 +15,7 @@ interface EmojiSeparatorProps {
   Component: React.ComponentType | string
   cssOverrides?: SerializedStyles
   description?: React.ReactNode
+  addDotDotDot: boolean
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -39,7 +40,8 @@ const EmojiSeparator = ({
   Component,
   alignCenter,
   cssOverrides,
-  description
+  description,
+  addDotDotDot
 }: EmojiSeparatorProps) => (
   <Component
     css={[
@@ -78,6 +80,21 @@ const EmojiSeparator = ({
               <Emoji size="sm">{emoji}</Emoji>{' '}
             </Fragment>
           ))}
+      {addDotDotDot && (
+        <span
+          css={css`
+            background: ${colors('secretCode')};
+            color: #fff;
+            padding: 0em 0.1em;
+            line-height: 1;
+            border-radius: ${radii(0.25)};
+            font-weight: bold;
+            display: inline-block;
+          `}
+        >
+          &middot;&middot;&middot;
+        </span>
+      )}
       {description && (
         <div
           css={css`
@@ -100,7 +117,8 @@ EmojiSeparator.defaultProps = {
   spacing: 'md',
   Component: 'div',
   alignCenter: true,
-  emojis: []
+  emojis: [],
+  addDotDotDot: false
 }
 
 export default EmojiSeparator

@@ -2393,5 +2393,61 @@ export default {
       expressionContainer={lessonExpressions.e15E12}
       isDone
     />
+  ),
+  ilrn: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E12}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      lastAllowedExpressionState="default"
+      skipToTheEnd={false}
+      speed={5}
+      lastAllowedExpressionStateAfterIterations={15}
+      superFastForward
+    />
+  ),
+  dret: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E12}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={16}
+      finalFastForward
+      isDone
+    />
+  ),
+  bpsz: (
+    <ExpressionRunnerPlayButtonOnly
+      expressionContainer={lessonExpressions.e15E13}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      lastAllowedExpressionState="default"
+      skipToTheEnd={false}
+      speed={5}
+      lastAllowedExpressionStateAfterIterations={20}
+      superFastForward
+    />
+  ),
+  zfcz: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e15E13}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={21}
+      finalFastForward
+      isDone
+    />
+  ),
+  jtai: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E14}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+    />
   )
 }

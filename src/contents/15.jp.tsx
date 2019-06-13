@@ -10,6 +10,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -502,6 +503,93 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward', skippingSteps: true }} />
             </P>
+            {AER.ilrn}
+            <P>
+              つまり、
+              <Strong>
+                <EmojiNumber number={2} />
+                を3回繰り返して掛ける計算
+              </Strong>
+              になりました！(数学用語だと「<Em>2の3乗</Em>
+              」と言いますが、覚えなくても結構です。)
+            </P>
+            <EmojiSeparator size="sm" emojis={['2️⃣', '✖️', '2️⃣', '✖️', '2️⃣']} />
+            <P>
+              というわけで、最終的に
+              <H args={{ name: 'powerComputation', power: 3 }} />
+              になります。
+            </P>
+            {AER.dret}
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={4} />
+            を入れた場合
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、一番上に
+              <EmojiNumber number={4} />
+              を入れた場合はどうなるでしょう？(<Em>黄色の部分</Em>)
+            </P>
+            <P>
+              <H args={{ name: 'pressFastForward', skippingSteps: true }} />
+            </P>
+            {AER.bpsz}
+            <P>
+              つまり、
+              <Strong>
+                <EmojiNumber number={2} />
+                を4回繰り返して掛ける計算
+              </Strong>
+              になりました！
+            </P>
+            <EmojiSeparator
+              size="sm"
+              emojis={['2️⃣', '✖️', '2️⃣', '✖️', '2️⃣', '✖️', '2️⃣']}
+            />
+            <P>
+              というわけで、最終的に
+              <H args={{ name: 'powerComputation', power: 4 }} />
+              になります。
+            </P>
+            {AER.zfcz}
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>ということは…</>,
+        content: (
+          <>
+            <P>
+              この弁当箱は、
+              <Strong>
+                上に入っている暗号の回数分、
+                <EmojiNumber number={2} />
+                を繰り返して掛ける
+              </Strong>
+              弁当箱ということになります。
+            </P>
+            {AER.jtai}
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="sm"
+              addDotDotDot
+              emojis={['2️⃣', '✖️', '2️⃣', '✖️', '2️⃣', '✖️']}
+              description={
+                <>
+                  暗号の回数分、
+                  <EmojiNumber number={2} />
+                  を繰り返して掛ける
+                </>
+              }
+            />
           </>
         )
       }

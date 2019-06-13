@@ -840,7 +840,9 @@ export const e15E11 = initializeExpressionContainer([
   }
 ])
 
-const updatedMagicalParamsForPower: FunctionExpressionParams = {
+const updatedMagicalParamsForPower = (
+  initialHighlight?: boolean
+): FunctionExpressionParams => ({
   arg: magicalVariableName,
   body: {
     checkType: 'isZero',
@@ -850,12 +852,12 @@ const updatedMagicalParamsForPower: FunctionExpressionParams = {
     },
     trueCase: {
       shorthandNumber: 2,
-      initialHighlight: true
+      initialHighlight
     },
     falseCase: [
       {
         shorthandNumber: 2,
-        initialHighlight: true
+        initialHighlight
       },
       [
         {
@@ -871,17 +873,45 @@ const updatedMagicalParamsForPower: FunctionExpressionParams = {
       ]
     ]
   }
-}
+})
 
 export const e15E12 = initializeExpressionContainer([
   [
     yCombinator,
     {
       arg: 's',
-      body: updatedMagicalParamsForPower
+      body: updatedMagicalParamsForPower(true)
     }
   ],
   {
     shorthandNumber: 3
+  }
+])
+
+export const e15E13 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParamsForPower(false)
+    }
+  ],
+  {
+    shorthandNumber: 4,
+    initialHighlight: true
+  }
+])
+
+export const e15E14 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParamsForPower(true)
+    }
+  ],
+  {
+    name: 'someNumber',
+    highlighted: true
   }
 ])

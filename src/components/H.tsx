@@ -147,6 +147,7 @@ export interface HProps {
     | { name: 'factorialDefinition' }
     | { name: 'factorialComputation'; start: 3 | 4 | 5 }
     | { name: 'changedToPowerCaption' }
+    | { name: 'powerComputation'; power: 3 | 4 }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1613,28 +1614,24 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     }
   }
   if (args.name === 'factorialComputation') {
-    if (locale === 'en') {
-      return <>?</>
+    if (args.start === 5) {
+      return (
+        <Strong>
+          5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
+        </Strong>
+      )
+    } else if (args.start === 4) {
+      return (
+        <Strong>
+          4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
+        </Strong>
+      )
     } else {
-      if (args.start === 5) {
-        return (
-          <Strong>
-            5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
-          </Strong>
-        )
-      } else if (args.start === 4) {
-        return (
-          <Strong>
-            4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
-          </Strong>
-        )
-      } else {
-        return (
-          <Strong>
-            3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
-          </Strong>
-        )
-      }
+      return (
+        <Strong>
+          3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
+        </Strong>
+      )
     }
   }
   if (args.name === 'changedToPowerCaption') {
@@ -1653,6 +1650,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <EmojiNumber number={1} />
           でした。
         </>
+      )
+    }
+  }
+  if (args.name === 'powerComputation') {
+    if (args.power === 4) {
+      return (
+        <Strong>
+          2 ✕ 2 ✕ 2 ✕ 2 = <EmojiNumber number={16} />
+        </Strong>
+      )
+    } else {
+      return (
+        <Strong>
+          2 ✕ 2 ✕ 2 = <EmojiNumber number={8} />
+        </Strong>
       )
     }
   }
