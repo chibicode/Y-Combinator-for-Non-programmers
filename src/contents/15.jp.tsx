@@ -726,27 +726,37 @@ export default () => (
                 <EmojiForLetter letter="b" />
               ]}
             />
-            <P>
-              もちろん、
-              <EmojiWithText letter="a" />や<EmojiWithText letter="b" />
-              を使う必要はありません。他の料理を使っても、同じパターンであれば
-              <Strong>
-                <H args={{ name: 'yCombinator' }} />
-              </Strong>
-              になります。
-            </P>
-            <P>
-              たとえば、
-              <EmojiWithText letter="c" />や<EmojiWithText letter="d" />
-              を使ってみました。こちらも
-              <Strong>
-                <H args={{ name: 'yCombinator' }} />
-              </Strong>
-              です。もちろん、同じように機能します。
-            </P>
-            {AER.xrzv}
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <EmojiWithText letter="a" />や<EmojiWithText letter="b" />
+                を使う必要はありません。他の料理を使っても、同じパターンであれば
+                <Strong>
+                  <H args={{ name: 'yCombinator' }} />
+                </Strong>
+                になります。
+              </P>
+              <P>
+                たとえば、
+                <EmojiWithText letter="c" />や<EmojiWithText letter="d" />
+                を使ってみました。こちらも
+                <Strong>
+                  <H args={{ name: 'yCombinator' }} />
+                </Strong>
+                です。もちろん、同じように機能します。
+              </P>
+              {AER.xrzv}
+            </>
+          )
+        }
+      },
+      {
+        title: <>最後に: 省略表記を一切使わない</>,
+        content: <></>
       }
     ]}
   />
