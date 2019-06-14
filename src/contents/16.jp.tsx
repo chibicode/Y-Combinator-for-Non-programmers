@@ -5,7 +5,10 @@ import {
   Strong,
   ExternalLink,
   Blockquote,
-  Img
+  Img,
+  Ol,
+  OlLi,
+  InlineHeader
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -38,12 +41,18 @@ export default () => (
         )
       },
       {
-        title: <>コンピュータサイエンス</>,
+        title: (
+          <>
+            <H args={{ name: 'computerScience' }} />
+          </>
+        ),
         content: (
           <>
             <P>
               当記事の題名に入っている「
-              <Strong>コンピュータサイエンス</Strong>
+              <Strong>
+                <H args={{ name: 'computerScience' }} />
+              </Strong>
               」という学問について、冒頭で以下のように説明しました:
             </P>
             <Blockquote>
@@ -56,14 +65,31 @@ export default () => (
             <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
             <P>今回は、この説明の続きをしていきます！</P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader> これからコンピュータや
+                <H args={{ name: 'computerScience' }} />
+                の歴史について手短に語りますが、
+                <Em>
+                  わかりやすさや簡潔さを優先するために、正確性をあえて犠牲にしたり、さまざまな出来事を省いたりしています
+                </Em>
+                。コンピュータ史に詳しい方には怒る人が出てくるかもしれませんが、ご了承ください。
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>計算機科学</>,
         content: (
           <>
             <P>
-              実はコンピュータサイエンスには「
+              実は
+              <H args={{ name: 'computerScience' }} />
+              には「
               <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6">
                 <Strong>計算機科学</Strong>
               </ExternalLink>
@@ -78,8 +104,10 @@ export default () => (
             <EmojiSeparator emojis={['🔢', '🔢', '🔢']} />
             <P>
               <Em>計算機は時代とともに進化してきました。</Em>
-              昔の日本では、中国から伝わったそろばん <Emoji>🧮</Emoji>{' '}
-              が使われていましたね。
+              たとえば昔の日本では、中国から伝わったそろばん <Emoji>
+                🧮
+              </Emoji>{' '}
+              が計算機の主役でした。
             </P>
             <P>
               アメリカでは、1890年の国勢調査において、
@@ -123,10 +151,70 @@ export default () => (
                 計算機の作り方や使い方をどう工夫すれば、より効率的に問題を解けるのか
               </Em>
               」「<Em>そもそも、計算機にできない計算はあるのか</Em>
-              」ということを考える必要があったのです。こうして、コンピュータサイエンス
-              = 計算機科学が注目を浴びるようになりました。
+              」ということを考える必要があったのです。こうして、
+              <H args={{ name: 'computerScience' }} /> =
+              計算機科学が注目を浴びるようになりました。
             </P>
             <EmojiSeparator emojis={['🧮', '🤔', '🧮']} />
+          </>
+        )
+      },
+      {
+        title: <>空想上の計算機</>,
+        content: (
+          <>
+            <P>
+              1930年代に
+              <H args={{ name: 'computerScience' }} />
+              が発達しはじめたころ、<Strong>空想上の計算機</Strong>
+              について考える研究者が出てきました。
+              <Em>
+                空想上の計算機とはその名の通り、物理的には存在しない(または作ることができない)計算機のことです。
+              </Em>
+            </P>
+            <EmojiSeparator emojis={['🤔', '💭', '❓']} />
+            <P>
+              空想上の計算機について考える研究者は、1930年代に次のような問題に取り組んでいました。(大幅に単純化しています)
+            </P>
+            <Ol>
+              <OlLi>
+                <Em>これから、計算機はどんどん進化していくだろう。</Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  しかし、計算機がどれほど進化しようと、「
+                  <Strong>計算機で行える計算の限界</Strong>
+                  」がいつかはくるはずだ。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  では、「計算機で行える計算の限界」とは、どんな計算なんだろう？
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  それを知るために、まず空想上でいいから、「
+                  <Strong>最強の計算機</Strong>
+                  」を考案してみよう。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Strong>
+                  その「空想上の最強の計算機」が行うことができる計算が、「計算機で行える計算の限界」というわけだ。
+                </Strong>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  そうそう、その「空想上の最強の計算機」は、できるだけシンプルな設計にしたい。そのほうが論じやすいからだ。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  では、その「空想上の最強の計算機」とはどんなものだろう？
+                </Em>
+              </OlLi>
+            </Ol>
           </>
         )
       },
@@ -157,7 +245,8 @@ export default () => (
         content: (
           <>
             <P>
-              コンピュータサイエンスは、「計算機」について考える学問です。そして学問なので、さまざまな
+              <H args={{ name: 'computerScience' }} />
+              は、「計算機」について考える学問です。そして学問なので、さまざまな
               <Strong>問い(命題)</Strong>
               があります。
             </P>
