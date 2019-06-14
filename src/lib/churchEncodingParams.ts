@@ -70,10 +70,10 @@ export const succParams = (
 }
 
 export const addParams = (
-  a: VariableNames,
-  b: VariableNames,
-  c: VariableNames,
-  d: VariableNames
+  a: VariableNames | HighlightedVariableExpressionParams,
+  b: VariableNames | HighlightedVariableExpressionParams,
+  c: VariableNames | HighlightedVariableExpressionParams,
+  d: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -91,12 +91,12 @@ export const addParams = (
 }
 
 export const predParams = (
-  a: VariableNames,
-  b: VariableNames,
-  c: VariableNames,
-  d: VariableNames,
-  e: VariableNames,
-  f: VariableNames
+  a: VariableNames | HighlightedVariableExpressionParams,
+  b: VariableNames | HighlightedVariableExpressionParams,
+  c: VariableNames | HighlightedVariableExpressionParams,
+  d: VariableNames | HighlightedVariableExpressionParams,
+  e: VariableNames | HighlightedVariableExpressionParams,
+  f: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -128,10 +128,10 @@ export const predParams = (
 }
 
 export const multParams = (
-  a: VariableNames,
-  b: VariableNames,
-  c: VariableNames,
-  d: VariableNames
+  a: VariableNames | HighlightedVariableExpressionParams,
+  b: VariableNames | HighlightedVariableExpressionParams,
+  c: VariableNames | HighlightedVariableExpressionParams,
+  d: VariableNames | HighlightedVariableExpressionParams
 ): FunctionExpressionParams => {
   return {
     arg: a,

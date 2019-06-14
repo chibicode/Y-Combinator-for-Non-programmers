@@ -977,6 +977,24 @@ export const e15E18 = initializeExpressionContainer([
   )
 ])
 
+const predMagicalUnabbreviated = [
+  predParams(
+    {
+      name: 'l',
+      highlighted: true
+    },
+    { name: 'm', highlighted: true },
+    { name: 'n', highlighted: true },
+    { name: 'o', highlighted: true },
+    { name: 'p', highlighted: true },
+    { name: 'q', highlighted: true }
+  ),
+  {
+    name: magicalVariableName,
+    highlighted: true
+  }
+]
+
 export const e15E19 = initializeExpressionContainer([
   [
     yCombinator,
@@ -1017,7 +1035,7 @@ export const e15E19 = initializeExpressionContainer([
             1
           ),
           'question',
-          'question'
+          predMagicalUnabbreviated
         )
 
         // {
