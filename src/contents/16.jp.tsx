@@ -1,5 +1,11 @@
 import React from 'react'
-import { Em, P, Strong, ExternalLink } from 'src/components/ContentTags'
+import {
+  Em,
+  P,
+  Strong,
+  ExternalLink,
+  Blockquote
+} from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
@@ -30,34 +36,30 @@ export default () => (
         )
       },
       {
-        title: <>弁当箱も計算機</>,
-        content: (
-          <>
-            <EmojiSeparator emojis={['💡', '🧓🏻', '🍱']} />
-            <P>
-              そして実は、
-              <Em>
-                <H args={{ name: 'bentoBoxPuzzle' }} />
-                と非常に似た計算機が、1930年代にコンピュータ科学者達によって考案されているのです。
-              </Em>
-              その計算機は「
-              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%A0%E3%83%80%E8%A8%88%E7%AE%97">
-                <Strong>ラムダ計算</Strong>
-              </ExternalLink>
-              」と呼ばれました。シンプルで高性能なこの計算機は、特にプログラミング言語の開発に大きな影響を与えました。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>コンピュータサイエンス = 計算機科学</>,
+        title: <>コンピュータサイエンス</>,
         content: (
           <>
             <P>
               当記事の題名に入っている「
               <Strong>コンピュータサイエンス</Strong>
-              」という言葉について、最初のページで以下のように説明しました:
+              」という学問について、冒頭で以下のように説明しました:
             </P>
+            <Blockquote>
+              <H
+                args={{
+                  name: 'csDescription'
+                }}
+              />
+            </Blockquote>
+            <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
+            <P>今回は、この説明の続きをしていきます！</P>
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
             <P>
               実はコンピュータサイエンスは、日本語では「
               <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6">
@@ -78,6 +80,26 @@ export default () => (
                 <Strong>「計算機」について考える学問</Strong>なのです
               </Em>
               。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>弁当箱も計算機</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['💡', '🧓🏻', '🍱']} />
+            <P>
+              そして実は、
+              <Em>
+                <H args={{ name: 'bentoBoxPuzzle' }} />
+                と非常に似た計算機が、1930年代にコンピュータ科学者達によって考案されているのです。
+              </Em>
+              その計算機は「
+              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%A0%E3%83%80%E8%A8%88%E7%AE%97">
+                <Strong>ラムダ計算</Strong>
+              </ExternalLink>
+              」と呼ばれました。シンプルで高性能なこの計算機は、特にプログラミング言語の開発に大きな影響を与えました。
             </P>
           </>
         )

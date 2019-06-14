@@ -149,6 +149,7 @@ export interface HProps {
     | { name: 'changedToPowerCaption' }
     | { name: 'powerComputation'; power: 3 | 4 }
     | { name: 'thisIsYCombinatorCaption'; too?: boolean }
+    | { name: 'csDescription'; prefix?: React.ReactNode }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1680,6 +1681,36 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             「<H args={{ name: 'yCombinator' }} />」
           </Strong>
           です
+        </>
+      )
+    }
+  }
+  if (args.name === 'csDescription') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <P>
+            {args.prefix}
+            <Em>
+              <H args={{ name: 'computerScience' }} />
+              とは、非常に単純化して言うと「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
+            </Em>
+          </P>
+          <P>
+            ちなみに、ここで言う
+            <Em>ソフトウェア</Em>
+            とは、アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステムなど、「
+            <Em>コンピュータプログラムによって機能するもの</Em>
+            」の総称です。
+          </P>
+          <P>
+            身近なものでいえば、
+            <Emoji>🔎</Emoji> グーグルなどの検索エンジン、
+            <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
+            カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
+          </P>
         </>
       )
     }

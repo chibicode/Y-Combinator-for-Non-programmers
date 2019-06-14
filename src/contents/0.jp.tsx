@@ -160,26 +160,16 @@ export default () => (
         content: (
           <>
             <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <Em>
-                <H args={{ name: 'computerScience' }} />
-                とは、非常に単純化して言うと「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
-              </Em>
-            </P>
-            <P>
-              ちなみに、ここで言う
-              <Em>ソフトウェア</Em>
-              とは、アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステムなど、「
-              <Em>コンピュータプログラムによって機能するもの</Em>
-              」の総称です。
-            </P>
-            <P>
-              身近なものでいえば、
-              <Emoji>🔎</Emoji> グーグルなどの検索エンジン、
-              <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
-              カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
-            </P>
+            <H
+              args={{
+                name: 'csDescription',
+                prefix: (
+                  <H
+                    args={{ name: 'theAnswerIs', isYes: true, sentence: true }}
+                  />
+                )
+              }}
+            />
             <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
             <P>
               もしも、「
