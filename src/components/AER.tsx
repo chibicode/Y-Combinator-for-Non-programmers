@@ -2487,5 +2487,19 @@ export default {
       variableSize="md"
       caption={<H args={{ name: 'thisIsYCombinatorCaption', too: true }} />}
     />
+  ),
+  ycvc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E18}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
+      caption={
+        <>
+          一番上の
+          <H args={{ name: 'secretCodeCaption', number: 3, letter: 'c' }} />
+        </>
+      }
+    />
   )
 }

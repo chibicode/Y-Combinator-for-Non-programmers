@@ -16,9 +16,14 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import {
+  InlineEmojiBoxesForQuestion,
+  InlineEmojiBoxesForCondition
+} from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import TopRightBadge from 'src/components/TopRightBadge'
+import { magicalVariableName } from 'src/lib/specialVariableNames'
 
 export default () => (
   <EpisodeCardList
@@ -755,8 +760,63 @@ export default () => (
         }
       },
       {
-        title: <>最後に: 省略表記を一切使わない</>,
-        content: <></>
+        title: <>最後に: 省略表記を使わない</>,
+        content: (
+          <>
+            <P>
+              最後に、
+              <Strong>省略表記を一切使わないバージョン</Strong>
+              を試して終わりにしましょう。どういうことか、これから説明します！
+            </P>
+            <P>
+              まず、先ほどの
+              <H args={{ name: 'inlineFactorial', start: 3 }} />
+              を計算する弁当箱の、一番上の
+              <EmojiNumber number={3} />
+              に注目します。
+            </P>
+            {AER.hzlj}
+            <P>
+              一番上の
+              <EmojiNumber number={3} />
+              を省略表記を使わずに表すと、こうなります:
+            </P>
+            {AER.ycvc}
+            <P>
+              このようにして、
+              <Em>以下のすべての省略表記を使わないようにします</Em>。
+            </P>
+            <Ul>
+              <UlLi>
+                <Strong>
+                  <EmojiWithText letter={magicalVariableName} />
+                  から1を引く
+                </Strong>
+                省略表記:
+                <TopRightBadge topRightBadgeType="pred" inline />
+              </UlLi>
+              <UlLi>
+                <Strong>掛け算</Strong>の省略表記: <Emoji>✖️</Emoji>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  <EmojiNumber number={1} />
+                  の暗号
+                </Strong>
+                の省略表記
+              </UlLi>
+              <UlLi>
+                <Strong>条件分岐の省略表記</Strong>:{' '}
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                <InlineEmojiBoxesForCondition type="falseCase" />
+              </UlLi>
+            </Ul>
+            <P>
+              すべての省略表記をやめると、最終的にこのような弁当箱になります。
+            </P>
+          </>
+        )
       }
     ]}
   />

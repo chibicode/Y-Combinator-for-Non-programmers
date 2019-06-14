@@ -955,3 +955,24 @@ export const e15E17 = initializeExpressionContainer({
     }
   ]
 })
+
+export const e15E18 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: updatedMagicalParams
+    }
+  ],
+  numberParams(
+    {
+      highlighted: true,
+      name: 'c'
+    },
+    {
+      highlighted: true,
+      name: 'd'
+    },
+    3
+  )
+])
