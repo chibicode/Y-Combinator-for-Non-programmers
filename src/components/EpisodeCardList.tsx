@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { useContext } from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
 import EpisodeHero from 'src/components/EpisodeHero'
@@ -10,6 +11,8 @@ import { P } from 'src/components/ContentTags'
 import { shareVisible } from 'src/lib/twitter'
 import NextLessonButton from 'src/components/NextLessonButton'
 import { spaces } from 'src/lib/theme'
+import EpisodeContext from 'src/components/EpisodeContext'
+import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 
 export interface EpisodeCardType {
   type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'share'
@@ -28,6 +31,7 @@ const EpisodeCardList = ({
   cards: EpisodeCardListType
   notFound: boolean
 }) => {
+  const { episodeNumber } = useContext(EpisodeContext)
   const { lastVisibleCardIndex, setLastVisibleCardIndex } = useConditionalCards(
     cards
   )
@@ -69,7 +73,9 @@ const EpisodeCardList = ({
                   setLastVisibleCardIndex={setLastVisibleCardIndex}
                 >
                   <H args={{ name: 'shareContent' }} />
-                  <NextLessonButton halfMargin />
+                  {episodeNumber <= numEpisodesExceptFirstAndLast && (
+                    <NextLessonButton halfMargin />
+                  )}
                 </CardWrapper>
               </div>
             )}
