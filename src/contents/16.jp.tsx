@@ -210,9 +210,9 @@ export default () => (
                 </Em>
               </OlLi>
               <OlLi>
-                <Em>
+                <Strong>
                   では、その「空想上の最強の計算機」とはどんなものだろう？
-                </Em>
+                </Strong>
               </OlLi>
             </Ol>
           </>
