@@ -8,6 +8,28 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
+        title: <>最後のページです！</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
+              これが最後のページです。ここまで読んでくださり、ありがとうございます！
+            </P>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <P>
+              最後に、
+              <Strong>
+                弁当箱と
+                <H args={{ name: 'computerScience' }} />
+                のつながり
+              </Strong>
+              について語って終わりにしたいと思います。
+            </P>
+            <EmojiSeparator emojis={['🍱', '🤔', '🤖']} />
+          </>
+        )
+      },
+      {
         title: <>弁当箱も計算機</>,
         content: (
           <>
