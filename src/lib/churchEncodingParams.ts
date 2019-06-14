@@ -178,8 +178,8 @@ export const isZeroParams = (
   c: VariableNames | HighlightedVariableExpressionParams,
   d: VariableNames | HighlightedVariableExpressionParams,
   e: VariableNames | HighlightedVariableExpressionParams,
-  y: ExpressionParams,
-  z: ExpressionParams,
+  trueExpression: ExpressionParams,
+  falseExpression: ExpressionParams,
   testExpression: ExpressionParams
 ): CallExpressionParams => [
   [
@@ -205,9 +205,9 @@ export const isZeroParams = (
         }
       }
     ],
-    y
+    trueExpression
   ],
-  z
+  falseExpression
 ]
 
 export const alphaConversionSimpleExampleParams = (

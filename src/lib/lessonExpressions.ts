@@ -976,3 +976,87 @@ export const e15E18 = initializeExpressionContainer([
     3
   )
 ])
+
+export const e15E19 = initializeExpressionContainer([
+  [
+    yCombinator,
+    {
+      arg: 's',
+      body: {
+        arg: magicalVariableName,
+        body: isZeroParams(
+          {
+            name: 'e',
+            highlighted: true
+          },
+          {
+            name: 'f',
+            highlighted: true
+          },
+          {
+            name: 'g',
+            highlighted: true
+          },
+          {
+            name: 'h',
+            highlighted: true
+          },
+          {
+            name: 'i',
+            highlighted: true
+          },
+          numberParams(
+            {
+              name: 'j',
+              highlighted: true
+            },
+            {
+              name: 'k',
+              highlighted: true
+            },
+            1
+          ),
+          'question',
+          'question'
+        )
+
+        // {
+        //   checkType: 'isZero',
+        //   condition: {
+        //     shorthandUnary: 'pred',
+        //     name: magicalVariableName
+        //   },
+        //   trueCase: {
+        //     shorthandNumber: 1
+        //   },
+        //   falseCase: [
+        //     magicalVariableName,
+        //     [
+        //       {
+        //         shorthandBinary: 'mult'
+        //       },
+        //       [
+        //         's',
+        //         {
+        //           shorthandUnary: 'pred',
+        //           name: magicalVariableName
+        //         }
+        //       ]
+        //     ]
+        //   ]
+        // }
+      }
+    }
+  ],
+  numberParams(
+    {
+      highlighted: true,
+      name: 'c'
+    },
+    {
+      highlighted: true,
+      name: 'd'
+    },
+    3
+  )
+])

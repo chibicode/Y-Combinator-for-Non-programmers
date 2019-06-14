@@ -2496,10 +2496,17 @@ export default {
       variableSize="xxs"
       caption={
         <>
-          一番上の
           <H args={{ name: 'secretCodeCaption', number: 3, letter: 'c' }} />
         </>
       }
+    />
+  ),
+  muwt: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E19}
+      showPriorities
+      containerSize="xs"
+      variableSize="xxs"
     />
   )
 }
