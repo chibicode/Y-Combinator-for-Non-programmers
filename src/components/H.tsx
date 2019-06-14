@@ -1099,7 +1099,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>Epilogue</>
     } else {
-      return <>あとがき</>
+      return <>エピローグ</>
     }
   }
   if (args.name === 'stoppedForExplanation') {

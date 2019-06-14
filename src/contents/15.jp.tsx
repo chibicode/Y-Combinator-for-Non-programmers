@@ -16,14 +16,10 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
-import {
-  InlineEmojiBoxesForQuestion,
-  InlineEmojiBoxesForCondition
-} from 'src/components/InlineEmojiBoxes'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-import TopRightBadge from 'src/components/TopRightBadge'
-import { magicalVariableName } from 'src/lib/specialVariableNames'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -758,6 +754,28 @@ export default () => (
             </>
           )
         }
+      },
+      {
+        title: <>残すはエピローグだけ！</>,
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'yCombinator' }} />
+              も説明し終えたので、残すはエピローグだけです！ここまでお疲れ様でした。
+            </P>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <P>
+              エピローグでは、
+              <Strong>
+                弁当箱と
+                <H args={{ name: 'computerScience' }} />
+                のつながり
+              </Strong>
+              について語ります。あと少しだけお付き合いいただけると嬉しいです。
+            </P>
+            <NextLessonButton />
+          </>
+        )
       }
     ]}
   />

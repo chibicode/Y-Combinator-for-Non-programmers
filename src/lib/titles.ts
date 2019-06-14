@@ -61,7 +61,7 @@ export const episodePrefixes = {
     beginner: '初級',
     intermediate: '中級',
     advanced: '上級',
-    epilogue: 'あとがき'
+    epilogue: 'エピローグ'
   }
 }[locale]
 
