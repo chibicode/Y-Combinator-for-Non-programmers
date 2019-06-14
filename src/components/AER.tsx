@@ -2487,26 +2487,5 @@ export default {
       variableSize="md"
       caption={<H args={{ name: 'thisIsYCombinatorCaption', too: true }} />}
     />
-  ),
-  ycvc: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e15E18}
-      showPriorities
-      containerSize="xs"
-      variableSize="xxs"
-      caption={
-        <>
-          <H args={{ name: 'secretCodeCaption', number: 3, letter: 'c' }} />
-        </>
-      }
-    />
-  ),
-  muwt: (
-    <ExpressionRunnerSimple
-      expressionContainer={lessonExpressions.e15E19}
-      showPriorities
-      containerSize="xs"
-      variableSize="xxs"
-    />
   )
 }
