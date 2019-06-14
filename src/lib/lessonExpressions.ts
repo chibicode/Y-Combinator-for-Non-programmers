@@ -977,7 +977,7 @@ export const e15E18 = initializeExpressionContainer([
   )
 ])
 
-const predMagicalUnabbreviated = [
+const predMagicalUnabbreviated: CallExpressionParams = [
   predParams(
     {
       name: 'l',
@@ -993,6 +993,19 @@ const predMagicalUnabbreviated = [
     name: magicalVariableName,
     highlighted: true
   }
+]
+
+const multUnabbreviated: CallExpressionParams = [
+  [
+    multParams(
+      { name: 'r', highlighted: true },
+      { name: 's', highlighted: true },
+      { name: 't', highlighted: true },
+      { name: 'u', highlighted: true }
+    ),
+    { name: magicalVariableName, highlighted: true }
+  ],
+  [{ name: 's', highlighted: true }, predMagicalUnabbreviated]
 ]
 
 export const e15E19 = initializeExpressionContainer([
@@ -1034,35 +1047,9 @@ export const e15E19 = initializeExpressionContainer([
             },
             1
           ),
-          'question',
+          multUnabbreviated,
           predMagicalUnabbreviated
         )
-
-        // {
-        //   checkType: 'isZero',
-        //   condition: {
-        //     shorthandUnary: 'pred',
-        //     name: magicalVariableName
-        //   },
-        //   trueCase: {
-        //     shorthandNumber: 1
-        //   },
-        //   falseCase: [
-        //     magicalVariableName,
-        //     [
-        //       {
-        //         shorthandBinary: 'mult'
-        //       },
-        //       [
-        //         's',
-        //         {
-        //           shorthandUnary: 'pred',
-        //           name: magicalVariableName
-        //         }
-        //       ]
-        //     ]
-        //   ]
-        // }
       }
     }
   ],
