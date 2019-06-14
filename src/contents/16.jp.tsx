@@ -4,10 +4,12 @@ import {
   P,
   Strong,
   ExternalLink,
-  Blockquote
+  Blockquote,
+  Img
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 
 export default () => (
@@ -57,30 +59,73 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: <>計算機科学</>,
         content: (
           <>
             <P>
-              実はコンピュータサイエンスは、日本語では「
+              実はコンピュータサイエンスには「
               <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6">
                 <Strong>計算機科学</Strong>
               </ExternalLink>
-              」と訳されています。
-            </P>
-            <P>
-              コンピュータというとパソコンやタブレット、スマホ、ロボットを思い浮かべるかもしれませんが、コンピュータは本質的には
-              <Strong>「計算機」</Strong>
-              です。たとえば美しいCGや賢いAIも、大量の計算を短時間で行うことによって実現されています。
+              」という日本語訳もあります。
             </P>
             <EmojiSeparator emojis={['💻', '📱', '🤖']} />
             <P>
-              だから、
-              <Em>
-                「コンピュータサイエンス = 計算機科学」は、
-                <Strong>「計算機」について考える学問</Strong>なのです
-              </Em>
-              。
+              コンピュータというとパソコンやタブレット、スマホ、ロボットを思い浮かべるかもしれませんが、コンピュータは本質的には
+              <Strong>「計算機」</Strong>
+              です。たとえば美しいCGや賢いAIも、大量の計算を短時間で正確に行うことによって実現されています。
             </P>
+            <EmojiSeparator emojis={['🔢', '🔢', '🔢']} />
+            <P>
+              <Em>計算機は時代とともに進化してきました。</Em>
+              昔の日本では、中国から伝わったそろばん <Emoji>🧮</Emoji>{' '}
+              が使われていましたね。
+            </P>
+            <P>
+              アメリカでは、1890年の国勢調査において、
+              <Em>
+                <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%B3%E3%83%81%E3%82%AB%E3%83%BC%E3%83%89">
+                  パンチカード
+                </ExternalLink>
+                と呼ばれるマークシートのような紙に空いた穴を読み取り、データを集計できる計算機「
+                <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%93%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%9E%E3%82%B7%E3%83%B3">
+                  タビュレーティングマシン
+                </ExternalLink>
+                」が使われました。
+              </Em>
+              これを発明した
+              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%BB%E3%83%9B%E3%83%AC%E3%83%AA%E3%82%B9">
+                ハーマン・ホレリス
+              </ExternalLink>
+              は、後にIBMの一部となる会社を創業しています。IBMはパンチカードを読み取る機械を更に進化させ、1960年代に世界一のコンピュータ企業になりました。
+            </P>
+            <P>
+              <Img
+                src="/static/images/Hollerith_census_machine_at_the_Computer_History_Museum.jpg"
+                alt="Hollerith_census_machine_at_the_Computer_History_Museum"
+                size="medium"
+                caption={
+                  <>
+                    シリコンバレーのコンピュータ歴史博物館には、ホレリスのタビュレーティングマシンが展示されています。(
+                    <ExternalLink href="https://commons.wikimedia.org/wiki/File:Hollerith_census_machine_at_the_Computer_History_Museum.jpg">
+                      撮影: Anton Chiang, CC BY 2.0
+                    </ExternalLink>
+                    )
+                  </>
+                }
+              />
+            </P>
+            <P>
+              このように計算機が進化するにつれ、「
+              <Strong>計算機について研究する学問</Strong>
+              」も発達していきました。「
+              <Em>
+                計算機の作り方や使い方をどう工夫すれば、より効率的に問題を解けるのか
+              </Em>
+              」ということを考える必要があったのです。これが、コンピュータサイエンス
+              = 計算機科学です。
+            </P>
+            <EmojiSeparator emojis={['🧮', '🤔', '🧮']} />
           </>
         )
       },
