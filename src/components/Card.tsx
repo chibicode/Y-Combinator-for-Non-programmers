@@ -52,7 +52,7 @@ export interface CardState {
 export const backgroundColor = (color: CardProps['color']) =>
   ({
     green: colors('green50'),
-    grey: colors('grey150'),
+    grey: colors('grey100'),
     white: colors('white'),
     orange: colors('deepOrange50'),
     yellow: colors('yellow100'),

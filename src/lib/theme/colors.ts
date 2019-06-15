@@ -16,7 +16,7 @@ import Color from 'color'
 // https://material.io/design/color/the-color-system.html
 export const allColors = {
   secretCode: '#3B88C3',
-  grey150: '#f1f1f1',
+  grey100: grey[100],
   grey300: grey[300],
   grey500: grey[500],
   grey600: grey[600],

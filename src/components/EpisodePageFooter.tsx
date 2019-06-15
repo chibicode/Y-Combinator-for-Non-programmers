@@ -23,7 +23,7 @@ const EpisodePageFooter = () => {
     <div
       css={css`
         margin: ${spaces(2)} 0 0;
-        background: ${colors('grey150')};
+        background: ${colors('grey100')};
         text-align: center;
         padding: ${spaces(1)} 0;
         color: ${colors('grey500')};

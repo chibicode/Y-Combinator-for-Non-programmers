@@ -36,8 +36,11 @@ import Emoji1f44d from 'src/components/Twemoji/1f44d'
 import Emoji1f44e from 'src/components/Twemoji/1f44e'
 import Emoji1f454 from 'src/components/Twemoji/1f454'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fb-200d-1f4bb'
+import Emoji1f469ZZ1f3fb from 'src/components/Twemoji/1f469-1f3fb'
+import Emoji1f469ZZ1f3fd from 'src/components/Twemoji/1f469-1f3fd'
 import Emoji1f4a1 from 'src/components/Twemoji/1f4a1'
 import Emoji1f4a5 from 'src/components/Twemoji/1f4a5'
+import Emoji1f4aa from 'src/components/Twemoji/1f4aa'
 import Emoji1f4ad from 'src/components/Twemoji/1f4ad'
 import Emoji1f4bb from 'src/components/Twemoji/1f4bb'
 import Emoji1f4d5 from 'src/components/Twemoji/1f4d5'
@@ -88,6 +91,8 @@ import Emoji1f973 from 'src/components/Twemoji/1f973'
 import Emoji1f974 from 'src/components/Twemoji/1f974'
 import Emoji1f9c0 from 'src/components/Twemoji/1f9c0'
 import Emoji1f9d0 from 'src/components/Twemoji/1f9d0'
+import Emoji1f9d1ZZ1f3ff from 'src/components/Twemoji/1f9d1-1f3ff'
+import Emoji1f9d1 from 'src/components/Twemoji/1f9d1'
 import Emoji1f9d3ZZ1f3fb from 'src/components/Twemoji/1f9d3-1f3fb'
 import Emoji1f9d9ZZ200dZZ2640ZZfe0f from 'src/components/Twemoji/1f9d9-200d-2640-fe0f'
 import Emoji1f9ee from 'src/components/Twemoji/1f9ee'
@@ -160,8 +165,11 @@ export interface BundleTypes {
   '1f44e': React.ComponentType<{}>
   '1f454': React.ComponentType<{}>
   '1f468-1f3fb-200d-1f4bb': React.ComponentType<{}>
+  '1f469-1f3fb': React.ComponentType<{}>
+  '1f469-1f3fd': React.ComponentType<{}>
   '1f4a1': React.ComponentType<{}>
   '1f4a5': React.ComponentType<{}>
+  '1f4aa': React.ComponentType<{}>
   '1f4ad': React.ComponentType<{}>
   '1f4bb': React.ComponentType<{}>
   '1f4d5': React.ComponentType<{}>
@@ -212,6 +220,8 @@ export interface BundleTypes {
   '1f974': React.ComponentType<{}>
   '1f9c0': React.ComponentType<{}>
   '1f9d0': React.ComponentType<{}>
+  '1f9d1-1f3ff': React.ComponentType<{}>
+  '1f9d1': React.ComponentType<{}>
   '1f9d3-1f3fb': React.ComponentType<{}>
   '1f9d9-200d-2640-fe0f': React.ComponentType<{}>
   '1f9ee': React.ComponentType<{}>
@@ -285,8 +295,11 @@ const bundle: BundleTypes = {
   '1f44e': Emoji1f44e,
   '1f454': Emoji1f454,
   '1f468-1f3fb-200d-1f4bb': Emoji1f468ZZ1f3fbZZ200dZZ1f4bb,
+  '1f469-1f3fb': Emoji1f469ZZ1f3fb,
+  '1f469-1f3fd': Emoji1f469ZZ1f3fd,
   '1f4a1': Emoji1f4a1,
   '1f4a5': Emoji1f4a5,
+  '1f4aa': Emoji1f4aa,
   '1f4ad': Emoji1f4ad,
   '1f4bb': Emoji1f4bb,
   '1f4d5': Emoji1f4d5,
@@ -337,6 +350,8 @@ const bundle: BundleTypes = {
   '1f974': Emoji1f974,
   '1f9c0': Emoji1f9c0,
   '1f9d0': Emoji1f9d0,
+  '1f9d1-1f3ff': Emoji1f9d1ZZ1f3ff,
+  '1f9d1': Emoji1f9d1,
   '1f9d3-1f3fb': Emoji1f9d3ZZ1f3fb,
   '1f9d9-200d-2640-fe0f': Emoji1f9d9ZZ200dZZ2640ZZfe0f,
   '1f9ee': Emoji1f9ee,
