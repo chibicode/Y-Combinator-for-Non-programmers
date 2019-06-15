@@ -751,6 +751,13 @@ export default () => (
                 です。もちろん、同じように機能します。
               </P>
               {AER.xrzv}
+              <P>
+                <InlineHeader>由来について:</InlineHeader> なぜ「
+                <H args={{ name: 'yCombinator' }} />
+                」という名前が付けられたのかを説明するのは非常に難しいので、ここでは説明しません。
+                <H args={{ name: 'yCombinator' }} />
+                がどんな機能かを理解していただければ、それだけで十分です！
+              </P>
             </>
           )
         }
