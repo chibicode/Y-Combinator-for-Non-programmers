@@ -2487,5 +2487,17 @@ export default {
       variableSize="md"
       caption={<H args={{ name: 'thisIsYCombinatorCaption', too: true }} />}
     />
+  ),
+  kavd: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e1E1}
+      isDone
+    />
+  ),
+  ytcf: (
+    <ExpressionRunnerPairSimple
+      expressionContainer={lessonExpressions.e16E1}
+      isDone
+    />
   )
 }

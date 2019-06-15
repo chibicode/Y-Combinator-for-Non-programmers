@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import {
   Em,
   P,
@@ -12,8 +13,12 @@ import {
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
+import AER from 'src/components/AER'
+import EmojiWithText from 'src/components/EmojiWithText'
+import { spaces } from 'src/lib/theme'
 
 export default () => (
   <EpisodeCardList
@@ -353,82 +358,84 @@ export default () => (
         }
       },
       {
-        title: <></>,
-        content: (
-          <>
-            <EmojiSeparator emojis={['💡', '🧓🏻', '🍱']} />
-            <P>
-              そして実は、
-              <Em>
-                <H args={{ name: 'bentoBoxPuzzle' }} />
-                と非常に似た計算機が、1930年代にコンピュータ科学者達によって考案されているのです。
-              </Em>
-              その計算機は「
-              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%A0%E3%83%80%E8%A8%88%E7%AE%97">
-                <Strong>ラムダ計算</Strong>
-              </ExternalLink>
-              」と呼ばれました。シンプルで高性能なこの計算機は、特にプログラミング言語の開発に大きな影響を与えました。
-            </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>ほとんどの計算ができる、最もシンプルな計算機はどんなものだろう？</>
-        ),
+        title: <>ラムダ計算</>,
         content: (
           <>
             <P>
-              <H args={{ name: 'computerScience' }} />
-              は、「計算機」について考える学問です。そして学問なので、さまざまな
-              <Strong>問い(命題)</Strong>
-              があります。
-            </P>
-            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
-            <P>
-              ここでは、重要な問いをひとつ見ていきます。その問いとは、以下のようなものです:
-            </P>
-            <P>
+              ここで、ひとつ謝らないといけないことがあります。
+              <Em>実は、今まで嘘をついていました。</Em>
               <Strong>
-                「ほとんどの計算ができる、最もシンプルな計算機はどんなものだろう？」
+                「弁当箱」という名前は、筆者が勝手につけたものです。
               </Strong>
             </P>
-          </>
-        )
-      },
-      {
-        title: <>?</>,
-        content: (
-          <>
             <P>
-              先ほど話したように、弁当箱は
+              本来の名前は、「
+              <Strong>
+                <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%A0%E3%83%80%E8%A8%88%E7%AE%97">
+                  ラムダ計算
+                </ExternalLink>
+              </Strong>
+              」と言います。アロンゾ・チャーチとスティーヴン・コール・クリーネによって1930年代に考案された空想上の計算機です。
+            </P>
+            <EmojiSeparator emojis={['🧓🏻', '🍱', '🧓🏻']} />
+            <P>
+              ラムダ計算の
               <Em>
-                足し算・掛け算・引き算・割り算といった四則演算ができる計算機です
+                仕組みは弁当箱と同じですが、<Strong>記述の方法</Strong>
+                はかなり違います。
               </Em>
-              。
+              機能は同じだけど、見た目が違うということです。
             </P>
             <P>
-              弁当箱が面白いのは、
-              <Strong>仕組みがシンプルでありながら高性能である</Strong>
-              ということです。
+              それを説明するために、こちらの弁当箱をラムダ計算の記述に置き換えてみましょう。当記事の一番最初に紹介した弁当箱です。
+              これを
               <H args={{ name: 'play' }} />
-              する際のルールも、暗号の法則も、すぐに覚えられるくらい単純です。しかし、
-              <Em>
-                その単純さとは裏腹に、足し算や掛け算といった遥かに複雑な計算を行うことができる
-              </Em>
-              のです。
+              すると、
+              <EmojiWithText letter="b" />
+              になります。
             </P>
-            <EmojiSeparator emojis={['➕', '🤨', '✖️']} />
+            {AER.kavd}
             <P>
-              一方、
               <Em>
-                四則演算ができるくらいでは、問いにあったように
-                <Strong>「ほとんどの計算ができる」とは言えない</Strong>
+                まず、ラムダ計算では料理を使わず、アルファベットを使います。
               </Em>
-              でしょう。もっと難しい計算ができないといけません。
+              それぞれアルファベットに置き換えてみると、こうなります:
             </P>
+            {AER.ytcf}
             <P>
-              というわけで、次のページからは、弁当箱を使ったさらにハイレベルな計算を紹介していきます。数学的に難しいわけではないので、ご心配なく！
+              <Em>次に、ラムダ計算ではマスを次のように配置します。</Em>
+              下側にあった
+              <InlineEmojiBoxes emojis={['🅰️', '🅰️']} />
+              が一番左に来ており、その右にスペースを開けて上にあった
+              <InlineEmojiBoxes emojis={['🅱️']} />
+              を配置しています。
+              <H args={{ name: 'play' }} />
+              すると、一番右の
+              <InlineEmojiBoxes emojis={['🅱️']} />
+              になる、というわけです。
+            </P>
+            <div
+              css={css`
+                text-align: center;
+                font-size: 1.5em;
+                margin: ${spaces(1.75)} 0;
+              `}
+            >
+              <InlineEmojiBoxes emojis={['🅰️', '🅰️']} />{' '}
+              <InlineEmojiBoxes emojis={['🅱️']} /> <Emoji size="sm">▶️</Emoji>{' '}
+              <InlineEmojiBoxes emojis={['🅱️']} />
+            </div>
+            <P>
+              最後に、ギリシャ文字の「ラムダ」(
+              <Strong
+                css={css`
+                  font-size: 1.5em;
+                `}
+              >
+                {' '}
+                λ{' '}
+              </Strong>
+              )を使い、以下のように表記を変えます。これで、弁当箱をラムダ計算の記述に書き換えることができました。
             </P>
           </>
         )

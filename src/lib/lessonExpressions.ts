@@ -955,3 +955,11 @@ export const e15E17 = initializeExpressionContainer({
     }
   ]
 })
+
+export const e16E1 = initializeExpressionContainer([
+  {
+    arg: 'A',
+    body: 'A'
+  },
+  'B'
+])
