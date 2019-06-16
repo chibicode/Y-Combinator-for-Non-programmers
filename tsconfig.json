@@ -20,7 +20,8 @@
     "lib": ["dom", "esnext"],
     "paths": {
       "src/*": ["src/*"],
-      "test/*": ["test/*"]
+      "test/*": ["test/*"],
+      "*": ["node_modules/*", "src/types/*"]
     }
   },
   "include": ["./src", "./pages"]

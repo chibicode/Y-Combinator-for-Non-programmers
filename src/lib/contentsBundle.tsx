@@ -1,5 +1,4 @@
 // WARNING: Do not modify this file - it's generated automatically.
-import React from 'react'
 import Jp0 from 'src/contents/0.jp'
 import En0 from 'src/contents/0.en'
 import Jp1 from 'src/contents/1.jp'
@@ -35,94 +34,7 @@ import En8 from 'src/contents/8.en'
 import Jp9 from 'src/contents/9.jp'
 import En9 from 'src/contents/9.en'
 
-export interface BundleTypes {
-  '0': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '1': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '10': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '11': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '12': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '13': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '14': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '15': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '16': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '2': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '3': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '4': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '5': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '6': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '7': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '8': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-
-  '9': {
-    jp: React.ComponentType<{}>
-    en: React.ComponentType<{}>
-  }
-}
-
-const bundle: BundleTypes = {
+export default {
   '0': {
     en: En0,
     jp: Jp0
@@ -192,5 +104,3 @@ const bundle: BundleTypes = {
     jp: Jp9
   }
 }
-
-export default bundle

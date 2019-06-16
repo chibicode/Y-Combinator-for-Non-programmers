@@ -1,5 +1,4 @@
 // WARNING: Do not modify this file - it's generated automatically.
-import React from 'react'
 import Emoji1f170 from 'src/components/Twemoji/1f170'
 import Emoji1f171 from 'src/components/Twemoji/1f171'
 import Emoji1f193 from 'src/components/Twemoji/1f193'
@@ -131,140 +130,7 @@ import Emoji35ZZ20e3 from 'src/components/Twemoji/35-20e3'
 import Emoji36ZZ20e3 from 'src/components/Twemoji/36-20e3'
 import Emoji38ZZ20e3 from 'src/components/Twemoji/38-20e3'
 
-export interface BundleTypes {
-  '1f170': React.ComponentType<{}>
-  '1f171': React.ComponentType<{}>
-  '1f193': React.ComponentType<{}>
-  '1f195': React.ComponentType<{}>
-  '1f197': React.ComponentType<{}>
-  '1f19a': React.ComponentType<{}>
-  '1f1fa-1f1f8': React.ComponentType<{}>
-  '1f32d': React.ComponentType<{}>
-  '1f33d': React.ComponentType<{}>
-  '1f346': React.ComponentType<{}>
-  '1f347': React.ComponentType<{}>
-  '1f34a': React.ComponentType<{}>
-  '1f34e': React.ComponentType<{}>
-  '1f354': React.ComponentType<{}>
-  '1f355': React.ComponentType<{}>
-  '1f357': React.ComponentType<{}>
-  '1f35b': React.ComponentType<{}>
-  '1f35d': React.ComponentType<{}>
-  '1f35e': React.ComponentType<{}>
-  '1f35f': React.ComponentType<{}>
-  '1f363': React.ComponentType<{}>
-  '1f369': React.ComponentType<{}>
-  '1f36a': React.ComponentType<{}>
-  '1f36b': React.ComponentType<{}>
-  '1f36c': React.ComponentType<{}>
-  '1f370': React.ComponentType<{}>
-  '1f371': React.ComponentType<{}>
-  '1f37f': React.ComponentType<{}>
-  '1f389': React.ComponentType<{}>
-  '1f3a4': React.ComponentType<{}>
-  '1f3b6': React.ComponentType<{}>
-  '1f3c1': React.ComponentType<{}>
-  '1f40d': React.ComponentType<{}>
-  '1f44d': React.ComponentType<{}>
-  '1f44e': React.ComponentType<{}>
-  '1f454': React.ComponentType<{}>
-  '1f468-1f3fb-200d-1f4bb': React.ComponentType<{}>
-  '1f469-1f3fb': React.ComponentType<{}>
-  '1f469-1f3fd': React.ComponentType<{}>
-  '1f4a1': React.ComponentType<{}>
-  '1f4a5': React.ComponentType<{}>
-  '1f4aa': React.ComponentType<{}>
-  '1f4ad': React.ComponentType<{}>
-  '1f4bb': React.ComponentType<{}>
-  '1f4d5': React.ComponentType<{}>
-  '1f4d7': React.ComponentType<{}>
-  '1f4d8': React.ComponentType<{}>
-  '1f4d9': React.ComponentType<{}>
-  '1f4dd': React.ComponentType<{}>
-  '1f4f1': React.ComponentType<{}>
-  '1f4f7': React.ComponentType<{}>
-  '1f4fc': React.ComponentType<{}>
-  '1f501': React.ComponentType<{}>
-  '1f50e': React.ComponentType<{}>
-  '1f520': React.ComponentType<{}>
-  '1f522': React.ComponentType<{}>
-  '1f53d': React.ComponentType<{}>
-  '1f5fa': React.ComponentType<{}>
-  '1f604': React.ComponentType<{}>
-  '1f605': React.ComponentType<{}>
-  '1f609': React.ComponentType<{}>
-  '1f60b': React.ComponentType<{}>
-  '1f60d': React.ComponentType<{}>
-  '1f60e': React.ComponentType<{}>
-  '1f60f': React.ComponentType<{}>
-  '1f621': React.ComponentType<{}>
-  '1f628': React.ComponentType<{}>
-  '1f62c': React.ComponentType<{}>
-  '1f62d': React.ComponentType<{}>
-  '1f634': React.ComponentType<{}>
-  '1f635': React.ComponentType<{}>
-  '1f642': React.ComponentType<{}>
-  '1f644': React.ComponentType<{}>
-  '1f685': React.ComponentType<{}>
-  '1f6a6': React.ComponentType<{}>
-  '1f914': React.ComponentType<{}>
-  '1f916': React.ComponentType<{}>
-  '1f917': React.ComponentType<{}>
-  '1f924': React.ComponentType<{}>
-  '1f928': React.ComponentType<{}>
-  '1f929': React.ComponentType<{}>
-  '1f92b': React.ComponentType<{}>
-  '1f92f': React.ComponentType<{}>
-  '1f947': React.ComponentType<{}>
-  '1f948': React.ComponentType<{}>
-  '1f955': React.ComponentType<{}>
-  '1f957': React.ComponentType<{}>
-  '1f95e': React.ComponentType<{}>
-  '1f966': React.ComponentType<{}>
-  '1f96a': React.ComponentType<{}>
-  '1f973': React.ComponentType<{}>
-  '1f974': React.ComponentType<{}>
-  '1f9c0': React.ComponentType<{}>
-  '1f9d0': React.ComponentType<{}>
-  '1f9d1-1f3ff': React.ComponentType<{}>
-  '1f9d1': React.ComponentType<{}>
-  '1f9d3-1f3fb': React.ComponentType<{}>
-  '1f9d9-200d-2640-fe0f': React.ComponentType<{}>
-  '1f9ee': React.ComponentType<{}>
-  '2049': React.ComponentType<{}>
-  '2194': React.ComponentType<{}>
-  '2195': React.ComponentType<{}>
-  '2198': React.ComponentType<{}>
-  '21a9': React.ComponentType<{}>
-  '23e9': React.ComponentType<{}>
-  '23ec': React.ComponentType<{}>
-  '23f8': React.ComponentType<{}>
-  '25b6': React.ComponentType<{}>
-  '26a0': React.ComponentType<{}>
-  '2705': React.ComponentType<{}>
-  '2716': React.ComponentType<{}>
-  '2728': React.ComponentType<{}>
-  '274c': React.ComponentType<{}>
-  '2753': React.ComponentType<{}>
-  '2754': React.ComponentType<{}>
-  '2795': React.ComponentType<{}>
-  '2796': React.ComponentType<{}>
-  '2797': React.ComponentType<{}>
-  '27a1': React.ComponentType<{}>
-  '2b05': React.ComponentType<{}>
-  '2b07': React.ComponentType<{}>
-  '2b55': React.ComponentType<{}>
-  '30-20e3': React.ComponentType<{}>
-  '31-20e3': React.ComponentType<{}>
-  '32-20e3': React.ComponentType<{}>
-  '33-20e3': React.ComponentType<{}>
-  '34-20e3': React.ComponentType<{}>
-  '35-20e3': React.ComponentType<{}>
-  '36-20e3': React.ComponentType<{}>
-  '38-20e3': React.ComponentType<{}>
-}
-
-const bundle: BundleTypes = {
+export default {
   '1f170': Emoji1f170,
   '1f171': Emoji1f171,
   '1f193': Emoji1f193,
@@ -396,5 +262,3 @@ const bundle: BundleTypes = {
   '36-20e3': Emoji36ZZ20e3,
   '38-20e3': Emoji38ZZ20e3
 }
-
-export default bundle
