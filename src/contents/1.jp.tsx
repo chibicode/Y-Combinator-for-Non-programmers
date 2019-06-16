@@ -30,7 +30,7 @@ export default () => (
               を使って
               <H args={{ name: 'yCombinator' }} />
               とは何かを学んでいきます。 今回は、
-              <Em>このパズルの基本ルール</Em>
+              <Em>このパズルの基本法則</Em>
               を紹介します。
             </P>
             <P>

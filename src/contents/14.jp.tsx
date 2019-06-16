@@ -232,7 +232,7 @@ export default () => (
             </Ul>
             {AER.gtnr}
             <P>
-              <Strong>重要: このルールを覚える必要はありません！</Strong>
+              <Strong>重要: この法則を覚える必要はありません！</Strong>
               とりあえず読み進めてみてください。
             </P>
           </>

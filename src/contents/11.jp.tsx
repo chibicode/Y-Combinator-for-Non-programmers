@@ -367,10 +367,10 @@ export default () => (
           content: (
             <>
               <P>
-                このルールは次のページにある弁当箱から
+                この法則は次のページにある弁当箱から
                 <Strong>自動で発動するので、 暗記する必要はありません。</Strong>
                 なんとなく「
-                <Em>こういうルールがあるんだな</Em>
+                <Em>こういう法則があるんだな</Em>
                 」と思ってくだされば大丈夫です。
               </P>
             </>
@@ -384,7 +384,7 @@ export default () => (
             <P>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              にまつわる新ルールについてはこれで終了です。
+              にまつわる新法則についてはこれで終了です。
             </P>
             <EmojiSeparator emojis={['🎉', '🥳', '🎉']} />
             <P>
