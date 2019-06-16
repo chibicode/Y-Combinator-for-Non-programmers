@@ -11,7 +11,7 @@ const PreInner = styled.pre`
   font-size: ${fontSizes(0.7)};
   letter-spacing: -0.075em;
   max-width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 `
 
 export const Pre = ({ children }: { children: React.ReactNode }) => (
