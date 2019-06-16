@@ -1420,7 +1420,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Hr />
             <P>
               <InlineHeader>その他の著作:</InlineHeader>{' '}
-              もしご興味があれば、わたしが共訳した『
+              もしご興味があれば、わたしが共訳した書籍『
               <ExternalLink href="https://amzn.to/2QlZIqm">
                 <Strong>ファクトフルネス</Strong>
               </ExternalLink>
