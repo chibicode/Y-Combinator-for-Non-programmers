@@ -10,7 +10,7 @@ import {
   Ol,
   OlLi,
   InlineHeader,
-  Code,
+  CenteredCode,
   Hr
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -19,7 +19,7 @@ import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
-import { colors, spaces, fontSizes } from 'src/lib/theme'
+import { spaces, fontSizes } from 'src/lib/theme'
 
 export default () => (
   <EpisodeCardList
@@ -417,7 +417,7 @@ export default () => (
               <InlineEmojiBoxes emojis={['🅱️']} />
             </div>
             <P>
-              最後に、ギリシャ文字の「ラムダ」(
+              最後に、ギリシャ文字の「<Strong>ラムダ</Strong>」(
               <Strong
                 css={css`
                   font-size: ${fontSizes(1.4)};
@@ -428,23 +428,7 @@ export default () => (
               </Strong>
               )などを使い、以下のように表記を変えます。これで、弁当箱をラムダ計算の記述に書き換えることができました。
             </P>
-            <div
-              css={css`
-                text-align: center;
-                font-size: ${fontSizes(1.6)};
-                letter-spacing: -0.075em;
-                margin: ${spaces(1.75)} 0;
-              `}
-            >
-              <Code
-                css={css`
-                  padding: ${spaces(0.25)};
-                  background: ${colors('white')};
-                `}
-              >
-                λA.A B
-              </Code>
-            </div>
+            <CenteredCode size="md">λA.A B</CenteredCode>
             <P>
               1930年代に考案されたラムダ計算は、このような見た目だったのです。
             </P>
@@ -458,23 +442,7 @@ export default () => (
             </P>
             {AER.news}
             <P>これを、ラムダ計算の記述に書き換えると、次のようになります。</P>
-            <div
-              css={css`
-                text-align: center;
-                letter-spacing: -0.075em;
-                font-size: ${fontSizes(1.2)};
-                margin: ${spaces(1.75)} 0;
-              `}
-            >
-              <Code
-                css={css`
-                  padding: ${spaces(0.25)};
-                  background: ${colors('white')};
-                `}
-              >
-                λA.(λB.A(B B))(λB.A(B B))
-              </Code>
-            </div>
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
             <P>
               大学の
               <H args={{ name: 'computerScience' }} />
