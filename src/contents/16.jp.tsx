@@ -767,6 +767,9 @@ export default () => (
             </P>
             {AER.news}
             <P>ここまでお付き合いくださり、本当にありがとうございました。</P>
+            <P>
+              <InlineHeader>著: 上杉周作</InlineHeader>
+            </P>
           </>
         ),
         footer: {

@@ -12,7 +12,9 @@ import {
   Strong,
   InlineHeader,
   ExternalLink,
-  LinkButton
+  LinkButton,
+  Hr,
+  Img
 } from 'src/components/ContentTags'
 import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import Emoji from 'src/components/Emoji'
@@ -1415,7 +1417,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               」とお考えの方がいらっしゃいましたら、ツイートで教えてくださると嬉しいです。
             </P>
             {question}
-            <P>重ね重ね、お読みになってくださりありがとうございました！</P>
+            <Hr />
+            <P>
+              <InlineHeader>その他の著作:</InlineHeader>{' '}
+              もしご興味があれば、わたしが共訳した『
+              <ExternalLink href="https://amzn.to/2QlZIqm">
+                <Strong>ファクトフルネス</Strong>
+              </ExternalLink>
+              』や、わたしの
+              <ExternalLink href="https://jp.chibicode.com/">
+                ブログ
+              </ExternalLink>
+              もぜひご覧ください。
+            </P>
+            <P>
+              <ExternalLink href="https://amzn.to/2QlZIqm">
+                <Img
+                  size="small"
+                  src="/static/images/factfulness.jpg"
+                  alt="ファクトフルネス"
+                />
+              </ExternalLink>
+            </P>
+            <P>
+              重ね重ね、当記事をお読みになってくださりありがとうございました！
+            </P>
           </>
         )
       }
@@ -1725,7 +1751,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <P>
             ちなみに、ここで言う
             <Em>ソフトウェア</Em>
-            とは、アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステム・暗号通貨など、「
+            とは、アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステム・仮想通貨など、「
             <Em>コンピュータプログラムによって機能するもの</Em>
             」の総称です。
           </P>
