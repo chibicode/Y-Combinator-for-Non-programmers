@@ -74,6 +74,18 @@ const EpisodeCardList = ({
                   isLast
                   title={<H args={{ name: 'shareTitle' }} />}
                   setLastVisibleCardIndex={setLastVisibleCardIndex}
+                  footer={{
+                    content: (
+                      <>
+                        <H
+                          args={{
+                            name: 'dateAndSource',
+                            includeAboutMe: true
+                          }}
+                        />
+                      </>
+                    )
+                  }}
                 >
                   <H args={{ name: 'shareContent' }} />
                   {episodeNumber <= numEpisodesExceptFirstAndLast && (

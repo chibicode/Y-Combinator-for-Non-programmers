@@ -47,7 +47,7 @@ export interface HProps {
   highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
-    | { name: 'dateAndSource' }
+    | { name: 'dateAndSource'; includeAboutMe?: boolean }
     | { name: 'pressNext' }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
@@ -1772,6 +1772,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <P>
+            {args.includeAboutMe && (
+              <>
+                <InlineHeader>著者:</InlineHeader> 上杉周作 (
+                <ExternalLink href="https://jp.chibicode.com">
+                  ブログはこちら
+                </ExternalLink>
+                )
+                <br />
+              </>
+            )}
             <InlineHeader>公開日:</InlineHeader>{' '}
             <time dateTime={dateSchemaString}>{dateString}</time>
             <br />

@@ -777,15 +777,113 @@ export default () => (
               」だいうことも、頭の片隅に入れておいてくださると嬉しいです。
             </P>
             {AER.news}
-            <P>ここまでお付き合いくださり、本当にありがとうございました。</P>
-            <P>
-              <InlineHeader>著: 上杉周作</InlineHeader>
-            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            最後に: スマホ向けの
+            <H args={{ name: 'computerScience' }} />
+            の教材
           </>
         ),
-        footer: {
-          content: <H args={{ name: 'dateAndSource' }} />
-        }
+        content: (
+          <>
+            <P>
+              最後に私見を述べさせていただきますが、わたしは当記事のような「
+              <Strong>
+                スマホで学べる
+                <H args={{ name: 'computerScience' }} />
+                の教材
+              </Strong>
+              」がもっと増えたらいいな、と思っています。
+            </P>
+            <EmojiSeparator emojis={['📱', '🤔', '📱']} />
+            <P>
+              ほとんどの
+              <H args={{ name: 'computerScience' }} />
+              の教材は、「講義を聞いたり文章を読み、そこで紹介された問題を紙で解いたり、コードをパソコンで書いて学ぶ」ことが前提となっています。
+              <Em>
+                講義を聞いたり文章を読むのはスマホでできますが、実際に手を動かして学ぶときには、どうしても紙やパソコンが必要になる場合が多いです。
+              </Em>
+              スマホで数式を解いたり、コードを書くのは苦痛だからです。
+              <Strong>
+                そして手を動かして学ばないと、
+                <H args={{ name: 'computerScience' }} />
+                は身に付きません。
+              </Strong>
+            </P>
+            <P>
+              しかし、当記事で紹介した
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              のように、<Strong>スマホでもできるパズル的な教材</Strong>
+              を作れば、紙やパソコン抜きにスマホだけで手を動かして学ぶことができます。
+            </P>
+            <EmojiSeparator emojis={['📱', '🍱', '📱']} />
+            <P>
+              これは仮説ですが、
+              <Strong>
+                ほとんどの
+                <H args={{ name: 'computerScience' }} />
+                の題材は、スマホでもできるパズル教材にすることができると思うのです。
+              </Strong>
+              たとえばAIなら
+              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%83%91%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">
+                誤差逆伝播法
+              </ExternalLink>
+              、アルゴリズムなら
+              <ExternalLink href="https://ja.wikipedia.org/wiki/%E5%8B%95%E7%9A%84%E8%A8%88%E7%94%BB%E6%B3%95">
+                動的計画法
+              </ExternalLink>
+              、コンパイラなら
+              <ExternalLink href="https://ja.wikipedia.org/wiki/%E3%83%AC%E3%82%B8%E3%82%B9%E3%82%BF%E5%89%B2%E3%82%8A%E4%BB%98%E3%81%91">
+                レジスタ割り付け
+              </ExternalLink>
+              など、
+              <Em>
+                どんな基礎的な学習内容でも、ちょっと考えればスマホで学べるパズルを作ることができる気がします。
+              </Em>
+            </P>
+            <Hr />
+            <P>
+              そして、「なぜスマホ向けの
+              <H args={{ name: 'computerScience' }} />
+              の教材が大事なのか」聞かれれば、わたしはこう答えます。
+            </P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  <Strong>
+                    ほとんどの人にとって、プログラミングを行う機会はほとんど無い。どれだけプログラミング教育が充実したとしても、「世の中の圧倒的多数の人は、プログラミング未経験」という状態はおそらく未来永劫続く。
+                  </Strong>
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  一方、これからソフトウェアが世の中を変え続け、「AIが仕事を奪う」と言われ続けるなかで、ある程度の
+                  <H args={{ name: 'computerScience' }} />
+                  のリテラシーを持つことは大事なのではないか。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  世の中の圧倒的多数の人は、
+                  <Strong>
+                    プログラミング未経験だが、スマホを持っている。
+                  </Strong>
+                  だから、プログラミング抜きにスマホで学べる
+                  <H args={{ name: 'computerScience' }} />
+                  の教材がもっと増えるべきだと思う。
+                </Em>
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['📱', '🤗', '🤖']} />
+            <P>
+              言いたいことは以上です！ここまでお付き合いくださり、本当にありがとうございました。
+            </P>
+          </>
+        )
       }
     ]}
   />
