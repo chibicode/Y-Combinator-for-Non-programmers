@@ -1,9 +1,9 @@
 import React from 'react'
-import bundle, { BundleTypes } from 'src/lib/contentsBundle'
+import bundle from 'src/lib/contentsBundle'
 import locale from 'src/lib/locale'
 
 export interface ContentProps {
-  name: keyof BundleTypes
+  name: keyof typeof bundle
 }
 
 const Content = ({ name }: ContentProps) => {
