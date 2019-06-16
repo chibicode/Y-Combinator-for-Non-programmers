@@ -438,7 +438,12 @@ export default () => (
             </P>
             <CenteredCode size="md">λA.A B</CenteredCode>
             <P>
-              1930年代に考案されたラムダ計算は、このような見た目だったのです。
+              1930年代に考案されたラムダ計算は、このような見た目だったのです。ちなみに、なぜギリシャ文字の「
+              <Strong>ラムダ</Strong>」が使われたのかは
+              <ExternalLink href="https://en.wikipedia.org/wiki/Lambda_calculus#Origin_of_the_lambda_symbol">
+                諸説あるようです
+              </ExternalLink>
+              。
             </P>
             <Hr />
             <P>
