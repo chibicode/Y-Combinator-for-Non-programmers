@@ -11,6 +11,8 @@ import {
   OlLi,
   InlineHeader,
   CenteredCode,
+  Pre,
+  Code,
   Hr
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -464,6 +466,123 @@ export default () => (
             <P>
               「弁当箱を使うことで、とっつきやすかった」と思っていただければ嬉しいです。
             </P>
+          </>
+        )
+      },
+      {
+        title: <>ラムダ計算とプログラミング言語</>,
+        content: (
+          <>
+            <P>
+              こちらがラムダ計算で記述した
+              <H args={{ name: 'yCombinator' }} />
+              ですが、
+            </P>
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <P>
+              これを見て、なんとなく「<Em>プログラミング言語みたい</Em>
+              」と思いませんか？プログラミング経験者の方も、未経験者の方も、「これはプログラミング言語だよ」と言われれば、頷いてしまうのではないでしょうか。
+            </P>
+            <P>
+              <Em>
+                1930年代に考案されたラムダ計算は、後に誕生したいくつかのプログラミング言語の設計に大きな影響を与えました。
+              </Em>
+              現存するプログラミング言語の多くには、ラムダ計算の名残が残っています。
+            </P>
+            <EmojiSeparator emojis={['🐍', '🐍', '🐍']} />
+            <P>
+              たとえば、執筆時点で世界で最も使われているプログラミング言語のひとつで、特にAI開発で人気の
+              <Strong>Python (パイソン)</Strong>
+              という言語があります。ちなみにパイソンとは大蛇のことで、Python言語のロゴにもヘビの絵が描かれています。
+            </P>
+            <P>
+              <Strong>
+                そのPython言語で
+                <H args={{ name: 'yCombinator' }} />
+                を記述すると、次のようになります。
+              </Strong>
+            </P>
+            <Pre>
+              <Code
+                children={`lambda a: (
+    lambda b: a(lambda c: (b(b))(c))
+)(lambda b: a(lambda c: (b(b))(c)))`}
+              ></Code>
+            </Pre>
+            <P>
+              <Em>
+                <Strong>lambda</Strong>{' '}
+                (ラムダ)という単語が使われており、それ以外もラムダ計算の
+                <H args={{ name: 'yCombinator' }} />
+                となんとなく似ていますよね。
+              </Em>
+              (ちなみに、アルファベットは<Code>a</Code>と<Code>b</Code>以外に
+              <Code>c</Code>が使われていますが、<Code>c</Code>
+              が使われている理由は、Python言語の仕様がラムダ計算と微妙に異なるからです。)
+            </P>
+            <EmojiSeparator emojis={['🐍', '🐍', '🐍']} />
+            <P>
+              <Strong>
+                まとめると、Python言語のような現在人気のプログラミング言語にも、1930年代に考えられたラムダ計算のエッセンスが詰まっているのです。
+              </Strong>
+            </P>
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>余談:</InlineHeader>{' '}
+                <Em>
+                  プログラミングができる方は、以下のPython言語のコードを実行してみてください。
+                </Em>
+              </P>
+              <Pre>
+                <Code
+                  children={`print(
+    (
+        lambda a: (
+            lambda b: a(lambda c: (b(b))(c))
+        )(lambda b: a(lambda c: (b(b))(c)))
+    )(
+        lambda f: lambda n: 1
+        if n == 0
+        else n * f(n - 1)
+    )(
+        5
+    )
+)`}
+                ></Code>
+              </Pre>
+              <P>
+                これは、
+                <H args={{ name: 'yCombinator' }} />
+                を使って
+                <H args={{ name: 'inlineFactorial', start: 5 }} />
+                を計算するPython言語のコードです。実行すると、
+                <H args={{ name: 'factorialComputation', start: 5 }} />
+                が出力されます。
+              </P>
+              <P>
+                <Code>for</Code>
+                などのループ機能や、<Code>def</Code>を使った再帰を一切使わずに、
+                <H args={{ name: 'yCombinator' }} />
+                だけで繰り返し処理を行っているのです。変数も一切定義していません。これは、すごいことです。
+              </P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>弁当箱はシンプル</>,
+        content: (
+          <>
+            <P>
+              文字数も残り少なくなってまいりました。
+              <Strong>ここから、話を弁当箱に戻します。</Strong>
+              (弁当箱とラムダ計算は、記述方法が違うだけで機能は同じなので、この話はラムダ計算にも当てはまります。)
+            </P>
+            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
           </>
         )
       }

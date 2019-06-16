@@ -1,19 +1,36 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
-import { colors, fontSizes, radii, spaces, lineHeights } from 'src/lib/theme'
+import { colors, fontSizes, spaces, lineHeights } from 'src/lib/theme'
 
-export const Pre = styled.pre`
-  margin: 0 0 ${spaces(1)};
+const PreInner = styled.pre`
+  margin: 0 auto ${spaces(1)};
   line-height: ${lineHeights(1.3)};
-  padding: ${spaces(0.5)} ${spaces(0.75)};
+  padding: ${spaces(0.5)};
   background: ${colors('white')};
-  border-radius: ${radii(0.5)};
+  font-size: ${fontSizes(0.7)};
+  letter-spacing: -0.075em;
+  max-width: 100%;
+  overflow-x: scroll;
 `
+
+export const Pre = ({ children }: { children: React.ReactNode }) => (
+  <div
+    css={css`
+      margin: ${spaces(1.75)} 0;
+      display: flex;
+      align-items: center;
+    `}
+  >
+    <PreInner>{children}</PreInner>
+  </div>
+)
 
 export const Code = styled.code`
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
     monospace;
+  background: ${colors('white')};
+  font-weight: bold;
 `
 
 export const CenteredCode = ({
