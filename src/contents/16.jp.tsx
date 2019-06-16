@@ -534,9 +534,10 @@ export default () => (
               <P>
                 <InlineHeader>余談:</InlineHeader>{' '}
                 <Em>
-                  プログラミングができる方は、以下のPython言語のコードを実行してみてください。(Pythonのバージョンは
-                  <Strong>3</Strong>です)
+                  プログラミングができる方は、以下のPython言語のコードを実行してみてください。
                 </Em>
+                (Pythonのバージョンは
+                <Strong>3</Strong>です)
               </P>
               <Pre>
                 <Code
@@ -565,10 +566,14 @@ export default () => (
                 が出力されます。
               </P>
               <P>
-                <Code>for</Code>
-                などのループ機能や、<Code>def</Code>を使った再帰を一切使わずに、
-                <H args={{ name: 'yCombinator' }} />
-                だけで繰り返し処理を行っているのです。変数も一切定義していません。これは、すごいことです。
+                <Em>
+                  <Code>for</Code>
+                  などのループ機能や、<Code>def</Code>
+                  を使った再帰を一切使わずに、
+                  <H args={{ name: 'yCombinator' }} />
+                  だけで繰り返し処理を行っているのです。
+                </Em>
+                これは、すごいことです。
               </P>
             </>
           )
