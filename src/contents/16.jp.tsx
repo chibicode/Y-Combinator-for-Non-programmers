@@ -534,7 +534,8 @@ export default () => (
               <P>
                 <InlineHeader>余談:</InlineHeader>{' '}
                 <Em>
-                  プログラミングができる方は、以下のPython言語のコードを実行してみてください。
+                  プログラミングができる方は、以下のPython言語のコードを実行してみてください。(Pythonのバージョンは
+                  <Strong>3</Strong>です)
                 </Em>
               </P>
               <Pre>
