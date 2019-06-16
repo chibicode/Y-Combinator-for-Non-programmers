@@ -17,7 +17,6 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import { lessonTitle } from 'src/lib/titles'
-import { dateString, dateSchemaString } from 'src/lib/date'
 import YoutubeEmbed from 'src/components/YoutubeEmbed'
 import { githubRepo } from 'src/lib/meta'
 
@@ -27,15 +26,7 @@ export default () => (
       {
         title: '自己紹介',
         footer: {
-          content: (
-            <P>
-              <InlineHeader>公開日:</InlineHeader>{' '}
-              <time dateTime={dateSchemaString}>{dateString}</time>
-              <br />
-              <InlineHeader>ソースコード:</InlineHeader>{' '}
-              <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
-            </P>
-          )
+          content: <H args={{ name: 'dateAndSource' }} />
         },
         content: (
           <>

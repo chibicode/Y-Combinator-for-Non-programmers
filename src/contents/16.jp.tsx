@@ -759,16 +759,19 @@ export default () => (
             </P>
             <P>
               そして、「
-              <Em>
+              <Strong>
                 <H args={{ name: 'yCombinator' }} />
                 は、繰り返しを可能にする弁当箱
-              </Em>
+              </Strong>
               」だいうことも、頭の片隅に入れておいてくださると嬉しいです。
             </P>
             {AER.news}
             <P>ここまでお付き合いくださり、本当にありがとうございました。</P>
           </>
-        )
+        ),
+        footer: {
+          content: <H args={{ name: 'dateAndSource' }} />
+        }
       }
     ]}
   />

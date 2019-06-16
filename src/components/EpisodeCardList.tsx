@@ -63,7 +63,10 @@ const EpisodeCardList = ({
             cards.length - 1 === lastVisibleCardIndex && (
               <div
                 css={css`
-                  padding: ${spaces(8)} 0 ${spaces(1)};
+                  padding: ${spaces(
+                      episodeNumber <= numEpisodesExceptFirstAndLast ? 8 : 2
+                    )}
+                    0 ${spaces(1)};
                 `}
               >
                 <CardWrapper

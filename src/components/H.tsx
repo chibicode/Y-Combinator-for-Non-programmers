@@ -38,11 +38,14 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId } from 'src/lib/twitter'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
+import { dateString, dateSchemaString } from 'src/lib/date'
+import { githubRepo } from 'src/lib/meta'
 
 export interface HProps {
   highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
+    | { name: 'dateAndSource' }
     | { name: 'pressNext' }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
@@ -1337,6 +1340,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
+      const question = (
+        <P>
+          また、当記事の内容について質問がございましたら、
+          <Em>
+            上のツイートに<Strong>スクリーンショット付き</Strong>で返信
+          </Em>
+          してくだされば最優先で対応します。メール(
+          <ExternalLink href="mailto:shu@chibicode.com">
+            shu@chibicode.com
+          </ExternalLink>
+          )でもお答えできますが、返事が遅れる可能性が高いです。
+        </P>
+      )
+
       if (episodeNumber <= numEpisodesExceptFirstAndLast) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
@@ -1376,24 +1393,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <Em>何度もツイートしていただきたいからではありません。</Em>
               </P>
             )}
-            <P>
-              また、当記事の内容について質問がございましたら、
-              <Em>
-                上のツイートに<Strong>スクリーンショット付き</Strong>で返信
-              </Em>
-              してくだされば最優先で対応します。メール(
-              <ExternalLink href="mailto:shu@chibicode.com">
-                shu@chibicode.com
-              </ExternalLink>
-              )でもお答えできますが、返事が遅れる可能性が高いです。
-            </P>
+            {question}
             <P>
               ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
             </P>
           </>
         )
       } else {
-        return <>?</>
+        return (
+          <>
+            <P>
+              お疲れ様でした！この記事に対するご意見・ご感想を、下のツイートの引用リツイートで共有してくださるととても嬉しいです。
+            </P>
+            <TwitterEmbed id={shareId} />
+            <P>
+              もしも「
+              <Em>
+                <H args={{ name: 'computerScience' }} />
+                の他の題材も、この記事のようにパズルで学んでみたい
+              </Em>
+              」とお考えの方がいらっしゃいましたら、ツイートで教えてくださると嬉しいです。
+            </P>
+            {question}
+            <P>重ね重ね、お読みになってくださりありがとうございました！</P>
+          </>
+        )
       }
     }
   }
@@ -1410,7 +1434,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </>
         )
       } else {
-        return <>?</>
+        return <>ありがとうございました！</>
       }
     }
   }
@@ -1710,6 +1734,23 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <Emoji>🔎</Emoji> グーグルなどの検索エンジン、
             <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
             カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
+          </P>
+        </>
+      )
+    }
+  }
+  if (args.name === 'dateAndSource') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <P>
+            <InlineHeader>公開日:</InlineHeader>{' '}
+            <time dateTime={dateSchemaString}>{dateString}</time>
+            <br />
+            <InlineHeader>ソースコード:</InlineHeader>{' '}
+            <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
           </P>
         </>
       )
