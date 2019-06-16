@@ -9,19 +9,25 @@ import {
   Img,
   Ol,
   OlLi,
+  Ul,
+  UlLi,
   InlineHeader,
   CenteredCode,
   Pre,
   Code,
   Hr
 } from 'src/components/ContentTags'
+import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import Emoji from 'src/components/Emoji'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import { spaces, fontSizes } from 'src/lib/theme'
+import { BasicRules } from 'src/contents/2.jp'
 
 export default () => (
   <EpisodeCardList
@@ -589,7 +595,127 @@ export default () => (
               (弁当箱とラムダ計算は、記述方法が違うだけで機能は同じなので、この話はラムダ計算にも当てはまります。)
             </P>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
-            <P>弁当箱の法則は、</P>
+            <P>
+              弁当箱は、<Em>法則としてはとてもシンプルです。</Em>
+              基本的な法則は、初級その2で紹介した以下の4つしかありません。
+            </P>
+            <Hr />
+            <BasicRules includeFuncUnbound />
+            <Hr />
+            <P>これ以外の法則は、</P>
+            <Ul>
+              <UlLi>
+                初級その3〜その5で紹介した「<Strong>実行の順番</Strong>
+                」(
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>より
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                を先にやる等)
+              </UlLi>
+              <UlLi>
+                上級その1で紹介した「
+                <Strong>結果が変わるのを避ける</Strong>」(
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                に同じ料理がある場合は、
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                を別の料理に変える)
+              </UlLi>
+            </Ul>
+            <P>
+              しかありません。弁当箱の法則はたったこれだけ。非常にシンプルなのです。
+            </P>
+            <EmojiSeparator
+              size="sm"
+              nodes={[
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>✅</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <Emoji>❌</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ]}
+            />
+            <P>
+              しかし、
+              <Em>
+                こんなシンプルな弁当箱でも、<Strong>工夫すること</Strong>
+                で非常に複雑な計算を行うことができます。
+              </Em>
+              今回紹介しただけでも、以下のことができます。
+            </P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  弁当箱の暗号を使って<Strong>数字</Strong> <Emoji>🔢</Emoji>{' '}
+                  として表すことができる。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  弁当箱の暗号を使って<Strong>四則演算</Strong>
+                  を行うことができる。
+                  <Emoji>➕</Emoji> <Emoji>✖️</Emoji> <Emoji>➖</Emoji>
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  弁当箱の暗号を使って<Strong>条件分岐</Strong>ができる。{' '}
+                  <InlineEmojiBoxesForCondition type="condition" />{' '}
+                  <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                  <InlineEmojiBoxesForCondition type="falseCase" />
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <H args={{ name: 'yCombinator' }} />
+                  を使って<Strong>繰り返し処理</Strong>ができる。
+                </Em>
+              </UlLi>
+            </Ul>
+            <P>
+              弁当箱は、今回紹介できなかったさらに複雑な計算も行うことができます。コンピュータにできる計算なら、理論上は弁当箱でも実行できるのです。
+            </P>
+            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
+            <P>
+              <Em>
+                弁当箱はシンプルだけど、
+                <Strong>工夫の力で</Strong>、最強の計算機になれるのです。
+              </Em>
+            </P>
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>余談:</InlineHeader> じゃあ、
+                <Em>弁当箱にできない計算はあるの？</Em>
+                と思われた方がいるかもしれません。
+                <Em>
+                  実は、弁当箱にも、どんなに進化した計算機(コンピュータ)にも絶対に解けない計算問題は存在します。
+                </Em>
+                それは「
+                <ExternalLink href="https://ja.wikipedia.org/wiki/%E5%81%9C%E6%AD%A2%E6%80%A7%E5%95%8F%E9%A1%8C">
+                  <Strong>停止性問題</Strong>
+                </ExternalLink>
+                」という特殊な計算問題です。難しいのでここでは説明しませんが、興味のある方は調べてみてください。
+              </P>
+            </>
+          )
+        }
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'computerScience' }} />
+            とは
+          </>
+        ),
+        content: (
+          <>
+            <P>弁当箱</P>
           </>
         )
       }

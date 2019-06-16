@@ -11,6 +11,51 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import episodeEmojis from 'src/lib/episodeEmojis'
 
+export const BasicRules = ({
+  includeFuncUnbound
+}: {
+  includeFuncUnbound: boolean
+}) => (
+  <>
+    <P>
+      1. <InlineHeader>印をつける:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+      {includeFuncUnbound && (
+        <>
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+        </>
+      )}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </P>
+    {AER.zzxj}
+    <P>
+      2. <InlineHeader>一致チェック:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+      <Emoji>✅</Emoji>
+    </P>
+    {AER.keck}
+    <P>
+      3. <InlineHeader>コピーする:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <Emoji>↘️</Emoji>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </P>
+    {AER.qoms}
+    <P>
+      4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+    </P>
+    {AER.mhgm}
+  </>
+)
+
+BasicRules.defaultProps = {
+  includeFuncUnbound: false
+}
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -183,33 +228,7 @@ export default () => (
         type: 'summary',
         content: (
           <>
-            <P>
-              1. <InlineHeader>印をつける:</InlineHeader>{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-            </P>
-            {AER.zzxj}
-            <P>
-              2. <InlineHeader>一致チェック:</InlineHeader>{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              <Emoji>✅</Emoji>
-            </P>
-            {AER.keck}
-            <P>
-              3. <InlineHeader>コピーする:</InlineHeader>{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              <Emoji>↘️</Emoji>{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-            </P>
-            {AER.qoms}
-            <P>
-              4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-            </P>
-            {AER.mhgm}
+            <BasicRules />
           </>
         )
       },
