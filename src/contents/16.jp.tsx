@@ -707,6 +707,7 @@ export default () => (
         }
       },
       {
+        type: 'summary',
         title: (
           <>
             <H args={{ name: 'computerScience' }} />
@@ -715,7 +716,57 @@ export default () => (
         ),
         content: (
           <>
-            <P>弁当箱</P>
+            <P>
+              当記事では、
+              <Em>
+                シンプルな法則しかない弁当箱だけど、工夫して
+                <H args={{ name: 'yCombinator' }} />
+                などを作ることによって、さまざまな計算を可能にしました。
+              </Em>
+              このことに、
+              <H args={{ name: 'computerScience' }} />
+              のエッセンスが詰まっている気がします。
+            </P>
+            <EmojiSeparator emojis={['🤔', '💭', '💡']} />
+            <P>
+              <H args={{ name: 'computerScience' }} />
+              とは、突き詰めると「
+              <Strong>計算機(コンピュータ)を工夫して、問題を解く</Strong>
+              」ことを学べる学問です。
+            </P>
+            <P>
+              今回紹介したのは、
+              <H args={{ name: 'computerScience' }} />
+              のなかでも「<Em>計算理論</Em>」と呼ばれる分野ですが、
+              <H args={{ name: 'computerScience' }} />
+              にある他の分野でも、「
+              <Strong>計算機(コンピュータ)を工夫して、問題を解く</Strong>
+              」ことが命題となっています。「
+              <Em>
+                コンピュータをどう工夫して使えば、美しいCGや、人工知能や、仮想通貨が作れるだろう？
+              </Em>
+              」といった感じですね。
+            </P>
+            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
+            <P>
+              今回紹介できるのはここまでですが、当記事を読んで、 「
+              <Em>
+                <H args={{ name: 'computerScience' }} />
+                のことが、なんとなくわかった気がする
+              </Em>
+              」「<Em>工夫の力ってすごいなあ</Em>
+              」と思っていただけたら幸いです。
+            </P>
+            <P>
+              そして、「
+              <Em>
+                <H args={{ name: 'yCombinator' }} />
+                は、繰り返しを可能にする弁当箱
+              </Em>
+              」だいうことも、頭の片隅に入れておいてくださると嬉しいです。
+            </P>
+            {AER.news}
+            <P>ここまでお付き合いくださり、本当にありがとうございました。</P>
           </>
         )
       }
