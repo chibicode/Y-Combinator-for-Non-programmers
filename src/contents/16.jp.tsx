@@ -9,7 +9,9 @@ import {
   Img,
   Ol,
   OlLi,
-  InlineHeader
+  InlineHeader,
+  Code,
+  Hr
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -17,8 +19,7 @@ import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
-import EmojiWithText from 'src/components/EmojiWithText'
-import { spaces } from 'src/lib/theme'
+import { colors, spaces, fontSizes } from 'src/lib/theme'
 
 export default () => (
   <EpisodeCardList
@@ -388,13 +389,8 @@ export default () => (
             </P>
             <P>
               それを説明するために、こちらの弁当箱をラムダ計算の記述に置き換えてみましょう。当記事の一番最初に紹介した弁当箱です。
-              これを
-              <H args={{ name: 'play' }} />
-              すると、
-              <EmojiWithText letter="b" />
-              になります。
             </P>
-            {AER.kavd}
+            {AER.ilpo}
             <P>
               <Em>
                 まず、ラムダ計算では料理を使わず、アルファベットを使います。
@@ -409,33 +405,96 @@ export default () => (
               が一番左に来ており、その右にスペースを開けて上にあった
               <InlineEmojiBoxes emojis={['🅱️']} />
               を配置しています。
-              <H args={{ name: 'play' }} />
-              すると、一番右の
-              <InlineEmojiBoxes emojis={['🅱️']} />
-              になる、というわけです。
             </P>
             <div
               css={css`
                 text-align: center;
-                font-size: 1.5em;
+                font-size: ${fontSizes(1.6)};
                 margin: ${spaces(1.75)} 0;
               `}
             >
               <InlineEmojiBoxes emojis={['🅰️', '🅰️']} />{' '}
-              <InlineEmojiBoxes emojis={['🅱️']} /> <Emoji size="sm">▶️</Emoji>{' '}
               <InlineEmojiBoxes emojis={['🅱️']} />
             </div>
             <P>
               最後に、ギリシャ文字の「ラムダ」(
               <Strong
                 css={css`
-                  font-size: 1.5em;
+                  font-size: ${fontSizes(1.4)};
                 `}
               >
                 {' '}
                 λ{' '}
               </Strong>
-              )を使い、以下のように表記を変えます。これで、弁当箱をラムダ計算の記述に書き換えることができました。
+              )などを使い、以下のように表記を変えます。これで、弁当箱をラムダ計算の記述に書き換えることができました。
+            </P>
+            <div
+              css={css`
+                text-align: center;
+                font-size: ${fontSizes(1.6)};
+                letter-spacing: -0.075em;
+                margin: ${spaces(1.75)} 0;
+              `}
+            >
+              <Code
+                css={css`
+                  padding: ${spaces(0.25)};
+                  background: ${colors('white')};
+                `}
+              >
+                λA.A B
+              </Code>
+            </div>
+            <P>
+              1930年代に考案されたラムダ計算は、このような見た目だったのです。
+            </P>
+            <Hr />
+            <P>
+              他の例も見てみましょう。たとえば、前回紹介した
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+              </Strong>
+              をご覧ください。
+            </P>
+            {AER.news}
+            <P>これを、ラムダ計算の記述に書き換えると、次のようになります。</P>
+            <div
+              css={css`
+                text-align: center;
+                letter-spacing: -0.075em;
+                font-size: ${fontSizes(1.2)};
+                margin: ${spaces(1.75)} 0;
+              `}
+            >
+              <Code
+                css={css`
+                  padding: ${spaces(0.25)};
+                  background: ${colors('white')};
+                `}
+              >
+                λA.(λB.A(B B))(λB.A(B B))
+              </Code>
+            </div>
+            <P>
+              大学の
+              <H args={{ name: 'computerScience' }} />
+              の授業で
+              <H args={{ name: 'yCombinator' }} />
+              について学ぶときは、おそらくこのラムダ計算の記述方法で学ぶはずです。なんとなく、弁当箱に比べて小難しそうな記述方法ですよね。特に数学が嫌いな人には敬遠されそうです。
+            </P>
+            <P>
+              だからわたしは、「
+              <Em>
+                ラムダ計算の機能はそのままに、もっと分かりやすい見た目で表現できないか？
+              </Em>
+              」と考えました。
+              <Strong>
+                そこでわたしが思いついたのが、弁当箱という形でラムダ計算を表現することだったのです。
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['🔠', '🤔', '🍱']} />
+            <P>
+              「弁当箱を使うことで、とっつきやすかった」と思っていただければ嬉しいです。
             </P>
           </>
         )

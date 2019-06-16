@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { colors, radii, fontSizes, spaces, lineHeights } from 'src/lib/theme'
+import { colors, radii, spaces, lineHeights } from 'src/lib/theme'
 
 export const Pre = styled.pre`
   margin: 0 0 ${spaces(1)};
@@ -12,5 +12,4 @@ export const Pre = styled.pre`
 export const Code = styled.code`
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
     monospace;
-  font-size: ${fontSizes(0.7)};
 `
