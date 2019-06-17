@@ -223,7 +223,7 @@ export default () => (
         )
       },
       {
-        title: '真ん中の料理はスルー',
+        title: '真ん中の料理は無視',
         content: (
           <>
             <P>
@@ -255,7 +255,7 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              <Strong>つまり、スルーして大丈夫ということです。</Strong>
+              <Strong>つまり、無視して大丈夫ということです。</Strong>
             </P>
             <EmojiSeparator
               nodes={[
@@ -268,7 +268,7 @@ export default () => (
         )
       },
       {
-        title: 'スルーした結果',
+        title: '無視した結果',
         content: (
           <>
             <P>
@@ -312,7 +312,7 @@ export default () => (
               <Strong>
                 残りのステップで
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-                はスルーする。
+                は無視する。
               </Strong>
             </P>
           </>
