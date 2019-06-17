@@ -700,6 +700,7 @@ print(f(5))`}
                 <EmojiNumber number={5} />
                 があります。
               </UlLi>
+              <UlLi>ループや、再帰はどこにも使われていません。</UlLi>
             </Ul>
             <P>
               すなわちこれは、
@@ -709,6 +710,7 @@ print(f(5))`}
                 <H args={{ name: 'inlineFactorial', start: 5 }} />
                 を計算するPython言語のコードなのです。
               </Strong>
+              もちろん、最後の<Code>5</Code>を他の数字に変えても機能します。
             </P>
             <EmojiSeparator emojis={['🔁', '🐍', '🔁']} />
             <P>
@@ -736,9 +738,13 @@ print(f(5))`}
               ちなみに、ブラウザ上で実行できる言語・<Strong>JavaScript</Strong>
               でも、
               <H args={{ name: 'yCombinator' }} />
-              を使って同じ計算ができます。下のコードをブラウザの開発者ツールに入れて実行すれば、
+              を使って同じ計算ができます。
+            </P>
+            <P>
+              下のコードをブラウザの開発者ツールに入れて実行すれば、
               <H args={{ name: 'factorialComputation', start: 5 }} />
-              が出力されます。ループ機能も、再帰機能も一切使っていません。
+              が出力されます。ループ機能も、再帰機能も一切使っていません。もちろん、最後の
+              <Code>5</Code>を他の数字に変えても機能します。
             </P>
             <Pre>
               <Code
