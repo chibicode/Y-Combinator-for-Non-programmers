@@ -25,6 +25,34 @@ import { magicalVariableName } from 'src/lib/specialVariableNames'
 import TopRightBadge from 'src/components/TopRightBadge'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 
+const ConditionSummary = () => (
+  <>
+    <Ul>
+      <UlLi>
+        まず、
+        <InlineEmojiBoxesForCondition type="condition" />{' '}
+        (真ん中、黄色い左枠)の中にある
+        <InlineEmojiBoxesForQuestion />
+        の暗号が「0」かどうかチェックします。
+      </UlLi>
+      <UlLi>
+        もし「<Strong>0</Strong>」なら、{' '}
+        <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+        (一番下、青い左枠)に入っている料理が残ります。この場合は
+        <EmojiWithText letter="y" />
+        です。
+      </UlLi>
+      <UlLi>
+        もし「<Strong>1以上</Strong>なら」、{' '}
+        <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+        (一番上、赤い左枠)に入っている料理が残ります。この場合は
+        <EmojiWithText letter="z" />
+        です。
+      </UlLi>
+    </Ul>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -134,6 +162,25 @@ export default () => (
         )
       },
       {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              というわけで、こちらが
+              <InlineEmojiBoxesForQuestion /> <Emoji>✖️</Emoji>{' '}
+              <InlineEmojiBoxesForQuestion />
+              を計算する弁当箱の省略表記です。
+            </P>
+            {AER.imba}
+          </>
+        )
+      },
+      {
         title: <>条件分岐の弁当箱</>,
         content: (
           <>
@@ -155,29 +202,7 @@ export default () => (
             {AER.nlxe}
             <P>次のように省略表記してみましょう:</P>
             {AER.hvdn}
-            <Ul>
-              <UlLi>
-                まず、
-                <InlineEmojiBoxesForCondition type="condition" />{' '}
-                (真ん中、黄色い左枠)の中にある
-                <InlineEmojiBoxesForQuestion />
-                の暗号が「0」かどうかチェックします。
-              </UlLi>
-              <UlLi>
-                もし「<Strong>0</Strong>」なら、{' '}
-                <InlineEmojiBoxesForCondition type="trueCase" />{' '}
-                (一番下、青い左枠)に入っている料理が残ります。この場合は
-                <EmojiWithText letter="y" />
-                です。
-              </UlLi>
-              <UlLi>
-                もし「<Strong>1以上</Strong>なら」、{' '}
-                <InlineEmojiBoxesForCondition type="falseCase" />{' '}
-                (一番上、赤い左枠)に入っている料理が残ります。この場合は
-                <EmojiWithText letter="z" />
-                です。
-              </UlLi>
-            </Ul>
+            <ConditionSummary />
             <EmojiSeparator emojis={['0️⃣', '🚦', '🔢']} />
             <P>
               <InlineHeader>赤</InlineHeader>・<InlineHeader>黄色</InlineHeader>
@@ -408,15 +433,7 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>掛け算の弁当箱の省略表記:</InlineHeader> こちらは、
-              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={3} />
-              を計算する弁当箱の省略表記です。
-            </P>
-            {AER.omlc}
-            <P>
-              <InlineHeader>条件分岐の弁当箱の省略表記:</InlineHeader>{' '}
-              こちらは、
+              まとめると、こちらが、
               <InlineEmojiBoxesForQuestion />が<EmojiNumber number={0} />
               なら
               <EmojiWithText letter="y" />、<EmojiNumber number={1} />
@@ -425,6 +442,7 @@ export default () => (
               になる弁当箱の省略表記です。
             </P>
             {AER.hvdn}
+            <ConditionSummary />
           </>
         )
       },
