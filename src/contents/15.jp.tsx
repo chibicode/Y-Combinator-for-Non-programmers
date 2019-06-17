@@ -712,7 +712,7 @@ export default () => (
               <H args={{ name: 'witch' }} />
               を使わなくても繰り返し処理を行うことができる。
               <Em>
-                まさに魔法のようだから、記事に「
+                まるで魔法のようだから、記事に「
                 <Strong>
                   魔法の
                   <H args={{ name: 'yCombinator' }} />

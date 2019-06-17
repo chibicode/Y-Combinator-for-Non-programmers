@@ -232,7 +232,13 @@ export default () => (
             </Ul>
             {AER.gtnr}
             <P>
-              <Strong>重要: この法則を覚える必要はありません！</Strong>
+              <Strong>この変化の法則がまるで魔法のよう</Strong>なので、弁当箱の
+              <H args={{ name: 'witch' }} />
+              と名付けた次第です。特に深い意味はありません。
+            </P>
+            <EmojiSeparator emojis={['✨', '🧙‍♀️', '✨']} />
+            <P>
+              <Strong>重要: この変化の法則を覚える必要はありません！</Strong>
               とりあえず読み進めてみてください。
             </P>
           </>

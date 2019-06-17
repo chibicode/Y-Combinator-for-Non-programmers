@@ -152,7 +152,7 @@ export default () => (
               <InlineHeader>例その1:</InlineHeader> こちらは、最初に紹介した
               <H args={{ name: 'bentoBoxPuzzle' }} />
               です。
-              <H args={{ name: 'pressNext' }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.itbm}
           </>
