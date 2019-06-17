@@ -632,13 +632,44 @@ export default {
       }
     />
   ),
+  blre: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E1}
+      showPriorities
+      caption={<H args={{ name: 'secretCodeABCaption', a: 'a', b: 'b' }} />}
+      bottomRightBadgeOverrides={{
+        b: '🅱️',
+        a: '🅰️'
+      }}
+    />
+  ),
+  jmyv: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E2}
+      showPriorities
+      caption={<H args={{ name: 'secretCodeABCaption', a: 'c', b: 'd' }} />}
+      bottomRightBadgeOverrides={{
+        d: '🅱️',
+        c: '🅰️'
+      }}
+    />
+  ),
+  ilnb: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E3}
+      showPriorities
+      caption={<H args={{ name: 'secretCodeABCaption', a: 'e', b: 'f' }} />}
+      bottomRightBadgeOverrides={{
+        f: '🅱️',
+        e: '🅰️'
+      }}
+    />
+  ),
   qsfp: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}
       showPriorities
-      caption={
-        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
-      }
+      caption={<H args={{ name: 'secretCodeABCaption', a: 'g', b: 'h' }} />}
       bottomRightBadgeOverrides={{
         h: '🅱️',
         g: '🅰️'

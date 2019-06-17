@@ -112,15 +112,36 @@ export default () => (
         content: (
           <>
             {AER.bpwl}
-            <P>なぜ暗号が「3」なのか説明しますね！</P>
+            <P>では、どうやって暗号を解読するか説明しますね！</P>
           </>
         )
       },
       {
-        type: 'summary',
         title: <>暗号の法則</>,
         content: (
           <>
+            <P>
+              まず、暗号が隠されている弁当箱には
+              <Strong>2種類の料理がある</Strong>
+              ことに注目します。それぞれに、<Emoji size="mdlg">🅰️</Emoji>と
+              <Emoji size="mdlg">🅱️</Emoji>の印をつけてみます。
+            </P>
+            <P>
+              こちらは、暗号が<Strong>「0」</Strong>でした:
+            </P>
+            {AER.blre}
+            <P>
+              こちらは、暗号が<Strong>「1」</Strong>でした:
+            </P>
+            {AER.jmyv}
+            <P>
+              こちらは、暗号が<Strong>「2」</Strong>でした:
+            </P>
+            {AER.ilnb}
+            <P>
+              こちらは、暗号が<Strong>「3」</Strong>でした:
+            </P>
+            {AER.qsfp}
             <H args={{ name: 'secretCodeReview', example: AER.eozk }} />
             <Hr />
             <P>

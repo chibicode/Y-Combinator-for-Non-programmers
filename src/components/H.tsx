@@ -116,6 +116,7 @@ export interface HProps {
     | { name: 'secretCodeAddCaption' }
     | { name: 'secretCodeMultiplyCaption'; arg1?: number; arg2?: number }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
+    | { name: 'secretCodeABCaption'; a: VariableNames; b: VariableNames }
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
@@ -1046,8 +1047,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <span css={slightlyLargeCaptionCss}>1</span>以上
           </Strong>
           なら
-          {args.ifNonZero}
-          になる
+          {args.ifNonZero}に
         </>
       )
     }
@@ -1775,6 +1775,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <InlineHeader>ソースコード:</InlineHeader>{' '}
             <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
           </P>
+        </>
+      )
+    }
+  }
+  if (args.name === 'secretCodeABCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <EmojiForLetter letter={args.a} />は<Emoji>🅰️</Emoji>、
+          <EmojiForLetter letter={args.b} />は<Emoji>🅱️</Emoji>
         </>
       )
     }
