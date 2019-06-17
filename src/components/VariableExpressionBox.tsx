@@ -146,7 +146,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             <span
               css={css`
                 display: inline-flex;
-                font-size: 0.5em;
+                font-size: 0.6em;
                 transform: translateY(0.3em);
               `}
             >

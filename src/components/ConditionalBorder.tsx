@@ -19,11 +19,11 @@ const fontSize = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): string => {
   if (variableSize === 'lg') {
-    return fontSizes(1)
+    return fontSizes(1.2)
   } else if (variableSize === 'md') {
-    return fontSizes(0.85)
+    return fontSizes(1)
   } else {
-    return fontSizes(0.7)
+    return fontSizes(0.85)
   }
 }
 
