@@ -16,7 +16,10 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import {
+  InlineEmojiBoxesForCondition,
+  InlineEmojiBoxesForQuestion
+} from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
@@ -277,7 +280,18 @@ export default () => (
               先ほどの続きからです。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.mdsc}
+            {AER.pgtx}
+            <P>
+              ここで、
+              <InlineEmojiBoxesForCondition type="condition" /> の中にある暗号が
+              <EmojiNumber number={0} />
+              になりました。ということは、下側の{' '}
+              <InlineEmojiBoxesForCondition type="trueCase" /> に入っている
+              <EmojiNumber number={1} />
+              が残るということです。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            {AER.gswd}
             <P>
               なんと、
               <H args={{ name: 'inlineFactorial', start: 3 }} />

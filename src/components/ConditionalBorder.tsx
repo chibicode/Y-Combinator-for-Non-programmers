@@ -62,7 +62,7 @@ const ConditionalBorder = ({
           left: 0;
           right: 0;
           bottom: 0;
-          background: ${shaded ? colors('grey50050') : 'transparent'};
+          background: ${shaded ? colors('grey50033') : 'transparent'};
         `}
       />
       {type && (

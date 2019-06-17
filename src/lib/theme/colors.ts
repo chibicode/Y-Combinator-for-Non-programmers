@@ -35,8 +35,8 @@ export const allColors = {
     .mix(Color(yellow[100]), 0.25)
     .hsl()
     .string(),
-  grey50050: Color(grey[500])
-    .alpha(0.5)
+  grey50033: Color(grey[500])
+    .alpha(0.33)
     .hsl()
     .string(),
   indigo30090: Color(indigo[300])
