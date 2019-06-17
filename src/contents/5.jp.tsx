@@ -380,7 +380,7 @@ export default () => (
                 </Strong>
               </Em>
             </P>
-            {AER.gtdu}
+            {AER.jmmp}
             <P>
               <Strong>
                 下段にふたつの料理 (

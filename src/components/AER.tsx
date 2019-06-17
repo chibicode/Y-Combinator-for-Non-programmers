@@ -551,6 +551,15 @@ export default {
       showPriorities
     />
   ),
+  jmmp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e5E3}
+      showPriorities
+      highlightOverrides={{
+        b: 'highlighted'
+      }}
+    />
+  ),
   qpkm: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e5E3}
