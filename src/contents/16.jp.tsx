@@ -536,11 +536,7 @@ export default () => (
                 <H args={{ name: 'yCombinator' }} />
                 となんとなく似ていますよね。
               </Em>
-              (ちなみに、アルファベットは<Code>a</Code>と<Code>b</Code>以外に
-              <Code>c</Code>が使われていますが、<Code>c</Code>
-              が使われている理由は、Python言語の仕様がラムダ計算と微妙に異なるからです。)
             </P>
-            <EmojiSeparator emojis={['🐍', '🐍', '🐍']} />
             <P>
               <Strong>
                 まとめると、Python言語のような現在人気のプログラミング言語にも、1930年代に考えられたラムダ計算の名残が残っているのです。
@@ -552,124 +548,143 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>余談:</InlineHeader>{' '}
-                <Em>
-                  プログラミングができる方は、以下のPython言語のコードを実行してみてください。
-                </Em>
-                (Pythonのバージョンは
-                <Strong>3</Strong>です)
-              </P>
-              <Pre>
-                <Code
-                  children={`print(
-    (
-`}
-                ></Code>
-                <Code
-                  css={css`
-                    color: ${colors('pink600')};
-                  `}
-                  children={`        lambda a: (
-            lambda b: a(lambda c: (b(b))(c))
-        )(lambda b: a(lambda c: (b(b))(c)))`}
-                ></Code>
-                <Code
-                  css={css`
-                    color: ${colors('blue400')};
-                  `}
-                  children={`
-    )(
-        lambda f: lambda n: 1
-        if n == 0
-        else n * f(n - 1)`}
-                ></Code>
-                <Code
-                  children={`
-    )(
-        5
-    )
-)`}
-                ></Code>
-              </Pre>
-              <P>コードをよく見てみると、</P>
-              <Ul>
-                <UlLi>
-                  <Strong
-                    css={css`
-                      color: ${colors('pink600')};
-                    `}
-                  >
-                    ピンクの文字
-                  </Strong>
-                  の部分は、先述したPython言語の
-                  <H args={{ name: 'yCombinator' }} />
-                  です。
-                </UlLi>
-                <UlLi>
-                  <Strong
-                    css={css`
-                      color: ${colors('blue400')};
-                    `}
-                  >
-                    青の文字
-                  </Strong>
-                  の部分には、条件分岐(<Code>if</Code>と<Code>else</Code>
-                  )・掛け算・1を引く計算があります。
-                </UlLi>
-                <UlLi>
-                  一番下に数字の
-                  <EmojiNumber number={5} />
-                  があります。
-                </UlLi>
-              </Ul>
-
-              <P>
-                すなわちこれは、
-                <Strong>
-                  <H args={{ name: 'yCombinator' }} />
-                  を使って
-                  <H args={{ name: 'inlineFactorial', start: 5 }} />
-                  を計算するPython言語のコードです。
-                </Strong>
-                だからこれを実行すると、
-                <H args={{ name: 'factorialComputation', start: 5 }} />
-                が出力されます。
-              </P>
-              <P>
-                もちろん、一番下の
-                <EmojiNumber number={5} />
-                をたとえば
-                <EmojiNumber number={4} />
-                に変えて実行すれば、
-                <H args={{ name: 'factorialComputation', start: 4 }} />
-                が計算できます。
-              </P>
-              <EmojiSeparator emojis={['🔁', '🐍', '🔁']} />
-              <P>
-                本来、Pythonで繰り返し処理を行うときは、<Code>for</Code>
-                などのループ機能を使うか、関数を定義して
-                <Strong>再帰処理</Strong>
-                を行います。
-                <Em>
-                  しかし上記の例のように、
-                  <H args={{ name: 'yCombinator' }} />
-                  を使えば、<Code>for</Code>や再帰処理を一切使わずに、
-                  <Code>lambda</Code>
-                  だけで繰り返し処理を行うことも可能なのです。
-                </Em>
-              </P>
-              <P>
-                言いかえると、
-                <Strong>
-                  <Code>lambda</Code>
-                  が備わっているプログラミング言語なら、ループ機能や再帰機能が備わっていなくても、
-                  <H args={{ name: 'yCombinator' }} />
-                  を使うことで繰り返し処理を行うことができるのです。
-                </Strong>
+                <InlineHeader>ちなみに:</InlineHeader> Python言語の
+                <H args={{ name: 'yCombinator' }} />
+                で使われているアルファベットをよく見ると、<Code>a</Code>と
+                <Code>b</Code>
+                以外に
+                <Code>c</Code>が使われています。<Code>c</Code>
+                が使われている理由は、Python言語の仕様がラムダ計算と微妙に異なるからです。専門用語を使うと、
+                <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A9%95%E4%BE%A1%E6%88%A6%E7%95%A5">
+                  評価戦略
+                </ExternalLink>
+                が「値渡し」と「名前渡し」かの違いによるものです。
               </P>
             </>
           )
         }
+      },
+      {
+        type: 'sideNote',
+        title: <>余談: プログラミングができる方へ</>,
+        content: (
+          <>
+            <P>
+              <Em>
+                プログラミングができる方は、以下のPython言語のコードを実行してみてください。
+              </Em>
+              (Pythonのバージョンは
+              <Strong>3</Strong>です)
+            </P>
+            <Pre>
+              <Code
+                children={`print(
+    (
+`}
+              ></Code>
+              <Code
+                css={css`
+                  color: ${colors('pink600')};
+                `}
+                children={`        lambda a: (
+            lambda b: a(lambda c: (b(b))(c))
+        )(lambda b: a(lambda c: (b(b))(c)))`}
+              ></Code>
+              <Code
+                css={css`
+                  color: ${colors('blue400')};
+                `}
+                children={`
+    )(
+        lambda f: lambda n: 1
+        if n == 0
+        else n * f(n - 1)`}
+              ></Code>
+              <Code
+                children={`
+    )(
+        5
+    )
+)`}
+              ></Code>
+            </Pre>
+            <P>コードをよく見てみると、</P>
+            <Ul>
+              <UlLi>
+                <Strong
+                  css={css`
+                    color: ${colors('pink600')};
+                  `}
+                >
+                  ピンクの文字
+                </Strong>
+                の部分は、先述したPython言語の
+                <H args={{ name: 'yCombinator' }} />
+                です。
+              </UlLi>
+              <UlLi>
+                <Strong
+                  css={css`
+                    color: ${colors('blue400')};
+                  `}
+                >
+                  青の文字
+                </Strong>
+                の部分には、条件分岐(<Code>if</Code>と<Code>else</Code>
+                )・掛け算・1を引く計算があります。
+              </UlLi>
+              <UlLi>
+                一番下に数字の
+                <EmojiNumber number={5} />
+                があります。
+              </UlLi>
+            </Ul>
+            <P>
+              すなわちこれは、
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+                を使って
+                <H args={{ name: 'inlineFactorial', start: 5 }} />
+                を計算するPython言語のコードです。
+              </Strong>
+              だからこれを実行すると、
+              <H args={{ name: 'factorialComputation', start: 5 }} />
+              が出力されます。
+            </P>
+            <P>
+              もちろん、一番下の
+              <EmojiNumber number={5} />
+              をたとえば
+              <EmojiNumber number={4} />
+              に変えて実行すれば、
+              <H args={{ name: 'factorialComputation', start: 4 }} />
+              が計算できます。
+            </P>
+            <EmojiSeparator emojis={['🔁', '🐍', '🔁']} />
+            <P>
+              本来、Pythonで繰り返し処理を行うときは、<Code>for</Code>
+              などのループ機能を使うか、関数を定義して
+              <Strong>再帰処理</Strong>
+              を行います。
+              <Em>
+                しかし上記の例のように、
+                <H args={{ name: 'yCombinator' }} />
+                を使えば、<Code>for</Code>や再帰処理を一切使わずに、
+                <Code>lambda</Code>
+                だけで繰り返し処理を行うことも可能なのです。
+              </Em>
+            </P>
+            <P>
+              言いかえると、
+              <Strong>
+                <Code>lambda</Code>
+                が備わっているプログラミング言語なら、ループ機能や再帰機能が備わっていなくても、
+                <H args={{ name: 'yCombinator' }} />
+                を使うことで繰り返し処理を行うことができるのです。
+              </Strong>
+            </P>
+          </>
+        )
       },
       {
         title: <>弁当箱はシンプル</>,
