@@ -31,11 +31,11 @@ const width = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   if (variableSize === 'lg') {
-    return 0.7
+    return 0.9
   } else if (variableSize === 'md') {
-    return 0.6
+    return 0.8
   } else {
-    return 0.5
+    return 0.7
   }
 }
 
