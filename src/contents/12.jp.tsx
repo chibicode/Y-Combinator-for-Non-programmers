@@ -343,15 +343,20 @@ export default () => (
             </P>
             {AER.yvia}
             <P>
-              次に、右下には
+              次に、こちらに
               <Strong>
                 <EmojiWithText letter="i" />
               </Strong>
-              と、その下に「
+              と、
+            </P>
+            {AER.qifg}
+            <P>
+              <EmojiWithText letter="i" />
+              の下に「
               <Strong>1を引く弁当箱</Strong>
               」があります。
             </P>
-            {AER.qifg}
+            {AER.tboe}
             <P>
               この場合、「1を引く弁当箱」が
               <Strong>
@@ -367,12 +372,14 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiForLetter letter="i" />,
-                <Emoji>➖</Emoji>,
-                <EmojiNumber number={1} />
+                <EmojiForLetterWithTopRightBadgeWrapper topRightBadgeType="pred">
+                  <EmojiForLetter letter="i" />
+                </EmojiForLetterWithTopRightBadgeWrapper>
               ]}
             />
-            <P>つまり省略表記すると、こうなります:</P>
+            <P>つまり、右下の部分が、</P>
+            {AER.ssns}
+            <P>省略表記されてこうなります:</P>
             {AER.ufyc}
             <P>
               ここまでくると、どうなるかわかりやすいですね。

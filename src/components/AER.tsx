@@ -1612,6 +1612,14 @@ export default {
       showPriorities
       containerSize="xs"
       variableSize="md"
+    />
+  ),
+  ssns: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E10}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
       highlightOverrides={{
         a: 'highlighted',
         b: 'highlighted',
@@ -1620,9 +1628,22 @@ export default {
         e: 'highlighted',
         f: 'highlighted'
       }}
-      caption={
-        <H args={{ name: 'secretCodeLetterMinusOneCaption', letter: 'i' }} />
-      }
+    />
+  ),
+  tboe: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e12E13}
+      showPriorities
+      containerSize="xs"
+      variableSize="md"
+      highlightOverrides={{
+        a: 'highlighted',
+        b: 'highlighted',
+        c: 'highlighted',
+        d: 'highlighted',
+        e: 'highlighted',
+        f: 'highlighted'
+      }}
     />
   ),
   ufyc: (

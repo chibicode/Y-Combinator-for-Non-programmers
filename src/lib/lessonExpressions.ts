@@ -401,6 +401,16 @@ export const e12E12 = initializeExpressionContainer([
   }
 ])
 
+export const e12E13 = initializeExpressionContainer([
+  {
+    arg: 'i',
+    body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
 export const e13E1 = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'question',

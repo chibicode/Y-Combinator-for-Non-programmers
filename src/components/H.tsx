@@ -138,7 +138,6 @@ export interface HProps {
     | { name: 'secretCodeReview'; example: React.ReactNode }
     | { name: 'secretCodeMinusOneCaption' }
     | { name: 'secretCodeTwoMinusOneCaption' }
-    | { name: 'secretCodeLetterMinusOneCaption'; letter: VariableNames }
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
     | { name: 'magicalChangedCaption'; fromNumber: number }
@@ -984,18 +983,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
-          <EmojiNumber number={1} /> を計算
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeLetterMinusOneCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <EmojiForLetter letter={args.letter} /> <Emoji>➖</Emoji>{' '}
           <EmojiNumber number={1} /> を計算
         </>
       )
