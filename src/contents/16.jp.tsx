@@ -24,6 +24,7 @@ import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
 import Emoji from 'src/components/Emoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import { colors, spaces, fontSizes } from 'src/lib/theme'
@@ -481,7 +482,7 @@ export default () => (
                 弁当箱は筆者のアイデアですが、それは1930年代に考えられた空想上の最強の計算機「ラムダ計算」がもとになっています。
               </UlLi>
               <UlLi>
-                ラムダ計算は複雑そうな見た目なので、とっつきやすい見た目の弁当箱を説明に使うことで、読者の方の心理的なハードルを下げようとした、というわけです。
+                ラムダ計算は複雑な見た目なので、とっつきやすい見た目の弁当箱を説明に使うことで、読者の方の心理的なハードルを下げようとした、というわけです。
               </UlLi>
             </Ul>
           </>
@@ -507,12 +508,13 @@ export default () => (
               </Em>
               現存するプログラミング言語の多くには、ラムダ計算の名残が残っています。
             </P>
-            <EmojiSeparator emojis={['🐍', '🐍', '🐍']} />
+            <Hr />
             <P>
               たとえば、執筆時点で世界で最も使われているプログラミング言語のひとつで、特にAI開発で人気の
               <Strong>Python (パイソン)</Strong>
               という言語があります。ちなみにパイソンとは大蛇のことで、Python言語のロゴにもヘビの絵が描かれています。
             </P>
+            <EmojiSeparator emojis={['🐍', '🐍', '🐍']} />
             <P>
               <Strong>
                 そのPython言語で
@@ -589,50 +591,73 @@ export default () => (
 )`}
                 ></Code>
               </Pre>
+              <P>コードをよく見てみると、</P>
+              <Ul>
+                <UlLi>
+                  <Strong
+                    css={css`
+                      color: ${colors('pink600')};
+                    `}
+                  >
+                    ピンクの文字
+                  </Strong>
+                  の部分は、先述したPython言語の
+                  <H args={{ name: 'yCombinator' }} />
+                  です。
+                </UlLi>
+                <UlLi>
+                  <Strong
+                    css={css`
+                      color: ${colors('blue400')};
+                    `}
+                  >
+                    青の文字
+                  </Strong>
+                  の部分には、条件分岐(<Code>if</Code>と<Code>else</Code>
+                  )・掛け算・1を引く計算があります。
+                </UlLi>
+                <UlLi>
+                  一番下に数字の
+                  <EmojiNumber number={5} />
+                  があります。
+                </UlLi>
+              </Ul>
+
               <P>
-                これは、
-                <H args={{ name: 'yCombinator' }} />
-                を使って
-                <H args={{ name: 'inlineFactorial', start: 5 }} />
-                を計算するPython言語のコードです。
-              </P>
-              <P>
-                <Strong
-                  css={css`
-                    color: ${colors('pink600')};
-                  `}
-                >
-                  ピンクの文字
+                すなわちこれは、
+                <Strong>
+                  <H args={{ name: 'yCombinator' }} />
+                  を使って
+                  <H args={{ name: 'inlineFactorial', start: 5 }} />
+                  を計算するPython言語のコードです。
                 </Strong>
-                の部分は
-                <H args={{ name: 'yCombinator' }} />
-                で、
-                <Strong
-                  css={css`
-                    color: ${colors('blue400')};
-                  `}
-                >
-                  青の文字
-                </Strong>
-                の部分には条件分岐(<Code>if</Code>と<Code>else</Code>
-                )・掛け算・1を引く計算があります。
-              </P>
-              <P>
-                これを実行すると、
+                だからこれを実行すると、
                 <H args={{ name: 'factorialComputation', start: 5 }} />
                 が出力されます。
               </P>
               <P>
+                もちろん、一番下の
+                <EmojiNumber number={5} />
+                をたとえば
+                <EmojiNumber number={4} />
+                に変えて実行すれば、
+                <H args={{ name: 'factorialComputation', start: 4 }} />
+                が計算できます。
+              </P>
+              <EmojiSeparator emojis={['🔁', '🐍', '🔁']} />
+              <P>
+                本来、Pythonで繰り返し処理を行うときは、<Code>for</Code>
+                などのループ機能を使うか、関数を定義して
+                <Strong>再帰処理</Strong>
+                を行います。
                 <Em>
-                  <Code>for</Code>
-                  などのループ機能や、<Code>def</Code>
-                  や変数定義を使った「<Strong>再帰</Strong>」を一切使わずに、
+                  しかし上記の例のように、
                   <H args={{ name: 'yCombinator' }} />
-                  だけで繰り返し処理を行っているのです。
+                  を使えば、<Code>for</Code>や再帰処理を一切使わずに、
+                  <Code>lambda</Code>
+                  だけで繰り返し処理を行うことも可能なのです。
                 </Em>
-                もちろん、実務ではループや再帰を使えばいいのですが、それらを使わずに
-                <Code>lambda</Code>
-                だけで繰り返しができるというのは、とても興味深いです。
+                これは、とても興味深いことだと思います。
               </P>
             </>
           )
@@ -676,7 +701,8 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              しかありません。弁当箱の法則はたったこれだけ。非常にシンプルなのです。
+              しかありません。弁当箱の法則はたったこれだけ。
+              <Strong>非常にシンプル</Strong>なのです。
             </P>
             <EmojiSeparator
               size="sm"
@@ -887,11 +913,17 @@ export default () => (
               など、
               <Em>
                 どんな基礎的な学習内容でも、ちょっと考えればスマホで学べるパズルを作ることができる気がします。
-                <H args={{ name: 'yCombinator' }} />
-                のパズルが作れるなら、これらのパズルも作れるはずです。
               </Em>
             </P>
-            <Hr />
+            <P>
+              <Strong>
+                <H args={{ name: 'yCombinator' }} />
+                のパズルが作れるなら、どんな
+                <H args={{ name: 'computerScience' }} />
+                の題材のパズルも作れるはずです。
+              </Strong>
+            </P>
+            <EmojiSeparator emojis={['🤔', '🤔', '🤔']} />
             <P>
               そして、「なぜスマホ向けの
               <H args={{ name: 'computerScience' }} />
@@ -907,9 +939,9 @@ export default () => (
               </UlLi>
               <UlLi>
                 <Em>
-                  一方、これからソフトウェアが世の中を変え続け、「AIが仕事を奪う」と言われ続けるなかで、ある程度の
+                  一方、これからソフトウェアが世の中を変え続け、「AIが仕事を奪う」と言われ続けるなかで、
                   <H args={{ name: 'computerScience' }} />
-                  のリテラシーを持つことは大事なのではないのでしょうか。
+                  のリテラシーを少しでも体得することは大事になってきます。
                 </Em>
               </UlLi>
               <UlLi>
