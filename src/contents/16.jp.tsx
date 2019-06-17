@@ -578,12 +578,61 @@ export default () => (
         content: (
           <>
             <P>
-              <Em>
-                プログラミングができる方は、以下のPython言語のコードを実行してみてください。
-              </Em>
-              (Pythonのバージョンは
-              <Strong>3</Strong>です)
+              以下はプログラミングができる方への余談なので、
+              <Em>プログラミング未経験の方は読み飛ばして結構です</Em>。
             </P>
+            <EmojiSeparator emojis={['🐍', '🤔', '🐍']} />
+            <P>
+              <H args={{ name: 'question' }} />{' '}
+              <Strong>
+                Python言語で、前回やったような
+                <H args={{ name: 'inlineFactorial', start: 5 }} />
+                といった計算を行うには、どうすればいいでしょう？
+              </Strong>
+            </P>
+            <P>
+              (もちろん、
+              <Em>
+                <EmojiNumber number={5} />
+                だけでなく、それ以外の数字からはじめる場合にも対応できる実装
+              </Em>
+              でなければいけません。また、<Code>math.factorial</Code>
+              を使うのは禁止です！)
+            </P>
+            <P>
+              おそらく、多くの方は<Code>for</Code>や<Code>while</Code>、または
+              <Code>functools.reduce</Code>などのループ機能を使うか、
+            </P>
+            <Pre>
+              <Code
+                children={`result = 1
+for i in range(5):
+    result *= i + 1
+print(result)`}
+              ></Code>
+            </Pre>
+            <P>
+              もしくは<Code>def</Code>による関数定義を用いた
+              <Strong>再帰</Strong>
+              を使うのではないでしょうか。
+            </P>
+            <Pre>
+              <Code
+                children={`def f(n):
+    if n == 0:
+        return 1
+    else:
+        return n * f(n - 1)
+
+print(f(5))`}
+              ></Code>
+            </Pre>
+            <P>
+              上記のどちらのコードを実行しても、
+              <H args={{ name: 'factorialComputation', start: 5 }} />
+              が出力されます。
+            </P>
+            <P>では、こちらの実装をご覧ください。</P>
             <Pre>
               <Code
                 children={`print(
@@ -616,6 +665,11 @@ export default () => (
 )`}
               ></Code>
             </Pre>
+            <P>
+              これを実行してみても、同じく
+              <H args={{ name: 'factorialComputation', start: 5 }} />
+              が出力されます。
+            </P>
             <P>コードをよく見てみると、</P>
             <Ul>
               <UlLi>
@@ -653,44 +707,51 @@ export default () => (
                 <H args={{ name: 'yCombinator' }} />
                 を使って
                 <H args={{ name: 'inlineFactorial', start: 5 }} />
-                を計算するPython言語のコードです。
+                を計算するPython言語のコードなのです。
               </Strong>
-              だからこれを実行すると、
-              <H args={{ name: 'factorialComputation', start: 5 }} />
-              が出力されます。
-            </P>
-            <P>
-              もちろん、一番下の
-              <EmojiNumber number={5} />
-              をたとえば
-              <EmojiNumber number={4} />
-              に変えて実行すれば、
-              <H args={{ name: 'factorialComputation', start: 4 }} />
-              が計算できます。
             </P>
             <EmojiSeparator emojis={['🔁', '🐍', '🔁']} />
             <P>
               本来、Pythonで繰り返し処理を行うときは、<Code>for</Code>
-              などのループ機能を使うか、関数を定義して
-              <Strong>再帰処理</Strong>
-              を行います。
+              などのループ機能を使うか、関数を定義して再帰処理を行います。
               <Em>
                 しかし上記の例のように、
                 <H args={{ name: 'yCombinator' }} />
-                を使えば、<Code>for</Code>や再帰処理を一切使わずに、
+                を使えば、ループ機能や再帰処理を一切使わずに、
                 <Code>lambda</Code>
                 だけで繰り返し処理を行うことも可能なのです。
               </Em>
             </P>
             <P>
               言いかえると、
-              <Strong>
+              <Em>
                 <Code>lambda</Code>
                 が備わっているプログラミング言語なら、ループ機能や再帰機能が備わっていなくても、
                 <H args={{ name: 'yCombinator' }} />
                 を使うことで繰り返し処理を行うことができるのです。
-              </Strong>
+              </Em>
             </P>
+            <Hr />
+            <P>
+              ちなみに、ブラウザ上で実行できる言語・<Strong>JavaScript</Strong>
+              でも、
+              <H args={{ name: 'yCombinator' }} />
+              を使って同じ計算ができます。下のコードをブラウザの開発者ツールに入れて実行すれば、
+              <H args={{ name: 'factorialComputation', start: 5 }} />
+              が出力されます。ループ機能も、再帰機能も一切使っていません。
+            </P>
+            <Pre>
+              <Code
+                children={`console.log(
+  (a =>
+    (b => a(c => b(b)(c)))(b =>
+      a(c => b(b)(c))
+    ))(f => n =>
+    n === 0 ? 1 : n * f(n - 1)
+  )(5)
+)`}
+              ></Code>
+            </Pre>
           </>
         )
       },

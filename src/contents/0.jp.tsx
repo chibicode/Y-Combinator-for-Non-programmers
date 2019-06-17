@@ -187,7 +187,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['💻', '🤔', '💻']} />
             <P>
-              <InlineHeader>質問:</InlineHeader>{' '}
+              <H args={{ name: 'question' }} />{' '}
               <Em>
                 <H args={{ name: 'computerScience' }} />
                 を学ぶためには、
