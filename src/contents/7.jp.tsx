@@ -120,7 +120,7 @@ export default () => (
             <EmojiSeparator emojis={['🍱', '➕', '️1️⃣']} />
             <P>
               他にはどんな計算ができるのでしょう？たとえば、
-              <Strong>弁当箱 同士の足し算はできるのでしょうか？</Strong>
+              <Strong>弁当箱同士の足し算はできるのでしょうか？</Strong>
             </P>
             <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
             <P>さっそく検証してみましょう！</P>
