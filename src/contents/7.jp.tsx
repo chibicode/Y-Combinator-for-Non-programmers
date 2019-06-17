@@ -30,7 +30,7 @@ export default () => (
             {AER.slyk}
             <P>
               するとどうなるでしょうか？
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', isFaster: true }} />
             </P>
             {AER.eemn}
             <P>
@@ -52,7 +52,7 @@ export default () => (
             <P>暗号が「2」だったらどうでしょう？</P>
             {AER.sisn}
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', isFaster: true }} />
             </P>
             {AER.syhh}
             <P>

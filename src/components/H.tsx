@@ -49,6 +49,7 @@ export interface HProps {
   args:
     | { name: 'dateAndSource'; includeAboutMe?: boolean }
     | { name: 'pressNext' }
+    | { name: 'isFaster' }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
     | { name: 'yesNoQuizIncorrect' }
@@ -105,6 +106,7 @@ export interface HProps {
         skipColon?: boolean
         pleaseWait?: boolean
         skippingSteps?: boolean
+        isFaster?: boolean
       }
     | { name: 'copy' }
     | { name: 'summary' }
@@ -766,7 +768,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em>
             <H args={{ name: 'fastForward' }} />
             を押してみてください
-            {args.pleaseWait || args.skippingSteps
+            {args.pleaseWait || args.skippingSteps || args.isFaster
               ? '。'
               : args.skipColon
               ? ''
@@ -774,6 +776,22 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </Em>
           {args.pleaseWait && <H args={{ name: 'itWillTakeTime' }} />}
           {args.skippingSteps && <H args={{ name: 'skippingSteps' }} />}
+          {args.isFaster && <H args={{ name: 'isFaster' }} />}
+        </>
+      )
+    }
+  }
+  if (args.name === 'isFaster') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Em highlightType="pink">
+            時間短縮のため、いつもの
+            <InlineHeader>倍速以上</InlineHeader>
+            で進みますので、目に優しく半透明にしています。
+          </Em>
         </>
       )
     }

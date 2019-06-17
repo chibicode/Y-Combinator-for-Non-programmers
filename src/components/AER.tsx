@@ -742,7 +742,7 @@ export default {
       containerSize={'xs'}
       variableSize={'md'}
       skipToTheEnd={false}
-      speed={2}
+      speed={1.75}
     />
   ),
   badn: (
