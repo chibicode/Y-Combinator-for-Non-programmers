@@ -1892,7 +1892,6 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={1}
-      speed={1.75}
       variableSize="md"
     />
   ),
@@ -1904,8 +1903,8 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={2}
-      speed={1.75}
       variableSize="md"
+      highlightNumber={2}
     />
   ),
   luir: (
@@ -1916,7 +1915,6 @@ export default {
       skipToTheEnd={false}
       lastAllowedExpressionState="default"
       lastAllowedExpressionStateAfterIterations={3}
-      speed={1.75}
       variableSize="md"
     />
   ),

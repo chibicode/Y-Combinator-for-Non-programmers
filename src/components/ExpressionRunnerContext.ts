@@ -19,6 +19,7 @@ export interface ExpressionRunnerContextProps {
   funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
   highlightAllChildren: boolean
+  highlightNumber?: number
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {

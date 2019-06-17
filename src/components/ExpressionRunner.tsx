@@ -76,6 +76,7 @@ export interface ExpressionRunnerProps {
   funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
   superFastForward: boolean
+  highlightNumber?: number
 }
 
 interface PlaybackState {
@@ -217,7 +218,8 @@ const ExpressionRunner = ({
   argPriorityAggHighlights,
   funcPriorityAggHighlights,
   highlightFunctions,
-  superFastForward
+  superFastForward,
+  highlightNumber
 }: ExpressionRunnerProps) => {
   const {
     getExpressionContainerManager,
@@ -283,6 +285,7 @@ const ExpressionRunner = ({
         argPriorityAggHighlights,
         funcPriorityAggHighlights,
         highlightFunctions,
+        highlightNumber,
         highlightAllChildren:
           expressionRunnerContextDefault.highlightAllChildren
       }}
