@@ -554,11 +554,11 @@ export default () => (
                 <Code>b</Code>
                 以外に
                 <Code>c</Code>が使われています。<Code>c</Code>
-                が使われている理由は、Python言語の仕様がラムダ計算と微妙に異なるからです。専門用語を使うと、
+                が使われている理由は、Python言語の仕様がラムダ計算と微妙に異なるからです。専門用語を使うと、言語の
                 <ExternalLink href="https://ja.wikipedia.org/wiki/%E8%A9%95%E4%BE%A1%E6%88%A6%E7%95%A5">
                   評価戦略
                 </ExternalLink>
-                が「値渡し」と「名前渡し」かの違いによるものです。
+                が「値渡し」か「名前渡し」かの違いによるものです。
               </P>
             </>
           )
