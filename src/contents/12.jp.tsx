@@ -123,9 +123,7 @@ export default () => (
         content: (
           <>
             <P>
-              <InlineHeader>ちなみに:</InlineHeader>{' '}
-              <InlineEmojiBoxesForQuestion />
-              にどんな料理を入れても、
+              <InlineHeader>ちなみに:</InlineHeader> この弁当箱は
               <H args={{ name: 'fastForward' }} />
               の途中で、
               <Strong>
