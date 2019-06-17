@@ -129,7 +129,7 @@ export default () => (
             <P>
               下のような場合、 左側にある
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペアから からはじめます。
+              のペアからはじめます。
             </P>
             {AER.aezk}
           </>
