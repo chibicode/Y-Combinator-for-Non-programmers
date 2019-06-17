@@ -289,7 +289,7 @@ export default () => (
           <>
             <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
             <P>
-              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <Em>
                 「
                 <Strong>
