@@ -26,7 +26,7 @@ import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
-import { spaces, fontSizes } from 'src/lib/theme'
+import { colors, spaces, fontSizes } from 'src/lib/theme'
 import { BasicRules } from 'src/contents/2.jp'
 
 export default () => (
@@ -561,13 +561,28 @@ export default () => (
                 <Code
                   children={`print(
     (
-        lambda a: (
+`}
+                ></Code>
+                <Code
+                  css={css`
+                    color: ${colors('pink600')};
+                  `}
+                  children={`        lambda a: (
             lambda b: a(lambda c: (b(b))(c))
-        )(lambda b: a(lambda c: (b(b))(c)))
+        )(lambda b: a(lambda c: (b(b))(c)))`}
+                ></Code>
+                <Code
+                  css={css`
+                    color: ${colors('blue400')};
+                  `}
+                  children={`
     )(
         lambda f: lambda n: 1
         if n == 0
-        else n * f(n - 1)
+        else n * f(n - 1)`}
+                ></Code>
+                <Code
+                  children={`
     )(
         5
     )
@@ -579,7 +594,31 @@ export default () => (
                 <H args={{ name: 'yCombinator' }} />
                 を使って
                 <H args={{ name: 'inlineFactorial', start: 5 }} />
-                を計算するPython言語のコードです。実行すると、
+                を計算するPython言語のコードです。
+              </P>
+              <P>
+                <Strong
+                  css={css`
+                    color: ${colors('pink600')};
+                  `}
+                >
+                  ピンクの文字
+                </Strong>
+                の部分は
+                <H args={{ name: 'yCombinator' }} />
+                で、
+                <Strong
+                  css={css`
+                    color: ${colors('blue400')};
+                  `}
+                >
+                  青の文字
+                </Strong>
+                の部分には条件分岐(<Code>if</Code>と<Code>else</Code>
+                )・掛け算・1を引く計算があります。
+              </P>
+              <P>
+                これを実行すると、
                 <H args={{ name: 'factorialComputation', start: 5 }} />
                 が出力されます。
               </P>
@@ -587,7 +626,7 @@ export default () => (
                 <Em>
                   <Code>for</Code>
                   などのループ機能や、<Code>def</Code>
-                  を使った再帰を一切使わずに、
+                  や変数定義を使った「<Strong>再帰</Strong>」を一切使わずに、
                   <H args={{ name: 'yCombinator' }} />
                   だけで繰り返し処理を行っているのです。
                 </Em>
