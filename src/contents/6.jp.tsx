@@ -375,15 +375,38 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <Strong>最終的に暗号が「1」の弁当箱が残ります。</Strong>
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.wafy}
             <Hr />
             <P>
-              つまり、最終的に暗号が<Strong>「1」</Strong>の弁当箱が残りました。
+              <Strong>つまり、最終的に暗号が「1」の弁当箱が残りました。</Strong>
+              右下に
+              <EmojiWithText letter="b" />
+              が1個あるので、暗号は<Strong>「1」</Strong>というわけです。
             </P>
             {AER.badn}
+            <P>
+              ここでポイントなのは、
+              <H args={{ name: 'play' }} />
+              する前と後で、
+              <Strong>料理ではなく、暗号の変化に注目してほしい</Strong>
+              ということです。暗号の変化だけに注目すると、
+            </P>
+            <Ul>
+              <UlLi>
+                <InlineEmojiBoxesForQuestion />
+                に入れた弁当箱の暗号は<Strong>「0」</Strong>だった。
+              </UlLi>
+              <UlLi>
+                最終的に、暗号が<Strong>「1」</Strong>の弁当箱が残った。
+              </UlLi>
+            </Ul>
+            <P>
+              つまり、もともと<Strong>「0」</Strong>だった暗号が
+              <Strong>「1」</Strong>になったということです。
+            </P>
+            <EmojiSeparator emojis={['0️⃣', '➡️', '1️⃣']} />
           </>
         )
       },
@@ -428,7 +451,12 @@ export default () => (
             <P>
               この弁当箱の
               <InlineEmojiBoxesForQuestion />
-              に、暗号が隠された弁当箱を入れると何が起きるか、分かりましたか？
+              に、暗号が隠された弁当箱を入れると、
+              <Strong>
+                <H args={{ name: 'play' }} />
+                した後に何の暗号が残るか
+              </Strong>
+              分かりましたか？
             </P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
             <P>答えは次のページに！</P>
