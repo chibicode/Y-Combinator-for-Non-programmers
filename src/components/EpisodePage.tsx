@@ -12,6 +12,7 @@ import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import NotFoundCardList from 'src/components/NotFoundCardList'
+import { ogUrl } from 'src/lib/meta'
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -45,6 +46,8 @@ const EpisodePage = ({
       <Head>
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
+        <meta property="og:url" content={ogUrl(episodeNumber)} />
+        <link rel="canonical" href={ogUrl(episodeNumber)} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
       {!notFound ? (
