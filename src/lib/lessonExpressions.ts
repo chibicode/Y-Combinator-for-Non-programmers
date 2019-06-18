@@ -209,6 +209,11 @@ export const e7E9 = initializeExpressionContainer([
   numberParams('e', 'f', 1),
   numberParams('g', 'h', 3)
 ])
+export const e7E10 = initializeExpressionContainer([
+  addParams('a', 'b', 'c', 'd'),
+  'question',
+  numberParams('e', 'f', 1)
+])
 
 export const e8E1 = initializeExpressionContainer([
   multParams('a', 'b', 'c', 'd'),

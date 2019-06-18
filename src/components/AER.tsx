@@ -915,10 +915,28 @@ export default {
       containerSize={'xs'}
       variableSize={'sm'}
       highlightOverrides={{
-        e: 'highlighted',
-        f: 'highlighted',
         g: 'highlighted',
         h: 'highlighted'
+      }}
+    />
+  ),
+  entr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E8}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'sm'}
+    />
+  ),
+  brrh: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E10}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'sm'}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted'
       }}
     />
   ),

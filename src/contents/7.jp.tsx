@@ -1,5 +1,13 @@
 import React from 'react'
-import { InlineHeader, Em, P, Strong } from 'src/components/ContentTags'
+import {
+  Hr,
+  Ul,
+  UlLi,
+  InlineHeader,
+  Em,
+  P,
+  Strong
+} from 'src/components/ContentTags'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
@@ -163,22 +171,41 @@ export default () => (
         content: (
           <>
             <P>
-              こちらに
-              <InlineEmojiBoxesForQuestion />
-              がふたつある弁当箱があります:
+              <H args={{ name: 'lookAtThisBentoBox' }} />。
             </P>
             {AER.goif}
+            <P>先ほど紹介した「1を足す」弁当箱と微妙に異なる点があります。</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  上に
+                  <InlineEmojiBoxesForQuestion />
+                  がひとつではなく、ふたつあります。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  右下に5つの料理があります。「1を足す」弁当箱には4つしかありませんでした。
+                </Em>
+              </UlLi>
+            </Ul>
+            <Hr />
             <P>
+              ここで、一番上の
               <InlineEmojiBoxesForQuestion />
-              の部分に、先ほどの暗号が<Strong>「1」</Strong>の弁当箱と暗号が
-              <Strong>「2」</Strong>の弁当箱を入れてみます。(<Em>黄色</Em>
-              の部分)
+              の部分に、先ほどの暗号が<Strong>「1」</Strong>
+              の弁当箱を入れてみます。
+            </P>
+            {AER.brrh}
+            <P>
+              そして、二番目の
+              <InlineEmojiBoxesForQuestion />
+              の部分に、先ほどの暗号が<Strong>「2」</Strong>
+              の弁当箱を入れてみます。
             </P>
             {AER.hdwy}
-            <P>
-              さて、これで<Strong>1 + 2 = 3</Strong>
-              が計算できるのでしょうか？というわけで、ここで質問です。
-            </P>
+            <P>では、ここで質問です。</P>
+            {AER.entr}
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 3 }} />
             </P>
@@ -204,8 +231,12 @@ export default () => (
             </P>
             {AER.dhdk}
             <P>
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              は、<Strong>1 + 2 = 3</Strong>を計算することもできるんです。
+              最初に暗号が<Strong>「1」</Strong>と<Strong>「2」</Strong>
+              の弁当箱を
+              <InlineEmojiBoxesForQuestion />
+              に入れると、暗号が<Strong>「3」</Strong>
+              になりました。ということは、<Strong>1 + 2 = 3</Strong>
+              が計算できた、ということでしょうか？
             </P>
             <EmojiSeparator emojis={['1️⃣', '➕', '️2️⃣']} />
           </>
@@ -216,8 +247,8 @@ export default () => (
         content: (
           <>
             <P>
-              たまたま成功しただけかもしれないので、他の例で試してみましょう。
-              たとえば、<Strong>3 + 1 = 4</Strong>はどうでしょう。
+              他の例で試してみましょう。たとえば、<Strong>3 + 1 = 4</Strong>
+              はどうでしょう。
             </P>
             <EmojiSeparator emojis={['3️⃣', '➕', '️1️⃣']} />
             <P>
