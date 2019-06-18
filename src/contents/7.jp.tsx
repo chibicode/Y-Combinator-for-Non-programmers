@@ -1,5 +1,5 @@
 import React from 'react'
-import { Em, P, Strong } from 'src/components/ContentTags'
+import { InlineHeader, Em, P, Strong } from 'src/components/ContentTags'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
@@ -25,7 +25,9 @@ export default () => (
             {AER.qmof}
             <P>
               今度は暗号が<Strong>「1」</Strong>
-              の弁当箱と組み合わせてみましょう。
+              の弁当箱を
+              <InlineEmojiBoxesForQuestion />
+              に入れてみましょう。
             </P>
             {AER.slyk}
             <P>
@@ -73,22 +75,22 @@ export default () => (
         content: (
           <>
             <P>
-              結論から言うと、この弁当箱には、
-              <Strong>
-                <InlineEmojiBoxesForQuestion />
-                に入っている弁当箱の暗号に「1」を加える効果があります。
-              </Strong>
+              <InlineHeader>すなわち:</InlineHeader> 下の弁当箱の
+              <InlineEmojiBoxesForQuestion />
+              に、暗号が隠された弁当箱を入れて
+              <H args={{ name: 'play' }} />
+              すると、
+              <Strong>その暗号に「1」を加えた弁当箱</Strong>
+              が最後に残ります。
             </P>
             {AER.xgei}
             <P>
               <InlineEmojiBoxesForQuestion />
-              の暗号が<Strong>「1」</Strong>だったら実行後に暗号が
-              <Strong>「2」</Strong>
-              になり、
+              の暗号が<Strong>「1」</Strong>だったら暗号が
+              <Strong>「2」</Strong>の弁当箱が残り、
               <InlineEmojiBoxesForQuestion />
-              の暗号が<Strong>「2」</Strong>だったら実行後に暗号が
-              <Strong>「3」</Strong>
-              になるというわけです。
+              の暗号が<Strong>「2」</Strong>だったら暗号が
+              <Strong>「3」</Strong>の弁当箱が残るというわけです。
             </P>
             <EmojiSeparator
               nodes={[
