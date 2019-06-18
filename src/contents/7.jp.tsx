@@ -235,7 +235,7 @@ export default () => (
               の弁当箱を
               <InlineEmojiBoxesForQuestion />
               に入れると、暗号が<Strong>「3」</Strong>
-              になりました。ということは、<Strong>1 + 2 = 3</Strong>
+              の弁当箱が残りました。ということは、<Strong>1 + 2 = 3</Strong>
               が計算できた、ということでしょうか？
             </P>
             <EmojiSeparator emojis={['1️⃣', '➕', '️2️⃣']} />
