@@ -31,11 +31,11 @@ const EpisodePage = ({
   notFound,
   contentName
 }: EpisodePageProps) => {
-  const title = `${lessonTitle}${
+  const title = `${
+    episodeEmojis[episodeNumber as keyof typeof episodeEmojis][1]
+  } ${lessonTitle}${
     episodeTitleString
-      ? ` ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis].join(
-          ''
-        )} ${episodeTitleString}`
+      ? ` ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][0]} ${episodeTitleString} ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][2]}`
       : ''
   }`
   const [modalVisible, setModalVisible] = useState(false)

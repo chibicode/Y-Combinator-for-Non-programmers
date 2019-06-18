@@ -9,6 +9,11 @@ export const lessonTitle = {
   jp: 'コンピュータサイエンスと魔法のYコンビネータ'
 }[locale]
 
+export const description = {
+  en: 'Computer Science for the Rest of Us',
+  jp: '『ファクトフルネス』訳者による全17ページの記事'
+}[locale]
+
 export const episodeTitles = {
   en: {
     1: 'The Bento Boxes',

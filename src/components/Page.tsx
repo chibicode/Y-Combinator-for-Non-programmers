@@ -6,6 +6,7 @@ import { GA_TRACKING_ID } from 'src/lib/gtag'
 import { dateSchemaString } from 'src/lib/date'
 import { ogLocale } from 'src/lib/locale'
 import { ogImageUrl } from 'src/lib/meta'
+import { description } from 'src/lib/titles'
 
 const Page = ({ children }: { children: React.ReactNode }) => (
   <GlobalStyles>
@@ -14,6 +15,8 @@ const Page = ({ children }: { children: React.ReactNode }) => (
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
+      <meta property="og:description" content={description} />
+      <meta name="description" content={description} />
       <meta property="og:type" content="article" />
       <meta property="og:locale" content={ogLocale} />
       <meta property="article:published_time" content={dateSchemaString} />
