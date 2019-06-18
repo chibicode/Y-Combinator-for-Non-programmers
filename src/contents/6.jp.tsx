@@ -375,13 +375,13 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <Strong>最終的に暗号が「1」になります。</Strong>
+              <Strong>最終的に暗号が「1」の弁当箱が残ります。</Strong>
               <H args={{ name: 'pressFastForward' }} />
             </P>
             {AER.wafy}
             <Hr />
             <P>
-              つまり、最終的に暗号が<Strong>「1」</Strong>になりました。
+              つまり、最終的に暗号が<Strong>「1」</Strong>の弁当箱が残りました。
             </P>
             {AER.badn}
           </>
@@ -409,7 +409,7 @@ export default () => (
             </P>
             {AER.mauj}
             <P>
-              4. 暗号が<Strong>「1」</Strong>になります:
+              4. 暗号が<Strong>「1」</Strong>の弁当箱が残ります:
             </P>
             {AER.badn}
             <P>
@@ -425,7 +425,11 @@ export default () => (
         content: (
           <>
             {AER.qmof}
-            <P>この弁当箱にはどんな効果があるか、もうお分かりでしょうか？</P>
+            <P>
+              この弁当箱の
+              <InlineEmojiBoxesForQuestion />
+              に、暗号が隠された弁当箱を入れると何が起きるか、分かりましたか？
+            </P>
             <EmojiSeparator emojis={['🍱', '🧐', '️🍱']} />
             <P>答えは次のページに！</P>
             <NextLessonButton />

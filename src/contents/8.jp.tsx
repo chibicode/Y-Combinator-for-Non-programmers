@@ -98,7 +98,7 @@ export default () => (
             </P>
             {AER.ktyt}
             <P>
-              なんと、最終的に暗号が<Strong>「1」</Strong>になりました！
+              なんと、最終的に暗号が<Strong>「1」</Strong>の弁当箱が残りました！
             </P>
             {AER.aeyv}
             <P>つまり、</P>
@@ -109,7 +109,7 @@ export default () => (
                 すると、
               </UlLi>
               <UlLi>
-                最終的に暗号が<Strong>「1」</Strong>の弁当箱になる。
+                最終的に暗号が<Strong>「1」</Strong>の弁当箱が残る。
               </UlLi>
             </Ul>
             <P>どんな計算が起きているか、分かりましたか？</P>
@@ -134,7 +134,8 @@ export default () => (
             </P>
             {AER.ngus}
             <P>
-              こちらは、最終的に暗号が<Strong>「6」</Strong>になりました！
+              こちらは、最終的に暗号が<Strong>「6」</Strong>
+              の弁当箱が残りました！
             </P>
             {AER.ujfj}
             <P>つまり、</P>
@@ -146,7 +147,7 @@ export default () => (
                 すると、
               </UlLi>
               <UlLi>
-                最終的に暗号が<Strong>「6」</Strong>の弁当箱になる。
+                最終的に暗号が<Strong>「6」</Strong>の弁当箱が残る。
               </UlLi>
             </Ul>
             <P>そろそろどんな計算が起きたかお分かりでしょうか？</P>

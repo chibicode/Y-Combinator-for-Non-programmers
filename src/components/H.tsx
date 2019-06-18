@@ -851,7 +851,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em>
             最終的に暗号が
             <Strong css={slightlyLargeCaptionCss}>「{args.number}」</Strong>
-            になる
+            の弁当箱が残る
           </Em>
           。<H args={{ name: 'yesOrNo' }} />
         </>

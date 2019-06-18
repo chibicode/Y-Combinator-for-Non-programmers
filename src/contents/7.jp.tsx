@@ -34,7 +34,7 @@ export default () => (
             </P>
             {AER.eemn}
             <P>
-              最終的に暗号が<Strong>「2」</Strong>になりました:
+              最終的に暗号が<Strong>「2」</Strong>の弁当箱が残りました:
             </P>
             {AER.rceu}
             <P>
@@ -56,7 +56,7 @@ export default () => (
             </P>
             {AER.syhh}
             <P>
-              最終的に暗号が<Strong>「3」</Strong>になりました:
+              最終的に暗号が<Strong>「3」</Strong>の弁当箱が残りました:
             </P>
             {AER.ablz}
             <P>
@@ -198,7 +198,7 @@ export default () => (
             </P>
             {AER.rome}
             <P>
-              なんと、最終的に暗号が<Strong>「3」</Strong>になりました！
+              なんと、最終的に暗号が<Strong>「3」</Strong>の弁当箱が残りました！
             </P>
             {AER.dhdk}
             <P>
@@ -236,7 +236,8 @@ export default () => (
             </P>
             {AER.unck}
             <P>
-              こちらは、最終的に暗号が<Strong>「4」</Strong>になりました！
+              こちらは、最終的に暗号が<Strong>「4」</Strong>
+              の弁当箱が残りました！
             </P>
             {AER.cpbj}
             <P>
