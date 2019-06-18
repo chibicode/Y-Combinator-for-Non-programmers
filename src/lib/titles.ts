@@ -11,7 +11,7 @@ export const lessonTitle = {
 
 export const description = {
   en: 'Computer Science for the Rest of Us',
-  jp: '『ファクトフルネス』訳者による全17ページの記事'
+  jp: '『ファクトフルネス』訳者によるYコンビネータの解説'
 }[locale]
 
 export const episodeTitles = {
