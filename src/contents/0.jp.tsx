@@ -314,7 +314,7 @@ export default () => (
               <H args={{ name: 'computerScience' }} />
               を専攻したのですが、
               <H args={{ name: 'yCombinator' }} />は
-              <Em>3〜4年生向けの授業で教わる題材でした</Em>
+              <Em>3年生向けの授業で教わる題材でした</Em>
               。1〜2年生向けの内容ではないので、「ある程度難しい題材」であることがうかがえます。
             </P>
             <P>

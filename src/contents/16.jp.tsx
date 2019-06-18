@@ -484,7 +484,7 @@ export default () => (
             <Ul>
               <UlLi>
                 <Em>
-                  弁当箱は筆者のアイデアですが、それは1930年代に考えられた空想上の最強の計算機「ラムダ計算」がもとになっています。
+                  弁当箱は筆者のアイデアですが、1930年代に考えられた空想上の最強の計算機「ラムダ計算」がもとになっています。
                 </Em>
               </UlLi>
               <UlLi>
@@ -509,6 +509,13 @@ export default () => (
                 このことを、
                 <H args={{ name: 'computerScience' }} />
                 に詳しい方にはご理解いただけると嬉しいです。
+              </P>
+              <P>
+                さらに余談ですが、弁当箱の暗号は専門用語で言うと「
+                <ExternalLink href="https://en.wikipedia.org/wiki/Church_encoding">
+                  チャーチ・エンコーディング
+                </ExternalLink>
+                」となります。
               </P>
             </>
           )
