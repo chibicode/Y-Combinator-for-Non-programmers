@@ -1,5 +1,4 @@
 import React from 'react'
-import { Strong } from 'src/components/ContentTags'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
@@ -9,9 +8,6 @@ import {
 } from 'src/components/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/lessonExpressions'
 import H from 'src/components/H'
-import EmojiForLetter from 'src/components/EmojiForLetter'
-import InlineEmojiBoxes from 'src/components/InlineEmojiBoxes'
-import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 // Keys generated using a Ruby script running on an Alfred workflow:
 // print 4.times.map { (97 + rand(26)).chr }.join
@@ -1261,8 +1257,8 @@ export default {
         <H
           args={{
             name: 'ifCaption',
-            ifZero: <EmojiForLetter letter="y" size="mdlg" />,
-            ifNonZero: <EmojiForLetter letter="z" size="mdlg" />
+            ifZero: 'y',
+            ifNonZero: 'z'
           }}
         />
       }
@@ -1278,12 +1274,8 @@ export default {
         <H
           args={{
             name: 'ifCaption',
-            ifZero: <EmojiForLetter letter="y" size="mdlg" />,
-            ifNonZero: (
-              <InlineEmojiBoxes
-                emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
-              />
-            )
+            ifZero: 'y',
+            ifNonZero: ['w', 'x']
           }}
         />
       }
@@ -1340,11 +1332,9 @@ export default {
         b: 'highlighted'
       }}
       caption={
-        <Strong>
-          <H
-            args={{ name: 'isCallArgAndFuncUnboundTheSameCaption', same: true }}
-          />
-        </Strong>
+        <H
+          args={{ name: 'isCallArgAndFuncUnboundTheSameCaption', same: true }}
+        />
       }
       highlightOverrideActiveAfterStart
     />
@@ -1382,14 +1372,12 @@ export default {
       skipAlphaConvert
       initialState="showFuncUnbound"
       caption={
-        <Strong>
-          <H
-            args={{
-              name: 'isCallArgAndFuncUnboundTheSameCaption',
-              same: false
-            }}
-          />
-        </Strong>
+        <H
+          args={{
+            name: 'isCallArgAndFuncUnboundTheSameCaption',
+            same: false
+          }}
+        />
       }
     />
   ),
@@ -1786,8 +1774,8 @@ export default {
         <H
           args={{
             name: 'ifCaption',
-            ifZero: <EmojiForLetter letter="y" size="mdlg" />,
-            ifNonZero: <EmojiForLetter letter="z" size="mdlg" />
+            ifZero: 'y',
+            ifNonZero: 'z'
           }}
         />
       }
