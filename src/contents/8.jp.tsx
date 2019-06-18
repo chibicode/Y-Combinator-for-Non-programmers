@@ -60,20 +60,17 @@ export default () => (
             {AER.dymt}
             {AER.mhwq}
             <P>
-              さきほどの弁当箱の
+              さきほどの、<Strong>足し算の弁当箱とは微妙に違う</Strong>弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に入れてみます:
             </P>
             {AER.sojz}
             <P>
-              さきほどの「足し算」の弁当箱とは
               <Em>
-                微妙に右下が違いますが、こちらも足し算(
+                こちらも足し算(
                 <Strong>1 + 1 = 2</Strong>
                 )になるのでしょうか？
               </Em>
-            </P>
-            <P>
               それとも、別の計算結果が出るのでしょうか？というわけで、質問です。
             </P>
             <Hr />

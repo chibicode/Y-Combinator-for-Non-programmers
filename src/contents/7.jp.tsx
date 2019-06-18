@@ -248,23 +248,35 @@ export default () => (
           <>
             <P>
               他の例で試してみましょう。たとえば、<Strong>3 + 1 = 4</Strong>
-              はどうでしょう。
+              は計算できるでしょうか？
             </P>
             <EmojiSeparator emojis={['3️⃣', '➕', '️1️⃣']} />
+            <P>確かめてみましょう。もう一度、先ほどの弁当箱を用意します。</P>
+            {AER.goif}
             <P>
-              暗号が<Strong>「3」</Strong> (右下に
+              そして、暗号が<Strong>「3」</Strong> (右下に
               <Em>
                 <EmojiForLetter letter="g" />
                 が3個
               </Em>
-              )の弁当箱と暗号が<Strong>「1」</Strong> (右下に
+              )の弁当箱を一番上の
+              <InlineEmojiBoxesForQuestion />
+              に入れます。
+            </P>
+            {AER.fatm}
+            <P>
+              その下の
+              <InlineEmojiBoxesForQuestion />
+              に、暗号が<Strong>「1」</Strong> (右下に
               <Em>
                 <EmojiForLetter letter="f" />
                 が1個
               </Em>
-              )の弁当箱を入れてみます。
+              )の弁当箱を入れます。
             </P>
+            {AER.dyov}
             <P>
+              ここで、
               <H args={{ name: 'pressPlay' }} />
             </P>
             {AER.unck}
@@ -274,8 +286,12 @@ export default () => (
             </P>
             {AER.cpbj}
             <P>
-              というわけで、「
-              <Strong>3 + 1 = 4</Strong>」も計算できてしまいました。
+              最初に暗号が<Strong>「3」</Strong>と<Strong>「1」</Strong>
+              の弁当箱を
+              <InlineEmojiBoxesForQuestion />
+              に入れると、暗号が<Strong>「4」</Strong>
+              の弁当箱が残りました。ということは、<Strong>3 + 1 = 4</Strong>
+              も計算できてしまいました。
             </P>
             <EmojiSeparator emojis={['3️⃣', '➕', '️1️⃣']} />
           </>
@@ -291,17 +307,27 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、この弁当箱は、
-              <Strong>
-                ふたつの
+              すなわち、
+              <Em>
+                こちらの弁当箱にあるふたつの
                 <InlineEmojiBoxesForQuestion />
-                に入っている弁当箱の暗号を足し算してくれます。
-              </Strong>
+                の部分に、それぞれ暗号が入った弁当箱を入れると、
+              </Em>
             </P>
             {AER.bxdf}
             <P>
+              <Strong>
+                最終的に残る弁当箱の暗号は、ふたつの暗号を足し算したものになります。
+              </Strong>
+            </P>
+            <P>
+              言いかえると、上の弁当箱は
+              <Strong>暗号の足し算ができる弁当箱</Strong>なのです。
+            </P>
+            <EmojiSeparator emojis={['🍱', '➕', '🍱']} />
+            <P>
               <H args={{ name: 'byTheWay' }} /> 今回も、
-              <Strong>上の弁当箱を暗記する必要はありません。</Strong>
+              <Em>上の弁当箱を暗記する必要はありません。</Em>
               そのまま読み進めて下さい！
             </P>
           </>
@@ -319,7 +345,9 @@ export default () => (
               ができてしまうんです。
             </P>
             <EmojiSeparator emojis={['🍱', '➕', '️🍱']} />
-            <P>実は、弁当箱ができるのは足し算だけではありません。</P>
+            <P>
+              しかし、弁当箱ができるのは足し算だけではありません。次のページで、足し算以外の計算ができる弁当箱を見ていきましょう！
+            </P>
             <NextLessonButton />
           </>
         )

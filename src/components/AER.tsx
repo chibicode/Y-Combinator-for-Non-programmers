@@ -899,6 +899,18 @@ export default {
       variableSize={'md'}
     />
   ),
+  fatm: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E11}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'sm'}
+      highlightOverrides={{
+        g: 'highlighted',
+        h: 'highlighted'
+      }}
+    />
+  ),
   bxdf: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e7E7}
@@ -960,6 +972,18 @@ export default {
       }
     />
   ),
+  dyov: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e7E9}
+      showPriorities
+      containerSize={'xs'}
+      variableSize={'sm'}
+      highlightOverrides={{
+        e: 'highlighted',
+        f: 'highlighted'
+      }}
+    />
+  ),
   unck: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e7E9}
@@ -968,12 +992,6 @@ export default {
       variableSize={'sm'}
       skipToTheEnd={false}
       speed={5}
-      highlightOverrides={{
-        e: 'highlighted',
-        f: 'highlighted',
-        g: 'highlighted',
-        h: 'highlighted'
-      }}
     />
   ),
   cpbj: (
