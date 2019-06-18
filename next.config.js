@@ -23,6 +23,7 @@ const config = withTypescript({
   },
   exportPathMap(defaultPathMap, { dev, outDir }) {
     if (!dev) {
+      console.log(`./dist/sitemap.xml → ${outDir}/sitemap.xml`)
       fs.copyFileSync(`./dist/sitemap.xml`, `${outDir}/sitemap.xml`)
     }
 
