@@ -2,13 +2,13 @@
 import { css, jsx } from '@emotion/core'
 import { ExternalLink } from 'src/components/ContentTags'
 import H from 'src/components/H'
+import Emoji from 'src/components/Emoji'
 import { spaces, colors, fontSizes } from 'src/lib/theme'
 import locale from 'src/lib/locale'
 import { githubRepo } from 'src/lib/meta'
 
 const linkClasses = css`
   text-decoration: none;
-  font-size: ${fontSizes(0.75)};
   color: ${colors('grey500')};
 
   &:hover,
@@ -27,6 +27,7 @@ const EpisodePageFooter = () => {
         text-align: center;
         padding: ${spaces(1)} 0;
         color: ${colors('grey500')};
+        font-size: ${fontSizes(0.7)};
       `}
     >
       <ExternalLink
@@ -46,6 +47,11 @@ const EpisodePageFooter = () => {
       >
         <H args={{ name: 'aboutThisSite' }} />
       </ExternalLink>
+      &middot;{' '}
+      <ExternalLink href="https://github.com/twitter/twemoji" css={linkClasses}>
+        Twemoji
+      </ExternalLink>{' '}
+      <Emoji>🧙‍♀️</Emoji>
     </div>
   )
 }

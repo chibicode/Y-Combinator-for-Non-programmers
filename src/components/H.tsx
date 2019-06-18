@@ -1089,7 +1089,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>About this Site</>
     } else {
-      return <>このサイトについて</>
+      return <>当記事について</>
     }
   }
   if (args.name === 'yesOrNo') {
