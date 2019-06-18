@@ -205,6 +205,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: (
           <>
             右下にある<Emoji>🅰️</Emoji>がついた料理の数が暗号
