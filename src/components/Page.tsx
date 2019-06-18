@@ -23,6 +23,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
       <meta property="og:image" content={ogImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="fb:admins" content="1227210274" />
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
