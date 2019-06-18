@@ -1,5 +1,6 @@
 const withTypescript = require('@zeit/next-typescript')
 const path = require('path')
+const fs = require('fs')
 
 const config = withTypescript({
   webpack(config) {
@@ -19,6 +20,13 @@ const config = withTypescript({
   // So must use publicRuntimeConfig instead.
   publicRuntimeConfig: {
     devLocale: process.env.DEV_LOCALE
+  },
+  exportPathMap(defaultPathMap, { dev, outDir }) {
+    if (!dev) {
+      fs.copyFileSync(`./dist/sitemap.xml`, `${outDir}/sitemap.xml`)
+    }
+
+    return defaultPathMap
   }
 })
 

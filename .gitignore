@@ -1,5 +1,6 @@
 .tsbuildinfo
 report.*.json
+dist
 
 out
 .envrc
