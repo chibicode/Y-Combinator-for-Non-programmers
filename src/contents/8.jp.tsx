@@ -62,7 +62,7 @@ export default () => (
             <P>
               さきほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます:
+              の部分に入れてみます:
             </P>
             {AER.sojz}
             <P>
@@ -104,7 +104,7 @@ export default () => (
             <P>つまり、</P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の弁当箱ふたつを埋め込んで
+                暗号が<Strong>「1」</Strong>の弁当箱ふたつを入れて
                 <H args={{ name: 'play' }} />
                 すると、
               </UlLi>
@@ -127,7 +127,9 @@ export default () => (
             {AER.bdlj}
             {AER.ifwb}
             <P>
-              埋め込むとこうなります。
+              それぞれを
+              <InlineEmojiBoxesForQuestion />
+              に入れるとこうなります。
               <H args={{ name: 'pressFastForward', pleaseWait: true }} />
             </P>
             {AER.ngus}
@@ -139,7 +141,7 @@ export default () => (
             <Ul>
               <UlLi>
                 暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>
-                の弁当箱ふたつを埋め込んで
+                の弁当箱ふたつを入れて
                 <H args={{ name: 'play' }} />
                 すると、
               </UlLi>

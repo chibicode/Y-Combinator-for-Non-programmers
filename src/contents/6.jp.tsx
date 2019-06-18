@@ -403,7 +403,7 @@ export default () => (
             </P>
             {AER.nicg}
             <P>
-              3. 埋め込んで、最後まで
+              3. 入れて、最後まで
               <H args={{ name: 'play' }} />
               すると…
             </P>

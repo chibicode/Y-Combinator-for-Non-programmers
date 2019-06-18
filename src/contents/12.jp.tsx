@@ -54,7 +54,7 @@ export default () => (
             <P>
               これを、先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
+              の部分に入れてみます。
             </P>
             {AER.lxnu}
             <P>

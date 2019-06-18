@@ -65,7 +65,7 @@ export default () => (
             <P>
               こちらを、先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
+              の部分に入れてみます。
             </P>
             {AER.tkqr}
             <P>
@@ -129,7 +129,7 @@ export default () => (
             <P>
               下の
               <InlineEmojiBoxesForQuestion />
-              の部分に暗号が<Strong>「0」</Strong>の弁当箱を埋め込んで
+              の部分に暗号が<Strong>「0」</Strong>の弁当箱を入れて
               <H args={{ name: 'play' }} />
               すると、
               <Strong>
@@ -142,7 +142,7 @@ export default () => (
             <P>
               では、
               <InlineEmojiBoxesForQuestion />
-              に他の暗号の弁当箱を埋め込んだらどうなるのでしょう？確かめてみましょう。
+              に他の暗号の弁当箱を入れたらどうなるのでしょう？確かめてみましょう。
             </P>
           </>
         )
@@ -164,7 +164,7 @@ export default () => (
             <P>
               先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
+              の部分に入れてみます。
             </P>
             {AER.mrky}
             <P>というわけで、ここで質問です！</P>
@@ -220,14 +220,14 @@ export default () => (
             </P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「0」</Strong>の弁当箱を埋め込むと、
+                暗号が<Strong>「0」</Strong>の弁当箱を入れると、
                 <Strong>
                   <EmojiWithText letter="y" />
                   が残る
                 </Strong>
               </UlLi>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の弁当箱を埋め込むと、
+                暗号が<Strong>「1」</Strong>の弁当箱を入れると、
                 <Strong>
                   <EmojiWithText letter="z" />
                   が残る
@@ -260,7 +260,7 @@ export default () => (
             <P>
               先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
-              の部分に埋め込んでみます。
+              の部分に入れてみます。
             </P>
             {AER.qdkf}
             <P>というわけで、ここで質問です！</P>
@@ -316,21 +316,21 @@ export default () => (
             </P>
             <Ul>
               <UlLi>
-                暗号が<Strong>「0」</Strong>の弁当箱を埋め込むと、
+                暗号が<Strong>「0」</Strong>の弁当箱を入れると、
                 <Strong>
                   <EmojiWithText letter="y" />
                   が残る
                 </Strong>
               </UlLi>
               <UlLi>
-                暗号が<Strong>「1」</Strong>の弁当箱を埋め込むと、
+                暗号が<Strong>「1」</Strong>の弁当箱を入れると、
                 <Strong>
                   <EmojiWithText letter="z" />
                   が残る
                 </Strong>
               </UlLi>
               <UlLi>
-                暗号が<Strong>「2」</Strong>の弁当箱を埋め込むと、
+                暗号が<Strong>「2」</Strong>の弁当箱を入れると、
                 <Strong>
                   <EmojiWithText letter="z" />
                   が残る

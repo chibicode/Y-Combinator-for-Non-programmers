@@ -1233,7 +1233,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>
-              の弁当箱を埋め込んで実行した場合、最後に
+              の弁当箱を入れて実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="y" />
               </Strong>
@@ -1257,7 +1257,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <UlLi>
               もし
               <InlineEmojiBoxesForQuestion />に<Strong>暗号が「1以上」</Strong>
-              の弁当箱を埋め込んで実行した場合、最後に
+              の弁当箱を入れて実行した場合、最後に
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>

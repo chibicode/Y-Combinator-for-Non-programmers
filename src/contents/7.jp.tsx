@@ -169,7 +169,7 @@ export default () => (
             <P>
               <InlineEmojiBoxesForQuestion />
               の部分に、先ほどの暗号が<Strong>「1」</Strong>の弁当箱と暗号が
-              <Strong>「2」</Strong>の弁当箱を埋め込みます。(<Em>黄色</Em>
+              <Strong>「2」</Strong>の弁当箱を入れてみます。(<Em>黄色</Em>
               の部分)
             </P>
             {AER.hdwy}
@@ -229,7 +229,7 @@ export default () => (
                 <EmojiForLetter letter="f" />
                 が1個
               </Em>
-              )の弁当箱を埋め込んでみます。
+              )の弁当箱を入れてみます。
             </P>
             <P>
               <H args={{ name: 'pressPlay' }} />

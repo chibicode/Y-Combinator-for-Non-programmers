@@ -59,7 +59,7 @@ export default () => (
             <P>
               これを
               <InlineEmojiBoxesForQuestion />
-              に埋め込んで、
+              に入れて、
               <H args={{ name: 'fastForward' }} />
               してみましょう。
             </P>
