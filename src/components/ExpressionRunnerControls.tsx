@@ -55,8 +55,6 @@ interface ExpressionRunnerControlsProps {
   onResetClick: () => void
   onSkipToTheEndClick: () => void
   onPauseClick: () => void
-  playClicked: boolean
-  setPlayClicked: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const noOp = () => {
@@ -86,8 +84,8 @@ const ButtonPlaceholder = ({
   />
 )
 
-const sideButtonsWidth = 24
-const centerButtonWidth = 48
+const sideButtonsWidth = 26
+const centerButtonWidth = 44
 
 const ExpressionRunnerControls = ({
   canStepForward,
@@ -101,18 +99,8 @@ const ExpressionRunnerControls = ({
   onPauseClick,
   onSkipToTheEndClick,
   skipToTheEnd,
-  isDone,
-  playClicked,
-  setPlayClicked
+  isDone
 }: ExpressionRunnerControlsProps) => {
-  const onAutoClickWrapper = () => {
-    setPlayClicked(true)
-    onAutoClick()
-  }
-  const onResetClickWrapper = () => {
-    setPlayClicked(false)
-    onResetClick()
-  }
   return (
     <div
       css={css`
@@ -156,8 +144,8 @@ const ExpressionRunnerControls = ({
                 ? onSkipToTheEndClick
                 : isPlaying
                 ? onPauseClick
-                : onAutoClickWrapper
-              : onResetClickWrapper
+                : onAutoClick
+              : onResetClick
           }
           css={[
             css`
@@ -189,7 +177,7 @@ const ExpressionRunnerControls = ({
       )}
       {showPlayButton ? (
         <>
-          {!isPlaying && canStepForward && playClicked && !skipToTheEnd ? (
+          {!isPlaying && canStepForward && !skipToTheEnd ? (
             <Button
               onClick={onNextClick}
               css={css`

@@ -107,6 +107,7 @@ export interface HProps {
         pleaseWait?: boolean
         skippingSteps?: boolean
         isFaster?: boolean
+        mentionRightArrow?: boolean
       }
     | { name: 'copy' }
     | { name: 'summary' }
@@ -159,6 +160,7 @@ export interface HProps {
     | { name: 'thisIsYCombinatorCaption'; too?: boolean }
     | { name: 'csDescription'; prefix?: React.ReactNode }
     | { name: 'numberOfAIsSecretCodeCaption' }
+    | { name: 'mentionRightArrow' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -770,7 +772,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em>
             <H args={{ name: 'fastForward' }} />
             を押してみてください
-            {args.pleaseWait || args.skippingSteps || args.isFaster
+            {args.pleaseWait ||
+            args.skippingSteps ||
+            args.isFaster ||
+            args.mentionRightArrow
               ? '。'
               : args.skipColon
               ? ''
@@ -779,6 +784,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {args.pleaseWait && <H args={{ name: 'itWillTakeTime' }} />}
           {args.skippingSteps && <H args={{ name: 'skippingSteps' }} />}
           {args.isFaster && <H args={{ name: 'isFaster' }} />}
+          {args.mentionRightArrow && <H args={{ name: 'mentionRightArrow' }} />}
         </>
       )
     }
@@ -1801,6 +1807,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           右下の<Emoji>🅰️</Emoji>の数が暗号
+        </>
+      )
+    }
+  }
+  if (args.name === 'mentionRightArrow') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Em highlightType="pink">
+            一回ずつ進める場合は、<Emoji>➡️</Emoji>を押してください。
+          </Em>
         </>
       )
     }

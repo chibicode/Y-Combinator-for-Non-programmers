@@ -241,7 +241,6 @@ const ExpressionRunner = ({
     isFastForwarding: false,
     isPlaying: false
   })
-  const [playClicked, setPlayClicked] = useState(false)
   const actions = getActions({
     speed,
     interval,
@@ -360,8 +359,6 @@ const ExpressionRunner = ({
               onResetClick={actions.reset}
               skipToTheEnd={skipToTheEnd}
               onPauseClick={actions.pause}
-              playClicked={playClicked}
-              setPlayClicked={setPlayClicked}
             />
           )}
         </Container>
