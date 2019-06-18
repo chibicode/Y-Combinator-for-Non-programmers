@@ -128,7 +128,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               が消えて終了です。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.dmwy}
           </>
@@ -273,7 +273,7 @@ export default () => (
           <>
             <P>
               というわけで最後まで見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.jmqh}
             <P>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { P, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import AER from 'src/components/AER'
@@ -320,19 +320,29 @@ export default () => (
         )
       },
       {
-        title: <>早送りで見てみましょう</>,
+        title: (
+          <>
+            <H args={{ name: 'fastForward' }} />
+            で見てみましょう
+          </>
+        ),
         content: (
           <>
             <P>
-              締めくくりに、それぞれ最初から最後まで早送りで見てみましょう。
+              締めくくりに、それぞれ最初から最後まで
+              <H args={{ name: 'fastForward' }} />
+              で見てみましょう。
+              <H args={{ name: 'fastForward' }} />
+              を使うと、<Em>最後まで自動で進めることができます。</Em>
             </P>
+            <EmojiSeparator emojis={['⏩', '🍱', '⏩']} />
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.wunw}
             <P>
               こちらも
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.jbam}
             <P>法則を覚えたら、次に進みましょう！</P>

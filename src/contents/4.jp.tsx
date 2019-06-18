@@ -91,7 +91,7 @@ export default () => (
               )を今までと同じように終わらせます。
             </P>
             <P>
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.qxgl}
             <P>
@@ -169,7 +169,7 @@ export default () => (
             <P>
               最後に、残った<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアを終わらせます。
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.kvso}
             <P>以上です！</P>
@@ -271,7 +271,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             {AER.hdxc}
             <P>
