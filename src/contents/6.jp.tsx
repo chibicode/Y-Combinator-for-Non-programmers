@@ -309,18 +309,27 @@ export default () => (
             </P>
             {AER.qmof}
             <P>
-              ここで、上の弁当箱の
+              上の弁当箱の
               <InlineEmojiBoxesForQuestion />
-              の部分に、
-              <Em>
-                暗号が<Strong>「0」</Strong>の弁当箱を埋め込みます
-              </Em>
-              。たとえば、こちらを埋め込むわけです。
+              の部分には、
+              <Strong>何らかの暗号が隠された弁当箱が入ります。</Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <Emoji>➡️</Emoji>,
+                <InlineEmojiBoxesForQuestion />
+              ]}
+            />
+            <P>
+              ためしに、こちらに暗号が<Strong>「0」</Strong>
+              の弁当箱を用意しました。
             </P>
             {AER.nicg}
             <P>
-              さっそく <InlineEmojiBoxesForQuestion />
-              に埋め込んでみましょう:
+              これを、先ほどの弁当箱の
+              <InlineEmojiBoxesForQuestion />
+              の部分に入れてみると、次のようになります。
             </P>
             {AER.mauj}
             <P>
@@ -344,7 +353,7 @@ export default () => (
         content: (
           <>
             <P>
-              難しいと思うので、二択の
+              難しいと思うので、
               <H args={{ name: 'yesNoQuiz' }} />
               で聞いてみます。
             </P>
