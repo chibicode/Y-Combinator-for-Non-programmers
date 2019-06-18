@@ -1159,29 +1159,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'secretCodeReview') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>
-            <InlineHeader>暗号の法則:</InlineHeader>{' '}
-            もし、次のようなパターンの弁当箱があり:
-          </P>
-          {args.example}
-          <P>
-            <InlineEmojiBoxesForQuestion />
-            の中に<Emoji size="mdlg">🅰️</Emoji>が縦に並んでいる場合、その
-            <Strong>
-              <Emoji size="mdlg">🅰️</Emoji>の数が暗号の答えになります
-            </Strong>
-            。
-          </P>
-        </>
-      )
-    }
-  }
   if (args.name === 'pageNotFound') {
     if (locale === 'en') {
       return <>Page Not Found</>

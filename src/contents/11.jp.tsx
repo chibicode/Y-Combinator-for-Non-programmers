@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
@@ -17,20 +17,6 @@ import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLe
 export default () => (
   <EpisodeCardList
     cards={[
-      {
-        title: <>暗号の復習</>,
-        content: (
-          <>
-            <P>
-              中級で話した「
-              <Strong>弁当箱の暗号</Strong>
-              」について忘れてしまった方もいるかもしれないので、復習としてここに法則をもう一度書いておきますね。
-            </P>
-            <Hr />
-            <H args={{ name: 'secretCodeReview', example: AER.eozk }} />
-          </>
-        )
-      },
       {
         title: <>1を足す弁当箱</>,
         content: (
@@ -141,7 +127,20 @@ export default () => (
             </P>
             {AER.kfcw}
             <P>
-              つまり、<Strong>1 + 1 = 2</Strong>にならなかったのです。
+              <InlineHeader>復習:</InlineHeader>{' '}
+              <Em>
+                暗号が隠されている弁当箱は、必ず以下のようなパターンに沿っています。上の弁当箱は、以下のようなパターンに沿っていません。
+              </Em>
+              上の弁当箱には、右上に
+              <EmojiWithText letter="c" />
+              がふたつありますが、暗号が隠れている弁当箱には、右上に同じ料理がふたつ並ぶことはありません。
+              <Em>だから、そもそも暗号として成り立っていないのです。</Em>
+            </P>
+            {AER.eozk}
+            <P>
+              <InlineHeader>話を戻すと:</InlineHeader> クイズの弁当箱を
+              <H args={{ name: 'play' }} />
+              しても<Strong>1 + 1 = 2</Strong>にならなかったのです。
             </P>
           </>
         )
