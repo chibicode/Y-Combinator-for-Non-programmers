@@ -1,6 +1,6 @@
 .tsbuildinfo
 report.*.json
-dist
+sitemap.xml
 
 out
 .envrc

@@ -1,5 +1,4 @@
 import fs from 'fs'
-import path from 'path'
 import sm from 'sitemap'
 import { finalEpisodeNumber } from 'src/lib/episodeCategories'
 import { baseUrl } from 'src/lib/meta'
@@ -16,4 +15,4 @@ const sitemap = sm.createSitemap({
   ]
 })
 
-fs.writeFileSync(path.join('dist', `sitemap.xml`), sitemap.toString())
+fs.writeFileSync('sitemap.xml', sitemap.toString())
