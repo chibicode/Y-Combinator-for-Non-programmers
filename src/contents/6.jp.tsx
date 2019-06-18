@@ -303,7 +303,7 @@ export default () => (
         content: (
           <>
             <P>それでは、ここでちょっと難しい質問をしてみましょう。</P>
-            <EmojiSeparator emojis={['⁉', '🧐', '⁉']} />
+            <EmojiSeparator emojis={['❓', '🧐', '❓']} />
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>

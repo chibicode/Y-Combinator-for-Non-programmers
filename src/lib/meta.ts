@@ -4,3 +4,5 @@ export const baseUrl =
   locale === 'en' ? 'https://y.chibicode.com' : 'https://yj.chibicode.com'
 
 export const githubRepo = 'https://github.com/chibicode/yc'
+
+export const ogImageUrl = `${baseUrl}/static/images/og-image-${locale}.png`
