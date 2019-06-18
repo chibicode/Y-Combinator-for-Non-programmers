@@ -615,6 +615,27 @@ export default {
       showPriorities
     />
   ),
+  howy: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E12}
+      showPriorities
+      variableSize="md"
+    />
+  ),
+  imqy: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E13}
+      showPriorities
+      variableSize="md"
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 5, letter: 'i' }} />
+      }
+      bottomRightBadgeOverrides={{
+        j: '🅱️',
+        i: '🅰️'
+      }}
+    />
+  ),
   bpwl: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}

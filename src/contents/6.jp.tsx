@@ -256,6 +256,49 @@ export default () => (
         )
       },
       {
+        type: 'yesNoQuiz',
+        title: <>復習クイズ</>,
+        content: (
+          <>
+            <P>
+              ちゃんと覚えられたか、
+              <H args={{ name: 'yesNoQuiz' }} />
+              で確かめてみましょう！
+            </P>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            {AER.howy}
+            <P>
+              <H args={{ name: 'question' }} />{' '}
+              <Em>
+                こちらに隠されている暗号は<Strong>「4」</Strong>でしょうか？
+              </Em>
+            </P>
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              右下に
+              <EmojiWithText letter="i" />
+              が縦に5個並んでいるので、暗号は<Strong>「4」ではなく「5」</Strong>
+              になります。
+            </P>
+            {AER.imqy}
+          </>
+        )
+      },
+      {
         title: <>ここでちょっと難しい質問です</>,
         content: (
           <>

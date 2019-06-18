@@ -176,6 +176,10 @@ export const e6E10 = initializeExpressionContainer(
 export const e6E11 = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 2)
 )
+export const e6E12 = initializeExpressionContainer(numberParams('i', 'j', 5))
+export const e6E13 = initializeExpressionContainer(
+  numberParamsHighlightNumber('i', 'j', 5)
+)
 
 export const e7E1 = initializeExpressionContainer(numberParams('d', 'e', 1))
 export const e7E2 = initializeExpressionContainer([
