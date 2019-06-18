@@ -5,8 +5,7 @@ import {
   Strong,
   InlineHeader,
   Ul,
-  UlLi,
-  Hr
+  UlLi
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -15,11 +14,9 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import AER from 'src/components/AER'
-import InlineEmojiBoxes, {
-  InlineEmojiBoxesForQuestion
-} from 'src/components/InlineEmojiBoxes'
+import Emoji from 'src/components/Emoji'
+import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
-import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 export default () => (
   <EpisodeCardList
@@ -365,7 +362,7 @@ export default () => (
         title: (
           <>
             <EmojiForLetter letter="z" />や<EmojiForLetter letter="y" />
-            の部分を変えても同様
+            の部分を変えてもいい
           </>
         ),
         content: (
@@ -374,30 +371,47 @@ export default () => (
               ちなみに、
               <Strong>
                 <EmojiWithText letter="z" />や<EmojiWithText letter="y" />
-                の部分を別のものに変えても同様の結果になります
+                の部分を別の料理に変えることもできます
               </Strong>
-              。
+              。その場合も、結果は同じようになります。
             </P>
-            <Hr />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="z" />,
+                <Emoji>➡️</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="y" />,
+                <Emoji>➡️</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
             <P>
               たとえば次の弁当箱だと、先ほど
               <Strong>
                 <EmojiWithText letter="z" />
               </Strong>
-              だった部分が
-              <InlineEmojiBoxes
-                emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
-              />
-              になっています。(<Em>黄色</Em>の部分)
+              だった一番上の部分が
+              <Strong>
+                <EmojiWithText letter="w" />
+              </Strong>
+              と
+              <Strong>
+                <EmojiWithText letter="x" />
+              </Strong>
+              になっています。<Em>黄色</Em>で塗りつぶしてみました。
             </P>
             {AER.dvrw}
             <P>
               この場合、
               <InlineEmojiBoxesForQuestion />が<Strong>「0」</Strong>なら最後は
               <EmojiWithText letter="y" />、<Strong>「1」</Strong>なら
-              <InlineEmojiBoxes
-                emojis={[letterEmojiMapping['w'], letterEmojiMapping['x']]}
-              />
+              <EmojiWithText letter="w" />
+              と
+              <EmojiWithText letter="x" />
               になります。
             </P>
           </>

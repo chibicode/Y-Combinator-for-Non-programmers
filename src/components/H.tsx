@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
+import InlineEmojiBoxes, {
+  InlineEmojiBoxesForQuestion
+} from 'src/components/InlineEmojiBoxes'
 import { useContext } from 'react'
 import {
   Em,
@@ -42,6 +44,7 @@ import { shareId } from 'src/lib/twitter'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 import { dateString, dateSchemaString } from 'src/lib/date'
 import { githubRepo } from 'src/lib/meta'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
 export interface HProps {
   highlightType: InlineHighlightType
@@ -121,7 +124,11 @@ export interface HProps {
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
-    | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
+    | {
+        name: 'ifCaption'
+        ifZero: VariableNames | VariableNames[]
+        ifNonZero: VariableNames | VariableNames[]
+      }
     | { name: 'epiloguePrefix' }
     | { name: 'yesOrNo' }
     | { name: 'shareContent' }
@@ -1068,12 +1075,26 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <InlineEmojiBoxesForQuestion size="md" /> が{' '}
           <Strong css={slightlyLargeCaptionCss}>0</Strong> なら
-          {args.ifZero}、
+          {Array.isArray(args.ifZero) ? (
+            <InlineEmojiBoxes
+              emojis={args.ifZero.map(x => letterEmojiMapping[x])}
+            />
+          ) : (
+            <EmojiForLetter letter={args.ifZero} size="mdlg" />
+          )}
+          、
           <Strong>
             <span css={slightlyLargeCaptionCss}>1</span>以上
           </Strong>
           なら
-          {args.ifNonZero}に
+          {Array.isArray(args.ifNonZero) ? (
+            <InlineEmojiBoxes
+              emojis={args.ifNonZero.map(x => letterEmojiMapping[x])}
+            />
+          ) : (
+            <EmojiForLetter letter={args.ifNonZero} size="mdlg" />
+          )}
+          に
         </>
       )
     }
@@ -1135,17 +1156,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           {args.same ? (
-            <>
+            <Strong>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               に同じ料理があります
-            </>
+            </Strong>
           ) : (
-            <>
+            <Strong>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               に同じ料理がありません
-            </>
+            </Strong>
           )}
         </>
       )
