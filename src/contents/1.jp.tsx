@@ -66,7 +66,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               です。実際の弁当箱のように、
               <Em>
-                四角の中に何個かマスがあり、それぞれのマスの中に料理が入っています
+                四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
               </Em>
               。
             </P>
@@ -95,7 +95,7 @@ export default () => (
         content: (
           <>
             <P>
-              さらに何個か、
+              さらにいくつか、
               <H args={{ name: 'bentoBoxPuzzle' }} />
               の例を紹介していきます:
             </P>

@@ -623,6 +623,15 @@ export default {
     />
   ),
   eozk: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e6E5} />,
+  stio: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E5}
+      highlightOverrides={{
+        Amult: 'highlighted'
+      }}
+      caption={<H args={{ name: 'numberOfAIsSecretCodeCaption' }} />}
+    />
+  ),
   cqpa: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E6}
@@ -636,7 +645,6 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E1}
       showPriorities
-      caption={<H args={{ name: 'secretCodeABCaption', a: 'a', b: 'b' }} />}
       bottomRightBadgeOverrides={{
         b: '🅱️',
         a: '🅰️'
@@ -647,7 +655,6 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E2}
       showPriorities
-      caption={<H args={{ name: 'secretCodeABCaption', a: 'c', b: 'd' }} />}
       bottomRightBadgeOverrides={{
         d: '🅱️',
         c: '🅰️'
@@ -658,22 +665,46 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E3}
       showPriorities
-      caption={<H args={{ name: 'secretCodeABCaption', a: 'e', b: 'f' }} />}
       bottomRightBadgeOverrides={{
         f: '🅱️',
         e: '🅰️'
       }}
     />
   ),
+  qvxe: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E11}
+      showPriorities
+      bottomRightBadgeOverrides={{
+        f: '🅱️',
+        e: '🅰️'
+      }}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 2, letter: 'e' }} />
+      }
+    />
+  ),
   qsfp: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e6E4}
       showPriorities
-      caption={<H args={{ name: 'secretCodeABCaption', a: 'g', b: 'h' }} />}
       bottomRightBadgeOverrides={{
         h: '🅱️',
         g: '🅰️'
       }}
+    />
+  ),
+  sfop: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e6E10}
+      showPriorities
+      bottomRightBadgeOverrides={{
+        h: '🅱️',
+        g: '🅰️'
+      }}
+      caption={
+        <H args={{ name: 'secretCodeCaption', number: 3, letter: 'g' }} />
+      }
     />
   ),
   xpvh: (

@@ -33,7 +33,7 @@ export type VariableNames =
   | 'magical'
   | 'someNumber'
   | 'abbreviated'
-  | 'abbreviated'
+  | 'Amult'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

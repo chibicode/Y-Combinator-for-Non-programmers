@@ -13,7 +13,8 @@ import {
   highlighted,
   multParamsRightHighlighted,
   predParams,
-  alphaConversionSimpleExampleParams
+  alphaConversionSimpleExampleParams,
+  numberParamsHighlightNumber
 } from 'src/lib/churchEncodingParams'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 
@@ -156,7 +157,7 @@ export const e6E5 = initializeExpressionContainer({
   arg: 'A',
   body: {
     arg: 'B',
-    body: ['question', 'B']
+    body: ['Amult', 'B']
   }
 })
 export const e6E6 = initializeExpressionContainer(numberParams('A', 'B', 2))
@@ -169,6 +170,12 @@ export const e6E9 = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', 'e', 0)
 ])
+export const e6E10 = initializeExpressionContainer(
+  numberParamsHighlightNumber('g', 'h', 3)
+)
+export const e6E11 = initializeExpressionContainer(
+  numberParamsHighlightNumber('e', 'f', 2)
+)
 
 export const e7E1 = initializeExpressionContainer(numberParams('d', 'e', 1))
 export const e7E2 = initializeExpressionContainer([

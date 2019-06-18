@@ -46,6 +46,20 @@ export const numberParams = (
   }
 }
 
+export const numberParamsHighlightNumber = (
+  f: VariableNames,
+  x: VariableNames,
+  n: number
+): FunctionExpressionParams => {
+  return {
+    arg: f,
+    body: {
+      arg: x,
+      body: nest({ name: f, highlighted: true }, x, n)
+    }
+  }
+}
+
 export const succParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,

@@ -118,7 +118,6 @@ export interface HProps {
     | { name: 'secretCodeAddCaption' }
     | { name: 'secretCodeMultiplyCaption'; arg1?: number; arg2?: number }
     | { name: 'secretCodeCaption'; number: number; letter: VariableNames }
-    | { name: 'secretCodeABCaption'; a: VariableNames; b: VariableNames }
     | { name: 'notSecretCodeCaption'; number: number; letter: VariableNames }
     | { name: 'theAnswerIs'; isYes: boolean; sentence?: boolean }
     | { name: 'ifCaption'; ifZero: React.ReactNode; ifNonZero: React.ReactNode }
@@ -128,6 +127,8 @@ export interface HProps {
     | { name: 'shareTitle' }
     | { name: 'privacyPolicy' }
     | { name: 'witch' }
+    | { name: 'AmultTop' }
+    | { name: 'AmultBottom' }
     | { name: 'witchAppearsAgainCaption' }
     | { name: 'witchReplacedCaption' }
     | { name: 'aboutThisSite' }
@@ -157,6 +158,7 @@ export interface HProps {
     | { name: 'powerComputation'; power: 3 | 4 }
     | { name: 'thisIsYCombinatorCaption'; too?: boolean }
     | { name: 'csDescription'; prefix?: React.ReactNode }
+    | { name: 'numberOfAIsSecretCodeCaption' }
 }
 
 const slightlyLargeCaptionCss = css`
@@ -1797,14 +1799,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'secretCodeABCaption') {
+  if (args.name === 'AmultTop') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <>
-          <EmojiForLetter letter={args.a} />は<Emoji>🅰️</Emoji>、
-          <EmojiForLetter letter={args.b} />は<Emoji>🅱️</Emoji>
+          <Emoji>🅰️</Emoji> が
+        </>
+      )
+    }
+  }
+  if (args.name === 'AmultBottom') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>いくつか</>
+    }
+  }
+  if (args.name === 'numberOfAIsSecretCodeCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          右下の<Emoji>🅰️</Emoji>の数が暗号
         </>
       )
     }

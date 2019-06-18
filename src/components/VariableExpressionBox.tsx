@@ -100,7 +100,32 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             display: inline-block;
           `}
         >
-          (<H args={{ name: expression.name }} />)
+          (<H args={{ name: 'abbreviated' }} />)
+        </span>
+      </div>
+    )
+  } else if (expression.name === 'Amult') {
+    return (
+      <div>
+        <span
+          css={css`
+            font-size: 0.6em;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+          `}
+        >
+          <H args={{ name: 'AmultTop' }} />
+        </span>
+        <span
+          css={css`
+            font-size: 0.45em;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+          `}
+        >
+          <H args={{ name: 'AmultBottom' }} />
         </span>
       </div>
     )

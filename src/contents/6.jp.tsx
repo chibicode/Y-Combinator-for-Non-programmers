@@ -1,5 +1,13 @@
 import React from 'react'
-import { InlineHeader, Em, P, Strong, Hr } from 'src/components/ContentTags'
+import {
+  InlineHeader,
+  Em,
+  P,
+  Strong,
+  Hr,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
@@ -123,68 +131,124 @@ export default () => (
             <P>
               まず、暗号が隠されている弁当箱には
               <Strong>2種類の料理がある</Strong>
-              ことに注目します。それぞれに、<Emoji size="mdlg">🅰️</Emoji>と
-              <Emoji size="mdlg">🅱️</Emoji>の印をつけてみます。
+              ことに注目します。
+              <Strong>
+                分かりやすいように、それぞれに、
+                <Emoji>🅰️</Emoji>と<Emoji>🅱️</Emoji>
+                の印をつけてみます。
+              </Strong>
             </P>
+            <EmojiSeparator emojis={['🅰️', '🍱', '🅱️']} />
             <P>
-              こちらは、暗号が<Strong>「0」</Strong>でした:
+              こちらには、
+              <EmojiWithText letter="a" />に<Emoji>🅰️</Emoji>、
+              <EmojiWithText letter="b" />に<Emoji>🅱️</Emoji>
+              の印をつけてみます。
             </P>
             {AER.blre}
             <P>
-              こちらは、暗号が<Strong>「1」</Strong>でした:
+              こちらには、
+              <EmojiWithText letter="c" />に<Emoji>🅰️</Emoji>、
+              <EmojiWithText letter="d" />に<Emoji>🅱️</Emoji>
+              の印をつけてみます。
             </P>
             {AER.jmyv}
             <P>
-              こちらは、暗号が<Strong>「2」</Strong>でした:
+              こちらには、
+              <EmojiWithText letter="e" />に<Emoji>🅰️</Emoji>、
+              <EmojiWithText letter="f" />に<Emoji>🅱️</Emoji>
+              の印をつけてみます。
             </P>
             {AER.ilnb}
             <P>
-              こちらは、暗号が<Strong>「3」</Strong>でした:
+              こちらには、
+              <EmojiWithText letter="g" />に<Emoji>🅰️</Emoji>、
+              <EmojiWithText letter="h" />に<Emoji>🅱️</Emoji>
+              の印をつけてみます。
             </P>
             {AER.qsfp}
-            <H args={{ name: 'secretCodeReview', example: AER.eozk }} />
-            <Hr />
             <P>
-              たとえば、こちらは右下に<Emoji size="mdlg">🅰️</Emoji>
-              が縦に2個並んでいるので、暗号は<Strong>「2」</Strong>になります:
+              すると、暗号が隠されている弁当箱は、
+              <Strong>どれも次のようなパターンに従っている</Strong>
+              ことがわかります。
             </P>
-            {AER.cqpa}
+            <Ul>
+              <UlLi>
+                <Em>
+                  一番左に<Emoji>🅰️</Emoji>の料理があり、
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  真ん中に<Emoji>🅱️</Emoji>の料理があり、
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  右上に<Emoji>🅱️</Emoji>の料理がひとつだけあり、
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  右下に<Emoji>🅰️</Emoji>
+                  の料理がいくつか縦に並んでいます
+                </Em>
+                (並んでいない場合もあります)。
+              </UlLi>
+            </Ul>
+            <P>
+              もしこのようなパターンに沿っていない場合、暗号は存在しません。
+            </P>
+            {AER.eozk}
+            <P>それでは、暗号の解読方法を伝授しましょう！</P>
           </>
         )
       },
       {
-        title: <>先ほどの例で説明します</>,
+        title: (
+          <>
+            右下にある<Emoji>🅰️</Emoji>がついた料理の数が暗号
+          </>
+        ),
         content: (
           <>
             <P>
-              先ほどのクイズの例だと、
-              <Emoji>🅰️</Emoji>は<EmojiWithText letter="g" />、<Emoji>🅱️</Emoji>
-              は<EmojiWithText letter="h" />
-              になります。
+              <InlineHeader>暗号の解読方法:</InlineHeader>{' '}
+              もし弁当箱が先述のようなパターンに沿っている場合、
+              <Strong>
+                右下にある<Emoji>🅰️</Emoji>がついた料理の数が暗号
+              </Strong>
+              の数が暗号になります。
             </P>
-            {AER.qsfp}
+            {AER.stio}
             <P>
-              そして右下に
+              先ほどのクイズの例だと、右下に
               <Emoji>🅰️</Emoji>である
               <EmojiWithText letter="g" />
               が縦に3個並んでいるので、暗号は<Strong>「3」</Strong>
-              というわけです。
+              になります。
             </P>
-            <Hr />
+            {AER.sfop}
             <P>
-              こちらの例だと、<Emoji>🅰️</Emoji>は<EmojiWithText letter="a" />、
-              <Emoji>🅱️</Emoji>
-              は<EmojiWithText letter="b" />
+              こちらの例だと、右下に
+              <Emoji>🅰️</Emoji>である
+              <EmojiWithText letter="e" />
+              が縦に2個並んでいるので、暗号は<Strong>「2」</Strong>
+              になります。
+            </P>
+            {AER.qvxe}
+            <P>
+              こちらの例だと、右下に<Emoji>🅰️</Emoji>である
+              <EmojiWithText letter="a" />
+              がひとつもないので、暗号は<Strong>「0」</Strong>
               になります。
             </P>
             {AER.xpvh}
             <P>
-              しかし、右下に
-              <Emoji>🅰️</Emoji>である
-              <EmojiWithText letter="a" />
-              がひとつもないので、暗号は<Strong>「0」</Strong>
-              というわけです。
+              暗号はこれから何度も出現するので、仕組みをしっかり覚えていてください。「
+              <Strong>右下に同じ料理がいくつあるか</Strong>」がポイントです。
             </P>
+            {AER.stio}
           </>
         )
       },
@@ -192,10 +256,7 @@ export default () => (
         title: <>ここでちょっと難しい質問です</>,
         content: (
           <>
-            <P>
-              「<InlineHeader>暗号と言うわりには、簡単すぎる</InlineHeader>
-              」とお思いですか？それでは、ちょっと難しい質問をしてみましょう。
-            </P>
+            <P>それでは、ここでちょっと難しい質問をしてみましょう。</P>
             <EmojiSeparator emojis={['⁉', '🧐', '⁉']} />
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />:
