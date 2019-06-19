@@ -6,9 +6,7 @@ import {
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
 
-export const expressionRunnerSimpleConfigDefault: Partial<
-  ExpressionRunnerSimpleConfigBase
-> = {
+export const expressionRunnerSimpleConfigDefault = {
   isDone: false,
   initialState: 'default',
   showPriorities: false,
