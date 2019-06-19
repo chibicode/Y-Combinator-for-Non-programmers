@@ -71,6 +71,9 @@ export default () => (
               」という学問について、冒頭で以下のように説明しました:
             </P>
             <Blockquote>
+              <P>
+                <H args={{ name: 'csDescriptionPreface' }} />
+              </P>
               <H
                 args={{
                   name: 'csDescription'

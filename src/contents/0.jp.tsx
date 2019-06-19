@@ -151,14 +151,13 @@ export default () => (
         content: (
           <>
             <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
+              <H args={{ name: 'csDescriptionPreface' }} />
+            </P>
             <H
               args={{
-                name: 'csDescription',
-                prefix: (
-                  <H
-                    args={{ name: 'theAnswerIs', isYes: true, sentence: true }}
-                  />
-                )
+                name: 'csDescription'
               }}
             />
             <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
