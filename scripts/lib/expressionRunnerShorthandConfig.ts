@@ -139,14 +139,14 @@ interface ExpressionRunnerSingleStepConfig {
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }
 
-type ExpressionRunnerConfig =
+type ExpressionRunnerShorthandConfig =
   | ExpressionRunnerSimpleConfig
   | ExpressionRunnerPlayButtonOnlyConfig
   | ExpressionRunnerPairSimpleConfig
   | ExpressionRunnerPairSimpleDeprecatedConfig
   | ExpressionRunnerSingleStepConfig
 
-const config: Record<string, ExpressionRunnerConfig> = {
+const config: Record<string, ExpressionRunnerShorthandConfig> = {
   ilpo: {
     runner: 'simple',
     expressionContainer: lessonExpressions.e1E1
