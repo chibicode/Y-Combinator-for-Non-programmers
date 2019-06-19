@@ -9,14 +9,7 @@ import {
   CardProps
 } from 'src/components/Card'
 import { LinkContext } from 'src/components/ContentTags/Links'
-
-export type InlineHighlightType =
-  | 'default'
-  | 'white'
-  | 'none'
-  | 'blue'
-  | 'yellow'
-  | 'pink'
+import { InlineHighlightType } from 'src/types/ContentTagTypes'
 
 interface HighlightContextProps {
   inHighlightType: InlineHighlightType

@@ -1,6 +1,152 @@
 import * as lessonExpressions from 'src/lib/lessonExpressions'
+import {
+  ExpressionContainer,
+  SteppedExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
+import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
+import { HProps } from 'src/types/HTypes'
 
-export default {
+// ExpressionRunnerSimple.defaultProps = {
+//   isDone: false,
+//   initialState: 'default',
+//   showPriorities: false,
+//   explanationsVisibility: 'hidden',
+//   variableSize: 'lg',
+//   skipAlphaConvert: false
+// }
+interface ExpressionRunnerSimpleConfigBase {
+  expressionContainer: SteppedExpressionContainer
+  initialState?: ExpressionContainer['previouslyChangedExpressionState']
+  isDone?: boolean
+  skipAlphaConvert?: boolean
+  nextIteration?: boolean
+  nextIterations?: number
+  showPriorities?: boolean
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+  explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
+  caption?: HProps['args']
+  bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
+  variableSize?: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
+  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
+  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
+  highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
+  showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
+  highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
+  argPriorityAggHighlights?: readonly number[]
+  funcPriorityAggHighlights?: readonly number[]
+}
+
+interface ExpressionRunnerSimpleConfig
+  extends ExpressionRunnerSimpleConfigBase {
+  runner: 'simple'
+}
+
+// ExpressionRunnerPlayButtonOnly.defaultProps = {
+//   initialState: 'default',
+//   skipToTheEnd: true,
+//   hideFuncUnboundBadgeOnExplanation: true,
+//   showPriorities: false,
+//   speed: 1,
+//   skipAlphaConvert: false,
+//   variableSize: 'lg',
+//   explanationsVisibility: 'hiddenInitialPausedOnly'
+// }
+interface ExpressionRunnerPlayButtonOnlyConfig {
+  runner: 'playButtonOnly'
+  expressionContainer: SteppedExpressionContainer
+  initialState?: ExpressionContainer['previouslyChangedExpressionState']
+  skipToTheEnd?: boolean
+  hideFuncUnboundBadgeOnExplanation?: boolean
+  showPriorities?: boolean
+  lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
+  lastAllowedExpressionStateAfterIterations?: number
+  nextIteration?: boolean
+  nextIterations?: number
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+  speed?: number
+  skipAlphaConvert?: boolean
+  variableSize?: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
+  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
+  explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
+  superFastForward?: ExpressionRunnerProps['superFastForward']
+  highlightNumber?: number
+}
+
+// Same default props
+interface ExpressionRunnerPairSimpleConfig
+  extends ExpressionRunnerSimpleConfigBase {
+  runner: 'pairSimple'
+  hideFirstExplanations?: boolean
+  finalState?: ExpressionRunnerSimpleConfig['initialState']
+  finalCaption?: ExpressionRunnerSimpleConfig['caption']
+  finalNextIteration?: ExpressionRunnerSimpleConfig['nextIteration']
+  finalNextIterations?: ExpressionRunnerSimpleConfig['nextIterations']
+  finalFastForward?: boolean
+  finalArgPriorityAggHighlights?: ExpressionRunnerSimpleConfig['argPriorityAggHighlights']
+  finalFuncPriorityAggHighlights?: ExpressionRunnerSimpleConfig['funcPriorityAggHighlights']
+  intermediateState?: ExpressionRunnerSimpleConfig['initialState']
+  intermediateCaption?: ExpressionRunnerSimpleConfig['caption']
+  intermediateNextIteration?: ExpressionRunnerSimpleConfig['nextIteration']
+  intermediateNextIterations?: ExpressionRunnerSimpleConfig['nextIterations']
+  intermediateArgPriorityAggHighlights?: ExpressionRunnerSimpleConfig['argPriorityAggHighlights']
+  intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleConfig['funcPriorityAggHighlights']
+}
+
+// ExpressionRunnerPairSimpleDeprecated.defaultProps = {
+//   initialState: 'default',
+//   finalIsDone: false,
+//   showPriorities: false,
+//   skipAlphaConvert: false,
+//   hidePrioritiesOnSecond: false,
+//   variableSize: 'lg'
+// }
+interface ExpressionRunnerPairSimpleDeprecatedConfig {
+  runner: 'pairSimpleDeprecated'
+  expressionContainer: SteppedExpressionContainer
+  initialState?: ExpressionContainer['previouslyChangedExpressionState']
+  finalIsDone?: boolean
+  finalState?: ExpressionContainer['previouslyChangedExpressionState']
+  showPriorities?: boolean
+  hidePrioritiesOnSecond?: boolean
+  skipAlphaConvert?: boolean
+  firstInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
+  secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
+  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
+  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
+  variableSize?: ExpressionRunnerProps['variableSize']
+}
+
+// ExpressionRunnerSingleStep.defaultProps = {
+//   hideFuncUnboundBadgeOnExplanation: false,
+//   showPriorities: false,
+//   explanationsVisibility: 'hiddenInitialPausedOnly',
+//   variableSize: 'lg'
+// }
+interface ExpressionRunnerSingleStepConfig {
+  runner: 'singleStep'
+  expressionContainer: SteppedExpressionContainer
+  initialState: ExpressionContainer['previouslyChangedExpressionState']
+  finalState: ExpressionContainer['previouslyChangedExpressionState']
+  hideFuncUnboundBadgeOnExplanation?: boolean
+  showPriorities?: boolean
+  nextIteration?: boolean
+  nextIterations?: number
+  variableSize?: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
+  explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+}
+
+type ExpressionRunnerConfig =
+  | ExpressionRunnerSimpleConfig
+  | ExpressionRunnerPlayButtonOnlyConfig
+  | ExpressionRunnerPairSimpleConfig
+  | ExpressionRunnerPairSimpleDeprecatedConfig
+  | ExpressionRunnerSingleStepConfig
+
+const config: Record<string, ExpressionRunnerConfig> = {
   ilpo: {
     runner: 'simple',
     expressionContainer: lessonExpressions.e1E1
@@ -79,7 +225,7 @@ export default {
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'active',
-    finalState: 'showFconst'
+    finalState: 'showFuncBound'
   },
   rqjo: {
     runner: 'singleStep',
@@ -2167,3 +2313,5 @@ export default {
     expressionContainer: lessonExpressions.e16E1
   }
 }
+
+export default config
