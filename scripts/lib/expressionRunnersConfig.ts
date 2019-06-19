@@ -1317,6 +1317,10 @@ export default {
     variableSize: 'md',
     caption: { name: 'secretCodeTwoMinusOneCaption' }
   },
+  xekr: {
+    runner: 'ExpressionRunnerSimple',
+    expressionContainer: lessonExpressions.e12E5
+  },
   lial: {
     runner: 'ExpressionRunnerSimple',
     expressionContainer: lessonExpressions.e12E6,
@@ -1331,6 +1335,10 @@ export default {
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
+  },
+  ojma: {
+    runner: 'ExpressionRunnerSimple',
+    expressionContainer: lessonExpressions.e12E7
   },
   yykk: {
     runner: 'ExpressionRunnerPlayButtonOnly',
@@ -1412,6 +1420,10 @@ export default {
     runner: 'ExpressionRunnerSimple',
     expressionContainer: lessonExpressions.e13E1,
     caption: { name: 'ifCaption', ifZero: 'y', ifNonZero: 'z' }
+  },
+  vxnm: {
+    runner: 'ExpressionRunnerSimple',
+    expressionContainer: lessonExpressions.e13E2
   },
   xefx: {
     runner: 'ExpressionRunnerPlayButtonOnly',
