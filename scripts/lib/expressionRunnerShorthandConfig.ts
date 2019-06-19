@@ -6,15 +6,18 @@ import {
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
 
-// ExpressionRunnerSimple.defaultProps = {
-//   isDone: false,
-//   initialState: 'default',
-//   showPriorities: false,
-//   explanationsVisibility: 'hidden',
-//   variableSize: 'lg',
-//   skipAlphaConvert: false
-// }
-interface ExpressionRunnerSimpleConfigBase {
+export const expressionRunnerSimpleConfigDefault: Partial<
+  ExpressionRunnerSimpleConfigBase
+> = {
+  isDone: false,
+  initialState: 'default',
+  showPriorities: false,
+  explanationsVisibility: 'hidden',
+  variableSize: 'lg',
+  skipAlphaConvert: false
+}
+
+export interface ExpressionRunnerSimpleConfigBase {
   expressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   isDone?: boolean
@@ -37,22 +40,37 @@ interface ExpressionRunnerSimpleConfigBase {
   funcPriorityAggHighlights?: readonly number[]
 }
 
-interface ExpressionRunnerSimpleConfig
+export interface ExpressionRunnerSimpleConfig
   extends ExpressionRunnerSimpleConfigBase {
   runner: 'simple'
 }
 
-// ExpressionRunnerPlayButtonOnly.defaultProps = {
-//   initialState: 'default',
-//   skipToTheEnd: true,
-//   hideFuncUnboundBadgeOnExplanation: true,
-//   showPriorities: false,
-//   speed: 1,
-//   skipAlphaConvert: false,
-//   variableSize: 'lg',
-//   explanationsVisibility: 'hiddenInitialPausedOnly'
-// }
-interface ExpressionRunnerPlayButtonOnlyConfig {
+export function isExpressionRunnerSimpleConfig(
+  c: ExpressionRunnerShorthandConfig
+): c is ExpressionRunnerSimpleConfig {
+  return c.runner === 'simple'
+}
+
+export const expressionRunnerPlayButtonOnlyConfigDefault: Partial<
+  ExpressionRunnerPlayButtonOnlyConfig
+> = {
+  initialState: 'default',
+  skipToTheEnd: true,
+  hideFuncUnboundBadgeOnExplanation: true,
+  showPriorities: false,
+  speed: 1,
+  skipAlphaConvert: false,
+  variableSize: 'lg',
+  explanationsVisibility: 'hiddenInitialPausedOnly'
+}
+
+export function isExpressionRunnerPlayButtonOnlyConfig(
+  c: ExpressionRunnerShorthandConfig
+): c is ExpressionRunnerPlayButtonOnlyConfig {
+  return c.runner === 'playButtonOnly'
+}
+
+export interface ExpressionRunnerPlayButtonOnlyConfig {
   runner: 'playButtonOnly'
   expressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
@@ -74,8 +92,15 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   highlightNumber?: number
 }
 
-// Same default props
-interface ExpressionRunnerPairSimpleConfig
+export const expressionRunnerPairSimpleConfigDefault = expressionRunnerSimpleConfigDefault
+
+export function isExpressionRunnerPairSimpleConfig(
+  c: ExpressionRunnerShorthandConfig
+): c is ExpressionRunnerPairSimpleConfig {
+  return c.runner === 'pairSimple'
+}
+
+export interface ExpressionRunnerPairSimpleConfig
   extends ExpressionRunnerSimpleConfigBase {
   runner: 'pairSimple'
   hideFirstExplanations?: boolean
@@ -94,15 +119,22 @@ interface ExpressionRunnerPairSimpleConfig
   intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleConfig['funcPriorityAggHighlights']
 }
 
-// ExpressionRunnerPairSimpleDeprecated.defaultProps = {
-//   initialState: 'default',
-//   finalIsDone: false,
-//   showPriorities: false,
-//   skipAlphaConvert: false,
-//   hidePrioritiesOnSecond: false,
-//   variableSize: 'lg'
-// }
-interface ExpressionRunnerPairSimpleDeprecatedConfig {
+export const expressionRunnerPairSimpleDeprecatedConfig = {
+  initialState: 'default',
+  finalIsDone: false,
+  showPriorities: false,
+  skipAlphaConvert: false,
+  hidePrioritiesOnSecond: false,
+  variableSize: 'lg'
+}
+
+export function isExpressionRunnerPairSimpleDeprecatedConfig(
+  c: ExpressionRunnerShorthandConfig
+): c is ExpressionRunnerPairSimpleDeprecatedConfig {
+  return c.runner === 'pairSimpleDeprecated'
+}
+
+export interface ExpressionRunnerPairSimpleDeprecatedConfig {
   runner: 'pairSimpleDeprecated'
   expressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
@@ -118,13 +150,20 @@ interface ExpressionRunnerPairSimpleDeprecatedConfig {
   variableSize?: ExpressionRunnerProps['variableSize']
 }
 
-// ExpressionRunnerSingleStep.defaultProps = {
-//   hideFuncUnboundBadgeOnExplanation: false,
-//   showPriorities: false,
-//   explanationsVisibility: 'hiddenInitialPausedOnly',
-//   variableSize: 'lg'
-// }
-interface ExpressionRunnerSingleStepConfig {
+export const expressionRunnerSingleStepConfigDefault = {
+  hideFuncUnboundBadgeOnExplanation: false,
+  showPriorities: false,
+  explanationsVisibility: 'hiddenInitialPausedOnly',
+  variableSize: 'lg'
+}
+
+export function isExpressionRunnerSingleStepConfig(
+  c: ExpressionRunnerShorthandConfig
+): c is ExpressionRunnerSingleStepConfig {
+  return c.runner === 'singleStep'
+}
+
+export interface ExpressionRunnerSingleStepConfig {
   runner: 'singleStep'
   expressionContainer: SteppedExpressionContainer
   initialState: ExpressionContainer['previouslyChangedExpressionState']
@@ -139,7 +178,7 @@ interface ExpressionRunnerSingleStepConfig {
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }
 
-type ExpressionRunnerShorthandConfig =
+export type ExpressionRunnerShorthandConfig =
   | ExpressionRunnerSimpleConfig
   | ExpressionRunnerPlayButtonOnlyConfig
   | ExpressionRunnerPairSimpleConfig

@@ -5,9 +5,7 @@ import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
-import ExpressionRunnerContext, {
-  expressionRunnerContextDefault
-} from 'src/components/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ExpressionRunnerControls from 'src/components/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
@@ -16,7 +14,10 @@ import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
-import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
+import {
+  ExpressionRunnerProps,
+  expressionRunnerContextDefault
+} from 'src/types/ExpressionRunnerTypes'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed

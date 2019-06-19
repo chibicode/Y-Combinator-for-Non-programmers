@@ -78,3 +78,20 @@ export interface ExpressionRunnerProps {
   superFastForward: boolean
   highlightNumber?: number
 }
+
+export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
+  hidePriorities: false,
+  hideBottomRightBadges: false,
+  variableSize: 'sm',
+  isDoneOrReady: false,
+  started: false,
+  bottomRightBadgeOverrides: {},
+  highlightOverrides: {},
+  highlightOverrideActiveAfterStart: false,
+  highlightOverridesCallArgAndFuncUnboundOnly: false,
+  showOnlyFocused: false,
+  argPriorityAggHighlights: [],
+  funcPriorityAggHighlights: [],
+  highlightFunctions: false,
+  highlightAllChildren: false
+}
