@@ -21,11 +21,6 @@ export default {
       expressionContainer={lessonExpressions.e1E1}
     />
   ),
-  uqwm: (
-    <ExpressionRunnerPairSimpleDeprecated
-      expressionContainer={lessonExpressions.e1E1}
-    />
-  ),
   zwpj: (
     <ExpressionRunnerPlayButtonOnly
       expressionContainer={lessonExpressions.e1E2}

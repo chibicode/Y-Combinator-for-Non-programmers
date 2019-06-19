@@ -10,6 +10,7 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import episodeEmojis from 'src/lib/episodeEmojis'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export const BasicRules = ({
   includeFuncUnbound
@@ -73,7 +74,9 @@ export default () => (
               ここでは、前回のはじめに登場した弁当箱(<Strong>例その1</Strong>
               )を使って説明します:
             </P>
-            {AER.uqwm}
+            {AER.ilpo}
+            <ExpressionRunnerSeparator />
+            {AER.osqo}
           </>
         )
       },
