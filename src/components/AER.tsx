@@ -49,8 +49,9 @@ export default {
     />
   ),
   cpkp: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E4}
+      isDone
     />
   ),
   loai: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E5} />,

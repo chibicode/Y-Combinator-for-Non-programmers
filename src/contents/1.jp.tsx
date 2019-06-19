@@ -271,6 +271,8 @@ export default () => (
             <P>
               <InlineHeader>例その4:</InlineHeader>
             </P>
+            {AER.jozw}
+            <ExpressionRunnerSeparator />
             {AER.cpkp}
           </>
         ),
