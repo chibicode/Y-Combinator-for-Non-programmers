@@ -43,8 +43,9 @@ export default {
     />
   ),
   tuqr: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E3}
+      isDone
     />
   ),
   cpkp: (

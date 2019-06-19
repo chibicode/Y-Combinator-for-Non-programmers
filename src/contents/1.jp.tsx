@@ -265,6 +265,8 @@ export default () => (
             <P>
               <InlineHeader>例その3:</InlineHeader>
             </P>
+            {AER.emmb}
+            <ExpressionRunnerSeparator />
             {AER.tuqr}
             <P>
               <InlineHeader>例その4:</InlineHeader>
