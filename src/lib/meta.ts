@@ -5,7 +5,7 @@ export const baseUrl =
 
 export const githubRepo = 'https://github.com/chibicode/yc'
 
-export const ogImageUrl = `${baseUrl}/static/images/og-image-${locale}-v2.png`
+export const ogImageUrl = `${baseUrl}/static/images/og-image-${locale}-v3.png`
 
 export const ogUrl = (episodeNumber: number) =>
   `${baseUrl}${episodeNumber > 0 ? `/${episodeNumber}/` : ''}`
