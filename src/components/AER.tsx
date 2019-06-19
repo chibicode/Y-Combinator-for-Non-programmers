@@ -215,11 +215,6 @@ export default {
       initialState="showFuncUnbound"
     />
   ),
-  iped: (
-    <ExpressionRunnerPairSimpleDeprecated
-      expressionContainer={lessonExpressions.e2E1}
-    />
-  ),
   cvtc: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
