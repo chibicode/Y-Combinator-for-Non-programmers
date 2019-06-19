@@ -2,237 +2,237 @@ import * as lessonExpressions from 'src/lib/lessonExpressions'
 
 export default {
   ilpo: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E1
   },
   imyd: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E2
   },
   emmb: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E3
   },
   jozw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E4
   },
   itbm: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E1
   },
   uqwm: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e1E1
   },
   zwpj: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E2
   },
   dqkc: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E3
   },
   ldox: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E4
   },
   bgfl: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e1E2
   },
   tuqr: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e1E3
   },
   cpkp: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e1E4
   },
   loai: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E5
   },
   vvjn: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E5,
     isDone: true
   },
   hbgo: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E6
   },
   olef: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E7
   },
   zzyu: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E5
   },
   qpjt: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E6
   },
   ozbe: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'active',
     finalState: 'showFconst'
   },
   rqjo: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'showFuncBound',
     finalState: 'betaReducePreviewBefore'
   },
   zzxj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'showFuncBound'
   },
   evqx: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewAfter'
   },
   keck: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'betaReducePreviewBefore'
   },
   msiw: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'betaReducePreviewAfter',
     finalState: 'betaReducePreviewCrossed'
   },
   qoms: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'betaReducePreviewAfter'
   },
   mhgm: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'betaReducePreviewCrossed',
     finalIsDone: true
   },
   osqo: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E1,
     isDone: true
   },
   sgfj: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E2,
     initialState: 'showFuncBound',
     finalState: 'betaReducePreviewBefore'
   },
   gwtp: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
     expressionContainer: lessonExpressions.e1E2,
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewCrossed'
   },
   zxfv: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e1E2,
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewCrossed'
   },
   ahsd: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E2,
     isDone: true
   },
   wunw: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E1,
     initialState: 'active',
     skipToTheEnd: false
   },
   jbam: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E2,
     initialState: 'active',
     skipToTheEnd: false
   },
   xwim: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e2E1
   },
   awxz: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e2E1,
     isDone: true
   },
   ldts: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e2E1
   },
   rmsd: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e2E1,
     initialState: 'active',
     finalState: 'showFuncUnbound'
   },
   jmqh: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e2E1,
     initialState: 'showFuncUnbound',
     skipToTheEnd: false
   },
   qwke: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e2E1,
     initialState: 'showFuncUnbound'
   },
   iped: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e2E1
   },
   cvtc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true
   },
   uemm: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true,
     isDone: true
   },
   xhbi: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true
   },
   dkiy: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E2,
     showPriorities: true
   },
   owcy: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E3
   },
   aaov: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e3E1,
     initialState: 'default',
     finalState: 'active',
     showPriorities: true
   },
   qxgl: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true,
     initialState: 'active',
@@ -240,27 +240,27 @@ export default {
     skipToTheEnd: false
   },
   uwma: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e3E1,
     initialState: 'betaReducePreviewCrossed',
     finalState: 'default',
     showPriorities: true
   },
   kvso: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E1,
     nextIteration: true,
     showPriorities: true,
     skipToTheEnd: false
   },
   snsr: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true,
     skipToTheEnd: false
   },
   jrxw: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e3E1,
     initialState: 'showFuncUnbound',
     showPriorities: true,
@@ -273,7 +273,7 @@ export default {
     ]
   },
   esyi: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true,
     firstInitializeInstructions: [
@@ -286,13 +286,13 @@ export default {
     finalIsDone: true
   },
   hdxc: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E2,
     showPriorities: true,
     skipToTheEnd: false
   },
   wepe: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e3E2,
     initialState: 'showFuncUnbound',
     showPriorities: true,
@@ -305,7 +305,7 @@ export default {
     ]
   },
   bwop: {
-    runner: 'ExpressionRunnerPairSimpleDeprecated',
+    runner: 'pairSimpleDeprecated',
     expressionContainer: lessonExpressions.e3E2,
     showPriorities: true,
     firstInitializeInstructions: [
@@ -318,28 +318,28 @@ export default {
     finalIsDone: true
   },
   laea: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E1,
     showPriorities: true
   },
   cgpd: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E1,
     isDone: true
   },
   ijot: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E1,
     showPriorities: true
   },
   aezk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'active',
     showPriorities: true
   },
   ainx: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'active',
     lastAllowedExpressionState: 'showFuncBound',
@@ -349,125 +349,125 @@ export default {
     explanationsVisibility: 'hiddenInitialAndLastPausedOnly'
   },
   hykj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'showFuncUnbound',
     showPriorities: true
   },
   ielw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     showAllShowSteps: true,
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'showFuncUnbound',
     showPriorities: true
   },
   dtzu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'betaReducePreviewBefore',
     showPriorities: true,
     explanationsVisibility: 'visible'
   },
   efyy: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewAfter',
     showPriorities: true
   },
   izgz: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E1,
     initialState: 'betaReducePreviewAfter',
     showPriorities: true,
     skipToTheEnd: false
   },
   ljjg: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E5
   },
   ebag: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E5,
     isDone: true
   },
   skzv: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E5
   },
   egmr: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e3E5,
     initialState: 'active',
     finalState: 'showFuncBound',
     hideFuncUnboundBadgeOnExplanation: true
   },
   lygz: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E5,
     initialState: 'betaReducePreviewBefore',
     explanationsVisibility: 'visible'
   },
   fivy: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e3E5,
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewAfter'
   },
   dmwy: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e3E5,
     initialState: 'betaReducePreviewAfter',
     skipToTheEnd: false
   },
   fpsd: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E5,
     initialState: 'showFuncBound'
   },
   vegw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E5,
     initialState: 'betaReducePreviewAfter'
   },
   zywk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E2,
     showPriorities: true,
     initialState: 'default'
   },
   pqfs: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E2,
     showPriorities: true,
     initialState: 'active'
   },
   tntc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E2,
     initialState: 'active',
     showPriorities: true
   },
   mbrh: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E2,
     showPriorities: true,
     isDone: true
   },
   wbru: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E2,
     showPriorities: true
   },
   hwtu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E2,
     initialState: 'showCallArg',
     showAllShowSteps: true,
     showPriorities: true
   },
   usta: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E2,
     initialState: 'showCallArg',
     skipToTheEnd: false,
@@ -475,77 +475,77 @@ export default {
     showPriorities: true
   },
   mpal: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E2,
     initialState: 'showFuncBound',
     showPriorities: true
   },
   gtdu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E3,
     showPriorities: true
   },
   jmmp: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E3,
     showPriorities: true,
     highlightOverrides: { b: 'highlighted' }
   },
   qpkm: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E3,
     showPriorities: true,
     isDone: true
   },
   udvh: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E3,
     showPriorities: true
   },
   dqey: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e5E3,
     initialState: 'active',
     showPriorities: true
   },
   diis: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e5E3,
     initialState: 'active',
     skipToTheEnd: false,
     showPriorities: true
   },
   tiok: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E1,
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 0 }
   },
   tfho: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E2,
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 1 }
   },
   idcf: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E3,
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 2 }
   },
   xemt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E4,
     showPriorities: true
   },
   howy: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E12,
     showPriorities: true,
     variableSize: 'md'
   },
   imqy: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E13,
     showPriorities: true,
     variableSize: 'md',
@@ -553,87 +553,87 @@ export default {
     bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
   },
   bpwl: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E4,
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 3 }
   },
   eozk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E5
   },
   stio: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E5,
     highlightOverrides: { Amult: 'highlighted' },
     caption: { name: 'numberOfAIsSecretCodeCaption' }
   },
   cqpa: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E6,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'A' }
   },
   blre: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E1,
     showPriorities: true,
     bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️' }
   },
   jmyv: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E2,
     showPriorities: true,
     bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
   },
   ilnb: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E3,
     showPriorities: true,
     bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
   },
   qvxe: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E11,
     showPriorities: true,
     bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' },
     caption: { name: 'secretCodeCaption', number: 2, letter: 'e' }
   },
   qsfp: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E4,
     showPriorities: true,
     bottomRightBadgeOverrides: { h: '🅱️', g: '🅰️' }
   },
   sfop: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E10,
     showPriorities: true,
     bottomRightBadgeOverrides: { h: '🅱️', g: '🅰️' },
     caption: { name: 'secretCodeCaption', number: 3, letter: 'g' }
   },
   xpvh: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E1,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 0, letter: 'a' },
     bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️' }
   },
   nicg: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E8,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 0, letter: 'd' }
   },
   qmof: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E7,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   xgei: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E7,
     showPriorities: true,
     containerSize: 'xs',
@@ -641,7 +641,7 @@ export default {
     caption: { name: 'secretCodeAddOneCaption' }
   },
   mauj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E9,
     showPriorities: true,
     containerSize: 'xs',
@@ -649,14 +649,14 @@ export default {
     highlightOverrides: { d: 'highlighted', e: 'highlighted' }
   },
   eavp: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E9,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   wafy: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e6E9,
     showPriorities: true,
     containerSize: 'xs',
@@ -665,20 +665,20 @@ export default {
     speed: 1.75
   },
   badn: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e6E9,
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'b' }
   },
   slyk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E1,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'd' }
   },
   eemn: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e7E2,
     showPriorities: true,
     containerSize: 'xs',
@@ -688,20 +688,20 @@ export default {
     highlightOverrides: { d: 'highlighted', e: 'highlighted' }
   },
   rceu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E2,
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'b' }
   },
   sisn: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E3,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'd' }
   },
   syhh: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e7E4,
     showPriorities: true,
     containerSize: 'xs',
@@ -711,33 +711,33 @@ export default {
     speed: 3
   },
   ablz: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E4,
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 3, letter: 'b' }
   },
   bpza: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E5,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'e' }
   },
   vrvl: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E6,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'g' }
   },
   goif: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E7,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   fatm: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E11,
     showPriorities: true,
     containerSize: 'xs',
@@ -745,7 +745,7 @@ export default {
     highlightOverrides: { g: 'highlighted', h: 'highlighted' }
   },
   bxdf: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E7,
     showPriorities: true,
     caption: { name: 'secretCodeAddCaption' },
@@ -753,7 +753,7 @@ export default {
     variableSize: 'md'
   },
   hdwy: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E8,
     showPriorities: true,
     containerSize: 'xs',
@@ -761,14 +761,14 @@ export default {
     highlightOverrides: { g: 'highlighted', h: 'highlighted' }
   },
   entr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E8,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm'
   },
   brrh: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E10,
     showPriorities: true,
     containerSize: 'xs',
@@ -776,7 +776,7 @@ export default {
     highlightOverrides: { e: 'highlighted', f: 'highlighted' }
   },
   rome: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e7E8,
     showPriorities: true,
     containerSize: 'xs',
@@ -785,14 +785,14 @@ export default {
     speed: 5
   },
   dhdk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E8,
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 3, letter: 'c' }
   },
   dyov: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E9,
     showPriorities: true,
     containerSize: 'xs',
@@ -800,7 +800,7 @@ export default {
     highlightOverrides: { e: 'highlighted', f: 'highlighted' }
   },
   unck: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e7E9,
     showPriorities: true,
     containerSize: 'xs',
@@ -809,21 +809,21 @@ export default {
     speed: 5
   },
   cpbj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e7E9,
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 4, letter: 'c' }
   },
   ksya: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E8,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   drvu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E1,
     showPriorities: true,
     containerSize: 'xs',
@@ -831,19 +831,19 @@ export default {
     caption: { name: 'secretCodeMultiplyCaption' }
   },
   bdlj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E2,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'e' }
   },
   ifwb: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E3,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 3, letter: 'g' }
   },
   mame: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E4,
     showPriorities: true,
     containerSize: 'xs',
@@ -856,7 +856,7 @@ export default {
     }
   },
   ngus: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e8E4,
     showPriorities: true,
     containerSize: 'xs',
@@ -871,14 +871,14 @@ export default {
     }
   },
   pzwe: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E4,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm'
   },
   ujfj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E4,
     showPriorities: true,
     isDone: true,
@@ -886,19 +886,19 @@ export default {
     caption: { name: 'secretCodeCaption', number: 6, letter: 'c' }
   },
   dymt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E5,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'e' }
   },
   mhwq: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E6,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'g' }
   },
   sojz: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E7,
     showPriorities: true,
     containerSize: 'xs',
@@ -911,7 +911,7 @@ export default {
     }
   },
   ktyt: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e8E7,
     showPriorities: true,
     containerSize: 'xs',
@@ -920,14 +920,14 @@ export default {
     speed: 5
   },
   aeyv: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e8E7,
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'c' }
   },
   bxfv: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E1,
     showPriorities: true,
     containerSize: 'xs',
@@ -935,14 +935,14 @@ export default {
     highlightOverrides: { z: 'highlighted', y: 'highlighted' }
   },
   fqwj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E1,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   tkqr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E2,
     showPriorities: true,
     containerSize: 'xs',
@@ -950,12 +950,12 @@ export default {
     highlightOverrides: { f: 'highlighted', g: 'highlighted' }
   },
   fhlw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E3,
     caption: { name: 'secretCodeCaption', number: 0, letter: 'f' }
   },
   jliw: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e9E2,
     showPriorities: true,
     containerSize: 'xs',
@@ -964,12 +964,12 @@ export default {
     speed: 3
   },
   yehl: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E4,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'f' }
   },
   mrky: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -977,7 +977,7 @@ export default {
     highlightOverrides: { f: 'highlighted', g: 'highlighted' }
   },
   ctyl: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e9E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -986,12 +986,12 @@ export default {
     speed: 4
   },
   kupy: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E6,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'f' }
   },
   qdkf: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E7,
     showPriorities: true,
     containerSize: 'xs',
@@ -999,7 +999,7 @@ export default {
     highlightOverrides: { f: 'highlighted', g: 'highlighted' }
   },
   gtwk: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e9E7,
     showPriorities: true,
     containerSize: 'xs',
@@ -1009,7 +1009,7 @@ export default {
     skipAlphaConvert: true
   },
   nlxe: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E1,
     showPriorities: true,
     containerSize: 'xs',
@@ -1017,7 +1017,7 @@ export default {
     caption: { name: 'ifCaption', ifZero: 'y', ifNonZero: 'z' }
   },
   dvrw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e9E8,
     showPriorities: true,
     containerSize: 'xs',
@@ -1026,12 +1026,12 @@ export default {
     highlightOverrides: { w: 'highlighted', x: 'highlighted' }
   },
   wbpx: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e10E1,
     showPriorities: true
   },
   gszp: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E2,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1039,7 +1039,7 @@ export default {
     highlightOverrides: { c: 'highlighted' }
   },
   kntz: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E3,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1047,7 +1047,7 @@ export default {
     highlightOverrides: { d: 'highlighted' }
   },
   bmms: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E4,
     showPriorities: true,
     skipAlphaConvert: true,
@@ -1055,7 +1055,7 @@ export default {
     skipToTheEnd: false
   },
   gmcn: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e10E4,
     showPriorities: true,
     skipAlphaConvert: true,
@@ -1065,7 +1065,7 @@ export default {
     highlightOverrideActiveAfterStart: true
   },
   vpjw: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E4,
     explanationsVisibility: 'hiddenInitialAndLastPausedOnly',
     skipAlphaConvert: true,
@@ -1077,7 +1077,7 @@ export default {
     speed: 1.75
   },
   kjyi: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E4,
     skipAlphaConvert: true,
     showPriorities: true,
@@ -1087,7 +1087,7 @@ export default {
     speed: 1.75
   },
   dpst: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e10E2,
     showPriorities: true,
     skipAlphaConvert: true,
@@ -1095,7 +1095,7 @@ export default {
     caption: { name: 'isCallArgAndFuncUnboundTheSameCaption', same: false }
   },
   xhwx: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E2,
     skipAlphaConvert: true,
     showPriorities: true,
@@ -1105,7 +1105,7 @@ export default {
     speed: 1.75
   },
   ttvy: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e10E2,
     skipAlphaConvert: true,
     showPriorities: true,
@@ -1115,13 +1115,13 @@ export default {
     speed: 1.75
   },
   lrja: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E1,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'd' }
   },
   bcae: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E2,
     showPriorities: true,
     skipAlphaConvert: true,
@@ -1129,7 +1129,7 @@ export default {
     variableSize: 'md'
   },
   zuam: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e11E2,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1139,7 +1139,7 @@ export default {
     variableSize: 'md'
   },
   kfcw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E2,
     showPriorities: true,
     isDone: true,
@@ -1149,7 +1149,7 @@ export default {
     caption: { name: 'notSecretCodeCaption', number: 2, letter: 'b' }
   },
   jxyg: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E2,
     showPriorities: true,
     initialState: 'showFuncUnbound',
@@ -1161,7 +1161,7 @@ export default {
     caption: { name: 'isCallArgAndFuncUnboundTheSameCaption', same: true }
   },
   oiwu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E3,
     showPriorities: true,
     initialState: 'showFuncUnbound',
@@ -1173,7 +1173,7 @@ export default {
     caption: { name: 'mustChangeBothFuncUnboundAndBound' }
   },
   uqpp: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E3,
     showPriorities: true,
     initialState: 'alphaConvertDone',
@@ -1184,7 +1184,7 @@ export default {
     showOnlyFocused: true
   },
   hxmk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E3,
     showPriorities: true,
     initialState: 'alphaConvertDone',
@@ -1195,7 +1195,7 @@ export default {
     caption: { name: 'isCallArgAndFuncUnboundTheSameCaption', same: false }
   },
   rzbq: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e11E3,
     showPriorities: true,
     initialState: 'alphaConvertDone',
@@ -1205,7 +1205,7 @@ export default {
     speed: 3
   },
   jlet: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E3,
     isDone: true,
     showPriorities: true,
@@ -1214,7 +1214,7 @@ export default {
     caption: { name: 'secretCodeCaption', number: 2, letter: 'e' }
   },
   kqip: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E2,
     showPriorities: true,
     initialState: 'needsAlphaConvert',
@@ -1223,7 +1223,7 @@ export default {
     explanationsVisibility: 'visible'
   },
   tkbr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e11E2,
     showPriorities: true,
     initialState: 'alphaConvertDone',
@@ -1232,27 +1232,27 @@ export default {
     explanationsVisibility: 'visible'
   },
   gopk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E1,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   imgp: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E2,
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'g' }
   },
   lxnu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E3,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   ccon: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e12E3,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1261,7 +1261,7 @@ export default {
     speed: 5
   },
   npfx: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E3,
     isDone: true,
     showPriorities: true,
@@ -1270,7 +1270,7 @@ export default {
     caption: { name: 'secretCodeCaption', number: 1, letter: 'b' }
   },
   pnob: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E1,
     showPriorities: true,
     containerSize: 'xs',
@@ -1278,7 +1278,7 @@ export default {
     caption: { name: 'secretCodeMinusOneCaption' }
   },
   rqdn: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e12E3,
     showPriorities: true,
     explanationsVisibility: 'hiddenInitialPausedOnly',
@@ -1289,7 +1289,7 @@ export default {
     skipToTheEnd: false
   },
   fiab: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e12E4,
     showPriorities: true,
     explanationsVisibility: 'hiddenInitialPausedOnly',
@@ -1300,7 +1300,7 @@ export default {
     skipToTheEnd: false
   },
   plxd: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e12E3,
     showPriorities: true,
     explanationsVisibility: 'visible',
@@ -1310,7 +1310,7 @@ export default {
     variableSize: 'md'
   },
   zaoc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E4,
     showPriorities: true,
     containerSize: 'xs',
@@ -1318,11 +1318,11 @@ export default {
     caption: { name: 'secretCodeTwoMinusOneCaption' }
   },
   xekr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E5
   },
   lial: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E6,
     showPriorities: true,
     containerSize: 'xs',
@@ -1330,29 +1330,29 @@ export default {
     caption: { name: 'secretCodeTwoMinusOneCaption' }
   },
   uqts: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E6,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   ojma: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E7
   },
   yykk: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e12E7
   },
   exww: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E8,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   qgun: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E8,
     showPriorities: true,
     containerSize: 'xs',
@@ -1361,21 +1361,21 @@ export default {
     caption: { name: 'secretCodeCaption', number: 1, letter: 'g' }
   },
   yvia: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E9,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   qifg: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E10,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   ssns: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E10,
     showPriorities: true,
     containerSize: 'xs',
@@ -1390,7 +1390,7 @@ export default {
     }
   },
   tboe: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E13,
     showPriorities: true,
     containerSize: 'xs',
@@ -1405,69 +1405,69 @@ export default {
     }
   },
   ufyc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e12E11,
     showPriorities: true
   },
   pbgd: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e12E12,
     showPriorities: true,
     skipToTheEnd: false,
     speed: 1.75
   },
   hvdn: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E1,
     caption: { name: 'ifCaption', ifZero: 'y', ifNonZero: 'z' }
   },
   vxnm: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E2
   },
   xefx: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e13E2,
     skipToTheEnd: false
   },
   wcsz: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E2,
     explanationsVisibility: 'visible',
     initialState: 'conditionActive'
   },
   psqo: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E2,
     explanationsVisibility: 'visible',
     initialState: 'falseCaseActive'
   },
   xsby: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E2,
     isDone: true
   },
   repd: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E3,
     showPriorities: true
   },
   cnoq: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e13E3,
     skipToTheEnd: false,
     showPriorities: true,
     speed: 1.75
   },
   dwnj: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e13E3,
     skipToTheEnd: false,
     showPriorities: true,
     lastAllowedExpressionState: 'default'
   },
   guuf: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E3,
     showPriorities: true,
     explanationsVisibility: 'visible',
@@ -1475,7 +1475,7 @@ export default {
     initialState: 'conditionActive'
   },
   lrrr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E3,
     showPriorities: true,
     nextIteration: true,
@@ -1483,7 +1483,7 @@ export default {
     initialState: 'trueCaseActive'
   },
   dpar: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e13E3,
     showPriorities: true,
     speed: 1.75,
@@ -1493,21 +1493,21 @@ export default {
     initialState: 'trueCaseOnly'
   },
   ylil: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E4,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   vqcw: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E5,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   dcfi: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e13E6,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1516,7 +1516,7 @@ export default {
     speed: 5
   },
   bmnc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E6,
     isDone: true,
     showPriorities: true,
@@ -1525,53 +1525,53 @@ export default {
     caption: { name: 'secretCodeCaption', number: 2, letter: 'l' }
   },
   ufze: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E3,
     showPriorities: true,
     isDone: true
   },
   rreb: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E7,
     caption: { name: 'whatCanComputeFactorial', start: 3 }
   },
   kqzn: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E8,
     caption: { name: 'whatCanComputeFactorial', start: 4 }
   },
   aimh: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E12,
     caption: { name: 'whatCanComputeFactorial', start: 5 }
   },
   lyod: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E9,
     caption: { name: 'secretCodeMultiplyCaption' }
   },
   imba: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E10,
     caption: { name: 'secretCodeMultiplyCaption' }
   },
   zifr: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e13E11
   },
   omlc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e13E11,
     caption: { name: 'secretCodeMultiplyCaption', arg1: 2, arg2: 3 }
   },
   zxux: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     variableSize: 'md'
   },
   itzl: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     initialState: 'active',
@@ -1579,7 +1579,7 @@ export default {
     variableSize: 'md'
   },
   gtnr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIteration: true,
@@ -1589,7 +1589,7 @@ export default {
     caption: { name: 'witchAppearsAgainCaption' }
   },
   cfms: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E6,
     showPriorities: true,
     nextIteration: true,
@@ -1599,7 +1599,7 @@ export default {
     caption: { name: 'witchAppearsAgainCaption' }
   },
   syfp: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIteration: true,
@@ -1609,7 +1609,7 @@ export default {
     variableSize: 'md'
   },
   wdol: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 2,
@@ -1620,7 +1620,7 @@ export default {
     highlightNumber: 2
   },
   luir: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 3,
@@ -1630,7 +1630,7 @@ export default {
     variableSize: 'md'
   },
   ifxr: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     finalNextIterations: 4,
@@ -1642,7 +1642,7 @@ export default {
     finalFuncPriorityAggHighlights: [1, 2]
   },
   vkpm: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 4,
@@ -1651,7 +1651,7 @@ export default {
     finalState: 'magicalExpanded'
   },
   mihy: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 4,
@@ -1663,7 +1663,7 @@ export default {
     variableSize: 'sm'
   },
   davn: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     initialState: 'default',
@@ -1677,7 +1677,7 @@ export default {
     finalFuncPriorityAggHighlights: [3, 4]
   },
   qltx: {
-    runner: 'ExpressionRunnerSingleStep',
+    runner: 'singleStep',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 8,
@@ -1686,7 +1686,7 @@ export default {
     variableSize: 'sm'
   },
   zvet: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 8,
@@ -1698,7 +1698,7 @@ export default {
     variableSize: 'sm'
   },
   yvty: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 8,
@@ -1707,7 +1707,7 @@ export default {
     variableSize: 'sm'
   },
   umce: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 8,
@@ -1716,7 +1716,7 @@ export default {
     variableSize: 'sm'
   },
   orhx: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 12,
@@ -1725,21 +1725,21 @@ export default {
     speed: 1.75
   },
   wqdb: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 12,
     variableSize: 'sm'
   },
   xtjt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     isDone: true,
     showPriorities: true,
     variableSize: 'sm'
   },
   mnfh: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1747,20 +1747,20 @@ export default {
     variableSize: 'sm'
   },
   yklt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E2,
     showPriorities: true,
     variableSize: 'sm'
   },
   fsmk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E2,
     showPriorities: true,
     nextIterations: 16,
     variableSize: 'sm'
   },
   peoq: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E2,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1770,7 +1770,7 @@ export default {
     lastAllowedExpressionStateAfterIterations: 15
   },
   nfkp: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e14E2,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1779,7 +1779,7 @@ export default {
     variableSize: 'sm'
   },
   osqg: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e14E3,
     showPriorities: true,
     variableSize: 'sm',
@@ -1788,32 +1788,32 @@ export default {
     intermediateNextIterations: 20
   },
   vrwt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     variableSize: 'md'
   },
   lodr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E2,
     variableSize: 'md'
   },
   fjyk: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E3,
     variableSize: 'md'
   },
   miez: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E4,
     variableSize: 'md'
   },
   fapu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E5,
     variableSize: 'sm'
   },
   xsve: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e14E6,
     variableSize: 'md',
     explanationsVisibility: 'visible',
@@ -1822,7 +1822,7 @@ export default {
     finalFastForward: true
   },
   urhc: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     variableSize: 'sm',
@@ -1831,7 +1831,7 @@ export default {
     intermediateNextIterations: 12
   },
   tdau: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E1,
     showPriorities: true,
     highlightOverrides: { s: 'highlighted' },
@@ -1839,7 +1839,7 @@ export default {
     caption: { name: 'witchReplacedCaption' }
   },
   lkwr: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E2,
     showPriorities: true,
     highlightOverrides: { s: 'highlighted' },
@@ -1847,7 +1847,7 @@ export default {
     containerSize: 'xs'
   },
   osih: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E3,
     showPriorities: true,
     highlightOverrides: { a: 'highlighted', b: 'highlighted' },
@@ -1855,21 +1855,21 @@ export default {
     containerSize: 'xs'
   },
   dkbt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E3,
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs'
   },
   hzlj: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E4,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs'
   },
   plts: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     skipToTheEnd: false,
@@ -1880,7 +1880,7 @@ export default {
     speed: 4
   },
   pnux: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     highlightFunctions: true,
@@ -1889,7 +1889,7 @@ export default {
     nextIterations: 6
   },
   zhby: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E6,
     showPriorities: true,
     variableSize: 'md',
@@ -1897,7 +1897,7 @@ export default {
     highlightOverrideActiveAfterStart: true
   },
   xcnu: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E6,
     showPriorities: true,
     variableSize: 'md',
@@ -1906,7 +1906,7 @@ export default {
     funcPriorityAggHighlights: [1, 2]
   },
   iisx: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 4,
@@ -1917,7 +1917,7 @@ export default {
     funcPriorityAggHighlights: [1, 2]
   },
   pzui: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -1929,7 +1929,7 @@ export default {
     speed: 4
   },
   kfrt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -1938,7 +1938,7 @@ export default {
     highlightFunctions: true
   },
   iygh: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E7,
     showPriorities: true,
     variableSize: 'md',
@@ -1946,7 +1946,7 @@ export default {
     highlightOverrideActiveAfterStart: true
   },
   ines: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E7,
     showPriorities: true,
     variableSize: 'md',
@@ -1955,7 +1955,7 @@ export default {
     funcPriorityAggHighlights: [3, 4]
   },
   gcnt: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     nextIterations: 8,
@@ -1966,7 +1966,7 @@ export default {
     funcPriorityAggHighlights: [3, 4]
   },
   pgtx: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -1978,7 +1978,7 @@ export default {
     speed: 4
   },
   gswd: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -1990,7 +1990,7 @@ export default {
     lastAllowedExpressionStateAfterIterations: 15
   },
   jruw: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     containerSize: 'xs',
@@ -2000,7 +2000,7 @@ export default {
     speed: 1.75
   },
   mscz: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     variableSize: 'xs',
@@ -2010,7 +2010,7 @@ export default {
     intermediateNextIterations: 16
   },
   jreq: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E8,
     showPriorities: true,
     containerSize: 'xs',
@@ -2022,7 +2022,7 @@ export default {
     superFastForward: true
   },
   uitu: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e15E8,
     showPriorities: true,
     containerSize: 'xs',
@@ -2032,7 +2032,7 @@ export default {
     finalFastForward: true
   },
   bozr: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E9,
     showPriorities: true,
     containerSize: 'xs',
@@ -2044,7 +2044,7 @@ export default {
     superFastForward: true
   },
   wxqy: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e15E9,
     showPriorities: true,
     containerSize: 'xs',
@@ -2054,21 +2054,21 @@ export default {
     finalFastForward: true
   },
   wcwd: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E10,
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs'
   },
   bcgc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E11,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs'
   },
   szou: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E12,
     showPriorities: true,
     containerSize: 'xs',
@@ -2076,12 +2076,12 @@ export default {
     caption: { name: 'changedToPowerCaption' }
   },
   ysji: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E12,
     isDone: true
   },
   ilrn: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E12,
     showPriorities: true,
     containerSize: 'xs',
@@ -2093,7 +2093,7 @@ export default {
     superFastForward: true
   },
   dret: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e15E12,
     showPriorities: true,
     containerSize: 'xs',
@@ -2103,7 +2103,7 @@ export default {
     isDone: true
   },
   bpsz: {
-    runner: 'ExpressionRunnerPlayButtonOnly',
+    runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e15E13,
     showPriorities: true,
     containerSize: 'xs',
@@ -2115,7 +2115,7 @@ export default {
     superFastForward: true
   },
   zfcz: {
-    runner: 'ExpressionRunnerPairSimple',
+    runner: 'pairSimple',
     expressionContainer: lessonExpressions.e15E13,
     showPriorities: true,
     containerSize: 'xs',
@@ -2125,21 +2125,21 @@ export default {
     isDone: true
   },
   jtai: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E14,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs'
   },
   nmoc: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E15,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm'
   },
   cnef: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E15,
     showPriorities: true,
     containerSize: 'xs',
@@ -2147,7 +2147,7 @@ export default {
     highlightOverrides: { a: 'highlighted', b: 'highlighted' }
   },
   news: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E16,
     showPriorities: true,
     containerSize: 'xs',
@@ -2155,7 +2155,7 @@ export default {
     caption: { name: 'thisIsYCombinatorCaption' }
   },
   xrzv: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E17,
     showPriorities: true,
     containerSize: 'xs',
@@ -2163,7 +2163,7 @@ export default {
     caption: { name: 'thisIsYCombinatorCaption', too: true }
   },
   ytcf: {
-    runner: 'ExpressionRunnerSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e16E1
   }
 }
