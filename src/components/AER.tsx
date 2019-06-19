@@ -37,8 +37,9 @@ export default {
     />
   ),
   bgfl: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E2}
+      isDone
     />
   ),
   tuqr: (

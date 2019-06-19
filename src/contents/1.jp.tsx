@@ -259,6 +259,8 @@ export default () => (
             <P>
               <InlineHeader>例その2:</InlineHeader>
             </P>
+            {AER.imyd}
+            <ExpressionRunnerSeparator />
             {AER.bgfl}
             <P>
               <InlineHeader>例その3:</InlineHeader>
