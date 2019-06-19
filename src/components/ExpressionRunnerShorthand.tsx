@@ -351,7 +351,6 @@ export const ExpressionRunnerPairSimpleDeprecated = ({
   finalIsDone,
   finalState,
   showPriorities,
-  hidePrioritiesOnSecond,
   firstInitializeInstructions,
   secondInitializeInstructions,
   highlightOverrides,
@@ -364,7 +363,6 @@ export const ExpressionRunnerPairSimpleDeprecated = ({
   finalIsDone: boolean
   finalState?: ExpressionContainer['previouslyChangedExpressionState']
   showPriorities: boolean
-  hidePrioritiesOnSecond: boolean
   skipAlphaConvert: boolean
   firstInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
   secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
@@ -414,7 +412,7 @@ export const ExpressionRunnerPairSimpleDeprecated = ({
     <ExpressionRunner
       expressionContainer={expressionContainer}
       hideControls
-      hidePriorities={!showPriorities || hidePrioritiesOnSecond}
+      hidePriorities={!showPriorities}
       explanationsVisibility="hidden"
       variableSize={variableSize}
       skipAlphaConvert={skipAlphaConvert}
@@ -443,7 +441,6 @@ ExpressionRunnerPairSimpleDeprecated.defaultProps = {
   finalIsDone: false,
   showPriorities: false,
   skipAlphaConvert: false,
-  hidePrioritiesOnSecond: false,
   variableSize: 'lg'
 }
 
