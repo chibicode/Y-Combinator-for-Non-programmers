@@ -49,9 +49,7 @@ export function isExpressionRunnerSimpleConfig(
   return c.runner === 'simple'
 }
 
-export const expressionRunnerPlayButtonOnlyConfigDefault: Partial<
-  ExpressionRunnerPlayButtonOnlyConfig
-> = {
+export const expressionRunnerPlayButtonOnlyConfigDefault = {
   initialState: 'default',
   skipToTheEnd: true,
   hideFuncUnboundBadgeOnExplanation: true,

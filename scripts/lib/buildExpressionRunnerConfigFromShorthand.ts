@@ -14,7 +14,6 @@ import {
   ExpressionRunnerPairSimpleConfig,
   ExpressionRunnerPairSimpleDeprecatedConfig,
   ExpressionRunnerSingleStepConfig,
-  ExpressionRunnerSimpleConfigWithDefaults
 } from 'scripts/lib/expressionRunnerShorthandConfig'
 import {
   SteppedExpressionContainer,
@@ -143,7 +142,8 @@ function mergeWithDefault<A extends Record<string, any>, B extends Record<string
 
 
 // TODO: Must return a single ExpressionRunnerConfig or an object for pairs
-const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunnerConfig => {
+const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunnerConfig[] => {
+  let runnerProps
   if (isExpressionRunnerSimpleConfig(config)) {
     const {
       expressionContainer,
@@ -168,7 +168,7 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
       funcPriorityAggHighlights
     } = mergeWithDefault<typeof config, typeof expressionRunnerSimpleConfigDefault>(config, expressionRunnerSimpleConfigDefault)
 
-    const runnerProps = {
+    runnerProps = [{
       expressionContainer,
       hideControls: true,
       hidePriorities: !showPriorities,
@@ -192,10 +192,102 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
       }),
       argPriorityAggHighlights,
       funcPriorityAggHighlights
-    }
+    }]
+  } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
+    const {
+      expressionContainer,
+      initialState,
+      skipToTheEnd,
+      hideFuncUnboundBadgeOnExplanation,
+      showPriorities,
+      lastAllowedExpressionState,
+      lastAllowedExpressionStateAfterIterations,
+      nextIteration,
+      nextIterations,
+      showAllShowSteps,
+      speed,
+      skipAlphaConvert,
+      variableSize,
+      containerSize,
+      highlightOverrides,
+      explanationsVisibility,
+      superFastForward,
+      highlightNumber,
+    } = mergeWithDefault<typeof config, typeof expressionRunnerPlayButtonOnlyConfigDefault>(config, expressionRunnerPlayButtonOnlyConfigDefault)
 
-    return mergeWithDefault<typeof runnerProps, typeof expressionRunnerDefaults>(runnerProps, expressionRunnerDefaults)
+    runnerProps = [{
+      speed,
+      highlightNumber,
+      expressionContainer,
+      hidePriorities: !showPriorities,
+      highlightOverrides,
+      resetIndex: true,
+      showAllShowSteps,
+      hideFuncUnboundBadgeOnExplanation,
+      skipToTheEnd,
+      variableSize,
+      containerSize,
+      skipAlphaConvert,
+      explanationsVisibility: explanationsVisibility || 'hiddenInitialPausedOnly',
+      lastAllowedExpressionState,
+      lastAllowedExpressionStateAfterIterations,
+      initializeInstructions: buildInitializeInstructions({
+        nextIteration,
+        nextIterations,
+        initialState
+      }),
+      superFastForward
+    }]
+  } else if (isExpressionRunnerPairSimpleConfig(config)) {
+    const {
+      expressionContainer,
+      initialState,
+      isDone,
+      explanationsVisibility,
+      hideFirstExplanations,
+      showPriorities,
+      showAllShowSteps,
+      caption,
+      bottomRightBadgeOverrides,
+      highlightOverrides,
+      highlightOverrideActiveAfterStart,
+      variableSize,
+      containerSize,
+      skipAlphaConvert,
+      nextIteration,
+      nextIterations,
+      showOnlyFocused,
+      highlightOverridesCallArgAndFuncUnboundOnly,
+      finalState,
+      finalCaption,
+      finalNextIteration,
+      finalNextIterations,
+      finalFastForward,
+      finalArgPriorityAggHighlights,
+      finalFuncPriorityAggHighlights,
+      intermediateState,
+      intermediateCaption,
+      intermediateNextIteration,
+      intermediateNextIterations,
+      intermediateArgPriorityAggHighlights,
+      intermediateFuncPriorityAggHighlights
+    } = mergeWithDefault<typeof config, typeof expressionRunnerPairSimpleConfigDefault>(config, expressionRunnerPairSimpleConfigDefault)
+
+    if (intermediateState) {
+      runnerProps = [{
+
+      }, {
+
+      }]
+    } else {
+
+    }
+  } else if (isExpressionRunnerPairSimpleDeprecatedConfig(config)) {
+  } else {
+
   }
+
+  return mergeWithDefault<typeof runnerProps, typeof expressionRunnerDefaults>(runnerProps, expressionRunnerDefaults)
 }
 
 const buildExpressionRunnerConfigFromShorthand = (
