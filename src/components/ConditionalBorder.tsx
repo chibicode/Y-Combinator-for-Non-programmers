@@ -3,9 +3,8 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
 import { zIndices, colors, fontSizes } from 'src/lib/theme'
-import ExpressionRunnerContext, {
-  ExpressionRunnerContextProps
-} from 'src/components/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
+import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import EmojiNumber from 'src/components/EmojiNumber'
 
 export interface ConditionalBorderProps {

@@ -1,26 +1,5 @@
 import React from 'react'
-import { VariableNames } from 'src/types/VariableNames'
-import { VariableExpression } from 'src/types/ExpressionTypes'
-
-export interface ExpressionRunnerContextProps {
-  hidePriorities: boolean
-  hideBottomRightBadges: boolean
-  variableSize: 'sm' | 'md' | 'lg' | 'xs' | 'xxs'
-  isDoneOrReady: boolean
-  bottomRightBadgeOverrides: { [key in VariableNames]?: string }
-  highlightOverrides: {
-    [key in VariableNames]?: VariableExpression['highlightType']
-  }
-  started: boolean
-  highlightOverrideActiveAfterStart: boolean
-  highlightOverridesCallArgAndFuncUnboundOnly: boolean
-  showOnlyFocused: boolean
-  argPriorityAggHighlights: readonly number[]
-  funcPriorityAggHighlights: readonly number[]
-  highlightFunctions: boolean
-  highlightAllChildren: boolean
-  highlightNumber?: number
-}
+import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   hidePriorities: false,

@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import ExpressionRunner, {
-  ExpressionRunnerProps,
-  InitializeInstruction
-} from 'src/components/ExpressionRunner'
+import ExpressionRunner from 'src/components/ExpressionRunner'
 import {
   ExpressionContainer,
   SteppedExpressionContainer
@@ -13,6 +10,10 @@ import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import { spaces } from 'src/lib/theme'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import {
+  ExpressionRunnerProps,
+  InitializeInstruction
+} from 'src/types/ExpressionRunnerTypes'
 
 const initializeInstructions = ({
   nextIteration,

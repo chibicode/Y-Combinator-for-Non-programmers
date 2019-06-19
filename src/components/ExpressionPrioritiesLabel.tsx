@@ -5,9 +5,8 @@ import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Emoji from 'src/components/Emoji'
-import ExpressionRunnerContext, {
-  ExpressionRunnerContextProps
-} from 'src/components/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
+import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import { colors, fontSizes, zIndices, radii } from 'src/lib/theme'
 
 interface ExpressionPrioritiesLabelProps {
