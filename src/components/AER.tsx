@@ -124,10 +124,9 @@ export default {
     />
   ),
   mhgm: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewCrossed"
-      finalIsDone
     />
   ),
   osqo: (

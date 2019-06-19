@@ -50,6 +50,8 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </P>
     {AER.mhgm}
+    <ExpressionRunnerSeparator />
+    {AER.osqo}
   </>
 )
 
