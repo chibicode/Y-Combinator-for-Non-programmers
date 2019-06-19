@@ -151,11 +151,16 @@ export default {
       finalState="betaReducePreviewCrossed"
     />
   ),
-  zxfv: (
-    <ExpressionRunnerPairSimpleDeprecated
+  jwzh: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E2}
       initialState="betaReducePreviewBefore"
-      finalState="betaReducePreviewCrossed"
+    />
+  ),
+  knhw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="betaReducePreviewCrossed"
     />
   ),
   ahsd: (
