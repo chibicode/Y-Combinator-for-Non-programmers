@@ -17,7 +17,7 @@ import {
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
 
-interface ExpressionRunnerConfig {
+export interface ExpressionRunnerConfig {
   expressionContainer: SteppedExpressionContainer
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
