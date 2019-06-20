@@ -3,16 +3,13 @@ import {
   expressionRunnerSimpleConfigDefault,
   expressionRunnerPlayButtonOnlyConfigDefault,
   expressionRunnerPairSimpleConfigDefault,
-  expressionRunnerPairSimpleDeprecatedConfig,
   expressionRunnerSingleStepConfigDefault,
   isExpressionRunnerSimpleConfig,
   isExpressionRunnerPlayButtonOnlyConfig,
   isExpressionRunnerPairSimpleConfig,
-  isExpressionRunnerPairSimpleDeprecatedConfig,
   ExpressionRunnerSimpleConfig,
   ExpressionRunnerPlayButtonOnlyConfig,
   ExpressionRunnerPairSimpleConfig,
-  ExpressionRunnerPairSimpleDeprecatedConfig,
   ExpressionRunnerSingleStepConfig,
 } from 'scripts/lib/expressionRunnerShorthandConfig'
 import {
@@ -282,7 +279,6 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
     } else {
 
     }
-  } else if (isExpressionRunnerPairSimpleDeprecatedConfig(config)) {
   } else {
 
   }
@@ -297,27 +293,6 @@ const buildExpressionRunnerConfigFromShorthand = (
     .map(([key, config]) => {
 
       }
-      // else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
-      //   const mergedWithDefault: ExpressionRunnerPlayButtonOnlyConfig = {
-      //     ...config,
-      //     ...expressionRunnerPlayButtonOnlyConfigDefault
-      //   }
-      // } else if (isExpressionRunnerPairSimpleConfig(config)) {
-      //   const mergedWithDefault: ExpressionRunnerPairSimpleConfig = {
-      //     ...config,
-      //     ...expressionRunnerPairSimpleConfigDefault
-      //   }
-      // } else if (isExpressionRunnerPairSimpleDeprecatedConfig(config)) {
-      //   const mergedWithDefault: ExpressionRunnerPairSimpleDeprecatedConfig = {
-      //     ...config,
-      //     ...expressionRunnerPairSimpleDeprecatedConfig
-      //   }
-      // } else {
-      //   const mergedWithDefault: ExpressionRunnerSingleStepConfig = {
-      //     ...config,
-      //     ...expressionRunnerSingleStepConfigDefault
-      //   }
-      // }
     })
     .reduce((acc, current) => ({ ...acc, ...current }), {})
 }

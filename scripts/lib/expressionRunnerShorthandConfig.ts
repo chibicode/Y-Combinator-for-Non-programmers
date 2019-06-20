@@ -115,37 +115,6 @@ export interface ExpressionRunnerPairSimpleConfig
   intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleConfig['funcPriorityAggHighlights']
 }
 
-export const expressionRunnerPairSimpleDeprecatedConfig = {
-  initialState: 'default',
-  finalIsDone: false,
-  showPriorities: false,
-  skipAlphaConvert: false,
-  hidePrioritiesOnSecond: false,
-  variableSize: 'lg'
-}
-
-export function isExpressionRunnerPairSimpleDeprecatedConfig(
-  c: ExpressionRunnerShorthandConfig
-): c is ExpressionRunnerPairSimpleDeprecatedConfig {
-  return c.runner === 'pairSimpleDeprecated'
-}
-
-export interface ExpressionRunnerPairSimpleDeprecatedConfig {
-  runner: 'pairSimpleDeprecated'
-  expressionContainer: SteppedExpressionContainer
-  initialState?: ExpressionContainer['previouslyChangedExpressionState']
-  finalIsDone?: boolean
-  finalState?: ExpressionContainer['previouslyChangedExpressionState']
-  showPriorities?: boolean
-  hidePrioritiesOnSecond?: boolean
-  skipAlphaConvert?: boolean
-  firstInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
-  secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
-  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
-  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
-  variableSize?: ExpressionRunnerProps['variableSize']
-}
-
 export const expressionRunnerSingleStepConfigDefault = {
   hideFuncUnboundBadgeOnExplanation: false,
   showPriorities: false,
@@ -178,7 +147,6 @@ export type ExpressionRunnerShorthandConfig =
   | ExpressionRunnerSimpleConfig
   | ExpressionRunnerPlayButtonOnlyConfig
   | ExpressionRunnerPairSimpleConfig
-  | ExpressionRunnerPairSimpleDeprecatedConfig
   | ExpressionRunnerSingleStepConfig
 
 const config: Record<string, ExpressionRunnerShorthandConfig> = {
@@ -202,10 +170,6 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E1
   },
-  uqwm: {
-    runner: 'pairSimpleDeprecated',
-    expressionContainer: lessonExpressions.e1E1
-  },
   zwpj: {
     runner: 'playButtonOnly',
     expressionContainer: lessonExpressions.e1E2
@@ -219,16 +183,19 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     expressionContainer: lessonExpressions.e1E4
   },
   bgfl: {
-    runner: 'pairSimpleDeprecated',
-    expressionContainer: lessonExpressions.e1E2
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e1E2,
+    isDone: true
   },
   tuqr: {
-    runner: 'pairSimpleDeprecated',
-    expressionContainer: lessonExpressions.e1E3
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e1E3,
+    isDone: true
   },
   cpkp: {
-    runner: 'pairSimpleDeprecated',
-    expressionContainer: lessonExpressions.e1E4
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e1E4,
+    isDone: true
   },
   loai: {
     runner: 'simple',
@@ -299,10 +266,9 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     initialState: 'betaReducePreviewAfter'
   },
   mhgm: {
-    runner: 'pairSimpleDeprecated',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E1,
-    initialState: 'betaReducePreviewCrossed',
-    finalIsDone: true
+    initialState: 'betaReducePreviewCrossed'
   },
   osqo: {
     runner: 'simple',
@@ -323,11 +289,15 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewCrossed'
   },
-  zxfv: {
-    runner: 'pairSimpleDeprecated',
+  jwzh: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e1E2,
-    initialState: 'betaReducePreviewBefore',
-    finalState: 'betaReducePreviewCrossed'
+    initialState: 'betaReducePreviewBefore'
+  },
+  knhw: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e1E2,
+    initialState: 'betaReducePreviewCrossed'
   },
   ahsd: {
     runner: 'simple',
@@ -375,10 +345,6 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     runner: 'simple',
     expressionContainer: lessonExpressions.e2E1,
     initialState: 'showFuncUnbound'
-  },
-  iped: {
-    runner: 'pairSimpleDeprecated',
-    expressionContainer: lessonExpressions.e2E1
   },
   cvtc: {
     runner: 'simple',
@@ -440,31 +406,30 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     showPriorities: true,
     skipToTheEnd: false
   },
-  jrxw: {
-    runner: 'pairSimpleDeprecated',
+  udic: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E1,
     initialState: 'showFuncUnbound',
-    showPriorities: true,
-    secondInitializeInstructions: [
-      { type: 'nextIteration' },
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: 'default'
-      }
-    ]
+    showPriorities: true
   },
-  esyi: {
-    runner: 'pairSimpleDeprecated',
+  xzqu: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E1,
     showPriorities: true,
-    firstInitializeInstructions: [
-      { type: 'nextIteration' },
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: 'showFuncBound'
-      }
-    ],
-    finalIsDone: true
+    nextIteration: true
+  },
+  dnvw: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e3E1,
+    nextIteration: true,
+    initialState: 'showFuncBound',
+    showPriorities: true
+  },
+  nric: {
+    runner: 'simple',
+    isDone: true,
+    expressionContainer: lessonExpressions.e3E1,
+    showPriorities: true
   },
   hdxc: {
     runner: 'playButtonOnly',
@@ -472,31 +437,30 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     showPriorities: true,
     skipToTheEnd: false
   },
-  wepe: {
-    runner: 'pairSimpleDeprecated',
+  eial: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E2,
     initialState: 'showFuncUnbound',
-    showPriorities: true,
-    secondInitializeInstructions: [
-      { type: 'nextIteration' },
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: 'default'
-      }
-    ]
+    showPriorities: true
   },
-  bwop: {
-    runner: 'pairSimpleDeprecated',
+  iwkx: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e3E2,
+    nextIteration: true,
+    showPriorities: true
+  },
+  vjaa: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e3E2,
+    initialState: 'showFuncBound',
     showPriorities: true,
-    firstInitializeInstructions: [
-      { type: 'nextIteration' },
-      {
-        type: 'stepForwardUntilPreviouslyChangedExpressionState',
-        state: 'showFuncBound'
-      }
-    ],
-    finalIsDone: true
+    nextIteration: true
+  },
+  iifq: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e3E2,
+    isDone: true,
+    showPriorities: true
   },
   laea: {
     runner: 'simple',
