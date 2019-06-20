@@ -1,7 +1,6 @@
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {
-  ExpressionContainerStates,
   SteppedExpressionContainer,
   ExpressionContainer
 } from 'src/types/ExpressionContainerTypes'

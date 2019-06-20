@@ -1,7 +1,6 @@
 import {
   SteppedExpressionContainer,
-  ExpressionContainer,
-  ExpressionContainerStates
+  ExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
