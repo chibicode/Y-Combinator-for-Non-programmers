@@ -11,7 +11,8 @@ const buildExpressionContainers = ({
   skipToTheEnd,
   hideControls,
   lastAllowedExpressionState,
-  lastAllowedExpressionStateAfterIterations
+  lastAllowedExpressionStateAfterIterations,
+  hidePlayButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
   let currentExpressionContainer = expressionContainer
   let results: ExpressionContainer[] = []
@@ -83,6 +84,10 @@ const buildExpressionContainers = ({
       stepOptions
     )
     results.push(currentExpressionContainer)
+
+    if (hidePlayButton) {
+      break
+    }
 
     if (
       lastAllowedExpressionState &&
