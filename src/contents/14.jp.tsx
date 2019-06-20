@@ -568,6 +568,10 @@ export default () => (
               <H args={{ name: 'inlineFactorial', start: 5 }} />
               という順番になります。
             </P>
+            {AER.fora}
+            <ExpressionRunnerSeparator />
+            {AER.eobj}
+            <ExpressionRunnerSeparator />
             {AER.osqg}
             <P>
               そして、最終的に

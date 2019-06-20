@@ -2183,14 +2183,27 @@ export default {
       variableSize="sm"
     />
   ),
+  fora: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E3}
+      showPriorities
+      variableSize="sm"
+    />
+  ),
+  eobj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E3}
+      showPriorities
+      variableSize="sm"
+      nextIterations={20}
+    />
+  ),
   osqg: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E3}
       showPriorities
       variableSize="sm"
       isDone
-      intermediateState="default"
-      intermediateNextIterations={20}
     />
   ),
   vrwt: (
