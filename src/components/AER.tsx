@@ -2541,15 +2541,22 @@ export default {
       superFastForward
     />
   ),
+  angp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E9}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={26}
+    />
+  ),
   wxqy: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E9}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       isDone
-      nextIterations={26}
-      finalFastForward
     />
   ),
   wcwd: (

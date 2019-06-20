@@ -416,6 +416,8 @@ export default () => (
               <H args={{ name: 'factorialComputation', start: 5 }} />
               になります。
             </P>
+            {AER.angp}
+            <ExpressionRunnerSeparator />
             {AER.wxqy}
             <P>
               つまり、
