@@ -2510,15 +2510,22 @@ export default {
       superFastForward
     />
   ),
+  vpmj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E8}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={21}
+    />
+  ),
   uitu: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E8}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       isDone
-      nextIterations={21}
-      finalFastForward
     />
   ),
   bozr: (

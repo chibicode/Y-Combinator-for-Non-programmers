@@ -398,6 +398,8 @@ export default () => (
               <H args={{ name: 'factorialComputation', start: 4 }} />
               になります。
             </P>
+            {AER.vpmj}
+            <ExpressionRunnerSeparator />
             {AER.uitu}
             <Hr />
             <P>
