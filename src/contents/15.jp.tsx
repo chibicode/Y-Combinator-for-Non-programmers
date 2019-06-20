@@ -325,6 +325,10 @@ export default () => (
               </Strong>
               、ということになります！
             </P>
+            {AER.nnhc}
+            <ExpressionRunnerSeparator />
+            {AER.pzvr}
+            <ExpressionRunnerSeparator />
             {AER.mscz}
           </>
         )

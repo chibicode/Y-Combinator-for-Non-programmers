@@ -2471,15 +2471,30 @@ export default {
       speed={1.75}
     />
   ),
+  nnhc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+    />
+  ),
+  pzvr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+      nextIterations={16}
+    />
+  ),
   mscz: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E5}
       showPriorities
       variableSize="xs"
       containerSize="xs"
       isDone
-      intermediateState="default"
-      intermediateNextIterations={16}
     />
   ),
   jreq: (
