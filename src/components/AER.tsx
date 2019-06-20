@@ -2250,14 +2250,27 @@ export default {
       initialState="magicalExpanded"
     />
   ),
-  urhc: (
-    <ExpressionRunnerPairSimple
+  igrt: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
       variableSize="sm"
+    />
+  ),
+  woft: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={12}
+      variableSize="sm"
+    />
+  ),
+  urhc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
       isDone
-      intermediateState="default"
-      intermediateNextIterations={12}
+      variableSize="sm"
     />
   ),
   tdau: (

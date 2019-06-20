@@ -54,6 +54,10 @@ export default () => (
             </P>
             <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
             <P>といった計算を行うことができます。</P>
+            {AER.igrt}
+            <ExpressionRunnerSeparator />
+            {AER.woft}
+            <ExpressionRunnerSeparator />
             {AER.urhc}
             <P>
               しかし、「
