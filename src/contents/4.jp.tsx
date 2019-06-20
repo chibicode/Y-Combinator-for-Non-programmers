@@ -296,7 +296,9 @@ export default () => (
                 が残ります:
               </InlineHeader>
             </P>
-            {AER.bwop}
+            {AER.vjaa}
+            <ExpressionRunnerSeparator />
+            {AER.iifq}
           </>
         )
       },

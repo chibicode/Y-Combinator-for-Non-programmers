@@ -331,20 +331,19 @@ export default {
       showPriorities
     />
   ),
-  bwop: (
-    <ExpressionRunnerPairSimpleDeprecated
+  vjaa: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E2}
+      initialState="showFuncBound"
       showPriorities
-      firstInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
-      finalIsDone
+      nextIteration
+    />
+  ),
+  iifq: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E2}
+      isDone
+      showPriorities
     />
   ),
   laea: (
