@@ -210,7 +210,9 @@ export default () => (
                 同じことを繰り返して最後まで終わらせる
               </InlineHeader>
             </P>
-            {AER.esyi}
+            {AER.dnvw}
+            <ExpressionRunnerSeparator />
+            {AER.nric}
           </>
         ),
         footer: {

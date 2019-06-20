@@ -291,23 +291,23 @@ export default {
   xzqu: (
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
+      showPriorities
       nextIteration
     />
   ),
-  esyi: (
-    <ExpressionRunnerPairSimpleDeprecated
+  dnvw: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
+      nextIteration
+      initialState="showFuncBound"
       showPriorities
-      firstInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
-      finalIsDone
+    />
+  ),
+  nric: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E1}
+      isDone
+      showPriorities
     />
   ),
   hdxc: (
