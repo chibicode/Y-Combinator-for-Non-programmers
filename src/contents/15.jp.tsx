@@ -554,6 +554,8 @@ export default () => (
               <H args={{ name: 'powerComputation', power: 3 }} />
               になります。
             </P>
+            {AER.xsgz}
+            <ExpressionRunnerSeparator />
             {AER.dret}
           </>
         )
@@ -593,6 +595,8 @@ export default () => (
               <H args={{ name: 'powerComputation', power: 4 }} />
               になります。
             </P>
+            {AER.fotb}
+            <ExpressionRunnerSeparator />
             {AER.zfcz}
           </>
         )

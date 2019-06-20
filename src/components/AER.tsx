@@ -2603,14 +2603,21 @@ export default {
       superFastForward
     />
   ),
-  dret: (
-    <ExpressionRunnerPairSimple
+  xsgz: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E12}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       nextIterations={16}
-      finalFastForward
+    />
+  ),
+  dret: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E12}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
       isDone
     />
   ),
@@ -2627,14 +2634,21 @@ export default {
       superFastForward
     />
   ),
-  zfcz: (
-    <ExpressionRunnerPairSimple
+  fotb: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E13}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       nextIterations={21}
-      finalFastForward
+    />
+  ),
+  zfcz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E13}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
       isDone
     />
   ),
