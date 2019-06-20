@@ -286,7 +286,9 @@ export default () => (
             <P>
               <InlineHeader>1周目はこうなり…</InlineHeader>
             </P>
-            {AER.wepe}
+            {AER.eial}
+            <ExpressionRunnerSeparator />
+            {AER.iwkx}
             <P>
               <InlineHeader>
                 最終的には

@@ -317,20 +317,18 @@ export default {
       skipToTheEnd={false}
     />
   ),
-  wepe: (
-    <ExpressionRunnerPairSimpleDeprecated
+  eial: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E2}
       initialState="showFuncUnbound"
       showPriorities
-      secondInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'default'
-        }
-      ]}
+    />
+  ),
+  iwkx: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E2}
+      nextIteration
+      showPriorities
     />
   ),
   bwop: (
