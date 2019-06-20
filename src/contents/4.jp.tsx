@@ -10,6 +10,7 @@ import AER from 'src/components/AER'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -200,14 +201,18 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になる
               </InlineHeader>
             </P>
-            {AER.jrxw}
+            {AER.udic}
+            <ExpressionRunnerSeparator />
+            {AER.xzqu}
             <P>
               3.{' '}
               <InlineHeader>
                 同じことを繰り返して最後まで終わらせる
               </InlineHeader>
             </P>
-            {AER.esyi}
+            {AER.dnvw}
+            <ExpressionRunnerSeparator />
+            {AER.nric}
           </>
         ),
         footer: {
@@ -281,7 +286,9 @@ export default () => (
             <P>
               <InlineHeader>1周目はこうなり…</InlineHeader>
             </P>
-            {AER.wepe}
+            {AER.eial}
+            <ExpressionRunnerSeparator />
+            {AER.iwkx}
             <P>
               <InlineHeader>
                 最終的には
@@ -289,7 +296,9 @@ export default () => (
                 が残ります:
               </InlineHeader>
             </P>
-            {AER.bwop}
+            {AER.vjaa}
+            <ExpressionRunnerSeparator />
+            {AER.iifq}
           </>
         )
       },

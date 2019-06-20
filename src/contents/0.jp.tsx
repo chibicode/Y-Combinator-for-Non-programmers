@@ -54,7 +54,9 @@ export default () => (
             </P>
             <P>
               当記事「<Strong>{lessonTitle}</Strong>
-              」は、筆者のブロガー人生の中で最も執筆に時間をかけた記事です。すべて
+              」は、今までわたしが書いたなかで
+              <Strong>最も文章量が多い記事</Strong>
+              です。すべて
               <Strong>無料</Strong>
               で公開しています。
             </P>

@@ -16,6 +16,7 @@ import AER from 'src/components/AER'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -189,7 +190,9 @@ export default () => (
             <P>
               <InlineHeader>例その1:</InlineHeader>
             </P>
-            {AER.uqwm}
+            {AER.ilpo}
+            <ExpressionRunnerSeparator />
+            {AER.osqo}
             <P>
               実はこれ、
               <H args={{ name: 'unknownRule' }} />
@@ -256,14 +259,20 @@ export default () => (
             <P>
               <InlineHeader>例その2:</InlineHeader>
             </P>
+            {AER.imyd}
+            <ExpressionRunnerSeparator />
             {AER.bgfl}
             <P>
               <InlineHeader>例その3:</InlineHeader>
             </P>
+            {AER.emmb}
+            <ExpressionRunnerSeparator />
             {AER.tuqr}
             <P>
               <InlineHeader>例その4:</InlineHeader>
             </P>
+            {AER.jozw}
+            <ExpressionRunnerSeparator />
             {AER.cpkp}
           </>
         ),
