@@ -2,8 +2,7 @@ import React from 'react'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
-  ExpressionRunnerSingleStep,
-  ExpressionRunnerPairSimple
+  ExpressionRunnerSingleStep
 } from 'src/components/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/lessonExpressions'
 import H from 'src/components/H'
