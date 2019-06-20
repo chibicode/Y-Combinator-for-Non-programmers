@@ -386,6 +386,8 @@ export default () => (
                 が追加されました。
               </Em>
             </P>
+            {AER.dxum}
+            <ExpressionRunnerSeparator />
             {AER.davn}
           </>
         )

@@ -2050,21 +2050,23 @@ export default {
       variableSize="sm"
     />
   ),
-  davn: (
-    <ExpressionRunnerPairSimple
+  dxum: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
-      initialState="default"
       nextIterations={4}
-      finalNextIterations={8}
-      finalState="default"
-      finalFastForward
-      finalCaption={
-        <H args={{ name: 'magicalChangedCaption', fromNumber: 2 }} />
-      }
       variableSize="sm"
-      finalArgPriorityAggHighlights={[1]}
-      finalFuncPriorityAggHighlights={[3, 4]}
+    />
+  ),
+  davn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={8}
+      caption={<H args={{ name: 'magicalChangedCaption', fromNumber: 2 }} />}
+      variableSize="sm"
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[3, 4]}
     />
   ),
   qltx: (
