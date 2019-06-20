@@ -2,7 +2,6 @@ import React from 'react'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
-  ExpressionRunnerPairSimpleDeprecated,
   ExpressionRunnerSingleStep,
   ExpressionRunnerPairSimple
 } from 'src/components/ExpressionRunnerShorthand'
