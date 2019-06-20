@@ -2,15 +2,9 @@ import {
   ExpressionRunnerShorthandConfig,
   expressionRunnerSimpleConfigDefault,
   expressionRunnerPlayButtonOnlyConfigDefault,
-  expressionRunnerPairSimpleConfigDefault,
   expressionRunnerSingleStepConfigDefault,
   isExpressionRunnerSimpleConfig,
-  isExpressionRunnerPlayButtonOnlyConfig,
-  isExpressionRunnerPairSimpleConfig,
-  ExpressionRunnerSimpleConfig,
-  ExpressionRunnerPlayButtonOnlyConfig,
-  ExpressionRunnerPairSimpleConfig,
-  ExpressionRunnerSingleStepConfig,
+  isExpressionRunnerPlayButtonOnlyConfig
 } from 'scripts/lib/expressionRunnerShorthandConfig'
 import {
   SteppedExpressionContainer,
@@ -125,7 +119,10 @@ const buildInitializeInstructions = ({
             }
       ]
 
-function mergeWithDefault<A extends Record<string, any>, B extends Record<string, any>>(base: A, defaults: B): A & B {
+function mergeWithDefault<
+  A extends Record<string, any>,
+  B extends Record<string, any>
+>(base: A, defaults: B): A & B {
   let result: Record<string, any> = {}
   Object.keys(base).forEach(key => {
     if (base[key] === undefined) {
@@ -137,9 +134,9 @@ function mergeWithDefault<A extends Record<string, any>, B extends Record<string
   return result as A & B
 }
 
-
-// TODO: Must return a single ExpressionRunnerConfig or an object for pairs
-const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunnerConfig[] => {
+const convertConfig = (
+  config: ExpressionRunnerShorthandConfig
+): ExpressionRunnerConfig => {
   let runnerProps
   if (isExpressionRunnerSimpleConfig(config)) {
     const {
@@ -163,9 +160,12 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
       highlightFunctions,
       argPriorityAggHighlights,
       funcPriorityAggHighlights
-    } = mergeWithDefault<typeof config, typeof expressionRunnerSimpleConfigDefault>(config, expressionRunnerSimpleConfigDefault)
+    } = mergeWithDefault<
+      typeof config,
+      typeof expressionRunnerSimpleConfigDefault
+    >(config, expressionRunnerSimpleConfigDefault)
 
-    runnerProps = [{
+    runnerProps = {
       expressionContainer,
       hideControls: true,
       hidePriorities: !showPriorities,
@@ -189,7 +189,7 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
       }),
       argPriorityAggHighlights,
       funcPriorityAggHighlights
-    }]
+    }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
     const {
       expressionContainer,
@@ -209,10 +209,13 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
       highlightOverrides,
       explanationsVisibility,
       superFastForward,
-      highlightNumber,
-    } = mergeWithDefault<typeof config, typeof expressionRunnerPlayButtonOnlyConfigDefault>(config, expressionRunnerPlayButtonOnlyConfigDefault)
+      highlightNumber
+    } = mergeWithDefault<
+      typeof config,
+      typeof expressionRunnerPlayButtonOnlyConfigDefault
+    >(config, expressionRunnerPlayButtonOnlyConfigDefault)
 
-    runnerProps = [{
+    runnerProps = {
       speed,
       highlightNumber,
       expressionContainer,
@@ -225,7 +228,8 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
       variableSize,
       containerSize,
       skipAlphaConvert,
-      explanationsVisibility: explanationsVisibility || 'hiddenInitialPausedOnly',
+      explanationsVisibility:
+        explanationsVisibility || 'hiddenInitialPausedOnly',
       lastAllowedExpressionState,
       lastAllowedExpressionStateAfterIterations,
       initializeInstructions: buildInitializeInstructions({
@@ -234,66 +238,58 @@ const convertConfig = (config: ExpressionRunnerShorthandConfig): ExpressionRunne
         initialState
       }),
       superFastForward
-    }]
-  } else if (isExpressionRunnerPairSimpleConfig(config)) {
+    }
+  } else {
     const {
       expressionContainer,
       initialState,
-      isDone,
-      explanationsVisibility,
-      hideFirstExplanations,
+      finalState,
+      hideFuncUnboundBadgeOnExplanation,
       showPriorities,
+      explanationsVisibility,
       showAllShowSteps,
-      caption,
-      bottomRightBadgeOverrides,
-      highlightOverrides,
-      highlightOverrideActiveAfterStart,
       variableSize,
       containerSize,
-      skipAlphaConvert,
       nextIteration,
-      nextIterations,
-      showOnlyFocused,
-      highlightOverridesCallArgAndFuncUnboundOnly,
-      finalState,
-      finalCaption,
-      finalNextIteration,
-      finalNextIterations,
-      finalFastForward,
-      finalArgPriorityAggHighlights,
-      finalFuncPriorityAggHighlights,
-      intermediateState,
-      intermediateCaption,
-      intermediateNextIteration,
-      intermediateNextIterations,
-      intermediateArgPriorityAggHighlights,
-      intermediateFuncPriorityAggHighlights
-    } = mergeWithDefault<typeof config, typeof expressionRunnerPairSimpleConfigDefault>(config, expressionRunnerPairSimpleConfigDefault)
+      nextIterations
+    } = mergeWithDefault<
+      typeof config,
+      typeof expressionRunnerSingleStepConfigDefault
+    >(config, expressionRunnerSingleStepConfigDefault)
 
-    if (intermediateState) {
-      runnerProps = [{
-
-      }, {
-
-      }]
-    } else {
-
+    runnerProps = {
+      variableSize,
+      containerSize,
+      expressionContainer,
+      hidePriorities: !showPriorities,
+      hideFuncUnboundBadgeOnExplanation,
+      hidePlayButton: true,
+      explanationsVisibility,
+      resetIndex: true,
+      lastAllowedExpressionState: finalState,
+      lastAllowedExpressionStateAfterIterations: nextIterations,
+      showAllShowSteps,
+      initializeInstructions: buildInitializeInstructions({
+        nextIteration,
+        nextIterations,
+        initialState
+      })
     }
-  } else {
-
   }
 
-  return mergeWithDefault<typeof runnerProps, typeof expressionRunnerDefaults>(runnerProps, expressionRunnerDefaults)
+  return mergeWithDefault<typeof runnerProps, typeof expressionRunnerDefaults>(
+    runnerProps,
+    expressionRunnerDefaults
+  )
 }
 
 const buildExpressionRunnerConfigFromShorthand = (
   shorthand: Record<string, ExpressionRunnerShorthandConfig>
 ): Record<string, ExpressionRunnerConfig> => {
   return Object.entries(shorthand)
-    .map(([key, config]) => {
-
-      }
-    })
+    .map(([key, config]) => ({
+      [key]: convertConfig(config)
+    }))
     .reduce((acc, current) => ({ ...acc, ...current }), {})
 }
 

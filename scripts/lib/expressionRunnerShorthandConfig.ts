@@ -15,7 +15,8 @@ export const expressionRunnerSimpleConfigDefault = {
   skipAlphaConvert: false
 }
 
-export interface ExpressionRunnerSimpleConfigBase {
+interface ExpressionRunnerSimpleConfig {
+  runner: 'simple'
   expressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   isDone?: boolean
@@ -36,11 +37,6 @@ export interface ExpressionRunnerSimpleConfigBase {
   highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
   argPriorityAggHighlights?: readonly number[]
   funcPriorityAggHighlights?: readonly number[]
-}
-
-export interface ExpressionRunnerSimpleConfig
-  extends ExpressionRunnerSimpleConfigBase {
-  runner: 'simple'
 }
 
 export function isExpressionRunnerSimpleConfig(
@@ -66,7 +62,7 @@ export function isExpressionRunnerPlayButtonOnlyConfig(
   return c.runner === 'playButtonOnly'
 }
 
-export interface ExpressionRunnerPlayButtonOnlyConfig {
+interface ExpressionRunnerPlayButtonOnlyConfig {
   runner: 'playButtonOnly'
   expressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
@@ -101,7 +97,7 @@ export function isExpressionRunnerSingleStepConfig(
   return c.runner === 'singleStep'
 }
 
-export interface ExpressionRunnerSingleStepConfig {
+interface ExpressionRunnerSingleStepConfig {
   runner: 'singleStep'
   expressionContainer: SteppedExpressionContainer
   initialState: ExpressionContainer['previouslyChangedExpressionState']
