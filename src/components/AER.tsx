@@ -2236,14 +2236,18 @@ export default {
       variableSize="sm"
     />
   ),
+  xjae: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E6}
+      variableSize="md"
+    />
+  ),
   xsve: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E6}
       variableSize="md"
       explanationsVisibility="visible"
-      hideFirstExplanations
-      finalState="magicalExpanded"
-      finalFastForward
+      initialState="magicalExpanded"
     />
   ),
   urhc: (
