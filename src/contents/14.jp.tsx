@@ -330,6 +330,8 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
+            {AER.zxux}
+            <ExpressionRunnerSeparator />
             {AER.ifxr}
             <P>
               ちなみに前回説明した通り、
@@ -384,6 +386,8 @@ export default () => (
                 が追加されました。
               </Em>
             </P>
+            {AER.dxum}
+            <ExpressionRunnerSeparator />
             {AER.davn}
           </>
         )
@@ -564,6 +568,10 @@ export default () => (
               <H args={{ name: 'inlineFactorial', start: 5 }} />
               という順番になります。
             </P>
+            {AER.fora}
+            <ExpressionRunnerSeparator />
+            {AER.eobj}
+            <ExpressionRunnerSeparator />
             {AER.osqg}
             <P>
               そして、最終的に
@@ -653,6 +661,8 @@ export default () => (
               <H args={{ name: 'witch' }} />
               の部分が次のように変化する機能です。この変化が、先ほどの計算を可能にしているわけです。
             </P>
+            {AER.xjae}
+            <ExpressionRunnerSeparator />
             {AER.xsve}
             <P>
               しかし、冒頭でも書いた通り、「

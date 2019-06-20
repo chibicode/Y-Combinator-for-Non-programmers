@@ -2,8 +2,7 @@ import React from 'react'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
-  ExpressionRunnerSingleStep,
-  ExpressionRunnerPairSimple
+  ExpressionRunnerSingleStep
 } from 'src/components/ExpressionRunnerShorthand'
 import * as lessonExpressions from 'src/lib/lessonExpressions'
 import H from 'src/components/H'
@@ -2016,18 +2015,15 @@ export default {
     />
   ),
   ifxr: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
-      finalNextIterations={4}
-      finalState="default"
-      finalFastForward
+      nextIterations={4}
+      initialState="default"
       variableSize="md"
-      finalCaption={
-        <H args={{ name: 'magicalChangedCaption', fromNumber: 3 }} />
-      }
-      finalArgPriorityAggHighlights={[1]}
-      finalFuncPriorityAggHighlights={[1, 2]}
+      caption={<H args={{ name: 'magicalChangedCaption', fromNumber: 3 }} />}
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[1, 2]}
     />
   ),
   vkpm: (
@@ -2053,21 +2049,23 @@ export default {
       variableSize="sm"
     />
   ),
-  davn: (
-    <ExpressionRunnerPairSimple
+  dxum: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
-      initialState="default"
       nextIterations={4}
-      finalNextIterations={8}
-      finalState="default"
-      finalFastForward
-      finalCaption={
-        <H args={{ name: 'magicalChangedCaption', fromNumber: 2 }} />
-      }
       variableSize="sm"
-      finalArgPriorityAggHighlights={[1]}
-      finalFuncPriorityAggHighlights={[3, 4]}
+    />
+  ),
+  davn: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={8}
+      caption={<H args={{ name: 'magicalChangedCaption', fromNumber: 2 }} />}
+      variableSize="sm"
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[3, 4]}
     />
   ),
   qltx: (
@@ -2184,14 +2182,27 @@ export default {
       variableSize="sm"
     />
   ),
+  fora: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E3}
+      showPriorities
+      variableSize="sm"
+    />
+  ),
+  eobj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E3}
+      showPriorities
+      variableSize="sm"
+      nextIterations={20}
+    />
+  ),
   osqg: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E3}
       showPriorities
       variableSize="sm"
       isDone
-      intermediateState="default"
-      intermediateNextIterations={20}
     />
   ),
   vrwt: (
@@ -2224,24 +2235,41 @@ export default {
       variableSize="sm"
     />
   ),
+  xjae: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E6}
+      variableSize="md"
+    />
+  ),
   xsve: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E6}
       variableSize="md"
       explanationsVisibility="visible"
-      hideFirstExplanations
-      finalState="magicalExpanded"
-      finalFastForward
+      initialState="magicalExpanded"
     />
   ),
-  urhc: (
-    <ExpressionRunnerPairSimple
+  igrt: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
       variableSize="sm"
+    />
+  ),
+  woft: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
+      nextIterations={12}
+      variableSize="sm"
+    />
+  ),
+  urhc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e14E1}
+      showPriorities
       isDone
-      intermediateState="default"
-      intermediateNextIterations={12}
+      variableSize="sm"
     />
   ),
   tdau: (
@@ -2442,15 +2470,30 @@ export default {
       speed={1.75}
     />
   ),
+  nnhc: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+    />
+  ),
+  pzvr: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E5}
+      showPriorities
+      variableSize="xs"
+      containerSize="xs"
+      nextIterations={16}
+    />
+  ),
   mscz: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E5}
       showPriorities
       variableSize="xs"
       containerSize="xs"
       isDone
-      intermediateState="default"
-      intermediateNextIterations={16}
     />
   ),
   jreq: (
@@ -2466,15 +2509,22 @@ export default {
       superFastForward
     />
   ),
+  vpmj: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E8}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={21}
+    />
+  ),
   uitu: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E8}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       isDone
-      nextIterations={21}
-      finalFastForward
     />
   ),
   bozr: (
@@ -2490,15 +2540,22 @@ export default {
       superFastForward
     />
   ),
+  angp: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E9}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
+      nextIterations={26}
+    />
+  ),
   wxqy: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E9}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       isDone
-      nextIterations={26}
-      finalFastForward
     />
   ),
   wcwd: (
@@ -2545,14 +2602,21 @@ export default {
       superFastForward
     />
   ),
-  dret: (
-    <ExpressionRunnerPairSimple
+  xsgz: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E12}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       nextIterations={16}
-      finalFastForward
+    />
+  ),
+  dret: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E12}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
       isDone
     />
   ),
@@ -2569,14 +2633,21 @@ export default {
       superFastForward
     />
   ),
-  zfcz: (
-    <ExpressionRunnerPairSimple
+  fotb: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e15E13}
       showPriorities
       containerSize="xs"
       variableSize="xs"
       nextIterations={21}
-      finalFastForward
+    />
+  ),
+  zfcz: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e15E13}
+      showPriorities
+      containerSize="xs"
+      variableSize="xs"
       isDone
     />
   ),
