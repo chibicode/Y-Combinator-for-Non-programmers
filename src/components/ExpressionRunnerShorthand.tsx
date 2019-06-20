@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 import ExpressionRunner, {
   ExpressionRunnerProps,
   InitializeInstruction
@@ -8,10 +7,6 @@ import {
   ExpressionContainer,
   SteppedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import { P } from 'src/components/ContentTags'
-import H from 'src/components/H'
-import Emoji from 'src/components/Emoji'
-import { spaces } from 'src/lib/theme'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 const initializeInstructions = ({
@@ -343,14 +338,6 @@ export const ExpressionRunnerPairSimple = ({
 
 ExpressionRunnerPairSimple.defaultProps = {
   ...ExpressionRunnerSimple.defaultProps
-}
-
-ExpressionRunnerPairSimpleDeprecated.defaultProps = {
-  initialState: 'default',
-  finalIsDone: false,
-  showPriorities: false,
-  skipAlphaConvert: false,
-  variableSize: 'lg'
 }
 
 export const ExpressionRunnerSingleStep = ({
