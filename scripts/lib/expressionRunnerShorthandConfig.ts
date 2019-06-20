@@ -88,33 +88,6 @@ export interface ExpressionRunnerPlayButtonOnlyConfig {
   highlightNumber?: number
 }
 
-export const expressionRunnerPairSimpleConfigDefault = expressionRunnerSimpleConfigDefault
-
-export function isExpressionRunnerPairSimpleConfig(
-  c: ExpressionRunnerShorthandConfig
-): c is ExpressionRunnerPairSimpleConfig {
-  return c.runner === 'pairSimple'
-}
-
-export interface ExpressionRunnerPairSimpleConfig
-  extends ExpressionRunnerSimpleConfigBase {
-  runner: 'pairSimple'
-  hideFirstExplanations?: boolean
-  finalState?: ExpressionRunnerSimpleConfig['initialState']
-  finalCaption?: ExpressionRunnerSimpleConfig['caption']
-  finalNextIteration?: ExpressionRunnerSimpleConfig['nextIteration']
-  finalNextIterations?: ExpressionRunnerSimpleConfig['nextIterations']
-  finalFastForward?: boolean
-  finalArgPriorityAggHighlights?: ExpressionRunnerSimpleConfig['argPriorityAggHighlights']
-  finalFuncPriorityAggHighlights?: ExpressionRunnerSimpleConfig['funcPriorityAggHighlights']
-  intermediateState?: ExpressionRunnerSimpleConfig['initialState']
-  intermediateCaption?: ExpressionRunnerSimpleConfig['caption']
-  intermediateNextIteration?: ExpressionRunnerSimpleConfig['nextIteration']
-  intermediateNextIterations?: ExpressionRunnerSimpleConfig['nextIterations']
-  intermediateArgPriorityAggHighlights?: ExpressionRunnerSimpleConfig['argPriorityAggHighlights']
-  intermediateFuncPriorityAggHighlights?: ExpressionRunnerSimpleConfig['funcPriorityAggHighlights']
-}
-
 export const expressionRunnerSingleStepConfigDefault = {
   hideFuncUnboundBadgeOnExplanation: false,
   showPriorities: false,
@@ -146,7 +119,6 @@ export interface ExpressionRunnerSingleStepConfig {
 export type ExpressionRunnerShorthandConfig =
   | ExpressionRunnerSimpleConfig
   | ExpressionRunnerPlayButtonOnlyConfig
-  | ExpressionRunnerPairSimpleConfig
   | ExpressionRunnerSingleStepConfig
 
 const config: Record<string, ExpressionRunnerShorthandConfig> = {
@@ -1775,16 +1747,15 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     variableSize: 'md'
   },
   ifxr: {
-    runner: 'pairSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
-    finalNextIterations: 4,
-    finalState: 'default',
-    finalFastForward: true,
+    nextIterations: 4,
+    initialState: 'default',
     variableSize: 'md',
-    finalCaption: { name: 'magicalChangedCaption', fromNumber: 3 },
-    finalArgPriorityAggHighlights: [1],
-    finalFuncPriorityAggHighlights: [1, 2]
+    caption: { name: 'magicalChangedCaption', fromNumber: 3 },
+    argPriorityAggHighlights: [1],
+    funcPriorityAggHighlights: [1, 2]
   },
   vkpm: {
     runner: 'singleStep',
@@ -1807,19 +1778,23 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     speed: 1.75,
     variableSize: 'sm'
   },
+  dxum: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e14E1,
+    showPriorities: true,
+    nextIterations: 4,
+    variableSize: 'sm'
+  },
   davn: {
-    runner: 'pairSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     initialState: 'default',
-    nextIterations: 4,
-    finalNextIterations: 8,
-    finalState: 'default',
-    finalFastForward: true,
-    finalCaption: { name: 'magicalChangedCaption', fromNumber: 2 },
+    nextIterations: 8,
+    caption: { name: 'magicalChangedCaption', fromNumber: 2 },
     variableSize: 'sm',
-    finalArgPriorityAggHighlights: [1],
-    finalFuncPriorityAggHighlights: [3, 4]
+    argPriorityAggHighlights: [1],
+    funcPriorityAggHighlights: [3, 4]
   },
   qltx: {
     runner: 'singleStep',
@@ -1923,14 +1898,25 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     nextIterations: 16,
     variableSize: 'sm'
   },
-  osqg: {
-    runner: 'pairSimple',
+  fora: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e14E3,
+    showPriorities: true,
+    variableSize: 'sm'
+  },
+  eobj: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E3,
     showPriorities: true,
     variableSize: 'sm',
-    isDone: true,
-    intermediateState: 'default',
-    intermediateNextIterations: 20
+    nextIterations: 20
+  },
+  osqg: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e14E3,
+    showPriorities: true,
+    variableSize: 'sm',
+    isDone: true
   },
   vrwt: {
     runner: 'simple',
@@ -1957,23 +1943,37 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     expressionContainer: lessonExpressions.e14E5,
     variableSize: 'sm'
   },
+  xjae: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e14E6,
+    variableSize: 'md'
+  },
   xsve: {
-    runner: 'pairSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E6,
     variableSize: 'md',
     explanationsVisibility: 'visible',
-    hideFirstExplanations: true,
-    finalState: 'magicalExpanded',
-    finalFastForward: true
+    initialState: 'magicalExpanded'
+  },
+  igrt: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e14E1,
+    showPriorities: true,
+    variableSize: 'sm'
+  },
+  woft: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e14E1,
+    showPriorities: true,
+    nextIterations: 12,
+    variableSize: 'sm'
   },
   urhc: {
-    runner: 'pairSimple',
+    runner: 'simple',
     expressionContainer: lessonExpressions.e14E1,
     showPriorities: true,
     variableSize: 'sm',
-    isDone: true,
-    intermediateState: 'default',
-    intermediateNextIterations: 12
+    isDone: true
   },
   tdau: {
     runner: 'simple',
@@ -2144,15 +2144,28 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     skipToTheEnd: false,
     speed: 1.75
   },
-  mscz: {
-    runner: 'pairSimple',
+  nnhc: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e15E5,
+    showPriorities: true,
+    variableSize: 'xs',
+    containerSize: 'xs'
+  },
+  pzvr: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E5,
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs',
-    isDone: true,
-    intermediateState: 'default',
-    intermediateNextIterations: 16
+    nextIterations: 16
+  },
+  mscz: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e15E5,
+    showPriorities: true,
+    variableSize: 'xs',
+    containerSize: 'xs',
+    isDone: true
   },
   jreq: {
     runner: 'playButtonOnly',
@@ -2166,15 +2179,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     lastAllowedExpressionStateAfterIterations: 20,
     superFastForward: true
   },
-  uitu: {
-    runner: 'pairSimple',
+  vpmj: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E8,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
-    isDone: true,
-    nextIterations: 21,
-    finalFastForward: true
+    nextIterations: 21
+  },
+  uitu: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e15E8,
+    showPriorities: true,
+    containerSize: 'xs',
+    variableSize: 'xs',
+    isDone: true
   },
   bozr: {
     runner: 'playButtonOnly',
@@ -2188,15 +2207,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     lastAllowedExpressionStateAfterIterations: 25,
     superFastForward: true
   },
-  wxqy: {
-    runner: 'pairSimple',
+  angp: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E9,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
-    isDone: true,
-    nextIterations: 26,
-    finalFastForward: true
+    nextIterations: 26
+  },
+  wxqy: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e15E9,
+    showPriorities: true,
+    containerSize: 'xs',
+    variableSize: 'xs',
+    isDone: true
   },
   wcwd: {
     runner: 'simple',
@@ -2237,14 +2262,20 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     lastAllowedExpressionStateAfterIterations: 15,
     superFastForward: true
   },
-  dret: {
-    runner: 'pairSimple',
+  xsgz: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E12,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
-    nextIterations: 16,
-    finalFastForward: true,
+    nextIterations: 16
+  },
+  dret: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e15E12,
+    showPriorities: true,
+    containerSize: 'xs',
+    variableSize: 'xs',
     isDone: true
   },
   bpsz: {
@@ -2259,14 +2290,20 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
     lastAllowedExpressionStateAfterIterations: 20,
     superFastForward: true
   },
-  zfcz: {
-    runner: 'pairSimple',
+  fotb: {
+    runner: 'simple',
     expressionContainer: lessonExpressions.e15E13,
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
-    nextIterations: 21,
-    finalFastForward: true,
+    nextIterations: 21
+  },
+  zfcz: {
+    runner: 'simple',
+    expressionContainer: lessonExpressions.e15E13,
+    showPriorities: true,
+    containerSize: 'xs',
+    variableSize: 'xs',
     isDone: true
   },
   jtai: {
