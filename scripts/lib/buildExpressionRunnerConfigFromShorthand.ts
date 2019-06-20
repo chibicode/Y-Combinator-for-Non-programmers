@@ -121,12 +121,10 @@ function mergeWithDefault<
   A extends Record<string, any>,
   B extends Record<string, any>
 >(base: A, defaults: B): A & B {
-  let result: Record<string, any> = {}
-  Object.keys(base).forEach(key => {
+  let result: Record<string, any> = { ...base }
+  Object.keys(defaults).forEach(key => {
     if (base[key] === undefined) {
       result[key] = defaults[key]
-    } else {
-      result[key] = base[key]
     }
   })
   return result as A & B
