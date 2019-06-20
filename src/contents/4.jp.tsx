@@ -10,6 +10,7 @@ import AER from 'src/components/AER'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -200,7 +201,9 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になる
               </InlineHeader>
             </P>
-            {AER.jrxw}
+            {AER.udic}
+            <ExpressionRunnerSeparator />
+            {AER.xzqu}
             <P>
               3.{' '}
               <InlineHeader>

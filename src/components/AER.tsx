@@ -281,20 +281,17 @@ export default {
       skipToTheEnd={false}
     />
   ),
-  jrxw: (
-    <ExpressionRunnerPairSimpleDeprecated
+  udic: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
       initialState="showFuncUnbound"
       showPriorities
-      secondInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'default'
-        }
-      ]}
+    />
+  ),
+  xzqu: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E1}
+      nextIteration
     />
   ),
   esyi: (
