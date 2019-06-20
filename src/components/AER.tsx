@@ -2016,18 +2016,15 @@ export default {
     />
   ),
   ifxr: (
-    <ExpressionRunnerPairSimple
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e14E1}
       showPriorities
-      finalNextIterations={4}
-      finalState="default"
-      finalFastForward
+      nextIterations={4}
+      initialState="default"
       variableSize="md"
-      finalCaption={
-        <H args={{ name: 'magicalChangedCaption', fromNumber: 3 }} />
-      }
-      finalArgPriorityAggHighlights={[1]}
-      finalFuncPriorityAggHighlights={[1, 2]}
+      caption={<H args={{ name: 'magicalChangedCaption', fromNumber: 3 }} />}
+      argPriorityAggHighlights={[1]}
+      funcPriorityAggHighlights={[1, 2]}
     />
   ),
   vkpm: (
