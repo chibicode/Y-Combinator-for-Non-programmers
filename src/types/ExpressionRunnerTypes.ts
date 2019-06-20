@@ -59,7 +59,6 @@ export interface ExpressionRunnerProps {
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
   containerSize: keyof typeof allMaxWidths
-  resetIndex: boolean
   hidePlayButton?: boolean
   speed: number
   showAllShowSteps?: boolean

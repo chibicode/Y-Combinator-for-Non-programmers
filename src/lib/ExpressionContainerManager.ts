@@ -24,14 +24,13 @@ export default class ExpressionContainerManager {
       numStepsRemaining: this.numStepsRemaining,
       numStepsRemainingDefaultAndActiveOnly: this
         .numStepsRemainingDefaultAndActiveOnly,
-      numStepsTaken: this.currentIndex - this.startIndex,
+      numStepsTaken: this.currentIndex - this.minimumIndex,
       maxIndexSet: this.maximumIndex !== DEFAULT_MAX_INDEX
     }
   }
 
   public expressionContainers: SteppedExpressionContainer[] = []
   public currentIndex = 0
-  public startIndex = 0
   public minimumIndex = 0
   public maximumIndex = DEFAULT_MAX_INDEX
   public stepOptions: StepOptions
@@ -55,7 +54,7 @@ export default class ExpressionContainerManager {
   }
 
   public reset() {
-    this.currentIndex = this.startIndex
+    this.currentIndex = this.minimumIndex
   }
 
   public stepForwardUntilActiveOrDefault() {

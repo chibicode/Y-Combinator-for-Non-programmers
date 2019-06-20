@@ -177,7 +177,6 @@ export const ExpressionRunnerPlayButtonOnly = ({
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     highlightOverrides={highlightOverrides}
-    resetIndex
     showAllShowSteps={showAllShowSteps}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
@@ -242,7 +241,6 @@ export const ExpressionRunnerSingleStep = ({
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     hidePlayButton
     explanationsVisibility={explanationsVisibility}
-    resetIndex
     lastAllowedExpressionState={finalState}
     lastAllowedExpressionStateAfterIterations={nextIterations}
     showAllShowSteps={showAllShowSteps}

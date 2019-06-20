@@ -33,7 +33,6 @@ interface ExpressionRunnerConfig {
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
   containerSize: keyof typeof allMaxWidths
-  resetIndex: boolean
   hidePlayButton?: boolean
   speed: number
   showAllShowSteps?: boolean
@@ -61,7 +60,6 @@ const expressionRunnerDefaults = {
   variableSize: expressionRunnerContextDefault.variableSize,
   initializeInstructions: [],
   containerSize: 'xxs',
-  resetIndex: false,
   skipToTheEnd: false,
   hidePlayButton: false,
   speed: 1,
@@ -221,7 +219,6 @@ const convertConfig = (
       expressionContainer,
       hidePriorities: !showPriorities,
       highlightOverrides,
-      resetIndex: true,
       showAllShowSteps,
       hideFuncUnboundBadgeOnExplanation,
       skipToTheEnd,
@@ -265,7 +262,6 @@ const convertConfig = (
       hideFuncUnboundBadgeOnExplanation,
       hidePlayButton: true,
       explanationsVisibility,
-      resetIndex: true,
       lastAllowedExpressionState: finalState,
       lastAllowedExpressionStateAfterIterations: nextIterations,
       showAllShowSteps,

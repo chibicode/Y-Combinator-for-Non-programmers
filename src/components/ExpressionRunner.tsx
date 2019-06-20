@@ -152,7 +152,6 @@ const ExpressionRunner = ({
   skipAlphaConvert,
   hideBottomRightBadges,
   initializeInstructions,
-  resetIndex,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
   highlightOverridesCallArgAndFuncUnboundOnly,
@@ -175,8 +174,7 @@ const ExpressionRunner = ({
     lastAllowedExpressionStateAfterIterations,
     showAllShowSteps,
     skipAlphaConvert,
-    initializeInstructions,
-    resetIndex
+    initializeInstructions
   })
   const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
@@ -358,7 +356,6 @@ ExpressionRunner.defaultProps = {
   variableSize: expressionRunnerContextDefault.variableSize,
   initializeInstructions: [],
   containerSize: 'xxs',
-  resetIndex: false,
   skipToTheEnd: false,
   hidePlayButton: false,
   speed: 1,

@@ -5,11 +5,9 @@ import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 
 const initializeExpressionManager = ({
   initializeInstructions,
-  resetIndex,
   expressionContainerManager
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
-  resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainerManager: ExpressionContainerManager
 }) => {
   if (initializeInstructions) {
@@ -35,10 +33,6 @@ const initializeExpressionManager = ({
       }
     })
 
-    if (resetIndex) {
-      expressionContainerManager.startIndex =
-        expressionContainerManager.currentIndex
-    }
     expressionContainerManager.minimumIndex =
       expressionContainerManager.currentIndex
   }
@@ -48,7 +42,6 @@ const initializeExpressionManager = ({
 
 const useExpressionContainerManager = ({
   initializeInstructions,
-  resetIndex,
   expressionContainer,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
@@ -56,7 +49,6 @@ const useExpressionContainerManager = ({
   skipAlphaConvert
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
-  resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainer: SteppedExpressionContainer
   lastAllowedExpressionState?: ExpressionRunnerProps['lastAllowedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
@@ -80,7 +72,6 @@ const useExpressionContainerManager = ({
     })
     expressionContainerManager = initializeExpressionManager({
       initializeInstructions,
-      resetIndex,
       expressionContainerManager
     })
     ref.current = expressionContainerManager
