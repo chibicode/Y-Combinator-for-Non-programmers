@@ -83,15 +83,6 @@ export default class ExpressionContainerManager {
     }
   }
 
-  public stepForwardUntilContainerState(state: ExpressionContainerStates) {
-    while (
-      this.currentExpressionContainer.containerState !== state &&
-      this.canStepForward
-    ) {
-      this.stepForward()
-    }
-  }
-
   public stepForward() {
     if (this.canRedo) {
       this.currentIndex++

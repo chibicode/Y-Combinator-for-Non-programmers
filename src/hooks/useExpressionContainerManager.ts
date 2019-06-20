@@ -12,11 +12,7 @@ const initializeExpressionManager = ({
 }) => {
   if (initializeInstructions) {
     initializeInstructions.forEach(initializeInstruction => {
-      if (initializeInstruction.type === 'stepForwardUntilContainerState') {
-        expressionContainerManager.stepForwardUntilContainerState(
-          initializeInstruction.state
-        )
-      } else if (
+      if (
         initializeInstruction.type ===
         'stepForwardUntilPreviouslyChangedExpressionState'
       ) {

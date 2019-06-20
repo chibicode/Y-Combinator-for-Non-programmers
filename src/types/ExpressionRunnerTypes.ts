@@ -29,10 +29,6 @@ export interface ExpressionRunnerContextProps {
 
 export type InitializeInstruction =
   | {
-      type: 'stepForwardUntilContainerState'
-      state: ExpressionContainerStates
-    }
-  | {
       type: 'stepForwardUntilPreviouslyChangedExpressionState'
       state: ExpressionContainer['previouslyChangedExpressionState']
     }
