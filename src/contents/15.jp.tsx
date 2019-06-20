@@ -46,6 +46,8 @@ export default () => (
               <H args={{ name: 'witch' }} />
               は次のように変化します。
             </P>
+            {AER.xjae}
+            <ExpressionRunnerSeparator />
             {AER.xsve}
             <P>
               この
@@ -85,6 +87,8 @@ export default () => (
               <H args={{ name: 'witch' }} />
               の変化に注目してみます。
             </P>
+            {AER.xjae}
+            <ExpressionRunnerSeparator />
             {AER.xsve}
             <P>
               変化後の弁当箱にも
