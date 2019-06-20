@@ -345,105 +345,11 @@ ExpressionRunnerPairSimple.defaultProps = {
   ...ExpressionRunnerSimple.defaultProps
 }
 
-export const ExpressionRunnerPairSimpleDeprecated = ({
-  expressionContainer,
-  initialState,
-  finalIsDone,
-  finalState,
-  showPriorities,
-  hidePrioritiesOnSecond,
-  firstInitializeInstructions,
-  secondInitializeInstructions,
-  highlightOverrides,
-  highlightOverrideActiveAfterStart,
-  skipAlphaConvert,
-  variableSize
-}: {
-  expressionContainer: SteppedExpressionContainer
-  initialState: ExpressionContainer['previouslyChangedExpressionState']
-  finalIsDone: boolean
-  finalState?: ExpressionContainer['previouslyChangedExpressionState']
-  showPriorities: boolean
-  hidePrioritiesOnSecond: boolean
-  skipAlphaConvert: boolean
-  firstInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
-  secondInitializeInstructions?: ExpressionRunnerProps['initializeInstructions']
-  highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
-  highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
-  variableSize: ExpressionRunnerProps['variableSize']
-}) => (
-  <>
-    <ExpressionRunner
-      expressionContainer={expressionContainer}
-      hideControls
-      hidePriorities={!showPriorities}
-      explanationsVisibility="hidden"
-      variableSize={variableSize}
-      skipAlphaConvert={skipAlphaConvert}
-      highlightOverrides={highlightOverrides}
-      highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
-      initializeInstructions={
-        firstInitializeInstructions
-          ? firstInitializeInstructions
-          : [
-              {
-                type: 'stepForwardUntilPreviouslyChangedExpressionState',
-                state: initialState
-              }
-            ]
-      }
-    />
-    <P
-      css={css`
-        text-align: center;
-        margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
-      `}
-    >
-      {finalState || finalIsDone || secondInitializeInstructions ? (
-        <>
-          <Emoji size="mdlg">⬇️</Emoji>
-        </>
-      ) : (
-        <>
-          <Emoji>🔽</Emoji>{' '}
-          <H args={{ name: 'afterPlay' }} highlightType="none" />{' '}
-          <Emoji>🔽</Emoji>
-        </>
-      )}
-    </P>
-    <ExpressionRunner
-      expressionContainer={expressionContainer}
-      hideControls
-      hidePriorities={!showPriorities || hidePrioritiesOnSecond}
-      explanationsVisibility="hidden"
-      variableSize={variableSize}
-      skipAlphaConvert={skipAlphaConvert}
-      highlightOverrides={highlightOverrides}
-      highlightOverrideActiveAfterStart={highlightOverrideActiveAfterStart}
-      initializeInstructions={
-        secondInitializeInstructions
-          ? secondInitializeInstructions
-          : [
-              finalState
-                ? {
-                    type: 'stepForwardUntilPreviouslyChangedExpressionState',
-                    state: finalState
-                  }
-                : {
-                    type: 'stepForwardUntilTheEnd'
-                  }
-            ]
-      }
-    />
-  </>
-)
-
 ExpressionRunnerPairSimpleDeprecated.defaultProps = {
   initialState: 'default',
   finalIsDone: false,
   showPriorities: false,
   skipAlphaConvert: false,
-  hidePrioritiesOnSecond: false,
   variableSize: 'lg'
 }
 

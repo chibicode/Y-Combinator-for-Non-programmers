@@ -2,7 +2,6 @@ import React from 'react'
 import {
   ExpressionRunnerSimple,
   ExpressionRunnerPlayButtonOnly,
-  ExpressionRunnerPairSimpleDeprecated,
   ExpressionRunnerSingleStep,
   ExpressionRunnerPairSimple
 } from 'src/components/ExpressionRunnerShorthand'
@@ -18,11 +17,6 @@ export default {
   jozw: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E4} />,
   itbm: (
     <ExpressionRunnerPlayButtonOnly
-      expressionContainer={lessonExpressions.e1E1}
-    />
-  ),
-  uqwm: (
-    <ExpressionRunnerPairSimpleDeprecated
       expressionContainer={lessonExpressions.e1E1}
     />
   ),
@@ -42,18 +36,21 @@ export default {
     />
   ),
   bgfl: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E2}
+      isDone
     />
   ),
   tuqr: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E3}
+      isDone
     />
   ),
   cpkp: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E4}
+      isDone
     />
   ),
   loai: <ExpressionRunnerSimple expressionContainer={lessonExpressions.e1E5} />,
@@ -126,10 +123,9 @@ export default {
     />
   ),
   mhgm: (
-    <ExpressionRunnerPairSimpleDeprecated
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E1}
       initialState="betaReducePreviewCrossed"
-      finalIsDone
     />
   ),
   osqo: (
@@ -154,11 +150,16 @@ export default {
       finalState="betaReducePreviewCrossed"
     />
   ),
-  zxfv: (
-    <ExpressionRunnerPairSimpleDeprecated
+  jwzh: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e1E2}
       initialState="betaReducePreviewBefore"
-      finalState="betaReducePreviewCrossed"
+    />
+  ),
+  knhw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e1E2}
+      initialState="betaReducePreviewCrossed"
     />
   ),
   ahsd: (
@@ -211,11 +212,6 @@ export default {
     <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e2E1}
       initialState="showFuncUnbound"
-    />
-  ),
-  iped: (
-    <ExpressionRunnerPairSimpleDeprecated
-      expressionContainer={lessonExpressions.e2E1}
     />
   ),
   cvtc: (
@@ -284,36 +280,33 @@ export default {
       skipToTheEnd={false}
     />
   ),
-  jrxw: (
-    <ExpressionRunnerPairSimpleDeprecated
+  udic: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
       initialState="showFuncUnbound"
       showPriorities
-      secondInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'default'
-        }
-      ]}
     />
   ),
-  esyi: (
-    <ExpressionRunnerPairSimpleDeprecated
+  xzqu: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E1}
       showPriorities
-      firstInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
-      finalIsDone
+      nextIteration
+    />
+  ),
+  dnvw: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E1}
+      nextIteration
+      initialState="showFuncBound"
+      showPriorities
+    />
+  ),
+  nric: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E1}
+      isDone
+      showPriorities
     />
   ),
   hdxc: (
@@ -323,36 +316,33 @@ export default {
       skipToTheEnd={false}
     />
   ),
-  wepe: (
-    <ExpressionRunnerPairSimpleDeprecated
+  eial: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E2}
       initialState="showFuncUnbound"
       showPriorities
-      secondInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'default'
-        }
-      ]}
     />
   ),
-  bwop: (
-    <ExpressionRunnerPairSimpleDeprecated
+  iwkx: (
+    <ExpressionRunnerSimple
       expressionContainer={lessonExpressions.e3E2}
+      nextIteration
       showPriorities
-      firstInitializeInstructions={[
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: 'showFuncBound'
-        }
-      ]}
-      finalIsDone
+    />
+  ),
+  vjaa: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E2}
+      initialState="showFuncBound"
+      showPriorities
+      nextIteration
+    />
+  ),
+  iifq: (
+    <ExpressionRunnerSimple
+      expressionContainer={lessonExpressions.e3E2}
+      isDone
+      showPriorities
     />
   ),
   laea: (

@@ -19,6 +19,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -284,7 +285,9 @@ export default () => (
               には、最後まで何も起きません。
             </P>
             <P>というわけで、実行結果はこうなります。</P>
-            {AER.iped}
+            {AER.xwim}
+            <ExpressionRunnerSeparator />
+            {AER.awxz}
           </>
         )
       },
