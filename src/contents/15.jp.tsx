@@ -46,6 +46,8 @@ export default () => (
               <H args={{ name: 'witch' }} />
               は次のように変化します。
             </P>
+            {AER.xjae}
+            <ExpressionRunnerSeparator />
             {AER.xsve}
             <P>
               この
@@ -54,6 +56,10 @@ export default () => (
             </P>
             <EmojiSeparator size="sm" emojis={['3️⃣', '✖️', '2️⃣', '✖️', '1️⃣']} />
             <P>といった計算を行うことができます。</P>
+            {AER.igrt}
+            <ExpressionRunnerSeparator />
+            {AER.woft}
+            <ExpressionRunnerSeparator />
             {AER.urhc}
             <P>
               しかし、「
@@ -81,6 +87,8 @@ export default () => (
               <H args={{ name: 'witch' }} />
               の変化に注目してみます。
             </P>
+            {AER.xjae}
+            <ExpressionRunnerSeparator />
             {AER.xsve}
             <P>
               変化後の弁当箱にも
@@ -321,6 +329,10 @@ export default () => (
               </Strong>
               、ということになります！
             </P>
+            {AER.nnhc}
+            <ExpressionRunnerSeparator />
+            {AER.pzvr}
+            <ExpressionRunnerSeparator />
             {AER.mscz}
           </>
         )
@@ -390,6 +402,8 @@ export default () => (
               <H args={{ name: 'factorialComputation', start: 4 }} />
               になります。
             </P>
+            {AER.vpmj}
+            <ExpressionRunnerSeparator />
             {AER.uitu}
             <Hr />
             <P>
@@ -406,6 +420,8 @@ export default () => (
               <H args={{ name: 'factorialComputation', start: 5 }} />
               になります。
             </P>
+            {AER.angp}
+            <ExpressionRunnerSeparator />
             {AER.wxqy}
             <P>
               つまり、
@@ -542,6 +558,8 @@ export default () => (
               <H args={{ name: 'powerComputation', power: 3 }} />
               になります。
             </P>
+            {AER.xsgz}
+            <ExpressionRunnerSeparator />
             {AER.dret}
           </>
         )
@@ -581,6 +599,8 @@ export default () => (
               <H args={{ name: 'powerComputation', power: 4 }} />
               になります。
             </P>
+            {AER.fotb}
+            <ExpressionRunnerSeparator />
             {AER.zfcz}
           </>
         )
