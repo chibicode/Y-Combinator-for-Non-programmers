@@ -50,7 +50,7 @@ const regenerate = () => {
 
             const fileContents = prettierFormat(`
     import React from 'react'
-    import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
+    import ExpressionRunnerPrecomputed from '../ExpressionRunnerPrecomputed'
 
     const ${componentName} = () => <ExpressionRunnerPrecomputed {...${util.inspect(
               {
