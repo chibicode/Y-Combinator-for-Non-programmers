@@ -1,0 +1,13 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e13E6",
+  "isDone": true,
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "md",
+  "caption": {
+    "name": "secretCodeCaption",
+    "number": 2,
+    "letter": "l"
+  }
+}

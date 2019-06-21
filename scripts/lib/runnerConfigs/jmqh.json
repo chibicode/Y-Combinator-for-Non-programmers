@@ -1,0 +1,6 @@
+{
+  "runner": "playButtonOnly",
+  "lessonExpressionsKey": "e2E1",
+  "initialState": "showFuncUnbound",
+  "skipToTheEnd": false
+}

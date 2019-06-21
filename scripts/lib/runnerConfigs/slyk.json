@@ -1,0 +1,10 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e7E1",
+  "showPriorities": true,
+  "caption": {
+    "name": "secretCodeCaption",
+    "number": 1,
+    "letter": "d"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e15E12",
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "xs",
+  "caption": {
+    "name": "changedToPowerCaption"
+  }
+}

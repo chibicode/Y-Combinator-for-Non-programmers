@@ -1,0 +1,10 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e15E7",
+  "showPriorities": true,
+  "variableSize": "md",
+  "highlightOverrides": {
+    "abbreviated": "highlighted"
+  },
+  "highlightOverrideActiveAfterStart": true
+}

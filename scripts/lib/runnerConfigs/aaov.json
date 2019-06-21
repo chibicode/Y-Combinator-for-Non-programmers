@@ -1,0 +1,7 @@
+{
+  "runner": "singleStep",
+  "lessonExpressionsKey": "e3E1",
+  "initialState": "default",
+  "finalState": "active",
+  "showPriorities": true
+}

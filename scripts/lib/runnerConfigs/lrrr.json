@@ -1,0 +1,8 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e13E3",
+  "showPriorities": true,
+  "nextIteration": true,
+  "explanationsVisibility": "visible",
+  "initialState": "trueCaseActive"
+}

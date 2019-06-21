@@ -1,0 +1,9 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e15E5",
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "xxs",
+  "nextIterations": 11,
+  "highlightFunctions": true
+}

@@ -1,0 +1,10 @@
+{
+  "runner": "playButtonOnly",
+  "lessonExpressionsKey": "e9E7",
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "md",
+  "skipToTheEnd": false,
+  "speed": 4,
+  "skipAlphaConvert": true
+}

@@ -1,0 +1,10 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e15E16",
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "md",
+  "caption": {
+    "name": "thisIsYCombinatorCaption"
+  }
+}

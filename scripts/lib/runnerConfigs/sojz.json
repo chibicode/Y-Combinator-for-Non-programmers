@@ -1,0 +1,13 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e8E7",
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "md",
+  "highlightOverrides": {
+    "e": "highlighted",
+    "f": "highlighted",
+    "g": "highlighted",
+    "h": "highlighted"
+  }
+}

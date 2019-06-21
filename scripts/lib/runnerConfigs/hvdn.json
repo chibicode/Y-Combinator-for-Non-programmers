@@ -1,0 +1,9 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e13E1",
+  "caption": {
+    "name": "ifCaption",
+    "ifZero": "y",
+    "ifNonZero": "z"
+  }
+}

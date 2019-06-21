@@ -1,0 +1,7 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e5E2",
+  "initialState": "showCallArg",
+  "showAllShowSteps": true,
+  "showPriorities": true
+}

@@ -1,0 +1,10 @@
+{
+  "runner": "simple",
+  "lessonExpressionsKey": "e6E7",
+  "showPriorities": true,
+  "containerSize": "xs",
+  "variableSize": "md",
+  "caption": {
+    "name": "secretCodeAddOneCaption"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "runner": "singleStep",
+  "hideFuncUnboundBadgeOnExplanation": true,
+  "lessonExpressionsKey": "e1E1",
+  "initialState": "betaReducePreviewBefore",
+  "finalState": "betaReducePreviewAfter"
+}
