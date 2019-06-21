@@ -1,6 +1,0 @@
-{
-  "runner": "singleStep",
-  "lessonExpressionsKey": "e2E1",
-  "initialState": "active",
-  "finalState": "showFuncUnbound"
-}

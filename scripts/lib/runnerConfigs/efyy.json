@@ -1,7 +1,0 @@
-{
-  "runner": "singleStep",
-  "lessonExpressionsKey": "e5E1",
-  "initialState": "betaReducePreviewBefore",
-  "finalState": "betaReducePreviewAfter",
-  "showPriorities": true
-}

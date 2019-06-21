@@ -1,9 +1,0 @@
-{
-  "runner": "playButtonOnly",
-  "lessonExpressionsKey": "e12E3",
-  "showPriorities": true,
-  "skipToTheEnd": false,
-  "containerSize": "xs",
-  "variableSize": "sm",
-  "speed": 5
-}

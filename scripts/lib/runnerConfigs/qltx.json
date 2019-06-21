@@ -1,9 +1,0 @@
-{
-  "runner": "singleStep",
-  "lessonExpressionsKey": "e14E1",
-  "showPriorities": true,
-  "nextIterations": 8,
-  "initialState": "active",
-  "finalState": "magicalExpanded",
-  "variableSize": "sm"
-}

@@ -1,9 +1,0 @@
-{
-  "runner": "simple",
-  "lessonExpressionsKey": "e6E4",
-  "showPriorities": true,
-  "bottomRightBadgeOverrides": {
-    "h": "🅱️",
-    "g": "🅰️"
-  }
-}
