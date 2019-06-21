@@ -1,9 +1,5 @@
 import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
-import {
-  FunctionExpressionParams,
-  ExpressionParams,
-  CallExpressionParams
-} from 'src/types/ExpressionParamTypes'
+import { FunctionExpressionParams } from 'src/types/ExpressionParamTypes'
 import {
   numberParams,
   succParams,
@@ -249,35 +245,6 @@ export const e8E8 = initializeExpressionContainer([
   'question',
   'question'
 ])
-
-export const isZero = (e: ExpressionParams): CallExpressionParams => [
-  [
-    [
-      [
-        e,
-        {
-          arg: 'e',
-          body: {
-            arg: 'a',
-            body: {
-              arg: 'b',
-              body: 'b'
-            }
-          }
-        }
-      ],
-      {
-        arg: 'c',
-        body: {
-          arg: 'd',
-          body: 'c'
-        }
-      }
-    ],
-    'y'
-  ],
-  'z'
-]
 
 export const e9E1 = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', 'question')

@@ -1,10 +1,14 @@
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
-import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import {
+  ExpressionContainer,
+  SteppedExpressionContainer
+} from 'src/types/ExpressionContainerTypes'
+import * as lessonExpressions from 'src/lib/lessonExpressions'
 
 const buildExpressionContainers = ({
-  expressionContainer,
+  lessonExpressionsKey,
   initializeInstructions,
   showAllShowSteps,
   skipAlphaConvert,
@@ -14,7 +18,8 @@ const buildExpressionContainers = ({
   lastAllowedExpressionStateAfterIterations,
   hidePlayButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
-  let currentExpressionContainer = expressionContainer
+  let currentExpressionContainer: SteppedExpressionContainer =
+    lessonExpressions[lessonExpressionsKey]
   let results: ExpressionContainer[] = []
   const stepOptions = { showAllShowSteps, skipAlphaConvert }
 
@@ -92,13 +97,15 @@ const buildExpressionContainers = ({
     if (
       lastAllowedExpressionState &&
       lastAllowedExpressionState ===
-        expressionContainer.previouslyChangedExpressionState &&
+        currentExpressionContainer.previouslyChangedExpressionState &&
       (lastAllowedExpressionStateAfterIterations || 0) <= becameDefaultCount
     ) {
       break
     }
 
-    if (expressionContainer.previouslyChangedExpressionState === 'default') {
+    if (
+      currentExpressionContainer.previouslyChangedExpressionState === 'default'
+    ) {
       becameDefaultCount += 1
     }
   }
