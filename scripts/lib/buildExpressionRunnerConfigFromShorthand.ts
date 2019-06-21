@@ -129,7 +129,7 @@ function mergeWithDefault<
   return result as A & B
 }
 
-const convertConfig = (
+const buildExpressionRunnerConfigFromShorthand = (
   config: ExpressionRunnerShorthandConfig
 ): ExpressionRunnerConfig => {
   let runnerProps
@@ -274,16 +274,6 @@ const convertConfig = (
     runnerProps,
     expressionRunnerDefaults
   )
-}
-
-const buildExpressionRunnerConfigFromShorthand = (
-  shorthand: Record<string, ExpressionRunnerShorthandConfig>
-): Record<string, ExpressionRunnerConfig> => {
-  return Object.entries(shorthand)
-    .map(([key, config]) => ({
-      [key]: convertConfig(config)
-    }))
-    .reduce((acc, current) => ({ ...acc, ...current }), {})
 }
 
 export default buildExpressionRunnerConfigFromShorthand

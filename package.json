@@ -25,7 +25,6 @@
     "contents": "ts-node --project tsconfig.scripts.json ./scripts/generateContentsBundle.ts",
     "sitemap": "ts-node --project tsconfig.scripts.json -r tsconfig-paths/register ./scripts/generateSitemap.ts",
     "contents:watch": "ts-node --project tsconfig.scripts.json ./scripts/generateContentsBundle.ts watch",
-    "precompute": "ts-node --project tsconfig.scripts.json -r tsconfig-paths/register ./scripts/precomputeExpressionContainers.ts",
     "split-configs": "ts-node --project tsconfig.scripts.json -r tsconfig-paths/register ./scripts/splitConfigs.ts",
     "tsc": "tsc",
     "eslint": "eslint --ext .js,.ts,.tsx .",
