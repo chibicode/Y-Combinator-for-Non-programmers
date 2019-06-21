@@ -15,7 +15,11 @@ const regenerate = () => {
           .replace('./scripts/lib/runnerConfigs/', '')
           .replace('.ts', '')
         import(file.replace('./', '')).then(
-          (configBase: ExpressionRunnerShorthandConfig) => {
+          ({
+            default: configBase
+          }: {
+            default: ExpressionRunnerShorthandConfig
+          }) => {
             const config = buildExpressionRunnerConfigFromShorthand(configBase)
             const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
             const expressionContainers = buildExpressionContainers(config)
