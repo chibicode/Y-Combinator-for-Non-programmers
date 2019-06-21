@@ -24,13 +24,13 @@ interface ExpressionRunnerPrecomputedParams {
   funcPriorityAggHighlights: ExpressionRunnerConfig['funcPriorityAggHighlights']
   highlightFunctions: ExpressionRunnerConfig['highlightFunctions']
   superFastForward: ExpressionRunnerConfig['superFastForward']
-  highlightNumbe: ExpressionRunnerConfig['highlightNumber']
+  highlightNumber: ExpressionRunnerConfig['highlightNumber']
 }
 
 const ExpressionRunnerPrecomputed = ({
   params
 }: {
   params: ExpressionRunnerPrecomputedParams
-}) => <></>
+}) => <>{JSON.stringify(params)}</>
 
 export default ExpressionRunnerPrecomputed
