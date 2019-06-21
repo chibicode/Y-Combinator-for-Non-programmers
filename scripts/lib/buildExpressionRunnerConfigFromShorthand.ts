@@ -16,6 +16,7 @@ import {
   ExpressionRunnerContextProps,
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
+import { HProps } from 'src/types/HTypes'
 
 export interface ExpressionRunnerConfig {
   expressionContainer: SteppedExpressionContainer
@@ -42,7 +43,7 @@ export interface ExpressionRunnerConfig {
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
-  caption?: React.ReactNode
+  caption?: HProps['args']
   highlightOverrideActiveAfterStart: boolean
   showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
   argPriorityAggHighlights: readonly number[]

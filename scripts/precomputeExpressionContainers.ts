@@ -1,9 +1,11 @@
+import util from 'util'
 import fs from 'fs'
 import expressionRunnerShorthandConfig from 'scripts/lib/expressionRunnerShorthandConfig'
 import buildExpressionContainers from 'scripts/lib/buildExpressionContainers'
 import buildExpressionRunnerConfigFromShorthand, {
   ExpressionRunnerConfig
 } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
+import prettier from 'prettier'
 
 const regenerate = () => {
   const config: Record<
@@ -11,21 +13,73 @@ const regenerate = () => {
     ExpressionRunnerConfig
   > = buildExpressionRunnerConfigFromShorthand(expressionRunnerShorthandConfig)
   fs.writeFileSync(
-    'src/lib/expressionRunnerConfig.json',
-    JSON.stringify(
-      Object.entries(config)
-        .map(([key, { expressionContainer, ...config }]) => ({
-          [key]: {
-            expressionContainers: buildExpressionContainers({
-              expressionContainer,
-              ...config
-            }),
-            config
-          }
-        }))
-        .reduce((acc, current) => ({ ...acc, ...current }), {}),
-      null,
-      2
+    'src/components/R.tsx',
+    prettier.format(
+      `
+import React from 'react'
+import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
+
+${Object.keys(config)
+  .map(key => {
+    const expressionContainers = buildExpressionContainers(config[key])
+    const {
+      speed,
+      showOnlyFocused,
+      caption,
+      hideControls,
+      explanationsVisibility,
+      hidePriorities,
+      variableSize,
+      containerSize,
+      hidePlayButton,
+      hideBottomRightBadges,
+      skipToTheEnd,
+      hideFuncUnboundBadgeOnExplanation,
+      highlightOverridesCallArgAndFuncUnboundOnly,
+      bottomRightBadgeOverrides,
+      highlightOverrides,
+      highlightOverrideActiveAfterStart,
+      argPriorityAggHighlights,
+      funcPriorityAggHighlights,
+      highlightFunctions,
+      superFastForward,
+      highlightNumber
+    } = config[key]
+
+    return `export const ${key[0].toUpperCase()}${key.slice(
+      1
+    )} = () => <ExpressionRunnerPrecomputed params={${util.inspect(
+      {
+        expressionContainers,
+        speed,
+        showOnlyFocused,
+        caption,
+        hideControls,
+        explanationsVisibility,
+        hidePriorities,
+        variableSize,
+        containerSize,
+        hidePlayButton,
+        hideBottomRightBadges,
+        skipToTheEnd,
+        hideFuncUnboundBadgeOnExplanation,
+        highlightOverridesCallArgAndFuncUnboundOnly,
+        bottomRightBadgeOverrides,
+        highlightOverrides,
+        highlightOverrideActiveAfterStart,
+        argPriorityAggHighlights,
+        funcPriorityAggHighlights,
+        highlightFunctions,
+        superFastForward,
+        highlightNumber
+      },
+      false,
+      null
+    )}} />`
+  })
+  .join('\n\n')}
+      `,
+      { semi: false, singleQuote: true, parser: 'typescript' }
     )
   )
 }
