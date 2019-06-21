@@ -1,24 +1,18 @@
 import { useState, useRef } from 'react'
 import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
-import { ExpressionRunnerProps } from 'src/components/ExpressionRunner'
+import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 
 const initializeExpressionManager = ({
   initializeInstructions,
-  resetIndex,
   expressionContainerManager
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
-  resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainerManager: ExpressionContainerManager
 }) => {
   if (initializeInstructions) {
     initializeInstructions.forEach(initializeInstruction => {
-      if (initializeInstruction.type === 'stepForwardUntilContainerState') {
-        expressionContainerManager.stepForwardUntilContainerState(
-          initializeInstruction.state
-        )
-      } else if (
+      if (
         initializeInstruction.type ===
         'stepForwardUntilPreviouslyChangedExpressionState'
       ) {
@@ -35,10 +29,6 @@ const initializeExpressionManager = ({
       }
     })
 
-    if (resetIndex) {
-      expressionContainerManager.startIndex =
-        expressionContainerManager.currentIndex
-    }
     expressionContainerManager.minimumIndex =
       expressionContainerManager.currentIndex
   }
@@ -48,7 +38,6 @@ const initializeExpressionManager = ({
 
 const useExpressionContainerManager = ({
   initializeInstructions,
-  resetIndex,
   expressionContainer,
   lastAllowedExpressionState,
   lastAllowedExpressionStateAfterIterations,
@@ -56,7 +45,6 @@ const useExpressionContainerManager = ({
   skipAlphaConvert
 }: {
   initializeInstructions: ExpressionRunnerProps['initializeInstructions']
-  resetIndex: ExpressionRunnerProps['resetIndex']
   expressionContainer: SteppedExpressionContainer
   lastAllowedExpressionState?: ExpressionRunnerProps['lastAllowedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
@@ -80,7 +68,6 @@ const useExpressionContainerManager = ({
     })
     expressionContainerManager = initializeExpressionManager({
       initializeInstructions,
-      resetIndex,
       expressionContainerManager
     })
     ref.current = expressionContainerManager

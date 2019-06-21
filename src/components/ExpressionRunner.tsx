@@ -1,83 +1,27 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React, { useState, useRef } from 'react'
-import Container, { ContainerProps } from 'src/components/Container'
+import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
-import ExpressionRunnerContext, {
-  expressionRunnerContextDefault,
-  ExpressionRunnerContextProps
-} from 'src/components/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ExpressionRunnerControls from 'src/components/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanation'
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import ExpressionContainerManager from 'src/lib/ExpressionContainerManager'
-import {
-  ExpressionContainerStates,
-  SteppedExpressionContainer,
-  ExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
 import useExpressionContainerManager from 'src/hooks/useExpressionContainerManager'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 import { spaces } from 'src/lib/theme'
+import {
+  ExpressionRunnerProps,
+  expressionRunnerContextDefault
+} from 'src/types/ExpressionRunnerTypes'
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed
 const FASTFORWARDING_THRESHOLD = 2
-
-export type InitializeInstruction =
-  | {
-      type: 'stepForwardUntilContainerState'
-      state: ExpressionContainerStates
-    }
-  | {
-      type: 'stepForwardUntilPreviouslyChangedExpressionState'
-      state: ExpressionContainer['previouslyChangedExpressionState']
-    }
-  | {
-      type: 'nextIteration'
-    }
-  | {
-      type: 'stepForwardUntilTheEnd'
-    }
-
-export interface ExpressionRunnerProps {
-  expressionContainer: SteppedExpressionContainer
-  hidePriorities: ExpressionRunnerContextProps['hidePriorities']
-  hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
-  hideControls: boolean
-  explanationsVisibility:
-    | 'visible'
-    | 'hidden'
-    | 'hiddenInitialPausedOnly'
-    | 'hiddenInitialAndLastPausedOnly'
-  variableSize: ExpressionRunnerContextProps['variableSize']
-  initializeInstructions: readonly InitializeInstruction[]
-  maxStepsAllowed?: number
-  lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
-  lastAllowedExpressionStateAfterIterations?: number
-  containerSize: ContainerProps['size']
-  resetIndex: boolean
-  hidePlayButton?: boolean
-  speed: number
-  showAllShowSteps?: boolean
-  skipAlphaConvert?: boolean
-  skipToTheEnd: boolean
-  hideFuncUnboundBadgeOnExplanation: boolean
-  highlightOverridesCallArgAndFuncUnboundOnly: boolean
-  bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
-  highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
-  caption?: React.ReactNode
-  highlightOverrideActiveAfterStart: boolean
-  showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
-  argPriorityAggHighlights: readonly number[]
-  funcPriorityAggHighlights: readonly number[]
-  highlightFunctions: boolean
-  superFastForward: boolean
-  highlightNumber?: number
-}
 
 interface PlaybackState {
   isFastForwarding: boolean
@@ -208,7 +152,6 @@ const ExpressionRunner = ({
   skipAlphaConvert,
   hideBottomRightBadges,
   initializeInstructions,
-  resetIndex,
   skipToTheEnd,
   hideFuncUnboundBadgeOnExplanation,
   highlightOverridesCallArgAndFuncUnboundOnly,
@@ -231,8 +174,7 @@ const ExpressionRunner = ({
     lastAllowedExpressionStateAfterIterations,
     showAllShowSteps,
     skipAlphaConvert,
-    initializeInstructions,
-    resetIndex
+    initializeInstructions
   })
   const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
@@ -414,7 +356,6 @@ ExpressionRunner.defaultProps = {
   variableSize: expressionRunnerContextDefault.variableSize,
   initializeInstructions: [],
   containerSize: 'xxs',
-  resetIndex: false,
   skipToTheEnd: false,
   hidePlayButton: false,
   speed: 1,

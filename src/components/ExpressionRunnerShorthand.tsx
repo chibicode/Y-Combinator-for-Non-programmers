@@ -1,12 +1,13 @@
 import React from 'react'
-import ExpressionRunner, {
-  ExpressionRunnerProps,
-  InitializeInstruction
-} from 'src/components/ExpressionRunner'
+import ExpressionRunner from 'src/components/ExpressionRunner'
 import {
   ExpressionContainer,
   SteppedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
+import {
+  ExpressionRunnerProps,
+  InitializeInstruction
+} from 'src/types/ExpressionRunnerTypes'
 
 const initializeInstructions = ({
   nextIteration,
@@ -176,7 +177,6 @@ export const ExpressionRunnerPlayButtonOnly = ({
     expressionContainer={expressionContainer}
     hidePriorities={!showPriorities}
     highlightOverrides={highlightOverrides}
-    resetIndex
     showAllShowSteps={showAllShowSteps}
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     skipToTheEnd={skipToTheEnd}
@@ -241,7 +241,6 @@ export const ExpressionRunnerSingleStep = ({
     hideFuncUnboundBadgeOnExplanation={hideFuncUnboundBadgeOnExplanation}
     hidePlayButton
     explanationsVisibility={explanationsVisibility}
-    resetIndex
     lastAllowedExpressionState={finalState}
     lastAllowedExpressionStateAfterIterations={nextIterations}
     showAllShowSteps={showAllShowSteps}

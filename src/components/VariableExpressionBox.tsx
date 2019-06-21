@@ -6,9 +6,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import FlexCenter from 'src/components/FlexCenter'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
-import ExpressionRunnerContext, {
-  ExpressionRunnerContextProps
-} from 'src/components/ExpressionRunnerContext'
+import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ConditionalContext from 'src/components/ConditionalContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import TopRightBadge from 'src/components/TopRightBadge'
@@ -16,6 +14,7 @@ import { fontSizes, spaces, zIndices, colors, radii } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
+import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression

@@ -21,6 +21,7 @@
     "paths": {
       "src/*": ["src/*"],
       "test/*": ["test/*"],
+      "scripts/*": ["scripts/*"],
       "*": ["node_modules/*", "src/types/*"]
     }
   },
