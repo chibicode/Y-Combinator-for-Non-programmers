@@ -32,6 +32,7 @@ ${Object.keys(config)
       variableSize,
       containerSize,
       hidePlayButton,
+      showAllShowSteps,
       hideBottomRightBadges,
       skipToTheEnd,
       hideFuncUnboundBadgeOnExplanation,
@@ -71,7 +72,8 @@ ${Object.keys(config)
         funcPriorityAggHighlights,
         highlightFunctions,
         superFastForward,
-        highlightNumber
+        highlightNumber,
+        showAllShowSteps
       },
       false,
       null
