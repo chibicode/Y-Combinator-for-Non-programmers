@@ -6,10 +6,7 @@ import {
   isExpressionRunnerSimpleConfig,
   isExpressionRunnerPlayButtonOnlyConfig
 } from 'scripts/lib/expressionRunnerShorthandConfig'
-import {
-  SteppedExpressionContainer,
-  ExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { allMaxWidths } from 'src/lib/theme/maxWidths'
 import {
   InitializeInstruction,
@@ -17,9 +14,10 @@ import {
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
+import * as lessonExpressions from 'src/lib/lessonExpressions'
 
 export interface ExpressionRunnerConfig {
-  expressionContainer: SteppedExpressionContainer
+  lessonExpressionsKey: keyof typeof lessonExpressions
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
@@ -137,7 +135,7 @@ const convertConfig = (
   let runnerProps
   if (isExpressionRunnerSimpleConfig(config)) {
     const {
-      expressionContainer,
+      lessonExpressionsKey,
       initialState,
       isDone,
       skipAlphaConvert,
@@ -163,7 +161,7 @@ const convertConfig = (
     >(config, expressionRunnerSimpleConfigDefault)
 
     runnerProps = {
-      expressionContainer,
+      lessonExpressionsKey,
       hideControls: true,
       hidePriorities: !showPriorities,
       explanationsVisibility,
@@ -189,7 +187,7 @@ const convertConfig = (
     }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
     const {
-      expressionContainer,
+      lessonExpressionsKey,
       initialState,
       skipToTheEnd,
       hideFuncUnboundBadgeOnExplanation,
@@ -215,7 +213,7 @@ const convertConfig = (
     runnerProps = {
       speed,
       highlightNumber,
-      expressionContainer,
+      lessonExpressionsKey,
       hidePriorities: !showPriorities,
       highlightOverrides,
       showAllShowSteps,
@@ -237,7 +235,7 @@ const convertConfig = (
     }
   } else {
     const {
-      expressionContainer,
+      lessonExpressionsKey,
       initialState,
       finalState,
       hideFuncUnboundBadgeOnExplanation,
@@ -256,7 +254,7 @@ const convertConfig = (
     runnerProps = {
       variableSize,
       containerSize,
-      expressionContainer,
+      lessonExpressionsKey,
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
       hidePlayButton: true,

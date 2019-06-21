@@ -1,8 +1,5 @@
 import * as lessonExpressions from 'src/lib/lessonExpressions'
-import {
-  ExpressionContainer,
-  SteppedExpressionContainer
-} from 'src/types/ExpressionContainerTypes'
+import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
 
@@ -17,7 +14,7 @@ export const expressionRunnerSimpleConfigDefault = {
 
 interface ExpressionRunnerSimpleConfig {
   runner: 'simple'
-  expressionContainer: SteppedExpressionContainer
+  lessonExpressionsKey: keyof typeof lessonExpressions
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   isDone?: boolean
   skipAlphaConvert?: boolean
@@ -64,7 +61,7 @@ export function isExpressionRunnerPlayButtonOnlyConfig(
 
 interface ExpressionRunnerPlayButtonOnlyConfig {
   runner: 'playButtonOnly'
-  expressionContainer: SteppedExpressionContainer
+  lessonExpressionsKey: keyof typeof lessonExpressions
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   skipToTheEnd?: boolean
   hideFuncUnboundBadgeOnExplanation?: boolean
@@ -99,7 +96,7 @@ export function isExpressionRunnerSingleStepConfig(
 
 interface ExpressionRunnerSingleStepConfig {
   runner: 'singleStep'
-  expressionContainer: SteppedExpressionContainer
+  lessonExpressionsKey: keyof typeof lessonExpressions
   initialState: ExpressionContainer['previouslyChangedExpressionState']
   finalState: ExpressionContainer['previouslyChangedExpressionState']
   hideFuncUnboundBadgeOnExplanation?: boolean
@@ -120,235 +117,235 @@ export type ExpressionRunnerShorthandConfig =
 const config: Record<string, ExpressionRunnerShorthandConfig> = {
   ilpo: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E1
+    lessonExpressionsKey: 'e1E1'
   },
   imyd: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E2
+    lessonExpressionsKey: 'e1E2'
   },
   emmb: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E3
+    lessonExpressionsKey: 'e1E3'
   },
   jozw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E4
+    lessonExpressionsKey: 'e1E4'
   },
   itbm: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E1
+    lessonExpressionsKey: 'e1E1'
   },
   zwpj: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E2
+    lessonExpressionsKey: 'e1E2'
   },
   dqkc: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E3
+    lessonExpressionsKey: 'e1E3'
   },
   ldox: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E4
+    lessonExpressionsKey: 'e1E4'
   },
   bgfl: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     isDone: true
   },
   tuqr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E3,
+    lessonExpressionsKey: 'e1E3',
     isDone: true
   },
   cpkp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E4,
+    lessonExpressionsKey: 'e1E4',
     isDone: true
   },
   loai: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E5
+    lessonExpressionsKey: 'e1E5'
   },
   vvjn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E5,
+    lessonExpressionsKey: 'e1E5',
     isDone: true
   },
   hbgo: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E6
+    lessonExpressionsKey: 'e1E6'
   },
   olef: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E7
+    lessonExpressionsKey: 'e1E7'
   },
   zzyu: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E5
+    lessonExpressionsKey: 'e1E5'
   },
   qpjt: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E6
+    lessonExpressionsKey: 'e1E6'
   },
   ozbe: {
     runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'active',
     finalState: 'showFuncBound'
   },
   rqjo: {
     runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'showFuncBound',
     finalState: 'betaReducePreviewBefore'
   },
   zzxj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'showFuncBound'
   },
   evqx: {
     runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewAfter'
   },
   keck: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'betaReducePreviewBefore'
   },
   msiw: {
     runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'betaReducePreviewAfter',
     finalState: 'betaReducePreviewCrossed'
   },
   qoms: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'betaReducePreviewAfter'
   },
   mhgm: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'betaReducePreviewCrossed'
   },
   osqo: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     isDone: true
   },
   sgfj: {
     runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     initialState: 'showFuncBound',
     finalState: 'betaReducePreviewBefore'
   },
   gwtp: {
     runner: 'singleStep',
     hideFuncUnboundBadgeOnExplanation: true,
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewCrossed'
   },
   jwzh: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     initialState: 'betaReducePreviewBefore'
   },
   knhw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     initialState: 'betaReducePreviewCrossed'
   },
   ahsd: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     isDone: true
   },
   wunw: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E1,
+    lessonExpressionsKey: 'e1E1',
     initialState: 'active',
     skipToTheEnd: false
   },
   jbam: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e1E2,
+    lessonExpressionsKey: 'e1E2',
     initialState: 'active',
     skipToTheEnd: false
   },
   xwim: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e2E1
+    lessonExpressionsKey: 'e2E1'
   },
   awxz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e2E1,
+    lessonExpressionsKey: 'e2E1',
     isDone: true
   },
   ldts: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e2E1
+    lessonExpressionsKey: 'e2E1'
   },
   rmsd: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e2E1,
+    lessonExpressionsKey: 'e2E1',
     initialState: 'active',
     finalState: 'showFuncUnbound'
   },
   jmqh: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e2E1,
+    lessonExpressionsKey: 'e2E1',
     initialState: 'showFuncUnbound',
     skipToTheEnd: false
   },
   qwke: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e2E1,
+    lessonExpressionsKey: 'e2E1',
     initialState: 'showFuncUnbound'
   },
   cvtc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true
   },
   uemm: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true,
     isDone: true
   },
   xhbi: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true
   },
   dkiy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E2,
+    lessonExpressionsKey: 'e3E2',
     showPriorities: true
   },
   owcy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E3
+    lessonExpressionsKey: 'e3E3'
   },
   aaov: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     initialState: 'default',
     finalState: 'active',
     showPriorities: true
   },
   qxgl: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true,
     initialState: 'active',
     lastAllowedExpressionState: 'betaReducePreviewCrossed',
@@ -356,39 +353,39 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   uwma: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     initialState: 'betaReducePreviewCrossed',
     finalState: 'default',
     showPriorities: true
   },
   kvso: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     nextIteration: true,
     showPriorities: true,
     skipToTheEnd: false
   },
   snsr: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true,
     skipToTheEnd: false
   },
   udic: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     initialState: 'showFuncUnbound',
     showPriorities: true
   },
   xzqu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true,
     nextIteration: true
   },
   dnvw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     nextIteration: true,
     initialState: 'showFuncBound',
     showPriorities: true
@@ -396,64 +393,64 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   nric: {
     runner: 'simple',
     isDone: true,
-    expressionContainer: lessonExpressions.e3E1,
+    lessonExpressionsKey: 'e3E1',
     showPriorities: true
   },
   hdxc: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E2,
+    lessonExpressionsKey: 'e3E2',
     showPriorities: true,
     skipToTheEnd: false
   },
   eial: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E2,
+    lessonExpressionsKey: 'e3E2',
     initialState: 'showFuncUnbound',
     showPriorities: true
   },
   iwkx: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E2,
+    lessonExpressionsKey: 'e3E2',
     nextIteration: true,
     showPriorities: true
   },
   vjaa: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E2,
+    lessonExpressionsKey: 'e3E2',
     initialState: 'showFuncBound',
     showPriorities: true,
     nextIteration: true
   },
   iifq: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E2,
+    lessonExpressionsKey: 'e3E2',
     isDone: true,
     showPriorities: true
   },
   laea: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     showPriorities: true
   },
   cgpd: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     isDone: true
   },
   ijot: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     showPriorities: true
   },
   aezk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'active',
     showPriorities: true
   },
   ainx: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'active',
     lastAllowedExpressionState: 'showFuncBound',
     showPriorities: true,
@@ -463,125 +460,125 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   hykj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'showFuncUnbound',
     showPriorities: true
   },
   ielw: {
     runner: 'simple',
     showAllShowSteps: true,
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'showFuncUnbound',
     showPriorities: true
   },
   dtzu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'betaReducePreviewBefore',
     showPriorities: true,
     explanationsVisibility: 'visible'
   },
   efyy: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewAfter',
     showPriorities: true
   },
   izgz: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E1,
+    lessonExpressionsKey: 'e5E1',
     initialState: 'betaReducePreviewAfter',
     showPriorities: true,
     skipToTheEnd: false
   },
   ljjg: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E5
+    lessonExpressionsKey: 'e3E5'
   },
   ebag: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     isDone: true
   },
   skzv: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E5
+    lessonExpressionsKey: 'e3E5'
   },
   egmr: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     initialState: 'active',
     finalState: 'showFuncBound',
     hideFuncUnboundBadgeOnExplanation: true
   },
   lygz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     initialState: 'betaReducePreviewBefore',
     explanationsVisibility: 'visible'
   },
   fivy: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     initialState: 'betaReducePreviewBefore',
     finalState: 'betaReducePreviewAfter'
   },
   dmwy: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     initialState: 'betaReducePreviewAfter',
     skipToTheEnd: false
   },
   fpsd: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     initialState: 'showFuncBound'
   },
   vegw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e3E5,
+    lessonExpressionsKey: 'e3E5',
     initialState: 'betaReducePreviewAfter'
   },
   zywk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     showPriorities: true,
     initialState: 'default'
   },
   pqfs: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     showPriorities: true,
     initialState: 'active'
   },
   tntc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     initialState: 'active',
     showPriorities: true
   },
   mbrh: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     showPriorities: true,
     isDone: true
   },
   wbru: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     showPriorities: true
   },
   hwtu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     initialState: 'showCallArg',
     showAllShowSteps: true,
     showPriorities: true
   },
   usta: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     initialState: 'showCallArg',
     skipToTheEnd: false,
     showAllShowSteps: true,
@@ -589,77 +586,77 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   mpal: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E2,
+    lessonExpressionsKey: 'e5E2',
     initialState: 'showFuncBound',
     showPriorities: true
   },
   gtdu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E3,
+    lessonExpressionsKey: 'e5E3',
     showPriorities: true
   },
   jmmp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E3,
+    lessonExpressionsKey: 'e5E3',
     showPriorities: true,
     highlightOverrides: { b: 'highlighted' }
   },
   qpkm: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E3,
+    lessonExpressionsKey: 'e5E3',
     showPriorities: true,
     isDone: true
   },
   udvh: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E3,
+    lessonExpressionsKey: 'e5E3',
     showPriorities: true
   },
   dqey: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e5E3,
+    lessonExpressionsKey: 'e5E3',
     initialState: 'active',
     showPriorities: true
   },
   diis: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e5E3,
+    lessonExpressionsKey: 'e5E3',
     initialState: 'active',
     skipToTheEnd: false,
     showPriorities: true
   },
   tiok: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E1,
+    lessonExpressionsKey: 'e6E1',
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 0 }
   },
   tfho: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E2,
+    lessonExpressionsKey: 'e6E2',
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 1 }
   },
   idcf: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E3,
+    lessonExpressionsKey: 'e6E3',
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 2 }
   },
   xemt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E4,
+    lessonExpressionsKey: 'e6E4',
     showPriorities: true
   },
   howy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E12,
+    lessonExpressionsKey: 'e6E12',
     showPriorities: true,
     variableSize: 'md'
   },
   imqy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E13,
+    lessonExpressionsKey: 'e6E13',
     showPriorities: true,
     variableSize: 'md',
     caption: { name: 'secretCodeCaption', number: 5, letter: 'i' },
@@ -667,87 +664,87 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bpwl: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E4,
+    lessonExpressionsKey: 'e6E4',
     showPriorities: true,
     caption: { name: 'secretCodeCaptionSimple', number: 3 }
   },
   eozk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E5
+    lessonExpressionsKey: 'e6E5'
   },
   stio: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E5,
+    lessonExpressionsKey: 'e6E5',
     highlightOverrides: { Amult: 'highlighted' },
     caption: { name: 'numberOfAIsSecretCodeCaption' }
   },
   cqpa: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E6,
+    lessonExpressionsKey: 'e6E6',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'A' }
   },
   blre: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E1,
+    lessonExpressionsKey: 'e6E1',
     showPriorities: true,
     bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️' }
   },
   jmyv: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E2,
+    lessonExpressionsKey: 'e6E2',
     showPriorities: true,
     bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
   },
   ilnb: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E3,
+    lessonExpressionsKey: 'e6E3',
     showPriorities: true,
     bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
   },
   qvxe: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E11,
+    lessonExpressionsKey: 'e6E11',
     showPriorities: true,
     bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' },
     caption: { name: 'secretCodeCaption', number: 2, letter: 'e' }
   },
   qsfp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E4,
+    lessonExpressionsKey: 'e6E4',
     showPriorities: true,
     bottomRightBadgeOverrides: { h: '🅱️', g: '🅰️' }
   },
   sfop: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E10,
+    lessonExpressionsKey: 'e6E10',
     showPriorities: true,
     bottomRightBadgeOverrides: { h: '🅱️', g: '🅰️' },
     caption: { name: 'secretCodeCaption', number: 3, letter: 'g' }
   },
   xpvh: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E1,
+    lessonExpressionsKey: 'e6E1',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 0, letter: 'a' },
     bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️' }
   },
   nicg: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E8,
+    lessonExpressionsKey: 'e6E8',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 0, letter: 'd' }
   },
   qmof: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E7,
+    lessonExpressionsKey: 'e6E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   xgei: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E7,
+    lessonExpressionsKey: 'e6E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -755,7 +752,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   mauj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E9,
+    lessonExpressionsKey: 'e6E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -763,14 +760,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   eavp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E9,
+    lessonExpressionsKey: 'e6E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   wafy: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e6E9,
+    lessonExpressionsKey: 'e6E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -779,20 +776,20 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   badn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e6E9,
+    lessonExpressionsKey: 'e6E9',
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'b' }
   },
   slyk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E1,
+    lessonExpressionsKey: 'e7E1',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'd' }
   },
   eemn: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e7E2,
+    lessonExpressionsKey: 'e7E2',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -802,20 +799,20 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   rceu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E2,
+    lessonExpressionsKey: 'e7E2',
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'b' }
   },
   sisn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E3,
+    lessonExpressionsKey: 'e7E3',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'd' }
   },
   syhh: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e7E4,
+    lessonExpressionsKey: 'e7E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -825,33 +822,33 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ablz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E4,
+    lessonExpressionsKey: 'e7E4',
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 3, letter: 'b' }
   },
   bpza: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E5,
+    lessonExpressionsKey: 'e7E5',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'e' }
   },
   vrvl: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E6,
+    lessonExpressionsKey: 'e7E6',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'g' }
   },
   goif: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E7,
+    lessonExpressionsKey: 'e7E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   fatm: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E11,
+    lessonExpressionsKey: 'e7E11',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -859,7 +856,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bxdf: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E7,
+    lessonExpressionsKey: 'e7E7',
     showPriorities: true,
     caption: { name: 'secretCodeAddCaption' },
     containerSize: 'xs',
@@ -867,7 +864,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   hdwy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E8,
+    lessonExpressionsKey: 'e7E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -875,14 +872,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   entr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E8,
+    lessonExpressionsKey: 'e7E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm'
   },
   brrh: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E10,
+    lessonExpressionsKey: 'e7E10',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -890,7 +887,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   rome: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e7E8,
+    lessonExpressionsKey: 'e7E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -899,14 +896,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dhdk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E8,
+    lessonExpressionsKey: 'e7E8',
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 3, letter: 'c' }
   },
   dyov: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E9,
+    lessonExpressionsKey: 'e7E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -914,7 +911,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   unck: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e7E9,
+    lessonExpressionsKey: 'e7E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -923,21 +920,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   cpbj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e7E9,
+    lessonExpressionsKey: 'e7E9',
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 4, letter: 'c' }
   },
   ksya: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E8,
+    lessonExpressionsKey: 'e8E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   drvu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E1,
+    lessonExpressionsKey: 'e8E1',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -945,19 +942,19 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bdlj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E2,
+    lessonExpressionsKey: 'e8E2',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'e' }
   },
   ifwb: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E3,
+    lessonExpressionsKey: 'e8E3',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 3, letter: 'g' }
   },
   mame: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E4,
+    lessonExpressionsKey: 'e8E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -970,7 +967,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ngus: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e8E4,
+    lessonExpressionsKey: 'e8E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -985,14 +982,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   pzwe: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E4,
+    lessonExpressionsKey: 'e8E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm'
   },
   ujfj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E4,
+    lessonExpressionsKey: 'e8E4',
     showPriorities: true,
     isDone: true,
     variableSize: 'md',
@@ -1000,19 +997,19 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dymt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E5,
+    lessonExpressionsKey: 'e8E5',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'e' }
   },
   mhwq: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E6,
+    lessonExpressionsKey: 'e8E6',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'g' }
   },
   sojz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E7,
+    lessonExpressionsKey: 'e8E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1025,7 +1022,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ktyt: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e8E7,
+    lessonExpressionsKey: 'e8E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1034,14 +1031,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   aeyv: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e8E7,
+    lessonExpressionsKey: 'e8E7',
     showPriorities: true,
     isDone: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'c' }
   },
   bxfv: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E1,
+    lessonExpressionsKey: 'e9E1',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1049,14 +1046,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   fqwj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E1,
+    lessonExpressionsKey: 'e9E1',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   tkqr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E2,
+    lessonExpressionsKey: 'e9E2',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1064,12 +1061,12 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   fhlw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E3,
+    lessonExpressionsKey: 'e9E3',
     caption: { name: 'secretCodeCaption', number: 0, letter: 'f' }
   },
   jliw: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e9E2,
+    lessonExpressionsKey: 'e9E2',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1078,12 +1075,12 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   yehl: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E4,
+    lessonExpressionsKey: 'e9E4',
     caption: { name: 'secretCodeCaption', number: 1, letter: 'f' }
   },
   mrky: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E5,
+    lessonExpressionsKey: 'e9E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1091,7 +1088,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ctyl: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e9E5,
+    lessonExpressionsKey: 'e9E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1100,12 +1097,12 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   kupy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E6,
+    lessonExpressionsKey: 'e9E6',
     caption: { name: 'secretCodeCaption', number: 2, letter: 'f' }
   },
   qdkf: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E7,
+    lessonExpressionsKey: 'e9E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1113,7 +1110,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   gtwk: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e9E7,
+    lessonExpressionsKey: 'e9E7',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1123,7 +1120,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   nlxe: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E1,
+    lessonExpressionsKey: 'e9E1',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1131,7 +1128,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dvrw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e9E8,
+    lessonExpressionsKey: 'e9E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1140,12 +1137,12 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   wbpx: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e10E1,
+    lessonExpressionsKey: 'e10E1',
     showPriorities: true
   },
   gszp: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E2,
+    lessonExpressionsKey: 'e10E2',
     showPriorities: true,
     skipToTheEnd: false,
     speed: 1.75,
@@ -1153,7 +1150,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   kntz: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E3,
+    lessonExpressionsKey: 'e10E3',
     showPriorities: true,
     skipToTheEnd: false,
     speed: 1.75,
@@ -1161,7 +1158,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bmms: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E4,
+    lessonExpressionsKey: 'e10E4',
     showPriorities: true,
     skipAlphaConvert: true,
     speed: 1.75,
@@ -1169,7 +1166,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   gmcn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e10E4,
+    lessonExpressionsKey: 'e10E4',
     showPriorities: true,
     skipAlphaConvert: true,
     initialState: 'showFuncUnbound',
@@ -1179,7 +1176,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   vpjw: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E4,
+    lessonExpressionsKey: 'e10E4',
     explanationsVisibility: 'hiddenInitialAndLastPausedOnly',
     skipAlphaConvert: true,
     showPriorities: true,
@@ -1191,7 +1188,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   kjyi: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E4,
+    lessonExpressionsKey: 'e10E4',
     skipAlphaConvert: true,
     showPriorities: true,
     nextIteration: true,
@@ -1201,7 +1198,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dpst: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e10E2,
+    lessonExpressionsKey: 'e10E2',
     showPriorities: true,
     skipAlphaConvert: true,
     initialState: 'showFuncUnbound',
@@ -1209,7 +1206,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   xhwx: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E2,
+    lessonExpressionsKey: 'e10E2',
     skipAlphaConvert: true,
     showPriorities: true,
     initialState: 'showFuncUnbound',
@@ -1219,7 +1216,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ttvy: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e10E2,
+    lessonExpressionsKey: 'e10E2',
     skipAlphaConvert: true,
     showPriorities: true,
     nextIteration: true,
@@ -1229,13 +1226,13 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   lrja: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E1,
+    lessonExpressionsKey: 'e11E1',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 1, letter: 'd' }
   },
   bcae: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E2,
+    lessonExpressionsKey: 'e11E2',
     showPriorities: true,
     skipAlphaConvert: true,
     containerSize: 'xs',
@@ -1243,7 +1240,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   zuam: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e11E2,
+    lessonExpressionsKey: 'e11E2',
     showPriorities: true,
     skipToTheEnd: false,
     skipAlphaConvert: true,
@@ -1253,7 +1250,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   kfcw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E2,
+    lessonExpressionsKey: 'e11E2',
     showPriorities: true,
     isDone: true,
     skipAlphaConvert: true,
@@ -1263,7 +1260,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   jxyg: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E2,
+    lessonExpressionsKey: 'e11E2',
     showPriorities: true,
     initialState: 'showFuncUnbound',
     containerSize: 'xs',
@@ -1275,7 +1272,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   oiwu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E3,
+    lessonExpressionsKey: 'e11E3',
     showPriorities: true,
     initialState: 'showFuncUnbound',
     containerSize: 'xs',
@@ -1287,7 +1284,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   uqpp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E3,
+    lessonExpressionsKey: 'e11E3',
     showPriorities: true,
     initialState: 'alphaConvertDone',
     containerSize: 'xs',
@@ -1298,7 +1295,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   hxmk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E3,
+    lessonExpressionsKey: 'e11E3',
     showPriorities: true,
     initialState: 'alphaConvertDone',
     containerSize: 'xs',
@@ -1309,7 +1306,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   rzbq: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e11E3,
+    lessonExpressionsKey: 'e11E3',
     showPriorities: true,
     initialState: 'alphaConvertDone',
     containerSize: 'xs',
@@ -1319,7 +1316,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   jlet: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E3,
+    lessonExpressionsKey: 'e11E3',
     isDone: true,
     showPriorities: true,
     containerSize: 'xs',
@@ -1328,7 +1325,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   kqip: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E2,
+    lessonExpressionsKey: 'e11E2',
     showPriorities: true,
     initialState: 'needsAlphaConvert',
     containerSize: 'xs',
@@ -1337,7 +1334,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   tkbr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e11E2,
+    lessonExpressionsKey: 'e11E2',
     showPriorities: true,
     initialState: 'alphaConvertDone',
     containerSize: 'xs',
@@ -1346,27 +1343,27 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   gopk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E1,
+    lessonExpressionsKey: 'e12E1',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   imgp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E2,
+    lessonExpressionsKey: 'e12E2',
     showPriorities: true,
     caption: { name: 'secretCodeCaption', number: 2, letter: 'g' }
   },
   lxnu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E3,
+    lessonExpressionsKey: 'e12E3',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   ccon: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e12E3,
+    lessonExpressionsKey: 'e12E3',
     showPriorities: true,
     skipToTheEnd: false,
     containerSize: 'xs',
@@ -1375,7 +1372,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   npfx: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E3,
+    lessonExpressionsKey: 'e12E3',
     isDone: true,
     showPriorities: true,
     containerSize: 'xs',
@@ -1384,7 +1381,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   pnob: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E1,
+    lessonExpressionsKey: 'e12E1',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1392,7 +1389,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   rqdn: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e12E3,
+    lessonExpressionsKey: 'e12E3',
     showPriorities: true,
     explanationsVisibility: 'hiddenInitialPausedOnly',
     lastAllowedExpressionState: 'needsAlphaConvert',
@@ -1403,7 +1400,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   fiab: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e12E4,
+    lessonExpressionsKey: 'e12E4',
     showPriorities: true,
     explanationsVisibility: 'hiddenInitialPausedOnly',
     lastAllowedExpressionState: 'needsAlphaConvert',
@@ -1414,7 +1411,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   plxd: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e12E3,
+    lessonExpressionsKey: 'e12E3',
     showPriorities: true,
     explanationsVisibility: 'visible',
     initialState: 'needsAlphaConvert',
@@ -1424,7 +1421,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   zaoc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E4,
+    lessonExpressionsKey: 'e12E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1432,11 +1429,11 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   xekr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E5
+    lessonExpressionsKey: 'e12E5'
   },
   lial: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E6,
+    lessonExpressionsKey: 'e12E6',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1444,29 +1441,29 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   uqts: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E6,
+    lessonExpressionsKey: 'e12E6',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   ojma: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E7
+    lessonExpressionsKey: 'e12E7'
   },
   yykk: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e12E7
+    lessonExpressionsKey: 'e12E7'
   },
   exww: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E8,
+    lessonExpressionsKey: 'e12E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   qgun: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E8,
+    lessonExpressionsKey: 'e12E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1475,21 +1472,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   yvia: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E9,
+    lessonExpressionsKey: 'e12E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   qifg: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E10,
+    lessonExpressionsKey: 'e12E10',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   ssns: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E10,
+    lessonExpressionsKey: 'e12E10',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1504,7 +1501,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   tboe: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E13,
+    lessonExpressionsKey: 'e12E13',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -1519,69 +1516,69 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ufyc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e12E11,
+    lessonExpressionsKey: 'e12E11',
     showPriorities: true
   },
   pbgd: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e12E12,
+    lessonExpressionsKey: 'e12E12',
     showPriorities: true,
     skipToTheEnd: false,
     speed: 1.75
   },
   hvdn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E1,
+    lessonExpressionsKey: 'e13E1',
     caption: { name: 'ifCaption', ifZero: 'y', ifNonZero: 'z' }
   },
   vxnm: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E2
+    lessonExpressionsKey: 'e13E2'
   },
   xefx: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e13E2,
+    lessonExpressionsKey: 'e13E2',
     skipToTheEnd: false
   },
   wcsz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E2,
+    lessonExpressionsKey: 'e13E2',
     explanationsVisibility: 'visible',
     initialState: 'conditionActive'
   },
   psqo: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E2,
+    lessonExpressionsKey: 'e13E2',
     explanationsVisibility: 'visible',
     initialState: 'falseCaseActive'
   },
   xsby: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E2,
+    lessonExpressionsKey: 'e13E2',
     isDone: true
   },
   repd: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     showPriorities: true
   },
   cnoq: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     skipToTheEnd: false,
     showPriorities: true,
     speed: 1.75
   },
   dwnj: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     skipToTheEnd: false,
     showPriorities: true,
     lastAllowedExpressionState: 'default'
   },
   guuf: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     showPriorities: true,
     explanationsVisibility: 'visible',
     nextIteration: true,
@@ -1589,7 +1586,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   lrrr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     showPriorities: true,
     nextIteration: true,
     explanationsVisibility: 'visible',
@@ -1597,7 +1594,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dpar: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     showPriorities: true,
     speed: 1.75,
     skipToTheEnd: false,
@@ -1607,21 +1604,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ylil: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E4,
+    lessonExpressionsKey: 'e13E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   vqcw: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E5,
+    lessonExpressionsKey: 'e13E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md'
   },
   dcfi: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e13E6,
+    lessonExpressionsKey: 'e13E6',
     showPriorities: true,
     skipToTheEnd: false,
     containerSize: 'xs',
@@ -1630,7 +1627,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bmnc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E6,
+    lessonExpressionsKey: 'e13E6',
     isDone: true,
     showPriorities: true,
     containerSize: 'xs',
@@ -1639,53 +1636,53 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ufze: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E3,
+    lessonExpressionsKey: 'e13E3',
     showPriorities: true,
     isDone: true
   },
   rreb: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E7,
+    lessonExpressionsKey: 'e13E7',
     caption: { name: 'whatCanComputeFactorial', start: 3 }
   },
   kqzn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E8,
+    lessonExpressionsKey: 'e13E8',
     caption: { name: 'whatCanComputeFactorial', start: 4 }
   },
   aimh: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E12,
+    lessonExpressionsKey: 'e13E12',
     caption: { name: 'whatCanComputeFactorial', start: 5 }
   },
   lyod: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E9,
+    lessonExpressionsKey: 'e13E9',
     caption: { name: 'secretCodeMultiplyCaption' }
   },
   imba: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E10,
+    lessonExpressionsKey: 'e13E10',
     caption: { name: 'secretCodeMultiplyCaption' }
   },
   zifr: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e13E11
+    lessonExpressionsKey: 'e13E11'
   },
   omlc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e13E11,
+    lessonExpressionsKey: 'e13E11',
     caption: { name: 'secretCodeMultiplyCaption', arg1: 2, arg2: 3 }
   },
   zxux: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     variableSize: 'md'
   },
   itzl: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     initialState: 'active',
     finalState: 'magicalExpanded',
@@ -1693,7 +1690,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   gtnr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIteration: true,
     highlightOverrideActiveAfterStart: true,
@@ -1703,7 +1700,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   cfms: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E6,
+    lessonExpressionsKey: 'e14E6',
     showPriorities: true,
     nextIteration: true,
     highlightOverrideActiveAfterStart: true,
@@ -1713,7 +1710,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   syfp: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIteration: true,
     skipToTheEnd: false,
@@ -1723,7 +1720,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   wdol: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 2,
     skipToTheEnd: false,
@@ -1734,7 +1731,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   luir: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 3,
     skipToTheEnd: false,
@@ -1744,7 +1741,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ifxr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 4,
     initialState: 'default',
@@ -1755,7 +1752,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   vkpm: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 4,
     variableSize: 'sm',
@@ -1764,7 +1761,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   mihy: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 4,
     skipToTheEnd: false,
@@ -1776,14 +1773,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dxum: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 4,
     variableSize: 'sm'
   },
   davn: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     initialState: 'default',
     nextIterations: 8,
@@ -1794,7 +1791,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   qltx: {
     runner: 'singleStep',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 8,
     initialState: 'active',
@@ -1803,7 +1800,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   zvet: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 8,
     skipToTheEnd: false,
@@ -1815,7 +1812,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   yvty: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 8,
     explanationsVisibility: 'visible',
@@ -1824,7 +1821,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   umce: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 8,
     initialState: 'trueCaseActive',
@@ -1833,7 +1830,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   orhx: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 12,
     variableSize: 'sm',
@@ -1842,21 +1839,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   wqdb: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 12,
     variableSize: 'sm'
   },
   xtjt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     isDone: true,
     showPriorities: true,
     variableSize: 'sm'
   },
   mnfh: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     skipToTheEnd: false,
     speed: 5,
@@ -1864,20 +1861,20 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   yklt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E2,
+    lessonExpressionsKey: 'e14E2',
     showPriorities: true,
     variableSize: 'sm'
   },
   fsmk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E2,
+    lessonExpressionsKey: 'e14E2',
     showPriorities: true,
     nextIterations: 16,
     variableSize: 'sm'
   },
   peoq: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E2,
+    lessonExpressionsKey: 'e14E2',
     showPriorities: true,
     skipToTheEnd: false,
     speed: 5,
@@ -1887,7 +1884,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   nfkp: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e14E2,
+    lessonExpressionsKey: 'e14E2',
     showPriorities: true,
     skipToTheEnd: false,
     speed: 1.75,
@@ -1896,84 +1893,84 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   fora: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E3,
+    lessonExpressionsKey: 'e14E3',
     showPriorities: true,
     variableSize: 'sm'
   },
   eobj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E3,
+    lessonExpressionsKey: 'e14E3',
     showPriorities: true,
     variableSize: 'sm',
     nextIterations: 20
   },
   osqg: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E3,
+    lessonExpressionsKey: 'e14E3',
     showPriorities: true,
     variableSize: 'sm',
     isDone: true
   },
   vrwt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     variableSize: 'md'
   },
   lodr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E2,
+    lessonExpressionsKey: 'e14E2',
     variableSize: 'md'
   },
   fjyk: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E3,
+    lessonExpressionsKey: 'e14E3',
     variableSize: 'md'
   },
   miez: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E4,
+    lessonExpressionsKey: 'e14E4',
     variableSize: 'md'
   },
   fapu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E5,
+    lessonExpressionsKey: 'e14E5',
     variableSize: 'sm'
   },
   xjae: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E6,
+    lessonExpressionsKey: 'e14E6',
     variableSize: 'md'
   },
   xsve: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E6,
+    lessonExpressionsKey: 'e14E6',
     variableSize: 'md',
     explanationsVisibility: 'visible',
     initialState: 'magicalExpanded'
   },
   igrt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     variableSize: 'sm'
   },
   woft: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 12,
     variableSize: 'sm'
   },
   urhc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     variableSize: 'sm',
     isDone: true
   },
   tdau: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E1,
+    lessonExpressionsKey: 'e15E1',
     showPriorities: true,
     highlightOverrides: { s: 'highlighted' },
     variableSize: 'md',
@@ -1981,7 +1978,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   lkwr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E2,
+    lessonExpressionsKey: 'e15E2',
     showPriorities: true,
     highlightOverrides: { s: 'highlighted' },
     variableSize: 'md',
@@ -1989,7 +1986,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   osih: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E3,
+    lessonExpressionsKey: 'e15E3',
     showPriorities: true,
     highlightOverrides: { a: 'highlighted', b: 'highlighted' },
     variableSize: 'xs',
@@ -1997,21 +1994,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dkbt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E3,
+    lessonExpressionsKey: 'e15E3',
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs'
   },
   hzlj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E4,
+    lessonExpressionsKey: 'e15E4',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs'
   },
   plts: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     skipToTheEnd: false,
     containerSize: 'xs',
@@ -2022,7 +2019,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   pnux: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     highlightFunctions: true,
     containerSize: 'xs',
@@ -2031,7 +2028,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   zhby: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E6,
+    lessonExpressionsKey: 'e15E6',
     showPriorities: true,
     variableSize: 'md',
     highlightOverrides: { abbreviated: 'highlighted' },
@@ -2039,7 +2036,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   xcnu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E6,
+    lessonExpressionsKey: 'e15E6',
     showPriorities: true,
     variableSize: 'md',
     caption: { name: 'ycChangedCaption', fromNumber: 3 },
@@ -2048,7 +2045,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   iisx: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 4,
     initialState: 'default',
@@ -2059,7 +2056,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   pzui: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2071,7 +2068,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   kfrt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2080,7 +2077,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   iygh: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E7,
+    lessonExpressionsKey: 'e15E7',
     showPriorities: true,
     variableSize: 'md',
     highlightOverrides: { abbreviated: 'highlighted' },
@@ -2088,7 +2085,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ines: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E7,
+    lessonExpressionsKey: 'e15E7',
     showPriorities: true,
     variableSize: 'md',
     caption: { name: 'ycChangedCaption', fromNumber: 2 },
@@ -2097,7 +2094,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   gcnt: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e14E1,
+    lessonExpressionsKey: 'e14E1',
     showPriorities: true,
     nextIterations: 8,
     initialState: 'default',
@@ -2108,7 +2105,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   pgtx: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2120,7 +2117,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   gswd: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2132,7 +2129,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   jruw: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2142,14 +2139,14 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   nnhc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs'
   },
   pzvr: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs',
@@ -2157,7 +2154,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   mscz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E5,
+    lessonExpressionsKey: 'e15E5',
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs',
@@ -2165,7 +2162,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   jreq: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E8,
+    lessonExpressionsKey: 'e15E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2177,7 +2174,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   vpmj: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E8,
+    lessonExpressionsKey: 'e15E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2185,7 +2182,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   uitu: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E8,
+    lessonExpressionsKey: 'e15E8',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2193,7 +2190,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bozr: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E9,
+    lessonExpressionsKey: 'e15E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2205,7 +2202,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   angp: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E9,
+    lessonExpressionsKey: 'e15E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2213,7 +2210,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   wxqy: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E9,
+    lessonExpressionsKey: 'e15E9',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2221,21 +2218,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   wcwd: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E10,
+    lessonExpressionsKey: 'e15E10',
     showPriorities: true,
     variableSize: 'xs',
     containerSize: 'xs'
   },
   bcgc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E11,
+    lessonExpressionsKey: 'e15E11',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs'
   },
   szou: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E12,
+    lessonExpressionsKey: 'e15E12',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2243,12 +2240,12 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ysji: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E12,
+    lessonExpressionsKey: 'e15E12',
     isDone: true
   },
   ilrn: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E12,
+    lessonExpressionsKey: 'e15E12',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2260,7 +2257,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   xsgz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E12,
+    lessonExpressionsKey: 'e15E12',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2268,7 +2265,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   dret: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E12,
+    lessonExpressionsKey: 'e15E12',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2276,7 +2273,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   bpsz: {
     runner: 'playButtonOnly',
-    expressionContainer: lessonExpressions.e15E13,
+    lessonExpressionsKey: 'e15E13',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xxs',
@@ -2288,7 +2285,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   fotb: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E13,
+    lessonExpressionsKey: 'e15E13',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2296,7 +2293,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   zfcz: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E13,
+    lessonExpressionsKey: 'e15E13',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs',
@@ -2304,21 +2301,21 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   jtai: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E14,
+    lessonExpressionsKey: 'e15E14',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'xs'
   },
   nmoc: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E15,
+    lessonExpressionsKey: 'e15E15',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm'
   },
   cnef: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E15,
+    lessonExpressionsKey: 'e15E15',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'sm',
@@ -2326,7 +2323,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   news: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E16,
+    lessonExpressionsKey: 'e15E16',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -2334,7 +2331,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   xrzv: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e15E17,
+    lessonExpressionsKey: 'e15E17',
     showPriorities: true,
     containerSize: 'xs',
     variableSize: 'md',
@@ -2342,7 +2339,7 @@ const config: Record<string, ExpressionRunnerShorthandConfig> = {
   },
   ytcf: {
     runner: 'simple',
-    expressionContainer: lessonExpressions.e16E1
+    lessonExpressionsKey: 'e16E1'
   }
 }
 
