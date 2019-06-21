@@ -8,12 +8,12 @@ import prettierFormat from 'scripts/lib/prettierFormat'
 
 const regenerate = () => {
   glob(
-    './scripts/lib/runnerConfigs/*.json',
+    './scripts/lib/runnerConfigs/*.ts',
     (_: any, files: readonly string[]) => {
       files.forEach(file => {
         const key = file
           .replace('./scripts/lib/runnerConfigs/', '')
-          .replace('.json', '')
+          .replace('.ts', '')
         import(file.replace('./', '')).then(
           (configBase: ExpressionRunnerShorthandConfig) => {
             const config = buildExpressionRunnerConfigFromShorthand(configBase)
@@ -98,7 +98,7 @@ ${files
   .map(file => {
     const key = file
       .replace('./scripts/lib/runnerConfigs/', '')
-      .replace('.json', '')
+      .replace('.ts', '')
     const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
     return `export { default as ${componentName} } from 'src/components/Runners/${componentName}'`
   })
