@@ -16,7 +16,7 @@ import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
-interface ExpressionRunnerPrecomputedParams {
+interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
   speed: ExpressionRunnerConfig['speed']
   showOnlyFocused: ExpressionRunnerConfig['showOnlyFocused']
@@ -56,35 +56,30 @@ const numSecondsRemaining = (numStepsRemaining: number, speed: number) =>
   Math.floor((numStepsRemaining * autoplaySpeed(speed)) / 1000) + 1
 
 const ExpressionRunnerPrecomputed = ({
-  params
-}: {
-  params: ExpressionRunnerPrecomputedParams
-}) => {
-  const {
-    speed,
-    showOnlyFocused,
-    caption,
-    expressionContainers,
-    hideControls,
-    explanationsVisibility,
-    hidePriorities,
-    variableSize,
-    containerSize,
-    hidePlayButton,
-    hideBottomRightBadges,
-    skipToTheEnd,
-    hideFuncUnboundBadgeOnExplanation,
-    highlightOverridesCallArgAndFuncUnboundOnly,
-    bottomRightBadgeOverrides,
-    highlightOverrides,
-    highlightOverrideActiveAfterStart,
-    argPriorityAggHighlights,
-    funcPriorityAggHighlights,
-    highlightFunctions,
-    superFastForward,
-    highlightNumber,
-    showAllShowSteps
-  } = params
+  speed,
+  showOnlyFocused,
+  caption,
+  expressionContainers,
+  hideControls,
+  explanationsVisibility,
+  hidePriorities,
+  variableSize,
+  containerSize,
+  hidePlayButton,
+  hideBottomRightBadges,
+  skipToTheEnd,
+  hideFuncUnboundBadgeOnExplanation,
+  highlightOverridesCallArgAndFuncUnboundOnly,
+  bottomRightBadgeOverrides,
+  highlightOverrides,
+  highlightOverrideActiveAfterStart,
+  argPriorityAggHighlights,
+  funcPriorityAggHighlights,
+  highlightFunctions,
+  superFastForward,
+  highlightNumber,
+  showAllShowSteps
+}: ExpressionRunnerPrecomputedProps) => {
   const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState

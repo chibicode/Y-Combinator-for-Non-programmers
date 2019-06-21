@@ -1,7 +1,7 @@
 import chokidar from 'chokidar'
 import glob from 'glob'
 import fs from 'fs'
-import prettier from 'prettier'
+import prettierFormat from 'scripts/lib/prettierFormat'
 import { exec } from 'child_process'
 
 const regenerate = () => {
@@ -29,14 +29,13 @@ const regenerate = () => {
       .map(name => `'${name}': ${toComponentName(name)}`)
       .join(',\n')
 
-    const fileContents = prettier.format(
+    const fileContents = prettierFormat(
       `// WARNING: Do not modify this file - it's generated automatically.
       ${importString}
 
       export default {
         ${bundleObjectString}
-      }`,
-      { semi: false, singleQuote: true, parser: 'typescript' }
+      }`
     )
 
     fs.writeFile('./src/lib/emojisBundle.tsx', fileContents, err => {

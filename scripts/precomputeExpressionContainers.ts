@@ -1,26 +1,24 @@
 import util from 'util'
-import fs from 'fs'
+import fs from 'fs-extra'
 import expressionRunnerShorthandConfig from 'scripts/lib/expressionRunnerShorthandConfig'
 import buildExpressionContainers from 'scripts/lib/buildExpressionContainers'
 import buildExpressionRunnerConfigFromShorthand, {
   ExpressionRunnerConfig
 } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
-import prettier from 'prettier'
+// import prettier from 'prettier'
+import fsExtra from 'fs-extra'
+import prettierFormat from 'scripts/lib/prettierFormat'
 
 const regenerate = () => {
   const config: Record<
     string,
     ExpressionRunnerConfig
   > = buildExpressionRunnerConfigFromShorthand(expressionRunnerShorthandConfig)
-  fs.writeFileSync(
-    'src/components/R.tsx',
-    prettier.format(
-      `
-import React from 'react'
-import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
 
-${Object.keys(config)
-  .map(key => {
+  fsExtra.emptyDirSync('src/components/Runners')
+
+  Object.keys(config).forEach((key, index) => {
+    const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
     const expressionContainers = buildExpressionContainers(config[key])
     const {
       speed,
@@ -47,9 +45,11 @@ ${Object.keys(config)
       highlightNumber
     } = config[key]
 
-    return `export const ${key[0].toUpperCase()}${key.slice(
-      1
-    )} = () => <ExpressionRunnerPrecomputed params={${util.inspect(
+    const fileContents = prettierFormat(`
+    import React from 'react'
+    import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
+
+    const ${componentName} = () => <ExpressionRunnerPrecomputed {...${util.inspect(
       {
         expressionContainers,
         speed,
@@ -77,13 +77,33 @@ ${Object.keys(config)
       },
       false,
       null
-    )}} />`
-  })
-  .join('\n\n')}
-      `,
-      { semi: false, singleQuote: true, parser: 'typescript' }
+    )}} />
+
+    export default ${componentName}
+    `)
+
+    fs.writeFileSync(
+      `src/components/Runners/${componentName}.tsx`,
+      fileContents
     )
-  )
+
+    console.log(
+      `Generated ${componentName} / ${index + 1} out of ${
+        Object.keys(config).length
+      }`
+    )
+  })
+
+  const indexContents = prettierFormat(`
+${Object.keys(config)
+  .map(key => {
+    const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
+    return `export { default as ${componentName} } from 'src/components/Runners/${componentName}'`
+  })
+  .join('\n')}
+`)
+
+  fs.writeFileSync('src/components/Runners/index.ts', indexContents)
 }
 
 regenerate()

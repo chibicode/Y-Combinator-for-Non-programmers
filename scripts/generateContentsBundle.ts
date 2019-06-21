@@ -1,7 +1,7 @@
 import chokidar from 'chokidar'
 import glob from 'glob'
 import fs from 'fs'
-import prettier from 'prettier'
+import prettierFormat from 'scripts/lib/prettierFormat'
 
 const regenerate = (path?: string) => {
   glob(
@@ -34,14 +34,13 @@ const regenerate = (path?: string) => {
         )
         .join(',\n')
 
-      const fileContents = prettier.format(
+      const fileContents = prettierFormat(
         `// WARNING: Do not modify this file - it's generated automatically.
       ${importString}
 
       export default {
         ${bundleObjectString}
-      }`,
-        { semi: false, singleQuote: true, parser: 'typescript' }
+      }`
       )
 
       fs.writeFile('./src/lib/contentsBundle.tsx', fileContents, err => {
