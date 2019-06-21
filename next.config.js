@@ -7,7 +7,8 @@ const config = withTypescript({
     config.resolve.alias = Object.assign({}, config.resolve.alias, {
       // Must also change tsconfig.json
       src: path.resolve(__dirname, 'src'),
-      test: path.resolve(__dirname, 'test')
+      test: path.resolve(__dirname, 'test'),
+      scripts: path.resolve(__dirname, 'scripts')
     })
     return config
   },
