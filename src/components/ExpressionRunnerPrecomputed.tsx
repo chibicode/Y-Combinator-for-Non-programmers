@@ -16,7 +16,7 @@ import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
-interface ExpressionRunnerPrecomputedProps {
+export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
   speed: ExpressionRunnerConfig['speed']
   showOnlyFocused: ExpressionRunnerConfig['showOnlyFocused']

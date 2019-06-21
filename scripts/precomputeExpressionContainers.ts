@@ -21,7 +21,6 @@ const regenerate = () => {
             default: ExpressionRunnerShorthandConfig
           }) => {
             const config = buildExpressionRunnerConfigFromShorthand(configBase)
-            const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
             const expressionContainers = buildExpressionContainers(config)
             const {
               speed,
@@ -48,44 +47,59 @@ const regenerate = () => {
               highlightNumber
             } = config
 
+            const expressionContainersContents = prettierFormat(`
+              import { ExpressionRunnerPrecomputedProps } from 'src/components/ExpressionRunnerPrecomputed'
+
+              const params: ExpressionRunnerPrecomputedProps = ${util.inspect(
+                {
+                  expressionContainers,
+                  speed,
+                  showOnlyFocused,
+                  caption,
+                  hideControls,
+                  explanationsVisibility,
+                  hidePriorities,
+                  variableSize,
+                  containerSize,
+                  hidePlayButton,
+                  hideBottomRightBadges,
+                  skipToTheEnd,
+                  hideFuncUnboundBadgeOnExplanation,
+                  highlightOverridesCallArgAndFuncUnboundOnly,
+                  bottomRightBadgeOverrides,
+                  highlightOverrides,
+                  highlightOverrideActiveAfterStart,
+                  argPriorityAggHighlights,
+                  funcPriorityAggHighlights,
+                  highlightFunctions,
+                  superFastForward,
+                  highlightNumber,
+                  showAllShowSteps
+                },
+                {
+                  depth: null,
+                  maxArrayLength: null
+                }
+              )}
+
+              export default params
+              `)
+
+            fs.writeFileSync(
+              `src/lib/runners/${key}.ts`,
+              expressionContainersContents
+            )
+            const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
+
             const fileContents = prettierFormat(`
-    import React from 'react'
-    import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
+              import React from 'react'
+              import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
+              import config from 'src/lib/runners/${key}'
 
-    const ${componentName} = () => <ExpressionRunnerPrecomputed {...${util.inspect(
-              {
-                expressionContainers,
-                speed,
-                showOnlyFocused,
-                caption,
-                hideControls,
-                explanationsVisibility,
-                hidePriorities,
-                variableSize,
-                containerSize,
-                hidePlayButton,
-                hideBottomRightBadges,
-                skipToTheEnd,
-                hideFuncUnboundBadgeOnExplanation,
-                highlightOverridesCallArgAndFuncUnboundOnly,
-                bottomRightBadgeOverrides,
-                highlightOverrides,
-                highlightOverrideActiveAfterStart,
-                argPriorityAggHighlights,
-                funcPriorityAggHighlights,
-                highlightFunctions,
-                superFastForward,
-                highlightNumber,
-                showAllShowSteps
-              },
-              {
-                depth: null,
-                maxArrayLength: null
-              }
-            )}} />
+              const ${componentName} = () => <ExpressionRunnerPrecomputed {...config} />
 
-    export default ${componentName}
-    `)
+              export default ${componentName}
+              `)
 
             fs.writeFileSync(
               `src/components/Runners/${componentName}.tsx`,
