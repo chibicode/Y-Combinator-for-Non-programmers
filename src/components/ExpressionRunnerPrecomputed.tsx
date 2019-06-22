@@ -114,7 +114,7 @@ const ExpressionRunnerPrecomputed = ({
           }
         }
         // As soon as canStepForward is false, cancel immediately
-        if (currentIndex >= expressionContainers.length - 1) {
+        if (currentIndex === expressionContainers.length - 1) {
           actions.pause()
         }
       }, autoplaySpeed(speed))
@@ -307,7 +307,9 @@ const ExpressionRunnerPrecomputed = ({
             </>
           )}
           {!hideControls &&
-            currentIndex >= expressionContainers.length - 1 &&
+            currentIndex === expressionContainers.length - 1 &&
+            expressionContainers[expressionContainers.length - 1]
+              .containerState !== 'done' &&
             !hidePlayButton && (
               <ExpressionRunnerCaptionWrapper
                 css={css`
