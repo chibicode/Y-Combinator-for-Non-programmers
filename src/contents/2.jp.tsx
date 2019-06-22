@@ -2,7 +2,6 @@ import React from 'react'
 import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import AER from 'src/components/AER'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -11,6 +10,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import * as R from 'src/components/Runners'
 
 export const BasicRules = ({
   includeFuncUnbound
@@ -29,29 +29,29 @@ export const BasicRules = ({
       )}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
-    {AER.zzxj}
+    <R.Zzxj />
     <P>
       2. <InlineHeader>一致チェック:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </P>
-    {AER.keck}
+    <R.Keck />
     <P>
       3. <InlineHeader>コピーする:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
-    {AER.qoms}
+    <R.Qoms />
     <P>
       4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </P>
-    {AER.mhgm}
+    <R.Mhgm />
     <ExpressionRunnerSeparator />
-    {AER.osqo}
+    <R.Osqo />
   </>
 )
 
@@ -76,9 +76,9 @@ export default () => (
               ここでは、前回のはじめに登場した弁当箱(<Strong>例その1</Strong>
               )を使って説明します:
             </P>
-            {AER.ilpo}
+            <R.Ilpo />
             <ExpressionRunnerSeparator />
-            {AER.osqo}
+            <R.Osqo />
           </>
         )
       },
@@ -108,7 +108,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.ozbe}
+            <R.Ozbe />
             <P>
               <EmojiWithText letter="b" />に
               <BottomRightBadge inline bottomRightBadgeType="callArg" />
@@ -145,7 +145,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.rqjo}
+            <R.Rqjo />
             <P>
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
@@ -180,7 +180,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.evqx}
+            <R.Evqx />
             <P>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />の
               <EmojiWithText letter="b" />が
@@ -213,13 +213,13 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.msiw}
+            <R.Msiw />
             <P>
               そして、最終的に
               <EmojiWithText letter="b" />
               だけになります。
             </P>
-            {AER.osqo}
+            <R.Osqo />
             <P>以上です！簡単だったでしょう？</P>
           </>
         )
@@ -263,7 +263,7 @@ export default () => (
               が一致しません。
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.sgfj}
+            <R.Sgfj />
             <P>こういう場合どうするかというと…(下に続く)</P>
           </>
         )
@@ -287,13 +287,13 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.gwtp}
+            <R.Gwtp />
             <P>
               そして、最終的に
               <EmojiWithText letter="d" />
               だけになります。
             </P>
-            {AER.ahsd}
+            <R.Ahsd />
           </>
         )
       },
@@ -320,9 +320,9 @@ export default () => (
               </Strong>
               。
             </P>
-            {AER.jwzh}
+            <R.Jwzh />
             <ExpressionRunnerSeparator />
-            {AER.knhw}
+            <R.Knhw />
           </>
         )
       },
@@ -346,12 +346,12 @@ export default () => (
             <P>
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.wunw}
+            <R.Wunw />
             <P>
               こちらも
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.jbam}
+            <R.Jbam />
             <P>法則を覚えたら、次に進みましょう！</P>
           </>
         )
@@ -371,7 +371,7 @@ export default () => (
               <Strong>上に2マス、下にも2マス</Strong>
               ありますね。この場合はどうなるのでしょうか？
             </P>
-            {AER.ljjg}
+            <R.Ljjg />
           </>
         )
       },
@@ -389,11 +389,11 @@ export default () => (
               <H args={{ name: 'yesNoQuiz' }} />
               をやってみましょう。勘で答えてみてください。
             </P>
-            {AER.ljjg}
+            <R.Ljjg />
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.ebag}
+            <R.Ebag />
             <YesNoButtons answer="yes" />
           </>
         )
@@ -410,7 +410,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.skzv}
+            <R.Skzv />
             <P>どんな法則でこうなるのかは、次のページで説明します！</P>
             <NextLessonButton />
           </>
