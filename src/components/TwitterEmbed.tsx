@@ -1,35 +1,15 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useState } from 'react'
 import { lang } from 'src/lib/locale'
+import useInterval from 'src/hooks/useInterval'
 
 declare global {
   interface Window {
     twttr: any
     __twttr: any
   }
-}
-
-// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-function useInterval(callback: (...args: any[]) => void, delay: number | null) {
-  const savedCallback = useRef<(...args: any[]) => void>()
-
-  // Remember the latest callback.
-  useEffect(() => {
-    savedCallback.current = callback
-  }, [callback])
-
-  // Set up the interval.
-  useEffect(() => {
-    function tick() {
-      savedCallback.current && savedCallback.current()
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay)
-      return () => clearInterval(id)
-    }
-  }, [delay])
 }
 
 const EMBED_DELAY = 500
