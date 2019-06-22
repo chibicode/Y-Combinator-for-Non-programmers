@@ -25,7 +25,7 @@
     "ts-node": "ts-node --project tsconfig.scripts.json",
     "ts-node:add-paths-no-watch": "yarn ts-node -r tsconfig-paths/register",
     "contents": "yarn ts-node ./scripts/generateContentsBundle.ts",
-    "sitemap": "yarn ts-node ./scripts/generateSitemap.ts",
+    "sitemap": "yarn ts-node:add-paths-no-watch ./scripts/generateSitemap.ts",
     "contents:watch": "yarn ts-node ./scripts/generateContentsBundle.ts watch",
     "precompute": "yarn ts-node:add-paths-no-watch ./scripts/precomputeExpressionContainers.ts",
     "tsc": "tsc",
