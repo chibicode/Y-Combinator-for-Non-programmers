@@ -1,4 +1,4 @@
-import prioritizeExpression from 'src/lib/prioritizeExpression'
+import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import { Expression } from 'src/types/ExpressionTypes'
 

@@ -7,7 +7,7 @@ import {
   isVariableShorthandUnaryParams,
   isVariableShorthandNumberParams,
   isMagicalVariableParams
-} from 'src/lib/expressionParamGuards'
+} from 'scripts/lib/expressionParamGuards'
 import {
   CallExpressionParams,
   ExpressionParams,

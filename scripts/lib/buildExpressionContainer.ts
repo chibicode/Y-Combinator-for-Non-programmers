@@ -1,4 +1,4 @@
-import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
+import buildExpressionFromParams from 'scripts/lib/buildExpressionFromParams'
 import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import {
   CallExpressionParams,

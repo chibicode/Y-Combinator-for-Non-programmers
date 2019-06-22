@@ -1,5 +1,5 @@
 import { StepChild, ExecutableConditional } from 'src/types/ExpressionTypes'
-import toDefault from 'src/lib/toDefault'
+import toDefault from 'scripts/lib/toDefault'
 
 const stepToConditionalExecuted = (
   e: ExecutableConditional

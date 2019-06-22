@@ -1,5 +1,5 @@
 import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
-import { activeFuncArg } from 'src/lib/steps/stepToShowFuncUnbound'
+import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
   ExecutableCallRegular,

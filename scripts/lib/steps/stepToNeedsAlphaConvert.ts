@@ -1,5 +1,5 @@
 import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
-import { activeFuncArg } from 'src/lib/steps/stepToShowFuncUnbound'
+import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -14,7 +14,7 @@ import {
   StepVariable,
   VariableExpression
 } from 'src/types/ExpressionTypes'
-import { ConflictingNamesToUnusedNames } from 'src/lib/getConflictsToUnused'
+import { ConflictingNamesToUnusedNames } from 'scripts/lib/getConflictsToUnused'
 
 export function toNeedsAlphaConvert(
   e: VariableExpression,

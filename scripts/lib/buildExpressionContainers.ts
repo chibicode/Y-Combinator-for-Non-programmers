@@ -1,11 +1,11 @@
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
-import stepExpressionContainer from 'src/lib/stepExpressionContainer'
+import stepExpressionContainer from 'scripts/lib/stepExpressionContainer'
 import {
   ExpressionContainer,
   SteppedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import * as lessonExpressions from 'src/lib/lessonExpressions'
+import * as lessonExpressions from 'scripts/lib/lessonExpressions'
 
 const buildExpressionContainers = ({
   lessonExpressionsKey,

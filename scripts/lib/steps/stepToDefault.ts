@@ -2,7 +2,7 @@ import {
   ExecutableCallRegular,
   ExecutableStepCallRegular
 } from 'src/types/ExpressionTypes'
-import toDefault from 'src/lib/toDefault'
+import toDefault from 'scripts/lib/toDefault'
 
 export default function stepToDefault(
   e: ExecutableCallRegular

@@ -1,4 +1,4 @@
-import resetExpression from 'src/lib/resetExpression'
+import resetExpression from 'scripts/lib/resetExpression'
 import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 import { StepChild } from 'src/types/ExpressionTypes'
 

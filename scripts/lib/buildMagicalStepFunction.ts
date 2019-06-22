@@ -1,6 +1,6 @@
 import { magicalVariableName } from 'src/lib/specialVariableNames'
-import buildExpressionFromParams from 'src/lib/buildExpressionFromParams'
-import prioritizeExpression from 'src/lib/prioritizeExpression'
+import buildExpressionFromParams from 'scripts/lib/buildExpressionFromParams'
+import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 import {
   StepFunction,
   StepVariable,

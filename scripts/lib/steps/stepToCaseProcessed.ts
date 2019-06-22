@@ -2,7 +2,7 @@ import {
   ExecutableConditionalStatesDistributed,
   StepChild
 } from 'src/types/ExpressionTypes'
-import toDefault from 'src/lib/toDefault'
+import toDefault from 'scripts/lib/toDefault'
 
 const stepToCaseProcessed = (
   e: ExecutableConditionalStatesDistributed,

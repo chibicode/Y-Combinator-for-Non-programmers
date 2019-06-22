@@ -17,8 +17,8 @@ import {
   MagicalVariable,
   StepMagicalVariable
 } from 'src/types/ExpressionTypes'
-import prioritizeExpression from 'src/lib/prioritizeExpression'
-import buildMagicalStepFunction from 'src/lib/buildMagicalStepFunction'
+import prioritizeExpression from 'scripts/lib/prioritizeExpression'
+import buildMagicalStepFunction from 'scripts/lib/buildMagicalStepFunction'
 
 function toMagicalExpanded(
   e: VariableShorthandBinary
