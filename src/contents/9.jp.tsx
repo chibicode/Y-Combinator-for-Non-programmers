@@ -13,10 +13,10 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
-import AER from 'src/components/AER'
 import Emoji from 'src/components/Emoji'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -31,7 +31,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を見ていきます:
             </P>
-            {AER.bxfv}
+            <R.Bxfv />
             <P>
               この弁当箱、
               <Em>
@@ -58,13 +58,13 @@ export default () => (
             <P>
               次に、<Strong>暗号が「0」</Strong>の弁当箱を用意します。
             </P>
-            {AER.fhlw}
+            <R.Fhlw />
             <P>
               こちらを、先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に入れてみます。
             </P>
-            {AER.tkqr}
+            <R.Tkqr />
             <P>
               実は、これを最後まで
               <H args={{ name: 'play' }} />
@@ -110,7 +110,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.jliw}
+            <R.Jliw />
           </>
         )
       },
@@ -135,7 +135,7 @@ export default () => (
                 が残ります。
               </Strong>
             </P>
-            {AER.fqwj}
+            <R.Fqwj />
             <P>
               では、
               <InlineEmojiBoxesForQuestion />
@@ -157,13 +157,13 @@ export default () => (
             <P>
               今度は、<Strong>暗号が「1」</Strong>の弁当箱を用意し、
             </P>
-            {AER.yehl}
+            <R.Yehl />
             <P>
               先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に入れてみます。
             </P>
-            {AER.mrky}
+            <R.Mrky />
             <P>というわけで、ここで質問です！</P>
             <P>
               <H args={{ name: 'question' }} /> 上の弁当箱を
@@ -197,7 +197,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.ctyl}
+            <R.Ctyl />
           </>
         )
       },
@@ -231,7 +231,7 @@ export default () => (
                 </Strong>
               </UlLi>
             </Ul>
-            {AER.fqwj}
+            <R.Fqwj />
             <EmojiSeparator emojis={['🍬', '🤔', '🍩']} />
             <P>
               面白いですね。では最後に、暗号が<Strong>「2」</Strong>
@@ -253,13 +253,13 @@ export default () => (
             <P>
               最後に、<Strong>暗号が「2」</Strong>の弁当箱を用意し、
             </P>
-            {AER.kupy}
+            <R.Kupy />
             <P>
               先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に入れてみます。
             </P>
-            {AER.qdkf}
+            <R.Qdkf />
             <P>というわけで、ここで質問です！</P>
             <P>
               <H args={{ name: 'question' }} /> 上の弁当箱を
@@ -293,7 +293,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.gtwk}
+            <R.Gtwk />
           </>
         )
       },
@@ -334,7 +334,7 @@ export default () => (
                 </Strong>
               </UlLi>
             </Ul>
-            {AER.fqwj}
+            <R.Fqwj />
             <P>
               そろそろ法則が分かってきましたか？それでは、種明かしをしましょう！
             </P>
@@ -354,7 +354,7 @@ export default () => (
               弁当箱なのです。
             </P>
             <H args={{ name: 'isZeroReview' }} />
-            {AER.nlxe}
+            <R.Nlxe />
           </>
         )
       },
@@ -404,7 +404,7 @@ export default () => (
               </Strong>
               になっています。<Em>黄色</Em>で塗りつぶしてみました。
             </P>
-            {AER.dvrw}
+            <R.Dvrw />
             <P>
               この場合、
               <InlineEmojiBoxesForQuestion />が<Strong>「0」</Strong>なら最後は
