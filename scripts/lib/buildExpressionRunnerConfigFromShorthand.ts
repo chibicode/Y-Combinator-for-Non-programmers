@@ -5,7 +5,7 @@ import {
   expressionRunnerSingleStepConfigDefault,
   isExpressionRunnerSimpleConfig,
   isExpressionRunnerPlayButtonOnlyConfig
-} from 'scripts/lib/expressionRunnerShorthandConfig'
+} from './expressionRunnerShorthandConfig'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { allMaxWidths } from 'src/lib/theme/maxWidths'
 import {

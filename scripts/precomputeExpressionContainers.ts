@@ -1,10 +1,9 @@
-import util from 'util'
 import glob from 'glob'
 import fs from 'fs-extra'
-import { ExpressionRunnerShorthandConfig } from 'scripts/lib/expressionRunnerShorthandConfig'
-import buildExpressionContainers from 'scripts/lib/buildExpressionContainers'
-import buildExpressionRunnerConfigFromShorthand from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
-import prettierFormat from 'scripts/lib/prettierFormat'
+import { ExpressionRunnerShorthandConfig } from './lib/expressionRunnerShorthandConfig'
+import buildExpressionContainers from './lib/buildExpressionContainers'
+import buildExpressionRunnerConfigFromShorthand from './lib/buildExpressionRunnerConfigFromShorthand'
+import prettierFormat from './lib/prettierFormat'
 
 const regenerate = () => {
   glob(
@@ -21,7 +20,6 @@ const regenerate = () => {
             default: ExpressionRunnerShorthandConfig
           }) => {
             const config = buildExpressionRunnerConfigFromShorthand(configBase)
-            const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
             const expressionContainers = buildExpressionContainers(config)
             const {
               speed,
@@ -48,11 +46,7 @@ const regenerate = () => {
               highlightNumber
             } = config
 
-            const fileContents = prettierFormat(`
-    import React from 'react'
-    import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
-
-    const ${componentName} = () => <ExpressionRunnerPrecomputed {...${util.inspect(
+            const expressionContainersContents = `${JSON.stringify(
               {
                 expressionContainers,
                 speed,
@@ -78,14 +72,26 @@ const regenerate = () => {
                 highlightNumber,
                 showAllShowSteps
               },
-              {
-                depth: null,
-                maxArrayLength: null
-              }
-            )}} />
+              null,
+              2
+            )}\n`
 
-    export default ${componentName}
-    `)
+            fs.writeFileSync(
+              `src/lib/runners/${key}.json`,
+              expressionContainersContents
+            )
+            const componentName = `${key[0].toUpperCase()}${key.slice(1)}`
+
+            const fileContents = prettierFormat(`
+              import React from 'react'
+              import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
+              import config from 'src/lib/runners/${key}.json'
+
+              // @ts-ignore
+              const ${componentName} = () => <ExpressionRunnerPrecomputed {...config} />
+
+              export default ${componentName}
+              `)
 
             fs.writeFileSync(
               `src/components/Runners/${componentName}.tsx`,
