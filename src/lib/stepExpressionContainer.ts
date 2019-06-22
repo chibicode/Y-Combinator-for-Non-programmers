@@ -1,6 +1,5 @@
 import getConflictsToUnused from 'src/lib/getConflictsToUnused'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
-import { StepOptions } from 'src/lib/ExpressionContainerManager'
 import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
 import hasUnboundVariables from 'src/lib/hasUnboundVariables'
 import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
@@ -50,6 +49,11 @@ import {
   ExecutableCallBinary
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'src/lib/prioritizeExpression'
+
+interface StepOptions {
+  showAllShowSteps?: boolean
+  skipAlphaConvert?: boolean
+}
 
 const stepExpressionContainerReset = (
   e: ContainerWithState<'needsReset'>
