@@ -13,7 +13,6 @@ import {
   UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/AER'
 import EmojiWithText from 'src/components/EmojiWithText'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -24,6 +23,7 @@ import {
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 import TopRightBadge from 'src/components/TopRightBadge'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import * as R from 'src/components/Runners'
 
 const ConditionSummary = () => (
   <>
@@ -74,7 +74,7 @@ export default () => (
               <H args={{ name: 'play' }} />
               すると、そのふたつの暗号を掛け算してくれます。
             </P>
-            {AER.drvu}
+            <R.Drvu />
             <P>では、さっそく省略表記してみましょう！</P>
           </>
         )
@@ -87,7 +87,7 @@ export default () => (
               先ほどの掛け算の弁当箱の下の部分を、<Emoji>✖️</Emoji>
               の記号に入れ替えてみると、以下のようになります:
             </P>
-            {AER.lyod}
+            <R.Lyod />
             <P>
               このままでもいいですが、
               <Em>
@@ -103,7 +103,7 @@ export default () => (
               </Strong>
               こちらのほうが、ひと目見て「掛け算だ」と分かりやすいですよね。
             </P>
-            {AER.imba}
+            <R.Imba />
             <P>
               <Strong>
                 あくまで省略表記なので、<Emoji>✖️</Emoji>
@@ -122,7 +122,7 @@ export default () => (
             <P>
               さっそく省略表記を使ってみましょう。こちらの弁当箱をご覧ください:
             </P>
-            {AER.pzwe}
+            <R.Pzwe />
             <P>解説すると、</P>
             <Ul>
               <UlLi>
@@ -153,7 +153,7 @@ export default () => (
               省略表記すると下のようになります。 早速、
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.zifr}
+            <R.Zifr />
             <P>
               というわけで、最終的に暗号は「<Strong>6</Strong>
               」になります。掛け算の省略表記については以上です！
@@ -176,7 +176,7 @@ export default () => (
               <InlineEmojiBoxesForQuestion />
               を計算する弁当箱の省略表記です。
             </P>
-            {AER.imba}
+            <R.Imba />
           </>
         )
       },
@@ -189,7 +189,7 @@ export default () => (
               <Strong>条件分岐の弁当箱</Strong>
               」を省略表記していきます。まずは、復習から:
             </P>
-            {AER.nlxe}
+            <R.Nlxe />
             <H args={{ name: 'isZeroReview' }} />
           </>
         )
@@ -199,9 +199,9 @@ export default () => (
         content: (
           <>
             <P>では、この条件分岐の弁当箱を、</P>
-            {AER.nlxe}
+            <R.Nlxe />
             <P>次のように省略表記してみましょう:</P>
-            {AER.hvdn}
+            <R.Hvdn />
             <ConditionSummary />
             <EmojiSeparator emojis={['0️⃣', '🚦', '🔢']} />
             <P>
@@ -252,7 +252,7 @@ export default () => (
               を行ってみましょう！
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.vxnm}
+            <R.Vxnm />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 4 }} />
             </P>
@@ -274,23 +274,23 @@ export default () => (
               」になります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.xefx}
+            <R.Xefx />
             <P>
               手短に解説します。まず、
               <InlineEmojiBoxesForCondition type="condition" />{' '}
               の中にある暗号が「0」かどうかチェックします。
             </P>
-            {AER.wcsz}
+            <R.Wcsz />
             <P>
               <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
               <EmojiNumber number={3} /> なので、「1以上」の方、つまり上の{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> が残ります。
             </P>
-            {AER.psqo}
+            <R.Psqo />
             <P>
               というわけで、最後は <EmojiNumber number={2} /> だけになります。
             </P>
-            {AER.xsby}
+            <R.Xsby />
           </>
         )
       },
@@ -307,7 +307,7 @@ export default () => (
               次に進む前に、理解を確実にするためにもう一問やってみましょう。
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.repd}
+            <R.Repd />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
             </P>
@@ -329,7 +329,7 @@ export default () => (
               」になります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.cnoq}
+            <R.Cnoq />
             <P>
               今回も手短に解説します。まず、
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
@@ -337,26 +337,26 @@ export default () => (
               に変わります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.dwnj}
+            <R.Dwnj />
             <P>
               ここで、
               <InlineEmojiBoxesForCondition type="condition" />{' '}
               の中にある暗号が「0」かどうかチェックします。
             </P>
-            {AER.guuf}
+            <R.Guuf />
             <P>
               <InlineEmojiBoxesForCondition type="condition" /> の暗号は{' '}
               <EmojiNumber number={0} /> なので、下の{' '}
               <InlineEmojiBoxesForCondition type="trueCase" /> が残ります。
             </P>
-            {AER.lrrr}
+            <R.Lrrr />
             <P>
               そして、最後に
               <EmojiNumber number={2} />
               が残ります。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.dpar}
+            <R.Dpar />
           </>
         )
       },
@@ -377,14 +377,14 @@ export default () => (
               <H args={{ name: 'yesNoQuiz' }} />
               で出題したこちらの弁当箱は、
             </P>
-            {AER.repd}
+            <R.Repd />
             <P>
               <InlineHeader>
                 条件分岐の省略表記を使わないと、次のようになります
               </InlineHeader>
               <Em>(黄色の部分):</Em>
             </P>
-            {AER.ylil}
+            <R.Ylil />
             <P>
               さらに、
               <InlineHeader>
@@ -392,16 +392,16 @@ export default () => (
               </InlineHeader>
               <Em>(黄色の部分):</Em>
             </P>
-            {AER.vqcw}
+            <R.Vqcw />
             <P>
               結果は同じになるでしょうか？
               <H args={{ name: 'pressFastForward' }} />:
             </P>
-            {AER.dcfi}
+            <R.Dcfi />
             <P>
               結果、暗号は「<Strong>2</Strong>」になりました。
             </P>
-            {AER.bmnc}
+            <R.Bmnc />
             <P>
               先ほどの
               <H args={{ name: 'yesNoQuiz' }} />
@@ -413,7 +413,7 @@ export default () => (
               </Strong>
               ということがお分かりいただけたでしょうか。
             </P>
-            {AER.ufze}
+            <R.Ufze />
             <P>
               繰り返しますが、
               <Strong>
@@ -441,7 +441,7 @@ export default () => (
               <EmojiWithText letter="z" />
               になる弁当箱の省略表記です。
             </P>
-            {AER.hvdn}
+            <R.Hvdn />
             <ConditionSummary />
           </>
         )
