@@ -9,7 +9,7 @@ const config: ExpressionRunnerShorthandConfig = {
   nextIterations: 11,
   skipToTheEnd: false,
   lastAllowedExpressionState: 'conditionActive',
-  lastAllowedExpressionStateAfterIterations: 3,
+  lastAllowedExpressionStateAfterIterations: 2,
   speed: 4
 }
 

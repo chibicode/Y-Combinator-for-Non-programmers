@@ -26,9 +26,9 @@ import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
-import AER from 'src/components/AER'
 import { colors, spaces, fontSizes } from 'src/lib/theme'
 import { BasicRules } from 'src/contents/2.jp'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -403,14 +403,14 @@ export default () => (
             <P>
               それを説明するために、こちらの弁当箱をラムダ計算の記述に置き換えてみましょう。当記事の一番最初に紹介した弁当箱です。
             </P>
-            {AER.ilpo}
+            <R.Ilpo />
             <P>
               <Em>
                 まず、ラムダ計算では料理を使わず、アルファベットを使います。
               </Em>
               それぞれアルファベットに置き換えてみると、こうなります:
             </P>
-            {AER.ytcf}
+            <R.Ytcf />
             <P>
               <Em>次に、ラムダ計算ではマスを次のように配置します。</Em>
               下側にあった
@@ -458,7 +458,7 @@ export default () => (
               </Strong>
               をご覧ください。
             </P>
-            {AER.news}
+            <R.News />
             <P>これを、ラムダ計算の記述に書き換えると、次のようになります。</P>
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
             <P>
@@ -970,7 +970,7 @@ print(f(5))`}
               </Strong>
               」だいうことも、頭の片隅に入れておいてくださると嬉しいです。
             </P>
-            {AER.news}
+            <R.News />
           </>
         )
       },

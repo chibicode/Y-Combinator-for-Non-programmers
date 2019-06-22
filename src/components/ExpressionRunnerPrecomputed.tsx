@@ -93,15 +93,35 @@ const ExpressionRunnerPrecomputed = ({
   useInterval(
     () => {
       if (superFastForward) {
-        // TODO
-      } else {
-        if (currentIndex === expressionContainers.length - 2) {
+        let nextIndex = currentIndex
+        do {
+          if (nextIndex < expressionContainers.length - 1) {
+            nextIndex += 1
+          }
+        } while (
+          expressionContainers[nextIndex].previouslyChangedExpressionState !==
+            'default' &&
+          expressionContainers[nextIndex].previouslyChangedExpressionState !==
+            'active' &&
+          nextIndex < expressionContainers.length - 1
+        )
+        if (currentIndex < expressionContainers.length - 1) {
+          setCurrentIndex(nextIndex)
+        } else {
           setPlaybackStatus({
             isFastForwarding: false,
             isPlaying: false
           })
         }
-        stepForward()
+      } else {
+        if (currentIndex < expressionContainers.length - 1) {
+          setCurrentIndex(currentIndex + 1)
+        } else {
+          setPlaybackStatus({
+            isFastForwarding: false,
+            isPlaying: false
+          })
+        }
       }
     },
     isPlaying ? autoplaySpeed(speed) : null
@@ -267,8 +287,15 @@ const ExpressionRunnerPrecomputed = ({
                     name: 'timer',
                     numSecondsRemaining: numSecondsRemaining(
                       superFastForward
-                        ? // TODO
-                          expressionContainers.length - 1 - currentIndex
+                        ? expressionContainers
+                            .slice(currentIndex + 1)
+                            .filter(
+                              container =>
+                                container.previouslyChangedExpressionState ===
+                                  'default' ||
+                                container.previouslyChangedExpressionState ===
+                                  'active'
+                            ).length
                         : expressionContainers.length - 1 - currentIndex,
                       speed
                     )
