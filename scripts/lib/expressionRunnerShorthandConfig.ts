@@ -1,4 +1,4 @@
-import * as lessonExpressions from 'src/lib/lessonExpressions'
+import * as lessonExpressions from 'scripts/lib/lessonExpressions'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'

@@ -1,19 +1,19 @@
-import getConflictsToUnused from 'src/lib/getConflictsToUnused'
+import getConflictsToUnused from 'scripts/lib/getConflictsToUnused'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
-import findNextCallExpressionAndParent from 'src/lib/findNextCallExpressionAndParent'
-import hasUnboundVariables from 'src/lib/hasUnboundVariables'
-import prioritizeExpressionContainer from 'src/lib/prioritizeExpressionContainer'
-import resetExpressionContainer from 'src/lib/resetExpressionContainer'
-import replaceCallParentKey from 'src/lib/replaceCallParentKey'
-import replaceConditionalParentKey from 'src/lib/replaceConditionalParentKey'
-import checkExecutableUnaryExists from 'src/lib/checkExecutableUnaryExists'
+import findNextCallExpressionAndParent from 'scripts/lib/findNextCallExpressionAndParent'
+import hasUnboundVariables from 'scripts/lib/hasUnboundVariables'
+import prioritizeExpressionContainer from 'scripts/lib/prioritizeExpressionContainer'
+import resetExpressionContainer from 'scripts/lib/resetExpressionContainer'
+import replaceCallParentKey from 'scripts/lib/replaceCallParentKey'
+import replaceConditionalParentKey from 'scripts/lib/replaceConditionalParentKey'
+import checkExecutableUnaryExists from 'scripts/lib/checkExecutableUnaryExists'
 import {
   isCall,
   isExecutableCallRegular,
   isVariableShorthandUnaryNumber,
   isExecutableCallMagical
 } from 'src/lib/expressionTypeGuards'
-import replaceFuncParentKey from 'src/lib/replaceFuncParentKey'
+import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
 import {
   removeCrossed,
   stepToActive,
@@ -35,7 +35,7 @@ import {
   stepToShowExecutableUnary,
   stepToUnaryProcessed,
   stepToBinaryComputed
-} from 'src/lib/steps'
+} from 'scripts/lib/steps'
 import {
   ContainerWithState,
   ExpressionContainer
@@ -48,7 +48,7 @@ import {
   ExecutableCallMagical,
   ExecutableCallBinary
 } from 'src/types/ExpressionTypes'
-import prioritizeExpression from 'src/lib/prioritizeExpression'
+import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 
 interface StepOptions {
   showAllShowSteps?: boolean

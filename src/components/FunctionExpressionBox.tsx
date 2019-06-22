@@ -6,7 +6,7 @@ import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
-import maxNestedFunctionDepth from 'src/lib/maxNestedFunctionDepth'
+import maxNestedFunctionDepth from 'scripts/lib/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
 
 interface FunctionExpressionBoxProps {

@@ -1,4 +1,4 @@
-import initializeExpressionContainer from 'src/lib/initializeExpressionContainer'
+import initializeExpressionContainer from 'scripts/lib/initializeExpressionContainer'
 import { FunctionExpressionParams } from 'src/types/ExpressionParamTypes'
 import {
   numberParams,
@@ -11,7 +11,7 @@ import {
   predParams,
   alphaConversionSimpleExampleParams,
   numberParamsHighlightNumber
-} from 'src/lib/churchEncodingParams'
+} from 'scripts/lib/churchEncodingParams'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 
 export const e1E1 = initializeExpressionContainer([

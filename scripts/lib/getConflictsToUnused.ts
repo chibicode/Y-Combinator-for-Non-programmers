@@ -5,7 +5,7 @@ import uniq from 'lodash/uniq'
 import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
-import alphaConvertTargetVariableNames from 'src/lib/alphaConvertTargetVariableNames'
+import alphaConvertTargetVariableNames from 'scripts/lib/alphaConvertTargetVariableNames'
 
 interface GetAllVariableNamesOptions {
   filter?: 'unbound'
