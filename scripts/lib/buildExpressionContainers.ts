@@ -1,4 +1,4 @@
-import { ExpressionRunnerConfig } from './buildExpressionRunnerConfigFromShorthand'
+import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import stepExpressionContainer from 'src/lib/stepExpressionContainer'
 import {

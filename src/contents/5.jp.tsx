@@ -14,9 +14,9 @@ import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import AER from 'src/components/AER'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiWithText from 'src/components/EmojiWithText'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -85,11 +85,11 @@ export default () => (
                 のペアがふたつありますね。
               </Strong>
             </P>
-            {AER.laea}
+            <R.Laea />
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.cgpd}
+            <R.Cgpd />
             <YesNoButtons answer="yes" />
           </>
         )
@@ -106,7 +106,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.ijot}
+            <R.Ijot />
             <P>詳しく解説しますね！</P>
           </>
         )
@@ -131,7 +131,7 @@ export default () => (
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
               のペアからはじめます。
             </P>
-            {AER.aezk}
+            <R.Aezk />
           </>
         )
       },
@@ -157,7 +157,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcBound" /> →
               …と順番に表示します。)
             </P>
-            {AER.ainx}
+            <R.Ainx />
             <P>
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               になったのは
@@ -179,7 +179,7 @@ export default () => (
               <EmojiWithText letter="c" />
               です。
             </P>
-            {AER.ielw}
+            <R.Ielw />
           </>
         )
       },
@@ -201,7 +201,7 @@ export default () => (
               <EmojiWithText letter="b" />
               だけです。
             </P>
-            {AER.dtzu}
+            <R.Dtzu />
             <Hr />
             <P>
               というわけで、
@@ -218,13 +218,13 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.efyy}
+            <R.Efyy />
             <P>
               残りは
               <H args={{ name: 'fastForward' }} />
               で見ていきましょう:
             </P>
-            {AER.izgz}
+            <R.Izgz />
             <P>
               というわけで、最後に残ったのは
               <EmojiWithText letter="a" />
@@ -247,11 +247,11 @@ export default () => (
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.zywk}
+            <R.Zywk />
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.mbrh}
+            <R.Mbrh />
             <YesNoButtons answer="yes" />
           </>
         )
@@ -268,7 +268,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.wbru}
+            <R.Wbru />
             <P>詳しく解説しますね！</P>
           </>
         )
@@ -293,7 +293,7 @@ export default () => (
                 のペアが入っています。
               </Strong>
             </P>
-            {AER.pqfs}
+            <R.Pqfs />
             <P>
               <Strong>
                 この場合、<InlinePrioritiesLabel>2</InlinePrioritiesLabel>
@@ -302,14 +302,14 @@ export default () => (
                 になります。
               </Strong>
             </P>
-            {AER.hwtu}
+            <R.Hwtu />
             <Hr />
             <P>
               残りは
               <H args={{ name: 'fastForward' }} />
               で見ていきましょう:
             </P>
-            {AER.usta}
+            <R.Usta />
             <P>
               というわけで、最終的に
               <EmojiWithText letter="c" />と<EmojiWithText letter="b" />
@@ -332,11 +332,11 @@ export default () => (
               これが最後の問題です！
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.gtdu}
+            <R.Gtdu />
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.qpkm}
+            <R.Qpkm />
             <YesNoButtons answer="yes" />
           </>
         )
@@ -353,7 +353,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.udvh}
+            <R.Udvh />
             <P>詳しく解説しますね！</P>
           </>
         )
@@ -380,7 +380,7 @@ export default () => (
                 </Strong>
               </Em>
             </P>
-            {AER.jmmp}
+            <R.Jmmp />
             <P>
               <Strong>
                 下段にふたつの料理 (
@@ -398,14 +398,14 @@ export default () => (
                 のペアからはじめます。
               </Strong>
             </P>
-            {AER.dqey}
+            <R.Dqey />
             <Hr />
             <P>
               残りは
               <H args={{ name: 'fastForward' }} />
               で見ていきましょう:
             </P>
-            {AER.diis}
+            <R.Diis />
             <P>
               というわけで、最終的に
               <EmojiWithText letter="c" />と<EmojiWithText letter="b" />
@@ -429,7 +429,7 @@ export default () => (
               のペアがふたつ以上ある場合は、
               <Strong>いちばん左のペアからはじめます。</Strong>
             </P>
-            {AER.hykj}
+            <R.Hykj />
             <P>
               <InlineHeader>2.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
@@ -442,7 +442,7 @@ export default () => (
                 になります。
               </Strong>
             </P>
-            {AER.mpal}
+            <R.Mpal />
             <P>
               <InlineHeader>3.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
@@ -452,7 +452,7 @@ export default () => (
                 のペアの部分からはじめます。
               </Strong>
             </P>
-            {AER.dqey}
+            <R.Dqey />
           </>
         )
       },

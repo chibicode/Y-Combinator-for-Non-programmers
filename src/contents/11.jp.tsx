@@ -2,7 +2,6 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/AER'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -13,6 +12,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -36,12 +36,12 @@ export default () => (
               </Strong>
               」をご覧ください。
             </P>
-            {AER.xgei}
+            <R.Xgei />
             <P>
               そしてこちらに、暗号が「<Strong>1</Strong>
               」の弁当箱を用意しました。
             </P>
-            {AER.slyk}
+            <R.Slyk />
             <P>
               これを
               <InlineEmojiBoxesForQuestion />
@@ -49,11 +49,11 @@ export default () => (
               <H args={{ name: 'fastForward' }} />
               してみましょう。
             </P>
-            {AER.eemn}
+            <R.Eemn />
             <P>
               最終的に暗号が「<Strong>2</Strong>」の弁当箱が残りました。
             </P>
-            {AER.rceu}
+            <R.Rceu />
             <P>
               以前話した通り、「<Strong>1 + 1 = 2</Strong>
               」が計算できたわけですね。
@@ -79,7 +79,7 @@ export default () => (
             <P>
               こちらに別の暗号が「<Strong>1</Strong>」の弁当箱があります。
             </P>
-            {AER.lrja}
+            <R.Lrja />
             <P>
               これを、先ほどの「
               <Strong>
@@ -88,7 +88,7 @@ export default () => (
               </Strong>
               」に入れてみます。
             </P>
-            {AER.bcae}
+            <R.Bcae />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 2 }} />
             </P>
@@ -108,7 +108,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.zuam}
+            <R.Zuam />
             <P>
               最後に残ったのは、
               <Strong>暗号が「2」の弁当箱ではありません。</Strong>
@@ -125,7 +125,7 @@ export default () => (
               <EmojiWithText letter="b" />
               が右下にふたつありますが、ここではひとつしかありません。
             </P>
-            {AER.kfcw}
+            <R.Kfcw />
             <P>
               <InlineHeader>復習:</InlineHeader>{' '}
               <Em>
@@ -136,7 +136,7 @@ export default () => (
               がふたつありますが、暗号が隠れている弁当箱には、右上に同じ料理がふたつ並ぶことはありません。
               <Em>だから、そもそも暗号として成り立っていないのです。</Em>
             </P>
-            {AER.eozk}
+            <R.Eozk />
             <P>
               <InlineHeader>話を戻すと:</InlineHeader> クイズの弁当箱を
               <H args={{ name: 'play' }} />
@@ -183,7 +183,7 @@ export default () => (
               </Strong>
               これが結果を狂わせてしまったからです。
             </P>
-            {AER.jxyg}
+            <R.Jxyg />
             <P>
               では、
               <Strong>
@@ -267,7 +267,7 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               を同時に変えないといけないのです。
             </P>
-            {AER.oiwu}
+            <R.Oiwu />
           </>
         )
       },
@@ -295,7 +295,7 @@ export default () => (
                 に変えてみました。
               </Strong>
             </P>
-            {AER.uqpp}
+            <R.Uqpp />
             <P>
               <InlineHeader>ちなみに:</InlineHeader>{' '}
               <Em>
@@ -312,17 +312,17 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               が被らなくなりました！
             </P>
-            {AER.hxmk}
+            <R.Hxmk />
             <P>
               このまま最後まで進めてみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.rzbq}
+            <R.Rzbq />
             <P>
               すると、最後に暗号が「<Strong>2</Strong>」の弁当箱が残りました。「
               <Strong>1 + 1 = 2</Strong>」が計算できたわけです。
             </P>
-            {AER.jlet}
+            <R.Jlet />
             <P>というわけで、まとめに入りましょう！</P>
           </>
         )
@@ -343,7 +343,7 @@ export default () => (
                 に同じ料理がある場合は…
               </Strong>
             </P>
-            {AER.kqip}
+            <R.Kqip />
             <P>
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />と
@@ -351,7 +351,7 @@ export default () => (
                 の該当する料理を別の料理に変えることによって、結果が変わってしまうのを避けることができます。
               </Strong>
             </P>
-            {AER.tkbr}
+            <R.Tkbr />
             <P>
               <InlineHeader>ちなみに:</InlineHeader>{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />

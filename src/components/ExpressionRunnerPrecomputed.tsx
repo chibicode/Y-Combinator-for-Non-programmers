@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
@@ -15,6 +15,7 @@ import { spaces } from 'src/lib/theme'
 import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import useInterval from 'src/hooks/useInterval'
 
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
@@ -80,7 +81,6 @@ const ExpressionRunnerPrecomputed = ({
   highlightNumber,
   showAllShowSteps
 }: ExpressionRunnerPrecomputedProps) => {
-  const interval = useRef<NodeJS.Timer>()
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
   >({
@@ -90,85 +90,76 @@ const ExpressionRunnerPrecomputed = ({
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
 
-  const actions = {
-    stepForward() {
-      actions.step('forward')
-    },
-
-    stepBackward() {
-      actions.step('backward')
-    },
-
-    skipToTheEnd() {
-      actions.step('skipToEnd')
-    },
-
-    autoplay() {
-      interval.current = setInterval(() => {
-        // Must use getExpressionContainerManager()
-        if (currentIndex < expressionContainers.length - 1) {
-          if (superFastForward) {
-            actions.step('forwardUntilActiveOrDefault')
-          } else {
-            actions.step('forward')
+  useInterval(
+    () => {
+      if (superFastForward) {
+        let nextIndex = currentIndex
+        do {
+          if (nextIndex < expressionContainers.length - 1) {
+            nextIndex += 1
           }
+        } while (
+          expressionContainers[nextIndex].previouslyChangedExpressionState !==
+            'default' &&
+          expressionContainers[nextIndex].previouslyChangedExpressionState !==
+            'active' &&
+          nextIndex < expressionContainers.length - 1
+        )
+        if (currentIndex < expressionContainers.length - 1) {
+          setCurrentIndex(nextIndex)
+        } else {
+          setPlaybackStatus({
+            isFastForwarding: false,
+            isPlaying: false
+          })
         }
-        // As soon as canStepForward is false, cancel immediately
-        if (currentIndex >= expressionContainers.length - 1) {
-          actions.pause()
-        }
-      }, autoplaySpeed(speed))
-      setPlaybackStatus({
-        isPlaying: true,
-        isFastForwarding: speed >= FASTFORWARDING_THRESHOLD
-      })
-    },
-
-    pause() {
-      if (interval.current) {
-        clearInterval(interval.current)
-      }
-      setPlaybackStatus({
-        isPlaying: false,
-        isFastForwarding: false
-      })
-    },
-
-    reset() {
-      if (interval.current) {
-        clearInterval(interval.current)
-      }
-      setPlaybackStatus({
-        isPlaying: false,
-        isFastForwarding: false
-      })
-      actions.step('reset')
-    },
-
-    step(
-      direction:
-        | 'forward'
-        | 'backward'
-        | 'reset'
-        | 'skipToEnd'
-        | 'forwardUntilActiveOrDefault'
-    ) {
-      if (direction === 'forward') {
+      } else {
         if (currentIndex < expressionContainers.length - 1) {
           setCurrentIndex(currentIndex + 1)
+        } else {
+          setPlaybackStatus({
+            isFastForwarding: false,
+            isPlaying: false
+          })
         }
-      } else if (direction === 'backward') {
-        if (currentIndex > 0) {
-          setCurrentIndex(currentIndex - 1)
-        }
-      } else if (direction === 'skipToEnd') {
-        setCurrentIndex(expressionContainers.length - 1)
-      } else if (direction === 'forwardUntilActiveOrDefault') {
-        // TODO
-      } else {
-        setCurrentIndex(0)
       }
+    },
+    isPlaying ? autoplaySpeed(speed) : null
+  )
+
+  const stepForward = () => {
+    if (currentIndex < expressionContainers.length - 1) {
+      setCurrentIndex(currentIndex + 1)
     }
+  }
+
+  const stepBackward = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+    }
+  }
+
+  const stepToTheEnd = () => {
+    setCurrentIndex(expressionContainers.length - 1)
+  }
+
+  const reset = () => {
+    setCurrentIndex(0)
+    pause()
+  }
+
+  const autoplay = () => {
+    setPlaybackStatus({
+      isPlaying: true,
+      isFastForwarding: speed >= FASTFORWARDING_THRESHOLD
+    })
+  }
+
+  const pause = () => {
+    setPlaybackStatus({
+      isPlaying: false,
+      isFastForwarding: false
+    })
   }
 
   const isDone = isContainerWithState(
@@ -265,18 +256,18 @@ const ExpressionRunnerPrecomputed = ({
         <Container size={containerSize} horizontalPadding={0.25}>
           {!hideControls && (
             <ExpressionRunnerControls
-              onNextClick={actions.stepForward}
-              onPreviousClick={actions.stepBackward}
+              onNextClick={stepForward}
+              onPreviousClick={stepBackward}
               canStepForward={currentIndex < expressionContainers.length - 1}
               canStepBackward={currentIndex > 0}
               showPlayButton={!hidePlayButton}
               isPlaying={isPlaying}
               isDone={isDone}
-              onAutoClick={actions.autoplay}
-              onSkipToTheEndClick={actions.skipToTheEnd}
-              onResetClick={actions.reset}
+              onAutoClick={autoplay}
+              onSkipToTheEndClick={stepToTheEnd}
+              onResetClick={reset}
               skipToTheEnd={skipToTheEnd}
-              onPauseClick={actions.pause}
+              onPauseClick={pause}
             />
           )}
         </Container>
@@ -296,8 +287,15 @@ const ExpressionRunnerPrecomputed = ({
                     name: 'timer',
                     numSecondsRemaining: numSecondsRemaining(
                       superFastForward
-                        ? // TODO
-                          expressionContainers.length - 1 - currentIndex
+                        ? expressionContainers
+                            .slice(currentIndex + 1)
+                            .filter(
+                              container =>
+                                container.previouslyChangedExpressionState ===
+                                  'default' ||
+                                container.previouslyChangedExpressionState ===
+                                  'active'
+                            ).length
                         : expressionContainers.length - 1 - currentIndex,
                       speed
                     )
@@ -307,7 +305,9 @@ const ExpressionRunnerPrecomputed = ({
             </>
           )}
           {!hideControls &&
-            currentIndex >= expressionContainers.length - 1 &&
+            currentIndex === expressionContainers.length - 1 &&
+            expressionContainers[expressionContainers.length - 1]
+              .containerState !== 'done' &&
             !hidePlayButton && (
               <ExpressionRunnerCaptionWrapper
                 css={css`

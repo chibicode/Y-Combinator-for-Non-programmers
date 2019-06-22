@@ -3,10 +3,10 @@ import { Em, Hr, P, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
-import AER from 'src/components/AER'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import NextLessonButton from 'src/components/NextLessonButton'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -20,13 +20,13 @@ export default () => (
               こちらが、前回紹介した<Strong>「足し算」</Strong>
               ができる弁当箱です:
             </P>
-            {AER.bxdf}
+            <R.Bxdf />
             <P>
               そして下にあるのが、上のと微妙に違う弁当箱です。{' '}
               <Strong>右下の部分が微妙に違う</Strong>
               のがお分かりでしょうか。
             </P>
-            {AER.ksya}
+            <R.Ksya />
             <P>
               「足し算」の弁当箱では右下に<Strong>5個</Strong>
               の料理がありましたが、こちらには
@@ -57,14 +57,14 @@ export default () => (
             <P>
               ここに暗号が<Strong>「1」</Strong>の弁当箱がふたつあります:
             </P>
-            {AER.dymt}
-            {AER.mhwq}
+            <R.Dymt />
+            <R.Mhwq />
             <P>
               さきほどの、<Strong>足し算の弁当箱とは微妙に違う</Strong>弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に入れてみます:
             </P>
-            {AER.sojz}
+            <R.Sojz />
             <P>
               <Em>
                 こちらも足し算(
@@ -93,11 +93,11 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.ktyt}
+            <R.Ktyt />
             <P>
               なんと、最終的に暗号が<Strong>「1」</Strong>の弁当箱が残りました！
             </P>
-            {AER.aeyv}
+            <R.Aeyv />
             <P>つまり、</P>
             <Ul>
               <UlLi>
@@ -121,20 +121,20 @@ export default () => (
               今度は暗号が<Strong>「2」</Strong>と<Strong>「3」</Strong>
               の弁当箱を使ってみましょう:
             </P>
-            {AER.bdlj}
-            {AER.ifwb}
+            <R.Bdlj />
+            <R.Ifwb />
             <P>
               それぞれを
               <InlineEmojiBoxesForQuestion />
               に入れるとこうなります。
               <H args={{ name: 'pressFastForward', pleaseWait: true }} />
             </P>
-            {AER.ngus}
+            <R.Ngus />
             <P>
               こちらは、最終的に暗号が<Strong>「6」</Strong>
               の弁当箱が残りました！
             </P>
-            {AER.ujfj}
+            <R.Ujfj />
             <P>つまり、</P>
             <Ul>
               <UlLi>
@@ -180,7 +180,7 @@ export default () => (
                 に入っている弁当箱の暗号を掛け算してくれます。
               </Strong>
             </P>
-            {AER.drvu}
+            <R.Drvu />
             <P>
               足し算の弁当箱は右下に料理が5個ありましたが、こちらは
               <Strong>右下の料理が4個</Strong>

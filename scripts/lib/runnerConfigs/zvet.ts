@@ -7,7 +7,6 @@ const config: ExpressionRunnerShorthandConfig = {
   nextIterations: 8,
   skipToTheEnd: false,
   lastAllowedExpressionState: 'conditionActive',
-  lastAllowedExpressionStateAfterIterations: 8,
   initialState: 'magicalExpanded',
   speed: 1.75,
   variableSize: 'sm'

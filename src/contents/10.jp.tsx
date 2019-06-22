@@ -1,6 +1,5 @@
 import React from 'react'
 import { Ul, UlLi, Em, P, Strong } from 'src/components/ContentTags'
-import AER from 'src/components/AER'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
@@ -12,6 +11,7 @@ import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import { cakeVariableName } from 'src/lib/specialVariableNames'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -34,7 +34,7 @@ export default () => (
               早速、
               <H args={{ name: 'lookAtThisBentoBox' }} />。
             </P>
-            {AER.wbpx}
+            <R.Wbpx />
             <P>注目ポイントはふたつあります:</P>
             <Ul>
               <UlLi>
@@ -71,7 +71,7 @@ export default () => (
               に入れてみました。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.gszp}
+            <R.Gszp />
             <P>
               <InlineEmojiBoxesForQuestion />
               に入っていた
@@ -93,7 +93,7 @@ export default () => (
               に入れてみたらどうでしょう？
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.kntz}
+            <R.Kntz />
             <P>
               今回も、
               <InlineEmojiBoxesForQuestion />
@@ -123,7 +123,7 @@ export default () => (
         content: (
           <>
             <P>では、ここで質問です！</P>
-            {AER.wbpx}
+            <R.Wbpx />
             <P>
               <H args={{ name: 'question' }} />
             </P>
@@ -181,7 +181,7 @@ export default () => (
               を入れてみると下のようになります。
               <H args={{ name: 'pressFastForward' }} />{' '}
             </P>
-            {AER.bmms}
+            <R.Bmms />
             <P>
               なんと、最後に
               <Strong>
@@ -209,7 +209,7 @@ export default () => (
         content: (
           <>
             <P>こちらの弁当箱の…</P>
-            {AER.wbpx}
+            <R.Wbpx />
             <Ul>
               <UlLi>
                 <Em>
@@ -274,7 +274,7 @@ export default () => (
               </Strong>
               です。
             </P>
-            {AER.gmcn}
+            <R.Gmcn />
             <P>
               すると途中で
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
@@ -284,14 +284,14 @@ export default () => (
               になり…(
               <H args={{ name: 'pressFastForward', skipColon: true }} />)
             </P>
-            {AER.vpjw}
+            <R.Vpjw />
             <P>
               最後に
               <EmojiWithText letter={cakeVariableName} />
               が残るのです。(
               <H args={{ name: 'pressFastForward', skipColon: true }} />)
             </P>
-            {AER.kjyi}
+            <R.Kjyi />
           </>
         )
       },
@@ -317,7 +317,7 @@ export default () => (
                 が異なります。
               </Strong>
             </P>
-            {AER.dpst}
+            <R.Dpst />
             <P>
               すると先ほどと違い、途中で
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
@@ -325,7 +325,7 @@ export default () => (
               が同じにならず…(
               <H args={{ name: 'pressFastForward', skipColon: true }} />)
             </P>
-            {AER.xhwx}
+            <R.Xhwx />
             <P>
               最初に
               <InlineEmojiBoxesForQuestion />
@@ -334,7 +334,7 @@ export default () => (
               が残るのです。(
               <H args={{ name: 'pressFastForward', skipColon: true }} />)
             </P>
-            {AER.ttvy}
+            <R.Ttvy />
           </>
         )
       },
@@ -362,7 +362,7 @@ export default () => (
               ]}
             />
             <P>先ほどの弁当箱だと、</P>
-            {AER.wbpx}
+            <R.Wbpx />
             <P>
               <Em>
                 <InlineEmojiBoxesForQuestion />に
@@ -375,7 +375,7 @@ export default () => (
                 <Strong>同じになる。</Strong>
               </Em>
             </P>
-            {AER.gmcn}
+            <R.Gmcn />
             <P>
               <Em>
                 <InlineEmojiBoxesForQuestion />
@@ -385,7 +385,7 @@ export default () => (
                 <Strong>異なる。</Strong>
               </Em>
             </P>
-            {AER.dpst}
+            <R.Dpst />
             <P>
               だから、<Strong>それぞれ違う結果になる。</Strong>
             </P>
