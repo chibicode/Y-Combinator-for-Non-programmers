@@ -13,13 +13,13 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import YesNoButtons from 'src/components/YesNoButtons'
-import AER from 'src/components/AER'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -35,7 +35,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を紹介しました。
             </P>
-            {AER.ljjg}
+            <R.Ljjg />
             <P>
               <Strong>
                 上段にふたつの料理(
@@ -59,7 +59,7 @@ export default () => (
               さっそく
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.egmr}
+            <R.Egmr />
             <P>
               このように、
               <EmojiWithText letter="e" />と<EmojiWithText letter="f" />
@@ -105,14 +105,14 @@ export default () => (
               <H args={{ name: 'match' }} />
               します。
             </P>
-            {AER.lygz}
+            <R.Lygz />
             <P>
               その次の
               <H args={{ name: 'copy' }} />
               のステップがどうなるか見てみましょう。
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.fivy}
+            <R.Fivy />
             <P>
               <Strong>
                 このように、
@@ -131,7 +131,7 @@ export default () => (
               が消えて終了です。
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.dmwy}
+            <R.Dmwy />
           </>
         )
       },
@@ -151,7 +151,7 @@ export default () => (
                 の印がつく。
               </Strong>
             </P>
-            {AER.fpsd}
+            <R.Fpsd />
             <P>
               2. (<H args={{ name: 'match' }} />
               した場合のみ)
@@ -163,7 +163,7 @@ export default () => (
                 される。
               </Strong>
             </P>
-            {AER.vegw}
+            <R.Vegw />
           </>
         )
       },
@@ -176,7 +176,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               をご覧ください。
             </P>
-            {AER.xwim}
+            <R.Xwim />
             <P>
               <Strong>
                 下段に3つの料理(
@@ -214,7 +214,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.rmsd}
+            <R.Rmsd />
             <P>
               <EmojiWithText letter="b" />に
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
@@ -276,7 +276,7 @@ export default () => (
               というわけで最後まで見てみましょう。
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.jmqh}
+            <R.Jmqh />
             <P>
               ご覧の通り
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
@@ -285,9 +285,9 @@ export default () => (
               には、最後まで何も起きません。
             </P>
             <P>というわけで、実行結果はこうなります。</P>
-            {AER.xwim}
+            <R.Xwim />
             <ExpressionRunnerSeparator />
-            {AER.awxz}
+            <R.Awxz />
           </>
         )
       },
@@ -309,7 +309,7 @@ export default () => (
                 の印をつける。
               </Strong>
             </P>
-            {AER.qwke}
+            <R.Qwke />
             <P>
               2.{' '}
               <Strong>
@@ -318,6 +318,13 @@ export default () => (
                 は無視する。
               </Strong>
             </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <Emoji>🙄</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
           </>
         )
       },
@@ -334,7 +341,7 @@ export default () => (
               </Strong>
               が登場します:
             </P>
-            {AER.cvtc}
+            <R.Cvtc />
             <P>
               <InlineHeader>今までになかった特徴が2つあります:</InlineHeader>
             </P>
@@ -373,11 +380,11 @@ export default () => (
               <H args={{ name: 'yesNoQuiz' }} />
               をやってみましょう。勘で答えてみてください。
             </P>
-            {AER.cvtc}
+            <R.Cvtc />
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.uemm}
+            <R.Uemm />
             <YesNoButtons answer="yes" />
           </>
         )
@@ -394,7 +401,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.xhbi}
+            <R.Xhbi />
             <P>どんな法則でこうなるのかは、次のページで説明します！</P>
             <NextLessonButton />
           </>
