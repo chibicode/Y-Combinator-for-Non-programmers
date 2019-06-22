@@ -3,7 +3,6 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import EmojiNumber from 'src/components/EmojiNumber'
 import { Hr, P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/AER'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -14,6 +13,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import TopRightBadge from 'src/components/TopRightBadge'
 import EmojiForLetterWithTopRightBadgeWrapper from 'src/components/EmojiForLetterWithTopRightBadgeWrapper'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -27,7 +27,7 @@ export default () => (
               早速、
               <H args={{ name: 'lookAtThisBentoBox' }} />。
             </P>
-            {AER.gopk}
+            <R.Gopk />
             <P>
               今まで見たことがないくらい複雑な弁当箱ですね。これは、どんな効果があるのでしょうか？
             </P>
@@ -50,13 +50,13 @@ export default () => (
             <P>
               こちらに、暗号が「<Strong>2</Strong>」の弁当箱を用意しました。
             </P>
-            {AER.imgp}
+            <R.Imgp />
             <P>
               これを、先ほどの弁当箱の
               <InlineEmojiBoxesForQuestion />
               の部分に入れてみます。
             </P>
-            {AER.lxnu}
+            <R.Lxnu />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 1 }} />
             </P>
@@ -76,11 +76,11 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward', pleaseWait: true }} />
             </P>
-            {AER.ccon}
+            <R.Ccon />
             <P>
               最後に残ったのは、暗号が「<Strong>1</Strong>」の弁当箱でした。
             </P>
-            {AER.npfx}
+            <R.Npfx />
             <P>
               もともとの暗号は「<Strong>2</Strong>」だったので、「
               <Strong>2</Strong>」が「<Strong>1</Strong>」になったわけです。
@@ -93,7 +93,7 @@ export default () => (
         title: <>1を引く弁当箱</>,
         content: (
           <>
-            {AER.pnob}
+            <R.Pnob />
             <P>
               つまり、これは
               <InlineEmojiBoxesForQuestion />
@@ -136,7 +136,7 @@ export default () => (
               先ほどの例で確かめてみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.fiab}
+            <R.Fiab />
             <P>
               <Strong>
                 <EmojiWithText letter="e" />が
@@ -176,7 +176,7 @@ export default () => (
               実際に確かめてみましょう。
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.plxd}
+            <R.Plxd />
             <P>
               ご覧の通り、
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
@@ -201,7 +201,7 @@ export default () => (
         title: <>弁当箱を「省略表記」できないか？</>,
         content: (
           <>
-            {AER.zaoc}
+            <R.Zaoc />
             <P>
               上の弁当箱は、「<Strong>2 - 1</Strong>
               」を計算できることがわかりましたが、
@@ -233,9 +233,9 @@ export default () => (
               。たとえば、こちらは
               <Strong>暗号が「2」</Strong>の弁当箱なので、
             </P>
-            {AER.imgp}
+            <R.Imgp />
             <P>このように数字で表示してみます。</P>
-            {AER.xekr}
+            <R.Xekr />
             <P>
               数字で省略表記することで、ひと目見て何のことか分かりやすくなりました。
             </P>
@@ -251,7 +251,7 @@ export default () => (
               の弁当箱を、先ほどの「<Strong>1を引く</Strong>
               」弁当箱に入れてみました。
             </P>
-            {AER.uqts}
+            <R.Uqts />
             <P>
               今度は、「<Strong>1を引く</Strong>」部分も省略してみましょう。
             </P>
@@ -265,7 +265,7 @@ export default () => (
               することによって、2から「<Strong>1を引く</Strong>
               」ことを省略表記してみます。
             </P>
-            {AER.ojma}
+            <R.Ojma />
             <P>
               これを
               <H args={{ name: 'play' }} />
@@ -273,7 +273,7 @@ export default () => (
               <EmojiNumber number={2} />が<EmojiNumber number={1} />
               になります。
             </P>
-            {AER.yykk}
+            <R.Yykk />
             <P>このように省略表記することで、だいぶ分かりやすくなりました。</P>
             <EmojiSeparator
               nodes={[
@@ -304,7 +304,7 @@ export default () => (
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.exww}
+            <R.Exww />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 0 }} />
             </P>
@@ -334,12 +334,12 @@ export default () => (
             <P>
               まず、上の部分は「<Strong>1</Strong>」の暗号の弁当箱なので、
             </P>
-            {AER.qgun}
+            <R.Qgun />
             <P>
               <EmojiNumber number={1} />
               と省略表記します。
             </P>
-            {AER.yvia}
+            <R.Yvia />
             <P>
               次に、こちらに
               <Strong>
@@ -347,14 +347,14 @@ export default () => (
               </Strong>
               と、
             </P>
-            {AER.qifg}
+            <R.Qifg />
             <P>
               <EmojiWithText letter="i" />
               の下に「
               <Strong>1を引く弁当箱</Strong>
               」があります。
             </P>
-            {AER.tboe}
+            <R.Tboe />
             <P>
               この場合、「1を引く弁当箱」が
               <Strong>
@@ -376,14 +376,14 @@ export default () => (
               ]}
             />
             <P>つまり、右下の部分が、</P>
-            {AER.ssns}
+            <R.Ssns />
             <P>省略表記されてこうなります:</P>
-            {AER.ufyc}
+            <R.Ufyc />
             <P>
               ここまでくると、どうなるかわかりやすいですね。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.pbgd}
+            <R.Pbgd />
             <P>
               つまり、「<Strong>1 - 1</Strong>
               」の計算が行われるので、最終的に暗号は
@@ -423,7 +423,7 @@ export default () => (
               <InlineEmojiBoxesForQuestion />
               から「<Strong>1を引く</Strong>」弁当箱です。
             </P>
-            {AER.pnob}
+            <R.Pnob />
             <P>
               なかなか複雑なので、省略表記をすると何が起きてるか分かりやすくなります。たとえば
               <Strong>
@@ -432,7 +432,7 @@ export default () => (
               </Strong>
               は、以下のように省略表記できます:
             </P>
-            {AER.ojma}
+            <R.Ojma />
             <P>
               これを実行すると、
               <EmojiNumber number={1} />
