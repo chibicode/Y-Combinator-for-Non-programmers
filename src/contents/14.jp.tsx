@@ -12,7 +12,6 @@ import {
   Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
-import AER from 'src/components/AER'
 import {
   InlineEmojiBoxesForQuestion,
   InlineEmojiBoxesForCondition
@@ -27,6 +26,7 @@ import { magicalVariableName } from 'src/lib/specialVariableNames'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -111,13 +111,13 @@ export default () => (
                 」を計算できるでしょう？
               </Em>
             </P>
-            {AER.rreb}
+            <R.Rreb />
             <P>
               また、「<Strong>4 ✕ 3 ✕ 2 ✕ 1</Strong>」「
               <Strong>5 ✕ 4 ✕ 3 ✕ 2 ✕ 1</Strong>」も計算できるでしょうか？
             </P>
-            {AER.kqzn}
-            {AER.aimh}
+            <R.Kqzn />
+            <R.Aimh />
             <P>今回は、こういった計算ができるかどうか検証していきます！</P>
           </>
         )
@@ -198,14 +198,14 @@ export default () => (
               <EmojiNumber number={3} />
               が入っています。
             </P>
-            {AER.zxux}
+            <R.Zxux />
             <P>
               これを進めると、下の
               <H args={{ name: 'witch' }} />
               の部分が次のように変化します。
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.itzl}
+            <R.Itzl />
             <P>ポイントは次の3点です:</P>
             <Ul>
               <UlLi>
@@ -230,7 +230,7 @@ export default () => (
                 (黄色の部分)。
               </UlLi>
             </Ul>
-            {AER.gtnr}
+            <R.Gtnr />
             <P>
               <Strong>この変化の法則がまるで魔法のよう</Strong>なので、弁当箱の
               <H args={{ name: 'witch' }} />
@@ -252,7 +252,7 @@ export default () => (
               先に進めてみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.syfp}
+            <R.Syfp />
             <P>
               ご覧の通り、
               <EmojiWithText letter={magicalVariableName} />
@@ -271,7 +271,7 @@ export default () => (
               続きを見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.wdol}
+            <R.Wdol />
             <P>
               ご覧の通り、
               <TopRightBadge inline topRightBadgeType="pred" />
@@ -294,7 +294,7 @@ export default () => (
               続きを見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.luir}
+            <R.Luir />
             <P>
               ご覧の通り、条件分岐の弁当箱で、
               <InlineEmojiBoxesForCondition type="condition" /> の中にある暗号が
@@ -330,9 +330,9 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
-            {AER.zxux}
+            <R.Zxux />
             <ExpressionRunnerSeparator />
-            {AER.ifxr}
+            <R.Ifxr />
             <P>
               ちなみに前回説明した通り、
               <Strong>
@@ -357,7 +357,7 @@ export default () => (
               さらに続きを見てみましょう。
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.vkpm}
+            <R.Vkpm />
             <P>
               またしても、
               <Em>
@@ -370,7 +370,7 @@ export default () => (
                 して見てみましょう！
               </Em>
             </P>
-            {AER.mihy}
+            <R.Mihy />
             <P>
               <Em>
                 一番上の数字が
@@ -386,9 +386,9 @@ export default () => (
                 が追加されました。
               </Em>
             </P>
-            {AER.dxum}
+            <R.Dxum />
             <ExpressionRunnerSeparator />
-            {AER.davn}
+            <R.Davn />
           </>
         )
       },
@@ -405,14 +405,14 @@ export default () => (
               さらに続きを見てみましょう。
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.qltx}
+            <R.Qltx />
             <P>
               以前と同じく、
               <H args={{ name: 'witch' }} />
               が変化しました。続いて、
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.zvet}
+            <R.Zvet />
             <P>
               ここで、条件分岐の
               <Strong>
@@ -422,7 +422,7 @@ export default () => (
                 になりました。
               </Strong>
             </P>
-            {AER.yvty}
+            <R.Yvty />
             <P>
               ということは、条件分岐が行われた後に、
               <Strong>
@@ -433,7 +433,7 @@ export default () => (
                 が残ります。
               </Strong>
             </P>
-            {AER.umce}
+            <R.Umce />
             <P>
               すると、
               <Strong>
@@ -443,7 +443,7 @@ export default () => (
               、<Strong>残ったのは掛け算の省略表記</Strong>だけになりました。
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.orhx}
+            <R.Orhx />
             <P>
               つまり、これで <H args={{ name: 'inlineFactorial', start: 3 }} />
               の計算ができたわけです！
@@ -470,26 +470,26 @@ export default () => (
                 すると、
               </Strong>
             </P>
-            {AER.zxux}
+            <R.Zxux />
             <P>
               途中で、下から上に{' '}
               <H args={{ name: 'inlineFactorial', start: 3 }} />{' '}
               という順番になり、
             </P>
-            {AER.wqdb}
+            <R.Wqdb />
             <P>
               最終的に、
               <H args={{ name: 'factorialComputation', start: 3 }} />
               になります。
             </P>
-            {AER.xtjt}
+            <R.Xtjt />
             <Hr />
             <P>
               下の
               <H args={{ name: 'fastForward' }} />
               を押すと、最初から最後まで超特急で見ることができます。
             </P>
-            {AER.mnfh}
+            <R.Mnfh />
             <P>
               それでは、ここで
               <H args={{ name: 'yesNoQuiz' }} />
@@ -512,11 +512,11 @@ export default () => (
               <EmojiNumber number={4} />
               があります。
             </P>
-            {AER.yklt}
+            <R.Yklt />
             <P>
               <H args={{ name: 'whatHappensInTheMiddleQuestion' }} />
             </P>
-            {AER.fsmk}
+            <R.Fsmk />
             <YesNoButtons answer="yes" tooHard />
           </>
         )
@@ -533,7 +533,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward', pleaseWait: true }} />
             </P>
-            {AER.peoq}
+            <R.Peoq />
             <P>
               というわけで、途中で下から上に
               <H args={{ name: 'inlineFactorial', start: 4 }} />
@@ -543,7 +543,7 @@ export default () => (
               では、最後まで見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.nfkp}
+            <R.Nfkp />
             <P>
               というわけで、最終的に
               <H args={{ name: 'factorialComputation', start: 4 }} />
@@ -568,11 +568,11 @@ export default () => (
               <H args={{ name: 'inlineFactorial', start: 5 }} />
               という順番になります。
             </P>
-            {AER.fora}
+            <R.Fora />
             <ExpressionRunnerSeparator />
-            {AER.eobj}
+            <R.Eobj />
             <ExpressionRunnerSeparator />
-            {AER.osqg}
+            <R.Osqg />
             <P>
               そして、最終的に
               <H args={{ name: 'factorialComputation', start: 5 }} />
@@ -602,7 +602,7 @@ export default () => (
               <H args={{ name: 'factorialDefinition' }} />
               という計算を行うことができます。
             </P>
-            {AER.vrwt}
+            <R.Vrwt />
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               size="sm"
@@ -613,7 +613,7 @@ export default () => (
                 </>
               }
             />
-            {AER.lodr}
+            <R.Lodr />
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               size="sm"
@@ -624,7 +624,7 @@ export default () => (
                 </>
               }
             />
-            {AER.fjyk}
+            <R.Fjyk />
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               size="sm"
@@ -636,9 +636,9 @@ export default () => (
               }
             />
             <P>上側にどんな暗号を入れても、</P>
-            {AER.miez}
+            <R.Miez />
             <P>途中で以下のような形になるのがポイントです。</P>
-            {AER.fapu}
+            <R.Fapu />
           </>
         )
       },
@@ -661,9 +661,9 @@ export default () => (
               <H args={{ name: 'witch' }} />
               の部分が次のように変化する機能です。この変化が、先ほどの計算を可能にしているわけです。
             </P>
-            {AER.xjae}
+            <R.Xjae />
             <ExpressionRunnerSeparator />
-            {AER.xsve}
+            <R.Xsve />
             <P>
               しかし、冒頭でも書いた通り、「
               <Strong>
