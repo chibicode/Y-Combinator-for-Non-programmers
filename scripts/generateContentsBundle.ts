@@ -1,3 +1,4 @@
+// NOTE: If you use -r tsconfig-paths/register then for some reason chokidar fails
 import chokidar from 'chokidar'
 import glob from 'glob'
 import fs from 'fs'
