@@ -6,11 +6,11 @@ import InlineBackground from 'src/components/InlineBackground'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import AER from 'src/components/AER'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -26,7 +26,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を紹介しました。
             </P>
-            {AER.cvtc}
+            <R.Cvtc />
             <P>
               これを
               <H args={{ name: 'play' }} />
@@ -60,7 +60,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.aaov}
+            <R.Aaov />
             <P>
               <Em>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
@@ -94,7 +94,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.qxgl}
+            <R.Qxgl />
             <P>
               <InlineHeader>ポイント:</InlineHeader> 最後に
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
@@ -139,7 +139,7 @@ export default () => (
             <P>
               <H args={{ name: 'pressNext' }} />
             </P>
-            {AER.uwma}
+            <R.Uwma />
             <P>
               ご覧の通り、
               <Strong>
@@ -172,7 +172,7 @@ export default () => (
               のペアを終わらせます。
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.kvso}
+            <R.Kvso />
             <P>以上です！</P>
           </>
         )
@@ -201,18 +201,18 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になる
               </InlineHeader>
             </P>
-            {AER.udic}
+            <R.Udic />
             <ExpressionRunnerSeparator />
-            {AER.xzqu}
+            <R.Xzqu />
             <P>
               3.{' '}
               <InlineHeader>
                 同じことを繰り返して最後まで終わらせる
               </InlineHeader>
             </P>
-            {AER.dnvw}
+            <R.Dnvw />
             <ExpressionRunnerSeparator />
-            {AER.nric}
+            <R.Nric />
           </>
         ),
         footer: {
@@ -257,11 +257,11 @@ export default () => (
               でチェックしてみましょう！
               <H args={{ name: 'lookAtThisBentoBox' }} />:
             </P>
-            {AER.dkiy}
+            <R.Dkiy />
             <P>
               <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
             </P>
-            {AER.owcy}
+            <R.Owcy />
             <YesNoButtons answer="no" />
           </>
         )
@@ -278,7 +278,7 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
-            {AER.hdxc}
+            <R.Hdxc />
             <P>
               <H args={{ name: 'pauseIfLost' }} />
             </P>
@@ -286,9 +286,9 @@ export default () => (
             <P>
               <InlineHeader>1周目はこうなり…</InlineHeader>
             </P>
-            {AER.eial}
+            <R.Eial />
             <ExpressionRunnerSeparator />
-            {AER.iwkx}
+            <R.Iwkx />
             <P>
               <InlineHeader>
                 最終的には
@@ -296,9 +296,9 @@ export default () => (
                 が残ります:
               </InlineHeader>
             </P>
-            {AER.vjaa}
+            <R.Vjaa />
             <ExpressionRunnerSeparator />
-            {AER.iifq}
+            <R.Iifq />
           </>
         )
       },
