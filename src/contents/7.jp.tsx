@@ -10,7 +10,6 @@ import {
 } from 'src/components/ContentTags'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import AER from 'src/components/AER'
 import H from 'src/components/H'
 import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 import EpisodeCardList from 'src/components/EpisodeCardList'
@@ -18,6 +17,7 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import NextLessonButton from 'src/components/NextLessonButton'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -30,23 +30,23 @@ export default () => (
               <H args={{ name: 'episodeWelcomeText' }} />
               前回紹介したこちらの弁当箱ですが、
             </P>
-            {AER.qmof}
+            <R.Qmof />
             <P>
               今度は暗号が<Strong>「1」</Strong>
               の弁当箱を
               <InlineEmojiBoxesForQuestion />
               に入れてみましょう。
             </P>
-            {AER.slyk}
+            <R.Slyk />
             <P>
               するとどうなるでしょうか？
               <H args={{ name: 'pressFastForward', isFaster: true }} />
             </P>
-            {AER.eemn}
+            <R.Eemn />
             <P>
               最終的に暗号が<Strong>「2」</Strong>の弁当箱が残りました:
             </P>
-            {AER.rceu}
+            <R.Rceu />
             <P>
               つまり、暗号が<Strong>「1」</Strong>から<Strong>「2」</Strong>
               に変化したというわけです。
@@ -60,15 +60,15 @@ export default () => (
         content: (
           <>
             <P>暗号が「2」だったらどうでしょう？</P>
-            {AER.sisn}
+            <R.Sisn />
             <P>
               <H args={{ name: 'pressFastForward', isFaster: true }} />
             </P>
-            {AER.syhh}
+            <R.Syhh />
             <P>
               最終的に暗号が<Strong>「3」</Strong>の弁当箱が残りました:
             </P>
-            {AER.ablz}
+            <R.Ablz />
             <P>
               つまり、暗号が<Strong>「2」</Strong>から<Strong>「3」</Strong>
               に変化したというわけです。
@@ -91,7 +91,7 @@ export default () => (
               <Strong>その暗号に「1」を加えた弁当箱</Strong>
               が最後に残ります。
             </P>
-            {AER.xgei}
+            <R.Xgei />
             <P>
               <InlineEmojiBoxesForQuestion />
               の暗号が<Strong>「1」</Strong>だったら暗号が
@@ -144,11 +144,11 @@ export default () => (
             <P>
               こちらに暗号が<Strong>「1」</Strong>の弁当箱があります:
             </P>
-            {AER.bpza}
+            <R.Bpza />
             <P>
               そして、こちらには暗号が<Strong>「2」</Strong>の弁当箱があります:
             </P>
-            {AER.vrvl}
+            <R.Vrvl />
             <P>
               このふたつの弁当箱の暗号を足して、<Strong>1 + 2 = 3</Strong>
               を計算することはできるのでしょうか？
@@ -173,7 +173,7 @@ export default () => (
             <P>
               <H args={{ name: 'lookAtThisBentoBox' }} />。
             </P>
-            {AER.goif}
+            <R.Goif />
             <P>先ほど紹介した「1を足す」弁当箱と微妙に異なる点があります。</P>
             <Ul>
               <UlLi>
@@ -196,16 +196,16 @@ export default () => (
               の部分に、先ほどの暗号が<Strong>「1」</Strong>
               の弁当箱を入れてみます。
             </P>
-            {AER.brrh}
+            <R.Brrh />
             <P>
               そして、二番目の
               <InlineEmojiBoxesForQuestion />
               の部分に、先ほどの暗号が<Strong>「2」</Strong>
               の弁当箱を入れてみます。
             </P>
-            {AER.hdwy}
+            <R.Hdwy />
             <P>では、ここで質問です。</P>
-            {AER.entr}
+            <R.Entr />
             <P>
               <H args={{ name: 'whatsTheNumberQuestion', number: 3 }} />
             </P>
@@ -225,11 +225,11 @@ export default () => (
               <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
-            {AER.rome}
+            <R.Rome />
             <P>
               なんと、最終的に暗号が<Strong>「3」</Strong>の弁当箱が残りました！
             </P>
-            {AER.dhdk}
+            <R.Dhdk />
             <P>
               最初に暗号が<Strong>「1」</Strong>と<Strong>「2」</Strong>
               の弁当箱を
@@ -252,7 +252,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['3️⃣', '➕', '️1️⃣']} />
             <P>確かめてみましょう。もう一度、先ほどの弁当箱を用意します。</P>
-            {AER.goif}
+            <R.Goif />
             <P>
               そして、暗号が<Strong>「3」</Strong> (右下に
               <Em>
@@ -263,7 +263,7 @@ export default () => (
               <InlineEmojiBoxesForQuestion />
               に入れます。
             </P>
-            {AER.fatm}
+            <R.Fatm />
             <P>
               その下の
               <InlineEmojiBoxesForQuestion />
@@ -274,17 +274,17 @@ export default () => (
               </Em>
               )の弁当箱を入れます。
             </P>
-            {AER.dyov}
+            <R.Dyov />
             <P>
               ここで、
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.unck}
+            <R.Unck />
             <P>
               こちらは、最終的に暗号が<Strong>「4」</Strong>
               の弁当箱が残りました！
             </P>
-            {AER.cpbj}
+            <R.Cpbj />
             <P>
               最初に暗号が<Strong>「3」</Strong>と<Strong>「1」</Strong>
               の弁当箱を
@@ -314,7 +314,7 @@ export default () => (
                 の部分に、それぞれ暗号が入った弁当箱を入れると、
               </Em>
             </P>
-            {AER.bxdf}
+            <R.Bxdf />
             <P>
               <Strong>
                 最終的に残る弁当箱の暗号は、ふたつの暗号を足し算したものになります。
