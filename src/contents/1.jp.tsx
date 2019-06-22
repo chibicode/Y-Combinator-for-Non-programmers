@@ -12,11 +12,11 @@ import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
-import AER from 'src/components/AER'
 import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -78,7 +78,7 @@ export default () => (
               <EmojiWithText letter="a" />
               がふたつ入っています。
             </P>
-            {AER.ilpo}
+            <R.Ilpo />
             <P>
               「寿司とサンドイッチが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
             </P>
@@ -108,7 +108,7 @@ export default () => (
               <EmojiWithText letter="d" />
               が入っています。
             </P>
-            {AER.imyd}
+            <R.Imyd />
             <P>マクドナルドのメニューにありそうな料理ばかりですね！</P>
             <Hr />
             <P>
@@ -118,7 +118,7 @@ export default () => (
               <EmojiWithText letter="f" />
               がふたつ入っています。
             </P>
-            {AER.emmb}
+            <R.Emmb />
             <P>こちらは、イタリアンな弁当箱ですね！</P>
             <Hr />
             <P>
@@ -129,7 +129,7 @@ export default () => (
               <EmojiWithText letter="i" />
               が入っています。
             </P>
-            {AER.jozw}
+            <R.Jozw />
             <P>こちらは普通に美味しそうですね。</P>
           </>
         )
@@ -155,7 +155,7 @@ export default () => (
               です。
               <H args={{ name: 'pressPlay' }} />
             </P>
-            {AER.itbm}
+            <R.Itbm />
           </>
         ),
         footer: {
@@ -190,9 +190,9 @@ export default () => (
             <P>
               <InlineHeader>例その1:</InlineHeader>
             </P>
-            {AER.ilpo}
+            <R.Ilpo />
             <ExpressionRunnerSeparator />
-            {AER.osqo}
+            <R.Osqo />
             <P>
               実はこれ、
               <H args={{ name: 'unknownRule' }} />
@@ -226,15 +226,15 @@ export default () => (
             <P>
               <InlineHeader>例その2:</InlineHeader>
             </P>
-            {AER.zwpj}
+            <R.Zwpj />
             <P>
               <InlineHeader>例その3:</InlineHeader>
             </P>
-            {AER.dqkc}
+            <R.Dqkc />
             <P>
               <InlineHeader>例その4:</InlineHeader>
             </P>
-            {AER.ldox}
+            <R.Ldox />
           </>
         ),
         footer: {
@@ -259,21 +259,21 @@ export default () => (
             <P>
               <InlineHeader>例その2:</InlineHeader>
             </P>
-            {AER.imyd}
+            <R.Imyd />
             <ExpressionRunnerSeparator />
-            {AER.bgfl}
+            <R.Bgfl />
             <P>
               <InlineHeader>例その3:</InlineHeader>
             </P>
-            {AER.emmb}
+            <R.Emmb />
             <ExpressionRunnerSeparator />
-            {AER.tuqr}
+            <R.Tuqr />
             <P>
               <InlineHeader>例その4:</InlineHeader>
             </P>
-            {AER.jozw}
+            <R.Jozw />
             <ExpressionRunnerSeparator />
-            {AER.cpkp}
+            <R.Cpkp />
           </>
         ),
         footer: {
@@ -331,14 +331,14 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               があります。
             </P>
-            {AER.loai}
+            <R.Loai />
             <P>
               これを
               <H args={{ name: 'play' }} />
               すると、<Strong>最終的に下のようになるでしょうか？</Strong>
               これまでの法則から予想してみてください。
             </P>
-            {AER.vvjn}
+            <R.Vvjn />
             <YesNoButtons answer="yes" />
           </>
         )
@@ -359,12 +359,12 @@ export default () => (
               <H args={{ name: 'play' }} />
               すると、
             </P>
-            {AER.hbgo}
+            <R.Hbgo />
             <P>
               <Strong>最終的に下のようになるでしょうか？</Strong>
               これまでの法則から予想してみてください。
             </P>
-            {AER.olef}
+            <R.Olef />
             <YesNoButtons answer="no" />
           </>
         )
@@ -377,7 +377,7 @@ export default () => (
             <P>
               <InlineHeader>例その5:</InlineHeader>
             </P>
-            {AER.zzyu}
+            <R.Zzyu />
             <P>
               つまり
               <Strong>
@@ -389,7 +389,7 @@ export default () => (
             <P>
               <InlineHeader>例その6:</InlineHeader>
             </P>
-            {AER.qpjt}
+            <R.Qpjt />
             <P>
               つまり
               <Strong>
