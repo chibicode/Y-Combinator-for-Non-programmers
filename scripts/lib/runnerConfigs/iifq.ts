@@ -1,4 +1,4 @@
-import { ExpressionRunnerShorthandConfig } from 'scripts/lib/expressionRunnerShorthandConfig'
+import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',

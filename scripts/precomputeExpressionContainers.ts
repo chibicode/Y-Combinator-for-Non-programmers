@@ -1,9 +1,9 @@
 import glob from 'glob'
 import fs from 'fs-extra'
-import { ExpressionRunnerShorthandConfig } from 'scripts/lib/expressionRunnerShorthandConfig'
-import buildExpressionContainers from 'scripts/lib/buildExpressionContainers'
-import buildExpressionRunnerConfigFromShorthand from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
-import prettierFormat from 'scripts/lib/prettierFormat'
+import { ExpressionRunnerShorthandConfig } from './lib/expressionRunnerShorthandConfig'
+import buildExpressionContainers from './lib/buildExpressionContainers'
+import buildExpressionRunnerConfigFromShorthand from './lib/buildExpressionRunnerConfigFromShorthand'
+import prettierFormat from './lib/prettierFormat'
 
 const regenerate = () => {
   glob(

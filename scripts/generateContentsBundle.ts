@@ -1,7 +1,7 @@
 import chokidar from 'chokidar'
 import glob from 'glob'
 import fs from 'fs'
-import prettierFormat from 'scripts/lib/prettierFormat'
+import prettierFormat from './lib/prettierFormat'
 
 const regenerate = (path?: string) => {
   glob(
