@@ -233,7 +233,7 @@ const ExpressionRunnerPrecomputed = ({
           )}
           {caption && (
             <ExpressionRunnerCaptionWrapper>
-              {caption}
+              <H args={caption} />
             </ExpressionRunnerCaptionWrapper>
           )}
           {!caption && isPlaying && (
