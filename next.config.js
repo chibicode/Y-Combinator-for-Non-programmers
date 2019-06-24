@@ -14,13 +14,15 @@ const config = withTypescript({
   },
   env: {
     productionLocale: process.env.PRODUCTION_LOCALE,
+    productionContentVersion: process.env.PRODUCTION_CONTENT_VERSION,
     isDevelopment: process.env.IS_DEVELOPMENT
   },
   // For locale, if running 2 servers (JP and EN) locally, if you use build-time config
   // (env instead of publicRuntimeConfig) then the config overlaps in both servers.
   // So must use publicRuntimeConfig instead.
   publicRuntimeConfig: {
-    devLocale: process.env.DEV_LOCALE
+    devLocale: process.env.DEV_LOCALE,
+    devContentVersion: process.env.DEV_CONTENT_VERSION
   },
   exportPathMap(defaultPathMap, { dev, outDir }) {
     if (!dev) {
