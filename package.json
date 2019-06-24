@@ -32,7 +32,7 @@
     "eslint:fix": "eslint --ext .js,.ts,.tsx --fix .",
     "build:en": "yarn tsc && yarn eslint && PRODUCTION_LOCALE=en yarn sitemap && PRODUCTION_LOCALE=en next build && PRODUCTION_LOCALE=en next export",
     "build:jp": "yarn tsc && yarn eslint && PRODUCTION_LOCALE=jp yarn sitemap && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
-    "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `yarn ts-node ./scripts/copyUsedEmojis.ts` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && yarn twemoji:bundle",
+    "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `yarn --silent ts-node ./scripts/copyUsedEmojis.ts` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && yarn twemoji:bundle",
     "twemoji:bundle": "yarn ts-node ./scripts/generateEmojisBundle.ts",
     "twemoji:watch": "yarn ts-node ./scripts/generateEmojisBundle.ts watch",
     "type-check": "tsc -w",
