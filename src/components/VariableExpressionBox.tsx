@@ -75,6 +75,16 @@ const SecretCodeLabel = ({ number }: { number?: number }) => (
   </span>
 )
 
+const shorthandBinary = (
+  shorthandBinary: NonNullable<VariableExpression['shorthandBinary']>
+) => {
+  if (shorthandBinary === 'mult') {
+    return '✖️'
+  } else {
+    return '➕'
+  }
+}
+
 const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   const { hideBottomRightBadges, bottomRightBadgeOverrides } = useContext(
     ExpressionRunnerContext
@@ -142,7 +152,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             {expression.highlightType === 'removed'
               ? '💥'
               : expression.shorthandBinary !== undefined
-              ? '✖️'
+              ? shorthandBinary(expression.shorthandBinary)
               : letterEmojiMapping[expression.name]}
           </Emoji>
         )}

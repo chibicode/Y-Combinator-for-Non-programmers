@@ -1727,6 +1727,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'addMathBox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Emoji>➕</Emoji> 足し算ができる計算箱 <Emoji>🎁</Emoji>
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 
