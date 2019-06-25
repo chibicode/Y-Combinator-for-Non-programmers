@@ -971,3 +971,17 @@ export const v2e1E1 = initializeExpressionContainer([
     'question'
   ]
 ])
+
+export const v2e1E2 = initializeExpressionContainer([
+  {
+    shorthandNumber: 1
+  },
+  [
+    {
+      shorthandBinary: 'add'
+    },
+    {
+      shorthandNumber: 1
+    }
+  ]
+])

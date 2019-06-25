@@ -57,6 +57,18 @@ export default () => (
               の部分には、それぞれ数字を入れることができます。たとえば{' '}
               <EmojiNumber number={1} /> を両方に入れてみましょう。
             </P>
+            <R.Jfsd />
+            <P>
+              そして、それぞれの計算箱には
+              <Strong>
+                <H args={{ name: 'play' }} />
+                ボタン
+              </Strong>
+              がついており、それを押すと計算が実行されます。試しに、下の計算箱で
+              <Strong>
+                <H args={{ name: 'pressPlay' }} />
+              </Strong>
+            </P>
           </>
         )
       }
