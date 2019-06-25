@@ -2,8 +2,8 @@ import locale from 'src/lib/locale'
 import { DateTime } from 'luxon'
 
 export const date = {
-  jp: DateTime.fromISO('2019-06-24T00:00:00Z'),
-  en: DateTime.fromISO('2019-06-24T00:00:00Z')
+  jp: DateTime.fromISO('2019-07-08T00:00:00Z'),
+  en: DateTime.fromISO('2019-07-08T00:00:00Z')
 }[locale]
 
 export const dateString = {

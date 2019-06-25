@@ -13,6 +13,7 @@ import {
   numberParamsHighlightNumber
 } from 'scripts/lib/churchEncodingParams'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
+import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 
 export const e1E1 = initializeExpressionContainer([
   {
@@ -985,3 +986,10 @@ export const v2e1E2 = initializeExpressionContainer([
     }
   ]
 ])
+
+export const v2e1E3: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 2
+  }),
+  containerState: 'done'
+}

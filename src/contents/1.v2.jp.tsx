@@ -37,7 +37,7 @@ export default () => (
               」と呼ばれる便利な道具がありました。
               <InlineHeader>計算箱</InlineHeader>は
               <Em>さまざまな計算を自動で行ってくれる道具</Em>
-              です。人々は 難しい計算を行うとき、いつもこの
+              です。人々は難しい計算を行うとき、いつもこの
               <InlineHeader>計算箱</InlineHeader>に頼っていました。
             </P>
             <EmojiSeparator emojis={['🙂', '🎁', '🙂']} />
@@ -68,6 +68,12 @@ export default () => (
               <Strong>
                 <H args={{ name: 'pressPlay' }} />
               </Strong>
+            </P>
+            <R.Nlfx />
+            <P>
+              これで <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />{' '}
+              が計算できました！次は、足し算以外の計算箱も見ていきましょう。
             </P>
           </>
         )
