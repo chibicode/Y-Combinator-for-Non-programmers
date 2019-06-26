@@ -182,7 +182,7 @@ export default () => (
               。いったいどんな計算ができるのでしょう？
               <Emoji>🤔</Emoji>
             </P>
-            <EmojiSeparator emojis={['🔢', '↔', '0️⃣']} />
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
             <P>
               とりあえず、{' '}
               <Em>
@@ -316,7 +316,7 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
-            <EmojiSeparator emojis={['🔢', '↔', '0️⃣']} />
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
             <P>
               「
               <Em>
@@ -327,6 +327,21 @@ export default () => (
               <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
               の計算箱」という名前がついているのです。
             </P>
+          </>
+        )
+      },
+      {
+        title: <>何の役に立つの？</>,
+        content: (
+          <>
+            <P>
+              では、
+              <Strong>
+                この条件分岐の計算箱はいったい何の役に立つのでしょうか？
+              </Strong>
+              人々は、条件分岐の計算箱をどんな用途で使っていたのでしょう？
+            </P>
+            <EmojiSeparator emojis={['🔢', '🤔', '0️⃣']} />
           </>
         )
       }
