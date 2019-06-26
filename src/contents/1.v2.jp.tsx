@@ -93,6 +93,9 @@ export default () => (
             </P>
             <R.Uaha />
             <P>
+              ご覧の通り、答えは <EmojiNumber number={6} /> になりました。
+            </P>
+            <P>
               計算箱は他にも引き算や割り算ができますが、特に興味深いわけでもないので、時間の都合上省略します。
               <Emoji>😉</Emoji>
             </P>
@@ -134,8 +137,14 @@ export default () => (
               <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
               で割ると「
               <EmojiNumber number={2} /> 余り <EmojiNumber number={1} />
-              」になるので、計算箱には余りの <Emoji>1️⃣</Emoji>{' '}
-              が残りました。5人のグループを2人ずつに分ければ、ひとりが仲間はずれになりますからね。
+              」になるので、計算箱には
+              <Strong>
+                余りの <Emoji>1️⃣</Emoji>
+              </Strong>{' '}
+              が残りました。
+            </P>
+            <P>
+              先ほどの例に戻ると、5人のグループを2人ずつに分ければ、ひとりが仲間はずれになります。
               <Emoji>😭</Emoji>
             </P>
             <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
@@ -157,8 +166,12 @@ export default () => (
             <P>次は、こちらの計算箱をご覧ください。</P>
             <R.Ymmm />
             <P>
-              この計算箱にはハテナマーク <Emoji>❓</Emoji>{' '}
-              が3つあり、それぞれ左端に違う色と、以下の三種類の印がついています。いったいどんな計算ができるのでしょう？
+              この計算箱には
+              <Em>
+                ハテナマーク <Emoji>❓</Emoji>{' '}
+                が3つあり、それぞれ左端に違う色と、以下の三種類の印がついています
+              </Em>
+              。いったいどんな計算ができるのでしょう？
               <Emoji>🤔</Emoji>
             </P>
             <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
@@ -168,12 +181,12 @@ export default () => (
                 それぞれの <Emoji>❓</Emoji> に適当な数字を入れ、
               </Em>
               <H args={{ name: 'play' }} />
-              したらどうなるか見てみましょう。
+              したらどうなるか試してみましょう。
             </P>
             <P>
-              ここでは試しに、上から順に <EmojiNumber number={1} />{' '}
+              試しに、上から順に <EmojiNumber number={1} />{' '}
               <EmojiNumber number={2} /> <EmojiNumber number={3} />{' '}
-              を入れてみました。
+              を入れてみたので、
               <H args={{ name: 'pressPlay' }} />
             </P>
             <R.Iatt />
@@ -183,6 +196,10 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        title: <>ゼロか、ゼロ以外か</>,
+        content: <></>
       }
     ]}
   />
