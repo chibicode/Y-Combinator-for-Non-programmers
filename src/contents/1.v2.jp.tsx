@@ -223,7 +223,7 @@ export default () => (
               </Strong>
             </P>
             <P>
-              このような場合、
+              このように真ん中が <EmojiNumber number={0} /> ではない場合、
               <Strong>
                 上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
                 に入っている数字が最終的に残ります。
