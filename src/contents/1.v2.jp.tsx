@@ -1,5 +1,12 @@
 import React from 'react'
-import { P, Strong, Em, InlineHeader } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Em,
+  InlineHeader,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -175,7 +182,7 @@ export default () => (
               。いったいどんな計算ができるのでしょう？
               <Emoji>🤔</Emoji>
             </P>
-            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
+            <EmojiSeparator emojis={['🔢', '↔', '0️⃣']} />
             <P>
               とりあえず、{' '}
               <Em>
@@ -268,6 +275,57 @@ export default () => (
             <P>
               だから、下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
               に入っている <EmojiNumber number={5} /> が残る、というわけです。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              まとめると、この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の法則は以下の通りです。
+            </P>
+            <R.Ymmm />
+            <P>
+              <Em>
+                まず、真ん中の <InlineEmojiBoxesForCondition type="condition" />{' '}
+                の中にある数字が <EmojiNumber number={0} />{' '}
+                かどうかチェックします。
+              </Em>
+            </P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  もし <EmojiNumber number={0} /> なら、 下の{' '}
+                  <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                  の中にある数字が残ります。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  もし <EmojiNumber number={0} /> でなければ、 上の{' '}
+                  <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                  の中にある数字が残ります。
+                </Em>
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['🔢', '↔', '0️⃣']} />
+            <P>
+              「
+              <Em>
+                真ん中が <EmojiNumber number={0} /> かどうか？
+              </Em>
+              」という「
+              <Strong>条件</Strong>」によって、上下に「
+              <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
+              の計算箱」という名前がついているのです。
             </P>
           </>
         )
