@@ -1075,3 +1075,36 @@ export const v2e1E11 = initializeExpressionContainer({
     shorthandNumber: 4
   }
 })
+
+export const v2e1E12 = initializeExpressionContainer([
+  {
+    shorthandNumber: 4
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    'questionV2'
+  ]
+])
+
+export const v2e1E13 = initializeExpressionContainer([
+  {
+    shorthandNumber: 4
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    {
+      shorthandNumber: 2020
+    }
+  ]
+])
+
+export const v2e1E14: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 0
+  }),
+  containerState: 'done'
+}

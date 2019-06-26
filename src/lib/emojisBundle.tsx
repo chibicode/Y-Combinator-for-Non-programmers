@@ -130,6 +130,7 @@ import Emoji34ZZ20e3 from 'src/components/Twemoji/34-20e3'
 import Emoji35ZZ20e3 from 'src/components/Twemoji/35-20e3'
 import Emoji36ZZ20e3 from 'src/components/Twemoji/36-20e3'
 import Emoji38ZZ20e3 from 'src/components/Twemoji/38-20e3'
+import Emoji39ZZ20e3 from 'src/components/Twemoji/39-20e3'
 
 export default {
   '1f170': Emoji1f170,
@@ -262,5 +263,6 @@ export default {
   '34-20e3': Emoji34ZZ20e3,
   '35-20e3': Emoji35ZZ20e3,
   '36-20e3': Emoji36ZZ20e3,
-  '38-20e3': Emoji38ZZ20e3
+  '38-20e3': Emoji38ZZ20e3,
+  '39-20e3': Emoji39ZZ20e3
 }
