@@ -1742,7 +1742,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <>余り</>
+      return <>割ったときの余り</>
     }
   }
   throw new Error()

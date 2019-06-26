@@ -62,14 +62,14 @@ const SecretCodeLabelWrapper = ({
 }) => (
   <span
     css={css`
-      font-size: 0.6em;
+      font-size: ${operator ? 0.5 : 0.6}em;
       background: ${colors(operator ? 'grey800' : 'secretCode')};
       color: #fff;
       padding: 0.25em 0.75em;
       border-radius: ${radii(0.25)};
       font-weight: bold;
       display: inline-block;
-      transform: translateY(-0.1em);
+      transform: translateY(${operator ? -0.3 : -0.1}em);
     `}
   >
     {children}
