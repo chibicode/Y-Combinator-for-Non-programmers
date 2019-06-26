@@ -105,7 +105,8 @@ const allUsedEmojis = uniq<string>([
   '🔠',
   '🐍',
   '💡',
-  '🎁'
+  '🎁',
+  '🗓'
 ])
 
 // Copied from Twemoji
