@@ -993,3 +993,24 @@ export const v2e1E3: ContainerWithState<'done'> = {
   }),
   containerState: 'done'
 }
+
+export const v2e1E4 = initializeExpressionContainer([
+  {
+    shorthandNumber: 2
+  },
+  [
+    {
+      shorthandBinary: 'mult'
+    },
+    {
+      shorthandNumber: 3
+    }
+  ]
+])
+
+export const v2e1E5: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 6
+  }),
+  containerState: 'done'
+}

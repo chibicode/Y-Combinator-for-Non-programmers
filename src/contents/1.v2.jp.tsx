@@ -77,6 +77,29 @@ export default () => (
             </P>
           </>
         )
+      },
+      {
+        title: <>四則演算</>,
+        content: (
+          <>
+            <P>
+              計算箱は、足し算以外にも引き算・掛け算・割り算、すなわち四則演算のすべてに対応しています。
+            </P>
+            <EmojiSeparator emojis={['➖', '✖️', '➗']} />
+            <P>
+              たとえばこちらは、「<Strong>掛け算ができる計算箱</Strong>
+              」です。
+              <Strong>
+                <H args={{ name: 'play' }} />
+                ボタン
+              </Strong>
+              を押せば、
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> を計算してくれます。
+            </P>
+            <R.Uaha />
+          </>
+        )
       }
     ]}
   />
