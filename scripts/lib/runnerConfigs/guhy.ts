@@ -2,8 +2,9 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'v2e1E8',
-  caption: { name: 'conditionalMathBox' }
+  lessonExpressionsKey: 'v2e1E11',
+  initialState: 'trueCaseActive',
+  explanationsVisibility: 'visible'
 }
 
 export default config

@@ -157,17 +157,17 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <Emoji>❓</Emoji>が3つある計算箱
-          </>
-        ),
+        title: <>条件分岐の計算箱</>,
         content: (
           <>
-            <P>次は、こちらの計算箱をご覧ください。</P>
+            <P>
+              次は、こちらの計算箱をご覧ください。この計算箱には「
+              <Strong>条件分岐の計算箱</Strong>
+              」という名がついており、名前の理由は後ほど説明します。
+            </P>
             <R.Ymmm />
             <P>
-              この計算箱には
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>」には
               <Em>
                 ハテナマーク <Emoji>❓</Emoji>{' '}
                 が3つあり、それぞれ左端に違う色と、以下の三種類の印がついています
@@ -207,7 +207,7 @@ export default () => (
         content: (
           <>
             <P>
-              この計算箱はまず、
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>」はまず、
               <Strong>
                 真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
                 に入っている数字が <EmojiNumber number={0} /> かどうか
@@ -246,8 +246,29 @@ export default () => (
         ),
         content: (
           <>
-            <P>では、こちらの計算箱の場合はどうでしょう？</P>
+            <P>
+              では、こちらの「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の場合はどうでしょう？
+            </P>
             <R.Plbv />
+            <P>
+              こちらも、真ん中の数字が <EmojiNumber number={0} />{' '}
+              かどうかチェックします。
+            </P>
+            <R.Qcmh />
+            <P>
+              今回は真ん中が <EmojiNumber number={0} />{' '}
+              ですね。この場合は前回と逆で、
+              <Strong>
+                下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                に入っている数字が最終的に残ります。
+              </Strong>
+            </P>
+            <R.Guhy />
+            <P>
+              だから、下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+              に入っている <EmojiNumber number={5} /> が残る、というわけです。
+            </P>
           </>
         )
       }

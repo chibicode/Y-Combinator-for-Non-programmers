@@ -1745,6 +1745,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>割ったときの余り</>
     }
   }
+  if (args.name === 'conditionalMathBox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>条件分岐の計算箱</>
+    }
+  }
   throw new Error()
 }
 

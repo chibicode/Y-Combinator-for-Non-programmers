@@ -1,14 +1,12 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
-      "previouslyChangedExpressionState": "default",
       "expression": {
         "type": "conditional",
-        "state": "default",
+        "state": "trueCaseActive",
         "checkType": "isZero",
         "condition": {
-          "name": "questionV2",
+          "name": "shorthandNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -16,10 +14,11 @@
           "argPriorityAgg": [],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "shorthandNumber": 0
         },
         "trueCase": {
-          "name": "questionV2",
+          "name": "shorthandNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -29,10 +28,11 @@
             1
           ],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "shorthandNumber": 5
         },
         "falseCase": {
-          "name": "questionV2",
+          "name": "shorthandNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -42,19 +42,20 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "shorthandNumber": 4
         },
         "priority": 1
-      }
+      },
+      "previouslyChangedExpressionState": "trueCaseActive",
+      "activePriority": 1,
+      "containerState": "stepped"
     }
   ],
   "speed": 1,
   "showOnlyFocused": false,
-  "caption": {
-    "name": "conditionalMathBox"
-  },
   "hideControls": true,
-  "explanationsVisibility": "hidden",
+  "explanationsVisibility": "visible",
   "hidePriorities": true,
   "variableSize": "lg",
   "containerSize": "xxs",

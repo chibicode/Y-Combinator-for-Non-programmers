@@ -126,4 +126,5 @@ export interface HProps {
     | { name: 'mentionRightArrow' }
     | { name: 'addMathBox' }
     | { name: 'remainder' }
+    | { name: 'conditionalMathBox' }
 }
