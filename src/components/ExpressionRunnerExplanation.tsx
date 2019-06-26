@@ -331,7 +331,7 @@ const Explanation = ({
               type="condition"
               variableSizeOverrides="sm"
             />{' '}
-            が1以上なので{' '}
+            が <EmojiNumber number={0} /> ではないので{' '}
             <InlineEmojiBoxesForCondition
               type="falseCase"
               variableSizeOverrides="sm"

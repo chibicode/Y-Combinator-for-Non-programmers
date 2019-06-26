@@ -6,6 +6,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
+import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 
 export default () => (
   <EpisodeCardList
@@ -21,7 +22,7 @@ export default () => (
               <Emoji>😉</Emoji>
             </P>
             <P>
-              まずは、物語の主役となる「
+              まずは、この物語に登場する「
               <Strong>計算箱</Strong>」の話をしましょう。
             </P>
             <EmojiSeparator emojis={['🔢', '🎁', '🔢']} />
@@ -198,8 +199,57 @@ export default () => (
         )
       },
       {
-        title: <>ゼロか、ゼロ以外か</>,
-        content: <></>
+        title: (
+          <>
+            真ん中が <EmojiNumber number={0} /> かどうか
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              この計算箱はまず、
+              <Strong>
+                真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
+                に入っている数字が <EmojiNumber number={0} /> かどうか
+              </Strong>
+              チェックします。
+            </P>
+            <R.Vozu />
+            <P>
+              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
+              に入っている数字は <EmojiNumber number={2} /> なので、{' '}
+              <Strong>
+                <EmojiNumber number={0} /> ではありません。
+              </Strong>
+            </P>
+            <P>
+              このような場合、
+              <Strong>
+                上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                に入っている数字が最終的に残ります。
+              </Strong>
+            </P>
+            <R.Rjfy />
+            <P>
+              だから、 上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+              に入っている <EmojiNumber number={1} /> が残る、というわけです。
+            </P>
+            <R.Toht />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            真ん中が <EmojiNumber number={0} /> である場合
+          </>
+        ),
+        content: (
+          <>
+            <P>では、こちらの計算箱の場合はどうでしょう？</P>
+            <R.Plbv />
+          </>
+        )
       }
     ]}
   />
