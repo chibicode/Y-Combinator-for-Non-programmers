@@ -131,7 +131,8 @@ export default () => (
             <P>
               <EmojiNumber number={5} /> を <EmojiNumber number={2} /> で割ると{' '}
               <Emoji>1️⃣</Emoji> が余るので、計算箱も同じく <Emoji>1️⃣</Emoji>{' '}
-              が残りました！
+              が残りました！そしてもちろん、5人のグループを2人ずつに分ければ、ひとりが仲間はずれになります。
+              <Emoji>😭</Emoji>
             </P>
             <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
             <P>
