@@ -964,12 +964,12 @@ export const e16E1 = initializeExpressionContainer([
 ])
 
 export const v2e1E1 = initializeExpressionContainer([
-  'question',
+  'questionV2',
   [
     {
       shorthandBinary: 'add'
     },
-    'question'
+    'questionV2'
   ]
 ])
 
@@ -1035,3 +1035,23 @@ export const v2e1E7: ContainerWithState<'done'> = {
   }),
   containerState: 'done'
 }
+
+export const v2e1E8 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'questionV2',
+  trueCase: 'questionV2',
+  falseCase: 'questionV2'
+})
+
+export const v2e1E9 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 2
+  },
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 1
+  }
+})

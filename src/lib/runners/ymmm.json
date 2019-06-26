@@ -4,40 +4,21 @@
       "containerState": "ready",
       "previouslyChangedExpressionState": "default",
       "expression": {
-        "arg": {
-          "arg": {
-            "name": "questionV2",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [
-              1,
-              2
-            ],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": true
-          },
-          "func": {
-            "name": "shorthandBinary",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [
-              2
-            ],
-            "emphasizePriority": false,
-            "bound": true,
-            "shorthandBinary": "add"
-          },
-          "state": "default",
-          "type": "call",
-          "priority": 2
+        "type": "conditional",
+        "state": "default",
+        "checkType": "isZero",
+        "condition": {
+          "name": "questionV2",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true
         },
-        "func": {
+        "trueCase": {
           "name": "questionV2",
           "highlightType": "default",
           "topLeftBadgeType": "none",
@@ -50,17 +31,25 @@
           "emphasizePriority": false,
           "bound": true
         },
-        "state": "default",
-        "type": "call",
+        "falseCase": {
+          "name": "questionV2",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true
+        },
         "priority": 1
       }
     }
   ],
   "speed": 1,
   "showOnlyFocused": false,
-  "caption": {
-    "name": "addMathBox"
-  },
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,

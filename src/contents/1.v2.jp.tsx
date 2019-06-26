@@ -6,7 +6,6 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
-import { InlineEmojiBoxesForQuestion } from 'src/components/InlineEmojiBoxes'
 
 export default () => (
   <EpisodeCardList
@@ -17,7 +16,8 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              当記事は物語調で話を進めていきます。ちなみに、この話はフィクションです。
+              当記事は<Em>ゆるい物語調</Em>
+              で話を進めていきます。ちなみに、この話はフィクションです。
               <Emoji>😉</Emoji>
             </P>
             <P>
@@ -47,13 +47,11 @@ export default () => (
             </P>
             <R.Fdek />
             <P>
-              一番上と下にハテナマーク
-              <InlineEmojiBoxesForQuestion />
+              一番上と下にハテナマーク <Emoji>❓</Emoji>{' '}
               があり、真ん中に足し算の記号 <Emoji>➕</Emoji> がありますね。
             </P>
             <P>
-              この
-              <InlineEmojiBoxesForQuestion />
+              この <Emoji>❓</Emoji>{' '}
               の部分には、それぞれ数字を入れることができます。たとえば{' '}
               <EmojiNumber number={1} /> を両方に入れてみましょう。
             </P>
@@ -117,7 +115,7 @@ export default () => (
             <EmojiSeparator emojis={['🤔', '🤔', '🤔', '🤔', '🤔']} />
             <P>
               「それくらい暗算できるだろう <Emoji>😡</Emoji>
-              」と思われるかもしれません。でも、この物語に出てくる人々は計算がとても苦手だったので、簡単な計算でも計算箱に頼っていたのです。
+              」と思われるかもしれません。でも、みんな計算がとても苦手だったので、簡単な計算でも計算箱に頼っていたのです。
               <Emoji>😉</Emoji>
             </P>
             <P>
@@ -129,15 +127,55 @@ export default () => (
             </P>
             <R.Wtax />
             <P>
-              <EmojiNumber number={5} /> を <EmojiNumber number={2} /> で割ると{' '}
-              <Emoji>1️⃣</Emoji> が余るので、計算箱も同じく <Emoji>1️⃣</Emoji>{' '}
-              が残りました！そしてもちろん、5人のグループを2人ずつに分ければ、ひとりが仲間はずれになります。
+              <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+              で割ると「
+              <EmojiNumber number={2} /> 余り <EmojiNumber number={1} />
+              」になるので、計算箱には余りの <Emoji>1️⃣</Emoji>{' '}
+              が残りました。5人のグループを2人ずつに分ければ、ひとりが仲間はずれになりますからね。
               <Emoji>😭</Emoji>
             </P>
             <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
             <P>
               ここまでは簡単すぎたかもしれません。次は、もう少し複雑な計算箱を見てみましょう！
               <Emoji>😉</Emoji>
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <Emoji>❓</Emoji>が3つある計算箱
+          </>
+        ),
+        content: (
+          <>
+            <P>次は、こちらの計算箱をご覧ください。</P>
+            <R.Ymmm />
+            <P>
+              この計算箱にはハテナマーク <Emoji>❓</Emoji>{' '}
+              が3つあり、それぞれ左端に違う色と、以下の三種類の印がついています。いったいどんな計算ができるのでしょう？
+              <Emoji>🤔</Emoji>
+            </P>
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
+            <P>
+              とりあえず、{' '}
+              <Em>
+                それぞれの <Emoji>❓</Emoji> に適当な数字を入れ、
+              </Em>
+              <H args={{ name: 'play' }} />
+              したらどうなるか見てみましょう。
+            </P>
+            <P>
+              ここでは試しに、上から順に <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={2} /> <EmojiNumber number={3} />{' '}
+              を入れてみました。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Iatt />
+            <P>
+              答えは <EmojiNumber number={1} />{' '}
+              になりました。では、どうしてこうなったか説明しましょう！
             </P>
           </>
         )

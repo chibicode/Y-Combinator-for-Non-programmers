@@ -34,6 +34,7 @@ export type VariableNames =
   | 'someNumber'
   | 'abbreviated'
   | 'Amult'
+  | 'questionV2'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames
