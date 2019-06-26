@@ -1000,7 +1000,7 @@ export const v2e1E4 = initializeExpressionContainer([
   },
   [
     {
-      shorthandBinary: 'mult'
+      shorthandBinary: 'add'
     },
     {
       shorthandNumber: 3
@@ -1011,6 +1011,27 @@ export const v2e1E4 = initializeExpressionContainer([
 export const v2e1E5: ContainerWithState<'done'> = {
   ...initializeExpressionContainer({
     shorthandNumber: 6
+  }),
+  containerState: 'done'
+}
+
+export const v2e1E6 = initializeExpressionContainer([
+  {
+    shorthandNumber: 2
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    {
+      shorthandNumber: 5
+    }
+  ]
+])
+
+export const v2e1E7: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 1
   }),
   containerState: 'done'
 }

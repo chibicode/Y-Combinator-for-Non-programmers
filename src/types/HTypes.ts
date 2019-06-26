@@ -125,4 +125,5 @@ export interface HProps {
     | { name: 'numberOfAIsSecretCodeCaption' }
     | { name: 'mentionRightArrow' }
     | { name: 'addMathBox' }
+    | { name: 'remainder' }
 }

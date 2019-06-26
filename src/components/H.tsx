@@ -1738,6 +1738,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'remainder') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>余り</>
+    }
+  }
   throw new Error()
 }
 

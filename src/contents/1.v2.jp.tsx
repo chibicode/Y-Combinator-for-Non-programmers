@@ -37,8 +37,8 @@ export default () => (
               」と呼ばれる便利な道具がありました。
               <InlineHeader>計算箱</InlineHeader>は
               <Em>さまざまな計算を自動で行ってくれる道具</Em>
-              です。人々は難しい計算を行うとき、いつもこの
-              <InlineHeader>計算箱</InlineHeader>に頼っていました。
+              です。人々は計算がとても苦手だったので、いつもこの
+              <InlineHeader>計算箱</InlineHeader>に頼りっぱなしでした。
             </P>
             <EmojiSeparator emojis={['🙂', '🎁', '🙂']} />
             <P>
@@ -79,15 +79,11 @@ export default () => (
         )
       },
       {
-        title: <>四則演算</>,
+        title: <>足し算以外の計算箱</>,
         content: (
           <>
             <P>
-              計算箱は、足し算以外にも引き算・掛け算・割り算、すなわち四則演算のすべてに対応しています。
-            </P>
-            <EmojiSeparator emojis={['➖', '✖️', '➗']} />
-            <P>
-              たとえばこちらは、「<Strong>掛け算ができる計算箱</Strong>
+              続いてこちらが、「<Strong>掛け算ができる計算箱</Strong>
               」です。
               <Strong>
                 <H args={{ name: 'play' }} />
@@ -98,6 +94,50 @@ export default () => (
               <EmojiNumber number={2} /> を計算してくれます。
             </P>
             <R.Uaha />
+            <P>
+              計算箱は他にも引き算や割り算もできますが、特に興味深いわけでもないので、時間の都合上省略します。
+              <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator emojis={['➖', '🎁', '➗']} />
+            <P>
+              一方、少しだけ興味深いのがこちらの「
+              <Strong>割ったときの余りがわかる計算箱</Strong>」です。
+            </P>
+            <R.Mjbi />
+            <P>
+              上の計算箱は、 「
+              <Strong>
+                <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+                で割ったときの余り
+              </Strong>
+              」を計算してくれます。これを使えば、たとえば「
+              <Em>5人のグループを2人ずつに分けたとき、仲間はずれが出るか？</Em>
+              」が分かるわけです。
+            </P>
+            <EmojiSeparator emojis={['🤔', '🤔', '🤔', '🤔', '🤔']} />
+            <P>
+              「それくらい暗算できるだろう <Emoji>😡</Emoji>
+              」と思われるかもしれませんが、この物語に出てくる人々は計算がとても苦手だったので、計算箱に頼らないといけなかったのです。
+              <Emoji>😉</Emoji>
+            </P>
+            <P>
+              では、先ほどの計算箱を
+              <Em>
+                <H args={{ name: 'play' }} />
+                してみましょう。
+              </Em>
+            </P>
+            <R.Wtax />
+            <P>
+              <EmojiNumber number={5} /> を <EmojiNumber number={2} /> で割ると{' '}
+              <Emoji>1️⃣</Emoji> が余るので、計算箱も同じく <Emoji>1️⃣</Emoji>{' '}
+              が残りました！
+            </P>
+            <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
+            <P>
+              ここまでは簡単すぎたかもしれません。次は、もう少し複雑な計算箱を見てみましょう！
+              <Emoji>😉</Emoji>
+            </P>
           </>
         )
       }
