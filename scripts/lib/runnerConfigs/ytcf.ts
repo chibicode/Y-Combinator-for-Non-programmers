@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'nbgx'
+  initialExpressionContainer: initialExpressionContainers.nbgx
 }
 
 export default config

@@ -5,11 +5,10 @@ import {
   ExpressionContainer,
   SteppedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import * as lessonExpressions from 'scripts/lib/initialExpressionContainers'
 
 const buildExpressionContainers = ({
-  lessonExpressionsKey,
-  predefinedExpressionsKeys,
+  initialExpressionContainer,
+  initialExpressionContainers,
   initializeInstructions,
   showAllShowSteps,
   skipAlphaConvert,
@@ -19,9 +18,8 @@ const buildExpressionContainers = ({
   lastAllowedExpressionStateAfterIterations,
   hidePlayButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
-  if (lessonExpressionsKey) {
-    let currentExpressionContainer: SteppedExpressionContainer =
-      lessonExpressions[lessonExpressionsKey]
+  if (initialExpressionContainer) {
+    let currentExpressionContainer: SteppedExpressionContainer = initialExpressionContainer
     let results: ExpressionContainer[] = []
     const stepOptions = { showAllShowSteps, skipAlphaConvert }
 
@@ -114,8 +112,8 @@ const buildExpressionContainers = ({
     }
 
     return results
-  } else if (predefinedExpressionsKeys) {
-    return predefinedExpressionsKeys.map(key => lessonExpressions[key])
+  } else if (initialExpressionContainers) {
+    return initialExpressionContainers
   } else {
     throw new Error()
   }

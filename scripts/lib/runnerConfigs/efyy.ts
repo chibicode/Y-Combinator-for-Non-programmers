@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
-  lessonExpressionsKey: 'lqti',
+  initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'betaReducePreviewBefore',
   finalState: 'betaReducePreviewAfter',
   showPriorities: true

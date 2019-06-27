@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'hctu',
+  initialExpressionContainer: initialExpressionContainers.hctu,
   showPriorities: true,
   containerSize: 'xs',
   variableSize: 'xxs',

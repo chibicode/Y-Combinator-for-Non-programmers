@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
-  lessonExpressionsKey: 'atls',
+  initialExpressionContainer: initialExpressionContainers.atls,
   initialState: 'active',
   finalState: 'showFuncBound',
   hideFuncUnboundBadgeOnExplanation: true

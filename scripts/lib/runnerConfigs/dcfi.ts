@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'krta',
+  initialExpressionContainer: initialExpressionContainers.krta,
   showPriorities: true,
   skipToTheEnd: false,
   containerSize: 'xs',

@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'hfov',
+  initialExpressionContainer: initialExpressionContainers.hfov,
   caption: { name: 'whatCanComputeFactorial', start: 3 }
 }
 

@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'dvlj',
+  initialExpressionContainer: initialExpressionContainers.dvlj,
   showPriorities: true,
   speed: 1.75,
   skipToTheEnd: false,

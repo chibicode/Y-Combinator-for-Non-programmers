@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'onbh',
+  initialExpressionContainer: initialExpressionContainers.onbh,
   showPriorities: true,
   variableSize: 'md',
   caption: { name: 'ycChangedCaption', fromNumber: 3 },
