@@ -109,7 +109,36 @@ interface ExpressionRunnerSingleStepConfig {
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
 }
 
+export function isExpressionRunnerPredefinedConfig(
+  c: ExpressionRunnerShorthandConfig
+): c is ExpressionRunnerPredefinedConfig {
+  return c.runner === 'predefined'
+}
+
+export const expressionRunnerPredefinedConfigDefault = {
+  hideFuncUnboundBadgeOnExplanation: false,
+  showPriorities: false,
+  explanationsVisibility: 'hiddenInitialPausedOnly',
+  variableSize: 'lg',
+  skipToTheEnd: true
+}
+
+interface ExpressionRunnerPredefinedConfig {
+  runner: 'predefined'
+  predefinedExpressionsKeys: readonly (keyof typeof lessonExpressions)[]
+  hideFuncUnboundBadgeOnExplanation?: boolean
+  showPriorities?: boolean
+  nextIteration?: boolean
+  nextIterations?: number
+  variableSize?: ExpressionRunnerProps['variableSize']
+  containerSize?: ExpressionRunnerProps['containerSize']
+  explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
+  showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
+  skipToTheEnd?: boolean
+}
+
 export type ExpressionRunnerShorthandConfig =
   | ExpressionRunnerSimpleConfig
   | ExpressionRunnerPlayButtonOnlyConfig
   | ExpressionRunnerSingleStepConfig
+  | ExpressionRunnerPredefinedConfig

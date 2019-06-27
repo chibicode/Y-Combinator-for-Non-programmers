@@ -10,7 +10,7 @@ export interface VariableExpression {
   readonly emphasizePriority: boolean
   readonly argPriorityAgg: number[]
   readonly funcPriorityAgg: number[]
-  readonly shorthandBinary?: 'mult'
+  readonly shorthandBinary?: 'mult' | 'add' | 'remainder'
   readonly shorthandNumber?: number
   readonly shorthandUnary?: 'pred'
   readonly magical?: boolean

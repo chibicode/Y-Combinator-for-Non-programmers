@@ -1,207 +1,208 @@
 import React from 'react'
 import {
-  Em,
-  Img,
   P,
-  PFullWidth,
-  Hr,
   Strong,
-  InlineHeader
+  Em,
+  InlineHeader,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
-import EmojiWithText from 'src/components/EmojiWithText'
-import EmojiSeparator from 'src/components/EmojiSeparator'
-import YesNoButtons from 'src/components/YesNoButtons'
-import NextLessonButton from 'src/components/NextLessonButton'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
-import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
+import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
+import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
+import YesNoButtons from 'src/components/YesNoButtons'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <H args={{ name: 'bentoBoxPuzzle' }} />,
+        title: <>この話はフィクションです</>,
         content: (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              当記事では、<Strong>とあるパズル</Strong>
-              を使って
-              <H args={{ name: 'yCombinator' }} />
-              とは何かを学んでいきます。 今回は、
-              <Em>このパズルの基本法則</Em>
-              を紹介します。
+              当記事は<Em>ゆるい物語調</Em>
+              で話を進めていきます。ちなみに、この話はフィクションです。
+              <Emoji>😉</Emoji>
             </P>
             <P>
-              まずはじめにこちらの写真をご覧ください。筆者の地元・横浜の崎陽軒で販売されているお弁当です(撮影は筆者)。
+              まずは、この物語に登場する「
+              <Strong>計算箱</Strong>」の話をしましょう。
             </P>
-            <PFullWidth>
-              <Img src="/static/images/bentoboxes.jpg" alt="Bento Boxes" />
-            </PFullWidth>
+            <EmojiSeparator emojis={['🔢', '🎁', '🔢']} />
+          </>
+        )
+      },
+      {
+        title: <>計算箱</>,
+        content: (
+          <>
             <P>
-              なぜお弁当の写真をお見せしたかというと、今回紹介するパズルには
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              という名前がついているからです。
+              むかしむかしあるところに、「<Strong>計算箱</Strong>
+              」と呼ばれる便利な道具がありました。
+              <InlineHeader>計算箱</InlineHeader>は
+              <Em>さまざまな計算を自動で行ってくれる道具</Em>
+              です。人々は計算がとても苦手だったので、いつもこの
+              <InlineHeader>計算箱</InlineHeader>に頼りっぱなしでした。
             </P>
-            <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
+            <EmojiSeparator emojis={['🙂', '🎁', '🙂']} />
             <P>
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              がどんなものか、説明しますね！
+              計算箱にはさまざまな種類があります。まずこちらが、「
+              <Strong>足し算ができる計算箱</Strong>」です:
+            </P>
+            <R.Fdek />
+            <P>
+              一番上と下にハテナマーク <Emoji>❓</Emoji>{' '}
+              があり、真ん中に足し算の記号 <Emoji>➕</Emoji> がありますね。
+            </P>
+            <P>
+              この <Emoji>❓</Emoji>{' '}
+              の部分には、それぞれ数字を入れることができます。たとえば{' '}
+              <EmojiNumber number={1} /> を両方に入れてみましょう。
+            </P>
+            <R.Jfsd />
+            <P>
+              そして、それぞれの計算箱には
+              <Strong>
+                <H args={{ name: 'play' }} />
+                ボタン
+              </Strong>
+              がついており、それを押すと計算が実行されます。試しに、下の計算箱で
+              <Strong>
+                <H args={{ name: 'pressPlay' }} />
+              </Strong>
+            </P>
+            <R.Nlfx />
+            <P>
+              これで <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />{' '}
+              が計算できました！次は、足し算以外の計算箱も見ていきましょう。
             </P>
           </>
         )
       },
       {
-        title: (
-          <>
-            これが
-            <H args={{ name: 'bentoBoxPuzzle' }} />
-          </>
-        ),
+        title: <>足し算以外の計算箱</>,
         content: (
           <>
             <P>
-              下の図が、
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              です。実際の弁当箱のように、
+              続いてこちらが、「<Strong>掛け算ができる計算箱</Strong>
+              」です。
+              <Strong>
+                <H args={{ name: 'play' }} />
+                ボタン
+              </Strong>
+              を押せば、
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> を計算してくれます。
+            </P>
+            <R.Uaha />
+            <P>
+              ご覧の通り、答えは <EmojiNumber number={6} /> になりました。
+            </P>
+            <P>
+              計算箱は他にも引き算や割り算ができますが、特に興味深いわけでもないので、時間の都合上省略します。
+              <Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator emojis={['➖', '🎁', '➗']} />
+            <P>
+              一方、少しだけ興味深いのがこちらの「
+              <Strong>割ったときの余りがわかる計算箱</Strong>」です。
+            </P>
+            <R.Mjbi />
+            <P>
+              上の計算箱は、 「
+              <Strong>
+                <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+                で割ったときの余り
+              </Strong>
+              」を計算してくれます。これを使えば、たとえば「
+              <Em>5人のグループを2人ずつに分けたとき、仲間はずれが出るか？</Em>
+              」が分かるわけです。
+            </P>
+            <EmojiSeparator emojis={['🤔', '🤔', '🤔', '🤔', '🤔']} />
+            <P>
+              「それくらい暗算できるだろう <Emoji>😡</Emoji>
+              」と思われるかもしれません。でも、
               <Em>
-                四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
+                計算箱がある世界の人々はみな計算が苦手で、簡単な計算でも計算箱に頼っていた
               </Em>
-              。
+              のです。
+              <Emoji>😉</Emoji>
             </P>
             <P>
-              <InlineHeader>例その1:</InlineHeader> 上段には
-              <EmojiWithText letter="b" />
-              、下段には
-              <EmojiWithText letter="a" />
-              がふたつ入っています。
+              では、先ほどの計算箱を
+              <Em>
+                <H args={{ name: 'play' }} />
+                してみましょう。
+              </Em>
             </P>
-            <R.Ilpo />
+            <R.Wtax />
             <P>
-              「寿司とサンドイッチが同時に入っている弁当箱なんてあるの？」というツッコミは無しの方向でお願いします。
+              <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+              で割ると「
+              <EmojiNumber number={2} /> 余り <EmojiNumber number={1} />
+              」になるので、計算箱には
+              <Strong>
+                余りの <Emoji>1️⃣</Emoji>
+              </Strong>{' '}
+              が残りました。
             </P>
-            <EmojiSeparator emojis={['🍣', '😅', '🥪']} />
+            <P>
+              先ほどの例に戻ると、5人のグループを2人ずつに分ければ、ひとりが仲間はずれになります。
+              <Emoji>😭</Emoji>
+            </P>
+            <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
+            <P>
+              ここまでは、単純な計算ができる計算箱を紹介してきました。次は、もう少し複雑な計算箱を見てみましょう！
+              <Emoji>😉</Emoji>
+            </P>
           </>
         )
       },
       {
-        title: (
-          <>
-            まだあるよ
-            <H args={{ name: 'bentoBoxPuzzle' }} />
-          </>
-        ),
+        title: <>条件分岐の計算箱</>,
         content: (
           <>
             <P>
-              さらにいくつか、
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              の例を紹介していきます:
+              次は、こちらの計算箱をご覧ください。この計算箱には「
+              <Strong>条件分岐の計算箱</Strong>
+              」という名がついており、名前の理由は後ほど説明します。
+            </P>
+            <R.Ymmm />
+            <P>
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>」には
+              <Em>
+                ハテナマーク <Emoji>❓</Emoji>{' '}
+                が3つあり、それぞれ左端に違う色と、以下の三種類の印がついています
+              </Em>
+              。いったいどんな計算ができるのでしょう？
+              <Emoji>🤔</Emoji>
+            </P>
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
+            <P>
+              とりあえず、{' '}
+              <Em>
+                それぞれの <Emoji>❓</Emoji> に適当な数字を入れ、
+              </Em>
+              <H args={{ name: 'play' }} />
+              したらどうなるか試してみましょう。
             </P>
             <P>
-              <InlineHeader>例その2:</InlineHeader> 上段には
-              <EmojiWithText letter="e" />
-              、下段には
-              <EmojiWithText letter="c" />と
-              <EmojiWithText letter="d" />
-              が入っています。
-            </P>
-            <R.Imyd />
-            <P>マクドナルドのメニューにありそうな料理ばかりですね！</P>
-            <Hr />
-            <P>
-              <InlineHeader>例その3:</InlineHeader> 上段には
-              <EmojiWithText letter="g" />
-              、下段には
-              <EmojiWithText letter="f" />
-              がふたつ入っています。
-            </P>
-            <R.Emmb />
-            <P>こちらは、イタリアンな弁当箱ですね！</P>
-            <Hr />
-            <P>
-              <InlineHeader>例その4:</InlineHeader> 上段には
-              <EmojiWithText letter="j" />
-              、下段には
-              <EmojiWithText letter="h" />と
-              <EmojiWithText letter="i" />
-              が入っています。
-            </P>
-            <R.Jozw />
-            <P>こちらは普通に美味しそうですね。</P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'playButton' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              それぞれの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              には、
-              <H args={{ name: 'playButton' }} />
-              があります。
-            </P>
-            <P>
-              <InlineHeader>例その1:</InlineHeader> こちらは、最初に紹介した
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              です。
+              試しに、上から順に <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={2} /> <EmojiNumber number={3} />{' '}
+              を入れてみたので、
               <H args={{ name: 'pressPlay' }} />
             </P>
-            <R.Itbm />
-          </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <H args={{ name: 'byTheWay' }} /> <H args={{ name: 'reset' }} />{' '}
-                を押せばもう一度最初から実行できます。
-              </P>
-            </>
-          )
-        }
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'play' }} />
-            するとこうなります
-          </>
-        ),
-        content: (
-          <>
+            <R.Iatt />
             <P>
-              どうやら、さきほどの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              は、
-              <H args={{ name: 'play' }} />
-              すると、最終的に
-              <EmojiWithText letter="b" />
-              だけになるようです。
-            </P>
-            <P>
-              <InlineHeader>例その1:</InlineHeader>
-            </P>
-            <R.Ilpo />
-            <ExpressionRunnerSeparator />
-            <R.Osqo />
-            <P>
-              実はこれ、
-              <H args={{ name: 'unknownRule' }} />
-              に従っているんです。
-            </P>
-            <P>
-              その法則を説明する前に、他の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              も実行してみましょう。
+              答えは <EmojiNumber number={1} />{' '}
+              になりました。では、どうしてこうなったか説明しましょう！
             </P>
           </>
         )
@@ -209,207 +210,198 @@ export default () => (
       {
         title: (
           <>
-            他のも
-            <H args={{ name: 'play' }} />
-            してみましょう
+            真ん中が <EmojiNumber number={0} /> かどうか
           </>
         ),
         content: (
           <>
             <P>
-              先ほど紹介した3つの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              を、それぞれ
-              <H args={{ name: 'play' }} />
-              してみましょう！
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>」はまず、
+              <Strong>
+                真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
+                に入っている数字が <EmojiNumber number={0} /> かどうか
+              </Strong>
+              チェックします。
+            </P>
+            <R.Vozu />
+            <P>
+              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
+              に入っている数字は <EmojiNumber number={2} /> なので、{' '}
+              <Strong>
+                <EmojiNumber number={0} /> ではありません。
+              </Strong>
             </P>
             <P>
-              <InlineHeader>例その2:</InlineHeader>
+              このように真ん中が <EmojiNumber number={0} /> ではない場合、
+              <Strong>
+                上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                に入っている数字が最終的に残ります。
+              </Strong>
             </P>
-            <R.Zwpj />
+            <R.Rjfy />
             <P>
-              <InlineHeader>例その3:</InlineHeader>
+              だから、 上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+              に入っている <EmojiNumber number={1} /> が残る、というわけです。
             </P>
-            <R.Dqkc />
-            <P>
-              <InlineHeader>例その4:</InlineHeader>
-            </P>
-            <R.Ldox />
+            <R.Toht />
           </>
-        ),
-        footer: {
-          content: (
-            <P>
-              どれも
-              <H args={{ name: 'unknownRule' }} />
-              に従っています。どんな法則か、考えみてください！
-            </P>
-          )
-        }
+        )
       },
       {
         title: (
           <>
-            <H args={{ name: 'afterPlay' }} />
+            真ん中が <EmojiNumber number={0} /> である場合
           </>
         ),
         content: (
           <>
-            <P>それぞれ、このような結果になりました！</P>
             <P>
-              <InlineHeader>例その2:</InlineHeader>
+              では、こちらの「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の場合はどうでしょう？
             </P>
-            <R.Imyd />
-            <ExpressionRunnerSeparator />
-            <R.Bgfl />
+            <R.Plbv />
             <P>
-              <InlineHeader>例その3:</InlineHeader>
+              こちらも、真ん中の数字が <EmojiNumber number={0} />{' '}
+              かどうかチェックします。
             </P>
-            <R.Emmb />
-            <ExpressionRunnerSeparator />
-            <R.Tuqr />
+            <R.Qcmh />
             <P>
-              <InlineHeader>例その4:</InlineHeader>
+              今回は真ん中が <EmojiNumber number={0} />{' '}
+              ですね。この場合は前回と逆で、
+              <Strong>
+                下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                に入っている数字が最終的に残ります。
+              </Strong>
             </P>
-            <R.Jozw />
-            <ExpressionRunnerSeparator />
-            <R.Cpkp />
+            <R.Guhy />
+            <P>
+              だから、下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+              に入っている <EmojiNumber number={5} /> が残る、というわけです。
+            </P>
           </>
-        ),
-        footer: {
-          content: (
-            <P>
-              どれも
-              <H args={{ name: 'unknownRule' }} />
-              に従っています。どんな法則か、考えみてください！
-            </P>
-          )
-        }
+        )
       },
       {
-        title: <>法則がわかりましたか？</>,
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
         content: (
           <>
-            <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
             <P>
-              上記あわせて4種類の
-              <H args={{ name: 'bentoBoxPuzzle' }} />を
-              <H args={{ name: 'play' }} />
-              しましたが、どれも
-              <H args={{ name: 'unknownRule' }} />
-              に従っています。
+              まとめると、この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の法則は以下の通りです。
             </P>
+            <R.Ymmm />
             <P>
-              <InlineHeader>その法則がわかりましたか？</InlineHeader>
-              もう一度4つの例を見て、考えてみてください！
+              <Em>
+                まず、真ん中の <InlineEmojiBoxesForCondition type="condition" />{' '}
+                の中にある数字が <EmojiNumber number={0} />{' '}
+                かどうかチェックします。
+              </Em>
             </P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  もし <EmojiNumber number={0} /> なら、 下の{' '}
+                  <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                  の中にある数字が残ります。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  もし <EmojiNumber number={0} /> でなければ、 上の{' '}
+                  <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                  の中にある数字が残ります。
+                </Em>
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
             <P>
-              なんとなく予想がついたら、合っているかどうか次の
+              「
+              <Em>
+                真ん中が <EmojiNumber number={0} /> かどうか？
+              </Em>
+              」という「
+              <Strong>条件</Strong>」によって、上下に「
+              <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
+              の計算箱」という名前がついているのです。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              ちゃんと理解できたかどうか、
               <H args={{ name: 'yesNoQuiz' }} />
-              でチェックしてみましょう！
+              で確かめてみましょう。
+              <H args={{ name: 'lookAtThisMathBox' }} />:
             </P>
+            <R.Sffm />
             <P>
-              <Em>さっぱり分からなくてもご心配なく！</Em>
-              とりあえず勘で答えてみてください。<Emoji>😉</Emoji>
+              <H args={{ name: 'whatHappensAtTheEndMathBoxQuestion' }} />
             </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-            、その1
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'question' }} />{' '}
-              こちらに、ヘルシーな野菜が入っている
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              があります。
-            </P>
-            <R.Loai />
-            <P>
-              これを
-              <H args={{ name: 'play' }} />
-              すると、<Strong>最終的に下のようになるでしょうか？</Strong>
-              これまでの法則から予想してみてください。
-            </P>
-            <R.Vvjn />
-            <YesNoButtons answer="yes" />
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-            、その2
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'question' }} /> こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />を
-              <H args={{ name: 'play' }} />
-              すると、
-            </P>
-            <R.Hbgo />
-            <P>
-              <Strong>最終的に下のようになるでしょうか？</Strong>
-              これまでの法則から予想してみてください。
-            </P>
-            <R.Olef />
+            <R.Novg />
             <YesNoButtons answer="no" />
           </>
         )
       },
       {
-        title: <>答え合わせ</>,
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
         content: (
           <>
-            <P>それぞれ実行すると、次のようになります。</P>
             <P>
-              <InlineHeader>例その5:</InlineHeader>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'pressPlay' }} />
             </P>
-            <R.Zzyu />
+            <R.Sewk />
             <P>
-              つまり
-              <Strong>
-                1問目の
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-              </Strong>
-              でした。
+              つまり <EmojiNumber number={28} /> ではなく、
+              <EmojiNumber number={29} /> になりました。
             </P>
             <P>
-              <InlineHeader>例その6:</InlineHeader>
+              <InlineEmojiBoxesForCondition type="condition" /> の中には{' '}
+              <EmojiNumber number={0} /> が入っているので、下の
+              <InlineEmojiBoxesForCondition type="trueCase" /> の中にある{' '}
+              <EmojiNumber number={29} /> が残るのです。
             </P>
-            <R.Qpjt />
+            <R.Qscy />
             <P>
-              つまり
-              <Strong>
-                2問目の
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-              </Strong>{' '}
-              (<EmojiWithText letter="k" />
-              ではない) でした。
+              以上、条件分岐の計算箱の紹介でした！<Emoji>😉</Emoji>
             </P>
           </>
         )
       },
       {
-        title: <>法則は次のページに</>,
+        title: <>何の役に立つの？</>,
         content: (
           <>
             <P>
-              次のページで
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
+              では、
+              <Strong>
+                この条件分岐の計算箱はいったい何の役に立つのでしょうか？
+              </Strong>
+              人々は、条件分岐の計算箱をどんな用途で使っていたのでしょう？
+              <Emoji>🤔</Emoji>
+            </P>
+            <EmojiSeparator emojis={['🔢', '🤔', '0️⃣']} />
+            <P>
+              というわけで次の回では、条件分岐の計算箱の<Em>具体的な使用例</Em>
+              を紹介します！
             </P>
             <NextLessonButton />
           </>

@@ -3,8 +3,10 @@ import {
   expressionRunnerSimpleConfigDefault,
   expressionRunnerPlayButtonOnlyConfigDefault,
   expressionRunnerSingleStepConfigDefault,
+  expressionRunnerPredefinedConfigDefault,
   isExpressionRunnerSimpleConfig,
-  isExpressionRunnerPlayButtonOnlyConfig
+  isExpressionRunnerPlayButtonOnlyConfig,
+  isExpressionRunnerSingleStepConfig
 } from 'scripts/lib/expressionRunnerShorthandConfig'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { allMaxWidths } from 'src/lib/theme/maxWidths'
@@ -17,7 +19,8 @@ import { HProps } from 'src/types/HTypes'
 import * as lessonExpressions from 'scripts/lib/lessonExpressions'
 
 export interface ExpressionRunnerConfig {
-  lessonExpressionsKey: keyof typeof lessonExpressions
+  lessonExpressionsKey?: keyof typeof lessonExpressions
+  predefinedExpressionsKeys?: readonly (keyof typeof lessonExpressions)[]
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
@@ -233,7 +236,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       }),
       superFastForward
     }
-  } else {
+  } else if (isExpressionRunnerSingleStepConfig(config)) {
     const {
       lessonExpressionsKey,
       initialState,
@@ -267,6 +270,34 @@ const buildExpressionRunnerConfigFromShorthand = (
         nextIterations,
         initialState
       })
+    }
+  } else {
+    const {
+      predefinedExpressionsKeys,
+      hideFuncUnboundBadgeOnExplanation,
+      showPriorities,
+      explanationsVisibility,
+      showAllShowSteps,
+      variableSize,
+      containerSize,
+      nextIterations,
+      skipToTheEnd
+    } = mergeWithDefault<
+      typeof config,
+      typeof expressionRunnerPredefinedConfigDefault
+    >(config, expressionRunnerPredefinedConfigDefault)
+
+    runnerProps = {
+      predefinedExpressionsKeys,
+      variableSize,
+      containerSize,
+      hidePriorities: !showPriorities,
+      hideFuncUnboundBadgeOnExplanation,
+      hidePlayButton: false,
+      explanationsVisibility,
+      lastAllowedExpressionStateAfterIterations: nextIterations,
+      showAllShowSteps,
+      skipToTheEnd
     }
   }
 

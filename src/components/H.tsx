@@ -753,6 +753,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>こちらの弁当箱をご覧ください</>
     }
   }
+  if (args.name === 'lookAtThisMathBox') {
+    if (locale === 'en') {
+      return <>…</>
+    } else {
+      return <>こちらの計算箱をご覧ください</>
+    }
+  }
   if (args.name === 'pauseIfLost') {
     if (locale === 'en') {
       return <>…</>
@@ -1723,6 +1730,45 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em highlightType="pink">
             一回ずつ進める場合は、<Emoji>➡️</Emoji>を押してください。
           </Em>
+        </>
+      )
+    }
+  }
+  if (args.name === 'addMathBox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Emoji>➕</Emoji> 足し算ができる計算箱 <Emoji>🎁</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'remainder') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>割ったときの余り</>
+    }
+  }
+  if (args.name === 'conditionalMathBox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>条件分岐の計算箱</>
+    }
+  }
+  if (args.name === 'whatHappensAtTheEndMathBoxQuestion') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <H args={{ name: 'question' }} /> 上の計算箱を
+          <H args={{ name: 'play' }} />
+          すると、<Strong>最終的に下のようになるでしょうか？</Strong>{' '}
+          <Emoji>🤔</Emoji>
         </>
       )
     }

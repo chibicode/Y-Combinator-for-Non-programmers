@@ -9,6 +9,7 @@ import * as lessonExpressions from 'scripts/lib/lessonExpressions'
 
 const buildExpressionContainers = ({
   lessonExpressionsKey,
+  predefinedExpressionsKeys,
   initializeInstructions,
   showAllShowSteps,
   skipAlphaConvert,
@@ -18,35 +19,20 @@ const buildExpressionContainers = ({
   lastAllowedExpressionStateAfterIterations,
   hidePlayButton
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
-  let currentExpressionContainer: SteppedExpressionContainer =
-    lessonExpressions[lessonExpressionsKey]
-  let results: ExpressionContainer[] = []
-  const stepOptions = { showAllShowSteps, skipAlphaConvert }
+  if (lessonExpressionsKey) {
+    let currentExpressionContainer: SteppedExpressionContainer =
+      lessonExpressions[lessonExpressionsKey]
+    let results: ExpressionContainer[] = []
+    const stepOptions = { showAllShowSteps, skipAlphaConvert }
 
-  initializeInstructions.forEach(initializeInstruction => {
-    if (
-      initializeInstruction.type ===
-      'stepForwardUntilPreviouslyChangedExpressionState'
-    ) {
-      while (
-        currentExpressionContainer.previouslyChangedExpressionState !==
-          initializeInstruction.state &&
-        !isContainerWithState(currentExpressionContainer, 'done')
+    initializeInstructions.forEach(initializeInstruction => {
+      if (
+        initializeInstruction.type ===
+        'stepForwardUntilPreviouslyChangedExpressionState'
       ) {
-        currentExpressionContainer = stepExpressionContainer(
-          currentExpressionContainer,
-          stepOptions
-        )
-      }
-    } else if (initializeInstruction.type === 'nextIteration') {
-      if (!isContainerWithState(currentExpressionContainer, 'done')) {
-        currentExpressionContainer = stepExpressionContainer(
-          currentExpressionContainer,
-          stepOptions
-        )
         while (
           currentExpressionContainer.previouslyChangedExpressionState !==
-            'default' &&
+            initializeInstruction.state &&
           !isContainerWithState(currentExpressionContainer, 'done')
         ) {
           currentExpressionContainer = stepExpressionContainer(
@@ -54,63 +40,85 @@ const buildExpressionContainers = ({
             stepOptions
           )
         }
+      } else if (initializeInstruction.type === 'nextIteration') {
+        if (!isContainerWithState(currentExpressionContainer, 'done')) {
+          currentExpressionContainer = stepExpressionContainer(
+            currentExpressionContainer,
+            stepOptions
+          )
+          while (
+            currentExpressionContainer.previouslyChangedExpressionState !==
+              'default' &&
+            !isContainerWithState(currentExpressionContainer, 'done')
+          ) {
+            currentExpressionContainer = stepExpressionContainer(
+              currentExpressionContainer,
+              stepOptions
+            )
+          }
+        }
+      } else {
+        while (!isContainerWithState(currentExpressionContainer, 'done')) {
+          currentExpressionContainer = stepExpressionContainer(
+            currentExpressionContainer,
+            stepOptions
+          )
+        }
       }
-    } else {
+    })
+
+    results.push(currentExpressionContainer)
+
+    if (hideControls) {
+      return results
+    }
+
+    if (skipToTheEnd) {
       while (!isContainerWithState(currentExpressionContainer, 'done')) {
         currentExpressionContainer = stepExpressionContainer(
           currentExpressionContainer,
           stepOptions
         )
       }
+      results.push(currentExpressionContainer)
+      return results
     }
-  })
 
-  results.push(currentExpressionContainer)
-
-  if (hideControls) {
-    return results
-  }
-
-  if (skipToTheEnd) {
+    let becameDefaultCount = 0
     while (!isContainerWithState(currentExpressionContainer, 'done')) {
       currentExpressionContainer = stepExpressionContainer(
         currentExpressionContainer,
         stepOptions
       )
+      results.push(currentExpressionContainer)
+
+      if (hidePlayButton) {
+        break
+      }
+
+      if (
+        lastAllowedExpressionState &&
+        lastAllowedExpressionState ===
+          currentExpressionContainer.previouslyChangedExpressionState &&
+        (lastAllowedExpressionStateAfterIterations || 0) <= becameDefaultCount
+      ) {
+        break
+      }
+
+      if (
+        currentExpressionContainer.previouslyChangedExpressionState ===
+        'default'
+      ) {
+        becameDefaultCount += 1
+      }
     }
-    results.push(currentExpressionContainer)
+
     return results
+  } else if (predefinedExpressionsKeys) {
+    return predefinedExpressionsKeys.map(key => lessonExpressions[key])
+  } else {
+    throw new Error()
   }
-
-  let becameDefaultCount = 0
-  while (!isContainerWithState(currentExpressionContainer, 'done')) {
-    currentExpressionContainer = stepExpressionContainer(
-      currentExpressionContainer,
-      stepOptions
-    )
-    results.push(currentExpressionContainer)
-
-    if (hidePlayButton) {
-      break
-    }
-
-    if (
-      lastAllowedExpressionState &&
-      lastAllowedExpressionState ===
-        currentExpressionContainer.previouslyChangedExpressionState &&
-      (lastAllowedExpressionStateAfterIterations || 0) <= becameDefaultCount
-    ) {
-      break
-    }
-
-    if (
-      currentExpressionContainer.previouslyChangedExpressionState === 'default'
-    ) {
-      becameDefaultCount += 1
-    }
-  }
-
-  return results
 }
 
 export default buildExpressionContainers

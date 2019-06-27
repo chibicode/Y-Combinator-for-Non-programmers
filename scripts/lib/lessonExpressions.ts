@@ -13,6 +13,7 @@ import {
   numberParamsHighlightNumber
 } from 'scripts/lib/churchEncodingParams'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
+import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 
 export const e1E1 = initializeExpressionContainer([
   {
@@ -961,3 +962,169 @@ export const e16E1 = initializeExpressionContainer([
   },
   'B'
 ])
+
+export const v2e1E1 = initializeExpressionContainer([
+  'questionV2',
+  [
+    {
+      shorthandBinary: 'add'
+    },
+    'questionV2'
+  ]
+])
+
+export const v2e1E2 = initializeExpressionContainer([
+  {
+    shorthandNumber: 1
+  },
+  [
+    {
+      shorthandBinary: 'add'
+    },
+    {
+      shorthandNumber: 1
+    }
+  ]
+])
+
+export const v2e1E3: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 2
+  }),
+  containerState: 'done'
+}
+
+export const v2e1E4 = initializeExpressionContainer([
+  {
+    shorthandNumber: 2
+  },
+  [
+    {
+      shorthandBinary: 'add'
+    },
+    {
+      shorthandNumber: 3
+    }
+  ]
+])
+
+export const v2e1E5: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 6
+  }),
+  containerState: 'done'
+}
+
+export const v2e1E6 = initializeExpressionContainer([
+  {
+    shorthandNumber: 2
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    {
+      shorthandNumber: 5
+    }
+  ]
+])
+
+export const v2e1E7: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 1
+  }),
+  containerState: 'done'
+}
+
+export const v2e1E8 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'questionV2',
+  trueCase: 'questionV2',
+  falseCase: 'questionV2'
+})
+
+export const v2e1E9 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 2
+  },
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 1
+  }
+})
+
+export const v2e1E10: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 1
+  }),
+  containerState: 'done'
+}
+
+export const v2e1E11 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 0
+  },
+  trueCase: {
+    shorthandNumber: 5
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
+export const v2e1E12 = initializeExpressionContainer([
+  {
+    shorthandNumber: 4
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    'questionV2'
+  ]
+])
+
+export const v2e1E13 = initializeExpressionContainer([
+  {
+    shorthandNumber: 4
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    {
+      shorthandNumber: 2020
+    }
+  ]
+])
+
+export const v2e1E14: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 0
+  }),
+  containerState: 'done'
+}
+
+export const v2e1E15 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 0
+  },
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const v2e1E16: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 28
+  }),
+  containerState: 'done'
+}

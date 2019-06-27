@@ -5,7 +5,7 @@ export const Hr = styled.hr`
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 3px solid ${colors('white')};
+  border-bottom: 5px solid ${colors('white')};
   margin: ${spaces(2)} auto ${spaces(2)};
   max-width: ${maxWidths('xxxs')};
 `
