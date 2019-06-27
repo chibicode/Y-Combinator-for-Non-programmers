@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e12E2',
+  lessonExpressionsKey: 'gsyt',
   showPriorities: true,
   caption: { name: 'secretCodeCaption', number: 2, letter: 'g' }
 }

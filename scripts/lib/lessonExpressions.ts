@@ -15,7 +15,7 @@ import {
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 
-export const e1E1 = initializeExpressionContainer([
+export const nyhe = initializeExpressionContainer([
   {
     arg: 'a',
     body: 'a'
@@ -23,7 +23,7 @@ export const e1E1 = initializeExpressionContainer([
   'b'
 ])
 
-export const e1E2 = initializeExpressionContainer([
+export const txbv = initializeExpressionContainer([
   {
     arg: 'c',
     body: 'd'
@@ -31,7 +31,7 @@ export const e1E2 = initializeExpressionContainer([
   'e'
 ])
 
-export const e1E3 = initializeExpressionContainer([
+export const yanq = initializeExpressionContainer([
   {
     arg: 'f',
     body: 'f'
@@ -39,7 +39,7 @@ export const e1E3 = initializeExpressionContainer([
   'g'
 ])
 
-export const e1E4 = initializeExpressionContainer([
+export const zgxp = initializeExpressionContainer([
   {
     arg: 'h',
     body: 'i'
@@ -47,7 +47,7 @@ export const e1E4 = initializeExpressionContainer([
   'j'
 ])
 
-export const e1E5 = initializeExpressionContainer([
+export const gvjy = initializeExpressionContainer([
   {
     arg: 'k',
     body: 'k'
@@ -55,7 +55,7 @@ export const e1E5 = initializeExpressionContainer([
   'l'
 ])
 
-export const e1E6 = initializeExpressionContainer([
+export const cgui = initializeExpressionContainer([
   {
     arg: 'k',
     body: 'm'
@@ -63,9 +63,9 @@ export const e1E6 = initializeExpressionContainer([
   'l'
 ])
 
-export const e1E7 = initializeExpressionContainer('k')
+export const lsbz = initializeExpressionContainer('k')
 
-export const e2E1 = initializeExpressionContainer([
+export const qcbo = initializeExpressionContainer([
   {
     arg: 'a',
     body: {
@@ -76,7 +76,7 @@ export const e2E1 = initializeExpressionContainer([
   'c'
 ])
 
-export const e3E1 = initializeExpressionContainer([
+export const pisd = initializeExpressionContainer([
   {
     arg: 'a',
     body: {
@@ -88,7 +88,7 @@ export const e3E1 = initializeExpressionContainer([
   'd'
 ])
 
-export const e3E2 = initializeExpressionContainer([
+export const epon = initializeExpressionContainer([
   {
     arg: 'e',
     body: {
@@ -100,9 +100,9 @@ export const e3E2 = initializeExpressionContainer([
   'h'
 ])
 
-export const e3E3 = initializeExpressionContainer('f')
+export const kamz = initializeExpressionContainer('f')
 
-export const e3E5 = initializeExpressionContainer([
+export const atls = initializeExpressionContainer([
   {
     arg: 'd',
     body: 'd'
@@ -113,7 +113,7 @@ export const e3E5 = initializeExpressionContainer([
   }
 ])
 
-export const e5E1 = initializeExpressionContainer([
+export const lqti = initializeExpressionContainer([
   {
     arg: 'b',
     body: [
@@ -127,7 +127,7 @@ export const e5E1 = initializeExpressionContainer([
   'a'
 ])
 
-export const e5E2 = initializeExpressionContainer([
+export const bndu = initializeExpressionContainer([
   {
     arg: 'a',
     body: 'a'
@@ -135,7 +135,7 @@ export const e5E2 = initializeExpressionContainer([
   ['b', 'c']
 ])
 
-export const e5E3 = initializeExpressionContainer([
+export const hrdv = initializeExpressionContainer([
   'b',
   [
     {
@@ -146,129 +146,129 @@ export const e5E3 = initializeExpressionContainer([
   ]
 ])
 
-export const e6E1 = initializeExpressionContainer(numberParams('a', 'b', 0))
-export const e6E2 = initializeExpressionContainer(numberParams('c', 'd', 1))
-export const e6E3 = initializeExpressionContainer(numberParams('e', 'f', 2))
-export const e6E4 = initializeExpressionContainer(numberParams('g', 'h', 3))
-export const e6E5 = initializeExpressionContainer({
+export const mzxw = initializeExpressionContainer(numberParams('a', 'b', 0))
+export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
+export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
+export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
+export const dupe = initializeExpressionContainer({
   arg: 'A',
   body: {
     arg: 'B',
     body: ['Amult', 'B']
   }
 })
-export const e6E6 = initializeExpressionContainer(numberParams('A', 'B', 2))
-export const e6E7 = initializeExpressionContainer([
+export const mbco = initializeExpressionContainer(numberParams('A', 'B', 2))
+export const govs = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   'question'
 ])
-export const e6E8 = initializeExpressionContainer(numberParams('d', 'e', 0))
-export const e6E9 = initializeExpressionContainer([
+export const qbbl = initializeExpressionContainer(numberParams('d', 'e', 0))
+export const dova = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', 'e', 0)
 ])
-export const e6E10 = initializeExpressionContainer(
+export const jpac = initializeExpressionContainer(
   numberParamsHighlightNumber('g', 'h', 3)
 )
-export const e6E11 = initializeExpressionContainer(
+export const xesp = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 2)
 )
-export const e6E12 = initializeExpressionContainer(numberParams('i', 'j', 5))
-export const e6E13 = initializeExpressionContainer(
+export const yscp = initializeExpressionContainer(numberParams('i', 'j', 5))
+export const wzkr = initializeExpressionContainer(
   numberParamsHighlightNumber('i', 'j', 5)
 )
 
-export const e7E1 = initializeExpressionContainer(numberParams('d', 'e', 1))
-export const e7E2 = initializeExpressionContainer([
+export const yahz = initializeExpressionContainer(numberParams('d', 'e', 1))
+export const kcia = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', 'e', 1)
 ])
-export const e7E3 = initializeExpressionContainer(numberParams('d', 'e', 2))
-export const e7E4 = initializeExpressionContainer([
+export const awud = initializeExpressionContainer(numberParams('d', 'e', 2))
+export const wzcw = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', 'e', 2)
 ])
 
-export const e7E5 = initializeExpressionContainer(numberParams('e', 'f', 1))
-export const e7E6 = initializeExpressionContainer(numberParams('g', 'h', 2))
-export const e7E7 = initializeExpressionContainer([
+export const povy = initializeExpressionContainer(numberParams('e', 'f', 1))
+export const gqsr = initializeExpressionContainer(numberParams('g', 'h', 2))
+export const cydn = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
   'question',
   'question'
 ])
-export const e7E8 = initializeExpressionContainer([
+export const qhnf = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
   numberParams('g', 'h', 2),
   numberParams('e', 'f', 1)
 ])
-export const e7E9 = initializeExpressionContainer([
+export const pubv = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
   numberParams('e', 'f', 1),
   numberParams('g', 'h', 3)
 ])
-export const e7E10 = initializeExpressionContainer([
+export const hmka = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
   'question',
   numberParams('e', 'f', 1)
 ])
-export const e7E11 = initializeExpressionContainer([
+export const gebx = initializeExpressionContainer([
   addParams('a', 'b', 'c', 'd'),
   'question',
   numberParams('g', 'h', 3)
 ])
 
-export const e8E1 = initializeExpressionContainer([
+export const qxea = initializeExpressionContainer([
   multParams('a', 'b', 'c', 'd'),
   'question',
   'question'
 ])
 
-export const e8E2 = initializeExpressionContainer(numberParams('e', 'f', 2))
-export const e8E3 = initializeExpressionContainer(numberParams('g', 'h', 3))
+export const uhqx = initializeExpressionContainer(numberParams('e', 'f', 2))
+export const utcc = initializeExpressionContainer(numberParams('g', 'h', 3))
 
-export const e8E4 = initializeExpressionContainer([
+export const jsdg = initializeExpressionContainer([
   multParams('a', 'b', 'c', 'd'),
   numberParams('g', 'h', 3),
   numberParams('e', 'f', 2)
 ])
 
-export const e8E5 = initializeExpressionContainer(numberParams('e', 'f', 1))
-export const e8E6 = initializeExpressionContainer(numberParams('g', 'h', 1))
+export const bunh = initializeExpressionContainer(numberParams('e', 'f', 1))
+export const tfqn = initializeExpressionContainer(numberParams('g', 'h', 1))
 
-export const e8E7 = initializeExpressionContainer([
+export const jzhy = initializeExpressionContainer([
   multParams('a', 'b', 'c', 'd'),
   numberParams('g', 'h', 1),
   numberParams('e', 'f', 1)
 ])
 
-export const e8E8 = initializeExpressionContainer([
+export const njvi = initializeExpressionContainer([
   multParamsRightHighlighted('a', 'b', 'c', 'd'),
   'question',
   'question'
 ])
 
-export const e9E1 = initializeExpressionContainer(
+export const jxut = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', 'question')
 )
 
-export const e9E2 = initializeExpressionContainer(
+export const bjbm = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 0))
 )
 
-export const e9E3 = initializeExpressionContainer(numberParams('f', 'g', 0))
-export const e9E4 = initializeExpressionContainer(numberParams('f', 'g', 1))
+export const xvjz = initializeExpressionContainer(numberParams('f', 'g', 0))
+export const ttks = initializeExpressionContainer(numberParams('f', 'g', 1))
 
-export const e9E5 = initializeExpressionContainer(
+export const rcfq = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 1))
 )
 
-export const e9E6 = initializeExpressionContainer(numberParams('f', 'g', 2))
+export const axiy = initializeExpressionContainer(numberParams('f', 'g', 2))
 
-export const e9E7 = initializeExpressionContainer(
+export const pqnt = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', numberParams('f', 'g', 2))
 )
 
-export const e9E8 = initializeExpressionContainer(
+export const lhek = initializeExpressionContainer(
   isZeroParams(
     'a',
     'b',
@@ -281,60 +281,60 @@ export const e9E8 = initializeExpressionContainer(
   )
 )
 
-export const e10E1 = initializeExpressionContainer(
+export const qikx = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('question')
 )
 
-export const e10E2 = initializeExpressionContainer(
+export const ooeu = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('c')
 )
 
-export const e10E3 = initializeExpressionContainer(
+export const xryf = initializeExpressionContainer(
   alphaConversionSimpleExampleParams('d')
 )
 
-export const e10E4 = initializeExpressionContainer(
+export const zgzf = initializeExpressionContainer(
   alphaConversionSimpleExampleParams(highlighted('b'))
 )
 
-export const e11E1 = initializeExpressionContainer(numberParams('d', 'b', 1))
-export const e11E2 = initializeExpressionContainer([
+export const byex = initializeExpressionContainer(numberParams('d', 'b', 1))
+export const toum = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
-export const e11E3 = initializeExpressionContainer([
+export const druk = initializeExpressionContainer([
   succParams('a', 'b', 'c', true),
   numberParams(highlighted('d'), highlighted('b'), 1)
 ])
-export const e12E1 = initializeExpressionContainer([
+export const qqiz = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   'question'
 ])
-export const e12E2 = initializeExpressionContainer(numberParams('g', 'h', 2))
-export const e12E3 = initializeExpressionContainer([
+export const gsyt = initializeExpressionContainer(numberParams('g', 'h', 2))
+export const pxps = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams(highlighted('g'), highlighted('h'), 2)
 ])
-export const e12E4 = initializeExpressionContainer([
+export const atos = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 2)
 ])
-export const e12E5 = initializeExpressionContainer({
+export const ikhw = initializeExpressionContainer({
   shorthandNumber: 2
 })
-export const e12E6 = initializeExpressionContainer([
+export const mwvx = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   {
     shorthandNumber: 2,
     initialHighlight: true
   }
 ])
-export const e12E7 = initializeExpressionContainer({
+export const vvbc = initializeExpressionContainer({
   shorthandNumber: 2,
   shorthandUnary: 'pred'
 })
 
-export const e12E8 = initializeExpressionContainer([
+export const jbvr = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
@@ -342,7 +342,7 @@ export const e12E8 = initializeExpressionContainer([
   numberParams('g', 'h', 1)
 ])
 
-export const e12E9 = initializeExpressionContainer([
+export const uqdf = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
@@ -353,7 +353,7 @@ export const e12E9 = initializeExpressionContainer([
   }
 ])
 
-export const e12E10 = initializeExpressionContainer([
+export const sqvn = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), highlighted('i')]
@@ -363,7 +363,7 @@ export const e12E10 = initializeExpressionContainer([
   }
 ])
 
-export const e12E11 = initializeExpressionContainer([
+export const zsyl = initializeExpressionContainer([
   {
     arg: 'i',
     body: {
@@ -377,7 +377,7 @@ export const e12E11 = initializeExpressionContainer([
   }
 ])
 
-export const e12E12 = initializeExpressionContainer([
+export const mgiu = initializeExpressionContainer([
   {
     arg: 'i',
     body: {
@@ -390,7 +390,7 @@ export const e12E12 = initializeExpressionContainer([
   }
 ])
 
-export const e12E13 = initializeExpressionContainer([
+export const idkp = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), 'i']
@@ -400,14 +400,14 @@ export const e12E13 = initializeExpressionContainer([
   }
 ])
 
-export const e13E1 = initializeExpressionContainer({
+export const kmtz = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'question',
   trueCase: 'y',
   falseCase: 'z'
 })
 
-export const e13E2 = initializeExpressionContainer({
+export const pdyu = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 3
@@ -420,7 +420,7 @@ export const e13E2 = initializeExpressionContainer({
   }
 })
 
-export const e13E3 = initializeExpressionContainer([
+export const dvlj = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -445,7 +445,7 @@ export const e13E3 = initializeExpressionContainer([
   }
 ])
 
-export const e13E4 = initializeExpressionContainer([
+export const zquq = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -475,7 +475,7 @@ export const e13E4 = initializeExpressionContainer([
   }
 ])
 
-export const e13E5 = initializeExpressionContainer([
+export const jwta = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -498,7 +498,7 @@ export const e13E5 = initializeExpressionContainer([
   numberParams(highlighted('l'), highlighted('m'), 2)
 ])
 
-export const e13E6 = initializeExpressionContainer([
+export const krta = initializeExpressionContainer([
   [
     {
       arg: 'a',
@@ -521,28 +521,28 @@ export const e13E6 = initializeExpressionContainer([
   numberParams('l', 'm', 2)
 ])
 
-export const e13E7 = initializeExpressionContainer([
+export const hfov = initializeExpressionContainer([
   'question',
   {
     shorthandNumber: 3
   }
 ])
 
-export const e13E8 = initializeExpressionContainer([
+export const aeqh = initializeExpressionContainer([
   'question',
   {
     shorthandNumber: 4
   }
 ])
 
-export const e13E9 = initializeExpressionContainer([
+export const pmyq = initializeExpressionContainer([
   {
     shorthandBinary: 'mult'
   },
   ['question', 'question']
 ])
 
-export const e13E10 = initializeExpressionContainer([
+export const anrt = initializeExpressionContainer([
   'question',
   [
     {
@@ -552,7 +552,7 @@ export const e13E10 = initializeExpressionContainer([
   ]
 ])
 
-export const e13E11 = initializeExpressionContainer([
+export const etrh = initializeExpressionContainer([
   {
     shorthandNumber: 3
   },
@@ -566,14 +566,14 @@ export const e13E11 = initializeExpressionContainer([
   ]
 ])
 
-export const e13E12 = initializeExpressionContainer([
+export const irqm = initializeExpressionContainer([
   'question',
   {
     shorthandNumber: 5
   }
 ])
 
-export const e14E1 = initializeExpressionContainer([
+export const dpky = initializeExpressionContainer([
   {
     magical: true,
     name: magicalVariableName
@@ -583,7 +583,7 @@ export const e14E1 = initializeExpressionContainer([
   }
 ])
 
-export const e14E2 = initializeExpressionContainer([
+export const lles = initializeExpressionContainer([
   {
     magical: true,
     name: magicalVariableName
@@ -593,7 +593,7 @@ export const e14E2 = initializeExpressionContainer([
   }
 ])
 
-export const e14E3 = initializeExpressionContainer([
+export const ynct = initializeExpressionContainer([
   {
     magical: true,
     name: magicalVariableName
@@ -603,7 +603,7 @@ export const e14E3 = initializeExpressionContainer([
   }
 ])
 
-export const e14E4 = initializeExpressionContainer([
+export const heiy = initializeExpressionContainer([
   {
     magical: true,
     name: magicalVariableName
@@ -611,7 +611,7 @@ export const e14E4 = initializeExpressionContainer([
   'someNumber'
 ])
 
-export const e14E5 = initializeExpressionContainer([
+export const yrrr = initializeExpressionContainer([
   'someNumber',
   {
     shorthandBinary: 'mult'
@@ -638,7 +638,7 @@ export const e14E5 = initializeExpressionContainer([
   }
 ])
 
-export const e14E6 = initializeExpressionContainer([
+export const aizc = initializeExpressionContainer([
   {
     magical: true,
     name: magicalVariableName
@@ -675,12 +675,12 @@ const updatedMagicalParams: FunctionExpressionParams = {
   }
 }
 
-export const e15E1 = initializeExpressionContainer([
+export const bpua = initializeExpressionContainer([
   updatedMagicalParams,
   'question'
 ])
 
-export const e15E2 = initializeExpressionContainer([
+export const qexv = initializeExpressionContainer([
   {
     arg: 's',
     body: updatedMagicalParams
@@ -702,7 +702,7 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
-export const e15E3 = initializeExpressionContainer([
+export const edvm = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -713,7 +713,7 @@ export const e15E3 = initializeExpressionContainer([
   'question'
 ])
 
-export const e15E4 = initializeExpressionContainer([
+export const wjxz = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -727,7 +727,7 @@ export const e15E4 = initializeExpressionContainer([
   }
 ])
 
-export const e15E5 = initializeExpressionContainer([
+export const ipyc = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -740,7 +740,7 @@ export const e15E5 = initializeExpressionContainer([
   }
 ])
 
-export const e15E6 = initializeExpressionContainer([
+export const onbh = initializeExpressionContainer([
   {
     shorthandNumber: 3
   },
@@ -757,7 +757,7 @@ export const e15E6 = initializeExpressionContainer([
   ]
 ])
 
-export const e15E7 = initializeExpressionContainer([
+export const fzwa = initializeExpressionContainer([
   {
     shorthandNumber: 3
   },
@@ -784,7 +784,7 @@ export const e15E7 = initializeExpressionContainer([
   ]
 ])
 
-export const e15E8 = initializeExpressionContainer([
+export const pvph = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -798,7 +798,7 @@ export const e15E8 = initializeExpressionContainer([
   }
 ])
 
-export const e15E9 = initializeExpressionContainer([
+export const nxmy = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -812,7 +812,7 @@ export const e15E9 = initializeExpressionContainer([
   }
 ])
 
-export const e15E10 = initializeExpressionContainer([
+export const vgig = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -826,7 +826,7 @@ export const e15E10 = initializeExpressionContainer([
   }
 ])
 
-export const e15E11 = initializeExpressionContainer([
+export const vfno = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -874,7 +874,7 @@ const updatedMagicalParamsForPower = (
   }
 })
 
-export const e15E12 = initializeExpressionContainer([
+export const gtnk = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -887,7 +887,7 @@ export const e15E12 = initializeExpressionContainer([
   }
 ])
 
-export const e15E13 = initializeExpressionContainer([
+export const hctu = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -901,7 +901,7 @@ export const e15E13 = initializeExpressionContainer([
   }
 ])
 
-export const e15E14 = initializeExpressionContainer([
+export const imda = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -928,7 +928,7 @@ const updatedMagicalParamsCustomizable: FunctionExpressionParams = {
   }
 }
 
-export const e15E15 = initializeExpressionContainer([
+export const oesh = initializeExpressionContainer([
   [
     yCombinator,
     {
@@ -939,9 +939,9 @@ export const e15E15 = initializeExpressionContainer([
   'someNumber'
 ])
 
-export const e15E16 = initializeExpressionContainer(yCombinator)
+export const vazr = initializeExpressionContainer(yCombinator)
 
-export const e15E17 = initializeExpressionContainer({
+export const zjhi = initializeExpressionContainer({
   arg: 'c',
   body: [
     {
@@ -955,7 +955,7 @@ export const e15E17 = initializeExpressionContainer({
   ]
 })
 
-export const e16E1 = initializeExpressionContainer([
+export const nbgx = initializeExpressionContainer([
   {
     arg: 'A',
     body: 'A'
@@ -963,7 +963,7 @@ export const e16E1 = initializeExpressionContainer([
   'B'
 ])
 
-export const v2e1E1 = initializeExpressionContainer([
+export const xrvm = initializeExpressionContainer([
   'questionV2',
   [
     {
@@ -973,7 +973,7 @@ export const v2e1E1 = initializeExpressionContainer([
   ]
 ])
 
-export const v2e1E2 = initializeExpressionContainer([
+export const mrab = initializeExpressionContainer([
   {
     shorthandNumber: 1
   },
@@ -987,14 +987,14 @@ export const v2e1E2 = initializeExpressionContainer([
   ]
 ])
 
-export const v2e1E3: ContainerWithState<'done'> = {
+export const vzpd: ContainerWithState<'done'> = {
   ...initializeExpressionContainer({
     shorthandNumber: 2
   }),
   containerState: 'done'
 }
 
-export const v2e1E4 = initializeExpressionContainer([
+export const ocwu = initializeExpressionContainer([
   {
     shorthandNumber: 2
   },
@@ -1008,14 +1008,14 @@ export const v2e1E4 = initializeExpressionContainer([
   ]
 ])
 
-export const v2e1E5: ContainerWithState<'done'> = {
+export const fmlj: ContainerWithState<'done'> = {
   ...initializeExpressionContainer({
     shorthandNumber: 6
   }),
   containerState: 'done'
 }
 
-export const v2e1E6 = initializeExpressionContainer([
+export const zcxt = initializeExpressionContainer([
   {
     shorthandNumber: 2
   },
@@ -1029,21 +1029,21 @@ export const v2e1E6 = initializeExpressionContainer([
   ]
 ])
 
-export const v2e1E7: ContainerWithState<'done'> = {
+export const zrwn: ContainerWithState<'done'> = {
   ...initializeExpressionContainer({
     shorthandNumber: 1
   }),
   containerState: 'done'
 }
 
-export const v2e1E8 = initializeExpressionContainer({
+export const ognb = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'questionV2',
   trueCase: 'questionV2',
   falseCase: 'questionV2'
 })
 
-export const v2e1E9 = initializeExpressionContainer({
+export const kysf = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 2
@@ -1056,14 +1056,7 @@ export const v2e1E9 = initializeExpressionContainer({
   }
 })
 
-export const v2e1E10: ContainerWithState<'done'> = {
-  ...initializeExpressionContainer({
-    shorthandNumber: 1
-  }),
-  containerState: 'done'
-}
-
-export const v2e1E11 = initializeExpressionContainer({
+export const pslb = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 0
@@ -1076,7 +1069,7 @@ export const v2e1E11 = initializeExpressionContainer({
   }
 })
 
-export const v2e1E12 = initializeExpressionContainer([
+export const qbkn = initializeExpressionContainer([
   {
     shorthandNumber: 4
   },
@@ -1088,7 +1081,7 @@ export const v2e1E12 = initializeExpressionContainer([
   ]
 ])
 
-export const v2e1E13 = initializeExpressionContainer([
+export const jnac = initializeExpressionContainer([
   {
     shorthandNumber: 4
   },
@@ -1102,14 +1095,14 @@ export const v2e1E13 = initializeExpressionContainer([
   ]
 ])
 
-export const v2e1E14: ContainerWithState<'done'> = {
+export const sbvu: ContainerWithState<'done'> = {
   ...initializeExpressionContainer({
     shorthandNumber: 0
   }),
   containerState: 'done'
 }
 
-export const v2e1E15 = initializeExpressionContainer({
+export const ydlj = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 0
@@ -1122,7 +1115,7 @@ export const v2e1E15 = initializeExpressionContainer({
   }
 })
 
-export const v2e1E16: ContainerWithState<'done'> = {
+export const wkny: ContainerWithState<'done'> = {
   ...initializeExpressionContainer({
     shorthandNumber: 28
   }),

@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e6E9',
+  lessonExpressionsKey: 'dova',
   showPriorities: true,
   isDone: true,
   caption: { name: 'secretCodeCaption', number: 1, letter: 'b' }

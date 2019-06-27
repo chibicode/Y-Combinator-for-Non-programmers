@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
-  lessonExpressionsKey: 'e3E5',
+  lessonExpressionsKey: 'atls',
   initialState: 'active',
   finalState: 'showFuncBound',
   hideFuncUnboundBadgeOnExplanation: true

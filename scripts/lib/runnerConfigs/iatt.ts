@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
-  predefinedExpressionsKeys: ['v2e1E9', 'v2e1E7']
+  predefinedExpressionsKeys: ['kysf', 'zrwn']
 }
 
 export default config

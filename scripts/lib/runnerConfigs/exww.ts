@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e12E8',
+  lessonExpressionsKey: 'jbvr',
   showPriorities: true,
   containerSize: 'xs',
   variableSize: 'md'

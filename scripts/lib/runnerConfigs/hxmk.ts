@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e11E3',
+  lessonExpressionsKey: 'druk',
   showPriorities: true,
   initialState: 'alphaConvertDone',
   containerSize: 'xs',

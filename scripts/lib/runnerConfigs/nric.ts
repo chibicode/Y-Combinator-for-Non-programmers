@@ -3,7 +3,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   isDone: true,
-  lessonExpressionsKey: 'e3E1',
+  lessonExpressionsKey: 'pisd',
   showPriorities: true
 }
 

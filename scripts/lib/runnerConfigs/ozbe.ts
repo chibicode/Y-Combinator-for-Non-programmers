@@ -3,7 +3,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   hideFuncUnboundBadgeOnExplanation: true,
-  lessonExpressionsKey: 'e1E1',
+  lessonExpressionsKey: 'nyhe',
   initialState: 'active',
   finalState: 'showFuncBound'
 }

@@ -2,7 +2,7 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'e10E4',
+  lessonExpressionsKey: 'zgzf',
   explanationsVisibility: 'hiddenInitialAndLastPausedOnly',
   skipAlphaConvert: true,
   showPriorities: true,
