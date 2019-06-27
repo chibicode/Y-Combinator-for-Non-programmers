@@ -5,7 +5,8 @@ import {
   Strong,
   InlineHeader,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -24,8 +25,17 @@ export default () => (
         content: (
           <>
             <P>
-              人々は毎年、ある疑問に悩まされていました。それは、「
-              <Strong>今年の2月には何日あるんだろう？</Strong>」という疑問です。
+              今回は、
+              <Strong>
+                前回紹介した計算箱で解くことができる問題を紹介します
+              </Strong>
+              。それは、以下のような問題です。
+            </P>
+            <Hr />
+            <P>
+              人々は毎年、「
+              <Strong>今年の2月には何日あるんだろう？</Strong>
+              」という疑問に悩まされていました。
             </P>
             <EmojiSeparator emojis={['🤔', '2️⃣', '🗓']} />
             <P>答えはもちろん、以下の通りです。</P>
@@ -50,10 +60,25 @@ export default () => (
             <EmojiSeparator emojis={['🤔', '➗', '4️⃣']} />
             <P>
               うるう年は、基本的に「<Strong>4で割り切れる年</Strong>
-              」です。たとえば東京オリンピックが行われる2020年は、2020が4で割り切れるのでうるう年となります。ちなみに例外もありますが、後に説明します。
+              」です。たとえば東京オリンピックが行われる2020年は、2020が4で割り切れるのでうるう年となります。
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader> 例外として、「
+                <Em>100で割り切れて、400で割り切れない年</Em>
+                」はうるう年ではありません。たとえば2100年は、100で割り切れて400で割り切れないので、うるう年ではありません。
+              </P>
+              <P>
+                ただ都合上、<Em>この例外はここでは無視する</Em>ことにします。
+                <Emoji>😉</Emoji>
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>計算箱を使うと</>,
