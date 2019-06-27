@@ -1108,3 +1108,23 @@ export const v2e1E14: ContainerWithState<'done'> = {
   }),
   containerState: 'done'
 }
+
+export const v2e1E15 = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 0
+  },
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const v2e1E16: ContainerWithState<'done'> = {
+  ...initializeExpressionContainer({
+    shorthandNumber: 28
+  }),
+  containerState: 'done'
+}

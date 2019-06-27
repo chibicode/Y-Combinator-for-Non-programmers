@@ -127,4 +127,6 @@ export interface HProps {
     | { name: 'addMathBox' }
     | { name: 'remainder' }
     | { name: 'conditionalMathBox' }
+    | { name: 'lookAtThisMathBox' }
+    | { name: 'whatHappensAtTheEndMathBoxQuestion' }
 }

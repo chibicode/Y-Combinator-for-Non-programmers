@@ -63,7 +63,7 @@ const SecretCodeLabelWrapper = ({
   <span
     css={css`
       font-size: ${operator ? 0.5 : 0.6}em;
-      background: ${colors(operator ? 'grey800' : 'secretCode')};
+      background: ${colors(operator ? 'grey700' : 'secretCode')};
       color: #fff;
       padding: 0.25em 0.75em;
       border-radius: ${radii(0.25)};

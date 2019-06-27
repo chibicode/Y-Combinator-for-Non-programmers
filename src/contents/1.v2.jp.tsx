@@ -10,11 +10,12 @@ import {
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
 import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
+import YesNoButtons from 'src/components/YesNoButtons'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -158,7 +159,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
             <P>
-              ここまでは簡単すぎたかもしれません。次は、もう少し複雑な計算箱を見てみましょう！
+              ここまでは、単純な計算ができる計算箱を紹介してきました。次は、もう少し複雑な計算箱を見てみましょう！
               <Emoji>😉</Emoji>
             </P>
           </>
@@ -332,6 +333,60 @@ export default () => (
         )
       },
       {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              ちゃんと理解できたかどうか、
+              <H args={{ name: 'yesNoQuiz' }} />
+              で確かめてみましょう。
+              <H args={{ name: 'lookAtThisMathBox' }} />:
+            </P>
+            <R.Sffm />
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndMathBoxQuestion' }} />
+            </P>
+            <R.Novg />
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Sewk />
+            <P>
+              つまり <EmojiNumber number={28} /> ではなく、
+              <EmojiNumber number={29} /> になりました。
+            </P>
+            <P>
+              <InlineEmojiBoxesForCondition type="condition" /> の中には{' '}
+              <EmojiNumber number={0} /> が入っているので、下の
+              <InlineEmojiBoxesForCondition type="trueCase" /> の中にある{' '}
+              <EmojiNumber number={29} /> が残るのです。
+            </P>
+            <R.Qscy />
+            <P>
+              以上、条件分岐の計算箱の紹介でした！<Emoji>😉</Emoji>
+            </P>
+          </>
+        )
+      },
+      {
         title: <>何の役に立つの？</>,
         content: (
           <>
@@ -341,86 +396,14 @@ export default () => (
                 この条件分岐の計算箱はいったい何の役に立つのでしょうか？
               </Strong>
               人々は、条件分岐の計算箱をどんな用途で使っていたのでしょう？
+              <Emoji>🤔</Emoji>
             </P>
             <EmojiSeparator emojis={['🔢', '🤔', '0️⃣']} />
-            <P>というわけで、条件分岐の計算箱の具体的な使用例を紹介します！</P>
-          </>
-        )
-      },
-      {
-        title: <>2月には何日ある？</>,
-        content: (
-          <>
             <P>
-              人々は毎年、ある疑問に悩まされていました。それは、「
-              <Strong>今年の2月には何日あるんだろう？</Strong>」という疑問です。
+              というわけで次の回では、条件分岐の計算箱の<Em>具体的な使用例</Em>
+              を紹介します！
             </P>
-            <EmojiSeparator emojis={['🤔', '2️⃣', '🗓']} />
-            <P>答えはもちろん、以下の通りです。</P>
-            <Ul>
-              <UlLi>
-                <Em>
-                  うるう年の場合、2月には<Strong>29日</Strong>ある。
-                </Em>
-              </UlLi>
-              <UlLi>
-                <Em>
-                  それ以外の年の場合、2月には<Strong>28日</Strong>ある。
-                </Em>
-              </UlLi>
-            </Ul>
-            <P>
-              では、
-              <Strong>
-                うるう年かどうかを判別するにはどうすればいいでしょう？
-              </Strong>
-            </P>
-            <EmojiSeparator emojis={['🤔', '➗', '4️⃣']} />
-            <P>
-              うるう年は、基本的に「<Strong>4で割り切れる年</Strong>
-              」です。たとえば東京オリンピックが行われる2020年は、2020が4で割り切れるのでうるう年となります。ちなみに例外もありますが、後に説明します。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>計算箱を使うと</>,
-        content: (
-          <>
-            <P>
-              <Em>
-                人々は計算が苦手だったので、計算箱を使って「
-                <Strong>2月に何日あるか</Strong>」を計算しようと試みました
-              </Em>
-              。<Emoji>🤔</Emoji>
-            </P>
-            <EmojiSeparator emojis={['🎁', '2️⃣', '🗓']} />
-            <P>
-              まず、「
-              <Strong>年の数を、4で割った余り</Strong>
-              」を計算する計算箱はこちらです。
-            </P>
-            <R.Atkh />
-            <P>
-              たとえば、<Emoji>❓</Emoji> の部分に <EmojiNumber number={2020} />{' '}
-              を入れて
-              <H args={{ name: 'play' }} />
-              すると、
-              <EmojiNumber number={4} /> で割り切れるので、
-              <EmojiNumber number={0} /> が残ります。
-            </P>
-            <R.Gruv />
-            <ExpressionRunnerSeparator />
-            <R.Lbua />
-            <P>
-              次に、「
-              <InlineHeader>年の数を、4で割った余り</InlineHeader>
-              」を計算する計算箱を、
-              <Strong>
-                条件分岐の計算箱の真ん中の部分{' '}
-                <InlineEmojiBoxesForCondition type="condition" /> に入れます。
-              </Strong>
-            </P>
+            <NextLessonButton />
           </>
         )
       }
