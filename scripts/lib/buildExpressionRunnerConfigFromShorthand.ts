@@ -16,7 +16,7 @@ import {
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
-import * as lessonExpressions from 'scripts/lib/lessonExpressions'
+import * as lessonExpressions from 'scripts/lib/initialExpressionContainers'
 
 export interface ExpressionRunnerConfig {
   lessonExpressionsKey?: keyof typeof lessonExpressions

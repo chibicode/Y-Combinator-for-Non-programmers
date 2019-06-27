@@ -5,7 +5,7 @@ import {
   ExpressionContainer,
   SteppedExpressionContainer
 } from 'src/types/ExpressionContainerTypes'
-import * as lessonExpressions from 'scripts/lib/lessonExpressions'
+import * as lessonExpressions from 'scripts/lib/initialExpressionContainers'
 
 const buildExpressionContainers = ({
   lessonExpressionsKey,
