@@ -328,7 +328,12 @@ export default () => (
             <P>
               これは、「<Strong>条件分岐の計算箱</Strong>」と、「
               <Strong>割ったときの余りがわかる計算箱</Strong>
-              」を組み合わせたものです。
+              」を組み合わせた計算箱です。
+              <Strong>計算箱は、組み合わせることもできるのです。</Strong>
+            </P>
+            <EmojiSeparator emojis={['🎁', '🤗', '🎁']} />
+            <P>
+              次のページで詳しく書きますが、概要を手短に説明しておきますね。
             </P>
             <Ul>
               <UlLi>
@@ -346,14 +351,35 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
-            <Hr />
-            <P>では、ここで質問です。</P>
+          </>
+        )
+      },
+      {
+        title: <>何の目的で使われていた？</>,
+        content: (
+          <>
+            <P>では、ここで質問です。(同じ計算箱を再掲します)</P>
+            <R.Yhmp />
             <P>
-              <InlineHeader>質問:</InlineHeader> 人々は、上の計算箱を
+              <InlineHeader>質問:</InlineHeader> 人々は、この計算箱を
               <Strong>ある目的のために</Strong>使っていました。
               <Strong>いったい、どんな目的で使っていたのでしょう？</Strong>
             </P>
             <EmojiSeparator emojis={['❓', '🤔', '❓']} />
+            <P>
+              <InlineHeader>ヒント:</InlineHeader>{' '}
+              <Em>
+                <EmojiNumber number={28} /> か <EmojiNumber number={29} />{' '}
+                の二択になるものって、何があるでしょう？
+              </Em>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={28} />,
+                <Emoji>🆚</Emoji>,
+                <EmojiNumber number={29} />
+              ]}
+            />
             <P>
               答えは次のページにあります。少し考えてみてから、下のボタンを押してください。分からなくても大丈夫です！
               <Emoji>😉</Emoji>
