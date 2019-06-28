@@ -1122,6 +1122,43 @@ export const wkny: ContainerWithState<'done'> = {
   containerState: 'done'
 }
 
+export const wrps = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 2
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      {
+        shorthandNumber: 5
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
+export const urrw = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 1,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
 export const zhpt = initializeExpressionContainer({
   checkType: 'isZero',
   condition: [

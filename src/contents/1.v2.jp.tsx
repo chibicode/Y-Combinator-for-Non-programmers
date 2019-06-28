@@ -311,82 +311,71 @@ export default () => (
         )
       },
       {
+        title: <>組み合わせも可能</>,
+        content: (
+          <>
+            <P>
+              <Strong>
+                計算箱は、他の計算箱と組み合わせることもできます。
+              </Strong>
+              たとえば下の計算箱は、「<Strong>条件分岐の計算箱</Strong>」と、「
+              <Strong>割ったときの余りがわかる計算箱</Strong>
+              」を組み合わせた計算箱です。
+            </P>
+            <R.Jehz />
+            <P>
+              まず、真ん中の部分{' '}
+              <InlineEmojiBoxesForCondition type="condition" /> に入っている「
+              <Strong>
+                <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+                で割ったときの余りがわかる計算箱
+              </Strong>
+              」を計算します。
+            </P>
+            <R.Hhtl />
+            <P>
+              <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+              で割ると余りは <EmojiNumber number={1} /> になるので、真ん中の部分{' '}
+              <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+              <EmojiNumber number={1} /> になります。(分かりやすいように、
+              <Em>黄色</Em>
+              で示しています)
+            </P>
+            <R.Vbdk />
+            <P>
+              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+              <EmojiNumber number={0} /> ではないので、上の{' '}
+              <EmojiNumber number={4} /> が最終的に残るというわけです。
+            </P>
+            <R.Fwks />
+            <P>
+              このように、計算箱は他の計算箱と組み合わせることもできるのです。
+            </P>
+            <EmojiSeparator emojis={['🎁', '🤗', '🎁']} />
+          </>
+        )
+      },
+      {
         title: <>何の役に立つの？</>,
         content: (
           <>
             <P>
-              では、
+              ここまで、条件分岐の計算箱をいくつか紹介してきました。
               <Strong>
-                この条件分岐の計算箱はいったい何の役に立つのでしょうか？
+                しかし、条件分岐の計算箱はいったい何の役に立つのでしょうか？
               </Strong>
               人々は、条件分岐の計算箱をどんな用途で使っていたのでしょう？
               <Emoji>🤔</Emoji>
             </P>
             <EmojiSeparator emojis={['🔢', '🤔', '0️⃣']} />
-            <P>それについて説明する前に、こちらの計算箱をご覧ください:</P>
-            <R.Yhmp />
-            <P>
-              これは、「<Strong>条件分岐の計算箱</Strong>」と、「
-              <Strong>割ったときの余りがわかる計算箱</Strong>
-              」を組み合わせた計算箱です。
-              <Strong>計算箱は、組み合わせることもできるのです。</Strong>
-            </P>
-            <EmojiSeparator emojis={['🎁', '🤗', '🎁']} />
-            <P>
-              次のページで詳しく書きますが、どのように計算が行われるか、手短に説明しておきますね。
-            </P>
-            <R.Yhmp />
-            <Ul>
-              <UlLi>
-                <Emoji>❓</Emoji> には、好きな数字を入れることができます。
-              </UlLi>
-              <UlLi>
-                真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
-                に入っている「
-                <Strong>
-                  <Emoji>❓</Emoji> を <Emoji>4️⃣</Emoji>{' '}
-                  で割ったときの余りがわかる計算箱
-                </Strong>
-                」を先に計算します。
-              </UlLi>
-              <UlLi>
-                この場合、
-                <Em>
-                  <Emoji>❓</Emoji> を <Emoji>4️⃣</Emoji> で割ったときの余りが{' '}
-                  <Emoji>0️⃣</Emoji> なら <EmojiNumber number={29} />
-                  、それ以外なら <EmojiNumber number={28} /> になります。
-                </Em>
-              </UlLi>
-            </Ul>
-          </>
-        )
-      },
-      {
-        title: <>何の目的で使われていた？</>,
-        content: (
-          <>
-            <P>では、ここで質問です。</P>
+            <P>では、ここで質問です。こちらの計算箱をご覧ください:</P>
             <R.Yhmp />
             <P>
               <InlineHeader>質問:</InlineHeader> 人々は、この計算箱を
               <Strong>ある目的のために</Strong>使っていました。
               <Strong>いったい、どんな目的で使っていたのでしょう？</Strong>
             </P>
-            <EmojiSeparator emojis={['❓', '🤔', '❓']} />
-            <P>
-              <InlineHeader>ヒント:</InlineHeader>{' '}
-              <Em>
-                <EmojiNumber number={28} /> か <EmojiNumber number={29} />{' '}
-                の二択になるものって、何があるでしょう？
-              </Em>
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={28} />,
-                <Emoji>🆚</Emoji>,
-                <EmojiNumber number={29} />
-              ]}
-            />
+            <EmojiSeparator emojis={['❓', '🎁', '❓']} />
             <P>
               答えは次のページにあります。少し考えてみてから、下のボタンを押してください。分からなくても大丈夫です！
               <Emoji>😉</Emoji>
