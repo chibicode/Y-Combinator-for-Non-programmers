@@ -145,7 +145,7 @@ export default () => (
             <R.Yhmp />
             <P>
               真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
-              に、先ほどの
+              に、先ほどの計算箱が入っているのに注目です。
             </P>
           </>
         )
