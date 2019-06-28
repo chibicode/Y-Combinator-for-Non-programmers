@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e15E10',
+  initialExpressionContainer: initialExpressionContainers.vgig,
   showPriorities: true,
   variableSize: 'xs',
   containerSize: 'xs'

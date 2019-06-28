@@ -16,11 +16,11 @@ import {
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
-import * as lessonExpressions from 'scripts/lib/lessonExpressions'
+import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 export interface ExpressionRunnerConfig {
-  lessonExpressionsKey?: keyof typeof lessonExpressions
-  predefinedExpressionsKeys?: readonly (keyof typeof lessonExpressions)[]
+  initialExpressionContainer?: SteppedExpressionContainer
+  initialExpressionContainers?: SteppedExpressionContainer[]
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
@@ -138,7 +138,7 @@ const buildExpressionRunnerConfigFromShorthand = (
   let runnerProps
   if (isExpressionRunnerSimpleConfig(config)) {
     const {
-      lessonExpressionsKey,
+      initialExpressionContainer,
       initialState,
       isDone,
       skipAlphaConvert,
@@ -164,7 +164,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     >(config, expressionRunnerSimpleConfigDefault)
 
     runnerProps = {
-      lessonExpressionsKey,
+      initialExpressionContainer,
       hideControls: true,
       hidePriorities: !showPriorities,
       explanationsVisibility,
@@ -190,7 +190,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
     const {
-      lessonExpressionsKey,
+      initialExpressionContainer,
       initialState,
       skipToTheEnd,
       hideFuncUnboundBadgeOnExplanation,
@@ -216,7 +216,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     runnerProps = {
       speed,
       highlightNumber,
-      lessonExpressionsKey,
+      initialExpressionContainer,
       hidePriorities: !showPriorities,
       highlightOverrides,
       showAllShowSteps,
@@ -238,7 +238,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     }
   } else if (isExpressionRunnerSingleStepConfig(config)) {
     const {
-      lessonExpressionsKey,
+      initialExpressionContainer,
       initialState,
       finalState,
       hideFuncUnboundBadgeOnExplanation,
@@ -257,7 +257,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     runnerProps = {
       variableSize,
       containerSize,
-      lessonExpressionsKey,
+      initialExpressionContainer,
       hidePriorities: !showPriorities,
       hideFuncUnboundBadgeOnExplanation,
       hidePlayButton: true,
@@ -273,7 +273,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     }
   } else {
     const {
-      predefinedExpressionsKeys,
+      initialExpressionContainers,
       hideFuncUnboundBadgeOnExplanation,
       showPriorities,
       explanationsVisibility,
@@ -288,7 +288,7 @@ const buildExpressionRunnerConfigFromShorthand = (
     >(config, expressionRunnerPredefinedConfigDefault)
 
     runnerProps = {
-      predefinedExpressionsKeys,
+      initialExpressionContainers,
       variableSize,
       containerSize,
       hidePriorities: !showPriorities,

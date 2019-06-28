@@ -1,8 +1,12 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
-  predefinedExpressionsKeys: ['v2e1E9', 'v2e1E7']
+  initialExpressionContainers: [
+    initialExpressionContainers.kysf,
+    initialExpressionContainers.zrwn
+  ]
 }
 
 export default config

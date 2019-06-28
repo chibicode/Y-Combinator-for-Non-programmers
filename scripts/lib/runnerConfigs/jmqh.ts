@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'e2E1',
+  initialExpressionContainer: initialExpressionContainers.qcbo,
   initialState: 'showFuncUnbound',
   skipToTheEnd: false
 }

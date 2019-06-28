@@ -1,9 +1,10 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   hideFuncUnboundBadgeOnExplanation: true,
-  lessonExpressionsKey: 'e1E1',
+  initialExpressionContainer: initialExpressionContainers.nyhe,
   initialState: 'betaReducePreviewBefore',
   finalState: 'betaReducePreviewAfter'
 }

@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e13E1',
+  initialExpressionContainer: initialExpressionContainers.kmtz,
   caption: { name: 'ifCaption', ifZero: 'y', ifNonZero: 'z' }
 }
 

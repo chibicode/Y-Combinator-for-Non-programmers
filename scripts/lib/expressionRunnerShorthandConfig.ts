@@ -1,7 +1,7 @@
-import * as lessonExpressions from 'scripts/lib/lessonExpressions'
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
+import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 export const expressionRunnerSimpleConfigDefault = {
   isDone: false,
@@ -14,7 +14,7 @@ export const expressionRunnerSimpleConfigDefault = {
 
 interface ExpressionRunnerSimpleConfig {
   runner: 'simple'
-  lessonExpressionsKey: keyof typeof lessonExpressions
+  initialExpressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   isDone?: boolean
   skipAlphaConvert?: boolean
@@ -61,7 +61,7 @@ export function isExpressionRunnerPlayButtonOnlyConfig(
 
 interface ExpressionRunnerPlayButtonOnlyConfig {
   runner: 'playButtonOnly'
-  lessonExpressionsKey: keyof typeof lessonExpressions
+  initialExpressionContainer: SteppedExpressionContainer
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   skipToTheEnd?: boolean
   hideFuncUnboundBadgeOnExplanation?: boolean
@@ -96,7 +96,7 @@ export function isExpressionRunnerSingleStepConfig(
 
 interface ExpressionRunnerSingleStepConfig {
   runner: 'singleStep'
-  lessonExpressionsKey: keyof typeof lessonExpressions
+  initialExpressionContainer: SteppedExpressionContainer
   initialState: ExpressionContainer['previouslyChangedExpressionState']
   finalState: ExpressionContainer['previouslyChangedExpressionState']
   hideFuncUnboundBadgeOnExplanation?: boolean
@@ -125,7 +125,7 @@ export const expressionRunnerPredefinedConfigDefault = {
 
 interface ExpressionRunnerPredefinedConfig {
   runner: 'predefined'
-  predefinedExpressionsKeys: readonly (keyof typeof lessonExpressions)[]
+  initialExpressionContainers: SteppedExpressionContainer[]
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
   nextIteration?: boolean

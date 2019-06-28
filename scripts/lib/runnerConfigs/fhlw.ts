@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e9E3',
+  initialExpressionContainer: initialExpressionContainers.xvjz,
   caption: { name: 'secretCodeCaption', number: 0, letter: 'f' }
 }
 

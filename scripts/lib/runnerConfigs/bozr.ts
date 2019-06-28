@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'e15E9',
+  initialExpressionContainer: initialExpressionContainers.nxmy,
   showPriorities: true,
   containerSize: 'xs',
   variableSize: 'xxs',

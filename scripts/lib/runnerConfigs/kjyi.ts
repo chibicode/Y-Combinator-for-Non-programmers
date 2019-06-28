@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
-  lessonExpressionsKey: 'e10E4',
+  initialExpressionContainer: initialExpressionContainers.zgzf,
   skipAlphaConvert: true,
   showPriorities: true,
   nextIteration: true,

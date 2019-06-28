@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
-  lessonExpressionsKey: 'e3E5',
+  initialExpressionContainer: initialExpressionContainers.atls,
   initialState: 'betaReducePreviewBefore',
   finalState: 'betaReducePreviewAfter'
 }

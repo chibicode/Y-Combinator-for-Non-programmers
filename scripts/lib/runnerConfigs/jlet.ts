@@ -1,8 +1,9 @@
 import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandConfig'
+import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  lessonExpressionsKey: 'e11E3',
+  initialExpressionContainer: initialExpressionContainers.druk,
   isDone: true,
   showPriorities: true,
   containerSize: 'xs',
