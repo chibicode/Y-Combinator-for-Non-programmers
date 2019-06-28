@@ -330,21 +330,23 @@ export default () => (
                 <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
                 で割ったときの余りがわかる計算箱
               </Strong>
-              」を計算します。
+              」を計算します。(<Em>黄色</Em>
+              で示しています)
             </P>
             <R.Hhtl />
             <P>
               <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
               で割ると余りは <EmojiNumber number={1} /> になるので、真ん中の部分{' '}
               <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-              <EmojiNumber number={1} /> になります。(分かりやすいように、
-              <Em>黄色</Em>
+              <EmojiNumber number={1} /> になります。(<Em>黄色</Em>
               で示しています)
             </P>
             <R.Vbdk />
             <P>
-              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+              あとは以前と同じです。真ん中の部分{' '}
+              <InlineEmojiBoxesForCondition type="condition" /> が{' '}
               <EmojiNumber number={0} /> ではないので、上の{' '}
+              <InlineEmojiBoxesForCondition type="falseCase" /> の中にある{' '}
               <EmojiNumber number={4} /> が最終的に残るというわけです。
             </P>
             <R.Fwks />

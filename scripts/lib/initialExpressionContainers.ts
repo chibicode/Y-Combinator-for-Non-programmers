@@ -1145,6 +1145,32 @@ export const wrps = initializeExpressionContainer({
   }
 })
 
+export const ised = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 2,
+      initialHighlight: true
+    },
+    [
+      {
+        shorthandBinary: 'remainder',
+        initialHighlight: true
+      },
+      {
+        shorthandNumber: 5,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
 export const urrw = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
