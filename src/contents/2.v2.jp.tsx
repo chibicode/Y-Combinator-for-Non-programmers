@@ -49,6 +49,14 @@ export default () => (
             </P>
             <R.Drbt />
             <P>
+              前回説明した通り、
+              <Strong>
+                先に真ん中の部分{' '}
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                の中にある、割り算の余りを計算します。
+              </Strong>
+            </P>
+            <P>
               <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
               で割ると、余りは <EmojiNumber number={1} /> になります。(
               <Em>黄色</Em>
