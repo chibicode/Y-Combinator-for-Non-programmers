@@ -5,7 +5,8 @@ import {
   Em,
   InlineHeader,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
@@ -14,7 +15,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
 import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
-import YesNoButtons from 'src/components/YesNoButtons'
 import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -111,36 +111,18 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['➖', '🎁', '➗']} />
             <P>
-              一方、少しだけ興味深いのがこちらの「
-              <Strong>割ったときの余りがわかる計算箱</Strong>」です。
+              一方、少しだけ興味深いのが、「
+              <Strong>割ったときの余りがわかる計算箱</Strong>
+              」です。
             </P>
-            <R.Mjbi />
             <P>
-              上の計算箱は、 「
+              たとえば下の計算箱は、 「
               <Strong>
                 <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
                 で割ったときの余り
               </Strong>
-              」を計算してくれます。これを使えば、たとえば「
-              <Em>5人のグループを2人ずつに分けたとき、仲間はずれが出るか？</Em>
-              」が分かるわけです。
-            </P>
-            <EmojiSeparator emojis={['🤔', '🤔', '🤔', '🤔', '🤔']} />
-            <P>
-              「それくらい暗算できるだろう <Emoji>😡</Emoji>
-              」と思われるかもしれません。でも、
-              <Em>
-                計算箱がある世界の人々はみな計算が苦手で、簡単な計算でも計算箱に頼っていた
-              </Em>
-              のです。
-              <Emoji>😉</Emoji>
-            </P>
-            <P>
-              では、先ほどの計算箱を
-              <Em>
-                <H args={{ name: 'play' }} />
-                してみましょう。
-              </Em>
+              」を計算してくれます。
+              <H args={{ name: 'pressPlay' }} />
             </P>
             <R.Wtax />
             <P>
@@ -151,13 +133,9 @@ export default () => (
               <Strong>
                 余りの <Emoji>1️⃣</Emoji>
               </Strong>{' '}
-              が残りました。
+              が残るというわけです。
             </P>
-            <P>
-              先ほどの例に戻ると、5人のグループを2人ずつに分ければ、ひとりが仲間はずれになります。
-              <Emoji>😭</Emoji>
-            </P>
-            <EmojiSeparator emojis={['🙂', '😉', '🙂', '😉', '😭']} />
+            <Hr />
             <P>
               ここまでは、単純な計算ができる計算箱を紹介してきました。次は、もう少し複雑な計算箱を見てみましょう！
               <Emoji>😉</Emoji>
@@ -328,60 +306,6 @@ export default () => (
               <Strong>条件</Strong>」によって、上下に「
               <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
               の計算箱」という名前がついているのです。
-            </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yesNoQuiz' }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              ちゃんと理解できたかどうか、
-              <H args={{ name: 'yesNoQuiz' }} />
-              で確かめてみましょう。
-              <H args={{ name: 'lookAtThisMathBox' }} />:
-            </P>
-            <R.Sffm />
-            <P>
-              <H args={{ name: 'whatHappensAtTheEndMathBoxQuestion' }} />
-            </P>
-            <R.Novg />
-            <YesNoButtons answer="no" />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: false }} />
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            <R.Sewk />
-            <P>
-              つまり <EmojiNumber number={28} /> ではなく、
-              <EmojiNumber number={29} /> になりました。
-            </P>
-            <P>
-              <InlineEmojiBoxesForCondition type="condition" /> の中には{' '}
-              <EmojiNumber number={0} /> が入っているので、下の
-              <InlineEmojiBoxesForCondition type="trueCase" /> の中にある{' '}
-              <EmojiNumber number={29} /> が残るのです。
-            </P>
-            <R.Qscy />
-            <P>
-              以上、条件分岐の計算箱の紹介でした！<Emoji>😉</Emoji>
             </P>
           </>
         )
