@@ -1205,3 +1205,41 @@ export const zhpt = initializeExpressionContainer({
     shorthandNumber: 28
   }
 })
+
+export const vtzk = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      {
+        shorthandNumber: 2019,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const gflf = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 1,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})

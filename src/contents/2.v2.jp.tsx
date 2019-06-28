@@ -5,8 +5,7 @@ import {
   Strong,
   InlineHeader,
   Ul,
-  UlLi,
-  Hr
+  UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -20,17 +19,69 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>2月には何日まである？</>,
+        title: <>計算箱の使い道は？</>,
         content: (
           <>
             <P>
+              <H args={{ name: 'episodeWelcomeText' }} />
               今回は、
               <Strong>
-                前回紹介した計算箱で解くことができる問題を紹介します
+                前回紹介した計算箱を、人々が何のために使っていたのか
               </Strong>
-              。それは、以下のような問題です。
+              を説明します。
             </P>
-            <Hr />
+            <R.Yhmp />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2019} /> を入れてみる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              試しに何か数字を入れてみましょう。この記事を公開したのは2019年なので、
+              <EmojiNumber number={2019} /> を入れてみます。(<Em>黄色</Em>
+              で示しています)
+            </P>
+            <R.Drbt />
+            <P>
+              <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
+              で割ると、余りは <EmojiNumber number={1} /> になります。(
+              <Em>黄色</Em>
+              で示しています)
+            </P>
+            <R.Lfyt />
+            <P>
+              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+              <EmojiNumber number={0} /> ではないので、上の{' '}
+              <InlineEmojiBoxesForCondition type="falseCase" /> の中にある{' '}
+              <EmojiNumber number={28} /> が最終的に残るというわけです。
+            </P>
+            <R.Vrko />
+            <P>
+              まとめると、最初に<Emoji>❓</Emoji> に{' '}
+              <EmojiNumber number={2019} /> を入れると、結果は{' '}
+              <EmojiNumber number={28} /> になります。
+            </P>
+            <EmojiSeparator
+              size="mdsm"
+              nodes={[
+                <EmojiNumber number={2019} />,
+                <Emoji>➡️</Emoji>,
+                <EmojiNumber number={28} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
             <P>
               計算箱がある世界の人々は毎年、「
               <Strong>今年の2月には何日まであるんだろう？</Strong>
