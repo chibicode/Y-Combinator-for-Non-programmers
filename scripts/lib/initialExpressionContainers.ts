@@ -1121,3 +1121,24 @@ export const wkny: ContainerWithState<'done'> = {
   }),
   containerState: 'done'
 }
+
+export const zhpt = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      'questionV2'
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})

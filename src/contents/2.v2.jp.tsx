@@ -12,8 +12,8 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 import H from 'src/components/H'
-import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -126,24 +126,26 @@ export default () => (
               <H args={{ name: 'play' }} />
               すると、
               <EmojiNumber number={4} /> で割り切れるので、
-              <EmojiNumber number={0} /> が残ります。
+              <EmojiNumber number={0} /> が残ります。 試しに
+              <H args={{ name: 'pressPlay' }} />
             </P>
             <R.Gruv />
-            <ExpressionRunnerSeparator />
-            <R.Lbua />
           </>
         )
       },
       {
-        title: <>条件分岐の弁当箱と</>,
+        title: <>条件分岐の弁当箱と組み合わせる</>,
         content: (
           <>
             <P>
-              次に、先ほどの「
-              <InlineHeader>年の数を、4で割った余り</InlineHeader>
-              」を計算する計算箱を、
+              次に、先ほどの計算箱を、
               <Strong>条件分岐の計算箱と組み合わせます。</Strong>
               こちらをご覧ください。
+            </P>
+            <R.Yhmp />
+            <P>
+              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
+              に、先ほどの
             </P>
           </>
         )
