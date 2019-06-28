@@ -6,14 +6,29 @@
       "tsconfig": "tsconfig.json",
       "option": "watch",
       "problemMatcher": ["$tsc-watch"],
-      "runOptions": { "runOn": "folderOpen" }
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     },
     {
       "type": "typescript",
       "tsconfig": "tsconfig.scripts.json",
       "option": "watch",
       "problemMatcher": ["$tsc-watch"],
-      "runOptions": { "runOn": "folderOpen" }
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "yarn",
+      "args": ["precompute", "${fileBasenameNoExtension}"],
+      "label": "Precompute",
+      "problemMatcher": [],
+      "presentation": {
+        "showReuseMessage": false,
+        "reveal": "silent"
+      }
     }
   ]
 }
