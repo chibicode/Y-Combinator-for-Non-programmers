@@ -333,14 +333,21 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🎁', '🤗', '🎁']} />
             <P>
-              次のページで詳しく書きますが、概要を手短に説明しておきますね。
+              次のページで詳しく書きますが、どのように計算が行われるか、手短に説明しておきますね。
             </P>
+            <R.Yhmp />
             <Ul>
               <UlLi>
+                <Emoji>❓</Emoji> には、好きな数字を入れることができます。
+              </UlLi>
+              <UlLi>
                 真ん中の部分 <InlineEmojiBoxesForCondition type="condition" />{' '}
-                に、「
-                <Strong>割ったときの余りがわかる計算箱</Strong>
-                」が入っており、<Strong>こちらを先に計算します</Strong>。
+                に入っている「
+                <Strong>
+                  <Emoji>❓</Emoji> を <Emoji>4️⃣</Emoji>{' '}
+                  で割ったときの余りがわかる計算箱
+                </Strong>
+                」を先に計算します。
               </UlLi>
               <UlLi>
                 この場合、
@@ -358,7 +365,7 @@ export default () => (
         title: <>何の目的で使われていた？</>,
         content: (
           <>
-            <P>では、ここで質問です。(同じ計算箱を再掲します)</P>
+            <P>では、ここで質問です。</P>
             <R.Yhmp />
             <P>
               <InlineHeader>質問:</InlineHeader> 人々は、この計算箱を
