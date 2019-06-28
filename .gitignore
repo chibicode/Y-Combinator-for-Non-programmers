@@ -1,4 +1,4 @@
-.scripts
+.tsbuild
 *.tsbuildinfo
 report.*.json
 sitemap.xml
