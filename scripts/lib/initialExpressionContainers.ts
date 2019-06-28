@@ -1000,7 +1000,7 @@ export const ocwu = initializeExpressionContainer([
   },
   [
     {
-      shorthandBinary: 'add'
+      shorthandBinary: 'mult'
     },
     {
       shorthandNumber: 3
