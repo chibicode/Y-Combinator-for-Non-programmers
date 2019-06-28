@@ -13,7 +13,6 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
-import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import * as R from 'src/components/Runners'
 
@@ -21,7 +20,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>2月には何日ある？</>,
+        title: <>2月には何日まである？</>,
         content: (
           <>
             <P>
@@ -33,11 +32,34 @@ export default () => (
             </P>
             <Hr />
             <P>
-              人々は毎年、「
-              <Strong>今年の2月には何日あるんだろう？</Strong>
+              計算箱がある世界の人々は毎年、「
+              <Strong>今年の2月には何日まであるんだろう？</Strong>
               」という疑問に悩まされていました。
             </P>
             <EmojiSeparator emojis={['🤔', '2️⃣', '🗓']} />
+            <P>
+              たとえば、
+              <Em>
+                <Strong>2020年</Strong>の2月には<Strong>29日</Strong>
+                までありますが、<Strong>2021</Strong>年の2月には
+                <Strong>28日</Strong>までしかありません
+              </Em>
+              。2月の日数はどうやって計算すればいいのでしょう？
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={29} />,
+                <Emoji>🆚</Emoji>,
+                <EmojiNumber number={28} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>うるう年は29日</>,
+        content: (
+          <>
             <P>答えはもちろん、以下の通りです。</P>
             <Ul>
               <UlLi>
@@ -87,7 +109,7 @@ export default () => (
             <P>
               <Em>
                 人々は計算が苦手だったので、計算箱を使って「
-                <Strong>2月に何日あるか</Strong>」を計算しようと試みました
+                <Strong>2月には何日まであるか</Strong>」を計算しようと試みました
               </Em>
               。<Emoji>🤔</Emoji>
             </P>
@@ -109,14 +131,19 @@ export default () => (
             <R.Gruv />
             <ExpressionRunnerSeparator />
             <R.Lbua />
+          </>
+        )
+      },
+      {
+        title: <>条件分岐の弁当箱と</>,
+        content: (
+          <>
             <P>
-              次に、「
+              次に、先ほどの「
               <InlineHeader>年の数を、4で割った余り</InlineHeader>
               」を計算する計算箱を、
-              <Strong>
-                条件分岐の計算箱の真ん中の部分{' '}
-                <InlineEmojiBoxesForCondition type="condition" /> に入れます。
-              </Strong>
+              <Strong>条件分岐の計算箱と組み合わせます。</Strong>
+              こちらをご覧ください。
             </P>
           </>
         )
