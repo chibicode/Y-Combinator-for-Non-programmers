@@ -4,41 +4,22 @@
       "containerState": "ready",
       "previouslyChangedExpressionState": "default",
       "expression": {
-        "arg": {
-          "arg": {
-            "name": "shorthandNumber",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [
-              1,
-              2
-            ],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": true,
-            "shorthandNumber": 5
-          },
-          "func": {
-            "name": "shorthandBinary",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [
-              2
-            ],
-            "emphasizePriority": false,
-            "bound": true,
-            "shorthandBinary": "remainder"
-          },
-          "state": "default",
-          "type": "call",
-          "priority": 2
+        "type": "conditional",
+        "state": "default",
+        "checkType": "isZero",
+        "condition": {
+          "name": "shorthandNumber",
+          "highlightType": "initialHighlighted",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 1
         },
-        "func": {
+        "trueCase": {
           "name": "shorthandNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
@@ -50,10 +31,22 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 3
         },
-        "state": "default",
-        "type": "call",
+        "falseCase": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 4
+        },
         "priority": 1
       }
     }

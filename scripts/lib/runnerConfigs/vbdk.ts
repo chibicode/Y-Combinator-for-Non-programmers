@@ -3,7 +3,7 @@ import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.zcxt
+  initialExpressionContainer: initialExpressionContainers.urrw
 }
 
 export default config

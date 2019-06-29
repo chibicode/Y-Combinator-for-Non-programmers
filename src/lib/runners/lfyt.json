@@ -1,13 +1,15 @@
 {
   "expressionContainers": [
     {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
       "expression": {
         "type": "conditional",
-        "state": "trueCaseActive",
+        "state": "default",
         "checkType": "isZero",
         "condition": {
           "name": "shorthandNumber",
-          "highlightType": "default",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -15,7 +17,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 0
+          "shorthandNumber": 3
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -46,16 +48,13 @@
           "shorthandNumber": 28
         },
         "priority": 1
-      },
-      "previouslyChangedExpressionState": "trueCaseActive",
-      "activePriority": 1,
-      "containerState": "stepped"
+      }
     }
   ],
   "speed": 1,
   "showOnlyFocused": false,
   "hideControls": true,
-  "explanationsVisibility": "visible",
+  "explanationsVisibility": "hidden",
   "hidePriorities": true,
   "variableSize": "lg",
   "containerSize": "xxs",

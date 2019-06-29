@@ -1,12 +1,10 @@
 import twemoji from 'twemoji'
 import uniq from 'lodash/uniq'
+import letterEmojiMappingJson from 'src/lib/letterEmojiMappingJson.json'
+import numberEmojiMappingJson from 'src/lib/numberEmojiMappingJson.json'
 
-const letterEmojis = Object.values<string>(
-  require('../src/lib/letterEmojiMappingJson.json')
-)
-const numberEmojis = Object.values<string>(
-  require('../src/lib/numberEmojiMappingJson.json')
-)
+const letterEmojis = Object.values<string>(letterEmojiMappingJson)
+const numberEmojis = Object.values<string>(numberEmojiMappingJson)
 
 // NOTE: Disabling svgo because it's causing
 // some emojis like 😍 to be rendered incorrectly.

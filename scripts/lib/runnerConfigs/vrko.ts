@@ -2,8 +2,9 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.ydlj
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gflf,
+  isDone: true
 }
 
 export default config

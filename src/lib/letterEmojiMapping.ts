@@ -1,5 +1,5 @@
 import { VariableNames } from 'src/types/VariableNames'
-import jsonMapping from './letterEmojiMappingJson.json'
+import jsonMapping from 'src/lib/letterEmojiMappingJson.json'
 
 const letterEmojiMapping: Record<VariableNames, string> = jsonMapping
 

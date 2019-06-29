@@ -1,4 +1,4 @@
-import jsonMapping from './numberEmojiMappingJson.json'
+import jsonMapping from 'src/lib/numberEmojiMappingJson.json'
 
 const numberEmojiMapping: Record<number, string> = jsonMapping
 

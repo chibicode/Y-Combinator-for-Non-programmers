@@ -2,11 +2,8 @@ import { ExpressionRunnerShorthandConfig } from '../expressionRunnerShorthandCon
 import * as initialExpressionContainers from '../initialExpressionContainers'
 
 const config: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.jnac,
-    initialExpressionContainers.sbvu
-  ]
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ised
 }
 
 export default config

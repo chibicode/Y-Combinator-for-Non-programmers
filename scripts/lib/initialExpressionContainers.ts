@@ -1121,3 +1121,125 @@ export const wkny: ContainerWithState<'done'> = {
   }),
   containerState: 'done'
 }
+
+export const wrps = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 2
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      {
+        shorthandNumber: 5
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
+export const ised = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 2,
+      initialHighlight: true
+    },
+    [
+      {
+        shorthandBinary: 'remainder',
+        initialHighlight: true
+      },
+      {
+        shorthandNumber: 5,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
+export const urrw = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 1,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 3
+  },
+  falseCase: {
+    shorthandNumber: 4
+  }
+})
+
+export const zhpt = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      'questionV2'
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const vtzk = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      {
+        shorthandNumber: 2019,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const gflf = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 3,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
