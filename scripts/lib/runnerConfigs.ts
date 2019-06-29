@@ -396,6 +396,12 @@ export const qmds: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.lmst
 }
 
+export const zysk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gxqm,
+  caption: { name: 'isLeapYearCaption' }
+}
+
 export const dret: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gtnk,
@@ -2691,6 +2697,12 @@ export const givg: ExpressionRunnerShorthandConfig = {
 export const sgds: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ilun
+}
+
+export const voxy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ilun,
+  caption: { name: 'leapYearConditionalCaption' }
 }
 
 export const lvau: ExpressionRunnerShorthandConfig = {

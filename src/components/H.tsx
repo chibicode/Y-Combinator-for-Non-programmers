@@ -1773,6 +1773,36 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'isLeapYearCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          うるう年なら結果は <EmojiNumber number={0} /> になる
+        </>
+      )
+    }
+  }
+  if (args.name === 'leapYearConditionalCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>うるう年の場合はこうなる</>
+    }
+  }
+  if (args.name === 'yellowHighlighted') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          (<Em>黄色</Em>
+          で示しています)
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

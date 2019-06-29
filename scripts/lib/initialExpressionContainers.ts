@@ -1357,3 +1357,29 @@ export const qolg = initializeExpressionContainer({
     shorthandNumber: 28
   }
 })
+
+export const gxqm = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4,
+      initialHighlight: true
+    },
+    [
+      {
+        shorthandBinary: 'remainder',
+        initialHighlight: true
+      },
+      {
+        name: 'questionV2',
+        highlighted: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})

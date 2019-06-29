@@ -129,4 +129,7 @@ export interface HProps {
     | { name: 'conditionalMathBox' }
     | { name: 'lookAtThisMathBox' }
     | { name: 'whatHappensAtTheEndMathBoxQuestion' }
+    | { name: 'isLeapYearCaption' }
+    | { name: 'yellowHighlighted' }
+    | { name: 'leapYearConditionalCaption' }
 }

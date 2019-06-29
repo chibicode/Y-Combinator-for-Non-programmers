@@ -5,11 +5,13 @@ import {
   Strong,
   InlineHeader,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 import H from 'src/components/H'
@@ -50,8 +52,8 @@ export default () => (
                 に何か数字を入れてみましょう。
               </Strong>
               本稿を公開したのは2019年なので、
-              <EmojiNumber number={2019} /> を入れてみます。(<Em>黄色</Em>
-              で示しています)
+              <EmojiNumber number={2019} /> を入れてみます。
+              <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Drbt />
             <P>
@@ -61,15 +63,13 @@ export default () => (
                 <InlineEmojiBoxesForCondition type="condition" />{' '}
                 の中にある、割り算の余りを計算します。
               </Strong>
-              (<Em>黄色</Em>
-              で示しています)
+              <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Qmds />
             <P>
               <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
-              で割ると、余りは <EmojiNumber number={3} /> になります。(
-              <Em>黄色</Em>
-              で示しています)
+              で割ると、余りは <EmojiNumber number={3} /> になります。
+              <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Lfyt />
             <P>
@@ -105,9 +105,8 @@ export default () => (
           <>
             <P>
               では、翌年の
-              <EmojiNumber number={2020} /> を入れてみるとどうなるでしょう？(
-              <Em>黄色</Em>
-              で示しています)
+              <EmojiNumber number={2020} /> を入れてみるとどうなるでしょう？
+              <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Ouis />
             <P>
@@ -117,15 +116,13 @@ export default () => (
                 <InlineEmojiBoxesForCondition type="condition" />{' '}
                 の中にある、割り算の余りを計算します。
               </Strong>
-              (<Em>黄色</Em>
-              で示しています)
+              <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Givg />
             <P>
               <EmojiNumber number={2020} /> を <EmojiNumber number={4} />{' '}
-              で割ると、余りは <EmojiNumber number={0} /> になります。(
-              <Em>黄色</Em>
-              で示しています)
+              で割ると、余りは <EmojiNumber number={0} /> になります。
+              <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Sgds />
             <P>
@@ -214,49 +211,13 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              これはもちろん、<Strong>2020年がうるう年だから</Strong>
-              です。
-            </P>
-            <P>
-              うるう年は一部の例外を除き、基本的に「
-              <Strong>4で割り切れる年</Strong>
-              」です。2019は4で割り切れないのでうるう年ではなく、2020は4で割り切れるのでうるう年なのです。
-            </P>
-            <P>
-              <Em>
-                4で割り切れるということは、4で割ったときの余りがゼロということですよね。それをもとに「
-                <Strong>うるう年(余りがゼロ)か、そうでないか</Strong>
-                」という条件分岐をすることによって、2月の日数を割り出すことができるのです。
-              </Em>
+              つまりこの計算箱は、「
+              <Strong>
+                <Emoji>❓</Emoji>に入れた年の2月には何日まであるか
+              </Strong>
+              」を自動で計算してくれるのです。
             </P>
             <R.Yhmp />
-            <P>つまり先ほどの計算箱は、</P>
-            <Ul>
-              <UlLi>
-                <Em>
-                  <Emoji>❓</Emoji> に年を入れると、
-                </Em>
-              </UlLi>
-              <UlLi>
-                <Em>
-                  その年を <EmojiNumber number={4} />{' '}
-                  で割ったときの余りを計算し、
-                </Em>
-              </UlLi>
-              <UlLi>
-                <Em>
-                  余りが <EmojiNumber number={0} /> (うるう年)の場合は{' '}
-                  <EmojiNumber number={29} /> が、それ以外の場合は{' '}
-                  <EmojiNumber number={28} /> が最後に残る。
-                </Em>
-              </UlLi>
-            </Ul>
-            <P>
-              このようにして、
-              <Strong>その年の2月にある日数</Strong>
-              を自動的に計算してくれるのです！
-            </P>
-            <EmojiSeparator emojis={['😉', '2️⃣', '🗓']} />
           </>
         )
       },
@@ -273,7 +234,13 @@ export default () => (
               」と思ったら、
             </P>
             <EmojiSeparator
-              nodes={[<Emoji>🤔</Emoji>, <EmojiNumber number={2021} />]}
+              size="mdsm"
+              nodes={[
+                <Emoji>🤔</Emoji>,
+                <EmojiNumber number={2021} />,
+                <Emoji>🗓</Emoji>,
+                <EmojiNumber number={2} />
+              ]}
             />
             <P>
               下のように、先ほどの計算箱の <Emoji>❓</Emoji> に{' '}
@@ -290,20 +257,109 @@ export default () => (
               size="mdsm"
               nodes={[
                 <EmojiNumber number={2021} />,
-                <Emoji>➡️</Emoji>,
+                <Emoji>🗓</Emoji>,
+                <EmojiNumber number={2} />,
                 <EmojiNumber number={28} />
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>うるう年</>,
+        content: (
+          <>
             <P>
-              このように、条件分岐の計算箱は「その年の2月は何日まであるか」を計算することができます。そしてここでは紹介しませんが、
+              2月の日数をどうやって計算しているのかというと、
               <Strong>
-                条件分岐の計算箱の使い道は他にもたくさんあります。
+                <EmojiNumber number={4} /> で割ったときの余り
               </Strong>
-              <Em>
-                計算箱がある世界の人々は、さまざまな問題を解くのに条件分岐の計算箱を使っていたのです。
-              </Em>
+              を計算することによって、「
+              <Strong>その年がうるう年かどうか</Strong>
+              」を確かめているのです。
             </P>
-            <EmojiSeparator emojis={['🔢', '🤗', '0️⃣']} />
+            <EmojiSeparator emojis={['❓', '➗', '4️⃣']} />
+            <Ul>
+              <UlLi>
+                <EmojiNumber number={2019} />
+                年は、
+                <EmojiNumber number={4} /> で割ったときの余りが{' '}
+                <Strong>
+                  <EmojiNumber number={0} />{' '}
+                  ではないので、うるう年ではありません。
+                </Strong>
+                <Emoji>❌</Emoji>
+              </UlLi>
+              <UlLi>
+                <EmojiNumber number={2020} />
+                年は、
+                <EmojiNumber number={4} /> で割ったときの余りが{' '}
+                <Strong>
+                  <EmojiNumber number={0} /> なので、うるう年です。
+                </Strong>
+                <Emoji>⭕️</Emoji>
+              </UlLi>
+              <UlLi>
+                <EmojiNumber number={2021} />
+                年は、
+                <EmojiNumber number={4} /> で割ったときの余りが{' '}
+                <Strong>
+                  <EmojiNumber number={0} />{' '}
+                  ではないので、うるう年ではありません。
+                </Strong>
+                <Emoji>❌</Emoji>
+              </UlLi>
+            </Ul>
+            <P>
+              そしてもちろん、
+              <Strong>
+                うるう年の2月には29日ありますが、それ以外の2月には28日しかありません。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={28} />,
+                <Emoji>🆚</Emoji>,
+                <EmojiNumber number={29} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>計算箱のカラクリ</>,
+        content: (
+          <>
+            <P>
+              先ほどの計算箱は、この「<Em>うるう年かどうか</Em>
+              」という計算を、真ん中の部分{' '}
+              <InlineEmojiBoxesForCondition type="condition" />{' '}
+              で行っているのです。
+              <H args={{ name: 'yellowHighlighted' }} />
+            </P>
+            <R.Zysk />
+            <P>
+              うるう年なら真ん中の部分{' '}
+              <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+              <EmojiNumber number={0} /> になるので、最後は下の部分{' '}
+              <InlineEmojiBoxesForCondition type="trueCase" /> に入っている{' '}
+              <EmojiNumber number={29} /> が残ります。
+            </P>
+            <R.Voxy />
+            <ExpressionRunnerSeparator />
+            <R.Lvau />
+            <P>
+              うるう年でなければ、
+              <InlineEmojiBoxesForCondition type="falseCase" /> に入っている{' '}
+              <EmojiNumber number={28} /> が残ります。
+            </P>
+            <R.Vrko />
+            <P>
+              このようにして、
+              <Strong>その年の2月にある日数</Strong>
+              を自動的に計算してくれるのです！
+            </P>
+            <EmojiSeparator emojis={['😉', '2️⃣', '🗓']} />
           </>
         )
       },
@@ -350,7 +406,10 @@ export default () => (
         content: (
           <>
             <P>
-              条件分岐の計算箱には、「2月に何日まであるか」を計算するという使い道があることがわかりました。
+              条件分岐の計算箱には、「2月に何日まであるか」を計算するという使い道があることがわかりました。ここでは紹介しませんが、
+              <Strong>
+                条件分岐の計算箱の使い道は他にもたくさんあります。
+              </Strong>
               <Em>
                 計算箱がある世界の人々は、条件分岐の計算箱を工夫して使いながら問題を解決していたのです。
               </Em>

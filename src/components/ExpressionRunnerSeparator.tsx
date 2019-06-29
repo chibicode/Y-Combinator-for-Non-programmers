@@ -8,7 +8,7 @@ const ExpressionRunnerSeparator = () => (
   <P
     css={css`
       text-align: center;
-      margin: ${spaces('-0.75')} 0 ${spaces('-0.5')};
+      margin: ${spaces('-1.25')} 0 ${spaces('-1')};
     `}
   >
     <Emoji size="mdlg">⬇️</Emoji>
