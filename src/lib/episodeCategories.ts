@@ -6,6 +6,7 @@ export const numAdvancedEpisodes = 5
 export const numEpisodesExceptFirstAndLast =
   numBeginnerEpisodes + numIntermediateEpisodes + numAdvancedEpisodes
 export const finalEpisodeNumber = numEpisodesExceptFirstAndLast + 1
+export const numTotalPages = finalEpisodeNumber + 1
 
 export const episodeCategory = (episodeNumber: number) => {
   if (episodeNumber === 0) {

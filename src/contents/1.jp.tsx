@@ -27,7 +27,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'episodeWelcomeText' }} />
-              当記事では、<Strong>とあるパズル</Strong>
+              本稿では、<Strong>とあるパズル</Strong>
               を使って
               <H args={{ name: 'yCombinator' }} />
               とは何かを学んでいきます。 今回は、

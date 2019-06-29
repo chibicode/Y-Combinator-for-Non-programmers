@@ -1,5 +1,8 @@
 import React from 'react'
-import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
+import {
+  numEpisodesExceptFirstAndLast,
+  numTotalPages
+} from 'src/lib/episodeCategories'
 import {
   Blockquote,
   Em,
@@ -24,10 +27,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: '自己紹介',
-        footer: {
-          content: <H args={{ name: 'dateAndSource' }} />
-        },
+        title: '自己紹介と本稿について',
         content: (
           <>
             <EmojiSeparator emojis={['🇺🇸', '👨🏻‍💻', '📙']} />
@@ -53,15 +53,17 @@ export default () => (
               </ExternalLink>
             </P>
             <P>
-              当記事「<Strong>{lessonTitle}</Strong>
-              」は、今までわたしが書いたなかで
-              <Strong>最も文章量が多い記事</Strong>
-              です。すべて
-              <Strong>無料</Strong>
-              で公開しています。
+              本稿「<Strong>{lessonTitle}</Strong>
+              」は、単著としては自身初の<Strong>電子書籍</Strong>
+              です。すべて<Strong>無料</Strong>
+              で公開しており、スマホからもパソコンからも閲覧できます。最後までお楽しみいただけると嬉しいです。
             </P>
+            <EmojiSeparator emojis={['📱', '🤗', '💻']} />
           </>
-        )
+        ),
+        footer: {
+          content: <H args={{ name: 'dateAndSource' }} />
+        }
       },
       {
         type: 'meta',
@@ -69,7 +71,7 @@ export default () => (
         content: (
           <>
             <P>
-              当記事は、
+              本稿は、
               <InlineHeader>
                 <H
                   args={{ name: 'categoryNameColored', category: 'beginner' }}
@@ -105,10 +107,14 @@ export default () => (
                 />
               </InlineHeader>
               」を加えた
-              <Strong>全17ページ</Strong>
-              で構成されています。非常に長いですが、
-              <Em>記事というより電子書籍</Em>
-              だと思って、少しずつ読み進めてくだされば幸いです。
+              <Strong>全{numTotalPages}ページ</Strong>
+              で構成されています。
+            </P>
+            <P>
+              <Em>
+                なかなか長いので、本稿は「記事」ではなく「電子書籍」という位置づけにしています
+              </Em>
+              。少しずつ読み進めてくだされば幸いです。
             </P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
             <Toc />
@@ -132,7 +138,7 @@ export default () => (
               を行います。分からなくてもいいので、勘で答えてみてください！
             </P>
             <P>
-              <H args={{ name: 'question' }} /> 当記事のタイトルは「
+              <H args={{ name: 'question' }} /> 本稿のタイトルは「
               <Em>{lessonTitle}</Em>」ですが、
               <Strong>
                 <H args={{ name: 'computerScience' }} />
@@ -221,14 +227,14 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['😉', '💻', '❌']} />
             <P>
-              当記事ではこのことを証明すべく、
+              本稿ではこのことを証明すべく、
               <Em>
                 プログラミングを一切使わずに、
                 <H args={{ name: 'computerScience' }} />
                 の中でも 「<Strong>ある程度難しい題材</Strong>
                 」について解説します。
               </Em>
-              記事を通して、「
+              「
               <Em>
                 簡単な
                 <H args={{ name: 'computerScience' }} />
@@ -250,7 +256,7 @@ export default () => (
         content: (
           <>
             <P>
-              当記事で解説する、
+              本稿で解説する、
               <H args={{ name: 'computerScience' }} />
               の中でも「ある程度難しい題材」とは何なのか。それは、題名「
               <Em>{lessonTitle}</Em>」にもある「
@@ -319,7 +325,7 @@ export default () => (
               。1〜2年生向けの内容ではないので、「ある程度難しい題材」であることがうかがえます。
             </P>
             <P>
-              話を戻しましょう。今回の記事では、
+              話を戻しましょう。本稿では、
               <Strong>
                 <H args={{ name: 'yCombinator' }} />
                 とは何なのか、そしてなぜ興味深いのかを、プログラミングを使わずに可能な限り分かりやすく説明します
@@ -336,14 +342,14 @@ export default () => (
         content: (
           <>
             <P>
-              当記事ではプログラミングを行わないので、
+              本稿ではプログラミングを行わないので、
               <Strong>パソコンは必要ありません</Strong>
               。スマホで読み進めることができます。もちろん、パソコンでもタブレットでも読むことができます。
             </P>
             <EmojiSeparator emojis={['😉', '📱', '🆗']} />
             <P>
-              また、当記事では数学の知識もほとんど必要ありません。
-              <Em>単純な足し算、引き算、掛け算以外の数式は一切登場しません</Em>
+              また、本稿では数学的な内容が少しだけ登場しますが、
+              <Em>難しい数式は一切登場しません</Em>
               ので、ご安心ください。
             </P>
             <EmojiSeparator emojis={['➕', '➖', '✖️']} />
@@ -355,19 +361,19 @@ export default () => (
         content: (
           <>
             <P>
-              さらに、当記事は最後まで<Strong>無料</Strong>で公開しています。
+              さらに、本稿は最後まで<Strong>無料</Strong>で公開しています。
             </P>
             <EmojiSeparator emojis={['🆓', '🤗', '🆓']} />
             <P>
               だからというのも変ですが、
-              <Strong>当記事の内容に期待しすぎないでほしい</Strong>
+              <Strong>内容に期待しすぎないでほしい</Strong>
               です。
             </P>
             <P>
-              というのも、<Strong>当記事は実用的な記事ではない</Strong>
+              というのも、<Strong>本稿は実用的な内容ではない</Strong>
               からです。
               <Em>
-                最後まで読み終えてもプログラミングのスキルは上達しませんし、当記事の内容が仕事やキャリアに役立つことはないでしょう。
+                最後まで読み終えてもプログラミングのスキルは上達しませんし、本稿の内容が仕事やキャリアに役立つことはないでしょう。
               </Em>
               どちらかというと、<Em>別に知らなくても構わない</Em>
               内容です。
@@ -375,13 +381,13 @@ export default () => (
             <P>
               だから、
               <Strong>
-                「わたしは実用的な記事だけ読みたいんだ <Emoji>😡</Emoji>
+                「わたしは実用的なものだけ読みたいんだ <Emoji>😡</Emoji>
                 」という方は、今すぐこのページを閉じてください。
               </Strong>
             </P>
             <EmojiSeparator emojis={['❌', '😡', '❌']} />
             <P>
-              一方で、当記事を読めば、「
+              一方で、本稿を読めば、「
               <Em>コンピュータサイエンスって面白そう</Em>」「
               <Em>自分にもできるかも</Em>」「
               <Em>もっと学んでみたい</Em>
@@ -397,15 +403,15 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader> 先述した通り、この記事は
-                <Strong>全17ページ</Strong>
+                <InlineHeader>ちなみに:</InlineHeader> 先述した通り、本稿は
+                <Strong>全{numTotalPages}ページ</Strong>
                 で構成されています。
                 <Strong>
                   おそらく読者の方々の半数以上は、読了までに最低1時間はかかるでしょう。
                 </Strong>
                 「
                 <Em>
-                  そんな長い記事は読みたくない <Emoji>😡</Emoji>
+                  そんな長い文章は読みたくない <Emoji>😡</Emoji>
                 </Em>
                 」という方も、今すぐこのページを閉じてください。
               </P>
@@ -477,7 +483,7 @@ export default () => (
             </P>
             <P>
               <H args={{ name: 'byTheWay' }} />{' '}
-              当記事はプログラミング知識ゼロの方でも分かるように書いていますので、「
+              本稿はプログラミング知識ゼロの方でも分かるように書いていますので、「
               <Em>プログラマに特化した説明のほうがいい</Em>
               」と思う方もいらっしゃるかもしれません。
             </P>
@@ -499,7 +505,7 @@ export default () => (
             />
             <P>
               <InlineHeader>余談:</InlineHeader>{' '}
-              当記事はTypeScriptとNext.jsで書いています。ソースコードは
+              本稿はTypeScriptとNext.jsで書いています。ソースコードは
               <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
               です。
             </P>
@@ -598,7 +604,7 @@ export default () => (
             </P>
             <P>
               <Em>
-                しかし、当記事を読めば、プログラマではなくても
+                しかし、本稿を読めば、プログラマではなくても
                 <H args={{ name: 'yCombinator' }} />
                 を理解できます
               </Em>

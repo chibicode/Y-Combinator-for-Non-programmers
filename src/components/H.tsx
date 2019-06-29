@@ -141,7 +141,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <P>
           <InlineHeader>こんにちは！</InlineHeader>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
-          」という記事の
+          」という無料電子書籍の
           <Em>{episodeNumber + 1}ページ目</Em>
           です。1ページ目から読むには
           <InternalLink href={'/'}>
@@ -992,7 +992,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>About this Site</>
     } else {
-      return <>当記事について</>
+      return <>当サイトについて</>
     }
   }
   if (args.name === 'yesOrNo') {
@@ -1237,7 +1237,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       const question = (
         <P>
-          また、当記事の内容について質問がございましたら、
+          また、本稿の内容について質問がございましたら、
           <Em>
             上のツイートに<Strong>スクリーンショット付き</Strong>で返信
           </Em>
@@ -1298,14 +1298,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         return (
           <>
             <P>
-              お疲れ様でした！この記事に対するご意見・ご感想を、下のツイートの引用リツイートで共有してくださるととても嬉しいです。
+              お疲れ様でした！本稿に対するご意見・ご感想を、下のツイートの引用リツイートで共有してくださるととても嬉しいです。
             </P>
             <TwitterEmbed id={shareId} />
             <P>
               もしも「
               <Em>
                 <H args={{ name: 'computerScience' }} />
-                の他の題材も、この記事のようにパズルで学んでみたい
+                の他の題材も、本稿のようにパズルで学んでみたい
               </Em>
               」とお考えの方がいらっしゃいましたら、ツイートで教えてくださると嬉しいです。
             </P>
@@ -1333,7 +1333,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </ExternalLink>
             </P>
             <P>
-              重ね重ね、当記事をお読みになってくださりありがとうございました！
+              重ね重ね、本稿をお読みになってくださりありがとうございました！
             </P>
           </>
         )
