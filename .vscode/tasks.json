@@ -22,13 +22,21 @@
     {
       "type": "shell",
       "command": "yarn",
-      "args": ["precompute", "${fileBasenameNoExtension}"],
+      "args": ["precompute", "${input:key}"],
       "label": "Precompute",
       "problemMatcher": [],
       "presentation": {
         "showReuseMessage": false,
         "reveal": "silent"
       }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "key",
+      "description": "key:",
+      "default": "",
+      "type": "promptString"
     }
   ]
 }
