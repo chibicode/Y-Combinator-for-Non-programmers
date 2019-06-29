@@ -55,7 +55,10 @@ export default () => (
                 <InlineEmojiBoxesForCondition type="condition" />{' '}
                 の中にある、割り算の余りを計算します。
               </Strong>
+              (<Em>黄色</Em>
+              で示しています)
             </P>
+            <R.Qmds />
             <P>
               <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
               で割ると、余りは <EmojiNumber number={3} /> になります。(
@@ -65,7 +68,7 @@ export default () => (
             <R.Lfyt />
             <P>
               真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-              <EmojiNumber number={0} /> ではないので、上の{' '}
+              <EmojiNumber number={0} /> ではないので、上の部分{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> の中にある{' '}
               <EmojiNumber number={28} /> が最終的に残るというわけです。
             </P>
@@ -81,6 +84,62 @@ export default () => (
                 <EmojiNumber number={2019} />,
                 <Emoji>➡️</Emoji>,
                 <EmojiNumber number={28} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2020} /> を入れてみる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、翌年の
+              <EmojiNumber number={2020} /> を入れてみるとどうなるでしょう？(
+              <Em>黄色</Em>
+              で示しています)
+            </P>
+            <R.Ouis />
+            <P>
+              今回も、
+              <Strong>
+                先に真ん中の部分{' '}
+                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                の中にある、割り算の余りを計算します。
+              </Strong>
+              (<Em>黄色</Em>
+              で示しています)
+            </P>
+            <R.Givg />
+            <P>
+              <EmojiNumber number={2020} /> を <EmojiNumber number={4} />{' '}
+              で割ると、余りは <EmojiNumber number={0} /> になります。(
+              <Em>黄色</Em>
+              で示しています)
+            </P>
+            <R.Sgds />
+            <P>
+              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
+              <EmojiNumber number={0} /> ではないので、下の部分{' '}
+              <InlineEmojiBoxesForCondition type="trueCase" /> の中にある{' '}
+              <EmojiNumber number={29} /> が最終的に残るというわけです。
+            </P>
+            <R.Lvau />
+            <P>
+              まとめると、最初に<Emoji>❓</Emoji> に{' '}
+              <EmojiNumber number={2020} /> を入れると、結果は{' '}
+              <EmojiNumber number={29} /> になります。
+            </P>
+            <EmojiSeparator
+              size="mdsm"
+              nodes={[
+                <EmojiNumber number={2020} />,
+                <Emoji>➡️</Emoji>,
+                <EmojiNumber number={29} />
               ]}
             />
           </>

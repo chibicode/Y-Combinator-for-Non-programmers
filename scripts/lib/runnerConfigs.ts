@@ -391,6 +391,11 @@ export const drbt: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vtzk
 }
 
+export const qmds: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lmst
+}
+
 export const dret: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gtnk,
@@ -2671,4 +2676,25 @@ export const zzxj: ExpressionRunnerShorthandConfig = {
 export const zzyu: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.gvjy
+}
+
+export const ouis: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ybmb
+}
+
+export const givg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.rtpi
+}
+
+export const sgds: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ilun
+}
+
+export const lvau: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ilun,
+  isDone: true
 }

@@ -1230,10 +1230,100 @@ export const vtzk = initializeExpressionContainer({
   }
 })
 
+export const lmst = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4,
+      initialHighlight: true
+    },
+    [
+      {
+        shorthandBinary: 'remainder',
+        initialHighlight: true
+      },
+      {
+        shorthandNumber: 2019,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
 export const gflf = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 3,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const ybmb = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      {
+        shorthandNumber: 2020,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const rtpi = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4,
+      initialHighlight: true
+    },
+    [
+      {
+        shorthandBinary: 'remainder',
+        initialHighlight: true
+      },
+      {
+        shorthandNumber: 2020,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
+
+export const ilun = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 0,
     initialHighlight: true
   },
   trueCase: {

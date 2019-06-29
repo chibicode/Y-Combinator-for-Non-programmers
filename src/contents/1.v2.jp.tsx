@@ -212,14 +212,15 @@ export default () => (
             <P>
               このように真ん中が <EmojiNumber number={0} /> ではない場合、
               <Strong>
-                上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
+                上の部分 <InlineEmojiBoxesForCondition type="falseCase" />{' '}
                 に入っている数字が最終的に残ります。
               </Strong>
             </P>
             <R.Rjfy />
             <P>
-              だから、 上の <InlineEmojiBoxesForCondition type="falseCase" />{' '}
-              に入っている <EmojiNumber number={1} /> が残る、というわけです。
+              だから、 上の部分{' '}
+              <InlineEmojiBoxesForCondition type="falseCase" /> に入っている{' '}
+              <EmojiNumber number={1} /> が残る、というわけです。
             </P>
             <R.Toht />
           </>
@@ -247,13 +248,13 @@ export default () => (
               今回は真ん中が <EmojiNumber number={0} />{' '}
               ですね。この場合は前回と逆で、
               <Strong>
-                下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+                下の部分 <InlineEmojiBoxesForCondition type="trueCase" />{' '}
                 に入っている数字が最終的に残ります。
               </Strong>
             </P>
             <R.Guhy />
             <P>
-              だから、下の <InlineEmojiBoxesForCondition type="trueCase" />{' '}
+              だから、下の部分 <InlineEmojiBoxesForCondition type="trueCase" />{' '}
               に入っている <EmojiNumber number={5} /> が残る、というわけです。
             </P>
           </>
@@ -283,14 +284,14 @@ export default () => (
             <Ul>
               <UlLi>
                 <Em>
-                  もし <EmojiNumber number={0} /> なら、 下の{' '}
+                  もし <EmojiNumber number={0} /> なら、 下の部分{' '}
                   <InlineEmojiBoxesForCondition type="trueCase" />{' '}
                   の中にある数字が残ります。
                 </Em>
               </UlLi>
               <UlLi>
                 <Em>
-                  もし <EmojiNumber number={0} /> でなければ、 上の{' '}
+                  もし <EmojiNumber number={0} /> でなければ、 上の部分{' '}
                   <InlineEmojiBoxesForCondition type="falseCase" />{' '}
                   の中にある数字が残ります。
                 </Em>
@@ -345,7 +346,7 @@ export default () => (
             <P>
               あとは以前と同じです。真ん中の部分{' '}
               <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-              <EmojiNumber number={0} /> ではないので、上の{' '}
+              <EmojiNumber number={0} /> ではないので、上の部分{' '}
               <InlineEmojiBoxesForCondition type="falseCase" /> の中にある{' '}
               <EmojiNumber number={4} /> が最終的に残るというわけです。
             </P>
