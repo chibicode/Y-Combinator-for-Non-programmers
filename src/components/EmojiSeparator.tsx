@@ -17,6 +17,8 @@ interface EmojiSeparatorProps {
   description?: React.ReactNode
   addDotDotDotFront: boolean
   addDotDotDotEnd: boolean
+  noBottomMargin: boolean
+  noTopMargin: boolean
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -61,13 +63,16 @@ const EmojiSeparator = ({
   cssOverrides,
   description,
   addDotDotDotFront,
-  addDotDotDotEnd
+  addDotDotDotEnd,
+  noBottomMargin,
+  noTopMargin
 }: EmojiSeparatorProps) => (
   <Component
     css={[
       css`
         text-align: ${alignCenter ? 'center' : 'left'};
-        margin: ${margins(size)[0]} 0 ${margins(size)[1]};
+        margin: ${noTopMargin ? 0 : margins(size)[0]} 0
+          ${noBottomMargin ? 0 : margins(size)[1]};
         font-size: ${fontSize(size)[0]};
         ${ns} {
           font-size: ${fontSize(size)[1]};
@@ -130,7 +135,9 @@ EmojiSeparator.defaultProps = {
   alignCenter: true,
   emojis: [],
   addDotDotDotFront: false,
-  addDotDotDotEnd: false
+  addDotDotDotEnd: false,
+  noBottomMargin: false,
+  noTopMargin: false
 }
 
 export default EmojiSeparator
