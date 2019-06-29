@@ -58,7 +58,7 @@ export default () => (
             </P>
             <P>
               <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
-              で割ると、余りは <EmojiNumber number={1} /> になります。(
+              で割ると、余りは <EmojiNumber number={3} /> になります。(
               <Em>黄色</Em>
               で示しています)
             </P>

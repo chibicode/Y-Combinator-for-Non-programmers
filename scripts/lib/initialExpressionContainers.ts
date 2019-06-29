@@ -1233,7 +1233,7 @@ export const vtzk = initializeExpressionContainer({
 export const gflf = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
-    shorthandNumber: 1,
+    shorthandNumber: 3,
     initialHighlight: true
   },
   trueCase: {

@@ -17,7 +17,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 1
+          "shorthandNumber": 3
         },
         "trueCase": {
           "name": "shorthandNumber",
