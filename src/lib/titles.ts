@@ -38,7 +38,7 @@ export const episodeTitles = {
     contentVersion === 'v2'
       ? {
           1: '計算箱',
-          2: '弁当箱の法則',
+          2: 'うるう年',
           3: '4品の弁当箱',
           4: '3段の弁当箱',
           5: '順番はどうなる？',

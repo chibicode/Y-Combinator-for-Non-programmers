@@ -2698,3 +2698,8 @@ export const lvau: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ilun,
   isDone: true
 }
+
+export const zqum: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.qolg
+}

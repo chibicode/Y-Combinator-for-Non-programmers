@@ -1333,3 +1333,27 @@ export const ilun = initializeExpressionContainer({
     shorthandNumber: 28
   }
 })
+
+export const qolg = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: [
+    {
+      shorthandNumber: 4
+    },
+    [
+      {
+        shorthandBinary: 'remainder'
+      },
+      {
+        shorthandNumber: 2021,
+        initialHighlight: true
+      }
+    ]
+  ],
+  trueCase: {
+    shorthandNumber: 29
+  },
+  falseCase: {
+    shorthandNumber: 28
+  }
+})
