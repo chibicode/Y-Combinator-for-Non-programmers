@@ -221,50 +221,7 @@ export default () => (
           </>
         )
       },
-      {
-        title: (
-          <>
-            <EmojiNumber number={2021} /> を入れてみる
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              例えば、「<Strong>2021年の2月には何日まであるだろう？</Strong>
-              」と思ったら、
-            </P>
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <Emoji>🤔</Emoji>,
-                <EmojiNumber number={2021} />,
-                <Emoji>🗓</Emoji>,
-                <EmojiNumber number={2} />
-              ]}
-            />
-            <P>
-              下のように、先ほどの計算箱の <Emoji>❓</Emoji> に{' '}
-              <EmojiNumber number={2021} />{' '}
-              を入れれば、自動で計算してくれるのです。
-              <H args={{ name: 'pressPlay' }} />
-            </P>
-            <R.Zqum />
-            <P>
-              最後に <EmojiNumber number={28} />{' '}
-              が残りました。ということは、2021年の2月には28日まであるということです。
-            </P>
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <EmojiNumber number={2021} />,
-                <Emoji>🗓</Emoji>,
-                <EmojiNumber number={2} />,
-                <EmojiNumber number={28} />
-              ]}
-            />
-          </>
-        )
-      },
+
       {
         title: <>うるう年</>,
         content: (
@@ -298,16 +255,6 @@ export default () => (
                   <EmojiNumber number={0} /> なので、うるう年です。
                 </Strong>
                 <Emoji>⭕️</Emoji>
-              </UlLi>
-              <UlLi>
-                <EmojiNumber number={2021} />
-                年は、
-                <EmojiNumber number={4} /> で割ったときの余りが{' '}
-                <Strong>
-                  <EmojiNumber number={0} />{' '}
-                  ではないので、うるう年ではありません。
-                </Strong>
-                <Emoji>❌</Emoji>
               </UlLi>
             </Ul>
             <P>
@@ -361,6 +308,50 @@ export default () => (
               を自動的に計算してくれるのです！
             </P>
             <EmojiSeparator emojis={['😉', '2️⃣', '🗓']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2021} /> を入れてみる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              例えば、「<Strong>2021年の2月には何日まであるだろう？</Strong>
+              」と思ったら、
+            </P>
+            <EmojiSeparator
+              size="mdsm"
+              nodes={[
+                <Emoji>🤔</Emoji>,
+                <EmojiNumber number={2021} />,
+                <Emoji>🗓</Emoji>,
+                <EmojiNumber number={2} />
+              ]}
+            />
+            <P>
+              下のように、先ほどの計算箱の <Emoji>❓</Emoji> に{' '}
+              <EmojiNumber number={2021} />{' '}
+              を入れれば、自動で計算してくれるのです。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Zqum />
+            <P>
+              最後に <EmojiNumber number={28} />{' '}
+              が残りました。ということは、2021年の2月には28日まであるということです。
+            </P>
+            <EmojiSeparator
+              size="mdsm"
+              nodes={[
+                <EmojiNumber number={2021} />,
+                <Emoji>🗓</Emoji>,
+                <EmojiNumber number={2} />,
+                <EmojiNumber number={28} />
+              ]}
+            />
           </>
         )
       },
