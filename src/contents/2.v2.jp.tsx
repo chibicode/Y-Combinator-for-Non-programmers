@@ -5,8 +5,7 @@ import {
   Strong,
   InlineHeader,
   Ul,
-  UlLi,
-  Hr
+  UlLi
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
