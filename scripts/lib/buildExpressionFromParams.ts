@@ -6,7 +6,8 @@ import {
   isVariableShorthandBinaryParams,
   isVariableShorthandUnaryParams,
   isVariableShorthandNumberParams,
-  isMagicalVariableParams
+  isMagicalVariableParams,
+  isConditionalParams
 } from 'scripts/lib/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -17,7 +18,8 @@ import {
   VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   ConditionalExpressionParams,
-  MagicalVariableParams
+  MagicalVariableParams,
+  RepeatExpressionParams
 } from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
@@ -27,7 +29,8 @@ import {
   StepVariableShorthandBinary,
   StepVariableShorthandNumber,
   StepConditional,
-  StepMagicalVariable
+  StepMagicalVariable,
+  RepeatExpression
 } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
 
@@ -93,6 +96,9 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: ConditionalExpressionParams
 ): StepConditional
+export default function buildExpressionFromParams(
+  expressionParams: RepeatExpressionParams
+): RepeatExpression
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): StepChild
@@ -178,7 +184,7 @@ export default function buildExpressionFromParams(
       ),
       magical: expressionParams.magical
     }
-  } else {
+  } else if (isConditionalParams(expressionParams)) {
     return {
       type: 'conditional',
       state: 'default',
@@ -187,6 +193,13 @@ export default function buildExpressionFromParams(
       trueCase: buildExpressionFromParams(expressionParams.trueCase),
       falseCase: buildExpressionFromParams(expressionParams.falseCase),
       priority: 0
+    }
+  } else {
+    return {
+      type: 'repeat',
+      begin: expressionParams.begin,
+      end: expressionParams.end,
+      child: buildExpressionFromParams(expressionParams.child)
     }
   }
 }

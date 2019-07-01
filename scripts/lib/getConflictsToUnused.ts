@@ -2,7 +2,12 @@ import difference from 'lodash/difference'
 import intersection from 'lodash/intersection'
 import { ExecutableCallRegular } from 'src/types/ExpressionTypes'
 import uniq from 'lodash/uniq'
-import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
 import alphaConvertTargetVariableNames from 'scripts/lib/alphaConvertTargetVariableNames'
@@ -29,10 +34,12 @@ function getAllVariableNamesWithDuplicates(
     return getAllVariableNames(expression.arg, { filter }).concat(
       getAllVariableNames(expression.body, { filter })
     )
-  } else {
+  } else if (isConditional(expression)) {
     return getAllVariableNames(expression.condition, { filter })
       .concat(getAllVariableNames(expression.trueCase, { filter }))
       .concat(getAllVariableNames(expression.falseCase, { filter }))
+  } else {
+    throw new Error()
   }
 }
 

@@ -1,4 +1,9 @@
-import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -55,7 +60,7 @@ export default function replaceConditionalParentKey(
       ...expression,
       body: replaceConditionalParentKey(expression.body, target, replaceWith)
     }
-  } else {
+  } else if (isConditional(expression)) {
     if (expression === target) {
       return {
         ...expression,
@@ -81,5 +86,7 @@ export default function replaceConditionalParentKey(
         )
       }
     }
+  } else {
+    throw new Error()
   }
 }

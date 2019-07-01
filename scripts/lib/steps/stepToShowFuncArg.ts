@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -72,7 +77,7 @@ export function toShowFuncArg(
       arg: toShowFuncArg(e.arg, funcSide),
       func: toShowFuncArg(e.func, funcSide)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -80,6 +85,8 @@ export function toShowFuncArg(
       trueCase: toShowFuncArg(e.trueCase, funcSide),
       falseCase: toShowFuncArg(e.falseCase, funcSide)
     }
+  } else {
+    throw new Error()
   }
 }
 

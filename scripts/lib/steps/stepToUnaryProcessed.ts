@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -59,7 +64,7 @@ export default function stepToUnaryProcessed(
       arg: stepToUnaryProcessed(e.arg),
       func: stepToUnaryProcessed(e.func)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -67,5 +72,7 @@ export default function stepToUnaryProcessed(
       trueCase: stepToUnaryProcessed(e.trueCase),
       falseCase: stepToUnaryProcessed(e.falseCase)
     }
+  } else {
+    throw new Error()
   }
 }

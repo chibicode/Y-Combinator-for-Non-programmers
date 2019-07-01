@@ -1,4 +1,9 @@
-import { isFunction, isCall, isVariable } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isCall,
+  isVariable,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -110,7 +115,7 @@ export function toAlphaConvertDone(
       arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
       func: toAlphaConvertDone(e.func, conflicts, funcSide)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -118,6 +123,8 @@ export function toAlphaConvertDone(
       trueCase: toAlphaConvertDone(e.trueCase, conflicts, funcSide),
       falseCase: toAlphaConvertDone(e.falseCase, conflicts, funcSide)
     }
+  } else {
+    throw new Error()
   }
 }
 

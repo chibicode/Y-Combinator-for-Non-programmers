@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -81,7 +86,7 @@ function toCrossed(
       arg: toCrossed(e.arg, isCallArg),
       func: toCrossed(e.func, isCallArg)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -89,6 +94,8 @@ function toCrossed(
       trueCase: toCrossed(e.trueCase, isCallArg),
       falseCase: toCrossed(e.falseCase, isCallArg)
     }
+  } else {
+    throw new Error()
   }
 }
 

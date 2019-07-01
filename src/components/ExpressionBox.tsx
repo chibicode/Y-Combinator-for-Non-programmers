@@ -7,7 +7,12 @@ import CallExpressionBox from 'src/components/CallExpressionBox'
 import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/VariableExpressionBox'
 import ConditionalExpressionBox from 'src/components/ConditionalExpressionBox'
-import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 
@@ -120,8 +125,10 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
               return <CallExpressionBox expression={expression} />
             } else if (isFunction(expression)) {
               return <FunctionExpressionBox expression={expression} />
-            } else {
+            } else if (isConditional(expression)) {
               return <ConditionalExpressionBox expression={expression} />
+            } else {
+              return <ExpressionBox expression={expression.child} />
             }
           })()}
         </BorderWrapper>

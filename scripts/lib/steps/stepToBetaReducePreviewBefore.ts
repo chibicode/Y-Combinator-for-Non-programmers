@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -145,7 +150,7 @@ export function toBetaReducePreviewBefore(
       },
       matchExists: arg.matchExists || func.matchExists
     }
-  } else {
+  } else if (isConditional(e)) {
     const condition = toBetaReducePreviewBefore(e.condition, fromName, funcSide)
     const trueCase = toBetaReducePreviewBefore(e.trueCase, fromName, funcSide)
     const falseCase = toBetaReducePreviewBefore(e.falseCase, fromName, funcSide)
@@ -160,6 +165,8 @@ export function toBetaReducePreviewBefore(
       matchExists:
         condition.matchExists || trueCase.matchExists || falseCase.matchExists
     }
+  } else {
+    throw new Error()
   }
 }
 

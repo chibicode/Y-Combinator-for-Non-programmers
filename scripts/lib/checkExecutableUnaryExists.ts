@@ -2,7 +2,8 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isVariableShorthandUnaryNumber
+  isVariableShorthandUnaryNumber,
+  isConditional
 } from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 
@@ -17,12 +18,14 @@ const checkExecutableUnaryExists = (e: Expression): boolean => {
     return (
       checkExecutableUnaryExists(e.arg) || checkExecutableUnaryExists(e.func)
     )
-  } else {
+  } else if (isConditional(e)) {
     return (
       checkExecutableUnaryExists(e.condition) ||
       checkExecutableUnaryExists(e.trueCase) ||
       checkExecutableUnaryExists(e.falseCase)
     )
+  } else {
+    throw new Error()
   }
 }
 
