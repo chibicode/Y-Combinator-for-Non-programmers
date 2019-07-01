@@ -13,7 +13,8 @@ import {
   ExecutableCallBinary,
   VariableShorthandUnaryNumber,
   ExecutableCallMagical,
-  MagicalVariable
+  MagicalVariable,
+  RepeatExpression
 } from 'src/types/ExpressionTypes'
 
 export function isVariable<V extends VariableExpression = VariableExpression>(
@@ -110,4 +111,10 @@ export function isExecutableConditional<E extends ExecutableConditional>(
   expression: ConditionalExpression
 ): expression is E {
   return isVariableShorthandNumber(expression.condition)
+}
+
+export function isRepeat<E extends RepeatExpression = RepeatExpression>(
+  expression: Expression
+): expression is E {
+  return expression.type === 'repeat'
 }
