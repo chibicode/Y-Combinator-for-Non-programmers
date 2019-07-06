@@ -33,6 +33,7 @@ export interface EmojiProps {
   size: 'md' | 'lg' | 'mdlg' | 'sm'
   noVerticalTransform: boolean
   cssOverrides?: SerializedStyles
+  customSvg?: React.ReactNode
 }
 
 const sizeToHeight = (size: Required<EmojiProps>['size']) =>
@@ -47,7 +48,8 @@ const Emoji = ({
   children,
   size,
   noVerticalTransform,
-  cssOverrides
+  cssOverrides,
+  customSvg
 }: EmojiProps) => (
   <span
     css={[
@@ -63,7 +65,7 @@ const Emoji = ({
       cssOverrides
     ]}
   >
-    {children && <EmojiSvg name={children} />}
+    {customSvg || (children && <EmojiSvg name={children} />)}
   </span>
 )
 

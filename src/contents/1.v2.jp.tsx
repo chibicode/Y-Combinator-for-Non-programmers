@@ -15,6 +15,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import BlankNumber from 'src/components/BlankNumber'
 
 export default () => (
   <EpisodeCardList
@@ -56,11 +57,11 @@ export default () => (
             </P>
             <R.Fdek />
             <P>
-              一番上と下にハテナマーク <Emoji>❓</Emoji>{' '}
+              一番上と下にハテナマーク <BlankNumber />{' '}
               があり、真ん中に足し算の記号 <Emoji>➕</Emoji> がありますね。
             </P>
             <P>
-              この <Emoji>❓</Emoji>{' '}
+              この <BlankNumber />{' '}
               の部分には、それぞれ数字を入れることができます。たとえば{' '}
               <EmojiNumber number={1} /> を両方に入れてみましょう。
             </P>
@@ -155,7 +156,7 @@ export default () => (
             <P>
               「<InlineHeader>条件分岐の計算箱</InlineHeader>」には
               <Em>
-                ハテナマーク <Emoji>❓</Emoji>{' '}
+                ハテナマーク <BlankNumber />{' '}
                 が3つあります。それぞれ左端に赤・黄色・青と信号機{' '}
                 <Emoji>🚦</Emoji>{' '}
                 のような色があり、左上に以下の三種類の印がついています
@@ -167,7 +168,7 @@ export default () => (
             <P>
               とりあえず、{' '}
               <Em>
-                それぞれの <Emoji>❓</Emoji> に適当な数字を入れ、
+                それぞれの <BlankNumber /> に適当な数字を入れ、
               </Em>
               <H args={{ name: 'play' }} />
               したらどうなるか試してみましょう。

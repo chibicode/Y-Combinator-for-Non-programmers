@@ -141,7 +141,13 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   } else if (expression.name === 'blankNumber') {
     return (
       <div>
-        <BlankNumber />
+        <BlankNumber size="sm" star />
+      </div>
+    )
+  } else if (expression.name === 'questionV2') {
+    return (
+      <div>
+        <BlankNumber size="sm" />
       </div>
     )
   } else if (expression.name === 'Amult') {

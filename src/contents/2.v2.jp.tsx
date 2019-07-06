@@ -15,6 +15,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import BlankNumber from 'src/components/BlankNumber'
 
 export default () => (
   <EpisodeCardList
@@ -46,7 +47,7 @@ export default () => (
             <P>
               試しに、
               <Strong>
-                <Emoji>❓</Emoji>
+                <BlankNumber />
                 に何か数字を入れてみましょう。
               </Strong>
               本稿を公開したのは2019年なので、
@@ -83,9 +84,9 @@ export default () => (
             </P>
             <R.Vrko />
             <P>
-              まとめると、最初に<Emoji>❓</Emoji> に{' '}
-              <EmojiNumber number={2019} /> を入れると、結果は{' '}
-              <EmojiNumber number={28} /> になります。
+              まとめると、最初に
+              <BlankNumber /> に <EmojiNumber number={2019} />{' '}
+              を入れると、結果は <EmojiNumber number={28} /> になります。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -141,9 +142,9 @@ export default () => (
             </P>
             <R.Lvau />
             <P>
-              まとめると、最初に<Emoji>❓</Emoji> に{' '}
-              <EmojiNumber number={2020} /> を入れると、結果は{' '}
-              <EmojiNumber number={29} /> になります。
+              まとめると、最初に
+              <BlankNumber /> に <EmojiNumber number={2020} />{' '}
+              を入れると、結果は <EmojiNumber number={29} /> になります。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -161,7 +162,9 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、こちらの計算箱の<Emoji>❓</Emoji>の部分に、
+              まとめると、こちらの計算箱の
+              <BlankNumber />
+              の部分に、
             </P>
             <R.Yhmp />
             <Ul>
@@ -221,7 +224,8 @@ export default () => (
             <P>
               つまりこの計算箱は、「
               <Strong>
-                <Emoji>❓</Emoji>に入れた年の2月には何日まであるか
+                <BlankNumber />
+                に入れた年の2月には何日まであるか
               </Strong>
               」を自動で計算してくれるのです。
             </P>
@@ -349,7 +353,7 @@ export default () => (
               ]}
             />
             <P>
-              下のように、先ほどの計算箱の <Emoji>❓</Emoji> に{' '}
+              下のように、先ほどの計算箱の <BlankNumber /> に{' '}
               <EmojiNumber number={2021} />{' '}
               を入れれば、自動で計算してくれるのです。
               <H args={{ name: 'pressPlay' }} />
