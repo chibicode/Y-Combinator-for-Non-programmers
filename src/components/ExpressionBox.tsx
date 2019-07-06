@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import Flex from 'src/components/Flex'
 import BorderWrapper, { BorderWrapperProps } from 'src/components/BorderWrapper'
 import CallExpressionBox from 'src/components/CallExpressionBox'
+import RepeatExpressionBox from 'src/components/RepeatExpressionBox'
 import FunctionExpressionBox from 'src/components/FunctionExpressionBox'
 import VariableExpressionBox from 'src/components/VariableExpressionBox'
 import ConditionalExpressionBox from 'src/components/ConditionalExpressionBox'
@@ -128,7 +129,7 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
             } else if (isConditional(expression)) {
               return <ConditionalExpressionBox expression={expression} />
             } else {
-              return <ExpressionBox expression={expression.child} />
+              return <RepeatExpressionBox expression={expression} />
             }
           })()}
         </BorderWrapper>

@@ -2,15 +2,14 @@
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import Emoji from 'src/components/Emoji'
-import { zIndices, colors, fontSizes } from 'src/lib/theme'
+import { zIndices, colors, fontSizes, spaces } from 'src/lib/theme'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import EmojiNumber from 'src/components/EmojiNumber'
 
 export interface ConditionalBorderProps {
-  smallEmoji?: boolean
-  type: 'trueCase' | 'falseCase' | 'condition'
-  shaded: boolean
+  begin: number
+  end?: number
   variableSizeOverrides?: ExpressionRunnerContextProps['variableSize']
 }
 
@@ -38,18 +37,12 @@ const width = (
   }
 }
 
-const ConditionalBorder = ({
-  type,
-  smallEmoji,
-  shaded,
+const RepeatBorder = ({
+  begin,
+  end,
   variableSizeOverrides
 }: ConditionalBorderProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
-  const color = {
-    trueCase: colors('teal200'),
-    falseCase: colors('pink200'),
-    condition: colors('yellow400')
-  }[type]
   return (
     <>
       <span
@@ -61,31 +54,41 @@ const ConditionalBorder = ({
           left: 0;
           right: 0;
           bottom: 0;
-          background: ${shaded ? colors('grey50033') : 'transparent'};
         `}
       />
-      {type && (
-        <span
-          css={css`
-            position: absolute;
-            z-index: ${zIndices('badge')};
-            top: 4px;
-            left: 2px;
-            display: inline-flex;
-            font-size: ${fontSize(variableSizeOverrides || variableSize)};
-          `}
-        >
-          {type === 'trueCase' && (
-            <EmojiNumber number={0} size={smallEmoji ? 'sm' : 'md'} />
-          )}
-          {type === 'falseCase' && (
-            <Emoji size={smallEmoji ? 'sm' : 'md'}>🔢</Emoji>
-          )}
-          {type === 'condition' && (
-            <Emoji size={smallEmoji ? 'sm' : 'md'}>↕️</Emoji>
-          )}
-        </span>
-      )}
+      <span
+        css={css`
+          position: absolute;
+          z-index: ${zIndices('badge')};
+          top: 4px;
+          left: 2px;
+          display: inline-flex;
+          flex-direction: column;
+          font-size: ${fontSize(variableSizeOverrides || variableSize)};
+        `}
+      >
+        <EmojiNumber number={begin} />
+        {end && (
+          <>
+            <span
+              css={css`
+                margin-top: ${spaces(0.125)};
+                display: inline-block;
+              `}
+            >
+              <Emoji>⬇️</Emoji>
+            </span>
+            <span
+              css={css`
+                margin-top: ${spaces(0.125)};
+                display: inline-block;
+              `}
+            >
+              <EmojiNumber number={end} />
+            </span>
+          </>
+        )}
+      </span>
       <span
         css={css`
           display: block;
@@ -95,7 +98,7 @@ const ConditionalBorder = ({
           left: 0;
           bottom: 0;
           width: ${width(variableSize)}em;
-          background: ${color};
+          background: ${colors('indigo100')};
           border-right: 2px solid ${colors('indigo300')};
         `}
       />
@@ -103,8 +106,4 @@ const ConditionalBorder = ({
   )
 }
 
-ConditionalBorder.defaultProps = {
-  shaded: false
-}
-
-export default ConditionalBorder
+export default RepeatBorder
