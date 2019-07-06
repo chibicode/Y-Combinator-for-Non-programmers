@@ -15,6 +15,7 @@ import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
+import BlankNumber from 'src/components/BlankNumber'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -135,6 +136,12 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         >
           (<H args={{ name: 'abbreviated' }} />)
         </span>
+      </div>
+    )
+  } else if (expression.name === 'blankNumber') {
+    return (
+      <div>
+        <BlankNumber />
       </div>
     )
   } else if (expression.name === 'Amult') {
