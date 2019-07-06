@@ -29,7 +29,7 @@ const width = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): number => {
   if (variableSize === 'lg') {
-    return 1
+    return 2.1
   } else if (variableSize === 'md') {
     return 0.9
   } else {
@@ -60,8 +60,8 @@ const RepeatBorder = ({
         css={css`
           position: absolute;
           z-index: ${zIndices('badge')};
-          top: 4px;
-          left: 2px;
+          top: 0.35em;
+          left: 0.3em;
           display: inline-flex;
           flex-direction: column;
           font-size: ${fontSize(variableSizeOverrides || variableSize)};
@@ -99,7 +99,9 @@ const RepeatBorder = ({
           bottom: 0;
           width: ${width(variableSize)}em;
           background: ${colors('indigo100')};
+          border-left: 2px solid ${colors('indigo300')};
           border-right: 2px solid ${colors('indigo300')};
+          border-top: 2px solid ${colors('indigo300')};
         `}
       />
     </>
