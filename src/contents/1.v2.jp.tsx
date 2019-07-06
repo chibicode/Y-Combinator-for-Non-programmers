@@ -14,7 +14,6 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
-import InlineConditionBorder from 'src/components/InlineConditionBorder'
 import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -198,14 +197,14 @@ export default () => (
             <P>
               「<InlineHeader>条件分岐の計算箱</InlineHeader>」はまず、
               <Strong>
-                真ん中の部分 <InlineConditionBorder type="condition" />{' '}
+                <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
                 に入っている数字が <EmojiNumber number={0} /> かどうか
               </Strong>
               チェックします。
             </P>
             <R.Vozu />
             <P>
-              真ん中の部分 <InlineConditionBorder type="condition" />{' '}
+              <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
               に入っている数字は <EmojiNumber number={2} /> なので、{' '}
               <Strong>
                 <EmojiNumber number={0} /> ではありません。
@@ -214,13 +213,14 @@ export default () => (
             <P>
               このように真ん中が <EmojiNumber number={0} /> ではない場合、
               <Strong>
-                上の部分 <InlineConditionBorder type="falseCase" />{' '}
+                <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
                 に入っている数字が最終的に残ります。
               </Strong>
             </P>
             <R.Rjfy />
             <P>
-              だから、 上の部分 <InlineConditionBorder type="falseCase" />{' '}
+              だから、{' '}
+              <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
               に入っている <EmojiNumber number={1} /> が残る、というわけです。
             </P>
             <R.Toht />
@@ -249,13 +249,16 @@ export default () => (
               今回は真ん中が <EmojiNumber number={0} />{' '}
               ですね。この場合は前回と逆で、
               <Strong>
-                下の部分 <InlineConditionBorder type="trueCase" />{' '}
+                <H args={{ name: 'conditionSectionName', type: 'trueCase' }} />{' '}
                 に入っている数字が最終的に残ります。
               </Strong>
             </P>
             <R.Guhy />
             <P>
-              だから、下の部分 <InlineConditionBorder type="trueCase" />{' '}
+              だから、
+              <H
+                args={{ name: 'conditionSectionName', type: 'trueCase' }}
+              />{' '}
               に入っている <EmojiNumber number={5} /> が残る、というわけです。
             </P>
           </>
@@ -277,7 +280,10 @@ export default () => (
             <R.Ymmm />
             <P>
               <Em>
-                まず、真ん中の <InlineConditionBorder type="condition" />{' '}
+                まず、
+                <H
+                  args={{ name: 'conditionSectionName', type: 'condition' }}
+                />{' '}
                 の中にある数字が <EmojiNumber number={0} />{' '}
                 かどうかチェックします。
               </Em>
@@ -285,15 +291,19 @@ export default () => (
             <Ul>
               <UlLi>
                 <Em>
-                  もし <EmojiNumber number={0} /> なら、 下の部分{' '}
-                  <InlineConditionBorder type="trueCase" />{' '}
+                  もし <EmojiNumber number={0} /> なら、{' '}
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'trueCase' }}
+                  />{' '}
                   の中にある数字が残ります。
                 </Em>
               </UlLi>
               <UlLi>
                 <Em>
-                  もし <EmojiNumber number={0} /> でなければ、 上の部分{' '}
-                  <InlineConditionBorder type="falseCase" />{' '}
+                  もし <EmojiNumber number={0} /> でなければ、
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'falseCase' }}
+                  />{' '}
                   の中にある数字が残ります。
                 </Em>
               </UlLi>
@@ -326,7 +336,10 @@ export default () => (
             </P>
             <R.Jehz />
             <P>
-              まず、真ん中の部分 <InlineConditionBorder type="condition" />{' '}
+              まず、
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
               に入っている「
               <Strong>
                 <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
@@ -338,18 +351,25 @@ export default () => (
             <R.Hhtl />
             <P>
               <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
-              で割ると余りは <EmojiNumber number={1} /> になるので、真ん中の部分{' '}
-              <InlineConditionBorder type="condition" /> が{' '}
-              <EmojiNumber number={1} /> になります。
+              で割ると余りは <EmojiNumber number={1} /> になるので、
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
+              が <EmojiNumber number={1} /> になります。
               <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Vbdk />
             <P>
-              あとは以前と同じです。真ん中の部分{' '}
-              <InlineConditionBorder type="condition" /> が{' '}
-              <EmojiNumber number={0} /> ではないので、上の部分{' '}
-              <InlineConditionBorder type="falseCase" /> の中にある{' '}
-              <EmojiNumber number={4} /> が最終的に残るというわけです。
+              あとは以前と同じです。
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
+              が <EmojiNumber number={0} /> ではないので、
+              <H
+                args={{ name: 'conditionSectionName', type: 'falseCase' }}
+              />{' '}
+              の中にある <EmojiNumber number={4} />{' '}
+              が最終的に残るというわけです。
             </P>
             <R.Fwks />
             <P>

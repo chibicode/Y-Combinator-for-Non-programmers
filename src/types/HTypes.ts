@@ -132,4 +132,8 @@ export interface HProps {
     | { name: 'isLeapYearCaption' }
     | { name: 'yellowHighlighted' }
     | { name: 'leapYearConditionalCaption' }
+    | {
+        name: 'conditionSectionName'
+        type: 'condition' | 'trueCase' | 'falseCase'
+      }
 }
