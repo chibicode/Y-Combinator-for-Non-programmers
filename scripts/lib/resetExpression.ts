@@ -1,4 +1,9 @@
-import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -57,7 +62,7 @@ export default function resetExpression(
       arg: resetExpression(expression.arg),
       body: resetExpression(expression.body)
     }
-  } else {
+  } else if (isConditional(expression)) {
     return {
       ...expression,
       state: 'default',
@@ -66,5 +71,7 @@ export default function resetExpression(
       trueCase: resetExpression(expression.trueCase),
       falseCase: resetExpression(expression.falseCase)
     }
+  } else {
+    throw new Error()
   }
 }

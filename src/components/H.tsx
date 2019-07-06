@@ -4,6 +4,7 @@ import { Fragment } from 'react'
 import InlineEmojiBoxes, {
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
+import InlineConditionBorder from 'src/components/InlineConditionBorder'
 import { useContext } from 'react'
 import {
   Em,
@@ -1801,6 +1802,31 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           で示しています)
         </>
       )
+    }
+  }
+  if (args.name === 'conditionSectionName') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      if (args.type === 'condition') {
+        return (
+          <>
+            真ん中の部分 <InlineConditionBorder type="condition" />
+          </>
+        )
+      } else if (args.type === 'falseCase') {
+        return (
+          <>
+            上の部分 <InlineConditionBorder type="falseCase" />
+          </>
+        )
+      } else {
+        return (
+          <>
+            下の部分 <InlineConditionBorder type="trueCase" />
+          </>
+        )
+      }
     }
   }
   throw new Error()

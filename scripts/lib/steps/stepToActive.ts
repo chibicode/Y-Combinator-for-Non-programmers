@@ -3,7 +3,8 @@ import {
   isVariable,
   isExecutableCallRegular,
   isCall,
-  isExecutableCallBinary
+  isExecutableCallBinary,
+  isConditional
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -62,7 +63,7 @@ function toActive(e: Expression): StepChild<'active'> {
       arg: toActive(e.arg),
       func: toActive(e.func)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -70,6 +71,8 @@ function toActive(e: Expression): StepChild<'active'> {
       trueCase: toActive(e.trueCase),
       falseCase: toActive(e.falseCase)
     }
+  } else {
+    throw new Error()
   }
 }
 

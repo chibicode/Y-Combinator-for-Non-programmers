@@ -12,10 +12,10 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import BlankNumber from 'src/components/BlankNumber'
 
 export default () => (
   <EpisodeCardList
@@ -47,7 +47,7 @@ export default () => (
             <P>
               試しに、
               <Strong>
-                <Emoji>❓</Emoji>
+                <BlankNumber />
                 に何か数字を入れてみましょう。
               </Strong>
               本稿を公開したのは2019年なので、
@@ -58,8 +58,10 @@ export default () => (
             <P>
               前回説明した通り、
               <Strong>
-                先に真ん中の部分{' '}
-                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                先に
+                <H
+                  args={{ name: 'conditionSectionName', type: 'condition' }}
+                />{' '}
                 の中にある、割り算の余りを計算します。
               </Strong>
               <H args={{ name: 'yellowHighlighted' }} />
@@ -72,16 +74,19 @@ export default () => (
             </P>
             <R.Lfyt />
             <P>
-              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-              <EmojiNumber number={0} /> ではないので、上の部分{' '}
-              <InlineEmojiBoxesForCondition type="falseCase" /> の中にある{' '}
-              <EmojiNumber number={28} /> が最終的に残るというわけです。
+              <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
+              が <EmojiNumber number={0} /> ではないので、
+              <H
+                args={{ name: 'conditionSectionName', type: 'falseCase' }}
+              />{' '}
+              の中にある <EmojiNumber number={28} />{' '}
+              が最終的に残るというわけです。
             </P>
             <R.Vrko />
             <P>
-              まとめると、最初に<Emoji>❓</Emoji> に{' '}
-              <EmojiNumber number={2019} /> を入れると、結果は{' '}
-              <EmojiNumber number={28} /> になります。
+              まとめると、最初に
+              <BlankNumber /> に <EmojiNumber number={2019} />{' '}
+              を入れると、結果は <EmojiNumber number={28} /> になります。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -111,8 +116,10 @@ export default () => (
             <P>
               今回も、
               <Strong>
-                先に真ん中の部分{' '}
-                <InlineEmojiBoxesForCondition type="condition" />{' '}
+                先に
+                <H
+                  args={{ name: 'conditionSectionName', type: 'condition' }}
+                />{' '}
                 の中にある、割り算の余りを計算します。
               </Strong>
               <H args={{ name: 'yellowHighlighted' }} />
@@ -125,16 +132,19 @@ export default () => (
             </P>
             <R.Sgds />
             <P>
-              真ん中の部分 <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-              <EmojiNumber number={0} /> ではないので、下の部分{' '}
-              <InlineEmojiBoxesForCondition type="trueCase" /> の中にある{' '}
-              <EmojiNumber number={29} /> が最終的に残るというわけです。
+              <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
+              が <EmojiNumber number={0} /> ではないので、
+              <H
+                args={{ name: 'conditionSectionName', type: 'trueCase' }}
+              />{' '}
+              の中にある <EmojiNumber number={29} />{' '}
+              が最終的に残るというわけです。
             </P>
             <R.Lvau />
             <P>
-              まとめると、最初に<Emoji>❓</Emoji> に{' '}
-              <EmojiNumber number={2020} /> を入れると、結果は{' '}
-              <EmojiNumber number={29} /> になります。
+              まとめると、最初に
+              <BlankNumber /> に <EmojiNumber number={2020} />{' '}
+              を入れると、結果は <EmojiNumber number={29} /> になります。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -152,7 +162,9 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、こちらの計算箱の<Emoji>❓</Emoji>の部分に、
+              まとめると、こちらの計算箱の
+              <BlankNumber />
+              の部分に、
             </P>
             <R.Yhmp />
             <Ul>
@@ -212,7 +224,8 @@ export default () => (
             <P>
               つまりこの計算箱は、「
               <Strong>
-                <Emoji>❓</Emoji>に入れた年の2月には何日まであるか
+                <BlankNumber />
+                に入れた年の2月には何日まであるか
               </Strong>
               」を自動で計算してくれるのです。
             </P>
@@ -279,26 +292,34 @@ export default () => (
           <>
             <P>
               先ほどの計算箱は、この「<Em>うるう年かどうか</Em>
-              」という計算を、真ん中の部分{' '}
-              <InlineEmojiBoxesForCondition type="condition" />{' '}
+              」という計算を、
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
               で行っているのです。
               <H args={{ name: 'yellowHighlighted' }} />
             </P>
             <R.Zysk />
             <P>
-              うるう年なら真ん中の部分{' '}
-              <InlineEmojiBoxesForCondition type="condition" /> が{' '}
-              <EmojiNumber number={0} /> になるので、最後は下の部分{' '}
-              <InlineEmojiBoxesForCondition type="trueCase" /> に入っている{' '}
-              <EmojiNumber number={29} /> が残ります。
+              うるう年なら
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
+              が <EmojiNumber number={0} /> になるので、最後は
+              <H
+                args={{ name: 'conditionSectionName', type: 'trueCase' }}
+              />{' '}
+              に入っている <EmojiNumber number={29} /> が残ります。
             </P>
             <R.Voxy />
             <ExpressionRunnerSeparator />
             <R.Lvau />
             <P>
               うるう年でなければ、
-              <InlineEmojiBoxesForCondition type="falseCase" /> に入っている{' '}
-              <EmojiNumber number={28} /> が残ります。
+              <H
+                args={{ name: 'conditionSectionName', type: 'falseCase' }}
+              />{' '}
+              に入っている <EmojiNumber number={28} /> が残ります。
             </P>
             <R.Vrko />
             <P>
@@ -332,7 +353,7 @@ export default () => (
               ]}
             />
             <P>
-              下のように、先ほどの計算箱の <Emoji>❓</Emoji> に{' '}
+              下のように、先ほどの計算箱の <BlankNumber /> に{' '}
               <EmojiNumber number={2021} />{' '}
               を入れれば、自動で計算してくれるのです。
               <H args={{ name: 'pressPlay' }} />

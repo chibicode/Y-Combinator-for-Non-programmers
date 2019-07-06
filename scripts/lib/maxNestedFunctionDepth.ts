@@ -1,4 +1,9 @@
-import { isCall, isVariable, isFunction } from 'src/lib/expressionTypeGuards'
+import {
+  isCall,
+  isVariable,
+  isFunction,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import { Expression } from 'src/types/ExpressionTypes'
 
 export default function maxNestedFunctionDepth(expression: Expression): number {
@@ -11,11 +16,13 @@ export default function maxNestedFunctionDepth(expression: Expression): number {
     )
   } else if (isFunction(expression)) {
     return 1 + maxNestedFunctionDepth(expression.body)
-  } else {
+  } else if (isConditional(expression)) {
     return Math.max(
       maxNestedFunctionDepth(expression.condition),
       maxNestedFunctionDepth(expression.trueCase),
       maxNestedFunctionDepth(expression.falseCase)
     )
+  } else {
+    return 0
   }
 }

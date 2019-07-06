@@ -52,6 +52,12 @@ export interface ConditionalExpressionParams {
   readonly checkType: ConditionalExpression['checkType']
 }
 
+export interface RepeatExpressionParams {
+  readonly child: ExpressionParams
+  readonly begin: number
+  readonly end?: number
+}
+
 export type ExpressionParams =
   | VariableExpressionParams
   | FunctionExpressionParams
@@ -62,3 +68,4 @@ export type ExpressionParams =
   | VariableShorthandUnaryParams
   | ConditionalExpressionParams
   | MagicalVariableParams
+  | RepeatExpressionParams

@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -44,7 +49,7 @@ export default function toDefault(e: Expression): StepChild<'default'> {
       arg: toDefault(e.arg),
       func: toDefault(e.func)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -52,5 +57,7 @@ export default function toDefault(e: Expression): StepChild<'default'> {
       trueCase: toDefault(e.trueCase),
       falseCase: toDefault(e.falseCase)
     }
+  } else {
+    throw new Error()
   }
 }

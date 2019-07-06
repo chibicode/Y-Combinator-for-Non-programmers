@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableCallRegular,
@@ -95,7 +100,7 @@ export function toShowFuncUnbound(
       arg: toShowFuncUnbound(e.arg, funcSide, highlight),
       func: toShowFuncUnbound(e.func, funcSide, highlight)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -103,6 +108,8 @@ export function toShowFuncUnbound(
       trueCase: toShowFuncUnbound(e.trueCase, funcSide, highlight),
       falseCase: toShowFuncUnbound(e.falseCase, funcSide, highlight)
     }
+  } else {
+    throw new Error()
   }
 }
 

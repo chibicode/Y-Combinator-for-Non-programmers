@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import { activeFuncArg } from 'scripts/lib/steps/stepToShowFuncUnbound'
 import {
   CallExpression,
@@ -66,7 +71,7 @@ function matchBetaReduced(
       arg,
       func
     }
-  } else {
+  } else if (isConditional(e)) {
     const condition = matchBetaReduced(e.condition, shorthandUnary)
     const trueCase = matchBetaReduced(e.trueCase, shorthandUnary)
     const falseCase = matchBetaReduced(e.falseCase, shorthandUnary)
@@ -77,6 +82,8 @@ function matchBetaReduced(
       trueCase: trueCase,
       falseCase: falseCase
     }
+  } else {
+    throw new Error()
   }
 }
 
@@ -168,7 +175,7 @@ export function toBetaReducePreviewAfter(
       arg,
       func
     }
-  } else {
+  } else if (isConditional(e)) {
     const condition = toBetaReducePreviewAfter(
       e.condition,
       fromName,
@@ -194,6 +201,8 @@ export function toBetaReducePreviewAfter(
       trueCase: trueCase,
       falseCase: falseCase
     }
+  } else {
+    throw new Error()
   }
 }
 

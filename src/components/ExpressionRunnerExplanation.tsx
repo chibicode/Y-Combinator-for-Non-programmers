@@ -12,7 +12,7 @@ import {
 } from 'src/types/ExpressionContainerTypes'
 import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
-import { InlineEmojiBoxesForCondition } from 'src/components/InlineEmojiBoxes'
+import InlineConditionBorder from 'src/components/InlineConditionBorder'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -290,11 +290,8 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineEmojiBoxesForCondition
-              type="condition"
-              variableSizeOverrides="sm"
-            />{' '}
-            が <EmojiNumber number={0} size="mdlg" /> かどうかチェック
+            <InlineConditionBorder type="condition" /> が{' '}
+            <EmojiNumber number={0} size="mdlg" /> かどうかチェック
           </>
         )
       }
@@ -306,16 +303,9 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineEmojiBoxesForCondition
-              type="condition"
-              variableSizeOverrides="sm"
-            />{' '}
-            が <EmojiNumber number={0} size="mdlg" /> なので{' '}
-            <InlineEmojiBoxesForCondition
-              type="trueCase"
-              variableSizeOverrides="sm"
-            />{' '}
-            が残ります
+            <InlineConditionBorder type="condition" /> が{' '}
+            <EmojiNumber number={0} size="mdlg" /> なので{' '}
+            <InlineConditionBorder type="trueCase" /> が残ります
           </>
         )
       }
@@ -327,16 +317,9 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineEmojiBoxesForCondition
-              type="condition"
-              variableSizeOverrides="sm"
-            />{' '}
-            が <EmojiNumber number={0} /> ではないので{' '}
-            <InlineEmojiBoxesForCondition
-              type="falseCase"
-              variableSizeOverrides="sm"
-            />{' '}
-            が残ります
+            <InlineConditionBorder type="condition" /> が{' '}
+            <EmojiNumber number={0} /> ではないので{' '}
+            <InlineConditionBorder type="falseCase" /> が残ります
           </>
         )
       }

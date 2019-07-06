@@ -324,11 +324,19 @@ export interface ConditionalExpression {
   readonly state: ConditionalStates
 }
 
+export interface RepeatExpression {
+  readonly type: 'repeat'
+  readonly child: Expression
+  readonly begin: number
+  readonly end?: number
+}
+
 export type Expression =
   | VariableExpression
   | CallExpression
   | FunctionExpression
   | ConditionalExpression
+  | RepeatExpression
 
 type FunctionWithArgBody<
   A extends VariableExpression,
@@ -454,6 +462,7 @@ export type StepChild<C extends CallStates = 'default'> =
   | StepFunction<C>
   | StepConditional<C>
   | NonExecutableStepCall<C>
+  | RepeatExpression
 
 // Map from a union type to another union type
 // https://stackoverflow.com/a/51691257/114157

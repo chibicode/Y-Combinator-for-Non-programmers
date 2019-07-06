@@ -10,6 +10,17 @@ const config = withTypescript({
       test: path.resolve(__dirname, 'test'),
       scripts: path.resolve(__dirname, 'scripts')
     })
+
+    // TODO: Remove when https://github.com/webpack/webpack/pull/9349 is
+    // added on the webpack version I'm using
+    config.module.rules.push({
+      test: /\.json$/,
+      type: 'javascript/auto',
+      use: {
+        loader: path.resolve(__dirname, './optimizedJsonLoader.js')
+      }
+    })
+
     return config
   },
   env: {

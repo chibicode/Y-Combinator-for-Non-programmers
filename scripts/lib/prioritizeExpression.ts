@@ -2,7 +2,8 @@ import {
   isCall,
   isFunction,
   isVariable,
-  isConditional
+  isConditional,
+  isRepeat
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -190,6 +191,11 @@ function prioritizeExpressionHelper<E extends Expression = Expression>(
       priority: 1,
       expression
     }).expression
+  } else if (isRepeat(expression)) {
+    return {
+      ...expression,
+      child: prioritizeExpressionHelper(expression.child)
+    }
   } else {
     throw new Error()
   }
@@ -251,6 +257,15 @@ function populatePriorityAggs<E extends Expression>({
         expression: expression.trueCase,
         argPriorityAgg: [] as number[],
         funcPriorityAgg: [expression.priority, ...funcPriorityAgg]
+      })
+    }
+  } else if (isRepeat(expression)) {
+    return {
+      ...expression,
+      child: populatePriorityAggs({
+        expression: expression.child,
+        argPriorityAgg,
+        funcPriorityAgg
       })
     }
   } else {

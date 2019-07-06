@@ -159,13 +159,16 @@ const BorderWrapper = ({
             bottom: 0;
             border-top: 2px solid ${colors('indigo300')};
             border-left: 2px solid ${colors('indigo300')};
-            z-index: ${zIndices('border')};
           `,
-          topLevel &&
-            css`
-              border-bottom: 2px solid ${colors('indigo300')};
-              border-right: 2px solid ${colors('indigo300')};
-            `
+          topLevel
+            ? css`
+                border-bottom: 2px solid ${colors('indigo300')};
+                border-right: 2px solid ${colors('indigo300')};
+                z-index: ${zIndices('borderToplevel')};
+              `
+            : css`
+                z-index: ${zIndices('border')};
+              `
         ]}
       />
       {highlightType === 'highlighted' &&

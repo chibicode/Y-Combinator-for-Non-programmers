@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   Expression,
@@ -57,7 +62,7 @@ export default function stepToShowExecutableUnary(
       arg: stepToShowExecutableUnary(e.arg),
       func: stepToShowExecutableUnary(e.func)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -65,5 +70,7 @@ export default function stepToShowExecutableUnary(
       trueCase: stepToShowExecutableUnary(e.trueCase),
       falseCase: stepToShowExecutableUnary(e.falseCase)
     }
+  } else {
+    throw new Error()
   }
 }

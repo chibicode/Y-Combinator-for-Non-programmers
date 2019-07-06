@@ -1,4 +1,9 @@
-import { isFunction, isVariable, isCall } from 'src/lib/expressionTypeGuards'
+import {
+  isFunction,
+  isVariable,
+  isCall,
+  isConditional
+} from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
   ExecutableStepCallRegular,
@@ -63,7 +68,7 @@ function toMagicalExpanded(e: Expression): StepChild<'magicalExpanded'> {
       arg: toMagicalExpanded(e.arg),
       func: toMagicalExpanded(e.func)
     }
-  } else {
+  } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
@@ -71,6 +76,8 @@ function toMagicalExpanded(e: Expression): StepChild<'magicalExpanded'> {
       trueCase: toMagicalExpanded(e.trueCase),
       falseCase: toMagicalExpanded(e.falseCase)
     }
+  } else {
+    throw new Error()
   }
 }
 
