@@ -1,8 +1,7 @@
-const withTypescript = require('@zeit/next-typescript')
 const path = require('path')
 const fs = require('fs')
 
-const config = withTypescript({
+const config = {
   webpack(config) {
     config.resolve.alias = Object.assign({}, config.resolve.alias, {
       // Must also change tsconfig.json
@@ -42,6 +41,6 @@ const config = withTypescript({
 
     return defaultPathMap
   }
-})
+}
 
 module.exports = config
