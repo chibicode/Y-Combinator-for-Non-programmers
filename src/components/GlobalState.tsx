@@ -1,13 +1,11 @@
-import { withRouter, WithRouterProps } from 'next/router'
+import { useRouter, PublicRouterInstance } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import GlobalContext, {
   globalContextDefault
 } from 'src/components/GlobalContext'
 
-const GlobalState = ({
-  children,
-  router
-}: { children: React.ReactNode } & WithRouterProps) => {
+const GlobalState = ({ children }: { children: React.ReactNode }) => {
+  const router: PublicRouterInstance = useRouter()
   const [initialRender, setInitialRender] = useState(
     globalContextDefault.initialRender
   )
@@ -41,4 +39,4 @@ const GlobalState = ({
   )
 }
 
-export default withRouter(GlobalState)
+export default GlobalState
