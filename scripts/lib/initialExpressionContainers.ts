@@ -1387,7 +1387,31 @@ export const gxqm = initializeExpressionContainer({
 export const gcie = initializeExpressionContainer([
   {
     begin: 2,
-    end: 5,
+    end: 3,
+    child: [
+      'blankNumber',
+      {
+        shorthandBinary: 'mult'
+      }
+    ]
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
+export const gwwy = initializeExpressionContainer([
+  {
+    begin: 3,
+    child: [
+      'blankNumber',
+      {
+        shorthandBinary: 'mult'
+      }
+    ]
+  },
+  {
+    begin: 2,
     child: [
       'blankNumber',
       {

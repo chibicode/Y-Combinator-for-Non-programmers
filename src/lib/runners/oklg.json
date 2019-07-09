@@ -21,7 +21,7 @@
         "func": {
           "type": "repeat",
           "begin": 2,
-          "end": 5,
+          "end": 3,
           "child": {
             "arg": {
               "name": "shorthandBinary",

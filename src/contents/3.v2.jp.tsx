@@ -10,6 +10,7 @@ export default () => (
         content: (
           <>
             <R.Oklg />
+            <R.Hawd />
           </>
         )
       }
