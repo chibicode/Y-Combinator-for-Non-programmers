@@ -1,7 +1,4 @@
-import difference from 'lodash/difference'
-import intersection from 'lodash/intersection'
 import { ExecutableCallRegular } from 'src/types/ExpressionTypes'
-import uniq from 'lodash/uniq'
 import {
   isCall,
   isVariable,
@@ -47,18 +44,20 @@ function getAllVariableNames(
   expression: Expression,
   opts: GetAllVariableNamesOptions = {}
 ): readonly VariableNames[] {
-  return uniq(getAllVariableNamesWithDuplicates(expression, opts))
+  return [...new Set(getAllVariableNamesWithDuplicates(expression, opts))]
 }
 
 function conflictingVariableNames(
   expression: ExecutableCallRegular
 ): readonly VariableNames[] {
   const argVariableNames = getAllVariableNames(expression.arg)
-  const funcBodyUnboundedVariableNamesExceptArg = difference(
-    getAllVariableNames(expression.func.body, { filter: 'unbound' }),
-    [expression.func.arg.name]
+  const funcBodyUnboundedVariableNamesExceptArg = getAllVariableNames(
+    expression.func.body,
+    { filter: 'unbound' }
+  ).filter(x => x !== expression.func.arg.name)
+  return argVariableNames.filter(x =>
+    funcBodyUnboundedVariableNamesExceptArg.includes(x)
   )
-  return intersection(argVariableNames, funcBodyUnboundedVariableNamesExceptArg)
 }
 
 export type ConflictingNamesToUnusedNames = {
@@ -70,9 +69,8 @@ export default function getConflictsToUnused(
 ): ConflictingNamesToUnusedNames {
   const conflicts = conflictingVariableNames(expression)
   const allUsed = getAllVariableNames(expression)
-  const available = difference<VariableNames>(
-    alphaConvertTargetVariableNames,
-    allUsed
+  const available = alphaConvertTargetVariableNames.filter(
+    x => !allUsed.includes(x)
   )
   return conflicts.reduce(
     (result, current, index) => ({
