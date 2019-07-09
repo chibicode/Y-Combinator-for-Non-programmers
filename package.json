@@ -24,8 +24,8 @@
     "jp:v2": "IS_DEVELOPMENT=true DEV_LOCALE=jp DEV_CONTENT_VERSION=v2 next -p 9992",
     "jp:hide-cards": "DEV_LOCALE=jp next -p 9991",
     "en:hide-cards": "DEV_LOCALE=en next -p 9990",
-    "dev": "rm -rf .next && concurrently \"yarn jp\" \"yarn jp:v2\" \"yarn en\" \"yarn twemoji:watch\"",
-    "dev:hide-cards": "rm -rf .next && concurrently \"yarn jp:hide-cards\" \"yarn en:hide-cards\" \"yarn twemoji:watch\"",
+    "dev": "rm -rf .next && concurrently \"yarn jp\" \"yarn jp:v2\" \"yarn en\"",
+    "dev:hide-cards": "rm -rf .next && concurrently \"yarn jp:hide-cards\" \"yarn en:hide-cards\"",
     "ts-node": "tsc --project tsconfig.scripts.json && node -r module-alias/register",
     "sitemap": "yarn ts-node .tsbuild/scripts/generateSitemap.js",
     "precompute": "tsc --project tsconfig.scripts.json && node -r module-alias/register .tsbuild/scripts/precomputeExpressionContainers.js",
@@ -36,7 +36,6 @@
     "build:jp": "PRODUCTION_LOCALE=jp yarn sitemap && PRODUCTION_LOCALE=jp next build && PRODUCTION_LOCALE=jp next export",
     "twemoji": "mkdir -p .twemoji && rm -f src/components/Twemoji/* && rm -f .twemoji/* && cp `yarn --silent ts-node .tsbuild/scripts/copyUsedEmojis.js` .twemoji && svgr --ext tsx --no-svgo --filename-case kebab --no-dimensions -d src/components/Twemoji .twemoji && eslint --ext .tsx --fix src/components/Twemoji && yarn twemoji:bundle",
     "twemoji:bundle": "yarn ts-node .tsbuild/scripts/generateEmojisBundle.js",
-    "twemoji:watch": "yarn ts-node .tsbuild/scripts/generateEmojisBundle.js watch",
     "test": "jest"
   },
   "devDependencies": {
@@ -56,7 +55,6 @@
     "@typescript-eslint/parser": "^1.11.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-emotion": "^10.0.14",
-    "chokidar": "^3.0.2",
     "concurrently": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.0.0",
