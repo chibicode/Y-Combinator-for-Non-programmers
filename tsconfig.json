@@ -17,33 +17,16 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "paths": {
-      "src/*": [
-        "src/*"
-      ],
-      "test/*": [
-        "test/*"
-      ],
-      "scripts/*": [
-        "scripts/*"
-      ],
-      "*": [
-        "node_modules/*",
-        "src/types/*"
-      ]
+      "src/*": ["src/*"],
+      "test/*": ["test/*"],
+      "scripts/*": ["scripts/*"],
+      "*": ["node_modules/*", "src/types/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
-  "include": [
-    "./src",
-    "./pages"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./src", "./pages"],
+  "exclude": ["node_modules"]
 }
