@@ -5,7 +5,6 @@ import smoothscroll from 'smoothscroll-polyfill'
 import React from 'react'
 import modernNormalize from 'src/lib/modernNormalize'
 import { colors, lineHeights, ns } from 'src/lib/theme'
-const pink = colors('pink500')
 
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
@@ -19,8 +18,6 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
         styles={[
           modernNormalize,
           css`
-            /* NOTE:
-     double-tap optimization was removed: https://github.com/twbs/bootstrap/commit/2e15b9488874d8c129e6bd4da0425ecbac359c03 */
             html {
               font-size: 18px;
               color: ${colors('grey800')};
