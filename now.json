@@ -4,8 +4,5 @@
   "alias": "y.chibicode.com",
   "github": {
     "silent": true
-  },
-  "engines": {
-    "node": "10.x"
   }
 }

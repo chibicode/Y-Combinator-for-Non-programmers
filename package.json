@@ -1,12 +1,15 @@
 {
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
-    "@material-ui/core": "^4.2.0",
+    "@material-ui/core": "^4.2.1",
     "color": "^3.1.2",
     "luxon": "^1.17.1",
-    "next": "9.0.1",
+    "next": "9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "smoothscroll-polyfill": "^0.4.4",
@@ -38,14 +41,14 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@svgr/cli": "^4.3.1",
+    "@svgr/cli": "^4.3.2",
     "@types/color": "^3.0.0",
     "@types/fs-extra": "^8.0.0",
     "@types/glob": "^7.1.1",
     "@types/jest": "^24.0.13",
     "@types/luxon": "^1.15.2",
     "@types/material-ui": "^0.21.6",
-    "@types/node": "^12.6.2",
+    "@types/node": "^12.6.8",
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^1.16.4",
     "@types/react": "^16.8.23",
