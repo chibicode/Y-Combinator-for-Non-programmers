@@ -2718,7 +2718,16 @@ export const zqum: ExpressionRunnerShorthandConfig = {
 
 export const oklg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.gcie
+  initialExpressionContainer: initialExpressionContainers.gcie,
+  caption: { name: 'repeatingMathBox' }
+}
+
+export const emme: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.gcie,
+    initialExpressionContainers.xcln
+  ]
 }
 
 export const hawd: ExpressionRunnerShorthandConfig = {

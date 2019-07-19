@@ -34,6 +34,9 @@ export default function initializeExpressionContainer(
 ): ContainerWithState<'ready', VariableExpression>
 export default function initializeExpressionContainer(
   expressionParams: ExpressionParams
+): ContainerWithState<'ready', Expression>
+export default function initializeExpressionContainer(
+  expressionParams: ExpressionParams
 ): ContainerWithState<'ready', Expression> {
   return prioritizeExpressionContainer(
     buildExpressionContainer(expressionParams)

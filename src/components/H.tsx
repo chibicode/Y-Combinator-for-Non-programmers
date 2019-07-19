@@ -4,7 +4,7 @@ import { Fragment } from 'react'
 import InlineEmojiBoxes, {
   InlineEmojiBoxesForQuestion
 } from 'src/components/InlineEmojiBoxes'
-import InlineConditionBorder from 'src/components/InlineConditionBorder'
+import InlineBorder from 'src/components/InlineBorder'
 import { useContext } from 'react'
 import {
   Em,
@@ -1811,22 +1811,29 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (args.type === 'condition') {
         return (
           <>
-            真ん中の部分 <InlineConditionBorder type="condition" />
+            真ん中の部分 <InlineBorder type="condition" />
           </>
         )
       } else if (args.type === 'falseCase') {
         return (
           <>
-            上の部分 <InlineConditionBorder type="falseCase" />
+            上の部分 <InlineBorder type="falseCase" />
           </>
         )
       } else {
         return (
           <>
-            下の部分 <InlineConditionBorder type="trueCase" />
+            下の部分 <InlineBorder type="trueCase" />
           </>
         )
       }
+    }
+  }
+  if (args.name === 'repeatingMathBox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>繰り返しの計算箱</>
     }
   }
   throw new Error()

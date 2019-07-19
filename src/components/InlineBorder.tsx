@@ -4,16 +4,20 @@ import { colors } from 'src/lib/theme'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 
-const InlineConditionBorder = ({
-  type
+const InlineBorder = ({
+  type,
+  children
 }: {
-  type: 'trueCase' | 'falseCase' | 'condition'
+  type?: 'trueCase' | 'falseCase' | 'condition'
+  children?: React.ReactNode
 }) => {
-  const color = {
-    trueCase: colors('teal200'),
-    falseCase: colors('pink200'),
-    condition: colors('yellow400')
-  }[type]
+  const color = type
+    ? {
+        trueCase: colors('teal200'),
+        falseCase: colors('pink200'),
+        condition: colors('yellow400')
+      }[type]
+    : colors('purple100')
   return (
     <span
       css={css`
@@ -26,8 +30,9 @@ const InlineConditionBorder = ({
       {type === 'trueCase' && <EmojiNumber number={0} />}
       {type === 'falseCase' && <Emoji>🔢</Emoji>}
       {type === 'condition' && <Emoji>↕️</Emoji>}
+      {children}
     </span>
   )
 }
 
-export default InlineConditionBorder
+export default InlineBorder

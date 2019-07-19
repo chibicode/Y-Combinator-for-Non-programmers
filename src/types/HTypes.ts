@@ -136,4 +136,5 @@ export interface HProps {
         name: 'conditionSectionName'
         type: 'condition' | 'trueCase' | 'falseCase'
       }
+    | { name: 'repeatingMathBox' }
 }

@@ -60,21 +60,34 @@
         "type": "call",
         "priority": 1
       }
+    },
+    {
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "name": "shorthandNumber",
+        "highlightType": "default",
+        "topLeftBadgeType": "none",
+        "bottomRightBadgeType": "none",
+        "type": "variable",
+        "argPriorityAgg": [],
+        "funcPriorityAgg": [],
+        "emphasizePriority": false,
+        "bound": true,
+        "shorthandNumber": 6
+      }
     }
   ],
   "speed": 1,
   "showOnlyFocused": false,
-  "caption": {
-    "name": "repeatingMathBox"
-  },
-  "hideControls": true,
-  "explanationsVisibility": "hidden",
+  "hideControls": false,
+  "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": true,
   "variableSize": "lg",
   "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
-  "skipToTheEnd": false,
+  "skipToTheEnd": true,
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},

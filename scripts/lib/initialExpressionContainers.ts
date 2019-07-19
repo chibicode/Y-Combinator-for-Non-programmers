@@ -1,4 +1,5 @@
 import initializeExpressionContainer from 'scripts/lib/initializeExpressionContainer'
+import initializeDoneExpressionContainer from 'scripts/lib/initializeDoneExpressionContainer'
 import { FunctionExpressionParams } from 'src/types/ExpressionParamTypes'
 import {
   numberParams,
@@ -13,7 +14,6 @@ import {
   numberParamsHighlightNumber
 } from 'scripts/lib/churchEncodingParams'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
-import { ContainerWithState } from 'src/types/ExpressionContainerTypes'
 
 export const nyhe = initializeExpressionContainer([
   {
@@ -987,12 +987,9 @@ export const mrab = initializeExpressionContainer([
   ]
 ])
 
-export const vzpd: ContainerWithState<'done'> = {
-  ...initializeExpressionContainer({
-    shorthandNumber: 2
-  }),
-  containerState: 'done'
-}
+export const vzpd = initializeDoneExpressionContainer({
+  shorthandNumber: 2
+})
 
 export const ocwu = initializeExpressionContainer([
   {
@@ -1008,12 +1005,9 @@ export const ocwu = initializeExpressionContainer([
   ]
 ])
 
-export const fmlj: ContainerWithState<'done'> = {
-  ...initializeExpressionContainer({
-    shorthandNumber: 6
-  }),
-  containerState: 'done'
-}
+export const fmlj = initializeDoneExpressionContainer({
+  shorthandNumber: 6
+})
 
 export const zcxt = initializeExpressionContainer([
   {
@@ -1029,12 +1023,9 @@ export const zcxt = initializeExpressionContainer([
   ]
 ])
 
-export const zrwn: ContainerWithState<'done'> = {
-  ...initializeExpressionContainer({
-    shorthandNumber: 1
-  }),
-  containerState: 'done'
-}
+export const zrwn = initializeDoneExpressionContainer({
+  shorthandNumber: 1
+})
 
 export const ognb = initializeExpressionContainer({
   checkType: 'isZero',
@@ -1095,12 +1086,9 @@ export const jnac = initializeExpressionContainer([
   ]
 ])
 
-export const sbvu: ContainerWithState<'done'> = {
-  ...initializeExpressionContainer({
-    shorthandNumber: 0
-  }),
-  containerState: 'done'
-}
+export const sbvu = initializeDoneExpressionContainer({
+  shorthandNumber: 0
+})
 
 export const ydlj = initializeExpressionContainer({
   checkType: 'isZero',
@@ -1115,12 +1103,9 @@ export const ydlj = initializeExpressionContainer({
   }
 })
 
-export const wkny: ContainerWithState<'done'> = {
-  ...initializeExpressionContainer({
-    shorthandNumber: 28
-  }),
-  containerState: 'done'
-}
+export const wkny = initializeDoneExpressionContainer({
+  shorthandNumber: 28
+})
 
 export const wrps = initializeExpressionContainer({
   checkType: 'isZero',
@@ -1399,6 +1384,10 @@ export const gcie = initializeExpressionContainer([
     shorthandNumber: 1
   }
 ])
+
+export const xcln = initializeDoneExpressionContainer({
+  shorthandNumber: 6
+})
 
 export const gwwy = initializeExpressionContainer([
   {

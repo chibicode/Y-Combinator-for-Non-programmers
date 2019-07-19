@@ -12,7 +12,7 @@ import {
 } from 'src/types/ExpressionContainerTypes'
 import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
-import InlineConditionBorder from 'src/components/InlineConditionBorder'
+import InlineBorder from 'src/components/InlineBorder'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -290,7 +290,7 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineConditionBorder type="condition" /> が{' '}
+            <InlineBorder type="condition" /> が{' '}
             <EmojiNumber number={0} size="mdlg" /> かどうかチェック
           </>
         )
@@ -303,9 +303,9 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineConditionBorder type="condition" /> が{' '}
+            <InlineBorder type="condition" /> が{' '}
             <EmojiNumber number={0} size="mdlg" /> なので{' '}
-            <InlineConditionBorder type="trueCase" /> が残ります
+            <InlineBorder type="trueCase" /> が残ります
           </>
         )
       }
@@ -317,9 +317,8 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineConditionBorder type="condition" /> が{' '}
-            <EmojiNumber number={0} /> ではないので{' '}
-            <InlineConditionBorder type="falseCase" /> が残ります
+            <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
+            ではないので <InlineBorder type="falseCase" /> が残ります
           </>
         )
       }
