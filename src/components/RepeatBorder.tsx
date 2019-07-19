@@ -98,7 +98,7 @@ const RepeatBorder = ({
           left: 0;
           bottom: 0;
           width: ${width(variableSize)}em;
-          background: ${colors('indigo100')};
+          background: ${colors('purple100')};
           border-left: 2px solid ${colors('indigo300')};
           border-right: 2px solid ${colors('indigo300')};
           border-top: 2px solid ${colors('indigo300')};
