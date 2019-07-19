@@ -1741,7 +1741,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji>➕</Emoji> 足し算ができる計算箱 <Emoji>🎁</Emoji>
+          <Emoji>➕</Emoji> 足し算の計算箱 <Emoji>🎁</Emoji>
         </>
       )
     }

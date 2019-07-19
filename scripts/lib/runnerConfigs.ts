@@ -1495,6 +1495,14 @@ export const nlfx: ExpressionRunnerShorthandConfig = {
   ]
 }
 
+export const jwkg: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.cunc,
+    initialExpressionContainers.rxqu
+  ]
+}
+
 export const nlxe: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.jxut,

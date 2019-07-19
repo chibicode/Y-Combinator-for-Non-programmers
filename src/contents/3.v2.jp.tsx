@@ -28,14 +28,15 @@ export default () => (
               」 です。
             </P>
             <R.Oklg />
-            <P>この計算箱の特徴は、</P>
+            <P>この計算箱の特徴として、</P>
             <Ul>
               <UlLi>
+                左側に{' '}
                 <InlineBorder>
                   <EmojiNumber number={2} /> <Emoji>➡️</Emoji>{' '}
                   <EmojiNumber number={3} />
                 </InlineBorder>{' '}
-                という印が左側にあり、
+                という印があり、
               </UlLi>
               <UlLi>
                 <Strong>一番下に星印</Strong> <BlankNumber star />{' '}
@@ -59,6 +60,19 @@ export default () => (
               最後に <EmojiNumber number={6} />{' '}
               が残りました。どういう仕組みなのか、見てみましょう！
             </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'repeatingMathBox' }} />
+            の仕組み
+          </>
+        ),
+        content: (
+          <>
+            <P>繰り返しの計算箱は、</P>
           </>
         )
       }

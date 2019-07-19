@@ -32,7 +32,7 @@
             ],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandBinary": "mult"
+            "shorthandBinary": "add"
           },
           "state": "default",
           "type": "call",
@@ -70,7 +70,7 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 6
+        "shorthandNumber": 5
       }
     }
   ],

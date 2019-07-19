@@ -991,16 +991,34 @@ export const vzpd = initializeDoneExpressionContainer({
   shorthandNumber: 2
 })
 
+export const cunc = initializeExpressionContainer([
+  {
+    shorthandNumber: 3
+  },
+  [
+    {
+      shorthandBinary: 'add'
+    },
+    {
+      shorthandNumber: 2
+    }
+  ]
+])
+
+export const rxqu = initializeDoneExpressionContainer({
+  shorthandNumber: 5
+})
+
 export const ocwu = initializeExpressionContainer([
   {
-    shorthandNumber: 2
+    shorthandNumber: 3
   },
   [
     {
       shorthandBinary: 'mult'
     },
     {
-      shorthandNumber: 3
+      shorthandNumber: 2
     }
   ]
 ])

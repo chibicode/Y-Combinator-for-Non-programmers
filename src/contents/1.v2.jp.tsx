@@ -16,6 +16,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import BlankNumber from 'src/components/BlankNumber'
+import InlineBorder from 'src/components/InlineBorder'
 
 export default () => (
   <EpisodeCardList
@@ -51,9 +52,16 @@ export default () => (
               <InlineHeader>計算箱</InlineHeader>に頼りっぱなしでした。
             </P>
             <EmojiSeparator emojis={['🙂', '🎁', '🙂']} />
+          </>
+        )
+      },
+      {
+        title: <>足し算の計算箱</>,
+        content: (
+          <>
             <P>
               計算箱にはさまざまな種類があります。まずこちらが、「
-              <Strong>足し算ができる計算箱</Strong>」です:
+              <Strong>足し算の計算箱</Strong>」です:
             </P>
             <R.Fdek />
             <P>
@@ -66,11 +74,21 @@ export default () => (
               <EmojiNumber number={1} /> を両方に入れてみましょう。
             </P>
             <R.Jfsd />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'play' }} /> ボタン
+          </>
+        ),
+        content: (
+          <>
             <P>
-              そして、それぞれの計算箱には
+              それぞれの計算箱には
               <Strong>
-                <H args={{ name: 'play' }} />
-                ボタン
+                <H args={{ name: 'play' }} /> ボタン
               </Strong>
               がついており、それを押すと計算が実行されます。試しに、下の計算箱で
               <Strong>
@@ -80,8 +98,38 @@ export default () => (
             <R.Nlfx />
             <P>
               これで <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />{' '}
-              が計算できました！次は、足し算以外の計算箱も見ていきましょう。
+              <EmojiNumber number={1} /> が計算できました！
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+            />
+            <P>
+              他の「<Strong>足し算の計算箱</Strong>
+              」も見てみましょう。下の計算箱は、
+              <Strong>
+                <H args={{ name: 'play' }} />
+              </Strong>{' '}
+              を押すと <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算してくれます。
+            </P>
+            <R.Jwkg />
+            <P>
+              ご覧の通り、結果は <EmojiNumber number={5} /> になりました！
+            </P>
+            <Hr />
+            <P>
+              計算箱がある世界の人々は、計算がとても苦手でした。
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />{' '}
+              といった簡単な足し算をするときも、計算箱に頼っていたのです。
+            </P>
+            <EmojiSeparator emojis={['🙂', '🎁', '➕']} />
+            <P>
+              次は、足し算「<Strong>以外</Strong>」の計算箱も見ていきましょう。
             </P>
           </>
         )
@@ -91,15 +139,15 @@ export default () => (
         content: (
           <>
             <P>
-              続いてこちらが、「<Strong>掛け算ができる計算箱</Strong>
+              続いてこちらが、「<Strong>掛け算の計算箱</Strong>
               」です。
               <Strong>
                 <H args={{ name: 'play' }} />
                 ボタン
               </Strong>
               を押せば、
-              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={2} /> を計算してくれます。
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算してくれます。
             </P>
             <R.Uaha />
             <P>
@@ -110,6 +158,13 @@ export default () => (
               <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator emojis={['➖', '🎁', '➗']} />
+          </>
+        )
+      },
+      {
+        title: <>割ったときの余りがわかる計算箱</>,
+        content: (
+          <>
             <P>
               一方、少しだけ興味深いのが、「
               <Strong>割ったときの余りがわかる計算箱</Strong>
@@ -154,17 +209,36 @@ export default () => (
             </P>
             <R.Ymmm />
             <P>
-              「<InlineHeader>条件分岐の計算箱</InlineHeader>」には
-              <Em>
-                ハテナマーク <BlankNumber />{' '}
-                が3つあります。それぞれ左端に赤・黄色・青と信号機{' '}
-                <Emoji>🚦</Emoji>{' '}
-                のような色があり、左上に以下の三種類の印がついています
-              </Em>
-              。いったいどんな計算ができるのでしょう？
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の特徴として、
+            </P>
+            <Ul>
+              <UlLi>
+                左側に <InlineBorder type="falseCase" />{' '}
+                <InlineBorder type="condition" />{' '}
+                <InlineBorder type="trueCase" /> という3種類の印があり、
+              </UlLi>
+              <UlLi>
+                それぞれの印の横にハテナマーク <BlankNumber /> が入っています。
+              </UlLi>
+            </Ul>
+            <P>
+              この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」は、いったいどんな計算ができるのでしょう？
               <Emoji>🤔</Emoji>
             </P>
-            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            とりあえず
+            <H args={{ name: 'play' }} /> してみる
+          </>
+        ),
+        content: (
+          <>
             <P>
               とりあえず、{' '}
               <Em>
