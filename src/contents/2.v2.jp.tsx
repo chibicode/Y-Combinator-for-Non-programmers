@@ -233,6 +233,21 @@ export default () => (
             </P>
             <R.Jehz />
             <P>
+              これは、どのような計算が行われるのでしょうか？<Emoji>🤔</Emoji>
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
+            を先に行う
+          </>
+        ),
+        content: (
+          <>
+            <P>
               まず、
               <H
                 args={{ name: 'conditionSectionName', type: 'condition' }}
