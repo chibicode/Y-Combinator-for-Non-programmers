@@ -112,16 +112,22 @@ export default () => (
             <P>
               ご覧の通り、結果は <EmojiNumber number={5} /> になりました！
             </P>
-            <Hr />
-            <P>
-              計算箱がある世界の人々は、計算がとても苦手でした。
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} />{' '}
-              といった簡単な足し算をするときも、計算箱に頼っていたのです。
-            </P>
-            <EmojiSeparator emojis={['🙂', '🎁', '➕']} />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader>{' '}
+                計算箱がある世界の人々は、計算がとても苦手でした。
+                <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                <EmojiNumber number={3} />{' '}
+                といった簡単な足し算をするときも、計算箱に頼っていたのです。
+              </P>
+              <EmojiSeparator emojis={['🙂', '🎁', '➕']} />
+            </>
+          )
+        }
       },
       {
         title: <>足し算以外の計算箱</>,
@@ -229,8 +235,10 @@ export default () => (
             <R.Fxgq />
             <P>
               というわけで、
+              <EmojiNumber number={0} /> ではなく、
               <EmojiNumber number={3} /> が残りました。
             </P>
+            <Hr />
             <P>
               <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
               で割ると「
@@ -239,7 +247,24 @@ export default () => (
               <EmojiNumber number={3} /> が残るというわけです。
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader> 頭の中で計算しなくても、「
+                <Strong>
+                  <EmojiNumber number={2019} /> は <EmojiNumber number={4} />{' '}
+                  では割り切れないから、余りは <EmojiNumber number={0} />{' '}
+                  にならないはず
+                </Strong>
+                」と気づけば、先ほどの <H args={{ name: 'yesNoQuiz' }} />
+                に正解することができたはずです！
+              </P>
+              <EmojiSeparator emojis={['🤔', '➗', '4️⃣']} />
+            </>
+          )
+        }
       },
       {
         title: <>次のページへ！</>,

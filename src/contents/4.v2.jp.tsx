@@ -15,6 +15,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import BlankNumber from 'src/components/BlankNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -24,7 +25,7 @@ export default () => (
         content: (
           <>
             <P>
-              今回は、今までよりも複雑な計算箱を紹介します。それが、この「
+              今回は、今までよりも高度な計算箱を紹介します。それが、この「
               <Strong>繰り返しの計算箱</Strong>」 です。
             </P>
             <R.Oklg />
@@ -131,7 +132,7 @@ export default () => (
             <P>
               さらに、
               <Strong>
-                右側にあった <Emoji>✖️</Emoji> と <BlankNumber star /> が、
+                <Emoji>✖️</Emoji> と <BlankNumber star /> が、
                 <InlineBorder>
                   <EmojiNumber number={2} />
                 </InlineBorder>{' '}
@@ -139,29 +140,29 @@ export default () => (
                 <InlineBorder>
                   <EmojiNumber number={3} />
                 </InlineBorder>{' '}
-                の右側それぞれにコピーされました。
+                それぞれにコピーされました。
               </Strong>
             </P>
             <EmojiSeparator
               noBottomMargin
               nodes={[
-                <Emoji>✖️</Emoji>,
-                <BlankNumber star />,
-                <Emoji size="xs">➡️</Emoji>,
                 <InlineBorder small>
                   <EmojiNumber number={2} />
-                </InlineBorder>
+                </InlineBorder>,
+                <Emoji size="xs">➡️</Emoji>,
+                <Emoji>✖️</Emoji>,
+                <BlankNumber star />
               ]}
             />
             <EmojiSeparator
               noTopMargin
               nodes={[
-                <Emoji>✖️</Emoji>,
-                <BlankNumber star />,
-                <Emoji size="xs">➡️</Emoji>,
                 <InlineBorder small>
                   <EmojiNumber number={3} />
-                </InlineBorder>
+                </InlineBorder>,
+                <Emoji size="xs">➡️</Emoji>,
+                <Emoji>✖️</Emoji>,
+                <BlankNumber star />
               ]}
             />
           </>
@@ -172,19 +173,19 @@ export default () => (
         content: (
           <>
             <P>
-              続いて、今度は右側にある
+              続いて、今度は
               <Strong>
                 星印 <BlankNumber star />
               </Strong>{' '}
               に注目してみてください。
             </P>
             <R.Hawd />
-            <P>計算箱は、次はこのように変化します。</P>
+            <P>計算箱は、次に以下のように変化します。</P>
             <R.Prfy />
             <P>
               つまり、
               <Strong>
-                星印だった部分 <BlankNumber star /> が、それぞれ左側にあった{' '}
+                星印だった部分 <BlankNumber star /> が、それぞれ{' '}
                 <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
                 に入れ替わっています。
               </Strong>
@@ -192,23 +193,51 @@ export default () => (
             <EmojiSeparator
               noBottomMargin
               nodes={[
-                <InlineBorder small>
-                  <EmojiNumber number={2} />
-                </InlineBorder>,
+                <BlankNumber star />,
                 <Emoji size="xs">➡️</Emoji>,
-                <BlankNumber star />
+                <EmojiNumber number={2} />
               ]}
             />
             <EmojiSeparator
               noTopMargin
               nodes={[
-                <InlineBorder small>
-                  <EmojiNumber number={3} />
-                </InlineBorder>,
+                <BlankNumber star />,
                 <Emoji size="xs">➡️</Emoji>,
-                <BlankNumber star />
+                <EmojiNumber number={3} />
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>結果はこうなる</>,
+        content: (
+          <>
+            <P>
+              というわけで、最終的に <EmojiNumber number={1} />{' '}
+              <Emoji>✖️</Emoji> <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> が計算され、
+            </P>
+            <R.Prfy />
+            <P>
+              結果は <EmojiNumber number={6} /> になります。
+            </P>
+            <R.Nxsa />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerSeparator />
           </>
         )
       }
