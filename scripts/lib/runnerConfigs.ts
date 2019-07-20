@@ -2588,7 +2588,7 @@ export const ylil: ExpressionRunnerShorthandConfig = {
 export const ymmm: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ognb,
-  caption: { name: 'conditionalMathBox' }
+  caption: { name: 'conditionalMathBoxCaption' }
 }
 
 export const ysji: ExpressionRunnerShorthandConfig = {
@@ -2745,7 +2745,12 @@ export const zqum: ExpressionRunnerShorthandConfig = {
 export const oklg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gcie,
-  caption: { name: 'repeatingMathBox' }
+  caption: { name: 'repeatingMathBoxCaption' }
+}
+
+export const eqvz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gcie
 }
 
 export const emme: ExpressionRunnerShorthandConfig = {

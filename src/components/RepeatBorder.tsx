@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
-import Emoji from 'src/components/Emoji'
-import { zIndices, colors, fontSizes, spaces } from 'src/lib/theme'
+import { zIndices, colors, fontSizes } from 'src/lib/theme'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -68,26 +67,17 @@ const RepeatBorder = ({
         `}
       >
         <EmojiNumber number={begin} />
-        {end && (
-          <>
+        {end &&
+          [...Array(end - begin).keys()].map(number => (
             <span
+              key={`number-${number}`}
               css={css`
-                margin-top: ${spaces(0.125)};
                 display: inline-block;
               `}
             >
-              <Emoji>⬇️</Emoji>
+              <EmojiNumber number={begin + number + 1} />
             </span>
-            <span
-              css={css`
-                margin-top: ${spaces(0.125)};
-                display: inline-block;
-              `}
-            >
-              <EmojiNumber number={end} />
-            </span>
-          </>
-        )}
+          ))}
       </span>
       <span
         css={css`

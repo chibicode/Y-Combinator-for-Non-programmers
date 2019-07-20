@@ -126,7 +126,7 @@ export interface HProps {
     | { name: 'mentionRightArrow' }
     | { name: 'addMathBoxCaption' }
     | { name: 'remainder' }
-    | { name: 'conditionalMathBox' }
+    | { name: 'conditionalMathBoxCaption' }
     | { name: 'lookAtThisMathBox' }
     | { name: 'whatHappensAtTheEndMathBoxQuestion' }
     | { name: 'isLeapYearCaption' }
@@ -136,5 +136,5 @@ export interface HProps {
         name: 'conditionSectionName'
         type: 'condition' | 'trueCase' | 'falseCase'
       }
-    | { name: 'repeatingMathBox' }
+    | { name: 'repeatingMathBoxCaption' }
 }

@@ -45,6 +45,7 @@ import { dateString, dateSchemaString } from 'src/lib/date'
 import { githubRepo } from 'src/lib/meta'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { HProps } from 'src/types/HTypes'
+import BlankNumber from 'src/components/BlankNumber'
 
 const slightlyLargeCaptionCss = css`
   font-size: ${fontSizes(1.2)};
@@ -1753,11 +1754,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>割ったときの余り</>
     }
   }
-  if (args.name === 'conditionalMathBox') {
+  if (args.name === 'conditionalMathBoxCaption') {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <>条件分岐の計算箱</>
+      return (
+        <>
+          <Emoji>↕️</Emoji> 条件分岐の計算箱 <Emoji>🎁</Emoji>
+        </>
+      )
     }
   }
   if (args.name === 'whatHappensAtTheEndMathBoxQuestion') {
@@ -1829,11 +1834,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       }
     }
   }
-  if (args.name === 'repeatingMathBox') {
+  if (args.name === 'repeatingMathBoxCaption') {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <>繰り返しの計算箱</>
+      return (
+        <>
+          <BlankNumber star /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
+        </>
+      )
     }
   }
   throw new Error()

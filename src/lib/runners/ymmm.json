@@ -51,7 +51,7 @@
   "speed": 1,
   "showOnlyFocused": false,
   "caption": {
-    "name": "conditionalMathBox"
+    "name": "conditionalMathBoxCaption"
   },
   "hideControls": true,
   "explanationsVisibility": "hidden",

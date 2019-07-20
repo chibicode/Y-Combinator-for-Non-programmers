@@ -1,5 +1,12 @@
 import React from 'react'
-import { P, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Ul,
+  UlLi,
+  Em,
+  InlineHeader
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import * as R from 'src/components/Runners'
@@ -13,19 +20,12 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: (
-          <>
-            <H args={{ name: 'repeatingMathBox' }} />
-          </>
-        ),
+        title: <>繰り返しの計算箱</>,
         content: (
           <>
             <P>
               今回は、今までよりも複雑な計算箱を紹介します。それが、この「
-              <Strong>
-                <H args={{ name: 'repeatingMathBox' }} />
-              </Strong>
-              」 です。
+              <Strong>繰り返しの計算箱</Strong>」 です。
             </P>
             <R.Oklg />
             <P>この計算箱の特徴として、</P>
@@ -33,8 +33,7 @@ export default () => (
               <UlLi>
                 左側に{' '}
                 <InlineBorder>
-                  <EmojiNumber number={2} /> <Emoji>➡️</Emoji>{' '}
-                  <EmojiNumber number={3} />
+                  <EmojiNumber number={2} /> <EmojiNumber number={3} />
                 </InlineBorder>{' '}
                 という印があり、
               </UlLi>
@@ -76,15 +75,60 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <H args={{ name: 'repeatingMathBox' }} />
-            の仕組み
-          </>
-        ),
+        title: <>繰り返しの計算箱の仕組み、その1</>,
         content: (
           <>
-            <P>繰り返しの計算箱は、</P>
+            <P>
+              まず、左側にある{' '}
+              <InlineBorder>
+                <EmojiNumber number={2} /> <EmojiNumber number={3} />
+              </InlineBorder>{' '}
+              に注目します。これは、
+              <Em>
+                「23」というひとつの数字ではなく、
+                <Strong>「2」と「3」のふたつの数字</Strong>を表しています
+              </Em>
+              。
+            </P>
+            <R.Eqvz />
+            <P>
+              「<InlineHeader>繰り返しの計算箱</InlineHeader>
+              」はまず、次のようになります。
+            </P>
+            <R.Hawd />
+            <P>何が起きたかというと、</P>
+            <Ul>
+              <UlLi>
+                <Strong>
+                  左側の{' '}
+                  <InlineBorder>
+                    <EmojiNumber number={2} /> <EmojiNumber number={3} />
+                  </InlineBorder>{' '}
+                  が{' '}
+                  <InlineBorder>
+                    <EmojiNumber number={2} />
+                  </InlineBorder>{' '}
+                  と{' '}
+                  <InlineBorder>
+                    <EmojiNumber number={3} />
+                  </InlineBorder>{' '}
+                  に分かれ、
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  右側にあった <Emoji>✖️</Emoji> と <BlankNumber star /> が、
+                  <InlineBorder>
+                    <EmojiNumber number={2} />
+                  </InlineBorder>{' '}
+                  と{' '}
+                  <InlineBorder>
+                    <EmojiNumber number={3} />
+                  </InlineBorder>{' '}
+                  それぞれにコピーされました。
+                </Strong>
+              </UlLi>
+            </Ul>
           </>
         )
       }
