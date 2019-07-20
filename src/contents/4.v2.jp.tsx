@@ -50,6 +50,18 @@ export default () => (
                 <Emoji>✨</Emoji>
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            とりあえず
+            <H args={{ name: 'play' }} /> してみる
+          </>
+        ),
+        content: (
+          <>
             <P>
               これを
               <H args={{ name: 'play' }} />

@@ -122,6 +122,7 @@ import Emoji2797 from 'src/components/Twemoji/2797'
 import Emoji27a1 from 'src/components/Twemoji/27a1'
 import Emoji2b05 from 'src/components/Twemoji/2b05'
 import Emoji2b07 from 'src/components/Twemoji/2b07'
+import Emoji2b50 from 'src/components/Twemoji/2b50'
 import Emoji2b55 from 'src/components/Twemoji/2b55'
 import Emoji30ZZ20e3 from 'src/components/Twemoji/30-20e3'
 import Emoji31ZZ20e3 from 'src/components/Twemoji/31-20e3'
@@ -257,6 +258,7 @@ export default {
   '27a1': Emoji27a1,
   '2b05': Emoji2b05,
   '2b07': Emoji2b07,
+  '2b50': Emoji2b50,
   '2b55': Emoji2b55,
   '30-20e3': Emoji30ZZ20e3,
   '31-20e3': Emoji31ZZ20e3,
