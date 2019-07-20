@@ -17,6 +17,7 @@ import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import BlankNumber from 'src/components/BlankNumber'
 import InlineBorder from 'src/components/InlineBorder'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -128,9 +129,6 @@ export default () => (
               といった簡単な足し算をするときも、計算箱に頼っていたのです。
             </P>
             <EmojiSeparator emojis={['🙂', '🎁', '➕']} />
-            <P>
-              次は、足し算「<Strong>以外</Strong>」の計算箱も見ていきましょう。
-            </P>
           </>
         )
       },
@@ -139,7 +137,9 @@ export default () => (
         content: (
           <>
             <P>
-              続いてこちらが、「<Strong>掛け算の計算箱</Strong>
+              次は、足し算「<Strong>以外</Strong>
+              」の計算箱も見ていきましょう。こちらが、「
+              <Strong>掛け算の計算箱</Strong>
               」です。
               <Strong>
                 <H args={{ name: 'play' }} />
@@ -181,6 +181,10 @@ export default () => (
             </P>
             <R.Wtax />
             <P>
+              というわけで、
+              <EmojiNumber number={1} /> が残りました。
+            </P>
+            <P>
               <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
               で割ると「
               <EmojiNumber number={2} /> 余り <EmojiNumber number={1} />
@@ -190,11 +194,72 @@ export default () => (
               </Strong>{' '}
               が残るというわけです。
             </P>
-            <Hr />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              ちゃんと理解できたか、
+              <H args={{ name: 'yesNoQuiz' }} />
+              で確かめてみましょう。
+              <H args={{ name: 'lookAtThisMathBox' }} />
+              。今年は2019年なので、上に
+              <EmojiNumber number={2019} />
+              が入っています。
+            </P>
+            <R.Ucys />
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndMathBoxQuestion' }} />
+            </P>
+            <R.Xapy />
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Fxgq />
+            <P>
+              というわけで、
+              <EmojiNumber number={3} /> が残りました。
+            </P>
+            <P>
+              <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
+              で割ると「
+              <EmojiNumber number={504} /> 余り <EmojiNumber number={3} />
+              」になるので、計算箱には<Strong>余りの</Strong>{' '}
+              <EmojiNumber number={3} /> が残るというわけです。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>次のページへ！</>,
+        content: (
+          <>
             <P>
               ここまでは、単純な計算ができる計算箱を紹介してきました。次は、もう少し複雑な計算箱を見てみましょう！
               <Emoji>😉</Emoji>
             </P>
+            <NextLessonButton />
           </>
         )
       },
@@ -202,6 +267,10 @@ export default () => (
         title: <>条件分岐の計算箱</>,
         content: (
           <>
+            <P>
+              ここまでは、単純な計算ができる計算箱を紹介してきました。次は、もう少し複雑な計算箱を見てみましょう！
+              <Emoji>😉</Emoji>
+            </P>
             <P>
               次は、こちらの計算箱をご覧ください。この計算箱には「
               <Strong>条件分岐の計算箱</Strong>

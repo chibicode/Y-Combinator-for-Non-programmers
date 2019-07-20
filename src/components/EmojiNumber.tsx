@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
-import numberEmojiMapping, {
-  numberEmojiMappingMultipleDigits
-} from 'src/lib/numberEmojiMapping'
+import numberEmojiMapping from 'src/lib/numberEmojiMapping'
 
 interface EmojiNumberProps {
   number: number
   size: EmojiProps['size']
 }
+
+const numberToDigits = (x: number) => Array.from(String(x), Number)
 
 const EmojiNumber = ({ number, size }: EmojiNumberProps) => {
   if (number < 10) {
@@ -22,16 +22,16 @@ const EmojiNumber = ({ number, size }: EmojiNumberProps) => {
           padding-left: 0.1em;
         `}
       >
-        {numberEmojiMappingMultipleDigits[number].map((emoji, index) => (
+        {numberToDigits(number).map((digit, index) => (
           <Emoji
             size={size}
-            key={`${emoji}-${index}`}
+            key={`${digit}-${index}`}
             cssOverrides={css`
               margin-right: -0.1em;
               margin-left: -0.1em;
             `}
           >
-            {emoji}
+            {numberEmojiMapping[digit]}
           </Emoji>
         ))}
       </span>

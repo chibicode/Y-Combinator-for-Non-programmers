@@ -2406,6 +2406,24 @@ export const wtax: ExpressionRunnerShorthandConfig = {
   ]
 }
 
+export const ucys: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ltys
+}
+
+export const xapy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pduk
+}
+
+export const fxgq: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.ltys,
+    initialExpressionContainers.qsqs
+  ]
+}
+
 export const wunw: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.nyhe,

@@ -1045,6 +1045,28 @@ export const zrwn = initializeDoneExpressionContainer({
   shorthandNumber: 1
 })
 
+export const ltys = initializeExpressionContainer([
+  {
+    shorthandNumber: 4
+  },
+  [
+    {
+      shorthandBinary: 'remainder'
+    },
+    {
+      shorthandNumber: 2019
+    }
+  ]
+])
+
+export const pduk = initializeDoneExpressionContainer({
+  shorthandNumber: 0
+})
+
+export const qsqs = initializeDoneExpressionContainer({
+  shorthandNumber: 3
+})
+
 export const ognb = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'questionV2',
