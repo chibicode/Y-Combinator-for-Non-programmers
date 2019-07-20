@@ -92,7 +92,7 @@ export default () => (
               size="mdsm"
               nodes={[
                 <EmojiNumber number={2019} />,
-                <Emoji>➡️</Emoji>,
+                <Emoji size="xs">➡️</Emoji>,
                 <EmojiNumber number={28} />
               ]}
             />
@@ -150,7 +150,7 @@ export default () => (
               size="mdsm"
               nodes={[
                 <EmojiNumber number={2020} />,
-                <Emoji>➡️</Emoji>,
+                <Emoji size="xs">➡️</Emoji>,
                 <EmojiNumber number={29} />
               ]}
             />
@@ -196,7 +196,7 @@ export default () => (
               noTopMargin
               nodes={[
                 <EmojiNumber number={28} />,
-                <Emoji>🆚</Emoji>,
+                <Emoji size="xs">🆚</Emoji>,
                 <EmojiNumber number={29} />
               ]}
             />
@@ -279,7 +279,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <EmojiNumber number={28} />,
-                <Emoji>🆚</Emoji>,
+                <Emoji size="xs">🆚</Emoji>,
                 <EmojiNumber number={29} />
               ]}
             />

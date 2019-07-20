@@ -93,42 +93,122 @@ export default () => (
             <R.Eqvz />
             <P>
               「<InlineHeader>繰り返しの計算箱</InlineHeader>
-              」はまず、次のようになります。
+              」はまず、次のように変化します。
             </P>
             <R.Hawd />
-            <P>何が起きたかというと、</P>
-            <Ul>
-              <UlLi>
-                <Strong>
-                  左側の{' '}
-                  <InlineBorder>
-                    <EmojiNumber number={2} /> <EmojiNumber number={3} />
-                  </InlineBorder>{' '}
-                  が{' '}
-                  <InlineBorder>
-                    <EmojiNumber number={2} />
-                  </InlineBorder>{' '}
-                  と{' '}
-                  <InlineBorder>
-                    <EmojiNumber number={3} />
-                  </InlineBorder>{' '}
-                  に分かれ、
-                </Strong>
-              </UlLi>
-              <UlLi>
-                <Strong>
-                  右側にあった <Emoji>✖️</Emoji> と <BlankNumber star /> が、
-                  <InlineBorder>
-                    <EmojiNumber number={2} />
-                  </InlineBorder>{' '}
-                  と{' '}
-                  <InlineBorder>
-                    <EmojiNumber number={3} />
-                  </InlineBorder>{' '}
-                  それぞれにコピーされました。
-                </Strong>
-              </UlLi>
-            </Ul>
+            <P>
+              つまり、
+              <Strong>
+                左側の{' '}
+                <InlineBorder>
+                  <EmojiNumber number={2} /> <EmojiNumber number={3} />
+                </InlineBorder>{' '}
+                が{' '}
+                <InlineBorder>
+                  <EmojiNumber number={2} />
+                </InlineBorder>{' '}
+                と{' '}
+                <InlineBorder>
+                  <EmojiNumber number={3} />
+                </InlineBorder>{' '}
+                に分かれ、
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <InlineBorder small>
+                  <EmojiNumber number={2} /> <EmojiNumber number={3} />
+                </InlineBorder>,
+                <Emoji size="xs">➡️</Emoji>,
+                <InlineBorder small>
+                  <EmojiNumber number={2} />
+                </InlineBorder>,
+                <InlineBorder small>
+                  <EmojiNumber number={3} />
+                </InlineBorder>
+              ]}
+            />
+            <P>
+              さらに、
+              <Strong>
+                右側にあった <Emoji>✖️</Emoji> と <BlankNumber star /> が、
+                <InlineBorder>
+                  <EmojiNumber number={2} />
+                </InlineBorder>{' '}
+                と{' '}
+                <InlineBorder>
+                  <EmojiNumber number={3} />
+                </InlineBorder>{' '}
+                の右側それぞれにコピーされました。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              noBottomMargin
+              nodes={[
+                <Emoji>✖️</Emoji>,
+                <BlankNumber star />,
+                <Emoji size="xs">➡️</Emoji>,
+                <InlineBorder small>
+                  <EmojiNumber number={2} />
+                </InlineBorder>
+              ]}
+            />
+            <EmojiSeparator
+              noTopMargin
+              nodes={[
+                <Emoji>✖️</Emoji>,
+                <BlankNumber star />,
+                <Emoji size="xs">➡️</Emoji>,
+                <InlineBorder small>
+                  <EmojiNumber number={3} />
+                </InlineBorder>
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>繰り返しの計算箱の仕組み、その2</>,
+        content: (
+          <>
+            <P>
+              続いて、今度は右側にある
+              <Strong>
+                星印 <BlankNumber star />
+              </Strong>{' '}
+              に注目してみてください。
+            </P>
+            <R.Hawd />
+            <P>計算箱は、次はこのように変化します。</P>
+            <R.Prfy />
+            <P>
+              つまり、
+              <Strong>
+                星印だった部分 <BlankNumber star /> が、それぞれ左側にあった{' '}
+                <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+                に入れ替わっています。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              noBottomMargin
+              nodes={[
+                <InlineBorder small>
+                  <EmojiNumber number={2} />
+                </InlineBorder>,
+                <Emoji size="xs">➡️</Emoji>,
+                <BlankNumber star />
+              ]}
+            />
+            <EmojiSeparator
+              noTopMargin
+              nodes={[
+                <InlineBorder small>
+                  <EmojiNumber number={3} />
+                </InlineBorder>,
+                <Emoji size="xs">➡️</Emoji>,
+                <BlankNumber star />
+              ]}
+            />
           </>
         )
       }

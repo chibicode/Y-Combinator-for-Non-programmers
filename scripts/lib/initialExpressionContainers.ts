@@ -1452,3 +1452,27 @@ export const gwwy = initializeExpressionContainer([
     shorthandNumber: 1
   }
 ])
+
+export const ygid = initializeExpressionContainer([
+  {
+    shorthandNumber: 3
+  },
+  [
+    {
+      shorthandBinary: 'mult'
+    },
+    [
+      {
+        shorthandNumber: 2
+      },
+      [
+        {
+          shorthandBinary: 'mult'
+        },
+        {
+          shorthandNumber: 1
+        }
+      ]
+    ]
+  ]
+])

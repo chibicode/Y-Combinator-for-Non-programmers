@@ -6,9 +6,11 @@ import Emoji from 'src/components/Emoji'
 
 const InlineBorder = ({
   type,
+  small,
   children
 }: {
   type?: 'trueCase' | 'falseCase' | 'condition'
+  small?: boolean
   children?: React.ReactNode
 }) => {
   const color = type
@@ -20,12 +22,19 @@ const InlineBorder = ({
     : colors('purple100')
   return (
     <span
-      css={css`
-        display: inline-block;
-        background: ${color};
-        padding: 0 0.25em;
-        border: 2px solid ${colors('indigo300')};
-      `}
+      css={[
+        css`
+          display: inline-block;
+          background: ${color};
+          padding: 0 0.25em;
+          border: 2px solid ${colors('indigo300')};
+        `,
+        small &&
+          css`
+            font-size: 0.75em;
+            transform: translateY(-0.125em);
+          `
+      ]}
     >
       {type === 'trueCase' && <EmojiNumber number={0} />}
       {type === 'falseCase' && <Emoji>🔢</Emoji>}

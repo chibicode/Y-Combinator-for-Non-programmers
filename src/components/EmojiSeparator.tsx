@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
-import React, { Fragment } from 'react'
+import React from 'react'
 import Emoji from 'src/components/Emoji'
 import { radii, colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
 import { VariableNames } from 'src/types/VariableNames'
@@ -31,11 +31,22 @@ const fontSize = (size: EmojiSeparatorProps['size']) =>
 
 const margins = (size: EmojiSeparatorProps['size']) =>
   ({
-    sm: [spaces(1.5), spaces(1.75)],
-    mdsm: [spaces(1.25), spaces(1.5)],
-    md: [spaces(1), spaces(1.25)],
-    lg: [spaces(0.5), spaces(0.75)]
+    sm: [spaces(1.75), spaces(2)],
+    mdsm: [spaces(1.5), spaces(1.75)],
+    md: [spaces(1.25), spaces(1.5)],
+    lg: [spaces(0.75), spaces(1)]
   }[size])
+
+const SideSpace = ({ children }: { children: React.ReactNode }) => (
+  <span
+    css={css`
+      margin-left: 0.1em;
+      margin-right: 0.1em;
+    `}
+  >
+    {children}
+  </span>
+)
 
 const DotDotDot = () => (
   <span
@@ -82,35 +93,47 @@ const EmojiSeparator = ({
     ]}
   >
     <>
-      {addDotDotDotFront && (
-        <>
-          <DotDotDot />{' '}
-        </>
-      )}
-      {letters
-        ? letters.map((letter, index) => (
-            <Fragment key={`${letter}${index}`}>
-              <Emoji size="sm">{letterEmojiMapping[letter]}</Emoji>{' '}
-            </Fragment>
-          ))
-        : nodes
-        ? nodes.map((node, index) => (
-            <Fragment key={`node-${index}`}>
-              <span
-                css={css`
-                  font-size: ${1 / 1.2}em;
-                `}
-              >
-                {node}
-              </span>{' '}
-            </Fragment>
-          ))
-        : emojis.map((emoji, index) => (
-            <Fragment key={`${emoji}${index}`}>
-              <Emoji size="sm">{emoji}</Emoji>{' '}
-            </Fragment>
-          ))}
-      {addDotDotDotEnd && <DotDotDot />}
+      <span
+        css={css`
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        `}
+      >
+        {addDotDotDotFront && (
+          <SideSpace>
+            <DotDotDot />
+          </SideSpace>
+        )}
+        {letters
+          ? letters.map((letter, index) => (
+              <SideSpace key={`${letter}${index}`}>
+                <Emoji size="sm">{letterEmojiMapping[letter]}</Emoji>
+              </SideSpace>
+            ))
+          : nodes
+          ? nodes.map((node, index) => (
+              <SideSpace key={`node-${index}`}>
+                <span
+                  css={css`
+                    font-size: ${1 / 1.2}em;
+                  `}
+                >
+                  {node}
+                </span>
+              </SideSpace>
+            ))
+          : emojis.map((emoji, index) => (
+              <SideSpace key={`${emoji}${index}`}>
+                <Emoji size="sm">{emoji}</Emoji>
+              </SideSpace>
+            ))}
+        {addDotDotDotEnd && (
+          <SideSpace>
+            <DotDotDot />
+          </SideSpace>
+        )}
+      </span>
       {description && (
         <div
           css={css`
