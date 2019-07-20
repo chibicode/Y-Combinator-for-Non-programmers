@@ -578,7 +578,7 @@ export const fatm: ExpressionRunnerShorthandConfig = {
 export const fdek: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xrvm,
-  caption: { name: 'addMathBox' }
+  caption: { name: 'addMathBoxCaption' }
 }
 
 export const fhlw: ExpressionRunnerShorthandConfig = {

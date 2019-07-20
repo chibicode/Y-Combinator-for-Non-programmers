@@ -124,7 +124,7 @@ export interface HProps {
     | { name: 'csDescription' }
     | { name: 'numberOfAIsSecretCodeCaption' }
     | { name: 'mentionRightArrow' }
-    | { name: 'addMathBox' }
+    | { name: 'addMathBoxCaption' }
     | { name: 'remainder' }
     | { name: 'conditionalMathBox' }
     | { name: 'lookAtThisMathBox' }

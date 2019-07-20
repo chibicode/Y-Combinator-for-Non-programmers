@@ -1,441 +1,305 @@
 import React from 'react'
 import {
   P,
-  Em,
   Strong,
+  Em,
   InlineHeader,
   Ul,
   UlLi
 } from 'src/components/ContentTags'
-import Emoji from 'src/components/Emoji'
-import EmojiSeparator from 'src/components/EmojiSeparator'
-import EmojiNumber from 'src/components/EmojiNumber'
-import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import H from 'src/components/H'
+import EmojiSeparator from 'src/components/EmojiSeparator'
+import Emoji from 'src/components/Emoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 import BlankNumber from 'src/components/BlankNumber'
+import InlineBorder from 'src/components/InlineBorder'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>計算箱の使い道は？</>,
+        title: <>条件分岐の計算箱</>,
         content: (
           <>
             <P>
-              <H args={{ name: 'episodeWelcomeText' }} />
-              今回は、
-              <Strong>
-                前回紹介した計算箱を、人々が何のために使っていたのか
-              </Strong>
-              を説明します。
+              今回は、少し複雑な計算箱を見ていきます！こちらの計算箱をご覧ください。この計算箱には「
+              <Strong>条件分岐の計算箱</Strong>
+              」という名がついており、名前の理由は後ほど説明します。
             </P>
-            <R.Yhmp />
+            <R.Ymmm />
+            <P>
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の特徴として、
+            </P>
+            <Ul>
+              <UlLi>
+                左側に <InlineBorder type="falseCase" />{' '}
+                <InlineBorder type="condition" />{' '}
+                <InlineBorder type="trueCase" /> という3種類の印があり、
+              </UlLi>
+              <UlLi>
+                それぞれの印の横にハテナマーク <BlankNumber /> が入っています。
+              </UlLi>
+            </Ul>
+            <P>
+              この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」は、いったいどんな計算ができるのでしょう？
+              <Emoji>🤔</Emoji>
+            </P>
           </>
         )
       },
       {
         title: (
           <>
-            <EmojiNumber number={2019} /> を入れてみる
+            とりあえず
+            <H args={{ name: 'play' }} /> してみる
           </>
         ),
         content: (
           <>
             <P>
-              試しに、
-              <Strong>
-                <BlankNumber />
-                に何か数字を入れてみましょう。
-              </Strong>
-              本稿を公開したのは2019年なので、
-              <EmojiNumber number={2019} /> を入れてみます。
-              <H args={{ name: 'yellowHighlighted' }} />
+              とりあえず、{' '}
+              <Em>
+                それぞれの <BlankNumber /> に適当な数字を入れ、
+              </Em>
+              <H args={{ name: 'play' }} />
+              したらどうなるか試してみましょう。
             </P>
-            <R.Drbt />
             <P>
-              前回説明した通り、
-              <Strong>
-                先に
-                <H
-                  args={{ name: 'conditionSectionName', type: 'condition' }}
-                />{' '}
-                の中にある、割り算の余りを計算します。
-              </Strong>
-              <H args={{ name: 'yellowHighlighted' }} />
-            </P>
-            <R.Qmds />
-            <P>
-              <EmojiNumber number={2019} /> を <EmojiNumber number={4} />{' '}
-              で割ると、余りは <EmojiNumber number={3} /> になります。
-              <H args={{ name: 'yellowHighlighted' }} />
-            </P>
-            <R.Lfyt />
-            <P>
-              <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
-              が <EmojiNumber number={0} /> ではないので、
-              <H
-                args={{ name: 'conditionSectionName', type: 'falseCase' }}
-              />{' '}
-              の中にある <EmojiNumber number={28} />{' '}
-              が最終的に残るというわけです。
-            </P>
-            <R.Vrko />
-            <P>
-              まとめると、最初に
-              <BlankNumber /> に <EmojiNumber number={2019} />{' '}
-              を入れると、結果は <EmojiNumber number={28} /> になります。
-            </P>
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <EmojiNumber number={2019} />,
-                <Emoji>➡️</Emoji>,
-                <EmojiNumber number={28} />
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <EmojiNumber number={2020} /> を入れてみる
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              では、翌年の
-              <EmojiNumber number={2020} /> を入れてみるとどうなるでしょう？
-              <H args={{ name: 'yellowHighlighted' }} />
-            </P>
-            <R.Ouis />
-            <P>
-              今回も、
-              <Strong>
-                先に
-                <H
-                  args={{ name: 'conditionSectionName', type: 'condition' }}
-                />{' '}
-                の中にある、割り算の余りを計算します。
-              </Strong>
-              <H args={{ name: 'yellowHighlighted' }} />
-            </P>
-            <R.Givg />
-            <P>
-              <EmojiNumber number={2020} /> を <EmojiNumber number={4} />{' '}
-              で割ると、余りは <EmojiNumber number={0} /> になります。
-              <H args={{ name: 'yellowHighlighted' }} />
-            </P>
-            <R.Sgds />
-            <P>
-              <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
-              が <EmojiNumber number={0} /> ではないので、
-              <H
-                args={{ name: 'conditionSectionName', type: 'trueCase' }}
-              />{' '}
-              の中にある <EmojiNumber number={29} />{' '}
-              が最終的に残るというわけです。
-            </P>
-            <R.Lvau />
-            <P>
-              まとめると、最初に
-              <BlankNumber /> に <EmojiNumber number={2020} />{' '}
-              を入れると、結果は <EmojiNumber number={29} /> になります。
-            </P>
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <EmojiNumber number={2020} />,
-                <Emoji>➡️</Emoji>,
-                <EmojiNumber number={29} />
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>ということは…</>,
-        content: (
-          <>
-            <P>
-              まとめると、こちらの計算箱の
-              <BlankNumber />
-              の部分に、
-            </P>
-            <R.Yhmp />
-            <Ul>
-              <UlLi>
-                <EmojiNumber number={2019} /> を入れると、結果は{' '}
-                <EmojiNumber number={28} /> になります。
-              </UlLi>
-              <UlLi>
-                <EmojiNumber number={2020} /> を入れると、結果は{' '}
-                <EmojiNumber number={29} /> になります。
-              </UlLi>
-            </Ul>
-            <P>
-              では、ここで質問です。「
-              <Strong>2019年には28個あり、2020年には29個あるもの</Strong>
-              」は何でしょう？
-            </P>
-            <EmojiSeparator
-              size="mdsm"
-              noBottomMargin
-              nodes={[
-                <EmojiNumber number={2019} />,
-                <Emoji>🤔</Emoji>,
-                <EmojiNumber number={2020} />
-              ]}
-            />
-            <EmojiSeparator
-              size="mdsm"
-              noTopMargin
-              nodes={[
-                <EmojiNumber number={28} />,
-                <Emoji>🆚</Emoji>,
-                <EmojiNumber number={29} />
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>答えは、2月の日数</>,
-        content: (
-          <>
-            <P>
-              答えは、<Strong>2月の日数</Strong>です。
-            </P>
-            <EmojiSeparator emojis={['❓', '2️⃣', '🗓']} />
-            <Ul>
-              <UlLi>
-                <EmojiNumber number={2019} /> 年の2月は{' '}
-                <EmojiNumber number={28} /> 日まであり、
-              </UlLi>
-              <UlLi>
-                <EmojiNumber number={2020} /> 年の2月は{' '}
-                <EmojiNumber number={29} /> 日まであります。
-              </UlLi>
-            </Ul>
-            <P>
-              つまりこの計算箱は、「
-              <Strong>
-                <BlankNumber />
-                に入れた年の2月には何日まであるか
-              </Strong>
-              」を自動で計算してくれるのです。
-            </P>
-            <R.Yhmp />
-          </>
-        )
-      },
-
-      {
-        title: <>うるう年</>,
-        content: (
-          <>
-            <P>
-              2月の日数をどうやって計算しているのかというと、
-              <Strong>
-                <EmojiNumber number={4} /> で割ったときの余り
-              </Strong>
-              を計算することによって、「
-              <Strong>その年がうるう年かどうか</Strong>
-              」を確かめているのです。
-            </P>
-            <EmojiSeparator emojis={['❓', '➗', '4️⃣']} />
-            <Ul>
-              <UlLi>
-                <EmojiNumber number={2019} />
-                年は、
-                <EmojiNumber number={4} /> で割ったときの余りが{' '}
-                <Strong>
-                  <EmojiNumber number={0} />{' '}
-                  ではないので、うるう年ではありません。
-                </Strong>
-                <Emoji>❌</Emoji>
-              </UlLi>
-              <UlLi>
-                <EmojiNumber number={2020} />
-                年は、
-                <EmojiNumber number={4} /> で割ったときの余りが{' '}
-                <Strong>
-                  <EmojiNumber number={0} /> なので、うるう年です。
-                </Strong>
-                <Emoji>⭕️</Emoji>
-              </UlLi>
-            </Ul>
-            <P>
-              そしてもちろん、
-              <Strong>
-                うるう年の2月には29日までありますが、それ以外の2月には28日までしかありません。
-              </Strong>
-              このことを利用すれば、その年の2月に何日まであるかを計算できるのです。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <EmojiNumber number={28} />,
-                <Emoji>🆚</Emoji>,
-                <EmojiNumber number={29} />
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>うるう年の計算箱</>,
-        content: (
-          <>
-            <P>
-              先ほどの計算箱は、この「<Em>うるう年かどうか</Em>
-              」という計算を、
-              <H
-                args={{ name: 'conditionSectionName', type: 'condition' }}
-              />{' '}
-              で行っているのです。
-              <H args={{ name: 'yellowHighlighted' }} />
-            </P>
-            <R.Zysk />
-            <P>
-              うるう年なら
-              <H
-                args={{ name: 'conditionSectionName', type: 'condition' }}
-              />{' '}
-              が <EmojiNumber number={0} /> になるので、最後は
-              <H
-                args={{ name: 'conditionSectionName', type: 'trueCase' }}
-              />{' '}
-              に入っている <EmojiNumber number={29} /> が残ります。
-            </P>
-            <R.Voxy />
-            <ExpressionRunnerSeparator />
-            <R.Lvau />
-            <P>
-              うるう年でなければ、
-              <H
-                args={{ name: 'conditionSectionName', type: 'falseCase' }}
-              />{' '}
-              に入っている <EmojiNumber number={28} /> が残ります。
-            </P>
-            <R.Vrko />
-            <P>
-              このようにして、
-              <Strong>その年の2月にある日数</Strong>
-              を自動的に計算してくれるのです！
-            </P>
-            <EmojiSeparator emojis={['😉', '2️⃣', '🗓']} />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <EmojiNumber number={2021} /> を入れてみる
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              例えば、「<Strong>2021年の2月には何日まであるだろう？</Strong>
-              」と思ったら、
-            </P>
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <Emoji>🤔</Emoji>,
-                <EmojiNumber number={2021} />,
-                <Emoji>🗓</Emoji>,
-                <EmojiNumber number={2} />
-              ]}
-            />
-            <P>
-              下のように、先ほどの計算箱の <BlankNumber /> に{' '}
-              <EmojiNumber number={2021} />{' '}
-              を入れれば、自動で計算してくれるのです。
+              試しに、上から順に <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={2} /> <EmojiNumber number={3} />{' '}
+              を入れてみたので、
               <H args={{ name: 'pressPlay' }} />
             </P>
-            <R.Zqum />
+            <R.Iatt />
             <P>
-              最後に <EmojiNumber number={28} />{' '}
-              が残りました。ということは、2021年の2月には28日まであるということです。
+              答えは <EmojiNumber number={1} />{' '}
+              になりました。では、どうしてこうなったか説明しましょう！
             </P>
-            <EmojiSeparator
-              size="mdsm"
-              nodes={[
-                <EmojiNumber number={2021} />,
-                <Emoji>🗓</Emoji>,
-                <EmojiNumber number={2} />,
-                <EmojiNumber number={28} />
-              ]}
-            />
           </>
         )
       },
       {
-        type: 'sideNote',
-        title: <>余談: うるう年の例外</>,
+        title: (
+          <>
+            真ん中が <EmojiNumber number={0} /> かどうか
+          </>
+        ),
         content: (
           <>
             <P>
-              <InlineHeader>ちなみに:</InlineHeader>{' '}
-              <Strong>4で割り切れても、うるう年ではない年がある</Strong>
-              のはご存知でしたか？
-            </P>
-            <EmojiSeparator emojis={['🤔', '➗', '4️⃣']} />
-            <P>
+              「<InlineHeader>条件分岐の計算箱</InlineHeader>」はまず、
               <Strong>
-                たとえ4で割り切れても、「100で割り切れて、400で割り切れない年」は、うるう年ではありません。
+                <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
+                に入っている数字が <EmojiNumber number={0} /> かどうか
+              </Strong>
+              チェックします。
+            </P>
+            <R.Vozu />
+            <P>
+              <H args={{ name: 'conditionSectionName', type: 'condition' }} />{' '}
+              に入っている数字は <EmojiNumber number={2} /> なので、{' '}
+              <Strong>
+                <EmojiNumber number={0} /> ではありません。
               </Strong>
             </P>
             <P>
-              たとえば、<Strong>2100年</Strong>
-              はうるう年ではありません。なぜなら、
+              このように真ん中が <EmojiNumber number={0} /> ではない場合、
+              <Strong>
+                <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
+                に入っている数字が最終的に残ります。
+              </Strong>
+            </P>
+            <R.Rjfy />
+            <P>
+              だから、{' '}
+              <H args={{ name: 'conditionSectionName', type: 'falseCase' }} />{' '}
+              に入っている <EmojiNumber number={1} /> が残る、というわけです。
+            </P>
+            <R.Toht />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            真ん中が <EmojiNumber number={0} /> である場合
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、こちらの「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の場合はどうでしょう？
+            </P>
+            <R.Plbv />
+            <P>
+              こちらも、真ん中の数字が <EmojiNumber number={0} />{' '}
+              かどうかチェックします。
+            </P>
+            <R.Qcmh />
+            <P>
+              今回は真ん中が <EmojiNumber number={0} />{' '}
+              ですね。この場合は前回と逆で、
+              <Strong>
+                <H args={{ name: 'conditionSectionName', type: 'trueCase' }} />{' '}
+                に入っている数字が最終的に残ります。
+              </Strong>
+            </P>
+            <R.Guhy />
+            <P>
+              だから、
+              <H
+                args={{ name: 'conditionSectionName', type: 'trueCase' }}
+              />{' '}
+              に入っている <EmojiNumber number={5} /> が残る、というわけです。
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              まとめると、この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の法則は以下の通りです。
+            </P>
+            <R.Ymmm />
+            <P>
+              <Em>
+                まず、
+                <H
+                  args={{ name: 'conditionSectionName', type: 'condition' }}
+                />{' '}
+                の中にある数字が <EmojiNumber number={0} />{' '}
+                かどうかチェックします。
+              </Em>
             </P>
             <Ul>
-              <UlLi>2100は4で割り切れるが、</UlLi>
               <UlLi>
-                2100は<Em>100で割り切れて</Em>、
+                <Em>
+                  もし <EmojiNumber number={0} /> なら、{' '}
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'trueCase' }}
+                  />{' '}
+                  の中にある数字が残ります。
+                </Em>
               </UlLi>
               <UlLi>
-                2100は<Em>400で割り切れないから</Em>。
+                <Em>
+                  もし <EmojiNumber number={0} /> でなければ、
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'falseCase' }}
+                  />{' '}
+                  の中にある数字が残ります。
+                </Em>
               </UlLi>
             </Ul>
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
             <P>
-              同じように、2200年、2300年もうるう年ではありません。ただし、2400年は400で割り切れるので、うるう年となります。
-            </P>
-            <P>
-              今回は時間の都合上無視しましたが、厳密にはこういう例外があるのです。
+              「
+              <Em>
+                真ん中が <EmojiNumber number={0} /> かどうか？
+              </Em>
+              」という「
+              <Strong>条件</Strong>」によって、上下に「
+              <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
+              の計算箱」という名前がついているのです。
             </P>
           </>
         )
       },
       {
-        title: <>さらに高度な計算箱を紹介</>,
+        title: <>組み合わせも可能</>,
         content: (
           <>
             <P>
-              条件分岐の計算箱には、「2月に何日まであるか」を計算するという使い道があることがわかりました。
-            </P>
-            <EmojiSeparator emojis={['2️⃣', '🤔', '🗓']} />
-            <P>
-              ここでは紹介しませんが、
               <Strong>
-                条件分岐の計算箱の使い道は他にもたくさんあります。
+                計算箱は、他の計算箱と組み合わせることもできます。
               </Strong>
-              <Em>
-                計算箱がある世界の人々は、条件分岐の計算箱を工夫して使いながら問題を解決していたのです。
-              </Em>
+              たとえば下の計算箱は、「<Strong>条件分岐の計算箱</Strong>」と、「
+              <Strong>割ったときの余りがわかる計算箱</Strong>
+              」を組み合わせた計算箱です。
+            </P>
+            <R.Jehz />
+            <P>
+              まず、
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
+              に入っている「
+              <Strong>
+                <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+                で割ったときの余りがわかる計算箱
+              </Strong>
+              」を計算します。
+              <H args={{ name: 'yellowHighlighted' }} />
+            </P>
+            <R.Hhtl />
+            <P>
+              <EmojiNumber number={5} /> を <EmojiNumber number={2} />{' '}
+              で割ると余りは <EmojiNumber number={1} /> になるので、
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
+              が <EmojiNumber number={1} /> になります。
+              <H args={{ name: 'yellowHighlighted' }} />
+            </P>
+            <R.Vbdk />
+            <P>
+              あとは以前と同じです。
+              <H
+                args={{ name: 'conditionSectionName', type: 'condition' }}
+              />{' '}
+              が <EmojiNumber number={0} /> ではないので、
+              <H
+                args={{ name: 'conditionSectionName', type: 'falseCase' }}
+              />{' '}
+              の中にある <EmojiNumber number={4} />{' '}
+              が最終的に残るというわけです。
+            </P>
+            <R.Fwks />
+            <P>
+              このように、計算箱は他の計算箱と組み合わせることもできるのです。
             </P>
             <EmojiSeparator emojis={['🎁', '🤗', '🎁']} />
+          </>
+        )
+      },
+      {
+        title: <>何の役に立つの？</>,
+        content: (
+          <>
             <P>
-              <Em>
-                しかし、これまでに紹介した計算箱では解決できない問題もあります。
-              </Em>
-              というわけで次回は、さらに高度な計算箱を紹介します！
+              ここまで、条件分岐の計算箱をいくつか紹介してきました。
+              <Strong>
+                しかし、条件分岐の計算箱はいったい何の役に立つのでしょうか？
+              </Strong>
+              人々は、条件分岐の計算箱をどんな用途で使っていたのでしょう？
+              <Emoji>🤔</Emoji>
+            </P>
+            <EmojiSeparator emojis={['🔢', '🤔', '0️⃣']} />
+            <P>では、ここで質問です。こちらの計算箱をご覧ください:</P>
+            <R.Yhmp />
+            <P>
+              <InlineHeader>質問:</InlineHeader> 人々は、この計算箱を
+              <Strong>ある目的のために</Strong>使っていました。
+              <Strong>いったい、どんな目的で使っていたのでしょう？</Strong>
+            </P>
+            <EmojiSeparator emojis={['❓', '🎁', '❓']} />
+            <P>
+              答えは次のページにあります。少し考えてみてから、下のボタンを押してください。分からなくても大丈夫です！
+              <Emoji>😉</Emoji>
             </P>
             <NextLessonButton />
           </>

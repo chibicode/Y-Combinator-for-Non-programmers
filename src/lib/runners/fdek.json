@@ -59,7 +59,7 @@
   "speed": 1,
   "showOnlyFocused": false,
   "caption": {
-    "name": "addMathBox"
+    "name": "addMathBoxCaption"
   },
   "hideControls": true,
   "explanationsVisibility": "hidden",

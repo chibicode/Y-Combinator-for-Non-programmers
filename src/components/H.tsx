@@ -1735,7 +1735,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'addMathBox') {
+  if (args.name === 'addMathBoxCaption') {
     if (locale === 'en') {
       return <>?</>
     } else {
