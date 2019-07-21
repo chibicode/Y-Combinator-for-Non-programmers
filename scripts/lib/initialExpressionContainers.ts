@@ -1476,3 +1476,19 @@ export const ygid = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const gskq = initializeExpressionContainer([
+  {
+    begin: 2,
+    end: 4,
+    child: [
+      'blankNumber',
+      {
+        shorthandBinary: 'mult'
+      }
+    ]
+  },
+  {
+    shorthandNumber: 1
+  }
+])

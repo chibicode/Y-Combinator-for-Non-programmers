@@ -235,9 +235,32 @@ export default () => (
         ),
         content: (
           <>
+            <P>最初から順に見ていくと、次のようになります。</P>
+            <R.Eqvz />
             <ExpressionRunnerSeparator />
+            <R.Hawd />
             <ExpressionRunnerSeparator />
+            <R.Prfy />
             <ExpressionRunnerSeparator />
+            <R.Nxsa />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、別の例を見てみましょう。
+              <H args={{ name: 'lookAtThisMathBox' }} />:
+            </P>
+            <R.Yzdy />
+            <P>これが</P>
           </>
         )
       }
