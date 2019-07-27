@@ -4,7 +4,8 @@ import {
   isExecutableCallRegular,
   isCall,
   isExecutableCallBinary,
-  isConditional
+  isConditional,
+  isExecutableCallShorthand
 } from 'src/lib/expressionTypeGuards'
 import {
   CallExpression,
@@ -27,13 +28,18 @@ import {
   MagicalVariable,
   StepMagicalVariable,
   ExecutableStepCallMagical,
-  ExecutableStepCallBinary
+  ExecutableStepCallBinary,
+  ExecutableCallShorthand,
+  ExecutableStepCallShorthand,
+  VariableShorthandFunc,
+  StepVariableShorthandFunc
 } from 'src/types/ExpressionTypes'
 
 function toActive(
   e: VariableShorthandBinary
 ): StepVariableShorthandBinary<'active'>
 function toActive(e: MagicalVariable): StepMagicalVariable<'active'>
+function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
 function toActive(e: ConditionalExpression): StepConditional<'active'>
@@ -129,11 +135,19 @@ export default function stepToActive(
   e: ExecutableCallBinary
 ): ExecutableStepCallBinary<'active'>
 export default function stepToActive(
-  e: ExecutableCallRegular | ExecutableCallMagical | ExecutableCallBinary
+  e: ExecutableCallShorthand
+): ExecutableStepCallShorthand<'active'>
+export default function stepToActive(
+  e:
+    | ExecutableCallRegular
+    | ExecutableCallMagical
+    | ExecutableCallBinary
+    | ExecutableCallShorthand
 ):
   | ExecutableStepCallRegular<'active'>
   | ExecutableStepCallMagical<'active'>
-  | ExecutableStepCallBinary<'active'> {
+  | ExecutableStepCallBinary<'active'>
+  | ExecutableStepCallShorthand<'active'> {
   if (isExecutableCallBinary(e)) {
     return {
       ...e,
@@ -153,6 +167,25 @@ export default function stepToActive(
           bottomRightBadgeType: 'none',
           highlightType: 'active'
         }
+      },
+      func: {
+        ...e.func,
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'none',
+        highlightType: 'active',
+        emphasizePriority: true
+      }
+    }
+  } else if (isExecutableCallShorthand(e)) {
+    return {
+      ...e,
+      state: 'active',
+      arg: {
+        ...e.arg,
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'none',
+        highlightType: 'active',
+        emphasizePriority: true
       },
       func: {
         ...e.func,

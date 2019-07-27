@@ -397,11 +397,11 @@ type ExecutableMagical<
 type ExecutableShorthand<
   S extends CallStates,
   F extends VariableShorthandFunc,
-  E extends Expression
+  N extends VariableShorthandNumber
 > = CallExpression &
   ({
     readonly state: S
-    readonly arg: E
+    readonly arg: N
     readonly func: F
   })
 
@@ -463,7 +463,11 @@ export interface NonExecutableStepCall<C extends CallStates = 'default'>
 export interface ExecutableStepCallRegular<C extends CallStates = 'default'>
   extends ExecutableRegular<C, StepFunction<C>, StepChild<C>> {}
 export interface ExecutableStepCallShorthand<C extends CallStates = 'default'>
-  extends ExecutableShorthand<C, StepVariableShorthandFunc<C>, StepChild<C>> {}
+  extends ExecutableShorthand<
+    C,
+    StepVariableShorthandFunc<C>,
+    StepVariableShorthandNumber<C>
+  > {}
 export interface ExecutableStepCallMagical<C extends CallStates = 'default'>
   extends ExecutableMagical<C, StepMagicalVariable<C>, StepChild<C>> {}
 export interface ExecutableStepCallBinary<C extends CallStates = 'default'>

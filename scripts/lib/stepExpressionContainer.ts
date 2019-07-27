@@ -11,7 +11,8 @@ import {
   isCall,
   isExecutableCallRegular,
   isVariableShorthandUnaryNumber,
-  isExecutableCallMagical
+  isExecutableCallMagical,
+  isExecutableCallBinary
 } from 'src/lib/expressionTypeGuards'
 import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
 import {
@@ -46,7 +47,8 @@ import {
   ExecutableConditionalStatesDistributed,
   ExecutableCall,
   ExecutableCallMagical,
-  ExecutableCallBinary
+  ExecutableCallBinary,
+  ExecutableCallShorthand
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 
@@ -172,6 +174,32 @@ const stepMagical = (
         previouslyChangedExpressionState: 'magicalExpanded'
       }
     }
+    default: {
+      throw new Error()
+    }
+  }
+}
+
+const stepShorthand = (
+  e: ExecutableCallShorthand
+): {
+  nextExpression: ExecutableCall | StepChild<'default'>
+  matchExists?: boolean
+  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
+} => {
+  switch (e.state) {
+    case 'default': {
+      return {
+        nextExpression: stepToActive(e),
+        previouslyChangedExpressionState: 'active'
+      }
+    }
+    // case 'active': {
+    //   return {
+    //     nextExpression: stepToMagicalExpanded(e),
+    //     previouslyChangedExpressionState: 'magicalExpanded'
+    //   }
+    // }
     default: {
       throw new Error()
     }
@@ -369,7 +397,9 @@ const runStep = (
       ? stepRegular(expression, stepOptions, e.matchExists)
       : isExecutableCallMagical(expression)
       ? stepMagical(expression)
-      : stepBinary(expression)
+      : isExecutableCallBinary(expression)
+      ? stepBinary(expression)
+      : stepShorthand(expression)
     : stepConditional(expression)
 
   if (!callParent && !callParentKey && !funcParent && !conditionalParent) {
