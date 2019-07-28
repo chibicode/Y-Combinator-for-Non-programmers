@@ -12,9 +12,14 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  VariableExpression
+  VariableExpression,
+  VariableShorthandNumber,
+  StepVariableShorthandNumber
 } from 'src/types/ExpressionTypes'
 
+export default function toDefault(
+  e: VariableShorthandNumber
+): StepVariableShorthandNumber<'default'>
 export default function toDefault(
   e: VariableExpression
 ): StepVariable<'default'>

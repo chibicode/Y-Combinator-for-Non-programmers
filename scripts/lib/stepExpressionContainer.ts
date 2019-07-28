@@ -32,6 +32,7 @@ import {
   stepToCaseProcessed,
   stepToCaseOnly,
   stepToMagicalExpanded,
+  stepToShorthandComputed,
   stepToDefault,
   stepToShowExecutableUnary,
   stepToUnaryProcessed,
@@ -194,12 +195,12 @@ const stepShorthand = (
         previouslyChangedExpressionState: 'active'
       }
     }
-    // case 'active': {
-    //   return {
-    //     nextExpression: stepToMagicalExpanded(e),
-    //     previouslyChangedExpressionState: 'magicalExpanded'
-    //   }
-    // }
+    case 'active': {
+      return {
+        nextExpression: stepToShorthandComputed(e),
+        previouslyChangedExpressionState: 'default'
+      }
+    }
     default: {
       throw new Error()
     }
