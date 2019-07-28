@@ -60,7 +60,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱の機能</>,
+        title: <>計算箱の3つの機能</>,
         content: (
           <>
             <P>
@@ -73,13 +73,30 @@ export default () => (
                 </Strong>
               </OlLi>
               <OlLi>
-                <Strong>条件分岐の機能</Strong>
+                <Strong>
+                  <Emoji>↔️</Emoji> 条件分岐の機能
+                </Strong>
               </OlLi>
               <OlLi>
-                <Strong>繰り返しの機能</Strong>
+                <Strong>
+                  <Emoji>🔁</Emoji> 繰り返しの機能
+                </Strong>
               </OlLi>
             </Ol>
-            <P>今回は、</P>
+            <P>
+              今回は、ひとつめの
+              <Strong>
+                <CustomEmoji type="plusMinus" /> プラスマイナスの機能
+              </Strong>
+              について解説していきます。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="plusMinus" />,
+                <Emoji>✨</Emoji>
+              ]}
+            />
           </>
         )
       }
