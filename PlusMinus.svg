@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>PlusMinus</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-75.0%" y="-75.0%" width="250.0%" height="250.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="PlusMinus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="31-20e3" fill-rule="nonzero">
+            <path d="M36,32 C36,34.209 34.209,36 32,36 L4,36 C1.791,36 0,34.209 0,32 L0,4 C0,1.791 1.791,0 4,0 L32,0 C34.209,0 36,1.791 36,4 L36,32 Z" id="Path" fill="#31373D"></path>
+            <g id="2795" filter="url(#filter-1)" transform="translate(10.000000, 2.500000)" fill="#FFFFFF">
+                <path d="M14.5,6.5 L9.5,6.5 L9.5,1.5 C9.5,0.6715 8.8285,0 8,0 C7.1715,0 6.5,0.6715 6.5,1.5 L6.5,6.5 L1.5,6.5 C0.6715,6.5 0,7.1715 0,8 C0,8.8285 0.6715,9.5 1.5,9.5 L6.5,9.5 L6.5,14.5 C6.5,15.3285 7.1715,16 8,16 C8.8285,16 9.5,15.3285 9.5,14.5 L9.5,9.5 L14.5,9.5 C15.3285,9.5 16,8.8285 16,8 C16,7.1715 15.3285,6.5 14.5,6.5 Z" id="Path"></path>
+            </g>
+        </g>
+        <g id="31-20e3-copy" transform="translate(0.000000, 21.000000)" fill="#BE1931" fill-rule="nonzero">
+            <path d="M36,11 C36,13.209 34.209,15 32,15 L4,15 C1.791,15 0,13.209 0,11 C0,5.15451794 0,1.48785127 0,0 L36,0 C36,1.47479582 36,5.14146249 36,11 Z" id="Path"></path>
+        </g>
+        <g id="2796" transform="translate(10.000000, 26.500000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M16,1.75 C16,2.71658333 15.3285,3.5 14.5,3.5 L1.5,3.5 C0.6715,3.5 0,2.71658333 0,1.75 C0,0.783416667 0.6715,0 1.5,0 L14.5,0 C15.3285,0 16,0.783416667 16,1.75 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

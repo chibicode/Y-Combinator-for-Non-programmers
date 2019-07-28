@@ -45,7 +45,7 @@ import { dateString, dateSchemaString } from 'src/lib/date'
 import { githubRepo } from 'src/lib/meta'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { HProps } from 'src/types/HTypes'
-import BlankNumber from 'src/components/BlankNumber'
+import CustomEmoji from 'src/components/CustomEmoji'
 
 const slightlyLargeCaptionCss = css`
   font-size: ${fontSizes(1.2)};
@@ -1840,7 +1840,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <BlankNumber star /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
+          <CustomEmoji type="starNumber" /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
         </>
       )
     }

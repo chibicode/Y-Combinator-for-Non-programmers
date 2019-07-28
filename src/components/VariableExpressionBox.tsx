@@ -15,9 +15,7 @@ import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
-import BlankNumber from 'src/components/BlankNumber'
-import PlusOne from 'src/components/PlusOne'
-import MinusOne from 'src/components/MinusOne'
+import CustomEmoji from 'src/components/CustomEmoji'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -143,13 +141,13 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   } else if (expression.name === 'blankNumber') {
     return (
       <div>
-        <BlankNumber size="sm" star />
+        <CustomEmoji type="starNumber" size="sm" />
       </div>
     )
   } else if (expression.name === 'questionV2') {
     return (
       <div>
-        <BlankNumber size="sm" />
+        <CustomEmoji type="blankNumber" size="sm" />
       </div>
     )
   } else if (expression.name === 'Amult') {
@@ -180,13 +178,13 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   } else if (expression.shorthandFunc === 'add') {
     return (
       <div>
-        <PlusOne size="sm" />
+        <CustomEmoji type="plusOne" size="sm" />
       </div>
     )
   } else if (expression.shorthandFunc === 'pred') {
     return (
       <div>
-        <MinusOne size="sm" />
+        <CustomEmoji type="minusOne" size="sm" />
       </div>
     )
   } else {
