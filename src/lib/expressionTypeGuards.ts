@@ -14,7 +14,9 @@ import {
   VariableShorthandUnaryNumber,
   ExecutableCallMagical,
   MagicalVariable,
-  RepeatExpression
+  RepeatExpression,
+  ExecutableCallShorthand,
+  VariableShorthandFunc
 } from 'src/types/ExpressionTypes'
 
 export function isVariable<V extends VariableExpression = VariableExpression>(
@@ -59,6 +61,12 @@ export function isVariableShorthandBinary<
   return isVariable(expression) && expression.shorthandBinary !== undefined
 }
 
+export function isVariableShorthandFunc<
+  V extends VariableShorthandFunc = VariableShorthandFunc
+>(expression: Expression): expression is V {
+  return isVariable(expression) && expression.shorthandFunc !== undefined
+}
+
 export function isVariableShorthandUnaryNumber<
   V extends VariableShorthandUnaryNumber = VariableShorthandUnaryNumber
 >(expression: Expression): expression is V {
@@ -94,6 +102,15 @@ export function isExecutableCallBinary<E extends ExecutableCallBinary>(
     isVariableShorthandNumber(expression.func) &&
     isVariableShorthandNumber(expression.arg.arg) &&
     isVariableShorthandBinary(expression.arg.func)
+  )
+}
+
+export function isExecutableCallShorthand<E extends ExecutableCallShorthand>(
+  expression: CallExpression
+): expression is E {
+  return (
+    isVariableShorthandFunc(expression.func) &&
+    isVariableShorthandNumber(expression.arg)
   )
 }
 

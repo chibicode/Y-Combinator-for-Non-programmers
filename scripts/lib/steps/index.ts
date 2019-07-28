@@ -51,3 +51,6 @@ export {
 export {
   default as stepToBinaryComputed
 } from 'scripts/lib/steps/stepToBinaryComputed'
+export {
+  default as stepToShorthandComputed
+} from 'scripts/lib/steps/stepToShorthandComputed'
