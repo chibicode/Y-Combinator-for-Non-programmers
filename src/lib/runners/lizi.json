@@ -40,9 +40,6 @@
   ],
   "speed": 1,
   "showOnlyFocused": false,
-  "caption": {
-    "name": "mathBoxCaption"
-  },
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": true,

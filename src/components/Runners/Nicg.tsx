@@ -2,7 +2,11 @@ import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
 import config from 'src/lib/runners/nicg.json'
 
-// @ts-ignore
-const Nicg = () => <ExpressionRunnerPrecomputed {...config} />
+const Nicg = ({ children }: { children?: React.ReactNode }) => (
+  // @ts-ignore
+  <ExpressionRunnerPrecomputed {...config}>
+    {children}
+  </ExpressionRunnerPrecomputed>
+)
 
 export default Nicg

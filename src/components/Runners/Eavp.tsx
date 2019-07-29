@@ -2,7 +2,11 @@ import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
 import config from 'src/lib/runners/eavp.json'
 
-// @ts-ignore
-const Eavp = () => <ExpressionRunnerPrecomputed {...config} />
+const Eavp = ({ children }: { children?: React.ReactNode }) => (
+  // @ts-ignore
+  <ExpressionRunnerPrecomputed {...config}>
+    {children}
+  </ExpressionRunnerPrecomputed>
+)
 
 export default Eavp

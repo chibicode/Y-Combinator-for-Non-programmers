@@ -2,7 +2,11 @@ import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
 import config from 'src/lib/runners/wafy.json'
 
-// @ts-ignore
-const Wafy = () => <ExpressionRunnerPrecomputed {...config} />
+const Wafy = ({ children }: { children?: React.ReactNode }) => (
+  // @ts-ignore
+  <ExpressionRunnerPrecomputed {...config}>
+    {children}
+  </ExpressionRunnerPrecomputed>
+)
 
 export default Wafy

@@ -2,7 +2,11 @@ import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
 import config from 'src/lib/runners/fatm.json'
 
-// @ts-ignore
-const Fatm = () => <ExpressionRunnerPrecomputed {...config} />
+const Fatm = ({ children }: { children?: React.ReactNode }) => (
+  // @ts-ignore
+  <ExpressionRunnerPrecomputed {...config}>
+    {children}
+  </ExpressionRunnerPrecomputed>
+)
 
 export default Fatm

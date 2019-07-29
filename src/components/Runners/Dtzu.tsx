@@ -2,7 +2,11 @@ import React from 'react'
 import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
 import config from 'src/lib/runners/dtzu.json'
 
-// @ts-ignore
-const Dtzu = () => <ExpressionRunnerPrecomputed {...config} />
+const Dtzu = ({ children }: { children?: React.ReactNode }) => (
+  // @ts-ignore
+  <ExpressionRunnerPrecomputed {...config}>
+    {children}
+  </ExpressionRunnerPrecomputed>
+)
 
 export default Dtzu

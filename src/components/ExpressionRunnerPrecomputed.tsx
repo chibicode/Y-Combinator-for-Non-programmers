@@ -22,6 +22,7 @@ export interface ExpressionRunnerPrecomputedProps {
   speed: ExpressionRunnerConfig['speed']
   showOnlyFocused: ExpressionRunnerConfig['showOnlyFocused']
   caption: ExpressionRunnerConfig['caption']
+  children?: React.ReactNode
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
   hidePriorities: ExpressionRunnerConfig['hidePriorities']
@@ -79,7 +80,8 @@ const ExpressionRunnerPrecomputed = ({
   highlightFunctions,
   superFastForward,
   highlightNumber,
-  showAllShowSteps
+  showAllShowSteps,
+  children
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -225,6 +227,11 @@ const ExpressionRunnerPrecomputed = ({
           {caption && (
             <ExpressionRunnerCaptionWrapper>
               <H args={caption} />
+            </ExpressionRunnerCaptionWrapper>
+          )}
+          {children && (
+            <ExpressionRunnerCaptionWrapper>
+              {children}
             </ExpressionRunnerCaptionWrapper>
           )}
           {!caption && isPlaying && (

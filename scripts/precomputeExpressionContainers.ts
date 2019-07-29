@@ -71,8 +71,9 @@ const precomputeFile = (key: string) => {
         import ExpressionRunnerPrecomputed from 'src/components/ExpressionRunnerPrecomputed'
         import config from 'src/lib/runners/${key}.json'
 
-        // @ts-ignore
-        const ${componentName} = () => <ExpressionRunnerPrecomputed {...config} />
+        const ${componentName} = ({ children }: { children?: React.ReactNode }) =>
+          // @ts-ignore
+          <ExpressionRunnerPrecomputed {...config}>{children}</ExpressionRunnerPrecomputed>
 
         export default ${componentName}
         `)

@@ -2783,8 +2783,7 @@ export const yzdy: ExpressionRunnerShorthandConfig = {
 
 export const lizi: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.vibe,
-  caption: { name: 'mathBoxCaption' }
+  initialExpressionContainer: initialExpressionContainers.vibe
 }
 
 export const mcug: ExpressionRunnerShorthandConfig = {

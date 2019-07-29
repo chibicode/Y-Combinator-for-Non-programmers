@@ -5,8 +5,6 @@ import {
   Strong,
   Em,
   InlineHeader,
-  // Ol,
-  // OlLi,
   Ul,
   UlLi,
   Hr
@@ -87,7 +85,9 @@ export default () => (
               こちらをご覧ください。これが、ラムダ村の人々が使っていた「
               <Strong>計算箱</Strong>」のひとつです。
             </P>
-            <R.Lizi />
+            <R.Lizi>
+              計算箱 <Emoji>🎁</Emoji>
+            </R.Lizi>
             <Ul>
               <UlLi>
                 上には、数字の <EmojiNumber number={1} /> が入っています。
@@ -377,7 +377,9 @@ export default () => (
               </Strong>
               のです。
             </P>
-            <R.Amoq />
+            <R.Amoq>
+              <CustomEmoji type="plusOne" /> を1万回配置
+            </R.Amoq>
             <P>
               ラムダ村の住人は計算がとても苦手だったので、
               <Em>足し算や引き算を行う時には必ず計算箱を使っていました</Em>。
@@ -403,56 +405,21 @@ export default () => (
             </>
           )
         }
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="plusMinus" />,
+                <Emoji>✨</Emoji>
+              ]}
+            />
+          </>
+        )
       }
-      // Next Slide:
-      // Summary: 実質どんな大きな数の足し算や引き算も、計算箱を使えば行うことができる
-      // ちなみに: 計算箱は掛け算と割り算はできない
-      //
-      // Then:
-      // ラムダ村はこうやって計算をしていた。
-      //
-      // Next page: Here's a problem - too many +1's.
-      // {
-      //   title: <>計算箱の3つの機能</>,
-      //   content: (
-      //     <>
-      //       <P>
-      //         計算箱には、以下の<Strong>3つの機能</Strong>が備わっています。
-      //       </P>
-      //       <Ol>
-      //         <OlLi>
-      //           <Strong>
-      //             <CustomEmoji type="plusMinus" /> プラスマイナスの機能
-      //           </Strong>
-      //         </OlLi>
-      //         <OlLi>
-      //           <Strong>
-      //             <Emoji>🔁</Emoji> 繰り返しの機能
-      //           </Strong>
-      //         </OlLi>
-      //         <OlLi>
-      //           <Strong>
-      //             <Emoji>↔️</Emoji> 条件分岐の機能
-      //           </Strong>
-      //         </OlLi>
-      //       </Ol>
-      //       <P>
-      //         今回は、ひとつめの
-      //         <Strong>
-      //           <CustomEmoji type="plusMinus" /> プラスマイナスの機能
-      //         </Strong>
-      //         について解説していきます。
-      //       </P>
-      //       <EmojiSeparator
-      //         nodes={[
-      //           <Emoji>✨</Emoji>,
-      //           <CustomEmoji type="plusMinus" />,
-      //           <Emoji>✨</Emoji>
-      //         ]}
-      //       />
-      //     </>
-      //   )
-      // },
     ]}
   />
 )

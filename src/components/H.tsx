@@ -1747,17 +1747,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'mathBoxCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          計算箱 <Emoji>🎁</Emoji>
-        </>
-      )
-    }
-  }
   if (args.name === 'remainder') {
     if (locale === 'en') {
       return <>?</>
@@ -1852,17 +1841,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <CustomEmoji type="blankNumber" /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
-        </>
-      )
-    }
-  }
-  if (args.name === 'addBunchOfPlusOneCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <CustomEmoji type="plusOne" /> を1万回配置
         </>
       )
     }
