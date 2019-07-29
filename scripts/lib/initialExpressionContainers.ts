@@ -1501,3 +1501,19 @@ export const vibe = initializeExpressionContainer([
     shorthandNumber: 1
   }
 ])
+
+export const kfwf = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
+export const fpuz = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  'blankNumber'
+])

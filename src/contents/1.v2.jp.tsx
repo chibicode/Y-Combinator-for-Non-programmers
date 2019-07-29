@@ -5,10 +5,11 @@ import {
   Strong,
   Em,
   InlineHeader,
-  Ol,
-  OlLi,
+  // Ol,
+  // OlLi,
   Ul,
-  UlLi
+  UlLi,
+  Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
@@ -63,49 +64,49 @@ export default () => (
           </>
         )
       },
+      // {
+      //   title: <>計算箱の3つの機能</>,
+      //   content: (
+      //     <>
+      //       <P>
+      //         計算箱には、以下の<Strong>3つの機能</Strong>が備わっています。
+      //       </P>
+      //       <Ol>
+      //         <OlLi>
+      //           <Strong>
+      //             <CustomEmoji type="plusMinus" /> プラスマイナスの機能
+      //           </Strong>
+      //         </OlLi>
+      //         <OlLi>
+      //           <Strong>
+      //             <Emoji>🔁</Emoji> 繰り返しの機能
+      //           </Strong>
+      //         </OlLi>
+      //         <OlLi>
+      //           <Strong>
+      //             <Emoji>↔️</Emoji> 条件分岐の機能
+      //           </Strong>
+      //         </OlLi>
+      //       </Ol>
+      //       <P>
+      //         今回は、ひとつめの
+      //         <Strong>
+      //           <CustomEmoji type="plusMinus" /> プラスマイナスの機能
+      //         </Strong>
+      //         について解説していきます。
+      //       </P>
+      //       <EmojiSeparator
+      //         nodes={[
+      //           <Emoji>✨</Emoji>,
+      //           <CustomEmoji type="plusMinus" />,
+      //           <Emoji>✨</Emoji>
+      //         ]}
+      //       />
+      //     </>
+      //   )
+      // },
       {
-        title: <>計算箱の3つの機能</>,
-        content: (
-          <>
-            <P>
-              計算箱には、以下の<Strong>3つの機能</Strong>が備わっています。
-            </P>
-            <Ol>
-              <OlLi>
-                <Strong>
-                  <CustomEmoji type="plusMinus" /> プラスマイナスの機能
-                </Strong>
-              </OlLi>
-              <OlLi>
-                <Strong>
-                  <Emoji>🔁</Emoji> 繰り返しの機能
-                </Strong>
-              </OlLi>
-              <OlLi>
-                <Strong>
-                  <Emoji>↔️</Emoji> 条件分岐の機能
-                </Strong>
-              </OlLi>
-            </Ol>
-            <P>
-              今回は、ひとつめの
-              <Strong>
-                <CustomEmoji type="plusMinus" /> プラスマイナスの機能
-              </Strong>
-              について解説していきます。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>✨</Emoji>,
-                <CustomEmoji type="plusMinus" />,
-                <Emoji>✨</Emoji>
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: <>計算箱と、プラスマイナスの機能</>,
+        title: <>計算箱の例</>,
         content: (
           <>
             <P>
@@ -151,6 +152,63 @@ export default () => (
               </Strong>
             </P>
             <R.Mcug />
+            <P>
+              <Strong>
+                結果は <EmojiNumber number={2} /> になりました
+              </Strong>
+              。つまり、
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> が計算できたということです。
+            </P>
+            <Hr />
+            <P>
+              他の計算箱も見てみましょう！たとえばこちらをご覧になり、
+              <Strong>
+                <H args={{ name: 'pressPlay' }} />
+              </Strong>
+            </P>
+            <R.Aovj />
+            <P>
+              こちらは、
+              <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />
+              が計算できました！
+            </P>
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>ここまでをまとめると、下の計算箱のように、</P>
+            <R.Rviy />
+            <Ul>
+              <UlLi>
+                <Strong>
+                  上に何らかの 数字 <CustomEmoji type="blankNumber" />{' '}
+                  が入っていて、
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  下に <CustomEmoji type="plusOne" /> が入っている場合、
+                </Strong>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  <H args={{ name: 'play' }} /> すると結果は{' '}
+                  <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                  <EmojiNumber number={1} /> になる
+                </Strong>
+              </UlLi>
+            </Ul>
+            <P>ということです。</P>
           </>
         )
       }
