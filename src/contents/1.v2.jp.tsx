@@ -60,7 +60,9 @@ export default () => (
               、とても簡単な計算でも計算箱に頼りきっていました。
             </P>
             <EmojiSeparator emojis={['🌲', '🙂', '🎁', '🙂', '🌲']} />
-            <P>では、計算箱がどんなものか紹介していきましょう！</P>
+            <P>
+              では、計算箱がどんなものか紹介していきましょう！<Emoji>🙂</Emoji>
+            </P>
           </>
         )
       },
@@ -169,10 +171,9 @@ export default () => (
             </P>
             <R.Aovj />
             <P>
-              こちらは、
+              こちらは <EmojiNumber number={4} /> になり、すなわち{' '}
               <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />
-              が計算できました！
+              <EmojiNumber number={1} /> が計算できました！<Emoji>🙂</Emoji>
             </P>
           </>
         )
@@ -191,7 +192,7 @@ export default () => (
             <Ul>
               <UlLi>
                 <Strong>
-                  上に何らかの 数字 <CustomEmoji type="blankNumber" />{' '}
+                  上に何らかの数字 <CustomEmoji type="blankNumber" />{' '}
                   が入っていて、
                 </Strong>
               </UlLi>
@@ -209,6 +210,79 @@ export default () => (
               </UlLi>
             </Ul>
             <P>ということです。</P>
+          </>
+        )
+      },
+      {
+        title: <>マイナス1</>,
+        content: (
+          <>
+            <P>
+              計算箱は「プラス1」だけではなく、「<Strong>マイナス1</Strong>
+              」を計算することもできます。こちらの計算箱を
+              <H args={{ name: 'play' }} />
+              してみてください:
+            </P>
+            <R.Xmqp />
+            <P>
+              結果は <EmojiNumber number={2} /> になり、すなわち{' '}
+              <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} />
+              が計算できました！<Emoji>🙂</Emoji>
+            </P>
+            <Hr />
+            <P>
+              このように、下に <CustomEmoji type="minusOne" />{' '}
+              が入っていると、「<Strong>マイナス1</Strong>
+              」を計算することができるのです。
+            </P>
+            <R.Ditw />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            使えるのは <CustomEmoji type="plusOne" /> と{' '}
+            <CustomEmoji type="minusOne" /> だけ
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              重要なポイントなのですが、計算に使うことができるのは{' '}
+              <Strong>
+                <CustomEmoji type="plusOne" /> と{' '}
+                <CustomEmoji type="minusOne" /> だけです
+              </Strong>
+              。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="minusOne" />
+              ]}
+            />
+            <P>
+              では、たとえば <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={2} />{' '}
+              といった計算はどのように行えばいいのでしょうか？<Emoji>🤔</Emoji>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={2} />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={2} />
+              ]}
+            />
+            <P>
+              正解は、次のように{' '}
+              <Strong>
+                <CustomEmoji type="plusOne" /> を2回使う
+              </Strong>
+              ことです。
+            </P>
           </>
         )
       }

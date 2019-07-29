@@ -1517,3 +1517,19 @@ export const fpuz = initializeExpressionContainer([
   },
   'blankNumber'
 ])
+
+export const qtns = initializeExpressionContainer([
+  {
+    shorthandFunc: 'pred'
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
+export const ofza = initializeExpressionContainer([
+  {
+    shorthandFunc: 'pred'
+  },
+  'blankNumber'
+])
