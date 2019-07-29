@@ -276,16 +276,111 @@ export default () => (
                 <EmojiNumber number={2} />
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="plusOne" /> を2回使う
+          </>
+        ),
+        content: (
+          <>
             <P>
-              正解は、次のように{' '}
+              正解を教えましょう。
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={2} /> を計算したい場合、{' '}
               <Strong>
-                <CustomEmoji type="plusOne" /> を2回使う
+                <CustomEmoji type="plusOne" /> を2回
               </Strong>
-              ことです。
+              使えばいいのです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={2} />,
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="plusOne" />
+              ]}
+            />
+            <P>
+              実際に試してみましょう。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Jiqb />
+            <P>
+              結果は <EmojiNumber number={4} /> になり、すなわち{' '}
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={2} />
+              が計算できました！<Emoji>🙂</Emoji>
             </P>
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="plusOne" /> も <CustomEmoji type="minusOne" />{' '}
+            も何回でも使える
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              ちなみに、
+              <Strong>
+                <CustomEmoji type="plusOne" /> も{' '}
+                <CustomEmoji type="minusOne" />{' '}
+                も、どちらも何回でも使うことができます
+              </Strong>
+              。<Emoji>😉</Emoji>
+            </P>
+            <EmojiSeparator
+              noBottomMargin
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="plusOne" />
+              ]}
+            />
+            <EmojiSeparator
+              noTopMargin
+              nodes={[
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />
+              ]}
+            />
+            <P>
+              たとえば、下の計算箱は、
+              <Strong>
+                <CustomEmoji type="plusOne" /> を3回
+              </Strong>
+              使うことで、
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算してくれます。
+            </P>
+            <R.Eagi />
+            <P>
+              一方、下の計算箱は、
+              <Strong>
+                <CustomEmoji type="minusOne" /> を4回
+              </Strong>
+              使うことで、
+              <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={4} /> を計算してくれます。
+            </P>
+            <R.Yjur />
+          </>
+        )
       }
+      // Next Slide:
+      // Summary: 実質どんな大きな数の足し算や引き算も、計算箱を使えば行うことができる
+      // ちなみに: 計算箱は掛け算と割り算はできない
+      //
+      // Then:
+      // ラムダ村はとても大きな足し算や引き算をするとき、+1や-1の数を間違えたりしてしまう
+      // どうすれば良いか？
     ]}
   />
 )

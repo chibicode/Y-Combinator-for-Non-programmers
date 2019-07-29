@@ -1533,3 +1533,60 @@ export const ofza = initializeExpressionContainer([
   },
   'blankNumber'
 ])
+
+export const gjyx = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    {
+      shorthandNumber: 2
+    }
+  ]
+])
+
+export const qcio = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    [
+      {
+        shorthandFunc: 'add'
+      },
+      {
+        shorthandNumber: 2
+      }
+    ]
+  ]
+])
+
+export const wsia = initializeExpressionContainer([
+  {
+    shorthandFunc: 'pred'
+  },
+  [
+    {
+      shorthandFunc: 'pred'
+    },
+    [
+      {
+        shorthandFunc: 'pred'
+      },
+      [
+        {
+          shorthandFunc: 'pred'
+        },
+        {
+          shorthandNumber: 5
+        }
+      ]
+    ]
+  ]
+])
