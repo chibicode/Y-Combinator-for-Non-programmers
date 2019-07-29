@@ -66,47 +66,7 @@ export default () => (
           </>
         )
       },
-      // {
-      //   title: <>計算箱の3つの機能</>,
-      //   content: (
-      //     <>
-      //       <P>
-      //         計算箱には、以下の<Strong>3つの機能</Strong>が備わっています。
-      //       </P>
-      //       <Ol>
-      //         <OlLi>
-      //           <Strong>
-      //             <CustomEmoji type="plusMinus" /> プラスマイナスの機能
-      //           </Strong>
-      //         </OlLi>
-      //         <OlLi>
-      //           <Strong>
-      //             <Emoji>🔁</Emoji> 繰り返しの機能
-      //           </Strong>
-      //         </OlLi>
-      //         <OlLi>
-      //           <Strong>
-      //             <Emoji>↔️</Emoji> 条件分岐の機能
-      //           </Strong>
-      //         </OlLi>
-      //       </Ol>
-      //       <P>
-      //         今回は、ひとつめの
-      //         <Strong>
-      //           <CustomEmoji type="plusMinus" /> プラスマイナスの機能
-      //         </Strong>
-      //         について解説していきます。
-      //       </P>
-      //       <EmojiSeparator
-      //         nodes={[
-      //           <Emoji>✨</Emoji>,
-      //           <CustomEmoji type="plusMinus" />,
-      //           <Emoji>✨</Emoji>
-      //         ]}
-      //       />
-      //     </>
-      //   )
-      // },
+
       {
         title: <>計算箱の例</>,
         content: (
@@ -210,6 +170,13 @@ export default () => (
               </UlLi>
             </Ul>
             <P>ということです。</P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+            />
           </>
         )
       },
@@ -227,14 +194,14 @@ export default () => (
             <P>
               結果は <EmojiNumber number={2} /> になり、すなわち{' '}
               <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} />
-              が計算できました！<Emoji>🙂</Emoji>
+              <EmojiNumber number={1} /> が計算できました！<Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
-              このように、下に <CustomEmoji type="minusOne" />{' '}
-              が入っていると、「<Strong>マイナス1</Strong>
-              」を計算することができるのです。
+              このように、何らかの数字 <CustomEmoji type="blankNumber" /> の下に{' '}
+              <CustomEmoji type="minusOne" /> が入っていると、
+              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算することができるのです。
             </P>
             <R.Ditw />
           </>
@@ -250,7 +217,7 @@ export default () => (
         content: (
           <>
             <P>
-              重要なポイントなのですが、計算に使うことができるのは{' '}
+              ここが重要なポイントなのですが、計算に使うことができるのは{' '}
               <Strong>
                 <CustomEmoji type="plusOne" /> と{' '}
                 <CustomEmoji type="minusOne" /> だけです
@@ -265,7 +232,9 @@ export default () => (
               ]}
             />
             <P>
-              では、たとえば <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              それでは質問です。 <CustomEmoji type="plusOne" /> と{' '}
+              <CustomEmoji type="minusOne" /> しか使えないのであれば、たとえば{' '}
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={2} />{' '}
               といった計算はどのように行えばいいのでしょうか？<Emoji>🤔</Emoji>
             </P>
@@ -379,8 +348,50 @@ export default () => (
       // ちなみに: 計算箱は掛け算と割り算はできない
       //
       // Then:
-      // ラムダ村はとても大きな足し算や引き算をするとき、+1や-1の数を間違えたりしてしまう
-      // どうすれば良いか？
+      // ラムダ村はこうやって計算をしていた。
+      //
+      // Next page: Here's a problem - too many +1's.
+      // {
+      //   title: <>計算箱の3つの機能</>,
+      //   content: (
+      //     <>
+      //       <P>
+      //         計算箱には、以下の<Strong>3つの機能</Strong>が備わっています。
+      //       </P>
+      //       <Ol>
+      //         <OlLi>
+      //           <Strong>
+      //             <CustomEmoji type="plusMinus" /> プラスマイナスの機能
+      //           </Strong>
+      //         </OlLi>
+      //         <OlLi>
+      //           <Strong>
+      //             <Emoji>🔁</Emoji> 繰り返しの機能
+      //           </Strong>
+      //         </OlLi>
+      //         <OlLi>
+      //           <Strong>
+      //             <Emoji>↔️</Emoji> 条件分岐の機能
+      //           </Strong>
+      //         </OlLi>
+      //       </Ol>
+      //       <P>
+      //         今回は、ひとつめの
+      //         <Strong>
+      //           <CustomEmoji type="plusMinus" /> プラスマイナスの機能
+      //         </Strong>
+      //         について解説していきます。
+      //       </P>
+      //       <EmojiSeparator
+      //         nodes={[
+      //           <Emoji>✨</Emoji>,
+      //           <CustomEmoji type="plusMinus" />,
+      //           <Emoji>✨</Emoji>
+      //         ]}
+      //       />
+      //     </>
+      //   )
+      // },
     ]}
   />
 )
