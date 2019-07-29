@@ -6,12 +6,16 @@ import {
   Em,
   InlineHeader,
   Ol,
-  OlLi
+  OlLi,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiNumber from 'src/components/EmojiNumber'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -55,7 +59,7 @@ export default () => (
               、とても簡単な計算でも計算箱に頼りきっていました。
             </P>
             <EmojiSeparator emojis={['🌲', '🙂', '🎁', '🙂', '🌲']} />
-            <P>まずは、計算箱がどんなものか紹介していきます！</P>
+            <P>では、計算箱がどんなものか紹介していきましょう！</P>
           </>
         )
       },
@@ -97,6 +101,43 @@ export default () => (
                 <Emoji>✨</Emoji>
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>計算箱と、プラスマイナスの機能</>,
+        content: (
+          <>
+            <P>
+              こちらをご覧ください。これが、ラムダ村の人々が使っていた「
+              <Strong>計算箱</Strong>」のひとつです。
+            </P>
+            <R.Lizi />
+            <Ul>
+              <UlLi>
+                上には、数字の <EmojiNumber number={1} /> が入っています。
+              </UlLi>
+              <UlLi>
+                下には、「プラス1」の印 <CustomEmoji type="plusOne" />{' '}
+                が入っています。
+              </UlLi>
+            </Ul>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>1️⃣</Emoji>,
+                <CustomEmoji type="plusOne" />
+              ]}
+            />
+            <P>
+              そして、計算箱は「
+              <H args={{ name: 'play' }} />
+              」することができます。試しに、
+              <Em>
+                計算箱の下にある <H args={{ name: 'play' }} />{' '}
+                ボタンを押してみてください。
+              </Em>
+            </P>
           </>
         )
       }

@@ -7,7 +7,8 @@ import {
   isVariableShorthandUnaryParams,
   isVariableShorthandNumberParams,
   isMagicalVariableParams,
-  isConditionalParams
+  isConditionalParams,
+  isVariableShorthandFuncParams
 } from 'scripts/lib/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -193,6 +194,15 @@ export default function buildExpressionFromParams(
       trueCase: buildExpressionFromParams(expressionParams.trueCase),
       falseCase: buildExpressionFromParams(expressionParams.falseCase),
       priority: 0
+    }
+  } else if (isVariableShorthandFuncParams(expressionParams)) {
+    return {
+      ...buildVariableExpression(
+        'shorthandFunc',
+        true,
+        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
+      ),
+      shorthandFunc: expressionParams.shorthandFunc
     }
   } else {
     return {

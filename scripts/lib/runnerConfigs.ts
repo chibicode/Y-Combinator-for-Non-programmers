@@ -2780,3 +2780,9 @@ export const yzdy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gskq
 }
+
+export const lizi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vibe,
+  caption: { name: 'mathBoxCaption' }
+}

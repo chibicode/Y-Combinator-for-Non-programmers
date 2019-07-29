@@ -1747,6 +1747,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'mathBoxCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          計算箱 <Emoji>🎁</Emoji>
+        </>
+      )
+    }
+  }
   if (args.name === 'remainder') {
     if (locale === 'en') {
       return <>?</>
@@ -1840,7 +1851,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <CustomEmoji type="starNumber" /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
+          <CustomEmoji type="blankNumber" /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
         </>
       )
     }

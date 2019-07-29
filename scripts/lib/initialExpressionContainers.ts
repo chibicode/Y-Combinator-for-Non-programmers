@@ -1492,3 +1492,12 @@ export const gskq = initializeExpressionContainer([
     shorthandNumber: 1
   }
 ])
+
+export const vibe = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  {
+    shorthandNumber: 1
+  }
+])

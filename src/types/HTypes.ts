@@ -137,4 +137,5 @@ export interface HProps {
         type: 'condition' | 'trueCase' | 'falseCase'
       }
     | { name: 'repeatingMathBoxCaption' }
+    | { name: 'mathBoxCaption' }
 }
