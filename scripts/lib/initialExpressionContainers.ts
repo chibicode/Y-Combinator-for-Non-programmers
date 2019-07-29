@@ -1590,3 +1590,30 @@ export const wsia = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const rnth = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    [
+      'verticalDotDotDot',
+      [
+        {
+          shorthandFunc: 'add'
+        },
+        [
+          {
+            shorthandFunc: 'add'
+          },
+          {
+            shorthandNumber: 10000
+          }
+        ]
+      ]
+    ]
+  ]
+])

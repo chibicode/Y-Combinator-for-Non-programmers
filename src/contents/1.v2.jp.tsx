@@ -64,7 +64,19 @@ export default () => (
               では、計算箱がどんなものか紹介していきましょう！<Emoji>🙂</Emoji>
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader> 「ラムダ村」は、
+                <Em>上から読んでも下から読んでも「ラムダ村」</Em>です{' '}
+                <Emoji>😉</Emoji>
+                。なぜ「ラムダ」と名付けたかは最後に説明します！
+              </P>
+            </>
+          )
+        }
       },
 
       {
@@ -342,6 +354,55 @@ export default () => (
             <R.Yjur />
           </>
         )
+      },
+      {
+        title: <>どんな大きな数字の足し算でも引き算でもできる</>,
+        content: (
+          <>
+            <P>
+              つまり、
+              <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
+              を何度も使うことで、
+              <Em>
+                どんな大きな数字の足し算でも引き算でも計算箱で行うことができます
+              </Em>
+              。
+            </P>
+            <P>
+              たとえば、「1万 + 1万」を計算したかったら、
+              <Strong>
+                「1万」の下に「
+                <CustomEmoji type="plusOne" />
+                」を1万回配置した計算箱を実行すればいい
+              </Strong>
+              のです。
+            </P>
+            <R.Amoq />
+            <P>
+              ラムダ村の住人は計算がとても苦手だったので、
+              <Em>足し算や引き算を行う時には必ず計算箱を使っていました</Em>。
+            </P>
+            <EmojiSeparator
+              emojis={['🌲', '🙂', '➕', '🎁', '➖', '🙂', '🌲']}
+            />
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader> 残念ながら、計算箱では
+                <Strong>掛け算と割り算はできません。</Strong>
+                できるのは、足し算と引き算だけです。
+              </P>
+              <EmojiSeparator emojis={['✖️', '😭', '➗']} />
+              <P>
+                ラムダ村の住人は計算がとても苦手だったので、掛け算と割り算は適当に行っていました。
+                <Emoji>🤪</Emoji>
+              </P>
+            </>
+          )
+        }
       }
       // Next Slide:
       // Summary: 実質どんな大きな数の足し算や引き算も、計算箱を使えば行うことができる

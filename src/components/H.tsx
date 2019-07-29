@@ -1856,6 +1856,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'addBunchOfPlusOneCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <CustomEmoji type="plusOne" /> を1万回配置
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

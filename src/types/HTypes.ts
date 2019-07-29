@@ -138,4 +138,5 @@ export interface HProps {
       }
     | { name: 'repeatingMathBoxCaption' }
     | { name: 'mathBoxCaption' }
+    | { name: 'addBunchOfPlusOneCaption' }
 }
