@@ -78,12 +78,12 @@ export default () => (
               </OlLi>
               <OlLi>
                 <Strong>
-                  <Emoji>↔️</Emoji> 条件分岐の機能
+                  <Emoji>🔁</Emoji> 繰り返しの機能
                 </Strong>
               </OlLi>
               <OlLi>
                 <Strong>
-                  <Emoji>🔁</Emoji> 繰り返しの機能
+                  <Emoji>↔️</Emoji> 条件分岐の機能
                 </Strong>
               </OlLi>
             </Ol>
@@ -129,15 +129,28 @@ export default () => (
                 <CustomEmoji type="plusOne" />
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'play' }} /> ボタン
+          </>
+        ),
+        content: (
+          <>
             <P>
-              そして、計算箱は「
-              <H args={{ name: 'play' }} />
-              」することができます。試しに、
-              <Em>
-                計算箱の下にある <H args={{ name: 'play' }} />{' '}
-                ボタンを押してみてください。
-              </Em>
+              それぞれの計算箱には
+              <Strong>
+                <H args={{ name: 'play' }} /> ボタン
+              </Strong>
+              がついており、それを押すと計算が実行されます。試しに、下の計算箱で
+              <Strong>
+                <H args={{ name: 'pressPlay' }} />
+              </Strong>
             </P>
+            <R.Mcug />
           </>
         )
       }

@@ -2786,3 +2786,8 @@ export const lizi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vibe,
   caption: { name: 'mathBoxCaption' }
 }
+
+export const mcug: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.vibe
+}
