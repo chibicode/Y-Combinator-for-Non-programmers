@@ -1674,3 +1674,7 @@ export const dacg = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const ilbg = initializeExpressionContainer({
+  shorthandNumber: 2
+})

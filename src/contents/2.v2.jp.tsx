@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -224,21 +224,66 @@ export default () => (
               </InlineBorder>{' '}
               があることです。
             </P>
-            <Hr />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="minusOne" /> を繰り返す
+          </>
+        ),
+        content: (
+          <>
             <P>
               <Em>
                 上の計算箱を
                 <H args={{ name: 'play' }} />
                 すると、計算をする前に、まず下の部分が次のように変化します。
               </Em>
+              変化後には、
+              <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
+              が<Strong>8個</Strong>あるのに注目です。
             </P>
-            <R.Sucz>下の部分が変化します</R.Sucz>
+            <R.Sucz />
             <ExpressionRunnerSeparator />
-            <R.Xlgb />
-            <P>?</P>
+            <R.Xlgb>
+              <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
+              が<Strong>8個</Strong>出現しました
+            </R.Xlgb>
+            <P>
+              つまり、
+              <Strong>
+                左側に{' '}
+                <InlineBorder>
+                  <EmojiNumber number={8} />
+                </InlineBorder>{' '}
+                の印があると、その部分にあった <CustomEmoji type="minusOne" />{' '}
+                が8回繰り返されるということ
+              </Strong>
+              です。
+            </P>
+            <P>
+              ということは <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={8} /> を計算してくれるので、
+              <H args={{ name: 'play' }} />
+              の結果は <EmojiNumber number={2} /> になります:
+            </P>
+            <R.Pgxb />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="plusOne" /> も繰り返せる
+          </>
+        ),
+        // First, one w/ play button
+        // Then, show the expansion
+        content: <></>
       }
+      // LATER: If you want to do A + B, then put A at the top and B on the repeat
     ]}
   />
 )
