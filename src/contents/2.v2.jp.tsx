@@ -222,7 +222,7 @@ export default () => (
               <InlineBorder>
                 <EmojiNumber number={8} />
               </InlineBorder>{' '}
-              があることです。
+              の印があることです。
             </P>
           </>
         )
