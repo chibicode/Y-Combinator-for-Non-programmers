@@ -372,6 +372,22 @@ export default () => (
               </Em>
               。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="horizontalDotDotDot" />,
+                <CustomEmoji type="plusOne" />
+              ]}
+              noBottomMargin
+            />
+            <EmojiSeparator
+              noTopMargin
+              nodes={[
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="horizontalDotDotDotRed" />,
+                <CustomEmoji type="minusOne" />
+              ]}
+            />
             <P>
               たとえば、
               <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
