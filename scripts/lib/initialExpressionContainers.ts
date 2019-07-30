@@ -1478,14 +1478,9 @@ export const gjyx = initializeExpressionContainer([
   {
     shorthandFunc: 'add'
   },
-  [
-    {
-      shorthandFunc: 'add'
-    },
-    {
-      shorthandNumber: 2
-    }
-  ]
+  {
+    shorthandNumber: 2
+  }
 ])
 
 export const qcio = initializeExpressionContainer([
