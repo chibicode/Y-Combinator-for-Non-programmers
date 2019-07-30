@@ -6,8 +6,8 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
-// import * as R from 'src/components/Runners'
-// import YesNoButtons from 'src/components/YesNoButtons'
+import * as R from 'src/components/Runners'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
@@ -88,6 +88,18 @@ export default () => (
               <H args={{ name: 'play' }} />
               しようとしました。
             </P>
+            <R.Dfjp>
+              <Emoji>😉</Emoji>「これで <EmojiNumber number={10} />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={8} /> を計算しよう！」
+            </R.Dfjp>
+            <P>
+              ここで質問です。上の計算箱は、
+              <Strong>
+                <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+                <EmojiNumber number={8} /> を正しく計算できるでしょうか？
+              </Strong>
+            </P>
+            <YesNoButtons answer={'no'} />
           </>
         )
       }
