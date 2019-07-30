@@ -1,7 +1,7 @@
 {
   "expressionContainers": [
     {
-      "containerState": "ready",
+      "containerState": "done",
       "previouslyChangedExpressionState": "default",
       "expression": {
         "name": "shorthandNumber",
@@ -13,7 +13,7 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 10
+        "shorthandNumber": 3
       }
     }
   ],

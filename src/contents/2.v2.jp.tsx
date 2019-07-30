@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, InlineHeader } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -55,40 +55,35 @@ export default () => (
               <H args={{ name: 'whatHappensAtTheEndMathBoxQuestion' }} />
             </P>
             <R.Zdat />
-            <YesNoButtons answer="no" />
+            <YesNoButtons answer="yes" />
           </>
         )
       },
       {
         title: (
           <>
-            <H args={{ name: 'theAnswerIs', isYes: false }} />
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
         content: (
           <>
             <P>
-              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
               <H args={{ name: 'pressPlay' }} />
             </P>
             <R.Lxrk />
             <P>
-              つまり、結果は
-              <EmojiNumber number={10} />
-              ではなく
-              <EmojiNumber number={9} />
-              になります。
+              つまり、結果は <EmojiNumber number={3} /> になります。
               <Strong>
-                <CustomEmoji type="plusOne" /> が7個あるので、
-                <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                <EmojiNumber number={7} />
-                の計算が行われるわけです。
+                <CustomEmoji type="minusOne" /> が7個あるので、
+                <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+                <EmojiNumber number={7} /> の計算が行われるわけです。
               </Strong>
             </P>
             <EmojiSeparator
               nodes={[
-                <EmojiNumber number={2} />,
-                <Emoji>➕</Emoji>,
+                <EmojiNumber number={10} />,
+                <Emoji>➖</Emoji>,
                 <EmojiNumber number={7} />
               ]}
             />
@@ -98,7 +93,7 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="plusOne" /> の数を正しく数えないといけない
+            <CustomEmoji type="minusOne" /> の数を間違えたらダメ
           </>
         ),
         content: (
@@ -106,50 +101,54 @@ export default () => (
             <P>
               先ほどの例だと、計算箱の中に
               <Strong>
-                <CustomEmoji type="plusOne" />{' '}
-                が7個あるのをわざわざ確かめなければいけませんでした。
+                <CustomEmoji type="minusOne" />{' '}
+                が7個あるのを正しく数えなければいけませんでした。
               </Strong>
-              数え間違いがあったら、正しい答えを出すことができません。
+              数え間違いがあったら、
+              <H args={{ name: 'yesNoQuiz' }} />
+              に間違っていたでしょう。
             </P>
             <EmojiSeparator
               nodes={[
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusOne" />
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />
               ]}
               description={
                 <>
-                  <CustomEmoji type="plusOne" /> の数を間違えたらダメ！
+                  <CustomEmoji type="minusOne" /> の数を間違えたらダメ！
                 </>
               }
             />
             <P>
-              計算箱に頼っていたラムダ村の人々にとっても、
-              <CustomEmoji type="plusOne" />{' '}
-              の数をいちいち確かめるのは面倒でした。ある村人は次のように語っていました。
+              <Em>
+                計算箱に頼っていたラムダ村の人々にとって、
+                <CustomEmoji type="plusOne" /> や{' '}
+                <CustomEmoji type="minusOne" />{' '}
+                の数え間違いは、避けないといけない問題でした。
+              </Em>
             </P>
             <P>
-              <InlineHeader>
-                <Emoji size="mdlg">😩</Emoji> ラムダ村の村人:
-              </InlineHeader>
-              「
-              <Em>
-                計算箱で足し算をするときは、ひとつでも{' '}
-                <CustomEmoji type="plusOne" />{' '}
-                の数を間違えたら、間違った計算をしてしまうよ
-              </Em>
-              」
+              たとえば、
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={7} /> を計算しようとして、間違えて{' '}
+              <CustomEmoji type="minusOne" /> を「<Strong>8個</Strong>
+              」配置してしまったら、
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={8} /> を
             </P>
             <P>
               では、
               <Em>
-                どうすれば <CustomEmoji type="plusOne" />{' '}
+                どうすれば <CustomEmoji type="plusOne" /> や{' '}
+                <CustomEmoji type="minusOne" />{' '}
                 の数を数え間違えずにすむのでしょうか？
-              </Em>
+              </Em>{' '}
+              <Emoji>🤔</Emoji>
             </P>
           </>
         )

@@ -28,7 +28,7 @@
                       "funcPriorityAgg": [],
                       "emphasizePriority": false,
                       "bound": true,
-                      "shorthandNumber": 2
+                      "shorthandNumber": 10
                     },
                     "func": {
                       "name": "shorthandFunc",
@@ -42,7 +42,7 @@
                       ],
                       "emphasizePriority": false,
                       "bound": true,
-                      "shorthandFunc": "add"
+                      "shorthandFunc": "pred"
                     },
                     "state": "default",
                     "type": "call",
@@ -60,7 +60,7 @@
                     ],
                     "emphasizePriority": false,
                     "bound": true,
-                    "shorthandFunc": "add"
+                    "shorthandFunc": "pred"
                   },
                   "state": "default",
                   "type": "call",
@@ -78,7 +78,7 @@
                   ],
                   "emphasizePriority": false,
                   "bound": true,
-                  "shorthandFunc": "add"
+                  "shorthandFunc": "pred"
                 },
                 "state": "default",
                 "type": "call",
@@ -96,7 +96,7 @@
                 ],
                 "emphasizePriority": false,
                 "bound": true,
-                "shorthandFunc": "add"
+                "shorthandFunc": "pred"
               },
               "state": "default",
               "type": "call",
@@ -114,7 +114,7 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandFunc": "add"
+              "shorthandFunc": "pred"
             },
             "state": "default",
             "type": "call",
@@ -132,7 +132,7 @@
             ],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandFunc": "add"
+            "shorthandFunc": "pred"
           },
           "state": "default",
           "type": "call",
@@ -150,7 +150,7 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandFunc": "add"
+          "shorthandFunc": "pred"
         },
         "state": "default",
         "type": "call",
@@ -170,7 +170,7 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 9
+        "shorthandNumber": 3
       }
     }
   ],

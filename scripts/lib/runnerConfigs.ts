@@ -2801,8 +2801,9 @@ export const dfjp: ExpressionRunnerShorthandConfig = {
 
 export const zdat: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.nxdd,
-  variableSize: 'md'
+  initialExpressionContainer: initialExpressionContainers.bwig,
+  variableSize: 'md',
+  isDone: true
 }
 
 export const lxrk: ExpressionRunnerShorthandConfig = {
