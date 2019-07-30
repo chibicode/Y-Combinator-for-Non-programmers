@@ -7,12 +7,13 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
+import YesNoButtons from 'src/components/YesNoButtons'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>ふたつめの機能</>,
+        title: <>もうひとつの計算箱の機能</>,
         content: (
           <>
             <P>
@@ -30,8 +31,8 @@ export default () => (
               前回も書きましたが、計算箱にはこの 「
               <CustomEmoji type="plusMinus" />{' '}
               <Strong>プラスマイナスの機能</Strong>
-              」以外にもさらに<Strong>ふたつ</Strong>
-              の機能があります。今回はふたつめの機能、「
+              」以外にも<Strong>もうひとつ</Strong>
+              機能があります。今回はふたつめの機能、「
               <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
               」について説明します。
             </P>
@@ -58,6 +59,12 @@ export default () => (
               を解いてみましょう。
               <H args={{ name: 'lookAtThisMathBox' }} />:
             </P>
+            <R.Dfjp />
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndMathBoxQuestion' }} />
+            </P>
+            <R.Zdat />
+            <YesNoButtons answer="no" />
           </>
         )
       }

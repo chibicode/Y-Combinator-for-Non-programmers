@@ -2802,3 +2802,15 @@ export const aimm: ExpressionRunnerShorthandConfig = {
   isDone: true,
   initialExpressionContainer: initialExpressionContainers.gjyx
 }
+
+export const dfjp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bwig,
+  variableSize: 'md'
+}
+
+export const zdat: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nxdd,
+  variableSize: 'md'
+}

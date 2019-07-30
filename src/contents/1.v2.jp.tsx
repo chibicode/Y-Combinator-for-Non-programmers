@@ -436,14 +436,14 @@ export default () => (
             <P>
               <Em>
                 実は計算箱には、今回紹介した <CustomEmoji type="plusMinus" />{' '}
-                プラスマイナスの機能以外にも、<Strong>さらにふたつ</Strong>
+                プラスマイナスの機能以外にも、<Strong>さらにもうひとつ</Strong>
                 の機能があります。
               </Em>
             </P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="plusMinus" />,
-                <Emoji>❓</Emoji>,
+                <Emoji>🎁</Emoji>,
                 <Emoji>❓</Emoji>
               ]}
             />

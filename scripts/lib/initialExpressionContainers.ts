@@ -1552,3 +1552,46 @@ export const rnth = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const bwig = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    [
+      {
+        shorthandFunc: 'add'
+      },
+      [
+        {
+          shorthandFunc: 'add'
+        },
+        [
+          {
+            shorthandFunc: 'add'
+          },
+          [
+            {
+              shorthandFunc: 'add'
+            },
+            [
+              {
+                shorthandFunc: 'add'
+              },
+              {
+                shorthandNumber: 2
+              }
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+])
+
+export const nxdd = initializeExpressionContainer({
+  shorthandNumber: 10
+})
