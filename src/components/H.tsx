@@ -1284,12 +1284,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               図々しいお願いで恐縮です。
             </P>
             <TwitterEmbed id={shareId} />
-            {episodeNumber > 0 && (
-              <P>
-                ちなみに、この文言を全ページに載せているのは、ひと休みされるタイミングは読者によってさまざまだからです。
-                <Em>何度もツイートしていただきたいからではありません。</Em>
-              </P>
-            )}
             {question}
             <P>
               ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
