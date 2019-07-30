@@ -415,9 +415,7 @@ export default () => (
         content: (
           <>
             <P>
-              今回紹介した、1を足したり <CustomEmoji type="plusOne" /> 引いたり{' '}
-              <CustomEmoji type="minusOne" />{' '}
-              できる計算箱の機能を、ラムダ村の住人は「
+              今回紹介した、1を足したり引いたりできる計算箱の機能を、ラムダ村の住人は「
               <CustomEmoji type="plusMinus" />{' '}
               <Strong>プラスマイナスの機能</Strong>
               」と呼んでいました。
