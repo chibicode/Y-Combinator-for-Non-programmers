@@ -1,6 +1,7 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -102,6 +103,73 @@ export default () => (
             <YesNoButtons answer={'no'} />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Lxrk />
+            <P>
+              答えは <EmojiNumber number={3} />{' '}
+              になりました。つまり、もともと意図していた
+              <Strong>
+                <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+                <EmojiNumber number={8} /> ではなく、
+                <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+                <EmojiNumber number={7} /> を計算してしまった
+              </Strong>
+              のです。
+            </P>
+            <EmojiSeparator emojis={['❌', '😭', '❌']} />
+            <P>
+              もちろん理由は、
+              <Strong>
+                <CustomEmoji type="minusOne" /> の数が間違っていたから
+              </Strong>
+              です。
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={8} /> を計算したければ、
+              <CustomEmoji type="minusOne" /> を8個配置する必要がありますが、
+              <Em>実際には7個しかありませんでした</Em>。
+            </P>
+            <EmojiSeparator
+              size="mdsm"
+              nodes={[
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji
+                  type="minusOne"
+                  cssOverrides={css`
+                    opacity: 0.4;
+                  `}
+                />
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="minusOne" />{' '}
+                  が8個必要だったが、7個しかなかった
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <>ミスを防ぐには</>,
+        content: <></>
       }
     ]}
   />

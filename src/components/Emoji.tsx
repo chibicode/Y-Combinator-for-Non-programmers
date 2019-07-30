@@ -1,4 +1,3 @@
-// Inspired by https://github.com/ZxMYS/react-twemoji
 /** @jsx jsx */
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import twemoji from 'twemoji'
