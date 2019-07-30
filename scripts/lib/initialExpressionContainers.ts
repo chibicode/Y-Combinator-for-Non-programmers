@@ -1409,50 +1409,6 @@ export const gxqm = initializeExpressionContainer({
   }
 })
 
-export const gcie = initializeExpressionContainer([
-  {
-    begin: 2,
-    end: 3,
-    child: [
-      'blankNumber',
-      {
-        shorthandBinary: 'mult'
-      }
-    ]
-  },
-  {
-    shorthandNumber: 1
-  }
-])
-
-export const xcln = initializeDoneExpressionContainer({
-  shorthandNumber: 6
-})
-
-export const gwwy = initializeExpressionContainer([
-  {
-    begin: 3,
-    child: [
-      'blankNumber',
-      {
-        shorthandBinary: 'mult'
-      }
-    ]
-  },
-  {
-    begin: 2,
-    child: [
-      'blankNumber',
-      {
-        shorthandBinary: 'mult'
-      }
-    ]
-  },
-  {
-    shorthandNumber: 1
-  }
-])
-
 export const ygid = initializeExpressionContainer([
   {
     shorthandNumber: 3
@@ -1475,22 +1431,6 @@ export const ygid = initializeExpressionContainer([
       ]
     ]
   ]
-])
-
-export const gskq = initializeExpressionContainer([
-  {
-    begin: 2,
-    end: 4,
-    child: [
-      'blankNumber',
-      {
-        shorthandBinary: 'mult'
-      }
-    ]
-  },
-  {
-    shorthandNumber: 1
-  }
 ])
 
 export const vibe = initializeExpressionContainer([

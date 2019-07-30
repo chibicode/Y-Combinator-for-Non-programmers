@@ -60,8 +60,7 @@ export interface ConditionalExpressionParams {
 
 export interface RepeatExpressionParams {
   readonly child: ExpressionParams
-  readonly begin: number
-  readonly end?: number
+  readonly count: number
 }
 
 export type ExpressionParams =

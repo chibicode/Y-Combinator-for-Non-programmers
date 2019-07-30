@@ -2742,45 +2742,6 @@ export const zqum: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qolg
 }
 
-export const oklg: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.gcie,
-  caption: { name: 'repeatingMathBoxCaption' }
-}
-
-export const eqvz: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.gcie
-}
-
-export const emme: ExpressionRunnerShorthandConfig = {
-  runner: 'predefined',
-  initialExpressionContainers: [
-    initialExpressionContainers.gcie,
-    initialExpressionContainers.xcln
-  ]
-}
-
-export const hawd: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.gwwy
-}
-
-export const prfy: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ygid
-}
-
-export const nxsa: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.xcln
-}
-
-export const yzdy: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.gskq
-}
-
 export const lizi: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.vibe

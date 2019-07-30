@@ -207,8 +207,7 @@ export default function buildExpressionFromParams(
   } else {
     return {
       type: 'repeat',
-      begin: expressionParams.begin,
-      end: expressionParams.end,
+      count: expressionParams.count,
       child: buildExpressionFromParams(expressionParams.child)
     }
   }
