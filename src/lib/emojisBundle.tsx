@@ -55,6 +55,7 @@ import Emoji1f4f7 from 'src/components/Twemoji/1f4f7'
 import Emoji1f4fc from 'src/components/Twemoji/1f4fc'
 import Emoji1f501 from 'src/components/Twemoji/1f501'
 import Emoji1f50e from 'src/components/Twemoji/1f50e'
+import Emoji1f51f from 'src/components/Twemoji/1f51f'
 import Emoji1f520 from 'src/components/Twemoji/1f520'
 import Emoji1f522 from 'src/components/Twemoji/1f522'
 import Emoji1f53d from 'src/components/Twemoji/1f53d'
@@ -70,6 +71,7 @@ import Emoji1f60f from 'src/components/Twemoji/1f60f'
 import Emoji1f61a from 'src/components/Twemoji/1f61a'
 import Emoji1f621 from 'src/components/Twemoji/1f621'
 import Emoji1f628 from 'src/components/Twemoji/1f628'
+import Emoji1f629 from 'src/components/Twemoji/1f629'
 import Emoji1f62c from 'src/components/Twemoji/1f62c'
 import Emoji1f62d from 'src/components/Twemoji/1f62d'
 import Emoji1f634 from 'src/components/Twemoji/1f634'
@@ -84,7 +86,6 @@ import Emoji1f917 from 'src/components/Twemoji/1f917'
 import Emoji1f924 from 'src/components/Twemoji/1f924'
 import Emoji1f928 from 'src/components/Twemoji/1f928'
 import Emoji1f929 from 'src/components/Twemoji/1f929'
-import Emoji1f92a from 'src/components/Twemoji/1f92a'
 import Emoji1f92b from 'src/components/Twemoji/1f92b'
 import Emoji1f92f from 'src/components/Twemoji/1f92f'
 import Emoji1f947 from 'src/components/Twemoji/1f947'
@@ -133,6 +134,7 @@ import Emoji33ZZ20e3 from 'src/components/Twemoji/33-20e3'
 import Emoji34ZZ20e3 from 'src/components/Twemoji/34-20e3'
 import Emoji35ZZ20e3 from 'src/components/Twemoji/35-20e3'
 import Emoji36ZZ20e3 from 'src/components/Twemoji/36-20e3'
+import Emoji37ZZ20e3 from 'src/components/Twemoji/37-20e3'
 import Emoji38ZZ20e3 from 'src/components/Twemoji/38-20e3'
 import Emoji39ZZ20e3 from 'src/components/Twemoji/39-20e3'
 
@@ -193,6 +195,7 @@ export default {
   '1f4fc': Emoji1f4fc,
   '1f501': Emoji1f501,
   '1f50e': Emoji1f50e,
+  '1f51f': Emoji1f51f,
   '1f520': Emoji1f520,
   '1f522': Emoji1f522,
   '1f53d': Emoji1f53d,
@@ -208,6 +211,7 @@ export default {
   '1f61a': Emoji1f61a,
   '1f621': Emoji1f621,
   '1f628': Emoji1f628,
+  '1f629': Emoji1f629,
   '1f62c': Emoji1f62c,
   '1f62d': Emoji1f62d,
   '1f634': Emoji1f634,
@@ -222,7 +226,6 @@ export default {
   '1f924': Emoji1f924,
   '1f928': Emoji1f928,
   '1f929': Emoji1f929,
-  '1f92a': Emoji1f92a,
   '1f92b': Emoji1f92b,
   '1f92f': Emoji1f92f,
   '1f947': Emoji1f947,
@@ -271,6 +274,7 @@ export default {
   '34-20e3': Emoji34ZZ20e3,
   '35-20e3': Emoji35ZZ20e3,
   '36-20e3': Emoji36ZZ20e3,
+  '37-20e3': Emoji37ZZ20e3,
   '38-20e3': Emoji38ZZ20e3,
   '39-20e3': Emoji39ZZ20e3
 }

@@ -11,7 +11,7 @@ interface EmojiNumberProps {
 const numberToDigits = (x: number) => Array.from(String(x), Number)
 
 const EmojiNumber = ({ number, size }: EmojiNumberProps) => {
-  if (number < 10) {
+  if (number <= 10) {
     return <Emoji size={size}>{numberEmojiMapping[number]}</Emoji>
   } else {
     return (

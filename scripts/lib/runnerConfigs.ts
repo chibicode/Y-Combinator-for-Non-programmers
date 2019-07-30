@@ -2789,18 +2789,8 @@ export const yjur: ExpressionRunnerShorthandConfig = {
 
 export const amoq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.rnth
-}
-
-export const orhj: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.gjyx
-}
-
-export const aimm: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  isDone: true,
-  initialExpressionContainer: initialExpressionContainers.gjyx
+  initialExpressionContainer: initialExpressionContainers.rnth,
+  variableSize: 'md'
 }
 
 export const dfjp: ExpressionRunnerShorthandConfig = {
@@ -2812,5 +2802,11 @@ export const dfjp: ExpressionRunnerShorthandConfig = {
 export const zdat: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nxdd,
+  variableSize: 'md'
+}
+
+export const lxrk: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.bwig,
   variableSize: 'md'
 }

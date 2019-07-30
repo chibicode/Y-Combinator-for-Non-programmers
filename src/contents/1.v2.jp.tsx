@@ -373,42 +373,35 @@ export default () => (
               。
             </P>
             <P>
-              たとえば、「1万 + 1万」を計算したかったら、
+              たとえば、
+              <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={10} /> を計算したかったら、
               <Strong>
-                「1万」の下に「
+                <EmojiNumber number={10} /> の下に「
                 <CustomEmoji type="plusOne" />
-                」を1万回配置した計算箱を実行すればいい
+                」を10回配置した計算箱を実行すればいい
               </Strong>
               のです。
             </P>
             <R.Amoq>
-              <CustomEmoji type="plusOne" /> を1万回配置
+              <CustomEmoji type="plusOne" /> を10回配置
             </R.Amoq>
             <P>
-              ラムダ村の住人は計算がとても苦手だったので、
-              <Em>足し算や引き算を行う時には必ず計算箱を使っていました</Em>。
+              このようにすれば、計算箱はどんな大きな数字の足し算でも引き算でもできます。
+            </P>
+            <P>
+              そして、
+              <Em>
+                ラムダ村の住人は計算がとても苦手だったので、足し算や引き算を行う時には、必ずこのように計算箱を使って計算していました
+              </Em>
+              。
             </P>
             <EmojiSeparator
-              emojis={['🌲', '🙂', '➕', '🎁', '➖', '🙂', '🌲']}
+              emojis={['🙂', '➕', '🎁', '➖', '🙂']}
+              description={<>「足し算や引き算は、計算箱におまかせしよう！」</>}
             />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <InlineHeader>ちなみに:</InlineHeader> 残念ながら、計算箱では
-                <Strong>掛け算と割り算はできません。</Strong>
-                できるのは、足し算と引き算だけです。
-              </P>
-              <EmojiSeparator emojis={['✖️', '😭', '➗']} />
-              <P>
-                ラムダ村の住人は計算がとても苦手だったので、計算箱で行うことができない掛け算と割り算は、適当に行うしかありませんでした。
-                <Emoji>🤪</Emoji>
-              </P>
-            </>
-          )
-        }
+        )
       },
       {
         title: <>プラスマイナスの機能</>,
@@ -433,6 +426,13 @@ export default () => (
               ]}
               description={<>プラスマイナスの機能</>}
             />
+          </>
+        )
+      },
+      {
+        title: <>もうひとつの計算箱の機能</>,
+        content: (
+          <>
             <P>
               <Em>
                 実は計算箱には、今回紹介した <CustomEmoji type="plusMinus" />{' '}

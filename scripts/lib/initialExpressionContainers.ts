@@ -1535,7 +1535,9 @@ export const rnth = initializeExpressionContainer([
       shorthandFunc: 'add'
     },
     [
-      'verticalDotDotDot',
+      {
+        shorthandFunc: 'add'
+      },
       [
         {
           shorthandFunc: 'add'
@@ -1544,9 +1546,34 @@ export const rnth = initializeExpressionContainer([
           {
             shorthandFunc: 'add'
           },
-          {
-            shorthandNumber: 10000
-          }
+          [
+            {
+              shorthandFunc: 'add'
+            },
+            [
+              {
+                shorthandFunc: 'add'
+              },
+              [
+                {
+                  shorthandFunc: 'add'
+                },
+                [
+                  {
+                    shorthandFunc: 'add'
+                  },
+                  [
+                    {
+                      shorthandFunc: 'add'
+                    },
+                    {
+                      shorthandNumber: 10
+                    }
+                  ]
+                ]
+              ]
+            ]
+          ]
         ]
       ]
     ]
