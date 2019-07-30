@@ -6,9 +6,8 @@ import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import EmojiNumber from 'src/components/EmojiNumber'
 
-export interface ConditionalBorderProps {
-  begin: number
-  end?: number
+export interface RepeatBorderProps {
+  count: number
   variableSizeOverrides?: ExpressionRunnerContextProps['variableSize']
 }
 
@@ -36,11 +35,7 @@ const width = (
   }
 }
 
-const RepeatBorder = ({
-  begin,
-  end,
-  variableSizeOverrides
-}: ConditionalBorderProps) => {
+const RepeatBorder = ({ count, variableSizeOverrides }: RepeatBorderProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
     <>
@@ -66,18 +61,7 @@ const RepeatBorder = ({
           font-size: ${fontSize(variableSizeOverrides || variableSize)};
         `}
       >
-        <EmojiNumber number={begin} />
-        {end &&
-          [...Array(end - begin).keys()].map(number => (
-            <span
-              key={`number-${number}`}
-              css={css`
-                display: inline-block;
-              `}
-            >
-              <EmojiNumber number={begin + number + 1} />
-            </span>
-          ))}
+        <EmojiNumber number={count} />
       </span>
       <span
         css={css`
