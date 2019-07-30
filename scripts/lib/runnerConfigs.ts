@@ -2811,3 +2811,15 @@ export const lxrk: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.bwig,
   variableSize: 'md'
 }
+
+export const sucz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bmar,
+  variableSize: 'md'
+}
+
+export const xlgb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dacg,
+  variableSize: 'md'
+}

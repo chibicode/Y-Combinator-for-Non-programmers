@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, Hr } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -9,6 +9,8 @@ import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
 import YesNoButtons from 'src/components/YesNoButtons'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import InlineBorder from 'src/components/InlineBorder'
 
 export default () => (
   <EpisodeCardList
@@ -202,8 +204,9 @@ export default () => (
         content: (
           <>
             <P>
-              計算箱には、こういったミスを防ぐために役立つ「<Emoji>🔁</Emoji>{' '}
-              <Strong>繰り返しの機能</Strong>」が備わっています。
+              実は計算箱には、こういったミスを防ぐために役立つ「
+              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
+              」が備わっています。
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
@@ -213,6 +216,26 @@ export default () => (
               どんな機能か紹介しましょう。
               <H args={{ name: 'lookAtThisMathBox' }} />:
             </P>
+            <R.Sucz />
+            <P>
+              注目ポイントは、下の <CustomEmoji type="minusOne" /> の左側に{' '}
+              <InlineBorder>
+                <EmojiNumber number={8} />
+              </InlineBorder>{' '}
+              があることです。
+            </P>
+            <Hr />
+            <P>
+              <Em>
+                上の計算箱を
+                <H args={{ name: 'play' }} />
+                すると、計算をする前に、まず下の部分が次のように変化します。
+              </Em>
+            </P>
+            <R.Sucz>下の部分が変化します</R.Sucz>
+            <ExpressionRunnerSeparator />
+            <R.Xlgb />
+            <P>?</P>
           </>
         )
       }

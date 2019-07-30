@@ -1618,3 +1618,59 @@ export const bwig = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const bmar = initializeExpressionContainer([
+  {
+    count: 8,
+    child: {
+      shorthandFunc: 'pred'
+    }
+  },
+  {
+    shorthandNumber: 10
+  }
+])
+
+export const dacg = initializeExpressionContainer([
+  {
+    shorthandFunc: 'pred'
+  },
+  [
+    {
+      shorthandFunc: 'pred'
+    },
+    [
+      {
+        shorthandFunc: 'pred'
+      },
+      [
+        {
+          shorthandFunc: 'pred'
+        },
+        [
+          {
+            shorthandFunc: 'pred'
+          },
+          [
+            {
+              shorthandFunc: 'pred'
+            },
+            [
+              {
+                shorthandFunc: 'pred'
+              },
+              [
+                {
+                  shorthandFunc: 'pred'
+                },
+                {
+                  shorthandNumber: 10
+                }
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+])
