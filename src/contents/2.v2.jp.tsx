@@ -129,16 +129,33 @@ export default () => (
               のです。
             </P>
             <EmojiSeparator emojis={['❌', '😭', '❌']} />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
+            の数を間違えないようにするには
+          </>
+        ),
+        content: (
+          <>
             <P>
-              もちろん理由は、
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={8} /> ではなく、
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={7} /> を計算してしまった理由は、
               <Strong>
                 <CustomEmoji type="minusOne" /> の数が間違っていたから
               </Strong>
               です。
+            </P>
+            <P>
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> を計算したければ、
               <CustomEmoji type="minusOne" /> を8個配置する必要がありますが、
-              <Em>実際には7個しかありませんでした</Em>。
+              <Em>先ほどの計算箱には7個しかありませんでした</Em>。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -164,12 +181,40 @@ export default () => (
                 </>
               }
             />
+            <P>
+              このように、
+              <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
+              の数をひとつでも間違えると、正しい計算ができません。
+              <Em>ではどうすれば、こういったミスを防げるのでしょうか？</Em>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <Emoji>🤔</Emoji>,
+                <CustomEmoji type="minusOne" />
+              ]}
+            />
           </>
         )
       },
       {
-        title: <>ミスを防ぐには</>,
-        content: <></>
+        title: <>繰り返しの機能</>,
+        content: (
+          <>
+            <P>
+              計算箱には、こういったミスを防ぐために役立つ「<Emoji>🔁</Emoji>{' '}
+              <Strong>繰り返しの機能</Strong>」が備わっています。
+            </P>
+            <EmojiSeparator
+              nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
+              description={<>繰り返しの機能</>}
+            />
+            <P>
+              どんな機能か紹介しましょう。
+              <H args={{ name: 'lookAtThisMathBox' }} />:
+            </P>
+          </>
+        )
       }
     ]}
   />
