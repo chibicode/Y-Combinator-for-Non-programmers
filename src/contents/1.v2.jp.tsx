@@ -14,6 +14,7 @@ import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
+import NextLessonButton from 'src/components/NextLessonButton'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -399,7 +400,7 @@ export default () => (
               </P>
               <EmojiSeparator emojis={['✖️', '😭', '➗']} />
               <P>
-                ラムダ村の住人は計算がとても苦手だったので、掛け算と割り算は適当に行っていました。
+                ラムダ村の住人は計算がとても苦手だったので、計算箱で行うことができない掛け算と割り算は、適当に行うしかありませんでした。
                 <Emoji>🤪</Emoji>
               </P>
             </>
@@ -407,16 +408,41 @@ export default () => (
         }
       },
       {
-        title: <></>,
+        title: <>プラスマイナスの機能</>,
         content: (
           <>
+            <P>
+              今回紹介した、1を足したり <CustomEmoji type="plusOne" /> 引いたり{' '}
+              <CustomEmoji type="minusOne" />{' '}
+              できる計算箱の機能を、ラムダ村の住人は「
+              <CustomEmoji type="plusMinus" />{' '}
+              <Strong>プラスマイナスの機能</Strong>
+              」と呼んでいました。
+            </P>
+            <P>
+              「プラス1」と「マイナス1」を計算できるので、「
+              <CustomEmoji type="plusMinus" />{' '}
+              <Strong>プラスマイナスの機能</Strong>」というわけです。
+            </P>
             <EmojiSeparator
               nodes={[
                 <Emoji>✨</Emoji>,
                 <CustomEmoji type="plusMinus" />,
                 <Emoji>✨</Emoji>
               ]}
+              description={<>プラスマイナスの機能</>}
             />
+            <P>
+              <Em>
+                計算箱には、今回紹介した <CustomEmoji type="plusMinus" />{' '}
+                プラスマイナスの機能以外にも、<Strong>さらにふたつ</Strong>
+                の機能があります。
+              </Em>
+            </P>
+            <P>
+              次のページでは、計算箱のふたつめの機能について紹介していきます！
+            </P>
+            <NextLessonButton />
           </>
         )
       }
