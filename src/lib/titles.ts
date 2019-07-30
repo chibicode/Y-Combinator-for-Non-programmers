@@ -38,7 +38,7 @@ export const episodeTitles = {
     contentVersion === 'v2'
       ? {
           1: '計算箱と、プラスマイナスの機能',
-          2: '?',
+          2: '繰り返しの機能',
           3: '?',
           4: '?',
           5: '?',

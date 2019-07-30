@@ -34,7 +34,10 @@ export default () => (
               まずは、この物語に登場する「
               <Strong>計算箱</Strong>」の話をしましょう。
             </P>
-            <EmojiSeparator emojis={['🎁', '🎁', '🎁']} />
+            <EmojiSeparator
+              emojis={['🎁', '🎁', '🎁']}
+              description={<>↑ これが計算箱のアイコンです！</>}
+            />
           </>
         )
       },
@@ -434,11 +437,18 @@ export default () => (
             />
             <P>
               <Em>
-                計算箱には、今回紹介した <CustomEmoji type="plusMinus" />{' '}
+                実は計算箱には、今回紹介した <CustomEmoji type="plusMinus" />{' '}
                 プラスマイナスの機能以外にも、<Strong>さらにふたつ</Strong>
                 の機能があります。
               </Em>
             </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusMinus" />,
+                <Emoji>❓</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+            />
             <P>
               次のページでは、計算箱のふたつめの機能について紹介していきます！
             </P>
