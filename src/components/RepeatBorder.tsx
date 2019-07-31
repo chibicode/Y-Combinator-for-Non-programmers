@@ -3,11 +3,16 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import { zIndices, colors, fontSizes } from 'src/lib/theme'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
+import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import Emoji from 'src/components/Emoji'
+import CustomEmoji from 'src/components/CustomEmoji'
+import { VariableNames } from 'src/types/VariableNames'
 
 export interface RepeatBorderProps {
   count: number
+  countVariable?: VariableNames
   variableSizeOverrides?: ExpressionRunnerContextProps['variableSize']
 }
 
@@ -35,7 +40,11 @@ const width = (
   }
 }
 
-const RepeatBorder = ({ count, variableSizeOverrides }: RepeatBorderProps) => {
+const RepeatBorder = ({
+  count,
+  countVariable,
+  variableSizeOverrides
+}: RepeatBorderProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
   return (
     <>
@@ -61,7 +70,15 @@ const RepeatBorder = ({ count, variableSizeOverrides }: RepeatBorderProps) => {
           font-size: ${fontSize(variableSizeOverrides || variableSize)};
         `}
       >
-        <EmojiNumber number={count} />
+        {countVariable ? (
+          countVariable === 'blankNumber' ? (
+            <CustomEmoji type="blankNumber" />
+          ) : (
+            <Emoji>{letterEmojiMapping[countVariable]}</Emoji>
+          )
+        ) : (
+          <EmojiNumber number={count} />
+        )}
       </span>
       <span
         css={css`
@@ -80,6 +97,10 @@ const RepeatBorder = ({ count, variableSizeOverrides }: RepeatBorderProps) => {
       />
     </>
   )
+}
+
+RepeatBorder.defaultProps = {
+  count: 0
 }
 
 export default RepeatBorder

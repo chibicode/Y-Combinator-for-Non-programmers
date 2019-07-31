@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -10,6 +10,7 @@ import H from 'src/components/H'
 import * as R from 'src/components/Runners'
 import YesNoButtons from 'src/components/YesNoButtons'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
 import InlineBorder from 'src/components/InlineBorder'
 
 export default () => (
@@ -288,8 +289,6 @@ export default () => (
             <CustomEmoji type="plusOne" /> も繰り返せる
           </>
         ),
-        // First, one w/ play button
-        // Then, show the expansion
         content: (
           <>
             <P>
@@ -326,6 +325,54 @@ export default () => (
         )
       },
       {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>ここまでをまとめると、下の計算箱のように、</P>
+            <R.Bwnp />
+            <Ul>
+              <UlLi>
+                <Em>
+                  <CustomEmoji type="plusOne" /> の左側に何らかの数字{' '}
+                  <InlineBorder>
+                    <CustomEmoji type="blankNumber" />
+                  </InlineBorder>{' '}
+                  が入っている場合、
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <H args={{ name: 'play' }} /> すると、
+                  <CustomEmoji type="plusOne" /> が{' '}
+                  <CustomEmoji type="blankNumber" /> 回分繰り返される。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  <CustomEmoji type="plusOne" /> の代わりに{' '}
+                  <CustomEmoji type="minusOne" />{' '}
+                  を使った場合も、同じように繰り返される。
+                </Em>
+              </UlLi>
+            </Ul>
+            <P>
+              ということです。これが、計算箱の「
+              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
+              」です。
+            </P>
+            <EmojiSeparator
+              nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
+              description={<>繰り返しの機能</>}
+            />
+          </>
+        )
+      },
+      {
         title: (
           <>
             <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算するには
@@ -338,10 +385,96 @@ export default () => (
               <Emoji>🅱️</Emoji>{' '}
               を計算箱で計算したかったら、以下のような計算箱を用意すればいいのです。
             </P>
+            <R.Nmbt>
+              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算
+            </R.Nmbt>
+            <P>
+              たとえば、
+              <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算するには、次のようにします。
+            </P>
+            <R.Etku>
+              <CustomEmoji type="plusOne" /> の左側に{' '}
+              <InlineBorder>
+                <EmojiNumber number={3} />
+              </InlineBorder>{' '}
+              があるので…
+            </R.Etku>
+            <ExpressionRunnerSeparator />
+            <R.Iczf>
+              <CustomEmoji type="plusOne" /> を3回繰り返します
+            </R.Iczf>
+            <ExpressionRunnerSeparator />
+            <R.Vsvt>
+              <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できました！
+            </R.Vsvt>
+            <P>
+              このようにすれば、
+              <CustomEmoji type="plusOne" /> の数を間違えることはありませんね！
+            </P>
+            <Hr />
+            <P>
+              引き算でも同じです。<Emoji>🅰️</Emoji> <Emoji>➖</Emoji>{' '}
+              <Emoji>🅱️</Emoji>{' '}
+              を計算するには、以下のような計算箱を使えばできます。
+            </P>
+            <R.Jaqs>
+              <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji> を計算
+            </R.Jaqs>
+            <P>
+              このように繰り返しの機能を使えば、
+              <Strong>
+                <CustomEmoji type="plusOne" /> や{' '}
+                <CustomEmoji type="minusOne" />{' '}
+                を数え間違えることなく、確実に足し算や引き算を行うことができるのです。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              emojis={['➕', '🤗', '➖']}
+              description={<>確実に足し算や引き算を行うことができる！</>}
+            />
+          </>
+        )
+      },
+      {
+        title: <>ラムダ村にとって、計算箱は必要不可欠</>,
+        content: (
+          <>
+            <P>
+              ラムダ村の村人たちは、計算箱の「
+              <CustomEmoji type="plusMinus" />{' '}
+              <Strong>プラスマイナスの機能</Strong>」 と「
+              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
+              」を組み合わせることで、足し算や引き算を行っていました。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🙂</Emoji>,
+                <CustomEmoji type="plusMinus" />,
+                <Emoji>🎁</Emoji>,
+                <Emoji>🔁</Emoji>,
+                <Emoji>🙂</Emoji>
+              ]}
+            />
+            <P>
+              <Em>
+                残念ながら、計算箱は掛け算 <Emoji>✖️</Emoji> や割り算{' '}
+                <Emoji>➗</Emoji> を行うことはできませんでした。
+              </Em>
+              とはいえ、計算がとても苦手だったラムダ村の村人たちにとって、足し算や引き算を自動で行ってくれる計算箱は、必要不可欠な道具でした。
+            </P>
+            <EmojiSeparator
+              emojis={['🌲', '😍', '🎁', '😍', '🌲']}
+              description={<>「計算箱が無いとやってけない！」</>}
+            />
+            <P>
+              そんなある日、ラムダ村である出来事が起きました。詳しくは次のページでお話します。
+            </P>
+            <NextLessonButton />
           </>
         )
       }
-      // LATER: If you want to do A + B, then put A at the top and B on the repeat
     ]}
   />
 )

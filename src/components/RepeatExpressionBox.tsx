@@ -24,7 +24,10 @@ const RepeatExpressionBox = ({ expression }: RepeatExpressionBoxProps) => {
           position: relative;
         `}
       >
-        <RepeatBorder count={expression.count} />
+        <RepeatBorder
+          count={expression.count}
+          countVariable={expression.countVariable}
+        />
         <ExpressionBox expression={expression.child} />
       </FlexCenter>
     </Flex>

@@ -336,7 +336,8 @@ export interface ConditionalExpression {
 export interface RepeatExpression {
   readonly type: 'repeat'
   readonly child: Expression
-  readonly count: number
+  readonly count?: number
+  readonly countVariable?: VariableNames
 }
 
 export type Expression =

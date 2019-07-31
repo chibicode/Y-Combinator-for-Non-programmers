@@ -1718,3 +1718,65 @@ export const yvfc = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const zpil = initializeExpressionContainer([
+  {
+    countVariable: 'B',
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  'A'
+])
+
+export const gnpv = initializeExpressionContainer([
+  {
+    count: 3,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 5
+  }
+])
+
+export const odcm = initializeExpressionContainer({
+  shorthandNumber: 8
+})
+
+export const qgrh = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    [
+      {
+        shorthandFunc: 'add'
+      },
+      {
+        shorthandNumber: 5
+      }
+    ]
+  ]
+])
+
+export const ilhz = initializeExpressionContainer([
+  {
+    countVariable: 'B',
+    child: {
+      shorthandFunc: 'pred'
+    }
+  },
+  'A'
+])
+
+export const ulsd = initializeExpressionContainer({
+  countVariable: 'blankNumber',
+  child: {
+    shorthandFunc: 'add'
+  }
+})

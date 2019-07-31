@@ -208,6 +208,7 @@ export default function buildExpressionFromParams(
     return {
       type: 'repeat',
       count: expressionParams.count,
+      countVariable: expressionParams.countVariable,
       child: buildExpressionFromParams(expressionParams.child)
     }
   }

@@ -2850,3 +2850,33 @@ export const dgpx: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   initialExpressionContainer: initialExpressionContainers.yvfc
 }
+
+export const nmbt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zpil
+}
+
+export const etku: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gnpv
+}
+
+export const jaqs: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ilhz
+}
+
+export const vsvt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.odcm
+}
+
+export const iczf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qgrh
+}
+
+export const bwnp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ulsd
+}

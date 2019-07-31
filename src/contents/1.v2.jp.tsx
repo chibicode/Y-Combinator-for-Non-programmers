@@ -167,22 +167,22 @@ export default () => (
             <R.Rviy />
             <Ul>
               <UlLi>
-                <Strong>
+                <Em>
                   上に何らかの数字 <CustomEmoji type="blankNumber" />{' '}
                   が入っていて、
-                </Strong>
+                </Em>
               </UlLi>
               <UlLi>
-                <Strong>
+                <Em>
                   下に <CustomEmoji type="plusOne" /> が入っている場合、
-                </Strong>
+                </Em>
               </UlLi>
               <UlLi>
-                <Strong>
+                <Em>
                   <H args={{ name: 'play' }} /> すると結果は{' '}
                   <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
                   <EmojiNumber number={1} /> になる
-                </Strong>
+                </Em>
               </UlLi>
             </Ul>
             <P>ということです。</P>
