@@ -2825,8 +2825,11 @@ export const xlgb: ExpressionRunnerShorthandConfig = {
 }
 
 export const pgxb: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ilbg,
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.bmar,
+    initialExpressionContainers.ilbg
+  ],
   variableSize: 'md'
 }
 

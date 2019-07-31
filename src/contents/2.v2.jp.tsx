@@ -132,6 +132,7 @@ export default () => (
               のです。
             </P>
             <EmojiSeparator emojis={['❌', '😭', '❌']} />
+            <P>どうしてこうなったか、お分かりでしょうか？</P>
           </>
         )
       },
@@ -154,6 +155,13 @@ export default () => (
               </Strong>
               です。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>❌</Emoji>,
+                <CustomEmoji type="minusOne" />,
+                <Emoji>❌</Emoji>
+              ]}
+            />
             <P>
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> を計算したければ、
@@ -187,7 +195,7 @@ export default () => (
             <P>
               このように、
               <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
-              の数をひとつでも間違えると、正しい計算ができません。
+              の数をひとつでも間違えると、計算箱では正確な計算ができません。
               <Em>ではどうすれば、こういったミスを防げるのでしょうか？</Em>
             </P>
             <EmojiSeparator
@@ -219,11 +227,14 @@ export default () => (
             </P>
             <R.Sucz />
             <P>
-              注目ポイントは、下の <CustomEmoji type="minusOne" /> の左側に{' '}
-              <InlineBorder>
-                <EmojiNumber number={8} />
-              </InlineBorder>{' '}
-              の印があることです。
+              注目ポイントは、
+              <Strong>
+                下の <CustomEmoji type="minusOne" /> の左側に{' '}
+                <InlineBorder>
+                  <EmojiNumber number={8} />
+                </InlineBorder>{' '}
+                の印があることです。
+              </Strong>
             </P>
           </>
         )
@@ -264,11 +275,38 @@ export default () => (
               </Strong>
               です。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <InlineBorder small>
+                  <EmojiNumber number={8} />
+                </InlineBorder>,
+                <CustomEmoji type="minusOne" />
+              ]}
+            />
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              size="mdsm"
+              nodes={[
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <CustomEmoji type="minusOne" />
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="minusOne" /> が8回繰り返される
+                </>
+              }
+            />
             <P>
               ということは <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={8} /> を計算してくれるので、
-              <H args={{ name: 'play' }} />
-              の結果は <EmojiNumber number={2} /> になります:
+              <EmojiNumber number={8} /> を計算してくれるので、結果は{' '}
+              <EmojiNumber number={2} /> になります。
+              <H args={{ name: 'pressPlay' }} />:
             </P>
             <R.Pgxb />
             <P>
@@ -355,13 +393,12 @@ export default () => (
               <UlLi>
                 <Em>
                   <CustomEmoji type="plusOne" /> の代わりに{' '}
-                  <CustomEmoji type="minusOne" />{' '}
-                  を使った場合も、同じように繰り返される。
+                  <CustomEmoji type="minusOne" /> を使った場合も同じ。
                 </Em>
               </UlLi>
             </Ul>
             <P>
-              ということです。これが、計算箱の「
+              これが、計算箱の「
               <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
               」です。
             </P>
@@ -391,16 +428,18 @@ export default () => (
             <P>
               たとえば、
               <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算するには、次のようにします。
+              <EmojiNumber number={3} /> を計算するには、<Emoji>🅰️</Emoji> に{' '}
+              <EmojiNumber number={5} /> を、<Emoji>🅱️</Emoji> に{' '}
+              <EmojiNumber number={3} /> を入れます。
             </P>
-            <R.Etku>
-              <CustomEmoji type="plusOne" /> の左側に{' '}
-              <InlineBorder>
-                <EmojiNumber number={3} />
-              </InlineBorder>{' '}
-              があるので…
-            </R.Etku>
-            <ExpressionRunnerSeparator />
+            <R.Etku />
+            <P>
+              後は
+              <H args={{ name: 'play' }} />
+              するだけで、
+              <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算してくれます。
+            </P>
             <R.Iczf>
               <CustomEmoji type="plusOne" /> を3回繰り返します
             </R.Iczf>
