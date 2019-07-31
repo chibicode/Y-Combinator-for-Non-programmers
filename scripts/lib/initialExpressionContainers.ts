@@ -1678,3 +1678,43 @@ export const dacg = initializeExpressionContainer([
 export const ilbg = initializeExpressionContainer({
   shorthandNumber: 2
 })
+
+export const dams = initializeExpressionContainer([
+  {
+    count: 4,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 2
+  }
+])
+
+export const rjyq = initializeDoneExpressionContainer({
+  shorthandNumber: 6
+})
+
+export const yvfc = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    [
+      {
+        shorthandFunc: 'add'
+      },
+      [
+        {
+          shorthandFunc: 'add'
+        },
+        {
+          shorthandNumber: 2
+        }
+      ]
+    ]
+  ]
+])

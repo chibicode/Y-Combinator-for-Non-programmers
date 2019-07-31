@@ -2829,3 +2829,24 @@ export const pgxb: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ilbg,
   variableSize: 'md'
 }
+
+export const ednv: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  variableSize: 'md',
+  initialExpressionContainers: [
+    initialExpressionContainers.dams,
+    initialExpressionContainers.rjyq
+  ]
+}
+
+export const xpks: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'md',
+  initialExpressionContainer: initialExpressionContainers.dams
+}
+
+export const dgpx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'md',
+  initialExpressionContainer: initialExpressionContainers.yvfc
+}

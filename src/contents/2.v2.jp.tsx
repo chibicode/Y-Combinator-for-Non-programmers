@@ -270,6 +270,15 @@ export default () => (
               の結果は <EmojiNumber number={2} /> になります:
             </P>
             <R.Pgxb />
+            <P>
+              まとめると、
+              <Em>
+                繰り返しの機能を使うことで、
+                <CustomEmoji type="minusOne" />{' '}
+                を指定した回数分繰り返すことができる
+              </Em>
+              ということです。
+            </P>
           </>
         )
       },
@@ -281,7 +290,56 @@ export default () => (
         ),
         // First, one w/ play button
         // Then, show the expansion
-        content: <></>
+        content: (
+          <>
+            <P>
+              もちろん、
+              <Strong>
+                <CustomEmoji type="plusOne" /> を繰り返すこともできます。
+              </Strong>
+              こちらの計算箱をご覧になり、
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Ednv />
+            <P>
+              結果は <EmojiNumber number={6} /> になりました。上の計算箱は、
+              <Em>
+                下の <CustomEmoji type="plusOne" /> の左側に{' '}
+                <InlineBorder>
+                  <EmojiNumber number={4} />
+                </InlineBorder>{' '}
+                があるので、
+                <CustomEmoji type="plusOne" /> が4回繰り返されるのです。
+              </Em>
+            </P>
+            <R.Xpks />
+            <ExpressionRunnerSeparator />
+            <R.Dgpx>
+              <CustomEmoji type="plusOne" /> が4回繰り返される
+            </R.Dgpx>
+            <P>
+              つまり、
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={4} /> を計算できるというわけですね。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算するには
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              ということは、もし例えば <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+              <Emoji>🅱️</Emoji>{' '}
+              を計算箱で計算したかったら、以下のような計算箱を用意すればいいのです。
+            </P>
+          </>
+        )
       }
       // LATER: If you want to do A + B, then put A at the top and B on the repeat
     ]}
