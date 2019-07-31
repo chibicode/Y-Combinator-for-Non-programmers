@@ -2,23 +2,26 @@
 import { css, jsx } from '@emotion/core'
 import Flex from 'src/components/Flex'
 import Emoji from 'src/components/Emoji'
-import { colors, spaces, radii } from 'src/lib/theme'
+import { fontSizes, colors, spaces, radii, ns } from 'src/lib/theme'
 
 interface BubbleQuoteProps {
-  speaker: 'person' | 'devil'
+  type: 'person' | 'devil' | 'scared' | 'crying'
   children: React.ReactNode
 }
 
-const speakerToEmoji = (speaker: BubbleQuoteProps['speaker']) =>
+const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
   ({
     person: '🙂',
+    scared: '😱',
+    crying: '😭',
     devil: '😈'
-  }[speaker])
+  }[type])
 
-const BubbleQuote = ({ speaker, children }: BubbleQuoteProps) => (
+const BubbleQuote = ({ type, children }: BubbleQuoteProps) => (
   <Flex
     css={css`
-      margin: ${spaces(1.5)} 0;
+      margin: 0 0 ${spaces(1)};
+      font-size: ${fontSizes(0.85)};
     `}
   >
     <span
@@ -26,17 +29,24 @@ const BubbleQuote = ({ speaker, children }: BubbleQuoteProps) => (
         margin-right: ${spaces(0.5)};
         display: block;
         padding-top: ${spaces(1)};
+
+        ${ns} {
+          margin-right: ${spaces(0.75)};
+        }
       `}
     >
-      <Emoji size="lg">{speakerToEmoji(speaker)}</Emoji>
+      <Emoji size="lg">{speakerToEmoji(type)}</Emoji>
     </span>
     <span
       css={css`
         display: block;
-        flex: 1;
         background: ${colors('white')};
-        padding: ${spaces(1)} ${spaces(1)} 0;
+        padding: ${spaces(0.75)} ${spaces(0.5)} 0;
         border-radius: ${radii(0.5)};
+
+        ${ns} {
+          padding: ${spaces(1)} ${spaces(1)} 0;
+        }
       `}
     >
       {children}
