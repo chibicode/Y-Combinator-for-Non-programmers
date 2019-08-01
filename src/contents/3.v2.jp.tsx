@@ -89,7 +89,19 @@ export default () => (
       },
       {
         title: <></>,
-        content: <></>
+        content: (
+          <>
+            <BubbleQuote type="sad">
+              <P>お願いだ、何でもするから計算箱を返してくれないか？</P>
+            </BubbleQuote>
+            <BubbleQuote type="crying">
+              <P>頼む、この通りだ！</P>
+            </BubbleQuote>
+            <BubbleQuote type="devil">
+              <P>ふむ…仕方ない。では、お前たちにチャンスをやろう！</P>
+            </BubbleQuote>
+          </>
+        )
       }
     ]}
   />
