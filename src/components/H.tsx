@@ -1839,6 +1839,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'crossCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Emoji>😈</Emoji> 計算箱は没収だ！
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

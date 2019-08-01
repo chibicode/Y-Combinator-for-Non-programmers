@@ -11,11 +11,12 @@ import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanat
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
-import { spaces } from 'src/lib/theme'
+import { spaces, zIndices } from 'src/lib/theme'
 import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import useInterval from 'src/hooks/useInterval'
+import CrossSvg from 'src/components/CrossSvg'
 
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
@@ -231,7 +232,11 @@ const ExpressionRunnerPrecomputed = ({
           )}
           {children && (
             <ExpressionRunnerCaptionWrapper>
-              {children}
+              {children === 'cross' ? (
+                <H args={{ name: 'crossCaption' }} />
+              ) : (
+                children
+              )}
             </ExpressionRunnerCaptionWrapper>
           )}
           {!caption && isPlaying && (
@@ -250,8 +255,22 @@ const ExpressionRunnerPrecomputed = ({
               css={css`
                 line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                 opacity: ${isFastForwarding ? 0.6 : 1};
+                position: relative;
               `}
             >
+              {children === 'cross' && (
+                <CrossSvg
+                  css={css`
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: ${zIndices('badge')};
+                    width: 100%;
+                  `}
+                />
+              )}
               <ExpressionBox
                 expression={expressionContainers[currentIndex].expression}
                 topLevel

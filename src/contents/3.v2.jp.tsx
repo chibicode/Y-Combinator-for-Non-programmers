@@ -3,13 +3,14 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Em } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
-import BubbleQuote from 'src/components/BubbleQuote'
+import BubbleQuotes from 'src/components/BubbleQuotes'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>悪魔が現れた</>,
+        title: <>悪魔、現る</>,
         content: (
           <>
             <P>
@@ -21,25 +22,43 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🌲', '😈', '🌲']} />
             <P>村人たちは震え上がりました。</P>
-            <BubbleQuote type="scared">
-              <P>ひぇぇ、何も悪いことしていないのに、悪魔がやってきた！</P>
-            </BubbleQuote>
-            <BubbleQuote type="crying">
-              <P>もうおしまいだ！</P>
-            </BubbleQuote>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'scared',
+                  children: (
+                    <P>
+                      ひぇぇ、何も悪いことしていないのに、悪魔がやってきた！
+                    </P>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: <P>もうおしまいだ！</P>
+                }
+              ]}
+            />
             <P>悪魔はこうささやきました。</P>
-            <BubbleQuote type="devil">
-              <P>
-                安心しろ、お前たちの命だけは助けてやる…。だが、お前たちが大事にしている
-                <Strong>
-                  計算箱 <Emoji>🎁</Emoji>
-                </Strong>
-                <Em> は、すべて没収させてもらうぞ！</Em>
-              </P>
-            </BubbleQuote>
-            <BubbleQuote type="scared">
-              <P>エッ！計算箱を没収だって？そんな無慈悲な！</P>
-            </BubbleQuote>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <P>
+                      安心しろ、お前たちの命だけは助けてやる…。だが、お前たちが大事にしている
+                      <Strong>
+                        計算箱 <Emoji>🎁</Emoji>
+                      </Strong>
+                      <Em> は、すべて没収させてもらうぞ！</Em>
+                    </P>
+                  )
+                },
+                {
+                  type: 'scared',
+                  children: <P>エッ！計算箱を没収だって？そんな無慈悲な！</P>
+                }
+              ]}
+            />
           </>
         )
       },
@@ -49,57 +68,134 @@ export default () => (
           <>
             <P>
               こうして悪魔は、
-              <Strong>ラムダ村から計算箱を奪い取ってしまったのです。</Strong>
+              <Strong>ラムダ村から計算箱を取り上げてしまったのです。</Strong>
             </P>
             <EmojiSeparator emojis={['🌲', '😈', '🎁', '🌲']} />
+            <P>ラムダ村からは、計算箱がすべて無くなってしまいました。</P>
+            <R.Rviy children="cross" />
             <P>
               足し算や引き算をするのに計算箱に頼り切っていた村人たちは嘆きました。
             </P>
-            <BubbleQuote type="crying">
-              <P>悪魔め、どうしてわたしたちから計算箱を取り上げるんだ！</P>
-            </BubbleQuote>
-            <BubbleQuote type="sad">
-              <P>
-                <Em>わたしたちは計算が大の苦手なんだ。</Em>
-                計算箱がないと、足し算や引き算ができなくて、村の経済活動が成り立たなくなるんだぞ！
-              </P>
-            </BubbleQuote>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <P>悪魔め、どうしておれたちから計算箱を取り上げるんだ！</P>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <P>
+                      <Em>おれたちは計算が大の苦手なんだ。</Em>
+                      計算箱がないと、足し算や引き算ができなくて、村の経済活動が成り立たなくなるんだぞ！
+                    </P>
+                  )
+                }
+              ]}
+            />
             <P>悪魔は答えます。</P>
-            <BubbleQuote type="devil">
-              <P>
-                <Strong>
-                  計算箱を奪ったのは、お前たちが計算が苦手だからだよ。
-                </Strong>
-              </P>
-              <P>
-                お前たちは簡単な計算をするのにでも計算箱に頼り切っているだろう。そんなことだから、いつまでたっても計算が上達しないんだ。
-              </P>
-              <P>
-                <Em>
-                  計算箱を奪うことで、お前たちが計算を勉強するきっかけをわたしは作ってやったのさ。
-                </Em>
-                感謝するんだな！
-              </P>
-            </BubbleQuote>
-            <BubbleQuote type="sad">
-              <P>そんな…勉強なんてしたくないよ！</P>
-            </BubbleQuote>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          計算箱を取り上げたのは、お前たちが計算が苦手だからだよ。
+                        </Strong>
+                      </P>
+                      <P>
+                        お前たちは簡単な計算をするのにでも計算箱に頼り切っているだろう。そんなことだから、いつまでたっても計算が上達しないんだ。
+                      </P>
+                      <P>
+                        <Em>
+                          計算箱を取り上げることで、お前たちが計算を勉強するきっかけをわたしは作ってやったのさ。
+                        </Em>
+                        感謝するんだな！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: <P>そんな…勉強なんてしたくないよ！</P>
+                }
+              ]}
+            />
           </>
         )
       },
       {
-        title: <></>,
+        title: <>悪魔からの挑戦状</>,
         content: (
           <>
-            <BubbleQuote type="sad">
-              <P>お願いだ、何でもするから計算箱を返してくれないか？</P>
-            </BubbleQuote>
-            <BubbleQuote type="crying">
-              <P>頼む、この通りだ！</P>
-            </BubbleQuote>
-            <BubbleQuote type="devil">
-              <P>ふむ…仕方ない。では、お前たちにチャンスをやろう！</P>
-            </BubbleQuote>
+            <P>
+              なんとか計算箱を返してもらえないか、村人たちは悪魔にお願いしました。
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'sad',
+                  children: (
+                    <P>お願いだ、何でもするから計算箱を返してくれないか？</P>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: <P>頼む、この通りだ！</P>
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <P>
+                      ふむ…そこまで言うなら仕方ない。では、
+                      <Strong>お前たちにチャンスをやろう！</Strong>
+                    </P>
+                  )
+                }
+              ]}
+            />
+            <P>悪魔が言うチャンスとは、どういうことなのでしょうか？</P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          これから、
+                          <Strong>頭を使わないと解けないパズル</Strong>
+                          をたくさん出題する。
+                          <Strong>
+                            すべて解けたら、計算箱を返してやってもいいぞ！
+                          </Strong>
+                        </Em>
+                      </P>
+                      <P>
+                        日頃から頭を使ってこなかったお前たちには、おそらくムリだろうがな！わはは！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'worried',
+                  children: <P>パ、パズルだって…？おれたちに解けるかなあ？</P>
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <P>難しそう…しかし、やるしかない！計算箱を取り返すんだ！</P>
+                  )
+                }
+              ]}
+            />
+            <P>
+              こうして、村人たちは悪魔が出題するパズルに挑戦することになりました。
+            </P>
           </>
         )
       }
