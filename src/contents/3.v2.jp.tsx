@@ -339,7 +339,6 @@ export default () => (
                     </>
                   )
                 }
-                // TODO: use different context for bubbles for highlighting emojiwithtext
               ]}
             />
           </>
