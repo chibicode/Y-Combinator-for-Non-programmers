@@ -188,7 +188,7 @@ export default () => (
                   children: <P>パ、パズルだって…？おれたちに解けるかなあ？</P>
                 },
                 {
-                  type: 'crying',
+                  type: 'brave',
                   children: (
                     <>
                       <P>
@@ -258,7 +258,7 @@ export default () => (
                 。
               </UlLi>
               <UlLi>
-                上段には
+                上の例だと、上段には
                 <EmojiWithText letter="b" />
                 が入っており、
               </UlLi>
@@ -271,13 +271,26 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'thinking',
                   children: (
                     <>
                       <P>
                         なんとなく、
-                        <Em>見た目が計算箱に似ている気がするなあ。</Em>
-                        数字の代わりに、料理が入っているけど。
+                        <Strong>見た目が計算箱に似ている</Strong>
+                        気がするなあ。数字の代わりに、料理が入っているけど。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        実はこの
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        は、<Strong>計算箱と密接な関係がある</Strong>
+                        んだが、それはとりあえず置いておいて、説明を続けさせてもらおう。
                       </P>
                     </>
                   )
@@ -287,7 +300,6 @@ export default () => (
           </>
         )
       }
-      // Show 2 puzzles and ask what the pattern is.
     ]}
   />
 )
