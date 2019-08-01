@@ -11,9 +11,9 @@ interface BubbleQuoteProps {
     | 'scared'
     | 'crying'
     | 'sad'
-    | 'worried'
     | 'heart'
     | 'thinking'
+    | 'surprised'
   children: React.ReactNode
 }
 
@@ -24,9 +24,9 @@ const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
     crying: '😭',
     sad: '😢',
     devil: '😈',
-    worried: '😰',
     heart: '😍',
-    thinking: '🤔'
+    thinking: '🤔',
+    surprised: '😮'
   }[type])
 
 const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (

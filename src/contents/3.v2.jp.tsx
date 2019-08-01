@@ -1,8 +1,9 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, PFullWidth, Img } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
+import EmojiWithText from 'src/components/EmojiWithText'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
@@ -90,7 +91,7 @@ export default () => (
                   children: (
                     <P>
                       <Em>おれたちは計算が大の苦手なんだ。</Em>
-                      計算箱がないと、足し算や引き算ができなくて、村の経済活動が成り立たなくなるんだぞ！
+                      計算箱がないと、足し算や引き算ができなくなって、村の経済活動が成り立たなくなるんだぞ！
                     </P>
                   )
                 }
@@ -183,7 +184,7 @@ export default () => (
                   )
                 },
                 {
-                  type: 'worried',
+                  type: 'sad',
                   children: <P>パ、パズルだって…？おれたちに解けるかなあ？</P>
                 },
                 {
@@ -193,7 +194,9 @@ export default () => (
                       <P>
                         難しそう…しかし、やるしかない！計算箱を取り返すんだ！
                       </P>
-                      <P>悪魔よ、その挑戦、受けて立つぞ！</P>
+                      <P>
+                        <Em>悪魔よ、その挑戦、受けて立つぞ！</Em>
+                      </P>
                     </>
                   )
                 },
@@ -232,57 +235,49 @@ export default () => (
                         <Strong>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                         </Strong>
-                        というものだ。まずはこの写真を見たまえ。(筆者撮影)
+                        というものだ。そして、これがその
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        だ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <PFullWidth>
-              <Img src="/static/images/bentoboxes.jpg" alt="Bento Boxes" />
-            </PFullWidth>
+            <R.Ilpo>
+              <H args={{ name: 'bentoBoxPuzzle' }} /> の一例
+            </R.Ilpo>
+            <Ul>
+              <UlLi>
+                このように、
+                <H args={{ name: 'bentoBoxPuzzle' }} />
+                には、実際の弁当箱のように、
+                <Em>
+                  四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
+                </Em>
+                。
+              </UlLi>
+              <UlLi>
+                上段には
+                <EmojiWithText letter="b" />
+                が入っており、
+              </UlLi>
+              <UlLi>
+                下段には
+                <EmojiWithText letter="a" />
+                がふたつ入っています。
+              </UlLi>
+            </Ul>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'heart',
-                  children: (
-                    <>
-                      <P>わあ、うまそう…！</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>
-                        ご覧の通り、これは弁当箱だ。
-                        <Em>
-                          弁当箱には、四角い箱の中にいくつかマスがあり、それぞれのマスの中に料理が入っている。
-                        </Em>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>ふむふむ…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        そしてこちらが、今回お前たちが解く
-                        <Strong>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
-                        </Strong>
-                        だ。
+                        なんとなく、
+                        <Em>見た目が計算箱に似ている気がするなあ。</Em>
+                        数字の代わりに、料理が入っているけど。
                       </P>
                     </>
                   )
@@ -292,6 +287,7 @@ export default () => (
           </>
         )
       }
+      // Show 2 puzzles and ask what the pattern is.
     ]}
   />
 )
