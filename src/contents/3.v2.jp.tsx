@@ -299,6 +299,51 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            弁当箱を
+            <H args={{ name: 'play' }} />
+            する
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Em>
+                <H args={{ name: 'bentoBoxPuzzle' }} />
+                は、計算箱と同じように
+                <H args={{ name: 'play' }} />
+                することができます。
+              </Em>
+              試しに、
+              <Em>
+                <H args={{ name: 'pressPlay' }} />
+              </Em>
+            </P>
+            <R.Itbm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'play' }} /> すると、
+                        <Em>
+                          下のふたつの <EmojiWithText letter="a" /> が消えて、
+                          <EmojiWithText letter="b" /> だけが残った！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+                // TODO: use different context for bubbles for highlighting emojiwithtext
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />
