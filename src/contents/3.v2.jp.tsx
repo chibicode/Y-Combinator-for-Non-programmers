@@ -1,8 +1,9 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, PFullWidth, Img } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
+import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
 
@@ -21,7 +22,7 @@ export default () => (
               が現れました。
             </P>
             <EmojiSeparator emojis={['🌲', '😈', '🌲']} />
-            <P>村人たちは震え上がりました。</P>
+            <P>村人たちは、悪魔を見て震え上がりました。</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -188,7 +189,20 @@ export default () => (
                 {
                   type: 'crying',
                   children: (
-                    <P>難しそう…しかし、やるしかない！計算箱を取り返すんだ！</P>
+                    <>
+                      <P>
+                        難しそう…しかし、やるしかない！計算箱を取り返すんだ！
+                      </P>
+                      <P>悪魔よ、その挑戦、受けて立つぞ！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ほほう…いい度胸だ。では、はじめよう！</P>
+                    </>
                   )
                 }
               ]}
@@ -196,6 +210,85 @@ export default () => (
             <P>
               こうして、村人たちは計算箱を返してもらうべく、悪魔が出題するパズルに挑戦することになりました。
             </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'bentoBoxPuzzle' }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        お前たちが解くパズルは、{' '}
+                        <Strong>
+                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                        </Strong>
+                        というものだ。まずはこの写真を見たまえ。(筆者撮影)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <PFullWidth>
+              <Img src="/static/images/bentoboxes.jpg" alt="Bento Boxes" />
+            </PFullWidth>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'heart',
+                  children: (
+                    <>
+                      <P>わあ、うまそう…！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        ご覧の通り、これは弁当箱だ。
+                        <Em>
+                          弁当箱には、四角い箱の中にいくつかマスがあり、それぞれのマスの中に料理が入っている。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふむふむ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そしてこちらが、今回お前たちが解く
+                        <Strong>
+                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                        </Strong>
+                        だ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

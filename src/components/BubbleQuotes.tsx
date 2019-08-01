@@ -5,7 +5,15 @@ import Emoji from 'src/components/Emoji'
 import { fontSizes, colors, spaces, radii, ns } from 'src/lib/theme'
 
 interface BubbleQuoteProps {
-  type: 'person' | 'devil' | 'scared' | 'crying' | 'sad' | 'worried'
+  type:
+    | 'person'
+    | 'devil'
+    | 'scared'
+    | 'crying'
+    | 'sad'
+    | 'worried'
+    | 'heart'
+    | 'thinking'
   children: React.ReactNode
 }
 
@@ -16,7 +24,9 @@ const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
     crying: '😭',
     sad: '😢',
     devil: '😈',
-    worried: '😰'
+    worried: '😰',
+    heart: '😍',
+    thinking: '🤔'
   }[type])
 
 const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
