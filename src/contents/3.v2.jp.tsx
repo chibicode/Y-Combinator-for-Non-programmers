@@ -406,10 +406,18 @@ export default () => (
         content: (
           <>
             <P>
-              では、他の
               <H args={{ name: 'bentoBoxPuzzle' }} />
-              も見てみましょう。
+              は、どれも<Strong>ある法則</Strong>に則って
+              <H args={{ name: 'play' }} />
+              されます。
             </P>
+            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
+            <P>
+              その法則について語る前に、まずは他の
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              を見てみましょう。
+            </P>
+            <Hr />
             <P>
               こちらは、上段には
               <EmojiWithText letter="e" />
@@ -455,7 +463,8 @@ export default () => (
             </P>
             <Hr />
             <P>
-              どれも、ある法則に則っているのですが、その法則がお分かりでしょうか？
+              どれも<Strong>ある法則</Strong>
+              に則っているのですが、その法則がお分かりでしょうか？
             </P>
             <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
           </>
