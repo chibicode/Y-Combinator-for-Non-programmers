@@ -122,7 +122,10 @@ export const bywf = initializeExpressionContainer([
     arg: { name: 'f', highlighted: true },
     body: { name: 'f', highlighted: true }
   },
-  'g'
+  {
+    arg: 'g',
+    body: 'o'
+  }
 ])
 
 export const zbzu = initializeExpressionContainer([
@@ -130,7 +133,10 @@ export const zbzu = initializeExpressionContainer([
     arg: { name: 'h', highlighted: true },
     body: { name: 'i', highlighted: true }
   },
-  'j'
+  {
+    arg: 'j',
+    body: 'p'
+  }
 ])
 
 export const geut = initializeExpressionContainer([
@@ -146,7 +152,10 @@ export const srvq = initializeExpressionContainer([
     arg: { name: 'k', highlighted: true },
     body: { name: 'm', highlighted: true }
   },
-  'l'
+  {
+    arg: 'l',
+    body: 'n'
+  }
 ])
 
 export const lsbz = initializeExpressionContainer('k')

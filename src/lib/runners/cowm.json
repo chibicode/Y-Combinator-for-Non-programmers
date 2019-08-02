@@ -5,17 +5,31 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "l",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [
-            1
-          ],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": true
+          "arg": {
+            "name": "l",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              1
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": false
+          },
+          "body": {
+            "name": "n",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true
+          },
+          "type": "function"
         },
         "func": {
           "arg": {

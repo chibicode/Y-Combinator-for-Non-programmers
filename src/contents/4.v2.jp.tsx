@@ -5,6 +5,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
@@ -88,10 +89,26 @@ export default () => (
               下の料理が同じ (両方とも <EmojiWithText letter="f" />)
             </R.Wtup>
             <ExpressionRunnerSeparator />
-            <R.Tuqr>
-              上にあった <EmojiWithText letter="g" /> が残る
-            </R.Tuqr>
-            <Hr />
+            <R.Weoz>
+              上にあった <EmojiWithText letter="g" /> と{' '}
+              <EmojiWithText letter="o" /> が残る
+            </R.Weoz>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        そして、以下が
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        の1問目の答えだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Dogu>
               下の料理が同じ (両方とも <EmojiWithText letter="k" />)
             </R.Dogu>
@@ -103,7 +120,7 @@ export default () => (
         )
       },
       {
-        title: <>下のふたつの料理が違う場合</>,
+        title: <>下のふたつの料理が異なる場合</>,
         content: (
           <>
             <BubbleQuotes
@@ -114,7 +131,7 @@ export default () => (
                     <>
                       <P>
                         次に、
-                        <Strong>下のふたつの料理が違う場合</Strong>。
+                        <Strong>下のふたつの料理が異なる場合</Strong>。
                       </P>
                       <P>
                         <Em>
@@ -129,19 +146,43 @@ export default () => (
                 }
               ]}
             />
-            <R.Nplf>下の料理が違う</R.Nplf>
+            <R.Nplf>
+              下の料理が異なる (<EmojiForLetter letter="c" /> と{' '}
+              <EmojiForLetter letter="d" />)
+            </R.Nplf>
             <ExpressionRunnerSeparator />
             <R.Bgfl>
               右下にあった <EmojiWithText letter="d" /> が残る
             </R.Bgfl>
             <Hr />
-            <R.Immq>下の料理が違う</R.Immq>
+            <R.Immq>
+              下の料理が異なる (<EmojiForLetter letter="h" /> と{' '}
+              <EmojiForLetter letter="i" />)
+            </R.Immq>
             <ExpressionRunnerSeparator />
             <R.Cpkp>
               右下にあった <EmojiWithText letter="i" /> が残る
             </R.Cpkp>
-            <Hr />
-            <R.Cowm>下の料理が違う</R.Cowm>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        そして、以下が
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        の2問目の答えだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Cowm>
+              下の料理が異なる (<EmojiForLetter letter="k" /> と{' '}
+              <EmojiForLetter letter="m" />)
+            </R.Cowm>
             <ExpressionRunnerSeparator />
             <R.Ozxi>
               右下にあった <EmojiWithText letter="m" /> が残る
@@ -163,6 +204,9 @@ export default () => (
                       <P>
                         <Strong>正解、まさにその通りだ！</Strong>{' '}
                         <Emoji>🎉</Emoji> <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>
+                      </P>
+                      <P>
+                        今まで勉強を怠けてきたわりには、なかなかやるじゃないか。
                       </P>
                     </>
                   )

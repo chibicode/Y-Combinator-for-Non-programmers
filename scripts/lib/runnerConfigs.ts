@@ -2161,6 +2161,12 @@ export const tuqr: ExpressionRunnerShorthandConfig = {
   isDone: true
 }
 
+export const weoz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sisf,
+  isDone: true
+}
+
 export const uaha: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
@@ -2963,6 +2969,6 @@ export const cowm: ExpressionRunnerShorthandConfig = {
 
 export const ozxi: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.cgui,
+  initialExpressionContainer: initialExpressionContainers.neny,
   isDone: true
 }
