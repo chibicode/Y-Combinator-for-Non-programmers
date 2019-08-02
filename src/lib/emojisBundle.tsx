@@ -7,6 +7,7 @@ import Emoji1f197 from 'src/components/Twemoji/1f197'
 import Emoji1f19a from 'src/components/Twemoji/1f19a'
 import Emoji1f1faZZ1f1f8 from 'src/components/Twemoji/1f1fa-1f1f8'
 import Emoji1f32d from 'src/components/Twemoji/1f32d'
+import Emoji1f32e from 'src/components/Twemoji/1f32e'
 import Emoji1f332 from 'src/components/Twemoji/1f332'
 import Emoji1f33d from 'src/components/Twemoji/1f33d'
 import Emoji1f346 from 'src/components/Twemoji/1f346'
@@ -98,7 +99,6 @@ import Emoji1f947 from 'src/components/Twemoji/1f947'
 import Emoji1f948 from 'src/components/Twemoji/1f948'
 import Emoji1f955 from 'src/components/Twemoji/1f955'
 import Emoji1f957 from 'src/components/Twemoji/1f957'
-import Emoji1f95e from 'src/components/Twemoji/1f95e'
 import Emoji1f966 from 'src/components/Twemoji/1f966'
 import Emoji1f96a from 'src/components/Twemoji/1f96a'
 import Emoji1f973 from 'src/components/Twemoji/1f973'
@@ -153,6 +153,7 @@ export default {
   '1f19a': Emoji1f19a,
   '1f1fa-1f1f8': Emoji1f1faZZ1f1f8,
   '1f32d': Emoji1f32d,
+  '1f32e': Emoji1f32e,
   '1f332': Emoji1f332,
   '1f33d': Emoji1f33d,
   '1f346': Emoji1f346,
@@ -244,7 +245,6 @@ export default {
   '1f948': Emoji1f948,
   '1f955': Emoji1f955,
   '1f957': Emoji1f957,
-  '1f95e': Emoji1f95e,
   '1f966': Emoji1f966,
   '1f96a': Emoji1f96a,
   '1f973': Emoji1f973,

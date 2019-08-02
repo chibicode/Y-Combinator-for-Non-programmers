@@ -434,29 +434,34 @@ export default () => (
             </P>
             <Hr />
             <P>
+              続いて、上段に<Strong>ふたつの料理が入っているパターン</Strong>
+              を紹介します。
+            </P>
+            <P>
               こちらは、上段には
-              <EmojiWithText letter="g" />
-              、下段には
+              <EmojiWithText letter="g" />と<EmojiWithText letter="o" />
+              が、下段には
               <EmojiWithText letter="f" />
               がふたつ入っています。
               <H args={{ name: 'pressPlay' }} />
             </P>
-            <R.Dqkc />
+            <R.Rivc />
             <P>
               今回は
-              <EmojiWithText letter="g" /> が残りました。
+              <EmojiWithText letter="g" /> と <EmojiWithText letter="o" />{' '}
+              が残りました。
             </P>
             <Hr />
             <P>
               こちらは、上段には
-              <EmojiWithText letter="j" />
+              <EmojiWithText letter="j" />と<EmojiWithText letter="p" />
               、下段には
               <EmojiWithText letter="h" />と
               <EmojiWithText letter="i" />
               が入っています。
               <H args={{ name: 'pressPlay' }} />
             </P>
-            <R.Ldox />
+            <R.Nmmz />
             <P>
               今回は
               <EmojiWithText letter="i" /> が残りました。
@@ -528,15 +533,15 @@ export default () => (
             <P>
               <InlineHeader>例その3:</InlineHeader>
             </P>
-            <R.Emmb />
+            <R.Rakk />
             <ExpressionRunnerSeparator />
-            <R.Tuqr />
+            <R.Thbw />
             <P>
               <InlineHeader>例その4:</InlineHeader>
             </P>
-            <R.Jozw />
+            <R.Ldqk />
             <ExpressionRunnerSeparator />
-            <R.Cpkp />
+            <R.Fogc />
             <BubbleQuotes
               quotes={[
                 {

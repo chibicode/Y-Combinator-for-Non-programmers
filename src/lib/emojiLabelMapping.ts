@@ -66,9 +66,9 @@ const emojiLabelMapping: {
     en: 'bread',
     jp: 'パン'
   },
-  '🥞': {
-    en: 'pancakes',
-    jp: 'パンケーキ'
+  '🌮': {
+    en: 'tacos',
+    jp: 'タコス'
   },
   '🧀': {
     en: 'cheese',

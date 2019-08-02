@@ -39,12 +39,34 @@ export const yanq = initializeExpressionContainer([
   'g'
 ])
 
+export const sisf = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: 'f'
+  },
+  {
+    arg: 'g',
+    body: 'o'
+  }
+])
+
 export const zgxp = initializeExpressionContainer([
   {
     arg: 'h',
     body: 'i'
   },
   'j'
+])
+
+export const ysyy = initializeExpressionContainer([
+  {
+    arg: 'h',
+    body: 'i'
+  },
+  {
+    arg: 'j',
+    body: 'p'
+  }
 ])
 
 export const gvjy = initializeExpressionContainer([
