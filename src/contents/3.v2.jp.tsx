@@ -47,7 +47,7 @@ export default () => (
                 },
                 {
                   type: 'crying',
-                  children: <P>もうおしまいだ！</P>
+                  children: <P>怖いよー！おれたちはもうおしまいだ！</P>
                 }
               ]}
             />
