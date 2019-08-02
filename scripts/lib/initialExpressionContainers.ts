@@ -85,6 +85,9 @@ export const cgui = initializeExpressionContainer([
   'l'
 ])
 
+export const neny = initializeExpressionContainer([
+  {
+    arg: 'k',
     body: 'm'
   },
   {
