@@ -673,6 +673,7 @@ export default () => (
         title: <>法則は次のページに</>,
         content: (
           <>
+            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
             <P>
               次のページで
               <H args={{ name: 'bentoBoxPuzzle' }} />
