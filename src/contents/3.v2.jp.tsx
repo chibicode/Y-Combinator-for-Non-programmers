@@ -1,7 +1,16 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Em,
+  Ul,
+  UlLi,
+  Hr,
+  InlineHeader
+} from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import H from 'src/components/H'
@@ -336,6 +345,187 @@ export default () => (
                           <EmojiWithText letter="b" /> だけが残った！
                         </Em>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        実は、これは<Strong>ある法則</Strong>に則っているんだ。
+                      </P>
+                      <P>
+                        今回は、お前たちに
+                        <Strong>その法則が何か解き明かしてもらうぞ。</Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        これだけだと法則が何か、まだハッキリと言えないなあ…
+                        <Em>もう少し他の例を試してみないと！</Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            他の
+            <H args={{ name: 'bentoBoxPuzzle' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、他の
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              も見てみましょう。
+            </P>
+            <P>
+              こちらは、上段には
+              <EmojiWithText letter="e" />
+              、下段には
+              <EmojiWithText letter="c" />と
+              <EmojiWithText letter="d" />
+              が入っています。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Zwpj />
+            <P>
+              <H args={{ name: 'play' }} /> すると、
+              <EmojiWithText letter="d" /> が残りました。
+            </P>
+            <Hr />
+            <P>
+              こちらは、上段には
+              <EmojiWithText letter="g" />
+              、下段には
+              <EmojiWithText letter="f" />
+              がふたつ入っています。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Dqkc />
+            <P>
+              <H args={{ name: 'play' }} /> すると、
+              <EmojiWithText letter="g" /> が残りました。
+            </P>
+            <Hr />
+            <P>
+              こちらは、上段には
+              <EmojiWithText letter="j" />
+              、下段には
+              <EmojiWithText letter="h" />と
+              <EmojiWithText letter="i" />
+              が入っています。
+              <H args={{ name: 'pressPlay' }} />
+            </P>
+            <R.Ldox />
+            <P>
+              <H args={{ name: 'play' }} /> すると、
+              <EmojiWithText letter="i" /> が残りました。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>法則が分かった？</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['🍱', '😈', '🍱']} />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        ここで問題だ。
+                        <Strong>
+                          弁当箱のパズルは、
+                          <H args={{ name: 'play' }} />
+                          する際にどんな法則に則っているか
+                        </Strong>
+                        、そろそろ分かったかな？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>う、うーん…。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        参考までに、今回紹介した4つの例をもう一度載せておこう。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              <InlineHeader>例その1:</InlineHeader>
+            </P>
+            <R.Ilpo />
+            <ExpressionRunnerSeparator />
+            <R.Osqo />
+            <P>
+              <InlineHeader>例その2:</InlineHeader>
+            </P>
+            <R.Imyd />
+            <ExpressionRunnerSeparator />
+            <R.Bgfl />
+            <P>
+              <InlineHeader>例その3:</InlineHeader>
+            </P>
+            <R.Emmb />
+            <ExpressionRunnerSeparator />
+            <R.Tuqr />
+            <P>
+              <InlineHeader>例その4:</InlineHeader>
+            </P>
+            <R.Jozw />
+            <ExpressionRunnerSeparator />
+            <R.Cpkp />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        それではここで、
+                        <Strong>
+                          <H args={{ name: 'yesNoQuiz' }} />
+                        </Strong>
+                        の時間だ。法則が分かったかどうか、チェックするぞ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>自信ないけど…やるしかない！</P>
                     </>
                   )
                 }
