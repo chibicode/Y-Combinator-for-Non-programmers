@@ -2,6 +2,7 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
+import H from 'src/components/H'
 
 export default () => (
   <EpisodeCardList
