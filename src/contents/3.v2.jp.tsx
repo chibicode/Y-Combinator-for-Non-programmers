@@ -302,7 +302,15 @@ export default () => (
                         実はこの
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         は、<Strong>計算箱と密接な関係がある</Strong>
-                        んだが、それはとりあえず置いておいて、説明を続けさせてもらおう。
+                        んだが、それは後で説明しよう。
+                      </P>
+                      <P>
+                        とりあえず今は、
+                        <Em>
+                          <H args={{ name: 'bentoBoxPuzzle' }} />を
+                          <H args={{ name: 'play' }} />
+                          するのを見ていくぞ。
+                        </Em>
                       </P>
                     </>
                   )
@@ -350,7 +358,14 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Ilpo />
+            <ExpressionRunnerSeparator />
+            <R.Osqo />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
@@ -406,7 +421,7 @@ export default () => (
             </P>
             <R.Zwpj />
             <P>
-              <H args={{ name: 'play' }} /> すると、
+              今回は
               <EmojiWithText letter="d" /> が残りました。
             </P>
             <Hr />
@@ -420,7 +435,7 @@ export default () => (
             </P>
             <R.Dqkc />
             <P>
-              <H args={{ name: 'play' }} /> すると、
+              今回は
               <EmojiWithText letter="g" /> が残りました。
             </P>
             <Hr />
@@ -435,9 +450,14 @@ export default () => (
             </P>
             <R.Ldox />
             <P>
-              <H args={{ name: 'play' }} /> すると、
+              今回は
               <EmojiWithText letter="i" /> が残りました。
             </P>
+            <Hr />
+            <P>
+              どれも、ある法則に則っているのですが、その法則がお分かりでしょうか？
+            </P>
+            <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
           </>
         )
       },
