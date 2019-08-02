@@ -3,6 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong, Em, Hr } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -147,8 +148,46 @@ export default () => (
             </R.Ozxi>
           </>
         )
+      },
+      {
+        title: <>正解！</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['🎉', '😈', '🎉']} />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>正解、まさにその通りだ！</Strong>{' '}
+                        <Emoji>🎉</Emoji> <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>やった！やった！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>だが、喜ぶのはまだ早い。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
-      // This is not everything
     ]}
   />
 )
