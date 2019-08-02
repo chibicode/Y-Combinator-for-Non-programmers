@@ -243,7 +243,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        お前たちが解くパズルは、{' '}
+                        お前たちに解いてもらうパズルは、{' '}
                         <Strong>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                         </Strong>

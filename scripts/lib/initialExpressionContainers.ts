@@ -63,6 +63,54 @@ export const cgui = initializeExpressionContainer([
   'l'
 ])
 
+export const gnmt = initializeExpressionContainer([
+  {
+    arg: { name: 'a', highlighted: true },
+    body: { name: 'a', highlighted: true }
+  },
+  'b'
+])
+
+export const saii = initializeExpressionContainer([
+  {
+    arg: { name: 'c', highlighted: true },
+    body: { name: 'd', highlighted: true }
+  },
+  'e'
+])
+
+export const bywf = initializeExpressionContainer([
+  {
+    arg: { name: 'f', highlighted: true },
+    body: { name: 'f', highlighted: true }
+  },
+  'g'
+])
+
+export const zbzu = initializeExpressionContainer([
+  {
+    arg: { name: 'h', highlighted: true },
+    body: { name: 'i', highlighted: true }
+  },
+  'j'
+])
+
+export const geut = initializeExpressionContainer([
+  {
+    arg: { name: 'k', highlighted: true },
+    body: { name: 'k', highlighted: true }
+  },
+  'l'
+])
+
+export const srvq = initializeExpressionContainer([
+  {
+    arg: { name: 'k', highlighted: true },
+    body: { name: 'm', highlighted: true }
+  },
+  'l'
+])
+
 export const lsbz = initializeExpressionContainer('k')
 
 export const qcbo = initializeExpressionContainer([
