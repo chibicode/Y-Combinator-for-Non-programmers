@@ -288,7 +288,7 @@ export default () => (
                     <>
                       <P>
                         なんとなく、
-                        <Strong>見た目が計算箱に似ている</Strong>
+                        <Em>見た目が計算箱に似ている</Em>
                         気がするなあ。数字の代わりに、料理が入っているけど。
                       </P>
                     </>
@@ -301,15 +301,15 @@ export default () => (
                       <P>
                         実はこの
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        は、<Strong>計算箱と密接な関係がある</Strong>
-                        んだが、それは後で説明しよう。
+                        は、<Em>計算箱と密接な関係がある</Em>
+                        んだが、これについては後に説明する。
                       </P>
                       <P>
                         とりあえず今は、
                         <Em>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />を
+                          <H args={{ name: 'bentoBoxPuzzle' }} />の
                           <H args={{ name: 'play' }} />
-                          するのを見ていくぞ。
+                          について見ていこう。
                         </Em>
                       </P>
                     </>
@@ -540,15 +540,23 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふーむ、なんとなく法則が見えてきたような…？</P>
+                    </>
+                  )
+                },
+                {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        それではここで、
+                        ほう。ではここで、
                         <Strong>
                           <H args={{ name: 'yesNoQuiz' }} />
                         </Strong>
-                        の時間だ。法則が分かったかどうか、チェックするぞ！
+                        の時間だ。法則が分かったかどうか、チェックしてやるぞ！
                       </P>
                     </>
                   )
