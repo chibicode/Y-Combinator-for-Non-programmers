@@ -85,6 +85,19 @@ export const cgui = initializeExpressionContainer([
   'l'
 ])
 
+    body: 'm'
+  },
+  {
+    arg: 'l',
+    body: 'n'
+  }
+])
+
+export const iuif = initializeExpressionContainer({
+  arg: 'l',
+  body: 'n'
+})
+
 export const gnmt = initializeExpressionContainer([
   {
     arg: { name: 'a', highlighted: true },

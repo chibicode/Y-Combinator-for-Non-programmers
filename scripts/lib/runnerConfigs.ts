@@ -797,6 +797,21 @@ export const hbgo: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.cgui
 }
 
+export const uvmv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.neny
+}
+
+export const mutg: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.neny
+}
+
+export const hvqh: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.iuif
+}
+
 export const hdwy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.qhnf,

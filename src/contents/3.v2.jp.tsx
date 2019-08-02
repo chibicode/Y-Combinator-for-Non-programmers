@@ -631,12 +631,12 @@ export default () => (
               <H args={{ name: 'play' }} />
               すると、
             </P>
-            <R.Hbgo />
+            <R.Uvmv />
             <P>
               <Strong>最終的に下のようになるでしょうか？</Strong>
               これまでの法則から予想してみてください。
             </P>
-            <R.Olef />
+            <R.Hvqh />
             <YesNoButtons answer="no" />
           </>
         )
@@ -661,15 +661,14 @@ export default () => (
             <P>
               <InlineHeader>2問目:</InlineHeader>
             </P>
-            <R.Qpjt />
+            <R.Mutg />
             <P>
               つまり
               <Strong>
                 2問目の
                 <H args={{ name: 'theAnswerIs', isYes: false }} />
               </Strong>{' '}
-              (<EmojiWithText letter="k" />
-              ではない) でした。
+              でした。
             </P>
           </>
         )
