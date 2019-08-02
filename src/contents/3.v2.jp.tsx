@@ -11,11 +11,13 @@ import {
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import YesNoButtons from 'src/components/YesNoButtons'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -222,6 +224,7 @@ export default () => (
             <P>
               こうして、村人たちは計算箱を返してもらうべく、悪魔が出題するパズルに挑戦することになりました。
             </P>
+            <EmojiSeparator emojis={['😠', '🆚', '😈']} />
           </>
         )
       },
@@ -531,6 +534,114 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+            、その1
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              これまでに4種類の
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              を紹介しましたが、どれも
+              <H args={{ name: 'play' }} />
+              する際にある法則に従っています。それが分かったかどうか、 ふたつの
+              <H args={{ name: 'yesNoQuiz' }} />
+              でチェックしてみましょう！
+            </P>
+            <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
+            <P>
+              <H args={{ name: 'question' }} />{' '}
+              <H args={{ name: 'lookAtThisBentoBoxPuzzle' }} />:
+            </P>
+            <R.Loai />
+            <P>
+              これを
+              <H args={{ name: 'play' }} />
+              すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+              これまでの法則から予想してみてください。
+            </P>
+            <R.Vvjn />
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+            、その2
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'question' }} /> こちらの
+              <H args={{ name: 'bentoBoxPuzzle' }} />を
+              <H args={{ name: 'play' }} />
+              すると、
+            </P>
+            <R.Hbgo />
+            <P>
+              <Strong>最終的に下のようになるでしょうか？</Strong>
+              これまでの法則から予想してみてください。
+            </P>
+            <R.Olef />
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: <>答え合わせ</>,
+        content: (
+          <>
+            <P>それぞれ実行すると、次のようになります。</P>
+            <P>
+              <InlineHeader>1問目:</InlineHeader>
+            </P>
+            <R.Zzyu />
+            <P>
+              つまり
+              <Strong>
+                1問目の
+                <H args={{ name: 'theAnswerIs', isYes: true }} />
+              </Strong>
+              でした。
+            </P>
+            <P>
+              <InlineHeader>2問目:</InlineHeader>
+            </P>
+            <R.Qpjt />
+            <P>
+              つまり
+              <Strong>
+                2問目の
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+              </Strong>{' '}
+              (<EmojiWithText letter="k" />
+              ではない) でした。
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>法則は次のページに</>,
+        content: (
+          <>
+            <P>
+              次のページで
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
+            </P>
+            <NextLessonButton />
           </>
         )
       }

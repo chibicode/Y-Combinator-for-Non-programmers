@@ -1850,6 +1850,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'lookAtThisBentoBoxPuzzle') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          こちらの
+          <H args={{ name: 'bentoBoxPuzzle' }} />
+          をご覧ください
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 
