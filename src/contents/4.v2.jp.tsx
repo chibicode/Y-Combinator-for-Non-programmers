@@ -1,6 +1,7 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr } from 'src/components/ContentTags'
+import { P, Strong, Em, Hr, InlineHeader } from 'src/components/ContentTags'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
@@ -9,6 +10,49 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
+
+export const BasicRules = ({
+  includeFuncUnbound
+}: {
+  includeFuncUnbound?: boolean
+}) => (
+  <>
+    <P>
+      1. <InlineHeader>印をつける:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+      {includeFuncUnbound && (
+        <>
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+        </>
+      )}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </P>
+    <R.Zzxj />
+    <P>
+      2. <InlineHeader>一致チェック:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+      <Emoji>✅</Emoji>
+    </P>
+    <R.Keck />
+    <P>
+      3. <InlineHeader>コピーする:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <Emoji>↘️</Emoji>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </P>
+    <R.Qoms />
+    <P>
+      4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+    </P>
+    <R.Mhgm />
+    <ExpressionRunnerSeparator />
+    <R.Osqo />
+  </>
+)
 
 export default () => (
   <EpisodeCardList
@@ -282,6 +326,40 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'bentoBoxPuzzle' }} />
+            の明確な法則
+          </>
+        ),
+        type: 'summary',
+
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        まずこれが、
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        の明確な法則を大まかにまとめたものだ。
+                      </P>
+                      <P>
+                        それぞれのステップについては、これから解説していくぞ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <BasicRules />
           </>
         )
       }
