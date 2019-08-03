@@ -456,16 +456,37 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Ozbe />
-            <P>
-              <EmojiWithText letter="b" />に
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />
-              の印が、下の
-              <EmojiWithText letter="a" />
-              ふたつにそれぞれ
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              の印がつきました。
-            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <EmojiWithText letter="b" />に
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />
+                        の印が、下の
+                        <EmojiWithText letter="a" />
+                        ふたつにそれぞれ
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />
+                        と
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        の印がついた！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -500,12 +521,31 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Rqjo />
-            <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
-              <EmojiWithText letter="a" />
-              が一致しました。
-            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />
+                        と
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        の
+                        <EmojiWithText letter="a" />に<Emoji>✅</Emoji>
+                        がついた！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -540,13 +580,30 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Evqx />
-            <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />の
-              <EmojiWithText letter="b" />が
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
-              <H args={{ name: 'copy' }} />
-              されました。
-            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />
+                        の
+                        <EmojiWithText letter="b" />が
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        の部分にコピーされた！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -579,6 +636,29 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Msiw />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />
+                        と
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />
+                        が<Emoji>💥</Emoji>になった！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <P>
               そして、最終的に
               <EmojiWithText letter="b" />
