@@ -271,8 +271,23 @@ export default () => (
                       <P>
                         <Em>だが、喜ぶのはまだ早い。</Em>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'scared',
+                  children: (
+                    <>
+                      <P>エッ！なんで？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
-                        これから、さらに難しい
+                        次のページから、さらに難しい
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         を解いてもらう。そのためには、
                         <Em>
@@ -298,13 +313,26 @@ export default () => (
                       <P>
                         先ほどお前が言った、
                         <Em>
-                          「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」というのは、
-                          <Strong>
-                            厳密さに欠ける。だから、さらに複雑なパズルを解こうとしたら通用しない
-                          </Strong>
-                          。
+                          「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」というのは
+                          <Strong>明確さに欠ける。</Strong>
+                          さらに複雑なパズルを解くには、法則としては不十分なんだ。
                         </Em>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>えー、そうなのか…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         さらに複雑なパズルを解くには、もっと法則をハッキリさせる、すなわち明確化する必要があるんだ。
                       </P>
@@ -593,14 +621,11 @@ export default () => (
             </R.Ycxr>
             <P>
               そして、
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
               <EmojiWithText letter="f" />
               が一致したあとに…
             </P>
             <R.Dkdt />
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />の
               <EmojiWithText letter="g" />と
               <EmojiWithText letter="o" />が
               <Strong>両方ともコピーされます。</Strong>
