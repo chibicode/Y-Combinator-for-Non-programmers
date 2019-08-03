@@ -388,7 +388,14 @@ export default () => (
         )
       },
       {
-        title: <>ステップ1: 印をつける</>,
+        title: (
+          <>
+            1. 印をつける{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+          </>
+        ),
         content: (
           <>
             <P>
@@ -397,6 +404,158 @@ export default () => (
               を使って説明していきます。
             </P>
             <R.Ilpo />
+            <P>
+              まず、
+              <Strong>
+                上の料理には{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                、左の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                、右の料理には
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の印をつけます。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Ozbe />
+            <P>
+              <EmojiWithText letter="b" />に
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              の印が、下の
+              <EmojiWithText letter="a" />
+              ふたつにそれぞれ
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              の印がつきました。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            2. 一致チェック{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+            <Emoji>✅</Emoji>
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              続いて、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                が一致するかチェックし、一致した料理には、
+                <Emoji>✅</Emoji>を付けます。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
+                <Emoji>✅</Emoji>
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Rqjo />
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="a" />
+              が一致しました。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            3. <InlineHeader>コピーする:</InlineHeader>{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+            <Emoji>↘️</Emoji>{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              続いて、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の料理を、一致した
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の部分にコピーします。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>↘️</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Evqx />
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />の
+              <EmojiWithText letter="b" />が
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />に
+              <H args={{ name: 'copy' }} />
+              されました。
+            </P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              最後に、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                が消えます。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>💥</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Msiw />
+            <P>
+              そして、最終的に
+              <EmojiWithText letter="b" />
+              だけになります。
+            </P>
+            <R.Osqo />
           </>
         )
       }
