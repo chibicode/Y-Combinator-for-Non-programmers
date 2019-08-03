@@ -163,7 +163,7 @@
               "name": "b",
               "highlightType": "active",
               "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "none",
+              "bottomRightBadgeType": "funcUnbound",
               "type": "variable",
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
