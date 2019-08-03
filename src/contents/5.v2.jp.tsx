@@ -4,7 +4,10 @@ import { P, Em, Strong } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiSeparator from 'src/components/EmojiSeparator'
+import Emoji from 'src/components/Emoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
+import InlineBackground from 'src/components/InlineBackground'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -119,6 +122,75 @@ export default () => (
                   children: (
                     <>
                       <P>よし、やってやる！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアに注目
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              3段の
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              を解く際には、まず
+              <Strong>
+                左上と左下に
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                の印がある部分に注目します。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>🍱</Emoji>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Aaov />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                        のペアがピンク色の
+                        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+                        になり、一番上の背景が暗い色{' '}
+                        <InlineBackground bgColor={'indigo50'} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、
+                        <Em>
+                          暗い色 <InlineBackground bgColor={'indigo50'} />{' '}
+                          の部分は無視して、
+                          <InlinePrioritiesLabel revert>
+                            1
+                          </InlinePrioritiesLabel>
+                          のペアの部分に注目する
+                        </Em>
+                        ということか。
+                      </P>
                     </>
                   )
                 }
