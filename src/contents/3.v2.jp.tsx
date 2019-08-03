@@ -677,11 +677,14 @@ export default () => (
         title: <>法則は次のページに</>,
         content: (
           <>
-            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
             <P>
-              次のページで
+              果たして、ラムダ村の村人は、
               <H args={{ name: 'bentoBoxPuzzle' }} />
-              の法則を紹介します。予想が当たった方も、よく分からなかった方も、ぜひ次に進んでみてください。
+              の法則が分かったのでしょうか？
+            </P>
+            <EmojiSeparator emojis={['🤔', '🍱', '😈']} />
+            <P>
+              法則が分かった方も、よく分からなかった方も、ぜひ次に進んでみてください。
             </P>
             <NextLessonButton />
           </>
