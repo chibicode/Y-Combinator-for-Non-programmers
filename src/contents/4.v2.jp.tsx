@@ -300,11 +300,13 @@ export default () => (
                         <Em>
                           「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」というのは、
                           <Strong>
-                            厳密さに欠けるので、もっと複雑なパズルを解こうとしたら通用しない
+                            厳密さに欠ける。だから、さらに複雑なパズルを解こうとしたら通用しない
                           </Strong>
                           。
                         </Em>
-                        複雑なパズルを解くには、もっと法則を明確化する必要があるんだ。
+                      </P>
+                      <P>
+                        さらに複雑なパズルを解くには、もっと法則をハッキリさせる、すなわち明確化する必要があるんだ。
                       </P>
                       <P>
                         <Em>
@@ -349,9 +351,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まずこれが、
+                        では、
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        の明確な法則を大まかにまとめたものだ。
+                        の明確な法則をまとめてみよう。
                       </P>
                     </>
                   )
@@ -362,22 +364,10 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        なるほど、こうやってルールを明確にすれば、パズルが複雑になっても応用が効く気がする。
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        その通りだ。では、それぞれのステップについて解説していこう。
-                      </P>
+                      <P>続いて、それぞれのステップについて解説していくぞ。</P>
                     </>
                   )
                 }
@@ -398,7 +388,7 @@ export default () => (
         content: (
           <>
             <P>
-              では、それぞれのステップについて、 こちらの
+              それぞれのステップについて、 こちらの
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を使って説明していきます。
             </P>
@@ -561,6 +551,78 @@ export default () => (
         )
       },
       {
+        title: <>上にふたつの料理がある場合</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        では、たとえば下の例のように、
+                        <Strong>上にふたつの料理がある場合</Strong>
+                        はどうなるんだろう？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rakk>
+              上にふたつの料理がある
+              <br />(<EmojiWithText letter="g" />と
+              <EmojiWithText letter="o" />)
+            </R.Rakk>
+            <P>
+              この場合、上にある
+              <EmojiWithText letter="g" />と
+              <EmojiWithText letter="o" />
+              には
+              <Strong>
+                両方とも
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の印がつきます。
+              </Strong>
+            </P>
+            <R.Ycxr>
+              両方とも
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              の印がつく
+            </R.Ycxr>
+            <P>
+              そして、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="f" />
+              が一致したあとに…
+            </P>
+            <R.Dkdt />
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />の
+              <EmojiWithText letter="g" />と
+              <EmojiWithText letter="o" />が
+              <Strong>両方ともコピーされます。</Strong>
+            </P>
+            <R.Sxnt />
+            <P>
+              最後に、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              が消え…
+            </P>
+            <R.Issq />
+            <P>
+              <EmojiWithText letter="g" />と
+              <EmojiWithText letter="o" />
+              が残るのです。
+            </P>
+            <R.Thbw />
+          </>
+        )
+      },
+      {
         title: (
           <>
             <H args={{ name: 'fastForward' }} />
@@ -603,10 +665,20 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>なるほど、そういう仕組みになっていたのか！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        こうやってルールを明確にすれば、パズルが複雑になっても応用が効く気がする。
+                      </P>
                     </>
                   )
                 }
@@ -803,11 +875,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
-                          次回では、今回紹介した法則を応用して、もっと複雑なパズルを解いてもらう。
-                        </Em>
+                        <Em>次回では、もっと複雑なパズルを出題する。</Em>
+                        計算箱を返してほしかったら、解いてみせるんだな！
                       </P>
-                      <P>計算箱を返してほしかったら、解いてみせるんだな！</P>
                     </>
                   )
                 },

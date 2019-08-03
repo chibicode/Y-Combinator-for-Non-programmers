@@ -1,0 +1,101 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "arg": {
+          "arg": {
+            "name": "g",
+            "highlightType": "betaReduceCallArgHighlighted",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "callArg",
+            "type": "variable",
+            "argPriorityAgg": [
+              1
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "name": "o",
+            "highlightType": "betaReduceCallArgHighlighted",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "callArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true
+          },
+          "type": "function"
+        },
+        "func": {
+          "arg": {
+            "name": "f",
+            "highlightType": "active",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "funcArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "arg": {
+              "name": "g",
+              "highlightType": "highlighted",
+              "topLeftBadgeType": "betaReduced",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": false
+            },
+            "body": {
+              "name": "o",
+              "highlightType": "highlighted",
+              "topLeftBadgeType": "betaReduced",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true
+            },
+            "type": "function"
+          },
+          "type": "function"
+        },
+        "state": "betaReducePreviewAfter",
+        "type": "call",
+        "priority": 1
+      },
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
+      "activePriority": 1,
+      "containerState": "stepped"
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": true,
+  "explanationsVisibility": "visible",
+  "hidePriorities": true,
+  "variableSize": "lg",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false
+}

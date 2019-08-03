@@ -396,6 +396,34 @@ export const rakk: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.sisf
 }
 
+export const ycxr: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sisf,
+  initialState: 'showFuncBound',
+  highlightOverrides: { g: 'highlighted', o: 'highlighted' }
+}
+
+export const dkdt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sisf,
+  initialState: 'betaReducePreviewBefore',
+  explanationsVisibility: 'visible'
+}
+
+export const sxnt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sisf,
+  initialState: 'betaReducePreviewAfter',
+  explanationsVisibility: 'visible'
+}
+
+export const issq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sisf,
+  initialState: 'betaReducePreviewCrossed',
+  explanationsVisibility: 'visible'
+}
+
 export const thbw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   isDone: true,
