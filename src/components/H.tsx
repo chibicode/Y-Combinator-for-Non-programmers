@@ -1285,9 +1285,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </P>
             <TwitterEmbed id={shareId} />
             {question}
-            <P>
-              ご協力ありがとうございます！次のページに進むには下のボタンを押してください。
-            </P>
           </>
         )
       } else {
