@@ -60,6 +60,8 @@ export default () => (
                           <EmojiWithText letter="a" />
                           と横に3つの料理が並んでいる。
                         </Strong>
+                      </P>
+                      <P>
                         今までの弁当箱では、
                         <Em>横に3つの料理が並んだことはなかった</Em>。
                       </P>
@@ -86,7 +88,8 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>たしかに。どうやって解けばいいんだろう？</P>
+                      <P>たしかに。</P>
+                      <P>こういうパズルは、どうやって解けばいいんだろう？</P>
                     </>
                   )
                 },
@@ -97,11 +100,14 @@ export default () => (
                       <P>
                         ではまず、こういった3段の
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        の解き方を説明しよう。そして
+                        の解き方を説明しよう。
+                      </P>
+                      <P>
+                        そして
                         <Em>
                           説明した後に、
                           <H args={{ name: 'yesNoQuiz' }} />
-                          でお前たちに自力で解いてもらう
+                          を出題し、お前たちに自力で解いてもらう
                         </Em>
                         ぞ。
                       </P>
