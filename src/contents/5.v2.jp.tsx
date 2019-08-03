@@ -11,6 +11,7 @@ import {
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
@@ -247,7 +248,18 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
+                <EmojiForLetter letter="b" />
+              ]}
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
