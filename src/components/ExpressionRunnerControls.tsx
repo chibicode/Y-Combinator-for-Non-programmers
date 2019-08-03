@@ -45,7 +45,6 @@ const Button = (props: JSX.IntrinsicElements['button']) => (
 interface ExpressionRunnerControlsProps {
   canStepForward: boolean
   canStepBackward: boolean
-  isDone: boolean
   isPlaying: boolean
   showPlayButton: boolean
   skipToTheEnd: boolean
@@ -98,8 +97,7 @@ const ExpressionRunnerControls = ({
   onResetClick,
   onPauseClick,
   onSkipToTheEndClick,
-  skipToTheEnd,
-  isDone
+  skipToTheEnd
 }: ExpressionRunnerControlsProps) => {
   return (
     <div
@@ -190,7 +188,7 @@ const ExpressionRunnerControls = ({
             <ButtonPlaceholder width={sideButtonsWidth} />
           )}
         </>
-      ) : canStepForward || isDone ? (
+      ) : canStepForward ? (
         <Button
           onClick={canStepForward ? onNextClick : noOp}
           disabled={!canStepForward}

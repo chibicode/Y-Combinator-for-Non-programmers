@@ -288,7 +288,6 @@ const ExpressionRunnerPrecomputed = ({
               canStepBackward={currentIndex > 0}
               showPlayButton={!hidePlayButton}
               isPlaying={isPlaying}
-              isDone={isDone}
               onAutoClick={autoplay}
               onSkipToTheEndClick={stepToTheEnd}
               onResetClick={reset}

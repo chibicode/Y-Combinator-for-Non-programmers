@@ -792,6 +792,14 @@ export const gwtp: ExpressionRunnerShorthandConfig = {
   finalState: 'betaReducePreviewCrossed'
 }
 
+export const grla: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  hideFuncUnboundBadgeOnExplanation: true,
+  initialExpressionContainer: initialExpressionContainers.txbv,
+  initialState: 'betaReducePreviewCrossed',
+  finalState: 'default'
+}
+
 export const hbgo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cgui
@@ -1058,6 +1066,13 @@ export const izgz: ExpressionRunnerShorthandConfig = {
 export const jbam: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.txbv,
+  initialState: 'active',
+  skipToTheEnd: false
+}
+
+export const hluq: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.sisf,
   initialState: 'active',
   skipToTheEnd: false
 }
@@ -1490,6 +1505,14 @@ export const msiw: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.nyhe,
   initialState: 'betaReducePreviewAfter',
   finalState: 'betaReducePreviewCrossed'
+}
+
+export const kbnn: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  hideFuncUnboundBadgeOnExplanation: true,
+  initialExpressionContainer: initialExpressionContainers.nyhe,
+  initialState: 'betaReducePreviewCrossed',
+  finalState: 'default'
 }
 
 export const news: ExpressionRunnerShorthandConfig = {
@@ -2955,6 +2978,13 @@ export const wtup: ExpressionRunnerShorthandConfig = {
 export const immq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.zbzu
+}
+
+export const zuus: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.zbzu,
+  initialState: 'active',
+  skipToTheEnd: false
 }
 
 export const dogu: ExpressionRunnerShorthandConfig = {

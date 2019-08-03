@@ -29,7 +29,7 @@ const EmojiSvg = ({ name }: { name: string }) => {
 
 export interface EmojiProps {
   children?: string
-  size: 'md' | 'lg' | 'mdlg' | 'sm' | 'xs'
+  size: 'md' | 'lg' | 'mdlg' | 'sm' | 'xs' | 'semilg'
   noVerticalTransform: boolean
   cssOverrides?: SerializedStyles
   customSvg?: React.ReactNode
@@ -41,6 +41,7 @@ const sizeToHeight = (size: Required<EmojiProps>['size']) =>
     sm: '1em',
     md: '1.2em',
     mdlg: '1.4em',
+    semilg: '1.7em',
     lg: '2em'
   }[size])
 

@@ -10,6 +10,7 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export const BasicRules = ({
   includeFuncUnbound
@@ -340,7 +341,6 @@ export default () => (
           </>
         ),
         type: 'summary',
-
         content: (
           <>
             <BubbleQuotes
@@ -554,8 +554,275 @@ export default () => (
               そして、最終的に
               <EmojiWithText letter="b" />
               だけになります。
+              <H args={{ name: 'pressNext' }} />
             </P>
-            <R.Osqo />
+            <R.Kbnn />
+            <P>以上です！</P>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'fastForward' }} />
+            で見てみましょう
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、最初から最後まで
+              <H args={{ name: 'fastForward' }} /> で見てみましょう。
+              <H args={{ name: 'fastForward' }} /> 機能を使うと、
+              <Em>各ステップを自動で見ていくことができます。</Em>
+            </P>
+            <EmojiSeparator emojis={['⏩', '🍱', '⏩']} />
+            <P>
+              こちらは、先ほどの例です。
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+            </P>
+            <R.Wunw />
+            <P>
+              こちらは、上にふたつの料理がある例です。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            <R.Hluq />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>というわけで、ここまでをまとめてみましょう。</P>
+            <BasicRules />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど、そういう仕組みになっていたのか！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>一致しなかったら？</>,
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
+                <Emoji>❌</Emoji>
+              ]}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <Strong>
+                          もし
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcArg"
+                          />
+                          と
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />
+                          が一致しなかったらどうするの？
+                        </Strong>
+                      </P>
+                      <P>
+                        たとえば下の弁当箱の場合は、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />
+                        と
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        が一致しないよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Sgfj />
+            <P>
+              こういう場合は、
+              <Strong>
+                コピーはせずに、ただ
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                を消すだけです。
+              </Strong>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Gwtp />
+            <P>
+              そして、最終的に
+              <EmojiWithText letter="d" />
+              だけになります。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Grla />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'fastForward' }} />
+            で見てみましょう
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が一致しなかった場合も、最初から最後まで
+              <H args={{ name: 'fastForward' }} /> で見てみましょう。
+            </P>
+            <EmojiSeparator emojis={['⏩', '🍱', '⏩']} />
+            <P>
+              こちらは、先ほどの例です。
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+            </P>
+            <R.Jbam />
+            <P>
+              こちらは、上にふたつの料理がある例です。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            <R.Zuus />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />: 一致しなかった場合
+          </>
+        ),
+        type: 'summary',
+        content: (
+          <>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              と
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              が一致しなかった場合、
+              <Strong>
+                コピーはせずに、ただ
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                を消す
+              </Strong>
+              。
+            </P>
+            <R.Jwzh />
+            <ExpressionRunnerSeparator />
+            <R.Knhw />
+          </>
+        )
+      },
+      {
+        title: <>以上です！</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        以上が、
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        の明確な法則だ。理解できたかな？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>な、なんとか…でも、まだ覚えきれてないなあ。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          法則を覚えきれていなくても、次回また復習するので大丈夫だ。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'relieved',
+                  children: (
+                    <>
+                      <P>
+                        ホッ、よかった… (悪魔って意外と優しいんじゃ？
+                        <Emoji>🤔</Emoji>)
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          次回では、今回紹介した法則を応用して、もっと複雑なパズルを解いてもらう。
+                        </Em>
+                      </P>
+                      <P>計算箱を返してほしかったら、解いてみせるんだな！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>望むところだ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <NextLessonButton />
           </>
         )
       }

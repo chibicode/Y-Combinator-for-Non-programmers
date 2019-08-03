@@ -2,12 +2,11 @@
 import { css, jsx } from '@emotion/core'
 import Flex from 'src/components/Flex'
 import Emoji from 'src/components/Emoji'
-import { fontSizes, colors, spaces, radii, ns } from 'src/lib/theme'
+import { colors, spaces, radii, ns } from 'src/lib/theme'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 
 interface BubbleQuoteProps {
   type:
-    | 'person'
     | 'devil'
     | 'scared'
     | 'crying'
@@ -19,12 +18,12 @@ interface BubbleQuoteProps {
     | 'happy'
     | 'smile'
     | 'celebrate'
+    | 'relieved'
   children: React.ReactNode
 }
 
 const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
   ({
-    person: '🙂',
     scared: '😱',
     crying: '😭',
     sad: '😢',
@@ -35,7 +34,8 @@ const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
     surprised: '😮',
     happy: '😁',
     smile: '🙂',
-    celebrate: '🥳'
+    celebrate: '🥳',
+    relieved: '😅'
   }[type])
 
 const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
@@ -49,7 +49,6 @@ const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
         key={`${type}${index}`}
         css={css`
           margin: 0 0 ${spaces(1)};
-          font-size: ${fontSizes(0.85)};
         `}
       >
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
@@ -65,7 +64,7 @@ const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
               }
             `}
           >
-            <Emoji size="lg">{speakerToEmoji(type)}</Emoji>
+            <Emoji size="semilg">{speakerToEmoji(type)}</Emoji>
           </span>
           <span
             css={css`
