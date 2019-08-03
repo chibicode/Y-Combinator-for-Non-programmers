@@ -232,6 +232,18 @@ export default () => (
             <R.Ozxi>
               右下にあった <EmojiWithText letter="m" /> が残る
             </R.Ozxi>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>どうだ、これが正解だろう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
