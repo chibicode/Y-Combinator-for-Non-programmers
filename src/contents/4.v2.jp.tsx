@@ -19,7 +19,7 @@ export default () => (
           <>
             <EmojiSeparator emojis={['🍱', '😁', '🍱']} />
             <P>
-              どうやら、村人たちは
+              どうやら、ラムダ村の村人たちは
               <H args={{ name: 'bentoBoxPuzzle' }} />
               の法則を見抜いたようです！
             </P>
@@ -255,7 +255,7 @@ export default () => (
                         先ほどお前が言った、
                         <Em>
                           「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」という法則は、
-                          <Strong>明確さがまだ足りない</Strong>
+                          <Strong>明確な法則ではない</Strong>
                         </Em>
                         ということだ。
                       </P>
