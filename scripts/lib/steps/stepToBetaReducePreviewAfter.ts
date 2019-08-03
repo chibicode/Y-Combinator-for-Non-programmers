@@ -140,7 +140,7 @@ export function toBetaReducePreviewAfter(
           ...e,
           highlightType: 'active',
           topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'none'
+          bottomRightBadgeType: 'funcBound'
         }
       }
     } else if (funcSide && !e.bound) {
@@ -148,7 +148,7 @@ export function toBetaReducePreviewAfter(
         ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'none'
+        bottomRightBadgeType: 'funcUnbound'
       }
     } else {
       return {
