@@ -223,7 +223,60 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>だが、喜ぶのはまだ早い。</P>
+                      <P>
+                        <Em>だが、喜ぶのはまだ早い。</Em>
+                        これはまだ序の口だからだ。
+                      </P>
+                      <P>
+                        これから、さらに難しい
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        を解いてもらう。そのためには、
+                        <Em>
+                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                          の法則を明確にする必要がある。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>どういうこと？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        先ほどお前が言った、
+                        <Em>
+                          「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」という法則は、
+                          <Strong>明確さがまだ足りない</Strong>
+                        </Em>
+                        ということだ。
+                      </P>
+                      <P>
+                        <Em>
+                          これから、
+                          <H args={{ name: 'bentoBoxPuzzle' }} />の
+                          <Strong>明確な法則</Strong>を紹介する。
+                        </Em>
+                        それを理解した上で、さらに難しいパズルを解いてもらおう。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        うーん、よくわからないけど、とりあえずその明確な法則とやらを聞いてみよう。
+                      </P>
                     </>
                   )
                 }
