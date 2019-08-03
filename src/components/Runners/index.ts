@@ -1,4 +1,5 @@
 export { default as Aaov } from 'src/components/Runners/Aaov'
+export { default as Qxob } from 'src/components/Runners/Qxob'
 export { default as Ablz } from 'src/components/Runners/Ablz'
 export { default as Aeyv } from 'src/components/Runners/Aeyv'
 export { default as Aezk } from 'src/components/Runners/Aezk'

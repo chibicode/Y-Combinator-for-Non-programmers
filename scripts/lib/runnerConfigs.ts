@@ -9,6 +9,14 @@ export const aaov: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const qxob: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'active',
+  finalState: 'showFuncUnbound',
+  showPriorities: true
+}
+
 export const ablz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.wzcw,
