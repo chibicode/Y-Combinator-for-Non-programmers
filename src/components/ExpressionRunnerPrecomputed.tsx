@@ -110,7 +110,10 @@ const ExpressionRunnerPrecomputed = ({
         )
         if (currentIndex < expressionContainers.length - 1) {
           setCurrentIndex(nextIndex)
-        } else {
+        }
+
+        // Don't use else: stop immediately if reaches the end
+        if (nextIndex >= expressionContainers.length - 1) {
           setPlaybackStatus({
             isFastForwarding: false,
             isPlaying: false
@@ -119,7 +122,10 @@ const ExpressionRunnerPrecomputed = ({
       } else {
         if (currentIndex < expressionContainers.length - 1) {
           setCurrentIndex(currentIndex + 1)
-        } else {
+        }
+
+        // Don't use else: stop immediately if reaches the end
+        if (currentIndex + 1 >= expressionContainers.length - 1) {
           setPlaybackStatus({
             isFastForwarding: false,
             isPlaying: false
