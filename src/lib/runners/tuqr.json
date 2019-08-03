@@ -4,29 +4,15 @@
       "containerState": "done",
       "previouslyChangedExpressionState": "default",
       "expression": {
-        "arg": {
-          "name": "g",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false
-        },
-        "body": {
-          "name": "o",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": true
-        },
-        "type": "function"
+        "name": "g",
+        "highlightType": "default",
+        "topLeftBadgeType": "none",
+        "bottomRightBadgeType": "none",
+        "type": "variable",
+        "argPriorityAgg": [],
+        "funcPriorityAgg": [],
+        "emphasizePriority": false,
+        "bound": true
       }
     }
   ],

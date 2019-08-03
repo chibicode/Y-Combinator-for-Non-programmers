@@ -314,7 +314,7 @@
               "name": "c",
               "highlightType": "active",
               "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "funcBound",
+              "bottomRightBadgeType": "none",
               "type": "variable",
               "argPriorityAgg": [],
               "funcPriorityAgg": [],

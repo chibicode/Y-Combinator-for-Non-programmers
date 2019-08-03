@@ -294,12 +294,7 @@ export type CallStateToVariableState<C extends CallStates> = C extends 'default'
       | 'highlightCallArgBetaReduceCallArg'
       | 'betaReduced'
   : C extends 'betaReducePreviewCrossed'
-  ?
-      | 'active'
-      | 'removedFuncArg'
-      | 'removedCallArg'
-      | 'activeFuncUnbound'
-      | 'activeFuncBound'
+  ? 'active' | 'removedFuncArg' | 'removedCallArg'
   : C extends 'magicalExpanded'
   ? 'highlighted' | 'active'
   : never

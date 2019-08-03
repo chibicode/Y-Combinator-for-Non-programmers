@@ -118,7 +118,7 @@
               "name": "a",
               "highlightType": "active",
               "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "funcBound",
+              "bottomRightBadgeType": "none",
               "type": "variable",
               "argPriorityAgg": [
                 1
@@ -132,7 +132,7 @@
                 "name": "c",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "funcUnbound",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [
@@ -145,7 +145,7 @@
                 "name": "c",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "funcBound",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
@@ -451,7 +451,7 @@
             "name": "a",
             "highlightType": "active",
             "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "funcBound",
+            "bottomRightBadgeType": "none",
             "type": "variable",
             "argPriorityAgg": [],
             "funcPriorityAgg": [],

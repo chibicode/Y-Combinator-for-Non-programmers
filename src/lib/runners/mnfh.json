@@ -973,7 +973,7 @@
               "name": "shorthandNumber",
               "highlightType": "active",
               "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "funcBound",
+              "bottomRightBadgeType": "none",
               "type": "variable",
               "argPriorityAgg": [],
               "funcPriorityAgg": [],
@@ -988,7 +988,7 @@
               "name": "shorthandNumber",
               "highlightType": "active",
               "topLeftBadgeType": "none",
-              "bottomRightBadgeType": "funcBound",
+              "bottomRightBadgeType": "none",
               "type": "variable",
               "argPriorityAgg": [],
               "funcPriorityAgg": [
@@ -1006,7 +1006,7 @@
                 "name": "shorthandNumber",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "funcBound",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [
@@ -1024,7 +1024,7 @@
                   "name": "shorthandBinary",
                   "highlightType": "active",
                   "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "funcBound",
+                  "bottomRightBadgeType": "none",
                   "type": "variable",
                   "argPriorityAgg": [],
                   "funcPriorityAgg": [
@@ -1049,14 +1049,14 @@
                     ],
                     "highlightType": "active",
                     "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcBound",
+                    "bottomRightBadgeType": "none",
                     "magical": true
                   },
                   "arg": {
                     "name": "shorthandNumber",
                     "highlightType": "active",
                     "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcBound",
+                    "bottomRightBadgeType": "none",
                     "type": "variable",
                     "argPriorityAgg": [
                       1,
@@ -3093,7 +3093,7 @@
                   "name": "shorthandNumber",
                   "highlightType": "active",
                   "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "funcBound",
+                  "bottomRightBadgeType": "none",
                   "type": "variable",
                   "argPriorityAgg": [],
                   "funcPriorityAgg": [],
@@ -3108,7 +3108,7 @@
                   "name": "shorthandNumber",
                   "highlightType": "active",
                   "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "funcBound",
+                  "bottomRightBadgeType": "none",
                   "type": "variable",
                   "argPriorityAgg": [],
                   "funcPriorityAgg": [
@@ -3126,7 +3126,7 @@
                     "name": "shorthandNumber",
                     "highlightType": "active",
                     "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "funcBound",
+                    "bottomRightBadgeType": "none",
                     "type": "variable",
                     "argPriorityAgg": [],
                     "funcPriorityAgg": [
@@ -3144,7 +3144,7 @@
                       "name": "shorthandBinary",
                       "highlightType": "active",
                       "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "funcBound",
+                      "bottomRightBadgeType": "none",
                       "type": "variable",
                       "argPriorityAgg": [],
                       "funcPriorityAgg": [
@@ -3169,14 +3169,14 @@
                         ],
                         "highlightType": "active",
                         "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "funcBound",
+                        "bottomRightBadgeType": "none",
                         "magical": true
                       },
                       "arg": {
                         "name": "shorthandNumber",
                         "highlightType": "active",
                         "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "funcBound",
+                        "bottomRightBadgeType": "none",
                         "type": "variable",
                         "argPriorityAgg": [
                           1,
@@ -5809,7 +5809,7 @@
                       "name": "shorthandNumber",
                       "highlightType": "active",
                       "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "funcBound",
+                      "bottomRightBadgeType": "none",
                       "type": "variable",
                       "argPriorityAgg": [],
                       "funcPriorityAgg": [],
@@ -5824,7 +5824,7 @@
                       "name": "shorthandNumber",
                       "highlightType": "active",
                       "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "funcBound",
+                      "bottomRightBadgeType": "none",
                       "type": "variable",
                       "argPriorityAgg": [],
                       "funcPriorityAgg": [
@@ -5842,7 +5842,7 @@
                         "name": "shorthandNumber",
                         "highlightType": "active",
                         "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "funcBound",
+                        "bottomRightBadgeType": "none",
                         "type": "variable",
                         "argPriorityAgg": [],
                         "funcPriorityAgg": [
@@ -5860,7 +5860,7 @@
                           "name": "shorthandBinary",
                           "highlightType": "active",
                           "topLeftBadgeType": "none",
-                          "bottomRightBadgeType": "funcBound",
+                          "bottomRightBadgeType": "none",
                           "type": "variable",
                           "argPriorityAgg": [],
                           "funcPriorityAgg": [
@@ -5885,14 +5885,14 @@
                             ],
                             "highlightType": "active",
                             "topLeftBadgeType": "none",
-                            "bottomRightBadgeType": "funcBound",
+                            "bottomRightBadgeType": "none",
                             "magical": true
                           },
                           "arg": {
                             "name": "shorthandNumber",
                             "highlightType": "active",
                             "topLeftBadgeType": "none",
-                            "bottomRightBadgeType": "funcBound",
+                            "bottomRightBadgeType": "none",
                             "type": "variable",
                             "argPriorityAgg": [
                               1,
