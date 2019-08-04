@@ -19,6 +19,7 @@ import Emoji from 'src/components/Emoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import InlineBackground from 'src/components/InlineBackground'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -656,6 +657,134 @@ export default () => (
                   children: (
                     <>
                       <P>えー、ちゃんと解けるか、不安だなあ…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            <R.Dkiy />
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            <R.Yiri />
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'theAnswerIs', isYes: true }} />
+                          だと思う！
+                        </Strong>
+                        最後には
+                        <EmojiWithText letter="h" />
+                        が残るはずだ。
+                      </P>
+                      <P>
+                        <H args={{ name: 'fastForward' }} />
+                        で見てみよう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              では、
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+            </P>
+            <R.Hdxc />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>
+                        やった！最後に
+                        <EmojiWithText letter="h" />
+                        が残ったので、<Emoji>⭕️</Emoji>が正解だ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ぐぬぬ…やるじゃないか！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>ふたつの細かい法則</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'wink',
+                  children: (
+                    <>
+                      <P>どうだ、そろそろ計算箱を返す気になったか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        まだドヤ顔をするような時間じゃないぞ。3段の弁当箱の「
+                        <Strong>細かい法則</Strong>
+                        」に関する問題を出していないからな。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        3段の弁当箱の「
+                        <Strong>細かい法則</Strong>
+                        」だって？何のことだ？
+                      </P>
                     </>
                   )
                 }

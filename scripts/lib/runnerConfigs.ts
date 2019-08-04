@@ -1749,6 +1749,12 @@ export const owcy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.kamz
 }
 
+export const yiri: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.epon
+}
+
 export const ozbe: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   hideFuncUnboundBadgeOnExplanation: true,
