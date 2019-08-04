@@ -769,7 +769,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まだドヤ顔をするような時間じゃないぞ。3段の弁当箱の「
+                        まだドヤ顔をするような時間じゃないぞ。弁当箱の「
                         <Strong>細かい法則</Strong>
                         」に関する問題を出していないからな。
                       </P>
@@ -781,9 +781,135 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        3段の弁当箱の「
+                        弁当箱の「
                         <Strong>細かい法則</Strong>
                         」だって？何のことだ？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        まず、こちらの
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        を見てみな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Laea>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアがふたつある
+            </R.Laea>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        今まで見たことない形のパズルだ。
+                        <Strong>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          のペアがふたつある
+                        </Strong>
+                        なあ…
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        続いて、こちらの
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        を見てみな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Gtdu>
+              一番下の料理が
+              <EmojiWithText letter="b" />
+              ひとつだけ
+            </R.Gtdu>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        これも、今まで見たことない形のパズルだなあ…
+                        <Strong>
+                          一番下に入っている料理が
+                          <EmojiWithText letter="b" />
+                          ひとつだけだ。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そうだ。こういった形のパズルを解くには、これから紹介する弁当箱の「
+                        <Strong>細かい法則</Strong>
+                        」を知っておかないといけない。
+                      </P>
+                      <P>
+                        <Em>その法則はふたつある。</Em>
+                        順番に紹介していこう！もちろん、
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        もやるからな！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        えー、また
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        か！いつになったら計算箱を返してくれるんだ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          <Strong>
+                            次のページで、とても難しい問題をひとつ出す。
+                          </Strong>
+                          このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        え、ということはもうすぐ返してもらえるのか！じゃあ、あと少し頑張ろう！
                       </P>
                     </>
                   )

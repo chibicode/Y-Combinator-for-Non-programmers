@@ -68,7 +68,7 @@ export default () => (
                 },
                 {
                   type: 'scared',
-                  children: <P>エッ！計算箱を没収だって？そんな無慈悲な！</P>
+                  children: <P>えー！計算箱を没収だって？そんな無慈悲な！</P>
                 }
               ]}
             />

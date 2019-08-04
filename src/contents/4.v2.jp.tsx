@@ -290,7 +290,7 @@ export default () => (
                   type: 'scared',
                   children: (
                     <>
-                      <P>エッ！なんで？</P>
+                      <P>えー、なんで？</P>
                     </>
                   )
                 },
