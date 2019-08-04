@@ -64,6 +64,42 @@ export const aezk: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const igrl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lqti,
+  initialState: 'showCallArg',
+  showAllShowSteps: true,
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
+export const uppk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lqti,
+  initialState: 'showFuncArg',
+  showAllShowSteps: true,
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
+export const qfbk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lqti,
+  initialState: 'showFuncBound',
+  showAllShowSteps: true,
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
+export const yfwd: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lqti,
+  initialState: 'showFuncUnbound',
+  showAllShowSteps: true,
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
 export const ahsd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.txbv,
@@ -500,6 +536,14 @@ export const dtzu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'betaReducePreviewBefore',
+  showPriorities: true,
+  explanationsVisibility: 'visible'
+}
+
+export const vilr: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lqti,
+  initialState: 'betaReducePreviewAfter',
   showPriorities: true,
   explanationsVisibility: 'visible'
 }

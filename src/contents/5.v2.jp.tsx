@@ -896,7 +896,7 @@ export default () => (
                       <P>
                         <Em>
                           <Strong>
-                            次のページで、とても難しい問題をひとつ出す。
+                            次のページで、とても難しい問題を出す。
                           </Strong>
                           このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
                         </Em>
@@ -910,6 +910,195 @@ export default () => (
                     <>
                       <P>
                         え、ということはもうすぐ返してもらえるのか！じゃあ、あと少し頑張ろう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            細かい法則その1: いちばん左の
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアからはじめる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              まずは、こちらの
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              から見ていきましょう。
+            </P>
+            <R.Laea>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアがふたつある
+            </R.Laea>
+            <P>
+              <InlineHeader>細かい法則その1:</InlineHeader>{' '}
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアがふたつ以上ある場合は、左側にある
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Em>
+            </P>
+            <R.Aezk />
+            <P>
+              では、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              はどうなるのか見ていきましょう。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+            />
+            <P>
+              まず、上の
+              <EmojiWithText letter="a" />
+              には
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              の印がつきます。
+            </P>
+            <R.Igrl />
+            <P>
+              次に、左の
+              <EmojiWithText letter="b" />
+              には
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              の印がつきます。
+            </P>
+            <R.Uppk />
+            <P>
+              そして、右の
+              <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
+              には
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              の印がつきます。
+            </P>
+            <R.Qfbk />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、
+                        <Strong>
+                          弁当箱の右端に接している料理にはすべて
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />
+                          の印がつく
+                        </Strong>
+                        のか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              最後に、残った
+              <EmojiWithText letter="c" />
+              には
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              の印がつきます。
+            </P>
+            <R.Yfwd />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcArg"
+                          />{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />{' '}
+                          のどれにも該当しない場合には
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />
+                          の印がつく
+                        </Strong>
+                        んだな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              そして、
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              にある
+              <EmojiWithText letter="b" />
+              が一致するので…
+            </P>
+            <R.Dtzu />
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              にある
+              <EmojiWithText letter="a" />
+              が、
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
+              <EmojiWithText letter="b" />
+              のところにコピーされます。
+            </P>
+            <R.Vilr />
+            <P>
+              では、ここからは
+              <H args={{ name: 'fastForward' }} />
+              で見ていきましょう！
+            </P>
+            <R.Izgz />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        最後は
+                        <EmojiWithText letter="a" />
+                        だけが残った！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そうだ。理解できたかな？では、ここで
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        の時間だ！
                       </P>
                     </>
                   )
