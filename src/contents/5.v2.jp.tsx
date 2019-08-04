@@ -1107,6 +1107,27 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            <R.Wcer />
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            <R.Mqvu />
+            <YesNoButtons answer="no" />
+          </>
+        )
       }
     ]}
   />

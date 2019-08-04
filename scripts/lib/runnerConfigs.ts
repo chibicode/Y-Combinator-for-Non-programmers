@@ -100,6 +100,18 @@ export const yfwd: ExpressionRunnerShorthandConfig = {
   explanationsVisibility: 'visible'
 }
 
+export const wcer: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.oyph,
+  showPriorities: true
+}
+
+export const mqvu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.oqlf,
+  showPriorities: true
+}
+
 export const ahsd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.txbv,

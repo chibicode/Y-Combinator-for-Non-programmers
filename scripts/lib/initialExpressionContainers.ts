@@ -222,6 +222,22 @@ export const lqti = initializeExpressionContainer([
   'a'
 ])
 
+export const oyph = initializeExpressionContainer([
+  {
+    arg: 'b',
+    body: [
+      {
+        arg: 'c',
+        body: 'd'
+      },
+      'b'
+    ]
+  },
+  'a'
+])
+
+export const oqlf = initializeExpressionContainer('d')
+
 export const bndu = initializeExpressionContainer([
   {
     arg: 'a',
