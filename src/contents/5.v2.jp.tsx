@@ -605,19 +605,7 @@ export default () => (
                         </OlLi>
                         <OlLi>
                           <Em>
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="callArg"
-                            />{' '}
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="funcArg"
-                            />{' '}
-                            <BottomRightBadge
-                              inline
-                              bottomRightBadgeType="funcBound"
-                            />{' '}
-                            のどれにも該当しない、下段の真ん中にある料理には{' '}
+                            下段の真ん中にある料理には{' '}
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="funcUnbound"
