@@ -17,6 +17,30 @@ export const qxob: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const wwtl: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'showFuncUnbound',
+  finalState: 'betaReducePreviewBefore',
+  showPriorities: true
+}
+
+export const ltpe: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'betaReducePreviewBefore',
+  finalState: 'betaReducePreviewAfter',
+  showPriorities: true
+}
+
+export const apuz: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'betaReducePreviewAfter',
+  finalState: 'betaReducePreviewCrossed',
+  showPriorities: true
+}
+
 export const ablz: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.wzcw,

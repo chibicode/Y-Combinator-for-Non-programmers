@@ -364,6 +364,119 @@ export default () => (
                 は関係ありません。だから、無視していいのです。
               </Em>
             </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>なるほど。じゃあ、続きを見ていこう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+            のペア部分を終わらせる
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              では、<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              のペア部分を終わらせましょう。前回の復習になります。
+            </P>
+            <P>
+              まず、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                が一致するかチェックし、一致した料理には、
+                <Emoji>✅</Emoji>を付けます。
+              </Strong>
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Wwtl />
+            <P>
+              続いて、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                の料理を、一致した
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                の部分にコピーします。
+              </Strong>
+            </P>
+            <R.Ltpe />
+            <P>
+              最後に、
+              <Strong>
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                が消えます。
+              </Strong>
+            </P>
+            <R.Apuz />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          上記のどのステップにおいても、
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          は関係なかった
+                        </Em>
+                        だろう？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、だから、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        はいったん無視していいのか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え、
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>に
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              さらに続きを見ていきましょう。
+              <H args={{ name: 'pressNext' }} />
+            </P>
+            <R.Uwma />
           </>
         )
       }
