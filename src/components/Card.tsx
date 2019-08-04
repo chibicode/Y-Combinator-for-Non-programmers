@@ -124,6 +124,7 @@ const Card = ({
             <span
               css={css`
                 color: ${colors('white66')};
+                font-weight: bold;
               `}
             >
               / {slideCount}
