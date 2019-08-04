@@ -296,6 +296,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
             }
             priorities={expression.argPriorityAgg}
             position="topleft"
+            removing={expression.highlightType === 'removed'}
             emphasize={
               expression.emphasizePriority ||
               !!(conditionalState && conditionalState !== 'default')
@@ -319,6 +320,7 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
               conditionalState === 'falseCaseOnly'
             }
             priorities={expression.funcPriorityAgg}
+            removing={expression.highlightType === 'removed'}
             position="bottomleft"
             emphasize={
               expression.emphasizePriority ||
