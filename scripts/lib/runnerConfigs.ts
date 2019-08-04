@@ -1345,6 +1345,13 @@ export const kvso: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false
 }
 
+export const beiz: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  showPriorities: true,
+  skipToTheEnd: false
+}
+
 export const laea: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.lqti,
