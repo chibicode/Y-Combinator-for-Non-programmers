@@ -1207,7 +1207,111 @@ export default () => (
             <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <P>
+              続いて、こちらの
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              をご覧ください。
+            </P>
+            <R.Gtdu>
+              一番下の料理が
+              <EmojiWithText letter="b" />
+              ひとつだけ
+            </R.Gtdu>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        これも、やはり
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                        のペアからはじめてみるのかな？
+                      </P>
+                      <P>
+                        でも、
+                        <Em>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          のペアからはじめてみたとすると、一番下の段には
+                          <EmojiWithText letter="b" />
+                          しかない。
+                        </Em>
+                      </P>
+                      <P>
+                        この
+                        <EmojiWithText letter="b" />
+                        には、
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcArg"
+                          />{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          のうち、どの印をつければいいのだろう？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jmmp>
+              <EmojiWithText letter="b" /> には、
+              <br />
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+              のうちどの印をつければいい？
+            </R.Jmmp>
+            <P>
+              答えは、「<Strong>どの印もつけることができない</Strong>
+              」です。このように、
+              <Em>
+                一番下の段にひとつしか料理がない場合、どの印をつけることもできないのです
+              </Em>
+              。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>❌</Emoji>,
+                <EmojiForLetter letter="b" />,
+                <Emoji>❌</Emoji>
+              ]}
+              description={
+                <>
+                  <EmojiWithText letter="b" /> にはどの印もつけられない
+                </>
+              }
+            />
+            <P>
+              ということはつまり、
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめることができない、ということになります。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>❌</Emoji>,
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              ]}
+              description={
+                <>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアからはじめられない
+                </>
+              }
+            />
+          </>
+        )
       }
     ]}
   />
