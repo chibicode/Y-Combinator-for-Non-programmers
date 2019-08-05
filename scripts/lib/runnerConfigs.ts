@@ -25,6 +25,13 @@ export const wwtl: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const vdhd: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  initialState: 'showFuncUnbound',
+  showPriorities: true
+}
+
 export const ltpe: ExpressionRunnerShorthandConfig = {
   runner: 'singleStep',
   initialExpressionContainer: initialExpressionContainers.pisd,
@@ -466,6 +473,26 @@ export const dqey: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.hrdv,
   initialState: 'active',
   showPriorities: true
+}
+
+export const fclo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.rlzd,
+  showPriorities: true
+}
+
+export const rgta: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.rlzd,
+  showPriorities: true
+}
+
+export const cuwg: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.rlzd,
+  showPriorities: true,
+  skipToTheEnd: false
 }
 
 export const dqkc: ExpressionRunnerShorthandConfig = {

@@ -257,6 +257,19 @@ export const hrdv = initializeExpressionContainer([
   ]
 ])
 
+export const rlzd = initializeExpressionContainer([
+  'b',
+  [
+    {
+      arg: 'a',
+      body: 'd'
+    },
+    'c'
+  ]
+])
+
+export const mmii = initializeExpressionContainer(['b', 'a'])
+
 export const mzxw = initializeExpressionContainer(numberParams('a', 'b', 0))
 export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))

@@ -21,6 +21,7 @@ import InlineBackground from 'src/components/InlineBackground'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -1274,7 +1275,7 @@ export default () => (
             </R.Jmmp>
             <P>
               答えは、「<Strong>どの印もつけることができない</Strong>
-              」です。このように、
+              」です。
               <Em>
                 一番下の段にひとつしか料理がない場合、どの印をつけることもできないのです
               </Em>
@@ -1288,20 +1289,31 @@ export default () => (
               ]}
               description={
                 <>
-                  <EmojiWithText letter="b" /> にはどの印もつけられない
+                  <EmojiWithText letter="b" /> には、
+                  <br />
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="funcArg"
+                  />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  のどれもつけられない
                 </>
               }
             />
             <P>
               ということはつまり、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアからはじめることができない、ということになります。
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめることができない
+              </Em>
+              、ということになります。
             </P>
             <EmojiSeparator
               nodes={[
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
                 <Emoji>❌</Emoji>,
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>❌</Emoji>
               ]}
               description={
                 <>
@@ -1310,6 +1322,356 @@ export default () => (
                 </>
               }
             />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>じゃあ、どうすればいいんだ？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              上記のように<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめられない場合は、
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+            </P>
+            <R.Dqey>
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+            </R.Dqey>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、
+                        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                        のペアからはじめれば、
+                        <Em>
+                          下の段に
+                          <EmojiWithText letter="a" />
+                          がふたつあるから、
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />{' '}
+                          の印をつけられるね。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              残りは
+              <H args={{ name: 'fastForward' }} />
+              で見ていきましょう:
+            </P>
+            <R.Diis />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        最終的に
+                        <EmojiWithText letter="c" />と
+                        <EmojiWithText letter="b" />
+                        が残った！
+                      </P>
+                      <P>
+                        <Em>
+                          このふたつが残った時点で、もうこれ以上進められないから、そこで終了する
+                        </Em>
+                        というわけか。
+                      </P>
+                      <P>
+                        <Strong>
+                          最後に残る料理がひとつだけ、とは限らない
+                        </Strong>
+                        んだね。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        その通りだ。では、ここで
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        の時間だ。
+                      </P>
+                      <P>
+                        <Em>
+                          これが初級最後の
+                          <H args={{ name: 'yesNoQuiz' }} />
+                          になるぞ！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />:
+            </P>
+            <R.Fclo />
+            <P>
+              <H args={{ name: 'whatHappensAtTheEndQuestion' }} />
+            </P>
+            <R.Rgta />
+            <YesNoButtons answer="yes" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'theAnswerIs', isYes: true }} />
+                          だと思う！
+                        </Strong>
+                        最後には
+                        <EmojiWithText letter="b" />と
+                        <EmojiWithText letter="d" />
+                        が残るはずだ。
+                      </P>
+                      <P>
+                        <H args={{ name: 'fastForward' }} />
+                        で見てみよう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              では、
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+            </P>
+            <R.Cuwg />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>
+                        やった！最後に
+                        <EmojiWithText letter="b" />と
+                        <EmojiWithText letter="d" />
+                        が残ったので、<Emoji>⭕️</Emoji>が正解だ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <InlineHeader>3段の弁当箱は、以下のように解きます。</InlineHeader>
+            </P>
+            <Ol>
+              <OlLi>
+                <Em>
+                  まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアからはじめる。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  下段の真ん中にある料理には{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  をつける。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  は、いったん無視して構わない。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  のペアが終わると、
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  になるので、また繰り返す。
+                </Em>
+              </OlLi>
+            </Ol>
+            <R.Vdhd />
+            <P>
+              <InlineHeader>細かい法則1.</InlineHeader>{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアがふたつ以上ある場合は、
+              <Strong>いちばん左のペアからはじめます。</Strong>
+            </P>
+            <R.Hykj />
+            <P>
+              <InlineHeader>細かい法則2.</InlineHeader>{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめられない場合、(下段にひとつの料理しかない場合)
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアの部分からはじめます。
+              </Strong>
+            </P>
+            <R.Dqey />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>これ全部覚えきれるか、不安だなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          安心しろ、これらの法則を暗記する必要はない。
+                        </Strong>
+                        なんとなく「
+                        <Em>こういう法則があるんだな</Em>
+                        」と頭に入れておけば大丈夫だ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>初級はここまで！</>,
+        content: (
+          <>
+            <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>
+                        どうだ、
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        をすべて解いたぞ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        やるじゃないか。
+                        <Em>
+                          というわけで、初級編はここで終わりだ。次からは中級編に入る。
+                        </Em>
+                      </P>
+                      <P>
+                        さきほど約束した通り、
+                        <Em>
+                          <Strong>
+                            次のページで、とても難しい問題を出す。
+                          </Strong>
+                          このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        その難しい問題とやらを解けば、本当に計算箱を返してもらえるのか？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ああ、悪魔に二言はないからな。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>よーし、やってやるぞ！中級編に進もう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <NextLessonButton />
           </>
         )
       }
