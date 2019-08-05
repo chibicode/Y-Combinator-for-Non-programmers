@@ -405,7 +405,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>
-            やり直す <Emoji>↩️</Emoji>
+            最初に戻る <Emoji>↩️</Emoji>
           </Strong>
         </>
       )

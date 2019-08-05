@@ -106,6 +106,13 @@ export const wcer: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const thkn: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.oyph,
+  showPriorities: true,
+  skipToTheEnd: false
+}
+
 export const mqvu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.oqlf,

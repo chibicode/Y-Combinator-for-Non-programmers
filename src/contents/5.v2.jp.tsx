@@ -1128,6 +1128,86 @@ export default () => (
             <YesNoButtons answer="no" />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'theAnswerIs', isYes: false }} />
+                          だと思う！
+                        </Strong>
+                        最後には
+                        <EmojiWithText letter="d" />
+                        が残るはずだ。
+                      </P>
+                      <P>
+                        <H args={{ name: 'fastForward' }} />
+                        で見てみよう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              では、
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
+            </P>
+            <R.Thkn />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>
+                        やった！最後に
+                        <EmojiWithText letter="d" />
+                        が残ったので、<Emoji>❌</Emoji>が正解だ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        おぬし、なかなかやるな…！
+                        <Em>
+                          では、もうひとつの「<Strong>細かい法則</Strong>
+                          」を説明しよう！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            細かい法則その2: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアのからはじめられない場合、
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+          </>
+        ),
+        content: <></>
       }
     ]}
   />
