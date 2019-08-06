@@ -411,10 +411,17 @@ export const dhdk: ExpressionRunnerShorthandConfig = {
   caption: { name: 'secretCodeCaption', number: 3, letter: 'c' }
 }
 
+export const oork: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hrdv,
+  initialState: 'showFuncBound',
+  showPriorities: true
+}
+
 export const diis: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.hrdv,
-  initialState: 'active',
+  initialState: 'showFuncBound',
   skipToTheEnd: false,
   showPriorities: true
 }

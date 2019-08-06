@@ -46,7 +46,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Cvtc />
+            <R.Cvtc>
+              3段の
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+            </R.Cvtc>
             <BubbleQuotes
               quotes={[
                 {
@@ -489,8 +492,6 @@ export default () => (
               </UlLi>
               <UlLi>
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え、
-              </UlLi>
-              <UlLi>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
               </UlLi>
@@ -613,10 +614,6 @@ export default () => (
                               bottomRightBadgeType="funcUnbound"
                             />{' '}
                             をつける。
-                          </Em>
-                        </OlLi>
-                        <OlLi>
-                          <Em>
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="funcUnbound"
@@ -850,7 +847,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これも、今まで見たことない形のパズルだなあ…
+                        これも見たことない形だなあ…
                         <Strong>
                           一番下に入っている料理が
                           <EmojiWithText letter="b" />
@@ -865,7 +862,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。こういった形のパズルを解くには、これから紹介する弁当箱の「
+                        そうだ。こういったパズルを解くには、これから紹介する弁当箱の「
                         <Strong>細かい法則</Strong>
                         」を知っておかないといけない。
                       </P>
@@ -947,7 +944,11 @@ export default () => (
                 のペアからはじめます。
               </Em>
             </P>
-            <R.Aezk />
+            <R.Aezk>
+              左側にある
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              のペアからはじめる
+            </R.Aezk>
             <P>
               では、
               <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
@@ -1072,6 +1073,19 @@ export default () => (
               のところにコピーされます。
             </P>
             <R.Vilr />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど、見た目ほど複雑じゃなさそうだ。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+
             <P>
               では、ここからは
               <H args={{ name: 'fastForward' }} />
@@ -1223,7 +1237,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'smile',
                   children: (
                     <>
                       <P>
@@ -1231,11 +1245,17 @@ export default () => (
                         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                         のペアからはじめてみるのかな？
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
                       <P>
-                        でも、
+                        でもその場合、
                         <Em>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                          のペアからはじめてみたとすると、一番下の段には
+                          一番下の段には
                           <EmojiWithText letter="b" />
                           しかない。
                         </Em>
@@ -1377,6 +1397,14 @@ export default () => (
               ]}
             />
             <P>
+              その通り。
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              は以下の通りになります。
+            </P>
+            <R.Oork />
+            <P>
               残りは
               <H args={{ name: 'fastForward' }} />
               で見ていきましょう:
@@ -1385,7 +1413,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>
@@ -1394,6 +1422,13 @@ export default () => (
                         <EmojiWithText letter="b" />
                         が残った！
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
                       <P>
                         <Em>
                           このふたつが残った時点で、もうこれ以上進められないから、そこで終了する
@@ -1536,11 +1571,10 @@ export default () => (
                   下段の真ん中にある料理には{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                   をつける。
-                </Em>
-              </OlLi>
-              <OlLi>
-                <Em>
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="funcUnbound"
+                  />{' '}
                   は、いったん無視して構わない。
                 </Em>
               </OlLi>
@@ -1554,24 +1588,30 @@ export default () => (
                 </Em>
               </OlLi>
             </Ol>
-            <R.Vdhd />
+            <R.Vdhd>3段の弁当箱</R.Vdhd>
             <P>
               <InlineHeader>細かい法則1.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアがふたつ以上ある場合は、
               <Strong>いちばん左のペアからはじめます。</Strong>
             </P>
-            <R.Hykj />
+            <R.Hykj>
+              いちばん左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめる
+            </R.Hykj>
             <P>
               <InlineHeader>細かい法則2.</InlineHeader>{' '}
+              下段にひとつの料理しかなく、
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアからはじめられない場合、(下段にひとつの料理しかない場合)
+              のペアからはじめられない場合、
               <Strong>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                のペアの部分からはじめます。
+                のペアからはじめます。
               </Strong>
             </P>
-            <R.Dqey />
+            <R.Dqey>
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+            </R.Dqey>
             <BubbleQuotes
               quotes={[
                 {
