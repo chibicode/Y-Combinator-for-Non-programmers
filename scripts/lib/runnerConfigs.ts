@@ -2306,6 +2306,12 @@ export const tiok: ExpressionRunnerShorthandConfig = {
   caption: { name: 'secretCodeCaptionSimple', number: 0 }
 }
 
+export const jarm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mzxw,
+  showPriorities: true
+}
+
 export const tkbr: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.toum,

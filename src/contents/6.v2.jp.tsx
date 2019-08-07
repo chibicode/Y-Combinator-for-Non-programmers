@@ -4,6 +4,7 @@ import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import H from 'src/components/H'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -79,7 +80,8 @@ export default () => (
                     <>
                       <P>
                         <InlineHeader>ワン！</InlineHeader>
-                        (どうも、ベンケイです。お呼びですか、ご主人さま？)
+                        (どうも、<Strong>ベンケイ</Strong>
+                        です。お呼びですか、ご主人さま？)
                       </P>
                     </>
                   )
@@ -99,7 +101,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>なんだ、わんこじゃないか。</P>
+                      <P>なんだ、ただのわんこじゃないか。</P>
                     </>
                   )
                 },
@@ -112,7 +114,7 @@ export default () => (
                         <Strong>とっておきの芸</Strong>
                         を持っているからな。
                       </P>
-                      <P>ベンケイ、こいつらにその芸を見せてやるんだ！</P>
+                      <P>ベンケイ、こいつらにお前の芸を見せてやるんだ！</P>
                     </>
                   )
                 },
@@ -148,6 +150,32 @@ export default () => (
                         (こちらの
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         をご覧ください！)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jarm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>一見、普通の弁当箱に見えるけれど…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>ワンワン！</InlineHeader>
+                        (ぼくは、
+                        <Strong>この弁当箱を計算箱に変える</Strong>
+                        ことができるんです！ )
                       </P>
                     </>
                   )
