@@ -136,6 +136,7 @@ export default () => (
         title: <>ベンケイの芸</>,
         content: (
           <>
+            <EmojiSeparator emojis={['🍱', '🐶', '🎁']} />
             <BubbleQuotes
               quotes={[
                 {
