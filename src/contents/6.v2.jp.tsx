@@ -78,7 +78,7 @@ export default () => (
                     <>
                       <P>
                         <InlineHeader>ワン！</InlineHeader>
-                        (どうも、ベンケイです。お呼びですか、悪魔様？)
+                        (どうも、ベンケイです。お呼びですか、ご主人さま？)
                       </P>
                     </>
                   )
@@ -98,7 +98,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>なんだ、ただのわんこじゃないか。</P>
+                      <P>なんだ、わんこじゃないか。</P>
                     </>
                   )
                 },
@@ -107,7 +107,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ベンケイはただの犬じゃない。特殊な芸を持っているからな。
+                        ベンケイはただの犬じゃない。<Strong>特殊な芸</Strong>
+                        を持っているからな。
                       </P>
                       <P>ベンケイ、こいつらにその芸を見せてやるんだ！</P>
                     </>
@@ -118,7 +119,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ワンワン！</InlineHeader>(わかりました！)
+                        <InlineHeader>ワンワン！</InlineHeader>
+                        (わかりました、ご主人さま！)
                       </P>
                     </>
                   )
