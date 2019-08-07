@@ -3,6 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import H from 'src/components/H'
 
 export default () => (
   <EpisodeCardList
@@ -107,7 +108,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ベンケイはそんじょそこらの犬じゃない。
+                        ベンケイはそんじょそこらの犬とは違う。
                         <Strong>とっておきの芸</Strong>
                         を持っているからな。
                       </P>
@@ -122,6 +123,30 @@ export default () => (
                       <P>
                         <InlineHeader>ワンワン！</InlineHeader>
                         (わかりました、ご主人さま！)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>ベンケイの芸</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>ワン！</InlineHeader>
+                        (こちらの
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        をご覧ください！)
                       </P>
                     </>
                   )
