@@ -48,6 +48,7 @@ export const allColors = {
   cyan50: cyan[50],
   teal200: teal[100],
   brown50: brown[50],
+  brown400: brown[400],
   pink50: pink[50],
   pink100: pink[100],
   pink200: pink[200],

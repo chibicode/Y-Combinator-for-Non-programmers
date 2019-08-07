@@ -75,7 +75,7 @@ const slideLabelBgColor = (color: CardProps['color']) =>
     blue: colors('blue600'),
     indigo: colors('indigo300'),
     pink: colors('pink400'),
-    brown: 'transparent'
+    brown: colors('brown400')
   }[color])
 
 const Card = ({

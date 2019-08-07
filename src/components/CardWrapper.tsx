@@ -37,7 +37,7 @@ const typeToColor = (type: EpisodeCardType['type']): CardProps['color'] =>
         sideNote: 'purple' as 'purple',
         meta: 'indigo' as 'indigo',
         summary: 'pink' as 'pink',
-        share: 'brown' as 'brown'
+        dog: 'brown' as 'brown'
       }[type]
     : 'grey'
 

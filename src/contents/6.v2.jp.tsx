@@ -156,6 +156,12 @@ export default () => (
             />
           </>
         )
+      },
+      // Rules
+      {
+        type: 'dog',
+        title: <></>,
+        content: <></>
       }
     ]}
   />
