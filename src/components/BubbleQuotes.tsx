@@ -20,6 +20,7 @@ interface BubbleQuoteProps {
     | 'celebrate'
     | 'relieved'
     | 'wink'
+    | 'bot'
   children: React.ReactNode
 }
 
@@ -37,7 +38,8 @@ const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
     smile: '🙂',
     celebrate: '🥳',
     relieved: '😅',
-    wink: '😉'
+    wink: '😉',
+    bot: '🤖'
   }[type])
 
 const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
