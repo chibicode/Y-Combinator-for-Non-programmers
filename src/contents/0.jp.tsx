@@ -54,8 +54,7 @@ export default () => (
             </P>
             <P>
               本稿「<Strong>{lessonTitle}</Strong>
-              」は、単著としては自身初の<Strong>電子書籍</Strong>
-              です。すべて<Strong>無料</Strong>
+              」はすべて<Strong>無料</Strong>
               で公開しており、スマホからもパソコンからも閲覧できます。最後までお楽しみいただけると嬉しいです。
             </P>
             <EmojiSeparator emojis={['📱', '🤗', '💻']} />
@@ -110,12 +109,7 @@ export default () => (
               <Strong>全{numTotalPages}ページ</Strong>
               で構成されています。
             </P>
-            <P>
-              <Em>
-                なかなか長いので、本稿は「記事」ではなく「電子書籍」という位置づけにしています
-              </Em>
-              。少しずつ読み進めてくだされば幸いです。
-            </P>
+            <P>なかなか長いので、少しずつ読み進めてくだされば幸いです。</P>
             <EmojiSeparator emojis={['📗', '📘', '📕']} />
             <Toc />
           </>

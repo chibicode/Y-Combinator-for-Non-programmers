@@ -143,7 +143,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <P>
           <InlineHeader>こんにちは！</InlineHeader>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
-          」という無料電子書籍の
+          」という記事の
           <Em>{episodeNumber + 1}ページ目</Em>
           です。1ページ目から読むには
           <InternalLink href={'/'}>
