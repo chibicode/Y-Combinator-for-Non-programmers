@@ -1860,6 +1860,68 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'convert') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <InlineHeader>
+          {args.type === 'toBentoBox' ? (
+            <>
+              <Emoji>🍱</Emoji> 弁当箱
+            </>
+          ) : (
+            <>
+              <Emoji>🎁</Emoji> 計算箱
+            </>
+          )}
+          に変換 <Emoji>🐶</Emoji>
+        </InlineHeader>
+      )
+    }
+  }
+  if (args.name === 'undoConvert') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <InlineHeader>
+          {args.type === 'toBentoBox' ? (
+            <>
+              <Emoji>🎁</Emoji> 計算箱
+            </>
+          ) : (
+            <>
+              <Emoji>🍱</Emoji> 弁当箱
+            </>
+          )}
+          に戻す <Emoji>↩</Emoji>
+        </InlineHeader>
+      )
+    }
+  }
+  if (args.name === 'doneConvert') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <InlineHeader>
+            {args.type === 'toBentoBox' ? (
+              <>
+                <Emoji>🍱</Emoji> 弁当箱
+              </>
+            ) : (
+              <>
+                <Emoji>🎁</Emoji> 計算箱
+              </>
+            )}
+            に変換しました <Emoji>🐶</Emoji>
+          </InlineHeader>
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

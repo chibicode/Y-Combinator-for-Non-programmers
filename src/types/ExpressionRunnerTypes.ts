@@ -71,6 +71,7 @@ export interface ExpressionRunnerProps {
   highlightFunctions: boolean
   superFastForward: boolean
   highlightNumber?: number
+  convert?: 'toBentoBox' | 'toMathBox'
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {

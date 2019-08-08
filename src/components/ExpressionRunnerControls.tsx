@@ -4,6 +4,7 @@ import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveSta
 import H from 'src/components/H'
 import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
 import Emoji from 'src/components/Emoji'
+import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 
 const Button = (props: JSX.IntrinsicElements['button']) => (
   <ButtonWithTouchActiveStates
@@ -54,6 +55,7 @@ interface ExpressionRunnerControlsProps {
   onResetClick: () => void
   onSkipToTheEndClick: () => void
   onPauseClick: () => void
+  convert: ExpressionRunnerProps['convert']
 }
 
 const noOp = () => {
@@ -83,9 +85,6 @@ const ButtonPlaceholder = ({
   />
 )
 
-const sideButtonsWidth = 26
-const centerButtonWidth = 44
-
 const ExpressionRunnerControls = ({
   canStepForward,
   canStepBackward,
@@ -97,8 +96,11 @@ const ExpressionRunnerControls = ({
   onResetClick,
   onPauseClick,
   onSkipToTheEndClick,
-  skipToTheEnd
+  skipToTheEnd,
+  convert
 }: ExpressionRunnerControlsProps) => {
+  const centerButtonWidth = convert ? 60 : 44
+  const sideButtonsWidth = (100 - centerButtonWidth) / 2 - 2
   return (
     <div
       css={css`
@@ -164,10 +166,22 @@ const ExpressionRunnerControls = ({
             isPlaying ? (
               <H args={{ name: 'pause' }} highlightType="none" />
             ) : skipToTheEnd ? (
-              <H args={{ name: 'play' }} highlightType="none" />
+              convert ? (
+                <H
+                  args={{ name: 'convert', type: convert }}
+                  highlightType="none"
+                />
+              ) : (
+                <H args={{ name: 'play' }} highlightType="none" />
+              )
             ) : (
               <H args={{ name: 'fastForward' }} highlightType="none" />
             )
+          ) : convert ? (
+            <H
+              args={{ name: 'undoConvert', type: convert }}
+              highlightType="none"
+            />
           ) : (
             <H args={{ name: 'reset' }} highlightType="none" />
           )}

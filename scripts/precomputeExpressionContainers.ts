@@ -30,7 +30,8 @@ const precomputeFile = (key: string) => {
     funcPriorityAggHighlights,
     highlightFunctions,
     superFastForward,
-    highlightNumber
+    highlightNumber,
+    convert
   } = config
 
   const expressionContainersContents = `${JSON.stringify(
@@ -57,7 +58,8 @@ const precomputeFile = (key: string) => {
       highlightFunctions,
       superFastForward,
       highlightNumber,
-      showAllShowSteps
+      showAllShowSteps,
+      convert
     },
     null,
     2

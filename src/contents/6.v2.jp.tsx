@@ -177,15 +177,21 @@ export default () => (
                         <Strong>この弁当箱を計算箱に変える</Strong>
                         ことができるんです！ )
                       </P>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
+                          を押してみてください！
+                        </Strong>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Jjjh />
           </>
         )
       },
-      // Rules
       {
         type: 'dog',
         title: <></>,

@@ -13,6 +13,7 @@ import {
 import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import InlineBorder from 'src/components/InlineBorder'
+import { ExpressionRunnerPrecomputedProps } from 'src/components/ExpressionRunnerPrecomputed'
 
 interface ExpressionRunnerExplanationProps {
   expressionContainer: SteppedExpressionContainer
@@ -20,6 +21,7 @@ interface ExpressionRunnerExplanationProps {
   isPlaying: boolean
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
+  convert: ExpressionRunnerPrecomputedProps['convert']
 }
 
 const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
@@ -357,13 +359,21 @@ const ExpressionRunnerExplanation = ({
   isDone,
   isPlaying,
   showAllShowSteps,
-  hideFuncUnboundBadge
+  hideFuncUnboundBadge,
+  convert
 }: ExpressionRunnerExplanationProps) => (
   <>
     {
       <>
         {isDone ? (
-          <H args={{ name: 'done' }} highlightType="none" />
+          convert ? (
+            <H
+              args={{ name: 'doneConvert', type: convert }}
+              highlightType="none"
+            />
+          ) : (
+            <H args={{ name: 'done' }} highlightType="none" />
+          )
         ) : (
           !isPlaying && (
             <Explanation

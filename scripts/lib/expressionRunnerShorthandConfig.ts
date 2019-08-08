@@ -135,6 +135,7 @@ interface ExpressionRunnerPredefinedConfig {
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   skipToTheEnd?: boolean
+  convert?: ExpressionRunnerProps['convert']
 }
 
 export type ExpressionRunnerShorthandConfig =

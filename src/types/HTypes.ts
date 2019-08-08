@@ -139,4 +139,7 @@ export interface HProps {
     | { name: 'repeatingMathBoxCaption' }
     | { name: 'crossCaption' }
     | { name: 'lookAtThisBentoBoxPuzzle' }
+    | { name: 'convert'; type: 'toBentoBox' | 'toMathBox' }
+    | { name: 'undoConvert'; type: 'toBentoBox' | 'toMathBox' }
+    | { name: 'doneConvert'; type: 'toBentoBox' | 'toMathBox' }
 }

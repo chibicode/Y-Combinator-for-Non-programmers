@@ -271,6 +271,7 @@ export const rlzd = initializeExpressionContainer([
 export const mmii = initializeExpressionContainer(['b', 'a'])
 
 export const mzxw = initializeExpressionContainer(numberParams('a', 'b', 0))
+export const irhr = initializeDoneExpressionContainer({ shorthandNumber: 0 })
 export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
 export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))

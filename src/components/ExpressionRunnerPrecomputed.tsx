@@ -43,6 +43,7 @@ export interface ExpressionRunnerPrecomputedProps {
   superFastForward: ExpressionRunnerConfig['superFastForward']
   highlightNumber: ExpressionRunnerConfig['highlightNumber']
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
+  convert: ExpressionRunnerConfig['convert']
 }
 
 // Must be equal to 1 / N to make timer count seconds evenly
@@ -82,7 +83,8 @@ const ExpressionRunnerPrecomputed = ({
   superFastForward,
   highlightNumber,
   showAllShowSteps,
-  children
+  children,
+  convert
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -228,6 +230,7 @@ const ExpressionRunnerPrecomputed = ({
                 isDone={isDone}
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
+                convert={convert}
               />
             </ExpressionRunnerCaptionWrapper>
           )}
@@ -299,6 +302,7 @@ const ExpressionRunnerPrecomputed = ({
               onResetClick={reset}
               skipToTheEnd={skipToTheEnd}
               onPauseClick={pause}
+              convert={convert}
             />
           )}
         </Container>

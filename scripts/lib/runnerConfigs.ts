@@ -2312,6 +2312,16 @@ export const jarm: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const jjjh: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.mzxw,
+    initialExpressionContainers.irhr
+  ],
+  showPriorities: true,
+  convert: 'toMathBox'
+}
+
 export const tkbr: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.toum,

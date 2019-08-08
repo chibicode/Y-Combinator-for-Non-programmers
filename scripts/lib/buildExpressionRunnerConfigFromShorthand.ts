@@ -17,6 +17,7 @@ import {
 } from 'src/types/ExpressionRunnerTypes'
 import { HProps } from 'src/types/HTypes'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
+import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 
 export interface ExpressionRunnerConfig {
   initialExpressionContainer?: SteppedExpressionContainer
@@ -52,6 +53,7 @@ export interface ExpressionRunnerConfig {
   highlightFunctions: boolean
   superFastForward: boolean
   highlightNumber?: number
+  convert?: ExpressionRunnerProps['convert']
 }
 
 const expressionRunnerDefaults = {
@@ -281,7 +283,8 @@ const buildExpressionRunnerConfigFromShorthand = (
       variableSize,
       containerSize,
       nextIterations,
-      skipToTheEnd
+      skipToTheEnd,
+      convert
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerPredefinedConfigDefault
@@ -297,7 +300,8 @@ const buildExpressionRunnerConfigFromShorthand = (
       explanationsVisibility,
       lastAllowedExpressionStateAfterIterations: nextIterations,
       showAllShowSteps,
-      skipToTheEnd
+      skipToTheEnd,
+      convert
     }
   }
 
