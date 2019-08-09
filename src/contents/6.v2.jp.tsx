@@ -3,6 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
 
@@ -189,6 +190,72 @@ export default () => (
               ]}
             />
             <R.Jjjh />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        すごい、計算箱の <EmojiNumber number={0} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>ワン！</InlineHeader>
+                        (そうなんです。ぼくは、
+                        <Strong>ある法則に基づいて</Strong>
+                        、弁当箱を計算箱に変える芸を持っているんです。
+                      </P>
+                      <P>
+                        <Em>その法則がどんなものか、当ててみてください！)</Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        ふーむ、どんな法則なんだろう？ほかの例も見ないと分からないなあ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>どんな法則？</>,
+        content: (
+          <>
+            <P>
+              <BubbleQuotes
+                quotes={[
+                  {
+                    type: 'dog',
+                    children: (
+                      <>
+                        <P>
+                          <InlineHeader>ワン！</InlineHeader>
+                          (では、こちらに2つの計算箱を用意しました。それぞれ
+                          <H args={{ name: 'convert', type: 'toMathBox' }} />
+                          を押してみてくだださい！)
+                        </P>
+                      </>
+                    )
+                  }
+                ]}
+              />
+            </P>
           </>
         )
       },
