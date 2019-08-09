@@ -262,6 +262,18 @@ export default () => (
               <BubbleQuotes
                 quotes={[
                   {
+                    type: 'thinking',
+                    children: (
+                      <>
+                        <P>
+                          <Strong>
+                            どれも料理は違うけど、パターンは似ているような…？
+                          </Strong>
+                        </P>
+                      </>
+                    )
+                  },
+                  {
                     type: 'dog',
                     children: (
                       <>
@@ -310,7 +322,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Ehxq />
+            <R.Dubm />
             <BubbleQuotes
               quotes={[
                 {
@@ -319,7 +331,7 @@ export default () => (
                     <>
                       <P>
                         <InlineHeader>ワン！</InlineHeader>
-                        (計算箱に変換すると、次のようになるでしょうか？)
+                        (ぼくが計算箱に変換すると、次のようになるでしょうか？)
                       </P>
                     </>
                   )
@@ -330,6 +342,14 @@ export default () => (
             <YesNoButtons answer="yes" />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: true }} />
+          </>
+        ),
+        content: <></>
       },
       {
         type: 'dog',
