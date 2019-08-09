@@ -5,6 +5,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
+import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -246,7 +247,7 @@ export default () => (
                       <>
                         <P>
                           <InlineHeader>ワン！</InlineHeader>
-                          (では、こちらに2つの計算箱を用意しました。それぞれ
+                          (では、こちらに3つの弁当箱を用意しました。それぞれ
                           <H args={{ name: 'convert', type: 'toMathBox' }} />
                           を押してみてくだださい！)
                         </P>
@@ -255,7 +256,78 @@ export default () => (
                   }
                 ]}
               />
+              <R.Mifg />
+              <R.Epoi />
+              <R.Vlob />
+              <BubbleQuotes
+                quotes={[
+                  {
+                    type: 'dog',
+                    children: (
+                      <>
+                        <P>
+                          <InlineHeader>ワン！</InlineHeader>
+                          (どれも、ある法則に基づいて計算箱に変えているんですが、分かりましたか？)
+                        </P>
+                      </>
+                    )
+                  },
+                  {
+                    type: 'surprised',
+                    children: (
+                      <>
+                        <P>あ、分かったぞ！</P>
+                      </>
+                    )
+                  }
+                ]}
+              />
             </P>
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>ワン！</InlineHeader>
+                        (じゃあ、こちらの弁当箱を…)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ehxq />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>ワン！</InlineHeader>
+                        (計算箱に変換すると、次のようになるでしょうか？)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Otbe />
+            <YesNoButtons answer="yes" />
           </>
         )
       },

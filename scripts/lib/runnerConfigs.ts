@@ -2322,6 +2322,52 @@ export const jjjh: ExpressionRunnerShorthandConfig = {
   convert: 'toMathBox'
 }
 
+export const mifg: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.ntes,
+    initialExpressionContainers.ntua
+  ],
+  convert: 'toMathBox'
+}
+
+export const epoi: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.nskn,
+    initialExpressionContainers.hdpc
+  ],
+  convert: 'toMathBox'
+}
+
+export const vlob: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.tgxv,
+    initialExpressionContainers.qjcv
+  ],
+  convert: 'toMathBox'
+}
+
+export const dubm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wcdn
+}
+
+export const otbe: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uarl
+}
+
+export const ehxq: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.wcdn,
+    initialExpressionContainers.uarl
+  ],
+  convert: 'toMathBox'
+}
+
 export const tkbr: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.toum,
