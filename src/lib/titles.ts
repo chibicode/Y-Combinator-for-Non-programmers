@@ -6,7 +6,7 @@ import {
 import contentVersion from 'src/lib/contentVersion'
 
 export const lessonTitle = {
-  en: 'Y Combinator for Everyone',
+  en: 'Y Combinator for Non-programmers',
   jp: 'コンピュータサイエンスと魔法のYコンビネータ'
 }[locale]
 
