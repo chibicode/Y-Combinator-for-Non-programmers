@@ -2363,6 +2363,11 @@ export const wopl: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
 }
 
+export const pmdm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hdpc
+}
+
 export const vlob: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [

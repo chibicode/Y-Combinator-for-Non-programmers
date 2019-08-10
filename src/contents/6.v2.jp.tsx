@@ -10,6 +10,7 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 
 export default () => (
   <EpisodeCardList
@@ -464,7 +465,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Mepb />
+            <R.Mepb>
+              <EmojiForLetter letter="e" />に<Emoji>🅰️</Emoji>、
+              <EmojiForLetter letter="f" />に<Emoji>🅱️</Emoji>をつける
+            </R.Mepb>
             <BubbleQuotes
               quotes={[
                 {
@@ -527,12 +531,33 @@ export default () => (
               <EmojiNumber number={2} />
               になる
             </R.Wopl>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm />
           </>
         )
       },
       {
-        title: <></>,
-        content: <></>
+        title: <>他の弁当箱の例</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        で出した弁当箱にも、
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dubm />
+          </>
+        )
       },
       {
         type: 'dog',
