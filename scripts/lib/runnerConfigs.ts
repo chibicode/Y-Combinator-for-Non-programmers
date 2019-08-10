@@ -2237,6 +2237,12 @@ export const stio: ExpressionRunnerShorthandConfig = {
   caption: { name: 'numberOfAIsSecretCodeCaption' }
 }
 
+export const hehx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dupe,
+  highlightOverrides: { Amult: 'highlighted' }
+}
+
 export const syfp: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.dpky,
@@ -2338,6 +2344,23 @@ export const epoi: ExpressionRunnerShorthandConfig = {
     initialExpressionContainers.hdpc
   ],
   convert: 'toMathBox'
+}
+
+export const nlyu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nskn
+}
+
+export const mepb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nskn,
+  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
+}
+
+export const wopl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hwnq,
+  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
 }
 
 export const vlob: ExpressionRunnerShorthandConfig = {

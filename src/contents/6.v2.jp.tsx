@@ -1,12 +1,15 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Em, Strong } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
+import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
+import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 
 export default () => (
   <EpisodeCardList
@@ -81,9 +84,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ワン！</InlineHeader>
-                        (どうも、<Strong>ベンケイ</Strong>
-                        です。お呼びですか、ご主人さま？)
+                        どうも、<Strong>ベンケイ</Strong>
+                        です。お呼びですか、ご主人さま？
                       </P>
                     </>
                   )
@@ -124,10 +126,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        <InlineHeader>ワンワン！</InlineHeader>
-                        (わかりました、ご主人さま！)
-                      </P>
+                      <P>わかりました、ご主人さま！</P>
                     </>
                   )
                 }
@@ -148,10 +147,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ワン！</InlineHeader>
-                        (こちらの
+                        こちらの
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        をご覧ください！)
+                        をご覧ください！
                       </P>
                     </>
                   )
@@ -174,10 +172,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ワンワン！</InlineHeader>
-                        (ぼくは、
+                        ぼくは、
                         <Strong>この弁当箱を計算箱に変える</Strong>
-                        ことができるんです！ )
+                        ことができるんです！
                       </P>
                       <P>
                         <Strong>
@@ -208,13 +205,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ワン！</InlineHeader>
-                        (そうなんです。ぼくは、
+                        そうなんです。ぼくは、
                         <Strong>ある法則に基づいて</Strong>
                         、弁当箱を計算箱に変える芸を持っているんです。
                       </P>
                       <P>
-                        <Em>その法則がどんなものか、当ててみてください！)</Em>
+                        <Em>その法則がどんなものか、当ててみてください！</Em>
                       </P>
                     </>
                   )
@@ -238,63 +234,59 @@ export default () => (
         title: <>どんな法則？</>,
         content: (
           <>
-            <P>
-              <BubbleQuotes
-                quotes={[
-                  {
-                    type: 'dog',
-                    children: (
-                      <>
-                        <P>
-                          <InlineHeader>ワン！</InlineHeader>
-                          (では、こちらに3つの弁当箱を用意しました。それぞれ
-                          <H args={{ name: 'convert', type: 'toMathBox' }} />
-                          を押してみてくだださい！)
-                        </P>
-                      </>
-                    )
-                  }
-                ]}
-              />
-              <R.Mifg />
-              <R.Epoi />
-              <R.Vlob />
-              <BubbleQuotes
-                quotes={[
-                  {
-                    type: 'thinking',
-                    children: (
-                      <>
-                        <P>
-                          <Strong>
-                            どれも料理は違うけど、パターンは似ているような…？
-                          </Strong>
-                        </P>
-                      </>
-                    )
-                  },
-                  {
-                    type: 'dog',
-                    children: (
-                      <>
-                        <P>
-                          <InlineHeader>ワン！</InlineHeader>
-                          (どれも、ある法則に基づいて計算箱に変えているんですが、分かりましたか？)
-                        </P>
-                      </>
-                    )
-                  },
-                  {
-                    type: 'surprised',
-                    children: (
-                      <>
-                        <P>あ、分かったぞ！</P>
-                      </>
-                    )
-                  }
-                ]}
-              />
-            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、こちらに3つの弁当箱を用意しました。それぞれ
+                        <H args={{ name: 'convert', type: 'toMathBox' }} />
+                        を押してみてください！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mifg />
+            <R.Epoi />
+            <R.Vlob />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          どれも料理は違うけど、パターンは似ているような…？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        どれも、ある法則に基づいて計算箱に変えているんですが、分かりましたか？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>あ、分かったぞ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -313,10 +305,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        <InlineHeader>ワン！</InlineHeader>
-                        (じゃあ、こちらの弁当箱を…)
-                      </P>
+                      <P>じゃあ、こちらの弁当箱を…)</P>
                     </>
                   )
                 }
@@ -330,8 +319,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ワン！</InlineHeader>
-                        (ぼくが計算箱に変換すると、次のようになるでしょうか？)
+                        ぼくが計算箱に変換すると、次のようになるでしょうか？
                       </P>
                     </>
                   )
@@ -349,6 +337,201 @@ export default () => (
             <H args={{ name: 'theAnswerIs', isYes: true }} />
           </>
         ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'theAnswerIs', isYes: true }} />
+                          だと思う！
+                        </Strong>
+                        変換すると <EmojiNumber number={4} /> になるはずだ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'convert', type: 'toMathBox' }} />
+                        を押してみてくだださい！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ehxq />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>
+                        やった！ <EmojiNumber number={4} /> になったので、
+                        <Emoji>⭕️</Emoji>が正解だ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>では、法則を説明しましょう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>法則の説明</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ぼくが計算箱に変換できるのは、以下のような形の弁当箱なんです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Eozk>
+              一番左の料理を<Emoji>🅰️</Emoji>、<br />
+              真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
+              <br />
+              右上に<Emoji>🅱️</Emoji>がひとつあり、
+              <br />
+              右下に<Emoji>🅰️</Emoji>
+              がいくつかある
+            </R.Eozk>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        たとえば、先ほど例に出したこちらの弁当箱をご覧ください。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nlyu />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        まず、
+                        <EmojiWithText letter="e" />
+                        が一番左にあるので、すべての
+                        <EmojiForLetter letter="e" />に<Emoji>🅰️</Emoji>
+                        の印をつけてみます。
+                      </P>
+                      <P>
+                        次に、
+                        <EmojiWithText letter="f" />
+                        が一番左にあるので、すべての
+                        <EmojiForLetter letter="f" />に<Emoji>🅱️</Emoji>
+                        の印をつけてみます。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mepb />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>上の弁当箱は、こちらのパターンと一致していますね。</P>
+                      <R.Eozk />
+                      <P>つまり、ぼくが計算箱に変換できるということです。</P>
+                      <P>
+                        <Em>
+                          では、計算箱に変換した場合、何の数字になるのでしょうか？
+                        </Em>
+                        答えを言うと、
+                        <Strong>
+                          右下にある<Emoji>🅰️</Emoji>がついた料理の数
+                        </Strong>
+                        が、変換後の計算箱の数字になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hehx>
+              右下にある<Emoji>🅰️</Emoji>
+              がついた料理の数が、
+              <br />
+              変換後の計算箱の数字
+            </R.Hehx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        先ほどの弁当箱の場合、
+                        <Em>
+                          右下には<Emoji>🅰️</Emoji>がついた
+                          <EmojiWithText letter="e" />
+                          が「<Strong>2個</Strong>」あります。
+                        </Em>
+                      </P>
+                      <P>
+                        だから、これをぼくが計算箱に変換すると{' '}
+                        <EmojiNumber number={2} /> になるというわけです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Wopl>
+              右下には<Emoji>🅰️</Emoji>がついた
+              <EmojiForLetter letter="e" />
+              が「<Strong>2個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={2} />
+              になる
+            </R.Wopl>
+          </>
+        )
+      },
+      {
+        title: <></>,
         content: <></>
       },
       {
