@@ -450,14 +450,14 @@ export default () => (
                         まず、
                         <EmojiWithText letter="e" />
                         が一番左にあるので、すべての
-                        <EmojiForLetter letter="e" />に<Emoji>🅰️</Emoji>
+                        <EmojiWithText letter="e" />に<Emoji>🅰️</Emoji>
                         の印をつけてみます。
                       </P>
                       <P>
                         次に、
                         <EmojiWithText letter="f" />
                         が一番左にあるので、すべての
-                        <EmojiForLetter letter="f" />に<Emoji>🅱️</Emoji>
+                        <EmojiWithText letter="f" />に<Emoji>🅱️</Emoji>
                         の印をつけてみます。
                       </P>
                     </>
@@ -476,8 +476,31 @@ export default () => (
                   children: (
                     <>
                       <P>上の弁当箱は、こちらのパターンと一致していますね。</P>
-                      <R.Eozk />
+                      <R.Eozk>
+                        一番左の料理を<Emoji>🅰️</Emoji>、<br />
+                        真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
+                        <br />
+                        右上に<Emoji>🅱️</Emoji>がひとつあり、
+                        <br />
+                        右下に<Emoji>🅰️</Emoji>
+                        がいくつかある
+                      </R.Eozk>
                       <P>つまり、ぼくが計算箱に変換できるということです。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         <Em>
                           では、計算箱に変換した場合、何の数字になるのでしょうか？
@@ -548,16 +571,100 @@ export default () => (
                     <>
                       <P>
                         <H args={{ name: 'yesNoQuiz' }} />
-                        で出した弁当箱にも、
+                        で出した弁当箱にも、<Emoji>🅰️</Emoji>と<Emoji>🅱️</Emoji>
+                        の印をつけてみましょう。
+                      </P>
+                      <P>
+                        こちらの場合、
+                        <Em>
+                          右下には<Emoji>🅰️</Emoji>がついた
+                          <EmojiWithText letter="i" />
+                          が「<Strong>4個</Strong>」あります。
+                        </Em>
+                      </P>
+                      <P>
+                        だから、これをぼくが計算箱に変換すると{' '}
+                        <EmojiNumber number={4} /> になるというわけです。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Dubm />
+            <R.Duuk>
+              右下には<Emoji>🅰️</Emoji>がついた
+              <EmojiForLetter letter="i" />
+              が「<Strong>4個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={4} />
+              になる
+            </R.Duuk>
+            <ExpressionRunnerSeparator />
+            <R.Kizi />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        続いてこちらの場合、
+                        <Em>
+                          右下には<Emoji>🅰️</Emoji>がついた
+                          <EmojiWithText letter="i" />が
+                          <Em>ひとつもありません</Em>。つまり、
+                          <Strong>
+                            <Emoji>🅰️</Emoji>の数は「ゼロ個」
+                          </Strong>
+                          というわけです。
+                        </Em>
+                      </P>
+                      <P>
+                        だから、これをぼくが計算箱に変換すると{' '}
+                        <EmojiNumber number={0} /> になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dwzy>
+              右下には<Emoji>🅰️</Emoji>がついた
+              <EmojiForLetter letter="i" />
+              が「<Strong>ゼロ個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={0} />
+              になる
+            </R.Dwzy>
+            <ExpressionRunnerSeparator />
+            <R.Jwah />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、
+                        <Em>
+                          右下の<Emoji>🅰️</Emoji>
+                          の数がゼロになる場合もあるんだね。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
+      },
+      {
+        title: <></>,
+        type: 'sideNote',
+        content: <></>
       },
       {
         type: 'dog',

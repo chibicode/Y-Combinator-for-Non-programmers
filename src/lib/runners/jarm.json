@@ -48,7 +48,7 @@
   "showOnlyFocused": false,
   "hideControls": true,
   "explanationsVisibility": "hidden",
-  "hidePriorities": false,
+  "hidePriorities": true,
   "variableSize": "lg",
   "containerSize": "xxs",
   "hidePlayButton": false,

@@ -282,6 +282,9 @@ export const hdpc = initializeDoneExpressionContainer({ shorthandNumber: 2 })
 export const tgxv = initializeExpressionContainer(numberParams('g', 'h', 3))
 export const qjcv = initializeDoneExpressionContainer({ shorthandNumber: 3 })
 export const wcdn = initializeExpressionContainer(numberParams('i', 'j', 4))
+export const hzkx = initializeExpressionContainer(
+  numberParamsHighlightNumber('i', 'j', 4)
+)
 export const uarl = initializeDoneExpressionContainer({ shorthandNumber: 4 })
 export const dupe = initializeExpressionContainer({
   arg: 'A',
