@@ -662,9 +662,32 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: <>余談: 計算箱に変換できない例</>,
         type: 'sideNote',
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        余談ですが、ぼくが計算箱に変換できない弁当箱も紹介します。
+                      </P>
+                      <P>
+                        たとえば、
+                        <Strong>
+                          こちらの弁当箱は計算箱に変換することができません。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       },
       {
         type: 'dog',
