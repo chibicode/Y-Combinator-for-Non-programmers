@@ -2396,6 +2396,18 @@ export const dubm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.wcdn
 }
 
+export const qsnv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.elax
+}
+
+export const zlrx: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.elax,
+  skipToTheEnd: false,
+  initialState: 'active'
+}
+
 export const duuk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.hzkx,

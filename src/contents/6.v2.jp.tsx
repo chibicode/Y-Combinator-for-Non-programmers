@@ -662,8 +662,7 @@ export default () => (
         )
       },
       {
-        title: <>余談: 計算箱に変換できない例</>,
-        type: 'sideNote',
+        title: <>実行して変換</>,
         content: (
           <>
             <BubbleQuotes
@@ -673,19 +672,28 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        余談ですが、ぼくが計算箱に変換できない弁当箱も紹介します。
-                      </P>
-                      <P>
-                        たとえば、
+                        さらにぼくは、
                         <Strong>
-                          こちらの弁当箱は計算箱に変換することができません。
+                          弁当箱を
+                          <H args={{ name: 'play' }} />
+                          してから計算箱に変換する
                         </Strong>
+                        こともできます。
+                        <H args={{ name: 'lookAtThisBentoBox' }} />:
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Qsnv />
+            <P>
+              これを実行するとどうなるか、
+              <H args={{ name: 'fastForward' }} />
+              で見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            <R.Zlrx />
           </>
         )
       },

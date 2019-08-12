@@ -286,6 +286,15 @@ export const hzkx = initializeExpressionContainer(
   numberParamsHighlightNumber('i', 'j', 4)
 )
 export const uarl = initializeDoneExpressionContainer({ shorthandNumber: 4 })
+
+export const elax = initializeExpressionContainer([
+  {
+    arg: 'c',
+    body: numberParams('a', 'b', 0)
+  },
+  'd'
+])
+
 export const dupe = initializeExpressionContainer({
   arg: 'A',
   body: {
