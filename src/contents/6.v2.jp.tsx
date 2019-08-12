@@ -1056,7 +1056,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        というわけで、
+                        というわけで、もともとの弁当箱を
                         <H
                           args={{ name: 'runAndConertToMathbox' }}
                         /> すると <EmojiNumber number={2} /> ではなく{' '}
