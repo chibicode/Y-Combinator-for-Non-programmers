@@ -15,7 +15,7 @@ import EpisodeContext from 'src/components/EpisodeContext'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 
 export interface EpisodeCardType {
-  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'dog'
+  type?: 'yesNoQuiz' | 'sideNote' | 'meta' | 'summary' | 'share'
   title?: React.ReactNode
   preview?: CardProps['preview']
   content: React.ReactNode
@@ -70,7 +70,7 @@ const EpisodeCardList = ({
                 `}
               >
                 <CardWrapper
-                  type="meta"
+                  type="share"
                   isLast
                   title={<H args={{ name: 'shareTitle' }} />}
                   setLastVisibleCardIndex={setLastVisibleCardIndex}

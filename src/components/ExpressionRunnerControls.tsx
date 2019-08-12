@@ -1,47 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import ButtonWithTouchActiveStates from 'src/components/ButtonWithTouchActiveStates'
 import H from 'src/components/H'
-import { colors, fontSizes, radii, spaces } from 'src/lib/theme'
+import { colors, spaces } from 'src/lib/theme'
 import Emoji from 'src/components/Emoji'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
-
-const Button = (props: JSX.IntrinsicElements['button']) => (
-  <ButtonWithTouchActiveStates
-    {...props}
-    activeBackgroundColor={colors('indigo100')}
-    css={css`
-      border-radius: ${radii(0.25)};
-      border: 2px solid ${colors('indigo300')};
-      background: #fff;
-      color: ${colors('indigo500')};
-      font-size: ${fontSizes(0.85)};
-      padding: ${spaces(0.5)} 0;
-      &:enabled {
-        cursor: pointer;
-      }
-
-      &:disabled,
-      &:active:disabled {
-        color: ${colors('indigo300')};
-        background: ${colors('indigo50')};
-      }
-
-      @media (hover: hover) {
-        &:hover:enabled {
-          background: ${colors('indigo50')};
-        }
-        &:focus {
-          box-shadow: inset 0 0 0 1px ${colors('indigo300')};
-          outline: none;
-        }
-      }
-      &:active:enabled {
-        background: ${colors('indigo100')};
-      }
-    `}
-  />
-)
+import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 
 interface ExpressionRunnerControlsProps {
   canStepForward: boolean
@@ -112,32 +75,32 @@ const ExpressionRunnerControls = ({
       {showPlayButton ? (
         <>
           {!isPlaying && canStepBackward && !skipToTheEnd ? (
-            <Button
+            <ExpressionRunnerButton
               onClick={onPreviousClick}
               css={css`
                 width: ${sideButtonsWidth}%;
               `}
             >
               <Emoji>⬅</Emoji>
-            </Button>
+            </ExpressionRunnerButton>
           ) : (
             <ButtonPlaceholder width={sideButtonsWidth} />
           )}
         </>
       ) : canStepBackward ? (
-        <Button
+        <ExpressionRunnerButton
           onClick={onPreviousClick}
           css={css`
             flex: 1;
           `}
         >
           <H args={{ name: 'previous' }} />
-        </Button>
+        </ExpressionRunnerButton>
       ) : (
         <ButtonPlaceholder flex={1} />
       )}
       {showPlayButton && (
-        <Button
+        <ExpressionRunnerButton
           onClick={
             canStepForward
               ? skipToTheEnd
@@ -192,25 +155,25 @@ const ExpressionRunnerControls = ({
           ) : (
             <H args={{ name: 'reset' }} highlightType="none" />
           )}
-        </Button>
+        </ExpressionRunnerButton>
       )}
       {showPlayButton ? (
         <>
           {!isPlaying && canStepForward && !skipToTheEnd ? (
-            <Button
+            <ExpressionRunnerButton
               onClick={onNextClick}
               css={css`
                 width: ${sideButtonsWidth}%;
               `}
             >
               <Emoji>➡️</Emoji>
-            </Button>
+            </ExpressionRunnerButton>
           ) : (
             <ButtonPlaceholder width={sideButtonsWidth} />
           )}
         </>
       ) : canStepForward ? (
-        <Button
+        <ExpressionRunnerButton
           onClick={canStepForward ? onNextClick : noOp}
           disabled={!canStepForward}
           css={css`
@@ -222,7 +185,7 @@ const ExpressionRunnerControls = ({
           ) : (
             <H args={{ name: 'done' }} />
           )}
-        </Button>
+        </ExpressionRunnerButton>
       ) : (
         <ButtonPlaceholder flex={1} />
       )}

@@ -1,4 +1,6 @@
-import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+import { colors, spaces } from 'src/lib/theme'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Em, Strong, Ol, OlLi } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -7,6 +9,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
+import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
@@ -718,7 +721,7 @@ export default () => (
                       <P>
                         ためしに、
                         <Em>
-                          次の弁当箱の下にある、 「
+                          次の弁当箱の下にある、「
                           <H args={{ name: 'runAndConertToMathbox' }} />
                           」ボタンを押してみてください。
                         </Em>
@@ -732,24 +735,21 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
-                      <P></P>
+                      <P>
+                        <EmojiNumber number={0} /> になった！
+                      </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <R.Qsnv />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        これを実行するとどうなるか、
+                        では、理由を説明しますね。まず、もともとの弁当箱を実行するとどうなるか、
                         <H args={{ name: 'fastForward' }} />
                         で見てみましょう。
                         <H args={{ name: 'pressFastForward' }} />
@@ -767,7 +767,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり
+                        つまり、もともとの弁当箱を
                         <H args={{ name: 'play' }} />
                         すると、次のような弁当箱になります。
                       </P>
@@ -828,25 +828,40 @@ export default () => (
                           </Em>
                         </OlLi>
                       </Ol>
+                      <P>というふたつのステップを、</P>
                       <P>
-                        というふたつのステップを、<Strong>一度に行う</Strong>
-                        こともできます。
+                        <ExpressionRunnerButton
+                          css={css`
+                            padding-left: ${spaces(1)};
+                            padding-right: ${spaces(1)};
+                            background: ${colors('yellow100')};
+                          `}
+                        >
+                          <H
+                            args={{
+                              name: 'runAndConertToMathbox',
+                              addNewline: true
+                            }}
+                          />
+                        </ExpressionRunnerButton>
                       </P>
-                      <P></P>
+                      <P>…を押すことで、一度に行うことができるのです。</P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Qsnv />
+            <ExpressionRunnerSeparator />
+            <R.Jwah>
+              <Strong>
+                <H args={{ name: 'runAndConertToMathbox' }} />
+              </Strong>
+            </R.Jwah>
           </>
         )
-      },
-      // Introduce the problem on the next page
-      {
-        type: 'dog',
-        title: <></>,
-        content: <></>
       }
+      // Introduce the problem on the next page
     ]}
   />
 )
