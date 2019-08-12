@@ -140,6 +140,11 @@ export interface HProps {
     | { name: 'crossCaption' }
     | { name: 'lookAtThisBentoBoxPuzzle' }
     | { name: 'convert'; type: 'toBentoBox' | 'toMathBox' }
+    | { name: 'runAndConertToMathbox'; addNewline?: boolean }
+    | { name: 'doneRunAndConertToMathbox' }
     | { name: 'undoConvert'; type: 'toBentoBox' | 'toMathBox' }
-    | { name: 'doneConvert'; type: 'toBentoBox' | 'toMathBox' }
+    | {
+        name: 'doneConvert'
+        type: 'toBentoBox' | 'toMathBox'
+      }
 }

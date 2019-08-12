@@ -167,17 +167,24 @@ const ExpressionRunnerControls = ({
               <H args={{ name: 'pause' }} highlightType="none" />
             ) : skipToTheEnd ? (
               convert ? (
-                <H
-                  args={{ name: 'convert', type: convert }}
-                  highlightType="none"
-                />
+                convert === 'toMathBoxPlay' ? (
+                  <H
+                    args={{ name: 'runAndConertToMathbox', addNewline: true }}
+                    highlightType="none"
+                  />
+                ) : (
+                  <H
+                    args={{ name: 'convert', type: convert }}
+                    highlightType="none"
+                  />
+                )
               ) : (
                 <H args={{ name: 'play' }} highlightType="none" />
               )
             ) : (
               <H args={{ name: 'fastForward' }} highlightType="none" />
             )
-          ) : convert ? (
+          ) : convert && convert !== 'toMathBoxPlay' ? (
             <H
               args={{ name: 'undoConvert', type: convert }}
               highlightType="none"

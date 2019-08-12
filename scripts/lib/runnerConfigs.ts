@@ -2401,6 +2401,15 @@ export const qsnv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.elax
 }
 
+export const dcji: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.elax,
+    initialExpressionContainers.irhr
+  ],
+  convert: 'toMathBoxPlay'
+}
+
 export const zlrx: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.elax,

@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong } from 'src/components/ContentTags'
+import { P, Em, Strong, Ol, OlLi } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -28,7 +28,7 @@ export default () => (
                       <P>
                         ここからは中級編だ。
                         <Em>
-                          約束した通り、これから出す問題に答えることができたら、計算箱を返してやろう！
+                          約束した通り、この中級編で出題する難しい問題に答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>
                     </>
@@ -306,7 +306,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>じゃあ、こちらの弁当箱を…)</P>
+                      <P>それでは、こちらの弁当箱を…</P>
                     </>
                   )
                 }
@@ -572,10 +572,24 @@ export default () => (
                       <P>
                         <H args={{ name: 'yesNoQuiz' }} />
                         で出した弁当箱にも、<Emoji>🅰️</Emoji>と<Emoji>🅱️</Emoji>
-                        の印をつけてみましょう。
+                        の印をつけてみましょう。まずは
+                        <H args={{ name: 'lookAtThisBentoBox' }} />:
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dubm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
-                        こちらの場合、
+                        上の弁当箱に、先ほどの法則にしたがって<Emoji>🅰️</Emoji>
+                        と<Emoji>🅱️</Emoji>の印をつけると、
                         <Em>
                           右下には<Emoji>🅰️</Emoji>がついた
                           <EmojiWithText letter="i" />
@@ -609,16 +623,37 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        続いてこちらの場合、
+                        続いて
+                        <H args={{ name: 'lookAtThisBentoBox' }} />
+                        。この章の冒頭で紹介した弁当箱です。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jarm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        上の弁当箱に、先ほどの法則にしたがって<Emoji>🅰️</Emoji>
+                        と<Emoji>🅱️</Emoji>の印をつけると、
                         <Em>
                           右下には<Emoji>🅰️</Emoji>がついた
                           <EmojiWithText letter="i" />が
-                          <Em>ひとつもありません</Em>。つまり、
-                          <Strong>
-                            <Emoji>🅰️</Emoji>の数は「ゼロ個」
-                          </Strong>
-                          というわけです。
+                          <Em>ひとつもありません</Em>。
                         </Em>
+                      </P>
+                      <P>
+                        つまり、
+                        <Strong>
+                          <Emoji>🅰️</Emoji>の数は「ゼロ個」
+                        </Strong>
+                        というわけです。
                       </P>
                       <P>
                         だから、これをぼくが計算箱に変換すると{' '}
@@ -662,7 +697,7 @@ export default () => (
         )
       },
       {
-        title: <>実行して変換</>,
+        title: <>実行してから変換</>,
         content: (
           <>
             <BubbleQuotes
@@ -679,24 +714,134 @@ export default () => (
                           してから計算箱に変換する
                         </Strong>
                         こともできます。
-                        <H args={{ name: 'lookAtThisBentoBox' }} />:
+                      </P>
+                      <P>
+                        ためしに、
+                        <Em>
+                          次の弁当箱の下にある、 「
+                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          」ボタンを押してみてください。
+                        </Em>
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Dcji />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P></P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Qsnv />
-            <P>
-              これを実行するとどうなるか、
-              <H args={{ name: 'fastForward' }} />
-              で見てみましょう。
-              <H args={{ name: 'pressFastForward' }} />
-            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        これを実行するとどうなるか、
+                        <H args={{ name: 'fastForward' }} />
+                        で見てみましょう。
+                        <H args={{ name: 'pressFastForward' }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Zlrx />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり
+                        <H args={{ name: 'play' }} />
+                        すると、次のような弁当箱になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jarm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          これは先ほど説明した通り、計算箱に変換すると{' '}
+                          <EmojiNumber number={0} /> になります。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dwzy>
+              右下には<Emoji>🅰️</Emoji>がついた
+              <EmojiForLetter letter="i" />
+              が「<Strong>ゼロ個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={0} />
+              になる
+            </R.Dwzy>
+            <ExpressionRunnerSeparator />
+            <R.Jwah />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>このような、</P>
+                      <Ol>
+                        <OlLi>
+                          <Em>
+                            まず弁当箱を
+                            <H args={{ name: 'play' }} />
+                            し、
+                          </Em>
+                        </OlLi>
+                        <OlLi>
+                          <Em>
+                            実行し終えたら、続いて{' '}
+                            <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
+                            する
+                          </Em>
+                        </OlLi>
+                      </Ol>
+                      <P>
+                        というふたつのステップを、<Strong>一度に行う</Strong>
+                        こともできます。
+                      </P>
+                      <P></P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
+      // Introduce the problem on the next page
       {
         type: 'dog',
         title: <></>,

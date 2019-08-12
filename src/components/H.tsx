@@ -1880,6 +1880,30 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'runAndConertToMathbox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <InlineHeader>
+          実行してから
+          {args.addNewline && <br />}
+          <H args={{ name: 'convert', type: 'toMathBox' }} />
+        </InlineHeader>
+      )
+    }
+  }
+  if (args.name === 'doneRunAndConertToMathbox') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <Strong highlightType={highlightType}>
+          実行と変換完了! <Emoji>🏁</Emoji>
+        </Strong>
+      )
+    }
+  }
   if (args.name === 'undoConvert') {
     if (locale === 'en') {
       return <>?</>
@@ -1906,7 +1930,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <InlineHeader>
+          <Strong highlightType={highlightType}>
             {args.type === 'toBentoBox' ? (
               <>
                 <Emoji>🍱</Emoji> 弁当箱
@@ -1917,7 +1941,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               </>
             )}
             に変換しました <Emoji>🐶</Emoji>
-          </InlineHeader>
+          </Strong>
         </>
       )
     }
