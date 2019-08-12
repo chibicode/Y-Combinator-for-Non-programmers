@@ -2,7 +2,14 @@
 import { css, jsx } from '@emotion/core'
 import { colors, spaces } from 'src/lib/theme'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ol, OlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Em,
+  Strong,
+  Ol,
+  OlLi,
+  InlineHeader
+} from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -14,6 +21,7 @@ import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -858,10 +866,84 @@ export default () => (
                 <H args={{ name: 'runAndConertToMathbox' }} />
               </Strong>
             </R.Jwah>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、「<InlineHeader>実行</InlineHeader>」と「
+                        <InlineHeader>計算箱に変換</InlineHeader>」を
+                        <Strong>一括で行う</Strong>
+                        こともできる、ということだな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: <></>,
+        content: <></>
+      },
+      {
+        title: <>次のページで、難しい問題を出します</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ベンケイ、説明ありがとう！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>お安い御用です、ご主人さま！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        それでは約束した通り、
+                        <Em>
+                          次のページで、
+                          <Strong>ベンケイとともに難しい問題を出題する</Strong>
+                          。それに答えることができたら、計算箱を返してやろう！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        やっと問題にチャレンジできるということだな。よーし、次のページに進むぞ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <NextLessonButton />
           </>
         )
       }
-      // Introduce the problem on the next page
     ]}
   />
 )
