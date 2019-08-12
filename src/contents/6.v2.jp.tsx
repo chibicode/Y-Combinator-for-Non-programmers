@@ -1029,8 +1029,8 @@ export default () => (
                     <>
                       <P>
                         <Em>
-                          これは先ほど説明した通り、計算箱に変換すると{' '}
-                          <EmojiNumber number={1} /> になります。
+                          これは、計算箱に変換すると <EmojiNumber number={1} />{' '}
+                          になります。
                         </Em>
                       </P>
                     </>
