@@ -888,8 +888,188 @@ export default () => (
       },
       {
         type: 'yesNoQuiz',
-        title: <></>,
-        content: <></>
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、ここで最後に
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        をやってみましょう。
+                      </P>
+                      <P>こちらの弁当箱を…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rlrs />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        「
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        」すると、下のようになるでしょうか？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Pmdm />
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'theAnswerIs', isYes: false }} />
+                          だと思う！
+                        </Strong>
+                        変換すると <EmojiNumber number={2} /> ではなく、
+                        <EmojiNumber number={1} /> になるはずだ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        を押してみてくだださい！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zahd />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>
+                        やった！ <EmojiNumber number={1} /> になったので、
+                        <Emoji>❌</Emoji>が正解だ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>その通りです！</P>
+                      <P>
+                        確認のために、もともとの弁当箱を
+                        <H args={{ name: 'fastForward' }} />
+                        してみましょう。
+                        <H args={{ name: 'pressFastForward' }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Csqj />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、もともとの弁当箱を
+                        <H args={{ name: 'play' }} />
+                        すると、次のような弁当箱になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Igpn />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          これは先ほど説明した通り、計算箱に変換すると{' '}
+                          <EmojiNumber number={1} /> になります。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hhdu>
+              右下には<Emoji>🅰️</Emoji>がついた
+              <EmojiForLetter letter="i" />
+              が「<Strong>1個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={1} />
+              になる
+            </R.Hhdu>
+            <ExpressionRunnerSeparator />
+            <R.Rnug />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        というわけで、
+                        <H
+                          args={{ name: 'runAndConertToMathbox' }}
+                        /> すると <EmojiNumber number={2} /> ではなく{' '}
+                        <EmojiNumber number={1} /> になるので、クイズの正解は{' '}
+                        <Emoji>❌</Emoji> でした！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       },
       {
         title: <>次のページで、難しい問題を出します</>,

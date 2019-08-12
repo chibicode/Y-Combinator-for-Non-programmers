@@ -2396,6 +2396,43 @@ export const dubm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.wcdn
 }
 
+export const rlrs: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wowr
+}
+
+export const csqj: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.wowr,
+  initialState: 'active',
+  skipToTheEnd: false
+}
+
+export const igpn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sfvk
+}
+
+export const hhdu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mhbx,
+  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
+}
+
+export const rnug: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ntua
+}
+
+export const zahd: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.wowr,
+    initialExpressionContainers.ntua
+  ],
+  convert: 'toMathBoxPlay'
+}
+
 export const qsnv: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.elax

@@ -1,0 +1,137 @@
+{
+  "expressionContainers": [
+    {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "arg": {
+          "name": "h",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true
+        },
+        "func": {
+          "arg": {
+            "name": "g",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": false,
+            "bound": false
+          },
+          "body": {
+            "arg": {
+              "name": "e",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": false
+            },
+            "body": {
+              "arg": {
+                "name": "f",
+                "highlightType": "default",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": false
+              },
+              "body": {
+                "arg": {
+                  "name": "f",
+                  "highlightType": "default",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [
+                    1
+                  ],
+                  "funcPriorityAgg": [],
+                  "emphasizePriority": false,
+                  "bound": true
+                },
+                "func": {
+                  "name": "e",
+                  "highlightType": "default",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [
+                    1
+                  ],
+                  "emphasizePriority": false,
+                  "bound": true
+                },
+                "state": "default",
+                "type": "call",
+                "priority": 1
+              },
+              "type": "function"
+            },
+            "type": "function"
+          },
+          "type": "function"
+        },
+        "state": "default",
+        "type": "call",
+        "priority": 1
+      }
+    },
+    {
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "name": "shorthandNumber",
+        "highlightType": "default",
+        "topLeftBadgeType": "none",
+        "bottomRightBadgeType": "none",
+        "type": "variable",
+        "argPriorityAgg": [],
+        "funcPriorityAgg": [],
+        "emphasizePriority": false,
+        "bound": true,
+        "shorthandNumber": 1
+      }
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": false,
+  "explanationsVisibility": "hiddenInitialPausedOnly",
+  "hidePriorities": true,
+  "variableSize": "lg",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": true,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false,
+  "convert": "toMathBoxPlay"
+}

@@ -1165,6 +1165,8 @@ export default () => (
                           だと思う！
                         </Strong>
                         最後には
+                        <EmojiWithText letter="a" />
+                        ではなく、
                         <EmojiWithText letter="d" />
                         が残るはずだ。
                       </P>
@@ -1190,6 +1192,8 @@ export default () => (
                     <>
                       <P>
                         やった！最後に
+                        <EmojiWithText letter="a" />
+                        ではなく
                         <EmojiWithText letter="d" />
                         が残ったので、<Emoji>❌</Emoji>が正解だ！
                       </P>
