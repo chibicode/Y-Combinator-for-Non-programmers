@@ -114,7 +114,7 @@ export default () => (
       {
         title: (
           <>
-            第1問の解説その1: いちばん左の
+            第1問の解説その1: 一番左の
             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
             のペアからはじめる
           </>
@@ -124,7 +124,7 @@ export default () => (
             <P>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアがふたつ以上ある場合は、
-              <Strong>いちばん左のペアからはじめます。</Strong>
+              <Strong>一番左のペアからはじめます。</Strong>
             </P>
             <P>
               下のような場合、 左側にある
@@ -427,7 +427,7 @@ export default () => (
               <InlineHeader>1.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアがふたつ以上ある場合は、
-              <Strong>いちばん左のペアからはじめます。</Strong>
+              <Strong>一番左のペアからはじめます。</Strong>
             </P>
             <R.Hykj />
             <P>

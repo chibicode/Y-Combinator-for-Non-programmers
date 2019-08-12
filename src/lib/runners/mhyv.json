@@ -1,0 +1,87 @@
+{
+  "expressionContainers": [
+    {
+      "containerState": "stepped",
+      "previouslyChangedExpressionState": "active",
+      "expression": {
+        "arg": {
+          "name": "b",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": false
+        },
+        "body": {
+          "arg": {
+            "name": "b",
+            "highlightType": "active",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              1
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": true,
+            "bound": true
+          },
+          "func": {
+            "arg": {
+              "name": "c",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": true,
+              "bound": false
+            },
+            "body": {
+              "name": "d",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true
+            },
+            "type": "function"
+          },
+          "state": "active",
+          "type": "call",
+          "priority": 1
+        },
+        "type": "function"
+      },
+      "activePriority": 1
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": false,
+  "variableSize": "lg",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false
+}

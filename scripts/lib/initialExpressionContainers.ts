@@ -236,6 +236,17 @@ export const oyph = initializeExpressionContainer([
   'a'
 ])
 
+export const drvy = initializeExpressionContainer({
+  arg: 'b',
+  body: [
+    {
+      arg: 'c',
+      body: 'd'
+    },
+    'b'
+  ]
+})
+
 export const oqlf = initializeExpressionContainer('a')
 
 export const bndu = initializeExpressionContainer([

@@ -8,7 +8,8 @@ import {
   UlLi,
   Ol,
   OlLi,
-  InlineHeader
+  InlineHeader,
+  Hr
 } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import H from 'src/components/H'
@@ -921,7 +922,7 @@ export default () => (
       {
         title: (
           <>
-            細かい法則その1: いちばん左の
+            細かい法則その1: 一番左の
             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアからはじめる
           </>
         ),
@@ -1199,23 +1200,67 @@ export default () => (
                       </P>
                     </>
                   )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        おぬし、なかなかやるな…！
-                        <Em>
-                          では、もうひとつの「<Strong>細かい法則</Strong>
-                          」を説明しよう！
-                        </Em>
-                      </P>
-                    </>
-                  )
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: (
+          <>
+            補足: 左端に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            のペアがない場合
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <H args={{ name: 'lookAtThisBentoBox' }} />。
+            </P>
+            <P>
+              先ほどの
+              <H args={{ name: 'yesNoQuiz' }} />
+              で登場した弁当箱とほとんど同じですが、
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアが弁当箱の左端になく、内側だけにあります。
+              </Em>
+            </P>
+            <R.Dhzf>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアが内側だけにある
+            </R.Dhzf>
+            <P>
+              このような場合、
+              <Em>
+                内側の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアの部分からはじめます。
+              </Em>
+            </P>
+            <R.Mhyv>
+              内側の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめる
+            </R.Mhyv>
+            <P>
+              残りは
+              <H args={{ name: 'fastForward' }} />
+              で見てみましょう。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            <R.Ayok />
+            <P>
+              まとめると、
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアが弁当箱の左端にない場合は、内側の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめればいい
+              </Em>
+              のです。
+            </P>
           </>
         )
       },
@@ -1594,16 +1639,37 @@ export default () => (
               </OlLi>
             </Ol>
             <R.Vdhd>3段の弁当箱</R.Vdhd>
+            <Hr />
             <P>
               <InlineHeader>細かい法則1.</InlineHeader>{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアがふたつ以上ある場合は、
-              <Strong>いちばん左のペアからはじめます。</Strong>
+              <Strong>一番左のペアからはじめます。</Strong>
             </P>
             <R.Hykj>
-              いちばん左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアがふたつ以上ある場合は、
+              <br />
+              一番左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               のペアからはじめる
             </R.Hykj>
+            <P>
+              <InlineHeader>補足:</InlineHeader>{' '}
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアが弁当箱の左端にない場合は、内側の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめる。
+              </Em>
+            </P>
+            <R.Mhyv>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアが弁当箱の左端にない場合は、
+              <br />
+              内側の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめる
+            </R.Mhyv>
+            <Hr />
             <P>
               <InlineHeader>細かい法則2.</InlineHeader>{' '}
               下段にひとつの料理しかなく、
@@ -1615,6 +1681,11 @@ export default () => (
               </Strong>
             </P>
             <R.Dqey>
+              下段にひとつの料理しかなく、
+              <br />
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめられない場合、
+              <br />
               <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
             </R.Dqey>
             <BubbleQuotes
