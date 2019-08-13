@@ -1122,7 +1122,19 @@ export default () => (
             />
             <NextLessonButton />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <Emoji size="mdlg">🐶</Emoji> ちなみに「
+                <Strong>ベンケイ</Strong>」と名付けたのは、弁(
+                <Strong>ベン</Strong>
+                )当箱を計(<Strong>ケイ</Strong>)算箱に変換できるからです。
+              </P>
+            </>
+          )
+        }
       }
     ]}
   />
