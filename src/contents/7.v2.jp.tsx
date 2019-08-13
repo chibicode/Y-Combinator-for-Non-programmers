@@ -13,7 +13,6 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 // import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
-import H from 'src/components/H'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 // import * as R from 'src/components/Runners'
@@ -74,21 +73,11 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        「<Strong>プラスの芸</Strong>」だって？
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        はい！ぼくは、
+                        ぼくは、
                         <Strong>
                           とある法則と一致する弁当箱を{' '}
                           <CustomEmoji type="plusOne" />{' '}
@@ -96,11 +85,14 @@ export default () => (
                         </Strong>
                         んです。
                       </P>
-                      <P>
-                        下の例で、
-                        <H args={{ name: 'convert', type: 'toMathBox' }} />
-                        を押してみてください。
-                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>とある法則だって？</P>
                     </>
                   )
                 }
