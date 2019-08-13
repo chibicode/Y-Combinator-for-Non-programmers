@@ -64,7 +64,7 @@
   "showOnlyFocused": false,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
-  "hidePriorities": true,
+  "hidePriorities": false,
   "variableSize": "lg",
   "containerSize": "xxs",
   "hidePlayButton": false,
