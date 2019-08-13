@@ -16,6 +16,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -567,6 +568,66 @@ export default () => (
             </R.Wopl>
             <ExpressionRunnerSeparator />
             <R.Pmdm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど。</P>
+                      <P>
+                        ところで、
+                        <Em>
+                          ここでは{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                          といった番号が出てくるよね。
+                        </Em>
+                      </P>
+                      <P>
+                        <Strong>
+                          これらの番号がどのように配置されているかは、計算箱に変換するにあたって関係あるの？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>良い質問ですね！</P>
+                      <P>
+                        <Em>厳密に言うと関係ある</Em>
+                        のですが、専門的な内容になってしまうので、
+                        <Strong>
+                          本稿を読み進めるにあたっては気にしなくても大丈夫
+                        </Strong>
+                        です。
+                      </P>
+                      <P>
+                        ですから、計算箱に変換する際には、
+                        <Strong>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                          などの番号は気にせず、<Emoji>🅰️</Emoji> と{' '}
+                          <Emoji>🅱️</Emoji> といった料理のパターンだけに注目する
+                        </Strong>
+                        だけで十分です。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>了解！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -627,6 +688,17 @@ export default () => (
             </R.Duuk>
             <ExpressionRunnerSeparator />
             <R.Kizi />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={0} /> になる場合
+          </>
+        ),
+        content: (
+          <>
             <BubbleQuotes
               quotes={[
                 {
