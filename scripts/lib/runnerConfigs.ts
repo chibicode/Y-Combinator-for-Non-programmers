@@ -3386,3 +3386,15 @@ export const ozxi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.neny,
   isDone: true
 }
+
+export const envj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.epmt,
+  showPriorities: true
+}
+
+export const biit: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.fyue,
+  showPriorities: true
+}

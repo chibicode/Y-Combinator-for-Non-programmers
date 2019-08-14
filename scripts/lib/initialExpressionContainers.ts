@@ -1949,3 +1949,11 @@ export const ulsd = initializeExpressionContainer({
     shorthandFunc: 'add'
   }
 })
+
+export const epmt = initializeExpressionContainer(
+  succParams('questionFood', 'questionFood', 'questionFood')
+)
+
+export const fyue = initializeExpressionContainer({
+  shorthandFunc: 'add'
+})
