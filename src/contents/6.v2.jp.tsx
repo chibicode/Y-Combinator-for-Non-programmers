@@ -616,7 +616,7 @@ export default () => (
             />
             <R.Mzqc>
               右下には <Emoji>🅰️</Emoji> がついた
-              <EmojiForLetter letter="e" />
+              <EmojiForLetter letter="k" />
               が「<Strong>2個</Strong>」
               <br />
               → 計算箱に変換すると
@@ -648,16 +648,28 @@ export default () => (
                   children: (
                     <>
                       <P>なるほど。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>何か質問はございますか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
                       <P>
-                        ところで、
+                        ひとつ質問がある。
                         <Em>
-                          ここでは{' '}
+                          上の弁当箱には{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          といった番号が出てくるよね。
-                          <Strong>
-                            これらは、計算箱に変換するにあたって関係あるの？
-                          </Strong>
+                          といった番号が出てきたけど…
                         </Em>
                       </P>
                       <P>
@@ -665,42 +677,22 @@ export default () => (
                         <Em>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          がこういう法則でなければ計算箱に変換できない
+                          がこういう並び順でなければ、計算箱に変換できない
                         </Em>
-                        」といった法則はあるの？
+                        」といった決まりはあるの？
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
-                <Emoji>🤔</Emoji>,
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-              ]}
-              description={<>計算箱に変換するにあたって関係あるの？</>}
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        <Em>
-                          厳密に言うと、
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          などの番号は計算箱に変換するにあたって関係ある
-                        </Em>
-                        のですが、専門的な内容になってしまうので、
-                        <Strong>本稿では無視して大丈夫</Strong>
-                        です。
+                        厳密に言うとあるのですが、本稿を読み進める上では気にしなくても結構です。
                       </P>
                       <P>
-                        ですから、計算箱に変換する際には、
+                        つまり、計算箱に変換する際には、
                         <Strong>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
