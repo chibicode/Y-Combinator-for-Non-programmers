@@ -71,8 +71,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この「<InlineHeader>プラスの芸</InlineHeader>
-                        」を使うと、
+                        ぼくの「<InlineHeader>プラスの芸</InlineHeader>
+                        」では、
                         <Strong>
                           とある法則と一致する弁当箱を{' '}
                           <CustomEmoji type="plusOne" />{' '}
@@ -167,9 +167,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど。
+                        なるほど。でも、肝心なところを教えてくれていないじゃないか。
+                      </P>
+                      <P>
                         <Em>
-                          その「ある法則」とは、いったいどういう法則なんだろう？
+                          どういう法則に基づいて{' '}
+                          <CustomEmoji type="questionFood" />{' '}
+                          に料理を当てはめれば、
+                          <CustomEmoji type="plusOne" />{' '}
+                          に変換することができるの？
                         </Em>
                       </P>
                     </>
@@ -193,6 +199,111 @@ export default () => (
       },
       {
         title: <>マイナスの芸</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        「<InlineHeader>プラスの芸</InlineHeader>
+                        」に加え、ぼくは「<Strong>マイナスの芸</Strong>
+                        」という芸も持っています。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <Emoji>🐶</Emoji>,
+                <CustomEmoji type="minusOne" />
+              ]}
+              description={
+                <>
+                  ベンケイの「<Strong>マイナスの芸</Strong>」
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ぼくの「<InlineHeader>マイナスの芸</InlineHeader>
+                        」では、
+                        <Strong>
+                          とある法則と一致する弁当箱を{' '}
+                          <CustomEmoji type="minusOne" />{' '}
+                          の計算箱に変えることができる
+                        </Strong>
+                        んです。
+                      </P>
+                      <P>
+                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        <Em>
+                          それぞれの <CustomEmoji type="questionFood" />{' '}
+                          には、何らかの料理が入ります。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Pbop>
+              <CustomEmoji type="questionFood" /> には何らかの料理が入ります
+            </R.Pbop>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そして、
+                        <Strong>
+                          それぞれの <CustomEmoji type="questionFood" />{' '}
+                          に、ある法則に基づいて料理を当てはめる
+                        </Strong>
+                        と…
+                      </P>
+                      <P>
+                        ぼくはこの弁当箱を{' '}
+                        <Em>
+                          <CustomEmoji type="minusOne" />{' '}
+                          の計算箱に変換することができる
+                        </Em>
+                        んです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Pbop>
+              <Strong>
+                それぞれの <CustomEmoji type="questionFood" /> に、ある法則に
+                <br />
+                基づいて料理を当てはめて…
+              </Strong>
+            </R.Pbop>
+            <ExpressionRunnerSeparator />
+            <R.Uxbl>
+              <H args={{ name: 'convert', type: 'toMathBox' }} /> すると、
+              <CustomEmoji type="minusOne" /> になる
+            </R.Uxbl>
+          </>
+        )
+      },
+      {
+        title: <></>,
         content: <></>
       }
       // Talk about minus next

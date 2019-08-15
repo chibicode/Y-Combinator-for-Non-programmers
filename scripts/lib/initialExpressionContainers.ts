@@ -1957,3 +1957,18 @@ export const epmt = initializeExpressionContainer(
 export const fyue = initializeExpressionContainer({
   shorthandFunc: 'add'
 })
+
+export const pxna = initializeExpressionContainer({
+  shorthandFunc: 'pred'
+})
+
+export const vemg = initializeExpressionContainer(
+  predParams(
+    'questionFood',
+    'questionFood',
+    'questionFood',
+    'questionFood',
+    'questionFood',
+    'questionFood'
+  )
+)

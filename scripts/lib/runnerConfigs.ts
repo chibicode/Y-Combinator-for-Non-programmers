@@ -3398,3 +3398,17 @@ export const biit: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.fyue,
   showPriorities: true
 }
+
+export const pbop: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vemg,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}
+
+export const uxbl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pxna,
+  showPriorities: true
+}
