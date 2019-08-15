@@ -1916,6 +1916,10 @@ export const gnpv = initializeExpressionContainer([
   }
 ])
 
+export const zxad = initializeExpressionContainer({
+  shorthandNumber: 6
+})
+
 export const odcm = initializeExpressionContainer({
   shorthandNumber: 8
 })

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
+import CustomEmoji from 'src/components/CustomEmoji'
 import numberEmojiMapping from 'src/lib/numberEmojiMapping'
 
 interface EmojiNumberProps {
@@ -13,6 +14,8 @@ const numberToDigits = (x: number) => Array.from(String(x), Number)
 const EmojiNumber = ({ number, size }: EmojiNumberProps) => {
   if (number <= 10) {
     return <Emoji size={size}>{numberEmojiMapping[number]}</Emoji>
+  } else if (number === 20) {
+    return <CustomEmoji size={size} type="twenty" />
   } else {
     return (
       <span

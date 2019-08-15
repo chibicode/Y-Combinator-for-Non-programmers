@@ -3261,7 +3261,7 @@ export const yjur: ExpressionRunnerShorthandConfig = {
 }
 
 export const amoq: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
+  runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.rnth,
   variableSize: 'md'
 }
@@ -3345,6 +3345,11 @@ export const jaqs: ExpressionRunnerShorthandConfig = {
 export const vsvt: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.odcm
+}
+
+export const iwmu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zxad
 }
 
 export const iczf: ExpressionRunnerShorthandConfig = {

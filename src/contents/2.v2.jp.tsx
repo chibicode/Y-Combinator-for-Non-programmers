@@ -354,8 +354,13 @@ export default () => (
             <R.Dgpx>
               <CustomEmoji type="plusOne" /> が4回繰り返される
             </R.Dgpx>
+            <ExpressionRunnerSeparator />
+            <R.Iwmu>
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={4} /> を計算できました！
+            </R.Iwmu>
             <P>
-              つまり、
+              こうすれば、
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={4} /> を計算できるというわけですね。
             </P>
