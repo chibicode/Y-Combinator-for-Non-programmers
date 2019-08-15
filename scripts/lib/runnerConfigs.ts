@@ -3452,3 +3452,10 @@ export const fxde: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.okmr,
   showPriorities: true
 }
+
+export const rbup: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zdlx,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
+}

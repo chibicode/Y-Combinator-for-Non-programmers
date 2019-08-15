@@ -307,7 +307,10 @@ export const mhbx = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 1)
 )
 
-export const okmr = initializeExpressionContainer(numberParams('f', 'g', 1))
+export const okmr = initializeExpressionContainer(numberParams('d', 'e', 1))
+export const zdlx = initializeExpressionContainer(
+  numberParamsHighlightNumber('d', 'e', 1)
+)
 
 export const wowr = initializeExpressionContainer([
   {

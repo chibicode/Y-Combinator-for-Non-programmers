@@ -43,7 +43,7 @@
             },
             "func": {
               "name": "d",
-              "highlightType": "default",
+              "highlightType": "initialHighlighted",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -76,7 +76,10 @@
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
-  "bottomRightBadgeOverrides": {},
+  "bottomRightBadgeOverrides": {
+    "d": "🅰️",
+    "e": "🅱️"
+  },
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],

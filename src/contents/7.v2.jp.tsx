@@ -1,9 +1,11 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em } from 'src/components/ContentTags'
+import { P, Em, Strong } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import Emoji from 'src/components/Emoji'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import YesNoButtons from 'src/components/YesNoButtons'
@@ -65,8 +67,36 @@ export default () => (
                 }
               ]}
             />
-            <R.Fxde />
+            <R.Rbup>
+              右下には <Emoji>🅰️</Emoji> がついた
+              <EmojiForLetter letter="d" />
+              が「<Strong>1個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={1} />
+              になる
+            </R.Rbup>
             <ExpressionRunnerSeparator />
+            <R.Rnug />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>それでは、ここで問題です！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
             <P>
               TODO: Bento box convertible to 1. Then say if you add this box and
               run and convert you'll get 2. Then say essentially this is the
@@ -76,13 +106,6 @@ export default () => (
               <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
             </R.Envj>
             <R.Biit></R.Biit>
-          </>
-        )
-      },
-      {
-        title: <></>,
-        content: (
-          <>
             <R.Pbop>
               <CustomEmoji type="questionFoodRed" /> には何らかの料理が入ります
             </R.Pbop>
