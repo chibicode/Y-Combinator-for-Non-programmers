@@ -3,8 +3,9 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Em } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
-// import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
@@ -48,6 +49,24 @@ export default () => (
                 }
               ]}
             />
+            <R.Fxde />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        前回の復習ですが、この弁当箱は、ぼくが計算箱に変換すると{' '}
+                        <EmojiNumber number={1} /> になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fxde />
+            <ExpressionRunnerSeparator />
             <P>
               TODO: Bento box convertible to 1. Then say if you add this box and
               run and convert you'll get 2. Then say essentially this is the

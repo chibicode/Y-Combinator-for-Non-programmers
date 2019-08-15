@@ -96,11 +96,10 @@
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {
-    "f": "🅱️",
     "e": "🅰️"
   },
   "highlightOverrides": {
-    "f": "highlighted"
+    "e": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],

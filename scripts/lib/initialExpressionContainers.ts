@@ -287,6 +287,9 @@ export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 export const ntua = initializeDoneExpressionContainer({ shorthandNumber: 1 })
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
 export const qbnd = initializeExpressionContainer(numberParams('k', 'l', 2))
+export const tnyj = initializeExpressionContainer(
+  numberParamsHighlightNumber('k', 'l', 2)
+)
 export const hwnq = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 2)
 )
@@ -303,6 +306,8 @@ export const sfvk = initializeExpressionContainer(numberParams('e', 'f', 1))
 export const mhbx = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 1)
 )
+
+export const okmr = initializeExpressionContainer(numberParams('f', 'g', 1))
 
 export const wowr = initializeExpressionContainer([
   {

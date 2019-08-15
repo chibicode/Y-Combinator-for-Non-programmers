@@ -2395,11 +2395,27 @@ export const mzqc: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { l: '🅱️', k: '🅰️' }
 }
 
+export const qwdg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.tnyj,
+  bottomRightBadgeOverrides: { l: '🅱️', k: '🅰️' }
+}
+
 export const mepb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,
   initialExpressionContainer: initialExpressionContainers.nskn,
-  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' }
+  bottomRightBadgeOverrides: { f: '🅱️', e: '🅰️' },
+  highlightOverrides: { f: 'highlighted' }
+}
+
+export const alca: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.nskn,
+  bottomRightBadgeOverrides: { e: '🅰️' },
+  highlightOverrides: { e: 'highlighted' }
 }
 
 export const wopl: ExpressionRunnerShorthandConfig = {
@@ -3428,5 +3444,11 @@ export const pbop: ExpressionRunnerShorthandConfig = {
 export const uxbl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pxna,
+  showPriorities: true
+}
+
+export const fxde: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.okmr,
   showPriorities: true
 }

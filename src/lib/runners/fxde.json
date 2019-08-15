@@ -5,7 +5,7 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "e",
+          "name": "f",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -17,7 +17,7 @@
         },
         "body": {
           "arg": {
-            "name": "f",
+            "name": "g",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -29,39 +29,20 @@
           },
           "body": {
             "arg": {
-              "arg": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1,
-                  2
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true
-              },
-              "func": {
-                "name": "e",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  2
-                ],
-                "emphasizePriority": false,
-                "bound": true
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 2
+              "name": "g",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [
+                1
+              ],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true
             },
             "func": {
-              "name": "e",
+              "name": "f",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -95,13 +76,8 @@
   "skipToTheEnd": false,
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
-  "bottomRightBadgeOverrides": {
-    "f": "🅱️",
-    "e": "🅰️"
-  },
-  "highlightOverrides": {
-    "f": "highlighted"
-  },
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],
   "funcPriorityAggHighlights": [],

@@ -465,6 +465,25 @@ export default () => (
                         <EmojiWithText letter="e" />に<Emoji>🅰️</Emoji>
                         の印をつけてみます。
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Alca>
+              <EmojiForLetter letter="e" />
+              が一番左にあるので、
+              <br />
+              すべての
+              <EmojiForLetter letter="e" />に<Emoji>🅰️</Emoji>
+              の印をつける
+            </R.Alca>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         次に、
                         <EmojiWithText letter="f" />
@@ -478,8 +497,12 @@ export default () => (
               ]}
             />
             <R.Mepb>
-              <EmojiForLetter letter="e" />に<Emoji>🅰️</Emoji>、
-              <EmojiForLetter letter="f" />に<Emoji>🅱️</Emoji>をつける
+              <EmojiForLetter letter="f" />
+              が真ん中にあるので、
+              <br />
+              すべての
+              <EmojiForLetter letter="f" />に<Emoji>🅱️</Emoji>
+              の印をつける
             </R.Mepb>
             <BubbleQuotes
               quotes={[
@@ -606,6 +629,28 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
+                        は以下のようになるので…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mzqc>
+              <EmojiForLetter letter="k" /> は一番左にあるので <Emoji>🅰️</Emoji>{' '}
+              を、
+              <br />
+              <EmojiForLetter letter="l" /> は真ん中にあるので <Emoji>🅱️</Emoji>{' '}
+              をつける
+            </R.Mzqc>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
                         計算箱に変換したときに先ほどと同じく{' '}
                         <EmojiNumber number={2} /> になります。
                       </P>
@@ -614,7 +659,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Mzqc>
+            <R.Qwdg>
               右下には <Emoji>🅰️</Emoji> がついた
               <EmojiForLetter letter="k" />
               が「<Strong>2個</Strong>」
@@ -622,7 +667,7 @@ export default () => (
               → 計算箱に変換すると
               <EmojiNumber number={2} />
               になる
-            </R.Mzqc>
+            </R.Qwdg>
             <ExpressionRunnerSeparator />
             <R.Pmdm />
             <BubbleQuotes
