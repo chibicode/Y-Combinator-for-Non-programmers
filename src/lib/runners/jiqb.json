@@ -5,18 +5,38 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "shorthandNumber",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [
-            1
-          ],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": true,
-          "shorthandNumber": 2
+          "arg": {
+            "name": "shorthandNumber",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              1,
+              2
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandNumber": 2
+          },
+          "func": {
+            "name": "shorthandFunc",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              2
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "add"
+          },
+          "state": "default",
+          "type": "call",
+          "priority": 2
         },
         "func": {
           "name": "shorthandFunc",
@@ -50,7 +70,7 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 3
+        "shorthandNumber": 4
       }
     }
   ],
