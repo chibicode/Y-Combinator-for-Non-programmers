@@ -1965,11 +1965,11 @@ export const pxna = initializeExpressionContainer({
 
 export const vemg = initializeExpressionContainer(
   predParams(
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey',
-    'questionFoodGrey'
+    'questionFoodRed',
+    'questionFoodRed',
+    'questionFoodRed',
+    'questionFoodRed',
+    'questionFoodRed',
+    'questionFoodRed'
   )
 )

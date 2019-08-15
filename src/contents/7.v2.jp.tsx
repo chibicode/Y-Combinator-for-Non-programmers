@@ -1,11 +1,9 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Em, Strong } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
-import EmojiSeparator from 'src/components/EmojiSeparator'
 // import EmojiNumber from 'src/components/EmojiNumber'
-import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
@@ -19,7 +17,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>プラスの芸</>,
+        title: <></>,
         content: (
           <>
             <BubbleQuotes
@@ -51,45 +49,13 @@ export default () => (
                 }
               ]}
             />
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🍱</Emoji>,
-                <Emoji>🐶</Emoji>,
-                <CustomEmoji type="plusOne" />
-              ]}
-              description={
-                <>
-                  ベンケイの「<Strong>プラスの芸</Strong>」
-                </>
-              }
-            />
+            <P>
+              TODO: Bento box convertible to 1. Then say if you add this box and
+              run and convert you'll get 2. Then say essentially this is the
+              same as math box 1 + 1. Then also do the same with 2 + 1.
+            </P>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ぼくの「<InlineHeader>プラスの芸</InlineHeader>
-                        」では、
-                        <Strong>
-                          とある法則と一致する弁当箱を{' '}
-                          <CustomEmoji type="plusOne" />{' '}
-                          の計算箱に変えることができる
-                        </Strong>
-                        んです。
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>とある法則だって？</P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
@@ -160,105 +126,15 @@ export default () => (
               <H args={{ name: 'convert', type: 'toMathBox' }} /> すると、
               <CustomEmoji type="plusOne" /> になる
             </R.Biit>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        なるほど。でも、肝心なところを教えてくれていないじゃないか。
-                      </P>
-                      <P>
-                        <Em>
-                          どういう法則に基づいて{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に料理を当てはめれば、
-                          <CustomEmoji type="plusOne" />{' '}
-                          に変換することができるの？
-                        </Em>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Strong>それは秘密です。</Strong>
-                        でも、とりあえず読み進めてみてください！
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
           </>
         )
       },
       {
-        title: <>マイナスの芸</>,
+        title: <></>,
         content: (
           <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        「<InlineHeader>プラスの芸</InlineHeader>
-                        」に加え、ぼくは「<Strong>マイナスの芸</Strong>
-                        」という芸も持っています。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🍱</Emoji>,
-                <Emoji>🐶</Emoji>,
-                <CustomEmoji type="minusOne" />
-              ]}
-              description={
-                <>
-                  ベンケイの「<Strong>マイナスの芸</Strong>」
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ぼくの「<InlineHeader>マイナスの芸</InlineHeader>
-                        」では、
-                        <Strong>
-                          とある法則と一致する弁当箱を{' '}
-                          <CustomEmoji type="minusOne" />{' '}
-                          の計算箱に変えることができる
-                        </Strong>
-                        んです。
-                      </P>
-                      <P>
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
-                        <Em>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          には、何らかの料理が入ります。
-                        </Em>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
             <R.Pbop>
-              <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
+              <CustomEmoji type="questionFoodRed" /> には何らかの料理が入ります
             </R.Pbop>
             <BubbleQuotes
               quotes={[
@@ -269,7 +145,7 @@ export default () => (
                       <P>
                         そして、
                         <Strong>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          それぞれの <CustomEmoji type="questionFoodRed" />{' '}
                           に、ある法則に基づいて料理を当てはめる
                         </Strong>
                         と…
@@ -289,8 +165,7 @@ export default () => (
             />
             <R.Pbop>
               <Strong>
-                それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                に、ある法則に
+                それぞれの <CustomEmoji type="questionFoodRed" /> に、ある法則に
                 <br />
                 基づいて料理を当てはめて…
               </Strong>

@@ -3,7 +3,7 @@ import * as React from 'react'
 const QuestionFoodSvg = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 36 36" {...props}>
     <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
-      <circle fill="#BE1931" cx={18} cy={18} r={18} />
+      <circle fill-opacity="0.66" fill="#BE1931" cx={18} cy={18} r={18} />
       <g
         transform="translate(10.000000, 6.000000)"
         fill="#FFFFFF"
