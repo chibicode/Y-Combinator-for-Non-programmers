@@ -36,7 +36,7 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['🎁', '🎁', '🎁']}
-              description={<>↑ これが計算箱のアイコンです！</>}
+              description={<>これが計算箱のアイコンです！</>}
             />
           </>
         )
@@ -47,21 +47,30 @@ export default () => (
           <>
             <P>
               むかしむかし、「<Strong>ラムダ村</Strong>
-              」という小さな山奥の村があり、人々が仲良く暮らしていました。
+              」という小さな山奥の村があり、村人が仲良く暮らしていました。
             </P>
-            <EmojiSeparator emojis={['🌲', '🙂', '🙂', '🌲']} />
+            <EmojiSeparator
+              emojis={['🌲', '🙂', '🙂', '🌲']}
+              description={<>ラムダ村の村人</>}
+            />
             <P>
               ラムダ村には、代々伝わる「<Strong>計算箱</Strong>
               」という道具がありました。<InlineHeader>計算箱</InlineHeader>
               は、その名の通り<Em>算数の計算をしてくれる</Em>
               魔法の道具です。現代の電卓のようなものだと考えていただければいいです。
             </P>
-            <EmojiSeparator emojis={['✨', '🎁', '✨']} />
+            <EmojiSeparator
+              emojis={['✨', '🎁', '✨']}
+              description={<>計算箱</>}
+            />
             <P>
               ラムダ村の人々は<Em>計算がとても苦手だったので</Em>
               、とても簡単な計算でも計算箱に頼りきっていました。
             </P>
-            <EmojiSeparator emojis={['🌲', '🙂', '🎁', '🙂', '🌲']} />
+            <EmojiSeparator
+              emojis={['🌲', '🙂', '🎁', '🙂', '🌲']}
+              description={<>計算は、計算箱にやってもらおう！</>}
+            />
             <P>
               では、計算箱がどんなものか紹介していきましょう！<Emoji>🙂</Emoji>
             </P>
@@ -97,7 +106,7 @@ export default () => (
                 上には、数字の <EmojiNumber number={1} /> が入っています。
               </UlLi>
               <UlLi>
-                下には、「プラス1」の印 <CustomEmoji type="plusOne" />{' '}
+                下には、「プラス1の印 <CustomEmoji type="plusOne" />」
                 が入っています。
               </UlLi>
             </Ul>
@@ -233,7 +242,7 @@ export default () => (
         content: (
           <>
             <P>
-              ここが重要なポイントなのですが、計算に使うことができるのは{' '}
+              ここが重要なポイントなのですが、計算に使うことができるのは、数字以外では{' '}
               <Strong>
                 <CustomEmoji type="plusOne" /> と{' '}
                 <CustomEmoji type="minusOne" /> だけです
@@ -246,6 +255,12 @@ export default () => (
                 <Emoji>🎁</Emoji>,
                 <CustomEmoji type="minusOne" />
               ]}
+              description={
+                <>
+                  <CustomEmoji type="plusOne" /> と{' '}
+                  <CustomEmoji type="minusOne" /> しか使えない
+                </>
+              }
             />
             <P>
               それでは質問です。 <CustomEmoji type="plusOne" /> と{' '}
@@ -287,6 +302,11 @@ export default () => (
                 <CustomEmoji type="plusOne" />,
                 <CustomEmoji type="plusOne" />
               ]}
+              description={
+                <>
+                  <CustomEmoji type="plusOne" /> を2回使う
+                </>
+              }
             />
             <P>
               実際に試してみましょう。
@@ -335,6 +355,12 @@ export default () => (
                 <CustomEmoji type="minusOne" />,
                 <CustomEmoji type="minusOne" />
               ]}
+              description={
+                <>
+                  <CustomEmoji type="plusOne" /> も{' '}
+                  <CustomEmoji type="minusOne" /> も何回でも使える
+                </>
+              }
             />
             <P>
               たとえば、下の計算箱は、
@@ -387,6 +413,14 @@ export default () => (
                 <CustomEmoji type="horizontalDotDotDotRed" />,
                 <CustomEmoji type="minusOne" />
               ]}
+              description={
+                <>
+                  <CustomEmoji type="plusOne" /> も{' '}
+                  <CustomEmoji type="minusOne" /> も何度も使えば、
+                  <br />
+                  どんな大きな数字でも足し算・引き算できる
+                </>
+              }
             />
             <P>
               たとえば、
@@ -462,6 +496,7 @@ export default () => (
                 <Emoji>🎁</Emoji>,
                 <Emoji>❓</Emoji>
               ]}
+              description={<>もうひとつの機能がある</>}
             />
             <P>
               次のページでは、計算箱のふたつめの機能について紹介していきます！

@@ -24,7 +24,10 @@ export default () => (
               前回は、ラムダ村に代々伝わる「<Emoji>🎁</Emoji>{' '}
               <Strong>計算箱</Strong>」の話をしました。
             </P>
-            <EmojiSeparator emojis={['🌲', '🙂', '🎁', '🙂', '🌲']} />
+            <EmojiSeparator
+              emojis={['🌲', '🙂', '🎁', '🙂', '🌲']}
+              description={<>ラムダ村の村人と、計算箱</>}
+            />
             <P>
               そして、足し算や引き算を可能にする、計算箱の「
               <CustomEmoji type="plusMinus" />{' '}
@@ -131,7 +134,15 @@ export default () => (
               </Strong>
               のです。
             </P>
-            <EmojiSeparator emojis={['❌', '😭', '❌']} />
+            <EmojiSeparator
+              emojis={['❌', '😭', '❌']}
+              description={
+                <>
+                  <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+                  <EmojiNumber number={8} /> を計算できなかった！
+                </>
+              }
+            />
             <P>どうしてこうなったか、お分かりでしょうか？</P>
           </>
         )
@@ -161,6 +172,11 @@ export default () => (
                 <CustomEmoji type="minusOne" />,
                 <Emoji>❌</Emoji>
               ]}
+              description={
+                <>
+                  <CustomEmoji type="minusOne" /> の数が間違っていた
+                </>
+              }
             />
             <P>
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
@@ -204,6 +220,13 @@ export default () => (
                 <Emoji>🤔</Emoji>,
                 <CustomEmoji type="minusOne" />
               ]}
+              description={
+                <>
+                  どうすれば、
+                  <CustomEmoji type="plusOne" /> や{' '}
+                  <CustomEmoji type="minusOne" /> の数を間違えずにすむのか？
+                </>
+              }
             />
           </>
         )
@@ -500,11 +523,13 @@ export default () => (
                 <Emoji>🔁</Emoji>,
                 <Emoji>🙂</Emoji>
               ]}
+              description={<>足し算や引き算は計算箱に任せっきり！</>}
             />
             <P>
               <Em>
-                残念ながら、計算箱は掛け算 <Emoji>✖️</Emoji> や割り算{' '}
-                <Emoji>➗</Emoji> を行うことはできませんでした。
+                残念ながら、計算箱は「<Strong>掛け算</Strong> <Emoji>✖️</Emoji>
+                」や「<Strong>割り算</Strong> <Emoji>➗</Emoji>
+                」を行うことはできませんでした。
               </Em>
               とはいえ、計算がとても苦手だったラムダ村の村人たちにとって、足し算や引き算を自動で行ってくれる計算箱は、必要不可欠な道具でした。
             </P>
