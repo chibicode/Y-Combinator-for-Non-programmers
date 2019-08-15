@@ -4,7 +4,8 @@ import MinusOneSvg from 'src/components/MinusOneSvg'
 import BlankNumberSvg from 'src/components/BlankNumberSvg'
 import PlusMinusSvg from 'src/components/PlusMinusSvg'
 import VerticalDotDotDotSvg from 'src/components/VerticalDotDotDotSvg'
-import QuestionFoodSvg from 'src/components/QuestionFoodSvg'
+import QuestionFoodGreySvg from 'src/components/QuestionFoodGreySvg'
+import QuestionFoodRedSvg from 'src/components/QuestionFoodRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/HorizontalDotDotDotSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/HorizontalDotDotDotRedSvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
@@ -21,7 +22,8 @@ const CustomEmoji = ({
     | 'verticalDotDotDot'
     | 'horizontalDotDotDot'
     | 'horizontalDotDotDotRed'
-    | 'questionFood'
+    | 'questionFoodGrey'
+    | 'questionFoodRed'
 }) => {
   const Component = {
     plusOne: PlusOneSvg,
@@ -31,7 +33,8 @@ const CustomEmoji = ({
     verticalDotDotDot: VerticalDotDotDotSvg,
     horizontalDotDotDot: HorizontalDotDotDotSvg,
     horizontalDotDotDotRed: HorizontalDotDotDotRedSvg,
-    questionFood: QuestionFoodSvg
+    questionFoodGrey: QuestionFoodGreySvg,
+    questionFoodRed: QuestionFoodRedSvg
   }[type]
   return <Emoji {...emojiProps} customSvg={<Component />} />
 }

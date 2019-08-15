@@ -43,9 +43,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        わかりました。まず、ぼくは前回紹介した芸に加え、「
-                        <Strong>プラスの芸</Strong>
-                        」という芸を持っています。
+                        わかりました。まず、
+                        <H args={{ name: 'lookAtThisBentoBox' }} />。
                       </P>
                     </>
                   )
@@ -101,7 +100,7 @@ export default () => (
                       </P>
                       <P>
                         <Em>
-                          それぞれの <CustomEmoji type="questionFood" />{' '}
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           には、何らかの料理が入ります。
                         </Em>
                       </P>
@@ -111,7 +110,7 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <CustomEmoji type="questionFood" /> には何らかの料理が入ります
+              <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -130,7 +129,7 @@ export default () => (
                       <P>
                         そうですね。そして、
                         <Strong>
-                          それぞれの <CustomEmoji type="questionFood" />{' '}
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           に、ある法則に基づいて料理を当てはめる
                         </Strong>
                         と…
@@ -150,7 +149,8 @@ export default () => (
             />
             <R.Envj>
               <Strong>
-                それぞれの <CustomEmoji type="questionFood" /> に、ある法則に
+                それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                に、ある法則に
                 <br />
                 基づいて料理を当てはめて…
               </Strong>
@@ -172,7 +172,7 @@ export default () => (
                       <P>
                         <Em>
                           どういう法則に基づいて{' '}
-                          <CustomEmoji type="questionFood" />{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
                           に料理を当てはめれば、
                           <CustomEmoji type="plusOne" />{' '}
                           に変換することができるの？
@@ -248,7 +248,7 @@ export default () => (
                       <P>
                         <H args={{ name: 'lookAtThisBentoBox' }} />。
                         <Em>
-                          それぞれの <CustomEmoji type="questionFood" />{' '}
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           には、何らかの料理が入ります。
                         </Em>
                       </P>
@@ -258,7 +258,7 @@ export default () => (
               ]}
             />
             <R.Pbop>
-              <CustomEmoji type="questionFood" /> には何らかの料理が入ります
+              <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
             </R.Pbop>
             <BubbleQuotes
               quotes={[
@@ -269,7 +269,7 @@ export default () => (
                       <P>
                         そして、
                         <Strong>
-                          それぞれの <CustomEmoji type="questionFood" />{' '}
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           に、ある法則に基づいて料理を当てはめる
                         </Strong>
                         と…
@@ -289,7 +289,8 @@ export default () => (
             />
             <R.Pbop>
               <Strong>
-                それぞれの <CustomEmoji type="questionFood" /> に、ある法則に
+                それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                に、ある法則に
                 <br />
                 基づいて料理を当てはめて…
               </Strong>

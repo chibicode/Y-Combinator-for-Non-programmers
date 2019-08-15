@@ -38,7 +38,7 @@ export type VariableNames =
   | 'blankNumber'
   | 'shorthandFunc'
   | 'verticalDotDotDot'
-  | 'questionFood'
+  | 'questionFoodGrey'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

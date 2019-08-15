@@ -286,6 +286,7 @@ export const irhr = initializeDoneExpressionContainer({ shorthandNumber: 0 })
 export const ntes = initializeExpressionContainer(numberParams('c', 'd', 1))
 export const ntua = initializeDoneExpressionContainer({ shorthandNumber: 1 })
 export const nskn = initializeExpressionContainer(numberParams('e', 'f', 2))
+export const qbnd = initializeExpressionContainer(numberParams('k', 'l', 2))
 export const hwnq = initializeExpressionContainer(
   numberParamsHighlightNumber('e', 'f', 2)
 )
@@ -1951,7 +1952,7 @@ export const ulsd = initializeExpressionContainer({
 })
 
 export const epmt = initializeExpressionContainer(
-  succParams('questionFood', 'questionFood', 'questionFood')
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey')
 )
 
 export const fyue = initializeExpressionContainer({
@@ -1964,11 +1965,11 @@ export const pxna = initializeExpressionContainer({
 
 export const vemg = initializeExpressionContainer(
   predParams(
-    'questionFood',
-    'questionFood',
-    'questionFood',
-    'questionFood',
-    'questionFood',
-    'questionFood'
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey'
   )
 )

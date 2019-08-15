@@ -156,10 +156,10 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         <CustomEmoji type="verticalDotDotDot" size="sm" />
       </div>
     )
-  } else if (expression.name === 'questionFood') {
+  } else if (expression.name === 'questionFoodGrey') {
     return (
       <div>
-        <CustomEmoji type="questionFood" size="sm" />
+        <CustomEmoji type="questionFoodGrey" size="sm" />
       </div>
     )
   } else if (expression.name === 'Amult') {

@@ -274,7 +274,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          どれも料理は違うけど、パターンは似ているような…？
+                          どれも料理は違うけど、法則は似ているような…？
                         </Strong>
                       </P>
                     </>
@@ -468,7 +468,7 @@ export default () => (
                       <P>
                         次に、
                         <EmojiWithText letter="f" />
-                        が一番左にあるので、すべての
+                        が真ん中にあるので、すべての
                         <EmojiWithText letter="f" />に<Emoji>🅱️</Emoji>
                         の印をつけてみます。
                       </P>
@@ -487,7 +487,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>上の弁当箱は、こちらのパターンと一致していますね。</P>
+                      <P>上の弁当箱は、こちらの法則と一致していますね。</P>
                       <R.Eozk>
                         一番左の料理を<Emoji>🅰️</Emoji>、<br />
                         真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
@@ -558,7 +558,7 @@ export default () => (
               ]}
             />
             <R.Wopl>
-              右下には<Emoji>🅰️</Emoji>がついた
+              右下には <Emoji>🅰️</Emoji> がついた
               <EmojiForLetter letter="e" />
               が「<Strong>2個</Strong>」
               <br />
@@ -575,20 +575,6 @@ export default () => (
                   children: (
                     <>
                       <P>なるほど。</P>
-                      <P>
-                        ところで、
-                        <Em>
-                          ここでは{' '}
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          といった番号が出てくるよね。
-                        </Em>
-                      </P>
-                      <P>
-                        <Strong>
-                          これらの番号がどのように配置されているかは、計算箱に変換するにあたって関係あるの？
-                        </Strong>
-                      </P>
                     </>
                   )
                 },
@@ -596,24 +582,132 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>良い質問ですね！</P>
                       <P>
-                        <Em>厳密に言うと関係ある</Em>
-                        のですが、専門的な内容になってしまうので、
+                        ここでは <EmojiWithText letter="e" /> と{' '}
+                        <EmojiWithText letter="f" /> を使いました。
+                        <Em>
+                          しかし他の料理でも、同じ法則に沿っていれば、計算箱に変換したときに同じ数字になります。
+                        </Em>
+                      </P>
+                      <P>
+                        たとえば、 <EmojiWithText letter="k" /> と{' '}
+                        <EmojiWithText letter="l" /> を以下のように配置した場合…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jyqf />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        計算箱に変換したときに先ほどと同じく{' '}
+                        <EmojiNumber number={2} /> になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mzqc>
+              右下には <Emoji>🅰️</Emoji> がついた
+              <EmojiForLetter letter="e" />
+              が「<Strong>2個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={2} />
+              になる
+            </R.Mzqc>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
                         <Strong>
-                          本稿を読み進めるにあたっては気にしなくても大丈夫
+                          弁当箱に入っているのがどんな料理だろうと、
+                          <Emoji>🅰️</Emoji> や <Emoji>🅱️</Emoji>{' '}
+                          の印をつけた際に、同じ法則に沿っていれば同じ計算箱に変換される
                         </Strong>
+                        というわけです。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど。</P>
+                      <P>
+                        ところで、
+                        <Em>
+                          ここでは{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                          といった番号が出てくるよね。
+                          <Strong>
+                            これらは、計算箱に変換するにあたって関係あるの？
+                          </Strong>
+                        </Em>
+                      </P>
+                      <P>
+                        たとえば、 「
+                        <Em>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                          がこういう法則でなければ計算箱に変換できない
+                        </Em>
+                        」といった法則はあるの？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>,
+                <Emoji>🤔</Emoji>,
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+              ]}
+              description={<>計算箱に変換するにあたって関係あるの？</>}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          厳密に言うと、
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                          などの番号は計算箱に変換するにあたって関係ある
+                        </Em>
+                        のですが、専門的な内容になってしまうので、
+                        <Strong>本稿では無視して大丈夫</Strong>
                         です。
                       </P>
                       <P>
                         ですから、計算箱に変換する際には、
                         <Strong>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          などの番号は気にせず、<Emoji>🅰️</Emoji> と{' '}
-                          <Emoji>🅱️</Emoji> といった料理のパターンだけに注目する
+                          などの番号は無視し、<Emoji>🅰️</Emoji> と{' '}
+                          <Emoji>🅱️</Emoji>{' '}
+                          といった料理の法則だけに注目してください。
                         </Strong>
-                        だけで十分です。
                       </P>
                     </>
                   )

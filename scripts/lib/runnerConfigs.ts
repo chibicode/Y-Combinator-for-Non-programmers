@@ -2382,6 +2382,19 @@ export const nlyu: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.nskn
 }
 
+export const jyqf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.qbnd
+}
+
+export const mzqc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  showPriorities: true,
+  initialExpressionContainer: initialExpressionContainers.qbnd,
+  bottomRightBadgeOverrides: { l: '🅱️', k: '🅰️' }
+}
+
 export const mepb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   showPriorities: true,

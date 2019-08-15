@@ -434,7 +434,7 @@ export default () => (
             </P>
             <Hr />
             <P>
-              続いて、上段に<Strong>ふたつの料理が入っているパターン</Strong>
+              続いて、上段に<Strong>ふたつの料理が入っている場合</Strong>
               を紹介します。
             </P>
             <P>
