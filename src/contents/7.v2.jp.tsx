@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong } from 'src/components/ContentTags'
+import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -94,7 +94,11 @@ export default () => (
         )
       },
       {
-        title: <></>,
+        title: (
+          <>
+            <EmojiNumber number={1} /> が <EmojiNumber number={2} /> になる
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -108,9 +112,15 @@ export default () => (
                         <Em>
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           の印がたくさんありますが、
-                          <Strong>それぞれ何らかの料理が入ります</Strong>
-                          。(同じ料理が複数入ってもOKです)
+                          <Strong>それぞれ何らかの料理が入ります</Strong>。
                         </Em>
+                      </P>
+                      <P>
+                        <Em>
+                          どの料理がそれぞれの{' '}
+                          <CustomEmoji type="questionFoodGrey" /> に入るかは秘密
+                        </Em>
+                        です。
                       </P>
                     </>
                   )
@@ -127,7 +137,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱を、<Em>先ほどの弁当箱と合体させてみる</Em>
+                        この弁当箱を、
+                        <Strong>先ほどの弁当箱と合体させてみる</Strong>
                         と、次のようになります。
                       </P>
                     </>
@@ -135,7 +146,88 @@ export default () => (
                 }
               ]}
             />
-            <R.Fljg />
+            <R.Fljg>先ほどの弁当箱と合体</R.Fljg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、この弁当箱を「
+                        <Strong>
+                          <H args={{ name: 'runAndConertToMathbox' }} />
+                        </Strong>
+                        」するとどうなるか見てみましょう。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ezmz />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <EmojiNumber number={2} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>そうなんです！つまり、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            <EmojiNumber number={1} /> に変換できる弁当箱と、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
+                            がたくさんある弁当箱を合体させて、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            「<H args={{ name: 'runAndConertToMathbox' }} />
+                            」すると、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            結果は <EmojiNumber number={2} /> になる
+                          </Em>
+                        </UlLi>
+                      </Ul>
+                      <P>ということです。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <Strong>
+                          <EmojiNumber number={1} /> が{' '}
+                          <EmojiNumber number={2} /> になる
+                        </Strong>
+                        ということか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },

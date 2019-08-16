@@ -3434,6 +3434,17 @@ export const fljg: ExpressionRunnerShorthandConfig = {
   variableSize: 'md'
 }
 
+export const ezmz: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.szos,
+    initialExpressionContainers.hdpc
+  ],
+  showPriorities: true,
+  variableSize: 'md',
+  convert: 'toMathBoxPlay'
+}
+
 export const biit: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.fyue,
