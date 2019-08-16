@@ -3427,6 +3427,13 @@ export const envj: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const fljg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.szos,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const biit: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.fyue,

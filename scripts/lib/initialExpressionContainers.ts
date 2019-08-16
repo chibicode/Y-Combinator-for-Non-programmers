@@ -1972,6 +1972,11 @@ export const epmt = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey')
 )
 
+export const szos = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  numberParams('d', 'e', 1)
+])
+
 export const fyue = initializeExpressionContainer({
   shorthandFunc: 'add'
 })

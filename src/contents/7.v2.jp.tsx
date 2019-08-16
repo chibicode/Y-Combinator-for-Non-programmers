@@ -19,7 +19,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <></>,
+        title: <>問題の説明</>,
         content: (
           <>
             <BubbleQuotes
@@ -29,7 +29,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
+                        では約束通り、
                         <Em>
                           これから出す問題に答えることができたら、計算箱を返してやろう！
                         </Em>
@@ -90,6 +90,52 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                        <Em>
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          の印がたくさんありますが、
+                          <Strong>それぞれ何らかの料理が入ります</Strong>
+                          。(同じ料理が複数入ってもOKです)
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱を、<Em>先ほどの弁当箱と合体させてみる</Em>
+                        と、次のようになります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fljg />
           </>
         )
       },
