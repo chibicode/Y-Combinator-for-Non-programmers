@@ -289,9 +289,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱も、先ほどの{' '}
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        がたくさんある弁当箱と合体させてみました。
+                        この弁当箱も、
+                        <Em>
+                          >先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
+                          がたくさんある弁当箱と合体させてみました。
+                        </Em>
+                      </P>
+                      <P>
+                        繰り返しますが、
+                        <Em>
+                          それぞれの
+                          <CustomEmoji type="questionFoodGrey" /> に何が入るかは
+                          <Strong>まだ秘密</Strong>です。
+                        </Em>
                       </P>
                       <P>
                         こちらを「
@@ -344,7 +354,38 @@ export default () => (
             実質 <CustomEmoji type="plusOne" /> と同じ
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          <EmojiNumber number={1} /> が{' '}
+                          <EmojiNumber number={2} /> になり、
+                          <EmojiNumber number={2} /> が{' '}
+                          <EmojiNumber number={3} /> になる
+                        </Em>
+                        ということは…
+                      </P>
+                      <P>
+                        <Strong>
+                          実質、
+                          <CustomEmoji type="plusOne" />{' '}
+                          (1を足す)と同じことが起きている
+                        </Strong>
+                        のかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       },
       {
         title: <></>,
