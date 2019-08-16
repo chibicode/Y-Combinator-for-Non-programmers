@@ -3477,3 +3477,27 @@ export const rbup: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
 }
+
+export const ilvq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dqgs,
+  showPriorities: true
+}
+
+export const spga: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.entt,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
+}
+
+export const vfdw: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.pxae,
+    initialExpressionContainers.qjcv
+  ],
+  showPriorities: true,
+  variableSize: 'md',
+  convert: 'toMathBoxPlay'
+}

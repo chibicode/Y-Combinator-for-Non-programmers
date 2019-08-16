@@ -308,8 +308,12 @@ export const mhbx = initializeExpressionContainer(
 )
 
 export const okmr = initializeExpressionContainer(numberParams('d', 'e', 1))
+export const dqgs = initializeExpressionContainer(numberParams('f', 'g', 2))
 export const zdlx = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'e', 1)
+)
+export const entt = initializeExpressionContainer(
+  numberParamsHighlightNumber('f', 'g', 2)
 )
 
 export const wowr = initializeExpressionContainer([
@@ -1975,6 +1979,11 @@ export const epmt = initializeExpressionContainer(
 export const szos = initializeExpressionContainer([
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
   numberParams('d', 'e', 1)
+])
+
+export const pxae = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  numberParams('f', 'g', 2)
 ])
 
 export const fyue = initializeExpressionContainer({

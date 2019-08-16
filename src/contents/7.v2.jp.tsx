@@ -128,7 +128,10 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              には何らかの料理が入ります。
+              <br />
+              どの料理がそれぞれに入るかは秘密！
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -232,17 +235,121 @@ export default () => (
         )
       },
       {
+        title: (
+          <>
+            <EmojiNumber number={2} /> が <EmojiNumber number={3} /> になる
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        続いて、
+                        <H args={{ name: 'lookAtThisBentoBox' }} />。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ilvq />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱は、ぼくが計算箱に変換すると{' '}
+                        <EmojiNumber number={2} /> になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Spga>
+              右下には <Emoji>🅰️</Emoji> がついた
+              <EmojiForLetter letter="f" />
+              が「<Strong>2個</Strong>」
+              <br />
+              → 計算箱に変換すると
+              <EmojiNumber number={2} />
+              になる
+            </R.Spga>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱も、先ほどの{' '}
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        がたくさんある弁当箱と合体させてみました。
+                      </P>
+                      <P>
+                        こちらを「
+                        <Strong>
+                          <H args={{ name: 'runAndConertToMathbox' }} />
+                        </Strong>
+                        」するとどうなるか確かめてみてください！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Vfdw />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <EmojiNumber number={3} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうなんです！つまり、今度は{' '}
+                        <Strong>
+                          <EmojiNumber number={2} /> が{' '}
+                          <EmojiNumber number={3} /> になった
+                        </Strong>
+                        のです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            実質 <CustomEmoji type="plusOne" /> と同じ
+          </>
+        ),
+        content: <></>
+      },
+      {
         title: <></>,
         content: (
           <>
-            <P>
-              TODO: Bento box convertible to 1. Then say if you add this box and
-              run and convert you'll get 2. Then say essentially this is the
-              same as math box 1 + 1. Then also do the same with 2 + 1.
-            </P>
-            <R.Envj>
-              <CustomEmoji type="questionFoodGrey" /> には何らかの料理が入ります
-            </R.Envj>
             <R.Biit></R.Biit>
             <R.Pbop>
               <CustomEmoji type="questionFoodRed" /> には何らかの料理が入ります
@@ -255,11 +362,6 @@ export default () => (
         title: <></>,
         content: <></>
       }
-      // Talk about minus next
-      // Then ask the question - what is the pattern for each?
-      // Say: I have no clue. Do you have any hint?
-      // Sure - if you use the pattern for +1 along with 1, then if you run it, you get 2
-      // Same for minus.
       // Try it out by filling with random food items for +1, and fail
     ]}
   />
