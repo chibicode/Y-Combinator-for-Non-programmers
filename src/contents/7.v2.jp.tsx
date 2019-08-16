@@ -213,18 +213,61 @@ export default () => (
                       <P>ということです。</P>
                     </>
                   )
+                }
+              ]}
+            />
+            <R.Jiua>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              がたくさんある弁当箱を合体させ…
+            </R.Jiua>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果は <EmojiNumber number={2} /> になる
+            </R.Pmdm>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり大雑把に言えば、
+                        <Strong>
+                          <EmojiNumber number={1} /> が{' '}
+                          <EmojiNumber number={2} /> になった
+                        </Strong>
+                        というわけです。
+                      </P>
+                    </>
+                  )
                 },
                 {
                   type: 'thinking',
                   children: (
                     <>
+                      <P>なるほど。</P>
                       <P>
-                        つまり、
-                        <Strong>
-                          <EmojiNumber number={1} /> が{' '}
-                          <EmojiNumber number={2} /> になる
-                        </Strong>
-                        ということか。
+                        それで、
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        にはそれぞれ何が入るか、そろそろ教えてくれる？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          に何が入るかはまだ秘密
+                        </Em>
+                        です。とりあえず読み進めてください！
                       </P>
                     </>
                   )
@@ -291,7 +334,7 @@ export default () => (
                       <P>
                         この弁当箱も、
                         <Em>
-                          >先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
+                          先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
                           がたくさんある弁当箱と合体させてみました。
                         </Em>
                       </P>
@@ -332,8 +375,33 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>そうなんです！まとめると、以下のようになります。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+
+            <R.Aone>
+              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              <br />
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              がたくさんある弁当箱を合体させ…
+            </R.Aone>
+            <ExpressionRunnerSeparator />
+            <R.Qsoa>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果は <EmojiNumber number={3} /> になる
+            </R.Qsoa>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
-                        そうなんです！つまり、今度は{' '}
+                        ざっくり言うと、今度は{' '}
                         <Strong>
                           <EmojiNumber number={2} /> が{' '}
                           <EmojiNumber number={3} /> になった
@@ -372,12 +440,19 @@ export default () => (
                         ということは…
                       </P>
                       <P>
-                        <Strong>
-                          実質、
-                          <CustomEmoji type="plusOne" />{' '}
-                          (1を足す)と同じことが起きている
-                        </Strong>
+                        <Strong>実質、「1を足す」ことが行われている</Strong>
                         のかな？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        その通りです。本稿のはじめに説明した通り、計算箱には
+                        <Strong>プラス1を計算できる機能</Strong>がありますよね。
                       </P>
                     </>
                   )

@@ -147,4 +147,5 @@ export interface HProps {
         name: 'doneConvert'
         type: 'toBentoBox' | 'toMathBox'
       }
+    | { name: 'canBeConverted' }
 }

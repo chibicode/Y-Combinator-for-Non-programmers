@@ -3501,3 +3501,23 @@ export const vfdw: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   convert: 'toMathBoxPlay'
 }
+
+export const jiua: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.glmd,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const aone: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kgoi,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const qsoa: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qjcv,
+  showPriorities: true
+}

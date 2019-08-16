@@ -1946,6 +1946,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'canBeConverted') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>に変換できる弁当箱</>
+    }
+  }
   throw new Error()
 }
 

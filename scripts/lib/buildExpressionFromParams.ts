@@ -174,7 +174,8 @@ export default function buildExpressionFromParams(
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
       shorthandNumber: expressionParams.shorthandNumber,
-      shorthandUnary: expressionParams.shorthandUnary
+      shorthandUnary: expressionParams.shorthandUnary,
+      shorthandNumberAfterConvert: expressionParams.shorthandNumberAfterConvert
     }
   } else if (isMagicalVariableParams(expressionParams)) {
     return {

@@ -2004,3 +2004,19 @@ export const vemg = initializeExpressionContainer(
     'questionFoodRed'
   )
 )
+
+export const glmd = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  {
+    shorthandNumber: 1,
+    shorthandNumberAfterConvert: true
+  }
+])
+
+export const kgoi = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  {
+    shorthandNumber: 2,
+    shorthandNumberAfterConvert: true
+  }
+])
