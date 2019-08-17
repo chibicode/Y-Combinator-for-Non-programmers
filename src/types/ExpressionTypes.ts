@@ -16,6 +16,7 @@ export interface VariableExpression {
   readonly shorthandFunc?: 'add' | 'pred'
   readonly magical?: boolean
   readonly shorthandNumberAfterConvert?: boolean
+  readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
 }
 
 export interface VariableShorthandBinary extends VariableExpression {
@@ -25,6 +26,7 @@ export interface VariableShorthandBinary extends VariableExpression {
 export interface VariableShorthandNumber extends VariableExpression {
   readonly shorthandNumber: NonNullable<VariableExpression['shorthandNumber']>
   readonly shorthandNumberAfterConvert?: VariableExpression['shorthandNumberAfterConvert']
+  readonly shorthandNumberPlusOrMinusOne?: VariableExpression['shorthandNumberPlusOrMinusOne']
 }
 
 export interface VariableShorthandUnary extends VariableExpression {

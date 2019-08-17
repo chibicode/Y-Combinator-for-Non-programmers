@@ -249,7 +249,20 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         `}
       >
         {expression.shorthandNumber !== undefined ? (
-          <EmojiNumber size="sm" number={expression.shorthandNumber} />
+          <>
+            <EmojiNumber size="sm" number={expression.shorthandNumber} />
+            {expression.shorthandNumberPlusOrMinusOne && (
+              <>
+                {' '}
+                <Emoji size="sm">
+                  {expression.shorthandNumberPlusOrMinusOne === 'plus'
+                    ? '➕'
+                    : '➖'}
+                </Emoji>{' '}
+                <EmojiNumber size="sm" number={1} />
+              </>
+            )}
+          </>
         ) : (
           <Emoji size="sm">
             {expression.highlightType === 'removed'

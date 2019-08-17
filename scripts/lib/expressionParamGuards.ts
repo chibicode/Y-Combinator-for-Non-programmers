@@ -9,7 +9,9 @@ import {
   HighlightedVariableExpressionParams,
   ConditionalExpressionParams,
   MagicalVariableParams,
-  VariableShorthandFuncParams
+  VariableShorthandFuncParams,
+  QuestionPlusOrMinusOneParams,
+  QuestionShorthandNumberAfterConvertParams
 } from 'src/types/ExpressionParamTypes'
 
 export function isHighlightedVariableExpressionParams(
@@ -90,4 +92,20 @@ export function isConditionalParams(
     !!(expressionParams as ConditionalExpressionParams).falseCase &&
     !!(expressionParams as ConditionalExpressionParams).checkType
   )
+}
+
+export function isQuestionPlusOrMinusOneParams(
+  expressionParams: ExpressionParams
+): expressionParams is QuestionPlusOrMinusOneParams {
+  return (
+    (expressionParams as QuestionPlusOrMinusOneParams)
+      .shorthandNumberPlusOrMinusOne !== undefined
+  )
+}
+
+export function isQuestionShorthandNumberAfterConvertParams(
+  expressionParams: ExpressionParams
+): expressionParams is QuestionShorthandNumberAfterConvertParams {
+  return (expressionParams as QuestionShorthandNumberAfterConvertParams)
+    .shorthandNumberAfterConvert
 }

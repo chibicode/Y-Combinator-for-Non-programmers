@@ -8,7 +8,9 @@ import {
   isVariableShorthandNumberParams,
   isMagicalVariableParams,
   isConditionalParams,
-  isVariableShorthandFuncParams
+  isVariableShorthandFuncParams,
+  isQuestionPlusOrMinusOneParams,
+  isQuestionShorthandNumberAfterConvertParams
 } from 'scripts/lib/expressionParamGuards'
 import {
   CallExpressionParams,
@@ -204,6 +206,17 @@ export default function buildExpressionFromParams(
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
       shorthandFunc: expressionParams.shorthandFunc
+    }
+  } else if (isQuestionPlusOrMinusOneParams(expressionParams)) {
+    return {
+      ...buildVariableExpression('blankNumber', true, 'default'),
+      shorthandNumberPlusOrMinusOne:
+        expressionParams.shorthandNumberPlusOrMinusOne
+    }
+  } else if (isQuestionShorthandNumberAfterConvertParams(expressionParams)) {
+    return {
+      ...buildVariableExpression('blankNumber', true, 'default'),
+      shorthandNumberAfterConvert: true
     }
   } else {
     return {
