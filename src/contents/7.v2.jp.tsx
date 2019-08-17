@@ -612,7 +612,25 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>な、なんだと…？</P>
+                      <P>な、なんだと…？それが問題なのか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        はい。
+                        <Em>
+                          だから先ほど、「{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に何が入るかは秘密」と言っていたのです。
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に何が入るかを当ててもらうのが問題
+                        </Em>
+                        ですから。
+                      </P>
                     </>
                   )
                 },
@@ -622,7 +640,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          この問題こそが、さっきから話していた「難しい問題」だ。これを解けたら、計算箱を返してやろう！
+                          この問題こそが、以前から話していた「難しい問題」だ。これを解けたら、約束通り計算箱を返してやろう！
                         </Strong>
                       </P>
                     </>
@@ -671,7 +689,6 @@ export default () => (
           </>
         )
       }
-      // Try it out by filling with random food items for +1, and fail
     ]}
   />
 )
