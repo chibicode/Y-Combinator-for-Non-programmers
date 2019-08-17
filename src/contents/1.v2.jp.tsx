@@ -7,8 +7,8 @@ import {
   InlineHeader,
   Ul,
   UlLi,
-  Ol,
-  OlLi,
+  // Ol,
+  // OlLi,
   Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
@@ -70,26 +70,7 @@ export default () => (
                 </>
               }
             />
-            <P>
-              ラムダ村の人々は<Em>計算がとても苦手だったので</Em>
-              、たとえば「
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} />
-              」のような単純な足し算をするのにも、計算箱に頼りきっていました。
-            </P>
-            <EmojiSeparator
-              emojis={['🙂', '🎁', '🙂']}
-              description={
-                <>
-                  俺ら計算が苦手だから、
-                  <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={3} /> といった
-                  <br />
-                  単純な足し算も、計算箱がないとできない！
-                </>
-              }
-            />
-            <P>それでは、計算箱について詳しく説明していきます！</P>
+            <P>この計算箱がどんなものか、説明しましょう！</P>
           </>
         ),
         footer: {
@@ -105,54 +86,54 @@ export default () => (
           )
         }
       },
-      {
-        title: <>計算箱の3つの機能</>,
-        content: (
-          <>
-            <P>計算箱には、以下の3つの機能が備わっていました。</P>
-            <Ol>
-              <OlLi>
-                <CustomEmoji type="plusOne" /> <Strong>プラス1</Strong>の機能
-              </OlLi>
-              <OlLi>
-                <CustomEmoji type="minusOne" /> <Strong>マイナス1</Strong>の機能
-              </OlLi>
-              <OlLi>
-                <Emoji>🔁</Emoji> <Strong>繰り返し</Strong>の機能
-              </OlLi>
-            </Ol>
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="minusOne" />,
-                <Emoji>🔁</Emoji>
-              ]}
-              description={<>プラス1・マイナス1・繰り返しの機能</>}
-            />
-            <P>
-              今回は、計算箱の「
-              <Strong>
-                <CustomEmoji type="plusOne" /> プラス1の機能
-              </Strong>
-              」と「
-              <Strong>
-                <CustomEmoji type="minusOne" /> マイナス1の機能
-              </Strong>
-              」について紹介します。「
-              <Strong>
-                <Emoji>🔁</Emoji> 繰り返しの機能
-              </Strong>
-              」については、次回で紹介します！<Emoji>🙂</Emoji>
-            </P>
-          </>
-        )
-      },
+      // {
+      //   title: <>計算箱の3つの機能</>,
+      //   content: (
+      //     <>
+      //       <P>計算箱には、以下の3つの機能が備わっていました。</P>
+      //       <Ol>
+      //         <OlLi>
+      //           <CustomEmoji type="plusOne" /> <Strong>プラス1</Strong>の機能
+      //         </OlLi>
+      //         <OlLi>
+      //           <CustomEmoji type="minusOne" /> <Strong>マイナス1</Strong>の機能
+      //         </OlLi>
+      //         <OlLi>
+      //           <Emoji>🔁</Emoji> <Strong>繰り返し</Strong>の機能
+      //         </OlLi>
+      //       </Ol>
+      //       <EmojiSeparator
+      //         nodes={[
+      //           <CustomEmoji type="plusOne" />,
+      //           <CustomEmoji type="minusOne" />,
+      //           <Emoji>🔁</Emoji>
+      //         ]}
+      //         description={<>プラス1・マイナス1・繰り返しの機能</>}
+      //       />
+      //       <P>
+      //         今回は、計算箱の「
+      //         <Strong>
+      //           <CustomEmoji type="plusOne" /> プラス1の機能
+      //         </Strong>
+      //         」と「
+      //         <Strong>
+      //           <CustomEmoji type="minusOne" /> マイナス1の機能
+      //         </Strong>
+      //         」について紹介します。「
+      //         <Strong>
+      //           <Emoji>🔁</Emoji> 繰り返しの機能
+      //         </Strong>
+      //         」については、次回で紹介します！<Emoji>🙂</Emoji>
+      //       </P>
+      //     </>
+      //   )
+      // },
       {
         title: <>計算箱の例</>,
         content: (
           <>
             <P>
-              こちらをご覧ください。これが、ラムダ村の人々が使っていた「
+              こちらをご覧ください。これが、ラムダ村の村人が使っていた「
               <Strong>計算箱</Strong>」のひとつです。
             </P>
             <R.Lizi>
@@ -163,7 +144,7 @@ export default () => (
                 上には、数字の <EmojiNumber number={1} /> が入っています。
               </UlLi>
               <UlLi>
-                下には、「プラス1の印 <CustomEmoji type="plusOne" />」
+                下には、プラス1の印 <CustomEmoji type="plusOne" />
                 が入っています。
               </UlLi>
             </Ul>
@@ -174,6 +155,7 @@ export default () => (
                 <CustomEmoji type="plusOne" />
               ]}
             />
+            <P>では次に、この計算箱はどのように使うかを説明しましょう！</P>
           </>
         )
       },
@@ -221,12 +203,7 @@ export default () => (
         )
       },
       {
-        type: 'summary',
-        title: (
-          <>
-            <H args={{ name: 'summary' }} />
-          </>
-        ),
+        title: <>プラス1の機能</>,
         content: (
           <>
             <P>ここまでをまとめると、下の計算箱のように、</P>
@@ -259,11 +236,35 @@ export default () => (
                 <EmojiNumber number={1} />
               ]}
             />
+            <P>
+              これが、計算箱に備わっている機能のひとつ、「
+              <Strong>プラス1の機能</Strong>
+              」です。この機能を使えば、
+              <Em>
+                何らかの数字に <EmojiNumber number={1} />{' '}
+                を足す計算を行うことができる
+              </Em>
+              のです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="plusOne" />,
+                <Emoji>✨</Emoji>
+              ]}
+              description={
+                <>
+                  計算箱の<Strong>プラス1の機能:</Strong>
+                  <br />
+                  何らかの数字に <EmojiNumber number={1} /> を足す
+                </>
+              }
+            />
           </>
         )
       },
       {
-        title: <>マイナス1</>,
+        title: <>マイナス1の機能</>,
         content: (
           <>
             <P>
@@ -274,18 +275,46 @@ export default () => (
             </P>
             <R.Xmqp />
             <P>
-              結果は <EmojiNumber number={2} /> になり、すなわち{' '}
+              結果は <EmojiNumber number={2} /> になりました。すなわち{' '}
               <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> が計算できました！<Emoji>🙂</Emoji>
+              <EmojiNumber number={1} /> が計算できたということです！
+              <Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
-              このように、何らかの数字 <CustomEmoji type="blankNumber" /> の下に{' '}
-              <CustomEmoji type="minusOne" /> が入っていると、
-              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算することができるのです。
+              このように、
+              <Em>
+                何らかの数字 <CustomEmoji type="blankNumber" /> の下に{' '}
+                <CustomEmoji type="minusOne" /> が入っていると、
+                <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+                <EmojiNumber number={1} /> を計算することができる
+              </Em>
+              のです。
             </P>
-            <R.Ditw />
+            <R.Ditw>
+              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算できる
+            </R.Ditw>
+            <P>
+              これが、計算箱に備わっているふたつめの機能、「
+              <Strong>マイナス1の機能</Strong>
+              」です。この機能を使えば、何らかの数字から{' '}
+              <EmojiNumber number={1} /> を引く計算を行うことができるのです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="minusOne" />,
+                <Emoji>✨</Emoji>
+              ]}
+              description={
+                <>
+                  計算箱の<Strong>マイナス1の機能:</Strong>
+                  <br />
+                  何らかの数字から <EmojiNumber number={1} /> を引く
+                </>
+              }
+            />
           </>
         )
       },
@@ -299,7 +328,7 @@ export default () => (
         content: (
           <>
             <P>
-              ここが重要なポイントなのですが、計算に使うことができるのは、数字以外では{' '}
+              ここが重要なポイントなのですが、計算に使うことができるのは{' '}
               <Strong>
                 <CustomEmoji type="plusOne" /> と{' '}
                 <CustomEmoji type="minusOne" /> だけです
@@ -332,6 +361,7 @@ export default () => (
                 <Emoji>➕</Emoji>,
                 <EmojiNumber number={2} />
               ]}
+              description={<>これを計算したいときはどうすればいい？</>}
             />
           </>
         )
@@ -366,7 +396,8 @@ export default () => (
               }
             />
             <P>
-              実際に試してみましょう。
+              こちらに <CustomEmoji type="plusOne" />{' '}
+              を2回使った計算箱を用意したので、実際に試してみましょう。
               <H args={{ name: 'pressPlay' }} />
             </P>
             <R.Jiqb />
@@ -450,9 +481,7 @@ export default () => (
               つまり、
               <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
               を何度も使うことで、
-              <Em>
-                どんな大きな数字の足し算でも引き算でも計算箱で行うことができます
-              </Em>
+              <Em>どんな大きな数字の足し算でも引き算でも行うことができます</Em>
               。
             </P>
             <EmojiSeparator
@@ -482,11 +511,22 @@ export default () => (
             <P>
               たとえば、
               <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={10} /> を計算したかったら、
+              <EmojiNumber number={10} />{' '}
+              を計算したかったら、どうすればいいでしょうか？
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={10} />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={10} />
+              ]}
+            />
+            <P>
+              答えを言うと、
               <Strong>
-                <EmojiNumber number={10} /> の下に「
-                <CustomEmoji type="plusOne" />
-                」を10回配置した計算箱を実行すればいい
+                <EmojiNumber number={10} /> の下に{' '}
+                <CustomEmoji type="plusOne" />{' '}
+                を10回配置した計算箱を実行すればいい
               </Strong>
               のです。
             </P>
@@ -494,44 +534,41 @@ export default () => (
               <CustomEmoji type="plusOne" /> を10回配置
             </R.Amoq>
             <P>
-              このようにすれば、計算箱はどんな大きな数字の足し算でも引き算でもできます。
+              このようにすれば、
+              <Em>計算箱はどんな大きな数字の足し算でも引き算でもできます</Em>。
             </P>
-            <P>
-              そして、
-              <Em>
-                ラムダ村の村人は計算がとても苦手だったので、足し算や引き算を行う時には、必ずこのように計算箱を使って計算していました
-              </Em>
-              。
-            </P>
-            <EmojiSeparator
-              emojis={['🙂', '➕', '🎁', '➖', '🙂']}
-              description={<>「足し算や引き算は、計算箱におまかせしよう！」</>}
-            />
           </>
         )
       },
       {
-        title: <>プラスマイナスの機能</>,
+        title: <>ラムダ村の村人は計算がとても苦手</>,
         content: (
           <>
             <P>
-              今回紹介した、1を足したり引いたりできる計算箱の機能を、ラムダ村の村人は「
-              <CustomEmoji type="plusMinus" />{' '}
-              <Strong>プラスマイナスの機能</Strong>
-              」と呼んでいました。
-            </P>
-            <P>
-              「プラス1」と「マイナス1」を計算できるので、「
-              <CustomEmoji type="plusMinus" />{' '}
-              <Strong>プラスマイナスの機能</Strong>」というわけです。
+              まとめると、計算箱は足し算や引き算を行ってくれる魔法の道具というわけです。
             </P>
             <EmojiSeparator
-              nodes={[
-                <Emoji>✨</Emoji>,
-                <CustomEmoji type="plusMinus" />,
-                <Emoji>✨</Emoji>
-              ]}
-              description={<>プラスマイナスの機能</>}
+              emojis={['➕', '🎁', '➖']}
+              description={<>計算箱は足し算や引き算ができる</>}
+            />
+            <P>
+              そして、ラムダ村の村人は<Strong>計算がとても苦手でした</Strong>。
+              だから、たとえば「
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />
+              」のような単純な足し算をするのにも、村人たちは計算箱に頼りきっていました。
+            </P>
+            <EmojiSeparator
+              emojis={['🙂', '🎁', '🙂']}
+              description={
+                <>
+                  俺ら計算が苦手だから、
+                  <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                  <EmojiNumber number={3} /> といった
+                  <br />
+                  単純な足し算も、計算箱がないとできない！
+                </>
+              }
             />
           </>
         )
@@ -542,22 +579,24 @@ export default () => (
           <>
             <P>
               <Em>
-                実は計算箱には、今回紹介した <CustomEmoji type="plusMinus" />{' '}
-                プラスマイナスの機能以外にも、<Strong>さらにもうひとつ</Strong>
+                実は計算箱には、今回紹介した「
+                <CustomEmoji type="plusOne" />{' '}
+                <InlineHeader>プラス1の機能</InlineHeader>」や「
+                <CustomEmoji type="minusOne" />{' '}
+                <InlineHeader>マイナス1の機能</InlineHeader>」 以外にも、
+                <Strong>さらにもうひとつ</Strong>
                 の機能があります。
               </Em>
             </P>
             <EmojiSeparator
               nodes={[
-                <CustomEmoji type="plusMinus" />,
-                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="minusOne" />,
                 <Emoji>❓</Emoji>
               ]}
               description={<>もうひとつの機能がある</>}
             />
-            <P>
-              次のページでは、計算箱のふたつめの機能について紹介していきます！
-            </P>
+            <P>次のページでは、計算箱の3つめの機能について紹介していきます！</P>
             <NextLessonButton />
           </>
         )
