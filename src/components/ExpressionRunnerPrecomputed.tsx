@@ -11,7 +11,7 @@ import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanat
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
-import { spaces, zIndices } from 'src/lib/theme'
+import { colors, spaces, zIndices } from 'src/lib/theme'
 import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
@@ -265,6 +265,7 @@ const ExpressionRunnerPrecomputed = ({
                 line-height: ${lineHeights(1.3, { ignoreLocale: true })};
                 opacity: ${isFastForwarding ? 0.6 : 1};
                 position: relative;
+                background: ${colors('white')};
               `}
             >
               {children === 'cross' && (

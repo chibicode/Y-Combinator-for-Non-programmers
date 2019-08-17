@@ -50,11 +50,57 @@ export default () => (
                         わかりました。まず、
                         <H args={{ name: 'lookAtThisBentoBox' }} />。
                       </P>
+                      <P>
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        がたくさんありますが、それぞれの{' '}
+                        <Strong>
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          には何らかの料理が入ります。
+                        </Strong>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Envj>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> には
+              <br />
+              何らかの料理が入る
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>何だか複雑そうな弁当箱だなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そして、
+                        <Strong>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          に、ある法則に基づいて料理を入れると、特殊な効果がある弁当箱になります。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+              <br />
+              ある法則に基づいて料理を入れると、
+              <br />
+              特殊な効果を生む弁当箱になる
+            </R.Envj>
             <R.Fxde />
             <BubbleQuotes
               quotes={[

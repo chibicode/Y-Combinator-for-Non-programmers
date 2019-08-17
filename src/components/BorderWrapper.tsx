@@ -45,14 +45,14 @@ const background = ({
   }
   if (conditionalActive) {
     return css`
-      background: ${colors('white')};
+      background: ${colors('transparent')};
     `
   }
   switch (highlightType) {
     case 'initialHighlighted': {
       return css`
         background: ${colors(
-          started ? (isDoneOrReady ? 'white' : 'indigo50') : 'yellow100'
+          started ? (isDoneOrReady ? 'transparent' : 'indigo50') : 'yellow100'
         )};
       `
     }
@@ -63,7 +63,7 @@ const background = ({
     }
     case 'default': {
       return css`
-        background: ${colors(isDoneOrReady ? 'white' : 'indigo50')};
+        background: ${colors(isDoneOrReady ? 'transparent' : 'indigo50')};
       `
     }
     case 'removed': {
@@ -73,7 +73,7 @@ const background = ({
     }
     case 'active': {
       return css`
-        background: ${colors('white')};
+        background: ${colors('transparent')};
       `
     }
     case 'blue':
