@@ -149,4 +149,5 @@ export interface HProps {
       }
     | { name: 'canBeConverted' }
     | { name: 'sameAddRole' }
+    | { name: 'specialEffect' }
 }

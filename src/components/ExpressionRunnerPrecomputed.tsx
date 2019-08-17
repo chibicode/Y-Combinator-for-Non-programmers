@@ -17,6 +17,7 @@ import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigF
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import useInterval from 'src/hooks/useInterval'
 import CrossSvg from 'src/components/CrossSvg'
+import starSvg from 'src/images/star.url.svg'
 
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
@@ -44,6 +45,7 @@ export interface ExpressionRunnerPrecomputedProps {
   highlightNumber: ExpressionRunnerConfig['highlightNumber']
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
+  specialEffect: ExpressionRunnerConfig['specialEffect']
 }
 
 // Must be equal to 1 / N to make timer count seconds evenly
@@ -84,7 +86,8 @@ const ExpressionRunnerPrecomputed = ({
   highlightNumber,
   showAllShowSteps,
   children,
-  convert
+  convert,
+  specialEffect
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -261,12 +264,19 @@ const ExpressionRunnerPrecomputed = ({
             `}
           >
             <div
-              css={css`
-                line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                opacity: ${isFastForwarding ? 0.6 : 1};
-                position: relative;
-                background: ${colors('white')};
-              `}
+              css={[
+                css`
+                  line-height: ${lineHeights(1.3, { ignoreLocale: true })};
+                  opacity: ${isFastForwarding ? 0.6 : 1};
+                  position: relative;
+                  background-color: ${colors('white')};
+                `,
+                specialEffect &&
+                  css`
+                    background-image: url(${starSvg});
+                    background-size: 3em;
+                  `
+              ]}
             >
               {children === 'cross' && (
                 <CrossSvg

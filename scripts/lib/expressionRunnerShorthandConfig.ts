@@ -34,6 +34,7 @@ interface ExpressionRunnerSimpleConfig {
   highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
   argPriorityAggHighlights?: readonly number[]
   funcPriorityAggHighlights?: readonly number[]
+  specialEffect?: boolean
 }
 
 export function isExpressionRunnerSimpleConfig(
@@ -50,7 +51,8 @@ export const expressionRunnerPlayButtonOnlyConfigDefault = {
   speed: 1,
   skipAlphaConvert: false,
   variableSize: 'lg',
-  explanationsVisibility: 'hiddenInitialPausedOnly'
+  explanationsVisibility: 'hiddenInitialPausedOnly',
+  specialEffect: false
 }
 
 export function isExpressionRunnerPlayButtonOnlyConfig(

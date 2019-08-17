@@ -86,7 +86,8 @@ export default () => (
                         そして、
                         <Strong>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れると、特殊な効果がある弁当箱になります。
+                          に、ある法則に基づいて料理を入れると、 「 特殊な効果{' '}
+                          <Emoji>⭐️</Emoji>」 がある弁当箱になります。
                         </Strong>
                       </P>
                     </>
@@ -94,13 +95,60 @@ export default () => (
                 }
               ]}
             />
-            <R.Envj>
+            <R.Atfs>
               それぞれの <CustomEmoji type="questionFoodGrey" /> に、
               <br />
-              ある法則に基づいて料理を入れると、
+              <Strong>ある法則に基づいて</Strong>料理を入れると、
               <br />
-              特殊な効果を生む弁当箱になる
-            </R.Envj>
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱になる
+            </R.Atfs>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        背景に <Emoji>⭐️</Emoji> の模様がついた！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうですね。この背景は単に、この弁当箱に
+                        <H args={{ name: 'specialEffect' }} />
+                        があるということを表しているだけです。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        その
+                        <H args={{ name: 'specialEffect' }} />
+                        ってどういう効果なの？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>はい、では説明しますね！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Fxde />
             <BubbleQuotes
               quotes={[

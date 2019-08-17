@@ -1964,6 +1964,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'specialEffect') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          「<Strong>特殊な効果</Strong> <Emoji>⭐️</Emoji>」
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 
