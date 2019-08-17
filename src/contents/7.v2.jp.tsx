@@ -8,6 +8,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
@@ -557,7 +558,8 @@ export default () => (
                         <Strong>
                           この <CustomEmoji type="questionFoodGrey" />{' '}
                           がたくさんある弁当箱は、 計算箱における{' '}
-                          <CustomEmoji type="plusOne" /> と同じ効果がある
+                          <CustomEmoji type="plusOne" />{' '}
+                          と同じく「1を足す」効果がある
                         </Strong>
                         のです。
                       </P>
@@ -566,19 +568,108 @@ export default () => (
                 }
               ]}
             />
-            <R.Envj></R.Envj>
+            <R.Biit>
+              <Strong>計算箱</Strong>において「1を足す」効果がある
+            </R.Biit>
             <ExpressionRunnerSeparator doubleArrow />
-            <R.Biit></R.Biit>
+            <R.Envj>
+              <Strong>弁当箱</Strong>において「1を足す」効果がある
+            </R.Envj>
           </>
         )
       },
       {
-        title: <></>,
-        content: <></>
+        title: <>計算箱を賭けた問題</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、ここで問題です。
+                        <Strong>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          には、どういう法則で料理が入るでしょう？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Elcl>
+              <Strong>
+                <CustomEmoji type="questionFoodGrey" />{' '}
+                には、どういう法則で料理が入る？
+              </Strong>
+            </R.Elcl>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>な、なんだと…？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          この問題こそが、さっきから話していた「難しい問題」だ。これを解けたら、計算箱を返してやろう！
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>😈</Emoji>,
+                <CustomEmoji type="questionFoodGrey" />,
+                <Emoji>🎁</Emoji>
+              ]}
+              description={
+                <>
+                  <CustomEmoji type="questionFoodGrey" /> にそれぞれ何が入るかを
+                  <br />
+                  当てられたら、計算箱を返してやろう！
+                </>
+              }
+            />
+          </>
+        )
       },
       {
-        title: <></>,
-        content: <></>
+        title: <>試しに適当な料理を入れてみる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        うーん…
+                        <Em>
+                          問題も完全に理解できた自信がないし、理解できたとしてもどうやって解けばいいかサッパリ分からない！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
       // Try it out by filling with random food items for +1, and fail
     ]}

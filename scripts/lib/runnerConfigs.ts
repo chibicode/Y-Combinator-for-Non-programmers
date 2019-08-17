@@ -3437,6 +3437,13 @@ export const envj: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const elcl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.epmt,
+  showPriorities: true,
+  highlightOverrides: { questionFoodGrey: 'highlighted' }
+}
+
 export const fljg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.szos,
