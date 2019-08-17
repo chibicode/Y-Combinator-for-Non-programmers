@@ -86,8 +86,9 @@ export default () => (
                         そして、
                         <Strong>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れると、 「 特殊な効果{' '}
-                          <Emoji>⭐️</Emoji>」 がある弁当箱になります。
+                          に、ある法則に基づいて料理を入れると、
+                          <H args={{ name: 'specialEffect' }} />
+                          がある弁当箱になります。
                         </Strong>
                       </P>
                     </>
@@ -143,7 +144,32 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>はい、では説明しますね！</P>
+                      <P>では説明しますね！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={1} /> が <EmojiNumber number={2} /> になる
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'lookAtThisBentoBox' }} />:
+                      </P>
                     </>
                   )
                 }
@@ -182,68 +208,10 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>それでは、ここで問題です！</P>
-                    </>
-                  )
-                }
-              ]}
-            />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <EmojiNumber number={1} /> が <EmojiNumber number={2} /> になる
-          </>
-        ),
-        content: (
-          <>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
                       <P>
-                        <H args={{ name: 'lookAtThisBentoBox' }} />。
-                        <Em>
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          の印がたくさんありますが、
-                          <Strong>それぞれ何らかの料理が入ります</Strong>。
-                        </Em>
-                      </P>
-                      <P>
-                        <Em>
-                          どの料理がそれぞれの{' '}
-                          <CustomEmoji type="questionFoodGrey" /> に入るかは秘密
-                        </Em>
-                        です。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Envj>
-              <CustomEmoji type="questionFoodGrey" />{' '}
-              には何らかの料理が入ります。
-              <br />
-              どの料理がそれぞれに入るかは秘密！
-            </R.Envj>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        この弁当箱を、
-                        <Strong>
-                          先ほどの <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させてみる
-                        </Strong>
-                        と、次のようになります。
+                        では上の弁当箱を、先ほどの
+                        <H args={{ name: 'specialEffect' }} />
+                        がある弁当箱と<Strong>合体させてみます</Strong>。
                       </P>
                     </>
                   )
