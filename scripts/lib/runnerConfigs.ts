@@ -3378,6 +3378,11 @@ export const bwnp: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ulsd
 }
 
+export const ewfr: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pcdb
+}
+
 export const vmkg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gnmt

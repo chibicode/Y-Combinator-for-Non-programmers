@@ -1,7 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi, Hr } from 'src/components/ContentTags'
+import {
+  InlineHeader,
+  P,
+  Strong,
+  Em,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -29,21 +36,24 @@ export default () => (
               description={<>ラムダ村の村人と、計算箱</>}
             />
             <P>
-              そして、足し算や引き算を可能にする、計算箱の「
-              <CustomEmoji type="plusMinus" />{' '}
-              <Strong>プラスマイナスの機能</Strong>
-              」について紹介しました。
+              そして、足し算を可能にする「
+              <CustomEmoji type="plusOne" />{' '}
+              <InlineHeader>プラス1の機能</InlineHeader>
+              」や、引き算を可能にする「
+              <CustomEmoji type="minusOne" />{' '}
+              <InlineHeader>マイナス1の機能</InlineHeader>」
+              について紹介しました。
             </P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="plusOne" />,
-                <CustomEmoji type="plusMinus" />,
+                <Emoji>🎁</Emoji>,
                 <CustomEmoji type="minusOne" />
               ]}
-              description={<>プラスマイナスの機能</>}
+              description={<>プラス1の機能とマイナス1の機能</>}
             />
             <P>
-              今回はもうひとつの計算箱の機能である「
+              今回は、3つめの計算箱の機能である「
               <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
               」について説明します。
             </P>
@@ -391,15 +401,10 @@ export default () => (
         )
       },
       {
-        type: 'summary',
-        title: (
-          <>
-            <H args={{ name: 'summary' }} />
-          </>
-        ),
+        title: <>繰り返しの機能</>,
         content: (
           <>
-            <P>ここまでをまとめると、下の計算箱のように、</P>
+            <P>つまり、下の計算箱のように、</P>
             <R.Bwnp />
             <Ul>
               <UlLi>
@@ -418,12 +423,6 @@ export default () => (
                   <CustomEmoji type="blankNumber" /> 回分繰り返される。
                 </Em>
               </UlLi>
-              <UlLi>
-                <Em>
-                  <CustomEmoji type="plusOne" /> の代わりに{' '}
-                  <CustomEmoji type="minusOne" /> を使った場合も同じ。
-                </Em>
-              </UlLi>
             </Ul>
             <P>
               これが、計算箱の「
@@ -434,6 +433,18 @@ export default () => (
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
               description={<>繰り返しの機能</>}
             />
+            <P>
+              もちろん、
+              <Em>
+                <CustomEmoji type="plusOne" /> の代わりに{' '}
+                <CustomEmoji type="minusOne" /> を使った場合も同じ
+              </Em>
+              ように繰り返されます。
+            </P>
+            <R.Ewfr>
+              <CustomEmoji type="minusOne" /> を{' '}
+              <CustomEmoji type="blankNumber" /> 回分繰り返す
+            </R.Ewfr>
           </>
         )
       },
@@ -480,7 +491,13 @@ export default () => (
               このようにすれば、
               <CustomEmoji type="plusOne" /> の数を間違えることはありませんね！
             </P>
-            <Hr />
+          </>
+        )
+      },
+      {
+        title: <>引き算も同じ</>,
+        content: (
+          <>
             <P>
               引き算でも同じです。<Emoji>🅰️</Emoji> <Emoji>➖</Emoji>{' '}
               <Emoji>🅱️</Emoji>{' '}
@@ -489,6 +506,13 @@ export default () => (
             <R.Jaqs>
               <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji> を計算
             </R.Jaqs>
+          </>
+        )
+      },
+      {
+        title: <>確実に足し算や引き算を行う</>,
+        content: (
+          <>
             <P>
               このように繰り返しの機能を使えば、
               <Strong>
@@ -499,7 +523,13 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['➕', '🤗', '➖']}
-              description={<>確実に足し算や引き算を行うことができる！</>}
+              description={
+                <>
+                  繰り返しの機能を使えば、
+                  <br />
+                  確実に足し算や引き算を行うことができる！
+                </>
+              }
             />
           </>
         )
@@ -509,37 +539,44 @@ export default () => (
         content: (
           <>
             <P>
-              ラムダ村の村人たちは、計算箱の「
-              <CustomEmoji type="plusMinus" />{' '}
-              <Strong>プラスマイナスの機能</Strong>」 と「
-              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
-              」を組み合わせることで、足し算や引き算を行っていました。
-            </P>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🙂</Emoji>,
-                <CustomEmoji type="plusMinus" />,
-                <Emoji>🎁</Emoji>,
-                <Emoji>🔁</Emoji>,
-                <Emoji>🙂</Emoji>
-              ]}
-              description={<>足し算や引き算は計算箱に任せっきり！</>}
-            />
-            <P>
-              <Em>
-                残念ながら、計算箱は「<Strong>掛け算</Strong> <Emoji>✖️</Emoji>
-                」や「<Strong>割り算</Strong> <Emoji>➗</Emoji>
-                」を行うことはできませんでした。
-              </Em>
-              とはいえ、計算がとても苦手だったラムダ村の村人たちにとって、足し算や引き算を自動で行ってくれる計算箱は、必要不可欠な道具でした。
+              前回も話したように、
+              <Strong>ラムダ村の村人は計算がとても苦手でした</Strong>
+              。だから彼らは、足し算や引き算を行うときは、計算箱に頼り切っていました。
             </P>
             <EmojiSeparator
               emojis={['🌲', '😍', '🎁', '😍', '🌲']}
               description={<>「計算箱が無いとやってけない！」</>}
             />
             <P>
-              そんなある日、ラムダ村である出来事が起きました。詳しくは次のページでお話します。
+              村人たちは、計算箱の「
+              <CustomEmoji type="plusOne" />{' '}
+              <InlineHeader>プラス1の機能</InlineHeader>
+              」、「
+              <CustomEmoji type="minusOne" />{' '}
+              <InlineHeader>マイナス1の機能</InlineHeader>
+              」、そして今回紹介した「<Emoji>🔁</Emoji>{' '}
+              <InlineHeader>繰り返しの機能</InlineHeader>
+              」うことで、足し算や引き算を正確に行っていたのです。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <Emoji>🔁</Emoji>
+              ]}
+              description={
+                <>
+                  計算箱の3つの機能を組み合わせることで、
+                  <br />
+                  足し算や引き算を正確に行うことができる
+                </>
+              }
+            />
+            <P>
+              そんなある日、<Strong>ラムダ村である異変が起きました。</Strong>
+            </P>
+            <EmojiSeparator emojis={['🌲', '😮', '❓', '😮', '🌲']} />
+            <P>詳しくは次のページでお話します！</P>
             <NextLessonButton />
           </>
         )

@@ -7,8 +7,6 @@ import {
   InlineHeader,
   Ul,
   UlLi,
-  // Ol,
-  // OlLi,
   Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
@@ -571,10 +569,32 @@ export default () => (
               }
             />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <Emoji>😉</Emoji> <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <Em>
+                  残念ながら、計算箱は「<Strong>掛け算</Strong>{' '}
+                  <Emoji>✖️</Emoji>
+                  」や「<Strong>割り算</Strong> <Emoji>➗</Emoji>
+                  」を行うことはできませんでした。
+                </Em>
+              </P>
+              <EmojiSeparator
+                emojis={['✖️', '😭', '➗']}
+                description={<>掛け算や割り算は、計算箱ではできない</>}
+              />
+              <P>
+                しかし、計算が大の苦手だった村人たちにとって、足し算や引き算ができるだけでも大いにありがたいことでした。
+              </P>
+            </>
+          )
+        }
       },
       {
-        title: <>もうひとつの計算箱の機能</>,
+        title: <>3つめの計算箱の機能</>,
         content: (
           <>
             <P>
@@ -583,7 +603,7 @@ export default () => (
                 <CustomEmoji type="plusOne" />{' '}
                 <InlineHeader>プラス1の機能</InlineHeader>」や「
                 <CustomEmoji type="minusOne" />{' '}
-                <InlineHeader>マイナス1の機能</InlineHeader>」 以外にも、
+                <InlineHeader>マイナス1の機能</InlineHeader>」以外にも、
                 <Strong>さらにもうひとつ</Strong>
                 の機能があります。
               </Em>
@@ -594,7 +614,7 @@ export default () => (
                 <CustomEmoji type="minusOne" />,
                 <Emoji>❓</Emoji>
               ]}
-              description={<>もうひとつの機能がある</>}
+              description={<>3つめの機能がある</>}
             />
             <P>次のページでは、計算箱の3つめの機能について紹介していきます！</P>
             <NextLessonButton />

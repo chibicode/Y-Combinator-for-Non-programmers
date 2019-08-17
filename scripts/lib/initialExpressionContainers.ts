@@ -1972,6 +1972,13 @@ export const ulsd = initializeExpressionContainer({
   }
 })
 
+export const pcdb = initializeExpressionContainer({
+  countVariable: 'blankNumber',
+  child: {
+    shorthandFunc: 'pred'
+  }
+})
+
 export const epmt = initializeExpressionContainer(
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey')
 )
