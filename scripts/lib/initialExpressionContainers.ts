@@ -1624,6 +1624,15 @@ export const vibe = initializeExpressionContainer([
   }
 ])
 
+export const kwqx = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  {
+    shorthandNumber: 2
+  }
+])
+
 export const kfwf = initializeExpressionContainer([
   {
     shorthandFunc: 'add'

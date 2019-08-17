@@ -1953,6 +1953,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>に変換できる弁当箱</>
     }
   }
+  if (args.name === 'sameAddRole') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          同じ「<Strong>1を足す</Strong>」効果
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

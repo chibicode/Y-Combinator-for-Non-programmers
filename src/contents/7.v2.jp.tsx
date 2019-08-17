@@ -443,8 +443,8 @@ export default () => (
       {
         title: (
           <>
-            実質「1を足す機能 <CustomEmoji type="plusOne" />
-            」と同じ
+            「1を足す機能 <CustomEmoji type="plusOne" />
+            」と同じ効果
           </>
         ),
         content: (
@@ -499,20 +499,82 @@ export default () => (
               <EmojiNumber number={1} /> を計算してくれる。
             </R.Pmdm>
             <Hr />
+            <R.Raqo>一方、こちらを実行すると…</R.Raqo>
+            <ExpressionRunnerSeparator />
+            <R.Qsoa>
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算してくれる。
+            </R.Qsoa>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        先ほど行ったのは、この「<Strong>1を足す機能</Strong>{' '}
+                        <CustomEmoji type="plusOne" />
+                        」と非常に似ていますよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jiua>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              がたくさんある弁当箱を合体させ…
+            </R.Jiua>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果は <EmojiNumber number={2} /> になる
+            </R.Pmdm>
+            <Hr />
+            <R.Aone>
+              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              <br />
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              がたくさんある弁当箱を合体させ…
+            </R.Aone>
+            <ExpressionRunnerSeparator />
+            <R.Qsoa>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果は <EmojiNumber number={3} /> になる
+            </R.Qsoa>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <Strong>
+                          この <CustomEmoji type="questionFoodGrey" />{' '}
+                          がたくさんある弁当箱は、 計算箱における{' '}
+                          <CustomEmoji type="plusOne" /> と同じ効果がある
+                        </Strong>
+                        のです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj></R.Envj>
+            <ExpressionRunnerSeparator doubleArrow />
+            <R.Biit></R.Biit>
           </>
         )
       },
       {
         title: <></>,
-        content: (
-          <>
-            <R.Biit></R.Biit>
-            <R.Pbop>
-              <CustomEmoji type="questionFoodRed" /> には何らかの料理が入ります
-            </R.Pbop>
-            <R.Uxbl></R.Uxbl>
-          </>
-        )
+        content: <></>
       },
       {
         title: <></>,

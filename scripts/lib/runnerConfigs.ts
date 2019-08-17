@@ -3236,6 +3236,11 @@ export const lizi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vibe
 }
 
+export const raqo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kwqx
+}
+
 export const mcug: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.vibe

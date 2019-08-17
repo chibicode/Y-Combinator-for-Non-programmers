@@ -148,4 +148,5 @@ export interface HProps {
         type: 'toBentoBox' | 'toMathBox'
       }
     | { name: 'canBeConverted' }
+    | { name: 'sameAddRole' }
 }
