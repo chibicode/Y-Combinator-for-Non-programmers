@@ -419,7 +419,8 @@ export default () => (
       {
         title: (
           <>
-            実質 <CustomEmoji type="plusOne" /> と同じ
+            実質「1を足す機能 <CustomEmoji type="plusOne" />
+            」と同じ
           </>
         ),
         content: (
@@ -451,8 +452,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りです。本稿のはじめに説明した通り、計算箱には
-                        <Strong>プラス1を計算できる機能</Strong>がありますよね。
+                        その通りです。本稿のはじめに説明した通り、計算箱には 「
+                        <Strong>1を足す機能</Strong>{' '}
+                        <CustomEmoji type="plusOne" />
+                        」がありますよね。
                       </P>
                     </>
                   )

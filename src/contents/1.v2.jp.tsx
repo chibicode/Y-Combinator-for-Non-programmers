@@ -84,48 +84,6 @@ export default () => (
           )
         }
       },
-      // {
-      //   title: <>計算箱の3つの機能</>,
-      //   content: (
-      //     <>
-      //       <P>計算箱には、以下の3つの機能が備わっていました。</P>
-      //       <Ol>
-      //         <OlLi>
-      //           <CustomEmoji type="plusOne" /> <Strong>プラス1</Strong>の機能
-      //         </OlLi>
-      //         <OlLi>
-      //           <CustomEmoji type="minusOne" /> <Strong>マイナス1</Strong>の機能
-      //         </OlLi>
-      //         <OlLi>
-      //           <Emoji>🔁</Emoji> <Strong>繰り返し</Strong>の機能
-      //         </OlLi>
-      //       </Ol>
-      //       <EmojiSeparator
-      //         nodes={[
-      //           <CustomEmoji type="plusOne" />,
-      //           <CustomEmoji type="minusOne" />,
-      //           <Emoji>🔁</Emoji>
-      //         ]}
-      //         description={<>プラス1・マイナス1・繰り返しの機能</>}
-      //       />
-      //       <P>
-      //         今回は、計算箱の「
-      //         <Strong>
-      //           <CustomEmoji type="plusOne" /> プラス1の機能
-      //         </Strong>
-      //         」と「
-      //         <Strong>
-      //           <CustomEmoji type="minusOne" /> マイナス1の機能
-      //         </Strong>
-      //         」について紹介します。「
-      //         <Strong>
-      //           <Emoji>🔁</Emoji> 繰り返しの機能
-      //         </Strong>
-      //         」については、次回で紹介します！<Emoji>🙂</Emoji>
-      //       </P>
-      //     </>
-      //   )
-      // },
       {
         title: <>計算箱の例</>,
         content: (
@@ -142,7 +100,7 @@ export default () => (
                 上には、数字の <EmojiNumber number={1} /> が入っています。
               </UlLi>
               <UlLi>
-                下には、プラス1の印 <CustomEmoji type="plusOne" />
+                下には、1を足す印 <CustomEmoji type="plusOne" />
                 が入っています。
               </UlLi>
             </Ul>
@@ -201,7 +159,7 @@ export default () => (
         )
       },
       {
-        title: <>プラス1の機能</>,
+        title: <>1を足す機能</>,
         content: (
           <>
             <P>ここまでをまとめると、下の計算箱のように、</P>
@@ -236,7 +194,7 @@ export default () => (
             />
             <P>
               これが、計算箱に備わっている機能のひとつ、「
-              <Strong>プラス1の機能</Strong>
+              <Strong>1を足す機能</Strong>
               」です。この機能を使えば、
               <Em>
                 何らかの数字に <EmojiNumber number={1} />{' '}
@@ -252,7 +210,7 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の<Strong>プラス1の機能:</Strong>
+                  計算箱の<Strong>1を足す機能:</Strong>
                   <br />
                   何らかの数字に <EmojiNumber number={1} /> を足す
                 </>
@@ -262,12 +220,12 @@ export default () => (
         )
       },
       {
-        title: <>マイナス1の機能</>,
+        title: <>1を引く機能</>,
         content: (
           <>
             <P>
-              計算箱は「プラス1」だけではなく、「<Strong>マイナス1</Strong>
-              」を計算することもできます。こちらの計算箱を
+              計算箱は「1を足す」だけではなく、「<Strong>1を引く</Strong>
+              」計算をすることもできます。こちらの計算箱を
               <H args={{ name: 'play' }} />
               してみてください:
             </P>
@@ -295,7 +253,7 @@ export default () => (
             </R.Ditw>
             <P>
               これが、計算箱に備わっているふたつめの機能、「
-              <Strong>マイナス1の機能</Strong>
+              <Strong>1を引く機能</Strong>
               」です。この機能を使えば、何らかの数字から{' '}
               <EmojiNumber number={1} /> を引く計算を行うことができるのです。
             </P>
@@ -307,7 +265,7 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の<Strong>マイナス1の機能:</Strong>
+                  計算箱の<Strong>1を引く機能:</Strong>
                   <br />
                   何らかの数字から <EmojiNumber number={1} /> を引く
                 </>
@@ -600,10 +558,12 @@ export default () => (
             <P>
               <Em>
                 実は計算箱には、今回紹介した「
-                <CustomEmoji type="plusOne" />{' '}
-                <InlineHeader>プラス1の機能</InlineHeader>」や「
-                <CustomEmoji type="minusOne" />{' '}
-                <InlineHeader>マイナス1の機能</InlineHeader>」以外にも、
+                <InlineHeader>1を足す機能</InlineHeader>{' '}
+                <CustomEmoji type="plusOne" />
+                」や「
+                <InlineHeader>1を引く機能</InlineHeader>{' '}
+                <CustomEmoji type="minusOne" />
+                」以外にも、
                 <Strong>さらにもうひとつ</Strong>
                 の機能があります。
               </Em>

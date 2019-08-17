@@ -37,12 +37,11 @@ export default () => (
             />
             <P>
               そして、足し算を可能にする「
-              <CustomEmoji type="plusOne" />{' '}
-              <InlineHeader>プラス1の機能</InlineHeader>
+              <InlineHeader>1を足す機能</InlineHeader>{' '}
+              <CustomEmoji type="plusOne" />
               」や、引き算を可能にする「
-              <CustomEmoji type="minusOne" />{' '}
-              <InlineHeader>マイナス1の機能</InlineHeader>」
-              について紹介しました。
+              <InlineHeader>1を引く機能</InlineHeader>{' '}
+              <CustomEmoji type="minusOne" />」 について紹介しました。
             </P>
             <EmojiSeparator
               nodes={[
@@ -50,7 +49,7 @@ export default () => (
                 <Emoji>🎁</Emoji>,
                 <CustomEmoji type="minusOne" />
               ]}
-              description={<>プラス1の機能とマイナス1の機能</>}
+              description={<>1を足す機能と1を引く機能</>}
             />
             <P>
               今回は、3つめの計算箱の機能である「
@@ -548,15 +547,18 @@ export default () => (
               description={<>「計算箱が無いとやってけない！」</>}
             />
             <P>
-              村人たちは、計算箱の「
-              <CustomEmoji type="plusOne" />{' '}
-              <InlineHeader>プラス1の機能</InlineHeader>
-              」、「
-              <CustomEmoji type="minusOne" />{' '}
-              <InlineHeader>マイナス1の機能</InlineHeader>
-              」、そして今回紹介した「<Emoji>🔁</Emoji>{' '}
-              <InlineHeader>繰り返しの機能</InlineHeader>
-              」うことで、足し算や引き算を正確に行っていたのです。
+              村人たちは、計算箱の
+              <Em>
+                「<InlineHeader>1を足す機能</InlineHeader>{' '}
+                <CustomEmoji type="plusOne" />
+                」、「
+                <InlineHeader>1を引く機能</InlineHeader>{' '}
+                <CustomEmoji type="minusOne" />
+                」、そして今回紹介した「
+                <InlineHeader>繰り返しの機能</InlineHeader> <Emoji>🔁</Emoji>
+                」を組み合わせる
+              </Em>
+              ことで、足し算や引き算を正確に行っていたのです。
             </P>
             <EmojiSeparator
               nodes={[
