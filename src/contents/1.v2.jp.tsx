@@ -96,20 +96,20 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader> 「ラムダ村」は、
-                <Em>上から読んでも下から読んでも「ラムダ村」</Em>です{' '}
-                <Emoji>😉</Emoji>
-                。なぜ「ラムダ」と名付けたかは最後に説明します！
+                <Emoji>😉</Emoji> <InlineHeader>ちなみに:</InlineHeader>{' '}
+                「ラムダ村」は、
+                <Em>上から読んでも下から読んでも「ラムダ村」</Em>です。
+                なぜ「ラムダ」と名付けたかは最後に説明します！
               </P>
             </>
           )
         }
       },
       {
-        title: <></>,
+        title: <>計算箱の3つの機能</>,
         content: (
           <>
-            <P>そんな計算箱には、以下の3つの機能が備わっていました。</P>
+            <P>計算箱には、以下の3つの機能が備わっていました。</P>
             <Ol>
               <OlLi>
                 <CustomEmoji type="plusOne" /> <Strong>プラス1</Strong>の機能
@@ -130,7 +130,7 @@ export default () => (
               description={<>プラス1・マイナス1・繰り返しの機能</>}
             />
             <P>
-              今回は、最初のふたつである「
+              今回は、計算箱の「
               <Strong>
                 <CustomEmoji type="plusOne" /> プラス1の機能
               </Strong>
@@ -138,8 +138,11 @@ export default () => (
               <Strong>
                 <CustomEmoji type="minusOne" /> マイナス1の機能
               </Strong>
-              」について紹介します。
-              <Emoji>🙂</Emoji>
+              」について紹介します。「
+              <Strong>
+                <Emoji>🔁</Emoji> 繰り返しの機能
+              </Strong>
+              」については、次回で紹介します！<Emoji>🙂</Emoji>
             </P>
           </>
         )
