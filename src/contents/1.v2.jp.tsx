@@ -7,6 +7,8 @@ import {
   InlineHeader,
   Ul,
   UlLi,
+  Ol,
+  OlLi,
   Hr
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
@@ -51,29 +53,43 @@ export default () => (
             </P>
             <EmojiSeparator
               emojis={['🌲', '🙂', '🙂', '🌲']}
-              description={<>ラムダ村の村人</>}
+              description={<>ラムダ村の村人たち</>}
             />
             <P>
               ラムダ村には、代々伝わる「<Strong>計算箱</Strong>
               」という道具がありました。<InlineHeader>計算箱</InlineHeader>
               は、その名の通り<Em>算数の計算をしてくれる</Em>
-              魔法の道具です。現代の電卓のようなものだと考えていただければいいです。
+              魔法の道具です。<Em>現代の電卓のようなもの</Em>
+              だと思ってください。
             </P>
             <EmojiSeparator
               emojis={['✨', '🎁', '✨']}
-              description={<>計算箱</>}
+              description={
+                <>
+                  計算ができる魔法の道具「<Strong>計算箱</Strong>」
+                </>
+              }
             />
             <P>
               ラムダ村の人々は<Em>計算がとても苦手だったので</Em>
-              、とても簡単な計算でも計算箱に頼りきっていました。
+              、たとえば「
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />
+              」のような単純な足し算をするのにも、計算箱に頼りきっていました。
             </P>
             <EmojiSeparator
-              emojis={['🌲', '🙂', '🎁', '🙂', '🌲']}
-              description={<>計算は、計算箱にやってもらおう！</>}
+              emojis={['🙂', '🎁', '🙂']}
+              description={
+                <>
+                  俺ら計算が苦手だから、
+                  <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                  <EmojiNumber number={3} /> といった
+                  <br />
+                  単純な足し算も、計算箱がないとできない！
+                </>
+              }
             />
-            <P>
-              では、計算箱がどんなものか紹介していきましょう！<Emoji>🙂</Emoji>
-            </P>
+            <P>それでは、計算箱について詳しく説明していきます！</P>
           </>
         ),
         footer: {
@@ -89,7 +105,45 @@ export default () => (
           )
         }
       },
-
+      {
+        title: <></>,
+        content: (
+          <>
+            <P>そんな計算箱には、以下の3つの機能が備わっていました。</P>
+            <Ol>
+              <OlLi>
+                <CustomEmoji type="plusOne" /> <Strong>プラス1</Strong>の機能
+              </OlLi>
+              <OlLi>
+                <CustomEmoji type="minusOne" /> <Strong>マイナス1</Strong>の機能
+              </OlLi>
+              <OlLi>
+                <Emoji>🔁</Emoji> <Strong>繰り返し</Strong>の機能
+              </OlLi>
+            </Ol>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="plusOne" />,
+                <CustomEmoji type="minusOne" />,
+                <Emoji>🔁</Emoji>
+              ]}
+              description={<>プラス1・マイナス1・繰り返しの機能</>}
+            />
+            <P>
+              今回は、最初のふたつである「
+              <Strong>
+                <CustomEmoji type="plusOne" /> プラス1の機能
+              </Strong>
+              」と「
+              <Strong>
+                <CustomEmoji type="minusOne" /> マイナス1の機能
+              </Strong>
+              」について紹介します。
+              <Emoji>🙂</Emoji>
+            </P>
+          </>
+        )
+      },
       {
         title: <>計算箱の例</>,
         content: (
