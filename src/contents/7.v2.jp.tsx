@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import { P, Em, Strong, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -34,7 +34,10 @@ export default () => (
                           これから出す問題に答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>
-                      <P>ベンケイ、問題を説明するんだ！</P>
+                      <P>
+                        <Strong>この問題は非常に難しい</Strong>
+                        から覚悟するんだな。ベンケイ、問題を説明するんだ！
+                      </P>
                     </>
                   )
                 },
@@ -473,8 +476,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りです。本稿のはじめに説明した通り、計算箱には 「
-                        <Strong>1を足す機能</Strong>{' '}
+                        その通りです。復習になりますが、本稿のはじめに説明した通り、計算箱には
+                        「<Strong>1を足す機能</Strong>{' '}
                         <CustomEmoji type="plusOne" />
                         」がありますよね。
                       </P>
@@ -483,6 +486,19 @@ export default () => (
                 }
               ]}
             />
+            <R.Lizi>
+              計算箱には「<Strong>1を足す機能</Strong>{' '}
+              <CustomEmoji type="plusOne" />
+              」がある。
+              <br />
+              たとえばこちらを実行すると…
+            </R.Lizi>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm>
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算してくれる。
+            </R.Pmdm>
+            <Hr />
           </>
         )
       },
