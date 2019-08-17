@@ -96,14 +96,14 @@ export default () => (
                 }
               ]}
             />
-            <R.Atfs>
+            <R.Jguj>
               それぞれの <CustomEmoji type="questionFoodGrey" /> に、
               <br />
               <Strong>ある法則に基づいて</Strong>料理を入れると、
               <br />
               <H args={{ name: 'specialEffect' }} />
               がある弁当箱になる
-            </R.Atfs>
+            </R.Jguj>
             <BubbleQuotes
               quotes={[
                 {
@@ -219,7 +219,8 @@ export default () => (
               ]}
             />
             <R.Fljg>
-              <EmojiNumber number={1} /> に変換できる弁当箱と合体
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱と合体
             </R.Fljg>
             <BubbleQuotes
               quotes={[
@@ -265,8 +266,9 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Em>
-                            先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
-                            がたくさんある弁当箱を合体させて、
+                            先ほどの
+                            <H args={{ name: 'specialEffect' }} />
+                            がある弁当箱を合体させて、
                           </Em>
                         </UlLi>
                         <UlLi>
@@ -290,8 +292,8 @@ export default () => (
             <R.Jiua>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              <CustomEmoji type="questionFoodGrey" />{' '}
-              がたくさんある弁当箱を合体させ…
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱を合体させ…
             </R.Jiua>
             <ExpressionRunnerSeparator />
             <R.Pmdm>
@@ -312,33 +314,6 @@ export default () => (
                           <EmojiNumber number={2} /> になった
                         </Strong>
                         というわけです。
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>なるほど。</P>
-                      <P>
-                        それで、
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        にはそれぞれ何が入るか、そろそろ教えてくれる？
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        <Em>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に何が入るかはまだ秘密
-                        </Em>
-                        です。とりあえず読み進めてください！
                       </P>
                     </>
                   )
@@ -407,8 +382,9 @@ export default () => (
                       <P>
                         この弁当箱も、
                         <Em>
-                          先ほどの <CustomEmoji type="questionFoodGrey" />{' '}
-                          がたくさんある弁当箱と合体させてみました。
+                          先ほどの
+                          <H args={{ name: 'specialEffect' }} />
+                          がある弁当箱と合体させてみました。
                         </Em>
                       </P>
                     </>
@@ -417,7 +393,8 @@ export default () => (
               ]}
             />
             <R.Akug>
-              <CustomEmoji type="questionFoodGrey" /> がたくさんある弁当箱と合体
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱と合体
             </R.Akug>
             <BubbleQuotes
               quotes={[
@@ -425,14 +402,6 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        繰り返しますが、
-                        <Em>
-                          それぞれの
-                          <CustomEmoji type="questionFoodGrey" /> に何が入るかは
-                          <Strong>まだ秘密</Strong>です。
-                        </Em>
-                      </P>
                       <P>
                         こちらを「
                         <Strong>
@@ -472,8 +441,8 @@ export default () => (
             <R.Aone>
               <EmojiNumber number={2} /> に変換できる弁当箱と、
               <br />
-              <CustomEmoji type="questionFoodGrey" />{' '}
-              がたくさんある弁当箱を合体させ…
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱を合体させ…
             </R.Aone>
             <ExpressionRunnerSeparator />
             <R.Qsoa>
@@ -587,8 +556,8 @@ export default () => (
             <R.Jiua>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              <CustomEmoji type="questionFoodGrey" />{' '}
-              がたくさんある弁当箱を合体させ…
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱を合体させ…
             </R.Jiua>
             <ExpressionRunnerSeparator />
             <R.Pmdm>
@@ -600,8 +569,8 @@ export default () => (
             <R.Aone>
               <EmojiNumber number={2} /> に変換できる弁当箱と、
               <br />
-              <CustomEmoji type="questionFoodGrey" />{' '}
-              がたくさんある弁当箱を合体させ…
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱を合体させ…
             </R.Aone>
             <ExpressionRunnerSeparator />
             <R.Qsoa>
@@ -617,13 +586,11 @@ export default () => (
                     <>
                       <P>
                         つまり、
-                        <Strong>
-                          この <CustomEmoji type="questionFoodGrey" />{' '}
-                          がたくさんある弁当箱は、 計算箱における{' '}
-                          <CustomEmoji type="plusOne" />{' '}
-                          と同じく「1を足す」効果がある
-                        </Strong>
-                        のです。
+                        <H args={{ name: 'specialEffect' }} />
+                        とは、計算箱における <CustomEmoji type="plusOne" />{' '}
+                        と同じく、
+                        <Strong>「1を足す」効果</Strong>
+                        だと言えます。
                       </P>
                     </>
                   )
@@ -634,9 +601,9 @@ export default () => (
               <Strong>計算箱</Strong>において「1を足す」効果がある
             </R.Biit>
             <ExpressionRunnerSeparator doubleArrow />
-            <R.Envj>
+            <R.Jguj>
               <Strong>弁当箱</Strong>において「1を足す」効果がある
-            </R.Envj>
+            </R.Jguj>
           </>
         )
       },
@@ -653,8 +620,9 @@ export default () => (
                       <P>
                         では、ここで問題です。
                         <Strong>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          には、どういう法則で料理が入るでしょう？
+                          この弁当箱に、どのような法則に基づいて{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に料理を入れると…
                         </Strong>
                       </P>
                     </>
@@ -662,40 +630,34 @@ export default () => (
                 }
               ]}
             />
-            <R.Elcl>
+            <R.Envj>
               <Strong>
-                <CustomEmoji type="questionFoodGrey" />{' '}
-                には、どういう法則で料理が入る？
+                どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
+                に料理を入れると…
               </Strong>
-            </R.Elcl>
+            </R.Envj>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'surprised',
-                  children: (
-                    <>
-                      <P>な、なんだと…？それが問題なのか？</P>
-                    </>
-                  )
-                },
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        はい。
-                        <Em>
-                          だから先ほど、「{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に何が入るかは秘密」と言っていたのです。
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に何が入るかを当ててもらうのが問題
-                        </Em>
-                        ですから。
+                        先ほどのような、
+                        <Strong>
+                          「1を足す効果」がある弁当箱になるでしょう？
+                        </Strong>
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Jguj>
+              <Strong>「1を足す」効果がある弁当箱になる？</Strong>
+            </R.Jguj>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (

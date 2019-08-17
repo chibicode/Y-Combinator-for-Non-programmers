@@ -72,7 +72,6 @@ export interface ExpressionRunnerProps {
   superFastForward: boolean
   highlightNumber?: number
   convert?: 'toBentoBox' | 'toMathBox' | 'toMathBoxPlay'
-  specialEffect?: boolean
 }
 
 export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {

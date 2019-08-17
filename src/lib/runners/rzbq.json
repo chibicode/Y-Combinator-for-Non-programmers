@@ -175,9 +175,7 @@
             "type": "function"
           },
           "type": "function",
-          "meta": {
-            "focused": true
-          }
+          "meta": "focused"
         },
         "state": "alphaConvertDone",
         "type": "call",
@@ -362,9 +360,7 @@
             "type": "function"
           },
           "type": "function",
-          "meta": {
-            "focused": true
-          }
+          "meta": "focused"
         },
         "state": "betaReducePreviewBefore",
         "type": "call",
@@ -598,9 +594,7 @@
             "type": "function"
           },
           "type": "function",
-          "meta": {
-            "focused": true
-          }
+          "meta": "focused"
         },
         "state": "betaReducePreviewAfter",
         "type": "call",
@@ -833,9 +827,7 @@
             "type": "function"
           },
           "type": "function",
-          "meta": {
-            "focused": true
-          }
+          "meta": "focused"
         },
         "state": "betaReducePreviewCrossed",
         "type": "call",

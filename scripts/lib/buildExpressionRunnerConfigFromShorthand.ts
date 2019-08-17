@@ -54,7 +54,6 @@ export interface ExpressionRunnerConfig {
   superFastForward: boolean
   highlightNumber?: number
   convert?: ExpressionRunnerProps['convert']
-  specialEffect?: boolean
 }
 
 const expressionRunnerDefaults = {
@@ -160,8 +159,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       showOnlyFocused,
       highlightFunctions,
       argPriorityAggHighlights,
-      funcPriorityAggHighlights,
-      specialEffect
+      funcPriorityAggHighlights
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerSimpleConfigDefault
@@ -190,8 +188,7 @@ const buildExpressionRunnerConfigFromShorthand = (
         initialState
       }),
       argPriorityAggHighlights,
-      funcPriorityAggHighlights,
-      specialEffect
+      funcPriorityAggHighlights
     }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
     const {

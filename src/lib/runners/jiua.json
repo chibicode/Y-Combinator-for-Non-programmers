@@ -130,7 +130,8 @@
             },
             "type": "function"
           },
-          "type": "function"
+          "type": "function",
+          "meta": "specialEffect"
         },
         "state": "default",
         "type": "call",

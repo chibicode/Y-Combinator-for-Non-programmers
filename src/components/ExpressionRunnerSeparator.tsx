@@ -17,7 +17,7 @@ const ExpressionRunnerSeparator = ({
     `}
   >
     {doubleArrow ? (
-      <ExpressionRunnerCaptionWrapper>
+      <ExpressionRunnerCaptionWrapper skipMargin>
         <Emoji size="mdlg">↕️</Emoji> <H args={{ name: 'sameAddRole' }} />{' '}
         <Emoji size="mdlg">↕️</Emoji>
       </ExpressionRunnerCaptionWrapper>

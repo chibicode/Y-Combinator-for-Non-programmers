@@ -38,11 +38,7 @@ export const numberParams = (
       arg: x,
       body: nest(f, x, n)
     },
-    meta: focused
-      ? {
-          focused
-        }
-      : undefined
+    meta: focused ? 'focused' : undefined
   }
 }
 
@@ -64,7 +60,8 @@ export const succParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,
   c: VariableNames | HighlightedVariableExpressionParams,
-  focused?: boolean
+  focused?: boolean,
+  specialEffect?: boolean
 ): FunctionExpressionParams => {
   return {
     arg: a,
@@ -75,11 +72,7 @@ export const succParams = (
         body: [b, [a, b, c]]
       }
     },
-    meta: focused
-      ? {
-          focused
-        }
-      : undefined
+    meta: specialEffect ? 'specialEffect' : focused ? 'focused' : undefined
   }
 }
 

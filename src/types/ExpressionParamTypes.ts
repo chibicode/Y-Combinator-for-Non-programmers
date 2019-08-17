@@ -1,11 +1,11 @@
 import { VariableNames } from 'src/types/VariableNames'
 import {
-  FunctionExpressionMeta,
   VariableShorthandBinary,
   VariableShorthandUnary,
   VariableShorthandNumber,
   VariableShorthandFunc,
-  ConditionalExpression
+  ConditionalExpression,
+  FunctionExpression
 } from 'src/types/ExpressionTypes'
 
 export interface HighlightedVariableExpressionParams {
@@ -47,7 +47,7 @@ export type VariableExpressionParams = VariableNames
 export interface FunctionExpressionParams {
   readonly arg: VariableExpressionParams | HighlightedVariableExpressionParams
   readonly body: ExpressionParams
-  readonly meta?: FunctionExpressionMeta
+  readonly meta?: FunctionExpression['meta']
 }
 // https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540
 export interface CallExpressionParams extends ReadonlyArray<ExpressionParams> {}

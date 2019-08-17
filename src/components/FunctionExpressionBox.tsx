@@ -8,6 +8,7 @@ import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
 import maxNestedFunctionDepth from 'scripts/lib/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
+import starSvg from 'src/images/star.url.svg'
 
 interface FunctionExpressionBoxProps {
   expression: FunctionExpression
@@ -17,13 +18,11 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
   const expressionRunnerContext = useContext(ExpressionRunnerContext)
   const visible =
     !expressionRunnerContext.showOnlyFocused ||
-    (expressionRunnerContext.showOnlyFocused &&
-      expression.meta &&
-      expression.meta.focused)
+    (expressionRunnerContext.showOnlyFocused && expression.meta === 'focused')
   const innerShowOnlyFocused =
     expressionRunnerContext.showOnlyFocused &&
     expression.meta &&
-    expression.meta.focused
+    expression.meta === 'focused'
       ? false
       : expressionRunnerContext.showOnlyFocused
 
@@ -36,9 +35,16 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
         }}
       >
         <Flex
-          css={css`
-            flex: 1;
-          `}
+          css={[
+            css`
+              flex: 1;
+            `,
+            expression.meta === 'specialEffect' &&
+              css`
+                background-image: url(${starSvg});
+                background-size: 3em;
+              `
+          ]}
         >
           <FlexCenter
             css={css`

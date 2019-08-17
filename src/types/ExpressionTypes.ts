@@ -309,15 +309,11 @@ export interface CallExpression {
   readonly priority: number
 }
 
-export interface FunctionExpressionMeta {
-  readonly focused: boolean
-}
-
 export interface FunctionExpression {
   readonly type: 'function'
   readonly arg: VariableExpression
   readonly body: Expression
-  readonly meta?: FunctionExpressionMeta
+  readonly meta?: 'focused' | 'specialEffect'
 }
 
 export interface ConditionalExpression {

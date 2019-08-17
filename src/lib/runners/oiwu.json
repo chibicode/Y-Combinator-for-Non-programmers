@@ -175,9 +175,7 @@
             "type": "function"
           },
           "type": "function",
-          "meta": {
-            "focused": true
-          }
+          "meta": "focused"
         },
         "state": "showFuncUnbound",
         "type": "call",

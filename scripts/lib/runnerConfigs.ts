@@ -3440,8 +3440,13 @@ export const envj: ExpressionRunnerShorthandConfig = {
 export const atfs: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.epmt,
-  showPriorities: true,
-  specialEffect: true
+  showPriorities: true
+}
+
+export const jguj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.yrgv,
+  showPriorities: true
 }
 
 export const elcl: ExpressionRunnerShorthandConfig = {
