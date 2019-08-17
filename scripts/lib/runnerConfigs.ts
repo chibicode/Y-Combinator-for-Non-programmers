@@ -3496,6 +3496,13 @@ export const spga: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
 }
 
+export const akug: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pxae,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const vfdw: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [

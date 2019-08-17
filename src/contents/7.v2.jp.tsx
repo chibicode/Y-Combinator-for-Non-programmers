@@ -141,7 +141,10 @@ export default () => (
                     <>
                       <P>
                         この弁当箱を、
-                        <Strong>先ほどの弁当箱と合体させてみる</Strong>
+                        <Strong>
+                          先ほどの <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と合体させてみる
+                        </Strong>
                         と、次のようになります。
                       </P>
                     </>
@@ -149,7 +152,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Fljg>先ほどの弁当箱と合体</R.Fljg>
+            <R.Fljg>
+              <EmojiNumber number={1} /> に変換できる弁当箱と合体
+            </R.Fljg>
             <BubbleQuotes
               quotes={[
                 {
@@ -325,6 +330,8 @@ export default () => (
               <EmojiNumber number={2} />
               になる
             </R.Spga>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm />
             <BubbleQuotes
               quotes={[
                 {
@@ -338,6 +345,20 @@ export default () => (
                           がたくさんある弁当箱と合体させてみました。
                         </Em>
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Akug>
+              <CustomEmoji type="questionFoodGrey" /> がたくさんある弁当箱と合体
+            </R.Akug>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         繰り返しますが、
                         <Em>
