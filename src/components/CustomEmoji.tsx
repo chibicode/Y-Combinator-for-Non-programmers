@@ -1,6 +1,8 @@
 import React from 'react'
 import PlusOneSvg from 'src/components/PlusOneSvg'
 import MinusOneSvg from 'src/components/MinusOneSvg'
+import PlusOneOrangeSvg from 'src/components/PlusOneOrangeSvg'
+import MinusOneOrangeSvg from 'src/components/MinusOneOrangeSvg'
 import BlankNumberSvg from 'src/components/BlankNumberSvg'
 import VerticalDotDotDotSvg from 'src/components/VerticalDotDotDotSvg'
 import QuestionFoodGreySvg from 'src/components/QuestionFoodGreySvg'
@@ -24,6 +26,8 @@ const CustomEmoji = ({
     | 'questionFoodGrey'
     | 'questionFoodRed'
     | 'twenty'
+    | 'plusOneOrange'
+    | 'minusOneOrange'
 }) => {
   const Component = {
     plusOne: PlusOneSvg,
@@ -34,7 +38,9 @@ const CustomEmoji = ({
     horizontalDotDotDotRed: HorizontalDotDotDotRedSvg,
     questionFoodGrey: QuestionFoodGreySvg,
     questionFoodRed: QuestionFoodRedSvg,
-    twenty: TwentySvg
+    twenty: TwentySvg,
+    plusOneOrange: PlusOneOrangeSvg,
+    minusOneOrange: MinusOneOrangeSvg
   }[type]
   return <Emoji {...emojiProps} customSvg={<Component />} />
 }

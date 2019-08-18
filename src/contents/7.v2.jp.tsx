@@ -86,7 +86,7 @@ export default () => (
                         <Strong>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           に、ある法則に基づいて料理を入れると、
-                          <H args={{ name: 'specialEffect' }} />
+                          <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱になります。
                         </Strong>
                       </P>
@@ -100,7 +100,7 @@ export default () => (
               <br />
               <Strong>ある法則に基づいて</Strong>料理を入れると、
               <br />
-              <H args={{ name: 'specialEffect' }} />
+              <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱になる
             </R.Jguj>
             <BubbleQuotes
@@ -110,7 +110,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        背景に <Emoji>⭐️</Emoji> の模様がついた！
+                        背景に <CustomEmoji type="plusOneOrange" size="mdlg" />{' '}
+                        の模様がついた！
                       </P>
                     </>
                   )
@@ -120,18 +121,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。背景にある <Emoji>⭐️</Emoji> の模様は単に、
-                        <H args={{ name: 'specialEffect' }} />
+                        そうですね。背景にある{' '}
+                        <CustomEmoji type="plusOneOrange" size="mdlg" />{' '}
+                        の模様は単に、
+                        <H args={{ name: 'plusOneEffect' }} />
                         があるということを表しているだけです。
-                      </P>
-                      <P>
-                        繰り返しますが、
-                        <Strong>
-                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れたときに限り
-                        </Strong>
-                        、<H args={{ name: 'specialEffect' }} />
-                        がある弁当箱になります。
                       </P>
                     </>
                   )
@@ -142,7 +136,7 @@ export default () => (
                     <>
                       <P>
                         その
-                        <H args={{ name: 'specialEffect' }} />
+                        <H args={{ name: 'plusOneEffect' }} />
                         ってどういう効果なの？
                       </P>
                     </>
@@ -218,7 +212,7 @@ export default () => (
                     <>
                       <P>
                         では上の弁当箱を、先ほどの
-                        <H args={{ name: 'specialEffect' }} />
+                        <H args={{ name: 'plusOneEffect' }} />
                         がある弁当箱と<Strong>合体させてみます</Strong>。
                       </P>
                     </>
@@ -227,7 +221,7 @@ export default () => (
               ]}
             />
             <R.Fljg>
-              <H args={{ name: 'specialEffect' }} />
+              <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱と合体
             </R.Fljg>
             <BubbleQuotes
@@ -275,7 +269,7 @@ export default () => (
                         <UlLi>
                           <Em>
                             先ほどの
-                            <H args={{ name: 'specialEffect' }} />
+                            <H args={{ name: 'plusOneEffect' }} />
                             がある弁当箱を合体させて、
                           </Em>
                         </UlLi>
@@ -300,7 +294,7 @@ export default () => (
             <R.Jiua>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              <H args={{ name: 'specialEffect' }} />
+              <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱を合体させ…
             </R.Jiua>
             <ExpressionRunnerSeparator />
@@ -391,7 +385,7 @@ export default () => (
                         この弁当箱も、
                         <Em>
                           先ほどの
-                          <H args={{ name: 'specialEffect' }} />
+                          <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱と合体させてみました。
                         </Em>
                       </P>
@@ -401,7 +395,7 @@ export default () => (
               ]}
             />
             <R.Akug>
-              <H args={{ name: 'specialEffect' }} />
+              <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱と合体
             </R.Akug>
             <BubbleQuotes
@@ -449,7 +443,7 @@ export default () => (
             <R.Aone>
               <EmojiNumber number={2} /> に変換できる弁当箱と、
               <br />
-              <H args={{ name: 'specialEffect' }} />
+              <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱を合体させ…
             </R.Aone>
             <ExpressionRunnerSeparator />
@@ -481,36 +475,17 @@ export default () => (
         )
       },
       {
-        title: <>1を足す効果</>,
+        type: 'summary',
+        title: <>まとめ</>,
         content: (
           <>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <Em>
-                          <EmojiNumber number={1} /> が{' '}
-                          <EmojiNumber number={2} /> になり、
-                          <EmojiNumber number={2} /> が{' '}
-                          <EmojiNumber number={3} /> になる
-                        </Em>
-                        ということは…
-                      </P>
-                      <P>
-                        <Strong>実質、「1を足す」ことが行われている</Strong>
-                        のかな？
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'dog',
                   children: (
                     <>
-                      <P>その通りです。つまり、</P>
+                      <P>まとめると、</P>
                       <Ul>
                         <UlLi>
                           <Em>
@@ -520,7 +495,7 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Em>
-                            <H args={{ name: 'specialEffect' }} />
+                            <H args={{ name: 'plusOneEffect' }} />
                             がある弁当箱を合体させ、
                           </Em>
                         </UlLi>
@@ -530,14 +505,14 @@ export default () => (
                             すると、
                           </Em>
                         </UlLi>
-                        <UlLi>
-                          <Em>
-                            結果は <CustomEmoji type="blankNumber" />{' '}
-                            <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
-                            になるのです。
-                          </Em>
-                        </UlLi>
                       </Ul>
+                      <P>
+                        <Em>
+                          結果は <CustomEmoji type="blankNumber" />{' '}
+                          <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
+                        </Em>
+                        のです。
+                      </P>
                     </>
                   )
                 }
@@ -546,7 +521,7 @@ export default () => (
             <R.Qrgc>
               <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
               <br />
-              <H args={{ name: 'specialEffect' }} />
+              <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱を合体させ…
             </R.Qrgc>
             <ExpressionRunnerSeparator />
@@ -556,6 +531,17 @@ export default () => (
               すると、結果は <CustomEmoji type="blankNumber" />{' '}
               <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
             </R.Jxvy>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            計算箱の <CustomEmoji type="plusOne" /> と同じようなもの
+          </>
+        ),
+        content: (
+          <>
             <BubbleQuotes
               quotes={[
                 {
@@ -588,14 +574,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        すなわち、この <H args={{ name: 'specialEffect' }} />
+                        すなわち、この <H args={{ name: 'plusOneEffect' }} />
                         がある弁当箱は…
-                      </P>
-                      <P>
-                        <Strong>
-                          計算箱における <CustomEmoji type="plusOne" />{' '}
-                          と同じ「1を足す」効果を持っていると言えます。
-                        </Strong>
                       </P>
                     </>
                   )
@@ -603,32 +583,33 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              この <H args={{ name: 'specialEffect' }} />
+              この <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱は…
             </R.Jguj>
-            <R.Biit>
-              <Strong>
-                計算箱における、
-                <CustomEmoji type="plusOne" /> と同じ
-              </Strong>
-            </R.Biit>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
-                        なるほど。大雑把に言えば、
-                        <H args={{ name: 'specialEffect' }} />
-                        とはすなわち「<Strong>1を足す効果</Strong>
-                        」ということか。
+                        <Strong>
+                          計算箱における <CustomEmoji type="plusOne" />{' '}
+                          と同じようなもの
+                        </Strong>
+                        、と言えるでしょう。
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Biit>
+              <Strong>
+                <Emoji>🎁</Emoji> 計算箱における、
+                <CustomEmoji type="plusOne" /> と同じようなもの
+              </Strong>
+            </R.Biit>
           </>
         )
       },
@@ -670,7 +651,8 @@ export default () => (
                       <P>
                         先ほどのような、
                         <Strong>
-                          「1を足す効果」がある弁当箱になるでしょう？
+                          <H args={{ name: 'plusOneEffect' }} />
+                          がある弁当箱になるでしょう？
                         </Strong>
                       </P>
                     </>
@@ -679,7 +661,10 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              <Strong>「1を足す」効果がある弁当箱になる？</Strong>
+              <Strong>
+                <H args={{ name: 'plusOneEffect' }} />
+                がある弁当箱になる？
+              </Strong>
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -693,10 +678,12 @@ export default () => (
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           に料理を入れた時に限り
                         </Strong>
-                        、「1を足す効果」 がある弁当箱になります。
-                        <Em>
-                          それがどんな法則が、当ててみよう！という問題です。
-                        </Em>
+                        、<H args={{ name: 'plusOneEffect' }} />
+                        がある弁当箱になります。
+                      </P>
+                      <P>
+                        <Em>それがどんな法則が、当ててみよう！</Em>
+                        という問題です。
                       </P>
                     </>
                   )
@@ -706,9 +693,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
-                          この問題こそが、以前から話していた「難しい問題」だ。これを解けたら、約束通り計算箱を返してやろう！
-                        </Em>
+                        この問題こそが、以前から話していた「難しい問題」だ。
+                        <Em>これを解けたら、約束通り計算箱を返してやろう！</Em>
                       </P>
                     </>
                   )

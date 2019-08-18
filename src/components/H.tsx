@@ -1964,13 +1964,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'specialEffect') {
+  if (args.name === 'plusOneEffect') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <>
-          「<Strong>特殊な効果</Strong> <Emoji>⭐️</Emoji>」
+          「<Strong>1を足す効果</Strong> <CustomEmoji type="plusOneOrange" />」
         </>
       )
     }

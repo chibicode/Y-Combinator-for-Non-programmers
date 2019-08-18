@@ -196,7 +196,7 @@
             "type": "function"
           },
           "type": "function",
-          "meta": "specialEffect"
+          "meta": "plusOneEffect"
         },
         "state": "default",
         "type": "call",

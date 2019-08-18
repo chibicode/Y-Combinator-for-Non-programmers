@@ -72,7 +72,7 @@ export const succParams = (
         body: [b, [a, b, c]]
       }
     },
-    meta: specialEffect ? 'specialEffect' : focused ? 'focused' : undefined
+    meta: specialEffect ? 'plusOneEffect' : focused ? 'focused' : undefined
   }
 }
 

@@ -8,7 +8,7 @@ import FlexCenter from 'src/components/FlexCenter'
 import ExpressionBox from 'src/components/ExpressionBox'
 import maxNestedFunctionDepth from 'scripts/lib/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
-import starSvg from 'src/images/star.url.svg'
+import plusOneSvg from 'src/images/plusOne.url.svg'
 
 interface FunctionExpressionBoxProps {
   expression: FunctionExpression
@@ -39,10 +39,10 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
             css`
               flex: 1;
             `,
-            expression.meta === 'specialEffect' &&
+            expression.meta === 'plusOneEffect' &&
               css`
-                background-image: url(${starSvg});
-                background-size: 3em;
+                background-image: url(${plusOneSvg});
+                background-size: 4em;
               `
           ]}
         >
