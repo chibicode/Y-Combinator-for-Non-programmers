@@ -134,6 +134,5 @@
   "argPriorityAggHighlights": [],
   "funcPriorityAggHighlights": [],
   "highlightFunctions": false,
-  "superFastForward": false,
-  "specialEffect": true
+  "superFastForward": false
 }

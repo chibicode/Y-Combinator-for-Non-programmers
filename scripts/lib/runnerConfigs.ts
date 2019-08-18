@@ -3557,3 +3557,16 @@ export const qsoa: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qjcv,
   showPriorities: true
 }
+
+export const qrgc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.cyhx,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const jxvy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hswh,
+  showPriorities: true
+}

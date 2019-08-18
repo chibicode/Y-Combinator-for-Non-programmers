@@ -22,7 +22,10 @@ import {
   VariableShorthandNumberParams,
   ConditionalExpressionParams,
   MagicalVariableParams,
-  RepeatExpressionParams
+  RepeatExpressionParams,
+  QuestionPlusOrMinusOneParams,
+  QuestionShorthandNumberAfterConvertParams,
+  VariableShorthandFuncParams
 } from 'src/types/ExpressionParamTypes'
 import {
   NonExecutableStepCall,
@@ -102,6 +105,15 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: RepeatExpressionParams
 ): RepeatExpression
+export default function buildExpressionFromParams(
+  expressionParams: QuestionPlusOrMinusOneParams
+): StepVariable
+export default function buildExpressionFromParams(
+  expressionParams: QuestionShorthandNumberAfterConvertParams
+): StepVariable
+export default function buildExpressionFromParams(
+  expressionParams: VariableShorthandFuncParams
+): StepVariable
 export default function buildExpressionFromParams(
   expressionParams: ExpressionParams
 ): StepChild

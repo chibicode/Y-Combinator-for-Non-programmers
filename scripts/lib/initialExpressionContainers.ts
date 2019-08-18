@@ -2070,3 +2070,20 @@ export const kgoi = initializeExpressionContainer([
     shorthandNumberAfterConvert: true
   }
 ])
+
+export const cyhx = initializeExpressionContainer([
+  succParams(
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    false,
+    true
+  ),
+  {
+    shorthandNumberAfterConvert: true
+  }
+])
+
+export const hswh = initializeExpressionContainer({
+  shorthandNumberPlusOrMinusOne: 'plus'
+})

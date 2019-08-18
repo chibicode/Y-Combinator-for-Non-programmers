@@ -109,7 +109,44 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     ExpressionRunnerContext
   )
 
-  if (expression.name === 'someNumber') {
+  if (expression.shorthandNumberAfterConvert) {
+    return (
+      <div
+        css={css`
+          margin-top: ${spaces(0.125)};
+          padding: 0.25em 0;
+        `}
+      >
+        <span
+          css={css`
+            font-weight: bold;
+            text-align: center;
+            display: block;
+          `}
+        >
+          {expression.shorthandNumber ? (
+            <EmojiNumber number={expression.shorthandNumber} />
+          ) : (
+            <CustomEmoji type="blankNumber" />
+          )}
+        </span>
+        <span
+          css={css`
+            font-size: 0.6em;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+          `}
+        >
+          <H
+            args={{
+              name: 'canBeConverted'
+            }}
+          />
+        </span>
+      </div>
+    )
+  } else if (expression.name === 'someNumber') {
     return (
       <div>
         <SecretCodeLabel number={expression.shorthandNumber} />
@@ -142,6 +179,17 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     return (
       <div>
         <CustomEmoji type="blankNumber" size="sm" />
+        {expression.shorthandNumberPlusOrMinusOne && (
+          <>
+            {' '}
+            <Emoji size="sm">
+              {expression.shorthandNumberPlusOrMinusOne === 'plus'
+                ? '➕'
+                : '➖'}
+            </Emoji>{' '}
+            <EmojiNumber size="sm" number={1} />
+          </>
+        )}
       </div>
     )
   } else if (expression.name === 'questionV2') {
@@ -205,42 +253,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         <CustomEmoji type="minusOne" size="sm" />
       </div>
     )
-  } else if (
-    expression.shorthandNumberAfterConvert &&
-    expression.shorthandNumber
-  ) {
-    return (
-      <div
-        css={css`
-          margin-top: ${spaces(0.125)};
-          padding: 0.25em 0;
-        `}
-      >
-        <span
-          css={css`
-            font-weight: bold;
-            text-align: center;
-            display: block;
-          `}
-        >
-          <EmojiNumber number={expression.shorthandNumber} />
-        </span>
-        <span
-          css={css`
-            font-size: 0.6em;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-          `}
-        >
-          <H
-            args={{
-              name: 'canBeConverted'
-            }}
-          />
-        </span>
-      </div>
-    )
   } else {
     return (
       <span
@@ -251,17 +263,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         {expression.shorthandNumber !== undefined ? (
           <>
             <EmojiNumber size="sm" number={expression.shorthandNumber} />
-            {expression.shorthandNumberPlusOrMinusOne && (
-              <>
-                {' '}
-                <Emoji size="sm">
-                  {expression.shorthandNumberPlusOrMinusOne === 'plus'
-                    ? '➕'
-                    : '➖'}
-                </Emoji>{' '}
-                <EmojiNumber size="sm" number={1} />
-              </>
-            )}
           </>
         ) : (
           <Emoji size="sm">

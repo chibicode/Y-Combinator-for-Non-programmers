@@ -518,6 +518,9 @@ export default () => (
                 }
               ]}
             />
+            <R.Qrgc />
+            <ExpressionRunnerSeparator />
+            <R.Jxvy />
             <R.Lizi>
               計算箱には「<Strong>1を足す機能</Strong>{' '}
               <CustomEmoji type="plusOne" />
