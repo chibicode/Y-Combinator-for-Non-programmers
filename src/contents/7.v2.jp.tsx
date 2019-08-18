@@ -12,7 +12,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
-// import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiWithText from 'src/components/EmojiWithText'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
@@ -740,6 +740,48 @@ export default () => (
                         <Em>
                           問題を完全に理解できた自信がないし、どうやって解けばいいかサッパリ分からない！
                         </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>大丈夫、安心してください！</P>
+                      <P>
+                        <Strong>
+                          試しに、
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に適当な料理を入れてみると、問題を理解できると思います。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              試しに、
+              <CustomEmoji type="questionFoodGrey" />{' '}
+              に適当な料理を入れてみよう！
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        わ、わかった。じゃあとりあえず、
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        に適当な料理を入れてみよう。
+                      </P>
+                      <P>
+                        <EmojiWithText letter="a" />、
+                        <EmojiWithText letter="b" />、
+                        <EmojiWithText letter="c" />
+                        を適当に入れてみたよ。
                       </P>
                     </>
                   )
