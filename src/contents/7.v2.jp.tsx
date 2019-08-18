@@ -8,6 +8,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -793,14 +794,76 @@ export default () => (
               <EmojiForLetter letter="c" /> を適当に{' '}
               <CustomEmoji type="questionFoodGrey" /> に入れてみた
             </R.Lwoq>
-            <P>
-              <H args={{ name: 'play' }} />
-              した結果、
-              <EmojiNumber number={2} /> に変換できる弁当箱であれば成功。
-              <H args={{ name: 'plusOneEffect' }} />
-              があるということ。
-            </P>
-            <R.Poii />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>問題をもう一度解説すると、</P>
+                      <Ul>
+                        <UlLi>
+                          上の弁当箱を
+                          <Em>
+                            ある数字 <CustomEmoji type="blankNumber" />{' '}
+                            に変換できる弁当箱と合体させ、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            <H args={{ name: 'runAndConertToMathbox' }} />
+                            して、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                            <EmojiNumber number={1} /> になれば
+                            <Strong>成功</Strong> <Emoji>🎉</Emoji>
+                            、それ以外なら<Strong>失敗</Strong>{' '}
+                            <Emoji>😭</Emoji>
+                          </Em>
+                        </UlLi>
+                      </Ul>
+                      <P>ということになります。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Tjaf>
+              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
+              <br />
+              先ほどの弁当箱を合体させ…
+            </R.Tjaf>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              して、結果が <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> になれば<Strong>成功</Strong>{' '}
+              <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど。
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があれば<Strong>成功</Strong> <Emoji>🎉</Emoji>、
+                        それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
+                        というわけだね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

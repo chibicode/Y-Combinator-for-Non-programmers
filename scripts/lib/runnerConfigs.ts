@@ -3584,3 +3584,10 @@ export const poii: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   showPriorities: true
 }
+
+export const tjaf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bjzr,
+  showPriorities: true,
+  variableSize: 'md'
+}

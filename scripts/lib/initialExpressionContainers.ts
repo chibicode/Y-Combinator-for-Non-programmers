@@ -2112,3 +2112,19 @@ export const kwqc = initializeExpressionContainer([
   },
   numberParams('d', 'e', 1)
 ])
+
+export const bjzr = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['b', ['a', 'b', 'b']]
+      }
+    }
+  },
+  {
+    shorthandNumberAfterConvert: true
+  }
+])
