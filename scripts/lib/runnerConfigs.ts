@@ -3598,3 +3598,13 @@ export const nuco: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const dhiu: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  skipToTheEnd: false,
+  variableSize: 'md',
+  showPriorities: true,
+  initialState: 'active',
+  lastAllowedExpressionState: 'default'
+}

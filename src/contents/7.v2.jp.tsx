@@ -12,6 +12,7 @@ import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionO
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -954,11 +955,23 @@ export default () => (
                           }}
                         />
                       </P>
+                      <P>解説のため、何度か止めながら見ていきます！</P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Dhiu>
+              初級その5で説明した通り、
+              <br />
+              <Strong>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアがふたつ以上ある場合は、
+                <br />
+                一番左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+            </R.Dhiu>
           </>
         )
       }

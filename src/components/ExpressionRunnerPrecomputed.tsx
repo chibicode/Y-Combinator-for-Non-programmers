@@ -234,12 +234,13 @@ const ExpressionRunnerPrecomputed = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
+          {/* TODO: Remove caption here once v2 is done */}
           {caption && (
             <ExpressionRunnerCaptionWrapper>
               <H args={caption} />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {children && (
+          {children && !explanationsVisible && !isPlaying && (
             <ExpressionRunnerCaptionWrapper>
               {children === 'cross' ? (
                 <H args={{ name: 'crossCaption' }} />
@@ -248,6 +249,7 @@ const ExpressionRunnerPrecomputed = ({
               )}
             </ExpressionRunnerCaptionWrapper>
           )}
+          {/* TODO: Remove !caption here once v2 is done */}
           {!caption && isPlaying && (
             <ExpressionRunnerCaptionWrapper>
               <H args={{ name: 'fastForwarding' }} />
