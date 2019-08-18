@@ -908,9 +908,12 @@ export default () => (
                       <P>
                         これを先ほどの弁当箱と組み合わせて、
                         <H args={{ name: 'runAndConertToMathbox' }} />
-                        し…
+                        し、
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> を計算できればいいんだな。
                       </P>
                       <P>
+                        すなわち、結果が
                         <EmojiNumber number={2} /> になれば<Strong>成功</Strong>{' '}
                         <Emoji>🎉</Emoji>、 それ以外なら<Strong>失敗</Strong>{' '}
                         <Emoji>😭</Emoji> というわけか。
