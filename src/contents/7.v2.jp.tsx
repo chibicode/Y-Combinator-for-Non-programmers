@@ -724,7 +724,11 @@ export default () => (
         )
       },
       {
-        title: <>試しに適当な料理を入れてみる</>,
+        title: (
+          <>
+            試しに<Strong>適当な料理</Strong>を入れてみる
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -840,9 +844,10 @@ export default () => (
             <ExpressionRunnerCaptionOnly>
               <H args={{ name: 'runAndConertToMathbox' }} />
               <br />
-              して、結果が <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> になれば<Strong>成功</Strong>{' '}
-              <Emoji>🎉</Emoji>
+              して、結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
+              <Emoji size="mdlg">➕</Emoji>{' '}
+              <EmojiNumber number={1} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
               <br />
               それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
@@ -858,6 +863,93 @@ export default () => (
                         があれば<Strong>成功</Strong> <Emoji>🎉</Emoji>、
                         それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
                         というわけだね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'plusOneEffect' }} />
+            があるかチェック
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        それでは冒頭でも紹介した、 <EmojiNumber number={1} />{' '}
+                        に変換できる弁当箱を使って試してみましょう。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fxde>
+              <EmojiNumber number={1} size="mdlg" /> に変換できる弁当箱
+            </R.Fxde>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        これを先ほどの弁当箱と組み合わせて、
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        し…
+                      </P>
+                      <P>
+                        <EmojiNumber number={2} /> になれば<Strong>成功</Strong>{' '}
+                        <Emoji>🎉</Emoji>、 それ以外なら<Strong>失敗</Strong>{' '}
+                        <Emoji>😭</Emoji> というわけか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nuco>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              先ほどの弁当箱を合体させ…
+            </R.Nuco>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ではまず、この弁当箱を実行したらどうなるか見ていきましょう！
+                      </P>
+                      <P>
+                        <H
+                          args={{
+                            name: 'pressFastForward',
+                            mentionRightArrow: true
+                          }}
+                        />
                       </P>
                     </>
                   )

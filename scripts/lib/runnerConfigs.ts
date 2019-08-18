@@ -3591,3 +3591,10 @@ export const tjaf: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const nuco: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  showPriorities: true,
+  variableSize: 'md'
+}
