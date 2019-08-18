@@ -8,6 +8,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
@@ -687,7 +688,27 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="questionFoodGrey" />,
+                <Emoji>🐶</Emoji>,
+                <CustomEmoji type="plusOneOrange" />
+              ]}
+              description={
+                <>
+                  それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                  に何を入れたら
+                  <br />
+                  <H args={{ name: 'plusOneEffect' }} />
+                  がある弁当箱になる？
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
