@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ul, UlLi, Hr } from 'src/components/ContentTags'
+import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -8,7 +8,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-import EmojiSeparator from 'src/components/EmojiSeparator'
 // import YesNoButtons from 'src/components/YesNoButtons'
 // import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
@@ -121,9 +120,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。この背景は単に、この弁当箱に
+                        そうですね。背景にある <Emoji>⭐️</Emoji> の模様は単に、
                         <H args={{ name: 'specialEffect' }} />
                         があるということを表しているだけです。
+                      </P>
+                      <P>
+                        繰り返しますが、
+                        <Strong>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          に、ある法則に基づいて料理を入れたときに限り
+                        </Strong>
+                        、<H args={{ name: 'specialEffect' }} />
+                        がある弁当箱になります。
                       </P>
                     </>
                   )
@@ -144,7 +152,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>では説明しますね！</P>
+                      <P>これから説明しますね！</P>
                     </>
                   )
                 }
@@ -473,12 +481,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            「1を足す機能 <CustomEmoji type="plusOne" />
-            」と同じ効果
-          </>
-        ),
+        title: <>1を足す効果</>,
         content: (
           <>
             <BubbleQuotes
@@ -507,39 +510,52 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        その通りです。復習になりますが、本稿のはじめに説明した通り、計算箱には
-                        「<Strong>1を足す機能</Strong>{' '}
-                        <CustomEmoji type="plusOne" />
-                        」がありますよね。
-                      </P>
+                      <P>その通りです。つまり、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            ある数字 <CustomEmoji type="blankNumber" />{' '}
+                            に変換できる弁当箱と、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            <H args={{ name: 'specialEffect' }} />
+                            がある弁当箱を合体させ、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            <H args={{ name: 'runAndConertToMathbox' }} />
+                            すると、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            結果は <CustomEmoji type="blankNumber" />{' '}
+                            <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+                            になるのです。
+                          </Em>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
               ]}
             />
-            <R.Qrgc />
-            <ExpressionRunnerSeparator />
-            <R.Jxvy />
-            <R.Lizi>
-              計算箱には「<Strong>1を足す機能</Strong>{' '}
-              <CustomEmoji type="plusOne" />
-              」がある。
+            <R.Qrgc>
+              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
               <br />
-              たとえばこちらを実行すると…
-            </R.Lizi>
+              <H args={{ name: 'specialEffect' }} />
+              がある弁当箱を合体させ…
+            </R.Qrgc>
             <ExpressionRunnerSeparator />
-            <R.Pmdm>
-              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算してくれる。
-            </R.Pmdm>
-            <Hr />
-            <R.Raqo>一方、こちらを実行すると…</R.Raqo>
-            <ExpressionRunnerSeparator />
-            <R.Qsoa>
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算してくれる。
-            </R.Qsoa>
+            <R.Jxvy>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果は <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
+            </R.Jxvy>
             <BubbleQuotes
               quotes={[
                 {
@@ -547,40 +563,24 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        先ほど行ったのは、この「<Strong>1を足す機能</Strong>{' '}
-                        <CustomEmoji type="plusOne" />
-                        」と非常に似ていますよね。
+                        ここで思い出してほしいのですが、
+                        <Strong>
+                          計算箱では、
+                          <CustomEmoji type="plusOne" />{' '}
+                          を使えば、「1を足す」計算を行うことができましたよね
+                        </Strong>
+                        。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Jiua>
-              <EmojiNumber number={1} /> に変換できる弁当箱と、
-              <br />
-              <H args={{ name: 'specialEffect' }} />
-              がある弁当箱を合体させ…
-            </R.Jiua>
+            <R.Rviy>
+              <Emoji>🎁</Emoji> 計算箱の場合
+            </R.Rviy>
             <ExpressionRunnerSeparator />
-            <R.Pmdm>
-              <H args={{ name: 'runAndConertToMathbox' }} />
-              <br />
-              すると、結果は <EmojiNumber number={2} /> になる
-            </R.Pmdm>
-            <Hr />
-            <R.Aone>
-              <EmojiNumber number={2} /> に変換できる弁当箱と、
-              <br />
-              <H args={{ name: 'specialEffect' }} />
-              がある弁当箱を合体させ…
-            </R.Aone>
-            <ExpressionRunnerSeparator />
-            <R.Qsoa>
-              <H args={{ name: 'runAndConertToMathbox' }} />
-              <br />
-              すると、結果は <EmojiNumber number={3} /> になる
-            </R.Qsoa>
+            <R.Jxvy></R.Jxvy>
             <BubbleQuotes
               quotes={[
                 {
@@ -588,25 +588,47 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、
-                        <H args={{ name: 'specialEffect' }} />
-                        とは、計算箱における <CustomEmoji type="plusOne" />{' '}
-                        と同じく、
-                        <Strong>「1を足す」効果</Strong>
-                        だと言えます。
+                        すなわち、この <H args={{ name: 'specialEffect' }} />
+                        がある弁当箱は…
+                      </P>
+                      <P>
+                        <Strong>
+                          計算箱における <CustomEmoji type="plusOne" />{' '}
+                          と同じ「1を足す」効果を持っていると言えます。
+                        </Strong>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Biit>
-              <Strong>計算箱</Strong>において「1を足す」効果がある
-            </R.Biit>
-            <ExpressionRunnerSeparator doubleArrow />
             <R.Jguj>
-              <Strong>弁当箱</Strong>において「1を足す」効果がある
+              この <H args={{ name: 'specialEffect' }} />
+              がある弁当箱は…
             </R.Jguj>
+            <R.Biit>
+              <Strong>
+                計算箱における、
+                <CustomEmoji type="plusOne" /> と同じ
+              </Strong>
+            </R.Biit>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど。大雑把に言えば、
+                        <H args={{ name: 'specialEffect' }} />
+                        とはすなわち「<Strong>1を足す効果</Strong>
+                        」ということか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -662,32 +684,36 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'devil',
+                  type: 'dog',
                   children: (
                     <>
                       <P>
                         <Strong>
-                          この問題こそが、以前から話していた「難しい問題」だ。これを解けたら、約束通り計算箱を返してやろう！
+                          ある法則に基づいて{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に料理を入れた時に限り
                         </Strong>
+                        、「1を足す効果」 がある弁当箱になります。
+                        <Em>
+                          それがどんな法則が、当ててみよう！という問題です。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          この問題こそが、以前から話していた「難しい問題」だ。これを解けたら、約束通り計算箱を返してやろう！
+                        </Em>
                       </P>
                     </>
                   )
                 }
               ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <Emoji>😈</Emoji>,
-                <CustomEmoji type="questionFoodGrey" />,
-                <Emoji>🎁</Emoji>
-              ]}
-              description={
-                <>
-                  <CustomEmoji type="questionFoodGrey" /> にそれぞれ何が入るかを
-                  <br />
-                  当てられたら、計算箱を返してやろう！
-                </>
-              }
             />
           </>
         )
@@ -705,7 +731,7 @@ export default () => (
                       <P>
                         うーん…
                         <Em>
-                          問題も完全に理解できた自信がないし、理解できたとしてもどうやって解けばいいかサッパリ分からない！
+                          問題を完全に理解できた自信がないし、どうやって解けばいいかサッパリ分からない！
                         </Em>
                       </P>
                     </>
