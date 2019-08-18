@@ -3570,3 +3570,17 @@ export const jxvy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.hswh,
   showPriorities: true
 }
+
+export const lwoq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ktus,
+  showPriorities: true
+}
+
+export const poii: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  skipToTheEnd: false,
+  variableSize: 'md',
+  showPriorities: true
+}

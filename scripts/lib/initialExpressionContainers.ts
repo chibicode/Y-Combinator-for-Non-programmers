@@ -2087,3 +2087,28 @@ export const cyhx = initializeExpressionContainer([
 export const hswh = initializeExpressionContainer({
   shorthandNumberPlusOrMinusOne: 'plus'
 })
+
+export const ktus = initializeExpressionContainer({
+  arg: 'a',
+  body: {
+    arg: 'b',
+    body: {
+      arg: 'c',
+      body: ['b', ['a', 'b', 'b']]
+    }
+  }
+})
+
+export const kwqc = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['b', ['a', 'b', 'b']]
+      }
+    }
+  },
+  numberParams('d', 'e', 1)
+])

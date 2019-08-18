@@ -43,6 +43,7 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
               css`
                 background-image: url(${plusOneSvg});
                 background-size: 4em;
+                background-position: center center;
               `
           ]}
         >

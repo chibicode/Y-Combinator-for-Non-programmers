@@ -9,11 +9,8 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-// import YesNoButtons from 'src/components/YesNoButtons'
-// import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
-// import EmojiForLetter from 'src/components/EmojiForLetter'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -762,9 +759,8 @@ export default () => (
               ]}
             />
             <R.Envj>
-              試しに、
               <CustomEmoji type="questionFoodGrey" />{' '}
-              に適当な料理を入れてみよう！
+              に適当な料理を入れてみて下さい！<Emoji>🐶</Emoji>
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -773,21 +769,38 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        わ、わかった。じゃあとりあえず、
+                        わかった。じゃあとりあえず、
                         <CustomEmoji type="questionFoodGrey" />{' '}
                         に適当な料理を入れてみよう。
                       </P>
                       <P>
-                        <EmojiWithText letter="a" />、
-                        <EmojiWithText letter="b" />、
-                        <EmojiWithText letter="c" />
-                        を適当に入れてみたよ。
+                        <Em>
+                          <EmojiWithText letter="a" />、
+                          <EmojiWithText letter="b" />、
+                          <EmojiWithText letter="c" />
+                          を適当な組み合わせで{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に入れてみたよ。
+                        </Em>
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Lwoq>
+              <EmojiForLetter letter="a" /> <EmojiForLetter letter="b" />{' '}
+              <EmojiForLetter letter="c" /> を適当に{' '}
+              <CustomEmoji type="questionFoodGrey" /> に入れてみた
+            </R.Lwoq>
+            <P>
+              <H args={{ name: 'play' }} />
+              した結果、
+              <EmojiNumber number={2} /> に変換できる弁当箱であれば成功。
+              <H args={{ name: 'plusOneEffect' }} />
+              があるということ。
+            </P>
+            <R.Poii />
           </>
         )
       }
