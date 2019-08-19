@@ -13,7 +13,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -1132,6 +1132,146 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'plusOneEffect' }} />
+            は無い
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、結果が <EmojiNumber number={2} />{' '}
+                        にならなかったので…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nuco>
+              <EmojiNumber number={1} /> に変換できる弁当箱と合体させ…
+            </R.Nuco>
+            <ExpressionRunnerSeparator />
+            <R.Bwff>
+              <H args={{ name: 'play' }} /> したところ、
+              <br />
+              <Strong>
+                <EmojiNumber number={2} size="mdlg" />{' '}
+                に変換できる弁当箱にならなかった
+              </Strong>
+            </R.Bwff>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          先ほどあなたが適当に{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に料理を入れた弁当箱に、
+                          <H args={{ name: 'plusOneEffect' }} />
+                          は無い
+                        </Em>
+                        のです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Olyw>
+              <H args={{ name: 'plusOneEffect' }} />
+              は無い
+            </R.Olyw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        残念…。やっぱり、適当に{' '}
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        に料理を埋めても正解にはならないかあ…
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>では、もう一度ふりだしに戻りましょう。</P>
+                      <P>
+                        <Strong>
+                          この弁当箱に、どのような法則に基づいて{' '}
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          に料理を入れると…
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              <Strong>
+                どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
+                に料理を入れると…
+              </Strong>
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <H args={{ name: 'plusOneEffect' }} />
+                          がある弁当箱になるでしょう？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jguj>
+              <Strong>
+                <H args={{ name: 'plusOneEffect' }} />
+                がある弁当箱になる？
+              </Strong>
+            </R.Jguj>
+          </>
+        )
+      },
+      {
+        title: <>答えは次のページに</>,
+        content: (
+          <>
+            <P>
+              せっかく計算箱を返してもらえるチャンスなのに、問題が難しくて村人は苦労しているようですね。
+            </P>
+            <EmojiSeparator emojis={['😭', '😈', '🐶']} />
+            <P>
+              しかし、<Strong>次のページで答えが判明します。</Strong>
+              ぜひ先に進んでみてください！
+            </P>
+            <NextLessonButton />
           </>
         )
       }

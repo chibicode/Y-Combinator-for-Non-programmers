@@ -3583,6 +3583,13 @@ export const lwoq: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const olyw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ktus,
+  showPriorities: true,
+  crossed: true
+}
+
 export const poii: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.kwqc,
