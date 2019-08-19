@@ -3,11 +3,11 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import { P, Strong } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
-// import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
-// import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
@@ -76,6 +76,72 @@ export default () => (
                   ラムダ村に暮らす少女の<Strong>サヤちゃん</Strong>
                 </>
               }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>ねえねえ、みんな何してるの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>おお、サヤちゃんか。</P>
+                      <P>
+                        にっくき悪魔 <Emoji>😈</Emoji>{' '}
+                        に計算箱を奪われてしまったんだ。奴が出題した問題を解かないと計算箱を返してもらえないんだけど、俺らには難しくて解けないんだよ。
+                      </P>
+                      <P>その問題は以下の通りさ。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              どのような法則に基づいて
+              <br />
+              <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
+              に料理を入れると…
+            </R.Envj>
+            <R.Omwd>
+              <CustomEmoji type="blankNumber" size="mdlg" />{' '}
+              に変換できる弁当箱と合体させて
+              <br />
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              すると、
+              <br />
+              結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
+              <Emoji size="mdlg">➕</Emoji>{' '}
+              <EmojiNumber number={1} size="mdlg" /> になる？
+            </R.Omwd>
+            <ExpressionRunnerSeparator />
+            <R.Jxvy></R.Jxvy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>ふーん、じゃあ私も解いてみる！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        ありがたいけど、そう簡単に解ける問題じゃないよ。俺らがどれだけ頑張っても分からなかったんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
             />
           </>
         )

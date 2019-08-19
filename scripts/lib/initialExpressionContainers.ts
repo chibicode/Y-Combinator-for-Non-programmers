@@ -2085,6 +2085,13 @@ export const cyhx = initializeExpressionContainer([
   }
 ])
 
+export const drbs = initializeExpressionContainer([
+  succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
+  {
+    shorthandNumberAfterConvert: true
+  }
+])
+
 export const hswh = initializeExpressionContainer({
   shorthandNumberPlusOrMinusOne: 'plus'
 })

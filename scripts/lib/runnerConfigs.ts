@@ -3589,9 +3589,17 @@ export const olyw: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   crossed: true
 }
+
 export const tjaf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.bjzr,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const omwd: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.drbs,
   showPriorities: true,
   variableSize: 'md'
 }
