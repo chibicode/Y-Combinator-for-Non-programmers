@@ -1066,11 +1066,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <EmojiNumber number={2} /> に変換できない
-          </>
-        ),
+        title: <>計算箱に変換できない</>,
         content: (
           <>
             <BubbleQuotes
@@ -1087,8 +1083,7 @@ export default () => (
                       <P>
                         残念ながら、
                         <Strong>
-                          この弁当箱はぼくが <EmojiNumber number={2} />{' '}
-                          に変換することができません。
+                          この弁当箱はぼくが計算箱に変換することができません。
                         </Strong>
                       </P>
                     </>
@@ -1096,9 +1091,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Xwzc>
-              <EmojiNumber number={2} /> に変換できない
-            </R.Xwzc>
+            <R.Xwzc>計算箱に変換できない</R.Xwzc>
             <BubbleQuotes
               quotes={[
                 {
