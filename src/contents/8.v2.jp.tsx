@@ -11,8 +11,8 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 // import EmojiWithText from 'src/components/EmojiWithText'
-// import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -185,8 +185,16 @@ export default () => (
                         前回もやったように、
                         <Em>
                           <EmojiNumber number={1} />{' '}
-                          に変換できる弁当箱と合体させて、結果が{' '}
-                          <EmojiNumber number={2} /> になれば
+                          に変換できる弁当箱と合体させて、
+                        </Em>
+                      </P>
+                      <R.Fxde>
+                        <EmojiNumber number={1} size="mdlg" />{' '}
+                        に変換できる弁当箱
+                      </R.Fxde>
+                      <P>
+                        <Em>
+                          結果が <EmojiNumber number={2} /> になれば
                           <Strong>成功</Strong> <Emoji>🎉</Emoji>、 それ以外なら
                           <Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
                         </Em>
@@ -200,7 +208,7 @@ export default () => (
             <R.Plde>
               <EmojiNumber number={1} /> に変換できる弁当箱と、
               <br />
-              先ほどの弁当箱を合体させ…
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
             </R.Plde>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -211,6 +219,54 @@ export default () => (
               <br />
               それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、
+                        <H args={{ name: 'play' }} />
+                        してみよう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'play' }} /> してみると…
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を実行してみましょう。
+              <H
+                args={{
+                  name: 'pressFastForward',
+                  mentionRightArrow: true
+                }}
+              />
+            </P>
+            <P>
+              まず、
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアがふたつ以上あるので、一番左の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Em>
+            </P>
+            <R.Jsvg>
+              <H args={{ name: 'startWithLeftMostOneCaption' }} />
+            </R.Jsvg>
           </>
         )
       }

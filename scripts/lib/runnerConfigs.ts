@@ -3683,3 +3683,13 @@ export const plde: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const jsvg: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  initialState: 'active',
+  lastAllowedExpressionState: 'default'
+}
