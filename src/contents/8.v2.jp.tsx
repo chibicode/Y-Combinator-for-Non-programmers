@@ -289,6 +289,37 @@ export default () => (
             <R.Uexo>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Uexo>
+            <P>
+              次も前回と同じく、
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアからはじめたいのですが、
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              のペアの一番下の段にひとつの料理(
+              <EmojiWithText letter="b" />
+              )しかないので不可能です。
+            </P>
+            <P>
+              というわけで、再度
+              <Strong>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+            </P>
+            <R.Hdhy />
+            <P>つまり、最終的に以下のようになりました！</P>
+            <R.Rhcv />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>こ、これはもしや…？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

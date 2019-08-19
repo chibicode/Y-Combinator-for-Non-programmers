@@ -3704,3 +3704,21 @@ export const uexo: ExpressionRunnerShorthandConfig = {
   lastAllowedExpressionState: 'default',
   nextIterations: 1
 }
+
+export const hdhy: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  initialState: 'active',
+  lastAllowedExpressionState: 'default',
+  nextIterations: 2
+}
+
+export const rhcv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  isDone: true
+}
