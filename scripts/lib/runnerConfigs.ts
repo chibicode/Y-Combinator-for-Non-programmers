@@ -3589,15 +3589,6 @@ export const olyw: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   crossed: true
 }
-
-export const poii: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.kwqc,
-  skipToTheEnd: false,
-  variableSize: 'md',
-  showPriorities: true
-}
-
 export const tjaf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.bjzr,
@@ -3658,8 +3649,16 @@ export const xwzc: ExpressionRunnerShorthandConfig = {
   crossed: true
 }
 
+export const fhrd: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.iqbf,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
+}
+
 export const bgxi: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.abbh,
-  showPriorities: true
+  showPriorities: true,
+  bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
 }

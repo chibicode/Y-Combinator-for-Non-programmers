@@ -30,7 +30,7 @@
           "body": {
             "arg": {
               "arg": {
-                "name": "c",
+                "name": "b",
                 "highlightType": "initialHighlighted",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",

@@ -2114,6 +2114,14 @@ export const kwqc = initializeExpressionContainer([
   numberParams('d', 'e', 1)
 ])
 
+export const iqbf = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: ['b', ['b', { name: 'b', highlighted: true }]]
+  }
+})
+
 export const bjzr = initializeExpressionContainer([
   {
     arg: 'a',

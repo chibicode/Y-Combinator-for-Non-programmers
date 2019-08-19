@@ -1098,13 +1098,32 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>理由はもちろん、以下の法則に沿っていないからです。</P>
+                      <P>
+                        理由はもちろん、
+                        <Em>以下の法則に沿っていないからです。</Em>
+                      </P>
                       <R.Eozk>
                         <H args={{ name: 'convertiblePatternCaption' }} />
                       </R.Eozk>
+                      <P>
+                        <Em>
+                          右上には <Emoji>🅱️</Emoji>{' '}
+                          の料理がないといけませんが、ここでは <Emoji>🅰️</Emoji>{' '}
+                          になっています。
+                        </Em>
+                      </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Fhrd>
+              右上の料理が <Emoji>🅱️</Emoji> ではなく、<Emoji>🅰️</Emoji>なので
+              <br />
+              計算箱に変換できない
+            </R.Fhrd>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'sad',
                   children: (
@@ -1112,7 +1131,7 @@ export default () => (
                       <P>
                         ダメか…
                         <Em>
-                          もし右上が
+                          もし仮に右上が
                           <EmojiWithText letter="b" />
                           ではなくて
                           <EmojiWithText letter="c" />
@@ -1120,18 +1139,20 @@ export default () => (
                           <EmojiNumber number={2} /> に変換できていたのになあ。
                         </Em>
                       </P>
-                      <R.Bgxi>
-                        もし右上が
-                        <EmojiWithText letter="c" />
-                        だったら、
-                        <br />
-                        <EmojiNumber number={2} /> に変換できていた
-                      </R.Bgxi>
                     </>
                   )
                 }
               ]}
             />
+            <R.Bgxi>
+              も仮にし右上が
+              <EmojiWithText letter="c" />
+              <br />
+              だったら、
+              <EmojiNumber number={2} /> に変換できていた
+            </R.Bgxi>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm />
           </>
         )
       },
@@ -1151,8 +1172,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、結果が <EmojiNumber number={2} />{' '}
-                        にならなかったので…
+                        つまり、実行しても{' '}
+                        <EmojiNumber number={2} size="mdlg" />{' '}
+                        に変換できる弁当箱にならなかった
                       </P>
                     </>
                   )
@@ -1164,7 +1186,7 @@ export default () => (
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <R.Bwff>
-              <H args={{ name: 'play' }} /> したところ、
+              実行したところ、
               <br />
               <Strong>
                 <EmojiNumber number={2} size="mdlg" />{' '}
@@ -1203,7 +1225,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        残念…。やっぱり、適当に{' '}
+                        残念…やっぱり、適当に{' '}
                         <CustomEmoji type="questionFoodGrey" />{' '}
                         に料理を埋めても正解にはならないかあ…
                       </P>
@@ -1256,6 +1278,18 @@ export default () => (
                 がある弁当箱になる？
               </Strong>
             </R.Jguj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>うーん…分からない！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
