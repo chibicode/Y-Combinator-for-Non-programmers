@@ -28,6 +28,8 @@ const fontSize = (
   if (variableSize === 'lg') {
     return fontSizes(0.7)
   } else if (variableSize === 'md') {
+    return fontSizes(0.65)
+  } else if (variableSize === 'sm') {
     return fontSizes(0.6)
   } else {
     return fontSizes(0.5)
@@ -39,8 +41,8 @@ const left = (
 ): number =>
   ({
     lg: -1,
-    md: -0.85,
-    sm: -0.7,
+    md: -0.925,
+    sm: -0.85,
     xs: -0.7,
     xxs: -0.7
   }[variableSize])

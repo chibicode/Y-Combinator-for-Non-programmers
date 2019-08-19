@@ -3693,3 +3693,14 @@ export const jsvg: ExpressionRunnerShorthandConfig = {
   initialState: 'active',
   lastAllowedExpressionState: 'default'
 }
+
+export const uexo: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  initialState: 'active',
+  lastAllowedExpressionState: 'default',
+  nextIterations: 1
+}

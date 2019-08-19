@@ -12,7 +12,7 @@ import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionO
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
-// import EmojiWithText from 'src/components/EmojiWithText'
+import EmojiWithText from 'src/components/EmojiWithText'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -267,6 +267,28 @@ export default () => (
             <R.Jsvg>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Jsvg>
+            <P>
+              続いて、また
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめたいのですが、
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアの一番下の段にひとつの料理(
+                <EmojiWithText letter="b" />
+                )しかないので不可能です。
+              </Em>
+            </P>
+            <P>
+              というわけで、
+              <Strong>
+                次は
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Strong>
+            </P>
+            <R.Uexo>
+              <H args={{ name: 'startWithTwoCaption' }} />
+            </R.Uexo>
           </>
         )
       }
