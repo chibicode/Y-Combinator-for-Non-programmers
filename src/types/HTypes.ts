@@ -151,4 +151,5 @@ export interface HProps {
     | { name: 'plusOneEffect' }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
+    | { name: 'convertiblePatternCaption' }
 }

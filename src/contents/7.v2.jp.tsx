@@ -1099,6 +1099,46 @@ export default () => (
             <R.Xwzc>
               <EmojiNumber number={2} /> に変換できない
             </R.Xwzc>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>理由はもちろん、以下の法則に沿っていないからです。</P>
+                      <R.Eozk>
+                        <H args={{ name: 'convertiblePatternCaption' }} />
+                      </R.Eozk>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        ダメか…
+                        <Em>
+                          もし右上が
+                          <EmojiWithText letter="b" />
+                          ではなくて
+                          <EmojiWithText letter="c" />
+                          だったら、
+                          <EmojiNumber number={2} /> に変換できていたのになあ。
+                        </Em>
+                      </P>
+                      <R.Bgxi>
+                        もし右上が
+                        <EmojiWithText letter="c" />
+                        だったら、
+                        <br />
+                        <EmojiNumber number={2} /> に変換できていた
+                      </R.Bgxi>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

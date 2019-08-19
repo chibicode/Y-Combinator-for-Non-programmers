@@ -429,13 +429,7 @@ export default () => (
               ]}
             />
             <R.Eozk>
-              一番左の料理を<Emoji>🅰️</Emoji>、<br />
-              真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
-              <br />
-              右上に<Emoji>🅱️</Emoji>がひとつあり、
-              <br />
-              右下に<Emoji>🅰️</Emoji>
-              がいくつかある
+              <H args={{ name: 'convertiblePatternCaption' }} />
             </R.Eozk>
             <BubbleQuotes
               quotes={[
@@ -512,13 +506,7 @@ export default () => (
                     <>
                       <P>上の弁当箱は、こちらの法則と一致していますね。</P>
                       <R.Eozk>
-                        一番左の料理を<Emoji>🅰️</Emoji>、<br />
-                        真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
-                        <br />
-                        右上に<Emoji>🅱️</Emoji>がひとつあり、
-                        <br />
-                        右下に<Emoji>🅰️</Emoji>
-                        がいくつかある
+                        <H args={{ name: 'convertiblePatternCaption' }} />
                       </R.Eozk>
                       <P>つまり、ぼくが計算箱に変換できるということです。</P>
                     </>

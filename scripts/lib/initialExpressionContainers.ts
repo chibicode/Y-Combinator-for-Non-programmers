@@ -11,7 +11,8 @@ import {
   multParamsRightHighlighted,
   predParams,
   alphaConversionSimpleExampleParams,
-  numberParamsHighlightNumber
+  numberParamsHighlightNumber,
+  numberParamsHighlightNonNumber
 } from 'scripts/lib/churchEncodingParams'
 import { magicalVariableName } from 'src/lib/specialVariableNames'
 
@@ -2128,3 +2129,7 @@ export const bjzr = initializeExpressionContainer([
     shorthandNumberAfterConvert: true
   }
 ])
+
+export const abbh = initializeExpressionContainer(
+  numberParamsHighlightNonNumber('b', 'c', 2)
+)

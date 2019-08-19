@@ -1996,7 +1996,23 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-
+  if (args.name === 'convertiblePatternCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          一番左の料理を<Emoji>🅰️</Emoji>、<br />
+          真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
+          <br />
+          右上に<Emoji>🅱️</Emoji>がひとつあり、
+          <br />
+          右下に<Emoji>🅰️</Emoji>
+          がいくつかある
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

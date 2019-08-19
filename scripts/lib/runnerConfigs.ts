@@ -3650,3 +3650,9 @@ export const xwzc: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   crossed: true
 }
+
+export const bgxi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.abbh,
+  showPriorities: true
+}
