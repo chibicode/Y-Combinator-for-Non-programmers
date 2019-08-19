@@ -305,7 +305,9 @@ export default () => (
                 のペアからはじめます。
               </Strong>
             </P>
-            <R.Hdhy />
+            <R.Hdhy>
+              <H args={{ name: 'startWithTwoCaption' }} />
+            </R.Hdhy>
             <P>つまり、最終的に以下のようになりました！</P>
             <R.Rhcv />
             <BubbleQuotes
