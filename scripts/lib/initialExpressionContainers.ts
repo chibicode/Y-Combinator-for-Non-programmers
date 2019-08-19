@@ -2148,3 +2148,10 @@ export const bjzr = initializeExpressionContainer([
 export const abbh = initializeExpressionContainer(
   numberParamsHighlightNonNumber('b', 'c', 2)
 )
+
+export const uzzl = initializeExpressionContainer(succParams('a', 'b', 'c'))
+
+export const uqth = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'e', 1)
+])

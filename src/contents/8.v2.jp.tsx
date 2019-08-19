@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
+import { P, Strong, Em } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -8,7 +8,7 @@ import Emoji from 'src/components/Emoji'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-// import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 // import EmojiWithText from 'src/components/EmojiWithText'
@@ -136,13 +136,81 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        手伝ってくれるのはありがたいけど、そう簡単に解ける問題じゃないよ。俺らがどれだけ頑張っても分からなかったんだ。
+                        手伝ってくれるのはありがたいけど、この問題はママゴトじゃないんだよ。俺らがどれだけ頑張っても分からなかったんだ。
                       </P>
                     </>
                   )
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>サヤちゃんの弁当箱</>,
+        content: (
+          <>
+            <P>
+              サヤちゃんは少し考えた後、
+              <CustomEmoji type="questionFoodGrey" /> に料理を入れてみました。
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>
+                        ねえねえ、サヤも <CustomEmoji type="questionFoodGrey" />{' '}
+                        に料理を入れてみたんだけど、見てくれる？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qrfw>
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+            </R.Qrfw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        ふむふむ…どうせ上手くいかないと思うけど、試してみるか。
+                      </P>
+                      <P>
+                        前回もやったように、
+                        <Em>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と合体させて、結果が{' '}
+                          <EmojiNumber number={2} /> になれば
+                          <Strong>成功</Strong> <Emoji>🎉</Emoji>、 それ以外なら
+                          <Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
+                        </Em>
+                        だよ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Plde>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              先ほどの弁当箱を合体させ…
+            </R.Plde>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
           </>
         )
       }

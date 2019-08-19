@@ -919,9 +919,8 @@ export default () => (
                       <P>
                         すなわち、
                         <Em>
-                          結果が
-                          <EmojiNumber number={2} /> になれば
-                          <Strong>成功</Strong> <Emoji>🎉</Emoji>、 それ以外なら
+                          結果が <EmojiNumber number={2} /> になれば
+                          <Strong>成功</Strong> <Emoji>🎉</Emoji>、それ以外なら
                           <Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
                         </Em>
                         というわけか。

@@ -3670,3 +3670,16 @@ export const bgxi: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
 }
+
+export const qrfw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uzzl,
+  showPriorities: true
+}
+
+export const plde: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  variableSize: 'md'
+}
