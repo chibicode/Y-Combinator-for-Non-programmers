@@ -3608,3 +3608,24 @@ export const dhiu: ExpressionRunnerShorthandConfig = {
   initialState: 'active',
   lastAllowedExpressionState: 'default'
 }
+
+export const akjy: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  skipToTheEnd: false,
+  variableSize: 'md',
+  showPriorities: true,
+  initialState: 'active',
+  lastAllowedExpressionState: 'default',
+  nextIterations: 1
+}
+
+export const hnyn: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  skipToTheEnd: false,
+  variableSize: 'md',
+  showPriorities: true,
+  initialState: 'active',
+  nextIterations: 2
+}

@@ -1647,11 +1647,7 @@ export default () => (
               <Strong>一番左のペアからはじめます。</Strong>
             </P>
             <R.Hykj>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアがふたつ以上ある場合は、
-              <br />
-              一番左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアからはじめる
+              <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Hykj>
             <P>
               <InlineHeader>補足:</InlineHeader>{' '}
@@ -1681,12 +1677,7 @@ export default () => (
               </Strong>
             </P>
             <R.Dqey>
-              下段にひとつの料理しかなく、
-              <br />
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアからはじめられない場合、
-              <br />
-              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+              <H args={{ name: 'startWithTwoCaption' }} />
             </R.Dqey>
             <BubbleQuotes
               quotes={[

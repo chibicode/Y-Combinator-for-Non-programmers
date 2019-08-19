@@ -910,14 +910,21 @@ export default () => (
                         これを先ほどの弁当箱と組み合わせて、
                         <H args={{ name: 'runAndConertToMathbox' }} />
                         し、
-                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> を計算できればいいんだな。
+                        <Em>
+                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} /> を計算できればいい
+                        </Em>
+                        んだな。
                       </P>
                       <P>
-                        すなわち、結果が
-                        <EmojiNumber number={2} /> になれば<Strong>成功</Strong>{' '}
-                        <Emoji>🎉</Emoji>、 それ以外なら<Strong>失敗</Strong>{' '}
-                        <Emoji>😭</Emoji> というわけか。
+                        すなわち、
+                        <Em>
+                          結果が
+                          <EmojiNumber number={2} /> になれば
+                          <Strong>成功</Strong> <Emoji>🎉</Emoji>、 それ以外なら
+                          <Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
+                        </Em>
+                        というわけか。
                       </P>
                     </>
                   )
@@ -955,23 +962,93 @@ export default () => (
                           }}
                         />
                       </P>
-                      <P>解説のため、何度か止めながら見ていきます！</P>
+                      <P>
+                        初級その5で説明した通り、
+                        <Strong>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          のペアがふたつ以上ある場合は、一番左の
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          のペアからはじめます。
+                        </Strong>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
             <R.Dhiu>
-              初級その5で説明した通り、
-              <br />
-              <Strong>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアがふたつ以上ある場合は、
-                <br />
-                一番左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアからはじめます。
-              </Strong>
+              <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Dhiu>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        続いて、また
+                        <Em>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          のペアからはじめたいのですが、
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          のペアの一番下の段にひとつの料理(
+                          <EmojiWithText letter="b" />
+                          )しかないので不可能です。
+                        </Em>
+                      </P>
+                      <P>
+                        というわけで、初級その5で説明した通り、
+                        <Strong>
+                          次は
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                          のペアからはじめます。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Akjy>
+              <H args={{ name: 'startWithTwoCaption' }} />
+            </R.Akjy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>次が最後です。</Strong>またしても、
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                        のペアからはじめたいのですが、
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                        のペアの一番下の段にひとつの料理(
+                        <EmojiWithText letter="b" />
+                        )しかないので不可能です。
+                      </P>
+                      <P>
+                        というわけで、再度
+                        <Strong>
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                          のペアからはじめます。
+                        </Strong>
+                      </P>
+                      <P>
+                        <H
+                          args={{
+                            name: 'pressFastForward'
+                          }}
+                        />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hnyn>
+              <H args={{ name: 'startWithTwoCaption' }} />
+            </R.Hnyn>
           </>
         )
       }

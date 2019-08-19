@@ -46,6 +46,7 @@ import { githubRepo } from 'src/lib/meta'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { HProps } from 'src/types/HTypes'
 import CustomEmoji from 'src/components/CustomEmoji'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 
 const slightlyLargeCaptionCss = css`
   font-size: ${fontSizes(1.2)};
@@ -1975,6 +1976,38 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'startWithTwoCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          下段にひとつの料理しかなく、
+          <br />
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめられない場合、
+          <br />
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+        </>
+      )
+    }
+  }
+  if (args.name === 'startWithLeftMostOneCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアがふたつ以上ある場合は、
+          <br />
+          一番左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          のペアからはじめる
+        </>
+      )
+    }
+  }
+
   throw new Error()
 }
 
