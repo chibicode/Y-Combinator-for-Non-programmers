@@ -54,6 +54,7 @@ export interface ExpressionRunnerConfig {
   superFastForward: boolean
   highlightNumber?: number
   convert?: ExpressionRunnerProps['convert']
+  crossed?: boolean
 }
 
 const expressionRunnerDefaults = {
@@ -159,7 +160,8 @@ const buildExpressionRunnerConfigFromShorthand = (
       showOnlyFocused,
       highlightFunctions,
       argPriorityAggHighlights,
-      funcPriorityAggHighlights
+      funcPriorityAggHighlights,
+      crossed
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerSimpleConfigDefault
@@ -188,7 +190,8 @@ const buildExpressionRunnerConfigFromShorthand = (
         initialState
       }),
       argPriorityAggHighlights,
-      funcPriorityAggHighlights
+      funcPriorityAggHighlights,
+      crossed
     }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
     const {

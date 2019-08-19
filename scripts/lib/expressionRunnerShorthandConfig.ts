@@ -34,6 +34,7 @@ interface ExpressionRunnerSimpleConfig {
   highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
   argPriorityAggHighlights?: readonly number[]
   funcPriorityAggHighlights?: readonly number[]
+  crossed?: boolean
 }
 
 export function isExpressionRunnerSimpleConfig(

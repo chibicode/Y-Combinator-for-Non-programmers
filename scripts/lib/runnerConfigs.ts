@@ -3256,6 +3256,12 @@ export const rviy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.fpuz
 }
 
+export const dgyc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.fpuz,
+  crossed: true
+}
+
 export const xmqp: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qtns
@@ -3628,4 +3634,19 @@ export const hnyn: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   initialState: 'active',
   nextIterations: 2
+}
+
+export const bwff: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  isDone: true,
+  showPriorities: true
+}
+
+export const xwzc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kwqc,
+  isDone: true,
+  showPriorities: true,
+  crossed: true
 }

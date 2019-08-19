@@ -1019,7 +1019,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>次が最後です。</Strong>またしても、
+                        次も前回と同じく、
                         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                         のペアからはじめたいのですが、
                         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
@@ -1049,6 +1049,56 @@ export default () => (
             <R.Hnyn>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Hnyn>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>つまり、最終的に以下のようになりました！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bwff>実行結果</R.Bwff>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2} /> に変換できない
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        実行を終えたので、
+                        <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
+                        したいところですが…
+                      </P>
+                      <P>
+                        残念ながら、
+                        <Strong>
+                          この弁当箱はぼくが <EmojiNumber number={2} />{' '}
+                          に変換することができません。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xwzc>
+              <EmojiNumber number={2} /> に変換できない
+            </R.Xwzc>
           </>
         )
       }

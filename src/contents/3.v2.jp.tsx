@@ -85,7 +85,9 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🌲', '😈', '🎁', '🌲']} />
             <P>ラムダ村からは、計算箱がすべて無くなってしまいました。</P>
-            <R.Rviy children="cross" />
+            <R.Dgyc>
+              <Emoji>😈</Emoji> 計算箱は没収だ！
+            </R.Dgyc>
             <P>
               足し算や引き算をするのに計算箱に頼り切っていた村人たちは嘆きました。
             </P>

@@ -44,6 +44,7 @@ export interface ExpressionRunnerPrecomputedProps {
   highlightNumber: ExpressionRunnerConfig['highlightNumber']
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
+  crossed: ExpressionRunnerConfig['crossed']
 }
 
 // Must be equal to 1 / N to make timer count seconds evenly
@@ -84,7 +85,8 @@ const ExpressionRunnerPrecomputed = ({
   highlightNumber,
   showAllShowSteps,
   children,
-  convert
+  convert,
+  crossed
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -242,11 +244,7 @@ const ExpressionRunnerPrecomputed = ({
           )}
           {children && !explanationsVisible && !isPlaying && (
             <ExpressionRunnerCaptionWrapper>
-              {children === 'cross' ? (
-                <H args={{ name: 'crossCaption' }} />
-              ) : (
-                children
-              )}
+              {children}
             </ExpressionRunnerCaptionWrapper>
           )}
           {/* TODO: Remove !caption here once v2 is done */}
@@ -272,7 +270,7 @@ const ExpressionRunnerPrecomputed = ({
                 `
               ]}
             >
-              {children === 'cross' && (
+              {crossed && (
                 <CrossSvg
                   css={css`
                     position: absolute;

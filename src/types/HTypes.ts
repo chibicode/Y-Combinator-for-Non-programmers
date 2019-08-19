@@ -137,7 +137,6 @@ export interface HProps {
         type: 'condition' | 'trueCase' | 'falseCase'
       }
     | { name: 'repeatingMathBoxCaption' }
-    | { name: 'crossCaption' }
     | { name: 'lookAtThisBentoBoxPuzzle' }
     | { name: 'convert'; type: 'toBentoBox' | 'toMathBox' }
     | { name: 'runAndConertToMathbox'; addNewline?: boolean }
