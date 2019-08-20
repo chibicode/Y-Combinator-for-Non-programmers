@@ -188,17 +188,22 @@ export default () => (
                           に変換できる弁当箱と合体させて、
                         </Em>
                       </P>
-                      <R.Fxde>
-                        <EmojiNumber number={1} size="mdlg" />{' '}
-                        に変換できる弁当箱
-                      </R.Fxde>
+                      <R.Rbup>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'd',
+                            number: 1
+                          }}
+                        />
+                      </R.Rbup>
                       <P>
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        して、
                         <Em>
-                          結果が <EmojiNumber number={2} /> になれば
-                          <Strong>成功</Strong> <Emoji>🎉</Emoji>、 それ以外なら
-                          <Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
+                          結果が <EmojiNumber number={2} /> になるか
                         </Em>
-                        だよ。
+                        確かめてみよう。
                       </P>
                     </>
                   )
@@ -416,6 +421,71 @@ export default () => (
                     <>
                       <P>
                         そんなバカな…！俺らがどれだけ頭をひねっても分からなかったのに、サヤちゃんにいとも簡単に解かれるなんて！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+            <EmojiNumber number={1} /> はできる？
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        いや、まだ分からんぞ。
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />{' '}
+                        ができるからといって、他の数字に対しても
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があるとは限らない。
+                      </P>
+                      <P>
+                        たとえば、
+                        <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> はできるのかな？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、
+                        <EmojiNumber number={2} />
+                        に変換できる弁当箱と合体させてみるね！
+                      </P>
+                      <R.Spga>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'f',
+                            number: 2
+                          }}
+                        />
+                      </R.Spga>
+                      <P>
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        して、
+                        <Em>
+                          結果が <EmojiNumber number={3} /> になればいい
+                        </Em>
+                        んだよね。
                       </P>
                     </>
                   )
