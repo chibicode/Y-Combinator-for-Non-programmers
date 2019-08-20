@@ -655,7 +655,7 @@ export default () => (
                       <P>
                         さらに言うと、サヤちゃんの弁当箱以外にも、
                         <Strong>
-                          以下の法則に当てはまる弁当箱であれば、
+                          以下の法則に当てはまる弁当箱であれば、 どれでも
                           <H args={{ name: 'plusOneEffect' }} />
                           があります。
                         </Strong>
