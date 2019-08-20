@@ -896,10 +896,28 @@ export default () => (
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={1} /> を計算できる計算箱。
               <br />
-              <H args={{ name: 'play' }} />
-              すると
+              実行すると
               <EmojiNumber number={2} /> になる
             </R.Mcug>
+            <P>
+              中級編でこれまで学んだことを一言でまとめると、
+              <Strong>上の計算箱の機能は、弁当箱で再現できる</Strong>
+              、ということになります。
+            </P>
+            <EmojiSeparator
+              emojis={['🎁', '↔️', '🍱']}
+              description={
+                <>
+                  計算箱の機能は、
+                  <br />
+                  弁当箱で再現することができる
+                </>
+              }
+            />
+            <P>
+              まず、計算箱の <EmojiNumber number={1} /> の代わりに、
+              <EmojiNumber number={1} /> に変換できる弁当箱を用意します。
+            </P>
           </>
         )
       }
