@@ -15,7 +15,7 @@ import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
-import CustomEmoji from 'src/components/CustomEmoji'
+import CustomEmoji, { customEmojiToComponent } from 'src/components/CustomEmoji'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -312,9 +312,25 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
                 transform: translateY(0.3em);
               `}
             >
-              <Emoji size="sm" noVerticalTransform>
-                {bottomRightBadgeOverrides[expression.name]}
-              </Emoji>
+              {customEmojiToComponent[
+                bottomRightBadgeOverrides[
+                  expression.name
+                ] as keyof typeof customEmojiToComponent
+              ] ? (
+                <CustomEmoji
+                  type={
+                    bottomRightBadgeOverrides[
+                      expression.name
+                    ] as keyof typeof customEmojiToComponent
+                  }
+                  size="sm"
+                  noVerticalTransform
+                />
+              ) : (
+                <Emoji size="sm" noVerticalTransform>
+                  {bottomRightBadgeOverrides[expression.name]}
+                </Emoji>
+              )}
             </span>
           </span>
         )}

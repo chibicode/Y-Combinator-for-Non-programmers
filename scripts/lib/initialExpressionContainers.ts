@@ -2176,3 +2176,21 @@ export const disc = initializeExpressionContainer(
 export const blns = initializeExpressionContainer(
   succParams('A', 'B', 'C', false, true)
 )
+
+export const ojsm = initializeExpressionContainer(succParams('h', 'i', 'j'))
+export const zgad = initializeExpressionContainer(
+  succParams('h', 'i', 'j', false, true)
+)
+
+export const lidn = initializeExpressionContainer(
+  numberParamsHighlightNumber('k', 'l', 3)
+)
+
+export const mtyb = initializeExpressionContainer([
+  succParams('h', 'i', 'j'),
+  numberParams('k', 'l', 3)
+])
+
+export const wwii = initializeExpressionContainer(
+  numberParamsHighlightNumber('i', 'j', 4)
+)

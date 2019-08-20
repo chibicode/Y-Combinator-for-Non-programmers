@@ -620,7 +620,7 @@ export default () => (
                       <P>
                         ではここで正解を言いましょう。
                         <Strong>
-                          サヤちゃんの弁当箱は、
+                          サヤちゃんが考えた弁当箱は、
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱です。
                         </Strong>
@@ -653,7 +653,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        さらに言うと、サヤちゃんの弁当箱以外にも、
+                        さらに言うと、サヤちゃんが考えた弁当箱以外にも、
                         <Strong>
                           以下の法則に当てはまる弁当箱であれば、 どれでも
                           <H args={{ name: 'plusOneEffect' }} />
@@ -677,7 +677,7 @@ export default () => (
                   type: 'girl',
                   children: (
                     <>
-                      <P>わたしの弁当箱の場合、</P>
+                      <P>サヤが考えた弁当箱の場合、</P>
                       <Ul>
                         <UlLi>
                           <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />
@@ -696,12 +696,165 @@ export default () => (
                 }
               ]}
             />
+            <R.Oykb>
+              <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />、<br />
+              <Emoji>🅱️</Emoji> は <EmojiWithText letter="b" />、<br />
+              <CustomEmoji type="C" /> は <EmojiWithText letter="c" />
+            </R.Oykb>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        その通りです。サヤちゃんが考えた弁当箱は、ちゃんとこの法則に当てはまっているのです。
+                      </P>
+                      <R.Blvt>
+                        この法則に当てはまる弁当箱であれば、
+                        <br />
+                        <H args={{ name: 'plusOneEffect' }} />
+                        がある
+                      </R.Blvt>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>同じ法則の、他の弁当箱も試してみる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、たとえばこの弁当箱でも、同じ法則に沿っているから、
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があるってこと？
+                      </P>
+                      <R.Dvpl>
+                        同じ法則で料理を入れてみた。
+                        <br />
+                        <H args={{ name: 'plusOneEffect' }} />
+                        はあるか？
+                      </R.Dvpl>
+                      <P>
+                        <Emoji>🅰️</Emoji> には <EmojiWithText letter="h" />、
+                        <Emoji>🅱️</Emoji> には <EmojiWithText letter="i" />、
+                        <CustomEmoji type="C" /> には{' '}
+                        <EmojiWithText letter="j" />
+                        を当てはめてみたよ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        はい、
+                        <H args={{ name: 'plusOneEffect' }} />
+                        はありますよ。
+                      </P>
+                      <P>
+                        <Strong>
+                          試しに、
+                          <EmojiNumber number={3} />
+                          に変換できるこちらの弁当箱と合体させて
+                          <H args={{ name: 'play' }} />
+                          してみましょう。
+                        </Strong>
+                      </P>
+                      <R.Cjxe>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'k',
+                            number: 3
+                          }}
+                        />
+                      </R.Cjxe>
+                      <P>
+                        すなわち、
+                        <Strong>
+                          結果が <EmojiNumber number={4} />{' '}
+                          に変換できる弁当箱になれば、
+                          <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} /> を計算できたので成功
+                        </Strong>
+                        になります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              <H args={{ name: 'pressFastForward', skipColon: true }} />
+              。(先ほどと挙動が似ているので、時間節約のために
+              <Em>やや早めの速度で早送りします。</Em>)
+            </P>
+            <R.Oqpi />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        結果、
+                        <EmojiNumber number={4} />{' '}
+                        に変換できる弁当箱が残りました！
+                      </P>
+                      <R.Zxkq>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'i',
+                            number: 4
+                          }}
+                        />
+                      </R.Zxkq>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、
+                        <EmojiNumber number={3} /> が <EmojiNumber number={4} />{' '}
+                        になったので、やっぱりこちらの弁当箱にも
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があるということか。
+                      </P>
+                      <R.Udxn>
+                        サヤちゃんの弁当箱と同じく、
+                        <br />
+                        こちらの弁当箱にも
+                        <H args={{ name: 'plusOneEffect' }} />
+                        がある
+                      </R.Udxn>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
       // 立ち止まって振り返ってみましょう。弁当箱を使って計算箱の機能を再現できる
+      // Question on top, ABC on bottom, no matter how big Question is, it will work
       // At the end: Saya has a question for benkei (but don't ask the question yet)
-      // 前回とほぼ同じなので1.5倍速にします
     ]}
   />
 )

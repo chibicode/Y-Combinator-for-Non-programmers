@@ -16,44 +16,31 @@ import LetterFSvg from 'src/components/LetterFSvg'
 import TwentySvg from 'src/components/TwentySvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
+export const customEmojiToComponent = {
+  plusOne: PlusOneSvg,
+  minusOne: MinusOneSvg,
+  blankNumber: BlankNumberSvg,
+  verticalDotDotDot: VerticalDotDotDotSvg,
+  horizontalDotDotDot: HorizontalDotDotDotSvg,
+  horizontalDotDotDotRed: HorizontalDotDotDotRedSvg,
+  questionFoodGrey: QuestionFoodGreySvg,
+  questionFoodRed: QuestionFoodRedSvg,
+  twenty: TwentySvg,
+  plusOneOrange: PlusOneOrangeSvg,
+  minusOneOrange: MinusOneOrangeSvg,
+  C: LetterCSvg,
+  D: LetterDSvg,
+  E: LetterESvg,
+  F: LetterFSvg
+}
+
 const CustomEmoji = ({
   type,
   ...emojiProps
 }: EmojiProps & {
-  type:
-    | 'plusOne'
-    | 'minusOne'
-    | 'blankNumber'
-    | 'verticalDotDotDot'
-    | 'horizontalDotDotDot'
-    | 'horizontalDotDotDotRed'
-    | 'questionFoodGrey'
-    | 'questionFoodRed'
-    | 'twenty'
-    | 'plusOneOrange'
-    | 'minusOneOrange'
-    | 'C'
-    | 'D'
-    | 'E'
-    | 'F'
+  type: keyof typeof customEmojiToComponent
 }) => {
-  const Component = {
-    plusOne: PlusOneSvg,
-    minusOne: MinusOneSvg,
-    blankNumber: BlankNumberSvg,
-    verticalDotDotDot: VerticalDotDotDotSvg,
-    horizontalDotDotDot: HorizontalDotDotDotSvg,
-    horizontalDotDotDotRed: HorizontalDotDotDotRedSvg,
-    questionFoodGrey: QuestionFoodGreySvg,
-    questionFoodRed: QuestionFoodRedSvg,
-    twenty: TwentySvg,
-    plusOneOrange: PlusOneOrangeSvg,
-    minusOneOrange: MinusOneOrangeSvg,
-    C: LetterCSvg,
-    D: LetterDSvg,
-    E: LetterESvg,
-    F: LetterFSvg
-  }[type]
+  const Component = customEmojiToComponent[type]
   return <Emoji {...emojiProps} customSvg={<Component />} />
 }
 

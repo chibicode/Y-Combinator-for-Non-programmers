@@ -3770,3 +3770,48 @@ export const blvt: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.blns,
   showPriorities: true
 }
+
+export const oykb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.disc,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { b: '🅱️', a: '🅰️', c: 'C' }
+}
+
+export const dvpl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ojsm,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { i: '🅱️', h: '🅰️', j: 'C' }
+}
+
+export const udxn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zgad,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { i: '🅱️', h: '🅰️', j: 'C' }
+}
+
+export const cjxe: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lidn,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { l: '🅱️', k: '🅰️' }
+}
+
+export const oqpi: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.mtyb,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  speed: 1.5
+}
+
+export const zxkq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wwii,
+  showPriorities: true,
+  variableSize: 'md',
+  bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
+}
