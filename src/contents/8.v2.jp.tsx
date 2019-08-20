@@ -448,15 +448,20 @@ export default () => (
                       <P>
                         いや、まだ分からんぞ。
                         <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} />{' '}
-                        ができるからといって、他の数字に対しても
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があるとは限らない。
+                        <EmojiNumber number={1} /> ができるからといって、
+                        <Strong>
+                          他の数字に対しても
+                          <H args={{ name: 'plusOneEffect' }} />
+                          があるとは限らない。
+                        </Strong>
                       </P>
                       <P>
                         たとえば、
-                        <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                        <EmojiNumber number={1} /> はできるのかな？
+                        <Strong>
+                          <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} /> はできるのかどうか、
+                        </Strong>
+                        確かめてみないと。
                       </P>
                     </>
                   )
@@ -467,8 +472,11 @@ export default () => (
                     <>
                       <P>
                         じゃあ、
-                        <EmojiNumber number={2} />
-                        に変換できる弁当箱と合体させてみるね！
+                        <Em>
+                          <EmojiNumber number={2} />
+                          に変換できる弁当箱と合体させてみる
+                        </Em>
+                        ね！
                       </P>
                       <R.Spga>
                         <H
@@ -486,6 +494,35 @@ export default () => (
                           結果が <EmojiNumber number={3} /> になればいい
                         </Em>
                         んだよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Awwn>
+              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Awwn>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={3} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>
+                        まずは実行してみるね。
+                        <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                     </>
                   )

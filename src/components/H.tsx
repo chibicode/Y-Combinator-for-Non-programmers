@@ -656,7 +656,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <Em>
             <H args={{ name: 'fastForward' }} />
-            を押してみてください
+            を押してみて{!args.girl && <>ください</>}
             {args.pleaseWait ||
             args.skippingSteps ||
             args.isFaster ||
@@ -664,6 +664,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               ? '。'
               : args.skipColon
               ? ''
+              : args.girl
+              ? '！'
               : ':'}
           </Em>
           {args.pleaseWait && <H args={{ name: 'itWillTakeTime' }} />}

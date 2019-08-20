@@ -3729,3 +3729,10 @@ export const rico: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
 }
+
+export const awwn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ngth,
+  showPriorities: true,
+  variableSize: 'md'
+}

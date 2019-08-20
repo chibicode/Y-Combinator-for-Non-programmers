@@ -67,6 +67,7 @@ export interface HProps {
         skippingSteps?: boolean
         isFaster?: boolean
         mentionRightArrow?: boolean
+        girl?: boolean
       }
     | { name: 'copy' }
     | { name: 'summary' }
