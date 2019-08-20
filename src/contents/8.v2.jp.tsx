@@ -901,8 +901,8 @@ export default () => (
             </R.Mcug>
             <P>
               中級編でこれまで学んだことを一言でまとめると、
-              <Strong>上の計算箱の機能は、弁当箱で再現できる</Strong>
-              、ということになります。
+              <Strong>上の計算箱の機能は、弁当箱で「再現」できる</Strong>
+              、ということです。
             </P>
             <EmojiSeparator
               emojis={['🎁', '↔️', '🍱']}
@@ -910,14 +910,43 @@ export default () => (
                 <>
                   計算箱の機能は、
                   <br />
-                  弁当箱で再現することができる
+                  弁当箱で「<Strong>再現</Strong>」することができる
                 </>
               }
             />
             <P>
-              まず、計算箱の <EmojiNumber number={1} /> の代わりに、
-              <EmojiNumber number={1} /> に変換できる弁当箱を用意します。
+              まず、
+              <Em>
+                計算箱の <EmojiNumber number={1} /> の代わりに、
+                <Strong>
+                  <Emoji>🐶</Emoji> ベンケイの芸で
+                  <EmojiNumber number={1} /> に変換できる
+                </Strong>
+                弁当箱
+              </Em>
+              を用意します。
             </P>
+            <R.Fxde>
+              <H args={{ name: 'convert', type: 'toMathBox' }} /> すると、
+              <br />
+              <Em>
+                <EmojiNumber number={1} /> になる
+              </Em>
+              弁当箱(先ほども登場しました)。
+            </R.Fxde>
+            <P>
+              そして、
+              <Em>
+                計算箱の <CustomEmoji type="plusOne" /> の代わりに、
+                <H args={{ name: 'plusOneEffect' }} />
+              </Em>
+              がある弁当箱を用意します。
+            </P>
+            <R.Qrfw>
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱
+              <br />(<Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱です)
+            </R.Qrfw>
           </>
         )
       }
