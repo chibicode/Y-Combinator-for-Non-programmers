@@ -3758,3 +3758,9 @@ export const nngz: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
 }
+
+export const nvqu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.disc,
+  showPriorities: true
+}

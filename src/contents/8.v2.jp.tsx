@@ -601,6 +601,45 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'plusOneEffect' }} />
+            がある法則
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ではここで正解を言いましょう。
+                        <Strong>
+                          サヤさんの弁当箱は、
+                          <H args={{ name: 'plusOneEffect' }} />
+                          がある弁当箱です。
+                        </Strong>
+                      </P>
+                      <P>
+                        だから、<Em>サヤさんの答えが正解です！</Em>
+                        おめでとうございます！<Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nvqu>
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱
+            </R.Nvqu>
+          </>
+        )
       }
     ]}
   />

@@ -2168,3 +2168,7 @@ export const ngth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('e', 'f', 2)
 ])
+
+export const disc = initializeExpressionContainer(
+  succParams('a', 'b', 'c', false, true)
+)
