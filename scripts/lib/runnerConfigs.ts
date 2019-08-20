@@ -3736,3 +3736,25 @@ export const awwn: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const nlbn: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.ngth,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false
+}
+
+export const zsxo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.ngth,
+  showPriorities: true
+}
+
+export const nngz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.fhyo,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
+}

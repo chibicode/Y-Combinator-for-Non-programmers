@@ -345,8 +345,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、ぼくが <EmojiNumber number={2} />{' '}
-                        に変換できます！
+                        この弁当箱は、
+                        <EmojiNumber number={2} /> に変換できます！
                       </P>
                     </>
                   )
@@ -525,6 +525,75 @@ export default () => (
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                       <P>今回は、最後まで止まらずに早送りします！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nlbn />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>結果はこうなったよ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zsxo />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱は、
+                        <EmojiNumber number={3} /> に変換できます！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nngz>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 3, letter: 'b' }}
+              />
+            </R.Nngz>
+            <ExpressionRunnerSeparator />
+            <R.Qsoa />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> が計算できたので、
+                        <Strong>またしても成功です！</Strong> <Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>わーい、わーい！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>す、すごい…！</P>
                     </>
                   )
                 }
