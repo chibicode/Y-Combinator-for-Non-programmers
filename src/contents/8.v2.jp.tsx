@@ -701,6 +701,7 @@ export default () => (
       }
       // 立ち止まって振り返ってみましょう。弁当箱を使って計算箱の機能を再現できる
       // At the end: Saya has a question for benkei (but don't ask the question yet)
+      // 前回とほぼ同じなので1.5倍速にします
     ]}
   />
 )
