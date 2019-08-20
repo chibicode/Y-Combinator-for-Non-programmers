@@ -348,7 +348,80 @@ export default () => (
                 }
               ]}
             />
-            <R.Rico></R.Rico>
+            <R.Rico>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+              />
+            </R.Rico>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>ということは、サヤちゃんの弁当箱は…</P>
+                      <P>
+                        <Em>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と合体させ、
+                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          すると、結果が <EmojiNumber number={2} /> になる
+                        </Em>
+                        ということですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Plde>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Plde>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果が <EmojiNumber number={2} /> になる
+            </R.Pmdm>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> が計算できたので、
+                        <Strong>成功です！</Strong> <Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>やったー！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        そんなバカな…！俺らがどれだけ頭をひねっても分からなかったのに、サヤちゃんにいとも簡単に解かれるなんて！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
