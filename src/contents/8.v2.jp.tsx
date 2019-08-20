@@ -851,8 +851,46 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: <>立ち止まって振り返ろう</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'tired',
+                  children: (
+                    <>
+                      <P>
+                        俺らふだん頭を使っていないから、情報量が多すぎて疲れてしまった…
+                      </P>
+                      <P>ちょっとひと休みしてもらえないか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>いいですよ！</P>
+                      <P>
+                        ちなみに現時点で、<Em>中級編も半分を終えました</Em>
+                        。つまり、本稿の折り返し地点を越えたということです。
+                        <Em>残るは中級編の残り半分と、上級編のみです。</Em>
+                      </P>
+                      <P>
+                        いい機会なので、少し立ち止まって振り返ってみましょう。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
-      // 立ち止まって振り返ってみましょう。弁当箱を使って計算箱の機能を再現できる
+      // 弁当箱を使って計算箱の機能を再現できる
       // Question on top, ABC on bottom, no matter how big Question is, it will work
       // At the end: Saya has a question for benkei (but don't ask the question yet)
     ]}
