@@ -49,13 +49,11 @@ export interface ExpressionRunnerPrecomputedProps {
 
 // Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed
-const FASTFORWARDING_THRESHOLD = 1.5
-const SEMITRANSPARENT_THRESHOLD = 2
+const FASTFORWARDING_THRESHOLD = 2
 
 interface PlaybackState {
   isFastForwarding: boolean
   isPlaying: boolean
-  isSemiTransparent: boolean
 }
 
 // Use floor() + 1 instead of ceil() to make sure it's nonzero
@@ -90,13 +88,11 @@ const ExpressionRunnerPrecomputed = ({
   convert,
   crossed
 }: ExpressionRunnerPrecomputedProps) => {
-  const [
-    { isFastForwarding, isPlaying, isSemiTransparent },
-    setPlaybackStatus
-  ] = useState<PlaybackState>({
+  const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
+    PlaybackState
+  >({
     isFastForwarding: false,
-    isPlaying: false,
-    isSemiTransparent: false
+    isPlaying: false
   })
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -124,8 +120,7 @@ const ExpressionRunnerPrecomputed = ({
         if (nextIndex >= expressionContainers.length - 1) {
           setPlaybackStatus({
             isFastForwarding: false,
-            isPlaying: false,
-            isSemiTransparent: false
+            isPlaying: false
           })
         }
       } else {
@@ -137,8 +132,7 @@ const ExpressionRunnerPrecomputed = ({
         if (currentIndex + 1 >= expressionContainers.length - 1) {
           setPlaybackStatus({
             isFastForwarding: false,
-            isPlaying: false,
-            isSemiTransparent: false
+            isPlaying: false
           })
         }
       }
@@ -170,16 +164,14 @@ const ExpressionRunnerPrecomputed = ({
   const autoplay = () => {
     setPlaybackStatus({
       isPlaying: true,
-      isFastForwarding: speed >= FASTFORWARDING_THRESHOLD,
-      isSemiTransparent: speed >= SEMITRANSPARENT_THRESHOLD
+      isFastForwarding: speed >= FASTFORWARDING_THRESHOLD
     })
   }
 
   const pause = () => {
     setPlaybackStatus({
       isPlaying: false,
-      isFastForwarding: false,
-      isSemiTransparent: false
+      isFastForwarding: false
     })
   }
 
@@ -272,7 +264,7 @@ const ExpressionRunnerPrecomputed = ({
               css={[
                 css`
                   line-height: ${lineHeights(1.3, { ignoreLocale: true })};
-                  opacity: ${isSemiTransparent ? 0.6 : 1};
+                  opacity: ${isFastForwarding ? 0.6 : 1};
                   position: relative;
                   background-color: ${colors('white')};
                 `
