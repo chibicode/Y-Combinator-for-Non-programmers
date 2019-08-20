@@ -524,6 +524,7 @@ export default () => (
                         まずは実行してみるね。
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
+                      <P>今回は、最後まで止まらずに早送りします！</P>
                     </>
                   )
                 }
