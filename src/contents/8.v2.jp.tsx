@@ -887,6 +887,19 @@ export default () => (
                 }
               ]}
             />
+            <P>
+              まずこちらをご覧ください。これは、
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算できる計算箱ですね。
+            </P>
+            <R.Mcug>
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算できる計算箱。
+              <br />
+              <H args={{ name: 'play' }} />
+              すると
+              <EmojiNumber number={2} /> になる
+            </R.Mcug>
           </>
         )
       }
