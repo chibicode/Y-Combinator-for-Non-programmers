@@ -40,6 +40,10 @@ export type VariableNames =
   | 'verticalDotDotDot'
   | 'questionFoodGrey'
   | 'questionFoodRed'
+  | 'C'
+  | 'D'
+  | 'E'
+  | 'F'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

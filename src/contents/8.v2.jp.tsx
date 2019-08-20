@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -638,6 +638,64 @@ export default () => (
               <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱
             </R.Nvqu>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>わーい、ベンケイさんありがとう！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        さらに言うと、サヤちゃんの弁当箱以外にも、
+                        <Strong>
+                          以下の法則に当てはまる弁当箱であれば、
+                          <H args={{ name: 'plusOneEffect' }} />
+                          があります。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Blvt>
+              この法則に当てはまる弁当箱であれば、
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              がある
+            </R.Blvt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>わたしの弁当箱の場合、</P>
+                      <Ul>
+                        <UlLi>
+                          <Emoji>🅰️</Emoji> は <EmojiWithText letter="a" />
+                        </UlLi>
+                        <UlLi>
+                          <Emoji>🅱️</Emoji> は <EmojiWithText letter="b" />
+                        </UlLi>
+                        <UlLi>
+                          <CustomEmoji type="C" /> は{' '}
+                          <EmojiWithText letter="c" />
+                        </UlLi>
+                      </Ul>
+                      <P>ということかな？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

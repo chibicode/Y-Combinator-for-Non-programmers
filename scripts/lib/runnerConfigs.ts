@@ -3764,3 +3764,9 @@ export const nvqu: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.disc,
   showPriorities: true
 }
+
+export const blvt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.blns,
+  showPriorities: true
+}
