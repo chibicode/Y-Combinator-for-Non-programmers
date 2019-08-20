@@ -1,6 +1,13 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Em,
+  Ul,
+  UlLi,
+  InlineHeader
+} from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -853,6 +860,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: <>立ち止まって振り返ろう</>,
         content: (
           <>
@@ -914,13 +922,14 @@ export default () => (
                 </>
               }
             />
+            <P>復習になりますが、3つのステップで説明しますね。</P>
             <P>
-              まず、
+              <InlineHeader>ステップ1:</InlineHeader> まず、
               <Em>
                 計算箱の <EmojiNumber number={1} /> の代わりに、
                 <Strong>
-                  <Emoji>🐶</Emoji> ベンケイの芸で
-                  <EmojiNumber number={1} /> に変換できる
+                  <Emoji>🐶</Emoji> ベンケイの芸で <EmojiNumber number={1} />{' '}
+                  に変換できる
                 </Strong>
                 弁当箱
               </Em>
@@ -935,7 +944,7 @@ export default () => (
               弁当箱(先ほども登場しました)。
             </R.Fxde>
             <P>
-              そして、
+              <InlineHeader>ステップ2:</InlineHeader> 次に、
               <Em>
                 計算箱の <CustomEmoji type="plusOne" /> の代わりに、
                 <H args={{ name: 'plusOneEffect' }} />
@@ -947,6 +956,35 @@ export default () => (
               がある弁当箱
               <br />(<Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱です)
             </R.Qrfw>
+            <P>
+              <InlineHeader>ステップ3:</InlineHeader>{' '}
+              このふたつを合体させれば、先ほども説明した通り、
+              <Em>
+                <H args={{ name: 'runAndConertToMathbox' }} /> すると{' '}
+                <EmojiNumber number={2} /> になります
+              </Em>
+              ね。
+            </P>
+            <R.Dyoq>
+              <EmojiNumber number={1} /> に変換できる弁当箱と
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱を合体
+            </R.Dyoq>
+            <P>
+              つまり、先ほど登場した <EmojiNumber number={1} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+              を計算できる計算箱は、
+            </P>
+            <R.Lizi></R.Lizi>
+            <P>
+              <Strong>こちらの弁当箱で「再現」できる</Strong>ということです。
+            </P>
+            <R.Plde>
+              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
+              の計算箱を、弁当箱で再現
+            </R.Plde>
+            <P>もちろん、もっと複雑な</P>
           </>
         )
       }

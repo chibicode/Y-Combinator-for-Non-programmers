@@ -3815,3 +3815,14 @@ export const zxkq: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   bottomRightBadgeOverrides: { j: '🅱️', i: '🅰️' }
 }
+
+export const dyoq: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.uqth,
+    initialExpressionContainers.hdpc
+  ],
+  showPriorities: true,
+  variableSize: 'md',
+  convert: 'toMathBoxPlay'
+}
