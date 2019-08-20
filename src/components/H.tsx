@@ -2013,6 +2013,21 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'canBeConvertedCaption') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          右下には <Emoji>🅰️</Emoji> がついた{' '}
+          <EmojiForLetter letter={args.letter} /> が「
+          <Strong>{args.number}個</Strong>」
+          <br />
+          → 計算箱に変換すると <EmojiNumber number={args.number} /> になる
+        </>
+      )
+    }
+  }
   throw new Error()
 }
 

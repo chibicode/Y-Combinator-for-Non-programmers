@@ -3722,3 +3722,10 @@ export const rhcv: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   isDone: true
 }
+
+export const rico: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.oxuf,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
+}

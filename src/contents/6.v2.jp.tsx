@@ -569,13 +569,9 @@ export default () => (
               ]}
             />
             <R.Wopl>
-              右下には <Emoji>🅰️</Emoji> がついた
-              <EmojiForLetter letter="e" />
-              が「<Strong>2個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={2} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'e', number: 2 }}
+              />
             </R.Wopl>
             <ExpressionRunnerSeparator />
             <R.Pmdm />
@@ -648,13 +644,9 @@ export default () => (
               ]}
             />
             <R.Qwdg>
-              右下には <Emoji>🅰️</Emoji> がついた
-              <EmojiForLetter letter="k" />
-              が「<Strong>2個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={2} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'k', number: 2 }}
+              />
             </R.Qwdg>
             <ExpressionRunnerSeparator />
             <R.Pmdm />
@@ -797,13 +789,9 @@ export default () => (
               ]}
             />
             <R.Duuk>
-              右下には<Emoji>🅰️</Emoji>がついた
-              <EmojiForLetter letter="i" />
-              が「<Strong>4個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={4} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'i', number: 4 }}
+              />
             </R.Duuk>
             <ExpressionRunnerSeparator />
             <R.Kizi />
@@ -846,7 +834,7 @@ export default () => (
                         と<Emoji>🅱️</Emoji>の印をつけると、
                         <Em>
                           右下には<Emoji>🅰️</Emoji>がついた
-                          <EmojiWithText letter="i" />が
+                          <EmojiWithText letter="a" />が
                           <Em>ひとつもありません</Em>。
                         </Em>
                       </P>
@@ -867,13 +855,9 @@ export default () => (
               ]}
             />
             <R.Dwzy>
-              右下には<Emoji>🅰️</Emoji>がついた
-              <EmojiForLetter letter="i" />
-              が「<Strong>ゼロ個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={0} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'a', number: 0 }}
+              />
             </R.Dwzy>
             <ExpressionRunnerSeparator />
             <R.Jwah />
@@ -994,13 +978,9 @@ export default () => (
               ]}
             />
             <R.Dwzy>
-              右下には<Emoji>🅰️</Emoji>がついた
-              <EmojiForLetter letter="i" />
-              が「<Strong>ゼロ個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={0} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'a', number: 0 }}
+              />
             </R.Dwzy>
             <ExpressionRunnerSeparator />
             <R.Jwah />
@@ -1230,13 +1210,9 @@ export default () => (
               ]}
             />
             <R.Hhdu>
-              右下には<Emoji>🅰️</Emoji>がついた
-              <EmojiForLetter letter="i" />
-              が「<Strong>1個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={1} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'e', number: 1 }}
+              />
             </R.Hhdu>
             <ExpressionRunnerSeparator />
             <R.Rnug />

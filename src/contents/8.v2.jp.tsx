@@ -324,6 +324,33 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2} /> に変換できる
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱は、ぼくが <EmojiNumber number={2} />{' '}
+                        に変換できます！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rico></R.Rico>
+          </>
+        )
       }
     ]}
   />

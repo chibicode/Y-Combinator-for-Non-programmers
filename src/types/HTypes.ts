@@ -152,4 +152,5 @@ export interface HProps {
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
     | { name: 'convertiblePatternCaption' }
+    | { name: 'canBeConvertedCaption'; letter: VariableNames; number: number }
 }

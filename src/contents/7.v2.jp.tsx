@@ -194,13 +194,9 @@ export default () => (
               ]}
             />
             <R.Rbup>
-              右下には <Emoji>🅰️</Emoji> がついた
-              <EmojiForLetter letter="d" />
-              が「<Strong>1個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={1} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'd', number: 1 }}
+              />
             </R.Rbup>
             <ExpressionRunnerSeparator />
             <R.Rnug />
@@ -365,13 +361,9 @@ export default () => (
               ]}
             />
             <R.Spga>
-              右下には <Emoji>🅰️</Emoji> がついた
-              <EmojiForLetter letter="f" />
-              が「<Strong>2個</Strong>」
-              <br />
-              → 計算箱に変換すると
-              <EmojiNumber number={2} />
-              になる
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'f', number: 2 }}
+              />
             </R.Spga>
             <ExpressionRunnerSeparator />
             <R.Pmdm />

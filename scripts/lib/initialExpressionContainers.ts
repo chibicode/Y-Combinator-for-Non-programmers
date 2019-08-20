@@ -2155,3 +2155,7 @@ export const uqth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', 'e', 1)
 ])
+
+export const oxuf = initializeExpressionContainer(
+  numberParamsHighlightNumber('b', 'c', 2)
+)
