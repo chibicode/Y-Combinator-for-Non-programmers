@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em } from 'src/components/ContentTags'
+import { P, Em, Strong } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -142,6 +142,64 @@ export default () => (
               <H args={{ name: 'pressFastForward', skippable: true }} />
             </P>
             <R.Akik />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        実行を終えたので、
+                        <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
+                        したいところですが…
+                      </P>
+                      <P>
+                        残念ながら、
+                        <Strong>
+                          この弁当箱はぼくが計算箱に変換することができません。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Auks>計算箱に変換できない</R.Auks>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        理由はもちろん、
+                        <Em>以下の法則に沿っていないからです。</Em>
+                      </P>
+                      <R.Eozk>
+                        <H args={{ name: 'convertiblePatternCaption' }} />
+                      </R.Eozk>
+                      <P>
+                        <Em>
+                          右上には <Emoji>🅱️</Emoji> の料理が「
+                          <Strong>ひとつだけ</Strong>
+                          」ある必要があります。しかし、
+                          <Em>
+                            ここでは <Emoji>🅱️</Emoji> の料理が
+                            <Strong>ふたつ</Strong>もある
+                          </Em>
+                          ので、計算箱に変換できないのです。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Vqwp>
+              右上に <Emoji>🅱️</Emoji> がふたつあるので、
+              <br />
+              計算箱に変換できない
+            </R.Vqwp>
           </>
         )
       }

@@ -2212,3 +2212,22 @@ export const qdoh = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', 'b', 1)
 ])
+
+export const zigt = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: ['b', ['c', 'c']]
+  }
+})
+
+export const uwoq = initializeExpressionContainer({
+  arg: 'b',
+  body: {
+    arg: 'c',
+    body: [
+      'b',
+      [{ name: 'c', highlighted: true }, { name: 'c', highlighted: true }]
+    ]
+  }
+})

@@ -3860,3 +3860,17 @@ export const akik: ExpressionRunnerShorthandConfig = {
   skipAlphaConvert: true,
   speed: 1.25
 }
+
+export const auks: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zigt,
+  showPriorities: true,
+  crossed: true
+}
+
+export const vqwp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uwoq,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
+}
