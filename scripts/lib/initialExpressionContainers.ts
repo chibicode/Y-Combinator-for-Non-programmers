@@ -2207,3 +2207,8 @@ export const orfr = initializeExpressionContainer([
   succParams('a', 'b', 'c', false, true),
   numberParams('d', 'b', 1)
 ])
+
+export const qdoh = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams('d', 'b', 1)
+])

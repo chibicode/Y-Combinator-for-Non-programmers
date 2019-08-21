@@ -118,7 +118,11 @@ export default () => (
       },
       {
         title: <>実行してみると…</>,
-        content: <></>
+        content: (
+          <>
+            <R.Akik />
+          </>
+        )
       }
     ]}
   />

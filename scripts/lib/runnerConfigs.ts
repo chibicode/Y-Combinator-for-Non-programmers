@@ -3850,3 +3850,13 @@ export const nhqo: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const akik: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  skipAlphaConvert: true,
+  speed: 1.5
+}
