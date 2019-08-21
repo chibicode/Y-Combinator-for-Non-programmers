@@ -25,7 +25,6 @@ export interface CardProps {
     | 'grey'
     | 'orange'
     | 'yellow'
-    | 'purple'
     | 'green'
     | 'blue'
     | 'indigo'
@@ -186,7 +185,7 @@ const Card = ({
                 padding-right: ${spaces(2)};
                 padding-bottom: ${spaces(1)};
               }
-              background: ${backgroundColor(footer.color || 'purple')};
+              background: ${backgroundColor(footer.color || 'brown')};
               border-bottom-right-radius: ${radii(0.5)};
               border-bottom-left-radius: ${radii(0.5)};
             `}

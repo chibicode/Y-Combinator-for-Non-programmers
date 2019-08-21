@@ -4,7 +4,6 @@ import {
   numTotalPages
 } from 'src/lib/episodeCategories'
 import {
-  Blockquote,
   Em,
   Img,
   ExternalLink,
@@ -15,6 +14,7 @@ import {
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
+import BubbleQuotes from 'src/components/BubbleQuotes'
 import NextLessonButton from 'src/components/NextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
@@ -559,31 +559,40 @@ export default () => (
               。
             </P>
             <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
-            <Blockquote>
-              <P>
-                <Strong>
-                  <Em>
-                    <H args={{ name: 'yCombinator' }} />
-                    とは、プログラミングのテクニックのひとつです。
-                  </Em>
-                </Strong>{' '}
-                (中略) 個人的に、
-                <H args={{ name: 'yCombinator' }} />
-                があまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
-                <Em>われわれが投資する起業家を選別する</Em>
-                際に、この名前が役立ちました。
-              </P>
-              <P>
-                <Em>
-                  わたしたちは凄腕プログラマの起業家は招き入れたかったが、スーツ姿のビジネスパーソンは門前払いにしたかった。
-                </Em>
-                凄腕プログラマがわたしたちのことを聞いたら、こう思うでしょう。「
-                <H args={{ name: 'yCombinator' }} />
-                って名のITベンチャー養成機関だって？最高じゃん！きっと、面白い人たちが集まっているに違いない」と。いっぽう、スーツの人たちは、
-                <H args={{ name: 'yCombinator' }} />
-                と聞いても何のことやらさっぱり、となりますから。
-              </P>
-            </Blockquote>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'manLightSkinWhiteHair',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <Em>
+                            <H args={{ name: 'yCombinator' }} />
+                            とは、プログラミングのテクニックのひとつです。
+                          </Em>
+                        </Strong>{' '}
+                        (中略) 個人的に、
+                        <H args={{ name: 'yCombinator' }} />
+                        があまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
+                        <Em>われわれが投資する起業家を選別する</Em>
+                        際に、この名前が役立ちました。
+                      </P>
+                      <P>
+                        <Em>
+                          わたしたちは凄腕プログラマの起業家は招き入れたかったが、スーツ姿のビジネスパーソンは門前払いにしたかった。
+                        </Em>
+                        凄腕プログラマがわたしたちのことを聞いたら、こう思うでしょう。「
+                        <H args={{ name: 'yCombinator' }} />
+                        って名のITベンチャー養成機関だって？最高じゃん！きっと、面白い人たちが集まっているに違いない」と。いっぽう、スーツの人たちは、
+                        <H args={{ name: 'yCombinator' }} />
+                        と聞いても何のことやらさっぱり、となりますから。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <P>
               <Strong>ざっくり言うと:</Strong>{' '}
               彼らは凄腕プログラマの起業家に投資したかった。だから、「

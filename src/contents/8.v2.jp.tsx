@@ -87,7 +87,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>ねえねえ、みんな何してるの？</P>
@@ -131,7 +131,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>ふーん、じゃあサヤも解くのを手伝うよ！</P>
@@ -164,7 +164,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
@@ -415,7 +415,7 @@ export default () => (
                   )
                 },
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>やったー！</P>
@@ -474,7 +474,7 @@ export default () => (
                   )
                 },
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
@@ -524,7 +524,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
@@ -541,7 +541,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>結果はこうなったよ！</P>
@@ -589,7 +589,7 @@ export default () => (
                   )
                 },
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>わーい、わーい！</P>
@@ -648,7 +648,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>わーい、ベンケイさんありがとう！</P>
@@ -681,7 +681,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>サヤが考えた弁当箱の場合、</P>
@@ -1133,7 +1133,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'girl',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
