@@ -1159,6 +1159,7 @@ export default () => (
               サヤちゃんが見つけた、「<Strong>おかしなこと</Strong>
               」とは何なのでしょうか？次のページで説明していきます！
             </P>
+            <EmojiSeparator emojis={['❓', '👧🏻', '❓']} />
             <NextLessonButton />
           </>
         )

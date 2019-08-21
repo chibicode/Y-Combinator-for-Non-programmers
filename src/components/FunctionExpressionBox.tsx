@@ -9,6 +9,7 @@ import ExpressionBox from 'src/components/ExpressionBox'
 import maxNestedFunctionDepth from 'scripts/lib/maxNestedFunctionDepth'
 import { FunctionExpression } from 'src/types/ExpressionTypes'
 import plusOneSvg from 'src/images/plusOne.url.svg'
+import minusOneSvg from 'src/images/minusOne.url.svg'
 
 interface FunctionExpressionBoxProps {
   expression: FunctionExpression
@@ -42,6 +43,12 @@ const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
             expression.meta === 'plusOneEffect' &&
               css`
                 background-image: url(${plusOneSvg});
+                background-size: 4em;
+                background-position: center center;
+              `,
+            expression.meta === 'minusOneEffect' &&
+              css`
+                background-image: url(${minusOneSvg});
                 background-size: 4em;
                 background-position: center center;
               `

@@ -315,7 +315,7 @@ export interface FunctionExpression {
   readonly type: 'function'
   readonly arg: VariableExpression
   readonly body: Expression
-  readonly meta?: 'focused' | 'plusOneEffect'
+  readonly meta?: 'focused' | 'plusOneEffect' | 'minusOneEffect'
 }
 
 export interface ConditionalExpression {

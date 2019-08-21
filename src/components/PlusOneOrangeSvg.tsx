@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const PlusOneSvg = (props: React.SVGProps<SVGSVGElement>) => (
+const PlusOneOrangeSvg = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 36 36" {...props}>
     <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
       <g fillRule="nonzero">
@@ -23,4 +23,4 @@ const PlusOneSvg = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export default PlusOneSvg
+export default PlusOneOrangeSvg

@@ -1967,6 +1967,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'minusOneEffect') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          「<Strong>1を引く効果</Strong> <CustomEmoji type="minusOnePink" />」
+        </>
+      )
+    }
+  }
   if (args.name === 'startWithTwoCaption') {
     if (locale === 'en') {
       return <>?</>

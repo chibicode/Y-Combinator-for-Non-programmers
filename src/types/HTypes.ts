@@ -150,6 +150,7 @@ export interface HProps {
     | { name: 'canBeConverted' }
     | { name: 'sameAddRole' }
     | { name: 'plusOneEffect' }
+    | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
     | { name: 'convertiblePatternCaption' }
