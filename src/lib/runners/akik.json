@@ -2885,7 +2885,7 @@
       }
     }
   ],
-  "speed": 1.5,
+  "speed": 1.25,
   "showOnlyFocused": false,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",

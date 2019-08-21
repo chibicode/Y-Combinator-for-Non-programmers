@@ -2041,6 +2041,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
+  if (args.name === 'skipToTheEnd') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>最後までスキップ</>
+    }
+  }
   throw new Error()
 }
 

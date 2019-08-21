@@ -17,6 +17,7 @@ import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigF
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import useInterval from 'src/hooks/useInterval'
 import CrossSvg from 'src/components/CrossSvg'
+import { LinkButton } from 'src/components/ContentTags/LinkButton'
 
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
@@ -96,6 +97,7 @@ const ExpressionRunnerPrecomputed = ({
   })
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [resetClicked, setResetClicked] = useState<boolean>(false)
 
   useInterval(
     () => {
@@ -159,6 +161,7 @@ const ExpressionRunnerPrecomputed = ({
   const reset = () => {
     setCurrentIndex(0)
     pause()
+    setResetClicked(true)
   }
 
   const autoplay = () => {
@@ -184,6 +187,7 @@ const ExpressionRunnerPrecomputed = ({
     'ready'
   )
   const atLeastOneStepTaken = currentIndex > 0
+  const canStepForward = currentIndex < expressionContainers.length - 1
   const explanationsVisible =
     explanationsVisibility === 'visible' ||
     (explanationsVisibility === 'hiddenInitialPausedOnly' &&
@@ -191,8 +195,8 @@ const ExpressionRunnerPrecomputed = ({
       currentIndex > 0) ||
     (explanationsVisibility === 'hiddenInitialAndLastPausedOnly' &&
       !isPlaying &&
-      currentIndex > 0 &&
-      currentIndex < expressionContainers.length - 1)
+      atLeastOneStepTaken &&
+      canStepForward)
 
   return (
     <ExpressionRunnerContext.Provider
@@ -296,8 +300,8 @@ const ExpressionRunnerPrecomputed = ({
             <ExpressionRunnerControls
               onNextClick={stepForward}
               onPreviousClick={stepBackward}
-              canStepForward={currentIndex < expressionContainers.length - 1}
-              canStepBackward={currentIndex > 0}
+              canStepForward={canStepForward}
+              canStepBackward={atLeastOneStepTaken}
               showPlayButton={!hidePlayButton}
               isPlaying={isPlaying}
               onAutoClick={autoplay}
@@ -313,6 +317,30 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
+          {!hidePlayButton &&
+            canStepForward &&
+            !isPlaying &&
+            expressionContainers[expressionContainers.length - 1]
+              .containerState === 'done' &&
+            resetClicked && (
+              <>
+                <ExpressionRunnerCaptionWrapper
+                  css={css`
+                    margin: ${spaces(0.75)} 0 ${spaces('-0.25')};
+                  `}
+                >
+                  <LinkButton
+                    onClick={stepToTheEnd}
+                    css={css`
+                      color: inherit;
+                      font-weight: bold;
+                    `}
+                  >
+                    <H args={{ name: 'skipToTheEnd' }} /> →
+                  </LinkButton>
+                </ExpressionRunnerCaptionWrapper>
+              </>
+            )}
           {isPlaying && isFastForwarding && !isDone && (
             <>
               <ExpressionRunnerCaptionWrapper

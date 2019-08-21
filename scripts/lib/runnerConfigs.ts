@@ -3858,5 +3858,5 @@ export const akik: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   skipToTheEnd: false,
   skipAlphaConvert: true,
-  speed: 1.5
+  speed: 1.25
 }
