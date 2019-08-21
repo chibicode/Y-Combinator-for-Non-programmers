@@ -4,6 +4,7 @@ import { P, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import * as R from 'src/components/Runners'
 
@@ -98,7 +99,23 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  結果は <EmojiNumber number={2} /> になるはず…？
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'girl',
                   children: (
@@ -120,6 +137,10 @@ export default () => (
         title: <>実行してみると…</>,
         content: (
           <>
+            <P>
+              それでは、
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
             <R.Akik />
           </>
         )
