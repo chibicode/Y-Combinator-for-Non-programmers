@@ -4,6 +4,7 @@ import { P, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import Emoji from 'src/components/Emoji'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -80,8 +81,44 @@ export default () => (
               <br />
               するとどうなる？
             </R.Nhqo>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        そりゃあ、
+                        <Em>
+                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} /> を計算できるんだから、
+                          <EmojiNumber number={2} /> になるに決まっている
+                        </Em>
+                        だろう？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、
+                        <H args={{ name: 'play' }} />
+                        してみてよ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
+      },
+      {
+        title: <>実行してみると…</>,
+        content: <></>
       }
     ]}
   />
