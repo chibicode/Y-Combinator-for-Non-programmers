@@ -6,7 +6,8 @@ import {
   Em,
   Ul,
   UlLi,
-  InlineHeader
+  InlineHeader,
+  Hr
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -1028,6 +1029,7 @@ export default () => (
                 になるのを確認できます。
               </Em>
             </P>
+            <Hr />
             <P>
               まとめると、
               <Em>
