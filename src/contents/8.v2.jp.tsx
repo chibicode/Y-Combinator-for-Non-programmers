@@ -1052,14 +1052,17 @@ export default () => (
               」や、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」がありましたよね。
             </P>
-            <R.Fqci>
+            <R.Xmqp>
               「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
               」の例
-            </R.Fqci>
-            <R.Xfry>
+            </R.Xmqp>
+            <R.Ednv>
               「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」の例
-            </R.Xfry>
+              <br />
+              (<CustomEmoji type="plusOne" /> を <EmojiNumber number={4} />{' '}
+              回繰り返す)
+            </R.Ednv>
             <P>
               <Em>
                 これらの機能も、弁当箱で再現することができるのでしょうか？
@@ -1085,6 +1088,10 @@ export default () => (
               <Em>この疑問については、後に答えが明らかになります。</Em>
               とりあえず、話をラムダ村に戻しましょう！
             </P>
+            <EmojiSeparator
+              emojis={['🙂', '👧🏻', '🐶', '😈']}
+              description={<>話を戻しましょう！</>}
+            />
           </>
         )
       },
@@ -1127,7 +1134,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>はい、おかしなこととは何ですか？</P>
+                      <P>はい、「おかしなこと」とは何ですか？</P>
                     </>
                   )
                 }

@@ -3335,7 +3335,6 @@ export const pgxb: ExpressionRunnerShorthandConfig = {
 
 export const ednv: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
-  variableSize: 'md',
   initialExpressionContainers: [
     initialExpressionContainers.dams,
     initialExpressionContainers.rjyq
@@ -3345,11 +3344,6 @@ export const ednv: ExpressionRunnerShorthandConfig = {
 export const xpks: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   variableSize: 'md',
-  initialExpressionContainer: initialExpressionContainers.dams
-}
-
-export const xfry: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.dams
 }
 
@@ -3841,9 +3835,4 @@ export const xhdq: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'sm',
   convert: 'toMathBoxPlay'
-}
-
-export const fqci: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.qtns
 }
