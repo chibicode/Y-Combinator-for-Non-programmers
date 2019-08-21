@@ -6,8 +6,7 @@ import {
   Em,
   Ul,
   UlLi,
-  InlineHeader,
-  Hr
+  InlineHeader
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -990,7 +989,14 @@ export default () => (
               <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
               の計算箱を、弁当箱で再現
             </R.Plde>
-            <Hr />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>もっと複雑な計算箱も再現できる</>,
+        content: (
+          <>
             <P>
               もちろん、もっと複雑な計算箱も再現できます。たとえば、初級その1に登場したこちらの計算箱をご覧ください。
             </P>
@@ -1022,7 +1028,6 @@ export default () => (
                 になるのを確認できます。
               </Em>
             </P>
-            <Hr />
             <P>
               まとめると、
               <Em>
@@ -1044,6 +1049,14 @@ export default () => (
                 </>
               }
             />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: <>他の機能も再現できる？</>,
+        content: (
+          <>
             <P>
               ここで疑問なのですが、初級で説明した通り、計算箱には「
               <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
