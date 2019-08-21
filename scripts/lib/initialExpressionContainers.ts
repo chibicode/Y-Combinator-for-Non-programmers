@@ -2194,3 +2194,8 @@ export const mtyb = initializeExpressionContainer([
 export const wwii = initializeExpressionContainer(
   numberParamsHighlightNumber('i', 'j', 4)
 )
+
+export const jxur = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  [succParams('a', 'b', 'c'), numberParams('d', 'e', 2)]
+])

@@ -3826,3 +3826,14 @@ export const dyoq: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   convert: 'toMathBoxPlay'
 }
+
+export const xhdq: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.jxur,
+    initialExpressionContainers.uarl
+  ],
+  showPriorities: true,
+  variableSize: 'sm',
+  convert: 'toMathBoxPlay'
+}

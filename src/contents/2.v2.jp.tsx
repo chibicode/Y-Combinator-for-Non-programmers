@@ -53,7 +53,7 @@ export default () => (
             />
             <P>
               今回は、3つめの計算箱の機能である「
-              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
+              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」について説明します。
             </P>
             <EmojiSeparator
@@ -246,7 +246,7 @@ export default () => (
           <>
             <P>
               実は計算箱には、こういったミスを防ぐために役立つ「
-              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
+              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」が備わっています。
             </P>
             <EmojiSeparator
@@ -425,7 +425,7 @@ export default () => (
             </Ul>
             <P>
               これが、計算箱の「
-              <Emoji>🔁</Emoji> <Strong>繰り返しの機能</Strong>
+              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」です。
             </P>
             <EmojiSeparator

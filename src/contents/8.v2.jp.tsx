@@ -6,13 +6,13 @@ import {
   Em,
   Ul,
   UlLi,
-  InlineHeader
+  InlineHeader,
+  Hr
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
-// import EmojiForLetter from 'src/components/EmojiForLetter'
 import H from 'src/components/H'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
@@ -20,7 +20,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import * as R from 'src/components/Runners'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import EmojiWithText from 'src/components/EmojiWithText'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -909,14 +909,20 @@ export default () => (
             </R.Mcug>
             <P>
               中級編でこれまで学んだことを一言でまとめると、
-              <Strong>上の計算箱の機能は、弁当箱で「再現」できる</Strong>
+              <Strong>
+                上の計算箱の「<Strong>1を足す機能</Strong>{' '}
+                <CustomEmoji type="plusOne" />
+                」は、弁当箱で「再現」できる
+              </Strong>
               、ということです。
             </P>
             <EmojiSeparator
               emojis={['🎁', '↔️', '🍱']}
               description={
                 <>
-                  計算箱の機能は、
+                  計算箱の「<Strong>1を足す機能</Strong>{' '}
+                  <CustomEmoji type="plusOne" />
+                  」は、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
                 </>
@@ -984,13 +990,149 @@ export default () => (
               <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
               の計算箱を、弁当箱で再現
             </R.Plde>
-            <P>もちろん、もっと複雑な</P>
+            <Hr />
+            <P>
+              もちろん、もっと複雑な計算箱も再現できます。たとえば、初級その1に登場したこちらの計算箱をご覧ください。
+            </P>
+            <R.Jiqb />
+            <P>
+              これを弁当箱で再現するには、
+              <Em>
+                <EmojiNumber number={2} /> に変換できる弁当箱と、
+                <H args={{ name: 'plusOneEffect' }} />
+                がある弁当箱を「<Strong>2個</Strong>」合体させればいい
+              </Em>
+              のです。
+            </P>
+            <R.Xhdq>
+              <EmojiNumber number={2} /> に変換できる弁当箱と
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱を「<Strong>2個</Strong>」<br />
+              合体すれば、
+              <EmojiNumber number={2} /> <CustomEmoji type="plusOne" />{' '}
+              <CustomEmoji type="plusOne" /> の計算箱を再現できる
+            </R.Xhdq>
+            <P>
+              上の弁当箱は実行に時間がかかるので、ここでは早送りはしませんが、
+              <Em>
+                上の
+                <H args={{ name: 'runAndConertToMathbox' }} />{' '}
+                ボタンを押すと、答えが <EmojiNumber number={4} />{' '}
+                になるのを確認できます。
+              </Em>
+            </P>
+            <Hr />
+            <P>
+              まとめると、
+              <Em>
+                計算箱の「<Strong>1を足す機能</Strong>{' '}
+                <CustomEmoji type="plusOne" />
+                」は、弁当箱で再現することができる
+              </Em>
+              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
+            </P>
+            <EmojiSeparator
+              emojis={['🎁', '↔️', '🍱']}
+              description={
+                <>
+                  計算箱の「<Strong>1を足す機能</Strong>{' '}
+                  <CustomEmoji type="plusOne" />
+                  」は、
+                  <br />
+                  弁当箱で「<Strong>再現</Strong>」することができる
+                </>
+              }
+            />
+            <P>
+              ここで疑問なのですが、初級で説明した通り、計算箱には「
+              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+              」以外にも、「<Strong>1を引く機能</Strong>{' '}
+              <CustomEmoji type="minusOne" />
+              」や、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」がありますよね。
+            </P>
+            <P>
+              <Em>
+                これらの機能も、弁当箱で再現することができるのでしょうか？
+              </Em>
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="minusOne" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>🔁</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                  」や「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」も、
+                  <br />
+                  弁当箱で「再現」できる？
+                </>
+              }
+            />
+            <P>
+              <Em>この疑問については、後に答えが明らかになります。</Em>
+              とりあえず、話をラムダ村に戻しましょう！
+            </P>
+          </>
+        )
+      },
+      {
+        title: <>話を戻すと…</>,
+        content: (
+          <>
+            <P>
+              悪魔による難しい問題に見事答えられたことで、村人たちは大喜びでした。
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>
+                        やった！サヤちゃんのおかげで問題に答えられたぞ！これで計算箱を返してもらえる！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>しかし、当のサヤちゃんには何か腑に落ちない点があるようです。</P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'girl',
+                  children: (
+                    <>
+                      <P>
+                        ベンケイさん、
+                        <Em>おかしなことを見つけちゃったんだけど…</Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>はい、おかしなこととは何ですか？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              サヤちゃんが見つけた、「<Strong>おかしなこと</Strong>
+              」とは何なのでしょうか？次のページで説明していきます！
+            </P>
+            <NextLessonButton />
           </>
         )
       }
-      // 弁当箱を使って計算箱の機能を再現できる
-      // Question on top, ABC on bottom, no matter how big Question is, it will work
-      // At the end: Saya has a question for benkei (but don't ask the question yet)
     ]}
   />
 )
