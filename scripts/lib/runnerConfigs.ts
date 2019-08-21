@@ -3811,7 +3811,7 @@ export const oqpi: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   skipToTheEnd: false,
-  speed: 1.5
+  speed: 1.25
 }
 
 export const zxkq: ExpressionRunnerShorthandConfig = {

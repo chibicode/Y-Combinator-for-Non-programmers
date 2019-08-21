@@ -11,7 +11,7 @@ import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanat
 import { lineHeights } from 'src/lib/theme'
 import { isContainerWithState } from 'src/lib/expressionContainerGuards'
 import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
-import { colors, spaces, zIndices } from 'src/lib/theme'
+import { fontSizes, colors, spaces, zIndices } from 'src/lib/theme'
 import { expressionRunnerContextDefault } from 'src/types/ExpressionRunnerTypes'
 import { ExpressionRunnerConfig } from 'scripts/lib/buildExpressionRunnerConfigFromShorthand'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
@@ -155,6 +155,7 @@ const ExpressionRunnerPrecomputed = ({
   }
 
   const stepToTheEnd = () => {
+    pause()
     setCurrentIndex(expressionContainers.length - 1)
   }
 
@@ -319,14 +320,13 @@ const ExpressionRunnerPrecomputed = ({
         >
           {!hidePlayButton &&
             canStepForward &&
-            !isPlaying &&
             expressionContainers[expressionContainers.length - 1]
               .containerState === 'done' &&
-            resetClicked && (
+            (resetClicked || speed > 1) && (
               <>
                 <ExpressionRunnerCaptionWrapper
                   css={css`
-                    margin: ${spaces(0.75)} 0 ${spaces('-0.25')};
+                    margin: ${spaces(1)} 0 ${spaces('-0.25')};
                   `}
                 >
                   <LinkButton
@@ -334,6 +334,7 @@ const ExpressionRunnerPrecomputed = ({
                     css={css`
                       color: inherit;
                       font-weight: bold;
+                      font-size: ${fontSizes(0.75)};
                     `}
                   >
                     <H args={{ name: 'skipToTheEnd' }} /> →

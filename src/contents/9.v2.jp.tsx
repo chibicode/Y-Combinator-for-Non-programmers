@@ -139,7 +139,7 @@ export default () => (
           <>
             <P>
               それでは、
-              <H args={{ name: 'pressFastForward' }} />
+              <H args={{ name: 'pressFastForward', skippable: true }} />
             </P>
             <R.Akik />
           </>

@@ -68,6 +68,7 @@ export interface HProps {
         isFaster?: boolean
         mentionRightArrow?: boolean
         girl?: boolean
+        skippable?: boolean
       }
     | { name: 'copy' }
     | { name: 'summary' }
@@ -156,4 +157,5 @@ export interface HProps {
     | { name: 'convertiblePatternCaption' }
     | { name: 'canBeConvertedCaption'; letter: VariableNames; number: number }
     | { name: 'skipToTheEnd' }
+    | { name: 'fastForwardSkippable' }
 }

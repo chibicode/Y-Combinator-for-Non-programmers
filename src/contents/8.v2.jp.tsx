@@ -805,9 +805,7 @@ export default () => (
               ]}
             />
             <P>
-              <H args={{ name: 'pressFastForward', skipColon: true }} />
-              。(先ほどと挙動が似ているので、時間節約のために
-              <Em>やや早めの速度で早送りします。</Em>)
+              <H args={{ name: 'pressFastForward', skippable: true }} />
             </P>
             <R.Oqpi />
             <BubbleQuotes
