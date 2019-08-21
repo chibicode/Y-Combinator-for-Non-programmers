@@ -1050,8 +1050,16 @@ export default () => (
               」以外にも、「<Strong>1を引く機能</Strong>{' '}
               <CustomEmoji type="minusOne" />
               」や、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-              」がありますよね。
+              」がありましたよね。
             </P>
+            <R.Fqci>
+              「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              」の例
+            </R.Fqci>
+            <R.Xfry>
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」の例
+            </R.Xfry>
             <P>
               <Em>
                 これらの機能も、弁当箱で再現することができるのでしょうか？
