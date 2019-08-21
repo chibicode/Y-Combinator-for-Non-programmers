@@ -3512,6 +3512,13 @@ export const rbup: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { d: '🅰️', e: '🅱️' }
 }
 
+export const cmla: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qyqi,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { d: '🅰️', b: '🅱️' }
+}
+
 export const ilvq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.dqgs,
@@ -3835,4 +3842,11 @@ export const xhdq: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'sm',
   convert: 'toMathBoxPlay'
+}
+
+export const nhqo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.orfr,
+  showPriorities: true,
+  variableSize: 'md'
 }

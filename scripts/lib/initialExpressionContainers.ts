@@ -313,6 +313,9 @@ export const dqgs = initializeExpressionContainer(numberParams('f', 'g', 2))
 export const zdlx = initializeExpressionContainer(
   numberParamsHighlightNumber('d', 'e', 1)
 )
+export const qyqi = initializeExpressionContainer(
+  numberParamsHighlightNumber('d', 'b', 1)
+)
 export const entt = initializeExpressionContainer(
   numberParamsHighlightNumber('f', 'g', 2)
 )
@@ -2198,4 +2201,9 @@ export const wwii = initializeExpressionContainer(
 export const jxur = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   [succParams('a', 'b', 'c'), numberParams('d', 'e', 2)]
+])
+
+export const orfr = initializeExpressionContainer([
+  succParams('a', 'b', 'c', false, true),
+  numberParams('d', 'b', 1)
 ])

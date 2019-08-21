@@ -1156,7 +1156,7 @@ export default () => (
               ]}
             />
             <P>
-              サヤちゃんが気づいて、「<Strong>おかしなこと</Strong>
+              サヤちゃんが気づいた、「<Strong>おかしなこと</Strong>
               」とは何なのでしょうか？次のページで説明していきます！
             </P>
             <EmojiSeparator emojis={['❓', '👧🏻', '❓']} />
