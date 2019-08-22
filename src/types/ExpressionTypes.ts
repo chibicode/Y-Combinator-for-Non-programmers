@@ -165,6 +165,11 @@ interface VariableStates {
     readonly topLeftBadgeType: 'none'
     readonly bottomRightBadgeType: 'funcBound'
   }
+  conflictResolvedCallArg: {
+    readonly highlightType: 'conflictResolvedHighlighted'
+    readonly topLeftBadgeType: 'none'
+    readonly bottomRightBadgeType: 'callArg'
+  }
   matchFuncArg: {
     readonly highlightType: 'active'
     readonly topLeftBadgeType: 'match'
@@ -279,6 +284,7 @@ export type CallStateToVariableState<C extends CallStates> = C extends 'default'
       | 'activeCallArg'
       | 'conflictResolvedFuncUnbound'
       | 'conflictResolvedFuncBound'
+      | 'conflictResolvedCallArg'
       | 'highlightCallArg'
   : C extends 'betaReducePreviewBefore'
   ?

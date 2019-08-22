@@ -23,125 +23,115 @@ import getConflictsToUnused, {
   ConflictingNamesToUnusedNames
 } from 'scripts/lib/getConflictsToUnused'
 
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: VariableExpression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): StepVariable<'alphaConvertDone'>
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: FunctionExpression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): StepFunction<'alphaConvertDone'>
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: ConditionalExpression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): StepConditional<'alphaConvertDone'>
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: CallExpression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): NonExecutableStepCall<'alphaConvertDone'>
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: VariableExpression | FunctionExpression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): StepVariable<'alphaConvertDone'> | StepFunction<'alphaConvertDone'>
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: Expression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): StepChild<'alphaConvertDone'>
-export function toAlphaConvertDone(
+export function toAlphaConvertCallArg(
   e: Expression,
   conflicts: ConflictingNamesToUnusedNames,
-  funcSide: boolean
+  argSide: boolean
 ): StepChild<'alphaConvertDone'> {
   if (isVariable(e)) {
-    if (funcSide) {
+    if (argSide) {
       const conflictsResult = conflicts[e.name]
       if (conflictsResult !== undefined) {
-        if (e.bound) {
-          return {
-            ...e,
-            name: conflictsResult,
-            highlightType: 'conflictResolvedHighlighted',
-            topLeftBadgeType: 'none',
-            bottomRightBadgeType: 'funcBound'
-          }
-        } else {
-          return {
-            ...e,
-            name: conflictsResult,
-            highlightType: 'conflictResolvedHighlighted',
-            topLeftBadgeType: 'none',
-            bottomRightBadgeType: 'funcUnbound'
-          }
-        }
-      } else if (!e.bound) {
         return {
           ...e,
-          highlightType: 'active',
+          name: conflictsResult,
+          highlightType: 'conflictResolvedHighlighted',
           topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'funcUnbound'
+          bottomRightBadgeType: 'callArg'
         }
       } else {
         return {
           ...e,
           highlightType: 'active',
           topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'funcBound'
+          bottomRightBadgeType: 'callArg'
         }
+      }
+    } else if (e.bound) {
+      return {
+        ...e,
+        highlightType: 'active',
+        topLeftBadgeType: 'none',
+        bottomRightBadgeType: 'funcBound'
       }
     } else {
       return {
         ...e,
         highlightType: 'active',
         topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'callArg'
+        bottomRightBadgeType: 'funcUnbound'
       }
     }
   } else if (isFunction(e)) {
     return {
       ...e,
-      arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
-      body: toAlphaConvertDone(e.body, conflicts, funcSide)
+      arg: toAlphaConvertCallArg(e.arg, conflicts, argSide),
+      body: toAlphaConvertCallArg(e.body, conflicts, argSide)
     }
   } else if (isCall(e)) {
     return {
       ...e,
       state: 'default',
-      arg: toAlphaConvertDone(e.arg, conflicts, funcSide),
-      func: toAlphaConvertDone(e.func, conflicts, funcSide)
+      arg: toAlphaConvertCallArg(e.arg, conflicts, argSide),
+      func: toAlphaConvertCallArg(e.func, conflicts, argSide)
     }
   } else if (isConditional(e)) {
     return {
       ...e,
       state: 'default',
-      condition: toAlphaConvertDone(e.condition, conflicts, funcSide),
-      trueCase: toAlphaConvertDone(e.trueCase, conflicts, funcSide),
-      falseCase: toAlphaConvertDone(e.falseCase, conflicts, funcSide)
+      condition: toAlphaConvertCallArg(e.condition, conflicts, argSide),
+      trueCase: toAlphaConvertCallArg(e.trueCase, conflicts, argSide),
+      falseCase: toAlphaConvertCallArg(e.falseCase, conflicts, argSide)
     }
   } else {
     throw new Error()
   }
 }
 
-const stepToAlphaConvertDone = (
+const stepToAlphaConvertCallArg = (
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'alphaConvertDone'> => {
   const conflictsToUnused = getConflictsToUnused(e)
   return {
     ...e,
     state: 'alphaConvertDone',
-    arg: toAlphaConvertDone(e.arg, conflictsToUnused, false),
+    arg: toAlphaConvertCallArg(e.arg, conflictsToUnused, true),
     func: {
       ...e.func,
       arg: activeFuncArg(e.func.arg),
-      body: toAlphaConvertDone(e.func.body, conflictsToUnused, true)
+      body: toAlphaConvertCallArg(e.func.body, conflictsToUnused, false)
     }
   }
 }
 
-export default stepToAlphaConvertDone
+export default stepToAlphaConvertCallArg

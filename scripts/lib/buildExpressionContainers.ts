@@ -12,6 +12,7 @@ const buildExpressionContainers = ({
   initializeInstructions,
   showAllShowSteps,
   skipAlphaConvert,
+  alphaConvertCallArg,
   skipToTheEnd,
   hideControls,
   lastAllowedExpressionState,
@@ -21,7 +22,11 @@ const buildExpressionContainers = ({
   if (initialExpressionContainer) {
     let currentExpressionContainer: SteppedExpressionContainer = initialExpressionContainer
     let results: ExpressionContainer[] = []
-    const stepOptions = { showAllShowSteps, skipAlphaConvert }
+    const stepOptions = {
+      showAllShowSteps,
+      skipAlphaConvert,
+      alphaConvertCallArg
+    }
 
     initializeInstructions.forEach(initializeInstruction => {
       if (

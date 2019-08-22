@@ -36,7 +36,8 @@ import {
   stepToDefault,
   stepToShowExecutableUnary,
   stepToUnaryProcessed,
-  stepToBinaryComputed
+  stepToBinaryComputed,
+  stepToAlphaConvertCallArg
 } from 'scripts/lib/steps'
 import {
   ContainerWithState,
@@ -56,6 +57,7 @@ import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 interface StepOptions {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
+  alphaConvertCallArg?: boolean
 }
 
 const stepExpressionContainerReset = (
@@ -209,7 +211,7 @@ const stepShorthand = (
 
 const stepRegular = (
   e: ExecutableCallRegular,
-  { showAllShowSteps, skipAlphaConvert }: StepOptions,
+  { showAllShowSteps, skipAlphaConvert, alphaConvertCallArg }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression:
@@ -298,7 +300,9 @@ const stepRegular = (
     }
     case 'needsAlphaConvert': {
       return {
-        nextExpression: stepToAlphaConvertDone(e),
+        nextExpression: alphaConvertCallArg
+          ? stepToAlphaConvertCallArg(e)
+          : stepToAlphaConvertDone(e),
         previouslyChangedExpressionState: 'alphaConvertDone'
       }
     }

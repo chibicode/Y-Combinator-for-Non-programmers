@@ -3,6 +3,9 @@ export {
   default as stepToAlphaConvertDone
 } from 'scripts/lib/steps/stepToAlphaConvertDone'
 export {
+  default as stepToAlphaConvertCallArg
+} from 'scripts/lib/steps/stepToAlphaConvertCallArg'
+export {
   default as stepToBetaReducePreviewAfter
 } from 'scripts/lib/steps/stepToBetaReducePreviewAfter'
 export {
