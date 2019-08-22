@@ -95,6 +95,8 @@ export interface HProps {
     | { name: 'witch' }
     | { name: 'AmultTop' }
     | { name: 'AmultBottom' }
+    | { name: 'BsingleTop' }
+    | { name: 'BsingleBottom' }
     | { name: 'witchAppearsAgainCaption' }
     | { name: 'witchReplacedCaption' }
     | { name: 'aboutThisSite' }

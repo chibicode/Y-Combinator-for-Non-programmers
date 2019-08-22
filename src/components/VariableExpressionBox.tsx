@@ -252,6 +252,31 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         </span>
       </div>
     )
+  } else if (expression.name === 'Bsingle') {
+    return (
+      <div>
+        <span
+          css={css`
+            font-size: 0.6em;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+          `}
+        >
+          <H args={{ name: 'BsingleTop' }} />
+        </span>
+        <span
+          css={css`
+            font-size: 0.45em;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+          `}
+        >
+          <H args={{ name: 'BsingleBottom' }} />
+        </span>
+      </div>
+    )
   } else if (expression.shorthandFunc === 'add') {
     return (
       <div>

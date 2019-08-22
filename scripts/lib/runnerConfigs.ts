@@ -3874,3 +3874,12 @@ export const vqwp: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { c: '🅱️', b: '🅰️' }
 }
+
+export const exbn: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.henz,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  speed: 1.25
+}

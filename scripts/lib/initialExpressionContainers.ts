@@ -340,7 +340,7 @@ export const dupe = initializeExpressionContainer({
   arg: 'A',
   body: {
     arg: 'B',
-    body: ['Amult', 'B']
+    body: ['Amult', 'Bsingle']
   }
 })
 export const mbco = initializeExpressionContainer(numberParams('A', 'B', 2))
@@ -2231,3 +2231,8 @@ export const uwoq = initializeExpressionContainer({
     ]
   }
 })
+
+export const henz = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  numberParams('d', { name: 'e', highlighted: true }, 1)
+])

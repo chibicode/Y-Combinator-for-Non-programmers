@@ -4,7 +4,9 @@ import { P, Em, Strong } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import * as R from 'src/components/Runners'
 
@@ -200,6 +202,93 @@ export default () => (
               <br />
               計算箱に変換できない
             </R.Vqwp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        お、おかしい…なんで <EmojiNumber number={2} />{' '}
+                        に変換できる弁当箱にならないんだ？前回はちゃんとできていたのに…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>前回と比較してみよう</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、前回と比較してみましょう。前回実行したのは、こちらの弁当箱でした。
+                      </P>
+                      <P>
+                        <Strong>
+                          先ほどと唯一違うのは、上の部分に{' '}
+                          <EmojiWithText letter="b" /> のかわりに{' '}
+                          <EmojiWithText letter="e" /> が入っている
+                        </Strong>
+                        ところです。(<Em>黄色</Em>で示しています)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Exbn>
+              <Strong>前回実行した弁当箱:</Strong>
+              <br />
+              上の部分は <EmojiNumber number={1} /> に変換できる。
+              <br />
+              <Em>
+                先ほどと違うのは、上の <EmojiForLetter letter="e" /> の部分。
+              </Em>
+              <br />
+              下の部分は先ほどと同じ。
+            </R.Exbn>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        こちらは、最終的に <EmojiNumber number={2} />{' '}
+                        に変換できる弁当箱になりますね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rico>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+              />
+            </R.Rico>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、どうして結果に違いが出るんだろう？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

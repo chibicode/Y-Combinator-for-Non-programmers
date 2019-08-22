@@ -1708,6 +1708,24 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>いくつか</>
     }
   }
+  if (args.name === 'BsingleTop') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return (
+        <>
+          <Emoji>🅱️</Emoji> が
+        </>
+      )
+    }
+  }
+  if (args.name === 'BsingleBottom') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>ひとつ</>
+    }
+  }
   if (args.name === 'numberOfAIsSecretCodeCaption') {
     if (locale === 'en') {
       return <>?</>
@@ -2017,12 +2035,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          一番左の料理を<Emoji>🅰️</Emoji>、<br />
-          真ん中の料理を<Emoji>🅱️</Emoji>とした場合、
+          一番左の料理を <Emoji>🅰️</Emoji> 、<br />
+          真ん中の料理を <Emoji>🅱️</Emoji> とした場合、
           <br />
-          右上に<Emoji>🅱️</Emoji>がひとつあり、
+          右上に <Emoji>🅱️</Emoji> がひとつあり、
           <br />
-          右下に<Emoji>🅰️</Emoji>
+          右下に <Emoji>🅰️</Emoji>
           がいくつかある
         </>
       )
