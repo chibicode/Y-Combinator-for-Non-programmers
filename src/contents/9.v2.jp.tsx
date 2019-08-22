@@ -291,6 +291,15 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'plusOneEffect' }} />
+            が失敗する唯一のケース
+          </>
+        ),
+        content: <></>
       }
     ]}
   />
