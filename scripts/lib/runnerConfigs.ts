@@ -3851,6 +3851,13 @@ export const nhqo: ExpressionRunnerShorthandConfig = {
   variableSize: 'md'
 }
 
+export const ybne: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const akik: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qdoh,
@@ -3882,4 +3889,12 @@ export const exbn: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   skipToTheEnd: false,
   speed: 1.25
+}
+
+export const qlcq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  variableSize: 'md',
+  initialState: 'showFuncUnbound'
 }

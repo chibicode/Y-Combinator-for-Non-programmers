@@ -8,6 +8,7 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -246,6 +247,9 @@ export default () => (
                 }
               ]}
             />
+            <P>
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
             <R.Exbn>
               <Strong>前回実行した弁当箱:</Strong>
               <br />
@@ -255,7 +259,7 @@ export default () => (
                 先ほどと違うのは、上の <EmojiForLetter letter="e" /> の部分。
               </Em>
               <br />
-              下の部分は先ほどと同じ。
+              それ以外はすべて先ほどと同じ。
             </R.Exbn>
             <BubbleQuotes
               quotes={[
@@ -295,11 +299,71 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'plusOneEffect' }} />
-            が失敗する唯一のケース
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+            に同じ料理があると、結果が狂う
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>では、ここでネタばらしをしましょう。</P>
+                      <P>
+                        こちらに、先ほど
+                        <Strong>失敗した</Strong>例をもう一度表示しています。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ybne>
+              先ほど{' '}
+              <Em>
+                <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                <EmojiNumber number={1} /> を計算できなかった
+              </Em>
+              例
+            </R.Ybne>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        次に、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        の印をつけてみます。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qlcq />
+          </>
+        )
       }
     ]}
   />
