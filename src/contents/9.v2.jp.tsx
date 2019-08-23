@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong } from 'src/components/ContentTags'
+import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -417,6 +417,12 @@ export default () => (
                         </Strong>
                         のです。
                       </P>
+                      <P>
+                        実行結果が狂ってしまうから、
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />{' '}
+                        を計算できない、ということになります。
+                      </P>
                     </>
                   )
                 }
@@ -452,7 +458,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>へー、そうなんだ！どうしてそうなるの？</P>
+                      <P>へー、そうなんだ！どうして結果が狂うの？</P>
                     </>
                   )
                 },
@@ -461,8 +467,62 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この例だと説明が難しいので、簡単な例を使って説明しますね！
+                        この例だと複雑すぎて説明が難しいので、
+                        <Em>簡単な例を使って説明しますね！</Em>
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+            に同じ料理がない場合とある場合
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>次のふたつの例をご覧ください。</P>
+                      <Ul>
+                        <UlLi>
+                          左側は、
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          に同じ料理がありません。
+                        </UlLi>
+                        <UlLi>
+                          右側は、
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          に同じ料理があります。
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
