@@ -53,7 +53,14 @@ const speakerToEmoji = (type: BubbleQuoteProps['type']) =>
 const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
   <div
     css={css`
-      margin: ${spaces(1.75)} 0 ${spaces(1.75)};
+      margin-top: ${spaces(1.75)};
+      margin-bottom: ${spaces(1.75)};
+      margin-left: ${spaces('-0.5')};
+      margin-right: ${spaces('-0.25')};
+
+      ${ns} {
+        margin-left: 0;
+      }
     `}
   >
     {quotes.map(({ type, children }, index) => (
@@ -66,7 +73,7 @@ const BubbleQuotes = ({ quotes }: { quotes: readonly BubbleQuoteProps[] }) => (
         <BubbleQuoteContext.Provider value={{ inQuote: true }}>
           <span
             css={css`
-              margin-right: ${spaces(0.5)};
+              margin-right: ${spaces(0.25)};
               display: block;
               padding-top: ${spaces(0.75)};
 

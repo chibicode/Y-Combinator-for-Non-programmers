@@ -9,6 +9,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 
 export default () => (
@@ -527,6 +528,26 @@ export default () => (
                   )
                 }
               ]}
+            />
+            <TwoColGrid
+              left={
+                <R.Kwyy>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  の両方に
+                  <EmojiWithText letter="b" />
+                  がある
+                </R.Kwyy>
+              }
+              right={
+                <R.Kwyy>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  の両方に
+                  <EmojiWithText letter="b" />
+                  がある
+                </R.Kwyy>
+              }
             />
           </>
         )
