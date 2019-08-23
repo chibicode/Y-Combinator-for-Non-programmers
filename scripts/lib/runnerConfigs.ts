@@ -3911,16 +3911,6 @@ export const kwyy: ExpressionRunnerShorthandConfig = {
   highlightOverrideActiveAfterStart: true
 }
 
-export const rypq: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  variableSize: 'sm',
-  initialExpressionContainer: initialExpressionContainers.kipz,
-  showPriorities: true,
-  initialState: 'showFuncUnbound',
-  highlightOverrides: { b: 'highlighted' },
-  highlightOverrideActiveAfterStart: true
-}
-
 export const oukl: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   variableSize: 'sm',
@@ -3931,12 +3921,134 @@ export const oukl: ExpressionRunnerShorthandConfig = {
   highlightOverrideActiveAfterStart: true
 }
 
-export const kwqa: ExpressionRunnerShorthandConfig = {
+export const rypq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   variableSize: 'sm',
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
-  initialState: 'betaReducePreviewBefore',
+  initialState: 'showFuncUnbound',
   highlightOverrides: { b: 'highlighted' },
   highlightOverrideActiveAfterStart: true
+}
+
+export const jwdn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  initialState: 'betaReducePreviewAfter',
+  skipAlphaConvert: true
+}
+
+export const abnp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  initialState: 'betaReducePreviewAfter',
+  skipAlphaConvert: true
+}
+
+export const yabb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  initialState: 'betaReducePreviewCrossed',
+  skipAlphaConvert: true
+}
+
+export const osff: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  initialState: 'betaReducePreviewCrossed',
+  skipAlphaConvert: true
+}
+
+export const hbbv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true
+}
+
+export const fxok: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true
+}
+
+export const lxhc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true,
+  initialState: 'betaReducePreviewBefore'
+}
+
+export const hvqy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true,
+  initialState: 'betaReducePreviewBefore'
+}
+
+export const nntn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true,
+  initialState: 'betaReducePreviewCrossed'
+}
+
+export const veft: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true,
+  initialState: 'betaReducePreviewAfter'
+}
+
+export const bdme: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  nextIterations: 1,
+  skipAlphaConvert: true,
+  initialState: 'betaReducePreviewCrossed'
+}
+
+export const yxel: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  skipAlphaConvert: true,
+  isDone: true
+}
+
+export const ivol: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  skipAlphaConvert: true,
+  isDone: true
 }

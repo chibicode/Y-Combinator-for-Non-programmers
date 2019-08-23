@@ -12,7 +12,7 @@ const TwoColGrid = ({
 }) => (
   <Flex
     css={css`
-      margin: ${spaces('-0.75')} ${spaces('-1.5')};
+      margin: ${spaces('-1.5')} ${spaces('-0.75')};
     `}
   >
     <div

@@ -6,6 +6,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
@@ -495,7 +496,9 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>次のふたつの例をご覧ください。</P>
+                      <P>
+                        では、簡単な例で説明します。次のふたつの例をご覧ください。
+                      </P>
                       <Ul>
                         <UlLi>
                           左側は、
@@ -526,6 +529,7 @@ export default () => (
                           です。
                         </UlLi>
                       </Ul>
+                      <P>それぞれを進めてみますね。</P>
                     </>
                   )
                 }
@@ -541,8 +545,15 @@ export default () => (
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    が違う
+                    が違う <EmojiForLetter letter="c" />{' '}
+                    <EmojiForLetter letter="b" />
                   </R.Oukl>
+                  <ExpressionRunnerSeparator />
+                  <R.Jwdn></R.Jwdn>
+                  <ExpressionRunnerSeparator />
+                  <R.Yabb></R.Yabb>
+                  <ExpressionRunnerSeparator />
+                  <R.Hbbv></R.Hbbv>
                 </>
               }
               right={
@@ -554,8 +565,79 @@ export default () => (
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    が同じ
+                    が同じ <EmojiForLetter letter="b" />{' '}
+                    <EmojiForLetter letter="b" />
                   </R.Rypq>
+                  <ExpressionRunnerSeparator />
+                  <R.Abnp></R.Abnp>
+                  <ExpressionRunnerSeparator />
+                  <R.Osff></R.Osff>
+                  <ExpressionRunnerSeparator />
+                  <R.Fxok></R.Fxok>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          左側は、下のふたつが違うけど、右側は下のふたつが同じになった！
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>そうなんです。このまま最後まで実行すると、</P>
+                      <Ul>
+                        <UlLi>
+                          左側は{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />{' '}
+                          の <EmojiWithText letter="c" /> が残るのに対し、
+                        </UlLi>
+                        <UlLi>
+                          右側は{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          の <EmojiWithText letter="d" /> が残ります。
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Lxhc></R.Lxhc>
+                  <ExpressionRunnerSeparator />
+                  <R.Nntn></R.Nntn>
+                  <ExpressionRunnerSeparator />
+                  <R.Yxel></R.Yxel>
+                </>
+              }
+              right={
+                <>
+                  <R.Hvqy></R.Hvqy>
+                  <ExpressionRunnerSeparator />
+                  <R.Veft></R.Veft>
+                  <ExpressionRunnerSeparator />
+                  <R.Bdme></R.Bdme>
+                  <ExpressionRunnerSeparator />
+                  <R.Ivol></R.Ivol>
                 </>
               }
             />
@@ -566,34 +648,44 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どちらも{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcArg"
-                        />{' '}
-                        と{' '}
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcBound"
-                        />{' '}
-                        が一致しているので…
-                      </P>
-                      <P>
+                        というわけで、
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
                         />{' '}
-                        が{' '}
+                        と{' '}
                         <BottomRightBadge
                           inline
-                          bottomRightBadgeType="funcBound"
+                          bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        にコピーされます。
+                        に同じ料理がない場合とある場合で、最終的な結果が変わってくることがお分かりいただけたでしょうか。
                       </P>
                     </>
                   )
                 }
               ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+              description={
+                <>
+                  <Strong>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    に同じ料理があると、
+                    <br />
+                    実行結果が狂う。
+                  </Strong>
+                </>
+              }
             />
           </>
         )

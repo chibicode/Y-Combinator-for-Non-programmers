@@ -2,7 +2,7 @@
   "expressionContainers": [
     {
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "betaReducePreviewBefore",
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
       "expression": {
         "arg": {
           "name": "d",
@@ -20,7 +20,7 @@
         "func": {
           "arg": {
             "name": "b",
-            "highlightType": "active",
+            "highlightType": "removed",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "callArg",
             "type": "variable",
@@ -34,8 +34,8 @@
           "func": {
             "arg": {
               "name": "a",
-              "highlightType": "highlighted",
-              "topLeftBadgeType": "match",
+              "highlightType": "removed",
+              "topLeftBadgeType": "none",
               "bottomRightBadgeType": "funcArg",
               "type": "variable",
               "argPriorityAgg": [],
@@ -48,10 +48,10 @@
             },
             "body": {
               "arg": {
-                "name": "c",
+                "name": "b",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "funcUnbound",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
@@ -59,10 +59,10 @@
                 "bound": false
               },
               "body": {
-                "name": "a",
-                "highlightType": "highlighted",
-                "topLeftBadgeType": "match",
-                "bottomRightBadgeType": "funcBound",
+                "name": "b",
+                "highlightType": "active",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
                 "type": "variable",
                 "argPriorityAgg": [],
                 "funcPriorityAgg": [],
@@ -73,7 +73,7 @@
             },
             "type": "function"
           },
-          "state": "betaReducePreviewBefore",
+          "state": "betaReducePreviewCrossed",
           "type": "call",
           "priority": 1
         },
@@ -81,7 +81,6 @@
         "type": "call",
         "priority": 2
       },
-      "matchExists": true,
       "activePriority": 1
     }
   ],
@@ -98,10 +97,8 @@
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
-  "highlightOverrides": {
-    "b": "highlighted"
-  },
-  "highlightOverrideActiveAfterStart": true,
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],
   "funcPriorityAggHighlights": [],
   "highlightFunctions": false,

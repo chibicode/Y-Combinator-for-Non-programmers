@@ -1,0 +1,74 @@
+{
+  "expressionContainers": [
+    {
+      "expression": {
+        "arg": {
+          "name": "d",
+          "highlightType": "active",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "callArg",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": true,
+          "bound": true
+        },
+        "func": {
+          "arg": {
+            "name": "b",
+            "highlightType": "highlighted",
+            "topLeftBadgeType": "unmatch",
+            "bottomRightBadgeType": "funcArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "name": "c",
+            "highlightType": "highlighted",
+            "topLeftBadgeType": "unmatch",
+            "bottomRightBadgeType": "funcBound",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true
+          },
+          "type": "function"
+        },
+        "state": "betaReducePreviewBefore",
+        "type": "call",
+        "priority": 1
+      },
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
+      "matchExists": false,
+      "activePriority": 1,
+      "containerState": "stepped"
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": false,
+  "variableSize": "sm",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false
+}
