@@ -362,6 +362,112 @@ export default () => (
               ]}
             />
             <R.Qlcq />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ここで、
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          の両方に、
+                          <EmojiWithText letter="b" /> がある
+                        </Strong>
+                        のに注目してみてください。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Kwyy>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+              の両方に <EmojiWithText letter="b" /> がある
+            </R.Kwyy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        実は、上のように{' '}
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          に同じ料理があると、実行結果が狂ってしまう
+                        </Strong>
+                        のです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <EmojiForLetter letter="b" />,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+              description={
+                <>
+                  <Strong>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    に同じ料理があると、
+                    <br />
+                    実行結果が狂う。
+                  </Strong>
+                  <br />
+                  (この場合は <EmojiWithText letter="b" /> が問題)
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>へー、そうなんだ！どうしてそうなるの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この例だと説明が難しいので、簡単な例を使って説明しますね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

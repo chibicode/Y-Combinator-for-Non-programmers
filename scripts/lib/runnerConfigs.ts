@@ -3896,5 +3896,17 @@ export const qlcq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   variableSize: 'md',
-  initialState: 'showFuncUnbound'
+  initialState: 'showFuncUnbound',
+  explanationsVisibility: 'visible'
+}
+
+export const kwyy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  initialState: 'showFuncUnbound',
+  variableSize: 'md',
+  highlightOverrides: { b: 'highlighted' },
+  highlightOverridesCallArgAndFuncUnboundOnly: true,
+  highlightOverrideActiveAfterStart: true
 }
