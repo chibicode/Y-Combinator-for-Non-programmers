@@ -508,7 +508,7 @@ export default () => (
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
-                          に同じ料理がありません。
+                          が違います。
                         </UlLi>
                         <UlLi>
                           右側は、
@@ -521,7 +521,9 @@ export default () => (
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
-                          に同じ料理があります。
+                          が同じ
+                          <EmojiWithText letter="b" />
+                          です。
                         </UlLi>
                       </Ul>
                     </>
@@ -531,23 +533,67 @@ export default () => (
             />
             <TwoColGrid
               left={
-                <R.Kwyy>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  の両方に
-                  <EmojiWithText letter="b" />
-                  がある
-                </R.Kwyy>
+                <>
+                  <R.Oukl>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    が違う
+                  </R.Oukl>
+                </>
               }
               right={
-                <R.Kwyy>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  の両方に
-                  <EmojiWithText letter="b" />
-                  がある
-                </R.Kwyy>
+                <>
+                  <R.Rypq>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    が同じ
+                  </R.Rypq>
+                </>
               }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        どちらも{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />{' '}
+                        と{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        が一致しているので…
+                      </P>
+                      <P>
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        が{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        にコピーされます。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
             />
           </>
         )

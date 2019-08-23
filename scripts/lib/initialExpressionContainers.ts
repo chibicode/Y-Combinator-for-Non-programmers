@@ -2236,3 +2236,27 @@ export const henz = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   numberParams('d', { name: 'e', highlighted: true }, 1)
 ])
+
+export const kipz = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'a'
+    }
+  },
+  'b',
+  'd'
+])
+
+export const ycof = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: 'a'
+    }
+  },
+  'c',
+  'd'
+])

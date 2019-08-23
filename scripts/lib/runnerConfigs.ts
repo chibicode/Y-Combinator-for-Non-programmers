@@ -3910,3 +3910,33 @@ export const kwyy: ExpressionRunnerShorthandConfig = {
   highlightOverridesCallArgAndFuncUnboundOnly: true,
   highlightOverrideActiveAfterStart: true
 }
+
+export const rypq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  initialState: 'showFuncUnbound',
+  highlightOverrides: { b: 'highlighted' },
+  highlightOverrideActiveAfterStart: true
+}
+
+export const oukl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  initialState: 'showFuncUnbound',
+  highlightOverrides: { b: 'highlighted', c: 'highlighted' },
+  highlightOverrideActiveAfterStart: true
+}
+
+export const kwqa: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  initialState: 'betaReducePreviewBefore',
+  highlightOverrides: { b: 'highlighted' },
+  highlightOverrideActiveAfterStart: true
+}
