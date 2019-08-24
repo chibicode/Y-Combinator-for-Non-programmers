@@ -68,7 +68,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを、前回わたしが考えた
+                        これを、前回サヤが考えた
                         <H args={{ name: 'plusOneEffect' }} />
                         と合体させて、
                         <H args={{ name: 'runAndConertToMathbox' }} />{' '}
@@ -776,6 +776,130 @@ export default () => (
                           ベンケイさんお願い！<Strong>特別ルール</Strong>
                           を設けてくれないかな？
                         </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>どういうことですか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'bentoBoxPuzzle' }} />
+                        に、「
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          に同じ料理が登場したら、どちらかを別な料理に変える
+                        </Strong>
+                        」という特別ルールを設けてほしいんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>🙇🏻‍♀️</Emoji>,
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              ]}
+              description={
+                <>
+                  <Strong>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    に同じ料理が登場したら、
+                    <br />
+                    どちらかを別な料理に変える
+                  </Strong>
+                  <br />
+                  という特別ルールを設けてほしい
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>分かりました、いいですよ！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>やったー、ありがとう！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>え、そんなに簡単にOKしてくれるの…？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>特別ルール</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        と{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        に同じ料理が登場したら、
+                        <Strong>
+                          自動的に{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          を別の料理に変える
+                        </Strong>
+                        ことにしましょう。
                       </P>
                     </>
                   )
