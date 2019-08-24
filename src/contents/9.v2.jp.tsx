@@ -844,7 +844,9 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>分かりました、いいですよ！</P>
+                      <P>
+                        <Strong>分かりました、いいですよ！</Strong>
+                      </P>
                     </>
                   )
                 },
@@ -860,7 +862,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>え、そんなに簡単にOKしてくれるの…？</P>
+                      <P>え、そんなに簡単にルールを改変してくれるの…？</P>
                     </>
                   )
                 }
@@ -879,8 +881,67 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>それでは、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            と{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="funcUnbound"
+                            />{' '}
+                            に同じ料理が登場したら、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Strong>
+                            自動的に{' '}
+                            <BottomRightBadge
+                              inline
+                              bottomRightBadgeType="callArg"
+                            />{' '}
+                            を別の料理に変える
+                          </Strong>
+                        </UlLi>
+                      </Ul>
+                      <P>という特別ルールを設けましょう。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />,
+                <Emoji>➡</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  に同じ料理が登場したら、
+                  <br />
+                  <Strong>
+                    自動的に{' '}
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    が別の料理に変わる
+                  </Strong>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
-                        では、
+                        つまり、先ほどのように{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
@@ -890,22 +951,42 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        に同じ料理が登場したら、
-                        <Strong>
-                          自動的に{' '}
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="callArg"
-                          />{' '}
-                          を別の料理に変える
-                        </Strong>
-                        ことにしましょう。
+                        に同じ料理が登場した場合…
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Smdm />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          の <EmojiWithText letter="b" />
+                          が自動的に別の料理に変わります。
+                        </Strong>
+                      </P>
+                      <P>
+                        <Em>
+                          何の料理に変わるかはランダムですが、新しい料理は今まで使われていない料理になります。ここでは、
+                          <EmojiWithText letter="d" /> になりました。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Niwv />
           </>
         )
       }

@@ -4070,3 +4070,22 @@ export const ivol: ExpressionRunnerShorthandConfig = {
   skipAlphaConvert: true,
   isDone: true
 }
+
+export const smdm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  initialState: 'needsAlphaConvert',
+  variableSize: 'md',
+  explanationsVisibility: 'visible'
+}
+
+export const niwv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  initialState: 'alphaConvertDone',
+  alphaConvertCallArg: true,
+  variableSize: 'md',
+  explanationsVisibility: 'visible'
+}
