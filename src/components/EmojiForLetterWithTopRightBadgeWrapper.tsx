@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { zIndices } from 'src/lib/theme'
 import TopRightBadge, { TopRightBadgeProps } from 'src/components/TopRightBadge'
 
-interface EmojiForLetterWithBottomRightBadgeWrapperProps {
+interface EmojiForLetterWithTopRightBadgeWrapperProps {
   topRightBadgeType: TopRightBadgeProps['topRightBadgeType']
   children: React.ReactNode
 }
@@ -11,7 +11,7 @@ interface EmojiForLetterWithBottomRightBadgeWrapperProps {
 const EmojiForLetterWithTopRightBadgeWrapper = ({
   topRightBadgeType,
   children
-}: EmojiForLetterWithBottomRightBadgeWrapperProps) => {
+}: EmojiForLetterWithTopRightBadgeWrapperProps) => {
   return (
     <span
       css={css`

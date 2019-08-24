@@ -1,17 +1,26 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Em,
+  Strong,
+  Ul,
+  UlLi,
+  InlineHeader
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -70,7 +79,7 @@ export default () => (
                       <P>
                         これを、前回サヤが考えた
                         <H args={{ name: 'plusOneEffect' }} />
-                        と合体させて、
+                        がある弁当箱と合体させて、
                         <H args={{ name: 'runAndConertToMathbox' }} />{' '}
                         すると、どうなると思う？
                       </P>
@@ -395,7 +404,8 @@ export default () => (
             <R.Kwyy>
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の両方に <EmojiWithText letter="b" /> がある
+              の両方に
+              <EmojiWithText letter="b" /> がある
             </R.Kwyy>
             <BubbleQuotes
               quotes={[
@@ -719,7 +729,8 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        の両方に <EmojiWithText letter="b" />{' '}
+                        の両方に
+                        <EmojiWithText letter="b" />{' '}
                         があるので、結果が狂うのですね。
                       </P>
                     </>
@@ -736,7 +747,8 @@ export default () => (
               <br />
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の両方に <EmojiWithText letter="b" /> が<br />
+              の両方に
+              <EmojiWithText letter="b" /> が<br />
               あるせいで、結果が狂ったから
             </R.Kwyy>
             <BubbleQuotes
@@ -977,7 +989,11 @@ export default () => (
                       </P>
                       <P>
                         <Em>
-                          何の料理に変わるかは今まで使われていない料理にランダムでなります。ここでは、
+                          何に変わるかについてですが、
+                          <Strong>
+                            まだ使われていない料理にランダムで変わります
+                          </Strong>
+                          。ここでは、
                           <EmojiWithText letter="e" /> になりました。
                         </Em>
                       </P>
@@ -987,6 +1003,26 @@ export default () => (
               ]}
             />
             <R.Niwv />
+            <EmojiSeparator
+              nodes={[
+                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                  <EmojiForLetter letter="b" />
+                </EmojiForLetterWithBottomRightBadgeWrapper>,
+                <Emoji>➡️</Emoji>,
+                <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
+                  <EmojiForLetter letter="e" />
+                </EmojiForLetterWithBottomRightBadgeWrapper>
+              ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> の
+                  <EmojiWithText letter="b" /> が、まだ
+                  <br />
+                  使われていない
+                  <EmojiWithText letter="e" /> に変わる
+                </>
+              }
+            />
             <BubbleQuotes
               quotes={[
                 {
@@ -1036,6 +1072,158 @@ export default () => (
                 args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
               />
             </R.Rico>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        ということは、
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> を計算できたということだね！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        その通りです。では、そろそろ今回のまとめに入りましょう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              前回サヤちゃんが考えた
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱は、
+            </P>
+            <R.Nvqu>
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱
+            </R.Nvqu>
+            <P>
+              次の
+              <Em>
+                <EmojiNumber number={1} /> に変換できる弁当箱
+              </Em>
+              と組み合わせた場合、
+            </P>
+            <R.Cmla>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'd',
+                  number: 1
+                }}
+              />
+            </R.Cmla>
+            <P>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+              に同じ料理があり、そのままだと結果が狂ってしまいます。
+            </P>
+            <R.Kwyy>
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+              の両方に
+              <EmojiWithText letter="b" /> がある
+            </R.Kwyy>
+            <P>しかし、今回から新たに以下の特別ルールが適用されます:</P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  に同じ料理が登場したら、
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Strong>
+                  自動的に{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  を別の料理に変える
+                </Strong>
+              </UlLi>
+            </Ul>
+            <R.Niwv />
+            <P>
+              これにより、正しく <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算できるようになります。
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>ちなみに:</InlineHeader>{' '}
+                        <Em>
+                          この特別ルールは次のページ以降で登場する弁当箱でも使われますが、
+                        </Em>
+                        <Strong>暗記する必要はありません。</Strong>なんとなく「
+                        <Em>こういう法則があるんだな</Em>
+                        」と思ってくだされば大丈夫です！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>これで完璧！</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'happy',
+                  children: (
+                    <>
+                      <P>
+                        いろいろあったけど、これで、
+                        <H args={{ name: 'plusOneEffect' }} />
+                        がある弁当箱は完璧にマスターしたぞ！
+                      </P>
+                      <P>悪魔よ、約束通り計算箱は返してもらう！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>うぐぐ…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              果たして、村人たちは計算箱を取り戻せたのでしょうか？次のページで確かめてみましょう！
+            </P>
+            <NextLessonButton />
           </>
         )
       }
