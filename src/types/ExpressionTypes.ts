@@ -167,7 +167,7 @@ interface VariableStates {
   }
   conflictResolvedCallArg: {
     readonly highlightType: 'conflictResolvedHighlighted'
-    readonly topLeftBadgeType: 'none'
+    readonly topLeftBadgeType: 'conflictResolved'
     readonly bottomRightBadgeType: 'callArg'
   }
   matchFuncArg: {

@@ -66,7 +66,7 @@ export function toAlphaConvertCallArg(
           ...e,
           name: conflictsResult,
           highlightType: 'conflictResolvedHighlighted',
-          topLeftBadgeType: 'none',
+          topLeftBadgeType: 'conflictResolved',
           bottomRightBadgeType: 'callArg'
         }
       } else {

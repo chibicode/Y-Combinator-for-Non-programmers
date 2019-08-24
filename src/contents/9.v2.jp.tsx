@@ -977,8 +977,8 @@ export default () => (
                       </P>
                       <P>
                         <Em>
-                          何の料理に変わるかはランダムですが、新しい料理は今まで使われていない料理になります。ここでは、
-                          <EmojiWithText letter="d" /> になりました。
+                          何の料理に変わるかは今まで使われていない料理にランダムでなります。ここでは、
+                          <EmojiWithText letter="e" /> になりました。
                         </Em>
                       </P>
                     </>
@@ -987,6 +987,55 @@ export default () => (
               ]}
             />
             <R.Niwv />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        これで、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        と{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        が被らなくなりました。
+                      </P>
+                      <P>
+                        では、最後まで進めてみましょう。
+                        <H args={{ name: 'pressFastForward' }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fsgq />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>
+                        やった！無事、
+                        <EmojiNumber number={2} /> に変換できる弁当箱になった！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rico>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+              />
+            </R.Rico>
           </>
         )
       }

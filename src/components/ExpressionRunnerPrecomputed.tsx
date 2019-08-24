@@ -46,6 +46,7 @@ export interface ExpressionRunnerPrecomputedProps {
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
   crossed: ExpressionRunnerConfig['crossed']
+  alphaConvertCallArg: ExpressionRunnerConfig['alphaConvertCallArg']
 }
 
 // Must be equal to 1 / N to make timer count seconds evenly
@@ -87,7 +88,8 @@ const ExpressionRunnerPrecomputed = ({
   showAllShowSteps,
   children,
   convert,
-  crossed
+  crossed,
+  alphaConvertCallArg
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -238,6 +240,7 @@ const ExpressionRunnerPrecomputed = ({
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
                 convert={convert}
+                alphaConvertCallArg={alphaConvertCallArg}
               />
             </ExpressionRunnerCaptionWrapper>
           )}

@@ -84,7 +84,7 @@ const background = ({
     }
     case 'conflictResolvedHighlighted': {
       return css`
-        background: ${colors('cyan50')};
+        background: ${colors('brown50')};
       `
     }
     case 'highlighted': {
@@ -102,7 +102,7 @@ const background = ({
         `
       } else if (topLeftBadgeType === 'conflict') {
         return css`
-          background: ${colors('brown50')};
+          background: ${colors('yellow100')};
         `
       } else {
         return css`

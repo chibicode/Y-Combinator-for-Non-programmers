@@ -20,7 +20,7 @@
             "arg": {
               "name": "e",
               "highlightType": "conflictResolvedHighlighted",
-              "topLeftBadgeType": "none",
+              "topLeftBadgeType": "conflictResolved",
               "bottomRightBadgeType": "callArg",
               "type": "variable",
               "argPriorityAgg": [],
@@ -32,7 +32,7 @@
               "arg": {
                 "name": "e",
                 "highlightType": "conflictResolvedHighlighted",
-                "topLeftBadgeType": "none",
+                "topLeftBadgeType": "conflictResolved",
                 "bottomRightBadgeType": "callArg",
                 "type": "variable",
                 "argPriorityAgg": [
@@ -203,5 +203,6 @@
   "argPriorityAggHighlights": [],
   "funcPriorityAggHighlights": [],
   "highlightFunctions": false,
-  "superFastForward": false
+  "superFastForward": false,
+  "alphaConvertCallArg": true
 }

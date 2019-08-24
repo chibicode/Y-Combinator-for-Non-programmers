@@ -4089,3 +4089,14 @@ export const niwv: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   explanationsVisibility: 'visible'
 }
+
+export const fsgq: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.qdoh,
+  showPriorities: true,
+  initialState: 'alphaConvertDone',
+  alphaConvertCallArg: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  speed: 1.25
+}
