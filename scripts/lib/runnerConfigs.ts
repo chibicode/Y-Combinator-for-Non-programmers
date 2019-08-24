@@ -3931,6 +3931,24 @@ export const rypq: ExpressionRunnerShorthandConfig = {
   highlightOverrideActiveAfterStart: true
 }
 
+export const etae: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.ycof,
+  showPriorities: true,
+  initialState: 'betaReducePreviewBefore',
+  highlightOverrideActiveAfterStart: true
+}
+
+export const wqml: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  variableSize: 'sm',
+  initialExpressionContainer: initialExpressionContainers.kipz,
+  showPriorities: true,
+  initialState: 'betaReducePreviewBefore',
+  highlightOverrideActiveAfterStart: true
+}
+
 export const jwdn: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   variableSize: 'sm',

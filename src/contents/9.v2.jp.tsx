@@ -447,7 +447,7 @@ export default () => (
                     />{' '}
                     に同じ料理があると、
                     <br />
-                    実行結果が狂う。
+                    実行結果が狂う
                   </Strong>
                   <br />
                   (この場合は <EmojiWithText letter="b" /> が問題)
@@ -549,6 +549,8 @@ export default () => (
                     <EmojiForLetter letter="b" />
                   </R.Oukl>
                   <ExpressionRunnerSeparator />
+                  <R.Etae></R.Etae>
+                  <ExpressionRunnerSeparator />
                   <R.Jwdn></R.Jwdn>
                   <ExpressionRunnerSeparator />
                   <R.Yabb></R.Yabb>
@@ -568,6 +570,8 @@ export default () => (
                     が同じ <EmojiForLetter letter="b" />{' '}
                     <EmojiForLetter letter="b" />
                   </R.Rypq>
+                  <ExpressionRunnerSeparator />
+                  <R.Wqml></R.Wqml>
                   <ExpressionRunnerSeparator />
                   <R.Abnp></R.Abnp>
                   <ExpressionRunnerSeparator />
@@ -658,7 +662,7 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        に同じ料理がない場合とある場合で、最終的な結果が変わってくることがお分かりいただけたでしょうか。
+                        に同じ料理がない場合とある場合で、最終的な結果が狂ってくることがお分かりいただけたでしょうか。
                       </P>
                     </>
                   )
@@ -682,10 +686,101 @@ export default () => (
                     />{' '}
                     に同じ料理があると、
                     <br />
-                    実行結果が狂う。
+                    実行結果が狂う
                   </Strong>
                 </>
               }
+            />
+          </>
+        )
+      },
+      {
+        title: <>話を戻すと…</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、先ほど <EmojiNumber number={1} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={1} />{' '}
+                        を計算できなかった弁当箱に話を戻しましょう。
+                      </P>
+                      <P>
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        と{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        の両方に <EmojiWithText letter="b" />{' '}
+                        があるので、結果が狂うのですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Kwyy>
+              <Em>
+                <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                <EmojiNumber number={1} /> を計算できなかった
+              </Em>
+              理由:
+              <br />
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+              の両方に <EmojiWithText letter="b" /> が<br />
+              あるせいで、結果が狂ったから
+            </R.Kwyy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>じゃあ、どうすればいいんだろう？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          のどちらかの
+                          <EmojiWithText letter="b" />{' '}
+                          を別の料理に変えれば、上手くいく
+                        </Strong>
+                        というわけだよね。
+                      </P>
+                      <P>
+                        じゃあ…
+                        <Em>
+                          ベンケイさんお願い！<Strong>特別ルール</Strong>
+                          を設けてくれないかな？
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
             />
           </>
         )
