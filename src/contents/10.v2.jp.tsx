@@ -19,7 +19,7 @@ import CustomEmoji from 'src/components/CustomEmoji'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
 // import BottomRightBadge from 'src/components/BottomRightBadge'
-// import TwoColGrid from 'src/components/TwoColGrid'
+import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 
@@ -66,13 +66,14 @@ export default () => (
                         「<Strong>1を引く機能</Strong>{' '}
                         <CustomEmoji type="minusOne" />
                         」がある計算箱や、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>」がある計算箱どこにいったんだ？
+                        <Emoji>🔁</Emoji>」がある計算箱はどこにいったんだ？
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <TwoColGrid left={<></>} right={<></>} />
           </>
         )
       },
