@@ -146,7 +146,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>そ、そんなー！嘘つきじゃないか！悪魔め！</P>
+                      <P>そ、そんなー！嘘つきじゃないか！</P>
                     </>
                   )
                 },
@@ -222,6 +222,56 @@ export default () => (
                             それらを同じように弁当箱で再現してみることだな！
                           </Strong>
                         </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Ditw>
+                    <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                  </R.Ditw>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={<>弁当箱で再現できる？</>}
+                  />
+                </>
+              }
+              right={
+                <>
+                  <R.Bwnp>
+                    <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  </R.Bwnp>
+                  <ExpressionRunnerSeparator blank />
+                  <R.Ewfr></R.Ewfr>
+                  <ExpressionRunnerSeparator />
+                  <EmojiSeparator
+                    emojis={['❓', '🍱', '❓']}
+                    description={<>弁当箱で再現できる？</>}
+                  />
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'scared',
+                  children: (
+                    <>
+                      <P>えー！</P>
+                      <P>
+                        「<Strong>1を足す機能</Strong>{' '}
+                        <CustomEmoji type="plusOne" />
+                        」を再現するのにも苦戦したのに、「
+                        <Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」や「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を再現するなんて、できっこないよ！
                       </P>
                     </>
                   )
