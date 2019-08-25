@@ -34,7 +34,9 @@ export const ExternalLink = (props: JSX.IntrinsicElements['a']) => (
 export const InternalLink = ({
   href,
   ...props
-}: JSX.IntrinsicElements['a']) => (
+}: JSX.IntrinsicElements['a'] & {
+  href: string
+}) => (
   <LinkContext.Provider value={{ inLink: true }}>
     <Link href={href} passHref>
       <a {...props} css={commonLinkClass} />

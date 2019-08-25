@@ -2,7 +2,7 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  // Em,
+  Em,
   Strong
   // Ul,
   // UlLi,
@@ -10,11 +10,11 @@ import {
 } from 'src/components/ContentTags'
 // import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
-// import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiNumber from 'src/components/EmojiNumber'
 // import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
-// import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
@@ -73,7 +73,161 @@ export default () => (
                 }
               ]}
             />
-            <TwoColGrid left={<></>} right={<></>} />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Ditw>
+                    <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                  </R.Ditw>
+                </>
+              }
+              right={
+                <>
+                  <R.Bwnp>
+                    <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  </R.Bwnp>
+                  <ExpressionRunnerSeparator blank />
+                  <R.Ewfr></R.Ewfr>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>それらは、まだ返すわけにはいかないな。</Strong>
+                      </P>
+                      <P>
+                        <Em>
+                          いまお前たちに返せるのは、「
+                          <Strong>1を足す機能</Strong>{' '}
+                          <CustomEmoji type="plusOne" />
+                          」がある計算箱だけだ。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'scared',
+                  children: (
+                    <>
+                      <P>な、なんだってー！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        話が違うじゃないか！さっきの問題を解いたら、計算箱を返してくれると言っただろう？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        計算箱を返すとは言ったが…
+                        <Strong>
+                          計算箱のすべての機能を返すとは言っていないからな！
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>そ、そんなー！嘘つきじゃないか！悪魔め！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>まあ、わたしは悪魔だからな。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>どうすればいい？</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、どうしたらすべての機能を返してもらえるんだ？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そうだな…先ほどの問題ではお前たちに、
+                        <Em>
+                          計算箱の「
+                          <Strong>1を足す機能</Strong>{' '}
+                          <CustomEmoji type="plusOne" />
+                          」を弁当箱で再現してもらった
+                        </Em>
+                        よな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Lizi></R.Lizi>
+            <ExpressionRunnerSeparator />
+            <R.Plde>
+              <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
+              の計算箱を、弁当箱で再現
+            </R.Plde>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        だから、
+                        <Em>
+                          「<Strong>1を引く機能</Strong>{' '}
+                          <CustomEmoji type="minusOne" />
+                          」や「
+                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          」を返してほしかったら、
+                          <Strong>
+                            それらを同じように弁当箱で再現してみることだな！
+                          </Strong>
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
