@@ -463,6 +463,65 @@ export default () => (
         )
       },
       {
+        title: <>サヤちゃんが考えた弁当箱</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        しかし…こんな複雑な弁当箱の{' '}
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        を正しい法則で埋めるなんて…何日かかってもできなさそうだ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Pbop>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> には
+              <br />
+              何らかの料理が入る
+            </R.Pbop>
+            <P>
+              村人たちが困っていると、またサヤちゃんが何かひらめいたようです。
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>ねえねえ、サヤも試しにやってみたんだけど…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>え…サヤちゃん、まさか答えが分かったというのかい？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>とりあえずこれを見てみて！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
         title: <>中級はここまで！</>,
         content: (
           <>
