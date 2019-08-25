@@ -237,7 +237,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
-                    description={<>弁当箱で再現できる？</>}
+                    description={<>弁当箱で再現</>}
                   />
                 </>
               }
@@ -251,7 +251,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
                     emojis={['❓', '🍱', '❓']}
-                    description={<>弁当箱で再現できる？</>}
+                    description={<>弁当箱で再現</>}
                   />
                 </>
               }
@@ -275,11 +275,61 @@ export default () => (
                       </P>
                     </>
                   )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        だったら、「
+                        <Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」や「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」は諦めることだな。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        で、でも…
+                        <Em>
+                          それじゃ
+                          <Strong>引き算や、大きな数の足し算・引き算</Strong>
+                          ができないよ！
+                        </Em>
+                        俺らは計算箱がないと何もできないんだ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>
+                        頑張って「
+                        <Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」や「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を弁当箱で再現するしかないのか…
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
           </>
         )
+      },
+      {
+        title: <></>,
+        content: <></>
       },
       {
         title: <>中級はここまで！</>,
