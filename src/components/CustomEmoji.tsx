@@ -6,7 +6,6 @@ import MinusOnePink from 'src/components/MinusOnePinkSvg'
 import BlankNumberSvg from 'src/components/BlankNumberSvg'
 import VerticalDotDotDotSvg from 'src/components/VerticalDotDotDotSvg'
 import QuestionFoodGreySvg from 'src/components/QuestionFoodGreySvg'
-import QuestionFoodRedSvg from 'src/components/QuestionFoodRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/HorizontalDotDotDotSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/HorizontalDotDotDotRedSvg'
 import LetterCSvg from 'src/components/LetterCSvg'
@@ -24,7 +23,6 @@ export const customEmojiToComponent = {
   horizontalDotDotDot: HorizontalDotDotDotSvg,
   horizontalDotDotDotRed: HorizontalDotDotDotRedSvg,
   questionFoodGrey: QuestionFoodGreySvg,
-  questionFoodRed: QuestionFoodRedSvg,
   twenty: TwentySvg,
   plusOneOrange: PlusOneOrangeSvg,
   minusOnePink: MinusOnePink,

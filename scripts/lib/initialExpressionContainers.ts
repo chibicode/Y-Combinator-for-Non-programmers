@@ -2272,3 +2272,22 @@ export const guql = initializeExpressionContainer(
     true
   )
 )
+
+export const jskq = initializeExpressionContainer({
+  shorthandNumberPlusOrMinusOne: 'minus'
+})
+
+export const xwlj = initializeExpressionContainer([
+  predParams(
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    true
+  ),
+  {
+    shorthandNumberAfterConvert: true
+  }
+])

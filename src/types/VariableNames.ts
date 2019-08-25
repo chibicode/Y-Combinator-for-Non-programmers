@@ -40,7 +40,6 @@ export type VariableNames =
   | 'shorthandFunc'
   | 'verticalDotDotDot'
   | 'questionFoodGrey'
-  | 'questionFoodRed'
   | 'C'
   | 'D'
   | 'E'

@@ -3,9 +3,9 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   Em,
-  Strong
-  // Ul,
-  // UlLi,
+  Strong,
+  Ul,
+  UlLi
   // InlineHeader
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
@@ -360,6 +360,14 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なんか、めちゃくちゃ複雑な弁当箱だな…</P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
@@ -377,7 +385,80 @@ export default () => (
                 }
               ]}
             />
-            <R.Skoo></R.Skoo>
+            <R.Skoo>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> に、
+              <br />
+              <Strong>ある法則に基づいて</Strong>料理を入れると、
+              <br />
+              <H args={{ name: 'minusOneEffect' }} />
+              がある弁当箱になる
+            </R.Skoo>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        上の
+                        <H args={{ name: 'minusOneEffect' }} />
+                        がある弁当箱を、
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            ある数字 <CustomEmoji type="blankNumber" />{' '}
+                            に変換できる弁当箱と合体させ、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            <H args={{ name: 'runAndConertToMathbox' }} />
+                            すると、
+                          </Em>
+                        </UlLi>
+                      </Ul>
+                      <P>
+                        <Em>
+                          結果は <CustomEmoji type="blankNumber" />{' '}
+                          <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
+                        </Em>
+                        のです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xqjd>
+              <CustomEmoji type="blankNumber" /> に変換できる弁当箱と、
+              <br />
+              <H args={{ name: 'minusOneEffect' }} />
+              がある弁当箱を合体させ…
+            </R.Xqjd>
+            <ExpressionRunnerSeparator />
+            <R.Gvxz>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果は <CustomEmoji type="blankNumber" />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
+            </R.Gvxz>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        つまり、計算箱の「<Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」を再現できるというわけだな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },

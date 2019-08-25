@@ -4108,3 +4108,17 @@ export const skoo: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   variableSize: 'md'
 }
+
+export const gvxz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jskq,
+  showPriorities: true
+}
+
+export const xqjd: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xwlj,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}
