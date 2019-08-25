@@ -1,5 +1,5 @@
 import React from 'react'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import Router from 'next/router'
 import { pageview } from 'src/lib/gtag'
 import GlobalState from 'src/components/GlobalState'
@@ -16,11 +16,9 @@ export default class MyApp extends App {
   public render() {
     const { Component, pageProps } = this.props
     return (
-      <Container>
-        <GlobalState>
-          <Component {...pageProps} />
-        </GlobalState>
-      </Container>
+      <GlobalState>
+        <Component {...pageProps} />
+      </GlobalState>
     )
   }
 }
