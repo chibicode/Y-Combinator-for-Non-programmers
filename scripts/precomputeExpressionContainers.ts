@@ -33,7 +33,8 @@ const precomputeFile = (key: string) => {
     highlightNumber,
     convert,
     crossed,
-    alphaConvertCallArg
+    alphaConvertCallArg,
+    skipActive
   } = config
 
   const expressionContainersContents = `${JSON.stringify(
@@ -63,7 +64,8 @@ const precomputeFile = (key: string) => {
       showAllShowSteps,
       convert,
       crossed,
-      alphaConvertCallArg
+      alphaConvertCallArg,
+      skipActive
     },
     null,
     2

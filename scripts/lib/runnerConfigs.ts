@@ -3811,6 +3811,7 @@ export const oqpi: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   skipToTheEnd: false,
+  skipActive: true,
   speed: 1.25
 }
 
@@ -3865,6 +3866,7 @@ export const akik: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   skipToTheEnd: false,
   skipAlphaConvert: true,
+  skipActive: true,
   speed: 1.25
 }
 
@@ -3888,6 +3890,7 @@ export const exbn: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   skipToTheEnd: false,
+  skipActive: true,
   speed: 1.25
 }
 
@@ -4098,6 +4101,7 @@ export const fsgq: ExpressionRunnerShorthandConfig = {
   alphaConvertCallArg: true,
   variableSize: 'md',
   skipToTheEnd: false,
+  skipActive: true,
   speed: 1.25
 }
 
@@ -4152,9 +4156,9 @@ export const zwut: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   skipToTheEnd: false,
-  initialState: 'active',
   containerSize: 'xs',
   alphaConvertCallArg: true,
   lastAllowedExpressionState: 'needsAlphaConvert',
+  skipActive: true,
   speed: 1.25
 }

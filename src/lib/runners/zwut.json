@@ -1,11 +1,13 @@
 {
   "expressionContainers": [
     {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
           "arg": {
             "name": "g",
-            "highlightType": "active",
+            "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -13,13 +15,13 @@
               1
             ],
             "funcPriorityAgg": [],
-            "emphasizePriority": true,
+            "emphasizePriority": false,
             "bound": false
           },
           "body": {
             "arg": {
               "name": "h",
-              "highlightType": "active",
+              "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -31,7 +33,7 @@
             "body": {
               "arg": {
                 "name": "h",
-                "highlightType": "active",
+                "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
                 "type": "variable",
@@ -44,7 +46,7 @@
               },
               "func": {
                 "name": "g",
-                "highlightType": "active",
+                "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
                 "type": "variable",
@@ -66,7 +68,7 @@
         "func": {
           "arg": {
             "name": "a",
-            "highlightType": "active",
+            "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -74,13 +76,13 @@
             "funcPriorityAgg": [
               1
             ],
-            "emphasizePriority": true,
+            "emphasizePriority": false,
             "bound": false
           },
           "body": {
             "arg": {
               "name": "b",
-              "highlightType": "active",
+              "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -92,7 +94,7 @@
             "body": {
               "arg": {
                 "name": "c",
-                "highlightType": "active",
+                "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
                 "type": "variable",
@@ -105,7 +107,7 @@
                 "arg": {
                   "arg": {
                     "name": "f",
-                    "highlightType": "active",
+                    "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -118,7 +120,7 @@
                   },
                   "body": {
                     "name": "f",
-                    "highlightType": "active",
+                    "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -133,7 +135,7 @@
                   "arg": {
                     "arg": {
                       "name": "f",
-                      "highlightType": "active",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -146,7 +148,7 @@
                     },
                     "body": {
                       "name": "c",
-                      "highlightType": "active",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -161,7 +163,7 @@
                     "arg": {
                       "arg": {
                         "name": "d",
-                        "highlightType": "active",
+                        "highlightType": "default",
                         "topLeftBadgeType": "none",
                         "bottomRightBadgeType": "none",
                         "type": "variable",
@@ -175,7 +177,7 @@
                       "body": {
                         "arg": {
                           "name": "e",
-                          "highlightType": "active",
+                          "highlightType": "default",
                           "topLeftBadgeType": "none",
                           "bottomRightBadgeType": "none",
                           "type": "variable",
@@ -188,7 +190,7 @@
                           "arg": {
                             "arg": {
                               "name": "b",
-                              "highlightType": "active",
+                              "highlightType": "default",
                               "topLeftBadgeType": "none",
                               "bottomRightBadgeType": "none",
                               "type": "variable",
@@ -202,7 +204,7 @@
                             },
                             "func": {
                               "name": "d",
-                              "highlightType": "active",
+                              "highlightType": "default",
                               "topLeftBadgeType": "none",
                               "bottomRightBadgeType": "none",
                               "type": "variable",
@@ -219,7 +221,7 @@
                           },
                           "func": {
                             "name": "e",
-                            "highlightType": "active",
+                            "highlightType": "default",
                             "topLeftBadgeType": "none",
                             "bottomRightBadgeType": "none",
                             "type": "variable",
@@ -240,7 +242,7 @@
                     },
                     "func": {
                       "name": "a",
-                      "highlightType": "active",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -271,13 +273,10 @@
           },
           "type": "function"
         },
-        "state": "active",
+        "state": "default",
         "type": "call",
         "priority": 1
-      },
-      "previouslyChangedExpressionState": "active",
-      "activePriority": 1,
-      "containerState": "stepped"
+      }
     },
     {
       "expression": {
@@ -1738,251 +1737,6 @@
     },
     {
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
-      "expression": {
-        "arg": {
-          "name": "b",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false
-        },
-        "body": {
-          "arg": {
-            "name": "c",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": false
-          },
-          "body": {
-            "arg": {
-              "arg": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  3
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": false
-              },
-              "body": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true
-              },
-              "type": "function"
-            },
-            "func": {
-              "arg": {
-                "arg": {
-                  "name": "f",
-                  "highlightType": "default",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [
-                    2
-                  ],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": false,
-                  "bound": false
-                },
-                "body": {
-                  "name": "c",
-                  "highlightType": "default",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": false,
-                  "bound": true
-                },
-                "type": "function"
-              },
-              "func": {
-                "arg": {
-                  "arg": {
-                    "name": "d",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": true,
-                    "bound": false
-                  },
-                  "body": {
-                    "arg": {
-                      "name": "e",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "none",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [],
-                      "emphasizePriority": false,
-                      "bound": false
-                    },
-                    "body": {
-                      "arg": {
-                        "arg": {
-                          "name": "b",
-                          "highlightType": "active",
-                          "topLeftBadgeType": "none",
-                          "bottomRightBadgeType": "none",
-                          "type": "variable",
-                          "argPriorityAgg": [
-                            1,
-                            2
-                          ],
-                          "funcPriorityAgg": [],
-                          "emphasizePriority": false,
-                          "bound": true
-                        },
-                        "func": {
-                          "name": "d",
-                          "highlightType": "active",
-                          "topLeftBadgeType": "none",
-                          "bottomRightBadgeType": "none",
-                          "type": "variable",
-                          "argPriorityAgg": [],
-                          "funcPriorityAgg": [
-                            2
-                          ],
-                          "emphasizePriority": false,
-                          "bound": true
-                        },
-                        "state": "default",
-                        "type": "call",
-                        "priority": 2
-                      },
-                      "func": {
-                        "name": "e",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1
-                    },
-                    "type": "function"
-                  },
-                  "type": "function"
-                },
-                "func": {
-                  "arg": {
-                    "name": "g",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [
-                      1,
-                      2,
-                      3
-                    ],
-                    "emphasizePriority": true,
-                    "bound": false
-                  },
-                  "body": {
-                    "arg": {
-                      "name": "h",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "none",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [],
-                      "emphasizePriority": false,
-                      "bound": false
-                    },
-                    "body": {
-                      "arg": {
-                        "name": "h",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true
-                      },
-                      "func": {
-                        "name": "g",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          1
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 1
-                    },
-                    "type": "function"
-                  },
-                  "type": "function"
-                },
-                "state": "active",
-                "type": "call",
-                "priority": 1
-              },
-              "state": "default",
-              "type": "call",
-              "priority": 2
-            },
-            "state": "default",
-            "type": "call",
-            "priority": 3
-          },
-          "type": "function"
-        },
-        "type": "function"
-      },
-      "activePriority": 1
-    },
-    {
-      "containerState": "stepped",
       "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
@@ -3309,218 +3063,6 @@
     },
     {
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
-      "expression": {
-        "arg": {
-          "name": "b",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false
-        },
-        "body": {
-          "arg": {
-            "name": "c",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": false
-          },
-          "body": {
-            "arg": {
-              "arg": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  2
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": false
-              },
-              "body": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true
-              },
-              "type": "function"
-            },
-            "func": {
-              "arg": {
-                "arg": {
-                  "name": "f",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [
-                    1
-                  ],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": true,
-                  "bound": false
-                },
-                "body": {
-                  "name": "c",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": false,
-                  "bound": true
-                },
-                "type": "function"
-              },
-              "func": {
-                "arg": {
-                  "name": "h",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [
-                    1,
-                    2
-                  ],
-                  "emphasizePriority": true,
-                  "bound": false
-                },
-                "body": {
-                  "arg": {
-                    "name": "h",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true
-                  },
-                  "func": {
-                    "arg": {
-                      "name": "d",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "none",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [
-                        1
-                      ],
-                      "emphasizePriority": false,
-                      "bound": false
-                    },
-                    "body": {
-                      "arg": {
-                        "name": "e",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": false
-                      },
-                      "body": {
-                        "arg": {
-                          "arg": {
-                            "name": "b",
-                            "highlightType": "active",
-                            "topLeftBadgeType": "none",
-                            "bottomRightBadgeType": "none",
-                            "type": "variable",
-                            "argPriorityAgg": [
-                              1,
-                              2
-                            ],
-                            "funcPriorityAgg": [],
-                            "emphasizePriority": false,
-                            "bound": true
-                          },
-                          "func": {
-                            "name": "d",
-                            "highlightType": "active",
-                            "topLeftBadgeType": "none",
-                            "bottomRightBadgeType": "none",
-                            "type": "variable",
-                            "argPriorityAgg": [],
-                            "funcPriorityAgg": [
-                              2
-                            ],
-                            "emphasizePriority": false,
-                            "bound": true
-                          },
-                          "state": "default",
-                          "type": "call",
-                          "priority": 2
-                        },
-                        "func": {
-                          "name": "e",
-                          "highlightType": "active",
-                          "topLeftBadgeType": "none",
-                          "bottomRightBadgeType": "none",
-                          "type": "variable",
-                          "argPriorityAgg": [],
-                          "funcPriorityAgg": [
-                            1
-                          ],
-                          "emphasizePriority": false,
-                          "bound": true
-                        },
-                        "state": "default",
-                        "type": "call",
-                        "priority": 1
-                      },
-                      "type": "function"
-                    },
-                    "type": "function"
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 1
-                },
-                "type": "function"
-              },
-              "state": "active",
-              "type": "call",
-              "priority": 1
-            },
-            "state": "default",
-            "type": "call",
-            "priority": 2
-          },
-          "type": "function"
-        },
-        "type": "function"
-      },
-      "activePriority": 1
-    },
-    {
-      "containerState": "stepped",
       "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
@@ -4575,184 +4117,6 @@
     },
     {
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
-      "expression": {
-        "arg": {
-          "name": "b",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false
-        },
-        "body": {
-          "arg": {
-            "name": "c",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": false
-          },
-          "body": {
-            "arg": {
-              "arg": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  2
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": false
-              },
-              "body": {
-                "name": "f",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true
-              },
-              "type": "function"
-            },
-            "func": {
-              "arg": {
-                "arg": {
-                  "name": "f",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [
-                    1
-                  ],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": true,
-                  "bound": false
-                },
-                "body": {
-                  "name": "c",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": false,
-                  "bound": true
-                },
-                "type": "function"
-              },
-              "func": {
-                "arg": {
-                  "name": "d",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [
-                    1,
-                    2
-                  ],
-                  "emphasizePriority": true,
-                  "bound": false
-                },
-                "body": {
-                  "arg": {
-                    "name": "e",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": false
-                  },
-                  "body": {
-                    "arg": {
-                      "arg": {
-                        "name": "b",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [
-                          1,
-                          2
-                        ],
-                        "funcPriorityAgg": [],
-                        "emphasizePriority": false,
-                        "bound": true
-                      },
-                      "func": {
-                        "name": "d",
-                        "highlightType": "active",
-                        "topLeftBadgeType": "none",
-                        "bottomRightBadgeType": "none",
-                        "type": "variable",
-                        "argPriorityAgg": [],
-                        "funcPriorityAgg": [
-                          2
-                        ],
-                        "emphasizePriority": false,
-                        "bound": true
-                      },
-                      "state": "default",
-                      "type": "call",
-                      "priority": 2
-                    },
-                    "func": {
-                      "name": "e",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "none",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [
-                        1
-                      ],
-                      "emphasizePriority": false,
-                      "bound": true
-                    },
-                    "state": "default",
-                    "type": "call",
-                    "priority": 1
-                  },
-                  "type": "function"
-                },
-                "type": "function"
-              },
-              "state": "active",
-              "type": "call",
-              "priority": 1
-            },
-            "state": "default",
-            "type": "call",
-            "priority": 2
-          },
-          "type": "function"
-        },
-        "type": "function"
-      },
-      "activePriority": 1
-    },
-    {
-      "containerState": "stepped",
       "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
@@ -5638,151 +5002,6 @@
     },
     {
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "active",
-      "expression": {
-        "arg": {
-          "name": "b",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": false
-        },
-        "body": {
-          "arg": {
-            "name": "c",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": false
-          },
-          "body": {
-            "arg": {
-              "arg": {
-                "name": "f",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": true,
-                "bound": false
-              },
-              "body": {
-                "name": "f",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true
-              },
-              "type": "function"
-            },
-            "func": {
-              "arg": {
-                "name": "e",
-                "highlightType": "active",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [],
-                "funcPriorityAgg": [
-                  1
-                ],
-                "emphasizePriority": true,
-                "bound": false
-              },
-              "body": {
-                "arg": {
-                  "arg": {
-                    "name": "b",
-                    "highlightType": "active",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [
-                      1,
-                      2
-                    ],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true
-                  },
-                  "func": {
-                    "arg": {
-                      "name": "f",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "none",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [
-                        2
-                      ],
-                      "emphasizePriority": false,
-                      "bound": false
-                    },
-                    "body": {
-                      "name": "c",
-                      "highlightType": "active",
-                      "topLeftBadgeType": "none",
-                      "bottomRightBadgeType": "none",
-                      "type": "variable",
-                      "argPriorityAgg": [],
-                      "funcPriorityAgg": [],
-                      "emphasizePriority": false,
-                      "bound": true
-                    },
-                    "type": "function"
-                  },
-                  "state": "default",
-                  "type": "call",
-                  "priority": 2
-                },
-                "func": {
-                  "name": "e",
-                  "highlightType": "active",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [],
-                  "funcPriorityAgg": [
-                    1
-                  ],
-                  "emphasizePriority": false,
-                  "bound": true
-                },
-                "state": "default",
-                "type": "call",
-                "priority": 1
-              },
-              "type": "function"
-            },
-            "state": "active",
-            "type": "call",
-            "priority": 1
-          },
-          "type": "function"
-        },
-        "type": "function"
-      },
-      "activePriority": 1
-    },
-    {
-      "containerState": "stepped",
       "previouslyChangedExpressionState": "showFuncUnbound",
       "expression": {
         "arg": {
@@ -6091,5 +5310,6 @@
   "funcPriorityAggHighlights": [],
   "highlightFunctions": false,
   "superFastForward": false,
-  "alphaConvertCallArg": true
+  "alphaConvertCallArg": true,
+  "skipActive": true
 }

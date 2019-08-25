@@ -13,6 +13,7 @@ const buildExpressionContainers = ({
   showAllShowSteps,
   skipAlphaConvert,
   alphaConvertCallArg,
+  skipActive,
   skipToTheEnd,
   hideControls,
   lastAllowedExpressionState,
@@ -25,7 +26,8 @@ const buildExpressionContainers = ({
     const stepOptions = {
       showAllShowSteps,
       skipAlphaConvert,
-      alphaConvertCallArg
+      alphaConvertCallArg,
+      skipActive
     }
 
     initializeInstructions.forEach(initializeInstruction => {

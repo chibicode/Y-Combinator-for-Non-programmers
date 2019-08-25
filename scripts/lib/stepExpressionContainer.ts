@@ -58,6 +58,7 @@ interface StepOptions {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
   alphaConvertCallArg?: boolean
+  skipActive?: boolean
 }
 
 const stepExpressionContainerReset = (
@@ -211,7 +212,12 @@ const stepShorthand = (
 
 const stepRegular = (
   e: ExecutableCallRegular,
-  { showAllShowSteps, skipAlphaConvert, alphaConvertCallArg }: StepOptions,
+  {
+    showAllShowSteps,
+    skipAlphaConvert,
+    alphaConvertCallArg,
+    skipActive
+  }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression:
@@ -248,9 +254,23 @@ const stepRegular = (
       }
     }
     case 'default': {
-      return {
-        nextExpression: stepToActive(e),
-        previouslyChangedExpressionState: 'active'
+      if (skipActive) {
+        if (hasUnboundVariables(e.func.body)) {
+          return {
+            nextExpression: stepToShowFuncUnbound(stepToActive(e), false),
+            previouslyChangedExpressionState: 'showFuncUnbound'
+          }
+        } else {
+          return {
+            nextExpression: stepToShowFuncBound(stepToActive(e), false),
+            previouslyChangedExpressionState: 'showFuncBound'
+          }
+        }
+      } else {
+        return {
+          nextExpression: stepToActive(e),
+          previouslyChangedExpressionState: 'active'
+        }
       }
     }
     case 'active': {
