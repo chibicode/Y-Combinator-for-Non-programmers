@@ -1171,15 +1171,26 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、このことを覚えておくのが難しそうだなあ…</P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        <InlineHeader>ちなみに:</InlineHeader>{' '}
+                        ご心配なく！
                         <Em>
                           この特別ルールは次のページ以降で登場する弁当箱でも使われますが、
                         </Em>
-                        <Strong>暗記する必要はありません。</Strong>なんとなく「
+                        <Strong>暗記する必要はありません。</Strong>
+                      </P>
+                      <P>
+                        なんとなく「
                         <Em>こういう法則があるんだな</Em>
                         」と思ってくだされば大丈夫です！
                       </P>

@@ -311,14 +311,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>
-                        頑張って「
-                        <Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
-                        」や「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-                        」を弁当箱で再現するしかないのか…
-                      </P>
+                      <P>頑張って弁当箱で再現するしかないのか…</P>
                     </>
                   )
                 }
