@@ -334,9 +334,50 @@ export default () => (
                       <P>ベンケイ、ヒントを説明したまえ！</P>
                     </>
                   )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>わかりました。こちらの弁当箱をご覧ください。</P>
+                      <P>
+                        前回と同じく、
+                        <Em>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          には何らかの料理が入ります。
+                        </Em>
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
+            <R.Pbop>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> には
+              <br />
+              何らかの料理が入る
+            </R.Pbop>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そして、
+                        <Strong>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          に、ある法則に基づいて料理を入れると、
+                          <H args={{ name: 'minusOneEffect' }} />
+                          がある弁当箱になります。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Skoo></R.Skoo>
           </>
         )
       },

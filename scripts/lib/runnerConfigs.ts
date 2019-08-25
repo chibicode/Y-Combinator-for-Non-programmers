@@ -4100,3 +4100,11 @@ export const fsgq: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   speed: 1.25
 }
+
+export const skoo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.guql,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}

@@ -117,9 +117,11 @@ export const predParams = (
   c: VariableNames | HighlightedVariableExpressionParams,
   d: VariableNames | HighlightedVariableExpressionParams,
   e: VariableNames | HighlightedVariableExpressionParams,
-  f: VariableNames | HighlightedVariableExpressionParams
+  f: VariableNames | HighlightedVariableExpressionParams,
+  specialEffect?: boolean
 ): FunctionExpressionParams => {
   return {
+    meta: specialEffect ? 'minusOneEffect' : undefined,
     arg: a,
     body: {
       arg: b,

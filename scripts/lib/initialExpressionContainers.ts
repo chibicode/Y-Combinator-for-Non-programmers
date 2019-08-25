@@ -2038,12 +2038,12 @@ export const pxna = initializeExpressionContainer({
 
 export const vemg = initializeExpressionContainer(
   predParams(
-    'questionFoodRed',
-    'questionFoodRed',
-    'questionFoodRed',
-    'questionFoodRed',
-    'questionFoodRed',
-    'questionFoodRed'
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey'
   )
 )
 
@@ -2260,3 +2260,15 @@ export const ycof = initializeExpressionContainer([
   'c',
   'd'
 ])
+
+export const guql = initializeExpressionContainer(
+  predParams(
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    'questionFoodGrey',
+    true
+  )
+)
