@@ -2295,3 +2295,12 @@ export const xwlj = initializeExpressionContainer([
 export const smxz = initializeExpressionContainer(
   predParams('a', 'b', 'c', 'd', 'e', 'f')
 )
+
+export const kgpl = initializeExpressionContainer(
+  numberParamsHighlightNumber('g', 'h', 1)
+)
+
+export const udaf = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  numberParams('g', 'h', 1)
+])

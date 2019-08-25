@@ -226,7 +226,7 @@ export default () => (
             <ExpressionRunnerCaptionOnly>
               <H args={{ name: 'runAndConertToMathbox' }} />
               <br />
-              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              して、結果が <EmojiNumber number={0} size="mdlg" /> になれば
               <Strong>成功</Strong> <Emoji>🎉</Emoji>
               <br />
               それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>

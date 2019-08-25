@@ -4130,3 +4130,18 @@ export const cldb: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   variableSize: 'md'
 }
+
+export const dqdv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kgpl,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
+}
+
+export const ylav: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}

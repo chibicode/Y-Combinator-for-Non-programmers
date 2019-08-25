@@ -18,7 +18,7 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
-// import BottomRightBadge from 'src/components/BottomRightBadge'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
@@ -528,13 +528,71 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ふむふむ…まさか一発で正解なんてことはありえないと思うけど、とりあえず試してみるか。
+                        ふむふむ…まさか今回も一発で正解なんてことはありえないと思うけど、とりあえず試してみるか。
                       </P>
+                      <P>
+                        前回もやったように、
+                        <Em>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と合体させてみよう。
+                        </Em>
+                      </P>
+                      <R.Dqdv>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'g',
+                            number: 1
+                          }}
+                        />
+                      </R.Dqdv>
+                      <P>
+                        今回は
+                        <H args={{ name: 'minusOneEffect' }} />
+                        があるかどうかを確かめたいわけだから、
+                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
+                        <EmojiNumber number={1} /> が計算できないといけない。
+                      </P>
+                      <P>
+                        つまり、
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        した時に、
+                        <Em>
+                          結果が <EmojiNumber number={0} />{' '}
+                          になれば成功というわけだ。
+                        </Em>
+                      </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <Emoji>❓</Emoji>,
+                          <EmojiNumber number={0} />,
+                          <Emoji>❓</Emoji>
+                        ]}
+                        description={
+                          <>
+                            結果が <EmojiNumber number={0} /> になればOK
+                          </>
+                        }
+                      />
                     </>
                   )
                 }
               ]}
             />
+            <R.Ylav>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Ylav>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={0} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
           </>
         )
       },
