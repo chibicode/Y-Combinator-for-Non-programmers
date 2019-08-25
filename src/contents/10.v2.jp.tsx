@@ -518,6 +518,23 @@ export default () => (
                 }
               ]}
             />
+            <R.Cldb>
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+            </R.Cldb>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        ふむふむ…まさか一発で正解なんてことはありえないと思うけど、とりあえず試してみるか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },

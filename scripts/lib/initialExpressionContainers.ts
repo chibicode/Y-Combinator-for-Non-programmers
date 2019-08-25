@@ -2291,3 +2291,7 @@ export const xwlj = initializeExpressionContainer([
     shorthandNumberAfterConvert: true
   }
 ])
+
+export const smxz = initializeExpressionContainer(
+  predParams('a', 'b', 'c', 'd', 'e', 'f')
+)

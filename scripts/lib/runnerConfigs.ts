@@ -4122,3 +4122,11 @@ export const xqjd: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   variableSize: 'md'
 }
+
+export const cldb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.smxz,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}
