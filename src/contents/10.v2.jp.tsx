@@ -8,7 +8,7 @@ import {
   // UlLi,
   // InlineHeader
 } from 'src/components/ContentTags'
-// import H from 'src/components/H'
+import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 // import EmojiWithText from 'src/components/EmojiWithText'
@@ -280,14 +280,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        だったら、「
-                        <Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
-                        」や「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-                        」は諦めることだな。
-                      </P>
+                      <P>だったら、それらは諦めることだな。</P>
                     </>
                   )
                 },
@@ -321,8 +314,31 @@ export default () => (
         )
       },
       {
-        title: <></>,
-        content: <></>
+        title: (
+          <>
+            <H args={{ name: 'minusOneEffect' }} />
+            がある弁当箱のヒント
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        もちろん、ヒント無しでやれとは言わん。前回同様、ヒントを出してやろうじゃないか。
+                      </P>
+                      <P>ベンケイ、ヒントを説明したまえ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       },
       {
         title: <>中級はここまで！</>,
