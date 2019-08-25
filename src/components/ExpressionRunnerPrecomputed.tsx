@@ -5,6 +5,7 @@ import Container from 'src/components/Container'
 import ExpressionBox from 'src/components/ExpressionBox'
 import H from 'src/components/H'
 import ExpressionRunnerCaptionWrapper from 'src/components/ExpressionRunnerCaptionWrapper'
+import ProgressBar from 'src/components/ProgressBar'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ExpressionRunnerControls from 'src/components/ExpressionRunnerControls'
 import ExpressionRunnerExplanation from 'src/components/ExpressionRunnerExplanation'
@@ -100,6 +101,7 @@ const ExpressionRunnerPrecomputed = ({
 
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [resetClicked, setResetClicked] = useState<boolean>(false)
+  const percentDone = (currentIndex * 100) / (expressionContainers.length - 1)
 
   useInterval(
     () => {
@@ -261,6 +263,11 @@ const ExpressionRunnerPrecomputed = ({
               <H args={{ name: 'fastForwarding' }} />
             </ExpressionRunnerCaptionWrapper>
           )}
+          {!hidePlayButton &&
+            canStepForward &&
+            (isPlaying || atLeastOneStepTaken) && (
+              <ProgressBar percent={percentDone} />
+            )}
         </Container>
         <Container size={containerSize} horizontalPadding={0.25}>
           <div
