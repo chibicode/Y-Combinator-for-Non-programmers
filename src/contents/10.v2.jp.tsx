@@ -15,6 +15,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 // import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
@@ -593,6 +594,55 @@ export default () => (
               <br />
               それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、
+                        <H args={{ name: 'play' }} />
+                        してみよう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'play' }} /> してみると…
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              それでは、<Emoji>👧🏻</Emoji>{' '}
+              サヤちゃんの弁当箱を実行してみましょう！
+            </P>
+            <P>
+              まず、
+              <Em>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアがふたつ以上あるので、一番左の
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                のペアからはじめます。
+              </Em>
+              <H
+                args={{
+                  name: 'pressFastForward',
+                  mentionRightArrow: true
+                }}
+              />
+            </P>
+            <R.Zwut>
+              <H args={{ name: 'startWithLeftMostOneCaption' }} />
+            </R.Zwut>
           </>
         )
       },

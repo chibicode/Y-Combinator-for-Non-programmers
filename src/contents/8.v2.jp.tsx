@@ -259,13 +259,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を実行してみましょう。
-              <H
-                args={{
-                  name: 'pressFastForward',
-                  mentionRightArrow: true
-                }}
-              />
+              それでは、<Emoji>👧🏻</Emoji>{' '}
+              サヤちゃんの弁当箱を実行してみましょう！
             </P>
             <P>
               まず、
@@ -275,6 +270,12 @@ export default () => (
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
                 のペアからはじめます。
               </Em>
+              <H
+                args={{
+                  name: 'pressFastForward',
+                  mentionRightArrow: true
+                }}
+              />
             </P>
             <R.Jsvg>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />

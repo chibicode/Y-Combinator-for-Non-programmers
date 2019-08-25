@@ -4145,3 +4145,14 @@ export const ylav: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   variableSize: 'md'
 }
+
+export const zwut: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  initialState: 'active',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
