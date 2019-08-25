@@ -11,11 +11,10 @@ import {
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
-// import EmojiWithText from 'src/components/EmojiWithText'
+import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 // import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
@@ -626,23 +625,72 @@ export default () => (
               サヤちゃんの弁当箱を実行してみましょう！
             </P>
             <P>
-              まず、
-              <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアがふたつ以上あるので、一番左の
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアからはじめます。
-              </Em>
+              途中まで早送りしてみますね。
               <H
                 args={{
-                  name: 'pressFastForward',
-                  mentionRightArrow: true
+                  name: 'pressFastForward'
                 }}
               />
             </P>
-            <R.Zwut>
-              <H args={{ name: 'startWithLeftMostOneCaption' }} />
-            </R.Zwut>
+            <R.Zwut></R.Zwut>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'relieved',
+                  children: (
+                    <>
+                      <P>複雑すぎて、目で追うのがしんどい…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Em>すべてを目で追う必要はないですよ！</Em>
+                        なんとなく、「へー、こんなふうに進んでいくんだ」と思っていただければ大丈夫です。
+                      </P>
+                      <P>
+                        また、「<Strong>最後までスキップ →</Strong>
+                        」を押して、飛ばしていただいても結構です。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        それより見てみて！
+                        <Strong>
+                          途中で{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          と{' '}
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcUnbound"
+                          />{' '}
+                          が同じになったよ！
+                        </Strong>
+                      </P>
+                      <P>
+                        前回と同じように特別ルールで、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        が別の料理に変わるんだよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },

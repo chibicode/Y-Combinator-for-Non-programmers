@@ -4154,5 +4154,7 @@ export const zwut: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   initialState: 'active',
   containerSize: 'xs',
-  alphaConvertCallArg: true
+  alphaConvertCallArg: true,
+  lastAllowedExpressionState: 'needsAlphaConvert',
+  speed: 1.25
 }

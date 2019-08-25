@@ -335,30 +335,26 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {!hidePlayButton &&
-            canStepForward &&
-            expressionContainers[expressionContainers.length - 1]
-              .containerState === 'done' &&
-            (resetClicked || speed > 1) && (
-              <>
-                <ExpressionRunnerCaptionWrapper
+          {!hidePlayButton && canStepForward && (resetClicked || speed > 1) && (
+            <>
+              <ExpressionRunnerCaptionWrapper
+                css={css`
+                  margin: ${spaces(1)} 0 ${spaces('-0.25')};
+                `}
+              >
+                <LinkButton
+                  onClick={stepToTheEnd}
                   css={css`
-                    margin: ${spaces(1)} 0 ${spaces('-0.25')};
+                    color: inherit;
+                    font-weight: bold;
+                    font-size: ${fontSizes(0.75)};
                   `}
                 >
-                  <LinkButton
-                    onClick={stepToTheEnd}
-                    css={css`
-                      color: inherit;
-                      font-weight: bold;
-                      font-size: ${fontSizes(0.75)};
-                    `}
-                  >
-                    <H args={{ name: 'skipToTheEnd' }} /> →
-                  </LinkButton>
-                </ExpressionRunnerCaptionWrapper>
-              </>
-            )}
+                  <H args={{ name: 'skipToTheEnd' }} /> →
+                </LinkButton>
+              </ExpressionRunnerCaptionWrapper>
+            </>
+          )}
           {isPlaying && isFastForwarding && !isDone && (
             <>
               <ExpressionRunnerCaptionWrapper

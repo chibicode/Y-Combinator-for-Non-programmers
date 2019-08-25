@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import locale from 'src/lib/locale'
+import H from 'src/components/H'
 import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
@@ -110,9 +110,13 @@ const Card = ({
           `}
         >
           <>
-            {slideNumber === 1 && (
-              <>{locale === 'jp' ? 'スライド' : 'Slide'} </>
-            )}
+            <span
+              css={css`
+                color: ${colors('white66')};
+              `}
+            >
+              <H args={{ name: 'slide' }} />{' '}
+            </span>
             <span
               css={css`
                 font-weight: bold;

@@ -2075,6 +2075,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <Em highlightType="pink">最後までスキップすることも可能です。</Em>
     }
   }
+  if (args.name === 'slide') {
+    if (locale === 'en') {
+      return <>Slide</>
+    } else {
+      return <>スライド</>
+    }
+  }
   throw new Error()
 }
 
