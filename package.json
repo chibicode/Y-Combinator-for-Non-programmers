@@ -9,6 +9,7 @@
     "next": "9.0.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-spring": "^8.0.27",
     "smoothscroll-polyfill": "^0.4.4",
     "twemoji": "^12.1.2"
   },

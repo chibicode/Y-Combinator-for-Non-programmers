@@ -102,6 +102,9 @@ const ExpressionRunnerPrecomputed = ({
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [resetClicked, setResetClicked] = useState<boolean>(false)
   const percentDone = (currentIndex * 100) / (expressionContainers.length - 1)
+  const fromPercent =
+    ((currentIndex - 1 >= 0 ? currentIndex - 1 : 0) * 100) /
+    (expressionContainers.length - 1)
 
   useInterval(
     () => {
@@ -266,7 +269,11 @@ const ExpressionRunnerPrecomputed = ({
           {!hidePlayButton &&
             canStepForward &&
             (isPlaying || atLeastOneStepTaken) && (
-              <ProgressBar percent={percentDone} />
+              <ProgressBar
+                percent={percentDone}
+                fromPercent={fromPercent}
+                speed={isPlaying ? autoplaySpeed(speed) : undefined}
+              />
             )}
         </Container>
         <Container size={containerSize} horizontalPadding={0.25}>
