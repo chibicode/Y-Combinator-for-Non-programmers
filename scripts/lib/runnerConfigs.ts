@@ -4162,3 +4162,15 @@ export const zwut: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   speed: 1.25
 }
+
+export const xusi: ExpressionRunnerShorthandConfig = {
+  runner: 'singleStep',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  initialState: 'needsAlphaConvert',
+  finalState: 'alphaConvertDone',
+  explanationsVisibility: 'visible'
+}

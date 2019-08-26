@@ -679,18 +679,23 @@ export default () => (
                         </Strong>
                       </P>
                       <P>
-                        前回と同じように特別ルールで、
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="callArg"
-                        />{' '}
-                        が別の料理に変わるんだよね。
+                        前回と同じように
+                        <Em>
+                          特別ルールで、
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="callArg"
+                          />{' '}
+                          が別の料理に変わる
+                        </Em>
+                        んだよね。
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Xusi></R.Xusi>
           </>
         )
       },
