@@ -16,7 +16,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
-// import EmojiForLetter from 'src/components/EmojiForLetter'
+import EmojiWithText from 'src/components/EmojiWithText'
 import Emoji from 'src/components/Emoji'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
@@ -553,6 +553,13 @@ export default () => (
                         <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できないといけない。
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={1} />,
+                          <Emoji>➖</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                      />
                       <P>
                         つまり、
                         <H args={{ name: 'runAndConertToMathbox' }} />
@@ -652,7 +659,10 @@ export default () => (
                         なんとなく、「へー、こんなふうに進んでいくんだ」と思っていただければ大丈夫です。
                       </P>
                       <P>
-                        また、「<Strong>最後までスキップ →</Strong>
+                        また、「
+                        <Strong>
+                          <H args={{ name: 'skipToTheStoppingPoint' }} /> →
+                        </Strong>
                         」を押して、飛ばしていただいても結構です。
                       </P>
                     </>
@@ -675,7 +685,7 @@ export default () => (
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
-                          が同じになったよ！
+                          が同じ <EmojiWithText letter="f" /> になったよ！
                         </Strong>
                       </P>
                       <P>
@@ -696,6 +706,305 @@ export default () => (
               ]}
             />
             <R.Xusi></R.Xusi>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうですね！結果が狂わないように、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        の <EmojiWithText letter="f" /> を{' '}
+                        <EmojiWithText letter="a" /> に変えました。
+                      </P>
+                      <P>
+                        では、最後まで
+                        <H args={{ name: 'fastForward' }} />
+                        してみてください！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Lipt />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        最終的に残った以下の弁当箱は、
+                        <EmojiNumber number={0} /> に変換できる弁当箱です！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zzhq>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'b',
+                  number: 0
+                }}
+              />
+            </R.Zzhq>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>ということは、サヤちゃんの弁当箱は…</P>
+                      <P>
+                        <Em>
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱と合体させ、
+                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          すると、結果が <EmojiNumber number={0} /> になる
+                        </Em>
+                        ということですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ylav>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Ylav>
+            <ExpressionRunnerSeparator />
+            <R.Jwah>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              すると、結果が <EmojiNumber number={0} /> になる
+            </R.Jwah>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
+                        <EmojiNumber number={1} /> が計算できたので、
+                        <Strong>成功です！</Strong> <Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>やったー！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>す、すごい…！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
+            <EmojiNumber number={1} /> はできる？
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        ぐぬぬ…しかし、
+                        <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
+                        <EmojiNumber number={1} /> が計算できたからといって、
+                        <Em>
+                          その弁当箱に
+                          <H args={{ name: 'minusOneEffect' }} />
+                          があるとはまだ言い切れない
+                        </Em>
+                        ぞ。
+                      </P>
+                      <P>
+                        たとえば、
+                        <Strong>
+                          <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
+                          <EmojiNumber number={1} /> は計算できるのかな？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={2} />,
+                <Emoji>➖</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={<>これも計算できる？</>}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、
+                        <Em>
+                          <EmojiNumber number={2} />{' '}
+                          に変換できる弁当箱と合体させてみる
+                        </Em>
+                        ね！
+                      </P>
+                      <R.Mzys>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'g',
+                            number: 2
+                          }}
+                        />
+                      </R.Mzys>
+                      <P>
+                        合体したものを
+                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        して、
+                        <Em>
+                          結果が <EmojiNumber number={1} /> になればいい
+                        </Em>
+                        んだよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zwvj>
+              <EmojiNumber number={2} /> に変換できる弁当箱と、
+              <br />
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱を合体させ…
+            </R.Zwvj>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={1} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        まずは実行してみるね。
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          今回は、<Em>最後まで止まらずに早送りするね！</Em>
+                        </UlLi>
+                        <UlLi>
+                          複雑なので、<Em>目で追わなくても大丈夫です！</Em>
+                        </UlLi>
+                        <UlLi>
+                          ちょっと時間がかかるので、待てない方は下の「
+                          <Strong>
+                            <H args={{ name: 'skipToTheEnd' }} /> →
+                          </Strong>
+                          」を押してね！
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ifiq />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        最終的に残った以下の弁当箱は、
+                        <EmojiNumber number={1} /> に変換できる弁当箱です！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Joaq>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 1, letter: 'b' }}
+              />
+            </R.Joaq>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
+                        <EmojiNumber number={1} /> が計算できたので、
+                        <Strong>またしても成功です！</Strong> <Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>わーい、わーい！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ぐぬぬ…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },

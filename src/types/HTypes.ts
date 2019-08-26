@@ -159,6 +159,7 @@ export interface HProps {
     | { name: 'convertiblePatternCaption' }
     | { name: 'canBeConvertedCaption'; letter: VariableNames; number: number }
     | { name: 'skipToTheEnd' }
-    | { name: 'fastForwardSkippable' }
+    | { name: 'skipToTheStoppingPoint' }
+    | { name: 'fastForwardSkippableToTheEnd' }
     | { name: 'slide' }
 }

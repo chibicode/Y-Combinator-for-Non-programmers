@@ -4174,3 +4174,57 @@ export const xusi: ExpressionRunnerShorthandConfig = {
   finalState: 'alphaConvertDone',
   explanationsVisibility: 'visible'
 }
+
+export const lipt: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.udaf,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false,
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  initialState: 'alphaConvertDone',
+  skipActive: true,
+  speed: 1.25
+}
+
+export const zzhq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.csai,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
+}
+
+export const mzys: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uvwt,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
+}
+
+export const zwvj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lwpw,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'sm'
+}
+
+export const ifiq: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.lwpw,
+  showPriorities: true,
+  variableSize: 'sm',
+  skipToTheEnd: false,
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  skipActive: true,
+  speed: 1.5
+}
+
+export const joaq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.myzx,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
+}

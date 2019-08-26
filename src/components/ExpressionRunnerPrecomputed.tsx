@@ -350,7 +350,13 @@ const ExpressionRunnerPrecomputed = ({
                     font-size: ${fontSizes(0.75)};
                   `}
                 >
-                  <H args={{ name: 'skipToTheEnd' }} /> →
+                  {expressionContainers[expressionContainers.length - 1]
+                    .containerState !== 'done' ? (
+                    <H args={{ name: 'skipToTheStoppingPoint' }} />
+                  ) : (
+                    <H args={{ name: 'skipToTheEnd' }} />
+                  )}{' '}
+                  →
                 </LinkButton>
               </ExpressionRunnerCaptionWrapper>
             </>

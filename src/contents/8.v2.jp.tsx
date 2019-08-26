@@ -467,13 +467,25 @@ export default () => (
                         たとえば、
                         <Strong>
                           <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> はできるのかどうか、
+                          <EmojiNumber number={1} /> も計算できるのかどうか、
                         </Strong>
                         確かめてみないと。
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={2} />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+              description={<>これも計算できる？</>}
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'saya',
                   children: (
@@ -481,7 +493,7 @@ export default () => (
                       <P>
                         じゃあ、
                         <Em>
-                          <EmojiNumber number={2} />
+                          <EmojiNumber number={2} />{' '}
                           に変換できる弁当箱と合体させてみる
                         </Em>
                         ね！
@@ -496,6 +508,7 @@ export default () => (
                         />
                       </R.Spga>
                       <P>
+                        合体したものを
                         <H args={{ name: 'runAndConertToMathbox' }} />
                         して、
                         <Em>

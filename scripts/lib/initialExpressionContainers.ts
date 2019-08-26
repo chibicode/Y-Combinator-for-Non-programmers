@@ -2304,3 +2304,20 @@ export const udaf = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 1)
 ])
+
+export const csai = initializeExpressionContainer(
+  numberParamsHighlightNumber('b', 'c', 0)
+)
+
+export const uvwt = initializeExpressionContainer(
+  numberParamsHighlightNumber('g', 'h', 2)
+)
+
+export const lwpw = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  numberParams('g', 'h', 2)
+])
+
+export const myzx = initializeExpressionContainer(
+  numberParamsHighlightNumber('b', 'c', 1)
+)

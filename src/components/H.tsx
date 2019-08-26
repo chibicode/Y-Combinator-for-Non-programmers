@@ -673,7 +673,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {args.skippingSteps && <H args={{ name: 'skippingSteps' }} />}
           {args.isFaster && <H args={{ name: 'isFaster' }} />}
           {args.mentionRightArrow && <H args={{ name: 'mentionRightArrow' }} />}
-          {args.skippable && <H args={{ name: 'fastForwardSkippable' }} />}
+          {args.skippable && (
+            <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+          )}
         </>
       )
     }
@@ -2068,7 +2070,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>最後までスキップ</>
     }
   }
-  if (args.name === 'fastForwardSkippable') {
+  if (args.name === 'skipToTheStoppingPoint') {
+    if (locale === 'en') {
+      return <>?</>
+    } else {
+      return <>途中までスキップ</>
+    }
+  }
+  if (args.name === 'fastForwardSkippableToTheEnd') {
     if (locale === 'en') {
       return <>?</>
     } else {
