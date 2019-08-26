@@ -656,8 +656,10 @@ export default () => (
               ]}
             />
             <R.Nvqu>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱には
+              <br />
               <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱
+              がある
             </R.Nvqu>
             <BubbleQuotes
               quotes={[

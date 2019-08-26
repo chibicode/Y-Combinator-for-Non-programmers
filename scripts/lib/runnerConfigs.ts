@@ -4228,3 +4228,11 @@ export const joaq: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { b: '🅰️', c: '🅱️' }
 }
+
+export const rdae: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wosn,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}

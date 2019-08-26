@@ -1009,6 +1009,44 @@ export default () => (
         )
       },
       {
+        title: (
+          <>
+            <H args={{ name: 'minusOneEffect' }} />
+            がある法則
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        まさか、こうも簡単に正解されるとは思わなかったが…
+                        <Strong>
+                          サヤちゃんが考えた弁当箱は、
+                          <H args={{ name: 'minusOneEffect' }} />
+                          がある弁当箱だ！
+                        </Strong>{' '}
+                        <Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rdae>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱には
+              <br />
+              <H args={{ name: 'minusOneEffect' }} />
+              がある
+            </R.Rdae>
+          </>
+        )
+      },
+      {
         title: <>中級はここまで！</>,
         content: (
           <>

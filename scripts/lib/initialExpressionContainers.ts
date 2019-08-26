@@ -2321,3 +2321,7 @@ export const lwpw = initializeExpressionContainer([
 export const myzx = initializeExpressionContainer(
   numberParamsHighlightNumber('b', 'c', 1)
 )
+
+export const wosn = initializeExpressionContainer(
+  predParams('a', 'b', 'c', 'd', 'e', 'f', true)
+)
