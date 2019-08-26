@@ -1,13 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Em,
-  Strong,
-  Ul,
-  UlLi
-  // InlineHeader
-} from 'src/components/ContentTags'
+import { P, Em, Strong, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -1043,6 +1036,162 @@ export default () => (
               <H args={{ name: 'minusOneEffect' }} />
               がある
             </R.Rdae>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        ちなみに、サヤちゃんが考えた弁当箱以外にも、
+                        <Strong>
+                          以下の法則に当てはまる弁当箱であれば、 どれでも
+                          <H args={{ name: 'minusOneEffect' }} />
+                          があるぞ。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Cbmn>
+              この法則に当てはまる弁当箱であれば、
+              <br />
+              <H args={{ name: 'minusOneEffect' }} />
+              がある
+            </R.Cbmn>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        たしかにサヤちゃんの弁当箱は、上の法則に当てはまっている…
+                      </P>
+                      <P>
+                        よくこんなの分かったなあ。サヤちゃんは天才なのかもしれない！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そんなことないよ！でも、これで「
+                        <Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」を再現できたね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+            」も再現できた！
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              今回学んだことを一言でまとめると、
+              <Strong>
+                計算箱の「1を引く機能 <CustomEmoji type="minusOne" />
+                」も、弁当箱で「再現」できる
+              </Strong>
+              、ということです。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="minusOne" />,
+                <Emoji>↔️</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="minusOnePink" />
+              ]}
+              description={
+                <>
+                  計算箱の「<Strong>1を引く機能</Strong>{' '}
+                  <CustomEmoji type="plusOne" />
+                  」は、
+                  <br />
+                  弁当箱で「<Strong>再現</Strong>」することができる
+                </>
+              }
+            />
+            <P>
+              たとえば、以下のような <EmojiNumber number={3} />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={1} />{' '}
+              を計算する計算箱をご覧ください。
+            </P>
+            <R.Xmqp>
+              <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算できる
+            </R.Xmqp>
+            <P>
+              これを弁当箱で再現するには、
+              <Em>
+                <EmojiNumber number={3} /> に変換できる弁当箱と、
+                <H args={{ name: 'minusOneEffect' }} />
+                がある弁当箱を合体すればいい
+              </Em>
+              のです。
+            </P>
+            <R.Fhkl>
+              <EmojiNumber number={3} /> に変換できる弁当箱と
+              <br />
+              <H args={{ name: 'minusOneEffect' }} />
+              がある弁当箱を
+              <br />
+              合体すれば、
+              <EmojiNumber number={3} /> <CustomEmoji type="minusOne" />{' '}
+              の計算箱を再現できる
+            </R.Fhkl>
+            <P>
+              上の
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              ボタンを押すと、答えが <EmojiNumber number={2} />{' '}
+              になるのを確認できます。
+            </P>
+            <Hr />
+            <P>
+              まとめると、
+              <Em>
+                計算箱の「<Strong>1を引く機能</Strong>{' '}
+                <CustomEmoji type="minusOne" />
+                」は、弁当箱で再現することができる
+              </Em>
+              のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="minusOne" />,
+                <Emoji>↔️</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="minusOnePink" />
+              ]}
+              description={
+                <>
+                  計算箱の「<Strong>1を引く機能</Strong>{' '}
+                  <CustomEmoji type="plusOne" />
+                  」は、
+                  <br />
+                  弁当箱で「<Strong>再現</Strong>」することができる
+                </>
+              }
+            />
           </>
         )
       },
@@ -1051,6 +1200,120 @@ export default () => (
         content: (
           <>
             <EmojiSeparator emojis={['🎉', '🤗', '🎉']} />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        どうだ、「<Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」も、弁当箱で再現したぞ！(やったのは俺らじゃなくて{' '}
+                        <Emoji>👧🏻</Emoji> サヤちゃんだけど…)
+                      </P>
+                      <P>
+                        約束通り、「<Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」がある計算箱も返してもらう！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>ぐぬぬ…では、返してやろう！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>やったー！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ditw>
+              「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              」も返してもらった！
+            </R.Ditw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        しかし、
+                        <Em>
+                          「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          」がある計算箱は、まだ返すわけにはいかないな。返してほしかったら、これらも弁当箱で再現してみるんだな！
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Bwnp>
+                    <CustomEmoji type="plusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Bwnp>
+                </>
+              }
+              right={
+                <>
+                  <R.Ewfr>
+                    <CustomEmoji type="minusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Ewfr>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        難しそう…しかし、こっちには <Emoji>👧🏻</Emoji>{' '}
+                        サヤちゃんがいる！彼女ならなんとかしてくれるはずだ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        <Em>ちなみに、中級編はここまでだ。</Em>
+                        決着は、次からはじまる上級編でつけよう！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>よーし、望むところだ！上級編へ進もう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <NextLessonButton />
           </>
         )

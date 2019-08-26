@@ -313,7 +313,7 @@ const ExpressionRunnerPrecomputed = ({
           </div>
         </Container>
         <ExpressionRunnerScrollAdjuster />
-        <Container size={containerSize} horizontalPadding={0.25}>
+        <Container size="xxs" horizontalPadding={0.25}>
           {!hideControls && (
             <ExpressionRunnerControls
               onNextClick={stepForward}
@@ -335,32 +335,35 @@ const ExpressionRunnerPrecomputed = ({
           size={containerSize === 'xxs' ? 'xs' : 'sm'}
           horizontalPadding={0}
         >
-          {!hidePlayButton && canStepForward && (resetClicked || speed > 1) && (
-            <>
-              <ExpressionRunnerCaptionWrapper
-                css={css`
-                  margin: ${spaces(1)} 0 ${spaces('-0.25')};
-                `}
-              >
-                <LinkButton
-                  onClick={stepToTheEnd}
+          {!hidePlayButton &&
+            canStepForward &&
+            !skipToTheEnd &&
+            (resetClicked || speed > 1) && (
+              <>
+                <ExpressionRunnerCaptionWrapper
                   css={css`
-                    color: inherit;
-                    font-weight: bold;
-                    font-size: ${fontSizes(0.75)};
+                    margin: ${spaces(1)} 0 ${spaces('-0.25')};
                   `}
                 >
-                  {expressionContainers[expressionContainers.length - 1]
-                    .containerState !== 'done' ? (
-                    <H args={{ name: 'skipToTheStoppingPoint' }} />
-                  ) : (
-                    <H args={{ name: 'skipToTheEnd' }} />
-                  )}{' '}
-                  →
-                </LinkButton>
-              </ExpressionRunnerCaptionWrapper>
-            </>
-          )}
+                  <LinkButton
+                    onClick={stepToTheEnd}
+                    css={css`
+                      color: inherit;
+                      font-weight: bold;
+                      font-size: ${fontSizes(0.75)};
+                    `}
+                  >
+                    {expressionContainers[expressionContainers.length - 1]
+                      .containerState !== 'done' ? (
+                      <H args={{ name: 'skipToTheStoppingPoint' }} />
+                    ) : (
+                      <H args={{ name: 'skipToTheEnd' }} />
+                    )}{' '}
+                    →
+                  </LinkButton>
+                </ExpressionRunnerCaptionWrapper>
+              </>
+            )}
           {isPlaying && isFastForwarding && !isDone && (
             <>
               <ExpressionRunnerCaptionWrapper

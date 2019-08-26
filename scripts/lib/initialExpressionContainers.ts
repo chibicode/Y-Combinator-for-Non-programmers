@@ -2325,3 +2325,12 @@ export const myzx = initializeExpressionContainer(
 export const wosn = initializeExpressionContainer(
   predParams('a', 'b', 'c', 'd', 'e', 'f', true)
 )
+
+export const vfwt = initializeExpressionContainer(
+  predParams('A', 'B', 'C', 'D', 'E', 'F', true)
+)
+
+export const iius = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  numberParams('g', 'h', 3)
+])

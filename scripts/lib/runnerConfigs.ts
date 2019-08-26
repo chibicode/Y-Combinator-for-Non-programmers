@@ -4236,3 +4236,23 @@ export const rdae: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   variableSize: 'md'
 }
+
+export const cbmn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vfwt,
+  showPriorities: true,
+  containerSize: 'xs',
+  variableSize: 'md'
+}
+
+export const fhkl: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.iius,
+    initialExpressionContainers.hdpc
+  ],
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
+  convert: 'toMathBoxPlay'
+}

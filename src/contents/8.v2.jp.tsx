@@ -931,7 +931,13 @@ export default () => (
               、ということです。
             </P>
             <EmojiSeparator
-              emojis={['🎁', '↔️', '🍱']}
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="plusOne" />,
+                <Emoji>↔️</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="plusOneOrange" />
+              ]}
               description={
                 <>
                   計算箱の「<Strong>1を足す機能</Strong>{' '}
@@ -1054,7 +1060,13 @@ export default () => (
               のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
             </P>
             <EmojiSeparator
-              emojis={['🎁', '↔️', '🍱']}
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="plusOne" />,
+                <Emoji>↔️</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="plusOneOrange" />
+              ]}
               description={
                 <>
                   計算箱の「<Strong>1を足す機能</Strong>{' '}
