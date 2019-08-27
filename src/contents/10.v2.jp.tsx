@@ -1115,7 +1115,7 @@ export default () => (
               nodes={[
                 <Emoji>🎁</Emoji>,
                 <CustomEmoji type="minusOne" />,
-                <Emoji>↔️</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
                 <CustomEmoji type="minusOnePink" />
               ]}
@@ -1177,7 +1177,7 @@ export default () => (
               nodes={[
                 <Emoji>🎁</Emoji>,
                 <CustomEmoji type="minusOne" />,
-                <Emoji>↔️</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
                 <CustomEmoji type="minusOnePink" />
               ]}

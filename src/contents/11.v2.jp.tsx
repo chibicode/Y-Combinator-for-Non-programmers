@@ -1,8 +1,8 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Hr } from 'src/components/ContentTags'
+import { P, Strong, Hr, Em } from 'src/components/ContentTags'
 import H from 'src/components/H'
-// import BubbleQuotes from 'src/components/BubbleQuotes'
+import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 // import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -31,10 +31,11 @@ export default () => (
               ]}
             />
             <P>
-              中級編では、村人たちは計算箱の「<Strong>1を足す機能</Strong>{' '}
-              <CustomEmoji type="plusOne" />
+              中級編では、ラムダ村の村人たちは計算箱の「
+              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
               」と「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
-              」を返してもらいました。どちらも、弁当箱で再現することができたのです。
+              」を <Emoji>😈</Emoji>{' '}
+              悪魔から返してもらいました。どちらも、弁当箱で再現することができたのです。
             </P>
             <R.Rviy>
               「<Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />」
@@ -160,8 +161,73 @@ export default () => (
         )
       },
       {
-        title: <></>,
-        content: <></>
+        title: <>どうやって再現する？</>,
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  計算箱の「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」を、
+                  <br />
+                  弁当箱でどう「<Strong>再現</Strong>」する？
+                </>
+              }
+            />
+            <P>
+              ラムダ村の村人たちは、計算箱の「<Strong>繰り返しの機能</Strong>{' '}
+              <Emoji>🔁</Emoji>」を <Emoji>😈</Emoji>{' '}
+              悪魔から返してもらうべく、弁当箱で繰り返しの機能を再現しようと頑張っていました。しかし…
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        うーん、
+                        <Em>
+                          どんなに考えても、計算箱の「
+                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          」を弁当箱で再現することができない…
+                        </Em>
+                      </P>
+                      <P>サヤちゃん、何か思いついた？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>サヤも、サッパリ分からないなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>サヤちゃんでも分からないなんて…もうお手上げだ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              すると、悩んでいるラムダ村の村人たちのもとに、悪魔の助手の{' '}
+              <Emoji>🐶</Emoji> ベンケイがやってきました。
+            </P>
+          </>
+        )
       }
     ]}
   />
