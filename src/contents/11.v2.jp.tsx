@@ -46,6 +46,7 @@ export default () => (
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Bgko>弁当箱で再現</R.Bgko>
+            <Hr />
             <P>
               一方、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」は、まだ返してもらっていません。これを弁当箱で再現できないと返してもらえないのです。
@@ -80,7 +81,14 @@ export default () => (
             」の復習
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <P>
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」について忘れてしまった方も多いと思うので、ここで復習をしましょう。
+            </P>
+          </>
+        )
       }
     ]}
   />
