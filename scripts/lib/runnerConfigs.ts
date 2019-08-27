@@ -4256,3 +4256,18 @@ export const fhkl: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   convert: 'toMathBoxPlay'
 }
+
+export const eweo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.yvkr,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const bgko: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.whey,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}

@@ -2334,3 +2334,17 @@ export const iius = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   numberParams('g', 'h', 3)
 ])
+
+export const yvkr = initializeExpressionContainer([
+  succParams('a', 'b', 'c'),
+  {
+    shorthandNumberAfterConvert: true
+  }
+])
+
+export const whey = initializeExpressionContainer([
+  predParams('a', 'b', 'c', 'd', 'e', 'f'),
+  {
+    shorthandNumberAfterConvert: true
+  }
+])
