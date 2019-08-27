@@ -223,8 +223,8 @@ export default () => (
               ]}
             />
             <P>
-              すると、悩んでいるラムダ村の村人たちのもとに、悪魔の助手の{' '}
-              <Emoji>🐶</Emoji> ベンケイがやってきました。
+              すると、悩んでいる村人たちのもとに、悪魔の助手の <Emoji>🐶</Emoji>{' '}
+              ベンケイがやってきました。
             </P>
             <BubbleQuotes
               quotes={[
@@ -235,6 +235,37 @@ export default () => (
                       <P>
                         みなさん、なかなかお困りのようですね。よければ、
                         <Strong>ヒントを出しましょうか？</Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>おお、ベンケイ！お願いだ、ヒントを教えてくれ！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        分かりました、ではまず、計算箱の「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↔️</Emoji>
+                        」について教えましょう。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        「<Strong>条件分岐の機能</Strong> <Emoji>↔️</Emoji>
+                        」だって？何だそりゃ？
                       </P>
                     </>
                   )
