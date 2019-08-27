@@ -1874,22 +1874,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'convert') {
+  if (args.name === 'convertToMathbox') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <InlineHeader>
-          {args.type === 'toBentoBox' ? (
-            <>
-              <Emoji>🍱</Emoji> 弁当箱
-            </>
-          ) : (
-            <>
-              <Emoji>🎁</Emoji> 計算箱
-            </>
-          )}
-          に変換 <Emoji>🐶</Emoji>
+          <Emoji>🎁</Emoji> 計算箱に変換 <Emoji>🐶</Emoji>
         </InlineHeader>
       )
     }
@@ -1902,7 +1893,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <InlineHeader>
           実行してから
           {args.addNewline && <br />}
-          <H args={{ name: 'convert', type: 'toMathBox' }} />
+          <H args={{ name: 'convertToMathbox' }} />
         </InlineHeader>
       )
     }
@@ -1918,43 +1909,25 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'undoConvert') {
+  if (args.name === 'undoConvertToMathbox') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <InlineHeader>
-          {args.type === 'toBentoBox' ? (
-            <>
-              <Emoji>🎁</Emoji> 計算箱
-            </>
-          ) : (
-            <>
-              <Emoji>🍱</Emoji> 弁当箱
-            </>
-          )}
-          に戻す <Emoji>↩</Emoji>
+          <Emoji>🍱</Emoji> 弁当箱に戻す <Emoji>↩</Emoji>
         </InlineHeader>
       )
     }
   }
-  if (args.name === 'doneConvert') {
+  if (args.name === 'doneConvertToMathbox') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <>
           <Strong highlightType={highlightType}>
-            {args.type === 'toBentoBox' ? (
-              <>
-                <Emoji>🍱</Emoji> 弁当箱
-              </>
-            ) : (
-              <>
-                <Emoji>🎁</Emoji> 計算箱
-              </>
-            )}
-            に変換しました <Emoji>🐶</Emoji>
+            <Emoji>🎁</Emoji> 計算箱に変換しました <Emoji>🐶</Emoji>
           </Strong>
         </>
       )

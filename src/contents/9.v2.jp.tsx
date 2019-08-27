@@ -157,7 +157,7 @@ export default () => (
                     <>
                       <P>
                         実行を終えたので、
-                        <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
+                        <H args={{ name: 'convertToMathbox' }} />{' '}
                         したいところですが…
                       </P>
                       <P>

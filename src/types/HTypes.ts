@@ -142,14 +142,11 @@ export interface HProps {
       }
     | { name: 'repeatingMathBoxCaption' }
     | { name: 'lookAtThisBentoBoxPuzzle' }
-    | { name: 'convert'; type: 'toBentoBox' | 'toMathBox' }
+    | { name: 'convertToMathbox' }
     | { name: 'runAndConertToMathbox'; addNewline?: boolean }
     | { name: 'doneRunAndConertToMathbox' }
-    | { name: 'undoConvert'; type: 'toBentoBox' | 'toMathBox' }
-    | {
-        name: 'doneConvert'
-        type: 'toBentoBox' | 'toMathBox'
-      }
+    | { name: 'undoConvertToMathbox' }
+    | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
     | { name: 'sameAddRole' }
     | { name: 'plusOneEffect' }

@@ -962,7 +962,7 @@ export default () => (
               を用意します。
             </P>
             <R.Fxde>
-              <H args={{ name: 'convert', type: 'toMathBox' }} /> すると、
+              <H args={{ name: 'convertToMathbox' }} /> すると、
               <br />
               <Em>
                 <EmojiNumber number={1} /> になる

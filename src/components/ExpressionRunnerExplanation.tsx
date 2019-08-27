@@ -384,10 +384,7 @@ const ExpressionRunnerExplanation = ({
             convert === 'toMathBoxPlay' ? (
               <H args={{ name: 'doneRunAndConertToMathbox' }} />
             ) : (
-              <H
-                args={{ name: 'doneConvert', type: convert }}
-                highlightType="none"
-              />
+              <H args={{ name: 'doneConvertToMathbox' }} highlightType="none" />
             )
           ) : (
             <H args={{ name: 'done' }} highlightType="none" />

@@ -191,7 +191,7 @@ export default () => (
                       </P>
                       <P>
                         <Strong>
-                          <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
+                          <H args={{ name: 'convertToMathbox' }} />{' '}
                           を押してみてください！
                         </Strong>
                       </P>
@@ -255,7 +255,7 @@ export default () => (
                     <>
                       <P>
                         では、こちらに3つの弁当箱を用意しました。それぞれ
-                        <H args={{ name: 'convert', type: 'toMathBox' }} />
+                        <H args={{ name: 'convertToMathbox' }} />
                         を押してみてください！
                       </P>
                     </>
@@ -374,7 +374,7 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <H args={{ name: 'convert', type: 'toMathBox' }} />
+                        <H args={{ name: 'convertToMathbox' }} />
                         を押してみてくだださい！
                       </P>
                     </>
@@ -1002,8 +1002,7 @@ export default () => (
                         <OlLi>
                           <Em>
                             実行し終えたら、続いて{' '}
-                            <H args={{ name: 'convert', type: 'toMathBox' }} />{' '}
-                            する
+                            <H args={{ name: 'convertToMathbox' }} /> する
                           </Em>
                         </OlLi>
                       </Ol>
