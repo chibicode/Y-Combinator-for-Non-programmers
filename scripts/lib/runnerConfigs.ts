@@ -4271,3 +4271,12 @@ export const bgko: ExpressionRunnerShorthandConfig = {
   variableSize: 'sm',
   containerSize: 'xs'
 }
+
+export const jehv: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.ptsa,
+    initialExpressionContainers.qefa
+  ],
+  variableSize: 'md'
+}

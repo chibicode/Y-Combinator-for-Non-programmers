@@ -2348,3 +2348,19 @@ export const whey = initializeExpressionContainer([
     shorthandNumberAfterConvert: true
   }
 ])
+
+export const ptsa = initializeExpressionContainer([
+  {
+    count: 10,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 10
+  }
+])
+
+export const qefa = initializeDoneExpressionContainer({
+  shorthandNumber: 20
+})

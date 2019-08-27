@@ -20,6 +20,56 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
 import InlineBorder from 'src/components/InlineBorder'
 
+export const TwoPlusFour = () => (
+  <>
+    <R.Ednv />
+    <P>
+      結果は <EmojiNumber number={6} /> になりました。上の計算箱は、
+      <Em>
+        下の <CustomEmoji type="plusOne" /> の左側に{' '}
+        <InlineBorder>
+          <EmojiNumber number={4} />
+        </InlineBorder>{' '}
+        があるので、
+        <CustomEmoji type="plusOne" /> が4回繰り返されるのです。
+      </Em>
+    </P>
+    <R.Xpks />
+    <ExpressionRunnerSeparator />
+    <R.Dgpx>
+      <CustomEmoji type="plusOne" /> が4回繰り返される
+    </R.Dgpx>
+    <ExpressionRunnerSeparator />
+    <R.Iwmu>
+      <EmojiNumber number={2} /> <Emoji>➕</Emoji> <EmojiNumber number={4} />{' '}
+      を計算できました！
+    </R.Iwmu>
+  </>
+)
+
+export const Conclusion = () => (
+  <>
+    <P>
+      このように繰り返しの機能を使えば、
+      <Strong>
+        <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
+        を数え間違えることなく、確実に足し算や引き算を行うことができます。
+      </Strong>
+      だからこそ、繰り返しの機能は重宝されていたのです。
+    </P>
+    <EmojiSeparator
+      emojis={['➕', '🤗', '➖']}
+      description={
+        <>
+          繰り返しの機能を使えば、
+          <br />
+          確実に足し算や引き算を行うことができる！
+        </>
+      }
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -338,7 +388,7 @@ export default () => (
               ということは <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> を計算してくれるので、結果は{' '}
               <EmojiNumber number={2} /> になります。
-              <H args={{ name: 'pressPlay' }} />:
+              <H args={{ name: 'pressPlay' }} />
             </P>
             <R.Pgxb />
             <P>
@@ -369,28 +419,7 @@ export default () => (
               こちらの計算箱をご覧になり、
               <H args={{ name: 'pressPlay' }} />
             </P>
-            <R.Ednv />
-            <P>
-              結果は <EmojiNumber number={6} /> になりました。上の計算箱は、
-              <Em>
-                下の <CustomEmoji type="plusOne" /> の左側に{' '}
-                <InlineBorder>
-                  <EmojiNumber number={4} />
-                </InlineBorder>{' '}
-                があるので、
-                <CustomEmoji type="plusOne" /> が4回繰り返されるのです。
-              </Em>
-            </P>
-            <R.Xpks />
-            <ExpressionRunnerSeparator />
-            <R.Dgpx>
-              <CustomEmoji type="plusOne" /> が4回繰り返される
-            </R.Dgpx>
-            <ExpressionRunnerSeparator />
-            <R.Iwmu>
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={4} /> を計算できました！
-            </R.Iwmu>
+            <TwoPlusFour />
             <P>
               こうすれば、
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
@@ -512,24 +541,7 @@ export default () => (
         title: <>確実に足し算や引き算を行う</>,
         content: (
           <>
-            <P>
-              このように繰り返しの機能を使えば、
-              <Strong>
-                <CustomEmoji type="plusOne" /> や{' '}
-                <CustomEmoji type="minusOne" />{' '}
-                を数え間違えることなく、確実に足し算や引き算を行うことができるのです。
-              </Strong>
-            </P>
-            <EmojiSeparator
-              emojis={['➕', '🤗', '➖']}
-              description={
-                <>
-                  繰り返しの機能を使えば、
-                  <br />
-                  確実に足し算や引き算を行うことができる！
-                </>
-              }
-            />
+            <Conclusion />
           </>
         )
       },

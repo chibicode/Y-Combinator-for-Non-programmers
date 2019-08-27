@@ -1,0 +1,80 @@
+{
+  "expressionContainers": [
+    {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "arg": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 10
+        },
+        "func": {
+          "type": "repeat",
+          "count": 10,
+          "child": {
+            "name": "shorthandFunc",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "add"
+          }
+        },
+        "state": "default",
+        "type": "call",
+        "priority": 1
+      }
+    },
+    {
+      "containerState": "done",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "name": "shorthandNumber",
+        "highlightType": "default",
+        "topLeftBadgeType": "none",
+        "bottomRightBadgeType": "none",
+        "type": "variable",
+        "argPriorityAgg": [],
+        "funcPriorityAgg": [],
+        "emphasizePriority": false,
+        "bound": true,
+        "shorthandNumber": 20
+      }
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": false,
+  "explanationsVisibility": "hiddenInitialPausedOnly",
+  "hidePriorities": true,
+  "variableSize": "md",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": true,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false
+}

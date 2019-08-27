@@ -5,15 +5,20 @@ import { spaces } from 'src/lib/theme'
 
 const TwoColGrid = ({
   left,
-  right
+  right,
+  noMargin
 }: {
   left: React.ReactNode
   right: React.ReactNode
+  noMargin?: boolean
 }) => (
   <Flex
-    css={css`
-      margin: ${spaces('-1.5')} ${spaces('-0.75')};
-    `}
+    css={
+      !noMargin &&
+      css`
+        margin: ${spaces('-1.5')} ${spaces('-0.75')};
+      `
+    }
   >
     <div
       css={css`
