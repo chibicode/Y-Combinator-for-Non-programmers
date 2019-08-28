@@ -15,6 +15,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import Emoji from 'src/components/Emoji'
 import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
@@ -920,10 +921,17 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  <Strong>弁当箱で再現できる？</Strong>
+                  <Strong>弁当箱で再現できたら…</Strong>
                 </>
               }
             />
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」を
+              <br />
+              再現するのに一歩近づく！
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
