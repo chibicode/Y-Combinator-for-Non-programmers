@@ -12,17 +12,14 @@ import {
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
-// import BottomRightBadge from 'src/components/BottomRightBadge'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-// import EmojiWithText from 'src/components/EmojiWithText'
 import Emoji from 'src/components/Emoji'
-// import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import { TwoPlusFour, Conclusion } from 'src/contents/2.v2.jp'
 
@@ -705,7 +702,7 @@ export default () => (
         )
       },
       {
-        title: <>なぜ重要なのか</>,
+        title: <>繰り返しの機能と関連がある</>,
         content: (
           <>
             <BubbleQuotes
@@ -751,8 +748,11 @@ export default () => (
                       <P>
                         そうなんです。「
                         <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
-                        」は<Em>あまり役に立たないので</Em>
-                        、いつしか忘れ去られてしまったのです。
+                        」は
+                        <Em>
+                          あまり役に立たないので、いつしか忘れ去られてしまった
+                        </Em>
+                        のです。
                       </P>
                     </>
                   )
@@ -770,9 +770,177 @@ export default () => (
                       </P>
                     </>
                   )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        しかし、この「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」は、
+                        <Em>
+                          実は「
+                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          」と関連がある
+                        </Em>
+                        のです。
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
+            <EmojiSeparator
+              emojis={['↕️', '🐶', '🔁']}
+              description={
+                <>
+                  「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  」は、
+                  <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」と関連がある
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>え、そうなの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        はい。ここが重要なのですが…村人のみなさんは「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を弁当箱で再現できずに苦労していましたよね。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>うん、どうしていいか全然分からない…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        実は、「<Strong>繰り返しの機能</Strong>{' '}
+                        <Emoji>🔁</Emoji>
+                        」を弁当箱で再現する一番の近道は、まず「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」を弁当箱で再現することなんです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  」を
+                  <br />
+                  弁当箱で再現できれば…
+                </>
+              }
+            />
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」も
+                  <br />
+                  弁当箱で再現できる！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なんと！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        だからまずは、「<Strong>条件分岐の機能</Strong>{' '}
+                        <Emoji>↕️</Emoji>
+                        」を弁当箱で再現する、という問題にチャレンジしてみてください！
+                      </P>
+                      <P>
+                        これが解ければ、「<Strong>繰り返しの機能</Strong>{' '}
+                        <Emoji>🔁</Emoji>
+                        」を弁当箱で再現するのに一歩近づきますよ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」を…
+            </R.Rhoa>
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  <Strong>弁当箱で再現できる？</Strong>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>そうか。よーし、やってみよう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              というわけで、次のページでは、「<Strong>条件分岐の機能</Strong>{' '}
+              <Emoji>↕️</Emoji>」を弁当箱で再現してみます。次に進みましょう！
+            </P>
+            <NextLessonButton />
           </>
         )
       }
