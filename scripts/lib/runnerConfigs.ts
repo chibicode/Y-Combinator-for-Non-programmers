@@ -4280,3 +4280,8 @@ export const jehv: ExpressionRunnerShorthandConfig = {
   ],
   variableSize: 'md'
 }
+
+export const rhoa: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ognb
+}

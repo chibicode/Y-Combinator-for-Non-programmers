@@ -1,0 +1,70 @@
+{
+  "expressionContainers": [
+    {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "type": "conditional",
+        "state": "default",
+        "checkType": "isZero",
+        "condition": {
+          "name": "questionV2",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true
+        },
+        "trueCase": {
+          "name": "questionV2",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [
+            1
+          ],
+          "emphasizePriority": false,
+          "bound": true
+        },
+        "falseCase": {
+          "name": "questionV2",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true
+        },
+        "priority": 1
+      }
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
+  "hidePriorities": true,
+  "variableSize": "lg",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false
+}

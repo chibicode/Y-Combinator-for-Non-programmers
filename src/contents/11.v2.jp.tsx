@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Hr, Em } from 'src/components/ContentTags'
+import { P, Strong, Hr, Em, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -12,6 +12,7 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import Emoji from 'src/components/Emoji'
 // import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
+import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 // import NextLessonButton from 'src/components/NextLessonButton'
 import { TwoPlusFour, Conclusion } from 'src/contents/2.v2.jp'
@@ -253,7 +254,7 @@ export default () => (
                     <>
                       <P>
                         分かりました、ではまず、計算箱の「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↔️</Emoji>
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                         」について教えましょう。
                       </P>
                     </>
@@ -264,8 +265,72 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<Strong>条件分岐の機能</Strong> <Emoji>↔️</Emoji>
+                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                         」だって？何だそりゃ？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>条件分岐の機能</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>まず、こちらの計算箱をご覧ください。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」がある計算箱
+            </R.Rhoa>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なんだこれは？</P>
+                      <Ul>
+                        <UlLi>
+                          左側に <InlineBorder type="falseCase" />{' '}
+                          <InlineBorder type="condition" />{' '}
+                          <InlineBorder type="trueCase" />{' '}
+                          という3種類の印があり、
+                        </UlLi>
+                        <UlLi>
+                          それぞれ <CustomEmoji type="blankNumber" />{' '}
+                          が入っている。
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        それぞれの <CustomEmoji type="blankNumber" />{' '}
+                        には数字を入れることができます。
+                      </P>
+                      <P>
+                        具体例で説明したほうが分かりやすいと思うので、
+                        <Strong>
+                          <CustomEmoji type="blankNumber" />{' '}
+                          に何か適当な数字を入れてみてください！
+                        </Strong>
                       </P>
                     </>
                   )
