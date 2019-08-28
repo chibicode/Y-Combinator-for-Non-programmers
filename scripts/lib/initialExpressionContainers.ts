@@ -302,6 +302,7 @@ export const hzkx = initializeExpressionContainer(
   numberParamsHighlightNumber('i', 'j', 4)
 )
 export const uarl = initializeDoneExpressionContainer({ shorthandNumber: 4 })
+export const mxkk = initializeDoneExpressionContainer({ shorthandNumber: 5 })
 
 export const sfvk = initializeExpressionContainer(numberParams('e', 'f', 1))
 export const mhbx = initializeExpressionContainer(

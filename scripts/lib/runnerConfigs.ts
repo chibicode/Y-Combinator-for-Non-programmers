@@ -1918,6 +1918,19 @@ export const plbv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.pslb
 }
 
+export const seie: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mxkk
+}
+
+export const kmyl: ExpressionRunnerShorthandConfig = {
+  runner: 'predefined',
+  initialExpressionContainers: [
+    initialExpressionContainers.pslb,
+    initialExpressionContainers.mxkk
+  ]
+}
+
 export const plts: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.ipyc,

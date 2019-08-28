@@ -1,6 +1,14 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Hr, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Hr,
+  Em,
+  Ul,
+  UlLi,
+  InlineHeader
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -15,6 +23,7 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 // import NextLessonButton from 'src/components/NextLessonButton'
+import YesNoButtons from 'src/components/YesNoButtons'
 import { TwoPlusFour, Conclusion } from 'src/contents/2.v2.jp'
 
 export default () => (
@@ -298,7 +307,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>なんだこれは？</P>
@@ -334,9 +343,351 @@ export default () => (
                       </P>
                     </>
                   )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        分かった。とりあえず、{' '}
+                        <Strong>
+                          上から順に <EmojiNumber number={1} />{' '}
+                          <EmojiNumber number={2} /> <EmojiNumber number={3} />{' '}
+                          を入れてみたよ。
+                        </Strong>
+                      </P>
+                      <P>
+                        これで、
+                        <H args={{ name: 'play' }} />
+                        を押すとどうなるのかな？
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
+            <R.Iatt />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <EmojiNumber number={1} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>では、どうしてこうなったか説明しますね！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            真ん中が <EmojiNumber number={0} /> かどうか
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」はまず、
+                        <Strong>
+                          <H
+                            args={{
+                              name: 'conditionSectionName',
+                              type: 'condition'
+                            }}
+                          />{' '}
+                          に入っている数字が <EmojiNumber number={0} /> かどうか
+                        </Strong>
+                        チェックします。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Vozu />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <H
+                          args={{
+                            name: 'conditionSectionName',
+                            type: 'condition'
+                          }}
+                        />{' '}
+                        に入っている数字は <EmojiNumber number={2} /> なので、{' '}
+                        <Strong>
+                          <EmojiNumber number={0} /> ではないよ。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうですね。このように真ん中が{' '}
+                        <EmojiNumber number={0} /> ではない場合、
+                        <Strong>
+                          <H
+                            args={{
+                              name: 'conditionSectionName',
+                              type: 'falseCase'
+                            }}
+                          />{' '}
+                          に入っている数字が最終的に残るのです。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rjfy />
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              <InlineBorder type="falseCase" /> に入っていた{' '}
+              <EmojiNumber number={1} /> が残る
+            </R.Rnug>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、だから <EmojiNumber number={1} /> が残るのか！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'yesNoQuiz',
+        title: (
+          <>
+            <H args={{ name: 'yesNoQuiz' }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、もうひとつ例を紹介します。こちらは、
+                        <H args={{ name: 'yesNoQuiz' }} />{' '}
+                        にしてみましょう。こちらの計算箱をご覧ください。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Plbv />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <InlineHeader>質問:</InlineHeader> これを
+                        <H args={{ name: 'play' }} />{' '}
+                        すると、最終的に以下のようになるでしょうか？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Kizi />
+            <YesNoButtons answer="no" />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'theAnswerIs', isYes: false }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <H
+                          args={{
+                            name: 'theAnswerIs',
+                            isYes: false,
+                            sentence: true
+                          }}
+                        />
+                        残るのは <EmojiNumber number={4} /> ではなく、
+                        <EmojiNumber number={5} /> になります。
+                        <H args={{ name: 'pressPlay' }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Kmyl />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>どうしてこうなったか説明しましょう。</P>
+                      <P>
+                        こちらも、真ん中の数字が <EmojiNumber number={0} />{' '}
+                        かどうかチェックします。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qcmh />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        今回は真ん中が <EmojiNumber number={0} />{' '}
+                        ですね。この場合は前回と逆で、
+                        <Strong>
+                          <H
+                            args={{
+                              name: 'conditionSectionName',
+                              type: 'trueCase'
+                            }}
+                          />{' '}
+                          に入っている数字が最終的に残ります。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Guhy />
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              <InlineBorder type="trueCase" /> に入っていた{' '}
+              <EmojiNumber number={5} /> が残る
+            </R.Seie>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        content: (
+          <>
+            <P>
+              まとめると、この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              」の法則は以下の通りです。
+            </P>
+            <R.Ymmm />
+            <P>
+              <Em>
+                まず、
+                <H
+                  args={{ name: 'conditionSectionName', type: 'condition' }}
+                />{' '}
+                の中にある数字が <EmojiNumber number={0} />{' '}
+                かどうかチェックします。
+              </Em>
+            </P>
+            <Ul>
+              <UlLi>
+                <Em>
+                  もし <EmojiNumber number={0} /> なら、{' '}
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'trueCase' }}
+                  />{' '}
+                  の中にある数字が残ります。
+                </Em>
+              </UlLi>
+              <UlLi>
+                <Em>
+                  もし <EmojiNumber number={0} /> でなければ、
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'falseCase' }}
+                  />{' '}
+                  の中にある数字が残ります。
+                </Em>
+              </UlLi>
+            </Ul>
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
+            <P>
+              「
+              <Em>
+                真ん中が <EmojiNumber number={0} /> かどうか？
+              </Em>
+              」という「
+              <Strong>条件</Strong>」によって、上下に「
+              <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
+              の計算箱」という名前がついているのです。
+            </P>
           </>
         )
       }
