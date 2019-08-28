@@ -643,7 +643,8 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、この「<InlineHeader>条件分岐の計算箱</InlineHeader>
+              まとめると、この「
+              <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
               」の法則は以下の通りです。
             </P>
             <R.Ymmm />
@@ -677,17 +678,29 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
-            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
-            <P>
-              「
-              <Em>
-                真ん中が <EmojiNumber number={0} /> かどうか？
-              </Em>
-              」という「
-              <Strong>条件</Strong>」によって、上下に「
-              <Strong>分岐</Strong>」するので、「<Strong>条件分岐</Strong>
-              の計算箱」という名前がついているのです。
-            </P>
+            <EmojiSeparator emojis={['🔢', '↔️', '0️⃣']} />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど、「
+                        <Em>
+                          真ん中が <EmojiNumber number={0} /> かどうか？
+                        </Em>
+                        」という「
+                        <Strong>条件</Strong>」によって「
+                        <Strong>分岐</Strong>」するから、「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」なのか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
