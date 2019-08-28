@@ -678,7 +678,7 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
-            <EmojiSeparator emojis={['🔢', '↔️', '0️⃣']} />
+            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
             <BubbleQuotes
               quotes={[
                 {
@@ -691,10 +691,82 @@ export default () => (
                           真ん中が <EmojiNumber number={0} /> かどうか？
                         </Em>
                         」という「
-                        <Strong>条件</Strong>」によって「
+                        <Strong>条件</Strong>」によって上下に「
                         <Strong>分岐</Strong>」するから、「
                         <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                         」なのか。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>なぜ重要なのか</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」は、
+                        <Strong>
+                          実は計算箱にもともと備わっていた隠れ機能
+                        </Strong>
+                        なんです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['✨', '↕️', '✨']}
+              description={<>計算箱に備わっていた隠れ機能</>}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        へー、そんなこと、ラムダ村の俺らは誰も知らなかったぞ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうなんです。「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」は<Em>あまり役に立たないので</Em>
+                        、いつしか忘れ去られてしまったのです。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        たしかに、「
+                        <Em>
+                          真ん中が <EmojiNumber number={0} /> かどうか？
+                        </Em>
+                        」をチェックできても、何の役にも立たなさそうだけど…
                       </P>
                     </>
                   )
