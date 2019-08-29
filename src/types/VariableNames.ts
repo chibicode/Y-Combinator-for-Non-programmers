@@ -35,7 +35,6 @@ export type VariableNames =
   | 'abbreviated'
   | 'Amult'
   | 'Bsingle'
-  | 'questionV2'
   | 'blankNumber'
   | 'shorthandFunc'
   | 'verticalDotDotDot'

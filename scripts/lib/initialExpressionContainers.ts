@@ -1151,12 +1151,12 @@ export const nbgx = initializeExpressionContainer([
 ])
 
 export const xrvm = initializeExpressionContainer([
-  'questionV2',
+  'blankNumber',
   [
     {
       shorthandBinary: 'add'
     },
-    'questionV2'
+    'blankNumber'
   ]
 ])
 
@@ -1256,9 +1256,9 @@ export const qsqs = initializeDoneExpressionContainer({
 
 export const ognb = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'questionV2',
-  trueCase: 'questionV2',
-  falseCase: 'questionV2'
+  condition: 'blankNumber',
+  trueCase: 'blankNumber',
+  falseCase: 'blankNumber'
 })
 
 export const kysf = initializeExpressionContainer({
@@ -1295,7 +1295,7 @@ export const qbkn = initializeExpressionContainer([
     {
       shorthandBinary: 'remainder'
     },
-    'questionV2'
+    'blankNumber'
   ]
 ])
 
@@ -1407,7 +1407,7 @@ export const zhpt = initializeExpressionContainer({
       {
         shorthandBinary: 'remainder'
       },
-      'questionV2'
+      'blankNumber'
     ]
   ],
   trueCase: {
@@ -1583,7 +1583,7 @@ export const gxqm = initializeExpressionContainer({
         initialHighlight: true
       },
       {
-        name: 'questionV2',
+        name: 'blankNumber',
         highlighted: true
       }
     ]
@@ -2369,18 +2369,25 @@ export const qefa = initializeDoneExpressionContainer({
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'blankNumberGrey',
-  trueCase: 'questionV2',
+  trueCase: 'blankNumber',
   falseCase: 'blankNumberPink'
 })
 
 export const zpak = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 0, initialHighlight: true },
-  trueCase: 'questionV2',
+  trueCase: 'blankNumber',
   falseCase: 'blankNumberPink'
 })
 
-export const xgav = initializeExpressionContainer('questionV2')
+export const fylp = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: { shorthandNumber: 1, initialHighlight: true },
+  trueCase: 'blankNumber',
+  falseCase: 'blankNumberPink'
+})
+
+export const xgav = initializeExpressionContainer('blankNumber')
 
 export const cmay = initializeExpressionContainer(
   isZeroParams(
@@ -2394,3 +2401,5 @@ export const cmay = initializeExpressionContainer(
     { shorthandNumberAfterConvert: 'condition' }
   )
 )
+
+export const cunp = initializeExpressionContainer('blankNumberPink')

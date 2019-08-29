@@ -20,7 +20,7 @@
           "shorthandNumber": 0
         },
         "trueCase": {
-          "name": "questionV2",
+          "name": "blankNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

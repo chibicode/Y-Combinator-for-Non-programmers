@@ -10,7 +10,7 @@
         "condition": {
           "arg": {
             "arg": {
-              "name": "questionV2",
+              "name": "blankNumber",
               "highlightType": "initialHighlighted",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",

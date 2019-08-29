@@ -70,6 +70,50 @@ export default () => (
               <InlineBorder type="trueCase" /> に入っている{' '}
               <CustomEmoji type="blankNumber" /> が残る
             </R.Vwvb>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        そして、
+                        <Strong>
+                          もし <CustomEmoji type="blankNumberGrey" /> に{' '}
+                          <EmojiNumber number={0} />{' '}
+                          を以外の数字を入れたら、上の{' '}
+                          <CustomEmoji type="blankNumberPink" />{' '}
+                          が残るんだよな。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Glbk>
+              <InlineBorder type="condition" /> に <EmojiNumber number={0} />{' '}
+              以外の数字を入れた場合…
+            </R.Glbk>
+            <ExpressionRunnerSeparator />
+            <R.Rtza>
+              <InlineBorder type="falseCase" /> に入っている{' '}
+              <CustomEmoji type="blankNumberPink" /> が残る
+            </R.Rtza>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        これを弁当箱で再現するにいは、どうすればいいんだろう…？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -107,7 +151,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P></P>
+                      <P>!</P>
                     </>
                   )
                 }

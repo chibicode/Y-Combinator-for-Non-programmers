@@ -6,7 +6,7 @@
       "expression": {
         "arg": {
           "arg": {
-            "name": "questionV2",
+            "name": "blankNumber",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -38,7 +38,7 @@
           "priority": 2
         },
         "func": {
-          "name": "questionV2",
+          "name": "blankNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

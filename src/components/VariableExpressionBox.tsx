@@ -200,12 +200,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         )}
       </div>
     )
-  } else if (expression.name === 'questionV2') {
-    return (
-      <div>
-        <CustomEmoji type="blankNumber" size="sm" />
-      </div>
-    )
   } else if (expression.name === 'verticalDotDotDot') {
     return (
       <div>

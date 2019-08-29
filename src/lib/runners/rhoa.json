@@ -19,7 +19,7 @@
           "bound": true
         },
         "trueCase": {
-          "name": "questionV2",
+          "name": "blankNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

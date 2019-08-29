@@ -4,41 +4,23 @@
       "containerState": "ready",
       "previouslyChangedExpressionState": "default",
       "expression": {
-        "arg": {
-          "arg": {
-            "name": "blankNumber",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [
-              1,
-              2
-            ],
-            "funcPriorityAgg": [],
-            "emphasizePriority": false,
-            "bound": true
-          },
-          "func": {
-            "name": "shorthandBinary",
-            "highlightType": "default",
-            "topLeftBadgeType": "none",
-            "bottomRightBadgeType": "none",
-            "type": "variable",
-            "argPriorityAgg": [],
-            "funcPriorityAgg": [
-              2
-            ],
-            "emphasizePriority": false,
-            "bound": true,
-            "shorthandBinary": "remainder"
-          },
-          "state": "default",
-          "type": "call",
-          "priority": 2
-        },
-        "func": {
+        "type": "conditional",
+        "state": "default",
+        "checkType": "isZero",
+        "condition": {
           "name": "shorthandNumber",
+          "highlightType": "initialHighlighted",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "trueCase": {
+          "name": "blankNumber",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -48,11 +30,21 @@
             1
           ],
           "emphasizePriority": false,
-          "bound": true,
-          "shorthandNumber": 4
+          "bound": true
         },
-        "state": "default",
-        "type": "call",
+        "falseCase": {
+          "name": "blankNumberPink",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true
+        },
         "priority": 1
       }
     }
