@@ -662,7 +662,7 @@ export default () => (
                 <H
                   args={{ name: 'conditionSectionName', type: 'condition' }}
                 />{' '}
-                の中にある <CustomEmoji type="blankNumber" /> が{' '}
+                の中にある <CustomEmoji type="blankNumberGrey" /> が{' '}
                 <EmojiNumber number={0} /> かどうかチェックします。
               </Em>
             </P>
@@ -673,7 +673,7 @@ export default () => (
                   <H
                     args={{ name: 'conditionSectionName', type: 'trueCase' }}
                   />{' '}
-                  の中にある <CustomEmoji type="blankNumberGrey" /> が残ります。
+                  の中にある <CustomEmoji type="blankNumber" /> が残ります。
                 </Em>
               </UlLi>
               <UlLi>
