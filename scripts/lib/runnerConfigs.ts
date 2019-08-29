@@ -4306,3 +4306,13 @@ export const sdta: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   containerSize: 'xs'
 }
+
+export const dqwh: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zpak
+}
+
+export const vwvb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xgav
+}

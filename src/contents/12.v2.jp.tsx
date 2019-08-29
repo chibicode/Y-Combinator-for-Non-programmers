@@ -8,18 +8,15 @@ import {
 } from 'src/components/ContentTags'
 // import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
-// import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
-// import CustomEmoji from 'src/components/CustomEmoji'
+import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-// import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import Emoji from 'src/components/Emoji'
-// import TwoColGrid from 'src/components/TwoColGrid'
-// import InlineBorder from 'src/components/InlineBorder'
+import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 // import NextLessonButton from 'src/components/NextLessonButton'
 // import YesNoButtons from 'src/components/YesNoButtons'
-// import { TwoPlusFour, Conclusion } from 'src/contents/2.v2.jp'
 
 export default () => (
   <EpisodeCardList
@@ -51,12 +48,28 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、どうすればいいんだろう…</P>
+                      <P>
+                        復習すると、上の計算箱は、
+                        <Strong>
+                          もし <CustomEmoji type="blankNumberGrey" /> に{' '}
+                          <EmojiNumber number={0} /> を入れたら下の{' '}
+                          <CustomEmoji type="blankNumber" /> が残り…
+                        </Strong>
+                      </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Dqwh>
+              <InlineBorder type="condition" /> に <EmojiNumber number={0} />{' '}
+              を入れた場合…
+            </R.Dqwh>
+            <ExpressionRunnerSeparator />
+            <R.Vwvb>
+              <InlineBorder type="trueCase" /> に入っている{' '}
+              <CustomEmoji type="blankNumber" /> が残る
+            </R.Vwvb>
           </>
         )
       },
@@ -80,6 +93,26 @@ export default () => (
             <R.Sdta>
               <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱
             </R.Sdta>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なんと！もうひらめいたの？ </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P></P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

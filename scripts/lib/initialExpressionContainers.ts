@@ -2373,6 +2373,15 @@ export const anme = initializeExpressionContainer({
   falseCase: 'blankNumberPink'
 })
 
+export const zpak = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: { shorthandNumber: 0, initialHighlight: true },
+  trueCase: 'questionV2',
+  falseCase: 'blankNumberPink'
+})
+
+export const xgav = initializeExpressionContainer('questionV2')
+
 export const cmay = initializeExpressionContainer(
   isZeroParams(
     'a',
