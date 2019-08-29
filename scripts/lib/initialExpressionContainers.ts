@@ -2382,6 +2382,6 @@ export const cmay = initializeExpressionContainer(
     'e',
     { shorthandNumberAfterConvert: 'trueCase' },
     { shorthandNumberAfterConvert: 'falseCase' },
-    { shorthandNumberAfterConvert: 'blank' }
+    { shorthandNumberAfterConvert: 'condition' }
   )
 )

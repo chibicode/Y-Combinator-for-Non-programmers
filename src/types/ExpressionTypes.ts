@@ -20,6 +20,7 @@ export interface VariableExpression {
     | 'blank'
     | 'trueCase'
     | 'falseCase'
+    | 'condition'
   readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
 }
 

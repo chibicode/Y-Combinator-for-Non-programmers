@@ -146,7 +146,7 @@
                 ],
                 "emphasizePriority": false,
                 "bound": true,
-                "shorthandNumberAfterConvert": "blank"
+                "shorthandNumberAfterConvert": "condition"
               },
               "state": "default",
               "type": "call",
