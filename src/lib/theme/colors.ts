@@ -47,7 +47,6 @@ export const allColors = {
   brown400: brown[400],
   pink50: pink[50],
   pink100: pink[100],
-  pink200: pink[200],
   pink400: pink[400],
   pink500: pink[500],
   pink600: pink[600],

@@ -318,8 +318,8 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           それぞれ <CustomEmoji type="blankNumberPink" />{' '}
-                          <CustomEmoji type="blankNumber" />{' '}
-                          <CustomEmoji type="blankNumberGreen" /> が入っている。
+                          <CustomEmoji type="blankNumberGrey" />{' '}
+                          <CustomEmoji type="blankNumber" /> が入っている。
                         </UlLi>
                       </Ul>
                     </>
@@ -332,8 +332,8 @@ export default () => (
                       <P>
                         <Strong>
                           それぞれの <CustomEmoji type="blankNumberPink" />{' '}
+                          <CustomEmoji type="blankNumberGrey" />{' '}
                           <CustomEmoji type="blankNumber" />{' '}
-                          <CustomEmoji type="blankNumberGreen" />{' '}
                           には数字を入れることができます。
                         </Strong>
                         同じ数字を入れても構いませんし、違う数字を入れても構いません。
@@ -342,8 +342,8 @@ export default () => (
                         具体例で説明したほうが分かりやすいと思うので、
                         <Strong>
                           <CustomEmoji type="blankNumberPink" />{' '}
+                          <CustomEmoji type="blankNumberGrey" />{' '}
                           <CustomEmoji type="blankNumber" />{' '}
-                          <CustomEmoji type="blankNumberGreen" />{' '}
                           に何か適当な数字を入れてみてください！
                         </Strong>
                       </P>
@@ -673,8 +673,7 @@ export default () => (
                   <H
                     args={{ name: 'conditionSectionName', type: 'trueCase' }}
                   />{' '}
-                  の中にある <CustomEmoji type="blankNumberGreen" />{' '}
-                  が残ります。
+                  の中にある <CustomEmoji type="blankNumberGrey" /> が残ります。
                 </Em>
               </UlLi>
               <UlLi>

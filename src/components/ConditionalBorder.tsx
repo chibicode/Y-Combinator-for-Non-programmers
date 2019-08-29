@@ -38,9 +38,9 @@ const width = (
   }
 }
 
-export const trueCaseColor = colors('green300')
-export const falseCaseColor = colors('pink200')
-export const conditionColor = colors('blue100')
+export const trueCaseColor = colors('blue100')
+export const falseCaseColor = colors('pink100')
+export const conditionColor = colors('grey300')
 
 const ConditionalBorder = ({
   type,

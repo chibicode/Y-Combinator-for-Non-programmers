@@ -2368,15 +2368,8 @@ export const qefa = initializeDoneExpressionContainer({
 
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'questionV2',
-  trueCase: 'blankNumberGreen',
-  falseCase: 'blankNumberPink'
-})
-
-export const gmqz = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: 'questionV2',
-  trueCase: 'blankNumberGreen',
+  condition: 'blankNumberGrey',
+  trueCase: 'questionV2',
   falseCase: 'blankNumberPink'
 })
 

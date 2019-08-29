@@ -8,7 +8,7 @@
         "state": "default",
         "checkType": "isZero",
         "condition": {
-          "name": "questionV2",
+          "name": "blankNumberGrey",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -19,7 +19,7 @@
           "bound": true
         },
         "trueCase": {
-          "name": "blankNumberGreen",
+          "name": "questionV2",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
