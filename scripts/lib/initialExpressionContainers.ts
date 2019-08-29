@@ -2366,64 +2366,6 @@ export const qefa = initializeDoneExpressionContainer({
   shorthandNumber: 20
 })
 
-export const nayi = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: 'questionV2',
-  trueCase: {
-    shorthandNumber: 1,
-    initialHighlight: true
-  },
-  falseCase: {
-    shorthandNumber: 0,
-    initialHighlight: true
-  }
-})
-
-export const wawp = initializeExpressionContainer([
-  {
-    arg: 'e',
-    body: {
-      arg: 'a',
-      body: {
-        arg: 'b',
-        body: 'b'
-      }
-    }
-  },
-  {
-    arg: 'c',
-    body: {
-      arg: 'd',
-      body: 'c'
-    }
-  }
-])
-
-export const sixr = initializeExpressionContainer(numberParams('f', 'g', 0))
-export const sozn = initializeExpressionContainer(numberParams('h', 'i', 1))
-
-export const qunu = initializeExpressionContainer([
-  {
-    arg: 'e',
-    body: {
-      arg: 'a',
-      body: {
-        arg: 'b',
-        body: 'b'
-      }
-    }
-  },
-  {
-    arg: 'c',
-    body: {
-      arg: 'd',
-      body: 'c'
-    }
-  },
-  numberParams(highlighted('h'), highlighted('i'), 1),
-  numberParams(highlighted('f'), highlighted('g'), 0)
-])
-
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'questionV2',
