@@ -2372,3 +2372,23 @@ export const anme = initializeExpressionContainer({
   trueCase: 'blankNumberGreen',
   falseCase: 'blankNumberPink'
 })
+
+export const gmqz = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'questionV2',
+  trueCase: 'blankNumberGreen',
+  falseCase: 'blankNumberPink'
+})
+
+export const cmay = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    { shorthandNumberAfterConvert: 'blank' }
+  )
+)

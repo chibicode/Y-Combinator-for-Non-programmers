@@ -4298,3 +4298,11 @@ export const rhoa: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.anme
 }
+
+export const sdta: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.cmay,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}
