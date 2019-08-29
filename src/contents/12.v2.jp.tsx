@@ -65,10 +65,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Sdta />
+            <R.Sdta>
+              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱
+            </R.Sdta>
           </>
         )
       }
+      // TODO: Only change the bottom one
     ]}
   />
 )
