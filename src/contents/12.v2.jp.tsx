@@ -54,7 +54,19 @@ export default () => (
                       <P>うーん、どうすればいいんだろう…</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>サヤちゃんの案</>,
+        content: (
+          <>
+            <P>するといつものように、サヤちゃんが何かひらめいたようです。</P>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'saya',
                   children: (
