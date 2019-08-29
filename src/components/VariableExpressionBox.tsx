@@ -214,7 +214,9 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     expression.name === 'C' ||
     expression.name === 'D' ||
     expression.name === 'E' ||
-    expression.name === 'F'
+    expression.name === 'F' ||
+    expression.name === 'blankNumberPink' ||
+    expression.name === 'blankNumberGreen'
   ) {
     return (
       <div>

@@ -2423,3 +2423,10 @@ export const qunu = initializeExpressionContainer([
   numberParams(highlighted('h'), highlighted('i'), 1),
   numberParams(highlighted('f'), highlighted('g'), 0)
 ])
+
+export const anme = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'questionV2',
+  trueCase: 'blankNumberGreen',
+  falseCase: 'blankNumberPink'
+})

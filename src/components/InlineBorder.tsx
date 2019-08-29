@@ -3,6 +3,12 @@ import { css, jsx } from '@emotion/core'
 import { colors } from 'src/lib/theme'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
+import {
+  trueCaseColor,
+  falseCaseColor,
+  conditionColor
+} from 'src/components/ConditionalBorder'
+import { repeatColor } from 'src/components/RepeatBorder'
 
 const InlineBorder = ({
   type,
@@ -15,11 +21,11 @@ const InlineBorder = ({
 }) => {
   const color = type
     ? {
-        trueCase: colors('teal200'),
-        falseCase: colors('pink200'),
-        condition: colors('yellow400')
+        trueCase: trueCaseColor,
+        falseCase: falseCaseColor,
+        condition: conditionColor
       }[type]
-    : colors('purple100')
+    : repeatColor
   return (
     <span
       css={[

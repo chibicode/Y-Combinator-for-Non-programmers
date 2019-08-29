@@ -19,7 +19,7 @@
           "bound": true
         },
         "trueCase": {
-          "name": "questionV2",
+          "name": "blankNumberGreen",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -32,7 +32,7 @@
           "bound": true
         },
         "falseCase": {
-          "name": "questionV2",
+          "name": "blankNumberPink",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

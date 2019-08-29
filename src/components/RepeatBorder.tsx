@@ -16,6 +16,8 @@ export interface RepeatBorderProps {
   variableSizeOverrides?: ExpressionRunnerContextProps['variableSize']
 }
 
+export const repeatColor = colors('purple100')
+
 const fontSize = (
   variableSize: ExpressionRunnerContextProps['variableSize']
 ): string => {
@@ -89,7 +91,7 @@ const RepeatBorder = ({
           left: 0;
           bottom: 0;
           width: ${width(variableSize)}em;
-          background: ${colors('purple100')};
+          background: ${repeatColor};
           border-left: 2px solid ${colors('indigo300')};
           border-right: 2px solid ${colors('indigo300')};
           border-top: 2px solid ${colors('indigo300')};

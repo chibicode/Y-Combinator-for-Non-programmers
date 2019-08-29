@@ -317,8 +317,9 @@ export default () => (
                           という3種類の印があり、
                         </UlLi>
                         <UlLi>
-                          それぞれ <CustomEmoji type="blankNumber" />{' '}
-                          が入っている。
+                          それぞれ <CustomEmoji type="blankNumberPink" />{' '}
+                          <CustomEmoji type="blankNumber" />{' '}
+                          <CustomEmoji type="blankNumberGreen" /> が入っている。
                         </UlLi>
                       </Ul>
                     </>
@@ -329,13 +330,20 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        それぞれの <CustomEmoji type="blankNumber" />{' '}
-                        には数字を入れることができます。
+                        <Strong>
+                          それぞれの <CustomEmoji type="blankNumberPink" />{' '}
+                          <CustomEmoji type="blankNumber" />{' '}
+                          <CustomEmoji type="blankNumberGreen" />{' '}
+                          には数字を入れることができます。
+                        </Strong>
+                        同じ数字を入れても構いませんし、違う数字を入れても構いません。
                       </P>
                       <P>
                         具体例で説明したほうが分かりやすいと思うので、
                         <Strong>
+                          <CustomEmoji type="blankNumberPink" />{' '}
                           <CustomEmoji type="blankNumber" />{' '}
+                          <CustomEmoji type="blankNumberGreen" />{' '}
                           に何か適当な数字を入れてみてください！
                         </Strong>
                       </P>
@@ -645,15 +653,17 @@ export default () => (
               <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
               」の法則は以下の通りです。
             </P>
-            <R.Ymmm />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」がある計算箱
+            </R.Rhoa>
             <P>
               <Em>
                 まず、
                 <H
                   args={{ name: 'conditionSectionName', type: 'condition' }}
                 />{' '}
-                の中にある数字が <EmojiNumber number={0} />{' '}
-                かどうかチェックします。
+                の中にある <CustomEmoji type="blankNumber" /> が{' '}
+                <EmojiNumber number={0} /> かどうかチェックします。
               </Em>
             </P>
             <Ul>
@@ -663,7 +673,8 @@ export default () => (
                   <H
                     args={{ name: 'conditionSectionName', type: 'trueCase' }}
                   />{' '}
-                  の中にある数字が残ります。
+                  の中にある <CustomEmoji type="blankNumberGreen" />{' '}
+                  が残ります。
                 </Em>
               </UlLi>
               <UlLi>
@@ -672,7 +683,7 @@ export default () => (
                   <H
                     args={{ name: 'conditionSectionName', type: 'falseCase' }}
                   />{' '}
-                  の中にある数字が残ります。
+                  の中にある <CustomEmoji type="blankNumberPink" /> が残ります。
                 </Em>
               </UlLi>
             </Ul>

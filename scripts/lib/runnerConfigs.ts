@@ -4296,7 +4296,7 @@ export const jehv: ExpressionRunnerShorthandConfig = {
 
 export const rhoa: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ognb
+  initialExpressionContainer: initialExpressionContainers.anme
 }
 
 export const zypm: ExpressionRunnerShorthandConfig = {

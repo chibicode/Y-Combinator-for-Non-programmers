@@ -44,6 +44,8 @@ export type VariableNames =
   | 'D'
   | 'E'
   | 'F'
+  | 'blankNumberPink'
+  | 'blankNumberGreen'
 
 export interface VariableNamesWithAlphaConvertCount {
   name: VariableNames

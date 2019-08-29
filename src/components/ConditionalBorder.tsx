@@ -38,6 +38,10 @@ const width = (
   }
 }
 
+export const trueCaseColor = colors('green300')
+export const falseCaseColor = colors('pink200')
+export const conditionColor = colors('blue100')
+
 const ConditionalBorder = ({
   type,
   smallEmoji,
@@ -46,9 +50,9 @@ const ConditionalBorder = ({
 }: ConditionalBorderProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
   const color = {
-    trueCase: colors('teal200'),
-    falseCase: colors('pink200'),
-    condition: colors('yellow400')
+    trueCase: trueCaseColor,
+    falseCase: falseCaseColor,
+    condition: conditionColor
   }[type]
   return (
     <>
