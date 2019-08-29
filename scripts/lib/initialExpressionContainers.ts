@@ -2365,3 +2365,16 @@ export const ptsa = initializeExpressionContainer([
 export const qefa = initializeDoneExpressionContainer({
   shorthandNumber: 20
 })
+
+export const nayi = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'questionV2',
+  trueCase: {
+    shorthandNumber: 1,
+    initialHighlight: true
+  },
+  falseCase: {
+    shorthandNumber: 0,
+    initialHighlight: true
+  }
+})

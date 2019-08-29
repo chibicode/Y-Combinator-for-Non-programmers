@@ -4298,3 +4298,8 @@ export const rhoa: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ognb
 }
+
+export const zypm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nayi
+}
