@@ -2378,3 +2378,48 @@ export const nayi = initializeExpressionContainer({
     initialHighlight: true
   }
 })
+
+export const wawp = initializeExpressionContainer([
+  {
+    arg: 'e',
+    body: {
+      arg: 'a',
+      body: {
+        arg: 'b',
+        body: 'b'
+      }
+    }
+  },
+  {
+    arg: 'c',
+    body: {
+      arg: 'd',
+      body: 'c'
+    }
+  }
+])
+
+export const sixr = initializeExpressionContainer(numberParams('f', 'g', 0))
+export const sozn = initializeExpressionContainer(numberParams('h', 'i', 1))
+
+export const qunu = initializeExpressionContainer([
+  {
+    arg: 'e',
+    body: {
+      arg: 'a',
+      body: {
+        arg: 'b',
+        body: 'b'
+      }
+    }
+  },
+  {
+    arg: 'c',
+    body: {
+      arg: 'd',
+      body: 'c'
+    }
+  },
+  numberParams(highlighted('h'), highlighted('i'), 1),
+  numberParams(highlighted('f'), highlighted('g'), 0)
+])

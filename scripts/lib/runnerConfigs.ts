@@ -4303,3 +4303,33 @@ export const zypm: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nayi
 }
+
+export const wrbb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nayi,
+  variableSize: 'md'
+}
+
+export const fglm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wawp,
+  variableSize: 'md',
+  containerSize: 'xs'
+}
+
+export const dzfv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sixr
+}
+
+export const mqck: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.sozn
+}
+
+export const pgjy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qunu,
+  variableSize: 'md',
+  containerSize: 'xs'
+}

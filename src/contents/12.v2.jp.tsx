@@ -9,7 +9,7 @@ import {
   UlLi
   // InlineHeader
 } from 'src/components/ContentTags'
-// import H from 'src/components/H'
+import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -124,6 +124,72 @@ export default () => (
                 }
               ]}
             />
+            <R.Fglm>
+              <Emoji>👧🏻</Emoji> サヤちゃんの案
+            </R.Fglm>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>へえ、面白そうだけど、これはどうやって使うんだい？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>では、先ほどの計算箱を再現してみるね。</P>
+                      <R.Wrbb>これを再現してみます</R.Wrbb>
+                      <P>
+                        まず、
+                        <InlineBorder type="falseCase" /> には{' '}
+                        <EmojiNumber number={0} /> が入ってるよね。
+                        <Strong>
+                          だから、
+                          <EmojiNumber number={0} />{' '}
+                          に変換できる弁当箱を用意するんだ。
+                        </Strong>
+                      </P>
+                      <R.Dzfv>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'f',
+                            number: 0
+                          }}
+                        />
+                      </R.Dzfv>
+                      <P>
+                        続いて、
+                        <InlineBorder type="trueCase" /> には{' '}
+                        <EmojiNumber number={1} /> が入っているから、
+                        <Strong>
+                          だから、
+                          <EmojiNumber number={1} />{' '}
+                          に変換できる弁当箱を用意する。
+                        </Strong>
+                      </P>
+                      <R.Mqck>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'h',
+                            number: 1
+                          }}
+                        />
+                      </R.Mqck>
+                      <P>
+                        そして、これらを先ほどの弁当箱の上に合体させるんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Pgjy></R.Pgjy>
           </>
         )
       }
