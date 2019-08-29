@@ -13,6 +13,8 @@ import LetterCSvg from 'src/components/LetterCSvg'
 import LetterDSvg from 'src/components/LetterDSvg'
 import LetterESvg from 'src/components/LetterESvg'
 import LetterFSvg from 'src/components/LetterFSvg'
+import LetterXSvg from 'src/components/LetterXSvg'
+import LetterYSvg from 'src/components/LetterYSvg'
 import TwentySvg from 'src/components/TwentySvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
@@ -31,7 +33,9 @@ export const customEmojiToComponent = {
   C: LetterCSvg,
   D: LetterDSvg,
   E: LetterESvg,
-  F: LetterFSvg
+  F: LetterFSvg,
+  X: LetterXSvg,
+  Y: LetterYSvg
 }
 
 const CustomEmoji = ({
