@@ -15,7 +15,11 @@ export interface VariableExpression {
   readonly shorthandUnary?: 'pred'
   readonly shorthandFunc?: 'add' | 'pred'
   readonly magical?: boolean
-  readonly shorthandNumberAfterConvert?: boolean
+  readonly shorthandNumberAfterConvert?:
+    | 'number'
+    | 'blank'
+    | 'trueCase'
+    | 'falseCase'
   readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
 }
 

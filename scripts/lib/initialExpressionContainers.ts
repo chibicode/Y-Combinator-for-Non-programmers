@@ -2058,7 +2058,7 @@ export const glmd = initializeExpressionContainer([
   ),
   {
     shorthandNumber: 1,
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'number'
   }
 ])
 
@@ -2072,7 +2072,7 @@ export const kgoi = initializeExpressionContainer([
   ),
   {
     shorthandNumber: 2,
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'number'
   }
 ])
 
@@ -2085,14 +2085,14 @@ export const cyhx = initializeExpressionContainer([
     true
   ),
   {
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'blank'
   }
 ])
 
 export const drbs = initializeExpressionContainer([
   succParams('questionFoodGrey', 'questionFoodGrey', 'questionFoodGrey'),
   {
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'blank'
   }
 ])
 
@@ -2145,7 +2145,7 @@ export const bjzr = initializeExpressionContainer([
     }
   },
   {
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'blank'
   }
 ])
 
@@ -2289,7 +2289,7 @@ export const xwlj = initializeExpressionContainer([
     true
   ),
   {
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'blank'
   }
 ])
 
@@ -2339,14 +2339,14 @@ export const iius = initializeExpressionContainer([
 export const yvkr = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
   {
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'blank'
   }
 ])
 
 export const whey = initializeExpressionContainer([
   predParams('a', 'b', 'c', 'd', 'e', 'f'),
   {
-    shorthandNumberAfterConvert: true
+    shorthandNumberAfterConvert: 'blank'
   }
 ])
 

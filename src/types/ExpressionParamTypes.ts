@@ -20,7 +20,9 @@ export interface QuestionPlusOrMinusOneParams {
 }
 
 export interface QuestionShorthandNumberAfterConvertParams {
-  readonly shorthandNumberAfterConvert: true
+  readonly shorthandNumberAfterConvert: NonNullable<
+    VariableShorthandNumber['shorthandNumberAfterConvert']
+  >
 }
 
 export interface VariableShorthandBinaryParams {
@@ -38,7 +40,7 @@ export interface VariableShorthandNumberParams {
   readonly initialHighlight?: boolean
   readonly shorthandUnary?: VariableShorthandUnary['shorthandUnary']
   readonly someNumber?: boolean
-  readonly shorthandNumberAfterConvert?: boolean
+  readonly shorthandNumberAfterConvert?: VariableShorthandNumber['shorthandNumberAfterConvert']
 }
 
 export interface VariableShorthandUnaryParams {

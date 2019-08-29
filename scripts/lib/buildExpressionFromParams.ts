@@ -228,7 +228,7 @@ export default function buildExpressionFromParams(
   } else if (isQuestionShorthandNumberAfterConvertParams(expressionParams)) {
     return {
       ...buildVariableExpression('blankNumber', true, 'default'),
-      shorthandNumberAfterConvert: true
+      shorthandNumberAfterConvert: expressionParams.shorthandNumberAfterConvert
     }
   } else {
     return {

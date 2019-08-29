@@ -126,8 +126,14 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         >
           {expression.shorthandNumber ? (
             <EmojiNumber number={expression.shorthandNumber} />
-          ) : (
+          ) : expression.shorthandNumberAfterConvert === 'blank' ? (
             <CustomEmoji type="blankNumber" />
+          ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
+            <CustomEmoji type="blankNumberGreen" />
+          ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
+            <CustomEmoji type="blankNumberPink" />
+          ) : (
+            <></>
           )}
         </span>
         <span

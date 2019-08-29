@@ -16,7 +16,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumberAfterConvert": true
+          "shorthandNumberAfterConvert": "blank"
         },
         "func": {
           "arg": {

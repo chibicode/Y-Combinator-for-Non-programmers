@@ -106,6 +106,6 @@ export function isQuestionPlusOrMinusOneParams(
 export function isQuestionShorthandNumberAfterConvertParams(
   expressionParams: ExpressionParams
 ): expressionParams is QuestionShorthandNumberAfterConvertParams {
-  return (expressionParams as QuestionShorthandNumberAfterConvertParams)
+  return !!(expressionParams as QuestionShorthandNumberAfterConvertParams)
     .shorthandNumberAfterConvert
 }

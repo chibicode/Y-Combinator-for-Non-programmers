@@ -17,7 +17,7 @@
           "emphasizePriority": false,
           "bound": true,
           "shorthandNumber": 2,
-          "shorthandNumberAfterConvert": true
+          "shorthandNumberAfterConvert": "number"
         },
         "func": {
           "arg": {
