@@ -124,7 +124,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             display: block;
           `}
         >
-          {expression.shorthandNumber ? (
+          {expression.shorthandNumber !== undefined ? (
             <EmojiNumber number={expression.shorthandNumber} />
           ) : expression.shorthandNumberAfterConvert === 'blank' ? (
             <CustomEmoji type="blankNumber" />

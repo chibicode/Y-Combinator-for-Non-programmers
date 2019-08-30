@@ -2426,6 +2426,14 @@ export const zcia = initializeExpressionContainer(
     'e',
     { shorthandNumberAfterConvert: 'trueCase' },
     { shorthandNumberAfterConvert: 'falseCase' },
-    { shorthandNumberAfterConvert: 'number', shorthandNumber: 0 }
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 0,
+      initialHighlight: true
+    }
   )
 )
+
+export const qrvj = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'trueCase'
+})

@@ -243,10 +243,35 @@ export default () => (
             <P>
               <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
             </P>
+            <R.Ycpk>
+              一番下に <EmojiNumber number={0} /> に変換できる
+              <br />
+              弁当箱を入れた場合
+            </R.Ycpk>
+            <ExpressionRunnerSeparator />
+            <R.Bndi></R.Bndi>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        たしかに、
+                        <Strong>
+                          両方とも <EmojiNumber number={0} /> を入れると{' '}
+                          <CustomEmoji type="blankNumber" /> が残る
+                        </Strong>
+                        ね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
-      // TODO: Only change the bottom one
     ]}
   />
 )

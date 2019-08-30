@@ -4348,7 +4348,15 @@ export const nmrp: ExpressionRunnerShorthandConfig = {
 
 export const ycpk: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.cmay,
+  initialExpressionContainer: initialExpressionContainers.zcia,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}
+
+export const bndi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qrvj,
   showPriorities: true,
   variableSize: 'md',
   containerSize: 'xs'
