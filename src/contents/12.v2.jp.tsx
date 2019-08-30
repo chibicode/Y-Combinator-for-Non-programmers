@@ -286,12 +286,18 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>でも、まだサヤちゃんの答えが正しいとは限らない。</P>
                       <P>
-                        <EmojiNumber number={0} /> 以外の数字を{' '}
-                        <CustomEmoji type="blankNumberGrey" />{' '}
-                        に入れた場合は、ちゃんと{' '}
-                        <CustomEmoji type="blankNumberPink" /> が残るのかな？
+                        でも、まだサヤちゃんの答えが正しいとは限らない。さっきは{' '}
+                        <EmojiNumber number={0} /> を{' '}
+                        <CustomEmoji type="blankNumberGrey" /> に入れたけど…
+                      </P>
+                      <P>
+                        <Strong>
+                          <EmojiNumber number={0} /> 以外の数字を{' '}
+                          <CustomEmoji type="blankNumberGrey" />{' '}
+                          に入れた場合は、ちゃんと{' '}
+                          <CustomEmoji type="blankNumberPink" /> が残るのかな？
+                        </Strong>
                       </P>
                     </>
                   )
