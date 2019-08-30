@@ -8,11 +8,11 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
+import TwoColGrid from 'src/components/TwoColGrid'
 import Emoji from 'src/components/Emoji'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
-// import NextLessonButton from 'src/components/NextLessonButton'
-// import YesNoButtons from 'src/components/YesNoButtons'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -723,7 +723,159 @@ export default () => (
       },
       {
         title: <>繰り返しの機能は？</>,
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、条件分岐の機能を再現できたのはいいけど…</P>
+                      <P>
+                        俺たちがやらないといけないのは、「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を弁当箱で再現することだよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Bwnp>
+                    <CustomEmoji type="plusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Bwnp>
+                </>
+              }
+              right={
+                <>
+                  <R.Ewfr>
+                    <CustomEmoji type="minusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Ewfr>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうですね。しかし、上級その1でぼくが言ったことを思い出して下さい。
+                      </P>
+                      <P>
+                        「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」は、「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」と<Strong>関連がある</Strong>のです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['🔁', '🐶', '↕️']}
+              description={
+                <>
+                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」は、
+                  <br />「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  」と関連がある
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        だから、先ほど「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」を弁当箱で再現したことによって、
+                      </P>
+                      <P>
+                        みなさんは「<Strong>繰り返しの機能</Strong>{' '}
+                        <Emoji>🔁</Emoji>
+                        」を弁当箱で再現するのに大きく近づいたのです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>↕️</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  」を
+                  <br />
+                  弁当箱で再現したことにより…
+                </>
+              }
+            />
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>❓</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」を
+                  <br />
+                  弁当箱で再現するのに大きく近づいた！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん…そう言われても、どういうことやらさっぱり…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <Strong>次のページでまたヒントを出しましょう！</Strong>
+                      </P>
+                      <P>というわけで、先に進んでみてください。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <NextLessonButton />
+          </>
+        )
       }
     ]}
   />
