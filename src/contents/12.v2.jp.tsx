@@ -400,6 +400,16 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="blankNumberPink" />{' '}
+            <CustomEmoji type="blankNumberGrey" />{' '}
+            <CustomEmoji type="blankNumberPurple" /> 全部を埋める
+          </>
+        ),
+        content: <></>
       }
     ]}
   />
