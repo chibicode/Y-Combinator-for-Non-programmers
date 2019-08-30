@@ -2475,3 +2475,16 @@ export const vwpl = initializeExpressionContainer(
 export const xgur = initializeExpressionContainer({
   shorthandNumberAfterConvert: 'falseCase'
 })
+
+export const eryp = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'number', shorthandNumber: 3 },
+    { shorthandNumberAfterConvert: 'number', shorthandNumber: 1 },
+    { shorthandNumberAfterConvert: 'number', shorthandNumber: 2 }
+  )
+)

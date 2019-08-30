@@ -4401,3 +4401,11 @@ export const zdpf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.kysf
 }
+
+export const jbqw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.eryp,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}

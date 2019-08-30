@@ -15,6 +15,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import Emoji from 'src/components/Emoji'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
@@ -110,7 +111,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これを弁当箱で再現するにいは、どうすればいいんだろう…？
+                        これを弁当箱で再現するには、どうすればいいんだろう…？
                       </P>
                     </>
                   )
@@ -524,10 +525,12 @@ export default () => (
                         </Em>
                       </P>
                       <P>
-                        これも、
+                        これを
+                        <H args={{ name: 'play' }} /> したとき、
                         <Em>
-                          同じく結果が <EmojiNumber number={1} />{' '}
-                          になれば成功というわけだよね。
+                          先ほど同じく結果が <EmojiNumber number={1} /> になれば
+                          <Strong>成功</Strong> <Emoji>🎉</Emoji>{' '}
+                          というわけだよね。
                         </Em>
                       </P>
                     </>
@@ -535,6 +538,21 @@ export default () => (
                 }
               ]}
             />
+            <R.Jbqw>
+              <CustomEmoji type="blankNumberPink" />{' '}
+              <CustomEmoji type="blankNumberGrey" />{' '}
+              <CustomEmoji type="blankNumberPurple" /> に{' '}
+              <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
+              <EmojiNumber number={3} /> を入れてみた
+            </R.Jbqw>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <Em>
+                <EmojiNumber number={2} /> に変換できる弁当箱
+                <br />
+                になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
+              </Em>
+            </ExpressionRunnerCaptionOnly>
           </>
         )
       }
