@@ -634,7 +634,96 @@ export default () => (
             <H args={{ name: 'summary' }} />
           </>
         ),
-        children: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>お見事！サヤさん、正解です！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>やったー！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ちなみに、
+                        <Em>
+                          以下のような <Emoji>🅰️</Emoji> <Emoji>🅱️</Emoji>{' '}
+                          <CustomEmoji type="C" /> <CustomEmoji type="D" />{' '}
+                          <CustomEmoji type="E" />{' '}
+                          の法則に沿っていれば、それぞれに何の料理が入っていても、条件分岐の計算箱を再現することができます。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」は…
+            </R.Rhoa>
+            <ExpressionRunnerSeparator />
+            <R.Fton>
+              以下の法則に当てはまる弁当箱で
+              <br />
+              再現できる
+            </R.Fton>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        まとめると、
+                        <Em>
+                          計算箱の「<Strong>条件分岐の機能</Strong>{' '}
+                          <Emoji>↕️</Emoji>
+                          」も、弁当箱で再現することができる
+                        </Em>
+                        のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🎁</Emoji>,
+                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>↕️</Emoji>
+              ]}
+              description={
+                <>
+                  計算箱の「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  」も、
+                  <br />
+                  弁当箱で「<Strong>再現</Strong>」することができる
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <>繰り返しの機能は？</>,
+        content: <></>
       }
     ]}
   />

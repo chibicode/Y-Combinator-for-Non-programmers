@@ -1169,7 +1169,7 @@ export default () => (
               <Em>
                 計算箱の「<Strong>1を引く機能</Strong>{' '}
                 <CustomEmoji type="minusOne" />
-                」は、弁当箱で再現することができる
+                」も、弁当箱で再現することができる
               </Em>
               のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
             </P>
@@ -1185,7 +1185,7 @@ export default () => (
                 <>
                   計算箱の「<Strong>1を引く機能</Strong>{' '}
                   <CustomEmoji type="plusOne" />
-                  」は、
+                  」も、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
                 </>

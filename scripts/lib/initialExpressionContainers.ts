@@ -2505,3 +2505,16 @@ export const zmua = initializeExpressionContainer(
 export const qzuv = initializeExpressionContainer(
   numberParamsHighlightNumber('h', 'i', 1)
 )
+
+export const lcce = initializeExpressionContainer(
+  isZeroParams(
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    { shorthandNumberAfterConvert: 'condition' }
+  )
+)

@@ -4428,3 +4428,11 @@ export const oclg: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { h: '🅰️', i: '🅱️' }
 }
+
+export const fton: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lcce,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}
