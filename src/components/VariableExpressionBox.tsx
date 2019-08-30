@@ -418,8 +418,8 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
           css={css`
             flex: 1;
             font-size: ${variableExpressionBoxFontSize(variableSize)};
-            padding: ${variableExpressionBoxPaddingTop(variableSize)} 0
-              ${variableExpressionBoxPaddingBottom(variableSize)};
+            padding: ${variableExpressionBoxPaddingTop(variableSize)}
+              ${spaces(0.5)} ${variableExpressionBoxPaddingBottom(variableSize)};
           `}
         >
           <VariableEmoji expression={expression} />

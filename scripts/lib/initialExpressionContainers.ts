@@ -2403,3 +2403,29 @@ export const cmay = initializeExpressionContainer(
 )
 
 export const cunp = initializeExpressionContainer('blankNumberPink')
+
+export const psdd = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    numberParams(highlighted('f'), highlighted('g'), 0)
+  )
+)
+
+export const zcia = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    { shorthandNumberAfterConvert: 'number', shorthandNumber: 0 }
+  )
+)

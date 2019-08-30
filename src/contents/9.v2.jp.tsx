@@ -778,7 +778,7 @@ export default () => (
                       <P>
                         じゃあ…
                         <Em>
-                          ベンケイさんお願い！<Strong>特別ルール</Strong>
+                          ミニオンさんお願い！<Strong>特別ルール</Strong>
                           を設けてくれないかな？
                         </Em>
                       </P>

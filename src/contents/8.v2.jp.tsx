@@ -667,7 +667,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>わーい、ベンケイさんありがとう！</P>
+                      <P>わーい、ミニオンさんありがとう！</P>
                     </>
                   )
                 },
@@ -954,7 +954,7 @@ export default () => (
               <Em>
                 計算箱の <EmojiNumber number={1} /> の代わりに、
                 <Strong>
-                  <Emoji>🐶</Emoji> ベンケイの芸で <EmojiNumber number={1} />{' '}
+                  <Emoji>🐶</Emoji> ミニオンの芸で <EmojiNumber number={1} />{' '}
                   に変換できる
                 </Strong>
                 弁当箱
@@ -1165,7 +1165,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ベンケイさん、
+                        ミニオンさん、
                         <Em>おかしなことに気づいちゃったんだけど…</Em>
                       </P>
                     </>

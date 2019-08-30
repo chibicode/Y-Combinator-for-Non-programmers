@@ -2,11 +2,12 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  Strong
+  Strong,
+  Em
   // Hr,
   // InlineHeader
 } from 'src/components/ContentTags'
-// import H from 'src/components/H'
+import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -134,8 +135,12 @@ export default () => (
                 }
               ]}
             />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」を…
+            </R.Rhoa>
+            <ExpressionRunnerSeparator />
             <R.Sdta>
-              <Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱
+              <Emoji>👧🏻</Emoji> 弁当箱で再現してみた！
             </R.Sdta>
             <BubbleQuotes
               quotes={[
@@ -151,12 +156,93 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>!</P>
+                      <P>
+                        うん！
+                        <Em>
+                          まず、一番下の「
+                          <Strong>
+                            <CustomEmoji type="blankNumberGrey" />{' '}
+                            に変換できる弁当箱
+                          </Strong>
+                          」のところに、
+                          <Strong>
+                            こちらの <EmojiNumber number={0} />{' '}
+                            に変換できる弁当箱
+                          </Strong>
+                          を入れてみるね。
+                        </Em>
+                      </P>
+                      <R.Elyq>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'f',
+                            number: 0
+                          }}
+                        />
+                      </R.Elyq>
+                      <P>
+                        入れてみると次のようになるよ。
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Nmrp>
+              「
+              <Strong>
+                <CustomEmoji type="blankNumberGrey" /> に変換できる弁当箱
+              </Strong>
+              」のところに、
+              <br />
+              <Strong>
+                <EmojiNumber number={0} /> に変換できる弁当箱
+              </Strong>
+              を入れてみた
+            </R.Nmrp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <CustomEmoji type="blankNumber" />{' '}
+                        に変換できる弁当箱が残った！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        うん、これって「<Strong>条件分岐の機能</Strong>{' '}
+                        <Emoji>↕️</Emoji>」を使ったときと同じだよね？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」を使った場合:
+            </P>
+            <R.Dqwh>
+              <InlineBorder type="condition" /> に <EmojiNumber number={0} />{' '}
+              を入れた場合…
+            </R.Dqwh>
+            <ExpressionRunnerSeparator />
+            <R.Vwvb>
+              <InlineBorder type="trueCase" /> に入っている{' '}
+              <CustomEmoji type="blankNumber" /> が残る
+            </R.Vwvb>
+            <P>
+              <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
+            </P>
           </>
         )
       }

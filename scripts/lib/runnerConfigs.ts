@@ -4326,3 +4326,30 @@ export const rtza: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cunp
 }
+
+export const elyq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xvjz,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
+}
+
+export const nmrp: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.psdd,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  skipActive: true,
+  speed: 1.25
+}
+
+export const ycpk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.cmay,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}

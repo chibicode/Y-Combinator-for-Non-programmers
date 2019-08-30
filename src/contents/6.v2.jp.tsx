@@ -79,7 +79,7 @@ export default () => (
                     <>
                       <P>いま呼ぶから、ちょっと待つんだな。</P>
                       <P>
-                        …いでよ、「<Strong>ベンケイ</Strong>」！
+                        …いでよ、「<Strong>ミニオン</Strong>」！
                       </P>
                     </>
                   )
@@ -88,7 +88,7 @@ export default () => (
             />
             <EmojiSeparator
               emojis={['✨', '🐶', '✨']}
-              description={<Strong>悪魔の助手・ベンケイ、ここに参上！</Strong>}
+              description={<Strong>悪魔の助手・ミニオン、ここに参上！</Strong>}
             />
             <BubbleQuotes
               quotes={[
@@ -97,7 +97,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうも、<Strong>ベンケイ</Strong>
+                        どうも、<Strong>ミニオン</Strong>
                         です。お呼びですか、ご主人さま？
                       </P>
                     </>
@@ -109,7 +109,7 @@ export default () => (
                     <>
                       <P>
                         よく来てくれた！こいつがわたしの助手、
-                        <Strong>ベンケイ</Strong>だ。
+                        <Strong>ミニオン</Strong>だ。
                       </P>
                     </>
                   )
@@ -127,11 +127,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ベンケイはそんじょそこらの犬とは違う。
+                        ミニオンはそんじょそこらの犬とは違う。
                         <Strong>とっておきの芸</Strong>
                         を持っているからな。
                       </P>
-                      <P>ベンケイ、こいつらにお前の芸を見せてやるんだ！</P>
+                      <P>ミニオン、こいつらにお前の芸を見せてやるんだ！</P>
                     </>
                   )
                 },
@@ -149,7 +149,7 @@ export default () => (
         )
       },
       {
-        title: <>ベンケイの芸</>,
+        title: <>ミニオンの芸</>,
         content: (
           <>
             <EmojiSeparator emojis={['🍱', '🐶', '🎁']} />
@@ -1247,7 +1247,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ベンケイ、説明ご苦労だった！</P>
+                      <P>ミニオン、説明ご苦労だった！</P>
                     </>
                   )
                 },
@@ -1267,7 +1267,7 @@ export default () => (
                         それでは以前約束した通り、
                         <Em>
                           次のページで、
-                          <Strong>ベンケイとともに難しい問題を出題する</Strong>
+                          <Strong>ミニオンとともに難しい問題を出題する</Strong>
                           。それに答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>
@@ -1294,7 +1294,7 @@ export default () => (
             <>
               <P>
                 <Emoji size="mdlg">🐶</Emoji> ちなみに「
-                <Strong>ベンケイ</Strong>」と名付けたのは、弁(
+                <Strong>ミニオン</Strong>」と名付けたのは、弁(
                 <Strong>ベン</Strong>
                 )当箱を計(<Strong>ケイ</Strong>)算箱に変換できるからです。
               </P>
