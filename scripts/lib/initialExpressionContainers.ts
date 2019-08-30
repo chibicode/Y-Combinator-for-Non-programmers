@@ -2488,3 +2488,20 @@ export const eryp = initializeExpressionContainer(
     { shorthandNumberAfterConvert: 'number', shorthandNumber: 2 }
   )
 )
+
+export const zmua = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    numberParams(highlighted('f'), highlighted('g'), 3),
+    numberParams(highlighted('h'), highlighted('i'), 1),
+    numberParams(highlighted('j'), highlighted('k'), 2)
+  )
+)
+
+export const qzuv = initializeExpressionContainer(
+  numberParamsHighlightNumber('h', 'i', 1)
+)

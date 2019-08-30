@@ -4409,3 +4409,22 @@ export const jbqw: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   containerSize: 'xs'
 }
+
+export const svbd: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.zmua,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  skipActive: true,
+  speed: 1.5
+}
+
+export const oclg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qzuv,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { h: '🅰️', i: '🅱️' }
+}

@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Em,
-  Ul,
-  UlLi
-  // Hr,
-  // InlineHeader
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -548,7 +540,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <Em>
-                <EmojiNumber number={2} /> に変換できる弁当箱
+                <EmojiNumber number={1} /> に変換できる弁当箱
                 <br />
                 になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
               </Em>
@@ -586,8 +578,63 @@ export default () => (
                 }
               ]}
             />
+            <R.Svbd>
+              黄色の部分は、上から順に
+              <br />
+              <EmojiNumber number={1} /> に変換できる弁当箱、
+              <br />
+              <EmojiNumber number={3} /> に変換できる弁当箱、
+              <br />
+              <EmojiNumber number={2} /> に変換できる弁当箱。
+            </R.Svbd>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        最終的に残ったこちらの弁当箱は、
+                        <EmojiNumber number={1} /> に変換できる弁当箱だね。
+                      </P>
+                      <R.Oclg>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'h',
+                            number: 1
+                          }}
+                        />
+                      </R.Oclg>
+                      <P>
+                        だから、
+                        <EmojiNumber number={1} /> が残ったので、
+                        <Strong>成功</Strong> <Emoji>🎉</Emoji> です！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'celebrate',
+                  children: (
+                    <>
+                      <P>やったー、さすがサヤちゃん！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            <H args={{ name: 'summary' }} />
+          </>
+        ),
+        children: <></>
       }
     ]}
   />
