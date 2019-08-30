@@ -2369,25 +2369,25 @@ export const qefa = initializeDoneExpressionContainer({
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
   condition: 'blankNumberGrey',
-  trueCase: 'blankNumber',
+  trueCase: 'blankNumberPurple',
   falseCase: 'blankNumberPink'
 })
 
 export const zpak = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 0, initialHighlight: true },
-  trueCase: 'blankNumber',
+  trueCase: 'blankNumberPurple',
   falseCase: 'blankNumberPink'
 })
 
 export const fylp = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 1, initialHighlight: true },
-  trueCase: 'blankNumber',
+  trueCase: 'blankNumberPurple',
   falseCase: 'blankNumberPink'
 })
 
-export const xgav = initializeExpressionContainer('blankNumber')
+export const xgav = initializeExpressionContainer('blankNumberPurple')
 
 export const cmay = initializeExpressionContainer(
   isZeroParams(

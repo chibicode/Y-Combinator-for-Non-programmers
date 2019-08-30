@@ -54,7 +54,7 @@ export default () => (
                         <Strong>
                           もし <CustomEmoji type="blankNumberGrey" /> に{' '}
                           <EmojiNumber number={0} /> を入れたら下の{' '}
-                          <CustomEmoji type="blankNumber" /> が残り…
+                          <CustomEmoji type="blankNumberPurple" /> が残り…
                         </Strong>
                       </P>
                     </>
@@ -69,7 +69,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Vwvb>
               <InlineBorder type="trueCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumber" /> が残る
+              <CustomEmoji type="blankNumberPurple" /> が残る
             </R.Vwvb>
             <BubbleQuotes
               quotes={[
@@ -209,7 +209,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <CustomEmoji type="blankNumber" />{' '}
+                        <CustomEmoji type="blankNumberPurple" />{' '}
                         に変換できる弁当箱が残った！
                       </P>
                     </>
@@ -238,7 +238,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Vwvb>
               <InlineBorder type="trueCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumber" /> が残る
+              <CustomEmoji type="blankNumberPurple" /> が残る
             </R.Vwvb>
             <P>
               <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
@@ -260,7 +260,7 @@ export default () => (
                         たしかに、
                         <Strong>
                           両方とも <EmojiNumber number={0} /> を入れると{' '}
-                          <CustomEmoji type="blankNumber" /> が残る
+                          <CustomEmoji type="blankNumberPurple" /> が残る
                         </Strong>
                         ね！
                       </P>

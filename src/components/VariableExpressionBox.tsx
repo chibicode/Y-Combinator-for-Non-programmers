@@ -129,7 +129,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           ) : expression.shorthandNumberAfterConvert === 'blank' ? (
             <CustomEmoji type="blankNumber" />
           ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
-            <CustomEmoji type="blankNumber" />
+            <CustomEmoji type="blankNumberPurple" />
           ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
             <CustomEmoji type="blankNumberPink" />
           ) : expression.shorthandNumberAfterConvert === 'condition' ? (
@@ -218,7 +218,8 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     expression.name === 'E' ||
     expression.name === 'F' ||
     expression.name === 'blankNumberPink' ||
-    expression.name === 'blankNumberGrey'
+    expression.name === 'blankNumberGrey' ||
+    expression.name === 'blankNumberPurple'
   ) {
     return (
       <div>

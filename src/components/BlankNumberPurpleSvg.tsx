@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const BlankNumberPinkSvg = (props: React.SVGProps<SVGSVGElement>) => (
+const BlankNumberPurpleSvg = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 36 36" {...props}>
     <path
       fill="#9575cd"
@@ -13,4 +13,4 @@ const BlankNumberPinkSvg = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export default BlankNumberPinkSvg
+export default BlankNumberPurpleSvg
