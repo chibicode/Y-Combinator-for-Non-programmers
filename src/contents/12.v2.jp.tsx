@@ -553,6 +553,39 @@ export default () => (
                 になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
               </Em>
             </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
+                        <EmojiNumber number={3} />{' '}
+                        にそれぞれ変換できる弁当箱を入れてみたよ。(黄色の部分)
+                      </P>
+                      <P>
+                        というわけで、
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          複雑なので、<Em>目で追わなくても大丈夫です！</Em>
+                        </UlLi>
+                        <UlLi>
+                          待てない方は下の「
+                          <Strong>
+                            <H args={{ name: 'skipToTheEnd' }} /> →
+                          </Strong>
+                          」を押してね！
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
