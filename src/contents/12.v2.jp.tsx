@@ -250,7 +250,9 @@ export default () => (
               弁当箱を入れた場合
             </R.Ycpk>
             <ExpressionRunnerSeparator />
-            <R.Bndi></R.Bndi>
+            <R.Bndi>
+              <CustomEmoji type="blankNumberPurple" /> が残る
+            </R.Bndi>
             <BubbleQuotes
               quotes={[
                 {
@@ -374,7 +376,9 @@ export default () => (
               弁当箱を入れた場合
             </R.Psyv>
             <ExpressionRunnerSeparator />
-            <R.Kiiq></R.Kiiq>
+            <R.Kiiq>
+              <CustomEmoji type="blankNumberPink" /> が残る
+            </R.Kiiq>
             <BubbleQuotes
               quotes={[
                 {
