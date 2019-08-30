@@ -2442,19 +2442,6 @@ export const zfym = initializeExpressionContainer(
   numberParamsHighlightNumber('f', 'g', 1)
 )
 
-export const kkxr = initializeExpressionContainer(
-  isZeroParams(
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    { shorthandNumberAfterConvert: 'trueCase' },
-    { shorthandNumberAfterConvert: 'falseCase', initialHighlight: true },
-    { shorthandNumberAfterConvert: 'condition', initialHighlight: true }
-  )
-)
-
 export const nnqw = initializeExpressionContainer(
   isZeroParams(
     'a',

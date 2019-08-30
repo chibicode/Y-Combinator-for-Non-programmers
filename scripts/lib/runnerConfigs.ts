@@ -4369,14 +4369,6 @@ export const ooya: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
 }
 
-export const ucmm: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kkxr,
-  showPriorities: true,
-  variableSize: 'md',
-  containerSize: 'xs'
-}
-
 export const gpat: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,

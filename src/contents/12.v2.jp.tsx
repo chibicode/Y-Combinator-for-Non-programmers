@@ -201,6 +201,7 @@ export default () => (
                 <EmojiNumber number={0} /> に変換できる弁当箱
               </Strong>
               を入れてみた
+              <br />(<Strong>一番下の黄色い部分</Strong>)
             </R.Nmrp>
             <BubbleQuotes
               quotes={[
@@ -283,38 +284,6 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        でも、まだサヤちゃんの答えが正しいとは限らない。さっきは{' '}
-                        <EmojiNumber number={0} /> を{' '}
-                        <CustomEmoji type="blankNumberGrey" /> に入れたけど…
-                      </P>
-                      <P>
-                        <Strong>
-                          <EmojiNumber number={0} /> 以外の数字を{' '}
-                          <CustomEmoji type="blankNumberGrey" />{' '}
-                          に入れた場合は、ちゃんと{' '}
-                          <CustomEmoji type="blankNumberPink" /> が残るのかな？
-                        </Strong>
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <R.Ucmm>
-              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱。
-              <br />
-              <EmojiNumber number={0} /> 以外の数字を{' '}
-              <CustomEmoji type="blankNumberGrey" /> に入れたら、
-              <br />
-              <CustomEmoji type="blankNumberPink" /> が残る？
-            </R.Ucmm>
-            <BubbleQuotes
-              quotes={[
-                {
                   type: 'saya',
                   children: (
                     <>
@@ -355,6 +324,7 @@ export default () => (
                 <EmojiNumber number={1} /> に変換できる弁当箱
               </Strong>
               を入れてみた
+              <br />(<Strong>一番下の黄色い部分</Strong>)
             </R.Gpat>
             <BubbleQuotes
               quotes={[
