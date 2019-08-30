@@ -4396,3 +4396,8 @@ export const kiiq: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   containerSize: 'xs'
 }
+
+export const zdpf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kysf
+}

@@ -3,7 +3,9 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   Strong,
-  Em
+  Em,
+  Ul,
+  UlLi
   // Hr,
   // InlineHeader
 } from 'src/components/ContentTags'
@@ -406,10 +408,135 @@ export default () => (
           <>
             <CustomEmoji type="blankNumberPink" />{' '}
             <CustomEmoji type="blankNumberGrey" />{' '}
-            <CustomEmoji type="blankNumberPurple" /> 全部を埋める
+            <CustomEmoji type="blankNumberPurple" /> 全てを埋める
           </>
         ),
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        とういうことは、やっぱりサヤちゃんの弁当箱が、「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」の再現としては正解なのかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」を…
+            </R.Rhoa>
+            <ExpressionRunnerSeparator />
+            <R.Sdta>
+              <Emoji>👧🏻</Emoji> 弁当箱で再現してみた！
+            </R.Sdta>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>いちおう最後のチェックとして、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            <CustomEmoji type="blankNumberPink" />{' '}
+                            <CustomEmoji type="blankNumberGrey" />{' '}
+                            <CustomEmoji type="blankNumberPurple" />{' '}
+                            の全てを埋めてみて、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            それをサヤの弁当箱でも再現できるかやってみるよ！
+                          </Em>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ん？どういうこと？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>たとえば、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            計算箱の <CustomEmoji type="blankNumberPink" />{' '}
+                            <CustomEmoji type="blankNumberGrey" />{' '}
+                            <CustomEmoji type="blankNumberPurple" /> に、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            それぞれ <EmojiNumber number={1} />{' '}
+                            <EmojiNumber number={2} />{' '}
+                            <EmojiNumber number={3} /> を入れた場合…
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          最終的に <EmojiNumber number={1} /> が残るよね。
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zdpf>
+              <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
+              ではないので…
+            </R.Zdpf>
+            <ExpressionRunnerSeparator />
+            <R.Rnug>
+              <InlineBorder type="falseCase" /> に入っていた{' '}
+              <EmojiNumber number={1} /> が残る
+            </R.Rnug>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <Em>
+                          サヤの弁当箱の <CustomEmoji type="blankNumberPink" />{' '}
+                          <CustomEmoji type="blankNumberGrey" />{' '}
+                          <CustomEmoji type="blankNumberPurple" /> にも{' '}
+                          <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
+                          <EmojiNumber number={3} /> を入れてみるよ。
+                        </Em>
+                      </P>
+                      <P>
+                        これも、
+                        <Em>
+                          同じく結果が <EmojiNumber number={1} />{' '}
+                          になれば成功というわけだよね。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />
