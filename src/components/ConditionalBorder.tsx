@@ -38,7 +38,7 @@ const width = (
   }
 }
 
-export const trueCaseColor = colors('blue100')
+export const trueCaseColor = colors('deepPurple100')
 export const falseCaseColor = colors('pink100')
 export const conditionColor = colors('grey300')
 

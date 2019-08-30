@@ -16,7 +16,7 @@ export interface RepeatBorderProps {
   variableSizeOverrides?: ExpressionRunnerContextProps['variableSize']
 }
 
-export const repeatColor = colors('purple100')
+export const repeatColor = colors('blue100')
 
 const fontSize = (
   variableSize: ExpressionRunnerContextProps['variableSize']

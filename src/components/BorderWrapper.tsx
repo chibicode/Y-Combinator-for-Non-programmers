@@ -94,7 +94,7 @@ const background = ({
         `
       } else if (topLeftBadgeType === 'unmatch') {
         return css`
-          background: ${colors('purple50')};
+          background: ${colors('deepPurple50')};
         `
       } else if (topLeftBadgeType === 'betaReduced') {
         return css`
