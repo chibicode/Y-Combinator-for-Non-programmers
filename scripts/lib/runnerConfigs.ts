@@ -4376,3 +4376,15 @@ export const ucmm: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   containerSize: 'xs'
 }
+
+export const gpat: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.nnqw,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  skipActive: true,
+  speed: 1.25
+}

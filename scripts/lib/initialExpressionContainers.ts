@@ -2454,3 +2454,16 @@ export const kkxr = initializeExpressionContainer(
     { shorthandNumberAfterConvert: 'condition', initialHighlight: true }
   )
 )
+
+export const nnqw = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    numberParams(highlighted('f'), highlighted('g'), 1)
+  )
+)

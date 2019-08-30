@@ -344,6 +344,45 @@ export default () => (
                 }
               ]}
             />
+            <R.Gpat>
+              「
+              <Strong>
+                <CustomEmoji type="blankNumberGrey" /> に変換できる弁当箱
+              </Strong>
+              」のところに、
+              <br />
+              <Strong>
+                <EmojiNumber number={1} /> に変換できる弁当箱
+              </Strong>
+              を入れてみた
+            </R.Gpat>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        おお、今度は先ほどと逆に、{' '}
+                        <CustomEmoji type="blankNumberPink" />{' '}
+                        に変換できる弁当箱が残った！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        これも、「<Strong>条件分岐の機能</Strong>{' '}
+                        <Emoji>↕️</Emoji>」を使ったときと同じだよね？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
