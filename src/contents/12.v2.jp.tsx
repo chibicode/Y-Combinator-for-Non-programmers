@@ -319,9 +319,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、次は <EmojiNumber number={1} />{' '}
-                        に変換できる弁当箱を{' '}
-                        <CustomEmoji type="blankNumberGrey" /> に入れてみるね！
+                        じゃあ、次は{' '}
+                        <Strong>
+                          <EmojiNumber number={1} /> に変換できる弁当箱を{' '}
+                          <CustomEmoji type="blankNumberGrey" /> に入れてみる
+                        </Strong>
+                        ね！
                       </P>
                       <R.Ooya>
                         <H
