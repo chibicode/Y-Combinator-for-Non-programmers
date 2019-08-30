@@ -2518,3 +2518,20 @@ export const lcce = initializeExpressionContainer(
     { shorthandNumberAfterConvert: 'condition' }
   )
 )
+
+export const gbbo = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      numberParams('g', 'h', 0),
+      [succParams('i', 'j', 'k'), 'f'],
+      'f'
+    )
+  },
+  numberParams('l', 'm', 1)
+])

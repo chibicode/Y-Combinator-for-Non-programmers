@@ -1,18 +1,17 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
-// import H from 'src/components/H'
+import { P, Strong, Em } from 'src/components/ContentTags'
+import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
-// import EmojiNumber from 'src/components/EmojiNumber'
+import EmojiNumber from 'src/components/EmojiNumber'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
-// import CustomEmoji from 'src/components/CustomEmoji'
+import CustomEmoji from 'src/components/CustomEmoji'
 // import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
-// import TwoColGrid from 'src/components/TwoColGrid'
-// import Emoji from 'src/components/Emoji'
+import TwoColGrid from 'src/components/TwoColGrid'
 // import InlineBorder from 'src/components/InlineBorder'
-// import * as R from 'src/components/Runners'
+import * as R from 'src/components/Runners'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -33,7 +32,123 @@ export default () => (
                         <Emoji>🔁</Emoji>
                         」を弁当箱で再現するのに役立つヒントを出していきますね。
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Bwnp>
+                    <CustomEmoji type="plusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Bwnp>
+                </>
+              }
+              right={
+                <>
+                  <R.Ewfr>
+                    <CustomEmoji type="minusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Ewfr>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>まずは、こちらの弁当箱をご覧ください。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bnyo>
+              <H args={{ name: 'runAndConertToMathbox' }} />
+              <br />
+              するとどうなる？
+            </R.Bnyo>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'tired',
+                  children: (
+                    <>
+                      <P>めちゃくちゃ複雑な弁当箱だなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ここで質問です。
+                        <Strong>
+                          上の弁当箱を、
+                          <H args={{ name: 'runAndConertToMathbox' }} />{' '}
+                          すると、どんな結果になるでしょう？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        <Em>そんなの、すぐ答えられるわけないだろう！</Em>
+                        こんな複雑な弁当箱、
+                        <H args={{ name: 'play' }} /> するのもひと苦労だよ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        サヤは分かったよ！
+                        <H args={{ name: 'runAndConertToMathbox' }} /> すると、
+                        <Strong>
+                          結果は <EmojiNumber number={2} /> になる
+                        </Strong>
+                        んじゃない？
+                      </P>
+                      <R.Pmdm>
+                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={2} />{' '}
+                        になると思う！
+                      </R.Pmdm>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          サヤちゃん、正解です！<Emoji>🎉</Emoji>
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        へ？<Em>なんでそんな早く正解が分かるの…？</Em>
+                      </P>
                     </>
                   )
                 }
