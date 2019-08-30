@@ -227,7 +227,11 @@ export default function buildExpressionFromParams(
     }
   } else if (isQuestionShorthandNumberAfterConvertParams(expressionParams)) {
     return {
-      ...buildVariableExpression('blankNumber', true, 'default'),
+      ...buildVariableExpression(
+        'blankNumber',
+        true,
+        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
+      ),
       shorthandNumberAfterConvert: expressionParams.shorthandNumberAfterConvert
     }
   } else {

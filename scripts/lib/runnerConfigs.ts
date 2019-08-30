@@ -4361,3 +4361,18 @@ export const bndi: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   containerSize: 'xs'
 }
+
+export const ooya: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zfym,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
+}
+
+export const ucmm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.kkxr,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}

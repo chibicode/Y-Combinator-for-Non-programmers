@@ -271,6 +271,72 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={0} /> 以外の数字を入れた場合
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>でも、まだサヤちゃんの答えが正しいとは限らない。</P>
+                      <P>
+                        <EmojiNumber number={0} /> 以外の数字を{' '}
+                        <CustomEmoji type="blankNumberGrey" />{' '}
+                        に入れた場合は、ちゃんと{' '}
+                        <CustomEmoji type="blankNumberPink" /> が残るのかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ucmm>
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱。
+              <br />
+              <EmojiNumber number={0} /> 以外の数字を{' '}
+              <CustomEmoji type="blankNumberGrey" /> に入れたら、
+              <br />
+              <CustomEmoji type="blankNumberPink" /> が残る？
+            </R.Ucmm>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、次は <EmojiNumber number={1} />{' '}
+                        に変換できる弁当箱を{' '}
+                        <CustomEmoji type="blankNumberGrey" /> に入れてみるね！
+                      </P>
+                      <R.Ooya>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'f',
+                            number: 1
+                          }}
+                        />
+                      </R.Ooya>
+                      <P>
+                        入れてみると次のようになるよ。
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />

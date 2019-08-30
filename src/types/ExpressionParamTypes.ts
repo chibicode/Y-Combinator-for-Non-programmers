@@ -23,6 +23,7 @@ export interface QuestionShorthandNumberAfterConvertParams {
   readonly shorthandNumberAfterConvert: NonNullable<
     VariableShorthandNumber['shorthandNumberAfterConvert']
   >
+  readonly initialHighlight?: boolean
 }
 
 export interface VariableShorthandBinaryParams {
