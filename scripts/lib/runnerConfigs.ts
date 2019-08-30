@@ -4388,3 +4388,19 @@ export const gpat: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   speed: 1.25
 }
+
+export const psyv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vwpl,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}
+
+export const kiiq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xgur,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}

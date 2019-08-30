@@ -383,6 +383,47 @@ export default () => (
                 }
               ]}
             />
+            <P>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」を使った場合:
+            </P>
+            <R.Glbk>
+              <InlineBorder type="condition" /> に <EmojiNumber number={1} />{' '}
+              を入れた場合…
+            </R.Glbk>
+            <ExpressionRunnerSeparator />
+            <R.Rtza>
+              <InlineBorder type="falseCase" /> に入っている{' '}
+              <CustomEmoji type="blankNumberPink" /> が残る
+            </R.Rtza>
+            <P>
+              <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
+            </P>
+            <R.Psyv>
+              一番下に <EmojiNumber number={1} /> に変換できる
+              <br />
+              弁当箱を入れた場合
+            </R.Psyv>
+            <ExpressionRunnerSeparator />
+            <R.Kiiq></R.Kiiq>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        たしかに、
+                        <Strong>
+                          両方とも <EmojiNumber number={1} /> を入れると{' '}
+                          <CustomEmoji type="blankNumberPink" /> が残る
+                        </Strong>
+                        ね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

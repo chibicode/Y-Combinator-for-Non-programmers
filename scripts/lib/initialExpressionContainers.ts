@@ -2467,3 +2467,24 @@ export const nnqw = initializeExpressionContainer(
     numberParams(highlighted('f'), highlighted('g'), 1)
   )
 )
+
+export const vwpl = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 1,
+      initialHighlight: true
+    }
+  )
+)
+
+export const xgur = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'falseCase'
+})
