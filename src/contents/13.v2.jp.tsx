@@ -321,6 +321,26 @@ export default () => (
             <R.Cpdy>
               <CustomEmoji type="plusOne" /> に置き換えてみる
             </R.Cpdy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど、だいぶシンプルになってきたぞ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>最後に、この右下の部分に注目してみて！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
