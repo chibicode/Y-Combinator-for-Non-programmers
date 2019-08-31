@@ -2591,3 +2591,30 @@ export const snye = initializeExpressionContainer([
 export const aqvq = initializeExpressionContainer(
   succParams('i', 'j', 'k', false, true)
 )
+
+export const abrk = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      {
+        shorthandNumber: 0
+      },
+      [
+        {
+          shorthandFunc: 'add',
+          initialHighlight: true
+        },
+        'f'
+      ],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 1
+  }
+])

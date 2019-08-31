@@ -4504,3 +4504,17 @@ export const vcqp: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const cpdy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.abrk,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  highlightOverrides: {
+    i: 'highlighted',
+    j: 'highlighted',
+    k: 'highlighted'
+  }
+}

@@ -301,9 +301,26 @@ export default () => (
                       </R.Vcqp>
                     </>
                   )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        その通り！だから、この部分をいったん{' '}
+                        <Strong>
+                          <CustomEmoji type="plusOne" /> に置き換える
+                        </Strong>
+                        ね。
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
+            <R.Cpdy>
+              <CustomEmoji type="plusOne" /> に置き換えてみる
+            </R.Cpdy>
           </>
         )
       }
