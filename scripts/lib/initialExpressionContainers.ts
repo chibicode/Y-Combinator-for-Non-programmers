@@ -2539,3 +2539,46 @@ export const gbbo = initializeExpressionContainer([
 export const loem = initializeExpressionContainer(
   numberParamsHighlightNumber('l', 'm', 1)
 )
+
+export const aqul = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      numberParams('g', 'h', 0),
+      [succParams('i', 'j', 'k'), 'f'],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 1,
+    initialHighlight: true
+  }
+])
+
+export const snye = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      numberParams('g', 'h', 0),
+      [succParams('i', 'j', 'k'), 'f'],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
+export const aqvq = initializeExpressionContainer(
+  succParams('i', 'j', 'k', false, true)
+)

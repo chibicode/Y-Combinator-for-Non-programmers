@@ -173,7 +173,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱にすると…</>,
+        title: <>計算箱に置き換える</>,
         content: (
           <>
             <BubbleQuotes
@@ -198,8 +198,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        あ、一番上の部分をよく見ると、
-                        <EmojiNumber number={1} /> に変換できる弁当箱だ！
+                        あ、
+                        <Em>
+                          一番上の部分をよく見ると、これは{' '}
+                          <EmojiNumber number={1} /> に変換できる弁当箱だ！
+                        </Em>
                       </P>
                       <R.Ayrl>
                         <H
@@ -218,9 +221,60 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！だから、とりあえず一番上の部分をいったん{' '}
-                        <EmojiNumber number={1} /> にしてみるね。
+                        そう！だから、
+                        <Strong>
+                          とりあえず一番上の部分をいったん{' '}
+                          <EmojiNumber number={1} /> に置き換えてみる
+                        </Strong>
+                        ね。
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Wgby>
+              一番上の部分を <EmojiNumber number={1} /> に置き換えてみる
+            </R.Wgby>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なるほど…！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>次に、この右の黄色の部分に注目してみて！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Poha>右の部分に注目</R.Poha>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        これはもしかして…
+                        <Em>
+                          中級その3でやった、
+                          <H args={{ name: 'plusOneEffect' }} />
+                          がある弁当箱かな？
+                        </Em>
+                      </P>
+                      <R.Vcqp>
+                        <H args={{ name: 'plusOneEffect' }} />
+                        がある弁当箱
+                      </R.Vcqp>
                     </>
                   )
                 }

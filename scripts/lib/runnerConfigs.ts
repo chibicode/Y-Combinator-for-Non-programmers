@@ -4465,3 +4465,33 @@ export const ayrl: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   bottomRightBadgeOverrides: { l: '🅰️', m: '🅱️' }
 }
+
+export const wgby: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.aqul,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const poha: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.snye,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  highlightOverrides: {
+    i: 'highlighted',
+    j: 'highlighted',
+    k: 'highlighted'
+  }
+}
+
+export const vcqp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.aqvq,
+  showPriorities: true,
+  variableSize: 'md'
+}
