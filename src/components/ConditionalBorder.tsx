@@ -32,9 +32,9 @@ const width = (
   if (variableSize === 'lg') {
     return 2.1
   } else if (variableSize === 'md') {
-    return 0.9
+    return 1.8
   } else {
-    return 0.8
+    return 1.6
   }
 }
 

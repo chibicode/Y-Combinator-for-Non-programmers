@@ -1,16 +1,16 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
-// import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 // import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 import TwoColGrid from 'src/components/TwoColGrid'
-// import InlineBorder from 'src/components/InlineBorder'
+import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
@@ -335,13 +335,71 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>最後に、この右下の部分に注目してみて！</P>
+                      <P>最後に、右下の全ての部分に注目してみて！</P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Lxgj>右下の部分に注目</R.Lxgj>
+            <R.Lxgj>右下の全ての部分に注目</R.Lxgj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        そういればこれは、前回やった「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」に変換できる弁当箱と同じだ！
+                      </P>
+                      <R.Vlhb>
+                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」に変換できる弁当箱
+                      </R.Vlhb>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そう！だから、右下の部分を「
+                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」に置き換えるんだ。
+                      </P>
+                      <R.Ruou>
+                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        」に置き換える
+                      </R.Ruou>
+                      <P>
+                        以下のように置き換えてみるよ。
+                        <Strong>
+                          複雑なので、↓の置き換え方は読み飛ばしても大丈夫！
+                        </Strong>
+                      </P>
+                      <Ul>
+                        <UlLi>
+                          上にある <EmojiForLetter letter="f" />{' '}
+                          <CustomEmoji type="plusOne" /> は{' '}
+                          <InlineBorder type="falseCase" /> の部分
+                        </UlLi>
+                        <UlLi>
+                          その下にある <EmojiNumber number={0} /> は{' '}
+                          <InlineBorder type="trueCase" /> の部分
+                        </UlLi>
+                        <UlLi>
+                          一番下の <EmojiForLetter letter="f" /> は{' '}
+                          <InlineBorder type="condition" /> の部分
+                        </UlLi>
+                      </Ul>
+                      <P>置き換えるとこうなります！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

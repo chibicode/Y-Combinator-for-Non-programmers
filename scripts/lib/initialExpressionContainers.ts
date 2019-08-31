@@ -2623,21 +2623,23 @@ export const xskc = initializeExpressionContainer([
   {
     arg: 'f',
     body: isZeroParams(
-      'a',
-      'b',
-      'c',
-      'd',
-      'e',
+      highlighted('a'),
+      highlighted('b'),
+      highlighted('c'),
+      highlighted('d'),
+      highlighted('e'),
       {
-        shorthandNumber: 0
+        shorthandNumber: 0,
+        initialHighlight: true
       },
       [
         {
-          shorthandFunc: 'add'
+          shorthandFunc: 'add',
+          initialHighlight: true
         },
-        'f'
+        highlighted('f')
       ],
-      'f'
+      highlighted('f')
     )
   },
   {

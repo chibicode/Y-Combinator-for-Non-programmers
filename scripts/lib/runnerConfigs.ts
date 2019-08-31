@@ -4529,3 +4529,33 @@ export const lxgj: ExpressionRunnerShorthandConfig = {
     e: 'highlighted'
   }
 }
+
+export const vlhb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.cmay,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
+export const ruou: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.anme,
+  variableSize: 'md'
+}
+
+export const awbq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xskc,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  highlightOverrides: {
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted',
+    d: 'highlighted',
+    e: 'highlighted'
+  }
+}
