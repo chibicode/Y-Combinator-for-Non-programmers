@@ -2535,3 +2535,7 @@ export const gbbo = initializeExpressionContainer([
   },
   numberParams('l', 'm', 1)
 ])
+
+export const loem = initializeExpressionContainer(
+  numberParamsHighlightNumber('l', 'm', 1)
+)

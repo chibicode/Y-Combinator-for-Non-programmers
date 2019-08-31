@@ -116,7 +116,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        サヤは分かったよ！
+                        サヤはすぐ分かったよ！
                         <H args={{ name: 'runAndConertToMathbox' }} /> すると、
                         <Strong>
                           結果は <EmojiNumber number={2} /> になる
@@ -136,7 +136,8 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          サヤちゃん、正解です！<Emoji>🎉</Emoji>
+                          まさにその通り！サヤちゃん、正解です！
+                          <Emoji>🎉</Emoji>
                         </Strong>
                       </P>
                     </>
@@ -146,8 +147,79 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
+                      <P>へ？なんでそんな早く正解が分かるの…？</P>
                       <P>
-                        へ？<Em>なんでそんな早く正解が分かるの…？</Em>
+                        <Em>
+                          サヤちゃん、まさか一瞬で頭の中で
+                          <H args={{ name: 'play' }} /> したのかい？
+                        </Em>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        ううん、そんなことはしてないよ。じゃあ、どうやって解いたかを教えてあげるね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>計算箱にすると…</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        まず、<Em>一番上の部分に注目してみて！</Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dpaw>一番上の部分に注目</R.Dpaw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        あ、一番上の部分をよく見ると、
+                        <EmojiNumber number={1} /> に変換できる弁当箱だ！
+                      </P>
+                      <R.Ayrl>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'l',
+                            number: 1
+                          }}
+                        />
+                      </R.Ayrl>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そう！だから、とりあえず一番上の部分をいったん{' '}
+                        <EmojiNumber number={1} /> にしてみるね。
                       </P>
                     </>
                   )

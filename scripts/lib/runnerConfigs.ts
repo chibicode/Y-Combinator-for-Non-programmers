@@ -4445,3 +4445,23 @@ export const bnyo: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
+
+export const dpaw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gbbo,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  highlightOverrides: {
+    l: 'highlighted',
+    m: 'highlighted'
+  }
+}
+
+export const ayrl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.loem,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { l: '🅰️', m: '🅱️' }
+}
