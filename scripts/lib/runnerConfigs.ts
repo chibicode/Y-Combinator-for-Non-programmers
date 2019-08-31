@@ -4455,7 +4455,9 @@ export const dpaw: ExpressionRunnerShorthandConfig = {
   alphaConvertCallArg: true,
   highlightOverrides: {
     l: 'highlighted',
-    m: 'highlighted'
+    m: 'highlighted',
+    g: 'highlighted',
+    h: 'highlighted'
   }
 }
 
@@ -4464,6 +4466,13 @@ export const ayrl: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.loem,
   showPriorities: true,
   bottomRightBadgeOverrides: { l: '🅰️', m: '🅱️' }
+}
+
+export const vhte: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.harq,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { g: '🅰️', h: '🅱️' }
 }
 
 export const wgby: ExpressionRunnerShorthandConfig = {

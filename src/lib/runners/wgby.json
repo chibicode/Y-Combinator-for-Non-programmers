@@ -167,45 +167,18 @@
             },
             "func": {
               "arg": {
-                "arg": {
-                  "name": "g",
-                  "highlightType": "default",
-                  "topLeftBadgeType": "none",
-                  "bottomRightBadgeType": "none",
-                  "type": "variable",
-                  "argPriorityAgg": [
-                    3
-                  ],
-                  "funcPriorityAgg": [],
-                  "emphasizePriority": false,
-                  "bound": false
-                },
-                "body": {
-                  "arg": {
-                    "name": "h",
-                    "highlightType": "default",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": false
-                  },
-                  "body": {
-                    "name": "h",
-                    "highlightType": "default",
-                    "topLeftBadgeType": "none",
-                    "bottomRightBadgeType": "none",
-                    "type": "variable",
-                    "argPriorityAgg": [],
-                    "funcPriorityAgg": [],
-                    "emphasizePriority": false,
-                    "bound": true
-                  },
-                  "type": "function"
-                },
-                "type": "function"
+                "name": "shorthandNumber",
+                "highlightType": "initialHighlighted",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [
+                  3
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandNumber": 0
               },
               "func": {
                 "arg": {

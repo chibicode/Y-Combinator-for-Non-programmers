@@ -183,14 +183,21 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        まず、<Em>一番上の部分に注目してみて！</Em>
+                        まず、
+                        <Em>
+                          一番上の部分と、右の真ん中の部分に注目してみて！
+                        </Em>
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Dpaw>一番上の部分に注目</R.Dpaw>
+            <R.Dpaw>
+              一番上の部分と、
+              <br />
+              右の真ん中の部分に注目
+            </R.Dpaw>
             <BubbleQuotes
               quotes={[
                 {
@@ -213,6 +220,22 @@ export default () => (
                           }}
                         />
                       </R.Ayrl>
+                      <P>
+                        さらに、
+                        <Em>
+                          右の真ん中の部分をよく見ると、これは{' '}
+                          <EmojiNumber number={0} /> に変換できる弁当箱だ！
+                        </Em>
+                      </P>
+                      <R.Vhte>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'g',
+                            number: 0
+                          }}
+                        />
+                      </R.Vhte>
                     </>
                   )
                 },
@@ -221,10 +244,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう！だから、
+                        そう！だから、とりあえずこれらを
                         <Strong>
-                          とりあえず一番上の部分をいったん{' '}
-                          <EmojiNumber number={1} /> に置き換えてみる
+                          <EmojiNumber number={1} /> と{' '}
+                          <EmojiNumber number={0} /> に置き換えてみる
                         </Strong>
                         ね。
                       </P>
@@ -234,7 +257,8 @@ export default () => (
               ]}
             />
             <R.Wgby>
-              一番上の部分を <EmojiNumber number={1} /> に置き換えてみる
+              それぞれ <EmojiNumber number={1} /> と <EmojiNumber number={0} />{' '}
+              に置き換えてみる
             </R.Wgby>
             <BubbleQuotes
               quotes={[

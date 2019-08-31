@@ -407,7 +407,9 @@
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {
     "l": "highlighted",
-    "m": "highlighted"
+    "m": "highlighted",
+    "g": "highlighted",
+    "h": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],

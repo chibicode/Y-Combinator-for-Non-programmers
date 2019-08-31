@@ -2540,6 +2540,10 @@ export const loem = initializeExpressionContainer(
   numberParamsHighlightNumber('l', 'm', 1)
 )
 
+export const harq = initializeExpressionContainer(
+  numberParamsHighlightNumber('g', 'h', 0)
+)
+
 export const aqul = initializeExpressionContainer([
   {
     arg: 'f',
@@ -2549,7 +2553,10 @@ export const aqul = initializeExpressionContainer([
       'c',
       'd',
       'e',
-      numberParams('g', 'h', 0),
+      {
+        shorthandNumber: 0,
+        initialHighlight: true
+      },
       [succParams('i', 'j', 'k'), 'f'],
       'f'
     )
@@ -2569,7 +2576,9 @@ export const snye = initializeExpressionContainer([
       'c',
       'd',
       'e',
-      numberParams('g', 'h', 0),
+      {
+        shorthandNumber: 0
+      },
       [succParams('i', 'j', 'k'), 'f'],
       'f'
     )
