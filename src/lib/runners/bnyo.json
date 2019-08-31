@@ -32,17 +32,55 @@
             },
             "body": {
               "arg": {
-                "name": "m",
-                "highlightType": "default",
-                "topLeftBadgeType": "none",
-                "bottomRightBadgeType": "none",
-                "type": "variable",
-                "argPriorityAgg": [
-                  1
-                ],
-                "funcPriorityAgg": [],
-                "emphasizePriority": false,
-                "bound": true
+                "arg": {
+                  "arg": {
+                    "name": "m",
+                    "highlightType": "default",
+                    "topLeftBadgeType": "none",
+                    "bottomRightBadgeType": "none",
+                    "type": "variable",
+                    "argPriorityAgg": [
+                      1,
+                      2,
+                      3
+                    ],
+                    "funcPriorityAgg": [],
+                    "emphasizePriority": false,
+                    "bound": true
+                  },
+                  "func": {
+                    "name": "l",
+                    "highlightType": "default",
+                    "topLeftBadgeType": "none",
+                    "bottomRightBadgeType": "none",
+                    "type": "variable",
+                    "argPriorityAgg": [],
+                    "funcPriorityAgg": [
+                      3
+                    ],
+                    "emphasizePriority": false,
+                    "bound": true
+                  },
+                  "state": "default",
+                  "type": "call",
+                  "priority": 3
+                },
+                "func": {
+                  "name": "l",
+                  "highlightType": "default",
+                  "topLeftBadgeType": "none",
+                  "bottomRightBadgeType": "none",
+                  "type": "variable",
+                  "argPriorityAgg": [],
+                  "funcPriorityAgg": [
+                    2
+                  ],
+                  "emphasizePriority": false,
+                  "bound": true
+                },
+                "state": "default",
+                "type": "call",
+                "priority": 2
               },
               "func": {
                 "name": "l",

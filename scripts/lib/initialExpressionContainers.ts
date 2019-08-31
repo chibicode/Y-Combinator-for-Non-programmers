@@ -2533,11 +2533,11 @@ export const gbbo = initializeExpressionContainer([
       'f'
     )
   },
-  numberParams('l', 'm', 1)
+  numberParams('l', 'm', 3)
 ])
 
 export const loem = initializeExpressionContainer(
-  numberParamsHighlightNumber('l', 'm', 1)
+  numberParamsHighlightNumber('l', 'm', 3)
 )
 
 export const harq = initializeExpressionContainer(
@@ -2562,7 +2562,7 @@ export const aqul = initializeExpressionContainer([
     )
   },
   {
-    shorthandNumber: 1,
+    shorthandNumber: 3,
     initialHighlight: true
   }
 ])
@@ -2584,7 +2584,7 @@ export const snye = initializeExpressionContainer([
     )
   },
   {
-    shorthandNumber: 1
+    shorthandNumber: 3
   }
 ])
 
@@ -2615,7 +2615,7 @@ export const abrk = initializeExpressionContainer([
     )
   },
   {
-    shorthandNumber: 1
+    shorthandNumber: 3
   }
 ])
 
@@ -2643,7 +2643,7 @@ export const xskc = initializeExpressionContainer([
     )
   },
   {
-    shorthandNumber: 1
+    shorthandNumber: 3
   }
 ])
 
@@ -2661,7 +2661,7 @@ export const exoq = initializeExpressionContainer([
     }
   },
   {
-    shorthandNumber: 1
+    shorthandNumber: 3
   }
 ])
 
@@ -2676,6 +2676,6 @@ export const aiyb = initializeExpressionContainer([
     }
   },
   {
-    shorthandNumber: 1
+    shorthandNumber: 3
   }
 ])

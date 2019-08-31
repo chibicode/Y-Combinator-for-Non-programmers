@@ -119,14 +119,14 @@ export default () => (
                         サヤはすぐ分かったよ！
                         <H args={{ name: 'runAndConertToMathbox' }} /> すると、
                         <Strong>
-                          結果は <EmojiNumber number={2} /> になる
+                          結果は <EmojiNumber number={4} /> になる
                         </Strong>
                         んじゃない？
                       </P>
-                      <R.Pmdm>
-                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={2} />{' '}
+                      <R.Kizi>
+                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={4} />{' '}
                         になると思う！
-                      </R.Pmdm>
+                      </R.Kizi>
                     </>
                   )
                 },
@@ -208,7 +208,7 @@ export default () => (
                         あ、
                         <Em>
                           一番上の部分をよく見ると、これは{' '}
-                          <EmojiNumber number={1} /> に変換できる弁当箱だ！
+                          <EmojiNumber number={3} /> に変換できる弁当箱だ！
                         </Em>
                       </P>
                       <R.Ayrl>
@@ -216,7 +216,7 @@ export default () => (
                           args={{
                             name: 'canBeConvertedCaption',
                             letter: 'l',
-                            number: 1
+                            number: 3
                           }}
                         />
                       </R.Ayrl>
@@ -246,7 +246,7 @@ export default () => (
                       <P>
                         そう！だから、とりあえずこれらを
                         <Strong>
-                          <EmojiNumber number={1} /> と{' '}
+                          <EmojiNumber number={3} /> と{' '}
                           <EmojiNumber number={0} /> に置き換えてみる
                         </Strong>
                         ね。
@@ -257,7 +257,7 @@ export default () => (
               ]}
             />
             <R.Wgby>
-              それぞれ <EmojiNumber number={1} /> と <EmojiNumber number={0} />{' '}
+              それぞれ <EmojiNumber number={3} /> と <EmojiNumber number={0} />{' '}
               に置き換えてみる
             </R.Wgby>
             <BubbleQuotes
@@ -452,9 +452,9 @@ export default () => (
                         ここまできたら、後は簡単だよね。
                         <Strong>
                           <InlineBorder type="condition" /> が{' '}
-                          <EmojiNumber number={1} /> だから、
+                          <EmojiNumber number={3} /> だから、
                           <InlineBorder type="falseCase" /> に入っている{' '}
-                          <EmojiNumber number={1} />{' '}
+                          <EmojiNumber number={3} />{' '}
                           <CustomEmoji type="plusOne" /> が残る
                         </Strong>
                         んだ。
@@ -477,14 +477,14 @@ export default () => (
                       <P>
                         ほらね、サヤがさっき言ったように、
                         <Strong>
-                          最後に <EmojiNumber number={2} /> が残った
+                          最後に <EmojiNumber number={4} /> が残った
                         </Strong>
                         でしょう？
                       </P>
-                      <R.Pmdm>
-                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={2} />{' '}
+                      <R.Kizi>
+                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={4} />{' '}
                         になった！
-                      </R.Pmdm>
+                      </R.Kizi>
                     </>
                   )
                 },
