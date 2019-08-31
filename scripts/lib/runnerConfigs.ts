@@ -4511,10 +4511,21 @@ export const cpdy: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'sm',
   containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const lxgj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xskc,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
   alphaConvertCallArg: true,
   highlightOverrides: {
-    i: 'highlighted',
-    j: 'highlighted',
-    k: 'highlighted'
+    a: 'highlighted',
+    b: 'highlighted',
+    c: 'highlighted',
+    d: 'highlighted',
+    e: 'highlighted'
   }
 }

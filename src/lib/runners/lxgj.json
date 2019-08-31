@@ -50,7 +50,7 @@
               },
               "func": {
                 "name": "shorthandFunc",
-                "highlightType": "initialHighlighted",
+                "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
                 "type": "variable",
@@ -232,7 +232,13 @@
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
-  "highlightOverrides": {},
+  "highlightOverrides": {
+    "a": "highlighted",
+    "b": "highlighted",
+    "c": "highlighted",
+    "d": "highlighted",
+    "e": "highlighted"
+  },
   "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],
   "funcPriorityAggHighlights": [],

@@ -341,6 +341,7 @@ export default () => (
                 }
               ]}
             />
+            <R.Lxgj>右下の部分に注目</R.Lxgj>
           </>
         )
       }

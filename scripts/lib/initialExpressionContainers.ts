@@ -2618,3 +2618,29 @@ export const abrk = initializeExpressionContainer([
     shorthandNumber: 1
   }
 ])
+
+export const xskc = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: isZeroParams(
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      {
+        shorthandNumber: 0
+      },
+      [
+        {
+          shorthandFunc: 'add'
+        },
+        'f'
+      ],
+      'f'
+    )
+  },
+  {
+    shorthandNumber: 1
+  }
+])
