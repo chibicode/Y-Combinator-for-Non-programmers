@@ -4546,16 +4546,30 @@ export const ruou: ExpressionRunnerShorthandConfig = {
 
 export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.xskc,
+  initialExpressionContainer: initialExpressionContainers.exoq,
   showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs',
+  variableSize: 'md',
+  alphaConvertCallArg: true
+}
+
+export const gmzn: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.aiyb,
+  showPriorities: true,
+  variableSize: 'md',
   alphaConvertCallArg: true,
-  highlightOverrides: {
-    a: 'highlighted',
-    b: 'highlighted',
-    c: 'highlighted',
-    d: 'highlighted',
-    e: 'highlighted'
-  }
+  lastAllowedExpressionState: 'default'
+}
+
+export const uiwl: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.aiyb,
+  showPriorities: true,
+  variableSize: 'md',
+  alphaConvertCallArg: true,
+  nextIterations: 1
 }

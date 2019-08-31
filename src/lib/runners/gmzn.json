@@ -1,0 +1,619 @@
+{
+  "expressionContainers": [
+    {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "arg": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "func": {
+          "arg": {
+            "name": "f",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": false,
+            "bound": false
+          },
+          "body": {
+            "type": "conditional",
+            "state": "default",
+            "checkType": "isZero",
+            "condition": {
+              "name": "f",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true
+            },
+            "trueCase": {
+              "name": "shorthandNumber",
+              "highlightType": "default",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 0
+            },
+            "falseCase": {
+              "arg": {
+                "name": "f",
+                "highlightType": "default",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [
+                  1,
+                  2
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true
+              },
+              "func": {
+                "name": "shorthandFunc",
+                "highlightType": "default",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [
+                  2
+                ],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandFunc": "add"
+              },
+              "state": "default",
+              "type": "call",
+              "priority": 2
+            },
+            "priority": 1
+          },
+          "type": "function"
+        },
+        "state": "default",
+        "type": "call",
+        "priority": 1
+      }
+    },
+    {
+      "expression": {
+        "arg": {
+          "name": "shorthandNumber",
+          "highlightType": "active",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "callArg",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": true,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "func": {
+          "arg": {
+            "name": "f",
+            "highlightType": "active",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "funcArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "type": "conditional",
+            "state": "default",
+            "checkType": "isZero",
+            "condition": {
+              "name": "f",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true
+            },
+            "trueCase": {
+              "name": "shorthandNumber",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 0
+            },
+            "falseCase": {
+              "arg": {
+                "name": "f",
+                "highlightType": "active",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "funcBound",
+                "type": "variable",
+                "argPriorityAgg": [
+                  1,
+                  2
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true
+              },
+              "func": {
+                "name": "shorthandFunc",
+                "highlightType": "active",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "funcBound",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [
+                  2
+                ],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandFunc": "add"
+              },
+              "state": "default",
+              "type": "call",
+              "priority": 2
+            },
+            "priority": 1
+          },
+          "type": "function"
+        },
+        "state": "showFuncBound",
+        "type": "call",
+        "priority": 1
+      },
+      "previouslyChangedExpressionState": "showFuncBound",
+      "activePriority": 1,
+      "containerState": "stepped"
+    },
+    {
+      "expression": {
+        "arg": {
+          "name": "shorthandNumber",
+          "highlightType": "active",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "callArg",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": true,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "func": {
+          "arg": {
+            "name": "f",
+            "highlightType": "highlighted",
+            "topLeftBadgeType": "match",
+            "bottomRightBadgeType": "funcArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "type": "conditional",
+            "state": "default",
+            "checkType": "isZero",
+            "condition": {
+              "name": "f",
+              "highlightType": "highlighted",
+              "topLeftBadgeType": "match",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true
+            },
+            "trueCase": {
+              "name": "shorthandNumber",
+              "highlightType": "highlighted",
+              "topLeftBadgeType": "unmatch",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 0
+            },
+            "falseCase": {
+              "arg": {
+                "name": "f",
+                "highlightType": "highlighted",
+                "topLeftBadgeType": "match",
+                "bottomRightBadgeType": "funcBound",
+                "type": "variable",
+                "argPriorityAgg": [
+                  1,
+                  2
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true
+              },
+              "func": {
+                "name": "shorthandFunc",
+                "highlightType": "highlighted",
+                "topLeftBadgeType": "unmatch",
+                "bottomRightBadgeType": "funcBound",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [
+                  2
+                ],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandFunc": "add"
+              },
+              "state": "default",
+              "type": "call",
+              "priority": 2
+            },
+            "priority": 1
+          },
+          "type": "function"
+        },
+        "state": "betaReducePreviewBefore",
+        "type": "call",
+        "priority": 1
+      },
+      "previouslyChangedExpressionState": "betaReducePreviewBefore",
+      "matchExists": true,
+      "activePriority": 1,
+      "containerState": "stepped"
+    },
+    {
+      "expression": {
+        "arg": {
+          "name": "shorthandNumber",
+          "highlightType": "betaReduceCallArgHighlighted",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "callArg",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": true,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "func": {
+          "arg": {
+            "name": "f",
+            "highlightType": "active",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "funcArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "type": "conditional",
+            "state": "default",
+            "checkType": "isZero",
+            "condition": {
+              "name": "shorthandNumber",
+              "highlightType": "highlighted",
+              "topLeftBadgeType": "betaReduced",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 1
+            },
+            "trueCase": {
+              "name": "shorthandNumber",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "funcBound",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 0
+            },
+            "falseCase": {
+              "arg": {
+                "name": "shorthandNumber",
+                "highlightType": "highlighted",
+                "topLeftBadgeType": "betaReduced",
+                "bottomRightBadgeType": "funcBound",
+                "type": "variable",
+                "argPriorityAgg": [
+                  1,
+                  2
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandNumber": 1
+              },
+              "func": {
+                "name": "shorthandFunc",
+                "highlightType": "active",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "funcBound",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [
+                  2
+                ],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandFunc": "add"
+              },
+              "state": "default",
+              "type": "call",
+              "priority": 2
+            },
+            "priority": 1
+          },
+          "type": "function"
+        },
+        "state": "betaReducePreviewAfter",
+        "type": "call",
+        "priority": 1
+      },
+      "previouslyChangedExpressionState": "betaReducePreviewAfter",
+      "activePriority": 1,
+      "containerState": "stepped"
+    },
+    {
+      "expression": {
+        "arg": {
+          "name": "shorthandNumber",
+          "highlightType": "removed",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "callArg",
+          "type": "variable",
+          "argPriorityAgg": [
+            1
+          ],
+          "funcPriorityAgg": [],
+          "emphasizePriority": true,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "func": {
+          "arg": {
+            "name": "f",
+            "highlightType": "removed",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "funcArg",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              1
+            ],
+            "emphasizePriority": true,
+            "bound": false
+          },
+          "body": {
+            "type": "conditional",
+            "state": "default",
+            "checkType": "isZero",
+            "condition": {
+              "name": "shorthandNumber",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 1
+            },
+            "trueCase": {
+              "name": "shorthandNumber",
+              "highlightType": "active",
+              "topLeftBadgeType": "none",
+              "bottomRightBadgeType": "none",
+              "type": "variable",
+              "argPriorityAgg": [],
+              "funcPriorityAgg": [
+                1
+              ],
+              "emphasizePriority": false,
+              "bound": true,
+              "shorthandNumber": 0
+            },
+            "falseCase": {
+              "arg": {
+                "name": "shorthandNumber",
+                "highlightType": "active",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [
+                  1,
+                  2
+                ],
+                "funcPriorityAgg": [],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandNumber": 1
+              },
+              "func": {
+                "name": "shorthandFunc",
+                "highlightType": "active",
+                "topLeftBadgeType": "none",
+                "bottomRightBadgeType": "none",
+                "type": "variable",
+                "argPriorityAgg": [],
+                "funcPriorityAgg": [
+                  2
+                ],
+                "emphasizePriority": false,
+                "bound": true,
+                "shorthandFunc": "add"
+              },
+              "state": "default",
+              "type": "call",
+              "priority": 2
+            },
+            "priority": 1
+          },
+          "type": "function"
+        },
+        "state": "betaReducePreviewCrossed",
+        "type": "call",
+        "priority": 1
+      },
+      "previouslyChangedExpressionState": "betaReducePreviewCrossed",
+      "activePriority": 1,
+      "containerState": "stepped"
+    },
+    {
+      "containerState": "ready",
+      "previouslyChangedExpressionState": "default",
+      "expression": {
+        "type": "conditional",
+        "state": "default",
+        "checkType": "isZero",
+        "condition": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 1
+        },
+        "trueCase": {
+          "name": "shorthandNumber",
+          "highlightType": "default",
+          "topLeftBadgeType": "none",
+          "bottomRightBadgeType": "none",
+          "type": "variable",
+          "argPriorityAgg": [],
+          "funcPriorityAgg": [
+            1
+          ],
+          "emphasizePriority": false,
+          "bound": true,
+          "shorthandNumber": 0
+        },
+        "falseCase": {
+          "arg": {
+            "name": "shorthandNumber",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              1,
+              2
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandNumber": 1
+          },
+          "func": {
+            "name": "shorthandFunc",
+            "highlightType": "default",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              2
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "add"
+          },
+          "state": "default",
+          "type": "call",
+          "priority": 2
+        },
+        "priority": 1
+      }
+    }
+  ],
+  "speed": 1,
+  "showOnlyFocused": false,
+  "hideControls": false,
+  "explanationsVisibility": "hiddenInitialPausedOnly",
+  "hidePriorities": false,
+  "variableSize": "md",
+  "containerSize": "xxs",
+  "hidePlayButton": false,
+  "hideBottomRightBadges": false,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": true,
+  "highlightOverridesCallArgAndFuncUnboundOnly": false,
+  "bottomRightBadgeOverrides": {},
+  "highlightOverrides": {},
+  "highlightOverrideActiveAfterStart": false,
+  "argPriorityAggHighlights": [],
+  "funcPriorityAggHighlights": [],
+  "highlightFunctions": false,
+  "superFastForward": false,
+  "alphaConvertCallArg": true,
+  "skipActive": true
+}

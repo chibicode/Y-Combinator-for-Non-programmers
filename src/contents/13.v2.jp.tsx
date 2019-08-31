@@ -383,15 +383,15 @@ export default () => (
                         <UlLi>
                           上にある <EmojiForLetter letter="f" />{' '}
                           <CustomEmoji type="plusOne" /> は{' '}
-                          <InlineBorder type="falseCase" /> の部分
+                          <InlineBorder type="falseCase" /> の部分へ
                         </UlLi>
                         <UlLi>
                           その下にある <EmojiNumber number={0} /> は{' '}
-                          <InlineBorder type="trueCase" /> の部分
+                          <InlineBorder type="trueCase" /> の部分へ
                         </UlLi>
                         <UlLi>
                           一番下の <EmojiForLetter letter="f" /> は{' '}
-                          <InlineBorder type="condition" /> の部分
+                          <InlineBorder type="condition" /> の部分へ
                         </UlLi>
                       </Ul>
                       <P>置き換えるとこうなります！</P>
@@ -400,9 +400,108 @@ export default () => (
                 }
               ]}
             />
+            <R.Awbq>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+              」<br />
+              の部分を置き換えた後
+            </R.Awbq>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なんと、超シンプルになった！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>あとは実行するだけ</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        あとは、これを
+                        <H args={{ name: 'play' }} />{' '}
+                        するだけだよ。というわけで、
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Gmzn />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        ここまできたら、後は簡単だよね。
+                        <Strong>
+                          <InlineBorder type="condition" /> が{' '}
+                          <EmojiNumber number={1} /> だから、
+                          <InlineBorder type="falseCase" /> に入っている{' '}
+                          <EmojiNumber number={1} />{' '}
+                          <CustomEmoji type="plusOne" /> が残る
+                        </Strong>
+                        んだ。
+                      </P>
+                      <P>
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Uiwl />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        ほらね、サヤがさっき言ったように、
+                        <Strong>
+                          最後に <EmojiNumber number={2} /> が残った
+                        </Strong>
+                        でしょう？
+                      </P>
+                      <R.Pmdm>
+                        <Emoji>👧🏻</Emoji> 結果は <EmojiNumber number={2} />{' '}
+                        になった！
+                      </R.Pmdm>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>たしかに…！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
+      // TODO: でも、サヤちゃんがやったのはズルじゃないか？もしそのまま実行していたらどうなっていたんだろう？
     ]}
   />
 )

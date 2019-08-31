@@ -2646,3 +2646,36 @@ export const xskc = initializeExpressionContainer([
     shorthandNumber: 1
   }
 ])
+
+export const exoq = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: {
+      checkType: 'isZero',
+      condition: highlighted('f'),
+      trueCase: { shorthandNumber: 0, initialHighlight: true },
+      falseCase: [
+        { shorthandFunc: 'add', initialHighlight: true },
+        highlighted('f')
+      ]
+    }
+  },
+  {
+    shorthandNumber: 1
+  }
+])
+
+export const aiyb = initializeExpressionContainer([
+  {
+    arg: 'f',
+    body: {
+      checkType: 'isZero',
+      condition: 'f',
+      trueCase: { shorthandNumber: 0 },
+      falseCase: [{ shorthandFunc: 'add' }, 'f']
+    }
+  },
+  {
+    shorthandNumber: 1
+  }
+])
