@@ -791,13 +791,10 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'dog',
+                  type: 'saya',
                   children: (
                     <>
-                      <P>
-                        いま、まさにその話をしようと思っていたところでした。
-                        <Em>先ほどのこちらの弁当箱をご覧ください。</Em>
-                      </P>
+                      <P>...</P>
                     </>
                   )
                 }
@@ -810,10 +807,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        この弁当箱に、少し手を加えてみました。こちらをご覧ください。
-                        <Em>黄色が追加した部分です。</Em>
-                      </P>
+                      <P>...</P>
                     </>
                   )
                 }
@@ -822,66 +816,11 @@ export default () => (
             <R.Cefx>
               <Strong>黄色が追加した部分</Strong>
             </R.Cefx>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>これもかなり複雑だなあ…</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、
-                        <Strong>
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          の部分には、二種類の料理しか入りません。
-                        </Strong>
-                      </P>
-                      <EmojiSeparator
-                        nodes={[
-                          <Emoji>🅰️</Emoji>,
-                          <CustomEmoji type="questionFoodGrey" />,
-                          <Emoji>🅱️</Emoji>
-                        ]}
-                        description={
-                          <>
-                            <Strong>
-                              <CustomEmoji type="questionFoodGrey" />{' '}
-                              には二種類の料理しか入らない
-                            </Strong>
-                          </>
-                        }
-                      />
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>ふむふむ…で、この弁当箱はいったい何なんだい？</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>実はこの弁当箱、</P>
-                    </>
-                  )
-                }
-              ]}
-            />
+            ]} />
           </>
         )
-      }
+      } // Remove question marks, actually fill in real answers
+      // Saya: 面白いことに気づいた…
     ]}
   />
 )
