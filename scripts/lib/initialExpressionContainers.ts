@@ -2528,7 +2528,7 @@ export const gbbo = initializeExpressionContainer([
       'c',
       'd',
       'e',
-      numberParams('g', 'h', 0),
+      numberParams('g', 'h', 2),
       [succParams('i', 'j', 'k'), 'f'],
       'f'
     )
@@ -2541,7 +2541,7 @@ export const loem = initializeExpressionContainer(
 )
 
 export const harq = initializeExpressionContainer(
-  numberParamsHighlightNumber('g', 'h', 0)
+  numberParamsHighlightNumber('g', 'h', 2)
 )
 
 export const aqul = initializeExpressionContainer([
@@ -2554,7 +2554,7 @@ export const aqul = initializeExpressionContainer([
       'd',
       'e',
       {
-        shorthandNumber: 0,
+        shorthandNumber: 2,
         initialHighlight: true
       },
       [succParams('i', 'j', 'k'), 'f'],
@@ -2577,7 +2577,7 @@ export const snye = initializeExpressionContainer([
       'd',
       'e',
       {
-        shorthandNumber: 0
+        shorthandNumber: 2
       },
       [succParams('i', 'j', 'k'), 'f'],
       'f'
@@ -2602,7 +2602,7 @@ export const abrk = initializeExpressionContainer([
       'd',
       'e',
       {
-        shorthandNumber: 0
+        shorthandNumber: 2
       },
       [
         {
@@ -2629,7 +2629,7 @@ export const xskc = initializeExpressionContainer([
       highlighted('d'),
       highlighted('e'),
       {
-        shorthandNumber: 0,
+        shorthandNumber: 2,
         initialHighlight: true
       },
       [
@@ -2653,7 +2653,7 @@ export const exoq = initializeExpressionContainer([
     body: {
       checkType: 'isZero',
       condition: highlighted('f'),
-      trueCase: { shorthandNumber: 0, initialHighlight: true },
+      trueCase: { shorthandNumber: 2, initialHighlight: true },
       falseCase: [
         { shorthandFunc: 'add', initialHighlight: true },
         highlighted('f')
@@ -2671,7 +2671,7 @@ export const aiyb = initializeExpressionContainer([
     body: {
       checkType: 'isZero',
       condition: 'f',
-      trueCase: { shorthandNumber: 0 },
+      trueCase: { shorthandNumber: 2 },
       falseCase: [{ shorthandFunc: 'add' }, 'f']
     }
   },
@@ -2717,7 +2717,7 @@ export const xlrf = initializeExpressionContainer([
       body: {
         checkType: 'isZero',
         condition: 'f',
-        trueCase: { shorthandNumber: 0 },
+        trueCase: { shorthandNumber: 2 },
         falseCase: [
           { shorthandFunc: 'add' },
           ['a', [{ shorthandFunc: 'pred', initialHighlight: true }, 'f']]

@@ -225,7 +225,7 @@ export default () => (
                         さらに、
                         <Em>
                           右の真ん中の部分をよく見ると、これは{' '}
-                          <EmojiNumber number={0} /> に変換できる弁当箱だ！
+                          <EmojiNumber number={2} /> に変換できる弁当箱だ！
                         </Em>
                       </P>
                       <R.Vhte>
@@ -233,7 +233,7 @@ export default () => (
                           args={{
                             name: 'canBeConvertedCaption',
                             letter: 'g',
-                            number: 0
+                            number: 2
                           }}
                         />
                       </R.Vhte>
@@ -248,7 +248,7 @@ export default () => (
                         そう！だから、とりあえずこれらを
                         <Strong>
                           <EmojiNumber number={3} /> と{' '}
-                          <EmojiNumber number={0} /> に置き換えてみる
+                          <EmojiNumber number={2} /> に置き換えてみる
                         </Strong>
                         ね。
                       </P>
@@ -258,7 +258,7 @@ export default () => (
               ]}
             />
             <R.Wgby>
-              それぞれ <EmojiNumber number={3} /> と <EmojiNumber number={0} />{' '}
+              それぞれ <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
               に置き換えてみる
             </R.Wgby>
             <BubbleQuotes
@@ -387,7 +387,7 @@ export default () => (
                           <InlineBorder type="falseCase" /> の部分へ
                         </UlLi>
                         <UlLi>
-                          その下にある <EmojiNumber number={0} /> は{' '}
+                          その下にある <EmojiNumber number={2} /> は{' '}
                           <InlineBorder type="trueCase" /> の部分へ
                         </UlLi>
                         <UlLi>
@@ -825,7 +825,29 @@ export default () => (
             <R.Cefx>
               <Strong>黄色が追加した部分</Strong>
             </R.Cefx>
-            <R.Htir></R.Htir>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふむふむ…何やら複雑になったなあ。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        では、この弁当箱を
+                        <H args={{ name: 'play' }} /> してみて！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

@@ -4441,7 +4441,7 @@ export const bnyo: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
-  variableSize: 'xs',
+  variableSize: 'xxs',
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
@@ -4450,7 +4450,7 @@ export const dpaw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
-  variableSize: 'xs',
+  variableSize: 'xxs',
   containerSize: 'xs',
   alphaConvertCallArg: true,
   highlightOverrides: {
@@ -4586,7 +4586,7 @@ export const ynoy: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
-  variableSize: 'xs',
+  variableSize: 'xxs',
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
@@ -4615,7 +4615,7 @@ export const cefx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xlrf,
   showPriorities: true,
-  variableSize: 'xs',
+  variableSize: 'xxs',
   containerSize: 'xs',
   highlightOverrides: { a: 'highlighted', b: 'highlighted' }
 }

@@ -72,7 +72,7 @@
                   ],
                   "emphasizePriority": false,
                   "bound": true,
-                  "shorthandNumber": 0
+                  "shorthandNumber": 2
                 },
                 "falseCase": {
                   "arg": {
@@ -321,7 +321,7 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "xs",
+  "variableSize": "xxs",
   "containerSize": "xs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,

@@ -59,7 +59,7 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandNumber": 0
+              "shorthandNumber": 2
             },
             "falseCase": {
               "arg": {
@@ -160,7 +160,7 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandNumber": 0
+              "shorthandNumber": 2
             },
             "falseCase": {
               "arg": {
@@ -264,7 +264,7 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandNumber": 0
+              "shorthandNumber": 2
             },
             "falseCase": {
               "arg": {
@@ -370,7 +370,7 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandNumber": 0
+              "shorthandNumber": 2
             },
             "falseCase": {
               "arg": {
@@ -476,7 +476,7 @@
               ],
               "emphasizePriority": false,
               "bound": true,
-              "shorthandNumber": 0
+              "shorthandNumber": 2
             },
             "falseCase": {
               "arg": {
@@ -555,7 +555,7 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 0
+          "shorthandNumber": 2
         },
         "falseCase": {
           "arg": {
