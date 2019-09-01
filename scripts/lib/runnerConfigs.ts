@@ -4598,3 +4598,15 @@ export const gmgs: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { j: '🅰️', k: '🅱️' },
   variableSize: 'md'
 }
+
+export const ykqf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.awxe,
+  showPriorities: true
+}
+
+export const ifpo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uggy,
+  showPriorities: true
+}

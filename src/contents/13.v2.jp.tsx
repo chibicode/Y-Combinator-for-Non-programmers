@@ -577,7 +577,10 @@ export default () => (
                     <>
                       <P>
                         最後に残った以下の弁当箱は、
-                        <EmojiNumber number={4} /> に変換できる弁当箱ですね。
+                        <Strong>
+                          <EmojiNumber number={4} /> に変換できる弁当箱
+                        </Strong>
+                        ですね。
                       </P>
                       <R.Gmgs>
                         <H
@@ -596,13 +599,65 @@ export default () => (
                       <R.Kizi></R.Kizi>
                     </>
                   )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          サヤちゃんのやり方でやったときと、結果が同じになった！
+                        </Strong>
+                      </P>
+                      <P>
+                        ということは、サヤちゃんのやり方は間違ってなかったのか…
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
           </>
         )
+      },
+      {
+        type: 'summary',
+        title: (
+          <>
+            弁当箱の一部分を、同じ効果がある計算箱と置き換えても結果は変わらない
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>ここで一旦立ち止まって振り返ってみましょう。</P>
+                      <P>
+                        さきほどサヤちゃんがやったのは、「
+                        <Strong>
+                          弁当箱の一部分を、同じ効果がある計算箱と置き換える
+                        </Strong>
+                        」という手法でした。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ykqf>
+              <Emoji>🍱</Emoji> 弁当箱の一部分を…
+            </R.Ykqf>
+            <ExpressionRunnerSeparator />
+            <R.Ifpo>
+              同じ効果がある <Emoji>🎁</Emoji> 計算箱と入れ替える
+            </R.Ifpo>
+          </>
+        )
       }
-      // TODO: でも、サヤちゃんがやったのはズルじゃないか？もしそのまま実行していたらどうなっていたんだろう？
     ]}
   />
 )

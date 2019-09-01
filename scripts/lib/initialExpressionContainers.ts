@@ -2683,3 +2683,19 @@ export const aiyb = initializeExpressionContainer([
 export const teba = initializeExpressionContainer(
   numberParamsHighlightNumber('j', 'k', 4)
 )
+
+export const awxe = initializeExpressionContainer([
+  {
+    arg: 'bentoBox',
+    body: highlighted('bentoBox')
+  },
+  'bentoBox'
+])
+
+export const uggy = initializeExpressionContainer([
+  {
+    arg: 'bentoBox',
+    body: highlighted('mathBox')
+  },
+  'bentoBox'
+])
