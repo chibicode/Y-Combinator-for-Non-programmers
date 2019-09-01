@@ -734,8 +734,20 @@ export default () => (
               <br />
               分かりやすくなる
             </R.Ghwe>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <Strong>
+                ちなみに、どちらの場合も
+                <br />
+                実行結果は <EmojiNumber number={4} /> になる
+              </Strong>
+            </ExpressionRunnerCaptionOnly>
           </>
         )
+      },
+      {
+        title: <>繰り返しの弁当箱との繋がり</>,
+        content: <></>
       }
     ]}
   />
