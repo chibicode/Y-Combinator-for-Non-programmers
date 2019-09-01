@@ -2679,3 +2679,7 @@ export const aiyb = initializeExpressionContainer([
     shorthandNumber: 3
   }
 ])
+
+export const teba = initializeExpressionContainer(
+  numberParamsHighlightNumber('j', 'k', 4)
+)

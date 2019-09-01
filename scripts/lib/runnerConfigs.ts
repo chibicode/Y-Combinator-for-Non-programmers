@@ -4590,3 +4590,11 @@ export const ynoy: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
+
+export const gmgs: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.teba,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { j: '🅰️', k: '🅱️' },
+  variableSize: 'md'
+}

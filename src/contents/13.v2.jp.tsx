@@ -559,7 +559,7 @@ export default () => (
                       <P>
                         (
                         <Em>
-                          非常に実行がかかるので、早送りはここではしません。
+                          早送りをすると時間が非常にかかるので、今回は省略します。
                         </Em>
                         )
                       </P>
@@ -569,6 +569,36 @@ export default () => (
               ]}
             />
             <R.Ynoy></R.Ynoy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        最後に残った以下の弁当箱は、
+                        <EmojiNumber number={4} /> に変換できる弁当箱ですね。
+                      </P>
+                      <R.Gmgs>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'j',
+                            number: 4
+                          }}
+                        />
+                      </R.Gmgs>
+                      <P>
+                        つまり、
+                        <H args={{ name: 'runAndConertToMathbox' }} />{' '}
+                        すると、結果は <EmojiNumber number={4} /> になるのです。
+                      </P>
+                      <R.Kizi></R.Kizi>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
