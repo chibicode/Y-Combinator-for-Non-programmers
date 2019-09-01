@@ -2707,3 +2707,46 @@ export const lzeq = initializeExpressionContainer([
   },
   highlighted('mathBox')
 ])
+
+export const xlrf = initializeExpressionContainer([
+  {
+    arg: highlighted('questionFoodGrey'),
+    body: [
+      {
+        arg: highlighted('questionFoodGrey'),
+        body: [
+          highlighted('questionFoodGrey'),
+          [highlighted('questionFoodGrey'), highlighted('questionFoodGrey')]
+        ]
+      },
+      {
+        arg: highlighted('questionFoodGrey'),
+        body: [
+          highlighted('questionFoodGrey'),
+          [highlighted('questionFoodGrey'), highlighted('questionFoodGrey')]
+        ]
+      }
+    ]
+  },
+  {
+    arg: highlighted('questionFoodGrey'),
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { shorthandNumber: 0 },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          [
+            highlighted('questionFoodGrey'),
+            [{ shorthandFunc: 'pred', initialHighlight: true }, 'f']
+          ]
+        ]
+      }
+    }
+  },
+  {
+    shorthandNumber: 3
+  }
+])

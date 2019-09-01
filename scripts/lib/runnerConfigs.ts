@@ -4610,3 +4610,11 @@ export const ifpo: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.uggy,
   showPriorities: true
 }
+
+export const cefx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xlrf,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
+}

@@ -650,7 +650,7 @@ export default () => (
             </R.Ykqf>
             <ExpressionRunnerSeparator />
             <R.Ifpo>
-              同じ効果がある <CustomEmoji type="mathBox" /> 計算箱と入れ替える
+              同じ効果がある <CustomEmoji type="mathBox" /> 計算箱と置き換える
             </R.Ifpo>
             <BubbleQuotes
               quotes={[
@@ -747,7 +747,140 @@ export default () => (
       },
       {
         title: <>繰り返しの弁当箱との繋がり</>,
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        でもさあ…質問なんだけど、
+                        <Em>
+                          この話って、「
+                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          」の何の関係があるの？
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Bwnp>
+                    <CustomEmoji type="plusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Bwnp>
+                </>
+              }
+              right={
+                <>
+                  <R.Ewfr>
+                    <CustomEmoji type="minusOne" /> を{' '}
+                    <CustomEmoji type="blankNumber" /> 回<br />
+                    繰り返す
+                  </R.Ewfr>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        いま、まさにその話をしようと思っていたところでした。
+                        <Em>先ほどのこちらの弁当箱をご覧ください。</Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ghwe>先ほどの弁当箱</R.Ghwe>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この弁当箱に、少し手を加えてみました。こちらをご覧ください。
+                        <Em>黄色が追加した部分です。</Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Cefx>
+              <Strong>黄色が追加した部分</Strong>
+            </R.Cefx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>これもかなり複雑だなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ちなみに、
+                        <Strong>
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          の部分には、二種類の料理しか入りません。
+                        </Strong>
+                      </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <Emoji>🅰️</Emoji>,
+                          <CustomEmoji type="questionFoodGrey" />,
+                          <Emoji>🅱️</Emoji>
+                        ]}
+                        description={
+                          <>
+                            <Strong>
+                              <CustomEmoji type="questionFoodGrey" />{' '}
+                              には二種類の料理しか入らない
+                            </Strong>
+                          </>
+                        }
+                      />
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふむふむ…で、この弁当箱はいったい何なんだい？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>実はこの弁当箱、</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />
