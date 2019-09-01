@@ -21,8 +21,8 @@
         "func": {
           "arg": {
             "arg": {
-              "name": "questionFoodGrey",
-              "highlightType": "initialHighlighted",
+              "name": "a",
+              "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -112,8 +112,8 @@
                       "priority": 4
                     },
                     "func": {
-                      "name": "questionFoodGrey",
-                      "highlightType": "initialHighlighted",
+                      "name": "a",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -154,8 +154,8 @@
           },
           "func": {
             "arg": {
-              "name": "questionFoodGrey",
-              "highlightType": "initialHighlighted",
+              "name": "a",
+              "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -170,8 +170,8 @@
             "body": {
               "arg": {
                 "arg": {
-                  "name": "questionFoodGrey",
-                  "highlightType": "initialHighlighted",
+                  "name": "b",
+                  "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -185,8 +185,8 @@
                 "body": {
                   "arg": {
                     "arg": {
-                      "name": "questionFoodGrey",
-                      "highlightType": "initialHighlighted",
+                      "name": "b",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -199,8 +199,8 @@
                       "bound": true
                     },
                     "func": {
-                      "name": "questionFoodGrey",
-                      "highlightType": "initialHighlighted",
+                      "name": "b",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -216,8 +216,8 @@
                     "priority": 2
                   },
                   "func": {
-                    "name": "questionFoodGrey",
-                    "highlightType": "initialHighlighted",
+                    "name": "a",
+                    "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -236,8 +236,8 @@
               },
               "func": {
                 "arg": {
-                  "name": "questionFoodGrey",
-                  "highlightType": "initialHighlighted",
+                  "name": "b",
+                  "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -251,8 +251,8 @@
                 "body": {
                   "arg": {
                     "arg": {
-                      "name": "questionFoodGrey",
-                      "highlightType": "initialHighlighted",
+                      "name": "b",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -265,8 +265,8 @@
                       "bound": true
                     },
                     "func": {
-                      "name": "questionFoodGrey",
-                      "highlightType": "initialHighlighted",
+                      "name": "b",
+                      "highlightType": "default",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -282,8 +282,8 @@
                     "priority": 2
                   },
                   "func": {
-                    "name": "questionFoodGrey",
-                    "highlightType": "initialHighlighted",
+                    "name": "a",
+                    "highlightType": "default",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -329,7 +329,10 @@
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
-  "highlightOverrides": {},
+  "highlightOverrides": {
+    "a": "highlighted",
+    "b": "highlighted"
+  },
   "highlightOverrideActiveAfterStart": false,
   "argPriorityAggHighlights": [],
   "funcPriorityAggHighlights": [],

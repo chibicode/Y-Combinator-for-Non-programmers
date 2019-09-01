@@ -2709,27 +2709,9 @@ export const lzeq = initializeExpressionContainer([
 ])
 
 export const xlrf = initializeExpressionContainer([
+  yCombinator,
   {
-    arg: highlighted('questionFoodGrey'),
-    body: [
-      {
-        arg: highlighted('questionFoodGrey'),
-        body: [
-          highlighted('questionFoodGrey'),
-          [highlighted('questionFoodGrey'), highlighted('questionFoodGrey')]
-        ]
-      },
-      {
-        arg: highlighted('questionFoodGrey'),
-        body: [
-          highlighted('questionFoodGrey'),
-          [highlighted('questionFoodGrey'), highlighted('questionFoodGrey')]
-        ]
-      }
-    ]
-  },
-  {
-    arg: highlighted('questionFoodGrey'),
+    arg: 'a',
     body: {
       arg: 'f',
       body: {
@@ -2738,10 +2720,7 @@ export const xlrf = initializeExpressionContainer([
         trueCase: { shorthandNumber: 0 },
         falseCase: [
           { shorthandFunc: 'add' },
-          [
-            highlighted('questionFoodGrey'),
-            [{ shorthandFunc: 'pred', initialHighlight: true }, 'f']
-          ]
+          ['a', [{ shorthandFunc: 'pred', initialHighlight: true }, 'f']]
         ]
       }
     }

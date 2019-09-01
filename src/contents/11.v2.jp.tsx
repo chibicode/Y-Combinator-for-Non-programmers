@@ -73,7 +73,8 @@ export default () => (
               」は、まだ返してもらっていません。これを弁当箱で再現できないと返してもらえないのです。
             </P>
             <TwoColGrid
-              noMargin
+              noTopNegativeMargin
+              noBottomNegativeMargin
               left={
                 <>
                   <R.Bwnp>

@@ -6,19 +6,25 @@ import { spaces } from 'src/lib/theme'
 const TwoColGrid = ({
   left,
   right,
-  noMargin
+  noTopNegativeMargin,
+  noBottomNegativeMargin
 }: {
   left: React.ReactNode
   right: React.ReactNode
-  noMargin?: boolean
+  noTopNegativeMargin?: boolean
+  noBottomNegativeMargin?: boolean
 }) => (
   <Flex
-    css={
-      !noMargin &&
-      css`
-        margin: ${spaces('-1.5')} ${spaces('-0.75')};
-      `
-    }
+    css={[
+      !noTopNegativeMargin &&
+        css`
+          margin-top: ${spaces('-1.5')};
+        `,
+      !noBottomNegativeMargin &&
+        css`
+          margin-top: ${spaces('-0.75')};
+        `
+    ]}
   >
     <div
       css={css`

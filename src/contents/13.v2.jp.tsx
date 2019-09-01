@@ -769,6 +769,7 @@ export default () => (
               ]}
             />
             <TwoColGrid
+              noBottomNegativeMargin
               left={
                 <>
                   <R.Bwnp>
@@ -788,13 +789,17 @@ export default () => (
                 </>
               }
             />
+            <P>すると、サヤちゃんがまた何かに気づいたようです。</P>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
-                      <P>...</P>
+                      <P>
+                        ねえねえ、面白いことを発見したんだけど、ちょっと見てくれる？
+                      </P>
+                      <P>こちらが、先ほどの弁当箱だけど…</P>
                     </>
                   )
                 }
@@ -804,10 +809,14 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'dog',
+                  type: 'saya',
                   children: (
                     <>
-                      <P>...</P>
+                      <P>
+                        この弁当箱に、以下のように
+                        <Strong>いろいろ追加してみた</Strong>の。
+                        <Em>黄色の部分が追加した部分</Em>だよ。
+                      </P>
                     </>
                   )
                 }
@@ -816,11 +825,10 @@ export default () => (
             <R.Cefx>
               <Strong>黄色が追加した部分</Strong>
             </R.Cefx>
-            ]} />
+            <R.Htir></R.Htir>
           </>
         )
-      } // Remove question marks, actually fill in real answers
-      // Saya: 面白いことに気づいた…
+      }
     ]}
   />
 )

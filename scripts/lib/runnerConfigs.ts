@@ -4616,5 +4616,15 @@ export const cefx: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.xlrf,
   showPriorities: true,
   variableSize: 'xs',
+  containerSize: 'xs',
+  highlightOverrides: { a: 'highlighted', b: 'highlighted' }
+}
+
+export const htir: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xlrf,
+  showPriorities: true,
+  isDone: true,
+  variableSize: 'xs',
   containerSize: 'xs'
 }
