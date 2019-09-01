@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Mathbox</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mathbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#7986CB" stroke-width="3" fill="#FFFFFF" x="1.5" y="1.5" width="33" height="33" rx="4"></rect>
+        <g id="Group-2" transform="translate(6.000000, 6.000000)">
+            <g id="Group" transform="translate(13.250000, 0.250000)" fill="#3B88C3" fill-rule="nonzero">
+                <path d="M10.5,9.33333333 C10.5,9.977625 9.977625,10.5 9.33333333,10.5 L1.16666667,10.5 C0.522375,10.5 0,9.977625 0,9.33333333 L0,1.16666667 C0,0.522375 0.522375,0 1.16666667,0 L9.33333333,0 C9.977625,0 10.5,0.522375 10.5,1.16666667 L10.5,9.33333333 Z" id="Path"></path>
+            </g>
+            <g id="Group-Copy" transform="translate(13.250000, 13.250000)" fill="#BE1931" fill-rule="nonzero">
+                <path d="M10.5,9.33333333 C10.5,9.977625 9.977625,10.5 9.33333333,10.5 L1.16666667,10.5 C0.522375,10.5 0,9.977625 0,9.33333333 L0,1.16666667 C0,0.522375 0.522375,0 1.16666667,0 L9.33333333,0 C9.977625,0 10.5,0.522375 10.5,1.16666667 L10.5,9.33333333 Z" id="Path"></path>
+            </g>
+            <g id="Group" transform="translate(0.250000, 13.250000)" fill="#3B88C3" fill-rule="nonzero">
+                <path d="M10.5,9.33333333 C10.5,9.977625 9.977625,10.5 9.33333333,10.5 L1.16666667,10.5 C0.522375,10.5 0,9.977625 0,9.33333333 L0,1.16666667 C0,0.522375 0.522375,0 1.16666667,0 L9.33333333,0 C9.977625,0 10.5,0.522375 10.5,1.16666667 L10.5,9.33333333 Z" id="Path"></path>
+            </g>
+            <g id="Group" transform="translate(0.250000, 0.250000)">
+                <g id="31-20e3">
+                    <g id="2795" transform="translate(1.166667, 2.916667)"></g>
+                </g>
+                <path d="M10.5,9.33333333 C10.5,9.977625 9.977625,10.5 9.33333333,10.5 L1.16666667,10.5 C0.522375,10.5 0,9.977625 0,9.33333333 L0,1.16666667 C0,0.522375 0.522375,0 1.16666667,0 L9.33333333,0 C9.977625,0 10.5,0.522375 10.5,1.16666667 L10.5,9.33333333 Z" id="Path" fill="#31373D" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

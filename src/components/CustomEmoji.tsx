@@ -16,6 +16,7 @@ import LetterFSvg from 'src/components/LetterFSvg'
 import BlankNumberPinkSvg from 'src/components/BlankNumberPinkSvg'
 import BlankNumberGreySvg from 'src/components/BlankNumberGreySvg'
 import BlankNumberPurpleSvg from 'src/components/BlankNumberPurpleSvg'
+import MathBoxSvg from 'src/components/MathBoxSvg'
 import TwentySvg from 'src/components/TwentySvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
@@ -37,7 +38,8 @@ export const customEmojiToComponent = {
   F: LetterFSvg,
   blankNumberPink: BlankNumberPinkSvg,
   blankNumberGrey: BlankNumberGreySvg,
-  blankNumberPurple: BlankNumberPurpleSvg
+  blankNumberPurple: BlankNumberPurpleSvg,
+  mathBox: MathBoxSvg
 }
 
 const CustomEmoji = ({

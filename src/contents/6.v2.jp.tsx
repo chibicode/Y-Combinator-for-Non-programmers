@@ -12,6 +12,7 @@ import {
 } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
@@ -152,7 +153,13 @@ export default () => (
         title: <>ミニオンの芸</>,
         content: (
           <>
-            <EmojiSeparator emojis={['🍱', '🐶', '🎁']} />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <Emoji>🐶</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+            />
             <BubbleQuotes
               quotes={[
                 {

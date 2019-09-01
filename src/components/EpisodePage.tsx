@@ -10,7 +10,6 @@ import EpisodePageFooter from 'src/components/EpisodePageFooter'
 import EpisodeContext from 'src/components/EpisodeContext'
 import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
-import episodeEmojis from 'src/lib/episodeEmojis'
 import NotFoundCardList from 'src/components/NotFoundCardList'
 import { ogUrl } from 'src/lib/meta'
 
@@ -31,12 +30,8 @@ const EpisodePage = ({
   notFound,
   contentName
 }: EpisodePageProps) => {
-  const title = `${
-    episodeEmojis[episodeNumber as keyof typeof episodeEmojis][1]
-  } ${lessonTitle}${
-    episodeTitleString
-      ? ` ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][0]} ${episodeTitleString} ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][2]}`
-      : ''
+  const title = `${lessonTitle}${
+    episodeTitleString ? ` — ${episodeTitleString}` : ''
   }`
   const [modalVisible, setModalVisible] = useState(false)
   const hideModal = () => setModalVisible(false)

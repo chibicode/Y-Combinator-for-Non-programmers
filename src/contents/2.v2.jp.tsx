@@ -78,11 +78,18 @@ export default () => (
         content: (
           <>
             <P>
-              前回は、ラムダ村に代々伝わる「<Emoji>🎁</Emoji>{' '}
-              <Strong>計算箱</Strong>」の話をしました。
+              前回は、ラムダ村に代々伝わる「
+              <CustomEmoji type="mathBox" /> <Strong>計算箱</Strong>
+              」の話をしました。
             </P>
             <EmojiSeparator
-              emojis={['🌲', '🙂', '🎁', '🙂', '🌲']}
+              nodes={[
+                <Emoji>🌲</Emoji>,
+                <Emoji>🙂</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>🙂</Emoji>,
+                <Emoji>🌲</Emoji>
+              ]}
               description={<>ラムダ村の村人と、計算箱</>}
             />
             <P>
@@ -96,7 +103,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="plusOne" />,
-                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="minusOne" />
               ]}
               description={<>1を足す機能と1を引く機能</>}
@@ -555,7 +562,13 @@ export default () => (
               。だから彼らは、足し算や引き算を行うときは、計算箱に頼り切っていました。
             </P>
             <EmojiSeparator
-              emojis={['🌲', '😍', '🎁', '😍', '🌲']}
+              nodes={[
+                <Emoji>🌲</Emoji>,
+                <Emoji>😍</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>😍</Emoji>,
+                <Emoji>🌲</Emoji>
+              ]}
               description={<>「計算箱が無いとやってけない！」</>}
             />
             <P>

@@ -12,6 +12,7 @@ import {
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
+import CustomEmoji from 'src/components/CustomEmoji'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import H from 'src/components/H'
@@ -60,7 +61,7 @@ export default () => (
                     <P>
                       安心しろ、お前たちの命だけは助けてやる…だが、お前たちが大事にしている
                       <Strong>
-                        計算箱 <Emoji>🎁</Emoji>
+                        計算箱 <CustomEmoji type="mathBox" />
                       </Strong>
                       <Em> は、すべて没収させてもらうぞ！</Em>
                     </P>
@@ -83,7 +84,14 @@ export default () => (
               こうして悪魔は、
               <Strong>ラムダ村から計算箱を取り上げてしまったのです。</Strong>
             </P>
-            <EmojiSeparator emojis={['🌲', '😈', '🎁', '🌲']} />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🌲</Emoji>,
+                <Emoji>😈</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>🌲</Emoji>
+              ]}
+            />
             <P>ラムダ村からは、計算箱がすべて無くなってしまいました。</P>
             <R.Dgyc>
               <Emoji>😈</Emoji> 計算箱は没収だ！

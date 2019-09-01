@@ -6,6 +6,8 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import episodeEmojis from 'src/lib/episodeEmojis'
+import CustomEmoji from 'src/components/CustomEmoji'
+import Emoji from 'src/components/Emoji'
 import {
   colors,
   fontSizes,
@@ -98,7 +100,14 @@ const EpisodeHero = () => {
       </>
       <EmojiSeparator
         size="lg"
-        emojis={episodeEmojis[episodeNumber as keyof typeof episodeEmojis]}
+        nodes={episodeEmojis[episodeNumber as keyof typeof episodeEmojis].map(
+          emoji =>
+            emoji === '🔲' ? (
+              <CustomEmoji type="mathBox" />
+            ) : (
+              <Emoji>{emoji}</Emoji>
+            )
+        )}
       />
       {episodeNumber > 0 && episodeNumber <= numEpisodesExceptFirstAndLast && (
         <div

@@ -16,6 +16,8 @@ import {
 } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import CustomEmoji from 'src/components/CustomEmoji'
+import Emoji from 'src/components/Emoji'
 import episodeEmojis from 'src/lib/episodeEmojis'
 
 const linkCss = css`
@@ -142,9 +144,15 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
                 {episodeTitles[episodeNumber as keyof typeof episodeTitles]}
               </span>
               <EmojiSeparator
-                emojis={
-                  episodeEmojis[episodeNumber as keyof typeof episodeEmojis]
-                }
+                nodes={episodeEmojis[
+                  episodeNumber as keyof typeof episodeEmojis
+                ].map(emoji =>
+                  emoji === '🔲' ? (
+                    <CustomEmoji type="mathBox" />
+                  ) : (
+                    <Emoji>{emoji}</Emoji>
+                  )
+                )}
                 alignCenter={false}
                 size="sm"
                 cssOverrides={css`

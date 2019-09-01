@@ -1113,7 +1113,7 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="minusOne" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
@@ -1175,7 +1175,7 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="minusOne" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,

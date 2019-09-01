@@ -1758,7 +1758,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji>➕</Emoji> 足し算の計算箱 <Emoji>🎁</Emoji>
+          <Emoji>➕</Emoji> 足し算の計算箱 <CustomEmoji type="mathBox" />
         </>
       )
     }
@@ -1776,7 +1776,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Emoji>↕️</Emoji> 条件分岐の計算箱 <Emoji>🎁</Emoji>
+          <Emoji>↕️</Emoji> 条件分岐の計算箱 <CustomEmoji type="mathBox" />
         </>
       )
     }
@@ -1856,7 +1856,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <CustomEmoji type="blankNumber" /> 繰り返しの計算箱 <Emoji>🎁</Emoji>
+          <CustomEmoji type="blankNumber" /> 繰り返しの計算箱{' '}
+          <CustomEmoji type="mathBox" />
         </>
       )
     }
@@ -1880,7 +1881,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <InlineHeader>
-          <Emoji>🎁</Emoji> 計算箱に変換 <Emoji>🐶</Emoji>
+          <CustomEmoji type="mathBox" /> 計算箱に変換 <Emoji>🐶</Emoji>
         </InlineHeader>
       )
     }
@@ -1927,7 +1928,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>
-            <Emoji>🎁</Emoji> 計算箱に変換しました <Emoji>🐶</Emoji>
+            <CustomEmoji type="mathBox" /> 計算箱に変換しました{' '}
+            <Emoji>🐶</Emoji>
           </Strong>
         </>
       )

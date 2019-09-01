@@ -35,7 +35,11 @@ export default () => (
               <Strong>計算箱</Strong>」の話をしましょう。
             </P>
             <EmojiSeparator
-              emojis={['🎁', '🎁', '🎁']}
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="mathBox" />
+              ]}
               description={<>これが計算箱のアイコンです！</>}
             />
           </>
@@ -61,7 +65,11 @@ export default () => (
               だと思ってください。
             </P>
             <EmojiSeparator
-              emojis={['✨', '🎁', '✨']}
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>✨</Emoji>
+              ]}
               description={
                 <>
                   計算ができる魔法の道具「<Strong>計算箱</Strong>」
@@ -93,7 +101,7 @@ export default () => (
               <Strong>計算箱</Strong>」のひとつです。
             </P>
             <R.Lizi>
-              計算箱 <Emoji>🎁</Emoji>
+              計算箱 <CustomEmoji type="mathBox" />
             </R.Lizi>
             <Ul>
               <UlLi>
@@ -106,7 +114,7 @@ export default () => (
             </Ul>
             <EmojiSeparator
               nodes={[
-                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <Emoji>1️⃣</Emoji>,
                 <CustomEmoji type="plusOne" />
               ]}
@@ -294,7 +302,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="plusOne" />,
-                <Emoji>🎁</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="minusOne" />
               ]}
               description={
@@ -504,7 +512,11 @@ export default () => (
               まとめると、計算箱は足し算や引き算を行ってくれる魔法の道具というわけです。
             </P>
             <EmojiSeparator
-              emojis={['➕', '🎁', '➖']}
+              nodes={[
+                <Emoji>➕</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>➖</Emoji>
+              ]}
               description={<>計算箱は足し算や引き算ができる</>}
             />
             <P>
@@ -515,7 +527,11 @@ export default () => (
               」のような単純な足し算をするのにも、村人たちは計算箱に頼りきっていました。
             </P>
             <EmojiSeparator
-              emojis={['🙂', '🎁', '🙂']}
+              nodes={[
+                <Emoji>🙂</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>🙂</Emoji>
+              ]}
               description={
                 <>
                   俺ら計算が苦手だから、

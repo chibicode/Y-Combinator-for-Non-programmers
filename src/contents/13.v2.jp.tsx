@@ -528,7 +528,7 @@ export default () => (
             </R.Bnyo>
             <ExpressionRunnerSeparator />
             <R.Ghwe>
-              <Emoji>🎁</Emoji> 対応する計算箱に置き換える
+              <CustomEmoji type="mathBox" /> 対応する計算箱に置き換える
             </R.Ghwe>
             <BubbleQuotes
               quotes={[
@@ -653,7 +653,7 @@ export default () => (
             </R.Ykqf>
             <ExpressionRunnerSeparator />
             <R.Ifpo>
-              同じ効果がある <Emoji>🎁</Emoji> 計算箱と入れ替える
+              同じ効果がある <CustomEmoji type="mathBox" /> 計算箱と入れ替える
             </R.Ifpo>
           </>
         )

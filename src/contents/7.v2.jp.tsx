@@ -555,7 +555,7 @@ export default () => (
               ]}
             />
             <R.Rviy>
-              <Emoji>🎁</Emoji> 計算箱の場合
+              <CustomEmoji type="mathBox" /> 計算箱の場合
             </R.Rviy>
             <ExpressionRunnerSeparator />
             <R.Jxvy></R.Jxvy>
@@ -598,7 +598,7 @@ export default () => (
             />
             <R.Biit>
               <Strong>
-                <Emoji>🎁</Emoji> 計算箱における、
+                <CustomEmoji type="mathBox" /> 計算箱における、
                 <CustomEmoji type="plusOne" /> と同じようなもの
               </Strong>
             </R.Biit>

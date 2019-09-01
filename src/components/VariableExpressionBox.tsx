@@ -212,6 +212,12 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         <CustomEmoji type="questionFoodGrey" size="sm" />
       </div>
     )
+  } else if (expression.name === 'mathBox') {
+    return (
+      <div>
+        <CustomEmoji type="mathBox" size="sm" />
+      </div>
+    )
   } else if (
     expression.name === 'C' ||
     expression.name === 'D' ||
