@@ -183,53 +183,17 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         </span>
       </div>
     )
-  } else if (expression.name === 'blankNumber') {
-    return (
-      <div>
-        <CustomEmoji type="blankNumber" size="sm" />
-        {expression.shorthandNumberPlusOrMinusOne && (
-          <>
-            {' '}
-            <Emoji size="sm">
-              {expression.shorthandNumberPlusOrMinusOne === 'plus'
-                ? '➕'
-                : '➖'}
-            </Emoji>{' '}
-            <EmojiNumber size="sm" number={1} />
-          </>
-        )}
-      </div>
-    )
-  } else if (expression.name === 'verticalDotDotDot') {
-    return (
-      <div>
-        <CustomEmoji type="verticalDotDotDot" size="sm" />
-      </div>
-    )
-  } else if (expression.name === 'questionFoodGrey') {
-    return (
-      <div>
-        <CustomEmoji type="questionFoodGrey" size="sm" />
-      </div>
-    )
-  } else if (expression.name === 'mathBox') {
-    return (
-      <div>
-        <CustomEmoji type="mathBox" size="sm" />
-      </div>
-    )
   } else if (
-    expression.name === 'C' ||
-    expression.name === 'D' ||
-    expression.name === 'E' ||
-    expression.name === 'F' ||
-    expression.name === 'blankNumberPink' ||
-    expression.name === 'blankNumberGrey' ||
-    expression.name === 'blankNumberPurple'
+    expression.name === 'blankNumber' &&
+    expression.shorthandNumberPlusOrMinusOne
   ) {
     return (
       <div>
-        <CustomEmoji type={expression.name} size="sm" />
+        <CustomEmoji type="blankNumber" size="sm" />{' '}
+        <Emoji size="sm">
+          {expression.shorthandNumberPlusOrMinusOne === 'plus' ? '➕' : '➖'}
+        </Emoji>{' '}
+        <EmojiNumber size="sm" number={1} />
       </div>
     )
   } else if (expression.name === 'Amult') {
@@ -282,18 +246,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
         </span>
       </div>
     )
-  } else if (expression.shorthandFunc === 'add') {
-    return (
-      <div>
-        <CustomEmoji type="plusOne" size="sm" />
-      </div>
-    )
-  } else if (expression.shorthandFunc === 'pred') {
-    return (
-      <div>
-        <CustomEmoji type="minusOne" size="sm" />
-      </div>
-    )
   } else {
     return (
       <span
@@ -305,6 +257,17 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           <>
             <EmojiNumber size="sm" number={expression.shorthandNumber} />
           </>
+        ) : expression.shorthandFunc === 'add' ? (
+          <CustomEmoji type="plusOne" size="sm" />
+        ) : expression.shorthandFunc === 'pred' ? (
+          <CustomEmoji type="minusOne" size="sm" />
+        ) : customEmojiToComponent[
+            expression.name as keyof typeof customEmojiToComponent
+          ] ? (
+          <CustomEmoji
+            type={expression.name as keyof typeof customEmojiToComponent}
+            size="sm"
+          />
         ) : (
           <Emoji size="sm">
             {expression.highlightType === 'removed'

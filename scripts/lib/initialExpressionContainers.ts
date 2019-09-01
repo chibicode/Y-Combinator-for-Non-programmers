@@ -2699,3 +2699,11 @@ export const uggy = initializeExpressionContainer([
   },
   'bentoBox'
 ])
+
+export const lzeq = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: 'a'
+  },
+  highlighted('mathBox')
+])

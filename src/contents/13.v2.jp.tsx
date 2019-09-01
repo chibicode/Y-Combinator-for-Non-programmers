@@ -8,10 +8,11 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-// import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 // import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
@@ -622,11 +623,7 @@ export default () => (
       },
       {
         type: 'summary',
-        title: (
-          <>
-            弁当箱の一部分を、同じ効果がある計算箱と置き換えても結果は変わらない
-          </>
-        ),
+        title: <>ここまでの振り返り</>,
         content: (
           <>
             <BubbleQuotes
@@ -641,7 +638,7 @@ export default () => (
                         <Strong>
                           弁当箱の一部分を、同じ効果がある計算箱と置き換える
                         </Strong>
-                        」という手法でした。
+                        」という手法でした。図で説明すると、以下のような感じですね。
                       </P>
                     </>
                   )
@@ -655,6 +652,88 @@ export default () => (
             <R.Ifpo>
               同じ効果がある <CustomEmoji type="mathBox" /> 計算箱と入れ替える
             </R.Ifpo>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        重要なのは、
+                        <Em>
+                          このように弁当箱の一部分を計算箱と置き換えても、
+                          <Strong>実行したら結果は同じになる</Strong>
+                        </Em>
+                        ということです。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={<>弁当箱の一部分を計算箱と置き換えても…</>}
+            />
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <Strong>
+                実行したら
+                <br />
+                結果は同じになる！
+              </Strong>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        たしかに先ほどの場合は、
+                        <Em>
+                          サヤちゃんの手法を使っても、そのまま実行しても、どちらも結果は{' '}
+                          <EmojiNumber number={4} /> になった
+                        </Em>
+                        な。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        はい。
+                        <Em>
+                          複雑な弁当箱は、それぞれの部分をシンプルな計算箱に置き換えると分かりやすくなります。
+                          <Strong>
+                            結果は変わらないのだから、積極的に置き換えていくべき
+                          </Strong>
+                        </Em>
+                        ということですね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bnyo>
+              <Emoji>🍱</Emoji> 複雑な弁当箱は…
+            </R.Bnyo>
+            <ExpressionRunnerSeparator />
+            <R.Ghwe>
+              それぞれの部分を
+              <br />
+              <CustomEmoji type="mathBox" /> シンプルな計算箱に置き換えると
+              <br />
+              分かりやすくなる
+            </R.Ghwe>
           </>
         )
       }
