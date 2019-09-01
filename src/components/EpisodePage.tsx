@@ -13,6 +13,7 @@ import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import NotFoundCardList from 'src/components/NotFoundCardList'
 import { ogUrl } from 'src/lib/meta'
+import locale from 'src/lib/locale'
 
 export interface EpisodePageProps {
   lessonTitle: string
@@ -33,7 +34,7 @@ const EpisodePage = ({
 }: EpisodePageProps) => {
   const title = `${
     episodeEmojis[episodeNumber as keyof typeof episodeEmojis][1]
-  } ${lessonTitle}${
+  }${locale === 'jp' ? '' : ' '}${lessonTitle}${
     episodeTitleString
       ? ` ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][0]} ${episodeTitleString} ${episodeEmojis[episodeNumber as keyof typeof episodeEmojis][2]}`
       : ''

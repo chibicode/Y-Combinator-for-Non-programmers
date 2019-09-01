@@ -6,7 +6,7 @@ import contentVersion from 'src/lib/contentVersion'
 const episodeEmojis: Record<keyof typeof episodeTitles | 0, string[]> =
   contentVersion === 'v2'
     ? {
-        0: ['🐶', '🙂', '👧🏻', '😈'],
+        0: ['🐶', '🙂', '😈', '👧🏻'],
         1: ['➕', '🔲', '➖'],
         2: ['🔁', '🔲', '🔁'],
         3: ['🍱', '😈', '🍱'],
