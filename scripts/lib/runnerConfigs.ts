@@ -4552,6 +4552,13 @@ export const awbq: ExpressionRunnerShorthandConfig = {
   alphaConvertCallArg: true
 }
 
+export const ghwe: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.aiyb,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const gmzn: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
@@ -4572,4 +4579,14 @@ export const uiwl: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   alphaConvertCallArg: true,
   nextIterations: 1
+}
+
+export const ynoy: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.gbbo,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
 }

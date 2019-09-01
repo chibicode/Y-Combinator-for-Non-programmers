@@ -5,7 +5,7 @@ import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 // import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
@@ -498,6 +498,77 @@ export default () => (
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>そのまま実行していたら？</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        しかし…
+                        <Em>サヤちゃんがとった手法はズルなんじゃないか？</Em>
+                      </P>
+                      <P>
+                        サヤちゃんは、もともとの弁当箱を、それぞれの要素に対応する計算箱に置き換えてから実行したけど…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bnyo>
+              <Emoji>🍱</Emoji> もともとの弁当箱を…
+            </R.Bnyo>
+            <ExpressionRunnerSeparator />
+            <R.Ghwe>
+              <Emoji>🎁</Emoji> 対応する計算箱に置き換える
+            </R.Ghwe>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          もともとの弁当箱を、そのまま
+                          <H args={{ name: 'play' }} />{' '}
+                          しても、同じ結果になっていたのかな？
+                        </Strong>
+                      </P>
+                      <P>とりあえず、確かめてみるか。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'play' }} />
+                        を押してみてください！
+                      </P>
+                      <P>
+                        (
+                        <Em>
+                          非常に実行がかかるので、早送りはここではしません。
+                        </Em>
+                        )
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ynoy></R.Ynoy>
           </>
         )
       }
