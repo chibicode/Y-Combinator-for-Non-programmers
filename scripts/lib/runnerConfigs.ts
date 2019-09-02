@@ -4682,3 +4682,12 @@ export const mbje: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.uxvq,
   variableSize: 'md'
 }
+
+export const osxt: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.aqni,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
