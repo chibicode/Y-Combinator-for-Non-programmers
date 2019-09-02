@@ -9,7 +9,7 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import InlineBorder from 'src/components/InlineBorder'
 import CustomEmoji from 'src/components/CustomEmoji'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 // import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
@@ -332,23 +332,91 @@ export default () => (
               left={
                 <>
                   <R.Amjx>
-                    <Strong>
-                      前回: <InlineBorder type="condition" /> が{' '}
-                      <EmojiNumber number={3} />
-                    </Strong>
+                    <Strong>前回と比べると…</Strong>
                   </R.Amjx>
                 </>
               }
               right={
                 <>
                   <R.Qgau>
-                    <Strong>
-                      今回: <InlineBorder type="condition" /> が{' '}
-                      <EmojiNumber number={2} />
-                    </Strong>
+                    <Strong>黄色の部分が違う</Strong>
                   </R.Qgau>
                 </>
               }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>そう。特に注目すべきなのは以下の二点だよ。</P>
+                      <Ul>
+                        <UlLi>
+                          先ほど <InlineBorder type="condition" /> には{' '}
+                          <EmojiNumber number={3} /> が入っていたが、
+                          <Strong>
+                            今回は <EmojiNumber number={2} /> が入っている
+                          </Strong>
+                        </UlLi>
+                        <UlLi>
+                          <Strong>
+                            一番下に <CustomEmoji type="plusOne" />{' '}
+                            が追加されている
+                          </Strong>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          <InlineBorder type="condition" /> に入っていた数字は、
+                          <EmojiNumber number={3} /> から{' '}
+                          <EmojiNumber number={2} /> に「
+                          <Strong>1減った</Strong>」というわけだよね。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={3} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={2} />
+              ]}
+              description={
+                <>
+                  <InlineBorder type="condition" /> が1減った
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        じゃあもしかしたら、
+                        <Strong>
+                          このまま続けたら、次は{' '}
+                          <InlineBorder type="condition" /> の数字が{' '}
+                          <EmojiNumber number={1} /> になる
+                        </Strong>
+                        のかも…？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
             />
           </>
         )
