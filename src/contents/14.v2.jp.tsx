@@ -142,7 +142,32 @@ export default () => (
                 }
               ]}
             />
-            <R.Bras></R.Bras>
+            <R.Bras>
+              真ん中の<Strong>黄色い部分</Strong>に注目
+            </R.Bras>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        上の黄色の部分が複雑なので、
+                        <Em>
+                          <Emoji>🍱</Emoji>{' '}
+                          のアイコンに置き換えて省略してみると、下のようになる
+                        </Em>
+                        よ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Yyfi>
+              先ほどの弁当箱の<Strong>黄色い部分</Strong>を<br />
+              <Emoji>🍱</Emoji> と置き換えて省略した
+            </R.Yyfi>
           </>
         )
       }

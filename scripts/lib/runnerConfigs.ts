@@ -4717,3 +4717,12 @@ export const bras: ExpressionRunnerShorthandConfig = {
   nextIterations: 4,
   highlightFunctions: true
 }
+
+export const yyfi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.reak,
+  showPriorities: true,
+  variableSize: 'md',
+  highlightOverrides: { bentoBox: 'highlighted' }
+}

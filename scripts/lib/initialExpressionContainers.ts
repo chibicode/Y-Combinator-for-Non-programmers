@@ -2878,3 +2878,17 @@ export const ulnl = initializeExpressionContainer([
 ])
 
 export const uxvq = initializeDoneExpressionContainer({ shorthandNumber: 10 })
+
+export const reak = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 3
+  },
+  trueCase: {
+    shorthandNumber: 2
+  },
+  falseCase: [
+    { shorthandFunc: 'add' },
+    ['bentoBox', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
+  ]
+})
