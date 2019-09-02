@@ -4840,3 +4840,43 @@ export const uwyn: ExpressionRunnerShorthandConfig = {
   lastAllowedExpressionStateAfterIterations: 5,
   speed: 1.75
 }
+
+export const jjet: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 15,
+  highlightFunctions: true
+}
+
+export const cyyp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.tsjd,
+  showPriorities: true,
+  variableSize: 'sm',
+  explanationsVisibility: 'hidden',
+  highlightOverrides: { bentoBox: 'highlighted' }
+}
+
+export const kosw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.qojl,
+  showPriorities: true,
+  variableSize: 'sm',
+  explanationsVisibility: 'hidden'
+}
+
+export const ysxf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.zxhp,
+  showPriorities: true,
+  variableSize: 'sm',
+  explanationsVisibility: 'hidden'
+}

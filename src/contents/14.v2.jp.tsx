@@ -374,6 +374,7 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        ふむふむ…
                         <Em>
                           <InlineBorder type="condition" /> に入っていた数字は、
                           <EmojiNumber number={3} /> から{' '}
@@ -442,8 +443,160 @@ export default () => (
               ]}
             />
             <R.Uwyn></R.Uwyn>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          また真ん中の部分が前回と同じなので、<Emoji>🍱</Emoji>{' '}
+                          のアイコンで省略してみる
+                        </Em>
+                        ね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jjet>黄色の部分は前回と同じなので…</R.Jjet>
+            <ExpressionRunnerSeparator />
+            <R.Cyyp>また省略してみた</R.Cyyp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>では、前回とまた比べてみよう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Kosw>
+                    <Strong>前回と比べると…</Strong>
+                  </R.Kosw>
+                </>
+              }
+              right={
+                <>
+                  <R.Ysxf>
+                    <Strong>黄色の部分が違う</Strong>
+                  </R.Ysxf>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>特に注目すべきなのは…</P>
+                      <Ul>
+                        <UlLi>
+                          先ほど <InlineBorder type="condition" /> には{' '}
+                          <EmojiNumber number={2} /> が入っていたが、
+                          <Strong>
+                            今回は <EmojiNumber number={1} /> が入っている
+                          </Strong>
+                        </UlLi>
+                        <UlLi>
+                          <Strong>
+                            またしても、一番下に <CustomEmoji type="plusOne" />{' '}
+                            が追加されている
+                          </Strong>
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なんとなく、パターンが見えてきたかも…</P>
+                      <P>
+                        特に、
+                        <Em>
+                          <InlineBorder type="condition" /> に入っていた数字は、
+                          <EmojiNumber number={3} /> から{' '}
+                          <EmojiNumber number={2} /> に、
+                          <EmojiNumber number={2} /> から{' '}
+                          <EmojiNumber number={1} /> にと、
+                          <Strong>1ずつ減っている</Strong>よね。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={3} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={2} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={1} />
+              ]}
+              description={
+                <>
+                  <InlineBorder type="condition" /> が1ずつ減っている
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        ということは、次は
+                        <Em>
+                          <InlineBorder type="condition" /> が{' '}
+                          <EmojiNumber number={0} /> になるのかな？
+                        </Em>
+                      </P>
+                      <P>
+                        そして、
+                        <Strong>
+                          <InlineBorder type="condition" /> が{' '}
+                          <EmojiNumber number={0} /> になると、
+                          <InlineBorder type="falseCase" /> ではなく{' '}
+                          <InlineBorder type="trueCase" />{' '}
+                          が残るようになるから、繰り返しがストップされる
+                        </Strong>
+                        のかも？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        では、確かめてみよう！<Strong>次が最後だよ！</Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
+      },
+      {
+        title: <>4回目。これが最後！</>,
+        content: <></>
       }
       // TODO: Compare w/ the previous iteration using TwoColGrid
     ]}

@@ -2969,12 +2969,92 @@ export const twpb = initializeExpressionContainer([
         'bentoBox',
         [
           { shorthandFunc: 'pred', initialHighlight: true },
-          [
-            { shorthandFunc: 'pred' },
-            { shorthandNumber: 3 }
-          ]
+          [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
         ]
       ]
     ]
   }
+])
+
+export const tsjd = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  [
+    { shorthandFunc: 'add' },
+    {
+      checkType: 'isZero',
+      condition: {
+        shorthandNumber: 1
+      },
+      trueCase: {
+        shorthandNumber: 2
+      },
+      falseCase: [
+        { shorthandFunc: 'add' },
+        [
+          'bentoBox',
+          [
+            { shorthandFunc: 'pred' },
+            [
+              { shorthandFunc: 'pred' },
+              [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+])
+
+export const qojl = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  {
+    checkType: 'isZero',
+    condition: {
+      shorthandNumber: 2,
+      initialHighlight: true
+    },
+    trueCase: {
+      shorthandNumber: 2
+    },
+    falseCase: [
+      { shorthandFunc: 'add' },
+      [
+        'bentoBox',
+        [
+          { shorthandFunc: 'pred' },
+          [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+        ]
+      ]
+    ]
+  }
+])
+
+export const zxhp = initializeExpressionContainer([
+  { shorthandFunc: 'add', initialHighlight: true },
+  [
+    { shorthandFunc: 'add' },
+    {
+      checkType: 'isZero',
+      condition: {
+        shorthandNumber: 1,
+        initialHighlight: true
+      },
+      trueCase: {
+        shorthandNumber: 2
+      },
+      falseCase: [
+        { shorthandFunc: 'add' },
+        [
+          'bentoBox',
+          [
+            { shorthandFunc: 'pred', initialHighlight: true },
+            [
+              { shorthandFunc: 'pred' },
+              [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
 ])
