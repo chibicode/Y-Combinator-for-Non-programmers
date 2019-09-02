@@ -205,6 +205,8 @@ const ExpressionRunnerPrecomputed = ({
       !isPlaying &&
       atLeastOneStepTaken &&
       canStepForward)
+  const progessBarVisible =
+    !hidePlayButton && canStepForward && (isPlaying || atLeastOneStepTaken)
 
   return (
     <ExpressionRunnerContext.Provider
@@ -266,15 +268,19 @@ const ExpressionRunnerPrecomputed = ({
               <H args={{ name: 'fastForwarding' }} />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {!hidePlayButton &&
-            canStepForward &&
-            (isPlaying || atLeastOneStepTaken) && (
+          {progessBarVisible && (
+            <div
+              css={css`
+                margin: ${spaces(0.25)} auto ${spaces(1)};
+              `}
+            >
               <ProgressBar
                 percent={percentDone}
                 fromPercent={fromPercent}
                 speed={isPlaying ? autoplaySpeed(speed) : undefined}
               />
-            )}
+            </div>
+          )}
         </Container>
         <Container size={containerSize} horizontalPadding={0.25}>
           <div
@@ -313,6 +319,27 @@ const ExpressionRunnerPrecomputed = ({
           </div>
         </Container>
         <ExpressionRunnerScrollAdjuster />
+        <Container
+          size={containerSize === 'xxs' ? 'xs' : 'sm'}
+          horizontalPadding={0}
+        >
+          {progessBarVisible &&
+            (variableSize === 'xs' ||
+              variableSize === 'xxs' ||
+              variableSize === 'xxxs') && (
+              <div
+                css={css`
+                  margin: ${spaces(1)} auto ${spaces(0.25)};
+                `}
+              >
+                <ProgressBar
+                  percent={percentDone}
+                  fromPercent={fromPercent}
+                  speed={isPlaying ? autoplaySpeed(speed) : undefined}
+                />
+              </div>
+            )}
+        </Container>
         <Container size="xxs" horizontalPadding={0.25}>
           {!hideControls && (
             <ExpressionRunnerControls

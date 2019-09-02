@@ -4703,7 +4703,7 @@ export const ovua: ExpressionRunnerShorthandConfig = {
   alphaConvertCallArg: true,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
-  speed: 1.5
+  speed: 1.75
 }
 
 export const bras: ExpressionRunnerShorthandConfig = {
@@ -4792,7 +4792,7 @@ export const dwmc: ExpressionRunnerShorthandConfig = {
   nextIterations: 5,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
-  speed: 1.5
+  speed: 1.75
 }
 
 export const tfsi: ExpressionRunnerShorthandConfig = {
@@ -4824,4 +4824,19 @@ export const qgau: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'sm',
   explanationsVisibility: 'hidden'
+}
+
+export const uwyn: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 9,
+  lastAllowedExpressionState: 'default',
+  lastAllowedExpressionStateAfterIterations: 5,
+  speed: 1.75
 }

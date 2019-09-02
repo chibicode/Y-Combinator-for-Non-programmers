@@ -413,11 +413,35 @@ export default () => (
                         </Strong>
                         のかも…？
                       </P>
+                      <P>続けて確かめてみるか。</P>
                     </>
                   )
                 }
               ]}
             />
+          </>
+        )
+      },
+      {
+        title: <>3回目は…</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        再度、<Emoji>🍱</Emoji> を省略する前の状態に戻したよ。
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Uwyn></R.Uwyn>
           </>
         )
       }

@@ -24,8 +24,8 @@ const ProgressBar = ({
         height: ${spaces(0.25)};
         border-radius: ${radii(0.25)};
         background: ${colors('white')};
-        margin: ${spaces(0.25)} auto ${spaces(1)};
         max-width: ${maxWidths('xxxs')};
+        margin: 0 auto;
       `}
     >
       <animated.div
