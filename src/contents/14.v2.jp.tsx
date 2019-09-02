@@ -7,10 +7,10 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import InlineBorder from 'src/components/InlineBorder'
-// import CustomEmoji from 'src/components/CustomEmoji'
+import CustomEmoji from 'src/components/CustomEmoji'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
-// import TwoColGrid from 'src/components/TwoColGrid'
+import TwoColGrid from 'src/components/TwoColGrid'
 // import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 // import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
@@ -144,7 +144,7 @@ export default () => (
               ]}
             />
             <R.Bras>
-              真ん中の<Strong>黄色い部分</Strong>に注目
+              真ん中の<Strong>黄色の部分</Strong>に注目
             </R.Bras>
             <BubbleQuotes
               quotes={[
@@ -167,7 +167,7 @@ export default () => (
               ]}
             />
             <R.Yyfi>
-              先ほどの弁当箱の<Strong>黄色い部分</Strong>を<br />
+              先ほどの弁当箱の<Strong>黄色の部分</Strong>を<br />
               <Emoji>🍱</Emoji> と置き換えて省略した
             </R.Yyfi>
             <BubbleQuotes
@@ -185,10 +185,20 @@ export default () => (
                           </Strong>
                         </UlLi>
                       </Ul>
-                      <P>…ということを覚えておいて。</P>
+                      <P>…ということを覚えておいてね。</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Amjx>
+              <Strong>
+                <InlineBorder type="condition" /> には{' '}
+                <EmojiNumber number={3} /> が入っている
+              </Strong>
+            </R.Amjx>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (
@@ -261,6 +271,85 @@ export default () => (
               ]}
             />
             <R.Dwmc></R.Dwmc>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        あれ…この黄色の部分は、前回省略したのとまったく同じだ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Tfsi>
+              <Em>黄色の部分は、前回省略したのとまったく同じ</Em>
+            </R.Tfsi>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そう、この部分が<Strong>繰り返される</Strong>んだよね。
+                        <Emoji>🔁</Emoji>
+                      </P>
+                      <P>
+                        では、また
+                        <Strong>
+                          黄色の部分を <Emoji>🍱</Emoji>{' '}
+                          のアイコンで省略してみた
+                        </Strong>
+                        よ。前回と何が違うかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Fkat>
+              <Strong>
+                黄色の部分を <Emoji>🍱</Emoji> で省略してみた
+              </Strong>
+            </R.Fkat>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>前回と比べてみると、下の黄色の部分が違うね！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Amjx>
+                    <Strong>
+                      前回: <InlineBorder type="condition" /> が{' '}
+                      <EmojiNumber number={3} />
+                    </Strong>
+                  </R.Amjx>
+                </>
+              }
+              right={
+                <>
+                  <R.Qgau>
+                    <Strong>
+                      今回: <InlineBorder type="condition" /> が{' '}
+                      <EmojiNumber number={2} />
+                    </Strong>
+                  </R.Qgau>
+                </>
+              }
+            />
           </>
         )
       }

@@ -36,7 +36,7 @@ const width = (
   } else if (variableSize === 'md') {
     return 1.8
   } else if (variableSize === 'sm') {
-    return 1.6
+    return 1.5
   } else {
     return 1.25
   }

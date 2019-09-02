@@ -2892,3 +2892,89 @@ export const reak = initializeExpressionContainer({
     ['bentoBox', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
   ]
 })
+
+export const edye = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 3,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 2
+  },
+  falseCase: [
+    { shorthandFunc: 'add' },
+    ['bentoBox', [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]]
+  ]
+})
+
+export const yqth = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 3,
+    initialHighlight: true
+  },
+  trueCase: {
+    shorthandNumber: 2
+  },
+  falseCase: [
+    { shorthandFunc: 'add' },
+    [
+      'bentoBox',
+      [
+        { shorthandFunc: 'pred', initialHighlight: true },
+        { shorthandNumber: 3 }
+      ]
+    ]
+  ]
+})
+
+export const nrff = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  {
+    checkType: 'isZero',
+    condition: {
+      shorthandNumber: 2
+    },
+    trueCase: {
+      shorthandNumber: 2
+    },
+    falseCase: [
+      { shorthandFunc: 'add' },
+      [
+        'bentoBox',
+        [
+          { shorthandFunc: 'pred' },
+          [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+        ]
+      ]
+    ]
+  }
+])
+
+export const twpb = initializeExpressionContainer([
+  { shorthandFunc: 'add', initialHighlight: true },
+  {
+    checkType: 'isZero',
+    condition: {
+      shorthandNumber: 2,
+      initialHighlight: true
+    },
+    trueCase: {
+      shorthandNumber: 2
+    },
+    falseCase: [
+      { shorthandFunc: 'add' },
+      [
+        'bentoBox',
+        [
+          { shorthandFunc: 'pred', initialHighlight: true },
+          [
+            { shorthandFunc: 'pred' },
+            { shorthandNumber: 3 }
+          ]
+        ]
+      ]
+    ]
+  }
+])

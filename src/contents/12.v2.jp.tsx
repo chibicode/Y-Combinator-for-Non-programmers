@@ -196,7 +196,7 @@ export default () => (
                 <EmojiNumber number={0} /> に変換できる弁当箱
               </Strong>
               を入れてみた
-              <br />(<Strong>一番下の黄色い部分</Strong>)
+              <br />(<Strong>一番下の黄色の部分</Strong>)
             </R.Nmrp>
             <BubbleQuotes
               quotes={[
@@ -321,7 +321,7 @@ export default () => (
                 <EmojiNumber number={1} /> に変換できる弁当箱
               </Strong>
               を入れてみた
-              <br />(<Strong>一番下の黄色い部分</Strong>)
+              <br />(<Strong>一番下の黄色の部分</Strong>)
             </R.Gpat>
             <BubbleQuotes
               quotes={[

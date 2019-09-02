@@ -4723,8 +4723,16 @@ export const yyfi: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'md',
+  variableSize: 'sm',
   highlightOverrides: { bentoBox: 'highlighted' }
+}
+
+export const amjx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.edye,
+  showPriorities: true,
+  variableSize: 'sm'
 }
 
 export const avsl: ExpressionRunnerShorthandConfig = {
@@ -4732,7 +4740,7 @@ export const avsl: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'md',
+  variableSize: 'sm',
   initialState: 'conditionActive',
   explanationsVisibility: 'visible'
 }
@@ -4742,7 +4750,7 @@ export const fkqu: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'md',
+  variableSize: 'sm',
   initialState: 'default',
   explanationsVisibility: 'visible',
   nextIterations: 1
@@ -4753,7 +4761,7 @@ export const ngxc: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
-  variableSize: 'md',
+  variableSize: 'sm',
   initialState: 'default',
   nextIterations: 1,
   highlightOverrides: { bentoBox: 'highlighted' },
@@ -4785,4 +4793,35 @@ export const dwmc: ExpressionRunnerShorthandConfig = {
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
   speed: 1.5
+}
+
+export const tfsi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 9,
+  highlightFunctions: true
+}
+
+export const fkat: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.nrff,
+  showPriorities: true,
+  variableSize: 'sm',
+  highlightOverrides: { bentoBox: 'highlighted' },
+  explanationsVisibility: 'hidden'
+}
+
+export const qgau: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.twpb,
+  showPriorities: true,
+  variableSize: 'sm',
+  explanationsVisibility: 'hidden'
 }
