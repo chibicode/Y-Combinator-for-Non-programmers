@@ -6,6 +6,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import InlineBorder from 'src/components/InlineBorder'
 // import CustomEmoji from 'src/components/CustomEmoji'
 // import EmojiForLetter from 'src/components/EmojiForLetter'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -154,7 +155,7 @@ export default () => (
                       <P>
                         上の黄色の部分が複雑なので、
                         <Em>
-                          <Emoji>🍱</Emoji>{' '}
+                          そこだけを <Emoji>🍱</Emoji>{' '}
                           のアイコンに置き換えて省略してみると、下のようになる
                         </Em>
                         よ。
@@ -168,9 +169,60 @@ export default () => (
               先ほどの弁当箱の<Strong>黄色い部分</Strong>を<br />
               <Emoji>🍱</Emoji> と置き換えて省略した
             </R.Yyfi>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>この時点で、</P>
+                      <Ul>
+                        <UlLi>
+                          <Strong>
+                            <InlineBorder type="condition" /> には{' '}
+                            <EmojiNumber number={3} /> が入っている
+                          </Strong>
+                        </UlLi>
+                      </Ul>
+                      <P>…ということを覚えておいて。</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ん？なんでそれを覚えておく必要があるんだい？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>後で大事になってくるからだよ。</P>
+                      <P>
+                        では続きを見てみよう。
+                        <Strong>
+                          <InlineBorder type="condition" /> には{' '}
+                          <EmojiNumber number={3} /> が入っているので、
+                          <InlineBorder type="falseCase" /> のほうが残ります。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Avsl></R.Avsl>
           </>
         )
+      },
+      {
+        title: <>2回目は…</>,
+        content: <></>
       }
+      // TODO: Compare w/ the previous iteration using TwoColGrid
     ]}
   />
 )

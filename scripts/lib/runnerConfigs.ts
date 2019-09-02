@@ -4726,3 +4726,13 @@ export const yyfi: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   highlightOverrides: { bentoBox: 'highlighted' }
 }
+
+export const avsl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.reak,
+  showPriorities: true,
+  variableSize: 'md',
+  initialState: 'conditionActive',
+  explanationsVisibility: 'visible'
+}
