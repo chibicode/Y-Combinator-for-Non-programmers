@@ -108,7 +108,7 @@ export default () => (
                         <UlLi>
                           ちょっと時間がかかるので、待てない方は下の「
                           <Strong>
-                            <H args={{ name: 'skipToTheEnd' }} /> →
+                            <H args={{ name: 'skipToTheStoppingPoint' }} /> →
                           </Strong>
                           」を押してね！
                         </UlLi>
@@ -119,6 +119,30 @@ export default () => (
               ]}
             />
             <R.Ovua></R.Ovua>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'tired',
+                  children: (
+                    <>
+                      <P>めちゃくちゃ複雑だなあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        でもちょっと立ち止まって考えてみて。まず、この
+                        <Em>真ん中の黄色で示した部分</Em>に注目してくれる？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bras></R.Bras>
           </>
         )
       }

@@ -4705,3 +4705,15 @@ export const ovua: ExpressionRunnerShorthandConfig = {
   lastAllowedExpressionStateAfterIterations: 3,
   speed: 1.5
 }
+
+export const bras: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 4,
+  highlightFunctions: true
+}
