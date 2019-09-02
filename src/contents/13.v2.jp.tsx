@@ -746,7 +746,7 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの計算箱との繋がり</>,
+        title: <>繰り返しの機能との繋がり</>,
         content: (
           <>
             <BubbleQuotes
@@ -998,8 +998,10 @@ export default () => (
                     <>
                       <P>でも、思い出してみて！</P>
                       <P>
-                        「<Strong>繰り返しの計算箱</Strong> <Emoji>🔁</Emoji>
-                        」も、以下のように同じように <Emoji>🅰️</Emoji>{' '}
+                        「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を使っても、以下のように同じように <Emoji>
+                          🅰️
+                        </Emoji>{' '}
                         <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
                         を計算することができるよね。
                       </P>
@@ -1039,8 +1041,8 @@ export default () => (
                     <>
                       <P>確かに。とういうことはもしかして…</P>
                       <P>
-                        以下のような「<Strong>繰り返しの計算箱</Strong>{' '}
-                        <Emoji>🔁</Emoji>」は…
+                        以下のような「<Strong>繰り返しの機能</Strong>{' '}
+                        <Emoji>🔁</Emoji>」を使った計算箱は…
                       </P>
                     </>
                   )
@@ -1048,7 +1050,8 @@ export default () => (
               ]}
             />
             <R.Nmbt>
-              こちらの「<Strong>繰り返しの計算箱</Strong> <Emoji>🔁</Emoji>」は…
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」を使った計算箱は…
             </R.Nmbt>
             <BubbleQuotes
               quotes={[
@@ -1076,7 +1079,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        もしそうなら…「<Strong>繰り返しの計算箱</Strong>{' '}
+                        もしそうなら…「<Strong>繰り返しの機能</Strong>{' '}
                         <Emoji>🔁</Emoji>
                         」を弁当箱で再現できた、ということになるぞ！
                       </P>

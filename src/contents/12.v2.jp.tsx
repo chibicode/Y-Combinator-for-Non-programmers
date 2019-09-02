@@ -664,7 +664,7 @@ export default () => (
                           以下のような <Emoji>🅰️</Emoji> <Emoji>🅱️</Emoji>{' '}
                           <CustomEmoji type="C" /> <CustomEmoji type="D" />{' '}
                           <CustomEmoji type="E" />{' '}
-                          の法則に沿っていれば、それぞれに何の料理が入っていても、条件分岐の計算箱を再現することができます。
+                          の法則に沿っていれば、それぞれに何の料理が入っていても、条件分岐の機能を再現することができます。
                         </Em>
                       </P>
                     </>
