@@ -4691,3 +4691,17 @@ export const osxt: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
+
+export const ovua: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  lastAllowedExpressionState: 'default',
+  lastAllowedExpressionStateAfterIterations: 3,
+  speed: 1.5
+}

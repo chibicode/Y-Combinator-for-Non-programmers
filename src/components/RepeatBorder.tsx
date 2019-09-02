@@ -25,8 +25,10 @@ const fontSize = (
     return fontSizes(1.2)
   } else if (variableSize === 'md') {
     return fontSizes(1)
-  } else {
+  } else if (variableSize === 'sm') {
     return fontSizes(0.85)
+  } else {
+    return fontSizes(0.7)
   }
 }
 
@@ -40,7 +42,7 @@ const width = (
   } else if (variableSize === 'sm') {
     return 1.6
   } else {
-    return 1.55
+    return 1.25
   }
 }
 

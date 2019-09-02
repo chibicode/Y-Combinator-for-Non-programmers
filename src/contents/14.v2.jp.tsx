@@ -93,18 +93,21 @@ export default () => (
                         では、
                         <Em>
                           これを今回は
-                          <H args={{ name: 'fastForward' }} /> してみるね！
+                          <H args={{ name: 'fastForward' }} />{' '}
+                          してみるね！早送りをすることで、どういう原理になっているかが分かるかも。
                         </Em>
                       </P>
                       <P>
                         時間がかかるので、何度も止めながらやっていくよ。というわけで、
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
+                      <P>ものすごく複雑なので、目で追わなくても大丈夫だよ！</P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Ovua></R.Ovua>
           </>
         )
       }
