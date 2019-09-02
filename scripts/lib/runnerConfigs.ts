@@ -4736,3 +4736,53 @@ export const avsl: ExpressionRunnerShorthandConfig = {
   initialState: 'conditionActive',
   explanationsVisibility: 'visible'
 }
+
+export const fkqu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.reak,
+  showPriorities: true,
+  variableSize: 'md',
+  initialState: 'default',
+  explanationsVisibility: 'visible',
+  nextIterations: 1
+}
+
+export const ngxc: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.reak,
+  showPriorities: true,
+  variableSize: 'md',
+  initialState: 'default',
+  nextIterations: 1,
+  highlightOverrides: { bentoBox: 'highlighted' },
+  explanationsVisibility: 'hidden'
+}
+
+export const fkvy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 5,
+  highlightFunctions: true
+}
+
+export const dwmc: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 5,
+  lastAllowedExpressionState: 'default',
+  lastAllowedExpressionStateAfterIterations: 3,
+  speed: 1.5
+}

@@ -155,7 +155,8 @@ export default () => (
                       <P>
                         上の黄色の部分が複雑なので、
                         <Em>
-                          そこだけを <Emoji>🍱</Emoji>{' '}
+                          <Strong>分かりやすくするために、</Strong>そこだけを{' '}
+                          <Emoji>🍱</Emoji>{' '}
                           のアイコンに置き換えて省略してみると、下のようになる
                         </Em>
                         よ。
@@ -215,12 +216,53 @@ export default () => (
               ]}
             />
             <R.Avsl></R.Avsl>
+            <ExpressionRunnerSeparator />
+            <R.Fkqu></R.Fkqu>
           </>
         )
       },
       {
         title: <>2回目は…</>,
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ、<Emoji>🍱</Emoji> を省略する前の状態(
+                        <Em>黄色の部分</Em>)に戻すね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ngxc>
+              <Emoji>🍱</Emoji> の部分を…
+            </R.Ngxc>
+            <ExpressionRunnerSeparator />
+            <R.Fkvy>省略前の状態に戻す</R.Fkvy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        では、続きを見てみよう！
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Dwmc></R.Dwmc>
+          </>
+        )
       }
       // TODO: Compare w/ the previous iteration using TwoColGrid
     ]}
