@@ -6,7 +6,7 @@
       "expression": {
         "arg": {
           "name": "shorthandNumber",
-          "highlightType": "default",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -62,7 +62,7 @@
                 },
                 "trueCase": {
                   "name": "shorthandNumber",
-                  "highlightType": "default",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -314,35 +314,19 @@
         "type": "call",
         "priority": 2
       }
-    },
-    {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
-      "expression": {
-        "name": "shorthandNumber",
-        "highlightType": "default",
-        "topLeftBadgeType": "none",
-        "bottomRightBadgeType": "none",
-        "type": "variable",
-        "argPriorityAgg": [],
-        "funcPriorityAgg": [],
-        "emphasizePriority": false,
-        "bound": true,
-        "shorthandNumber": 5
-      }
     }
   ],
   "speed": 1,
   "showOnlyFocused": false,
-  "hideControls": false,
-  "explanationsVisibility": "hiddenInitialPausedOnly",
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
   "hidePriorities": false,
   "variableSize": "xs",
   "containerSize": "xs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
-  "skipToTheEnd": true,
-  "hideFuncUnboundBadgeOnExplanation": true,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {},

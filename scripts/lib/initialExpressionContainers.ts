@@ -1942,6 +1942,42 @@ export const gnpv = initializeExpressionContainer([
   }
 ])
 
+export const guxy = initializeExpressionContainer([
+  {
+    count: 4,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 6
+  }
+])
+
+export const uqte = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    [
+      {
+        shorthandFunc: 'add'
+      },
+      [
+        {
+          shorthandFunc: 'add'
+        },
+        {
+          shorthandNumber: 6
+        }
+      ]
+    ]
+  ]
+])
+
 export const zxad = initializeExpressionContainer({
   shorthandNumber: 6
 })
@@ -2729,3 +2765,116 @@ export const xlrf = initializeExpressionContainer([
     shorthandNumber: 3
   }
 ])
+
+export const jrfk = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { shorthandNumber: 2 },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  {
+    shorthandNumber: 3
+  }
+])
+
+export const aqni = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { shorthandNumber: 2, initialHighlight: true },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  {
+    shorthandNumber: 3,
+    initialHighlight: true
+  }
+])
+
+export const pqsi = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { shorthandNumber: 4, initialHighlight: true },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  {
+    shorthandNumber: 6,
+    initialHighlight: true
+  }
+])
+
+export const vqhm = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { name: 'B', highlighted: true },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  {
+    name: 'A',
+    highlighted: true
+  }
+])
+
+export const ulnl = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: 'B',
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  'A'
+])
+
+export const uxvq = initializeDoneExpressionContainer({ shorthandNumber: 10 })

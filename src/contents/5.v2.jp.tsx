@@ -16,6 +16,7 @@ import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import CustomEmoji from 'src/components/CustomEmoji'
 import Emoji from 'src/components/Emoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import InlineBackground from 'src/components/InlineBackground'
@@ -500,7 +501,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>,
-                <Emoji>➡</Emoji>,
+                <CustomEmoji type="singleArrow" />,
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
             />

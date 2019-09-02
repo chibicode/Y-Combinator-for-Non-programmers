@@ -4615,16 +4615,70 @@ export const cefx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.xlrf,
   showPriorities: true,
-  variableSize: 'xxs',
+  variableSize: 'xs',
   containerSize: 'xs',
   highlightOverrides: { a: 'highlighted', b: 'highlighted' }
 }
 
 export const htir: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.xlrf,
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  isDone: true,
   variableSize: 'xs',
-  containerSize: 'xs'
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const peiy: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.aqni,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const bfau: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.pqsi,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const szdm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vqhm,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const svig: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ulnl,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const voeb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.guxy,
+  variableSize: 'md'
+}
+
+export const deay: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uqte,
+  variableSize: 'md'
+}
+
+export const mbje: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uxvq,
+  variableSize: 'md'
 }

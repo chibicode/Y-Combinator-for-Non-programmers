@@ -5,8 +5,8 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "shorthandNumber",
-          "highlightType": "default",
+          "name": "A",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -15,8 +15,7 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true,
-          "shorthandNumber": 3
+          "bound": true
         },
         "func": {
           "arg": {
@@ -61,8 +60,8 @@
                   "bound": true
                 },
                 "trueCase": {
-                  "name": "shorthandNumber",
-                  "highlightType": "default",
+                  "name": "B",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -71,8 +70,7 @@
                     1
                   ],
                   "emphasizePriority": false,
-                  "bound": true,
-                  "shorthandNumber": 2
+                  "bound": true
                 },
                 "falseCase": {
                   "arg": {
@@ -314,35 +312,19 @@
         "type": "call",
         "priority": 2
       }
-    },
-    {
-      "containerState": "done",
-      "previouslyChangedExpressionState": "default",
-      "expression": {
-        "name": "shorthandNumber",
-        "highlightType": "default",
-        "topLeftBadgeType": "none",
-        "bottomRightBadgeType": "none",
-        "type": "variable",
-        "argPriorityAgg": [],
-        "funcPriorityAgg": [],
-        "emphasizePriority": false,
-        "bound": true,
-        "shorthandNumber": 5
-      }
     }
   ],
   "speed": 1,
   "showOnlyFocused": false,
-  "hideControls": false,
-  "explanationsVisibility": "hiddenInitialPausedOnly",
+  "hideControls": true,
+  "explanationsVisibility": "hidden",
   "hidePriorities": false,
   "variableSize": "xs",
   "containerSize": "xs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
-  "skipToTheEnd": true,
-  "hideFuncUnboundBadgeOnExplanation": true,
+  "skipToTheEnd": false,
+  "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {},

@@ -7,6 +7,7 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiForLetterWithBottomRightBadgeWrapper from 'src/components/EmojiForLetterWithBottomRightBadgeWrapper'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import Emoji from 'src/components/Emoji'
@@ -922,7 +923,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
-                <Emoji>➡</Emoji>,
+                <CustomEmoji type="singleArrow" />,
                 <Emoji>❓</Emoji>
               ]}
               description={
@@ -1001,7 +1002,7 @@ export default () => (
                 <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
                   <EmojiForLetter letter="b" />
                 </EmojiForLetterWithBottomRightBadgeWrapper>,
-                <Emoji>➡️</Emoji>,
+                <CustomEmoji type="singleArrow" />,
                 <EmojiForLetterWithBottomRightBadgeWrapper bottomRightBadgeType="callArg">
                   <EmojiForLetter letter="e" />
                 </EmojiForLetterWithBottomRightBadgeWrapper>

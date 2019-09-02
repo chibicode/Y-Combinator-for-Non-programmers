@@ -321,7 +321,7 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "xxs",
+  "variableSize": "xs",
   "containerSize": "xs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,

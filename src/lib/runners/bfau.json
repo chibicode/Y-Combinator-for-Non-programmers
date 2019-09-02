@@ -6,7 +6,7 @@
       "expression": {
         "arg": {
           "name": "shorthandNumber",
-          "highlightType": "default",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -16,7 +16,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 6
         },
         "func": {
           "arg": {
@@ -62,7 +62,7 @@
                 },
                 "trueCase": {
                   "name": "shorthandNumber",
-                  "highlightType": "default",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -72,7 +72,7 @@
                   ],
                   "emphasizePriority": false,
                   "bound": true,
-                  "shorthandNumber": 2
+                  "shorthandNumber": 4
                 },
                 "falseCase": {
                   "arg": {
@@ -328,7 +328,7 @@
         "funcPriorityAgg": [],
         "emphasizePriority": false,
         "bound": true,
-        "shorthandNumber": 5
+        "shorthandNumber": 10
       }
     }
   ],

@@ -13,7 +13,7 @@ import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -746,7 +746,7 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの弁当箱との繋がり</>,
+        title: <>繰り返しの計算箱との繋がり</>,
         content: (
           <>
             <BubbleQuotes
@@ -843,11 +843,280 @@ export default () => (
                         では、この弁当箱を
                         <H args={{ name: 'play' }} /> してみて！
                       </P>
+                      <P>(次の回で早送りするけど、今回は省略します！)</P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Htir></R.Htir>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        結果は <EmojiNumber number={5} /> になったけど…？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        この <EmojiNumber number={5} /> って、
+                        <Strong>
+                          実行前の弁当箱に入っていたふたつの数字である、
+                          <EmojiNumber number={3} /> と{' '}
+                          <EmojiNumber number={2} /> を足した数
+                        </Strong>
+                        だよね？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Peiy>
+              黄色の部分の <EmojiNumber number={3} /> と{' '}
+              <EmojiNumber number={2} /> を足した数
+            </R.Peiy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>確かにそうだな…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        じゃあたとえば、
+                        <Strong>
+                          もともとの弁当箱に入ってる <EmojiNumber number={3} />{' '}
+                          と <EmojiNumber number={2} /> の部分を…
+                        </Strong>
+                      </P>
+                      <P>
+                        <Strong>
+                          <EmojiNumber number={6} /> と{' '}
+                          <EmojiNumber number={4} />{' '}
+                          にそれぞれ変えてみたらどうなる
+                        </Strong>
+                        と思う？
+                      </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={3} />,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiNumber number={6} />
+                        ]}
+                        noBottomMargin
+                      />
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={2} />,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiNumber number={4} />
+                        ]}
+                        noTopMargin
+                        description={<>数字を変えてみたらどうなる？</>}
+                      />
+                      <P>
+                        下の弁当箱で変えてみたので、
+                        <H args={{ name: 'play' }} /> を押してみて！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bfau>
+              <Strong>
+                数字の部分を <EmojiNumber number={6} /> と{' '}
+                <EmojiNumber number={4} /> に変えてみた
+              </Strong>
+            </R.Bfau>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        今度は、
+                        <EmojiNumber number={10} /> になった！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        これは、
+                        <EmojiNumber number={6} /> と <EmojiNumber number={4} />{' '}
+                        を足した結果だよね。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        ということは…サヤちゃんの弁当箱は下のように、
+                        <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
+                        に入っている数字を足し算してくれるのかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Szdm>
+              <Strong>
+                <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+                を計算してくれる？<Emoji>🤔</Emoji>
+              </Strong>
+            </R.Szdm>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>でも、思い出してみて！</P>
+                      <P>
+                        「<Strong>繰り返しの計算箱</Strong> <Emoji>🔁</Emoji>
+                        」も、以下のように同じように <Emoji>🅰️</Emoji>{' '}
+                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+                        を計算することができるよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nmbt>
+              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算
+            </R.Nmbt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        たとえば、以下のようにすれば <EmojiNumber number={6} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={4} />{' '}
+                        を計算できるよね。
+                      </P>
+                      <R.Voeb>以下のようにすれば…</R.Voeb>
+                      <ExpressionRunnerSeparator />
+                      <R.Deay></R.Deay>
+                      <ExpressionRunnerSeparator />
+                      <R.Mbje>
+                        <EmojiNumber number={6} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={4} /> を計算できる
+                      </R.Mbje>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>確かに。とういうことはもしかして…</P>
+                      <P>
+                        以下のような「<Strong>繰り返しの計算箱</Strong>{' '}
+                        <Emoji>🔁</Emoji>」は…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nmbt>
+              こちらの「<Strong>繰り返しの計算箱</Strong> <Emoji>🔁</Emoji>」は…
+            </R.Nmbt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        さっきのサヤちゃんが考えた弁当箱で「
+                        <Strong>再現</Strong>」できているのか…？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Svig>
+              以下の弁当箱で「<Strong>再現</Strong>」できている？
+              <Emoji>🤔</Emoji>
+            </R.Svig>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        もしそうなら…「<Strong>繰り返しの計算箱</Strong>{' '}
+                        <Emoji>🔁</Emoji>
+                        」を弁当箱で再現できた、ということになるぞ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>🔁</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」を
+                  <br />
+                  弁当箱で再現できたかも？
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、本当に再現できたのかどうか、次のページで確かめてみましょう！先に進んでみてください！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <NextLessonButton />
           </>
         )
       }
