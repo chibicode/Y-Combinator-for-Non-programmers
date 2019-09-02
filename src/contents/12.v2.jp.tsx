@@ -563,10 +563,10 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          複雑なので、<Em>目で追わなくても大丈夫です！</Em>
+                          複雑なので、<Em>目で追わなくても大丈夫だよ！</Em>
                         </UlLi>
                         <UlLi>
-                          待てない方は下の「
+                          ちょっと時間がかかるので、待てない方は下の「
                           <Strong>
                             <H args={{ name: 'skipToTheEnd' }} /> →
                           </Strong>

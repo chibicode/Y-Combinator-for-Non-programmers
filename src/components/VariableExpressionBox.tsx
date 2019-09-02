@@ -29,7 +29,8 @@ export const variableExpressionBoxPaddingTop = (
     md: spaces(0.25),
     sm: spaces(0.2),
     xs: spaces(0.2),
-    xxs: spaces(0.2)
+    xxs: spaces(0.2),
+    xxxs: spaces(0.2)
   }[size])
 
 export const variableExpressionBoxPaddingBottom = (
@@ -40,7 +41,8 @@ export const variableExpressionBoxPaddingBottom = (
     md: spaces(0.375),
     sm: spaces(0.25),
     xs: spaces(0.2),
-    xxs: spaces(0.2)
+    xxs: spaces(0.2),
+    xxxs: spaces(0.2)
   }[size])
 
 export const variableExpressionBoxFontSize = (
@@ -51,7 +53,8 @@ export const variableExpressionBoxFontSize = (
     md: fontSizes(1.6),
     sm: fontSizes(1.4),
     xs: fontSizes(1.2),
-    xxs: fontSizes(1)
+    xxs: fontSizes(1),
+    xxxs: fontSizes(0.85)
   }[size])
 
 const SecretCodeLabelWrapper = ({

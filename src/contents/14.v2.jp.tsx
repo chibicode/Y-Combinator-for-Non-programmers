@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em } from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -101,7 +101,18 @@ export default () => (
                         時間がかかるので、何度も止めながらやっていくよ。というわけで、
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
-                      <P>ものすごく複雑なので、目で追わなくても大丈夫だよ！</P>
+                      <Ul>
+                        <UlLi>
+                          複雑なので、<Em>目で追わなくても大丈夫だよ！</Em>
+                        </UlLi>
+                        <UlLi>
+                          ちょっと時間がかかるので、待てない方は下の「
+                          <Strong>
+                            <H args={{ name: 'skipToTheEnd' }} /> →
+                          </Strong>
+                          」を押してね！
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }

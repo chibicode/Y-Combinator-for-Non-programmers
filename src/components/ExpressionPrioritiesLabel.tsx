@@ -44,7 +44,8 @@ const left = (
     md: -0.925,
     sm: -0.85,
     xs: -0.7,
-    xxs: -0.7
+    xxs: -0.7,
+    xxxs: -0.7
   }[variableSize])
 
 const ExpressionPrioritiesLabelBox = ({

@@ -9,7 +9,7 @@ import { allMaxWidths } from 'src/lib/theme/maxWidths'
 export interface ExpressionRunnerContextProps {
   hidePriorities: boolean
   hideBottomRightBadges: boolean
-  variableSize: 'sm' | 'md' | 'lg' | 'xs' | 'xxs'
+  variableSize: 'sm' | 'md' | 'lg' | 'xs' | 'xxs' | 'xxxs'
   isDoneOrReady: boolean
   bottomRightBadgeOverrides: { [key in VariableNames]?: string }
   highlightOverrides: {

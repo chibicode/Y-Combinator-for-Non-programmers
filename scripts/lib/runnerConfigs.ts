@@ -4698,7 +4698,7 @@ export const ovua: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
-  variableSize: 'xxs',
+  variableSize: 'xxxs',
   containerSize: 'xs',
   alphaConvertCallArg: true,
   lastAllowedExpressionState: 'default',
