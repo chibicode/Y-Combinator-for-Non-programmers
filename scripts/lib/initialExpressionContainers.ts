@@ -3275,3 +3275,21 @@ export const psxr = initializeExpressionContainer({
     }
   ]
 })
+
+export const silw = initializeExpressionContainer([
+  [
+    addParams('a', 'b', 'c', 'd'),
+    {
+      shorthandNumberAfterConvert: 'binarySecond'
+    }
+  ],
+  {
+    shorthandNumberAfterConvert: 'binaryFirst'
+  }
+])
+
+export const yknu = initializeExpressionContainer([
+  addParams('a', 'b', 'c', 'd'),
+  numberParams('g', 'h', 3),
+  numberParams('e', 'f', 2)
+])

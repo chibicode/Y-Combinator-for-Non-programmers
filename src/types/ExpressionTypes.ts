@@ -21,6 +21,8 @@ export interface VariableExpression {
     | 'trueCase'
     | 'falseCase'
     | 'condition'
+    | 'binaryFirst'
+    | 'binarySecond'
   readonly shorthandNumberPlusOrMinusOne?: 'plus' | 'minus'
 }
 

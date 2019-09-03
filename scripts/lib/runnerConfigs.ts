@@ -5026,3 +5026,31 @@ export const rjho: ExpressionRunnerShorthandConfig = {
   alphaConvertCallArg: true
 }
 
+export const hvfb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.silw,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
+export const dmrz: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jpac,
+  showPriorities: true,
+  bottomRightBadgeOverrides: { h: '🅱️', g: '🅰️' }
+}
+
+export const tpyg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.yknu,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  highlightOverrides: {
+    e: 'highlighted',
+    f: 'highlighted',
+    g: 'highlighted',
+    h: 'highlighted'
+  }
+}
