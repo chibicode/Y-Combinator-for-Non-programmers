@@ -4751,9 +4751,8 @@ export const fkqu: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
   variableSize: 'sm',
-  initialState: 'default',
-  explanationsVisibility: 'visible',
-  nextIterations: 1
+  initialState: 'falseCaseOnly',
+  explanationsVisibility: 'visible'
 }
 
 export const ngxc: ExpressionRunnerShorthandConfig = {
@@ -4924,7 +4923,7 @@ export const kdgv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.npmi,
   showPriorities: true,
   variableSize: 'xs',
-  explanationsVisibility: 'hidden',
+  explanationsVisibility: 'hidden'
 }
 
 export const mibj: ExpressionRunnerShorthandConfig = {
@@ -4934,4 +4933,24 @@ export const mibj: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xs',
   explanationsVisibility: 'hidden'
+}
+
+export const afoh: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.ihdu,
+  showPriorities: true,
+  variableSize: 'xs',
+  initialState: 'conditionActive',
+  explanationsVisibility: 'visible'
+}
+
+export const msrk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.ihdu,
+  showPriorities: true,
+  variableSize: 'xs',
+  initialState: 'trueCaseOnly',
+  explanationsVisibility: 'visible'
 }

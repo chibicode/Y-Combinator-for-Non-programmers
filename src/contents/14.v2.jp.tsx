@@ -700,6 +700,29 @@ export default () => (
                 }
               ]}
             />
+            <R.Afoh></R.Afoh>
+            <ExpressionRunnerSeparator />
+            <R.Msrk></R.Msrk>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        あとは、単純に <EmojiNumber number={2} />{' '}
+                        <CustomEmoji type="plusOne" />{' '}
+                        <CustomEmoji type="plusOne" />{' '}
+                        <CustomEmoji type="plusOne" /> を計算するだけなので…
+                      </P>
+                      <P>
+                        結果は <EmojiNumber number={5} /> になります！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
