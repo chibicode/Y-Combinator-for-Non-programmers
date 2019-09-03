@@ -463,7 +463,9 @@ export default () => (
             />
             <R.Jjet>黄色の部分は前回と同じなので…</R.Jjet>
             <ExpressionRunnerSeparator />
-            <R.Cyyp>また省略してみた</R.Cyyp>
+            <R.Cyyp>
+              また <Emoji>🍱</Emoji> で省略してみた
+            </R.Cyyp>
             <BubbleQuotes
               quotes={[
                 {
@@ -559,7 +561,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということは、次は
+                        ということは、次は{' '}
                         <Em>
                           <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> になるのかな？
@@ -596,9 +598,111 @@ export default () => (
       },
       {
         title: <>4回目。これが最後！</>,
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>これが最後</Strong>だよ！<Emoji>🍱</Emoji>{' '}
+                        を省略する前の状態に戻したので、
+                        <H args={{ name: 'pressFastForward', girl: true }} />
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Snlf></R.Snlf>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          例によって、真ん中の部分が前回と同じなので、
+                          <Emoji>🍱</Emoji> のアイコンで省略してみる
+                        </Em>
+                        ね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Gngw>黄色の部分は前回と同じなので…</R.Gngw>
+            <ExpressionRunnerSeparator />
+            <R.Toem>
+              また <Emoji>🍱</Emoji> で省略してみた
+            </R.Toem>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>では、前回とまた比べてみよう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Mibj>
+                    <Strong>前回と比べると…</Strong>
+                  </R.Mibj>
+                </>
+              }
+              right={
+                <>
+                  <R.Kdgv>
+                    <Strong>黄色の部分が違う</Strong>
+                  </R.Kdgv>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>
+                          <InlineBorder type="condition" /> が{' '}
+                          <EmojiNumber number={0} /> になった！
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そう！
+                        <Em>
+                          だから、
+                          <InlineBorder type="trueCase" /> に入っている{' '}
+                          <EmojiNumber number={2} /> が残ることになるね。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
-      // TODO: Compare w/ the previous iteration using TwoColGrid
     ]}
   />
 )

@@ -3058,3 +3058,104 @@ export const zxhp = initializeExpressionContainer([
     }
   ]
 ])
+
+export const ihdu = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  [
+    { shorthandFunc: 'add' },
+    [
+      { shorthandFunc: 'add' },
+      {
+        checkType: 'isZero',
+        condition: {
+          shorthandNumber: 0
+        },
+        trueCase: {
+          shorthandNumber: 2
+        },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          [
+            'bentoBox',
+            [
+              { shorthandFunc: 'pred' },
+              [
+                { shorthandFunc: 'pred' },
+                [
+                  { shorthandFunc: 'pred' },
+                  [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+                ]
+              ]
+            ]
+          ]
+        ]
+      }
+    ]
+  ]
+])
+
+export const npmi = initializeExpressionContainer([
+  { shorthandFunc: 'add', initialHighlight: true },
+  [
+    { shorthandFunc: 'add' },
+    [
+      { shorthandFunc: 'add' },
+      {
+        checkType: 'isZero',
+        condition: {
+          shorthandNumber: 0,
+          initialHighlight: true
+        },
+        trueCase: {
+          shorthandNumber: 2
+        },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          [
+            'bentoBox',
+            [
+              { shorthandFunc: 'pred', initialHighlight: true },
+              [
+                { shorthandFunc: 'pred' },
+                [
+                  { shorthandFunc: 'pred' },
+                  [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+                ]
+              ]
+            ]
+          ]
+        ]
+      }
+    ]
+  ]
+])
+
+export const znga = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  [
+    { shorthandFunc: 'add' },
+    {
+      checkType: 'isZero',
+      condition: {
+        shorthandNumber: 1,
+        initialHighlight: true
+      },
+      trueCase: {
+        shorthandNumber: 2
+      },
+      falseCase: [
+        { shorthandFunc: 'add' },
+        [
+          'bentoBox',
+          [
+            { shorthandFunc: 'pred' },
+            [
+              { shorthandFunc: 'pred' },
+              [{ shorthandFunc: 'pred' }, { shorthandNumber: 3 }]
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+])

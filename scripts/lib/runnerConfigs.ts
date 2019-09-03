@@ -4880,3 +4880,58 @@ export const ysxf: ExpressionRunnerShorthandConfig = {
   variableSize: 'sm',
   explanationsVisibility: 'hidden'
 }
+
+export const snlf: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 15,
+  lastAllowedExpressionState: 'default',
+  lastAllowedExpressionStateAfterIterations: 6,
+  speed: 1.75
+}
+
+export const gngw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xxxs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true,
+  nextIterations: 22,
+  highlightFunctions: true
+}
+
+export const toem: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.ihdu,
+  showPriorities: true,
+  variableSize: 'xs',
+  explanationsVisibility: 'hidden',
+  highlightOverrides: { bentoBox: 'highlighted' }
+}
+
+export const kdgv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.npmi,
+  showPriorities: true,
+  variableSize: 'xs',
+  explanationsVisibility: 'hidden',
+}
+
+export const mibj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.znga,
+  showPriorities: true,
+  variableSize: 'xs',
+  explanationsVisibility: 'hidden'
+}
