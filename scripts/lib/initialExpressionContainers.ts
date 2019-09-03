@@ -3172,3 +3172,15 @@ export const ohhf = initializeExpressionContainer([
     ]
   ]
 ])
+
+export const dxcw = initializeExpressionContainer([
+  {
+    count: 3,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 2
+  }
+])

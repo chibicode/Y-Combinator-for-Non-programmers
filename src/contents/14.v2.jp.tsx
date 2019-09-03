@@ -748,7 +748,73 @@ export default () => (
       {
         type: 'summary',
         title: <>ここまでの振り返り</>,
-        content: <></>
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        まず、
+                        <Em>
+                          もともとの弁当箱には数字の <EmojiNumber number={3} />{' '}
+                          と <EmojiNumber number={2} /> が入っていた
+                        </Em>
+                        よね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Peiy>
+              数字の <EmojiNumber number={3} /> と <EmojiNumber number={2} />{' '}
+              が入っていた
+            </R.Peiy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そして
+                        <Em>
+                          <H args={{ name: 'fastForward' }} />{' '}
+                          していくと、終了直前に以下のようになった
+                        </Em>
+                        よね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jwce>終了直前に以下のようになった</R.Jwce>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        上のやつは、
+                        <CustomEmoji type="plusOne" /> を{' '}
+                        <EmojiNumber number={3} />{' '}
+                        回繰り返すから、以下のように「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を使った計算箱とまったく同じだ！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>これと全く同じ！</R.Qycx>
+          </>
+        )
       }
     ]}
   />

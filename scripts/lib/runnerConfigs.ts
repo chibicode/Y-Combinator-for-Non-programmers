@@ -4962,3 +4962,8 @@ export const jwce: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md'
 }
+
+export const qycx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dxcw
+}
