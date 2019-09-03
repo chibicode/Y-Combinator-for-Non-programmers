@@ -3241,3 +3241,37 @@ export const brri = initializeExpressionContainer([
     highlighted: true
   }
 ])
+
+export const ykbi = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: 'A',
+        falseCase: [
+          { shorthandFunc: 'pred', initialHighlight: true },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  'B'
+])
+
+export const psxr = initializeExpressionContainer({
+  arg: 'A',
+  body: [
+    {
+      arg: 'B',
+      body: ['A', ['B', 'B']]
+    },
+    {
+      arg: 'B',
+      body: ['A', ['B', 'B']]
+    }
+  ]
+})

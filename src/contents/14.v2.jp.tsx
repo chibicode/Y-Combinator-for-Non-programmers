@@ -8,13 +8,10 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import InlineBorder from 'src/components/InlineBorder'
 import CustomEmoji from 'src/components/CustomEmoji'
-// import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
-// import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
-// import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -933,6 +930,335 @@ export default () => (
             <R.Bxuv>
               この弁当箱で「<Strong>再現</Strong>」できる！
             </R.Bxuv>
+          </>
+        )
+      },
+      {
+        title: <>繰り返しの機能を再現できた！</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        サヤちゃん、正解です！見事、「
+                        <Strong>繰り返しの機能</Strong>
+                        」を弁当箱で再現しましたね！<Emoji>🎉</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>やったー！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🍱</Emoji>,
+                <Emoji>🔁</Emoji>
+              ]}
+              description={
+                <>
+                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」を
+                  <br />
+                  弁当箱で再現できた！<Emoji>🎉</Emoji>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ちなみにですが…下のように、
+                        <Strong>
+                          <CustomEmoji type="minusOne" />{' '}
+                          を繰り返す計算箱は、どうやって弁当箱で再現すればいいか
+                        </Strong>
+                        分かりますか？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Jaqs>これはどうやって弁当箱で再現する？</R.Jaqs>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        おそらく、先ほどの弁当箱で右上にあった{' '}
+                        <CustomEmoji type="plusOne" /> を{' '}
+                        <CustomEmoji type="minusOne" />{' '}
+                        に変えるだけでいいんじゃないかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Zkon>
+              <Strong>
+                先ほどの弁当箱で右上にあった
+                <br />
+                <CustomEmoji type="plusOne" /> を{' '}
+                <CustomEmoji type="minusOne" /> に変えるだけ(黄色の部分)
+              </Strong>
+            </R.Zkon>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        サヤちゃん、<Strong>その通りです！</Strong>これで、
+                        <CustomEmoji type="minusOne" />{' '}
+                        を繰り返す計算箱を再現できます。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>へー、そんなに簡単なんだ！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>魔法のYコンビネータ</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        しかし…弁当箱を使って、計算箱の「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を再現できるのはすごいなあ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうですね。そして、
+                        <Em>
+                          それを可能にしているのは、先ほどのいくつかの弁当箱において、
+                          <Strong>下半分の部分に使われていた</Strong>
+                          こちらの弁当箱です
+                        </Em>
+                        。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xjzx>
+              先ほどのいくつかの弁当箱において、
+              <br />
+              <Strong>下半分の部分に使われていた</Strong>
+              <br />
+              こちらの弁当箱が、
+              <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」の再現を
+              <br />
+              可能にしていた
+            </R.Xjzx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>なるほど。この部分は毎回必ず使われていたね。</P>
+                      <P>これが、繰り返しを可能にしていたのかあ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        そうですね。ちなみに、この弁当箱には、
+                        <Strong>特殊な呼び名</Strong>があるんですよ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>へー、そうなんだ。何ていう呼び名なの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        「<Strong>Yコンビネータ</Strong>
+                        」です。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xjzx>
+              この弁当箱の名は「<Strong>Yコンビネータ</Strong>」
+            </R.Xjzx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        「<Strong>Yコンビネータ</Strong>」かあ。変な名前だね。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        ちなみに、以下のような法則に当てはまる弁当箱は、どれも「
+                        <Strong>Yコンビネータ</Strong>」と呼べるんですよ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rjho>
+              この法則に当てはまる弁当箱は全部
+              <br />「<Strong>Yコンビネータ</Strong>」
+            </R.Rjho>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そうなんだ。でもすごいね。
+                        <Strong>
+                          こんなシンプルな、
+                          <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
+                          の二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
+                        </Strong>
+                      </P>
+                      <P>
+                        <Strong>まるで、魔法みたい！</Strong>
+                        <Emoji size="mdlg">🧙‍♀️</Emoji>{' '}
+                        <Emoji size="mdlg">✨</Emoji>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'smile',
+                  children: (
+                    <>
+                      <P>
+                        確かに…まさに、「<Strong>魔法のYコンビネータ</Strong>
+                        」だね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['✨', '🧙‍♀️', '✨']}
+              description={
+                <>
+                  <Strong>魔法のYコンビネータ</Strong>
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <>繰り返しの機能を返してもらえる？</>,
+        content: (
+          <>
+            <P>
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」をみごと弁当箱で再現した村人たちは、悪魔のもとに行きました。
+            </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        どうだ、「<Strong>繰り返しの機能</Strong>{' '}
+                        <Emoji>🔁</Emoji>」を弁当箱で再現したぞ！
+                      </P>
+                      <P>
+                        約束通り、「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」は返してもらう！これで、計算箱のすべての機能をお前から取り返せるぞ！
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>うぐぐ…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <P>
+              村人たちの命運やいかに？次の<Strong>上級最後のページ</Strong>
+              で確かめてみましょう！
+            </P>
+            <NextLessonButton />
           </>
         )
       }

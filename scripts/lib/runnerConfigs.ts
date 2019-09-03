@@ -4998,3 +4998,31 @@ export const bxuv: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
+
+export const zkon: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ykbi,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const xjzx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.vazr,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const rjho: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.psxr,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
