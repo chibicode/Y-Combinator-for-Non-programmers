@@ -822,7 +822,7 @@ export default () => (
                       <P>
                         続いて
                         <H args={{ name: 'lookAtThisBentoBox' }} />
-                        。この章の冒頭で紹介した弁当箱です。
+                        。このページの冒頭で紹介した弁当箱です。
                       </P>
                     </>
                   )

@@ -730,8 +730,25 @@ export default () => (
             <R.Seie>
               最終結果は <EmojiNumber number={5} />
             </R.Seie>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>では、ここまでを振り返ってみよう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
+      },
+      {
+        type: 'summary',
+        title: <>ここまでの振り返り</>,
+        content: <></>
       }
     ]}
   />
