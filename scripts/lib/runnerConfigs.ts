@@ -5054,3 +5054,15 @@ export const tpyg: ExpressionRunnerShorthandConfig = {
     h: 'highlighted'
   }
 }
+
+export const ugvz: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  alphaConvertCallArg: true,
+  skipActive: true,
+  speed: 1.75,
+  initialExpressionContainer: initialExpressionContainers.yknu,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
+}
