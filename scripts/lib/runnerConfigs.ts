@@ -4950,7 +4950,15 @@ export const msrk: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.ihdu,
   showPriorities: true,
-  variableSize: 'xs',
+  variableSize: 'md',
   initialState: 'trueCaseOnly',
   explanationsVisibility: 'visible'
+}
+
+export const jwce: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.ohhf,
+  showPriorities: true,
+  variableSize: 'md'
 }

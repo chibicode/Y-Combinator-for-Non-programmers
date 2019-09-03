@@ -716,13 +716,20 @@ export default () => (
                         <CustomEmoji type="plusOne" /> を計算するだけなので…
                       </P>
                       <P>
-                        結果は <EmojiNumber number={5} /> になります！
+                        <Strong>
+                          結果は <EmojiNumber number={5} /> になります！
+                        </Strong>
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Jwce></R.Jwce>
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              最終結果は <EmojiNumber number={5} />
+            </R.Seie>
           </>
         )
       }

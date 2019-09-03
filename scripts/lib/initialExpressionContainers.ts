@@ -3159,3 +3159,16 @@ export const znga = initializeExpressionContainer([
     }
   ]
 ])
+
+export const ohhf = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  [
+    { shorthandFunc: 'add' },
+    [
+      { shorthandFunc: 'add' },
+      {
+        shorthandNumber: 2
+      }
+    ]
+  ]
+])
