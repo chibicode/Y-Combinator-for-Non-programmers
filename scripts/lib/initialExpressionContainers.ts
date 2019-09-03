@@ -3184,3 +3184,60 @@ export const dxcw = initializeExpressionContainer([
     shorthandNumber: 2
   }
 ])
+
+export const rhzs = initializeExpressionContainer([
+  {
+    count: 6,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 4
+  }
+])
+
+export const rzkp = initializeExpressionContainer([
+  { shorthandFunc: 'add' },
+  [
+    { shorthandFunc: 'add' },
+    [
+      { shorthandFunc: 'add' },
+      [
+        { shorthandFunc: 'add' },
+        [
+          { shorthandFunc: 'add' },
+          [
+            { shorthandFunc: 'add' },
+            {
+              shorthandNumber: 4
+            }
+          ]
+        ]
+      ]
+    ]
+  ]
+])
+
+export const brri = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { name: 'A', highlighted: true },
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  {
+    name: 'B',
+    highlighted: true
+  }
+])

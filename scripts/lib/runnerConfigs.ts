@@ -4963,7 +4963,38 @@ export const jwce: ExpressionRunnerShorthandConfig = {
   variableSize: 'md'
 }
 
+export const sskt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.rzkp,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const qycx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.dxcw
+}
+
+export const owpg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.rhzs
+}
+
+export const hafp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pqsi,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
+}
+
+export const bxuv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.brri,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
 }

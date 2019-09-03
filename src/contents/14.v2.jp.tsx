@@ -813,6 +813,126 @@ export default () => (
               ]}
             />
             <R.Qycx>これと全く同じ！</R.Qycx>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        そう。つまり上の「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を使った計算箱は、今回早送りした弁当箱で再現できるということなんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qycx>
+              この「
+              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」を使った
+              <br />
+              計算箱は…
+            </R.Qycx>
+            <ExpressionRunnerSeparator />
+            <R.Peiy>
+              この弁当箱で「<Strong>再現</Strong>」できる！
+            </R.Peiy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なるほど！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>他にもたとえば、以下のような計算箱でも…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Owpg>こちらの計算箱も…</R.Owpg>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>同じように弁当箱で再現することができるよ。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Hafp>この弁当箱で再現できる</R.Hafp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        実際、
+                        <Em>
+                          上の弁当箱を早送りすると、終了直前に下のようになる
+                        </Em>
+                        からね。時間がかかるから、ここではやらないけど…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Sskt>
+              上の弁当箱を早送りすると、
+              <br />
+              終了直前に下のようになる
+            </R.Sskt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        まとめると、以下のような「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を使った計算箱は…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nmbt>
+              以下のような「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」<br />
+              を使った計算箱は…
+            </R.Nmbt>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>次のように弁当箱で再現することができるんだ。</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Bxuv>
+              この弁当箱で「<Strong>再現</Strong>」できる！
+            </R.Bxuv>
           </>
         )
       }
