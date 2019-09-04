@@ -113,7 +113,6 @@ export interface HProps {
     | { name: 'lookAtToc' }
     | { name: 'magicalChangedCaption'; fromNumber: number }
     | { name: 'ycChangedCaption'; fromNumber: number }
-    | { name: 'timer'; numSecondsRemaining: number }
     | { name: 'whatCanComputeFactorial'; start: 3 | 4 | 5 }
     | { name: 'abbreviated' }
     | { name: 'itWillTakeTime' }

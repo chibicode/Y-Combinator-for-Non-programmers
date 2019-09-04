@@ -50,7 +50,6 @@ export interface ExpressionRunnerPrecomputedProps {
   alphaConvertCallArg: ExpressionRunnerConfig['alphaConvertCallArg']
 }
 
-// Must be equal to 1 / N to make timer count seconds evenly
 const autoplaySpeed = (speed: number) => 1000 / speed
 const FASTFORWARDING_THRESHOLD = 2
 
@@ -58,10 +57,6 @@ interface PlaybackState {
   isFastForwarding: boolean
   isPlaying: boolean
 }
-
-// Use floor() + 1 instead of ceil() to make sure it's nonzero
-const numSecondsRemaining = (numStepsRemaining: number, speed: number) =>
-  Math.floor((numStepsRemaining * autoplaySpeed(speed)) / 1000) + 1
 
 const ExpressionRunnerPrecomputed = ({
   speed,
@@ -391,35 +386,6 @@ const ExpressionRunnerPrecomputed = ({
                 </ExpressionRunnerCaptionWrapper>
               </>
             )}
-          {isPlaying && isFastForwarding && !isDone && (
-            <>
-              <ExpressionRunnerCaptionWrapper
-                css={css`
-                  margin-top: ${spaces(0.5)};
-                `}
-              >
-                <H
-                  args={{
-                    name: 'timer',
-                    numSecondsRemaining: numSecondsRemaining(
-                      superFastForward
-                        ? expressionContainers
-                            .slice(currentIndex + 1)
-                            .filter(
-                              container =>
-                                container.previouslyChangedExpressionState ===
-                                  'default' ||
-                                container.previouslyChangedExpressionState ===
-                                  'active'
-                            ).length
-                        : expressionContainers.length - 1 - currentIndex,
-                      speed
-                    )
-                  }}
-                />
-              </ExpressionRunnerCaptionWrapper>
-            </>
-          )}
           {!hideControls &&
             currentIndex === expressionContainers.length - 1 &&
             expressionContainers[expressionContainers.length - 1]
