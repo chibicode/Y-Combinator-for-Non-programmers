@@ -1270,19 +1270,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               お疲れ様でした！本稿に対するご意見・ご感想を、下のツイートの引用リツイートで共有してくださるととても嬉しいです。
             </P>
             <TwitterEmbed id={shareId} />
-            <P>
-              もしも「
-              <Em>
-                <H args={{ name: 'computerScience' }} />
-                の他の題材も、本稿のようにパズルで学んでみたい
-              </Em>
-              」とお考えの方がいらっしゃいましたら、ツイートで教えてくださると嬉しいです。
-            </P>
             {question}
             <Hr />
             <P>
-              <InlineHeader>その他の著作:</InlineHeader>{' '}
-              もしご興味があれば、わたしが共訳した書籍『
+              また、もしご興味があれば、わたしが共訳した書籍『
               <ExternalLink href="https://amzn.to/2QlZIqm">
                 <Strong>ファクトフルネス</Strong>
               </ExternalLink>
