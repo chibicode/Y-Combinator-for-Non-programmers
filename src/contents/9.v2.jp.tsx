@@ -74,7 +74,7 @@ export default () => (
                         これを、前回サヤが考えた
                         <H args={{ name: 'plusOneEffect' }} />
                         がある弁当箱と合体させて、
-                        <H args={{ name: 'runAndConertToMathbox' }} />{' '}
+                        <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                         すると、どうなると思う？
                       </P>
                     </>
@@ -86,7 +86,7 @@ export default () => (
               <H args={{ name: 'plusOneEffect' }} />
               と合体させて、
               <br />
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               するとどうなる？
             </R.Nhqo>

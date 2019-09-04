@@ -1886,20 +1886,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'runAndConertToMathbox') {
+  if (args.name === 'runAndConvertToMathbox') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <InlineHeader>
           実行してから
-          {args.addNewline && <br />}
+          {args.addNewline ? <br /> : ' '}
           <H args={{ name: 'convertToMathbox' }} />
         </InlineHeader>
       )
     }
   }
-  if (args.name === 'doneRunAndConertToMathbox') {
+  if (args.name === 'doneRunAndConvertToMathbox') {
     if (locale === 'en') {
       return <>?</>
     } else {

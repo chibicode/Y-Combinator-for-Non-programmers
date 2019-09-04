@@ -229,7 +229,7 @@ export default () => (
                       <P>
                         では、この弁当箱を「
                         <Strong>
-                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          <H args={{ name: 'runAndConvertToMathbox' }} />
                         </Strong>
                         」するとどうなるか見てみましょう。
                       </P>
@@ -271,7 +271,7 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Em>
-                            「<H args={{ name: 'runAndConertToMathbox' }} />
+                            「<H args={{ name: 'runAndConvertToMathbox' }} />
                             」すると、
                           </Em>
                         </UlLi>
@@ -295,7 +295,7 @@ export default () => (
             </R.Jiua>
             <ExpressionRunnerSeparator />
             <R.Pmdm>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               すると、結果は <EmojiNumber number={2} /> になる
             </R.Pmdm>
@@ -399,7 +399,7 @@ export default () => (
                       <P>
                         こちらを「
                         <Strong>
-                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          <H args={{ name: 'runAndConvertToMathbox' }} />
                         </Strong>
                         」するとどうなるか確かめてみてください！
                       </P>
@@ -440,7 +440,7 @@ export default () => (
             </R.Aone>
             <ExpressionRunnerSeparator />
             <R.Qsoa>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               すると、結果は <EmojiNumber number={3} /> になる
             </R.Qsoa>
@@ -493,7 +493,7 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Em>
-                            <H args={{ name: 'runAndConertToMathbox' }} />
+                            <H args={{ name: 'runAndConvertToMathbox' }} />
                             すると、
                           </Em>
                         </UlLi>
@@ -518,7 +518,7 @@ export default () => (
             </R.Qrgc>
             <ExpressionRunnerSeparator />
             <R.Jxvy>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               すると、結果は <CustomEmoji type="blankNumber" />{' '}
               <Emoji>➕</Emoji> <EmojiNumber number={1} /> になる
@@ -808,7 +808,7 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Em>
-                            <H args={{ name: 'runAndConertToMathbox' }} />
+                            <H args={{ name: 'runAndConvertToMathbox' }} />
                             して、
                           </Em>
                         </UlLi>
@@ -835,7 +835,7 @@ export default () => (
             </R.Tjaf>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
@@ -900,7 +900,7 @@ export default () => (
                     <>
                       <P>
                         これを先ほどの弁当箱と組み合わせて、
-                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        <H args={{ name: 'runAndConvertToMathbox' }} />
                         し、
                         <Em>
                           <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
@@ -929,7 +929,7 @@ export default () => (
             </R.Nuco>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
               <Strong>成功</Strong> <Emoji>🎉</Emoji>

@@ -71,7 +71,7 @@ export default () => (
               ]}
             />
             <R.Bnyo>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               するとどうなる？
             </R.Bnyo>
@@ -93,7 +93,7 @@ export default () => (
                         ここで質問です。
                         <Strong>
                           上の弁当箱を、
-                          <H args={{ name: 'runAndConertToMathbox' }} />{' '}
+                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                           すると、どんな結果になるでしょう？
                         </Strong>
                       </P>
@@ -118,7 +118,7 @@ export default () => (
                     <>
                       <P>
                         サヤはすぐ分かったよ！
-                        <H args={{ name: 'runAndConertToMathbox' }} /> すると、
+                        <H args={{ name: 'runAndConvertToMathbox' }} /> すると、
                         <Strong>
                           結果は <EmojiNumber number={4} /> になる
                         </Strong>
@@ -594,7 +594,7 @@ export default () => (
                       </R.Gmgs>
                       <P>
                         つまり、
-                        <H args={{ name: 'runAndConertToMathbox' }} />{' '}
+                        <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                         すると、結果は <EmojiNumber number={4} /> になるのです。
                       </P>
                       <R.Kizi></R.Kizi>

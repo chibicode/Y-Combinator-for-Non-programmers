@@ -355,7 +355,22 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>その通りだ！</P>
+                      <P>
+                        その通りだ！先ほどの弁当箱は、
+                        <Em>
+                          <CustomEmoji type="blankNumberGreen" /> と{' '}
+                          <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
+                          すると…
+                        </Em>
+                      </P>
+                      <P>
+                        <Strong>
+                          結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                          <Emoji>➕</Emoji>{' '}
+                          <CustomEmoji type="blankNumberBrown" /> になるんだ。
+                        </Strong>
+                      </P>
                     </>
                   )
                 }

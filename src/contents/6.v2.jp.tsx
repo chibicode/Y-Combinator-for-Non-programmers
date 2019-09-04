@@ -912,7 +912,7 @@ export default () => (
                         ためしに、
                         <Em>
                           次の弁当箱の下にある、「
-                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          <H args={{ name: 'runAndConvertToMathbox' }} />
                           」ボタンを押してみてください。
                         </Em>
                       </P>
@@ -1024,7 +1024,7 @@ export default () => (
                         >
                           <H
                             args={{
-                              name: 'runAndConertToMathbox',
+                              name: 'runAndConvertToMathbox',
                               addNewline: true
                             }}
                           />
@@ -1040,7 +1040,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Jwah>
               <Strong>
-                <H args={{ name: 'runAndConertToMathbox' }} />
+                <H args={{ name: 'runAndConvertToMathbox' }} />
               </Strong>
             </R.Jwah>
             <BubbleQuotes
@@ -1098,7 +1098,7 @@ export default () => (
                     <>
                       <P>
                         「
-                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        <H args={{ name: 'runAndConvertToMathbox' }} />
                         」すると、下のようになるでしょうか？
                       </P>
                     </>
@@ -1142,7 +1142,7 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        <H args={{ name: 'runAndConvertToMathbox' }} />
                         を押してみてくだださい！
                       </P>
                     </>
@@ -1231,7 +1231,7 @@ export default () => (
                       <P>
                         というわけで、もともとの弁当箱を
                         <H
-                          args={{ name: 'runAndConertToMathbox' }}
+                          args={{ name: 'runAndConvertToMathbox' }}
                         /> すると <EmojiNumber number={2} /> ではなく{' '}
                         <EmojiNumber number={1} /> になるので、クイズの正解は{' '}
                         <Emoji>❌</Emoji> でした！

@@ -143,8 +143,8 @@ export interface HProps {
     | { name: 'repeatingMathBoxCaption' }
     | { name: 'lookAtThisBentoBoxPuzzle' }
     | { name: 'convertToMathbox' }
-    | { name: 'runAndConertToMathbox'; addNewline?: boolean }
-    | { name: 'doneRunAndConertToMathbox' }
+    | { name: 'runAndConvertToMathbox'; addNewline?: boolean }
+    | { name: 'doneRunAndConvertToMathbox' }
     | { name: 'undoConvertToMathbox' }
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }

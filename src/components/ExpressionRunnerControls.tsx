@@ -132,7 +132,7 @@ const ExpressionRunnerControls = ({
               convert ? (
                 convert === 'toMathBoxPlay' ? (
                   <H
-                    args={{ name: 'runAndConertToMathbox', addNewline: true }}
+                    args={{ name: 'runAndConvertToMathbox', addNewline: true }}
                     highlightType="none"
                   />
                 ) : (

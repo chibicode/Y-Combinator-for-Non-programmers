@@ -405,7 +405,7 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Em>
-                            <H args={{ name: 'runAndConertToMathbox' }} />
+                            <H args={{ name: 'runAndConvertToMathbox' }} />
                             すると、
                           </Em>
                         </UlLi>
@@ -430,7 +430,7 @@ export default () => (
             </R.Xqjd>
             <ExpressionRunnerSeparator />
             <R.Gvxz>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               すると、結果は <CustomEmoji type="blankNumber" />{' '}
               <Emoji>➖</Emoji> <EmojiNumber number={1} /> になる
@@ -554,7 +554,7 @@ export default () => (
                       />
                       <P>
                         つまり、
-                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        <H args={{ name: 'runAndConvertToMathbox' }} />
                         した時に、
                         <Em>
                           結果が <EmojiNumber number={0} />{' '}
@@ -585,7 +585,7 @@ export default () => (
             </R.Ylav>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={0} size="mdlg" /> になれば
               <Strong>成功</Strong> <Emoji>🎉</Emoji>
@@ -759,7 +759,7 @@ export default () => (
                         <Em>
                           <EmojiNumber number={1} />{' '}
                           に変換できる弁当箱と合体させ、
-                          <H args={{ name: 'runAndConertToMathbox' }} />
+                          <H args={{ name: 'runAndConvertToMathbox' }} />
                           すると、結果が <EmojiNumber number={0} /> になる
                         </Em>
                         ということですね。
@@ -776,7 +776,7 @@ export default () => (
             </R.Ylav>
             <ExpressionRunnerSeparator />
             <R.Jwah>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               すると、結果が <EmojiNumber number={0} /> になる
             </R.Jwah>
@@ -887,7 +887,7 @@ export default () => (
                       </R.Mzys>
                       <P>
                         合体したものを
-                        <H args={{ name: 'runAndConertToMathbox' }} />
+                        <H args={{ name: 'runAndConvertToMathbox' }} />
                         して、
                         <Em>
                           結果が <EmojiNumber number={1} /> になればいい
@@ -906,7 +906,7 @@ export default () => (
             </R.Zwvj>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={1} size="mdlg" /> になれば
               <Strong>成功</Strong> <Emoji>🎉</Emoji>
@@ -1159,7 +1159,7 @@ export default () => (
             </R.Fhkl>
             <P>
               上の
-              <H args={{ name: 'runAndConertToMathbox' }} />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
               ボタンを押すと、答えが <EmojiNumber number={2} />{' '}
               になるのを確認できます。
             </P>
