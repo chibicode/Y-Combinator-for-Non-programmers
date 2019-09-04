@@ -32,7 +32,8 @@ import {
   ExecutableCallShorthand,
   ExecutableStepCallShorthand,
   VariableShorthandFunc,
-  StepVariableShorthandFunc
+  StepVariableShorthandFunc,
+  StepVariableShorthandNumber
 } from 'src/types/ExpressionTypes'
 
 function toActive(
@@ -149,32 +150,35 @@ export default function stepToActive(
   | ExecutableStepCallBinary<'active'>
   | ExecutableStepCallShorthand<'active'> {
   if (isExecutableCallBinary(e)) {
+    const argArg: StepVariableShorthandNumber<'active'> = {
+      ...e.arg.arg,
+      topLeftBadgeType: 'none',
+      bottomRightBadgeType: 'none',
+      highlightType: 'active',
+      emphasizePriority: true
+    }
+    const argFunc: StepVariableShorthandBinary<'active'> = {
+      ...e.arg.func,
+      topLeftBadgeType: 'none',
+      bottomRightBadgeType: 'none',
+      highlightType: 'active'
+    }
+    const func: StepVariableShorthandNumber<'active'> = {
+      ...e.func,
+      topLeftBadgeType: 'none',
+      bottomRightBadgeType: 'none',
+      highlightType: 'active',
+      emphasizePriority: true
+    }
     return {
       ...e,
       state: 'active',
       arg: {
         ...e.arg,
-        arg: {
-          ...e.arg.arg,
-          topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'none',
-          highlightType: 'active',
-          emphasizePriority: true
-        },
-        func: {
-          ...e.arg.func,
-          topLeftBadgeType: 'none',
-          bottomRightBadgeType: 'none',
-          highlightType: 'active'
-        }
+        arg: argArg,
+        func: argFunc
       },
-      func: {
-        ...e.func,
-        topLeftBadgeType: 'none',
-        bottomRightBadgeType: 'none',
-        highlightType: 'active',
-        emphasizePriority: true
-      }
+      func: func
     }
   } else if (isExecutableCallShorthand(e)) {
     return {
