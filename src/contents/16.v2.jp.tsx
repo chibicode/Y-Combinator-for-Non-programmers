@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong } from 'src/components/ContentTags'
+import { P, Strong, InlineHeader } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 
@@ -64,6 +64,26 @@ export default () => (
             <P>
               というわけで、これから現実世界の話をしますが、お付き合いいただけると嬉しいです。ラムダ村の話からはいったん離れますが、このページの最後で戻ってきます。
             </P>
+          </>
+        )
+      },
+      {
+        title: <>そもそもコンピュータとは何か</>,
+        content: (
+          <>
+            <P>
+              この記事のタイトルは「
+              <InlineHeader>
+                コンピュータサイエンスと魔法のYコンビネータ
+              </InlineHeader>
+              」ですが、はじめに、「
+              <Strong>そもそもコンピュータとは何か</Strong>
+              」という質問について考えてみましょう。
+            </P>
+            <EmojiSeparator
+              emojis={['🤔', '💻', '❓']}
+              description={<>そもそもコンピュータとは何か？</>}
+            />
           </>
         )
       }
