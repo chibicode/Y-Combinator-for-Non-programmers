@@ -3361,3 +3361,24 @@ export const rovo = initializeExpressionContainer([
     initialHighlight: true
   }
 ])
+
+export const kjff = initializeExpressionContainer([
+  yCombinator,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { shorthandNumber: 1 },
+        falseCase: [
+          { name: 'mult', highlighted: true },
+          'f',
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  'blankNumber'
+])

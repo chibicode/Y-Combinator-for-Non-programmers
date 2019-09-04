@@ -5133,10 +5133,11 @@ export const uhqo: ExpressionRunnerShorthandConfig = {
   variableSize: 'md'
 }
 
-export const gdvk: ExpressionRunnerShorthandConfig = {
+export const rwuw: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.silw,
+  initialExpressionContainer: initialExpressionContainers.kjff,
   showPriorities: true,
-  variableSize: 'sm',
-  containerSize: 'xs'
+  variableSize: 'xs',
+  containerSize: 'xs',
+  alphaConvertCallArg: true
 }

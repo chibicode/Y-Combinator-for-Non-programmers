@@ -631,7 +631,7 @@ export default () => (
                     <>
                       <P>
                         つまり、<Strong>掛け算ができる弁当箱</Strong>
-                        というわけだ。
+                        というわけだな。
                       </P>
                     </>
                   )
@@ -640,9 +640,148 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: <>四則演算ができる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        すごい…！
+                        <Strong>
+                          計算箱では掛け算ができなかったけど、弁当箱を使えば掛け算ができるのか！
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そうだ。ちなみに今回は紹介する時間がないが、
+                        <Strong>引き算や割り算</Strong>
+                        も弁当箱で行うことができるぞ。
+                      </P>
+                      <P>
+                        つまり、
+                        <Em>弁当箱は四則演算の全てを行うことができる</Em>
+                        んだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['➕', '✖️', '🍱', '➖', '➗']}
+              description={<>弁当箱は四則演算の全てができる</>}
+            />
+          </>
+        )
+      },
+      {
+        title: <>Yコンビネータと組み合わせると</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        また、前回「<Strong>繰り返しの機能</Strong>{' '}
+                        <Emoji>🔁</Emoji>」を再現するのに使った「
+                        <Strong>Yコンビネータ</Strong>
+                        」の弁当箱と組み合わせることで、さらに複雑な計算をすることもできる。
+                      </P>
+                      <R.Xjzx>
+                        前回「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を
+                        <br />
+                        再現するのに使った「<Strong>Yコンビネータ</Strong>」
+                      </R.Xjzx>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>どういうこと？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        たとえば、「<Strong>階乗</Strong>
+                        」という計算がある。これは「
+                        <Strong>
+                          ある数からはじめて、1になるまで繰り返し掛け算をする
+                        </Strong>
+                        」という計算だ。
+                      </P>
+                      <P>
+                        たとえば、「
+                        <EmojiNumber number={3} />{' '}
+                        の階乗」は、以下のようになる。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={3} /> の階乗
+                          </>
+                        }
+                      />
+                      <P>
+                        同じように、「
+                        <EmojiNumber number={4} />{' '}
+                        の階乗」は、以下のようになる。
+                      </P>
+                      <EmojiSeparator
+                        size="sm"
+                        nodes={[
+                          <EmojiNumber number={4} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={3} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={2} />,
+                          <Emoji>✖️</Emoji>,
+                          <EmojiNumber number={1} />
+                        ]}
+                        description={
+                          <>
+                            <EmojiNumber number={4} /> の階乗
+                          </>
+                        }
+                      />
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Rwuw></R.Rwuw>
+          </>
+        )
       }
-      // 掛け算なんて、計算箱でもできなかったのに…！
-      // ちなみに、今回は時間がなくて紹介できないが、割り算もできるぞ
     ]}
   />
 )
