@@ -376,6 +376,44 @@ export default () => (
                 }
               ]}
             />
+            <R.Hvfb>
+              <CustomEmoji type="blankNumberGreen" /> と{' '}
+              <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+              <br />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <br />
+              すると…
+            </R.Hvfb>
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumberGreen" />,
+                <Emoji>➕</Emoji>,
+                <CustomEmoji type="blankNumberBrown" />
+              ]}
+              description={
+                <>
+                  結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                  <Emoji>➕</Emoji> <CustomEmoji type="blankNumberBrown" />{' '}
+                  になる
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        つまり、<Strong>足し算ができる弁当箱</Strong>
+                        というわけだな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
