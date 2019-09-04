@@ -553,9 +553,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
+                        では、もともとの弁当箱を
                         <H args={{ name: 'fastForward' }} />
-                        を押してみてください！
+                        してみましょう！
                       </P>
                       <Ul>
                         <UlLi>
