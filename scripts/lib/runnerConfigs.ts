@@ -5118,3 +5118,25 @@ export const wzqv: ExpressionRunnerShorthandConfig = {
   variableSize: 'xs',
   containerSize: 'xs'
 }
+
+export const nvdn: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.rovo,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
+export const uhqo: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.tjcx,
+  variableSize: 'md'
+}
+
+export const gdvk: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.silw,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}

@@ -3323,6 +3323,11 @@ export const bgiy = initializeExpressionContainer({
   shorthandNumber: 5
 })
 
+export const tjcx = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'number',
+  shorthandNumber: 6
+})
+
 export const yuov = initializeExpressionContainer([
   [
     multParams('a', 'b', 'c', 'd'),
@@ -3339,4 +3344,20 @@ export const ndtm = initializeExpressionContainer([
   multParams('a', 'b', 'c', 'd'),
   numberParams(highlighted('g'), highlighted('h'), 3),
   numberParams(highlighted('e'), highlighted('f'), 2)
+])
+
+export const rovo = initializeExpressionContainer([
+  [
+    multParams('a', 'b', 'c', 'd'),
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 3,
+      initialHighlight: true
+    }
+  ],
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 2,
+    initialHighlight: true
+  }
 ])

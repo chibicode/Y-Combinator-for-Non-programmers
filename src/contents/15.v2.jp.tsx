@@ -7,9 +7,7 @@ import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
-// import InlineBorder from 'src/components/InlineBorder'
 import CustomEmoji from 'src/components/CustomEmoji'
-// import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 // import NextLessonButton from 'src/components/NextLessonButton'
@@ -559,9 +557,92 @@ export default () => (
                 }
               ]}
             />
+            <R.Nvdn>
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+              を入れると…
+            </R.Nvdn>
+            <ExpressionRunnerSeparator />
+            <R.Uhqo>
+              <EmojiNumber number={6} /> に変換できる弁当箱に
+            </R.Uhqo>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>これはもしかして…掛け算を計算できるのか？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        その通りだ！先ほどの弁当箱は、
+                        <Em>
+                          <CustomEmoji type="blankNumberGreen" /> と{' '}
+                          <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+                          <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
+                          すると…
+                        </Em>
+                      </P>
+                      <P>
+                        <Strong>
+                          結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                          <Emoji>✖️</Emoji>{' '}
+                          <CustomEmoji type="blankNumberBrown" /> になるんだ。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Vqyl>
+              <CustomEmoji type="blankNumberGreen" /> と{' '}
+              <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+              <br />
+              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <br />
+              すると…
+            </R.Vqyl>
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumberGreen" />,
+                <Emoji>✖️</Emoji>,
+                <CustomEmoji type="blankNumberBrown" />
+              ]}
+              description={
+                <>
+                  結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                  <Emoji>✖️</Emoji> <CustomEmoji type="blankNumberBrown" />{' '}
+                  になる
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        つまり、<Strong>掛け算ができる弁当箱</Strong>
+                        というわけだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }
+      // 掛け算なんて、計算箱でもできなかったのに…！
+      // ちなみに、今回は時間がなくて紹介できないが、割り算もできるぞ
     ]}
   />
 )
