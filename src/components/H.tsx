@@ -1267,7 +1267,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         return (
           <>
             <P>
-              お疲れ様でした！本稿に対するご意見・ご感想を、下のツイートの引用リツイートで共有してくださるととても嬉しいです。
+              お疲れ様でした！本稿に対するご意見・ご感想を、ぜひ
+              <Strong>下のツイートを引用リツイートして</Strong>
+              ご共有ください。
             </P>
             <TwitterEmbed id={shareId} />
             {question}
@@ -1277,11 +1279,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               <ExternalLink href="https://amzn.to/2QlZIqm">
                 <Strong>ファクトフルネス</Strong>
               </ExternalLink>
-              』や、わたしの
+              』や、
               <ExternalLink href="https://jp.chibicode.com/">
-                ブログ
+                わたしのブログ
               </ExternalLink>
-              もぜひご覧ください。
+              もご覧ください。
             </P>
             <P>
               <ExternalLink href="https://amzn.to/2QlZIqm">
