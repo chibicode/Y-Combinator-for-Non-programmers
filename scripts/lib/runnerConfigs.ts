@@ -5075,6 +5075,14 @@ export const xkcm: ExpressionRunnerShorthandConfig = {
   bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
 }
 
+export const edzu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hnzs,
+  showPriorities: true,
+  variableSize: 'sm',
+  bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
+}
+
 export const mlnt: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ibfr,
@@ -5087,4 +5095,24 @@ export const ryqp: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.bgiy,
   variableSize: 'md'
+}
+
+export const vqyl: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.yuov,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
+export const wzqv: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  alphaConvertCallArg: true,
+  skipActive: true,
+  speed: 1.75,
+  initialExpressionContainer: initialExpressionContainers.ndtm,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
 }

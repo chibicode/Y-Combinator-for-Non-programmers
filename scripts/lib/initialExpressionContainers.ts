@@ -3298,6 +3298,10 @@ export const ajfq = initializeExpressionContainer(
   numberParamsHighlightNumber('c', 'd', 5)
 )
 
+export const hnzs = initializeExpressionContainer(
+  numberParamsHighlightNumber('c', 'd', 6)
+)
+
 export const ibfr = initializeExpressionContainer([
   [
     addParams('a', 'b', 'c', 'd'),
@@ -3318,3 +3322,21 @@ export const bgiy = initializeExpressionContainer({
   shorthandNumberAfterConvert: 'number',
   shorthandNumber: 5
 })
+
+export const yuov = initializeExpressionContainer([
+  [
+    multParams('a', 'b', 'c', 'd'),
+    {
+      shorthandNumberAfterConvert: 'binarySecond'
+    }
+  ],
+  {
+    shorthandNumberAfterConvert: 'binaryFirst'
+  }
+])
+
+export const ndtm = initializeExpressionContainer([
+  multParams('a', 'b', 'c', 'd'),
+  numberParams(highlighted('g'), highlighted('h'), 3),
+  numberParams(highlighted('e'), highlighted('f'), 2)
+])

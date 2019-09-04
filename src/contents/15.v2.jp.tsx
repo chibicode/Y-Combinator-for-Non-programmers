@@ -445,6 +445,97 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: <>もうひとつの弁当箱</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        では、こちらの弁当箱は何ができる弁当箱か分かるかな？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Vqyl></R.Vqyl>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>先ほどの弁当箱と似ているけど、微妙に違うなあ…</P>
+                      <P>
+                        前回同様、
+                        <Strong>
+                          <EmojiNumber number={2} /> と{' '}
+                          <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
+                          <CustomEmoji type="blankNumberGreen" /> と{' '}
+                          <CustomEmoji type="blankNumberBrown" /> に入れて、
+                          <H args={{ name: 'fastForward' }} /> してみよう。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        ちなみに、今回はかなり時間がかかるので、待てない場合は「
+                        <Strong>
+                          <H args={{ name: 'skipToTheEnd' }} /> →
+                        </Strong>
+                        」を押してもいいぞ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Wzqv>
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+              に変換できる
+              <br />
+              弁当箱を入れてみた
+            </R.Wzqv>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        結果は…
+                        <Em>
+                          <EmojiNumber number={6} />{' '}
+                          に変換できる弁当箱になった！
+                        </Em>
+                      </P>
+                      <R.Edzu>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'c',
+                            number: 6
+                          }}
+                        />
+                      </R.Edzu>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />
