@@ -4583,6 +4583,8 @@ export const uiwl: ExpressionRunnerShorthandConfig = {
 
 export const ynoy: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  speed: 4,
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,

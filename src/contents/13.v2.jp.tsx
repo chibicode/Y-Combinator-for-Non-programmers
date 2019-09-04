@@ -554,16 +554,28 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <H args={{ name: 'play' }} />
+                        <H args={{ name: 'fastForward' }} />
                         を押してみてください！
                       </P>
-                      <P>
-                        (
-                        <Em>
-                          早送りをすると時間が非常にかかるので、今回は省略します。
-                        </Em>
-                        )
-                      </P>
+                      <Ul>
+                        <UlLi>
+                          ステップが非常に多いので、
+                          <Strong>3倍速で早送りします！</Strong>{' '}
+                          <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            早送り中は、目に優しくなるように弁当箱を半透明にしています。
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          待てない方は、「
+                          <Strong>
+                            <H args={{ name: 'skipToTheEnd' }} /> →
+                          </Strong>
+                          」を押して下さい！
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }

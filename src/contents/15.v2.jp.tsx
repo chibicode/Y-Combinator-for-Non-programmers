@@ -536,6 +536,31 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: <>掛け算ができる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        今回は、もともと <CustomEmoji type="blankNumberGreen" />{' '}
+                        と <CustomEmoji type="blankNumberBrown" /> に入れたのは{' '}
+                        <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+                        だった。そして、結果は <EmojiNumber number={6} />{' '}
+                        になった…
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
     ]}
   />
