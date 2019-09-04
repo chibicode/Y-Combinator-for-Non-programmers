@@ -5,8 +5,8 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "blankNumber",
-          "highlightType": "default",
+          "name": "shorthandNumber",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -15,7 +15,8 @@
           ],
           "funcPriorityAgg": [],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "shorthandNumber": 4
         },
         "func": {
           "arg": {

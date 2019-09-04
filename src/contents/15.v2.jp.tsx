@@ -10,7 +10,7 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
-// import NextLessonButton from 'src/components/NextLessonButton'
+import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
@@ -775,10 +775,184 @@ export default () => (
                       />
                     </>
                   )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>ふむふむ…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        この「<Strong>階乗</Strong>」は、
+                        <Strong>Yコンビネータ</Strong>
+                        を使った弁当箱で計算することができるんだ。
+                      </P>
+                      <P>
+                        たとえば以下の弁当箱は、
+                        <Strong>
+                          <EmojiNumber number={4} /> の階乗、すなわち{' '}
+                          <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+                          <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                          <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                          <EmojiNumber number={1} /> を計算してくれる。
+                        </Strong>
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
-            <R.Rwuw></R.Rwuw>
+            <R.Rwuw>
+              <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算
+            </R.Rwuw>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そして、
+                        <Strong>
+                          一番上の <EmojiNumber number={4} />{' '}
+                          を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
+                        </Strong>
+                      </P>
+                      <P>
+                        (
+                        <Em>
+                          ちなみに、右の方に <Emoji>✖️</Emoji>{' '}
+                          の印がある。これは先ほど紹介した、掛け算ができる弁当箱をスペースの都合で省略しただけだ。
+                        </Em>
+                        )
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>上の弁当箱は複雑すぎてよく分からないけど…</P>
+                      <Ul>
+                        <UlLi>
+                          「<Strong>階乗</Strong>」は、「
+                          <Em>1になるまで掛け算を繰り返す</Em>
+                          」ということだから、
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            「繰り返す」のを可能にする「
+                            <Strong>Yコンビネータ</Strong>
+                            」の弁当箱が必要
+                          </Em>
+                          というわけかな…？
+                        </UlLi>
+                      </Ul>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>その通りだ！上の弁当箱を理解する必要はないが…</P>
+                      <P>
+                        <Em>
+                          「<Strong>Yコンビネータ</Strong>
+                          」の弁当箱は、掛け算を計算できる弁当箱と組み合わせることによって、階乗のように複雑な計算を行うこともできる
+                        </Em>
+                        、ということさえ分かれば十分だ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xjzx>
+              「<Strong>Yコンビネータ</Strong>」の弁当箱は、
+              <br />
+              掛け算を計算できる弁当箱と
+              <br />
+              組み合わせることによって、
+              <br />
+              <Strong>階乗</Strong>のような複雑な計算もできる
+            </R.Xjzx>
+          </>
+        )
+      },
+      {
+        title: <>弁当箱にできない計算はあるの？</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        以上をまとめると…
+                        <Strong>
+                          弁当箱は、計算箱よりもっと複雑な計算ができるということだ
+                        </Strong>
+                        。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji size="semilg">🍱</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={<>弁当箱は、計算箱以上にパワフル！</>}
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        じゃあ逆に質問するけど…
+                        <Strong>弁当箱にできない計算はあるのかい？</Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>いい質問だな。それは、次のページで説明しよう！</P>
+                      <P>次が最後のページ、エピローグだ！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'crying',
+                  children: (
+                    <>
+                      <P>長かった…やっと終わるのか！じゃあ、先に進もう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <NextLessonButton />
           </>
         )
       }

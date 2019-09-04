@@ -3380,5 +3380,8 @@ export const kjff = initializeExpressionContainer([
       }
     }
   },
-  'blankNumber'
+  {
+    shorthandNumber: 4,
+    initialHighlight: true
+  }
 ])

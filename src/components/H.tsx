@@ -58,7 +58,7 @@ const prefixColors = {
   beginner: colors('green600'),
   intermediate: colors('blue600'),
   advanced: colors('pink400'),
-  epilogue: colors('deepOrange400')
+  epilogue: colors('deepPurple300')
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
