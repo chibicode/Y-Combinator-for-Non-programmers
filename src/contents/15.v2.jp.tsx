@@ -11,6 +11,7 @@ import CustomEmoji from 'src/components/CustomEmoji'
 import TwoColGrid from 'src/components/TwoColGrid'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 
 export default () => (
   <EpisodeCardList
@@ -809,11 +810,19 @@ export default () => (
               ]}
             />
             <R.Rwuw>
+              この、下半分が「Yコンビネータ」の
+              <br />
+              弁当箱を使えば…
+            </R.Rwuw>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <EmojiNumber number={4} /> の階乗、すなわち
+              <br />
               <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
               <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
               <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算
-            </R.Rwuw>
+              <EmojiNumber number={1} /> を計算できる！
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -914,9 +923,9 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="mathBox" size="sm" />,
                 <Emoji size="semilg">🍱</Emoji>,
-                <CustomEmoji type="mathBox" />
+                <CustomEmoji type="mathBox" size="sm" />
               ]}
               description={<>弁当箱は、計算箱以上にパワフル！</>}
             />
