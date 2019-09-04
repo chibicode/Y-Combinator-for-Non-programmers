@@ -1,9 +1,9 @@
 {
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.0.16",
-    "@emotion/styled": "^10.0.15",
-    "@material-ui/core": "^4.3.3",
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.17",
+    "@material-ui/core": "^4.4.0",
     "color": "^3.1.2",
     "luxon": "^1.17.2",
     "next": "9.0.5",
@@ -46,7 +46,7 @@
     "@types/jest": "^24.0.18",
     "@types/luxon": "^1.15.2",
     "@types/material-ui": "^0.21.7",
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.7.4",
     "@types/nprogress": "^0.2.0",
     "@types/prettier": "^1.18.1",
     "@types/react": "^16.9.2",
@@ -54,11 +54,11 @@
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-emotion": "^10.0.16",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-emotion": "^10.0.17",
     "concurrently": "^4.1.2",
     "eslint": "^5.16.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^6.2.0",
     "eslint-config-react-app": "^4.0.1",
     "eslint-plugin-flowtype": "^2.x",
     "eslint-plugin-import": "^2.18.2",
@@ -73,7 +73,7 @@
     "prettier": "^1.18.2",
     "sitemap": "^4.1.1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.3",
+    "typescript": "^3.6.2",
     "url-loader": "^2.1.0"
   }
 }
