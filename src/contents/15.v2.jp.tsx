@@ -6,7 +6,7 @@ import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
-// import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 // import InlineBorder from 'src/components/InlineBorder'
 import CustomEmoji from 'src/components/CustomEmoji'
 // import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -286,16 +286,30 @@ export default () => (
                       </R.Xkcm>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>足し算ができる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        そうだ。では、もともと{' '}
-                        <CustomEmoji type="blankNumberGreen" /> と{' '}
-                        <CustomEmoji type="blankNumberBrown" />{' '}
-                        に入れた数字は何だったかな？
+                        では、
+                        <Strong>
+                          もともと <CustomEmoji type="blankNumberGreen" /> と{' '}
+                          <CustomEmoji type="blankNumberBrown" />{' '}
+                          に入れた数字は何だった
+                        </Strong>
+                        かな？
                       </P>
                     </>
                   )
@@ -311,6 +325,37 @@ export default () => (
                           <EmojiNumber number={5} /> になった…
                         </Em>
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Mlnt>
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
+              を入れると…
+            </R.Mlnt>
+            <ExpressionRunnerSeparator />
+            <R.Ryqp>
+              <EmojiNumber number={5} /> に変換できる弁当箱に
+            </R.Ryqp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        ということはもしかして…<Strong>足し算を計算した</Strong>
+                        のか？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>その通りだ！</P>
                     </>
                   )
                 }

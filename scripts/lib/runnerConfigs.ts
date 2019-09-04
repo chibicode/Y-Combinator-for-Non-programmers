@@ -5074,3 +5074,17 @@ export const xkcm: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
 }
+
+export const mlnt: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ibfr,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
+export const ryqp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.bgiy,
+  variableSize: 'md'
+}

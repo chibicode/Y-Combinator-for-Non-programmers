@@ -3297,3 +3297,24 @@ export const yknu = initializeExpressionContainer([
 export const ajfq = initializeExpressionContainer(
   numberParamsHighlightNumber('c', 'd', 5)
 )
+
+export const ibfr = initializeExpressionContainer([
+  [
+    addParams('a', 'b', 'c', 'd'),
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 3,
+      initialHighlight: true
+    }
+  ],
+  {
+    shorthandNumberAfterConvert: 'number',
+    shorthandNumber: 2,
+    initialHighlight: true
+  }
+])
+
+export const bgiy = initializeExpressionContainer({
+  shorthandNumberAfterConvert: 'number',
+  shorthandNumber: 5
+})
