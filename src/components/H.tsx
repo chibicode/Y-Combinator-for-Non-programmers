@@ -1187,37 +1187,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'timer') {
-    if (locale === 'en') {
-      return (
-        <>
-          <InlineHeader
-            css={css`
-              color: ${colors('pink400')};
-            `}
-          >
-            {args.numSecondsRemaining}
-          </InlineHeader>{' '}
-          second
-          {args.numSecondsRemaining > 1 ? 's' : ''} left… <Emoji>⏩</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Emoji>⏩</Emoji> 残り{' '}
-          <InlineHeader
-            css={css`
-              color: ${colors('pink400')};
-            `}
-          >
-            {args.numSecondsRemaining}
-          </InlineHeader>{' '}
-          秒…
-        </>
-      )
-    }
-  }
   if (args.name === 'secretCode') {
     if (locale === 'en') {
       return <>Number</>
