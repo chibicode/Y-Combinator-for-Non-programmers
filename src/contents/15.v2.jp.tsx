@@ -262,6 +262,60 @@ export default () => (
               </UlLi>
             </Ul>
             <R.Ugvz></R.Ugvz>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>
+                        結果は…
+                        <Em>
+                          <EmojiNumber number={5} />{' '}
+                          に変換できる弁当箱になった！
+                        </Em>
+                      </P>
+                      <R.Xkcm>
+                        <H
+                          args={{
+                            name: 'canBeConvertedCaption',
+                            letter: 'c',
+                            number: 5
+                          }}
+                        />
+                      </R.Xkcm>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そうだ。では、もともと{' '}
+                        <CustomEmoji type="blankNumberGreen" /> と{' '}
+                        <CustomEmoji type="blankNumberBrown" />{' '}
+                        に入れた数字は何だったかな？
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          もともと入れたのは <EmojiNumber number={2} /> と{' '}
+                          <EmojiNumber number={3} /> だった。そして、結果は{' '}
+                          <EmojiNumber number={5} /> になった…
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       }

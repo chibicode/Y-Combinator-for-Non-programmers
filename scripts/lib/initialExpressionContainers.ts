@@ -3293,3 +3293,7 @@ export const yknu = initializeExpressionContainer([
   numberParams('g', 'h', 3),
   numberParams('e', 'f', 2)
 ])
+
+export const ajfq = initializeExpressionContainer(
+  numberParamsHighlightNumber('c', 'd', 5)
+)

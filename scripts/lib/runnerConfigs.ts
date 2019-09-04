@@ -5066,3 +5066,11 @@ export const ugvz: ExpressionRunnerShorthandConfig = {
   variableSize: 'xs',
   containerSize: 'xs'
 }
+
+export const xkcm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.ajfq,
+  showPriorities: true,
+  variableSize: 'md',
+  bottomRightBadgeOverrides: { d: '🅱️', c: '🅰️' }
+}
