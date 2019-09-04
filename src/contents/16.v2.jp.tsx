@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Strong, InlineHeader, Em } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 
@@ -74,7 +74,7 @@ export default () => (
             <P>
               この記事のタイトルは「
               <InlineHeader>
-                コンピュータサイエンスと魔法のYコンビネータ
+                <Em>コンピュータ</Em>サイエンスと魔法のYコンビネータ
               </InlineHeader>
               」ですが、はじめに、「
               <Strong>そもそもコンピュータとは何か</Strong>
@@ -83,6 +83,36 @@ export default () => (
             <EmojiSeparator
               emojis={['🤔', '💻', '❓']}
               description={<>そもそもコンピュータとは何か？</>}
+            />
+            <P>
+              「コンピュータ」というとパソコンやタブレット、スマホ、ロボットを思い浮かべる方が多いかもしれません。
+            </P>
+            <EmojiSeparator emojis={['💻', '📱', '🤖']} />
+            <P>
+              しかし、コンピュータは本質的には「<Strong>計算機</Strong>
+              」なのです。
+            </P>
+            <EmojiSeparator
+              emojis={['➕', '✖️', '💻', '➖', '➗']}
+              description={
+                <>
+                  コンピュータは本質的には「<Strong>計算機</Strong>」
+                </>
+              }
+            />
+            <P>
+              コンピュータを使えば情報を瞬時に検索できたり、美しいCGを描いたりすることができます。最近はAIが顔認証や会話をするようになりました。
+            </P>
+            <P>
+              <Em>
+                こういった便利な機能は、
+                コンピュータが大量の計算を瞬時に行えるからこそ実現されているのです。
+              </Em>
+              だから、コンピュータは「<Strong>計算機</Strong>」なのですね。
+            </P>
+            <EmojiSeparator
+              emojis={['🔢', '🔢', '💻', '🔢', '🔢']}
+              description={<>コンピュータは、大量の計算を行える計算機</>}
             />
           </>
         )
