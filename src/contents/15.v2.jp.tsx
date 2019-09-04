@@ -411,6 +411,35 @@ export default () => (
                       </P>
                     </>
                   )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>なんてこった…</P>
+                      <P>
+                        前回、俺らは <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+                        <Emoji>🅱️</Emoji> を計算するのに、以下のように「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を再現できる弁当箱を使っていたが…
+                      </P>
+                      <R.Bxuv>
+                        <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+                        を計算
+                      </R.Bxuv>
+                      <P>
+                        こんな複雑なことをしなくても、弁当箱で足し算をすることはできるというわけか。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>まさに、そういうことになるな。</P>
+                    </>
+                  )
                 }
               ]}
             />
