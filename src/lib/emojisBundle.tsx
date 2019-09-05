@@ -43,9 +43,14 @@ import Emoji1f454 from 'src/components/Twemoji/1f454'
 import Emoji1f467ZZ1f3fb from 'src/components/Twemoji/1f467-1f3fb'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fb-200d-1f4bb'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f9b3 from 'src/components/Twemoji/1f468-1f3fb-200d-1f9b3'
+import Emoji1f468ZZ1f3fdZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fd-200d-1f4bb'
 import Emoji1f468ZZ200dZZ1f3a4 from 'src/components/Twemoji/1f468-200d-1f3a4'
 import Emoji1f469ZZ1f3fb from 'src/components/Twemoji/1f469-1f3fb'
+import Emoji1f469ZZ1f3fdZZ200dZZ1f4bb from 'src/components/Twemoji/1f469-1f3fd-200d-1f4bb'
+import Emoji1f469ZZ1f3fdZZ200dZZ2695ZZfe0f from 'src/components/Twemoji/1f469-1f3fd-200d-2695-fe0f'
 import Emoji1f469ZZ1f3fd from 'src/components/Twemoji/1f469-1f3fd'
+import Emoji1f489 from 'src/components/Twemoji/1f489'
+import Emoji1f48a from 'src/components/Twemoji/1f48a'
 import Emoji1f4a1 from 'src/components/Twemoji/1f4a1'
 import Emoji1f4a5 from 'src/components/Twemoji/1f4a5'
 import Emoji1f4aa from 'src/components/Twemoji/1f4aa'
@@ -206,9 +211,14 @@ export default {
   '1f467-1f3fb': Emoji1f467ZZ1f3fb,
   '1f468-1f3fb-200d-1f4bb': Emoji1f468ZZ1f3fbZZ200dZZ1f4bb,
   '1f468-1f3fb-200d-1f9b3': Emoji1f468ZZ1f3fbZZ200dZZ1f9b3,
+  '1f468-1f3fd-200d-1f4bb': Emoji1f468ZZ1f3fdZZ200dZZ1f4bb,
   '1f468-200d-1f3a4': Emoji1f468ZZ200dZZ1f3a4,
   '1f469-1f3fb': Emoji1f469ZZ1f3fb,
+  '1f469-1f3fd-200d-1f4bb': Emoji1f469ZZ1f3fdZZ200dZZ1f4bb,
+  '1f469-1f3fd-200d-2695-fe0f': Emoji1f469ZZ1f3fdZZ200dZZ2695ZZfe0f,
   '1f469-1f3fd': Emoji1f469ZZ1f3fd,
+  '1f489': Emoji1f489,
+  '1f48a': Emoji1f48a,
   '1f4a1': Emoji1f4a1,
   '1f4a5': Emoji1f4a5,
   '1f4aa': Emoji1f4aa,
