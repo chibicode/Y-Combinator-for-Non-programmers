@@ -59,7 +59,7 @@ export default () => (
               <Strong>
                 プログラミング未経験者向けの、邪道なコンピュータサイエンスの入門書
               </Strong>
-              です。それがどういうことかは、すぐに説明しますね！
+              です。どういう意味かは、すぐに説明しますね！
             </P>
             <P>
               ちなみに、本稿は最後まで<Strong>無料</Strong>
@@ -132,6 +132,78 @@ export default () => (
         footer: {
           content: <H args={{ name: 'dateAndSource' }} />
         }
+      },
+      {
+        title: <>コンピュータサイエンスって何？</>,
+        content: (
+          <>
+            <P>
+              本稿のタイトルは「
+              <Em>{lessonTitle}</Em>
+              」ですが、<Strong>そもそもコンピュータサイエンスって何？</Strong>
+              と思われる方は多いでしょう。そう思われる方向けに、コンピュータサイエンスの
+              <Em>非常に単純化した定義を</Em>書いてみたいと思います。
+            </P>
+            <EmojiSeparator
+              emojis={['❓', '🤔', '❓']}
+              description={<>そもそもコンピュータサイエンスって何？</>}
+            />
+            <P>
+              わたしたちの身の回りは、パソコンやスマホといった「コンピュータ」と、そのコンピュータ上で動く「
+              <InlineHeader>ソフトウェア</InlineHeader>
+              」で溢れています。身近なものでいえば、
+              <Em>
+                <Emoji>🔎</Emoji> グーグルなどの検索エンジン、
+                <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
+                カメラアプリの顔認識機能は、どれも「
+                <InlineHeader>ソフトウェア</InlineHeader>」です
+              </Em>
+              。
+            </P>
+            <EmojiSeparator
+              emojis={['🔎', '🗺', '📷']}
+              description={
+                <>
+                  グーグルなどの検索エンジン、
+                  <br />
+                  地図アプリのナビ機能、
+                  <br />
+                  カメラアプリの顔認識機能は、
+                  <br />
+                  どれも「
+                  <InlineHeader>ソフトウェア</InlineHeader>」
+                </>
+              }
+            />
+            <P>
+              アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステム・仮想通貨など、「
+              <Em>コンピュータプログラムによって機能するもの</Em>
+              」はすべて、「<InlineHeader>ソフトウェア</InlineHeader>
+              」と呼ばれます。
+            </P>
+            <P>
+              そして「
+              <Strong>コンピュータサイエンス</Strong>」とは、
+              <Em>
+                こういったソフトウェアを開発したり、またはソフトウェアを用いて情報を処理する際に
+                <Strong>根幹となる学問</Strong>のことを指す
+              </Em>
+              のです。
+            </P>
+            <EmojiSeparator
+              emojis={['💻', '🎓', '💻']}
+              description={
+                <>
+                  ソフトウェア開発や、
+                  <br />
+                  ソフトウェアを用いた情報処理の
+                  <br />
+                  <Strong>根幹となる学問</Strong>がコンピュータサイエンス
+                </>
+              }
+            />
+          </>
+        )
       },
       {
         type: 'yesNoQuiz',
