@@ -598,19 +598,56 @@ export default () => (
         content: (
           <>
             <P>
-              先ほど説明したように、ラムダ計算はもともと、チャーチがある論理の問題を解くために考案したものでした。しかし、ラムダ計算もまた、
+              先ほど説明したように、ラムダ計算はもともと、ある論理の問題を解くためにチャーチが考案したものでした。しかし、ラムダ計算もまた、
               <Em>計算機科学の発展に大きな影響を与えた</Em>のです。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="lambda" />,
+                <Emoji>✨</Emoji>
+              ]}
+              description={<>ラムダ計算は、計算機科学に大きな影響を与えた</>}
+            />
             <P>
               特に、ラムダ計算は
               <Strong>後に開発されたプログラミング言語</Strong>
-              に影響を与えました。
+              に影響を与えました。現存するプログラミング言語の多くには、ラムダ計算の名残が残っています。
+            </P>
+            <P>
+              たとえば、執筆時点で世界で最も使われているプログラミング言語のひとつで、特にAI開発で人気の
+              <Strong>Python (パイソン)</Strong>
+              という言語があります。ちなみにパイソンとは大蛇のことで、Python言語のロゴにもヘビの絵が描かれています。
+            </P>
+            <EmojiSeparator
+              emojis={['🐍', '🐍', '🐍']}
+              description={<>Python言語</>}
+            />
+            <P>
+              このPython言語にも、「<Strong>lambda</Strong>{' '}
+              (ラムダ)」という機能があります。たとえば、以下のPython言語のコードをご覧ください。
+            </P>
+            <CenteredCode size="sm">(lambda A: 'B')('C')</CenteredCode>
+            <P>
+              上のコードは、先ほどの以下のラムダ計算と全く同じ処理をします。
+            </P>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <P>
+              先ほどのラムダ計算では、結果は「B」になりました。同じように、上のPythonのコードも、実行すると結果は「B」になります。
+            </P>
+            <CenteredCode size="sm">(lambda A: 'B')('C')</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <CenteredCode size="sm">'B'</CenteredCode>
+            <P>
+              まとめると、
+              <Em>
+                Python言語のような現在人気のプログラミング言語も、1930年代に考えられたラムダ計算の影響を受けている
+              </Em>
+              のです。
             </P>
           </>
         )
       }
-      // こういった記述を実行できるとしたら…
-      // 現在はプログラミング言語があり、実行できるが、当時はこういった記述を実行できる機械は存在しなかった…
     ]}
   />
 )
