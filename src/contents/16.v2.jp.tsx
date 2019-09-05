@@ -6,11 +6,16 @@ import {
   InlineHeader,
   Em,
   ExternalLink,
-  Img
+  Img,
+  CenteredCode
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
+import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
+import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
+import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
@@ -392,8 +397,113 @@ export default () => (
             />
           </>
         )
+      },
+      {
+        title: <>ラムダ計算と弁当箱</>,
+        content: (
+          <>
+            <P>
+              チャーチが考えた空想上の計算機「<Strong>ラムダ計算</Strong>
+              」は、<Em>見た目は弁当箱とは違いますが、仕組みは同じ</Em>でした。
+            </P>
+            <P>
+              たとえば、こちらが「<InlineHeader>ラムダ計算</InlineHeader>
+              」の記述式です。「<Strong>λ</Strong>」の記号はギリシャ文字で「
+              <Strong>ラムダ</Strong>
+              」と呼ぶことから、「ラムダ計算」と呼ばれています。
+            </P>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <P>
+              上のラムダ計算の記述式は、以下の弁当箱とまったく同じことを表しています。
+            </P>
+            <R.Kzkg>
+              上のラムダ計算の記述式は、
+              <br />
+              この弁当箱とまったく同じ
+            </R.Kzkg>
+            <P>
+              上の弁当箱は、
+              <H args={{ name: 'play' }} /> すると <Emoji>🅱️</Emoji>{' '}
+              になります。
+              <H args={{ name: 'pressFastForward' }} />
+            </P>
+            <R.Unxf></R.Unxf>
+            <P>
+              <Em>
+                それと同じで、先ほどの「ラムダ計算」の記述式も、
+                <H args={{ name: 'play' }} /> すると
+                <Strong>B</Strong>が残るのです。
+              </Em>
+            </P>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <CenteredCode size="md">B</CenteredCode>
+            <P>
+              もちろん、もっと複雑なラムダ計算の記述式もあります。たとえば、こちらをご覧ください。この記述式は、何を表しているか分かりますか？
+            </P>
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <P>
+              答えを言うと、上の記述式は
+              <Strong>Yコンビネータを表している</Strong>
+              のです。つまり、下の弁当箱とまったく同じです。
+            </P>
+            <R.Rjho>
+              上のラムダ計算の記述式は、
+              <br />「<Strong>Yコンビネータ</Strong>」の弁当箱と同じ
+            </R.Rjho>
+            <P>
+              つまり本稿では、
+              <Strong>実はみなさんにラムダ計算を教えていたのです。</Strong>
+              <Em>
+                ラムダ計算の記述式は見た目が複雑なので、
+                <H args={{ name: 'bentoBoxPuzzle' }} />
+                という形で教えることで、とっつきやすくしていた
+              </Em>
+              というわけですね。
+            </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="lambda" />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🍱</Emoji>
+              ]}
+              description={
+                <>
+                  本稿では、実はラムダ計算を教えていた。
+                  <br />
+                  ラムダ計算の記述式は見た目が複雑なので、
+                  <br />
+                  <H args={{ name: 'bentoBoxPuzzle' }} />
+                  という形で教える
+                  <br />
+                  ことで、とっつきやすくしていた。
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <></>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>弁当箱にできない計算はあるのかな？</Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
       }
-      // TODO: A, B, C => lambda(...)
       // こういった記述を実行できるとしたら…
       // 現在はプログラミング言語があり、実行できるが、当時はこういった記述を実行できる機械は存在しなかった…
     ]}

@@ -260,17 +260,20 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           position: relative;
         `}
       >
-        {expression.shorthandNumber !== undefined ? (
+        {expression.shorthandNumber !== undefined &&
+        expression.highlightType !== 'removed' ? (
           <>
             <EmojiNumber size="sm" number={expression.shorthandNumber} />
           </>
-        ) : expression.shorthandFunc === 'add' ? (
+        ) : expression.shorthandFunc === 'add' &&
+          expression.highlightType !== 'removed' ? (
           <CustomEmoji type="plusOne" size="sm" />
-        ) : expression.shorthandFunc === 'pred' ? (
+        ) : expression.shorthandFunc === 'pred' &&
+          expression.highlightType !== 'removed' ? (
           <CustomEmoji type="minusOne" size="sm" />
         ) : customEmojiToComponent[
             expression.name as keyof typeof customEmojiToComponent
-          ] ? (
+          ] && expression.highlightType !== 'removed' ? (
           <CustomEmoji
             type={expression.name as keyof typeof customEmojiToComponent}
             size="sm"

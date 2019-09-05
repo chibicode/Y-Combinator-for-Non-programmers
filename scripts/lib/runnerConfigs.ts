@@ -5141,3 +5141,17 @@ export const rwuw: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs',
   alphaConvertCallArg: true
 }
+
+export const kzkg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.glvb,
+  showPriorities: true
+}
+
+export const unxf: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.glvb,
+  showPriorities: true
+}

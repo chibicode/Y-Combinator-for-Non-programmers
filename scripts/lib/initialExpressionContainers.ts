@@ -3385,3 +3385,11 @@ export const kjff = initializeExpressionContainer([
     initialHighlight: true
   }
 ])
+
+export const glvb = initializeExpressionContainer([
+  {
+    arg: 'A',
+    body: 'B'
+  },
+  'C'
+])
