@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/core'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import { lessonTitle } from 'src/lib/titles'
-import { spaces } from 'src/lib/theme'
+import { spaces, colors } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
 import H from 'src/components/H'
 import { episodeTitles } from 'src/lib/titles'
@@ -27,6 +27,7 @@ const Toc = () => (
           text-decoration: none;
           &:hover {
             text-decoration: none;
+            background: ${colors('white')};
           }
         `}
       >
@@ -53,6 +54,7 @@ const Toc = () => (
               text-decoration: none;
               &:hover {
                 text-decoration: none;
+                background: ${colors('white')};
               }
             `}
           >
@@ -76,6 +78,7 @@ const Toc = () => (
           text-decoration: none;
           &:hover {
             text-decoration: none;
+            background: ${colors('white')};
           }
         `}
       >
