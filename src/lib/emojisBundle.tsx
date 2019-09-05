@@ -141,6 +141,7 @@ import Emoji2728 from 'src/components/Twemoji/2728'
 import Emoji274c from 'src/components/Twemoji/274c'
 import Emoji2753 from 'src/components/Twemoji/2753'
 import Emoji2754 from 'src/components/Twemoji/2754'
+import Emoji2764 from 'src/components/Twemoji/2764'
 import Emoji2795 from 'src/components/Twemoji/2795'
 import Emoji2796 from 'src/components/Twemoji/2796'
 import Emoji2797 from 'src/components/Twemoji/2797'
@@ -303,6 +304,7 @@ export default {
   '274c': Emoji274c,
   '2753': Emoji2753,
   '2754': Emoji2754,
+  '2764': Emoji2764,
   '2795': Emoji2795,
   '2796': Emoji2796,
   '2797': Emoji2797,
