@@ -251,7 +251,8 @@ export default () => (
               と言われているのが、英国の数学者である
               <InlineHeader>アラン・チューリング</InlineHeader>
               と、米国の数学者である
-              <InlineHeader>アロンゾ・チャーチ</InlineHeader>です。
+              <InlineHeader>アロンゾ・チャーチ</InlineHeader>
+              です。ふたりの研究が、学問としてのコンピュータサイエンスの大本になっているのです。
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '🧓🏻']}
@@ -261,6 +262,131 @@ export default () => (
                   <InlineHeader>アロンゾ・チャーチ</InlineHeader>による
                   <br />
                   研究が、計算機科学の礎となった
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
+        title: <>空想上の計算機</>,
+        content: (
+          <>
+            <P>
+              <Em>
+                チューリングとチャーチは1930年代に、とある難しい論理の問題に別々に取り組んでいました。
+              </Em>
+              それがどんな問題かを説明するのは非常に難しいので省略しますが、ふたりが
+              <Strong>その問題をどのようにして解いたか</Strong>
+              が興味深かったのです。
+            </P>
+            <EmojiSeparator
+              emojis={['🧑🏻', '❓', '🧓🏻']}
+              description={
+                <>
+                  <InlineHeader>チューリング</InlineHeader>と
+                  <InlineHeader>チャーチ</InlineHeader>は、
+                  <br />
+                  とある論理の問題に別々に取り組んでいた
+                </>
+              }
+            />
+            <P>
+              その問題を解くために、ふたりはそれぞれ別々の「
+              <Strong>空想上の計算機</Strong>
+              」を頭の中で考案しました。「
+              <InlineHeader>空想上の計算機</InlineHeader>
+              」とはすなわち、
+              <Em>
+                実際には(少なくとも1930年代の当時は)存在しないけど、もし存在したとしたら非常に複雑な計算ができる、
+                <Strong>仮想上の計算機</Strong>
+              </Em>
+              のことです。
+            </P>
+            <P>
+              「<Strong>もし仮にそんな計算機がこの世に存在したら…</Strong>
+              」と仮定したうえで理論を展開することで、先述の論理の問題を解くことができたのです。
+            </P>
+            <EmojiSeparator emojis={['🧑🏻', '💭', '💻']} noBottomMargin />
+            <EmojiSeparator
+              emojis={['🧓🏻', '💭', '💻']}
+              noTopMargin
+              description={
+                <>
+                  問題を解くために、ふたりはそれぞれ
+                  <br />「<Strong>空想上の計算機</Strong>」を頭の中で設計した。
+                  <br />「<Em>もしこういった計算機が存在したら…</Em>」と
+                  <br />
+                  仮定した上で理論を展開して問題を解いた
+                </>
+              }
+            />
+            <P>
+              実は、この時にふたりが別々に考案した、当時の技術では作ることができない「
+              <Strong>空想上の計算機</Strong>
+              」が、
+              <Em>
+                その後のコンピュータの開発や、プログラミング言語の開発、ひいては計算機科学そのものに大きな影響を与えました。
+              </Em>
+            </P>
+            <P>
+              イギリスの数学者のチューリングは「
+              <InlineHeader>チューリングマシン</InlineHeader>
+              」という空想上の計算機を考案しました。ここでは詳しく説明しませんが、
+              <Em>
+                このチューリングマシンの仕組みはシンプルながら、現代のコンピュータの仕組みと非常に似ていた
+              </Em>
+              のです。
+            </P>
+            <EmojiSeparator
+              emojis={['🧑🏻', '💭', '💻']}
+              description={
+                <>
+                  チューリングは、「
+                  <InlineHeader>チューリングマシン</InlineHeader>」
+                  <br />
+                  という、現代のコンピュータに似ている
+                  <br />
+                  空想上の計算機を頭の中で考えた
+                </>
+              }
+            />
+            <P>
+              一方、ほぼ時を同じくして、アメリカの数学者のチャーチは「
+              <Strong>ラムダ計算</Strong>
+              」という空想上の計算機を考案しました。では、この「
+              <Strong>ラムダ計算</Strong>
+              」とはどんな仕組みだったのでしょうか。
+            </P>
+            <EmojiSeparator
+              emojis={['🧓🏻', '💭', '💻']}
+              description={
+                <>
+                  チャーチは、「
+                  <InlineHeader>ラムダ計算</InlineHeader>」という
+                  <br />
+                  空想上の計算機を頭の中で考えた
+                </>
+              }
+            />
+            <P>
+              <Em>
+                実は、みなさんはすでに「
+                <Strong>ラムダ計算</Strong>
+                」がどんな仕組みかを知っています。
+              </Em>
+              そう、
+              <Strong>
+                <Emoji>🍱</Emoji> 弁当箱のことです。
+              </Strong>
+            </P>
+            <EmojiSeparator
+              emojis={['🧓🏻', '💭', '🍱']}
+              description={
+                <>
+                  チャーチが考えた空想上の計算機
+                  <br />「<InlineHeader>ラムダ計算</InlineHeader>
+                  」は、<Strong>弁当箱と仕組みが同じ</Strong>
                 </>
               }
             />
