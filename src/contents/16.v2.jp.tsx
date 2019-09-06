@@ -961,8 +961,8 @@ export default () => (
                         4
                       </Code>{' '}
                       をたとえば <Code>5</Code> に変えると、
-                      <EmojiNumber number={5} />{' '}
-                      の階乗を計算することができます。
+                      <EmojiNumber number={5} /> の階乗である「<Code>120</Code>
+                      」が出力されます。
                     </P>
                     <P>
                       ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
