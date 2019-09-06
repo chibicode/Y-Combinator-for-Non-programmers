@@ -41,6 +41,7 @@ import Emoji1f454 from 'src/components/Twemoji/1f454'
 import Emoji1f467ZZ1f3fb from 'src/components/Twemoji/1f467-1f3fb'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f393 from 'src/components/Twemoji/1f468-1f3fb-200d-1f393'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fb-200d-1f4bb'
+import Emoji1f468ZZ1f3fbZZ200dZZ1f9b3 from 'src/components/Twemoji/1f468-1f3fb-200d-1f9b3'
 import Emoji1f468ZZ1f3fdZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fd-200d-1f4bb'
 import Emoji1f468ZZ200dZZ1f3a4 from 'src/components/Twemoji/1f468-200d-1f3a4'
 import Emoji1f469ZZ1f3fb from 'src/components/Twemoji/1f469-1f3fb'
@@ -121,7 +122,6 @@ import Emoji1f9d0 from 'src/components/Twemoji/1f9d0'
 import Emoji1f9d1ZZ1f3fb from 'src/components/Twemoji/1f9d1-1f3fb'
 import Emoji1f9d1ZZ1f3ff from 'src/components/Twemoji/1f9d1-1f3ff'
 import Emoji1f9d1 from 'src/components/Twemoji/1f9d1'
-import Emoji1f9d3ZZ1f3fb from 'src/components/Twemoji/1f9d3-1f3fb'
 import Emoji1f9d9ZZ200dZZ2640ZZfe0f from 'src/components/Twemoji/1f9d9-200d-2640-fe0f'
 import Emoji1f9e0 from 'src/components/Twemoji/1f9e0'
 import Emoji1f9e9 from 'src/components/Twemoji/1f9e9'
@@ -204,6 +204,7 @@ export default {
   '1f467-1f3fb': Emoji1f467ZZ1f3fb,
   '1f468-1f3fb-200d-1f393': Emoji1f468ZZ1f3fbZZ200dZZ1f393,
   '1f468-1f3fb-200d-1f4bb': Emoji1f468ZZ1f3fbZZ200dZZ1f4bb,
+  '1f468-1f3fb-200d-1f9b3': Emoji1f468ZZ1f3fbZZ200dZZ1f9b3,
   '1f468-1f3fd-200d-1f4bb': Emoji1f468ZZ1f3fdZZ200dZZ1f4bb,
   '1f468-200d-1f3a4': Emoji1f468ZZ200dZZ1f3a4,
   '1f469-1f3fb': Emoji1f469ZZ1f3fb,
@@ -284,7 +285,6 @@ export default {
   '1f9d1-1f3fb': Emoji1f9d1ZZ1f3fb,
   '1f9d1-1f3ff': Emoji1f9d1ZZ1f3ff,
   '1f9d1': Emoji1f9d1,
-  '1f9d3-1f3fb': Emoji1f9d3ZZ1f3fb,
   '1f9d9-200d-2640-fe0f': Emoji1f9d9ZZ200dZZ2640ZZfe0f,
   '1f9e0': Emoji1f9e0,
   '1f9e9': Emoji1f9e9,
