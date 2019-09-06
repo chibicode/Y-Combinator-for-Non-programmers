@@ -21,10 +21,9 @@
   "scripts": {
     "jp": "IS_DEVELOPMENT=true DEV_LOCALE=jp next -p 9991",
     "en": "IS_DEVELOPMENT=true DEV_LOCALE=en next -p 9990",
-    "jp:v2": "IS_DEVELOPMENT=true DEV_LOCALE=jp DEV_CONTENT_VERSION=v2 next -p 9992",
     "jp:hide-cards": "DEV_LOCALE=jp next -p 9991",
     "en:hide-cards": "DEV_LOCALE=en next -p 9990",
-    "dev": "rm -f report.*.json && rm -f *.log && rm -rf .next && concurrently \"yarn jp\" \"yarn jp:v2\" \"yarn en\"",
+    "dev": "rm -f report.*.json && rm -f *.log && rm -rf .next && concurrently \"yarn jp\" \"yarn en\"",
     "dev:hide-cards": "rm -rf .next && concurrently \"yarn jp:hide-cards\" \"yarn en:hide-cards\"",
     "ts-node": "tsc --project tsconfig.scripts.json && node -r module-alias/register",
     "sitemap": "yarn ts-node .tsbuild/scripts/generateSitemap.js",
