@@ -7,15 +7,21 @@ import {
   Em,
   ExternalLink,
   Img,
-  CenteredCode
+  CenteredCode,
+  Pre,
+  Code,
+  Ol,
+  OlLi
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
+import CardContent from 'src/components/CardContent'
 
 export default () => (
   <EpisodeCardList
@@ -797,9 +803,30 @@ export default () => (
         title: <>まとめ</>,
         content: (
           <>
-            <P>
-              本稿で学んだことを箇条書きでまとめると、以下のようになります。
-            </P>
+            <P>本稿で学んだことを短くまとめると、以下のようになります。</P>
+            <Ol>
+              <OlLi>
+                <Em>
+                  弁当箱は、工夫次第で四則演算や、条件分岐や、繰り返しといった複雑な計算ができる。また、繰り返しを行う弁当箱を
+                  <Strong>Yコンビネータ</Strong>と呼ぶ。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  弁当箱は、ラムダ計算という空想上の計算機が基になっている。ラムダ計算は、現代のコンビネータが行えるすべての計算を行うことができ、また後のプログラミング言語に影響を与えた。
+                </Em>
+              </OlLi>
+              <OlLi>
+                <Em>
+                  コンピュータサイエンスは「
+                  <Strong>
+                    計算機(コンピュータ)をどう工夫して問題を解くか
+                  </Strong>
+                  」を考える学問。工夫次第で複雑な計算ができる弁当箱には、そのエッセンスが詰まっている。
+                </Em>
+              </OlLi>
+            </Ol>
+            <EmojiSeparator emojis={['✨', '🍱', '✨']} />
           </>
         )
       },
@@ -895,7 +922,78 @@ export default () => (
               以上でおしまいです！ここまでお付き合いくださり、本当にありがとうございました。
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <P>
+                      下のコードは、
+                      <Em>
+                        JavaScriptでYコンビネータを使って「
+                        <EmojiNumber number={4} /> の階乗」、すなわち{' '}
+                        <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                        <EmojiNumber number={1} /> を計算するコード
+                      </Em>
+                      です。
+                    </P>
+                    <Pre>
+                      <Code
+                        children={`console.log(
+  (a =>
+    (b => a(c => b(b)(c)))(b =>
+      a(c => b(b)(c))
+    ))(f => n =>
+    n === 0 ? 1 : n * f(n - 1)
+  )(4)
+)`}
+                      ></Code>
+                    </Pre>
+                    <P>
+                      上のコードをブラウザの開発者ツールにコピーして実行すると、「
+                      <EmojiNumber number={4} /> の階乗」である「
+                      <Code>24</Code>
+                      」が出力されます。また、下から2行目にある <Code>
+                        4
+                      </Code>{' '}
+                      をたとえば <Code>5</Code> に変えると、
+                      <EmojiNumber number={5} />{' '}
+                      の階乗を計算することができます。
+                    </P>
+                    <P>
+                      ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
+                      <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
+                      といった関数、または関数の再帰を使います。しかし、
+                      <Em>
+                        Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
+                      </Em>
+                      のです。
+                    </P>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <InlineHeader>ちなみに:</InlineHeader>{' '}
+                        プログラマの方で、「
+                        <Em>
+                          Yコンビネータを実際にプログラミングで試してみたい
+                        </Em>
+                        」と思った方は、↓の「続きを読む」を押してみてください。
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       }
     ]}
   />
