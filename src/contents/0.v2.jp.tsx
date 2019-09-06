@@ -19,6 +19,7 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import NextLessonButton from 'src/components/NextLessonButton'
+import CardContent from 'src/components/CardContent'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import { lessonTitle } from 'src/lib/titles'
@@ -615,13 +616,121 @@ export default () => (
         footer: {
           content: (
             <>
-              <P>
-                <InlineHeader>ちなみに:</InlineHeader> IT業界にいる方は、「
-                <Em>
-                  Yコンビネータって、シリコンバレーにあるITベンチャー養成機関のこと？
-                </Em>
-                」と思われた方もいるかと思います。そんな方は、↓の「続きを読む」を押してみてください。
-              </P>
+              <CardContent
+                children={
+                  <>
+                    <P>
+                      <Em>
+                        <H args={{ name: 'yCombinator' }} />
+                        は、シリコンバレーで最も有名なITベンチャー養成機関の名でもあります。
+                      </Em>
+                      AirBnBをはじめとする超有名ITベンチャーを多数輩出しており、
+                      約2000の卒業企業のうち、トップ100社の企業価値を合計すると
+                      <ExternalLink href="https://www.ycombinator.com/topcompanies/">
+                        10兆円以上になります(2018年10月時点)
+                      </ExternalLink>
+                      。
+                      企業価値には偏りがありますが、単純に割り算をすると、1社あたりの企業価値は1000億円以上になります。
+                    </P>
+                    <P>
+                      <Strong>
+                        では、なぜ
+                        <H args={{ name: 'yCombinator' }} />
+                        という名称がつけられたのでしょうか？
+                      </Strong>
+                      <H args={{ name: 'yCombinator' }} />
+                      創業者のひとり、ポール・グレアム氏は
+                      <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
+                        インタビューでこう語っていました
+                      </ExternalLink>
+                      。
+                    </P>
+                    <BubbleQuotes
+                      quotes={[
+                        {
+                          type: 'manLightSkinWhiteHair',
+                          children: (
+                            <>
+                              <P>
+                                <Strong>
+                                  <Em>
+                                    <H args={{ name: 'yCombinator' }} />
+                                    とは、プログラミングのテクニックのひとつです。
+                                  </Em>
+                                </Strong>{' '}
+                                (中略) 個人的に、
+                                <H args={{ name: 'yCombinator' }} />
+                                があまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
+                                <Em>われわれが投資する起業家を選別する</Em>
+                                際に、この名前が役立ちました。
+                              </P>
+                              <P>
+                                <Em>
+                                  わたしたちは凄腕プログラマの起業家は招き入れたかったが、スーツ姿のビジネスパーソンは門前払いにしたかった。
+                                </Em>
+                                凄腕プログラマがわたしたちのことを聞いたら、こう思うでしょう。「
+                                <H args={{ name: 'yCombinator' }} />
+                                って名のITベンチャー養成機関だって？最高じゃん！きっと、面白い人たちが集まっているに違いない」と。いっぽう、スーツの人たちは、
+                                <H args={{ name: 'yCombinator' }} />
+                                と聞いても何のことやらさっぱり、となりますから。
+                              </P>
+                            </>
+                          )
+                        }
+                      ]}
+                    />
+                    <P>
+                      つまり、彼らは凄腕プログラマの起業家に投資したかった。だから、「
+                      <H args={{ name: 'yCombinator' }} />
+                      」という
+                      <Em>
+                        高度な
+                        <H args={{ name: 'computerScience' }} />
+                        の専門用語
+                      </Em>
+                      をITベンチャー養成機関の名前につけることで、凄腕プログラマを呼び寄せたのです。
+                    </P>
+
+                    <EmojiSeparator
+                      emojis={['😎', '🆚', '👔']}
+                      description={
+                        <>
+                          凄腕プログラマを集めるために
+                          <br />
+                          あえて「Yコンビネータ−」という名前を
+                          <br />
+                          ITベンチャー養成機関につけた
+                        </>
+                      }
+                    />
+                    <P>
+                      <Em>
+                        しかし、本稿を読めば、プログラマではなくても
+                        <H args={{ name: 'yCombinator' }} />
+                        を理解できます
+                      </Em>
+                      。ITベンチャー養成機関としての「
+                      <H args={{ name: 'yCombinator' }} />
+                      」をご存知の方も、ぜひ読み進めてみてください！
+                    </P>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <InlineHeader>ちなみに:</InlineHeader>{' '}
+                        IT業界にいる方は、「
+                        <Em>
+                          Yコンビネータって、シリコンバレーにあるITベンチャー養成機関のこと？
+                        </Em>
+                        」と思われた方もいるかと思います。そんな方は、↓の「続きを読む」を押してみてください。
+                      </P>
+                    </>
+                  )
+                }}
+              />
             </>
           )
         }
@@ -655,7 +764,58 @@ export default () => (
               </Em>
             </P>
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <CardContent
+                children={
+                  <>
+                    <P>
+                      プログラマ向けのYコンビネータについての説明で最もおすすめなのは、
+                      「
+                      <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                        <InlineHeader>
+                          Y Not - Adventures in Functional Programming
+                        </InlineHeader>
+                      </ExternalLink>
+                      」という動画です。これは、Rubyのプログラマで、Rakeの作者でもある故・Jim
+                      Weirich氏がRubyConf
+                      2012にて行った講演です。英語ですが字幕付きで見ることができます。
+                    </P>
+                    <YoutubeEmbed
+                      width={560}
+                      height={315}
+                      src="https://www.youtube.com/embed/FITJMJjASUs"
+                      caption={
+                        'ちなみにこの時、筆者は観客として参加していました。'
+                      }
+                    />
+                    <P>
+                      <InlineHeader>余談:</InlineHeader>{' '}
+                      本稿はTypeScriptとNext.jsで書いています。ソースコードは
+                      <ExternalLink href={githubRepo}>
+                        GitHubで公開中
+                      </ExternalLink>
+                      です。
+                    </P>
+                  </>
+                }
+                preview={{
+                  text: <>続きを読む</>,
+                  content: (
+                    <>
+                      <P>
+                        <InlineHeader>ちなみに:</InlineHeader>{' '}
+                        プログラマの方で、「Yコンビネータって何？」と思われた方は、↓の「続きを読む」を押してみてください。
+                      </P>
+                    </>
+                  )
+                }}
+              />
+            </>
+          )
+        }
       },
       {
         title: <>さっそくはじめてみましょう！</>,
@@ -669,214 +829,6 @@ export default () => (
               </Em>
               」と思ってくださったのであれば、下のボタンを押して先に進んでみてください！
             </P>
-            <NextLessonButton />
-          </>
-        ),
-        footer: {
-          content: (
-            <P>
-              <Em>
-                プログラマの方や、別の意味で「
-                <H args={{ name: 'yCombinator' }} />
-                」という言葉をご存知の方
-              </Em>
-              は、さらに下にある余談も読んでみてください。
-            </P>
-          )
-        }
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'sideNotePrefix' }} />: プログラマの方へ
-          </>
-        ),
-        type: 'sideNote',
-        preview: {
-          content: (
-            <P>
-              プログラミングができる方が「繰り返し処理」と聞くと、「
-              <Strong>for文</Strong>」「<Strong>while文</Strong>」「
-              <Strong>再帰</Strong>
-              」を思い浮かべると思います。
-            </P>
-          ),
-          text: (
-            <>
-              <H args={{ name: 'continueReading' }} /> (プログラマ向け)
-            </>
-          )
-        },
-        content: (
-          <>
-            <P>
-              <Em>
-                <H args={{ name: 'yCombinator' }} />
-                は、「
-                <Strong>for文</Strong>」「<Strong>while文</Strong>」「
-                <Strong>再帰</Strong>
-                」が存在しないプログラミング言語でも、繰り返し処理を可能にするテクニック
-              </Em>
-              なのです。詳しくは後に説明します。
-            </P>
-            <P>
-              <H args={{ name: 'byTheWay' }} />{' '}
-              本稿はプログラミング知識ゼロの方でも分かるように書いていますので、「
-              <Em>プログラマに特化した説明のほうがいい</Em>
-              」と思う方もいらっしゃるかもしれません。
-            </P>
-            <P>
-              そんな方には、Rakeの作者でもある故・Jim Weirich氏がRubyConf
-              2012にて行った講演「
-              <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                <InlineHeader>
-                  Y Not - Adventures in Functional Programming
-                </InlineHeader>
-              </ExternalLink>
-              」をおすすめします。英語ですが字幕付きで見ることができます。
-            </P>
-            <YoutubeEmbed
-              width={560}
-              height={315}
-              src="https://www.youtube.com/embed/FITJMJjASUs"
-              caption={'ちなみにこの時、筆者は観客として参加していました。'}
-            />
-            <P>
-              <InlineHeader>余談:</InlineHeader>{' '}
-              本稿はTypeScriptとNext.jsで書いています。ソースコードは
-              <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
-              です。
-            </P>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'sideNotePrefix' }} />: IT業界の「
-            <H args={{ name: 'yCombinator' }} />」
-          </>
-        ),
-        type: 'sideNote',
-        preview: {
-          content: (
-            <>
-              <P>
-                <Em>IT業界</Em>にいる方なら、別の意味で 「
-                <H args={{ name: 'yCombinator' }} />
-                」という言葉をご存知かもしれません。
-              </P>
-            </>
-          ),
-          text: (
-            <>
-              <H args={{ name: 'continueReading' }} /> (IT業界の方向け)
-            </>
-          )
-        },
-        content: (
-          <>
-            <P>
-              <Em>
-                <H args={{ name: 'yCombinator' }} />
-                は、シリコンバレーで最も有名なITベンチャー養成機関の名でもあります。
-              </Em>
-              AirBnBをはじめとする超有名ITベンチャーを多数輩出しており、
-              約2000の卒業企業のうち、トップ100社の企業価値を合計すると
-              <ExternalLink href="https://www.ycombinator.com/topcompanies/">
-                10兆円以上になります(2018年10月時点)
-              </ExternalLink>
-              。
-              企業価値には偏りがありますが、単純に割り算をすると、1社あたりの企業価値は1000億円以上になります。
-            </P>
-            <P>
-              <Strong>
-                では、なぜ
-                <H args={{ name: 'yCombinator' }} />
-                という名称がつけられたのでしょうか？
-              </Strong>
-              <H args={{ name: 'yCombinator' }} />
-              創業者のひとり、ポール・グレアム氏は
-              <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
-                インタビューでこう語っていました
-              </ExternalLink>
-              。
-            </P>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'manLightSkinWhiteHair',
-                  children: (
-                    <>
-                      <P>
-                        <Strong>
-                          <Em>
-                            <H args={{ name: 'yCombinator' }} />
-                            とは、プログラミングのテクニックのひとつです。
-                          </Em>
-                        </Strong>{' '}
-                        (中略) 個人的に、
-                        <H args={{ name: 'yCombinator' }} />
-                        があまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
-                        <Em>われわれが投資する起業家を選別する</Em>
-                        際に、この名前が役立ちました。
-                      </P>
-                      <P>
-                        <Em>
-                          わたしたちは凄腕プログラマの起業家は招き入れたかったが、スーツ姿のビジネスパーソンは門前払いにしたかった。
-                        </Em>
-                        凄腕プログラマがわたしたちのことを聞いたら、こう思うでしょう。「
-                        <H args={{ name: 'yCombinator' }} />
-                        って名のITベンチャー養成機関だって？最高じゃん！きっと、面白い人たちが集まっているに違いない」と。いっぽう、スーツの人たちは、
-                        <H args={{ name: 'yCombinator' }} />
-                        と聞いても何のことやらさっぱり、となりますから。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
-            <P>
-              つまり、彼らは凄腕プログラマの起業家に投資したかった。だから、「
-              <H args={{ name: 'yCombinator' }} />
-              」という
-              <Em>
-                高度な
-                <H args={{ name: 'computerScience' }} />
-                の専門用語
-              </Em>
-              をITベンチャー養成機関の名前につけることで、凄腕プログラマを呼び寄せたのです。
-            </P>
-
-            <EmojiSeparator
-              emojis={['😎', '🆚', '👔']}
-              description={
-                <>
-                  凄腕プログラマを集めるために
-                  <br />
-                  あえて「Yコンビネータ−」という名前を
-                  <br />
-                  ITベンチャー養成機関につけた
-                </>
-              }
-            />
-            <P>
-              <Em>
-                しかし、本稿を読めば、プログラマではなくても
-                <H args={{ name: 'yCombinator' }} />
-                を理解できます
-              </Em>
-              。ITベンチャー養成機関としての「
-              <H args={{ name: 'yCombinator' }} />
-              」をご存知の方も、ぜひ読み進めてみてください！
-            </P>
-          </>
-        )
-      },
-      {
-        title: '余談はこれくらいにして、早速始めましょう！',
-        content: (
-          <>
             <NextLessonButton />
           </>
         )
