@@ -1051,6 +1051,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: <>魔法のYコンビネータ</>,
         content: (
           <>
