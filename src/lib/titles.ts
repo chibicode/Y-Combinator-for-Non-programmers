@@ -12,7 +12,7 @@ export const lessonTitle = {
 
 export const description = {
   en: 'Computer Science for the Rest of Us',
-  jp: '『ファクトフルネス』訳者によるプログラミング未経験者向けの解説'
+  jp: 'プログラミング未経験者向けの、邪道なコンピュータサイエンスの入門書'
 }[locale]
 
 export const episodeTitles = {
