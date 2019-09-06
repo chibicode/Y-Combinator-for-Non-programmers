@@ -2,7 +2,7 @@
 import { css, jsx, SerializedStyles } from '@emotion/core'
 import React from 'react'
 import Emoji from 'src/components/Emoji'
-import { radii, colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
+import { colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
 import { VariableNames } from 'src/types/VariableNames'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 
@@ -15,8 +15,6 @@ interface EmojiSeparatorProps {
   Component: React.ComponentType | string
   cssOverrides?: SerializedStyles
   description?: React.ReactNode
-  addDotDotDotFront: boolean
-  addDotDotDotEnd: boolean
   noBottomMargin: boolean
   noTopMargin: boolean
 }
@@ -48,22 +46,6 @@ const SideSpace = ({ children }: { children: React.ReactNode }) => (
   </span>
 )
 
-const DotDotDot = () => (
-  <span
-    css={css`
-      background: ${colors('secretCode')};
-      color: #fff;
-      padding: 0em 0.1em;
-      line-height: 1;
-      border-radius: ${radii(0.25)};
-      font-weight: bold;
-      display: inline-block;
-    `}
-  >
-    &middot;&middot;&middot;
-  </span>
-)
-
 const EmojiSeparator = ({
   letters,
   emojis,
@@ -73,8 +55,6 @@ const EmojiSeparator = ({
   alignCenter,
   cssOverrides,
   description,
-  addDotDotDotFront,
-  addDotDotDotEnd,
   noBottomMargin,
   noTopMargin
 }: EmojiSeparatorProps) => (
@@ -100,11 +80,6 @@ const EmojiSeparator = ({
           justify-content: center;
         `}
       >
-        {addDotDotDotFront && (
-          <SideSpace>
-            <DotDotDot />
-          </SideSpace>
-        )}
         {letters
           ? letters.map((letter, index) => (
               <SideSpace key={`${letter}${index}`}>
@@ -128,11 +103,6 @@ const EmojiSeparator = ({
                 <Emoji size="sm">{emoji}</Emoji>
               </SideSpace>
             ))}
-        {addDotDotDotEnd && (
-          <SideSpace>
-            <DotDotDot />
-          </SideSpace>
-        )}
       </span>
       {description && (
         <div
@@ -157,8 +127,6 @@ EmojiSeparator.defaultProps = {
   Component: 'div',
   alignCenter: true,
   emojis: [],
-  addDotDotDotFront: false,
-  addDotDotDotEnd: false,
   noBottomMargin: false,
   noTopMargin: false
 }
