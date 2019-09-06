@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { P, LinkButton } from 'src/components/ContentTags'
-import useCardScroll from 'src/hooks/useCardScroll'
+import ExpressionRunnerScrollAdjuster from 'src/components/ExpressionRunnerScrollAdjuster'
 
 export interface CardContentProps {
   children: React.ReactNode
@@ -12,25 +12,25 @@ export interface CardContentProps {
 
 const CardContent = ({ preview, children }: CardContentProps) => {
   const [previewOnly, setPreviewOnly] = useState(!!preview)
-  const [previewOnlyChanged, setPreviewOnlyChanged] = useState(false)
-  const domRef = useCardScroll<HTMLDivElement>(previewOnlyChanged)
   return (
-    <div ref={domRef}>
+    <>
       {preview && preview.content}
+      <ExpressionRunnerScrollAdjuster />
       {preview && previewOnly && (
-        <P>
-          <LinkButton
-            onClick={() => {
-              setPreviewOnly(false)
-              setPreviewOnlyChanged(true)
-            }}
-          >
-            {preview.text}
-          </LinkButton>
-        </P>
+        <>
+          <P>
+            <LinkButton
+              onClick={() => {
+                setPreviewOnly(false)
+              }}
+            >
+              {preview.text}
+            </LinkButton>
+          </P>
+        </>
       )}
       {!previewOnly && children}
-    </div>
+    </>
   )
 }
 
