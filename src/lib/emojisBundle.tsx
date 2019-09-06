@@ -2,8 +2,6 @@
 import Emoji1f170 from 'src/components/Twemoji/1f170'
 import Emoji1f171 from 'src/components/Twemoji/1f171'
 import Emoji1f193 from 'src/components/Twemoji/1f193'
-import Emoji1f195 from 'src/components/Twemoji/1f195'
-import Emoji1f197 from 'src/components/Twemoji/1f197'
 import Emoji1f19a from 'src/components/Twemoji/1f19a'
 import Emoji1f1faZZ1f1f8 from 'src/components/Twemoji/1f1fa-1f1f8'
 import Emoji1f32d from 'src/components/Twemoji/1f32d'
@@ -43,7 +41,6 @@ import Emoji1f454 from 'src/components/Twemoji/1f454'
 import Emoji1f467ZZ1f3fb from 'src/components/Twemoji/1f467-1f3fb'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f393 from 'src/components/Twemoji/1f468-1f3fb-200d-1f393'
 import Emoji1f468ZZ1f3fbZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fb-200d-1f4bb'
-import Emoji1f468ZZ1f3fbZZ200dZZ1f9b3 from 'src/components/Twemoji/1f468-1f3fb-200d-1f9b3'
 import Emoji1f468ZZ1f3fdZZ200dZZ1f4bb from 'src/components/Twemoji/1f468-1f3fd-200d-1f4bb'
 import Emoji1f468ZZ200dZZ1f3a4 from 'src/components/Twemoji/1f468-200d-1f3a4'
 import Emoji1f469ZZ1f3fb from 'src/components/Twemoji/1f469-1f3fb'
@@ -85,7 +82,6 @@ import Emoji1f604 from 'src/components/Twemoji/1f604'
 import Emoji1f605 from 'src/components/Twemoji/1f605'
 import Emoji1f608 from 'src/components/Twemoji/1f608'
 import Emoji1f609 from 'src/components/Twemoji/1f609'
-import Emoji1f60b from 'src/components/Twemoji/1f60b'
 import Emoji1f60d from 'src/components/Twemoji/1f60d'
 import Emoji1f60e from 'src/components/Twemoji/1f60e'
 import Emoji1f60f from 'src/components/Twemoji/1f60f'
@@ -96,7 +92,6 @@ import Emoji1f621 from 'src/components/Twemoji/1f621'
 import Emoji1f622 from 'src/components/Twemoji/1f622'
 import Emoji1f628 from 'src/components/Twemoji/1f628'
 import Emoji1f629 from 'src/components/Twemoji/1f629'
-import Emoji1f62c from 'src/components/Twemoji/1f62c'
 import Emoji1f62d from 'src/components/Twemoji/1f62d'
 import Emoji1f62e from 'src/components/Twemoji/1f62e'
 import Emoji1f631 from 'src/components/Twemoji/1f631'
@@ -113,13 +108,8 @@ import Emoji1f911 from 'src/components/Twemoji/1f911'
 import Emoji1f914 from 'src/components/Twemoji/1f914'
 import Emoji1f916 from 'src/components/Twemoji/1f916'
 import Emoji1f917 from 'src/components/Twemoji/1f917'
-import Emoji1f924 from 'src/components/Twemoji/1f924'
-import Emoji1f928 from 'src/components/Twemoji/1f928'
 import Emoji1f929 from 'src/components/Twemoji/1f929'
-import Emoji1f92b from 'src/components/Twemoji/1f92b'
 import Emoji1f92f from 'src/components/Twemoji/1f92f'
-import Emoji1f947 from 'src/components/Twemoji/1f947'
-import Emoji1f948 from 'src/components/Twemoji/1f948'
 import Emoji1f955 from 'src/components/Twemoji/1f955'
 import Emoji1f957 from 'src/components/Twemoji/1f957'
 import Emoji1f966 from 'src/components/Twemoji/1f966'
@@ -175,8 +165,6 @@ export default {
   '1f170': Emoji1f170,
   '1f171': Emoji1f171,
   '1f193': Emoji1f193,
-  '1f195': Emoji1f195,
-  '1f197': Emoji1f197,
   '1f19a': Emoji1f19a,
   '1f1fa-1f1f8': Emoji1f1faZZ1f1f8,
   '1f32d': Emoji1f32d,
@@ -216,7 +204,6 @@ export default {
   '1f467-1f3fb': Emoji1f467ZZ1f3fb,
   '1f468-1f3fb-200d-1f393': Emoji1f468ZZ1f3fbZZ200dZZ1f393,
   '1f468-1f3fb-200d-1f4bb': Emoji1f468ZZ1f3fbZZ200dZZ1f4bb,
-  '1f468-1f3fb-200d-1f9b3': Emoji1f468ZZ1f3fbZZ200dZZ1f9b3,
   '1f468-1f3fd-200d-1f4bb': Emoji1f468ZZ1f3fdZZ200dZZ1f4bb,
   '1f468-200d-1f3a4': Emoji1f468ZZ200dZZ1f3a4,
   '1f469-1f3fb': Emoji1f469ZZ1f3fb,
@@ -258,7 +245,6 @@ export default {
   '1f605': Emoji1f605,
   '1f608': Emoji1f608,
   '1f609': Emoji1f609,
-  '1f60b': Emoji1f60b,
   '1f60d': Emoji1f60d,
   '1f60e': Emoji1f60e,
   '1f60f': Emoji1f60f,
@@ -269,7 +255,6 @@ export default {
   '1f622': Emoji1f622,
   '1f628': Emoji1f628,
   '1f629': Emoji1f629,
-  '1f62c': Emoji1f62c,
   '1f62d': Emoji1f62d,
   '1f62e': Emoji1f62e,
   '1f631': Emoji1f631,
@@ -286,13 +271,8 @@ export default {
   '1f914': Emoji1f914,
   '1f916': Emoji1f916,
   '1f917': Emoji1f917,
-  '1f924': Emoji1f924,
-  '1f928': Emoji1f928,
   '1f929': Emoji1f929,
-  '1f92b': Emoji1f92b,
   '1f92f': Emoji1f92f,
-  '1f947': Emoji1f947,
-  '1f948': Emoji1f948,
   '1f955': Emoji1f955,
   '1f957': Emoji1f957,
   '1f966': Emoji1f966,
