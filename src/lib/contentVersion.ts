@@ -5,4 +5,4 @@ export default (publicRuntimeConfig.devContentVersion ||
   // Support for ts-node that doesn't go through next.config.js
   process.env.DEV_CONTENT_VERSION ||
   process.env.PRODUCTION_CONTENT_VERSION ||
-  'v1') as ('v1' | 'v2')
+  'v2') as ('v1' | 'v2')
