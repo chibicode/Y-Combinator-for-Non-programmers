@@ -12,8 +12,6 @@ import {
   InlineHeader,
   Ol,
   OlLi,
-  Ul,
-  UlLi,
   Hr
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
@@ -21,7 +19,6 @@ import EmojiSeparator from 'src/components/EmojiSeparator'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import NextLessonButton from 'src/components/NextLessonButton'
-import YesNoButtons from 'src/components/YesNoButtons'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 import { lessonTitle } from 'src/lib/titles'
@@ -412,7 +409,7 @@ export default () => (
               description={<>邪道なコンピュータサイエンスの入門書</>}
             />
             <P>
-              筆者はアメリカの大学でコンピュータサイエンスを学んだのですが、当時から教育者気質・作家気質だった筆者は、「
+              わたしはアメリカの大学でコンピュータサイエンスを学んだのですが、当時から教育者気質・作家気質だった筆者は、「
               <Em>いつかコンピュータサイエンスの入門書を書いてみたい</Em>
               」と考えていました。
             </P>
@@ -450,7 +447,7 @@ export default () => (
           <>
             <P>
               本稿がコンピュータサイエンスの邪道な入門書である理由のひとつめは、
-              <Strong>プログラミングを必要としない</Strong>ということです。
+              <Strong>プログラミングを必要としない</Strong>からです。
             </P>
             <EmojiSeparator
               emojis={['😉', '💻', '❌']}
@@ -461,20 +458,15 @@ export default () => (
               <Strong>
                 プログラミングをしながら、コンピュータサイエンスを学ぶ
               </Strong>
-              」という教え方をします。たしかにそのほうが効率が良いのですが、
+              」という教え方をします。
             </P>
-            <Ul>
-              <UlLi>
-                <Em>
-                  ほとんどの人はプログラミング未経験者ですし、将来プログラマになることもありません。
-                </Em>
-                プログラミングをコンピュータサイエンスを学ぶ必須事項にしてしまうと、それだけで学ぶハードルを上げてしまいます。
-              </UlLi>
-              <UlLi>
-                また、<Em>スマホでプログラミングをするのは難しい</Em>
-                ので、スマホしか持っていない人にとってハードルが上がってしまいます。
-              </UlLi>
-            </Ul>
+            <P>
+              たしかにそのほうが効率が良いのですが、
+              <Em>
+                ほとんどの人はプログラミング未経験者ですし、将来プログラマになることもありません。
+              </Em>
+              プログラミングをコンピュータサイエンスを学ぶ必須事項にしてしまうと、それだけで学ぶハードルを上げてしまいます。
+            </P>
             <P>
               個人的には、
               <Em>
@@ -530,306 +522,140 @@ export default () => (
         )
       },
       {
-        title: <>邪道な理由2: 難しいマニアックな内容</>,
-        content: <></>
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'computerScience' }} />
-            って何？
-          </>
-        ),
+        title: <>邪道な理由2: 高度な内容</>,
         content: (
           <>
-            <EmojiSeparator emojis={['🤖', '🤔', '🤖']} />
             <P>
-              いきなりですが、
-              <H args={{ name: 'yesNoQuiz' }} />
-              を行います。分からなくてもいいので、勘で答えてみてください！
+              本稿がコンピュータサイエンスの邪道な入門書である理由のふたつめは、
+              <Strong>内容が高度</Strong>だからです。
             </P>
-            <P>
-              <H args={{ name: 'question' }} /> 本稿のタイトルは「
-              <Em>{lessonTitle}</Em>」ですが、
-              <Strong>
-                <H args={{ name: 'computerScience' }} />
-                とは、非常に単純化して言うと「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」だ。
-              </Strong>
-              <H args={{ name: 'yesOrNo' }} />
-            </P>
-            <YesNoButtons answer="yes" />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            <H args={{ name: 'theAnswerIs', isYes: true }} />
-          </>
-        ),
-        content: (
-          <>
-            <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <H args={{ name: 'csDescriptionPreface' }} />
-            </P>
-            <H
-              args={{
-                name: 'csDescription'
-              }}
+            <EmojiSeparator
+              emojis={['🧠', '🧐', '🧠']}
+              description={<>内容が高度</>}
             />
-            <EmojiSeparator emojis={['🔎', '🗺', '📷']} />
             <P>
-              もしも、「
+              ほとんどの正統派のコンピュータサイエンスの入門書は、
+              <Strong>初歩的な内容</Strong>
+              から教えはじめます。それはそれで良いと思うのですが、本稿では逆に、みなさんに
+              <Em>高度な内容</Em>
+              を学んでもらいます。
+            </P>
+            <P>
+              本稿は<Em>2時間程度</Em>
+              で読み切れる長さを目標にしているのですが、そのくらいの文量だと、コンピュータサイエンスのすべてを語ることは到底できません。
+              だから、
               <Em>
-                世間を騒がせているアプリやAIが、どんな仕組みでできているのか、ほんの少しでいいから理解してみたい
+                わたしはその限られた文量の中で、「
+                <Strong>自分にもコンピュータサイエンスを学べるかも</Strong>
+                」と思うきっかけを読者に提供したい
               </Em>
-              」と思われたことがありましたら、
-              <H args={{ name: 'computerScience' }} />
-              を少しかじってみても良いかもしれません。
+              と考えています。
             </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: <>プログラミングは必要？</>,
-        content: (
-          <>
+            <EmojiSeparator
+              emojis={['✨', '🙂', '✨']}
+              description={
+                <>
+                  「自分にもコンピュータサイエンスを
+                  <br />
+                  学べるかも」と思うきっかけを提供したい
+                </>
+              }
+            />
             <P>
-              <H args={{ name: 'computerScience' }} />
-              については後に詳しく説明しますが、ここでもう一問
-              <H args={{ name: 'yesNoQuiz' }} />
-              にチャレンジしてみましょう！
-            </P>
-            <EmojiSeparator emojis={['💻', '🤔', '💻']} />
-            <P>
-              <H args={{ name: 'question' }} />{' '}
-              <Em>
-                <H args={{ name: 'computerScience' }} />
-                を学ぶためには、
-                <Strong>プログラミングの知識が必要だ</Strong>。
-              </Em>
-              <H args={{ name: 'yesOrNo' }} />
-            </P>
-            <YesNoButtons answer="no" />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            プログラミングは必須ではない<Emoji>❌</Emoji>
-          </>
-        ),
-        content: (
-          <>
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              あくまで筆者の考えですが、
+              そのためには
               <Strong>
-                <H args={{ name: 'computerScience' }} />
-                を学ぶのに、プログラミングの知識は必須ではありません。
+                初歩的な内容ではなく、ある程度高度な内容を教えるほうが良い
               </Strong>
-              プログラミングができるのに越したことはありませんが、プログラミングができなくても
-              <H args={{ name: 'computerScience' }} />
-              の知識をある程度身につけることは可能です。
-            </P>
-            <EmojiSeparator emojis={['😉', '💻', '❌']} />
-            <P>
-              本稿ではこのことを証明すべく、
+              と思っています。なぜなら、
               <Em>
-                プログラミングを一切使わずに、
-                <H args={{ name: 'computerScience' }} />
-                の中でも 「<Strong>ある程度難しい題材</Strong>
-                」について解説します。
+                もし高度な内容を理解することができれば、それより易しい他の分野も勉強すれば理解できるということ
               </Em>
-              「
-              <Em>
-                簡単な
-                <H args={{ name: 'computerScience' }} />
-                の題材だけでなく、ある程度難しい題材でも、プログラミング抜きに学ぶことができる
-              </Em>
-              」ということを体感していただけたら幸いです。
+              になり、「コンピュータサイエンスを学べるかも」という自信につながるからです。
             </P>
-          </>
-        )
-      },
-      {
-        type: 'yesNoQuiz',
-        title: (
-          <>
-            <H args={{ name: 'yCombinator' }} />
-            って何？
-          </>
-        ),
-        content: (
-          <>
             <P>
-              本稿で解説する、
-              <H args={{ name: 'computerScience' }} />
-              の中でも「ある程度難しい題材」とは何なのか。それは、題名「
-              <Em>{lessonTitle}</Em>」にもある「
+              もちろん、高度な内容を理解できなかったら本末転倒です。だから、できる限り分かりやすく説明するつもりです。また、高度な内容とはいえ、
               <Strong>
-                <H args={{ name: 'yCombinator' }} />
+                数学やプログラミングなどの事前知識は一切必要ありません
               </Strong>
-              」です。
-            </P>
-            <P>
-              この「
-              <H args={{ name: 'yCombinator' }} />
-              」とは、いったい何のことなのでしょう？またしても
-              <H args={{ name: 'yesNoQuiz' }} />
-              形式で出題しますので、勘で答えてみてください！
-            </P>
-            <EmojiSeparator emojis={['🧙‍♀️', '🤔', '🧙‍♀️']} />
-            <P>
-              <H args={{ name: 'question' }} /> 「
-              <Strong>
-                <H args={{ name: 'yCombinator' }} />
-              </Strong>
-              」とは、非常に単純化して言うと
-              <Em>
-                「繰り返し処理」に関連する
-                <H args={{ name: 'computerScience' }} />
-                用語だ
-              </Em>
-              。<H args={{ name: 'yesOrNo' }} />
-            </P>
-            <YesNoButtons answer="yes" />
-          </>
-        )
-      },
-      {
-        title: <H args={{ name: 'theAnswerIs', isYes: true }} />,
-        content: (
-          <>
-            <EmojiSeparator emojis={['⭕️', '🤗', '⭕️']} />
-            <P>
-              <H args={{ name: 'theAnswerIs', isYes: true, sentence: true }} />
-              <Em>
-                「
-                <Strong>
-                  <H args={{ name: 'yCombinator' }} />
-                </Strong>
-                」とは、非常に単純化して言うと「繰り返し処理」に関連する
-                <H args={{ name: 'computerScience' }} />
-                用語です。
-              </Em>
-            </P>
-            <P>
-              <H args={{ name: 'yCombinator' }} />
-              は、筆者が学んだコンピュータサイエンスの題材の中でも特に興味深いものでした。はじめて
-              <H args={{ name: 'yCombinator' }} />
-              について学んだときは、「
-              <Em>まるで魔法みたいだ！</Em>
-              」と感動したのを覚えています。
-            </P>
-            <EmojiSeparator emojis={['😭', '✨', '🧙‍♀️']} />
-            <P>
-              ちなみに、筆者は米国の大学で
-              <H args={{ name: 'computerScience' }} />
-              を専攻したのですが、
-              <H args={{ name: 'yCombinator' }} />は
-              <Em>3年生向けの授業で教わる題材でした</Em>
-              。1〜2年生向けの内容ではないので、「ある程度難しい題材」であることがうかがえます。
-            </P>
-            <P>
-              話を戻しましょう。本稿では、
-              <Strong>
-                <H args={{ name: 'yCombinator' }} />
-                とは何なのか、そしてなぜ興味深いのかを、プログラミングを使わずに可能な限り分かりやすく説明します
-              </Strong>
-              。そうすることで、
-              <H args={{ name: 'computerScience' }} />
-              の魅力が伝わればいいなと思っています。
-            </P>
-          </>
-        )
-      },
-      {
-        title: <>スマホでOK、難しい数式もない</>,
-        content: (
-          <>
-            <P>
-              本稿ではプログラミングを行わないので、
-              <Strong>パソコンは必要ありません</Strong>
-              。スマホで読み進めることができます。もちろん、パソコンでもタブレットでも読むことができます。
-            </P>
-            <EmojiSeparator emojis={['😉', '📱', '🆗']} />
-            <P>
-              また、本稿では数学的な内容が少しだけ登場しますが、
-              <Em>難しい数式は一切登場しません</Em>
               ので、ご安心ください。
             </P>
-            <EmojiSeparator emojis={['➕', '➖', '✖️']} />
           </>
         )
       },
       {
-        title: <>無料なので、あしからず</>,
+        title: <>Yコンビネータ</>,
         content: (
           <>
             <P>
-              さらに、本稿は最後まで<Strong>無料</Strong>で公開しています。
-            </P>
-            <EmojiSeparator emojis={['🆓', '🤗', '🆓']} />
-            <P>
-              だからというのも変ですが、
-              <Strong>内容に期待しすぎないでほしい</Strong>
+              では、今回学ぶ高度な内容とは何かというと、タイトルにもある「
+              <Strong>Yコンビネータ</Strong>」です。
+              <InlineHeader>Yコンビネータ</InlineHeader>
+              とは、タイトルにもある通り
+              <Em>魔法のような力を持つ、とあるコンピュータサイエンスの概念</Em>
               です。
             </P>
+            <EmojiSeparator
+              emojis={['✨', '🧙‍♀️', '✨']}
+              description={<>Yコンビネータについて学ぶ</>}
+            />
             <P>
-              というのも、<Strong>本稿は実用的な内容ではない</Strong>
-              からです。
-              <Em>
-                最後まで読み終えてもプログラミングのスキルは上達しませんし、本稿の内容が仕事やキャリアに役立つことはないでしょう。
-              </Em>
-              どちらかというと、<Em>別に知らなくても構わない</Em>
-              内容です。
+              わたしの大学だと、Yコンビネータは
+              <Em>コンピュータサイエンス専攻の3年生</Em>
+              が学ぶ、なかなか高度で、しかもマニアックな内容でした。実用的ではないので、知っていても業務に役立つことはありません。
             </P>
             <P>
-              だから、
+              なのに、なぜそんなマニアックな題材を選んだかというと、
               <Strong>
-                「わたしは実用的なものだけ読みたいんだ <Emoji>😡</Emoji>
-                」という方は、今すぐこのページを閉じてください。
+                Yコンビネータには、コンピュータサイエンスの面白さのエッセンスが詰まっている
               </Strong>
+              からです。これについては、最後まで読んでいただくと分かると思うので、ぜひ楽しみにしていてください。
             </P>
-            <EmojiSeparator emojis={['❌', '😡', '❌']} />
-            <P>
-              一方で、本稿を読めば、「
-              <Em>コンピュータサイエンスって面白そう</Em>」「
-              <Em>自分にもできるかも</Em>」「
-              <Em>もっと学んでみたい</Em>
-              」といった、<Strong>何らかのきっかけ</Strong>
-              が得られるかもしれません。そうなればいいなと思っていますが、「
-              <Em>つまらん</Em>」「<Em>難しすぎる</Em>」「
-              <Em>逆に興味が失せた</Em>」と思われる方もいるでしょう。
-            </P>
-            <P>あまり期待しすぎず、最後までお楽しみいただけると嬉しいです。</P>
           </>
         ),
         footer: {
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader> 先述した通り、本稿は
-                <Strong>全{numTotalPages}ページ</Strong>
-                で構成されています。
-                <Strong>
-                  おそらく読者の方々の半数以上は、読了までに最低1時間はかかるでしょう。
-                </Strong>
-                「
+                <InlineHeader>ちなみに:</InlineHeader> IT業界にいる方は、「
                 <Em>
-                  そんな長い文章は読みたくない <Emoji>😡</Emoji>
+                  Yコンビネータって、シリコンバレーにあるITベンチャー養成機関のこと？
                 </Em>
-                」という方も、今すぐこのページを閉じてください。
+                」と思われた方もいるかと思います。そんな方は、↓の「続きを読む」を押してみてください。
               </P>
             </>
           )
         }
+      },
+      {
+        title: <>邪道なので無料</>,
+        content: (
+          <>
+            <P>
+              正統派のコンピュータサイエンスの入門書だったらお代を頂戴していたかもしれませんが、
+              <Em>
+                本稿は邪道な入門書なので、最初から最後まで無料で提供しています。
+              </Em>
+            </P>
+            <EmojiSeparator
+              emojis={['🆓', '🤗', '🆓']}
+              description={<>すべて無料で読めます！</>}
+            />
+            <P>
+              だからというのも何ですが、
+              <Strong>内容に期待しすぎないでください</Strong>
+              。そして繰り返しますが、本稿は
+              <Strong>プログラミング未経験者向け</Strong>
+              です。プログラマの方にとって有益な内容かどうかは、正直微妙かもしれません。
+            </P>
+            <P>
+              また、<Strong>本稿は実用的な内容ではありません</Strong>
+              。最後まで読み終えても、日々の暮らしや、キャリアに役立つ気づきは得られないないでしょう。ただその代わりに、
+              <Em>
+                もしかしたら読後に「コンピュータサイエンスを学んでみたい」という気持ちが芽生えるかもしれません。
+              </Em>
+            </P>
+          </>
+        )
       },
       {
         title: <>さっそくはじめてみましょう！</>,
@@ -850,7 +676,7 @@ export default () => (
           content: (
             <P>
               <Em>
-                プログラミングができる方や、別の意味で「
+                プログラマの方や、別の意味で「
                 <H args={{ name: 'yCombinator' }} />
                 」という言葉をご存知の方
               </Em>
@@ -862,7 +688,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'sideNotePrefix' }} />: プログラミングができる方へ
+            <H args={{ name: 'sideNotePrefix' }} />: プログラマの方へ
           </>
         ),
         type: 'sideNote',
@@ -976,7 +802,6 @@ export default () => (
               </ExternalLink>
               。
             </P>
-            <EmojiSeparator emojis={['😎', '🆚', '👔']} Component={P} />
             <BubbleQuotes
               quotes={[
                 {
@@ -1012,8 +837,7 @@ export default () => (
               ]}
             />
             <P>
-              <Strong>ざっくり言うと:</Strong>{' '}
-              彼らは凄腕プログラマの起業家に投資したかった。だから、「
+              つまり、彼らは凄腕プログラマの起業家に投資したかった。だから、「
               <H args={{ name: 'yCombinator' }} />
               」という
               <Em>
@@ -1023,6 +847,19 @@ export default () => (
               </Em>
               をITベンチャー養成機関の名前につけることで、凄腕プログラマを呼び寄せたのです。
             </P>
+
+            <EmojiSeparator
+              emojis={['😎', '🆚', '👔']}
+              description={
+                <>
+                  凄腕プログラマを集めるために
+                  <br />
+                  あえて「Yコンビネータ−」という名前を
+                  <br />
+                  ITベンチャー養成機関につけた
+                </>
+              }
+            />
             <P>
               <Em>
                 しかし、本稿を読めば、プログラマではなくても
