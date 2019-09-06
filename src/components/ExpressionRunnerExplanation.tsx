@@ -342,12 +342,7 @@ const Explanation = ({
       if (locale === 'en') {
         return <>?</>
       } else {
-        return (
-          <>
-            <H args={{ name: 'witch' }} />
-            の部分が変化します
-          </>
-        )
+        return <>の部分が変化します</>
       }
     }
     case 'showExecutableUnary': {

@@ -10,7 +10,7 @@ import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ConditionalContext from 'src/components/ConditionalContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
 import TopRightBadge from 'src/components/TopRightBadge'
-import { fontSizes, spaces, zIndices, colors, radii } from 'src/lib/theme'
+import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
@@ -56,46 +56,6 @@ export const variableExpressionBoxFontSize = (
     xxs: fontSizes(1),
     xxxs: fontSizes(0.85)
   }[size])
-
-const SecretCodeLabelWrapper = ({
-  children,
-  operator
-}: {
-  operator?: boolean
-  children: React.ReactNode
-}) => (
-  <span
-    css={css`
-      font-size: ${operator ? 0.5 : 0.6}em;
-      background: ${colors(operator ? 'grey700' : 'secretCode')};
-      color: #fff;
-      padding: 0.25em 0.75em;
-      border-radius: ${radii(0.25)};
-      font-weight: bold;
-      display: inline-block;
-      transform: translateY(${operator ? -0.3 : -0.1}em);
-    `}
-  >
-    {children}
-  </span>
-)
-
-const SecretCodeLabel = ({ number }: { number?: number }) => (
-  <SecretCodeLabelWrapper>
-    <H
-      args={{
-        name: 'secretCode'
-      }}
-    />
-    {number && <> – {number}</>}
-  </SecretCodeLabelWrapper>
-)
-
-const RemainderLabel = () => (
-  <SecretCodeLabelWrapper operator>
-    <H args={{ name: 'remainder' }} />
-  </SecretCodeLabelWrapper>
-)
 
 const shorthandBinary = (
   shorthandBinary: NonNullable<VariableExpression['shorthandBinary']>
@@ -158,35 +118,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
               name: 'canBeConverted'
             }}
           />
-        </span>
-      </div>
-    )
-  } else if (expression.name === 'someNumber') {
-    return (
-      <div>
-        <SecretCodeLabel number={expression.shorthandNumber} />
-      </div>
-    )
-  } else if (expression.shorthandBinary === 'remainder') {
-    return (
-      <div>
-        <RemainderLabel />
-      </div>
-    )
-  } else if (expression.name === 'abbreviated') {
-    return (
-      <div>
-        <span
-          css={css`
-            font-size: 0.6em;
-            font-weight: bold;
-            color: ${colors('grey600')};
-            padding: 0.25em 0.75em;
-            transform: translateY(-0.1em);
-            display: inline-block;
-          `}
-        >
-          (<H args={{ name: 'abbreviated' }} />)
         </span>
       </div>
     )

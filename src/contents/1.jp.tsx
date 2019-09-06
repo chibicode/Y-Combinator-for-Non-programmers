@@ -25,7 +25,6 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'episodeWelcomeText' }} />
               本稿は<Em>ゆるい物語調</Em>
               で話を進めていきます。ちなみに、この話はフィクションです。
               <Emoji>😉</Emoji>

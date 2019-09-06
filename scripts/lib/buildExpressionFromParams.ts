@@ -183,7 +183,7 @@ export default function buildExpressionFromParams(
   } else if (isVariableShorthandNumberParams(expressionParams)) {
     return {
       ...buildVariableExpression(
-        expressionParams.someNumber ? 'someNumber' : 'shorthandNumber',
+        'shorthandNumber',
         true,
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
