@@ -267,7 +267,7 @@ export default () => (
               です。ふたりの研究が、学問としてのコンピュータサイエンスの大本になっているのです。
             </P>
             <EmojiSeparator
-              emojis={['🧑🏻', '🧓🏻']}
+              emojis={['🧑🏻', '👨🏻‍🦳']}
               description={
                 <>
                   <InlineHeader>アラン・チューリング</InlineHeader>と<br />
@@ -293,7 +293,7 @@ export default () => (
               が興味深かったのです。
             </P>
             <EmojiSeparator
-              emojis={['🧑🏻', '❓', '🧓🏻']}
+              emojis={['🧑🏻', '❓', '👨🏻‍🦳']}
               description={
                 <>
                   <InlineHeader>チューリング</InlineHeader>と
@@ -321,7 +321,7 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['🧑🏻', '💭', '💻']} noBottomMargin />
             <EmojiSeparator
-              emojis={['🧓🏻', '💭', '💻']}
+              emojis={['👨🏻‍🦳', '💭', '💻']}
               noTopMargin
               description={
                 <>
@@ -370,7 +370,7 @@ export default () => (
               」とはどんな仕組みだったのでしょうか。
             </P>
             <EmojiSeparator
-              emojis={['🧓🏻', '💭', '💻']}
+              emojis={['👨🏻‍🦳', '💭', '💻']}
               description={
                 <>
                   チャーチは、「
@@ -392,7 +392,7 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              emojis={['🧓🏻', '💭', '🍱']}
+              emojis={['👨🏻‍🦳', '💭', '🍱']}
               description={
                 <>
                   チャーチが考えた空想上の計算機
@@ -575,7 +575,7 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
-                <Emoji>🧓🏻</Emoji>,
+                <Emoji>👨🏻‍🦳</Emoji>,
                 <Emoji>💭</Emoji>,
                 <CustomEmoji type="lambda" />
               ]}
@@ -843,7 +843,7 @@ export default () => (
               <Em>ラムダ計算を考案したチャーチのもとで学びました。</Em>
             </P>
             <EmojiSeparator
-              emojis={['🧑🏻', '🎓', '🧓🏻']}
+              emojis={['🧑🏻', '🎓', '👨🏻‍🦳']}
               description={
                 <>
                   <InlineHeader>チューリングマシン</InlineHeader>を考案した
