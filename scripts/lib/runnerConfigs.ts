@@ -401,7 +401,7 @@ export const knhw: ExpressionRunnerShorthandConfig = {
 export const kvso: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.pisd,
-  nextIteration: true,
+  nextIterations: 1,
   showPriorities: true,
   skipToTheEnd: false
 }
@@ -1634,7 +1634,6 @@ export const niwv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'alphaConvertDone',
-  alphaConvertCallArg: true,
   variableSize: 'md',
   explanationsVisibility: 'visible'
 }
@@ -1644,7 +1643,6 @@ export const fsgq: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.qdoh,
   showPriorities: true,
   initialState: 'alphaConvertDone',
-  alphaConvertCallArg: true,
   variableSize: 'md',
   skipToTheEnd: false,
   skipActive: true,
@@ -1703,7 +1701,6 @@ export const zwut: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   skipToTheEnd: false,
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   lastAllowedExpressionState: 'needsAlphaConvert',
   skipActive: true,
   speed: 1.25
@@ -1715,7 +1712,6 @@ export const xusi: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   initialState: 'needsAlphaConvert',
   finalState: 'alphaConvertDone',
   explanationsVisibility: 'visible'
@@ -1728,7 +1724,6 @@ export const lipt: ExpressionRunnerShorthandConfig = {
   variableSize: 'md',
   skipToTheEnd: false,
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   initialState: 'alphaConvertDone',
   skipActive: true,
   speed: 1.25
@@ -1763,7 +1758,6 @@ export const ifiq: ExpressionRunnerShorthandConfig = {
   variableSize: 'sm',
   skipToTheEnd: false,
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   skipActive: true,
   speed: 1.5
 }
@@ -1874,7 +1868,6 @@ export const nmrp: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   skipActive: true,
   speed: 1.25
 }
@@ -1909,7 +1902,6 @@ export const gpat: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'md',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   skipActive: true,
   speed: 1.25
 }
@@ -1950,7 +1942,6 @@ export const svbd: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'sm',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   skipActive: true,
   speed: 1.5
 }
@@ -1975,8 +1966,7 @@ export const bnyo: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
   variableSize: 'xxs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const dpaw: ExpressionRunnerShorthandConfig = {
@@ -1985,7 +1975,6 @@ export const dpaw: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   highlightOverrides: {
     l: 'highlighted',
     m: 'highlighted',
@@ -2013,8 +2002,7 @@ export const wgby: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.aqul,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const poha: ExpressionRunnerShorthandConfig = {
@@ -2023,7 +2011,6 @@ export const poha: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   highlightOverrides: {
     i: 'highlighted',
     j: 'highlighted',
@@ -2043,8 +2030,7 @@ export const cpdy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.abrk,
   showPriorities: true,
   variableSize: 'sm',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const lxgj: ExpressionRunnerShorthandConfig = {
@@ -2053,7 +2039,6 @@ export const lxgj: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'sm',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   highlightOverrides: {
     a: 'highlighted',
     b: 'highlighted',
@@ -2081,8 +2066,7 @@ export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.exoq,
   showPriorities: true,
-  variableSize: 'md',
-  alphaConvertCallArg: true
+  variableSize: 'md'
 }
 
 export const ghwe: ExpressionRunnerShorthandConfig = {
@@ -2099,7 +2083,6 @@ export const gmzn: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.aiyb,
   showPriorities: true,
   variableSize: 'md',
-  alphaConvertCallArg: true,
   lastAllowedExpressionState: 'default'
 }
 
@@ -2110,7 +2093,6 @@ export const uiwl: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.aiyb,
   showPriorities: true,
   variableSize: 'md',
-  alphaConvertCallArg: true,
   nextIterations: 1
 }
 
@@ -2122,8 +2104,7 @@ export const ynoy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.gbbo,
   showPriorities: true,
   variableSize: 'xxs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const gmgs: ExpressionRunnerShorthandConfig = {
@@ -2160,8 +2141,7 @@ export const htir: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.jrfk,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const peiy: ExpressionRunnerShorthandConfig = {
@@ -2169,8 +2149,7 @@ export const peiy: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.aqni,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const bfau: ExpressionRunnerShorthandConfig = {
@@ -2178,8 +2157,7 @@ export const bfau: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.pqsi,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const szdm: ExpressionRunnerShorthandConfig = {
@@ -2187,8 +2165,7 @@ export const szdm: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vqhm,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const svig: ExpressionRunnerShorthandConfig = {
@@ -2196,8 +2173,7 @@ export const svig: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ulnl,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const voeb: ExpressionRunnerShorthandConfig = {
@@ -2223,8 +2199,7 @@ export const osxt: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.aqni,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const ovua: ExpressionRunnerShorthandConfig = {
@@ -2235,7 +2210,6 @@ export const ovua: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
   speed: 1.75
@@ -2248,7 +2222,6 @@ export const bras: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 4,
   highlightFunctions: true
 }
@@ -2309,7 +2282,6 @@ export const fkvy: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 5,
   highlightFunctions: true
 }
@@ -2322,7 +2294,6 @@ export const dwmc: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 5,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 3,
@@ -2336,7 +2307,6 @@ export const tfsi: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 9,
   highlightFunctions: true
 }
@@ -2368,7 +2338,6 @@ export const uwyn: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 9,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 5,
@@ -2382,7 +2351,6 @@ export const jjet: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 15,
   highlightFunctions: true
 }
@@ -2423,7 +2391,6 @@ export const snlf: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 15,
   lastAllowedExpressionState: 'default',
   lastAllowedExpressionStateAfterIterations: 6,
@@ -2437,7 +2404,6 @@ export const gngw: ExpressionRunnerShorthandConfig = {
   showPriorities: true,
   variableSize: 'xxxs',
   containerSize: 'xs',
-  alphaConvertCallArg: true,
   nextIterations: 22,
   highlightFunctions: true
 }
@@ -2521,8 +2487,7 @@ export const hafp: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.pqsi,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const bxuv: ExpressionRunnerShorthandConfig = {
@@ -2530,8 +2495,7 @@ export const bxuv: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.brri,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const zkon: ExpressionRunnerShorthandConfig = {
@@ -2539,8 +2503,7 @@ export const zkon: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.ykbi,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const xjzx: ExpressionRunnerShorthandConfig = {
@@ -2548,8 +2511,7 @@ export const xjzx: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vazr,
   showPriorities: true,
   variableSize: 'sm',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const rjho: ExpressionRunnerShorthandConfig = {
@@ -2557,8 +2519,7 @@ export const rjho: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.psxr,
   showPriorities: true,
   variableSize: 'sm',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const hvfb: ExpressionRunnerShorthandConfig = {
@@ -2593,7 +2554,6 @@ export const tpyg: ExpressionRunnerShorthandConfig = {
 export const ugvz: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
-  alphaConvertCallArg: true,
   skipActive: true,
   speed: 1.75,
   initialExpressionContainer: initialExpressionContainers.yknu,
@@ -2643,7 +2603,6 @@ export const vqyl: ExpressionRunnerShorthandConfig = {
 export const wzqv: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,
-  alphaConvertCallArg: true,
   skipActive: true,
   speed: 1.75,
   initialExpressionContainer: initialExpressionContainers.ndtm,
@@ -2671,8 +2630,7 @@ export const rwuw: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.kjff,
   showPriorities: true,
   variableSize: 'xs',
-  containerSize: 'xs',
-  alphaConvertCallArg: true
+  containerSize: 'xs'
 }
 
 export const kzkg: ExpressionRunnerShorthandConfig = {

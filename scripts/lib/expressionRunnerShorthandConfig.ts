@@ -1,6 +1,5 @@
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
-import { HProps } from 'src/types/HTypes'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 export const expressionRunnerSimpleConfigDefault = {
@@ -18,24 +17,18 @@ interface ExpressionRunnerSimpleConfig {
   initialState?: ExpressionContainer['previouslyChangedExpressionState']
   isDone?: boolean
   skipAlphaConvert?: boolean
-  alphaConvertCallArg?: boolean
   skipActive?: boolean
-  nextIteration?: boolean
   nextIterations?: number
   showPriorities?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
-  caption?: HProps['args']
   bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
   highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
-  showOnlyFocused?: ExpressionRunnerProps['showOnlyFocused']
   highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
-  argPriorityAggHighlights?: readonly number[]
-  funcPriorityAggHighlights?: readonly number[]
   crossed?: boolean
 }
 
@@ -71,19 +64,15 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   showPriorities?: boolean
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  nextIteration?: boolean
   nextIterations?: number
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   speed?: number
   skipAlphaConvert?: boolean
-  alphaConvertCallArg?: boolean
   skipActive?: boolean
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
-  superFastForward?: ExpressionRunnerProps['superFastForward']
-  highlightNumber?: number
 }
 
 export const expressionRunnerSingleStepConfigDefault = {
@@ -106,9 +95,7 @@ interface ExpressionRunnerSingleStepConfig {
   finalState: ExpressionContainer['previouslyChangedExpressionState']
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
-  alphaConvertCallArg?: boolean
   skipActive?: boolean
-  nextIteration?: boolean
   nextIterations?: number
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
@@ -135,7 +122,6 @@ interface ExpressionRunnerPredefinedConfig {
   initialExpressionContainers: SteppedExpressionContainer[]
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
-  nextIteration?: boolean
   nextIterations?: number
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']

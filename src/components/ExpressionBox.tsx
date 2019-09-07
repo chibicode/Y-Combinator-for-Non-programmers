@@ -30,10 +30,7 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
     highlightAllChildren,
     started,
     highlightOverrideActiveAfterStart,
-    highlightOverridesCallArgAndFuncUnboundOnly,
-    argPriorityAggHighlights,
-    funcPriorityAggHighlights,
-    highlightNumber
+    highlightOverridesCallArgAndFuncUnboundOnly
   } = expressionRunnerContext
   let highlightOverridden: BorderWrapperProps['highlightOverridden'] = !!(
     isVariable(expression) &&
@@ -56,38 +53,6 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
   ) {
     highlightOverridden = false
     highlightType = expression.highlightType
-  }
-
-  if (
-    isVariable(expression) &&
-    (argPriorityAggHighlights.length > 0 &&
-      argPriorityAggHighlights.filter(x =>
-        expression.argPriorityAgg.includes(x)
-      ).length > 0)
-  ) {
-    highlightOverridden = true
-    highlightType = 'highlighted'
-  }
-
-  if (
-    isVariable(expression) &&
-    (funcPriorityAggHighlights.length > 0 &&
-      funcPriorityAggHighlights.filter(x =>
-        expression.funcPriorityAgg.includes(x)
-      ).length > 0)
-  ) {
-    highlightOverridden = true
-    highlightType = 'blue'
-  }
-
-  if (
-    isVariable(expression) &&
-    highlightNumber &&
-    expression.shorthandNumber &&
-    expression.shorthandNumber === highlightNumber
-  ) {
-    highlightOverridden = true
-    highlightType = 'highlighted'
   }
 
   return (

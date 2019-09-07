@@ -19,7 +19,7 @@
         },
         "func": {
           "arg": {
-            "name": "b",
+            "name": "c",
             "highlightType": "active",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "callArg",
@@ -48,7 +48,7 @@
             },
             "body": {
               "arg": {
-                "name": "c",
+                "name": "b",
                 "highlightType": "active",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "funcUnbound",
@@ -86,7 +86,6 @@
     }
   ],
   "speed": 1,
-  "showOnlyFocused": false,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
@@ -100,8 +99,5 @@
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": true,
-  "argPriorityAggHighlights": [],
-  "funcPriorityAggHighlights": [],
-  "highlightFunctions": false,
-  "superFastForward": false
+  "highlightFunctions": false
 }

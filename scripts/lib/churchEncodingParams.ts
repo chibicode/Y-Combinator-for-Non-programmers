@@ -5,7 +5,6 @@ import {
   CallExpressionParams,
   HighlightedVariableExpressionParams
 } from 'src/types/ExpressionParamTypes'
-import { cakeVariableName } from 'src/lib/specialVariableNames'
 
 export const highlighted = (
   name: VariableNames
@@ -171,30 +170,6 @@ export const multParams = (
   }
 }
 
-export const multParamsRightHighlighted = (
-  a: VariableNames,
-  b: VariableNames,
-  c: VariableNames,
-  d: VariableNames
-): FunctionExpressionParams => {
-  return {
-    arg: a,
-    body: {
-      arg: b,
-      body: {
-        arg: c,
-        body: {
-          arg: d,
-          body: [
-            [highlighted(a), [highlighted(b), highlighted(c)]],
-            highlighted(d)
-          ]
-        }
-      }
-    }
-  }
-}
-
 export const isZeroParams = (
   a: VariableNames | HighlightedVariableExpressionParams,
   b: VariableNames | HighlightedVariableExpressionParams,
@@ -231,18 +206,4 @@ export const isZeroParams = (
     trueExpression
   ],
   falseExpression
-]
-
-export const alphaConversionSimpleExampleParams = (
-  question: VariableNames | HighlightedVariableExpressionParams
-): CallExpressionParams => [
-  {
-    arg: 'a',
-    body: {
-      arg: 'b',
-      body: 'a'
-    }
-  },
-  question,
-  cakeVariableName
 ]

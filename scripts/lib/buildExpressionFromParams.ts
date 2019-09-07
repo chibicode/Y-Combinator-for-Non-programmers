@@ -3,10 +3,7 @@ import {
   isVariableExpressionParams,
   isHighlightedVariableExpressionParams,
   isFunctionExpressionParams,
-  isVariableShorthandBinaryParams,
-  isVariableShorthandUnaryParams,
   isVariableShorthandNumberParams,
-  isMagicalVariableParams,
   isConditionalParams,
   isVariableShorthandFuncParams,
   isQuestionPlusOrMinusOneParams,
@@ -18,10 +15,8 @@ import {
   FunctionExpressionParams,
   VariableExpressionParams,
   HighlightedVariableExpressionParams,
-  VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   ConditionalExpressionParams,
-  MagicalVariableParams,
   RepeatExpressionParams,
   QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams,
@@ -32,10 +27,8 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  StepVariableShorthandBinary,
   StepVariableShorthandNumber,
   StepConditional,
-  StepMagicalVariable,
   RepeatExpression
 } from 'src/types/ExpressionTypes'
 import { VariableNames } from 'src/types/VariableNames'
@@ -90,12 +83,6 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
 ): StepFunction
-export default function buildExpressionFromParams(
-  expressionParams: VariableShorthandBinaryParams
-): StepVariableShorthandBinary
-export default function buildExpressionFromParams(
-  expressionParams: MagicalVariableParams
-): StepMagicalVariable
 export default function buildExpressionFromParams(
   expressionParams: VariableShorthandNumberParams
 ): StepVariableShorthandNumber
@@ -162,24 +149,6 @@ export default function buildExpressionFromParams(
         meta: expressionParams.meta
       }
     }
-  } else if (isVariableShorthandBinaryParams(expressionParams)) {
-    return {
-      ...buildVariableExpression(
-        'shorthandBinary',
-        true,
-        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
-      ),
-      shorthandBinary: expressionParams.shorthandBinary
-    }
-  } else if (isVariableShorthandUnaryParams(expressionParams)) {
-    return {
-      ...buildVariableExpression(
-        expressionParams.name,
-        true,
-        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
-      ),
-      shorthandUnary: expressionParams.shorthandUnary
-    }
   } else if (isVariableShorthandNumberParams(expressionParams)) {
     return {
       ...buildVariableExpression(
@@ -188,17 +157,7 @@ export default function buildExpressionFromParams(
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
       shorthandNumber: expressionParams.shorthandNumber,
-      shorthandUnary: expressionParams.shorthandUnary,
       shorthandNumberAfterConvert: expressionParams.shorthandNumberAfterConvert
-    }
-  } else if (isMagicalVariableParams(expressionParams)) {
-    return {
-      ...buildVariableExpression(
-        'magical',
-        true,
-        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
-      ),
-      magical: expressionParams.magical
     }
   } else if (isConditionalParams(expressionParams)) {
     return {

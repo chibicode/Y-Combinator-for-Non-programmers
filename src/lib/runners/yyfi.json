@@ -111,7 +111,6 @@
     }
   ],
   "speed": 1,
-  "showOnlyFocused": false,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
@@ -127,9 +126,6 @@
     "bentoBox": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
-  "argPriorityAggHighlights": [],
-  "funcPriorityAggHighlights": [],
   "highlightFunctions": false,
-  "superFastForward": false,
   "skipActive": true
 }

@@ -1,8 +1,5 @@
 export { default as stepToActive } from 'scripts/lib/steps/stepToActive'
 export {
-  default as stepToAlphaConvertDone
-} from 'scripts/lib/steps/stepToAlphaConvertDone'
-export {
   default as stepToAlphaConvertCallArg
 } from 'scripts/lib/steps/stepToAlphaConvertCallArg'
 export {
@@ -42,18 +39,6 @@ export {
 } from 'scripts/lib/steps/stepToCaseProcessed'
 export { default as stepToCaseOnly } from 'scripts/lib/steps/stepToCaseOnly'
 export { default as stepToDefault } from 'scripts/lib/steps/stepToDefault'
-export {
-  default as stepToMagicalExpanded
-} from 'scripts/lib/steps/stepToMagicalExpanded'
-export {
-  default as stepToShowExecutableUnary
-} from 'scripts/lib/steps/stepToShowExecutableUnary'
-export {
-  default as stepToUnaryProcessed
-} from 'scripts/lib/steps/stepToUnaryProcessed'
-export {
-  default as stepToBinaryComputed
-} from 'scripts/lib/steps/stepToBinaryComputed'
 export {
   default as stepToShorthandComputed
 } from 'scripts/lib/steps/stepToShorthandComputed'

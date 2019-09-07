@@ -12,7 +12,6 @@ const buildExpressionContainers = ({
   initializeInstructions,
   showAllShowSteps,
   skipAlphaConvert,
-  alphaConvertCallArg,
   skipActive,
   skipToTheEnd,
   hideControls,
@@ -26,7 +25,6 @@ const buildExpressionContainers = ({
     const stepOptions = {
       showAllShowSteps,
       skipAlphaConvert,
-      alphaConvertCallArg,
       skipActive
     }
 

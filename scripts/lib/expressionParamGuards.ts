@@ -2,13 +2,10 @@ import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
-  VariableShorthandUnaryParams,
   VariableExpressionParams,
-  VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   HighlightedVariableExpressionParams,
   ConditionalExpressionParams,
-  MagicalVariableParams,
   VariableShorthandFuncParams,
   QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams
@@ -20,21 +17,6 @@ export function isHighlightedVariableExpressionParams(
   return (
     !!(expressionParams as HighlightedVariableExpressionParams).name &&
     !!(expressionParams as HighlightedVariableExpressionParams).highlighted
-  )
-}
-
-export function isVariableShorthandBinaryParams(
-  expressionParams: ExpressionParams
-): expressionParams is VariableShorthandBinaryParams {
-  return !!(expressionParams as VariableShorthandBinaryParams).shorthandBinary
-}
-
-export function isVariableShorthandUnaryParams(
-  expressionParams: ExpressionParams
-): expressionParams is VariableShorthandUnaryParams {
-  return (
-    !!(expressionParams as VariableShorthandUnaryParams).name &&
-    !!(expressionParams as VariableShorthandUnaryParams).shorthandUnary
   )
 }
 
@@ -54,12 +36,6 @@ export function isVariableShorthandFuncParams(
     (expressionParams as VariableShorthandFuncParams).shorthandFunc !==
     undefined
   )
-}
-
-export function isMagicalVariableParams(
-  expressionParams: ExpressionParams
-): expressionParams is MagicalVariableParams {
-  return (expressionParams as MagicalVariableParams).magical !== undefined
 }
 
 export function isVariableExpressionParams(

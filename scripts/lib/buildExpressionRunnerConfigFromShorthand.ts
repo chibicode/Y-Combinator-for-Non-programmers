@@ -15,7 +15,6 @@ import {
   ExpressionRunnerContextProps,
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
-import { HProps } from 'src/types/HTypes'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 
@@ -25,14 +24,9 @@ export interface ExpressionRunnerConfig {
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
-  explanationsVisibility:
-    | 'visible'
-    | 'hidden'
-    | 'hiddenInitialPausedOnly'
-    | 'hiddenInitialAndLastPausedOnly'
+  explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitialPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
-  maxStepsAllowed?: number
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
   containerSize: keyof typeof allMaxWidths
@@ -40,21 +34,14 @@ export interface ExpressionRunnerConfig {
   speed: number
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
-  alphaConvertCallArg?: boolean
   skipActive?: boolean
   skipToTheEnd: boolean
   hideFuncUnboundBadgeOnExplanation: boolean
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
-  caption?: HProps['args']
   highlightOverrideActiveAfterStart: boolean
-  showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
-  argPriorityAggHighlights: readonly number[]
-  funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
-  superFastForward: boolean
-  highlightNumber?: number
   convert?: ExpressionRunnerProps['convert']
   crossed?: boolean
 }
@@ -77,35 +64,19 @@ const expressionRunnerDefaults = {
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
-  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
-  argPriorityAggHighlights: [],
-  funcPriorityAggHighlights: [],
-  highlightFunctions: false,
-  superFastForward: false
+  highlightFunctions: false
 }
 
 const buildInitializeInstructions = ({
-  nextIteration,
   nextIterations,
   isDone,
   initialState
 }: {
-  nextIteration?: boolean
   nextIterations?: number
   isDone?: boolean
   initialState: ExpressionContainer['previouslyChangedExpressionState']
 }): readonly InitializeInstruction[] =>
-  nextIteration
-    ? [
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: initialState
-        }
-      ]
-    : nextIterations
+  nextIterations
     ? [
         ...Array(nextIterations).fill({ type: 'nextIteration' }),
         {
@@ -147,24 +118,18 @@ const buildExpressionRunnerConfigFromShorthand = (
       initialState,
       isDone,
       skipAlphaConvert,
-      alphaConvertCallArg,
       skipActive,
-      nextIteration,
       nextIterations,
       showPriorities,
       showAllShowSteps,
       explanationsVisibility,
-      caption,
       bottomRightBadgeOverrides,
       variableSize,
       containerSize,
       highlightOverrides,
       highlightOverrideActiveAfterStart,
       highlightOverridesCallArgAndFuncUnboundOnly,
-      showOnlyFocused,
       highlightFunctions,
-      argPriorityAggHighlights,
-      funcPriorityAggHighlights,
       crossed
     } = mergeWithDefault<
       typeof config,
@@ -179,24 +144,18 @@ const buildExpressionRunnerConfigFromShorthand = (
       showAllShowSteps,
       variableSize,
       highlightOverridesCallArgAndFuncUnboundOnly,
-      showOnlyFocused,
       containerSize,
-      caption,
       skipAlphaConvert,
-      alphaConvertCallArg,
       skipActive,
       bottomRightBadgeOverrides,
       highlightOverrides,
       highlightFunctions,
       highlightOverrideActiveAfterStart,
       initializeInstructions: buildInitializeInstructions({
-        nextIteration,
         nextIterations,
         isDone,
         initialState
       }),
-      argPriorityAggHighlights,
-      funcPriorityAggHighlights,
       crossed
     }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
@@ -208,19 +167,15 @@ const buildExpressionRunnerConfigFromShorthand = (
       showPriorities,
       lastAllowedExpressionState,
       lastAllowedExpressionStateAfterIterations,
-      nextIteration,
       nextIterations,
       showAllShowSteps,
       speed,
       skipAlphaConvert,
-      alphaConvertCallArg,
       skipActive,
       variableSize,
       containerSize,
       highlightOverrides,
-      explanationsVisibility,
-      superFastForward,
-      highlightNumber
+      explanationsVisibility
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerPlayButtonOnlyConfigDefault
@@ -228,7 +183,6 @@ const buildExpressionRunnerConfigFromShorthand = (
 
     runnerProps = {
       speed,
-      highlightNumber,
       initialExpressionContainer,
       hidePriorities: !showPriorities,
       highlightOverrides,
@@ -238,18 +192,15 @@ const buildExpressionRunnerConfigFromShorthand = (
       variableSize,
       containerSize,
       skipAlphaConvert,
-      alphaConvertCallArg,
       skipActive,
       explanationsVisibility:
         explanationsVisibility || 'hiddenInitialPausedOnly',
       lastAllowedExpressionState,
       lastAllowedExpressionStateAfterIterations,
       initializeInstructions: buildInitializeInstructions({
-        nextIteration,
         nextIterations,
         initialState
-      }),
-      superFastForward
+      })
     }
   } else if (isExpressionRunnerSingleStepConfig(config)) {
     const {
@@ -262,9 +213,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       showAllShowSteps,
       variableSize,
       containerSize,
-      nextIteration,
       nextIterations,
-      alphaConvertCallArg,
       skipActive
     } = mergeWithDefault<
       typeof config,
@@ -282,10 +231,8 @@ const buildExpressionRunnerConfigFromShorthand = (
       lastAllowedExpressionState: finalState,
       lastAllowedExpressionStateAfterIterations: nextIterations,
       showAllShowSteps,
-      alphaConvertCallArg,
       skipActive,
       initializeInstructions: buildInitializeInstructions({
-        nextIteration,
         nextIterations,
         initialState
       })

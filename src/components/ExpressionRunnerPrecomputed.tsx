@@ -23,8 +23,6 @@ import { LinkButton } from 'src/components/ContentTags/LinkButton'
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
   speed: ExpressionRunnerConfig['speed']
-  showOnlyFocused: ExpressionRunnerConfig['showOnlyFocused']
-  caption: ExpressionRunnerConfig['caption']
   children?: React.ReactNode
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
@@ -39,15 +37,10 @@ export interface ExpressionRunnerPrecomputedProps {
   bottomRightBadgeOverrides: ExpressionRunnerConfig['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerConfig['highlightOverrides']
   highlightOverrideActiveAfterStart: ExpressionRunnerConfig['highlightOverrideActiveAfterStart']
-  argPriorityAggHighlights: ExpressionRunnerConfig['argPriorityAggHighlights']
-  funcPriorityAggHighlights: ExpressionRunnerConfig['funcPriorityAggHighlights']
   highlightFunctions: ExpressionRunnerConfig['highlightFunctions']
-  superFastForward: ExpressionRunnerConfig['superFastForward']
-  highlightNumber: ExpressionRunnerConfig['highlightNumber']
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
   crossed: ExpressionRunnerConfig['crossed']
-  alphaConvertCallArg: ExpressionRunnerConfig['alphaConvertCallArg']
 }
 
 const autoplaySpeed = (speed: number) => 1000 / speed
@@ -60,8 +53,6 @@ interface PlaybackState {
 
 const ExpressionRunnerPrecomputed = ({
   speed,
-  showOnlyFocused,
-  caption,
   expressionContainers,
   hideControls,
   explanationsVisibility,
@@ -76,16 +67,11 @@ const ExpressionRunnerPrecomputed = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  argPriorityAggHighlights,
-  funcPriorityAggHighlights,
   highlightFunctions,
-  superFastForward,
-  highlightNumber,
   showAllShowSteps,
   children,
   convert,
-  crossed,
-  alphaConvertCallArg
+  crossed
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -103,42 +89,16 @@ const ExpressionRunnerPrecomputed = ({
 
   useInterval(
     () => {
-      if (superFastForward) {
-        let nextIndex = currentIndex
-        do {
-          if (nextIndex < expressionContainers.length - 1) {
-            nextIndex += 1
-          }
-        } while (
-          expressionContainers[nextIndex].previouslyChangedExpressionState !==
-            'default' &&
-          expressionContainers[nextIndex].previouslyChangedExpressionState !==
-            'active' &&
-          nextIndex < expressionContainers.length - 1
-        )
-        if (currentIndex < expressionContainers.length - 1) {
-          setCurrentIndex(nextIndex)
-        }
+      if (currentIndex < expressionContainers.length - 1) {
+        setCurrentIndex(currentIndex + 1)
+      }
 
-        // Don't use else: stop immediately if reaches the end
-        if (nextIndex >= expressionContainers.length - 1) {
-          setPlaybackStatus({
-            isFastForwarding: false,
-            isPlaying: false
-          })
-        }
-      } else {
-        if (currentIndex < expressionContainers.length - 1) {
-          setCurrentIndex(currentIndex + 1)
-        }
-
-        // Don't use else: stop immediately if reaches the end
-        if (currentIndex + 1 >= expressionContainers.length - 1) {
-          setPlaybackStatus({
-            isFastForwarding: false,
-            isPlaying: false
-          })
-        }
+      // Don't use else: stop immediately if reaches the end
+      if (currentIndex + 1 >= expressionContainers.length - 1) {
+        setPlaybackStatus({
+          isFastForwarding: false,
+          isPlaying: false
+        })
       }
     },
     isPlaying ? autoplaySpeed(speed) : null
@@ -195,11 +155,7 @@ const ExpressionRunnerPrecomputed = ({
     explanationsVisibility === 'visible' ||
     (explanationsVisibility === 'hiddenInitialPausedOnly' &&
       !isPlaying &&
-      currentIndex > 0) ||
-    (explanationsVisibility === 'hiddenInitialAndLastPausedOnly' &&
-      !isPlaying &&
-      atLeastOneStepTaken &&
-      canStepForward)
+      currentIndex > 0)
   const progessBarVisible =
     !hidePlayButton && canStepForward && (isPlaying || atLeastOneStepTaken)
 
@@ -213,13 +169,9 @@ const ExpressionRunnerPrecomputed = ({
         highlightOverrideActiveAfterStart,
         highlightOverridesCallArgAndFuncUnboundOnly,
         variableSize,
-        showOnlyFocused,
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
-        argPriorityAggHighlights,
-        funcPriorityAggHighlights,
         highlightFunctions,
-        highlightNumber,
         highlightAllChildren:
           expressionRunnerContextDefault.highlightAllChildren
       }}
@@ -242,25 +194,12 @@ const ExpressionRunnerPrecomputed = ({
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
                 convert={convert}
-                alphaConvertCallArg={alphaConvertCallArg}
               />
-            </ExpressionRunnerCaptionWrapper>
-          )}
-          {/* TODO: Remove caption here once v2 is done */}
-          {caption && (
-            <ExpressionRunnerCaptionWrapper>
-              <H args={caption} />
             </ExpressionRunnerCaptionWrapper>
           )}
           {children && !explanationsVisible && !isPlaying && (
             <ExpressionRunnerCaptionWrapper>
               {children}
-            </ExpressionRunnerCaptionWrapper>
-          )}
-          {/* TODO: Remove !caption here once v2 is done */}
-          {!caption && isPlaying && (
-            <ExpressionRunnerCaptionWrapper>
-              <H args={{ name: 'fastForwarding' }} />
             </ExpressionRunnerCaptionWrapper>
           )}
           {progessBarVisible && (

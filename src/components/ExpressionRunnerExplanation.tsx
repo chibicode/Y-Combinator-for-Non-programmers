@@ -4,7 +4,6 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadge from 'src/components/TopLeftBadge'
-import TopRightBadge from 'src/components/TopRightBadge'
 import locale from 'src/lib/locale'
 import {
   SteppedExpressionContainer,
@@ -22,7 +21,6 @@ interface ExpressionRunnerExplanationProps {
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
   convert: ExpressionRunnerPrecomputedProps['convert']
-  alphaConvertCallArg?: ExpressionRunnerPrecomputedProps['alphaConvertCallArg']
 }
 
 const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
@@ -56,30 +54,14 @@ const Explanation = ({
   matchExists,
   activePriority,
   showAllShowSteps,
-  hideFuncUnboundBadge,
-  unaryJustExecuted,
-  alphaConvertCallArg
+  hideFuncUnboundBadge
 }: {
   state: ExpressionContainer['previouslyChangedExpressionState']
   matchExists?: boolean
   activePriority?: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
-  unaryJustExecuted?: boolean
-  alphaConvertCallArg: ExpressionRunnerExplanationProps['alphaConvertCallArg']
 }) => {
-  if (unaryJustExecuted) {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <TopRightBadge inline topRightBadgeType="pred" /> が実行されました！
-        </>
-      )
-    }
-  }
-
   switch (state) {
     case 'default': {
       if (locale === 'en') {
@@ -280,23 +262,13 @@ const Explanation = ({
       if (locale === 'en') {
         return <>?</>
       } else {
-        if (alphaConvertCallArg) {
-          return (
-            <>
-              <InlineHeader>特別ルール:</InlineHeader>{' '}
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-              を別の料理に <Emoji>🐶</Emoji>
-            </>
-          )
-        } else {
-          return (
-            <>
-              <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-              を別の料理に
-            </>
-          )
-        }
+        return (
+          <>
+            <InlineHeader>特別ルール:</InlineHeader>{' '}
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+            を別の料理に <Emoji>🐶</Emoji>
+          </>
+        )
       }
     }
     case 'conditionActive': {
@@ -338,24 +310,6 @@ const Explanation = ({
         )
       }
     }
-    case 'magicalExpanded': {
-      if (locale === 'en') {
-        return <>?</>
-      } else {
-        return <>の部分が変化します</>
-      }
-    }
-    case 'showExecutableUnary': {
-      if (locale === 'en') {
-        return <>?</>
-      } else {
-        return (
-          <>
-            <TopRightBadge inline topRightBadgeType="pred" /> を実行します
-          </>
-        )
-      }
-    }
     default: {
       return <></>
     }
@@ -368,8 +322,7 @@ const ExpressionRunnerExplanation = ({
   isPlaying,
   showAllShowSteps,
   hideFuncUnboundBadge,
-  convert,
-  alphaConvertCallArg
+  convert
 }: ExpressionRunnerExplanationProps) => (
   <>
     {
@@ -391,9 +344,7 @@ const ExpressionRunnerExplanation = ({
               matchExists={expressionContainer.matchExists}
               activePriority={expressionContainer.activePriority}
               showAllShowSteps={showAllShowSteps}
-              unaryJustExecuted={expressionContainer.unaryJustExecuted}
               hideFuncUnboundBadge={hideFuncUnboundBadge}
-              alphaConvertCallArg={alphaConvertCallArg}
             />
           )
         )}

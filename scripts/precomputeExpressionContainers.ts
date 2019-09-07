@@ -10,8 +10,6 @@ const precomputeFile = (key: string) => {
   const expressionContainers = buildExpressionContainers(config)
   const {
     speed,
-    showOnlyFocused,
-    caption,
     hideControls,
     explanationsVisibility,
     hidePriorities,
@@ -26,14 +24,9 @@ const precomputeFile = (key: string) => {
     bottomRightBadgeOverrides,
     highlightOverrides,
     highlightOverrideActiveAfterStart,
-    argPriorityAggHighlights,
-    funcPriorityAggHighlights,
     highlightFunctions,
-    superFastForward,
-    highlightNumber,
     convert,
     crossed,
-    alphaConvertCallArg,
     skipActive
   } = config
 
@@ -41,8 +34,6 @@ const precomputeFile = (key: string) => {
     {
       expressionContainers,
       speed,
-      showOnlyFocused,
-      caption,
       hideControls,
       explanationsVisibility,
       hidePriorities,
@@ -56,15 +47,10 @@ const precomputeFile = (key: string) => {
       bottomRightBadgeOverrides,
       highlightOverrides,
       highlightOverrideActiveAfterStart,
-      argPriorityAggHighlights,
-      funcPriorityAggHighlights,
       highlightFunctions,
-      superFastForward,
-      highlightNumber,
       showAllShowSteps,
       convert,
       crossed,
-      alphaConvertCallArg,
       skipActive
     },
     null,

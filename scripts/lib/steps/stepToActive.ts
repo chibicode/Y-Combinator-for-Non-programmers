@@ -1,9 +1,7 @@
 import {
   isFunction,
   isVariable,
-  isExecutableCallRegular,
   isCall,
-  isExecutableCallBinary,
   isConditional,
   isExecutableCallShorthand
 } from 'src/lib/expressionTypeGuards'
@@ -14,8 +12,6 @@ import {
   ExecutableCallRegular,
   FunctionExpression,
   NonExecutableStepCall,
-  VariableShorthandBinary,
-  StepVariableShorthandBinary,
   StepChild,
   StepFunction,
   StepVariable,
@@ -23,23 +19,12 @@ import {
   VariableWithEmphasizePriorityAndState,
   ConditionalExpression,
   StepConditional,
-  ExecutableCallBinary,
-  ExecutableCallMagical,
-  MagicalVariable,
-  StepMagicalVariable,
-  ExecutableStepCallMagical,
-  ExecutableStepCallBinary,
   ExecutableCallShorthand,
   ExecutableStepCallShorthand,
   VariableShorthandFunc,
-  StepVariableShorthandFunc,
-  StepVariableShorthandNumber
+  StepVariableShorthandFunc
 } from 'src/types/ExpressionTypes'
 
-function toActive(
-  e: VariableShorthandBinary
-): StepVariableShorthandBinary<'active'>
-function toActive(e: MagicalVariable): StepMagicalVariable<'active'>
 function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
@@ -130,57 +115,12 @@ export default function stepToActive(
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'active'>
 export default function stepToActive(
-  e: ExecutableCallMagical
-): ExecutableStepCallMagical<'active'>
-export default function stepToActive(
-  e: ExecutableCallBinary
-): ExecutableStepCallBinary<'active'>
-export default function stepToActive(
   e: ExecutableCallShorthand
 ): ExecutableStepCallShorthand<'active'>
 export default function stepToActive(
-  e:
-    | ExecutableCallRegular
-    | ExecutableCallMagical
-    | ExecutableCallBinary
-    | ExecutableCallShorthand
-):
-  | ExecutableStepCallRegular<'active'>
-  | ExecutableStepCallMagical<'active'>
-  | ExecutableStepCallBinary<'active'>
-  | ExecutableStepCallShorthand<'active'> {
-  if (isExecutableCallBinary(e)) {
-    const argArg: StepVariableShorthandNumber<'active'> = {
-      ...e.arg.arg,
-      topLeftBadgeType: 'none',
-      bottomRightBadgeType: 'none',
-      highlightType: 'active',
-      emphasizePriority: true
-    }
-    const argFunc: StepVariableShorthandBinary<'active'> = {
-      ...e.arg.func,
-      topLeftBadgeType: 'none',
-      bottomRightBadgeType: 'none',
-      highlightType: 'active'
-    }
-    const func: StepVariableShorthandNumber<'active'> = {
-      ...e.func,
-      topLeftBadgeType: 'none',
-      bottomRightBadgeType: 'none',
-      highlightType: 'active',
-      emphasizePriority: true
-    }
-    return {
-      ...e,
-      state: 'active',
-      arg: {
-        ...e.arg,
-        arg: argArg,
-        func: argFunc
-      },
-      func: func
-    }
-  } else if (isExecutableCallShorthand(e)) {
+  e: ExecutableCallRegular | ExecutableCallShorthand
+): ExecutableStepCallRegular<'active'> | ExecutableStepCallShorthand<'active'> {
+  if (isExecutableCallShorthand(e)) {
     return {
       ...e,
       state: 'active',
@@ -207,23 +147,11 @@ export default function stepToActive(
       : isCall(e.arg)
       ? emphasizeArgPriorityCallExpression(toActive(e.arg))
       : toActive(e.arg)
-    if (isExecutableCallRegular(e)) {
-      return {
-        ...e,
-        state: 'active',
-        arg,
-        func: toExecutableActiveFunction(e.func)
-      }
-    } else {
-      return {
-        ...e,
-        state: 'active',
-        arg,
-        func: {
-          ...toActive(e.func),
-          emphasizePriority: true
-        }
-      }
+    return {
+      ...e,
+      state: 'active',
+      arg,
+      func: toExecutableActiveFunction(e.func)
     }
   }
 }

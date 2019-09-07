@@ -9,7 +9,6 @@ import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ConditionalContext from 'src/components/ConditionalContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
-import TopRightBadge from 'src/components/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
@@ -56,16 +55,6 @@ export const variableExpressionBoxFontSize = (
     xxs: fontSizes(1),
     xxxs: fontSizes(0.85)
   }[size])
-
-const shorthandBinary = (
-  shorthandBinary: NonNullable<VariableExpression['shorthandBinary']>
-) => {
-  if (shorthandBinary === 'mult') {
-    return '✖️'
-  } else {
-    return '➕'
-  }
-}
 
 const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
   const { hideBottomRightBadges, bottomRightBadgeOverrides } = useContext(
@@ -213,22 +202,8 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           <Emoji size="sm">
             {expression.highlightType === 'removed'
               ? '💥'
-              : expression.shorthandBinary !== undefined
-              ? shorthandBinary(expression.shorthandBinary)
               : letterEmojiMapping[expression.name]}
           </Emoji>
-        )}
-        {expression.shorthandUnary && (
-          <span
-            css={css`
-              position: absolute;
-              right: -0.23em;
-              top: -0.05em;
-              z-index: ${zIndices('badge')};
-            `}
-          >
-            <TopRightBadge topRightBadgeType={expression.shorthandUnary} />
-          </span>
         )}
         {bottomRightBadgeOverrides[expression.name] && (
           <span
@@ -302,56 +277,50 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
 }
 
 const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
-  const { hidePriorities, variableSize, showOnlyFocused } = useContext(
-    ExpressionRunnerContext
-  )
+  const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
-  if (showOnlyFocused) {
-    return <></>
-  } else {
-    return (
-      <>
-        {!hidePriorities && (
-          <ExpressionPrioritiesLabel
-            hideActive={
-              conditionalState === 'trueCaseOnly' ||
-              conditionalState === 'falseCaseOnly'
-            }
-            priorities={expression.argPriorityAgg}
-            position="topleft"
-            emphasize={
-              expression.emphasizePriority ||
-              !!(conditionalState && conditionalState !== 'default')
-            }
-          />
-        )}
-        <FlexCenter
-          css={css`
-            flex: 1;
-            font-size: ${variableExpressionBoxFontSize(variableSize)};
-            padding: ${variableExpressionBoxPaddingTop(variableSize)}
-              ${spaces(0.5)} ${variableExpressionBoxPaddingBottom(variableSize)};
-          `}
-        >
-          <VariableEmoji expression={expression} />
-        </FlexCenter>
-        {!hidePriorities && (
-          <ExpressionPrioritiesLabel
-            hideActive={
-              conditionalState === 'trueCaseOnly' ||
-              conditionalState === 'falseCaseOnly'
-            }
-            priorities={expression.funcPriorityAgg}
-            position="bottomleft"
-            emphasize={
-              expression.emphasizePriority ||
-              !!(conditionalState && conditionalState !== 'default')
-            }
-          />
-        )}
-      </>
-    )
-  }
+  return (
+    <>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          hideActive={
+            conditionalState === 'trueCaseOnly' ||
+            conditionalState === 'falseCaseOnly'
+          }
+          priorities={expression.argPriorityAgg}
+          position="topleft"
+          emphasize={
+            expression.emphasizePriority ||
+            !!(conditionalState && conditionalState !== 'default')
+          }
+        />
+      )}
+      <FlexCenter
+        css={css`
+          flex: 1;
+          font-size: ${variableExpressionBoxFontSize(variableSize)};
+          padding: ${variableExpressionBoxPaddingTop(variableSize)}
+            ${spaces(0.5)} ${variableExpressionBoxPaddingBottom(variableSize)};
+        `}
+      >
+        <VariableEmoji expression={expression} />
+      </FlexCenter>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          hideActive={
+            conditionalState === 'trueCaseOnly' ||
+            conditionalState === 'falseCaseOnly'
+          }
+          priorities={expression.funcPriorityAgg}
+          position="bottomleft"
+          emphasize={
+            expression.emphasizePriority ||
+            !!(conditionalState && conditionalState !== 'default')
+          }
+        />
+      )}
+    </>
+  )
 }
 
 export default VariableExpressionBox
