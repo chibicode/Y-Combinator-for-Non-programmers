@@ -27,7 +27,6 @@ export interface ExpressionRunnerConfig {
   explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitialPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
-  maxStepsAllowed?: number
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
   containerSize: keyof typeof allMaxWidths

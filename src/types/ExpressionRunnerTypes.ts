@@ -42,7 +42,6 @@ export interface ExpressionRunnerProps {
   explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitialPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
-  maxStepsAllowed?: number
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
   containerSize: keyof typeof allMaxWidths
@@ -55,7 +54,6 @@ export interface ExpressionRunnerProps {
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
-  caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
   convert?: 'toMathBox' | 'toMathBoxPlay'
