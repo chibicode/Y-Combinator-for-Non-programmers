@@ -1,7 +1,6 @@
 import {
   isFunction,
   isVariable,
-  isExecutableCallRegular,
   isCall,
   isExecutableCallBinary,
   isConditional,
@@ -194,23 +193,11 @@ export default function stepToActive(
       : isCall(e.arg)
       ? emphasizeArgPriorityCallExpression(toActive(e.arg))
       : toActive(e.arg)
-    if (isExecutableCallRegular(e)) {
-      return {
-        ...e,
-        state: 'active',
-        arg,
-        func: toExecutableActiveFunction(e.func)
-      }
-    } else {
-      return {
-        ...e,
-        state: 'active',
-        arg,
-        func: {
-          ...toActive(e.func),
-          emphasizePriority: true
-        }
-      }
+    return {
+      ...e,
+      state: 'active',
+      arg,
+      func: toExecutableActiveFunction(e.func)
     }
   }
 }
