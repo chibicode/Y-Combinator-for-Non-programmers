@@ -66,7 +66,6 @@
     }
   ],
   "speed": 1,
-  "showOnlyFocused": false,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": true,
@@ -80,8 +79,5 @@
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
-  "argPriorityAggHighlights": [],
-  "funcPriorityAggHighlights": [],
-  "highlightFunctions": false,
-  "superFastForward": false
+  "highlightFunctions": false
 }

@@ -319,7 +319,6 @@
     }
   ],
   "speed": 1,
-  "showOnlyFocused": false,
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
@@ -337,9 +336,5 @@
     "k": "highlighted"
   },
   "highlightOverrideActiveAfterStart": false,
-  "argPriorityAggHighlights": [],
-  "funcPriorityAggHighlights": [],
-  "highlightFunctions": false,
-  "superFastForward": false,
-  "alphaConvertCallArg": true
+  "highlightFunctions": false
 }

@@ -3285,7 +3285,6 @@
     }
   ],
   "speed": 1,
-  "showOnlyFocused": false,
   "hideControls": false,
   "explanationsVisibility": "hiddenInitialPausedOnly",
   "hidePriorities": false,
@@ -3299,8 +3298,5 @@
   "bottomRightBadgeOverrides": {},
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,
-  "argPriorityAggHighlights": [],
-  "funcPriorityAggHighlights": [],
-  "highlightFunctions": false,
-  "superFastForward": false
+  "highlightFunctions": false
 }
