@@ -35,7 +35,6 @@ export type VariableNames =
   | 'Bsingle'
   | 'blankNumber'
   | 'shorthandFunc'
-  | 'verticalDotDotDot'
   | 'questionFoodGrey'
   | 'C'
   | 'D'
