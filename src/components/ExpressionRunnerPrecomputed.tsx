@@ -37,8 +37,6 @@ export interface ExpressionRunnerPrecomputedProps {
   bottomRightBadgeOverrides: ExpressionRunnerConfig['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerConfig['highlightOverrides']
   highlightOverrideActiveAfterStart: ExpressionRunnerConfig['highlightOverrideActiveAfterStart']
-  argPriorityAggHighlights: ExpressionRunnerConfig['argPriorityAggHighlights']
-  funcPriorityAggHighlights: ExpressionRunnerConfig['funcPriorityAggHighlights']
   highlightFunctions: ExpressionRunnerConfig['highlightFunctions']
   superFastForward: ExpressionRunnerConfig['superFastForward']
   highlightNumber: ExpressionRunnerConfig['highlightNumber']
@@ -72,8 +70,6 @@ const ExpressionRunnerPrecomputed = ({
   bottomRightBadgeOverrides,
   highlightOverrides,
   highlightOverrideActiveAfterStart,
-  argPriorityAggHighlights,
-  funcPriorityAggHighlights,
   highlightFunctions,
   superFastForward,
   highlightNumber,
@@ -207,8 +203,6 @@ const ExpressionRunnerPrecomputed = ({
         variableSize,
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
-        argPriorityAggHighlights,
-        funcPriorityAggHighlights,
         highlightFunctions,
         highlightNumber,
         highlightAllChildren:

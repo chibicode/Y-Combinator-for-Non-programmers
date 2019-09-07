@@ -18,8 +18,6 @@ export interface ExpressionRunnerContextProps {
   started: boolean
   highlightOverrideActiveAfterStart: boolean
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
-  argPriorityAggHighlights: readonly number[]
-  funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
   highlightAllChildren: boolean
   highlightNumber?: number
@@ -60,8 +58,6 @@ export interface ExpressionRunnerProps {
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
-  argPriorityAggHighlights: readonly number[]
-  funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
   superFastForward: boolean
   highlightNumber?: number
@@ -78,8 +74,6 @@ export const expressionRunnerContextDefault: ExpressionRunnerContextProps = {
   highlightOverrides: {},
   highlightOverrideActiveAfterStart: false,
   highlightOverridesCallArgAndFuncUnboundOnly: false,
-  argPriorityAggHighlights: [],
-  funcPriorityAggHighlights: [],
   highlightFunctions: false,
   highlightAllChildren: false
 }

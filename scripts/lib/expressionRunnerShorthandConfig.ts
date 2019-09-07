@@ -30,8 +30,6 @@ interface ExpressionRunnerSimpleConfig {
   highlightOverrideActiveAfterStart?: ExpressionRunnerProps['highlightOverrideActiveAfterStart']
   highlightOverridesCallArgAndFuncUnboundOnly?: ExpressionRunnerProps['highlightOverridesCallArgAndFuncUnboundOnly']
   highlightFunctions?: ExpressionRunnerProps['highlightFunctions']
-  argPriorityAggHighlights?: readonly number[]
-  funcPriorityAggHighlights?: readonly number[]
   crossed?: boolean
 }
 

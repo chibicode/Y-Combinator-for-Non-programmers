@@ -43,8 +43,6 @@ export interface ExpressionRunnerConfig {
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   highlightOverrideActiveAfterStart: boolean
-  argPriorityAggHighlights: readonly number[]
-  funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
   superFastForward: boolean
   highlightNumber?: number
@@ -70,8 +68,6 @@ const expressionRunnerDefaults = {
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
-  argPriorityAggHighlights: [],
-  funcPriorityAggHighlights: [],
   highlightFunctions: false,
   superFastForward: false
 }
@@ -140,8 +136,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       highlightOverrideActiveAfterStart,
       highlightOverridesCallArgAndFuncUnboundOnly,
       highlightFunctions,
-      argPriorityAggHighlights,
-      funcPriorityAggHighlights,
       crossed
     } = mergeWithDefault<
       typeof config,
@@ -169,8 +163,6 @@ const buildExpressionRunnerConfigFromShorthand = (
         isDone,
         initialState
       }),
-      argPriorityAggHighlights,
-      funcPriorityAggHighlights,
       crossed
     }
   } else if (isExpressionRunnerPlayButtonOnlyConfig(config)) {
