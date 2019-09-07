@@ -6,11 +6,7 @@ import prioritizeExpressionContainer from 'scripts/lib/prioritizeExpressionConta
 import resetExpressionContainer from 'scripts/lib/resetExpressionContainer'
 import replaceCallParentKey from 'scripts/lib/replaceCallParentKey'
 import replaceConditionalParentKey from 'scripts/lib/replaceConditionalParentKey'
-import {
-  isCall,
-  isExecutableCallRegular,
-  isExecutableCallBinary
-} from 'src/lib/expressionTypeGuards'
+import { isCall, isExecutableCallRegular } from 'src/lib/expressionTypeGuards'
 import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
 import {
   removeCrossed,
@@ -28,7 +24,6 @@ import {
   stepToCaseProcessed,
   stepToCaseOnly,
   stepToShorthandComputed,
-  stepToBinaryComputed,
   stepToAlphaConvertCallArg
 } from 'scripts/lib/steps'
 import {
@@ -40,7 +35,6 @@ import {
   StepChild,
   ExecutableConditionalStatesDistributed,
   ExecutableCall,
-  ExecutableCallBinary,
   ExecutableCallShorthand
 } from 'src/types/ExpressionTypes'
 import prioritizeExpression from 'scripts/lib/prioritizeExpression'
@@ -117,32 +111,6 @@ const stepConditional = (
     }
   }
   throw new Error()
-}
-
-const stepBinary = (
-  e: ExecutableCallBinary
-): {
-  nextExpression: ExecutableCall | StepChild<'default'>
-  matchExists?: boolean
-  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
-} => {
-  switch (e.state) {
-    case 'default': {
-      return {
-        nextExpression: stepToActive(e),
-        previouslyChangedExpressionState: 'active'
-      }
-    }
-    case 'active': {
-      return {
-        nextExpression: stepToBinaryComputed(e),
-        previouslyChangedExpressionState: 'default'
-      }
-    }
-    default: {
-      throw new Error()
-    }
-  }
 }
 
 const stepShorthand = (
@@ -339,8 +307,6 @@ const runStep = (
   } = isCall(expression)
     ? isExecutableCallRegular(expression)
       ? stepRegular(expression, stepOptions, e.matchExists)
-      : isExecutableCallBinary(expression)
-      ? stepBinary(expression)
       : stepShorthand(expression)
     : stepConditional(expression)
 

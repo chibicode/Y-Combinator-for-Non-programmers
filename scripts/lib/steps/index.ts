@@ -40,8 +40,5 @@ export {
 export { default as stepToCaseOnly } from 'scripts/lib/steps/stepToCaseOnly'
 export { default as stepToDefault } from 'scripts/lib/steps/stepToDefault'
 export {
-  default as stepToBinaryComputed
-} from 'scripts/lib/steps/stepToBinaryComputed'
-export {
   default as stepToShorthandComputed
 } from 'scripts/lib/steps/stepToShorthandComputed'

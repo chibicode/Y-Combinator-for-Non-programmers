@@ -4,12 +4,10 @@ import {
   FunctionExpression,
   VariableExpression,
   ConditionalExpression,
-  VariableShorthandBinary,
   VariableShorthandNumber,
   ExecutableCallRegular,
   ExecutableCall,
   ExecutableConditional,
-  ExecutableCallBinary,
   RepeatExpression,
   ExecutableCallShorthand,
   VariableShorthandFunc
@@ -45,12 +43,6 @@ export function isVariableShorthandNumber<
   return isVariable(expression) && expression.shorthandNumber !== undefined
 }
 
-export function isVariableShorthandBinary<
-  V extends VariableShorthandBinary = VariableShorthandBinary
->(expression: Expression): expression is V {
-  return isVariable(expression) && expression.shorthandBinary !== undefined
-}
-
 export function isVariableShorthandFunc<
   V extends VariableShorthandFunc = VariableShorthandFunc
 >(expression: Expression): expression is V {
@@ -61,17 +53,6 @@ export function isExecutableCallRegular<E extends ExecutableCallRegular>(
   expression: CallExpression
 ): expression is E {
   return isFunction(expression.func)
-}
-
-export function isExecutableCallBinary<E extends ExecutableCallBinary>(
-  expression: CallExpression
-): expression is E {
-  return (
-    isCall(expression.arg) &&
-    isVariableShorthandNumber(expression.func) &&
-    isVariableShorthandNumber(expression.arg.arg) &&
-    isVariableShorthandBinary(expression.arg.func)
-  )
 }
 
 export function isExecutableCallShorthand<E extends ExecutableCallShorthand>(
@@ -87,9 +68,7 @@ export function isExecutableCall<E extends ExecutableCall>(
   expression: CallExpression
 ): expression is E {
   return (
-    isExecutableCallRegular(expression) ||
-    isExecutableCallBinary(expression) ||
-    isExecutableCallShorthand(expression)
+    isExecutableCallRegular(expression) || isExecutableCallShorthand(expression)
   )
 }
 

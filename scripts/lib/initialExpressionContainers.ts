@@ -690,37 +690,6 @@ export const aeqh = initializeExpressionContainer([
   }
 ])
 
-export const pmyq = initializeExpressionContainer([
-  {
-    shorthandBinary: 'mult'
-  },
-  ['question', 'question']
-])
-
-export const anrt = initializeExpressionContainer([
-  'question',
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    'question'
-  ]
-])
-
-export const etrh = initializeExpressionContainer([
-  {
-    shorthandNumber: 3
-  },
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    {
-      shorthandNumber: 2
-    }
-  ]
-])
-
 export const irqm = initializeExpressionContainer([
   'question',
   {
@@ -766,65 +735,13 @@ export const nbgx = initializeExpressionContainer([
   'B'
 ])
 
-export const xrvm = initializeExpressionContainer([
-  'blankNumber',
-  [
-    {
-      shorthandBinary: 'add'
-    },
-    'blankNumber'
-  ]
-])
-
-export const mrab = initializeExpressionContainer([
-  {
-    shorthandNumber: 1
-  },
-  [
-    {
-      shorthandBinary: 'add'
-    },
-    {
-      shorthandNumber: 1
-    }
-  ]
-])
-
 export const vzpd = initializeDoneExpressionContainer({
   shorthandNumber: 2
 })
 
-export const cunc = initializeExpressionContainer([
-  {
-    shorthandNumber: 3
-  },
-  [
-    {
-      shorthandBinary: 'add'
-    },
-    {
-      shorthandNumber: 2
-    }
-  ]
-])
-
 export const rxqu = initializeDoneExpressionContainer({
   shorthandNumber: 5
 })
-
-export const ocwu = initializeExpressionContainer([
-  {
-    shorthandNumber: 3
-  },
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    {
-      shorthandNumber: 2
-    }
-  ]
-])
 
 export const fmlj = initializeDoneExpressionContainer({
   shorthandNumber: 6
@@ -937,30 +854,6 @@ export const ilun = initializeExpressionContainer({
     shorthandNumber: 28
   }
 })
-
-export const ygid = initializeExpressionContainer([
-  {
-    shorthandNumber: 3
-  },
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    [
-      {
-        shorthandNumber: 2
-      },
-      [
-        {
-          shorthandBinary: 'mult'
-        },
-        {
-          shorthandNumber: 1
-        }
-      ]
-    ]
-  ]
-])
 
 export const vibe = initializeExpressionContainer([
   {

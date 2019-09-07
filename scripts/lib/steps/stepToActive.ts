@@ -2,7 +2,6 @@ import {
   isFunction,
   isVariable,
   isCall,
-  isExecutableCallBinary,
   isConditional,
   isExecutableCallShorthand
 } from 'src/lib/expressionTypeGuards'
@@ -13,8 +12,6 @@ import {
   ExecutableCallRegular,
   FunctionExpression,
   NonExecutableStepCall,
-  VariableShorthandBinary,
-  StepVariableShorthandBinary,
   StepChild,
   StepFunction,
   StepVariable,
@@ -22,18 +19,12 @@ import {
   VariableWithEmphasizePriorityAndState,
   ConditionalExpression,
   StepConditional,
-  ExecutableCallBinary,
-  ExecutableStepCallBinary,
   ExecutableCallShorthand,
   ExecutableStepCallShorthand,
   VariableShorthandFunc,
-  StepVariableShorthandFunc,
-  StepVariableShorthandNumber
+  StepVariableShorthandFunc
 } from 'src/types/ExpressionTypes'
 
-function toActive(
-  e: VariableShorthandBinary
-): StepVariableShorthandBinary<'active'>
 function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
@@ -124,49 +115,12 @@ export default function stepToActive(
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'active'>
 export default function stepToActive(
-  e: ExecutableCallBinary
-): ExecutableStepCallBinary<'active'>
-export default function stepToActive(
   e: ExecutableCallShorthand
 ): ExecutableStepCallShorthand<'active'>
 export default function stepToActive(
-  e: ExecutableCallRegular | ExecutableCallBinary | ExecutableCallShorthand
-):
-  | ExecutableStepCallRegular<'active'>
-  | ExecutableStepCallBinary<'active'>
-  | ExecutableStepCallShorthand<'active'> {
-  if (isExecutableCallBinary(e)) {
-    const argArg: StepVariableShorthandNumber<'active'> = {
-      ...e.arg.arg,
-      topLeftBadgeType: 'none',
-      bottomRightBadgeType: 'none',
-      highlightType: 'active',
-      emphasizePriority: true
-    }
-    const argFunc: StepVariableShorthandBinary<'active'> = {
-      ...e.arg.func,
-      topLeftBadgeType: 'none',
-      bottomRightBadgeType: 'none',
-      highlightType: 'active'
-    }
-    const func: StepVariableShorthandNumber<'active'> = {
-      ...e.func,
-      topLeftBadgeType: 'none',
-      bottomRightBadgeType: 'none',
-      highlightType: 'active',
-      emphasizePriority: true
-    }
-    return {
-      ...e,
-      state: 'active',
-      arg: {
-        ...e.arg,
-        arg: argArg,
-        func: argFunc
-      },
-      func: func
-    }
-  } else if (isExecutableCallShorthand(e)) {
+  e: ExecutableCallRegular | ExecutableCallShorthand
+): ExecutableStepCallRegular<'active'> | ExecutableStepCallShorthand<'active'> {
+  if (isExecutableCallShorthand(e)) {
     return {
       ...e,
       state: 'active',

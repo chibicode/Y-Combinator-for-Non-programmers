@@ -3,7 +3,6 @@ import {
   ExpressionParams,
   FunctionExpressionParams,
   VariableExpressionParams,
-  VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   HighlightedVariableExpressionParams,
   ConditionalExpressionParams,
@@ -19,12 +18,6 @@ export function isHighlightedVariableExpressionParams(
     !!(expressionParams as HighlightedVariableExpressionParams).name &&
     !!(expressionParams as HighlightedVariableExpressionParams).highlighted
   )
-}
-
-export function isVariableShorthandBinaryParams(
-  expressionParams: ExpressionParams
-): expressionParams is VariableShorthandBinaryParams {
-  return !!(expressionParams as VariableShorthandBinaryParams).shorthandBinary
 }
 
 export function isVariableShorthandNumberParams(

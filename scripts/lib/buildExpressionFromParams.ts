@@ -3,7 +3,6 @@ import {
   isVariableExpressionParams,
   isHighlightedVariableExpressionParams,
   isFunctionExpressionParams,
-  isVariableShorthandBinaryParams,
   isVariableShorthandNumberParams,
   isConditionalParams,
   isVariableShorthandFuncParams,
@@ -16,7 +15,6 @@ import {
   FunctionExpressionParams,
   VariableExpressionParams,
   HighlightedVariableExpressionParams,
-  VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
   ConditionalExpressionParams,
   RepeatExpressionParams,
@@ -29,7 +27,6 @@ import {
   StepChild,
   StepFunction,
   StepVariable,
-  StepVariableShorthandBinary,
   StepVariableShorthandNumber,
   StepConditional,
   RepeatExpression
@@ -86,9 +83,6 @@ export default function buildExpressionFromParams(
 export default function buildExpressionFromParams(
   expressionParams: FunctionExpressionParams
 ): StepFunction
-export default function buildExpressionFromParams(
-  expressionParams: VariableShorthandBinaryParams
-): StepVariableShorthandBinary
 export default function buildExpressionFromParams(
   expressionParams: VariableShorthandNumberParams
 ): StepVariableShorthandNumber
@@ -154,15 +148,6 @@ export default function buildExpressionFromParams(
         type: 'function',
         meta: expressionParams.meta
       }
-    }
-  } else if (isVariableShorthandBinaryParams(expressionParams)) {
-    return {
-      ...buildVariableExpression(
-        'shorthandBinary',
-        true,
-        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
-      ),
-      shorthandBinary: expressionParams.shorthandBinary
     }
   } else if (isVariableShorthandNumberParams(expressionParams)) {
     return {
