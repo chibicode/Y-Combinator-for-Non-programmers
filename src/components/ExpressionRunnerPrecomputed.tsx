@@ -193,11 +193,7 @@ const ExpressionRunnerPrecomputed = ({
     explanationsVisibility === 'visible' ||
     (explanationsVisibility === 'hiddenInitialPausedOnly' &&
       !isPlaying &&
-      currentIndex > 0) ||
-    (explanationsVisibility === 'hiddenInitialAndLastPausedOnly' &&
-      !isPlaying &&
-      atLeastOneStepTaken &&
-      canStepForward)
+      currentIndex > 0)
   const progessBarVisible =
     !hidePlayButton && canStepForward && (isPlaying || atLeastOneStepTaken)
 

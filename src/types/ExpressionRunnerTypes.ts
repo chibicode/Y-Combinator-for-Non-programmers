@@ -43,11 +43,7 @@ export interface ExpressionRunnerProps {
   hidePriorities: ExpressionRunnerContextProps['hidePriorities']
   hideBottomRightBadges: ExpressionRunnerContextProps['hideBottomRightBadges']
   hideControls: boolean
-  explanationsVisibility:
-    | 'visible'
-    | 'hidden'
-    | 'hiddenInitialPausedOnly'
-    | 'hiddenInitialAndLastPausedOnly'
+  explanationsVisibility: 'visible' | 'hidden' | 'hiddenInitialPausedOnly'
   variableSize: ExpressionRunnerContextProps['variableSize']
   initializeInstructions: readonly InitializeInstruction[]
   maxStepsAllowed?: number
