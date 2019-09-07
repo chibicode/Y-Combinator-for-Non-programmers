@@ -8,9 +8,7 @@ import {
   multParams,
   isZeroParams,
   highlighted,
-  multParamsRightHighlighted,
   predParams,
-  alphaConversionSimpleExampleParams,
   numberParamsHighlightNumber,
   numberParamsHighlightNonNumber
 } from 'scripts/lib/churchEncodingParams'
@@ -427,12 +425,6 @@ export const jzhy = initializeExpressionContainer([
   numberParams('e', 'f', 1)
 ])
 
-export const njvi = initializeExpressionContainer([
-  multParamsRightHighlighted('a', 'b', 'c', 'd'),
-  'question',
-  'question'
-])
-
 export const jxut = initializeExpressionContainer(
   isZeroParams('a', 'b', 'c', 'd', 'e', 'y', 'z', 'question')
 )
@@ -465,22 +457,6 @@ export const lhek = initializeExpressionContainer(
     { arg: 'w', body: 'x' },
     'question'
   )
-)
-
-export const qikx = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams('question')
-)
-
-export const ooeu = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams('c')
-)
-
-export const xryf = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams('d')
-)
-
-export const zgzf = initializeExpressionContainer(
-  alphaConversionSimpleExampleParams(highlighted('b'))
 )
 
 export const byex = initializeExpressionContainer(numberParams('d', 'b', 1))
