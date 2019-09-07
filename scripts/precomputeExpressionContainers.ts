@@ -11,7 +11,6 @@ const precomputeFile = (key: string) => {
   const {
     speed,
     showOnlyFocused,
-    caption,
     hideControls,
     explanationsVisibility,
     hidePriorities,
@@ -42,7 +41,6 @@ const precomputeFile = (key: string) => {
       expressionContainers,
       speed,
       showOnlyFocused,
-      caption,
       hideControls,
       explanationsVisibility,
       hidePriorities,

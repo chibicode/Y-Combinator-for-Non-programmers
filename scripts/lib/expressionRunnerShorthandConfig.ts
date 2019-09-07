@@ -1,6 +1,5 @@
 import { ExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
-import { HProps } from 'src/types/HTypes'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 
 export const expressionRunnerSimpleConfigDefault = {
@@ -25,7 +24,6 @@ interface ExpressionRunnerSimpleConfig {
   showPriorities?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
-  caption?: HProps['args']
   bottomRightBadgeOverrides?: ExpressionRunnerProps['bottomRightBadgeOverrides']
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']

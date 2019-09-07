@@ -24,7 +24,6 @@ export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
   speed: ExpressionRunnerConfig['speed']
   showOnlyFocused: ExpressionRunnerConfig['showOnlyFocused']
-  caption: ExpressionRunnerConfig['caption']
   children?: React.ReactNode
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
@@ -61,7 +60,6 @@ interface PlaybackState {
 const ExpressionRunnerPrecomputed = ({
   speed,
   showOnlyFocused,
-  caption,
   expressionContainers,
   hideControls,
   explanationsVisibility,
@@ -246,21 +244,9 @@ const ExpressionRunnerPrecomputed = ({
               />
             </ExpressionRunnerCaptionWrapper>
           )}
-          {/* TODO: Remove caption here once v2 is done */}
-          {caption && (
-            <ExpressionRunnerCaptionWrapper>
-              <H args={caption} />
-            </ExpressionRunnerCaptionWrapper>
-          )}
           {children && !explanationsVisible && !isPlaying && (
             <ExpressionRunnerCaptionWrapper>
               {children}
-            </ExpressionRunnerCaptionWrapper>
-          )}
-          {/* TODO: Remove !caption here once v2 is done */}
-          {!caption && isPlaying && (
-            <ExpressionRunnerCaptionWrapper>
-              <H args={{ name: 'fastForwarding' }} />
             </ExpressionRunnerCaptionWrapper>
           )}
           {progessBarVisible && (

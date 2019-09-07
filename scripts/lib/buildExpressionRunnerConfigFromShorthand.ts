@@ -15,7 +15,6 @@ import {
   ExpressionRunnerContextProps,
   expressionRunnerContextDefault
 } from 'src/types/ExpressionRunnerTypes'
-import { HProps } from 'src/types/HTypes'
 import { SteppedExpressionContainer } from 'src/types/ExpressionContainerTypes'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 
@@ -47,7 +46,6 @@ export interface ExpressionRunnerConfig {
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
-  caption?: HProps['args']
   highlightOverrideActiveAfterStart: boolean
   showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
   argPriorityAggHighlights: readonly number[]
@@ -154,7 +152,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showPriorities,
       showAllShowSteps,
       explanationsVisibility,
-      caption,
       bottomRightBadgeOverrides,
       variableSize,
       containerSize,
@@ -181,7 +178,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       highlightOverridesCallArgAndFuncUnboundOnly,
       showOnlyFocused,
       containerSize,
-      caption,
       skipAlphaConvert,
       alphaConvertCallArg,
       skipActive,
