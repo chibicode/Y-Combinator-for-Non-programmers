@@ -27,7 +27,6 @@ const precomputeFile = (key: string) => {
     highlightFunctions,
     convert,
     crossed,
-    alphaConvertCallArg,
     skipActive
   } = config
 
@@ -52,7 +51,6 @@ const precomputeFile = (key: string) => {
       showAllShowSteps,
       convert,
       crossed,
-      alphaConvertCallArg,
       skipActive
     },
     null,

@@ -18,7 +18,6 @@ import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
 import {
   removeCrossed,
   stepToActive,
-  stepToAlphaConvertDone,
   stepToBetaReducePreviewAfter,
   stepToBetaReducePreviewBefore,
   stepToBetaReducePreviewCrossed,
@@ -57,7 +56,6 @@ import prioritizeExpression from 'scripts/lib/prioritizeExpression'
 interface StepOptions {
   showAllShowSteps?: boolean
   skipAlphaConvert?: boolean
-  alphaConvertCallArg?: boolean
   skipActive?: boolean
 }
 
@@ -212,12 +210,7 @@ const stepShorthand = (
 
 const stepRegular = (
   e: ExecutableCallRegular,
-  {
-    showAllShowSteps,
-    skipAlphaConvert,
-    alphaConvertCallArg,
-    skipActive
-  }: StepOptions,
+  { showAllShowSteps, skipAlphaConvert, skipActive }: StepOptions,
   matchExists?: boolean
 ): {
   nextExpression:
@@ -320,9 +313,7 @@ const stepRegular = (
     }
     case 'needsAlphaConvert': {
       return {
-        nextExpression: alphaConvertCallArg
-          ? stepToAlphaConvertCallArg(e)
-          : stepToAlphaConvertDone(e),
+        nextExpression: stepToAlphaConvertCallArg(e),
         previouslyChangedExpressionState: 'alphaConvertDone'
       }
     }
