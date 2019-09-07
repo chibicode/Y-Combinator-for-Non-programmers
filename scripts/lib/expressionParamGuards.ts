@@ -8,7 +8,6 @@ import {
   VariableShorthandNumberParams,
   HighlightedVariableExpressionParams,
   ConditionalExpressionParams,
-  MagicalVariableParams,
   VariableShorthandFuncParams,
   QuestionPlusOrMinusOneParams,
   QuestionShorthandNumberAfterConvertParams
@@ -54,12 +53,6 @@ export function isVariableShorthandFuncParams(
     (expressionParams as VariableShorthandFuncParams).shorthandFunc !==
     undefined
   )
-}
-
-export function isMagicalVariableParams(
-  expressionParams: ExpressionParams
-): expressionParams is MagicalVariableParams {
-  return (expressionParams as MagicalVariableParams).magical !== undefined
 }
 
 export function isVariableExpressionParams(

@@ -30,7 +30,6 @@ export type VariableNames =
   | 'B'
   | 'shorthandNumber'
   | 'shorthandBinary'
-  | 'magical'
   | 'Amult'
   | 'Bsingle'
   | 'blankNumber'

@@ -49,11 +49,6 @@ export interface VariableShorthandUnaryParams {
   readonly shorthandUnary: VariableShorthandUnary['shorthandUnary']
 }
 
-export interface MagicalVariableParams {
-  readonly initialHighlight?: boolean
-  readonly magical: boolean
-}
-
 export type VariableExpressionParams = VariableNames
 
 export interface FunctionExpressionParams {
@@ -86,7 +81,6 @@ export type ExpressionParams =
   | VariableShorthandNumberParams
   | VariableShorthandUnaryParams
   | ConditionalExpressionParams
-  | MagicalVariableParams
   | RepeatExpressionParams
   | VariableShorthandFuncParams
   | QuestionPlusOrMinusOneParams

@@ -40,9 +40,6 @@ export {
 export { default as stepToCaseOnly } from 'scripts/lib/steps/stepToCaseOnly'
 export { default as stepToDefault } from 'scripts/lib/steps/stepToDefault'
 export {
-  default as stepToMagicalExpanded
-} from 'scripts/lib/steps/stepToMagicalExpanded'
-export {
   default as stepToShowExecutableUnary
 } from 'scripts/lib/steps/stepToShowExecutableUnary'
 export {

@@ -325,13 +325,6 @@ const Explanation = ({
         )
       }
     }
-    case 'magicalExpanded': {
-      if (locale === 'en') {
-        return <>?</>
-      } else {
-        return <>の部分が変化します</>
-      }
-    }
     case 'showExecutableUnary': {
       if (locale === 'en') {
         return <>?</>

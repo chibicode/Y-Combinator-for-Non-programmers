@@ -11,7 +11,6 @@ import {
   isCall,
   isExecutableCallRegular,
   isVariableShorthandUnaryNumber,
-  isExecutableCallMagical,
   isExecutableCallBinary
 } from 'src/lib/expressionTypeGuards'
 import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
@@ -30,9 +29,7 @@ import {
   stepToConditionActive,
   stepToCaseProcessed,
   stepToCaseOnly,
-  stepToMagicalExpanded,
   stepToShorthandComputed,
-  stepToDefault,
   stepToShowExecutableUnary,
   stepToUnaryProcessed,
   stepToBinaryComputed,
@@ -47,7 +44,6 @@ import {
   StepChild,
   ExecutableConditionalStatesDistributed,
   ExecutableCall,
-  ExecutableCallMagical,
   ExecutableCallBinary,
   ExecutableCallShorthand
 } from 'src/types/ExpressionTypes'
@@ -156,32 +152,6 @@ const stepBinary = (
   }
 }
 
-const stepMagical = (
-  e: ExecutableCallMagical
-): {
-  nextExpression: ExecutableCall | StepChild<'default'>
-  matchExists?: boolean
-  previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
-} => {
-  switch (e.state) {
-    case 'default': {
-      return {
-        nextExpression: stepToActive(e),
-        previouslyChangedExpressionState: 'active'
-      }
-    }
-    case 'active': {
-      return {
-        nextExpression: stepToMagicalExpanded(e),
-        previouslyChangedExpressionState: 'magicalExpanded'
-      }
-    }
-    default: {
-      throw new Error()
-    }
-  }
-}
-
 const stepShorthand = (
   e: ExecutableCallShorthand
 ): {
@@ -240,12 +210,6 @@ const stepRegular = (
   }
 
   switch (e.state) {
-    case 'magicalExpanded': {
-      return {
-        nextExpression: stepToDefault(e),
-        previouslyChangedExpressionState: 'default'
-      }
-    }
     case 'default': {
       if (skipActive) {
         if (hasUnboundVariables(e.func.body)) {
@@ -411,8 +375,6 @@ const runStep = (
   } = isCall(expression)
     ? isExecutableCallRegular(expression)
       ? stepRegular(expression, stepOptions, e.matchExists)
-      : isExecutableCallMagical(expression)
-      ? stepMagical(expression)
       : isExecutableCallBinary(expression)
       ? stepBinary(expression)
       : stepShorthand(expression)

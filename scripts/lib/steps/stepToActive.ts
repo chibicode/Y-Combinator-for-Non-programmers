@@ -24,10 +24,6 @@ import {
   ConditionalExpression,
   StepConditional,
   ExecutableCallBinary,
-  ExecutableCallMagical,
-  MagicalVariable,
-  StepMagicalVariable,
-  ExecutableStepCallMagical,
   ExecutableStepCallBinary,
   ExecutableCallShorthand,
   ExecutableStepCallShorthand,
@@ -39,7 +35,6 @@ import {
 function toActive(
   e: VariableShorthandBinary
 ): StepVariableShorthandBinary<'active'>
-function toActive(e: MagicalVariable): StepMagicalVariable<'active'>
 function toActive(e: VariableShorthandFunc): StepVariableShorthandFunc<'active'>
 function toActive(e: VariableExpression): StepVariable<'active'>
 function toActive(e: FunctionExpression): StepFunction<'active'>
@@ -130,23 +125,15 @@ export default function stepToActive(
   e: ExecutableCallRegular
 ): ExecutableStepCallRegular<'active'>
 export default function stepToActive(
-  e: ExecutableCallMagical
-): ExecutableStepCallMagical<'active'>
-export default function stepToActive(
   e: ExecutableCallBinary
 ): ExecutableStepCallBinary<'active'>
 export default function stepToActive(
   e: ExecutableCallShorthand
 ): ExecutableStepCallShorthand<'active'>
 export default function stepToActive(
-  e:
-    | ExecutableCallRegular
-    | ExecutableCallMagical
-    | ExecutableCallBinary
-    | ExecutableCallShorthand
+  e: ExecutableCallRegular | ExecutableCallBinary | ExecutableCallShorthand
 ):
   | ExecutableStepCallRegular<'active'>
-  | ExecutableStepCallMagical<'active'>
   | ExecutableStepCallBinary<'active'>
   | ExecutableStepCallShorthand<'active'> {
   if (isExecutableCallBinary(e)) {
