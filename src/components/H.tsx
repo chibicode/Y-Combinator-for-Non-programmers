@@ -30,6 +30,7 @@ import {
   numEpisodesExceptFirstAndLast
 } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
+import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId } from 'src/lib/twitter'
@@ -853,7 +854,46 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             {question}
             <Hr />
             <P>
-              また、もしご興味があれば、わたしが共訳した書籍『
+              <InlineHeader>
+                本稿を読んで、「
+                <Em>
+                  プログラミング未経験者だけど、コンピュータサイエンスを学びたくなった。次な何を読めばいい？
+                </Em>
+                」と思ってくださった方へ:
+              </InlineHeader>
+            </P>
+            <EmojiSeparator
+              emojis={['❓', '🤔', '❓']}
+              description={<>次は何を読めばいい？</>}
+            />
+            <P>
+              プログラミング抜きに、コンピュータサイエンスを学べる他の教材があればご紹介したいのですが、現時点では筆者がおすすめできるものが見つかっておりません。
+            </P>
+            <P>
+              というわけで、
+              <Strong>
+                一定数の方がリクエストしてくださったら、続編を書こう
+              </Strong>
+              かなと思っています。続編を書くとしたら、
+              <Strong>人工知能</Strong>
+              についてプログラミング抜きに学べる教材を作りたいと考えています。
+            </P>
+            <EmojiSeparator
+              emojis={['🤖', '🧠', '🤖']}
+              description={<>続編を書くとしたら人工知能について</>}
+            />
+            <P>
+              続編をリクエストしたい方は、
+              <Em>
+                以下のツイートの引用リツイートで「
+                <Strong>続編が読みたい</Strong>」と書いてくださると嬉しいです。
+              </Em>
+            </P>
+            <TwitterEmbed id={shareId} />
+            <Hr />
+            <P>
+              <InlineHeader>宣伝:</InlineHeader>{' '}
+              もしご興味があれば、わたしが共訳した書籍『
               <ExternalLink href="https://amzn.to/2QlZIqm">
                 <Strong>ファクトフルネス</Strong>
               </ExternalLink>
