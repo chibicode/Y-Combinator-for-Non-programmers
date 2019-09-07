@@ -55,7 +55,7 @@ export const Conclusion = () => (
         <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
         を数え間違えることなく、確実に足し算や引き算を行うことができます。
       </Strong>
-      だからこそ、繰り返しの機能は重宝されていたのです。
+      だからこそ、繰り返しの機能はラムダ村で重宝されていたのです。
     </P>
     <EmojiSeparator
       emojis={['➕', '🤗', '➖']}
@@ -63,7 +63,7 @@ export const Conclusion = () => (
         <>
           繰り返しの機能を使えば、
           <br />
-          確実に足し算や引き算を行うことができる！
+          確実に足し算や引き算を行える！
         </>
       }
     />
@@ -78,8 +78,7 @@ export default () => (
         content: (
           <>
             <P>
-              前回は、ラムダ村に代々伝わる「
-              <CustomEmoji type="mathBox" /> <Strong>計算箱</Strong>
+              前回は、ラムダ村に代々伝わる「<Strong>計算箱</Strong>
               」の話をしました。
             </P>
             <EmojiSeparator
@@ -109,7 +108,7 @@ export default () => (
               description={<>1を足す機能と1を引く機能</>}
             />
             <P>
-              今回は、3つめの計算箱の機能である「
+              今回は、計算箱の3つめの機能である「
               <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」について説明します。
             </P>
@@ -136,9 +135,9 @@ export default () => (
         content: (
           <>
             <P>
-              あるラムダ村の村人は、計算箱を使って <EmojiNumber number={10} />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={8} />{' '}
-              を計算しようとしていました。
+              ラムダ村の村人は計算が苦手だったので、簡単な計算でも計算箱に頼っていました。というわけで、あるラムダ村の村人は、計算箱を使って{' '}
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={8} /> を計算しようとしていました。
             </P>
             <EmojiSeparator
               nodes={[
@@ -150,20 +149,18 @@ export default () => (
               ]}
               description={
                 <>
-                  ラムダ村の村人は計算が苦手だったので、
-                  <br />
-                  簡単な計算でも計算箱に頼っていたのです。
+                  計算箱で <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+                  <EmojiNumber number={8} /> を計算したい
                 </>
               }
             />
             <P>
-              というわけでラムダ村の村人は、以下のような計算箱を
-              <H args={{ name: 'play' }} />
-              しようとしました。
+              そのためにラムダ村の村人は、以下のような計算箱を
+              <H args={{ name: 'play' }} /> しようとしました。
             </P>
             <R.Dfjp>
-              <Emoji>😉</Emoji>「これで <EmojiNumber number={10} />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={8} /> を計算しよう！」
+              <Emoji>😉</Emoji> これで <EmojiNumber number={10} />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={8} /> を計算しよう！
             </R.Dfjp>
             <P>
               ここで質問です。上の計算箱は、
@@ -247,8 +244,13 @@ export default () => (
             <P>
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> を計算したければ、
-              <CustomEmoji type="minusOne" /> を8個配置する必要がありますが、
-              <Em>先ほどの計算箱には7個しかありませんでした</Em>。
+              <CustomEmoji type="minusOne" /> を<Strong>8個配置する</Strong>
+              必要がありますが、
+              <Em>
+                先ほどの計算箱には <CustomEmoji type="minusOne" /> が
+                <Strong>7個しか</Strong>ありませんでした
+              </Em>
+              。
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -290,7 +292,9 @@ export default () => (
                 <>
                   どうすれば、
                   <CustomEmoji type="plusOne" /> や{' '}
-                  <CustomEmoji type="minusOne" /> の数を間違えずにすむのか？
+                  <CustomEmoji type="minusOne" /> の数を
+                  <br />
+                  間違えずにすむのか？
                 </>
               }
             />
@@ -340,17 +344,17 @@ export default () => (
               <Em>
                 上の計算箱を
                 <H args={{ name: 'play' }} />
-                すると、計算をする前に、まず下の部分が次のように変化します。
+                すると、計算をする前に、下の部分が次のように変化します。
               </Em>
               変化後には、
               <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
               が<Strong>8個</Strong>あるのに注目です。
             </P>
-            <R.Sucz />
+            <R.Sucz>計算をする前に…</R.Sucz>
             <ExpressionRunnerSeparator />
             <R.Xlgb>
               <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
-              が<Strong>8個</Strong>出現しました
+              が<Strong>8個</Strong>出現する
             </R.Xlgb>
             <P>
               つまり、
@@ -494,7 +498,7 @@ export default () => (
             <P>
               ということは、もし例えば <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
               <Emoji>🅱️</Emoji>{' '}
-              を計算箱で計算したかったら、以下のような計算箱を用意すればいいのです。
+              を計算したかったら、以下のような計算箱を用意すればいいのです。
             </P>
             <R.Nmbt>
               <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算
@@ -506,11 +510,13 @@ export default () => (
               <EmojiNumber number={5} /> を、<Emoji>🅱️</Emoji> に{' '}
               <EmojiNumber number={3} /> を入れます。
             </P>
-            <R.Etku />
+            <R.Etku>
+              <Emoji>🅰️</Emoji> に <EmojiNumber number={5} /> を、
+              <Emoji>🅱️</Emoji> に <EmojiNumber number={3} /> を入れる
+            </R.Etku>
             <P>
               後は
-              <H args={{ name: 'play' }} />
-              するだけで、
+              <H args={{ name: 'play' }} /> するだけで、
               <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算してくれます。
             </P>
@@ -569,7 +575,13 @@ export default () => (
                 <Emoji>😍</Emoji>,
                 <Emoji>🌲</Emoji>
               ]}
-              description={<>「計算箱が無いとやってけない！」</>}
+              description={
+                <>
+                  俺ら計算が苦手だから、
+                  <br />
+                  計算箱が無いとやってけない！
+                </>
+              }
             />
             <P>
               村人たちは、計算箱の
@@ -602,7 +614,10 @@ export default () => (
             <P>
               そんなある日、<Strong>ラムダ村である異変が起きました。</Strong>
             </P>
-            <EmojiSeparator emojis={['🌲', '😮', '❓', '😮', '🌲']} />
+            <EmojiSeparator
+              emojis={['🌲', '😮', '❓', '😮', '🌲']}
+              description={<>ある日、ラムダ村で異変が！</>}
+            />
             <P>詳しくは次のページでお話します！</P>
             <NextLessonButton />
           </>
