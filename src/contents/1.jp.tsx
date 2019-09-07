@@ -82,8 +82,7 @@ export default () => (
           content: (
             <>
               <P>
-                <Emoji>😉</Emoji> <InlineHeader>ちなみに:</InlineHeader>{' '}
-                「ラムダ村」は、
+                <InlineHeader>ちなみに:</InlineHeader> 「ラムダ村」は、
                 <Em>上から読んでも下から読んでも「ラムダ村」</Em>です。
                 なぜ「ラムダ」と名付けたかは最後に説明します！
               </P>
@@ -107,7 +106,7 @@ export default () => (
                 上には、数字の <EmojiNumber number={1} /> が入っています。
               </UlLi>
               <UlLi>
-                下には、1を足す印 <CustomEmoji type="plusOne" />
+                下には、1を足す印 <CustomEmoji type="plusOne" />{' '}
                 が入っています。
               </UlLi>
             </Ul>
@@ -422,7 +421,10 @@ export default () => (
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算してくれます。
             </P>
-            <R.Eagi />
+            <R.Eagi>
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算
+            </R.Eagi>
             <P>
               一方、下の計算箱は、
               <Strong>
@@ -432,20 +434,22 @@ export default () => (
               <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={4} /> を計算してくれます。
             </P>
-            <R.Yjur />
+            <R.Yjur>
+              <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={4} /> を計算
+            </R.Yjur>
           </>
         )
       },
       {
-        title: <>どんな大きな数字の足し算でも引き算でもできる</>,
+        title: <>どんな大きな数字の足し算でも引き算でも可能</>,
         content: (
           <>
             <P>
               つまり、
               <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
               を何度も使うことで、
-              <Em>どんな大きな数字の足し算でも引き算でも行うことができます</Em>
-              。
+              <Em>どんな大きな数字の足し算でも引き算でも可能なのです</Em>。
             </P>
             <EmojiSeparator
               nodes={[
@@ -508,7 +512,9 @@ export default () => (
         content: (
           <>
             <P>
-              まとめると、計算箱は足し算や引き算を行ってくれる魔法の道具というわけです。
+              まとめると、
+              <Strong>計算箱は足し算や引き算を行ってくれる魔法の道具</Strong>
+              というわけです。
             </P>
             <EmojiSeparator
               nodes={[
@@ -547,7 +553,7 @@ export default () => (
           content: (
             <>
               <P>
-                <Emoji>😉</Emoji> <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <InlineHeader>ちなみに:</InlineHeader>{' '}
                 <Em>
                   残念ながら、計算箱は「<Strong>掛け算</Strong>{' '}
                   <Emoji>✖️</Emoji>
