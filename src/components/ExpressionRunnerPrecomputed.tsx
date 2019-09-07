@@ -38,7 +38,6 @@ export interface ExpressionRunnerPrecomputedProps {
   highlightOverrides: ExpressionRunnerConfig['highlightOverrides']
   highlightOverrideActiveAfterStart: ExpressionRunnerConfig['highlightOverrideActiveAfterStart']
   highlightFunctions: ExpressionRunnerConfig['highlightFunctions']
-  superFastForward: ExpressionRunnerConfig['superFastForward']
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
   crossed: ExpressionRunnerConfig['crossed']
@@ -70,7 +69,6 @@ const ExpressionRunnerPrecomputed = ({
   highlightOverrides,
   highlightOverrideActiveAfterStart,
   highlightFunctions,
-  superFastForward,
   showAllShowSteps,
   children,
   convert,
@@ -93,42 +91,16 @@ const ExpressionRunnerPrecomputed = ({
 
   useInterval(
     () => {
-      if (superFastForward) {
-        let nextIndex = currentIndex
-        do {
-          if (nextIndex < expressionContainers.length - 1) {
-            nextIndex += 1
-          }
-        } while (
-          expressionContainers[nextIndex].previouslyChangedExpressionState !==
-            'default' &&
-          expressionContainers[nextIndex].previouslyChangedExpressionState !==
-            'active' &&
-          nextIndex < expressionContainers.length - 1
-        )
-        if (currentIndex < expressionContainers.length - 1) {
-          setCurrentIndex(nextIndex)
-        }
+      if (currentIndex < expressionContainers.length - 1) {
+        setCurrentIndex(currentIndex + 1)
+      }
 
-        // Don't use else: stop immediately if reaches the end
-        if (nextIndex >= expressionContainers.length - 1) {
-          setPlaybackStatus({
-            isFastForwarding: false,
-            isPlaying: false
-          })
-        }
-      } else {
-        if (currentIndex < expressionContainers.length - 1) {
-          setCurrentIndex(currentIndex + 1)
-        }
-
-        // Don't use else: stop immediately if reaches the end
-        if (currentIndex + 1 >= expressionContainers.length - 1) {
-          setPlaybackStatus({
-            isFastForwarding: false,
-            isPlaying: false
-          })
-        }
+      // Don't use else: stop immediately if reaches the end
+      if (currentIndex + 1 >= expressionContainers.length - 1) {
+        setPlaybackStatus({
+          isFastForwarding: false,
+          isPlaying: false
+        })
       }
     },
     isPlaying ? autoplaySpeed(speed) : null

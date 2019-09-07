@@ -44,7 +44,6 @@ export interface ExpressionRunnerConfig {
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
-  superFastForward: boolean
   convert?: ExpressionRunnerProps['convert']
   crossed?: boolean
 }
@@ -67,8 +66,7 @@ const expressionRunnerDefaults = {
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
-  highlightFunctions: false,
-  superFastForward: false
+  highlightFunctions: false
 }
 
 const buildInitializeInstructions = ({
@@ -182,8 +180,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       variableSize,
       containerSize,
       highlightOverrides,
-      explanationsVisibility,
-      superFastForward
+      explanationsVisibility
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerPlayButtonOnlyConfigDefault
@@ -209,8 +206,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       initializeInstructions: buildInitializeInstructions({
         nextIterations,
         initialState
-      }),
-      superFastForward
+      })
     }
   } else if (isExpressionRunnerSingleStepConfig(config)) {
     const {

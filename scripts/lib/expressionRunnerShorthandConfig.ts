@@ -75,7 +75,6 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   containerSize?: ExpressionRunnerProps['containerSize']
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
-  superFastForward?: ExpressionRunnerProps['superFastForward']
 }
 
 export const expressionRunnerSingleStepConfigDefault = {

@@ -58,7 +58,6 @@ export interface ExpressionRunnerProps {
   caption?: React.ReactNode
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
-  superFastForward: boolean
   convert?: 'toMathBox' | 'toMathBoxPlay'
 }
 
