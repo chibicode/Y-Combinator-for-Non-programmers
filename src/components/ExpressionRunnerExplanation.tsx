@@ -22,7 +22,6 @@ interface ExpressionRunnerExplanationProps {
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
   convert: ExpressionRunnerPrecomputedProps['convert']
-  alphaConvertCallArg?: ExpressionRunnerPrecomputedProps['alphaConvertCallArg']
 }
 
 const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
@@ -57,8 +56,7 @@ const Explanation = ({
   activePriority,
   showAllShowSteps,
   hideFuncUnboundBadge,
-  unaryJustExecuted,
-  alphaConvertCallArg
+  unaryJustExecuted
 }: {
   state: ExpressionContainer['previouslyChangedExpressionState']
   matchExists?: boolean
@@ -66,7 +64,6 @@ const Explanation = ({
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
   unaryJustExecuted?: boolean
-  alphaConvertCallArg: ExpressionRunnerExplanationProps['alphaConvertCallArg']
 }) => {
   if (unaryJustExecuted) {
     if (locale === 'en') {
@@ -280,23 +277,13 @@ const Explanation = ({
       if (locale === 'en') {
         return <>?</>
       } else {
-        if (alphaConvertCallArg) {
-          return (
-            <>
-              <InlineHeader>特別ルール:</InlineHeader>{' '}
-              <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
-              を別の料理に <Emoji>🐶</Emoji>
-            </>
-          )
-        } else {
-          return (
-            <>
-              <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />{' '}
-              <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
-              を別の料理に
-            </>
-          )
-        }
+        return (
+          <>
+            <InlineHeader>特別ルール:</InlineHeader>{' '}
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+            を別の料理に <Emoji>🐶</Emoji>
+          </>
+        )
       }
     }
     case 'conditionActive': {
@@ -368,8 +355,7 @@ const ExpressionRunnerExplanation = ({
   isPlaying,
   showAllShowSteps,
   hideFuncUnboundBadge,
-  convert,
-  alphaConvertCallArg
+  convert
 }: ExpressionRunnerExplanationProps) => (
   <>
     {
@@ -393,7 +379,6 @@ const ExpressionRunnerExplanation = ({
               showAllShowSteps={showAllShowSteps}
               unaryJustExecuted={expressionContainer.unaryJustExecuted}
               hideFuncUnboundBadge={hideFuncUnboundBadge}
-              alphaConvertCallArg={alphaConvertCallArg}
             />
           )
         )}

@@ -41,7 +41,6 @@ export interface ExpressionRunnerPrecomputedProps {
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
   crossed: ExpressionRunnerConfig['crossed']
-  alphaConvertCallArg: ExpressionRunnerConfig['alphaConvertCallArg']
 }
 
 const autoplaySpeed = (speed: number) => 1000 / speed
@@ -72,8 +71,7 @@ const ExpressionRunnerPrecomputed = ({
   showAllShowSteps,
   children,
   convert,
-  crossed,
-  alphaConvertCallArg
+  crossed
 }: ExpressionRunnerPrecomputedProps) => {
   const [{ isFastForwarding, isPlaying }, setPlaybackStatus] = useState<
     PlaybackState
@@ -196,7 +194,6 @@ const ExpressionRunnerPrecomputed = ({
                 showAllShowSteps={showAllShowSteps}
                 hideFuncUnboundBadge={hideFuncUnboundBadgeOnExplanation}
                 convert={convert}
-                alphaConvertCallArg={alphaConvertCallArg}
               />
             </ExpressionRunnerCaptionWrapper>
           )}
