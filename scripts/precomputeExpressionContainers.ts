@@ -10,7 +10,6 @@ const precomputeFile = (key: string) => {
   const expressionContainers = buildExpressionContainers(config)
   const {
     speed,
-    showOnlyFocused,
     hideControls,
     explanationsVisibility,
     hidePriorities,
@@ -40,7 +39,6 @@ const precomputeFile = (key: string) => {
     {
       expressionContainers,
       speed,
-      showOnlyFocused,
       hideControls,
       explanationsVisibility,
       hidePriorities,

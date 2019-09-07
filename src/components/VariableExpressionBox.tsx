@@ -302,56 +302,50 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
 }
 
 const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
-  const { hidePriorities, variableSize, showOnlyFocused } = useContext(
-    ExpressionRunnerContext
-  )
+  const { hidePriorities, variableSize } = useContext(ExpressionRunnerContext)
   const { conditionalState } = useContext(ConditionalContext)
-  if (showOnlyFocused) {
-    return <></>
-  } else {
-    return (
-      <>
-        {!hidePriorities && (
-          <ExpressionPrioritiesLabel
-            hideActive={
-              conditionalState === 'trueCaseOnly' ||
-              conditionalState === 'falseCaseOnly'
-            }
-            priorities={expression.argPriorityAgg}
-            position="topleft"
-            emphasize={
-              expression.emphasizePriority ||
-              !!(conditionalState && conditionalState !== 'default')
-            }
-          />
-        )}
-        <FlexCenter
-          css={css`
-            flex: 1;
-            font-size: ${variableExpressionBoxFontSize(variableSize)};
-            padding: ${variableExpressionBoxPaddingTop(variableSize)}
-              ${spaces(0.5)} ${variableExpressionBoxPaddingBottom(variableSize)};
-          `}
-        >
-          <VariableEmoji expression={expression} />
-        </FlexCenter>
-        {!hidePriorities && (
-          <ExpressionPrioritiesLabel
-            hideActive={
-              conditionalState === 'trueCaseOnly' ||
-              conditionalState === 'falseCaseOnly'
-            }
-            priorities={expression.funcPriorityAgg}
-            position="bottomleft"
-            emphasize={
-              expression.emphasizePriority ||
-              !!(conditionalState && conditionalState !== 'default')
-            }
-          />
-        )}
-      </>
-    )
-  }
+  return (
+    <>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          hideActive={
+            conditionalState === 'trueCaseOnly' ||
+            conditionalState === 'falseCaseOnly'
+          }
+          priorities={expression.argPriorityAgg}
+          position="topleft"
+          emphasize={
+            expression.emphasizePriority ||
+            !!(conditionalState && conditionalState !== 'default')
+          }
+        />
+      )}
+      <FlexCenter
+        css={css`
+          flex: 1;
+          font-size: ${variableExpressionBoxFontSize(variableSize)};
+          padding: ${variableExpressionBoxPaddingTop(variableSize)}
+            ${spaces(0.5)} ${variableExpressionBoxPaddingBottom(variableSize)};
+        `}
+      >
+        <VariableEmoji expression={expression} />
+      </FlexCenter>
+      {!hidePriorities && (
+        <ExpressionPrioritiesLabel
+          hideActive={
+            conditionalState === 'trueCaseOnly' ||
+            conditionalState === 'falseCaseOnly'
+          }
+          priorities={expression.funcPriorityAgg}
+          position="bottomleft"
+          emphasize={
+            expression.emphasizePriority ||
+            !!(conditionalState && conditionalState !== 'default')
+          }
+        />
+      )}
+    </>
+  )
 }
 
 export default VariableExpressionBox

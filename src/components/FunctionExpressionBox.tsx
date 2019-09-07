@@ -1,7 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { useContext } from 'react'
-import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ExpressionPriorityContext from 'src/components/ExpressionPriorityContext'
 import Flex from 'src/components/Flex'
 import FlexCenter from 'src/components/FlexCenter'
@@ -16,72 +14,50 @@ interface FunctionExpressionBoxProps {
 }
 
 const FunctionExpressionBox = ({ expression }: FunctionExpressionBoxProps) => {
-  const expressionRunnerContext = useContext(ExpressionRunnerContext)
-  const visible =
-    !expressionRunnerContext.showOnlyFocused ||
-    (expressionRunnerContext.showOnlyFocused && expression.meta === 'focused')
-  const innerShowOnlyFocused =
-    expressionRunnerContext.showOnlyFocused &&
-    expression.meta &&
-    expression.meta === 'focused'
-      ? false
-      : expressionRunnerContext.showOnlyFocused
-
-  if (visible) {
-    return (
-      <ExpressionRunnerContext.Provider
+  return (
+    <Flex
+      css={[
+        css`
+          flex: 1;
+        `,
+        expression.meta === 'plusOneEffect' &&
+          css`
+            background-image: url(${plusOneSvg});
+            background-size: 4em;
+            background-position: center center;
+          `,
+        expression.meta === 'minusOneEffect' &&
+          css`
+            background-image: url(${minusOneSvg});
+            background-size: 4em;
+            background-position: center center;
+          `
+      ]}
+    >
+      <FlexCenter
+        css={css`
+          flex-grow: 1;
+          flex-basis: 0;
+        `}
+      >
+        <ExpressionBox expression={expression.arg} />
+      </FlexCenter>
+      <ExpressionPriorityContext.Provider
         value={{
-          ...expressionRunnerContext,
-          showOnlyFocused: innerShowOnlyFocused
+          activePriority: undefined
         }}
       >
-        <Flex
-          css={[
-            css`
-              flex: 1;
-            `,
-            expression.meta === 'plusOneEffect' &&
-              css`
-                background-image: url(${plusOneSvg});
-                background-size: 4em;
-                background-position: center center;
-              `,
-            expression.meta === 'minusOneEffect' &&
-              css`
-                background-image: url(${minusOneSvg});
-                background-size: 4em;
-                background-position: center center;
-              `
-          ]}
+        <FlexCenter
+          css={css`
+            flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
+            flex-basis: 0;
+          `}
         >
-          <FlexCenter
-            css={css`
-              flex-grow: 1;
-              flex-basis: 0;
-            `}
-          >
-            <ExpressionBox expression={expression.arg} />
-          </FlexCenter>
-          <ExpressionPriorityContext.Provider
-            value={{
-              activePriority: undefined
-            }}
-          >
-            <FlexCenter
-              css={css`
-                flex-grow: ${maxNestedFunctionDepth(expression.body) + 1};
-                flex-basis: 0;
-              `}
-            >
-              <ExpressionBox expression={expression.body} />
-            </FlexCenter>
-          </ExpressionPriorityContext.Provider>
-        </Flex>
-      </ExpressionRunnerContext.Provider>
-    )
-  } else {
-    return <></>
-  }
+          <ExpressionBox expression={expression.body} />
+        </FlexCenter>
+      </ExpressionPriorityContext.Provider>
+    </Flex>
+  )
 }
 
 export default FunctionExpressionBox

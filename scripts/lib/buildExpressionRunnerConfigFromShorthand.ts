@@ -43,7 +43,6 @@ export interface ExpressionRunnerConfig {
   bottomRightBadgeOverrides: ExpressionRunnerContextProps['bottomRightBadgeOverrides']
   highlightOverrides: ExpressionRunnerContextProps['highlightOverrides']
   highlightOverrideActiveAfterStart: boolean
-  showOnlyFocused: ExpressionRunnerContextProps['showOnlyFocused']
   argPriorityAggHighlights: readonly number[]
   funcPriorityAggHighlights: readonly number[]
   highlightFunctions: boolean
@@ -71,7 +70,6 @@ const expressionRunnerDefaults = {
   highlightOverrides: expressionRunnerContextDefault.highlightOverrides,
   highlightOverrideActiveAfterStart:
     expressionRunnerContextDefault.highlightOverrideActiveAfterStart,
-  showOnlyFocused: expressionRunnerContextDefault.showOnlyFocused,
   argPriorityAggHighlights: [],
   funcPriorityAggHighlights: [],
   highlightFunctions: false,
@@ -141,7 +139,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       highlightOverrides,
       highlightOverrideActiveAfterStart,
       highlightOverridesCallArgAndFuncUnboundOnly,
-      showOnlyFocused,
       highlightFunctions,
       argPriorityAggHighlights,
       funcPriorityAggHighlights,
@@ -159,7 +156,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showAllShowSteps,
       variableSize,
       highlightOverridesCallArgAndFuncUnboundOnly,
-      showOnlyFocused,
       containerSize,
       skipAlphaConvert,
       alphaConvertCallArg,

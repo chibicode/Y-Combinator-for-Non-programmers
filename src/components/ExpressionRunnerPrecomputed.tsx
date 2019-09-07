@@ -23,7 +23,6 @@ import { LinkButton } from 'src/components/ContentTags/LinkButton'
 export interface ExpressionRunnerPrecomputedProps {
   expressionContainers: readonly SteppedExpressionContainer[]
   speed: ExpressionRunnerConfig['speed']
-  showOnlyFocused: ExpressionRunnerConfig['showOnlyFocused']
   children?: React.ReactNode
   hideControls: ExpressionRunnerConfig['hideControls']
   explanationsVisibility: ExpressionRunnerConfig['explanationsVisibility']
@@ -59,7 +58,6 @@ interface PlaybackState {
 
 const ExpressionRunnerPrecomputed = ({
   speed,
-  showOnlyFocused,
   expressionContainers,
   hideControls,
   explanationsVisibility,
@@ -207,7 +205,6 @@ const ExpressionRunnerPrecomputed = ({
         highlightOverrideActiveAfterStart,
         highlightOverridesCallArgAndFuncUnboundOnly,
         variableSize,
-        showOnlyFocused,
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
         argPriorityAggHighlights,
