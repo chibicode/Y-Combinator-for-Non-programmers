@@ -790,41 +790,6 @@ export const ynct = initializeExpressionContainer([
   }
 ])
 
-export const heiy = initializeExpressionContainer([
-  {
-    magical: true,
-    name: magicalVariableName
-  },
-  'someNumber'
-])
-
-export const yrrr = initializeExpressionContainer([
-  'someNumber',
-  {
-    shorthandBinary: 'mult'
-  },
-  {
-    someNumber: true,
-    shorthandNumber: 1
-  },
-  {
-    shorthandBinary: 'mult'
-  },
-  'abbreviated',
-  {
-    shorthandBinary: 'mult'
-  },
-  {
-    shorthandNumber: 2
-  },
-  {
-    shorthandBinary: 'mult'
-  },
-  {
-    shorthandNumber: 1
-  }
-])
-
 export const aizc = initializeExpressionContainer([
   {
     magical: true,
@@ -927,50 +892,6 @@ export const ipyc = initializeExpressionContainer([
   }
 ])
 
-export const onbh = initializeExpressionContainer([
-  {
-    shorthandNumber: 3
-  },
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    [
-      ['abbreviated', 'abbreviated'],
-      {
-        shorthandNumber: 2
-      }
-    ]
-  ]
-])
-
-export const fzwa = initializeExpressionContainer([
-  {
-    shorthandNumber: 3
-  },
-  [
-    {
-      shorthandBinary: 'mult'
-    },
-    [
-      {
-        shorthandNumber: 2
-      },
-      [
-        {
-          shorthandBinary: 'mult'
-        },
-        [
-          ['abbreviated', 'abbreviated'],
-          {
-            shorthandNumber: 1
-          }
-        ]
-      ]
-    ]
-  ]
-])
-
 export const pvph = initializeExpressionContainer([
   [
     yCombinator,
@@ -996,20 +917,6 @@ export const nxmy = initializeExpressionContainer([
   {
     shorthandNumber: 5,
     initialHighlight: true
-  }
-])
-
-export const vgig = initializeExpressionContainer([
-  [
-    yCombinator,
-    {
-      arg: 's',
-      body: updatedMagicalParams
-    }
-  ],
-  {
-    name: 'someNumber',
-    highlighted: true
   }
 ])
 
@@ -1086,44 +993,6 @@ export const hctu = initializeExpressionContainer([
     shorthandNumber: 4,
     initialHighlight: true
   }
-])
-
-export const imda = initializeExpressionContainer([
-  [
-    yCombinator,
-    {
-      arg: 's',
-      body: updatedMagicalParamsForPower(true)
-    }
-  ],
-  {
-    name: 'someNumber',
-    highlighted: true
-  }
-])
-
-const updatedMagicalParamsCustomizable: FunctionExpressionParams = {
-  arg: magicalVariableName,
-  body: {
-    checkType: 'isZero',
-    condition: {
-      shorthandUnary: 'pred',
-      name: magicalVariableName
-    },
-    trueCase: 'question',
-    falseCase: 'question'
-  }
-}
-
-export const oesh = initializeExpressionContainer([
-  [
-    yCombinator,
-    {
-      arg: 's',
-      body: updatedMagicalParamsCustomizable
-    }
-  ],
-  'someNumber'
 ])
 
 export const vazr = initializeExpressionContainer(yCombinator)
@@ -1214,37 +1083,9 @@ export const fmlj = initializeDoneExpressionContainer({
   shorthandNumber: 6
 })
 
-export const zcxt = initializeExpressionContainer([
-  {
-    shorthandNumber: 2
-  },
-  [
-    {
-      shorthandBinary: 'remainder'
-    },
-    {
-      shorthandNumber: 5
-    }
-  ]
-])
-
 export const zrwn = initializeDoneExpressionContainer({
   shorthandNumber: 1
 })
-
-export const ltys = initializeExpressionContainer([
-  {
-    shorthandNumber: 4
-  },
-  [
-    {
-      shorthandBinary: 'remainder'
-    },
-    {
-      shorthandNumber: 2019
-    }
-  ]
-])
 
 export const pduk = initializeDoneExpressionContainer({
   shorthandNumber: 0
@@ -1287,32 +1128,6 @@ export const pslb = initializeExpressionContainer({
   }
 })
 
-export const qbkn = initializeExpressionContainer([
-  {
-    shorthandNumber: 4
-  },
-  [
-    {
-      shorthandBinary: 'remainder'
-    },
-    'blankNumber'
-  ]
-])
-
-export const jnac = initializeExpressionContainer([
-  {
-    shorthandNumber: 4
-  },
-  [
-    {
-      shorthandBinary: 'remainder'
-    },
-    {
-      shorthandNumber: 2020
-    }
-  ]
-])
-
 export const sbvu = initializeDoneExpressionContainer({
   shorthandNumber: 0
 })
@@ -1334,55 +1149,6 @@ export const wkny = initializeDoneExpressionContainer({
   shorthandNumber: 28
 })
 
-export const wrps = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 2
-    },
-    [
-      {
-        shorthandBinary: 'remainder'
-      },
-      {
-        shorthandNumber: 5
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 3
-  },
-  falseCase: {
-    shorthandNumber: 4
-  }
-})
-
-export const ised = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 2,
-      initialHighlight: true
-    },
-    [
-      {
-        shorthandBinary: 'remainder',
-        initialHighlight: true
-      },
-      {
-        shorthandNumber: 5,
-        initialHighlight: true
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 3
-  },
-  falseCase: {
-    shorthandNumber: 4
-  }
-})
-
 export const urrw = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
@@ -1394,77 +1160,6 @@ export const urrw = initializeExpressionContainer({
   },
   falseCase: {
     shorthandNumber: 4
-  }
-})
-
-export const zhpt = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4
-    },
-    [
-      {
-        shorthandBinary: 'remainder'
-      },
-      'blankNumber'
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
-  }
-})
-
-export const vtzk = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4
-    },
-    [
-      {
-        shorthandBinary: 'remainder'
-      },
-      {
-        shorthandNumber: 2019,
-        initialHighlight: true
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
-  }
-})
-
-export const lmst = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4,
-      initialHighlight: true
-    },
-    [
-      {
-        shorthandBinary: 'remainder',
-        initialHighlight: true
-      },
-      {
-        shorthandNumber: 2019,
-        initialHighlight: true
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
   }
 })
 
@@ -1482,112 +1177,12 @@ export const gflf = initializeExpressionContainer({
   }
 })
 
-export const ybmb = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4
-    },
-    [
-      {
-        shorthandBinary: 'remainder'
-      },
-      {
-        shorthandNumber: 2020,
-        initialHighlight: true
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
-  }
-})
-
-export const rtpi = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4,
-      initialHighlight: true
-    },
-    [
-      {
-        shorthandBinary: 'remainder',
-        initialHighlight: true
-      },
-      {
-        shorthandNumber: 2020,
-        initialHighlight: true
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
-  }
-})
-
 export const ilun = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
     shorthandNumber: 0,
     initialHighlight: true
   },
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
-  }
-})
-
-export const qolg = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4
-    },
-    [
-      {
-        shorthandBinary: 'remainder'
-      },
-      {
-        shorthandNumber: 2021,
-        initialHighlight: true
-      }
-    ]
-  ],
-  trueCase: {
-    shorthandNumber: 29
-  },
-  falseCase: {
-    shorthandNumber: 28
-  }
-})
-
-export const gxqm = initializeExpressionContainer({
-  checkType: 'isZero',
-  condition: [
-    {
-      shorthandNumber: 4,
-      initialHighlight: true
-    },
-    [
-      {
-        shorthandBinary: 'remainder',
-        initialHighlight: true
-      },
-      {
-        name: 'blankNumber',
-        highlighted: true
-      }
-    ]
-  ],
   trueCase: {
     shorthandNumber: 29
   },

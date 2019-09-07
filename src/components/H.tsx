@@ -1,17 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
-import InlineEmojiBoxes, {
-  InlineEmojiBoxesForQuestion
-} from 'src/components/InlineEmojiBoxes'
 import InlineBorder from 'src/components/InlineBorder'
 import { useContext } from 'react'
 import {
   Em,
   InternalLink,
   P,
-  Ul,
-  UlLi,
   Strong,
   InlineHeader,
   ExternalLink,
@@ -28,30 +23,20 @@ import {
   episodeTitles
 } from 'src/lib/titles'
 import EpisodeContext from 'src/components/EpisodeContext'
-import { colors, fontSizes } from 'src/lib/theme'
+import { colors } from 'src/lib/theme'
 import {
   episodeCategory,
   numEpisodesExceptFirstAndLast
 } from 'src/lib/episodeCategories'
 import EmojiForLetter from 'src/components/EmojiForLetter'
-import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiNumber from 'src/components/EmojiNumber'
-import EmojiSeparator from 'src/components/EmojiSeparator'
-import BottomRightBadge from 'src/components/BottomRightBadge'
 import TwitterEmbed from 'src/components/TwitterEmbed'
 import { shareId } from 'src/lib/twitter'
-import { magicalVariableName } from 'src/lib/specialVariableNames'
 import { dateString, dateSchemaString } from 'src/lib/date'
 import { githubRepo } from 'src/lib/meta'
-import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { HProps } from 'src/types/HTypes'
 import CustomEmoji from 'src/components/CustomEmoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
-
-const slightlyLargeCaptionCss = css`
-  font-size: ${fontSizes(1.2)};
-  vertical-align: -0.08em;
-`
 
 const prefixColors = {
   intro: colors('grey600'),
@@ -152,22 +137,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </InternalLink>
           。
         </P>
-      )
-    }
-  }
-  if (args.name === 'episodeWelcomeText') {
-    if (locale === 'en') {
-      return (
-        <InlineHeader>
-          Welcome to <H args={{ name: 'titlePrefix' }} />!
-        </InlineHeader>
-      )
-    } else {
-      return (
-        <InlineHeader>
-          <H args={{ name: 'titlePrefix' }} />
-          へようこそ！
-        </InlineHeader>
       )
     }
   }
@@ -489,20 +458,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>目次</>
     }
   }
-  if (args.name === 'sideNotePrefix') {
-    if (locale === 'en') {
-      return <>Side Note</>
-    } else {
-      return <>余談</>
-    }
-  }
-  if (args.name === 'continueReading') {
-    if (locale === 'en') {
-      return <>Continue reading…</>
-    } else {
-      return <>続きを読む</>
-    }
-  }
   if (args.name === 'toc') {
     if (locale === 'en') {
       return <>Table of Contents</>
@@ -517,70 +472,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>閉じる</>
     }
   }
-  if (args.name === 'playButton') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Strong highlightType={highlightType}>
-            <H args={{ name: 'play' }} highlightType={highlightType} /> button
-          </Strong>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Strong highlightType={highlightType}>
-            <H args={{ name: 'play' }} highlightType={highlightType} />
-            ボタン
-          </Strong>
-        </>
-      )
-    }
-  }
-  if (args.name === 'afterPlay') {
-    if (locale === 'en') {
-      return <Strong highlightType={highlightType}>Result</Strong>
-    } else {
-      return <Strong highlightType={highlightType}>実行結果</Strong>
-    }
-  }
   if (args.name === 'yesNoQuizDontWorry') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return (
         <>
-          {args.tooHard ? (
-            <>
-              <Emoji size="mdlg">🤯</Emoji>{' '}
-              <Strong>頭の中で解くのは大変</Strong>なので、
-              <br />
-              適当に勘で答えてみてください。
-            </>
-          ) : (
-            <>
-              <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
-              <br />
-              適当に勘で答えてみてください。
-            </>
-          )}
-        </>
-      )
-    }
-  }
-  if (args.name === 'unknownRule') {
-    if (locale === 'en') {
-      return (
-        <>
-          <Strong highlightType={highlightType}>some rule</Strong>{' '}
-          <Emoji>🤫</Emoji>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Strong highlightType={highlightType}>ある法則</Strong>{' '}
-          <Emoji>🤫</Emoji>
+          <Emoji size="mdlg">😉</Emoji> 分からなくても大丈夫です！
+          <br />
+          適当に勘で答えてみてください。
         </>
       )
     }
@@ -657,11 +557,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em>
             <H args={{ name: 'fastForward' }} />
             を押してみて{!args.girl && <>ください</>}
-            {args.pleaseWait ||
-            args.skippingSteps ||
-            args.isFaster ||
-            args.mentionRightArrow ||
-            args.skippable
+            {args.mentionRightArrow || args.skippable
               ? '。'
               : args.skipColon
               ? ''
@@ -669,28 +565,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               ? '！'
               : ':'}
           </Em>
-          {args.pleaseWait && <H args={{ name: 'itWillTakeTime' }} />}
-          {args.skippingSteps && <H args={{ name: 'skippingSteps' }} />}
-          {args.isFaster && <H args={{ name: 'isFaster' }} />}
           {args.mentionRightArrow && <H args={{ name: 'mentionRightArrow' }} />}
           {args.skippable && (
             <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
           )}
-        </>
-      )
-    }
-  }
-  if (args.name === 'isFaster') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Em highlightType="pink">
-            時間短縮のため、いつもの
-            <InlineHeader>倍速以上</InlineHeader>
-            で進みますので、目に優しく半透明にしています。
-          </Em>
         </>
       )
     }
@@ -723,38 +601,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'whatHappensInTheMiddleQuestion') {
-    if (locale === 'en') {
-      return <>…</>
-    } else {
-      return (
-        <>
-          <H args={{ name: 'question' }} /> 上の弁当箱を
-          <H args={{ name: 'fastForward' }} />
-          すると、<Strong>途中で下のようになるでしょうか？</Strong>
-        </>
-      )
-    }
-  }
-  if (args.name === 'whatsTheNumberQuestion') {
-    if (locale === 'en') {
-      return <>…</>
-    } else {
-      return (
-        <>
-          <H args={{ name: 'question' }} /> 上の弁当箱を
-          <H args={{ name: 'play' }} />
-          すると、
-          <Em>
-            最終的に暗号が
-            <Strong css={slightlyLargeCaptionCss}>「{args.number}」</Strong>
-            の弁当箱が残る
-          </Em>
-          。<H args={{ name: 'yesOrNo' }} />
-        </>
-      )
-    }
-  }
   if (args.name === 'lookAtThisBentoBox') {
     if (locale === 'en') {
       return <>…</>
@@ -767,22 +613,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>…</>
     } else {
       return <>こちらの計算箱をご覧ください</>
-    }
-  }
-  if (args.name === 'pauseIfLost') {
-    if (locale === 'en') {
-      return <>…</>
-    } else {
-      return (
-        <>
-          途中でわからなくなったら、
-          <Strong highlightType={highlightType}>
-            <H args={{ name: 'pause' }} />
-            を押してみてください
-          </Strong>
-          。説明が上に表示されます。
-        </>
-      )
     }
   }
   if (args.name === 'copy') {
@@ -807,56 +637,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>まとめ</>
     }
   }
-  if (args.name === 'secretCodeCaptionSimple') {
-    if (locale === 'en') {
-      return <>...</>
-    } else {
-      return (
-        <>
-          暗号は <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong>{' '}
-          です
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeCaption') {
-    if (locale === 'en') {
-      return (
-        <>
-          Secret Code ={' '}
-          <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong> (右下に
-          <EmojiForLetter letter={args.letter} />が
-          <Strong>{args.number}</Strong>個)
-        </>
-      )
-    } else {
-      return (
-        <>
-          暗号 = <Strong css={slightlyLargeCaptionCss}>{args.number}</Strong>{' '}
-          (右下に
-          <EmojiForLetter letter={args.letter} />が
-          <Strong>{args.number}</Strong>個)
-        </>
-      )
-    }
-  }
-  if (args.name === 'notSecretCodeCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          暗号 =
-          <Strong css={slightlyLargeCaptionCss}>{args.number}ではない</Strong>{' '}
-          <Emoji>❌</Emoji>
-          <br />
-          (右下に
-          <EmojiForLetter letter={args.letter} />が
-          <Strong>{args.number}</Strong>個ないから)
-        </>
-      )
-    }
-  }
   if (args.name === 'theAnswerIs') {
     if (locale === 'en') {
       return <>?</>
@@ -877,119 +657,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       }
     }
   }
-  if (args.name === 'secretCodeAddOneCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
-          <EmojiNumber number={1} /> を計算
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeMinusOneCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➖</Emoji>{' '}
-          <EmojiNumber number={1} /> を計算
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeTwoMinusOneCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
-          <EmojiNumber number={1} /> を計算
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeAddOneCaptionWithoutQuestion') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <EmojiNumber number={1} /> を足す弁当箱
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeAddCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineEmojiBoxesForQuestion size="md" /> <Emoji>➕</Emoji>{' '}
-          <InlineEmojiBoxesForQuestion size="md" /> を計算
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCodeMultiplyCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          {args.arg1 ? (
-            <EmojiNumber number={args.arg1} />
-          ) : (
-            <InlineEmojiBoxesForQuestion size="md" />
-          )}{' '}
-          <Emoji>✖️</Emoji>{' '}
-          {args.arg2 ? (
-            <EmojiNumber number={args.arg2} />
-          ) : (
-            <InlineEmojiBoxesForQuestion size="md" />
-          )}{' '}
-          を計算
-        </>
-      )
-    }
-  }
-  if (args.name === 'ifCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineEmojiBoxesForQuestion size="md" /> が{' '}
-          <Strong css={slightlyLargeCaptionCss}>0</Strong> なら
-          {Array.isArray(args.ifZero) ? (
-            <InlineEmojiBoxes
-              emojis={args.ifZero.map(x => letterEmojiMapping[x])}
-            />
-          ) : (
-            <EmojiForLetter letter={args.ifZero} size="mdlg" />
-          )}
-          、
-          <Strong>
-            <span css={slightlyLargeCaptionCss}>1</span>以上
-          </Strong>
-          なら
-          {Array.isArray(args.ifNonZero) ? (
-            <InlineEmojiBoxes
-              emojis={args.ifNonZero.map(x => letterEmojiMapping[x])}
-            />
-          ) : (
-            <EmojiForLetter letter={args.ifNonZero} size="mdlg" />
-          )}
-          に
-        </>
-      )
-    }
-  }
   if (args.name === 'privacyPolicy') {
     if (locale === 'en') {
       return <>Privacy Policy</>
@@ -1004,77 +671,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>当サイトについて</>
     }
   }
-  if (args.name === 'yesOrNo') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Emoji>⭕️</Emoji>か<Emoji>❌</Emoji>か？
-        </>
-      )
-    }
-  }
-  if (args.name === 'byTheWay') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineHeader>ちなみに:</InlineHeader>
-        </>
-      )
-    }
-  }
-  if (args.name === 'epiloguePrefix') {
-    if (locale === 'en') {
-      return <>Epilogue</>
-    } else {
-      return <>エピローグ</>
-    }
-  }
   if (args.name === 'stoppedForExplanation') {
     if (locale === 'en') {
       return <>?</>
     } else {
       return <Strong>まだ途中ですが、解説のため一旦止めます！</Strong>
-    }
-  }
-  if (args.name === 'isCallArgAndFuncUnboundTheSameCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          {args.same ? (
-            <Strong>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              に同じ料理があります
-            </Strong>
-          ) : (
-            <Strong>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-              に同じ料理がありません
-            </Strong>
-          )}
-        </>
-      )
-    }
-  }
-  if (args.name === 'mustChangeBothFuncUnboundAndBound') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
-          だけでなく、
-          <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-          も変える
-        </>
-      )
     }
   }
   if (args.name === 'pageNotFound') {
@@ -1089,124 +690,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Take a look at the table of contents:</>
     } else {
       return <>目次はこちらです:</>
-    }
-  }
-  if (args.name === 'computerScience') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return <>コンピュータサイエンス</>
-    }
-  }
-  if (args.name === 'yCombinator') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return <>Yコンビネータ</>
-    }
-  }
-  if (args.name === 'infinitelyAddingQuestionCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          無限に
-          <InlineEmojiBoxesForQuestion />
-          が追加されていきます
-        </>
-      )
-    }
-  }
-  if (args.name === 'isZeroReview') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Ul>
-            <UlLi>
-              もし
-              <InlineEmojiBoxesForQuestion />に<Strong>暗号が「0」</Strong>
-              の弁当箱を入れて実行した場合、最後に
-              <Strong>
-                <EmojiWithText letter="y" />
-              </Strong>
-              が残ります 。
-            </UlLi>
-          </Ul>
-          <EmojiSeparator
-            nodes={[
-              <EmojiNumber number={0} />,
-              <Emoji>➡️</Emoji>,
-              <EmojiForLetter letter="y" />
-            ]}
-            description={
-              <>
-                「<Strong>0</Strong>」なら
-                <EmojiWithText letter="y" />に
-              </>
-            }
-          />
-          <Ul>
-            <UlLi>
-              もし
-              <InlineEmojiBoxesForQuestion />に<Strong>暗号が「1以上」</Strong>
-              の弁当箱を入れて実行した場合、最後に
-              <Strong>
-                <EmojiWithText letter="z" />
-              </Strong>
-              が残ります 。
-            </UlLi>
-          </Ul>
-          <EmojiSeparator
-            nodes={[
-              <Emoji>🔢</Emoji>,
-              <Emoji>➡️</Emoji>,
-              <EmojiForLetter letter="z" />
-            ]}
-            description={
-              <>
-                「<Strong>1以上</Strong>」なら
-                <EmojiWithText letter="z" />に
-              </>
-            }
-          />
-        </>
-      )
-    }
-  }
-  if (args.name === 'witch') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineHeader>魔女</InlineHeader> <Emoji>🧙‍♀️</Emoji>
-        </>
-      )
-    }
-  }
-  if (args.name === 'secretCode') {
-    if (locale === 'en') {
-      return <>Number</>
-    } else {
-      return <>暗号</>
-    }
-  }
-  if (args.name === 'whatCanComputeFactorial') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <InlineEmojiBoxesForQuestion />
-          に何を入れたら、
-          <br />
-          <H args={{ name: 'inlineFactorial', start: args.start }} />
-          が計算できる？
-        </>
-      )
     }
   }
   if (args.name === 'shareContent') {
@@ -1319,101 +802,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       }
     }
   }
-  if (args.name === 'witchAppearsAgainCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <H args={{ name: 'witch' }} />
-          がまた登場します
-        </>
-      )
-    }
-  }
-  if (args.name === 'witchReplacedCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <H args={{ name: 'witch' }} />
-          の代わりに、
-          <EmojiWithText letter="s" />
-          を入れます
-        </>
-      )
-    }
-  }
-  if (args.name === 'magicalChangedCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Em>
-            一番上の数字が
-            <EmojiNumber number={args.fromNumber} />
-            から
-            <EmojiNumber number={args.fromNumber - 1} />
-            になり、
-          </Em>
-          <br />
-          <Em highlightType="blue">
-            <H args={{ name: 'witch' }} />
-            の下に<Emoji>✖️</Emoji>
-            <EmojiNumber number={args.fromNumber} />
-            が追加されました。
-          </Em>
-        </>
-      )
-    }
-  }
-  if (args.name === 'ycChangedCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Em>
-            一番上の数字が
-            <EmojiNumber number={args.fromNumber} />
-            から
-            <EmojiNumber number={args.fromNumber - 1} />
-            になり、
-          </Em>
-          <br />
-          その下に同じ弁当箱がふたつ(省略)、
-          <br />
-          <Em highlightType="blue">
-            その下に<Emoji>✖️</Emoji>
-            <EmojiNumber number={args.fromNumber} />
-            が追加されました。
-          </Em>
-        </>
-      )
-    }
-  }
-  if (args.name === 'abbreviated') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return <>省略</>
-    }
-  }
-  if (args.name === 'itWillTakeTime') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Em highlightType="pink">
-            少し時間がかかりますが、お待ちいただけると嬉しいです！
-          </Em>
-        </>
-      )
-    }
-  }
   if (args.name === 'prevAndNextLinks') {
     if (locale === 'en') {
       return <>?</>
@@ -1470,159 +858,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               />
             </InlineHeader>
           </InternalLink>
-        </>
-      )
-    }
-  }
-  if (args.name === 'skippingSteps') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Em highlightType="pink">
-            時間短縮のため、早送り中は多くのステップを省略しています。
-          </Em>
-        </>
-      )
-    }
-  }
-  if (args.name === 'inlineFactorial') {
-    return (
-      <>
-        {args.start === 5 && (
-          <>
-            <EmojiNumber number={5} /> <Emoji>✖️</Emoji>{' '}
-          </>
-        )}
-        {args.start >= 4 && (
-          <>
-            <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-          </>
-        )}
-        <EmojiNumber number={3} /> <Emoji>✖️</Emoji> <EmojiNumber number={2} />{' '}
-        <Emoji>✖️</Emoji> <EmojiNumber number={1} />
-      </>
-    )
-  }
-  if (args.name === 'factorialDefinition') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          「
-          <Strong>
-            ある数からはじめて、1を引いた数を掛けていき、最後に「1」を掛けるまで、掛け算を繰り返す
-          </Strong>
-          」
-        </>
-      )
-    }
-  }
-  if (args.name === 'factorialComputation') {
-    if (args.start === 5) {
-      return (
-        <Strong>
-          5 ✕ 4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={120} />
-        </Strong>
-      )
-    } else if (args.start === 4) {
-      return (
-        <Strong>
-          4 ✕ 3 ✕ 2 ✕ 1 = <EmojiNumber number={24} />
-        </Strong>
-      )
-    } else {
-      return (
-        <Strong>
-          3 ✕ 2 ✕ 1 = <EmojiNumber number={6} />
-        </Strong>
-      )
-    }
-  }
-  if (args.name === 'changedToPowerCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          上の
-          <EmojiNumber number={2} />
-          は以前は
-          <EmojiWithText letter={magicalVariableName} />
-          、下の
-          <EmojiNumber number={2} />
-          は以前は
-          <EmojiNumber number={1} />
-          でした。
-        </>
-      )
-    }
-  }
-  if (args.name === 'powerComputation') {
-    if (args.power === 4) {
-      return (
-        <Strong>
-          2 ✕ 2 ✕ 2 ✕ 2 = <EmojiNumber number={16} />
-        </Strong>
-      )
-    } else {
-      return (
-        <Strong>
-          2 ✕ 2 ✕ 2 = <EmojiNumber number={8} />
-        </Strong>
-      )
-    }
-  }
-  if (args.name === 'thisIsYCombinatorCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          これ{args.too ? 'も' : 'が'}
-          <Strong css={slightlyLargeCaptionCss}>
-            「<H args={{ name: 'yCombinator' }} />」
-          </Strong>
-          です
-        </>
-      )
-    }
-  }
-  if (args.name === 'csDescriptionPreface') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Em>
-            <H args={{ name: 'computerScience' }} />
-            とは、非常に単純化して言うと「ソフトウェア開発や、コンピュータによる情報処理の根幹となる学問」です。
-          </Em>
-        </>
-      )
-    }
-  }
-  if (args.name === 'csDescription') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <P>
-            ちなみに、ここで言う
-            <Em>ソフトウェア</Em>
-            とは、アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステム・仮想通貨など、「
-            <Em>コンピュータプログラムによって機能するもの</Em>
-            」の総称です。
-          </P>
-          <P>
-            身近なものでいえば、
-            <Emoji>🔎</Emoji> グーグルなどの検索エンジン、
-            <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
-            カメラアプリの顔認識機能には、コンピュータサイエンスの研究結果が応用されています。
-          </P>
         </>
       )
     }
@@ -1690,17 +925,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>ひとつ</>
     }
   }
-  if (args.name === 'numberOfAIsSecretCodeCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          右下の<Emoji>🅰️</Emoji>の数が暗号
-        </>
-      )
-    }
-  }
   if (args.name === 'mentionRightArrow') {
     if (locale === 'en') {
       return <>?</>
@@ -1710,79 +934,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Em highlightType="pink">
             一回ずつ進める場合は、<Emoji>➡️</Emoji>を押してください。
           </Em>
-        </>
-      )
-    }
-  }
-  if (args.name === 'addMathBoxCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Emoji>➕</Emoji> 足し算の計算箱 <CustomEmoji type="mathBox" />
-        </>
-      )
-    }
-  }
-  if (args.name === 'remainder') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return <>割ったときの余り</>
-    }
-  }
-  if (args.name === 'conditionalMathBoxCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <Emoji>↕️</Emoji> 条件分岐の計算箱 <CustomEmoji type="mathBox" />
-        </>
-      )
-    }
-  }
-  if (args.name === 'whatHappensAtTheEndMathBoxQuestion') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <H args={{ name: 'question' }} /> 上の計算箱を
-          <H args={{ name: 'play' }} />
-          すると、<Strong>最終的に下のようになるでしょうか？</Strong>{' '}
-          <Emoji>🤔</Emoji>
-        </>
-      )
-    }
-  }
-  if (args.name === 'isLeapYearCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          うるう年なら結果は <EmojiNumber number={0} /> になる
-        </>
-      )
-    }
-  }
-  if (args.name === 'leapYearConditionalCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return <>うるう年の場合はこうなる</>
-    }
-  }
-  if (args.name === 'yellowHighlighted') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          (<Em>黄色</Em>
-          で示しています)
         </>
       )
     }
@@ -1810,18 +961,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           </>
         )
       }
-    }
-  }
-  if (args.name === 'repeatingMathBoxCaption') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <CustomEmoji type="blankNumber" /> 繰り返しの計算箱{' '}
-          <CustomEmoji type="mathBox" />
-        </>
-      )
     }
   }
   if (args.name === 'lookAtThisBentoBoxPuzzle') {
@@ -1902,17 +1041,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       return <>に変換できる弁当箱</>
-    }
-  }
-  if (args.name === 'sameAddRole') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          同じ「<Strong>1を足す</Strong>」効果
-        </>
-      )
     }
   }
   if (args.name === 'plusOneEffect') {

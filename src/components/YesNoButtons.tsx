@@ -10,7 +10,6 @@ import CardActionContext from 'src/components/CardActionContext'
 
 interface YesNoButtonsProps {
   answer: 'yes' | 'no'
-  tooHard: boolean
 }
 
 interface ButtonProps {
@@ -73,7 +72,7 @@ const Button = ({
   )
 }
 
-const YesNoButtons = ({ answer, tooHard }: YesNoButtonsProps) => {
+const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
   const {
     cardActionTaken,
     cardActionResult,
@@ -147,7 +146,7 @@ const YesNoButtons = ({ answer, tooHard }: YesNoButtonsProps) => {
                 color: ${colors('grey700')};
               `}
             >
-              <H args={{ name: 'yesNoQuizDontWorry', tooHard }} />
+              <H args={{ name: 'yesNoQuizDontWorry' }} />
             </span>
           ) : (
             <Em>
@@ -175,10 +174,6 @@ const YesNoButtons = ({ answer, tooHard }: YesNoButtonsProps) => {
       </>
     </>
   )
-}
-
-YesNoButtons.defaultProps = {
-  tooHard: false
 }
 
 export default YesNoButtons
