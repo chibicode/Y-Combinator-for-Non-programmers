@@ -39,7 +39,6 @@ export interface ExpressionRunnerPrecomputedProps {
   highlightOverrideActiveAfterStart: ExpressionRunnerConfig['highlightOverrideActiveAfterStart']
   highlightFunctions: ExpressionRunnerConfig['highlightFunctions']
   superFastForward: ExpressionRunnerConfig['superFastForward']
-  highlightNumber: ExpressionRunnerConfig['highlightNumber']
   showAllShowSteps: ExpressionRunnerConfig['showAllShowSteps']
   convert: ExpressionRunnerConfig['convert']
   crossed: ExpressionRunnerConfig['crossed']
@@ -72,7 +71,6 @@ const ExpressionRunnerPrecomputed = ({
   highlightOverrideActiveAfterStart,
   highlightFunctions,
   superFastForward,
-  highlightNumber,
   showAllShowSteps,
   children,
   convert,
@@ -204,7 +202,6 @@ const ExpressionRunnerPrecomputed = ({
         started: atLeastOneStepTaken,
         isDoneOrReady: isDone || isReady,
         highlightFunctions,
-        highlightNumber,
         highlightAllChildren:
           expressionRunnerContextDefault.highlightAllChildren
       }}

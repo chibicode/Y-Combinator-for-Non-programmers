@@ -45,7 +45,6 @@ export interface ExpressionRunnerConfig {
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
   superFastForward: boolean
-  highlightNumber?: number
   convert?: ExpressionRunnerProps['convert']
   crossed?: boolean
 }
@@ -184,8 +183,7 @@ const buildExpressionRunnerConfigFromShorthand = (
       containerSize,
       highlightOverrides,
       explanationsVisibility,
-      superFastForward,
-      highlightNumber
+      superFastForward
     } = mergeWithDefault<
       typeof config,
       typeof expressionRunnerPlayButtonOnlyConfigDefault
@@ -193,7 +191,6 @@ const buildExpressionRunnerConfigFromShorthand = (
 
     runnerProps = {
       speed,
-      highlightNumber,
       initialExpressionContainer,
       hidePriorities: !showPriorities,
       highlightOverrides,

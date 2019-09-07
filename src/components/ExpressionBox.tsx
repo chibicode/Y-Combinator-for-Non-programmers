@@ -30,8 +30,7 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
     highlightAllChildren,
     started,
     highlightOverrideActiveAfterStart,
-    highlightOverridesCallArgAndFuncUnboundOnly,
-    highlightNumber
+    highlightOverridesCallArgAndFuncUnboundOnly
   } = expressionRunnerContext
   let highlightOverridden: BorderWrapperProps['highlightOverridden'] = !!(
     isVariable(expression) &&
@@ -54,16 +53,6 @@ const ExpressionBox = ({ expression, topLevel }: ExpressionBoxProps) => {
   ) {
     highlightOverridden = false
     highlightType = expression.highlightType
-  }
-
-  if (
-    isVariable(expression) &&
-    highlightNumber &&
-    expression.shorthandNumber &&
-    expression.shorthandNumber === highlightNumber
-  ) {
-    highlightOverridden = true
-    highlightType = 'highlighted'
   }
 
   return (

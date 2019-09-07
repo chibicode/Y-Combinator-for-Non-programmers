@@ -76,7 +76,6 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   highlightOverrides?: ExpressionRunnerProps['highlightOverrides']
   explanationsVisibility?: ExpressionRunnerProps['explanationsVisibility']
   superFastForward?: ExpressionRunnerProps['superFastForward']
-  highlightNumber?: number
 }
 
 export const expressionRunnerSingleStepConfigDefault = {

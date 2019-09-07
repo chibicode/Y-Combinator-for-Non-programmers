@@ -20,7 +20,6 @@ export interface ExpressionRunnerContextProps {
   highlightOverridesCallArgAndFuncUnboundOnly: boolean
   highlightFunctions: boolean
   highlightAllChildren: boolean
-  highlightNumber?: number
 }
 
 export type InitializeInstruction =
@@ -60,7 +59,6 @@ export interface ExpressionRunnerProps {
   highlightOverrideActiveAfterStart: boolean
   highlightFunctions: boolean
   superFastForward: boolean
-  highlightNumber?: number
   convert?: 'toMathBox' | 'toMathBoxPlay'
 }
 
