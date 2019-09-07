@@ -83,27 +83,15 @@ const expressionRunnerDefaults = {
 }
 
 const buildInitializeInstructions = ({
-  nextIteration,
   nextIterations,
   isDone,
   initialState
 }: {
-  nextIteration?: boolean
   nextIterations?: number
   isDone?: boolean
   initialState: ExpressionContainer['previouslyChangedExpressionState']
 }): readonly InitializeInstruction[] =>
-  nextIteration
-    ? [
-        {
-          type: 'nextIteration'
-        },
-        {
-          type: 'stepForwardUntilPreviouslyChangedExpressionState',
-          state: initialState
-        }
-      ]
-    : nextIterations
+  nextIterations
     ? [
         ...Array(nextIterations).fill({ type: 'nextIteration' }),
         {
@@ -147,7 +135,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       skipAlphaConvert,
       alphaConvertCallArg,
       skipActive,
-      nextIteration,
       nextIterations,
       showPriorities,
       showAllShowSteps,
@@ -186,7 +173,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       highlightFunctions,
       highlightOverrideActiveAfterStart,
       initializeInstructions: buildInitializeInstructions({
-        nextIteration,
         nextIterations,
         isDone,
         initialState
@@ -204,7 +190,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showPriorities,
       lastAllowedExpressionState,
       lastAllowedExpressionStateAfterIterations,
-      nextIteration,
       nextIterations,
       showAllShowSteps,
       speed,
@@ -241,7 +226,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       lastAllowedExpressionState,
       lastAllowedExpressionStateAfterIterations,
       initializeInstructions: buildInitializeInstructions({
-        nextIteration,
         nextIterations,
         initialState
       }),
@@ -258,7 +242,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       showAllShowSteps,
       variableSize,
       containerSize,
-      nextIteration,
       nextIterations,
       alphaConvertCallArg,
       skipActive
@@ -281,7 +264,6 @@ const buildExpressionRunnerConfigFromShorthand = (
       alphaConvertCallArg,
       skipActive,
       initializeInstructions: buildInitializeInstructions({
-        nextIteration,
         nextIterations,
         initialState
       })

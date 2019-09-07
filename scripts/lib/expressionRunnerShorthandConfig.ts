@@ -19,7 +19,6 @@ interface ExpressionRunnerSimpleConfig {
   skipAlphaConvert?: boolean
   alphaConvertCallArg?: boolean
   skipActive?: boolean
-  nextIteration?: boolean
   nextIterations?: number
   showPriorities?: boolean
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
@@ -69,7 +68,6 @@ interface ExpressionRunnerPlayButtonOnlyConfig {
   showPriorities?: boolean
   lastAllowedExpressionState?: ExpressionContainer['previouslyChangedExpressionState']
   lastAllowedExpressionStateAfterIterations?: number
-  nextIteration?: boolean
   nextIterations?: number
   showAllShowSteps?: ExpressionRunnerProps['showAllShowSteps']
   speed?: number
@@ -106,7 +104,6 @@ interface ExpressionRunnerSingleStepConfig {
   showPriorities?: boolean
   alphaConvertCallArg?: boolean
   skipActive?: boolean
-  nextIteration?: boolean
   nextIterations?: number
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']
@@ -133,7 +130,6 @@ interface ExpressionRunnerPredefinedConfig {
   initialExpressionContainers: SteppedExpressionContainer[]
   hideFuncUnboundBadgeOnExplanation?: boolean
   showPriorities?: boolean
-  nextIteration?: boolean
   nextIterations?: number
   variableSize?: ExpressionRunnerProps['variableSize']
   containerSize?: ExpressionRunnerProps['containerSize']

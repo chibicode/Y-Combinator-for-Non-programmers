@@ -401,7 +401,7 @@ export const knhw: ExpressionRunnerShorthandConfig = {
 export const kvso: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.pisd,
-  nextIteration: true,
+  nextIterations: 1,
   showPriorities: true,
   skipToTheEnd: false
 }
