@@ -34,7 +34,10 @@ export default () => (
               </Strong>
               が現れました。
             </P>
-            <EmojiSeparator emojis={['🌲', '😈', '🌲']} />
+            <EmojiSeparator
+              emojis={['🌲', '😈', '🌲']}
+              description={<>悪魔がやってきた！</>}
+            />
             <P>村人たちは、悪魔を見て震え上がりました。</P>
             <BubbleQuotes
               quotes={[
@@ -58,13 +61,18 @@ export default () => (
                 {
                   type: 'devil',
                   children: (
-                    <P>
-                      安心しろ、お前たちの命だけは助けてやる…だが、お前たちが大事にしている
-                      <Strong>
-                        計算箱 <CustomEmoji type="mathBox" />
-                      </Strong>
-                      <Em> は、すべて没収させてもらうぞ！</Em>
-                    </P>
+                    <>
+                      <P>安心しろ、お前たちの命だけは助けてやる。</P>
+                      <P>
+                        <Em>
+                          だが、お前たちが大事にしている
+                          <Strong>
+                            計算箱 <CustomEmoji type="mathBox" />
+                          </Strong>
+                          は、すべて<Strong>没収</Strong>させてもらうぞ！
+                        </Em>
+                      </P>
+                    </>
                   )
                 },
                 {
@@ -91,8 +99,9 @@ export default () => (
                 <CustomEmoji type="mathBox" />,
                 <Emoji>🌲</Emoji>
               ]}
+              description={<>計算箱は没収だ！</>}
             />
-            <P>ラムダ村からは、計算箱がすべて無くなってしまいました。</P>
+            <P>ラムダ村からは、すべての計算箱が無くなってしまいました。</P>
             <R.Dgyc>
               <Emoji>😈</Emoji> 計算箱は没収だ！
             </R.Dgyc>
@@ -110,10 +119,14 @@ export default () => (
                 {
                   type: 'sad',
                   children: (
-                    <P>
-                      <Em>俺らは計算が大の苦手なんだ。</Em>
-                      計算箱がないと、足し算や引き算ができなくなって、村の経済活動が成り立たなくなるんだぞ！
-                    </P>
+                    <>
+                      <P>
+                        <Em>俺らは計算が大の苦手なんだ。</Em>
+                      </P>
+                      <P>
+                        計算箱がないと、足し算や引き算ができなくなって、村の経済が成り立たなくなるんだぞ！
+                      </P>
+                    </>
                   )
                 }
               ]}
@@ -133,9 +146,24 @@ export default () => (
                       <P>
                         お前たちは簡単な計算をするのにでも計算箱に頼り切っているだろう。そんなことだから、いつまでたっても計算が上達しないんだ。
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'roll',
+                  children: (
+                    <>
+                      <P>それは図星かも…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         <Em>
-                          計算箱を取り上げることで、お前たちが計算を勉強するきっかけをわたしは作ってやったのさ。
+                          だから計算箱を取り上げることで、お前たちが計算を勉強するきっかけを作ってやったのさ。
                         </Em>
                         感謝するんだな！
                       </P>
@@ -216,7 +244,7 @@ export default () => (
                         難しそう…しかし、やるしかない！計算箱を取り返すんだ！
                       </P>
                       <P>
-                        <Em>悪魔よ、その挑戦、受けて立つぞ！</Em>
+                        <Em>その挑戦、受けて立つぞ！</Em>
                       </P>
                     </>
                   )
@@ -234,7 +262,10 @@ export default () => (
             <P>
               こうして、村人たちは計算箱を返してもらうべく、悪魔が出題するパズルに挑戦することになりました。
             </P>
-            <EmojiSeparator emojis={['😠', '🆚', '😈']} />
+            <EmojiSeparator
+              emojis={['😠', '🆚', '😈']}
+              description={<>パズルを解いて、計算箱を取り返す！</>}
+            />
           </>
         )
       },
@@ -257,7 +288,28 @@ export default () => (
                         <Strong>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                         </Strong>
-                        というものだ。そして、これがその
+                        というものだ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Strong>弁当箱</Strong>
+                        だって？なんか美味しそうな名前だなあ…
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そして、これがその
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         だ。
                       </P>
@@ -318,8 +370,7 @@ export default () => (
                         とりあえず今は、
                         <Em>
                           <H args={{ name: 'bentoBoxPuzzle' }} />の
-                          <H args={{ name: 'play' }} />
-                          について見ていこう。
+                          <H args={{ name: 'play' }} /> について見ていこう。
                         </Em>
                       </P>
                     </>
