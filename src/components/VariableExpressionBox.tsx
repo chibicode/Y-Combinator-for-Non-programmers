@@ -9,7 +9,6 @@ import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ConditionalContext from 'src/components/ConditionalContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
-import TopRightBadge from 'src/components/TopRightBadge'
 import { fontSizes, spaces, zIndices } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
@@ -217,18 +216,6 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
               ? shorthandBinary(expression.shorthandBinary)
               : letterEmojiMapping[expression.name]}
           </Emoji>
-        )}
-        {expression.shorthandUnary && (
-          <span
-            css={css`
-              position: absolute;
-              right: -0.23em;
-              top: -0.05em;
-              z-index: ${zIndices('badge')};
-            `}
-          >
-            <TopRightBadge topRightBadgeType={expression.shorthandUnary} />
-          </span>
         )}
         {bottomRightBadgeOverrides[expression.name] && (
           <span

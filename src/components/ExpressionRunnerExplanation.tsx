@@ -4,7 +4,6 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import TopLeftBadge from 'src/components/TopLeftBadge'
-import TopRightBadge from 'src/components/TopRightBadge'
 import locale from 'src/lib/locale'
 import {
   SteppedExpressionContainer,
@@ -55,28 +54,14 @@ const Explanation = ({
   matchExists,
   activePriority,
   showAllShowSteps,
-  hideFuncUnboundBadge,
-  unaryJustExecuted
+  hideFuncUnboundBadge
 }: {
   state: ExpressionContainer['previouslyChangedExpressionState']
   matchExists?: boolean
   activePriority?: number
   showAllShowSteps?: boolean
   hideFuncUnboundBadge?: boolean
-  unaryJustExecuted?: boolean
 }) => {
-  if (unaryJustExecuted) {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <TopRightBadge inline topRightBadgeType="pred" /> が実行されました！
-        </>
-      )
-    }
-  }
-
   switch (state) {
     case 'default': {
       if (locale === 'en') {
@@ -325,17 +310,6 @@ const Explanation = ({
         )
       }
     }
-    case 'showExecutableUnary': {
-      if (locale === 'en') {
-        return <>?</>
-      } else {
-        return (
-          <>
-            <TopRightBadge inline topRightBadgeType="pred" /> を実行します
-          </>
-        )
-      }
-    }
     default: {
       return <></>
     }
@@ -370,7 +344,6 @@ const ExpressionRunnerExplanation = ({
               matchExists={expressionContainer.matchExists}
               activePriority={expressionContainer.activePriority}
               showAllShowSteps={showAllShowSteps}
-              unaryJustExecuted={expressionContainer.unaryJustExecuted}
               hideFuncUnboundBadge={hideFuncUnboundBadge}
             />
           )

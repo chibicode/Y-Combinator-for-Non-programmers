@@ -1,7 +1,6 @@
 import { VariableNames } from 'src/types/VariableNames'
 import {
   VariableShorthandBinary,
-  VariableShorthandUnary,
   VariableShorthandNumber,
   VariableShorthandFunc,
   ConditionalExpression,
@@ -39,14 +38,7 @@ export interface VariableShorthandFuncParams {
 export interface VariableShorthandNumberParams {
   readonly shorthandNumber: VariableShorthandNumber['shorthandNumber']
   readonly initialHighlight?: boolean
-  readonly shorthandUnary?: VariableShorthandUnary['shorthandUnary']
   readonly shorthandNumberAfterConvert?: VariableShorthandNumber['shorthandNumberAfterConvert']
-}
-
-export interface VariableShorthandUnaryParams {
-  readonly name: VariableNames
-  readonly initialHighlight?: boolean
-  readonly shorthandUnary: VariableShorthandUnary['shorthandUnary']
 }
 
 export type VariableExpressionParams = VariableNames
@@ -79,7 +71,6 @@ export type ExpressionParams =
   | HighlightedVariableExpressionParams
   | VariableShorthandBinaryParams
   | VariableShorthandNumberParams
-  | VariableShorthandUnaryParams
   | ConditionalExpressionParams
   | RepeatExpressionParams
   | VariableShorthandFuncParams

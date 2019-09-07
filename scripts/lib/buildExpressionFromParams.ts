@@ -4,7 +4,6 @@ import {
   isHighlightedVariableExpressionParams,
   isFunctionExpressionParams,
   isVariableShorthandBinaryParams,
-  isVariableShorthandUnaryParams,
   isVariableShorthandNumberParams,
   isConditionalParams,
   isVariableShorthandFuncParams,
@@ -165,15 +164,6 @@ export default function buildExpressionFromParams(
       ),
       shorthandBinary: expressionParams.shorthandBinary
     }
-  } else if (isVariableShorthandUnaryParams(expressionParams)) {
-    return {
-      ...buildVariableExpression(
-        expressionParams.name,
-        true,
-        expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
-      ),
-      shorthandUnary: expressionParams.shorthandUnary
-    }
   } else if (isVariableShorthandNumberParams(expressionParams)) {
     return {
       ...buildVariableExpression(
@@ -182,7 +172,6 @@ export default function buildExpressionFromParams(
         expressionParams.initialHighlight ? 'initialHighlighted' : 'default'
       ),
       shorthandNumber: expressionParams.shorthandNumber,
-      shorthandUnary: expressionParams.shorthandUnary,
       shorthandNumberAfterConvert: expressionParams.shorthandNumberAfterConvert
     }
   } else if (isConditionalParams(expressionParams)) {

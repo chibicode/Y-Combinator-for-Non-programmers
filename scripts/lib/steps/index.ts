@@ -40,12 +40,6 @@ export {
 export { default as stepToCaseOnly } from 'scripts/lib/steps/stepToCaseOnly'
 export { default as stepToDefault } from 'scripts/lib/steps/stepToDefault'
 export {
-  default as stepToShowExecutableUnary
-} from 'scripts/lib/steps/stepToShowExecutableUnary'
-export {
-  default as stepToUnaryProcessed
-} from 'scripts/lib/steps/stepToUnaryProcessed'
-export {
   default as stepToBinaryComputed
 } from 'scripts/lib/steps/stepToBinaryComputed'
 export {

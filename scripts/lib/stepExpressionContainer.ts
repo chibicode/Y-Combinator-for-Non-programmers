@@ -6,11 +6,9 @@ import prioritizeExpressionContainer from 'scripts/lib/prioritizeExpressionConta
 import resetExpressionContainer from 'scripts/lib/resetExpressionContainer'
 import replaceCallParentKey from 'scripts/lib/replaceCallParentKey'
 import replaceConditionalParentKey from 'scripts/lib/replaceConditionalParentKey'
-import checkExecutableUnaryExists from 'scripts/lib/checkExecutableUnaryExists'
 import {
   isCall,
   isExecutableCallRegular,
-  isVariableShorthandUnaryNumber,
   isExecutableCallBinary
 } from 'src/lib/expressionTypeGuards'
 import replaceFuncParentKey from 'scripts/lib/replaceFuncParentKey'
@@ -30,8 +28,6 @@ import {
   stepToCaseProcessed,
   stepToCaseOnly,
   stepToShorthandComputed,
-  stepToShowExecutableUnary,
-  stepToUnaryProcessed,
   stepToBinaryComputed,
   stepToAlphaConvertCallArg
 } from 'scripts/lib/steps'
@@ -64,10 +60,7 @@ const stepExpressionContainerReset = (
   const nextCallExpressionAndParent = findNextCallExpressionAndParent(
     newContainer.expression
   )
-  if (
-    nextCallExpressionAndParent.expression ||
-    isVariableShorthandUnaryNumber(e.expression)
-  ) {
+  if (nextCallExpressionAndParent.expression) {
     return newContainer
   } else {
     return {
@@ -183,10 +176,7 @@ const stepRegular = (
   { showAllShowSteps, skipAlphaConvert, skipActive }: StepOptions,
   matchExists?: boolean
 ): {
-  nextExpression:
-    | ExecutableCall
-    | StepChild<'default'>
-    | StepChild<'showExecutableUnary'>
+  nextExpression: ExecutableCall | StepChild<'default'>
   matchExists?: boolean
   previouslyChangedExpressionState: ExpressionContainer['previouslyChangedExpressionState']
 } => {
@@ -326,31 +316,6 @@ const runStep = (
   | ContainerWithState<'stepped'>
   | ContainerWithState<'ready'>
   | ContainerWithState<'done'> => {
-  if (
-    (e.previouslyChangedExpressionState === 'default' ||
-      e.previouslyChangedExpressionState === 'showExecutableUnary') &&
-    checkExecutableUnaryExists(e.expression)
-  ) {
-    if (
-      e.previouslyChangedExpressionState === 'default' &&
-      !isVariableShorthandUnaryNumber(e.expression)
-    ) {
-      return {
-        ...e,
-        expression: stepToShowExecutableUnary(e.expression),
-        previouslyChangedExpressionState: 'showExecutableUnary'
-      }
-    } else {
-      return {
-        ...e,
-        expression: stepToUnaryProcessed(e.expression),
-        previouslyChangedExpressionState: 'default',
-        containerState: 'needsReset',
-        unaryJustExecuted: true
-      }
-    }
-  }
-
   const {
     expression,
     callParent,
@@ -362,7 +327,6 @@ const runStep = (
     // Special case - already done to begin with
     return {
       ...e,
-      unaryJustExecuted: undefined,
       containerState: 'needsReset'
     }
   }
@@ -393,12 +357,10 @@ const runStep = (
     return previouslyChangedExpressionState === 'default'
       ? {
           ...newContainer,
-          unaryJustExecuted: undefined,
           containerState: 'needsReset'
         }
       : {
           ...newContainer,
-          unaryJustExecuted: undefined,
           containerState: 'stepped'
         }
   }
@@ -435,8 +397,7 @@ const runStep = (
       containerState: 'needsReset',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState,
-      unaryJustExecuted: undefined
+      previouslyChangedExpressionState
     }
   } else {
     return {
@@ -448,8 +409,7 @@ const runStep = (
       containerState: 'stepped',
       matchExists,
       activePriority,
-      previouslyChangedExpressionState,
-      unaryJustExecuted: undefined
+      previouslyChangedExpressionState
     }
   }
 }

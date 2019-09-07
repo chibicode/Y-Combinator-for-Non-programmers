@@ -22,49 +22,38 @@ import {
 import { VariableNames } from 'src/types/VariableNames'
 
 function matchBetaReduced(
-  e: VariableExpression,
-  shorthandUnary: VariableExpression['shorthandUnary']
+  e: VariableExpression
 ): StepVariable<'betaReducePreviewAfter'>
 function matchBetaReduced(
-  e: FunctionExpression,
-  shorthandUnary: VariableExpression['shorthandUnary']
+  e: FunctionExpression
 ): StepFunction<'betaReducePreviewAfter'>
 function matchBetaReduced(
-  e: ConditionalExpression,
-  shorthandUnary: VariableExpression['shorthandUnary']
+  e: ConditionalExpression
 ): StepConditional<'betaReducePreviewAfter'>
 function matchBetaReduced(
-  e: CallExpression,
-  shorthandUnary: VariableExpression['shorthandUnary']
+  e: CallExpression
 ): NonExecutableStepCall<'betaReducePreviewAfter'>
-function matchBetaReduced(
-  e: Expression,
-  shorthandUnary: VariableExpression['shorthandUnary']
-): StepChild<'betaReducePreviewAfter'>
-function matchBetaReduced(
-  e: Expression,
-  shorthandUnary: VariableExpression['shorthandUnary']
-): StepChild<'betaReducePreviewAfter'> {
+function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'>
+function matchBetaReduced(e: Expression): StepChild<'betaReducePreviewAfter'> {
   if (isVariable(e)) {
     return {
       ...e,
-      shorthandUnary: e.shorthandUnary || shorthandUnary,
       highlightType: 'highlighted',
       topLeftBadgeType: 'betaReduced',
       bottomRightBadgeType: 'funcBound',
       emphasizePriority: false
     }
   } else if (isFunction(e)) {
-    const arg = matchBetaReduced(e.arg, shorthandUnary)
-    const body = matchBetaReduced(e.body, shorthandUnary)
+    const arg = matchBetaReduced(e.arg)
+    const body = matchBetaReduced(e.body)
     return {
       ...e,
       arg,
       body
     }
   } else if (isCall(e)) {
-    const arg = matchBetaReduced(e.arg, shorthandUnary)
-    const func = matchBetaReduced(e.func, shorthandUnary)
+    const arg = matchBetaReduced(e.arg)
+    const func = matchBetaReduced(e.func)
     return {
       ...e,
       state: 'default',
@@ -72,9 +61,9 @@ function matchBetaReduced(
       func
     }
   } else if (isConditional(e)) {
-    const condition = matchBetaReduced(e.condition, shorthandUnary)
-    const trueCase = matchBetaReduced(e.trueCase, shorthandUnary)
-    const falseCase = matchBetaReduced(e.falseCase, shorthandUnary)
+    const condition = matchBetaReduced(e.condition)
+    const trueCase = matchBetaReduced(e.trueCase)
+    const falseCase = matchBetaReduced(e.falseCase)
     return {
       ...e,
       state: 'default',
@@ -134,7 +123,7 @@ export function toBetaReducePreviewAfter(
   if (isVariable(e)) {
     if (funcSide && e.bound) {
       if (e.name === fromName) {
-        return matchBetaReduced(to, e.shorthandUnary)
+        return matchBetaReduced(to)
       } else {
         return {
           ...e,

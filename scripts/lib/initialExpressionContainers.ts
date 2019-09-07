@@ -515,10 +515,6 @@ export const mwvx = initializeExpressionContainer([
     initialHighlight: true
   }
 ])
-export const vvbc = initializeExpressionContainer({
-  shorthandNumber: 2,
-  shorthandUnary: 'pred'
-})
 
 export const jbvr = initializeExpressionContainer([
   {
@@ -543,33 +539,6 @@ export const sqvn = initializeExpressionContainer([
   {
     arg: 'i',
     body: [predParams('a', 'b', 'c', 'd', 'e', 'f'), highlighted('i')]
-  },
-  {
-    shorthandNumber: 1
-  }
-])
-
-export const zsyl = initializeExpressionContainer([
-  {
-    arg: 'i',
-    body: {
-      shorthandUnary: 'pred',
-      name: 'i',
-      initialHighlight: true
-    }
-  },
-  {
-    shorthandNumber: 1
-  }
-])
-
-export const mgiu = initializeExpressionContainer([
-  {
-    arg: 'i',
-    body: {
-      shorthandUnary: 'pred',
-      name: 'i'
-    }
   },
   {
     shorthandNumber: 1

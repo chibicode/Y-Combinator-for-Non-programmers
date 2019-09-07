@@ -2,7 +2,6 @@ import {
   CallExpressionParams,
   ExpressionParams,
   FunctionExpressionParams,
-  VariableShorthandUnaryParams,
   VariableExpressionParams,
   VariableShorthandBinaryParams,
   VariableShorthandNumberParams,
@@ -26,15 +25,6 @@ export function isVariableShorthandBinaryParams(
   expressionParams: ExpressionParams
 ): expressionParams is VariableShorthandBinaryParams {
   return !!(expressionParams as VariableShorthandBinaryParams).shorthandBinary
-}
-
-export function isVariableShorthandUnaryParams(
-  expressionParams: ExpressionParams
-): expressionParams is VariableShorthandUnaryParams {
-  return (
-    !!(expressionParams as VariableShorthandUnaryParams).name &&
-    !!(expressionParams as VariableShorthandUnaryParams).shorthandUnary
-  )
 }
 
 export function isVariableShorthandNumberParams(

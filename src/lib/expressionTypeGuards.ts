@@ -5,13 +5,11 @@ import {
   VariableExpression,
   ConditionalExpression,
   VariableShorthandBinary,
-  VariableShorthandUnary,
   VariableShorthandNumber,
   ExecutableCallRegular,
   ExecutableCall,
   ExecutableConditional,
   ExecutableCallBinary,
-  VariableShorthandUnaryNumber,
   RepeatExpression,
   ExecutableCallShorthand,
   VariableShorthandFunc
@@ -41,12 +39,6 @@ export function isConditional<
   return expression.type === 'conditional'
 }
 
-export function isVariableShorthandUnary<
-  V extends VariableShorthandUnary = VariableShorthandUnary
->(expression: Expression): expression is V {
-  return isVariable(expression) && expression.shorthandUnary !== undefined
-}
-
 export function isVariableShorthandNumber<
   V extends VariableShorthandNumber = VariableShorthandNumber
 >(expression: Expression): expression is V {
@@ -63,15 +55,6 @@ export function isVariableShorthandFunc<
   V extends VariableShorthandFunc = VariableShorthandFunc
 >(expression: Expression): expression is V {
   return isVariable(expression) && expression.shorthandFunc !== undefined
-}
-
-export function isVariableShorthandUnaryNumber<
-  V extends VariableShorthandUnaryNumber = VariableShorthandUnaryNumber
->(expression: Expression): expression is V {
-  return (
-    isVariableShorthandNumber(expression) &&
-    isVariableShorthandUnary(expression)
-  )
 }
 
 export function isExecutableCallRegular<E extends ExecutableCallRegular>(
