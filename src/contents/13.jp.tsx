@@ -1247,7 +1247,18 @@ export default () => (
             />
             <NextLessonButton />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader>{' '}
+                <Em>もし上に書いてあることが理解できなくてもご心配なく！</Em>
+                次のページで詳細に解説します。
+              </P>
+            </>
+          )
+        }
       }
     ]}
   />
