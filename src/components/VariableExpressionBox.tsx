@@ -9,7 +9,7 @@ import ExpressionPrioritiesLabel from 'src/components/ExpressionPrioritiesLabel'
 import ExpressionRunnerContext from 'src/components/ExpressionRunnerContext'
 import ConditionalContext from 'src/components/ConditionalContext'
 import TopLeftBadge from 'src/components/TopLeftBadge'
-import { fontSizes, spaces, zIndices } from 'src/lib/theme'
+import { fontSizes, spaces, zIndices, colors } from 'src/lib/theme'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
 import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
@@ -141,6 +141,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             font-size: 0.45em;
             font-weight: bold;
             text-align: center;
+            background: ${colors('deepPurple50')};
             display: block;
           `}
         >
@@ -165,6 +166,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
           css={css`
             font-size: 0.45em;
             font-weight: bold;
+            background: ${colors('pink50')};
             text-align: center;
             display: block;
           `}

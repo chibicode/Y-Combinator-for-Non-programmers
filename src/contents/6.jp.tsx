@@ -17,7 +17,6 @@ import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import H from 'src/components/H'
 import YesNoButtons from 'src/components/YesNoButtons'
-import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
 import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
@@ -462,6 +461,21 @@ export default () => (
         title: <>法則の説明</>,
         content: (
           <>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🐶</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={
+                <>
+                  どんな法則に基づいて、弁当箱を
+                  <br />
+                  計算箱に変えているのか説明します！
+                </>
+              }
+            />
             <BubbleQuotes
               quotes={[
                 {
@@ -500,11 +514,13 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>こちらの法則に従って印をつけてみます。</P>
+                      <R.Eozk></R.Eozk>
                       <P>
                         まず、
-                        <EmojiWithText letter="e" />
+                        <EmojiWithText letter="e" />{' '}
                         が一番左にあるので、すべての
-                        <EmojiWithText letter="e" />に<Emoji>🅰️</Emoji>
+                        <EmojiWithText letter="e" /> に <Emoji>🅰️</Emoji>{' '}
                         の印をつけてみます。
                       </P>
                     </>
@@ -513,12 +529,10 @@ export default () => (
               ]}
             />
             <R.Alca>
-              <EmojiForLetter letter="e" />
-              が一番左にあるので、
+              <EmojiForLetter letter="e" /> が一番左にあるので、
               <br />
               すべての
-              <EmojiForLetter letter="e" />に<Emoji>🅰️</Emoji>
-              の印をつける
+              <EmojiForLetter letter="e" /> に <Emoji>🅰️</Emoji> の印をつける
             </R.Alca>
             <BubbleQuotes
               quotes={[
@@ -528,9 +542,9 @@ export default () => (
                     <>
                       <P>
                         次に、
-                        <EmojiWithText letter="f" />
+                        <EmojiWithText letter="f" />{' '}
                         が真ん中にあるので、すべての
-                        <EmojiWithText letter="f" />に<Emoji>🅱️</Emoji>
+                        <EmojiWithText letter="f" /> に <Emoji>🅱️</Emoji>{' '}
                         の印をつけてみます。
                       </P>
                     </>
@@ -539,12 +553,10 @@ export default () => (
               ]}
             />
             <R.Mepb>
-              <EmojiForLetter letter="f" />
-              が真ん中にあるので、
+              <EmojiForLetter letter="f" /> が真ん中にあるので、
               <br />
               すべての
-              <EmojiForLetter letter="f" />に<Emoji>🅱️</Emoji>
-              の印をつける
+              <EmojiForLetter letter="f" /> に <Emoji>🅱️</Emoji> の印をつける
             </R.Mepb>
             <BubbleQuotes
               quotes={[
@@ -576,9 +588,11 @@ export default () => (
                         <Em>
                           では、計算箱に変換した場合、何の数字になるのでしょうか？
                         </Em>
+                      </P>
+                      <P>
                         答えを言うと、
                         <Strong>
-                          右下にある<Emoji>🅰️</Emoji>がついた料理の数
+                          右下にある <Emoji>🅰️</Emoji> がついた料理の数
                         </Strong>
                         が、変換後の計算箱の数字になります。
                       </P>
@@ -588,8 +602,7 @@ export default () => (
               ]}
             />
             <R.Hehx>
-              右下にある<Emoji>🅰️</Emoji>
-              がついた料理の数が、
+              右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
               <br />
               変換後の計算箱の数字
             </R.Hehx>
@@ -602,14 +615,14 @@ export default () => (
                       <P>
                         先ほどの弁当箱の場合、
                         <Em>
-                          右下には<Emoji>🅰️</Emoji>がついた
-                          <EmojiWithText letter="e" />
-                          が「<Strong>2個</Strong>」あります。
+                          右下には <Emoji>🅰️</Emoji> がついた
+                          <EmojiWithText letter="e" /> が「<Strong>2個</Strong>
+                          」あります。
                         </Em>
                       </P>
                       <P>
                         だから、これをぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={2} /> になるというわけです。
+                        <EmojiNumber number={2} /> になります。
                       </P>
                     </>
                   )
@@ -638,10 +651,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここでは <EmojiWithText letter="e" /> と{' '}
-                        <EmojiWithText letter="f" /> を使いました。
                         <Em>
-                          しかし他の料理でも、同じ法則に沿っていれば、計算箱に変換したときに同じ数字になります。
+                          他の料理でも、同じ法則に沿っていれば、計算箱に変換したときに同じ数字になります。
                         </Em>
                       </P>
                       <P>
@@ -709,84 +720,20 @@ export default () => (
                         <Strong>
                           弁当箱に入っているのがどんな料理だろうと、
                           <Emoji>🅰️</Emoji> や <Emoji>🅱️</Emoji>{' '}
-                          の印をつけた際に、同じ法則に沿っていれば同じ計算箱に変換される
+                          の印をつけた際に、同じ法則に沿っていれば同じ数字に変換される
                         </Strong>
                         というわけです。
                       </P>
                     </>
                   )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>なるほど。</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>何か質問はございますか？</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        ひとつ質問がある。
-                        <Em>
-                          上の弁当箱には{' '}
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          といった番号が出てきたけど…
-                        </Em>
-                      </P>
-                      <P>
-                        たとえば、 「
-                        <Em>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          がこういう並び順でなければ、計算箱に変換できない
-                        </Em>
-                        」といった決まりはあるの？
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>
-                        厳密に言うとあるのですが、本稿を読み進める上では気にしなくても結構です。
-                      </P>
-                      <P>
-                        つまり、計算箱に変換する際には、
-                        <Strong>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                          などの番号は無視し、<Emoji>🅰️</Emoji> と{' '}
-                          <Emoji>🅱️</Emoji>{' '}
-                          といった料理の法則だけに注目してください。
-                        </Strong>
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'smile',
-                  children: (
-                    <>
-                      <P>了解！</P>
-                    </>
-                  )
                 }
               ]}
             />
+            <R.Hehx>
+              右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
+              <br />
+              変換後の計算箱の数字
+            </R.Hehx>
           </>
         )
       },
@@ -802,9 +749,9 @@ export default () => (
                     <>
                       <P>
                         <H args={{ name: 'yesNoQuiz' }} />
-                        で出した弁当箱にも、<Emoji>🅰️</Emoji>と<Emoji>🅱️</Emoji>
-                        の印をつけてみましょう。まずは
-                        <H args={{ name: 'lookAtThisBentoBox' }} />:
+                        で出した弁当箱にも、<Emoji>🅰️</Emoji> と{' '}
+                        <Emoji>🅱️</Emoji> の印をつけてみましょう。まずは
+                        <H args={{ name: 'lookAtThisBentoBox' }} />。
                       </P>
                     </>
                   )
@@ -819,17 +766,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の弁当箱に、先ほどの法則にしたがって<Emoji>🅰️</Emoji>
-                        と<Emoji>🅱️</Emoji>の印をつけると、
+                        上の弁当箱に、先ほどの法則にしたがって <Emoji>🅰️</Emoji>{' '}
+                        と <Emoji>🅱️</Emoji> の印をつけると、
                         <Em>
-                          右下には<Emoji>🅰️</Emoji>がついた
+                          右下には <Emoji>🅰️</Emoji> がついた
                           <EmojiWithText letter="i" />
                           が「<Strong>4個</Strong>」あります。
                         </Em>
                       </P>
                       <P>
                         だから、これをぼくが計算箱に変換すると{' '}
-                        <EmojiNumber number={4} /> になるというわけです。
+                        <EmojiNumber number={4} /> になります。
                       </P>
                     </>
                   )
@@ -878,18 +825,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上の弁当箱に、先ほどの法則にしたがって<Emoji>🅰️</Emoji>
-                        と<Emoji>🅱️</Emoji>の印をつけると、
+                        上の弁当箱に、先ほどの法則にしたがって <Emoji>🅰️</Emoji>{' '}
+                        と <Emoji>🅱️</Emoji> の印をつけると、
                         <Em>
-                          右下には<Emoji>🅰️</Emoji>がついた
-                          <EmojiWithText letter="a" />が
+                          右下には <Emoji>🅰️</Emoji> がついた
+                          <EmojiWithText letter="a" /> が
                           <Em>ひとつもありません</Em>。
                         </Em>
                       </P>
                       <P>
                         つまり、
                         <Strong>
-                          <Emoji>🅰️</Emoji>の数は「ゼロ個」
+                          <Emoji>🅰️</Emoji> の数は「ゼロ個」
                         </Strong>
                         というわけです。
                       </P>
@@ -918,10 +865,28 @@ export default () => (
                       <P>
                         なるほど、
                         <Em>
-                          右下の<Emoji>🅰️</Emoji>
+                          右下の <Emoji>🅰️</Emoji>{' '}
                           の数がゼロになる場合もあるんだね。
                         </Em>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        はい。先ほど紹介した法則の「<Emoji>🅰️</Emoji> が
+                        <Strong>いくつか</Strong>」というのは、「
+                        <Emoji>🅰️</Emoji> が<Strong>ゼロ個</Strong>
+                        」である場合も含まれているわけです。
+                      </P>
+                      <R.Hehx>
+                        右下にある <Emoji>🅰️</Emoji> の数が
+                        <br />
+                        ゼロになる場合もある
+                      </R.Hehx>
                     </>
                   )
                 }
@@ -944,11 +909,47 @@ export default () => (
                         さらにぼくは、
                         <Strong>
                           弁当箱を
-                          <H args={{ name: 'play' }} />
-                          してから計算箱に変換する
+                          <H args={{ name: 'play' }} /> してから計算箱に変換する
                         </Strong>
                         こともできます。
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <H args={{ name: 'play' }} />{' '}
+                        してから計算箱に変換？どういうこと？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🐶</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <Emoji>▶️</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={
+                <>
+                  <H args={{ name: 'play' }} /> してから
+                  <br />
+                  計算箱に変換する
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         ためしに、
                         <Em>
@@ -998,7 +999,7 @@ export default () => (
                     <>
                       <P>
                         つまり、もともとの弁当箱を
-                        <H args={{ name: 'play' }} />
+                        <H args={{ name: 'play' }} />{' '}
                         すると、次のような弁当箱になります。
                       </P>
                     </>
@@ -1006,7 +1007,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Jarm />
+            <R.Jarm>
+              <H args={{ name: 'play' }} /> した結果はこうなる
+            </R.Jarm>
             <BubbleQuotes
               quotes={[
                 {
@@ -1099,6 +1102,25 @@ export default () => (
                   )
                 }
               ]}
+            />
+            <EmojiSeparator
+              emojis={['🍱', '▶️']}
+              noBottomMargin
+              description={
+                <>
+                  まず弁当箱を
+                  <H args={{ name: 'play' }} /> し…
+                </>
+              }
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="mathBox" />
+              ]}
+              noTopMargin
+              description={<>計算箱に変換、するのを一括で行える</>}
             />
           </>
         )
@@ -1237,7 +1259,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Igpn />
+            <R.Igpn>
+              <H args={{ name: 'play' }} /> した結果はこうなる
+            </R.Igpn>
             <BubbleQuotes
               quotes={[
                 {
@@ -1313,20 +1337,38 @@ export default () => (
                       <P>
                         それでは以前約束した通り、
                         <Em>
-                          次のページで、
-                          <Strong>ミニオンとともに難しい問題を出題する</Strong>
+                          <Strong>次のページで難しい問題を出題する</Strong>
                           。それに答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji>😈</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+              noBottomMargin
+              description={
+                <>
+                  次のページで出す難しい問題に
+                  <br />
+                  答えられたら計算箱を返してやろう！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'brave',
                   children: (
                     <>
                       <P>
-                        やっと計算箱を問題にチャレンジできるということだな。よーし、次のページに進むぞ！
+                        やっと計算箱を賭けた問題にチャレンジできるということだな。よーし、次のページに進むぞ！
                       </P>
                     </>
                   )
@@ -1335,19 +1377,7 @@ export default () => (
             />
             <NextLessonButton />
           </>
-        ),
-        footer: {
-          content: (
-            <>
-              <P>
-                <Emoji size="mdlg">🐶</Emoji> ちなみに「
-                <Strong>ミニオン</Strong>」と名付けたのは、弁(
-                <Strong>ベン</Strong>
-                )当箱を計(<Strong>ケイ</Strong>)算箱に変換できるからです。
-              </P>
-            </>
-          )
-        }
+        )
       }
     ]}
   />

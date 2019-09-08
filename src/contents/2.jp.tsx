@@ -434,7 +434,7 @@ export default () => (
             <P>
               こうすれば、
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={4} /> を計算できるというわけですね。
+              <EmojiNumber number={4} /> を計算できるのです。
             </P>
           </>
         )

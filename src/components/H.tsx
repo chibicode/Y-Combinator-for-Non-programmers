@@ -1241,8 +1241,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <br />
           右上に <Emoji>🅱️</Emoji> がひとつあり、
           <br />
-          右下に <Emoji>🅰️</Emoji>
-          がいくつかある
+          右下に <Emoji>🅰️</Emoji> がいくつかある
         </>
       )
     }
