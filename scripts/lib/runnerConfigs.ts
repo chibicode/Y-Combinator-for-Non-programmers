@@ -424,8 +424,25 @@ export const kvso: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.pisd,
   nextIterations: 1,
+  initialState: 'showFuncBound',
   showPriorities: true,
   skipToTheEnd: false
+}
+
+export const jwue: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  nextIterations: 1,
+  showPriorities: true
+}
+
+export const sgnp: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.pisd,
+  nextIterations: 1,
+  initialState: 'showFuncBound',
+  showPriorities: true,
+  highlightOverrides: { b: 'highlighted' }
 }
 
 export const beiz: ExpressionRunnerShorthandConfig = {

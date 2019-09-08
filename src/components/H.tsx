@@ -247,7 +247,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Emoji>⭕️</Emoji>
-          <Emoji>❌</Emoji>クイズ
+          <Emoji>❌</Emoji> クイズ
         </>
       )
     }

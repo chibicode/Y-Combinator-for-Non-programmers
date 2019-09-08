@@ -518,9 +518,9 @@ export default () => (
       {
         title: (
           <>
-            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え、
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>に
+            <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が消え、
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> に
           </>
         ),
         content: (
@@ -532,14 +532,14 @@ export default () => (
             <R.Uwma />
             <Ul>
               <UlLi>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 が消えると同時に、
               </UlLi>
               <UlLi>
-                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>が消え、
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>になりました。
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel> が消え、
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel> になりました。
               </UlLi>
             </Ul>
             <EmojiSeparator
@@ -572,14 +572,48 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Jwue>残った弁当箱はシンプルな二段</R.Jwue>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        そうだ、あとは前回とやり方は変わらない。
-                        <H args={{ name: 'fastForward' }} />
+                        そうだ。そして、先ほど{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />{' '}
+                        だった
+                        <EmojiWithText letter="b" /> に、
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />{' '}
+                        の印がついているのに注目だ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Sgnp>
+              <EmojiWithText letter="b" /> が{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> に
+            </R.Sgnp>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        あとは前回とやり方は変わらない。
+                        <H args={{ name: 'fastForward' }} />{' '}
                         で最後まで見てみよう。
                       </P>
                     </>
@@ -669,10 +703,12 @@ export default () => (
                         </OlLi>
                         <OlLi>
                           <Em>
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                             のペアが終わると、
-                            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                            <InlinePrioritiesLabel>
+                              2
+                            </InlinePrioritiesLabel> が{' '}
+                            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                             になるので、また繰り返す。
                           </Em>
                         </OlLi>
@@ -688,8 +724,7 @@ export default () => (
                       <P>
                         その通り。では、
                         <Strong>
-                          そろそろ
-                          <H args={{ name: 'yesNoQuiz' }} />
+                          そろそろ <H args={{ name: 'yesNoQuiz' }} />
                           の時間だ！
                         </Strong>
                       </P>
