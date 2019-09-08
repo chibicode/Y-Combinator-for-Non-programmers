@@ -2074,3 +2074,7 @@ export const ptsa = initializeExpressionContainer([
 export const qefa = initializeDoneExpressionContainer({
   shorthandNumber: 20
 })
+
+export const nndd = initializeDoneExpressionContainer({
+  shorthandFunc: 'add'
+})

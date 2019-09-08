@@ -937,16 +937,13 @@ export default () => (
               <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={1} /> を計算できる計算箱。
               <br />
-              実行すると
-              <EmojiNumber number={2} /> になる
+              実行すると <EmojiNumber number={2} /> になる
             </R.Mcug>
             <P>
-              中級編でこれまで学んだことを一言でまとめると、
-              <Strong>
-                上の計算箱の「<Strong>1を足す機能</Strong>{' '}
-                <CustomEmoji type="plusOne" />
-                」は、弁当箱で「再現」できる
-              </Strong>
+              これまで学んだことを一言でまとめると、上の計算箱にあるような「
+              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+              」は、
+              <Strong>弁当箱で「再現」できる</Strong>
               、ということです。
             </P>
             <EmojiSeparator
@@ -967,27 +964,27 @@ export default () => (
                 </>
               }
             />
-            <P>復習になりますが、3つのステップで説明しますね。</P>
+            <P>
+              「<Strong>再現</Strong>
+              」できる、とはどういうことでしょうか？先ほどの計算箱の例で説明しますね。
+            </P>
+            <R.Lizi>これを弁当箱で再現します</R.Lizi>
             <P>
               <InlineHeader>ステップ1:</InlineHeader> まず、
               <Em>
                 計算箱の <EmojiNumber number={1} /> の代わりに、
                 <Strong>
-                  <Emoji>🐶</Emoji> ミニオンの芸で <EmojiNumber number={1} />{' '}
-                  に変換できる
+                  <EmojiNumber number={1} /> に変換できる
                 </Strong>
                 弁当箱
               </Em>
               を用意します。
             </P>
-            <R.Fxde>
-              <H args={{ name: 'convertToMathbox' }} /> すると、
-              <br />
-              <Em>
-                <EmojiNumber number={1} /> になる
-              </Em>
-              弁当箱(先ほども登場しました)。
-            </R.Fxde>
+            <R.Rnug>これの代わりに…</R.Rnug>
+            <ExpressionRunnerSeparator />
+            <R.Rbup>
+              <EmojiNumber number={1} /> に変換できる弁当箱を用意
+            </R.Rbup>
             <P>
               <InlineHeader>ステップ2:</InlineHeader> 次に、
               <Em>
@@ -996,14 +993,16 @@ export default () => (
               </Em>
               がある弁当箱を用意します。
             </P>
+            <R.Bhpw>これの代わりに…</R.Bhpw>
+            <ExpressionRunnerSeparator />
             <R.Qrfw>
               <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱
+              がある弁当箱を用意
               <br />(<Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱です)
             </R.Qrfw>
             <P>
               <InlineHeader>ステップ3:</InlineHeader>{' '}
-              このふたつを合体させれば、先ほども説明した通り、
+              このふたつを合体させた弁当箱は、先ほども説明した通り、
               <Em>
                 <H args={{ name: 'runAndConvertToMathbox' }} /> すると{' '}
                 <EmojiNumber number={2} /> になります
@@ -1029,6 +1028,10 @@ export default () => (
               <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
               の計算箱を、弁当箱で再現
             </R.Plde>
+            <P>
+              これが、「<Em>計算箱を弁当箱で再現する</Em>
+              」ということなんですね。
+            </P>
           </>
         )
       },
@@ -1037,8 +1040,11 @@ export default () => (
         title: <>もっと複雑な計算箱も再現できる</>,
         content: (
           <>
+            <P>もちろん、もっと複雑な計算箱も弁当箱で再現できます。</P>
             <P>
-              もちろん、もっと複雑な計算箱も再現できます。たとえば、初級その1に登場したこちらの計算箱をご覧ください。
+              たとえば、初級その1に登場したこちらの計算箱をご覧ください。
+              <H args={{ name: 'play' }} /> すると、結果は{' '}
+              <EmojiNumber number={4} /> になります。
             </P>
             <R.Jiqb />
             <P>
@@ -1062,7 +1068,6 @@ export default () => (
             <P>
               上の弁当箱は実行に時間がかかるので、ここでは早送りはしませんが、
               <Em>
-                上の
                 <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                 ボタンを押すと、答えが <EmojiNumber number={4} />{' '}
                 になるのを確認できます。
@@ -1137,7 +1142,8 @@ export default () => (
               description={
                 <>
                   「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
-                  」や「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」や
+                  <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
                   」も、
                   <br />
                   弁当箱で「再現」できる？
@@ -1149,7 +1155,7 @@ export default () => (
               とりあえず、話をラムダ村に戻しましょう！
             </P>
             <EmojiSeparator
-              emojis={['🙂', '👧🏻', '🐶', '😈']}
+              emojis={['🐶', '🙂', '😈', '👧🏻']}
               description={<>話を戻しましょう！</>}
             />
           </>

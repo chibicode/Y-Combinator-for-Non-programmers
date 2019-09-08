@@ -153,6 +153,11 @@ export const cpkp: ExpressionRunnerShorthandConfig = {
   isDone: true
 }
 
+export const bhpw: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nndd
+}
+
 export const cvtc: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pisd,
