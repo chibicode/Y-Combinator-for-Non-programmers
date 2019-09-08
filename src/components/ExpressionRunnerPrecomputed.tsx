@@ -157,7 +157,7 @@ const ExpressionRunnerPrecomputed = ({
       !isPlaying &&
       currentIndex > 0)
   const progessBarVisible =
-    !hidePlayButton && (isPlaying || atLeastOneStepTaken)
+    !hidePlayButton && !skipToTheEnd && (isPlaying || atLeastOneStepTaken)
 
   return (
     <ExpressionRunnerContext.Provider
