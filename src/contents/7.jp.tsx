@@ -867,6 +867,14 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>で、ここからどうすればいいんだっけ？</P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
@@ -1012,13 +1020,19 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>では、上の弁当箱を実行したらどうなるか見ていこう！</P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        ではまず、この弁当箱を実行したらどうなるか見ていきましょう！
-                      </P>
-                      <P>
+                        それでは、
                         <H
                           args={{
                             name: 'pressFastForward',
@@ -1029,9 +1043,9 @@ export default () => (
                       <P>
                         初級その5で説明した通り、
                         <Strong>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                          のペアがふたつ以上ある場合は、一番左の
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                          のペアがふたつ以上ある場合は、一番左の{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
                         </Strong>
                       </P>
@@ -1050,11 +1064,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        続いて、また
+                        続いて、また{' '}
                         <Em>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアからはじめたいのですが、
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアの一番下の段にひとつの料理(
                           <EmojiWithText letter="b" />
                           )しかないので不可能です。
@@ -1063,10 +1077,15 @@ export default () => (
                       <P>
                         というわけで、初級その5で説明した通り、
                         <Strong>
-                          次は
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                          のペアからはじめます。
+                          次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+                          のペアから
                         </Strong>
+                        はじめます。
+                        <H
+                          args={{
+                            name: 'pressFastForward'
+                          }}
+                        />
                       </P>
                     </>
                   )
@@ -1084,21 +1103,10 @@ export default () => (
                     <>
                       <P>
                         次も前回と同じく、
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                        のペアからはじめたいのですが、
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                        のペアの一番下の段にひとつの料理(
-                        <EmojiWithText letter="b" />
-                        )しかないので不可能です。
-                      </P>
-                      <P>
-                        というわけで、再度
                         <Strong>
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
                         </Strong>
-                      </P>
-                      <P>
                         <H
                           args={{
                             name: 'pressFastForward'
@@ -1155,7 +1163,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Xwzc>計算箱に変換できない</R.Xwzc>
+            <R.Xwzc>
+              <Emoji>❌</Emoji> 計算箱に変換できない <Emoji>❌</Emoji>
+            </R.Xwzc>
             <BubbleQuotes
               quotes={[
                 {
@@ -1163,7 +1173,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        理由はもちろん、
+                        理由は、
                         <Em>以下の法則に沿っていないからです。</Em>
                       </P>
                       <R.Eozk>
@@ -1183,7 +1193,9 @@ export default () => (
               ]}
             />
             <R.Fhrd>
-              右上の料理が <Emoji>🅱️</Emoji> ではなく、<Emoji>🅰️</Emoji>なので
+              右上が <Emoji>🅱️</Emoji> の<EmojiWithText letter="c" /> ではなく、
+              <br />
+              <Emoji>🅰️</Emoji> の<EmojiWithText letter="b" /> なので
               <br />
               計算箱に変換できない
             </R.Fhrd>
@@ -1239,7 +1251,7 @@ export default () => (
                       <P>
                         つまり、実行しても{' '}
                         <EmojiNumber number={2} size="mdlg" />{' '}
-                        に変換できる弁当箱にならなかった
+                        に変換できる弁当箱になりませんでした。
                       </P>
                     </>
                   )
@@ -1250,14 +1262,14 @@ export default () => (
               <EmojiNumber number={1} /> に変換できる弁当箱と合体させ…
             </R.Nuco>
             <ExpressionRunnerSeparator />
-            <R.Bwff>
+            <R.Xwzc>
               実行したところ、
               <br />
               <Strong>
                 <EmojiNumber number={2} size="mdlg" />{' '}
                 に変換できる弁当箱にならなかった
               </Strong>
-            </R.Bwff>
+            </R.Xwzc>
             <BubbleQuotes
               quotes={[
                 {
@@ -1265,14 +1277,13 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        だから、
                         <Em>
-                          先ほどあなたが適当に{' '}
-                          <CustomEmoji type="questionFoodGrey" />{' '}
-                          に料理を入れた弁当箱に、
+                          先ほどの弁当箱に、
                           <H args={{ name: 'plusOneEffect' }} />
                           は無い
                         </Em>
-                        のです。
+                        のです。つまり、<Strong>不正解でした！</Strong>
                       </P>
                     </>
                   )
@@ -1296,12 +1307,25 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>問題をもう一度</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'dog',
                   children: (
                     <>
-                      <P>では、もう一度ふりだしに戻りましょう。</P>
+                      <P>
+                        問題の意味が分かったでしょうか？では、もう一度聞きますね。
+                      </P>
                       <P>
                         <Strong>
                           この弁当箱に、どのような法則に基づいて{' '}
@@ -1346,10 +1370,27 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        繰り返しますが、先ほど適当に料理を入れた以下の弁当箱は、不正解でした！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Olyw>こちらは不正解だった</R.Olyw>
+            <BubbleQuotes
+              quotes={[
+                {
                   type: 'crying',
                   children: (
                     <>
-                      <P>うーん…分からない！</P>
+                      <P>
+                        うーん…問題の意味は分かったけど、答え方が分からない！
+                      </P>
                     </>
                   )
                 }
@@ -1363,7 +1404,7 @@ export default () => (
         content: (
           <>
             <P>
-              せっかく計算箱を返してもらえるチャンスなのに、問題が難しくて村人は苦労しているようですね。
+              せっかく計算箱を返してもらえるチャンスなのに、問題が難しくて村人は苦戦しているようですね。
             </P>
             <EmojiSeparator
               emojis={['❓', '😭', '❓']}
