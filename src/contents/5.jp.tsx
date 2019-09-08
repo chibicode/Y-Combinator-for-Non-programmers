@@ -1348,7 +1348,7 @@ export default () => (
                         <EmojiWithText letter="a" />
                         ではなく
                         <EmojiWithText letter="d" />
-                        が残ったので、<Emoji>❌</Emoji>が正解だ！
+                        が残ったので、<Emoji>❌</Emoji> が正解だ！
                       </P>
                     </>
                   )

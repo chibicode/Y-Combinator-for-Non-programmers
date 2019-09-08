@@ -178,6 +178,7 @@ export default () => (
                 <Emoji>🐶</Emoji>,
                 <CustomEmoji type="mathBox" />
               ]}
+              description={<>ぼくの芸をお見せします！</>}
             />
             <BubbleQuotes
               quotes={[
@@ -216,10 +217,12 @@ export default () => (
                         ことができるんです！
                       </P>
                       <P>
+                        下の
                         <Strong>
-                          <H args={{ name: 'convertToMathbox' }} />{' '}
-                          を押してみてください！
+                          「<H args={{ name: 'convertToMathbox' }} />
+                          」ボタン
                         </Strong>
+                        を押してみてください！
                       </P>
                     </>
                   )
@@ -253,7 +256,26 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🐶</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={
+                <>
+                  ある法則に基づいて、
+                  <br />
+                  弁当箱を計算箱に変える芸
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (
@@ -280,8 +302,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、こちらに3つの弁当箱を用意しました。それぞれ
-                        <H args={{ name: 'convertToMathbox' }} />
+                        では、こちらに3つの弁当箱を用意しました。それぞれ{' '}
+                        <H args={{ name: 'convertToMathbox' }} />{' '}
                         を押してみてください！
                       </P>
                     </>
@@ -295,18 +317,6 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <Strong>
-                          どれも料理は違うけど、法則は似ているような…？
-                        </Strong>
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'dog',
                   children: (
                     <>
@@ -317,10 +327,22 @@ export default () => (
                   )
                 },
                 {
-                  type: 'surprised',
+                  type: 'thinking',
                   children: (
                     <>
-                      <P>あ、分かったぞ！</P>
+                      <P>うーん、なんとなく分かったかもしれない…</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        では、
+                        <H args={{ name: 'yesNoQuiz' }} />
+                        で確かめてみましょう！
+                      </P>
                     </>
                   )
                 }
@@ -400,7 +422,7 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <H args={{ name: 'convertToMathbox' }} />
+                        <H args={{ name: 'convertToMathbox' }} />{' '}
                         を押してみてくだださい！
                       </P>
                     </>
@@ -417,7 +439,7 @@ export default () => (
                     <>
                       <P>
                         やった！ <EmojiNumber number={4} /> になったので、
-                        <Emoji>⭕️</Emoji>が正解だ！
+                        <Emoji>⭕️</Emoji> が正解だ！
                       </P>
                     </>
                   )
@@ -1177,7 +1199,7 @@ export default () => (
                     <>
                       <P>
                         やった！ <EmojiNumber number={1} /> になったので、
-                        <Emoji>❌</Emoji>が正解だ！
+                        <Emoji>❌</Emoji> が正解だ！
                       </P>
                     </>
                   )
