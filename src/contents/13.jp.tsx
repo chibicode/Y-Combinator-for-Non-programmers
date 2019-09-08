@@ -1,6 +1,13 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Strong,
+  Em,
+  Ul,
+  UlLi,
+  InlineHeader
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -929,7 +936,9 @@ export default () => (
                         では、この弁当箱を
                         <H args={{ name: 'play' }} /> してみて！
                       </P>
-                      <P>(次の回で早送りするけど、今回は省略します！)</P>
+                      <P>
+                        (次のページで早送りして詳細に解説するけど、今回は省略します！)
+                      </P>
                     </>
                   )
                 }
@@ -955,7 +964,7 @@ export default () => (
                       <P>
                         この <EmojiNumber number={5} /> って、
                         <Strong>
-                          実行前の弁当箱に入っていたふたつの数字である、
+                          実行前の弁当箱に入っていた、
                           <EmojiNumber number={3} /> と{' '}
                           <EmojiNumber number={2} /> を足した数
                         </Strong>
@@ -987,8 +996,8 @@ export default () => (
                       <P>
                         じゃあたとえば、
                         <Strong>
-                          もともとの弁当箱に入ってる <EmojiNumber number={3} />{' '}
-                          と <EmojiNumber number={2} /> の部分を…
+                          実行前の弁当箱に入ってる <EmojiNumber number={3} /> と{' '}
+                          <EmojiNumber number={2} /> の部分を…
                         </Strong>
                       </P>
                       <P>
@@ -1055,7 +1064,32 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader>{' '}
+                繰り返しますが、上の弁当箱は次のページで
+                <H args={{ name: 'fastForward' }} />{' '}
+                し、詳細に解説します。現時点ではとりあえず、「
+                <Em>上の弁当箱は、実行したらそういう結果になるんだ〜</Em>
+                」と思っておいてください！
+              </P>
+            </>
+          )
+        }
+      },
+      {
+        title: <>繰り返しを再現できた？</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (
@@ -1082,7 +1116,7 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>でも、思い出してみて！</P>
+                      <P>そう。そして、思い出してみて！</P>
                       <P>
                         「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
                         」を使っても、以下のように同じように <Emoji>
@@ -1118,6 +1152,12 @@ export default () => (
                         <EmojiNumber number={6} /> <Emoji>➕</Emoji>{' '}
                         <EmojiNumber number={4} /> を計算できる
                       </R.Mbje>
+                      <P>
+                        これって、さっきのサヤの弁当箱が{' '}
+                        <EmojiNumber number={6} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={4} />{' '}
+                        を計算したのと同じことじゃない？
+                      </P>
                     </>
                   )
                 },

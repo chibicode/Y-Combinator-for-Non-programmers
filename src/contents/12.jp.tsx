@@ -165,7 +165,7 @@ export default () => (
                     <>
                       <P>
                         <Em>
-                          まず、わたしの弁当箱の一番下の「
+                          まず、サヤの弁当箱の一番下の「
                           <Strong>
                             <CustomEmoji type="blankNumberGrey" />{' '}
                             に変換できる弁当箱
