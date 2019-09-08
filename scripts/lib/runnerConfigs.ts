@@ -341,6 +341,18 @@ export const ilpo: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.nyhe
 }
 
+export const elku: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nyhe,
+  highlightOverrides: { a: 'highlighted' }
+}
+
+export const vowa: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nyhe,
+  highlightOverrides: { b: 'highlighted' }
+}
+
 export const imyd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.txbv

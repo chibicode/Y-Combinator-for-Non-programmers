@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Em,
-  Ul,
-  UlLi,
-  Hr,
-  InlineHeader
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Hr, InlineHeader } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
@@ -321,27 +313,33 @@ export default () => (
             <R.Ilpo>
               <H args={{ name: 'bentoBoxPuzzle' }} /> の一例
             </R.Ilpo>
-            <Ul>
-              <UlLi>
-                このように、
-                <H args={{ name: 'bentoBoxPuzzle' }} />
-                には、実際の弁当箱のように、
-                <Em>
-                  四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
-                </Em>
-                。
-              </UlLi>
-              <UlLi>
-                上の例だと、上段には
-                <EmojiWithText letter="b" />
-                が入っており、
-              </UlLi>
-              <UlLi>
-                下段には
-                <EmojiWithText letter="a" />
-                がふたつ入っています。
-              </UlLi>
-            </Ul>
+            <P>
+              <InlineHeader>解説:</InlineHeader> 上のように、
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              には、実際の弁当箱のように、
+              <Em>
+                四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
+              </Em>
+              。
+            </P>
+            <P>
+              この例だと、上段には
+              <EmojiWithText letter="b" />
+              が入っており、
+            </P>
+            <R.Vowa>
+              上段には
+              <EmojiWithText letter="b" />
+            </R.Vowa>
+            <P>
+              下段には
+              <EmojiWithText letter="a" />
+              がふたつ入っています。
+            </P>
+            <R.Elku>
+              上段には
+              <EmojiWithText letter="a" />
+            </R.Elku>
             <BubbleQuotes
               quotes={[
                 {
@@ -395,8 +393,7 @@ export default () => (
               <Em>
                 <H args={{ name: 'bentoBoxPuzzle' }} />
                 は、計算箱と同じように
-                <H args={{ name: 'play' }} />
-                することができます。
+                <H args={{ name: 'play' }} /> することができます。
               </Em>
               試しに、
               <Em>
@@ -422,9 +419,13 @@ export default () => (
                 }
               ]}
             />
-            <R.Ilpo />
+            <R.Ilpo>
+              <H args={{ name: 'play' }} /> すると…
+            </R.Ilpo>
             <ExpressionRunnerSeparator />
-            <R.Osqo />
+            <R.Osqo>
+              <EmojiWithText letter="b" /> だけが残る
+            </R.Osqo>
             <BubbleQuotes
               quotes={[
                 {
@@ -440,7 +441,21 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  弁当箱は、<Strong>どんな法則</Strong>に則って
+                  <br />
+                  <H args={{ name: 'play' }} /> されるでしょう？
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (
@@ -467,16 +482,9 @@ export default () => (
         content: (
           <>
             <P>
+              では、他の
               <H args={{ name: 'bentoBoxPuzzle' }} />
-              は、どれも<Strong>ある法則</Strong>に則って
-              <H args={{ name: 'play' }} />
-              されます。
-            </P>
-            <EmojiSeparator emojis={['❓', '🍱', '❓']} />
-            <P>
-              その法則について語る前に、まずは他の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              を見てみましょう。
+              も見てみましょう。
             </P>
             <Hr />
             <P>
@@ -493,6 +501,18 @@ export default () => (
               今回は
               <EmojiWithText letter="d" /> が残りました。
             </P>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うーん、さっきと微妙に違うなあ…</P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <Hr />
             <P>
               続いて、上段に<Strong>ふたつの料理が入っている場合</Strong>
@@ -532,7 +552,10 @@ export default () => (
               どれも<Strong>ある法則</Strong>
               に則っているのですが、その法則がお分かりでしょうか？
             </P>
-            <EmojiSeparator emojis={['🍱', '🤔', '🍱']} />
+            <EmojiSeparator
+              emojis={['🍱', '🤔', '🍱']}
+              description={<>法則が分かりますか？</>}
+            />
           </>
         )
       },
@@ -540,7 +563,6 @@ export default () => (
         title: <>法則が分かった？</>,
         content: (
           <>
-            <EmojiSeparator emojis={['🍱', '😈', '🍱']} />
             <BubbleQuotes
               quotes={[
                 {
@@ -548,7 +570,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここで問題だ。
+                        では、
                         <Strong>
                           弁当箱のパズルは、
                           <H args={{ name: 'play' }} />
@@ -654,12 +676,15 @@ export default () => (
               これまでに4種類の
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を紹介しましたが、どれも
-              <H args={{ name: 'play' }} />
-              する際にある法則に従っています。それが分かったかどうか、 ふたつの
+              <H args={{ name: 'play' }} />{' '}
+              する際にある法則に従っています。それが分かったかどうか、
               <H args={{ name: 'yesNoQuiz' }} />
               でチェックしてみましょう！
             </P>
-            <EmojiSeparator emojis={['🍱', '🤔', '▶️']} />
+            <EmojiSeparator
+              emojis={['⭕️', '🍱', '❌']}
+              description={<>法則が分かったかどうかチェック！</>}
+            />
             <P>
               <H args={{ name: 'question' }} />{' '}
               <H args={{ name: 'lookAtThisBentoBoxPuzzle' }} />:
@@ -667,8 +692,8 @@ export default () => (
             <R.Loai />
             <P>
               これを
-              <H args={{ name: 'play' }} />
-              すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+              <H args={{ name: 'play' }} /> すると、
+              <Strong>最終的に下のようになるでしょうか？</Strong>
               これまでの法則から予想してみてください。
             </P>
             <R.Vvjn />
@@ -688,7 +713,7 @@ export default () => (
           <>
             <P>
               <H args={{ name: 'question' }} /> こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />を
+              <H args={{ name: 'bentoBoxPuzzle' }} />を{' '}
               <H args={{ name: 'play' }} />
               すると、
             </P>
@@ -716,7 +741,7 @@ export default () => (
               <Strong>
                 1問目の
                 <H args={{ name: 'theAnswerIs', isYes: true }} />
-              </Strong>
+              </Strong>{' '}
               でした。
             </P>
             <P>
@@ -739,11 +764,14 @@ export default () => (
         content: (
           <>
             <P>
-              果たして、ラムダ村の村人は、
+              次のページで、
               <H args={{ name: 'bentoBoxPuzzle' }} />
-              の法則が分かったのでしょうか？
+              の法則を説明します！
             </P>
-            <EmojiSeparator emojis={['🤔', '🍱', '😈']} />
+            <EmojiSeparator
+              emojis={['🤔', '🍱', '😈']}
+              description={<>法則は次のページで説明！</>}
+            />
             <P>
               法則が分かった方も、よく分からなかった方も、ぜひ次に進んでみてください。
             </P>

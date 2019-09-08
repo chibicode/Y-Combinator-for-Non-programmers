@@ -739,7 +739,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       const childNode = (
         <Fragment>
-          正解は<Emoji>{args.isYes ? '⭕️' : '❌'}</Emoji>
+          正解は <Emoji>{args.isYes ? '⭕️' : '❌'}</Emoji>
         </Fragment>
       )
       if (args.sentence) {
