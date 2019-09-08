@@ -46,7 +46,26 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji>😈</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+              noBottomMargin
+              description={
+                <>
+                  この中級編で出す難しい問題に
+                  <br />
+                  答えられたら計算箱を返してやろう！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'brave',
                   children: (
@@ -140,7 +159,7 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>わかりました、ご主人さま！</P>
+                      <P>おまかせください、ご主人さま！</P>
                     </>
                   )
                 }
