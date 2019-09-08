@@ -822,23 +822,77 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この「<Strong>階乗</Strong>」は、
+                        この「<Strong>階乗</Strong>」は、先ほどの
+                        <Strong>掛け算ができる弁当箱</Strong>と、
                         <Strong>Yコンビネータ</Strong>
-                        を使った弁当箱で計算することができるんだ。
+                        の弁当箱を組み合わせて計算することができるんだ。
                       </P>
                       <P>
                         たとえば以下の弁当箱は、
                         <Strong>
-                          <EmojiNumber number={4} /> の階乗、すなわち{' '}
-                          <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+                          <EmojiNumber number={3} /> の階乗、すなわち{' '}
                           <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
                           <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算してくれる。
                         </Strong>
                       </P>
                       <P>
-                        (ちなみに、右の方に <Emoji>✖️</Emoji>{' '}
-                        の印がある。これは先ほど紹介した、掛け算ができる弁当箱をスペースの都合で省略しただけだ。)
+                        (右の方にある <Emoji>✖️</Emoji>{' '}
+                        の印は、先ほど紹介した、掛け算ができる弁当箱をスペースの都合で省略しただけだ。)
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Qaoa>
+              先ほどの
+              <Strong>掛け算ができる弁当箱</Strong>と
+              <br />
+              (右の方にある <Emoji>✖️</Emoji> が、
+              <br />
+              掛け算ができる弁当箱の省略表記)
+              <br />
+              <Strong>Yコンビネータ</Strong>
+              の弁当箱を使えば…
+            </R.Qaoa>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <EmojiNumber number={3} /> の階乗、すなわち
+              <br />
+              <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+              <EmojiNumber number={1} /> を計算できる！
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          前のページで登場した弁当箱と、右上の部分が微妙に違う
+                        </Em>
+                        なあ…よく分からないけど。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        そして、
+                        <Strong>
+                          一番上の <EmojiNumber number={3} />{' '}
+                          を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
+                        </Strong>
+                      </P>
+                      <P>
+                        たとえば <EmojiNumber number={4} /> に変えると、
+                        <EmojiNumber number={4} /> の階乗を計算できる。
                       </P>
                     </>
                   )
@@ -846,9 +900,7 @@ export default () => (
               ]}
             />
             <R.Rwuw>
-              この、下半分が「Yコンビネータ」の
-              <br />
-              弁当箱を使えば…
+              上の数字を <EmojiNumber number={4} /> に変えると…
             </R.Rwuw>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
@@ -862,24 +914,10 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        そして、
-                        <Strong>
-                          一番上の <EmojiNumber number={4} />{' '}
-                          を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
-                        </Strong>
-                      </P>
-                    </>
-                  )
-                },
-                {
                   type: 'thinking',
                   children: (
                     <>
-                      <P>上の弁当箱は複雑すぎてよく分からないけど…</P>
+                      <P>ちょっと複雑すぎてよく分からないけど…</P>
                       <Ul>
                         <UlLi>
                           「<Strong>階乗</Strong>」は、「
@@ -906,20 +944,30 @@ export default () => (
                   children: (
                     <>
                       <P>その通りだ！上の弁当箱を理解する必要はないが…</P>
-                      <P>
-                        <Em>
-                          「<Strong>Yコンビネータ</Strong>
-                          」の弁当箱は、掛け算を計算できる弁当箱と組み合わせることによって、階乗のように複雑な計算を行うこともできる
-                        </Em>
-                        、ということさえ分かれば十分だ。
-                      </P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            <Strong>Yコンビネータ</Strong>
+                            の弁当箱は、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>
+                            掛け算を計算できる弁当箱と組み合わせることによって、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
+                          <Em>階乗のように複雑な計算を行うこともできる</Em>
+                        </UlLi>
+                      </Ul>
+                      <P>ということさえ分かれば十分だ。</P>
                     </>
                   )
                 }
               ]}
             />
             <R.Xjzx>
-              「<Strong>Yコンビネータ</Strong>」の弁当箱は、
+              以下の<Strong>Yコンビネータ</Strong>の弁当箱は、
               <br />
               掛け算を計算できる弁当箱と
               <br />

@@ -2686,6 +2686,14 @@ export const rwuw: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs'
 }
 
+export const qaoa: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.zxdz,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
+}
+
 export const kzkg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.glvb,

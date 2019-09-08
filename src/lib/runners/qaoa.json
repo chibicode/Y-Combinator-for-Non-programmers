@@ -16,7 +16,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 4
+          "shorthandNumber": 3
         },
         "func": {
           "arg": {
@@ -144,7 +144,7 @@
                     },
                     "func": {
                       "name": "mult",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -173,7 +173,7 @@
           "func": {
             "arg": {
               "name": "a",
-              "highlightType": "default",
+              "highlightType": "initialHighlighted",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
               "type": "variable",
@@ -189,7 +189,7 @@
               "arg": {
                 "arg": {
                   "name": "b",
-                  "highlightType": "default",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -204,7 +204,7 @@
                   "arg": {
                     "arg": {
                       "name": "b",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -218,7 +218,7 @@
                     },
                     "func": {
                       "name": "b",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -235,7 +235,7 @@
                   },
                   "func": {
                     "name": "a",
-                    "highlightType": "default",
+                    "highlightType": "initialHighlighted",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",
@@ -255,7 +255,7 @@
               "func": {
                 "arg": {
                   "name": "b",
-                  "highlightType": "default",
+                  "highlightType": "initialHighlighted",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
                   "type": "variable",
@@ -270,7 +270,7 @@
                   "arg": {
                     "arg": {
                       "name": "b",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -284,7 +284,7 @@
                     },
                     "func": {
                       "name": "b",
-                      "highlightType": "default",
+                      "highlightType": "initialHighlighted",
                       "topLeftBadgeType": "none",
                       "bottomRightBadgeType": "none",
                       "type": "variable",
@@ -301,7 +301,7 @@
                   },
                   "func": {
                     "name": "a",
-                    "highlightType": "default",
+                    "highlightType": "initialHighlighted",
                     "topLeftBadgeType": "none",
                     "bottomRightBadgeType": "none",
                     "type": "variable",

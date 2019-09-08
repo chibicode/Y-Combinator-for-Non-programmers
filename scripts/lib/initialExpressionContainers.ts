@@ -307,6 +307,20 @@ const yCombinator: FunctionExpressionParams = {
   ]
 }
 
+const yCombinatorHighlighted: FunctionExpressionParams = {
+  arg: highlighted('a'),
+  body: [
+    {
+      arg: highlighted('b'),
+      body: [highlighted('a'), [highlighted('b'), highlighted('b')]]
+    },
+    {
+      arg: highlighted('b'),
+      body: [highlighted('a'), [highlighted('b'), highlighted('b')]]
+    }
+  ]
+}
+
 export const vazr = initializeExpressionContainer(yCombinator)
 
 export const kysf = initializeExpressionContainer({
@@ -2023,6 +2037,26 @@ export const kjff = initializeExpressionContainer([
         checkType: 'isZero',
         condition: 'f',
         trueCase: { shorthandNumber: 1 },
+        falseCase: ['mult', 'f', ['a', [{ shorthandFunc: 'pred' }, 'f']]]
+      }
+    }
+  },
+  {
+    shorthandNumber: 4,
+    initialHighlight: true
+  }
+])
+
+export const zxdz = initializeExpressionContainer([
+  yCombinatorHighlighted,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: { shorthandNumber: 1 },
         falseCase: [
           { name: 'mult', highlighted: true },
           'f',
@@ -2032,7 +2066,7 @@ export const kjff = initializeExpressionContainer([
     }
   },
   {
-    shorthandNumber: 4,
+    shorthandNumber: 3,
     initialHighlight: true
   }
 ])
