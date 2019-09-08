@@ -106,7 +106,7 @@ export default () => (
                       <P>
                         それについてなんだが…
                         <Strong>
-                          ちょっと伝えたいことがあるんだが、聞いてもらえるか？
+                          ちょっと伝えたいことがある。聞いてもらえるか？
                         </Strong>
                       </P>
                     </>
@@ -209,12 +209,21 @@ export default () => (
                           }}
                         />
                       </R.Dmrz>
-                      <P>それぞれの部分に入れてみよう。</P>
+                      <P>
+                        <CustomEmoji type="blankNumberGreen" /> と{' '}
+                        <CustomEmoji type="blankNumberBrown" />{' '}
+                        の部分に入れてみよう。
+                      </P>
                     </>
                   )
                 }
               ]}
             />
+            <R.Hvfb>
+              <CustomEmoji type="blankNumberGreen" /> と{' '}
+              <CustomEmoji type="blankNumberBrown" /> の部分に…
+            </R.Hvfb>
+            <ExpressionRunnerSeparator />
             <R.Tpyg>
               <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
               に変換できる
@@ -230,7 +239,7 @@ export default () => (
                       <P>
                         では、これを
                         <H args={{ name: 'play' }} />{' '}
-                        するとどうなるか確かめてみな！
+                        するとどうなるか確かめてみよう！
                       </P>
                     </>
                   )
@@ -354,22 +363,27 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        その通りだ！先ほどの弁当箱は、
-                        <Em>
-                          <CustomEmoji type="blankNumberGreen" /> と{' '}
-                          <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+                      <P>その通りだ！先ほどの弁当箱は、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            <CustomEmoji type="blankNumberGreen" /> と{' '}
+                            <CustomEmoji type="blankNumberBrown" />{' '}
+                            に数字を入れ、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
                           <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                           すると…
-                        </Em>
-                      </P>
-                      <P>
-                        <Strong>
-                          結果は <CustomEmoji type="blankNumberGreen" />{' '}
-                          <Emoji>➕</Emoji>{' '}
-                          <CustomEmoji type="blankNumberBrown" /> になるんだ。
-                        </Strong>
-                      </P>
+                        </UlLi>
+                        <UlLi>
+                          <Strong>
+                            結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                            <Emoji>➕</Emoji>{' '}
+                            <CustomEmoji type="blankNumberBrown" /> になるんだ。
+                          </Strong>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -572,7 +586,14 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>これはもしかして…掛け算を計算できるのか？</P>
+                      <P>
+                        これはもしかして…<Strong>掛け算を計算できる</Strong>
+                        のか？
+                      </P>
+                      <EmojiSeparator
+                        emojis={['✨', '✖️', '✨']}
+                        description={<>掛け算ができる？</>}
+                      />
                     </>
                   )
                 },
@@ -580,22 +601,27 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>
-                        その通りだ！先ほどの弁当箱は、
-                        <Em>
-                          <CustomEmoji type="blankNumberGreen" /> と{' '}
-                          <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+                      <P>その通りだ！先ほどの弁当箱は、</P>
+                      <Ul>
+                        <UlLi>
+                          <Em>
+                            <CustomEmoji type="blankNumberGreen" /> と{' '}
+                            <CustomEmoji type="blankNumberBrown" />{' '}
+                            に数字を入れ、
+                          </Em>
+                        </UlLi>
+                        <UlLi>
                           <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
                           すると…
-                        </Em>
-                      </P>
-                      <P>
-                        <Strong>
-                          結果は <CustomEmoji type="blankNumberGreen" />{' '}
-                          <Emoji>✖️</Emoji>{' '}
-                          <CustomEmoji type="blankNumberBrown" /> になるんだ。
-                        </Strong>
-                      </P>
+                        </UlLi>
+                        <UlLi>
+                          <Strong>
+                            結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                            <Emoji>✖️</Emoji>{' '}
+                            <CustomEmoji type="blankNumberBrown" /> になるんだ。
+                          </Strong>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -639,6 +665,10 @@ export default () => (
                 }
               ]}
             />
+            <EmojiSeparator
+              emojis={['🍱', '✖️', '🍱']}
+              description={<>掛け算ができる弁当箱が存在した！</>}
+            />
           </>
         )
       },
@@ -667,7 +697,7 @@ export default () => (
                     <>
                       <P>
                         そうだ。ちなみに今回は紹介する時間がないが、
-                        <Strong>引き算や割り算</Strong>
+                        <Strong>ふたつの数字の引き算や割り算</Strong>
                         も弁当箱で行うことができるぞ。
                       </P>
                       <P>
@@ -728,7 +758,9 @@ export default () => (
                         たとえば、「<Strong>階乗</Strong>
                         」という計算がある。これは「
                         <Strong>
-                          ある数からはじめて、1になるまで繰り返し掛け算をする
+                          ある数からはじめて、
+                          <EmojiNumber number={1} />{' '}
+                          になるまで繰り返し掛け算をする
                         </Strong>
                         」という計算だ。
                       </P>
@@ -804,6 +836,10 @@ export default () => (
                           <EmojiNumber number={1} /> を計算してくれる。
                         </Strong>
                       </P>
+                      <P>
+                        (ちなみに、右の方に <Emoji>✖️</Emoji>{' '}
+                        の印がある。これは先ほど紹介した、掛け算ができる弁当箱をスペースの都合で省略しただけだ。)
+                      </P>
                     </>
                   )
                 }
@@ -836,14 +872,6 @@ export default () => (
                           を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
                         </Strong>
                       </P>
-                      <P>
-                        (
-                        <Em>
-                          ちなみに、右の方に <Emoji>✖️</Emoji>{' '}
-                          の印がある。これは先ほど紹介した、掛け算ができる弁当箱をスペースの都合で省略しただけだ。
-                        </Em>
-                        )
-                      </P>
                     </>
                   )
                 },
@@ -855,7 +883,10 @@ export default () => (
                       <Ul>
                         <UlLi>
                           「<Strong>階乗</Strong>」は、「
-                          <Em>1になるまで掛け算を繰り返す</Em>
+                          <Em>
+                            <EmojiNumber number={1} /> になるまで掛け算を『
+                            <Strong>繰り返す</Strong>』
+                          </Em>
                           」ということだから、
                         </UlLi>
                         <UlLi>
