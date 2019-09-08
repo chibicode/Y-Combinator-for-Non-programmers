@@ -98,12 +98,33 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>おお、サヤちゃんか。</P>
                       <P>
-                        にっくき悪魔 <Emoji>😈</Emoji>{' '}
-                        に計算箱を奪われてしまったんだ。奴が出題した問題を解かないと計算箱を返してもらえないんだけど、俺らには難しくて解けないんだよ。
+                        おお、サヤちゃんか。実は、にっくき悪魔 <Emoji>😈</Emoji>{' '}
+                        に計算箱を奪われてしまったんだ。
                       </P>
-                      <P>その問題は以下の通りさ。</P>
+                      <P>
+                        奴が出題した問題を解かないと計算箱を返してもらえないんだけど、俺らには難しくて解けないんだよ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>ふーん、どんな問題なの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        以下の弁当箱の、
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        にそれぞれ何を入れたらいいか？っていう問題なんだ。
+                      </P>
                     </>
                   )
                 }
@@ -120,7 +141,7 @@ export default () => (
               に変換できる弁当箱と合体させて
               <br />
               <H args={{ name: 'runAndConvertToMathbox' }} />
-              すると、
+              した時、
               <br />
               結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
@@ -210,7 +231,7 @@ export default () => (
                         <Em>
                           結果が <EmojiNumber number={2} /> になるか
                         </Em>
-                        確かめてみよう。
+                        確かめてみよう。どうせムリだろうけど！
                       </P>
                     </>
                   )
@@ -265,9 +286,9 @@ export default () => (
             <P>
               まず、
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアがふたつ以上あるので、一番左の
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                のペアがふたつ以上あるので、一番左の{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Em>
               <H
@@ -281,11 +302,11 @@ export default () => (
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Jsvg>
             <P>
-              続いて、また
+              続いて、また{' '}
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめたいのですが、
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアの一番下の段にひとつの料理(
                 <EmojiWithText letter="b" />
                 )しかないので不可能です。
@@ -294,27 +315,17 @@ export default () => (
             <P>
               というわけで、
               <Strong>
-                次は
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                のペアからはじめます。
+                次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアから
               </Strong>
+              はじめます。
             </P>
             <R.Uexo>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Uexo>
             <P>
               次も前回と同じく、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアからはじめたいのですが、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアの一番下の段にひとつの料理(
-              <EmojiWithText letter="b" />
-              )しかないので不可能です。
-            </P>
-            <P>
-              というわけで、再度
               <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Strong>
             </P>
@@ -322,7 +333,9 @@ export default () => (
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Hdhy>
             <P>つまり、最終的に以下のようになりました！</P>
-            <R.Rhcv />
+            <R.Rhcv>
+              <H args={{ name: 'play' }} /> した結果
+            </R.Rhcv>
             <BubbleQuotes
               quotes={[
                 {
@@ -467,7 +480,7 @@ export default () => (
                         たとえば、
                         <Strong>
                           <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={1} /> も計算できるのかどうか、
+                          <EmojiNumber number={1} /> も計算できるのかどうか
                         </Strong>
                         確かめてみないと。
                       </P>
@@ -493,10 +506,8 @@ export default () => (
                       <P>
                         じゃあ、
                         <Em>
-                          <EmojiNumber number={2} />{' '}
-                          に変換できる弁当箱と合体させてみる
+                          <EmojiNumber number={2} /> に変換できる弁当箱と、
                         </Em>
-                        ね！
                       </P>
                       <R.Spga>
                         <H
@@ -507,6 +518,10 @@ export default () => (
                           }}
                         />
                       </R.Spga>
+                      <P>サヤが考えた弁当箱を合体させてみるね！</P>
+                      <R.Qrfw>
+                        <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱
+                      </R.Qrfw>
                       <P>
                         合体したものを
                         <H args={{ name: 'runAndConvertToMathbox' }} />
@@ -564,7 +579,9 @@ export default () => (
                 }
               ]}
             />
-            <R.Zsxo />
+            <R.Zsxo>
+              <H args={{ name: 'play' }} /> した結果
+            </R.Zsxo>
             <BubbleQuotes
               quotes={[
                 {
@@ -788,13 +805,12 @@ export default () => (
                         はありますよ。
                       </P>
                       <P>
-                        <Strong>
+                        <Em>
                           試しに、
-                          <EmojiNumber number={3} />
+                          <EmojiNumber number={3} />{' '}
                           に変換できるこちらの弁当箱と合体させて
-                          <H args={{ name: 'play' }} />
-                          してみましょう。
-                        </Strong>
+                          <H args={{ name: 'play' }} /> してみましょう。
+                        </Em>
                       </P>
                       <R.Cjxe>
                         <H
@@ -806,7 +822,7 @@ export default () => (
                         />
                       </R.Cjxe>
                       <P>
-                        すなわち、
+                        実行したとき、
                         <Strong>
                           結果が <EmojiNumber number={4} />{' '}
                           に変換できる弁当箱になれば、
@@ -844,6 +860,11 @@ export default () => (
                           }}
                         />
                       </R.Zxkq>
+                      <P>
+                        つまり、
+                        <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} /> を計算できたというわけです。
+                      </P>
                     </>
                   )
                 },
@@ -852,16 +873,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、
-                        <EmojiNumber number={3} /> が <EmojiNumber number={4} />{' '}
-                        になったので、やっぱりこちらの弁当箱にも
+                        なるほど、やっぱりこちらの弁当箱にも
                         <H args={{ name: 'plusOneEffect' }} />
                         があるということか。
                       </P>
                       <R.Udxn>
-                        サヤちゃんの弁当箱と同じく、
+                        サヤちゃんの弁当箱と同じく、こちらの
                         <br />
-                        こちらの弁当箱にも
+                        弁当箱にも
                         <H args={{ name: 'plusOneEffect' }} />
                         がある
                       </R.Udxn>
