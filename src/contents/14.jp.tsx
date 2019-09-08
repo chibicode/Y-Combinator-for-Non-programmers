@@ -27,9 +27,10 @@ export default () => (
             <P>
               前回は、
               <Em>
-                計算箱の「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-                」を、<Emoji>👧🏻</Emoji>{' '}
-                サヤちゃんが考えた以下の弁当箱を使えば再現できるかも？
+                <Emoji>👧🏻</Emoji>{' '}
+                サヤちゃんが考えた以下の弁当箱を使えば、計算箱の「
+                <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                」を再現できるかも？
               </Em>
               というところで終わりました。
             </P>
@@ -79,7 +80,8 @@ export default () => (
               ]}
             />
             <R.Osxt>
-              <EmojiNumber number={3} /> と <EmojiNumber number={2} /> に
+              <Emoji>🅰️</Emoji> に <EmojiNumber number={3} />、<Emoji>🅱️</Emoji>{' '}
+              に <EmojiNumber number={2} /> を入れる
             </R.Osxt>
             <BubbleQuotes
               quotes={[
@@ -90,16 +92,43 @@ export default () => (
                       <P>
                         では、
                         <Em>
-                          これを今回は
-                          <H args={{ name: 'fastForward' }} />{' '}
-                          してみるね！早送りをすることで、どういう原理になっているかが分かるかも。
+                          これを今回は早送りしてみるね！早送りをすることで、どういう原理になっているかが分かるかも。
                         </Em>
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>うむ、やってみよう！</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>早送りしてみる</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
-                        時間がかかるので、何度も止めながらやっていくよ。というわけで、
+                        というわけで、
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                       <Ul>
+                        <UlLi>
+                          説明のために、何度も止めながらやっていくよ。
+                        </UlLi>
                         <UlLi>
                           複雑なので、<Em>目で追わなくても大丈夫だよ！</Em>
                         </UlLi>
@@ -231,7 +260,7 @@ export default () => (
         )
       },
       {
-        title: <>2回目は…</>,
+        title: <>2周目は…</>,
         content: (
           <>
             <BubbleQuotes
@@ -285,7 +314,11 @@ export default () => (
               ]}
             />
             <R.Tfsi>
-              <Em>黄色の部分は、前回省略したのとまったく同じ</Em>
+              <Em>
+                黄色の部分は、前回省略したのと
+                <br />
+                まったく同じ
+              </Em>
             </R.Tfsi>
             <BubbleQuotes
               quotes={[
@@ -378,7 +411,7 @@ export default () => (
                           <InlineBorder type="condition" /> に入っていた数字は、
                           <EmojiNumber number={3} /> から{' '}
                           <EmojiNumber number={2} /> に「
-                          <Strong>1減った</Strong>」というわけだよね。
+                          <Strong>1減った</Strong>」というわけか。
                         </Em>
                       </P>
                     </>
@@ -423,7 +456,7 @@ export default () => (
         )
       },
       {
-        title: <>3回目は…</>,
+        title: <>3周目は…</>,
         content: (
           <>
             <BubbleQuotes
@@ -596,7 +629,7 @@ export default () => (
         )
       },
       {
-        title: <>4回目。これが最後！</>,
+        title: <>4周目。これが最後！</>,
         content: (
           <>
             <BubbleQuotes
@@ -804,7 +837,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        上のやつは、
+                        これは…
                         <CustomEmoji type="plusOne" /> を{' '}
                         <EmojiNumber number={3} />{' '}
                         回繰り返すから、以下のように「
