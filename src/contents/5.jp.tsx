@@ -104,7 +104,18 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Cvtc>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や{' '}
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+              という数字が
+              <br />
+              左端に表示されているのにも注目
+            </R.Cvtc>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (
@@ -126,7 +137,7 @@ export default () => (
                       <P>
                         そして
                         <Em>
-                          説明した後に、
+                          解き方を説明した後に、
                           <H args={{ name: 'yesNoQuiz' }} />
                           を出題し、お前たちに自力で解いてもらう
                         </Em>
@@ -151,7 +162,7 @@ export default () => (
       {
         title: (
           <>
-            先に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアに注目
+            先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアに注目
           </>
         ),
         content: (
@@ -161,8 +172,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を解く際には、まず
               <Strong>
-                左上と左下に
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                左上と左下に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 の印がある部分に注目します。
               </Strong>
             </P>
@@ -172,6 +182,12 @@ export default () => (
                 <Emoji>🍱</Emoji>,
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
               ]}
+              description={
+                <>
+                  先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                  のペアに注目
+                </>
+              }
             />
             <P>
               <H args={{ name: 'pressNext' }} />
@@ -184,9 +200,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                        のペアがピンク色の
-                        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                        のペアがピンク色の{' '}
+                        <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
                         になり、一番上の背景が暗い色{' '}
                         <InlineBackground bgColor={'indigo50'} /> になった！
                       </P>
@@ -194,20 +210,20 @@ export default () => (
                   )
                 },
                 {
-                  type: 'thinking',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
-                        なるほど、
+                        そう。これは、
                         <Em>
                           暗い色 <InlineBackground bgColor={'indigo50'} />{' '}
                           の部分は無視して、
                           <InlinePrioritiesLabel revert>
                             1
-                          </InlinePrioritiesLabel>
+                          </InlinePrioritiesLabel>{' '}
                           のペアの部分に注目する
                         </Em>
-                        ということか。
+                        ということだ。
                       </P>
                     </>
                   )
@@ -230,7 +246,7 @@ export default () => (
         content: (
           <>
             <P>
-              次に、<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              次に、<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
               のペアの部分に{' '}
               <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
@@ -266,6 +282,13 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />,
                 <EmojiForLetter letter="b" />
               ]}
+              description={
+                <>
+                  下段の真ん中には{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  をつける
+                </>
+              }
             />
             <BubbleQuotes
               quotes={[
@@ -370,9 +393,17 @@ export default () => (
               <Em>
                 どれも{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                は関係ありません。だから、無視していいのです。
+                は関係ありませんよね。だから、
+                <Strong>次のいくつかのステップの間は無視していい</Strong>
+                のです。
               </Em>
             </P>
+            <R.Pbhg>
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> の
+              <EmojiWithText letter="b" /> は、
+              <br />
+              次のいくつかのステップの間は無視していい
+            </R.Pbhg>
             <BubbleQuotes
               quotes={[
                 {
@@ -399,15 +430,28 @@ export default () => (
           <>
             <P>
               では、<InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
-              のペア部分を終わらせましょう。前回の復習になります。
+              のペア部分を終わらせましょう。やり方は前回と同じです。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>,
+                <Emoji>🍱</Emoji>,
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              ]}
+              description={
+                <>
+                  <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
+                  のペア部分を終わらせる
+                </>
+              }
+            />
             <P>
               まず、
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                が一致するかチェックし、一致した料理には、
-                <Emoji>✅</Emoji>を付けます。
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                が一致するかチェックし、一致した料理には <Emoji>✅</Emoji>{' '}
+                を付けます。
               </Strong>
               <H args={{ name: 'pressNext' }} />
             </P>
@@ -415,9 +459,9 @@ export default () => (
             <P>
               続いて、
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                の料理を、一致した
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                の料理を、一致した{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 の部分にコピーします。
               </Strong>
             </P>
@@ -425,8 +469,8 @@ export default () => (
             <P>
               最後に、
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 が消えます。
               </Strong>
             </P>
