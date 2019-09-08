@@ -1292,7 +1292,10 @@ export default () => (
             <P>
               せっかく計算箱を返してもらえるチャンスなのに、問題が難しくて村人は苦労しているようですね。
             </P>
-            <EmojiSeparator emojis={['😭', '😈', '🐶']} />
+            <EmojiSeparator
+              emojis={['❓', '😭', '❓']}
+              description={<>難しすぎて見当もつかない！</>}
+            />
             <P>
               しかし、<Strong>次のページで答えが判明します。</Strong>
               ぜひ先に進んでみてください！
