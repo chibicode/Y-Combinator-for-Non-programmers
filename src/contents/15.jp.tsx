@@ -1,6 +1,13 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  InlineHeader,
+  Strong,
+  Em,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -874,11 +881,44 @@ export default () => (
                         <Em>
                           前のページで登場した弁当箱と、右上の部分が微妙に違う
                         </Em>
-                        なあ…よく分からないけど。
+                        なあ…
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Spki>
+                    <InlineHeader>
+                      前回の弁当箱
+                      <br />(<Emoji>🅰️</Emoji>
+                      <Emoji>➕</Emoji>
+                      <Emoji>🅱️</Emoji> を計算)
+                      <br />
+                      の右上部分:
+                    </InlineHeader>
+                  </R.Spki>
+                </>
+              }
+              right={
+                <>
+                  <R.Ddrg>
+                    <InlineHeader>
+                      今回の弁当箱
+                      <br />
+                      (階乗を計算)
+                      <br />
+                      の右上部分:
+                    </InlineHeader>
+                  </R.Ddrg>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (

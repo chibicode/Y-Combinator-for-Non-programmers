@@ -2124,3 +2124,24 @@ export const qefa = initializeDoneExpressionContainer({
 export const nndd = initializeDoneExpressionContainer({
   shorthandFunc: 'add'
 })
+
+export const uiwq = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'f',
+  trueCase: { shorthandNumber: 1, initialHighlight: true },
+  falseCase: [
+    { name: 'mult', highlighted: true },
+    { name: 'f', highlighted: true },
+    ['a', [{ shorthandFunc: 'pred' }, 'f']]
+  ]
+})
+
+export const roso = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'f',
+  trueCase: { name: 'A', highlighted: true },
+  falseCase: [
+    { shorthandFunc: 'add', initialHighlight: true },
+    ['a', [{ shorthandFunc: 'pred' }, 'f']]
+  ]
+})

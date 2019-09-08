@@ -2707,3 +2707,17 @@ export const unxf: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.glvb,
   showPriorities: true
 }
+
+export const ddrg: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.uiwq,
+  showPriorities: true,
+  variableSize: 'sm'
+}
+
+export const spki: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.roso,
+  showPriorities: true,
+  variableSize: 'sm'
+}
