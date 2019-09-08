@@ -202,6 +202,11 @@ const ExpressionRunnerPrecomputed = ({
               {children}
             </ExpressionRunnerCaptionWrapper>
           )}
+          {isPlaying && (
+            <ExpressionRunnerCaptionWrapper>
+              <H args={{ name: 'fastForwarding' }} />
+            </ExpressionRunnerCaptionWrapper>
+          )}
           {progessBarVisible && (
             <div
               css={css`
