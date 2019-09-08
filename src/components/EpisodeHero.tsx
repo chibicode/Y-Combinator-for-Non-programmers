@@ -115,7 +115,7 @@ const EpisodeHero = () => {
             margin: ${spaces('-1')} 0 ${spaces(1.5)};
             text-align: center;
             font-size: ${fontSizes(0.75)};
-            color: ${colors('grey500')};
+            color: ${colors('grey600')};
           `}
         >
           <H args={{ name: 'prevAndNextLinks' }} />

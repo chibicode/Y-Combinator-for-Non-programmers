@@ -9,7 +9,7 @@ import { githubRepo } from 'src/lib/meta'
 
 const linkClasses = css`
   text-decoration: none;
-  color: ${colors('grey500')};
+  color: ${colors('grey600')};
 
   &:hover,
   &:active {
@@ -26,7 +26,7 @@ const EpisodePageFooter = () => {
         background: ${colors('grey100')};
         text-align: center;
         padding: ${spaces(1)} 0;
-        color: ${colors('grey500')};
+        color: ${colors('grey600')};
         font-size: ${fontSizes(0.7)};
       `}
     >
