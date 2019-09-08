@@ -28,6 +28,7 @@ const Modal = ({
         background: ${colors('indigo30090')};
         z-index: ${zIndices('modal')};
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       `}
       ref={sectionEl}
       onClick={onClick}

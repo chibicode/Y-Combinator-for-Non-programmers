@@ -55,6 +55,24 @@ const titleCss = css`
   }
 `
 
+const buttonCommonStyle = css`
+  color: ${colors('white')};
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  background: ${colors('indigo300')};
+  &:hover {
+    background: ${colors('indigo400')};
+  }
+`
+
 const TocModal = ({ hideModal }: { hideModal: () => void }) => {
   return (
     <Modal onClickBackground={hideModal}>
@@ -65,29 +83,16 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
           <button
             type="button"
             onClick={hideModal}
-            css={css`
-              position: absolute;
-              right: ${spaces(0.5)};
-              top: ${spaces(0.5)};
-              padding: ${spaces(0.5)} ${spaces(0.5)};
-              color: ${colors('white')};
-              font-size: ${fontSizes(0.85)};
-              font-weight: bold;
-              line-height: 1;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-decoration: none;
-              border-radius: 0.25rem;
-              border: none;
-              background: none;
-              cursor: pointer;
-              background: ${colors('indigo300')};
-
-              &:hover {
-                background: ${colors('indigo400')};
-              }
-            `}
+            css={[
+              buttonCommonStyle,
+              css`
+                position: absolute;
+                right: ${spaces(0.5)};
+                top: ${spaces(0.5)};
+                padding: ${spaces(0.5)} ${spaces(0.5)};
+                font-size: ${fontSizes(0.85)};
+              `
+            ]}
           >
             <H args={{ name: 'tocClose' }} />
           </button>
@@ -204,6 +209,26 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
             alignCenter={false}
           />
         </InternalLink>
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          <button
+            type="button"
+            onClick={hideModal}
+            css={[
+              buttonCommonStyle,
+              css`
+                padding: ${spaces(1)} ${spaces(2)};
+                font-size: ${fontSizes(0.85)};
+              `
+            ]}
+          >
+            <H args={{ name: 'tocClose' }} />
+          </button>
+        </div>
       </Card>
     </Modal>
   )
