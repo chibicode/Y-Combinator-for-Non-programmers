@@ -367,7 +367,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          <H args={{ name: 'theAnswerIs', isYes: true }} />
+                          <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
                           だと思う！
                         </Strong>
                         変換すると <EmojiNumber number={4} /> になるはずだ。
@@ -940,8 +940,7 @@ export default () => (
                     <>
                       <P>
                         では、理由を説明しますね。まず、もともとの弁当箱を実行するとどうなるか、
-                        <H args={{ name: 'fastForward' }} />
-                        で見てみましょう。
+                        <H args={{ name: 'fastForward' }} /> で見てみましょう。
                         <H args={{ name: 'pressFastForward' }} />
                       </P>
                     </>
@@ -1127,7 +1126,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          <H args={{ name: 'theAnswerIs', isYes: false }} />
+                          <H args={{ name: 'theAnswerIs', isYes: false }} />{' '}
                           だと思う！
                         </Strong>
                         変換すると <EmojiNumber number={2} /> ではなく、

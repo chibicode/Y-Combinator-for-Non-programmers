@@ -78,7 +78,7 @@ const Explanation = ({
           <>
             <InlinePrioritiesLabel revert>
               {activePriority}
-            </InlinePrioritiesLabel>
+            </InlinePrioritiesLabel>{' '}
             のペアに注目します
           </>
         )

@@ -25,6 +25,31 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 
+const WillReturn = () => (
+  <>
+    <EmojiSeparator
+      emojis={['❓', '😈', '❓']}
+      noBottomMargin
+      description={
+        <>
+          次の中級編で難しい問題を出題する。
+          <br />
+          このページで学んだ内容で解けるはず！
+        </>
+      }
+    />
+    <EmojiSeparator
+      noTopMargin
+      nodes={[
+        <Emoji>✨</Emoji>,
+        <CustomEmoji type="mathBox" />,
+        <Emoji>✨</Emoji>
+      ]}
+      description={<>解けたら計算箱を返してやろう！</>}
+    />
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -659,8 +684,7 @@ export default () => (
                     <>
                       <P>
                         では復習のために、最初から最後まで
-                        <H args={{ name: 'fastForward' }} />
-                        で見てみよう。
+                        <H args={{ name: 'fastForward' }} /> で見てみよう。
                       </P>
                     </>
                   )
@@ -1033,26 +1057,7 @@ export default () => (
                 }
               ]}
             />
-            <EmojiSeparator
-              emojis={['❓', '😈', '❓']}
-              noBottomMargin
-              description={
-                <>
-                  次の中級編で難しい問題を出題する。
-                  <br />
-                  このページで学んだ内容で解けるはず！
-                </>
-              }
-            />
-            <EmojiSeparator
-              noTopMargin
-              nodes={[
-                <Emoji>✨</Emoji>,
-                <CustomEmoji type="mathBox" />,
-                <Emoji>✨</Emoji>
-              ]}
-              description={<>解けたら計算箱を返してやろう！</>}
-            />
+            <WillReturn />
             <BubbleQuotes
               quotes={[
                 {
@@ -1073,8 +1078,8 @@ export default () => (
       {
         title: (
           <>
-            細かい法則その1: 一番左の
-            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>のペアからはじめる
+            細かい法則その1: 一番左の{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる
           </>
         ),
         content: (
@@ -1085,21 +1090,21 @@ export default () => (
               から見ていきましょう。
             </P>
             <R.Laea>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアがふたつある
             </R.Laea>
             <P>
               <InlineHeader>細かい法則その1:</InlineHeader>{' '}
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアがふたつ以上ある場合は、左側にある
-                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                のペアがふたつ以上ある場合は、<Strong>左側にある</Strong>{' '}
+                <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Em>
             </P>
             <R.Aezk>
-              左側にある
-              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>
+              <Strong>左側にある</Strong>{' '}
+              <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
               のペアからはじめる
             </R.Aezk>
             <P>
@@ -1119,46 +1124,53 @@ export default () => (
               ]}
             />
             <P>
-              まず、上の
-              <EmojiWithText letter="a" />
-              には
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              まず、上の <EmojiWithText letter="a" /> には{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               の印がつきます。
             </P>
             <R.Igrl />
             <P>
               次に、左の
               <EmojiWithText letter="b" />
-              には
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              には <BottomRightBadge
+                inline
+                bottomRightBadgeType="funcArg"
+              />{' '}
               の印がつきます。
             </P>
             <R.Uppk />
             <P>
               そして、右の
-              <EmojiWithText letter="b" />と<EmojiWithText letter="c" />
-              には
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              <EmojiWithText letter="b" /> と<EmojiWithText letter="c" /> には{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
               の印がつきます。
             </P>
             <R.Qfbk />
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
-                        なるほど、
+                        ここでは、
+                        <EmojiWithText letter="b" /> にも{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />{' '}
+                        がついたのに注目だ。
+                      </P>
+                      <P>
                         <Strong>
-                          弁当箱の右端に接している料理にはすべて
+                          弁当箱の右端に接している料理にはすべて{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
-                          />
+                          />{' '}
                           の印がつく
                         </Strong>
-                        のか。
+                        んだ。
                       </P>
                     </>
                   )
@@ -1167,9 +1179,8 @@ export default () => (
             />
             <P>
               最後に、残った
-              <EmojiWithText letter="c" />
-              には
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              <EmojiWithText letter="c" /> には{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
               の印がつきます。
             </P>
             <R.Yfwd />
@@ -1193,11 +1204,11 @@ export default () => (
                             inline
                             bottomRightBadgeType="funcBound"
                           />{' '}
-                          のどれにも該当しない場合には
+                          のどれにも該当しない場合には{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
-                          />
+                          />{' '}
                           の印がつく
                         </Strong>
                         んだな。
@@ -1209,21 +1220,17 @@ export default () => (
             />
             <P>
               そして、
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
               にある
-              <EmojiWithText letter="b" />
-              が一致するので…
+              <EmojiWithText letter="b" /> が一致するので…
             </P>
             <R.Dtzu />
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />
-              にある
-              <EmojiWithText letter="a" />
-              が、
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />の
-              <EmojiWithText letter="b" />
-              のところにコピーされます。
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> にある
+              <EmojiWithText letter="a" /> が、
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" /> の
+              <EmojiWithText letter="b" /> のところにコピーされます。
             </P>
             <R.Vilr />
             <BubbleQuotes
@@ -1232,17 +1239,15 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど、見た目ほど複雑じゃなさそうだ。</P>
+                      <P>なるほど、けっこう難しいなあ。</P>
                     </>
                   )
                 }
               ]}
             />
-
             <P>
               では、ここからは
-              <H args={{ name: 'fastForward' }} />
-              で見ていきましょう！
+              <H args={{ name: 'fastForward' }} /> で見ていきましょう！
             </P>
             <R.Izgz />
             <BubbleQuotes
@@ -1253,8 +1258,7 @@ export default () => (
                     <>
                       <P>
                         最後は
-                        <EmojiWithText letter="a" />
-                        だけが残った！
+                        <EmojiWithText letter="a" /> だけが残った！
                       </P>
                     </>
                   )
@@ -1264,7 +1268,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだ。理解できたかな？では、ここで
+                        そうだ。理解できたかな？では、ここで{' '}
                         <H args={{ name: 'yesNoQuiz' }} />
                         の時間だ！
                       </P>
@@ -1313,18 +1317,15 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          <H args={{ name: 'theAnswerIs', isYes: false }} />
+                          <H args={{ name: 'theAnswerIs', isYes: false }} />{' '}
                           だと思う！
                         </Strong>
                         最後には
-                        <EmojiWithText letter="a" />
-                        ではなく、
-                        <EmojiWithText letter="d" />
-                        が残るはずだ。
+                        <EmojiWithText letter="a" /> ではなく、
+                        <EmojiWithText letter="d" /> が残るはずだ。
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} />
-                        で見てみよう！
+                        <H args={{ name: 'fastForward' }} /> で見てみよう！
                       </P>
                     </>
                   )
@@ -1361,53 +1362,50 @@ export default () => (
         type: 'sideNote',
         title: (
           <>
-            補足: 左端に<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            補足: 左端に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
             のペアがない場合
           </>
         ),
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />。
-            </P>
-            <P>
-              先ほどの
-              <H args={{ name: 'yesNoQuiz' }} />
+              <H args={{ name: 'lookAtThisBentoBox' }} />
+              。先ほどの <H args={{ name: 'yesNoQuiz' }} />
               で登場した弁当箱とほとんど同じですが、
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアが弁当箱の左端になく、内側だけにあります。
               </Em>
             </P>
             <R.Dhzf>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-              のペアが内側だけにある
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+              のペアが弁当箱の左端になく、
+              <br />
+              内側だけにある
             </R.Dhzf>
             <P>
               このような場合、
               <Em>
-                内側の
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアの部分からはじめます。
               </Em>
             </P>
             <R.Mhyv>
-              内側の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアからはじめる
             </R.Mhyv>
             <P>
               残りは
-              <H args={{ name: 'fastForward' }} />
-              で見てみましょう。
+              <H args={{ name: 'fastForward' }} /> で見てみましょう。
               <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Ayok />
             <P>
               まとめると、
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアが弁当箱の左端にない場合は、内側の
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                のペアが弁当箱の左端にない場合は、内側の{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめればいい
               </Em>
               のです。
@@ -1418,9 +1416,9 @@ export default () => (
       {
         title: (
           <>
-            細かい法則その2: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+            細かい法則その2: <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
             のペアのからはじめられない場合、
-            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアからはじめる
           </>
         ),
         content: (
@@ -1432,19 +1430,18 @@ export default () => (
             </P>
             <R.Gtdu>
               一番下の料理が
-              <EmojiWithText letter="b" />
-              ひとつだけ
+              <EmojiWithText letter="b" /> ひとつだけ
             </R.Gtdu>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'smile',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
-                        これも、やはり
-                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                        のペアからはじめてみるのかな？
+                        この弁当箱は、一番下の段に
+                        <EmojiWithText letter="b" />{' '}
+                        がひとつしかないのに注目だ。
                       </P>
                     </>
                   )
@@ -1454,12 +1451,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        でもその場合、
-                        <Em>
-                          一番下の段には
-                          <EmojiWithText letter="b" />
-                          しかない。
-                        </Em>
+                        たしかに…仮に{' '}
+                        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                        のペアからはじめるとしたら、
                       </P>
                       <P>
                         この
@@ -1525,7 +1519,7 @@ export default () => (
             <P>
               ということはつまり、
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめることができない
               </Em>
               、ということになります。
@@ -1556,15 +1550,17 @@ export default () => (
               ]}
             />
             <P>
-              上記のように<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlineHeader>答え:</InlineHeader> 上記のように{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアからはじめられない場合は、
               <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Strong>
             </P>
             <R.Dqey>
-              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+              <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
+              のペアからはじめる
             </R.Dqey>
             <BubbleQuotes
               quotes={[
@@ -1574,7 +1570,7 @@ export default () => (
                     <>
                       <P>
                         なるほど、
-                        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                        <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                         のペアからはじめれば、
                         <Em>
                           下の段に
@@ -1594,21 +1590,41 @@ export default () => (
                       </P>
                     </>
                   )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        その通り。
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="callArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcArg"
+                        />{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcBound"
+                        />
+                        は以下の通りになるぞ。
+                      </P>
+                    </>
+                  )
                 }
               ]}
             />
-            <P>
-              その通り。
+            <R.Oork>
               <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              は以下の通りになります。
-            </P>
-            <R.Oork />
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              はこうなる
+            </R.Oork>
             <P>
               残りは
-              <H args={{ name: 'fastForward' }} />
-              で見ていきましょう:
+              <H args={{ name: 'fastForward' }} /> で見ていきましょう:
             </P>
             <R.Diis />
             <BubbleQuotes
@@ -1623,24 +1639,11 @@ export default () => (
                         <EmojiWithText letter="b" />
                         が残った！
                       </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
                       <P>
                         <Em>
                           このふたつが残った時点で、もうこれ以上進められないから、そこで終了する
                         </Em>
                         というわけか。
-                      </P>
-                      <P>
-                        <Strong>
-                          最後に残る料理がひとつだけ、とは限らない
-                        </Strong>
-                        んだね。
                       </P>
                     </>
                   )
@@ -1650,14 +1653,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        その通りだ。では、ここで
+                        その通りだ。では、ここで{' '}
                         <H args={{ name: 'yesNoQuiz' }} />
                         の時間だ。
                       </P>
                       <P>
                         <Em>
-                          これが初級最後の
-                          <H args={{ name: 'yesNoQuiz' }} />
+                          これが初級最後の <H args={{ name: 'yesNoQuiz' }} />
                           になるぞ！
                         </Em>
                       </P>
@@ -1706,7 +1708,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          <H args={{ name: 'theAnswerIs', isYes: true }} />
+                          <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
                           だと思う！
                         </Strong>
                         最後には
@@ -1715,8 +1717,7 @@ export default () => (
                         が残るはずだ。
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} />
-                        で見てみよう！
+                        <H args={{ name: 'fastForward' }} /> で見てみよう！
                       </P>
                     </>
                   )
@@ -1738,7 +1739,7 @@ export default () => (
                         やった！最後に
                         <EmojiWithText letter="b" />と
                         <EmojiWithText letter="d" />
-                        が残ったので、<Emoji>⭕️</Emoji>が正解だ！
+                        が残ったので、<Emoji>⭕️</Emoji> が正解だ！
                       </P>
                     </>
                   )
@@ -1781,10 +1782,10 @@ export default () => (
               </OlLi>
               <OlLi>
                 <Em>
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                   のペアが終わると、
-                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel>が
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                   になるので、また繰り返す。
                 </Em>
               </OlLi>
@@ -1792,8 +1793,8 @@ export default () => (
             <R.Vdhd>3段の弁当箱</R.Vdhd>
             <Hr />
             <P>
-              <InlineHeader>細かい法則1.</InlineHeader>{' '}
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlineHeader>細かい法則1:</InlineHeader>{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアがふたつ以上ある場合は、
               <Strong>一番左のペアからはじめます。</Strong>
             </P>
@@ -1803,27 +1804,27 @@ export default () => (
             <P>
               <InlineHeader>補足:</InlineHeader>{' '}
               <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
-                のペアが弁当箱の左端にない場合は、内側の
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+                のペアが弁当箱の左端にない場合は、内側の{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめる。
               </Em>
             </P>
             <R.Mhyv>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアが弁当箱の左端にない場合は、
               <br />
-              内側の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアからはじめる
             </R.Mhyv>
             <Hr />
             <P>
-              <InlineHeader>細かい法則2.</InlineHeader>{' '}
+              <InlineHeader>細かい法則2:</InlineHeader>{' '}
               下段にひとつの料理しかなく、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアからはじめられない場合、
               <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Strong>
             </P>
@@ -1900,7 +1901,12 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <WillReturn />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'brave',
                   children: (

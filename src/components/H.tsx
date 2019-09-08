@@ -1207,10 +1207,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           下段にひとつの料理しかなく、
           <br />
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
           のペアからはじめられない場合、
           <br />
-          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>のペアからはじめる
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアからはじめる
         </>
       )
     }
@@ -1221,10 +1221,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
           のペアがふたつ以上ある場合は、
           <br />
-          一番左の<InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+          一番左の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
           のペアからはじめる
         </>
       )
