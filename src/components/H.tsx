@@ -631,8 +631,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Em>
-            <H args={{ name: 'next' }} />
-            を押してみてください:
+            <H args={{ name: 'next' }} /> を押してみてください:
           </Em>
         </>
       )

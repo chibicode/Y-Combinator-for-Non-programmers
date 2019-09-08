@@ -29,27 +29,51 @@ export const BasicRules = ({
       )}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
-    <R.Zzxj />
+    <R.Zzxj>
+      <InlineHeader>印をつける:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+      {includeFuncUnbound && (
+        <>
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+        </>
+      )}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </R.Zzxj>
     <P>
       2. <InlineHeader>一致チェック:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </P>
-    <R.Keck />
+    <R.Keck>
+      <InlineHeader>一致チェック:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+      <Emoji>✅</Emoji>
+    </R.Keck>
     <P>
       3. <InlineHeader>コピーする:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
-    <R.Qoms />
+    <R.Qoms>
+      <InlineHeader>コピーする:</InlineHeader>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <Emoji>↘️</Emoji>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+    </R.Qoms>
     <P>
       4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </P>
-    <R.Mhgm />
+    <R.Mhgm>
+      <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+    </R.Mhgm>
     <ExpressionRunnerSeparator />
     <R.Osqo />
   </>
@@ -62,7 +86,10 @@ export default () => (
         title: <>法則が分かった！</>,
         content: (
           <>
-            <EmojiSeparator emojis={['🍱', '😁', '🍱']} />
+            <EmojiSeparator
+              emojis={['🍱', '😁', '🍱']}
+              description={<>分かったぞ！</>}
+            />
             <P>
               どうやら、ラムダ村の村人たちは
               <H args={{ name: 'bentoBoxPuzzle' }} />
@@ -111,7 +138,7 @@ export default () => (
                       </P>
                       <P>
                         <Em>
-                          もしふたつの料理が<Strong>同じ</Strong>なら、
+                          もし下のふたつの料理が<Strong>同じ</Strong>なら、
                           <H args={{ name: 'play' }} />
                           したときに<Strong>上にある</Strong>料理が残る
                         </Em>
@@ -127,7 +154,8 @@ export default () => (
             </R.Vmkg>
             <ExpressionRunnerSeparator />
             <R.Osqo>
-              上にあった <EmojiWithText letter="b" /> が残る
+              上にあった
+              <EmojiWithText letter="b" /> が残る
             </R.Osqo>
             <Hr />
             <R.Wtup>
@@ -135,7 +163,8 @@ export default () => (
             </R.Wtup>
             <ExpressionRunnerSeparator />
             <R.Weoz>
-              上にあった <EmojiWithText letter="g" /> と{' '}
+              上にあった
+              <EmojiWithText letter="g" /> と
               <EmojiWithText letter="o" /> が残る
             </R.Weoz>
             <BubbleQuotes
@@ -145,8 +174,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、以下が
-                        <H args={{ name: 'yesNoQuiz' }} />
+                        そして、以下が <H args={{ name: 'yesNoQuiz' }} />
                         の1問目の答えだ。
                       </P>
                     </>
@@ -155,7 +183,8 @@ export default () => (
               ]}
             />
             <R.Dogu>
-              下の料理が同じ (両方とも <EmojiWithText letter="k" />)
+              下の料理が同じ (両方とも
+              <EmojiWithText letter="k" />)
             </R.Dogu>
             <ExpressionRunnerSeparator />
             <R.Vvjn>
@@ -215,8 +244,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、以下が
-                        <H args={{ name: 'yesNoQuiz' }} />
+                        そして、以下が <H args={{ name: 'yesNoQuiz' }} />
                         の2問目の答えだ。
                       </P>
                     </>
@@ -251,7 +279,10 @@ export default () => (
         title: <>正解！</>,
         content: (
           <>
-            <EmojiSeparator emojis={['🎉', '😈', '🎉']} />
+            <EmojiSeparator
+              emojis={['🎉', '😈', '🎉']}
+              description={<>その通り！</>}
+            />
             <BubbleQuotes
               quotes={[
                 {
@@ -317,7 +348,18 @@ export default () => (
                       <P>法則を明確にする？どういうこと？</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>法則を明確にする</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
@@ -348,6 +390,27 @@ export default () => (
                       <P>
                         さらに複雑なパズルを解くには、もっと法則をハッキリさせる、すなわち明確化する必要があるんだ。
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['✅', '🍱', '✅']}
+              description={
+                <>
+                  もっと法則を明確にしないと
+                  <br />
+                  複雑なパズルを解けない
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         <Em>
                           というわけで、これから
@@ -407,7 +470,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>続いて、それぞれのステップについて解説していくぞ。</P>
+                      <P>では、それぞれのステップについて解説していくぞ。</P>
                     </>
                   )
                 }
@@ -438,10 +501,13 @@ export default () => (
               <Strong>
                 上の料理には{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                、左の料理には
+                、左の料理には{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                、右の料理には
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                、右の料理には{' '}
+                <BottomRightBadge
+                  inline
+                  bottomRightBadgeType="funcBound"
+                />{' '}
                 の印をつけます。
               </Strong>
             </P>
@@ -451,6 +517,14 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                  の印をつける
+                </>
+              }
             />
             <P>
               <H args={{ name: 'pressNext' }} />
@@ -463,23 +537,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiWithText letter="b" />に
+                        <EmojiWithText letter="b" />に{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
-                        />
+                        />{' '}
                         の印が、下の
                         <EmojiWithText letter="a" />
-                        ふたつにそれぞれ
+                        ふたつにそれぞれ{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />
-                        と
+                        />{' '}
+                        と{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
-                        />
+                        />{' '}
                         の印がついた！
                       </P>
                     </>
