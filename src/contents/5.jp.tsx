@@ -781,7 +781,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          <H args={{ name: 'theAnswerIs', isYes: true }} />
+                          <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
                           だと思う！
                         </Strong>
                         最後には
@@ -789,8 +789,7 @@ export default () => (
                         が残るはずだ。
                       </P>
                       <P>
-                        <H args={{ name: 'fastForward' }} />
-                        で見てみよう！
+                        <H args={{ name: 'fastForward' }} /> で見てみよう！
                       </P>
                     </>
                   )
@@ -811,7 +810,7 @@ export default () => (
                       <P>
                         やった！最後に
                         <EmojiWithText letter="h" />
-                        が残ったので、<Emoji>⭕️</Emoji>が正解だ！
+                        が残ったので、<Emoji>⭕️</Emoji> が正解だ！
                       </P>
                     </>
                   )
@@ -854,7 +853,21 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  弁当箱の「
+                  <Strong>細かい法則</Strong>
+                  」？
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'thinking',
                   children: (
@@ -882,7 +895,7 @@ export default () => (
               ]}
             />
             <R.Laea>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアがふたつある
             </R.Laea>
             <BubbleQuotes
@@ -894,7 +907,7 @@ export default () => (
                       <P>
                         今まで見たことない形のパズルだ。
                         <Strong>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアがふたつある
                         </Strong>
                         なあ…
@@ -937,16 +950,50 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>細かい法則を知らないと解けない</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'devil',
                   children: (
                     <>
                       <P>
-                        そうだ。こういったパズルを解くには、これから紹介する弁当箱の「
+                        上で紹介したようなパズルを解くには、これから紹介する弁当箱の「
                         <Strong>細かい法則</Strong>
                         」を知っておかないといけない。
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  弁当箱の「
+                  <Strong>細かい法則</Strong>
+                  」を
+                  <br />
+                  知らないと解けない
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         <Em>その法則はふたつある。</Em>
                         順番に紹介していこう！もちろん、
@@ -983,13 +1030,37 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <EmojiSeparator
+              emojis={['❓', '😈', '❓']}
+              noBottomMargin
+              description={
+                <>
+                  次の中級編で難しい問題を出題する。
+                  <br />
+                  このページで学んだ内容で解けるはず！
+                </>
+              }
+            />
+            <EmojiSeparator
+              noTopMargin
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="mathBox" />,
+                <Emoji>✨</Emoji>
+              ]}
+              description={<>解けたら計算箱を返してやろう！</>}
+            />
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'surprised',
                   children: (
                     <>
                       <P>
-                        え、ということはもうすぐ返してもらえるのか！じゃあ、あと少し頑張ろう！
+                        え、ということはもうすぐ計算箱を返してもらえるのか！じゃあ、あと少し頑張ろう！
                       </P>
                     </>
                   )

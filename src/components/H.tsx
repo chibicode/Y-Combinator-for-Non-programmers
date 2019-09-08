@@ -690,8 +690,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <H args={{ name: 'question' }} /> 上の弁当箱を
-          <H args={{ name: 'play' }} />
-          すると、<Strong>最終的に下のようになるでしょうか？</Strong>
+          <H args={{ name: 'play' }} /> すると、
+          <Strong>最終的に下のようになるでしょうか？</Strong>
         </>
       )
     }
