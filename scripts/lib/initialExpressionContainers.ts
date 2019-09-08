@@ -1187,9 +1187,21 @@ export const eryp = initializeExpressionContainer(
     'c',
     'd',
     'e',
-    { shorthandNumberAfterConvert: 'number', shorthandNumber: 3 },
-    { shorthandNumberAfterConvert: 'number', shorthandNumber: 1 },
-    { shorthandNumberAfterConvert: 'number', shorthandNumber: 2 }
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 3,
+      initialHighlight: true
+    },
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 1,
+      initialHighlight: true
+    },
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 2,
+      initialHighlight: true
+    }
   )
 )
 

@@ -147,15 +147,25 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>再現できてるか確かめよう</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'saya',
                   children: (
                     <>
                       <P>
-                        うん。
                         <Em>
-                          まず、一番下の「
+                          まず、わたしの弁当箱の一番下の「
                           <Strong>
                             <CustomEmoji type="blankNumberGrey" />{' '}
                             に変換できる弁当箱
@@ -428,7 +438,9 @@ export default () => (
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Sdta>
-              <Emoji>👧🏻</Emoji> 弁当箱で再現してみた！
+              <Emoji>👧🏻</Emoji> サヤちゃんが弁当箱で再現してみた！
+              <br />
+              <Strong>果たして、これが正解なのか？</Strong>
             </R.Sdta>
             <BubbleQuotes
               quotes={[
@@ -471,7 +483,8 @@ export default () => (
                       <Ul>
                         <UlLi>
                           <Em>
-                            計算箱の <CustomEmoji type="blankNumberPink" />{' '}
+                            条件分岐の機能がある計算箱の{' '}
+                            <CustomEmoji type="blankNumberPink" />{' '}
                             <CustomEmoji type="blankNumberGrey" />{' '}
                             <CustomEmoji type="blankNumberPurple" /> に、
                           </Em>
@@ -492,7 +505,16 @@ export default () => (
                 }
               ]}
             />
+            <R.Rhoa>
+              <CustomEmoji type="blankNumberPink" />{' '}
+              <CustomEmoji type="blankNumberGrey" />{' '}
+              <CustomEmoji type="blankNumberPurple" /> の部分に、
+            </R.Rhoa>
+            <ExpressionRunnerSeparator />
             <R.Zdpf>
+              <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
+              <EmojiNumber number={3} /> を入れた場合、
+              <br />
               <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
               ではないので…
             </R.Zdpf>
@@ -531,11 +553,18 @@ export default () => (
                 }
               ]}
             />
+            <R.Sdta>
+              <Emoji>👧🏻</Emoji> サヤの弁当箱の…
+            </R.Sdta>
+            <ExpressionRunnerSeparator />
             <R.Jbqw>
-              <CustomEmoji type="blankNumberPink" />{' '}
-              <CustomEmoji type="blankNumberGrey" />{' '}
-              <CustomEmoji type="blankNumberPurple" /> に{' '}
-              <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
+              <CustomEmoji type="blankNumberPink" /> (一番上)に{' '}
+              <EmojiNumber number={1} /> を、
+              <br />
+              <CustomEmoji type="blankNumberGrey" /> (一番下)に{' '}
+              <EmojiNumber number={2} /> を、
+              <br />
+              <CustomEmoji type="blankNumberPurple" /> (上から二番目)に{' '}
               <EmojiNumber number={3} /> を入れてみた
             </R.Jbqw>
             <ExpressionRunnerSeparator />
@@ -546,6 +575,31 @@ export default () => (
                 になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
               </Em>
             </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なるほど。これを実行して計算箱に変換したときに{' '}
+                        <EmojiNumber number={1} /> になれば…
+                      </P>
+                      <P>
+                        サヤちゃんの弁当箱が条件分岐の弁当箱を再現できていると見て間違いないな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>では確かめてみよう！</>,
+        content: (
+          <>
             <BubbleQuotes
               quotes={[
                 {
@@ -643,10 +697,27 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>お見事！サヤさん、正解です！</P>
+                      <P>お見事！サヤちゃん、正解です！</P>
+                      <P>
+                        サヤちゃんの弁当箱は、「<Strong>条件分岐の機能</Strong>{' '}
+                        <Emoji>↕️</Emoji>」を再現しています！
+                      </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Rhoa>
+              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」は…
+            </R.Rhoa>
+            <ExpressionRunnerSeparator />
+            <R.Sdta>
+              <Emoji>👧🏻</Emoji> サヤちゃんの弁当箱で
+              <br />
+              再現できている！
+            </R.Sdta>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'saya',
                   children: (
@@ -673,14 +744,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Rhoa>
-              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」は…
-            </R.Rhoa>
-            <ExpressionRunnerSeparator />
             <R.Fton>
               以下の法則に当てはまる弁当箱で
               <br />
-              再現できる
+              あれば、条件分岐の機能を再現できる
             </R.Fton>
             <BubbleQuotes
               quotes={[
@@ -732,11 +799,11 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、条件分岐の機能を再現できたのはいいけど…</P>
+                      <P>うーん、条件分岐の機能を再現できたのはいいとして…</P>
                       <P>
-                        俺たちがやらないといけないのは、「
+                        俺たちがやりたいのは、「
                         <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-                        」を弁当箱で再現することだよね。
+                        」を弁当箱で再現することなんだけど…
                       </P>
                     </>
                   )
@@ -784,7 +851,11 @@ export default () => (
               ]}
             />
             <EmojiSeparator
-              emojis={['🔁', '🐶', '↕️']}
+              nodes={[
+                <Emoji>🔁</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>↕️</Emoji>
+              ]}
               description={
                 <>
                   「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
