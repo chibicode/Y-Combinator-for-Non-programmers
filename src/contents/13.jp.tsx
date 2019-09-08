@@ -163,7 +163,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ううん、そんなことはしてないよ。じゃあ、どうやって解いたかを教えてあげるね！
+                        ううん、そんなことはしていないよ。じゃあ、どうやって解いたかを教えてあげるね！
                       </P>
                     </>
                   )
@@ -174,7 +174,7 @@ export default () => (
         )
       },
       {
-        title: <>計算箱に置き換える</>,
+        title: <>計算箱に置き換える・その1</>,
         content: (
           <>
             <BubbleQuotes
@@ -270,7 +270,18 @@ export default () => (
                       <P>なるほど…！</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>計算箱に置き換える・その2</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'saya',
                   children: (
@@ -331,7 +342,18 @@ export default () => (
                       <P>なるほど、だいぶシンプルになってきたぞ…</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>計算箱に置き換える・その3</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'saya',
                   children: (
