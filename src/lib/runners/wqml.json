@@ -19,7 +19,7 @@
         },
         "func": {
           "arg": {
-            "name": "c",
+            "name": "b",
             "highlightType": "active",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "callArg",

@@ -22,7 +22,7 @@ const TwoColGrid = ({
         `,
       !noBottomNegativeMargin &&
         css`
-          margin-top: ${spaces('-0.75')};
+          margin-bottom: ${spaces('-1.5')};
         `
     ]}
   >

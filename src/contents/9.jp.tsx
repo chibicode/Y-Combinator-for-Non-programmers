@@ -180,7 +180,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        理由はもちろん、
+                        理由は、
                         <Em>以下の法則に沿っていないからです。</Em>
                       </P>
                       <R.Eozk>
@@ -408,7 +408,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、上のように{' '}
+                        実は、このように{' '}
                         <Strong>
                           <BottomRightBadge
                             inline
@@ -454,7 +454,14 @@ export default () => (
                     実行結果が狂う
                   </Strong>
                   <br />
-                  (この場合は <EmojiWithText letter="b" /> が問題)
+                  (先ほどの場合は
+                  <EmojiWithText letter="b" /> が<br />
+                  <BottomRightBadge
+                    inline
+                    bottomRightBadgeType="callArg"
+                  /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  両方にある)
                 </>
               }
             />
@@ -549,8 +556,7 @@ export default () => (
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    が違う <EmojiForLetter letter="c" />{' '}
-                    <EmojiForLetter letter="b" />
+                    が違う
                   </R.Oukl>
                   <ExpressionRunnerSeparator />
                   <R.Etae></R.Etae>
@@ -559,7 +565,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <R.Yabb></R.Yabb>
                   <ExpressionRunnerSeparator />
-                  <R.Hbbv></R.Hbbv>
+                  <R.Hbbv>下の料理が違う</R.Hbbv>
                 </>
               }
               right={
@@ -571,8 +577,7 @@ export default () => (
                       inline
                       bottomRightBadgeType="funcUnbound"
                     />{' '}
-                    が同じ <EmojiForLetter letter="b" />{' '}
-                    <EmojiForLetter letter="b" />
+                    が同じ
                   </R.Rypq>
                   <ExpressionRunnerSeparator />
                   <R.Wqml></R.Wqml>
@@ -581,7 +586,7 @@ export default () => (
                   <ExpressionRunnerSeparator />
                   <R.Osff></R.Osff>
                   <ExpressionRunnerSeparator />
-                  <R.Fxok></R.Fxok>
+                  <R.Fxok>下の料理が同じ</R.Fxok>
                 </>
               }
             />
@@ -593,7 +598,7 @@ export default () => (
                     <>
                       <P>
                         <Strong>
-                          左側は、下のふたつが違うけど、右側は下のふたつが同じになった！
+                          左側は、下のふたつの料理が違うけど、右側は下のふたつの料理が同じになった！
                         </Strong>
                       </P>
                     </>
@@ -644,6 +649,52 @@ export default () => (
                   <R.Veft></R.Veft>
                   <ExpressionRunnerSeparator />
                   <R.Bdme></R.Bdme>
+                  <ExpressionRunnerSeparator />
+                  <R.Ivol></R.Ivol>
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        最初と最後だけをピックアップすると、以下のようになります。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <TwoColGrid
+              left={
+                <>
+                  <R.Oukl>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    が違う
+                  </R.Oukl>
+                  <ExpressionRunnerSeparator />
+                  <R.Yxel></R.Yxel>
+                </>
+              }
+              right={
+                <>
+                  <R.Rypq>
+                    <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                    と{' '}
+                    <BottomRightBadge
+                      inline
+                      bottomRightBadgeType="funcUnbound"
+                    />{' '}
+                    が同じ
+                  </R.Rypq>
                   <ExpressionRunnerSeparator />
                   <R.Ivol></R.Ivol>
                 </>

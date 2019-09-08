@@ -1539,7 +1539,8 @@ export const wqml: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.kipz,
   showPriorities: true,
   initialState: 'betaReducePreviewBefore',
-  highlightOverrideActiveAfterStart: true
+  highlightOverrideActiveAfterStart: true,
+  skipAlphaConvert: true
 }
 
 export const jwdn: ExpressionRunnerShorthandConfig = {
