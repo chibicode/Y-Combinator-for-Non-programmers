@@ -211,9 +211,9 @@ const Explanation = ({
       } else {
         return (
           <>
-            <BottomRightBadge bottomRightBadgeType="callArg" inline />
-            を一致した
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+            を一致した{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
             の部分に
             <H args={{ name: 'copy' }} highlightType="none" />
           </>

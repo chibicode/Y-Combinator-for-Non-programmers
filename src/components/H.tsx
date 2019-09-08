@@ -650,8 +650,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Em>
-            <H args={{ name: 'fastForward' }} />
-            を押してみて{!args.girl && <>ください</>}
+            <H args={{ name: 'fastForward' }} /> を押してみて
+            {!args.girl && <>ください</>}
             {args.mentionRightArrow || args.skippable
               ? '。'
               : args.skipColon
@@ -1066,7 +1066,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Em highlightType="pink">
-            一回ずつ進める場合は、<Emoji>➡️</Emoji>を押してください。
+            一回ずつ進める場合は、<Emoji>➡️</Emoji> を押してください。
           </Em>
         </>
       )

@@ -578,10 +578,10 @@ export default () => (
             <P>
               続いて、
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />と
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
                 が一致するかチェックし、一致した料理には、
-                <Emoji>✅</Emoji>を付けます。
+                <Emoji>✅</Emoji> を付けます。
               </Strong>
             </P>
             <EmojiSeparator
@@ -590,6 +590,13 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
                 <Emoji>✅</Emoji>
               ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                  が一致したら <Emoji>✅</Emoji> をつける
+                </>
+              }
             />
             <P>
               <H args={{ name: 'pressNext' }} />
@@ -605,14 +612,13 @@ export default () => (
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />
-                        と
+                        />{' '}
+                        と{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
-                        />
-                        の
-                        <EmojiWithText letter="a" />に<Emoji>✅</Emoji>
+                        />{' '}
+                        の<EmojiWithText letter="a" /> に <Emoji>✅</Emoji>{' '}
                         がついた！
                       </P>
                     </>
@@ -637,9 +643,9 @@ export default () => (
             <P>
               続いて、
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                の料理を、一致した
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                の料理を、一致した{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 の部分にコピーします。
               </Strong>
             </P>
@@ -649,6 +655,14 @@ export default () => (
                 <Emoji>↘️</Emoji>,
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  を一致した{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                  にコピー
+                </>
+              }
             />
             <P>
               <H args={{ name: 'pressNext' }} />
@@ -694,8 +708,8 @@ export default () => (
             <P>
               最後に、
               <Strong>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 が消えます。
               </Strong>
             </P>
@@ -705,6 +719,13 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                  が消える
+                </>
+              }
             />
             <P>
               <H args={{ name: 'pressNext' }} />
@@ -720,13 +741,13 @@ export default () => (
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
-                        />
-                        と
+                        />{' '}
+                        と{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />
-                        が<Emoji>💥</Emoji>になった！
+                        />{' '}
+                        が <Emoji>💥</Emoji> になった！
                       </P>
                     </>
                   )
@@ -735,8 +756,7 @@ export default () => (
             />
             <P>
               そして、最終的に
-              <EmojiWithText letter="b" />
-              だけになります。
+              <EmojiWithText letter="b" /> だけになります。
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Kbnn />
@@ -766,47 +786,43 @@ export default () => (
             />
             <R.Rakk>
               上にふたつの料理がある
-              <br />(<EmojiWithText letter="g" />と
+              <br />(<EmojiWithText letter="g" /> と
               <EmojiWithText letter="o" />)
             </R.Rakk>
             <P>
               この場合、上にある
-              <EmojiWithText letter="g" />と
-              <EmojiWithText letter="o" />
-              には
+              <EmojiWithText letter="g" /> と
+              <EmojiWithText letter="o" /> には
               <Strong>
-                両方とも
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                両方とも{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 の印がつきます。
               </Strong>
             </P>
             <R.Ycxr>
-              両方とも
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              両方とも{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
               の印がつく
             </R.Ycxr>
             <P>
               そして、
-              <EmojiWithText letter="f" />
-              が一致したあとに…
+              <EmojiWithText letter="f" /> が一致したあとに…
             </P>
             <R.Dkdt />
             <P>
-              <EmojiWithText letter="g" />と
-              <EmojiWithText letter="o" />が
+              <EmojiWithText letter="g" /> と
+              <EmojiWithText letter="o" /> が
               <Strong>両方ともコピーされます。</Strong>
             </P>
             <R.Sxnt />
             <P>
               最後に、
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              が消え…
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> が消え…
             </P>
             <R.Issq />
             <P>
-              <EmojiWithText letter="g" />と
-              <EmojiWithText letter="o" />
+              <EmojiWithText letter="g" /> と <EmojiWithText letter="o" />{' '}
               が残るのです。
             </P>
             <R.Thbw />
@@ -816,8 +832,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'fastForward' }} />
-            で見てみましょう
+            <H args={{ name: 'fastForward' }} /> で見てみましょう
           </>
         ),
         content: (
@@ -828,7 +843,10 @@ export default () => (
               <H args={{ name: 'fastForward' }} /> 機能を使うと、
               <Em>各ステップを自動で見ていくことができます。</Em>
             </P>
-            <EmojiSeparator emojis={['⏩', '🍱', '⏩']} />
+            <EmojiSeparator
+              emojis={['⏩', '🍱', '⏩']}
+              description={<>早送りすると、各ステップが自動で見れる</>}
+            />
             <P>
               こちらは、先ほどの例です。
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
