@@ -39,11 +39,10 @@ export default () => (
               ]}
             />
             <P>
-              中級編では、ラムダ村の村人たちは計算箱の「
+              中級編では、<Emoji>😈</Emoji> 悪魔から計算箱の「
               <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
               」と「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
-              」を <Emoji>😈</Emoji>{' '}
-              悪魔から返してもらいました。どちらも、弁当箱で再現することができたのです。
+              」を返してもらいました。どちらも、弁当箱で再現することができたのです。
             </P>
             <R.Rviy>
               「<Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />」
@@ -121,7 +120,14 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
-              description={<>大きな数の足し算・引き算に役立つ</>}
+              description={
+                <>
+                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  」は、大きな数の
+                  <br />
+                  足し算・引き算に欠かせない
+                </>
+              }
             />
             <P>
               たとえば、
@@ -135,8 +141,8 @@ export default () => (
             </R.Amoq>
             <P>
               <Strong>
-                しかし、
-                <CustomEmoji type="plusOne" /> の数が大きくなると、
+                しかし初級その2でもやった通り、
+                <CustomEmoji type="plusOne" /> の数が増えると、
                 <CustomEmoji type="plusOne" />{' '}
                 の数を間違えてしまう可能性があります。
               </Strong>
@@ -374,7 +380,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Iatt />
+            <R.Iatt>
+              <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
+              <EmojiNumber number={3} /> を入れてみた
+            </R.Iatt>
             <BubbleQuotes
               quotes={[
                 {
@@ -806,7 +815,11 @@ export default () => (
               ]}
             />
             <EmojiSeparator
-              emojis={['↕️', '🐶', '🔁']}
+              nodes={[
+                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <Emoji>🔁</Emoji>
+              ]}
               description={
                 <>
                   「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
@@ -851,12 +864,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>
-                        」を弁当箱で再現する一番の近道は、まず「
+                        実は、まず「
                         <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
-                        」を弁当箱で再現することなんです。
+                        」を弁当箱で再現することができれば、「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」を弁当箱で再現できてしまうんです！
                       </P>
+                      <P>その理由は、また後に説明しますが…</P>
                     </>
                   )
                 }
@@ -914,7 +928,7 @@ export default () => (
                       <P>
                         だからまずは、「<Strong>条件分岐の機能</Strong>{' '}
                         <Emoji>↕️</Emoji>
-                        」を弁当箱で再現する、という問題にチャレンジしてみてください！
+                        」を弁当箱で再現してみてください！
                       </P>
                       <P>
                         これが解ければ、「<Strong>繰り返しの機能</Strong>{' '}

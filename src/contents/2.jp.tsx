@@ -24,7 +24,7 @@ export const TwoPlusFour = () => (
   <>
     <R.Ednv />
     <P>
-      結果は <EmojiNumber number={6} /> になりました。上の計算箱は、
+      結果は <EmojiNumber number={6} /> になりました。この計算箱は、
       <Em>
         下の <CustomEmoji type="plusOne" /> の左側に{' '}
         <InlineBorder>
