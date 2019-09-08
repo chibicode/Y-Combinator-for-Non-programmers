@@ -33,7 +33,7 @@ import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
 import TwitterEmbed from 'src/components/TwitterEmbed'
-import { shareId } from 'src/lib/twitter'
+import { shareId, shareVisible } from 'src/lib/twitter'
 import { dateString, dateSchemaString } from 'src/lib/date'
 import { githubRepo } from 'src/lib/meta'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -52,7 +52,11 @@ interface HProps {
   highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
-    | { name: 'dateAndSource'; includeAboutMe?: boolean }
+    | {
+        name: 'dateAndSource'
+        includeAboutMe?: boolean
+        includeTwitter?: boolean
+      }
     | { name: 'pressNext' }
     | { name: 'yesNoQuiz' }
     | { name: 'yesNoQuizCorrect' }
@@ -1018,7 +1022,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <br />
             <InlineHeader>ソースコード:</InlineHeader>{' '}
             <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
+            {args.includeTwitter && (
+              <>
+                <br />
+                <InlineHeader>Twitter:</InlineHeader>{' '}
+                <ExternalLink href="https://twitter.com/chibicode">
+                  @chibicode
+                </ExternalLink>
+              </>
+            )}
           </P>
+          {args.includeTwitter && shareVisible && <TwitterEmbed id={shareId} />}
         </>
       )
     }

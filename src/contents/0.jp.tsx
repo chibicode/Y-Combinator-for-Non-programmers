@@ -144,7 +144,7 @@ export default () => (
           </>
         ),
         footer: {
-          content: <H args={{ name: 'dateAndSource' }} />
+          content: <H args={{ name: 'dateAndSource', includeTwitter: true }} />
         }
       },
       {
