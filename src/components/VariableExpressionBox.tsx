@@ -76,23 +76,58 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             display: block;
           `}
         >
-          {expression.shorthandNumber !== undefined ? (
-            <EmojiNumber number={expression.shorthandNumber} />
-          ) : expression.shorthandNumberAfterConvert === 'blank' ? (
-            <CustomEmoji type="blankNumber" />
-          ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
-            <CustomEmoji type="blankNumberPurple" />
-          ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
-            <CustomEmoji type="blankNumberPink" />
-          ) : expression.shorthandNumberAfterConvert === 'condition' ? (
-            <CustomEmoji type="blankNumberGrey" />
-          ) : expression.shorthandNumberAfterConvert === 'binaryFirst' ? (
-            <CustomEmoji type="blankNumberGreen" />
-          ) : expression.shorthandNumberAfterConvert === 'binarySecond' ? (
-            <CustomEmoji type="blankNumberBrown" />
-          ) : (
-            <></>
-          )}
+          <span
+            css={css`
+              position: relative;
+            `}
+          >
+            {expression.shorthandNumber !== undefined ? (
+              <EmojiNumber number={expression.shorthandNumber} />
+            ) : expression.shorthandNumberAfterConvert === 'blank' ? (
+              <CustomEmoji type="blankNumber" />
+            ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
+              <CustomEmoji type="blankNumberPurple" />
+            ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
+              <CustomEmoji type="blankNumberPink" />
+            ) : expression.shorthandNumberAfterConvert === 'condition' ? (
+              <CustomEmoji type="blankNumberGrey" />
+            ) : expression.shorthandNumberAfterConvert === 'binaryFirst' ? (
+              <CustomEmoji type="blankNumberGreen" />
+            ) : expression.shorthandNumberAfterConvert === 'binarySecond' ? (
+              <CustomEmoji type="blankNumberBrown" />
+            ) : (
+              <></>
+            )}
+            {!hideBottomRightBadges &&
+              expression.bottomRightBadgeType !== 'none' && (
+                <span
+                  css={css`
+                    position: absolute;
+                    right: -0.2em;
+                    bottom: -0.2em;
+                    z-index: ${zIndices('badge')};
+                  `}
+                >
+                  <BottomRightBadge
+                    bottomRightBadgeType={expression.bottomRightBadgeType}
+                  />
+                </span>
+              )}
+            {expression.topLeftBadgeType !== 'none' && (
+              <span
+                css={[
+                  css`
+                    position: absolute;
+                    top: -0.2em;
+                    z-index: ${zIndices('badge')};
+                    left: -0.18em;
+                  `
+                ]}
+              >
+                <TopLeftBadge topLeftBadgeType={expression.topLeftBadgeType} />
+              </span>
+            )}
+          </span>
         </span>
         <span
           css={css`

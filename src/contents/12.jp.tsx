@@ -22,7 +22,7 @@ export default () => (
         content: (
           <>
             <P>
-              村人たちは与えられたヒントをもとに、「
+              村人たちは与えられたアドバイスをもとに、「
               <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
               」を弁当箱で再現しようとしていました。
             </P>
@@ -76,8 +76,7 @@ export default () => (
                         そして、
                         <Strong>
                           もし <CustomEmoji type="blankNumberGrey" /> に{' '}
-                          <EmojiNumber number={0} />{' '}
-                          を以外の数字を入れたら、上の{' '}
+                          <EmojiNumber number={0} /> 以外の数字を入れたら、上の{' '}
                           <CustomEmoji type="blankNumberPink" />{' '}
                           が残るんだよな。
                         </Strong>
@@ -143,7 +142,9 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なんと！もうひらめいたの？ </P>
+                      <P>
+                        なんと！じゃあ、これが本当に再現できてるか、確かめてみよう！
+                      </P>
                     </>
                   )
                 },
@@ -152,7 +153,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うん！
+                        うん。
                         <Em>
                           まず、一番下の「
                           <Strong>
@@ -242,7 +243,7 @@ export default () => (
             <R.Ycpk>
               一番下に <EmojiNumber number={0} /> に変換できる
               <br />
-              弁当箱を入れた場合
+              弁当箱を入れた場合…
             </R.Ycpk>
             <ExpressionRunnerSeparator />
             <R.Bndi>
@@ -368,7 +369,7 @@ export default () => (
             <R.Psyv>
               一番下に <EmojiNumber number={1} /> に変換できる
               <br />
-              弁当箱を入れた場合
+              弁当箱を入れた場合…
             </R.Psyv>
             <ExpressionRunnerSeparator />
             <R.Kiiq>
