@@ -1369,8 +1369,8 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'lookAtThisBentoBox' }} />
-              。先ほどの <H args={{ name: 'yesNoQuiz' }} />
+              ここで補足です。まず、下の弁当箱をご覧ください。先ほどの{' '}
+              <H args={{ name: 'yesNoQuiz' }} />
               で登場した弁当箱とほとんど同じですが、
               <Em>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
@@ -1439,9 +1439,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この弁当箱は、一番下の段に
-                        <EmojiWithText letter="b" />{' '}
-                        がひとつしかないのに注目だ。
+                        この弁当箱は、
+                        <Strong>
+                          一番下の段の料理が
+                          <EmojiWithText letter="b" /> だけ
+                        </Strong>
+                        なのに注目だ。
                       </P>
                     </>
                   )
@@ -1712,8 +1715,8 @@ export default () => (
                           だと思う！
                         </Strong>
                         最後には
-                        <EmojiWithText letter="b" />と
-                        <EmojiWithText letter="d" />
+                        <EmojiWithText letter="d" />と
+                        <EmojiWithText letter="b" />
                         が残るはずだ。
                       </P>
                       <P>
@@ -1737,8 +1740,8 @@ export default () => (
                     <>
                       <P>
                         やった！最後に
-                        <EmojiWithText letter="b" />と
-                        <EmojiWithText letter="d" />
+                        <EmojiWithText letter="d" />と
+                        <EmojiWithText letter="b" />
                         が残ったので、<Emoji>⭕️</Emoji> が正解だ！
                       </P>
                     </>
@@ -1837,7 +1840,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>これ全部覚えきれるか、不安だなあ…</P>
+                      <P>これらの法則を覚えきれるか、不安だなあ…</P>
                     </>
                   )
                 },
