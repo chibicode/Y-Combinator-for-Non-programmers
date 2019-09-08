@@ -22,7 +22,6 @@ import {
   stepToCaseActive,
   stepToConditionActive,
   stepToCaseProcessed,
-  stepToCaseOnly,
   stepToShorthandComputed,
   stepToAlphaConvertCallArg
 } from 'scripts/lib/steps'
@@ -87,23 +86,11 @@ const stepConditional = (
     }
     case 'trueCaseActive': {
       return {
-        nextExpression: stepToCaseOnly(e, true),
-        previouslyChangedExpressionState: 'trueCaseOnly'
-      }
-    }
-    case 'falseCaseActive': {
-      return {
-        nextExpression: stepToCaseOnly(e, false),
-        previouslyChangedExpressionState: 'falseCaseOnly'
-      }
-    }
-    case 'trueCaseOnly': {
-      return {
         nextExpression: stepToCaseProcessed(e, true),
         previouslyChangedExpressionState: 'default'
       }
     }
-    case 'falseCaseOnly': {
+    case 'falseCaseActive': {
       return {
         nextExpression: stepToCaseProcessed(e, false),
         previouslyChangedExpressionState: 'default'

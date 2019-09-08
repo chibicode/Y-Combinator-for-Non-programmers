@@ -12,7 +12,6 @@ interface ExpressionPrioritiesLabelProps {
   emphasize: boolean
   priorities: number[]
   position: 'topleft' | 'bottomleft'
-  hideActive: boolean
 }
 
 interface ExpressionPrioritiesLabelBoxProps {
@@ -109,15 +108,10 @@ const ExpressionPrioritiesLabelBox = ({
 const ExpressionPrioritiesLabel = ({
   priorities,
   position,
-  emphasize,
-  hideActive
+  emphasize
 }: ExpressionPrioritiesLabelProps) => {
   const { variableSize } = useContext(ExpressionRunnerContext)
-  const { activePriority } = useContext(ExpressionPriorityContext)
 
-  if (hideActive) {
-    priorities = priorities.filter(x => x !== activePriority)
-  }
   return (
     <div
       css={[

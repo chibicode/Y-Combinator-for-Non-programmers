@@ -283,7 +283,6 @@ const Explanation = ({
         )
       }
     }
-    case 'trueCaseOnly':
     case 'trueCaseActive': {
       if (locale === 'en') {
         return <>?</>
@@ -297,7 +296,6 @@ const Explanation = ({
         )
       }
     }
-    case 'falseCaseOnly':
     case 'falseCaseActive': {
       if (locale === 'en') {
         return <>?</>

@@ -2304,8 +2304,17 @@ export const fkqu: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.reak,
   showPriorities: true,
   variableSize: 'sm',
-  initialState: 'falseCaseOnly',
+  initialState: 'falseCaseActive',
   explanationsVisibility: 'visible'
+}
+
+export const wjwu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  skipActive: true,
+  initialExpressionContainer: initialExpressionContainers.reak,
+  showPriorities: true,
+  variableSize: 'sm',
+  nextIterations: 1
 }
 
 export const ngxc: ExpressionRunnerShorthandConfig = {
@@ -2496,9 +2505,8 @@ export const msrk: ExpressionRunnerShorthandConfig = {
   skipActive: true,
   initialExpressionContainer: initialExpressionContainers.ihdu,
   showPriorities: true,
-  variableSize: 'md',
-  initialState: 'trueCaseOnly',
-  explanationsVisibility: 'visible'
+  variableSize: 'xs',
+  initialState: 'trueCaseActive'
 }
 
 export const jwce: ExpressionRunnerShorthandConfig = {

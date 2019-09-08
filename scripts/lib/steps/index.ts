@@ -37,7 +37,6 @@ export { default as stepToCaseActive } from 'scripts/lib/steps/stepToCaseActive'
 export {
   default as stepToCaseProcessed
 } from 'scripts/lib/steps/stepToCaseProcessed'
-export { default as stepToCaseOnly } from 'scripts/lib/steps/stepToCaseOnly'
 export { default as stepToDefault } from 'scripts/lib/steps/stepToDefault'
 export {
   default as stepToShorthandComputed

@@ -2,13 +2,13 @@
   "expressionContainers": [
     {
       "containerState": "stepped",
-      "previouslyChangedExpressionState": "trueCaseOnly",
+      "previouslyChangedExpressionState": "trueCaseActive",
       "expression": {
         "arg": {
           "arg": {
             "arg": {
               "type": "conditional",
-              "state": "trueCaseOnly",
+              "state": "trueCaseActive",
               "checkType": "isZero",
               "condition": {
                 "name": "shorthandNumber",
@@ -233,9 +233,9 @@
   ],
   "speed": 1,
   "hideControls": true,
-  "explanationsVisibility": "visible",
+  "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "md",
+  "variableSize": "xs",
   "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,
