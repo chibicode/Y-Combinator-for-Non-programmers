@@ -10,7 +10,7 @@ export interface EpisodePageNavbarProps {
 
 export const navigationLinkClasses = (isBottom?: boolean) => css`
   text-decoration: none;
-  color: ${colors('grey700')};
+  color: ${colors('grey800')};
   font-weight: bold;
   font-size: ${fontSizes(0.85)};
   background: none;

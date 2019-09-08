@@ -35,7 +35,7 @@ const YoutubeEmbed = ({
         css={css`
           margin-top: ${spaces(0.5)};
           font-size: ${fontSizes(0.85)};
-          color: ${colors('grey600')};
+          color: ${colors('grey700')};
           text-align: center;
         `}
       >

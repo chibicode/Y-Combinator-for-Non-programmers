@@ -75,7 +75,7 @@ const NextLessonButton = ({ halfMargin }: { halfMargin?: boolean }) => {
           css={css`
             font-size: ${fontSizes(0.85)};
             margin-top: ${spaces(0.75)};
-            color: ${colors('grey600')};
+            color: ${colors('grey700')};
           `}
         >
           <Strong>{remainingText(nextEpisodeNumber)}</Strong>

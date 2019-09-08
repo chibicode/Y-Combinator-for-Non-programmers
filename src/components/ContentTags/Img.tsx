@@ -35,7 +35,7 @@ export const Img = ({
           max-width: ${maxWidths('xs')};
           display: block;
           text-align: center;
-          color: ${colors('grey600')};
+          color: ${colors('grey700')};
           font-size: ${fontSizes(0.85)};
         `}
       >

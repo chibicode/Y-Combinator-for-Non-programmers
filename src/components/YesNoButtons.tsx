@@ -45,7 +45,7 @@ const Button = ({
         background: ${status === 'active'
           ? colors('yellow100')
           : colors('white')};
-        color: ${colors('grey800')};
+        color: ${colors('grey900')};
         text-decoration: none;
         -webkit-user-select: none;
         box-shadow: ${status === 'active'
@@ -143,7 +143,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
                 font-size: ${fontSizes(0.85)};
                 display: block;
                 margin-top: ${spaces('-0.5')};
-                color: ${colors('grey700')};
+                color: ${colors('grey800')};
               `}
             >
               <H args={{ name: 'yesNoQuizDontWorry' }} />

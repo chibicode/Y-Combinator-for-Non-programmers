@@ -108,7 +108,7 @@ const EmojiSeparator = ({
         <div
           css={css`
             font-size: ${fontSizes(0.85)};
-            color: ${colors('grey600')};
+            color: ${colors('grey700')};
             padding-bottom: ${spaces(0.5)};
             max-width: ${maxWidths('xs')};
             margin: 0 auto;

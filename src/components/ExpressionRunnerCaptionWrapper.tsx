@@ -9,7 +9,7 @@ const ExpressionRunnerCaptionWrapper = (
     css={css`
       text-align: center;
       font-size: ${fontSizes(0.85)};
-      color: ${colors('indigo400')};
+      color: ${colors('indigo500')};
       margin: ${spaces('-0.75')} -2px ${spaces(0.5)} -2px;
     `}
     {...props}

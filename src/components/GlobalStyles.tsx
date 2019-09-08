@@ -20,7 +20,7 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
           css`
             html {
               font-size: 18px;
-              color: ${colors('grey800')};
+              color: ${colors('grey900')};
               line-height: ${lineHeights(1.5)};
             }
 

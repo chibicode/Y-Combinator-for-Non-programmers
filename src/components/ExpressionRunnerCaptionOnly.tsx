@@ -6,7 +6,7 @@ const ExpressionRunnerCaptionOnly = (props: JSX.IntrinsicElements['div']) => (
   <div
     css={css`
       text-align: center;
-      color: ${colors('indigo400')};
+      color: ${colors('indigo500')};
       margin: ${spaces(2.25)} 0 ${spaces(2.5)};
     `}
     {...props}

@@ -14,7 +14,7 @@ const linkClasses = css`
   &:hover,
   &:active {
     background: none;
-    color: ${colors('grey600')};
+    color: ${colors('grey700')};
   }
 `
 

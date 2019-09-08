@@ -18,7 +18,7 @@ const bottomRightBadgeTypeToColors = (
   ({
     callArg: css`
       background-color: ${colors('indigo300')};
-      border-color: ${colors('indigo400')};
+      border-color: ${colors('indigo500')};
     `,
     funcArg: css`
       background-color: ${colors('pink400')};

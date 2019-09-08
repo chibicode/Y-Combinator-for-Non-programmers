@@ -40,7 +40,7 @@ const EpisodeHero = () => {
               css={[
                 commonTitleClasses,
                 css`
-                  color: ${colors('grey600')};
+                  color: ${colors('grey700')};
                   padding: ${spaces(1)} 0 ${spaces(1)};
                   font-size: ${fontSizes(1.2)};
                   ${ns} {
