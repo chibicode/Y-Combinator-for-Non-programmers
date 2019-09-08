@@ -3,7 +3,7 @@
     {
       "expression": {
         "type": "conditional",
-        "state": "falseCaseOnly",
+        "state": "falseCaseActive",
         "checkType": "isZero",
         "condition": {
           "name": "shorthandNumber",
@@ -106,7 +106,7 @@
         },
         "priority": 1
       },
-      "previouslyChangedExpressionState": "falseCaseOnly",
+      "previouslyChangedExpressionState": "falseCaseActive",
       "activePriority": 1,
       "containerState": "stepped"
     }

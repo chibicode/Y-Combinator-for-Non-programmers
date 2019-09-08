@@ -320,10 +320,6 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
     <>
       {!hidePriorities && (
         <ExpressionPrioritiesLabel
-          hideActive={
-            conditionalState === 'trueCaseOnly' ||
-            conditionalState === 'falseCaseOnly'
-          }
           priorities={expression.argPriorityAgg}
           position="topleft"
           emphasize={
@@ -344,10 +340,6 @@ const VariableExpressionBox = ({ expression }: VariableExpressionBoxProps) => {
       </FlexCenter>
       {!hidePriorities && (
         <ExpressionPrioritiesLabel
-          hideActive={
-            conditionalState === 'trueCaseOnly' ||
-            conditionalState === 'falseCaseOnly'
-          }
           priorities={expression.funcPriorityAgg}
           position="bottomleft"
           emphasize={

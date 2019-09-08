@@ -37,55 +37,48 @@ const ConditionalExpressionBox = ({
             position: relative;
           `}
         >
-          {expression.state !== 'trueCaseOnly' && (
-            <FlexCenter
-              css={css`
-                position: relative;
-              `}
-            >
-              <ConditionalBorder
-                type="falseCase"
-                shaded={
-                  expression.state === 'trueCaseActive' ||
-                  expression.state === 'conditionActive'
-                }
-              />
-              <ExpressionBox expression={expression.falseCase} />
-            </FlexCenter>
-          )}
-          {expression.state !== 'falseCaseOnly' &&
-            expression.state !== 'trueCaseOnly' && (
-              <FlexCenter
-                css={css`
-                  position: relative;
-                `}
-              >
-                <ConditionalBorder
-                  type="condition"
-                  shaded={
-                    expression.state === 'trueCaseActive' ||
-                    expression.state === 'falseCaseActive'
-                  }
-                />
-                <ExpressionBox expression={expression.condition} />
-              </FlexCenter>
-            )}
-          {expression.state !== 'falseCaseOnly' && (
-            <FlexCenter
-              css={css`
-                position: relative;
-              `}
-            >
-              <ConditionalBorder
-                type="trueCase"
-                shaded={
-                  expression.state === 'falseCaseActive' ||
-                  expression.state === 'conditionActive'
-                }
-              />
-              <ExpressionBox expression={expression.trueCase} />
-            </FlexCenter>
-          )}
+          <FlexCenter
+            css={css`
+              position: relative;
+            `}
+          >
+            <ConditionalBorder
+              type="falseCase"
+              shaded={
+                expression.state === 'trueCaseActive' ||
+                expression.state === 'conditionActive'
+              }
+            />
+            <ExpressionBox expression={expression.falseCase} />
+          </FlexCenter>
+          <FlexCenter
+            css={css`
+              position: relative;
+            `}
+          >
+            <ConditionalBorder
+              type="condition"
+              shaded={
+                expression.state === 'trueCaseActive' ||
+                expression.state === 'falseCaseActive'
+              }
+            />
+            <ExpressionBox expression={expression.condition} />
+          </FlexCenter>
+          <FlexCenter
+            css={css`
+              position: relative;
+            `}
+          >
+            <ConditionalBorder
+              type="trueCase"
+              shaded={
+                expression.state === 'falseCaseActive' ||
+                expression.state === 'conditionActive'
+              }
+            />
+            <ExpressionBox expression={expression.trueCase} />
+          </FlexCenter>
         </Flex>
       </ExpressionPriorityContext.Provider>
     </ConditionalContext.Provider>

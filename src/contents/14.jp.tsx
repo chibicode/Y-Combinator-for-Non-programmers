@@ -225,6 +225,8 @@ export default () => (
             <R.Avsl></R.Avsl>
             <ExpressionRunnerSeparator />
             <R.Fkqu></R.Fkqu>
+            <ExpressionRunnerSeparator />
+            <R.Wjwu></R.Wjwu>
           </>
         )
       },
@@ -699,7 +701,12 @@ export default () => (
             />
             <R.Afoh></R.Afoh>
             <ExpressionRunnerSeparator />
-            <R.Msrk></R.Msrk>
+            <R.Msrk>
+              <InlineBorder type="trueCase" /> に入っている{' '}
+              <EmojiNumber number={2} /> が残る
+            </R.Msrk>
+            <ExpressionRunnerSeparator />
+            <R.Jwce></R.Jwce>
             <BubbleQuotes
               quotes={[
                 {
