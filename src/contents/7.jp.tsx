@@ -34,6 +34,32 @@ export default () => (
                           これから出す問題に答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji>😈</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+              noBottomMargin
+              description={
+                <>
+                  これから出す難しい問題に
+                  <br />
+                  答えられたら計算箱を返してやろう！
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         <Strong>この問題は非常に難しい</Strong>
                         から覚悟するんだな。ミニオン、問題を説明するんだ！
@@ -306,7 +332,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり大雑把に言えば、
+                        つまりざっくり言うと、
                         <Strong>
                           <EmojiNumber number={1} /> が{' '}
                           <EmojiNumber number={2} /> になった
@@ -317,6 +343,20 @@ export default () => (
                   )
                 }
               ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={1} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={2} />
+              ]}
+              description={
+                <>
+                  ざっくり言うと、
+                  <EmojiNumber number={1} /> が <EmojiNumber number={2} />{' '}
+                  になった
+                </>
+              }
             />
           </>
         )
@@ -463,6 +503,20 @@ export default () => (
                 }
               ]}
             />
+            <EmojiSeparator
+              nodes={[
+                <EmojiNumber number={2} />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={3} />
+              ]}
+              description={
+                <>
+                  ざっくり言うと、
+                  <EmojiNumber number={2} /> が <EmojiNumber number={3} />{' '}
+                  になった
+                </>
+              }
+            />
           </>
         )
       },
@@ -555,7 +609,10 @@ export default () => (
               ]}
             />
             <R.Rviy>
-              <CustomEmoji type="mathBox" /> 計算箱の場合
+              <CustomEmoji type="mathBox" /> 計算箱の場合、
+              <CustomEmoji type="plusOne" /> を使えば
+              <br />
+              「1を足す」計算ができる
             </R.Rviy>
             <ExpressionRunnerSeparator />
             <R.Jxvy></R.Jxvy>
@@ -630,8 +687,9 @@ export default () => (
             />
             <R.Envj>
               <Strong>
-                どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
-                に料理を入れると…
+                どのような法則に基づいて
+                <br />
+                <CustomEmoji type="questionFoodGrey" /> に料理を入れると…
               </Strong>
             </R.Envj>
             <BubbleQuotes
@@ -661,15 +719,30 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        つまり、
+                        <Strong>
+                          それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
+                          に何を入れるか当てろってこと？
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <Strong>はい、その通りです！</Strong>
+                        <Em>
                           ある法則に基づいて{' '}
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           に料理を入れた時に限り
-                        </Strong>
+                        </Em>
                         、<H args={{ name: 'plusOneEffect' }} />
                         がある弁当箱になります。
                       </P>
