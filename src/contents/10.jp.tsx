@@ -272,7 +272,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>だったら、それらは諦めることだな。</P>
+                      <P>だったら諦めることだな。</P>
                     </>
                   )
                 },
@@ -281,14 +281,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        で、でも…
+                        で、でも…「
+                        <Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="minusOne" />
+                        」や「
+                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        」がないと、
                         <Em>
-                          それじゃ
                           <Strong>引き算や、大きな数の足し算・引き算</Strong>
                           ができないよ！
                         </Em>
-                        俺らは計算箱がないと何もできないんだ！
                       </P>
+                      <P>俺らは計算箱がないと何もできないんだ！</P>
                     </>
                   )
                 },
@@ -563,9 +567,10 @@ export default () => (
                       </P>
                       <EmojiSeparator
                         nodes={[
-                          <Emoji>❓</Emoji>,
-                          <EmojiNumber number={0} />,
-                          <Emoji>❓</Emoji>
+                          <Emoji>🍱</Emoji>,
+                          <Emoji>▶️</Emoji>,
+                          <CustomEmoji type="singleArrow" />,
+                          <EmojiNumber number={0} />
                         ]}
                         description={
                           <>
@@ -697,6 +702,12 @@ export default () => (
                 }
               ]}
             />
+            <P>
+              特別ルールを実行するには、
+              <Em>
+                <H args={{ name: 'next' }} /> を押してみてください！
+              </Em>
+            </P>
             <R.Xusi></R.Xusi>
             <BubbleQuotes
               quotes={[
@@ -1038,6 +1049,14 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>やった！ということは、正解だね！</P>
+                    </>
+                  )
+                },
+                {
                   type: 'devil',
                   children: (
                     <>
@@ -1191,6 +1210,28 @@ export default () => (
                 </>
               }
             />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        今回の「<Strong>1を引く機能</Strong>{' '}
+                        <CustomEmoji type="plusOne" />
+                        」を再現する問題も、超難問です。だから、サヤちゃんのように答えを思いつけなくても大丈夫です。
+                      </P>
+                      <P>
+                        前回話した通り、
+                        <Em>
+                          答えを思いつけなくても、答えを見て、「なるほど、そういうことだったのか」と理解できれば、コンピュータサイエンスを学ぶ素養は十分すぎるほどあります。
+                        </Em>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
         )
       },
@@ -1231,7 +1272,10 @@ export default () => (
                   type: 'celebrate',
                   children: (
                     <>
-                      <P>やったー！</P>
+                      <P>
+                        やったー！<Emoji>🎉</Emoji> <Emoji>🎉</Emoji>{' '}
+                        <Emoji>🎉</Emoji>
+                      </P>
                     </>
                   )
                 }

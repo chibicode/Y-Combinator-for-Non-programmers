@@ -1804,7 +1804,7 @@ export const ifiq: ExpressionRunnerShorthandConfig = {
   skipToTheEnd: false,
   containerSize: 'xs',
   skipActive: true,
-  speed: 1.5
+  speed: 1.75
 }
 
 export const joaq: ExpressionRunnerShorthandConfig = {
