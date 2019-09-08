@@ -848,7 +848,7 @@ export default () => (
               description={<>早送りすると、各ステップが自動で見れる</>}
             />
             <P>
-              こちらは、先ほどの例です。
+              こちらは、上にひとつの料理がある例です。
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Wunw />
@@ -882,11 +882,15 @@ export default () => (
                   )
                 },
                 {
-                  type: 'thinking',
+                  type: 'devil',
                   children: (
                     <>
                       <P>
-                        こうやってルールを明確にすれば、パズルが複雑になっても応用が効く気がする。
+                        うむ。そして、
+                        <Em>
+                          こうやってルールを明確にすれば、パズルが複雑になっても応用が効く
+                        </Em>
+                        んだ。
                       </P>
                     </>
                   )
@@ -906,6 +910,13 @@ export default () => (
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />,
                 <Emoji>❌</Emoji>
               ]}
+              description={
+                <>
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                  が一致しなかったら？
+                </>
+              }
             />
             <BubbleQuotes
               quotes={[
@@ -916,16 +927,16 @@ export default () => (
                       <P>
                         では、
                         <Strong>
-                          もし
+                          もし{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcArg"
-                          />
-                          と
+                          />{' '}
+                          と{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
-                          />
+                          />{' '}
                           が一致しなかったらどうするの？
                         </Strong>
                       </P>
@@ -934,12 +945,12 @@ export default () => (
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />
-                        と
+                        />{' '}
+                        と{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
-                        />
+                        />{' '}
                         が一致しないよね。
                       </P>
                     </>
@@ -951,12 +962,28 @@ export default () => (
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Sgfj />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            コピーはせず、
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            を消すだけ
+          </>
+        ),
+        content: (
+          <>
             <P>
-              こういう場合は、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              が一致しない場合は、
               <Strong>
-                コピーはせずに、ただ
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                コピーはせずに、ただ{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 を消すだけです。
               </Strong>
               <H args={{ name: 'pressNext' }} />
@@ -982,15 +1009,18 @@ export default () => (
         content: (
           <>
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              と
+              復習のために、
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               が一致しなかった場合も、最初から最後まで
               <H args={{ name: 'fastForward' }} /> で見てみましょう。
             </P>
-            <EmojiSeparator emojis={['⏩', '🍱', '⏩']} />
+            <EmojiSeparator
+              emojis={['⏩', '🍱', '⏩']}
+              description={<>早送りで復習しよう！</>}
+            />
             <P>
-              こちらは、先ほどの例です。
+              こちらは、上にひとつの料理がある例です。
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Jbam />
@@ -1012,21 +1042,28 @@ export default () => (
         content: (
           <>
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-              と
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
               が一致しなかった場合、
               <Strong>
-                コピーはせずに、ただ
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />と
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                コピーはせずに、ただ{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 を消す
               </Strong>
               。
             </P>
-            <R.Jwzh />
+            <R.Jwzh>
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+              が一致しなかった場合…
+            </R.Jwzh>
             <ExpressionRunnerSeparator />
-            <R.Knhw />
+            <R.Knhw>
+              コピーはせずに、ただ{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
+            </R.Knhw>
           </>
         )
       },
