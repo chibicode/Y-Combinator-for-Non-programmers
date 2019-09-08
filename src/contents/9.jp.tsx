@@ -961,7 +961,7 @@ export default () => (
                               inline
                               bottomRightBadgeType="callArg"
                             />{' '}
-                            を別の料理に変える
+                            を、まだ使われてない料理にランダムに変える。
                           </Strong>
                         </UlLi>
                       </Ul>
@@ -986,7 +986,9 @@ export default () => (
                   <Strong>
                     自動的に{' '}
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                    が別の料理に変わる
+                    がまだ使われてない料理に
+                    <br />
+                    ランダムに変わる
                   </Strong>
                 </>
               }
@@ -1036,7 +1038,7 @@ export default () => (
                         <Em>
                           何に変わるかについてですが、
                           <Strong>
-                            まだ使われていない料理にランダムで変わります
+                            まだ使われていない料理にランダムに変わります
                           </Strong>
                           。ここでは、
                           <EmojiWithText letter="e" /> になりました。
@@ -1071,7 +1073,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'dog',
+                  type: 'surprised',
                   children: (
                     <>
                       <P>
@@ -1085,8 +1087,15 @@ export default () => (
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        が被らなくなりました。
+                        が被らなくなった！
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         では、最後まで進めてみましょう。
                         <H args={{ name: 'pressFastForward' }} />
@@ -1204,7 +1213,7 @@ export default () => (
                 <Strong>
                   自動的に{' '}
                   <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                  を別の料理に変える
+                  を、まだ使われてない料理にランダムに変える。
                 </Strong>
               </UlLi>
             </Ul>
@@ -1219,7 +1228,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、このことを覚えておくのが難しそうだなあ…</P>
+                      <P>うーん、この特別ルールは忘れてしまいそうだなあ…</P>
                     </>
                   )
                 },
@@ -1233,6 +1242,7 @@ export default () => (
                           この特別ルールは次のページ以降で登場する弁当箱でも使われますが、
                         </Em>
                         <Strong>暗記する必要はありません。</Strong>
+                        早送り中に自動で行われますから。
                       </P>
                       <P>
                         なんとなく「
