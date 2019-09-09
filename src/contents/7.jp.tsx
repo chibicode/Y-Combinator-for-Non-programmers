@@ -880,8 +880,8 @@ export default () => (
                     <>
                       <P>問題をもう一度解説すると、</P>
                       <Ul>
+                        <UlLi>上の適当に料理を入れた弁当箱を、</UlLi>
                         <UlLi>
-                          上の弁当箱を
                           <Em>
                             ある数字 <CustomEmoji type="blankNumber" />{' '}
                             に変換できる弁当箱と合体させ、
