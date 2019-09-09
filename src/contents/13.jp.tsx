@@ -26,6 +26,25 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
+        type: 'summary',
+        title: <>難易度が上がります</>,
+        content: (
+          <>
+            <P>
+              <Strong>このページからまた難易度がアップします。</Strong>
+              ただ、
+              <Em>
+                内容を完全に理解する必要はありません。少しくらい分からなくても、雰囲気で読み進めていただいて大丈夫です。
+              </Em>
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>完全に理解する必要はありません！</>}
+            />
+          </>
+        )
+      },
+      {
         title: <>とても複雑な弁当箱</>,
         content: (
           <>

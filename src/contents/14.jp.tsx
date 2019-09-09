@@ -17,6 +17,31 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
+        type: 'summary',
+        title: <>最も複雑な弁当箱が登場</>,
+        content: (
+          <>
+            <P>
+              <Strong>今回は、今までで最も複雑な弁当箱が登場します。</Strong>
+            </P>
+            <EmojiSeparator
+              emojis={['⚠️', '🍱', '⚠️']}
+              description={<>最も複雑な弁当箱が登場します</>}
+            />
+            <P>
+              しかしいつも通り、
+              <Em>
+                内容を完全に理解する必要はありません。少しくらい分からなくても、雰囲気で読み進めていただいて大丈夫です。
+              </Em>
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>完全に理解する必要はありません！</>}
+            />
+          </>
+        )
+      },
+      {
         title: (
           <>
             <P>前回では…</P>
