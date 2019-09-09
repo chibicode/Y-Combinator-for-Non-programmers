@@ -692,11 +692,14 @@ export default () => (
               これは、弁当箱に例えると以下のようになり、実行結果は{' '}
               <Emoji>🅱️</Emoji> になります。
             </P>
-            <R.Aklf></R.Aklf>
+            <R.Aklf>下が左右とも同じなので…</R.Aklf>
             <ExpressionRunnerSeparator />
-            <R.Gemh></R.Gemh>
+            <R.Gemh>
+              上にあった <Emoji>🅱️</Emoji> が残る
+            </R.Gemh>
             <P>
-              だから同じように、今回紹介したPythonのコードも、実行すると結果は「B」になります。
+              だから同じように、今回紹介したPythonのコードも、実行すると結果は{' '}
+              <Code>B</Code> になります。
             </P>
             <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
             <ExpressionRunnerSeparator />
