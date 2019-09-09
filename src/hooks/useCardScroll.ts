@@ -9,9 +9,16 @@ function useCardScroll<E extends HTMLElement>(dep?: any) {
       skipNextRef.current = true
     } else {
       if (domRef.current) {
-        if (window.pageYOffset < distanceFromTop(domRef.current)) {
+        // Scroll down if more than half of the quiz card is visible
+        if (
+          window.pageYOffset <
+          distanceFromTop(domRef.current) +
+            domRef.current.getBoundingClientRect().height / 2
+        ) {
           window.scrollTo({
-            top: distanceFromTop(domRef.current),
+            top:
+              distanceFromTop(domRef.current) +
+              domRef.current.getBoundingClientRect().height / 2,
             left: 0,
             behavior: 'smooth'
           })
