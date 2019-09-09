@@ -46,11 +46,11 @@ const Modal = ({
         size="smsm"
         cssOverrides={css`
           margin-top: ${spaces(1)};
-          margin-bottom: ${spaces(1)};
+          margin-bottom: ${spaces(3)};
 
           ${ns} {
             margin-top: ${spaces(2)};
-            margin-bottom: ${spaces(2)};
+            margin-bottom: ${spaces(4)};
           }
         `}
       >
