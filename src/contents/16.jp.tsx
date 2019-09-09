@@ -711,6 +711,24 @@ export default () => (
               </Em>
               のです。
             </P>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="lambda" />,
+                <CustomEmoji type="singleArrow" />,
+                <Emoji>🐍</Emoji>
+              ]}
+              description={
+                <>
+                  Python言語のような
+                  <br />
+                  人気のプログラミング言語も、
+                  <br />
+                  1930年代に考えられた
+                  <br />
+                  ラムダ計算の影響を間接的に受けている
+                </>
+              }
+            />
           </>
         )
       },
