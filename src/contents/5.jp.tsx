@@ -419,7 +419,11 @@ export default () => (
                 どれも{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                 は関係ありませんよね。だから、
-                <Strong>次のいくつかのステップの間は無視していい</Strong>
+                <Strong>
+                  次のいくつかのステップの間は{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+                  を無視していい
+                </Strong>
                 のです。
               </Em>
             </P>
