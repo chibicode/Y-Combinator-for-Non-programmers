@@ -11,7 +11,8 @@ import {
   Pre,
   Code,
   Ol,
-  OlLi
+  OlLi,
+  Hr
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -21,7 +22,6 @@ import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import * as R from 'src/components/Runners'
-import CardContent from 'src/components/CardContent'
 import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionOnly'
 
 export default () => (
@@ -999,28 +999,87 @@ export default () => (
               以上でおしまいです！ラムダ村の名前の由来も、今回お分かりになったかと思います。ここまでお付き合いくださり、本当にありがとうございました。
             </P>
           </>
-        ),
-        footer: {
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>プログラマの方へのメッセージ</>,
+        preview: {
+          text: <>続きを読む</>,
           content: (
             <>
-              <CardContent
-                children={
+              <P>
+                本稿をお読みになったプログラマの方の中には、「
+                <Em>これは初心者向けにしては難しすぎるのではないか</Em>
+                」と思われた方もいるかもしれません。そんな方に伝えたいことがひとつだけあります。
+              </P>
+              <P>
+                個人的な話で恐縮ですが、わたしは今まで「
+                <Em>この人はほんとうに頭がいいな</Em>
+                」と思った方に数多く出会ってきました。たとえば、わたしは20代のときに母を癌で亡くしているのですが、母がお世話になったお医者様の方々と話したときは、「こんなに頭がいい人には出会ったことがない」と思いました。
+              </P>
+              <EmojiSeparator
+                emojis={['😮', '👩🏽‍⚕️', '💊']}
+                description={
                   <>
-                    <P>
-                      下のコードは、
-                      <Em>
-                        JavaScriptでYコンビネータを使って「
-                        <EmojiNumber number={4} /> の階乗」、すなわち{' '}
-                        <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
-                        <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
-                        <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
-                        <EmojiNumber number={1} /> を計算するコード
-                      </Em>
-                      です。
-                    </P>
-                    <Pre>
-                      <Code
-                        children={`console.log(
+                    冒頭でコンピュータサイエンスを
+                    <br />
+                    医学に例えたのも、それが理由です
+                  </>
+                }
+              />
+              <P>
+                そして、今までわたしが「
+                <Em>この人はほんとうに頭がいいな</Em>
+                」と思った人の内訳を見てみると、
+                <Em>
+                  プログラマの方よりも、プログラマでない方のほうが遥かに多い
+                </Em>
+                のです。もちろん、これは当たり前ですね。プログラマは世の中では圧倒的少数派ですから、母数のケタが違います。
+              </P>
+              <P>
+                そういった、「
+                <Strong>
+                  世の中にたくさんいる、プログラマではない、とても頭がいい人々にコンピュータサイエンスの入門書を書くとしたら、どういう教材がいいだろう？
+                </Strong>
+                」と考えた結果、完成したのが本稿です。だから、
+                <Em>
+                  そういう方々に「知的に面白い」と思っていただくために、難易度はあえて高めに設定しました。
+                </Em>
+              </P>
+              <P>
+                ただ、せっかく時間をかけて書くのであれば、できる限り読者層の裾野を広げたいとも思いました。だから、説明はできる限り平易にしようと心がけました。それでもだいぶ難しいのは承知の上ですが、
+                <Em>
+                  本稿を雰囲気だけでも楽しんでくださった方が、ひとりでも多くいればいいな
+                </Em>
+                と思っています。
+              </P>
+              <Hr />
+              <P>
+                <InlineHeader>ちなみに:</InlineHeader> プログラマの方で、「
+                <Em>Yコンビネータを実際にプログラミングで試してみたい</Em>
+                」と思った方は、↓の「続きを読む」を押してみてください。
+              </P>
+            </>
+          )
+        },
+        content: (
+          <>
+            <P>
+              下のコードは、
+              <Em>
+                JavaScriptでYコンビネータを使って「
+                <EmojiNumber number={4} /> の階乗」、すなわち{' '}
+                <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
+                <EmojiNumber number={1} /> を計算するコード
+              </Em>
+              です。
+            </P>
+            <Pre>
+              <Code
+                children={`console.log(
   (a =>
     (b => a(c => b(b)(c)))(b =>
       a(c => b(b)(c))
@@ -1028,49 +1087,28 @@ export default () => (
     n === 0 ? 1 : n * f(n - 1)
   )(4)
 )`}
-                      ></Code>
-                    </Pre>
-                    <P>
-                      上のコードをブラウザの開発者ツールにコピーして実行すると、「
-                      <EmojiNumber number={4} /> の階乗」である「
-                      <Code>24</Code>
-                      」が出力されます。また、下から2行目にある <Code>
-                        4
-                      </Code>{' '}
-                      をたとえば <Code>5</Code> に変えると、
-                      <EmojiNumber number={5} /> の階乗である「<Code>120</Code>
-                      」が出力されます。
-                    </P>
-                    <P>
-                      ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
-                      <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
-                      といった関数、または関数の再帰を使います。しかし、
-                      <Em>
-                        Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
-                      </Em>
-                      のです。
-                    </P>
-                  </>
-                }
-                preview={{
-                  text: <>続きを読む</>,
-                  content: (
-                    <>
-                      <P>
-                        <InlineHeader>ちなみに:</InlineHeader>{' '}
-                        プログラマの方で、「
-                        <Em>
-                          Yコンビネータを実際にプログラミングで試してみたい
-                        </Em>
-                        」と思った方は、↓の「続きを読む」を押してみてください。
-                      </P>
-                    </>
-                  )
-                }}
-              />
-            </>
-          )
-        }
+              ></Code>
+            </Pre>
+            <P>
+              上のコードをブラウザの開発者ツールにコピーして実行すると、「
+              <EmojiNumber number={4} /> の階乗」である「
+              <Code>24</Code>
+              」が出力されます。また、下から2行目にある <Code>4</Code>{' '}
+              をたとえば <Code>5</Code> に変えると、
+              <EmojiNumber number={5} /> の階乗である「<Code>120</Code>
+              」が出力されます。
+            </P>
+            <P>
+              ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
+              <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
+              といった関数、または関数の再帰を使います。しかし、
+              <Em>
+                Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
+              </Em>
+              のです。
+            </P>
+          </>
+        )
       }
     ]}
   />
