@@ -890,7 +890,9 @@ export default () => (
                       <P>
                         そうですね。そして、
                         <H args={{ name: 'plusOneEffect' }} />
-                        があるかどうかを確かめるには、以下のようにします。
+                        があるかどうかを確かめるには、以下のように{' '}
+                        <CustomEmoji type="blankNumber" />{' '}
+                        に変換できる弁当箱と合体して実行します。
                       </P>
                     </>
                   )
@@ -935,7 +937,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、実際に試してみましょう。まず、先ほど合体させた弁当箱の{' '}
+                        では、実際に試してみましょう。まず、先述の弁当箱の{' '}
                         <CustomEmoji type="blankNumber" /> の部分に…
                       </P>
                       <R.Avcu></R.Avcu>
