@@ -337,7 +337,7 @@ export default () => (
               がふたつ入っています。
             </P>
             <R.Elku>
-              上段には
+              下段には
               <EmojiWithText letter="a" />
             </R.Elku>
             <BubbleQuotes
