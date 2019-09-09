@@ -726,7 +726,9 @@ export default () => (
                         つまり、
                         <Strong>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に何を入れるか当てろってこと？
+                          に何を入れたら、
+                          <H args={{ name: 'plusOneEffect' }} />
+                          があるか当てろってこと？
                         </Strong>
                       </P>
                     </>
@@ -870,48 +872,14 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>で、ここからどうすればいいんだっけ？</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'dog',
-                  children: (
-                    <>
-                      <P>問題をもう一度解説すると、</P>
-                      <Ul>
-                        <UlLi>上の適当に料理を入れた弁当箱を、</UlLi>
-                        <UlLi>
-                          <Em>
-                            ある数字 <CustomEmoji type="blankNumber" />{' '}
-                            に変換できる弁当箱と合体させ、
-                          </Em>
-                        </UlLi>
-                        <UlLi>
-                          <Em>
-                            <H args={{ name: 'runAndConvertToMathbox' }} />
-                            して、
-                          </Em>
-                        </UlLi>
-                        <UlLi>
-                          <Em>
-                            <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                            <EmojiNumber number={1} /> になれば
-                            <Strong>成功</Strong> <Emoji>🎉</Emoji>
-                            、それ以外なら<Strong>失敗</Strong>{' '}
-                            <Emoji>😭</Emoji>
-                          </Em>
-                        </UlLi>
-                      </Ul>
-                      <P>ということになります。</P>
-                    </>
-                  )
-                },
-                {
-                  type: 'crying',
-                  children: (
-                    <>
-                      <P>ちょっと何言ってるか分からないんですけど…</P>
+                      <P>
+                        この弁当箱に、
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があれば
+                        <Strong>成功</Strong> <Emoji>🎉</Emoji>
+                        、なければ<Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
+                        ということかな？
+                      </P>
                     </>
                   )
                 },
@@ -920,7 +888,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        大丈夫です！下の弁当箱を見たら少しは分かりやすいかもです。
+                        そうですね。そして、
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があるかどうかを確かめるには、以下のようにします。
                       </P>
                     </>
                   )
@@ -939,28 +909,13 @@ export default () => (
               して、結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
               <EmojiNumber number={1} size="mdlg" /> になれば
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              があるので
               <Strong>成功</Strong> <Emoji>🎉</Emoji>
               <br />
               それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        なるほど。
-                        <H args={{ name: 'plusOneEffect' }} />
-                        があれば<Strong>成功</Strong> <Emoji>🎉</Emoji>、
-                        それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
-                        というわけだね。
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
           </>
         )
       },
