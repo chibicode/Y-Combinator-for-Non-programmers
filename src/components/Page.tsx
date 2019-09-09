@@ -23,6 +23,9 @@ const Page = ({ children }: { children: React.ReactNode }) => (
       <meta property="og:image" content={ogImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@chibicode" />
+      <meta name="twitter:creator" content="@chibicode" />
       <meta property="fb:admins" content="1227210274" />
       <script
         async

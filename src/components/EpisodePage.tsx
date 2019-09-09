@@ -47,6 +47,7 @@ const EpisodePage = ({
       <Head>
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
+        <meta property="og:site_name" content={lessonTitle} />
         <meta property="og:url" content={ogUrl(episodeNumber)} />
         <link rel="canonical" href={ogUrl(episodeNumber)} />
       </Head>
