@@ -2131,6 +2131,14 @@ export const glvb = initializeExpressionContainer([
   'C'
 ])
 
+export const nuoh = initializeExpressionContainer([
+  {
+    arg: 'A',
+    body: 'A'
+  },
+  'B'
+])
+
 export const ilbg = initializeDoneExpressionContainer({
   shorthandNumber: 2
 })

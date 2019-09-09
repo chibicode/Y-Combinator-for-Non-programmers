@@ -2721,6 +2721,19 @@ export const kzkg: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const aklf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.nuoh,
+  showPriorities: true
+}
+
+export const gemh: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  isDone: true,
+  initialExpressionContainer: initialExpressionContainers.nuoh,
+  showPriorities: true
+}
+
 export const unxf: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   skipToTheEnd: false,

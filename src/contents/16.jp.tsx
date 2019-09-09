@@ -683,15 +683,22 @@ export default () => (
               このPython言語にも、「<Strong>lambda</Strong>{' '}
               (ラムダ)」という機能があります。たとえば、以下のPython言語のコードをご覧ください。
             </P>
-            <CenteredCode size="sm">(lambda A: 'B')('C')</CenteredCode>
+            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
             <P>
-              上のPython言語のコードは、先ほど紹介した以下のラムダ計算と全く同じ意味です。
+              上のPython言語のコードは、以下のラムダ計算とほぼ同じ意味です。
             </P>
-            <CenteredCode size="md">λA.B C</CenteredCode>
+            <CenteredCode size="md">λA.A B</CenteredCode>
             <P>
-              先ほどのラムダ計算を実行したとき、結果は「B」になりました。同じように、今回紹介したPythonのコードも、実行すると結果は「B」になります。
+              これは、弁当箱に例えると以下のようになり、実行結果は{' '}
+              <Emoji>🅱️</Emoji> になります。
             </P>
-            <CenteredCode size="sm">(lambda A: 'B')('C')</CenteredCode>
+            <R.Aklf></R.Aklf>
+            <ExpressionRunnerSeparator />
+            <R.Gemh></R.Gemh>
+            <P>
+              だから同じように、今回紹介したPythonのコードも、実行すると結果は「B」になります。
+            </P>
+            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
             <ExpressionRunnerSeparator />
             <CenteredCode size="sm">'B'</CenteredCode>
             <P>
