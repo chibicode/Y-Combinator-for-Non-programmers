@@ -1,5 +1,5 @@
 import locale from 'src/lib/locale'
 
 export const shareId =
-  locale === 'jp' ? '1104633520389943296' : '1104633520389943296'
-export const shareVisible = process.env.isDevelopment
+  locale === 'jp' ? '1170855056549142528' : '1170855056549142528'
+export const shareVisible = locale === 'jp'
