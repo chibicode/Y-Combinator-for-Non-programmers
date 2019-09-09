@@ -904,71 +904,82 @@ export default () => (
               あるいは、「<Em>難しすぎる。自分には向かない</Em>
               」と思われる方もいるかもしれません。そう思われたとしたらわたしの力不足ですので、申し訳ないです。
             </P>
-            <P>
-              そして、本稿は
-              <Strong>プログラミング未経験者向け</Strong>
-              です。プログラマの方にとって有益かどうかは、正直微妙かもしれません。
-            </P>
           </>
-        ),
-        footer: {
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>注意: プログラミング未経験者向けです</>,
+        preview: {
           content: (
             <>
-              <CardContent
-                children={
+              <P>
+                本稿は
+                <Strong>プログラミング未経験者向け</Strong>
+                です。プログラマの方にとって有益かどうかは、正直微妙かもしれません。
+              </P>
+              <P>
+                <Em>
+                  本稿で説明する内容は、プログラミング言語を使うと一瞬で説明できます。
+                </Em>
+                しかし、前述の理由から、あえてプログラミング言語を使わないで説明するので、
+                <Em>
+                  プログラマの方にとっては非常に回りくどい説明に感じられる
+                </Em>
+                と思います。数式を使わずに数学をやるようなものです。
+              </P>
+              <EmojiSeparator
+                emojis={['😡', '💻', '😡']}
+                description={
                   <>
-                    <Hr />
-                    <P>
-                      プログラマ向けのYコンビネータについての説明で最もおすすめなのは、
-                      「
-                      <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                        <InlineHeader>
-                          Y Not - Adventures in Functional Programming
-                        </InlineHeader>
-                      </ExternalLink>
-                      」という動画です。
-                    </P>
-                    <P>
-                      これはRubyのプログラマで、Rakeの作者でもある故・Jim
-                      Weirich氏がRubyConf
-                      2012にて行った講演の動画です。英語ですが字幕付きで見ることができます。
-                    </P>
-                    <YoutubeEmbed
-                      width={560}
-                      height={315}
-                      src="https://www.youtube.com/embed/FITJMJjASUs"
-                      caption={
-                        'ちなみにこの時、筆者は観客として参加していました。'
-                      }
-                    />
-                    <P>
-                      <InlineHeader>余談:</InlineHeader>{' '}
-                      本稿はTypeScriptとNext.jsで書いています。ソースコードは
-                      <ExternalLink href={githubRepo}>
-                        GitHubで公開中
-                      </ExternalLink>
-                      です。
-                    </P>
+                    プログラマの方にとっては
+                    <br />
+                    回りくどい説明に見えます
                   </>
                 }
-                preview={{
-                  text: <>続きを読む</>,
-                  content: (
-                    <>
-                      <P>
-                        <InlineHeader>ちなみに:</InlineHeader>{' '}
-                        <Em>
-                          プログラマの方で、「Yコンビネータって何？」と思われた方
-                        </Em>
-                        は、↓の「続きを読む」を押してみてください。
-                      </P>
-                    </>
-                  )
-                }}
               />
+              <P>
+                だから、プログラマの方向けのYコンビネータの教材としては、本稿はおすすめできません。しかし、その代わりにおすすめできる教材があります。
+                <Em>
+                  プログラマの方で、「Yコンビネータって何？」と思われた方は、↓の「続きを読む」を押してみてください。
+                </Em>
+              </P>
             </>
-          )
-        }
+          ),
+          text: <>続きを読む</>
+        },
+        content: (
+          <>
+            <Hr />
+            <P>
+              プログラマ向けのYコンビネータについての説明で最もおすすめなのは、
+              「
+              <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
+                <InlineHeader>
+                  Y Not - Adventures in Functional Programming
+                </InlineHeader>
+              </ExternalLink>
+              」という動画です。
+            </P>
+            <P>
+              これはRubyのプログラマで、Rakeの作者でもある故・Jim
+              Weirich氏がRubyConf
+              2012にて行った講演の動画です。英語ですが字幕付きで見ることができます。
+            </P>
+            <YoutubeEmbed
+              width={560}
+              height={315}
+              src="https://www.youtube.com/embed/FITJMJjASUs"
+              caption={'ちなみにこの時、筆者は観客として参加していました。'}
+            />
+            <P>
+              <InlineHeader>余談:</InlineHeader>{' '}
+              本稿はTypeScriptとNext.jsで書いています。ソースコードは
+              <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
+              です。
+            </P>
+          </>
+        )
       },
       {
         title: <>さっそくはじめてみましょう！</>,
