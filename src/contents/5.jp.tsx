@@ -604,7 +604,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Jwue>残った弁当箱はシンプルな二段</R.Jwue>
+            <R.Jwue>残った弁当箱はシンプルな2段</R.Jwue>
             <BubbleQuotes
               quotes={[
                 {
