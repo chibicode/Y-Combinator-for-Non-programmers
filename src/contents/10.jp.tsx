@@ -1141,7 +1141,7 @@ export default () => (
               description={
                 <>
                   計算箱の「<Strong>1を引く機能</Strong>{' '}
-                  <CustomEmoji type="plusOne" />
+                  <CustomEmoji type="minusOne" />
                   」は、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
@@ -1203,7 +1203,7 @@ export default () => (
               description={
                 <>
                   計算箱の「<Strong>1を引く機能</Strong>{' '}
-                  <CustomEmoji type="plusOne" />
+                  <CustomEmoji type="minusOne" />
                   」も、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
@@ -1218,7 +1218,7 @@ export default () => (
                     <>
                       <P>
                         今回の「<Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="plusOne" />
+                        <CustomEmoji type="minusOne" />
                         」を再現する問題も、超難問です。だから、サヤちゃんのように答えを思いつけなくても大丈夫です。
                       </P>
                       <P>
