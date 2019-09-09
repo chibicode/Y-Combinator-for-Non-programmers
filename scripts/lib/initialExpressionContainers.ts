@@ -893,6 +893,58 @@ export const bjzr = initializeExpressionContainer([
   }
 ])
 
+export const wgtz = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['b', ['a', 'b', 'b']]
+      }
+    }
+  },
+  {
+    shorthandNumberAfterConvert: 'blank',
+    initialHighlight: true
+  }
+])
+
+export const jrur = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['b', ['a', 'b', 'b']]
+      }
+    }
+  },
+  {
+    shorthandNumber: 1,
+    shorthandNumberAfterConvert: 'number',
+    initialHighlight: true
+  }
+])
+
+export const utur = initializeExpressionContainer([
+  {
+    arg: 'a',
+    body: {
+      arg: 'b',
+      body: {
+        arg: 'c',
+        body: ['b', ['a', 'b', 'b']]
+      }
+    }
+  },
+  {
+    shorthandNumber: 1,
+    shorthandNumberAfterConvert: 'number'
+  }
+])
+
 export const abbh = initializeExpressionContainer(
   numberParamsHighlightNonNumber('b', 'c', 2)
 )

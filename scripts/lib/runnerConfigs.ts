@@ -1193,6 +1193,27 @@ export const tjaf: ExpressionRunnerShorthandConfig = {
   variableSize: 'md'
 }
 
+export const avcu: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.wgtz,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const dewi: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jrur,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const xxan: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.utur,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const omwd: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.drbs,

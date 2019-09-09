@@ -935,6 +935,60 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        では、実際に試してみましょう。まず、先ほど合体させた弁当箱の{' '}
+                        <CustomEmoji type="blankNumber" /> の部分に…
+                      </P>
+                      <R.Avcu></R.Avcu>
+                      <P>
+                        <EmojiNumber number={1} /> を当てはめます。
+                      </P>
+                      <R.Dewi></R.Dewi>
+                      <P>
+                        つまり、 <EmojiNumber number={1} />{' '}
+                        に変換できる弁当箱で試してみるということです。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={1} />{' '}
+                        を計算できるかどうか試す、というわけだね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Xxan>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              先ほどの弁当箱を合体させ…
+            </R.Xxan>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              があるので
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>その通りです。</P>
+                      <P>
                         それでは冒頭でも紹介した、 <EmojiNumber number={1} />{' '}
                         に変換できる弁当箱を使って試してみましょう。
                       </P>
