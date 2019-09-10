@@ -849,6 +849,21 @@ export default () => (
                         <Strong>Yコンビネータ</Strong>
                         の弁当箱を組み合わせて計算することができるんだ。
                       </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>へー、そうなの！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
                       <P>
                         たとえば以下の弁当箱は、
                         <Strong>
@@ -871,12 +886,12 @@ export default () => (
               先ほどの
               <Strong>掛け算ができる弁当箱</Strong>と
               <br />
+              <Strong>Yコンビネータ</Strong>
+              の弁当箱を使えば…
+              <br />
               (右の方にある <Emoji>✖️</Emoji> が、
               <br />
               掛け算ができる弁当箱の省略表記)
-              <br />
-              <Strong>Yコンビネータ</Strong>
-              の弁当箱を使えば…
             </R.Qaoa>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
