@@ -404,7 +404,9 @@ export default () => (
                       </P>
                       <R.Vlhb>
                         「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
-                        」に変換できる弁当箱
+                        」に
+                        <br />
+                        変換できる弁当箱
                       </R.Vlhb>
                     </>
                   )
