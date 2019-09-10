@@ -58,10 +58,10 @@ export default () => (
               </Em>
               というところで終わりました。
             </P>
-            <R.Vlnb>
+            <R.Qycx>
               この「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」を使った計算箱は…
-            </R.Vlnb>
+            </R.Qycx>
             <ExpressionRunnerSeparator />
             <R.Peiy>
               以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
@@ -1132,7 +1132,9 @@ export default () => (
                         そうですね。そして、
                         <Em>
                           今回登場した弁当箱の、
-                          <Strong>下半分の部分にご注目ください</Strong>
+                          <Strong>
+                            下半分に使われていた部分にご注目ください
+                          </Strong>
                         </Em>
                         。
                       </P>
@@ -1149,7 +1151,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、先ほどのいくつかの弁当箱において、必ず下半分に使われていたこちらの弁当箱が、「
+                        実は、今回登場した弁当箱において、必ず下半分に使われていたこちらの弁当箱が、「
                         <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
                         」の再現を可能にしていたのです。
                       </P>
@@ -1159,7 +1161,7 @@ export default () => (
               ]}
             />
             <R.Xjzx>
-              先ほどのいくつかの弁当箱において、
+              今回登場した弁当箱において、
               <br />
               <Strong>下半分の部分に使われていた</Strong>
               <br />
@@ -1177,9 +1179,9 @@ export default () => (
                     <>
                       <P>
                         なるほど。この部分は、<Emoji>🅰️</Emoji>{' '}
-                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を再現したときも、
+                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を再現する場合も、
                         <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
-                        を再現したときも、下半分に使われていたね。
+                        を再現する場合も、下半分に使われていたね。
                       </P>
                       <P>これが、繰り返しを可能にしていたのかあ…</P>
                     </>

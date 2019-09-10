@@ -1077,8 +1077,8 @@ export default () => (
                           この <EmojiNumber number={5} /> って、
                           <Strong>
                             実行前の弁当箱に入っていた、
-                            <EmojiNumber number={3} /> と{' '}
-                            <EmojiNumber number={2} /> を足した数
+                            <EmojiNumber number={2} /> と{' '}
+                            <EmojiNumber number={3} /> を足した数
                           </Strong>
                           だよね？
                         </Em>
@@ -1091,7 +1091,7 @@ export default () => (
             <R.Peiy>
               実行前の弁当箱に入っていた、
               <br />
-              <EmojiNumber number={3} /> と <EmojiNumber number={2} /> を足すと{' '}
+              <EmojiNumber number={2} /> と <EmojiNumber number={3} /> を足すと{' '}
               <EmojiNumber number={5} /> になる
             </R.Peiy>
             <BubbleQuotes
@@ -1109,8 +1109,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということは、この弁当箱は <EmojiNumber number={3} />{' '}
-                        <Emoji>➕</Emoji> <EmojiNumber number={2} />{' '}
+                        ということは、この弁当箱は <EmojiNumber number={2} />{' '}
+                        <Emoji>➕</Emoji> <EmojiNumber number={3} />{' '}
                         を計算しているんじゃないかな？
                       </P>
                     </>
@@ -1119,8 +1119,8 @@ export default () => (
               ]}
             />
             <R.Peiy>
-              <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} /> を計算している？
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算している？
             </R.Peiy>
           </>
         )
@@ -1141,8 +1141,8 @@ export default () => (
                         <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
                         」を使っても、
                         <Em>
-                          <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-                          <EmojiNumber number={2} /> を計算できる
+                          <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={3} /> を計算できる
                         </Em>
                         よね。
                       </P>
@@ -1151,15 +1151,15 @@ export default () => (
                 }
               ]}
             />
-            <R.Vlnb>
+            <R.Qycx>
               計算箱の「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」を使うと
               <br />
-              <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} /> を計算できる
-            </R.Vlnb>
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できる
+            </R.Qycx>
             <ExpressionRunnerSeparator />
-            <R.Kecv></R.Kecv>
+            <R.Jwce></R.Jwce>
             <ExpressionRunnerSeparator />
             <R.Seie></R.Seie>
             <BubbleQuotes
@@ -1178,10 +1178,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Vlnb>
+            <R.Qycx>
               この「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」を使った計算箱は…
-            </R.Vlnb>
+            </R.Qycx>
             <ExpressionRunnerSeparator />
             <R.Peiy>
               以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
