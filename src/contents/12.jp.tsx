@@ -436,13 +436,7 @@ export default () => (
         )
       },
       {
-        title: (
-          <>
-            <CustomEmoji type="blankNumberPink" />{' '}
-            <CustomEmoji type="blankNumberGrey" />{' '}
-            <CustomEmoji type="blankNumberPurple" /> 全てを埋める
-          </>
-        ),
+        title: <>やっぱりサヤちゃんが正解？</>,
         content: (
           <>
             <BubbleQuotes
@@ -476,7 +470,40 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>いちおう最後のチェックとして、</P>
+                      <P>念のため、最終チェックをしたほうがいいかも！</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>最終チェックだって？</P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <CustomEmoji type="blankNumberPink" />{' '}
+            <CustomEmoji type="blankNumberGrey" />{' '}
+            <CustomEmoji type="blankNumberPurple" /> 全てを埋める
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>いちおう最終チェックとして、</P>
                       <Ul>
                         <UlLi>
                           <Em>
