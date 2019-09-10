@@ -18,6 +18,7 @@ import {
   ns
 } from 'src/lib/theme'
 import H from 'src/components/H'
+import PrevNextLinks from 'src/components/PrevNextLinks'
 
 const commonTitleClasses = css`
   line-height: ${lineHeights(1.1)};
@@ -118,7 +119,7 @@ const EpisodeHero = () => {
             color: ${colors('grey600')};
           `}
         >
-          <H args={{ name: 'prevAndNextLinks' }} />
+          <PrevNextLinks />
         </div>
       )}
     </header>

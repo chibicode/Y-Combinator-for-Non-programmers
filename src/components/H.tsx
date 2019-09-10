@@ -52,6 +52,8 @@ interface HProps {
   highlightType: InlineHighlightType
   episodeNumberOverrides?: number
   args:
+    | { name: 'prevNextLinkPrevious' }
+    | { name: 'prevNextLinkNext' }
     | {
         name: 'dateAndSource'
         includeAboutMe?: boolean
@@ -1301,6 +1303,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Slide</>
     } else {
       return <>スライド</>
+    }
+  }
+  if (args.name === 'prevNextLinkPrevious') {
+    if (locale === 'en') {
+      return <>Previous</>
+    } else {
+      return <>前へ</>
+    }
+  }
+  if (args.name === 'prevNextLinkNext') {
+    if (locale === 'en') {
+      return <>Next</>
+    } else {
+      return <>次へ</>
     }
   }
   throw new Error()
