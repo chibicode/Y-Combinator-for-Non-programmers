@@ -1972,6 +1972,26 @@ export const brri = initializeExpressionContainer([
   }
 ])
 
+export const dmgj = initializeExpressionContainer([
+  yCombinatorHighlighted,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: 'A',
+        falseCase: [
+          { shorthandFunc: 'add' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  'B'
+])
+
 export const ykbi = initializeExpressionContainer([
   yCombinator,
   {

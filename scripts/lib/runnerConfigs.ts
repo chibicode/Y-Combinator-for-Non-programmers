@@ -2580,6 +2580,14 @@ export const bxuv: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs'
 }
 
+export const xhul: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.dmgj,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
+}
+
 export const zkon: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ykbi,
