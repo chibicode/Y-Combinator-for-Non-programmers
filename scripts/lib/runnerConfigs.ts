@@ -962,6 +962,11 @@ export const dgpx: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.yvfc
 }
 
+export const kecv: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jcls
+}
+
 export const nmbt: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.zpil
@@ -2557,6 +2562,11 @@ export const sskt: ExpressionRunnerShorthandConfig = {
 export const qycx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.dxcw
+}
+
+export const vlnb: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.mzvt
 }
 
 export const owpg: ExpressionRunnerShorthandConfig = {

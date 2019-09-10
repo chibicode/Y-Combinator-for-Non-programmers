@@ -52,22 +52,20 @@ export default () => (
             <P>
               前回は、
               <Em>
-                <Emoji>👧🏻</Emoji>{' '}
-                サヤちゃんが考えた以下の弁当箱を使えば、計算箱の「
+                計算箱の「
                 <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-                」を再現できるかも？
+                」を、サヤちゃんが考えた弁当箱で再現できるかも？
               </Em>
               というところで終わりました。
             </P>
-            <R.Nmbt>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+            <R.Vlnb>
+              この「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
               」を使った計算箱は…
-            </R.Nmbt>
+            </R.Vlnb>
             <ExpressionRunnerSeparator />
-            <R.Svig>
-              以下の弁当箱で「<Strong>再現</Strong>」できている？
-              <Emoji>🤔</Emoji>
-            </R.Svig>
+            <R.Peiy>
+              以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
+            </R.Peiy>
             <P>今回は、これを実際に検証していきましょう！</P>
           </>
         )
@@ -83,31 +81,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、前回同様
-                        <Em>
-                          {' '}
-                          <Emoji>🅰️</Emoji> に <EmojiNumber number={3} />、
-                          <Emoji>🅱️</Emoji> に <EmojiNumber number={2} />{' '}
-                        </Em>
-                        を入れてみるね。
-                      </P>
-                      <P>
-                        前回話した通り、
-                        <Em>
-                          <H args={{ name: 'play' }} /> すると{' '}
-                          <EmojiNumber number={5} /> になる
-                        </Em>
-                        よ。
+                        今回は、前回サヤが考えた弁当箱を早送りして、なぜ{' '}
+                        <H args={{ name: 'play' }} /> すると{' '}
+                        <EmojiNumber number={5} /> になるのかを検証してみるよ！
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Osxt>
-              <Emoji>🅰️</Emoji> に <EmojiNumber number={3} />、<Emoji>🅱️</Emoji>{' '}
-              に <EmojiNumber number={2} /> を入れる
-            </R.Osxt>
+            <R.Htir>
+              <H args={{ name: 'play' }} /> すると <EmojiNumber number={5} />{' '}
+              になる。
+              <br />
+              なぜそうなるのか、
+              <br />
+              今回は早送りして検証します
+            </R.Htir>
             <BubbleQuotes
               quotes={[
                 {
@@ -117,7 +107,7 @@ export default () => (
                       <P>
                         では、
                         <Em>
-                          これを今回は早送りしてみるね！早送りをすることで、どういう原理になっているかが分かるかも。
+                          早送りしてみるね！早送りをすることで、どういう原理になっているかが分かるかも。
                         </Em>
                       </P>
                     </>

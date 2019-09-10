@@ -632,6 +632,20 @@ export const yvfc = initializeExpressionContainer([
   ]
 ])
 
+export const jcls = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  [
+    {
+      shorthandFunc: 'add'
+    },
+    {
+      shorthandNumber: 3
+    }
+  ]
+])
+
 export const zpil = initializeExpressionContainer([
   {
     countVariable: 'B',
@@ -1912,6 +1926,18 @@ export const dxcw = initializeExpressionContainer([
   },
   {
     shorthandNumber: 2
+  }
+])
+
+export const mzvt = initializeExpressionContainer([
+  {
+    count: 2,
+    child: {
+      shorthandFunc: 'add'
+    }
+  },
+  {
+    shorthandNumber: 3
   }
 ])
 
