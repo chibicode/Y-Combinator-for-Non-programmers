@@ -579,7 +579,7 @@ export default () => (
               続いて、
               <Strong>
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 が一致するかチェックし、一致した料理には、
                 <Emoji>✅</Emoji> を付けます。
               </Strong>

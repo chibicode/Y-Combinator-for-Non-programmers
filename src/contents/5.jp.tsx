@@ -1036,8 +1036,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        えー、また
-                        <H args={{ name: 'yesNoQuiz' }} />
+                        えー、また <H args={{ name: 'yesNoQuiz' }} />
                         か！いつになったら計算箱を返してくれるんだ！
                       </P>
                     </>
