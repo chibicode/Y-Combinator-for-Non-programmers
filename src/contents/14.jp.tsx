@@ -1185,7 +1185,12 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど。この部分は毎回必ず使われていたね。</P>
+                      <P>
+                        なるほど。この部分は、<Emoji>🅰️</Emoji>{' '}
+                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を再現したときも、
+                        <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
+                        を再現したときも、下半分に使われていたね。
+                      </P>
                       <P>これが、繰り返しを可能にしていたのかあ…</P>
                     </>
                   )
