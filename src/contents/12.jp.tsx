@@ -47,7 +47,7 @@ export default () => (
                       <P>
                         復習すると、上の計算箱は、
                         <Strong>
-                          もし <CustomEmoji type="blankNumberGrey" /> に{' '}
+                          もし <InlineBorder type="condition" /> に{' '}
                           <EmojiNumber number={0} /> を入れたら下の{' '}
                           <CustomEmoji type="blankNumberPurple" /> が残り…
                         </Strong>
@@ -75,7 +75,7 @@ export default () => (
                       <P>
                         そして、
                         <Strong>
-                          もし <CustomEmoji type="blankNumberGrey" /> に{' '}
+                          もし <InlineBorder type="condition" /> に{' '}
                           <EmojiNumber number={0} /> 以外の数字を入れたら、上の{' '}
                           <CustomEmoji type="blankNumberPink" />{' '}
                           が残るんだよな。
@@ -170,7 +170,19 @@ export default () => (
                             <CustomEmoji type="blankNumberGrey" />{' '}
                             に変換できる弁当箱
                           </Strong>
-                          」のところに、
+                          」のところに…
+                        </Em>
+                      </P>
+                      <R.Hhjq>
+                        一番下の{' '}
+                        <Strong>
+                          <CustomEmoji type="blankNumberGrey" />{' '}
+                          に変換できる弁当箱
+                        </Strong>
+                        に…
+                      </R.Hhjq>
+                      <P>
+                        <Em>
                           <Strong>
                             こちらの <EmojiNumber number={0} />{' '}
                             に変換できる弁当箱

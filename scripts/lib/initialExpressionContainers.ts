@@ -1172,6 +1172,19 @@ export const cmay = initializeExpressionContainer(
   )
 )
 
+export const rpcm = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    { shorthandNumberAfterConvert: 'trueCase' },
+    { shorthandNumberAfterConvert: 'falseCase' },
+    { shorthandNumberAfterConvert: 'condition', initialHighlight: true }
+  )
+)
+
 export const cunp = initializeExpressionContainer('blankNumberPink')
 
 export const psdd = initializeExpressionContainer(

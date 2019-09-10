@@ -1900,6 +1900,14 @@ export const sdta: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs'
 }
 
+export const hhjq: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.rpcm,
+  showPriorities: true,
+  variableSize: 'md',
+  containerSize: 'xs'
+}
+
 export const dqwh: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.zpak
