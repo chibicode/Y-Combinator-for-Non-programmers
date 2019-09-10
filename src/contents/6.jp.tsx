@@ -1120,7 +1120,7 @@ export default () => (
                 <CustomEmoji type="mathBox" />
               ]}
               noTopMargin
-              description={<>計算箱に変換、するのを一括で行える</>}
+              description={<>計算箱に変換するのを一括で行える</>}
             />
           </>
         )
