@@ -553,7 +553,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'indexPageLink') {
     if (locale === 'en') {
-      return <>View All</>
+      return <>Index</>
     } else {
       return <>目次</>
     }
