@@ -190,12 +190,12 @@ export default () => (
                 }
               ]}
             />
-            <R.Lizi></R.Lizi>
-            <ExpressionRunnerSeparator />
-            <R.Plde>
+            <R.Lizi>
               <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
-              の計算箱を、弁当箱で再現
-            </R.Plde>
+              の計算箱を…
+            </R.Lizi>
+            <ExpressionRunnerSeparator />
+            <R.Plde>弁当箱で再現した</R.Plde>
             <BubbleQuotes
               quotes={[
                 {

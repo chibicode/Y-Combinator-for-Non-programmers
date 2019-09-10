@@ -1141,8 +1141,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、ここで最後に
-                        <H args={{ name: 'yesNoQuiz' }} />
+                        では、ここで最後に <H args={{ name: 'yesNoQuiz' }} />
                         をやってみましょう。
                       </P>
                       <P>こちらの弁当箱を…</P>
