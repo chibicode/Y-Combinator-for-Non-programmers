@@ -392,11 +392,28 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        なに、
+                        <H args={{ name: 'minusOneEffect' }} />
+                        だって？
+                      </P>
+                      <P>
+                        前回の
+                        <H args={{ name: 'plusOneEffect' }} />
+                        の真逆なのかな？
+                      </P>
+                    </>
+                  )
+                },
+                {
                   type: 'dog',
                   children: (
                     <>
                       <P>
-                        上の
+                        その通りです。上の
                         <H args={{ name: 'minusOneEffect' }} />
                         がある弁当箱を、
                       </P>
@@ -446,7 +463,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、計算箱の「<Strong>1を引く機能</Strong>{' '}
+                        つまりこれを使えば、計算箱の「
+                        <Strong>1を引く機能</Strong>{' '}
                         <CustomEmoji type="minusOne" />
                         」を再現できるというわけだな。
                       </P>
@@ -455,6 +473,18 @@ export default () => (
                 }
               ]}
             />
+            <R.Ditw>
+              計算箱の「<Strong>1を引く機能</Strong>{' '}
+              <CustomEmoji type="minusOne" />
+              」は…
+            </R.Ditw>
+            <ExpressionRunnerSeparator />
+            <R.Xqjd>
+              <H args={{ name: 'minusOneEffect' }} />
+              がある弁当箱を
+              <br />
+              使えば、再現できる
+            </R.Xqjd>
           </>
         )
       },
