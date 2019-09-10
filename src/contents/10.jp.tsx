@@ -1056,8 +1056,8 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
+                      <P>まさか、こうも簡単に正解されるとは思わなかったが…</P>
                       <P>
-                        まさか、こうも簡単に正解されるとは思わなかったが…
                         <Strong>
                           サヤちゃんが考えた弁当箱は、
                           <H args={{ name: 'minusOneEffect' }} />
