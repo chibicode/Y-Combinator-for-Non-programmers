@@ -1949,6 +1949,26 @@ export const dmgj = initializeExpressionContainer([
   'B'
 ])
 
+export const jtfj = initializeExpressionContainer([
+  yCombinatorHighlighted,
+  {
+    arg: 'a',
+    body: {
+      arg: 'f',
+      body: {
+        checkType: 'isZero',
+        condition: 'f',
+        trueCase: 'A',
+        falseCase: [
+          { shorthandFunc: 'pred' },
+          ['a', [{ shorthandFunc: 'pred' }, 'f']]
+        ]
+      }
+    }
+  },
+  'B'
+])
+
 export const ykbi = initializeExpressionContainer([
   yCombinator,
   {

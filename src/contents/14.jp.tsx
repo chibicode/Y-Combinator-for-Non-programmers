@@ -983,8 +983,23 @@ export default () => (
               ]}
             />
             <R.Hafp>この弁当箱で再現できる</R.Hafp>
-            <ExpressionRunnerSeparator />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        上の弁当箱も早送りすると、先ほどと同じように、終了直前に以下のようになる。だから、繰り返しの機能と同じことができるんだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Sskt>
+              先ほどと同じように、
+              <br />
               早送りが終わる直前に
               <br />
               以下のようになり…
@@ -1175,10 +1190,12 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
+                      <P>そうですね。ここでひとつ説明したいことがあります。</P>
                       <P>
-                        そうですね。そして、
+                        さきほど登場した、
                         <Em>
-                          今回登場した弁当箱の、
+                          <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+                          を計算できる弁当箱の、
                           <Strong>
                             下半分に使われていた部分にご注目ください
                           </Strong>
@@ -1190,9 +1207,53 @@ export default () => (
                 }
               ]}
             />
-            <R.Xhul>下半分(黄色)の部分に注目</R.Xhul>
+            <R.Xhul>
+              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+              を計算できる弁当箱の
+              <br />
+              下半分(黄色)の部分に注目
+            </R.Xhul>
             <BubbleQuotes
               quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>この下半分の部分がどうかしたの？</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        この下半分の部分は、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+                        <Emoji>🅱️</Emoji> を計算できる弁当箱だけでなく、
+                        <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
+                        を計算できる弁当箱にも使われていましたよね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Anzh>
+              <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
+              を計算できる弁当箱も
+              <br />
+              下半分は同じだった
+            </R.Anzh>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>確かにそうだけど…</P>
+                    </>
+                  )
+                },
                 {
                   type: 'dog',
                   children: (
@@ -1221,16 +1282,10 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'thinking',
+                  type: 'surprised',
                   children: (
                     <>
-                      <P>
-                        なるほど。この部分は、<Emoji>🅰️</Emoji>{' '}
-                        <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を再現する場合も、
-                        <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>{' '}
-                        を再現する場合も、下半分に使われていたね。
-                      </P>
-                      <P>これが、繰り返しを可能にしていたのかあ…</P>
+                      <P>なんと！これが、繰り返しを可能にしていたのかあ…</P>
                     </>
                   )
                 },
@@ -1272,7 +1327,7 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'surprised',
+                  type: 'thinking',
                   children: (
                     <>
                       <P>

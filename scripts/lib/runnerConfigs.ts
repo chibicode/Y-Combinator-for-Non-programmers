@@ -2564,6 +2564,14 @@ export const xhul: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs'
 }
 
+export const anzh: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jtfj,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
+}
+
 export const zkon: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.ykbi,
