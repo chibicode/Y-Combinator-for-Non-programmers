@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
-import { lessonTitle } from 'src/lib/titles'
 import { spaces, colors } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
 import H from 'src/components/H'
@@ -15,29 +14,6 @@ const Toc = () => (
       padding: 0;
     `}
   >
-    <li
-      css={css`
-        font-weight: bold;
-        margin-bottom: ${spaces(0.25)};
-      `}
-    >
-      <InternalLink
-        href="/"
-        css={css`
-          text-decoration: none;
-          &:hover {
-            text-decoration: none;
-            background: ${colors('white')};
-          }
-        `}
-      >
-        <H
-          args={{ name: 'titlePrefixColored', addColon: true }}
-          episodeNumberOverrides={0}
-        />{' '}
-        {lessonTitle}
-      </InternalLink>
-    </li>
     {[...Array(numEpisodesExceptFirstAndLast).keys()].map(i => {
       const episodeNumber = i + 1
       return (
