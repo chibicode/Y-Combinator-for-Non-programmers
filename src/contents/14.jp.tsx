@@ -72,7 +72,10 @@ export default () => (
                 <H args={{ name: 'play' }} /> してみると{' '}
                 <EmojiNumber number={5} /> になりました。
               </Em>
-              つまり、
+            </P>
+            <P>
+              つまり、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」を使った場合と同じように、
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算できているかのように見えます。
             </P>
@@ -174,6 +177,9 @@ export default () => (
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                       <Ul>
+                        <UlLi>
+                          弁当箱が複雑なので、ひとつひとつの料理の大きさを小さくしているよ。
+                        </UlLi>
                         <UlLi>
                           説明のために、何度も止めながらやっていくよ。
                         </UlLi>
