@@ -2195,3 +2195,15 @@ export const roso = initializeExpressionContainer({
     ['a', [{ shorthandFunc: 'pred' }, 'f']]
   ]
 })
+
+export const xfso = initializeExpressionContainer([
+  [
+    { name: 'mult', highlighted: true },
+    {
+      shorthandNumberAfterConvert: 'binarySecond'
+    }
+  ],
+  {
+    shorthandNumberAfterConvert: 'binaryFirst'
+  }
+])

@@ -21,6 +21,7 @@ import BlankNumberBrownSvg from 'src/components/BlankNumberBrownSvg'
 import BlankNumberGreenSvg from 'src/components/BlankNumberGreenSvg'
 import MathBoxSvg from 'src/components/MathBoxSvg'
 import TwentySvg from 'src/components/TwentySvg'
+import TwentyFourSvg from 'src/components/TwentyFourSvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 
 export const customEmojiToComponent = {
@@ -31,6 +32,7 @@ export const customEmojiToComponent = {
   horizontalDotDotDotRed: HorizontalDotDotDotRedSvg,
   questionFoodGrey: QuestionFoodGreySvg,
   twenty: TwentySvg,
+  twentyFour: TwentyFourSvg,
   plusOneOrange: PlusOneOrangeSvg,
   minusOnePink: MinusOnePinkSvg,
   doubleArrow: DoubleArrowSvg,

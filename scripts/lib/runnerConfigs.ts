@@ -2713,6 +2713,13 @@ export const kzkg: ExpressionRunnerShorthandConfig = {
   showPriorities: true
 }
 
+export const jtxf: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.xfso,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
 export const aklf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.nuoh,
