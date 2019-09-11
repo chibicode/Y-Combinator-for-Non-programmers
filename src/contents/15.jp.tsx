@@ -780,7 +780,7 @@ export default () => (
                         たとえば、「<Strong>階乗</Strong>
                         」という計算がある。これは「
                         <Strong>
-                          ある数からはじめて、
+                          ある数からはじめて、1を引いていき、
                           <EmojiNumber number={1} />{' '}
                           になるまで繰り返し掛け算をする
                         </Strong>
@@ -834,6 +834,10 @@ export default () => (
                           </>
                         }
                       />
+                      <P>
+                        <Strong>階段</Strong>
+                        みたいに1ずつ数字が減っていくから「階」乗、と覚えておけばいい。
+                      </P>
                     </>
                   )
                 },
@@ -913,7 +917,7 @@ export default () => (
                         まず、
                         <Strong>
                           掛け算を計算できる弁当箱を、以下のように{' '}
-                          <Emoji>✖️</Emoji> の印で省略してみる。
+                          <Emoji>✖️</Emoji>印で省略してみる。
                         </Strong>
                         こうしたほうがひと目で見て分かりやすいからな。
                       </P>
@@ -925,7 +929,7 @@ export default () => (
             <R.Vqyl>掛け算を計算できる弁当箱を…</R.Vqyl>
             <ExpressionRunnerSeparator />
             <R.Jtxf>
-              <Emoji>✖️</Emoji> の印で省略してみる
+              <Emoji>✖️</Emoji>印で省略してみる
             </R.Jtxf>
             <BubbleQuotes
               quotes={[
@@ -934,8 +938,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Emoji>✖️</Emoji>{' '}
-                        の印を使うことで、見た目がシンプルになった！
+                        <Emoji>✖️</Emoji>
+                        印を使うことで、見た目がシンプルになった！
                       </P>
                     </>
                   )
@@ -960,8 +964,8 @@ export default () => (
                         こちらの弁当箱は、<Em>黄色の部分</Em>に、
                         <Em>
                           先ほど紹介した掛け算の弁当箱(
-                          <Emoji>✖️</Emoji>{' '}
-                          の印)と、Yコンビネータの弁当箱が入っている
+                          <Emoji>✖️</Emoji>
+                          印)と、Yコンビネータの弁当箱が入っている
                         </Em>
                         。
                       </P>
@@ -981,7 +985,7 @@ export default () => (
               ]}
             />
             <R.Qaoa>
-              <Strong>掛け算ができる弁当箱</Strong>(<Emoji>✖️</Emoji> の印)と
+              <Strong>掛け算ができる弁当箱</Strong>(<Emoji>✖️</Emoji>印)と
               <br />
               <Strong>Yコンビネータ</Strong>
               の弁当箱を使うことで…
