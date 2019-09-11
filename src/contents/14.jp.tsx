@@ -906,13 +906,20 @@ export default () => (
                   type: 'saya',
                   children: (
                     <>
-                      <P>他にもたとえば、以下のような計算箱でも…</P>
+                      <P>
+                        他にもたとえば、以下のように、
+                        <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+                        <EmojiNumber number={6} /> を計算できる計算箱でも…
+                      </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Owpg>こちらの計算箱も…</R.Owpg>
+            <R.Owpg>
+              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={6} /> を計算できる計算箱も…
+            </R.Owpg>
             <BubbleQuotes
               quotes={[
                 {
@@ -926,50 +933,28 @@ export default () => (
               ]}
             />
             <R.Hafp>この弁当箱で再現できる</R.Hafp>
-            <BubbleQuotes
-              quotes={[
-                {
-                  type: 'saya',
-                  children: (
-                    <>
-                      <P>
-                        ちなみに、
-                        <Em>
-                          上の弁当箱を早送りすると、先ほどのように、早送りが終わる直前に下のようになる
-                        </Em>
-                        んだ。時間がかかるから、ここではやらないけど…
-                      </P>
-                    </>
-                  )
-                }
-              ]}
-            />
+            <ExpressionRunnerSeparator />
             <R.Sskt>
-              上の弁当箱を早送りすると、
+              早送りが終わる直前に
               <br />
-              終了直前に下のようになる
+              以下のようになり…
             </R.Sskt>
+            <ExpressionRunnerSeparator />
+            <R.Mbje>
+              <EmojiNumber number={4} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={6} /> を計算できる
+            </R.Mbje>
             <BubbleQuotes
               quotes={[
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        なるほど、早送りが終わる直前に上のようになるからこそ、下の計算箱を再現できているというわけだね。
-                      </P>
-                      <R.Owpg>これを再現できている！</R.Owpg>
-                    </>
-                  )
-                },
                 {
                   type: 'saya',
                   children: (
                     <>
                       <P>
-                        そう。まとめると、以下のような「
+                        まとめると、「
                         <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-                        」を使った計算箱は…
+                        」を使って、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+                        <Emoji>🅱️</Emoji> を計算できる計算箱は…
                       </P>
                     </>
                   )
@@ -977,9 +962,10 @@ export default () => (
               ]}
             />
             <R.Nmbt>
-              以下のような「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
-              」<br />
-              を使った計算箱は…
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>」を使って、
+              <br />
+              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
+              を計算できる計算箱は…
             </R.Nmbt>
             <BubbleQuotes
               quotes={[
