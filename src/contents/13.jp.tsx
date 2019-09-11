@@ -1120,8 +1120,41 @@ export default () => (
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算している？
             </R.Peiy>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        つまり…<Strong>足し算ができる</Strong>ってこと？
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
           </>
-        )
+        ),
+        footer: {
+          content: (
+            <>
+              <P>
+                <InlineHeader>補足:</InlineHeader> 「
+                <Em>
+                  この弁当箱、本当に実行すると <EmojiNumber number={5} />{' '}
+                  になるの？
+                </Em>
+                」と思われているかもしれませんが、ご安心ください！
+                <Em>
+                  次のページでなぜ <EmojiNumber number={5} />{' '}
+                  になるのかを詳細に説明します
+                </Em>
+                ので、とりあえず読み進めてみてください！
+              </P>
+            </>
+          )
+        }
       },
       {
         title: <>繰り返しを再現できた？</>,
@@ -1220,11 +1253,11 @@ export default () => (
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'dog',
+                  type: 'saya',
                   children: (
                     <>
                       <P>
-                        では、本当に再現できたのかどうか、次のページで確かめてみましょう！先に進んでみてください！
+                        では、本当に再現できたのかどうか、次のページで確かめてみるね！先に進むよ！
                       </P>
                     </>
                   )
