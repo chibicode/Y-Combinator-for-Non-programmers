@@ -66,12 +66,29 @@ export default () => (
             <R.Peiy>
               以下の弁当箱で再現できている？<Emoji>🤔</Emoji>
             </R.Peiy>
-            <P>今回は、これを実際に検証していきましょう！</P>
+            <P>
+              サヤちゃんの弁当箱は、前回
+              <Em>
+                <H args={{ name: 'play' }} /> してみると{' '}
+                <EmojiNumber number={5} /> になりました。
+              </Em>
+              つまり、
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できているかのように見えます。
+            </P>
+            <R.Htir>
+              実行すると <EmojiNumber number={5} /> になる
+            </R.Htir>
+            <P>
+              今回は、本当にこの弁当箱が「
+              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」を再現できたのか検証していきましょう！
+            </P>
           </>
         )
       },
       {
-        title: <>早送りしてみる</>,
+        title: <>途中で何が起きているのか？</>,
         content: (
           <>
             <BubbleQuotes
@@ -81,43 +98,59 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は、前回サヤが考えた弁当箱を早送りして、なぜ
-                        <H args={{ name: 'play' }} /> すると{' '}
-                        <EmojiNumber number={5} /> になるのかを検証してみるよ！
+                        今回は、前回サヤが考えた弁当箱を早送りして、
+                        <Strong>
+                          途中、弁当箱がどう変化するかを確認してみる
+                        </Strong>
+                        よ。
+                      </P>
+                      <P>
+                        そうすることで、
+                        <Em>
+                          どいうった経緯で最終的に <EmojiNumber number={5} />{' '}
+                          になるのか
+                        </Em>
+                        を知ることができるからね。
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <R.Htir>
-              <H args={{ name: 'play' }} /> すると <EmojiNumber number={5} />{' '}
-              になる。
-              <br />
-              なぜそうなるのか、
-              <br />
-              今回は早送りして検証します
-            </R.Htir>
+            <R.Kjba>前回の弁当箱は、早送りすると…</R.Kjba>
+            <ExpressionRunnerSeparator />
+            <EmojiSeparator
+              emojis={['❓', '🍱', '❓']}
+              description={
+                <>
+                  <Strong>途中、弁当箱がどう変化した後…</Strong>
+                </>
+              }
+            />
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              最終的に <EmojiNumber number={5} /> になるのか？
+            </R.Seie>
             <BubbleQuotes
               quotes={[
                 {
-                  type: 'saya',
+                  type: 'thinking',
                   children: (
                     <>
                       <P>
-                        では、
+                        なるほど、
                         <Em>
-                          早送りしてみるね！早送りをすることで、どういう原理になっているかが分かるかも。
+                          早送りをすることで、途中で何が起きているかが分かるというわけか。
                         </Em>
                       </P>
                     </>
                   )
                 },
                 {
-                  type: 'thinking',
+                  type: 'saya',
                   children: (
                     <>
-                      <P>うむ、やってみよう！</P>
+                      <P>それじゃあ、早送りしてみよう！</P>
                     </>
                   )
                 }

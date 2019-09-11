@@ -2215,6 +2215,14 @@ export const cefx: ExpressionRunnerShorthandConfig = {
   highlightOverrides: { a: 'highlighted', b: 'highlighted' }
 }
 
+export const kjba: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.jrfk,
+  showPriorities: true,
+  variableSize: 'xs',
+  containerSize: 'xs'
+}
+
 export const htir: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.jrfk,
