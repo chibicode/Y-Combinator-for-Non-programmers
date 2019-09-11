@@ -79,9 +79,13 @@ export default () => (
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算できているかのように見えます。
             </P>
-            <R.Htir>
-              実行すると <EmojiNumber number={5} /> になる
-            </R.Htir>
+            <R.Kjba>実行すると…</R.Kjba>
+            <ExpressionRunnerSeparator />
+            <R.Seie>
+              <EmojiNumber number={5} /> になる。ということは
+              <br /> <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} /> を計算できている？
+            </R.Seie>
             <P>
               今回は、本当にこの弁当箱が「
               <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
@@ -101,7 +105,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は、前回サヤが考えた弁当箱を早送りして、
+                        今回は、前回サヤが考えた弁当箱を
+                        <H args={{ name: 'fastForward' }} /> して、
                         <Strong>
                           途中、弁当箱がどう変化するかを確認してみる
                         </Strong>
@@ -120,7 +125,10 @@ export default () => (
                 }
               ]}
             />
-            <R.Kjba>前回の弁当箱は、早送りすると…</R.Kjba>
+            <R.Kjba>
+              前回の弁当箱は、
+              <H args={{ name: 'fastForward' }} /> すると…
+            </R.Kjba>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               emojis={['❓', '🍱', '❓']}
@@ -143,7 +151,7 @@ export default () => (
                       <P>
                         なるほど、
                         <Em>
-                          早送りをすることで、途中で何が起きているかが分かるというわけか。
+                          早送りをすることで、途中で何が起きているか確かめてみようってことだね。
                         </Em>
                       </P>
                     </>
@@ -178,7 +186,10 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          弁当箱が複雑なので、ひとつひとつの料理の大きさを小さくしているよ。
+                          <Em>
+                            弁当箱の中身がたくさんあるので、スペースの都合上、ひとつひとつの料理を小さく表示しているよ。
+                          </Em>
+                          見にくくてごめん！
                         </UlLi>
                         <UlLi>
                           説明のために、何度も止めながらやっていくよ。
