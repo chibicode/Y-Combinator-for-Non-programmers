@@ -120,10 +120,13 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
+                      <P>じゃあ、手短に説明するね。</P>
                       <P>
-                        以下の弁当箱の、
-                        <CustomEmoji type="questionFoodGrey" />{' '}
-                        にそれぞれ何を入れたらいいか？っていう問題なんだ。
+                        <Em>
+                          以下の弁当箱の{' '}
+                          <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
+                          に、どのような法則に基づいて料理を入れると…
+                        </Em>
                       </P>
                     </>
                   )
@@ -131,24 +134,53 @@ export default () => (
               ]}
             />
             <R.Envj>
-              どのような法則に基づいて
+              以下の弁当箱の <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
+              に、
               <br />
-              <CustomEmoji size="mdlg" type="questionFoodGrey" />{' '}
-              に料理を入れると…
+              どのような法則に基づいて料理を入れると…
             </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'sad',
+                  children: (
+                    <>
+                      <P>
+                        「<Strong>1を足す効果</Strong>{' '}
+                        <CustomEmoji type="plusOneOrange" />
+                        」がある弁当箱になるか、という問題なんだ。
+                      </P>
+                      <P>
+                        すなわち、
+                        <Em>
+                          <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} />{' '}
+                          を計算できるようにしないといけない
+                        </Em>
+                        んだ。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Omwd>
               <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               に変換できる弁当箱と合体させて
               <br />
               <H args={{ name: 'runAndConvertToMathbox' }} />
               した時、
-              <br />
+            </R.Omwd>
+            <ExpressionRunnerSeparator />
+            <R.Jxvy>
               結果が <CustomEmoji type="blankNumber" size="mdlg" />{' '}
               <Emoji size="mdlg">➕</Emoji>{' '}
               <EmojiNumber number={1} size="mdlg" /> になる？
-            </R.Omwd>
-            <ExpressionRunnerSeparator />
-            <R.Jxvy></R.Jxvy>
+              <br />
+              (すなわち「<Strong>1を足す効果</Strong>{' '}
+              <CustomEmoji type="plusOneOrange" />
+              」がある？)
+            </R.Jxvy>
             <BubbleQuotes
               quotes={[
                 {
