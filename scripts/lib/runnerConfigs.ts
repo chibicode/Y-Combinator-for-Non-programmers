@@ -962,11 +962,6 @@ export const dgpx: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.yvfc
 }
 
-export const kecv: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.jcls
-}
-
 export const nmbt: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.zpil
@@ -2239,30 +2234,6 @@ export const peiy: ExpressionRunnerShorthandConfig = {
   containerSize: 'xs'
 }
 
-export const bfau: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.pqsi,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
-}
-
-export const szdm: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.vqhm,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
-}
-
-export const svig: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.ulnl,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
-}
-
 export const voeb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.guxy,
@@ -2279,14 +2250,6 @@ export const mbje: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.uxvq,
   variableSize: 'md'
-}
-
-export const osxt: ExpressionRunnerShorthandConfig = {
-  runner: 'playButtonOnly',
-  initialExpressionContainer: initialExpressionContainers.aqni,
-  showPriorities: true,
-  variableSize: 'xs',
-  containerSize: 'xs'
 }
 
 export const ovua: ExpressionRunnerShorthandConfig = {
@@ -2570,11 +2533,6 @@ export const sskt: ExpressionRunnerShorthandConfig = {
 export const qycx: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.dxcw
-}
-
-export const vlnb: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.mzvt
 }
 
 export const owpg: ExpressionRunnerShorthandConfig = {

@@ -632,20 +632,6 @@ export const yvfc = initializeExpressionContainer([
   ]
 ])
 
-export const jcls = initializeExpressionContainer([
-  {
-    shorthandFunc: 'add'
-  },
-  [
-    {
-      shorthandFunc: 'add'
-    },
-    {
-      shorthandNumber: 3
-    }
-  ]
-])
-
 export const zpil = initializeExpressionContainer([
   {
     countVariable: 'B',
@@ -1599,49 +1585,6 @@ export const pqsi = initializeExpressionContainer([
   }
 ])
 
-export const vqhm = initializeExpressionContainer([
-  yCombinator,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: 'f',
-        trueCase: { name: 'B', highlighted: true },
-        falseCase: [
-          { shorthandFunc: 'add' },
-          ['a', [{ shorthandFunc: 'pred' }, 'f']]
-        ]
-      }
-    }
-  },
-  {
-    name: 'A',
-    highlighted: true
-  }
-])
-
-export const ulnl = initializeExpressionContainer([
-  yCombinator,
-  {
-    arg: 'a',
-    body: {
-      arg: 'f',
-      body: {
-        checkType: 'isZero',
-        condition: 'f',
-        trueCase: 'B',
-        falseCase: [
-          { shorthandFunc: 'add' },
-          ['a', [{ shorthandFunc: 'pred' }, 'f']]
-        ]
-      }
-    }
-  },
-  'A'
-])
-
 export const uxvq = initializeDoneExpressionContainer({ shorthandNumber: 10 })
 
 export const reak = initializeExpressionContainer({
@@ -1926,18 +1869,6 @@ export const dxcw = initializeExpressionContainer([
   },
   {
     shorthandNumber: 2
-  }
-])
-
-export const mzvt = initializeExpressionContainer([
-  {
-    count: 2,
-    child: {
-      shorthandFunc: 'add'
-    }
-  },
-  {
-    shorthandNumber: 3
   }
 ])
 
