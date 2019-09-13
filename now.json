@@ -7,7 +7,7 @@
       "config": { "distDir": "out" }
     }
   ],
-  "alias": "y.chibicode.com",
+  "alias": "yc.chibicode.com",
   "github": {
     "silent": true
   }

@@ -1,7 +1,7 @@
 import locale from 'src/lib/locale'
 
 export const baseUrl =
-  locale === 'en' ? 'https://y.chibicode.com' : 'https://yj.chibicode.com'
+  locale === 'en' ? 'https://yc.chibicode.com' : 'https://yj.chibicode.com'
 
 export const githubRepo = 'https://github.com/chibicode/yc'
 
