@@ -32,7 +32,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: '自己紹介と本稿について',
+        title: <>自己紹介と本稿について</>,
         content: (
           <>
             <P>

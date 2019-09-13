@@ -20,6 +20,7 @@ export interface EpisodeCardType {
   preview?: CardProps['preview']
   content: React.ReactNode
   footer?: CardProps['footer']
+  t?: boolean
 }
 
 export type EpisodeCardListType = readonly EpisodeCardType[]
@@ -41,7 +42,7 @@ const EpisodeCardList = ({
       <EpisodeHero />
       {cards.length > 0 ? (
         <>
-          {cards.map(({ title, type, content, preview, footer }, index) =>
+          {cards.map(({ title, type, content, preview, footer, t }, index) =>
             index <= lastVisibleCardIndex ? (
               <CardWrapper
                 slideNumber={index + 1}
@@ -53,6 +54,7 @@ const EpisodeCardList = ({
                 preview={preview}
                 isLast={index === lastVisibleCardIndex}
                 footer={footer}
+                t={t}
               >
                 {content}
               </CardWrapper>

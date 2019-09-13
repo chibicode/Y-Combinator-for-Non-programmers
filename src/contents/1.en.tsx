@@ -21,25 +21,23 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        title: <>この話はフィクションです</>,
+        t: true,
+        title: <>Once upon a time…</>,
         content: (
           <>
-            <P>
-              本稿は<Em>ゆるい物語調</Em>
-              で話を進めていきます。ちなみに、この話はフィクションです。
-              <Emoji>😉</Emoji>
-            </P>
-            <P>
-              まずは、この物語に登場する「
-              <Strong>計算箱</Strong>」の話をしましょう。
+            <P t>
+              In this course, we’ll learn about Y Combinator through a short
+              story. Let’s first talk about <Strong>“math boxes”</Strong>, which
+              are one of the key aspects of this story.
             </P>
             <EmojiSeparator
+              t
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>これが計算箱のアイコンです！</>}
+              description={<>This is the icon for math boxes!</>}
             />
           </>
         )
