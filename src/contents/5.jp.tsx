@@ -54,6 +54,36 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
+        type: 'summary',
+        title: <>初級最後です！ちょっと難しいかも</>,
+        content: (
+          <>
+            <P>
+              <Strong>今回が初級最後のページです！</Strong>
+              ここまで読んでくださり、ありがとうございます！
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>初級最後のページです！</>}
+            />
+            <P>
+              <Em>今回登場する弁当箱は、今までと比べてちょっと難しいです。</Em>
+              しかし、ここまで来たあなたなら読み進められるはずです。諦めずにチャレンジしてみてください！
+            </P>
+            <EmojiSeparator
+              emojis={['⚠️', '🍱', '⚠️']}
+              description={
+                <>
+                  ちょっと難しいですが、
+                  <br />
+                  あなたなら大丈夫！
+                </>
+              }
+            />
+          </>
+        )
+      },
+      {
         title: <>3段の弁当箱</>,
         content: (
           <>
