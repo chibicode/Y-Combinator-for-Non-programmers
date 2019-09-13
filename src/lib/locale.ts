@@ -1,7 +1,6 @@
 import getConfig from 'next/config'
-const { publicRuntimeConfig } = getConfig() || { publicRuntimeConfig: {} }
-const locale = (publicRuntimeConfig.devLocale ||
-  process.env.productionLocale ||
+const locale = (process.env.productionLocale ||
+  (getConfig() || { publicRuntimeConfig: {} }).devLocale ||
   // Support for ts-node that doesn't go through next.config.js
   process.env.DEV_LOCALE ||
   process.env.PRODUCTION_LOCALE ||
