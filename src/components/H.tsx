@@ -215,7 +215,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'newUser') {
     if (locale === 'en') {
       return (
-        <P>
+        <P t>
           <InlineHeader>Hello!</InlineHeader> This is{' '}
           <Em>page {episodeNumber + 1}</Em> of the online course called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
@@ -393,7 +393,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>
-            Play <Emoji>▶️</Emoji>
+            Run <Emoji>▶️</Emoji>
           </Strong>
         </>
       )
@@ -412,7 +412,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>
-            Fast Forward <Emoji>⏩</Emoji>
+            Play <Emoji>⏩</Emoji>
           </Strong>
         </>
       )
@@ -431,7 +431,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>
-            Fast Forwarding… <Emoji>⏩</Emoji>
+            Playing… <Emoji>⏩</Emoji>
           </Strong>
         </>
       )
