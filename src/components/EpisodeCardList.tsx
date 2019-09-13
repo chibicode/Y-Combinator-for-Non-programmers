@@ -98,7 +98,7 @@ const EpisodeCardList = ({
         </>
       ) : (
         <CardWrapper setLastVisibleCardIndex={setLastVisibleCardIndex}>
-          <P>
+          <P t>
             <H args={{ name: 'pageUnderConstruction' }} />
           </P>
         </CardWrapper>
