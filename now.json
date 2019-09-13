@@ -3,5 +3,10 @@
   "alias": "yc.chibicode.com",
   "github": {
     "silent": true
+  },
+  "build": {
+    "env": {
+      "PRODUCTION_LOCALE": "en"
+    }
   }
 }
