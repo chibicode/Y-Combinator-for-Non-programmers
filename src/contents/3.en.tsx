@@ -60,7 +60,7 @@ export default () => (
                           だが、お前たちが大事にしている
                           <Strong>
                             計算箱 <CustomEmoji type="mathBox" />
-                          </Strong>
+                          </Strong>{' '}
                           は、すべて<Strong>没収</Strong>させてもらうぞ！
                         </Em>
                       </P>
@@ -97,6 +97,7 @@ export default () => (
             <R.Dgyc>
               <Emoji>😈</Emoji> 計算箱は没収だ！
             </R.Dgyc>
+            <R.Ggxl></R.Ggxl>
             <P>
               足し算や引き算をするのに計算箱に頼り切っていた村人たちは嘆きました。
             </P>
