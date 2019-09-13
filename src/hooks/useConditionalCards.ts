@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import GlobalContext from 'src/components/GlobalContext'
 import EpisodeContext from 'src/components/EpisodeContext'
 import { EpisodeCardListType } from 'src/components/EpisodeCardList'
+import locale from 'src/lib/locale'
 
 const getNextYesNoQuizIndex = (
   cards: EpisodeCardListType,
@@ -31,7 +32,7 @@ const useConditionalCards = (cards: EpisodeCardListType) => {
     }
   }
 
-  if (process.env.isDevelopment) {
+  if (process.env.isDevelopment || locale === 'en') {
     return {
       lastVisibleCardIndex: cards.length - 1,
       setLastVisibleCardIndex: () => {}
