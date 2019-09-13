@@ -6,6 +6,7 @@ import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
 import CardContent, { CardContentProps } from 'src/components/CardContent'
+import locale from 'src/lib/locale'
 
 interface CardColorContextProps {
   color: CardProps['color']
@@ -42,6 +43,7 @@ export interface CardProps {
     content: React.ReactNode
     color?: CardProps['color']
   }
+  t?: boolean
 }
 
 export interface CardState {
@@ -86,7 +88,8 @@ const Card = ({
   slideCount,
   isLast,
   footer,
-  header
+  header,
+  t
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
     <div
@@ -162,11 +165,18 @@ const Card = ({
         >
           {title && (
             <H3
-              css={css`
-                text-align: center;
-                margin-left: ${spaces('-0.25')};
-                margin-right: ${spaces('-0.25')};
-              `}
+              css={[
+                css`
+                  text-align: center;
+                  margin-left: ${spaces('-0.25')};
+                  margin-right: ${spaces('-0.25')};
+                `,
+                !t &&
+                  locale === 'en' &&
+                  css`
+                    opacity: 0.1;
+                  `
+              ]}
             >
               {title}
             </H3>

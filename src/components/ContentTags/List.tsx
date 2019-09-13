@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { spaces } from 'src/lib/theme'
+import locale from 'src/lib/locale'
 
 const commonListCss = css`
   padding: 0;
@@ -26,9 +27,10 @@ const commonListItemCss = css`
 type DefaultUlProps = JSX.IntrinsicElements['ul']
 interface UlProps extends DefaultUlProps {
   size?: 'md' | 'lg'
+  t?: boolean
 }
 
-export const Ul = ({ size = 'md', ...props }: UlProps) => (
+export const Ul = ({ t, size = 'md', ...props }: UlProps) => (
   <ul
     {...props}
     css={[
@@ -36,6 +38,11 @@ export const Ul = ({ size = 'md', ...props }: UlProps) => (
       size === 'lg' &&
         css`
           margin: ${spaces(1.75)} 0;
+        `,
+      !t &&
+        locale === 'en' &&
+        css`
+          opacity: 0.1;
         `
     ]}
   />
@@ -44,9 +51,10 @@ export const Ul = ({ size = 'md', ...props }: UlProps) => (
 type DefaultOlProps = JSX.IntrinsicElements['ol']
 interface OlProps extends DefaultOlProps {
   size?: 'md' | 'lg'
+  t?: boolean
 }
 
-export const Ol = ({ size, ...props }: OlProps) => (
+export const Ol = ({ t, size, ...props }: OlProps) => (
   <ol
     {...props}
     css={[
@@ -57,7 +65,12 @@ export const Ol = ({ size, ...props }: OlProps) => (
         `,
       css`
         counter-reset: text;
-      `
+      `,
+      !t &&
+        locale === 'en' &&
+        css`
+          opacity: 0.1;
+        `
     ]}
   />
 )
