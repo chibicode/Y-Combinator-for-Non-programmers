@@ -5,17 +5,17 @@ import locale from 'src/lib/locale'
 
 type DefaultPProps = JSX.IntrinsicElements['p']
 interface PProps extends DefaultPProps {
-  t?: boolean
+  t8d?: boolean
 }
 
-export const P = ({ t, ...props }: PProps) => (
+export const P = ({ t8d, ...props }: PProps) => (
   <p
     {...props}
     css={[
       css`
         margin: 0 0 ${spaces(1)};
       `,
-      !t &&
+      !t8d &&
         locale === 'en' &&
         css`
           opacity: 0.1;

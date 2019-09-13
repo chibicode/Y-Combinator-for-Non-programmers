@@ -43,7 +43,7 @@ export interface CardProps {
     content: React.ReactNode
     color?: CardProps['color']
   }
-  t?: boolean
+  t8d?: boolean
 }
 
 export interface CardState {
@@ -89,7 +89,7 @@ const Card = ({
   isLast,
   footer,
   header,
-  t
+  t8d
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
     <div
@@ -171,7 +171,7 @@ const Card = ({
                   margin-left: ${spaces('-0.25')};
                   margin-right: ${spaces('-0.25')};
                 `,
-                !t &&
+                !t8d &&
                   locale === 'en' &&
                   css`
                     opacity: 0.1;

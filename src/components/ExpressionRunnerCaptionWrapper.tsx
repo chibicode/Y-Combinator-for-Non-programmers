@@ -4,9 +4,9 @@ import { colors, fontSizes, spaces } from 'src/lib/theme'
 import locale from 'src/lib/locale'
 
 const ExpressionRunnerCaptionWrapper = ({
-  t,
+  t8d,
   ...props
-}: JSX.IntrinsicElements['div'] & { t?: boolean }) => (
+}: JSX.IntrinsicElements['div'] & { t8d?: boolean }) => (
   <div
     css={[
       css`
@@ -15,7 +15,7 @@ const ExpressionRunnerCaptionWrapper = ({
         color: ${colors('indigo500')};
         margin: ${spaces('-0.75')} -2px ${spaces(0.5)} -2px;
       `,
-      !t &&
+      !t8d &&
         locale === 'en' &&
         css`
           opacity: 0.1;

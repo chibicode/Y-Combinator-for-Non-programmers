@@ -20,7 +20,7 @@ export interface EpisodeCardType {
   preview?: CardProps['preview']
   content: React.ReactNode
   footer?: CardProps['footer']
-  t?: boolean
+  t8d?: boolean
 }
 
 export type EpisodeCardListType = readonly EpisodeCardType[]
@@ -42,7 +42,7 @@ const EpisodeCardList = ({
       <EpisodeHero />
       {cards.length > 0 ? (
         <>
-          {cards.map(({ title, type, content, preview, footer, t }, index) =>
+          {cards.map(({ title, type, content, preview, footer, t8d }, index) =>
             index <= lastVisibleCardIndex ? (
               <CardWrapper
                 slideNumber={index + 1}
@@ -54,7 +54,7 @@ const EpisodeCardList = ({
                 preview={preview}
                 isLast={index === lastVisibleCardIndex}
                 footer={footer}
-                t={t}
+                t8d={t8d}
               >
                 {content}
               </CardWrapper>
@@ -100,7 +100,7 @@ const EpisodeCardList = ({
         </>
       ) : (
         <CardWrapper setLastVisibleCardIndex={setLastVisibleCardIndex}>
-          <P t>
+          <P t8d>
             <H args={{ name: 'pageUnderConstruction' }} />
           </P>
         </CardWrapper>

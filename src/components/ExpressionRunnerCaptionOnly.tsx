@@ -4,10 +4,10 @@ import { colors, spaces } from 'src/lib/theme'
 import locale from 'src/lib/locale'
 
 const ExpressionRunnerCaptionOnly = ({
-  t,
+  t8d,
   ...props
 }: JSX.IntrinsicElements['div'] & {
-  t?: boolean
+  t8d?: boolean
 }) => (
   <div
     css={[
@@ -16,7 +16,7 @@ const ExpressionRunnerCaptionOnly = ({
         color: ${colors('indigo500')};
         margin: ${spaces(2.25)} 0 ${spaces(2.5)};
       `,
-      !t &&
+      !t8d &&
         locale === 'en' &&
         css`
           opacity: 0.1;

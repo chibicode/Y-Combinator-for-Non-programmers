@@ -18,7 +18,7 @@ interface EmojiSeparatorProps {
   description?: React.ReactNode
   noBottomMargin: boolean
   noTopMargin: boolean
-  t?: boolean
+  t8d?: boolean
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -59,7 +59,7 @@ const EmojiSeparator = ({
   description,
   noBottomMargin,
   noTopMargin,
-  t
+  t8d
 }: EmojiSeparatorProps) => (
   <Component
     css={[
@@ -117,7 +117,7 @@ const EmojiSeparator = ({
               max-width: ${maxWidths('xs')};
               margin: 0 auto;
             `,
-            !t &&
+            !t8d &&
               locale === 'en' &&
               css`
                 opacity: 0.1;

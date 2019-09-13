@@ -21,17 +21,17 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
-        t: true,
+        t8d: true,
         title: <>Once upon a time…</>,
         content: (
           <>
-            <P t>
+            <P t8d>
               In this course, we’ll learn about Y Combinator through a short
-              story. Let’s first talk about <Strong>“math boxes”</Strong>, which
-              are one of the key aspects of this story.
+              story. Let’s first talk about <Strong>“math boxes”</Strong>, one
+              of the key aspects of this story.
             </P>
             <EmojiSeparator
-              t
+              t8d
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />,

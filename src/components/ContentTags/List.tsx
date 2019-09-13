@@ -27,10 +27,10 @@ const commonListItemCss = css`
 type DefaultUlProps = JSX.IntrinsicElements['ul']
 interface UlProps extends DefaultUlProps {
   size?: 'md' | 'lg'
-  t?: boolean
+  t8d?: boolean
 }
 
-export const Ul = ({ t, size = 'md', ...props }: UlProps) => (
+export const Ul = ({ t8d, size = 'md', ...props }: UlProps) => (
   <ul
     {...props}
     css={[
@@ -39,7 +39,7 @@ export const Ul = ({ t, size = 'md', ...props }: UlProps) => (
         css`
           margin: ${spaces(1.75)} 0;
         `,
-      !t &&
+      !t8d &&
         locale === 'en' &&
         css`
           opacity: 0.1;
@@ -51,10 +51,10 @@ export const Ul = ({ t, size = 'md', ...props }: UlProps) => (
 type DefaultOlProps = JSX.IntrinsicElements['ol']
 interface OlProps extends DefaultOlProps {
   size?: 'md' | 'lg'
-  t?: boolean
+  t8d?: boolean
 }
 
-export const Ol = ({ t, size, ...props }: OlProps) => (
+export const Ol = ({ t8d, size, ...props }: OlProps) => (
   <ol
     {...props}
     css={[
@@ -66,7 +66,7 @@ export const Ol = ({ t, size, ...props }: OlProps) => (
       css`
         counter-reset: text;
       `,
-      !t &&
+      !t8d &&
         locale === 'en' &&
         css`
           opacity: 0.1;

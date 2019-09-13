@@ -215,7 +215,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'newUser') {
     if (locale === 'en') {
       return (
-        <P t>
+        <P t8d>
           <InlineHeader>Hello!</InlineHeader> This is{' '}
           <Em>page {episodeNumber + 1}</Em> of the online course called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
