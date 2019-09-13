@@ -23,18 +23,23 @@ const config = {
     productionLocale: process.env.PRODUCTION_LOCALE,
     isDevelopment: process.env.IS_DEVELOPMENT
   },
-  // For locale, if running 2 servers (JP and EN) locally, if you use build-time config
-  // (env instead of publicRuntimeConfig) then the config overlaps in both servers.
-  // So must use publicRuntimeConfig instead.
-  publicRuntimeConfig: {
-    devLocale: process.env.DEV_LOCALE
-  },
   exportPathMap(defaultPathMap, { dev, outDir }) {
     if (!dev) {
       fs.copyFileSync('sitemap.xml', `${outDir}/sitemap.xml`)
     }
 
     return defaultPathMap
+  }
+}
+
+// For locale, if running 2 servers (JP and EN) locally, if you use build-time config
+// (env instead of publicRuntimeConfig) then the config overlaps in both servers.
+// So must use publicRuntimeConfig instead.
+// However publicRuntimeConfig is not available in serverless environment, so
+// skip if process.env.PRODUCTION_LOCALE is set.
+if (!process.env.PRODUCTION_LOCALE) {
+  config.publicRuntimeConfig = {
+    devLocale: process.env.DEV_LOCALE
   }
 }
 
