@@ -1223,7 +1223,7 @@ export default () => (
                         まず初級編で説明した通り、
                         <Strong>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアがふたつ以上ある場合は、一番左の{' '}
+                          のペアが左右ふたつ以上ある場合は、一番左の{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
                         </Strong>

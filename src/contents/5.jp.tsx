@@ -60,7 +60,7 @@ export const Beginner5Rules = () => (
     <P>
       <InlineHeader>細かい法則1:</InlineHeader>{' '}
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-      のペアがふたつ以上ある場合は、
+      のペアが左右ふたつ以上ある場合は、
       <Strong>一番左のペアからはじめます。</Strong>
     </P>
     <R.Hykj>
@@ -1024,7 +1024,7 @@ export default () => (
             />
             <R.Laea>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアがふたつある
+              のペアが左右ふたつある
             </R.Laea>
             <BubbleQuotes
               quotes={[
@@ -1036,7 +1036,7 @@ export default () => (
                         今まで見たことない形のパズルだ。
                         <Strong>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                          のペアがふたつある
+                          のペアが左右ふたつある
                         </Strong>
                         なあ…
                       </P>
@@ -1194,19 +1194,20 @@ export default () => (
             </P>
             <R.Laea>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアがふたつある
+              のペアが左右ふたつある
             </R.Laea>
             <P>
               <InlineHeader>細かい法則その1:</InlineHeader>{' '}
               <Em>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアがふたつ以上ある場合は、<Strong>左側にある</Strong>{' '}
+                のペアが左右ふたつ以上ある場合は、
+                <Strong>一番左側にある</Strong>{' '}
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Em>
             </P>
             <R.Aezk>
-              <Strong>左側にある</Strong>{' '}
+              <Strong>一番左側にある</Strong>{' '}
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
               のペアからはじめる
             </R.Aezk>

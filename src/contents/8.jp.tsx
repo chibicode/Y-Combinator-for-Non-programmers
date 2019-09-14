@@ -319,7 +319,7 @@ export default () => (
               まず、
               <Em>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアがふたつ以上あるので、一番左の{' '}
+                のペアが左右ふたつ以上あるので、一番左の{' '}
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Em>

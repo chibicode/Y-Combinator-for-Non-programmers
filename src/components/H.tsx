@@ -1244,7 +1244,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-          のペアがふたつ以上ある場合は、
+          のペアが左右ふたつ以上ある場合は、
           <br />
           一番左の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
           のペアからはじめる
