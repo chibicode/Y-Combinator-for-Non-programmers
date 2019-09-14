@@ -14,7 +14,7 @@ declare global {
 
 const EMBED_DELAY = 500
 
-const TwitterEmbed = ({ id }: { id: string }) => {
+const TwitterEmbed = ({ id, showCard }: { id: string; showCard?: boolean }) => {
   const wrapperEl = useRef<HTMLDivElement>(null)
   const [twitterLoaded, setTwitterLoaded] = useState(false)
   useInterval(
@@ -29,7 +29,7 @@ const TwitterEmbed = ({ id }: { id: string }) => {
         window.twttr.widgets
           .createTweet(id, wrapperEl.current, {
             dnt: true,
-            cards: 'hidden',
+            cards: showCard ? undefined : 'hidden',
             lang,
             align: 'center'
           })

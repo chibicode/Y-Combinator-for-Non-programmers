@@ -897,6 +897,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <TwitterEmbed id={shareId} />
             <Hr />
             <P>
+              <InlineHeader>読みやすくする工夫:</InlineHeader>{' '}
+              難しい内容の教材でも最後まで読んでもらう工夫についてもまとめました。本稿で多用した工夫ばかりです。よければご覧ください！
+            </P>
+            <TwitterEmbed id="1172700114630172672" showCard />
+            <Hr />
+            <P>
               <InlineHeader>宣伝:</InlineHeader>{' '}
               もしご興味があれば、わたしが共訳した書籍『
               <ExternalLink href="https://amzn.to/2QlZIqm">
