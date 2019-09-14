@@ -17,11 +17,11 @@ const GlobalState = ({ children }: { children: React.ReactNode }) => {
       setInitialRender(false)
     }
     if (router) {
-      router.events.on('routeChangeComplete', handleRouteChange)
+      router.events.on('routeChangeStart', handleRouteChange)
     }
     return () => {
       if (router) {
-        router.events.off('routeChangeComplete', handleRouteChange)
+        router.events.off('routeChangeStart', handleRouteChange)
       }
     }
   }, [router])

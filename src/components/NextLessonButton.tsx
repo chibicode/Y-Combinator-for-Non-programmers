@@ -27,7 +27,7 @@ const NextLessonButton = ({ halfMargin }: { halfMargin?: boolean }) => {
       <Link href={`/${nextEpisodeNumber}`} passHref>
         <a
           onClick={() => {
-            setEpisodeAsFurthest(episodeNumber)
+            setEpisodeAsFurthest(nextEpisodeNumber)
           }}
           css={css`
             display: inline-block;

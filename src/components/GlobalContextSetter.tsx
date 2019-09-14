@@ -10,17 +10,12 @@ const GlobalContextSetter = ({
   episodeNumber,
   children
 }: GlobalContextProviderProps) => {
-  const { setFurthestEpisode } = useContext(GlobalContext)
+  const { initialRender, setEpisodeAsFurthest } = useContext(GlobalContext)
   useEffect(() => {
-    // https://overreacted.io/a-complete-guide-to-useeffect/#making-effects-self-sufficient
-    setFurthestEpisode(prevFurthestEpisode => {
-      if (prevFurthestEpisode < episodeNumber) {
-        return episodeNumber
-      } else {
-        return prevFurthestEpisode
-      }
-    })
-  }, [episodeNumber, setFurthestEpisode])
+    if (initialRender) {
+      setEpisodeAsFurthest(episodeNumber)
+    }
+  }, [episodeNumber, initialRender, setEpisodeAsFurthest])
   return <React.Fragment>{children}</React.Fragment>
 }
 
