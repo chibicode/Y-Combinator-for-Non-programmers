@@ -54,7 +54,6 @@ export default () => (
                 <Emoji>😈</Emoji>,
                 <CustomEmoji type="mathBox" />
               ]}
-              noBottomMargin
               description={
                 <>
                   この中級編で出す難しい問題に
@@ -1351,7 +1350,6 @@ export default () => (
                 <Emoji>😈</Emoji>,
                 <CustomEmoji type="mathBox" />
               ]}
-              noBottomMargin
               description={
                 <>
                   次のページで出す難しい問題に

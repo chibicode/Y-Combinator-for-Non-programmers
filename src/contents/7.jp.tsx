@@ -73,7 +73,6 @@ export default () => (
                 <Emoji>😈</Emoji>,
                 <CustomEmoji type="mathBox" />
               ]}
-              noBottomMargin
               description={
                 <>
                   これから出す難しい問題に
@@ -881,6 +880,14 @@ export default () => (
                   )
                 }
               ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <Emoji>😈</Emoji>,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={<>この問題が解けたら、計算箱を返してやろう！</>}
             />
           </>
         )
