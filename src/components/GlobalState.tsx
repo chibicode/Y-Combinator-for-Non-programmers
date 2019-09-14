@@ -31,7 +31,15 @@ const GlobalState = ({ children }: { children: React.ReactNode }) => {
         initialRender,
         setInitialRender,
         furthestEpisode,
-        setFurthestEpisode
+        setEpisodeAsFurthest: (episodeNumber: number) => {
+          setFurthestEpisode((prevFurthestEpisode: number) => {
+            if (prevFurthestEpisode < episodeNumber) {
+              return episodeNumber
+            } else {
+              return prevFurthestEpisode
+            }
+          })
+        }
       }}
     >
       {children}
