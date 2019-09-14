@@ -14,6 +14,7 @@ import * as R from 'src/components/Runners'
 import EmojiWithText from 'src/components/EmojiWithText'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { Beginner5Rules } from 'src/contents/5.jp'
 
 export default () => (
   <EpisodeCardList
@@ -127,6 +128,12 @@ export default () => (
                   children: (
                     <>
                       <P>何だか複雑そうな弁当箱だなあ…</P>
+                      <P>
+                        <Strong>
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          にはそれぞれ何の料理が入るの？
+                        </Strong>
+                      </P>
                     </>
                   )
                 },
@@ -135,10 +142,77 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、
+                        それが今回の問題です！
+                        <Strong>
+                          村人のみなさんには、
+                          <CustomEmoji type="questionFoodGrey" />{' '}
+                          には何の料理が入るかを当ててもらいます。
+                        </Strong>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Envj>
+              <Strong>
+                <CustomEmoji type="questionFoodGrey" /> に何が入るかを
+                <br />
+                当ててもらいます！<Emoji>🐶</Emoji>
+              </Strong>
+            </R.Envj>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'thinking',
+                  children: (
+                    <>
+                      <P>
+                        でも、まだ何の情報もないから…
+                        <CustomEmoji type="questionFoodGrey" />{' '}
+                        に何が入るかなんて分かんないよ。
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        その通りです。まだ説明することがありますから。では、続けますね！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <H args={{ name: 'plusOneEffect' }} />
+          </>
+        ),
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        先ほどの弁当箱は、
                         <Strong>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                          に、ある法則に基づいて料理を入れると、
+                          に、ある法則に基づいて料理を入れると…
+                        </Strong>
+                      </P>
+                      <P>
+                        <Strong>
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱になります。
                         </Strong>
@@ -690,6 +764,7 @@ export default () => (
         )
       },
       {
+        type: 'summary',
         title: <>計算箱を賭けた問題</>,
         content: (
           <>
@@ -760,7 +835,19 @@ export default () => (
                       </P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+            <R.Qrgc>
+              それぞれの <CustomEmoji type="questionFoodGrey" /> に何を入れたら
+              <br />
+              <H args={{ name: 'plusOneEffect' }} />
+              がある弁当箱になる？
+            </R.Qrgc>
+            <ExpressionRunnerSeparator />
+            <R.Jxvy></R.Jxvy>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'dog',
                   children: (
@@ -781,27 +868,7 @@ export default () => (
                       </P>
                     </>
                   )
-                }
-              ]}
-            />
-            <EmojiSeparator
-              nodes={[
-                <CustomEmoji type="questionFoodGrey" />,
-                <Emoji>🐶</Emoji>,
-                <CustomEmoji type="plusOneOrange" />
-              ]}
-              description={
-                <>
-                  それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
-                  に何を入れたら
-                  <br />
-                  <H args={{ name: 'plusOneEffect' }} />
-                  がある弁当箱になる？
-                </>
-              }
-            />
-            <BubbleQuotes
-              quotes={[
+                },
                 {
                   type: 'devil',
                   children: (
@@ -1066,22 +1133,94 @@ export default () => (
                       <P>では、上の弁当箱を実行したらどうなるか見ていこう！</P>
                     </>
                   )
-                },
+                }
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>初級編の復習</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
+                      <P>
+                        今回の弁当箱では、<Em>初級その5で学んだ法則が登場</Em>
+                        します。
+                      </P>
+                      <P>
+                        覚えていなくても、早送りで勝手に進んでくれるので大丈夫ですが、いちおう復習をしておきましょう！
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <Beginner5Rules />
+          </>
+        )
+      },
+      {
+        title: <>早送りしてみよう</>,
+        content: (
+          <>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'brave',
+                  children: (
+                    <>
+                      <P>
+                        初級編の復習もしたことだし、先ほど考えた弁当箱に、
+                        <H args={{ name: 'plusOneEffect' }} />
+                        があるかどうか見ていこう！
+                      </P>
+                      <P>
+                        以下のように、
+                        <Strong>
+                          <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+                          <EmojiNumber number={1} /> が計算できれば
+                          <Strong>成功</Strong> <Emoji>🎉</Emoji>
+                        </Strong>{' '}
+                        なんだよな。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Nuco>
+              <EmojiNumber number={1} /> に変換できる弁当箱と、
+              <br />
+              先ほどの弁当箱を合体させ…
+            </R.Nuco>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              <H args={{ name: 'runAndConvertToMathbox' }} />
+              <br />
+              して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
+              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <br />
+              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+            </ExpressionRunnerCaptionOnly>
+            <BubbleQuotes
+              quotes={[
                 {
                   type: 'dog',
                   children: (
                     <>
                       <P>
                         それでは、
-                        <H
-                          args={{
-                            name: 'pressFastForward',
-                            mentionRightArrow: true
-                          }}
-                        />
+                        <H args={{ name: 'fastForward' }} /> していきましょう！
                       </P>
                       <P>
-                        初級その5で説明した通り、
+                        まず初級編で説明した通り、
                         <Strong>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアがふたつ以上ある場合は、一番左の{' '}
@@ -1094,6 +1233,13 @@ export default () => (
                 }
               ]}
             />
+            <P>
+              <H
+                args={{
+                  name: 'pressFastForward'
+                }}
+              />
+            </P>
             <R.Dhiu>
               <H args={{ name: 'startWithLeftMostOneCaption' }} />
             </R.Dhiu>
@@ -1115,23 +1261,25 @@ export default () => (
                         </Em>
                       </P>
                       <P>
-                        というわけで、初級その5で説明した通り、
+                        というわけで、初級編で説明した通り、
                         <Strong>
                           次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                           のペアから
                         </Strong>
                         はじめます。
-                        <H
-                          args={{
-                            name: 'pressFastForward'
-                          }}
-                        />
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <P>
+              <H
+                args={{
+                  name: 'pressFastForward'
+                }}
+              />
+            </P>
             <R.Akjy>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Akjy>
@@ -1147,17 +1295,19 @@ export default () => (
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
                         </Strong>
-                        <H
-                          args={{
-                            name: 'pressFastForward'
-                          }}
-                        />
                       </P>
                     </>
                   )
                 }
               ]}
             />
+            <P>
+              <H
+                args={{
+                  name: 'pressFastForward'
+                }}
+              />
+            </P>
             <R.Hnyn>
               <H args={{ name: 'startWithTwoCaption' }} />
             </R.Hnyn>

@@ -36,7 +36,8 @@ export const wwtl: ExpressionRunnerShorthandConfig = {
 }
 
 export const vdhd: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.pisd,
   initialState: 'showFuncUnbound',
   showPriorities: true
@@ -120,6 +121,14 @@ export const mhyv: ExpressionRunnerShorthandConfig = {
   initialState: 'active'
 }
 
+export const myjz: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
+  initialExpressionContainer: initialExpressionContainers.drvy,
+  showPriorities: true,
+  initialState: 'active'
+}
+
 export const ayok: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.drvy,
@@ -187,6 +196,14 @@ export const dkiy: ExpressionRunnerShorthandConfig = {
 
 export const dqey: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.hrdv,
+  initialState: 'active',
+  showPriorities: true
+}
+
+export const zemy: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.hrdv,
   initialState: 'active',
   showPriorities: true
@@ -337,7 +354,8 @@ export const hdxc: ExpressionRunnerShorthandConfig = {
 }
 
 export const hykj: ExpressionRunnerShorthandConfig = {
-  runner: 'simple',
+  runner: 'playButtonOnly',
+  skipToTheEnd: false,
   initialExpressionContainer: initialExpressionContainers.lqti,
   initialState: 'showFuncUnbound',
   showPriorities: true

@@ -25,6 +25,76 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 
+export const Beginner5Rules = () => (
+  <>
+    <P>
+      <InlineHeader>3段以上の弁当箱は、以下のように解きます。</InlineHeader>
+    </P>
+    <Ol>
+      <OlLi>
+        <Em>
+          まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+          のペアからはじめる。
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          下段の真ん中にある料理には{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+          をつける。
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+          は、いったん無視して構わない。
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアが終わると、
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+          になるので、また繰り返す。
+        </Em>
+      </OlLi>
+    </Ol>
+    <R.Vdhd>3段の弁当箱</R.Vdhd>
+    <Hr />
+    <P>
+      <InlineHeader>細かい法則1:</InlineHeader>{' '}
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+      のペアがふたつ以上ある場合は、
+      <Strong>一番左のペアからはじめます。</Strong>
+    </P>
+    <R.Hykj>
+      <H args={{ name: 'startWithLeftMostOneCaption' }} />
+    </R.Hykj>
+    <P>
+      <InlineHeader>補足:</InlineHeader>{' '}
+      <Em>
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+        のペアが弁当箱の左端にない場合は、内側の{' '}
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる。
+      </Em>
+    </P>
+    <R.Myjz>
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+      のペアが弁当箱の左端にない場合は、
+      <br />
+      内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる
+    </R.Myjz>
+    <Hr />
+    <P>
+      <InlineHeader>細かい法則2:</InlineHeader> 下段にひとつの料理しかなく、
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+      のペアからはじめられない場合、
+      <Strong>
+        <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアからはじめます。
+      </Strong>
+    </P>
+    <R.Zemy>
+      <H args={{ name: 'startWithTwoCaption' }} />
+    </R.Zemy>
+  </>
+)
+
 const WillReturn = () => (
   <>
     <EmojiSeparator
@@ -53,6 +123,36 @@ const WillReturn = () => (
 export default () => (
   <EpisodeCardList
     cards={[
+      {
+        type: 'summary',
+        title: <>初級最後です！ちょっと難しいかも</>,
+        content: (
+          <>
+            <P>
+              <Strong>今回が初級最後のページです！</Strong>
+              ここまで読んでくださり、ありがとうございます！
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>初級最後のページです！</>}
+            />
+            <P>
+              <Em>今回登場する弁当箱は、今までと比べてちょっと難しいです。</Em>
+              しかし、ここまで来たあなたなら読み進められるはずです。諦めずにチャレンジしてみてください！
+            </P>
+            <EmojiSeparator
+              emojis={['⚠️', '🍱', '⚠️']}
+              description={
+                <>
+                  ちょっと難しいですが、
+                  <br />
+                  あなたなら大丈夫！
+                </>
+              }
+            />
+          </>
+        )
+      },
       {
         title: <>3段の弁当箱</>,
         content: (
@@ -1764,79 +1864,7 @@ export default () => (
         ),
         content: (
           <>
-            <P>
-              <InlineHeader>3段の弁当箱は、以下のように解きます。</InlineHeader>
-            </P>
-            <Ol>
-              <OlLi>
-                <Em>
-                  まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアからはじめる。
-                </Em>
-              </OlLi>
-              <OlLi>
-                <Em>
-                  下段の真ん中にある料理には{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  をつける。
-                  <BottomRightBadge
-                    inline
-                    bottomRightBadgeType="funcUnbound"
-                  />{' '}
-                  は、いったん無視して構わない。
-                </Em>
-              </OlLi>
-              <OlLi>
-                <Em>
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアが終わると、
-                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  になるので、また繰り返す。
-                </Em>
-              </OlLi>
-            </Ol>
-            <R.Vdhd>3段の弁当箱</R.Vdhd>
-            <Hr />
-            <P>
-              <InlineHeader>細かい法則1:</InlineHeader>{' '}
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアがふたつ以上ある場合は、
-              <Strong>一番左のペアからはじめます。</Strong>
-            </P>
-            <R.Hykj>
-              <H args={{ name: 'startWithLeftMostOneCaption' }} />
-            </R.Hykj>
-            <P>
-              <InlineHeader>補足:</InlineHeader>{' '}
-              <Em>
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアが弁当箱の左端にない場合は、内側の{' '}
-                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                のペアからはじめる。
-              </Em>
-            </P>
-            <R.Mhyv>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアが弁当箱の左端にない場合は、
-              <br />
-              内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアからはじめる
-            </R.Mhyv>
-            <Hr />
-            <P>
-              <InlineHeader>細かい法則2:</InlineHeader>{' '}
-              下段にひとつの料理しかなく、
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-              のペアからはじめられない場合、
-              <Strong>
-                <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
-                のペアからはじめます。
-              </Strong>
-            </P>
-            <R.Dqey>
-              <H args={{ name: 'startWithTwoCaption' }} />
-            </R.Dqey>
+            <Beginner5Rules />
             <BubbleQuotes
               quotes={[
                 {
