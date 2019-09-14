@@ -17,11 +17,11 @@ const GlobalState = ({ children }: { children: React.ReactNode }) => {
       setInitialRender(false)
     }
     if (router) {
-      router.events.on('routeChangeComplete', handleRouteChange)
+      router.events.on('routeChangeStart', handleRouteChange)
     }
     return () => {
       if (router) {
-        router.events.off('routeChangeComplete', handleRouteChange)
+        router.events.off('routeChangeStart', handleRouteChange)
       }
     }
   }, [router])
@@ -31,7 +31,15 @@ const GlobalState = ({ children }: { children: React.ReactNode }) => {
         initialRender,
         setInitialRender,
         furthestEpisode,
-        setFurthestEpisode
+        setEpisodeAsFurthest: (episodeNumber: number) => {
+          setFurthestEpisode((prevFurthestEpisode: number) => {
+            if (prevFurthestEpisode < episodeNumber) {
+              return episodeNumber
+            } else {
+              return prevFurthestEpisode
+            }
+          })
+        }
       }}
     >
       {children}

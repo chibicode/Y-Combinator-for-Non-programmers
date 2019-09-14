@@ -4,14 +4,14 @@ export interface GlobalContextProps {
   initialRender: boolean
   furthestEpisode: number
   setInitialRender: React.Dispatch<React.SetStateAction<boolean>>
-  setFurthestEpisode: React.Dispatch<React.SetStateAction<number>>
+  setEpisodeAsFurthest: (x: number) => void
 }
 
 export const globalContextDefault: GlobalContextProps = {
   initialRender: true,
   furthestEpisode: 0,
   setInitialRender: () => {},
-  setFurthestEpisode: () => {}
+  setEpisodeAsFurthest: (_: number) => {}
 }
 
 export default React.createContext<GlobalContextProps>(globalContextDefault)

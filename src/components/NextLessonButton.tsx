@@ -8,10 +8,12 @@ import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
 import { Strong } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'
+import GlobalContext from 'src/components/GlobalContext'
 import Emoji from 'src/components/Emoji'
 
 const NextLessonButton = ({ halfMargin }: { halfMargin?: boolean }) => {
   const { episodeNumber } = useContext(EpisodeContext)
+  const { setEpisodeAsFurthest } = useContext(GlobalContext)
   const nextEpisodeNumber = episodeNumber + 1
 
   return (
@@ -24,6 +26,9 @@ const NextLessonButton = ({ halfMargin }: { halfMargin?: boolean }) => {
     >
       <Link href={`/${nextEpisodeNumber}`} passHref>
         <a
+          onClick={() => {
+            setEpisodeAsFurthest(nextEpisodeNumber)
+          }}
           css={css`
             display: inline-block;
             padding: ${locale === 'jp' ? spaces(0.25) : spaces(0.5)}
