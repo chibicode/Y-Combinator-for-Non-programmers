@@ -53,7 +53,15 @@ const EpisodeCardList = ({
                 setLastVisibleCardIndex={setLastVisibleCardIndex}
                 preview={preview}
                 isLast={index === lastVisibleCardIndex}
-                footer={footer}
+                footer={
+                  episodeNumber > 0 && index === 0
+                    ? {
+                        content: (
+                          <H args={{ name: 'toPreviousEpisodeFooter' }} />
+                        )
+                      }
+                    : footer
+                }
                 t8d={t8d}
               >
                 {content}

@@ -149,6 +149,7 @@ interface HProps {
     | { name: 'slide' }
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
+    | { name: 'toPreviousEpisodeFooter' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1345,6 +1346,47 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {testimonials.map(id => (
             <TwitterEmbed id={id} key={id} />
           ))}
+        </>
+      )
+    }
+  }
+  if (args.name === 'toPreviousEpisodeFooter') {
+    if (locale === 'en') {
+      return (
+        <>
+          <P>
+            <InlineHeader>Looking for the previous page?</InlineHeader>{' '}
+            <InternalLink href={`/${episodeNumber - 1}`}>
+              Click here for{' '}
+              <Strong>
+                <H
+                  args={{
+                    name: 'titlePrefixColored'
+                  }}
+                  episodeNumberOverrides={episodeNumber - 1}
+                />
+              </Strong>
+            </InternalLink>
+            .
+          </P>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <P>
+            <InlineHeader>ちなみに前回はこちら:</InlineHeader>{' '}
+            <InternalLink href={`/${episodeNumber - 1}`}>
+              <Strong>
+                <H
+                  args={{
+                    name: 'titlePrefixColored'
+                  }}
+                  episodeNumberOverrides={episodeNumber - 1}
+                />
+              </Strong>
+            </InternalLink>
+          </P>
         </>
       )
     }
