@@ -20,6 +20,7 @@ import BlankNumberPurpleSvg from 'src/components/BlankNumberPurpleSvg'
 import BlankNumberBrownSvg from 'src/components/BlankNumberBrownSvg'
 import BlankNumberGreenSvg from 'src/components/BlankNumberGreenSvg'
 import MathBoxSvg from 'src/components/MathBoxSvg'
+import IndexSvg from 'src/components/IndexSvg'
 import TwentySvg from 'src/components/TwentySvg'
 import TwentyFourSvg from 'src/components/TwentyFourSvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
@@ -47,7 +48,8 @@ export const customEmojiToComponent = {
   blankNumberGreen: BlankNumberGreenSvg,
   mathBox: MathBoxSvg,
   singleArrow: SingleArrowSvg,
-  lambda: LambdaSvg
+  lambda: LambdaSvg,
+  index: IndexSvg
 }
 
 const CustomEmoji = ({

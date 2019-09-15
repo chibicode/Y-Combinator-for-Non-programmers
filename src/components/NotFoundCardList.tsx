@@ -11,6 +11,7 @@ const NotFoundCardList = () => (
     cards={[
       {
         type: 'meta',
+        t8d: true,
         title: (
           <>
             <H args={{ name: 'pageNotFound' }} />
@@ -19,6 +20,7 @@ const NotFoundCardList = () => (
         content: (
           <>
             <P
+              t8d
               css={css`
                 text-align: center;
               `}

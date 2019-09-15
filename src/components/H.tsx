@@ -11,7 +11,6 @@ import {
   Strong,
   InlineHeader,
   ExternalLink,
-  LinkButton,
   Hr,
   Img
 } from 'src/components/ContentTags'
@@ -96,7 +95,6 @@ interface HProps {
     | { name: 'yesNoQuizDontWorry' }
     | { name: 'pageUnderConstruction' }
     | { name: 'question' }
-    | { name: 'prevAndNextLinks' }
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisBentoBox' }
     | {
@@ -149,7 +147,7 @@ interface HProps {
     | { name: 'slide' }
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
-    | { name: 'toPreviousEpisodeFooter' }
+    | { name: 'goToOtherPage' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -952,66 +950,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       }
     }
   }
-  if (args.name === 'prevAndNextLinks') {
-    if (locale === 'en') {
-      return <>?</>
-    } else {
-      return (
-        <>
-          <LinkButton
-            css={css`
-              text-decoration: none;
-              background: ${colors('yellow100')};
-              &:hover {
-                text-decoration: none;
-              }
-            `}
-            onClick={episodeContext.showModal}
-          >
-            <InlineHeader>目次</InlineHeader>
-          </LinkButton>{' '}
-          / 前へ:{' '}
-          <InternalLink
-            href={`/${episodeNumber - 1}`}
-            css={css`
-              background: ${colors('yellow100')};
-              display: inline-block;
-              text-decoration: none;
-              &:hover {
-                text-decoration: none;
-              }
-            `}
-          >
-            <InlineHeader>
-              <H
-                args={{ name: 'titlePrefixColored' }}
-                episodeNumberOverrides={episodeNumber - 1}
-              />
-            </InlineHeader>
-          </InternalLink>{' '}
-          / 次へ:{' '}
-          <InternalLink
-            href={`/${episodeNumber + 1}`}
-            css={css`
-              text-decoration: none;
-              display: inline-block;
-              background: ${colors('yellow100')};
-              &:hover {
-                text-decoration: none;
-              }
-            `}
-          >
-            <InlineHeader>
-              <H
-                args={{ name: 'titlePrefixColored' }}
-                episodeNumberOverrides={episodeNumber + 1}
-              />
-            </InlineHeader>
-          </InternalLink>
-        </>
-      )
-    }
-  }
   if (args.name === 'dateAndSource') {
     if (locale === 'en') {
       return <>?</>
@@ -1350,45 +1288,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       )
     }
   }
-  if (args.name === 'toPreviousEpisodeFooter') {
+  if (args.name === 'goToOtherPage') {
     if (locale === 'en') {
-      return (
-        <>
-          <P>
-            <InlineHeader>Looking for the previous page?</InlineHeader>{' '}
-            <InternalLink href={`/${episodeNumber - 1}`}>
-              Click here for{' '}
-              <Strong>
-                <H
-                  args={{
-                    name: 'titlePrefixColored'
-                  }}
-                  episodeNumberOverrides={episodeNumber - 1}
-                />
-              </Strong>
-            </InternalLink>
-            .
-          </P>
-        </>
-      )
+      return <>Looking for some other page?</>
     } else {
-      return (
-        <>
-          <P>
-            <InlineHeader>ちなみに前回はこちら:</InlineHeader>{' '}
-            <InternalLink href={`/${episodeNumber - 1}`}>
-              <Strong>
-                <H
-                  args={{
-                    name: 'titlePrefixColored'
-                  }}
-                  episodeNumberOverrides={episodeNumber - 1}
-                />
-              </Strong>
-            </InternalLink>
-          </P>
-        </>
-      )
+      return <>他のページをお探しですか？</>
     }
   }
   throw new Error()

@@ -4,6 +4,7 @@ export const allFontSizes = {
   0.65: 0.65,
   0.7: 0.7,
   0.75: 0.75,
+  0.8: 0.8, // 0.8 is for navbar only
   0.85: 0.85,
   1: 1,
   1.2: 1.2,

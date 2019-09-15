@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
+import { InlineHeader } from 'src/components/ContentTags'
 import EpisodeHero from 'src/components/EpisodeHero'
 import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
@@ -10,8 +11,9 @@ import H from 'src/components/H'
 import { P } from 'src/components/ContentTags'
 import { shareVisible } from 'src/lib/twitter'
 import NextLessonButton from 'src/components/NextLessonButton'
-import { spaces } from 'src/lib/theme'
+import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
+import PrevNextLinks from 'src/components/PrevNextLinks'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 
 export interface EpisodeCardType {
@@ -57,7 +59,27 @@ const EpisodeCardList = ({
                   episodeNumber > 0 && index === 0
                     ? {
                         content: (
-                          <H args={{ name: 'toPreviousEpisodeFooter' }} />
+                          <>
+                            <P
+                              css={css`
+                                text-align: center;
+                              `}
+                            >
+                              <InlineHeader>
+                                <H args={{ name: 'goToOtherPage' }} />
+                              </InlineHeader>
+                            </P>
+                            <div
+                              css={css`
+                                margin-bottom: ${spaces(1)};
+                                font-size: ${fontSizes(0.8)};
+                                margin-left: ${spaces('-0.75')};
+                                margin-right: ${spaces('-0.75')};
+                              `}
+                            >
+                              <PrevNextLinks />
+                            </div>
+                          </>
                         )
                       }
                     : footer

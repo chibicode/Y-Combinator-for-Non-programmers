@@ -12,11 +12,11 @@ export const navigationLinkClasses = (isBottom?: boolean) => css`
   text-decoration: none;
   color: ${colors('grey800')};
   font-weight: bold;
-  font-size: ${fontSizes(0.85)};
+  font-size: ${fontSizes(0.8)};
   background: none;
   border: none;
   border-radius: ${radii(0.5)};
-  padding: ${spaces(0.25)} ${spaces(0.5)};
+  padding: ${spaces(0.25)} ${spaces(0.375)};
   margin: ${spaces('-0.5')};
   cursor: pointer;
   display: inline-block;

@@ -17,7 +17,6 @@ import {
   ns
 } from 'src/lib/theme'
 import H from 'src/components/H'
-import PrevNextLinks from 'src/components/PrevNextLinks'
 
 const commonTitleClasses = css`
   line-height: ${lineHeights(1.1)};
@@ -109,18 +108,6 @@ const EpisodeHero = () => {
             )
         )}
       />
-      {episodeNumber > 0 && (
-        <div
-          css={css`
-            margin: ${spaces('-1')} 0 ${spaces(1.5)};
-            text-align: center;
-            font-size: ${fontSizes(0.75)};
-            color: ${colors('grey600')};
-          `}
-        >
-          <PrevNextLinks />
-        </div>
-      )}
     </header>
   )
 }
