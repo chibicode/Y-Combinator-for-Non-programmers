@@ -14,6 +14,7 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
 import PrevNextLinks from 'src/components/PrevNextLinks'
+import Emoji from 'src/components/Emoji'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 
 export interface EpisodeCardType {
@@ -66,7 +67,9 @@ const EpisodeCardList = ({
                               `}
                             >
                               <InlineHeader>
-                                <H args={{ name: 'goToOtherPage' }} />
+                                <Emoji>🌲</Emoji>{' '}
+                                <H args={{ name: 'goToOtherPage' }} />{' '}
+                                <Emoji>🌲</Emoji>
                               </InlineHeader>
                             </P>
                             <div
