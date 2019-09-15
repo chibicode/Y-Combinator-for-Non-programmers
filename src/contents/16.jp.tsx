@@ -29,6 +29,7 @@ export default () => (
   <EpisodeCardList
     cards={[
       {
+        type: 'summary',
         title: <>これが最後のページです！</>,
         content: (
           <>
@@ -39,6 +40,13 @@ export default () => (
               emojis={['🎉', '🤗', '🎉']}
               description={<>お疲れ様でした！</>}
             />
+          </>
+        )
+      },
+      {
+        title: <>そもそも弁当箱というアイデアはどこから来たのか</>,
+        content: (
+          <>
             <P>
               さて、前回の最後に、ラムダ村の村人は次のような質問をしました。
             </P>
