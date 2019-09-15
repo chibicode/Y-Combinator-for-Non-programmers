@@ -73,7 +73,10 @@ const EpisodeCardList = ({
               >
                 <CardWrapper
                   type="meta"
-                  isLast
+                  isLast={
+                    episodeNumber > 0 &&
+                    episodeNumber <= numEpisodesExceptFirstAndLast
+                  }
                   title={<H args={{ name: 'shareTitle' }} />}
                   setLastVisibleCardIndex={setLastVisibleCardIndex}
                   footer={{
@@ -95,6 +98,18 @@ const EpisodeCardList = ({
                     <NextLessonButton halfMargin />
                   )}
                 </CardWrapper>
+                {(episodeNumber === 0 ||
+                  episodeNumber > numEpisodesExceptFirstAndLast) && (
+                  <CardWrapper
+                    type="meta"
+                    isLast
+                    title={<H args={{ name: 'testimonialsTitle' }} />}
+                    setLastVisibleCardIndex={setLastVisibleCardIndex}
+                  >
+                    <H args={{ name: 'testimonialsContent' }} />
+                    {episodeNumber === 0 && <NextLessonButton halfMargin />}
+                  </CardWrapper>
+                )}
               </div>
             )}
         </>

@@ -73,6 +73,7 @@ const CardWrapper = ({
     >
       <div ref={domRef}>
         <Card
+          inCardWrapper
           {...{
             slideNumber,
             slideCount,

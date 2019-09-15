@@ -44,6 +44,7 @@ export interface CardProps {
     color?: CardProps['color']
   }
   t8d?: boolean
+  inCardWrapper?: boolean
 }
 
 export interface CardState {
@@ -89,7 +90,8 @@ const Card = ({
   isLast,
   footer,
   header,
-  t8d
+  t8d,
+  inCardWrapper
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
     <div
@@ -140,7 +142,7 @@ const Card = ({
       )}
       <div
         css={css`
-          margin-bottom: ${slideNumber === undefined ? spaces(1.5) : 0};
+          margin-bottom: ${inCardWrapper ? 0 : spaces(1.5)};
         `}
       >
         <div
@@ -209,7 +211,7 @@ const Card = ({
         )}
       </div>
     </div>
-    {!isLast && slideNumber !== undefined && (
+    {!isLast && inCardWrapper && (
       <div
         css={css`
           width: 1.25rem;

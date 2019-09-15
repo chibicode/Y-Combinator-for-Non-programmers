@@ -39,6 +39,7 @@ import { githubRepo } from 'src/lib/meta'
 import CustomEmoji from 'src/components/CustomEmoji'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import { VariableNames } from 'src/types/VariableNames'
+import testimonials from 'src/lib/testimonials'
 
 const prefixColors = {
   intro: colors('grey600'),
@@ -146,6 +147,8 @@ interface HProps {
     | { name: 'skipToTheStoppingPoint' }
     | { name: 'fastForwardSkippableToTheEnd' }
     | { name: 'slide' }
+    | { name: 'testimonialsTitle' }
+    | { name: 'testimonialsContent' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1323,6 +1326,27 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Next</>
     } else {
       return <>次へ</>
+    }
+  }
+  if (args.name === 'testimonialsTitle') {
+    if (locale === 'en') {
+      return <>Testimonials</>
+    } else {
+      return <>読者の声</>
+    }
+  }
+  if (args.name === 'testimonialsContent') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <P>みなさまコメントありがとうございます！</P>
+          {testimonials.map(id => (
+            <TwitterEmbed id={id} key={id} />
+          ))}
+        </>
+      )
     }
   }
   throw new Error()
