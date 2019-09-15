@@ -22,13 +22,13 @@ export default () => (
     cards={[
       {
         t8d: true,
-        title: <>Once upon a time…</>,
+        title: <>Welcome!</>,
         content: (
           <>
             <P t8d>
               In this course, we’ll learn about Y Combinator through a short
               story. Let’s first talk about <Strong>“math boxes”</Strong>, one
-              of the key aspects of this story.
+              of the key items of this story.
             </P>
             <EmojiSeparator
               t8d
@@ -37,22 +37,25 @@ export default () => (
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>This is the icon for math boxes!</>}
+              description={<>This is the icon for math boxes.</>}
             />
           </>
         )
       },
       {
-        title: <>ラムダ村の計算箱</>,
+        t8d: true,
+        title: <>Once upon a time…</>,
         content: (
           <>
-            <P>
-              むかしむかし、「<Strong>ラムダ村</Strong>
-              」という小さな山奥の村があり、村人が仲良く暮らしていました。
+            <P t8d>
+              Once upon a time, there was a small rural village called{' '}
+              <Strong>“Lambda Village”</Strong>. The villagers worked to earn
+              just enough for a modest lifestyle.
             </P>
             <EmojiSeparator
+              t8d
               emojis={['🌲', '🙂', '🙂', '🌲']}
-              description={<>ラムダ村の村人たち</>}
+              description={<>Lambda Village and the villagers</>}
             />
             <P>
               ラムダ村には、代々伝わる「<Strong>計算箱</Strong>
