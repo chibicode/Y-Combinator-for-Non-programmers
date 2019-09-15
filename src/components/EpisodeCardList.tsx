@@ -114,7 +114,7 @@ const EpisodeCardList = ({
             )}
         </>
       ) : (
-        <CardWrapper setLastVisibleCardIndex={setLastVisibleCardIndex}>
+        <CardWrapper isLast setLastVisibleCardIndex={setLastVisibleCardIndex}>
           <P t8d>
             <H args={{ name: 'pageUnderConstruction' }} />
           </P>
