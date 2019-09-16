@@ -87,7 +87,7 @@ export default () => (
                     <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
                   </R.Lizi>
                   <ExpressionRunnerSeparator />
-                  <R.Hdpc></R.Hdpc>
+                  <R.Pmdm></R.Pmdm>
                 </>
               }
               right={
@@ -96,7 +96,7 @@ export default () => (
                     <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
                   </R.Fdig>
                   <ExpressionRunnerSeparator />
-                  <R.Hdpc></R.Hdpc>
+                  <R.Pmdm></R.Pmdm>
                 </>
               }
             />
