@@ -220,7 +220,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <P t8d>
           <InlineHeader>Hello!</InlineHeader> This is{' '}
-          <Em>page {episodeNumber + 1}</Em> of the online course called “
+          <Em>page {episodeNumber + 1}</Em> of a course called “
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,
           <InternalLink href={'/'}>
