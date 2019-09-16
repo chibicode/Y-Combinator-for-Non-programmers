@@ -25,6 +25,40 @@ import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
 
+export const ThreeRowRules = () => (
+  <>
+    <P>
+      <InlineHeader>3段以上の弁当箱は、以下のように解きます。</InlineHeader>
+    </P>
+    <Ol>
+      <OlLi>
+        <Em>
+          まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+          のペアからはじめる。
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          下段の真ん中にある料理には{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+          をつける。
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
+          は、いったん無視して構わない。
+        </Em>
+      </OlLi>
+      <OlLi>
+        <Em>
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアが終わると、
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+          になるので、また繰り返す。
+        </Em>
+      </OlLi>
+    </Ol>
+    <R.Vdhd>3段の弁当箱</R.Vdhd>
+  </>
+)
+
 export const Beginner5Rules = () => (
   <>
     <P>
@@ -1835,41 +1869,7 @@ export default () => (
         ),
         content: (
           <>
-            <P>
-              <InlineHeader>
-                3段以上の弁当箱は、以下のように解きます。
-              </InlineHeader>
-            </P>
-            <Ol>
-              <OlLi>
-                <Em>
-                  まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアからはじめる。
-                </Em>
-              </OlLi>
-              <OlLi>
-                <Em>
-                  下段の真ん中にある料理には{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  をつける。
-                  <BottomRightBadge
-                    inline
-                    bottomRightBadgeType="funcUnbound"
-                  />{' '}
-                  は、いったん無視して構わない。
-                </Em>
-              </OlLi>
-              <OlLi>
-                <Em>
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアが終わると、
-                  <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  になるので、また繰り返す。
-                </Em>
-              </OlLi>
-            </Ol>
-            <R.Vdhd>3段の弁当箱</R.Vdhd>
+            <ThreeRowRules />
             <Hr />
             <Beginner5Rules />
             <BubbleQuotes

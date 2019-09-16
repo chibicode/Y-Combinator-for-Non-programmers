@@ -79,6 +79,33 @@ export const BasicRules = ({
   </>
 )
 
+export const Unmatched = () => (
+  <>
+    <P>
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+      が一致しなかった場合、
+      <Strong>
+        コピーはせずに、ただ{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
+        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
+      </Strong>
+      。
+    </P>
+    <R.Jwzh>
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+      が一致しなかった場合…
+    </R.Jwzh>
+    <ExpressionRunnerSeparator />
+    <R.Knhw>
+      コピーはせずに、ただ{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" /> と
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
+    </R.Knhw>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     underConstruction
@@ -1042,29 +1069,7 @@ export default () => (
         type: 'summary',
         content: (
           <>
-            <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              が一致しなかった場合、
-              <Strong>
-                コピーはせずに、ただ{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                を消す
-              </Strong>
-              。
-            </P>
-            <R.Jwzh>
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              が一致しなかった場合…
-            </R.Jwzh>
-            <ExpressionRunnerSeparator />
-            <R.Knhw>
-              コピーはせずに、ただ{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
-            </R.Knhw>
+            <Unmatched />
           </>
         )
       },
