@@ -8,10 +8,12 @@ import {
   Strong,
   Ol,
   OlLi,
-  InlineHeader
+  InlineHeader,
+  Hr
 } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import TwoColGrid from 'src/components/TwoColGrid'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
@@ -23,13 +25,118 @@ import EmojiWithText from 'src/components/EmojiWithText'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { BasicRules, Unmatched } from 'src/contents/4.jp'
+import { ThreeRowRules, Beginner5Rules } from 'src/contents/5.jp'
 
 export default () => (
   <EpisodeCardList
     underConstruction
     cards={[
       {
+        type: 'summary',
         title: <>中級編へようこそ！</>,
+        preview: {
+          content: (
+            <>
+              <P>
+                ここからは中級編です。初級編より難しくなりますが、ここまで読んでくださった方なら読み進められるはずです！
+              </P>
+              <P>
+                <InlineHeader>初級編を忘れてしまいましたか？</InlineHeader>
+                もしかしたら、「
+                <Em>
+                  初級編を終えた後に長い休憩を取ったので、これまでの内容を忘れてしまった
+                </Em>
+                」という方もいらっしゃるかもしれません。
+              </P>
+              <EmojiSeparator
+                emojis={['❓', '😭', '❓']}
+                description={<>内容を忘れてしまいましたか？</>}
+              ></EmojiSeparator>
+              <P>
+                そんな方のために、<Strong>復習用のまとめ</Strong>
+                を用意しました。
+                <Em>初級編の内容をほとんど忘れてしまった</Em>
+                という方は、↓の「初級編の内容を復習する」を押してください。
+              </P>
+              <P>
+                内容を少しでも覚えているという方は、そのまま読み進めてくださって大丈夫です。
+              </P>
+            </>
+          ),
+          text: <>初級編の内容を復習する</>
+        },
+        content: (
+          <>
+            <Hr />
+            <P>
+              まず、ラムダ村の村人たちは、悪魔に「<Strong>計算箱</Strong>
+              」を奪われてしまいました。計算箱には「
+              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+              」と「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              」があります。
+            </P>
+            <TwoColGrid
+              noTopNegativeMargin
+              left={
+                <>
+                  <R.Mcug>
+                    <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+                  </R.Mcug>
+                </>
+              }
+              right={
+                <>
+                  <R.Xmqp>
+                    <Strong>1を足す機能</Strong> <CustomEmoji type="minusOne" />
+                  </R.Xmqp>
+                </>
+              }
+            />
+            <Hr />
+            <P>
+              また計算箱は、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」と組み合わせることによって、足し算や引き算を行うことができます。
+            </P>
+            <R.Ednv>
+              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」を使って
+              <br />
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={4} /> を計算する
+            </R.Ednv>
+            <Hr />
+            <P>
+              奪われた計算箱を取り返すためには、悪魔が出題する
+              <H args={{ name: 'bentoBoxPuzzle' }} />
+              を解かないといけません。弁当箱には、以下のような法則があります。
+            </P>
+            <BasicRules includeFuncUnbound />
+            <Hr />
+            <Unmatched />
+            <Hr />
+            <P>
+              そして初級編の最後では、3段以上ある弁当箱の法則について解説しました。
+            </P>
+            <ThreeRowRules />
+            <Hr />
+            <Beginner5Rules />
+            <Hr />
+            <P>
+              以上が初級編で話したことでした。
+              <Strong>これらの法則を暗記する必要はありません。</Strong>
+              なんとなく、「こんな法則があるんだな」と思っていただければ十分です。
+            </P>
+            <EmojiSeparator
+              emojis={['✨', '🤗', '✨']}
+              description={<>暗記する必要はありません！</>}
+            />
+            <P>それでは、中級編に進みましょう！</P>
+          </>
+        )
+      },
+      {
+        title: <>ミニオン登場</>,
         content: (
           <>
             <BubbleQuotes
