@@ -902,6 +902,11 @@ export const ggxl: ExpressionRunnerShorthandConfig = {
   crossed: true
 }
 
+export const fdig: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.qtns
+}
+
 export const xmqp: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.qtns

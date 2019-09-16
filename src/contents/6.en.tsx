@@ -83,16 +83,20 @@ export default () => (
               noTopNegativeMargin
               left={
                 <>
-                  <R.Mcug>
+                  <R.Lizi>
                     <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
-                  </R.Mcug>
+                  </R.Lizi>
+                  <ExpressionRunnerSeparator />
+                  <R.Hdpc></R.Hdpc>
                 </>
               }
               right={
                 <>
-                  <R.Xmqp>
-                    <Strong>1を足す機能</Strong> <CustomEmoji type="minusOne" />
-                  </R.Xmqp>
+                  <R.Fdig>
+                    <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                  </R.Fdig>
+                  <ExpressionRunnerSeparator />
+                  <R.Hdpc></R.Hdpc>
                 </>
               }
             />
