@@ -27,6 +27,7 @@ import CardContent from 'src/components/CardContent'
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         type: 'summary',

@@ -26,6 +26,7 @@ import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         title: <>中級編へようこそ！</>,

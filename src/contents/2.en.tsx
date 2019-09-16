@@ -72,6 +72,7 @@ export const Conclusion = () => (
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         title: <>繰り返しの機能</>,

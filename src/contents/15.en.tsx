@@ -22,6 +22,7 @@ import ExpressionRunnerCaptionOnly from 'src/components/ExpressionRunnerCaptionO
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         title: <>勝利！</>,

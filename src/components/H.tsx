@@ -94,6 +94,7 @@ interface HProps {
     | { name: 'tocClose' }
     | { name: 'yesNoQuizDontWorry' }
     | { name: 'pageUnderConstruction' }
+    | { name: 'pageUnderConstructionTitle' }
     | { name: 'question' }
     | { name: 'whatHappensAtTheEndQuestion' }
     | { name: 'lookAtThisBentoBox' }
@@ -591,9 +592,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'pageUnderConstruction') {
     if (locale === 'en') {
-      return <>This page is under construction.</>
+      return (
+        <>
+          <InlineHeader>Sorry!</InlineHeader> This page is under construction.
+        </>
+      )
     } else {
       return <>このページは現在工事中です。</>
+    }
+  }
+  if (args.name === 'pageUnderConstructionTitle') {
+    if (locale === 'en') {
+      return <>Under Construction</>
+    } else {
+      return <>工事中</>
     }
   }
   if (args.name === 'match') {

@@ -81,6 +81,7 @@ export const BasicRules = ({
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         title: <>法則が分かった！</>,

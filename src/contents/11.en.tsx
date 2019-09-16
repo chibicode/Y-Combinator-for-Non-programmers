@@ -26,6 +26,7 @@ import { TwoPlusFour, Conclusion } from 'src/contents/2.jp'
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         title: <>上級編へようこそ！</>,

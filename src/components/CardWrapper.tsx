@@ -92,4 +92,8 @@ const CardWrapper = ({
   )
 }
 
+CardWrapper.defaultProps = {
+  setLastVisibleCardIndex: () => {}
+}
+
 export default CardWrapper

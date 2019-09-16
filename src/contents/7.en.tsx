@@ -18,6 +18,7 @@ import { Beginner5Rules } from 'src/contents/5.jp'
 
 export default () => (
   <EpisodeCardList
+    underConstruction
     cards={[
       {
         type: 'summary',
