@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { colors, fontSizes, spaces, radii } from 'src/lib/theme'
+import locale from 'src/lib/locale'
 
 export interface EpisodePageNavbarProps {
   leftContent: React.ReactNode
@@ -12,7 +13,7 @@ export const navigationLinkClasses = (isBottom?: boolean) => css`
   text-decoration: none;
   color: ${colors('grey800')};
   font-weight: bold;
-  font-size: ${fontSizes(0.8)};
+  font-size: ${fontSizes(locale === 'jp' ? 0.85 : 0.8)};
   background: none;
   border: none;
   border-radius: ${radii(0.5)};

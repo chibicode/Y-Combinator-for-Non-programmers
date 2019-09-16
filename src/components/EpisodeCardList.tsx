@@ -16,6 +16,7 @@ import { spaces, fontSizes } from 'src/lib/theme'
 import EpisodeContext from 'src/components/EpisodeContext'
 import PrevNextLinks from 'src/components/PrevNextLinks'
 import Emoji from 'src/components/Emoji'
+import locale from 'src/lib/locale'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 
 export interface EpisodeCardType {
@@ -51,6 +52,7 @@ const EpisodeCardList = ({
           <CardWrapper
             type="summary"
             t8d
+            isLast={cards.length === 0}
             title={
               <>
                 <H args={{ name: 'pageUnderConstructionTitle' }} />
@@ -94,7 +96,9 @@ const EpisodeCardList = ({
                           <div
                             css={css`
                               margin-bottom: ${spaces(1)};
-                              font-size: ${fontSizes(0.8)};
+                              font-size: ${fontSizes(
+                                locale === 'jp' ? 0.85 : 0.8
+                              )};
                               margin-left: ${spaces('-0.75')};
                               margin-right: ${spaces('-0.75')};
                             `}
