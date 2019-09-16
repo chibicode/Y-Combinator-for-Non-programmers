@@ -1283,7 +1283,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>Testimonials</>
     } else {
-      return <>読者の声</>
+      return <>読者の声 (抜粋)</>
     }
   }
   if (args.name === 'testimonialsContent') {
