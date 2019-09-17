@@ -40,18 +40,19 @@ export default () => (
             />
             <P>
               中級編では、<Emoji>😈</Emoji> 悪魔から計算箱の「
-              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
-              」と「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              <H args={{ name: 'plusOneFeature' }} />
+              」と「
+              <H args={{ name: 'minusOneFeature' }} />
               」を返してもらいました。どちらも、弁当箱で再現することができたのです。
             </P>
             <R.Rviy>
-              「<Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />」
+              「<H args={{ name: 'plusOneFeature' }} />」
             </R.Rviy>
             <ExpressionRunnerSeparator />
             <R.Eweo>弁当箱で再現</R.Eweo>
             <Hr />
             <R.Ditw>
-              <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              <H args={{ name: 'minusOneFeature' }} />
             </R.Ditw>
             <ExpressionRunnerSeparator />
             <R.Bgko>弁当箱で再現</R.Bgko>

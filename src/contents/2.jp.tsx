@@ -93,11 +93,9 @@ export default () => (
             />
             <P>
               そして、足し算を可能にする「
-              <InlineHeader>1を足す機能</InlineHeader>{' '}
-              <CustomEmoji type="plusOne" />
+              <H args={{ name: 'plusOneFeature' }} />
               」や、引き算を可能にする「
-              <InlineHeader>1を引く機能</InlineHeader>{' '}
-              <CustomEmoji type="minusOne" />」 について紹介しました。
+              <H args={{ name: 'minusOneFeature' }} />」 について紹介しました。
             </P>
             <EmojiSeparator
               nodes={[
@@ -586,11 +584,9 @@ export default () => (
             <P>
               村人たちは、計算箱の
               <Em>
-                「<InlineHeader>1を足す機能</InlineHeader>{' '}
-                <CustomEmoji type="plusOne" />
+                「<H args={{ name: 'plusOneFeature' }} />
                 」、「
-                <InlineHeader>1を引く機能</InlineHeader>{' '}
-                <CustomEmoji type="minusOne" />
+                <H args={{ name: 'minusOneFeature' }} />
                 」、そして今回紹介した「
                 <InlineHeader>繰り返しの機能</InlineHeader> <Emoji>🔁</Emoji>
                 」を組み合わせる

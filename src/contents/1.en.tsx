@@ -202,7 +202,7 @@ export default () => (
             />
             <P>
               これが、計算箱に備わっている機能のひとつ、「
-              <Strong>1を足す機能</Strong>
+              <H args={{ name: 'plusOneFeature' }} />
               」です。この機能を使えば、
               <Em>
                 何らかの数字に <EmojiNumber number={1} />{' '}
@@ -261,7 +261,7 @@ export default () => (
             </R.Ditw>
             <P>
               これが、計算箱に備わっているふたつめの機能、「
-              <Strong>1を引く機能</Strong>
+              <H args={{ name: 'minusOneFeature' }} />
               」です。この機能を使えば、何らかの数字から{' '}
               <EmojiNumber number={1} /> を引く計算を行うことができるのです。
             </P>
@@ -581,11 +581,9 @@ export default () => (
             <P>
               <Em>
                 実は計算箱には、今回紹介した「
-                <InlineHeader>1を足す機能</InlineHeader>{' '}
-                <CustomEmoji type="plusOne" />
+                <H args={{ name: 'plusOneFeature' }} />
                 」や「
-                <InlineHeader>1を引く機能</InlineHeader>{' '}
-                <CustomEmoji type="minusOne" />
+                <H args={{ name: 'minusOneFeature' }} />
                 」以外にも、
                 <Strong>さらにもうひとつ</Strong>
                 の機能があります。
