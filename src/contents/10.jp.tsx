@@ -56,8 +56,9 @@ export default () => (
                       </P>
                       <P>
                         「<H args={{ name: 'minusOneFeature' }} />
-                        」がある計算箱や、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>」がある計算箱はどこにいったんだ？
+                        」がある計算箱や、「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」がある計算箱はどこにいったんだ？
                       </P>
                     </>
                   )

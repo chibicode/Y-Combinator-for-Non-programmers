@@ -940,8 +940,8 @@ export default () => (
                         」を弁当箱で再現したことによって、
                       </P>
                       <P>
-                        みなさんは「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>
+                        みなさんは「
+                        <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現するのに大きく近づいたのです。
                       </P>
                     </>

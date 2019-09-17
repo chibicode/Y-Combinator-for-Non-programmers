@@ -200,8 +200,9 @@ export default () => (
               }
             />
             <P>
-              ラムダ村の村人たちは、計算箱の「<Strong>繰り返しの機能</Strong>{' '}
-              <Emoji>🔁</Emoji>」を <Emoji>😈</Emoji>{' '}
+              ラムダ村の村人たちは、計算箱の「
+              <H args={{ name: 'repeatFeature' }} />
+              」を <Emoji>😈</Emoji>{' '}
               悪魔から返してもらうべく、弁当箱で繰り返しの機能を再現しようと頑張っていました。しかし…
             </P>
             <BubbleQuotes
@@ -936,8 +937,8 @@ export default () => (
                         」を弁当箱で再現してみてください！
                       </P>
                       <P>
-                        これが解ければ、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>
+                        これが解ければ、「
+                        <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現するのに一歩近づきますよ。
                       </P>
                     </>

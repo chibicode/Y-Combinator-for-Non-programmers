@@ -35,8 +35,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では約束通り、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>」を返してやろう！
+                        では約束通り、「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」を返してやろう！
                       </P>
                     </>
                   )
@@ -751,8 +752,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        また、前回「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>」を再現するのに使った「
+                        また、前回「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」を再現するのに使った「
                         <Strong>Yコンビネータ</Strong>
                         」の弁当箱と組み合わせることで、さらに複雑な計算をすることもできる。
                       </P>

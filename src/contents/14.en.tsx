@@ -1066,7 +1066,7 @@ export default () => (
                     <>
                       <P>
                         サヤちゃん、正解です！見事、「
-                        <Strong>繰り返しの機能</Strong>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現しましたね！<Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -1418,8 +1418,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうだ、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>」を弁当箱で再現したぞ！
+                        どうだ、「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」を弁当箱で再現したぞ！
                       </P>
                       <P>
                         約束通り、「
