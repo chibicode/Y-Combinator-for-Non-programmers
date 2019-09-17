@@ -258,8 +258,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うん、これって「<Strong>条件分岐の機能</Strong>{' '}
-                        <Emoji>↕️</Emoji>」を使ったときと同じだよね？
+                        うん、これって「
+                        <H args={{ name: 'conditionFeature' }} />
+                        」を使ったときと同じだよね？
                       </P>
                     </>
                   )
@@ -385,8 +386,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これも、「<Strong>条件分岐の機能</Strong>{' '}
-                        <Emoji>↕️</Emoji>」を使ったときと同じだよね？
+                        これも、「
+                        <H args={{ name: 'conditionFeature' }} />
+                        」を使ったときと同じだよね？
                       </P>
                     </>
                   )
@@ -760,8 +762,9 @@ export default () => (
                     <>
                       <P>お見事！サヤちゃん、正解です！</P>
                       <P>
-                        サヤちゃんの弁当箱は、「<Strong>条件分岐の機能</Strong>{' '}
-                        <Emoji>↕️</Emoji>」を再現しています！
+                        サヤちゃんの弁当箱は、「
+                        <H args={{ name: 'conditionFeature' }} />
+                        」を再現しています！
                       </P>
                     </>
                   )
@@ -820,8 +823,8 @@ export default () => (
                       <P>
                         まとめると、
                         <Em>
-                          計算箱の「<Strong>条件分岐の機能</Strong>{' '}
-                          <Emoji>↕️</Emoji>
+                          計算箱の「
+                          <H args={{ name: 'conditionFeature' }} />
                           」も、弁当箱で再現することができる
                         </Em>
                         のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！

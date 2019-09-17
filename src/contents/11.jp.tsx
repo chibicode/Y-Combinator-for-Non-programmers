@@ -932,8 +932,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        だからまずは、「<Strong>条件分岐の機能</Strong>{' '}
-                        <Emoji>↕️</Emoji>
+                        だからまずは、「
+                        <H args={{ name: 'conditionFeature' }} />
                         」を弁当箱で再現してみてください！
                       </P>
                       <P>
@@ -979,8 +979,9 @@ export default () => (
               ]}
             />
             <P>
-              というわけで、次のページでは、「<Strong>条件分岐の機能</Strong>{' '}
-              <Emoji>↕️</Emoji>」を弁当箱で再現してみます。次に進みましょう！
+              というわけで、次のページでは、「
+              <H args={{ name: 'conditionFeature' }} />
+              」を弁当箱で再現してみます。次に進みましょう！
             </P>
             <NextLessonButton />
           </>
