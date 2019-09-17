@@ -1,14 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  InlineHeader,
-  P,
-  Strong,
-  Em,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -93,11 +86,9 @@ export default () => (
             />
             <P>
               そして、足し算を可能にする「
-              <InlineHeader>1を足す機能</InlineHeader>{' '}
-              <CustomEmoji type="plusOne" />
+              <H args={{ name: 'plusOneFeature' }} />
               」や、引き算を可能にする「
-              <InlineHeader>1を引く機能</InlineHeader>{' '}
-              <CustomEmoji type="minusOne" />」 について紹介しました。
+              <H args={{ name: 'minusOneFeature' }} />」 について紹介しました。
             </P>
             <EmojiSeparator
               nodes={[
@@ -109,7 +100,7 @@ export default () => (
             />
             <P>
               今回は、計算箱の3つめの機能である「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」について説明します。
             </P>
             <EmojiSeparator
@@ -307,7 +298,7 @@ export default () => (
           <>
             <P>
               実は計算箱には、こういったミスを防ぐために役立つ「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」が備わっています。
             </P>
             <EmojiSeparator
@@ -465,7 +456,7 @@ export default () => (
             </Ul>
             <P>
               これが、計算箱の「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」です。
             </P>
             <EmojiSeparator
@@ -586,13 +577,11 @@ export default () => (
             <P>
               村人たちは、計算箱の
               <Em>
-                「<InlineHeader>1を足す機能</InlineHeader>{' '}
-                <CustomEmoji type="plusOne" />
+                「<H args={{ name: 'plusOneFeature' }} />
                 」、「
-                <InlineHeader>1を引く機能</InlineHeader>{' '}
-                <CustomEmoji type="minusOne" />
+                <H args={{ name: 'minusOneFeature' }} />
                 」、そして今回紹介した「
-                <InlineHeader>繰り返しの機能</InlineHeader> <Emoji>🔁</Emoji>
+                <H args={{ name: 'repeatFeature' }} />
                 」を組み合わせる
               </Em>
               ことで、足し算や引き算を正確に行っていたのです。

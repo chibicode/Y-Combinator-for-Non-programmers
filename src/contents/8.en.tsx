@@ -974,7 +974,7 @@ export default () => (
             </R.Mcug>
             <P>
               これまで学んだことを一言でまとめると、上の計算箱にあるような「
-              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+              <H args={{ name: 'plusOneFeature' }} />
               」は、
               <Strong>弁当箱で「再現」できる</Strong>
               、ということです。
@@ -989,8 +989,8 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「<Strong>1を足す機能</Strong>{' '}
-                  <CustomEmoji type="plusOne" />
+                  計算箱の「
+                  <H args={{ name: 'plusOneFeature' }} />
                   」は、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
@@ -1110,8 +1110,8 @@ export default () => (
             <P>
               まとめると、
               <Em>
-                計算箱の「<Strong>1を足す機能</Strong>{' '}
-                <CustomEmoji type="plusOne" />
+                計算箱の「
+                <H args={{ name: 'plusOneFeature' }} />
                 」は、弁当箱で再現することができる
               </Em>
               のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
@@ -1126,8 +1126,8 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「<Strong>1を足す機能</Strong>{' '}
-                  <CustomEmoji type="plusOne" />
+                  計算箱の「
+                  <H args={{ name: 'plusOneFeature' }} />
                   」は、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
@@ -1144,18 +1144,19 @@ export default () => (
           <>
             <P>
               ここで疑問なのですが、初級で説明した通り、計算箱には「
-              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
-              」以外にも、「<Strong>1を引く機能</Strong>{' '}
-              <CustomEmoji type="minusOne" />
-              」や、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'plusOneFeature' }} />
+              」以外にも、「
+              <H args={{ name: 'minusOneFeature' }} />
+              」や、「
+              <H args={{ name: 'repeatFeature' }} />
               」がありましたよね。
             </P>
             <R.Xmqp>
-              「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              「<H args={{ name: 'minusOneFeature' }} />
               」の例
             </R.Xmqp>
             <R.Ednv>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」の例
               <br />
               (<CustomEmoji type="plusOne" /> を <EmojiNumber number={4} />{' '}
@@ -1174,9 +1175,9 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                  「<H args={{ name: 'minusOneFeature' }} />
                   」や
-                  <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  <br />「<H args={{ name: 'repeatFeature' }} />
                   」も、
                   <br />
                   弁当箱で「再現」できる？

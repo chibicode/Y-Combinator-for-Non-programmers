@@ -51,15 +51,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これは「<Strong>1を足す機能</Strong>{' '}
-                        <CustomEmoji type="plusOne" />
+                        これは「
+                        <H args={{ name: 'plusOneFeature' }} />
                         」がある計算箱だけど…
                       </P>
                       <P>
-                        「<Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
-                        」がある計算箱や、「<Strong>繰り返しの機能</Strong>{' '}
-                        <Emoji>🔁</Emoji>」がある計算箱はどこにいったんだ？
+                        「<H args={{ name: 'minusOneFeature' }} />
+                        」がある計算箱や、「
+                        <H args={{ name: 'repeatFeature' }} />
+                        」がある計算箱はどこにいったんだ？
                       </P>
                     </>
                   )
@@ -70,14 +70,14 @@ export default () => (
               left={
                 <>
                   <R.Ditw>
-                    <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                    <H args={{ name: 'minusOneFeature' }} />
                   </R.Ditw>
                 </>
               }
               right={
                 <>
                   <R.Bwnp>
-                    <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                    <H args={{ name: 'repeatFeature' }} />
                   </R.Bwnp>
                   <ExpressionRunnerSeparator blank />
                   <R.Ewfr></R.Ewfr>
@@ -96,8 +96,7 @@ export default () => (
                       <P>
                         <Em>
                           いまお前たちに返せるのは、「
-                          <Strong>1を足す機能</Strong>{' '}
-                          <CustomEmoji type="plusOne" />
+                          <H args={{ name: 'plusOneFeature' }} />
                           」がある計算箱だけだ。
                         </Em>
                       </P>
@@ -180,8 +179,7 @@ export default () => (
                         そうだな…先ほどの問題ではお前たちに、
                         <Em>
                           計算箱の「
-                          <Strong>1を足す機能</Strong>{' '}
-                          <CustomEmoji type="plusOne" />
+                          <H args={{ name: 'plusOneFeature' }} />
                           」を弁当箱で再現してもらった
                         </Em>
                         よな。
@@ -206,10 +204,9 @@ export default () => (
                       <P>
                         だから、
                         <Em>
-                          「<Strong>1を引く機能</Strong>{' '}
-                          <CustomEmoji type="minusOne" />
+                          「<H args={{ name: 'minusOneFeature' }} />
                           」や「
-                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          <H args={{ name: 'repeatFeature' }} />
                           」を返してほしかったら、
                           <Strong>
                             それらを同じように弁当箱で再現してみることだな！
@@ -225,7 +222,7 @@ export default () => (
               left={
                 <>
                   <R.Ditw>
-                    <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                    <H args={{ name: 'minusOneFeature' }} />
                   </R.Ditw>
                   <ExpressionRunnerSeparator />
                   <EmojiSeparator
@@ -237,7 +234,7 @@ export default () => (
               right={
                 <>
                   <R.Bwnp>
-                    <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                    <H args={{ name: 'repeatFeature' }} />
                   </R.Bwnp>
                   <ExpressionRunnerSeparator blank />
                   <R.Ewfr></R.Ewfr>
@@ -257,13 +254,11 @@ export default () => (
                     <>
                       <P>えー！</P>
                       <P>
-                        「<Strong>1を足す機能</Strong>{' '}
-                        <CustomEmoji type="plusOne" />
+                        「<H args={{ name: 'plusOneFeature' }} />
                         」を再現するのにも苦戦したのに、「
-                        <Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        <H args={{ name: 'minusOneFeature' }} />
                         」や「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を再現するなんて、できっこないよ！
                       </P>
                     </>
@@ -283,10 +278,9 @@ export default () => (
                     <>
                       <P>
                         で、でも…「
-                        <Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        <H args={{ name: 'minusOneFeature' }} />
                         」や「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」がないと、
                         <Em>
                           <Strong>引き算や、大きな数の足し算・引き算</Strong>
@@ -465,8 +459,7 @@ export default () => (
                     <>
                       <P>
                         つまりこれを使えば、計算箱の「
-                        <Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        <H args={{ name: 'minusOneFeature' }} />
                         」を再現できるというわけだな。
                       </P>
                     </>
@@ -475,8 +468,8 @@ export default () => (
               ]}
             />
             <R.Ditw>
-              計算箱の「<Strong>1を引く機能</Strong>{' '}
-              <CustomEmoji type="minusOne" />
+              計算箱の「
+              <H args={{ name: 'minusOneFeature' }} />
               」は…
             </R.Ditw>
             <ExpressionRunnerSeparator />
@@ -1131,8 +1124,7 @@ export default () => (
                     <>
                       <P>
                         そんなことないよ！でも、これで「
-                        <Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        <H args={{ name: 'minusOneFeature' }} />
                         」を再現できたね！
                       </P>
                     </>
@@ -1147,7 +1139,7 @@ export default () => (
         type: 'summary',
         title: (
           <>
-            「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+            「<H args={{ name: 'minusOneFeature' }} />
             」も再現できた！
           </>
         ),
@@ -1156,7 +1148,8 @@ export default () => (
             <P>
               今回学んだことを一言でまとめると、
               <Strong>
-                計算箱の「1を引く機能 <CustomEmoji type="minusOne" />
+                計算箱の「
+                <H args={{ name: 'minusOneFeature' }} />
                 」も、弁当箱で「再現」できる
               </Strong>
               、ということです。
@@ -1171,8 +1164,8 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「<Strong>1を引く機能</Strong>{' '}
-                  <CustomEmoji type="minusOne" />
+                  計算箱の「
+                  <H args={{ name: 'minusOneFeature' }} />
                   」は、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
@@ -1217,8 +1210,8 @@ export default () => (
             <P>
               まとめると、
               <Em>
-                計算箱の「<Strong>1を引く機能</Strong>{' '}
-                <CustomEmoji type="minusOne" />
+                計算箱の「
+                <H args={{ name: 'minusOneFeature' }} />
                 」も、弁当箱で再現することができる
               </Em>
               のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
@@ -1233,8 +1226,8 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「<Strong>1を引く機能</Strong>{' '}
-                  <CustomEmoji type="minusOne" />
+                  計算箱の「
+                  <H args={{ name: 'minusOneFeature' }} />
                   」も、
                   <br />
                   弁当箱で「<Strong>再現</Strong>」することができる
@@ -1248,8 +1241,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回の「<Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        今回の「
+                        <H args={{ name: 'minusOneFeature' }} />
                         」を再現する問題も、超難問です。だから、サヤちゃんのように答えを思いつけなくても大丈夫です。
                       </P>
                       <P>
@@ -1278,14 +1271,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうだ、「<Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        どうだ、「
+                        <H args={{ name: 'minusOneFeature' }} />
                         」も、弁当箱で再現したぞ！(やったのは俺らじゃなくて{' '}
                         <Emoji>👧🏻</Emoji> サヤちゃんだけど…)
                       </P>
                       <P>
-                        約束通り、「<Strong>1を引く機能</Strong>{' '}
-                        <CustomEmoji type="minusOne" />
+                        約束通り、「
+                        <H args={{ name: 'minusOneFeature' }} />
                         」がある計算箱も返してもらう！
                       </P>
                     </>
@@ -1313,7 +1306,7 @@ export default () => (
               ]}
             />
             <R.Ditw>
-              「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              「<H args={{ name: 'minusOneFeature' }} />
               」も返してもらった！
             </R.Ditw>
             <BubbleQuotes
@@ -1325,7 +1318,7 @@ export default () => (
                       <P>
                         しかし、
                         <Em>
-                          「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          「<H args={{ name: 'repeatFeature' }} />
                           」がある計算箱は、まだ返すわけにはいかないな。返してほしかったら、これらも弁当箱で再現してみるんだな！
                         </Em>
                       </P>

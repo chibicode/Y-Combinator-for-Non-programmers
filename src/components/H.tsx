@@ -137,6 +137,10 @@ interface HProps {
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
     | { name: 'plusOneEffect' }
+    | { name: 'plusOneFeature' }
+    | { name: 'minusOneFeature' }
+    | { name: 'repeatFeature' }
+    | { name: 'conditionFeature' }
     | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
@@ -1305,6 +1309,50 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Looking for some other page?</>
     } else {
       return <>他のページをお探しですか？</>
+    }
+  }
+  if (args.name === 'plusOneFeature') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+        </>
+      )
+    }
+  }
+  if (args.name === 'minusOneFeature') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+        </>
+      )
+    }
+  }
+  if (args.name === 'repeatFeature') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'conditionFeature') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+        </>
+      )
     }
   }
   throw new Error()

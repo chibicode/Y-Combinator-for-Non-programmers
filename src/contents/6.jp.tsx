@@ -74,8 +74,9 @@ export default () => (
             <P>
               まず、ラムダ村の村人たちは、悪魔に「<Strong>計算箱</Strong>
               」を奪われてしまいました。計算箱には「
-              <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
-              」と「<Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+              <H args={{ name: 'plusOneFeature' }} />
+              」と「
+              <H args={{ name: 'minusOneFeature' }} />
               」があります。
             </P>
             <TwoColGrid
@@ -83,7 +84,7 @@ export default () => (
               left={
                 <>
                   <R.Lizi>
-                    <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+                    <H args={{ name: 'plusOneFeature' }} />
                   </R.Lizi>
                   <ExpressionRunnerSeparator />
                   <R.Pmdm></R.Pmdm>
@@ -92,7 +93,7 @@ export default () => (
               right={
                 <>
                   <R.Fdig>
-                    <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+                    <H args={{ name: 'minusOneFeature' }} />
                   </R.Fdig>
                   <ExpressionRunnerSeparator />
                   <R.Pmdm></R.Pmdm>
@@ -101,11 +102,12 @@ export default () => (
             />
             <Hr />
             <P>
-              また計算箱は、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              また計算箱は、「
+              <H args={{ name: 'repeatFeature' }} />
               」と組み合わせることによって、足し算や引き算を行うことができます。
             </P>
             <R.Ednv>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」を使って
               <br />
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
