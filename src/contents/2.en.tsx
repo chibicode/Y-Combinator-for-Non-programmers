@@ -1,14 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  InlineHeader,
-  P,
-  Strong,
-  Em,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -589,7 +582,7 @@ export default () => (
                 」、「
                 <H args={{ name: 'minusOneFeature' }} />
                 」、そして今回紹介した「
-                <InlineHeader>繰り返しの機能</InlineHeader> <Emoji>🔁</Emoji>
+                <H args={{ name: 'repeatFeature' }} />
                 」を組み合わせる
               </Em>
               ことで、足し算や引き算を正確に行っていたのです。
