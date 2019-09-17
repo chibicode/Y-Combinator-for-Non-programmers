@@ -400,11 +400,11 @@ export default () => (
                     <>
                       <P>
                         そういればこれは、前回やった「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」に変換できる弁当箱と同じだ！
                       </P>
                       <R.Vlhb>
-                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        「<H args={{ name: 'conditionFeature' }} />
                         」に
                         <br />
                         変換できる弁当箱
@@ -418,11 +418,11 @@ export default () => (
                     <>
                       <P>
                         そう！だから、右下の部分を「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」に置き換えるんだ。
                       </P>
                       <R.Ruou>
-                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        「<H args={{ name: 'conditionFeature' }} />
                         」に置き換える
                       </R.Ruou>
                       <P>
@@ -453,7 +453,7 @@ export default () => (
               ]}
             />
             <R.Awbq>
-              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+              「<H args={{ name: 'conditionFeature' }} />
               」<br />
               の部分を置き換えた後
             </R.Awbq>

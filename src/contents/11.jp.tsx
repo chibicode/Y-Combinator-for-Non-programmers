@@ -271,7 +271,7 @@ export default () => (
                     <>
                       <P>
                         分かりました、ではまず、計算箱の「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」について教えましょう。
                       </P>
                     </>
@@ -282,7 +282,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        「<H args={{ name: 'conditionFeature' }} />
                         」だって？何だそりゃ？
                       </P>
                     </>
@@ -310,7 +310,8 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」がある計算箱
+              「<H args={{ name: 'conditionFeature' }} />
+              」がある計算箱
             </R.Rhoa>
             <BubbleQuotes
               quotes={[
@@ -427,7 +428,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        「<H args={{ name: 'conditionFeature' }} />
                         」はまず、
                         <Strong>
                           <H
@@ -664,11 +665,12 @@ export default () => (
           <>
             <P>
               まとめると、この「
-              <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+              <H args={{ name: 'conditionFeature' }} />
               」の法則は以下の通りです。
             </P>
             <R.Rhoa>
-              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」がある計算箱
+              「<H args={{ name: 'conditionFeature' }} />
+              」がある計算箱
             </R.Rhoa>
             <P>
               <Em>
@@ -716,7 +718,7 @@ export default () => (
                         」という「
                         <Strong>条件</Strong>」によって上下に「
                         <Strong>分岐</Strong>」するから、「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」なのか。
                       </P>
                     </>
@@ -739,7 +741,7 @@ export default () => (
                     <>
                       <P>
                         この「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」は、
                         <Strong>
                           実は計算箱にもともと備わっていた隠れ機能
@@ -773,7 +775,7 @@ export default () => (
                     <>
                       <P>
                         そうなんです。「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」は
                         <Em>
                           あまり役に立たないので、いつしか忘れ去られてしまった
@@ -803,7 +805,7 @@ export default () => (
                     <>
                       <P>
                         しかし、この「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」は、
                         <Em>
                           実は「
@@ -825,7 +827,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  「<H args={{ name: 'conditionFeature' }} />
                   」は、
                   <br />「<H args={{ name: 'repeatFeature' }} />
                   」と関連がある
@@ -868,7 +870,7 @@ export default () => (
                     <>
                       <P>
                         実は、まず「
-                        <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                        <H args={{ name: 'conditionFeature' }} />
                         」を弁当箱で再現することができれば、「
                         <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現できてしまうんです！
@@ -889,7 +891,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+                  「<H args={{ name: 'conditionFeature' }} />
                   」を
                   <br />
                   弁当箱で再現できれば…
@@ -944,7 +946,8 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>」を…
+              「<H args={{ name: 'conditionFeature' }} />
+              」を…
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <EmojiSeparator

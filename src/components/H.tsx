@@ -140,6 +140,7 @@ interface HProps {
     | { name: 'plusOneFeature' }
     | { name: 'minusOneFeature' }
     | { name: 'repeatFeature' }
+    | { name: 'conditionFeature' }
     | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
@@ -1339,6 +1340,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'conditionFeature') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
         </>
       )
     }
