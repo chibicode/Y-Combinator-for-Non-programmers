@@ -858,7 +858,7 @@ export default () => (
                       <P>うーん、条件分岐の機能を再現できたのはいいとして…</P>
                       <P>
                         俺らがやりたいのは、「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現することなんだけど…
                       </P>
                     </>
@@ -896,7 +896,7 @@ export default () => (
                         そうですね。しかし、上級その1でぼくが言ったことを思い出して下さい。
                       </P>
                       <P>
-                        「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        「<H args={{ name: 'repeatFeature' }} />
                         」は、「
                         <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                         」と<Strong>関連がある</Strong>のです。
@@ -914,7 +914,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  「<H args={{ name: 'repeatFeature' }} />
                   」は、
                   <br />「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                   」と関連がある
@@ -970,7 +970,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  「<H args={{ name: 'repeatFeature' }} />
                   」を
                   <br />
                   弁当箱で再現するのに大きく近づいた！

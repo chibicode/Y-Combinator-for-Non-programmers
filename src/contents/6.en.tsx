@@ -103,11 +103,12 @@ export default () => (
             />
             <Hr />
             <P>
-              また計算箱は、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              また計算箱は、「
+              <H args={{ name: 'repeatFeature' }} />
               」と組み合わせることによって、足し算や引き算を行うことができます。
             </P>
             <R.Ednv>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」を使って
               <br />
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}

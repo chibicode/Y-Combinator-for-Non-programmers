@@ -108,7 +108,7 @@ export default () => (
             />
             <P>
               今回は、計算箱の3つめの機能である「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」について説明します。
             </P>
             <EmojiSeparator
@@ -306,7 +306,7 @@ export default () => (
           <>
             <P>
               実は計算箱には、こういったミスを防ぐために役立つ「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」が備わっています。
             </P>
             <EmojiSeparator
@@ -464,7 +464,7 @@ export default () => (
             </Ul>
             <P>
               これが、計算箱の「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」です。
             </P>
             <EmojiSeparator

@@ -440,7 +440,7 @@ export default () => (
                       <P>
                         前回、俺らは <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
                         <Emoji>🅱️</Emoji> を計算するのに、以下のように「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を再現できる弁当箱を使っていたが…
                       </P>
                       <R.Bxuv>
@@ -756,7 +756,8 @@ export default () => (
                         」の弁当箱と組み合わせることで、さらに複雑な計算をすることもできる。
                       </P>
                       <R.Xjzx>
-                        前回「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        前回「
+                        <H args={{ name: 'repeatFeature' }} />
                         」を
                         <br />
                         再現するのに使った「<Strong>Yコンビネータ</Strong>」

@@ -53,13 +53,14 @@ export default () => (
               前回は、
               <Em>
                 計算箱の「
-                <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                <H args={{ name: 'repeatFeature' }} />
                 」を、サヤちゃんが考えた弁当箱で再現できるかも？
               </Em>
               というところで終わりました。
             </P>
             <R.Qycx>
-              この「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              この「
+              <H args={{ name: 'repeatFeature' }} />
               」を使った計算箱は…
             </R.Qycx>
             <ExpressionRunnerSeparator />
@@ -74,7 +75,8 @@ export default () => (
               </Em>
             </P>
             <P>
-              つまり、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              つまり、「
+              <H args={{ name: 'repeatFeature' }} />
               」を使った場合と同じように、
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} /> を計算できているかのように見えます。
@@ -88,7 +90,7 @@ export default () => (
             </R.Seie>
             <P>
               今回は、本当にこの弁当箱が「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」を再現できたのか検証していきましょう！
             </P>
           </>
@@ -906,7 +908,7 @@ export default () => (
                         <CustomEmoji type="plusOne" /> を{' '}
                         <EmojiNumber number={3} />{' '}
                         回繰り返すから、以下のように「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を使った計算箱とまったく同じだ！
                       </P>
                     </>
@@ -923,7 +925,7 @@ export default () => (
                     <>
                       <P>
                         そう。つまり上の「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を使った計算箱は、今回早送りした弁当箱で再現できるということなんだ。
                       </P>
                     </>
@@ -933,7 +935,7 @@ export default () => (
             />
             <R.Qycx>
               この「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」を使った
               <br />
               計算箱は…
@@ -1017,7 +1019,7 @@ export default () => (
                     <>
                       <P>
                         まとめると、「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を使って、<Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
                         <Emoji>🅱️</Emoji> を計算できる計算箱は…
                       </P>
@@ -1027,7 +1029,8 @@ export default () => (
               ]}
             />
             <R.Nmbt>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>」を使って、
+              「<H args={{ name: 'repeatFeature' }} />
+              」を使って、
               <br />
               <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
               を計算できる計算箱は…
@@ -1088,7 +1091,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  「<H args={{ name: 'repeatFeature' }} />
                   」を
                   <br />
                   弁当箱で再現できた！<Emoji>🎉</Emoji>
@@ -1180,7 +1183,7 @@ export default () => (
                     <>
                       <P>
                         しかし…弁当箱を使って、計算箱の「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を再現できるのはすごいなあ。
                       </P>
                     </>
@@ -1260,7 +1263,7 @@ export default () => (
                     <>
                       <P>
                         実は、今回登場した弁当箱において、必ず下半分に使われていたこちらの弁当箱が、「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」の再現を可能にしていたのです。
                       </P>
                     </>
@@ -1274,7 +1277,7 @@ export default () => (
               <Strong>下半分の部分に使われていた</Strong>
               <br />
               こちらの弁当箱が、
-              <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <br />「<H args={{ name: 'repeatFeature' }} />
               」の再現を
               <br />
               可能にしていた
@@ -1404,7 +1407,7 @@ export default () => (
         content: (
           <>
             <P>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」をみごと弁当箱で再現した村人たちは、悪魔のもとに行きました。
             </P>
             <BubbleQuotes
@@ -1419,7 +1422,7 @@ export default () => (
                       </P>
                       <P>
                         約束通り、「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」は返してもらう！これで、計算箱のすべての機能をお前から取り返せるぞ！
                       </P>
                     </>

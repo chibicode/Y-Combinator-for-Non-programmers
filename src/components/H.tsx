@@ -139,6 +139,7 @@ interface HProps {
     | { name: 'plusOneEffect' }
     | { name: 'plusOneFeature' }
     | { name: 'minusOneFeature' }
+    | { name: 'repeatFeature' }
     | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
     | { name: 'startWithLeftMostOneCaption' }
@@ -1327,6 +1328,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+        </>
+      )
+    }
+  }
+  if (args.name === 'repeatFeature') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
         </>
       )
     }

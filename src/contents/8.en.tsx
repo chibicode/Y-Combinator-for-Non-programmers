@@ -1147,7 +1147,8 @@ export default () => (
               <H args={{ name: 'plusOneFeature' }} />
               」以外にも、「
               <H args={{ name: 'minusOneFeature' }} />
-              」や、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              」や、「
+              <H args={{ name: 'repeatFeature' }} />
               」がありましたよね。
             </P>
             <R.Xmqp>
@@ -1155,7 +1156,7 @@ export default () => (
               」の例
             </R.Xmqp>
             <R.Ednv>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」の例
               <br />
               (<CustomEmoji type="plusOne" /> を <EmojiNumber number={4} />{' '}
@@ -1176,7 +1177,7 @@ export default () => (
                 <>
                   「<H args={{ name: 'minusOneFeature' }} />
                   」や
-                  <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  <br />「<H args={{ name: 'repeatFeature' }} />
                   」も、
                   <br />
                   弁当箱で「再現」できる？

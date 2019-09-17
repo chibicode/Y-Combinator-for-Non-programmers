@@ -76,7 +76,7 @@ export default () => (
               right={
                 <>
                   <R.Bwnp>
-                    <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                    <H args={{ name: 'repeatFeature' }} />
                   </R.Bwnp>
                   <ExpressionRunnerSeparator blank />
                   <R.Ewfr></R.Ewfr>
@@ -205,7 +205,7 @@ export default () => (
                         <Em>
                           「<H args={{ name: 'minusOneFeature' }} />
                           」や「
-                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          <H args={{ name: 'repeatFeature' }} />
                           」を返してほしかったら、
                           <Strong>
                             それらを同じように弁当箱で再現してみることだな！
@@ -233,7 +233,7 @@ export default () => (
               right={
                 <>
                   <R.Bwnp>
-                    <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                    <H args={{ name: 'repeatFeature' }} />
                   </R.Bwnp>
                   <ExpressionRunnerSeparator blank />
                   <R.Ewfr></R.Ewfr>
@@ -257,7 +257,7 @@ export default () => (
                         」を再現するのにも苦戦したのに、「
                         <H args={{ name: 'minusOneFeature' }} />
                         」や「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を再現するなんて、できっこないよ！
                       </P>
                     </>
@@ -279,7 +279,7 @@ export default () => (
                         で、でも…「
                         <H args={{ name: 'minusOneFeature' }} />
                         」や「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」がないと、
                         <Em>
                           <Strong>引き算や、大きな数の足し算・引き算</Strong>
@@ -1317,7 +1317,7 @@ export default () => (
                       <P>
                         しかし、
                         <Em>
-                          「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          「<H args={{ name: 'repeatFeature' }} />
                           」がある計算箱は、まだ返すわけにはいかないな。返してほしかったら、これらも弁当箱で再現してみるんだな！
                         </Em>
                       </P>

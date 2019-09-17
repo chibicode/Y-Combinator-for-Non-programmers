@@ -862,7 +862,7 @@ export default () => (
                         でもさあ…質問なんだけど、
                         <Em>
                           この話って、「
-                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          <H args={{ name: 'repeatFeature' }} />
                           」と何の関係があるの？
                         </Em>
                       </P>
@@ -902,7 +902,7 @@ export default () => (
                       <P>
                         <Em>
                           ねえねえ、もしかしたらサヤ、「
-                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          <H args={{ name: 'repeatFeature' }} />
                           」を弁当箱で再現できたかもしれない！
                         </Em>
                       </P>
@@ -1172,7 +1172,7 @@ export default () => (
                       <P>待てよ、そういえば…</P>
                       <P>
                         以下のように計算箱の「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を使っても、
                         <Em>
                           <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
@@ -1186,7 +1186,8 @@ export default () => (
               ]}
             />
             <R.Qycx>
-              計算箱の「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              計算箱の「
+              <H args={{ name: 'repeatFeature' }} />
               」を使うと
               <br />
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
@@ -1204,7 +1205,7 @@ export default () => (
                     <>
                       <P>
                         ということは…サヤちゃんの弁当箱は、上の「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を再現できているのか…？
                       </P>
                     </>
@@ -1213,7 +1214,8 @@ export default () => (
               ]}
             />
             <R.Qycx>
-              この「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              この「
+              <H args={{ name: 'repeatFeature' }} />
               」を使った計算箱は…
             </R.Qycx>
             <ExpressionRunnerSeparator />
@@ -1246,7 +1248,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  「<H args={{ name: 'repeatFeature' }} />
                   」を
                   <br />
                   弁当箱で再現できたかも？

@@ -63,14 +63,15 @@ export default () => (
       {
         title: (
           <>
-            「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+            「<H args={{ name: 'repeatFeature' }} />
             」の復習
           </>
         ),
         content: (
           <>
             <P>
-              一方、「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              一方、「
+              <H args={{ name: 'repeatFeature' }} />
               」は、まだ返してもらっていません。これを弁当箱で再現できないと返してもらえないのです。
             </P>
             <TwoColGrid
@@ -96,7 +97,7 @@ export default () => (
               }
             />
             <P>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」について忘れてしまった方も多いと思うので、ここで復習をしましょう。
             </P>
             <P>
@@ -113,7 +114,7 @@ export default () => (
           <>
             <P>
               こちらも復習になりますが、ラムダ村の村人たちにとって、計算箱の「
-              <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              <H args={{ name: 'repeatFeature' }} />
               」は、
               <Strong>
                 大きな数の足し算や引き算をするときに欠かせない機能
@@ -124,7 +125,7 @@ export default () => (
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
               description={
                 <>
-                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  「<H args={{ name: 'repeatFeature' }} />
                   」は、大きな数の
                   <br />
                   足し算・引き算に欠かせない
@@ -191,7 +192,8 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  計算箱の「
+                  <H args={{ name: 'repeatFeature' }} />
                   」を、
                   <br />
                   弁当箱でどう「<Strong>再現</Strong>」する？
@@ -213,7 +215,7 @@ export default () => (
                         うーん、
                         <Em>
                           どんなに考えても、計算箱の「
-                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          <H args={{ name: 'repeatFeature' }} />
                           」を弁当箱で再現することができない…
                         </Em>
                       </P>
@@ -806,7 +808,7 @@ export default () => (
                         」は、
                         <Em>
                           実は「
-                          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                          <H args={{ name: 'repeatFeature' }} />
                           」と関連がある
                         </Em>
                         のです。
@@ -826,7 +828,7 @@ export default () => (
                 <>
                   「<Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                   」は、
-                  <br />「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  <br />「<H args={{ name: 'repeatFeature' }} />
                   」と関連がある
                 </>
               }
@@ -847,7 +849,7 @@ export default () => (
                     <>
                       <P>
                         はい。ここが重要なのですが…村人のみなさんは「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現できずに苦戦していましたよね。
                       </P>
                     </>
@@ -869,7 +871,7 @@ export default () => (
                         実は、まず「
                         <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
                         」を弁当箱で再現することができれば、「
-                        <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                        <H args={{ name: 'repeatFeature' }} />
                         」を弁当箱で再現できてしまうんです！
                       </P>
                       <P>その理由は、また後に説明しますが…</P>
@@ -906,7 +908,7 @@ export default () => (
               ]}
               description={
                 <>
-                  「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+                  「<H args={{ name: 'repeatFeature' }} />
                   」も
                   <br />
                   弁当箱で再現できる！
@@ -956,7 +958,7 @@ export default () => (
             />
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              「<Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+              「<H args={{ name: 'repeatFeature' }} />
               」を
               <br />
               再現するのに一歩近づく！
