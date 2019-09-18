@@ -154,6 +154,8 @@ interface HProps {
     | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
     | { name: 'demoTitle' }
+    | { name: 'demoFirstCardTitle' }
+    | { name: 'demoFirstCardContent' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -807,7 +809,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtToc') {
     if (locale === 'en') {
-      return <>Take a look at the table of contents:</>
+      return <>Here’s table of contents:</>
     } else {
       return <>目次はこちらです:</>
     }
@@ -1361,6 +1363,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Demo Page</>
     } else {
       return <>デモページ</>
+    }
+  }
+  if (args.name === 'demoFirstCardTitle') {
+    if (locale === 'en') {
+      return <>This is a demo page</>
+    } else {
+      return <>これはデモページです</>
     }
   }
   throw new Error()

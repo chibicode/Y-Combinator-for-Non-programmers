@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodePageWrapper from 'src/components/EpisodePageWrapper'
 
-const Index = () => <EpisodePageWrapper episodeNumber={0} demo />
+const Demo = () => <EpisodePageWrapper episodeNumber={0} demo />
 
-export default Index
+export default Demo

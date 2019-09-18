@@ -9,3 +9,5 @@ export const ogImageUrl = `${baseUrl}/static/images/og-image-${locale}-v5.png`
 
 export const ogUrl = (episodeNumber: number) =>
   `${baseUrl}${episodeNumber > 0 ? `/${episodeNumber}/` : ''}`
+
+export const demoUrl = `${baseUrl}/demo/`
