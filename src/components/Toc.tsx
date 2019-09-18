@@ -3,10 +3,11 @@ import { jsx, css } from '@emotion/core'
 import { numEpisodesExceptFirstAndLast } from 'src/lib/episodeCategories'
 import { spaces, colors } from 'src/lib/theme'
 import { InternalLink } from 'src/components/ContentTags/Links'
+import { lessonTitle } from 'src/lib/titles'
 import H from 'src/components/H'
 import { episodeTitles } from 'src/lib/titles'
 
-const Toc = () => (
+const Toc = ({ includeFirstPage }: { includeFirstPage: boolean }) => (
   <ul
     css={css`
       margin-bottom: ${spaces(1)};
@@ -14,6 +15,31 @@ const Toc = () => (
       padding: 0;
     `}
   >
+    {includeFirstPage && (
+      <li
+        css={css`
+          font-weight: bold;
+          margin-bottom: ${spaces(0.25)};
+        `}
+      >
+        <InternalLink
+          href={`/`}
+          css={css`
+            text-decoration: none;
+            &:hover {
+              text-decoration: none;
+              background: ${colors('white')};
+            }
+          `}
+        >
+          <H
+            args={{ name: 'titlePrefixColored', addColon: true }}
+            episodeNumberOverrides={0}
+          />
+          {lessonTitle}
+        </InternalLink>
+      </li>
+    )}
     {[...Array(numEpisodesExceptFirstAndLast).keys()].map(i => {
       const episodeNumber = i + 1
       return (
@@ -71,5 +97,9 @@ const Toc = () => (
     </li>
   </ul>
 )
+
+Toc.defaultProps = {
+  includeFirstPage: false
+}
 
 export default Toc

@@ -153,6 +153,7 @@ interface HProps {
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
+    | { name: 'demoTitle' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1353,6 +1354,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
         </>
       )
+    }
+  }
+  if (args.name === 'demoTitle') {
+    if (locale === 'en') {
+      return <>Demo Page</>
+    } else {
+      return <>デモページ</>
     }
   }
   throw new Error()

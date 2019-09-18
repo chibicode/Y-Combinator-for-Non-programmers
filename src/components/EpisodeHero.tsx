@@ -24,7 +24,13 @@ const commonTitleClasses = css`
   text-align: center;
 `
 
-const EpisodeHero = () => {
+const EpisodeHero = ({
+  demo,
+  notFound
+}: {
+  demo: boolean
+  notFound: boolean
+}) => {
   const { episodeTitle, episodeNumber } = useContext(EpisodeContext)
   return (
     <header
@@ -33,7 +39,7 @@ const EpisodeHero = () => {
       `}
     >
       <>
-        {episodeTitle ? (
+        {episodeTitle || demo || notFound ? (
           <>
             <h3
               css={[
@@ -72,7 +78,13 @@ const EpisodeHero = () => {
                 `
               ]}
             >
-              {episodeTitle}
+              {notFound ? (
+                <H args={{ name: 'pageNotFound' }} />
+              ) : demo ? (
+                <H args={{ name: 'demoTitle' }} />
+              ) : (
+                episodeTitle
+              )}
             </h1>
           </>
         ) : (
@@ -99,17 +111,26 @@ const EpisodeHero = () => {
       </>
       <EmojiSeparator
         size="lg"
-        nodes={episodeEmojis[episodeNumber as keyof typeof episodeEmojis].map(
-          emoji =>
-            emoji === '🔲' ? (
-              <CustomEmoji type="mathBox" />
-            ) : (
-              <Emoji>{emoji}</Emoji>
-            )
+        nodes={(demo
+          ? ['🍱', '▶️', '🔲']
+          : notFound
+          ? ['❓', '😭', '❓']
+          : episodeEmojis[episodeNumber as keyof typeof episodeEmojis]
+        ).map(emoji =>
+          emoji === '🔲' ? (
+            <CustomEmoji type="mathBox" />
+          ) : (
+            <Emoji>{emoji}</Emoji>
+          )
         )}
       />
     </header>
   )
+}
+
+EpisodeHero.defaultProps = {
+  demo: false,
+  notFound: false
 }
 
 export default EpisodeHero

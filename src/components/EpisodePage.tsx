@@ -12,6 +12,7 @@ import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import NotFoundCardList from 'src/components/NotFoundCardList'
+import DemoCardList from 'src/components/DemoCardList'
 import { ogUrl } from 'src/lib/meta'
 import locale from 'src/lib/locale'
 
@@ -21,6 +22,7 @@ export interface EpisodePageProps {
   episodeTitleString?: React.ReactNode
   episodeNumber: number
   notFound: boolean
+  demo: boolean
   contentName: ContentProps['name']
 }
 
@@ -30,6 +32,7 @@ const EpisodePage = ({
   episodeTitleString,
   episodeNumber,
   notFound,
+  demo,
   contentName
 }: EpisodePageProps) => {
   const title = `${
@@ -52,7 +55,7 @@ const EpisodePage = ({
         <link rel="canonical" href={ogUrl(episodeNumber)} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
-      {!notFound ? (
+      {!notFound && !demo ? (
         <EpisodePageHeader
           showModal={showModal}
           episodeNumber={episodeNumber}
@@ -73,15 +76,27 @@ const EpisodePage = ({
             showModal
           }}
         >
-          {notFound ? <NotFoundCardList /> : <Content name={contentName} />}
+          {notFound ? (
+            <NotFoundCardList />
+          ) : demo ? (
+            <DemoCardList />
+          ) : (
+            <Content name={contentName} />
+          )}
         </EpisodeContext.Provider>
       </Container>
-      {!notFound && (
+      {!notFound && !demo ? (
         <EpisodePageHeader
           showModal={showModal}
           episodeNumber={episodeNumber}
           isBottom
         />
+      ) : (
+        <div
+          css={css`
+            padding: ${spaces(3)} 0;
+          `}
+        ></div>
       )}
       <EpisodePageFooter />
     </Page>
@@ -89,7 +104,8 @@ const EpisodePage = ({
 }
 
 EpisodePage.defaultProps = {
-  notFound: false
+  notFound: false,
+  demo: false
 }
 
 export default EpisodePage

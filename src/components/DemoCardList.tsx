@@ -5,9 +5,9 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import Toc from 'src/components/Toc'
 import H from 'src/components/H'
 
-const NotFoundCardList = () => (
+const DemoCardList = () => (
   <EpisodeCardList
-    notFound
+    demo
     cards={[
       {
         type: 'meta',
@@ -27,7 +27,7 @@ const NotFoundCardList = () => (
             >
               <H args={{ name: 'lookAtToc' }} />
             </P>
-            <Toc includeFirstPage />
+            <Toc />
           </>
         )
       }
@@ -35,4 +35,4 @@ const NotFoundCardList = () => (
   />
 )
 
-export default NotFoundCardList
+export default DemoCardList

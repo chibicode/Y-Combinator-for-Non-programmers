@@ -33,10 +33,12 @@ export type EpisodeCardListType = readonly EpisodeCardType[]
 const EpisodeCardList = ({
   cards,
   notFound,
+  demo,
   underConstruction
 }: {
   cards: EpisodeCardListType
   notFound: boolean
+  demo: boolean
   underConstruction?: boolean
 }) => {
   const { episodeNumber } = useContext(EpisodeContext)
@@ -46,7 +48,7 @@ const EpisodeCardList = ({
   return (
     <>
       <EpisodePageInitialRenderWarning />
-      <EpisodeHero />
+      <EpisodeHero demo={demo} notFound={notFound} />
       <>
         {underConstruction && (
           <CardWrapper
@@ -118,6 +120,7 @@ const EpisodeCardList = ({
         )}
         {shareVisible &&
           !notFound &&
+          !demo &&
           cards.length - 1 === lastVisibleCardIndex && (
             <div
               css={css`
@@ -172,7 +175,8 @@ const EpisodeCardList = ({
 }
 
 EpisodeCardList.defaultProps = {
-  notFound: false
+  notFound: false,
+  demo: false
 }
 
 export default EpisodeCardList
