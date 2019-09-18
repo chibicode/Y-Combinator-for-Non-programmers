@@ -156,6 +156,7 @@ interface HProps {
     | { name: 'demoTitle' }
     | { name: 'demoFirstCardTitle' }
     | { name: 'demoFirstCardContent' }
+    | { name: 'whatTheNumberIsCaption' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -1370,6 +1371,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>This is a demo page</>
     } else {
       return <>これはデモページです</>
+    }
+  }
+  if (args.name === 'whatTheNumberIsCaption') {
+    if (locale === 'en') {
+      return <></>
+    } else {
+      return (
+        <>
+          右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
+          <br />
+          変換後の計算箱の数字
+        </>
+      )
     }
   }
   throw new Error()

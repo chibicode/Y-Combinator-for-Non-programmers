@@ -15,7 +15,7 @@ const DemoCardList = () => (
     demo
     cards={[
       {
-        type: 'summary',
+        type: 'meta',
         title: <>これはデモページです</>,
         content: (
           <>
@@ -26,6 +26,7 @@ const DemoCardList = () => (
         )
       },
       {
+        type: 'sideNote',
         title: <>パート1: 計算箱の説明</>,
         content: (
           <>
@@ -158,6 +159,71 @@ const DemoCardList = () => (
             <ThreeRowRules />
             <Hr />
             <Beginner5Rules />
+          </>
+        )
+      },
+      {
+        type: 'sideNote',
+        title: <>パート3: 弁当箱を計算箱に変換</>,
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="mathBox" />,
+                <CustomEmoji type="mathBox" />
+              ]}
+              description={<>計算箱</>}
+            />
+          </>
+        )
+      },
+      {
+        title: <>弁当箱を計算箱に変換</>,
+        content: (
+          <>
+            <R.Jjjh />
+            <R.Mifg />
+            <R.Epoi />
+            <R.Vlob />
+          </>
+        )
+      },
+      {
+        title: <>計算箱に変換できる法則</>,
+        type: 'summary',
+        content: (
+          <>
+            <R.Eozk>
+              <H args={{ name: 'convertiblePatternCaption' }} />
+            </R.Eozk>
+            <R.Hehx>
+              <H args={{ name: 'whatTheNumberIsCaption' }} />
+            </R.Hehx>
+            <Hr />
+            <R.Wopl>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'e', number: 2 }}
+              />
+            </R.Wopl>
+            <ExpressionRunnerSeparator />
+            <R.Pmdm />
+            <Hr />
+            <R.Duuk>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'i', number: 4 }}
+              />
+            </R.Duuk>
+            <ExpressionRunnerSeparator />
+            <R.Kizi />
+            <Hr />
+            <R.Dwzy>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'a', number: 0 }}
+              />
+            </R.Dwzy>
+            <ExpressionRunnerSeparator />
+            <R.Jwah />
           </>
         )
       }
