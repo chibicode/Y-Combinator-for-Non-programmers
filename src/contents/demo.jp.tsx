@@ -226,6 +226,36 @@ const DemoCardList = () => (
             <R.Jwah />
           </>
         )
+      },
+      {
+        title: <>実行してから変換</>,
+        content: (
+          <>
+            <R.Dcji />
+            <Hr />
+            <R.Zlrx />
+            <Hr />
+            <R.Dwzy>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'a', number: 0 }}
+              />
+            </R.Dwzy>
+            <ExpressionRunnerSeparator />
+            <R.Jwah />
+            <Hr />
+            <R.Zahd />
+            <Hr />
+            <R.Csqj />
+            <Hr />
+            <R.Hhdu>
+              <H
+                args={{ name: 'canBeConvertedCaption', letter: 'e', number: 1 }}
+              />
+            </R.Hhdu>
+            <ExpressionRunnerSeparator />
+            <R.Rnug />
+          </>
+        )
       }
     ]}
   />
