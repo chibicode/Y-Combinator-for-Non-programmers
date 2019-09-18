@@ -967,8 +967,7 @@ export const pgxb: ExpressionRunnerShorthandConfig = {
   initialExpressionContainers: [
     initialExpressionContainers.bmar,
     initialExpressionContainers.ilbg
-  ],
-  variableSize: 'md'
+  ]
 }
 
 export const ednv: ExpressionRunnerShorthandConfig = {

@@ -8,6 +8,7 @@ const DemoCardList = () => (
     cards={[
       {
         t8d: true,
+        type: 'summary',
         title: <>This is a demo page</>,
         content: (
           <>
