@@ -256,6 +256,24 @@ const DemoCardList = () => (
             <R.Rnug />
           </>
         )
+      },
+      {
+        title: <>パート4: 1を足す</>,
+        content: (
+          <>
+            <R.Spga>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'f',
+                  number: 2
+                }}
+              />
+            </R.Spga>
+            <Hr />
+            <R.Nlbn />
+          </>
+        )
       }
     ]}
   />
