@@ -358,6 +358,15 @@ export const vibe = initializeExpressionContainer([
   }
 ])
 
+export const lbkw = initializeExpressionContainer([
+  {
+    shorthandFunc: 'add'
+  },
+  {
+    shorthandNumber: 2
+  }
+])
+
 export const kfwf = initializeExpressionContainer([
   {
     shorthandFunc: 'add'

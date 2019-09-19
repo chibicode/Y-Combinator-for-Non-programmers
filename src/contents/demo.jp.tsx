@@ -57,58 +57,6 @@ const DemoCardList = () => (
         )
       },
       {
-        title: (
-          <>
-            計算箱の「
-            <H args={{ name: 'minusOneFeature' }} />」
-          </>
-        ),
-        content: (
-          <>
-            <R.Xmqp />
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            「
-            <H args={{ name: 'plusOneFeature' }} />
-            」と「
-            <H args={{ name: 'minusOneFeature' }} />
-            」を複数使う
-          </>
-        ),
-        content: (
-          <>
-            <R.Eagi></R.Eagi>
-            <R.Yjur></R.Yjur>
-          </>
-        )
-      },
-      {
-        title: (
-          <>
-            計算箱の「
-            <H args={{ name: 'repeatFeature' }} />」
-          </>
-        ),
-        content: (
-          <>
-            <R.Ednv />
-            <R.Pgxb />
-            <Hr />
-            <R.Xpks />
-            <ExpressionRunnerSeparator />
-            <R.Dgpx></R.Dgpx>
-            <Hr />
-            <R.Sucz></R.Sucz>
-            <ExpressionRunnerSeparator />
-            <R.Xlgb></R.Xlgb>
-          </>
-        )
-      },
-      {
         type: 'sideNote',
         title: <>パート2: 弁当箱の説明</>,
         content: (
@@ -192,7 +140,7 @@ const DemoCardList = () => (
         )
       },
       {
-        title: <>計算箱に変換できる法則</>,
+        title: <>計算箱に変換する法則</>,
         type: 'summary',
         content: (
           <>
@@ -226,36 +174,6 @@ const DemoCardList = () => (
             </R.Dwzy>
             <ExpressionRunnerSeparator />
             <R.Jwah />
-          </>
-        )
-      },
-      {
-        title: <>実行してから変換</>,
-        content: (
-          <>
-            <R.Dcji />
-            <Hr />
-            <R.Zlrx />
-            <Hr />
-            <R.Dwzy>
-              <H
-                args={{ name: 'canBeConvertedCaption', letter: 'a', number: 0 }}
-              />
-            </R.Dwzy>
-            <ExpressionRunnerSeparator />
-            <R.Jwah />
-            <Hr />
-            <R.Zahd />
-            <Hr />
-            <R.Csqj />
-            <Hr />
-            <R.Hhdu>
-              <H
-                args={{ name: 'canBeConvertedCaption', letter: 'e', number: 1 }}
-              />
-            </R.Hhdu>
-            <ExpressionRunnerSeparator />
-            <R.Rnug />
           </>
         )
       },
@@ -329,6 +247,20 @@ const DemoCardList = () => (
                 args={{ name: 'canBeConvertedCaption', number: 3, letter: 'b' }}
               />
             </R.Nngz>
+          </>
+        )
+      },
+      {
+        title: <>計算箱は弁当箱で再現できる</>,
+        content: (
+          <>
+            <R.Lizi></R.Lizi>
+            <ExpressionRunnerSeparator />
+            <R.Plde></R.Plde>
+            <Hr />
+            <R.Gnwm></R.Gnwm>
+            <ExpressionRunnerSeparator />
+            <R.Awwn></R.Awwn>
           </>
         )
       }
