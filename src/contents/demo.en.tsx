@@ -1,5 +1,5 @@
 import React from 'react'
-import { P, Hr, Strong } from 'src/components/ContentTags'
+import { P, Hr, Strong, CenteredCode } from 'src/components/ContentTags'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -278,6 +278,59 @@ const DemoCardList = () => (
             <R.Gnwm></R.Gnwm>
             <ExpressionRunnerSeparator />
             <R.Awwn></R.Awwn>
+          </>
+        )
+      },
+      {
+        t8d: true,
+        title: <>Part 5: Lunchboxes are syntax sugar for Lambda Calculus</>,
+        type: 'sideNote',
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <CustomEmoji type="lambda" />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        t8d: true,
+        title: <>Lambda Calculus and Lunchboxes</>,
+        content: (
+          <>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <R.Kzkg></R.Kzkg>
+          </>
+        )
+      },
+      {
+        t8d: true,
+        title: <>Y Combinator using Lunchboxes</>,
+        content: (
+          <>
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <R.Rjho></R.Rjho>
+          </>
+        )
+      },
+      {
+        t8d: true,
+        title: <>Python’s lambda and Lunchboxes</>,
+        content: (
+          <>
+            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <CenteredCode size="sm">'B'</CenteredCode>
+            <Hr />
+            <R.Aklf></R.Aklf>
+            <ExpressionRunnerSeparator />
+            <R.Gemh></R.Gemh>
           </>
         )
       }

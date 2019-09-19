@@ -1,5 +1,5 @@
 import React from 'react'
-import { P, Hr } from 'src/components/ContentTags'
+import { P, Hr, CenteredCode } from 'src/components/ContentTags'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -260,6 +260,55 @@ const DemoCardList = () => (
             <R.Gnwm></R.Gnwm>
             <ExpressionRunnerSeparator />
             <R.Awwn></R.Awwn>
+          </>
+        )
+      },
+      {
+        title: <>パート5: ラムダ計算との関係</>,
+        type: 'sideNote',
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="doubleArrow" />,
+                <CustomEmoji type="lambda" />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: <>ラムダ計算と弁当箱</>,
+        content: (
+          <>
+            <CenteredCode size="md">λA.B C</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <R.Kzkg></R.Kzkg>
+          </>
+        )
+      },
+      {
+        title: <>Yコンビネータ</>,
+        content: (
+          <>
+            <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <R.Rjho></R.Rjho>
+          </>
+        )
+      },
+      {
+        title: <>Python言語のlambdaと弁当箱</>,
+        content: (
+          <>
+            <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
+            <ExpressionRunnerSeparator />
+            <CenteredCode size="sm">'B'</CenteredCode>
+            <Hr />
+            <R.Aklf></R.Aklf>
+            <ExpressionRunnerSeparator />
+            <R.Gemh></R.Gemh>
           </>
         )
       }
