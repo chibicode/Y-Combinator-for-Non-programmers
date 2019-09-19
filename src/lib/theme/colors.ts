@@ -7,7 +7,10 @@ import {
   green,
   yellow,
   brown,
-  deepPurple
+  deepPurple,
+  teal,
+  red,
+  orange
 } from '@material-ui/core/colors'
 import Color from 'color'
 
@@ -69,7 +72,10 @@ export const allColors = {
   deepOrange50: deepOrange[50],
   deepOrange400: deepOrange[400],
   deepOrange600: deepOrange[600],
-  deepOrange800: deepOrange[800]
+  deepOrange800: deepOrange[800],
+  teal100: teal[100],
+  red100: red[100],
+  orange100: orange[100]
 }
 
 const colors = (x: keyof typeof allColors) => allColors[x]
