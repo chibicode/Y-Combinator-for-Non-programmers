@@ -2,6 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { colors } from 'src/lib/theme'
 import EmojiNumber from 'src/components/EmojiNumber'
+import CustomEmoji from 'src/components/CustomEmoji'
 import Emoji from 'src/components/Emoji'
 import {
   trueCaseColor,
@@ -44,7 +45,7 @@ const InlineBorder = ({
     >
       {type === 'trueCase' && <EmojiNumber number={0} />}
       {type === 'falseCase' && <Emoji>🔢</Emoji>}
-      {type === 'condition' && <Emoji>↕️</Emoji>}
+      {type === 'condition' && <CustomEmoji type="condition" />}
       {children}
     </span>
   )

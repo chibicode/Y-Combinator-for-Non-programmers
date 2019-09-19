@@ -323,18 +323,20 @@ export default () => (
                       <P>なんだこれは？</P>
                       <Ul>
                         <UlLi>
-                          左側に <InlineBorder type="falseCase" />{' '}
-                          <InlineBorder type="condition" />{' '}
-                          <InlineBorder type="trueCase" />{' '}
-                          という3種類の印があり、
+                          <CustomEmoji type="blankNumberRed" />{' '}
+                          <CustomEmoji type="blankNumberYellow" />{' '}
+                          <CustomEmoji type="blankNumberTeal" /> が入っていて、
                         </UlLi>
                         <UlLi>
-                          それぞれ <CustomEmoji type="blankNumberPink" />{' '}
-                          <CustomEmoji type="blankNumberGrey" />{' '}
-                          <CustomEmoji type="blankNumberPurple" />{' '}
-                          が入っている。
+                          左側に <InlineBorder type="falseCase" />{' '}
+                          <InlineBorder type="trueCase" />{' '}
+                          <InlineBorder type="condition" />{' '}
+                          という3種類の印がある。
                         </UlLi>
                       </Ul>
+                      <P>
+                        なんだか、信号機 <Emoji>🚦</Emoji> みたいだ…
+                      </P>
                     </>
                   )
                 },
@@ -343,20 +345,28 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        まず、
                         <Strong>
-                          それぞれの <CustomEmoji type="blankNumberPink" />{' '}
-                          <CustomEmoji type="blankNumberGrey" />{' '}
-                          <CustomEmoji type="blankNumberPurple" />{' '}
+                          それぞれの <CustomEmoji type="blankNumberRed" />{' '}
+                          <CustomEmoji type="blankNumberYellow" />{' '}
+                          <CustomEmoji type="blankNumberTeal" />{' '}
                           には数字を入れることができます。
                         </Strong>
                         同じ数字を入れても構いませんし、違う数字を入れても構いません。
                       </P>
                       <P>
-                        具体例で説明したほうが分かりやすいと思うので、
+                        次に、
+                        <InlineBorder type="falseCase" />{' '}
+                        <InlineBorder type="trueCase" />{' '}
+                        <InlineBorder type="condition" />{' '}
+                        がどういう意味かは、具体例で説明したほうが分かりやすいと思います。
+                      </P>
+                      <P>
+                        というわけで、
                         <Strong>
-                          <CustomEmoji type="blankNumberPink" />{' '}
-                          <CustomEmoji type="blankNumberGrey" />{' '}
-                          <CustomEmoji type="blankNumberPurple" />{' '}
+                          <CustomEmoji type="blankNumberRed" />{' '}
+                          <CustomEmoji type="blankNumberYellow" />{' '}
+                          <CustomEmoji type="blankNumberTeal" />{' '}
                           に何か適当な数字を入れてみてください！
                         </Strong>
                       </P>
@@ -417,7 +427,7 @@ export default () => (
       {
         title: (
           <>
-            真ん中が <EmojiNumber number={0} /> かどうか
+            下の部分が <EmojiNumber number={0} /> かどうか
           </>
         ),
         content: (
@@ -461,7 +471,7 @@ export default () => (
                             type: 'condition'
                           }}
                         />{' '}
-                        に入っている数字は <EmojiNumber number={2} /> なので、{' '}
+                        に入っている数字は <EmojiNumber number={3} /> なので、{' '}
                         <Strong>
                           <EmojiNumber number={0} /> ではないよ。
                         </Strong>
@@ -474,7 +484,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうですね。このように真ん中が{' '}
+                        そうですね。このように下の部分が{' '}
                         <EmojiNumber number={0} /> ではない場合、
                         <Strong>
                           <H
@@ -485,6 +495,10 @@ export default () => (
                           />{' '}
                           に入っている数字が最終的に残るのです。
                         </Strong>
+                      </P>
+                      <P>
+                        <Emoji>🔢</Emoji> の印は、「
+                        <Strong>ゼロ以外の数字</Strong>」という意味なのです。
                       </P>
                     </>
                   )
@@ -601,7 +615,7 @@ export default () => (
                     <>
                       <P>どうしてこうなったか説明しましょう。</P>
                       <P>
-                        こちらも、真ん中の数字が <EmojiNumber number={0} />{' '}
+                        こちらも、下の部分の数字が <EmojiNumber number={0} />{' '}
                         かどうかチェックします。
                       </P>
                     </>
@@ -617,8 +631,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は真ん中が <EmojiNumber number={0} />{' '}
-                        ですね。この場合は前回と逆で、
+                        今回は下が <EmojiNumber number={0} />{' '}
+                        ですね。この場合は、
                         <Strong>
                           <H
                             args={{

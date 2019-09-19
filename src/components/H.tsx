@@ -1069,7 +1069,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (args.type === 'condition') {
         return (
           <>
-            真ん中の部分 <InlineBorder type="condition" />
+            下の部分 <InlineBorder type="condition" />
           </>
         )
       } else if (args.type === 'falseCase') {
@@ -1081,7 +1081,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       } else {
         return (
           <>
-            下の部分 <InlineBorder type="trueCase" />
+            真ん中の部分 <InlineBorder type="trueCase" />
           </>
         )
       }

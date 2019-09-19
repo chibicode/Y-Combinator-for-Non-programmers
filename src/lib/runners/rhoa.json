@@ -8,7 +8,7 @@
         "state": "default",
         "checkType": "isZero",
         "condition": {
-          "name": "blankNumberGrey",
+          "name": "blankNumberTeal",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -19,7 +19,7 @@
           "bound": true
         },
         "trueCase": {
-          "name": "blankNumberPurple",
+          "name": "blankNumberYellow",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -32,7 +32,7 @@
           "bound": true
         },
         "falseCase": {
-          "name": "blankNumberPink",
+          "name": "blankNumberRed",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

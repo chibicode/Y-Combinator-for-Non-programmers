@@ -326,10 +326,10 @@ export const vazr = initializeExpressionContainer(yCombinator)
 export const kysf = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
-    shorthandNumber: 2
+    shorthandNumber: 3
   },
   trueCase: {
-    shorthandNumber: 3
+    shorthandNumber: 2
   },
   falseCase: {
     shorthandNumber: 1
@@ -1147,26 +1147,26 @@ export const whey = initializeExpressionContainer([
 
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'blankNumberGrey',
-  trueCase: 'blankNumberPurple',
-  falseCase: 'blankNumberPink'
+  condition: 'blankNumberTeal',
+  trueCase: 'blankNumberYellow',
+  falseCase: 'blankNumberRed'
 })
 
 export const zpak = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 0, initialHighlight: true },
-  trueCase: 'blankNumberPurple',
-  falseCase: 'blankNumberPink'
+  trueCase: 'blankNumberYellow',
+  falseCase: 'blankNumberRed'
 })
 
 export const fylp = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 1, initialHighlight: true },
-  trueCase: 'blankNumberPurple',
-  falseCase: 'blankNumberPink'
+  trueCase: 'blankNumberYellow',
+  falseCase: 'blankNumberRed'
 })
 
-export const xgav = initializeExpressionContainer('blankNumberPurple')
+export const xgav = initializeExpressionContainer('blankNumberYellow')
 
 export const cmay = initializeExpressionContainer(
   isZeroParams(
@@ -1194,7 +1194,7 @@ export const rpcm = initializeExpressionContainer(
   )
 )
 
-export const cunp = initializeExpressionContainer('blankNumberPink')
+export const cunp = initializeExpressionContainer('blankNumberRed')
 
 export const psdd = initializeExpressionContainer(
   isZeroParams(

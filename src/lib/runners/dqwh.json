@@ -20,7 +20,7 @@
           "shorthandNumber": 0
         },
         "trueCase": {
-          "name": "blankNumberPurple",
+          "name": "blankNumberYellow",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -33,7 +33,7 @@
           "bound": true
         },
         "falseCase": {
-          "name": "blankNumberPink",
+          "name": "blankNumberRed",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

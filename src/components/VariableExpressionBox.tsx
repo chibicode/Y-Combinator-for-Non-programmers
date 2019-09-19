@@ -87,11 +87,11 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             ) : expression.shorthandNumberAfterConvert === 'blank' ? (
               <CustomEmoji type="blankNumber" />
             ) : expression.shorthandNumberAfterConvert === 'trueCase' ? (
-              <CustomEmoji type="blankNumberPurple" />
+              <CustomEmoji type="blankNumberYellow" />
             ) : expression.shorthandNumberAfterConvert === 'falseCase' ? (
-              <CustomEmoji type="blankNumberPink" />
+              <CustomEmoji type="blankNumberRed" />
             ) : expression.shorthandNumberAfterConvert === 'condition' ? (
-              <CustomEmoji type="blankNumberGrey" />
+              <CustomEmoji type="blankNumberTeal" />
             ) : expression.shorthandNumberAfterConvert === 'binaryFirst' ? (
               <CustomEmoji type="blankNumberGreen" />
             ) : expression.shorthandNumberAfterConvert === 'binarySecond' ? (
