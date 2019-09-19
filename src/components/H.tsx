@@ -154,8 +154,6 @@ interface HProps {
     | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
     | { name: 'demoTitle' }
-    | { name: 'demoFirstCardTitle' }
-    | { name: 'demoFirstCardContent' }
     | { name: 'whatTheNumberIsCaption' }
 }
 
@@ -1433,13 +1431,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>Demo Page</>
     } else {
       return <>デモページ</>
-    }
-  }
-  if (args.name === 'demoFirstCardTitle') {
-    if (locale === 'en') {
-      return <>This is a demo page</>
-    } else {
-      return <>これはデモページです</>
     }
   }
   if (args.name === 'whatTheNumberIsCaption') {

@@ -215,7 +215,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
             locale === 'en'
               ? css`
                   font-size: 0.45em;
-                  background: ${colors('deepPurple50')};
+                  background: ${colors('pink50')};
                 `
               : css`
                   font-size: 0.6em;
@@ -237,7 +237,7 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
                 `
               : css`
                   font-size: 0.45em;
-                  background: ${colors('deepPurple50')};
+                  background: ${colors('pink50')};
                 `
           ]}
         >
