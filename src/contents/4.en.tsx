@@ -18,8 +18,8 @@ export const BasicRules = ({
   includeFuncUnbound?: boolean
 }) => (
   <>
-    <P>
-      1. <InlineHeader>印をつける:</InlineHeader>{' '}
+    <P t8d>
+      1. <InlineHeader>Add labels:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -30,7 +30,7 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Zzxj>
-      <InlineHeader>印をつける:</InlineHeader>{' '}
+      <InlineHeader>Add labels:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -40,37 +40,37 @@ export const BasicRules = ({
       )}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Zzxj>
-    <P>
-      2. <InlineHeader>一致チェック:</InlineHeader>{' '}
+    <P t8d>
+      2. <InlineHeader>Find matches:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </P>
     <R.Keck>
-      <InlineHeader>一致チェック:</InlineHeader>{' '}
+      <InlineHeader>Find matches:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </R.Keck>
-    <P>
-      3. <InlineHeader>コピーする:</InlineHeader>{' '}
+    <P t8d>
+      3. <InlineHeader>Copy:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Qoms>
-      <InlineHeader>コピーする:</InlineHeader>{' '}
+      <InlineHeader>Copy:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Qoms>
-    <P>
-      4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+    <P t8d>
+      4. <InlineHeader>Remove:</InlineHeader> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </P>
     <R.Mhgm>
-      <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      <InlineHeader>Remove:</InlineHeader> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </R.Mhgm>
@@ -81,27 +81,28 @@ export const BasicRules = ({
 
 export const Unmatched = () => (
   <>
-    <P>
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-      が一致しなかった場合、
+    <P t8d>
+      If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      ’s match,{' '}
       <Strong>
-        コピーはせずに、ただ{' '}
-        <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-        <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
+        don’t do the copy step and simply remove{' '}
+        <BottomRightBadge inline bottomRightBadgeType="callArg" />
+        ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+        ’s
       </Strong>
-      。
+      .
     </P>
     <R.Jwzh>
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-      が一致しなかった場合…
+      If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      ’s match…
     </R.Jwzh>
     <ExpressionRunnerSeparator />
     <R.Knhw>
-      コピーはせずに、ただ{' '}
-      <BottomRightBadge inline bottomRightBadgeType="callArg" /> と
-      <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
+      Simply remove <BottomRightBadge inline bottomRightBadgeType="callArg" />
+      ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      ’s
     </R.Knhw>
   </>
 )

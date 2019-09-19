@@ -369,7 +369,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Strong highlightType={highlightType}>
-          {`“bento box${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
+          {`“lunchbox${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
         </Strong>
       )
     } else {

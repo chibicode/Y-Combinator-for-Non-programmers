@@ -8,8 +8,8 @@ import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
-import { BasicRules, Unmatched } from 'src/contents/4.jp'
-import { ThreeRowRules, Beginner5Rules } from 'src/contents/5.jp'
+import { BasicRules, Unmatched } from 'src/contents/4.en'
+import { ThreeRowRules, Beginner5Rules } from 'src/contents/5.en'
 
 const DemoCardList = () => (
   <EpisodeCardList
@@ -89,7 +89,7 @@ const DemoCardList = () => (
       },
       {
         t8d: true,
-        title: <>弁当箱の法則</>,
+        title: <>Lunchbox Rules</>,
         type: 'summary',
         content: (
           <>
