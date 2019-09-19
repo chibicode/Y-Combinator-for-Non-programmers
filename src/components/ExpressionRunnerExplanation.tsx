@@ -65,14 +65,22 @@ const Explanation = ({
   switch (state) {
     case 'default': {
       if (locale === 'en') {
-        return <>…</>
+        return <>Next!</>
       } else {
         return <>次に進みます！</>
       }
     }
     case 'active': {
       if (locale === 'en') {
-        return <>…</>
+        return (
+          <>
+            Look at the pair of{' '}
+            <InlinePrioritiesLabel revert>
+              {activePriority}
+            </InlinePrioritiesLabel>
+            ’s
+          </>
+        )
       } else {
         return (
           <>

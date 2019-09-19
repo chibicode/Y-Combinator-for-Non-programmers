@@ -1009,7 +1009,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'AmultTop') {
     if (locale === 'en') {
-      return <>?</>
+      return <>Some</>
     } else {
       return (
         <>
@@ -1020,14 +1020,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'AmultBottom') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Emoji>🅰️</Emoji>’s
+        </>
+      )
     } else {
       return <>いくつか</>
     }
   }
   if (args.name === 'BsingleTop') {
     if (locale === 'en') {
-      return <>?</>
+      return <>One</>
     } else {
       return (
         <>
@@ -1038,7 +1042,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'BsingleBottom') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Emoji>🅱️</Emoji>
+        </>
+      )
     } else {
       return <>ひとつ</>
     }
@@ -1233,7 +1241,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'convertiblePatternCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          Let the leftmost dish be <Emoji>🅰️</Emoji> and
+          <br />
+          the center dish be <Emoji>🅱️</Emoji>.
+          <br />
+          There needs to be one <Emoji>🅱️</Emoji>
+          <br />
+          on the top right and some <Emoji>🅰️</Emoji>’s
+          <br />
+          on the bottom right
+        </>
+      )
     } else {
       return (
         <>
@@ -1404,7 +1424,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'whatTheNumberIsCaption') {
     if (locale === 'en') {
-      return <></>
+      return (
+        <>
+          The number of <Emoji>🅰️</Emoji>’s on the
+          <br />
+          bottom right is the number after conversion
+        </>
+      )
     } else {
       return (
         <>

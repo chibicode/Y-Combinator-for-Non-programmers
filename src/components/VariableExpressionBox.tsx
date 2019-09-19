@@ -15,6 +15,7 @@ import { VariableExpression } from 'src/types/ExpressionTypes'
 import H from 'src/components/H'
 import { ExpressionRunnerContextProps } from 'src/types/ExpressionRunnerTypes'
 import CustomEmoji, { customEmojiToComponent } from 'src/components/CustomEmoji'
+import locale from 'src/lib/locale'
 
 interface VariableExpressionBoxProps {
   expression: VariableExpression
@@ -162,23 +163,40 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     return (
       <div>
         <span
-          css={css`
-            font-size: 0.6em;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-          `}
+          css={[
+            css`
+              font-weight: bold;
+              text-align: center;
+              display: block;
+            `,
+            locale === 'en'
+              ? css`
+                  font-size: 0.45em;
+                  background: ${colors('deepPurple50')};
+                `
+              : css`
+                  font-size: 0.6em;
+                `
+          ]}
         >
           <H args={{ name: 'AmultTop' }} />
         </span>
         <span
-          css={css`
-            font-size: 0.45em;
-            font-weight: bold;
-            text-align: center;
-            background: ${colors('deepPurple50')};
-            display: block;
-          `}
+          css={[
+            css`
+              font-weight: bold;
+              text-align: center;
+              display: block;
+            `,
+            locale === 'en'
+              ? css`
+                  font-size: 0.6em;
+                `
+              : css`
+                  font-size: 0.45em;
+                  background: ${colors('deepPurple50')};
+                `
+          ]}
         >
           <H args={{ name: 'AmultBottom' }} />
         </span>
@@ -188,23 +206,40 @@ const VariableEmoji = ({ expression }: VariableExpressionBoxProps) => {
     return (
       <div>
         <span
-          css={css`
-            font-size: 0.6em;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-          `}
+          css={[
+            css`
+              font-weight: bold;
+              text-align: center;
+              display: block;
+            `,
+            locale === 'en'
+              ? css`
+                  font-size: 0.45em;
+                  background: ${colors('deepPurple50')};
+                `
+              : css`
+                  font-size: 0.6em;
+                `
+          ]}
         >
           <H args={{ name: 'BsingleTop' }} />
         </span>
         <span
-          css={css`
-            font-size: 0.45em;
-            font-weight: bold;
-            background: ${colors('pink50')};
-            text-align: center;
-            display: block;
-          `}
+          css={[
+            css`
+              font-weight: bold;
+              text-align: center;
+              display: block;
+            `,
+            locale === 'en'
+              ? css`
+                  font-size: 0.6em;
+                `
+              : css`
+                  font-size: 0.45em;
+                  background: ${colors('deepPurple50')};
+                `
+          ]}
         >
           <H args={{ name: 'BsingleBottom' }} />
         </span>
