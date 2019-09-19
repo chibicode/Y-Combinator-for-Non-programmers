@@ -1210,7 +1210,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'startWithTwoCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          If you can’t start with{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s because
+          <br />
+          there’s only one item on the bottom row,
+          <br />
+          <Strong>
+            start with the pair of{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            ’s.
+          </Strong>
+        </>
+      )
     } else {
       return (
         <>
@@ -1226,7 +1239,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'startWithLeftMostOneCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          If there are multiple pairs of{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
+          <br />
+          <Strong>start with the leftmost pair</Strong>.
+        </>
+      )
     } else {
       return (
         <>
@@ -1243,9 +1263,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          Let the leftmost dish be <Emoji>🅰️</Emoji> and
+          Let the leftmost item be <Emoji>🅰️</Emoji> and
           <br />
-          the center dish be <Emoji>🅱️</Emoji>.
+          the center item be <Emoji>🅱️</Emoji>.
           <br />
           There needs to be one <Emoji>🅱️</Emoji>
           <br />

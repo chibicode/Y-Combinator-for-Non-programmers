@@ -103,7 +103,7 @@ const DemoCardList = () => (
       },
       {
         type: 'summary',
-        title: <>3段の弁当箱の法則</>,
+        title: <>3段以上の弁当箱の法則</>,
         content: (
           <>
             <ThreeRowRules />

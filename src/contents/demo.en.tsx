@@ -114,7 +114,7 @@ const DemoCardList = () => (
       {
         t8d: true,
         type: 'summary',
-        title: <>3段の弁当箱の法則</>,
+        title: <>Rules for Lunchboxes with 3+ Rows</>,
         content: (
           <>
             <ThreeRowRules />
