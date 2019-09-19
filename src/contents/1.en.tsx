@@ -28,8 +28,8 @@ export default () => (
           <>
             <P t8d>
               In this course, we’ll learn about Y Combinator through a short
-              story. Let’s first talk about <Strong>“math boxes”</Strong>, one
-              of the key items of this story.
+              story. Let’s first talk about <Strong>“mathboxes”</Strong>, one of
+              the key items of this story.
             </P>
             <EmojiSeparator
               t8d
@@ -38,7 +38,7 @@ export default () => (
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>This is the icon for math boxes.</>}
+              description={<>This is the icon for mathboxes.</>}
             />
           </>
         )

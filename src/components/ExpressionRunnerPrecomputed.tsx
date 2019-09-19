@@ -186,7 +186,7 @@ const ExpressionRunnerPrecomputed = ({
           horizontalPadding={0}
         >
           {explanationsVisible && (
-            <ExpressionRunnerCaptionWrapper>
+            <ExpressionRunnerCaptionWrapper t8d>
               <ExpressionRunnerExplanation
                 isPlaying={isPlaying}
                 expressionContainer={expressionContainers[currentIndex]}
@@ -198,7 +198,7 @@ const ExpressionRunnerPrecomputed = ({
             </ExpressionRunnerCaptionWrapper>
           )}
           {children && !explanationsVisible && !isPlaying && (
-            <ExpressionRunnerCaptionWrapper>
+            <ExpressionRunnerCaptionWrapper t8d>
               {children}
             </ExpressionRunnerCaptionWrapper>
           )}

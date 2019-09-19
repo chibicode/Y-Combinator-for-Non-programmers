@@ -1096,7 +1096,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'convertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <InlineHeader>
+            <CustomEmoji type="mathBox" /> Convert to Mathbox <Emoji>🐶</Emoji>
+          </InlineHeader>
+        </>
+      )
     } else {
       return (
         <InlineHeader>
@@ -1131,7 +1137,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'undoConvertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <InlineHeader>
+          <Emoji>🍱</Emoji> Back to Lunchbox <Emoji>↩</Emoji>
+        </InlineHeader>
+      )
     } else {
       return (
         <InlineHeader>
@@ -1142,7 +1152,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'doneConvertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Strong highlightType={highlightType}>
+            <CustomEmoji type="mathBox" /> Converted to Mathbox!{' '}
+            <Emoji>🐶</Emoji>
+          </Strong>
+        </>
+      )
     } else {
       return (
         <>
@@ -1317,7 +1334,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'plusOneFeature') {
     if (locale === 'en') {
-      return <></>
+      return (
+        <>
+          <Strong>“Add 1”</Strong> feature <CustomEmoji type="plusOne" />
+        </>
+      )
     } else {
       return (
         <>

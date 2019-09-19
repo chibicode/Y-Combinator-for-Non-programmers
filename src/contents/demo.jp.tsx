@@ -123,7 +123,6 @@ const DemoCardList = () => (
                 <CustomEmoji type="singleArrow" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>計算箱</>}
             />
           </>
         )
