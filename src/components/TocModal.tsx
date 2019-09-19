@@ -79,7 +79,7 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
       <Card
         t8d
         color="indigo"
-        title={<H args={{ name: 'toc' }} />}
+        title={<H args={{ name: 'indexPageLink' }} />}
         header={
           <button
             type="button"
