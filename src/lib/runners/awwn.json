@@ -6,7 +6,7 @@
       "expression": {
         "arg": {
           "arg": {
-            "name": "e",
+            "name": "f",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -20,7 +20,7 @@
           },
           "body": {
             "arg": {
-              "name": "f",
+              "name": "g",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -33,7 +33,7 @@
             "body": {
               "arg": {
                 "arg": {
-                  "name": "f",
+                  "name": "g",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -47,7 +47,7 @@
                   "bound": true
                 },
                 "func": {
-                  "name": "e",
+                  "name": "f",
                   "highlightType": "default",
                   "topLeftBadgeType": "none",
                   "bottomRightBadgeType": "none",
@@ -64,7 +64,7 @@
                 "priority": 2
               },
               "func": {
-                "name": "e",
+                "name": "f",
                 "highlightType": "default",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
