@@ -1329,6 +1329,14 @@ export const plde: ExpressionRunnerShorthandConfig = {
   variableSize: 'md'
 }
 
+export const rjzw: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false
+}
+
 export const jsvg: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.uqth,

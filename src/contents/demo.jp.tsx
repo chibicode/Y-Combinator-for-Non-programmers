@@ -5,6 +5,7 @@ import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import H from 'src/components/H'
 import * as R from 'src/components/Runners'
 import { BasicRules, Unmatched } from 'src/contents/4.jp'
@@ -108,6 +109,7 @@ const DemoCardList = () => (
         )
       },
       {
+        type: 'sideNote',
         title: <>パート2: 弁当箱の説明</>,
         content: (
           <>
@@ -169,8 +171,8 @@ const DemoCardList = () => (
           <>
             <EmojiSeparator
               nodes={[
-                <CustomEmoji type="mathBox" />,
-                <CustomEmoji type="mathBox" />,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="singleArrow" />,
                 <CustomEmoji type="mathBox" />
               ]}
               description={<>計算箱</>}
@@ -259,6 +261,55 @@ const DemoCardList = () => (
       },
       {
         title: <>パート4: 1を足す</>,
+        type: 'sideNote',
+        content: (
+          <>
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumber" />,
+                <Emoji>➕</Emoji>,
+                <EmojiNumber number={1} />
+              ]}
+            />
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+            <EmojiNumber number={1} /> を計算
+          </>
+        ),
+        content: (
+          <>
+            <R.Rbup>
+              <H
+                args={{
+                  name: 'canBeConvertedCaption',
+                  letter: 'd',
+                  number: 1
+                }}
+              />
+            </R.Rbup>
+            <Hr />
+            <R.Rjzw></R.Rjzw>
+            <Hr />
+            <R.Rico>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 2, letter: 'b' }}
+              />
+            </R.Rico>
+          </>
+        )
+      },
+      {
+        title: (
+          <>
+            <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+            <EmojiNumber number={1} /> を計算
+          </>
+        ),
         content: (
           <>
             <R.Spga>
@@ -272,6 +323,12 @@ const DemoCardList = () => (
             </R.Spga>
             <Hr />
             <R.Nlbn />
+            <Hr />
+            <R.Nngz>
+              <H
+                args={{ name: 'canBeConvertedCaption', number: 3, letter: 'b' }}
+              />
+            </R.Nngz>
           </>
         )
       }
