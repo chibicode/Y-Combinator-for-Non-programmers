@@ -1249,7 +1249,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'canBeConvertedCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          There are <EmojiNumber number={args.number} />{' '}
+          <EmojiForLetter letter={args.letter} />
+          ’s labeled as <Emoji>🅰️</Emoji>
+          <br />
+          → Can be converted to <EmojiNumber number={args.number} />
+        </>
+      )
     } else {
       return (
         <>
