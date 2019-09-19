@@ -323,7 +323,7 @@ export default () => (
                       <P>なんだこれは？</P>
                       <Ul>
                         <UlLi>
-                          <CustomEmoji type="blankNumberRed" />{' '}
+                          それぞれ <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
                           <CustomEmoji type="blankNumberTeal" /> が入っていて、
                         </UlLi>
@@ -354,6 +354,33 @@ export default () => (
                         </Strong>
                         同じ数字を入れても構いませんし、違う数字を入れても構いません。
                       </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <CustomEmoji type="blankNumberRed" />,
+                <CustomEmoji type="blankNumberYellow" />,
+                <CustomEmoji type="blankNumberTeal" />
+              ]}
+              description={
+                <>
+                  それぞれには数字が入る。
+                  <br />
+                  同じ数字を入れても、
+                  <br />
+                  違う数字を入れてもOK
+                </>
+              }
+            />
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'dog',
+                  children: (
+                    <>
                       <P>
                         次に、
                         <InlineBorder type="falseCase" />{' '}
@@ -380,8 +407,8 @@ export default () => (
                       <P>
                         分かった。とりあえず、{' '}
                         <Strong>
-                          上から順に <EmojiNumber number={1} />{' '}
-                          <EmojiNumber number={2} /> <EmojiNumber number={3} />{' '}
+                          上から順に <EmojiNumber number={2} />{' '}
+                          <EmojiNumber number={1} /> <EmojiNumber number={0} />{' '}
                           を入れてみたよ。
                         </Strong>
                       </P>
@@ -396,8 +423,8 @@ export default () => (
               ]}
             />
             <R.Iatt>
-              <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
-              <EmojiNumber number={3} /> を入れてみた
+              <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} /> を入れてみた
             </R.Iatt>
             <BubbleQuotes
               quotes={[
@@ -471,10 +498,7 @@ export default () => (
                             type: 'condition'
                           }}
                         />{' '}
-                        に入っている数字は <EmojiNumber number={3} /> なので、{' '}
-                        <Strong>
-                          <EmojiNumber number={0} /> ではないよ。
-                        </Strong>
+                        に入っている数字は <EmojiNumber number={0} /> だね。
                       </P>
                     </>
                   )
@@ -483,23 +507,31 @@ export default () => (
                   type: 'dog',
                   children: (
                     <>
-                      <P>
-                        そうですね。このように下の部分が{' '}
-                        <EmojiNumber number={0} /> ではない場合、
-                        <Strong>
+                      <P>そうですね。</P>
+                      <Ul>
+                        <UlLi>
+                          このように
                           <H
                             args={{
                               name: 'conditionSectionName',
-                              type: 'falseCase'
+                              type: 'condition'
                             }}
                           />{' '}
-                          に入っている数字が最終的に残るのです。
-                        </Strong>
-                      </P>
-                      <P>
-                        <Emoji>🔢</Emoji> の印は、「
-                        <Strong>ゼロ以外の数字</Strong>」という意味なのです。
-                      </P>
+                          に入っている数字が <EmojiNumber number={0} />{' '}
+                          である場合、
+                        </UlLi>
+                        <UlLi>
+                          <Strong>
+                            <H
+                              args={{
+                                name: 'conditionSectionName',
+                                type: 'trueCase'
+                              }}
+                            />{' '}
+                            に入っている数字が最終的に残るのです。
+                          </Strong>
+                        </UlLi>
+                      </Ul>
                     </>
                   )
                 }
@@ -508,7 +540,7 @@ export default () => (
             <R.Rjfy />
             <ExpressionRunnerSeparator />
             <R.Rnug>
-              <InlineBorder type="falseCase" /> に入っていた{' '}
+              <InlineBorder type="trueCase" /> に入っていた{' '}
               <EmojiNumber number={1} /> が残る
             </R.Rnug>
             <BubbleQuotes

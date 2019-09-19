@@ -1421,7 +1421,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+          <Strong>条件分岐の機能</Strong> <CustomEmoji type="condition" />
         </>
       )
     }

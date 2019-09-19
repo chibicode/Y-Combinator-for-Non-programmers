@@ -323,6 +323,19 @@ const yCombinatorHighlighted: FunctionExpressionParams = {
 
 export const vazr = initializeExpressionContainer(yCombinator)
 
+export const ekyd = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 0
+  },
+  trueCase: {
+    shorthandNumber: 1
+  },
+  falseCase: {
+    shorthandNumber: 2
+  }
+})
+
 export const kysf = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {

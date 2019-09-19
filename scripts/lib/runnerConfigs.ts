@@ -364,7 +364,7 @@ export const hykj: ExpressionRunnerShorthandConfig = {
 export const iatt: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
-    initialExpressionContainers.kysf,
+    initialExpressionContainers.ekyd,
     initialExpressionContainers.zrwn
   ]
 }
@@ -577,8 +577,8 @@ export const qoms: ExpressionRunnerShorthandConfig = {
 
 export const rjfy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kysf,
-  initialState: 'falseCaseActive',
+  initialExpressionContainer: initialExpressionContainers.ekyd,
+  initialState: 'trueCaseActive',
   explanationsVisibility: 'visible'
 }
 
@@ -836,7 +836,7 @@ export const uwma: ExpressionRunnerShorthandConfig = {
 
 export const vozu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kysf,
+  initialExpressionContainer: initialExpressionContainers.ekyd,
   initialState: 'conditionActive',
   explanationsVisibility: 'visible'
 }
