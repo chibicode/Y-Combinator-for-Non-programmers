@@ -966,7 +966,7 @@ export const fhyo = initializeExpressionContainer(
 
 export const ngth = initializeExpressionContainer([
   succParams('a', 'b', 'c'),
-  numberParams('e', 'f', 2)
+  numberParams('f', 'g', 2)
 ])
 
 export const disc = initializeExpressionContainer(
