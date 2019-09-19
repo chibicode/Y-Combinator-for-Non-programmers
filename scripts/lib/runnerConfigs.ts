@@ -875,6 +875,11 @@ export const lizi: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.vibe
 }
 
+export const gnwm: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.lbkw
+}
+
 export const mcug: ExpressionRunnerShorthandConfig = {
   runner: 'playButtonOnly',
   initialExpressionContainer: initialExpressionContainers.vibe
@@ -967,8 +972,7 @@ export const pgxb: ExpressionRunnerShorthandConfig = {
   initialExpressionContainers: [
     initialExpressionContainers.bmar,
     initialExpressionContainers.ilbg
-  ],
-  variableSize: 'md'
+  ]
 }
 
 export const ednv: ExpressionRunnerShorthandConfig = {
@@ -1328,6 +1332,14 @@ export const plde: ExpressionRunnerShorthandConfig = {
   initialExpressionContainer: initialExpressionContainers.uqth,
   showPriorities: true,
   variableSize: 'md'
+}
+
+export const rjzw: ExpressionRunnerShorthandConfig = {
+  runner: 'playButtonOnly',
+  initialExpressionContainer: initialExpressionContainers.uqth,
+  showPriorities: true,
+  variableSize: 'md',
+  skipToTheEnd: false
 }
 
 export const jsvg: ExpressionRunnerShorthandConfig = {

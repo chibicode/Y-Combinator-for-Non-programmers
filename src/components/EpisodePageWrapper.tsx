@@ -7,11 +7,13 @@ import H from 'src/components/H'
 interface EpisodePageWrapperProps {
   episodeNumber: number
   notFound: boolean
+  demo: boolean
 }
 
 const EpisodePageWrapper = ({
   episodeNumber,
-  notFound
+  notFound,
+  demo
 }: EpisodePageWrapperProps) => (
   <GlobalContextSetter episodeNumber={episodeNumber}>
     <EpisodePage
@@ -29,12 +31,14 @@ const EpisodePageWrapper = ({
       }
       episodeNumber={episodeNumber}
       contentName={`${episodeNumber}` as EpisodePageProps['contentName']}
+      demo={demo}
     />
   </GlobalContextSetter>
 )
 
 EpisodePageWrapper.defaultProps = {
-  notFound: false
+  notFound: false,
+  demo: false
 }
 
 export default EpisodePageWrapper

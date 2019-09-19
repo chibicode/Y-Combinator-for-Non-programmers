@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import H from 'src/components/H'
-import { colors, spaces } from 'src/lib/theme'
+import { colors, spaces, fontSizes } from 'src/lib/theme'
 import Emoji from 'src/components/Emoji'
 import { ExpressionRunnerProps } from 'src/types/ExpressionRunnerTypes'
 import ExpressionRunnerButton from 'src/components/ExpressionRunnerButton'
+import locale from 'src/lib/locale'
 
 interface ExpressionRunnerControlsProps {
   canStepForward: boolean
@@ -62,7 +63,7 @@ const ExpressionRunnerControls = ({
   skipToTheEnd,
   convert
 }: ExpressionRunnerControlsProps) => {
-  const centerButtonWidth = convert ? 60 : 44
+  const centerButtonWidth = convert ? 66 : 44
   const sideButtonsWidth = (100 - centerButtonWidth) / 2 - 2
   return (
     <div
@@ -122,6 +123,11 @@ const ExpressionRunnerControls = ({
             !canStepForward &&
               css`
                 background: ${colors('pink50')};
+              `,
+            convert &&
+              locale === 'en' &&
+              css`
+                font-size: ${fontSizes(0.75)};
               `
           ]}
         >

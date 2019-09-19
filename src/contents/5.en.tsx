@@ -27,70 +27,72 @@ import NextLessonButton from 'src/components/NextLessonButton'
 
 export const ThreeRowRules = () => (
   <>
-    <P>
-      <InlineHeader>3段以上の弁当箱は、以下のように解きます。</InlineHeader>
+    <P t8d>
+      <InlineHeader>
+        Here’s how to solve a lunchbox puzzle with at least 3 rows.
+      </InlineHeader>
     </P>
-    <Ol>
+    <Ol t8d>
       <OlLi>
         <Em>
-          まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-          のペアからはじめる。
+          First, start with the pair of{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
         </Em>
       </OlLi>
       <OlLi>
         <Em>
-          下段の真ん中にある料理には{' '}
-          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-          をつける。
-          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-          は、いったん無視して構わない。
+          Label the center item on the bottom row as{' '}
+          <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />, and
+          you can ignore this for the rest of the iteration.
         </Em>
       </OlLi>
       <OlLi>
         <Em>
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアが終わると、
-          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
-          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-          になるので、また繰り返す。
+          After finishing the pair of{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
+          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> will become{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>. Then, repeat.
         </Em>
       </OlLi>
     </Ol>
-    <R.Vdhd>3段の弁当箱</R.Vdhd>
+    <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
   </>
 )
 
 export const Beginner5Rules = () => (
   <>
-    <P>
-      <InlineHeader>細かい法則1:</InlineHeader>{' '}
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-      のペアが左右ふたつ以上ある場合は、
-      <Strong>一番左のペアからはじめます。</Strong>
+    <P t8d>
+      <InlineHeader>Additional Rule 1:</InlineHeader> If there are multiple
+      pairs of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
+      <Strong>start with the leftmost pair</Strong>.
     </P>
     <R.Hykj>
       <H args={{ name: 'startWithLeftMostOneCaption' }} />
     </R.Hykj>
-    <P>
-      <InlineHeader>補足:</InlineHeader>{' '}
+    <P t8d>
+      <InlineHeader>Note:</InlineHeader>{' '}
       <Em>
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-        のペアが弁当箱の左端にない場合は、内側の{' '}
-        <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる。
+        If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the
+        leftmost edge of a lunchbox, then start with the inner pair of{' '}
+        <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
       </Em>
     </P>
     <R.Myjz>
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-      のペアが弁当箱の左端にない場合は、
+      If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the
       <br />
-      内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる
+      leftmost edge of a lunchbox, then start with
+      <br />
+      the inner pair of
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
     </R.Myjz>
     <Hr />
-    <P>
-      <InlineHeader>細かい法則2:</InlineHeader> 下段にひとつの料理しかなく、
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-      のペアからはじめられない場合、
+    <P t8d>
+      <InlineHeader>Additional Rule 2:</InlineHeader> If you can’t start with{' '}
+      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s because there’s only
+      one item on the bottom row,{' '}
       <Strong>
-        <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアからはじめます。
+        start with the pair of <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+        ’s.
       </Strong>
     </P>
     <R.Zemy>

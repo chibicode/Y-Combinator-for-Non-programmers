@@ -12,7 +12,8 @@ import Page from 'src/components/Page'
 import TocModal from 'src/components/TocModal'
 import episodeEmojis from 'src/lib/episodeEmojis'
 import NotFoundCardList from 'src/components/NotFoundCardList'
-import { ogUrl } from 'src/lib/meta'
+import DemoCardList from 'src/components/DemoCardList'
+import { ogUrl, demoUrl } from 'src/lib/meta'
 import locale from 'src/lib/locale'
 
 export interface EpisodePageProps {
@@ -21,6 +22,7 @@ export interface EpisodePageProps {
   episodeTitleString?: React.ReactNode
   episodeNumber: number
   notFound: boolean
+  demo: boolean
   contentName: ContentProps['name']
 }
 
@@ -30,6 +32,7 @@ const EpisodePage = ({
   episodeTitleString,
   episodeNumber,
   notFound,
+  demo,
   contentName
 }: EpisodePageProps) => {
   const title = `${
@@ -42,17 +45,18 @@ const EpisodePage = ({
   const [modalVisible, setModalVisible] = useState(false)
   const hideModal = () => setModalVisible(false)
   const showModal = () => setModalVisible(true)
+  const url = demo ? demoUrl : ogUrl(episodeNumber)
   return (
     <Page>
       <Head>
         <title key="title">{title}</title>
         <meta property="og:title" content={title} />
         <meta property="og:site_name" content={lessonTitle} />
-        <meta property="og:url" content={ogUrl(episodeNumber)} />
-        <link rel="canonical" href={ogUrl(episodeNumber)} />
+        <meta property="og:url" content={url} />
+        <link rel="canonical" href={url} />
       </Head>
       {modalVisible && <TocModal hideModal={hideModal} />}
-      {!notFound ? (
+      {!notFound && !demo ? (
         <EpisodePageHeader
           showModal={showModal}
           episodeNumber={episodeNumber}
@@ -73,15 +77,27 @@ const EpisodePage = ({
             showModal
           }}
         >
-          {notFound ? <NotFoundCardList /> : <Content name={contentName} />}
+          {notFound ? (
+            <NotFoundCardList />
+          ) : demo ? (
+            <DemoCardList />
+          ) : (
+            <Content name={contentName} />
+          )}
         </EpisodeContext.Provider>
       </Container>
-      {!notFound && (
+      {!notFound && !demo ? (
         <EpisodePageHeader
           showModal={showModal}
           episodeNumber={episodeNumber}
           isBottom
         />
+      ) : (
+        <div
+          css={css`
+            padding: ${spaces(3)} 0;
+          `}
+        ></div>
       )}
       <EpisodePageFooter />
     </Page>
@@ -89,7 +105,8 @@ const EpisodePage = ({
 }
 
 EpisodePage.defaultProps = {
-  notFound: false
+  notFound: false,
+  demo: false
 }
 
 export default EpisodePage

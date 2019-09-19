@@ -153,6 +153,8 @@ interface HProps {
     | { name: 'testimonialsTitle' }
     | { name: 'testimonialsContent' }
     | { name: 'goToOtherPage' }
+    | { name: 'demoTitle' }
+    | { name: 'whatTheNumberIsCaption' }
 }
 
 const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
@@ -365,7 +367,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <Strong highlightType={highlightType}>
-          {`“bento box${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
+          {`“lunchbox${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
         </Strong>
       )
     } else {
@@ -806,7 +808,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtToc') {
     if (locale === 'en') {
-      return <>Take a look at the table of contents:</>
+      return <>Here’s table of contents:</>
     } else {
       return <>目次はこちらです:</>
     }
@@ -1005,7 +1007,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'AmultTop') {
     if (locale === 'en') {
-      return <>?</>
+      return <>Some</>
     } else {
       return (
         <>
@@ -1016,14 +1018,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'AmultBottom') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Emoji>🅰️</Emoji>’s
+        </>
+      )
     } else {
       return <>いくつか</>
     }
   }
   if (args.name === 'BsingleTop') {
     if (locale === 'en') {
-      return <>?</>
+      return <>One</>
     } else {
       return (
         <>
@@ -1034,7 +1040,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'BsingleBottom') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Emoji>🅱️</Emoji>
+        </>
+      )
     } else {
       return <>ひとつ</>
     }
@@ -1092,7 +1102,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'convertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <InlineHeader>
+            <CustomEmoji type="mathBox" /> Convert to Mathbox <Emoji>🐶</Emoji>
+          </InlineHeader>
+        </>
+      )
     } else {
       return (
         <InlineHeader>
@@ -1127,7 +1143,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'undoConvertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <InlineHeader>
+          <Emoji>🍱</Emoji> Back to Lunchbox <Emoji>↩</Emoji>
+        </InlineHeader>
+      )
     } else {
       return (
         <InlineHeader>
@@ -1138,7 +1158,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'doneConvertToMathbox') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Strong highlightType={highlightType}>
+            <CustomEmoji type="mathBox" /> Converted to Mathbox!{' '}
+            <Emoji>🐶</Emoji>
+          </Strong>
+        </>
+      )
     } else {
       return (
         <>
@@ -1181,7 +1208,20 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'startWithTwoCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          If you can’t start with{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s because
+          <br />
+          there’s only one item on the bottom row,
+          <br />
+          <Strong>
+            start with the pair of{' '}
+            <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
+            ’s.
+          </Strong>
+        </>
+      )
     } else {
       return (
         <>
@@ -1197,7 +1237,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'startWithLeftMostOneCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          If there are multiple pairs of{' '}
+          <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
+          <br />
+          <Strong>start with the leftmost pair</Strong>.
+        </>
+      )
     } else {
       return (
         <>
@@ -1212,7 +1259,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'convertiblePatternCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          Let the leftmost item be <Emoji>🅰️</Emoji> and
+          <br />
+          the center item be <Emoji>🅱️</Emoji>.
+          <br />
+          There needs to be one <Emoji>🅱️</Emoji>
+          <br />
+          on the top right and some <Emoji>🅰️</Emoji>’s
+          <br />
+          on the bottom right
+        </>
+      )
     } else {
       return (
         <>
@@ -1228,7 +1287,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'canBeConvertedCaption') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          There are <EmojiNumber number={args.number} />{' '}
+          <EmojiForLetter letter={args.letter} />
+          ’s labeled as <Emoji>🅰️</Emoji>
+          <br />
+          → Can be converted to <EmojiNumber number={args.number} />
+        </>
+      )
     } else {
       return (
         <>
@@ -1313,7 +1380,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'plusOneFeature') {
     if (locale === 'en') {
-      return <></>
+      return (
+        <>
+          <Strong>“Add 1”</Strong> feature <CustomEmoji type="plusOne" />
+        </>
+      )
     } else {
       return (
         <>
@@ -1351,6 +1422,32 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong>条件分岐の機能</Strong> <Emoji>↕️</Emoji>
+        </>
+      )
+    }
+  }
+  if (args.name === 'demoTitle') {
+    if (locale === 'en') {
+      return <>Demo Page</>
+    } else {
+      return <>デモページ</>
+    }
+  }
+  if (args.name === 'whatTheNumberIsCaption') {
+    if (locale === 'en') {
+      return (
+        <>
+          The number of <Emoji>🅰️</Emoji>’s on the
+          <br />
+          bottom right is the number after conversion
+        </>
+      )
+    } else {
+      return (
+        <>
+          右下にある <Emoji>🅰️</Emoji> がついた料理の数が、
+          <br />
+          変換後の計算箱の数字
         </>
       )
     }

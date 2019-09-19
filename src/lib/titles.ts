@@ -16,7 +16,7 @@ export const description = {
 
 export const episodeTitles = {
   en: {
-    1: 'Math Boxes',
+    1: 'Mathboxes',
     2: '?',
     3: '?',
     4: '?',

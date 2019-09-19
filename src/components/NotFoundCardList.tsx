@@ -27,7 +27,7 @@ const NotFoundCardList = () => (
             >
               <H args={{ name: 'lookAtToc' }} />
             </P>
-            <Toc />
+            <Toc includeFirstPage />
           </>
         )
       }
