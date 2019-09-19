@@ -5,6 +5,7 @@ import BlankNumberGreySvg from 'src/components/CustomEmoji/BlankNumberGreySvg'
 import BlankNumberPinkSvg from 'src/components/CustomEmoji/BlankNumberPinkSvg'
 import BlankNumberPurpleSvg from 'src/components/CustomEmoji/BlankNumberPurpleSvg'
 import BlankNumberSvg from 'src/components/CustomEmoji/BlankNumberSvg'
+import ConditionSvg from 'src/components/CustomEmoji/ConditionSvg'
 import DoubleArrowSvg from 'src/components/CustomEmoji/DoubleArrowSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/CustomEmoji/HorizontalDotDotDotRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/CustomEmoji/HorizontalDotDotDotSvg'
@@ -49,7 +50,8 @@ export const customEmojiToComponent = {
   mathBox: MathBoxSvg,
   singleArrow: SingleArrowSvg,
   lambda: LambdaSvg,
-  index: IndexSvg
+  index: IndexSvg,
+  condition: ConditionSvg
 }
 
 const CustomEmoji = ({
