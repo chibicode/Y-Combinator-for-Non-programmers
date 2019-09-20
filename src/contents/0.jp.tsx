@@ -904,8 +904,8 @@ export default () => (
                   content: (
                     <>
                       <P>
-                        <Bold>ちなみに:</Bold>{' '}
-                        <Em>IT業界にいる方</Em>の中には、「
+                        <Bold>ちなみに:</Bold> <Em>IT業界にいる方</Em>
+                        の中には、「
                         <Strong>
                           Yコンビネータって、シリコンバレーにあるITベンチャー養成機関のこと？
                         </Strong>
@@ -1018,9 +1018,7 @@ export default () => (
               プログラマ向けのYコンビネータについての説明で最もおすすめなのは、
               「
               <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                <Bold>
-                  Y Not - Adventures in Functional Programming
-                </Bold>
+                <Bold>Y Not - Adventures in Functional Programming</Bold>
               </ExternalLink>
               」という動画です。
             </P>
