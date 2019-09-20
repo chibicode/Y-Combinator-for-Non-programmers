@@ -72,7 +72,7 @@ interface HProps {
         plural?: boolean
       }
     | { name: 'next' }
-    | { name: 'play'; lowerCase?: boolean }
+    | { name: 'play'; lowerCase?: true }
     | { name: 'fastForwarding' }
     | { name: 'pause' }
     | { name: 'fastForward' }
@@ -137,7 +137,7 @@ interface HProps {
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
     | { name: 'plusOneEffect' }
-    | { name: 'plusOneFeature' }
+    | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature' }
     | { name: 'repeatFeature' }
     | { name: 'conditionFeature' }
@@ -1380,7 +1380,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong>“Add 1”</Strong> feature <CustomEmoji type="plusOne" />
+          <Em>
+            {args.capitalize ? 'T' : 't'}he <Strong>“Plus 1”</Strong> feature{' '}
+            <CustomEmoji type="plusOne" />
+          </Em>
         </>
       )
     } else {

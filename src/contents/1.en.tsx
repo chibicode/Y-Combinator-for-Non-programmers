@@ -96,7 +96,7 @@ export default () => (
                 There’s <EmojiNumber number={1} /> on the top, and
               </UlLi>
               <UlLi>
-                There’s an “add 1” icon <CustomEmoji type="plusOne" /> on the
+                There’s an “plus 1” icon <CustomEmoji type="plusOne" /> on the
                 bottom.
               </UlLi>
             </Ul>
@@ -159,32 +159,39 @@ export default () => (
         )
       },
       {
-        title: <>The “Add 1” feature</>,
+        title: (
+          <>
+            <H args={{ name: 'plusOneFeature' }} />
+          </>
+        ),
         content: (
           <>
-            <P>ここまでをまとめると、下の計算箱のように、</P>
+            <P>
+              <Bold>To summarize:</Bold> Suppose that you have a mathbox like
+              below:
+            </P>
             <R.Rviy />
             <Ul>
               <UlLi>
                 <Em>
-                  上に何らかの数字 <CustomEmoji type="blankNumber" />{' '}
-                  が入っていて、
+                  There’s some number <CustomEmoji type="blankNumber" /> on the
+                  top, and…
                 </Em>
               </UlLi>
               <UlLi>
                 <Em>
-                  下に <CustomEmoji type="plusOne" /> が入っている場合、
+                  There’s <CustomEmoji type="plusOne" /> on the bottom. That
+                  means…
                 </Em>
               </UlLi>
               <UlLi>
                 <Em>
-                  <H args={{ name: 'play' }} /> すると結果は{' '}
-                  <CustomEmoji type="blankNumber" /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={1} /> になる
+                  If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+                  result will be <CustomEmoji type="blankNumber" />{' '}
+                  <Emoji>➕</Emoji> <EmojiNumber number={1} />.
                 </Em>
               </UlLi>
             </Ul>
-            <P>ということです。</P>
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="blankNumber" />,
@@ -193,14 +200,12 @@ export default () => (
               ]}
             />
             <P>
-              これが、計算箱に備わっている機能のひとつ、「
-              <H args={{ name: 'plusOneFeature' }} />
-              」です。この機能を使えば、
+              This is the first feature of mathbox:{' '}
+              <H args={{ name: 'plusOneFeature' }} />.{' '}
               <Em>
-                何らかの数字に <EmojiNumber number={1} />{' '}
-                を足す計算を行うことができる
+                It lets you add <EmojiNumber number={1} /> to some number
               </Em>
-              のです。
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -210,9 +215,9 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の<Strong>1を足す機能:</Strong>
+                  <H args={{ name: 'plusOneFeature', capitalize: true }} />:
                   <br />
-                  何らかの数字に <EmojiNumber number={1} /> を足す
+                  Add <EmojiNumber number={1} /> to some number
                 </>
               }
             />
