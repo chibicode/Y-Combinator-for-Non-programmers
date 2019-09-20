@@ -77,7 +77,6 @@ const TocModal = ({ hideModal }: { hideModal: () => void }) => {
   return (
     <Modal onClickBackground={hideModal}>
       <Card
-        t8d
         color="indigo"
         title={<H args={{ name: 'indexPageLink' }} />}
         header={

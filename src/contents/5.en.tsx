@@ -27,12 +27,12 @@ import NextLessonButton from 'src/components/NextLessonButton'
 
 export const ThreeRowRules = () => (
   <>
-    <P t8d>
+    <P>
       <InlineHeader>
         Here’s how to solve a lunchbox puzzle with at least 3 rows.
       </InlineHeader>
     </P>
-    <Ol t8d>
+    <Ol>
       <OlLi>
         <Em>
           First, start with the pair of{' '}
@@ -61,7 +61,7 @@ export const ThreeRowRules = () => (
 
 export const Beginner5Rules = () => (
   <>
-    <P t8d>
+    <P>
       <InlineHeader>Additional Rule 1:</InlineHeader> If there are multiple
       pairs of <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
       <Strong>start with the leftmost pair</Strong>.
@@ -69,7 +69,7 @@ export const Beginner5Rules = () => (
     <R.Hykj>
       <H args={{ name: 'startWithLeftMostOneCaption' }} />
     </R.Hykj>
-    <P t8d>
+    <P>
       <InlineHeader>Note:</InlineHeader>{' '}
       <Em>
         If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the
@@ -86,7 +86,7 @@ export const Beginner5Rules = () => (
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
     </R.Myjz>
     <Hr />
-    <P t8d>
+    <P>
       <InlineHeader>Additional Rule 2:</InlineHeader> If you can’t start with{' '}
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s because there’s only
       one item on the bottom row,{' '}

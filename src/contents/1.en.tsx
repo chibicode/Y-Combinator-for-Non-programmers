@@ -22,17 +22,15 @@ export default () => (
     underConstruction
     cards={[
       {
-        t8d: true,
         title: <>Welcome!</>,
         content: (
           <>
-            <P t8d>
+            <P>
               In this course, we’ll learn about Y Combinator through a short
               story. Let’s first talk about <Strong>“mathboxes”</Strong>, one of
               the key items of this story.
             </P>
             <EmojiSeparator
-              t8d
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />,
@@ -44,17 +42,15 @@ export default () => (
         )
       },
       {
-        t8d: true,
         title: <>Once upon a time…</>,
         content: (
           <>
-            <P t8d>
+            <P>
               Once upon a time, there was a small rural village called{' '}
               <Strong>“Lambda Village”</Strong>. The villagers worked to earn
               just enough for a modest lifestyle.
             </P>
             <EmojiSeparator
-              t8d
               emojis={['🌲', '🙂', '🙂', '🌲']}
               description={<>Lambda Village and the villagers</>}
             />

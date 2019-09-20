@@ -6,7 +6,6 @@ import { colors, fontSizes, ns, radii, spaces } from 'src/lib/theme'
 import { H3 } from 'src/components/ContentTags'
 import { CardAction } from 'src/components/CardWrapper'
 import CardContent, { CardContentProps } from 'src/components/CardContent'
-import locale from 'src/lib/locale'
 
 interface CardColorContextProps {
   color: CardProps['color']
@@ -43,7 +42,6 @@ export interface CardProps {
     content: React.ReactNode
     color?: CardProps['color']
   }
-  t8d?: boolean
   inCardWrapper?: boolean
 }
 
@@ -90,7 +88,6 @@ const Card = ({
   isLast,
   footer,
   header,
-  t8d,
   inCardWrapper
 }: CardProps) => (
   <CardColorContext.Provider value={{ color }}>
@@ -172,12 +169,7 @@ const Card = ({
                   text-align: center;
                   margin-left: ${spaces('-0.25')};
                   margin-right: ${spaces('-0.25')};
-                `,
-                !t8d &&
-                  locale === 'en' &&
-                  css`
-                    opacity: 0.1;
-                  `
+                `
               ]}
             >
               {title}

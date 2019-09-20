@@ -15,7 +15,6 @@ interface CardWrapperProps {
   title?: React.ReactNode
   footer?: CardProps['footer']
   setLastVisibleCardIndex: () => void
-  t8d?: boolean
 }
 
 export type CardAction = 'default' | 'yesSelected' | 'noSelected'
@@ -50,8 +49,7 @@ const CardWrapper = ({
   type,
   setLastVisibleCardIndex,
   title,
-  footer,
-  t8d
+  footer
 }: CardWrapperProps) => {
   const [cardActionTaken, setCardActionTaken] = useState<CardAction>('default')
   const [cardActionResult, setCardActionResult] = useState<CardActionResult>(
@@ -82,8 +80,7 @@ const CardWrapper = ({
             children,
             cardActionTaken,
             title,
-            footer,
-            t8d
+            footer
           }}
           color={cardActionToColor(cardActionResult) || typeToColor(type)}
         />

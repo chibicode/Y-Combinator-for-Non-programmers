@@ -16,12 +16,11 @@ const DemoCardList = () => (
     demo
     cards={[
       {
-        t8d: true,
         type: 'summary',
         title: <>This is a demo page</>,
         content: (
           <>
-            <P t8d>
+            <P>
               I use this page when demonstrating materials from this course to
               someone <Strong>in person</Strong>. So there won’t be any
               explanations written on this page.
@@ -31,12 +30,11 @@ const DemoCardList = () => (
       },
       {
         type: 'sideNote',
-        t8d: true,
+
         title: <>Part 1: Mathbox Basics</>,
         content: (
           <>
             <EmojiSeparator
-              t8d
               nodes={[
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />,
@@ -48,7 +46,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: (
           <>
             <H args={{ name: 'plusOneFeature' }} />
@@ -62,13 +59,11 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         type: 'sideNote',
         title: <>Part 2: Lunchbox Basics</>,
         content: (
           <>
             <EmojiSeparator
-              t8d
               nodes={[<Emoji>🍱</Emoji>, <Emoji>🍱</Emoji>, <Emoji>🍱</Emoji>]}
               description={<>Lunchboxes</>}
             />
@@ -76,7 +71,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Lunchboxes with 2 Rows</>,
         content: (
           <>
@@ -88,7 +82,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Lunchbox Rules</>,
         type: 'summary',
         content: (
@@ -100,7 +93,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Lunchbox with 3 Rows</>,
         content: (
           <>
@@ -112,7 +104,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         type: 'summary',
         title: <>Rules for Lunchboxes with 3+ Rows</>,
         content: (
@@ -124,7 +115,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         type: 'sideNote',
         title: <>Part 3: Converting Lunchboxes to Mathboxes</>,
         content: (
@@ -140,7 +130,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Converting Lunchboxes to Mathboxes</>,
         content: (
           <>
@@ -152,7 +141,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Rules for Converting to Mathboxes</>,
         type: 'summary',
         content: (
@@ -191,7 +179,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Part 4: Adding 1</>,
         type: 'sideNote',
         content: (
@@ -207,7 +194,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: (
           <>
             Calculating <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
@@ -237,7 +223,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: (
           <>
             Calculating <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
@@ -267,7 +252,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Mathboxes can be replicated by Lunchboxes</>,
         content: (
           <>
@@ -282,7 +266,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Part 5: Lunchboxes are syntax sugar for Lambda Calculus</>,
         type: 'sideNote',
         content: (
@@ -298,7 +281,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Lambda Calculus and Lunchboxes</>,
         content: (
           <>
@@ -309,7 +291,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Y Combinator using Lunchboxes</>,
         content: (
           <>
@@ -320,7 +301,6 @@ const DemoCardList = () => (
         )
       },
       {
-        t8d: true,
         title: <>Python’s lambda and Lunchboxes</>,
         content: (
           <>

@@ -5,7 +5,6 @@ import Emoji from 'src/components/Emoji'
 import { colors, fontSizes, ns, spaces, maxWidths } from 'src/lib/theme'
 import { VariableNames } from 'src/types/VariableNames'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import locale from 'src/lib/locale'
 
 interface EmojiSeparatorProps {
   emojis: string[]
@@ -18,7 +17,6 @@ interface EmojiSeparatorProps {
   description?: React.ReactNode
   noBottomMargin: boolean
   noTopMargin: boolean
-  t8d?: boolean
 }
 
 const fontSize = (size: EmojiSeparatorProps['size']) =>
@@ -58,8 +56,7 @@ const EmojiSeparator = ({
   cssOverrides,
   description,
   noBottomMargin,
-  noTopMargin,
-  t8d
+  noTopMargin
 }: EmojiSeparatorProps) => (
   <Component
     css={[
@@ -116,12 +113,7 @@ const EmojiSeparator = ({
               padding-bottom: ${spaces(0.5)};
               max-width: ${maxWidths('xs')};
               margin: 0 auto;
-            `,
-            !t8d &&
-              locale === 'en' &&
-              css`
-                opacity: 0.1;
-              `
+            `
           ]}
         >
           {description}

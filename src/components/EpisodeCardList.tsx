@@ -25,7 +25,6 @@ export interface EpisodeCardType {
   preview?: CardProps['preview']
   content?: React.ReactNode
   footer?: CardProps['footer']
-  t8d?: boolean
 }
 
 export type EpisodeCardListType = readonly EpisodeCardType[]
@@ -53,7 +52,6 @@ const EpisodeCardList = ({
         {underConstruction && (
           <CardWrapper
             type="summary"
-            t8d
             isLast={cards.length === 0}
             title={
               <>
@@ -61,13 +59,13 @@ const EpisodeCardList = ({
               </>
             }
           >
-            <P t8d>
+            <P>
               <H args={{ name: 'pageUnderConstruction' }} />
             </P>
             <EmojiSeparator emojis={['⚠️', '⚠️', '⚠️']} />
           </CardWrapper>
         )}
-        {cards.map(({ title, type, content, preview, footer, t8d }, index) =>
+        {cards.map(({ title, type, content, preview, footer }, index) =>
           index <= lastVisibleCardIndex ? (
             <CardWrapper
               slideNumber={index + 1}
@@ -84,7 +82,6 @@ const EpisodeCardList = ({
                       content: (
                         <>
                           <P
-                            t8d
                             css={css`
                               text-align: center;
                             `}
@@ -112,7 +109,6 @@ const EpisodeCardList = ({
                     }
                   : footer
               }
-              t8d={t8d}
             >
               {content}
             </CardWrapper>

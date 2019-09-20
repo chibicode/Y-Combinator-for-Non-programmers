@@ -18,7 +18,7 @@ export const BasicRules = ({
   includeFuncUnbound?: boolean
 }) => (
   <>
-    <P t8d>
+    <P>
       1. <InlineHeader>Add labels:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
@@ -40,7 +40,7 @@ export const BasicRules = ({
       )}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Zzxj>
-    <P t8d>
+    <P>
       2. <InlineHeader>Find matches:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
@@ -52,7 +52,7 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </R.Keck>
-    <P t8d>
+    <P>
       3. <InlineHeader>Copy:</InlineHeader>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
@@ -64,7 +64,7 @@ export const BasicRules = ({
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Qoms>
-    <P t8d>
+    <P>
       4. <InlineHeader>Remove:</InlineHeader> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
@@ -81,7 +81,7 @@ export const BasicRules = ({
 
 export const Unmatched = () => (
   <>
-    <P t8d>
+    <P>
       If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
       ’s match,{' '}
