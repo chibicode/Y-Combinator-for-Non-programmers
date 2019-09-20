@@ -800,7 +800,13 @@ export default () => (
               </Strong>
             </P>
             <EmojiSeparator
-              emojis={['➕', '✖️', '🍱', '↕️', '🔁']}
+              nodes={[
+                <Emoji>➕</Emoji>,
+                <Emoji>✖️</Emoji>,
+                <Emoji>🍱</Emoji>,
+                <CustomEmoji type="condition" />,
+                <Emoji>🔁</Emoji>
+              ]}
               description={
                 <>
                   弁当箱を工夫すれば、四則演算や、

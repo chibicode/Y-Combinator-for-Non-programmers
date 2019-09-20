@@ -647,7 +647,14 @@ export default () => (
                     <>
                       <P>どうしてこうなったか説明しましょう。</P>
                       <P>
-                        こちらも、下の部分の数字が <EmojiNumber number={0} />{' '}
+                        こちらも、
+                        <H
+                          args={{
+                            name: 'conditionSectionName',
+                            type: 'condition'
+                          }}
+                        />{' '}
+                        の数字が <EmojiNumber number={0} />{' '}
                         かどうかチェックします。
                       </P>
                     </>
@@ -664,12 +671,12 @@ export default () => (
                     <>
                       <P>
                         今回は下が <EmojiNumber number={0} />{' '}
-                        ですね。この場合は、
+                        ではありません。この場合は、
                         <Strong>
                           <H
                             args={{
                               name: 'conditionSectionName',
-                              type: 'trueCase'
+                              type: 'falseCase'
                             }}
                           />{' '}
                           に入っている数字が最終的に残ります。
@@ -683,7 +690,7 @@ export default () => (
             <R.Guhy />
             <ExpressionRunnerSeparator />
             <R.Seie>
-              <InlineBorder type="trueCase" /> に入っていた{' '}
+              <InlineBorder type="falseCase" /> に入っていた{' '}
               <EmojiNumber number={5} /> が残る
             </R.Seie>
             <BubbleQuotes
@@ -692,7 +699,12 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>なるほど…</P>
+                      <P>
+                        なるほど…
+                        <InlineBorder type="falseCase" /> は、「
+                        <Strong>ゼロ以外の数字の場合はこちら</Strong>
+                        」という意味なんだね。
+                      </P>
                     </>
                   )
                 }
@@ -719,24 +731,24 @@ export default () => (
               「<H args={{ name: 'conditionFeature' }} />
               」がある計算箱
             </R.Rhoa>
-            <P>
-              <Em>
-                まず、
-                <H
-                  args={{ name: 'conditionSectionName', type: 'condition' }}
-                />{' '}
-                の中にある <CustomEmoji type="blankNumberGrey" /> が{' '}
-                <EmojiNumber number={0} /> かどうかチェックします。
-              </Em>
-            </P>
             <Ul>
+              <UlLi>
+                <Em>
+                  まず、
+                  <H
+                    args={{ name: 'conditionSectionName', type: 'condition' }}
+                  />{' '}
+                  の中にある <CustomEmoji type="blankNumberTeal" /> が{' '}
+                  <EmojiNumber number={0} /> かどうかチェックします。
+                </Em>
+              </UlLi>
               <UlLi>
                 <Em>
                   もし <EmojiNumber number={0} /> なら、{' '}
                   <H
                     args={{ name: 'conditionSectionName', type: 'trueCase' }}
                   />{' '}
-                  の中にある <CustomEmoji type="blankNumberPurple" />{' '}
+                  の中にある <CustomEmoji type="blankNumberYellow" />{' '}
                   が残ります。
                 </Em>
               </UlLi>
@@ -746,11 +758,19 @@ export default () => (
                   <H
                     args={{ name: 'conditionSectionName', type: 'falseCase' }}
                   />{' '}
-                  の中にある <CustomEmoji type="blankNumberPink" /> が残ります。
+                  の中にある <CustomEmoji type="blankNumberRed" /> が残ります。
                 </Em>
               </UlLi>
             </Ul>
-            <EmojiSeparator emojis={['🔢', '↕️', '0️⃣']} />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🔢</Emoji>,
+                <CustomEmoji type="singleArrowReverse" />,
+                <CustomEmoji type="condition" />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={0} />
+              ]}
+            />
             <BubbleQuotes
               quotes={[
                 {
@@ -760,10 +780,10 @@ export default () => (
                       <P>
                         なるほど、「
                         <Em>
-                          真ん中が <EmojiNumber number={0} /> かどうか？
+                          <EmojiNumber number={0} /> かどうか？
                         </Em>
                         」という「
-                        <Strong>条件</Strong>」によって上下に「
+                        <Strong>条件</Strong>」によって
                         <Strong>分岐</Strong>」するから、「
                         <H args={{ name: 'conditionFeature' }} />
                         」なのか。
@@ -801,7 +821,11 @@ export default () => (
               ]}
             />
             <EmojiSeparator
-              emojis={['✨', '↕️', '✨']}
+              nodes={[
+                <Emoji>✨</Emoji>,
+                <CustomEmoji type="condition" />,
+                <Emoji>✨</Emoji>
+              ]}
               description={<>計算箱に備わっていた隠れ機能</>}
             />
             <BubbleQuotes
@@ -839,7 +863,7 @@ export default () => (
                       <P>
                         たしかに、「
                         <Em>
-                          真ん中が <EmojiNumber number={0} /> かどうか？
+                          <EmojiNumber number={0} /> かどうか？
                         </Em>
                         」をチェックできても、何の役にも立たなさそうだけど…
                       </P>
@@ -868,7 +892,7 @@ export default () => (
             />
             <EmojiSeparator
               nodes={[
-                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🔁</Emoji>
               ]}
@@ -931,7 +955,7 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
-                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
                 <Emoji>❓</Emoji>

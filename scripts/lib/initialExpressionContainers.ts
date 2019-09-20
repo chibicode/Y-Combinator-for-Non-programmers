@@ -352,13 +352,13 @@ export const kysf = initializeExpressionContainer({
 export const pslb = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
-    shorthandNumber: 0
+    shorthandNumber: 3
   },
   trueCase: {
-    shorthandNumber: 5
+    shorthandNumber: 4
   },
   falseCase: {
-    shorthandNumber: 4
+    shorthandNumber: 5
   }
 })
 

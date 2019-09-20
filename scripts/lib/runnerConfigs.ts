@@ -311,7 +311,7 @@ export const gtdu: ExpressionRunnerShorthandConfig = {
 export const guhy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pslb,
-  initialState: 'trueCaseActive',
+  initialState: 'falseCaseActive',
   explanationsVisibility: 'visible'
 }
 
