@@ -15,7 +15,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 0
+          "shorthandNumber": 3
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -29,7 +29,7 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 5
+          "shorthandNumber": 4
         },
         "falseCase": {
           "name": "shorthandNumber",
@@ -43,7 +43,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 4
+          "shorthandNumber": 5
         },
         "priority": 1
       },

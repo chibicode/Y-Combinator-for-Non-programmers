@@ -14,7 +14,6 @@ import Emoji from 'src/components/Emoji'
 import EmojiNumber from 'src/components/EmojiNumber'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
-import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
 import InlineBorder from 'src/components/InlineBorder'
@@ -425,27 +424,10 @@ export default () => (
                         「<H args={{ name: 'conditionFeature' }} />
                         」に置き換える
                       </R.Ruou>
-                      <P>
-                        以下のように置き換えてみるよ。
-                        <Strong>
-                          複雑なので、↓の置き換え方は読み飛ばしても大丈夫！
-                        </Strong>
-                      </P>
-                      <Ul>
-                        <UlLi>
-                          上にある <EmojiForLetter letter="f" />{' '}
-                          <CustomEmoji type="plusOne" /> は{' '}
-                          <InlineBorder type="falseCase" /> の部分へ
-                        </UlLi>
-                        <UlLi>
-                          その下にある <EmojiNumber number={2} /> は{' '}
-                          <InlineBorder type="trueCase" /> の部分へ
-                        </UlLi>
-                        <UlLi>
-                          一番下の <EmojiForLetter letter="f" /> は{' '}
-                          <InlineBorder type="condition" /> の部分へ
-                        </UlLi>
-                      </Ul>
+                      <P>以下のように置き換えてみるよ。</P>
+                      <R.Wenx></R.Wenx>
+                      <ExpressionRunnerSeparator />
+                      <R.Crvj></R.Crvj>
                       <P>置き換えるとこうなります！</P>
                     </>
                   )
@@ -582,6 +564,8 @@ export default () => (
               <br />
               置き換えてから実行していた
             </R.Ghwe>
+            <ExpressionRunnerSeparator />
+            <R.Kizi></R.Kizi>
             <BubbleQuotes
               quotes={[
                 {
@@ -591,8 +575,10 @@ export default () => (
                       <P>
                         <Strong>
                           もともとの弁当箱を、そのまま
-                          <H args={{ name: 'play' }} />{' '}
-                          しても、同じ結果になっていたのかな？
+                          <H
+                            args={{ name: 'play' }}
+                          /> しても、結果は同じく <EmojiNumber number={4} />{' '}
+                          になっていたのかな？
                         </Strong>
                       </P>
                     </>
@@ -604,10 +590,14 @@ export default () => (
               <Emoji>🍱</Emoji> もともとの弁当箱を、
               <br />
               そのまま
-              <H args={{ name: 'play' }} /> しても、サヤちゃんの
-              <br />
-              手法と同じ結果になっていたか？
+              <H args={{ name: 'play' }} /> しても…
             </R.Bnyo>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              結果は同じく
+              <br />
+              <EmojiNumber size="semilg" number={4} /> になっていた？
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -833,7 +823,7 @@ export default () => (
             <R.Ghwe>
               それぞれの部分を
               <br />
-              <CustomEmoji type="mathBox" /> シンプルな計算箱に置き換えると
+              シンプルな計算箱 <CustomEmoji type="mathBox" /> に置き換えると
               <br />
               分かりやすくなる
             </R.Ghwe>
@@ -842,7 +832,7 @@ export default () => (
               <Strong>
                 ちなみに、どちらの場合も
                 <br />
-                実行結果は <EmojiNumber number={4} /> になる
+                実行結果は <EmojiNumber size="semilg" number={4} /> になる
               </Strong>
             </ExpressionRunnerCaptionOnly>
           </>

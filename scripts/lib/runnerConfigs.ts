@@ -311,7 +311,7 @@ export const gtdu: ExpressionRunnerShorthandConfig = {
 export const guhy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.pslb,
-  initialState: 'trueCaseActive',
+  initialState: 'falseCaseActive',
   explanationsVisibility: 'visible'
 }
 
@@ -364,7 +364,7 @@ export const hykj: ExpressionRunnerShorthandConfig = {
 export const iatt: ExpressionRunnerShorthandConfig = {
   runner: 'predefined',
   initialExpressionContainers: [
-    initialExpressionContainers.kysf,
+    initialExpressionContainers.ekyd,
     initialExpressionContainers.zrwn
   ]
 }
@@ -577,8 +577,8 @@ export const qoms: ExpressionRunnerShorthandConfig = {
 
 export const rjfy: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kysf,
-  initialState: 'falseCaseActive',
+  initialExpressionContainer: initialExpressionContainers.ekyd,
+  initialState: 'trueCaseActive',
   explanationsVisibility: 'visible'
 }
 
@@ -836,7 +836,7 @@ export const uwma: ExpressionRunnerShorthandConfig = {
 
 export const vozu: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kysf,
+  initialExpressionContainer: initialExpressionContainers.ekyd,
   initialState: 'conditionActive',
   explanationsVisibility: 'visible'
 }
@@ -2039,7 +2039,7 @@ export const kiiq: ExpressionRunnerShorthandConfig = {
 
 export const zdpf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kysf
+  initialExpressionContainer: initialExpressionContainers.ekyd
 }
 
 export const jbqw: ExpressionRunnerShorthandConfig = {
@@ -2065,7 +2065,7 @@ export const oclg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.qzuv,
   showPriorities: true,
-  bottomRightBadgeOverrides: { h: '🅰️', i: '🅱️' }
+  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
 }
 
 export const fton: ExpressionRunnerShorthandConfig = {
@@ -2163,6 +2163,14 @@ export const lxgj: ExpressionRunnerShorthandConfig = {
   }
 }
 
+export const wenx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gxhl,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
 export const vlhb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cmay,
@@ -2180,6 +2188,13 @@ export const ruou: ExpressionRunnerShorthandConfig = {
 export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.exoq,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const crvj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.oyzh,
   showPriorities: true,
   variableSize: 'md'
 }

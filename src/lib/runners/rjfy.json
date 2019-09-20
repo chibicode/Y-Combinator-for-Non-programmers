@@ -3,7 +3,7 @@
     {
       "expression": {
         "type": "conditional",
-        "state": "falseCaseActive",
+        "state": "trueCaseActive",
         "checkType": "isZero",
         "condition": {
           "name": "shorthandNumber",
@@ -15,7 +15,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 2
+          "shorthandNumber": 0
         },
         "trueCase": {
           "name": "shorthandNumber",
@@ -29,7 +29,7 @@
           ],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 3
+          "shorthandNumber": 1
         },
         "falseCase": {
           "name": "shorthandNumber",
@@ -43,11 +43,11 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 1
+          "shorthandNumber": 2
         },
         "priority": 1
       },
-      "previouslyChangedExpressionState": "falseCaseActive",
+      "previouslyChangedExpressionState": "trueCaseActive",
       "activePriority": 1,
       "containerState": "stepped"
     }

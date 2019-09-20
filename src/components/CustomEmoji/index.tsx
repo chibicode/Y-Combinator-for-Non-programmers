@@ -1,10 +1,12 @@
 import React from 'react'
-import BlankNumberBrownSvg from 'src/components/CustomEmoji/BlankNumberBrownSvg'
-import BlankNumberGreenSvg from 'src/components/CustomEmoji/BlankNumberGreenSvg'
-import BlankNumberGreySvg from 'src/components/CustomEmoji/BlankNumberGreySvg'
+import BlankNumberTealSvg from 'src/components/CustomEmoji/BlankNumberTealSvg'
+import BlankNumberRedSvg from 'src/components/CustomEmoji/BlankNumberRedSvg'
+import BlankNumberYellowSvg from 'src/components/CustomEmoji/BlankNumberYellowSvg'
 import BlankNumberPinkSvg from 'src/components/CustomEmoji/BlankNumberPinkSvg'
 import BlankNumberPurpleSvg from 'src/components/CustomEmoji/BlankNumberPurpleSvg'
+import BlankNumberGreySvg from 'src/components/CustomEmoji/BlankNumberGreySvg'
 import BlankNumberSvg from 'src/components/CustomEmoji/BlankNumberSvg'
+import ConditionSvg from 'src/components/CustomEmoji/ConditionSvg'
 import DoubleArrowSvg from 'src/components/CustomEmoji/DoubleArrowSvg'
 import HorizontalDotDotDotRedSvg from 'src/components/CustomEmoji/HorizontalDotDotDotRedSvg'
 import HorizontalDotDotDotSvg from 'src/components/CustomEmoji/HorizontalDotDotDotSvg'
@@ -21,6 +23,7 @@ import PlusOneOrangeSvg from 'src/components/CustomEmoji/PlusOneOrangeSvg'
 import PlusOneSvg from 'src/components/CustomEmoji/PlusOneSvg'
 import QuestionFoodGreySvg from 'src/components/CustomEmoji/QuestionFoodGreySvg'
 import SingleArrowSvg from 'src/components/CustomEmoji/SingleArrowSvg'
+import SingleArrowReverseSvg from 'src/components/CustomEmoji/SingleArrowReverseSvg'
 import TwentyFourSvg from 'src/components/CustomEmoji/TwentyFourSvg'
 import TwentySvg from 'src/components/CustomEmoji/TwentySvg'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
@@ -44,12 +47,15 @@ export const customEmojiToComponent = {
   blankNumberPink: BlankNumberPinkSvg,
   blankNumberGrey: BlankNumberGreySvg,
   blankNumberPurple: BlankNumberPurpleSvg,
-  blankNumberBrown: BlankNumberBrownSvg,
-  blankNumberGreen: BlankNumberGreenSvg,
+  blankNumberTeal: BlankNumberTealSvg,
+  blankNumberRed: BlankNumberRedSvg,
+  blankNumberYellow: BlankNumberYellowSvg,
   mathBox: MathBoxSvg,
   singleArrow: SingleArrowSvg,
+  singleArrowReverse: SingleArrowReverseSvg,
   lambda: LambdaSvg,
-  index: IndexSvg
+  index: IndexSvg,
+  condition: ConditionSvg
 }
 
 const CustomEmoji = ({

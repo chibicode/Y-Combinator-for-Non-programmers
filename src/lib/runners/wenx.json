@@ -5,19 +5,37 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "shorthandNumber",
-          "highlightType": "initialHighlighted",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [
-            4
-          ],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": true,
-          "shorthandNumber": 2,
-          "shorthandNumberAfterConvert": "number"
+          "arg": {
+            "name": "f",
+            "highlightType": "initialHighlighted",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              4,
+              5
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true
+          },
+          "func": {
+            "name": "shorthandFunc",
+            "highlightType": "initialHighlighted",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              5
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "add"
+          },
+          "state": "default",
+          "type": "call",
+          "priority": 5
         },
         "func": {
           "arg": {
@@ -32,8 +50,7 @@
             "funcPriorityAgg": [],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandNumber": 1,
-            "shorthandNumberAfterConvert": "number"
+            "shorthandNumber": 2
           },
           "func": {
             "arg": {
@@ -134,7 +151,7 @@
                 "type": "function"
               },
               "func": {
-                "name": "shorthandNumber",
+                "name": "f",
                 "highlightType": "initialHighlighted",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
@@ -147,9 +164,7 @@
                   4
                 ],
                 "emphasizePriority": false,
-                "bound": true,
-                "shorthandNumber": 0,
-                "shorthandNumberAfterConvert": "number"
+                "bound": true
               },
               "state": "default",
               "type": "call",
@@ -173,7 +188,7 @@
   "hideControls": true,
   "explanationsVisibility": "hidden",
   "hidePriorities": false,
-  "variableSize": "md",
+  "variableSize": "sm",
   "containerSize": "xs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,

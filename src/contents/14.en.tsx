@@ -311,7 +311,7 @@ export default () => (
                         <Strong>
                           <InlineBorder type="condition" /> には{' '}
                           <EmojiNumber number={3} /> が入っているので、
-                          <InlineBorder type="falseCase" /> のほうが残ります。
+                          <InlineBorder type="falseCase" /> が残ります。
                         </Strong>
                       </P>
                     </>

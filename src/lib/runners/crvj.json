@@ -8,8 +8,8 @@
         "state": "default",
         "checkType": "isZero",
         "condition": {
-          "name": "blankNumberTeal",
-          "highlightType": "default",
+          "name": "f",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -19,8 +19,8 @@
           "bound": true
         },
         "trueCase": {
-          "name": "blankNumberYellow",
-          "highlightType": "default",
+          "name": "shorthandNumber",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -29,20 +29,41 @@
             1
           ],
           "emphasizePriority": false,
-          "bound": true
+          "bound": true,
+          "shorthandNumber": 2
         },
         "falseCase": {
-          "name": "blankNumberRed",
-          "highlightType": "default",
-          "topLeftBadgeType": "none",
-          "bottomRightBadgeType": "none",
-          "type": "variable",
-          "argPriorityAgg": [
-            1
-          ],
-          "funcPriorityAgg": [],
-          "emphasizePriority": false,
-          "bound": true
+          "arg": {
+            "name": "f",
+            "highlightType": "initialHighlighted",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [
+              1,
+              2
+            ],
+            "funcPriorityAgg": [],
+            "emphasizePriority": false,
+            "bound": true
+          },
+          "func": {
+            "name": "shorthandFunc",
+            "highlightType": "initialHighlighted",
+            "topLeftBadgeType": "none",
+            "bottomRightBadgeType": "none",
+            "type": "variable",
+            "argPriorityAgg": [],
+            "funcPriorityAgg": [
+              2
+            ],
+            "emphasizePriority": false,
+            "bound": true,
+            "shorthandFunc": "add"
+          },
+          "state": "default",
+          "type": "call",
+          "priority": 2
         },
         "priority": 1
       }
@@ -51,8 +72,8 @@
   "speed": 1,
   "hideControls": true,
   "explanationsVisibility": "hidden",
-  "hidePriorities": true,
-  "variableSize": "lg",
+  "hidePriorities": false,
+  "variableSize": "md",
   "containerSize": "xxs",
   "hidePlayButton": false,
   "hideBottomRightBadges": false,

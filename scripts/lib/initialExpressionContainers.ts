@@ -323,13 +323,26 @@ const yCombinatorHighlighted: FunctionExpressionParams = {
 
 export const vazr = initializeExpressionContainer(yCombinator)
 
+export const ekyd = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: {
+    shorthandNumber: 0
+  },
+  trueCase: {
+    shorthandNumber: 1
+  },
+  falseCase: {
+    shorthandNumber: 2
+  }
+})
+
 export const kysf = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
-    shorthandNumber: 2
+    shorthandNumber: 3
   },
   trueCase: {
-    shorthandNumber: 3
+    shorthandNumber: 2
   },
   falseCase: {
     shorthandNumber: 1
@@ -339,13 +352,13 @@ export const kysf = initializeExpressionContainer({
 export const pslb = initializeExpressionContainer({
   checkType: 'isZero',
   condition: {
-    shorthandNumber: 0
+    shorthandNumber: 3
   },
   trueCase: {
-    shorthandNumber: 5
+    shorthandNumber: 4
   },
   falseCase: {
-    shorthandNumber: 4
+    shorthandNumber: 5
   }
 })
 
@@ -1147,26 +1160,26 @@ export const whey = initializeExpressionContainer([
 
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'blankNumberGrey',
-  trueCase: 'blankNumberPurple',
-  falseCase: 'blankNumberPink'
+  condition: 'blankNumberTeal',
+  trueCase: 'blankNumberYellow',
+  falseCase: 'blankNumberRed'
 })
 
 export const zpak = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 0, initialHighlight: true },
-  trueCase: 'blankNumberPurple',
-  falseCase: 'blankNumberPink'
+  trueCase: 'blankNumberYellow',
+  falseCase: 'blankNumberRed'
 })
 
 export const fylp = initializeExpressionContainer({
   checkType: 'isZero',
   condition: { shorthandNumber: 1, initialHighlight: true },
-  trueCase: 'blankNumberPurple',
-  falseCase: 'blankNumberPink'
+  trueCase: 'blankNumberYellow',
+  falseCase: 'blankNumberRed'
 })
 
-export const xgav = initializeExpressionContainer('blankNumberPurple')
+export const xgav = initializeExpressionContainer('blankNumberYellow')
 
 export const cmay = initializeExpressionContainer(
   isZeroParams(
@@ -1194,7 +1207,7 @@ export const rpcm = initializeExpressionContainer(
   )
 )
 
-export const cunp = initializeExpressionContainer('blankNumberPink')
+export const cunp = initializeExpressionContainer('blankNumberRed')
 
 export const psdd = initializeExpressionContainer(
   isZeroParams(
@@ -1277,17 +1290,17 @@ export const eryp = initializeExpressionContainer(
     'e',
     {
       shorthandNumberAfterConvert: 'number',
-      shorthandNumber: 3,
-      initialHighlight: true
-    },
-    {
-      shorthandNumberAfterConvert: 'number',
       shorthandNumber: 1,
       initialHighlight: true
     },
     {
       shorthandNumberAfterConvert: 'number',
       shorthandNumber: 2,
+      initialHighlight: true
+    },
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 0,
       initialHighlight: true
     }
   )
@@ -1300,14 +1313,14 @@ export const zmua = initializeExpressionContainer(
     'c',
     'd',
     'e',
-    numberParams(highlighted('f'), highlighted('g'), 3),
-    numberParams(highlighted('h'), highlighted('i'), 1),
-    numberParams(highlighted('j'), highlighted('k'), 2)
+    numberParams(highlighted('f'), highlighted('g'), 1),
+    numberParams(highlighted('h'), highlighted('i'), 2),
+    numberParams(highlighted('j'), highlighted('k'), 0)
   )
 )
 
 export const qzuv = initializeExpressionContainer(
-  numberParamsHighlightNumber('h', 'i', 1)
+  numberParamsHighlightNumber('f', 'g', 1)
 )
 
 export const lcce = initializeExpressionContainer(
@@ -1450,6 +1463,38 @@ export const xskc = initializeExpressionContainer([
     shorthandNumber: 3
   }
 ])
+
+export const gxhl = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    {
+      shorthandNumber: 2,
+      initialHighlight: true
+    },
+    [
+      {
+        shorthandFunc: 'add',
+        initialHighlight: true
+      },
+      highlighted('f')
+    ],
+    highlighted('f')
+  )
+)
+
+export const oyzh = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: highlighted('f'),
+  trueCase: { shorthandNumber: 2, initialHighlight: true },
+  falseCase: [
+    { shorthandFunc: 'add', initialHighlight: true },
+    highlighted('f')
+  ]
+})
 
 export const exoq = initializeExpressionContainer([
   {
