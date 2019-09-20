@@ -569,7 +569,7 @@ export default () => (
             <R.Rhoa>
               <CustomEmoji type="blankNumberRed" />{' '}
               <CustomEmoji type="blankNumberYellow" />{' '}
-              <CustomEmoji type="blankNumberGreen" /> の部分に、
+              <CustomEmoji type="blankNumberTeal" /> の部分に、
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Zdpf>
