@@ -188,7 +188,7 @@ export default () => (
                       <P>
                         では、まずサヤの弁当箱の一番下の「
                         <Strong>
-                          <CustomEmoji type="blankNumberTeal" />{' '}
+                          <CustomEmoji type="blankNumberGreen" />{' '}
                           に変換できる弁当箱
                         </Strong>
                         」のところに、「
@@ -205,7 +205,7 @@ export default () => (
             <R.Ycpk>
               一番下の 「
               <Strong>
-                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
               </Strong>
               」<br />
               のところに、
@@ -250,7 +250,7 @@ export default () => (
             <R.Nmrp>
               「
               <Strong>
-                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
               </Strong>
               」のところに、
               <br />
@@ -351,7 +351,7 @@ export default () => (
                       <P>
                         次は、サヤの弁当箱の一番下の「
                         <Strong>
-                          <CustomEmoji type="blankNumberTeal" />{' '}
+                          <CustomEmoji type="blankNumberGreen" />{' '}
                           に変換できる弁当箱
                         </Strong>
                         」のところに、「
@@ -368,7 +368,7 @@ export default () => (
             <R.Psyv>
               一番下の 「
               <Strong>
-                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
               </Strong>
               」<br />
               のところに、
@@ -413,7 +413,7 @@ export default () => (
             <R.Gpat>
               「
               <Strong>
-                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+                <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
               </Strong>
               」のところに、
               <br />
@@ -556,7 +556,7 @@ export default () => (
           <>
             <CustomEmoji type="blankNumberRed" />{' '}
             <CustomEmoji type="blankNumberYellow" />{' '}
-            <CustomEmoji type="blankNumberTeal" /> 全てを埋める
+            <CustomEmoji type="blankNumberGreen" /> 全てを埋める
           </>
         ),
         content: (
@@ -573,7 +573,7 @@ export default () => (
                           <Em>
                             <CustomEmoji type="blankNumberRed" />{' '}
                             <CustomEmoji type="blankNumberYellow" />{' '}
-                            <CustomEmoji type="blankNumberTeal" />{' '}
+                            <CustomEmoji type="blankNumberGreen" />{' '}
                             の全てを埋めてみて、
                           </Em>
                         </UlLi>
@@ -605,7 +605,7 @@ export default () => (
                             条件分岐の機能がある計算箱の{' '}
                             <CustomEmoji type="blankNumberRed" />{' '}
                             <CustomEmoji type="blankNumberYellow" />{' '}
-                            <CustomEmoji type="blankNumberTeal" /> に、
+                            <CustomEmoji type="blankNumberGreen" /> に、
                           </Em>
                         </UlLi>
                         <UlLi>
@@ -627,7 +627,7 @@ export default () => (
             <R.Rhoa>
               <CustomEmoji type="blankNumberRed" />{' '}
               <CustomEmoji type="blankNumberYellow" />{' '}
-              <CustomEmoji type="blankNumberTeal" /> の部分に、
+              <CustomEmoji type="blankNumberGreen" /> の部分に、
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Zdpf>
@@ -653,7 +653,7 @@ export default () => (
                         <Em>
                           サヤの弁当箱の <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberTeal" /> にも{' '}
+                          <CustomEmoji type="blankNumberGreen" /> にも{' '}
                           <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
                           <EmojiNumber number={0} /> を入れてみるよ。
                         </Em>
@@ -683,7 +683,7 @@ export default () => (
               <CustomEmoji type="blankNumberYellow" /> に{' '}
               <EmojiNumber number={1} /> を、
               <br />
-              <CustomEmoji type="blankNumberTeal" /> に{' '}
+              <CustomEmoji type="blankNumberGreen" /> に{' '}
               <EmojiNumber number={0} /> を入れてみた
             </R.Jbqw>
             <ExpressionRunnerSeparator />

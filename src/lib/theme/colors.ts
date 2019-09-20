@@ -8,7 +8,7 @@ import {
   yellow,
   brown,
   deepPurple,
-  teal,
+  cyan,
   red,
   orange
 } from '@material-ui/core/colors'
@@ -73,7 +73,7 @@ export const allColors = {
   deepOrange400: deepOrange[400],
   deepOrange600: deepOrange[600],
   deepOrange800: deepOrange[800],
-  teal100: teal[100],
+  cyan100: cyan[100],
   red100: red[100],
   orange100: orange[100]
 }

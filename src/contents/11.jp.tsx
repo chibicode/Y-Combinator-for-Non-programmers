@@ -325,7 +325,7 @@ export default () => (
                         <UlLi>
                           それぞれ <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberTeal" /> が入っていて、
+                          <CustomEmoji type="blankNumberGreen" /> が入っていて、
                         </UlLi>
                         <UlLi>
                           左側に <InlineBorder type="falseCase" />{' '}
@@ -349,7 +349,7 @@ export default () => (
                         <Strong>
                           それぞれの <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberTeal" />{' '}
+                          <CustomEmoji type="blankNumberGreen" />{' '}
                           には数字を入れることができます。
                         </Strong>
                         同じ数字を入れても構いませんし、違う数字を入れても構いません。
@@ -363,7 +363,7 @@ export default () => (
               nodes={[
                 <CustomEmoji type="blankNumberRed" />,
                 <CustomEmoji type="blankNumberYellow" />,
-                <CustomEmoji type="blankNumberTeal" />
+                <CustomEmoji type="blankNumberGreen" />
               ]}
               description={
                 <>
@@ -393,7 +393,7 @@ export default () => (
                         <Strong>
                           <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
-                          <CustomEmoji type="blankNumberTeal" />{' '}
+                          <CustomEmoji type="blankNumberGreen" />{' '}
                           に何か適当な数字を入れてみてください！
                         </Strong>
                       </P>
@@ -748,7 +748,7 @@ export default () => (
                   <H
                     args={{ name: 'conditionSectionName', type: 'condition' }}
                   />{' '}
-                  の中にある <CustomEmoji type="blankNumberTeal" /> が{' '}
+                  の中にある <CustomEmoji type="blankNumberGreen" /> が{' '}
                   <EmojiNumber number={0} /> かどうかチェックします。
                 </Em>
               </UlLi>

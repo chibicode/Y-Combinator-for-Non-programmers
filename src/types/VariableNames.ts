@@ -43,7 +43,7 @@ export type VariableNames =
   | 'blankNumberPurple'
   | 'blankNumberRed'
   | 'blankNumberYellow'
-  | 'blankNumberTeal'
+  | 'blankNumberGreen'
   | 'bentoBox'
   | 'mathBox'
   | 'mult'

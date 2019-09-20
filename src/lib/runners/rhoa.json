@@ -8,7 +8,7 @@
         "state": "default",
         "checkType": "isZero",
         "condition": {
-          "name": "blankNumberTeal",
+          "name": "blankNumberGreen",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",

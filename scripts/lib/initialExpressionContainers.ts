@@ -1160,7 +1160,7 @@ export const whey = initializeExpressionContainer([
 
 export const anme = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'blankNumberTeal',
+  condition: 'blankNumberGreen',
   trueCase: 'blankNumberYellow',
   falseCase: 'blankNumberRed'
 })

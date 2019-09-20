@@ -1,5 +1,5 @@
 import React from 'react'
-import BlankNumberTealSvg from 'src/components/CustomEmoji/BlankNumberTealSvg'
+import BlankNumberGreenSvg from 'src/components/CustomEmoji/BlankNumberGreenSvg'
 import BlankNumberRedSvg from 'src/components/CustomEmoji/BlankNumberRedSvg'
 import BlankNumberYellowSvg from 'src/components/CustomEmoji/BlankNumberYellowSvg'
 import BlankNumberPinkSvg from 'src/components/CustomEmoji/BlankNumberPinkSvg'
@@ -47,7 +47,7 @@ export const customEmojiToComponent = {
   blankNumberPink: BlankNumberPinkSvg,
   blankNumberGrey: BlankNumberGreySvg,
   blankNumberPurple: BlankNumberPurpleSvg,
-  blankNumberTeal: BlankNumberTealSvg,
+  blankNumberGreen: BlankNumberGreenSvg,
   blankNumberRed: BlankNumberRedSvg,
   blankNumberYellow: BlankNumberYellowSvg,
   mathBox: MathBoxSvg,
