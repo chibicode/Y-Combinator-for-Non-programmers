@@ -72,7 +72,7 @@ interface HProps {
         plural?: boolean
       }
     | { name: 'next' }
-    | { name: 'play' }
+    | { name: 'play'; lowerCase?: boolean }
     | { name: 'fastForwarding' }
     | { name: 'pause' }
     | { name: 'fastForward' }
@@ -402,7 +402,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Strong highlightType={highlightType}>
-            Run <Emoji>▶️</Emoji>
+            {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
           </Strong>
         </>
       )

@@ -89,23 +89,22 @@ export default () => (
         }
       },
       {
-        title: <>計算箱の例</>,
+        title: <>How mathboxes work</>,
         content: (
           <>
             <P>
-              こちらをご覧ください。これが、ラムダ村の村人が使っていた「
-              <Strong>計算箱</Strong>」のひとつです。
+              Here’s an example <Strong>mathbox</Strong>:
             </P>
             <R.Lizi>
-              計算箱 <CustomEmoji type="mathBox" />
+              Mathbox <CustomEmoji type="mathBox" />
             </R.Lizi>
             <Ul>
               <UlLi>
-                上には、数字の <EmojiNumber number={1} /> が入っています。
+                There’s <EmojiNumber number={1} /> on the top, and
               </UlLi>
               <UlLi>
-                下には、1を足す印 <CustomEmoji type="plusOne" />{' '}
-                が入っています。
+                There’s an “add one” icon <CustomEmoji type="plusOne" /> on the
+                bottom.
               </UlLi>
             </Ul>
             <EmojiSeparator
@@ -115,14 +114,17 @@ export default () => (
                 <CustomEmoji type="plusOne" />
               ]}
             />
-            <P>では次に、この計算箱はどのように使うかを説明しましょう！</P>
+            <P>
+              Next, we’ll talk about how we can{' '}
+              <H args={{ name: 'play', lowerCase: true }} /> this mathbox.
+            </P>
           </>
         )
       },
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> ボタン
+            <H args={{ name: 'play' }} /> Button
           </>
         ),
         content: (
