@@ -66,8 +66,8 @@ export default () => (
                         復習すると、上の計算箱は、
                         <Strong>
                           もし <InlineBorder type="condition" /> に{' '}
-                          <EmojiNumber number={0} /> を入れたら下の{' '}
-                          <CustomEmoji type="blankNumberPurple" /> が残り…
+                          <EmojiNumber number={0} /> を入れたら真ん中の{' '}
+                          <CustomEmoji type="blankNumberYellow" /> が残り…
                         </Strong>
                       </P>
                     </>
@@ -82,7 +82,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Vwvb>
               <InlineBorder type="trueCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberPurple" /> が残る
+              <CustomEmoji type="blankNumberYellow" /> が残る
             </R.Vwvb>
             <BubbleQuotes
               quotes={[
@@ -95,8 +95,7 @@ export default () => (
                         <Strong>
                           もし <InlineBorder type="condition" /> に{' '}
                           <EmojiNumber number={0} /> 以外の数字を入れたら、上の{' '}
-                          <CustomEmoji type="blankNumberPink" />{' '}
-                          が残るんだよな。
+                          <CustomEmoji type="blankNumberRed" /> が残るんだよな。
                         </Strong>
                       </P>
                     </>
@@ -111,7 +110,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Rtza>
               <InlineBorder type="falseCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberPink" /> が残る
+              <CustomEmoji type="blankNumberRed" /> が残る
             </R.Rtza>
             <BubbleQuotes
               quotes={[
@@ -173,7 +172,11 @@ export default () => (
         )
       },
       {
-        title: <>再現できてるか確かめよう</>,
+        title: (
+          <>
+            <EmojiNumber number={0} /> を入れた場合
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -183,30 +186,47 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
-                          まず、サヤの弁当箱の一番下の「
-                          <Strong>
-                            <CustomEmoji type="blankNumberGrey" />{' '}
-                            に変換できる弁当箱
-                          </Strong>
-                          」のところに…
-                        </Em>
-                      </P>
-                      <R.Hhjq>
-                        一番下の{' '}
+                        では、まずサヤの弁当箱の一番下の「
                         <Strong>
-                          <CustomEmoji type="blankNumberGrey" />{' '}
+                          <CustomEmoji type="blankNumberTeal" />{' '}
                           に変換できる弁当箱
                         </Strong>
-                        に…
-                      </R.Hhjq>
+                        」のところに、「
+                        <Strong>
+                          <EmojiNumber number={0} /> に変換できる弁当箱
+                        </Strong>
+                        」を入れてみるね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ycpk>
+              一番下の 「
+              <Strong>
+                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+              </Strong>
+              」<br />
+              のところに、
+              <EmojiNumber number={0} /> に変換できる
+              <br />
+              弁当箱を入れてみる
+            </R.Ycpk>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
                         <Em>
+                          使うのは、
                           <Strong>
                             こちらの <EmojiNumber number={0} />{' '}
                             に変換できる弁当箱
                           </Strong>
-                          を入れてみるね。
+                          です！
                         </Em>
                       </P>
                       <R.Elyq>
@@ -230,7 +250,7 @@ export default () => (
             <R.Nmrp>
               「
               <Strong>
-                <CustomEmoji type="blankNumberGrey" /> に変換できる弁当箱
+                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
               </Strong>
               」のところに、
               <br />
@@ -247,7 +267,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <CustomEmoji type="blankNumberPurple" />{' '}
+                        <CustomEmoji type="blankNumberYellow" />{' '}
                         に変換できる弁当箱が残った！
                       </P>
                     </>
@@ -278,7 +298,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Vwvb>
               <InlineBorder type="trueCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberPurple" /> が残る
+              <CustomEmoji type="blankNumberYellow" /> が残る
             </R.Vwvb>
             <P>
               <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
@@ -290,7 +310,7 @@ export default () => (
             </R.Ycpk>
             <ExpressionRunnerSeparator />
             <R.Bndi>
-              <CustomEmoji type="blankNumberPurple" /> が残る
+              <CustomEmoji type="blankNumberYellow" /> が残る
             </R.Bndi>
             <BubbleQuotes
               quotes={[
@@ -302,7 +322,7 @@ export default () => (
                         たしかに、
                         <Strong>
                           両方とも <EmojiNumber number={0} /> を入れると{' '}
-                          <CustomEmoji type="blankNumberPurple" /> が残る
+                          <CustomEmoji type="blankNumberYellow" /> が残る
                         </Strong>
                         ね！
                       </P>
@@ -317,7 +337,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={0} /> 以外の数字を入れた場合
+            <EmojiNumber number={1} /> を入れた場合
           </>
         ),
         content: (
@@ -329,12 +349,48 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、次は{' '}
+                        次は、サヤの弁当箱の一番下の「
                         <Strong>
-                          <EmojiNumber number={1} /> に変換できる弁当箱を{' '}
-                          <CustomEmoji type="blankNumberGrey" /> に入れてみる
+                          <CustomEmoji type="blankNumberTeal" />{' '}
+                          に変換できる弁当箱
                         </Strong>
-                        ね！
+                        」のところに、「
+                        <Strong>
+                          <EmojiNumber number={1} /> に変換できる弁当箱
+                        </Strong>
+                        」を入れてみるね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Psyv>
+              一番下の 「
+              <Strong>
+                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+              </Strong>
+              」<br />
+              のところに、
+              <EmojiNumber number={1} /> に変換できる
+              <br />
+              弁当箱を入れてみる
+            </R.Psyv>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          使うのは、
+                          <Strong>
+                            こちらの <EmojiNumber number={1} />{' '}
+                            に変換できる弁当箱
+                          </Strong>
+                          です！
+                        </Em>
                       </P>
                       <R.Ooya>
                         <H
@@ -357,7 +413,7 @@ export default () => (
             <R.Gpat>
               「
               <Strong>
-                <CustomEmoji type="blankNumberGrey" /> に変換できる弁当箱
+                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
               </Strong>
               」のところに、
               <br />
@@ -375,7 +431,7 @@ export default () => (
                     <>
                       <P>
                         おお、今度は先ほどと逆に、{' '}
-                        <CustomEmoji type="blankNumberPink" />{' '}
+                        <CustomEmoji type="blankNumberRed" />{' '}
                         に変換できる弁当箱が残った！
                       </P>
                     </>
@@ -406,7 +462,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Rtza>
               <InlineBorder type="falseCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberPink" /> が残る
+              <CustomEmoji type="blankNumberRed" /> が残る
             </R.Rtza>
             <P>
               <Emoji>👧🏻</Emoji> サヤの弁当箱を使った場合:
@@ -418,7 +474,7 @@ export default () => (
             </R.Psyv>
             <ExpressionRunnerSeparator />
             <R.Kiiq>
-              <CustomEmoji type="blankNumberPink" /> が残る
+              <CustomEmoji type="blankNumberRed" /> が残る
             </R.Kiiq>
             <BubbleQuotes
               quotes={[
@@ -430,7 +486,7 @@ export default () => (
                         たしかに、
                         <Strong>
                           両方とも <EmojiNumber number={1} /> を入れると{' '}
-                          <CustomEmoji type="blankNumberPink" /> が残る
+                          <CustomEmoji type="blankNumberRed" /> が残る
                         </Strong>
                         ね！
                       </P>
@@ -498,9 +554,9 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="blankNumberPink" />{' '}
-            <CustomEmoji type="blankNumberGrey" />{' '}
-            <CustomEmoji type="blankNumberPurple" /> 全てを埋める
+            <CustomEmoji type="blankNumberRed" />{' '}
+            <CustomEmoji type="blankNumberYellow" />{' '}
+            <CustomEmoji type="blankNumberTeal" /> 全てを埋める
           </>
         ),
         content: (
@@ -515,9 +571,9 @@ export default () => (
                       <Ul>
                         <UlLi>
                           <Em>
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            <CustomEmoji type="blankNumberGrey" />{' '}
-                            <CustomEmoji type="blankNumberPurple" />{' '}
+                            <CustomEmoji type="blankNumberRed" />{' '}
+                            <CustomEmoji type="blankNumberYellow" />{' '}
+                            <CustomEmoji type="blankNumberTeal" />{' '}
                             の全てを埋めてみて、
                           </Em>
                         </UlLi>
@@ -547,16 +603,16 @@ export default () => (
                         <UlLi>
                           <Em>
                             条件分岐の機能がある計算箱の{' '}
-                            <CustomEmoji type="blankNumberPink" />{' '}
-                            <CustomEmoji type="blankNumberGrey" />{' '}
-                            <CustomEmoji type="blankNumberPurple" /> に、
+                            <CustomEmoji type="blankNumberRed" />{' '}
+                            <CustomEmoji type="blankNumberYellow" />{' '}
+                            <CustomEmoji type="blankNumberTeal" /> に、
                           </Em>
                         </UlLi>
                         <UlLi>
                           <Em>
-                            それぞれ <EmojiNumber number={1} />{' '}
-                            <EmojiNumber number={2} />{' '}
-                            <EmojiNumber number={3} /> を入れた場合…
+                            それぞれ <EmojiNumber number={2} />{' '}
+                            <EmojiNumber number={1} />{' '}
+                            <EmojiNumber number={0} /> を入れた場合…
                           </Em>
                         </UlLi>
                         <UlLi>
@@ -569,21 +625,21 @@ export default () => (
               ]}
             />
             <R.Rhoa>
-              <CustomEmoji type="blankNumberPink" />{' '}
-              <CustomEmoji type="blankNumberGrey" />{' '}
-              <CustomEmoji type="blankNumberPurple" /> の部分に、
+              <CustomEmoji type="blankNumberRed" />{' '}
+              <CustomEmoji type="blankNumberYellow" />{' '}
+              <CustomEmoji type="blankNumberTeal" /> の部分に、
             </R.Rhoa>
             <ExpressionRunnerSeparator />
             <R.Zdpf>
-              <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
-              <EmojiNumber number={3} /> を入れた場合、
+              <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+              <EmojiNumber number={0} /> を入れた場合、
               <br />
               <InlineBorder type="condition" /> が <EmojiNumber number={0} />{' '}
-              ではないので…
+              なので…
             </R.Zdpf>
             <ExpressionRunnerSeparator />
             <R.Rnug>
-              <InlineBorder type="falseCase" /> に入っていた{' '}
+              <InlineBorder type="trueCase" /> に入っていた{' '}
               <EmojiNumber number={1} /> が残る
             </R.Rnug>
             <BubbleQuotes
@@ -595,11 +651,11 @@ export default () => (
                       <P>
                         では、
                         <Em>
-                          サヤの弁当箱の <CustomEmoji type="blankNumberPink" />{' '}
-                          <CustomEmoji type="blankNumberGrey" />{' '}
-                          <CustomEmoji type="blankNumberPurple" /> にも{' '}
-                          <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
-                          <EmojiNumber number={3} /> を入れてみるよ。
+                          サヤの弁当箱の <CustomEmoji type="blankNumberRed" />{' '}
+                          <CustomEmoji type="blankNumberYellow" />{' '}
+                          <CustomEmoji type="blankNumberTeal" /> にも{' '}
+                          <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+                          <EmojiNumber number={0} /> を入れてみるよ。
                         </Em>
                       </P>
                       <P>
@@ -621,19 +677,19 @@ export default () => (
             </R.Sdta>
             <ExpressionRunnerSeparator />
             <R.Jbqw>
-              <CustomEmoji type="blankNumberPink" /> (一番上)に{' '}
-              <EmojiNumber number={1} /> を、
-              <br />
-              <CustomEmoji type="blankNumberGrey" /> (一番下)に{' '}
+              <CustomEmoji type="blankNumberRed" /> に{' '}
               <EmojiNumber number={2} /> を、
               <br />
-              <CustomEmoji type="blankNumberPurple" /> (上から二番目)に{' '}
-              <EmojiNumber number={3} /> を入れてみた
+              <CustomEmoji type="blankNumberYellow" /> に{' '}
+              <EmojiNumber number={1} /> を、
+              <br />
+              <CustomEmoji type="blankNumberTeal" /> に{' '}
+              <EmojiNumber number={0} /> を入れてみた
             </R.Jbqw>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <Em>
-                <EmojiNumber number={1} /> に変換できる弁当箱
+                <EmojiNumber size="semilg" number={1} /> に変換できる弁当箱
                 <br />
                 になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
               </Em>
@@ -671,8 +727,8 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <EmojiNumber number={1} /> <EmojiNumber number={2} />{' '}
-                        <EmojiNumber number={3} />{' '}
+                        <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
+                        <EmojiNumber number={0} />{' '}
                         にそれぞれ変換できる弁当箱を入れてみたよ。(黄色の部分)
                       </P>
                       <P>
@@ -699,11 +755,11 @@ export default () => (
             <R.Svbd>
               黄色の部分は、上から順に
               <br />
+              <EmojiNumber number={2} /> に変換できる弁当箱、
+              <br />
               <EmojiNumber number={1} /> に変換できる弁当箱、
               <br />
-              <EmojiNumber number={3} /> に変換できる弁当箱、
-              <br />
-              <EmojiNumber number={2} /> に変換できる弁当箱。
+              <EmojiNumber number={0} /> に変換できる弁当箱。
             </R.Svbd>
             <BubbleQuotes
               quotes={[
@@ -719,7 +775,7 @@ export default () => (
                         <H
                           args={{
                             name: 'canBeConvertedCaption',
-                            letter: 'h',
+                            letter: 'f',
                             number: 1
                           }}
                         />
