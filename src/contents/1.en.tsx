@@ -105,7 +105,7 @@ export default () => (
                 There’s <EmojiNumber number={1} /> on the top, and
               </UlLi>
               <UlLi>
-                There’s an “add one” icon <CustomEmoji type="plusOne" /> on the
+                There’s an “add 1” icon <CustomEmoji type="plusOne" /> on the
                 bottom.
               </UlLi>
             </Ul>
@@ -168,7 +168,7 @@ export default () => (
         )
       },
       {
-        title: <>1を足す機能</>,
+        title: <>The “Add 1” feature</>,
         content: (
           <>
             <P>ここまでをまとめると、下の計算箱のように、</P>
