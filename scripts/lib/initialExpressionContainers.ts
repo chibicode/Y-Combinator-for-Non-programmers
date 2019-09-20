@@ -1464,6 +1464,33 @@ export const xskc = initializeExpressionContainer([
   }
 ])
 
+export const gxhl = initializeExpressionContainer(
+  isZeroParams(
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    {
+      shorthandNumber: 2
+    },
+    [
+      {
+        shorthandFunc: 'add'
+      },
+      'f'
+    ],
+    'f'
+  )
+)
+
+export const oyzh = initializeExpressionContainer({
+  checkType: 'isZero',
+  condition: 'f',
+  trueCase: { shorthandNumber: 2 },
+  falseCase: [{ shorthandFunc: 'add' }, 'f']
+})
+
 export const exoq = initializeExpressionContainer([
   {
     arg: 'f',

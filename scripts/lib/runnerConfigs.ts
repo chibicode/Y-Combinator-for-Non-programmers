@@ -2163,6 +2163,14 @@ export const lxgj: ExpressionRunnerShorthandConfig = {
   }
 }
 
+export const wenx: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.gxhl,
+  showPriorities: true,
+  variableSize: 'sm',
+  containerSize: 'xs'
+}
+
 export const vlhb: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.cmay,
@@ -2180,6 +2188,13 @@ export const ruou: ExpressionRunnerShorthandConfig = {
 export const awbq: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.exoq,
+  showPriorities: true,
+  variableSize: 'md'
+}
+
+export const crvj: ExpressionRunnerShorthandConfig = {
+  runner: 'simple',
+  initialExpressionContainer: initialExpressionContainers.oyzh,
   showPriorities: true,
   variableSize: 'md'
 }
