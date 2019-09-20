@@ -670,8 +670,18 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は下が <EmojiNumber number={0} />{' '}
-                        ではありません。この場合は、
+                        今回は
+                        <H
+                          args={{
+                            name: 'conditionSectionName',
+                            type: 'condition'
+                          }}
+                        />{' '}
+                        に入っているのが <EmojiNumber number={0} /> ではなく、
+                        <EmojiNumber number={3} /> ですね。
+                      </P>
+                      <P>
+                        この場合は、
                         <Strong>
                           <H
                             args={{
