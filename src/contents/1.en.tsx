@@ -46,7 +46,7 @@ export default () => (
         content: (
           <>
             <P>
-              Once upon a time, there was a small rural village called{' '}
+              Once upon a time, there was a rural village called{' '}
               <Strong>“Lambda Village”</Strong>. The villagers worked to earn
               just enough for a modest lifestyle.
             </P>
@@ -55,11 +55,11 @@ export default () => (
               description={<>Lambda Village and the villagers</>}
             />
             <P>
-              ラムダ村には、代々伝わる「<Strong>計算箱</Strong>
-              」という道具がありました。<InlineHeader>計算箱</InlineHeader>
-              は、その名の通り<Em>算数の計算をしてくれる</Em>
-              魔法の道具です。<Em>現代の電卓のようなもの</Em>
-              だと思ってください。
+              In Lambda Village, a tool called <Strong>“Mathbox”</Strong> has
+              been passed down from one generation to next. As its name
+              suggests, <InlineHeader>Mathbox</InlineHeader> is a magical tool
+              that can solve <Em>math questions</Em>. You can think of it as a{' '}
+              <Em>simple calculator</Em>.
             </P>
             <EmojiSeparator
               nodes={[
@@ -69,20 +69,20 @@ export default () => (
               ]}
               description={
                 <>
-                  計算ができる魔法の道具「<Strong>計算箱</Strong>」
+                  <Strong>Mathbox</Strong> is a magical tool that can do math.
                 </>
               }
             />
-            <P>この計算箱がどんなものか、説明しましょう！</P>
+            <P>Let me explain how mathbox works!</P>
           </>
         ),
         footer: {
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader> 「ラムダ村」は、
-                <Em>上から読んでも下から読んでも「ラムダ村」</Em>です。
-                なぜ「ラムダ」と名付けたかは最後に説明します！
+                <InlineHeader>Note:</InlineHeader> Later, I’ll explain why the
+                village is named after “lambda”, the 11th letter of the Greek
+                alphabet.
               </P>
             </>
           )
