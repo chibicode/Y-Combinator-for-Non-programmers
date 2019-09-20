@@ -24,6 +24,32 @@ import NextLessonButton from 'src/components/NextLessonButton'
 import YesNoButtons from 'src/components/YesNoButtons'
 import { TwoPlusFour, Conclusion } from 'src/contents/2.jp'
 
+export const TrueCaseExplanation = () => (
+  <>
+    <R.Dqwh>
+      <InlineBorder type="condition" /> が <EmojiNumber number={0} /> なら…
+    </R.Dqwh>
+    <ExpressionRunnerSeparator />
+    <R.Vwvb>
+      <InlineBorder type="trueCase" /> に入っている{' '}
+      <CustomEmoji type="blankNumberYellow" /> が残る
+    </R.Vwvb>
+  </>
+)
+
+export const FalseCaseExplanation = () => (
+  <>
+    <R.Glbk>
+      <InlineBorder type="condition" /> が <EmojiNumber number={0} /> 以外なら…
+    </R.Glbk>
+    <ExpressionRunnerSeparator />
+    <R.Rtza>
+      <InlineBorder type="falseCase" /> に入っている{' '}
+      <CustomEmoji type="blankNumberRed" /> が残る
+    </R.Rtza>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -741,46 +767,34 @@ export default () => (
               「<H args={{ name: 'conditionFeature' }} />
               」がある計算箱
             </R.Rhoa>
-            <Ul>
-              <UlLi>
-                <Em>
-                  まず、
-                  <H
-                    args={{ name: 'conditionSectionName', type: 'condition' }}
-                  />{' '}
-                  の中にある <CustomEmoji type="blankNumberGreen" /> が{' '}
-                  <EmojiNumber number={0} /> かどうかチェックします。
-                </Em>
-              </UlLi>
-              <UlLi>
-                <Em>
-                  もし <EmojiNumber number={0} /> なら、{' '}
-                  <H
-                    args={{ name: 'conditionSectionName', type: 'trueCase' }}
-                  />{' '}
-                  の中にある <CustomEmoji type="blankNumberYellow" />{' '}
-                  が残ります。
-                </Em>
-              </UlLi>
-              <UlLi>
-                <Em>
-                  もし <EmojiNumber number={0} /> でなければ、
-                  <H
-                    args={{ name: 'conditionSectionName', type: 'falseCase' }}
-                  />{' '}
-                  の中にある <CustomEmoji type="blankNumberRed" /> が残ります。
-                </Em>
-              </UlLi>
-            </Ul>
-            <EmojiSeparator
-              nodes={[
-                <Emoji>🔢</Emoji>,
-                <CustomEmoji type="singleArrowReverse" />,
-                <CustomEmoji type="condition" />,
-                <CustomEmoji type="singleArrow" />,
-                <EmojiNumber number={0} />
-              ]}
-            />
+            <P>
+              <Em>
+                まず、
+                <H
+                  args={{ name: 'conditionSectionName', type: 'condition' }}
+                />{' '}
+                の中にある <CustomEmoji type="blankNumberGreen" /> が{' '}
+                <EmojiNumber number={0} /> かどうかチェックします。
+              </Em>
+            </P>
+            <P>
+              <Em>
+                もし <EmojiNumber number={0} /> なら、{' '}
+                <H args={{ name: 'conditionSectionName', type: 'trueCase' }} />{' '}
+                の中にある <CustomEmoji type="blankNumberYellow" /> が残ります。
+              </Em>
+            </P>
+            <TrueCaseExplanation />
+            <P>
+              <Em>
+                もし <EmojiNumber number={0} /> でなければ、
+                <H
+                  args={{ name: 'conditionSectionName', type: 'falseCase' }}
+                />{' '}
+                の中にある <CustomEmoji type="blankNumberRed" /> が残ります。
+              </Em>
+            </P>
+            <FalseCaseExplanation />
             <BubbleQuotes
               quotes={[
                 {
@@ -793,8 +807,8 @@ export default () => (
                           <EmojiNumber number={0} /> かどうか？
                         </Em>
                         」という「
-                        <Strong>条件</Strong>」によって
-                        <Strong>分岐</Strong>」するから、「
+                        <Strong>条件</Strong>」によって 「<Strong>分岐</Strong>
+                        」するから、「
                         <H args={{ name: 'conditionFeature' }} />
                         」なのか。
                       </P>
@@ -802,6 +816,27 @@ export default () => (
                   )
                 }
               ]}
+            />
+            <EmojiSeparator
+              nodes={[
+                <Emoji>🔢</Emoji>,
+                <CustomEmoji type="singleArrowReverse" />,
+                <CustomEmoji type="condition" />,
+                <CustomEmoji type="singleArrow" />,
+                <EmojiNumber number={0} />
+              ]}
+              description={
+                <>
+                  「
+                  <Em>
+                    <EmojiNumber number={0} /> かどうか？
+                  </Em>
+                  」という
+                  <br />「<Strong>条件</Strong>」によって 「
+                  <Strong>分岐</Strong>」するから 「
+                  <H args={{ name: 'conditionFeature' }} />」
+                </>
+              }
             />
           </>
         )

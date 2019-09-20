@@ -13,6 +13,7 @@ import Emoji from 'src/components/Emoji'
 import InlineBorder from 'src/components/InlineBorder'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import { TrueCaseExplanation, FalseCaseExplanation } from 'src/contents/11.jp'
 
 export default () => (
   <EpisodeCardList
@@ -65,8 +66,8 @@ export default () => (
                       <P>
                         復習すると、上の計算箱は、
                         <Strong>
-                          もし <InlineBorder type="condition" /> に{' '}
-                          <EmojiNumber number={0} /> を入れたら真ん中の{' '}
+                          もし <InlineBorder type="condition" /> が{' '}
+                          <EmojiNumber number={0} /> なら真ん中の{' '}
                           <CustomEmoji type="blankNumberYellow" /> が残り…
                         </Strong>
                       </P>
@@ -75,15 +76,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Dqwh>
-              <InlineBorder type="condition" /> に <EmojiNumber number={0} />{' '}
-              を入れた場合…
-            </R.Dqwh>
-            <ExpressionRunnerSeparator />
-            <R.Vwvb>
-              <InlineBorder type="trueCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberYellow" /> が残る
-            </R.Vwvb>
+            <TrueCaseExplanation />
             <BubbleQuotes
               quotes={[
                 {
@@ -93,8 +86,8 @@ export default () => (
                       <P>
                         そして、
                         <Strong>
-                          もし <InlineBorder type="condition" /> に{' '}
-                          <EmojiNumber number={0} /> 以外の数字を入れたら、上の{' '}
+                          もし <InlineBorder type="condition" /> が{' '}
+                          <EmojiNumber number={0} /> 以外の数字なら、上の{' '}
                           <CustomEmoji type="blankNumberRed" /> が残るんだよな。
                         </Strong>
                       </P>
@@ -103,15 +96,7 @@ export default () => (
                 }
               ]}
             />
-            <R.Glbk>
-              <InlineBorder type="condition" /> に <EmojiNumber number={0} />{' '}
-              以外の数字を入れた場合…
-            </R.Glbk>
-            <ExpressionRunnerSeparator />
-            <R.Rtza>
-              <InlineBorder type="falseCase" /> に入っている{' '}
-              <CustomEmoji type="blankNumberRed" /> が残る
-            </R.Rtza>
+            <FalseCaseExplanation />
             <BubbleQuotes
               quotes={[
                 {
