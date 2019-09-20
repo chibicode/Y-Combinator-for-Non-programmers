@@ -2,11 +2,9 @@ import React from 'react'
 import BlankNumberTealSvg from 'src/components/CustomEmoji/BlankNumberTealSvg'
 import BlankNumberRedSvg from 'src/components/CustomEmoji/BlankNumberRedSvg'
 import BlankNumberYellowSvg from 'src/components/CustomEmoji/BlankNumberYellowSvg'
-import BlankNumberBrownSvg from 'src/components/CustomEmoji/BlankNumberBrownSvg'
-import BlankNumberGreenSvg from 'src/components/CustomEmoji/BlankNumberGreenSvg'
-import BlankNumberGreySvg from 'src/components/CustomEmoji/BlankNumberGreySvg'
 import BlankNumberPinkSvg from 'src/components/CustomEmoji/BlankNumberPinkSvg'
 import BlankNumberPurpleSvg from 'src/components/CustomEmoji/BlankNumberPurpleSvg'
+import BlankNumberGreySvg from 'src/components/CustomEmoji/BlankNumberGreySvg'
 import BlankNumberSvg from 'src/components/CustomEmoji/BlankNumberSvg'
 import ConditionSvg from 'src/components/CustomEmoji/ConditionSvg'
 import DoubleArrowSvg from 'src/components/CustomEmoji/DoubleArrowSvg'
@@ -49,8 +47,6 @@ export const customEmojiToComponent = {
   blankNumberPink: BlankNumberPinkSvg,
   blankNumberGrey: BlankNumberGreySvg,
   blankNumberPurple: BlankNumberPurpleSvg,
-  blankNumberBrown: BlankNumberBrownSvg,
-  blankNumberGreen: BlankNumberGreenSvg,
   blankNumberTeal: BlankNumberTealSvg,
   blankNumberRed: BlankNumberRedSvg,
   blankNumberYellow: BlankNumberYellowSvg,

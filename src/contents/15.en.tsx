@@ -161,8 +161,8 @@ export default () => (
                       <P>
                         <Em>
                           上のほうに、
-                          <CustomEmoji type="blankNumberGreen" /> と{' '}
-                          <CustomEmoji type="blankNumberBrown" />{' '}
+                          <CustomEmoji type="blankNumberPurple" /> と{' '}
+                          <CustomEmoji type="blankNumberPink" />{' '}
                           を入れる部分があるけれど…
                         </Em>
                       </P>
@@ -175,8 +175,8 @@ export default () => (
                     <>
                       <P>
                         とりあえず、
-                        <CustomEmoji type="blankNumberGreen" /> と{' '}
-                        <CustomEmoji type="blankNumberBrown" />{' '}
+                        <CustomEmoji type="blankNumberPurple" /> と{' '}
+                        <CustomEmoji type="blankNumberPink" />{' '}
                         に適当な数字を当てはめてみな！
                       </P>
                     </>
@@ -219,8 +219,8 @@ export default () => (
                         />
                       </R.Dmrz>
                       <P>
-                        <CustomEmoji type="blankNumberGreen" /> と{' '}
-                        <CustomEmoji type="blankNumberBrown" />{' '}
+                        <CustomEmoji type="blankNumberPurple" /> と{' '}
+                        <CustomEmoji type="blankNumberPink" />{' '}
                         の部分に入れてみよう。
                       </P>
                     </>
@@ -229,8 +229,8 @@ export default () => (
               ]}
             />
             <R.Hvfb>
-              <CustomEmoji type="blankNumberGreen" /> と{' '}
-              <CustomEmoji type="blankNumberBrown" /> の部分に…
+              <CustomEmoji type="blankNumberPurple" /> と{' '}
+              <CustomEmoji type="blankNumberPink" /> の部分に…
             </R.Hvfb>
             <ExpressionRunnerSeparator />
             <R.Tpyg>
@@ -322,8 +322,8 @@ export default () => (
                       <P>
                         では、
                         <Strong>
-                          もともと <CustomEmoji type="blankNumberGreen" /> と{' '}
-                          <CustomEmoji type="blankNumberBrown" />{' '}
+                          もともと <CustomEmoji type="blankNumberPurple" /> と{' '}
+                          <CustomEmoji type="blankNumberPink" />{' '}
                           に入れた数字は何だった
                         </Strong>
                         かな？
@@ -376,8 +376,8 @@ export default () => (
                       <Ul>
                         <UlLi>
                           <Em>
-                            <CustomEmoji type="blankNumberGreen" /> と{' '}
-                            <CustomEmoji type="blankNumberBrown" />{' '}
+                            <CustomEmoji type="blankNumberPurple" /> と{' '}
+                            <CustomEmoji type="blankNumberPink" />{' '}
                             に数字を入れ、
                           </Em>
                         </UlLi>
@@ -387,9 +387,9 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Strong>
-                            結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                            結果は <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>➕</Emoji>{' '}
-                            <CustomEmoji type="blankNumberBrown" /> になるんだ。
+                            <CustomEmoji type="blankNumberPink" /> になるんだ。
                           </Strong>
                         </UlLi>
                       </Ul>
@@ -399,8 +399,8 @@ export default () => (
               ]}
             />
             <R.Hvfb>
-              <CustomEmoji type="blankNumberGreen" /> と{' '}
-              <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+              <CustomEmoji type="blankNumberPurple" /> と{' '}
+              <CustomEmoji type="blankNumberPink" /> に数字を入れ、
               <br />
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
@@ -409,14 +409,14 @@ export default () => (
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               nodes={[
-                <CustomEmoji type="blankNumberGreen" />,
+                <CustomEmoji type="blankNumberPurple" />,
                 <Emoji>➕</Emoji>,
-                <CustomEmoji type="blankNumberBrown" />
+                <CustomEmoji type="blankNumberPink" />
               ]}
               description={
                 <>
-                  結果は <CustomEmoji type="blankNumberGreen" />{' '}
-                  <Emoji>➕</Emoji> <CustomEmoji type="blankNumberBrown" />{' '}
+                  結果は <CustomEmoji type="blankNumberPurple" />{' '}
+                  <Emoji>➕</Emoji> <CustomEmoji type="blankNumberPink" />{' '}
                   になる
                 </>
               }
@@ -499,8 +499,8 @@ export default () => (
                         <Strong>
                           <EmojiNumber number={2} /> と{' '}
                           <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
-                          <CustomEmoji type="blankNumberGreen" /> と{' '}
-                          <CustomEmoji type="blankNumberBrown" /> に入れて、
+                          <CustomEmoji type="blankNumberPurple" /> と{' '}
+                          <CustomEmoji type="blankNumberPink" /> に入れて、
                           <H args={{ name: 'fastForward' }} /> してみよう。
                         </Strong>
                       </P>
@@ -570,8 +570,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        今回は、もともと <CustomEmoji type="blankNumberGreen" />{' '}
-                        と <CustomEmoji type="blankNumberBrown" /> に入れたのは{' '}
+                        今回は、もともと{' '}
+                        <CustomEmoji type="blankNumberPurple" /> と{' '}
+                        <CustomEmoji type="blankNumberPink" /> に入れたのは{' '}
                         <EmojiNumber number={2} /> と <EmojiNumber number={3} />{' '}
                         だった。そして、結果は <EmojiNumber number={6} />{' '}
                         になった…
@@ -614,8 +615,8 @@ export default () => (
                       <Ul>
                         <UlLi>
                           <Em>
-                            <CustomEmoji type="blankNumberGreen" /> と{' '}
-                            <CustomEmoji type="blankNumberBrown" />{' '}
+                            <CustomEmoji type="blankNumberPurple" /> と{' '}
+                            <CustomEmoji type="blankNumberPink" />{' '}
                             に数字を入れ、
                           </Em>
                         </UlLi>
@@ -625,9 +626,9 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           <Strong>
-                            結果は <CustomEmoji type="blankNumberGreen" />{' '}
+                            結果は <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>✖️</Emoji>{' '}
-                            <CustomEmoji type="blankNumberBrown" /> になるんだ。
+                            <CustomEmoji type="blankNumberPink" /> になるんだ。
                           </Strong>
                         </UlLi>
                       </Ul>
@@ -637,8 +638,8 @@ export default () => (
               ]}
             />
             <R.Vqyl>
-              <CustomEmoji type="blankNumberGreen" /> と{' '}
-              <CustomEmoji type="blankNumberBrown" /> に数字を入れ、
+              <CustomEmoji type="blankNumberPurple" /> と{' '}
+              <CustomEmoji type="blankNumberPink" /> に数字を入れ、
               <br />
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
@@ -647,14 +648,14 @@ export default () => (
             <ExpressionRunnerSeparator />
             <EmojiSeparator
               nodes={[
-                <CustomEmoji type="blankNumberGreen" />,
+                <CustomEmoji type="blankNumberPurple" />,
                 <Emoji>✖️</Emoji>,
-                <CustomEmoji type="blankNumberBrown" />
+                <CustomEmoji type="blankNumberPink" />
               ]}
               description={
                 <>
-                  結果は <CustomEmoji type="blankNumberGreen" />{' '}
-                  <Emoji>✖️</Emoji> <CustomEmoji type="blankNumberBrown" />{' '}
+                  結果は <CustomEmoji type="blankNumberPurple" />{' '}
+                  <Emoji>✖️</Emoji> <CustomEmoji type="blankNumberPink" />{' '}
                   になる
                 </>
               }
@@ -869,8 +870,8 @@ export default () => (
               ]}
             />
             <R.Vqyl>
-              <CustomEmoji type="blankNumberGreen" /> と{' '}
-              <CustomEmoji type="blankNumberBrown" /> の<br />
+              <CustomEmoji type="blankNumberPurple" /> と{' '}
+              <CustomEmoji type="blankNumberPink" /> の<br />
               掛け算を計算できる弁当箱と…
             </R.Vqyl>
             <R.Xjzx>
