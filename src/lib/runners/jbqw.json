@@ -16,7 +16,7 @@
           "funcPriorityAgg": [],
           "emphasizePriority": false,
           "bound": true,
-          "shorthandNumber": 1,
+          "shorthandNumber": 2,
           "shorthandNumberAfterConvert": "number"
         },
         "func": {
@@ -32,7 +32,7 @@
             "funcPriorityAgg": [],
             "emphasizePriority": false,
             "bound": true,
-            "shorthandNumber": 3,
+            "shorthandNumber": 1,
             "shorthandNumberAfterConvert": "number"
           },
           "func": {
@@ -148,7 +148,7 @@
                 ],
                 "emphasizePriority": false,
                 "bound": true,
-                "shorthandNumber": 2,
+                "shorthandNumber": 0,
                 "shorthandNumberAfterConvert": "number"
               },
               "state": "default",

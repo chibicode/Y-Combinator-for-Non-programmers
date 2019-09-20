@@ -2039,7 +2039,7 @@ export const kiiq: ExpressionRunnerShorthandConfig = {
 
 export const zdpf: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
-  initialExpressionContainer: initialExpressionContainers.kysf
+  initialExpressionContainer: initialExpressionContainers.ekyd
 }
 
 export const jbqw: ExpressionRunnerShorthandConfig = {
@@ -2065,7 +2065,7 @@ export const oclg: ExpressionRunnerShorthandConfig = {
   runner: 'simple',
   initialExpressionContainer: initialExpressionContainers.qzuv,
   showPriorities: true,
-  bottomRightBadgeOverrides: { h: '🅰️', i: '🅱️' }
+  bottomRightBadgeOverrides: { f: '🅰️', g: '🅱️' }
 }
 
 export const fton: ExpressionRunnerShorthandConfig = {

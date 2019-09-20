@@ -5,7 +5,7 @@
       "previouslyChangedExpressionState": "default",
       "expression": {
         "arg": {
-          "name": "h",
+          "name": "f",
           "highlightType": "default",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
@@ -17,7 +17,7 @@
         },
         "body": {
           "arg": {
-            "name": "i",
+            "name": "g",
             "highlightType": "default",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
@@ -29,7 +29,7 @@
           },
           "body": {
             "arg": {
-              "name": "i",
+              "name": "g",
               "highlightType": "default",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -42,7 +42,7 @@
               "bound": true
             },
             "func": {
-              "name": "h",
+              "name": "f",
               "highlightType": "initialHighlighted",
               "topLeftBadgeType": "none",
               "bottomRightBadgeType": "none",
@@ -76,8 +76,8 @@
   "hideFuncUnboundBadgeOnExplanation": false,
   "highlightOverridesCallArgAndFuncUnboundOnly": false,
   "bottomRightBadgeOverrides": {
-    "h": "🅰️",
-    "i": "🅱️"
+    "f": "🅰️",
+    "g": "🅱️"
   },
   "highlightOverrides": {},
   "highlightOverrideActiveAfterStart": false,

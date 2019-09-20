@@ -1290,17 +1290,17 @@ export const eryp = initializeExpressionContainer(
     'e',
     {
       shorthandNumberAfterConvert: 'number',
-      shorthandNumber: 3,
-      initialHighlight: true
-    },
-    {
-      shorthandNumberAfterConvert: 'number',
       shorthandNumber: 1,
       initialHighlight: true
     },
     {
       shorthandNumberAfterConvert: 'number',
       shorthandNumber: 2,
+      initialHighlight: true
+    },
+    {
+      shorthandNumberAfterConvert: 'number',
+      shorthandNumber: 0,
       initialHighlight: true
     }
   )
@@ -1313,14 +1313,14 @@ export const zmua = initializeExpressionContainer(
     'c',
     'd',
     'e',
-    numberParams(highlighted('f'), highlighted('g'), 3),
-    numberParams(highlighted('h'), highlighted('i'), 1),
-    numberParams(highlighted('j'), highlighted('k'), 2)
+    numberParams(highlighted('f'), highlighted('g'), 1),
+    numberParams(highlighted('h'), highlighted('i'), 2),
+    numberParams(highlighted('j'), highlighted('k'), 0)
   )
 )
 
 export const qzuv = initializeExpressionContainer(
-  numberParamsHighlightNumber('h', 'i', 1)
+  numberParamsHighlightNumber('f', 'g', 1)
 )
 
 export const lcce = initializeExpressionContainer(
