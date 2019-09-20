@@ -9,7 +9,7 @@
         "checkType": "isZero",
         "condition": {
           "name": "f",
-          "highlightType": "default",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -20,7 +20,7 @@
         },
         "trueCase": {
           "name": "shorthandNumber",
-          "highlightType": "default",
+          "highlightType": "initialHighlighted",
           "topLeftBadgeType": "none",
           "bottomRightBadgeType": "none",
           "type": "variable",
@@ -35,7 +35,7 @@
         "falseCase": {
           "arg": {
             "name": "f",
-            "highlightType": "default",
+            "highlightType": "initialHighlighted",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -49,7 +49,7 @@
           },
           "func": {
             "name": "shorthandFunc",
-            "highlightType": "default",
+            "highlightType": "initialHighlighted",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",

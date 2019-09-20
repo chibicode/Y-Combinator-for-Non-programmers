@@ -171,7 +171,11 @@ export default () => (
         )
       },
       {
-        title: <>再現できてるか確かめよう</>,
+        title: (
+          <>
+            <EmojiNumber number={0} /> を入れた場合
+          </>
+        ),
         content: (
           <>
             <BubbleQuotes
@@ -181,30 +185,47 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
-                          まず、サヤの弁当箱の一番下の「
-                          <Strong>
-                            <CustomEmoji type="blankNumberTeal" />{' '}
-                            に変換できる弁当箱
-                          </Strong>
-                          」のところに…
-                        </Em>
-                      </P>
-                      <R.Hhjq>
-                        一番下の{' '}
+                        では、まずサヤの弁当箱の一番下の「
                         <Strong>
                           <CustomEmoji type="blankNumberTeal" />{' '}
                           に変換できる弁当箱
                         </Strong>
-                        に…
-                      </R.Hhjq>
+                        」のところに、「
+                        <Strong>
+                          <EmojiNumber number={0} /> に変換できる弁当箱
+                        </Strong>
+                        」を入れてみるね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Ycpk>
+              一番下の 「
+              <Strong>
+                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+              </Strong>
+              」<br />
+              のところに、
+              <EmojiNumber number={0} /> に変換できる
+              <br />
+              弁当箱を入れてみる
+            </R.Ycpk>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
                       <P>
                         <Em>
+                          使うのは、
                           <Strong>
                             こちらの <EmojiNumber number={0} />{' '}
                             に変換できる弁当箱
                           </Strong>
-                          を入れてみるね。
+                          です！
                         </Em>
                       </P>
                       <R.Elyq>
@@ -315,7 +336,7 @@ export default () => (
       {
         title: (
           <>
-            <EmojiNumber number={0} /> 以外の数字を入れた場合
+            <EmojiNumber number={1} /> を入れた場合
           </>
         ),
         content: (
@@ -327,12 +348,48 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ、次は{' '}
+                        次は、サヤの弁当箱の一番下の「
                         <Strong>
-                          <EmojiNumber number={1} /> に変換できる弁当箱を{' '}
-                          <CustomEmoji type="blankNumberTeal" /> に入れてみる
+                          <CustomEmoji type="blankNumberTeal" />{' '}
+                          に変換できる弁当箱
                         </Strong>
-                        ね！
+                        」のところに、「
+                        <Strong>
+                          <EmojiNumber number={1} /> に変換できる弁当箱
+                        </Strong>
+                        」を入れてみるね。
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <R.Psyv>
+              一番下の 「
+              <Strong>
+                <CustomEmoji type="blankNumberTeal" /> に変換できる弁当箱
+              </Strong>
+              」<br />
+              のところに、
+              <EmojiNumber number={1} /> に変換できる
+              <br />
+              弁当箱を入れてみる
+            </R.Psyv>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'saya',
+                  children: (
+                    <>
+                      <P>
+                        <Em>
+                          使うのは、
+                          <Strong>
+                            こちらの <EmojiNumber number={1} />{' '}
+                            に変換できる弁当箱
+                          </Strong>
+                          です！
+                        </Em>
                       </P>
                       <R.Ooya>
                         <H
@@ -631,7 +688,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
               <Em>
-                <EmojiNumber number={1} /> に変換できる弁当箱
+                <EmojiNumber size="semilg" number={1} /> に変換できる弁当箱
                 <br />
                 になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
               </Em>
@@ -835,10 +892,10 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
-                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <Emoji>↕️</Emoji>
+                <CustomEmoji type="condition" />
               ]}
               description={
                 <>
@@ -918,7 +975,7 @@ export default () => (
               nodes={[
                 <Emoji>🔁</Emoji>,
                 <CustomEmoji type="doubleArrow" />,
-                <Emoji>↕️</Emoji>
+                <CustomEmoji type="condition" />
               ]}
               description={
                 <>
@@ -953,10 +1010,10 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
-                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <Emoji>↕️</Emoji>
+                <CustomEmoji type="condition" />
               ]}
               description={
                 <>

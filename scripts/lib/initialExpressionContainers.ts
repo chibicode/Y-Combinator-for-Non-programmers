@@ -1472,23 +1472,28 @@ export const gxhl = initializeExpressionContainer(
     'd',
     'e',
     {
-      shorthandNumber: 2
+      shorthandNumber: 2,
+      initialHighlight: true
     },
     [
       {
-        shorthandFunc: 'add'
+        shorthandFunc: 'add',
+        initialHighlight: true
       },
-      'f'
+      highlighted('f')
     ],
-    'f'
+    highlighted('f')
   )
 )
 
 export const oyzh = initializeExpressionContainer({
   checkType: 'isZero',
-  condition: 'f',
-  trueCase: { shorthandNumber: 2 },
-  falseCase: [{ shorthandFunc: 'add' }, 'f']
+  condition: highlighted('f'),
+  trueCase: { shorthandNumber: 2, initialHighlight: true },
+  falseCase: [
+    { shorthandFunc: 'add', initialHighlight: true },
+    highlighted('f')
+  ]
 })
 
 export const exoq = initializeExpressionContainer([

@@ -563,6 +563,8 @@ export default () => (
               <br />
               置き換えてから実行していた
             </R.Ghwe>
+            <ExpressionRunnerSeparator />
+            <R.Kizi></R.Kizi>
             <BubbleQuotes
               quotes={[
                 {
@@ -572,8 +574,10 @@ export default () => (
                       <P>
                         <Strong>
                           もともとの弁当箱を、そのまま
-                          <H args={{ name: 'play' }} />{' '}
-                          しても、同じ結果になっていたのかな？
+                          <H
+                            args={{ name: 'play' }}
+                          /> しても、結果は同じく <EmojiNumber number={4} />{' '}
+                          になっていたのかな？
                         </Strong>
                       </P>
                     </>
@@ -585,10 +589,14 @@ export default () => (
               <Emoji>🍱</Emoji> もともとの弁当箱を、
               <br />
               そのまま
-              <H args={{ name: 'play' }} /> しても、サヤちゃんの
-              <br />
-              手法と同じ結果になっていたか？
+              <H args={{ name: 'play' }} /> しても…
             </R.Bnyo>
+            <ExpressionRunnerSeparator />
+            <ExpressionRunnerCaptionOnly>
+              結果は同じく
+              <br />
+              <EmojiNumber size="semilg" number={4} /> になっていた？
+            </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
                 {
@@ -823,7 +831,7 @@ export default () => (
               <Strong>
                 ちなみに、どちらの場合も
                 <br />
-                実行結果は <EmojiNumber number={4} /> になる
+                実行結果は <EmojiNumber size="semilg" number={4} /> になる
               </Strong>
             </ExpressionRunnerCaptionOnly>
           </>

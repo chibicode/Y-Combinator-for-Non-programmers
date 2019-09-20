@@ -837,10 +837,10 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
-                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <Emoji>↕️</Emoji>
+                <CustomEmoji type="condition" />
               ]}
               description={
                 <>
@@ -920,7 +920,7 @@ export default () => (
               nodes={[
                 <Emoji>🔁</Emoji>,
                 <CustomEmoji type="doubleArrow" />,
-                <Emoji>↕️</Emoji>
+                <CustomEmoji type="condition" />
               ]}
               description={
                 <>
@@ -955,10 +955,10 @@ export default () => (
             <EmojiSeparator
               nodes={[
                 <CustomEmoji type="mathBox" />,
-                <Emoji>↕️</Emoji>,
+                <CustomEmoji type="condition" />,
                 <CustomEmoji type="doubleArrow" />,
                 <Emoji>🍱</Emoji>,
-                <Emoji>↕️</Emoji>
+                <CustomEmoji type="condition" />
               ]}
               description={
                 <>

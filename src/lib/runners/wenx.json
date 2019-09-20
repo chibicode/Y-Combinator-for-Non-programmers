@@ -7,7 +7,7 @@
         "arg": {
           "arg": {
             "name": "f",
-            "highlightType": "default",
+            "highlightType": "initialHighlighted",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -21,7 +21,7 @@
           },
           "func": {
             "name": "shorthandFunc",
-            "highlightType": "default",
+            "highlightType": "initialHighlighted",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -40,7 +40,7 @@
         "func": {
           "arg": {
             "name": "shorthandNumber",
-            "highlightType": "default",
+            "highlightType": "initialHighlighted",
             "topLeftBadgeType": "none",
             "bottomRightBadgeType": "none",
             "type": "variable",
@@ -152,7 +152,7 @@
               },
               "func": {
                 "name": "f",
-                "highlightType": "default",
+                "highlightType": "initialHighlighted",
                 "topLeftBadgeType": "none",
                 "bottomRightBadgeType": "none",
                 "type": "variable",
