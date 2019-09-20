@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr, InlineHeader } from 'src/components/ContentTags'
+import { P, Strong, Em, Hr, Bold } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -19,7 +19,7 @@ export const BasicRules = ({
 }) => (
   <>
     <P>
-      1. <InlineHeader>印をつける:</InlineHeader>{' '}
+      1. <Bold>印をつける:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -30,7 +30,7 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Zzxj>
-      <InlineHeader>印をつける:</InlineHeader>{' '}
+      <Bold>印をつける:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -41,36 +41,36 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Zzxj>
     <P>
-      2. <InlineHeader>一致チェック:</InlineHeader>{' '}
+      2. <Bold>一致チェック:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </P>
     <R.Keck>
-      <InlineHeader>一致チェック:</InlineHeader>{' '}
+      <Bold>一致チェック:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </R.Keck>
     <P>
-      3. <InlineHeader>コピーする:</InlineHeader>{' '}
+      3. <Bold>コピーする:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Qoms>
-      <InlineHeader>コピーする:</InlineHeader>{' '}
+      <Bold>コピーする:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Qoms>
     <P>
-      4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      4. <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </P>
     <R.Mhgm>
-      <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </R.Mhgm>
@@ -659,7 +659,7 @@ export default () => (
       {
         title: (
           <>
-            3. <InlineHeader>コピーする:</InlineHeader>{' '}
+            3. <Bold>コピーする:</Bold>{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <Emoji>↘️</Emoji>{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -725,7 +725,7 @@ export default () => (
       {
         title: (
           <>
-            4. <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+            4. <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />
           </>

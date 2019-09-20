@@ -1,13 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Em,
-  Ul,
-  UlLi,
-  InlineHeader
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi, Bold } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -1132,7 +1125,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>補足:</InlineHeader> 「
+                <Bold>補足:</Bold> 「
                 <Em>
                   この弁当箱、本当に実行すると <EmojiNumber number={5} />{' '}
                   になるの？
@@ -1265,7 +1258,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>補足:</InlineHeader>{' '}
+                <Bold>補足:</Bold>{' '}
                 <Em>もし上に書いてあることが腑に落ちなくてもご心配なく！</Em>
                 次のページで詳細に解説します。
               </P>

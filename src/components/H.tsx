@@ -9,7 +9,7 @@ import {
   InternalLink,
   P,
   Strong,
-  InlineHeader,
+  Bold,
   ExternalLink,
   Hr,
   Img
@@ -225,9 +225,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <P>
-          <InlineHeader>Hello!</InlineHeader> This is{' '}
-          <Em>page {episodeNumber + 1}</Em> of a course called “
-          <InternalLink href={'/'}>{lessonTitle}</InternalLink>
+          <Bold>Hello!</Bold> This is <Em>page {episodeNumber + 1}</Em> of a
+          course called “<InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,
           <InternalLink href={'/'}>
             <Strong>click here to read from the beginning</Strong>
@@ -238,7 +237,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <P>
-          <InlineHeader>こんにちは！</InlineHeader>このページは「
+          <Bold>こんにちは！</Bold>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           」という記事の
           <Em>{episodeNumber + 1}ページ目</Em>
@@ -600,7 +599,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <InlineHeader>Sorry!</InlineHeader> This page is under construction.
+          <Bold>Sorry!</Bold> This page is under construction.
         </>
       )
     } else {
@@ -698,13 +697,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <InlineHeader>Question:</InlineHeader>
+          <Bold>Question:</Bold>
         </>
       )
     } else {
       return (
         <>
-          <InlineHeader>質問:</InlineHeader>
+          <Bold>質問:</Bold>
         </>
       )
     }
@@ -842,7 +841,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         return (
           <>
             <P>
-              <InlineHeader>お願い:</InlineHeader>「{quitReason}
+              <Bold>お願い:</Bold>「{quitReason}
               」とお考えの方にお願いがあります。
             </P>
             <P>
@@ -879,13 +878,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             {question}
             <Hr />
             <P>
-              <InlineHeader>
+              <Bold>
                 本稿を読んで、「
                 <Em>
                   プログラミング未経験者だけど、コンピュータサイエンスを学びたくなった。次は何を読めばいい？
                 </Em>
                 」と思ってくださった方へ:
-              </InlineHeader>
+              </Bold>
             </P>
             <EmojiSeparator
               emojis={['❓', '🤔', '❓']}
@@ -917,14 +916,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <TwitterEmbed id={shareId} />
             <Hr />
             <P>
-              <InlineHeader>読みやすくする工夫:</InlineHeader>{' '}
+              <Bold>読みやすくする工夫:</Bold>{' '}
               難しい内容の教材でも最後まで読んでもらう工夫についてもまとめました。本稿で多用した工夫ばかりです。よければご覧ください！
             </P>
             <TwitterEmbed id="1172700114630172672" showCard />
             <Hr />
             <P>
-              <InlineHeader>宣伝:</InlineHeader>{' '}
-              もしご興味があれば、わたしが共訳した書籍『
+              <Bold>宣伝:</Bold> もしご興味があれば、わたしが共訳した書籍『
               <ExternalLink href="https://amzn.to/2QlZIqm">
                 <Strong>ファクトフルネス</Strong>
               </ExternalLink>
@@ -977,7 +975,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <P>
             {args.includeAboutMe && (
               <>
-                <InlineHeader>著者:</InlineHeader> 上杉周作 (
+                <Bold>著者:</Bold> 上杉周作 (
                 <ExternalLink href="https://jp.chibicode.com">
                   ブログはこちら
                 </ExternalLink>
@@ -985,15 +983,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
                 <br />
               </>
             )}
-            <InlineHeader>公開日:</InlineHeader>{' '}
+            <Bold>公開日:</Bold>{' '}
             <time dateTime={dateSchemaString}>{dateString}</time>
             <br />
-            <InlineHeader>ソースコード:</InlineHeader>{' '}
+            <Bold>ソースコード:</Bold>{' '}
             <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
             {args.includeTwitter && (
               <>
                 <br />
-                <InlineHeader>Twitter:</InlineHeader>{' '}
+                <Bold>Twitter:</Bold>{' '}
                 <ExternalLink href="https://twitter.com/chibicode">
                   @chibicode
                 </ExternalLink>
@@ -1104,16 +1102,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <InlineHeader>
+          <Bold>
             <CustomEmoji type="mathBox" /> Convert to Mathbox <Emoji>🐶</Emoji>
-          </InlineHeader>
+          </Bold>
         </>
       )
     } else {
       return (
-        <InlineHeader>
+        <Bold>
           <CustomEmoji type="mathBox" /> 計算箱に変換 <Emoji>🐶</Emoji>
-        </InlineHeader>
+        </Bold>
       )
     }
   }
@@ -1122,11 +1120,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       return (
-        <InlineHeader>
+        <Bold>
           実行してから
           {args.addNewline ? <br /> : ' '}
           <H args={{ name: 'convertToMathbox' }} />
-        </InlineHeader>
+        </Bold>
       )
     }
   }
@@ -1144,15 +1142,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'undoConvertToMathbox') {
     if (locale === 'en') {
       return (
-        <InlineHeader>
+        <Bold>
           <Emoji>🍱</Emoji> Back to Lunchbox <Emoji>↩</Emoji>
-        </InlineHeader>
+        </Bold>
       )
     } else {
       return (
-        <InlineHeader>
+        <Bold>
           <Emoji>🍱</Emoji> 弁当箱に戻す <Emoji>↩</Emoji>
-        </InlineHeader>
+        </Bold>
       )
     }
   }

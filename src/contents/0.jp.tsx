@@ -9,7 +9,7 @@ import {
   ExternalLink,
   P,
   Strong,
-  InlineHeader,
+  Bold,
   Ol,
   OlLi,
   Hr
@@ -99,7 +99,7 @@ export default () => (
           <>
             <P>
               本稿は、
-              <InlineHeader>
+              <Bold>
                 <H
                   args={{ name: 'categoryNameColored', category: 'beginner' }}
                 />
@@ -117,15 +117,15 @@ export default () => (
                     category: 'advanced'
                   }}
                 />
-              </InlineHeader>
+              </Bold>
               それぞれ<Strong>5ページずつ、</Strong>
               それにこのページと「
-              <InlineHeader>
+              <Bold>
                 <H
                   args={{ name: 'titlePrefixColored' }}
                   episodeNumberOverrides={numEpisodesExceptFirstAndLast + 1}
                 />
-              </InlineHeader>
+              </Bold>
               」を加えた
               <Strong>全{numTotalPages}ページ</Strong>
               で構成されています。<Em>記事というよりは、電子書籍に近い</Em>
@@ -185,13 +185,13 @@ export default () => (
             />
             <P>
               わたしたちの身の回りには、パソコンやスマホといった「コンピュータ」と、そのコンピュータ上で動く「
-              <InlineHeader>ソフトウェア</InlineHeader>
+              <Bold>ソフトウェア</Bold>
               」がたくさんあります。身近なものでいえば、
               <Em>
                 <Emoji>🔎</Emoji> グーグルなどの検索エンジン、
                 <Emoji>🗺</Emoji> 地図アプリのナビ機能、<Emoji>📷</Emoji>{' '}
                 カメラアプリの顔認識機能は、どれも「
-                <InlineHeader>ソフトウェア</InlineHeader>」です
+                <Bold>ソフトウェア</Bold>」です
               </Em>
               。
             </P>
@@ -206,14 +206,14 @@ export default () => (
                   カメラアプリの顔認識機能は、
                   <br />
                   どれも「
-                  <InlineHeader>ソフトウェア</InlineHeader>」
+                  <Bold>ソフトウェア</Bold>」
                 </>
               }
             />
             <P>
               アプリ・ウェブサービス・ゲーム・AI・組み込みシステムやITシステム・仮想通貨など、「
               <Em>コンピュータプログラムによって機能するもの</Em>
-              」はすべて、「<InlineHeader>ソフトウェア</InlineHeader>
+              」はすべて、「<Bold>ソフトウェア</Bold>
               」と呼ばれます。
             </P>
             <P>
@@ -446,7 +446,7 @@ export default () => (
                   content: (
                     <>
                       <P>
-                        <InlineHeader>余談 (読み飛ばしてもOK):</InlineHeader>{' '}
+                        <Bold>余談 (読み飛ばしてもOK):</Bold>{' '}
                         コンピュータサイエンスと医学は似ている部分もありますが、
                         <Em>似ていない部分もたくさんあります</Em>。たとえば、
                         <Em>
@@ -638,7 +638,7 @@ export default () => (
                       子供向けのプログラミング教育に関しては、2016年に以下のような記事を書きました。5分で読める内容ですので、もしよければどうぞ。
                     </P>
                     <P>
-                      <InlineHeader>記事リンク:</InlineHeader>{' '}
+                      <Bold>記事リンク:</Bold>{' '}
                       <ExternalLink href="https://jp.chibicode.com/2-cs-vs-programming">
                         「プログラミング」と「プログラミング的思考」の違いを、分かったつもりになれるヒント
                       </ExternalLink>
@@ -650,7 +650,7 @@ export default () => (
                   content: (
                     <>
                       <P>
-                        <InlineHeader>余談 (読み飛ばしてもOK):</InlineHeader>{' '}
+                        <Bold>余談 (読み飛ばしてもOK):</Bold>{' '}
                         「プログラミング無しにコンピュータサイエンスを学ぶべき」というのは、
                         <Em>あくまで対象が忙しい大人である場合</Em>
                         に当てはまります。
@@ -783,7 +783,7 @@ export default () => (
             <P>
               では、本稿で取り扱う高度な内容とは何かというと、タイトルにもある「
               <Strong>Yコンビネータ</Strong>」です。
-              <InlineHeader>Yコンビネータ</InlineHeader>
+              <Bold>Yコンビネータ</Bold>
               とは、タイトルにもある通り
               <Em>魔法のような力を持つ、とあるコンピュータサイエンスの概念</Em>
               です。
@@ -904,7 +904,7 @@ export default () => (
                   content: (
                     <>
                       <P>
-                        <InlineHeader>ちなみに:</InlineHeader>{' '}
+                        <Bold>ちなみに:</Bold>{' '}
                         <Em>IT業界にいる方</Em>の中には、「
                         <Strong>
                           Yコンビネータって、シリコンバレーにあるITベンチャー養成機関のこと？
@@ -1018,9 +1018,9 @@ export default () => (
               プログラマ向けのYコンビネータについての説明で最もおすすめなのは、
               「
               <ExternalLink href="https://www.youtube.com/watch?v=FITJMJjASUs">
-                <InlineHeader>
+                <Bold>
                   Y Not - Adventures in Functional Programming
-                </InlineHeader>
+                </Bold>
               </ExternalLink>
               」という動画です。
             </P>
@@ -1036,7 +1036,7 @@ export default () => (
               caption={'ちなみにこの時、筆者は観客として参加していました。'}
             />
             <P>
-              <InlineHeader>余談:</InlineHeader>{' '}
+              <Bold>余談:</Bold>{' '}
               本稿はTypeScriptとNext.jsで書いています。ソースコードは
               <ExternalLink href={githubRepo}>GitHubで公開中</ExternalLink>
               です。

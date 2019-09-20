@@ -3,7 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   Strong,
-  InlineHeader,
+  Bold,
   Em,
   ExternalLink,
   Img,
@@ -97,7 +97,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <Bold>ちなみに:</Bold>{' '}
                 これからコンピュータやコンピュータサイエンスの歴史について語りますが、
                 <Em>
                   簡潔さを優先するために、正確性をあえて犠牲にしたり、ほとんどの出来事を省いたりしています
@@ -117,9 +117,9 @@ export default () => (
           <>
             <P>
               この記事のタイトルは「
-              <InlineHeader>
+              <Bold>
                 <Em>コンピュータ</Em>サイエンスと魔法のYコンビネータ
-              </InlineHeader>
+              </Bold>
               」ですが、はじめに、「
               <Strong>そもそもコンピュータとは何か</Strong>
               」という質問について考えてみましょう。
@@ -177,8 +177,7 @@ export default () => (
             </P>
             <P>
               歴史を振り返ると、たとえば昔の日本では、中国から伝わった
-              <InlineHeader>そろばん</InlineHeader> <Emoji>🧮</Emoji>{' '}
-              が計算機の主役でしたね。
+              <Bold>そろばん</Bold> <Emoji>🧮</Emoji> が計算機の主役でしたね。
             </P>
             <EmojiSeparator
               emojis={['🧮', '🏯', '🧮']}
@@ -192,7 +191,7 @@ export default () => (
             />
             <P>
               一方、海の向こうのアメリカでは、1890年に「
-              <InlineHeader>タビュレーティングマシン</InlineHeader>
+              <Bold>タビュレーティングマシン</Bold>
               」という計算機が台頭しました。
             </P>
             <P>
@@ -252,7 +251,7 @@ export default () => (
             <P>
               いっぽう同時期に、<Strong>計算機について科学する学問</Strong>
               である「
-              <InlineHeader>コンピュータサイエンス＝計算機科学</InlineHeader>」
+              <Bold>コンピュータサイエンス＝計算機科学</Bold>」
               も生まれ、進化していきました。
             </P>
             <P>
@@ -266,7 +265,7 @@ export default () => (
               emojis={['💻', '🤔', '💻']}
               description={
                 <>
-                  <InlineHeader>コンピュータサイエンス: </InlineHeader>
+                  <Bold>コンピュータサイエンス: </Bold>
                   <br />
                   計算機の作り方や使い方をどう工夫
                   <br />
@@ -277,19 +276,17 @@ export default () => (
             <P>
               そして、<Em>コンピュータサイエンスの礎を築いた</Em>
               と言われているのが、英国の数学者だった
-              <InlineHeader>アラン・チューリング</InlineHeader>{' '}
-              <Emoji>🧑🏻</Emoji> と、米国の数学者だった
-              <InlineHeader>
-                アロンゾ・チャーチ
-              </InlineHeader> <Emoji>👨🏻‍🦳</Emoji>{' '}
+              <Bold>アラン・チューリング</Bold> <Emoji>🧑🏻</Emoji>{' '}
+              と、米国の数学者だった
+              <Bold>アロンゾ・チャーチ</Bold> <Emoji>👨🏻‍🦳</Emoji>{' '}
               です。ふたりの研究が、学問としてのコンピュータサイエンスの大本になっているのです。
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '👨🏻‍🦳']}
               description={
                 <>
-                  <InlineHeader>アラン・チューリング</InlineHeader>と<br />
-                  <InlineHeader>アロンゾ・チャーチ</InlineHeader>による
+                  <Bold>アラン・チューリング</Bold>と<br />
+                  <Bold>アロンゾ・チャーチ</Bold>による
                   <br />
                   研究が、コンピュータサイエンスの礎となった
                 </>
@@ -316,8 +313,7 @@ export default () => (
               emojis={['🧑🏻', '❓', '👨🏻‍🦳']}
               description={
                 <>
-                  <InlineHeader>チューリング</InlineHeader>と
-                  <InlineHeader>チャーチ</InlineHeader>は、
+                  <Bold>チューリング</Bold>と<Bold>チャーチ</Bold>は、
                   <br />
                   とある数学の問題に別々に取り組んでいた
                 </>
@@ -327,7 +323,7 @@ export default () => (
               その問題を解くために、ふたりはそれぞれ別々の「
               <Strong>空想上の計算機</Strong>
               」を考案する必要がありました。「
-              <InlineHeader>空想上の計算機</InlineHeader>
+              <Bold>空想上の計算機</Bold>
               」とはすなわち、
               <Em>
                 実際には(少なくとも1930年代の当時は)存在しないけど、もし存在したとしたら非常に複雑な計算ができる、
@@ -386,7 +382,7 @@ export default () => (
             <P>
               1930年代半ばに、<Strong>チューリング</Strong>
               は先述の問題を解くために「
-              <InlineHeader>チューリングマシン</InlineHeader>
+              <Bold>チューリングマシン</Bold>
               」という空想上の計算機を考案しました。「このチューリングマシンが仮に存在したら…」と論を展開することで、彼は先述の数学の問題を解くことができたのです。
             </P>
             <P>
@@ -400,7 +396,7 @@ export default () => (
               description={
                 <>
                   チューリングは、「
-                  <InlineHeader>チューリングマシン</InlineHeader>」
+                  <Bold>チューリングマシン</Bold>」
                   <br />
                   という、現代のコンピュータに似ている
                   <br />
@@ -423,7 +419,7 @@ export default () => (
               description={
                 <>
                   チャーチは、「
-                  <InlineHeader>ラムダ計算</InlineHeader>」という
+                  <Bold>ラムダ計算</Bold>」という
                   <br />
                   空想上の計算機を頭の中で考えた
                 </>
@@ -445,7 +441,7 @@ export default () => (
               description={
                 <>
                   チャーチが考えた空想上の計算機
-                  <br />「<InlineHeader>ラムダ計算</InlineHeader>
+                  <br />「<Bold>ラムダ計算</Bold>
                   」は、<Strong>弁当箱と仕組みが同じ</Strong>
                 </>
               }
@@ -470,7 +466,7 @@ export default () => (
               description={<>ラムダ計算。弁当箱と仕組みは同じ</>}
             />
             <P>
-              たとえば、こちらが「<InlineHeader>ラムダ計算</InlineHeader>
+              たとえば、こちらが「<Bold>ラムダ計算</Bold>
               」の記述式です。一番左にある「<Strong>λ</Strong>
               」の記号はギリシャ文字で「
               <Strong>ラムダ</Strong>
@@ -660,7 +656,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <Bold>ちなみに:</Bold>{' '}
                 チャーチが考案したラムダ計算だけでなく、チューリングが考案した空想上の計算機「チューリングマシン」も、現代のコンピュータが行えるすべての計算を(理論上は)行うことができます。このことも、1930年代に証明されました。
               </P>
             </>
@@ -762,7 +758,7 @@ export default () => (
           <>
             <P>
               そろそろ終わりが近づいてきましたが、最後に「
-              <InlineHeader>コンピュータサイエンス＝計算機科学</InlineHeader>
+              <Bold>コンピュータサイエンス＝計算機科学</Bold>
               」についてもう一言だけお話をさせてください。
             </P>
             <P>
@@ -938,7 +934,7 @@ export default () => (
             <P>最後に、「その後」の話をしましょう。</P>
             <P>
               まず、先述したイギリスの数学者で、空想上の計算機「
-              <InlineHeader>チューリングマシン</InlineHeader>」を考案した
+              <Bold>チューリングマシン</Bold>」を考案した
               <Strong>アラン・チューリング</Strong>
               。彼はチューリングマシンを考案したのち、イギリスからアメリカに渡り、
               <Em>ラムダ計算(弁当箱)を考案したチャーチのもとで学びました。</Em>
@@ -947,11 +943,11 @@ export default () => (
               emojis={['🧑🏻', '🎓', '👨🏻‍🦳']}
               description={
                 <>
-                  <InlineHeader>チューリングマシン</InlineHeader>を考案した
+                  <Bold>チューリングマシン</Bold>を考案した
                   <br />
                   <Strong>アラン・チューリング</Strong>は、
                   <br />
-                  <InlineHeader>ラムダ計算(弁当箱)</InlineHeader>を考案した
+                  <Bold>ラムダ計算(弁当箱)</Bold>を考案した
                   <br />
                   <Strong>チャーチ</Strong>に弟子入りした
                 </>
@@ -990,7 +986,7 @@ export default () => (
             <P>ではその後、ラムダ村はどうなったかというと…</P>
             <EmojiSeparator emojis={['🐶', '🙂', '😈', '👧🏻']} />
             <P>
-              <InlineHeader>村人たち</InlineHeader>
+              <Bold>村人たち</Bold>
               は、何でも計算できる弁当箱を村の外の人たちに売りさばき、大金持ちになろうと悪巧み中です。
             </P>
             <EmojiSeparator
@@ -1004,8 +1000,8 @@ export default () => (
               }
             />
             <P>
-              <InlineHeader>悪魔</InlineHeader>
-              は暇になったので、日々<InlineHeader>ミニオン</InlineHeader>
+              <Bold>悪魔</Bold>
+              は暇になったので、日々<Bold>ミニオン</Bold>
               に新しい芸を覚えさせようとしていますが、なかなかうまくいっていません。
             </P>
             <EmojiSeparator
@@ -1019,7 +1015,7 @@ export default () => (
               }
             />
             <P>
-              そして、年頃になった<InlineHeader>サヤちゃん</InlineHeader>
+              そして、年頃になった<Bold>サヤちゃん</Bold>
               は、好きなアーティストのコンサートにもっと参戦したいからと言って、ラムダ村を出ていきました。
             </P>
             <EmojiSeparator
@@ -1164,8 +1160,7 @@ export default () => (
                       ]}
                     />
                     <P>
-                      <InlineHeader>ちなみに:</InlineHeader>{' '}
-                      プログラマの方で、「
+                      <Bold>ちなみに:</Bold> プログラマの方で、「
                       <Em>Yコンビネータを実際にプログラミングで試してみたい</Em>
                       」と思った方は、↓の「プログラミングで試してみる」を押してみてください。
                     </P>

@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Em,
-  InlineHeader,
-  Ul,
-  UlLi,
-  Hr
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Bold, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -58,7 +50,7 @@ export default () => (
             />
             <P>
               ラムダ村には、代々伝わる「<Strong>計算箱</Strong>
-              」という道具がありました。<InlineHeader>計算箱</InlineHeader>
+              」という道具がありました。<Bold>計算箱</Bold>
               は、その名の通り<Em>算数の計算をしてくれる</Em>
               魔法の道具です。<Em>現代の電卓のようなもの</Em>
               だと思ってください。
@@ -84,7 +76,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader> 「ラムダ村」は、
+                <Bold>ちなみに:</Bold> 「ラムダ村」は、
                 <Em>上から読んでも下から読んでも「ラムダ村」</Em>です。
                 なぜ「ラムダ」と名付けたかは最後に説明します！
               </P>
@@ -555,7 +547,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <Bold>ちなみに:</Bold>{' '}
                 <Em>
                   残念ながら、計算箱は「<Strong>掛け算</Strong>{' '}
                   <Emoji>✖️</Emoji>

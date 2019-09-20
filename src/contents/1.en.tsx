@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Em,
-  InlineHeader,
-  Ul,
-  UlLi,
-  Hr
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Bold, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -57,8 +49,8 @@ export default () => (
             <P>
               In Lambda Village, a tool called <Strong>“Mathbox”</Strong> has
               been passed down from one generation to next. As its name
-              suggests, <InlineHeader>Mathbox</InlineHeader> is a magical tool
-              that can solve <Em>math questions</Em>. You can think of it as a{' '}
+              suggests, <Bold>Mathbox</Bold> is a magical tool that can solve{' '}
+              <Em>math questions</Em>. You can think of it as a{' '}
               <Em>simple calculator</Em>.
             </P>
             <EmojiSeparator
@@ -82,9 +74,8 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>Note:</InlineHeader> Later, I’ll explain why the
-                village is named after “lambda”, the 11th letter of the Greek
-                alphabet.
+                <Bold>Note:</Bold> Later, I’ll explain why the village is named
+                after “lambda”, the 11th letter of the Greek alphabet.
               </P>
             </>
           )
@@ -556,7 +547,7 @@ export default () => (
           content: (
             <>
               <P>
-                <InlineHeader>ちなみに:</InlineHeader>{' '}
+                <Bold>ちなみに:</Bold>{' '}
                 <Em>
                   残念ながら、計算箱は「<Strong>掛け算</Strong>{' '}
                   <Emoji>✖️</Emoji>

@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Em,
-  Ul,
-  UlLi,
-  InlineHeader,
-  Hr
-} from 'src/components/ContentTags'
+import { P, Strong, Em, Ul, UlLi, Bold, Hr } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -1002,7 +994,7 @@ export default () => (
             </P>
             <R.Lizi>これを弁当箱で再現します</R.Lizi>
             <P>
-              <InlineHeader>ステップ1:</InlineHeader> まず、
+              <Bold>ステップ1:</Bold> まず、
               <Em>
                 計算箱の <EmojiNumber number={1} /> の代わりに、
                 <Strong>
@@ -1018,7 +1010,7 @@ export default () => (
               <EmojiNumber number={1} /> に変換できる弁当箱を用意
             </R.Rbup>
             <P>
-              <InlineHeader>ステップ2:</InlineHeader> 次に、
+              <Bold>ステップ2:</Bold> 次に、
               <Em>
                 計算箱の <CustomEmoji type="plusOne" /> の代わりに、
                 <H args={{ name: 'plusOneEffect' }} />
@@ -1033,7 +1025,7 @@ export default () => (
               <br />(<Emoji>👧🏻</Emoji> サヤちゃんが考えた弁当箱です)
             </R.Qrfw>
             <P>
-              <InlineHeader>ステップ3:</InlineHeader>{' '}
+              <Bold>ステップ3:</Bold>{' '}
               このふたつを合体させた弁当箱は、先ほども説明した通り、
               <Em>
                 <H args={{ name: 'runAndConvertToMathbox' }} /> すると{' '}

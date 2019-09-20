@@ -8,7 +8,7 @@ import {
   UlLi,
   Ol,
   OlLi,
-  InlineHeader,
+  Bold,
   Hr
 } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -28,7 +28,7 @@ import NextLessonButton from 'src/components/NextLessonButton'
 export const ThreeRowRules = () => (
   <>
     <P>
-      <InlineHeader>3段以上の弁当箱は、以下のように解きます。</InlineHeader>
+      <Bold>3段以上の弁当箱は、以下のように解きます。</Bold>
     </P>
     <Ol>
       <OlLi>
@@ -62,8 +62,7 @@ export const ThreeRowRules = () => (
 export const Beginner5Rules = () => (
   <>
     <P>
-      <InlineHeader>細かい法則1:</InlineHeader>{' '}
-      <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
+      <Bold>細かい法則1:</Bold> <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
       のペアが左右ふたつ以上ある場合は、
       <Strong>一番左のペアからはじめます。</Strong>
     </P>
@@ -71,7 +70,7 @@ export const Beginner5Rules = () => (
       <H args={{ name: 'startWithLeftMostOneCaption' }} />
     </R.Hykj>
     <P>
-      <InlineHeader>補足:</InlineHeader>{' '}
+      <Bold>補足:</Bold>{' '}
       <Em>
         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
         のペアが弁当箱の左端にない場合は、内側の{' '}
@@ -86,7 +85,7 @@ export const Beginner5Rules = () => (
     </R.Myjz>
     <Hr />
     <P>
-      <InlineHeader>細かい法則2:</InlineHeader> 下段にひとつの料理しかなく、
+      <Bold>細かい法則2:</Bold> 下段にひとつの料理しかなく、
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
       のペアからはじめられない場合、
       <Strong>
@@ -501,19 +500,19 @@ export default () => (
             <P>前回も話した通り、続いて以下のステップを行いますが、</P>
             <Ul>
               <UlLi>
-                <InlineHeader>一致チェック:</InlineHeader>{' '}
+                <Bold>一致チェック:</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 <Emoji>✅</Emoji>
               </UlLi>
               <UlLi>
-                <InlineHeader>コピーする:</InlineHeader>{' '}
+                <Bold>コピーする:</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>↘️</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
               </UlLi>
               <UlLi>
-                <InlineHeader>消す:</InlineHeader> <Emoji>💥</Emoji>{' '}
+                <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               </UlLi>
@@ -1201,7 +1200,7 @@ export default () => (
               のペアが左右ふたつある
             </R.Laea>
             <P>
-              <InlineHeader>細かい法則その1:</InlineHeader>{' '}
+              <Bold>細かい法則その1:</Bold>{' '}
               <Em>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアが左右ふたつ以上ある場合は、
@@ -1661,7 +1660,7 @@ export default () => (
               ]}
             />
             <P>
-              <InlineHeader>答え:</InlineHeader> 上記のように{' '}
+              <Bold>答え:</Bold> 上記のように{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアからはじめられない場合は、
               <Strong>

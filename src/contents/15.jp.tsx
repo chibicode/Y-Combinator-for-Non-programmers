@@ -1,13 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  InlineHeader,
-  Strong,
-  Em,
-  Ul,
-  UlLi
-} from 'src/components/ContentTags'
+import { P, Bold, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -1031,27 +1024,27 @@ export default () => (
               left={
                 <>
                   <R.Spki>
-                    <InlineHeader>
+                    <Bold>
                       前回の弁当箱
                       <br />(<Emoji>🅰️</Emoji>
                       <Emoji>➕</Emoji>
                       <Emoji>🅱️</Emoji> を計算)
                       <br />
                       の右上部分:
-                    </InlineHeader>
+                    </Bold>
                   </R.Spki>
                 </>
               }
               right={
                 <>
                   <R.Ddrg>
-                    <InlineHeader>
+                    <Bold>
                       今回の弁当箱
                       <br />
                       (階乗を計算)
                       <br />
                       の右上部分:
-                    </InlineHeader>
+                    </Bold>
                   </R.Ddrg>
                 </>
               }

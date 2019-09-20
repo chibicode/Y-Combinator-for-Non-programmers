@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
 import CardWrapper from 'src/components/CardWrapper'
 import EpisodePageInitialRenderWarning from 'src/components/EpisodePageInitialRenderWarning'
-import { InlineHeader } from 'src/components/ContentTags'
+import { Bold } from 'src/components/ContentTags'
 import EpisodeHero from 'src/components/EpisodeHero'
 import { CardProps } from 'src/components/Card'
 import useConditionalCards from 'src/hooks/useConditionalCards'
@@ -86,11 +86,11 @@ const EpisodeCardList = ({
                               text-align: center;
                             `}
                           >
-                            <InlineHeader>
+                            <Bold>
                               <Emoji>🌲</Emoji>{' '}
                               <H args={{ name: 'goToOtherPage' }} />{' '}
                               <Emoji>🌲</Emoji>
-                            </InlineHeader>
+                            </Bold>
                           </P>
                           <div
                             css={css`

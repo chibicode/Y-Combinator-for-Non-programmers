@@ -1,11 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useContext } from 'react'
-import {
-  InternalLink,
-  InlineHeader,
-  LinkButton
-} from 'src/components/ContentTags'
+import { InternalLink, Bold, LinkButton } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'
 import CustomEmoji from 'src/components/CustomEmoji'
 import Emoji from 'src/components/Emoji'
@@ -37,12 +33,12 @@ const PrevNextLinks = () => {
           `}
         >
           <Emoji>⬅️</Emoji>{' '}
-          <InlineHeader>
+          <Bold>
             <H
               args={{ name: 'titlePrefixColored' }}
               episodeNumberOverrides={episodeNumber - 1}
             />
-          </InlineHeader>
+          </Bold>
         </InternalLink>
         <span
           css={css`
@@ -69,9 +65,9 @@ const PrevNextLinks = () => {
           onClick={episodeContext.showModal}
         >
           <CustomEmoji type="index" />{' '}
-          <InlineHeader>
+          <Bold>
             <H args={{ name: 'indexPageLink' }} />
-          </InlineHeader>
+          </Bold>
         </LinkButton>
       </div>
       <div
@@ -100,12 +96,12 @@ const PrevNextLinks = () => {
                 }
               `}
             >
-              <InlineHeader>
+              <Bold>
                 <H
                   args={{ name: 'titlePrefixColored' }}
                   episodeNumberOverrides={episodeNumber + 1}
                 />
-              </InlineHeader>{' '}
+              </Bold>{' '}
               <Emoji>➡️</Emoji>
             </InternalLink>
           </>

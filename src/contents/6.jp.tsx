@@ -2,15 +2,7 @@
 import { css, jsx } from '@emotion/core'
 import { colors, spaces } from 'src/lib/theme'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Em,
-  Strong,
-  Ol,
-  OlLi,
-  InlineHeader,
-  Hr
-} from 'src/components/ContentTags'
+import { P, Em, Strong, Ol, OlLi, Bold, Hr } from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
@@ -41,7 +33,7 @@ export default () => (
                 ここからは中級編です。初級編より難しくなりますが、ここまで読んでくださった方なら読み進められるはずです！
               </P>
               <P>
-                <InlineHeader>初級編を忘れてしまいましたか？</InlineHeader>
+                <Bold>初級編を忘れてしまいましたか？</Bold>
                 もしかしたら、「
                 <Em>
                   初級編を終えた後に長い休憩を取ったので、これまでの内容を忘れてしまった
@@ -1206,8 +1198,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、「<InlineHeader>実行</InlineHeader>」と「
-                        <InlineHeader>計算箱に変換</InlineHeader>」を
+                        なるほど、「<Bold>実行</Bold>」と「
+                        <Bold>計算箱に変換</Bold>」を
                         <Strong>一括で行う</Strong>
                         こともできる、ということだな。
                       </P>

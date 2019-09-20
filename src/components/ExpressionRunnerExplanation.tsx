@@ -1,5 +1,5 @@
 import React from 'react'
-import { InlineHeader } from 'src/components/ContentTags'
+import { Bold } from 'src/components/ContentTags'
 import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import BottomRightBadge from 'src/components/BottomRightBadge'
@@ -251,7 +251,7 @@ const Explanation = ({
       if (locale === 'en') {
         return (
           <>
-            <Emoji>⚠️</Emoji> <InlineHeader>Warning</InlineHeader>: Same item in{' '}
+            <Emoji>⚠️</Emoji> <Bold>Warning</Bold>: Same item in{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             <BottomRightBadge bottomRightBadgeType="funcUnbound" inline />
           </>
@@ -272,7 +272,7 @@ const Explanation = ({
       } else {
         return (
           <>
-            <InlineHeader>特別ルール:</InlineHeader>{' '}
+            <Bold>特別ルール:</Bold>{' '}
             <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
             を別の料理に <Emoji>🐶</Emoji>
           </>

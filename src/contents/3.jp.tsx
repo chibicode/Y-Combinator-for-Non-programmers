@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr, InlineHeader } from 'src/components/ContentTags'
+import { P, Strong, Em, Hr, Bold } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
@@ -315,7 +315,7 @@ export default () => (
               <H args={{ name: 'bentoBoxPuzzle' }} /> の一例
             </R.Ilpo>
             <P>
-              <InlineHeader>解説:</InlineHeader> 上のように、
+              <Bold>解説:</Bold> 上のように、
               <H args={{ name: 'bentoBoxPuzzle' }} />
               には、実際の弁当箱のように、
               <Em>
@@ -603,25 +603,25 @@ export default () => (
               ]}
             />
             <P>
-              <InlineHeader>例その1:</InlineHeader>
+              <Bold>例その1:</Bold>
             </P>
             <R.Ilpo />
             <ExpressionRunnerSeparator />
             <R.Osqo />
             <P>
-              <InlineHeader>例その2:</InlineHeader>
+              <Bold>例その2:</Bold>
             </P>
             <R.Imyd />
             <ExpressionRunnerSeparator />
             <R.Bgfl />
             <P>
-              <InlineHeader>例その3:</InlineHeader>
+              <Bold>例その3:</Bold>
             </P>
             <R.Rakk />
             <ExpressionRunnerSeparator />
             <R.Thbw />
             <P>
-              <InlineHeader>例その4:</InlineHeader>
+              <Bold>例その4:</Bold>
             </P>
             <R.Ldqk />
             <ExpressionRunnerSeparator />
@@ -734,7 +734,7 @@ export default () => (
           <>
             <P>それぞれ実行すると、次のようになります。</P>
             <P>
-              <InlineHeader>1問目:</InlineHeader>
+              <Bold>1問目:</Bold>
             </P>
             <R.Zzyu />
             <P>
@@ -746,7 +746,7 @@ export default () => (
               でした。
             </P>
             <P>
-              <InlineHeader>2問目:</InlineHeader>
+              <Bold>2問目:</Bold>
             </P>
             <R.Mutg />
             <P>

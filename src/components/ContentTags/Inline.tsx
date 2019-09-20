@@ -29,7 +29,7 @@ const mix = (color: CardProps['color'], base: string) =>
     .hsl()
     .string()
 
-export const InlineHeader = (props: JSX.IntrinsicElements['span']) => (
+export const Bold = (props: JSX.IntrinsicElements['span']) => (
   <span
     css={css`
       font-weight: bold;

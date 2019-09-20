@@ -1,14 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import {
-  P,
-  Strong,
-  Hr,
-  Em,
-  Ul,
-  UlLi,
-  InlineHeader
-} from 'src/components/ContentTags'
+import { P, Strong, Hr, Em, Ul, UlLi, Bold } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -619,7 +611,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <InlineHeader>質問:</InlineHeader> これを
+                        <Bold>質問:</Bold> これを
                         <H args={{ name: 'play' }} />{' '}
                         すると、最終的に以下のようになるでしょうか？
                       </P>

@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, InlineHeader } from 'src/components/ContentTags'
+import { P, Strong, Bold } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import Emoji from 'src/components/Emoji'
 import * as R from 'src/components/Runners'
@@ -13,7 +13,7 @@ export const BasicRules = ({
 }) => (
   <>
     <P>
-      1. <InlineHeader>Add labels:</InlineHeader>{' '}
+      1. <Bold>Add labels:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -24,7 +24,7 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Zzxj>
-      <InlineHeader>Add labels:</InlineHeader>{' '}
+      <Bold>Add labels:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -35,36 +35,36 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Zzxj>
     <P>
-      2. <InlineHeader>Find matches:</InlineHeader>{' '}
+      2. <Bold>Find matches:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </P>
     <R.Keck>
-      <InlineHeader>Find matches:</InlineHeader>{' '}
+      <Bold>Find matches:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </R.Keck>
     <P>
-      3. <InlineHeader>Copy:</InlineHeader>{' '}
+      3. <Bold>Copy:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Qoms>
-      <InlineHeader>Copy:</InlineHeader>{' '}
+      <Bold>Copy:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Qoms>
     <P>
-      4. <InlineHeader>Remove:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      4. <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </P>
     <R.Mhgm>
-      <InlineHeader>Remove:</InlineHeader> <Emoji>💥</Emoji>{' '}
+      <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />
     </R.Mhgm>
