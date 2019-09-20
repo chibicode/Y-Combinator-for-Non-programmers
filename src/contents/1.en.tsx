@@ -73,7 +73,9 @@ export default () => (
                 </>
               }
             />
-            <P>Let me explain how mathbox works!</P>
+            <P>
+              Let me explain how mathbox works! <Emoji>🤗</Emoji>
+            </P>
           </>
         ),
         footer: {
@@ -130,36 +132,37 @@ export default () => (
         content: (
           <>
             <P>
-              それぞれの計算箱には
+              Each mathbox has a{' '}
               <Strong>
-                <H args={{ name: 'play' }} /> ボタン
+                <H args={{ name: 'play' }} /> button
               </Strong>
-              がついており、それを押すと計算が実行されます。試しに、下の計算箱で
+              . If you press it, the mathbox calculates the result.
               <Strong>
                 <H args={{ name: 'pressPlay' }} />
-              </Strong>
+              </Strong>{' '}
+              on the mathbox below.
             </P>
             <R.Mcug />
             <P>
               <Strong>
-                結果は <EmojiNumber number={2} /> になりました
+                The result is <EmojiNumber number={2} />
               </Strong>
-              。つまり、
-              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> が計算できたということです。
+              . That means it calculated <EmojiNumber number={1} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />! <Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
-              他の計算箱も見てみましょう！たとえばこちらをご覧になり、
+              Let’s look at other mathboxes.{' '}
               <Strong>
                 <H args={{ name: 'pressPlay' }} />
-              </Strong>
+              </Strong>{' '}
+              on this one:
             </P>
             <R.Aovj />
             <P>
-              こちらは <EmojiNumber number={4} /> になり、すなわち{' '}
-              <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} /> が計算できました！<Emoji>🙂</Emoji>
+              The result is <EmojiNumber number={4} />, which means it
+              calculated <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />! <Emoji>🙂</Emoji>
             </P>
           </>
         )
