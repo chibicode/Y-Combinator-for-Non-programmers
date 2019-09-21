@@ -333,7 +333,8 @@ export default () => (
             <P>
               正解を教えましょう。
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} /> を計算したい場合、{' '}
+              <EmojiNumber number={2} /> を計算したい場合、
+              <EmojiNumber number={2} /> に加えて{' '}
               <Strong>
                 <CustomEmoji type="plusOne" /> を2回
               </Strong>

@@ -290,12 +290,12 @@ export default () => (
         content: (
           <>
             <P>
-              ここが重要なポイントなのですが、計算に使うことができるのは{' '}
+              <Bold>Important:</Bold> You can{' '}
               <Strong>
-                <CustomEmoji type="plusOne" /> と{' '}
-                <CustomEmoji type="minusOne" /> だけです
-              </Strong>
-              。
+                only use <CustomEmoji type="plusOne" /> and{' '}
+                <CustomEmoji type="minusOne" />
+              </Strong>{' '}
+              in mathboxes.
             </P>
             <EmojiSeparator
               nodes={[
@@ -305,17 +305,21 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="plusOne" /> と{' '}
-                  <CustomEmoji type="minusOne" /> しか使えない
+                  You can only use <CustomEmoji type="plusOne" /> and{' '}
+                  <CustomEmoji type="minusOne" />
                 </>
               }
             />
             <P>
-              それでは質問です。 <CustomEmoji type="plusOne" /> と{' '}
-              <CustomEmoji type="minusOne" /> しか使えないのであれば、たとえば{' '}
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} />{' '}
-              といった計算はどのように行えばいいのでしょうか？<Emoji>🤔</Emoji>
+              <Bold>Question:</Bold> If you can only use{' '}
+              <CustomEmoji type="plusOne" /> and <CustomEmoji type="minusOne" />
+              , then{' '}
+              <Strong>
+                how do you calculate something like <EmojiNumber number={2} />{' '}
+                <Emoji>➕</Emoji> <EmojiNumber number={2} />
+              </Strong>{' '}
+              using a mathbox?
+              <Emoji>🤔</Emoji>
             </P>
             <EmojiSeparator
               nodes={[
@@ -323,7 +327,7 @@ export default () => (
                 <Emoji>➕</Emoji>,
                 <EmojiNumber number={2} />
               ]}
-              description={<>これを計算したいときはどうすればいい？</>}
+              description={<>How do you calculate this using a mathbox?</>}
             />
           </>
         )
@@ -331,19 +335,18 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="plusOne" /> を2回使う
+            Answer: Use <CustomEmoji type="plusOne" /> twice
           </>
         ),
         content: (
           <>
             <P>
-              正解を教えましょう。
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} /> を計算したい場合、{' '}
+              <Bold>Answer:</Bold> To calculate <EmojiNumber number={2} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={2} />,{' '}
               <Strong>
-                <CustomEmoji type="plusOne" /> を2回
-              </Strong>
-              使えばいいのです。
+                use <CustomEmoji type="plusOne" /> twice
+              </Strong>{' '}
+              on <EmojiNumber number={2} />.
             </P>
             <EmojiSeparator
               nodes={[
@@ -353,21 +356,19 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="plusOne" /> を2回使う
+                  Use <CustomEmoji type="plusOne" /> twice
                 </>
               }
             />
             <P>
-              こちらに <CustomEmoji type="plusOne" />{' '}
-              を2回使った計算箱を用意したので、実際に試してみましょう。
-              <H args={{ name: 'pressPlay' }} />
+              Here’s the mathbox that uses <CustomEmoji type="plusOne" /> twice.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Jiqb />
             <P>
-              結果は <EmojiNumber number={4} /> になり、すなわち{' '}
+              The result is <EmojiNumber number={4} />. So it calculated{' '}
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} />
-              が計算できました！<Emoji>🙂</Emoji>
+              <EmojiNumber number={2} />! <Emoji>🙂</Emoji>
             </P>
           </>
         )
