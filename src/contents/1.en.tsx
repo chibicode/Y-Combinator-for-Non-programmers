@@ -127,9 +127,9 @@ export default () => (
               <Strong>
                 <H args={{ name: 'play' }} /> button
               </Strong>
-              . If you press it, the mathbox calculates the result.
+              . If you press it, the mathbox calculates the result.{' '}
               <Strong>
-                <H args={{ name: 'pressPlay' }} />
+                <H args={{ name: 'pressPlay', capitalize: true }} />
               </Strong>{' '}
               on the mathbox below.
             </P>
@@ -145,7 +145,7 @@ export default () => (
             <P>
               Let’s look at other mathboxes.{' '}
               <Strong>
-                <H args={{ name: 'pressPlay' }} />
+                <H args={{ name: 'pressPlay', capitalize: true }} />
               </Strong>{' '}
               on this one:
             </P>
@@ -167,8 +167,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>To summarize:</Bold> Suppose that you have a mathbox like
-              below:
+              <Bold>Summary:</Bold> Suppose that you have a mathbox like below:
             </P>
             <R.Rviy />
             <Ul>
@@ -200,7 +199,7 @@ export default () => (
               ]}
             />
             <P>
-              This is the first feature of mathbox:{' '}
+              <Bold>This is the first feature of mathbox:</Bold>{' '}
               <H args={{ name: 'plusOneFeature' }} />.{' '}
               <Em>
                 It lets you add <EmojiNumber number={1} /> to some number
@@ -244,9 +243,9 @@ export default () => (
             </P>
             <Hr />
             <P>
-              As you just saw,{' '}
+              <Bold>Summary:</Bold>{' '}
               <Em>
-                if you combine <CustomEmoji type="blankNumber" /> with{' '}
+                If you combine <CustomEmoji type="blankNumber" /> with{' '}
                 <CustomEmoji type="minusOne" />, it will calculate{' '}
                 <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
                 <EmojiNumber number={1} />.
@@ -257,7 +256,7 @@ export default () => (
               <EmojiNumber number={1} />
             </R.Ditw>
             <P>
-              This is the second feature of mathbox:{' '}
+              <Bold>This is the second feature of mathbox:</Bold>{' '}
               <H args={{ name: 'minusOneFeature' }} />.{' '}
               <Em>
                 It lets you subtract <EmojiNumber number={1} /> from some number
@@ -284,8 +283,8 @@ export default () => (
       {
         title: (
           <>
-            使えるのは <CustomEmoji type="plusOne" /> と{' '}
-            <CustomEmoji type="minusOne" /> だけ
+            You can only use <CustomEmoji type="plusOne" /> and{' '}
+            <CustomEmoji type="minusOne" />
           </>
         ),
         content: (
