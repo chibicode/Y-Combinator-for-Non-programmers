@@ -442,14 +442,17 @@ export default () => (
         )
       },
       {
-        title: <>どんな大きな数字の足し算でも引き算でも可能</>,
+        title: <>Calculate any addition or subtraction</>,
         content: (
           <>
             <P>
-              つまり、
-              <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
-              を何度も使うことで、
-              <Em>どんな大きな数字の足し算でも引き算でも可能なのです</Em>。
+              <Bold>Therefore:</Bold> By using <CustomEmoji type="plusOne" />{' '}
+              and <CustomEmoji type="minusOne" /> many times, you can{' '}
+              <Em>
+                calculate any addition or subtraction, no matter how large the
+                numbers are
+              </Em>{' '}
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -468,18 +471,17 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="plusOne" /> も{' '}
-                  <CustomEmoji type="minusOne" /> も何度も使えば、
+                  By using <CustomEmoji type="plusOne" /> and{' '}
+                  <CustomEmoji type="minusOne" /> many times,
                   <br />
-                  どんな大きな数字でも足し算・引き算できる
+                  you can calculate any addition or subtraction
                 </>
               }
             />
             <P>
-              たとえば、
+              <Bold>Example:</Bold> Suppose that you want to calculate{' '}
               <EmojiNumber number={10} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={10} />{' '}
-              を計算したかったら、どうすればいいでしょうか？
+              <EmojiNumber number={10} />. What would the mathbox look like?
             </P>
             <EmojiSeparator
               nodes={[
@@ -489,20 +491,20 @@ export default () => (
               ]}
             />
             <P>
-              答えを言うと、
+              <Bold>Answer:</Bold> Combine{' '}
               <Strong>
-                <EmojiNumber number={10} /> の下に{' '}
-                <CustomEmoji type="plusOne" />{' '}
-                を10回配置した計算箱を実行すればいい
+                <EmojiNumber number={10} /> with ten{' '}
+                <CustomEmoji type="plusOne" />
+                ’s
               </Strong>
-              のです。
+              .
             </P>
             <R.Amoq>
-              <CustomEmoji type="plusOne" /> を10回配置
+              Use <CustomEmoji type="plusOne" /> ten times
             </R.Amoq>
             <P>
-              このようにすれば、
-              <Em>計算箱はどんな大きな数字の足し算でも引き算でもできます</Em>。
+              Now you know how to add or subtract large numbers using a mathbox!{' '}
+              <Emoji>😉</Emoji>
             </P>
           </>
         )
