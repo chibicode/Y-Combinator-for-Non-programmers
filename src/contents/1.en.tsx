@@ -578,19 +578,14 @@ export default () => (
         }
       },
       {
-        title: <>3つめの計算箱の機能</>,
+        title: <>The third feature of a mathbox</>,
         content: (
           <>
             <P>
-              <Em>
-                実は計算箱には、今回紹介した「
-                <H args={{ name: 'plusOneFeature' }} />
-                」や「
-                <H args={{ name: 'minusOneFeature' }} />
-                」以外にも、
-                <Strong>さらにもうひとつ</Strong>
-                の機能があります。
-              </Em>
+              <Bold>Next up:</Bold> It turns out that mathboxes have{' '}
+              <Strong>one more feature</Strong> other than{' '}
+              <H args={{ name: 'plusOneFeature' }} /> and{' '}
+              <H args={{ name: 'minusOneFeature' }} /> that we just described.
             </P>
             <EmojiSeparator
               nodes={[
@@ -598,9 +593,12 @@ export default () => (
                 <CustomEmoji type="minusOne" />,
                 <Emoji>❓</Emoji>
               ]}
-              description={<>3つめの機能がある</>}
+              description={<>A mathbox has one more feature…</>}
             />
-            <P>次のページでは、計算箱の3つめの機能について紹介していきます！</P>
+            <P>
+              We’ll talk about this new feature on the next page!{' '}
+              <Emoji>🤗</Emoji>
+            </P>
             <NextLessonButton />
           </>
         )
