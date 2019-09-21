@@ -28,7 +28,7 @@ export default () => (
                 <CustomEmoji type="mathBox" />,
                 <CustomEmoji type="mathBox" />
               ]}
-              description={<>This is the icon for mathboxes.</>}
+              description={<>This is the icon for mathboxes</>}
             />
           </>
         )
@@ -117,7 +117,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'play' }} /> Button
+            The <H args={{ name: 'play' }} /> button
           </>
         ),
         content: (
@@ -376,20 +376,19 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="plusOne" /> も <CustomEmoji type="minusOne" />{' '}
-            も何回でも使える
+            Use <CustomEmoji type="plusOne" /> and{' '}
+            <CustomEmoji type="minusOne" /> as many times as you like
           </>
         ),
         content: (
           <>
             <P>
-              ちなみに、
+              <Bold>Note:</Bold> You can use both{' '}
               <Strong>
-                <CustomEmoji type="plusOne" /> も{' '}
-                <CustomEmoji type="minusOne" />{' '}
-                も、どちらも何回でも使うことができます
+                <CustomEmoji type="plusOne" /> and{' '}
+                <CustomEmoji type="minusOne" /> as many times as you like
               </Strong>
-              。<Emoji>😉</Emoji>
+              . <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator
               noBottomMargin
@@ -408,36 +407,36 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="plusOne" /> も{' '}
-                  <CustomEmoji type="minusOne" /> も何回でも使える
+                  Use <CustomEmoji type="plusOne" /> and{' '}
+                  <CustomEmoji type="minusOne" />
+                  <br />
+                  as many times as you like
                 </>
               }
             />
             <P>
-              たとえば、下の計算箱は、
+              <Bold>Example:</Bold> This one uses{' '}
               <Strong>
-                <CustomEmoji type="plusOne" /> を3回
-              </Strong>
-              使うことで、
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算してくれます。
+                <CustomEmoji type="plusOne" /> three times
+              </Strong>{' '}
+              to calculate <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />.
             </P>
             <R.Eagi>
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算
+              Calculates <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />
             </R.Eagi>
             <P>
-              一方、下の計算箱は、
+              <Bold>Another Example:</Bold> This one uses{' '}
               <Strong>
-                <CustomEmoji type="minusOne" /> を4回
-              </Strong>
-              使うことで、
-              <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={4} /> を計算してくれます。
+                <CustomEmoji type="minusOne" /> four times
+              </Strong>{' '}
+              to calculate <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={4} />.
             </P>
             <R.Yjur>
-              <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={4} /> を計算
+              Calculates <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={4} />.
             </R.Yjur>
           </>
         )
