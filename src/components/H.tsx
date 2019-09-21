@@ -83,7 +83,7 @@ interface HProps {
     | { name: 'unmatch' }
     | { name: 'nextButtonNextPagePrimaryText' }
     | { name: 'nextButtonSecondaryText'; nextEpisodeNumber: number }
-    | { name: 'pressPlay'; capitalize?: boolean }
+    | { name: 'pressPlay'; capitalize?: true }
     | { name: 'indexPageLink' }
     | { name: 'titlePrefix' }
     | { name: 'titlePrefixColored'; addColon?: boolean }
@@ -138,7 +138,7 @@ interface HProps {
     | { name: 'canBeConverted' }
     | { name: 'plusOneEffect' }
     | { name: 'plusOneFeature'; capitalize?: true }
-    | { name: 'minusOneFeature' }
+    | { name: 'minusOneFeature'; capitalize?: true }
     | { name: 'repeatFeature' }
     | { name: 'conditionFeature' }
     | { name: 'minusOneEffect' }
@@ -544,12 +544,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     }
   }
   if (args.name === 'pressPlay') {
-    const capitalize =
-      typeof args.capitalize === 'undefined' ? true : args.capitalize
     if (locale === 'en') {
       return (
         <Em>
-          {capitalize ? 'T' : 't'}
+          {args.capitalize ? 'T' : 't'}
           ry pressing <H args={{ name: 'play' }} />
         </Em>
       )
@@ -1396,7 +1394,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'minusOneFeature') {
     if (locale === 'en') {
-      return <></>
+      return (
+        <>
+          <Em>
+            {args.capitalize ? 'T' : 't'}he <Strong>“Minus 1”</Strong> feature{' '}
+            <CustomEmoji type="minusOne" />
+          </Em>
+        </>
+      )
     } else {
       return (
         <>

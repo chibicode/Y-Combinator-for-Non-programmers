@@ -161,7 +161,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'plusOneFeature' }} />
+            <H args={{ name: 'plusOneFeature', capitalize: true }} />
           </>
         ),
         content: (
@@ -225,42 +225,44 @@ export default () => (
         )
       },
       {
-        title: <>1を引く機能</>,
+        title: (
+          <>
+            <H args={{ name: 'minusOneFeature', capitalize: true }} />
+          </>
+        ),
         content: (
           <>
             <P>
-              計算箱は「1を足す」だけではなく、「<Strong>1を引く</Strong>
-              」計算をすることもできます。こちらの計算箱を
-              <H args={{ name: 'play' }} />
-              してみてください:
+              Mathboxes can also <Strong>subtract 1</Strong> from a number.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} /> below:
             </P>
             <R.Xmqp />
             <P>
-              結果は <EmojiNumber number={2} /> になりました。すなわち{' '}
+              The result is <EmojiNumber number={2} />. So it calculated{' '}
               <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> が計算できたということです！
-              <Emoji>🙂</Emoji>
+              <EmojiNumber number={1} />! <Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
-              このように、
+              As you just saw,{' '}
               <Em>
-                何らかの数字 <CustomEmoji type="blankNumber" /> の下に{' '}
-                <CustomEmoji type="minusOne" /> が入っていると、
+                if you combine <CustomEmoji type="blankNumber" /> with{' '}
+                <CustomEmoji type="minusOne" />, it will calculate{' '}
                 <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={1} /> を計算することができる
+                <EmojiNumber number={1} />.
               </Em>
-              のです。
             </P>
             <R.Ditw>
-              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} /> を計算できる
+              Calculates <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} />
             </R.Ditw>
             <P>
-              これが、計算箱に備わっているふたつめの機能、「
-              <H args={{ name: 'minusOneFeature' }} />
-              」です。この機能を使えば、何らかの数字から{' '}
-              <EmojiNumber number={1} /> を引く計算を行うことができるのです。
+              This is the second feature of mathbox:{' '}
+              <H args={{ name: 'minusOneFeature' }} />.{' '}
+              <Em>
+                It lets you subtract <EmojiNumber number={1} /> from some number
+              </Em>
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -270,9 +272,9 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の<Strong>1を引く機能:</Strong>
+                  <H args={{ name: 'minusOneFeature', capitalize: true }} />:
                   <br />
-                  何らかの数字から <EmojiNumber number={1} /> を引く
+                  Subtracts <EmojiNumber number={1} /> from some number
                 </>
               }
             />
