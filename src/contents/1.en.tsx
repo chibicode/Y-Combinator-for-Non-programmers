@@ -49,7 +49,7 @@ export default () => (
             <P>
               In Lambda Village, a tool called <Strong>“Mathbox”</Strong> has
               been passed down from one generation to next. As its name
-              suggests, <Bold>Mathbox</Bold> is a magical tool that can solve{' '}
+              suggests, a <Bold>mathbox</Bold> is a magical tool that can solve{' '}
               <Em>math questions</Em>. You can think of it as a{' '}
               <Em>simple calculator</Em>.
             </P>
@@ -510,13 +510,15 @@ export default () => (
         )
       },
       {
-        title: <>ラムダ村の村人は計算がとても苦手</>,
+        title: <>Villagers were very bad at math</>,
         content: (
           <>
             <P>
-              まとめると、
-              <Strong>計算箱は足し算や引き算を行ってくれる魔法の道具</Strong>
-              というわけです。
+              <Bold>Summary:</Bold> A <Bold>Mathbox</Bold> is a{' '}
+              <Strong>
+                magical tool that can calculate additions and subtractions
+              </Strong>
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -524,28 +526,29 @@ export default () => (
                 <CustomEmoji type="mathBox" />,
                 <Emoji>➖</Emoji>
               ]}
-              description={<>計算箱は足し算や引き算ができる</>}
+              description={<>Mathboxes can do additions and subtractions</>}
             />
             <P>
-              そして、ラムダ村の村人は<Strong>計算がとても苦手でした</Strong>。
-              だから、たとえば「
+              <Bold>Why mathboxes were important:</Bold> Villagers in Lambda
+              Village were all <Strong>very bad at math</Strong>. They even had
+              to rely on mathboxes to calculate simple additions like{' '}
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} />
-              」のような単純な足し算をするのにも、村人たちは計算箱に頼りきっていました。
+              <EmojiNumber number={3} />.
             </P>
             <EmojiSeparator
               nodes={[
+                <Emoji>🌲</Emoji>,
                 <Emoji>🙂</Emoji>,
                 <CustomEmoji type="mathBox" />,
-                <Emoji>🙂</Emoji>
+                <Emoji>🙂</Emoji>,
+                <Emoji>🌲</Emoji>
               ]}
               description={
                 <>
-                  俺ら計算が苦手だから、
-                  <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-                  <EmojiNumber number={3} /> といった
+                  We suck at math, so we must use mathboxes
                   <br />
-                  単純な足し算も、計算箱がないとできない！
+                  to do simple additions like <EmojiNumber number={2} />{' '}
+                  <Emoji>➕</Emoji> <EmojiNumber number={3} />!
                 </>
               }
             />
@@ -555,20 +558,20 @@ export default () => (
           content: (
             <>
               <P>
-                <Bold>ちなみに:</Bold>{' '}
+                <Bold>Note:</Bold>{' '}
                 <Em>
-                  残念ながら、計算箱は「<Strong>掛け算</Strong>{' '}
-                  <Emoji>✖️</Emoji>
-                  」や「<Strong>割り算</Strong> <Emoji>➗</Emoji>
-                  」を行うことはできませんでした。
+                  Unfortunately, mathboxes cannot do{' '}
+                  <Strong>multiplications</Strong> <Emoji>✖️</Emoji> or{' '}
+                  <Strong>divisions</Strong> <Emoji>➗</Emoji>.
                 </Em>
               </P>
               <EmojiSeparator
                 emojis={['✖️', '😭', '➗']}
-                description={<>掛け算や割り算は、計算箱ではできない</>}
+                description={<>No multiplications or divisions</>}
               />
               <P>
-                しかし、計算が大の苦手だった村人たちにとって、足し算や引き算ができるだけでも大いにありがたいことでした。
+                However, for villagers who all struggle with math, mathboxes'
+                ability to do addition and subtraction was better than nothing.
               </P>
             </>
           )

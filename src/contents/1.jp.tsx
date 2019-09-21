@@ -529,9 +529,11 @@ export default () => (
             </P>
             <EmojiSeparator
               nodes={[
+                <Emoji>🌲</Emoji>,
                 <Emoji>🙂</Emoji>,
                 <CustomEmoji type="mathBox" />,
-                <Emoji>🙂</Emoji>
+                <Emoji>🙂</Emoji>,
+                <Emoji>🌲</Emoji>
               ]}
               description={
                 <>
