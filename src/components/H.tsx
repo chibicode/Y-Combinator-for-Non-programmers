@@ -124,7 +124,6 @@ interface HProps {
     | { name: 'pageNotFound' }
     | { name: 'lookAtToc' }
     | { name: 'mentionRightArrow' }
-    | { name: 'lookAtThisMathBox' }
     | {
         name: 'conditionSectionName'
         type: 'condition' | 'trueCase' | 'falseCase'
@@ -730,13 +729,6 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>…</>
     } else {
       return <>こちらの弁当箱をご覧ください</>
-    }
-  }
-  if (args.name === 'lookAtThisMathBox') {
-    if (locale === 'en') {
-      return <>…</>
-    } else {
-      return <>こちらの計算箱をご覧ください</>
     }
   }
   if (args.name === 'copy') {

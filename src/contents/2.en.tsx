@@ -343,28 +343,27 @@ export default () => (
         content: (
           <>
             <P>
-              実は計算箱には、こういったミスを防ぐために役立つ「
-              <H args={{ name: 'repeatFeature' }} />
-              」が備わっています。
+              Mathboxes do have a feature that helps avoid mistakes like this.
+              It’s called: <H args={{ name: 'repeatFeature' }} />.
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
-              description={<>繰り返しの機能</>}
+              description={
+                <>
+                  <H args={{ name: 'repeatFeature', capitalize: true }} />
+                </>
+              }
             />
             <P>
-              どんな機能か紹介しましょう。
-              <H args={{ name: 'lookAtThisMathBox' }} />:
+              <Bold>Example:</Bold> Take a look at this mathbox:
             </P>
             <R.Sucz />
             <P>
-              注目ポイントは、
-              <Strong>
-                下の <CustomEmoji type="minusOne" /> の左側に{' '}
-                <InlineBorder>
-                  <EmojiNumber number={8} />
-                </InlineBorder>{' '}
-                の印があることです。
-              </Strong>
+              <Bold>Important:</Bold> There’s{' '}
+              <InlineBorder>
+                <EmojiNumber number={8} />
+              </InlineBorder>{' '}
+              on the bottom left, next to <CustomEmoji type="minusOne" />.
             </P>
           </>
         )
@@ -372,7 +371,7 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="minusOne" /> を繰り返す
+            Repeat <CustomEmoji type="minusOne" />
           </>
         ),
         content: (

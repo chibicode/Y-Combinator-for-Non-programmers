@@ -314,10 +314,7 @@ export default () => (
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
               description={<>繰り返しの機能</>}
             />
-            <P>
-              どんな機能か紹介しましょう。
-              <H args={{ name: 'lookAtThisMathBox' }} />:
-            </P>
+            <P>どんな機能か紹介しましょう。こちらの計算箱をご覧ください:</P>
             <R.Sucz />
             <P>
               注目ポイントは、
