@@ -457,8 +457,8 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Therefore:</Bold> By using <CustomEmoji type="plusOne" />{' '}
-              and <CustomEmoji type="minusOne" /> many times, you can{' '}
+              <Bold>Takeaway:</Bold> By using <CustomEmoji type="plusOne" /> and{' '}
+              <CustomEmoji type="minusOne" /> many times, you can{' '}
               <Em>
                 calculate any addition or subtraction, no matter how large the
                 numbers are

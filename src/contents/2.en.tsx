@@ -261,10 +261,10 @@ export default () => (
             <P>
               If you wanted to calculate <EmojiNumber number={10} />{' '}
               <Emoji>➖</Emoji> <EmojiNumber number={8} />, you need to have{' '}
-              <Strong>8</Strong> <CustomEmoji type="minusOne" />
+              <Strong>eight</Strong> <CustomEmoji type="minusOne" />
               ’s. However,{' '}
               <Em>
-                the previous mathbox actually had only <Strong>7</Strong> of
+                the previous mathbox actually had only <Strong>seven</Strong> of
                 them
               </Em>
               .
@@ -288,15 +288,19 @@ export default () => (
               ]}
               description={
                 <>
-                  Needed <Strong>8</Strong> <CustomEmoji type="minusOne" />
-                  ’s, but there was only <Strong>7</Strong> of them
+                  Needed <Strong>eight</Strong> <CustomEmoji type="minusOne" />
+                  ’s,
+                  <br />
+                  but there was only <Strong>seven</Strong> of them
                 </>
               }
             />
             <P>You can check again:</P>
             <R.Dfjp>
-              Needed <Strong>8</Strong> <CustomEmoji type="minusOne" />
-              ’s, but there was only <Strong>7</Strong> of them
+              Needed <Strong>eight</Strong> <CustomEmoji type="minusOne" />
+              ’s,
+              <br />
+              but there was only <Strong>seven</Strong> of them
             </R.Dfjp>
             <P>
               <Bold>Summary:</Bold> If you put the wrong number of{' '}
@@ -377,32 +381,37 @@ export default () => (
         content: (
           <>
             <P>
+              If you <H args={{ name: 'play', lowerCase: true }} /> the above
+              mathbox,{' '}
               <Em>
-                上の計算箱を
-                <H args={{ name: 'play' }} />
-                すると、計算をする前に、下の部分が次のように変化します。
+                it automatically expands the bottom half before calculating the
+                result
               </Em>
-              変化後には、
-              <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
-              が<Strong>8個</Strong>あるのに注目です。
+              . After the expansion, there are now <Strong>eight</Strong>{' '}
+              <CustomEmoji type="minusOne" />
+              ’s.
             </P>
-            <R.Sucz>計算をする前に…</R.Sucz>
+            <R.Sucz>
+              If you <H args={{ name: 'play', lowerCase: true }} /> this…
+            </R.Sucz>
             <ExpressionRunnerSeparator />
             <R.Xlgb>
-              <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
-              が<Strong>8個</Strong>出現する
+              The bottom half automatically becomes
+              <br />
+              <Strong>eight</Strong> <CustomEmoji type="minusOne" />
+              ’s.
             </R.Xlgb>
             <P>
-              つまり、
+              <Bold>Summary:</Bold>{' '}
               <Strong>
-                左側に{' '}
+                If there’s{' '}
                 <InlineBorder>
                   <EmojiNumber number={8} />
                 </InlineBorder>{' '}
-                の印があると、その部分にあった <CustomEmoji type="minusOne" />{' '}
-                が8回繰り返されるということ
+                next to <CustomEmoji type="minusOne" />, it repeats{' '}
+                <CustomEmoji type="minusOne" /> eight times
               </Strong>
-              です。
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -427,25 +436,26 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="minusOne" /> が8回繰り返される
+                  Repeats <CustomEmoji type="minusOne" /> eight times
                 </>
               }
             />
             <P>
-              ということは <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={8} /> を計算してくれるので、結果は{' '}
-              <EmojiNumber number={2} /> になります。
-              <H args={{ name: 'pressPlay' }} />
+              <Bold>So:</Bold> The above mathbox calculates{' '}
+              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={8} /> and the result is{' '}
+              <EmojiNumber number={2} />.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Pgxb />
             <P>
-              まとめると、
+              <Bold>Takeaway:</Bold> By using{' '}
+              <H args={{ name: 'repeatFeature' }} />,{' '}
               <Em>
-                繰り返しの機能を使うことで、
-                <CustomEmoji type="minusOne" />{' '}
-                を指定した回数分繰り返すことができる
+                you can specify the number of times{' '}
+                <CustomEmoji type="minusOne" /> gets repeated
               </Em>
-              ということです。
+              . <Emoji>🤗</Emoji>
             </P>
           </>
         )

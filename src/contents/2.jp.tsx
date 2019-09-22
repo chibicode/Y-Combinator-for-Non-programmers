@@ -356,12 +356,12 @@ export default () => (
             <P>
               つまり、
               <Strong>
-                左側に{' '}
+                <CustomEmoji type="minusOne" /> の左側に{' '}
                 <InlineBorder>
                   <EmojiNumber number={8} />
                 </InlineBorder>{' '}
-                の印があると、その部分にあった <CustomEmoji type="minusOne" />{' '}
-                が8回繰り返されるということ
+                の印があると、
+                <CustomEmoji type="minusOne" /> が8回繰り返されるということ
               </Strong>
               です。
             </P>
@@ -406,7 +406,7 @@ export default () => (
                 <CustomEmoji type="minusOne" />{' '}
                 を指定した回数分繰り返すことができる
               </Em>
-              ということです。
+              ということです。<Emoji>🤗</Emoji>
             </P>
           </>
         )
