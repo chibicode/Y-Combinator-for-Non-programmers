@@ -208,8 +208,7 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
-            の数を間違えないようにするには
+            <CustomEmoji type="minusOne" /> の数を間違えた
           </>
         ),
         content: (

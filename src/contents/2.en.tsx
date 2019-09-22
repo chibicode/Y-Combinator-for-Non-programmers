@@ -217,8 +217,8 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
-            の数を間違えないようにするには
+            Wrong number of <CustomEmoji type="minusOne" />
+            ’s
           </>
         ),
         content: (
