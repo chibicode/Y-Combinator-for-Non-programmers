@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import { P, Hr, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -460,6 +460,7 @@ export default () => (
                 </Em>
               </UlLi>
             </Ul>
+            <Hr />
             <P>
               これが、計算箱の「
               <H args={{ name: 'repeatFeature' }} />

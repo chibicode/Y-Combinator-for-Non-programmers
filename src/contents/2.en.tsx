@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi, Bold } from 'src/components/ContentTags'
+import { P, Hr, Strong, Em, Ul, UlLi, Bold } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -485,49 +485,62 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの機能</>,
+        title: (
+          <>
+            <H
+              args={{
+                name: 'repeatFeature',
+                capitalize: true,
+                noWrapper: true
+              }}
+            />
+          </>
+        ),
         content: (
           <>
-            <P>つまり、下の計算箱のように、</P>
+            <P>Here’s the summary:</P>
             <R.Bwnp />
             <Ul>
               <UlLi>
                 <Em>
-                  <CustomEmoji type="plusOne" /> の左側に何らかの数字{' '}
+                  If there’s{' '}
                   <InlineBorder>
                     <CustomEmoji type="blankNumber" />
                   </InlineBorder>{' '}
-                  が入っている場合、
+                  to the left of <CustomEmoji type="plusOne" />, then…
                 </Em>
               </UlLi>
               <UlLi>
                 <Em>
-                  <H args={{ name: 'play' }} /> すると、
-                  <CustomEmoji type="plusOne" /> が{' '}
-                  <CustomEmoji type="blankNumber" /> 回分繰り返される。
+                  When you <H args={{ name: 'play' }} /> it,{' '}
+                  <CustomEmoji type="plusOne" /> gets repeated for{' '}
+                  <CustomEmoji type="blankNumber" /> times.
                 </Em>
               </UlLi>
             </Ul>
+            <Hr />
             <P>
-              これが、計算箱の「
-              <H args={{ name: 'repeatFeature' }} />
-              」です。
+              So this is how <H args={{ name: 'repeatFeature' }} /> works!
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
-              description={<>繰り返しの機能</>}
+              description={
+                <>
+                  <H args={{ name: 'repeatFeature' }} />
+                </>
+              }
             />
             <P>
-              もちろん、
+              Of course, you can use{' '}
               <Em>
-                <CustomEmoji type="plusOne" /> の代わりに{' '}
-                <CustomEmoji type="minusOne" /> を使った場合も同じ
-              </Em>
-              ように繰り返されます。
+                <CustomEmoji type="minusOne" /> instead of{' '}
+                <CustomEmoji type="plusOne" />
+              </Em>{' '}
+              as well.
             </P>
             <R.Ewfr>
-              <CustomEmoji type="minusOne" /> を{' '}
-              <CustomEmoji type="blankNumber" /> 回分繰り返す
+              <CustomEmoji type="minusOne" /> gets repeated{' '}
+              <CustomEmoji type="blankNumber" /> times
             </R.Ewfr>
           </>
         )
