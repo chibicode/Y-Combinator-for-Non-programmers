@@ -1370,6 +1370,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           {testimonials.map(id => (
             <TwitterEmbed id={id} key={id} />
           ))}
+          <P>
+            「読んでみたいかも」と思ってくださった方は、下のボタンを押してみてください！
+          </P>
         </>
       )
     }
