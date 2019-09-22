@@ -17,25 +17,25 @@ export const TwoPlusFour = () => (
   <>
     <R.Ednv />
     <P>
-      結果は <EmojiNumber number={6} /> になりました。この計算箱は、
+      The result is <EmojiNumber number={6} />. Because{' '}
       <Em>
-        下の <CustomEmoji type="plusOne" /> の左側に{' '}
+        there’s{' '}
         <InlineBorder>
           <EmojiNumber number={4} />
         </InlineBorder>{' '}
-        があるので、
-        <CustomEmoji type="plusOne" /> が4回繰り返されるのです。
+        next to <CustomEmoji type="plusOne" />, it repeats{' '}
+        <CustomEmoji type="plusOne" /> <Strong>four times</Strong>.
       </Em>
     </P>
     <R.Xpks />
     <ExpressionRunnerSeparator />
     <R.Dgpx>
-      <CustomEmoji type="plusOne" /> が4回繰り返される
+      Repeats <CustomEmoji type="plusOne" /> four times
     </R.Dgpx>
     <ExpressionRunnerSeparator />
     <R.Iwmu>
-      <EmojiNumber number={2} /> <Emoji>➕</Emoji> <EmojiNumber number={4} />{' '}
-      を計算できました！
+      Calculated <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+      <EmojiNumber number={4} />!
     </R.Iwmu>
   </>
 )
@@ -463,24 +463,23 @@ export default () => (
       {
         title: (
           <>
-            <CustomEmoji type="plusOne" /> も繰り返せる
+            You can repeat <CustomEmoji type="plusOne" /> too
           </>
         ),
         content: (
           <>
             <P>
-              もちろん、
               <Strong>
-                <CustomEmoji type="plusOne" /> を繰り返すこともできます。
+                You can also repeat <CustomEmoji type="plusOne" />
+                ’s
               </Strong>
-              こちらの計算箱をご覧になり、
-              <H args={{ name: 'pressPlay' }} />
+              . Take a look at this mathbox, and{' '}
+              <H args={{ name: 'pressPlay' }} />:
             </P>
             <TwoPlusFour />
             <P>
-              こうすれば、
-              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={4} /> を計算できるのです。
+              This is how you can calculate <EmojiNumber number={2} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={4} />. <Emoji>😉</Emoji>
             </P>
           </>
         )
