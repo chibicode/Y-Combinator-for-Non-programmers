@@ -300,7 +300,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Emoji>👍</Emoji> Yes
+          <Emoji>👍</Emoji> <Bold>Yes</Bold>
         </>
       )
     } else {
@@ -316,7 +316,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Emoji>👎</Emoji> No
+          <Emoji>👎</Emoji> <Bold>No</Bold>
         </>
       )
     } else {

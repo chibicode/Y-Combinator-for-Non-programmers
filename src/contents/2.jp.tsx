@@ -122,11 +122,13 @@ export default () => (
             <H args={{ name: 'yesNoQuiz' }} />
           </>
         ),
-        // CHANGE QUIZ: Suppose that they want to do 10 - 9 ... are they doing it right or not? The answer should be no, they made a mistake
         content: (
           <>
             <P>
-              ラムダ村の村人は計算が苦手だったので、簡単な計算でも計算箱に頼っていました。というわけで、あるラムダ村の村人は、計算箱を使って{' '}
+              ラムダ村の村人は計算が苦手だったので、簡単な計算でも計算箱に頼っていました。
+            </P>
+            <P>
+              というわけで、あるラムダ村の村人は、計算箱を使って{' '}
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={8} /> を計算しようとしていました。
             </P>
