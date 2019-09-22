@@ -35,7 +35,7 @@ export const TwoPlusFour = () => (
     <ExpressionRunnerSeparator />
     <R.Iwmu>
       Calculated <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-      <EmojiNumber number={4} />.
+      <EmojiNumber number={4} />
     </R.Iwmu>
   </>
 )
@@ -605,7 +605,7 @@ export default () => (
             <ExpressionRunnerSeparator />
             <R.Vsvt>
               Calculated <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} />.
+              <EmojiNumber number={3} />
             </R.Vsvt>
             <P>
               By using this technique,{' '}
