@@ -88,7 +88,6 @@ export const Conclusion = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: (
@@ -643,13 +642,16 @@ export default () => (
         )
       },
       {
-        title: <>ラムダ村にとって、計算箱は必要不可欠</>,
+        title: <>Villagers couldn’t live without mathboxes</>,
         content: (
           <>
             <P>
-              前回も話したように、
-              <Strong>ラムダ村の村人は計算がとても苦手でした</Strong>
-              。だから彼らは、足し算や引き算を行うときは、計算箱に頼り切っていました。
+              As we mentioned earlier,{' '}
+              <Strong>
+                villagers in Lambda Village were all very bad at math
+              </Strong>
+              . They had to rely on mathboxes to do even simple additions or
+              subtractions.
             </P>
             <EmojiSeparator
               nodes={[
@@ -661,23 +663,17 @@ export default () => (
               ]}
               description={
                 <>
-                  俺ら計算が苦手だから、
+                  We are bad at math,
                   <br />
-                  計算箱が無いとやってけない！
+                  so we can’t live without mathboxes!
                 </>
               }
             />
             <P>
-              村人たちは、計算箱の
-              <Em>
-                「<H args={{ name: 'plusOneFeature' }} />
-                」、「
-                <H args={{ name: 'minusOneFeature' }} />
-                」、そして今回紹介した「
-                <H args={{ name: 'repeatFeature' }} />
-                」を組み合わせる
-              </Em>
-              ことで、足し算や引き算を正確に行っていたのです。
+              They were using mathboxes’ <H args={{ name: 'plusOneFeature' }} />
+              , <H args={{ name: 'minusOneFeature' }} />, and{' '}
+              <H args={{ name: 'repeatFeature' }} /> to do additions and
+              subtractions accurately.
             </P>
             <EmojiSeparator
               nodes={[
@@ -687,20 +683,23 @@ export default () => (
               ]}
               description={
                 <>
-                  計算箱の3つの機能を組み合わせることで、
+                  By combining these three features
                   <br />
-                  足し算や引き算を正確に行うことができる
+                  of a mathbox, you can do
+                  <br />
+                  additions and subtractions accurately.
                 </>
               }
             />
             <P>
-              そんなある日、<Strong>ラムダ村である異変が起きました。</Strong>
+              However, one day, <Strong>something terrible happened</Strong> in
+              Lambda Village that changed everything.
             </P>
             <EmojiSeparator
               emojis={['🌲', '😮', '❓', '😮', '🌲']}
-              description={<>ある日、ラムダ村で異変が！</>}
+              description={<>Something terrible happened!</>}
             />
-            <P>詳しくは次のページでお話します！</P>
+            <P>We’ll talk about it on the next page!</P>
             <NextLessonButton />
           </>
         )
