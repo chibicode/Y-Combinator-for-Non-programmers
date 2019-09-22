@@ -345,7 +345,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           ) : (
             <H args={{ name: 'yesNoQuizNo' }} />
           )}
-          . But don’t worry!
+          . Nice try though!
         </>
       )
     } else {
@@ -582,7 +582,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'yesNoQuizDontWorry') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          <Emoji size="mdlg">😉</Emoji> It’s okay if you have no idea.
+          <br />
+          Just guess!
+        </>
+      )
     } else {
       return (
         <>
