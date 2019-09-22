@@ -280,6 +280,12 @@ export default () => (
                 </>
               }
             />
+            <P>もう一度確認のために見てみてください！</P>
+            <R.Dfjp>
+              <CustomEmoji type="minusOne" /> が8個必要だったが、
+              <br />
+              7個しかなかった
+            </R.Dfjp>
             <P>
               このように、
               <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}

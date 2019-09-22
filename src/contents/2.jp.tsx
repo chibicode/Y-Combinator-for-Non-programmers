@@ -181,7 +181,7 @@ export default () => (
             <R.Lxrk />
             <P>
               答えは <EmojiNumber number={3} />{' '}
-              になりました。つまり、もともと意図していた
+              になりました。つまり、もともと意図していた{' '}
               <Strong>
                 <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
                 <EmojiNumber number={8} /> ではなく、
@@ -270,6 +270,12 @@ export default () => (
                 </>
               }
             />
+            <P>もう一度確認のために見てみてください！</P>
+            <R.Dfjp>
+              <CustomEmoji type="minusOne" /> が8個必要だったが、
+              <br />
+              7個しかなかった
+            </R.Dfjp>
             <P>
               このように、
               <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
