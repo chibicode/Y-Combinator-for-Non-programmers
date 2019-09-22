@@ -183,31 +183,34 @@ export default () => (
         content: (
           <>
             <P>
-              <H args={{ name: 'theAnswerIs', isYes: false, sentence: true }} />
-              <H args={{ name: 'pressPlay' }} />
+              <Strong>
+                <H args={{ name: 'theAnswerIs', isYes: false }} />
+              </Strong>
+              . <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Lxrk />
             <P>
-              答えは <EmojiNumber number={3} />{' '}
-              になりました。つまり、もともと意図していた
-              <Strong>
+              So the result is <EmojiNumber number={3} />.{' '}
+              <Em>
+                Instead of calculating <EmojiNumber number={10} />{' '}
+                <Emoji>➖</Emoji> <EmojiNumber number={8} />, we calculated{' '}
                 <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={8} /> ではなく、
-                <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={7} /> を計算してしまった
-              </Strong>
-              のです。
+                <EmojiNumber number={7} /> by mistake
+              </Em>
+              .
             </P>
             <EmojiSeparator
               emojis={['❌', '😭', '❌']}
               description={
                 <>
-                  <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-                  <EmojiNumber number={8} /> を計算できなかった！
+                  Oops! It didn’t calculate <EmojiNumber number={10} />{' '}
+                  <Emoji>➖</Emoji> <EmojiNumber number={8} />!
                 </>
               }
             />
-            <P>どうしてこうなったか、お分かりでしょうか？</P>
+            <P>
+              Were you able to figure out why this happened? <Emoji>😉</Emoji>
+            </P>
           </>
         )
       },

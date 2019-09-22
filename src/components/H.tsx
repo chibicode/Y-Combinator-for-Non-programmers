@@ -763,7 +763,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'theAnswerIs') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          The answer is{' '}
+          {args.isYes ? (
+            <H args={{ name: 'yesNoQuizYes' }} />
+          ) : (
+            <H args={{ name: 'yesNoQuizNo' }} />
+          )}
+        </>
+      )
     } else {
       const childNode = (
         <Fragment>
