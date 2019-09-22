@@ -529,6 +529,7 @@ export default () => (
             <P>
               このようにすれば、
               <CustomEmoji type="plusOne" /> の数を間違えることはありませんね！
+              <Emoji>😉</Emoji>
             </P>
           </>
         )

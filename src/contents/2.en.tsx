@@ -35,7 +35,7 @@ export const TwoPlusFour = () => (
     <ExpressionRunnerSeparator />
     <R.Iwmu>
       Calculated <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-      <EmojiNumber number={4} />!
+      <EmojiNumber number={4} />.
     </R.Iwmu>
   </>
 )
@@ -169,7 +169,7 @@ export default () => (
             <P>So he came up with the following mathbox:</P>
             <R.Dfjp>
               <Emoji>😉</Emoji> This will calculate <EmojiNumber number={10} />{' '}
-              <Emoji>➖</Emoji> <EmojiNumber number={8} />!
+              <Emoji>➖</Emoji> <EmojiNumber number={8} />.
             </R.Dfjp>
             <P>
               <Bold>Question:</Bold> Will the above mathbox correctly calculate{' '}
@@ -214,7 +214,7 @@ export default () => (
               description={
                 <>
                   Oops! It didn’t calculate <EmojiNumber number={10} />{' '}
-                  <Emoji>➖</Emoji> <EmojiNumber number={8} />!
+                  <Emoji>➖</Emoji> <EmojiNumber number={8} />.
                 </>
               }
             />
@@ -548,62 +548,65 @@ export default () => (
       {
         title: (
           <>
-            <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算するには
+            How to calculate <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
+            <Emoji>🅱️</Emoji>
           </>
         ),
         content: (
           <>
             <P>
-              ということは、もし例えば <Emoji>🅰️</Emoji> <Emoji>➕</Emoji>{' '}
-              <Emoji>🅱️</Emoji>{' '}
-              を計算したかったら、以下のような計算箱を用意すればいいのです。
+              <Bold>So:</Bold> If you want to calculate <Emoji>🅰️</Emoji>{' '}
+              <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>, you can use the following
+              mathbox:
             </P>
             <R.Nmbt>
-              <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji> を計算
+              Calculates <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>
             </R.Nmbt>
             <P>
-              たとえば、
-              <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算するには、<Emoji>🅰️</Emoji> に{' '}
-              <EmojiNumber number={5} /> を、<Emoji>🅱️</Emoji> に{' '}
-              <EmojiNumber number={3} /> を入れます。
+              <Bold>Example:</Bold> To calculate <EmojiNumber number={5} />{' '}
+              <Emoji>➕</Emoji> <EmojiNumber number={3} />, set{' '}
+              <Emoji>🅰️</Emoji> as <EmojiNumber number={5} /> and{' '}
+              <Emoji>🅱️</Emoji> as <EmojiNumber number={3} />.
             </P>
             <R.Etku>
-              <Emoji>🅰️</Emoji> に <EmojiNumber number={5} /> を、
-              <Emoji>🅱️</Emoji> に <EmojiNumber number={3} /> を入れる
+              Set <Emoji>🅰️</Emoji> as <EmojiNumber number={5} /> and{' '}
+              <Emoji>🅱️</Emoji> as <EmojiNumber number={3} />.
             </R.Etku>
             <P>
-              後は
-              <H args={{ name: 'play' }} /> するだけで、
-              <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算してくれます。
+              If you <H args={{ name: 'play', lowerCase: true }} /> it, it
+              calculates <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />.
             </P>
             <R.Iczf>
-              <CustomEmoji type="plusOne" /> を3回繰り返します
+              Repeat <CustomEmoji type="plusOne" /> three times
             </R.Iczf>
             <ExpressionRunnerSeparator />
             <R.Vsvt>
-              <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={3} /> を計算できました！
+              Calculated <EmojiNumber number={5} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={3} />.
             </R.Vsvt>
             <P>
-              このようにすれば、
-              <CustomEmoji type="plusOne" /> の数を間違えることはありませんね！
+              By using this technique,{' '}
+              <Strong>
+                you won’t use the wrong number of <CustomEmoji type="plusOne" />
+                ’s again!
+              </Strong>{' '}
+              <Emoji>😉</Emoji>
             </P>
           </>
         )
       },
       {
-        title: <>引き算も同じ</>,
+        title: <>Same for subtraction</>,
         content: (
           <>
             <P>
-              引き算でも同じです。<Emoji>🅰️</Emoji> <Emoji>➖</Emoji>{' '}
-              <Emoji>🅱️</Emoji>{' '}
-              を計算するには、以下のような計算箱を使えばできます。
+              <Bold>You can use the same technique for subtraction:</Bold> To
+              calculate <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>,{' '}
+              use the following mathbox:
             </P>
             <R.Jaqs>
-              <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji> を計算
+              Calculates <Emoji>🅰️</Emoji> <Emoji>➖</Emoji> <Emoji>🅱️</Emoji>
             </R.Jaqs>
           </>
         )

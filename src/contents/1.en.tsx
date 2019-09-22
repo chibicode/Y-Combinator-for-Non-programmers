@@ -138,7 +138,7 @@ export default () => (
                 The result is <EmojiNumber number={2} />
               </Strong>
               . That means it calculated <EmojiNumber number={1} />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={1} />! <Emoji>🙂</Emoji>
+              <Emoji>➕</Emoji> <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
@@ -152,7 +152,7 @@ export default () => (
             <P>
               The result is <EmojiNumber number={4} />, which means it
               calculated <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={1} />! <Emoji>🙂</Emoji>
+              <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
             </P>
           </>
         )
@@ -250,7 +250,7 @@ export default () => (
             <P>
               The result is <EmojiNumber number={2} />. So it calculated{' '}
               <EmojiNumber number={3} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={1} />! <Emoji>🙂</Emoji>
+              <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
@@ -379,7 +379,7 @@ export default () => (
             <P>
               The result is <EmojiNumber number={4} />. So it calculated{' '}
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
-              <EmojiNumber number={2} />! <Emoji>🙂</Emoji>
+              <EmojiNumber number={2} />. <Emoji>🙂</Emoji>
             </P>
           </>
         )
@@ -559,7 +559,7 @@ export default () => (
                   We suck at math, so we must use mathboxes
                   <br />
                   to do simple additions like <EmojiNumber number={2} />{' '}
-                  <Emoji>➕</Emoji> <EmojiNumber number={3} />!
+                  <Emoji>➕</Emoji> <EmojiNumber number={3} />.
                 </>
               }
             />
