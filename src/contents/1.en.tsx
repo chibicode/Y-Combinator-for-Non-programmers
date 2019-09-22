@@ -521,7 +521,7 @@ export default () => (
         )
       },
       {
-        title: <>Villagers were very bad at math</>,
+        title: <>The villagers were very bad at math</>,
         content: (
           <>
             <P>
@@ -540,7 +540,7 @@ export default () => (
               description={<>Mathboxes can do additions and subtractions</>}
             />
             <P>
-              <Bold>Why mathboxes were important:</Bold> Villagers in Lambda
+              <Bold>Why mathboxes were important:</Bold> The villagers in Lambda
               Village were all <Strong>very bad at math</Strong>. They even had
               to rely on mathboxes to calculate simple additions like{' '}
               <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
@@ -581,8 +581,9 @@ export default () => (
                 description={<>No multiplications or divisions</>}
               />
               <P>
-                However, for villagers who all struggle with math, mathboxes'
-                ability to do addition and subtraction was better than nothing.
+                However, for the villagers who all struggle with math,
+                mathboxes' ability to do addition and subtraction was better
+                than nothing.
               </P>
             </>
           )

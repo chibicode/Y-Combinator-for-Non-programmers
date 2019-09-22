@@ -65,7 +65,7 @@ export const Conclusion = () => (
           name: 'repeatFeature'
         }}
       />{' '}
-      was absolutely necessary for villagers in Lambda Village.
+      was absolutely necessary for the villagers in Lambda Village.
     </P>
     <EmojiSeparator
       emojis={['➕', '🤗', '➖']}
@@ -115,7 +115,13 @@ export default () => (
                 <Emoji>🙂</Emoji>,
                 <Emoji>🌲</Emoji>
               ]}
-              description={<>Villagers in Lambda Village and their mathbox</>}
+              description={
+                <>
+                  The villagers in Lambda Village
+                  <br />
+                  and their mathbox
+                </>
+              }
             />
             <P>
               We also talked about the first two features of a mathbox:{' '}
@@ -165,8 +171,8 @@ export default () => (
         content: (
           <>
             <P>
-              Villagers living in Lambda Village were all bad at math, so they
-              had to rely on mathboxes to solve even the simplest problems.
+              The villagers living in Lambda Village were all bad at math, so
+              they had to rely on mathboxes to solve even the simplest problems.
             </P>
             <P>
               One day, a villager attempted to use a mathbox to calculate{' '}
@@ -642,13 +648,13 @@ export default () => (
         )
       },
       {
-        title: <>Villagers couldn’t live without mathboxes</>,
+        title: <>The villagers couldn’t live without mathboxes</>,
         content: (
           <>
             <P>
               As we mentioned earlier,{' '}
               <Strong>
-                villagers in Lambda Village were all very bad at math
+                the villagers in Lambda Village were all very bad at math
               </Strong>
               . They had to rely on mathboxes to do even simple additions or
               subtractions.
