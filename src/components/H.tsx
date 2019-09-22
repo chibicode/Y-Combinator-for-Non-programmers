@@ -139,7 +139,7 @@ interface HProps {
     | { name: 'plusOneEffect' }
     | { name: 'plusOneFeature'; capitalize?: true }
     | { name: 'minusOneFeature'; capitalize?: true }
-    | { name: 'repeatFeature' }
+    | { name: 'repeatFeature'; capitalize?: true }
     | { name: 'conditionFeature' }
     | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
@@ -1412,7 +1412,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'repeatFeature') {
     if (locale === 'en') {
-      return <></>
+      return (
+        <>
+          <Em>
+            {args.capitalize ? 'T' : 't'}he <Strong>Repeat</Strong> feature{' '}
+            <Emoji>🔁</Emoji>
+          </Em>
+        </>
+      )
     } else {
       return (
         <>

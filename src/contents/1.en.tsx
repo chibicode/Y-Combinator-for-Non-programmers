@@ -11,7 +11,6 @@ import * as R from 'src/components/Runners'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>Welcome!</>,
