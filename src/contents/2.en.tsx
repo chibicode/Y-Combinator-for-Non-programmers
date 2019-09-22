@@ -43,20 +43,43 @@ export const TwoPlusFour = () => (
 export const Conclusion = () => (
   <>
     <P>
-      このように繰り返しの機能を使えば、
+      By using{' '}
+      <H
+        args={{
+          name: 'repeatFeature'
+        }}
+      />
+      ,{' '}
       <Strong>
-        <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
-        を数え間違えることなく、確実に足し算や引き算を行うことができます。
+        you’ll always use the correct number of <CustomEmoji type="plusOne" />
+        ’s or <CustomEmoji type="minusOne" />
+        ’s
       </Strong>
-      だからこそ、繰り返しの機能はラムダ村で重宝されていたのです。
+      . That means you can be confident that your additions and subtractions are
+      accurate.
+    </P>
+    <P>
+      This is why{' '}
+      <H
+        args={{
+          name: 'repeatFeature'
+        }}
+      />{' '}
+      was absolutely necessary for villagers in Lambda Village.
     </P>
     <EmojiSeparator
       emojis={['➕', '🤗', '➖']}
       description={
         <>
-          繰り返しの機能を使えば、
+          By using{' '}
+          <H
+            args={{
+              name: 'repeatFeature'
+            }}
+          />
+          , we can do
           <br />
-          確実に足し算や引き算を行える！
+          additions and subtractions accurately!
         </>
       }
     />
@@ -612,7 +635,7 @@ export default () => (
         )
       },
       {
-        title: <>確実に足し算や引き算を行う</>,
+        title: <>Do additions and subtractions accurately</>,
         content: (
           <>
             <Conclusion />
