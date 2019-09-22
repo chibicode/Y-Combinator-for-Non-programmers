@@ -68,7 +68,17 @@ export default () => (
     underConstruction
     cards={[
       {
-        title: <>The “Repeat” Feature</>,
+        title: (
+          <>
+            <H
+              args={{
+                name: 'repeatFeature',
+                capitalize: true,
+                noWrapper: true
+              }}
+            />
+          </>
+        ),
         content: (
           <>
             <P>
@@ -319,7 +329,17 @@ export default () => (
         )
       },
       {
-        title: <>繰り返しの機能</>,
+        title: (
+          <>
+            <H
+              args={{
+                name: 'repeatFeature',
+                capitalize: true,
+                noWrapper: true
+              }}
+            />
+          </>
+        ),
         content: (
           <>
             <P>

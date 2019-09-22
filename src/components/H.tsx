@@ -137,9 +137,9 @@ interface HProps {
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
     | { name: 'plusOneEffect' }
-    | { name: 'plusOneFeature'; capitalize?: true }
-    | { name: 'minusOneFeature'; capitalize?: true }
-    | { name: 'repeatFeature'; capitalize?: true }
+    | { name: 'plusOneFeature'; capitalize?: true; noWrapper?: true }
+    | { name: 'minusOneFeature'; capitalize?: true; noWrapper?: true }
+    | { name: 'repeatFeature'; capitalize?: true; noWrapper?: true }
     | { name: 'conditionFeature' }
     | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
@@ -1391,12 +1391,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'plusOneFeature') {
     if (locale === 'en') {
-      return (
+      const content = (
         <>
-          <Em>
-            {args.capitalize ? 'T' : 't'}he <Strong>“Plus 1”</Strong> feature{' '}
-            <CustomEmoji type="plusOne" />
-          </Em>
+          {args.capitalize ? 'T' : 't'}he <Bold>“Plus 1”</Bold> feature{' '}
+          <CustomEmoji type="plusOne" />
+        </>
+      )
+      return args.noWrapper ? (
+        content
+      ) : (
+        <>
+          <Em>{content}</Em>
         </>
       )
     } else {
@@ -1409,12 +1414,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'minusOneFeature') {
     if (locale === 'en') {
-      return (
+      const content = (
         <>
-          <Em>
-            {args.capitalize ? 'T' : 't'}he <Strong>“Minus 1”</Strong> feature{' '}
-            <CustomEmoji type="minusOne" />
-          </Em>
+          {args.capitalize ? 'T' : 't'}he <Bold>“Minus 1”</Bold> feature{' '}
+          <CustomEmoji type="minusOne" />
+        </>
+      )
+      return args.noWrapper ? (
+        content
+      ) : (
+        <>
+          <Em>{content}</Em>
         </>
       )
     } else {
@@ -1427,12 +1437,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'repeatFeature') {
     if (locale === 'en') {
-      return (
+      const content = (
         <>
-          <Em>
-            {args.capitalize ? 'T' : 't'}he <Strong>Repeat</Strong> feature{' '}
-            <Emoji>🔁</Emoji>
-          </Em>
+          {args.capitalize ? 'T' : 't'}he <Bold>Repeat</Bold> feature{' '}
+          <Emoji>🔁</Emoji>
+        </>
+      )
+      return args.noWrapper ? (
+        content
+      ) : (
+        <>
+          <Em>{content}</Em>
         </>
       )
     } else {

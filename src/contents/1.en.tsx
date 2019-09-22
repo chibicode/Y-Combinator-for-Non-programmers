@@ -160,7 +160,13 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'plusOneFeature', capitalize: true }} />
+            <H
+              args={{
+                name: 'plusOneFeature',
+                capitalize: true,
+                noWrapper: true
+              }}
+            />
           </>
         ),
         content: (
@@ -225,7 +231,13 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'minusOneFeature', capitalize: true }} />
+            <H
+              args={{
+                name: 'minusOneFeature',
+                capitalize: true,
+                noWrapper: true
+              }}
+            />
           </>
         ),
         content: (
