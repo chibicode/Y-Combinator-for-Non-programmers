@@ -224,14 +224,16 @@ export default () => (
         content: (
           <>
             <P>
+              The reason it calculated <EmojiNumber number={10} />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={7} /> instead of{' '}
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={8} /> ではなく、
-              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={7} /> を計算してしまった理由は、
+              <EmojiNumber number={8} /> is because there was the wrong number
+              of{' '}
               <Strong>
-                <CustomEmoji type="minusOne" /> の数が間違っていたから
+                <CustomEmoji type="minusOne" />
+                ’s
               </Strong>
-              です。
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -241,20 +243,21 @@ export default () => (
               ]}
               description={
                 <>
-                  <CustomEmoji type="minusOne" /> の数が間違っていた
+                  Wrong number of <CustomEmoji type="minusOne" />
+                  ’s
                 </>
               }
             />
             <P>
-              <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={8} /> を計算したければ、
-              <CustomEmoji type="minusOne" /> を<Strong>8個配置する</Strong>
-              必要がありますが、
+              If you wanted to calculate <EmojiNumber number={10} />{' '}
+              <Emoji>➖</Emoji> <EmojiNumber number={8} />, you need to have{' '}
+              <Strong>8</Strong> <CustomEmoji type="minusOne" />
+              ’s. However,{' '}
               <Em>
-                先ほどの計算箱には <CustomEmoji type="minusOne" /> が
-                <Strong>7個しか</Strong>ありませんでした
+                the previous mathbox actually had only <Strong>7</Strong> of
+                them
               </Em>
-              。
+              .
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -269,28 +272,32 @@ export default () => (
                 <CustomEmoji
                   type="minusOne"
                   cssOverrides={css`
-                    opacity: 0.4;
+                    opacity: 0.3;
                   `}
                 />
               ]}
               description={
                 <>
-                  <CustomEmoji type="minusOne" />{' '}
-                  が8個必要だったが、7個しかなかった
+                  Needed <Strong>8</Strong> <CustomEmoji type="minusOne" />
+                  ’s, but there was only <Strong>7</Strong> of them
                 </>
               }
             />
-            <P>もう一度確認のために見てみてください！</P>
+            <P>You can check again:</P>
             <R.Dfjp>
-              <CustomEmoji type="minusOne" /> が8個必要だったが、
-              <br />
-              7個しかなかった
+              Needed <Strong>8</Strong> <CustomEmoji type="minusOne" />
+              ’s, but there was only <Strong>7</Strong> of them
             </R.Dfjp>
             <P>
-              このように、
-              <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
-              の数をひとつでも間違えると、計算箱では正確な計算ができません。
-              <Em>ではどうすれば、こういったミスを防げるのでしょうか？</Em>
+              <Bold>Summary:</Bold> If you put the wrong number of{' '}
+              <CustomEmoji type="plusOne" />
+              ’s or <CustomEmoji type="minusOne" />
+              ’s, then you won’t be able to calculate additions or subtractions
+              correctly.
+            </P>
+            <P>
+              <Bold>Now, here’s a question:</Bold>{' '}
+              <Em>How can we avoid mistakes like this?</Em>
             </P>
             <EmojiSeparator
               nodes={[
@@ -300,11 +307,11 @@ export default () => (
               ]}
               description={
                 <>
-                  どうすれば、
-                  <CustomEmoji type="plusOne" /> や{' '}
-                  <CustomEmoji type="minusOne" /> の数を
+                  How do we avoid putting
                   <br />
-                  間違えずにすむのか？
+                  the wrong number of <CustomEmoji type="plusOne" />
+                  ’s or <CustomEmoji type="minusOne" />
+                  ’s?
                 </>
               }
             />

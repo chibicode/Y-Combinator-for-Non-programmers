@@ -259,7 +259,7 @@ export default () => (
                 <CustomEmoji
                   type="minusOne"
                   cssOverrides={css`
-                    opacity: 0.4;
+                    opacity: 0.3;
                   `}
                 />
               ]}
