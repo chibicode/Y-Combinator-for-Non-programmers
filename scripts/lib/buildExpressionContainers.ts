@@ -21,7 +21,7 @@ const buildExpressionContainers = ({
 }: ExpressionRunnerConfig): readonly ExpressionContainer[] => {
   if (initialExpressionContainer) {
     let currentExpressionContainer: SteppedExpressionContainer = initialExpressionContainer
-    let results: ExpressionContainer[] = []
+    const results: ExpressionContainer[] = []
     const stepOptions = {
       showAllShowSteps,
       skipAlphaConvert,
