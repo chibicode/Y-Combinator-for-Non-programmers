@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
-import { InlineHighlightType } from 'src/types/ContentTagTypes'
+import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import InlineBorder from 'src/components/InlineBorder'
 import { useContext } from 'react'
 import {
