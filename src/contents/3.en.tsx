@@ -342,8 +342,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        These are traditional Japanese lunchboxes (called{' '}
-                        <Bold>“Bento Boxes”</Bold>).
+                        These are <Bold>traditional Japanese lunchboxes</Bold>{' '}
+                        (called <Bold>“Bento Boxes”</Bold>).
                       </P>
                       <P>
                         As you can see,{' '}
@@ -387,32 +387,50 @@ export default () => (
                 }}
               />
             </R.Ilpo>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'surprised',
+                  children: (
+                    <>
+                      <P>It looks like a Japanese lunchbox!</P>
+                      <P>
+                        <Italic>
+                          It has 3 sections, each containing some food item.
+                        </Italic>
+                      </P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        Yes. It’s called{' '}
+                        <HighlightBold>
+                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                        </HighlightBold>{' '}
+                        because it looks like a Japanese lunchbox.
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <P>
-              <Bold>解説:</Bold> 上のように、
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              には、実際の弁当箱のように、
-              <Highlight>
-                四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
-              </Highlight>
-              。
-            </P>
-            <P>
-              この例だと、上段には
-              <EmojiWithText letter="b" />
-              が入っており、
+              <Bold>Explanation:</Bold> In this example, the top section has a{' '}
+              <EmojiWithText letter="b" />:
             </P>
             <R.Vowa>
-              上段には
-              <EmojiWithText letter="b" />
+              The top section has a <EmojiWithText letter="b" />
             </R.Vowa>
             <P>
-              下段には
-              <EmojiWithText letter="a" />
-              がふたつ入っています。
+              And each of the bottom two sections has a{' '}
+              <EmojiWithText letter="a" />, a traditional Japanese food:
             </P>
             <R.Elku>
-              下段には
-              <EmojiWithText letter="a" />
+              Each of the bottom two sections has a <EmojiWithText letter="a" />
             </R.Elku>
             <BubbleQuotes
               quotes={[
