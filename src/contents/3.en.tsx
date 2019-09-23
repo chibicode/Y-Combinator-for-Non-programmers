@@ -83,7 +83,7 @@ export default () => (
         )
       },
       {
-        title: <>なぜ計算箱を没収？</>,
+        title: <>Why did the devil take mathboxes?</>,
         content: (
           <>
             <P>
@@ -100,38 +100,38 @@ export default () => (
               ]}
               description={<>I’m taking all your mathboxes!</>}
             />
-            <P>ラムダ村からは、すべての計算箱が無くなってしまいました。</P>
+            <P>All of the mathboxes are now gone.</P>
             <R.Dgyc>
-              <Emoji>😈</Emoji> 計算箱は没収だ！
+              <Emoji>😈</Emoji> Bye bye, mathboxes!
             </R.Dgyc>
             <R.Ggxl></R.Ggxl>
             <P>
-              足し算や引き算をするのに計算箱に頼り切っていた村人たちは嘆きました。
+              The villagers, who all relied on mathboxes for doing additions and
+              subtractions, were very upset.
             </P>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'crying',
-                  children: (
-                    <P>悪魔め、どうして俺らから計算箱を取り上げるんだ！</P>
-                  )
+                  children: <P>The devil! Why did you do this to us?</P>
                 },
                 {
                   type: 'sad',
                   children: (
                     <>
                       <P>
-                        <Em>俺らは計算が大の苦手なんだ。</Em>
+                        <Em>We’re all really bad at math.</Em>
                       </P>
                       <P>
-                        計算箱がないと、足し算や引き算ができなくなって、村の経済が成り立たなくなるんだぞ！
+                        Without mathboxes, we can’t do any calculations. Our
+                        businesses will struggle, and our economy will crash!
                       </P>
                     </>
                   )
                 }
               ]}
             />
-            <P>悪魔は答えます。</P>
+            <P>The devil answers:</P>
             <BubbleQuotes
               quotes={[
                 {
@@ -139,12 +139,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
-                          計算箱を取り上げたのは、お前たちが計算が苦手だからだよ。
-                        </Strong>
+                        That’s exactly why I took away your mathboxes.{' '}
+                        <Strong>It’s because you all are bad at math.</Strong>
                       </P>
                       <P>
-                        お前たちは簡単な計算をするのにでも計算箱に頼り切っているだろう。そんなことだから、いつまでたっても計算が上達しないんだ。
+                        You see, your math skill hasn’t improved because you’re
+                        relying on mathboxes to do even simple additions and
+                        subtractions.
                       </P>
                     </>
                   )
@@ -153,7 +154,7 @@ export default () => (
                   type: 'roll',
                   children: (
                     <>
-                      <P>それは図星かも…</P>
+                      <P>Hmm… you’re right…</P>
                     </>
                   )
                 },
@@ -163,16 +164,17 @@ export default () => (
                     <>
                       <P>
                         <Em>
-                          だから計算箱を取り上げることで、お前たちが計算を勉強するきっかけを作ってやったのさ。
-                        </Em>
-                        感謝するんだな！
+                          So, by taking away your mathboxes, I’m giving you an
+                          opportunity to finally study math.
+                        </Em>{' '}
+                        You should thank me for it!
                       </P>
                     </>
                   )
                 },
                 {
                   type: 'sad',
-                  children: <P>そんな…勉強なんてしたくないよ！</P>
+                  children: <P>But…but…we don’t want to study math!</P>
                 }
               ]}
             />
