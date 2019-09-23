@@ -55,7 +55,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>Don’t worry. I’m not here to take your life…</P>
+                      <P>Don’t worry. I’m not here to take your lives away…</P>
                       <P>
                         <Em>
                           However, I will take{' '}
@@ -87,17 +87,18 @@ export default () => (
         content: (
           <>
             <P>
-              こうして悪魔は、
-              <Strong>ラムダ村から計算箱を取り上げてしまったのです。</Strong>
+              <Bold>And just like that:</Bold> The devil has stolen{' '}
+              <Strong>all of the mathboxes</Strong> in Lambda Village.
             </P>
             <EmojiSeparator
               nodes={[
                 <Emoji>🌲</Emoji>,
+                <CustomEmoji type="mathBox" />,
                 <Emoji>😈</Emoji>,
                 <CustomEmoji type="mathBox" />,
                 <Emoji>🌲</Emoji>
               ]}
-              description={<>計算箱は没収だ！</>}
+              description={<>I’m taking all your mathboxes!</>}
             />
             <P>ラムダ村からは、すべての計算箱が無くなってしまいました。</P>
             <R.Dgyc>
