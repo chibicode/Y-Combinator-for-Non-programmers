@@ -11,9 +11,11 @@ import {
   Italic
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
 import CustomEmoji from 'src/components/CustomEmoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import H from 'src/components/H'
@@ -439,10 +441,31 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なんとなく、
-                        <Highlight>見た目が計算箱に似ている</Highlight>
-                        気がするなあ。数字の代わりに、料理が入っているけど。
+                        I noticed that it also looks like a <Bold>mathbox</Bold>
+                        .{' '}
+                        <Italic>
+                          A mathbox contains numbers, but a lunchbox contains
+                          food items
+                        </Italic>
+                        .
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={1} />,
+                          <CustomEmoji type="mathBox" />,
+                          <EmojiNumber number={2} />
+                        ]}
+                        description={<>A mathbox contains numbers…</>}
+                      />
+                      <ExpressionRunnerSeparator />
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiForLetter letter="a" />,
+                          <Emoji>🍱</Emoji>,
+                          <EmojiForLetter letter="b" />
+                        ]}
+                        description={<>And a lunchbox contains food items.</>}
+                      />
                     </>
                   )
                 },
@@ -451,17 +474,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実はこの
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        は、<Highlight>計算箱と密接な関係がある</Highlight>
-                        んだが、これについては後に説明する。
+                        Actually, <H args={{ name: 'bentoBoxPuzzle' }} /> is{' '}
+                        <Italic>related</Italic> to mathboxes, but we’ll talk
+                        about that later.
                       </P>
                       <P>
-                        とりあえず今は、
-                        <Highlight>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />の
-                          <H args={{ name: 'play' }} /> について見ていこう。
-                        </Highlight>
+                        For now, let’s talk about how we can{' '}
+                        <H args={{ name: 'play', lowerCase: true }} />{' '}
+                        <H
+                          args={{ name: 'bentoBoxPuzzle', indefinite: true }}
+                        />
+                        .
                       </P>
                     </>
                   )

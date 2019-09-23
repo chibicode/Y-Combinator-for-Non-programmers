@@ -8,9 +8,11 @@ import {
   Bold
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
+import EmojiForLetter from 'src/components/EmojiForLetter'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
 import CustomEmoji from 'src/components/CustomEmoji'
+import EmojiNumber from 'src/components/EmojiNumber'
 import Emoji from 'src/components/Emoji'
 import EmojiWithText from 'src/components/EmojiWithText'
 import H from 'src/components/H'
@@ -366,6 +368,23 @@ export default () => (
                         <Highlight>見た目が計算箱に似ている</Highlight>
                         気がするなあ。数字の代わりに、料理が入っているけど。
                       </P>
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiNumber number={1} />,
+                          <CustomEmoji type="mathBox" />,
+                          <EmojiNumber number={2} />
+                        ]}
+                        description={<>計算箱には数字が入っているけど…</>}
+                      />
+                      <ExpressionRunnerSeparator />
+                      <EmojiSeparator
+                        nodes={[
+                          <EmojiForLetter letter="a" />,
+                          <Emoji>🍱</Emoji>,
+                          <EmojiForLetter letter="b" />
+                        ]}
+                        description={<>弁当箱には料理が入っている</>}
+                      />
                     </>
                   )
                 },
