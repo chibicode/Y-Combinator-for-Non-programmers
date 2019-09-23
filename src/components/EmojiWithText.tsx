@@ -10,18 +10,22 @@ import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 interface EmojiWithTextProps {
   letter: VariableNames
   size: EmojiProps['size']
+  capitalize?: true
 }
 
-const EmojiWithText = ({ letter, size }: EmojiWithTextProps) => {
+const EmojiWithText = ({ letter, size, capitalize }: EmojiWithTextProps) => {
   const { inQuote } = useContext(BubbleQuoteContext)
   const emoji = letterEmojiMapping[letter]
   const label = emojiLabelMapping[emoji]
   if (!label) {
     throw new Error()
   }
+  const labelText = capitalize
+    ? label[locale][0].toUpperCase() + label[locale].slice(1)
+    : label[locale]
   return (
     <Highlight highlightType={inQuote ? 'blue' : 'white'}>
-      {label[locale]} <Emoji size={size}>{emoji}</Emoji>{' '}
+      {labelText} <Emoji size={size}>{emoji}</Emoji>{' '}
     </Highlight>
   )
 }
