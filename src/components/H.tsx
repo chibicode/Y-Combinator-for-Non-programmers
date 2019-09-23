@@ -71,7 +71,6 @@ interface HProps {
     | {
         name: 'bentoBoxPuzzle'
         capitalize?: true
-        noWrapper?: true
       }
     | { name: 'next' }
     | { name: 'play'; lowerCase?: true }
@@ -138,9 +137,9 @@ interface HProps {
     | { name: 'doneConvertToMathbox' }
     | { name: 'canBeConverted' }
     | { name: 'plusOneEffect' }
-    | { name: 'plusOneFeature'; capitalize?: true; noWrapper?: true }
-    | { name: 'minusOneFeature'; capitalize?: true; noWrapper?: true }
-    | { name: 'repeatFeature'; capitalize?: true; noWrapper?: true }
+    | { name: 'plusOneFeature'; capitalize?: true }
+    | { name: 'minusOneFeature'; capitalize?: true }
+    | { name: 'repeatFeature'; capitalize?: true }
     | { name: 'conditionFeature' }
     | { name: 'minusOneEffect' }
     | { name: 'startWithTwoCaption' }
@@ -366,17 +365,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'bentoBoxPuzzle') {
     if (locale === 'en') {
-      const content = (
+      return (
         <>
           {args.capitalize ? 'T' : 't'}he <Bold>“Lunchbox”</Bold> puzzle{' '}
           <Emoji>🍱</Emoji>
-        </>
-      )
-      return args.noWrapper ? (
-        content
-      ) : (
-        <>
-          <Highlight>{content}</Highlight>
         </>
       )
     } else {
@@ -1407,17 +1399,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'plusOneFeature') {
     if (locale === 'en') {
-      const content = (
+      return (
         <>
           {args.capitalize ? 'T' : 't'}he <Bold>“Plus 1”</Bold> feature{' '}
           <CustomEmoji type="plusOne" />
-        </>
-      )
-      return args.noWrapper ? (
-        content
-      ) : (
-        <>
-          <Highlight>{content}</Highlight>
         </>
       )
     } else {
@@ -1431,17 +1416,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'minusOneFeature') {
     if (locale === 'en') {
-      const content = (
+      return (
         <>
           {args.capitalize ? 'T' : 't'}he <Bold>“Minus 1”</Bold> feature{' '}
           <CustomEmoji type="minusOne" />
-        </>
-      )
-      return args.noWrapper ? (
-        content
-      ) : (
-        <>
-          <Highlight>{content}</Highlight>
         </>
       )
     } else {
@@ -1455,17 +1433,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'repeatFeature') {
     if (locale === 'en') {
-      const content = (
+      return (
         <>
           {args.capitalize ? 'T' : 't'}he <Bold>“Repeat”</Bold> feature{' '}
           <Emoji>🔁</Emoji>
-        </>
-      )
-      return args.noWrapper ? (
-        content
-      ) : (
-        <>
-          <Highlight>{content}</Highlight>
         </>
       )
     } else {

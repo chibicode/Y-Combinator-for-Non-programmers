@@ -104,8 +104,7 @@ export default () => (
             <H
               args={{
                 name: 'repeatFeature',
-                capitalize: true,
-                noWrapper: true
+                capitalize: true
               }}
             />
           </>
@@ -380,8 +379,7 @@ export default () => (
             <H
               args={{
                 name: 'repeatFeature',
-                capitalize: true,
-                noWrapper: true
+                capitalize: true
               }}
             />
           </>
@@ -534,8 +532,7 @@ export default () => (
             <H
               args={{
                 name: 'repeatFeature',
-                capitalize: true,
-                noWrapper: true
+                capitalize: true
               }}
             />
           </>

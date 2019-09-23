@@ -7,7 +7,8 @@ import {
   Bold,
   Ul,
   UlLi,
-  Hr
+  Hr,
+  Italic
 } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import Emoji from 'src/components/Emoji'
@@ -59,8 +60,8 @@ export default () => (
               <HighlightBold>“Mathbox”</HighlightBold> has been passed down from
               one generation to next. As its name suggests, a{' '}
               <Bold>mathbox</Bold> is a magical tool that can solve{' '}
-              <Highlight>math questions</Highlight>. You can think of it as a{' '}
-              <Highlight>simple calculator</Highlight>.
+              <Italic>math questions</Italic>. You can think of it as a{' '}
+              <Italic>simple calculator</Italic>.
             </P>
             <EmojiSeparator
               nodes={[
@@ -70,8 +71,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <HighlightBold>Mathbox</HighlightBold> is a magical tool that
-                  can do math.
+                  <Bold>Mathbox</Bold> is a magical tool that can do math.
                 </>
               }
             />
@@ -96,7 +96,7 @@ export default () => (
         content: (
           <>
             <P>
-              Here’s an example <HighlightBold>mathbox</HighlightBold>:
+              Here’s an example <Bold>mathbox</Bold>:
             </P>
             <R.Lizi>
               Mathbox <CustomEmoji type="mathBox" />
@@ -138,26 +138,19 @@ export default () => (
                 <H args={{ name: 'play' }} /> button
               </HighlightBold>
               . If you press it, the mathbox calculates the result.{' '}
-              <HighlightBold>
-                <H args={{ name: 'pressPlay', capitalize: true }} />
-              </HighlightBold>{' '}
-              on the mathbox below.
+              <H args={{ name: 'pressPlay', capitalize: true }} /> on the
+              mathbox below.
             </P>
             <R.Mcug />
             <P>
-              <HighlightBold>
-                The result is <EmojiNumber number={2} />
-              </HighlightBold>
-              . That means it calculated <EmojiNumber number={1} />{' '}
-              <Emoji>➕</Emoji> <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
+              The result is <EmojiNumber number={2} />. That means it calculated{' '}
+              <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
+              <EmojiNumber number={1} />. <Emoji>🙂</Emoji>
             </P>
             <Hr />
             <P>
               Let’s look at other mathboxes.{' '}
-              <HighlightBold>
-                <H args={{ name: 'pressPlay', capitalize: true }} />
-              </HighlightBold>{' '}
-              on this one:
+              <H args={{ name: 'pressPlay', capitalize: true }} /> on this one:
             </P>
             <R.Aovj />
             <P>
@@ -174,8 +167,7 @@ export default () => (
             <H
               args={{
                 name: 'plusOneFeature',
-                capitalize: true,
-                noWrapper: true
+                capitalize: true
               }}
             />
           </>
@@ -188,23 +180,17 @@ export default () => (
             <R.Rviy />
             <Ul>
               <UlLi>
-                <Highlight>
-                  There’s some number <CustomEmoji type="blankNumber" /> on the
-                  top, and…
-                </Highlight>
+                There’s some number <CustomEmoji type="blankNumber" /> on the
+                top, and…
               </UlLi>
               <UlLi>
-                <Highlight>
-                  There’s <CustomEmoji type="plusOne" /> on the bottom. That
-                  means…
-                </Highlight>
+                There’s <CustomEmoji type="plusOne" /> on the bottom. That
+                means…
               </UlLi>
               <UlLi>
-                <Highlight>
-                  If you <H args={{ name: 'play', lowerCase: true }} /> it, the
-                  result will be <CustomEmoji type="blankNumber" />{' '}
-                  <Emoji>➕</Emoji> <EmojiNumber number={1} />.
-                </Highlight>
+                If you <H args={{ name: 'play', lowerCase: true }} /> it, the
+                result will be <CustomEmoji type="blankNumber" />{' '}
+                <Emoji>➕</Emoji> <EmojiNumber number={1} />.
               </UlLi>
             </Ul>
             <EmojiSeparator
@@ -216,11 +202,10 @@ export default () => (
             />
             <P>
               <Bold>This is the first feature of mathbox:</Bold>{' '}
-              <H args={{ name: 'plusOneFeature' }} />.{' '}
               <Highlight>
-                It lets you add <EmojiNumber number={1} /> to some number
+                <H args={{ name: 'plusOneFeature' }} />
               </Highlight>
-              .
+              . It lets you add <EmojiNumber number={1} /> to some number.
             </P>
             <EmojiSeparator
               nodes={[
@@ -245,8 +230,7 @@ export default () => (
             <H
               args={{
                 name: 'minusOneFeature',
-                capitalize: true,
-                noWrapper: true
+                capitalize: true
               }}
             />
           </>
@@ -254,9 +238,8 @@ export default () => (
         content: (
           <>
             <P>
-              Mathboxes can also <HighlightBold>subtract 1</HighlightBold> from
-              a number. <H args={{ name: 'pressPlay', capitalize: true }} />{' '}
-              below:
+              Mathboxes can also <Italic>subtract 1</Italic> from a number.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} /> below:
             </P>
             <R.Xmqp />
             <P>
@@ -266,13 +249,11 @@ export default () => (
             </P>
             <Hr />
             <P>
-              <Bold>Summary:</Bold>{' '}
-              <Highlight>
-                If you combine <CustomEmoji type="blankNumber" /> with{' '}
-                <CustomEmoji type="minusOne" />, it will calculate{' '}
-                <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={1} />.
-              </Highlight>
+              <Bold>Summary:</Bold> If you combine{' '}
+              <CustomEmoji type="blankNumber" /> with{' '}
+              <CustomEmoji type="minusOne" />, it will calculate{' '}
+              <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
+              <EmojiNumber number={1} />.
             </P>
             <R.Ditw>
               Calculates <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
@@ -280,11 +261,11 @@ export default () => (
             </R.Ditw>
             <P>
               <Bold>This is the second feature of mathbox:</Bold>{' '}
-              <H args={{ name: 'minusOneFeature' }} />.{' '}
               <Highlight>
-                It lets you subtract <EmojiNumber number={1} /> from some number
+                <H args={{ name: 'minusOneFeature' }} />
               </Highlight>
-              .
+              . It lets you subtract <EmojiNumber number={1} /> from some
+              number.
             </P>
             <EmojiSeparator
               nodes={[
@@ -314,10 +295,10 @@ export default () => (
           <>
             <P>
               <Bold>Important:</Bold> You can{' '}
-              <HighlightBold>
+              <Italic>
                 only use <CustomEmoji type="plusOne" /> and{' '}
                 <CustomEmoji type="minusOne" />
-              </HighlightBold>{' '}
+              </Italic>{' '}
               in mathboxes.
             </P>
             <EmojiSeparator
@@ -337,10 +318,10 @@ export default () => (
               <Bold>Question:</Bold> If you can only use{' '}
               <CustomEmoji type="plusOne" /> and <CustomEmoji type="minusOne" />
               , then{' '}
-              <HighlightBold>
+              <Italic>
                 how do you calculate something like <EmojiNumber number={2} />{' '}
                 <Emoji>➕</Emoji> <EmojiNumber number={2} />
-              </HighlightBold>{' '}
+              </Italic>{' '}
               using a mathbox?
               <Emoji>🤔</Emoji>
             </P>
@@ -366,9 +347,9 @@ export default () => (
             <P>
               <Bold>Answer:</Bold> To calculate <EmojiNumber number={2} />{' '}
               <Emoji>➕</Emoji> <EmojiNumber number={2} />,{' '}
-              <HighlightBold>
+              <Italic>
                 use <CustomEmoji type="plusOne" /> twice
-              </HighlightBold>{' '}
+              </Italic>{' '}
               on <EmojiNumber number={2} />.
             </P>
             <EmojiSeparator
@@ -407,10 +388,10 @@ export default () => (
           <>
             <P>
               <Bold>Note:</Bold> You can use both{' '}
-              <HighlightBold>
+              <Italic>
                 <CustomEmoji type="plusOne" /> and{' '}
                 <CustomEmoji type="minusOne" /> as many times as you like
-              </HighlightBold>
+              </Italic>
               . <Emoji>😉</Emoji>
             </P>
             <EmojiSeparator
@@ -439,9 +420,9 @@ export default () => (
             />
             <P>
               <Bold>Example:</Bold> This one uses{' '}
-              <HighlightBold>
+              <Italic>
                 <CustomEmoji type="plusOne" /> three times
-              </HighlightBold>{' '}
+              </Italic>{' '}
               to calculate <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} />.
             </P>
@@ -451,9 +432,9 @@ export default () => (
             </R.Eagi>
             <P>
               <Bold>Another Example:</Bold> This one uses{' '}
-              <HighlightBold>
+              <Italic>
                 <CustomEmoji type="minusOne" /> four times
-              </HighlightBold>{' '}
+              </Italic>{' '}
               to calculate <EmojiNumber number={5} /> <Emoji>➖</Emoji>{' '}
               <EmojiNumber number={4} />.
             </P>
@@ -471,10 +452,10 @@ export default () => (
             <P>
               <Bold>Takeaway:</Bold> By using <CustomEmoji type="plusOne" /> and{' '}
               <CustomEmoji type="minusOne" /> many times, you can{' '}
-              <Highlight>
+              <Italic>
                 calculate any addition or subtraction, no matter how large the
                 numbers are
-              </Highlight>{' '}
+              </Italic>{' '}
               .
             </P>
             <EmojiSeparator
@@ -515,11 +496,11 @@ export default () => (
             />
             <P>
               <Bold>Answer:</Bold> Combine{' '}
-              <HighlightBold>
+              <Italic>
                 <EmojiNumber number={10} /> with ten{' '}
                 <CustomEmoji type="plusOne" />
                 ’s
-              </HighlightBold>
+              </Italic>
               .
             </P>
             <R.Amoq>
@@ -538,9 +519,9 @@ export default () => (
           <>
             <P>
               <Bold>Summary:</Bold> A <Bold>Mathbox</Bold> is a{' '}
-              <HighlightBold>
+              <Italic>
                 magical tool that can calculate additions and subtractions
-              </HighlightBold>
+              </Italic>
               .
             </P>
             <EmojiSeparator
@@ -553,9 +534,9 @@ export default () => (
             />
             <P>
               <Bold>Why mathboxes were important:</Bold> The villagers in Lambda
-              Village were all <HighlightBold>very bad at math</HighlightBold>.
-              They even had to rely on mathboxes to calculate simple additions
-              like <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
+              Village were all <Italic>very bad at math</Italic>. They even had
+              to rely on mathboxes to calculate simple additions like{' '}
+              <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
               <EmojiNumber number={3} />.
             </P>
             <EmojiSeparator
@@ -581,13 +562,9 @@ export default () => (
           content: (
             <>
               <P>
-                <Bold>Note:</Bold>{' '}
-                <Highlight>
-                  Unfortunately, mathboxes cannot do{' '}
-                  <HighlightBold>multiplications</HighlightBold>{' '}
-                  <Emoji>✖️</Emoji> or <HighlightBold>divisions</HighlightBold>{' '}
-                  <Emoji>➗</Emoji>.
-                </Highlight>
+                <Bold>Note:</Bold> Unfortunately, mathboxes cannot do{' '}
+                <Italic>multiplications</Italic> <Emoji>✖️</Emoji> or{' '}
+                <Italic>divisions</Italic> <Emoji>➗</Emoji>.
               </P>
               <EmojiSeparator
                 emojis={['✖️', '😭', '➗']}
@@ -608,7 +585,7 @@ export default () => (
           <>
             <P>
               <Bold>Next up:</Bold> It turns out that mathboxes have{' '}
-              <HighlightBold>one more feature</HighlightBold> other than{' '}
+              <Italic>one more feature</Italic> other than{' '}
               <H args={{ name: 'plusOneFeature' }} /> and{' '}
               <H args={{ name: 'minusOneFeature' }} /> that we just described.
             </P>

@@ -297,8 +297,7 @@ export default () => (
             <H
               args={{
                 name: 'bentoBoxPuzzle',
-                capitalize: true,
-                noWrapper: true
+                capitalize: true
               }}
             />
           </>
