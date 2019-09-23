@@ -1,6 +1,14 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Hr, Em, Ul, UlLi, Bold } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Hr,
+  Highlight,
+  Ul,
+  UlLi,
+  Bold
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -133,9 +141,9 @@ export default () => (
               こちらも復習になりますが、ラムダ村の村人たちにとって、計算箱の「
               <H args={{ name: 'repeatFeature' }} />
               」は、
-              <Strong>
+              <HighlightBold>
                 大きな数の足し算や引き算をするときに欠かせない機能
-              </Strong>
+              </HighlightBold>
               でした。
             </P>
             <EmojiSeparator
@@ -160,12 +168,12 @@ export default () => (
               <CustomEmoji type="plusOne" /> を10回配置
             </R.Amoq>
             <P>
-              <Strong>
+              <HighlightBold>
                 しかし初級その2でもやった通り、
                 <CustomEmoji type="plusOne" /> の数が増えると、
                 <CustomEmoji type="plusOne" />{' '}
                 の数を間違えてしまう可能性があります。
-              </Strong>
+              </HighlightBold>
               そうすると、正しい計算ができません。
             </P>
             <EmojiSeparator
@@ -213,7 +221,7 @@ export default () => (
                   <H args={{ name: 'repeatFeature' }} />
                   」を、
                   <br />
-                  弁当箱でどう「<Strong>再現</Strong>」する？
+                  弁当箱でどう「<HighlightBold>再現</HighlightBold>」する？
                 </>
               }
             />
@@ -231,11 +239,11 @@ export default () => (
                     <>
                       <P>
                         うーん、
-                        <Em>
+                        <Highlight>
                           どんなに考えても、計算箱の「
                           <H args={{ name: 'repeatFeature' }} />
                           」を弁当箱で再現することができない…
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>サヤちゃん、何か思いついた？</P>
                     </>
@@ -271,7 +279,7 @@ export default () => (
                     <>
                       <P>
                         みなさん、なかなかお困りのようですね。よければ、
-                        <Strong>ヒントを出しましょうか？</Strong>
+                        <HighlightBold>ヒントを出しましょうか？</HighlightBold>
                       </P>
                     </>
                   )
@@ -364,12 +372,12 @@ export default () => (
                     <>
                       <P>
                         まず、
-                        <Strong>
+                        <HighlightBold>
                           それぞれの <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
                           <CustomEmoji type="blankNumberGreen" />{' '}
                           には数字を入れることができます。
-                        </Strong>
+                        </HighlightBold>
                         同じ数字を入れても構いませんし、違う数字を入れても構いません。
                       </P>
                     </>
@@ -408,12 +416,12 @@ export default () => (
                       </P>
                       <P>
                         というわけで、
-                        <Strong>
+                        <HighlightBold>
                           <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
                           <CustomEmoji type="blankNumberGreen" />{' '}
                           に何か適当な数字を入れてみてください！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -424,11 +432,11 @@ export default () => (
                     <>
                       <P>
                         分かった。とりあえず、{' '}
-                        <Strong>
+                        <HighlightBold>
                           上から順に <EmojiNumber number={2} />{' '}
                           <EmojiNumber number={1} /> <EmojiNumber number={0} />{' '}
                           を入れてみたよ。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         これで、
@@ -486,7 +494,7 @@ export default () => (
                       <P>
                         「<H args={{ name: 'conditionFeature' }} />
                         」はまず、
-                        <Strong>
+                        <HighlightBold>
                           <H
                             args={{
                               name: 'conditionSectionName',
@@ -494,7 +502,7 @@ export default () => (
                             }}
                           />{' '}
                           に入っている数字が <EmojiNumber number={0} /> かどうか
-                        </Strong>
+                        </HighlightBold>
                         チェックします。
                       </P>
                     </>
@@ -539,7 +547,7 @@ export default () => (
                           である場合、
                         </UlLi>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             <H
                               args={{
                                 name: 'conditionSectionName',
@@ -547,7 +555,7 @@ export default () => (
                               }}
                             />{' '}
                             に入っている数字が最終的に残るのです。
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                     </>
@@ -700,7 +708,7 @@ export default () => (
                       </P>
                       <P>
                         この場合は、
-                        <Strong>
+                        <HighlightBold>
                           <H
                             args={{
                               name: 'conditionSectionName',
@@ -708,7 +716,7 @@ export default () => (
                             }}
                           />{' '}
                           に入っている数字が最終的に残ります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -730,7 +738,9 @@ export default () => (
                       <P>
                         なるほど…
                         <InlineBorder type="falseCase" /> は、「
-                        <Strong>ゼロ以外の数字の場合はこちら</Strong>
+                        <HighlightBold>
+                          ゼロ以外の数字の場合はこちら
+                        </HighlightBold>
                         」という意味なんだね。
                       </P>
                     </>
@@ -760,31 +770,31 @@ export default () => (
               」がある計算箱
             </R.Rhoa>
             <P>
-              <Em>
+              <Highlight>
                 まず、
                 <H
                   args={{ name: 'conditionSectionName', type: 'condition' }}
                 />{' '}
                 の中にある <CustomEmoji type="blankNumberGreen" /> が{' '}
                 <EmojiNumber number={0} /> かどうかチェックします。
-              </Em>
+              </Highlight>
             </P>
             <P>
-              <Em>
+              <Highlight>
                 もし <EmojiNumber number={0} /> なら、{' '}
                 <H args={{ name: 'conditionSectionName', type: 'trueCase' }} />{' '}
                 の中にある <CustomEmoji type="blankNumberYellow" /> が残ります。
-              </Em>
+              </Highlight>
             </P>
             <TrueCaseExplanation />
             <P>
-              <Em>
+              <Highlight>
                 もし <EmojiNumber number={0} /> でなければ、
                 <H
                   args={{ name: 'conditionSectionName', type: 'falseCase' }}
                 />{' '}
                 の中にある <CustomEmoji type="blankNumberRed" /> が残ります。
-              </Em>
+              </Highlight>
             </P>
             <FalseCaseExplanation />
             <BubbleQuotes
@@ -795,11 +805,12 @@ export default () => (
                     <>
                       <P>
                         なるほど、「
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={0} /> かどうか？
-                        </Em>
+                        </Highlight>
                         」という「
-                        <Strong>条件</Strong>」によって 「<Strong>分岐</Strong>
+                        <HighlightBold>条件</HighlightBold>」によって 「
+                        <HighlightBold>分岐</HighlightBold>
                         」するから、「
                         <H args={{ name: 'conditionFeature' }} />
                         」なのか。
@@ -820,12 +831,12 @@ export default () => (
               description={
                 <>
                   「
-                  <Em>
+                  <Highlight>
                     <EmojiNumber number={0} /> かどうか？
-                  </Em>
+                  </Highlight>
                   」という
-                  <br />「<Strong>条件</Strong>」によって 「
-                  <Strong>分岐</Strong>」するから 「
+                  <br />「<HighlightBold>条件</HighlightBold>」によって 「
+                  <HighlightBold>分岐</HighlightBold>」するから 「
                   <H args={{ name: 'conditionFeature' }} />」
                 </>
               }
@@ -847,9 +858,9 @@ export default () => (
                         この「
                         <H args={{ name: 'conditionFeature' }} />
                         」は、
-                        <Strong>
+                        <HighlightBold>
                           実は計算箱にもともと備わっていた隠れ機能
-                        </Strong>
+                        </HighlightBold>
                         なんです。
                       </P>
                     </>
@@ -885,9 +896,9 @@ export default () => (
                         そうなんです。「
                         <H args={{ name: 'conditionFeature' }} />
                         」は
-                        <Em>
+                        <Highlight>
                           あまり役に立たないので、いつしか忘れ去られてしまった
-                        </Em>
+                        </Highlight>
                         のです。
                       </P>
                     </>
@@ -899,9 +910,9 @@ export default () => (
                     <>
                       <P>
                         たしかに、「
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={0} /> かどうか？
-                        </Em>
+                        </Highlight>
                         」をチェックできても、何の役にも立たなさそうだけど…
                       </P>
                     </>
@@ -915,11 +926,11 @@ export default () => (
                         しかし、この「
                         <H args={{ name: 'conditionFeature' }} />
                         」は、
-                        <Em>
+                        <Highlight>
                           実は「
                           <H args={{ name: 'repeatFeature' }} />
                           」と関連がある
-                        </Em>
+                        </Highlight>
                         のです。
                       </P>
                     </>
@@ -1062,7 +1073,7 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  <Strong>弁当箱で再現できたら…</Strong>
+                  <HighlightBold>弁当箱で再現できたら…</HighlightBold>
                 </>
               }
             />

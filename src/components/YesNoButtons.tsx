@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React, { useContext } from 'react'
-import { Em, P } from 'src/components/ContentTags'
+import { Highlight, P, Bold } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import locale from 'src/lib/locale'
 import { fontSizes, colors, radii, spaces } from 'src/lib/theme'
@@ -149,14 +149,14 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
               <H args={{ name: 'yesNoQuizDontWorry' }} />
             </span>
           ) : (
-            <Em>
-              <strong>
+            <Highlight>
+              <Bold>
                 {cardActionResult === 'correct' ? (
                   <H args={{ name: 'yesNoQuizCorrect' }} />
                 ) : (
                   <H args={{ name: 'yesNoQuizIncorrect' }} />
                 )}
-              </strong>
+              </Bold>
               {locale === 'en' && ' '}
               {cardActionResult === 'correct' ? (
                 <H args={{ name: 'yesNoQuizCorrectPostfix' }} />
@@ -168,7 +168,7 @@ const YesNoButtons = ({ answer }: YesNoButtonsProps) => {
                   }}
                 />
               )}
-            </Em>
+            </Highlight>
           )}
         </P>
       </>

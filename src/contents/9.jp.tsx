@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Highlight,
+  HighlightBold,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -37,9 +43,9 @@ export default () => (
                       <P>ねえねえ、見てほしいものがあるんだけど。</P>
                       <P>
                         まず、
-                        <Em>
+                        <Highlight>
                           これは <EmojiNumber number={1} /> に変換できる弁当箱
-                        </Em>
+                        </Highlight>
                         だよね。
                       </P>
                     </>
@@ -98,11 +104,11 @@ export default () => (
                     <>
                       <P>
                         そりゃあ、
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算できるんだから、
                           <EmojiNumber number={2} /> になるに決まっている
-                        </Em>
+                        </Highlight>
                         だろう？
                       </P>
                     </>
@@ -163,9 +169,9 @@ export default () => (
                       </P>
                       <P>
                         残念ながら、
-                        <Strong>
+                        <HighlightBold>
                           この弁当箱はぼくが計算箱に変換することができません。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -181,22 +187,24 @@ export default () => (
                     <>
                       <P>
                         理由は、
-                        <Em>以下の法則に沿っていないからです。</Em>
+                        <Highlight>
+                          以下の法則に沿っていないからです。
+                        </Highlight>
                       </P>
                       <R.Eozk>
                         <H args={{ name: 'convertiblePatternCaption' }} />
                       </R.Eozk>
                       <P>
-                        <Em>
+                        <Highlight>
                           右上には <Emoji>🅱️</Emoji> の料理が「
-                          <Strong>ひとつだけ</Strong>
+                          <HighlightBold>ひとつだけ</HighlightBold>
                           」ある必要があります。しかし、
-                          <Em>
+                          <Highlight>
                             ここでは <Emoji>🅱️</Emoji> の料理が
-                            <Strong>ふたつ</Strong>もある
-                          </Em>
+                            <HighlightBold>ふたつ</HighlightBold>もある
+                          </Highlight>
                           ので、計算箱に変換できないのです。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -240,12 +248,12 @@ export default () => (
                         では、前回と比較してみましょう。前回実行したのは、こちらの弁当箱でした。
                       </P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           先ほどと唯一違うのは、上の部分に{' '}
                           <EmojiWithText letter="b" /> のかわりに{' '}
                           <EmojiWithText letter="e" /> が入っている
-                        </Strong>
-                        ところです。(<Em>黄色</Em>で示しています)
+                        </HighlightBold>
+                        ところです。(<Highlight>黄色</Highlight>で示しています)
                       </P>
                     </>
                   )
@@ -256,13 +264,13 @@ export default () => (
               <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Exbn>
-              <Strong>前回実行した弁当箱:</Strong>
+              <HighlightBold>前回実行した弁当箱:</HighlightBold>
               <br />
               上の部分は <EmojiNumber number={1} /> に変換できる。
               <br />
-              <Em>
+              <Highlight>
                 先ほどと違うのは、上の <EmojiForLetter letter="e" /> の部分。
-              </Em>
+              </Highlight>
               <br />
               それ以外はすべて先ほどと同じ。
             </R.Exbn>
@@ -320,7 +328,8 @@ export default () => (
                       <P>では、ここでネタばらしをしましょう。</P>
                       <P>
                         こちらに、先ほど
-                        <Strong>失敗した</Strong>例をもう一度表示しています。
+                        <HighlightBold>失敗した</HighlightBold>
+                        例をもう一度表示しています。
                       </P>
                     </>
                   )
@@ -329,10 +338,10 @@ export default () => (
             />
             <R.Ybne>
               先ほど{' '}
-              <Em>
+              <Highlight>
                 <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                 <EmojiNumber number={1} /> を計算できなかった
-              </Em>
+              </Highlight>
               例
             </R.Ybne>
             <BubbleQuotes
@@ -375,7 +384,7 @@ export default () => (
                     <>
                       <P>
                         ここで、
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -387,7 +396,7 @@ export default () => (
                           />{' '}
                           の両方に、
                           <EmojiWithText letter="b" /> がある
-                        </Strong>
+                        </HighlightBold>
                         のに注目してみてください。
                       </P>
                     </>
@@ -409,7 +418,7 @@ export default () => (
                     <>
                       <P>
                         実は、このように{' '}
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -420,7 +429,7 @@ export default () => (
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           に同じ料理があると、実行結果が狂ってしまう
-                        </Strong>
+                        </HighlightBold>
                         のです。
                       </P>
                       <P>
@@ -442,7 +451,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <Strong>
+                  <HighlightBold>
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                     と{' '}
                     <BottomRightBadge
@@ -452,7 +461,7 @@ export default () => (
                     に同じ料理があると、
                     <br />
                     実行結果が狂う
-                  </Strong>
+                  </HighlightBold>
                   <br />
                   (先ほどの場合は
                   <EmojiWithText letter="b" /> が<br />
@@ -481,7 +490,7 @@ export default () => (
                     <>
                       <P>
                         この例だと複雑すぎて説明が難しいので、
-                        <Em>簡単な例を使って説明しますね！</Em>
+                        <Highlight>簡単な例を使って説明しますね！</Highlight>
                       </P>
                     </>
                   )
@@ -597,9 +606,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           左側は、下のふたつの料理が違うけど、右側は下のふたつの料理が同じになった！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -732,7 +741,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <Strong>
+                  <HighlightBold>
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                     と{' '}
                     <BottomRightBadge
@@ -742,7 +751,7 @@ export default () => (
                     に同じ料理があると、
                     <br />
                     実行結果が狂う
-                  </Strong>
+                  </HighlightBold>
                 </>
               }
             />
@@ -784,10 +793,10 @@ export default () => (
               ]}
             />
             <R.Kwyy>
-              <Em>
+              <Highlight>
                 <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                 <EmojiNumber number={1} /> を計算できなかった
-              </Em>
+              </Highlight>
               理由:
               <br />
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
@@ -811,7 +820,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -824,15 +833,16 @@ export default () => (
                           のどちらかの
                           <EmojiWithText letter="b" />{' '}
                           を別の料理に変えれば、上手くいく
-                        </Strong>
+                        </HighlightBold>
                         というわけだよね。
                       </P>
                       <P>
                         じゃあ…
-                        <Em>
-                          ミニオンさんお願い！<Strong>特別ルール</Strong>
+                        <Highlight>
+                          ミニオンさんお願い！
+                          <HighlightBold>特別ルール</HighlightBold>
                           を設けてくれないかな？
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -852,7 +862,7 @@ export default () => (
                       <P>
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         に、「
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -863,7 +873,7 @@ export default () => (
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           に同じ料理が登場したら、どちらかを別な料理に変える
-                        </Strong>
+                        </HighlightBold>
                         」という特別ルールを設けてほしいんだ。
                       </P>
                     </>
@@ -879,7 +889,7 @@ export default () => (
               ]}
               description={
                 <>
-                  <Strong>
+                  <HighlightBold>
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                     と{' '}
                     <BottomRightBadge
@@ -889,7 +899,7 @@ export default () => (
                     に同じ料理が登場したら、
                     <br />
                     どちらかを別な料理に変える
-                  </Strong>
+                  </HighlightBold>
                   <br />
                   という特別ルールを設けてほしい
                 </>
@@ -902,7 +912,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>分かりました、いいですよ！</Strong>
+                        <HighlightBold>
+                          分かりました、いいですよ！
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -941,7 +953,7 @@ export default () => (
                       <P>それでは、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="callArg"
@@ -952,17 +964,17 @@ export default () => (
                               bottomRightBadgeType="funcUnbound"
                             />{' '}
                             に同じ料理が登場したら、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             自動的に{' '}
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="callArg"
                             />{' '}
                             を、まだ使われてない料理にランダムに変える。
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                       <P>という特別ルールを設けましょう。</P>
@@ -983,13 +995,13 @@ export default () => (
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                   に同じ料理が登場したら、
                   <br />
-                  <Strong>
+                  <HighlightBold>
                     自動的に{' '}
                     <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                     がまだ使われてない料理に
                     <br />
                     ランダムに変わる
-                  </Strong>
+                  </HighlightBold>
                 </>
               }
             />
@@ -1025,24 +1037,24 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
                           />{' '}
                           の <EmojiWithText letter="b" />
                           が自動的に別の料理に変わります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           何に変わるかについてですが、
-                          <Strong>
+                          <HighlightBold>
                             まだ使われていない料理にランダムに変わります
-                          </Strong>
+                          </HighlightBold>
                           。ここでは、
                           <EmojiWithText letter="e" /> になりました。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1175,9 +1187,9 @@ export default () => (
             </R.Nvqu>
             <P>
               次の
-              <Em>
+              <Highlight>
                 <EmojiNumber number={1} /> に変換できる弁当箱
-              </Em>
+              </Highlight>
               と組み合わせた場合、
             </P>
             <R.Cmla>
@@ -1203,18 +1215,18 @@ export default () => (
             <P>しかし、今回から新たに以下の特別ルールが適用されます:</P>
             <Ul>
               <UlLi>
-                <Em>
+                <Highlight>
                   <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                   に同じ料理が登場したら、
-                </Em>
+                </Highlight>
               </UlLi>
               <UlLi>
-                <Strong>
+                <HighlightBold>
                   自動的に{' '}
                   <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                   を、まだ使われてない料理にランダムに変える。
-                </Strong>
+                </HighlightBold>
               </UlLi>
             </Ul>
             <R.Niwv />
@@ -1238,15 +1250,17 @@ export default () => (
                     <>
                       <P>
                         ご心配なく！
-                        <Em>
+                        <Highlight>
                           この特別ルールは次のページ以降で登場する弁当箱でも使われますが、
-                        </Em>
-                        <Strong>暗記する必要はありません。</Strong>
+                        </Highlight>
+                        <HighlightBold>
+                          暗記する必要はありません。
+                        </HighlightBold>
                         早送り中に自動で行われますから。
                       </P>
                       <P>
                         なんとなく「
-                        <Em>こういう法則があるんだな</Em>
+                        <Highlight>こういう法則があるんだな</Highlight>
                         」と思ってくだされば大丈夫です！
                       </P>
                     </>

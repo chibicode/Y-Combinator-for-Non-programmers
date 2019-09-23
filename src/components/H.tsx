@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Fragment } from 'react'
-import { InlineHighlightType } from 'src/types/ContentTagTypes'
+import { InlineHighlightType } from 'src/components/ContentTags/Inline'
 import InlineBorder from 'src/components/InlineBorder'
 import { useContext } from 'react'
 import {
-  Em,
+  Highlight,
   InternalLink,
   P,
-  Strong,
+  HighlightBold,
   Bold,
   ExternalLink,
   Hr,
@@ -242,10 +242,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Bold>こんにちは！</Bold>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           」という記事の
-          <Em>{episodeNumber + 1}ページ目</Em>
+          <Highlight>{episodeNumber + 1}ページ目</Highlight>
           です。1ページ目から読むには
           <InternalLink href={'/'}>
-            <Strong>こちらからどうぞ</Strong>
+            <HighlightBold>こちらからどうぞ</HighlightBold>
           </InternalLink>
           。
         </P>
@@ -376,14 +376,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
       return (
-        <Strong highlightType={highlightType}>
+        <HighlightBold highlightType={highlightType}>
           「弁当箱のパズル <Emoji>🍱</Emoji>」
-        </Strong>
+        </HighlightBold>
       )
     }
   }
@@ -391,17 +391,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             Next <Emoji>➡️</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             次へ <Emoji>➡️</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -410,17 +410,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             実行 <Emoji>▶️</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -429,17 +429,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             Play <Emoji>⏩</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             早送り <Emoji>⏩</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -448,17 +448,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             Playing… <Emoji>⏩</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             早送り中… <Emoji>⏩</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -467,17 +467,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             Pause <Emoji>⏸</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             一時停止 <Emoji>⏸</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -486,17 +486,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             Reset <Emoji>↩️</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             リセット <Emoji>↩️</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -505,17 +505,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             <Emoji>⬅️</Emoji> Previous
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             <Emoji>⬅️</Emoji> 前へ
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -524,17 +524,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             Done <Emoji>🏁</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             実行完了! <Emoji>🏁</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -556,16 +556,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'pressPlay') {
     if (locale === 'en') {
       return (
-        <Em>
+        <Highlight>
           {args.capitalize ? 'T' : 't'}
           ry pressing <H args={{ name: 'play' }} />
-        </Em>
+        </Highlight>
       )
     } else {
       return (
-        <Em>
+        <Highlight>
           <H args={{ name: 'play' }} /> を押してみてください:
-        </Em>
+        </Highlight>
       )
     }
   }
@@ -661,17 +661,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Em>
+          <Highlight>
             Press <H args={{ name: 'next' }} />:
-          </Em>
+          </Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Em>
+          <Highlight>
             <H args={{ name: 'next' }} /> を押してみてください:
-          </Em>
+          </Highlight>
         </>
       )
     }
@@ -680,15 +680,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Em>
+          <Highlight>
             Press <H args={{ name: 'fastForward' }} />:
-          </Em>
+          </Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Em>
+          <Highlight>
             <H args={{ name: 'fastForward' }} /> を押してみて
             {!args.girl && <>ください</>}
             {args.mentionRightArrow || args.skippable
@@ -698,7 +698,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               : args.girl
               ? '！'
               : ':'}
-          </Em>
+          </Highlight>
           {args.mentionRightArrow && <H args={{ name: 'mentionRightArrow' }} />}
           {args.skippable && (
             <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
@@ -730,7 +730,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           <H args={{ name: 'question' }} /> 上の弁当箱を
           <H args={{ name: 'play' }} /> すると、
-          <Strong>最終的に下のようになるでしょうか？</Strong>
+          <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
         </>
       )
     }
@@ -785,7 +785,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (args.sentence) {
         return (
           <>
-            <Strong>{childNode}</Strong>でした。
+            <HighlightBold>{childNode}</HighlightBold>でした。
           </>
         )
       } else {
@@ -811,7 +811,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <Strong>まだ途中ですが、解説のため一旦止めます！</Strong>
+      return (
+        <HighlightBold>まだ途中ですが、解説のため一旦止めます！</HighlightBold>
+      )
     }
   }
   if (args.name === 'pageNotFound') {
@@ -835,9 +837,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       const question = (
         <P>
           また、本稿の内容について質問がございましたら、
-          <Em>
-            上のツイートに<Strong>スクリーンショット付き</Strong>で返信
-          </Em>
+          <Highlight>
+            上のツイートに<HighlightBold>スクリーンショット付き</HighlightBold>
+            で返信
+          </Highlight>
           してくだされば最優先で対応します。メール(
           <ExternalLink href="mailto:shu@chibicode.com">
             shu@chibicode.com
@@ -849,9 +852,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (episodeNumber <= numEpisodesExceptFirstAndLast) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
-          quitReason = <Em>時間がないからあとで読もう</Em>
+          quitReason = <Highlight>時間がないからあとで読もう</Highlight>
         } else {
-          quitReason = <Em>長いのでひと休みしよう</Em>
+          quitReason = <Highlight>長いのでひと休みしよう</Highlight>
         }
 
         return (
@@ -862,17 +865,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </P>
             <P>
               差し支えなければ、このページを閉じる前に
-              <Em>
-                <Strong>下のツイートをリツイート</Strong>
+              <Highlight>
+                <HighlightBold>下のツイートをリツイート</HighlightBold>
                 してくださると、宣伝になるので非常に助かります。
-              </Em>
+              </Highlight>
               {episodeNumber > 0 && (
                 <>
                   もしくは、「
-                  <Strong>
+                  <HighlightBold>
                     <H args={{ name: 'titlePrefixColored' }} />
                     までは読み終えた
-                  </Strong>
+                  </HighlightBold>
                   」と引用リツイートしてくださると、さらに励みになります。
                 </>
               )}
@@ -887,7 +890,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <>
             <P>
               お疲れ様でした！本稿に対するご意見・ご感想を、ぜひ
-              <Strong>下のツイートを引用リツイートして</Strong>
+              <HighlightBold>下のツイートを引用リツイートして</HighlightBold>
               ご共有ください。
             </P>
             <TwitterEmbed id={shareId} />
@@ -896,9 +899,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>
               <Bold>
                 本稿を読んで、「
-                <Em>
+                <Highlight>
                   プログラミング未経験者だけど、コンピュータサイエンスを学びたくなった。次は何を読めばいい？
-                </Em>
+                </Highlight>
                 」と思ってくださった方へ:
               </Bold>
             </P>
@@ -911,11 +914,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </P>
             <P>
               というわけで、
-              <Strong>
+              <HighlightBold>
                 一定数の方がリクエストしてくださったら、続編を書こう
-              </Strong>
+              </HighlightBold>
               かなと思っています。続編を書くとしたら、
-              <Strong>人工知能</Strong>
+              <HighlightBold>人工知能</HighlightBold>
               についてプログラミング抜きに学べる教材を作りたいと考えています。
             </P>
             <EmojiSeparator
@@ -924,10 +927,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             />
             <P>
               続編をリクエストしたい方は、
-              <Em>
+              <Highlight>
                 以下のツイートの引用リツイートで「
-                <Strong>続編が読みたい</Strong>」と書いてくださると嬉しいです。
-              </Em>
+                <HighlightBold>続編が読みたい</HighlightBold>
+                」と書いてくださると嬉しいです。
+              </Highlight>
             </P>
             <TwitterEmbed id={shareId} />
             <Hr />
@@ -940,7 +944,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>
               <Bold>宣伝:</Bold> もしご興味があれば、わたしが共訳した書籍『
               <ExternalLink href="https://amzn.to/2QlZIqm">
-                <Strong>ファクトフルネス</Strong>
+                <HighlightBold>ファクトフルネス</HighlightBold>
               </ExternalLink>
               』や、
               <ExternalLink href="https://jp.chibicode.com/">
@@ -1069,9 +1073,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Em highlightType="pink">
+          <Highlight highlightType="pink">
             一回ずつ進める場合は、<Emoji>➡️</Emoji> を押してください。
-          </Em>
+          </Highlight>
         </>
       )
     }
@@ -1149,9 +1153,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return <>?</>
     } else {
       return (
-        <Strong highlightType={highlightType}>
+        <HighlightBold highlightType={highlightType}>
           実行と変換完了! <Emoji>🏁</Emoji>
-        </Strong>
+        </HighlightBold>
       )
     }
   }
@@ -1174,19 +1178,19 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             <CustomEmoji type="mathBox" /> Converted to Mathbox!{' '}
             <Emoji>🐶</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
       return (
         <>
-          <Strong highlightType={highlightType}>
+          <HighlightBold highlightType={highlightType}>
             <CustomEmoji type="mathBox" /> 計算箱に変換しました{' '}
             <Emoji>🐶</Emoji>
-          </Strong>
+          </HighlightBold>
         </>
       )
     }
@@ -1204,7 +1208,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          「<Strong>1を足す効果</Strong> <CustomEmoji type="plusOneOrange" />」
+          「<HighlightBold>1を足す効果</HighlightBold>{' '}
+          <CustomEmoji type="plusOneOrange" />」
         </>
       )
     }
@@ -1215,7 +1220,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          「<Strong>1を引く効果</Strong> <CustomEmoji type="minusOnePink" />」
+          「<HighlightBold>1を引く効果</HighlightBold>{' '}
+          <CustomEmoji type="minusOnePink" />」
         </>
       )
     }
@@ -1229,11 +1235,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <br />
           there’s only one item on the bottom row,
           <br />
-          <Strong>
+          <HighlightBold>
             start with the pair of{' '}
             <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
             ’s.
-          </Strong>
+          </HighlightBold>
         </>
       )
     } else {
@@ -1256,7 +1262,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           If there are multiple pairs of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
           <br />
-          <Strong>start with the leftmost pair</Strong>.
+          <HighlightBold>start with the leftmost pair</HighlightBold>.
         </>
       )
     } else {
@@ -1315,7 +1321,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <>
           右下には <Emoji>🅰️</Emoji> がついた{' '}
           <EmojiForLetter letter={args.letter} /> が「
-          <Strong>{args.number}個</Strong>」
+          <HighlightBold>{args.number}個</HighlightBold>」
           <br />
           → 計算箱に変換すると <EmojiNumber number={args.number} /> になる
         </>
@@ -1340,7 +1346,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <Em highlightType="pink">最後までスキップすることも可能です。</Em>
+      return (
+        <Highlight highlightType="pink">
+          最後までスキップすることも可能です。
+        </Highlight>
+      )
     }
   }
   if (args.name === 'slide') {
@@ -1407,13 +1417,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Strong>1を足す機能</Strong> <CustomEmoji type="plusOne" />
+          <HighlightBold>1を足す機能</HighlightBold>{' '}
+          <CustomEmoji type="plusOne" />
         </>
       )
     }
@@ -1430,13 +1441,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Strong>1を引く機能</Strong> <CustomEmoji type="minusOne" />
+          <HighlightBold>1を引く機能</HighlightBold>{' '}
+          <CustomEmoji type="minusOne" />
         </>
       )
     }
@@ -1453,13 +1465,13 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Strong>繰り返しの機能</Strong> <Emoji>🔁</Emoji>
+          <HighlightBold>繰り返しの機能</HighlightBold> <Emoji>🔁</Emoji>
         </>
       )
     }
@@ -1470,7 +1482,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Strong>条件分岐の機能</Strong> <CustomEmoji type="condition" />
+          <HighlightBold>条件分岐の機能</HighlightBold>{' '}
+          <CustomEmoji type="condition" />
         </>
       )
     }

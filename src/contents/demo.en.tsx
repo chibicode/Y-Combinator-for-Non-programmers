@@ -1,5 +1,5 @@
 import React from 'react'
-import { P, Hr, Strong, CenteredCode } from 'src/components/ContentTags'
+import { P, Hr, HighlightBold, CenteredCode } from 'src/components/ContentTags'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -22,8 +22,8 @@ const DemoCardList = () => (
           <>
             <P>
               I use this page when demonstrating materials from this course to
-              someone <Strong>in person</Strong>. So there won’t be any
-              explanations written on this page.
+              someone <HighlightBold>in person</HighlightBold>. So there won’t
+              be any explanations written on this page.
             </P>
           </>
         )

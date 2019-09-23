@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Bold } from 'src/components/ContentTags'
+import { P, HighlightBold, Bold } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import Emoji from 'src/components/Emoji'
 import * as R from 'src/components/Runners'
@@ -79,12 +79,12 @@ export const Unmatched = () => (
       If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
       ’s match,{' '}
-      <Strong>
+      <HighlightBold>
         don’t do the copy step and simply remove{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
         ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
         ’s
-      </Strong>
+      </HighlightBold>
       .
     </P>
     <R.Jwzh>

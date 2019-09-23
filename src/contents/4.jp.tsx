@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr, Bold } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Highlight,
+  Hr,
+  Bold
+} from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -85,11 +91,11 @@ export const Unmatched = () => (
       <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       が一致しなかった場合、
-      <Strong>
+      <HighlightBold>
         コピーはせずに、ただ{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
         <BottomRightBadge inline bottomRightBadgeType="funcArg" /> を消す
-      </Strong>
+      </HighlightBold>
       。
     </P>
     <R.Jwzh>
@@ -129,7 +135,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>やった、法則が分かったぞ！</Strong>
+                        <HighlightBold>
+                          やった、法則が分かったぞ！
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -161,14 +169,19 @@ export default () => (
                     <>
                       <P>
                         じゃあ説明しよう。まず、
-                        <Strong>下のふたつの料理を比べてみる</Strong>。
+                        <HighlightBold>
+                          下のふたつの料理を比べてみる
+                        </HighlightBold>
+                        。
                       </P>
                       <P>
-                        <Em>
-                          もし下のふたつの料理が<Strong>同じ</Strong>なら、
+                        <Highlight>
+                          もし下のふたつの料理が
+                          <HighlightBold>同じ</HighlightBold>なら、
                           <H args={{ name: 'play' }} />
-                          したときに<Strong>上にある</Strong>料理が残る
-                        </Em>
+                          したときに<HighlightBold>上にある</HighlightBold>
+                          料理が残る
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -232,14 +245,18 @@ export default () => (
                     <>
                       <P>
                         次に、
-                        <Strong>下のふたつの料理が異なる場合</Strong>。
+                        <HighlightBold>
+                          下のふたつの料理が異なる場合
+                        </HighlightBold>
+                        。
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           この場合は、
                           <H args={{ name: 'play' }} />
-                          したときに<Strong>右下にある</Strong>料理が残る
-                        </Em>
+                          したときに<HighlightBold>右下にある</HighlightBold>
+                          料理が残る
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -317,7 +334,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>正解、まさにその通りだ！</Strong>{' '}
+                        <HighlightBold>正解、まさにその通りだ！</HighlightBold>{' '}
                         <Emoji>🎉</Emoji> <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>
                       </P>
                       <P>
@@ -339,7 +356,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>だが、喜ぶのはまだ早い。</Em>
+                        <Highlight>だが、喜ぶのはまだ早い。</Highlight>
                       </P>
                     </>
                   )
@@ -360,10 +377,10 @@ export default () => (
                         次のページから、さらに難しい
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         を解いてもらう。そのためには、
-                        <Em>
+                        <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                           の法則を明確にする必要がある。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -393,11 +410,11 @@ export default () => (
                     <>
                       <P>
                         先ほどお前が言った、
-                        <Em>
+                        <Highlight>
                           「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」というのは
-                          <Strong>明確さに欠ける。</Strong>
+                          <HighlightBold>明確さに欠ける。</HighlightBold>
                           さらに複雑なパズルを解くには、法則としては不十分なんだ。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -439,11 +456,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           というわけで、これから
                           <H args={{ name: 'bentoBoxPuzzle' }} />の
-                          <Strong>明確な法則</Strong>を紹介する。
-                        </Em>
+                          <HighlightBold>明確な法則</HighlightBold>を紹介する。
+                        </Highlight>
                         それを理解した上で、さらに複雑なパズルを解いてもらおう。
                       </P>
                     </>
@@ -525,7 +542,7 @@ export default () => (
             <R.Ilpo />
             <P>
               まず、
-              <Strong>
+              <HighlightBold>
                 上の料理には{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />
                 、左の料理には{' '}
@@ -536,7 +553,7 @@ export default () => (
                   bottomRightBadgeType="funcBound"
                 />{' '}
                 の印をつけます。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -604,12 +621,12 @@ export default () => (
           <>
             <P>
               続いて、
-              <Strong>
+              <HighlightBold>
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 が一致するかチェックし、一致した料理には、
                 <Emoji>✅</Emoji> を付けます。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -669,12 +686,12 @@ export default () => (
           <>
             <P>
               続いて、
-              <Strong>
+              <HighlightBold>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 の料理を、一致した{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 の部分にコピーします。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -734,11 +751,11 @@ export default () => (
           <>
             <P>
               最後に、
-              <Strong>
+              <HighlightBold>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 が消えます。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -803,7 +820,9 @@ export default () => (
                     <>
                       <P>
                         では、たとえば下の例のように、
-                        <Strong>上にふたつの料理がある場合</Strong>
+                        <HighlightBold>
+                          上にふたつの料理がある場合
+                        </HighlightBold>
                         はどうなるんだろう？
                       </P>
                     </>
@@ -820,11 +839,11 @@ export default () => (
               この場合、上にある
               <EmojiWithText letter="g" /> と
               <EmojiWithText letter="o" /> には
-              <Strong>
+              <HighlightBold>
                 両方とも{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 の印がつきます。
-              </Strong>
+              </HighlightBold>
             </P>
             <R.Ycxr>
               両方とも{' '}
@@ -839,7 +858,7 @@ export default () => (
             <P>
               <EmojiWithText letter="g" /> と
               <EmojiWithText letter="o" /> が
-              <Strong>両方ともコピーされます。</Strong>
+              <HighlightBold>両方ともコピーされます。</HighlightBold>
             </P>
             <R.Sxnt />
             <P>
@@ -868,7 +887,7 @@ export default () => (
               では、最初から最後まで
               <H args={{ name: 'fastForward' }} /> で見てみましょう。
               <H args={{ name: 'fastForward' }} /> 機能を使うと、
-              <Em>各ステップを自動で見ていくことができます。</Em>
+              <Highlight>各ステップを自動で見ていくことができます。</Highlight>
             </P>
             <EmojiSeparator
               emojis={['⏩', '🍱', '⏩']}
@@ -914,9 +933,9 @@ export default () => (
                     <>
                       <P>
                         うむ。そして、
-                        <Em>
+                        <Highlight>
                           こうやってルールを明確にすれば、パズルが複雑になっても応用が効く
-                        </Em>
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -953,7 +972,7 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <Strong>
+                        <HighlightBold>
                           もし{' '}
                           <BottomRightBadge
                             inline
@@ -965,7 +984,7 @@ export default () => (
                             bottomRightBadgeType="funcBound"
                           />{' '}
                           が一致しなかったらどうするの？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         たとえば下の弁当箱の場合は、
@@ -1007,12 +1026,12 @@ export default () => (
               <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
               が一致しない場合は、
-              <Strong>
+              <HighlightBold>
                 コピーはせずに、ただ{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 を消すだけです。
-              </Strong>
+              </HighlightBold>
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Gwtp />
@@ -1103,9 +1122,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           法則を覚えきれていなくても、次回また復習するので大丈夫だ。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1126,7 +1145,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>次回では、もっと複雑なパズルを出題する。</Em>
+                        <Highlight>
+                          次回では、もっと複雑なパズルを出題する。
+                        </Highlight>
                         計算箱を返してほしかったら、解いてみせるんだな！
                       </P>
                     </>

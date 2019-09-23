@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Highlight,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -24,7 +30,9 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>このページから、本格的に上級向けになります。</Strong>
+              <HighlightBold>
+                このページから、本格的に上級向けになります。
+              </HighlightBold>
               前のページに比べて、読むのに時間がかかるかもしれません。
             </P>
             <EmojiSeparator
@@ -52,7 +60,7 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  <Strong>弁当箱で再現できる？</Strong>
+                  <HighlightBold>弁当箱で再現できる？</HighlightBold>
                 </>
               }
             />
@@ -64,11 +72,11 @@ export default () => (
                     <>
                       <P>
                         復習すると、上の計算箱は、
-                        <Strong>
+                        <HighlightBold>
                           もし <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> なら真ん中の{' '}
                           <CustomEmoji type="blankNumberYellow" /> が残り…
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -84,11 +92,11 @@ export default () => (
                     <>
                       <P>
                         そして、
-                        <Strong>
+                        <HighlightBold>
                           もし <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> 以外の数字なら、上の{' '}
                           <CustomEmoji type="blankNumberRed" /> が残るんだよな。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -171,14 +179,14 @@ export default () => (
                     <>
                       <P>
                         では、まずサヤの弁当箱の一番下の「
-                        <Strong>
+                        <HighlightBold>
                           <CustomEmoji type="blankNumberGreen" />{' '}
                           に変換できる弁当箱
-                        </Strong>
+                        </HighlightBold>
                         」のところに、「
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={0} /> に変換できる弁当箱
-                        </Strong>
+                        </HighlightBold>
                         」を入れてみるね。
                       </P>
                     </>
@@ -188,9 +196,9 @@ export default () => (
             />
             <R.Ycpk>
               一番下の 「
-              <Strong>
+              <HighlightBold>
                 <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </Strong>
+              </HighlightBold>
               」<br />
               のところに、
               <EmojiNumber number={0} /> に変換できる
@@ -204,14 +212,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           使うのは、
-                          <Strong>
+                          <HighlightBold>
                             こちらの <EmojiNumber number={0} />{' '}
                             に変換できる弁当箱
-                          </Strong>
+                          </HighlightBold>
                           です！
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Elyq>
                         <H
@@ -233,16 +241,16 @@ export default () => (
             />
             <R.Nmrp>
               「
-              <Strong>
+              <HighlightBold>
                 <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </Strong>
+              </HighlightBold>
               」のところに、
               <br />
-              <Strong>
+              <HighlightBold>
                 <EmojiNumber number={0} /> に変換できる弁当箱
-              </Strong>
+              </HighlightBold>
               を入れてみた
-              <br />(<Strong>一番下の黄色の部分</Strong>)
+              <br />(<HighlightBold>一番下の黄色の部分</HighlightBold>)
             </R.Nmrp>
             <BubbleQuotes
               quotes={[
@@ -304,10 +312,10 @@ export default () => (
                     <>
                       <P>
                         たしかに、
-                        <Strong>
+                        <HighlightBold>
                           両方とも <EmojiNumber number={0} /> を入れると{' '}
                           <CustomEmoji type="blankNumberYellow" /> が残る
-                        </Strong>
+                        </HighlightBold>
                         ね！
                       </P>
                     </>
@@ -334,14 +342,14 @@ export default () => (
                     <>
                       <P>
                         次は、サヤの弁当箱の一番下の「
-                        <Strong>
+                        <HighlightBold>
                           <CustomEmoji type="blankNumberGreen" />{' '}
                           に変換できる弁当箱
-                        </Strong>
+                        </HighlightBold>
                         」のところに、「
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={1} /> に変換できる弁当箱
-                        </Strong>
+                        </HighlightBold>
                         」を入れてみるね。
                       </P>
                     </>
@@ -351,9 +359,9 @@ export default () => (
             />
             <R.Psyv>
               一番下の 「
-              <Strong>
+              <HighlightBold>
                 <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </Strong>
+              </HighlightBold>
               」<br />
               のところに、
               <EmojiNumber number={1} /> に変換できる
@@ -367,14 +375,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           使うのは、
-                          <Strong>
+                          <HighlightBold>
                             こちらの <EmojiNumber number={1} />{' '}
                             に変換できる弁当箱
-                          </Strong>
+                          </HighlightBold>
                           です！
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Ooya>
                         <H
@@ -396,16 +404,16 @@ export default () => (
             />
             <R.Gpat>
               「
-              <Strong>
+              <HighlightBold>
                 <CustomEmoji type="blankNumberGreen" /> に変換できる弁当箱
-              </Strong>
+              </HighlightBold>
               」のところに、
               <br />
-              <Strong>
+              <HighlightBold>
                 <EmojiNumber number={1} /> に変換できる弁当箱
-              </Strong>
+              </HighlightBold>
               を入れてみた
-              <br />(<Strong>一番下の黄色の部分</Strong>)
+              <br />(<HighlightBold>一番下の黄色の部分</HighlightBold>)
             </R.Gpat>
             <BubbleQuotes
               quotes={[
@@ -468,10 +476,10 @@ export default () => (
                     <>
                       <P>
                         たしかに、
-                        <Strong>
+                        <HighlightBold>
                           両方とも <EmojiNumber number={1} /> を入れると{' '}
                           <CustomEmoji type="blankNumberRed" /> が残る
-                        </Strong>
+                        </HighlightBold>
                         ね！
                       </P>
                     </>
@@ -510,7 +518,7 @@ export default () => (
             <R.Sdta>
               <Emoji>👧🏻</Emoji> サヤちゃんが弁当箱で再現してみた！
               <br />
-              <Strong>果たして、これが正解なのか？</Strong>
+              <HighlightBold>果たして、これが正解なのか？</HighlightBold>
             </R.Sdta>
             <BubbleQuotes
               quotes={[
@@ -554,17 +562,17 @@ export default () => (
                       <P>いちおう最終チェックとして、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             <CustomEmoji type="blankNumberRed" />{' '}
                             <CustomEmoji type="blankNumberYellow" />{' '}
                             <CustomEmoji type="blankNumberGreen" />{' '}
                             の全てを埋めてみて、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             それをサヤの弁当箱でも再現できるかやってみるよ！
-                          </Em>
+                          </Highlight>
                         </UlLi>
                       </Ul>
                     </>
@@ -585,19 +593,19 @@ export default () => (
                       <P>たとえば、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             条件分岐の機能がある計算箱の{' '}
                             <CustomEmoji type="blankNumberRed" />{' '}
                             <CustomEmoji type="blankNumberYellow" />{' '}
                             <CustomEmoji type="blankNumberGreen" /> に、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             それぞれ <EmojiNumber number={2} />{' '}
                             <EmojiNumber number={1} />{' '}
                             <EmojiNumber number={0} /> を入れた場合…
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
                           最終的に <EmojiNumber number={1} /> が残るよね。
@@ -634,22 +642,23 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <Em>
+                        <Highlight>
                           サヤの弁当箱の <CustomEmoji type="blankNumberRed" />{' '}
                           <CustomEmoji type="blankNumberYellow" />{' '}
                           <CustomEmoji type="blankNumberGreen" /> にも{' '}
                           <EmojiNumber number={2} /> <EmojiNumber number={1} />{' '}
                           <EmojiNumber number={0} /> を入れてみるよ。
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         これを
                         <H args={{ name: 'play' }} /> したとき、
-                        <Em>
+                        <Highlight>
                           先ほど同じく結果が <EmojiNumber number={1} /> になれば
-                          <Strong>成功</Strong> <Emoji>🎉</Emoji>{' '}
-                          というわけだよね。
-                        </Em>
+                          <HighlightBold>
+                            成功
+                          </HighlightBold> <Emoji>🎉</Emoji> というわけだよね。
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -672,11 +681,11 @@ export default () => (
             </R.Jbqw>
             <ExpressionRunnerSeparator />
             <ExpressionRunnerCaptionOnly>
-              <Em>
+              <Highlight>
                 <EmojiNumber size="semilg" number={1} /> に変換できる弁当箱
                 <br />
-                になれば<Strong>成功</Strong> <Emoji>🎉</Emoji>
-              </Em>
+                になれば<HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+              </Highlight>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -721,13 +730,14 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          複雑なので、<Em>目で追わなくても大丈夫だよ！</Em>
+                          複雑なので、
+                          <Highlight>目で追わなくても大丈夫だよ！</Highlight>
                         </UlLi>
                         <UlLi>
                           ちょっと時間がかかるので、待てない方は下の「
-                          <Strong>
+                          <HighlightBold>
                             <H args={{ name: 'skipToTheEnd' }} /> →
-                          </Strong>
+                          </HighlightBold>
                           」を押してね！
                         </UlLi>
                       </Ul>
@@ -767,7 +777,9 @@ export default () => (
                       <P>
                         だから、
                         <EmojiNumber number={1} /> が残ったので、
-                        <Strong>成功</Strong> <Emoji>🎉</Emoji> です！
+                        <HighlightBold>
+                          成功
+                        </HighlightBold> <Emoji>🎉</Emoji> です！
                       </P>
                     </>
                   )
@@ -837,12 +849,12 @@ export default () => (
                     <>
                       <P>
                         ちなみに、
-                        <Em>
+                        <Highlight>
                           以下のような <Emoji>🅰️</Emoji> <Emoji>🅱️</Emoji>{' '}
                           <CustomEmoji type="C" /> <CustomEmoji type="D" />{' '}
                           <CustomEmoji type="E" />{' '}
                           の法則に沿っていれば、それぞれに何の料理が入っていても、条件分岐の機能を再現することができます。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -862,11 +874,11 @@ export default () => (
                     <>
                       <P>
                         まとめると、
-                        <Em>
+                        <Highlight>
                           計算箱の「
                           <H args={{ name: 'conditionFeature' }} />
                           」も、弁当箱で再現することができる
-                        </Em>
+                        </Highlight>
                         のです。このポイントさえ覚えていただければ、細かいことは分からなくても大丈夫です！
                       </P>
                     </>
@@ -888,7 +900,8 @@ export default () => (
                   <H args={{ name: 'conditionFeature' }} />
                   」も、
                   <br />
-                  弁当箱で「<Strong>再現</Strong>」することができる
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
                 </>
               }
             />
@@ -949,7 +962,7 @@ export default () => (
                         「<H args={{ name: 'repeatFeature' }} />
                         」は、「
                         <H args={{ name: 'conditionFeature' }} />
-                        」と<Strong>関連がある</Strong>のです。
+                        」と<HighlightBold>関連がある</HighlightBold>のです。
                       </P>
                     </>
                   )
@@ -1043,7 +1056,9 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <Strong>次のページでまたヒントを出しましょう！</Strong>
+                        <HighlightBold>
+                          次のページでまたヒントを出しましょう！
+                        </HighlightBold>
                       </P>
                       <P>というわけで、先に進んでみてください。</P>
                     </>

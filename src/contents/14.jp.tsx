@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Highlight,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -22,7 +28,9 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>今回は、今までで最も複雑な弁当箱が登場します。</Strong>
+              <HighlightBold>
+                今回は、今までで最も複雑な弁当箱が登場します。
+              </HighlightBold>
             </P>
             <EmojiSeparator
               emojis={['⚠️', '🍱', '⚠️']}
@@ -30,9 +38,9 @@ export default () => (
             />
             <P>
               しかしいつも通り、
-              <Em>
+              <Highlight>
                 内容を完全に理解する必要はありません。少しくらい分からなくても、雰囲気で読み進めていただいて大丈夫です。
-              </Em>
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
@@ -51,11 +59,11 @@ export default () => (
           <>
             <P>
               前回は、
-              <Em>
+              <Highlight>
                 計算箱の「
                 <H args={{ name: 'repeatFeature' }} />
                 」を、サヤちゃんが考えた弁当箱で再現できるかも？
-              </Em>
+              </Highlight>
               というところで終わりました。
             </P>
             <R.Qycx>
@@ -69,10 +77,10 @@ export default () => (
             </R.Peiy>
             <P>
               サヤちゃんの弁当箱は、前回
-              <Em>
+              <Highlight>
                 <H args={{ name: 'play' }} /> してみると{' '}
                 <EmojiNumber number={5} /> になりました。
-              </Em>
+              </Highlight>
             </P>
             <P>
               つまり、「
@@ -109,17 +117,17 @@ export default () => (
                       <P>
                         今回は、前回サヤが考えた弁当箱を
                         <H args={{ name: 'fastForward' }} /> して、
-                        <Strong>
+                        <HighlightBold>
                           途中、弁当箱がどう変化するかを確認してみる
-                        </Strong>
+                        </HighlightBold>
                         よ。
                       </P>
                       <P>
                         そうすることで、
-                        <Em>
+                        <Highlight>
                           どいうった経緯で最終的に <EmojiNumber number={5} />{' '}
                           になるのか
-                        </Em>
+                        </Highlight>
                         を知ることができるからね。
                       </P>
                     </>
@@ -136,7 +144,7 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  <Strong>途中、弁当箱がどう変化した後…</Strong>
+                  <HighlightBold>途中、弁当箱がどう変化した後…</HighlightBold>
                 </>
               }
             />
@@ -152,9 +160,9 @@ export default () => (
                     <>
                       <P>
                         なるほど、
-                        <Em>
+                        <Highlight>
                           早送りをすることで、途中で何が起きているか確かめてみようってことだね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -188,22 +196,23 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             弁当箱の中身がたくさんあるので、スペースの都合上、ひとつひとつの料理を小さく表示しているよ。
-                          </Em>
+                          </Highlight>
                           見にくくてごめん！
                         </UlLi>
                         <UlLi>
                           説明のために、何度も止めながらやっていくよ。
                         </UlLi>
                         <UlLi>
-                          複雑なので、<Em>目で追わなくても大丈夫だよ！</Em>
+                          複雑なので、
+                          <Highlight>目で追わなくても大丈夫だよ！</Highlight>
                         </UlLi>
                         <UlLi>
                           ちょっと時間がかかるので、待てない方は下の「
-                          <Strong>
+                          <HighlightBold>
                             <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                          </Strong>
+                          </HighlightBold>
                           」を押してね！
                         </UlLi>
                       </Ul>
@@ -229,7 +238,8 @@ export default () => (
                     <>
                       <P>
                         でもちょっと立ち止まって考えてみて。まず、この
-                        <Em>真ん中の黄色で示した部分</Em>に注目してくれる？
+                        <Highlight>真ん中の黄色で示した部分</Highlight>
+                        に注目してくれる？
                       </P>
                     </>
                   )
@@ -237,7 +247,7 @@ export default () => (
               ]}
             />
             <R.Bras>
-              真ん中の<Strong>黄色の部分</Strong>に注目
+              真ん中の<HighlightBold>黄色の部分</HighlightBold>に注目
             </R.Bras>
             <BubbleQuotes
               quotes={[
@@ -247,11 +257,13 @@ export default () => (
                     <>
                       <P>
                         上の黄色の部分が複雑なので、
-                        <Em>
-                          <Strong>分かりやすくするために、</Strong>そこだけを{' '}
-                          <Emoji>🍱</Emoji>{' '}
+                        <Highlight>
+                          <HighlightBold>
+                            分かりやすくするために、
+                          </HighlightBold>
+                          そこだけを <Emoji>🍱</Emoji>{' '}
                           のアイコンに置き換えて省略してみると、下のようになる
-                        </Em>
+                        </Highlight>
                         よ。
                       </P>
                     </>
@@ -260,7 +272,7 @@ export default () => (
               ]}
             />
             <R.Yyfi>
-              先ほどの弁当箱の<Strong>黄色の部分</Strong>を<br />
+              先ほどの弁当箱の<HighlightBold>黄色の部分</HighlightBold>を<br />
               <Emoji>🍱</Emoji> と置き換えて省略した
             </R.Yyfi>
             <BubbleQuotes
@@ -272,10 +284,10 @@ export default () => (
                       <P>この時点で、</P>
                       <Ul>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             <InlineBorder type="condition" /> には{' '}
                             <EmojiNumber number={3} /> が入っている
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                       <P>…ということを覚えておいてね。</P>
@@ -285,10 +297,10 @@ export default () => (
               ]}
             />
             <R.Amjx>
-              <Strong>
+              <HighlightBold>
                 <InlineBorder type="condition" /> には{' '}
                 <EmojiNumber number={3} /> が入っている
-              </Strong>
+              </HighlightBold>
             </R.Amjx>
             <BubbleQuotes
               quotes={[
@@ -307,11 +319,11 @@ export default () => (
                       <P>後で大事になってくるからだよ。</P>
                       <P>
                         では続きを見てみよう。
-                        <Strong>
+                        <HighlightBold>
                           <InlineBorder type="condition" /> には{' '}
                           <EmojiNumber number={3} /> が入っているので、
                           <InlineBorder type="falseCase" /> が残ります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -338,7 +350,7 @@ export default () => (
                     <>
                       <P>
                         じゃあ、<Emoji>🍱</Emoji> を省略する前の状態(
-                        <Em>黄色の部分</Em>)に戻すね。
+                        <Highlight>黄色の部分</Highlight>)に戻すね。
                       </P>
                     </>
                   )
@@ -381,11 +393,11 @@ export default () => (
               ]}
             />
             <R.Tfsi>
-              <Em>
+              <Highlight>
                 黄色の部分は、前回省略したのと
                 <br />
                 まったく同じ
-              </Em>
+              </Highlight>
             </R.Tfsi>
             <BubbleQuotes
               quotes={[
@@ -394,15 +406,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そう、この部分が<Strong>繰り返される</Strong>んだよね。
+                        そう、この部分が
+                        <HighlightBold>繰り返される</HighlightBold>んだよね。
                         <Emoji>🔁</Emoji>
                       </P>
                       <P>
                         では、また
-                        <Strong>
+                        <HighlightBold>
                           黄色の部分を <Emoji>🍱</Emoji>{' '}
                           のアイコンで省略してみた
-                        </Strong>
+                        </HighlightBold>
                         よ。前回と何が違うかな？
                       </P>
                     </>
@@ -411,9 +424,9 @@ export default () => (
               ]}
             />
             <R.Fkat>
-              <Strong>
+              <HighlightBold>
                 黄色の部分を <Emoji>🍱</Emoji> で省略してみた
-              </Strong>
+              </HighlightBold>
             </R.Fkat>
             <BubbleQuotes
               quotes={[
@@ -431,14 +444,14 @@ export default () => (
               left={
                 <>
                   <R.Amjx>
-                    <Strong>前回と比べると…</Strong>
+                    <HighlightBold>前回と比べると…</HighlightBold>
                   </R.Amjx>
                 </>
               }
               right={
                 <>
                   <R.Qgau>
-                    <Strong>黄色の部分が違う</Strong>
+                    <HighlightBold>黄色の部分が違う</HighlightBold>
                   </R.Qgau>
                 </>
               }
@@ -454,15 +467,15 @@ export default () => (
                         <UlLi>
                           先ほど <InlineBorder type="condition" /> には{' '}
                           <EmojiNumber number={3} /> が入っていたが、
-                          <Strong>
+                          <HighlightBold>
                             今回は <EmojiNumber number={2} /> が入っている
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             一番下に <CustomEmoji type="plusOne" />{' '}
                             が追加されている
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                     </>
@@ -474,12 +487,12 @@ export default () => (
                     <>
                       <P>
                         ふむふむ…
-                        <Em>
+                        <Highlight>
                           <InlineBorder type="condition" /> に入っていた数字は、
                           <EmojiNumber number={3} /> から{' '}
                           <EmojiNumber number={2} /> に「
-                          <Strong>1減った</Strong>」というわけか。
-                        </Em>
+                          <HighlightBold>1減った</HighlightBold>」というわけか。
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -506,11 +519,11 @@ export default () => (
                     <>
                       <P>
                         じゃあもしかしたら、
-                        <Strong>
+                        <HighlightBold>
                           このまま続けたら、次は{' '}
                           <InlineBorder type="condition" /> の数字が{' '}
                           <EmojiNumber number={1} /> になる
-                        </Strong>
+                        </HighlightBold>
                         のかも…？
                       </P>
                       <P>続けて確かめてみるか。</P>
@@ -549,10 +562,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           また真ん中の部分が前回と同じなので、<Emoji>🍱</Emoji>{' '}
                           のアイコンで省略してみる
-                        </Em>
+                        </Highlight>
                         ね。
                       </P>
                     </>
@@ -581,14 +594,14 @@ export default () => (
               left={
                 <>
                   <R.Kosw>
-                    <Strong>前回と比べると…</Strong>
+                    <HighlightBold>前回と比べると…</HighlightBold>
                   </R.Kosw>
                 </>
               }
               right={
                 <>
                   <R.Ysxf>
-                    <Strong>黄色の部分が違う</Strong>
+                    <HighlightBold>黄色の部分が違う</HighlightBold>
                   </R.Ysxf>
                 </>
               }
@@ -604,15 +617,15 @@ export default () => (
                         <UlLi>
                           先ほど <InlineBorder type="condition" /> には{' '}
                           <EmojiNumber number={2} /> が入っていたが、
-                          <Strong>
+                          <HighlightBold>
                             今回は <EmojiNumber number={1} /> が入っている
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             またしても、一番下に <CustomEmoji type="plusOne" />{' '}
                             が追加されている
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                     </>
@@ -625,14 +638,14 @@ export default () => (
                       <P>なんとなく、パターンが見えてきたかも…</P>
                       <P>
                         特に、
-                        <Em>
+                        <Highlight>
                           <InlineBorder type="condition" /> に入っていた数字は、
                           <EmojiNumber number={3} /> から{' '}
                           <EmojiNumber number={2} /> に、
                           <EmojiNumber number={2} /> から{' '}
                           <EmojiNumber number={1} /> にと、
-                          <Strong>1ずつ減っている</Strong>よね。
-                        </Em>
+                          <HighlightBold>1ずつ減っている</HighlightBold>よね。
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -661,20 +674,20 @@ export default () => (
                     <>
                       <P>
                         ということは、次は{' '}
-                        <Em>
+                        <Highlight>
                           <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> になるのかな？
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         そして、
-                        <Strong>
+                        <HighlightBold>
                           <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> になると、
                           <InlineBorder type="falseCase" /> ではなく{' '}
                           <InlineBorder type="trueCase" />{' '}
                           が残るようになるから、繰り返しがストップされる
-                        </Strong>
+                        </HighlightBold>
                         のかも？
                       </P>
                     </>
@@ -685,7 +698,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、確かめてみよう！<Strong>次が最後だよ！</Strong>
+                        では、確かめてみよう！
+                        <HighlightBold>次が最後だよ！</HighlightBold>
                       </P>
                     </>
                   )
@@ -706,8 +720,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>これが最後</Strong>だよ！<Emoji>🍱</Emoji>{' '}
-                        を省略する前の状態に戻したので、
+                        <HighlightBold>これが最後</HighlightBold>だよ！
+                        <Emoji>🍱</Emoji> を省略する前の状態に戻したので、
                         <H args={{ name: 'pressFastForward', girl: true }} />
                       </P>
                     </>
@@ -723,10 +737,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           例によって、真ん中の部分が前回と同じなので、
                           <Emoji>🍱</Emoji> のアイコンで省略してみる
-                        </Em>
+                        </Highlight>
                         ね。
                       </P>
                     </>
@@ -755,14 +769,14 @@ export default () => (
               left={
                 <>
                   <R.Mibj>
-                    <Strong>前回と比べると…</Strong>
+                    <HighlightBold>前回と比べると…</HighlightBold>
                   </R.Mibj>
                 </>
               }
               right={
                 <>
                   <R.Kdgv>
-                    <Strong>黄色の部分が違う</Strong>
+                    <HighlightBold>黄色の部分が違う</HighlightBold>
                   </R.Kdgv>
                 </>
               }
@@ -774,10 +788,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> になった！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -788,11 +802,11 @@ export default () => (
                     <>
                       <P>
                         そう！
-                        <Em>
+                        <Highlight>
                           だから、
                           <InlineBorder type="trueCase" /> に入っている{' '}
                           <EmojiNumber number={2} /> が残ることになるね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -820,9 +834,9 @@ export default () => (
                         <CustomEmoji type="plusOne" /> を計算するだけなので…
                       </P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           結果は <EmojiNumber number={5} /> になります！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -862,10 +876,10 @@ export default () => (
                     <>
                       <P>
                         まず、
-                        <Em>
+                        <Highlight>
                           もともとの弁当箱には数字の <EmojiNumber number={3} />{' '}
                           と <EmojiNumber number={2} /> が入っていた
-                        </Em>
+                        </Highlight>
                         よね。
                       </P>
                     </>
@@ -885,10 +899,10 @@ export default () => (
                     <>
                       <P>
                         そして
-                        <Em>
+                        <Highlight>
                           <H args={{ name: 'fastForward' }} />{' '}
                           していくと、終了直前に以下のようになった
-                        </Em>
+                        </Highlight>
                         よね。
                       </P>
                     </>
@@ -942,7 +956,7 @@ export default () => (
             </R.Qycx>
             <ExpressionRunnerSeparator />
             <R.Peiy>
-              この弁当箱で「<Strong>再現</Strong>」できる！
+              この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
             </R.Peiy>
             <BubbleQuotes
               quotes={[
@@ -1048,7 +1062,7 @@ export default () => (
               ]}
             />
             <R.Bxuv>
-              この弁当箱で「<Strong>再現</Strong>」できる！
+              この弁当箱で「<HighlightBold>再現</HighlightBold>」できる！
             </R.Bxuv>
           </>
         )
@@ -1106,10 +1120,10 @@ export default () => (
                     <>
                       <P>
                         ちなみにですが…下のように、
-                        <Strong>
+                        <HighlightBold>
                           <CustomEmoji type="minusOne" />{' '}
                           を繰り返す計算箱は、どうやって弁当箱で再現すればいいか
-                        </Strong>
+                        </HighlightBold>
                         分かりますか？
                       </P>
                     </>
@@ -1136,12 +1150,12 @@ export default () => (
               ]}
             />
             <R.Zkon>
-              <Strong>
+              <HighlightBold>
                 先ほどの弁当箱で右上にあった
                 <br />
                 <CustomEmoji type="plusOne" /> を{' '}
                 <CustomEmoji type="minusOne" /> に変えるだけ(黄色の部分)
-              </Strong>
+              </HighlightBold>
             </R.Zkon>
             <BubbleQuotes
               quotes={[
@@ -1150,7 +1164,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        サヤちゃん、<Strong>その通りです！</Strong>これで、
+                        サヤちゃん、
+                        <HighlightBold>その通りです！</HighlightBold>これで、
                         <CustomEmoji type="minusOne" />{' '}
                         を繰り返す計算箱を再現できます。
                       </P>
@@ -1196,13 +1211,13 @@ export default () => (
                       <P>そうですね。ここでひとつ説明したいことがあります。</P>
                       <P>
                         さきほど登場した、
-                        <Em>
+                        <Highlight>
                           <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
                           を計算できる弁当箱の、
-                          <Strong>
+                          <HighlightBold>
                             下半分に使われていた部分にご注目ください
-                          </Strong>
-                        </Em>
+                          </HighlightBold>
+                        </Highlight>
                         。
                       </P>
                     </>
@@ -1274,7 +1289,7 @@ export default () => (
             <R.Xjzx>
               今回登場した弁当箱において、
               <br />
-              <Strong>下半分の部分に使われていた</Strong>
+              <HighlightBold>下半分の部分に使われていた</HighlightBold>
               <br />
               こちらの弁当箱が、
               <br />「<H args={{ name: 'repeatFeature' }} />
@@ -1298,7 +1313,8 @@ export default () => (
                     <>
                       <P>
                         そうですね。ちなみに、この弁当箱には、
-                        <Strong>特殊な呼び名</Strong>があるんですよ。
+                        <HighlightBold>特殊な呼び名</HighlightBold>
+                        があるんですよ。
                       </P>
                     </>
                   )
@@ -1316,7 +1332,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<Strong>Yコンビネータ</Strong>
+                        「<HighlightBold>Yコンビネータ</HighlightBold>
                         」です。
                       </P>
                     </>
@@ -1325,7 +1341,7 @@ export default () => (
               ]}
             />
             <R.Xjzx>
-              この弁当箱の名は「<Strong>Yコンビネータ</Strong>」
+              この弁当箱の名は「<HighlightBold>Yコンビネータ</HighlightBold>」
             </R.Xjzx>
             <BubbleQuotes
               quotes={[
@@ -1334,7 +1350,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<Strong>Yコンビネータ</Strong>」かあ。変な名前だね。
+                        「<HighlightBold>Yコンビネータ</HighlightBold>
+                        」かあ。変な名前だね。
                       </P>
                     </>
                   )
@@ -1345,7 +1362,8 @@ export default () => (
                     <>
                       <P>
                         ちなみに、以下のような法則に当てはまる弁当箱は、どれも「
-                        <Strong>Yコンビネータ</Strong>」と呼べるんですよ。
+                        <HighlightBold>Yコンビネータ</HighlightBold>
+                        」と呼べるんですよ。
                       </P>
                     </>
                   )
@@ -1354,7 +1372,7 @@ export default () => (
             />
             <R.Rjho>
               この法則に当てはまる弁当箱は全部
-              <br />「<Strong>Yコンビネータ</Strong>」
+              <br />「<HighlightBold>Yコンビネータ</HighlightBold>」
             </R.Rjho>
             <BubbleQuotes
               quotes={[
@@ -1364,14 +1382,14 @@ export default () => (
                     <>
                       <P>
                         そうなんだ。でもすごいね。
-                        <Strong>
+                        <HighlightBold>
                           こんなシンプルな、
                           <Emoji>🅰️</Emoji> と <Emoji>🅱️</Emoji>{' '}
                           の二種類の料理しかない弁当箱が、繰り返しを可能にするなんて…
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
-                        <Strong>まるで、魔法みたい！</Strong>
+                        <HighlightBold>まるで、魔法みたい！</HighlightBold>
                         <Emoji size="mdlg">🧙‍♀️</Emoji>{' '}
                         <Emoji size="mdlg">✨</Emoji>
                       </P>
@@ -1383,7 +1401,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        確かに…まさに、「<Strong>魔法のYコンビネータ</Strong>
+                        確かに…まさに、「
+                        <HighlightBold>魔法のYコンビネータ</HighlightBold>
                         」だね！
                       </P>
                     </>
@@ -1395,7 +1414,7 @@ export default () => (
               emojis={['✨', '🧙‍♀️', '✨']}
               description={
                 <>
-                  <Strong>魔法のYコンビネータ</Strong>
+                  <HighlightBold>魔法のYコンビネータ</HighlightBold>
                 </>
               }
             />
@@ -1440,7 +1459,8 @@ export default () => (
               ]}
             />
             <P>
-              村人たちの命運やいかに？次の<Strong>上級最後のページ</Strong>
+              村人たちの命運やいかに？次の
+              <HighlightBold>上級最後のページ</HighlightBold>
               で確かめてみましょう！
             </P>
             <NextLessonButton />

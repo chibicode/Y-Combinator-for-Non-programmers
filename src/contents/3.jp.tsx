@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr, Bold } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Highlight,
+  Hr,
+  Bold
+} from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
@@ -21,9 +27,9 @@ export default () => (
           <>
             <P>
               ある日のこと。平和だったラムダ村に突然、
-              <Strong>
+              <HighlightBold>
                 とてもとても恐ろしい悪魔 <Emoji>😈</Emoji>
-              </Strong>
+              </HighlightBold>
               が現れました。
             </P>
             <EmojiSeparator
@@ -56,13 +62,14 @@ export default () => (
                     <>
                       <P>安心しろ、お前たちの命だけは助けてやる。</P>
                       <P>
-                        <Em>
+                        <Highlight>
                           だが、お前たちが大事にしている
-                          <Strong>
+                          <HighlightBold>
                             計算箱 <CustomEmoji type="mathBox" />
-                          </Strong>{' '}
-                          は、すべて<Strong>没収</Strong>させてもらうぞ！
-                        </Em>
+                          </HighlightBold>{' '}
+                          は、すべて<HighlightBold>没収</HighlightBold>
+                          させてもらうぞ！
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -82,7 +89,9 @@ export default () => (
           <>
             <P>
               こうして悪魔は、
-              <Strong>ラムダ村から計算箱を取り上げてしまったのです。</Strong>
+              <HighlightBold>
+                ラムダ村から計算箱を取り上げてしまったのです。
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -115,7 +124,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>俺らは計算が大の苦手なんだ。</Em>
+                        <Highlight>俺らは計算が大の苦手なんだ。</Highlight>
                       </P>
                       <P>
                         計算箱がないと、足し算や引き算ができなくなって、村の経済が成り立たなくなるんだぞ！
@@ -133,9 +142,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           計算箱を取り上げたのは、お前たちが計算が苦手だからだよ。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         お前たちは簡単な計算をするのにでも計算箱に頼り切っているだろう。そんなことだから、いつまでたっても計算が上達しないんだ。
@@ -156,9 +165,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           だから計算箱を取り上げることで、お前たちが計算を勉強するきっかけを作ってやったのさ。
-                        </Em>
+                        </Highlight>
                         感謝するんだな！
                       </P>
                     </>
@@ -197,7 +206,9 @@ export default () => (
                   children: (
                     <P>
                       ふむ…そこまで言うなら仕方ない。では、
-                      <Strong>お前たちにチャンスをやろう！</Strong>
+                      <HighlightBold>
+                        お前たちにチャンスをやろう！
+                      </HighlightBold>
                     </P>
                   )
                 }
@@ -211,14 +222,16 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           これから、
-                          <Strong>頭を使わないと解けないパズル</Strong>
+                          <HighlightBold>
+                            頭を使わないと解けないパズル
+                          </HighlightBold>
                           をたくさん出題する。
-                          <Strong>
+                          <HighlightBold>
                             すべて解けたら、計算箱を返してやってもいいぞ！
-                          </Strong>
-                        </Em>
+                          </HighlightBold>
+                        </Highlight>
                       </P>
                       <P>
                         日頃から頭を使ってこなかったお前たちには、おそらくムリだろうがな！わはは！
@@ -238,7 +251,7 @@ export default () => (
                         難しそう…しかし、やるしかない！計算箱を取り返すんだ！
                       </P>
                       <P>
-                        <Em>その挑戦、受けて立つぞ！</Em>
+                        <Highlight>その挑戦、受けて立つぞ！</Highlight>
                       </P>
                     </>
                   )
@@ -279,9 +292,9 @@ export default () => (
                     <>
                       <P>
                         お前たちに解いてもらうパズルは、{' '}
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
-                        </Strong>
+                        </HighlightBold>
                         というものだ。
                       </P>
                     </>
@@ -292,7 +305,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>弁当箱</Strong>
+                        <HighlightBold>弁当箱</HighlightBold>
                         だって？なんか美味しそうな名前だなあ…
                       </P>
                     </>
@@ -319,9 +332,9 @@ export default () => (
               <Bold>解説:</Bold> 上のように、
               <H args={{ name: 'bentoBoxPuzzle' }} />
               には、実際の弁当箱のように、
-              <Em>
+              <Highlight>
                 四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
-              </Em>
+              </Highlight>
               。
             </P>
             <P>
@@ -350,7 +363,7 @@ export default () => (
                     <>
                       <P>
                         なんとなく、
-                        <Em>見た目が計算箱に似ている</Em>
+                        <Highlight>見た目が計算箱に似ている</Highlight>
                         気がするなあ。数字の代わりに、料理が入っているけど。
                       </P>
                     </>
@@ -363,15 +376,15 @@ export default () => (
                       <P>
                         実はこの
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        は、<Em>計算箱と密接な関係がある</Em>
+                        は、<Highlight>計算箱と密接な関係がある</Highlight>
                         んだが、これについては後に説明する。
                       </P>
                       <P>
                         とりあえず今は、
-                        <Em>
+                        <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />の
                           <H args={{ name: 'play' }} /> について見ていこう。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -392,15 +405,15 @@ export default () => (
         content: (
           <>
             <P>
-              <Em>
+              <Highlight>
                 <H args={{ name: 'bentoBoxPuzzle' }} />
                 は、計算箱と同じように
                 <H args={{ name: 'play' }} /> することができます。
-              </Em>
+              </Highlight>
               試しに、
-              <Em>
+              <Highlight>
                 <H args={{ name: 'pressPlay' }} />
-              </Em>
+              </Highlight>
             </P>
             <R.Itbm />
             <BubbleQuotes
@@ -411,10 +424,10 @@ export default () => (
                     <>
                       <P>
                         <H args={{ name: 'play' }} /> すると、
-                        <Em>
+                        <Highlight>
                           下のふたつの <EmojiWithText letter="a" /> が消えて、
                           <EmojiWithText letter="b" /> だけが残った！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -435,11 +448,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、これは<Strong>ある法則</Strong>に則っているんだ。
+                        実は、これは<HighlightBold>ある法則</HighlightBold>
+                        に則っているんだ。
                       </P>
                       <P>
                         今回は、お前たちに
-                        <Strong>その法則が何か解き明かしてもらうぞ。</Strong>
+                        <HighlightBold>
+                          その法則が何か解き明かしてもらうぞ。
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -450,7 +466,7 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  弁当箱は、<Strong>どんな法則</Strong>に則って
+                  弁当箱は、<HighlightBold>どんな法則</HighlightBold>に則って
                   <br />
                   <H args={{ name: 'play' }} /> されるでしょう？
                 </>
@@ -464,7 +480,7 @@ export default () => (
                     <>
                       <P>
                         これだけだと法則が何か、まだハッキリと言えないなあ…
-                        <Em>もう少し他の例を試してみないと！</Em>
+                        <Highlight>もう少し他の例を試してみないと！</Highlight>
                       </P>
                     </>
                   )
@@ -517,7 +533,8 @@ export default () => (
             />
             <Hr />
             <P>
-              続いて、上段に<Strong>ふたつの料理が入っている場合</Strong>
+              続いて、上段に
+              <HighlightBold>ふたつの料理が入っている場合</HighlightBold>
               を紹介します。
             </P>
             <P>
@@ -551,7 +568,7 @@ export default () => (
             </P>
             <Hr />
             <P>
-              どれも<Strong>ある法則</Strong>
+              どれも<HighlightBold>ある法則</HighlightBold>
               に則っているのですが、その法則がお分かりでしょうか？
             </P>
             <EmojiSeparator
@@ -573,11 +590,11 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <Strong>
+                        <HighlightBold>
                           弁当箱のパズルは、
                           <H args={{ name: 'play' }} />
                           する際にどんな法則に則っているか
-                        </Strong>
+                        </HighlightBold>
                         、そろそろ分かったかな？
                       </P>
                     </>
@@ -643,9 +660,9 @@ export default () => (
                     <>
                       <P>
                         ほう。ではここで、
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'yesNoQuiz' }} />
-                        </Strong>
+                        </HighlightBold>
                         の時間だ。法則が分かったかどうか、チェックしてやるぞ！
                       </P>
                     </>
@@ -695,7 +712,7 @@ export default () => (
             <P>
               これを
               <H args={{ name: 'play' }} /> すると、
-              <Strong>最終的に下のようになるでしょうか？</Strong>
+              <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
               これまでの法則から予想してみてください。
             </P>
             <R.Vvjn />
@@ -721,7 +738,7 @@ export default () => (
             </P>
             <R.Uvmv />
             <P>
-              <Strong>最終的に下のようになるでしょうか？</Strong>
+              <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
               これまでの法則から予想してみてください。
             </P>
             <R.Hvqh />
@@ -740,10 +757,10 @@ export default () => (
             <R.Zzyu />
             <P>
               つまり
-              <Strong>
+              <HighlightBold>
                 1問目の
                 <H args={{ name: 'theAnswerIs', isYes: true }} />
-              </Strong>{' '}
+              </HighlightBold>{' '}
               でした。
             </P>
             <P>
@@ -752,10 +769,10 @@ export default () => (
             <R.Mutg />
             <P>
               つまり
-              <Strong>
+              <HighlightBold>
                 2問目の
                 <H args={{ name: 'theAnswerIs', isYes: false }} />
-              </Strong>{' '}
+              </HighlightBold>{' '}
               でした。
             </P>
           </>
