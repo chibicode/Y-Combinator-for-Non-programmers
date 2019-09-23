@@ -71,6 +71,7 @@ interface HProps {
     | {
         name: 'bentoBoxPuzzle'
         capitalize?: true
+        indefinite?: true
       }
     | { name: 'next' }
     | { name: 'play'; lowerCase?: true }
@@ -367,8 +368,14 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          {args.capitalize ? 'T' : 't'}he <Bold>“Lunchbox”</Bold> puzzle{' '}
-          <Emoji>🍱</Emoji>
+          {args.indefinite
+            ? args.capitalize
+              ? 'A'
+              : 'a'
+            : args.capitalize
+            ? 'The'
+            : 'the'}{' '}
+          <Bold>“Lunchbox”</Bold> puzzle <Emoji>🍱</Emoji>
         </>
       )
     } else {

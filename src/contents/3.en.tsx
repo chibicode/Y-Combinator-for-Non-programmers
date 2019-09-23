@@ -302,35 +302,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        お前たちに解いてもらうパズルは、{' '}
+                        The puzzle you’ll be solving is called{' '}
                         <HighlightBold>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                         </HighlightBold>
-                        というものだ。
+                        .
                       </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'thinking',
-                  children: (
-                    <>
-                      <P>
-                        <HighlightBold>弁当箱</HighlightBold>
-                        だって？なんか美味しそうな名前だなあ…
-                      </P>
-                    </>
-                  )
-                },
-                {
-                  type: 'devil',
-                  children: (
-                    <>
-                      <P>
-                        そして、これがその
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        だ。
-                      </P>
+                      <P>First, take a look at this:</P>
                     </>
                   )
                 }
@@ -339,12 +317,75 @@ export default () => (
             <PFullWidth>
               <Img
                 src="/static/images/bentoboxes.jpg"
-                alt="Bento Boxes"
-                caption={<>...</>}
+                alt="Lunchbox"
+                caption={
+                  <>
+                    Japanese lunchboxes. Photo taken at Kiyoken
+                    <br />
+                    in Yokohama, Japan, the author’s hometown.
+                  </>
+                }
               />
             </PFullWidth>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'heart',
+                  children: (
+                    <>
+                      <P>Wow, they look delicious!</P>
+                    </>
+                  )
+                },
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        These are traditional Japanese lunchboxes (called{' '}
+                        <Bold>“Bento Boxes”</Bold>).
+                      </P>
+                      <P>
+                        As you can see,{' '}
+                        <Italic>
+                          each lunchbox has several sections, and each section
+                          has some type of a food item.
+                        </Italic>
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
+            <PFullWidth>
+              <Img src="/static/images/foodItems.jpg" alt="Lunchbox" />
+            </PFullWidth>
+            <BubbleQuotes
+              quotes={[
+                {
+                  type: 'devil',
+                  children: (
+                    <>
+                      <P>
+                        Now, take a look at this below. This is an example of{' '}
+                        <HighlightBold>
+                          <H args={{ name: 'bentoBoxPuzzle' }} />
+                        </HighlightBold>
+                        .
+                      </P>
+                    </>
+                  )
+                }
+              ]}
+            />
             <R.Ilpo>
-              <H args={{ name: 'bentoBoxPuzzle' }} /> の一例
+              <H
+                args={{
+                  name: 'bentoBoxPuzzle',
+                  capitalize: true,
+                  indefinite: true
+                }}
+              />
             </R.Ilpo>
             <P>
               <Bold>解説:</Bold> 上のように、
