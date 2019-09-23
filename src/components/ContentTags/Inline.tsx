@@ -38,6 +38,15 @@ export const Bold = (props: JSX.IntrinsicElements['span']) => (
   />
 )
 
+export const Italic = (props: JSX.IntrinsicElements['span']) => (
+  <span
+    css={css`
+      font-style: italic;
+    `}
+    {...props}
+  />
+)
+
 export const Strong = ({
   highlightType,
   ...props
