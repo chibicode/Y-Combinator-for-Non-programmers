@@ -345,7 +345,7 @@ export default () => (
                     <>
                       <P>
                         These are <Bold>traditional Japanese lunchboxes</Bold>{' '}
-                        (called <Bold>“Bento Boxes”</Bold>).
+                        (called <Bold>“Bento Boxes”</Bold> <Emoji>🍱</Emoji>).
                       </P>
                       <P>
                         As you can see,{' '}
@@ -415,6 +415,7 @@ export default () => (
                         </HighlightBold>{' '}
                         because it looks like a Japanese lunchbox.
                       </P>
+                      <P>Now, let’s take a look at it in more detail…</P>
                     </>
                   )
                 }
@@ -497,23 +498,16 @@ export default () => (
       {
         title: (
           <>
-            弁当箱を
-            <H args={{ name: 'play' }} />
-            する
+            How to <H args={{ name: 'play', lowerCase: true }} /> a lunchbox
           </>
         ),
         content: (
           <>
             <P>
-              <Highlight>
-                <H args={{ name: 'bentoBoxPuzzle' }} />
-                は、計算箱と同じように
-                <H args={{ name: 'play' }} /> することができます。
-              </Highlight>
-              試しに、
-              <Highlight>
-                <H args={{ name: 'pressPlay' }} />
-              </Highlight>
+              We can <H args={{ name: 'play', lowerCase: true }} />{' '}
+              <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} />, just
+              like how we can run a mathbox.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} /> below:
             </P>
             <R.Itbm />
             <BubbleQuotes
@@ -523,11 +517,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <H args={{ name: 'play' }} /> すると、
-                        <Highlight>
-                          下のふたつの <EmojiWithText letter="a" /> が消えて、
-                          <EmojiWithText letter="b" /> だけが残った！
-                        </Highlight>
+                        After running it,
+                        <Italic>
+                          the bottom two{' '}
+                          <EmojiWithText letter="a" postfix="s" /> disappeared,
+                          and only the <EmojiWithText letter="b" /> is
+                          remaining!
+                        </Italic>
                       </P>
                     </>
                   )
@@ -535,11 +531,11 @@ export default () => (
               ]}
             />
             <R.Ilpo>
-              <H args={{ name: 'play' }} /> すると…
+              If you <H args={{ name: 'play', lowerCase: true }} /> it…
             </R.Ilpo>
             <ExpressionRunnerSeparator />
             <R.Osqo>
-              <EmojiWithText letter="b" /> だけが残る
+              Only the <EmojiWithText letter="b" /> remains
             </R.Osqo>
             <BubbleQuotes
               quotes={[
@@ -548,14 +544,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        実は、これは<HighlightBold>ある法則</HighlightBold>
-                        に則っているんだ。
+                        There is actually a{' '}
+                        <Italic>specific set of rules</Italic> that determines
+                        what happens when you{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> a
+                        lunchbox.
                       </P>
                       <P>
-                        今回は、お前たちに
-                        <HighlightBold>
-                          その法則が何か解き明かしてもらうぞ。
-                        </HighlightBold>
+                        <Bold>Your task</Bold> is to{' '}
+                        <Highlight>figure out what these rules are</Highlight>.
                       </P>
                     </>
                   )
@@ -566,9 +563,11 @@ export default () => (
               emojis={['❓', '🍱', '❓']}
               description={
                 <>
-                  弁当箱は、<HighlightBold>どんな法則</HighlightBold>に則って
+                  There’s a specific set of rules for
                   <br />
-                  <H args={{ name: 'play' }} /> されるでしょう？
+                  <H args={{ name: 'bentoBoxPuzzle' }} />.
+                  <br />
+                  Your task is to figure out what that is!
                 </>
               }
             />
@@ -579,8 +578,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これだけだと法則が何か、まだハッキリと言えないなあ…
-                        <Highlight>もう少し他の例を試してみないと！</Highlight>
+                        Hmm… I can’t tell what the rules are yet.{' '}
+                        <Italic>Can we look at more examples?</Italic>
                       </P>
                     </>
                   )

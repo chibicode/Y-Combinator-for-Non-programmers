@@ -11,9 +11,15 @@ interface EmojiWithTextProps {
   letter: VariableNames
   size: EmojiProps['size']
   capitalize?: true
+  postfix?: string
 }
 
-const EmojiWithText = ({ letter, size, capitalize }: EmojiWithTextProps) => {
+const EmojiWithText = ({
+  letter,
+  size,
+  capitalize,
+  postfix
+}: EmojiWithTextProps) => {
   const { inQuote } = useContext(BubbleQuoteContext)
   const emoji = letterEmojiMapping[letter]
   const label = emojiLabelMapping[emoji]
@@ -25,7 +31,8 @@ const EmojiWithText = ({ letter, size, capitalize }: EmojiWithTextProps) => {
     : label[locale]
   return (
     <Highlight highlightType={inQuote ? 'blue' : 'white'}>
-      {labelText} <Emoji size={size}>{emoji}</Emoji>{' '}
+      {labelText}
+      {postfix || ''} <Emoji size={size}>{emoji}</Emoji>{' '}
     </Highlight>
   )
 }

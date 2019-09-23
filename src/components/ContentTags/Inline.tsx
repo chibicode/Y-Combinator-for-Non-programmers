@@ -114,21 +114,13 @@ export const Highlight = ({
   const { inLink } = useContext(LinkContext)
   const { color } = useContext(CardColorContext)
   if (inHighlightType === 'white' || highlightType === 'none') {
-    return (
-      <span
-        css={css`
-          font-style: normal;
-        `}
-        {...props}
-      />
-    )
+    return <span {...props} />
   } else {
     return (
       <HighlightContext.Provider value={{ inHighlightType: highlightType }}>
         <span
           css={[
             css`
-              font-style: normal;
               background: ${highlightType === 'pink'
                 ? colors('pink50')
                 : highlightType === 'blue'
