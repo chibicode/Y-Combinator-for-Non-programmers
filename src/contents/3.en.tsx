@@ -205,7 +205,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <P>
-                      Hmm…okay. <Em>Maybe I can give you a chance.</Em>
+                      Hmm…okay. <Em>Maybe I’ll give you a chance.</Em>
                     </P>
                   )
                 }
@@ -220,33 +220,38 @@ export default () => (
                     <>
                       <P>
                         <Em>
-                          これから、
-                          <Strong>頭を使わないと解けないパズル</Strong>
-                          をたくさん出題する。
+                          I’ll give you{' '}
                           <Strong>
-                            すべて解けたら、計算箱を返してやってもいいぞ！
-                          </Strong>
+                            a bunch of puzzles that require lots of thinking.
+                          </Strong>{' '}
+                          If you can solve <Strong>all</Strong> of them, I’ll
+                          give your mathboxes back.
                         </Em>
                       </P>
                       <P>
-                        日頃から頭を使ってこなかったお前たちには、おそらくムリだろうがな！わはは！
+                        Since you villagers hadn’t spent much time studying,
+                        those puzzles might be too hard for you. Haha!
                       </P>
                     </>
                   )
                 },
                 {
                   type: 'sad',
-                  children: <P>パ、パズルだって…？俺らに解けるかなあ？</P>
+                  children: (
+                    <P>
+                      Puzzles…? They sound hard… I don’t know if we can do it!
+                    </P>
+                  )
                 },
                 {
                   type: 'brave',
                   children: (
                     <>
                       <P>
-                        難しそう…しかし、やるしかない！計算箱を取り返すんだ！
+                        But…we have to solve them to get our mathboxes back!
                       </P>
                       <P>
-                        <Em>その挑戦、受けて立つぞ！</Em>
+                        <Em>We’ll accept your challenge, the devil!</Em>
                       </P>
                     </>
                   )
@@ -255,18 +260,19 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>ほほう…いい度胸だ。では、はじめよう！</P>
+                      <P>I like that answer. Let’s begin the challenge!</P>
                     </>
                   )
                 }
               ]}
             />
             <P>
-              こうして、村人たちは計算箱を返してもらうべく、悪魔が出題するパズルに挑戦することになりました。
+              <Bold>So:</Bold> The villagers are now on a mission to solve the
+              devil’s puzzles and get the stolen mathboxes back.
             </P>
             <EmojiSeparator
               emojis={['😠', '🆚', '😈']}
-              description={<>パズルを解いて、計算箱を取り返す！</>}
+              description={<>Gotta get the mathboxes back!</>}
             />
           </>
         )
