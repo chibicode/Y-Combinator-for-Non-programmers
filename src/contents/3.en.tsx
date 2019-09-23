@@ -7,7 +7,8 @@ import {
   HighlightBold,
   Highlight,
   Hr,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
@@ -66,11 +67,11 @@ export default () => (
                       <P>Don’t worry. I’m not here to take your lives away…</P>
                       <P>
                         <Highlight>
-                          However, I will take{' '}
-                          <HighlightBold>
-                            all of your mathboxes <CustomEmoji type="mathBox" />
-                          </HighlightBold>
-                          . They’re all mine now!
+                          <Italic>
+                            However, I will take all of your mathboxes{' '}
+                            <CustomEmoji type="mathBox" />.
+                          </Italic>{' '}
+                          They’re all mine now!
                         </Highlight>
                       </P>
                     </>
@@ -96,8 +97,7 @@ export default () => (
           <>
             <P>
               <Bold>And just like that:</Bold> The devil has stolen{' '}
-              <HighlightBold>every single mathbox</HighlightBold> in Lambda
-              Village.
+              <Italic>every single mathbox</Italic> in Lambda Village.
             </P>
             <EmojiSeparator
               nodes={[
@@ -128,9 +128,7 @@ export default () => (
                   type: 'sad',
                   children: (
                     <>
-                      <P>
-                        <Highlight>We’re all really bad at math.</Highlight>
-                      </P>
+                      <P>We’re all really bad at math.</P>
                       <P>
                         Without mathboxes, we can’t do any calculations. Our
                         businesses will struggle, and our economy will crash!
@@ -149,9 +147,7 @@ export default () => (
                     <>
                       <P>
                         That’s exactly why I took away your mathboxes.{' '}
-                        <HighlightBold>
-                          It’s because you all are bad at math.
-                        </HighlightBold>
+                        <Italic>It’s because you all are bad at math.</Italic>
                       </P>
                       <P>
                         You see, your math skill hasn’t improved because you’re
@@ -174,11 +170,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          So, by taking away your mathboxes, I’m giving you an
-                          opportunity to finally study math.
-                        </Highlight>{' '}
-                        You should thank me for it!
+                        So, by taking away your mathboxes,{' '}
+                        <Italic>
+                          I’m giving you an opportunity to finally study math
+                        </Italic>
+                        . You should thank me for it!
                       </P>
                     </>
                   )
@@ -216,8 +212,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <P>
-                      Hmm…okay.{' '}
-                      <Highlight>Maybe I’ll give you a chance.</Highlight>
+                      Hmm…okay. <Italic>Maybe I’ll give you a chance.</Italic>
                     </P>
                   )
                 }
@@ -233,11 +228,11 @@ export default () => (
                       <P>
                         <Highlight>
                           I’ll give you{' '}
-                          <HighlightBold>
+                          <Italic>
                             a bunch of puzzles that require lots of thinking.
-                          </HighlightBold>{' '}
-                          If you can solve <HighlightBold>all</HighlightBold> of
-                          them, I’ll give your mathboxes back.
+                          </Italic>{' '}
+                          If you can solve <Italic>all</Italic> of them, I’ll
+                          give your mathboxes back.
                         </Highlight>
                       </P>
                       <P>
@@ -262,11 +257,7 @@ export default () => (
                       <P>
                         But…we have to solve them to get our mathboxes back!
                       </P>
-                      <P>
-                        <Highlight>
-                          We’ll accept your challenge, the devil!
-                        </Highlight>
-                      </P>
+                      <P>We’ll accept your challenge, the devil!</P>
                     </>
                   )
                 },
