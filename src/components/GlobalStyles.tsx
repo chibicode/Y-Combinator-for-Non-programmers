@@ -5,6 +5,7 @@ import smoothscroll from 'smoothscroll-polyfill'
 import React from 'react'
 import modernNormalize from 'src/lib/modernNormalize'
 import { colors, lineHeights, ns } from 'src/lib/theme'
+import locale from 'src/lib/locale'
 
 const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
@@ -34,9 +35,9 @@ const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
             textarea,
             select,
             button {
-              font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-                'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
-                sans-serif;
+              font-family: ${locale === 'en' ? 'Lato,' : ''}-apple-system,
+                BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI',
+                'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
             }
 
             ${ns} {

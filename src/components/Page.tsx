@@ -7,10 +7,19 @@ import { dateSchemaString } from 'src/lib/date'
 import { ogLocale } from 'src/lib/locale'
 import { ogImageUrl } from 'src/lib/meta'
 import { description } from 'src/lib/titles'
+import locale from 'src/lib/locale'
 
 const Page = ({ children }: { children: React.ReactNode }) => (
   <GlobalStyles>
     <Head>
+      {locale === 'en' && (
+        <>
+          <link
+            href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900&display=optional"
+            rel="stylesheet"
+          />
+        </>
+      )}
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
