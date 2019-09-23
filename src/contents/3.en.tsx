@@ -182,36 +182,36 @@ export default () => (
         )
       },
       {
-        title: <>悪魔からの挑戦状</>,
+        title: <>The challenge</>,
         content: (
           <>
             <P>
-              なんとか計算箱を返してもらえないか、村人たちは悪魔にお願いしました。
+              The villagers are now pleading with the devil to have the
+              mathboxes returned.
             </P>
             <BubbleQuotes
               quotes={[
                 {
                   type: 'sad',
                   children: (
-                    <P>お願いだ、何でもするから計算箱を返してくれないか？</P>
+                    <P>Please return the mathboxes to us! We’ll do anything!</P>
                   )
                 },
                 {
                   type: 'crying',
-                  children: <P>頼む、この通りだ！</P>
+                  children: <P>We beg you!</P>
                 },
                 {
                   type: 'devil',
                   children: (
                     <P>
-                      ふむ…そこまで言うなら仕方ない。では、
-                      <Strong>お前たちにチャンスをやろう！</Strong>
+                      Hmm…okay. <Em>Maybe I can give you a chance.</Em>
                     </P>
                   )
                 }
               ]}
             />
-            <P>悪魔が言うチャンスとは、どういうことなのでしょうか？</P>
+            <P>What does the devil mean by “a chance”?</P>
             <BubbleQuotes
               quotes={[
                 {
