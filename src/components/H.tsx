@@ -12,7 +12,8 @@ import {
   Bold,
   ExternalLink,
   Hr,
-  Img
+  Img,
+  Italic
 } from 'src/components/ContentTags'
 import Emoji from 'src/components/Emoji'
 import locale from 'src/lib/locale'
@@ -225,11 +226,12 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <P>
-          <Bold>Hello!</Bold> This is <Em>page {episodeNumber + 1}</Em> of a
-          course called “<InternalLink href={'/'}>{lessonTitle}</InternalLink>
+          <Bold>Hello!</Bold> This is <Italic>page {episodeNumber + 1}</Italic>{' '}
+          of a course called “
+          <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           ”. If you just got here,{' '}
           <InternalLink href={'/'}>
-            <Strong>click here to read from the beginning</Strong>
+            <Bold>click here to read from the beginning</Bold>
           </InternalLink>
           .
         </P>
