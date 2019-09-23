@@ -1,6 +1,14 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Hr, Bold } from 'src/components/ContentTags'
+import {
+  Img,
+  P,
+  PFullWidth,
+  Strong,
+  Em,
+  Hr,
+  Bold
+} from 'src/components/ContentTags'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import ExpressionRunnerSeparator from 'src/components/ExpressionRunnerSeparator'
 import YesNoButtons from 'src/components/YesNoButtons'
@@ -332,6 +340,13 @@ export default () => (
                 }
               ]}
             />
+            <PFullWidth>
+              <Img
+                src="/static/images/bentoboxes.jpg"
+                alt="Bento Boxes"
+                caption={<>...</>}
+              />
+            </PFullWidth>
             <R.Ilpo>
               <H args={{ name: 'bentoBoxPuzzle' }} /> の一例
             </R.Ilpo>

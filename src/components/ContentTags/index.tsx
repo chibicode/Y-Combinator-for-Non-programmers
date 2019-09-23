@@ -1,5 +1,5 @@
 export { Ul, Ol, OlLi, UlLi } from 'src/components/ContentTags/List'
-export { P } from 'src/components/ContentTags/P'
+export { P, PFullWidth } from 'src/components/ContentTags/P'
 export { Hr } from 'src/components/ContentTags/Hr'
 export { Strong, Em, Bold } from 'src/components/ContentTags/Inline'
 export { ExternalLink, InternalLink } from 'src/components/ContentTags/Links'
