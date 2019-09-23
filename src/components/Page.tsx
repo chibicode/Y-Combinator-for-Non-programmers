@@ -15,7 +15,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
       {locale === 'en' && (
         <>
           <link
-            href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900&display=optional"
+            href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900&display=fallback"
             rel="stylesheet"
           />
         </>
