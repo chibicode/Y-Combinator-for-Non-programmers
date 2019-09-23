@@ -280,7 +280,13 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBoxPuzzle' }} />
+            <H
+              args={{
+                name: 'bentoBoxPuzzle',
+                capitalize: true,
+                noWrapper: true
+              }}
+            />
           </>
         ),
         content: (

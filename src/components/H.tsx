@@ -69,7 +69,8 @@ interface HProps {
     | { name: 'yesNoQuizIncorrectPostfix'; isYes: boolean }
     | {
         name: 'bentoBoxPuzzle'
-        plural?: boolean
+        capitalize?: true
+        noWrapper?: true
       }
     | { name: 'next' }
     | { name: 'play'; lowerCase?: true }
@@ -226,7 +227,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         <P>
           <Bold>Hello!</Bold> This is <Em>page {episodeNumber + 1}</Em> of a
           course called “<InternalLink href={'/'}>{lessonTitle}</InternalLink>
-          ”. If you just got here,
+          ”. If you just got here,{' '}
           <InternalLink href={'/'}>
             <Strong>click here to read from the beginning</Strong>
           </InternalLink>
@@ -363,10 +364,18 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'bentoBoxPuzzle') {
     if (locale === 'en') {
-      return (
-        <Strong highlightType={highlightType}>
-          {`“lunchbox${args.plural ? 'es' : ''}”`} <Emoji>🍱</Emoji>
-        </Strong>
+      const content = (
+        <>
+          {args.capitalize ? 'T' : 't'}he <Bold>“Lunchbox”</Bold> puzzle{' '}
+          <Emoji>🍱</Emoji>
+        </>
+      )
+      return args.noWrapper ? (
+        content
+      ) : (
+        <>
+          <Em>{content}</Em>
+        </>
       )
     } else {
       return (
@@ -1434,7 +1443,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       const content = (
         <>
-          {args.capitalize ? 'T' : 't'}he <Bold>Repeat</Bold> feature{' '}
+          {args.capitalize ? 'T' : 't'}he <Bold>“Repeat”</Bold> feature{' '}
           <Emoji>🔁</Emoji>
         </>
       )
