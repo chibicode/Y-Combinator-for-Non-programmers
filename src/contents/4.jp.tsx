@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, HighlightBold, Em, Hr, Bold } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Highlight,
+  Hr,
+  Bold
+} from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -169,13 +175,13 @@ export default () => (
                         。
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           もし下のふたつの料理が
                           <HighlightBold>同じ</HighlightBold>なら、
                           <H args={{ name: 'play' }} />
                           したときに<HighlightBold>上にある</HighlightBold>
                           料理が残る
-                        </Em>
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -245,12 +251,12 @@ export default () => (
                         。
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           この場合は、
                           <H args={{ name: 'play' }} />
                           したときに<HighlightBold>右下にある</HighlightBold>
                           料理が残る
-                        </Em>
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -350,7 +356,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>だが、喜ぶのはまだ早い。</Em>
+                        <Highlight>だが、喜ぶのはまだ早い。</Highlight>
                       </P>
                     </>
                   )
@@ -371,10 +377,10 @@ export default () => (
                         次のページから、さらに難しい
                         <H args={{ name: 'bentoBoxPuzzle' }} />
                         を解いてもらう。そのためには、
-                        <Em>
+                        <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                           の法則を明確にする必要がある。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -404,11 +410,11 @@ export default () => (
                     <>
                       <P>
                         先ほどお前が言った、
-                        <Em>
+                        <Highlight>
                           「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」というのは
                           <HighlightBold>明確さに欠ける。</HighlightBold>
                           さらに複雑なパズルを解くには、法則としては不十分なんだ。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -450,11 +456,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           というわけで、これから
                           <H args={{ name: 'bentoBoxPuzzle' }} />の
                           <HighlightBold>明確な法則</HighlightBold>を紹介する。
-                        </Em>
+                        </Highlight>
                         それを理解した上で、さらに複雑なパズルを解いてもらおう。
                       </P>
                     </>
@@ -881,7 +887,7 @@ export default () => (
               では、最初から最後まで
               <H args={{ name: 'fastForward' }} /> で見てみましょう。
               <H args={{ name: 'fastForward' }} /> 機能を使うと、
-              <Em>各ステップを自動で見ていくことができます。</Em>
+              <Highlight>各ステップを自動で見ていくことができます。</Highlight>
             </P>
             <EmojiSeparator
               emojis={['⏩', '🍱', '⏩']}
@@ -927,9 +933,9 @@ export default () => (
                     <>
                       <P>
                         うむ。そして、
-                        <Em>
+                        <Highlight>
                           こうやってルールを明確にすれば、パズルが複雑になっても応用が効く
-                        </Em>
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -1116,9 +1122,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           法則を覚えきれていなくても、次回また復習するので大丈夫だ。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1139,7 +1145,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>次回では、もっと複雑なパズルを出題する。</Em>
+                        <Highlight>
+                          次回では、もっと複雑なパズルを出題する。
+                        </Highlight>
                         計算箱を返してほしかったら、解いてみせるんだな！
                       </P>
                     </>

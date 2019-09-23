@@ -2,7 +2,7 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  Em,
+  Highlight,
   HighlightBold,
   Ul,
   UlLi,
@@ -32,27 +32,27 @@ export const ThreeRowRules = () => (
     </P>
     <Ol>
       <OlLi>
-        <Em>
+        <Highlight>
           まず先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
           のペアからはじめる。
-        </Em>
+        </Highlight>
       </OlLi>
       <OlLi>
-        <Em>
+        <Highlight>
           下段の真ん中にある料理には{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
           をつける。
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
           は、いったん無視して構わない。
-        </Em>
+        </Highlight>
       </OlLi>
       <OlLi>
-        <Em>
+        <Highlight>
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアが終わると、
           <InlinePrioritiesLabel>2</InlinePrioritiesLabel> が{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
           になるので、また繰り返す。
-        </Em>
+        </Highlight>
       </OlLi>
     </Ol>
     <R.Vdhd>3段の弁当箱</R.Vdhd>
@@ -71,11 +71,11 @@ export const Beginner5Rules = () => (
     </R.Hykj>
     <P>
       <Bold>補足:</Bold>{' '}
-      <Em>
+      <Highlight>
         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
         のペアが弁当箱の左端にない場合は、内側の{' '}
         <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアからはじめる。
-      </Em>
+      </Highlight>
     </P>
     <R.Myjz>
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
@@ -140,7 +140,9 @@ export default () => (
               description={<>初級最後のページです！</>}
             />
             <P>
-              <Em>今回登場する弁当箱は、今までと比べてちょっと難しいです。</Em>
+              <Highlight>
+                今回登場する弁当箱は、今までと比べてちょっと難しいです。
+              </Highlight>
               しかし、ここまで来たあなたなら読み進められるはずです。諦めずにチャレンジしてみてください！
             </P>
             <EmojiSeparator
@@ -188,13 +190,13 @@ export default () => (
                     <>
                       <P>
                         これは…
-                        <Em>
+                        <Highlight>
                           今までの弁当箱は縦に2段しかなかったけれど、
                           <HighlightBold>
                             この弁当箱には縦に3段ある
                           </HighlightBold>
                           ぞ。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -215,7 +217,10 @@ export default () => (
                       </P>
                       <P>
                         今までの弁当箱では、
-                        <Em>横に3つの料理が並んだことはなかった</Em>。
+                        <Highlight>
+                          横に3つの料理が並んだことはなかった
+                        </Highlight>
+                        。
                       </P>
                     </>
                   )
@@ -226,11 +231,11 @@ export default () => (
                     <>
                       <P>
                         そうだな。そしてさらに、
-                        <Em>
+                        <Highlight>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や{' '}
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
                           という数字が左端に表示されている
-                        </Em>
+                        </Highlight>
                         のに気づいたかな？
                       </P>
                     </>
@@ -267,11 +272,11 @@ export default () => (
                       </P>
                       <P>
                         そして
-                        <Em>
+                        <Highlight>
                           解き方を説明した後に、
                           <H args={{ name: 'yesNoQuiz' }} />
                           を出題し、お前たちに自力で解いてもらう
-                        </Em>
+                        </Highlight>
                         ぞ。
                       </P>
                     </>
@@ -346,14 +351,14 @@ export default () => (
                     <>
                       <P>
                         そう。これは、
-                        <Em>
+                        <Highlight>
                           暗い色 <InlineBackground bgColor={'indigo50'} />{' '}
                           の部分は無視して、
                           <InlinePrioritiesLabel revert>
                             1
                           </InlinePrioritiesLabel>{' '}
                           のペアの部分に注目する
-                        </Em>
+                        </Highlight>
                         ということだ。
                       </P>
                     </>
@@ -393,14 +398,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           下段真ん中の <EmojiWithText letter="b" /> には、
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           の印がついた！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -429,7 +434,7 @@ export default () => (
                     <>
                       <P>
                         そう、前回では登場しなかったが、
-                        <Em>
+                        <Highlight>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -450,7 +455,7 @@ export default () => (
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           をつけるんだ。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -523,7 +528,7 @@ export default () => (
               </UlLi>
             </Ul>
             <P>
-              <Em>
+              <Highlight>
                 どれも{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                 は関係ありませんよね。だから、
@@ -533,7 +538,7 @@ export default () => (
                   を無視していい
                 </HighlightBold>
                 のです。
-              </Em>
+              </Highlight>
             </P>
             <R.Pbhg>
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> の
@@ -619,14 +624,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           上記のどのステップにおいても、
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           は関係なかった
-                        </Em>
+                        </Highlight>
                         だろう？
                       </P>
                     </>
@@ -816,14 +821,14 @@ export default () => (
                       <P>まとめると、</P>
                       <Ol>
                         <OlLi>
-                          <Em>
+                          <Highlight>
                             まず先に{' '}
                             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                             のペアからはじめる。
-                          </Em>
+                          </Highlight>
                         </OlLi>
                         <OlLi>
-                          <Em>
+                          <Highlight>
                             下段の真ん中にある料理には{' '}
                             <BottomRightBadge
                               inline
@@ -835,10 +840,10 @@ export default () => (
                               bottomRightBadgeType="funcUnbound"
                             />{' '}
                             は、いったん無視して構わない。
-                          </Em>
+                          </Highlight>
                         </OlLi>
                         <OlLi>
-                          <Em>
+                          <Highlight>
                             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                             のペアが終わると、
                             <InlinePrioritiesLabel>
@@ -846,7 +851,7 @@ export default () => (
                             </InlinePrioritiesLabel> が{' '}
                             <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                             になるので、また繰り返す。
-                          </Em>
+                          </Highlight>
                         </OlLi>
                       </Ol>
                       <P>こんなところかな？</P>
@@ -1131,7 +1136,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>その法則はふたつある。</Em>
+                        <Highlight>その法則はふたつある。</Highlight>
                         順番に紹介していこう！もちろん、
                         <H args={{ name: 'yesNoQuiz' }} />
                         もやるからな！
@@ -1156,12 +1161,12 @@ export default () => (
                     <>
                       <P>
                         まあそう焦るな。
-                        <Em>
+                        <Highlight>
                           <HighlightBold>
                             次からはじまる中級編で、とても難しい問題を出題する。
                           </HighlightBold>
                           このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1206,13 +1211,13 @@ export default () => (
             </R.Laea>
             <P>
               <Bold>細かい法則その1:</Bold>{' '}
-              <Em>
+              <Highlight>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアが左右ふたつ以上ある場合は、
                 <HighlightBold>一番左側にある</HighlightBold>{' '}
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
-              </Em>
+              </Highlight>
             </P>
             <R.Aezk>
               <HighlightBold>一番左側にある</HighlightBold>{' '}
@@ -1484,10 +1489,10 @@ export default () => (
               ここで補足です。まず、下の弁当箱をご覧ください。先ほどの{' '}
               <H args={{ name: 'yesNoQuiz' }} />
               で登場した弁当箱とほとんど同じですが、
-              <Em>
+              <Highlight>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアが弁当箱の左端になく、内側だけにあります。
-              </Em>
+              </Highlight>
             </P>
             <R.Dhzf>
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
@@ -1497,10 +1502,10 @@ export default () => (
             </R.Dhzf>
             <P>
               このような場合、
-              <Em>
+              <Highlight>
                 内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアの部分からはじめます。
-              </Em>
+              </Highlight>
             </P>
             <R.Mhyv>
               内側の <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
@@ -1514,12 +1519,12 @@ export default () => (
             <R.Ayok />
             <P>
               まとめると、
-              <Em>
+              <Highlight>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアが弁当箱の左端にない場合は、内側の{' '}
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめればいい
-              </Em>
+              </Highlight>
               のです。
             </P>
           </>
@@ -1607,9 +1612,9 @@ export default () => (
               答えは、「
               <HighlightBold>どの印もつけることができない</HighlightBold>
               」です。
-              <Em>
+              <Highlight>
                 一番下の段にひとつしか料理がない場合、どの印をつけることもできないのです
-              </Em>
+              </Highlight>
               。
             </P>
             <EmojiSeparator
@@ -1634,10 +1639,10 @@ export default () => (
             />
             <P>
               ということはつまり、
-              <Em>
+              <Highlight>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめることができない
-              </Em>
+              </Highlight>
               、ということになります。
             </P>
             <EmojiSeparator
@@ -1688,7 +1693,7 @@ export default () => (
                         なるほど、
                         <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                         のペアからはじめれば、
-                        <Em>
+                        <Highlight>
                           下の段に
                           <EmojiWithText letter="a" />
                           がふたつあるから、
@@ -1702,7 +1707,7 @@ export default () => (
                             bottomRightBadgeType="funcBound"
                           />{' '}
                           の印をつけられるね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1756,9 +1761,9 @@ export default () => (
                         が残った！
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           このふたつが残った時点で、もうこれ以上進められないから、そこで終了する
-                        </Em>
+                        </Highlight>
                         というわけか。
                       </P>
                     </>
@@ -1774,10 +1779,10 @@ export default () => (
                         の時間だ。
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           これが初級最後の <H args={{ name: 'yesNoQuiz' }} />
                           になるぞ！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1896,7 +1901,7 @@ export default () => (
                           安心しろ、これらの法則を暗記する必要はない。
                         </HighlightBold>
                         なんとなく「
-                        <Em>こういう法則があるんだな</Em>
+                        <Highlight>こういう法則があるんだな</Highlight>
                         」と頭に入れておけば大丈夫だ。
                       </P>
                     </>
@@ -1932,18 +1937,18 @@ export default () => (
                     <>
                       <P>
                         やるじゃないか。
-                        <Em>
+                        <Highlight>
                           というわけで、初級編はここで終わりだ。次からは中級編に入る。
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         さきほど約束した通り、
-                        <Em>
+                        <Highlight>
                           <HighlightBold>
                             次からはじまる中級編で、とても難しい問題を出題する。
                           </HighlightBold>
                           このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )

@@ -3,7 +3,7 @@ export { P, PFullWidth } from 'src/components/ContentTags/P'
 export { Hr } from 'src/components/ContentTags/Hr'
 export {
   HighlightBold,
-  Em,
+  Highlight,
   Bold,
   Italic
 } from 'src/components/ContentTags/Inline'

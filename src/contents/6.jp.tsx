@@ -4,7 +4,7 @@ import { colors, spaces } from 'src/lib/theme'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  Em,
+  Highlight,
   HighlightBold,
   Ol,
   OlLi,
@@ -43,9 +43,9 @@ export default () => (
               <P>
                 <Bold>初級編を忘れてしまいましたか？</Bold>
                 もしかしたら、「
-                <Em>
+                <Highlight>
                   初級編を終えた後に長い休憩を取ったので、これまでの内容を忘れてしまった
-                </Em>
+                </Highlight>
                 」という方もいらっしゃるかもしれません。
               </P>
               <EmojiSeparator
@@ -55,13 +55,13 @@ export default () => (
               <P>
                 そんな方のために、<HighlightBold>復習用のまとめ</HighlightBold>
                 を用意しました。
-                <Em>初級編の内容をほとんど忘れてしまった</Em>
+                <Highlight>初級編の内容をほとんど忘れてしまった</Highlight>
                 という方は、↓の「初級編の内容を復習する」を押してください。
               </P>
               <P>
-                <Em>
+                <Highlight>
                   初級編の内容がまだ頭に少しでも残っているという方は、そのまま読み進めてくださって大丈夫
-                </Em>
+                </Highlight>
                 です。
               </P>
             </>
@@ -158,9 +158,9 @@ export default () => (
                     <>
                       <P>
                         ここからは中級編だ。
-                        <Em>
+                        <Highlight>
                           約束した通り、この中級編で出題する難しい問題に答えることができたら、計算箱を返してやろう！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -376,7 +376,9 @@ export default () => (
                         、弁当箱を計算箱に変える芸を持っているんです。
                       </P>
                       <P>
-                        <Em>その法則がどんなものか、当ててみてください！</Em>
+                        <Highlight>
+                          その法則がどんなものか、当ててみてください！
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -710,9 +712,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           では、計算箱に変換した場合、何の数字になるのでしょうか？
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         答えを言うと、
@@ -737,12 +739,12 @@ export default () => (
                     <>
                       <P>
                         先ほどの弁当箱の場合、
-                        <Em>
+                        <Highlight>
                           右下には <Emoji>🅰️</Emoji> がついた
                           <EmojiWithText letter="e" /> が「
                           <HighlightBold>2個</HighlightBold>
                           」あります。
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         だから、これをぼくが計算箱に変換すると{' '}
@@ -775,9 +777,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           他の料理でも、同じ法則に沿っていれば、計算箱に変換したときに同じ数字になります。
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         たとえば、 <EmojiWithText letter="k" /> と{' '}
@@ -892,11 +894,11 @@ export default () => (
                       <P>
                         上の弁当箱に、先ほどの法則にしたがって <Emoji>🅰️</Emoji>{' '}
                         と <Emoji>🅱️</Emoji> の印をつけると、
-                        <Em>
+                        <Highlight>
                           右下には <Emoji>🅰️</Emoji> がついた
                           <EmojiWithText letter="i" />
                           が「<HighlightBold>4個</HighlightBold>」あります。
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         だから、これをぼくが計算箱に変換すると{' '}
@@ -951,11 +953,11 @@ export default () => (
                       <P>
                         上の弁当箱に、先ほどの法則にしたがって <Emoji>🅰️</Emoji>{' '}
                         と <Emoji>🅱️</Emoji> の印をつけると、
-                        <Em>
+                        <Highlight>
                           右下には <Emoji>🅰️</Emoji> がついた
                           <EmojiWithText letter="a" /> が
-                          <Em>ひとつもありません</Em>。
-                        </Em>
+                          <Highlight>ひとつもありません</Highlight>。
+                        </Highlight>
                       </P>
                       <P>
                         つまり、
@@ -988,10 +990,10 @@ export default () => (
                     <>
                       <P>
                         なるほど、
-                        <Em>
+                        <Highlight>
                           右下の <Emoji>🅰️</Emoji>{' '}
                           の数がゼロになる場合もあるんだね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1077,11 +1079,11 @@ export default () => (
                     <>
                       <P>
                         ためしに、
-                        <Em>
+                        <Highlight>
                           次の弁当箱の下にある、「
                           <H args={{ name: 'runAndConvertToMathbox' }} />
                           」ボタンを押してみてください。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1142,10 +1144,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           これは先ほど説明した通り、計算箱に変換すると{' '}
                           <EmojiNumber number={0} /> になります。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1168,17 +1170,17 @@ export default () => (
                       <P>このような、</P>
                       <Ol>
                         <OlLi>
-                          <Em>
+                          <Highlight>
                             まず弁当箱を
                             <H args={{ name: 'play' }} />
                             し、
-                          </Em>
+                          </Highlight>
                         </OlLi>
                         <OlLi>
-                          <Em>
+                          <Highlight>
                             実行し終えたら、続いて{' '}
                             <H args={{ name: 'convertToMathbox' }} /> する
-                          </Em>
+                          </Highlight>
                         </OlLi>
                       </Ol>
                       <P>というふたつのステップを、</P>
@@ -1393,10 +1395,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           これは、計算箱に変換すると <EmojiNumber number={1} />{' '}
                           になります。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1460,12 +1462,12 @@ export default () => (
                     <>
                       <P>
                         それでは以前約束した通り、
-                        <Em>
+                        <Highlight>
                           <HighlightBold>
                             次のページで難しい問題を出題する
                           </HighlightBold>
                           。それに答えることができたら、計算箱を返してやろう！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )

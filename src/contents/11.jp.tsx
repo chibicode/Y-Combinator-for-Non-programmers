@@ -4,7 +4,7 @@ import {
   P,
   HighlightBold,
   Hr,
-  Em,
+  Highlight,
   Ul,
   UlLi,
   Bold
@@ -239,11 +239,11 @@ export default () => (
                     <>
                       <P>
                         うーん、
-                        <Em>
+                        <Highlight>
                           どんなに考えても、計算箱の「
                           <H args={{ name: 'repeatFeature' }} />
                           」を弁当箱で再現することができない…
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>サヤちゃん、何か思いついた？</P>
                     </>
@@ -770,31 +770,31 @@ export default () => (
               」がある計算箱
             </R.Rhoa>
             <P>
-              <Em>
+              <Highlight>
                 まず、
                 <H
                   args={{ name: 'conditionSectionName', type: 'condition' }}
                 />{' '}
                 の中にある <CustomEmoji type="blankNumberGreen" /> が{' '}
                 <EmojiNumber number={0} /> かどうかチェックします。
-              </Em>
+              </Highlight>
             </P>
             <P>
-              <Em>
+              <Highlight>
                 もし <EmojiNumber number={0} /> なら、{' '}
                 <H args={{ name: 'conditionSectionName', type: 'trueCase' }} />{' '}
                 の中にある <CustomEmoji type="blankNumberYellow" /> が残ります。
-              </Em>
+              </Highlight>
             </P>
             <TrueCaseExplanation />
             <P>
-              <Em>
+              <Highlight>
                 もし <EmojiNumber number={0} /> でなければ、
                 <H
                   args={{ name: 'conditionSectionName', type: 'falseCase' }}
                 />{' '}
                 の中にある <CustomEmoji type="blankNumberRed" /> が残ります。
-              </Em>
+              </Highlight>
             </P>
             <FalseCaseExplanation />
             <BubbleQuotes
@@ -805,9 +805,9 @@ export default () => (
                     <>
                       <P>
                         なるほど、「
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={0} /> かどうか？
-                        </Em>
+                        </Highlight>
                         」という「
                         <HighlightBold>条件</HighlightBold>」によって 「
                         <HighlightBold>分岐</HighlightBold>
@@ -831,9 +831,9 @@ export default () => (
               description={
                 <>
                   「
-                  <Em>
+                  <Highlight>
                     <EmojiNumber number={0} /> かどうか？
-                  </Em>
+                  </Highlight>
                   」という
                   <br />「<HighlightBold>条件</HighlightBold>」によって 「
                   <HighlightBold>分岐</HighlightBold>」するから 「
@@ -896,9 +896,9 @@ export default () => (
                         そうなんです。「
                         <H args={{ name: 'conditionFeature' }} />
                         」は
-                        <Em>
+                        <Highlight>
                           あまり役に立たないので、いつしか忘れ去られてしまった
-                        </Em>
+                        </Highlight>
                         のです。
                       </P>
                     </>
@@ -910,9 +910,9 @@ export default () => (
                     <>
                       <P>
                         たしかに、「
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={0} /> かどうか？
-                        </Em>
+                        </Highlight>
                         」をチェックできても、何の役にも立たなさそうだけど…
                       </P>
                     </>
@@ -926,11 +926,11 @@ export default () => (
                         しかし、この「
                         <H args={{ name: 'conditionFeature' }} />
                         」は、
-                        <Em>
+                        <Highlight>
                           実は「
                           <H args={{ name: 'repeatFeature' }} />
                           」と関連がある
-                        </Em>
+                        </Highlight>
                         のです。
                       </P>
                     </>

@@ -4,7 +4,7 @@ import {
   P,
   Bold,
   HighlightBold,
-  Em,
+  Highlight,
   Ul,
   UlLi
 } from 'src/components/ContentTags'
@@ -55,7 +55,9 @@ export default () => (
                     <>
                       <P>
                         やった！これで、
-                        <Em>計算箱のすべての機能を返してもらった</Em>
+                        <Highlight>
+                          計算箱のすべての機能を返してもらった
+                        </Highlight>
                         ぞ！悪魔に勝った！
                         <Emoji>🎉</Emoji>
                       </P>
@@ -158,12 +160,12 @@ export default () => (
                     <>
                       <P>なんだ、この弁当箱は？</P>
                       <P>
-                        <Em>
+                        <Highlight>
                           上のほうに、
                           <CustomEmoji type="blankNumberPurple" /> と{' '}
                           <CustomEmoji type="blankNumberPink" />{' '}
                           を入れる部分があるけれど…
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -267,7 +269,7 @@ export default () => (
             </P>
             <Ul>
               <UlLi>
-                複雑なので、<Em>目で追わなくても大丈夫です！</Em>
+                複雑なので、<Highlight>目で追わなくても大丈夫です！</Highlight>
               </UlLi>
               <UlLi>
                 ちょっと時間がかかるので、待てない方は下の「
@@ -286,10 +288,10 @@ export default () => (
                     <>
                       <P>
                         結果は…
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={5} />{' '}
                           に変換できる弁当箱になった！
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Xkcm>
                         <H
@@ -335,11 +337,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           もともと入れたのは <EmojiNumber number={2} /> と{' '}
                           <EmojiNumber number={3} /> だった。そして、結果は{' '}
                           <EmojiNumber number={5} /> になった…
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -375,11 +377,11 @@ export default () => (
                       <P>その通りだ！先ほどの弁当箱は、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             <CustomEmoji type="blankNumberPurple" /> と{' '}
                             <CustomEmoji type="blankNumberPink" />{' '}
                             に数字を入れ、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
                           <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
@@ -538,10 +540,10 @@ export default () => (
                     <>
                       <P>
                         結果は…
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={6} />{' '}
                           に変換できる弁当箱になった！
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Edzu>
                         <H
@@ -616,11 +618,11 @@ export default () => (
                       <P>その通りだ！先ほどの弁当箱は、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             <CustomEmoji type="blankNumberPurple" /> と{' '}
                             <CustomEmoji type="blankNumberPink" />{' '}
                             に数字を入れ、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
                           <H args={{ name: 'runAndConvertToMathbox' }} />{' '}
@@ -717,7 +719,9 @@ export default () => (
                       </P>
                       <P>
                         つまり、
-                        <Em>弁当箱は四則演算の全てを行うことができる</Em>
+                        <Highlight>
+                          弁当箱は四則演算の全てを行うことができる
+                        </Highlight>
                         んだ。
                       </P>
                     </>
@@ -972,12 +976,12 @@ export default () => (
                     <>
                       <P>それでは、階乗を計算する弁当箱をお見せしよう。</P>
                       <P>
-                        こちらの弁当箱は、<Em>黄色の部分</Em>に、
-                        <Em>
+                        こちらの弁当箱は、<Highlight>黄色の部分</Highlight>に、
+                        <Highlight>
                           先ほど紹介した掛け算の弁当箱(
                           <Emoji>✖️</Emoji>
                           印)と、Yコンビネータの弁当箱が入っている
-                        </Em>
+                        </Highlight>
                         。
                       </P>
                       <P>
@@ -1025,9 +1029,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           前のページで登場した弁当箱と、右上の部分が微妙に違う
-                        </Em>
+                        </Highlight>
                         のが分かるかな？
                       </P>
                     </>
@@ -1073,9 +1077,9 @@ export default () => (
                       <P>完全には理解できなくていいが…</P>
                       <P>
                         この
-                        <Em>
+                        <Highlight>
                           右上部分の違いが、前回のように足し算を計算するか、今回のように階乗を計算するかの違いを生んでいる
-                        </Em>
+                        </Highlight>
                         んだな。
                       </P>
                     </>
@@ -1131,18 +1135,18 @@ export default () => (
                       <Ul>
                         <UlLi>
                           「<HighlightBold>階乗</HighlightBold>」は、「
-                          <Em>
+                          <Highlight>
                             <EmojiNumber number={1} /> になるまで掛け算を『
                             <HighlightBold>繰り返す</HighlightBold>』
-                          </Em>
+                          </Highlight>
                           」ということだから、
                         </UlLi>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             「繰り返す」のを可能にする「
                             <HighlightBold>Yコンビネータ</HighlightBold>
                             」の弁当箱が必要
-                          </Em>
+                          </Highlight>
                           というわけかな…？
                         </UlLi>
                       </Ul>
@@ -1159,18 +1163,20 @@ export default () => (
                       <P>それでもわたしが伝えたかったのは、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             <HighlightBold>Yコンビネータ</HighlightBold>
                             の弁当箱は、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             掛け算を計算できる弁当箱と組み合わせることによって、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
-                          <Em>階乗のように複雑な計算を行うこともできる</Em>
+                          <Highlight>
+                            階乗のように複雑な計算を行うこともできる
+                          </Highlight>
                         </UlLi>
                       </Ul>
                       <P>ということだ。</P>

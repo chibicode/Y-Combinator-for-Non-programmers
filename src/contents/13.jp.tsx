@@ -3,7 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   HighlightBold,
-  Em,
+  Highlight,
   Ul,
   UlLi,
   Bold
@@ -34,9 +34,9 @@ export default () => (
                 このページからまた難易度がアップします。
               </HighlightBold>
               ただ、
-              <Em>
+              <Highlight>
                 内容を完全に理解する必要はありません。少しくらい分からなくても、雰囲気で読み進めていただいて大丈夫です。
-              </Em>
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
@@ -132,7 +132,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>そんなの、すぐ答えられるわけないだろう！</Em>
+                        <Highlight>
+                          そんなの、すぐ答えられるわけないだろう！
+                        </Highlight>
                         こんな複雑な弁当箱、
                         <H args={{ name: 'play' }} /> するのもひと苦労だよ！
                       </P>
@@ -177,10 +179,10 @@ export default () => (
                     <>
                       <P>へ？なんでそんな早く正解が分かるの…？</P>
                       <P>
-                        <Em>
+                        <Highlight>
                           サヤちゃん、まさか一瞬で頭の中で
                           <H args={{ name: 'play' }} /> したのかい？
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -212,9 +214,9 @@ export default () => (
                     <>
                       <P>
                         まず、
-                        <Em>
+                        <Highlight>
                           一番上の部分と、右の真ん中の部分に注目してみて！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -234,10 +236,10 @@ export default () => (
                     <>
                       <P>
                         あ、
-                        <Em>
+                        <Highlight>
                           一番上の部分をよく見ると、これは{' '}
                           <EmojiNumber number={3} /> に変換できる弁当箱だ！
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Ayrl>
                         <H
@@ -250,10 +252,10 @@ export default () => (
                       </R.Ayrl>
                       <P>
                         さらに、
-                        <Em>
+                        <Highlight>
                           右の真ん中の部分をよく見ると、これは{' '}
                           <EmojiNumber number={2} /> に変換できる弁当箱だ！
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Vhte>
                         <H
@@ -328,11 +330,11 @@ export default () => (
                     <>
                       <P>
                         これはもしかして…
-                        <Em>
+                        <Highlight>
                           中級その3でやった、
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱かな？
-                        </Em>
+                        </Highlight>
                       </P>
                       <R.Vcqp>
                         <H args={{ name: 'plusOneEffect' }} />
@@ -548,7 +550,9 @@ export default () => (
                     <>
                       <P>
                         しかし…
-                        <Em>サヤちゃんがとった手法はズルなんじゃないか？</Em>
+                        <Highlight>
+                          サヤちゃんがとった手法はズルなんじゃないか？
+                        </Highlight>
                       </P>
                       <P>
                         サヤちゃんは、もともとの弁当箱を、それぞれの要素に対応する計算箱に置き換えてから実行したけど…
@@ -638,9 +642,9 @@ export default () => (
                           <Emoji>⏩</Emoji> <Emoji>⏩</Emoji> <Emoji>⏩</Emoji>
                         </UlLi>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             早送り中は、目に優しくなるように弁当箱を半透明にしています。
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
                           待てない方は、「
@@ -754,12 +758,12 @@ export default () => (
                     <>
                       <P>
                         重要なのは、
-                        <Em>
+                        <Highlight>
                           このように弁当箱の一部分を計算箱と置き換えても、
                           <HighlightBold>
                             実行したら結果は同じになる
                           </HighlightBold>
-                        </Em>
+                        </Highlight>
                         ということです。
                       </P>
                     </>
@@ -791,10 +795,10 @@ export default () => (
                     <>
                       <P>
                         たしかに先ほどの場合は、
-                        <Em>
+                        <Highlight>
                           サヤちゃんの手法を使っても、そのまま実行しても、どちらも結果は{' '}
                           <EmojiNumber number={4} /> になった
-                        </Em>
+                        </Highlight>
                         な。
                       </P>
                     </>
@@ -806,9 +810,9 @@ export default () => (
                     <>
                       <P>
                         はい。
-                        <Em>
+                        <Highlight>
                           複雑な弁当箱は、それぞれの部分をシンプルな計算箱に置き換えると分かりやすくなります。
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         <HighlightBold>
@@ -855,11 +859,11 @@ export default () => (
                     <>
                       <P>
                         でもさあ…質問なんだけど、
-                        <Em>
+                        <Highlight>
                           この話って、「
                           <H args={{ name: 'repeatFeature' }} />
                           」と何の関係があるの？
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -895,11 +899,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           ねえねえ、もしかしたらサヤ、「
                           <H args={{ name: 'repeatFeature' }} />
                           」を弁当箱で再現できたかもしれない！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -959,7 +963,7 @@ export default () => (
                       <P>
                         この弁当箱に、以下のように
                         <HighlightBold>いろいろ追加してみた</HighlightBold>の。
-                        <Em>黄色の部分が追加した部分</Em>だよ。
+                        <Highlight>黄色の部分が追加した部分</Highlight>だよ。
                       </P>
                     </>
                   )
@@ -1001,9 +1005,9 @@ export default () => (
                       </P>
                       <P>
                         (
-                        <Em>
+                        <Highlight>
                           次のページで早送りして詳細に解説するけど、今回は早送りは省略します！
-                        </Em>
+                        </Highlight>
                         )
                       </P>
                     </>
@@ -1034,9 +1038,9 @@ export default () => (
                     <>
                       <P>
                         うん、早送りは次のページでやるから、今はとりあえず「
-                        <Em>
+                        <Highlight>
                           なるほど、結果は <EmojiNumber number={5} /> になるんだ
-                        </Em>
+                        </Highlight>
                         」と受け入れてほしい！
                       </P>
                     </>
@@ -1069,7 +1073,7 @@ export default () => (
                     <>
                       <P>
                         それよりも重要なのは、
-                        <Em>
+                        <Highlight>
                           この <EmojiNumber number={5} /> って、
                           <HighlightBold>
                             実行前の弁当箱に入っていた、
@@ -1077,7 +1081,7 @@ export default () => (
                             <EmojiNumber number={3} /> を足した数
                           </HighlightBold>
                           だよね？
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1140,15 +1144,15 @@ export default () => (
             <>
               <P>
                 <Bold>補足:</Bold> 「
-                <Em>
+                <Highlight>
                   この弁当箱、本当に実行すると <EmojiNumber number={5} />{' '}
                   になるの？
-                </Em>
+                </Highlight>
                 」と疑われているかもしれませんが、ご安心ください！
-                <Em>
+                <Highlight>
                   次のページでなぜ実行すると <EmojiNumber number={5} />{' '}
                   になるのかを詳細に説明します
-                </Em>
+                </Highlight>
                 ので、とりあえず読み進めてみてください！
               </P>
             </>
@@ -1170,10 +1174,10 @@ export default () => (
                         以下のように計算箱の「
                         <H args={{ name: 'repeatFeature' }} />
                         」を使っても、
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={3} /> を計算できる
-                        </Em>
+                        </Highlight>
                         よね。
                       </P>
                     </>
@@ -1273,7 +1277,9 @@ export default () => (
             <>
               <P>
                 <Bold>補足:</Bold>{' '}
-                <Em>もし上に書いてあることが腑に落ちなくてもご心配なく！</Em>
+                <Highlight>
+                  もし上に書いてあることが腑に落ちなくてもご心配なく！
+                </Highlight>
                 次のページで詳細に解説します。
               </P>
             </>

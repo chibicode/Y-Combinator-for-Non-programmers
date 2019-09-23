@@ -4,7 +4,7 @@ import {
   P,
   HighlightBold,
   Bold,
-  Em,
+  Highlight,
   ExternalLink,
   Img,
   CenteredCode,
@@ -105,9 +105,9 @@ export default () => (
               <P>
                 <Bold>ちなみに:</Bold>{' '}
                 これからコンピュータやコンピュータサイエンスの歴史について語りますが、
-                <Em>
+                <Highlight>
                   簡潔さを優先するために、正確性をあえて犠牲にしたり、ほとんどの出来事を省いたりしています
-                </Em>
+                </Highlight>
                 。
               </P>
               <P>
@@ -124,7 +124,8 @@ export default () => (
             <P>
               この記事のタイトルは「
               <Bold>
-                <Em>コンピュータ</Em>サイエンスと魔法のYコンビネータ
+                <Highlight>コンピュータ</Highlight>
+                サイエンスと魔法のYコンビネータ
               </Bold>
               」ですが、はじめに、「
               <HighlightBold>そもそもコンピュータとは何か</HighlightBold>
@@ -156,10 +157,10 @@ export default () => (
               コンピュータを使えば情報を瞬時に検索できたり、美しいCGを描いたりすることができます。最近はAIを使って顔認証や会話ができるようになりました。
             </P>
             <P>
-              <Em>
+              <Highlight>
                 こういった便利な機能は、
                 コンピュータが大量の計算を瞬時に行えるからこそ実現されているのです。
-              </Em>
+              </Highlight>
             </P>
             <P>
               たとえば、検索エンジンは膨大な数のデータをランク付けするために計算を行います。AIが顔認証をするときは、センサーが取り込んだ顔のデータを数値化し、それをもとに複雑な計算を行って本人かどうかを確かめているのです。
@@ -222,11 +223,11 @@ export default () => (
               />
             </P>
             <P>
-              <Em>
+              <Highlight>
                 タビュレーティングマシンは、アメリカの国勢調査、すなわち国全体のアンケート調査を集計するために使われた計算機でした。
-              </Em>
+              </Highlight>
               マークシートのような紙に空いた穴を読み取って計算することで、大量のデータをすばやく集計できたのです。
-              <Em>現代のエクセルのようなもの</Em>ですね。
+              <Highlight>現代のエクセルのようなもの</Highlight>ですね。
             </P>
             <EmojiSeparator
               emojis={['📈', '📊', '📉']}
@@ -240,9 +241,9 @@ export default () => (
             />
             <P>
               ちなみに、
-              <Em>
+              <Highlight>
                 この計算機の発明者であるホレリスは、IBMの前身となる会社を創業しました。
-              </Em>
+              </Highlight>
               IBMはさらに強力な計算機を開発し続け、1960年代に世界一のコンピュータ企業になったのです。
             </P>
           </>
@@ -268,9 +269,9 @@ export default () => (
             </P>
             <P>
               そんなコンピュータサイエンスの研究者たちは、「
-              <Em>
+              <Highlight>
                 コンピュータ＝計算機の作り方や使い方をどう工夫すれば、より効率的に問題を解けるのか
-              </Em>
+              </Highlight>
               」といった問いに取り組んだのです。
             </P>
             <EmojiSeparator
@@ -286,7 +287,7 @@ export default () => (
               }
             />
             <P>
-              そして、<Em>コンピュータサイエンスの礎を築いた</Em>
+              そして、<Highlight>コンピュータサイエンスの礎を築いた</Highlight>
               と言われているのが、英国の数学者だった
               <Bold>アラン・チューリング</Bold> <Emoji>🧑🏻</Emoji>{' '}
               と、米国の数学者だった
@@ -312,11 +313,11 @@ export default () => (
         content: (
           <>
             <P>
-              <Em>
+              <Highlight>
                 チューリングとチャーチは1930年代に、「
                 <HighlightBold>ヒルベルトの決定問題</HighlightBold>
                 」という、とある難しい数学の問題に別々に取り組んでいました。
-              </Em>
+              </Highlight>
               それがどんな問題かを説明するのは非常に難しいので省略しますが、ふたりが
               <HighlightBold>その問題をどのようにして解いたか</HighlightBold>
               が興味深かったのです。
@@ -337,10 +338,10 @@ export default () => (
               」を考案する必要がありました。「
               <Bold>空想上の計算機</Bold>
               」とはすなわち、
-              <Em>
+              <Highlight>
                 実際には(少なくとも1930年代の当時は)存在しないけど、もし存在したとしたら非常に複雑な計算ができる、
                 <HighlightBold>仮想上の計算機</HighlightBold>
-              </Em>
+              </Highlight>
               のことです。
             </P>
             <EmojiSeparator
@@ -373,7 +374,8 @@ export default () => (
                   先述の問題を解くために、ふたりはそれぞれ
                   <br />「<HighlightBold>空想上の計算機</HighlightBold>
                   」を頭の中で設計した。
-                  <br />「<Em>もしこういった計算機が存在したら…</Em>」と
+                  <br />「
+                  <Highlight>もしこういった計算機が存在したら…</Highlight>」と
                   <br />
                   仮定した上で理論を展開して問題を解いた
                 </>
@@ -383,15 +385,15 @@ export default () => (
               実は、この時にふたりが別々に考案した、当時の技術では作ることができない「
               <HighlightBold>空想上の計算機</HighlightBold>
               」が、
-              <Em>
+              <Highlight>
                 その後のコンピュータの開発や、プログラミング言語の開発、ひいてはコンピュータサイエンスそのものに大きな影響を与えました。
-              </Em>
+              </Highlight>
             </P>
             <P>
               言い換えると、このふたりは「ヒルベルトの決定問題」という数学の問題を解いていたのですが、
-              <Em>
+              <Highlight>
                 その問題を解くためにふたりが考えたアイデアが偶然にも、近代のコンピュータサイエンスの土台になった
-              </Em>
+              </Highlight>
               のです。
             </P>
             <Hr />
@@ -403,9 +405,9 @@ export default () => (
             </P>
             <P>
               そして、ここでは詳しく説明しませんが、
-              <Em>
+              <Highlight>
                 このチューリングマシンの仕組みはシンプルながら、現代のコンピュータの仕組みと非常に似ており、近代的なコンピュータの発展に大きな影響を与えたのです。
-              </Em>
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '💭', '💻']}
@@ -442,11 +444,11 @@ export default () => (
               }
             />
             <P>
-              <Em>
+              <Highlight>
                 実は、みなさんはすでに「
                 <HighlightBold>ラムダ計算</HighlightBold>
                 」がどんな仕組みかを知っています。
-              </Em>
+              </Highlight>
               そう、
               <HighlightBold>
                 <Emoji>🍱</Emoji> 弁当箱のことです。
@@ -472,7 +474,9 @@ export default () => (
             <P>
               チャーチが考えた空想上の計算機「
               <HighlightBold>ラムダ計算</HighlightBold>
-              」は、<Em>見た目は弁当箱とは違いますが、仕組みは同じ</Em>でした。
+              」は、
+              <Highlight>見た目は弁当箱とは違いますが、仕組みは同じ</Highlight>
+              でした。
             </P>
             <EmojiSeparator
               nodes={[
@@ -506,11 +510,11 @@ export default () => (
             </P>
             <R.Unxf></R.Unxf>
             <P>
-              <Em>
+              <Highlight>
                 それと同じで、先ほどの「ラムダ計算」の記述式も、
                 <H args={{ name: 'play' }} /> すると
                 <HighlightBold>B</HighlightBold>が残るのです。
-              </Em>
+              </Highlight>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
             <ExpressionRunnerSeparator />
@@ -534,11 +538,11 @@ export default () => (
               <HighlightBold>
                 実はみなさんにラムダ計算を教えていたのです。
               </HighlightBold>
-              <Em>
+              <Highlight>
                 ラムダ計算の記述式は見た目が複雑なので、
                 <H args={{ name: 'bentoBoxPuzzle' }} />
                 という形で教えることで、とっつきやすくしていた
-              </Em>
+              </Highlight>
               というわけですね。
             </P>
             <EmojiSeparator
@@ -648,9 +652,9 @@ export default () => (
             />
             <P>
               このことは、1930年代に証明されました。「
-              <Em>
+              <Highlight>
                 これから先にどれほど強力な計算機が登場しても、その計算機ができる計算は、理論上はラムダ計算にもできる
-              </Em>
+              </Highlight>
               」ということが数学的に証明されたのです。もちろん、この証明は難しすぎるので省略します。
             </P>
             <EmojiSeparator
@@ -690,7 +694,10 @@ export default () => (
           <>
             <P>
               先ほど説明したように、ラムダ計算はもともと、とある数学の問題を解くためにチャーチが考案したものでした。しかし、ラムダ計算もまた、
-              <Em>コンピュータサイエンスの発展に大きな影響を与えた</Em>のです。
+              <Highlight>
+                コンピュータサイエンスの発展に大きな影響を与えた
+              </Highlight>
+              のです。
             </P>
             <EmojiSeparator
               nodes={[
@@ -747,9 +754,9 @@ export default () => (
             <CenteredCode size="sm">'B'</CenteredCode>
             <P>
               まとめると、
-              <Em>
+              <Highlight>
                 Python言語のような人気のプログラミング言語も、1930年代に考えられたラムダ計算の影響を間接的に受けている
-              </Em>
+              </Highlight>
               のです。
             </P>
             <EmojiSeparator
@@ -784,10 +791,10 @@ export default () => (
             </P>
             <P>
               それは、
-              <Em>
+              <Highlight>
                 「<HighlightBold>計算機を工夫すること</HighlightBold>
                 」が、コンピュータサイエンスではとても大事
-              </Em>
+              </Highlight>
               というお話です。
             </P>
             <ExpressionRunnerCaptionOnly>
@@ -797,7 +804,7 @@ export default () => (
             </ExpressionRunnerCaptionOnly>
             <P>
               今回紹介したラムダ計算、すなわち弁当箱は、
-              <Em>仕組みはとてもシンプルです</Em>
+              <Highlight>仕組みはとてもシンプルです</Highlight>
               。弁当箱の基本の法則は、初級その3〜5で紹介したように、非常にシンプルです。
             </P>
             <R.Zzxj>弁当箱の基本の法則は非常にシンプル</R.Zzxj>
@@ -841,14 +848,16 @@ export default () => (
             </R.Rjho>
             <P>
               コンピュータサイエンスは、「
-              <Em>
+              <Highlight>
                 計算機(コンピュータ)の作り方や使い方をどう工夫すれば、より効率的に問題を解けるのか
-              </Em>
+              </Highlight>
               」について考える学問です。
             </P>
             <P>
               そして、今回学んだ弁当箱は、
-              <Em>シンプルでも工夫次第で複雑な計算ができる計算機です。</Em>
+              <Highlight>
+                シンプルでも工夫次第で複雑な計算ができる計算機です。
+              </Highlight>
               そんな弁当箱には、
               <HighlightBold>
                 コンピュータサイエンスのエッセンスが詰まっている
@@ -881,19 +890,19 @@ export default () => (
             </P>
             <P>
               とはいえ、コンピュータサイエンスの他の分野を学ぶときも、やることは弁当箱のときと同じです。なぜならどの分野でも、弁当箱のように「
-              <Em>
+              <Highlight>
                 計算機(コンピュータ)を<HighlightBold>工夫して</HighlightBold>
                 、問題を解く」ことが大事になってくるからです。
-              </Em>
+              </Highlight>
             </P>
             <P>
               コンピュータサイエンスのどの分野でも、
               <HighlightBold>キーワードは「工夫」</HighlightBold>
               なのです。たとえば、「
-              <Em>
+              <Highlight>
                 コンピュータを<HighlightBold>どう工夫して</HighlightBold>
                 使えば、美しいCGや、人工知能や、仮想通貨が作れるだろう？
-              </Em>
+              </Highlight>
               」といった感じですね。
             </P>
             <EmojiSeparator
@@ -910,9 +919,9 @@ export default () => (
             />
             <P>
               長くなりましたが、本稿を読んで、「
-              <Em>
+              <Highlight>
                 コンピュータサイエンスの他の分野でも、コンピュータの工夫の仕方を学んでみたい
-              </Em>
+              </Highlight>
               」と思ってくだされば嬉しいです。
             </P>
           </>
@@ -926,24 +935,24 @@ export default () => (
             <P>本稿で学んだことを短くまとめると、以下のようになります。</P>
             <Ol>
               <OlLi>
-                <Em>
+                <Highlight>
                   弁当箱は、工夫次第で四則演算や、条件分岐や、繰り返しといった複雑な計算ができる。また、繰り返しを行う弁当箱を
                   <HighlightBold>Yコンビネータ</HighlightBold>と呼ぶ。
-                </Em>
+                </Highlight>
               </OlLi>
               <OlLi>
-                <Em>
+                <Highlight>
                   弁当箱は、1930年代に考案された空想上の計算機「ラムダ計算」が基になっている。ラムダ計算は、現代のコンピュータが行えるすべての計算を行うことができ、また多くのプログラミング言語に影響を与えた。
-                </Em>
+                </Highlight>
               </OlLi>
               <OlLi>
-                <Em>
+                <Highlight>
                   コンピュータサイエンスは「
                   <HighlightBold>
                     計算機(コンピュータ)をどう工夫して問題を解くか
                   </HighlightBold>
                   」を考える学問。工夫次第で複雑な計算ができる弁当箱には、そのエッセンスが詰まっている。
-                </Em>
+                </Highlight>
               </OlLi>
             </Ol>
             <EmojiSeparator emojis={['✨', '🍱', '✨']} />
@@ -960,7 +969,9 @@ export default () => (
               <Bold>チューリングマシン</Bold>」を考案した
               <HighlightBold>アラン・チューリング</HighlightBold>
               。彼はチューリングマシンを考案したのち、イギリスからアメリカに渡り、
-              <Em>ラムダ計算(弁当箱)を考案したチャーチのもとで学びました。</Em>
+              <Highlight>
+                ラムダ計算(弁当箱)を考案したチャーチのもとで学びました。
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['🧑🏻', '🎓', '👨🏻‍🦳']}
@@ -990,9 +1001,9 @@ export default () => (
               チューリングが亡くなってから55年後の2009年、英政府はチューリングに対する迫害を謝罪し、2013年には亡きチューリングに恩赦が与えられました。
             </P>
             <P>
-              <Em>
+              <Highlight>
                 そしてこの記事の執筆中、2019年7月15日に、イギリスの新しい50ポンド紙幣の肖像にチューリングが採用されることになったのです。
-              </Em>
+              </Highlight>
               その50ポンド紙幣には、彼が考えた空想上の計算機「チューリングマシン」のイラストが載っています。(参考:{' '}
               <ExternalLink href="https://www.bbc.com/japanese/48991921">
                 BBC
@@ -1060,9 +1071,9 @@ export default () => (
             <>
               <P>
                 本稿をお読みになったプログラマの方の中には、「
-                <Em>
+                <Highlight>
                   これはプログラミング未経験者にとっては難しすぎるのではないか
-                </Em>
+                </Highlight>
                 」と思われた方もいるかもしれません。そんな方に伝えたいことがあります。
               </P>
             </>
@@ -1078,9 +1089,9 @@ export default () => (
                     <Hr />
                     <P>
                       個人的な話で恐縮ですが、わたしは今まで「
-                      <Em>
+                      <Highlight>
                         この人はほんとうに頭がいいな、知的好奇心が旺盛だな
-                      </Em>
+                      </Highlight>
                       」と思った方に数多く出会いました。たとえば、わたしは20代のときに母を癌で亡くしているのですが、母がお世話になったお医者様の方々と話したときは、「こんなに賢い人に出会ったのは初めてだ」と思ったものです。
                     </P>
                     <EmojiSeparator
@@ -1097,13 +1108,13 @@ export default () => (
                     />
                     <P>
                       そして、今までわたしが「
-                      <Em>
+                      <Highlight>
                         この人はほんとうに頭がいいな、知的好奇心が旺盛だな
-                      </Em>
+                      </Highlight>
                       」と思った人々の内訳を見てみると、
-                      <Em>
+                      <Highlight>
                         プログラマの方よりも、プログラマでない方のほうが遥かに多い
-                      </Em>
+                      </Highlight>
                       のです。もちろん、これは当たり前ですね。プログラマは世の中では圧倒的少数派ですから、母数のケタが違います。
                     </P>
                     <P>
@@ -1115,32 +1126,34 @@ export default () => (
                     </P>
                     <P>
                       だから、そういう方々に「
-                      <Em>知的に面白い</Em>
+                      <Highlight>知的に面白い</Highlight>
                       」と思っていただくために、難易度はあえて高めに設定しました。本稿は
-                      <Em>
+                      <Highlight>
                         「プログラミング未経験者向けの入門書」とは謳っていますが、「誰にでも、何ならサルにでも分かる入門書」だとは謳っていない
-                      </Em>
+                      </Highlight>
                       理由は、そういうところにあります。
                     </P>
                     <P>
                       しかし同時に、
-                      <Em>
+                      <Highlight>
                         せっかく時間をかけて書くのであれば、できるかぎり読者層の裾野を広げたい
-                      </Em>
+                      </Highlight>
                       とも思いました。どうせなら、たくさんの人に読んでもらいたい。だから、難易度は妥協しないけれど、説明はできる限り平易にしようと心がけました。
                     </P>
                     <P>
                       また、冒頭でも書いた通り、いきなり高度な内容を理解することができれば、「
-                      <Em>これが理解できたんだから、他の内容も学べるだろう</Em>
+                      <Highlight>
+                        これが理解できたんだから、他の内容も学べるだろう
+                      </Highlight>
                       」と自信がつきます。高度な内容を分かりやすく書くことができれば、こういったメリットもあります。
                     </P>
                     <P>
                       努力はしたものの、それでも本稿がまだまだ難しいのは承知しております。本稿はあくまで、「
-                      <Em>邪道な</Em>
+                      <Highlight>邪道な</Highlight>
                       」入門書なのです。ただ、その上でひとこと言わせていただくと、
-                      <Em>
+                      <Highlight>
                         内容を完全には理解できなくても、雰囲気だけでも楽しんでくださった方や、「よくわからないけど、コンピュータサイエンスって面白そう」と感じてくださった方が、ひとりでも多くいればいいな
-                      </Em>
+                      </Highlight>
                       と思っています。
                     </P>
                     <BubbleQuotes
@@ -1151,30 +1164,32 @@ export default () => (
                             <>
                               <P>
                                 悪魔のわたしに言わせれば…「
-                                <Em>
+                                <Highlight>
                                   入門書を必要以上に難しくしたら、その分野に苦手意識を持つ人が増える
-                                </Em>
+                                </Highlight>
                                 」というのは確かにそうだと思う。
                               </P>
                               <P>
                                 一方、「
-                                <Em>
+                                <Highlight>
                                   ある分野の入門書や入門コースが知的に面白かったから、その分野に興味を持つようになった
-                                </Em>
+                                </Highlight>
                                 」という人も、一定数いると思う。大抵は、知的好奇心が旺盛な人たちだ。わたしはどうせ発信するなら、そういう人たちに好かれるものを作りたい。
                               </P>
                               <P>
                                 そして、
-                                <Em>
+                                <Highlight>
                                   「知的に面白い」と思ってもらえる入門書には、ある程度の難しさは欠かせない
-                                </Em>
+                                </Highlight>
                                 と思う。簡単すぎたら退屈だからだ。
                               </P>
                               <P>
                                 「難しすぎて敬遠してしまう人」の数を抑えつつ、「難しくて面白いと思ってくれる人」の数を増やす、というのは
                                 <HighlightBold>トレードオフ</HighlightBold>
                                 だ。どこでバランスを取るかは教材作成者が自由に決めるべきで、
-                                <Em>「これが正解」というのは無い</Em>
+                                <Highlight>
+                                  「これが正解」というのは無い
+                                </Highlight>
                                 と思うんだ。
                               </P>
                             </>
@@ -1184,7 +1199,9 @@ export default () => (
                     />
                     <P>
                       <Bold>ちなみに:</Bold> プログラマの方で、「
-                      <Em>Yコンビネータを実際にプログラミングで試してみたい</Em>
+                      <Highlight>
+                        Yコンビネータを実際にプログラミングで試してみたい
+                      </Highlight>
                       」と思った方は、↓の「プログラミングで試してみる」を押してみてください。
                     </P>
                   </>
@@ -1194,14 +1211,14 @@ export default () => (
               <Hr />
               <P>
                 下のコードは、
-                <Em>
+                <Highlight>
                   JavaScriptでYコンビネータを使って「
                   <EmojiNumber number={4} /> の階乗」、すなわち{' '}
                   <EmojiNumber number={4} /> <Emoji>✖️</Emoji>{' '}
                   <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
                   <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
                   <EmojiNumber number={1} /> を計算するコード
-                </Em>
+                </Highlight>
                 です。
               </P>
               <Pre>
@@ -1229,9 +1246,9 @@ export default () => (
                 ふつう、JavaScriptで階乗を計算するには <Code>for</Code> や{' '}
                 <Code>while</Code> といったループ機能、<Code>reduce</Code>{' '}
                 といった関数、または関数の再帰を使います。しかし、
-                <Em>
+                <Highlight>
                   Yコンビネータを使えば、それらを一切使わずに階乗を計算できる
-                </Em>
+                </Highlight>
                 のです。
               </P>
             </CardContent>

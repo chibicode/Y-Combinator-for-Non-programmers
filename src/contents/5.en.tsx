@@ -2,7 +2,7 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  Em,
+  Highlight,
   HighlightBold,
   Ol,
   OlLi,
@@ -21,25 +21,25 @@ export const ThreeRowRules = () => (
     </P>
     <Ol>
       <OlLi>
-        <Em>
+        <Highlight>
           First, start with the pair of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-        </Em>
+        </Highlight>
       </OlLi>
       <OlLi>
-        <Em>
+        <Highlight>
           Label the center item on the bottom row as{' '}
           <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />, and
           you can ignore this for the rest of the iteration.
-        </Em>
+        </Highlight>
       </OlLi>
       <OlLi>
-        <Em>
+        <Highlight>
           After finishing the pair of{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,
           <InlinePrioritiesLabel>2</InlinePrioritiesLabel> will become{' '}
           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>. Then, repeat.
-        </Em>
+        </Highlight>
       </OlLi>
     </Ol>
     <R.Vdhd>Lunchbox with 3 rows</R.Vdhd>
@@ -58,11 +58,11 @@ export const Beginner5Rules = () => (
     </R.Hykj>
     <P>
       <Bold>Note:</Bold>{' '}
-      <Em>
+      <Highlight>
         If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s on the
         leftmost edge of a lunchbox, then start with the inner pair of{' '}
         <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
-      </Em>
+      </Highlight>
     </P>
     <R.Myjz>
       If there’s no <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on the

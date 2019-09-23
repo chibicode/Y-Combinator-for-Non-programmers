@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, HighlightBold, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Highlight,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -32,9 +38,9 @@ export default () => (
             />
             <P>
               しかしいつも通り、
-              <Em>
+              <Highlight>
                 内容を完全に理解する必要はありません。少しくらい分からなくても、雰囲気で読み進めていただいて大丈夫です。
-              </Em>
+              </Highlight>
             </P>
             <EmojiSeparator
               emojis={['✨', '🤗', '✨']}
@@ -53,11 +59,11 @@ export default () => (
           <>
             <P>
               前回は、
-              <Em>
+              <Highlight>
                 計算箱の「
                 <H args={{ name: 'repeatFeature' }} />
                 」を、サヤちゃんが考えた弁当箱で再現できるかも？
-              </Em>
+              </Highlight>
               というところで終わりました。
             </P>
             <R.Qycx>
@@ -71,10 +77,10 @@ export default () => (
             </R.Peiy>
             <P>
               サヤちゃんの弁当箱は、前回
-              <Em>
+              <Highlight>
                 <H args={{ name: 'play' }} /> してみると{' '}
                 <EmojiNumber number={5} /> になりました。
-              </Em>
+              </Highlight>
             </P>
             <P>
               つまり、「
@@ -118,10 +124,10 @@ export default () => (
                       </P>
                       <P>
                         そうすることで、
-                        <Em>
+                        <Highlight>
                           どいうった経緯で最終的に <EmojiNumber number={5} />{' '}
                           になるのか
-                        </Em>
+                        </Highlight>
                         を知ることができるからね。
                       </P>
                     </>
@@ -154,9 +160,9 @@ export default () => (
                     <>
                       <P>
                         なるほど、
-                        <Em>
+                        <Highlight>
                           早送りをすることで、途中で何が起きているか確かめてみようってことだね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -190,16 +196,17 @@ export default () => (
                       </P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             弁当箱の中身がたくさんあるので、スペースの都合上、ひとつひとつの料理を小さく表示しているよ。
-                          </Em>
+                          </Highlight>
                           見にくくてごめん！
                         </UlLi>
                         <UlLi>
                           説明のために、何度も止めながらやっていくよ。
                         </UlLi>
                         <UlLi>
-                          複雑なので、<Em>目で追わなくても大丈夫だよ！</Em>
+                          複雑なので、
+                          <Highlight>目で追わなくても大丈夫だよ！</Highlight>
                         </UlLi>
                         <UlLi>
                           ちょっと時間がかかるので、待てない方は下の「
@@ -231,7 +238,8 @@ export default () => (
                     <>
                       <P>
                         でもちょっと立ち止まって考えてみて。まず、この
-                        <Em>真ん中の黄色で示した部分</Em>に注目してくれる？
+                        <Highlight>真ん中の黄色で示した部分</Highlight>
+                        に注目してくれる？
                       </P>
                     </>
                   )
@@ -249,13 +257,13 @@ export default () => (
                     <>
                       <P>
                         上の黄色の部分が複雑なので、
-                        <Em>
+                        <Highlight>
                           <HighlightBold>
                             分かりやすくするために、
                           </HighlightBold>
                           そこだけを <Emoji>🍱</Emoji>{' '}
                           のアイコンに置き換えて省略してみると、下のようになる
-                        </Em>
+                        </Highlight>
                         よ。
                       </P>
                     </>
@@ -342,7 +350,7 @@ export default () => (
                     <>
                       <P>
                         じゃあ、<Emoji>🍱</Emoji> を省略する前の状態(
-                        <Em>黄色の部分</Em>)に戻すね。
+                        <Highlight>黄色の部分</Highlight>)に戻すね。
                       </P>
                     </>
                   )
@@ -385,11 +393,11 @@ export default () => (
               ]}
             />
             <R.Tfsi>
-              <Em>
+              <Highlight>
                 黄色の部分は、前回省略したのと
                 <br />
                 まったく同じ
-              </Em>
+              </Highlight>
             </R.Tfsi>
             <BubbleQuotes
               quotes={[
@@ -479,12 +487,12 @@ export default () => (
                     <>
                       <P>
                         ふむふむ…
-                        <Em>
+                        <Highlight>
                           <InlineBorder type="condition" /> に入っていた数字は、
                           <EmojiNumber number={3} /> から{' '}
                           <EmojiNumber number={2} /> に「
                           <HighlightBold>1減った</HighlightBold>」というわけか。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -554,10 +562,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           また真ん中の部分が前回と同じなので、<Emoji>🍱</Emoji>{' '}
                           のアイコンで省略してみる
-                        </Em>
+                        </Highlight>
                         ね。
                       </P>
                     </>
@@ -630,14 +638,14 @@ export default () => (
                       <P>なんとなく、パターンが見えてきたかも…</P>
                       <P>
                         特に、
-                        <Em>
+                        <Highlight>
                           <InlineBorder type="condition" /> に入っていた数字は、
                           <EmojiNumber number={3} /> から{' '}
                           <EmojiNumber number={2} /> に、
                           <EmojiNumber number={2} /> から{' '}
                           <EmojiNumber number={1} /> にと、
                           <HighlightBold>1ずつ減っている</HighlightBold>よね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -666,10 +674,10 @@ export default () => (
                     <>
                       <P>
                         ということは、次は{' '}
-                        <Em>
+                        <Highlight>
                           <InlineBorder type="condition" /> が{' '}
                           <EmojiNumber number={0} /> になるのかな？
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         そして、
@@ -729,10 +737,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           例によって、真ん中の部分が前回と同じなので、
                           <Emoji>🍱</Emoji> のアイコンで省略してみる
-                        </Em>
+                        </Highlight>
                         ね。
                       </P>
                     </>
@@ -794,11 +802,11 @@ export default () => (
                     <>
                       <P>
                         そう！
-                        <Em>
+                        <Highlight>
                           だから、
                           <InlineBorder type="trueCase" /> に入っている{' '}
                           <EmojiNumber number={2} /> が残ることになるね。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -868,10 +876,10 @@ export default () => (
                     <>
                       <P>
                         まず、
-                        <Em>
+                        <Highlight>
                           もともとの弁当箱には数字の <EmojiNumber number={3} />{' '}
                           と <EmojiNumber number={2} /> が入っていた
-                        </Em>
+                        </Highlight>
                         よね。
                       </P>
                     </>
@@ -891,10 +899,10 @@ export default () => (
                     <>
                       <P>
                         そして
-                        <Em>
+                        <Highlight>
                           <H args={{ name: 'fastForward' }} />{' '}
                           していくと、終了直前に以下のようになった
-                        </Em>
+                        </Highlight>
                         よね。
                       </P>
                     </>
@@ -1203,13 +1211,13 @@ export default () => (
                       <P>そうですね。ここでひとつ説明したいことがあります。</P>
                       <P>
                         さきほど登場した、
-                        <Em>
+                        <Highlight>
                           <Emoji>🅰️</Emoji> <Emoji>➕</Emoji> <Emoji>🅱️</Emoji>{' '}
                           を計算できる弁当箱の、
                           <HighlightBold>
                             下半分に使われていた部分にご注目ください
                           </HighlightBold>
-                        </Em>
+                        </Highlight>
                         。
                       </P>
                     </>

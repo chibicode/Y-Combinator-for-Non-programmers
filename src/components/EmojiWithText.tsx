@@ -4,7 +4,7 @@ import { VariableNames } from 'src/types/VariableNames'
 import Emoji, { EmojiProps } from 'src/components/Emoji'
 import emojiLabelMapping from 'src/lib/emojiLabelMapping'
 import letterEmojiMapping from 'src/lib/letterEmojiMapping'
-import { Em } from 'src/components/ContentTags'
+import { Highlight } from 'src/components/ContentTags'
 import BubbleQuoteContext from 'src/components/BubbleQuoteContext'
 
 interface EmojiWithTextProps {
@@ -20,9 +20,9 @@ const EmojiWithText = ({ letter, size }: EmojiWithTextProps) => {
     throw new Error()
   }
   return (
-    <Em highlightType={inQuote ? 'blue' : 'white'}>
+    <Highlight highlightType={inQuote ? 'blue' : 'white'}>
       {label[locale]} <Emoji size={size}>{emoji}</Emoji>{' '}
-    </Em>
+    </Highlight>
   )
 }
 

@@ -5,7 +5,7 @@ import {
   P,
   Hr,
   HighlightBold,
-  Em,
+  Highlight,
   Ul,
   UlLi,
   Bold
@@ -26,7 +26,7 @@ export const TwoPlusFour = () => (
     <R.Ednv />
     <P>
       The result is <EmojiNumber number={6} />. Because{' '}
-      <Em>
+      <Highlight>
         there’s{' '}
         <InlineBorder>
           <EmojiNumber number={4} />
@@ -34,7 +34,7 @@ export const TwoPlusFour = () => (
         next to <CustomEmoji type="plusOne" />, it repeats{' '}
         <CustomEmoji type="plusOne" /> <HighlightBold>four times</HighlightBold>
         .
-      </Em>
+      </Highlight>
     </P>
     <R.Xpks />
     <ExpressionRunnerSeparator />
@@ -239,12 +239,12 @@ export default () => (
             <R.Lxrk />
             <P>
               So the result is <EmojiNumber number={3} />.{' '}
-              <Em>
+              <Highlight>
                 Instead of calculating <EmojiNumber number={10} />{' '}
                 <Emoji>➖</Emoji> <EmojiNumber number={8} />, we calculated{' '}
                 <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
                 <EmojiNumber number={7} /> by mistake
-              </Em>
+              </Highlight>
               .
             </P>
             <EmojiSeparator
@@ -302,10 +302,10 @@ export default () => (
               <HighlightBold>eight</HighlightBold>{' '}
               <CustomEmoji type="minusOne" />
               ’s. However,{' '}
-              <Em>
+              <Highlight>
                 the previous mathbox actually had only{' '}
                 <HighlightBold>seven</HighlightBold> of them
-              </Em>
+              </Highlight>
               .
             </P>
             <EmojiSeparator
@@ -353,7 +353,7 @@ export default () => (
             </P>
             <P>
               <Bold>Now, here’s a question:</Bold>{' '}
-              <Em>How can we avoid mistakes like this?</Em>
+              <Highlight>How can we avoid mistakes like this?</Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -425,10 +425,10 @@ export default () => (
             <P>
               If you <H args={{ name: 'play', lowerCase: true }} /> the above
               mathbox,{' '}
-              <Em>
+              <Highlight>
                 it automatically expands the bottom half before calculating the
                 result
-              </Em>
+              </Highlight>
               . After the expansion, there are now{' '}
               <HighlightBold>eight</HighlightBold>{' '}
               <CustomEmoji type="minusOne" />
@@ -495,10 +495,10 @@ export default () => (
             <P>
               <Bold>Takeaway:</Bold> By using{' '}
               <H args={{ name: 'repeatFeature' }} />,{' '}
-              <Em>
+              <Highlight>
                 you can specify the number of times{' '}
                 <CustomEmoji type="minusOne" /> gets repeated
-              </Em>
+              </Highlight>
               . <Emoji>🤗</Emoji>
             </P>
           </>
@@ -546,20 +546,20 @@ export default () => (
             <R.Bwnp />
             <Ul>
               <UlLi>
-                <Em>
+                <Highlight>
                   If there’s{' '}
                   <InlineBorder>
                     <CustomEmoji type="blankNumber" />
                   </InlineBorder>{' '}
                   to the left of <CustomEmoji type="plusOne" />, then…
-                </Em>
+                </Highlight>
               </UlLi>
               <UlLi>
-                <Em>
+                <Highlight>
                   When you <H args={{ name: 'play' }} /> it,{' '}
                   <CustomEmoji type="plusOne" /> gets repeated for{' '}
                   <CustomEmoji type="blankNumber" /> times.
-                </Em>
+                </Highlight>
               </UlLi>
             </Ul>
             <Hr />
@@ -576,10 +576,10 @@ export default () => (
             />
             <P>
               Of course, you can use{' '}
-              <Em>
+              <Highlight>
                 <CustomEmoji type="minusOne" /> instead of{' '}
                 <CustomEmoji type="plusOne" />
-              </Em>{' '}
+              </Highlight>{' '}
               as well.
             </P>
             <R.Ewfr>

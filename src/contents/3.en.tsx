@@ -5,7 +5,7 @@ import {
   P,
   PFullWidth,
   HighlightBold,
-  Em,
+  Highlight,
   Hr,
   Bold
 } from 'src/components/ContentTags'
@@ -65,13 +65,13 @@ export default () => (
                     <>
                       <P>Don’t worry. I’m not here to take your lives away…</P>
                       <P>
-                        <Em>
+                        <Highlight>
                           However, I will take{' '}
                           <HighlightBold>
                             all of your mathboxes <CustomEmoji type="mathBox" />
                           </HighlightBold>
                           . They’re all mine now!
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -129,7 +129,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>We’re all really bad at math.</Em>
+                        <Highlight>We’re all really bad at math.</Highlight>
                       </P>
                       <P>
                         Without mathboxes, we can’t do any calculations. Our
@@ -174,10 +174,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           So, by taking away your mathboxes, I’m giving you an
                           opportunity to finally study math.
-                        </Em>{' '}
+                        </Highlight>{' '}
                         You should thank me for it!
                       </P>
                     </>
@@ -216,7 +216,8 @@ export default () => (
                   type: 'devil',
                   children: (
                     <P>
-                      Hmm…okay. <Em>Maybe I’ll give you a chance.</Em>
+                      Hmm…okay.{' '}
+                      <Highlight>Maybe I’ll give you a chance.</Highlight>
                     </P>
                   )
                 }
@@ -230,14 +231,14 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Em>
+                        <Highlight>
                           I’ll give you{' '}
                           <HighlightBold>
                             a bunch of puzzles that require lots of thinking.
                           </HighlightBold>{' '}
                           If you can solve <HighlightBold>all</HighlightBold> of
                           them, I’ll give your mathboxes back.
-                        </Em>
+                        </Highlight>
                       </P>
                       <P>
                         Since you villagers hadn’t spent much time studying,
@@ -262,7 +263,9 @@ export default () => (
                         But…we have to solve them to get our mathboxes back!
                       </P>
                       <P>
-                        <Em>We’ll accept your challenge, the devil!</Em>
+                        <Highlight>
+                          We’ll accept your challenge, the devil!
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -357,9 +360,9 @@ export default () => (
               <Bold>解説:</Bold> 上のように、
               <H args={{ name: 'bentoBoxPuzzle' }} />
               には、実際の弁当箱のように、
-              <Em>
+              <Highlight>
                 四角の中にいくつかマスがあり、それぞれのマスの中に料理が入っています
-              </Em>
+              </Highlight>
               。
             </P>
             <P>
@@ -388,7 +391,7 @@ export default () => (
                     <>
                       <P>
                         なんとなく、
-                        <Em>見た目が計算箱に似ている</Em>
+                        <Highlight>見た目が計算箱に似ている</Highlight>
                         気がするなあ。数字の代わりに、料理が入っているけど。
                       </P>
                     </>
@@ -401,15 +404,15 @@ export default () => (
                       <P>
                         実はこの
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        は、<Em>計算箱と密接な関係がある</Em>
+                        は、<Highlight>計算箱と密接な関係がある</Highlight>
                         んだが、これについては後に説明する。
                       </P>
                       <P>
                         とりあえず今は、
-                        <Em>
+                        <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />の
                           <H args={{ name: 'play' }} /> について見ていこう。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -430,15 +433,15 @@ export default () => (
         content: (
           <>
             <P>
-              <Em>
+              <Highlight>
                 <H args={{ name: 'bentoBoxPuzzle' }} />
                 は、計算箱と同じように
                 <H args={{ name: 'play' }} /> することができます。
-              </Em>
+              </Highlight>
               試しに、
-              <Em>
+              <Highlight>
                 <H args={{ name: 'pressPlay' }} />
-              </Em>
+              </Highlight>
             </P>
             <R.Itbm />
             <BubbleQuotes
@@ -449,10 +452,10 @@ export default () => (
                     <>
                       <P>
                         <H args={{ name: 'play' }} /> すると、
-                        <Em>
+                        <Highlight>
                           下のふたつの <EmojiWithText letter="a" /> が消えて、
                           <EmojiWithText letter="b" /> だけが残った！
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -505,7 +508,7 @@ export default () => (
                     <>
                       <P>
                         これだけだと法則が何か、まだハッキリと言えないなあ…
-                        <Em>もう少し他の例を試してみないと！</Em>
+                        <Highlight>もう少し他の例を試してみないと！</Highlight>
                       </P>
                     </>
                   )

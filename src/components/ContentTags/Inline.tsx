@@ -105,7 +105,7 @@ HighlightBold.defaultProps = {
   highlightType: 'default'
 }
 
-export const Em = ({
+export const Highlight = ({
   highlightType,
   ...props
 }: {
@@ -157,6 +157,6 @@ export const Em = ({
   }
 }
 
-Em.defaultProps = {
+Highlight.defaultProps = {
   highlightType: 'default'
 }

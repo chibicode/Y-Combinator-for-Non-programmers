@@ -1,7 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Hr, HighlightBold, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Hr,
+  HighlightBold,
+  Highlight,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -18,14 +25,14 @@ export const TwoPlusFour = () => (
     <R.Ednv />
     <P>
       結果は <EmojiNumber number={6} /> になりました。この計算箱は、
-      <Em>
+      <Highlight>
         下の <CustomEmoji type="plusOne" /> の左側に{' '}
         <InlineBorder>
           <EmojiNumber number={4} />
         </InlineBorder>{' '}
         があるので、
         <CustomEmoji type="plusOne" /> が4回繰り返されるのです。
-      </Em>
+      </Highlight>
     </P>
     <R.Xpks />
     <ExpressionRunnerSeparator />
@@ -242,10 +249,10 @@ export default () => (
               <CustomEmoji type="minusOne" /> を
               <HighlightBold>8個配置する</HighlightBold>
               必要がありますが、
-              <Em>
+              <Highlight>
                 先ほどの計算箱には <CustomEmoji type="minusOne" /> が
                 <HighlightBold>7個しか</HighlightBold>ありませんでした
-              </Em>
+              </Highlight>
               。
             </P>
             <EmojiSeparator
@@ -282,7 +289,9 @@ export default () => (
               このように、
               <CustomEmoji type="plusOne" /> や <CustomEmoji type="minusOne" />{' '}
               の数をひとつでも間違えると、計算箱では正確な計算ができません。
-              <Em>ではどうすれば、こういったミスを防げるのでしょうか？</Em>
+              <Highlight>
+                ではどうすれば、こういったミスを防げるのでしょうか？
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -340,11 +349,11 @@ export default () => (
         content: (
           <>
             <P>
-              <Em>
+              <Highlight>
                 上の計算箱を
                 <H args={{ name: 'play' }} />
                 すると、計算をする前に、下の部分が次のように変化します。
-              </Em>
+              </Highlight>
               変化後には、
               <EmojiNumber number={10} /> の下に <CustomEmoji type="minusOne" />{' '}
               が<HighlightBold>8個</HighlightBold>あるのに注目です。
@@ -403,11 +412,11 @@ export default () => (
             <R.Pgxb />
             <P>
               まとめると、
-              <Em>
+              <Highlight>
                 繰り返しの機能を使うことで、
                 <CustomEmoji type="minusOne" />{' '}
                 を指定した回数分繰り返すことができる
-              </Em>
+              </Highlight>
               ということです。<Emoji>🤗</Emoji>
             </P>
           </>
@@ -446,20 +455,20 @@ export default () => (
             <R.Bwnp />
             <Ul>
               <UlLi>
-                <Em>
+                <Highlight>
                   <CustomEmoji type="plusOne" /> の左側に何らかの数字{' '}
                   <InlineBorder>
                     <CustomEmoji type="blankNumber" />
                   </InlineBorder>{' '}
                   が入っている場合、
-                </Em>
+                </Highlight>
               </UlLi>
               <UlLi>
-                <Em>
+                <Highlight>
                   <H args={{ name: 'play' }} /> すると、
                   <CustomEmoji type="plusOne" /> が{' '}
                   <CustomEmoji type="blankNumber" /> 回分繰り返される。
-                </Em>
+                </Highlight>
               </UlLi>
             </Ul>
             <Hr />
@@ -474,10 +483,10 @@ export default () => (
             />
             <P>
               もちろん、
-              <Em>
+              <Highlight>
                 <CustomEmoji type="plusOne" /> の代わりに{' '}
                 <CustomEmoji type="minusOne" /> を使った場合も同じ
-              </Em>
+              </Highlight>
               ように繰り返されます。
             </P>
             <R.Ewfr>
@@ -588,14 +597,14 @@ export default () => (
             />
             <P>
               村人たちは、計算箱の
-              <Em>
+              <Highlight>
                 「<H args={{ name: 'plusOneFeature' }} />
                 」、「
                 <H args={{ name: 'minusOneFeature' }} />
                 」、そして今回紹介した「
                 <H args={{ name: 'repeatFeature' }} />
                 」を組み合わせる
-              </Em>
+              </Highlight>
               ことで、足し算や引き算を正確に行っていたのです。
             </P>
             <EmojiSeparator

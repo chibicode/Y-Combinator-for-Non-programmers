@@ -5,7 +5,7 @@ import { InlineHighlightType } from 'src/types/ContentTagTypes'
 import InlineBorder from 'src/components/InlineBorder'
 import { useContext } from 'react'
 import {
-  Em,
+  Highlight,
   InternalLink,
   P,
   HighlightBold,
@@ -242,7 +242,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
           <Bold>こんにちは！</Bold>このページは「
           <InternalLink href={'/'}>{lessonTitle}</InternalLink>
           」という記事の
-          <Em>{episodeNumber + 1}ページ目</Em>
+          <Highlight>{episodeNumber + 1}ページ目</Highlight>
           です。1ページ目から読むには
           <InternalLink href={'/'}>
             <HighlightBold>こちらからどうぞ</HighlightBold>
@@ -376,7 +376,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
@@ -556,16 +556,16 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   if (args.name === 'pressPlay') {
     if (locale === 'en') {
       return (
-        <Em>
+        <Highlight>
           {args.capitalize ? 'T' : 't'}
           ry pressing <H args={{ name: 'play' }} />
-        </Em>
+        </Highlight>
       )
     } else {
       return (
-        <Em>
+        <Highlight>
           <H args={{ name: 'play' }} /> を押してみてください:
-        </Em>
+        </Highlight>
       )
     }
   }
@@ -661,17 +661,17 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Em>
+          <Highlight>
             Press <H args={{ name: 'next' }} />:
-          </Em>
+          </Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Em>
+          <Highlight>
             <H args={{ name: 'next' }} /> を押してみてください:
-          </Em>
+          </Highlight>
         </>
       )
     }
@@ -680,15 +680,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Em>
+          <Highlight>
             Press <H args={{ name: 'fastForward' }} />:
-          </Em>
+          </Highlight>
         </>
       )
     } else {
       return (
         <>
-          <Em>
+          <Highlight>
             <H args={{ name: 'fastForward' }} /> を押してみて
             {!args.girl && <>ください</>}
             {args.mentionRightArrow || args.skippable
@@ -698,7 +698,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               : args.girl
               ? '！'
               : ':'}
-          </Em>
+          </Highlight>
           {args.mentionRightArrow && <H args={{ name: 'mentionRightArrow' }} />}
           {args.skippable && (
             <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
@@ -837,10 +837,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       const question = (
         <P>
           また、本稿の内容について質問がございましたら、
-          <Em>
+          <Highlight>
             上のツイートに<HighlightBold>スクリーンショット付き</HighlightBold>
             で返信
-          </Em>
+          </Highlight>
           してくだされば最優先で対応します。メール(
           <ExternalLink href="mailto:shu@chibicode.com">
             shu@chibicode.com
@@ -852,9 +852,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       if (episodeNumber <= numEpisodesExceptFirstAndLast) {
         let quitReason: React.ReactNode
         if (episodeNumber === 0) {
-          quitReason = <Em>時間がないからあとで読もう</Em>
+          quitReason = <Highlight>時間がないからあとで読もう</Highlight>
         } else {
-          quitReason = <Em>長いのでひと休みしよう</Em>
+          quitReason = <Highlight>長いのでひと休みしよう</Highlight>
         }
 
         return (
@@ -865,10 +865,10 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             </P>
             <P>
               差し支えなければ、このページを閉じる前に
-              <Em>
+              <Highlight>
                 <HighlightBold>下のツイートをリツイート</HighlightBold>
                 してくださると、宣伝になるので非常に助かります。
-              </Em>
+              </Highlight>
               {episodeNumber > 0 && (
                 <>
                   もしくは、「
@@ -899,9 +899,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             <P>
               <Bold>
                 本稿を読んで、「
-                <Em>
+                <Highlight>
                   プログラミング未経験者だけど、コンピュータサイエンスを学びたくなった。次は何を読めばいい？
-                </Em>
+                </Highlight>
                 」と思ってくださった方へ:
               </Bold>
             </P>
@@ -927,11 +927,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             />
             <P>
               続編をリクエストしたい方は、
-              <Em>
+              <Highlight>
                 以下のツイートの引用リツイートで「
                 <HighlightBold>続編が読みたい</HighlightBold>
                 」と書いてくださると嬉しいです。
-              </Em>
+              </Highlight>
             </P>
             <TwitterEmbed id={shareId} />
             <Hr />
@@ -1073,9 +1073,9 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     } else {
       return (
         <>
-          <Em highlightType="pink">
+          <Highlight highlightType="pink">
             一回ずつ進める場合は、<Emoji>➡️</Emoji> を押してください。
-          </Em>
+          </Highlight>
         </>
       )
     }
@@ -1346,7 +1346,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return <>?</>
     } else {
-      return <Em highlightType="pink">最後までスキップすることも可能です。</Em>
+      return (
+        <Highlight highlightType="pink">
+          最後までスキップすることも可能です。
+        </Highlight>
+      )
     }
   }
   if (args.name === 'slide') {
@@ -1413,7 +1417,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
@@ -1437,7 +1441,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {
@@ -1461,7 +1465,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
         content
       ) : (
         <>
-          <Em>{content}</Em>
+          <Highlight>{content}</Highlight>
         </>
       )
     } else {

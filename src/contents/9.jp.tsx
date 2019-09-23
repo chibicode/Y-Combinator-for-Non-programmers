@@ -1,6 +1,12 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, HighlightBold, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Highlight,
+  HighlightBold,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -37,9 +43,9 @@ export default () => (
                       <P>ねえねえ、見てほしいものがあるんだけど。</P>
                       <P>
                         まず、
-                        <Em>
+                        <Highlight>
                           これは <EmojiNumber number={1} /> に変換できる弁当箱
-                        </Em>
+                        </Highlight>
                         だよね。
                       </P>
                     </>
@@ -98,11 +104,11 @@ export default () => (
                     <>
                       <P>
                         そりゃあ、
-                        <Em>
+                        <Highlight>
                           <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算できるんだから、
                           <EmojiNumber number={2} /> になるに決まっている
-                        </Em>
+                        </Highlight>
                         だろう？
                       </P>
                     </>
@@ -181,22 +187,24 @@ export default () => (
                     <>
                       <P>
                         理由は、
-                        <Em>以下の法則に沿っていないからです。</Em>
+                        <Highlight>
+                          以下の法則に沿っていないからです。
+                        </Highlight>
                       </P>
                       <R.Eozk>
                         <H args={{ name: 'convertiblePatternCaption' }} />
                       </R.Eozk>
                       <P>
-                        <Em>
+                        <Highlight>
                           右上には <Emoji>🅱️</Emoji> の料理が「
                           <HighlightBold>ひとつだけ</HighlightBold>
                           」ある必要があります。しかし、
-                          <Em>
+                          <Highlight>
                             ここでは <Emoji>🅱️</Emoji> の料理が
                             <HighlightBold>ふたつ</HighlightBold>もある
-                          </Em>
+                          </Highlight>
                           ので、計算箱に変換できないのです。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -245,7 +253,7 @@ export default () => (
                           <EmojiWithText letter="b" /> のかわりに{' '}
                           <EmojiWithText letter="e" /> が入っている
                         </HighlightBold>
-                        ところです。(<Em>黄色</Em>で示しています)
+                        ところです。(<Highlight>黄色</Highlight>で示しています)
                       </P>
                     </>
                   )
@@ -260,9 +268,9 @@ export default () => (
               <br />
               上の部分は <EmojiNumber number={1} /> に変換できる。
               <br />
-              <Em>
+              <Highlight>
                 先ほどと違うのは、上の <EmojiForLetter letter="e" /> の部分。
-              </Em>
+              </Highlight>
               <br />
               それ以外はすべて先ほどと同じ。
             </R.Exbn>
@@ -330,10 +338,10 @@ export default () => (
             />
             <R.Ybne>
               先ほど{' '}
-              <Em>
+              <Highlight>
                 <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                 <EmojiNumber number={1} /> を計算できなかった
-              </Em>
+              </Highlight>
               例
             </R.Ybne>
             <BubbleQuotes
@@ -482,7 +490,7 @@ export default () => (
                     <>
                       <P>
                         この例だと複雑すぎて説明が難しいので、
-                        <Em>簡単な例を使って説明しますね！</Em>
+                        <Highlight>簡単な例を使って説明しますね！</Highlight>
                       </P>
                     </>
                   )
@@ -785,10 +793,10 @@ export default () => (
               ]}
             />
             <R.Kwyy>
-              <Em>
+              <Highlight>
                 <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                 <EmojiNumber number={1} /> を計算できなかった
-              </Em>
+              </Highlight>
               理由:
               <br />
               <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
@@ -830,11 +838,11 @@ export default () => (
                       </P>
                       <P>
                         じゃあ…
-                        <Em>
+                        <Highlight>
                           ミニオンさんお願い！
                           <HighlightBold>特別ルール</HighlightBold>
                           を設けてくれないかな？
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -945,7 +953,7 @@ export default () => (
                       <P>それでは、</P>
                       <Ul>
                         <UlLi>
-                          <Em>
+                          <Highlight>
                             <BottomRightBadge
                               inline
                               bottomRightBadgeType="callArg"
@@ -956,7 +964,7 @@ export default () => (
                               bottomRightBadgeType="funcUnbound"
                             />{' '}
                             に同じ料理が登場したら、
-                          </Em>
+                          </Highlight>
                         </UlLi>
                         <UlLi>
                           <HighlightBold>
@@ -1039,14 +1047,14 @@ export default () => (
                         </HighlightBold>
                       </P>
                       <P>
-                        <Em>
+                        <Highlight>
                           何に変わるかについてですが、
                           <HighlightBold>
                             まだ使われていない料理にランダムに変わります
                           </HighlightBold>
                           。ここでは、
                           <EmojiWithText letter="e" /> になりました。
-                        </Em>
+                        </Highlight>
                       </P>
                     </>
                   )
@@ -1179,9 +1187,9 @@ export default () => (
             </R.Nvqu>
             <P>
               次の
-              <Em>
+              <Highlight>
                 <EmojiNumber number={1} /> に変換できる弁当箱
-              </Em>
+              </Highlight>
               と組み合わせた場合、
             </P>
             <R.Cmla>
@@ -1207,11 +1215,11 @@ export default () => (
             <P>しかし、今回から新たに以下の特別ルールが適用されます:</P>
             <Ul>
               <UlLi>
-                <Em>
+                <Highlight>
                   <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                   に同じ料理が登場したら、
-                </Em>
+                </Highlight>
               </UlLi>
               <UlLi>
                 <HighlightBold>
@@ -1242,9 +1250,9 @@ export default () => (
                     <>
                       <P>
                         ご心配なく！
-                        <Em>
+                        <Highlight>
                           この特別ルールは次のページ以降で登場する弁当箱でも使われますが、
-                        </Em>
+                        </Highlight>
                         <HighlightBold>
                           暗記する必要はありません。
                         </HighlightBold>
@@ -1252,7 +1260,7 @@ export default () => (
                       </P>
                       <P>
                         なんとなく「
-                        <Em>こういう法則があるんだな</Em>
+                        <Highlight>こういう法則があるんだな</Highlight>
                         」と思ってくだされば大丈夫です！
                       </P>
                     </>

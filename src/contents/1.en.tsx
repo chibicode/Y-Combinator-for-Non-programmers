@@ -3,7 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   HighlightBold,
-  Em,
+  Highlight,
   Bold,
   Ul,
   UlLi,
@@ -59,8 +59,8 @@ export default () => (
               <HighlightBold>“Mathbox”</HighlightBold> has been passed down from
               one generation to next. As its name suggests, a{' '}
               <Bold>mathbox</Bold> is a magical tool that can solve{' '}
-              <Em>math questions</Em>. You can think of it as a{' '}
-              <Em>simple calculator</Em>.
+              <Highlight>math questions</Highlight>. You can think of it as a{' '}
+              <Highlight>simple calculator</Highlight>.
             </P>
             <EmojiSeparator
               nodes={[
@@ -188,23 +188,23 @@ export default () => (
             <R.Rviy />
             <Ul>
               <UlLi>
-                <Em>
+                <Highlight>
                   There’s some number <CustomEmoji type="blankNumber" /> on the
                   top, and…
-                </Em>
+                </Highlight>
               </UlLi>
               <UlLi>
-                <Em>
+                <Highlight>
                   There’s <CustomEmoji type="plusOne" /> on the bottom. That
                   means…
-                </Em>
+                </Highlight>
               </UlLi>
               <UlLi>
-                <Em>
+                <Highlight>
                   If you <H args={{ name: 'play', lowerCase: true }} /> it, the
                   result will be <CustomEmoji type="blankNumber" />{' '}
                   <Emoji>➕</Emoji> <EmojiNumber number={1} />.
-                </Em>
+                </Highlight>
               </UlLi>
             </Ul>
             <EmojiSeparator
@@ -217,9 +217,9 @@ export default () => (
             <P>
               <Bold>This is the first feature of mathbox:</Bold>{' '}
               <H args={{ name: 'plusOneFeature' }} />.{' '}
-              <Em>
+              <Highlight>
                 It lets you add <EmojiNumber number={1} /> to some number
-              </Em>
+              </Highlight>
               .
             </P>
             <EmojiSeparator
@@ -267,12 +267,12 @@ export default () => (
             <Hr />
             <P>
               <Bold>Summary:</Bold>{' '}
-              <Em>
+              <Highlight>
                 If you combine <CustomEmoji type="blankNumber" /> with{' '}
                 <CustomEmoji type="minusOne" />, it will calculate{' '}
                 <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
                 <EmojiNumber number={1} />.
-              </Em>
+              </Highlight>
             </P>
             <R.Ditw>
               Calculates <CustomEmoji type="blankNumber" /> <Emoji>➖</Emoji>{' '}
@@ -281,9 +281,9 @@ export default () => (
             <P>
               <Bold>This is the second feature of mathbox:</Bold>{' '}
               <H args={{ name: 'minusOneFeature' }} />.{' '}
-              <Em>
+              <Highlight>
                 It lets you subtract <EmojiNumber number={1} /> from some number
-              </Em>
+              </Highlight>
               .
             </P>
             <EmojiSeparator
@@ -471,10 +471,10 @@ export default () => (
             <P>
               <Bold>Takeaway:</Bold> By using <CustomEmoji type="plusOne" /> and{' '}
               <CustomEmoji type="minusOne" /> many times, you can{' '}
-              <Em>
+              <Highlight>
                 calculate any addition or subtraction, no matter how large the
                 numbers are
-              </Em>{' '}
+              </Highlight>{' '}
               .
             </P>
             <EmojiSeparator
@@ -582,12 +582,12 @@ export default () => (
             <>
               <P>
                 <Bold>Note:</Bold>{' '}
-                <Em>
+                <Highlight>
                   Unfortunately, mathboxes cannot do{' '}
                   <HighlightBold>multiplications</HighlightBold>{' '}
                   <Emoji>✖️</Emoji> or <HighlightBold>divisions</HighlightBold>{' '}
                   <Emoji>➗</Emoji>.
-                </Em>
+                </Highlight>
               </P>
               <EmojiSeparator
                 emojis={['✖️', '😭', '➗']}
