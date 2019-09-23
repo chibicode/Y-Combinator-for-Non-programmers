@@ -110,8 +110,7 @@ export default function buildExpressionFromParams(
   if (isVariableExpressionParams(expressionParams)) {
     return buildVariableExpression(expressionParams, true, 'default')
   } else if (isCallExpressionParams(expressionParams)) {
-    let nestedCallExpressionParams: CallExpressionParams
-    nestedCallExpressionParams =
+    const nestedCallExpressionParams: CallExpressionParams =
       expressionParams.length > 2
         ? nestCallExpressions(expressionParams)
         : expressionParams
