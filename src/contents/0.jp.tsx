@@ -8,7 +8,7 @@ import {
   Img,
   ExternalLink,
   P,
-  Strong,
+  HighlightBold,
   Bold,
   Ol,
   OlLi,
@@ -36,10 +36,10 @@ export default () => (
         content: (
           <>
             <P>
-              こんにちは、<Strong>上杉周作</Strong>
+              こんにちは、<HighlightBold>上杉周作</HighlightBold>
               と申します。米国在住のプログラマ兼ブロガーです。2019年に日経BP社から発売された『
               <ExternalLink href="https://amzn.to/2QlZIqm">
-                <Strong>ファクトフルネス</Strong>
+                <HighlightBold>ファクトフルネス</HighlightBold>
               </ExternalLink>
               』の共訳者でもあります。
               <ExternalLink href="https://jp.chibicode.com/">
@@ -58,11 +58,11 @@ export default () => (
               </ExternalLink>
             </P>
             <P>
-              本稿「<Strong>{lessonTitle}</Strong>
+              本稿「<HighlightBold>{lessonTitle}</HighlightBold>
               」は、
-              <Strong>
+              <HighlightBold>
                 プログラミング未経験者向けの、邪道なコンピュータサイエンスの入門書
-              </Strong>
+              </HighlightBold>
               です。どういう意味かは、すぐに説明しますね！
             </P>
             <EmojiSeparator
@@ -71,12 +71,13 @@ export default () => (
                 <>
                   プログラミング未経験者向けの、
                   <br />
-                  <Strong>邪道</Strong>なコンピュータサイエンスの入門書
+                  <HighlightBold>邪道</HighlightBold>
+                  なコンピュータサイエンスの入門書
                 </>
               }
             />
             <P>
-              ちなみに、本稿は最後まで<Strong>無料</Strong>
+              ちなみに、本稿は最後まで<HighlightBold>無料</HighlightBold>
               で公開しており、スマホからもパソコンからも閲覧できます。
             </P>
             <EmojiSeparator
@@ -118,7 +119,7 @@ export default () => (
                   }}
                 />
               </Bold>
-              それぞれ<Strong>5ページずつ、</Strong>
+              それぞれ<HighlightBold>5ページずつ、</HighlightBold>
               それにこのページと「
               <Bold>
                 <H
@@ -127,14 +128,14 @@ export default () => (
                 />
               </Bold>
               」を加えた
-              <Strong>全{numTotalPages}ページ</Strong>
+              <HighlightBold>全{numTotalPages}ページ</HighlightBold>
               で構成されています。<Em>記事というよりは、電子書籍に近い</Em>
               かもしれません。
             </P>
             <P>
               大半の方は、
               <Em>
-                読了までに<Strong>約2〜3時間ほど</Strong>かかる
+                読了までに<HighlightBold>約2〜3時間ほど</HighlightBold>かかる
               </Em>
               と思います。長いので、少しずつ読み進めてくださると嬉しいです。
             </P>
@@ -152,15 +153,15 @@ export default () => (
         content: (
           <>
             <P>
-              「<Strong>前置きはいいから早く読みたい！</Strong>
+              「<HighlightBold>前置きはいいから早く読みたい！</HighlightBold>
               」という方は、下のボタンを押して先に進んでください！
             </P>
             <NextLessonButton />
             <P>
               反対に「
-              <Strong>
+              <HighlightBold>
                 本稿についての説明を聞いてから読むかどうか決めたい！
-              </Strong>
+              </HighlightBold>
               」という方は、そのまま下に読み進めてみてください。
             </P>
           </>
@@ -174,8 +175,10 @@ export default () => (
               本稿のタイトルは「
               <Em>{lessonTitle}</Em>
               」ですが、「
-              <Strong>そもそもコンピュータサイエンスって何？</Strong>」
-              と思われる方は多いでしょう。そんな方向けに、
+              <HighlightBold>
+                そもそもコンピュータサイエンスって何？
+              </HighlightBold>
+              」 と思われる方は多いでしょう。そんな方向けに、
               <Em>非常に単純化したコンピュータサイエンスの定義</Em>
               を書いてみたいと思います。
             </P>
@@ -218,10 +221,10 @@ export default () => (
             </P>
             <P>
               そして「
-              <Strong>コンピュータサイエンス</Strong>」とは、
+              <HighlightBold>コンピュータサイエンス</HighlightBold>」とは、
               <Em>
                 こういったソフトウェアを開発したり、またはソフトウェアを用いて情報を処理する際に、
-                <Strong>根幹となる学問</Strong>のことを指す
+                <HighlightBold>根幹となる学問</HighlightBold>のことを指す
               </Em>
               のです。
             </P>
@@ -233,7 +236,8 @@ export default () => (
                   <br />
                   ソフトウェアを用いた情報処理の
                   <br />
-                  <Strong>根幹となる学問</Strong>がコンピュータサイエンス
+                  <HighlightBold>根幹となる学問</HighlightBold>
+                  がコンピュータサイエンス
                 </>
               }
             />
@@ -246,7 +250,7 @@ export default () => (
           <>
             <P>
               コンピュータサイエンスという言葉をはじめて聞く方に、コンピュータサイエンスについて説明しようとすると、「
-              <Strong>プログラミングと何が違うの？</Strong>
+              <HighlightBold>プログラミングと何が違うの？</HighlightBold>
               」というご質問をよくいただきます。
             </P>
             <EmojiSeparator
@@ -263,7 +267,7 @@ export default () => (
               非常に単純化して言うと、「
               <Em>
                 コンピュータサイエンスは、プログラミングを支える
-                <Strong>『学問』</Strong>
+                <HighlightBold>『学問』</HighlightBold>
               </Em>
               」です。この『学問』の部分が重要なのですが、そう言ってもピンと来ないかもしれないので、例えを用いて説明します。かなり乱暴な例えなのですが、わかりやすさを優先しているのでご了承ください。
             </P>
@@ -276,9 +280,9 @@ export default () => (
           <>
             <P>
               まず、
-              <Strong>
+              <HighlightBold>
                 コンピュータサイエンスは「医学」に、プログラミングは「治療」に例えることができます。
-              </Strong>
+              </HighlightBold>
               お医者さんは、患者を治療することができますが、その治療法は医学に基づいていますよね。「こうすれば治る可能性が高い」と医学的に根拠があるからこそ、それに基づいた治療法を選ぶわけです。
             </P>
             <EmojiSeparator
@@ -356,7 +360,9 @@ export default () => (
           <>
             <P>
               先ほどの例えを使えば、「
-              <Strong>コンピュータサイエンスを学ぶメリットはあるの？</Strong>
+              <HighlightBold>
+                コンピュータサイエンスを学ぶメリットはあるの？
+              </HighlightBold>
               」という質問にも答えることができます。
             </P>
             <EmojiSeparator
@@ -416,9 +422,9 @@ export default () => (
             />
             <P>
               まとめると、
-              <Strong>
+              <HighlightBold>
                 コンピュータサイエンスを学ぶメリットは、簡単な医学の知識を学ぶメリットと似ている
-              </Strong>
+              </HighlightBold>
               と言えるかもしれません。
             </P>
           </>
@@ -468,11 +474,14 @@ export default () => (
             <P>
               誰もがコンピュータサイエンスを学ぶべきというわけで、このたび
               <Em>コンピュータサイエンスの入門書</Em>
-              を書きました。それが、本稿「<Strong>{lessonTitle}</Strong>」です。
+              を書きました。それが、本稿「
+              <HighlightBold>{lessonTitle}</HighlightBold>」です。
             </P>
             <P>
               ただ、本稿はよくある入門書とは違い、
-              <Strong>邪道なコンピュータサイエンスの入門書</Strong>
+              <HighlightBold>
+                邪道なコンピュータサイエンスの入門書
+              </HighlightBold>
               です。
             </P>
             <EmojiSeparator
@@ -496,16 +505,18 @@ export default () => (
             />
             <P>
               ただ、もちろんコンピュータサイエンスの入門書なんて掃いて捨てるほどあるので、何らかの差別化をしないと書く意味がありません。そこで思いついたのが、「
-              <Strong>正統派の入門書ではなく、『邪道』な入門書を書く</Strong>
+              <HighlightBold>
+                正統派の入門書ではなく、『邪道』な入門書を書く
+              </HighlightBold>
               」ということです。
             </P>
             <P>本稿が「邪道」である理由は以下の2点です。</P>
             <Ol>
               <OlLi>
-                <Strong>プログラミングの必要なし</Strong>
+                <HighlightBold>プログラミングの必要なし</HighlightBold>
               </OlLi>
               <OlLi>
-                <Strong>高度な内容</Strong>
+                <HighlightBold>高度な内容</HighlightBold>
               </OlLi>
             </Ol>
             <P>それぞれどういうことか説明しますね！</P>
@@ -530,7 +541,7 @@ export default () => (
           <>
             <P>
               本稿がコンピュータサイエンスの「邪道」な入門書である理由のひとつめは、
-              <Strong>プログラミングを行わない</Strong>からです。
+              <HighlightBold>プログラミングを行わない</HighlightBold>からです。
             </P>
             <EmojiSeparator
               emojis={['😉', '💻', '❌']}
@@ -538,9 +549,9 @@ export default () => (
             />
             <P>
               正統派のコンピュータサイエンスの入門書は、「
-              <Strong>
+              <HighlightBold>
                 プログラミングを行いながら、コンピュータサイエンスを学ぶ
-              </Strong>
+              </HighlightBold>
               」という教え方をします。
             </P>
             <P>
@@ -567,9 +578,9 @@ export default () => (
               個人的には、
               <Em>
                 プログラマになる気がない、またはコンピュータサイエンスを専門として目指さないのであれば、
-                <Strong>
+                <HighlightBold>
                   プログラミング抜きにコンピュータサイエンスだけを学ぶほうがいい
-                </Strong>
+                </HighlightBold>
               </Em>
               と考えています。
             </P>
@@ -582,9 +593,9 @@ export default () => (
           <>
             <P>
               そのためにはどうすればいいかというと、
-              <Strong>
+              <HighlightBold>
                 プログラミングの代わりに、プログラミングに似たパズルを使って学べばいい
-              </Strong>
+              </HighlightBold>
               のです。
             </P>
             <EmojiSeparator
@@ -593,7 +604,8 @@ export default () => (
                 <>
                   プログラミングの代わりに、
                   <br />
-                  <Strong>プログラミングに似たパズル</Strong>で学ぶ
+                  <HighlightBold>プログラミングに似たパズル</HighlightBold>
+                  で学ぶ
                 </>
               }
             />
@@ -611,9 +623,9 @@ export default () => (
             </R.Mcug>
             <P>
               上記のように、
-              <Strong>
+              <HighlightBold>
                 本稿で紹介するパズルはすべて、スマホからでもパソコンからでも行えます。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               emojis={['📱', '😉', '💻']}
@@ -681,7 +693,8 @@ export default () => (
           <>
             <P>
               本稿がコンピュータサイエンスの「邪道」な入門書である理由のふたつめは、
-              <Strong>高度な内容を取り扱っている</Strong>からです。
+              <HighlightBold>高度な内容を取り扱っている</HighlightBold>
+              からです。
             </P>
             <EmojiSeparator
               emojis={['🧠', '🧐', '🧠']}
@@ -689,18 +702,20 @@ export default () => (
             />
             <P>
               正統派のコンピュータサイエンスの入門書は、
-              <Strong>初歩的な内容</Strong>
+              <HighlightBold>初歩的な内容</HighlightBold>
               を教えます。それはそれで良いと思うのですが、本稿では逆に、みなさんに
               <Em>高度な内容</Em>
               を学んでもらいます。
             </P>
             <P>
-              本稿は<Strong>2〜3時間程度</Strong>
+              本稿は<HighlightBold>2〜3時間程度</HighlightBold>
               で読み切れる長さを目標にしているのですが、そのくらいの文量だと、コンピュータサイエンスのすべてを語ることは到底できません。
               だから、
               <Em>
                 わたしはその限られた文量の中で、「
-                <Strong>自分にもコンピュータサイエンスを学べるかも</Strong>
+                <HighlightBold>
+                  自分にもコンピュータサイエンスを学べるかも
+                </HighlightBold>
                 」と思うきっかけを読者に提供したい
               </Em>
               と考えています。
@@ -717,16 +732,16 @@ export default () => (
             />
             <P>
               そのためには
-              <Strong>
+              <HighlightBold>
                 初歩的な内容ではなく、高度な内容を教えるほうが良い
-              </Strong>
+              </HighlightBold>
               と思っています。
             </P>
             <P>
               なぜなら、
-              <Strong>
+              <HighlightBold>
                 もし高度な内容を理解することができれば、それより易しい他の分野も理解できる
-              </Strong>
+              </HighlightBold>
               ということを自覚してもらえるからです。「
               <Em>
                 わたしでも高度な内容を理解できた。だったら、他の内容も学べるはずだ！
@@ -753,7 +768,7 @@ export default () => (
             />
             <P>
               また、このページを開き、ここまで読んでくださったあなたは、おそらく
-              <Strong>知的好奇心がとても旺盛</Strong>
+              <HighlightBold>知的好奇心がとても旺盛</HighlightBold>
               な方なのでしょう。そういう方々は、
               <Em>
                 あまりにも内容が簡単すぎると、退屈で物足りないと感じてしまう
@@ -770,9 +785,9 @@ export default () => (
             </P>
             <P>
               また、高度な内容とはいえ、
-              <Strong>
+              <HighlightBold>
                 数学やプログラミングなどの事前知識は一切必要ありません
-              </Strong>
+              </HighlightBold>
               ので、ご安心ください。
             </P>
             <EmojiSeparator
@@ -794,7 +809,7 @@ export default () => (
           <>
             <P>
               では、本稿で取り扱う高度な内容とは何かというと、タイトルにもある「
-              <Strong>Yコンビネータ</Strong>」です。
+              <HighlightBold>Yコンビネータ</HighlightBold>」です。
               <Bold>Yコンビネータ</Bold>
               とは、タイトルにもある通り
               <Em>魔法のような力を持つ、とあるコンピュータサイエンスの概念</Em>
@@ -807,21 +822,24 @@ export default () => (
                   魔法のような力を持つ
                   <br />
                   とあるコンピュータサイエンスの概念、
-                  <br />「<Strong>Yコンビネータ</Strong>」について学ぶ
+                  <br />「<HighlightBold>Yコンビネータ</HighlightBold>
+                  」について学ぶ
                 </>
               }
             />
             <P>
-              <Strong>Yコンビネータは、初歩的な題材では全くありません。</Strong>
+              <HighlightBold>
+                Yコンビネータは、初歩的な題材では全くありません。
+              </HighlightBold>
               わたしの大学だと、Yコンビネータは
               <Em>コンピュータサイエンス専攻の2〜3年生</Em>
               が学ぶ高度な題材でした。しかも、マニアックな題材で実用的ではなく、知っていても業務に役立つことはありません。
             </P>
             <P>
               なぜそんなマニアックな題材を選んだかというと、
-              <Strong>
+              <HighlightBold>
                 Yコンビネータには、コンピュータサイエンスの面白さや魅力が凝縮されている
-              </Strong>
+              </HighlightBold>
               からです。これについては、最後まで読んでいただくと分かると思うので、ぜひ楽しみにしていてください。
             </P>
           </>
@@ -845,9 +863,9 @@ export default () => (
                       。
                     </P>
                     <P>
-                      <Strong>
+                      <HighlightBold>
                         では、なぜYコンビネータという名称がつけられたのでしょうか？
-                      </Strong>
+                      </HighlightBold>
                       Yコンビネータ創業者のひとり、ポール・グレアム氏は
                       <ExternalLink href="https://mixergy.com/interviews/y-combinator-paul-graham/">
                         インタビューでこう語っていました
@@ -861,11 +879,11 @@ export default () => (
                           children: (
                             <>
                               <P>
-                                <Strong>
+                                <HighlightBold>
                                   <Em>
                                     Yコンビネータとは、プログラミングのテクニックのひとつです。
                                   </Em>
-                                </Strong>{' '}
+                                </HighlightBold>{' '}
                                 (中略) 個人的に、
                                 Yコンビネータがあまりにも興味深いテクニックだと思ったので、われわれのITベンチャー養成機関もそう名付けてしまったのです。しかし結果的には、
                                 <Em>われわれが投資する起業家を選別する</Em>
@@ -918,9 +936,9 @@ export default () => (
                       <P>
                         <Bold>ちなみに:</Bold> <Em>IT業界にいる方</Em>
                         の中には、「
-                        <Strong>
+                        <HighlightBold>
                           Yコンビネータって、シリコンバレーにあるITベンチャー養成機関のこと？
-                        </Strong>
+                        </HighlightBold>
                         」と思われた方もいるかと思います。そんな方は、↓の「続きを読む」を押してみてください。「聞いたことない」という方はそのまま先に進んでください。
                       </P>
                     </>
@@ -947,7 +965,7 @@ export default () => (
             />
             <P>
               だからというのも何ですが、
-              <Strong>内容には期待しすぎないでください</Strong>
+              <HighlightBold>内容には期待しすぎないでください</HighlightBold>
               。無料なので、有料の入門書に比べてクオリティは高くはありません。
             </P>
             <EmojiSeparator
@@ -990,7 +1008,7 @@ export default () => (
             <>
               <P>
                 本稿は
-                <Strong>プログラミング未経験者向け</Strong>
+                <HighlightBold>プログラミング未経験者向け</HighlightBold>
                 です。プログラマの方にとって有益かどうかは、正直微妙かもしれません。
               </P>
               <P>

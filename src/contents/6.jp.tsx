@@ -2,7 +2,15 @@
 import { css, jsx } from '@emotion/core'
 import { colors, spaces } from 'src/lib/theme'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ol, OlLi, Bold, Hr } from 'src/components/ContentTags'
+import {
+  P,
+  Em,
+  HighlightBold,
+  Ol,
+  OlLi,
+  Bold,
+  Hr
+} from 'src/components/ContentTags'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import TwoColGrid from 'src/components/TwoColGrid'
@@ -45,7 +53,7 @@ export default () => (
                 description={<>内容を忘れてしまいましたか？</>}
               ></EmojiSeparator>
               <P>
-                そんな方のために、<Strong>復習用のまとめ</Strong>
+                そんな方のために、<HighlightBold>復習用のまとめ</HighlightBold>
                 を用意しました。
                 <Em>初級編の内容をほとんど忘れてしまった</Em>
                 という方は、↓の「初級編の内容を復習する」を押してください。
@@ -64,7 +72,8 @@ export default () => (
           <>
             <Hr />
             <P>
-              まず、ラムダ村の村人たちは、悪魔に「<Strong>計算箱</Strong>
+              まず、ラムダ村の村人たちは、悪魔に「
+              <HighlightBold>計算箱</HighlightBold>
               」を奪われてしまいました。計算箱には「
               <H args={{ name: 'plusOneFeature' }} />
               」と「
@@ -124,7 +133,9 @@ export default () => (
             <Hr />
             <P>
               以上が初級編で話したことでした。
-              <Strong>これらの法則を暗記する必要はありません。</Strong>
+              <HighlightBold>
+                これらの法則を暗記する必要はありません。
+              </HighlightBold>
               なんとなく、「こんな法則があるんだな」と思っていただければ十分です。
             </P>
             <EmojiSeparator
@@ -185,7 +196,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        問題を出す前に、わたしの<Strong>助手</Strong>
+                        問題を出す前に、わたしの
+                        <HighlightBold>助手</HighlightBold>
                         をここに呼ばせてもらおう。
                       </P>
                     </>
@@ -205,7 +217,7 @@ export default () => (
                     <>
                       <P>いま呼ぶから、ちょっと待つんだな。</P>
                       <P>
-                        …いでよ、「<Strong>ミニオン</Strong>」！
+                        …いでよ、「<HighlightBold>ミニオン</HighlightBold>」！
                       </P>
                     </>
                   )
@@ -214,7 +226,11 @@ export default () => (
             />
             <EmojiSeparator
               emojis={['✨', '🐶', '✨']}
-              description={<Strong>悪魔の助手・ミニオン、ここに参上！</Strong>}
+              description={
+                <HighlightBold>
+                  悪魔の助手・ミニオン、ここに参上！
+                </HighlightBold>
+              }
             />
             <BubbleQuotes
               quotes={[
@@ -223,7 +239,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        どうも、<Strong>ミニオン</Strong>
+                        どうも、<HighlightBold>ミニオン</HighlightBold>
                         です。お呼びですか、ご主人さま？
                       </P>
                     </>
@@ -235,7 +251,7 @@ export default () => (
                     <>
                       <P>
                         よく来てくれた！こいつがわたしの助手、
-                        <Strong>ミニオン</Strong>だ。
+                        <HighlightBold>ミニオン</HighlightBold>だ。
                       </P>
                     </>
                   )
@@ -254,7 +270,7 @@ export default () => (
                     <>
                       <P>
                         ミニオンはそんじょそこらの犬とは違う。
-                        <Strong>とっておきの芸</Strong>
+                        <HighlightBold>とっておきの芸</HighlightBold>
                         を持っているからな。
                       </P>
                       <P>ミニオン、こいつらにお前の芸を見せてやるんだ！</P>
@@ -319,15 +335,17 @@ export default () => (
                     <>
                       <P>
                         ぼくは、
-                        <Strong>この弁当箱を計算箱に変える</Strong>
+                        <HighlightBold>
+                          この弁当箱を計算箱に変える
+                        </HighlightBold>
                         ことができるんです！
                       </P>
                       <P>
                         下の
-                        <Strong>
+                        <HighlightBold>
                           「<H args={{ name: 'convertToMathbox' }} />
                           」ボタン
-                        </Strong>
+                        </HighlightBold>
                         を押してみてください！
                       </P>
                     </>
@@ -354,7 +372,7 @@ export default () => (
                     <>
                       <P>
                         そうなんです。ぼくは、
-                        <Strong>ある法則に基づいて</Strong>
+                        <HighlightBold>ある法則に基づいて</HighlightBold>
                         、弁当箱を計算箱に変える芸を持っているんです。
                       </P>
                       <P>
@@ -513,10 +531,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
                           だと思う！
-                        </Strong>
+                        </HighlightBold>
                         変換すると <EmojiNumber number={4} /> になるはずだ。
                       </P>
                     </>
@@ -698,9 +716,9 @@ export default () => (
                       </P>
                       <P>
                         答えを言うと、
-                        <Strong>
+                        <HighlightBold>
                           右下にある <Emoji>🅰️</Emoji> がついた料理の数
-                        </Strong>
+                        </HighlightBold>
                         が、変換後の計算箱の数字になります。
                       </P>
                     </>
@@ -721,7 +739,8 @@ export default () => (
                         先ほどの弁当箱の場合、
                         <Em>
                           右下には <Emoji>🅰️</Emoji> がついた
-                          <EmojiWithText letter="e" /> が「<Strong>2個</Strong>
+                          <EmojiWithText letter="e" /> が「
+                          <HighlightBold>2個</HighlightBold>
                           」あります。
                         </Em>
                       </P>
@@ -822,11 +841,11 @@ export default () => (
                     <>
                       <P>
                         つまり、
-                        <Strong>
+                        <HighlightBold>
                           弁当箱に入っているのがどんな料理だろうと、
                           <Emoji>🅰️</Emoji> や <Emoji>🅱️</Emoji>{' '}
                           の印をつけた際に、同じ法則に沿っていれば同じ数字に変換される
-                        </Strong>
+                        </HighlightBold>
                         というわけです。
                       </P>
                     </>
@@ -876,7 +895,7 @@ export default () => (
                         <Em>
                           右下には <Emoji>🅰️</Emoji> がついた
                           <EmojiWithText letter="i" />
-                          が「<Strong>4個</Strong>」あります。
+                          が「<HighlightBold>4個</HighlightBold>」あります。
                         </Em>
                       </P>
                       <P>
@@ -940,9 +959,9 @@ export default () => (
                       </P>
                       <P>
                         つまり、
-                        <Strong>
+                        <HighlightBold>
                           <Emoji>🅰️</Emoji> の数は「ゼロ個」
-                        </Strong>
+                        </HighlightBold>
                         というわけです。
                       </P>
                       <P>
@@ -983,8 +1002,9 @@ export default () => (
                     <>
                       <P>
                         はい。先ほど紹介した法則の「<Emoji>🅰️</Emoji> が
-                        <Strong>いくつか</Strong>」というのは、「
-                        <Emoji>🅰️</Emoji> が<Strong>ゼロ個</Strong>
+                        <HighlightBold>いくつか</HighlightBold>」というのは、「
+                        <Emoji>🅰️</Emoji> が
+                        <HighlightBold>ゼロ個</HighlightBold>
                         」である場合も含まれているわけです。
                       </P>
                       <R.Hehx>
@@ -1012,10 +1032,10 @@ export default () => (
                     <>
                       <P>
                         さらにぼくは、
-                        <Strong>
+                        <HighlightBold>
                           弁当箱を
                           <H args={{ name: 'play' }} /> してから計算箱に変換する
-                        </Strong>
+                        </HighlightBold>
                         こともできます。
                       </P>
                     </>
@@ -1187,9 +1207,9 @@ export default () => (
             <R.Qsnv />
             <ExpressionRunnerSeparator />
             <R.Jwah>
-              <Strong>
+              <HighlightBold>
                 <H args={{ name: 'runAndConvertToMathbox' }} />
-              </Strong>
+              </HighlightBold>
             </R.Jwah>
             <BubbleQuotes
               quotes={[
@@ -1200,7 +1220,7 @@ export default () => (
                       <P>
                         なるほど、「<Bold>実行</Bold>」と「
                         <Bold>計算箱に変換</Bold>」を
-                        <Strong>一括で行う</Strong>
+                        <HighlightBold>一括で行う</HighlightBold>
                         こともできる、ということだな。
                       </P>
                     </>
@@ -1292,10 +1312,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'theAnswerIs', isYes: false }} />{' '}
                           だと思う！
-                        </Strong>
+                        </HighlightBold>
                         変換すると <EmojiNumber number={2} /> ではなく、
                         <EmojiNumber number={1} /> になるはずだ。
                       </P>
@@ -1441,7 +1461,9 @@ export default () => (
                       <P>
                         それでは以前約束した通り、
                         <Em>
-                          <Strong>次のページで難しい問題を出題する</Strong>
+                          <HighlightBold>
+                            次のページで難しい問題を出題する
+                          </HighlightBold>
                           。それに答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>

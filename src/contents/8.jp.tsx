@@ -1,6 +1,14 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Strong, Em, Ul, UlLi, Bold, Hr } from 'src/components/ContentTags'
+import {
+  P,
+  HighlightBold,
+  Em,
+  Ul,
+  UlLi,
+  Bold,
+  Hr
+} from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -30,16 +38,16 @@ export default () => (
             />
             <P>ラムダ村の村人たちは、前回の問題に四苦八苦していました。</P>
             <R.Envj>
-              <Strong>
+              <HighlightBold>
                 どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
                 に料理を入れると…
-              </Strong>
+              </HighlightBold>
             </R.Envj>
             <R.Jguj>
-              <Strong>
+              <HighlightBold>
                 <H args={{ name: 'plusOneEffect' }} />
                 がある弁当箱になる？
-              </Strong>
+              </HighlightBold>
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -64,7 +72,8 @@ export default () => (
               ]}
             />
             <P>
-              その時です。ラムダ村に暮らす少女の<Strong>サヤちゃん</Strong>{' '}
+              その時です。ラムダ村に暮らす少女の
+              <HighlightBold>サヤちゃん</HighlightBold>{' '}
               <Emoji size="mdlg">👧🏻</Emoji>{' '}
               が、問題に苦戦している村人たちに話しかけてきました。
             </P>
@@ -72,7 +81,8 @@ export default () => (
               emojis={['✨', '👧🏻', '✨']}
               description={
                 <>
-                  ラムダ村に暮らす少女の<Strong>サヤちゃん</Strong>
+                  ラムダ村に暮らす少女の
+                  <HighlightBold>サヤちゃん</HighlightBold>
                 </>
               }
             />
@@ -138,7 +148,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        「<Strong>1を足す効果</Strong>{' '}
+                        「<HighlightBold>1を足す効果</HighlightBold>{' '}
                         <CustomEmoji type="plusOneOrange" />
                         」がある弁当箱になるか、という問題なんだ。
                       </P>
@@ -169,7 +179,7 @@ export default () => (
               <Emoji size="mdlg">➕</Emoji>{' '}
               <EmojiNumber number={1} size="mdlg" /> になる？
               <br />
-              (すなわち「<Strong>1を足す効果</Strong>{' '}
+              (すなわち「<HighlightBold>1を足す効果</HighlightBold>{' '}
               <CustomEmoji type="plusOneOrange" />
               」がある？)
             </R.Jxvy>
@@ -272,9 +282,9 @@ export default () => (
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -338,9 +348,9 @@ export default () => (
             </P>
             <P>
               というわけで、
-              <Strong>
+              <HighlightBold>
                 次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアから
-              </Strong>
+              </HighlightBold>
               はじめます。
             </P>
             <R.Uexo>
@@ -348,10 +358,10 @@ export default () => (
             </R.Uexo>
             <P>
               次も前回と同じく、
-              <Strong>
+              <HighlightBold>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
-              </Strong>
+              </HighlightBold>
             </P>
             <R.Hdhy>
               <H args={{ name: 'startWithTwoCaption' }} />
@@ -447,7 +457,8 @@ export default () => (
                         つまり、
                         <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できたので、
-                        <Strong>成功です！</Strong> <Emoji>🎉</Emoji>
+                        <HighlightBold>成功です！</HighlightBold>{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -494,18 +505,18 @@ export default () => (
                         いや、まだ分からんぞ。
                         <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                         <EmojiNumber number={1} /> ができるからといって、
-                        <Strong>
+                        <HighlightBold>
                           他の数字に対しても
                           <H args={{ name: 'plusOneEffect' }} />
                           があるとは限らない。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         たとえば、
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> も計算できるのかどうか
-                        </Strong>
+                        </HighlightBold>
                         確かめてみないと。
                       </P>
                     </>
@@ -570,9 +581,9 @@ export default () => (
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={3} size="mdlg" /> になれば
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -638,7 +649,8 @@ export default () => (
                         つまり、
                         <EmojiNumber number={2} /> <Emoji>➕</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できたので、
-                        <Strong>またしても成功です！</Strong> <Emoji>🎉</Emoji>
+                        <HighlightBold>またしても成功です！</HighlightBold>{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -681,11 +693,11 @@ export default () => (
                     <>
                       <P>
                         ではここで正解を言いましょう。
-                        <Strong>
+                        <HighlightBold>
                           サヤちゃんが考えた弁当箱は、
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱です。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         だから、<Em>サヤちゃんの答えが正解です！</Em>
@@ -718,11 +730,11 @@ export default () => (
                     <>
                       <P>
                         さらに言うと、サヤちゃんが考えた弁当箱以外にも、
-                        <Strong>
+                        <HighlightBold>
                           以下の法則に当てはまる弁当箱であれば、 どれでも
                           <H args={{ name: 'plusOneEffect' }} />
                           があります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -847,12 +859,12 @@ export default () => (
                       </R.Cjxe>
                       <P>
                         実行したとき、
-                        <Strong>
+                        <HighlightBold>
                           結果が <EmojiNumber number={4} />{' '}
                           に変換できる弁当箱になれば、
                           <EmojiNumber number={3} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算できたので成功
-                        </Strong>
+                        </HighlightBold>
                         になります。
                       </P>
                     </>
@@ -967,7 +979,7 @@ export default () => (
               これまで学んだことを一言でまとめると、上の計算箱にあるような「
               <H args={{ name: 'plusOneFeature' }} />
               」は、
-              <Strong>弁当箱で「再現」できる</Strong>
+              <HighlightBold>弁当箱で「再現」できる</HighlightBold>
               、ということです。
             </P>
             <EmojiSeparator
@@ -984,12 +996,13 @@ export default () => (
                   <H args={{ name: 'plusOneFeature' }} />
                   」は、
                   <br />
-                  弁当箱で「<Strong>再現</Strong>」することができる
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
                 </>
               }
             />
             <P>
-              「<Strong>再現</Strong>
+              「<HighlightBold>再現</HighlightBold>
               」できる、とはどういうことでしょうか？先ほどの計算箱の例で説明しますね。
             </P>
             <R.Lizi>これを弁当箱で再現します</R.Lizi>
@@ -997,9 +1010,9 @@ export default () => (
               <Bold>ステップ1:</Bold> まず、
               <Em>
                 計算箱の <EmojiNumber number={1} /> の代わりに、
-                <Strong>
+                <HighlightBold>
                   <EmojiNumber number={1} /> に変換できる
-                </Strong>
+                </HighlightBold>
                 弁当箱
               </Em>
               を用意します。
@@ -1046,7 +1059,8 @@ export default () => (
             </P>
             <R.Lizi></R.Lizi>
             <P>
-              <Strong>こちらの弁当箱で「再現」できる</Strong>ということです。
+              <HighlightBold>こちらの弁当箱で「再現」できる</HighlightBold>
+              ということです。
             </P>
             <R.Plde>
               <EmojiNumber number={1} /> <CustomEmoji type="plusOne" />{' '}
@@ -1076,7 +1090,8 @@ export default () => (
               <Em>
                 <EmojiNumber number={2} /> に変換できる弁当箱と、
                 <H args={{ name: 'plusOneEffect' }} />
-                がある弁当箱を「<Strong>2個</Strong>」合体させればいい
+                がある弁当箱を「<HighlightBold>2個</HighlightBold>
+                」合体させればいい
               </Em>
               のです。
             </P>
@@ -1084,7 +1099,7 @@ export default () => (
               <EmojiNumber number={2} /> に変換できる弁当箱と
               <br />
               <H args={{ name: 'plusOneEffect' }} />
-              がある弁当箱を「<Strong>2個</Strong>」<br />
+              がある弁当箱を「<HighlightBold>2個</HighlightBold>」<br />
               合体すれば、
               <EmojiNumber number={2} /> <CustomEmoji type="plusOne" />{' '}
               <CustomEmoji type="plusOne" /> の計算箱を再現できる
@@ -1121,7 +1136,8 @@ export default () => (
                   <H args={{ name: 'plusOneFeature' }} />
                   」は、
                   <br />
-                  弁当箱で「<Strong>再現</Strong>」することができる
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
                 </>
               }
             />
@@ -1234,7 +1250,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>いえ、そんなことは全くありませんよ。</Strong>
+                        <HighlightBold>
+                          いえ、そんなことは全くありませんよ。
+                        </HighlightBold>
                         むしろ、こういう答えを思いつけるのはひと握りの天才だけです。
                       </P>
                     </>
@@ -1254,9 +1272,9 @@ export default () => (
                     <>
                       <P>はい。先ほどの問題は超難問でしたから。</P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           答えを思いつけなくても、答えを見て、「なるほど、そういうことだったのか」と理解できれば、コンピュータサイエンスを学ぶ素養は十分すぎるほどあります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1332,7 +1350,8 @@ export default () => (
               ]}
             />
             <P>
-              サヤちゃんが気づいた、「<Strong>おかしなこと</Strong>
+              サヤちゃんが気づいた、「
+              <HighlightBold>おかしなこと</HighlightBold>
               」とは何なのでしょうか？次のページで説明していきます！
             </P>
             <EmojiSeparator emojis={['❓', '👧🏻', '❓']} />

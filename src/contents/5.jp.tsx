@@ -3,7 +3,7 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   Em,
-  Strong,
+  HighlightBold,
   Ul,
   UlLi,
   Ol,
@@ -64,7 +64,7 @@ export const Beginner5Rules = () => (
     <P>
       <Bold>細かい法則1:</Bold> <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
       のペアが左右ふたつ以上ある場合は、
-      <Strong>一番左のペアからはじめます。</Strong>
+      <HighlightBold>一番左のペアからはじめます。</HighlightBold>
     </P>
     <R.Hykj>
       <H args={{ name: 'startWithLeftMostOneCaption' }} />
@@ -88,9 +88,9 @@ export const Beginner5Rules = () => (
       <Bold>細かい法則2:</Bold> 下段にひとつの料理しかなく、
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
       のペアからはじめられない場合、
-      <Strong>
+      <HighlightBold>
         <InlinePrioritiesLabel>2</InlinePrioritiesLabel> のペアからはじめます。
-      </Strong>
+      </HighlightBold>
     </P>
     <R.Zemy>
       <H args={{ name: 'startWithTwoCaption' }} />
@@ -132,7 +132,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>今回が初級最後のページです！</Strong>
+              <HighlightBold>今回が初級最後のページです！</HighlightBold>
               ここまで読んでくださり、ありがとうございます！
             </P>
             <EmojiSeparator
@@ -190,7 +190,10 @@ export default () => (
                         これは…
                         <Em>
                           今までの弁当箱は縦に2段しかなかったけれど、
-                          <Strong>この弁当箱には縦に3段ある</Strong>ぞ。
+                          <HighlightBold>
+                            この弁当箱には縦に3段ある
+                          </HighlightBold>
+                          ぞ。
                         </Em>
                       </P>
                     </>
@@ -202,13 +205,13 @@ export default () => (
                     <>
                       <P>
                         そして、
-                        <Strong>
+                        <HighlightBold>
                           一番下には
                           <EmojiWithText letter="a" />、
                           <EmojiWithText letter="b" />、
                           <EmojiWithText letter="a" />
                           と横に3つの料理が並んでいる。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         今までの弁当箱では、
@@ -299,10 +302,10 @@ export default () => (
               3段の
               <H args={{ name: 'bentoBoxPuzzle' }} />
               を解く際には、まず
-              <Strong>
+              <HighlightBold>
                 左上と左下に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 の印がある部分に注目します。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -440,7 +443,8 @@ export default () => (
                             bottomRightBadgeType="funcBound"
                           />{' '}
                           のどれにも該当しない、
-                          <Strong>下段の真ん中にある料理</Strong>には{' '}
+                          <HighlightBold>下段の真ん中にある料理</HighlightBold>
+                          には{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcUnbound"
@@ -482,7 +486,8 @@ export default () => (
           <>
             <P>
               <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-              の印がついた料理は、<Strong>いったん無視してください</Strong>。
+              の印がついた料理は、
+              <HighlightBold>いったん無視してください</HighlightBold>。
             </P>
             <EmojiSeparator
               nodes={[
@@ -522,11 +527,11 @@ export default () => (
                 どれも{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                 は関係ありませんよね。だから、
-                <Strong>
+                <HighlightBold>
                   次のいくつかのステップの間は{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
                   を無視していい
-                </Strong>
+                </HighlightBold>
                 のです。
               </Em>
             </P>
@@ -579,32 +584,32 @@ export default () => (
             />
             <P>
               まず、
-              <Strong>
+              <HighlightBold>
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 が一致するかチェックし、一致した料理には <Emoji>✅</Emoji>{' '}
                 を付けます。
-              </Strong>
+              </HighlightBold>
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Wwtl />
             <P>
               続いて、
-              <Strong>
+              <HighlightBold>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 の料理を、一致した{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 の部分にコピーします。
-              </Strong>
+              </HighlightBold>
             </P>
             <R.Ltpe />
             <P>
               最後に、
-              <Strong>
+              <HighlightBold>
                 <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 が消えます。
-              </Strong>
+              </HighlightBold>
             </P>
             <R.Apuz />
             <BubbleQuotes
@@ -854,10 +859,10 @@ export default () => (
                     <>
                       <P>
                         その通り。では、
-                        <Strong>
+                        <HighlightBold>
                           そろそろ <H args={{ name: 'yesNoQuiz' }} />
                           の時間だ！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -911,10 +916,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
                           だと思う！
-                        </Strong>
+                        </HighlightBold>
                         最後には
                         <EmojiWithText letter="h" />
                         が残るはずだ。
@@ -979,7 +984,7 @@ export default () => (
                     <>
                       <P>
                         まだドヤ顔をするような時間じゃないぞ。弁当箱の「
-                        <Strong>細かい法則</Strong>
+                        <HighlightBold>細かい法則</HighlightBold>
                         」に関する問題を出していないからな。
                       </P>
                     </>
@@ -992,7 +997,7 @@ export default () => (
               description={
                 <>
                   弁当箱の「
-                  <Strong>細かい法則</Strong>
+                  <HighlightBold>細かい法則</HighlightBold>
                   」？
                 </>
               }
@@ -1005,7 +1010,7 @@ export default () => (
                     <>
                       <P>
                         弁当箱の「
-                        <Strong>細かい法則</Strong>
+                        <HighlightBold>細かい法則</HighlightBold>
                         」だって？何のことだ？
                       </P>
                     </>
@@ -1037,10 +1042,10 @@ export default () => (
                     <>
                       <P>
                         今まで見たことない形のパズルだ。
-                        <Strong>
+                        <HighlightBold>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアが左右ふたつある
-                        </Strong>
+                        </HighlightBold>
                         なあ…
                       </P>
                     </>
@@ -1073,11 +1078,11 @@ export default () => (
                     <>
                       <P>
                         これも見たことない形だなあ…
-                        <Strong>
+                        <HighlightBold>
                           一番下に入っている料理が
                           <EmojiWithText letter="b" />
                           ひとつだけだ。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1099,7 +1104,7 @@ export default () => (
                     <>
                       <P>
                         上で紹介したようなパズルを解くには、これから紹介する弁当箱の「
-                        <Strong>細かい法則</Strong>
+                        <HighlightBold>細かい法則</HighlightBold>
                         」を知っておかないといけない。
                       </P>
                     </>
@@ -1112,7 +1117,7 @@ export default () => (
               description={
                 <>
                   弁当箱の「
-                  <Strong>細かい法則</Strong>
+                  <HighlightBold>細かい法則</HighlightBold>
                   」を
                   <br />
                   知らないと解けない
@@ -1152,9 +1157,9 @@ export default () => (
                       <P>
                         まあそう焦るな。
                         <Em>
-                          <Strong>
+                          <HighlightBold>
                             次からはじまる中級編で、とても難しい問題を出題する。
-                          </Strong>
+                          </HighlightBold>
                           このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>
@@ -1204,13 +1209,13 @@ export default () => (
               <Em>
                 <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                 のペアが左右ふたつ以上ある場合は、
-                <Strong>一番左側にある</Strong>{' '}
+                <HighlightBold>一番左側にある</HighlightBold>{' '}
                 <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
               </Em>
             </P>
             <R.Aezk>
-              <Strong>一番左側にある</Strong>{' '}
+              <HighlightBold>一番左側にある</HighlightBold>{' '}
               <InlinePrioritiesLabel revert>1</InlinePrioritiesLabel>{' '}
               のペアからはじめる
             </R.Aezk>
@@ -1269,14 +1274,14 @@ export default () => (
                         がついたのに注目だ。
                       </P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           弁当箱の右端に接している料理にはすべて{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
                           />{' '}
                           の印がつく
-                        </Strong>
+                        </HighlightBold>
                         んだ。
                       </P>
                     </>
@@ -1298,7 +1303,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="callArg"
@@ -1317,7 +1322,7 @@ export default () => (
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           の印がつく
-                        </Strong>
+                        </HighlightBold>
                         んだな。
                       </P>
                     </>
@@ -1423,10 +1428,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'theAnswerIs', isYes: false }} />{' '}
                           だと思う！
-                        </Strong>
+                        </HighlightBold>
                         最後には
                         <EmojiWithText letter="a" /> ではなく、
                         <EmojiWithText letter="d" /> が残るはずだ。
@@ -1547,10 +1552,10 @@ export default () => (
                     <>
                       <P>
                         この弁当箱は、
-                        <Strong>
+                        <HighlightBold>
                           一番下の段の料理が
                           <EmojiWithText letter="b" /> だけ
-                        </Strong>
+                        </HighlightBold>
                         なのに注目だ。
                       </P>
                     </>
@@ -1569,7 +1574,7 @@ export default () => (
                         この
                         <EmojiWithText letter="b" />
                         には、
-                        <Strong>
+                        <HighlightBold>
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcArg"
@@ -1583,7 +1588,7 @@ export default () => (
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           のうち、どの印をつければいいのだろう？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1599,7 +1604,8 @@ export default () => (
               のうちどの印をつければいい？
             </R.Jmmp>
             <P>
-              答えは、「<Strong>どの印もつけることができない</Strong>
+              答えは、「
+              <HighlightBold>どの印もつけることができない</HighlightBold>
               」です。
               <Em>
                 一番下の段にひとつしか料理がない場合、どの印をつけることもできないのです
@@ -1663,10 +1669,10 @@ export default () => (
               <Bold>答え:</Bold> 上記のように{' '}
               <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
               のペアからはじめられない場合は、
-              <Strong>
+              <HighlightBold>
                 <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                 のペアからはじめます。
-              </Strong>
+              </HighlightBold>
             </P>
             <R.Dqey>
               <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
@@ -1817,10 +1823,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'theAnswerIs', isYes: true }} />{' '}
                           だと思う！
-                        </Strong>
+                        </HighlightBold>
                         最後には
                         <EmojiWithText letter="d" />と
                         <EmojiWithText letter="b" />
@@ -1886,9 +1892,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           安心しろ、これらの法則を暗記する必要はない。
-                        </Strong>
+                        </HighlightBold>
                         なんとなく「
                         <Em>こういう法則があるんだな</Em>
                         」と頭に入れておけば大丈夫だ。
@@ -1933,9 +1939,9 @@ export default () => (
                       <P>
                         さきほど約束した通り、
                         <Em>
-                          <Strong>
+                          <HighlightBold>
                             次からはじまる中級編で、とても難しい問題を出題する。
-                          </Strong>
+                          </HighlightBold>
                           このページで紹介した法則を応用すれば解ける問題だ。それに答えることができたら、計算箱を返してやろう！
                         </Em>
                       </P>

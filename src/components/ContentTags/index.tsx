@@ -1,7 +1,12 @@
 export { Ul, Ol, OlLi, UlLi } from 'src/components/ContentTags/List'
 export { P, PFullWidth } from 'src/components/ContentTags/P'
 export { Hr } from 'src/components/ContentTags/Hr'
-export { Strong, Em, Bold, Italic } from 'src/components/ContentTags/Inline'
+export {
+  HighlightBold,
+  Em,
+  Bold,
+  Italic
+} from 'src/components/ContentTags/Inline'
 export { ExternalLink, InternalLink } from 'src/components/ContentTags/Links'
 export { H3 } from 'src/components/ContentTags/Headings'
 export { Img } from 'src/components/ContentTags/Img'

@@ -1,6 +1,13 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Bold, Strong, Em, Ul, UlLi } from 'src/components/ContentTags'
+import {
+  P,
+  Bold,
+  HighlightBold,
+  Em,
+  Ul,
+  UlLi
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import Emoji from 'src/components/Emoji'
@@ -106,9 +113,9 @@ export default () => (
                     <>
                       <P>
                         それについてなんだが…
-                        <Strong>
+                        <HighlightBold>
                           ちょっと伝えたいことがある。聞いてもらえるか？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -180,9 +187,9 @@ export default () => (
                     <>
                       <P>
                         分かった。じゃあ、こちらの{' '}
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={2} /> に変換できる弁当箱
-                        </Strong>
+                        </HighlightBold>
                         と…
                       </P>
                       <R.Wopl>
@@ -196,9 +203,9 @@ export default () => (
                       </R.Wopl>
                       <P>
                         こちらの{' '}
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={3} /> に変換できる弁当箱
-                        </Strong>
+                        </HighlightBold>
                         を…
                       </P>
                       <R.Dmrz>
@@ -264,9 +271,9 @@ export default () => (
               </UlLi>
               <UlLi>
                 ちょっと時間がかかるので、待てない方は下の「
-                <Strong>
+                <HighlightBold>
                   <H args={{ name: 'skipToTheEnd' }} /> →
-                </Strong>
+                </HighlightBold>
                 」を押してください！
               </UlLi>
             </Ul>
@@ -313,11 +320,11 @@ export default () => (
                     <>
                       <P>
                         では、
-                        <Strong>
+                        <HighlightBold>
                           もともと <CustomEmoji type="blankNumberPurple" /> と{' '}
                           <CustomEmoji type="blankNumberPink" />{' '}
                           に入れた数字は何だった
-                        </Strong>
+                        </HighlightBold>
                         かな？
                       </P>
                     </>
@@ -354,7 +361,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ということはもしかして…<Strong>足し算を計算した</Strong>
+                        ということはもしかして…
+                        <HighlightBold>足し算を計算した</HighlightBold>
                         のか？
                       </P>
                     </>
@@ -378,11 +386,11 @@ export default () => (
                           すると…
                         </UlLi>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             結果は <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>➕</Emoji>{' '}
                             <CustomEmoji type="blankNumberPink" /> になるんだ。
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                     </>
@@ -420,7 +428,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、<Strong>足し算ができる弁当箱</Strong>
+                        つまり、
+                        <HighlightBold>足し算ができる弁当箱</HighlightBold>
                         というわけだな。
                       </P>
                     </>
@@ -488,13 +497,13 @@ export default () => (
                       <P>先ほどの弁当箱と似ているけど、微妙に違うなあ…</P>
                       <P>
                         前回同様、
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={2} /> と{' '}
                           <EmojiNumber number={3} /> に変換できる弁当箱を{' '}
                           <CustomEmoji type="blankNumberPurple" /> と{' '}
                           <CustomEmoji type="blankNumberPink" /> に入れて、
                           <H args={{ name: 'fastForward' }} /> してみよう。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -505,9 +514,9 @@ export default () => (
                     <>
                       <P>
                         ちなみに、今回はかなり時間がかかるので、待てない場合は「
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'skipToTheEnd' }} /> →
-                        </Strong>
+                        </HighlightBold>
                         」を押してもいいぞ。
                       </P>
                     </>
@@ -589,7 +598,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これはもしかして…<Strong>掛け算を計算できる</Strong>
+                        これはもしかして…
+                        <HighlightBold>掛け算を計算できる</HighlightBold>
                         のか？
                       </P>
                       <EmojiSeparator
@@ -617,11 +627,11 @@ export default () => (
                           すると…
                         </UlLi>
                         <UlLi>
-                          <Strong>
+                          <HighlightBold>
                             結果は <CustomEmoji type="blankNumberPurple" />{' '}
                             <Emoji>✖️</Emoji>{' '}
                             <CustomEmoji type="blankNumberPink" /> になるんだ。
-                          </Strong>
+                          </HighlightBold>
                         </UlLi>
                       </Ul>
                     </>
@@ -659,7 +669,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        つまり、<Strong>掛け算ができる弁当箱</Strong>
+                        つまり、
+                        <HighlightBold>掛け算ができる弁当箱</HighlightBold>
                         というわけだな。
                       </P>
                     </>
@@ -686,9 +697,9 @@ export default () => (
                     <>
                       <P>
                         すごい…！
-                        <Strong>
+                        <HighlightBold>
                           計算箱では掛け算ができなかったけど、弁当箱を使えば掛け算ができるのか！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -699,7 +710,9 @@ export default () => (
                     <>
                       <P>
                         そうだ。ちなみに今回は紹介する時間がないが、
-                        <Strong>ふたつの数字の引き算や割り算</Strong>
+                        <HighlightBold>
+                          ふたつの数字の引き算や割り算
+                        </HighlightBold>
                         も弁当箱で行うことができるぞ。
                       </P>
                       <P>
@@ -748,7 +761,7 @@ export default () => (
                         また、前回「
                         <H args={{ name: 'repeatFeature' }} />
                         」を再現するのに使った「
-                        <Strong>Yコンビネータ</Strong>
+                        <HighlightBold>Yコンビネータ</HighlightBold>
                         」の弁当箱と組み合わせることで、さらに複雑な計算をすることもできる。
                       </P>
                       <R.Xjzx>
@@ -756,7 +769,8 @@ export default () => (
                         <H args={{ name: 'repeatFeature' }} />
                         」を
                         <br />
-                        再現するのに使った「<Strong>Yコンビネータ</Strong>」
+                        再現するのに使った「
+                        <HighlightBold>Yコンビネータ</HighlightBold>」
                       </R.Xjzx>
                     </>
                   )
@@ -774,13 +788,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        たとえば、「<Strong>階乗</Strong>
+                        たとえば、「<HighlightBold>階乗</HighlightBold>
                         」という計算がある。これは「
-                        <Strong>
+                        <HighlightBold>
                           ある数からはじめて、1を引いていき、
                           <EmojiNumber number={1} />{' '}
                           になるまで繰り返し掛け算をする
-                        </Strong>
+                        </HighlightBold>
                         」という計算だ。
                       </P>
                       <P>
@@ -832,7 +846,7 @@ export default () => (
                         }
                       />
                       <P>
-                        <Strong>階段</Strong>
+                        <HighlightBold>階段</HighlightBold>
                         みたいに1ずつ数字が減っていくから「階」乗、と覚えておけばいい。
                       </P>
                     </>
@@ -851,9 +865,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        この「<Strong>階乗</Strong>」は、先ほどの
-                        <Strong>掛け算ができる弁当箱</Strong>と、
-                        <Strong>Yコンビネータ</Strong>
+                        この「<HighlightBold>階乗</HighlightBold>」は、先ほどの
+                        <HighlightBold>掛け算ができる弁当箱</HighlightBold>と、
+                        <HighlightBold>Yコンビネータ</HighlightBold>
                         の弁当箱を組み合わせて計算することができるんだ。
                       </P>
                     </>
@@ -867,7 +881,7 @@ export default () => (
               掛け算を計算できる弁当箱と…
             </R.Vqyl>
             <R.Xjzx>
-              「<Strong>Yコンビネータ</Strong>」の
+              「<HighlightBold>Yコンビネータ</HighlightBold>」の
               <br />
               弁当箱を組み合わせることで…
             </R.Xjzx>
@@ -912,10 +926,10 @@ export default () => (
                     <>
                       <P>
                         まず、
-                        <Strong>
+                        <HighlightBold>
                           掛け算を計算できる弁当箱を、以下のように{' '}
                           <Emoji>✖️</Emoji>印で省略してみる。
-                        </Strong>
+                        </HighlightBold>
                         こうしたほうがひと目で見て分かりやすいからな。
                       </P>
                     </>
@@ -968,12 +982,12 @@ export default () => (
                       </P>
                       <P>
                         この弁当箱を実行すると、
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={3} /> の階乗、すなわち{' '}
                           <EmojiNumber number={3} /> <Emoji>✖️</Emoji>{' '}
                           <EmojiNumber number={2} /> <Emoji>✖️</Emoji>{' '}
                           <EmojiNumber number={1} /> を計算してくれる
-                        </Strong>
+                        </HighlightBold>
                         んだ。
                       </P>
                     </>
@@ -982,9 +996,10 @@ export default () => (
               ]}
             />
             <R.Qaoa>
-              <Strong>掛け算ができる弁当箱</Strong>(<Emoji>✖️</Emoji>印)と
+              <HighlightBold>掛け算ができる弁当箱</HighlightBold>(
+              <Emoji>✖️</Emoji>印)と
               <br />
-              <Strong>Yコンビネータ</Strong>
+              <HighlightBold>Yコンビネータ</HighlightBold>
               の弁当箱を使うことで…
             </R.Qaoa>
             <ExpressionRunnerSeparator />
@@ -1080,10 +1095,10 @@ export default () => (
                     <>
                       <P>
                         そして、先ほどの弁当箱の
-                        <Strong>
+                        <HighlightBold>
                           一番上の <EmojiNumber number={3} />{' '}
                           を他の数字に変えれば、その数字の階乗を計算できるというわけだ。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         たとえば <EmojiNumber number={4} /> に変えると、
@@ -1115,17 +1130,17 @@ export default () => (
                       <P>へー、すごいなあ。完璧には理解できていないけど…</P>
                       <Ul>
                         <UlLi>
-                          「<Strong>階乗</Strong>」は、「
+                          「<HighlightBold>階乗</HighlightBold>」は、「
                           <Em>
                             <EmojiNumber number={1} /> になるまで掛け算を『
-                            <Strong>繰り返す</Strong>』
+                            <HighlightBold>繰り返す</HighlightBold>』
                           </Em>
                           」ということだから、
                         </UlLi>
                         <UlLi>
                           <Em>
                             「繰り返す」のを可能にする「
-                            <Strong>Yコンビネータ</Strong>
+                            <HighlightBold>Yコンビネータ</HighlightBold>
                             」の弁当箱が必要
                           </Em>
                           というわけかな…？
@@ -1145,7 +1160,7 @@ export default () => (
                       <Ul>
                         <UlLi>
                           <Em>
-                            <Strong>Yコンビネータ</Strong>
+                            <HighlightBold>Yコンビネータ</HighlightBold>
                             の弁当箱は、
                           </Em>
                         </UlLi>
@@ -1165,7 +1180,7 @@ export default () => (
               ]}
             />
             <R.Xjzx>
-              <Strong>Yコンビネータ</Strong>の弁当箱は…
+              <HighlightBold>Yコンビネータ</HighlightBold>の弁当箱は…
             </R.Xjzx>
             <ExpressionRunnerSeparator />
             <EmojiSeparator
@@ -1192,7 +1207,8 @@ export default () => (
               ]}
               description={
                 <>
-                  <Strong>階乗</Strong>のような複雑な計算もできる！
+                  <HighlightBold>階乗</HighlightBold>
+                  のような複雑な計算もできる！
                 </>
               }
             />
@@ -1211,9 +1227,9 @@ export default () => (
                     <>
                       <P>
                         以上をまとめると…
-                        <Strong>
+                        <HighlightBold>
                           弁当箱は、計算箱よりもっと複雑な計算ができるということだ
-                        </Strong>
+                        </HighlightBold>
                         。
                       </P>
                     </>
@@ -1237,7 +1253,9 @@ export default () => (
                     <>
                       <P>
                         じゃあ逆に質問するけど…
-                        <Strong>弁当箱にできない計算はあるのかい？</Strong>
+                        <HighlightBold>
+                          弁当箱にできない計算はあるのかい？
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1248,7 +1266,9 @@ export default () => (
                     <>
                       <P>いい質問だな。それは、次のページで説明しよう！</P>
                       <P>
-                        <Strong>次が最後のページ、エピローグだ！</Strong>
+                        <HighlightBold>
+                          次が最後のページ、エピローグだ！
+                        </HighlightBold>
                       </P>
                     </>
                   )

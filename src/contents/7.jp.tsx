@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ul, UlLi } from 'src/components/ContentTags'
+import { P, Em, HighlightBold, Ul, UlLi } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -25,7 +25,9 @@ export default () => (
         content: (
           <>
             <P>
-              <Strong>このページから難易度が急激に上がります。</Strong>
+              <HighlightBold>
+                このページから難易度が急激に上がります。
+              </HighlightBold>
               弁当箱も、以前に比べて複雑になります。
             </P>
             <EmojiSeparator
@@ -88,7 +90,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>この問題は非常に難しい</Strong>
+                        <HighlightBold>この問題は非常に難しい</HighlightBold>
                         から覚悟するんだな。ミニオン、問題を説明するんだ！
                       </P>
                     </>
@@ -105,10 +107,10 @@ export default () => (
                       <P>
                         <CustomEmoji type="questionFoodGrey" />{' '}
                         がたくさんありますが、それぞれの{' '}
-                        <Strong>
+                        <HighlightBold>
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           には何らかの料理が入ります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -128,10 +130,10 @@ export default () => (
                     <>
                       <P>何だか複雑そうな弁当箱だなあ…</P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           にはそれぞれ何の料理が入るの？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -142,11 +144,11 @@ export default () => (
                     <>
                       <P>
                         それが今回の問題です！
-                        <Strong>
+                        <HighlightBold>
                           村人のみなさんには、
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           には何の料理が入るかを当ててもらいます。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -154,11 +156,11 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <Strong>
+              <HighlightBold>
                 <CustomEmoji type="questionFoodGrey" /> に何が入るかを
                 <br />
                 当ててもらいます！<Emoji>🐶</Emoji>
-              </Strong>
+              </HighlightBold>
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -205,16 +207,16 @@ export default () => (
                     <>
                       <P>
                         先ほどの弁当箱は、
-                        <Strong>
+                        <HighlightBold>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           に、ある法則に基づいて料理を入れると…
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱になります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -224,7 +226,7 @@ export default () => (
             <R.Jguj>
               それぞれの <CustomEmoji type="questionFoodGrey" /> に、
               <br />
-              <Strong>ある法則に基づいて</Strong>料理を入れると、
+              <HighlightBold>ある法則に基づいて</HighlightBold>料理を入れると、
               <br />
               <H args={{ name: 'plusOneEffect' }} />
               がある弁当箱になる
@@ -335,7 +337,8 @@ export default () => (
                       <P>
                         では上の弁当箱を、先ほどの
                         <H args={{ name: 'plusOneEffect' }} />
-                        がある弁当箱と<Strong>合体させてみます</Strong>。
+                        がある弁当箱と
+                        <HighlightBold>合体させてみます</HighlightBold>。
                       </P>
                     </>
                   )
@@ -354,9 +357,9 @@ export default () => (
                     <>
                       <P>
                         では、この弁当箱を「
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'runAndConvertToMathbox' }} />
-                        </Strong>
+                        </HighlightBold>
                         」するとどうなるか見てみましょう。
                       </P>
                     </>
@@ -433,10 +436,10 @@ export default () => (
                     <>
                       <P>
                         つまりざっくり言うと、
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={1} /> が{' '}
                           <EmojiNumber number={2} /> になった
-                        </Strong>
+                        </HighlightBold>
                         というわけです。
                       </P>
                     </>
@@ -538,9 +541,9 @@ export default () => (
                     <>
                       <P>
                         こちらを「
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'runAndConvertToMathbox' }} />
-                        </Strong>
+                        </HighlightBold>
                         」するとどうなるか確かめてみてください！
                       </P>
                     </>
@@ -592,10 +595,10 @@ export default () => (
                     <>
                       <P>
                         ざっくり言うと、今度は{' '}
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={2} /> が{' '}
                           <EmojiNumber number={3} /> になった
-                        </Strong>
+                        </HighlightBold>
                         のです。
                       </P>
                     </>
@@ -696,11 +699,11 @@ export default () => (
                     <>
                       <P>
                         ここで思い出してほしいのですが、
-                        <Strong>
+                        <HighlightBold>
                           計算箱では、
                           <CustomEmoji type="plusOne" />{' '}
                           を使えば、「1を足す」計算を行うことができましたよね
-                        </Strong>
+                        </HighlightBold>
                         。
                       </P>
                     </>
@@ -742,10 +745,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           計算箱における <CustomEmoji type="plusOne" />{' '}
                           と同じようなもの
-                        </Strong>
+                        </HighlightBold>
                         、と言えるでしょう。
                       </P>
                     </>
@@ -754,10 +757,10 @@ export default () => (
               ]}
             />
             <R.Biit>
-              <Strong>
+              <HighlightBold>
                 <CustomEmoji type="mathBox" /> 計算箱における、
                 <CustomEmoji type="plusOne" /> と同じようなもの
-              </Strong>
+              </HighlightBold>
             </R.Biit>
           </>
         )
@@ -775,11 +778,11 @@ export default () => (
                     <>
                       <P>
                         では、ここで問題です。
-                        <Strong>
+                        <HighlightBold>
                           この弁当箱に、どのような法則に基づいて{' '}
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           に料理を入れると…
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -787,11 +790,11 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <Strong>
+              <HighlightBold>
                 どのような法則に基づいて
                 <br />
                 <CustomEmoji type="questionFoodGrey" /> に料理を入れると…
-              </Strong>
+              </HighlightBold>
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -801,10 +804,10 @@ export default () => (
                     <>
                       <P>
                         先ほどのような、
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱になるでしょう？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -812,10 +815,10 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              <Strong>
+              <HighlightBold>
                 <H args={{ name: 'plusOneEffect' }} />
                 がある弁当箱になる？
-              </Strong>
+              </HighlightBold>
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -825,12 +828,12 @@ export default () => (
                     <>
                       <P>
                         つまり、
-                        <Strong>
+                        <HighlightBold>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           に何を入れたら、
                           <H args={{ name: 'plusOneEffect' }} />
                           があるか当てろってこと？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -852,7 +855,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>はい、その通りです！</Strong>
+                        <HighlightBold>はい、その通りです！</HighlightBold>
                         <Em>
                           ある法則に基づいて{' '}
                           <CustomEmoji type="questionFoodGrey" />{' '}
@@ -895,7 +898,7 @@ export default () => (
       {
         title: (
           <>
-            試しに<Strong>適当な料理</Strong>を入れてみる
+            試しに<HighlightBold>適当な料理</HighlightBold>を入れてみる
           </>
         ),
         content: (
@@ -921,11 +924,11 @@ export default () => (
                     <>
                       <P>大丈夫、安心してください！</P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           試しに、
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           に適当な料理を入れてみると、問題を理解できると思います。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -977,9 +980,9 @@ export default () => (
                         この弁当箱に、
                         <H args={{ name: 'plusOneEffect' }} />
                         があれば
-                        <Strong>成功</Strong> <Emoji>🎉</Emoji>
-                        、なければ<Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
-                        ということかな？
+                        <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+                        、なければ<HighlightBold>失敗</HighlightBold>{' '}
+                        <Emoji>😭</Emoji> ということかな？
                       </P>
                     </>
                   )
@@ -1028,8 +1031,11 @@ export default () => (
                         結果が <EmojiNumber number={2} /> になれば
                         <H args={{ name: 'plusOneEffect' }} />
                         があるので
-                        <Strong>成功</Strong> <Emoji>🎉</Emoji>、 それ以外なら
-                        <Strong>失敗</Strong> <Emoji>😭</Emoji> というわけです。
+                        <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>、
+                        それ以外なら
+                        <HighlightBold>
+                          失敗
+                        </HighlightBold> <Emoji>😭</Emoji> というわけです。
                       </P>
                     </>
                   )
@@ -1049,9 +1055,9 @@ export default () => (
               <br />
               <H args={{ name: 'plusOneEffect' }} />
               があるので
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
           </>
         )
@@ -1107,8 +1113,11 @@ export default () => (
                         すなわち、
                         <Em>
                           結果が <EmojiNumber number={2} /> になれば
-                          <Strong>成功</Strong> <Emoji>🎉</Emoji>、それ以外なら
-                          <Strong>失敗</Strong> <Emoji>😭</Emoji>{' '}
+                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+                          、それ以外なら
+                          <HighlightBold>
+                            失敗
+                          </HighlightBold> <Emoji>😭</Emoji>{' '}
                         </Em>
                         というわけか。
                       </P>
@@ -1127,9 +1136,9 @@ export default () => (
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -1190,11 +1199,11 @@ export default () => (
                       </P>
                       <P>
                         以下のように、
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={1} /> <Emoji>➕</Emoji>{' '}
                           <EmojiNumber number={1} /> が計算できれば
-                          <Strong>成功</Strong> <Emoji>🎉</Emoji>
-                        </Strong>{' '}
+                          <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
+                        </HighlightBold>{' '}
                         なんだよな。
                       </P>
                     </>
@@ -1212,9 +1221,9 @@ export default () => (
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={2} size="mdlg" /> になれば
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -1228,12 +1237,12 @@ export default () => (
                       </P>
                       <P>
                         まず初級編で説明した通り、
-                        <Strong>
+                        <HighlightBold>
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアが左右ふたつ以上ある場合は、一番左の{' '}
                           <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1269,10 +1278,10 @@ export default () => (
                       </P>
                       <P>
                         というわけで、初級編で説明した通り、
-                        <Strong>
+                        <HighlightBold>
                           次は <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                           のペアから
-                        </Strong>
+                        </HighlightBold>
                         はじめます。
                       </P>
                     </>
@@ -1298,10 +1307,10 @@ export default () => (
                     <>
                       <P>
                         次も前回と同じく、
-                        <Strong>
+                        <HighlightBold>
                           <InlinePrioritiesLabel>2</InlinePrioritiesLabel>{' '}
                           のペアからはじめます。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1351,9 +1360,9 @@ export default () => (
                       </P>
                       <P>
                         残念ながら、
-                        <Strong>
+                        <HighlightBold>
                           この弁当箱はぼくが計算箱に変換することができません。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1462,10 +1471,10 @@ export default () => (
             <R.Xwzc>
               実行したところ、
               <br />
-              <Strong>
+              <HighlightBold>
                 <EmojiNumber number={2} size="mdlg" />{' '}
                 に変換できる弁当箱にならなかった
-              </Strong>
+              </HighlightBold>
             </R.Xwzc>
             <BubbleQuotes
               quotes={[
@@ -1480,7 +1489,8 @@ export default () => (
                           <H args={{ name: 'plusOneEffect' }} />
                           は無い
                         </Em>
-                        のです。つまり、<Strong>不正解でした！</Strong>
+                        のです。つまり、
+                        <HighlightBold>不正解でした！</HighlightBold>
                       </P>
                     </>
                   )
@@ -1524,11 +1534,11 @@ export default () => (
                         問題の意味が分かったでしょうか？では、もう一度聞きますね。
                       </P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           この弁当箱に、どのような法則に基づいて{' '}
                           <CustomEmoji type="questionFoodGrey" />{' '}
                           に料理を入れると…
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1536,10 +1546,10 @@ export default () => (
               ]}
             />
             <R.Envj>
-              <Strong>
+              <HighlightBold>
                 どのような法則に基づいて <CustomEmoji type="questionFoodGrey" />{' '}
                 に料理を入れると…
-              </Strong>
+              </HighlightBold>
             </R.Envj>
             <BubbleQuotes
               quotes={[
@@ -1548,10 +1558,10 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'plusOneEffect' }} />
                           がある弁当箱になるでしょう？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1559,10 +1569,10 @@ export default () => (
               ]}
             />
             <R.Jguj>
-              <Strong>
+              <HighlightBold>
                 <H args={{ name: 'plusOneEffect' }} />
                 がある弁当箱になる？
-              </Strong>
+              </HighlightBold>
             </R.Jguj>
             <BubbleQuotes
               quotes={[
@@ -1608,7 +1618,8 @@ export default () => (
               description={<>難しすぎて見当もつかない！</>}
             />
             <P>
-              しかし、<Strong>次のページで答えが判明します。</Strong>
+              しかし、
+              <HighlightBold>次のページで答えが判明します。</HighlightBold>
               ぜひ先に進んでみてください！
             </P>
             <NextLessonButton />

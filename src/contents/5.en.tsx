@@ -1,6 +1,14 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ol, OlLi, Bold, Hr } from 'src/components/ContentTags'
+import {
+  P,
+  Em,
+  HighlightBold,
+  Ol,
+  OlLi,
+  Bold,
+  Hr
+} from 'src/components/ContentTags'
 import H from 'src/components/H'
 import InlinePrioritiesLabel from 'src/components/InlinePrioritiesLabel'
 import BottomRightBadge from 'src/components/BottomRightBadge'
@@ -43,7 +51,7 @@ export const Beginner5Rules = () => (
     <P>
       <Bold>Additional Rule 1:</Bold> If there are multiple pairs of{' '}
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s,{' '}
-      <Strong>start with the leftmost pair</Strong>.
+      <HighlightBold>start with the leftmost pair</HighlightBold>.
     </P>
     <R.Hykj>
       <H args={{ name: 'startWithLeftMostOneCaption' }} />
@@ -69,10 +77,10 @@ export const Beginner5Rules = () => (
       <Bold>Additional Rule 2:</Bold> If you can’t start with{' '}
       <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s because there’s only
       one item on the bottom row,{' '}
-      <Strong>
+      <HighlightBold>
         start with the pair of <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
         ’s.
-      </Strong>
+      </HighlightBold>
     </P>
     <R.Zemy>
       <H args={{ name: 'startWithTwoCaption' }} />

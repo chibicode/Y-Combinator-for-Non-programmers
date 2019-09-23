@@ -1,6 +1,6 @@
 import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
-import { P, Em, Strong, Ul, UlLi, Hr } from 'src/components/ContentTags'
+import { P, Em, HighlightBold, Ul, UlLi, Hr } from 'src/components/ContentTags'
 import H from 'src/components/H'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiNumber from 'src/components/EmojiNumber'
@@ -90,7 +90,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>それらは、まだ返すわけにはいかないな。</Strong>
+                        <HighlightBold>
+                          それらは、まだ返すわけにはいかないな。
+                        </HighlightBold>
                       </P>
                       <P>
                         <Em>
@@ -126,9 +128,9 @@ export default () => (
                     <>
                       <P>
                         計算箱を返すとは言ったが…
-                        <Strong>
+                        <HighlightBold>
                           計算箱のすべての機能を返すとは言っていないからな！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -207,9 +209,9 @@ export default () => (
                           」や「
                           <H args={{ name: 'repeatFeature' }} />
                           」を返してほしかったら、
-                          <Strong>
+                          <HighlightBold>
                             それらを同じように弁当箱で再現してみることだな！
-                          </Strong>
+                          </HighlightBold>
                         </Em>
                       </P>
                     </>
@@ -282,7 +284,9 @@ export default () => (
                         <H args={{ name: 'repeatFeature' }} />
                         」がないと、
                         <Em>
-                          <Strong>引き算や、大きな数の足し算・引き算</Strong>
+                          <HighlightBold>
+                            引き算や、大きな数の足し算・引き算
+                          </HighlightBold>
                           ができないよ！
                         </Em>
                       </P>
@@ -363,12 +367,12 @@ export default () => (
                     <>
                       <P>
                         そして、
-                        <Strong>
+                        <HighlightBold>
                           それぞれの <CustomEmoji type="questionFoodGrey" />{' '}
                           に、ある法則に基づいて料理を入れると、
                           <H args={{ name: 'minusOneEffect' }} />
                           がある弁当箱になります。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -378,7 +382,7 @@ export default () => (
             <R.Skoo>
               それぞれの <CustomEmoji type="questionFoodGrey" /> に、
               <br />
-              <Strong>ある法則に基づいて</Strong>料理を入れると、
+              <HighlightBold>ある法則に基づいて</HighlightBold>料理を入れると、
               <br />
               <H args={{ name: 'minusOneEffect' }} />
               がある弁当箱になる
@@ -616,9 +620,9 @@ export default () => (
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={0} size="mdlg" /> になれば
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -680,9 +684,9 @@ export default () => (
                       </P>
                       <P>
                         また、「
-                        <Strong>
+                        <HighlightBold>
                           <H args={{ name: 'skipToTheStoppingPoint' }} /> →
-                        </Strong>
+                        </HighlightBold>
                         」を押して、飛ばしていただいても結構です。
                       </P>
                     </>
@@ -694,7 +698,7 @@ export default () => (
                     <>
                       <P>
                         それより見てみて！
-                        <Strong>
+                        <HighlightBold>
                           途中で{' '}
                           <BottomRightBadge
                             inline
@@ -706,7 +710,7 @@ export default () => (
                             bottomRightBadgeType="funcUnbound"
                           />{' '}
                           が同じ <EmojiWithText letter="f" /> になったよ！
-                        </Strong>
+                        </HighlightBold>
                       </P>
                       <P>
                         前回と同じように
@@ -824,7 +828,8 @@ export default () => (
                         つまり、
                         <EmojiNumber number={1} /> <Emoji>➖</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できたので、
-                        <Strong>成功です！</Strong> <Emoji>🎉</Emoji>
+                        <HighlightBold>成功です！</HighlightBold>{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -878,10 +883,10 @@ export default () => (
                       </P>
                       <P>
                         たとえば、
-                        <Strong>
+                        <HighlightBold>
                           <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
                           <EmojiNumber number={1} /> は計算できるのかな？
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -943,9 +948,9 @@ export default () => (
               <H args={{ name: 'runAndConvertToMathbox' }} />
               <br />
               して、結果が <EmojiNumber number={1} size="mdlg" /> になれば
-              <Strong>成功</Strong> <Emoji>🎉</Emoji>
+              <HighlightBold>成功</HighlightBold> <Emoji>🎉</Emoji>
               <br />
-              それ以外なら<Strong>失敗</Strong> <Emoji>😭</Emoji>
+              それ以外なら<HighlightBold>失敗</HighlightBold> <Emoji>😭</Emoji>
             </ExpressionRunnerCaptionOnly>
             <BubbleQuotes
               quotes={[
@@ -966,9 +971,9 @@ export default () => (
                         </UlLi>
                         <UlLi>
                           ちょっと時間がかかるので、待てない方は下の「
-                          <Strong>
+                          <HighlightBold>
                             <H args={{ name: 'skipToTheEnd' }} /> →
-                          </Strong>
+                          </HighlightBold>
                           」を押してね！
                         </UlLi>
                       </Ul>
@@ -1008,7 +1013,8 @@ export default () => (
                         つまり、
                         <EmojiNumber number={2} /> <Emoji>➖</Emoji>{' '}
                         <EmojiNumber number={1} /> が計算できたので、
-                        <Strong>またしても成功です！</Strong> <Emoji>🎉</Emoji>
+                        <HighlightBold>またしても成功です！</HighlightBold>{' '}
+                        <Emoji>🎉</Emoji>
                       </P>
                     </>
                   )
@@ -1051,11 +1057,11 @@ export default () => (
                     <>
                       <P>まさか、こうも簡単に正解されるとは思わなかったが…</P>
                       <P>
-                        <Strong>
+                        <HighlightBold>
                           サヤちゃんが考えた弁当箱は、
                           <H args={{ name: 'minusOneEffect' }} />
                           がある弁当箱だ！
-                        </Strong>{' '}
+                        </HighlightBold>{' '}
                         <Emoji>🎉</Emoji>
                       </P>
                     </>
@@ -1085,11 +1091,11 @@ export default () => (
                     <>
                       <P>
                         ちなみに、サヤちゃんが考えた弁当箱以外にも、
-                        <Strong>
+                        <HighlightBold>
                           以下の法則に当てはまる弁当箱であれば、 どれでも
                           <H args={{ name: 'minusOneEffect' }} />
                           があるぞ。
-                        </Strong>
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -1146,11 +1152,11 @@ export default () => (
           <>
             <P>
               今回学んだことを一言でまとめると、
-              <Strong>
+              <HighlightBold>
                 計算箱の「
                 <H args={{ name: 'minusOneFeature' }} />
                 」も、弁当箱で「再現」できる
-              </Strong>
+              </HighlightBold>
               、ということです。
             </P>
             <EmojiSeparator
@@ -1167,7 +1173,8 @@ export default () => (
                   <H args={{ name: 'minusOneFeature' }} />
                   」は、
                   <br />
-                  弁当箱で「<Strong>再現</Strong>」することができる
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
                 </>
               }
             />
@@ -1229,7 +1236,8 @@ export default () => (
                   <H args={{ name: 'minusOneFeature' }} />
                   」も、
                   <br />
-                  弁当箱で「<Strong>再現</Strong>」することができる
+                  弁当箱で「<HighlightBold>再現</HighlightBold>
+                  」することができる
                 </>
               }
             />

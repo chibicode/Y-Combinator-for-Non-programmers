@@ -47,7 +47,7 @@ export const Italic = (props: JSX.IntrinsicElements['span']) => (
   />
 )
 
-export const Strong = ({
+export const HighlightBold = ({
   highlightType,
   ...props
 }: {
@@ -101,7 +101,7 @@ export const Strong = ({
   }
 }
 
-Strong.defaultProps = {
+HighlightBold.defaultProps = {
   highlightType: 'default'
 }
 

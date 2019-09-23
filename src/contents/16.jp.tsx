@@ -2,7 +2,7 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  Strong,
+  HighlightBold,
   Bold,
   Em,
   ExternalLink,
@@ -57,7 +57,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>弁当箱にできない計算はあるのかな？</Strong>
+                        <HighlightBold>
+                          弁当箱にできない計算はあるのかな？
+                        </HighlightBold>
                       </P>
                     </>
                   )
@@ -66,7 +68,9 @@ export default () => (
             />
             <P>
               この質問に答えるためには、「
-              <Strong>そもそも弁当箱というアイデアはどこから来たのか</Strong>
+              <HighlightBold>
+                そもそも弁当箱というアイデアはどこから来たのか
+              </HighlightBold>
               」という質問にまず答える必要があります。
             </P>
             <EmojiSeparator
@@ -81,7 +85,9 @@ export default () => (
             />
             <P>
               そのためには、
-              <Strong>ラムダ村の世界ではなく、現実世界の歴史</Strong>
+              <HighlightBold>
+                ラムダ村の世界ではなく、現実世界の歴史
+              </HighlightBold>
               を学ばないといけません。
             </P>
             <EmojiSeparator
@@ -121,7 +127,7 @@ export default () => (
                 <Em>コンピュータ</Em>サイエンスと魔法のYコンビネータ
               </Bold>
               」ですが、はじめに、「
-              <Strong>そもそもコンピュータとは何か</Strong>
+              <HighlightBold>そもそもコンピュータとは何か</HighlightBold>
               」という質問について考えてみましょう。
             </P>
             <EmojiSeparator
@@ -133,14 +139,16 @@ export default () => (
             </P>
             <EmojiSeparator emojis={['💻', '📱', '🤖']} />
             <P>
-              しかし、コンピュータは本質的には「<Strong>計算機</Strong>
+              しかし、コンピュータは本質的には「
+              <HighlightBold>計算機</HighlightBold>
               」なのです。
             </P>
             <EmojiSeparator
               emojis={['➕', '✖️', '💻', '➖', '➗']}
               description={
                 <>
-                  コンピュータは本質的には「<Strong>計算機</Strong>」
+                  コンピュータは本質的には「
+                  <HighlightBold>計算機</HighlightBold>」
                 </>
               }
             />
@@ -161,7 +169,8 @@ export default () => (
               description={<>コンピュータは、大量の計算を行える計算機</>}
             />
             <P>
-              だから、コンピュータは「<Strong>計算機</Strong>」なのですね。
+              だから、コンピュータは「<HighlightBold>計算機</HighlightBold>
+              」なのですね。
             </P>
           </>
         )
@@ -172,7 +181,9 @@ export default () => (
           <>
             <P>
               コンピュータは計算機であるからこそ、
-              <Strong>コンピュータの歴史はすなわち、計算機の歴史</Strong>
+              <HighlightBold>
+                コンピュータの歴史はすなわち、計算機の歴史
+              </HighlightBold>
               なのです。
             </P>
             <P>
@@ -249,7 +260,8 @@ export default () => (
               description={<>計算機は20世紀にどんどん進化した</>}
             />
             <P>
-              いっぽう同時期に、<Strong>計算機について科学する学問</Strong>
+              いっぽう同時期に、
+              <HighlightBold>計算機について科学する学問</HighlightBold>
               である「
               <Bold>コンピュータサイエンス＝計算機科学</Bold>」
               も生まれ、進化していきました。
@@ -302,11 +314,11 @@ export default () => (
             <P>
               <Em>
                 チューリングとチャーチは1930年代に、「
-                <Strong>ヒルベルトの決定問題</Strong>
+                <HighlightBold>ヒルベルトの決定問題</HighlightBold>
                 」という、とある難しい数学の問題に別々に取り組んでいました。
               </Em>
               それがどんな問題かを説明するのは非常に難しいので省略しますが、ふたりが
-              <Strong>その問題をどのようにして解いたか</Strong>
+              <HighlightBold>その問題をどのようにして解いたか</HighlightBold>
               が興味深かったのです。
             </P>
             <EmojiSeparator
@@ -321,13 +333,13 @@ export default () => (
             />
             <P>
               その問題を解くために、ふたりはそれぞれ別々の「
-              <Strong>空想上の計算機</Strong>
+              <HighlightBold>空想上の計算機</HighlightBold>
               」を考案する必要がありました。「
               <Bold>空想上の計算機</Bold>
               」とはすなわち、
               <Em>
                 実際には(少なくとも1930年代の当時は)存在しないけど、もし存在したとしたら非常に複雑な計算ができる、
-                <Strong>仮想上の計算機</Strong>
+                <HighlightBold>仮想上の計算機</HighlightBold>
               </Em>
               のことです。
             </P>
@@ -335,18 +347,21 @@ export default () => (
               emojis={['❓', '💭', '💻', '❓']}
               description={
                 <>
-                  <Strong>空想上の計算機</Strong>とは、
+                  <HighlightBold>空想上の計算機</HighlightBold>とは、
                   <br />
                   実際には存在しないが、もしも存在したら
                   <br />
                   非常に複雑な計算ができる
                   <br />
-                  <Strong>仮想上の計算機</Strong>のこと。
+                  <HighlightBold>仮想上の計算機</HighlightBold>のこと。
                 </>
               }
             />
             <P>
-              「<Strong>もし仮にそんな計算機がこの世に存在したら…</Strong>
+              「
+              <HighlightBold>
+                もし仮にそんな計算機がこの世に存在したら…
+              </HighlightBold>
               」と仮定したうえで理論を展開することで、ふたりはそれぞれ別々に、先述の問題を解くことができたのです。
             </P>
             <EmojiSeparator emojis={['🧑🏻', '💭', '💻']} noBottomMargin />
@@ -356,7 +371,8 @@ export default () => (
               description={
                 <>
                   先述の問題を解くために、ふたりはそれぞれ
-                  <br />「<Strong>空想上の計算機</Strong>」を頭の中で設計した。
+                  <br />「<HighlightBold>空想上の計算機</HighlightBold>
+                  」を頭の中で設計した。
                   <br />「<Em>もしこういった計算機が存在したら…</Em>」と
                   <br />
                   仮定した上で理論を展開して問題を解いた
@@ -365,7 +381,7 @@ export default () => (
             />
             <P>
               実は、この時にふたりが別々に考案した、当時の技術では作ることができない「
-              <Strong>空想上の計算機</Strong>
+              <HighlightBold>空想上の計算機</HighlightBold>
               」が、
               <Em>
                 その後のコンピュータの開発や、プログラミング言語の開発、ひいてはコンピュータサイエンスそのものに大きな影響を与えました。
@@ -380,7 +396,7 @@ export default () => (
             </P>
             <Hr />
             <P>
-              1930年代半ばに、<Strong>チューリング</Strong>
+              1930年代半ばに、<HighlightBold>チューリング</HighlightBold>
               は先述の問題を解くために「
               <Bold>チューリングマシン</Bold>
               」という空想上の計算機を考案しました。「このチューリングマシンが仮に存在したら…」と論を展開することで、彼は先述の数学の問題を解くことができたのです。
@@ -407,11 +423,11 @@ export default () => (
               }
             />
             <P>
-              一方、ほぼ時を同じくして、<Strong>チャーチ</Strong>
+              一方、ほぼ時を同じくして、<HighlightBold>チャーチ</HighlightBold>
               は先述の問題を解くために「
-              <Strong>ラムダ計算</Strong>
+              <HighlightBold>ラムダ計算</HighlightBold>
               」という空想上の計算機を考案しました。では、この「
-              <Strong>ラムダ計算</Strong>
+              <HighlightBold>ラムダ計算</HighlightBold>
               」とはどんな仕組みだったのでしょうか。
             </P>
             <EmojiSeparator
@@ -428,13 +444,13 @@ export default () => (
             <P>
               <Em>
                 実は、みなさんはすでに「
-                <Strong>ラムダ計算</Strong>
+                <HighlightBold>ラムダ計算</HighlightBold>
                 」がどんな仕組みかを知っています。
               </Em>
               そう、
-              <Strong>
+              <HighlightBold>
                 <Emoji>🍱</Emoji> 弁当箱のことです。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               emojis={['👨🏻‍🦳', '💭', '🍱']}
@@ -442,7 +458,7 @@ export default () => (
                 <>
                   チャーチが考えた空想上の計算機
                   <br />「<Bold>ラムダ計算</Bold>
-                  」は、<Strong>弁当箱と仕組みが同じ</Strong>
+                  」は、<HighlightBold>弁当箱と仕組みが同じ</HighlightBold>
                 </>
               }
             />
@@ -454,7 +470,8 @@ export default () => (
         content: (
           <>
             <P>
-              チャーチが考えた空想上の計算機「<Strong>ラムダ計算</Strong>
+              チャーチが考えた空想上の計算機「
+              <HighlightBold>ラムダ計算</HighlightBold>
               」は、<Em>見た目は弁当箱とは違いますが、仕組みは同じ</Em>でした。
             </P>
             <EmojiSeparator
@@ -467,9 +484,9 @@ export default () => (
             />
             <P>
               たとえば、こちらが「<Bold>ラムダ計算</Bold>
-              」の記述式です。一番左にある「<Strong>λ</Strong>
+              」の記述式です。一番左にある「<HighlightBold>λ</HighlightBold>
               」の記号はギリシャ文字で「
-              <Strong>ラムダ</Strong>
+              <HighlightBold>ラムダ</HighlightBold>
               」と呼ぶことから、「ラムダ計算」と呼ばれています。
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
@@ -492,7 +509,7 @@ export default () => (
               <Em>
                 それと同じで、先ほどの「ラムダ計算」の記述式も、
                 <H args={{ name: 'play' }} /> すると
-                <Strong>B</Strong>が残るのです。
+                <HighlightBold>B</HighlightBold>が残るのです。
               </Em>
             </P>
             <CenteredCode size="md">λA.B C</CenteredCode>
@@ -504,16 +521,19 @@ export default () => (
             <CenteredCode size="sm">λA.(λB.A(B B))(λB.A(B B))</CenteredCode>
             <P>
               答えを言うと、上の記述式は
-              <Strong>Yコンビネータを表している</Strong>
+              <HighlightBold>Yコンビネータを表している</HighlightBold>
               のです。つまり、下の弁当箱とまったく同じです。
             </P>
             <R.Rjho>
               上のラムダ計算の記述式は、
-              <br />「<Strong>Yコンビネータ</Strong>」の弁当箱と同じ
+              <br />「<HighlightBold>Yコンビネータ</HighlightBold>
+              」の弁当箱と同じ
             </R.Rjho>
             <P>
               つまり本稿では、
-              <Strong>実はみなさんにラムダ計算を教えていたのです。</Strong>
+              <HighlightBold>
+                実はみなさんにラムダ計算を教えていたのです。
+              </HighlightBold>
               <Em>
                 ラムダ計算の記述式は見た目が複雑なので、
                 <H args={{ name: 'bentoBoxPuzzle' }} />
@@ -542,7 +562,7 @@ export default () => (
             />
             <P>
               そして繰り返しますが、このラムダ計算は、1930年代に考えられた「
-              <Strong>空想上の計算機</Strong>」というわけです。
+              <HighlightBold>空想上の計算機</HighlightBold>」というわけです。
             </P>
           </>
         )
@@ -565,7 +585,7 @@ export default () => (
               ]}
             />
             <P>
-              先ほど、「<Strong>弁当箱とラムダ計算は同じ</Strong>
+              先ほど、「<HighlightBold>弁当箱とラムダ計算は同じ</HighlightBold>
               」という話をしましたね。つまり、上の質問は以下のように言い換えることができます。
             </P>
             <BubbleQuotes
@@ -575,7 +595,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Strong>ラムダ計算にできない計算</Strong>はあるのかな？
+                        <HighlightBold>ラムダ計算にできない計算</HighlightBold>
+                        はあるのかな？
                       </P>
                     </>
                   )
@@ -585,9 +606,9 @@ export default () => (
             <P>では、ラムダ計算にできない計算はあるのでしょうか？</P>
             <P>
               結論から言うと、
-              <Strong>
+              <HighlightBold>
                 ラムダ計算は、現代のコンピュータが行うことができるすべての計算を行うことができます。
-              </Strong>
+              </HighlightBold>
               つまり、あなたのパソコンやスマホができる計算はすべて、ラムダ計算にもできるということです。
             </P>
             <EmojiSeparator
@@ -606,9 +627,9 @@ export default () => (
             />
             <P>
               ということはつまり、
-              <Strong>
+              <HighlightBold>
                 弁当箱も、現代のコンピュータが行えるすべての計算を行うことができる
-              </Strong>
+              </HighlightBold>
               というわけですね。
             </P>
             <EmojiSeparator
@@ -687,12 +708,12 @@ export default () => (
             />
             <P>
               特に、ラムダ計算は
-              <Strong>数々のプログラミング言語</Strong>
+              <HighlightBold>数々のプログラミング言語</HighlightBold>
               に影響を与えました。現存するプログラミング言語の多くには、ラムダ計算の名残が残っています。
             </P>
             <P>
               たとえば、執筆時点で世界で最も人気のプログラミング言語のひとつである、
-              <Strong>Python (パイソン)</Strong>
+              <HighlightBold>Python (パイソン)</HighlightBold>
               という言語があります。ちなみにパイソンとは大蛇のことで、Python言語のロゴにもヘビの絵が描かれています。
             </P>
             <EmojiSeparator
@@ -700,7 +721,7 @@ export default () => (
               description={<>Python言語</>}
             />
             <P>
-              このPython言語にも、「<Strong>lambda</Strong>{' '}
+              このPython言語にも、「<HighlightBold>lambda</HighlightBold>{' '}
               (ラムダ)」という機能があります。たとえば、以下のPython言語のコードをご覧ください。
             </P>
             <CenteredCode size="sm">(lambda A: A)('B')</CenteredCode>
@@ -764,13 +785,13 @@ export default () => (
             <P>
               それは、
               <Em>
-                「<Strong>計算機を工夫すること</Strong>
+                「<HighlightBold>計算機を工夫すること</HighlightBold>
                 」が、コンピュータサイエンスではとても大事
               </Em>
               というお話です。
             </P>
             <ExpressionRunnerCaptionOnly>
-              <Strong>重要:</Strong> 計算機を工夫することが、
+              <HighlightBold>重要:</HighlightBold> 計算機を工夫することが、
               <br />
               コンピュータサイエンスではとても大事
             </ExpressionRunnerCaptionOnly>
@@ -790,9 +811,9 @@ export default () => (
             <R.Osqo />
             <P>
               しかし、こんなシンプルな弁当箱でも、現代のコンピュータが行えるすべての計算を行うことができるのです。
-              <Strong>
+              <HighlightBold>
                 それができる理由は、弁当箱を工夫すれば、四則演算や、条件分岐や、繰り返しを行うことができるからです。
-              </Strong>
+              </HighlightBold>
             </P>
             <EmojiSeparator
               nodes={[
@@ -814,7 +835,7 @@ export default () => (
               たとえば今回紹介した通り、Yコンビネータの弁当箱を使えば、繰り返しを行うことができますよね。他にも工夫次第で、さまざまな計算を行うことができます。
             </P>
             <R.Rjho>
-              「<Strong>Yコンビネータ</Strong>」の弁当箱を使えば
+              「<HighlightBold>Yコンビネータ</HighlightBold>」の弁当箱を使えば
               <br />
               繰り返しを行うことができる
             </R.Rjho>
@@ -829,7 +850,9 @@ export default () => (
               そして、今回学んだ弁当箱は、
               <Em>シンプルでも工夫次第で複雑な計算ができる計算機です。</Em>
               そんな弁当箱には、
-              <Strong>コンピュータサイエンスのエッセンスが詰まっている</Strong>
+              <HighlightBold>
+                コンピュータサイエンスのエッセンスが詰まっている
+              </HighlightBold>
               と思うのです。
             </P>
             <EmojiSeparator
@@ -859,16 +882,16 @@ export default () => (
             <P>
               とはいえ、コンピュータサイエンスの他の分野を学ぶときも、やることは弁当箱のときと同じです。なぜならどの分野でも、弁当箱のように「
               <Em>
-                計算機(コンピュータ)を<Strong>工夫して</Strong>
+                計算機(コンピュータ)を<HighlightBold>工夫して</HighlightBold>
                 、問題を解く」ことが大事になってくるからです。
               </Em>
             </P>
             <P>
               コンピュータサイエンスのどの分野でも、
-              <Strong>キーワードは「工夫」</Strong>
+              <HighlightBold>キーワードは「工夫」</HighlightBold>
               なのです。たとえば、「
               <Em>
-                コンピュータを<Strong>どう工夫して</Strong>
+                コンピュータを<HighlightBold>どう工夫して</HighlightBold>
                 使えば、美しいCGや、人工知能や、仮想通貨が作れるだろう？
               </Em>
               」といった感じですね。
@@ -905,7 +928,7 @@ export default () => (
               <OlLi>
                 <Em>
                   弁当箱は、工夫次第で四則演算や、条件分岐や、繰り返しといった複雑な計算ができる。また、繰り返しを行う弁当箱を
-                  <Strong>Yコンビネータ</Strong>と呼ぶ。
+                  <HighlightBold>Yコンビネータ</HighlightBold>と呼ぶ。
                 </Em>
               </OlLi>
               <OlLi>
@@ -916,9 +939,9 @@ export default () => (
               <OlLi>
                 <Em>
                   コンピュータサイエンスは「
-                  <Strong>
+                  <HighlightBold>
                     計算機(コンピュータ)をどう工夫して問題を解くか
-                  </Strong>
+                  </HighlightBold>
                   」を考える学問。工夫次第で複雑な計算ができる弁当箱には、そのエッセンスが詰まっている。
                 </Em>
               </OlLi>
@@ -935,7 +958,7 @@ export default () => (
             <P>
               まず、先述したイギリスの数学者で、空想上の計算機「
               <Bold>チューリングマシン</Bold>」を考案した
-              <Strong>アラン・チューリング</Strong>
+              <HighlightBold>アラン・チューリング</HighlightBold>
               。彼はチューリングマシンを考案したのち、イギリスからアメリカに渡り、
               <Em>ラムダ計算(弁当箱)を考案したチャーチのもとで学びました。</Em>
             </P>
@@ -945,11 +968,11 @@ export default () => (
                 <>
                   <Bold>チューリングマシン</Bold>を考案した
                   <br />
-                  <Strong>アラン・チューリング</Strong>は、
+                  <HighlightBold>アラン・チューリング</HighlightBold>は、
                   <br />
                   <Bold>ラムダ計算(弁当箱)</Bold>を考案した
                   <br />
-                  <Strong>チャーチ</Strong>に弟子入りした
+                  <HighlightBold>チャーチ</HighlightBold>に弟子入りした
                 </>
               }
             />
@@ -1085,9 +1108,9 @@ export default () => (
                     </P>
                     <P>
                       そういった、「
-                      <Strong>
+                      <HighlightBold>
                         世の中にたくさんいる、プログラマではない、とても知的好奇心が旺盛な人々向けにコンピュータサイエンスの入門書を書くとしたら、どういう教材がいいだろう？
-                      </Strong>
+                      </HighlightBold>
                       」と考えた結果、完成したのが本稿です。
                     </P>
                     <P>
@@ -1149,7 +1172,7 @@ export default () => (
                               </P>
                               <P>
                                 「難しすぎて敬遠してしまう人」の数を抑えつつ、「難しくて面白いと思ってくれる人」の数を増やす、というのは
-                                <Strong>トレードオフ</Strong>
+                                <HighlightBold>トレードオフ</HighlightBold>
                                 だ。どこでバランスを取るかは教材作成者が自由に決めるべきで、
                                 <Em>「これが正解」というのは無い</Em>
                                 と思うんだ。

@@ -6,7 +6,7 @@ import H from 'src/components/H'
 import { remainingText } from 'src/lib/episodeCategories'
 import locale from 'src/lib/locale'
 import { colors, fontSizes, lineHeights, radii, spaces } from 'src/lib/theme'
-import { Strong } from 'src/components/ContentTags'
+import { HighlightBold } from 'src/components/ContentTags'
 import EpisodeContext from 'src/components/EpisodeContext'
 import GlobalContext from 'src/components/GlobalContext'
 import Emoji from 'src/components/Emoji'
@@ -83,7 +83,7 @@ const NextLessonButton = ({ halfMargin }: { halfMargin?: boolean }) => {
             color: ${colors('grey700')};
           `}
         >
-          <Strong>{remainingText(nextEpisodeNumber)}</Strong>
+          <HighlightBold>{remainingText(nextEpisodeNumber)}</HighlightBold>
         </div>
       )}
     </div>
