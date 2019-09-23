@@ -88,7 +88,7 @@ export default () => (
           <>
             <P>
               <Bold>And just like that:</Bold> The devil has stolen{' '}
-              <Strong>all of the mathboxes</Strong> in Lambda Village.
+              <Strong>every single mathbox</Strong> in Lambda Village.
             </P>
             <EmojiSeparator
               nodes={[
