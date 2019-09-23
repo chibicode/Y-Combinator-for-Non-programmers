@@ -4,11 +4,11 @@ import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
   Hr,
-  HighlightBold,
   Highlight,
   Ul,
   UlLi,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import CustomEmoji from 'src/components/CustomEmoji'
 import EmojiSeparator from 'src/components/EmojiSeparator'
@@ -25,16 +25,12 @@ export const TwoPlusFour = () => (
   <>
     <R.Ednv />
     <P>
-      The result is <EmojiNumber number={6} />. Because{' '}
-      <Highlight>
-        there’s{' '}
-        <InlineBorder>
-          <EmojiNumber number={4} />
-        </InlineBorder>{' '}
-        next to <CustomEmoji type="plusOne" />, it repeats{' '}
-        <CustomEmoji type="plusOne" /> <HighlightBold>four times</HighlightBold>
-        .
-      </Highlight>
+      The result is <EmojiNumber number={6} />. Because there’s{' '}
+      <InlineBorder>
+        <EmojiNumber number={4} />
+      </InlineBorder>{' '}
+      next to <CustomEmoji type="plusOne" />, it repeats{' '}
+      <CustomEmoji type="plusOne" /> <Italic>four times</Italic>.
     </P>
     <R.Xpks />
     <ExpressionRunnerSeparator />
@@ -59,11 +55,11 @@ export const Conclusion = () => (
         }}
       />
       ,{' '}
-      <HighlightBold>
+      <Italic>
         you’ll always use the correct number of <CustomEmoji type="plusOne" />
         ’s or <CustomEmoji type="minusOne" />
         ’s
-      </HighlightBold>
+      </Italic>
       . That means you can be confident that your additions and subtractions are
       accurate.
     </P>
@@ -113,7 +109,7 @@ export default () => (
           <>
             <P>
               <Bold>Review:</Bold> Last time, we talked about Lambda Village and{' '}
-              <HighlightBold>mathboxes</HighlightBold> used by its villagers.
+              <Bold>mathboxes</Bold> used by its villagers.
             </P>
             <EmojiSeparator
               nodes={[
@@ -152,9 +148,12 @@ export default () => (
               }
             />
             <P>
-              This time, we’ll talk about the{' '}
-              <HighlightBold>third</HighlightBold> feature of a mathbox:{' '}
-              <H args={{ name: 'repeatFeature' }} />.
+              This time, we’ll talk about the <Italic>third</Italic> feature of
+              a mathbox:{' '}
+              <Highlight>
+                <H args={{ name: 'repeatFeature' }} />
+              </Highlight>
+              .
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
@@ -165,7 +164,11 @@ export default () => (
               }
             />
             <P>
-              Let’s start with a <H args={{ name: 'yesNoQuiz' }} />!
+              Let’s start with a{' '}
+              <Highlight>
+                <H args={{ name: 'yesNoQuiz' }} />
+              </Highlight>
+              !
             </P>
           </>
         )
@@ -209,13 +212,14 @@ export default () => (
               <Emoji>➖</Emoji> <EmojiNumber number={8} />.
             </R.Dfjp>
             <P>
-              <Bold>Question:</Bold> Will the above mathbox correctly calculate{' '}
-              <HighlightBold>
+              <Bold>Question:</Bold>{' '}
+              <Highlight>
+                Will the above mathbox correctly calculate{' '}
                 <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-                <EmojiNumber number={8} />？
-              </HighlightBold>{' '}
-              Select <H args={{ name: 'yesNoQuizYes' }} /> or{' '}
-              <H args={{ name: 'yesNoQuizNo' }} />.
+                <EmojiNumber number={8} />？ Select{' '}
+                <H args={{ name: 'yesNoQuizYes' }} /> or{' '}
+                <H args={{ name: 'yesNoQuizNo' }} />.
+              </Highlight>
             </P>
             <YesNoButtons answer={'no'} />
           </>
@@ -230,20 +234,18 @@ export default () => (
         content: (
           <>
             <P>
-              <HighlightBold>
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-              </HighlightBold>
+              <H args={{ name: 'theAnswerIs', isYes: false }} />
               . <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Lxrk />
             <P>
               So the result is <EmojiNumber number={3} />.{' '}
-              <Highlight>
+              <Italic>
                 Instead of calculating <EmojiNumber number={10} />{' '}
                 <Emoji>➖</Emoji> <EmojiNumber number={8} />, we calculated{' '}
                 <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
                 <EmojiNumber number={7} /> by mistake
-              </Highlight>
+              </Italic>
               .
             </P>
             <EmojiSeparator
@@ -274,12 +276,11 @@ export default () => (
               The reason it calculated <EmojiNumber number={10} />{' '}
               <Emoji>➖</Emoji> <EmojiNumber number={7} /> instead of{' '}
               <EmojiNumber number={10} /> <Emoji>➖</Emoji>{' '}
-              <EmojiNumber number={8} /> is because there was the wrong number
-              of{' '}
-              <HighlightBold>
-                <CustomEmoji type="minusOne" />
+              <EmojiNumber number={8} /> is because{' '}
+              <Italic>
+                there was the wrong number of <CustomEmoji type="minusOne" />
                 ’s
-              </HighlightBold>
+              </Italic>
               .
             </P>
             <EmojiSeparator
@@ -298,14 +299,9 @@ export default () => (
             <P>
               If you wanted to calculate <EmojiNumber number={10} />{' '}
               <Emoji>➖</Emoji> <EmojiNumber number={8} />, you need to have{' '}
-              <HighlightBold>eight</HighlightBold>{' '}
-              <CustomEmoji type="minusOne" />
-              ’s. However,{' '}
-              <Highlight>
-                the previous mathbox actually had only{' '}
-                <HighlightBold>seven</HighlightBold> of them
-              </Highlight>
-              .
+              <Italic>eight</Italic> <CustomEmoji type="minusOne" />
+              ’s. However, the previous mathbox actually had only{' '}
+              <Italic>seven</Italic> of them .
             </P>
             <EmojiSeparator
               size="mdsm"
@@ -326,22 +322,19 @@ export default () => (
               ]}
               description={
                 <>
-                  Needed <HighlightBold>eight</HighlightBold>{' '}
-                  <CustomEmoji type="minusOne" />
+                  Needed <Italic>eight</Italic> <CustomEmoji type="minusOne" />
                   ’s,
                   <br />
-                  but there was only <HighlightBold>seven</HighlightBold> of
-                  them
+                  but there was only <Italic>seven</Italic> of them
                 </>
               }
             />
             <P>You can check again:</P>
             <R.Dfjp>
-              Needed <HighlightBold>eight</HighlightBold>{' '}
-              <CustomEmoji type="minusOne" />
+              Needed <Italic>eight</Italic> <CustomEmoji type="minusOne" />
               ’s,
               <br />
-              but there was only <HighlightBold>seven</HighlightBold> of them
+              but there was only <Italic>seven</Italic> of them
             </R.Dfjp>
             <P>
               <Bold>Summary:</Bold> If you put the wrong number of{' '}
@@ -388,7 +381,11 @@ export default () => (
           <>
             <P>
               Mathboxes do have a feature that helps avoid mistakes like this.
-              It’s called: <H args={{ name: 'repeatFeature' }} />.
+              It’s called:{' '}
+              <Highlight>
+                <H args={{ name: 'repeatFeature' }} />
+              </Highlight>
+              .
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
@@ -415,7 +412,7 @@ export default () => (
       {
         title: (
           <>
-            Repeat <CustomEmoji type="minusOne" />
+            Repeats <CustomEmoji type="minusOne" />
           </>
         ),
         content: (
@@ -423,12 +420,11 @@ export default () => (
             <P>
               If you <H args={{ name: 'play', lowerCase: true }} /> the above
               mathbox,{' '}
-              <Highlight>
+              <Italic>
                 it automatically expands the bottom half before calculating the
                 result
-              </Highlight>
-              . After the expansion, there are now{' '}
-              <HighlightBold>eight</HighlightBold>{' '}
+              </Italic>
+              . So after the expansion, there are now <Italic>eight</Italic>{' '}
               <CustomEmoji type="minusOne" />
               ’s.
             </P>
@@ -439,20 +435,19 @@ export default () => (
             <R.Xlgb>
               The bottom half automatically becomes
               <br />
-              <HighlightBold>eight</HighlightBold>{' '}
-              <CustomEmoji type="minusOne" />
+              <Italic>eight</Italic> <CustomEmoji type="minusOne" />
               ’s.
             </R.Xlgb>
             <P>
               <Bold>Summary:</Bold>{' '}
-              <HighlightBold>
+              <Italic>
                 If there’s{' '}
                 <InlineBorder>
                   <EmojiNumber number={8} />
                 </InlineBorder>{' '}
                 next to <CustomEmoji type="minusOne" />, it repeats{' '}
                 <CustomEmoji type="minusOne" /> eight times
-              </HighlightBold>
+              </Italic>
               .
             </P>
             <EmojiSeparator
@@ -493,10 +488,10 @@ export default () => (
             <P>
               <Bold>Takeaway:</Bold> By using{' '}
               <H args={{ name: 'repeatFeature' }} />,{' '}
-              <Highlight>
+              <Italic>
                 you can specify the number of times{' '}
                 <CustomEmoji type="minusOne" /> gets repeated
-              </Highlight>
+              </Italic>
               . <Emoji>🤗</Emoji>
             </P>
           </>
@@ -511,10 +506,10 @@ export default () => (
         content: (
           <>
             <P>
-              <HighlightBold>
+              <Italic>
                 You can also repeat <CustomEmoji type="plusOne" />
                 ’s
-              </HighlightBold>
+              </Italic>
               . Take a look at this mathbox, and{' '}
               <H args={{ name: 'pressPlay' }} />:
             </P>
@@ -543,25 +538,25 @@ export default () => (
             <R.Bwnp />
             <Ul>
               <UlLi>
-                <Highlight>
-                  If there’s{' '}
-                  <InlineBorder>
-                    <CustomEmoji type="blankNumber" />
-                  </InlineBorder>{' '}
-                  to the left of <CustomEmoji type="plusOne" />, then…
-                </Highlight>
+                If there’s{' '}
+                <InlineBorder>
+                  <CustomEmoji type="blankNumber" />
+                </InlineBorder>{' '}
+                to the left of <CustomEmoji type="plusOne" />, then…
               </UlLi>
               <UlLi>
-                <Highlight>
-                  When you <H args={{ name: 'play' }} /> it,{' '}
-                  <CustomEmoji type="plusOne" /> gets repeated for{' '}
-                  <CustomEmoji type="blankNumber" /> times.
-                </Highlight>
+                When you <H args={{ name: 'play' }} /> it,{' '}
+                <CustomEmoji type="plusOne" /> gets repeated for{' '}
+                <CustomEmoji type="blankNumber" /> times.
               </UlLi>
             </Ul>
             <Hr />
             <P>
-              So this is how <H args={{ name: 'repeatFeature' }} /> works!
+              So this is how{' '}
+              <Highlight>
+                <H args={{ name: 'repeatFeature' }} />
+              </Highlight>{' '}
+              works!
             </P>
             <EmojiSeparator
               nodes={[<Emoji>✨</Emoji>, <Emoji>🔁</Emoji>, <Emoji>✨</Emoji>]}
@@ -572,12 +567,8 @@ export default () => (
               }
             />
             <P>
-              Of course, you can use{' '}
-              <Highlight>
-                <CustomEmoji type="minusOne" /> instead of{' '}
-                <CustomEmoji type="plusOne" />
-              </Highlight>{' '}
-              as well.
+              Of course, you can use <CustomEmoji type="minusOne" /> instead of{' '}
+              <CustomEmoji type="plusOne" /> as well.
             </P>
             <R.Ewfr>
               <CustomEmoji type="minusOne" /> gets repeated{' '}
@@ -628,10 +619,10 @@ export default () => (
             </R.Vsvt>
             <P>
               By using this technique,{' '}
-              <HighlightBold>
+              <Italic>
                 you won’t use the wrong number of <CustomEmoji type="plusOne" />
                 ’s again!
-              </HighlightBold>{' '}
+              </Italic>{' '}
               <Emoji>😉</Emoji>
             </P>
           </>
@@ -666,9 +657,9 @@ export default () => (
           <>
             <P>
               As we mentioned earlier,{' '}
-              <HighlightBold>
+              <Italic>
                 the villagers in Lambda Village were all very bad at math
-              </HighlightBold>
+              </Italic>
               . They had to rely on mathboxes to do even simple additions or
               subtractions.
             </P>
@@ -711,8 +702,7 @@ export default () => (
               }
             />
             <P>
-              However, one day,{' '}
-              <HighlightBold>something terrible happened</HighlightBold> in
+              However, one day, <Italic>something terrible happened</Italic> in
               Lambda Village that changed everything.
             </P>
             <EmojiSeparator
