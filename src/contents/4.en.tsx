@@ -337,11 +337,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <HighlightBold>正解、まさにその通りだ！</HighlightBold>{' '}
+                        <Italic>You’re exactly right!</Italic> Good job!{' '}
                         <Emoji>🎉</Emoji> <Emoji>🎉</Emoji> <Emoji>🎉</Emoji>
                       </P>
                       <P>
-                        今まで勉強を怠けてきたわりには、なかなかやるじゃないか。
+                        I thought you’ll do much worse on these quizzes because
+                        you haven’t been studying math seriously. Not too bad!
                       </P>
                     </>
                   )
@@ -350,7 +351,7 @@ export default () => (
                   type: 'celebrate',
                   children: (
                     <>
-                      <P>やった！やった！</P>
+                      <P>Yay!</P>
                     </>
                   )
                 },
@@ -359,7 +360,7 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>だが、喜ぶのはまだ早い。</Highlight>
+                        <Italic>However, don’t celebrate just yet.</Italic>
                       </P>
                     </>
                   )
@@ -368,7 +369,7 @@ export default () => (
                   type: 'scared',
                   children: (
                     <>
-                      <P>えー、なんで？</P>
+                      <P>Huh? Why?</P>
                     </>
                   )
                 },
@@ -377,16 +378,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次のページから、さらに難しい
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        を解いてもらう。
-                      </P>
-                      <P>
-                        そのためには、
-                        <Highlight>
-                          <H args={{ name: 'bentoBoxPuzzle' }} />
-                          の法則を明確にする必要がある。
-                        </Highlight>
+                        Before going to the next page, we still need to{' '}
+                        <Bold>formalize</Bold> the rules of{' '}
+                        <H args={{ name: 'bentoBoxPuzzle' }} />.
                       </P>
                     </>
                   )
@@ -395,7 +389,9 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>法則を明確にする？どういうこと？</P>
+                      <P>
+                        <Bold>Formalize?</Bold> What do you mean?
+                      </P>
                     </>
                   )
                 }
