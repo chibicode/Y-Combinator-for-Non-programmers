@@ -323,12 +323,12 @@ export default () => (
         )
       },
       {
-        title: <>正解！</>,
+        title: <>Correct!</>,
         content: (
           <>
             <EmojiSeparator
               emojis={['🎉', '😈', '🎉']}
-              description={<>その通り！</>}
+              description={<>Exactly right!</>}
             />
             <BubbleQuotes
               quotes={[
@@ -379,7 +379,10 @@ export default () => (
                       <P>
                         次のページから、さらに難しい
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        を解いてもらう。そのためには、
+                        を解いてもらう。
+                      </P>
+                      <P>
+                        そのためには、
                         <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                           の法則を明確にする必要がある。

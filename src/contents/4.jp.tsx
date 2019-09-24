@@ -376,7 +376,10 @@ export default () => (
                       <P>
                         次のページから、さらに難しい
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        を解いてもらう。そのためには、
+                        を解いてもらう。
+                      </P>
+                      <P>
+                        そのためには、
                         <Highlight>
                           <H args={{ name: 'bentoBoxPuzzle' }} />
                           の法則を明確にする必要がある。
