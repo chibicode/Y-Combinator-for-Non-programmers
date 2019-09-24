@@ -668,7 +668,7 @@ export default () => (
         )
       },
       {
-        title: <>法則が分かった？</>,
+        title: <>Did you figure out the pattern?</>,
         content: (
           <>
             <BubbleQuotes
@@ -678,13 +678,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <HighlightBold>
-                          弁当箱のパズルは、
-                          <H args={{ name: 'play' }} />
-                          する際にどんな法則に則っているか
-                        </HighlightBold>
-                        、そろそろ分かったかな？
+                        So,{' '}
+                        <Highlight>
+                          did you figure out what the pattern is
+                        </Highlight>
+                        ?
                       </P>
                     </>
                   )
@@ -693,7 +691,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>う、うーん…</P>
+                      <P>Hmm… Not too sure yet…</P>
                     </>
                   )
                 },
@@ -702,7 +700,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        参考までに、今回紹介した4つの例をもう一度載せておこう。
+                        Just for your reference, here’s the four lunchboxes
+                        we’ve seen so far, and what happened when we ran them.
                       </P>
                     </>
                   )
@@ -710,25 +709,25 @@ export default () => (
               ]}
             />
             <P>
-              <Bold>例その1:</Bold>
+              <Bold>Example 1:</Bold>
             </P>
             <R.Ilpo />
             <ExpressionRunnerSeparator />
             <R.Osqo />
             <P>
-              <Bold>例その2:</Bold>
+              <Bold>Example 2:</Bold>
             </P>
             <R.Imyd />
             <ExpressionRunnerSeparator />
             <R.Bgfl />
             <P>
-              <Bold>例その3:</Bold>
+              <Bold>Example 3:</Bold>
             </P>
             <R.Rakk />
             <ExpressionRunnerSeparator />
             <R.Thbw />
             <P>
-              <Bold>例その4:</Bold>
+              <Bold>Example 4:</Bold>
             </P>
             <R.Ldqk />
             <ExpressionRunnerSeparator />
@@ -739,7 +738,7 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>ふーむ、なんとなく法則が見えてきたような…？</P>
+                      <P>Hmm… maybe I’m seeing a pattern…</P>
                     </>
                   )
                 },
@@ -748,11 +747,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ほう。ではここで、
-                        <HighlightBold>
-                          <H args={{ name: 'yesNoQuiz' }} />
-                        </HighlightBold>
-                        の時間だ。法則が分かったかどうか、チェックしてやるぞ！
+                        Alright.{' '}
+                        <Highlight>
+                          Let’s do a <H args={{ name: 'yesNoQuiz' }} /> then.
+                        </Highlight>{' '}
+                        I’ll check if you’ve figured out the pattern correctly!
                       </P>
                     </>
                   )
@@ -761,7 +760,7 @@ export default () => (
                   type: 'crying',
                   children: (
                     <>
-                      <P>自信ないけど…やるしかない！</P>
+                      <P>I’m not 100% sure… but I’ll try!</P>
                     </>
                   )
                 }
@@ -774,8 +773,7 @@ export default () => (
         type: 'yesNoQuiz',
         title: (
           <>
-            <H args={{ name: 'yesNoQuiz' }} />
-            、その1
+            <H args={{ name: 'yesNoQuiz' }} />, Part 1
           </>
         ),
         content: (
