@@ -6,7 +6,9 @@ import {
   Highlight,
   Hr,
   Bold,
-  Italic
+  Italic,
+  Ul,
+  UlLi
 } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -401,7 +403,7 @@ export default () => (
         )
       },
       {
-        title: <>法則を明確にする</>,
+        title: <>Formalize the rules</>,
         content: (
           <>
             <BubbleQuotes
@@ -411,12 +413,17 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        先ほどお前が言った、
-                        <Highlight>
-                          「下のふたつの料理を比べて、同じなら上が残る。違うなら右下が残る」というのは
-                          <HighlightBold>明確さに欠ける。</HighlightBold>
-                          さらに複雑なパズルを解くには、法則としては不十分なんだ。
-                        </Highlight>
+                        <Bold>Here’s what you stated:</Bold>
+                      </P>
+                      <Ul>
+                        <UlLi>Compare the bottom two items.</UlLi>
+                        <UlLi>If they’re the same, the top item remains.</UlLi>
+                        <UlLi>Otherwise, the bottom right item remains.</UlLi>
+                      </Ul>
+                      <P>
+                        This is <Italic>not wrong</Italic>, but also is{' '}
+                        <Italic>not detailed enough</Italic> to solve more
+                        difficult puzzles.
                       </P>
                     </>
                   )
@@ -425,7 +432,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>えー、そうなのか…</P>
+                      <P>Hmm… okay…</P>
                     </>
                   )
                 },
@@ -434,7 +441,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        さらに複雑なパズルを解くには、もっと法則をハッキリさせる、すなわち明確化する必要があるんだ。
+                        In order to solve more complex puzzles, we need to{' '}
+                        <Italic>formalize</Italic> the rules. We must be more{' '}
+                        <Italic>detailed</Italic>.
                       </P>
                     </>
                   )
@@ -445,9 +454,9 @@ export default () => (
               emojis={['✅', '🍱', '✅']}
               description={
                 <>
-                  もっと法則を明確にしないと
+                  We have to <Italic>formalize</Italic> the rules.
                   <br />
-                  複雑なパズルを解けない
+                  We must be more <Italic>detailed</Italic>.
                 </>
               }
             />
@@ -458,12 +467,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          というわけで、これから
-                          <H args={{ name: 'bentoBoxPuzzle' }} />の
-                          <HighlightBold>明確な法則</HighlightBold>を紹介する。
-                        </Highlight>
-                        それを理解した上で、さらに複雑なパズルを解いてもらおう。
+                        <Bold>So:</Bold> I’ll explain to you the{' '}
+                        <Italic>formal</Italic>, more detailed rules of{' '}
+                        <H args={{ name: 'bentoBoxPuzzle' }} />.
+                      </P>
+                      <P>
+                        Once you understand it, I’ll give you more complex
+                        puzzles to solve.
                       </P>
                     </>
                   )
@@ -473,7 +483,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うーん、よくわからないけど、とりあえずその明確な法則とやらを聞いてみよう。
+                        Okay… could you show me what that{' '}
+                        <Italic>formal rules</Italic> looks like?
                       </P>
                     </>
                   )
