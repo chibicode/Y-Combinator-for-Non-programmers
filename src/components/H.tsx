@@ -1106,7 +1106,11 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'lookAtThisBentoBoxPuzzle') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          Take a look at this “Lunchbox” puzzle <Emoji>🍱</Emoji>
+        </>
+      )
     } else {
       return (
         <>

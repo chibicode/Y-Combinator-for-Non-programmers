@@ -25,7 +25,6 @@ import NextLessonButton from 'src/components/NextLessonButton'
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>The devil appears</>,
@@ -779,17 +778,13 @@ export default () => (
         content: (
           <>
             <P>
-              これまでに4種類の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              を紹介しましたが、どれも
-              <H args={{ name: 'play' }} />{' '}
-              する際にある法則に従っています。それが分かったかどうか、
-              <H args={{ name: 'yesNoQuiz' }} />
-              でチェックしてみましょう！
+              We’ve shown you <Italic>four lunchbox puzzles.</Italic> They all
+              follow a specific set of rules. Let’s see if you’ve figured it
+              out!
             </P>
             <EmojiSeparator
-              emojis={['⭕️', '🍱', '❌']}
-              description={<>法則が分かったかどうかチェック！</>}
+              emojis={['👍', '🍱', '👎']}
+              description={<>Let’s see if you’ve figured out the pattern!</>}
             />
             <P>
               <H args={{ name: 'question' }} />{' '}
@@ -797,10 +792,10 @@ export default () => (
             </P>
             <R.Loai />
             <P>
-              これを
-              <H args={{ name: 'play' }} /> すると、
-              <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
-              これまでの法則から予想してみてください。
+              <Highlight>
+                If you <H args={{ name: 'play', lowerCase: true }} /> this, will
+                it become the following lunchbox at the end?
+              </Highlight>
             </P>
             <R.Vvjn />
             <YesNoButtons answer="yes" />
@@ -811,22 +806,21 @@ export default () => (
         type: 'yesNoQuiz',
         title: (
           <>
-            <H args={{ name: 'yesNoQuiz' }} />
-            、その2
+            <H args={{ name: 'yesNoQuiz' }} />, Part 2
           </>
         ),
         content: (
           <>
             <P>
-              <H args={{ name: 'question' }} /> こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />を{' '}
-              <H args={{ name: 'play' }} />
-              すると、
+              <H args={{ name: 'question' }} />{' '}
+              <H args={{ name: 'lookAtThisBentoBoxPuzzle' }} />:
             </P>
             <R.Uvmv />
             <P>
-              <HighlightBold>最終的に下のようになるでしょうか？</HighlightBold>
-              これまでの法則から予想してみてください。
+              <Highlight>
+                If you <H args={{ name: 'play', lowerCase: true }} /> this, will
+                it become the following lunchbox at the end?
+              </Highlight>
             </P>
             <R.Hvqh />
             <YesNoButtons answer="no" />
@@ -834,53 +828,44 @@ export default () => (
         )
       },
       {
-        title: <>答え合わせ</>,
+        title: <>The Answers</>,
         content: (
           <>
-            <P>それぞれ実行すると、次のようになります。</P>
             <P>
-              <Bold>1問目:</Bold>
+              <Bold>Here are the answers:</Bold> If you{' '}
+              <H args={{ name: 'play', lowerCase: true }} /> each, this is what
+              happens:
+            </P>
+            <P>
+              <Bold>Problem 1:</Bold>
             </P>
             <R.Zzyu />
             <P>
-              つまり
-              <HighlightBold>
-                1問目の
-                <H args={{ name: 'theAnswerIs', isYes: true }} />
-              </HighlightBold>{' '}
-              でした。
+              So the answer is <H args={{ name: 'yesNoQuizYes' }} />.
             </P>
             <P>
-              <Bold>2問目:</Bold>
+              <Bold>Problem 2:</Bold>
             </P>
             <R.Mutg />
             <P>
-              つまり
-              <HighlightBold>
-                2問目の
-                <H args={{ name: 'theAnswerIs', isYes: false }} />
-              </HighlightBold>{' '}
-              でした。
+              So the answer is <H args={{ name: 'yesNoQuizNo' }} />.
             </P>
           </>
         )
       },
       {
-        title: <>法則は次のページに</>,
+        title: <>The patterns are on the next page</>,
         content: (
           <>
             <P>
-              次のページで、
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              の法則を説明します！
+              We’ll talk about the patterns of{' '}
+              <H args={{ name: 'bentoBoxPuzzle' }} /> on the next page!
             </P>
             <EmojiSeparator
               emojis={['🤔', '🍱', '😈']}
-              description={<>法則は次のページで説明！</>}
+              description={<>The patterns are on the next page!</>}
             />
-            <P>
-              法則が分かった方も、よく分からなかった方も、ぜひ次に進んでみてください。
-            </P>
+            <P>Even if you didn’t get the correct answers, please read on!</P>
             <NextLessonButton />
           </>
         )
