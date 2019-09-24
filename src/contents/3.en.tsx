@@ -429,11 +429,11 @@ export default () => (
               The top section has a <EmojiWithText letter="b" />
             </R.Vowa>
             <P>
-              And each of the bottom two sections has a{' '}
+              And each of the bottom two sections has{' '}
               <EmojiWithText letter="a" />, a traditional Japanese food:
             </P>
             <R.Elku>
-              Each of the bottom two sections has a <EmojiWithText letter="a" />
+              Each of the bottom two sections has <EmojiWithText letter="a" />
             </R.Elku>
             <BubbleQuotes
               quotes={[
@@ -517,12 +517,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        After running it,
+                        After running it,{' '}
                         <Italic>
-                          the bottom two{' '}
-                          <EmojiWithText letter="a" postfix="s" /> disappeared,
-                          and only the <EmojiWithText letter="b" /> is
-                          remaining!
+                          the bottom two <EmojiWithText letter="a" />{' '}
+                          disappeared, and only the <EmojiWithText letter="b" />{' '}
+                          is left!
                         </Italic>
                       </P>
                     </>
@@ -535,7 +534,7 @@ export default () => (
             </R.Ilpo>
             <ExpressionRunnerSeparator />
             <R.Osqo>
-              Only the <EmojiWithText letter="b" /> remains
+              Only the <EmojiWithText letter="b" /> is left
             </R.Osqo>
             <BubbleQuotes
               quotes={[
@@ -592,31 +591,25 @@ export default () => (
       {
         title: (
           <>
-            他の
-            <H args={{ name: 'bentoBoxPuzzle' }} />
+            More examples of <H args={{ name: 'bentoBoxPuzzle' }} />
           </>
         ),
         content: (
           <>
             <P>
-              では、他の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              も見てみましょう。
+              Let’s take a look at more examples of{' '}
+              <H args={{ name: 'bentoBoxPuzzle' }} />.
             </P>
             <Hr />
             <P>
-              こちらは、上段には
-              <EmojiWithText letter="e" />
-              、下段には
-              <EmojiWithText letter="c" />と
-              <EmojiWithText letter="d" />
-              が入っています。
-              <H args={{ name: 'pressPlay' }} />
+              This one has <EmojiWithText letter="e" /> on the top and a{' '}
+              <EmojiWithText letter="c" /> and <EmojiWithText letter="d" /> on
+              the bottom. <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Zwpj />
             <P>
-              今回は
-              <EmojiWithText letter="d" /> が残りました。
+              This time, we’re left with <EmojiWithText letter="d" /> at the
+              end.
             </P>
             <BubbleQuotes
               quotes={[
@@ -624,7 +617,10 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>うーん、さっきと微妙に違うなあ…</P>
+                      <P>
+                        Hmm… this pattern seems to be a little different from
+                        the last time.
+                      </P>
                     </>
                   )
                 }
@@ -632,47 +628,41 @@ export default () => (
             />
             <Hr />
             <P>
-              続いて、上段に
-              <HighlightBold>ふたつの料理が入っている場合</HighlightBold>
-              を紹介します。
+              Next, we’ll talk about the cases where there are{' '}
+              <Italic>more than one items on the top row</Italic>.
             </P>
             <P>
-              こちらは、上段には
-              <EmojiWithText letter="g" />と<EmojiWithText letter="o" />
-              が、下段には
-              <EmojiWithText letter="f" />
-              がふたつ入っています。
-              <H args={{ name: 'pressPlay' }} />
+              This one has <EmojiWithText letter="g" /> and{' '}
+              <EmojiWithText letter="o" /> on the top row and two slices of{' '}
+              <EmojiWithText letter="f" /> on the bottom row.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Rivc />
             <P>
-              今回は
-              <EmojiWithText letter="g" /> と <EmojiWithText letter="o" />{' '}
-              が残りました。
+              This time, we’re left with <EmojiWithText letter="g" /> and{' '}
+              <EmojiWithText letter="o" /> at the end.
             </P>
             <Hr />
             <P>
-              こちらは、上段には
-              <EmojiWithText letter="j" />と<EmojiWithText letter="p" />
-              、下段には
-              <EmojiWithText letter="h" />と
-              <EmojiWithText letter="i" />
-              が入っています。
-              <H args={{ name: 'pressPlay' }} />
+              This one has <EmojiWithText letter="j" /> and{' '}
+              <EmojiWithText letter="p" /> on the top row and{' '}
+              <EmojiWithText letter="h" /> and a <EmojiWithText letter="i" /> on
+              the bottom row.{' '}
+              <H args={{ name: 'pressPlay', capitalize: true }} />:
             </P>
             <R.Nmmz />
             <P>
-              今回は
-              <EmojiWithText letter="i" /> が残りました。
+              This time, we’re left with a <EmojiWithText letter="i" /> at the
+              end.
             </P>
             <Hr />
             <P>
-              どれも<HighlightBold>ある法則</HighlightBold>
-              に則っているのですが、その法則がお分かりでしょうか？
+              They all follow <Italic>a pattern</Italic>.{' '}
+              <Highlight>Can you guess what that is?</Highlight>
             </P>
             <EmojiSeparator
               emojis={['🍱', '🤔', '🍱']}
-              description={<>法則が分かりますか？</>}
+              description={<>Can you guess what the pattern is?</>}
             />
           </>
         )
