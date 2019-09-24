@@ -500,7 +500,8 @@ export default () => (
                       <P>
                         では、
                         <H args={{ name: 'bentoBoxPuzzle' }} />
-                        の明確な法則をまとめてみよう。
+                        の明確な法則をまとめてみよう。全部で
+                        <Highlight>4つのステップ</Highlight>があるぞ。
                       </P>
                     </>
                   )

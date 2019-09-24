@@ -28,7 +28,7 @@ export const BasicRules = ({
 }) => (
   <>
     <P>
-      1. <Bold>Add labels:</Bold>{' '}
+      1. <Bold>Label:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -39,7 +39,7 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </P>
     <R.Zzxj>
-      <Bold>Add labels:</Bold>{' '}
+      <Bold>Label:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       {includeFuncUnbound && (
@@ -50,13 +50,13 @@ export const BasicRules = ({
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />
     </R.Zzxj>
     <P>
-      2. <Bold>Find matches:</Bold>{' '}
+      2. <Bold>Match:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
     </P>
     <R.Keck>
-      <Bold>Find matches:</Bold>{' '}
+      <Bold>Match:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
       <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
       <Emoji>✅</Emoji>
@@ -497,8 +497,7 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'bentoBoxPuzzle' }} />
-            の明確な法則
+            The formal rules of <H args={{ name: 'bentoBoxPuzzle' }} />
           </>
         ),
         type: 'summary',
@@ -511,9 +510,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        の明確な法則をまとめてみよう。
+                        Here are the formal rules of{' '}
+                        <H args={{ name: 'bentoBoxPuzzle' }} />. There are{' '}
+                        <Italic>four steps</Italic>:
                       </P>
                     </>
                   )
@@ -527,7 +526,7 @@ export default () => (
                   type: 'devil',
                   children: (
                     <>
-                      <P>では、それぞれのステップについて解説していくぞ。</P>
+                      <P>Now, let’s talk about each step!</P>
                     </>
                   )
                 }
