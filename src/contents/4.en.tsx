@@ -5,7 +5,8 @@ import {
   HighlightBold,
   Highlight,
   Hr,
-  Bold
+  Bold,
+  Italic
 } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
 import BubbleQuotes from 'src/components/BubbleQuotes'
@@ -153,7 +154,7 @@ export default () => (
         )
       },
       {
-        title: <>下のふたつの料理が同じの場合</>,
+        title: <>If the bottom two items are the same</>,
         content: (
           <>
             <BubbleQuotes
@@ -163,21 +164,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        じゃあ説明しよう。まず、
-                        <HighlightBold>
-                          下のふたつの料理を比べてみる
-                        </HighlightBold>
-                        。
+                        Let me explain. First,{' '}
+                        <Highlight>you compare the bottom two items</Highlight>.
                       </P>
                       <P>
                         <Highlight>
-                          もし下のふたつの料理が
-                          <HighlightBold>同じ</HighlightBold>なら、
-                          <H args={{ name: 'play' }} />
-                          したときに<HighlightBold>上にある</HighlightBold>
-                          料理が残る
+                          If the bottom two items are the <Italic>same</Italic>
                         </Highlight>
-                        んだ。
+                        , then when you{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> it,{' '}
+                        <Highlight>
+                          we’re left with the <Italic>top item</Italic>
+                        </Highlight>{' '}
+                        at the end.
                       </P>
                     </>
                   )
@@ -185,22 +184,26 @@ export default () => (
               ]}
             />
             <R.Vmkg>
-              下の料理が同じ (両方とも <EmojiWithText letter="a" />)
+              The bottom two items are the same
+              <br />
+              (Both <EmojiWithText letter="a" />)
             </R.Vmkg>
             <ExpressionRunnerSeparator />
             <R.Osqo>
-              上にあった
-              <EmojiWithText letter="b" /> が残る
+              We’re left with the <EmojiWithText letter="b" />,<br />
+              which was on the top
             </R.Osqo>
             <Hr />
             <R.Wtup>
-              下の料理が同じ (両方とも <EmojiWithText letter="f" />)
+              The bottom two items are the same
+              <br />
+              (Both <EmojiWithText letter="f" />)
             </R.Wtup>
             <ExpressionRunnerSeparator />
             <R.Weoz>
-              上にあった
-              <EmojiWithText letter="g" /> と
-              <EmojiWithText letter="o" /> が残る
+              We’re left with <EmojiWithText letter="g" /> and{' '}
+              <EmojiWithText letter="o" />,<br />
+              which were on the top
             </R.Weoz>
             <BubbleQuotes
               quotes={[
@@ -209,8 +212,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、以下が <H args={{ name: 'yesNoQuiz' }} />
-                        の1問目の答えだ。
+                        So this is the solution for the first{' '}
+                        <H args={{ name: 'yesNoQuiz' }} />:
                       </P>
                     </>
                   )
@@ -218,18 +221,20 @@ export default () => (
               ]}
             />
             <R.Dogu>
-              下の料理が同じ (両方とも
-              <EmojiWithText letter="k" />)
+              The bottom two items are the same
+              <br />
+              (Both <EmojiWithText letter="k" />)
             </R.Dogu>
             <ExpressionRunnerSeparator />
             <R.Vvjn>
-              上にあった <EmojiWithText letter="l" /> が残る
+              We’re left with the <EmojiWithText letter="l" />,<br />
+              which was on the top
             </R.Vvjn>
           </>
         )
       },
       {
-        title: <>下のふたつの料理が異なる場合</>,
+        title: <>If the bottom two items are different</>,
         content: (
           <>
             <BubbleQuotes
@@ -239,20 +244,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        次に、
-                        <HighlightBold>
-                          下のふたつの料理が異なる場合
-                        </HighlightBold>
-                        。
+                        Now, let’s talk about the case where{' '}
+                        <Highlight>
+                          the bottom two items are different
+                        </Highlight>
+                        .
                       </P>
                       <P>
+                        In this case, when you{' '}
+                        <H args={{ name: 'play', lowerCase: true }} /> it,{' '}
                         <Highlight>
-                          この場合は、
-                          <H args={{ name: 'play' }} />
-                          したときに<HighlightBold>右下にある</HighlightBold>
-                          料理が残る
-                        </Highlight>
-                        んだ。
+                          we’re left with the <Italic>bottom right item</Italic>
+                        </Highlight>{' '}
+                        at the end.
                       </P>
                     </>
                   )
@@ -260,21 +264,24 @@ export default () => (
               ]}
             />
             <R.Nplf>
-              下の料理が異なる (<EmojiForLetter letter="c" /> と{' '}
-              <EmojiForLetter letter="d" />)
+              The bottom two items are different
+              <br />
+              (<EmojiForLetter letter="c" /> and <EmojiForLetter letter="d" />)
             </R.Nplf>
             <ExpressionRunnerSeparator />
             <R.Bgfl>
-              右下にあった <EmojiWithText letter="d" /> が残る
+              We’re left with the <EmojiWithText letter="d" />,<br />
+              which was in the bottom right
             </R.Bgfl>
             <Hr />
             <R.Immq>
-              下の料理が異なる (<EmojiForLetter letter="h" /> と{' '}
-              <EmojiForLetter letter="i" />)
+              The bottom two items are different (<EmojiForLetter letter="h" />{' '}
+              and <EmojiForLetter letter="i" />)
             </R.Immq>
             <ExpressionRunnerSeparator />
             <R.Cpkp>
-              右下にあった <EmojiWithText letter="i" /> が残る
+              We’re left with the <EmojiWithText letter="i" />,<br />
+              which was in the bottom right
             </R.Cpkp>
             <BubbleQuotes
               quotes={[
@@ -283,8 +290,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、以下が <H args={{ name: 'yesNoQuiz' }} />
-                        の2問目の答えだ。
+                        So this is the solution for the second{' '}
+                        <H args={{ name: 'yesNoQuiz' }} />:
                       </P>
                     </>
                   )
@@ -292,12 +299,13 @@ export default () => (
               ]}
             />
             <R.Cowm>
-              下の料理が異なる (<EmojiForLetter letter="k" /> と{' '}
-              <EmojiForLetter letter="m" />)
+              The bottom two items are different (<EmojiForLetter letter="k" />{' '}
+              and <EmojiForLetter letter="m" />)
             </R.Cowm>
             <ExpressionRunnerSeparator />
             <R.Ozxi>
-              右下にあった <EmojiWithText letter="m" /> が残る
+              We’re left with the <EmojiWithText letter="m" />,<br />
+              which was in the bottom right
             </R.Ozxi>
             <BubbleQuotes
               quotes={[
@@ -305,7 +313,7 @@ export default () => (
                   type: 'happy',
                   children: (
                     <>
-                      <P>どうだ、これが正解だろう！</P>
+                      <P>This has to be the solution! Am I correct?</P>
                     </>
                   )
                 }
