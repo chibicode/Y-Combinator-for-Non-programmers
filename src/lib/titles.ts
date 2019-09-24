@@ -19,7 +19,7 @@ export const episodeTitles = {
     1: 'Mathboxes',
     2: 'The “Repeat” Feature',
     3: 'Lunchboxes',
-    4: '?',
+    4: 'The Lunchbox Rules',
     5: '?',
     6: '?',
     7: '?',
