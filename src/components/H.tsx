@@ -61,7 +61,7 @@ interface HProps {
         includeTwitter?: boolean
       }
     | { name: 'pressNext' }
-    | { name: 'yesNoQuiz' }
+    | { name: 'yesNoQuiz'; postfix?: string }
     | { name: 'yesNoQuizCorrect' }
     | { name: 'yesNoQuizIncorrect' }
     | { name: 'yesNoQuizYes'; hideText?: boolean }
@@ -257,7 +257,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
     if (locale === 'en') {
       return (
         <>
-          <Emoji>👍</Emoji> Yes / <Emoji>👎</Emoji> No Quiz
+          <Emoji>👍</Emoji> Yes / <Emoji>👎</Emoji> No Quiz{args.postfix}
         </>
       )
     } else {

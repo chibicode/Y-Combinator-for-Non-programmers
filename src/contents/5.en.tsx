@@ -223,13 +223,13 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そうだな。そしてさらに、
-                        <Highlight>
-                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や{' '}
-                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-                          という数字が左端に表示されている
-                        </Highlight>
-                        のに気づいたかな？
+                        Right. Also, did you realize that{' '}
+                        <Italic>
+                          there are numbers like{' '}
+                          <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
+                          <InlinePrioritiesLabel>2</InlinePrioritiesLabel> on
+                          the left edge?
+                        </Italic>
                       </P>
                     </>
                   )
@@ -237,11 +237,11 @@ export default () => (
               ]}
             />
             <R.Cvtc>
-              <InlinePrioritiesLabel>1</InlinePrioritiesLabel> や{' '}
+              There are numbers like{' '}
+              <InlinePrioritiesLabel>1</InlinePrioritiesLabel> and{' '}
               <InlinePrioritiesLabel>2</InlinePrioritiesLabel>
-              という数字が
               <br />
-              左端に表示されているのにも注目
+              on the left edge
             </R.Cvtc>
             <BubbleQuotes
               quotes={[
@@ -249,8 +249,8 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>たしかに。</P>
-                      <P>こういうパズルは、どうやって解けばいいんだろう？</P>
+                      <P>That’s true…</P>
+                      <P>How should we solve puzzles like this?</P>
                     </>
                   )
                 },
@@ -259,18 +259,19 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ではまず、こういった3段の
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        の解き方を説明しよう。
+                        <Bold>So, first:</Bold>{' '}
+                        <Italic>
+                          I’ll explain how to solve lunchbox puzzles with 3
+                          rows.
+                        </Italic>
                       </P>
                       <P>
-                        そして
-                        <Highlight>
-                          解き方を説明した後に、
-                          <H args={{ name: 'yesNoQuiz' }} />
-                          を出題し、お前たちに自力で解いてもらう
-                        </Highlight>
-                        ぞ。
+                        <Bold>Then:</Bold>{' '}
+                        <Italic>
+                          I will give you{' '}
+                          <H args={{ name: 'yesNoQuiz', postfix: 'zes' }} /> to
+                          solve.
+                        </Italic>
                       </P>
                     </>
                   )
@@ -279,7 +280,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>よし、やってやる！</P>
+                      <P>Ok, sounds good!</P>
                     </>
                   )
                 }
