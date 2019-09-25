@@ -922,28 +922,39 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'fastForward' }} /> で見てみましょう
+            Let’s <H args={{ name: 'fastForward' }} />
           </>
         ),
         content: (
           <>
             <P>
-              では、最初から最後まで
-              <H args={{ name: 'fastForward' }} /> で見てみましょう。
-              <H args={{ name: 'fastForward' }} /> 機能を使うと、
-              <Highlight>各ステップを自動で見ていくことができます。</Highlight>
+              To wrap up, let’s go through the entire process{' '}
+              <Italic>from the beginning to the end</Italic>.{' '}
+              <Highlight>
+                We’ll be using the <H args={{ name: 'fastForward' }} /> button
+              </Highlight>
+              , which automatically goes through each step.
             </P>
             <EmojiSeparator
-              emojis={['⏩', '🍱', '⏩']}
-              description={<>早送りすると、各ステップが自動で見れる</>}
+              emojis={['▶️', '🍱', '▶️']}
+              description={
+                <>
+                  The <H args={{ name: 'fastForward' }} /> button:
+                  <br />
+                  Automatically goes through each step
+                </>
+              }
             />
             <P>
-              こちらは、上にひとつの料理がある例です。
+              Here’s the previous example with <Italic>one</Italic> item on the
+              top.{' '}
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Wunw />
             <P>
-              こちらは、上にふたつの料理がある例です。
+              Here’s the previous example with <Italic>two</Italic> item on the
+              top.{' '}
+              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
               <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Hluq />
@@ -1106,7 +1117,7 @@ export default () => (
               <H args={{ name: 'fastForward' }} /> で見てみましょう。
             </P>
             <EmojiSeparator
-              emojis={['⏩', '🍱', '⏩']}
+              emojis={['▶️', '🍱', '▶️']}
               description={<>早送りで復習しよう！</>}
             />
             <P>

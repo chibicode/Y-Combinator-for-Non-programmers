@@ -108,6 +108,7 @@ import Emoji1f9ee from 'src/components/Twemoji/1f9ee'
 import Emoji2198 from 'src/components/Twemoji/2198'
 import Emoji21a9 from 'src/components/Twemoji/21a9'
 import Emoji23e9 from 'src/components/Twemoji/23e9'
+import Emoji23ed from 'src/components/Twemoji/23ed'
 import Emoji23f8 from 'src/components/Twemoji/23f8'
 import Emoji25b6 from 'src/components/Twemoji/25b6'
 import Emoji26a0 from 'src/components/Twemoji/26a0'
@@ -246,6 +247,7 @@ export default {
   '2198': Emoji2198,
   '21a9': Emoji21a9,
   '23e9': Emoji23e9,
+  '23ed': Emoji23ed,
   '23f8': Emoji23f8,
   '25b6': Emoji25b6,
   '26a0': Emoji26a0,

@@ -410,7 +410,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            {args.lowerCase ? 'r' : 'R'}un <Emoji>▶️</Emoji>
+            {args.lowerCase ? 'r' : 'R'}un <Emoji>⏭</Emoji>
           </HighlightBold>
         </>
       )
@@ -429,7 +429,7 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <HighlightBold highlightType={highlightType}>
-            Play <Emoji>⏩</Emoji>
+            Play <Emoji>▶️</Emoji>
           </HighlightBold>
         </>
       )
@@ -680,8 +680,27 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
       return (
         <>
           <Highlight>
-            Press <H args={{ name: 'fastForward' }} />:
+            Press <H args={{ name: 'fastForward' }} />
+            {args.mentionRightArrow || args.skippable
+              ? '.'
+              : args.skipColon
+              ? ''
+              : args.girl
+              ? '!'
+              : ':'}
           </Highlight>
+          {args.mentionRightArrow && (
+            <>
+              {' '}
+              <H args={{ name: 'mentionRightArrow' }} />
+            </>
+          )}
+          {args.skippable && (
+            <>
+              {' '}
+              <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+            </>
+          )}
         </>
       )
     } else {
@@ -698,9 +717,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
               ? '！'
               : ':'}
           </Highlight>
-          {args.mentionRightArrow && <H args={{ name: 'mentionRightArrow' }} />}
+          {args.mentionRightArrow && (
+            <>
+              <H args={{ name: 'mentionRightArrow' }} />
+            </>
+          )}
           {args.skippable && (
-            <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+            <>
+              <H args={{ name: 'fastForwardSkippableToTheEnd' }} />
+            </>
           )}
         </>
       )
@@ -1068,7 +1093,15 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
   }
   if (args.name === 'mentionRightArrow') {
     if (locale === 'en') {
-      return <>?</>
+      return (
+        <>
+          (Or{' '}
+          <Highlight highlightType="pink">
+            press <Emoji>➡️</Emoji>
+          </Highlight>{' '}
+          to step through manually.)
+        </>
+      )
     } else {
       return (
         <>
