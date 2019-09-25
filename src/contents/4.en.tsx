@@ -538,35 +538,45 @@ export default () => (
       {
         title: (
           <>
-            1. 印をつける{' '}
-            <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+            1. Label <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />
           </>
         ),
         content: (
           <>
-            <P>
-              それぞれのステップについて、 こちらの
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              を使って説明していきます。
-            </P>
+            <P>We’ll use this lunchbox to explain each step:</P>
             <R.Ilpo />
             <P>
-              まず、
-              <HighlightBold>
-                上の料理には{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                、左の料理には{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                、右の料理には{' '}
-                <BottomRightBadge
-                  inline
-                  bottomRightBadgeType="funcBound"
-                />{' '}
-                の印をつけます。
-              </HighlightBold>
+              First,{' '}
+              <Highlight>
+                we <Bold>label</Bold>
+              </Highlight>
+              :
             </P>
+            <Ul>
+              <UlLi>
+                <Highlight>
+                  The <Bold>top</Bold> items as{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
+                  (for “<Bold>T</Bold>op”)
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  The <Bold>left</Bold> items as{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+                  (for “<Bold>L</Bold>eft”)
+                </Highlight>
+              </UlLi>
+              <UlLi>
+                <Highlight>
+                  The <Bold>right</Bold> items as{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
+                  (for “<Bold>R</Bold>ight”)
+                </Highlight>
+              </UlLi>
+            </Ul>
             <EmojiSeparator
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
@@ -575,15 +585,15 @@ export default () => (
               ]}
               description={
                 <>
+                  Label items as{' '}
                   <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                   <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                  の印をつける
                 </>
               }
             />
             <P>
-              <H args={{ name: 'pressNext' }} />
+              Let’s see it in action. <H args={{ name: 'pressNext' }} />
             </P>
             <R.Ozbe />
             <BubbleQuotes
@@ -593,24 +603,23 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <EmojiWithText letter="b" />に{' '}
+                        The <EmojiWithText letter="b" /> is labeled as{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
-                        />{' '}
-                        の印が、下の
-                        <EmojiWithText letter="a" />
-                        ふたつにそれぞれ{' '}
+                        />
+                        , and <EmojiWithText letter="a" /> on the bottom are
+                        labeled as{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
                         />{' '}
-                        と{' '}
+                        and{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
-                        />{' '}
-                        の印がついた！
+                        />
+                        !
                       </P>
                     </>
                   )

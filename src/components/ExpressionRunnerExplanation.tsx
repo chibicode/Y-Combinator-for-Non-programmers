@@ -26,7 +26,7 @@ interface ExpressionRunnerExplanationProps {
 const allAtOnce = (hideFuncUnboundBadge?: boolean) =>
   locale === 'en' ? (
     <>
-      Showing <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
+      Label items as <BottomRightBadge bottomRightBadgeType="callArg" inline />{' '}
       <BottomRightBadge bottomRightBadgeType="funcBound" inline />{' '}
       {!hideFuncUnboundBadge && (
         <>
