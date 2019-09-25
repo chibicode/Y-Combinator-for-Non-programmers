@@ -8,6 +8,7 @@ import {
   Bold
 } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
@@ -62,13 +63,17 @@ export const BasicRules = ({
       3. <Bold>コピーする:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      <TopLeftBadgeWrapper topLeftBadgeType="match">
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      </TopLeftBadgeWrapper>
     </P>
     <R.Qoms>
       <Bold>コピーする:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      <TopLeftBadgeWrapper topLeftBadgeType="match">
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      </TopLeftBadgeWrapper>
     </R.Qoms>
     <P>
       4. <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
@@ -680,7 +685,9 @@ export default () => (
             3. <Bold>コピーする:</Bold>{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <Emoji>↘️</Emoji>{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            <TopLeftBadgeWrapper topLeftBadgeType="match">
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            </TopLeftBadgeWrapper>
           </>
         ),
         content: (
@@ -698,7 +705,9 @@ export default () => (
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <Emoji>↘️</Emoji>,
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <TopLeftBadgeWrapper topLeftBadgeType="match">
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                </TopLeftBadgeWrapper>
               ]}
               description={
                 <>

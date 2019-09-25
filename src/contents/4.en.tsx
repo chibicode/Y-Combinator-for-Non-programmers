@@ -11,6 +11,7 @@ import {
   UlLi
 } from 'src/components/ContentTags'
 import BottomRightBadge from 'src/components/BottomRightBadge'
+import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import Emoji from 'src/components/Emoji'
@@ -65,13 +66,17 @@ export const BasicRules = ({
       3. <Bold>Copy:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      <TopLeftBadgeWrapper topLeftBadgeType="match">
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      </TopLeftBadgeWrapper>
     </P>
     <R.Qoms>
       <Bold>Copy:</Bold>{' '}
       <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
       <Emoji>↘️</Emoji>{' '}
-      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      <TopLeftBadgeWrapper topLeftBadgeType="match">
+        <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      </TopLeftBadgeWrapper>
     </R.Qoms>
     <P>
       4. <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
@@ -640,7 +645,7 @@ export default () => (
         content: (
           <>
             <P>
-              Next,{' '}
+              Second,{' '}
               <Highlight>
                 we check to see if some of{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
@@ -702,35 +707,41 @@ export default () => (
       {
         title: (
           <>
-            3. <Bold>コピーする:</Bold>{' '}
+            3. <Bold>Copy:</Bold>{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <Emoji>↘️</Emoji>{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            <TopLeftBadgeWrapper topLeftBadgeType="match">
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+            </TopLeftBadgeWrapper>
           </>
         ),
         content: (
           <>
             <P>
-              続いて、
-              <HighlightBold>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                の料理を、一致した{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                の部分にコピーします。
-              </HighlightBold>
+              Third,{' '}
+              <Highlight>
+                we <Bold>copy</Bold>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                ’s to where the <Italic>matched</Italic>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                ’s are.
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />,
                 <Emoji>↘️</Emoji>,
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <TopLeftBadgeWrapper topLeftBadgeType="match">
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                </TopLeftBadgeWrapper>
               ]}
               description={
                 <>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                  を一致した{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                  にコピー
+                  Copy{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                  ’s to <Italic>matched</Italic>{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  ’s
                 </>
               }
             />
@@ -745,17 +756,19 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        The <EmojiWithText letter="b" /> (labeled as{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
                         />
-                        の
-                        <EmojiWithText letter="b" />が
-                        <BottomRightBadge
-                          inline
-                          bottomRightBadgeType="funcBound"
-                        />
-                        の部分にコピーされた！
+                        ) is copied to where the matched{' '}
+                        <TopLeftBadgeWrapper topLeftBadgeType="match">
+                          <BottomRightBadge
+                            inline
+                            bottomRightBadgeType="funcBound"
+                          />
+                        </TopLeftBadgeWrapper>{' '}
+                        is!
                       </P>
                     </>
                   )
@@ -768,7 +781,7 @@ export default () => (
       {
         title: (
           <>
-            4. <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
+            4. <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
             <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcArg" />
           </>
@@ -776,12 +789,15 @@ export default () => (
         content: (
           <>
             <P>
-              最後に、
-              <HighlightBold>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                が消えます。
-              </HighlightBold>
+              Finally,{' '}
+              <Highlight>
+                we <Bold>remove</Bold>{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                ’s and{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                ’s
+              </Highlight>
+              .
             </P>
             <EmojiSeparator
               nodes={[
@@ -791,9 +807,11 @@ export default () => (
               ]}
               description={
                 <>
-                  <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                  が消える
+                  Remove{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                  ’s and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                  ’s.
                 </>
               }
             />
@@ -811,13 +829,13 @@ export default () => (
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="callArg"
-                        />{' '}
-                        と{' '}
+                        />
+                        ’s and{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />{' '}
-                        が <Emoji>💥</Emoji> になった！
+                        />
+                        ’s have turned into <Emoji>💥</Emoji>!
                       </P>
                     </>
                   )
@@ -825,12 +843,12 @@ export default () => (
               ]}
             />
             <P>
-              そして、最終的に
-              <EmojiWithText letter="b" /> だけになります。
+              After removing these, we’re left with just the{' '}
+              <EmojiWithText letter="b" />.
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Kbnn />
-            <P>以上です！</P>
+            <P>That’s it!</P>
           </>
         )
       },

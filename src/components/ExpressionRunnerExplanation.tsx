@@ -212,10 +212,11 @@ const Explanation = ({
       if (locale === 'en') {
         return (
           <>
-            Matched <TopLeftBadge topLeftBadgeType="match" inline />{' '}
-            <BottomRightBadge bottomRightBadgeType="funcBound" inline /> becomes
-            the same as{' '}
-            <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            Copy <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            ’s to where the matched{' '}
+            <TopLeftBadge topLeftBadgeType="match" inline />{' '}
+            <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            ’s are
           </>
         )
       } else {
@@ -235,8 +236,9 @@ const Explanation = ({
         return (
           <>
             <Emoji>💥</Emoji> Remove{' '}
-            <BottomRightBadge bottomRightBadgeType="callArg" inline /> and{' '}
-            <BottomRightBadge bottomRightBadgeType="funcArg" inline />
+            <BottomRightBadge bottomRightBadgeType="callArg" inline />
+            ’s and <BottomRightBadge bottomRightBadgeType="funcArg" inline />
+            ’s
           </>
         )
       } else {
