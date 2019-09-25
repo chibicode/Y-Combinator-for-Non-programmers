@@ -172,9 +172,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ここからは、より複雑な
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        を解いてもらおう。たとえば、こういうパズルだ。
+                        From now on, you’ll be solving much harder puzzles like
+                        this one:
                       </P>
                     </>
                   )
@@ -182,8 +181,8 @@ export default () => (
               ]}
             />
             <R.Cvtc>
-              3段の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
+              <H args={{ name: 'bentoBoxPuzzle', capitalize: true }} /> with{' '}
+              <Italic>3 rows</Italic>
             </R.Cvtc>
             <BubbleQuotes
               quotes={[
@@ -192,14 +191,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        これは…
-                        <Highlight>
-                          今までの弁当箱は縦に2段しかなかったけれど、
-                          <HighlightBold>
-                            この弁当箱には縦に3段ある
-                          </HighlightBold>
-                          ぞ。
-                        </Highlight>
+                        Hmm… previously, we’ve only dealt with lunchboxes with 2
+                        rows.
+                      </P>
+                      <P>
+                        But <Italic>this one has 3 rows</Italic> vertically.
                       </P>
                     </>
                   )
@@ -209,21 +205,15 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        そして、
-                        <HighlightBold>
-                          一番下には
-                          <EmojiWithText letter="a" />、
-                          <EmojiWithText letter="b" />、
-                          <EmojiWithText letter="a" />
-                          と横に3つの料理が並んでいる。
-                        </HighlightBold>
+                        Also,{' '}
+                        <Italic>there are 3 items on the bottom row</Italic>:{' '}
+                        <EmojiWithText letter="a" />, a{' '}
+                        <EmojiWithText letter="b" />, and another{' '}
+                        <EmojiWithText letter="a" />.
                       </P>
                       <P>
-                        今までの弁当箱では、
-                        <Highlight>
-                          横に3つの料理が並んだことはなかった
-                        </Highlight>
-                        。
+                        None of the lunchboxes we saw on the last page had 3
+                        items in one row.
                       </P>
                     </>
                   )
