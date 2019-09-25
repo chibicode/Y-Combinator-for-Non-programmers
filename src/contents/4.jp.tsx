@@ -1040,13 +1040,15 @@ export default () => (
                 コピーはせずに、ただ{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                を消すだけです。
+                を消します。
               </HighlightBold>
+            </P>
+            <P>
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Gwtp />
             <P>
-              そして、最終的に
+              この場合は、最終的に
               <EmojiWithText letter="d" />
               だけになります。
               <H args={{ name: 'pressNext' }} />

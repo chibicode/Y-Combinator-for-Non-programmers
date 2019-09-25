@@ -2,7 +2,6 @@ import React from 'react'
 import EpisodeCardList from 'src/components/EpisodeCardList'
 import {
   P,
-  HighlightBold,
   Highlight,
   Hr,
   Bold,
@@ -99,12 +98,12 @@ export const Unmatched = () => (
       If none of <BottomRightBadge inline bottomRightBadgeType="funcArg" />
       ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
       ’s match,{' '}
-      <HighlightBold>
+      <Highlight>
         don’t do the copy step and simply remove{' '}
         <BottomRightBadge inline bottomRightBadgeType="callArg" />
         ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
         ’s
-      </HighlightBold>
+      </Highlight>
       .
     </P>
     <R.Jwzh>
@@ -123,7 +122,6 @@ export const Unmatched = () => (
 
 export default () => (
   <EpisodeCardList
-    underConstruction
     cards={[
       {
         title: <>Success?</>,
@@ -952,10 +950,8 @@ export default () => (
             </P>
             <R.Wunw />
             <P>
-              Here’s the previous example with <Italic>two</Italic> item on the
-              top.{' '}
-              <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
-              <H args={{ name: 'pressFastForward' }} />
+              Here’s the previous example with <Italic>two</Italic> items on the
+              top. <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Hluq />
           </>
@@ -970,7 +966,7 @@ export default () => (
         ),
         content: (
           <>
-            <P>というわけで、ここまでをまとめてみましょう。</P>
+            <P>Let’s recap what we’ve learned so far:</P>
             <BasicRules />
             <BubbleQuotes
               quotes={[
@@ -978,7 +974,7 @@ export default () => (
                   type: 'surprised',
                   children: (
                     <>
-                      <P>なるほど、そういう仕組みになっていたのか！</P>
+                      <P>I see, now I understand fully what was going on.</P>
                     </>
                   )
                 },
@@ -987,11 +983,11 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        うむ。そして、
-                        <Highlight>
-                          こうやってルールを明確にすれば、パズルが複雑になっても応用が効く
-                        </Highlight>
-                        んだ。
+                        Good. And{' '}
+                        <Italic>
+                          by formalizing the rules in detail like this, we’ll be
+                          able to solve more complex puzzles later.
+                        </Italic>
                       </P>
                     </>
                   )
@@ -1002,7 +998,7 @@ export default () => (
         )
       },
       {
-        title: <>一致しなかったら？</>,
+        title: <>What if there’s no match?</>,
         content: (
           <>
             <EmojiSeparator
@@ -1013,9 +1009,13 @@ export default () => (
               ]}
               description={
                 <>
-                  <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                  が一致しなかったら？
+                  What if there’s no match
+                  <br />
+                  between{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                  ’s and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  ’s?
                 </>
               }
             />
@@ -1026,33 +1026,34 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、
-                        <HighlightBold>
-                          もし{' '}
+                        But wait.{' '}
+                        <Italic>
+                          What happens if{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcArg"
-                          />{' '}
-                          と{' '}
+                          />
+                          ’s and{' '}
                           <BottomRightBadge
                             inline
                             bottomRightBadgeType="funcBound"
-                          />{' '}
-                          が一致しなかったらどうするの？
-                        </HighlightBold>
+                          />
+                          ’s don’t match?
+                        </Italic>{' '}
+                        <Emoji>❌</Emoji>
                       </P>
                       <P>
-                        たとえば下の弁当箱の場合は、
+                        For example, the lunchbox below has no match among{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
-                        />{' '}
-                        と{' '}
+                        />
+                        ’s and
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
-                        />{' '}
-                        が一致しないよね。
+                        />
+                        ’s.
                       </P>
                     </>
                   )
@@ -1069,31 +1070,33 @@ export default () => (
       {
         title: (
           <>
-            コピーはせず、
-            <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-            を消すだけ
+            Don’t copy, just remove{' '}
+            <BottomRightBadge inline bottomRightBadgeType="callArg" /> and{' '}
+            <BottomRightBadge inline bottomRightBadgeType="funcArg" />
           </>
         ),
         content: (
           <>
             <P>
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-              が一致しない場合は、
-              <HighlightBold>
-                コピーはせずに、ただ{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                を消すだけです。
-              </HighlightBold>
+              <Bold>Answer:</Bold> If{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              ’s and{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              ’s don’t match,{' '}
+              <Highlight>
+                <Italic>skip</Italic> the “copy” step, and just remove{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+                ’s and{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                ’s.
+              </Highlight>
+            </P>
+            <P>
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Gwtp />
             <P>
-              そして、最終的に
-              <EmojiWithText letter="d" />
-              だけになります。
+              In this case, we’re left with the <EmojiWithText letter="d" />.{' '}
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Grla />
@@ -1103,31 +1106,38 @@ export default () => (
       {
         title: (
           <>
-            <H args={{ name: 'fastForward' }} />
-            で見てみましょう
+            Let’s <H args={{ name: 'fastForward' }} />
           </>
         ),
         content: (
           <>
             <P>
-              復習のために、
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
+              <Bold>Review Time:</Bold> Let’s use the{' '}
+              <H args={{ name: 'fastForward' }} /> button again, this time for
+              cases where{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              ’s and{' '}
               <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-              が一致しなかった場合も、最初から最後まで
-              <H args={{ name: 'fastForward' }} /> で見てみましょう。
+              ’s don’t match.
             </P>
             <EmojiSeparator
               emojis={['▶️', '🍱', '▶️']}
-              description={<>早送りで復習しよう！</>}
+              description={
+                <>
+                  Let’s use the <H args={{ name: 'fastForward' }} /> button
+                  again
+                </>
+              }
             />
             <P>
-              こちらは、上にひとつの料理がある例です。
+              Here’s the previous example with <Italic>one</Italic> item on the
+              top.{' '}
               <H args={{ name: 'pressFastForward', mentionRightArrow: true }} />
             </P>
             <R.Jbam />
             <P>
-              こちらは、上にふたつの料理がある例です。
-              <H args={{ name: 'pressFastForward' }} />
+              Here’s the previous example with <Italic>two</Italic> items on the
+              top. <H args={{ name: 'pressFastForward' }} />
             </P>
             <R.Zuus />
           </>
@@ -1147,7 +1157,7 @@ export default () => (
         )
       },
       {
-        title: <>以上です！</>,
+        title: <>That’s it!</>,
         content: (
           <>
             <BubbleQuotes
@@ -1157,9 +1167,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        以上が、
-                        <H args={{ name: 'bentoBoxPuzzle' }} />
-                        の明確な法則だ。理解できたかな？
+                        That’s it for the <Bold>formal</Bold> rules of{' '}
+                        <H args={{ name: 'bentoBoxPuzzle' }} />.
                       </P>
                     </>
                   )
@@ -1168,7 +1177,10 @@ export default () => (
                   type: 'thinking',
                   children: (
                     <>
-                      <P>な、なんとか…でも、まだ覚えきれてないなあ。</P>
+                      <P>
+                        Alright. I understood them,{' '}
+                        <Italic>but I haven’t fully memorized them yet.</Italic>
+                      </P>
                     </>
                   )
                 },
@@ -1178,7 +1190,8 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          法則を覚えきれていなくても、次回また復習するので大丈夫だ。
+                          Don’t worry if you haven’t memorized them. We’ll
+                          review them again when we need them.
                         </Highlight>
                       </P>
                     </>
@@ -1189,8 +1202,8 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        ホッ、よかった… (悪魔って意外と優しいんじゃ？
-                        <Emoji>🤔</Emoji>)
+                        Oh, that’s good to hear. (Maybe the devil isn’t so evil
+                        after all… <Emoji>🤔</Emoji>)
                       </P>
                     </>
                   )
@@ -1201,9 +1214,11 @@ export default () => (
                     <>
                       <P>
                         <Highlight>
-                          次回では、もっと複雑なパズルを出題する。
-                        </Highlight>
-                        計算箱を返してほしかったら、解いてみせるんだな！
+                          On the next page, I’ll give you more challenging
+                          puzzles.
+                        </Highlight>{' '}
+                        If you want your mathboxes back, you better solve all of
+                        them!
                       </P>
                     </>
                   )
@@ -1212,7 +1227,7 @@ export default () => (
                   type: 'brave',
                   children: (
                     <>
-                      <P>望むところだ！</P>
+                      <P>Alright, bring it on!</P>
                     </>
                   )
                 }
