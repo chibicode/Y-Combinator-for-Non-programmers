@@ -357,7 +357,7 @@ export default () => (
                           <InlinePrioritiesLabel revert>
                             1
                           </InlinePrioritiesLabel>{' '}
-                          のペアの部分に注目する
+                          のペアの部分、すなわち下の2つの段に注目する
                         </Highlight>
                         ということだ。
                       </P>

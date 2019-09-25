@@ -74,7 +74,7 @@ const Explanation = ({
       if (locale === 'en') {
         return (
           <>
-            Look at the pair of{' '}
+            Focus on the pair of{' '}
             <InlinePrioritiesLabel revert>
               {activePriority}
             </InlinePrioritiesLabel>

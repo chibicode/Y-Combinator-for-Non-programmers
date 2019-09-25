@@ -292,19 +292,22 @@ export default () => (
       {
         title: (
           <>
-            先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel> のペアに注目
+            First, focus on the pair of{' '}
+            <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
           </>
         ),
         content: (
           <>
             <P>
-              3段の
-              <H args={{ name: 'bentoBoxPuzzle' }} />
-              を解く際には、まず
-              <HighlightBold>
-                左上と左下に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                の印がある部分に注目します。
-              </HighlightBold>
+              <Bold>
+                The first step in solving{' '}
+                <H args={{ name: 'bentoBoxPuzzle', indefinite: true }} /> with 3
+                rows:
+              </Bold>{' '}
+              <Highlight>
+                Focus on the pair of{' '}
+                <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s.
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -314,13 +317,24 @@ export default () => (
               ]}
               description={
                 <>
-                  先に <InlinePrioritiesLabel>1</InlinePrioritiesLabel>{' '}
-                  のペアに注目
+                  Focus on the pair of{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel>’s
                 </>
               }
             />
             <P>
-              <H args={{ name: 'pressNext' }} />
+              <Bold>More specifically:</Bold>{' '}
+              <Highlight>
+                Take a look at the{' '}
+                <Italic>
+                  sections that have a{' '}
+                  <InlinePrioritiesLabel>1</InlinePrioritiesLabel> on its
+                  top-left corner or bottom-left corner.
+                </Italic>
+              </Highlight>
+            </P>
+            <P>
+              Let’s see what that means. <H args={{ name: 'pressNext' }} />
             </P>
             <R.Aaov />
             <BubbleQuotes
