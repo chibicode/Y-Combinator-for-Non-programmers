@@ -179,14 +179,16 @@ const Explanation = ({
         return matchExists ? (
           <>
             There’s a match <TopLeftBadge topLeftBadgeType="match" inline />{' '}
-            between <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-            and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            among <BottomRightBadge bottomRightBadgeType="funcArg" inline />
+            ’s and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            ’s
           </>
         ) : (
           <>
             There’s no match <TopLeftBadge topLeftBadgeType="unmatch" inline />{' '}
-            between <BottomRightBadge bottomRightBadgeType="funcArg" inline />{' '}
-            and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            among <BottomRightBadge bottomRightBadgeType="funcArg" inline />
+            ’s and <BottomRightBadge bottomRightBadgeType="funcBound" inline />
+            ’s
           </>
         )
       } else {

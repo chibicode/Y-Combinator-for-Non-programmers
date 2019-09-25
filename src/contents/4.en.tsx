@@ -632,8 +632,7 @@ export default () => (
       {
         title: (
           <>
-            2. 一致チェック{' '}
-            <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
+            2. Match <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
             <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
             <Emoji>✅</Emoji>
           </>
@@ -641,13 +640,17 @@ export default () => (
         content: (
           <>
             <P>
-              続いて、
-              <HighlightBold>
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                が一致するかチェックし、一致した料理には、
-                <Emoji>✅</Emoji> を付けます。
-              </HighlightBold>
+              Next,{' '}
+              <Highlight>
+                we check to see if some of{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                ’s and{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                ’s <Bold>match</Bold>.{' '}
+                <Italic>
+                  If they match, add the <Emoji>✅</Emoji> sign.
+                </Italic>
+              </Highlight>
             </P>
             <EmojiSeparator
               nodes={[
@@ -657,9 +660,11 @@ export default () => (
               ]}
               description={
                 <>
-                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                  が一致したら <Emoji>✅</Emoji> をつける
+                  If some of{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+                  ’s and{' '}
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                  ’s match, add <Emoji>✅</Emoji>
                 </>
               }
             />
@@ -674,17 +679,17 @@ export default () => (
                   children: (
                     <>
                       <P>
+                        The <EmojiWithText letter="a" /> labeled as{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcArg"
                         />{' '}
-                        と{' '}
+                        and{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcBound"
                         />{' '}
-                        の<EmojiWithText letter="a" /> に <Emoji>✅</Emoji>{' '}
-                        がついた！
+                        now have a <Emoji>✅</Emoji> sign!
                       </P>
                     </>
                   )
