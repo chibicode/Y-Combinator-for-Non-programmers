@@ -853,7 +853,7 @@ export default () => (
         )
       },
       {
-        title: <>上にふたつの料理がある場合</>,
+        title: <>What if there are more than one items on the top?</>,
         content: (
           <>
             <BubbleQuotes
@@ -863,11 +863,9 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        では、たとえば下の例のように、
-                        <HighlightBold>
-                          上にふたつの料理がある場合
-                        </HighlightBold>
-                        はどうなるんだろう？
+                        <Bold>Question:</Bold> What happens if there are{' '}
+                        <Italic>more than one items on the top</Italic>, like
+                        the example below?
                       </P>
                     </>
                   )
@@ -875,45 +873,47 @@ export default () => (
               ]}
             />
             <R.Rakk>
-              上にふたつの料理がある
-              <br />(<EmojiWithText letter="g" /> と
+              There are two items on the top
+              <br />(<EmojiWithText letter="g" /> and{' '}
               <EmojiWithText letter="o" />)
             </R.Rakk>
             <P>
-              この場合、上にある
-              <EmojiWithText letter="g" /> と
-              <EmojiWithText letter="o" /> には
-              <HighlightBold>
-                両方とも{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                の印がつきます。
-              </HighlightBold>
+              <Bold>Answer:</Bold> In this case,{' '}
+              <Highlight>
+                both <EmojiWithText letter="g" /> and{' '}
+                <EmojiWithText letter="o" /> will be labeled as{' '}
+                <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              </Highlight>{' '}
+              (for “<Bold>T</Bold>op”).
             </P>
             <R.Ycxr>
-              両方とも{' '}
-              <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-              の印がつく
+              Both labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
             </R.Ycxr>
             <P>
-              そして、
-              <EmojiWithText letter="f" /> が一致したあとに…
+              Then, the <EmojiWithText letter="f" postfix="s" /> match{' '}
+              <Emoji>✅</Emoji>…
             </P>
             <R.Dkdt />
             <P>
-              <EmojiWithText letter="g" /> と
-              <EmojiWithText letter="o" /> が
-              <HighlightBold>両方ともコピーされます。</HighlightBold>
+              And therefore, both <EmojiWithText letter="g" /> and
+              <EmojiWithText letter="o" /> get copied to where the matched{' '}
+              <TopLeftBadgeWrapper topLeftBadgeType="match">
+                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+              </TopLeftBadgeWrapper>{' '}
+              is.
             </P>
             <R.Sxnt />
             <P>
-              最後に、
-              <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-              <BottomRightBadge inline bottomRightBadgeType="funcArg" /> が消え…
+              Finally,{' '}
+              <BottomRightBadge inline bottomRightBadgeType="callArg" />
+              ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+              ’s disappear…
             </P>
             <R.Issq />
             <P>
-              <EmojiWithText letter="g" /> と <EmojiWithText letter="o" />{' '}
-              が残るのです。
+              And we’re left with <EmojiWithText letter="g" /> and{' '}
+              <EmojiWithText letter="o" />.
             </P>
             <R.Thbw />
           </>
