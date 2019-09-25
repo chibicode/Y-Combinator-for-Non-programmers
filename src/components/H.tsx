@@ -72,6 +72,7 @@ interface HProps {
         name: 'bentoBoxPuzzle'
         capitalize?: true
         indefinite?: true
+        postfix?: string
       }
     | { name: 'next' }
     | { name: 'play'; lowerCase?: true }
@@ -375,7 +376,8 @@ const H = ({ args, highlightType, episodeNumberOverrides }: HProps) => {
             : args.capitalize
             ? 'The'
             : 'the'}{' '}
-          <Bold>“Lunchbox”</Bold> puzzle <Emoji>🍱</Emoji>
+          <Bold>“Lunchbox”</Bold> puzzle{args.postfix ? args.postfix : ''}{' '}
+          <Emoji>🍱</Emoji>
         </>
       )
     } else {
