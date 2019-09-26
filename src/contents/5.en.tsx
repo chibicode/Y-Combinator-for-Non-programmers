@@ -15,6 +15,7 @@ import {
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
+import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -525,7 +526,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Important:</Bold>{' '}
+              <Bold>Answer:</Bold>{' '}
               <Highlight>
                 You can ignore{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
@@ -546,44 +547,47 @@ export default () => (
                 </>
               }
             />
-            <P>前回も話した通り、続いて以下のステップを行いますが、</P>
+            <P>
+              <Bold>Why?</Bold> Take a look at the next steps:
+            </P>
             <Ul>
               <UlLi>
-                <Bold>一致チェック:</Bold>{' '}
+                <Bold>Match:</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
                 <Emoji>✅</Emoji>
               </UlLi>
               <UlLi>
-                <Bold>コピーする:</Bold>{' '}
+                <Bold>Copy:</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>↘️</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <TopLeftBadgeWrapper topLeftBadgeType="match">
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                </TopLeftBadgeWrapper>
               </UlLi>
               <UlLi>
-                <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
+                <Bold>Remove:</Bold> <Emoji>💥</Emoji>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
               </UlLi>
             </Ul>
             <P>
+              <Italic>
+                None of them involves{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+              </Italic>
+              .{' '}
               <Highlight>
-                どれも{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                は関係ありませんよね。だから、
-                <HighlightBold>
-                  次のいくつかのステップの間は{' '}
-                  <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />{' '}
-                  を無視していい
-                </HighlightBold>
-                のです。
+                So, while we do these next steps, you can ignore{' '}
+                <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
+                ’s.
               </Highlight>
             </P>
             <R.Pbhg>
-              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" /> の
-              <EmojiWithText letter="b" /> は、
+              Ignore the <EmojiWithText letter="b" /> labeled as{' '}
+              <BottomRightBadge inline bottomRightBadgeType="funcUnbound" />
               <br />
-              次のいくつかのステップの間は無視していい
+              for the next several steps
             </R.Pbhg>
             <BubbleQuotes
               quotes={[
@@ -591,7 +595,7 @@ export default () => (
                   type: 'smile',
                   children: (
                     <>
-                      <P>なるほど。じゃあ、続きを見ていこう！</P>
+                      <P>Got it. Let’s continue then!</P>
                     </>
                   )
                 }

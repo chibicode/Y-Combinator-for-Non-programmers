@@ -14,6 +14,7 @@ import {
 import BubbleQuotes from 'src/components/BubbleQuotes'
 import H from 'src/components/H'
 import EmojiWithText from 'src/components/EmojiWithText'
+import TopLeftBadgeWrapper from 'src/components/TopLeftBadgeWrapper'
 import EmojiForLetter from 'src/components/EmojiForLetter'
 import EmojiSeparator from 'src/components/EmojiSeparator'
 import CustomEmoji from 'src/components/CustomEmoji'
@@ -519,7 +520,9 @@ export default () => (
                 <Bold>コピーする:</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
                 <Emoji>↘️</Emoji>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                <TopLeftBadgeWrapper topLeftBadgeType="match">
+                  <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+                </TopLeftBadgeWrapper>
               </UlLi>
               <UlLi>
                 <Bold>消す:</Bold> <Emoji>💥</Emoji>{' '}
