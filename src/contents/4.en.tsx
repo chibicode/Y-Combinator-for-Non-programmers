@@ -551,9 +551,9 @@ export default () => (
             <P>We’ll use this lunchbox to explain each step:</P>
             <R.Ilpo />
             <P>
-              First,{' '}
+              <Bold>First:</Bold>{' '}
               <Highlight>
-                we <Bold>label</Bold>
+                We <Bold>label</Bold>
               </Highlight>
               :
             </P>
@@ -643,9 +643,9 @@ export default () => (
         content: (
           <>
             <P>
-              Second,{' '}
+              <Bold>Second:</Bold>{' '}
               <Highlight>
-                we check to see if some of{' '}
+                We check to see if some of{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
                 ’s and{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -716,9 +716,9 @@ export default () => (
         content: (
           <>
             <P>
-              Third,{' '}
+              <Bold>Third:</Bold>{' '}
               <Highlight>
-                we <Bold>copy</Bold>{' '}
+                We <Bold>copy</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />
                 ’s to where the <Italic>matched</Italic>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcBound" />
@@ -787,9 +787,9 @@ export default () => (
         content: (
           <>
             <P>
-              Finally,{' '}
+              <Bold>Finally:</Bold>{' '}
               <Highlight>
-                we <Bold>remove</Bold>{' '}
+                We <Bold>remove</Bold>{' '}
                 <BottomRightBadge inline bottomRightBadgeType="callArg" />
                 ’s and{' '}
                 <BottomRightBadge inline bottomRightBadgeType="funcArg" />
