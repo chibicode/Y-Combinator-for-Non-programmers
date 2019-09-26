@@ -120,6 +120,43 @@ export const Unmatched = () => (
   </>
 )
 
+export const InstructionTwo = () => (
+  <>
+    <Highlight>
+      We check to see if some of{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      ’s and <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      ’s <Bold>match</Bold>.{' '}
+      <Italic>
+        If they match, add the <Emoji>✅</Emoji> sign.
+      </Italic>
+    </Highlight>
+  </>
+)
+
+export const InstructionThree = () => (
+  <>
+    <Highlight>
+      We <Bold>copy</Bold>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />
+      ’s to where the <Italic>matched</Italic>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="funcBound" />
+      ’s are.
+    </Highlight>
+  </>
+)
+
+export const InstructionFour = () => (
+  <>
+    <Highlight>
+      We <Bold>remove</Bold>{' '}
+      <BottomRightBadge inline bottomRightBadgeType="callArg" />
+      ’s and <BottomRightBadge inline bottomRightBadgeType="funcArg" />
+      ’s.
+    </Highlight>
+  </>
+)
+
 export default () => (
   <EpisodeCardList
     cards={[
@@ -643,17 +680,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Second:</Bold>{' '}
-              <Highlight>
-                We check to see if some of{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                ’s and{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                ’s <Bold>match</Bold>.{' '}
-                <Italic>
-                  If they match, add the <Emoji>✅</Emoji> sign.
-                </Italic>
-              </Highlight>
+              <Bold>Second:</Bold> <InstructionTwo />
             </P>
             <EmojiSeparator
               nodes={[
@@ -716,14 +743,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Third:</Bold>{' '}
-              <Highlight>
-                We <Bold>copy</Bold>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                ’s to where the <Italic>matched</Italic>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />
-                ’s are.
-              </Highlight>
+              <Bold>Third:</Bold> <InstructionThree />
             </P>
             <EmojiSeparator
               nodes={[
@@ -787,15 +807,7 @@ export default () => (
         content: (
           <>
             <P>
-              <Bold>Finally:</Bold>{' '}
-              <Highlight>
-                We <Bold>remove</Bold>{' '}
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />
-                ’s and{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />
-                ’s
-              </Highlight>
-              .
+              <Bold>Finally:</Bold> <InstructionFour />
             </P>
             <EmojiSeparator
               nodes={[

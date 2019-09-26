@@ -26,6 +26,11 @@ import BottomRightBadge from 'src/components/BottomRightBadge'
 import YesNoButtons from 'src/components/YesNoButtons'
 import * as R from 'src/components/Runners'
 import NextLessonButton from 'src/components/NextLessonButton'
+import {
+  InstructionTwo,
+  InstructionThree,
+  InstructionFour
+} from 'src/contents/4.en'
 
 export const ThreeRowRules = () => (
   <>
@@ -631,33 +636,19 @@ export default () => (
               }
             />
             <P>
-              まず、
-              <HighlightBold>
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                が一致するかチェックし、一致した料理には <Emoji>✅</Emoji>{' '}
-                を付けます。
-              </HighlightBold>
+              This will be a review of the last page! <Emoji>😉</Emoji>
+            </P>
+            <P>
+              <Bold>First:</Bold> <InstructionTwo />{' '}
               <H args={{ name: 'pressNext' }} />
             </P>
             <R.Wwtl />
             <P>
-              続いて、
-              <HighlightBold>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" />{' '}
-                の料理を、一致した{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcBound" />{' '}
-                の部分にコピーします。
-              </HighlightBold>
+              <Bold>Next:</Bold> <InstructionThree />
             </P>
             <R.Ltpe />
             <P>
-              最後に、
-              <HighlightBold>
-                <BottomRightBadge inline bottomRightBadgeType="callArg" /> と{' '}
-                <BottomRightBadge inline bottomRightBadgeType="funcArg" />{' '}
-                が消えます。
-              </HighlightBold>
+              <Bold>Finally:</Bold> <InstructionFour />
             </P>
             <R.Apuz />
             <BubbleQuotes
@@ -667,15 +658,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        <Highlight>
-                          上記のどのステップにおいても、
-                          <BottomRightBadge
-                            inline
-                            bottomRightBadgeType="funcUnbound"
-                          />{' '}
-                          は関係なかった
-                        </Highlight>
-                        だろう？
+                        See, <Italic>none of the above steps involved</Italic>{' '}
+                        <BottomRightBadge
+                          inline
+                          bottomRightBadgeType="funcUnbound"
+                        />
+                        , right?
                       </P>
                     </>
                   )
@@ -685,12 +673,12 @@ export default () => (
                   children: (
                     <>
                       <P>
-                        なるほど、だから、
+                        I see, that’s why we can ignore{' '}
                         <BottomRightBadge
                           inline
                           bottomRightBadgeType="funcUnbound"
                         />{' '}
-                        はいったん無視していいのか。
+                        for now.
                       </P>
                     </>
                   )

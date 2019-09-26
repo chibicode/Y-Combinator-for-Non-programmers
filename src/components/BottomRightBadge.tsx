@@ -64,6 +64,7 @@ const BottomRightBadge = ({
         line-height: 1;
         width: 1.5em;
         font-weight: bold;
+        font-style: normal;
         height: 1.5em;
         text-transform: uppercase;
         border-radius: 100%;
